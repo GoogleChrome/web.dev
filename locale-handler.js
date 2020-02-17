@@ -30,7 +30,7 @@ const isSupported = (locale) => SUPPORTED_LOCALES.indexOf(locale) > -1;
  * according to priority:
  * 1. Locale directly expressed in the url, e.g. /en/some-post
  * 2. Locale in accept-language HTTP header.
- * 3. Locale in "preferrec_locale" cookie.
+ * 3. Locale in "preferred_locale" cookie.
  * If requested locale's content does not exist, falls back to default.
  * @param {Object} req Request object.
  * @param {Object} res Response object.
@@ -38,46 +38,49 @@ const isSupported = (locale) => SUPPORTED_LOCALES.indexOf(locale) > -1;
  * @return {!Function}
  */
 module.exports = (req, res, next) => {
-  // Check if url is navigational.
-  if (req.url.endsWith("/")) {
-    // Check if language is specified in the url.
-    const pathSegment = req.path.split("/")[1];
-    const isLangInPath = isSupported(pathSegment);
-    let lang;
-    let filePath;
-
-    if (isLangInPath) {
-      lang = pathSegment;
-      const pathParts = req.path.split("/");
-      pathParts.splice(1, 1);
-      filePath = pathParts.join("/");
-    } else {
-      const langInCookie = isSupported(req.cookies.preferred_lang);
-      // If language not in url, use accept-language header.
-      lang =
-        langInCookie ||
-        req.acceptsLanguages(SUPPORTED_LOCALES) ||
-        DEFAULT_LOCALE;
-      filePath = req.path;
-    }
-    if (lang === DEFAULT_LOCALE) {
-      // If this is alread default language, continue.
-      return next();
-    }
-
-    const localizedFilePath = path.join(
-      __dirname,
-      "dist", // Must serve from dist directory even in dev mode.
-      lang,
-      filePath,
-      "index.html",
-    );
-
-    if (fs.existsSync(localizedFilePath)) {
-      return isLangInPath ? next() : res.redirect(`/${lang}${filePath}`);
-    } else {
-      return res.redirect(`/${DEFAULT_LOCALE}${filePath}`);
-    }
+  // Exit early if the url is not navigational.
+  if (!req.url.endsWith("/")) {
+    return next();
   }
-  return next();
+
+  const pathParts = req.path.split("/");
+  // Check if language is specified in the url.
+  const isLangInPath = isSupported(pathParts[1]);
+  let lang;
+  let filePath;
+
+  if (isLangInPath) {
+    lang = pathParts[1];
+    pathParts.splice(1, 1);
+    filePath = pathParts.join("/");
+  } else {
+    const langInCookie = isSupported(req.cookies.preferred_lang);
+    // If language not in url, use accept-language header.
+    lang =
+      langInCookie ||
+      req.acceptsLanguages(SUPPORTED_LOCALES) ||
+      DEFAULT_LOCALE;
+    filePath = req.path;
+  }
+
+  if (lang === DEFAULT_LOCALE) {
+    // If this is alread default language, continue.
+    return next();
+  }
+
+  const localizedFilePath = path.join(
+    __dirname,
+    "dist", // Must serve from dist directory even in dev mode.
+    lang,
+    filePath,
+    "index.html",
+  );
+
+  if (fs.existsSync(localizedFilePath)) {
+    return isLangInPath
+      ? next()
+      : res.redirect(path.join('/', lang, filePath));
+  } else {
+    return res.redirect(path.join('/', DEFAULT_LOCALE, filePath);
+  }
 };
