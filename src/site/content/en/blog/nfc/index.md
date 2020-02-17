@@ -1,6 +1,6 @@
 ---
 title: Interact with NFC devices on Chrome for Android
-subhead: Reading and writing to NFC tags is now possible
+subhead: Reading and writing to NFC tags is now possible.
 authors:
   - beaufortfrancois
 date: 2020-02-12
