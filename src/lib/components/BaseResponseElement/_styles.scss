@@ -28,6 +28,28 @@ $TYPE_SUFFIXES:
   padding: 1.125rem;
 }
 
+.web-response__option-rationale > *:first-child {
+  margin-top: 0;
+}
+
+.web-response__option-rationale > *:last-child {
+  margin-bottom: 0;
+}
+
+.web-response__option-rationale p {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.web-response__option-rationale ol > li,
+.web-response__option-rationale ul > li {
+  font-size: 1em;
+}
+
+.web-response__option-rationale ol > li::before {
+  margin-top: .25em;
+}
+
 @each $TYPE_SUFFIX in $TYPE_SUFFIXES {
   .web-response#{$TYPE_SUFFIX}__option[submitted] {
     background: $GREY_100;
