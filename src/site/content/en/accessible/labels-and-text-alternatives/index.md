@@ -335,4 +335,4 @@ promotional offers?" like in the VoiceOver example below:
   alt="VoiceOver text output showing 'Receive promotional offers?'">
 </figure>
 
-{% include 'partials/self-assessment.njk' %}
+{% include 'content/self-assessment.njk' %}

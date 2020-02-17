@@ -140,6 +140,50 @@ module.exports = {
           },
         ],
       },
+      {
+        stimulus: "![Webby](./webby.png)",
+        // This is a composite question; it has two response components.
+        // For composite questions, add a "components" key
+        // and include all question data EXCEPT the stimulus in each component.
+        components: [
+          {
+            type: "multiple-choice",
+            cardinality: "1",
+            correctAnswers: "0",
+            stem: "Is Webby awesome?",
+            options: [
+              {
+                content: "Yes",
+                rationale: `Webby is _everything_.`,
+              },
+              {
+                content: "No",
+                rationale: `You monster! Just look at him!🤩`,
+              },
+            ],
+          },
+          {
+            type: "multiple-choice",
+            cardinality: "1",
+            correctAnswers: "0",
+            stem: "Just _how_ awesome is Webby?",
+            options: [
+              {
+                content: "Pretty awesome",
+                rationale: `Incorrect.`,
+              },
+              {
+                content: "The awesomest",
+                rationale: `Close but no.`,
+              },
+              {
+                content: "OMG 🤯",
+                rationale: `It was always you, Webby.`,
+              },
+            ],
+          },
+        ],
+      },
     ],
   },
 };

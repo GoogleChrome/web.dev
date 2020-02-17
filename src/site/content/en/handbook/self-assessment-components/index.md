@@ -10,7 +10,7 @@ Use self-assessments to provide opportunities for users
 to check their understanding of concepts covered in your post.
 Here's a self-assessment with some dummy questions:
 
-{% include 'partials/self-assessment.njk' %}
+{% include 'content/self-assessment.njk' %}
 
 ## Create a self-assessment
 
@@ -25,7 +25,7 @@ Here's a self-assessment with some dummy questions:
 ## Get started
 
 To include a self-assessment in your post:
-1. Add `{% raw %}{% include 'partials/self-assessment.njk' %}{% endraw %}`
+1. Add `{% raw %}{% include 'content/self-assessment.njk' %}{% endraw %}`
    to your post where you want the self-assessment to appear.
 1. Copy `self-assessment.11tydata.js` in `src/site/_drafts`
    to your post's directory.

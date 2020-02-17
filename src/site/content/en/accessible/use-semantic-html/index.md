@@ -109,7 +109,7 @@ The reason for this is that buttons and links are announced differently by
 screen readers. Using the correct element helps screen reader users know which
 outcome to expect.
 
-{% include 'partials/self-assessment.njk' %}
+{% include 'content/self-assessment.njk' %}
 
 ## Styling
 
