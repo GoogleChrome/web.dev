@@ -57,9 +57,7 @@ module.exports = (req, res, next) => {
     const langInCookie = isSupported(req.cookies.preferred_lang);
     // If language not in url, use accept-language header.
     lang =
-      langInCookie ||
-      req.acceptsLanguages(SUPPORTED_LOCALES) ||
-      DEFAULT_LOCALE;
+      langInCookie || req.acceptsLanguages(SUPPORTED_LOCALES) || DEFAULT_LOCALE;
     filePath = req.path;
   }
 
@@ -77,10 +75,8 @@ module.exports = (req, res, next) => {
   );
 
   if (fs.existsSync(localizedFilePath)) {
-    return isLangInPath
-      ? next()
-      : res.redirect(path.join('/', lang, filePath));
+    return isLangInPath ? next() : res.redirect(path.join("/", lang, filePath));
   } else {
-    return res.redirect(path.join('/', DEFAULT_LOCALE, filePath);
+    return res.redirect(path.join("/", DEFAULT_LOCALE, filePath));
   }
 };
