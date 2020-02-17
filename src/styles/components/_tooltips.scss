@@ -36,34 +36,38 @@
   transform-origin: top right;
 }
 
+// Prevent tooltip from sticking after press on touch devices
 @include hover() {
-  :hover > .w-tooltip,
-  :focus .w-tooltip { // Need descendent combinator for focus to accommodate details widget
+  :hover > .w-tooltip {
     @include tooltip-visible();
   }
 
-  :hover > .w-tooltip--left,
-  :focus .w-tooltip--left {
+  :hover > .w-tooltip--left {
     transform: scale(1);
   }
 
-  :hover > .w-tooltip--right,
-  :focus .w-tooltip--right {
+  :hover > .w-tooltip--right {
     transform: translateX(-100%) scale(1);
   }
 }
 
-// Separate active styles so tooltip appears on long press on touch devices
-:active > .w-tooltip {
+:active > .w-tooltip,
+:focus .w-tooltip { // Need descendent combinator for focus to accommodate details widget
   @include tooltip-visible();
+}
+
+// Longer delay for :active to show tooltip on long press for touch devices
+:active > .w-tooltip {
   transition: opacity .15s .5s, transform .15s .5s, visibility 0s;
 }
 
-:active > .w-tooltip--left {
+:active > .w-tooltip--left,
+:focus .w-tooltip--left {
   transform: scale(1);
 }
 
-:active > .w-tooltip--right {
+:active > .w-tooltip--right,
+:focus .w-tooltip--right {
   transform: translateX(-100%) scale(1);
 }
 
