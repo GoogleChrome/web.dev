@@ -4,7 +4,7 @@ title: Provide a custom install experience
 authors:
   - petelepage
 date: 2020-02-14
-updated: 2020-02-14
+updated: 2020-02-18
 description: |
   Use the beforeinstallprompt event to provide a custom, seamless install
   experience for your users.
@@ -13,7 +13,7 @@ tags:
 draft: true
 ---
 
-Many browsers make it possible for you to promote and enable the installation
+Many browsers make it possible for you to enable and promote the installation
 of your Progressive Web App (PWA) directly within the user interface of your
 PWA. Installation (sometimes formerly referred to as Add to Home Screen),
 makes it easy for users to install your PWA on their mobile or desktop device.
@@ -28,7 +28,7 @@ other installed app.
   </figcaption>
 </figure>
 
-Why would you want a user to install your app? The same reason you'd want a
+Why would you want a user to install your PWA? The same reason you'd want a
 user to install your app from any app store. Users who install are your most
 engaged audience. Users who install a PWA have better engagement metrics than
 typical visitors, including more repeat visits, longer time on site and
@@ -77,14 +77,13 @@ or an item in your content feed.
 You may want to wait before showing the prompt to the user so you don't
 distract them from what they're doing. For example, if the user is in a
 check-out flow, or creating their account, let them complete that before
-interrupting them with the prompt.
+prompting them.
 {% endAside %}
 
 ### In-app installation flow
 
-To provide an in-app installation flow, you'll need to provide a button,
-or other user interface element within your app that the user can click,
-indicating users can install your Progressive Web app. When the element is
+To provide in-app installation, provide a button or other interface element
+that a user can click to install your app. When the element is
 clicked, call `prompt()` on the saved `beforeinstallprompt` event (stored
 in the `deferredPrompt` variable). It shows the user a modal install dialog,
 asking them to confirm they want to install your PWA.
@@ -116,7 +115,7 @@ has resolved.
 
 You can use the `userChoice` property to determine if the user installed
 your app from within your user interface. But, if the user installs your
-PWA from the address bar, or other browser component, `userChoice` won't
+PWA from the address bar or other browser component, `userChoice` won't
 help. Instead, you should listen for the `appinstalled` event. It is fired
 whenever your PWA is installed, no matter what mechanism is used to install
 your PWA.
@@ -150,7 +149,7 @@ PWA, use conditional CSS:
 
 ### Track how the PWA was launched
 To track how users launch your PWA, use `matchMedia()` to test the
-`display-mode` media query. Unfortunately, Safari on iOS don't support
+`display-mode` media query. Unfortunately, Safari on iOS doesn't support
 this yet, so you must check `navigator.standalone`.
 
 ```js
