@@ -4,10 +4,10 @@ title: Add a web app manifest
 authors:
   - petelepage
 date: 2018-11-05
-updated: 2020-02-14
+updated: 2020-02-18
 description: |
   The web app manifest is a simple JSON file that tells the browser about your
-  web application and how it should behave when 'installed' on the user's mobile
+  web application and how it should behave when installed on the user's mobile
   device or desktop.
 ---
 
@@ -62,10 +62,9 @@ places where space may be limited. `name` is used when the app is installed.
 #### `icons` {: #icons }
 
 When a user installs your PWA, you can define a set of icons for the browser
-to use. These icons are used in places like the home screen, app launcher,
-task switcher, splash screen, etc.
+to use like the home screen, app launcher, task switcher, splash screen, etc.
 
-The `icons` property is an array of image objects. Each object should
+The `icons` property is an array of image objects. Each object must
 include the `src`, a `sizes` property, and the `type` of image. To use
 [maskable icons](/maskable-icon/), sometimes referred to as adaptive
 icons on Android, you'll also need to add `"purpose": "any maskable"` to the
@@ -95,8 +94,8 @@ application is first launched on mobile.
 #### `display` {: #display }
 
 You can customize what browser UI is shown when your app is launched. For
-example, you can hide the address bar and browser chrome. Or games may want
-to go completely full screen.
+example, you can hide the address bar and browser chrome. Games can even
+be made to launch full screen.
 
 <div class="w-table-wrapper">
   <table id="display-params">
@@ -217,7 +216,7 @@ The `background_color` should be the same color as the load page, to provide
 a smooth transition from the splash screen to your app.
 
 Chrome will choose the icon that closely matches the device resolution for the
-device. Providing a 192px and a 512px icon is sufficient for most cases, but
+device. Providing 192px and 512px icons is sufficient for most cases, but
 you can provide additional icons for pixel perfection.
 
 <div class="w-clearfix">&nbsp;</div>
