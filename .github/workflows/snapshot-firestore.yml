@@ -20,4 +20,4 @@ jobs:
       # can't naïvely target a subfolder (it will fail with "Path already exists").
       # This is a secondary bucket, not the default Firebase project. Its lifecycle config is set
       # to delete objects that are >=90 days old.
-      - run: gcloud firestore export gs://web-dev-production-firestore-archive
+      - run: gcloud --project web-dev-production-1 firestore export gs://web-dev-production-firestore-archive
