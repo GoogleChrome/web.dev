@@ -30,7 +30,7 @@ const postTags = require("../../_data/postTags");
  * @param {Object} post An eleventy collection item with post data.
  * @return {string}
  */
-module.exports = ({post}) => {
+module.exports = ({post, featured = false}) => {
   const url = stripLanguage(post.url);
   const data = post.data;
   const displayedTags = [];
@@ -151,13 +151,17 @@ module.exports = ({post}) => {
 
   return html`
     <div class="w-card">
-      <article class="w-post-card">
-        <a class="w-post-card__link" href="${url}">
-          <div
-            class="w-post-card__cover ${thumbnail &&
-              `w-post-card__cover--with-image`}"
-          >
+      <article class="w-post-card ${featured ? "w-post-card--featured" : ""}">
+        <div
+          class="w-post-card__cover ${thumbnail &&
+            `w-post-card__cover--with-image`}"
+        >
+          <a class="w-post-card__link" tabindex="-1" href="${url}">
             ${thumbnail && renderThumbnail(url, thumbnail, alt)}
+          </a>
+        </div>
+        <div class="w-post-card__blurb">
+          <a class="w-post-card__link" href="${url}">
             <h2
               class="${thumbnail
                 ? `w-post-card__headline--with-image`
@@ -165,17 +169,16 @@ module.exports = ({post}) => {
             >
               ${md(data.title)}
             </h2>
-          </div>
-        </a>
-        ${renderAuthorsAndDate(post)}
-
-        <div class="w-post-card__desc">
-          <a class="w-post-card__link" tabindex="-1" href="${url}">
-            <p class="w-post-card__subhead">
-              ${md(data.subhead)}
-            </p>
           </a>
-          ${renderChips()}
+          ${renderAuthorsAndDate(post)}
+          <div class="w-post-card__desc">
+            <a class="w-post-card__link" tabindex="-1" href="${url}">
+              <p class="w-post-card__subhead">
+                ${md(data.subhead)}
+              </p>
+            </a>
+            ${renderChips()}
+          </div>
         </div>
       </article>
     </div>
