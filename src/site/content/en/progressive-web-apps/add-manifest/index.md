@@ -13,12 +13,12 @@ description: |
 
 The web app manifest is a JSON file that tells the browser about your
 Progressive Web App and how it should behave when installed on the user's
-desktop or mobile device. A typical manifest file includes information about
-the app name, icons it should use, and the URL that should be opened when the
+desktop or mobile device. A typical manifest file includes
+the app name, the icons the app should use, and the URL that should be opened when the
 app is launched.
 
 Manifest files are supported in Chrome, Edge, Firefox, UC Browser, Opera,
-the Samsung browser, and Safari partial support.
+the Samsung browser. Safari has partial support.
 
 ## Create the manifest.webmanifest file
 
@@ -125,7 +125,7 @@ to go completely full screen.
         <td><code>minimal-ui</code></td>
         <td>
           This mode is similar to <code>fullscreen</code>, but provides the
-          user with some means to access a minimal set of UI elements for
+          user a minimal set of UI elements for
           controlling navigation (i.e., back, forward, reload, etc).
         </td>
       </tr>
@@ -171,7 +171,7 @@ the app's preview in task switchers. The `theme_color` should match the
 
 ## Add the web app manifest to your pages
 
-When you have created the manifest, add a `<link>` tag to all the pages of your
+After creating the manifest, add a `<link>` tag to all the pages of your
 Progressive Web App. For example:
 
 ```html
@@ -203,11 +203,11 @@ properly.
 
 When your app first launches on mobile, it can take a moment for the browser
 to spin up, and the initial content to begin rendering. Instead of showing a
-white screen that may look to the user like the app is stall, the browser
-will show a splash screen, until the first paint.
+white screen that may look to the user like the app is stalled, the browser
+will show a splash screen until the first paint.
 
-Chrome will automatically creates the splash screen from the manifest
-properties, including:
+Chrome automatically creates the splash screen from the manifest
+properties, specifically:
 
 * `name`
 * `background_color`
@@ -226,6 +226,5 @@ you can provide additional icons for pixel perfection.
 
 There are several additional properties that can be added to the web app
 manifest, refer to the [MDN Web App Manifest documentation][mdn-manifest] for
-full details.
 
 [mdn-manifest]: https://developer.mozilla.org/en-US/docs/Web/Manifest
