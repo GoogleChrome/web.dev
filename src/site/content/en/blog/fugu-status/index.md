@@ -7,7 +7,13 @@ tags:
   - post
   - capabilities
   - fugu
+draft: true
 ---
+
+{% Aside %}
+This is a living document and will be updated as features move between
+states.
+{% endAside %}
 
 Through our [capabilities project][capabilities-project], we want to make
 it possible for web apps to do anything native apps can, by exposing the
