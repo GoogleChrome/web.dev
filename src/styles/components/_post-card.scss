@@ -147,6 +147,10 @@
   }
 }
 
+.w-post-card__link:focus {
+  outline: none;
+}
+
 .w-post-card__link:hover {
   text-decoration: none;
 }
@@ -165,25 +169,28 @@
 // just use a descendant selector.
 @media (min-width: #{$BREAKPOINT_VALUE_MEDIUM}) and (max-width: #{$BREAKPOINT_VALUE_LARGE}) {
   .w-post-card--featured {
-    display: flex;
-
-    .w-post-card__cover,
-    .w-post-card__blurb {
-      flex: 1;
-    }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
     .w-post-card__cover,
     .w-post-card__figure {
       margin: 0;
     }
 
+    .w-post-card__cover,
+    .w-post-card__blurb {
+      grid-area: auto;
+    }
+
     .w-post-card__blurb {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding-left: 64px;
+      padding-left: 40px;
     }
 
+    // Normally this little symbol is obscured by the hero thumbnail image
+    // but we need to hide it for the side-by-side featured layout.
     .w-post-card__desc::before {
       display: none;
     }
