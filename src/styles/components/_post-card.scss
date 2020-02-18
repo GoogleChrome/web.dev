@@ -169,6 +169,8 @@
 // just use a descendant selector.
 @media (min-width: #{$BREAKPOINT_VALUE_MEDIUM}) and (max-width: #{$BREAKPOINT_VALUE_LARGE}) {
   .w-post-card--featured {
+    // 32px * 2 of padding to match the columns below + 8px gap.
+    column-gap: 72px;
     display: grid;
     grid-template-columns: 1fr 1fr;
 
@@ -186,7 +188,6 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding-left: 40px;
     }
 
     // Normally this little symbol is obscured by the hero thumbnail image
