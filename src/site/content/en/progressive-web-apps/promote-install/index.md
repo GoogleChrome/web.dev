@@ -39,10 +39,10 @@ on your site.
 
 1. Keep promotions outside of the flow of your user journeys. For example,
    in a PWA login page, put the call to action below the login form and submit
-   button. Disruptive use of promotional patterns reduce the usability of your
-   PWA and will negatively impact your engagement metrics.
+   button. Disruptive use of promotional patterns reduces the usability of your
+   PWA and negatively impacts your engagement metrics.
 2. Include the ability to dismiss or decline the promotion. Remember the
-   user's preferences if they do this and only re-prompt if there's a change
+   user's preference if they do this and only re-prompt if there's a change
    in the user's relationship with your content such as if they signed in or
    completed a purchase.
 3. Combine more than one of these techniques in different parts of your PWA,
@@ -101,10 +101,10 @@ header content often includes site branding such as a logo and the hamburger
 menu. Headers may be `position:fixed` or not depending on your site's
 functionality and user needs.
 
-When used appropriately, promoting PWA install from the header of your
+When used appropriately, promoting PWA installation from the header of your
 site is a great way to make it easier for your most loyal customers to
-return to your experience. Pixels in your PWA header are extremely valuable,
-so make sure your install call to action is appropriately sized, of greater
+return to your experience. Pixels in your PWA header are precious,
+so make sure your installation call to action is appropriately sized, of greater
 importance than other possible header content, and unintrusive.
 
 <div class="w-clearfix">&nbsp;</div>
@@ -112,7 +112,7 @@ importance than other possible header content, and unintrusive.
 Make sure you:
 
 * Evaluate the value of your installed use case for your users. Consider
-  selective targeting to only present this promotion for users that are
+  selective targeting to only present your promotion for users that are
   likely to benefit from it.
 * Use precious header space efficiently. Consider what else would be helpful
   to offer your user in the header, and weigh the priority of the install
@@ -141,8 +141,8 @@ Make sure you:
 
 ### Landing page {: #landing }
 
-The purpose of a landing page is to promote your products & services,
-so this is one place where it can be appropriate to go large with promoting
+The purpose of a landing page is to promote your products and services,
+so this is one place where it is appropriate to go large with promoting
 the benefits of installing your PWA.
 
 <figure class="w-figure w-figure--inline-right">
@@ -157,11 +157,11 @@ they'll get from installation.
 
 Make sure you:
 
-* Appeal to features that will matter most to your visitors and emphasize
+* Appeal to features that matter most to your visitors and emphasize
   keywords that might have brought them to your landing page.
 * This is a landing page. After you've made your value proposition clear,
   make your install promotion and call to action eye catching!
-* Consider adding an install promotion within your app where users spend
+* Consider adding an install promotion in the part of your app where users spend
   most of their time.
 
 <div class="w-clearfix">&nbsp;</div>
@@ -175,9 +175,9 @@ Make sure you:
   </figcaption>
 </figure>
 
-Most users have encountered install banners in mobile experiences and are
+Most users have encountered installation banners in mobile experiences and are
 familiar with the interactions offered by a banner. Banners should be used
-carefully because they can be very disruptive to the user experience.
+carefully because they can disrupt the user.
 
 Make sure you:
 
@@ -233,7 +233,7 @@ Make sure you:
   </figcaption>
 </figure>
 
-Show an install promotion during or after a sequential journey, typical of
+Show an install promotion during or after a sequential journey such as those typical of
 booking or checkout flows. If you're displaying the promotion after the user
 has completed the journey, you can often make it more prominent since the
 journey is completed.
@@ -275,7 +275,7 @@ Make sure you:
   multi-step process, you might want to wait until the user has completed the
   journey.
 * Promote features most relevant to a signed up user.
-* Consider adding additional install promotion within the signed-in areas
+* Consider adding an additional install promotion within the signed-in areas
   of your app.
 
 <div class="w-clearfix">&nbsp;</div>
@@ -309,7 +309,7 @@ Patterns that work well for eCommerce PWAs include:
 </figure>
 
 This is a special case of the [in-feed](#in-feed) install promotional pattern,
-where the feed is products or category listings.
+where the feed contains products or category listings.
 
 Make sure you:
 
