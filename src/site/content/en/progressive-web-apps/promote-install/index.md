@@ -4,7 +4,7 @@ title: Patterns for promoting PWA installation
 authors:
   - pjmclachlan
 date: 2019-06-04
-updated: 2020-02-14
+updated: 2020-02-18
 description: |
   How to promote installation of Progressive Web Apps and best practices.
 tags:
@@ -13,12 +13,12 @@ draft: true
 ---
 
 Progressive Web Apps (PWAs) are a pattern for creating app-like, instant
-loading, reliable and installable websites and why would you want a user to
+loading, reliable, and installable websites and why would you want a user to
 install your web app? The same reason you'd want a user to install your native
 app from any app store.
 
-Users who install are your most engaged audience. Users who install a PWA
-have better engagement metrics than typical visitors, including more repeat
+Users who install are your most engaged users. Users who install a PWA
+have better engagement metrics than casual visitors, including more repeat
 visits, longer time on site and higher conversion rates, often at parity with
 native app users on mobile devices.
 
@@ -34,22 +34,21 @@ to implement a PWA installation promotion.
 
 ## PWA install promotion best practices {: #best-practices }
 
-Some best practices apply no matter what promotional patterns you're using
-on your site.
+Here are some best practices apply no matter what promotional patterns you're
+using on your site.
 
-1. Keep promotions outside of the flow of your user journeys. For example,
-   in a PWA login page, put the call to action below the login form and submit
-   button. Disruptive use of promotional patterns reduces the usability of your
-   PWA and negatively impacts your engagement metrics.
-2. Include the ability to dismiss or decline the promotion. Remember the
-   user's preference if they do this and only re-prompt if there's a change
-   in the user's relationship with your content such as if they signed in or
-   completed a purchase.
-3. Combine more than one of these techniques in different parts of your PWA,
-   but be careful not to overwhelm or annoy your user with install promotion.
-   **Remember rule 1!**
-4. Only show the promotion when you detect that the `beforeinstallprompt`
-   event has been fired.
+* Keep promotions outside of the flow of your user journeys. For example,
+  in a PWA login page, put the call to action below the login form and submit
+  button. Disruptive use of promotional patterns reduces the usability of your
+  PWA and negatively impacts your engagement metrics.
+* Include the ability to dismiss or decline the promotion. Remember the
+  user's preference if they do this and only re-prompt if there's a change
+  in the user's relationship with your content such as if they signed in or
+  completed a purchase.
+* Combine more than one of these techniques in different parts of your PWA,
+  but be careful not to overwhelm or annoy your user with install promotion.
+* Only show the promotion when you detect that the `beforeinstallprompt`
+  event has been fired.
 
 ## Automatic browser promotion {: #browser-promotion }
 
@@ -159,8 +158,9 @@ Make sure you:
 
 * Appeal to features that matter most to your visitors and emphasize
   keywords that might have brought them to your landing page.
-* This is a landing page. After you've made your value proposition clear,
-  make your install promotion and call to action eye catching!
+* Make your install promotion and call to action eye catching, but only after
+  you've made your value proposition clear. This is your landing page, after
+  all.
 * Consider adding an install promotion in the part of your app where users spend
   most of their time.
 
@@ -219,8 +219,8 @@ helpful to your users.
 Make sure you:
 
 * Limit the frequency of the promotions to avoid annoying users.
-* Give your users the ability to dismiss the promotions. Remember your user's
-  choice to dismiss.
+* Give your users the ability to dismiss the promotions.
+* Remember your user's choice to dismiss.
 
 <div class="w-clearfix">&nbsp;</div>
 
