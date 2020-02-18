@@ -18,6 +18,8 @@ const isProd = Boolean(process.env.GAE_APPLICATION);
 
 const compression = require("compression");
 const express = require("express");
+const cookieParser = require("cookie-parser");
+const localeHandler = require("./locale-handler.js");
 const buildRedirectHandler = require("./redirect-handler.js");
 
 const redirectHandler = (() => {
@@ -57,6 +59,7 @@ const noWwwHandler = (req, res, next) => {
 
 const handlers = [
   noWwwHandler,
+  localeHandler,
   express.static("dist"),
   express.static("dist/en"),
   redirectHandler,
@@ -71,6 +74,7 @@ if (!isProd) {
 }
 
 const app = express();
+app.use(cookieParser());
 app.use(...handlers);
 
 const listener = app.listen(process.env.PORT || 8080, () => {
