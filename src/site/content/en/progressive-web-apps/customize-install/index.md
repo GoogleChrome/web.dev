@@ -48,7 +48,7 @@ in-app install flow:
 3. Alert the user that your PWA is installable, and provide a button or other
    element to start the in-app installation flow.
 
-### Listen for the beforeinstallprompt event
+### Listen for the `beforeinstallprompt` event
 
 If your Progressive Web App meets the required [installation criteria](/install-criteria/),
 the browser fires a `beforeinstallprompt` event. Save a reference to the
