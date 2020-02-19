@@ -1,5 +1,5 @@
 ---
-title: New Capabilities Status
+title: New capabilities status
 subhead: Web apps should be able to do anything native apps can. We want to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
 updated: 2020-02-19
@@ -55,9 +55,9 @@ they'll break, or the API surface will change.
 ## Capabilities available as an origin trial {: #origin-trial }
 
 These APIs are available as an [origin trial][ot-dashboard] in Chrome. Origin
-trials provide an opportunity for us to validate experimental features and
+trials provide an opportunity for Chrome to validate experimental features and
 APIs, and make it possible for you to provide feedback on their usability
-and effectiveness in  broader deployment.
+and effectiveness in broader deployment.
 
 Opting into an origin trial allows you to build demos and prototypes that
 your beta testing users can try for the duration of the trial without requiring
@@ -108,10 +108,10 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
         <td>
           The Native File System API (formerly known as the Writable Files API)
           enables developers to build powerful web apps that interact with files
-          on the users local device, like IDEs, photo and video editors, text
+          on the user's local device, like IDEs, photo and video editors, text
           editors, and more. After a user grants a web app access, this API
           allows web apps to read or save changes directly to files and folders
-          on the users device.
+          on the user's device.
         </td>
       </tr>
       <tr>
@@ -147,7 +147,7 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
         </td>
         <td>
           To avoid draining the battery, most devices will quickly fall asleep
-          when left idle. While this is fine for most of the time, there are
+          when left idle. While this is fine most of the time, there are
           some applications that need to keep the screen or the device awake in
           order to complete some work. The Wake Lock API provides a way to
           prevent the device from dimming or locking the screen or prevent
@@ -247,7 +247,7 @@ latest version of Chrome, and in many cases other Chromium based browsers.
 
 ## Suggest a new capability {: #suggest-new }
 
-Have a suggestion for a capability you think we should consider?
+Do you have a suggestion for a capability you think we should consider?
 Tell us about it by filing a [new feature request](https://goo.gl/qWhHXU).
 Please be sure to include as much detail as you can, such as
 the problem you're trying to solve, suggested use cases, and anything else
