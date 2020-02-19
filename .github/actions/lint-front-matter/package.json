@@ -1,0 +1,9 @@
+{
+  "name": "lint-front-matter",
+  "version": "1.0.0",
+  "main": "main.js",
+  "dependencies": {
+    "@actions/core": "^1.2.0",
+    "yaml-front-matter": "^4.1.0"
+  }
+}

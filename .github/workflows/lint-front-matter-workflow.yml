@@ -1,0 +1,40 @@
+name: Lint front matter
+on:
+# By default, runs when a pull_request's activity type is opened, synchronize,
+# or reopened
+  pull_request:
+    paths:
+      - 'src/site/content/**.md'
+      - 'src/site/content/**.markdown'
+
+jobs:
+  linter:
+    name: Linter
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      
+      - name: Install
+        run: npm ci
+      
+      - name: Git diff
+        id: git_diff
+        uses: futuratrepadeira/changed-files@v3.0.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Lint yaml front matter
+        uses: ./.github/actions/lint-yaml
+        with:
+          added: ${{ steps.git_diff.outputs.files_created }}
+          modified: ${{ steps.git_diff.outputs.files_updated }}
+        # Only run the linter if the previous step indicated that files were
+        # added or modified in the pull request.
+        if: steps.git_diff.outputs.files_created || steps.git_diff.outputs.files_updated
+

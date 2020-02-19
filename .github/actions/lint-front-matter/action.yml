@@ -1,0 +1,13 @@
+name: 'Lint front matter'
+description: 'Lints yaml front matter from markdown files.'
+author: 'Rob Dodson <robdodson@google.com>'
+runs:
+  using: 'node12'
+  main: 'main.js'
+inputs:
+  added:
+    description: Space separated list of added files
+    required: true
+  modified:
+    description: Space separated list of modified files
+    required: true
