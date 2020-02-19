@@ -12,7 +12,7 @@ draft: true
 
 Many browsers indicate to the user that your Progressive Web App (PWA) is
 installable when it meets certain criteria. Example indicators include an
-install button in the address bar, or an Install menu item in the overflow
+Install button in the address bar, or an Install menu item in the overflow
 menu. In addition, when the criteria is met, many browsers will fire a
 `beforeinstallprompt` event, allowing you to enable an install flow, directly
 from your PWA.
