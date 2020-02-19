@@ -15,7 +15,7 @@
  */
 
 const {html} = require("common-tags");
-const {findByUrl} = require("../../_filters/find-by-url");
+const {findBySlug} = require("../../_filters/find-by-slug");
 const stripLanguage = require("../../_filters/strip-language");
 const md = require("markdown-it")();
 
@@ -46,15 +46,14 @@ function getPathItemsFromTopics(topics) {
  * it is a draft or not.
  * @param {Object} path A learning path.
  * @param {string} slug The current page slug.
- * @param {string} lang Language of the page.
  * @return {string} The next pathItem slug or a terminating empty string.
  */
-function findNextPathItemBySlug(path, slug, lang) {
+function findNextPathItemBySlug(path, slug) {
   let next = "";
   const items = getPathItemsFromTopics(path.topics);
   const idx = items.indexOf(slug);
   for (let i = idx + 1; i < items.length; i++) {
-    const item = findByUrl(`/${lang}/${items[i]}/`);
+    const item = findBySlug(items[i]);
     if (!item.data.draft) {
       next = items[i];
       break;
@@ -84,7 +83,7 @@ function findNextCollectionItemBySlug(collection, slug) {
   return collection[idx + 1];
 }
 
-module.exports = ({back, backLabel, collection, path, slug, lang}) => {
+module.exports = ({back, backLabel, collection, path, slug}) => {
   let forward;
   let forwardLabel;
   let next;
@@ -103,7 +102,7 @@ module.exports = ({back, backLabel, collection, path, slug, lang}) => {
     // oof.
     next = findCollectionItemBySlug(
       collection,
-      findNextPathItemBySlug(path, slug, lang),
+      findNextPathItemBySlug(path, slug),
     );
   }
 

@@ -2,7 +2,7 @@
 layout: layout
 ---
 
-{% set topics = path.topics | removeDrafts(lang) %}
+{% set topics = path.topics | removeDrafts %}
 
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
@@ -43,6 +43,21 @@ layout: layout
   </section>
 
   <hr>
+
+  {# <section class="w-grid">
+    {% for topic in topics %}
+    <h2 id="{{ topic.title | slug }}" class="no-link w-path-heading w-headline--three">
+      {{ topic.title }}
+      <a class="w-headline-link" href="#{{ topic.title | slug }}" aria-hidden="true">#</a>
+    </h2>
+    <div class="w-grid__columns w-grid__columns--three">
+      {% for slug in topic.pathItems %}
+        {% set item = slug | findBySlug %}
+        {% PostCard {post: item, author: contributors[item.data.author]} %}
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </section> #}
 
   <section class="w-layout-container">
     {% for topic in topics %}

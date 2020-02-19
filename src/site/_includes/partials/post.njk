@@ -80,7 +80,7 @@
     </div>
 
     {% if codelabs %}
-      {% CodelabsCallout codelabs, lang %}
+      {% CodelabsCallout codelabs %}
     {% endif %}
   </div>
 
@@ -90,8 +90,7 @@
       back: '/blog',
       backLabel: 'Return to all articles',
       collection: collections.posts,
-      slug: page.fileSlug,
-      lang: lang
+      slug: page.fileSlug
     } %}
   {% else %}
     {# Find next item in this learning path #}
@@ -100,8 +99,7 @@
       backLabel: 'Return to all articles',
       path: path,
       collection: collections[path.slug],
-      slug: page.fileSlug,
-      lang: lang
+      slug: page.fileSlug
     } %}
   {% endif %}
 

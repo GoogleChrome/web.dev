@@ -8,13 +8,13 @@ tags:
 
 {# <section class="w-grid">
   <div class="w-grid__columns w-grid__columns--three" role="list">
-    {% set post = 'en/test-post' | findByUrl %}
+    {% set post = 'test-post' | findBySlug %}
     {% PostCard {post: post, author: authors[post.data.author]} %}
 
-    {% set post = 'en/another-post' | findByUrl %}
+    {% set post = 'another-post' | findBySlug %}
     {% PostCard {post: post, author: authors[post.data.author]} %}
 
-    {% set post = 'en/yet-another-post' | findByUrl %}
+    {% set post = 'yet-another-post' | findBySlug %}
     {% PostCard {post: post, author: authors[post.data.author]} %}
   </div>
 </section> #}
