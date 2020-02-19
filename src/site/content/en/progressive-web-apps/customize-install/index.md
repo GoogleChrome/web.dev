@@ -173,7 +173,7 @@ window.addEventListener('load', () => {
 On Android, when your PWA is launched, Chrome will check the currently
 installed manifest against the live manifest. If an update is required, it
 will be [queued and updated][update-flow] once the device is plugged in and
-connected to WiFi.
+connected to Wi-Fi.
 
 ### Chrome on Desktop
 On Desktop, the manifest is not automatically updated, but this is planned for
