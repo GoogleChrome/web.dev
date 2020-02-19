@@ -45,7 +45,7 @@ in-app install flow:
 1. Listen for the `beforeinstallprompt` event.
 2. Save the `beforeinstallprompt` event, so it can be used to trigger the
    install flow later.
-3. Alert the user your PWA is installable, and provide a button or other
+3. Alert the user that your PWA is installable, and provide a button or other
    element to start the in-app installation flow.
 
 ### Listen for the beforeinstallprompt event
