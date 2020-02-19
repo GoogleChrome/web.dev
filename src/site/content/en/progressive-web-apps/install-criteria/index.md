@@ -38,7 +38,7 @@ minor differences. Check the respective sites for full details:
 * [Edge](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps#requirements)
 * [Firefox](https://developer.mozilla.org/en-US/Apps/Progressive/Add_to_home_screen#How_do_you_make_an_app_A2HS-ready)
 * [Opera](https://dev.opera.com/articles/installable-web-apps/)
-* [Samsung Internet](https://hub.samsunginter.net/docs/ambient-badging/),
+* [Samsung Internet](https://hub.samsunginter.net/docs/ambient-badging/)
 * [UC Browser](https://plus.ucweb.com/docs/pwa/docs-en/zvrh56).
 
 {% Aside %}
