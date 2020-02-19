@@ -2,7 +2,7 @@
 title: New Capabilities Status
 subhead: Web apps should be able to do anything native apps can. We want to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2020-02-14
+updated: 2020-02-19
 tags:
   - post
   - capabilities
@@ -15,12 +15,12 @@ This is a living document and will be updated as features move between
 states.
 {% endAside %}
 
-Through our [capabilities project][capabilities-project], we want to make
-it possible for web apps to do anything native apps can, by exposing the
+The [capabilities project][capabilities-project] is a cross-company effort
+to make it possible for web apps to do anything native apps can, by exposing the
 capabilities of native platforms to the web platform, while maintaining user
 security, privacy, trust, and other core tenets of the web.
 
-You can see the full list of capabilities we're working on at
+You can see the full list of new and potential capabilities at
 <https://goo.gle/fugu-api-tracker>.
 
 ## Capabilities available behind a flag {: #flag }
@@ -52,18 +52,17 @@ they'll break, or the API surface will change.
   </table>
 </div>
 
-
 ## Capabilities available as an origin trial {: #origin-trial }
 
-These APIs are available as an [origin trial][ot-dashboard]. Origin
+These APIs are available as an [origin trial][ot-dashboard] in Chrome. Origin
 trials provide an opportunity for us to validate experimental features and
 APIs, and make it possible for you to provide feedback on their usability
 and effectiveness in  broader deployment.
 
 Opting into an origin trial allows you to build demos and prototypes that
 your beta testing users can try for the duration of the trial without requiring
-them to flip any special flags in Chrome. There's more info on origin trials
-in the [Origin Trials Guide for Web Developers][ot-guide].
+them to flip any special flags in their browser. There's more info on origin
+trials in the [Origin Trials Guide for Web Developers][ot-guide].
 
 <div class="w-table-wrapper">
   <table>
@@ -160,11 +159,10 @@ in the [Origin Trials Guide for Web Developers][ot-guide].
   </table>
 </div>
 
-
 ## Capabilities available in stable {: #in-stable }
 
 The following APIs have graduated from origin trial and are available in the
-latest version of Chrome.
+latest version of Chrome, and in many cases other Chromium based browsers.
 
 <div class="w-table-wrapper">
   <table>
