@@ -15,7 +15,7 @@ alt: mobile device with app panel open
 ---
 
 {% Aside %}
-  This API as part of the [capabilities project](https://developers.google.com/web/updates/capabilities).
+  This API is part of the [capabilities project](https://developers.google.com/web/updates/capabilities).
 {% endAside %}
 
 ## What is the getInstalledRelatedApps() API? {: #what }
