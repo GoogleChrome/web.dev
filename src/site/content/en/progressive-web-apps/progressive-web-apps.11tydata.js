@@ -27,7 +27,7 @@ module.exports = {
       },
       {
         title: "Installable",
-        pathItems: [],
+        pathItems: ["install-criteria"],
       },
     ],
   },
