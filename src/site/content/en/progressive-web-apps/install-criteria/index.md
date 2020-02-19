@@ -21,7 +21,7 @@ In Chrome, your Progressive Web App must meet the following criteria before
 it will fire the `beforeinstallprompt` event and show the in-browser install
 promotion:
 
-* The web app is not already installed.
+* The web app is not already installed
 * Meets a user engagement heuristic.
 * Be served over HTTPS
 * Includes a [Web App Manifest][add-manifest] that includes:
