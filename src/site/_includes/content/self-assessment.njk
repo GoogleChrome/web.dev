@@ -23,10 +23,6 @@
 {{ question.stimulus | safe }}
 {% endBlock %}
 
-<div data-role="stimulus">
-{{ question.stimulus }}
-</div>
-
 {% for component in question.components %}
 {{ responseComponent(component) }}
 {% else %}
