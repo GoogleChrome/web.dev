@@ -23,6 +23,10 @@
 {{ question.stimulus | safe }}
 {% endBlock %}
 
+<div data-role="stimulus">
+{{ question.stimulus }}
+</div>
+
 {% for component in question.components %}
 {{ responseComponent(component) }}
 {% else %}
@@ -32,7 +36,8 @@
 </web-question>
 {% endmacro %}
 
-<web-assessment class="w-callout {% if assessment.questions.length === 1 %}web-assessment--singleton{% endif %}" {% if assessment.height %}style="height: {{ assessment.height }};"{% endif %}>
+{% macro selfAssessment(assessment) %}
+<web-assessment class="{% if assessment.questions.length === 1 %}web-assessment--singleton{% endif %}" {% if assessment.height %}style="height: {{ assessment.height }};"{% endif %}>
 
 {% if (assessment.setLeader) and (assessment.questions.length > 1) %}
   <div class="w-callout__blurb web-assessment__set-leader">
@@ -57,3 +62,4 @@
 {% endif %}
 
 </web-assessment>
+{% endmacro %}

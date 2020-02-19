@@ -6,27 +6,31 @@ description: |
   Learn how to use web.dev's self-assessment components.
 ---
 
-Use self-assessments to provide opportunities for users
+Self-assessments provide opportunities for users
 to check their understanding of concepts covered in your post.
-Here's a self-assessment with some dummy questions:
 
-{% include 'content/self-assessment.njk' %}
+<!--lint disable no-unescaped-template-tags-->
+{% from "content/self-assessment.njk" import selfAssessment %}
+{{ selfAssessment(assessments[0]) }}
+<!--lint disable no-unescaped-template-tags-->
 
-## Create a self-assessment
-
-1. [Get started](#get-started)
+1. [Start a self-assessment](#start-a-self-assessment)
 1. [Question set parameters](#question-set-parameters)
 1. [Question anatomy and parameters](#question-anatomy-and-parameters)
 1. [Response types](#response-types)
     - [Multiple-choice](#multiple-choice)
     - [Think-and-checks](#think-and-checks)
     - [Composite questions](#composite-questions)
+1. [Multiple sets in one post](#multiple-sets-in-one-post)
 
-## Get started
+## Start a self-assessment
 
 To include a self-assessment in your post:
-1. Add `{% raw %}{% include 'content/self-assessment.njk' %}{% endraw %}`
-   to your post where you want the self-assessment to appear.
+1. Add these lines to your post where you want the self-assessment to appear:
+    ```html
+    {% raw %}{% from "content/self-assessment.njk" import selfAssessment %}
+    {{ selfAssessment(assessments[0]) }}{% endraw %}
+    ```
 1. Copy `_template-self-assessment.11tydata.js` in `src/site/_drafts/_template-self-assessment`
    to your post's directory.
 1. Change the copied file's name to `your-post-directory-name.11tydata.js`.
@@ -150,3 +154,14 @@ The more response components there are, the harder the question is.
 It's better to break up a multi-part question into separate questions
 unless the parts are truly interdependent.
 {% endAside %}
+
+## Multiple sets in one post
+To include another set in your post,
+add an assessment object to your `*.11tydata.js` file and
+use the appropriate index in the Nunjucks function.
+For example, if you want to include the second assessment in the data file,
+you'd use:
+
+```html
+{% raw %}{{ selfAssessment(assessments[1]) }}{% endraw %}
+```
