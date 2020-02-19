@@ -43,6 +43,7 @@ The YAML fields at the start of each piece of web.dev content define how the pie
 * `codelabs`: The slug(s) for the codelabs, if any, associated with the post.
   All indicated codelabs appear in a callout at the end of the post.
 * `tags`: Tags for the site search. The `post` tag is required for a post to appear on the blog.
+* `translation`: true/machine/manual. Set only if the post is a translation from another, original post.
 
 Codelabs have two additional fields:
 * `glitch`: The name of the glitch to be presented in the right pane.

@@ -65,6 +65,7 @@ const containsTag = require(`./${filtersDir}/contains-tag`);
 const expandContributors = require(`./${filtersDir}/expand-contributors`);
 const findTags = require(`./${filtersDir}/find-tags`);
 const githubLink = require(`./${filtersDir}/github-link`);
+const gitlocalizeLink = require(`./${filtersDir}/gitlocalize-link`);
 const htmlDateString = require(`./${filtersDir}/html-date-string`);
 const md = require(`./${filtersDir}/md`);
 const pagedNavigation = require(`./${filtersDir}/paged-navigation`);
@@ -160,6 +161,7 @@ module.exports = function(config) {
   config.addFilter('containsTag', containsTag);
   config.addFilter('expandContributors', expandContributors);
   config.addFilter('githubLink', githubLink);
+  config.addFilter('gitlocalizeLink', gitlocalizeLink);
   config.addFilter('htmlDateString', htmlDateString);
   config.addFilter('md', md);
   config.addFilter('pagedNavigation', pagedNavigation);

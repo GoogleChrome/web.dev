@@ -16,12 +16,12 @@
 const fs = require("fs");
 const localeCode = require("iso-639-1");
 const path = require("path");
+const DEFAULT_LOCALE = require("./src/site/_data/site").defaultLocale;
 
 const isProd = Boolean(process.env.GAE_APPLICATION);
 const contentDir = isProd ? "dist" : "src/site/content";
 const dirs = fs.readdirSync(path.join(__dirname, contentDir));
 const SUPPORTED_LOCALES = dirs.filter((dir) => localeCode.validate(dir));
-const DEFAULT_LOCALE = "en";
 
 const isSupported = (locale) => SUPPORTED_LOCALES.indexOf(locale) > -1;
 

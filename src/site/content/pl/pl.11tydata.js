@@ -8,8 +8,10 @@
 
 module.exports = function() {
   const lang = "pl";
+  const translation = true;
 
   return {
     lang,
+    translation
   };
 };

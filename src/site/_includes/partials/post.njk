@@ -54,6 +54,32 @@
       </div>
     {% endif %}
 
+    {% if translation %}
+      {% if translation === true %}
+        <div class="w-banner w-banner--warning w-banner--body">
+          This page is not translated yet.
+          Consider improving it by contributing your translation
+          <a href="{{ page.inputPath | gitlocalizeLink(lang) }}">here</a>.
+        </div>
+      {% endif %}
+      {% if translation === 'machine' %}
+        <div class="w-banner w-banner--caution w-banner--body">
+          This page is automatically translated using Google Translation API.
+          Consider improving it by contributing your translation
+          <a href="{{ page.inputPath | gitlocalizeLink(lang) }}">here</a>.
+        </div>
+      {% endif %}
+      {% if translation === 'manual' %}
+        <div class="w-banner w-banner--info w-banner--body">
+        {{url}}
+          This article was translated from
+          <a href="/en{{ page.url | stripLanguage}}">the original post</a>.
+          Consider improving it by contributing your translation
+          <a href="{{ page.inputPath | gitlocalizeLink(lang) }}">here</a>.
+        </div>
+      {% endif %}
+    {% endif %}
+
     {{ content | safe }}
 
     <div class="w-chips">
