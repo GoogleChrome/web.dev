@@ -25,9 +25,10 @@ You can see the full list of new and potential capabilities at
 
 ## Capabilities available behind a flag {: #flag }
 
-These APIs are only available behind a flag because they're still under
-development and should be considered *experimental*. There's a good chance
-they'll break, or the API surface will change.
+These APIs are only available behind a flag. They're experimental and still
+under development. They are not ready for use in production. There's a good
+chance there are bugs, that these APIs will break, or the API surface will
+change.
 
 <div class="w-table-wrapper">
   <table>
