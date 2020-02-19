@@ -4,7 +4,7 @@ title: Provide a custom install experience
 authors:
   - petelepage
 date: 2020-02-14
-updated: 2020-02-18
+updated: 2020-02-19
 description: |
   Use the beforeinstallprompt event to provide a custom, seamless install
   experience for your users.
@@ -148,9 +148,11 @@ PWA, use conditional CSS:
 ```
 
 ### Track how the PWA was launched
+
 To track how users launch your PWA, use `matchMedia()` to test the
 `display-mode` media query. Unfortunately, Safari on iOS doesn't support
-this yet, so you must check `navigator.standalone`.
+this yet, so you must check `navigator.standalone`, it returns a boolean
+indicating whether the browser is running in standalone mode.
 
 ```js
 window.addEventListener('load', () => {
