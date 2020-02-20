@@ -23,7 +23,7 @@ and the Samsung browser. Safari has partial support.
 ## Create the manifest.webmanifest file
 
 The manifest file can have any name, but is commonly named
-`manifest.webmanifest` and served from the root (your website's top level
+`manifest.webmanifest` and served from the root (your website's top-level
 directory).
 
 ```json
