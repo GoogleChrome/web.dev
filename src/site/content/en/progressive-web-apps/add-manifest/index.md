@@ -62,7 +62,7 @@ places where space may be limited. `name` is used when the app is installed.
 #### `icons` {: #icons }
 
 When a user installs your PWA, you can define a set of icons for the browser
-to use like the home screen, app launcher, task switcher, splash screen, etc.
+to use on the home screen, app launcher, task switcher, splash screen, and so on.
 
 The `icons` property is an array of image objects. Each object must
 include the `src`, a `sizes` property, and the `type` of image. To use
