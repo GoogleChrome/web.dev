@@ -289,7 +289,7 @@ want push notifications for early access to new collections and to know when
 their items have shipped. They want the app on their home screen for quick
 access to the catalog and a full screen experience.
 
-Patterns that work well for eCommerce PWAs include:
+Patterns that work well for e-commerce PWAs include:
 
 * [Banner](#banner)
 * [Header](#header)
