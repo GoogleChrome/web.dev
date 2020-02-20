@@ -15,7 +15,7 @@ This is a living document and will be updated as features move between
 states.
 {% endAside %}
 
-The [capabilities project][capabilities-project] is a cross-company effort
+The [capabilities project][capabilities-project] is a cross-company effort at Google
 to make it possible for web apps to do anything native apps can, by exposing the
 capabilities of native platforms to the web platform, while maintaining user
 security, privacy, trust, and other core tenets of the web.
