@@ -34,7 +34,7 @@ to implement a PWA installation promotion.
 
 ## PWA install promotion best practices {: #best-practices }
 
-Here are some best practices apply no matter what promotional patterns you're
+Here are some best practices that apply no matter what promotional patterns you're
 using on your site.
 
 * Keep promotions outside of the flow of your user journeys. For example,
