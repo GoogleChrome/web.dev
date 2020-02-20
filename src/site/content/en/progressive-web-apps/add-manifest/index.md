@@ -18,7 +18,7 @@ the app name, the icons the app should use, and the URL that should be opened wh
 app is launched.
 
 Manifest files are supported in Chrome, Edge, Firefox, UC Browser, Opera,
-the Samsung browser. Safari has partial support.
+and the Samsung browser. Safari has partial support.
 
 ## Create the manifest.webmanifest file
 
