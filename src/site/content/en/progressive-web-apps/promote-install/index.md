@@ -13,7 +13,7 @@ draft: true
 ---
 
 Progressive Web Apps (PWAs) are a pattern for creating app-like, instant
-loading, reliable, and installable websites and why would you want a user to
+loading, reliable, and installable websites. Why would you want a user to
 install your web app? The same reason you'd want a user to install your native
 app from any app store.
 
