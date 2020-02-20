@@ -118,7 +118,7 @@ be made to launch full screen.
         <td>
           Opens the web app to look and feel like a standalone native
           app. The app runs in its own window, separate from the browser, and
-          hides standard browser UI elements like the URL bar, etc.</td>
+          hides standard browser UI elements like the URL bar.</td>
       </tr>
       <tr>
         <td><code>minimal-ui</code></td>
