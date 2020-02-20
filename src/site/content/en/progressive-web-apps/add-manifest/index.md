@@ -194,7 +194,7 @@ To verify your manifest is setup correctly, use the **Manifest** pane in the
        alt="The application panel in Chrome Devtools with the manifest tab selected.">
 </figure>
 
-This tab provides a human-readable version of many of your manifest's
+This pane provides a human-readable version of many of your manifest's
 properties, and makes it easy to verify that all of the images are loading
 properly.
 
