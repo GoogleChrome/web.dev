@@ -23,6 +23,7 @@
   transition: opacity 75ms, transform 0s 75ms, visibility 0s 75ms;
   visibility: hidden;
   white-space: nowrap;
+  z-index: 1;
 }
 
 .w-tooltip--left {
