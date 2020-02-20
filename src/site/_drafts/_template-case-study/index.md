@@ -12,6 +12,8 @@ tags:
 {# 
  # General guidelines:
  #
+ # Case study eligibility criteria: go/web-partner-showcase (restricted to Googlers)
+ #
  # You're writing this case study because you want to persuade a senior technical or business leader
  # to make some sort of change in their company. These people are **busy**. Your case study should
  # follow the inverted pyramid model [1] and should be as short as possible (probably less than 500 words).
