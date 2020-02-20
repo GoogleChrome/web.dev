@@ -10,9 +10,12 @@ Self-assessments provide opportunities for users
 to check their understanding of concepts covered in your post.
 
 <!--lint disable no-unescaped-template-tags-->
-{% from "content/self-assessment.njk" import selfAssessment %}
+{% from "content/self-assessment.njk" import 'selfAssessment' %}
 {{ selfAssessment(assessments[0]) }}
 <!--lint disable no-unescaped-template-tags-->
+{% Assessment page, 'self-assessment' %}
+
+{% Assessment page, 'self-assessment-2' %}
 
 1. [Start a self-assessment](#start-a-self-assessment)
 1. [Question set parameters](#question-set-parameters)
