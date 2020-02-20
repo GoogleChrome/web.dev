@@ -224,6 +224,6 @@ you can provide additional icons for pixel perfection.
 ## Further reading
 
 There are several additional properties that can be added to the web app
-manifest, refer to the [MDN Web App Manifest documentation][mdn-manifest] for
+manifest. Refer to the [MDN Web App Manifest documentation][mdn-manifest] for more information.
 
 [mdn-manifest]: https://developer.mozilla.org/en-US/docs/Web/Manifest
