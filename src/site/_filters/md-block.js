@@ -6,8 +6,8 @@ const markdownItOptions = {
   highlight: function(str, lang) {
     // TODO: Abstract this so it doesn't duplicate 11ty config
     // TODO: Figure out why line breaks are ignored
-    if (lang && prism.languages[lang]) {
-      return Prism.highlight(str, prism.languages[lang], "" + lang + "");
+    if (lang && Prism.languages[lang]) {
+      return Prism.highlight(str, Prism.languages[lang], "" + lang + "");
     }
 
     return ""; // use external default escaping
