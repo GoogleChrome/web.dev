@@ -184,7 +184,7 @@ Make sure you:
 * Wait until the user has demonstrated interest in your site before showing
   a banner. If the user dismisses your banner, don't show it again unless
   the user triggers a conversion event that indicates a higher level of
-  engagement with your content such as a purchase on an eCommerce site or
+  engagement with your content such as a purchase on an e-commerce site or
   signing up for an account.
 * Provide a brief explanation of the value of installing your PWA in the
   banner. For example, you can differentiate the install of a PWA from a
