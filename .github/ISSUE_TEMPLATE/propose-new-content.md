@@ -1,28 +1,14 @@
 ---
-name: Propose new content or update existing content
-about: Use this ticket for anything related to adding/updating/removing web.dev content
+name: Propose new content
+about: Use this template to propose new web.dev content
 title: 'content: TODO'
 labels: content
 assignees: 'kaycebasques'
 ---
 
-* Use this template to update existing content or propose new content.
+* Use this template to propose new content.
 * Delete any fields that aren't relevant to your issue. 
 * Update the title of this issue with a brief summary of the work to be done.
-
-## Update existing content
-
-### What page(s) need to be updated?
-
-Provide a list of URLs.
-
-### Why is this update needed?
-
-### What's the deadline?
-
-#### Is it a hard deadline?
-
-If yes, please explain why.
 
 ## Propose new content
 
