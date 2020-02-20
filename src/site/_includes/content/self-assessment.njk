@@ -19,9 +19,11 @@
 {% macro assessmentQuestion(question) %}
 <web-question>
 
+{% if question.stimulus %}
 {% Block 'stimulus' %}
 {{ question.stimulus | safe }}
 {% endBlock %}
+{% endif %}
 
 {% for component in question.components %}
 {{ responseComponent(component) }}
