@@ -255,7 +255,7 @@ Make sure you:
 ### Sign up, sign in, or sign out flow {: #sign-up}
 
 This promotion is a special case of the [journey](#journey) promotional
-pattern where the promotion card can be a more prominent.
+pattern where the promotion card can be more prominent.
 
 <figure class="w-figure w-figure--inline-right">
   <img src="sign-up.png" alt="Custom install button on the sign up page.">
