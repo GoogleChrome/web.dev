@@ -352,7 +352,7 @@ Patterns that work well for news and social PWAs include:
 
 ### Games
 
-The modern web is a great distribution platform for games with the biggest
+The modern web is a great distribution platform for games because it has the biggest
 reach in the world.
 
 Patterns that work well for PWA games include:
