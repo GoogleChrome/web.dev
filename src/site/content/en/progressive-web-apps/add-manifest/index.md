@@ -17,7 +17,7 @@ desktop or mobile device. A typical manifest file includes
 the app name, the icons the app should use, and the URL that should be opened when the
 app is launched.
 
-Manifest files are supported in Chrome, Edge, Firefox, UC Browser, Opera,
+Manifest files are [supported](https://caniuse.com/#feat=web-app-manifest) in Chrome, Edge, Firefox, UC Browser, Opera,
 and the Samsung browser. Safari has partial support.
 
 ## Create the manifest.webmanifest file
