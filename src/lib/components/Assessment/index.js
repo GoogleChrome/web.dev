@@ -19,6 +19,8 @@ import {BaseElement} from "../BaseElement";
 
 class Assessment extends BaseElement {
   render() {
+    this.classList.add("w-callout");
+
     if (!this.prerenderedChildren) {
       this.prerenderedChildren = [];
       this.setLeader = [];
