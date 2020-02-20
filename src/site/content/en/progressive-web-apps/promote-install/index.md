@@ -76,7 +76,7 @@ and then again after approximately 90 days.
 ## Application UI promotional patterns {: #app-ui-patterns }
 
 Application UI promotional patterns can be used for almost any kind of PWA and
-appear in the application UI, such as site navigation, banners, etc. As with
+appear in the application UI, such as site navigation and banners. As with
 any other type of promotional pattern, it's important to be aware of the
 user's context to minimize disruption of the user's journey.
 
