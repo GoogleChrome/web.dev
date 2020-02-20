@@ -62,6 +62,7 @@ class SideNav extends BaseElement {
           <button
             @click=${this.onCloseSideNav}
             class="web-side-nav__hide"
+            aria-label="Close"
           ></button>
           <a
             href="/"
