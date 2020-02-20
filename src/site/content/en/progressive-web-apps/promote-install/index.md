@@ -17,7 +17,7 @@ loading, reliable, and installable websites. Why would you want a user to
 install your web app? The same reason you'd want a user to install your native
 app from any app store.
 
-Users who install are your most engaged users. Users who install a PWA
+Users who install are your most engaged users. Users who install
 have better engagement metrics than casual visitors, including more repeat
 visits, longer time on site and higher conversion rates, often at parity with
 native app users on mobile devices.
