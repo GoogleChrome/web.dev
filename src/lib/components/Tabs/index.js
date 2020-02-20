@@ -62,6 +62,7 @@ class Tabs extends BaseElement {
     super.connectedCallback();
     window.addEventListener("resize", this.onResize);
   }
+
   disconnectedCallback() {
     window.removeEventListener("resize", this.onResize);
     super.disconnectedCallback();
@@ -88,7 +89,6 @@ class Tabs extends BaseElement {
     }
 
     switch (tabLabel) {
-      default:
       case "question":
         tabLabel = "Question " + i;
         break;
@@ -97,6 +97,8 @@ class Tabs extends BaseElement {
         break;
       case "bare":
         tabLabel = i;
+        break;
+      default:
         break;
     }
 
