@@ -185,7 +185,7 @@ include `crossorigin="use-credentials"` in the manifest tag.
 
 ## Test your manifest
 
-To verify your manifest is setup correctly, use the **Manifest** tab on the
+To verify your manifest is setup correctly, use the **Manifest** pane in the
 **Application** panel of Chrome DevTools.
 
 <figure class="w-figure">
