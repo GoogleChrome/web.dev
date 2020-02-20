@@ -125,7 +125,7 @@ be made to launch full screen.
         <td>
           This mode is similar to <code>fullscreen</code>, but provides the
           user a minimal set of UI elements for
-          controlling navigation (i.e., back, forward, reload, etc).
+          controlling navigation (such as back, forward, and reload).
         </td>
       </tr>
       <tr>
