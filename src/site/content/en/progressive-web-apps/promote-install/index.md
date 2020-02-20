@@ -274,7 +274,7 @@ Make sure you:
 * Avoid disrupting the user's journey inside the sign up form. If it's a
   multi-step process, you might want to wait until the user has completed the
   journey.
-* Promote features most relevant to a signed up user.
+* Promote features most relevant to a signed-up user.
 * Consider adding an additional install promotion within the signed-in areas
   of your app.
 
