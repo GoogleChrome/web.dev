@@ -21,7 +21,7 @@ capabilities of native platforms to the web platform, while maintaining user
 security, privacy, trust, and other core tenets of the web.
 
 You can see the full list of new and potential capabilities at
-<https://goo.gle/fugu-api-tracker>.
+the [Fugu API Tracker](https://goo.gle/fugu-api-tracker).
 
 ## Capabilities available behind a flag {: #flag }
 
