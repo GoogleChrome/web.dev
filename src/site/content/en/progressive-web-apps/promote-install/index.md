@@ -246,7 +246,7 @@ Make sure you:
 * If your brand has unique offers for installed app users, be sure to mention
   them here.
 * Keep the promotion out of the way of next steps in your journey or you can
-  negatively affect your journey completion rates. In the eCommerce example
+  negatively affect your journey completion rates. In the e-commerce example
   above, notice how the key journey call-to-action to checkout is above the
   app install promotion.
 
