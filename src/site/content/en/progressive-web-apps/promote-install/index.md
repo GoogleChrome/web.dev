@@ -282,7 +282,7 @@ Make sure you:
 
 ## What patterns should I use?
 
-### eCommerce
+### e-commerce
 
 Many eCommerce brands have a core group of loyal customers. These customers
 want push notifications for early access to new collections and to know when
