@@ -148,7 +148,7 @@ If the user clicks a link in your app that navigates outside of the
 `scope`, the link will open and render within the existing PWA window. If
 you want the link to open in a browser tab, you must add `target="_blank"`
 to the `<a>` tag. On Android, links with `target="_blank"` will open in a
-Chrome Custom Tab.
+<a href="https://developer.chrome.com/multidevice/android/customtabs">Chrome Custom Tab</a>.
 {% endAside %}
 
 A few other notes on `scope`:
