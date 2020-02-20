@@ -337,7 +337,7 @@ Patterns that work well for rich media and communications PWAs include:
 
 ### News
 
-If you work on a content oriented site, chances are you have regular users
+If you work on a content-oriented site, chances are you have regular users
 who would be interested in installing your PWA.
 
 Patterns that work well for news and social PWAs include:
