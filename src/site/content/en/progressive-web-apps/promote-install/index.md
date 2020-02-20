@@ -247,7 +247,7 @@ Make sure you:
   them here.
 * Keep the promotion out of the way of next steps in your journey or you can
   negatively affect your journey completion rates. In the e-commerce example
-  above, notice how the key journey call-to-action to checkout is above the
+  above, notice how the key call to action to checkout is above the
   app install promotion.
 
 <div class="w-clearfix">&nbsp;</div>
