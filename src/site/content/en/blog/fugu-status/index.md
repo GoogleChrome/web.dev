@@ -248,7 +248,7 @@ latest version of Chrome, and in many cases other Chromium based browsers.
 
 ## Suggest a new capability {: #suggest-new }
 
-Do you have a suggestion for a capability you think we should consider?
+Do you have a suggestion for a capability you think Chrome should consider?
 Tell us about it by filing a [new feature request](https://goo.gl/qWhHXU).
 Please be sure to include as much detail as you can, such as
 the problem you're trying to solve, suggested use cases, and anything else
