@@ -87,12 +87,16 @@ class Assessment extends BaseModalElement {
 
   connectedCallback() {
     super.connectedCallback();
-    window.addEventListener("resize", this.onAssessmentResize);
+    const mqString = `(min-width: 481px)`;
+
+    matchMedia(mqString).addListener(this.onAssessmentResize);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    window.removeEventListener("resize", this.onAssessmentResize);
+    const mqString = `(min-width: 481px)`;
+
+    matchMedia(mqString).removeListener(this.onAssessmentResize);
   }
 
   onOpenClick() {
@@ -167,10 +171,11 @@ class Assessment extends BaseModalElement {
     if (activeTab) activeTab.focus();
   }
 
+  // Close modal when viewport is wider than mobile breakpoint
+  // (src/styles/tools/_breakpoints.scss)
+  // so things don't break if a mobile user switches to landscape orientation.
   onAssessmentResize() {
-    const viewportWidth = window.innerWidth;
-
-    if (viewportWidth > 481) this.open = false;
+    this.open = false;
   }
 }
 
