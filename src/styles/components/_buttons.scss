@@ -158,6 +158,8 @@
   display: inline-block;
   height: 24px;
   margin-right: 16px;
+  // To prevent screen readers from reading icon names.
+  speak: none;
   width: 24px;
 }
 
