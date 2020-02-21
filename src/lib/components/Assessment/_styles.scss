@@ -3,6 +3,14 @@ web-assessment {
   flex-direction: column;
   padding: 0;
 
+  &[animatable] {
+    animation: .25s ease reverse modal-slideup;
+  }
+
+  &[animatable][open] {
+    animation: .25s ease modal-slideup;
+  }
+
   // Override inline style
   @media (max-width: 480px) {
     & {
@@ -13,7 +21,7 @@ web-assessment {
   @include bp(sm) {
     & {
       height: 40rem;
-      padding: 0 !important; // Override w-callout
+      padding: 0 !important; // Override .w-callout
     }
   }
 
@@ -23,6 +31,19 @@ web-assessment {
   }
 }
 
+@keyframes modal-slideup {
+  0% {
+    transform: translatey(40%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+// Overrides .w-button--primary so button matches self-assessment color
 .web-assessment__open,
 .web-assessment__open:hover,
 .web-assessment__open:active,
@@ -50,9 +71,8 @@ web-assessment {
   flex: 1;
 }
 
-// Adjust visisbility of open button, close button, and callout content
-// when in modal view on mobile.
-.web-assessment--modal {
+web-assessment[open],
+web-assessment[animatable] {
   background: $WHITE;
   bottom: 0;
   left: 0;
@@ -62,6 +82,8 @@ web-assessment {
   top: 0;
   z-index: 250; // Between Header and SideNav
 
+  // Adjust visisbility of open button, close button, set leader, and content
+  // when in modal view on mobile.
   .web-assessment__open {
     display: none;
   }
@@ -110,7 +132,7 @@ web-assessment {
 
   // Override visisbility of close button and set leader
   // when in modal view on desktop (in case JS fails).
-  .web-assessment--modal {
+  web-assessment[open] {
     margin: 2.25em 0;
     position: unset;
     z-index: unset;

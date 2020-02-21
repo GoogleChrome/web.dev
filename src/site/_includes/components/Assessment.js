@@ -204,7 +204,7 @@ module.exports = (page, targetAssessment) => {
 
   // prettier-ignore
   return html`
-    <web-assessment ${height} class="${assessment.questions.length === 1 && "web-assessment--singleton"}">
+    <web-assessment ${height} class="${assessment.questions.length === 1 && "web-assessment--singleton"}" aria-label="Check your understanding">
       ${headerTemplate(assessment)} ${contentTemplate(assessment)}
     </web-assessment>
   `;

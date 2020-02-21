@@ -14,10 +14,30 @@
  * limitations under the License.
  */
 
+/**
+ * Element that renders a self-assessment callout.
+ * @extends {BaseModalElement}
+ * @final
+ */
 import {html} from "lit-element";
-import {BaseElement} from "../BaseElement";
+import {BaseModalElement} from "../BaseModalElement";
+import {handleOverflow} from "../../utils/handle-overflow";
 
-class Assessment extends BaseElement {
+class Assessment extends BaseModalElement {
+  static get properties() {
+    return {
+      modal: {attribute: "aria-modal", reflect: true},
+    };
+  }
+
+  constructor() {
+    super();
+    this.modal = false;
+
+    this.onAssessmentAnimationEnd = this.onAssessmentAnimationEnd.bind(this);
+    this.onAssessmentResize = this.onAssessmentResize.bind(this);
+  }
+
   render() {
     this.classList.add("w-callout");
 
@@ -34,7 +54,6 @@ class Assessment extends BaseElement {
       }
     }
 
-    // prettier-ignore
     return html`
       <div class="w-callout__header web-assessment__header">
         <h2 class="w-callout__lockup web-assessment__lockup">
@@ -42,6 +61,7 @@ class Assessment extends BaseElement {
         </h2>
         ${this.setLeader}
         <button
+          @click="${this.onCloseClick}"
           class="w-button--icon w-button--round web-assessment__close"
           data-icon="close"
         >
@@ -50,11 +70,107 @@ class Assessment extends BaseElement {
           </span>
         </button>
       </div>
-      <button class="w-button w-button--primary web-assessment__open">
+      <button
+        @click="${this.onOpenClick}"
+        class="w-button w-button--primary web-assessment__open"
+      >
         Open quiz
       </button>
       ${this.prerenderedChildren}
     `;
+  }
+
+  firstUpdated() {
+    // Override BaseModalElement's inert behavior since Assessment opens itself.
+    this.inert = false;
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    window.addEventListener("resize", this.onAssessmentResize);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    window.removeEventListener("resize", this.onAssessmentResize);
+  }
+
+  onOpenClick() {
+    this.open = true;
+  }
+
+  onCloseClick() {
+    this.open = false;
+  }
+
+  updated(changedProps) {
+    if (changedProps.has("open")) {
+      this.modal = this.open;
+      if (this.open) {
+        this.openModal();
+      } else {
+        this.addEventListener("animationend", this.closeModal, {
+          once: true,
+        });
+      }
+    }
+  }
+
+  openModal() {
+    // Insert a placeholder element into the DOM where the assessment was
+    // so the assessment can be reinserted there once it's closed.
+    const placeholder = document.createElement("div");
+
+    placeholder.className = "web-assessment__placeholder";
+    this.after(placeholder);
+    // Since the assessment opens itself, only set the dialog role
+    // while it's open.
+    this.setAttribute("role", "dialog");
+    this.addEventListener("animationend", this.onAssessmentAnimationEnd, {
+      once: true,
+    });
+
+    // Move the assessment to the end of the body so it's not
+    // inside an inert element.
+    // NOTE: append() MOVES a lit-element, properties and all.
+    document.body.append(this);
+  }
+
+  closeModal() {
+    const placeholder = document.querySelector(".web-assessment__placeholder");
+
+    // Since Assessment opens itself, override BaseModalElement's inert behavior
+    // and remove the dialog role.
+    this.inert = false;
+    this.removeAttribute("role");
+    // Again, appending moves rather than copies a lit-element.
+    if (placeholder) {
+      placeholder.before(this);
+      placeholder.remove();
+    }
+
+    // Since the assessment is removed and reinserted into the DOM
+    // after BaseModalElement's manageFocus() method runs,
+    // focus reverts to the body, so need to focus the assessment's Open button.
+    this.querySelector(".web-assessment__open").focus();
+  }
+
+  // Apply overflow class to tabs if needed.
+  // Override default modal focus behavior so active tab is always in viewport
+  // when assessment is opened.
+  // TODO: Get active tab as prop of Tabs
+  onAssessmentAnimationEnd() {
+    const tabs = this.querySelector(".web-tabs__tablist");
+    const activeTab = this.querySelector(".web-tabs__tab[aria-selected=true]");
+
+    if (tabs) handleOverflow(tabs, "width", "web-tabs--overflow");
+    if (activeTab) activeTab.focus();
+  }
+
+  onAssessmentResize() {
+    const viewportWidth = window.innerWidth;
+
+    if (viewportWidth > 481) this.open = false;
   }
 }
 
