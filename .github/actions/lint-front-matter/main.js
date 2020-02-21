@@ -1,8 +1,8 @@
 const core = require('@actions/core');
-const getMarkdownFiles = require('./utils/get-markdown-files.js.js');
-const lintAllFiles = require('./linters/all-files.js.js');
-const lintAddedFiles = require('./linters/added-files.js.js');
-const lintModifiedFiles = require('./linters/modified-files.js.js');
+const getMarkdownFiles = require('./utils/get-markdown-files');
+const lintAllFiles = require('./linters/all-files');
+const lintAddedFiles = require('./linters/added-files');
+const lintModifiedFiles = require('./linters/modified-files');
 
 try {
   const added = getMarkdownFiles(core.getInput('added'));

@@ -1,5 +1,5 @@
-const getYamlFrontMatter = require('../utils/get-yaml-front-matter.js.js');
-const checkHasProperty = require('../rules/has-property.js/index.js.js');
+const getYamlFrontMatter = require('../utils/get-yaml-front-matter');
+const checkHasProperty = require('../rules/has-property.js/index');
 
 /**
  * @param {Array<string>} files Files that should be linted.

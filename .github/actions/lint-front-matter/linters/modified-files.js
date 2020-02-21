@@ -1,6 +1,6 @@
-const getYamlFrontMatter = require('../utils/get-yaml-front-matter.js.js');
-const checkHasProperty = require('../rules/has-updated.js.js');
-const checkUpdatedIsCurrent = require('../rules/updated-is-current.js.js');
+const getYamlFrontMatter = require('../utils/get-yaml-front-matter');
+const checkHasProperty = require('../rules/has-updated');
+const checkUpdatedIsCurrent = require('../rules/updated-is-current');
 
 /**
  * @param {Array<string>} files Files that should be linted.
