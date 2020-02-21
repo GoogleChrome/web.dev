@@ -52,6 +52,7 @@ const {Image, Figure} = require(`./${tagsDir}/Image`);
 
 const collectionsDir = 'src/site/_collections';
 const paginatedBlogPosts = require(`./${collectionsDir}/paginated-blog-posts`);
+const paginatedPostsByAuthor = require(`./${collectionsDir}/paginated-posts-by-author`);
 const paginatedPostsByTag = require(`./${collectionsDir}/paginated-posts-by-tag`);
 const postDescending = require(`./${collectionsDir}/post-descending`);
 const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
@@ -137,6 +138,7 @@ module.exports = function(config) {
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('recentPosts', recentPosts);
   config.addCollection('paginatedBlogPosts', paginatedBlogPosts);
+  config.addCollection('paginatedPostsByAuthor', paginatedPostsByAuthor);
   config.addCollection('paginatedPostsByTag', paginatedPostsByTag);
   // Turn collection.all into a lookup table so we can use findBySlug
   // to quickly find collection items without looping.
