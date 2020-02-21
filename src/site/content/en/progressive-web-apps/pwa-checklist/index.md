@@ -8,8 +8,6 @@ date: 2020-01-06
 updated: 2020-02-24
 description: |
   What makes a good, or great Progressive Web App?
-tags:
-  - post
 ---
 
 <!-- Disable heading-increment because it mucks with the Details widget -->

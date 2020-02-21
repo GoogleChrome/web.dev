@@ -7,8 +7,6 @@ date: 2019-06-04
 updated: 2020-02-24
 description: |
   How to promote installation of Progressive Web Apps and best practices.
-tags:
-  - post
 ---
 
 Progressive Web Apps (PWAs) are a pattern for creating app-like, instant

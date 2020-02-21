@@ -7,8 +7,6 @@ date: 2020-02-14
 updated: 2020-02-24
 description: |
   Progressive Web App installability criteria.
-tags:
-  - post
 ---
 
 Many browsers indicate to the user that your Progressive Web App (PWA) is

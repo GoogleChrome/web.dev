@@ -8,8 +8,6 @@ updated: 2020-02-24
 description: |
   Use the beforeinstallprompt event to provide a custom, seamless install
   experience for your users.
-tags:
-  - post
 ---
 
 Many browsers make it possible for you to enable and promote the installation

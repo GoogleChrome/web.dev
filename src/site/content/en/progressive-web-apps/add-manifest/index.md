@@ -9,8 +9,6 @@ description: |
   The web app manifest is a simple JSON file that tells the browser about your
   web application and how it should behave when installed on the user's mobile
   device or desktop.
-tags:
-  - post
 ---
 
 The web app manifest is a JSON file that tells the browser about your
