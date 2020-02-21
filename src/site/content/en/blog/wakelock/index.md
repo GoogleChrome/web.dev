@@ -259,6 +259,11 @@ critical it is to support them.
 * [Experimenting with the Wake Lock API](https://medium.com/dev-channel/experimenting-with-the-wake-lock-api-b6f42e0a089f)
 * Blink Component: [`Blink>WakeLock`](https://chromestatus.com/features#component%3ABlink%3EWakeLock)
 
+## Acknowledgements
+
+[Hero image](https://unsplash.com/photos/uy5t-CJuIK4) by
+[Kate Stone Matheson](https://unsplash.com/@kstonematheson) on Unsplash.
+
 [spec-ed]: https://w3c.github.io/wake-lock/
 [spec-cr]: https://www.w3.org/TR/wake-lock/
 [demo]: https://wake-lock-demo.glitch.me/
@@ -274,8 +279,3 @@ critical it is to support them.
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EWakeLock
 [cr-dev-twitter]: https://twitter.com/chromiumdev
 [ot]: https://developers.chrome.com/origintrials/#/view_trial/902971725287784449
-
-## Acknowledgements
-
-[Hero image](https://unsplash.com/photos/uy5t-CJuIK4) by
-[Kate Stone Matheson](https://unsplash.com/@kstonematheson) on Unsplash.
