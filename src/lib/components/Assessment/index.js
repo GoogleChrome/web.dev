@@ -39,8 +39,6 @@ class Assessment extends BaseModalElement {
   }
 
   render() {
-    this.classList.add("w-callout");
-
     if (!this.prerenderedChildren) {
       this.prerenderedChildren = [];
       this.setLeader = [];
