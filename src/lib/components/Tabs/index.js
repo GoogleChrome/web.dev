@@ -1,6 +1,6 @@
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
-import {checkOverflow} from "../../utils/check-overflow";
+import {handleOverflow} from "../../utils/handle-overflow";
 
 class Tabs extends BaseElement {
   static get properties() {
@@ -53,31 +53,6 @@ class Tabs extends BaseElement {
     `;
   }
 
-  firstUpdated() {
-    this.onResize();
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
-    window.addEventListener("resize", this.onResize);
-  }
-
-  disconnectedCallback() {
-    window.removeEventListener("resize", this.onResize);
-    super.disconnectedCallback();
-  }
-
-  onResize() {
-    const tabs = this.querySelector(".web-tabs__tablist");
-    const hasOverflow = checkOverflow(tabs, "width");
-
-    if (hasOverflow) {
-      tabs.classList.add("has-overflow");
-    } else {
-      tabs.classList.remove("has-overflow");
-    }
-  }
-
   tabTemplate(i, tabLabel) {
     let isActive = false;
     let tabIndex = "-1";
@@ -117,6 +92,26 @@ class Tabs extends BaseElement {
         <span class="web-tabs__text-label">${tabLabel}</span>
       </button>
     `;
+  }
+
+  firstUpdated() {
+    this.onResize();
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    window.addEventListener("resize", this.onResize);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    window.removeEventListener("resize", this.onResize);
+  }
+
+  onResize() {
+    const tabs = this.querySelector(".web-tabs__tablist");
+
+    handleOverflow(tabs, "width", "web-tabs--overflow");
   }
 
   onClick(e) {
