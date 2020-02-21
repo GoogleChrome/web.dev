@@ -33,9 +33,9 @@ module.exports = (collection) => {
     .getAll()
     .filter(livePosts)
     .sort((a, b) => b.date - a.date);
-  const tagsMap = new Map();
 
   // Map the posts to various tags in the post
+  const tagsMap = new Map();
   posts.forEach((post) => {
     const postDataTags = post.data.tags || [];
     postDataTags.forEach((postTag) => {

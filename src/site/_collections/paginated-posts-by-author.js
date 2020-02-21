@@ -33,9 +33,9 @@ module.exports = (collection) => {
     .getAll()
     .filter(livePosts)
     .sort((a, b) => b.date - a.date);
-  const authorsMap = new Map();
 
   // Map the posts by author's username
+  const authorsMap = new Map();
   posts.forEach((post) => {
     const authors = post.data.authors || [];
     authors.forEach((author) => {

@@ -41,7 +41,7 @@ module.exports = ({
   const fullName = `${author.name.given} ${author.name.family}`;
   return html`
     <div class="w-author">
-      <a href="/authors/${id}" tabindex="-1">
+      <a href="/authors/${id}">
         <img
           class="w-author__image ${small && `w-author__image--small`}"
           src="/images/authors/${id}.jpg"
