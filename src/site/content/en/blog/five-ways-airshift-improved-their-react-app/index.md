@@ -17,6 +17,8 @@ description: |
 tags:
   - post
   - fast
+  - case-study
+  - performance
 ---
 
 Website performance is not just about load time. It is critical to provide a fast and responsive experience to users, especially for productivity desktop apps which people use everyday. The engineering team at [Recruit Technologies](https://recruit-tech.co.jp/) went through a refactoring project to improve one of their web apps, [AirSHIFT](https://airregi.jp/shift/), for better user input performance. Here's how they did it.
@@ -35,15 +37,15 @@ The engineering manager of AirSHIFT, Yosuke Furukawa, said:
   In a user research study, we were shocked when one of the store owners said she
   would leave her seat to brew coffee after clicking a button, just to kill time waiting
   for the shift table to load.
-</blockquote> 
+</blockquote>
 
 After going through the research, the engineering team realized that many of their users were trying to load massive shift tables on low spec computers, such as a 1 GHz Celeron M laptop from 10 years ago.
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/airshift-perf-optimization/endless_spinner_vp9.webm" 
+    <source src="https://storage.googleapis.com/web-dev-assets/airshift-perf-optimization/endless_spinner_vp9.webm"
             type="video/webm; codecs=vp8">
-    <source src="https://storage.googleapis.com/web-dev-assets/airshift-perf-optimization/endless_spinner_h264.mp4" 
+    <source src="https://storage.googleapis.com/web-dev-assets/airshift-perf-optimization/endless_spinner_h264.mp4"
             type="video/mp4; codecs=h264">
   </video>
  <figcaption class="w-figcaption">
@@ -56,7 +58,7 @@ but the engineering team didn't realize how expensive the scripts were because t
 were developing and testing on rich spec computers with fast Wi-Fi connections.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="main-thread-break-down.png" 
+  <img class="w-screenshot" src="main-thread-break-down.png"
        alt="A chart that shows the app's runtime activity.">
   <figcaption class="w-figcaption">
     When loading the shift table, around 80% of the load time was consumed by running scripts.
@@ -64,7 +66,7 @@ were developing and testing on rich spec computers with fast Wi-Fi connections.
 </figure>
 
 After profiling their performance in Chrome DevTools with CPU and network throttling enabled,
-it became clear that performance optimization was needed. 
+it became clear that performance optimization was needed.
 AirSHIFT formed a task force to tackle this issue. Here are 5 things
 they focused on to make their app more responsive to user input.
 
@@ -73,10 +75,10 @@ they focused on to make their app more responsive to user input.
 
 Displaying the shift table required multiple expensive steps: constructing the virtual DOM and rendering it on screen in proportion to the number of staff members and time slots. For example, if a restaurant had 50 working members and wanted to check their monthly shift schedule, it would be a table of 50 (members) multiplied by 30 (days) which would lead to 1,500 cell components to render. This is a very expensive operation, especially for low spec devices. In reality, things were worse. From the research they learned there were shops managing 200 staff members, requiring around 6,000 cell components in a single monthly table.
 
-To reduce the cost of this operation, AirSHIFT virtualized the shift table. The app now only mounts the components within the viewport and unmounts the off-screen components. 
+To reduce the cost of this operation, AirSHIFT virtualized the shift table. The app now only mounts the components within the viewport and unmounts the off-screen components.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="virtualize_before.png" 
+  <img class="w-screenshot" src="virtualize_before.png"
        alt="An annotated screenshot that demonstrates that AirSHIFT used to render
             content outside of the viewport.">
   <figcaption class="w-figcaption">
@@ -85,7 +87,7 @@ To reduce the cost of this operation, AirSHIFT virtualized the shift table. The 
 </figure>
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="virtualize_after.png" 
+  <img class="w-screenshot" src="virtualize_after.png"
        alt="An annotated screenshot that demonstrates that AirSHIFT now only renders content
             that's visible in the viewport.">
   <figcaption class="w-figcaption">
@@ -100,7 +102,7 @@ In this case, AirSHIFT used [react-virtualized](https://github.com/bvaughn/react
 Virtualizing the table alone reduced scripting time by 6 seconds (on a 4x CPU slowdown + Fast 3G throttled Macbook Pro environment). This was the most impactful performance improvement in the refactoring project.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="virtualize_results_before.png" 
+  <img class="w-screenshot" src="virtualize_results_before.png"
        alt="An annotated screenshot of a Chrome DevTools Performance panel recording.">
   <figcaption class="w-figcaption">
     Before: Around 10 seconds of scripting after user input.
@@ -108,7 +110,7 @@ Virtualizing the table alone reduced scripting time by 6 seconds (on a 4x CPU sl
 </figure>
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="virtualize_results_after.png" 
+  <img class="w-screenshot" src="virtualize_results_after.png"
        alt="Another annotated screenshot of a Chrome DevTools Performance panel recording.">
   <figcaption class="w-figcaption">
     After: 4 seconds of scripting after user input.
@@ -125,7 +127,7 @@ makes it possible to analyze what's actually happening in the main thread.
 But the AirSHIFT team found it easier to analyze application activity based
 on React's lifecycle.
 
-React 16 provides its performance trace via the 
+React 16 provides its performance trace via the
 [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API),
 which you can visualize from the
 [Timings section](https://developers.google.com/web/updates/2018/04/devtools#tabs)
@@ -146,7 +148,7 @@ Related article: [Profiling Components with the Chrome Performance Tab](https://
 
 ### Results
 
-The AirSHIFT team discovered that an unnecessary 
+The AirSHIFT team discovered that an unnecessary
 [React Tree Reconciliation](https://reactjs.org/docs/reconciliation.html)
 was happening right before every route navigation. This meant that
 React was updating the shift table unnecessarily before navigations.
@@ -157,9 +159,9 @@ a 1 second total reduction in scripting time.
 
 ## 3. Lazy load components and move expensive logic to web workers
 
-AirSHIFT has a built-in chat application. Many store owners communicate with their staff members via the chat while looking at the shift table, which means that a user might be typing a message while the table is loading. If the main thread is occupied with scripts that are rendering the table, user input could be janky. 
+AirSHIFT has a built-in chat application. Many store owners communicate with their staff members via the chat while looking at the shift table, which means that a user might be typing a message while the table is loading. If the main thread is occupied with scripts that are rendering the table, user input could be janky.
 
-To improve this experience, AirSHIFT now uses [React.lazy and Suspense](https://web.dev/code-splitting-suspense/) to show placeholders for table contents while lazily loading the actual components. 
+To improve this experience, AirSHIFT now uses [React.lazy and Suspense](https://web.dev/code-splitting-suspense/) to show placeholders for table contents while lazily loading the actual components.
 
 The AirSHIFT team also migrated some of the expensive business logic
 within the lazily loaded components to
@@ -173,14 +175,14 @@ Typically developers face complexity in using workers but this time [Comlink](ht
 ```javascript
 /** App.js */
 import React, { lazy, Suspense } from 'react'
- 
+
 // Lazily loading the Cost component with React.lazy
 const Hello = lazy(() => import('./Cost'))
- 
+
 const Loading = () => (
   <div>Some fallback content to show while loading</div>
 )
- 
+
 // Showing the fallback content while loading the Cost component by Suspense
 export default function App({ userInfo }) {
    return (
@@ -198,7 +200,7 @@ export default function App({ userInfo }) {
 /** Cost.js */
 import React from 'react';
 import { proxy } from 'comlink';
- 
+
 // import the workerlized calc function with comlink
 const WorkerlizedCostCalc = proxy(new Worker('./WorkerlizedCostCalc.js'));
 export default function Cost({ userInfo }) {
@@ -214,7 +216,7 @@ export default function Cost({ userInfo }) {
 // WorkerlizedCostCalc.js
 import { expose } from 'comlink'
 import { someExpensiveCalculation } from './CostCalc.js'
- 
+
 // Expose the new workerlized calc function with comlink
 expose({
   calc(userInfo) {
@@ -231,9 +233,9 @@ Related article: [React + Redux + Comlink = Off-main-thread](https://dassur.ma/t
 ### Results
 
 Despite the limited amount of logic they workerized as a trial, AirSHIFT shifted around 100 ms of
-their JavaScript from the main thread to the worker thread (simulated with 4x CPU throttling). 
+their JavaScript from the main thread to the worker thread (simulated with 4x CPU throttling).
 
-<img class="w-screenshot" src="worker.png" 
+<img class="w-screenshot" src="worker.png"
      alt="A screenshot of a Chrome DevTools Performance panel recording that shows that
           scripting is now occurring on a web worker rather than the main thread.">
 
@@ -258,7 +260,7 @@ the 75th percentile users. This is an unenforced budget for now but they are con
 via Elasticsearch when they exceed their budget.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="kibana.png" 
+  <img class="w-screenshot" src="kibana.png"
        alt="A chart showing that the 75th percentile completes in around 2500 ms,
             the 50th percentile in around 1250 ms, the 25th percentile in around 750 ms,
             and the 10th percentile in around 500 ms.">

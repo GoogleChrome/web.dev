@@ -12,6 +12,7 @@ tags:
   - post # post is a required tag for the article to show up in the blog.
   - performance
   - service-worker
+  - case-study
 ---
 
 ## Background
