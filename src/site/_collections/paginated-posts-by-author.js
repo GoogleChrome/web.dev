@@ -17,7 +17,7 @@
 const contributors = require("../_data/contributors");
 const livePosts = require("../_filters/live-posts");
 const addPagination = require("../_utils/add-pagination");
-const mapValue = require("../_utils/map-value");
+const setdefault = require("../_utils/setdefault");
 
 /**
  * Returns all posts as an array of paginated authors.
@@ -39,7 +39,7 @@ module.exports = (collection) => {
   posts.forEach((post) => {
     const authors = post.data.authors || [];
     authors.forEach((author) => {
-      const postsByAuthor = mapValue(authorsMap, author);
+      const postsByAuthor = setdefault(authorsMap, author, []);
       postsByAuthor.push(post);
       authorsMap.set(author, postsByAuthor);
     });

@@ -15,13 +15,19 @@
  */
 
 /**
- * Returns value from map, or default if no value found.
+ * If key is in the Map, return its value.
+ * If not, insert key with a value of def and return def.
+ * def defaults to null.
  *
  * @param {Map<string, any>} map Map to get value from.
  * @param {string} key Key to get value from map.
  * @param {any} def Default value to return.
- * @return {any} Value found, or default if no value returned.
+ * @return {any} Value found, or def if not in map.
  */
-module.exports = (map, key, def = []) => {
-  return map.has(key) ? map.get(key) : def;
+module.exports = (map, key, def = null) => {
+  if (!map.has(key)) {
+    map.set(key, def);
+  }
+
+  return map.get(key);
 };

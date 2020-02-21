@@ -17,7 +17,7 @@
 const postTags = require("../_data/postTags");
 const livePosts = require("../_filters/live-posts");
 const addPagination = require("../_utils/add-pagination");
-const mapValue = require("../_utils/map-value");
+const setdefault = require("../_utils/setdefault");
 
 /**
  * Returns all posts as an array of paginated tags.
@@ -39,7 +39,7 @@ module.exports = (collection) => {
   posts.forEach((post) => {
     const postDataTags = post.data.tags || [];
     postDataTags.forEach((postTag) => {
-      const tagsPosts = mapValue(tagsMap, postTag);
+      const tagsPosts = setdefault(tagsMap, postTag, []);
       tagsPosts.push(post);
       tagsMap.set(postTag, tagsPosts);
     });
