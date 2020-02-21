@@ -40,12 +40,12 @@ module.exports = (locale, page, collections, renderData = {}) => {
     const social =
       pageData.social && pageData.social[platform]
         ? pageData.social[platform]
-        : {};
+        : pageData;
 
-    const title = social.title || pageData.title;
-    const description = social.description || pageData.description;
-    let thumbnail = social.thumbnail || pageData.thumbnail || pageData.hero;
-    const alt = social.alt || pageData.alt || site.name;
+    const title = social.title || social.path.title;
+    const description = social.description || social.path.description;
+    let thumbnail = social.thumbnail || social.hero;
+    const alt = social.alt || site.name;
 
     // If the page doesn't have social media images, a hero, or a thumbnail,
     // fallback to using the site's default thumbnail.

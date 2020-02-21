@@ -60,7 +60,7 @@ const recentPosts = require(`./${collectionsDir}/recent-posts`);
 // nb. algoliaPosts is only require'd if needed, below
 
 const filtersDir = 'src/site/_filters';
-const {memoize, findBySlug} = require(`./${filtersDir}/find-by-slug`);
+const {memoize, findByUrl} = require(`./${filtersDir}/find-by-url`);
 const pathSlug = require(`./${filtersDir}/path-slug`);
 const containsTag = require(`./${filtersDir}/contains-tag`);
 const expandContributors = require(`./${filtersDir}/expand-contributors`);
@@ -156,7 +156,7 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   // FILTERS
   //----------------------------------------------------------------------------
-  config.addFilter('findBySlug', findBySlug);
+  config.addFilter('findByUrl', findByUrl);
   config.addFilter('findTags', findTags);
   config.addFilter('pathSlug', pathSlug);
   config.addFilter('containsTag', containsTag);

@@ -97,4 +97,4 @@ Specifying other assets to be precached is just as straightforward: update the p
 Using a service worker for precaching can improve the performance of your apps by saving assets to a local cache, which makes them more reliable on poor networks. To use precaching with Angular and the Angular CLI:
 
 1. Add the `@angular/pwa` package to your project.
-2. Control what the service worker caches by editing `ngsw-config.js`.
+2. Control what the service worker caches by editing `ngsw-config.json`.
