@@ -6,10 +6,14 @@
 // -----------------------------------------------------------------------------
 
 .w-hero {
-  display: block;
-  margin: 0 auto;
-  max-height: 480px;
-  width: 1600px;
+  display: none;
+
+  @include bp(sm) {
+    display: block;
+    margin: 0 auto;
+    max-height: 480px;
+    width: 1600px;
+  }
 }
 
 .w-hero--top {
