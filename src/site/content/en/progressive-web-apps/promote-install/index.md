@@ -4,12 +4,11 @@ title: Patterns for promoting PWA installation
 authors:
   - pjmclachlan
 date: 2019-06-04
-updated: 2020-02-18
+updated: 2020-02-24
 description: |
   How to promote installation of Progressive Web Apps and best practices.
 tags:
   - post
-draft: true
 ---
 
 Progressive Web Apps (PWAs) are a pattern for creating app-like, instant

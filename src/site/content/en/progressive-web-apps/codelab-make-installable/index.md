@@ -8,7 +8,7 @@ description: |
   In this codelab, learn how to make a site installable using the
   beforeinstallprompt event.
 glitch: make-it-installable
-related_post: discover-installable
+related_post: customize-install
 ---
 
 This glitch already contains the critical components required to make a
@@ -76,7 +76,7 @@ butInstall.addEventListener('click', () => {
   // Log the result
   promptEvent.userChoice.then((result) => {
     console.log('👍', 'userChoice', result);
-    // Reset the deferred prompt variable, since 
+    // Reset the deferred prompt variable, since
     // prompt() can only be called once.
     window.deferredPrompt = null;
     // Hide the install button.
