@@ -19,6 +19,9 @@ tags:
   - e-commerce
   - fast
   - reliable
+  - case-study
+  - performance
+  - progressive-web-apps
 ---
 
 Based in Amman, Jordan, [OpenSooq](http://jo.opensooq.com/en) is a mobile-first classifieds marketplace offering a wide range of products and services in 19 countries across the Middle East and North Africa.
