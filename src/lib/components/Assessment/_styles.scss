@@ -11,6 +11,12 @@ web-assessment {
     animation: .25s ease modal-slideup;
   }
 
+  // Prevent FOUC by hiding children until after firstUpdated().
+  // This isn't ":not(:defined)" because firstUpdated occurs after a frame.
+  &.unresolved * {
+    display: none !important;
+  }
+
   // Override inline style
   @media (max-width: 480px) {
     & {

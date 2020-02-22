@@ -80,6 +80,7 @@ class Assessment extends BaseModalElement {
   firstUpdated() {
     // Override BaseModalElement's inert behavior since Assessment opens itself.
     this.inert = false;
+    this.classList.remove("unresolved");
   }
 
   connectedCallback() {
