@@ -12,7 +12,6 @@ class AssessmentQuestion extends BaseElement {
     super();
     this.state = "initial";
     this.prerenderedChildren = null;
-    this.responseComponents = this.querySelectorAll(".web-response");
 
     this.updateResponseComponents = this.updateResponseComponents.bind(this);
     this.checkNextQuestion = this.checkNextQuestion.bind(this);
@@ -52,8 +51,10 @@ class AssessmentQuestion extends BaseElement {
 
   firstUpdated() {
     // Listen to state updates from child response components.
-    for (const responseComponent of this.responseComponents) {
-      responseComponent.addEventListener(
+    const responseComponents = this.querySelectorAll("[data-role=response]");
+
+    for (const component of responseComponents) {
+      component.addEventListener(
         "response-update",
         this.responseComponentUpdated,
       );
@@ -65,21 +66,23 @@ class AssessmentQuestion extends BaseElement {
   // that it's answered incorrectly.
   // (If any part of the question is wrong, the whole question is wrong.)
   get responseComponentUpdated() {
-    for (const responseComponent of this.responseComponents) {
-      this.state = responseComponent.state;
-      if (responseComponent.state === "answeredInCorrectly") return;
+    const responseComponents = this.querySelectorAll("[data-role=response]");
+
+    for (const component of responseComponents) {
+      this.state = component.state;
+      if (component.state === "answeredInCorrectly") return;
     }
   }
 
   onSubmit(e) {
     switch (this.state) {
       case "answeredCorrectly":
-        this.state = "completed";
         this.updateResponseComponents();
+        this.state = "completed";
         break;
       case "answeredIncorrectly":
-        this.state = "checked";
         this.updateResponseComponents();
+        this.state = "checked";
         break;
       case "completed":
         const nextQuestion = this.checkNextQuestion();
@@ -109,8 +112,10 @@ class AssessmentQuestion extends BaseElement {
   }
 
   updateResponseComponents() {
-    for (const responseComponent of this.responseComponents) {
-      responseComponent.updateAllOptions();
+    const responseComponents = this.querySelectorAll("[data-role=response]");
+
+    for (const component of responseComponents) {
+      component.submitOptions();
     }
   }
 

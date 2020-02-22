@@ -66,11 +66,10 @@ function questionTemplate(question, assessment) {
   `;
 }
 
-/* If a question has no components,
- * get the response component from the question object itself.
- * If a question DOES have components,
- * get the response components from the question's components object.
- */
+// If a question has no components,
+// get the response component from the question object itself.
+// If a question DOES have components,
+// get the response components from the question's components object.
 function responsesTemplate(question) {
   if (!question.components) return responseTemplate(question);
   return question.components.map(responseTemplate);
@@ -141,8 +140,8 @@ function responseTemplate(response) {
   const columnsAttr = response.columns ? "columns" : "";
 
   return html`
-    <web-response${typeSuffix} ${cardinalityAttr} ${correctAnswersAttr} ${columnsAttr} class="web-response">
-      <p>${md.renderInline(response.stem)}</p>
+    <web-response${typeSuffix} ${cardinalityAttr} ${correctAnswersAttr} ${columnsAttr} data-role="response">
+      <p data-role="stem">${md.renderInline(response.stem)}</p>
       ${response.options.map(optionContentTemplate)}
       ${response.options.map(rationaleTemplate)}
     </web-response${typeSuffix}>
@@ -152,7 +151,7 @@ function responseTemplate(response) {
 function optionContentTemplate(option) {
   if (!option.content) return;
   return html`
-    <span data-role="option">
+    <span data-role="option" data-state="unselected">
       ${md.renderInline(option.content)}
     </span>
   `;
