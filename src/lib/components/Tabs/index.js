@@ -6,15 +6,20 @@ class Tabs extends BaseElement {
   static get properties() {
     return {
       label: {type: String},
+      activeTab: {type: Number, reflect: true},
     };
   }
 
   constructor() {
     super();
+    this.activeTab_ = 0;
+    this.prerenderedChildren = null;
+    this.tabs = null;
     this.idSalt = BaseElement.generateIdSalt("web-tab-");
 
     this.onResize = this.onResize.bind(this);
     this.changeTab = this.changeTab.bind(this);
+    this.focusTab = this.focusTab.bind(this);
     this.focusNextItem = this.focusNextItem.bind(this);
     this.focusPreviousItem = this.focusPreviousItem.bind(this);
     this.focusFirstItem = this.focusFirstItem.bind(this);
@@ -26,20 +31,15 @@ class Tabs extends BaseElement {
       this.prerenderedChildren = [];
       this.tabs = [];
       let i = 1;
-      let tabLabel;
 
       for (const child of this.children) {
-        // Set id and aria-labelledby attributes for each panel for a11y
-        // and remove hidden attribute on first tab.
+        // Set id and aria-labelledby attributes for each panel for a11y.
         child.id = `web-tab-${this.idSalt}-${i}-panel`;
         child.setAttribute("aria-labelledby", `web-tab-${this.idSalt}-${i}`);
-        if (i === 1) {
-          child.hidden = false;
-        }
         this.prerenderedChildren.push(child);
         // Get tab label from panel data-label attribute
         // and render a tab for each panel.
-        tabLabel = child.getAttribute("data-label");
+        const tabLabel = child.getAttribute("data-label");
         this.tabs.push(this.tabTemplate(i, tabLabel));
         i++;
       }
@@ -54,14 +54,6 @@ class Tabs extends BaseElement {
   }
 
   tabTemplate(i, tabLabel) {
-    let isActive = false;
-    let tabIndex = "-1";
-
-    if (i === 1) {
-      isActive = true;
-      tabIndex = "0";
-    }
-
     switch (tabLabel) {
       case "question":
         tabLabel = "Question " + i;
@@ -79,13 +71,14 @@ class Tabs extends BaseElement {
     return html`
       <button
         @click="${this.onClick}"
+        @focus="${this.onClick}"
         @keydown="${this.onKeydown}"
         class="web-tabs__tab gc-analytics-event"
         role="tab"
-        aria-selected="${isActive}"
+        aria-selected="false"
         id="web-tab-${this.idSalt}-${i}"
         aria-controls="web-tab-${this.idSalt}-${i}-panel"
-        tabindex=${tabIndex}
+        tabindex="-1"
         data-category="Site-Wide Custom Events"
         data-label="tab, ${tabLabel}"
       >
@@ -96,6 +89,7 @@ class Tabs extends BaseElement {
 
   firstUpdated() {
     this.onResize();
+    this.activeTab = 0;
   }
 
   connectedCallback() {
@@ -108,6 +102,49 @@ class Tabs extends BaseElement {
     window.removeEventListener("resize", this.onResize);
   }
 
+  set activeTab(val) {
+    const oldVal = this.activeTab_;
+
+    this.activeTab_ = Math.floor(val);
+
+    this.changeTab();
+    this.requestUpdate("activeTab", oldVal);
+  }
+
+  get activeTab() {
+    return this.activeTab_;
+  }
+
+  // Change state of tabs and associated panels.
+  changeTab() {
+    const tabs = this.querySelectorAll(".web-tabs__tab");
+    const panels = this.querySelectorAll(".web-tabs__panel");
+    const activeTab = tabs[this.activeTab];
+
+    if (!panels[this.activeTab]) return;
+
+    for (const tab of tabs) {
+      tab.setAttribute("aria-selected", "false");
+      tab.setAttribute("tabindex", "-1");
+    }
+
+    activeTab.setAttribute("aria-selected", "true");
+    activeTab.removeAttribute("tabindex");
+
+    for (const panel of panels) {
+      panel.hidden = true;
+    }
+
+    panels[this.activeTab].hidden = false;
+  }
+
+  // Helper function to allow other components to focus a tab as needed
+  focusTab(idx) {
+    const tabs = this.querySelectorAll(".web-tabs__tab");
+
+    tabs[idx].focus();
+  }
+
   onResize() {
     const tabs = this.querySelector(".web-tabs__tablist");
 
@@ -115,12 +152,16 @@ class Tabs extends BaseElement {
   }
 
   onClick(e) {
-    e.currentTarget.scrollIntoView({
+    const tab = e.currentTarget;
+    const tabs = this.querySelectorAll(".web-tabs__tab");
+    const index = Array.from(tabs).indexOf(tab);
+
+    tab.scrollIntoView({
       behavior: "smooth",
       block: "nearest",
       inline: "center",
     });
-    this.changeTab(e.currentTarget);
+    this.activeTab = index;
   }
 
   onKeydown(e) {
@@ -152,22 +193,22 @@ class Tabs extends BaseElement {
   }
 
   // Figure out if the current element has a next sibling.
-  // If so, move focus to it.
+  // If so, select it.
   focusNextItem() {
     const item = document.activeElement;
     if (item.nextElementSibling) {
-      this.changeTab(item.nextElementSibling);
+      item.nextElementSibling.focus();
     } else {
       this.focusFirstItem();
     }
   }
 
   // Figure out if the current element has a previous sibling.
-  // If so, moving focus to it.
+  // If so, select it.
   focusPreviousItem() {
     const item = document.activeElement;
     if (item.previousElementSibling) {
-      this.changeTab(item.previousElementSibling);
+      item.previousElementSibling.focus();
     } else {
       this.focusLastItem();
     }
@@ -176,36 +217,13 @@ class Tabs extends BaseElement {
   // Focus first element in set of siblings.
   focusFirstItem() {
     const item = document.activeElement;
-    this.changeTab(item.parentElement.firstElementChild);
+    item.parentElement.firstElementChild.focus();
   }
 
   // Focus last element in set of siblings.
   focusLastItem() {
     const item = document.activeElement;
-    this.changeTab(item.parentElement.lastElementChild);
-  }
-
-  // Change state of tabs and associated panels.
-  changeTab(item) {
-    const tabset = item.closest("web-tabs");
-    const tabs = tabset.querySelectorAll(".web-tabs__tab");
-    const panels = tabset.querySelectorAll(".web-tabs__panel");
-    const index = Array.from(tabs).indexOf(item);
-
-    for (const tab of tabs) {
-      tab.setAttribute("aria-selected", "false");
-      tab.setAttribute("tabindex", "-1");
-    }
-
-    item.setAttribute("aria-selected", "true");
-    item.removeAttribute("tabindex");
-    item.focus();
-
-    for (const panel of panels) {
-      panel.hidden = true;
-    }
-
-    panels[index].hidden = false;
+    item.parentElement.lastElementChild.focus();
   }
 }
 

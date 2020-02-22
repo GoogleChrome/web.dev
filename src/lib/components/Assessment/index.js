@@ -21,7 +21,6 @@
  */
 import {html} from "lit-element";
 import {BaseModalElement} from "../BaseModalElement";
-import {handleOverflow} from "../../utils/handle-overflow";
 
 class Assessment extends BaseModalElement {
   static get properties() {
@@ -119,6 +118,9 @@ class Assessment extends BaseModalElement {
   }
 
   openModal() {
+    // TODO: Probably want to make a copy instead of moving the assessment
+    // if there's a way to do that while retaining state.
+
     // Insert a placeholder element into the DOM where the assessment was
     // so the assessment can be reinserted there once it's closed.
     const placeholder = document.createElement("div");
@@ -134,7 +136,6 @@ class Assessment extends BaseModalElement {
 
     // Move the assessment to the end of the body so it's not
     // inside an inert element.
-    // NOTE: append() MOVES a lit-element, properties and all.
     document.body.append(this);
   }
 
@@ -145,7 +146,7 @@ class Assessment extends BaseModalElement {
     // and remove the dialog role.
     this.inert = false;
     this.removeAttribute("role");
-    // Again, appending moves rather than copies a lit-element.
+    // Again, need to replace this.
     if (placeholder) {
       placeholder.before(this);
       placeholder.remove();
@@ -157,16 +158,16 @@ class Assessment extends BaseModalElement {
     this.querySelector(".web-assessment__open").focus();
   }
 
-  // Apply overflow class to tabs if needed.
-  // Override default modal focus behavior so active tab is always in viewport
-  // when assessment is opened.
-  // TODO: Get active tab as prop of Tabs
   onAssessmentAnimationEnd() {
-    const tabs = this.querySelector(".web-tabs__tablist");
-    const activeTab = this.querySelector(".web-tabs__tab[aria-selected=true]");
+    const tabs = this.querySelector("web-tabs");
 
-    if (tabs) handleOverflow(tabs, "width", "web-tabs--overflow");
-    if (activeTab) activeTab.focus();
+    if (!tabs) return;
+
+    // Apply overflow class to tabs if needed.
+    tabs.onResize();
+    // Override default modal focus behavior so active tab is always in viewport
+    // when assessment is opened.
+    tabs.focusTab(tabs.activeTab);
   }
 
   // Close modal when viewport is wider than mobile breakpoint
