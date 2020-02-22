@@ -3,6 +3,11 @@ import {BaseElement} from "../BaseElement";
 import {handleOverflow} from "../../utils/handle-overflow";
 import "./_styles.scss";
 
+/**
+ * Element that wraps each child element in a tab panel
+ * and renders a tab for each panel.
+ * @extends {BaseElement}
+ */
 class Tabs extends BaseElement {
   static get properties() {
     return {
@@ -35,9 +40,7 @@ class Tabs extends BaseElement {
 
       for (const child of this.children) {
         // Set id and aria-labelledby attributes for each panel for a11y.
-        child.id = `web-tab-${this.idSalt}-${i}-panel`;
-        child.setAttribute("aria-labelledby", `web-tab-${this.idSalt}-${i}`);
-        this.prerenderedChildren.push(child);
+        this.prerenderedChildren.push(this.panelTemplate(i, child));
         // Get tab label from panel data-label attribute
         // and render a tab for each panel.
         const tabLabel = child.getAttribute("data-label");
@@ -62,6 +65,8 @@ class Tabs extends BaseElement {
       case "sample":
         tabLabel = "Sample " + i;
         break;
+      case "":
+      case null:
       case "bare":
         tabLabel = i;
         break;
@@ -88,9 +93,24 @@ class Tabs extends BaseElement {
     `;
   }
 
+  panelTemplate(i, child) {
+    return html`
+      <div
+        id="web-tab-${this.idSalt}-${i}-panel"
+        class="web-tabs__panel"
+        role="tabpanel"
+        aria-labelledby="web-tab-${this.idSalt}-${i}"
+        hidden
+      >
+        ${child}
+      </div>
+    `;
+  }
+
   firstUpdated() {
     this.onResize();
     this.activeTab = 0;
+    this.classList.remove("unresolved");
   }
 
   connectedCallback() {
@@ -116,7 +136,7 @@ class Tabs extends BaseElement {
     return this.activeTab_;
   }
 
-  // Change state of tabs and associated panels.
+  // Update state of tabs and associated panels.
   changeTab() {
     const tabs = this.querySelectorAll(".web-tabs__tab");
     const panels = this.querySelectorAll(".web-tabs__panel");
@@ -139,7 +159,7 @@ class Tabs extends BaseElement {
     panels[this.activeTab].hidden = false;
   }
 
-  // Helper function to allow other components to focus a tab as needed
+  // Helper function to allow other components to focus a tab as needed.
   focusTab(idx) {
     const tabs = this.querySelectorAll(".web-tabs__tab");
 
@@ -157,6 +177,8 @@ class Tabs extends BaseElement {
     const tabs = this.querySelectorAll(".web-tabs__tab");
     const index = Array.from(tabs).indexOf(tab);
 
+    // Match behavior specified for Material scrollable tabs:
+    // https://material.io/components/tabs/#scrollable-tabs
     tab.scrollIntoView({
       behavior: "smooth",
       block: "nearest",
@@ -194,7 +216,7 @@ class Tabs extends BaseElement {
   }
 
   // Figure out if the current element has a next sibling.
-  // If so, select it.
+  // If so, focus it. If not, focus the first sibling.
   focusNextItem() {
     const item = document.activeElement;
     if (item.nextElementSibling) {
@@ -205,7 +227,7 @@ class Tabs extends BaseElement {
   }
 
   // Figure out if the current element has a previous sibling.
-  // If so, select it.
+  // If so, focus it. If not, focus the last sibling.
   focusPreviousItem() {
     const item = document.activeElement;
     if (item.previousElementSibling) {

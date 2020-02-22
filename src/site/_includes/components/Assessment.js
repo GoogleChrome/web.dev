@@ -33,45 +33,36 @@ function contentTemplate(assessment) {
   if (assessment.questions.length > 1) {
     return html`
       <web-tabs
-        class="web-assessment__content"
+        class="web-assessment__content unresolved"
         label="${assessment.tabLabel}s for knowledge self check"
       >
         ${assessment.questions.map((question) => {
-          return tabTemplate(question, assessment);
+          return questionTemplate(question, assessment);
         })}
       </web-tabs>
     `;
   } else {
     return html`
       <div class="web-assessment__content">
-        ${assessment.questions.map(questionTemplate)}
+        ${assessment.questions.map((question) => {
+          return questionTemplate(question, assessment);
+        })}
       </div>
     `;
   }
 }
 /* eslint-enable indent */
 
-function tabTemplate(question, assessment) {
-  return html`
-    <div
-      class="web-tabs__panel"
-      role="tabpanel"
-      data-label="${assessment.tabLabel}"
-      hidden
-    >
-      ${questionTemplate(question)}
-    </div>
-  `;
-}
-
-function questionTemplate(question) {
+function questionTemplate(question, assessment) {
   const stimulus = question.stimulus
     ? html`
-        <div data-role="stimulus">${mdBlock(question.stimulus)}</div>
+        <div data-role="stimulus">
+          ${mdBlock(question.stimulus)}
+        </div>
       `
     : "";
   return html`
-    <web-question>
+    <web-question data-label="${assessment.tabLabel}">
       ${stimulus} ${responsesTemplate(question)}
     </web-question>
   `;

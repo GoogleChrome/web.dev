@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
+import {html} from "lit-element";
+import {BaseModalElement} from "../BaseModalElement";
+
 /**
  * Element that renders a self-assessment callout.
  * @extends {BaseModalElement}
  * @final
  */
-import {html} from "lit-element";
-import {BaseModalElement} from "../BaseModalElement";
-
 class Assessment extends BaseModalElement {
   static get properties() {
     return {
