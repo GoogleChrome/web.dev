@@ -192,9 +192,9 @@ module.exports = (page, targetAssessment) => {
     `);
   }
 
+  const path = page.filePathStem.replace(/index$/, "");
   const source = require("../../content" +
-    page.url +
-    "/" +
+    path +
     targetAssessment +
     ".assess.js");
   const assessment = source.assessment;

@@ -26,7 +26,7 @@ module.exports = {
         // There is only one stimulus per question,
         // no matter how many components the question has.
         //
-        // Note: you must remove leading whitespace to get MarkDown to behave.
+        // Note: you must remove leading whitespace to get MarkDown to behave :(
         stimulus: `\`\`\`html
 <label for="pwd-input">Password</label>
 <input type="text" role="textbox" id="pwd-input" name="password">
@@ -186,7 +186,7 @@ module.exports = {
             ],
           },
         ],
-      },
+      }, // Last question ends here
     ],
   },
 };

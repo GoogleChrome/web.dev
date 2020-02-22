@@ -9,10 +9,6 @@ description: |
 Self-assessments provide opportunities for users
 to check their understanding of concepts covered in your post.
 
-<!--lint disable no-unescaped-template-tags-->
-{% from "content/self-assessment.njk" import 'selfAssessment' %}
-{{ selfAssessment(assessments[0]) }}
-<!--lint disable no-unescaped-template-tags-->
 {% Assessment page, 'self-assessment' %}
 
 {% Assessment page, 'self-assessment-2' %}
@@ -29,14 +25,15 @@ to check their understanding of concepts covered in your post.
 ## Start a self-assessment
 
 To include a self-assessment in your post:
-1. Add these lines to your post where you want the self-assessment to appear:
+1. Add this line to your post where you want the self-assessment to appear:
     ```html
-    {% raw %}{% from "content/self-assessment.njk" import selfAssessment %}
-    {{ selfAssessment(assessments[0]) }}{% endraw %}
+    {% raw %}{% Assessment page, 'self-assessment' %}{% endraw %}
     ```
-1. Copy `_template-self-assessment.11tydata.js` in `src/site/_drafts/_template-self-assessment`
+1. Copy `self-assessment.assess.js` in `src/site/_drafts/_template-self-assessment`
    to your post's directory.
-1. Change the copied file's name to `your-post-directory-name.11tydata.js`.
+1. You can keep the file's name or change it to match
+   the topic of your assessment: `your-assessment-topic.assess.js`.
+   Just make sure to update the argument in the short code if you do change the file name.
 1. Follow the pattern in the file to create your question set.
 
 ## Question set parameters
@@ -51,7 +48,7 @@ setLeader: "Test your knowledge of resource optimization",
 
 Self-assessments have a default height of 640&nbsp;px.
 (A stable height keeps the location of the **Check** / **Next** button predictable.)
-If most of your questions or taller or shorter than the default height,
+If most of your questions are taller or shorter than the default height,
 change it using the `height` key.
 
 You can adjust the labels for the question tabs using the `tabLabel` key.
@@ -148,8 +145,11 @@ it's generally better to use any other [response type](#response-types) instead.
 {% endAside %}
 
 ### Composite questions
-You can use two or more response components in a single question.
-<!-- TODO: Explain how to do that -->
+You can include more than one response component in a single question.
+
+To do that, add a `components` key to the question object
+and then include all question data _except_ the stimulus in each component object.
+(Each question can have only one stimulus.)
 
 {% Aside 'caution' %}
 Use composite questions judiciously.
@@ -160,11 +160,12 @@ unless the parts are truly interdependent.
 
 ## Multiple sets in one post
 To include another set in your post,
-add an assessment object to your `*.11tydata.js` file and
-use the appropriate index in the Nunjucks function.
-For example, if you want to include the second assessment in the data file,
-you'd use:
+create a second `*.assess.js` file and
+add a second `Assessment` short code to your post.
+You can add as many assessments as you want as long as each has a unique name.
+For example:
 
 ```html
-{% raw %}{{ selfAssessment(assessments[1]) }}{% endraw %}
+{% raw %}{% Assessment page, 'first-assessment' %}
+{% Assessment page, 'second-assessment' %}{% endraw %}
 ```
