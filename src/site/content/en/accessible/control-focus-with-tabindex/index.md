@@ -155,7 +155,7 @@ You can learn more about them in our guide on
 [screen reader basics](/semantics-and-screen-readers).
 {% endAside %}
 
-{% include 'content/self-assessment.njk' %}
+{% Assessment page, 'self-assessment' %}
 
 ## Keyboard access recipes
 

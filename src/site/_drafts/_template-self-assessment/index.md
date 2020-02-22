@@ -9,12 +9,9 @@ tags:
   - post
 ---
 
-Include a self-assessment in your post using this include:
+Include a self-assessment in your post using this short code:
 
-<!--lint disable no-unescaped-template-tags-->
-{% from "content/self-assessment.njk" import selfAssessment %}
-{{ selfAssessment(assessments[0]) }}
-<!--lint enable no-unescaped-template-tags-->
+{% Assessment page, 'self-assessment' %}
 
-Then populate the `your-post-directory-name.11tydata.js` file in your post's
-folder following the patterns in `_template-self-assessment.11tydata.js`.
+Then populate the `your-post-directory-name.assess.js` file in your post's
+folder following the patterns in `_template-self-assessment/self-assessment.assess.js`.
