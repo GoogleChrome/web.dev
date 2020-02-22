@@ -20,7 +20,7 @@ tags:
 allows web developers to create well-controlled scroll experiences by declaring
 scroll snapping positions. One shortcoming of the current implementation is that
 scroll snapping does not work well when the layout changes. e.g. the viewport is
-resized, the device is rotated etc.. This shortcoming is fixed in Chrome 81.
+resized, the device is rotated etc. This shortcoming is fixed in Chrome 81.
 
 ## Interoperability
 Many browsers have basic support for CSS Scroll Snap. See [Can I use CSS
@@ -31,9 +31,9 @@ changes.  Firefox has a
 [ticket](https://bugzilla.mozilla.org/show_bug.cgi?id=1530253) open for
 implementing this and Safari has [one
 open](https://bugs.webkit.org/show_bug.cgi?id=144826) for re-snapping after a
-scroller’s content changes. For now, you can simulate this behaviour by adding
+scroller's content changes. For now, you can simulate this behaviour by adding
 the following code to event listeners to force a snapping to execute:
-```
+```javascript
 scroller.scrollBy(0,0);
 ```
 However, this will not guarantee that the scroller snaps back to the same
@@ -136,9 +136,9 @@ affects the initial scroll offset of scrollers using the scroll snap feature.
 {% endAside %}
 
 ## Example: Sticky scrollbars
-With “Snap after layout”, developers can implement sticky scrollbars with a few
+With "Snap after layout", developers can implement sticky scrollbars with a few
 lines of CSS:
-```
+```css
 .container {
   scroll-snap-type: y proximity;
 }
