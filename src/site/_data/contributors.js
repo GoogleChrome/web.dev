@@ -456,9 +456,27 @@ const contributors = {
       given: "Yi",
       family: "Gu",
     },
+    twitter: "yigsgu",
+    github: "yi-gu",
+    description: {
+      en: "Software Engineer working on Chromium",
+    },
     org: {
       name: "Google",
       unit: "Chrome",
+    },
+    country: "Canada",
+  },
+  alsan: {
+    name: {
+      given: "Kaan",
+      family: "Alsan",
+    },
+    description: {
+      en: "Former Software Engineer Intern on Chromium",
+    },
+    org: {
+      name: "University of Waterloo",
     },
     country: "Canada",
   },
