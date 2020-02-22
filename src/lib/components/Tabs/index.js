@@ -26,6 +26,7 @@ class Tabs extends BaseElement {
     this.onResize = this.onResize.bind(this);
     this.changeTab = this.changeTab.bind(this);
     this.focusTab = this.focusTab.bind(this);
+    this.nextTab = this.nextTab.bind(this);
     this.focusNextItem = this.focusNextItem.bind(this);
     this.focusPreviousItem = this.focusPreviousItem.bind(this);
     this.focusFirstItem = this.focusFirstItem.bind(this);
@@ -111,6 +112,15 @@ class Tabs extends BaseElement {
     this.onResize();
     this.activeTab = 0;
     this.classList.remove("unresolved");
+
+    // If Tabs component contains AssessmentQuestion components,
+    // listen for requests to navigate to the next tab.
+    const questions = this.querySelectorAll("web-question");
+
+    if (!questions) return;
+    for (const question of questions) {
+      question.addEventListener("request-nav-to-next", this.nextTab);
+    }
   }
 
   connectedCallback() {
@@ -159,11 +169,17 @@ class Tabs extends BaseElement {
     panels[this.activeTab].hidden = false;
   }
 
-  // Helper function to allow other components to focus a tab as needed.
+  // Focus the tab at the specified index.
   focusTab(idx) {
     const tabs = this.querySelectorAll(".web-tabs__tab");
 
     tabs[idx].focus();
+  }
+
+  // Helper function to allow child components to request
+  // navigation to the next tab.
+  nextTab() {
+    this.focusTab(this.activeTab + 1);
   }
 
   onResize() {
