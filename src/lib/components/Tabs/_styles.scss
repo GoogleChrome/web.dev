@@ -108,6 +108,12 @@ web-tabs {
   .web-tabs__panel[hidden] {
     display: none;
   }
+
+  // Prevent FOUC by hiding panels until after firstUpdated().
+  // This isn't ":not(:defined)" because firstUpdated occurs after a frame.
+  &.unresolved * {
+    display: none !important;
+  }
 }
 
 .js-focus-visible .web-tabs__tab:focus:not(.focus-visible) {
