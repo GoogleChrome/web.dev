@@ -56,9 +56,7 @@ function contentTemplate(assessment) {
 function questionTemplate(question, assessment) {
   const stimulus = question.stimulus
     ? html`
-        <div data-role="stimulus">
-          ${mdBlock(question.stimulus)}
-        </div>
+        <div data-role="stimulus">${mdBlock(question.stimulus)}</div>
       `
     : "";
   return html`
