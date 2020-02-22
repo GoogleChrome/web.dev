@@ -26,18 +26,18 @@ web-response-mc {
 }
 
 // Multiple-choice options the user has submitted
-.web-response-mc__option[submitted] {
+.web-response-mc__option[data-state=submitted] {
   align-items: flex-start;
   justify-self: stretch;
   padding: 1rem 1rem 1.5rem;
 }
 
 // Prevent selector states from appearing after an option has been submitted.
-[submitted] .web-response-mc__selector::before {
+[data-state=submitted] .web-response-mc__selector::before {
   background: none !important;
 }
 
-[submitted] .web-response-mc__input ~ .web-response-mc__selector {
+[data-state=submitted] .web-response-mc__input ~ .web-response-mc__selector {
   background: $GREY_600;
   border-color: $GREY_600;
   transition: none;
@@ -55,7 +55,7 @@ web-response-mc {
   border-color: $SELF_ASSESSMENT_INCORRECT_COLOR !important;
 }
 
-[submitted] .web-response-mc__input ~ .web-response-mc__selector::after {
+[data-state=submitted] .web-response-mc__input ~ .web-response-mc__selector::after {
   border: 0;
   content: 'remove';
   height: initial;

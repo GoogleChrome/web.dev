@@ -1,16 +1,49 @@
-// Use SASS variable interpolation to abstract common response option styles
-// while still adhering to BEM in individual response type stylesheets.
-$TYPE_SUFFIXES:
-  "",
-  "-mc",
-  "-tac"
-;
+// -----------------------------------------------------------------------------
+// General option styling
+// -----------------------------------------------------------------------------
+
+[state=completed] [data-role=option],
+[data-role=option][data-state=submitted] {
+  background: $GREY_100;
+  border-radius: $GLOBAL_RADIUS;
+  cursor: initial;
+}
+
+// This uses $SUCCESS_COLOR because it shows the correct answer and so
+// should be independent of the self-assessment color.
+[data-role=option][data-correct][data-state=submitted] {
+  background: rgba($SUCCESS_COLOR, .08);
+  box-shadow: inset 0 0 0 1px $SUCCESS_COLOR;
+}
+
+// -----------------------------------------------------------------------------
+// Correct/incorrect flags
+// -----------------------------------------------------------------------------
 
 .web-response__correctness-flag {
   color: $GREY_700;
   display: none;
   padding: .1875rem 0 .5rem;
 }
+
+[state=completed] .web-response__correctness-flag,
+[data-role=option][data-state=submitted] .web-response__correctness-flag {
+  display: block;
+}
+
+[data-role=option][data-state=submitted] .web-response__correctness-flag {
+  color: $SELF_ASSESSMENT_INCORRECT_COLOR;
+}
+
+// This uses $SUCCESS_COLOR because it shows the correct answer and so
+// should be independent of the self-assessment color.
+[data-role=option][data-correct][data-state=submitted] .web-response__correctness-flag {
+  color: $SUCCESS_COLOR;
+}
+
+// -----------------------------------------------------------------------------
+// Option rationales
+// -----------------------------------------------------------------------------
 
 .web-response__option-rationale {
   color: $GREY_700;
@@ -19,13 +52,9 @@ $TYPE_SUFFIXES:
   padding: .5rem 0 0;
 }
 
-.web-response__option-rationale--standalone {
-  @include w-body-text();
-  background: rgba($SUCCESS_COLOR, .08);
-  border-radius: $GLOBAL_RADIUS;
-  color: $PRIMARY_TEXT_COLOR;
-  line-height: 1.778 !important; // Override w-body-text mixin
-  padding: 1.125rem;
+[state=completed] .web-response__option-rationale,
+[data-state=submitted] .web-response__option-rationale {
+  display: block;
 }
 
 .web-response__option-rationale > *:first-child {
@@ -48,37 +77,4 @@ $TYPE_SUFFIXES:
 
 .web-response__option-rationale ol > li::before {
   margin-top: .25em;
-}
-
-@each $TYPE_SUFFIX in $TYPE_SUFFIXES {
-  .web-response#{$TYPE_SUFFIX}__option[submitted] {
-    background: $GREY_100;
-    border-radius: $GLOBAL_RADIUS;
-    cursor: initial;
-  }
-
-  // This uses $SUCCESS_COLOR because it shows the correct answer and so
-  // should be independent of the self-assessment color scheme.
-  .web-response#{$TYPE_SUFFIX}__option--correct[submitted] {
-    background: rgba($SUCCESS_COLOR, .08);
-    box-shadow: inset 0 0 0 1px $SUCCESS_COLOR;
-  }
-
-  [submitted] .web-response__correctness-flag {
-    display: block;
-  }
-
-  [submitted] .web-response__option-rationale {
-    display: block;
-  }
-
-  // This uses $SUCCESS_COLOR because it shows the correct answer and so
-  // should be independent of the self-assessment color scheme.
-  .web-response#{$TYPE_SUFFIX}__option--correct .web-response__correctness-flag {
-    color: $SUCCESS_COLOR;
-  }
-
-  .web-response#{$TYPE_SUFFIX}__option--incorrect .web-response__correctness-flag {
-    color: $SELF_ASSESSMENT_INCORRECT_COLOR;
-  }
 }

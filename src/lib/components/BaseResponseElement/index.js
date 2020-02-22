@@ -24,7 +24,7 @@ import {BaseElement} from "../BaseElement";
 export class BaseResponseElement extends BaseElement {
   static get properties() {
     return {
-      state: {type: String},
+      state: {type: String, reflect: true},
     };
   }
 
@@ -33,7 +33,8 @@ export class BaseResponseElement extends BaseElement {
     this.state = "initial";
 
     this.reportUpdate = this.reportUpdate.bind(this);
-    this.updateAllOptions = this.updateAllOptions.bind(this);
+    this.identifyCorrectOptions = this.identifyCorrectOptions.bind(this);
+    this.submitOptions = this.submitOptions.bind(this);
   }
 
   /**
@@ -67,6 +68,7 @@ export class BaseResponseElement extends BaseElement {
   }
 
   firstUpdated() {
+    this.identifyCorrectOptions();
     this.reportUpdate();
   }
 
@@ -84,7 +86,28 @@ export class BaseResponseElement extends BaseElement {
     this.dispatchEvent(event);
   }
 
-  updateAllOptions() {
-    console.log("update all options");
+  // Add the data-correct attribute to correct options
+  // so they show as correct when they're submitted.
+  identifyCorrectOptions() {
+    if (!this.correctAnswer) return;
+
+    const correctAnswersArr = this.correctAnswer.split(",").map(Number);
+    const options = this.querySelectorAll("[data-role=option]");
+
+    for (let i = 0; i < options.length; i++) {
+      if (correctAnswersArr.includes(i)) {
+        options[i].setAttribute("data-correct", "");
+      }
+    }
+  }
+
+  submitOptions() {
+    const options = this.querySelectorAll(
+      "[data-role=option][data-state=selected]",
+    );
+
+    for (const option of options) {
+      option.setAttribute("data-state", "submitted");
+    }
   }
 }
