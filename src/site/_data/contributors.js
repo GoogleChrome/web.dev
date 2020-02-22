@@ -473,12 +473,11 @@ const contributors = {
       family: "Alsan",
     },
     description: {
-      en: "Former Software Engineer Intern on Chromium",
+      en: "Former Software Engineer Intern working on Chromium",
     },
     org: {
       name: "University of Waterloo",
     },
-    country: "Canada",
   },
   yangguo: {
     name: {
