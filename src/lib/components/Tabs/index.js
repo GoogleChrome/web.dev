@@ -110,9 +110,9 @@ class Tabs extends BaseElement {
   }
 
   firstUpdated() {
-    this.onResize();
     this.activeTab = 0;
     this.classList.remove("unresolved");
+    this.onResize();
 
     // If Tabs component contains AssessmentQuestion components,
     // listen for requests to navigate to the next tab.
