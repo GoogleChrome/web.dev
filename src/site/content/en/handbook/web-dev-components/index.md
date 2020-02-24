@@ -222,6 +222,8 @@ a massa sit amet ullamcorper.
 In general, you shouldn't need to add buttons to your posts.
 These buttons are shown for reference.
 
+### Text buttons
+
 <div>
   <button class="w-button">
     Text button
@@ -248,6 +250,28 @@ These buttons are shown for reference.
   </button>
   <button class="w-button w-button--secondary w-button--with-icon" data-icon="file_download">
     Secondary button with icon
+  </button>
+</div>
+
+### Icon buttons
+
+A default icon button:
+
+<div>
+  <button class="w-button--icon" data-icon="format_align_justify">
+    <span role="tooltip" class="w-tooltip">
+      Justify
+    </span>
+  </button>
+</div>
+
+A round icon button:
+
+<div>
+  <button class="w-button--icon w-button--round" data-icon="close">
+    <span role="tooltip" class="w-tooltip">
+      Close
+    </span>
   </button>
 </div>
 
@@ -1310,22 +1334,22 @@ Use tooltips to provide information about UI controls
 that are too small to have a label:
 
 ```html
-<button class="w-button w-button--icon" data-icon="format_align_left">
+<button class="w-button--icon" data-icon="format_align_left">
   {% raw %}{% Tooltip 'Left align' %}{% endraw %}
 </button>
 ```
 
 <div>
-  <button class="w-button w-button--icon" data-icon="format_align_left">
+  <button class="w-button--icon" data-icon="format_align_left">
     {% Tooltip 'Left align' %}
   </button>
-  <button class="w-button w-button--icon" data-icon="format_align_center">
+  <button class="w-button--icon" data-icon="format_align_center">
     {% Tooltip 'Center align' %}
   </button>
-  <button class="w-button w-button--icon" data-icon="format_align_right">
+  <button class="w-button--icon" data-icon="format_align_right">
     {% Tooltip 'Right align' %}
   </button>
-  <button class="w-button w-button--icon" data-icon="format_align_justify">
+  <button class="w-button--icon" data-icon="format_align_justify">
     {% Tooltip 'Justify' %}
   </button>
 </div>
@@ -1334,24 +1358,24 @@ You can left- or right-align a tooltip to its parent
 by adding a `left` or `right` argument to the shortcode:
 
 ```html
-<button class="w-button w-button--icon" data-icon="unfold_less">
+<button class="w-button--icon" data-icon="unfold_less">
   {% raw %}{% Tooltip 'Collapse', 'left' %}{% endraw %}
 </button>
-<button class="w-button w-button--icon" data-icon="unfold_less">
+<button class="w-button--icon" data-icon="unfold_less">
   {% raw %}{% Tooltip 'Collapse' %}{% endraw %}
 </button>
-<button class="w-button w-button--icon" data-icon="unfold_less">
+<button class="w-button--icon" data-icon="unfold_less">
   {% raw %}{% Tooltip 'Collapse', 'right' %}{% endraw %}
 </button>
 ```
 
-<button class="w-button w-button--icon" data-icon="unfold_less">
+<button class="w-button--icon" data-icon="unfold_less">
   {% Tooltip 'Collapse', 'left' %}
 </button>
-<button class="w-button w-button--icon" data-icon="unfold_less">
+<button class="w-button--icon" data-icon="unfold_less">
   {% Tooltip 'Collapse' %}
 </button>
-<button class="w-button w-button--icon" data-icon="unfold_less">
+<button class="w-button--icon" data-icon="unfold_less">
   {% Tooltip 'Collapse', 'right' %}
 </button>
 

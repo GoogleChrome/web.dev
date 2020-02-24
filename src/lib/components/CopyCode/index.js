@@ -22,9 +22,18 @@ class CopyCode extends BaseElement {
 
     if (!this.copyButton) {
       this.copyButton = document.createElement("button");
+      this.copyButton.className =
+        "w-button--icon w-button--round web-copy-code__button";
+      this.copyButton.setAttribute("data-icon", "file_copy");
       this.copyButton.setAttribute("aria-label", "Copy code");
-      this.copyButton.className = "web-copy-code__button";
       this.copyButton.addEventListener("click", this.onCopy);
+
+      this.tooltip = document.createElement("span");
+      this.tooltip.className = "w-tooltip w-tooltip--right";
+      this.tooltip.setAttribute("role", "tooltip");
+      this.tooltip.innerHTML = "Copy code";
+      this.copyButton.append(this.tooltip);
+
       this.prepend(this.copyButton);
     }
   }

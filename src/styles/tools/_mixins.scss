@@ -73,9 +73,11 @@
 
 // Mixin for base button styles
 @mixin base-button() {
+  -webkit-tap-highlight-color: transparent; // Prevents tap highlight on hidden tooltips
   align-items: center;
   background: transparent;
   border: 0;
+  border-radius: $GLOBAL_RADIUS;
   color: $WEB_PRIMARY_COLOR;
   cursor: pointer;
   display: inline-flex;
