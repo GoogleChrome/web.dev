@@ -1,21 +1,33 @@
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
+import {handleOverflow} from "../../utils/handle-overflow";
 
+/**
+ * Element that wraps each child element in a tab panel
+ * and renders a tab for each panel.
+ * @extends {BaseElement}
+ */
 class Tabs extends BaseElement {
   static get properties() {
     return {
       label: {type: String},
+      activeTab: {type: Number, reflect: true},
+      overflow: {type: Boolean, reflect: true},
     };
   }
 
   constructor() {
     super();
-    this.idSalt = BaseElement.generateIdSalt("web-tab-");
-
+    this.activeTab_ = 0;
+    this.overflow = false;
     this.prerenderedChildren = null;
     this.tabs = null;
+    this.idSalt = BaseElement.generateIdSalt("web-tab-");
 
+    this.onResize = this.onResize.bind(this);
     this.changeTab = this.changeTab.bind(this);
+    this.focusTab = this.focusTab.bind(this);
+    this.nextTab = this.nextTab.bind(this);
     this.focusNextItem = this.focusNextItem.bind(this);
     this.focusPreviousItem = this.focusPreviousItem.bind(this);
     this.focusFirstItem = this.focusFirstItem.bind(this);
@@ -27,20 +39,13 @@ class Tabs extends BaseElement {
       this.prerenderedChildren = [];
       this.tabs = [];
       let i = 1;
-      let tabLabel;
 
       for (const child of this.children) {
-        // Set id and aria-labelledby attributes for each panel for a11y
-        // and remove hidden attribute on first tab.
-        child.id = `web-tab-${this.idSalt}-${i}-panel`;
-        child.setAttribute("aria-labelledby", `web-tab-${this.idSalt}-${i}`);
-        if (i === 1) {
-          child.removeAttribute("hidden");
-        }
-        this.prerenderedChildren.push(child);
+        // Set id and aria-labelledby attributes for each panel for a11y.
+        this.prerenderedChildren.push(this.panelTemplate(i, child));
         // Get tab label from panel data-label attribute
         // and render a tab for each panel.
-        tabLabel = child.getAttribute("data-label");
+        const tabLabel = child.getAttribute("data-label");
         this.tabs.push(this.tabTemplate(i, tabLabel));
         i++;
       }
@@ -55,14 +60,6 @@ class Tabs extends BaseElement {
   }
 
   tabTemplate(i, tabLabel) {
-    let isActive = false;
-    let tabIndex = "-1";
-
-    if (i === 1) {
-      isActive = true;
-      tabIndex = "0";
-    }
-
     switch (tabLabel) {
       case "question":
         tabLabel = "Question " + i;
@@ -70,21 +67,26 @@ class Tabs extends BaseElement {
       case "sample":
         tabLabel = "Sample " + i;
         break;
+      case "":
+      case null:
       case "bare":
         tabLabel = i;
+        break;
+      default:
         break;
     }
 
     return html`
       <button
         @click="${this.onClick}"
+        @focus="${this.onClick}"
         @keydown="${this.onKeydown}"
         class="web-tabs__tab gc-analytics-event"
         role="tab"
-        aria-selected="${isActive}"
+        aria-selected="false"
         id="web-tab-${this.idSalt}-${i}"
         aria-controls="web-tab-${this.idSalt}-${i}-panel"
-        tabindex=${tabIndex}
+        tabindex="-1"
         data-category="Site-Wide Custom Events"
         data-label="tab, ${tabLabel}"
       >
@@ -93,8 +95,119 @@ class Tabs extends BaseElement {
     `;
   }
 
+  panelTemplate(i, child) {
+    return html`
+      <div
+        id="web-tab-${this.idSalt}-${i}-panel"
+        class="web-tabs__panel"
+        role="tabpanel"
+        aria-labelledby="web-tab-${this.idSalt}-${i}"
+        hidden
+      >
+        ${child}
+      </div>
+    `;
+  }
+
+  firstUpdated() {
+    this.onResize();
+    this.activeTab = 0;
+    this.classList.remove("unresolved");
+
+    // If Tabs component contains AssessmentQuestion components,
+    // listen for requests to navigate to the next tab.
+    const questions = this.querySelectorAll("web-question");
+
+    if (!questions) return;
+    for (const question of questions) {
+      question.addEventListener("request-nav-to-next", this.nextTab);
+    }
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    window.addEventListener("resize", this.onResize);
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    window.removeEventListener("resize", this.onResize);
+  }
+
+  set activeTab(val) {
+    const oldVal = this.activeTab_;
+
+    this.activeTab_ = Math.floor(val);
+
+    this.changeTab();
+    this.requestUpdate("activeTab", oldVal);
+  }
+
+  get activeTab() {
+    return this.activeTab_;
+  }
+
+  // Update state of tabs and associated panels.
+  changeTab() {
+    const tabs = this.querySelectorAll(".web-tabs__tab");
+    const panels = this.querySelectorAll(".web-tabs__panel");
+    const activeTab = tabs[this.activeTab];
+
+    if (!panels[this.activeTab]) return;
+
+    for (const tab of tabs) {
+      tab.setAttribute("aria-selected", "false");
+      tab.setAttribute("tabindex", "-1");
+    }
+
+    activeTab.setAttribute("aria-selected", "true");
+    activeTab.removeAttribute("tabindex");
+
+    for (const panel of panels) {
+      panel.hidden = true;
+    }
+
+    panels[this.activeTab].hidden = false;
+  }
+
+  // Focus the tab at the specified index.
+  focusTab(idx) {
+    const tabs = this.querySelectorAll(".web-tabs__tab");
+
+    tabs[idx].focus();
+  }
+
+  // Helper function to allow child components to request
+  // navigation to the next tab.
+  nextTab() {
+    this.focusTab(this.activeTab + 1);
+  }
+
+  onResize() {
+    const tabs = this.querySelector(".web-tabs__tablist");
+
+    const hasOverflow = handleOverflow(tabs, "width");
+
+    if (hasOverflow) {
+      this.overflow = true;
+    } else {
+      this.overflow = false;
+    }
+  }
+
   onClick(e) {
-    this.changeTab(e.currentTarget);
+    const tab = e.currentTarget;
+    const tabs = this.querySelectorAll(".web-tabs__tab");
+    const index = Array.from(tabs).indexOf(tab);
+
+    // Match behavior specified for Material scrollable tabs:
+    // https://material.io/components/tabs/#scrollable-tabs
+    tab.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
+    this.activeTab = index;
   }
 
   onKeydown(e) {
@@ -126,22 +239,22 @@ class Tabs extends BaseElement {
   }
 
   // Figure out if the current element has a next sibling.
-  // If so, move focus to it.
+  // If so, focus it. If not, focus the first sibling.
   focusNextItem() {
     const item = document.activeElement;
     if (item.nextElementSibling) {
-      this.changeTab(item.nextElementSibling);
+      item.nextElementSibling.focus();
     } else {
       this.focusFirstItem();
     }
   }
 
   // Figure out if the current element has a previous sibling.
-  // If so, moving focus to it.
+  // If so, focus it. If not, focus the last sibling.
   focusPreviousItem() {
     const item = document.activeElement;
     if (item.previousElementSibling) {
-      this.changeTab(item.previousElementSibling);
+      item.previousElementSibling.focus();
     } else {
       this.focusLastItem();
     }
@@ -150,36 +263,13 @@ class Tabs extends BaseElement {
   // Focus first element in set of siblings.
   focusFirstItem() {
     const item = document.activeElement;
-    this.changeTab(item.parentElement.firstElementChild);
+    item.parentElement.firstElementChild.focus();
   }
 
   // Focus last element in set of siblings.
   focusLastItem() {
     const item = document.activeElement;
-    this.changeTab(item.parentElement.lastElementChild);
-  }
-
-  // Change state of tabs and associated panels.
-  changeTab(item) {
-    const tabset = item.closest("web-tabs");
-    const tabs = Array.from(tabset.querySelectorAll(".web-tabs__tab"));
-    const panels = Array.from(tabset.querySelectorAll(".web-tabs__panel"));
-    const index = tabs.indexOf(item);
-
-    tabs.forEach(function(tab) {
-      tab.setAttribute("aria-selected", "false");
-      tab.setAttribute("tabindex", "-1");
-    });
-
-    item.setAttribute("aria-selected", "true");
-    item.removeAttribute("tabindex");
-    item.focus();
-
-    panels.forEach(function(element) {
-      element.setAttribute("hidden", "");
-    });
-
-    panels[index].removeAttribute("hidden");
+    item.parentElement.lastElementChild.focus();
   }
 }
 

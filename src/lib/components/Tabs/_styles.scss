@@ -15,32 +15,44 @@
  * limitations under the License.
  */
 
-@import '../../../styles/settings/colors';
 @import '../../../styles/tools/mixins';
 
 web-tabs {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
   .web-tabs__tablist {
+    @include scrollbars();
     border-bottom: 1px solid $GREY_300;
     display: flex;
-    margin: 0 -24px;
     overflow-x: auto;
-    width: calc(100% + 48px);
+    scroll-behavior: smooth;
+    width: 100%;
+  }
+
+  &[overflow] .web-tabs__tablist {
+    padding-left: 3rem;
   }
 
   .web-tabs__tab {
-    -webkit-tap-highlight-color: transparent;
     @include base-button();
+    border-radius: 0;
     color: $BLACK;
     flex: 1 0 auto;
-    height: 48px;
+    height: 3rem;
     margin: 0;
-    opacity: .6;
+    min-width: fit-content;
+    transition:
+      background $TRANSITION_SPEED,
+      box-shadow $TRANSITION_SPEED,
+      color $TRANSITION_SPEED;
   }
 
   @include hover() {
     .web-tabs__tab:hover,
     .web-tabs__tab:focus {
-      background: rgba($SUCCESS_COLOR, .1);
+      background: $SELF_ASSESSMENT_HOVER_COLOR;
     }
   }
 
@@ -50,17 +62,16 @@ web-tabs {
   }
 
   .web-tabs__tab:active {
-    background: rgba($SUCCESS_COLOR, .3);
+    background: $SELF_ASSESSMENT_ACTIVE_COLOR;
     box-shadow: none;
   }
 
   .web-tabs__tab[aria-selected="true"] {
-    color: $SUCCESS_COLOR;
-    opacity: 1;
+    color: $SELF_ASSESSMENT_PRIMARY_COLOR;
   }
 
-  .web-tabs__tab[aria-selected="true"]::after {
-    background: $SUCCESS_COLOR;
+  .web-tabs__tab::after {
+    background: transparent;
     bottom: 0;
     content: '';
     display: block;
@@ -68,10 +79,36 @@ web-tabs {
     left: 0;
     position: absolute;
     right: 0;
+    transition: background $TRANSITION_SPEED;
+  }
+
+  .web-tabs__tab[aria-selected="true"]::after {
+    background: $SELF_ASSESSMENT_PRIMARY_COLOR;
+  }
+
+  .web-tabs__text-label {
+    opacity: .6;
+    transition: opacity $TRANSITION_SPEED;
+  }
+
+  .web-tabs__tab[aria-selected="true"] .web-tabs__text-label {
+    opacity: 1;
+  }
+
+  .web-tabs__panel {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
   }
 
   .web-tabs__panel[hidden] {
     display: none;
+  }
+
+  // Prevent FOUC by hiding panels until after firstUpdated().
+  // This isn't ":not(:defined)" because firstUpdated occurs after a frame.
+  &.unresolved * {
+    display: none !important;
   }
 }
 
