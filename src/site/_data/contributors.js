@@ -751,11 +751,12 @@ const contributors = {
       unit: "Developer Relations",
     },
     country: "US",
-    homepage: "http://petelepage.com",
+    homepage: "https://petelepage.com",
     twitter: "petele",
     github: "petele",
     description: {
-      en: "Pete is a Developer Advocate",
+      en:
+        "Developer Advocate on the web team at Google, taking the sharp edges off new stuff & helping make the web better for developers! (he/him)",
     },
   },
   paullewis: {
