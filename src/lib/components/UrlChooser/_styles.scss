@@ -13,7 +13,6 @@ web-url-chooser {
   $INPUT_HEIGHT: 56px;
 
   display: block;
-  border-radius: 6px;
 
   &:not([switching]) .lh-enterurl--switch {
     display: none;

@@ -18,7 +18,7 @@
   align-items: center;
   background-color: rgba($WEB_EXTENDED_SECONDARY_COLOR, .08);
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: $GLOBAL_RADIUS;
   color: rgba($WEB_EXTENDED_SECONDARY_COLOR, 1);
   display: inline-flex;
   height: 32px;
