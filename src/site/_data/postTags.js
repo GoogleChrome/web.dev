@@ -68,6 +68,9 @@ const tags = {
   forms: {
     title: "Forms",
   },
+  fugu: {
+    title: "Fugu",
+  },
   games: {
     title: "Games",
   },
