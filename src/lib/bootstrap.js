@@ -35,5 +35,22 @@ WebComponents.waitFor(async () => {
 });
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/sw.js");
+  const allowedHostnames = ["www.web.dev", "localhost"];
+  if (allowedHostnames.indexOf(window.location.hostname) !== -1) {
+    navigator.serviceWorker.register("/sw.js");
+  } else {
+    console.warn(
+      "skipping SW, unsupported hostname:",
+      window.location.hostname,
+    );
+
+    // Remove previous Service Worker instances from this hostname. This should never normally
+    // happen but is here for safety.
+    navigator.serviceWorker.getRegistrations().then(async (all) => {
+      await all.map((reg) => reg.unregister());
+      if (all.length) {
+        window.location.reload();
+      }
+    });
+  }
 }
