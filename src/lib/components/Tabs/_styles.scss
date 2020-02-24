@@ -39,7 +39,7 @@ web-tabs {
     @include base-button();
     border-radius: 0;
     color: $BLACK;
-    flex: 1;
+    flex: 1 0 auto;
     height: 3rem;
     margin: 0;
     min-width: fit-content;
@@ -47,10 +47,6 @@ web-tabs {
       background $TRANSITION_SPEED,
       box-shadow $TRANSITION_SPEED,
       color $TRANSITION_SPEED;
-  }
-
-  &[overflow] .web-tabs__tab {
-    flex: 1 0 auto;
   }
 
   @include hover() {
