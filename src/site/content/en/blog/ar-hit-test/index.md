@@ -167,12 +167,10 @@ The `requestAnimationFrame()` callback also gets new code to handle hit testing.
 
 As you move your device, the reticle needs to move with it as it tries to find
 surfaces. To create the illusion of movement, redraw the reticle in every frame.
-But don't show the reticle if the hit test fails and I haven't done a hit test
-yet. So, for the reticle I created earlier, I set it's `visible` property to
-`false`.
+But don't show the reticle if the hit test fails. So, for the reticle I created
+earlier, I set it's `visible` property to `false`.
 
 ```js/5
-//
 function onXRFrame(hrTime, xrFrame) {
   let xrSession = xrFrame.session;
   xrSession.requestAnimationFrame(onXRFrame);
