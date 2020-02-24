@@ -26,9 +26,10 @@ web-tabs {
     @include scrollbars();
     border-bottom: 1px solid $GREY_300;
     display: flex;
+    margin: 0 -24px;
     overflow-x: auto;
     scroll-behavior: smooth;
-    width: 100%;
+    width: calc(100% + 48px);
   }
 
   &[overflow] .web-tabs__tablist {
