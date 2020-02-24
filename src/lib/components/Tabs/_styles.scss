@@ -28,8 +28,8 @@ web-tabs {
   }
 
   .web-tabs__tab {
-    -webkit-tap-highlight-color: transparent;
     @include base-button();
+    border-radius: 0;
     color: $BLACK;
     flex: 1 0 auto;
     height: 48px;
