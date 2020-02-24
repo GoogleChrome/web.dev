@@ -151,7 +151,7 @@ function responseTemplate(response) {
 function optionContentTemplate(option) {
   if (!option.content) return;
   return html`
-    <span data-role="option" data-state="unselected">
+    <span data-role="option">
       ${md.renderInline(option.content)}
     </span>
   `;
