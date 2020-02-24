@@ -116,14 +116,13 @@ workbox.precaching.precacheAndRoute(manifest);
 
 /**
  * Match "/foo-bar/ "and "/foo-bar/as/many/of-these-as-you-like/" (with optional trailing
- * "index.html"), normal page nodes for web.dev. Allow optional trailing "?...", as Workbox matches
- * this against the whole URL.
+ * "index.html"), normal page nodes for web.dev. This only matches on pathname.
  */
-const contentHrefRe = new RegExp("/([\\w-]+/)*(|index.html)(\\?|$)");
+const contentPathRe = new RegExp("^/([\\w-]+/)*(|index.html)$");
 
 /**
  * Match "/foo-bar" and "/foo-bar/as-many/but/no/trailing/slash" (but not "/foo/bar/index.html").
- * This only matches on pathname (so it must always start with "/"), as it's not used by Workbox.
+ * This only matches on pathname (so it must always start with "/").
  */
 const untrailedContentPathRe = new RegExp("^(/[\\w-]+)+$");
 
@@ -131,7 +130,9 @@ const untrailedContentPathRe = new RegExp("^(/[\\w-]+)+$");
  * Send normal nodes to cache first.
  */
 workbox.routing.registerRoute(
-  contentHrefRe,
+  ({url, event}) => {
+    return url.host === self.location.host && contentPathRe.test(url.pathname);
+  },
   new workbox.strategies.NetworkFirst({
     plugins: [normalizeIndexCacheKeyPlugin],
   }),
@@ -152,7 +153,7 @@ workbox.routing.registerRoute(
 self.addEventListener("fetch", (event) => {
   const u = new URL(event.request.url);
   if (
-    !untrailedContentPathRe.exec(u.pathname) ||
+    !untrailedContentPathRe.test(u.pathname) ||
     self.location.host !== u.host
   ) {
     return;
