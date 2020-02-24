@@ -4,13 +4,10 @@ title: Provide a custom install experience
 authors:
   - petelepage
 date: 2020-02-14
-updated: 2020-02-19
+updated: 2020-02-24
 description: |
   Use the beforeinstallprompt event to provide a custom, seamless install
   experience for your users.
-tags:
-  - post
-draft: true
 ---
 
 Many browsers make it possible for you to enable and promote the installation
@@ -37,7 +34,7 @@ devices.
 
 <div class="w-clearfix"></div>
 
-## Promoting installation
+## Promoting installation {: #promote-installation }
 
 To indicate your Progressive Web App is installable, and to provide a custom
 in-app install flow:
@@ -48,7 +45,7 @@ in-app install flow:
 3. Alert the user that your PWA is installable, and provide a button or other
    element to start the in-app installation flow.
 
-### Listen for the `beforeinstallprompt` event
+### Listen for the `beforeinstallprompt` event {: #beforeinstallprompt }
 
 If your Progressive Web App meets the required [installation criteria](/install-criteria/),
 the browser fires a `beforeinstallprompt` event. Save a reference to the
@@ -68,7 +65,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 ```
 
-There are many different [patterns](/install-patterns/) that you can use to
+There are many different [patterns](/promote-install/) that you can use to
 notify the user your app can be installed and provide an in-app install
 flow, for example, a button in the header, an item in the navigation menu,
 or an item in your content feed.
@@ -80,7 +77,7 @@ check-out flow, or creating their account, let them complete that before
 prompting them.
 {% endAside %}
 
-### In-app installation flow
+### In-app installation flow {: #in-app-flow }
 
 To provide in-app installation, provide a button or other interface element
 that a user can click to install your app. When the element is
@@ -90,8 +87,8 @@ asking them to confirm they want to install your PWA.
 
 ```js
 buttonInstall.addEventListener('click', (e) => {
-  // Hide the install promotion
-  hideInstallPromotion();
+  // Hide the app provided install promotion
+  hideMyInstallPromotion();
   // Show the install prompt
   deferredPrompt.prompt();
   // Wait for the user to respond to the prompt
@@ -111,7 +108,11 @@ dismisses it, you'll need to wait until the `beforeinstallprompt` event
 is fired again, typically immediately after the `userChoice` property
 has resolved.
 
-## Detect when the PWA was successfully installed
+{% Aside 'codelab' %}
+[Make a site installable using the beforeinstallprompt event](/codelab-make-installable).
+{% endAside %}
+
+## Detect when the PWA was successfully installed {: #detect-install }
 
 You can use the `userChoice` property to determine if the user installed
 your app from within your user interface. But, if the user installs your
@@ -126,7 +127,7 @@ window.addEventListener('appinstalled', (evt) => {
 });
 ```
 
-## Detect how the PWA was launched
+## Detect how the PWA was launched {: #detect-launch-type }
 
 The CSS `display-mode` media query indicates how the PWA was launched,
 either in a browser tab, or as an installed PWA. This makes it possible to
@@ -176,6 +177,7 @@ will be [queued and updated][update-flow] once the device is plugged in and
 connected to Wi-Fi.
 
 ### Chrome on Desktop
+
 On Desktop, the manifest is not automatically updated, but this is planned for
 a future update.
 

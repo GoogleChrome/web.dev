@@ -1,13 +1,12 @@
 ---
 layout: post
-title: Criteria for installability
+title: What does it take to be installable?
 authors:
   - petelepage
 date: 2020-02-14
-updated: 2020-02-14
+updated: 2020-02-24
 description: |
   Progressive Web App installability criteria.
-draft: true
 ---
 
 Many browsers indicate to the user that your Progressive Web App (PWA) is

@@ -4,7 +4,7 @@ title: Add a web app manifest
 authors:
   - petelepage
 date: 2018-11-05
-updated: 2020-02-18
+updated: 2020-02-24
 description: |
   The web app manifest is a simple JSON file that tells the browser about your
   web application and how it should behave when installed on the user's mobile
@@ -13,14 +13,14 @@ description: |
 
 The web app manifest is a JSON file that tells the browser about your
 Progressive Web App and how it should behave when installed on the user's
-desktop or mobile device. A typical manifest file includes
-the app name, the icons the app should use, and the URL that should be opened when the
+desktop or mobile device. A typical manifest file includes the app name, the
+icons the app should use, and the URL that should be opened when the
 app is launched.
 
 Manifest files are [supported](https://developer.mozilla.org/en-US/docs/Web/Manifest#Browser_compatibility) in Chrome, Edge, Firefox, UC Browser, Opera,
 and the Samsung browser. Safari has partial support.
 
-## Create the manifest.webmanifest file
+## Create the manifest.webmanifest file {: #create }
 
 The manifest file can have any name, but is commonly named
 `manifest.webmanifest` and served from the root (your website's top-level
@@ -51,7 +51,7 @@ directory).
 }
 ```
 
-### Key manifest properties
+### Key manifest properties {: #manifest-properties }
 
 #### `short_name` and/or `name` {: #name }
 
@@ -168,7 +168,7 @@ The `theme_color` sets the color of the tool bar, and may be reflected in
 the app's preview in task switchers. The `theme_color` should match the
 `meta` theme color specified in your document head.
 
-## Add the web app manifest to your pages
+## Add the web app manifest to your pages {: #link-manifest }
 
 After creating the manifest, add a `<link>` tag to all the pages of your
 Progressive Web App. For example:
@@ -183,7 +183,7 @@ on the same domain), thus if the manifest requires credentials, you must
 include `crossorigin="use-credentials"` in the manifest tag.
 {% endAside %}
 
-## Test your manifest
+## Test your manifest {: #test-manifest }
 
 To verify your manifest is setup correctly, use the **Manifest** pane in the
 **Application** panel of Chrome DevTools.
@@ -224,6 +224,7 @@ you can provide additional icons for pixel perfection.
 ## Further reading
 
 There are several additional properties that can be added to the web app
-manifest. Refer to the [MDN Web App Manifest documentation][mdn-manifest] for more information.
+manifest. Refer to the [MDN Web App Manifest documentation][mdn-manifest]
+for more information.
 
 [mdn-manifest]: https://developer.mozilla.org/en-US/docs/Web/Manifest

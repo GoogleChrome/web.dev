@@ -162,3 +162,14 @@ redirects:
 
 - from: /largest-contentful-paint
   to: /lcp
+
+# Redirects Progressive Web App content
+
+- from: /pwa
+  to: /progressive-web-apps/
+
+- from: /installable/
+  to: /progressive-web-apps/#installable
+
+- from: /discover-installable/
+  to: /progressive-web-apps/#installable

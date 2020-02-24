@@ -5,7 +5,8 @@ const reliable = require("../en/reliable/reliable.11tydata.js").path;
 const discoverable = require("../en/discoverable/discoverable.11tydata.js")
   .path;
 const secure = require("../en/secure/secure.11tydata.js").path;
-const installable = require("../en/installable/installable.11tydata.js").path;
+const pwa = require("../en/progressive-web-apps/progressive-web-apps.11tydata.js")
+  .path;
 
 // =============================================================================
 // HOME OVERVIEW
@@ -16,14 +17,9 @@ const installable = require("../en/installable/installable.11tydata.js").path;
 // =============================================================================
 
 module.exports = function() {
-  const paths = [
-    fast,
-    accessible,
-    reliable,
-    secure,
-    discoverable,
-    installable,
-  ].filter(livePaths);
+  const paths = [fast, accessible, reliable, secure, discoverable, pwa].filter(
+    livePaths,
+  );
 
   const lang = "en";
 
