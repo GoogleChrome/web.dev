@@ -155,6 +155,15 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
           running.
         </td>
       </tr>
+      <tr>
+        <td>
+          <a href="/nfc/">Web NFC</a>
+        </td>
+        <td>
+          Web NFC provides sites the ability to read and write to NFC tags when
+          they are in close proximity to the user's device.
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
