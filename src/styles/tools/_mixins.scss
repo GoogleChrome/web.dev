@@ -71,7 +71,7 @@
 // @param {?string=} $trackColor - Color of the scrollbar track
 @mixin scrollbars($size: 10px, $thumbColor: $GREY_600, $trackColor: transparent) {
   & {
-    //Sass Lint doesn't recognize these shiny new properties
+    // Sass Lint doesn't recognize these shiny new properties
     // sass-lint:disable-block no-misspelled-properties
     scrollbar-color: $thumbColor $trackColor;
     scrollbar-width: thin;

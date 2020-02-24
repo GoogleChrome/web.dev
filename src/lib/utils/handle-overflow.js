@@ -2,7 +2,7 @@
  * Check whether an element has overflow.
  * @param {Object} scroller The element to check for overflow.
  * @param {string} dimension The dimension to check (height or width).
- * @return {null}
+ * @return {Boolean} Whether the passed element has overflow.
  */
 export const handleOverflow = (scroller, dimension) => {
   if (dimension !== "height" && dimension !== "width") {

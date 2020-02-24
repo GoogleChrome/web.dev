@@ -43,7 +43,7 @@ class Tabs extends BaseElement {
       for (const child of this.children) {
         // Set id and aria-labelledby attributes for each panel for a11y.
         this.prerenderedChildren.push(this.panelTemplate(i, child));
-        // Get tab label from panel data-label attribute
+        // Get tab label from child data-label attribute
         // and render a tab for each panel.
         const tabLabel = child.getAttribute("data-label");
         this.tabs.push(this.tabTemplate(i, tabLabel));
