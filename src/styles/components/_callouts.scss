@@ -7,7 +7,7 @@
 
   @include bp(sm) {
     // sass-lint:disable-block indentation
-    border-radius: 8px;
+    border-radius: $GLOBAL_RADIUS_MEDIUM;
     box-shadow:
     0 2px 4px -1px rgba(0, 0, 0, .2),
     0 4px 5px 0 rgba(0, 0, 0, .14),
