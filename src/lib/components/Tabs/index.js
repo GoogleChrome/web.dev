@@ -13,12 +13,14 @@ class Tabs extends BaseElement {
     return {
       label: {type: String},
       activeTab: {type: Number, reflect: true},
+      overflow: {type: Boolean, reflect: true},
     };
   }
 
   constructor() {
     super();
     this.activeTab_ = 0;
+    this.overflow = false;
     this.prerenderedChildren = null;
     this.tabs = null;
     this.idSalt = BaseElement.generateIdSalt("web-tab-");
@@ -185,7 +187,13 @@ class Tabs extends BaseElement {
   onResize() {
     const tabs = this.querySelector(".web-tabs__tablist");
 
-    handleOverflow(tabs, "width", "web-tabs--overflow");
+    const hasOverflow = handleOverflow(tabs, "width");
+
+    if (hasOverflow) {
+      this.overflow = true;
+    } else {
+      this.overflow = false;
+    }
   }
 
   onClick(e) {

@@ -31,7 +31,7 @@ web-tabs {
     width: 100%;
   }
 
-  .web-tabs--overflow {
+  &[overflow] .web-tabs__tablist {
     padding-left: 3rem;
   }
 
@@ -49,7 +49,7 @@ web-tabs {
       color $TRANSITION_SPEED;
   }
 
-  .web-tabs--overflow .web-tabs__tab {
+  &[overflow] .web-tabs__tab {
     flex: 1 0 auto;
   }
 
