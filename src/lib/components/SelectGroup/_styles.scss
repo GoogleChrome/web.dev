@@ -29,7 +29,7 @@
   justify-items: start;
 }
 
-.web-select-group__options-wrapper--columns--2 {
+[columns] > fieldset > .web-select-group__options-wrapper {
   grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
   justify-items: stretch;
 }

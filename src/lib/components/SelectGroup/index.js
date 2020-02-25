@@ -4,9 +4,9 @@ import {BaseElement} from "../BaseElement";
 class SelectGroup extends BaseElement {
   static get properties() {
     return {
-      columns: {type: Boolean},
-      prefix: {type: String},
       type: {type: String},
+      prefix: {type: String},
+      columns: {type: Boolean},
     };
   }
 
@@ -18,12 +18,6 @@ class SelectGroup extends BaseElement {
   }
 
   render() {
-    let columnsClass = "";
-
-    if (this.columns) {
-      columnsClass = "web-select-group__options-wrapper--columns--2";
-    }
-
     if (!this.prefix) this.prefix = "";
 
     if (!this.selectors) {
@@ -37,8 +31,11 @@ class SelectGroup extends BaseElement {
     }
 
     return html`
-      <fieldset class="web-select-group ${this.prefix}">
-        <div class="web-select-group__options-wrapper ${columnsClass}">
+      <fieldset
+        class="web-select-group ${this.prefix}"
+        ?columns="${this.columns}"
+      >
+        <div class="web-select-group__options-wrapper">
           ${this.selectors}
         </div>
       </fieldset>
@@ -59,6 +56,7 @@ class SelectGroup extends BaseElement {
     return html`
       <label
         class="web-select-group__option ${labelClass}"
+        data-role="option"
         data-category="Site-Wide Custom Events"
         data-label="${type}, web-select-group-${this.idSalt}-${i}"
       >
