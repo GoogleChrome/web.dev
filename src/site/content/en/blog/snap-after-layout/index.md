@@ -1,5 +1,5 @@
 ---
-title: "Scroll snapping after relayout"
+title: "Scroll snapping after layout"
 subhead: |
   Starting in Chrome 81, you no longer need to add event listeners to force
   resnapping
@@ -7,7 +7,7 @@ authors:
   - yigu
   - alsan
   - adamargyle
-date: 2020-02-21
+date: 2020-02-22
 
 description: |
   Starting in Chrome 81, scrollers remain snapped when the page layout changes.
@@ -95,7 +95,9 @@ The mentioned shortcomings no longer exist in Chrome 81: scrollers will remain
 snapped even after changing layout. They will re-evaluate scroll positions after
 changing their layout, and re-snap to the closest snap position if necessary. If
 the scroller was previously snapped to an element that still exists after the
-layout change, then the scroller will try to snap back to it.
+layout change, then the scroller will try to snap back to it. Pay attention to
+what happens when the layout changes in the following
+[example](https://codepen.io/argyleink/full/YzXyOaX).
 
 <div class="w-columns">
 {% Compare 'worse', 'Snap position lost' %}
