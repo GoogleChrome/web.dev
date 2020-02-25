@@ -71,7 +71,9 @@ function questionTemplate(question, assessment) {
 // If a question DOES have components,
 // get the response components from the question's components object.
 function responsesTemplate(question) {
-  if (!question.components) return responseTemplate(question);
+  if (!question.components) {
+    return responseTemplate(question);
+  }
   return question.components.map(responseTemplate);
 }
 
@@ -149,7 +151,9 @@ function responseTemplate(response) {
 }
 
 function optionContentTemplate(option) {
-  if (!option.content) return;
+  if (!option.content) {
+    return;
+  }
   return html`
     <span data-role="option">
       ${md.renderInline(option.content)}
@@ -158,7 +162,9 @@ function optionContentTemplate(option) {
 }
 
 function rationaleTemplate(option) {
-  if (!option.rationale) return;
+  if (!option.rationale) {
+    return;
+  }
   return html`
     <div data-role="rationale">
       ${md.render(option.rationale)}

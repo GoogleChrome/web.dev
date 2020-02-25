@@ -60,7 +60,9 @@ export class BaseModalElement extends BaseElement {
   }
 
   set open(val) {
-    if (this.open_ === val) return;
+    if (this.open_ === val) {
+      return;
+    }
 
     const oldVal = this.open_;
 
@@ -90,7 +92,9 @@ export class BaseModalElement extends BaseElement {
   onClick(e) {
     // Check whether the event target matches the currentTarget
     // so the modal only closes when a user clicks the scrim.
-    if (e.currentTarget !== e.target) return;
+    if (e.currentTarget !== e.target) {
+      return;
+    }
     this.open = false;
   }
 
@@ -108,7 +112,9 @@ export class BaseModalElement extends BaseElement {
     this.animatable = false;
     // Must wait until animation ends to change focus and check overflow.
     this.manageFocus();
-    if (this.open) this.onResize();
+    if (this.open) {
+      this.onResize();
+    }
     this.inert = !this.open;
   }
 
@@ -120,7 +126,9 @@ export class BaseModalElement extends BaseElement {
     // See the Assessment component for an example.
     const content = this.querySelector(".web-modal__content");
 
-    if (!content) return;
+    if (!content) {
+      return;
+    }
     handleOverflow(content, "height", "web-modal--overflow", this);
   }
 

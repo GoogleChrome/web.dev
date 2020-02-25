@@ -162,7 +162,9 @@ class Assessment extends BaseModalElement {
   onAssessmentAnimationEnd() {
     const tabs = this.querySelector("web-tabs");
 
-    if (!tabs) return;
+    if (!tabs) {
+      return;
+    }
 
     // Apply overflow class to tabs if needed.
     tabs.onResize();
