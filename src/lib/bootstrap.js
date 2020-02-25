@@ -35,7 +35,7 @@ WebComponents.waitFor(async () => {
 });
 
 if ("serviceWorker" in navigator) {
-  const allowedHostnames = ["www.web.dev", "localhost"];
+  const allowedHostnames = ["web.dev", "localhost"];
   if (allowedHostnames.indexOf(window.location.hostname) !== -1) {
     navigator.serviceWorker.register("/sw.js");
   } else {
