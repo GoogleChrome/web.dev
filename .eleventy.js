@@ -110,7 +110,8 @@ module.exports = function(config) {
 
   const mdLib = markdownIt(markdownItOptions)
     .use(markdownItAnchor, markdownItAnchorOptions)
-    .use(markdownItAttrs, markdownItAttrsOpts);
+    .use(markdownItAttrs, markdownItAttrsOpts)
+    .disable('code');
 
   // custom renderer rules
   const fence = mdLib.renderer.rules.fence;
