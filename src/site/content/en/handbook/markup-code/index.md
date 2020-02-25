@@ -36,6 +36,11 @@ Include the [language name](https://prismjs.com/#supported-languages) after the 
 ```
 ````
 
+{% Aside 'warning' %}
+Indented code blocks won't work on web.dev,
+so make sure to use fenced code blocks as described above.
+{% endAside %}
+
 For code blocks that don't need syntax highlighting (for example, HTTP headers), set
 the language to `text`:
 
