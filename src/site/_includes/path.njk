@@ -3,9 +3,7 @@ layout: layout
 ---
 
 {% set topics = path.topics | removeDrafts(lang) %}
-
-{% include 'partials/banner.njk' %}
-
+\
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
 <div class="path-landing-page">
