@@ -8,7 +8,7 @@ class ResponseMultipleChoice extends BaseResponseElement {
     return {
       cardinality: {type: String},
       columns: {type: Boolean},
-      correct: {type: String},
+      correctAnswer: {attribute: "correct-answer"},
     };
   }
 
@@ -19,25 +19,9 @@ class ResponseMultipleChoice extends BaseResponseElement {
     this.rationales = null;
   }
 
-  optionTemplate(content, rationale, isCorrect) {
-    const flag = document.createElement("div");
-
-    flag.className = "web-response__correctness-flag";
-    if (isCorrect) {
-      flag.innerHTML = "Correct";
-    } else {
-      flag.innerHTML = "Incorrect";
-    }
-    content.prepend(flag);
-    rationale.className = "web-response__option-rationale";
-    content.append(rationale);
-
-    return content;
-  }
-
   render() {
     const options = [];
-    const correctArr = this.correct.split(",").map(Number);
+    const correctArr = this.correctAnswer.split(",").map(Number);
     const selectionRange = BaseResponseElement.getSelectionRange(
       this.cardinality,
     );
@@ -92,8 +76,38 @@ class ResponseMultipleChoice extends BaseResponseElement {
     `;
   }
 
+  optionTemplate(content, rationale, isCorrect) {
+    const flag = document.createElement("div");
+
+    flag.className = "web-response__correctness-flag";
+    if (isCorrect) {
+      flag.innerHTML = "Correct";
+    } else {
+      flag.innerHTML = "Incorrect";
+    }
+    content.prepend(flag);
+    rationale.className = "web-response__option-rationale";
+    content.append(rationale);
+
+    // Remove the data role on the option content because the SelectGroup
+    // label element serves as the option.
+    content.removeAttribute("data-role");
+
+    return content;
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+  }
+
   onClick(e) {
     this.toggleSelection(e);
+    const options = this.querySelectorAll("label");
+
+    for (const option of options) {
+      console.log("label");
+      option.setAttribute("data-state", "unselected");
+    }
   }
 
   // Allow user to deselect radio buttons.
