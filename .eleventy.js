@@ -25,6 +25,7 @@ const slugify = require('slugify');
 const componentsDir = 'src/site/_includes/components';
 const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
 const Aside = require(`./${componentsDir}/Aside`);
+const Assessment = require(`./${componentsDir}/Assessment`);
 const AssessmentCallout = require(`./${componentsDir}/AssessmentCallout`);
 const AssessmentHint = require(`./${componentsDir}/AssessmentHint`);
 const Author = require(`./${componentsDir}/Author`);
@@ -181,6 +182,7 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   config.addShortcode('ArticleNavigation', ArticleNavigation);
   config.addPairedShortcode('Aside', Aside);
+  config.addShortcode('Assessment', Assessment);
   config.addPairedShortcode('AssessmentCallout', AssessmentCallout);
   config.addPairedShortcode('AssessmentHint', AssessmentHint);
   config.addShortcode('Author', Author);

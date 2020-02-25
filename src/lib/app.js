@@ -1,3 +1,4 @@
+import "./components/Assessment";
 import "./components/ProfileSwitcherContainer";
 import "./components/Header";
 import "./components/SideNav";
