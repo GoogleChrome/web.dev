@@ -46,9 +46,11 @@ const notFoundHandler = (req, res, next) => {
     .sendFile("404/index.html", options, (err) => err && next(err));
 };
 
-// Disallow www.web.dev, and remove any active Service Worker too.
-const noWwwHandler = (req, res, next) => {
-  if (req.hostname === "www.web.dev") {
+// Disallow invalid hostnames, and remove any active Service Worker too (users
+// may have loaded this and otherwise they'll be stuck forever).
+const invalidHostnames = ["www.web.dev", "appengine-test.web.dev"];
+const invalidHostnameHandler = (req, res, next) => {
+  if (invalidHostnames.includes(req.hostname)) {
     if (!req.url.endsWith(".js")) {
       return res.redirect(301, "https://web.dev" + req.url);
     }
@@ -58,7 +60,7 @@ const noWwwHandler = (req, res, next) => {
 };
 
 const handlers = [
-  noWwwHandler,
+  invalidHostnameHandler,
   localeHandler,
   express.static("dist"),
   express.static("dist/en"),
