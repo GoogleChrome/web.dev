@@ -307,6 +307,10 @@ document.addEventListener('visibilitychange', () => {
   bucket in CrUX, and a score of `0.07` would appear in the 5–10 bucket in CrUX.
 {% endAside %}
 
+## What is a good CLS score?
+
+To provide a good user experience, sites should strive to have a Cumulative Layout Shift of less than **0.1** for at least **75% of page loads**.
+
 ## How to improve CLS
 
 For most websites, you can avoid all unexpected layout shifts by sticking to a

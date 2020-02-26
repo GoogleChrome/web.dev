@@ -211,13 +211,10 @@ care most about on desktop should be the 95th–99th percentile of desktop users
 and the FID value you care about most on mobile should be the 95th–99th
 percentile of mobile users.
 
-## What is a good FID?
+## What is a good FID score?
 
-[RAIL](https://developers.google.com/web/fundamentals/performance/rail)
-guidelines suggest that users perceive interaction delays less than 100 milliseconds (ms) to be immediate, so it's best to keep all input delays (including the first input) less than that.
-
-Page Speed Insights will [report](https://developers.google.com/speed/docs/insights/v5/about#distribution)
-FID values less than 100 ms as "fast", values between 100 ms and 300 ms as "moderate", and values greater than 300 ms as slow.
+To provide a good user experience, sites should strive to have a First Input
+Delay of less than **100 milliseconds** for at least **75% of page loads**.
 
 ## How to improve FID
 
