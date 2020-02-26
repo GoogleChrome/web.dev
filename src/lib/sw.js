@@ -5,12 +5,25 @@ const serviceWorkerArchitecture = "v3";
 
 const normalizeIndexCacheKeyPlugin = {
   cacheKeyWillBeUsed({request, mode}) {
+    // web.dev does not have any handlers which respond to ?search queries, so strip them (useful
+    // for ?utm_... params, which aren't stripped by Workbox).
+    // From: https://github.com/GoogleChrome/workbox/issues/1709#issuecomment-429917667
+    const u = new URL(request.url);
+    if (u.search || u.hash) {
+      u.search = "";
+      u.hash = "";
+
+      // Request is immutable, so recreate it here.
+      request = new Request(u.href, {headers: request.headers});
+    }
+
     // Take advantage of Workbox's built-in handling of .../index.html routes and ensure that its
     // cache keys always include it. (e.g., requests for foo/ will load foo/index.html: but
     // foo/index.html will not load foo/).
     if (request.url.endsWith("/")) {
       return request.url + "index.html";
     }
+
     return request;
   },
 };
@@ -103,21 +116,23 @@ workbox.precaching.precacheAndRoute(manifest);
 
 /**
  * Match "/foo-bar/ "and "/foo-bar/as/many/of-these-as-you-like/" (with optional trailing
- * "index.html"), normal page nodes for web.dev.
+ * "index.html"), normal page nodes for web.dev. This only matches on pathname.
  */
-const contentPageRe = new RegExp("/([\\w-]+/)*(|index.html)$");
+const contentPathRe = new RegExp("^/([\\w-]+/)*(|index.html)$");
 
 /**
  * Match "/foo-bar" and "/foo-bar/as-many/but/no/trailing/slash" (but not "/foo/bar/index.html").
- * This roots at the left "/" as it's not given to Workbox, which does this for us.
+ * This only matches on pathname (so it must always start with "/").
  */
-const untrailedContentPageRe = new RegExp("^(/[\\w-]+)+$");
+const untrailedContentPathRe = new RegExp("^(/[\\w-]+)+$");
 
 /**
  * Send normal nodes to cache first.
  */
 workbox.routing.registerRoute(
-  contentPageRe,
+  ({url, event}) => {
+    return url.host === self.location.host && contentPathRe.test(url.pathname);
+  },
   new workbox.strategies.NetworkFirst({
     plugins: [normalizeIndexCacheKeyPlugin],
   }),
@@ -138,7 +153,7 @@ workbox.routing.registerRoute(
 self.addEventListener("fetch", (event) => {
   const u = new URL(event.request.url);
   if (
-    !untrailedContentPageRe.exec(u.pathname) ||
+    !untrailedContentPathRe.test(u.pathname) ||
     self.location.host !== u.host
   ) {
     return;
