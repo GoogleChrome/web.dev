@@ -12,7 +12,7 @@
   {% endif %}
 
   {# Make sure Actions are first in the tab order. #}
-  <web-actions actions="share|subscribe" authors="{{ authors | expandContributors | join('|') }}"></web-actions>
+  <web-actions actions="share" authors="{{ authors | expandContributors | join('|') }}"></web-actions>
 
   {% include 'partials/translation-disclaimer.njk' %}
 
@@ -136,4 +136,5 @@
       {% endif %} {% endfor %}
     </ul>
   </div> #}
+  <web-subscribe-form></web-subscribe-form>
 </div>
