@@ -267,7 +267,7 @@ This series of articles only covers the basics of implementing immersive content
 on the web. Many more capabilities and use cases are presented by the Immersive
 Web Working Group's [WebXR Device API
 samples](https://immersive-web.github.io/webxr-samples/). We've also just
-published a [hit test article](https://web.dev/hit-test) which explains an API
+published a [hit test article](/ar-hit-test/) which explains an API
 for detecting surfaces and placing virtual items in a real-world camera view.
 Check them out and watch The web.dev blog for more
 articles in the year to come.
