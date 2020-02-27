@@ -29,8 +29,8 @@ Scroll Snap?](https://caniuse.com/#feat=css-snappoints) for more information.
 Chrome is currently the only browser to implement scroll snapping after layout
 changes.  Firefox has a
 [ticket](https://bugzilla.mozilla.org/show_bug.cgi?id=1530253) open for
-implementing this and Safari has [one
-open](https://bugs.webkit.org/show_bug.cgi?id=144826) for re-snapping after a
+implementing this and Safari also has an open
+[ticket](https://bugs.webkit.org/show_bug.cgi?id=144826) for re-snapping after a
 scroller's content changes. For now, you can simulate this behaviour by adding
 the following code to event listeners to force a snapping to execute:
 ```javascript
