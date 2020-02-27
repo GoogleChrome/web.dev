@@ -164,7 +164,7 @@ UI](https://codepen.io/argyleink/pen/RwPWqKe) for visuals.
   </figcaption>
 </figure>
 
-## Future Work
+## Future work
 All re-snapping scroll effects are currently instant; a potential follow-up is
 to support re-snapping with [smooth scrolling
 effects](https://developers.google.com/web/updates/2016/02/smooth-scrolling-in-chrome-49).
