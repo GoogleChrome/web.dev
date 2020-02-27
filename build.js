@@ -125,6 +125,8 @@ async function build() {
     input: "src/lib/sw.js",
     plugins: [
       // Workbox uses a variable known to be undefined (!) and forces this plugin to be used.
+      // TODO(samthor): This generates statements like "if (1 !== 1)", which are NOT removed from
+      // the final bundle code. Terser/Rollup don't strip them.
       rollupPluginReplace({
         "process.env.NODE_ENV": JSON.stringify("production"),
       }),
