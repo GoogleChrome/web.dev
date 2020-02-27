@@ -1,5 +1,5 @@
 ---
-title: "Scroll snapping after layout"
+title: "Scroll snapping after layout changes"
 subhead: |
   Starting in Chrome 81, you no longer need to add event listeners to force
   resnapping
@@ -138,7 +138,7 @@ affects the initial scroll offset of scrollers using the scroll snap feature.
 {% endAside %}
 
 ## Example: Sticky scrollbars
-With "Snap after layout", developers can implement sticky scrollbars with a few
+With "Snap after layout changes", developers can implement sticky scrollbars with a few
 lines of CSS:
 ```css
 .container {
@@ -173,7 +173,7 @@ for details.
 
 ## Feedback
 
-Your feedback is invaluable in making re-snapping after layout better, so go on
+Your feedback is invaluable in making re-snapping after layout changes better, so go on
 and try it out and [let us
 know](https://bugs.chromium.org/p/chromium/issues/detail?id=866127) what you
 think.
