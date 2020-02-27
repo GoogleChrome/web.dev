@@ -5,7 +5,7 @@ let recentActiveUrl; // current URL not including hash
 // async, and most browsers will move the scroll position automatically for us, even on old content.
 // Instead, we call `scrollOnFrame` when the async load helper is done.
 window.history.scrollRestoration = "manual";
-window.addEventListener("beforeunload", (e) => {
+window.addEventListener("pagehide", (e) => {
   // ... but re-enable when the page is unloaded, which happens if a user refreshes the page using
   // their browser. This prevents this type of reload from jumping back to the top of the viewport.
   window.history.scrollRestoration = "auto";
