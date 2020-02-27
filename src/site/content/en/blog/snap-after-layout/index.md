@@ -24,7 +24,7 @@ resized or the device is rotated. This shortcoming is fixed in Chrome 81.
 
 ## Interoperability
 Many browsers have basic support for CSS Scroll Snap. See [Can I use CSS
-ScrollSnap?](https://caniuse.com/#feat=css-snappoints) for more information.
+Scroll Snap?](https://caniuse.com/#feat=css-snappoints) for more information.
 
 Chrome is currently the only browser to implement scroll snapping after layout
 changes.  Firefox has a
