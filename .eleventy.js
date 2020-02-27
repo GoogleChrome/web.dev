@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+const fs = require('fs').promises;
+
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
@@ -75,6 +77,8 @@ const prettyDate = require(`./${filtersDir}/pretty-date`);
 const removeDrafts = require(`./${filtersDir}/remove-drafts`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
 const stripLanguage = require(`./${filtersDir}/strip-language`);
+
+const postEleventyBuild = require('./src/site/_utils/post-eleventy-build')
 
 module.exports = function(config) {
   //----------------------------------------------------------------------------
@@ -200,6 +204,22 @@ module.exports = function(config) {
   config.addPairedShortcode('Tabs', Tabs);
   config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('YouTube', YouTube);
+
+  //----------------------------------------------------------------------------
+  // PARTIALS
+  //----------------------------------------------------------------------------
+  const partials = {};
+  config.addPairedShortcode('Partial', function(content, page) {
+    partials[page.outputPath] = content;
+    return content;
+  });
+  postEleventyBuild(async () => {
+    // Write partial content to peer page for Service Worker fetch.
+    return Promise.all(Object.keys(partials).map((outputPath) => {
+      const content = partials[outputPath];
+      return fs.writeFile(outputPath + ".partial", content);
+    }));
+  });
 
   //----------------------------------------------------------------------------
   // CUSTOM TAGS

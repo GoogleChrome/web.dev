@@ -21,21 +21,31 @@ async function loadEntrypoint(url) {
 /**
  * Fetch a page as an html string.
  * @param {string} url url of the page to fetch.
- * @return {!HTMLDocument}
+ * @return {!HTMLElement}
  */
 async function getPage(url) {
   // Pass a custom header so that the Service Worker knows this request is
   // actually for a document, this is used to reply with an offline page
   const headers = new Headers();
-  headers.set("X-Document", "1");
+  headers.set("X-Partial", "1");
+
+  if (url.endsWith('.html')) {
+    url += '.partial';
+  } else if (url.endsWith('/')) {
+    url += 'index.html.partial';
+  } else {
+    throw new Error('non-normalized URL: ' + url);
+  }
 
   const res = await fetch(url, {headers});
   if (!res.ok && res.status !== 404) {
     throw res.status;
   }
 
-  const text = await res.text();
-  return domparser.parseFromString(text, "text/html");
+  const frag = document.createElement('div');
+  frag.setAttribute('id', 'content');
+  frag.innerHTML = await res.text();
+  return frag;
 }
 
 function normalizeUrl(url) {
@@ -112,14 +122,9 @@ export async function swapContent(isFirstRun) {
   const main = document.querySelector("main");
 
   // Grab the new page content
-  let page;
   let content;
   try {
-    page = await getPage(url);
-    content = page.querySelector("#content");
-    if (content === null) {
-      throw new Error(`no #content found: ${url}`);
-    }
+    content = await getPage(url);
     await entrypointPromise;
   } finally {
     // We set the currentUrl in global state _after_ the page has loaded. This
@@ -135,20 +140,22 @@ export async function swapContent(isFirstRun) {
 
   // Remove the current #content element
   main.querySelector("#content").remove();
-  main.appendChild(page.querySelector("#content"));
+  main.appendChild(content);
 
   // Update the page title
-  document.title = page.title;
+  document.title = url; //page.title;
   // Update the page description
-  const description = page.querySelector("meta[name=description]");
-  const updatedContent = description ? description.content : "";
-  document.querySelector("meta[name=description]").content = updatedContent;
+  // const description = page.querySelector("meta[name=description]");
+  // const updatedContent = description ? description.content : "";
+  // document.querySelector("meta[name=description]").content = updatedContent;
 
   // Focus on the first title (or fallback to content itself)
   forceFocus(content.querySelector("h1, h2, h3, h4, h5, h6") || content);
 
   // Determine if this was the offline page
-  const isOffline = Boolean(getMeta("offline", page));
+  // TODO(samthor): This is probably broken right now
+  // const isOffline = Boolean(getMeta("offline", page));
+  const isOffline = false;
 
   store.setState({
     isPageLoading: false,
