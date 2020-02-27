@@ -163,6 +163,20 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
           running.
         </td>
       </tr>
+      <tr>
+        <td>
+          <a href="/nfc/">Web NFC</a>
+        </td>
+        <td>
+          Web NFC provides sites the ability to read and write to NFC tags when
+          they are in close proximity to the user's device.
+          For example, museums and art galleries could display additional
+          information about a display when the user touches their device to an
+          NFC card near the exhibit; or an inventory management web app could
+          read or write data to an NFC tag on a container to update information
+          on its contents.
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>

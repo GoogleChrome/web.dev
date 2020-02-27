@@ -17,10 +17,9 @@ tags:
 
 {% Aside %}
 Web apps should be able to do anything native apps can. The [Capabilities
-project](https://developers.google.com/web/updates/capabilities), of which Web
-NFC is only a part, aims to do just that. To learn about other capabilities and
-to keep up with their progress, follow [Unlocking new capabilities for the
-web](https://developers.google.com/web/updates/capabilities).
+project](/fugu-status/), of which Web NFC is only a part, aims to do just that.
+To learn about other capabilities and to keep up with their progress, follow
+[Unlocking new capabilities for the web](/fugu-status/).
 {% endAside %}
 
 ## What is Web NFC? {: #what }
