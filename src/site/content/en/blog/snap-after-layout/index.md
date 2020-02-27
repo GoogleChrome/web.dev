@@ -174,6 +174,6 @@ for details.
 ## Feedback
 
 Your feedback is invaluable in making re-snapping after layout better, so go on
-and try it out and [let us
+and try it out and [let the Chromium engineers
 know](https://bugs.chromium.org/p/chromium/issues/detail?id=866127) what you
 think.
