@@ -132,27 +132,31 @@ class SubscribeForm extends BaseElement {
       ? ""
       : html`
           <form @submit="${this.handleSubmit}">
-            <div class="web-subscribe-field">
-              <input
-                id="sub-firstname"
-                name="FirstName"
-                placeholder="First Name"
-                required
-                type="text"
-              />
-              <input
-                id="sub-lastname"
-                name="LastName"
-                placeholder="Last Name"
-                required
-                type="text"
-              />
+            <div class="web-subscribe-fields">
+              <div class="web-subscribe-field">
+                <input
+                  id="sub-firstname"
+                  name="FirstName"
+                  placeholder="First Name"
+                  required
+                  type="text"
+                />
+              </div>
+              <div class="web-subscribe-field">
+                <input
+                  id="sub-lastname"
+                  name="LastName"
+                  placeholder="Last Name"
+                  required
+                  type="text"
+                />
+              </div>
             </div>
             <div class="web-subscribe-field">
               <input
                 id="sub-email"
                 name="EmailAddress"
-                placeholder="Your email"
+                placeholder="Your Email"
                 required
                 type="email"
               />
