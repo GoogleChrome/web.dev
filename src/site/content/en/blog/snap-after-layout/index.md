@@ -19,18 +19,18 @@ tags:
 [CSS Scroll Snap](https://developers.google.com/web/updates/2018/07/css-scroll-snap)
 allows web developers to create well-controlled scroll experiences by declaring
 scroll snapping positions. One shortcoming of the current implementation is that
-scroll snapping does not work well when the layout changes. e.g. the viewport is
-resized, the device is rotated etc. This shortcoming is fixed in Chrome 81.
+scroll snapping does not work well when the layout changes, such as when the viewport is
+resized or the device is rotated. This shortcoming is fixed in Chrome 81.
 
 ## Interoperability
 Many browsers have basic support for CSS Scroll Snap. See [Can I use CSS
-ScrollSnap?](https://caniuse.com/#feat=css-snappoints) for more information.
+Scroll Snap?](https://caniuse.com/#feat=css-snappoints) for more information.
 
 Chrome is currently the only browser to implement scroll snapping after layout
 changes.  Firefox has a
 [ticket](https://bugzilla.mozilla.org/show_bug.cgi?id=1530253) open for
-implementing this and Safari has [one
-open](https://bugs.webkit.org/show_bug.cgi?id=144826) for re-snapping after a
+implementing this and Safari also has an open
+[ticket](https://bugs.webkit.org/show_bug.cgi?id=144826) for re-snapping after a
 scroller's content changes. For now, you can simulate this behaviour by adding
 the following code to event listeners to force a snapping to execute:
 ```javascript
@@ -164,7 +164,7 @@ UI](https://codepen.io/argyleink/pen/RwPWqKe) for visuals.
   </figcaption>
 </figure>
 
-## Future Work
+## Future work
 All re-snapping scroll effects are currently instant; a potential follow-up is
 to support re-snapping with [smooth scrolling
 effects](https://developers.google.com/web/updates/2016/02/smooth-scrolling-in-chrome-49).
@@ -174,6 +174,7 @@ for details.
 ## Feedback
 
 Your feedback is invaluable in making re-snapping after layout changes better, so go on
-and try it out and [let us
+and try it out and [let the Chromium engineers
+>>>>>>> c031717f94674cd9c5c70faeaf32006c748773e7
 know](https://bugs.chromium.org/p/chromium/issues/detail?id=866127) what you
 think.
