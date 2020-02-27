@@ -20,6 +20,7 @@
 
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
+import "./_styles.scss";
 
 const OPENING_ANIMATION_TIME = 150;
 const CLOSING_ANIMATION_TIME = 75;

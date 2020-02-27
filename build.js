@@ -22,6 +22,7 @@ const path = require("path");
 const log = require("fancy-log");
 const rollupPluginNodeResolve = require("rollup-plugin-node-resolve");
 const rollupPluginCJS = require("rollup-plugin-commonjs");
+const rollupPluginPostCSS = require("rollup-plugin-postcss");
 const rollupPluginVirtual = require("rollup-plugin-virtual");
 const rollupPluginReplace = require("rollup-plugin-replace");
 const rollup = require("rollup");
@@ -96,6 +97,16 @@ async function buildCacheManifest() {
 async function build() {
   const generated = [];
 
+  const postcssConfig = {};
+  if (isProd) {
+    // nb. Only require() autoprefixer when used.
+    const autoprefixer = require("autoprefixer");
+    postcssConfig.plugins = [autoprefixer];
+
+    // uses cssnano vs. our regular CSS usees sass' builtin compression
+    postcssConfig.minimize = true;
+  }
+
   // Rollup bootstrap to generate graph of source needs. This eventually uses
   // dynamic import to bring in code required for each page (see router.js).
   // Does not hash "bootstrap.js" entrypoint, but hashes all generated chunks,
@@ -106,6 +117,7 @@ async function build() {
       rollupPluginVirtual({
         webdev_config: `export default ${JSON.stringify(bootstrapConfig)};`,
       }),
+      rollupPluginPostCSS(postcssConfig),
       ...defaultPlugins,
     ],
   });

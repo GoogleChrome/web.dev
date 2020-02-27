@@ -2,6 +2,7 @@ import {html} from "lit-element";
 import {until} from "lit-html/directives/until";
 import {BaseElement} from "../BaseElement";
 import {signIn, signOut} from "../../fb";
+import "./_styles.scss";
 
 const emptyFrag = document.createDocumentFragment();
 
