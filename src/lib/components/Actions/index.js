@@ -100,14 +100,7 @@ class Actions extends BaseElement {
 
   get subscribeTemplate() {
     return html`
-      <a
-        class="w-actions__fab w-actions__fab--subscribe gc-analytics-event"
-        data-category="web.dev"
-        data-label="subscribe, newsletter"
-        data-action="click"
-        href="https://web.dev/subscribe"
-        target="_blank"
-      >
+      <a class="w-actions__fab w-actions__fab--subscribe" href="#subscribe">
         <span>Subscribe</span>
       </a>
     `;

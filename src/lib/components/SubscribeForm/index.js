@@ -39,6 +39,7 @@ class SubscribeForm extends BaseElement {
       "https://services.google.com/fb/submissions/591768a1-61a6-4f16-8e3c-adf1661539da/";
     this.processing = false;
     this.submitted = false;
+    this.id = "subscribe";
   }
 
   /**
