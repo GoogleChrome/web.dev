@@ -175,6 +175,5 @@ for details.
 
 Your feedback is invaluable in making re-snapping after layout changes better, so go on
 and try it out and [let the Chromium engineers
->>>>>>> c031717f94674cd9c5c70faeaf32006c748773e7
 know](https://bugs.chromium.org/p/chromium/issues/detail?id=866127) what you
 think.
