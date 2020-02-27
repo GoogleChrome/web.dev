@@ -19,8 +19,8 @@ tags:
 [CSS Scroll Snap](https://developers.google.com/web/updates/2018/07/css-scroll-snap)
 allows web developers to create well-controlled scroll experiences by declaring
 scroll snapping positions. One shortcoming of the current implementation is that
-scroll snapping does not work well when the layout changes. e.g. the viewport is
-resized, the device is rotated etc. This shortcoming is fixed in Chrome 81.
+scroll snapping does not work well when the layout changes, such as when the viewport is
+resized or the device is rotated. This shortcoming is fixed in Chrome 81.
 
 ## Interoperability
 Many browsers have basic support for CSS Scroll Snap. See [Can I use CSS
