@@ -37,6 +37,7 @@ class SubscribeForm extends BaseElement {
     this.robotName = "is-it-just-me-or-was-this-form-filled-out-by-a-robot";
     this.submissionUrl =
       "https://services.google.com/fb/submissions/591768a1-61a6-4f16-8e3c-adf1661539da/";
+    this.processing = false;
     this.submitted = false;
   }
 
@@ -59,36 +60,38 @@ class SubscribeForm extends BaseElement {
     return form;
   }
 
-  submit(form) {
-    return new Promise((resolve, reject) => {
-      const request = new XMLHttpRequest();
-      request.open("POST", this.submissionUrl);
-      request.send(form);
-      request.onload = function() {
-        const response = request.response ? JSON.parse(request.response) : {};
-
-        if (response && response.result === "accepted") {
-          resolve();
-        } else if (response && response.errors) {
-          reject(response.errors);
-        } else {
-          reject("Could not submit, please try again.");
-        }
-      };
-    });
+  submit(body) {
+    return fetch(this.submissionUrl, {
+      method: "POST",
+      body,
+    }).then((r) => r.json());
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.submitted === false) {
+    if (this.processing === false && this.submitted === false) {
+      this.processing = true;
+      this.errors = undefined;
       const form = new FormData(e.target);
       const formIsRobot = form.get(this.robotName).length !== 0;
 
       if (!formIsRobot) {
         const cleanedForm = this.cleanForm(form);
         this.submit(cleanedForm)
-          .then(() => (this.submitted = true))
-          .catch((e) => (this.errors = e));
+          .then((response) => {
+            if (response && response.result === "accepted") {
+              this.submitted = true;
+            } else if (response && response.errors) {
+              this.errors = response.errors;
+            } else {
+              this.errors = {any: ["Could not submit, please try again."]};
+            }
+          })
+          .catch(
+            () =>
+              (this.errors = {any: ["Could not submit, please try again."]}),
+          )
+          .finally(() => (this.processing = false));
       } else {
         this.submitted = true;
       }
@@ -101,25 +104,17 @@ class SubscribeForm extends BaseElement {
     let errorMessage;
 
     if (this.errors) {
-      if (typeof this.errors === "string") {
-        errorMessage = html`
-          <div class="web-subscribe-error">
-            <p>${this.errors}</p>
-          </div>
-        `;
-      } else {
-        const errorMessages = Object.values(this.errors).map(
-          (e) =>
-            html`
-              <p>${e}</p>
-            `,
-        );
-        errorMessage = html`
-          <div class="web-subscribe-error">
-            ${errorMessages}
-          </div>
-        `;
-      }
+      const errorMessages = Object.values(this.errors).map(
+        (e) =>
+          html`
+            <p>${typeof e === "string" ? e : e.join(" ")}</p>
+          `,
+      );
+      errorMessage = html`
+        <div class="web-subscribe-error">
+          ${errorMessages}
+        </div>
+      `;
     }
 
     const countriesOptions = countries.map((country) => {
@@ -162,8 +157,7 @@ class SubscribeForm extends BaseElement {
               />
             </div>
             <div class="web-subscribe-field">
-              <label for="sub-country">Country</label>
-              <div>
+              <div class="web-subscribe-border">
                 <select id="sub-country" name="Country" required>
                   ${countriesOptions}
                 </select>

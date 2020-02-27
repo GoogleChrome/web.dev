@@ -20,7 +20,7 @@ web-subscribe-form {
       &[type=email],
       &[type=text] {
         border: 2px solid #F1F3F4;
-        padding: 8px 8px 8px 40px;
+        padding: 8px 8px 8px 8px;
         font: inherit;
         font-size: 16px;
         line-height: 20px;
@@ -41,6 +41,20 @@ web-subscribe-form {
         width: calc(50% - 4px);
       }
     }
+
+    select {
+      background: white;
+      border: 0;
+      height: 36px;
+      font: inherit;
+    }
+  }
+
+  .web-subscribe-border {
+    border: 2px solid #F1F3F4;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    width: 100%;
   }
 
   .web-subscribe-error {
