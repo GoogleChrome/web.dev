@@ -203,7 +203,7 @@ async function getClipboardContents() {
 
 To dynamically handle paste events, listen for the `paste` event, call
 [`preventDefault()`][prevent-default] to prevent the default behavior in favor
-of your own logic, then  read the contents from the clipboard, handling it in
+of your own logic, then read the contents from the clipboard, handling it in
 whatever way your app needs. In the example below, I accomplish the last step by
 calling the function I created above.
 
