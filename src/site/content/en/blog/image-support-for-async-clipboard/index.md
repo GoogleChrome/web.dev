@@ -33,7 +33,7 @@ copy and paste **PNG** images.
 ## Recap of the Asynchronous Clipboard API {: #recap }
 
 Before describing image support, I want to review how the Asynchronous Clipboard
-API works. Feel free to [skip ahead](#images) if you're already comfortable it.
+API works. Feel free to [skip ahead](#images) if you're already comfortable with it.
 
 ### Copy: writing text to the clipboard {: #copy-text }
 
