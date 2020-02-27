@@ -10,12 +10,11 @@ description:
   a network connection, which makes them ideal for use cases like calendar apps.
 date: 2019-10-24
 updated: 2019-12-12
-draft: true
 tags:
   - post
   - capabilities
   - fugu
-  - behind-a-flag
+  - origin-trial
   - notification-triggers
 ---
 

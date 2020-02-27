@@ -2,7 +2,7 @@
 title: New capabilities status
 subhead: Web apps should be able to do anything native apps can. Google wants to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2020-02-24
+updated: 2020-02-27
 tags:
   - post
   - capabilities
@@ -115,7 +115,11 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
         </td>
       </tr>
       <tr>
-        <td>Notification Triggers</td>
+        <td>
+          <a href="/notification-triggers/">
+            Notification Triggers
+          </a>
+        </td>
         <td>
           Notification Triggers let you schedule notifications in advance, so
           that the operating system will deliver the notification at the right
@@ -124,7 +128,11 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
         </td>
       </tr>
       <tr>
-        <td>Serial API</td>
+        <td>
+          <a href="https://codelabs.developers.google.com/codelabs/web-serial/">
+            Serial API
+          </a>
+        </td>
         <td>
           The Web Serial API provides a way for websites to read from and
           write to a serial device with scripts. The API bridges the web and
