@@ -48,7 +48,8 @@
     "terser": "^4.3.9",
     "unistore": "^3.4.1",
     "wicg-inert": "^3.0.1",
-    "workbox-build": "^4.3.1"
+    "workbox-build": "^5.0.0",
+    "workbox-expiration": "^5.0.0"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",

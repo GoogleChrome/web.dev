@@ -1,3 +1,12 @@
+import * as idb from "idb-keyval";
+import manifest from "cache-manifest";
+import {initialize as initializeGoogleAnalytics} from "workbox-google-analytics";
+import * as workboxRouting from "workbox-routing";
+import * as workboxPrecaching from "workbox-precaching";
+import * as workboxStrategies from "workbox-strategies";
+import {CacheableResponsePlugin} from "workbox-cacheable-response";
+import {ExpirationPlugin} from "workbox-expiration";
+
 // Architecture revision of the Service Worker. If the previously saved revision doesn't match,
 // then this will cause clients to be aggressively claimed and reloaded on install/activate.
 // Used when the design of the SW changes dramatically, e.g. from DevSite to v2.
@@ -27,13 +36,6 @@ const normalizeIndexCacheKeyPlugin = {
     return request;
   },
 };
-
-import * as idb from "idb-keyval";
-import manifest from "cache-manifest";
-
-importScripts(
-  "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js",
-);
 
 let replacingPreviousServiceWorker = false;
 
@@ -85,26 +87,26 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(p);
 });
 
-workbox.googleAnalytics.initialize();
+initializeGoogleAnalytics();
 
 // Cache the Google Fonts stylesheets with a stale-while-revalidate strategy.
-workbox.routing.registerRoute(
+workboxRouting.registerRoute(
   /^https:\/\/fonts\.googleapis\.com/,
-  new workbox.strategies.StaleWhileRevalidate({
+  new workboxStrategies.StaleWhileRevalidate({
     cacheName: "google-fonts-stylesheets",
   }),
 );
 
 // Cache the underlying font files with a cache-first strategy for 1 year.
-workbox.routing.registerRoute(
+workboxRouting.registerRoute(
   /^https:\/\/fonts\.gstatic\.com/,
-  new workbox.strategies.CacheFirst({
+  new workboxStrategies.CacheFirst({
     cacheName: "google-fonts-webfonts",
     plugins: [
-      new workbox.cacheableResponse.Plugin({
+      new CacheableResponsePlugin({
         statuses: [0, 200],
       }),
-      new workbox.expiration.Plugin({
+      new ExpirationPlugin({
         maxAgeSeconds: 60 * 60 * 24 * 365,
         maxEntries: 30,
       }),
@@ -112,7 +114,7 @@ workbox.routing.registerRoute(
   }),
 );
 
-workbox.precaching.precacheAndRoute(manifest);
+workboxPrecaching.precacheAndRoute(manifest);
 
 /**
  * Match "/foo-bar/ "and "/foo-bar/as/many/of-these-as-you-like/" (with optional trailing
@@ -129,11 +131,11 @@ const untrailedContentPathRe = new RegExp("^(/[\\w-]+)+$");
 /**
  * Send normal nodes to cache first.
  */
-workbox.routing.registerRoute(
+workboxRouting.registerRoute(
   ({url, event}) => {
     return url.host === self.location.host && contentPathRe.test(url.pathname);
   },
-  new workbox.strategies.NetworkFirst({
+  new workboxStrategies.NetworkFirst({
     plugins: [normalizeIndexCacheKeyPlugin],
   }),
 );
@@ -141,9 +143,9 @@ workbox.routing.registerRoute(
 /**
  * Cache images that aren't included in the original manifest, such as author profiles.
  */
-workbox.routing.registerRoute(
+workboxRouting.registerRoute(
   new RegExp("/images/.*"),
-  new workbox.strategies.StaleWhileRevalidate(),
+  new workboxStrategies.StaleWhileRevalidate(),
 );
 
 /**
@@ -161,7 +163,7 @@ self.addEventListener("fetch", (event) => {
 
   const p = Promise.resolve().then(async () => {
     // First, check if there's actually something in the cache already.
-    const cacheKey = workbox.precaching.getCacheKeyForURL(
+    const cacheKey = workboxPrecaching.getCacheKeyForURL(
       u.pathname + "/index.html",
     );
     const cached = await caches.match(cacheKey);
@@ -187,16 +189,14 @@ self.addEventListener("fetch", (event) => {
   event.respondWith(p);
 });
 
-workbox.routing.setCatchHandler(async ({event}) => {
+workboxRouting.setCatchHandler(async ({event}) => {
   // Destination is set by loading this content normally; it's not set for fetch(), so look for our
   // custom header.
   const isDocumentRequest =
     event.request.destination === "document" ||
     event.request.headers.get("X-Document");
   if (isDocumentRequest) {
-    const cacheKey = workbox.precaching.getCacheKeyForURL(
-      "/offline/index.html",
-    );
+    const cacheKey = workboxPrecaching.getCacheKeyForURL("/offline/index.html");
     if (!cacheKey) {
       // This occurs in development when the offline page is in the runtime cache.
       return caches.match("/offline/index.html", {ignoreSearch: true});
