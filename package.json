@@ -44,12 +44,18 @@
     "iso-639-1": "^2.1.0",
     "js-yaml": "^3.13.1",
     "lit-element": "^2.2.0",
+    "rollup-plugin-replace": "^2.2.0",
     "rollup-plugin-virtual": "^1.0.1",
     "terser": "^4.3.9",
     "unistore": "^3.4.1",
     "wicg-inert": "^3.0.1",
     "workbox-build": "^5.0.0",
-    "workbox-expiration": "^5.0.0"
+    "workbox-cacheable-response": "^5.0.0",
+    "workbox-expiration": "^5.0.0",
+    "workbox-google-analytics": "^5.0.0",
+    "workbox-precaching": "^5.0.0",
+    "workbox-routing": "^5.0.0",
+    "workbox-strategies": "^5.0.0"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",

@@ -2,10 +2,10 @@ import * as idb from "idb-keyval";
 import manifest from "cache-manifest";
 import {initialize as initializeGoogleAnalytics} from "workbox-google-analytics";
 import * as workboxRouting from "workbox-routing";
-import * as workboxPrecaching from "workbox-precaching";
 import * as workboxStrategies from "workbox-strategies";
 import {CacheableResponsePlugin} from "workbox-cacheable-response";
 import {ExpirationPlugin} from "workbox-expiration";
+import {matchPrecache, precacheAndRoute} from "workbox-precaching";
 
 // Architecture revision of the Service Worker. If the previously saved revision doesn't match,
 // then this will cause clients to be aggressively claimed and reloaded on install/activate.
@@ -114,7 +114,8 @@ workboxRouting.registerRoute(
   }),
 );
 
-workboxPrecaching.precacheAndRoute(manifest);
+// Configure default cache for standard web.dev files: the offline page, various images etc.
+precacheAndRoute(manifest);
 
 /**
  * Match "/foo-bar/ "and "/foo-bar/as/many/of-these-as-you-like/" (with optional trailing
@@ -149,8 +150,9 @@ workboxRouting.registerRoute(
 );
 
 /**
- * Untrailed requests are network-only, but with a fallback to redirecting to the same page with a
- * trailing slash.
+ * This is a special handler for requests without a trailing "/". These requests _should_ go to
+ * the network (so that we can match web.dev's redirects.yaml file) but fallback to the normalized
+ * version of the request (e.g., "/foo" => "/foo/").
  */
 self.addEventListener("fetch", (event) => {
   const u = new URL(event.request.url);
@@ -162,12 +164,10 @@ self.addEventListener("fetch", (event) => {
   }
 
   const p = Promise.resolve().then(async () => {
-    // First, check if there's actually something in the cache already.
-    const cacheKey = workboxPrecaching.getCacheKeyForURL(
-      u.pathname + "/index.html",
-    );
-    const cached = await caches.match(cacheKey);
-    if (!cached) {
+    // First, check if there's actually something in the cache already. Workbox always suffixes
+    // with "/index.html" relative to our actual request paths.
+    const cachedResponse = await matchPrecache(u.pathname + "/index.html");
+    if (!cachedResponse) {
       // If there's not, then try the network.
       try {
         return await fetch(event.request);
@@ -196,8 +196,8 @@ workboxRouting.setCatchHandler(async ({event}) => {
     event.request.destination === "document" ||
     event.request.headers.get("X-Document");
   if (isDocumentRequest) {
-    const cacheKey = workboxPrecaching.getCacheKeyForURL("/offline/index.html");
-    if (!cacheKey) {
+    const cachedOfflineResponse = await matchPrecache("/offline/index.html");
+    if (!cachedOfflineResponse) {
       // This occurs in development when the offline page is in the runtime cache.
       return caches.match("/offline/index.html", {ignoreSearch: true});
     }
