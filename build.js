@@ -129,7 +129,7 @@ async function build() {
       // Note that Terser below will actually remove the conditionals (this replace will generate
       // lots of `if ("production" !== "production")` statements).
       rollupPluginReplace({
-        "process.env.NODE_ENV": isProd ? JSON.stringify("production") : "",
+        "process.env.NODE_ENV": JSON.stringify(isProd ? "production" : ""),
       }),
       rollupPluginVirtual({
         "cache-manifest": `export default ${JSON.stringify(
