@@ -40,6 +40,12 @@ const redirectHandler = (() => {
 
 // 404 handlers aren't special, they just run last.
 const notFoundHandler = (req, res, next) => {
+  if (req.url.endsWith(".json")) {
+    // When we test on Netlify, this code obviously doesn't run. The Service
+    // Worker, however, just cares about the 404 status for partial fetches, so
+    // this reduces wasted bytes in production.
+    return res.status(404).end();
+  }
   const options = {root: "dist/en"};
   res
     .status(404)

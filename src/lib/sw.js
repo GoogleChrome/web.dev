@@ -1,5 +1,6 @@
 import * as idb from "idb-keyval";
 import manifest from "cache-manifest";
+import layoutTemplate from "layout-template";
 import {initialize as initializeGoogleAnalytics} from "workbox-google-analytics";
 import * as workboxRouting from "workbox-routing";
 import * as workboxStrategies from "workbox-strategies";
@@ -12,31 +13,6 @@ import {cacheNames} from "workbox-core";
 // then this will cause clients to be aggressively claimed and reloaded on install/activate.
 // Used when the design of the SW changes dramatically, e.g. from DevSite to v2.
 const serviceWorkerArchitecture = "v3";
-
-const normalizeIndexCacheKeyPlugin = {
-  cacheKeyWillBeUsed({request, mode}) {
-    // web.dev does not have any handlers which respond to ?search queries, so strip them (useful
-    // for ?utm_... params, which aren't stripped by Workbox).
-    // From: https://github.com/GoogleChrome/workbox/issues/1709#issuecomment-429917667
-    const u = new URL(request.url);
-    if (u.search || u.hash) {
-      u.search = "";
-      u.hash = "";
-
-      // Request is immutable, so recreate it here.
-      request = new Request(u.href, {headers: request.headers});
-    }
-
-    // Take advantage of Workbox's built-in handling of .../index.html routes and ensure that its
-    // cache keys always include it. (e.g., requests for foo/ will load foo/index.html: but
-    // foo/index.html will not load foo/).
-    if (request.url.endsWith("/")) {
-      return request.url + "index.html";
-    }
-
-    return request;
-  },
-};
 
 let replacingPreviousServiceWorker = false;
 
@@ -136,29 +112,23 @@ workboxRouting.registerRoute(
 precacheAndRoute(manifest);
 
 /**
- * Match "/foo-bar/ "and "/foo-bar/as/many/of-these-as-you-like/" (with optional trailing
- * "index.html"), normal page nodes for web.dev. This only matches on pathname.
- */
-const contentPathRe = new RegExp("^/([\\w-]+/)*(|index.html)$");
-
-/**
  * Match "/foo-bar" and "/foo-bar/as-many/but/no/trailing/slash" (but not "/foo/bar/index.html").
  * This only matches on pathname (so it must always start with "/").
  */
 const untrailedContentPathRe = new RegExp("^(/[\\w-]+)+$");
 
 /**
- * Send normal nodes to cache first.
+ * Match fetches for patials, for SPA requests. Matches "/foo-bar/index.json" and
+ * "/foo-bar/many/parts/index.json", for partial SPA requests.
  */
-workboxRouting.registerRoute(
-  ({url, event}) => {
-    return url.host === self.location.host && contentPathRe.test(url.pathname);
-  },
-  new workboxStrategies.NetworkFirst({
-    cacheName: "webdev-html-cache-v1",
-    plugins: [normalizeIndexCacheKeyPlugin, contentExpirationPlugin],
-  }),
-);
+const partialPathRe = new RegExp("^/([\\w-]+/)*index\\.json$");
+const partialStrategy = new workboxStrategies.NetworkFirst({
+  cacheName: "webdev-partial-cache-v1",
+  plugins: [contentExpirationPlugin],
+});
+workboxRouting.registerRoute(({url, event}) => {
+  return url.host === self.location.host && partialPathRe.test(url.pathname);
+}, partialStrategy);
 
 /**
  * Cache images that aren't included in the original manifest, such as author profiles.
@@ -170,6 +140,62 @@ workboxRouting.registerRoute(
     plugins: [assetExpirationPlugin],
   }),
 );
+
+/**
+ * Match "/foo-bar/ "and "/foo-bar/as/many/of-these-as-you-like/" (with optional trailing
+ * "index.html"), normal page nodes for web.dev. This only matches on pathname.
+ *
+ * This fetch handler internally fetches the required partial using `partialStrategy`, and
+ * generates the page's real HTML based on the layout template.
+ */
+const contentPathRe = new RegExp("^(/(?:[\\w-]+/)*)(?:|index\\.html)$");
+self.addEventListener("fetch", (event) => {
+  const u = new URL(event.request.url);
+  const m = contentPathRe.exec(u.pathname);
+
+  if (!m || self.location.host !== u.host) {
+    return;
+  }
+
+  const url = m[1]; // e.g. "/foo/bar/" or "/"
+
+  const p = Promise.resolve().then(async () => {
+    let status = 200;
+    let response;
+    try {
+      // Use the same strategy for partials when hydrating a full request.
+      response = await partialStrategy.handle({
+        request: new Request(url + "index.json"),
+      });
+      if (response.status === 404) {
+        response = await notFoundPartial();
+        status = 404;
+      }
+    } catch (e) {
+      // We serve offline pages with a 200 status, just to be confusing.
+      console.warn("serving offline partial for", url, "due to", e);
+      response = await offlinePartial();
+    }
+
+    if (!response.ok) {
+      throw response.status;
+    }
+    const partial = await response.json();
+
+    // Our target browsers all don't mind if we just place <title> in the middle of the document.
+    // This is far simpler than trying to find the right place in <head>.
+    const meta = partial.offline ? `<meta name="offline" value="true" />` : "";
+    const output = layoutTemplate.replace(
+      "%_CONTENT_REPLACE_%",
+      meta + `<title>${escape(partial.title)}</title>` + partial.raw,
+    );
+    const headers = new Headers();
+    headers.append("Content-Type", "text/html");
+    return new Response(output, {headers, status});
+  });
+
+  event.respondWith(p);
+});
 
 /**
  * This is a special handler for requests without a trailing "/". These requests _should_ go to
@@ -211,18 +237,30 @@ self.addEventListener("fetch", (event) => {
   event.respondWith(p);
 });
 
-workboxRouting.setCatchHandler(async ({event}) => {
-  // Destination is set by loading this content normally; it's not set for fetch(), so look for our
-  // custom header.
-  const isDocumentRequest =
-    event.request.destination === "document" ||
-    event.request.headers.get("X-Document");
-  if (isDocumentRequest) {
-    const cachedOfflineResponse = await matchPrecache("/offline/index.html");
-    if (!cachedOfflineResponse) {
-      // This occurs in development when the offline page is in the runtime cache.
-      return caches.match("/offline/index.html", {ignoreSearch: true});
-    }
-    return cachedOfflineResponse;
+async function notFoundPartial() {
+  const cachedResponse = await matchPrecache("/404/index.json");
+  if (!cachedResponse) {
+    // This occurs in development when the 404 partial isn't precached.
+    return new Response(JSON.stringify({raw: "<h1>Dev 404</h1>", title: ""}));
+  }
+  return cachedResponse;
+}
+
+async function offlinePartial() {
+  const cachedResponse = await matchPrecache("/offline/index.json");
+  if (!cachedResponse) {
+    // This occurs in development when the offline partial isn't precached.
+    return new Response(
+      JSON.stringify({offline: true, raw: "<h1>Dev offline</h1>", title: ""}),
+    );
+  }
+  return cachedResponse;
+}
+
+workboxRouting.setCatchHandler(async ({event, url}) => {
+  // Our routing config for partial files is done with Workbox, so we have to run the same check
+  // here if it failed, and return the offline partial.
+  if (url.host === self.location.host && partialPathRe.test(url.pathname)) {
+    return offlinePartial();
   }
 });
