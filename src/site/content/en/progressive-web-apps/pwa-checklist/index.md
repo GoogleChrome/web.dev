@@ -5,13 +5,9 @@ authors:
   - samrichard
   - petelepage
 date: 2020-01-06
-updated: 2020-01-20
+updated: 2020-02-24
 description: |
   What makes a good, or great Progressive Web App?
-tags:
-  - post
-  - progressive-web-apps
-draft: true
 ---
 
 <!-- Disable heading-increment because it mucks with the Details widget -->
@@ -161,7 +157,7 @@ large instead of the other way around can actually improve a site's design:
 #### How
 
 There are many  resources on responsive design, including the
-[original article by Eathan Marcotte](https://alistapart.com/article/responsive-web-design/),
+[original article by Ethan Marcotte](https://alistapart.com/article/responsive-web-design/),
 a [collection of important concepts](https://snugug.com/musings/principles-responsive-web-design/)
 related to it, as well as books and talks galore. To narrow this discussion
 down to the content aspects of responsive design, you can dig into
@@ -240,7 +236,7 @@ higher conversion rates.
 
 #### How
 
-You can follow our [installable guide](/installable/) to learn how to make
+You can follow our [installable guide](/customize-install/) to learn how to make
 your PWA installable, how to test to see that it's installable, and try
 doing it yourself.
 

@@ -5,7 +5,7 @@ authors:
   - thomassteiner
 description: Chrome 76 adds expands the functionality of the Async Clipboard API to add support for png images. Copying and pasting images to the clipboard has never been easier.
 date: 2019-07-03
-updated: 2019-10-11
+updated: 2020-02-26
 tags:
   - post
   - capabilities
@@ -30,13 +30,10 @@ copy and paste **PNG** images.
   images and file formats will be added in the future.
 {% endAside %}
 
-Before we dive in, let's take a brief look at how the Asynchronous Clipboard
-API works. If you remember the details, skip ahead to the [image section](#images).
-
 ## Recap of the Asynchronous Clipboard API {: #recap }
 
 Before describing image support, I want to review how the Asynchronous Clipboard
-API works. Feel free to [skip ahead](#images) if you're already comfortable
+API works. Feel free to [skip ahead](#images) if you're already comfortable with it.
 
 ### Copy: writing text to the clipboard {: #copy-text }
 
@@ -58,9 +55,8 @@ async function copyPageURL() {
 
 ### Paste: reading text from the clipboard {: #reading-text }
 
-Much like copy, text can be read from the clipboard by calling
-`navigator.clipboard.readText()` and waiting for the returned promise to
-resolve with the text:
+Functioning similarly to copying, calling `navigator.clipboard.readText()`
+returns a promise that resolves with text:
 
 ```js
 async function getClipboardText() {
@@ -75,10 +71,10 @@ async function getClipboardText() {
 
 ### Handling paste events
 
-Paste events can be handled by listening for the (surprise) `paste` event.
-Note that you need to call `preventDefault()` in order to modify the
-to-be-pasted data, like for example, convert it to uppercase before pasting.
-It works nicely with the new asynchronous methods for reading clipboard text:
+Handle paste events by listening for the (surprise) `paste` event. Note that you
+need to call `preventDefault()` in order to modify the to-be-pasted data, such
+as for example, converting it to uppercase before pasting. It works nicely with
+the new asynchronous methods for reading clipboard text:
 
 ```js
 document.addEventListener('paste', async (e) => {
@@ -95,11 +91,10 @@ document.addEventListener('paste', async (e) => {
 
 ### Security and permissions {: #security-permission }
 
-The `navigator.clipboard` property is only supported for pages served over
-HTTPS, and to help prevent abuse, clipboard access is only allowed when a page
-is the active tab. Pages in active tabs can write to the clipboard without
-requesting permission, but reading from the clipboard always requires
-permission.
+The `navigator.clipboard` property is only allowed on pages served over HTTPS,
+and to help prevent abuse, only when a page is the active tab. Pages in active
+tabs can write to the clipboard without requesting permission, but reading from
+the clipboard always requires permission.
 
 When the Asynchronous Clipboard API was introduced,
 two new permissions for copy and paste were added to the
@@ -109,6 +104,8 @@ two new permissions for copy and paste were added to the
   are in the active tab.
 * The `clipboard-read` permission must be requested, which you can do by
   trying to read data from the clipboard.
+
+The code below shows the latter:
 
 ```js
 const queryOpts = { name: 'clipboard-read' };
@@ -126,10 +123,9 @@ permissionStatus.onchange = () => {
 
 ### Copy: writing an image to the clipboard {: #copy-image }
 
-The new `navigator.clipboard.write()` method can be used for copying images
-to the clipboard. Like [`writeText()`](#copy-text), it is asynchronous, and
-Promise-based. Actually, `writeText()` is just a convenience method for the
-generic `write()` method.
+The new `navigator.clipboard.write()` copies images to the clipboard. Like
+[`writeText()`](#copy-text), it is asynchronous, and Promise-based. Actually,
+`writeText()` is just a convenience method for the generic `write()` method.
 
 To write an image to the clipboard, you need the image as a [`Blob`][blob].
 One way to do this is by requesting the image from an server by calling
@@ -206,9 +202,10 @@ async function getClipboardContents() {
 ### Custom paste handler {: #custom-paste-handler }
 
 To dynamically handle paste events, listen for the `paste` event, call
-[`preventDefault()`][prevent-default] to prevent the default behavior
-in favor of your own logic, then use the code above to read the contents from
-the clipboard, and handle it in whatever way your app needs.
+[`preventDefault()`][prevent-default] to prevent the default behavior in favor
+of your own logic, then read the contents from the clipboard, handling it in
+whatever way your app needs. In the example below, I accomplish the last step by
+calling the function I created above.
 
 ```js
 document.addEventListener('paste', async (e) => {
@@ -253,7 +250,7 @@ document.addEventListener('copy', async (e) => {
 
 ### Security
 
-Opening up the Asynchronous Clipboard API for images comes with certain
+Opening the Asynchronous Clipboard API for images comes with
 [risks](https://w3c.github.io/clipboard-apis/#security) that need to be
 carefully evaluated. One new challenge are so-called
 [image compression bombs](https://bomb.codes/bombs#images), that is, image
@@ -266,8 +263,8 @@ clipboard, and why in Chrome we require that the image be transcoded.
 The [specification](https://w3c.github.io/clipboard-apis/#image-transcode)
 therefore also explicitly mentions transcoding as a mitigation method:
 
-> "To prevent malicious image data from being placed on the clipboard, the
-> image data may be transcoded to produce a safe version of the image."
+> To prevent malicious image data from being placed on the clipboard, the
+> image data may be transcoded to produce a safe version of the image.
 
 There is ongoing discussion happening in the
 [W3C Technical Architecture Group review](https://github.com/w3ctag/design-reviews/issues/350)

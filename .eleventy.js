@@ -53,6 +53,7 @@ const {Image, Figure} = require(`./${tagsDir}/Image`);
 
 const collectionsDir = 'src/site/_collections';
 const paginatedBlogPosts = require(`./${collectionsDir}/paginated-blog-posts`);
+const paginatedPostsByAuthor = require(`./${collectionsDir}/paginated-posts-by-author`);
 const paginatedPostsByTag = require(`./${collectionsDir}/paginated-posts-by-tag`);
 const postDescending = require(`./${collectionsDir}/post-descending`);
 const postToCollections = require(`./${collectionsDir}/post-to-collections`);
@@ -61,7 +62,8 @@ const recentPosts = require(`./${collectionsDir}/recent-posts`);
 // nb. algoliaPosts is only require'd if needed, below
 
 const filtersDir = 'src/site/_filters';
-const {memoize, findBySlug} = require(`./${filtersDir}/find-by-slug`);
+const consoleDump = require(`./${filtersDir}/console-dump`);
+const {memoize, findByUrl} = require(`./${filtersDir}/find-by-url`);
 const pathSlug = require(`./${filtersDir}/path-slug`);
 const containsTag = require(`./${filtersDir}/contains-tag`);
 const expandContributors = require(`./${filtersDir}/expand-contributors`);
@@ -111,7 +113,8 @@ module.exports = function(config) {
 
   const mdLib = markdownIt(markdownItOptions)
     .use(markdownItAnchor, markdownItAnchorOptions)
-    .use(markdownItAttrs, markdownItAttrsOpts);
+    .use(markdownItAttrs, markdownItAttrsOpts)
+    .disable('code');
 
   // custom renderer rules
   const fence = mdLib.renderer.rules.fence;
@@ -139,6 +142,7 @@ module.exports = function(config) {
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('recentPosts', recentPosts);
   config.addCollection('paginatedBlogPosts', paginatedBlogPosts);
+  config.addCollection('paginatedPostsByAuthor', paginatedPostsByAuthor);
   config.addCollection('paginatedPostsByTag', paginatedPostsByTag);
   config.addCollection('postToCollections', postToCollections);
   // Turn collection.all into a lookup table so we can use findBySlug
@@ -157,7 +161,8 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   // FILTERS
   //----------------------------------------------------------------------------
-  config.addFilter('findBySlug', findBySlug);
+  config.addFilter('consoleDump', consoleDump);
+  config.addFilter('findByUrl', findByUrl);
   config.addFilter('findTags', findTags);
   config.addFilter('pathSlug', pathSlug);
   config.addFilter('containsTag', containsTag);

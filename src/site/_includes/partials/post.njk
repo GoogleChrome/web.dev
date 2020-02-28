@@ -47,7 +47,7 @@
             {% Author {
               post: page,
               author: contributors[author],
-              avatar: author,
+              id: author,
               showSocialMedia: true}
             %}
           {% endfor %}
@@ -87,7 +87,7 @@
     </div>
 
     {% if codelabs %}
-      {% CodelabsCallout codelabs %}
+      {% CodelabsCallout codelabs, lang %}
     {% endif %}
   </div>
 
@@ -97,7 +97,8 @@
       back: '/blog',
       backLabel: 'Return to all articles',
       collection: collections.posts,
-      slug: page.fileSlug
+      slug: page.fileSlug,
+      lang: lang
     } %}
   {% else %}
     {# Find next item in this learning path #}
@@ -106,7 +107,8 @@
       backLabel: 'Return to all articles',
       path: path,
       collection: collections[path.slug],
-      slug: page.fileSlug
+      slug: page.fileSlug,
+      lang: lang
     } %}
   {% endif %}
 

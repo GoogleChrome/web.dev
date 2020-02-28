@@ -1,6 +1,11 @@
 let globalHandler;
 let recentActiveUrl; // current URL not including hash
 
+// Disable automatic scroll restoration. This is helpful as back/forward behavior is technically
+// async, and most browsers will move the scroll position automatically for us, even on old content.
+// Instead, we call `scrollOnFrame` when the async load helper is done.
+window.history.scrollRestoration = "manual";
+
 /**
  * @return {string} URL pathname plus optional search part
  */

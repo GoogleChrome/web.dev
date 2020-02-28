@@ -126,7 +126,7 @@ properly size images audit.">
 … And it fails! Why is that?
 
 Lighthouse runs its tests on a Nexus 5x. The Nexus 5x has a 1080 x 1920 screen.
-For the Nexus 5x, the optimal size of `flower_photo.jpg` would be 460 pixels
+For the Nexus 5x, the optimal size of `flower_photo.jpg` would be 540 pixels
 wide (1080 pixels * . 5). This is much smaller than our resized image.
 
 Should you resize the image to be even smaller? Probably. However, the answer to

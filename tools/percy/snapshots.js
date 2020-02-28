@@ -1,4 +1,5 @@
 const PercyScript = require("@percy/script");
+const scrollToBottom = require("scroll-to-bottomjs");
 const pagesToTest = [
   {
     url: "",
@@ -22,16 +23,13 @@ const pagesToTest = [
   },
 ];
 
-const sleep = (ms) => {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-};
-
 // A script to navigate our app and take snapshots with Percy.
 PercyScript.run(
   async (browser, percySnapshot) => {
     for (page of pagesToTest) {
       await browser.goto(`http://localhost:8080/${page.url}`);
-      await sleep(2000);
+      await browser.evaluate(scrollToBottom);
+      await browser.waitFor(2000);
       await percySnapshot(`${page.title}`);
     }
   },

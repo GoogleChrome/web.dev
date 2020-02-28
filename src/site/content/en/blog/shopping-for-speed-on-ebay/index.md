@@ -15,11 +15,12 @@ description: |
   their web and app experiences.
 tags:
   - post # post is a required tag for the article to show up in the blog.
-  - case study
+  - case-study
   - fast
   - reliable
   - e-commerce
   - test-post
+  - performance
 ---
 
 Speed was a [company-wide initiative][cuts] for eBay in 2019, with many teams determined to make the
@@ -41,11 +42,11 @@ Through the adoption of [Performance Budgets](https://web.dev/performance-budget
 after doing a competitive study with the [Chrome User Experience
 Report](https://developers.google.com/web/tools/chrome-user-experience-report)) and a focus on key
 [user-centric performance metrics](/user-centric-performance-metrics/), eBay was able to make
-significant improvements to site speed. 
+significant improvements to site speed.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="dev-content0.png" 
-       alt="The optimization efforst led to a 10% improvement on the homepage, a 13% improvement on 
+  <img class="w-screenshot" src="dev-content0.png"
+       alt="The optimization efforst led to a 10% improvement on the homepage, a 13% improvement on
             the search page, and 3% improvement on item pages.">
   <figcaption class="w-figcaption">
     eBay's speed improvements.
@@ -76,7 +77,7 @@ all the [unused and unnecessary bytes](https://web.dev/remove-unused-code/) of J
 HTML, and JSON responses served to users. Previously, with every new feature, eBay kept increasing
 the payload of their responses, without cleaning up what was unused. This added up over time and
 became a performance bottleneck. Teams usually procrastinated on this cleanup activity, but you'd
-be surprised by how much eBay saved. 
+be surprised by how much eBay saved.
 
 The "cut" here is the wasted bytes in the response payload.
 
@@ -87,14 +88,14 @@ critical](https://web.dev/extract-critical-css/) than something below-the-fold. 
 are aware of this, but what about services? eBay's service architecture has a layer called
 [Experience
 Services](https://tech.ebayinc.com/engineering/experience-services-ebays-solution-to-multi-screen-application-development/),
-which the frontends (native apps and web servers) talk to. 
+which the frontends (native apps and web servers) talk to.
 This layer is specifically designed to be view- or device-based, rather than entity-based like item,
 user, or order. eBay then introduced the concept of the critical path for Experience Services.
 When a request comes to these services, they work on getting the data for above-the-fold
 content immediately, by calling other upstream services in parallel. Once data is ready, it is
 instantly flushed.
 The below-the-fold data is sent in a later chunk or lazy-loaded. The outcome: users get to see
-above-the-fold content quicker. 
+above-the-fold content quicker.
 
 The "cut" here is the time spent by services to display relevant
 content.
@@ -121,18 +122,18 @@ Second, though eBay's listing images are heavily optimized (in both size and for
 did not apply for curated images (for example, the top module on the
 [homepage](https://www.ebay.com/)). eBay has a lot of hand-curated images, which are uploaded
 through various tools. Previously the optimizations were up to the uploader, but now eBay enforces
-the rules within the tools, so all images uploaded will be optimized appropriately. 
+the rules within the tools, so all images uploaded will be optimized appropriately.
 
 The "cut" here is the wasted image bytes sent to users.
 
 ## Predictive prefetch of static assets
 
-A user session on eBay is not just one page. It is a flow. For example, the flow can be a navigation from the homepage to a search page to an item page. So why don't pages in the flow help each other? That is the idea of [predictive prefetch](https://web.dev/predictive-prefetching/), where one page prefetches the static assets required for the next likely page. 
+A user session on eBay is not just one page. It is a flow. For example, the flow can be a navigation from the homepage to a search page to an item page. So why don't pages in the flow help each other? That is the idea of [predictive prefetch](https://web.dev/predictive-prefetching/), where one page prefetches the static assets required for the next likely page.
 
 With predictive prefetch, when a user navigates to the predicted page, the assets are already in the browser cache. This is done for CSS and JavaScript assets, where the URLs can be retrieved ahead of time. One thing to note here is that it helps only on first-time navigations. On subsequent navigations, the static assets will already be in the cache.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="dev-content3.png" 
+  <img class="w-screenshot" src="dev-content3.png"
        alt="eBay is doing predictive prefetching of static assets. Home prefetches assets for
             Search, Search prefetches assets for Item, and so on. Machine-learning- and analytics-based
             prefetching is under consideration." loading="lazy">
@@ -148,7 +149,7 @@ items from search and keeps them ready for when the user navigates. The prefetch
 
 The first level happens server-side, where the item service caches the top 10 items in search results. When the user
 goes to one of those items, eBay now saves server processing time. Server-side caching is leveraged by
-native apps and is rolled out globally. 
+native apps and is rolled out globally.
 
 The other level happens in the browser cache, which is available
 in Australia. Item prefetch was an advanced optimization due to the dynamic nature of items. There
@@ -158,7 +159,7 @@ presentation](https://www.youtube.com/watch?v=ogEhUnQdQiU&t=984s), or stay tuned
 post on the topic from eBay's engineers.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="dev-content4.png" 
+  <img class="w-screenshot" src="dev-content4.png"
        alt="eBay prefetches the top 5 items in search result pages for fast subsequent loads.
             This happens during idle time with requestIdleCallback(). This resulted in a 759ms
             faster median above-the-fold time, a custom metric that is similar to First Meaningful
@@ -171,17 +172,17 @@ depending on where the item is cached.
 ## Eager downloading of search images
 
 In the search results page, when a query is issued at a high level, two things happen. One is the recall/ranking step, where the most relevant items matching the query are returned. The second step is augmenting the recalled items with additional user-context related information such as shipping costs.
-eBay now immediately sends the first 10 item images to the browser in a chunk along with the header, so the downloads can start before the rest of the markup arrives. As a result, the images will now appear quicker. This change is rolled out globally for the web platform. 
+eBay now immediately sends the first 10 item images to the browser in a chunk along with the header, so the downloads can start before the rest of the markup arrives. As a result, the images will now appear quicker. This change is rolled out globally for the web platform.
 
 The "cut" here is the download start time for search result images.
 
 ## Edge caching for autosuggestion data
 
-When users type in letters in the search box, suggestions pop-up. These suggestions do not change for letter combinations for at least a day. They are ideal candidates to be cached and served from a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network) (for a max of 24 hours), instead of requests going all the way to a data center. International markets especially benefit from CDN caching. 
+When users type in letters in the search box, suggestions pop-up. These suggestions do not change for letter combinations for at least a day. They are ideal candidates to be cached and served from a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network) (for a max of 24 hours), instead of requests going all the way to a data center. International markets especially benefit from CDN caching.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="dev-content5.png" 
-       alt="A screenshot of eBay's search box displaying autocomplete suggestions for a search 
+  <img class="w-screenshot" src="dev-content5.png"
+       alt="A screenshot of eBay's search box displaying autocomplete suggestions for a search
             query." loading="lazy">
 </figure>
 
@@ -190,16 +191,16 @@ which can't be cached efficiently. Fortunately, it was not an issue in the nativ
 interface for personalization and suggestions could be separated. For the web, in international
 markets, latency was more important than the small benefit of personalization. With that out of the
 way, eBay now has autosuggestions served from a CDN cache globally for native apps and non-US
-markets for eBay.com. 
+markets for eBay.com.
 
 The "cut" here is the network latency and server processing time for
 autosuggestions.
 
 ## Edge caching for unrecognized homepage users
 
-For the web platform, the homepage content for unrecognized users is the same for a particular region. These are users who are either using eBay for the first time or starting a fresh session, hence no personalization. Though the homepage creatives keep changing frequently there is still room for caching. 
+For the web platform, the homepage content for unrecognized users is the same for a particular region. These are users who are either using eBay for the first time or starting a fresh session, hence no personalization. Though the homepage creatives keep changing frequently there is still room for caching.
 
-eBay decided to cache the unrecognized user content (HTML) on their edge network ([PoPs](https://en.wikipedia.org/wiki/Point_of_presence)) for a short period. First-time users can now get homepage content served from a server near them, instead of from a faraway data center. eBay is still experimenting with this in international markets, where it will have a bigger impact. 
+eBay decided to cache the unrecognized user content (HTML) on their edge network ([PoPs](https://en.wikipedia.org/wiki/Point_of_presence)) for a short period. First-time users can now get homepage content served from a server near them, instead of from a faraway data center. eBay is still experimenting with this in international markets, where it will have a bigger impact.
 
 The "cut" here is again both network latency and server processing time for unrecognized users.
 
@@ -207,13 +208,13 @@ The "cut" here is again both network latency and server processing time for unre
 
 ### Native app parsing improvements
 
-Native apps (iOS and Android) talk to backend services whose response format is typically JSON. These JSON payloads can be large. Instead of parsing the whole JSON to render something on the screen, eBay introduced an efficient parsing algorithm that optimizes for content that needs to be displayed immediately. 
+Native apps (iOS and Android) talk to backend services whose response format is typically JSON. These JSON payloads can be large. Instead of parsing the whole JSON to render something on the screen, eBay introduced an efficient parsing algorithm that optimizes for content that needs to be displayed immediately.
 
 Users can now see the content quicker. In addition, for the Android app, eBay starts initializing the search view controllers as soon as the user starts typing in the search box (iOS already had this optimization). Previously this happened only after users pressed the search button. Now users can get to their search results faster. The "cut" here is the time spent by devices to display relevant content.
 
 ### Native app startup time improvements
 
-This applies to [cold start](https://developer.android.com/topic/performance/vitals/launch-time#cold) time optimizations for native apps, in particular, Android. When an app is cold started, a lot of initialization happens both at the OS level and application level. Reducing the initialization time at the application level helps users see the home screen quicker. eBay did some profiling and noticed that not all initializations are required to display content and that some can be done lazily. 
+This applies to [cold start](https://developer.android.com/topic/performance/vitals/launch-time#cold) time optimizations for native apps, in particular, Android. When an app is cold started, a lot of initialization happens both at the OS level and application level. Reducing the initialization time at the application level helps users see the home screen quicker. eBay did some profiling and noticed that not all initializations are required to display content and that some can be done lazily.
 
 More importantly, eBay observed that there was a blocking third-party analytics call that delayed the rendering on the screen. Removing the blocking call and making it async further helped cold start times. The "cut" here is the unnecessary startup time for native apps.
 
