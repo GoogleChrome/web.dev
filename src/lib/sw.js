@@ -201,6 +201,6 @@ workboxRouting.setCatchHandler(async ({event}) => {
       // This occurs in development when the offline page is in the runtime cache.
       return caches.match("/offline/index.html", {ignoreSearch: true});
     }
-    return caches.match(cacheKey);
+    return cachedOfflineResponse;
   }
 });
