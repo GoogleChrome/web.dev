@@ -13,7 +13,9 @@
       <meta name="offline" content="true" />
     {%- endif %}
 
-    {% Meta locale, page, collections, renderData %}
+    {% if not nometa %}
+{% Meta locale, page, collections, renderData %}
+    {%- endif %}
 
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" data-title="web.dev feed">
     <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
@@ -148,7 +150,7 @@
     <main>
       {% include 'partials/banner.njk' %}
       <div id="content">
-        {% Partial page %}{{ content | safe }}{% endPartial %}
+        {% Partial page, collections, renderData %}{{ content | safe }}{% endPartial %}
       </div>
     </main>
     {% include 'partials/footer.njk' %}

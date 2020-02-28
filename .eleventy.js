@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-const fs = require('fs').promises;
-
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
@@ -78,7 +76,7 @@ const removeDrafts = require(`./${filtersDir}/remove-drafts`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
 const stripLanguage = require(`./${filtersDir}/strip-language`);
 
-const postEleventyBuild = require('./src/site/_utils/post-eleventy-build')
+const buildPartial = require('./src/site/_utils/build-partial');
 
 module.exports = function(config) {
   //----------------------------------------------------------------------------
@@ -208,18 +206,9 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   // PARTIALS
   //----------------------------------------------------------------------------
-  const partials = {};
-  config.addPairedShortcode('Partial', function(content, page) {
-    partials[page.outputPath] = content;
-    return content;
-  });
-  postEleventyBuild(async () => {
-    // Write partial content to peer page for Service Worker fetch.
-    return Promise.all(Object.keys(partials).map((outputPath) => {
-      const content = partials[outputPath];
-      return fs.writeFile(outputPath + ".partial", content);
-    }));
-  });
+  // This writes all partial content to disk, and blocks Eleventy until writes
+  // are complete.
+  config.addPairedShortcode('Partial', buildPartial());
 
   //----------------------------------------------------------------------------
   // CUSTOM TAGS

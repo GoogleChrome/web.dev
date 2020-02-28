@@ -22,11 +22,11 @@ function setup() {
   const Eleventy = require("@11ty/eleventy");
 
   const originalWrite = Eleventy.prototype.write;
-  Eleventy.prototype.write = async function (...args) {
+  Eleventy.prototype.write = async function(...args) {
     const out = await originalWrite.apply(this, args);
 
     finished = true;
-  
+
     while (methodsToCall.length) {
       const method = methodsToCall.shift();
       await method();

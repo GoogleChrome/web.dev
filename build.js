@@ -74,6 +74,8 @@ async function buildCacheManifest() {
     globDirectory: "dist/en",
     globPatterns: [
       "index.html",
+      "_layout/index.html",
+      "offline/index.json",
       "offline/index.html",
       "images/**/*.{png,svg}", // .jpg files are used for authors, skip
     ],

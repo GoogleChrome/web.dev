@@ -1,8 +1,5 @@
 import {store} from "./store";
 import "./utils/underscore-import-polyfill";
-import getMeta from "./utils/meta";
-
-const domparser = new DOMParser();
 
 /**
  * Dynamically loads code required for the passed URL entrypoint.
@@ -19,33 +16,21 @@ async function loadEntrypoint(url) {
 }
 
 /**
- * Fetch a page as an html string.
- * @param {string} url url of the page to fetch.
- * @return {!HTMLElement}
+ * Gets the partial content of the target normalized URL.
+ *
+ * @param {string} url of the page to fetch.
+ * @return {{raw: string, title: string, offline: (boolean|undefined)}}
  */
-async function getPage(url) {
-  // Pass a custom header so that the Service Worker knows this request is
-  // actually for a document, this is used to reply with an offline page
-  const headers = new Headers();
-  headers.set("X-Partial", "1");
-
-  if (url.endsWith('.html')) {
-    url += '.partial';
-  } else if (url.endsWith('/')) {
-    url += 'index.html.partial';
-  } else {
-    throw new Error('non-normalized URL: ' + url);
+async function getPartial(url) {
+  if (!url.endsWith("/")) {
+    throw new Error(`partial unsupported for non-folder: ${url}`);
   }
 
-  const res = await fetch(url, {headers});
+  const res = await fetch(url + "index.json");
   if (!res.ok && res.status !== 404) {
     throw res.status;
   }
-
-  const frag = document.createElement('div');
-  frag.setAttribute('id', 'content');
-  frag.innerHTML = await res.text();
-  return frag;
+  return await res.json();
 }
 
 function normalizeUrl(url) {
@@ -122,9 +107,9 @@ export async function swapContent(isFirstRun) {
   const main = document.querySelector("main");
 
   // Grab the new page content
-  let content;
+  let partial;
   try {
-    content = await getPage(url);
+    partial = await getPartial(url);
     await entrypointPromise;
   } finally {
     // We set the currentUrl in global state _after_ the page has loaded. This
@@ -139,26 +124,18 @@ export async function swapContent(isFirstRun) {
   ga("send", "pageview");
 
   // Remove the current #content element
-  main.querySelector("#content").remove();
-  main.appendChild(content);
+  main.querySelector("#content").innerHTML = partial.raw;
 
   // Update the page title
-  document.title = url; //page.title;
-  // Update the page description
-  // const description = page.querySelector("meta[name=description]");
-  // const updatedContent = description ? description.content : "";
-  // document.querySelector("meta[name=description]").content = updatedContent;
+  document.title = partial.title || "";
 
   // Focus on the first title (or fallback to content itself)
   forceFocus(content.querySelector("h1, h2, h3, h4, h5, h6") || content);
 
-  // Determine if this was the offline page
-  // TODO(samthor): This is probably broken right now
-  // const isOffline = Boolean(getMeta("offline", page));
-  const isOffline = false;
-
+  // Update state including whether the Service Worker actually returned the
+  // offline page instead of our actual content
   store.setState({
     isPageLoading: false,
-    isOffline,
+    isOffline: Boolean(partial.offline),
   });
 }
