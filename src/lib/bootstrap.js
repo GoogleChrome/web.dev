@@ -35,8 +35,12 @@ WebComponents.waitFor(async () => {
 });
 
 if ("serviceWorker" in navigator) {
+  // Allow local/prod as well as .netlify staging deploy target.
   const allowedHostnames = ["web.dev", "localhost"];
-  if (allowedHostnames.indexOf(window.location.hostname) !== -1) {
+  if (
+    allowedHostnames.indexOf(window.location.hostname) !== -1 ||
+    window.location.hostname.endsWith(".netlify.com")
+  ) {
     navigator.serviceWorker.register("/sw.js");
   } else {
     console.warn(
