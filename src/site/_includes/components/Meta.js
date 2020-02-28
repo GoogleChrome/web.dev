@@ -107,11 +107,20 @@ module.exports = (locale, page, collections, renderData = {}) => {
     `;
   }
 
+  function renderCanonicalMeta() {
+    if (pageData.canonical) {
+      return html`
+        <link rel="canonical" href="${pageData.canonical}" />
+      `;
+    }
+  }
+
   // prettier-ignore
   return html`
     <title>${pageData.title || pageData.path.title}</title>
     <meta name="description" content="${pageData.description || pageData.path.description}" />
 
+    ${renderCanonicalMeta()}
     ${renderGoogleMeta()}
     ${renderFacebookMeta()}
     ${renderTwitterMeta()}
