@@ -35,6 +35,8 @@ class Assessment extends BaseModalElement {
 
     this.onAssessmentAnimationEnd = this.onAssessmentAnimationEnd.bind(this);
     this.onAssessmentResize = this.onAssessmentResize.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   render() {
@@ -162,7 +164,9 @@ class Assessment extends BaseModalElement {
   onAssessmentAnimationEnd() {
     const tabs = this.querySelector("web-tabs");
 
-    if (!tabs) return;
+    if (!tabs) {
+      return;
+    }
 
     // Apply overflow class to tabs if needed.
     tabs.onResize();
