@@ -1,3 +1,5 @@
+@import '../../../styles/tools/mixins';
+
 // Applies self-assessment color scheme to radio buttons and checkboxes.
 // Needs specificity of web-response-mc to override default styles.
 web-response-mc {
