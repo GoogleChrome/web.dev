@@ -75,12 +75,6 @@ Here are the supported values for the `loading` attribute:
 - `lazy`: Defer loading of the resource until it reaches a [calculated distance](#load-in-distance-threshold) from the viewport.
 - `eager`: Load the resource immediately, regardless of where it's located on the page.
 
-The feature will continue to be updated until it's launched in a stable release (Chrome 76 at the
-earliest). But you can try it out by enabling the following flags in Chrome:
-
-- `chrome://flags/#enable-lazy-image-loading`
-- `chrome://flags/#enable-lazy-frame-loading`
-
 ### Load-in distance threshold
 
 All images and iframes that are above the fold—that is, immediately viewable without scrolling—load
@@ -204,9 +198,7 @@ to provide a polyfill for browsers that do not yet support the attribute.
 
 The `loading` attribute can be treated as a progressive enhancement. Browsers that support it can
 lazy-load images and iframes. Those that don't yet can load images just like they would today. In
-terms of cross-browser support, `loading` should be supported in Chrome 76 and any Chromium 76-based
-browsers. There is also [an open implementation bug for
-Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1542784).
+terms of cross-browser support, currently `loading` is supported in Chrome 76, Mozilla Firefox 75 and in and any Chromium 76-based browsers.
 
 A [similar API](https://w3c.github.io/web-performance/specs/ResourcePriorities/Overview.html) was
 proposed and used in IE and Edge but was focused on lowering the download priorities of resources
