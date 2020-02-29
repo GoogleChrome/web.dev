@@ -196,7 +196,10 @@ class Assessment extends BaseModalElement {
     for (const question of questions) {
       question.reset();
     }
-    tabs.focusTab(0);
+
+    if (tabs) {
+      tabs.focusTab(0);
+    }
   }
 }
 
