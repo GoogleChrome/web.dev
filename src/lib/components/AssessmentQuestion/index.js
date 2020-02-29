@@ -1,6 +1,12 @@
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
 
+/**
+ * Element that renders an assessment question shell.
+ * Needs children that extend BaseResponseElement to work corectly.
+ *
+ * @extends {BaseElement}
+ */
 class AssessmentQuestion extends BaseElement {
   static get properties() {
     return {
@@ -10,13 +16,16 @@ class AssessmentQuestion extends BaseElement {
 
   constructor() {
     super();
-    this.state = "initial";
+    this.state = "unanswered";
     this.prerenderedChildren = null;
+    this.ctaLabel = "Check";
 
     this.updateResponseComponents = this.updateResponseComponents.bind(this);
     this.checkNextQuestion = this.checkNextQuestion.bind(this);
     this.requestNextQuestionNav = this.requestNextQuestionNav.bind(this);
     this.requestAssessmentReset = this.requestAssessmentReset.bind(this);
+    this.responseComponentUpdated = this.responseComponentUpdated.bind(this);
+    this.reset = this.reset.bind(this);
   }
 
   render() {
@@ -38,9 +47,7 @@ class AssessmentQuestion extends BaseElement {
         <button
           @click="${this.onSubmit}"
           class="w-button w-button--primary"
-          ?disabled="${this.state !== "initial" && this.state !== "checked"
-            ? false
-            : true}"
+          ?disabled="${this.state !== "unanswered" ? false : true}"
         >
           ${this.ctaLabel}
         </button>
@@ -63,14 +70,20 @@ class AssessmentQuestion extends BaseElement {
 
   // Update question state based on state of response components.
   // Stop updating question state as soon as any response component reports
-  // that it's answered incorrectly.
-  // (If any part of the question is wrong, the whole question is wrong.)
-  get responseComponentUpdated() {
+  // that it's unanswered or answered incorrectly.
+  // (If any part of the question is incomplete or wrong,
+  // the whole question is incomplete or wrong, in descending priority.)
+  responseComponentUpdated() {
     const responseComponents = this.querySelectorAll("[data-role=response]");
 
     for (const component of responseComponents) {
       this.state = component.state;
-      if (component.state === "answeredInCorrectly") return;
+      if (component.state === "unanswered") {
+        return;
+      }
+      if (component.state === "answeredIncorrectly") {
+        return;
+      }
     }
   }
 
@@ -79,10 +92,12 @@ class AssessmentQuestion extends BaseElement {
       case "answeredCorrectly":
         this.updateResponseComponents();
         this.state = "completed";
+        this.ctaLabel = this.checkNextQuestion() ? "Next" : "Reset quiz";
         break;
       case "answeredIncorrectly":
         this.updateResponseComponents();
-        this.state = "checked";
+        this.state = "unanswered";
+        this.ctaLabel = "Recheck";
         break;
       case "completed":
         const nextQuestion = this.checkNextQuestion();
@@ -95,27 +110,11 @@ class AssessmentQuestion extends BaseElement {
     }
   }
 
-  // Update CTA label based on question state.
-  get ctaLabel() {
-    switch (this.state) {
-      default:
-      case "initial":
-        return "Check";
-      case "checked":
-        return "Recheck";
-      case "completed":
-        const nextQuestion = this.checkNextQuestion();
-
-        if (nextQuestion) return "Next";
-        return "Reset quiz";
-    }
-  }
-
   updateResponseComponents() {
     const responseComponents = this.querySelectorAll("[data-role=response]");
 
-    for (const component of responseComponents) {
-      component.submitOptions();
+    for (const responseComponent of responseComponents) {
+      responseComponent.submitResponse();
     }
   }
 
@@ -137,7 +136,22 @@ class AssessmentQuestion extends BaseElement {
   }
 
   requestAssessmentReset() {
-    // TODO
+    const event = new Event("request-assessment-reset");
+
+    this.dispatchEvent(event);
+  }
+
+  // Helper function to allow other components to reset the question
+  // to its unanswered state.
+  reset() {
+    const responseComponents = this.querySelectorAll("[data-role=response]");
+    const questionContent = this.querySelector(".web-question__content");
+
+    for (const responseComponent of responseComponents) {
+      responseComponent.reset();
+    }
+    this.ctaLabel = "Check";
+    questionContent.scrollTop = 0;
   }
 }
 

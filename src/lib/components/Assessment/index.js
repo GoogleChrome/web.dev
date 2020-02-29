@@ -35,6 +35,7 @@ class Assessment extends BaseModalElement {
 
     this.onAssessmentAnimationEnd = this.onAssessmentAnimationEnd.bind(this);
     this.onAssessmentResize = this.onAssessmentResize.bind(this);
+    this.reset = this.reset.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
@@ -83,6 +84,12 @@ class Assessment extends BaseModalElement {
     // Override BaseModalElement's inert behavior since Assessment opens itself.
     this.inert = false;
     this.classList.remove("unresolved");
+    // Listen to reset requests from child question components.
+    const questions = this.querySelectorAll("web-question");
+
+    for (const question of questions) {
+      question.addEventListener("request-assessment-reset", this.reset);
+    }
   }
 
   connectedCallback() {
@@ -180,6 +187,16 @@ class Assessment extends BaseModalElement {
   // so things don't break if a mobile user switches to landscape orientation.
   onAssessmentResize() {
     this.open = false;
+  }
+
+  reset() {
+    const tabs = this.querySelector("web-tabs");
+    const questions = this.querySelectorAll("web-question");
+
+    for (const question of questions) {
+      question.reset();
+    }
+    tabs.focusTab(0);
   }
 }
 
