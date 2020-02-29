@@ -30,3 +30,32 @@ web-question {
     }
   }
 }
+
+.web-question__cta {
+  overflow: visible;
+}
+
+.web-question__cta::before {
+  @include font-material-icon();
+  align-items: center;
+  background: $SUCCESS_COLOR;
+  border-radius: $GLOBAL_ROUNDED;
+  content: 'check';
+  display: flex;
+  font-size: 18px;
+  height: 24px;
+  justify-content: center;
+  left: calc(-24px - .5rem);
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: calc(50% - 12px);
+  transform: scale(0);
+  transition: opacity $TRANSITION_SPEED * 2 ease, transform $TRANSITION_SPEED ease;
+  width: 24px;
+}
+
+[state=completed] .web-question__cta::before {
+  opacity: 1;
+  transform: scale(1);
+}

@@ -46,7 +46,7 @@ class AssessmentQuestion extends BaseElement {
         <span></span>
         <button
           @click="${this.onSubmit}"
-          class="w-button w-button--primary"
+          class="w-button w-button--primary web-question__cta"
           ?disabled="${this.state !== "unanswered" ? false : true}"
         >
           ${this.ctaLabel}
