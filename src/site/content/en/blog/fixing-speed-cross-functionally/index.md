@@ -84,7 +84,7 @@ revenue. Here are some ways to achieve this:
    about the same level, the analysis will be difficult to perform and the below alternatives can
    give more answers. 
 -  **Estimate the value of speed from statistical models**. 
-   With the help of Google's[ TestMySite](https://www.thinkwithgoogle.com/feature/testmysite) you
+   With the help of Google's [TestMySite](https://www.thinkwithgoogle.com/feature/testmysite) you
    can run a test and then calculate the impact that a faster site can have on your business. All
    you need is data around average monthly visitors, conversion rate, and average order value, which
    your analytics team can help you with. 
@@ -261,7 +261,7 @@ agreed level.
 -  **Propose a performance budget** where the web designers commit to making sure that all web
    pages have a page weight below 1 MB (or at maximum 1.5 MB).
 
-## Fix speed with the help of your analytics team   
+## Fix speed with the help of your analytics team
    
 Businesses need data to know what to focus on and to get a basis for decisions. But even though many
 talk about the importance of site speed and its connection to revenue and sales, there are still
