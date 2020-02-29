@@ -69,21 +69,19 @@ class AssessmentQuestion extends BaseElement {
   }
 
   // Update question state based on state of response components.
-  // Stop updating question state as soon as any response component reports
-  // that it's unanswered or answered incorrectly.
-  // (If any part of the question is incomplete or wrong,
-  // the whole question is incomplete or wrong, in descending priority.)
   responseComponentUpdated() {
     const responseComponents = this.querySelectorAll("[data-role=response]");
+    const stateArr = [];
 
     for (const component of responseComponents) {
-      this.state = component.state;
-      if (component.state === "unanswered") {
-        return;
-      }
-      if (component.state === "answeredIncorrectly") {
-        return;
-      }
+      stateArr.push(component.state);
+    }
+    if (stateArr.includes("unanswered")) {
+      this.state = "unanswered";
+    } else if (stateArr.includes("answeredIncorrectly")) {
+      this.state = "answeredIncorrectly";
+    } else {
+      this.state = "answeredCorrectly";
     }
   }
 

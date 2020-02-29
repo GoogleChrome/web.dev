@@ -25,14 +25,12 @@ export class BaseResponseElement extends BaseElement {
   static get properties() {
     return {
       state: {type: String, reflect: true},
-      temp: {type: String, reflect: true},
     };
   }
 
   constructor() {
     super();
     this.state = "unanswered";
-    this.temp = "start";
 
     this.reportUpdate = this.reportUpdate.bind(this);
     this.identifyCorrectOptions = this.identifyCorrectOptions.bind(this);
@@ -105,7 +103,6 @@ export class BaseResponseElement extends BaseElement {
 
   // Add the data-correct attribute to correct options
   // so they show as correct when they're submitted.
-  // TODO: figure out why null correctAnswers are being converted to 0.
   identifyCorrectOptions() {
     if (!this.correctAnswer) {
       return;
@@ -140,8 +137,6 @@ export class BaseResponseElement extends BaseElement {
     // (If minimum selections have been made, AssessmentQuestion CTA enables.)
     const isAnsweredCorrectly = this.checkIfCorrect();
 
-    this.temp = "changed";
-    return;
     if (numSelected >= this.minSelections && isAnsweredCorrectly) {
       this.state = "answeredCorrectly";
     } else if (numSelected >= this.minSelections && !isAnsweredCorrectly) {
@@ -166,18 +161,24 @@ export class BaseResponseElement extends BaseElement {
     }
   }
 
-  // Return true if all selections are correct; otherwise, return false.
+  // Return true if selections include all correct options.
+  // NOTE: This considers responses that include all correct options
+  // AND some incorrect options as correct--because it's not clear what else
+  // we'd do in that case other than reveal the full correct answer.
   checkIfCorrect() {
+    const correctAnswersArr = this.correctAnswer.split(",").map(Number);
+    const options = this.querySelectorAll("[data-role=option]");
     const selectedOptions = this.querySelectorAll(
       "[data-role=option][data-selected]",
     );
+    const selections = [];
 
-    for (const option of selectedOptions) {
-      if (!option.hasAttribute("data-correct")) {
-        return false;
-      }
+    for (let i = 0; i < selectedOptions.length; i++) {
+      const index = Array.from(options).indexOf(selectedOptions[i]);
+
+      selections.push(index);
     }
-    return true;
+    return correctAnswersArr.every((val) => selections.includes(val));
   }
 
   // Updates option states when response component is submitted.
@@ -208,6 +209,11 @@ export class BaseResponseElement extends BaseElement {
           option.setAttribute("data-submitted", "");
         }
       }
+    }
+    // Force responseComponent state change on next option selection
+    // so AssessmentQuestion state updates.
+    if (this.state === "answeredIncorrectly") {
+      this.state = "unanswered";
     }
   }
 
