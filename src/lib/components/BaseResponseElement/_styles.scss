@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 
 [state=completed] [data-role=option],
-[data-role=option][data-state=submitted] {
+[data-role=option][data-submitted] {
   background: $GREY_100;
   border-radius: $GLOBAL_RADIUS;
   cursor: initial;
@@ -11,7 +11,7 @@
 
 // This uses $SUCCESS_COLOR because it shows the correct answer and so
 // should be independent of the self-assessment color.
-[data-role=option][data-correct][data-state=submitted] {
+[data-role=option][data-correct][data-submitted] {
   background: rgba($SUCCESS_COLOR, .08);
   box-shadow: inset 0 0 0 1px $SUCCESS_COLOR;
 }
@@ -27,17 +27,17 @@
 }
 
 [state=completed] .web-response__correctness-flag,
-[data-role=option][data-state=submitted] .web-response__correctness-flag {
+[data-role=option][data-submitted] .web-response__correctness-flag {
   display: block;
 }
 
-[data-role=option][data-state=submitted] .web-response__correctness-flag {
+[data-role=option][data-submitted] .web-response__correctness-flag {
   color: $SELF_ASSESSMENT_INCORRECT_COLOR;
 }
 
 // This uses $SUCCESS_COLOR because it shows the correct answer and so
 // should be independent of the self-assessment color.
-[data-role=option][data-correct][data-state=submitted] .web-response__correctness-flag {
+[data-role=option][data-submitted][data-correct] .web-response__correctness-flag {
   color: $SUCCESS_COLOR;
 }
 
@@ -53,7 +53,7 @@
 }
 
 [state=completed] .web-response__option-rationale,
-[data-state=submitted] .web-response__option-rationale {
+[data-submitted] .web-response__option-rationale {
   display: block;
 }
 

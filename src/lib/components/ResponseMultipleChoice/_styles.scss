@@ -26,36 +26,41 @@ web-response-mc {
 }
 
 // Multiple-choice options the user has submitted
-.web-response-mc__option[data-state=submitted] {
+[state=completed] .web-response-mc__option,
+.web-response-mc__option[data-submitted] {
   align-items: flex-start;
   justify-self: stretch;
   padding: 1rem 1rem 1.5rem;
 }
 
-// Prevent selector states from appearing after an option has been submitted.
-[data-state=submitted] .web-response-mc__selector::before {
-  background: none !important;
-}
-
-[data-state=submitted] .web-response-mc__input ~ .web-response-mc__selector {
+[state=completed] .web-response-mc__input[disabled] ~ .web-response-mc__selector {
   background: $GREY_600;
   border-color: $GREY_600;
   transition: none;
 }
 
-// This uses $SUCCESS_COLOR because it shows success and so should be
-// independent of the self-assessment color scheme.
-.web-response-mc__option--correct .web-response-mc__input ~ .web-response-mc__selector {
-  background: $SUCCESS_COLOR !important;
-  border-color: $SUCCESS_COLOR !important;
-}
-
-.web-response-mc__option--incorrect .web-response-mc__input ~ .web-response-mc__selector {
+.web-select-group__option[data-submitted] .web-response-mc__input ~ .web-response-mc__selector {
   background: $SELF_ASSESSMENT_INCORRECT_COLOR !important;
   border-color: $SELF_ASSESSMENT_INCORRECT_COLOR !important;
+  transition: none;
 }
 
-[data-state=submitted] .web-response-mc__input ~ .web-response-mc__selector::after {
+// This uses $SUCCESS_COLOR because it shows success and so should be
+// independent of the self-assessment color scheme.
+.web-select-group__option[data-submitted][data-correct] .web-response-mc__input ~ .web-response-mc__selector {
+  background: $SUCCESS_COLOR !important;
+  border-color: $SUCCESS_COLOR !important;
+  transition: none;
+}
+
+// Prevent selector states from appearing after an option has been submitted.
+.web-select-group__option[data-submitted] .web-response-mc__selector::before {
+  background: none !important;
+}
+
+// Override radio button checked states.
+[state=completed] .web-response-mc__input ~ .web-response-mc__selector::after,
+.web-select-group__option[data-submitted] .web-response-mc__input ~ .web-response-mc__selector::after {
   border: 0;
   content: 'remove';
   height: initial;
@@ -64,10 +69,22 @@ web-response-mc {
   width: initial;
 }
 
-.web-response-mc__option--correct .web-response-mc__input ~ .web-response-mc__selector::after {
+.web-select-group__option[data-submitted] .web-response-mc__input ~ .web-response-mc__selector::after {
+  content: 'clear';
+}
+
+.web-select-group__option[data-submitted][data-correct] .web-response-mc__input ~ .web-response-mc__selector::after {
   content: 'check';
 }
 
-.web-response-mc__option--incorrect .web-response-mc__input ~ .web-response-mc__selector::after {
-  content: 'clear';
+// Override disabled state when options have been submitted
+// so they're fully visible and allow text selection.
+[state=completed] .web-select-group__option[disabled],
+.web-select-group__option[data-submitted][disabled] {
+  pointer-events: auto;
+}
+
+[state=completed] .web-select-group__option[disabled] .web-select-group__option-content,
+.web-select-group__option[data-submitted][disabled] .web-select-group__option-content {
+  opacity: 1;
 }

@@ -7,6 +7,8 @@ class ResponseThinkAndCheck extends BaseResponseElement {
     super();
     this.prerenderedChildren = null;
     this.option = null;
+
+    this.reset = this.reset.bind(this);
   }
 
   render() {
@@ -37,8 +39,15 @@ class ResponseThinkAndCheck extends BaseResponseElement {
   connectedCallback() {
     super.connectedCallback();
     // Unlike other response types,
-    // Think-and-checks don't have any actual response elements,
+    // Think-and-checks don't have any options,
     // so they can only be answeredCorrectly (default) or completed.
+    this.state = "answeredCorrectly";
+  }
+
+  // Override BaseResponseElement since Think-and-checks have no options
+  // and so are answeredCorrectly by default.
+  reset() {
+    super.reset();
     this.state = "answeredCorrectly";
   }
 }

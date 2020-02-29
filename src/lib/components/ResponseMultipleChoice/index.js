@@ -17,18 +17,24 @@ class ResponseMultipleChoice extends BaseResponseElement {
     this.prerenderedChildren = null;
     this.optionContents = null;
     this.rationales = null;
+    this.minSelections = null;
+    this.maxSelections = null;
+
+    this.onOptionInput = this.onOptionInput.bind(this);
+    this.deselectOption = this.deselectOption.bind(this);
+    this.updateSelections = this.updateSelections.bind(this);
   }
 
   render() {
     const options = [];
     const correctArr = this.correctAnswer.split(",").map(Number);
+    const selectType = this.cardinality === "1" ? "radio" : "checkbox";
     const selectionRange = BaseResponseElement.getSelectionRange(
       this.cardinality,
     );
-    const selectType = this.cardinality === "1" ? "radio" : "checkbox";
-    console.log(selectionRange.min, selectionRange.max);
 
-    // TODO: add max and min select
+    this.minSelections = selectionRange.min;
+    this.maxSelections = selectionRange.max;
 
     if (!this.prerenderedChildren) {
       this.prerenderedChildren = [];
@@ -66,7 +72,6 @@ class ResponseMultipleChoice extends BaseResponseElement {
     return html`
       ${this.prerenderedChildren}
       <web-select-group
-        @click="${this.onClick}"
         type="${selectType}"
         prefix="web-response-mc"
         ?columns="${this.columns}"
@@ -89,45 +94,51 @@ class ResponseMultipleChoice extends BaseResponseElement {
     rationale.className = "web-response__option-rationale";
     content.append(rationale);
 
-    // Remove the data role on the option content because the SelectGroup
-    // label element serves as the option.
+    // Remove data-role since it's being handled by the SelectGroup component.
     content.removeAttribute("data-role");
 
     return content;
   }
 
-  connectedCallback() {
-    super.connectedCallback();
+  firstUpdated() {
+    super.firstUpdated();
+    // Wait for the SelectGroup component to be upgraded
+    // and then add a click event listener to each option.
+    // Source: https://github.com/kenchris/lit-element#element-upgrading
+    customElements.whenDefined("web-select-group").then(() => {
+      const options = this.querySelectorAll("input");
+
+      for (const option of options) {
+        option.addEventListener("input", this.onOptionInput);
+      }
+    });
   }
 
-  onClick(e) {
-    this.toggleSelection(e);
-    const options = this.querySelectorAll("label");
-
-    for (const option of options) {
-      console.log("label");
-      option.setAttribute("data-state", "unselected");
-    }
+  onOptionInput(e) {
+    this.updateSelections(e);
+    this.enforceCardinality(e);
   }
 
-  // Allow user to deselect radio buttons.
-  // (Helpful for test taking strategies.)
-  toggleSelection(e) {
-    const radio = e.target;
-    const group = radio.closest(".web-response-mc");
-    const siblings = group.querySelectorAll(
-      ".web-response-mc__input[type=radio]",
-    );
-    const isChecked = radio.hasAttribute("checked");
+  updateSelections(e) {
+    const options = this.querySelectorAll("[data-role=option]");
+    const currentOption = e.target.closest("[data-role=option]");
 
-    if (isChecked) {
-      radio.removeAttribute("checked");
-      radio.checked = false;
-      // checkAnswered(e);
+    if (e.target.checked) {
+      if (this.cardinality === "1") {
+        for (const option of options) {
+          option.removeAttribute("data-selected");
+        }
+      }
+      currentOption.setAttribute("data-selected", "");
     } else {
-      for (const sibling of siblings) sibling.removeAttribute("checked");
-      radio.setAttribute("checked", "");
+      currentOption.removeAttribute("data-selected");
     }
+  }
+
+  // Helper function to allow BaseResponseElement to deselect options as needed.
+  deselectOption(option) {
+    option.removeAttribute("data-selected");
+    option.querySelector("input").checked = false;
   }
 }
 
