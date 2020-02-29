@@ -18,6 +18,7 @@ const {html} = require("common-tags");
 const stripLanguage = require("../../_filters/strip-language");
 
 module.exports = ({postToCollections, url}) => {
+  // When @devnook lands her localization work we might need to update this file.
   const strippedUrl = stripLanguage(url).replace(/\//g, "");
   const collections = postToCollections[strippedUrl] || [];
   const aTags = collections.map((collection) => {

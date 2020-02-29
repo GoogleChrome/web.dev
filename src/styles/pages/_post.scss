@@ -8,10 +8,10 @@
 // sass-lint:enable class-name-format
 
 .w-post-breadcrumbs {
-  padding: 32px 32px 0;
+  padding: 0px 0 32px;
 
   @include bp(md) {
-    padding: 32px 32px 24px;
+    padding: 0px 0 44px;
   }
 }
 
@@ -35,11 +35,7 @@
 }
 
 .w-post-signpost {
-  padding: 88px 0 8px;
-
-  @include bp(md) {
-    padding-top: 64px;
-  }
+  padding: 0 0 8px;
 }
 
 .w-post-signpost__divider {
@@ -51,5 +47,5 @@
 }
 
 .w-post-signpost__title {
-  margin: 0 8px 8px;
+  margin: 0 8px 8px 0;
 }

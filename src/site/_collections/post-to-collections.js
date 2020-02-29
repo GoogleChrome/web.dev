@@ -13,14 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+const setdefault = require("../_utils/setdefault");
 
+/**
+ * Since a post can appear in more than one collection, this creates a quick way to look up which collection a post is in.
+ *
+ * @param {any} collections Eleventy collection object
+ * @return { Object.<string, Array<{ title: string, slug: string, href: string }>> } An object where each key has an array with details of the pathItems it belongs to.
+ */
 module.exports = (collections) => {
   const postToCollections = {};
-  const paths = collections
+  const pathItems = collections
     .getFilteredByTag("pathItem")
     .map((p) => p.data.path);
 
-  paths.forEach((path) => {
+  pathItems.forEach((path) => {
     const details = {
       title: path.title,
       slug: path.slug,
@@ -28,18 +35,28 @@ module.exports = (collections) => {
     };
 
     path.topics.forEach((topic) => {
-      topic.pathItems.forEach((pathItem) => {
-        if (!postToCollections[pathItem]) {
-          postToCollections[pathItem] = {};
-        }
+      const subPathItems = (topic.subtopics || []).reduce(
+        (accumulator, subtopic) => [...accumulator, ...subtopic.pathItems],
+        [],
+      );
+      const pathItems = [...topic.pathItems, ...subPathItems];
 
-        postToCollections[pathItem][path.slug] = details;
+      pathItems.forEach((postSlug) => {
+        const postSlugMap = postToCollections[postSlug] || new Map();
+        setdefault(postSlugMap, path.slug, details);
+        postToCollections[postSlug] = postSlugMap;
       });
     });
   });
 
-  Object.keys(postToCollections).forEach((pathItem) => {
-    postToCollections[pathItem] = Object.values(postToCollections[pathItem]);
+  /**
+   * Since postToCollections uses Maps in order to prevent duplicate collection enteries,
+   * we rip the values out of each slugs Map and turn it into an Array in order to display.
+   */
+  Object.keys(postToCollections).forEach((postSlug) => {
+    postToCollections[postSlug] = Array.from(
+      postToCollections[postSlug].values(),
+    );
   });
 
   return postToCollections;
