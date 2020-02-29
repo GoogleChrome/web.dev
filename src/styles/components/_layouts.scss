@@ -16,10 +16,10 @@
   box-sizing: content-box;
   margin: 0 auto;
   overflow: visible;
-  padding: 64px;
+  padding: 24px;
 
   @include bp(sm) {
-    padding: 88px;
+    padding: 32px;
   }
 }
 
