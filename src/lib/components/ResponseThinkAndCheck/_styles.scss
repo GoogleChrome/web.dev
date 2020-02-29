@@ -1,3 +1,5 @@
+@import '../../../styles/tools/mixins';
+
 [state=completed] .web-response-tac__option-rationale {
   @include w-body-text();
   background: rgba($SUCCESS_COLOR, .08);
