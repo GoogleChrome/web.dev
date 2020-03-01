@@ -117,7 +117,7 @@ of use cases for all three features.
 | 2. Create initial draft of specification   | [In Progress][spec]          |
 | **3. Gather feedback & iterate on design** | [**In progress**](#feedback) |
 | 4. Origin trial                            | [Complete](https://developers.chrome.com/origintrials/#/view_trial/-2341871806232657919) |
-| **5. Launch**                              | [**Complete**] (Barcode detection |
+| **5. Launch**                              | [**Complete**] (Barcode detection) |
 
 </div>
 
