@@ -124,7 +124,7 @@ of use cases for all three features.
 ## How to use the Shape Detection API {: #use }
 
 {% Aside 'warning' %}
-  So far only barcode detection has launched in Chrome 82,
+  So far only barcode detection is available by default, starting in Chrome 82.
   but face and text detection are available behind a flag.
   You can always use the Shape Detection API for local experiments by enabling the
   `#enable-experimental-web-platform-features` flag.
