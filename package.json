@@ -46,7 +46,7 @@
     "lit-element": "^2.2.0",
     "rollup-plugin-replace": "^2.2.0",
     "rollup-plugin-virtual": "^1.0.1",
-    "terser": "^4.3.9",
+    "terser": "^4.6.4",
     "unistore": "^3.4.1",
     "wicg-inert": "^3.0.1",
     "workbox-build": "^5.0.0",
