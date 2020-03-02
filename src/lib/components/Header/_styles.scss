@@ -40,18 +40,9 @@ web-header {
   z-index: 200;
 
   .web-header__hamburger-btn {
-    -webkit-tap-highlight-color: transparent;
-    background: none;
-    border: none;
-    box-shadow: none;
-    color: rgba($BLACK, .65);
-    display: inline-block;
-    height: auto;
-    line-height: 1;
+    height: 2.75rem;
     margin: 0 8px 0 -8px;
-    padding: 8px;
-    transition: color $TRANSITION_SPEED;
-    width: auto;
+    width: 2.75rem;
 
     @include bp(md) {
       display: none;
