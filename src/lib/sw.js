@@ -89,11 +89,21 @@ self.addEventListener("activate", (event) => {
 
 initializeGoogleAnalytics();
 
+const externalExpirationPlugin = new ExpirationPlugin({
+  maxAgeSeconds: 60 * 60 * 24 * 365, // 1 yr
+  maxEntries: 30,
+});
+
+const localExpirationPlugin = new ExpirationPlugin({
+  maxAgeSeconds: 60 * 60 * 24 * 21, // 21 days
+});
+
 // Cache the Google Fonts stylesheets with a stale-while-revalidate strategy.
 workboxRouting.registerRoute(
   /^https:\/\/fonts\.googleapis\.com/,
   new workboxStrategies.StaleWhileRevalidate({
     cacheName: "google-fonts-stylesheets",
+    plugins: [externalExpirationPlugin],
   }),
 );
 
@@ -106,10 +116,7 @@ workboxRouting.registerRoute(
       new CacheableResponsePlugin({
         statuses: [0, 200],
       }),
-      new ExpirationPlugin({
-        maxAgeSeconds: 60 * 60 * 24 * 365,
-        maxEntries: 30,
-      }),
+      externalExpirationPlugin,
     ],
   }),
 );
@@ -137,7 +144,7 @@ workboxRouting.registerRoute(
     return url.host === self.location.host && contentPathRe.test(url.pathname);
   },
   new workboxStrategies.NetworkFirst({
-    plugins: [normalizeIndexCacheKeyPlugin],
+    plugins: [normalizeIndexCacheKeyPlugin, localExpirationPlugin],
   }),
 );
 
@@ -146,7 +153,9 @@ workboxRouting.registerRoute(
  */
 workboxRouting.registerRoute(
   new RegExp("/images/.*"),
-  new workboxStrategies.StaleWhileRevalidate(),
+  new workboxStrategies.StaleWhileRevalidate({
+    plugins: [localExpirationPlugin],
+  }),
 );
 
 /**
