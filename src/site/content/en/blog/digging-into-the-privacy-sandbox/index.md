@@ -3,32 +3,37 @@ title: Digging into the Privacy Sandbox
 subhead: The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms. The proposals need your feedback.
 authors:
   - samdutton
-date: 2020-02-12
+date: 2020-03-03
 description: The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms. The proposals need your feedback!
 tags:
   - post
+  - privacy
   - security
   - trust and safety
 ---
 
+## tl;dr
+ + The [Privacy Sandbox proposals](./#privacy-sandbox-proposals) need your feedback.
+ + Please comment on the proposals by filing issues on the repositories linked to below.
++ There's a [glossary for the proposals](#appendix:-glossary-of-terms-used-in-the-explainers) at the end of this post.
+
 {% YouTube 'WnCKlNE52tc' %}
 
-Websites use third-party services to provide analytics, serve video and do lots of other useful stuff. [Composability is one of the web's superpowers](https://youtu.be/WnCKlNE52tc?t=930).
+## Why does the web use third-party code?
 
-Most notably, ads are inserted into web pages via third-party JavaScript and iframes. Ad views, clicks and conversions are tracked by third-party cookies and scripts. That's how most of the web is funded.
+Websites use services from other companies to provide analytics, serve video and do lots of other useful stuff. Composability is one of the web's [superpowers](https://youtu.be/WnCKlNE52tc?t=930).
 
-Better targeting tools make ad space more valuable to advertisers (the people that purchase ad space on websites), which in turn means that ad space makes more money for ad-supported websites. Relevant ads are [much more profitable for publishers](https://services.google.com/fh/files/misc/disabling_third-party_cookies_publisher_revenue.pdf) (the people running the ad-supported website) and [more engaging and less annoying to users](https://services.google.com/fh/files/misc/disabling_third-party_cookies_publisher_revenue.pdf). Reliable measurement and anti-fraud protection are also crucial. Advertisers and site owners must be able to distinguish between malicious bots and trustworthy humans. If advertisers can't tell which ads work well, they spend less, so site publishers get less revenue.
+Most notably, ads are included in web pages via third-party JavaScript and iframes. Ad views, clicks and conversions are tracked via third-party cookies and scripts. That's how most of the web is funded.
+
+Relevant ads are less annoying to users and [more profitable for publishers](https://services.google.com/fh/files/misc/disabling_third-party_cookies_publisher_revenue.pdf) (the people running ad-supported websites). Third party ad targeting tools make ad space more valuable to advertisers (the people who purchase ad space on websites) which in turn increases revenue for ad-supported websites.
+
+Reliable measurement and anti-fraud protection are also crucial. Advertisers and site owners must be able to distinguish between malicious bots and trustworthy humans. If advertisers can't reliably tell which ads work well, they spend less, so site publishers get less revenue. Many third party services currently use techniques such as [device fingerprinting](./#fingerprinting) to combat fraud.
 
 The problem is — privacy.
 
-## tl;dr
- + The [Privacy Sandbox proposals](https://www.chromium.org/Home/chromium-privacy/privacy-sandbox) need your feedback.
- + Please comment on the proposals by filing issues on the repositories linked to below.
-+ There's a [glossary](#appendix:-glossary-of-terms-used-in-the-explainers) at the end of this post.
-
 ## The current state of privacy on the web
 
-When you visit a website you may not be aware of what third parties are involved and what they're doing with your data. Even web developers may not understand the entire third-party supply chain.
+When you visit a website you may not be aware of the third parties involved and what they're doing with your data. Even publishers and web developers may not understand the entire third-party supply chain.
 
 Ad targeting, conversion measurement, and other use cases currently rely on establishing stable cross-site identity. Historically this has been done by using [third-party cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Third-party_cookies), but browsers have begun to restrict access to these cookies, and there's been an [increase  in the use of other mechanisms](https://github.com/bslassey/privacy-budget/issues/6) for cross-site user tracking such as covert browser storage, device fingerprinting, and requests for personal information like email addresses.
 
@@ -42,11 +47,13 @@ Users, developers, publishers, and advertisers shouldn't have to worry.
 
 ## Introducing the Privacy Sandbox
 
-The [Privacy Sandbox](https://www.blog.google/products/chrome/building-a-more-private-web/) introduces a set of privacy-preserving APIs to accomplish the tasks that require tracking today.
+The [Privacy Sandbox](https://www.blog.google/products/chrome/building-a-more-private-web/) introduces a set of privacy-preserving APIs to accomplish tasks that require tracking today.
 
-These APIs require web browsers to take on a new role. Rather than working with limited tools and protections, the user's browser can act on behalf of the user to ensure that data is never shared without the user's knowledge and consent, and private and personal information is never shared for use cases such as ad targeting or conversion measurement. This is a shift in direction for browsers. Until now, they have been in the business of providing multi-use tools that can be adapted to a wide range of uses. The Privacy Sandbox authors' vision of the future instead has browsers providing tools targeting specific use cases — which gives them the power to offer much more private ways to achieve those goals.
+These APIs require web browsers to take on a new role. Rather than working with limited tools and protections, the user's browser can act on behalf of the user to ensure that data is never shared without the user's knowledge and consent, and private and personal information is never shared for use cases such as ad targeting or conversion measurement. This is a shift in direction for browsers. The Privacy Sandbox authors' vision of the future has browsers providing tools targeting specific use cases, which gives them the power to offer much more private ways to achieve those goals.
 
 In order to successfully transition away from third-party cookies the Privacy Sandbox authors need your support. The [explainers](https://blog.chromium.org/2019/08/potential-uses-for-privacy-sandbox.html) need feedback from publishers, developers, advertisers, and advertising platforms, to suggest missing use cases and more-private ways to accomplish their goals.
+
+<a name="privacy-sandbox-proposals"></a>
 
 Please comment on the explainers by filing issues against each repository:
 
@@ -99,7 +106,7 @@ Remarketing is usually done via cookies or some other way to recognize people ac
 Interest-based targeting is currently done by using cookies or device fingerprinting to track user behaviour on as many sites as possible. Many people are concerned about the privacy implications of ad targeting. The Privacy Sandbox includes two alternative privacy preserving proposals:
 
 +   [FLoC](https://github.com/jkarlin/floc), which generates clusters of similar people locally on the user's device. Companies can then target ads based on the behavior of a cohort (or "flock") of people with similar browsing behaviour.
-+   [TURTLEDOVE](https://github.com/michaelkleber/turtledove), whereby the user's browser, not the advertisers, holds information about what the advertiser thinks a person is interested in. Advertisers can serve ads based on an interest, but cannot combine that interest with other information about the person — in particular, with who they are or what page they are visiting. The ad network must make the final decision of which ad "wins" via code that executes locally within the user's browser and cannot send information off-device.
++   [TURTLEDOVE](https://github.com/michaelkleber/turtledove), whereby the user's browser, not advertisers, holds information about what the user is interested in. Two (uncorrelated) requests are sent for ads: one to retrieve an ad based on contextual data, and one to retrieve an ad based on an advertiser-defined interest. An 'auction' is conducted by the browser to choose the most relevant ad, using JavaScript code provided by the advertiser. This code *can only be used to choose between ads*: it cannot make network requests or access external state.
 
 ### Combat fingerprinting
 **Goal: Reduce the amount of sensitive data revealed by APIs and make access to sensitive data controllable by users, and measurable.**
@@ -179,6 +186,8 @@ Please comment on the explainers by filing issues on the repositories linked to 
 +   The [Tor Browser design's "Privacy Requirements"](https://2019.www.torproject.org/projects/torbrowser/design/#privacy), particularly the clear emphasis on "Unlinkability".
 +   Mozilla anti-tracking policy: [wiki.mozilla.org/Security/Anti_tracking_policy](https://wiki.mozilla.org/Security/Anti_tracking_policy)
 +   WebKit tracking prevention policy: [webkit.org/tracking-prevention-policy](https://webkit.org/tracking-prevention-policy/)
++   [Privacy Preserving Ad Click Attribution For the Web](https://webkit.org/blog/8943/privacy-preserving-ad-click-attribution-for-the-web/)
++   [Brave, Fingerprinting, and Privacy Budgets](https://brave.com/brave-fingerprinting-and-privacy-budgets/)
 
 ## Appendix: Glossary of terms used in the explainers
 
@@ -224,6 +233,12 @@ Each bit of entropy halves the possible number of potential individuals referred
 
 Data can be combined to identify an individual, but it can be difficult to work out whether new data adds to entropy. For example, knowing a person is from Australia doesn't reduce entropy if you already know the person is from Kangaroo Island.
 
+### Fingerprinting
+
+Techniques to identify and track the behaviour of individual users. Fingerprinting uses mechanisms that users aren't aware of and can't control. Sites such as [Panopticlick](https://panopticlick.eff.org) and [amiunique.org](https://amiunique.org/) show how fingerprint data can be combined to identify you as an individual.
+
+
+
 ### Fingerprinting surface
 
 Something that can be used (probably in combination with other surfaces) to identify a particular user or device. For example, the `navigator.userAgent()` JavaScript method and the `User-Agent` HTTP request header provide access to a fingerprinting surface (the user agent string).
@@ -238,7 +253,10 @@ View of an ad. (See also [click-through rate](#click-through-rate-(ctr)).)
 
 ### k-anonymity
 
-A measure of anonymity within a data set. If you have _k_ anonymity, you can't be distinguished from _k-1_ other individuals in the data set. In other words, _k_ individuals have the same information.
+A measure of anonymity within a data set. If you have _k_ anonymity, you can't be distinguished from _k-1_ other individuals in the data set. In other words, _k_ individuals have the same information (including you).
+
+### Origin
+The origin of a request, including the server name but no path information. For example: `https://web.dev`.
 
 ### Passive surfaces
 
