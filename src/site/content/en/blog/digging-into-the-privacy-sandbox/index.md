@@ -29,7 +29,7 @@ Relevant ads are less annoying to users and [more profitable for publishers](htt
 
 Reliable measurement and anti-fraud protection are also crucial. Advertisers and site owners must be able to distinguish between malicious bots and trustworthy humans. If advertisers can't reliably tell which ads work well, they spend less, so site publishers get less revenue. Many third party services currently use techniques such as [device fingerprinting](./#fingerprinting) to combat fraud.
 
-The problem is — privacy.
+The problem is... privacy.
 
 ## The current state of privacy on the web
 
@@ -39,7 +39,7 @@ Ad targeting, conversion measurement, and other use cases currently rely on esta
 
 This is a dilemma for the web. How can we support third-party use cases without tracking users across sites?
 
-In particular, how can we continue to help websites fund content by enabling third parties to show ads and measure ad performance — but not let individual users be profiled? How can advertisers verify real users, and site owners check that users are trustworthy, without resorting to dark patterns such as device fingerprinting?
+In particular, how can we continue to help websites fund content by enabling third parties to show ads and measure ad performance—but not let individual users be profiled? How can advertisers verify real users, and site owners check that users are trustworthy, without resorting to dark patterns such as device fingerprinting?
 
 The way things work at the moment can be problematic for everyone concerned, not just users. For publishers and advertisers, tracking identity and using a variety of non-native, un-standardised third-party solutions can add to technical debt, code complexity and data risk.
 
@@ -97,7 +97,7 @@ There are many ways to make ads relevant to the user, including the following:
 
 +   **First-party-data targeting**: Show ads relevant to topics a person has told a website they have an interest in, or content a person has looked at previously on this web site.
 +   **Contextual targeting**: Choose where to display ads based on site content. For example, 'Put this ad next to articles about knitting.'
-+   **Remarketing**: Advertise to people who've already visited your site, while they are not on your site. For example,  'Show this ad for discount wool to people who visited your store and left knitting items in their shopping cart — while they're visiting craft sites.'
++   **Remarketing**: Advertise to people who've already visited your site, while they are not on your site. For example,  'Show this ad for discount wool to people who visited your store and left knitting items in their shopping cart—while they're visiting craft sites.'
 +   **Interest-based targeting**: Select ads based on a user's browsing history. For example, 'Show this ad to users who appear to like classical music'.
 
 First-party-data and contextual targeting can be achieved without knowing anything about the user other than their activity within a site: they don't require cross-site tracking.
@@ -124,11 +124,11 @@ Fingerprinting surfaces such as the [User-Agent](https://github.com/WICG/ua-clie
 ### Combat spam, fraud and denial-of-service attacks
 **Goal: Enable authentication without fingerprinting.**
 
-Anti-fraud protection is crucial for keeping users safe — and also for ensuring that advertisers and site owners can get accurate ad performance measurements.
+Anti-fraud protection is crucial for keeping users safe—and also for ensuring that advertisers and site owners can get accurate ad performance measurements.
 
 Unfortunately, the techniques used to identify legitimate users and block spammers, fraudsters, and bots work in ways similar to fingerprinting techniques.
 
-The [Trust Tokens API](https://github.com/dvorak42/trust-token-api) proposes an alternative approach, allowing trust of a user in one context, such as gmail.com, to be conveyed to another context, such as an ad running on nytimes.com — without identifying the user or linking the two identities.
+The [Trust Tokens API](https://github.com/dvorak42/trust-token-api) proposes an alternative approach, allowing trust of a user in one context, such as gmail.com, to be conveyed to another context, such as an ad running on nytimes.com—without identifying the user or linking the two identities.
 
 ### IP address security
 **Goal: Control access to IP addresses to reduce covert fingerprinting, and allow sites to opt out of seeing IP addresses in order not to consume privacy budget.**
@@ -146,7 +146,7 @@ Many organizations own sites across multiple domains. For example, google.com, g
 
 ## Next steps
 
-To reiterate: the Privacy Sandbox authors need your support. The [explainers](https://blog.chromium.org/2019/08/potential-uses-for-privacy-sandbox.html) need feedback — in particular to suggest missing use cases and more-private ways to accomplish their goals.
+To reiterate: the Privacy Sandbox authors need your support. The [explainers](https://blog.chromium.org/2019/08/potential-uses-for-privacy-sandbox.html) need feedback—in particular to suggest missing use cases and more-private ways to accomplish their goals.
 
 Please comment on the explainers by filing issues on the repositories linked to below.
 
@@ -229,7 +229,7 @@ Data entropy is measured in bits. The more that data reveals identity, the highe
 
 The total number of humans on the planet is around eight billion, which is almost equal to two to the power of 33. This means you need around 33 bits worth of entropy to identify an individual.
 
-Each bit of entropy halves the possible number of potential individuals referred to. For example, binary gender data has an entropy value of around 1 bit. Assuming that birthdays are evenly distributed throughout the year, revealing your birthday (such as 1 January) would reduce your data entropy by around 8.5 bits (since 2 to the power of 8.5 is approximately 365). A postal code might be worth somewhere between 10 and 25 bits. This means that for postal areas with a small population, knowing a person's birthday and postal code means you might have 8.5 + 25 (= 33.5) bits of data — which is likely to be enough to identify individuals.
+Each bit of entropy halves the possible number of potential individuals referred to. For example, binary gender data has an entropy value of around 1 bit. Assuming that birthdays are evenly distributed throughout the year, revealing your birthday (such as 1 January) would reduce your data entropy by around 8.5 bits (since 2 to the power of 8.5 is approximately 365). A postal code might be worth somewhere between 10 and 25 bits. This means that for postal areas with a small population, knowing a person's birthday and postal code means you might have 8.5 + 25 (= 33.5) bits of data—which is likely to be enough to identify individuals.
 
 Data can be combined to identify an individual, but it can be difficult to work out whether new data adds to entropy. For example, knowing a person is from Australia doesn't reduce entropy if you already know the person is from Kangaroo Island.
 
