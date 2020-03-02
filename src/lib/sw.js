@@ -144,6 +144,7 @@ workboxRouting.registerRoute(
     return url.host === self.location.host && contentPathRe.test(url.pathname);
   },
   new workboxStrategies.NetworkFirst({
+    cacheName: "webdev-html-cache-v1",
     plugins: [normalizeIndexCacheKeyPlugin, localExpirationPlugin],
   }),
 );
@@ -154,6 +155,7 @@ workboxRouting.registerRoute(
 workboxRouting.registerRoute(
   new RegExp("/images/.*"),
   new workboxStrategies.StaleWhileRevalidate({
+    cacheName: "webdev-assets-cache-v1",
     plugins: [localExpirationPlugin],
   }),
 );
