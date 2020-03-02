@@ -87,7 +87,10 @@ sensors and cameras, which it needs in order to function.
 
 Entering an XR session requires a user gesture. To get that, use feature
 detection to test for `XRSystem` (via `navigator.xr`) and make a call to
-`XRSystem.isSessionSupported()`. In the example below, I've indicated that I
+`XRSystem.isSessionSupported()`. Be aware that in Chrome versions 79 and 80 the
+`XRSystem` object was called `XR`.
+
+In the example below, I've indicated that I
 want a virtual reality session with the `'immersive-vr'` session type. The
 [other session
 types](https://developer.mozilla.org/en-US/docs/Web/API/XR/isSessionSupported#Syntax)
