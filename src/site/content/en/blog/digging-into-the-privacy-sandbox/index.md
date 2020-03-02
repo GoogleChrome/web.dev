@@ -29,7 +29,7 @@ Relevant ads are less annoying to users and [more profitable for publishers](htt
 
 Reliable measurement and anti-fraud protection are also crucial. Advertisers and site owners must be able to distinguish between malicious bots and trustworthy humans. If advertisers can't reliably tell which ads work well, they spend less, so site publishers get less revenue. Many third party services currently use techniques such as [device fingerprinting](./#fingerprinting) to combat fraud.
 
-The problem is... privacy.
+The problem is… privacy.
 
 ## The current state of privacy on the web
 
