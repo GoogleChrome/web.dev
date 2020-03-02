@@ -40,7 +40,7 @@
             {% Author {
               post: page,
               author: contributors[author],
-              avatar: author,
+              id: author,
               showSocialMedia: true}
             %}
           {% endfor %}
@@ -56,13 +56,11 @@
 
     {{ content | safe }}
 
-    {# Hide tags for now. #} {#
     <div class="w-chips">
-      <a class="w-chip" href="#">Artificial Intellegence</a>
-      <a class="w-chip" href="#">User Experience</a>
-      <a class="w-chip" href="#">Learning</a>
+      {% for tag in tags | findTags %}
+        <a class="w-chip" href="{{ tag.href }}">{{ tag.title }}</a>
+      {% endfor %}
     </div>
-    #}
 
     <div class="w-post-github-link w-mt--l w-mb--l">
       <span class="w-mr--sm">
@@ -82,7 +80,7 @@
     </div>
 
     {% if codelabs %}
-      {% CodelabsCallout codelabs %}
+      {% CodelabsCallout codelabs, lang %}
     {% endif %}
   </div>
 
@@ -92,7 +90,8 @@
       back: '/blog',
       backLabel: 'Return to all articles',
       collection: collections.posts,
-      slug: page.fileSlug
+      slug: page.fileSlug,
+      lang: lang
     } %}
   {% else %}
     {# Find next item in this learning path #}
@@ -101,7 +100,8 @@
       backLabel: 'Return to all articles',
       path: path,
       collection: collections[path.slug],
-      slug: page.fileSlug
+      slug: page.fileSlug,
+      lang: lang
     } %}
   {% endif %}
 

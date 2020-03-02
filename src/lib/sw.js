@@ -1,3 +1,12 @@
+import * as idb from "idb-keyval";
+import manifest from "cache-manifest";
+import {initialize as initializeGoogleAnalytics} from "workbox-google-analytics";
+import * as workboxRouting from "workbox-routing";
+import * as workboxStrategies from "workbox-strategies";
+import {CacheableResponsePlugin} from "workbox-cacheable-response";
+import {ExpirationPlugin} from "workbox-expiration";
+import {matchPrecache, precacheAndRoute} from "workbox-precaching";
+
 // Architecture revision of the Service Worker. If the previously saved revision doesn't match,
 // then this will cause clients to be aggressively claimed and reloaded on install/activate.
 // Used when the design of the SW changes dramatically, e.g. from DevSite to v2.
@@ -5,22 +14,28 @@ const serviceWorkerArchitecture = "v3";
 
 const normalizeIndexCacheKeyPlugin = {
   cacheKeyWillBeUsed({request, mode}) {
+    // web.dev does not have any handlers which respond to ?search queries, so strip them (useful
+    // for ?utm_... params, which aren't stripped by Workbox).
+    // From: https://github.com/GoogleChrome/workbox/issues/1709#issuecomment-429917667
+    const u = new URL(request.url);
+    if (u.search || u.hash) {
+      u.search = "";
+      u.hash = "";
+
+      // Request is immutable, so recreate it here.
+      request = new Request(u.href, {headers: request.headers});
+    }
+
     // Take advantage of Workbox's built-in handling of .../index.html routes and ensure that its
     // cache keys always include it. (e.g., requests for foo/ will load foo/index.html: but
     // foo/index.html will not load foo/).
     if (request.url.endsWith("/")) {
       return request.url + "index.html";
     }
+
     return request;
   },
 };
-
-import * as idb from "idb-keyval";
-import manifest from "cache-manifest";
-
-importScripts(
-  "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js",
-);
 
 let replacingPreviousServiceWorker = false;
 
@@ -72,26 +87,26 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(p);
 });
 
-workbox.googleAnalytics.initialize();
+initializeGoogleAnalytics();
 
 // Cache the Google Fonts stylesheets with a stale-while-revalidate strategy.
-workbox.routing.registerRoute(
+workboxRouting.registerRoute(
   /^https:\/\/fonts\.googleapis\.com/,
-  new workbox.strategies.StaleWhileRevalidate({
+  new workboxStrategies.StaleWhileRevalidate({
     cacheName: "google-fonts-stylesheets",
   }),
 );
 
 // Cache the underlying font files with a cache-first strategy for 1 year.
-workbox.routing.registerRoute(
+workboxRouting.registerRoute(
   /^https:\/\/fonts\.gstatic\.com/,
-  new workbox.strategies.CacheFirst({
+  new workboxStrategies.CacheFirst({
     cacheName: "google-fonts-webfonts",
     plugins: [
-      new workbox.cacheableResponse.Plugin({
+      new CacheableResponsePlugin({
         statuses: [0, 200],
       }),
-      new workbox.expiration.Plugin({
+      new ExpirationPlugin({
         maxAgeSeconds: 60 * 60 * 24 * 365,
         maxEntries: 30,
       }),
@@ -99,26 +114,29 @@ workbox.routing.registerRoute(
   }),
 );
 
-workbox.precaching.precacheAndRoute(manifest);
+// Configure default cache for standard web.dev files: the offline page, various images etc.
+precacheAndRoute(manifest);
 
 /**
  * Match "/foo-bar/ "and "/foo-bar/as/many/of-these-as-you-like/" (with optional trailing
- * "index.html"), normal page nodes for web.dev.
+ * "index.html"), normal page nodes for web.dev. This only matches on pathname.
  */
-const contentPageRe = new RegExp("/([\\w-]+/)*(|index.html)$");
+const contentPathRe = new RegExp("^/([\\w-]+/)*(|index.html)$");
 
 /**
  * Match "/foo-bar" and "/foo-bar/as-many/but/no/trailing/slash" (but not "/foo/bar/index.html").
- * This roots at the left "/" as it's not given to Workbox, which does this for us.
+ * This only matches on pathname (so it must always start with "/").
  */
-const untrailedContentPageRe = new RegExp("^(/[\\w-]+)+$");
+const untrailedContentPathRe = new RegExp("^(/[\\w-]+)+$");
 
 /**
  * Send normal nodes to cache first.
  */
-workbox.routing.registerRoute(
-  contentPageRe,
-  new workbox.strategies.NetworkFirst({
+workboxRouting.registerRoute(
+  ({url, event}) => {
+    return url.host === self.location.host && contentPathRe.test(url.pathname);
+  },
+  new workboxStrategies.NetworkFirst({
     plugins: [normalizeIndexCacheKeyPlugin],
   }),
 );
@@ -126,31 +144,30 @@ workbox.routing.registerRoute(
 /**
  * Cache images that aren't included in the original manifest, such as author profiles.
  */
-workbox.routing.registerRoute(
+workboxRouting.registerRoute(
   new RegExp("/images/.*"),
-  new workbox.strategies.StaleWhileRevalidate(),
+  new workboxStrategies.StaleWhileRevalidate(),
 );
 
 /**
- * Untrailed requests are network-only, but with a fallback to redirecting to the same page with a
- * trailing slash.
+ * This is a special handler for requests without a trailing "/". These requests _should_ go to
+ * the network (so that we can match web.dev's redirects.yaml file) but fallback to the normalized
+ * version of the request (e.g., "/foo" => "/foo/").
  */
 self.addEventListener("fetch", (event) => {
   const u = new URL(event.request.url);
   if (
-    !untrailedContentPageRe.exec(u.pathname) ||
+    !untrailedContentPathRe.test(u.pathname) ||
     self.location.host !== u.host
   ) {
     return;
   }
 
   const p = Promise.resolve().then(async () => {
-    // First, check if there's actually something in the cache already.
-    const cacheKey = workbox.precaching.getCacheKeyForURL(
-      u.pathname + "/index.html",
-    );
-    const cached = await caches.match(cacheKey);
-    if (!cached) {
+    // First, check if there's actually something in the cache already. Workbox always suffixes
+    // with "/index.html" relative to our actual request paths.
+    const cachedResponse = await matchPrecache(u.pathname + "/index.html");
+    if (!cachedResponse) {
       // If there's not, then try the network.
       try {
         return await fetch(event.request);
@@ -172,20 +189,18 @@ self.addEventListener("fetch", (event) => {
   event.respondWith(p);
 });
 
-workbox.routing.setCatchHandler(async ({event}) => {
+workboxRouting.setCatchHandler(async ({event}) => {
   // Destination is set by loading this content normally; it's not set for fetch(), so look for our
   // custom header.
   const isDocumentRequest =
     event.request.destination === "document" ||
     event.request.headers.get("X-Document");
   if (isDocumentRequest) {
-    const cacheKey = workbox.precaching.getCacheKeyForURL(
-      "/offline/index.html",
-    );
-    if (!cacheKey) {
+    const cachedOfflineResponse = await matchPrecache("/offline/index.html");
+    if (!cachedOfflineResponse) {
       // This occurs in development when the offline page is in the runtime cache.
       return caches.match("/offline/index.html", {ignoreSearch: true});
     }
-    return caches.match(cacheKey);
+    return cachedOfflineResponse;
   }
 });

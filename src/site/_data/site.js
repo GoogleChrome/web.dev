@@ -23,10 +23,9 @@ module.exports = {
   subscribe: "https://web.dev/subscribe",
   thumbnail: "/images/social.png",
   isBannerEnabled: true,
-  banner: `Can’t make \`#ChromeDevSummit\` this year? Catch all the content
-  (and more!) on the livestream or join your peers for a CDS Extended event at
-  a hosted location nearby. To learn more, check out the [Chrome Dev Summit
-  2019 website](https://developer.chrome.com/devsummit/remote)`,
+  banner: `Take the [MDN Browser Compatibility Survey](https://qsurvey.mozilla.com/s3/4f853f5f79cc)
+  and help us understand your issues, and what we/browser vendors can do to help
+  make your life easier.`,
   // Note that the imageCdn value is only used when we do a production build
   // of the site. Otherwise all image paths are local. This means you can
   // develop locally without having to mess with the CDN at all.
@@ -49,7 +48,7 @@ module.exports = {
   firebase: {
     prod: {
       apiKey: "AIzaSyCyThSjI_ZUT1NwV9aQLtqklVcNj72gvo8",
-      authDomain: "web-dev-production-1.firebaseapp.com",
+      authDomain: "auth.web.dev",
       databaseURL: "https://web-dev-production-1.firebaseio.com",
       projectId: "web-dev-production-1",
       storageBucket: "web-dev-production-1.appspot.com",

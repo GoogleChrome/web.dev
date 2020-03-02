@@ -18,8 +18,10 @@ const {html} = require("common-tags");
 const prettyDate = require("../../_filters/pretty-date");
 const stripLanguage = require("../../_filters/strip-language");
 const md = require("../../_filters/md");
+const constants = require("../../_utils/constants");
 const getImagePath = require("../../_utils/get-image-path");
 const getSrcsetRange = require("../../_utils/get-srcset-range");
+const postTags = require("../../_data/postTags");
 
 /* eslint-disable require-jsdoc,indent,max-len */
 
@@ -28,9 +30,20 @@ const getSrcsetRange = require("../../_utils/get-srcset-range");
  * @param {Object} post An eleventy collection item with post data.
  * @return {string}
  */
-module.exports = ({post}) => {
+module.exports = ({post, featured = false}) => {
   const url = stripLanguage(post.url);
   const data = post.data;
+  const displayedTags = [];
+
+  for (const tag of data.tags) {
+    const foundTag = postTags[tag.toLowerCase()];
+    if (foundTag) {
+      displayedTags.push(foundTag);
+    }
+    if (displayedTags.length === constants.POST_CARD_CHIP_COUNT) {
+      break;
+    }
+  }
 
   // If the post does not provide a thumbnail, attempt to reuse the hero image.
   // Otherwise, omit the image entirely.
@@ -72,11 +85,13 @@ module.exports = ({post}) => {
             const fullName = `${author.name.given} ${author.name.family}`;
             return html`
               <div class="w-author__image--row-item">
-                <img
-                  class="w-author__image w-author__image--small"
-                  src="/images/authors/${authorId}.jpg"
-                  alt="${fullName}"
-                />
+                <a href="${author.href}">
+                  <img
+                    class="w-author__image w-author__image--small"
+                    src="/images/authors/${authorId}.jpg"
+                    alt="${fullName}"
+                  />
+                </a>
               </div>
             `;
           })
@@ -95,7 +110,9 @@ module.exports = ({post}) => {
             const author = data.contributors[authorId];
             const fullName = `${author.name.given} ${author.name.family}`;
             return html`
-              ${fullName}
+              <a class="w-author__name-link" href="/authors/${authorId}"
+                >${fullName}</a
+              >
             `;
           })
           .join(", ")}
@@ -119,29 +136,55 @@ module.exports = ({post}) => {
     `;
   }
 
+  function renderChips() {
+    if (!displayedTags.length) {
+      return;
+    }
+    return html`
+      <div class="w-card__chips w-chips">
+        ${displayedTags.map((displayedTag) => {
+          return html`
+            <a class="w-chip" href="${displayedTag.href}"
+              >${displayedTag.title}</a
+            >
+          `;
+        })}
+      </div>
+    `;
+  }
+
   return html`
-    <a href="${url}" class="w-card">
-      <article class="w-post-card">
+    <div class="w-card">
+      <article class="w-post-card ${featured ? "w-post-card--featured" : ""}">
         <div
           class="w-post-card__cover ${thumbnail &&
             `w-post-card__cover--with-image`}"
         >
-          ${thumbnail && renderThumbnail(url, thumbnail, alt)}
-          <h2
-            class="${thumbnail
-              ? `w-post-card__headline--with-image`
-              : `w-post-card__headline`}"
-          >
-            ${md(data.title)}
-          </h2>
+          <a class="w-post-card__link" tabindex="-1" href="${url}">
+            ${thumbnail && renderThumbnail(url, thumbnail, alt)}
+          </a>
         </div>
-        ${renderAuthorsAndDate(post)}
-        <div class="w-post-card__desc">
-          <p class="w-post-card__subhead">
-            ${md(data.subhead)}
-          </p>
+        <div class="w-post-card__blurb">
+          <a class="w-post-card__link" href="${url}">
+            <h2
+              class="${thumbnail
+                ? `w-post-card__headline--with-image`
+                : `w-post-card__headline`}"
+            >
+              ${md(data.title)}
+            </h2>
+          </a>
+          ${renderAuthorsAndDate(post)}
+          <div class="w-post-card__desc">
+            <a class="w-post-card__link" tabindex="-1" href="${url}">
+              <p class="w-post-card__subhead">
+                ${md(data.subhead)}
+              </p>
+            </a>
+            ${renderChips()}
+          </div>
         </div>
       </article>
-    </a>
+    </div>
   `;
 };

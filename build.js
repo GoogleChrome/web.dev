@@ -23,6 +23,7 @@ const log = require("fancy-log");
 const rollupPluginNodeResolve = require("rollup-plugin-node-resolve");
 const rollupPluginCJS = require("rollup-plugin-commonjs");
 const rollupPluginVirtual = require("rollup-plugin-virtual");
+const rollupPluginReplace = require("rollup-plugin-replace");
 const rollup = require("rollup");
 const terser = isProd ? require("terser") : null;
 const {getManifest} = require("workbox-build");
@@ -123,6 +124,12 @@ async function build() {
   const swBundle = await rollup.rollup({
     input: "src/lib/sw.js",
     plugins: [
+      // Workbox uses a variable known to be undefined (!) and forces this plugin to be used.
+      // TODO(samthor): This generates statements like "if (1 !== 1)", which are NOT removed from
+      // the final bundle code. Terser/Rollup don't strip them.
+      rollupPluginReplace({
+        "process.env.NODE_ENV": JSON.stringify("production"),
+      }),
       rollupPluginVirtual({
         "cache-manifest": `export default ${JSON.stringify(
           manifest,

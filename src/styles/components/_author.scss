@@ -60,6 +60,25 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
   color: $GREY_900;
 }
 
+.w-author__name-link {
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+// Specificty required here because `a` tags in `.w-post-content` have higher priority.
+.w-post-content .w-author__name-link {
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
 .w-author__published {
   color: $GREY_700;
 }

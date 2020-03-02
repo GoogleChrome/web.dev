@@ -11,10 +11,10 @@ description: |
   Improving cross-browser access to Google Earth with WebAssembly
 tags:
   - post
-  - wasm
-  - WebAssembly
+  - web-assembly
   - Earth
   - Web App
+  - case-study
 ---
 
 In an ideal world, every application that developers build, regardless of technology, would be available in the browser. But there are barriers to bringing projects to the web, depending on the technology they were built with and how well that technology is supported by the various browser vendors. [WebAssembly](https://webassembly.org/) (Wasm) is a compile target standardized by the [W3C](https://www.w3.org/) that helps us solve this problem by allowing us to run codebases from languages other than JavaScript on the web.
@@ -41,7 +41,7 @@ Other browsers are working on Site Isolation or other mitigations in order to re
 
 ## How WebAssembly works with different browsers
 
-We've learned a lot about the state of WebAssembly support in browsers porting Earth. If you're going to develop applications using WebAssembly, it's important to understand the current state of how WebAssembly works with different browsers.  
+We've learned a lot about the state of WebAssembly support in browsers porting Earth. If you're going to develop applications using WebAssembly, it's important to understand the current state of how WebAssembly works with different browsers.
 
 ### Edge
 Edge is on the verge of becoming two distinct development experiences based on Microsoft's choice to move from the EdgeHTML renderer over to a Chromium-based renderer. At the moment, the Google Earth beta on WebAssembly won't run on the current public version of Edge due to lack of support for WebGL2. That will be fixed once the new version of Edge, based on Chromium, ships in the near future. In the meantime, you can [download the Canary version of Edge](https://www.microsoftedgeinsider.com/download) and see that Earth works quite well.
@@ -59,7 +59,7 @@ Opera is based on Chromium just as Chrome is, along with upcoming versions of Ed
 Safari has a strong implementation of WebAssembly, but it lacks full support for WebGL2. Therefore, Earth with WebAssembly does not run in Safari. Specifically, some of our shaders require GLSL 1.2. We hope that Earth will be available on Safari as well, once better support for WebGL2 is added.
 
 ## Looking forward to more adoption of WebAssembly features
-It's been a long road to make Earth available on the web. About six years ago, we started with an initial [asm.js](http://asmjs.org/)-based internal demo that was maintained and expanded over the years. It was then converted into a WebAssembly build of Earth, as WebAssembly became the W3C adopted standard. 
+It's been a long road to make Earth available on the web. About six years ago, we started with an initial [asm.js](http://asmjs.org/)-based internal demo that was maintained and expanded over the years. It was then converted into a WebAssembly build of Earth, as WebAssembly became the W3C adopted standard.
 
 We still have a ways to go for WebAssembly and Earth. Specifically, we'd like to move to the LLVM backend using Emscripten (the toolchain to generate WebAssembly out of C++ code). This change will enable future SIMD support, as well as stronger debugging tools like source maps for native code. Other things we hope to see are adoption of [OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas) and full support for dynamic memory allocation in WebAssembly. But we know we're on the right track: WebAssembly is the long-term future for Earth on the web.
 
