@@ -61,10 +61,13 @@ class SideNav extends BaseElement {
       <nav @click="${this.onBlockClicks}" class="web-side-nav__container">
         <div class="web-side-nav__header">
           <button
-            @click=${this.onCloseSideNav}
-            class="web-side-nav__hide"
+            @click="${this.onCloseSideNav}"
+            data-icon="close"
+            class="w-button--icon w-button--round web-side-nav__hide"
             aria-label="Close"
-          ></button>
+          >
+            <span class="w-tooltip">Close</span>
+          </button>
           <a
             href="/"
             class="gc-analytics-event"

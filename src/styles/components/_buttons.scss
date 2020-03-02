@@ -137,6 +137,7 @@
   background: $GREY_200;
 }
 
+// This replaces the default focus outline so the outline matches the shape of the button.
 .w-button--icon:focus {
   box-shadow: 0 0 0 1px $FOCUS_COLOR;
 }
