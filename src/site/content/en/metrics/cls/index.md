@@ -309,7 +309,10 @@ document.addEventListener('visibilitychange', () => {
 
 ## What is a good CLS score?
 
-To provide a good user experience, sites should strive to have a Cumulative Layout Shift of less than **0.1** for at least **75% of page loads**.
+To provide a good user experience, sites should strive to have a Cumulative
+Layout Shift of less than **0.1**. To ensure you're hitting this target for
+most of your users, a good threshold to measure is the **75th percentile** of
+page loads on mobile devices.
 
 ## How to improve CLS
 

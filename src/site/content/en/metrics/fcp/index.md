@@ -94,8 +94,9 @@ sends the FCP value to your analytics service.
 ## What is a good FCP score?
 
 To provide a good user experience, sites should strive to have First Contentful
-Paint occur within **1 second** of the page starting to load for at least **75%
-of page loads**.
+Paint occur within **1 second** of the page starting to load. To ensure you're
+hitting this target for most of your users, a good threshold to measure is the
+**75th percentile** of page loads on mobile devices.
 
 ## How to improve FCP
 
