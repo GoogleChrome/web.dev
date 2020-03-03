@@ -214,7 +214,9 @@ percentile of mobile users.
 ## What is a good FID score?
 
 To provide a good user experience, sites should strive to have a First Input
-Delay of less than **100 milliseconds** for at least **75% of page loads**.
+Delay of less than **100 milliseconds**. To ensure you're hitting this target
+for most of your users, a good threshold to measure is the **75th percentile**
+of page loads on mobile devices.
 
 ## How to improve FID
 

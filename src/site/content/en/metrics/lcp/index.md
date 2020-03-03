@@ -275,7 +275,8 @@ the article on [custom metrics](/custom-metrics/#element-timing-api).
 
 To provide a good user experience, sites should strive to have Largest
 Contentful Paint occur within the first **2.5 seconds** of the page starting to
-load for at least **75% of page loads**.
+load. To ensure you're hitting this target for most of your users, a good
+threshold to measure is the **75th percentile** of page loads on mobile devices.
 
 ## How to improve LCP
 
