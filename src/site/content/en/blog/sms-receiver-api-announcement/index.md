@@ -1,17 +1,16 @@
 ---
-title: Verify phone numbers on the web with the SMS Receiver API
+title: Verify phone numbers on the web with the Web OTP API
 subhead: Help users type OTPs received through SMS
 authors:
   - agektmr
-
 date: 2019-10-07
-
+update: 2020-02-03
 hero: hero.png
 alt: A drawing of a woman using OTP to log in to a web app.
 
 description: |
   Finding, memorizing, and typing OTPs sent via SMS is cumbersome. The
-  SMS Receiver API simplifies the OTP workflow for users.
+  Web OTP API simplifies the OTP workflow for users.
 
 tags:
   - post # post is a required tag for the article to show up in the blog.
@@ -21,8 +20,9 @@ tags:
   - fugu
 ---
 
+{% Banner %}As of xxxxxx the Web OTP API was named the SMS Receiver AP.{% endBanner %}
 
-## What is the SMS Receiver API?
+## What is the Web OTP API?
 
 These days, most people in the world own a mobile device and developers are
 commonly using phone numbers as an identifier for users of their services.
@@ -43,18 +43,17 @@ This idea is already deployed in many scenarios to achieve:
 * **Payment confirmation.** When a user is making a payment, asking for a
   one-time code sent via SMS can help verify the person's intent.
 
-
 The current process creates friction for the user. Finding an OTP within an SMS
 message, then copying and pasting it to the form is cumbersome, lowering
 conversion rates in critical user journeys. Easing this has been a long standing
 request for the web from many of the largest global developers. Android has [an
 API that does exactly
-this](https://developers.google.com/identity/sms-retriever/). So does
+this](https://developers.google.com/identity/sms-retriever/). So do
 [iOS](https://developer.apple.com/documentation/security/password_autofill/about_the_password_autofill_workflow)
 and
 [Safari](https://developer.apple.com/documentation/security/password_autofill/enabling_password_autofill_on_an_html_input_element).
 
-The SMS Receiver API lets your app receive specially-formatted messages bound to
+The Web OTP API lets your app receive specially-formatted messages bound to
 your app's origin. From this, you can programmatically obtain an OTP from an SMS
 message and verify a phone number for the user more easily. Sign up for the
 [Origin
@@ -72,7 +71,7 @@ establish new sessions for these users.
 
 ## Current status
 
-The table below explains the current status of the SMS Receiver API.
+The table below explains the current status of the Web OTP API.
 
 <table>
 <tr>
@@ -132,7 +131,7 @@ Let's say a user wants to verify their phone number with a website. The website
 sends a text message to the user over SMS and the user enters the OTP from the
 message to verify the ownership of the phone number.
 
-With the SMS Receiver API, these steps will become as easy as one tap for the
+With the Web OTP API, these steps will become as easy as one tap for the
 user, as demonstrated in the video. As the text message arrives, a bottom
 sheet pops up and prompts the user to verify their
 phone number. After clicking the **Verify** button within the bottom sheet,
@@ -149,14 +148,14 @@ The whole process is diagrammed in the image below.
 <figure class="w-figure w-figure--center">
   <img src="./diagram.png" width="486" height="499" />
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    SMS Receiver API diagram
+    Web OTP API diagram
   </figcaption>
 </figure
 
 Try [the demo](https://sms-receiver-demo.glitch.me) yourself. It doesn't ask for
 your phone number or send an SMS to your device, but you can send one from another
 device by copying the text displayed on the demo. This works because it doesn't matter who
-the sender is when using the SMS Receiver API.
+the sender is when using the Web OTP API.
 
 1. Prepare Google Chrome on Android 78 or later with the **Experimental Web Platform
    features** flag turned on at
@@ -169,7 +168,7 @@ the sender is when using the SMS Receiver API.
 6. From the other phone, send yourself the copied text message via SMS.
 
 Did you receive the SMS and see the prompt to enter the code to the input area?
-That is how the SMS Receiver API works for end users.
+That is how the Web OTP API works for end users.
 
 {% Aside 'warning' %}
 If you are using a Work Profile on your Android device and the SMS Receiver does
@@ -177,13 +176,13 @@ not seem to be working, try installing and using Chrome on your personal profile
 instead (i.e. the same profile in which you receive SMS messages).
 {% endAside %}
 
-## Using the SMS Receiver API
+## Using the Web OTP API
 
-Using the SMS Receiver API consists of two parts: JavaScript code in your web
+Using the Web OTP API consists of two parts: JavaScript code in your web
 app and the formatted message text sent via SMS.
 
 {% Aside %}
-The SMS Receiver API requires a secure origin (HTTPS).
+The Web OTP API requires a secure origin (HTTPS).
 {% endAside %}
 
 ### Feature detection
@@ -198,7 +197,7 @@ if ('sms' in navigator) {
 
 ### Process the OTP
 
-The SMS Receiver API itself is simple enough:
+The Web OTP API itself is simple enough:
 
 ```js
 const sms = await navigator.sms.receive();
@@ -287,7 +286,7 @@ You may also fork it and create your version:
 
 ### Enabling support during the origin trial
 
-Starting in Chrome 78, [the SMS Receiver API is available as an origin trial on
+Starting in Chrome 78, [the Web OTP API is available as an origin trial on
 Chrome for
 Android](https://developers.chrome.com/origintrials/#/view_trial/607985949695016961).
 Origin trials allow you to try new features and give feedback on their
@@ -311,7 +310,7 @@ To participate in an origin trial:
 
 ## Feedback
 
-We want to hear about your experiences with the SMS Receiver API. Please sign up
+We want to hear about your experiences with the Web OTP API. Please sign up
 for the [Origin
 Trial](https://developers.chrome.com/origintrials/#/view_trial/607985949695016961)
 now!
@@ -321,7 +320,7 @@ now!
 Is there something about the API that doesn't work as expected? Or are there
 missing methods or properties that you need to implement your idea?
 
-* File an issue on the [SMS Receiver API explainer GitHub
+* File an issue on the [Web OTP API explainer GitHub
   repo](https://github.com/samuelgoto/sms-receiver), or add your thoughts to an
   existing issue.
 
@@ -336,7 +335,7 @@ Did you find a bug with Chrome's implementation?
 
 ### Planning to use the API?
 
-Planning to use the SMS Receiver API? Your public support helps us prioritize
+Planning to use the Web OTP API? Your public support helps us prioritize
 features, and shows other browser vendors how critical it is to support them.
 
 * Be sure you have signed up for the [SMS Receiver Origin
