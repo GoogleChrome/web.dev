@@ -3,7 +3,7 @@ title: "Is your app installed? getInstalledRelatedApps() will tell you!"
 subhead: "The `getInstalledRelatedApps()` method allows your web app to check whether your native app or PWA is installed on a user's device."
 authors:
   - petelepage
-description: The getInstalledRelatedApps() API is a new web platform API that allows your web app to check whether your native app or PWA is installed on the users device.
+description: The getInstalledRelatedApps() API is a new web platform API that allows your web app to check whether your native app or PWA is installed on the user's device.
 date: 2018-12-20
 updated: 2020-03-04
 tags:
@@ -49,7 +49,7 @@ iterated on the design.
 
 * Checking for the native version of an app and switching to it
 * Disabling notifications in the web app when the native app is installed
-* Measure how often user visit your website instead of your installed app
+* Measure how often users visit your website instead of your installed app
 * Not prompting users to install the web app if the native app is installed
 
 ## Current status {: #status }
@@ -183,8 +183,8 @@ the full path to the PWAs web app manifest in the `url` property.
 
 {% Aside %}
 **Coming Soon!**
-Starting in Chrome 82, websites can check if their PWA, served from the same,
-or different domain is installed.
+In addition to detecting if their PWA is served from the same domain, 
+Chrome 82 lets websites check if their PWA is served from a different domain.
 Microsoft is actively working on enabling this API for Edge and we hope to
 see it land around Edge 82.
 {% endAside %}
@@ -211,7 +211,7 @@ property, provide the full path to the web app manifest from the other site.
 ## Test for the presence of your installed app {: #use }
 
 Once you've [defined the relationship](define-relationship) to your other apps,
-you can check for the presence of your apps within your web site. Calling
+you can check for their presence within your web site. Calling
 `navigator.getInstalledRelatedApps()` returns a promise that resolves with an
 array of your apps that are installed on the user's device.
 
