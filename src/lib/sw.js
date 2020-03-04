@@ -116,10 +116,39 @@ workboxRouting.registerRoute(
 precacheAndRoute(manifest);
 
 /**
- * Match "/foo-bar" and "/foo-bar/as-many/but/no/trailing/slash" (but not "/foo/bar/index.html").
- * This only matches on pathname (so it must always start with "/").
+ * This is a special handler for requests without a trailing "/". These requests _should_ go to
+ * the network (so that we can match web.dev's redirects.yaml file) but fallback to the normalized
+ * version of the request (e.g., "/foo" => "/foo/").
  */
 const untrailedContentPathRe = new RegExp("^(/[\\w-]+)+$");
+
+workboxRouting.registerRoute(
+  matchSameOriginRegExp(untrailedContentPathRe),
+  async ({url}) => {
+    const {pathname} = url;
+
+    // First, check if there's actually something in the cache already. Workbox always suffixes
+    // with "/index.html" relative to our actual request paths.
+    const cachedResponse = await matchPrecache(pathname + "/index.html");
+    if (!cachedResponse) {
+      // If there's not, then try the network.
+      try {
+        return await fetch(event.request);
+      } catch (e) {
+        // If fetch fails, just redirect below.
+      }
+    }
+
+    // Either way, redirect to the updated Location.
+    const headers = new Headers();
+    headers.append("Location", event.request.url + "/");
+    const redirectResponse = new Response("", {
+      status: 301,
+      headers,
+    });
+    return redirectResponse;
+  },
+);
 
 /**
  * Match fetches for patials, for SPA requests. Matches "/foo-bar/index.json" and
@@ -155,31 +184,27 @@ workboxRouting.registerRoute(
  * generates the page's real HTML based on the layout template.
  */
 const contentPathRe = new RegExp("^(/(?:[\\w-]+/)*)(?:|index\\.html)$");
-self.addEventListener("fetch", (event) => {
-  const u = new URL(event.request.url);
-  const m = contentPathRe.exec(u.pathname);
 
-  if (!m || self.location.host !== u.host) {
-    return;
-  }
+workboxRouting.registerRoute(
+  matchSameOriginRegExp(contentPathRe),
+  async ({params}) => {
+    const pathname = params[1]; // 1st group from contentPathRe regexp
 
-  const url = m[1]; // e.g. "/foo/bar/" or "/"
-
-  const p = Promise.resolve().then(async () => {
     let status = 200;
     let response;
     try {
       // Use the same strategy for partials when hydrating a full request.
+      // Note that this doesn't implicitly invoke the global catch handler (as we're just using
+      // the strategy itself), so failures here flow to the catch block below.
       response = await partialStrategy.handle({
-        request: new Request(url + "index.json"),
+        request: new Request(pathname + "index.json"),
       });
       if (response.status === 404) {
         response = await notFoundPartial();
         status = 404;
       }
     } catch (e) {
-      // We serve offline pages with a 200 status, just to be confusing.
-      console.warn("serving offline partial for", url, "due to", e);
+      // Offline pages are served with the default 200 status.
       response = await offlinePartial();
     }
 
@@ -198,49 +223,16 @@ self.addEventListener("fetch", (event) => {
     const headers = new Headers();
     headers.append("Content-Type", "text/html");
     return new Response(output, {headers, status});
-  });
+  },
+);
 
-  event.respondWith(p);
-});
-
-/**
- * This is a special handler for requests without a trailing "/". These requests _should_ go to
- * the network (so that we can match web.dev's redirects.yaml file) but fallback to the normalized
- * version of the request (e.g., "/foo" => "/foo/").
- */
-self.addEventListener("fetch", (event) => {
-  const u = new URL(event.request.url);
-  if (
-    !untrailedContentPathRe.test(u.pathname) ||
-    self.location.host !== u.host
-  ) {
-    return;
+workboxRouting.setCatchHandler(async ({event, url}) => {
+  // This check is the same as the partialPathRe handler above. It only handles partial JSON
+  // failures (as the handler above is a simple NetworkFirst strategy). Regular HTML failures are
+  // handled by the in-depth contentPathRe path above.
+  if (url.host === self.location.host && partialPathRe.test(url.pathname)) {
+    return offlinePartial();
   }
-
-  const p = Promise.resolve().then(async () => {
-    // First, check if there's actually something in the cache already. Workbox always suffixes
-    // with "/index.html" relative to our actual request paths.
-    const cachedResponse = await matchPrecache(u.pathname + "/index.html");
-    if (!cachedResponse) {
-      // If there's not, then try the network.
-      try {
-        return await fetch(event.request);
-      } catch (e) {
-        // If fetch fails, just redirect below.
-      }
-    }
-
-    // Either way, redirect to the updated Location.
-    const headers = new Headers();
-    headers.append("Location", event.request.url + "/");
-    const redirectResponse = new Response("", {
-      status: 301,
-      headers,
-    });
-    return redirectResponse;
-  });
-
-  event.respondWith(p);
 });
 
 async function notFoundPartial() {
@@ -262,11 +254,3 @@ async function offlinePartial() {
   }
   return cachedResponse;
 }
-
-workboxRouting.setCatchHandler(async ({event, url}) => {
-  // Our routing config for partial files is done with Workbox, so we have to run the same check
-  // here if it failed, and return the offline partial.
-  if (url.host === self.location.host && partialPathRe.test(url.pathname)) {
-    return offlinePartial();
-  }
-});

@@ -5,6 +5,14 @@
  * @return {function({url: !URL}): boolean}
  */
 export function matchSameOriginRegExp(pathRegexp) {
-  return ({url}) =>
-    url.host === self.location.host && pathRegexp.test(url.pathname);
+  return ({url}) => {
+    if (url.host !== self.location.host) {
+      return false;
+    }
+    const m = pathRegexp.exec(url.pathname);
+    if (!m) {
+      return false;
+    }
+    return Array.from(m);
+  };
 }
