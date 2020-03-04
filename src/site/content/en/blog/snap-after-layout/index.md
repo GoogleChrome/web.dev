@@ -61,7 +61,7 @@ snaps.
 ### Shortcomings
 <figure class="w-figure w-figure--center">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="./resizing-breaks-snap-positions.webm" type="video/webm;">
+    <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/resizing-breaks-snap-positions.webm" type="video/webm;">
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/resizing-breaks-snap-positions.mp4" type="video/mp4;">
   </video>
  <figcaption class="w-figcaption">
