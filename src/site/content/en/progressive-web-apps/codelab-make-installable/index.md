@@ -3,7 +3,6 @@ layout: codelab
 title: Make it installable
 authors:
   - petelepage
-  - beaufortfrancois
 date: 2018-11-05
 updated: 2020-02-28
 description: |
