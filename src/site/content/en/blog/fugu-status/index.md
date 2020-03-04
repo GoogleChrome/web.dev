@@ -2,7 +2,7 @@
 title: New capabilities status
 subhead: Web apps should be able to do anything native apps can. Google wants to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2020-02-27
+updated: 2020-03-04
 tags:
   - post
   - capabilities
@@ -40,7 +40,7 @@ change.
     <tbody>
       <tr>
         <td>
-          <a href="/shape-detection/">Shape&nbsp;Detection API</a>
+          <a href="/shape-detection/">Shape&nbsp;Detection API</a>(<em>Updated Jan 10, 2020</em>)
         </td>
         <td>
           The Shape Detection API opens up native implementations of shape
@@ -83,12 +83,13 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
           application, such as the shelf or home screen. Badging makes it easy
           to subtly notify the user that there is some new activity that might
           require their attention, or it can be used to indicate a small
-          amount of information, such as an unread count.
+          amount of information, such as an unread count. (<em>Article updated Nov 1, 2019</em>)
         </td>
       </tr>
       <tr>
         <td>
-          <a href="/content-indexing-api/">Content Indexing API</a>
+          <a href="/content-indexing-api/">Content Indexing API</a><br/>
+          (<em>Updated Dec 12, 2019</em>)
         </td>
         <td>
           Your PWA might cache articles and media files, but how will your users
@@ -106,7 +107,8 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
           </a>
         </td>
         <td>
-          The Native File System API (formerly known as the Writable Files API)
+          (<em>Article updated Nov 26, 2019</em>) The Native File System API
+          (formerly known as the Writable Files API)
           enables developers to build powerful web apps that interact with files
           on the user's local device, like IDEs, photo and video editors, text
           editors, and more. After a user grants a web app access, this API
