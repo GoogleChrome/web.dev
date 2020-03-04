@@ -1,11 +1,11 @@
 ---
-title: "Is your native app installed? getInstalledRelatedApps() will tell you!"
-subhead: "The `getInstalledRelatedApps()` method allows your web app to check whether your native app is installed on a user's device, and vice versa."
+title: "Is your app installed? getInstalledRelatedApps() will tell you!"
+subhead: "The `getInstalledRelatedApps()` method allows your web app to check whether your native app or PWA is installed on a user's device."
 authors:
   - petelepage
-description: As the capability gap between web and native gets smaller, it gets easier to offer the same experience for both web and native users. This may lead to cases where users have both web and native versions of the same app installed on the same device. Apps should be able to detect this situation. The getInstalledRelatedApps() API is a new web platform API that allows your web app to check to see if your native app is installed on the users device, and vice versa.
+description: The getInstalledRelatedApps() API is a new web platform API that allows your web app to check whether your native app or PWA is installed on the users device.
 date: 2018-12-20
-updated: 2019-12-18
+updated: 2020-03-04
 tags:
   - post
   - capabilities
@@ -28,15 +28,15 @@ alt: mobile device with app panel open
   </figcaption>
 </figure>
 
-As the capability gap between web and native gets smaller, it gets easier to
-offer the same experience for both web and native users. This may lead to cases
-where users have both web and native versions of the same app installed on the
-same device. Apps should be able to detect this situation.
+The [`getInstalledRelatedApps()`][spec] makes it possible for a page to check if
+your native app, or Progressive Web App (PWA) is installed on a user's device.
 
-The [`getInstalledRelatedApps()`][spec] method allows your web app to check if
-your native app is installed on a user's device, and vice versa. With
-`getInstalledRelatedApps()`, you can disable some functionality of one app if it
-should be provided by the other app instead.
+It allows you to customize the user experience if your app is already
+installed. For example, if the PWA is already installed, redirecting the user
+from a product marketing page directly into it. Centralizing some functionality
+like notifications in the native app to prevent duplicate notifications. Or,
+if your native app is already installed, not
+[promoting the installation](/customize-install/) of you PWA.
 
 If `getInstalledRelatedApps()` looks familiar, it is. The Chrome team originally
 announced this feature in April 2017, when it first went through its first
@@ -49,6 +49,7 @@ iterated on the design.
 
 * Checking for the native version of an app and switching to it
 * Disabling notifications in the web app when the native app is installed
+* Measure how often user visit your website instead of your installed app
 * Not prompting users to install the web app if the native app is installed
 
 ## Current status {: #status }
@@ -61,33 +62,30 @@ iterated on the design.
 | 2. Create initial draft of specification     | [Complete][spec]             |
 | 3. Gather feedback and iterate on design     | Complete                     |
 | 4. Origin trial                              | Complete                     |
-| 5. **Launch**                                | Chrome 80                    |
+| 5. **Launch**                                | Chrome 80, and beyond        |
 
 </div>
 
 ## See it in action
 
-1. Using Chrome 79 or later on Android, open the [`getInstalledRelatedApps()` demo][demo].
+1. Using Chrome 80 or later on Android, open the [`getInstalledRelatedApps()` demo][demo].
 2. Install the demo app from the Play store and refresh the [demo][demo] page.
    You should now see the app listed.
 
-## How to use getInstalledRelatedApps() {: #use }
+## Define the relationship to your other apps {: #define-relationship }
 
 To use `getInstalledRelatedApps()`, you must first create a relationship
-between between the web and native versions of your app. This relationship
-prevents other apps from using the API to detect if your app is installed and
-prevents sites from collecting information about the apps you have installed
-on your device.
+between between your apps and sites. This relationship prevents other apps
+from using the API to detect if your app is installed and prevents sites from
+collecting information about the apps you have installed on your device.
 
-### Define the relationship to your native app {: #relationship-web }
-
-In your [web app manifest](/add-manifest), add a `related_applications`
+In your [web app manifest](/add-manifest/), add a `related_applications`
 property. The `related_applications` property is an array containing an object
 for each app that you want to detect. Each app object includes:
 
-* The platform on which the app is hosted
-* The unique identifier for your app on that platform
-* The URL where your app is hosted (optional)
+* `platform` The platform on which the app is hosted
+* `id` The unique identifier for your app on that platform
+* `url` The URL where your app is hosted
 
 For example:
 
@@ -95,7 +93,7 @@ For example:
 {
   …
   "related_applications": [{
-    "platform": "play",
+    "platform": "<platform>",
     "id": "<package-name>",
     "url": "https://example.com",
   }],
@@ -103,20 +101,33 @@ For example:
 }
 ```
 
-The `url` property is optional, and the API works fine without it. On Android,
-the `platform` value must be `play`. On other devices, the `platform` value will be different.
+### Define the relationship to a native app {: #relationship-native }
 
-### Define the relationship to your web app {: #relationship-native }
+To define the relationship to a native app installed from the Play store,
+add a `related_applications` entry in the web app manifest, and update the
+Android app to include a digial asset link that proves the relationship
+between your site and the app.
 
-Each platform has its own method of verifying a relationship. On Android, the
-[Digital Asset Links system](https://developers.google.com/digital-asset-links/v1/getting-started)
-defines the association between a website and an application. On other
-platforms, the way you define the relationship will differ slightly.
+In the `related_applications` entry, the `platform` value must be `play`,
+and the `id` is the Google Play application ID for your app. The `url`
+property is optional and can be excluded.
 
-In `AndroidManifest.xml`, add an asset statement that links back to your web
-app:
+```json/3-4
+{
+  …
+  "related_applications": [{
+    "platform": "play",
+    "id": "com.android.chrome",
+  }],
+  …
+}
+```
 
-```xml
+In `AndroidManifest.xml` of your native app, use the
+[Digital Asset Links system][dig-asset-links] to define the relationship
+between your website and Android application:
+
+```xml/3
 <manifest>
   <application>
    …
@@ -141,13 +152,68 @@ your domain. Be sure to include the escaping characters.
 </string>
 ```
 
-### Test for the presence of your native app {: #test-native }
+Finally, publish your updated Android app to the Play store.
 
-Once you've updated your native app and added the appropriate fields to the
-web app manifest, add code to check for the presence of your native
-app to your web app. Calling `navigator.getInstalledRelatedApps()` returns a
-promise that resolves with an array of your apps that are installed on the
-user's device.
+### Define the relationship to an installed PWA {: #relationship-web }
+
+{% Aside %}
+**Coming Soon!**
+Expected in Chrome 81, websites can check if their PWA, served from the same
+domain is installed.
+Microsoft is actively working on enabling this API for Edge and we hope to
+see it land around Edge 82.
+{% endAside %}
+
+To define the relationship to an installed PWA, add a `related_applications`
+entry in the web app manifest, set `"platform": "webapp"` and provide
+the full path to the PWAs web app manifest in the `url` property.
+
+```json/3-4
+{
+  …
+  "related_applications": [{
+    "platform": "webapp",
+    "url": "https://app.example.com/manifest.json",
+  }],
+  …
+}
+```
+
+#### PWA served from a different domain
+
+{% Aside %}
+**Coming Soon!**
+Starting in Chrome 82, websites can check if their PWA, served from the same,
+or different domain is installed.
+Microsoft is actively working on enabling this API for Edge and we hope to
+see it land around Edge 82.
+{% endAside %}
+
+If the PWA you're testing for lives on a different domain, for instance
+`example.com` wants to check if the PWA served from `app.example.com` is
+installed, you'll also need to define the relationship between the two sites.
+
+Add an `assetslink.json` file to the [`/.well-known/`][well-known]
+directory of the domain where the PWA lives (`app.example.com`). In the `site`
+property, provide the full path to the web app manifest from the other site.
+
+```json
+// Served from https://app.example.com/.well-known/assetlinks.json
+{
+  "relation": ["delegate_permission/common.query_webapk"],
+  "target": {
+    "namespace": "web",
+    "site": "https://example.com/manifest.json"
+  }
+}
+```
+
+## Test for the presence of your installed app {: #use }
+
+Once you've [defined the relationship](define-relationship) to your other apps,
+you can check for the presence of your apps within your web site. Calling
+`navigator.getInstalledRelatedApps()` returns a promise that resolves with an
+array of your apps that are installed on the user's device.
 
 ```js
 navigator.getInstalledRelatedApps()
@@ -163,8 +229,8 @@ Like most other powerful web APIs, the `getInstalledRelatedApps()` API is
 only available when served over **HTTPS**.
 {% endAside %}
 
-To prevent companies from testing an overly broad set of their own apps,
-only the first three declared apps defined in the web app manifest will be
+To prevent sites from testing an overly broad set of their own apps,
+only the first three apps declared in the web app manifest will be
 taken into account.
 
 ## Feedback {: #feedback }
@@ -206,3 +272,5 @@ browser vendors how critical it is to support them.
 [wicg-discourse]: https://discourse.wicg.io/t/proposal-get-installed-related-apps-api/1602
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Mobile%3EWebAPKs
 [cr-dev-twitter]: https://twitter.com/chromiumdev
+[dig-asset-links]: https://developers.google.com/digital-asset-links/v1/getting-started
+[well-known]: https://tools.ietf.org/html/rfc5785
