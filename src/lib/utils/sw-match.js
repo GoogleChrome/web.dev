@@ -1,8 +1,9 @@
 /**
  * Returns a helper which matches a whole pathname on the Service Worker's host.
+ * The helper returns the any matched groups from the RegExp.
  *
  * @param {!RegExp} pathRegexp
- * @return {function({url: !URL}): boolean}
+ * @return {function({url: !URL}): (boolean|!Array<string>)}
  */
 export function matchSameOriginRegExp(pathRegexp) {
   return ({url}) => {

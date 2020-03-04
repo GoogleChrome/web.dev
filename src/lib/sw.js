@@ -124,7 +124,7 @@ const untrailedContentPathRe = new RegExp("^(/[\\w-]+)+$");
 
 workboxRouting.registerRoute(
   matchSameOriginRegExp(untrailedContentPathRe),
-  async ({url}) => {
+  async ({url, event}) => {
     const {pathname} = url;
 
     // First, check if there's actually something in the cache already. Workbox always suffixes
