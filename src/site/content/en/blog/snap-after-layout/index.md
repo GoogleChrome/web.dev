@@ -110,6 +110,9 @@ what happens when the layout changes in the following
 
 {% CompareCaption %}
 Rotating a device **does not** preserve the snap positions in Chrome 80.
+After scrolling to the slide that says `NOPE` and changing the device orientation
+from portrait to landscape, a blank screen is shown, which indicates that the
+scroll snap position was lost.
 {% endCompareCaption %}
 
 {% endCompare %}
