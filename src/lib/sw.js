@@ -156,7 +156,7 @@ workboxRouting.registerRoute(
  */
 const partialPathRe = new RegExp("^/([\\w-]+/)*index\\.json$");
 const partialStrategy = new workboxStrategies.NetworkFirst({
-  cacheName: "webdev-partial-cache-v1",
+  cacheName: "webdev-html-cache-v1", // nb. We used to cache HTML here, so we name it the same
   plugins: [contentExpirationPlugin],
 });
 
