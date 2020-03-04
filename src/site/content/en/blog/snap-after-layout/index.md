@@ -126,7 +126,8 @@ scroll snap position was lost.
 </figure>
 
 {% CompareCaption %}
-Rotating a device **does** preserve the snap positions in Chrome 81.
+Rotating a device **does** preserve the snap positions in Chrome 81. The slide that
+says `NOPE` remains in view even though the device orientation changes multiple times.
 {% endCompareCaption %}
 
 {% endCompare %}
