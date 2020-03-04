@@ -163,6 +163,10 @@ Like most other powerful web APIs, the `getInstalledRelatedApps()` API is
 only available when served over **HTTPS**.
 {% endAside %}
 
+To prevent companies from testing an overly broad set of their own apps,
+only the first three declared apps defined in the web app manifest will be
+taken into account.
+
 ## Feedback {: #feedback }
 
 Did you find a bug with Chrome's implementation? Or is the implementation
