@@ -155,7 +155,7 @@ UI](https://codepen.io/argyleink/pen/RwPWqKe) for visuals.
 
 <figure class="w-figure w-figure--center">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="./scroll-snap-bottom.webm" type="video/webm;">
+    <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/scroll-snap-bottom.webm" type="video/webm;">
     <source src="./scroll-snap-bottom.mp4" type="video/mp4;">
   </video>
   <figcaption class="w-figcaption">
