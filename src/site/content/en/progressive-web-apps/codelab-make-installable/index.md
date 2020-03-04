@@ -4,6 +4,7 @@ title: Make it installable
 authors:
   - petelepage
 date: 2018-11-05
+updated: 2020-02-28
 description: |
   In this codelab, learn how to make a site installable using the
   beforeinstallprompt event.
@@ -17,12 +18,6 @@ Progressive Web App installable, including a
 and a
 [web app manifest](https://glitch.com/edit/#!/make-it-installable?path=manifest.json).
 It also has an install button that is hidden by default.
-
-{% Aside %}
-If you're using a Mac, you'll need to enable the `#enable-desktop-pwas`
-flag in `chrome://flags` and restart your browser. Support for Desktop PWAs on
-Mac is planned for Chrome 72.
-{% endAside %}
 
 ## Listen for the beforeinstallprompt event
 
@@ -58,7 +53,7 @@ event. Calling `prompt()` is done in the install button click handler because
 1. Add a click event handler for the install button.
 1. Call `prompt()` on the saved `beforeinstallprompt` event.
 1. Log the results of the prompt.
-1. Set the saved `beforeinstallprompt` to null.
+1. Set the saved `beforeinstallprompt` event to null.
 1. Hide the install button.
 
 Code:
@@ -66,7 +61,7 @@ Code:
 ```js
 butInstall.addEventListener('click', () => {
   console.log('👍', 'butInstall-clicked');
-  const promptEvent = window.deferredPrompt
+  const promptEvent = window.deferredPrompt;
   if (!promptEvent) {
     // The deferred prompt isn't available.
     return;
@@ -88,10 +83,10 @@ butInstall.addEventListener('click', () => {
 ## Track the install event
 
 Installing a Progressive Web App through an install button is only one way users
-can install a PWA. They can also use Chrome's menu, the
-[mini-infobar](https://developers.google.com/web/fundamentals/app-install-banners/#the_mini-info_bar),
-and in the future, through an icon in the omnibox. You can track all of these
-ways of installation by listening for the `appinstalled` event.
+can install a PWA. They can also use Chrome's menu, the mini-infobar, and
+through [an icon in the omnibox](/promote-install/#browser-promotion). You can
+track all of these ways of installation by listening for the `appinstalled`
+event.
 
 1. Add an `appinstalled` event handler to the `window` object.
 1. Log the install event to analytics or other mechanism.
