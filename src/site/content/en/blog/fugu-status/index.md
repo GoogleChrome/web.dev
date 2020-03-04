@@ -126,7 +126,8 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
           Notification Triggers let you schedule notifications in advance, so
           that the operating system will deliver the notification at the right
           time - even if there is no network connectivity, or the device is in
-          battery saver mode.
+          battery saver mode.<br>
+          <b>Updated:</b> March 1st, 2020
         </td>
       </tr>
       <tr>
@@ -139,7 +140,8 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
           The Web Serial API provides a way for websites to read from and
           write to a serial device with scripts. The API bridges the web and
           the physical world by allowing websites to communicate with serial
-          devices, such as microcontrollers and 3D printers.
+          devices, such as microcontrollers and 3D printers.<br>
+          <em>Updated March 1st, 2020</em>
         </td>
       </tr>
       <tr>
