@@ -6,6 +6,7 @@ import * as workboxStrategies from "workbox-strategies";
 import {CacheableResponsePlugin} from "workbox-cacheable-response";
 import {ExpirationPlugin} from "workbox-expiration";
 import {matchPrecache, precacheAndRoute} from "workbox-precaching";
+import {cacheNames} from "workbox-core";
 
 // Architecture revision of the Service Worker. If the previously saved revision doesn't match,
 // then this will cause clients to be aggressively claimed and reloaded on install/activate.
@@ -50,6 +51,12 @@ self.addEventListener("install", (event) => {
 });
 
 self.addEventListener("activate", (event) => {
+  // This deletes the default Workbox runtime cache, which was previously growing unbounded. At the
+  // start of March 2020, caches must now have explicit expirations and custom names.
+  event.waitUntil(caches.delete(cacheNames.runtime));
+});
+
+self.addEventListener("activate", (event) => {
   const p = Promise.resolve().then(async () => {
     const previousArchitecture = await idb.get("arch");
     if (previousArchitecture === undefined && replacingPreviousServiceWorker) {
@@ -89,11 +96,25 @@ self.addEventListener("activate", (event) => {
 
 initializeGoogleAnalytics();
 
+const externalExpirationPlugin = new ExpirationPlugin({
+  maxAgeSeconds: 60 * 60 * 24 * 365, // 1 yr
+});
+
+const contentExpirationPlugin = new ExpirationPlugin({
+  maxEntries: 50, // store the most recent ~50 articles
+});
+
+const assetExpirationPlugin = new ExpirationPlugin({
+  maxAgeSeconds: 60 * 60 * 24 * 7, // 1 wk
+  maxEntries: 100, // allow a large number of images, but expire quickly
+});
+
 // Cache the Google Fonts stylesheets with a stale-while-revalidate strategy.
 workboxRouting.registerRoute(
   /^https:\/\/fonts\.googleapis\.com/,
   new workboxStrategies.StaleWhileRevalidate({
     cacheName: "google-fonts-stylesheets",
+    plugins: [externalExpirationPlugin],
   }),
 );
 
@@ -106,10 +127,7 @@ workboxRouting.registerRoute(
       new CacheableResponsePlugin({
         statuses: [0, 200],
       }),
-      new ExpirationPlugin({
-        maxAgeSeconds: 60 * 60 * 24 * 365,
-        maxEntries: 30,
-      }),
+      externalExpirationPlugin,
     ],
   }),
 );
@@ -137,7 +155,8 @@ workboxRouting.registerRoute(
     return url.host === self.location.host && contentPathRe.test(url.pathname);
   },
   new workboxStrategies.NetworkFirst({
-    plugins: [normalizeIndexCacheKeyPlugin],
+    cacheName: "webdev-html-cache-v1",
+    plugins: [normalizeIndexCacheKeyPlugin, contentExpirationPlugin],
   }),
 );
 
@@ -146,7 +165,10 @@ workboxRouting.registerRoute(
  */
 workboxRouting.registerRoute(
   new RegExp("/images/.*"),
-  new workboxStrategies.StaleWhileRevalidate(),
+  new workboxStrategies.StaleWhileRevalidate({
+    cacheName: "webdev-assets-cache-v1",
+    plugins: [assetExpirationPlugin],
+  }),
 );
 
 /**
