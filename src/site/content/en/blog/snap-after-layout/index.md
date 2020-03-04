@@ -2,7 +2,7 @@
 title: "Scroll snapping after layout changes"
 subhead: |
   Starting in Chrome 81, you no longer need to add event listeners to force
-  resnapping
+  resnapping.
 authors:
   - yigu
   - alsan
