@@ -53,7 +53,7 @@ snaps.
 <figure class="w-figure">
   <img src="./css-scroll-snap-example.png" alt="Example of CSS scroll snap.">
   <figcaption class="w-figcaption">Example of CSS scroll snap. At the end of
-    scrolling an image horizontal center is aligned with the horizontal center
+    scrolling an image's horizontal center is aligned with the horizontal center
     of the scroll container.
   </figcaption>
 </figure>
