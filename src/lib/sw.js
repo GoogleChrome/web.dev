@@ -91,11 +91,15 @@ initializeGoogleAnalytics();
 
 const externalExpirationPlugin = new ExpirationPlugin({
   maxAgeSeconds: 60 * 60 * 24 * 365, // 1 yr
-  maxEntries: 30,
 });
 
-const localExpirationPlugin = new ExpirationPlugin({
-  maxAgeSeconds: 60 * 60 * 24 * 21, // 21 days
+const contentExpirationPlugin = new ExpirationPlugin({
+  maxEntries: 50, // store the most recent ~50 articles
+});
+
+const assetExpirationPlugin = new ExpirationPlugin({
+  maxAgeSeconds: 60 * 60 * 24 * 7, // 1 wk
+  maxEntries: 100, // allow a large number of images, but expire quickly
 });
 
 // Cache the Google Fonts stylesheets with a stale-while-revalidate strategy.
@@ -145,7 +149,7 @@ workboxRouting.registerRoute(
   },
   new workboxStrategies.NetworkFirst({
     cacheName: "webdev-html-cache-v1",
-    plugins: [normalizeIndexCacheKeyPlugin, localExpirationPlugin],
+    plugins: [normalizeIndexCacheKeyPlugin, contentExpirationPlugin],
   }),
 );
 
@@ -156,7 +160,7 @@ workboxRouting.registerRoute(
   new RegExp("/images/.*"),
   new workboxStrategies.StaleWhileRevalidate({
     cacheName: "webdev-assets-cache-v1",
-    plugins: [localExpirationPlugin],
+    plugins: [assetExpirationPlugin],
   }),
 );
 
