@@ -6,6 +6,7 @@ import * as workboxStrategies from "workbox-strategies";
 import {CacheableResponsePlugin} from "workbox-cacheable-response";
 import {ExpirationPlugin} from "workbox-expiration";
 import {matchPrecache, precacheAndRoute} from "workbox-precaching";
+import {cacheNames} from "workbox-core";
 
 // Architecture revision of the Service Worker. If the previously saved revision doesn't match,
 // then this will cause clients to be aggressively claimed and reloaded on install/activate.
@@ -47,6 +48,12 @@ self.addEventListener("install", (event) => {
   }
 
   event.waitUntil(self.skipWaiting());
+});
+
+self.addEventListener("activate", (event) => {
+  // This deletes the default Workbox runtime cache, which was previously growing unbounded. At the
+  // start of March 2020, caches must now have explicit expirations and custom names.
+  event.waitUntil(caches.delete(cacheNames.runtime));
 });
 
 self.addEventListener("activate", (event) => {
