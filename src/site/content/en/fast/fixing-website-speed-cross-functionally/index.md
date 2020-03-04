@@ -6,7 +6,6 @@ authors:
 description: How other departments can help make your website speed optimization project a bigger success.
 date: 2020-02-28
 tags:
-  - post
   - speed
 ---
 
