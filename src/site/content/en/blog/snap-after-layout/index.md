@@ -118,7 +118,7 @@ Rotating a device **does not** preserve the snap positions in Chrome 80.
 <figure class="w-figure w-figure--center">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/snap-positions-preserved.webm" type="video/webm;">
-    <source src="./snap-positions-preserved.mp4" type="video/mp4;">
+    <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/snap-positions-preserved.mp4" type="video/mp4;">
   </video>
 </figure>
 
