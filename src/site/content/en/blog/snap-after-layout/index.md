@@ -104,7 +104,7 @@ what happens when the layout changes in the following
 <figure class="w-figure w-figure--center">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/snap-positions-lost.webm" type="video/webm;">
-    <source src="./snap-positions-lost.mp4" type="video/mp4;">
+    <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/snap-positions-lost.mp4" type="video/mp4;">
   </video>
 </figure>
 
