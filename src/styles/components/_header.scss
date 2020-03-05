@@ -41,6 +41,13 @@ web-header {
     transition: color $TRANSITION_SPEED;
     width: auto;
 
+    // sass-lint:disable class-name-format
+    &.unresolved {
+      display: inline-block;  // override default .unresolved behavior
+      visibility: hidden;
+    }
+    // sass-lint:enable class-name-format
+
     @include bp(md) {
       display: none;
     }

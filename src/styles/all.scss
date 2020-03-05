@@ -7,6 +7,6 @@
 // loaded. Disable linter as it expects classes to only be ".w-...".
 // sass-lint:disable class-name-format
 *:not(body).unresolved {
-  display: none !important;
+  display: none;
 }
 // sass-lint:enable class-name-format
