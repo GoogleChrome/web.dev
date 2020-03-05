@@ -28,7 +28,7 @@ First, analyze the network traffic of the unoptimized demo:
 Check out [Inspect Network Activity With Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/network/) if you need more help with DevTools.
 {% endAside %}
 
-You’ll see that the only image that’s being requested is `background-desktop.jpg`, which has a size of **1006KB**:
+You'll see that the only image that’s being requested is `background-desktop.jpg`, which has a size of **1006KB**:
 
 <figure>
   <img src="./cdt-background-unoptimized.png"
@@ -48,7 +48,7 @@ body {
 }
 ```
 
-Here’s the meaning of each of the properties used:
+Here's the meaning of each of the properties used:
 
 - `background-position: center center:` Center the image vertically and horizontally.
 - `background-repeat: no-repeat:` Show the image only once.
@@ -63,7 +63,7 @@ Using a single background image for all screen sizes has some limitations:
 - The same amount of bytes are sent, regardless of the screen size, even when, for some devices, like phones, a smaller and more lightweight image background would look just as good. In general, you want to send the smallest possible image that still looks good on the user's screen to improve performance and save user data.
 - In smaller devices the image will be stretched or cut to cover the entire screen, potentially hiding relevant parts of the background to users.
 
-In the next section, you’ll learn how to apply an optimization to load different background images, according to the user's device.
+In the next section, you'll learn how to apply an optimization to load different background images, according to the user's device.
 
 ## Use media queries
 
