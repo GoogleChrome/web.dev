@@ -124,9 +124,11 @@ workboxRouting.registerRoute(
   async ({url, event}) => {
     const {pathname} = url;
 
-    // First, check if there's actually something in the cache already. Workbox always suffixes
-    // with "/index.html" relative to our actual request paths.
-    const cachedResponse = await matchPrecache(pathname + "/index.html");
+    // First, check if there's actually a partial node in the cache already. If so, there's no need
+    // to do a real network fetch, as we know the modified request will be satisfied.
+    const cachedResponse = await caches.match(
+      new Request(pathname + "/index.json"),
+    );
     if (!cachedResponse) {
       // If there's not, then try the network.
       try {
@@ -203,7 +205,19 @@ workboxRouting.registerRoute(
     if (!response.ok) {
       throw response.status;
     }
-    const partial = await response.json();
+
+    let partial;
+    try {
+      partial = await response.json();
+    } catch (e) {
+      if (response.status !== 404) {
+        throw e;
+      }
+      // This happens in our Netlify staging environment: we don't serve the 404 JSON correctly, so
+      // fetch it manually. If this fetch or JSON fails, throw normally.
+      response = await fetch("/404/index.json");
+      partial = await response.json();
+    }
 
     // Our target browsers all don't mind if we just place <title> in the middle of the document.
     // This is far simpler than trying to find the right place in <head>.

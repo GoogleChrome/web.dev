@@ -126,6 +126,7 @@ export async function swapContent(isFirstRun) {
 
   // Throwing here will cause the router to just do a real page load.
   if (typeof partial !== "object") {
+    // This will occur in the Netlify staging environment as we don't serve the 404 JSON.
     throw new Error(`invalid partial for: ${url}`);
   }
 

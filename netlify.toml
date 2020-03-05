@@ -1,14 +1,4 @@
 [[redirects]]
-  from = "/*/index.json"
-  to = "/en/404/index.json"
-  status = 404
-
-[[redirects]]
-  from = "/en/*"
-  to = "/en/404/index.html"
-  status = 404
-
-[[redirects]]
   from = "/*"
   to = "/en/:splat"
   status = 200
