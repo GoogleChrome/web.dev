@@ -61,11 +61,12 @@ your app's origin. From this, you can programmatically obtain an OTP from an SMS
 message and verify a phone number for the user more easily.
 
 {% Aside 'warning' %}
-Attackers can spoof SMS and hijack a person's phone
-number. Carriers can also recycle phone numbers to new users after an account
-is closed. While SMS OTP is useful to verify a phone number for the use cases
-above, we recommend using additional and stronger forms of authentication (such
-as multiple factors and [WebAuthn](https://www.w3.org/TR/webauthn/)) to
+Attackers can spoof SMS and hijack a person's phone number. Carriers can also
+recycle phone numbers to new users after an account is closed. While SMS OTP is
+useful to verify a phone number for the use cases above, we recommend using
+additional and stronger forms of authentication (such as multiple factors and
+the [Web Authentication
+API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API) to
 establish new sessions for these users.
 {% endAside %}
 
@@ -108,7 +109,7 @@ Complete
 </tr>
 <tr>
 <td markdown="block">
-<strong>4. Origin trial</strong>
+4. Origin trial
 </td>
 <td markdown="block">
 Complete
@@ -116,7 +117,7 @@ Complete
 </tr>
 <tr>
 <td markdown="block">
-5. Launch
+<strong>5. Launch</strong>
 </td>
 <td markdown="block">
 <strong>Chrome 81</strong>
@@ -298,7 +299,7 @@ Send a Tweet to [@ChromiumDev](https://twitter.com/chromiumdev) with
 `#smsreceiver` and let us know where and how you're using it.
 
 ## FAQ
-### Why did you not align with Safari's `one-time-code`?
+### Why did you not align with Safari's one-time-code?
 
 We [explored
 options](https://chromium-review.googlesource.com/c/chromium/src/+/1639728)
