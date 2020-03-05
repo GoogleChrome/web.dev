@@ -15,7 +15,7 @@ tags:
 ## Summary
  + The [Privacy Sandbox proposals](#proposals) need your feedback.
  + Please comment on the proposals by filing issues on the repositories linked to below.
-+ There's a [glossary for the proposals](#appendix:-glossary-of-terms-used-in-the-explainers) at the end of this post.
++ There's a [glossary for the proposals](#glossary) at the end of this post.
 
 {% YouTube 'WnCKlNE52tc' %}
 
