@@ -202,7 +202,8 @@ workboxRouting.registerRoute(
       response = await offlinePartial();
     }
 
-    if (!response.ok) {
+    // Ignore anything but a 200 or 404.
+    if (!response.ok && response.status !== 404) {
       throw response.status;
     }
 
