@@ -18,13 +18,10 @@ const rule = require("unified-lint-rule");
 const url = require("url");
 const visit = require("unist-util-visit");
 
-module.exports = rule("remark-lint:no-wiki-mdn-urls", checkURL);
-
-const reason = 'Change URL hostname to "developer.mozilla.org".';
+module.exports = rule("remark-lint:bad-urls", checkURL);
 
 /**
- * Walk the AST for the markdown file, find any link to
- * "wiki.developer.mozilla.org" and warn to change to "developer.mozilla.org".
+ * Walk the AST for the markdown file and find any bad URLs.
  * @param {*} tree An AST of the markdown file.
  * @param {*} file The markdown file.
  */
@@ -39,7 +36,10 @@ function checkURL(tree, file) {
     }
     const parsed = url.parse(nodeUrl);
 
+    // If URL hostname is "wiki.developer.mozilla.org", warn to change to
+    // "developer.mozilla.org".
     if (parsed.hostname == "wiki.developer.mozilla.org") {
+      const reason = 'Change URL hostname to "developer.mozilla.org".';
       file.message(reason, node);
     }
   }
