@@ -173,3 +173,8 @@ redirects:
 
 - from: /discover-installable/
   to: /progressive-web-apps/#installable
+
+# Redirect blog content
+
+- from: /sms-receiver-api-announcement
+  to: /webotp
