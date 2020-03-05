@@ -3,6 +3,7 @@
  */
 
 import {BaseElement} from "../BaseElement";
+import "./_styles.scss";
 
 /**
  * Renders code block that can easily be copied.

@@ -5,6 +5,7 @@
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
 import {LH_HOST} from "../../lighthouse-service";
+import "./_styles.scss";
 
 /* eslint-disable require-jsdoc */
 class LighthouseScoresMeta extends BaseElement {

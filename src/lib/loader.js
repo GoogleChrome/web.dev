@@ -1,41 +1,42 @@
+/**
+ * @fileoverview Handles SPA loading and importing JS entrypoint for web.dev.
+ *
+ * Exports a single function, swapContent, which ensures that the inner contents of the web.dev
+ * template is correct, and that the correct JS entrypoint is ready.
+ */
+
 import {store} from "./store";
 import "./utils/underscore-import-polyfill";
-import getMeta from "./utils/meta";
-
-const domparser = new DOMParser();
 
 /**
  * Dynamically loads code required for the passed URL entrypoint.
  *
- * @param {string} url of the page to load modules for.
+ * @param {string} url normalize pathname of the page to load modules for.
  * @return {!Promise<?>}
  */
 async function loadEntrypoint(url) {
-  // Catch "/measure/" but also the trailing-slash-less "/measure" for safety.
-  if (url.match(/^\/measure($|\/)/)) {
+  if (url.startsWith("/measure/")) {
     return import("./pages/measure.js");
   }
   return import("./pages/default.js");
 }
 
 /**
- * Fetch a page as an html string.
- * @param {string} url url of the page to fetch.
- * @return {!HTMLDocument}
+ * Gets the partial content of the target normalized URL.
+ *
+ * @param {string} url of the page to fetch.
+ * @return {{raw: string, title: string, offline: (boolean|undefined)}}
  */
-async function getPage(url) {
-  // Pass a custom header so that the Service Worker knows this request is
-  // actually for a document, this is used to reply with an offline page
-  const headers = new Headers();
-  headers.set("X-Document", "1");
+async function getPartial(url) {
+  if (!url.endsWith("/")) {
+    throw new Error(`partial unsupported for non-folder: ${url}`);
+  }
 
-  const res = await fetch(url, {headers});
+  const res = await fetch(url + "index.json");
   if (!res.ok && res.status !== 404) {
     throw res.status;
   }
-
-  const text = await res.text();
-  return domparser.parseFromString(text, "text/html");
+  return await res.json();
 }
 
 function normalizeUrl(url) {
@@ -85,23 +86,31 @@ function forceFocus(el) {
 
 /**
  * Swap the current page for a new one. Assumes the current URL is the target.
+ *
+ * If this is the first run, then the correct HTML will already be in place (from server or Service
+ * Worker). Otherwise, async load the partial and replace previous content.
+ *
+ * Either way, ensure that the correct JS entrypoint is available.
+ *
  * @param {boolean} isFirstRun whether this is the first run
  * @return {!Promise<void>}
  */
 export async function swapContent(isFirstRun) {
   let url = window.location.pathname + window.location.search;
-  const entrypointPromise = loadEntrypoint(url);
 
-  // If we disagree with the URL we're loaded at, then replace it inline
+  // If we disagree with the URL we're loaded at, then replace it inline.
   const normalized = normalizeUrl(url);
   if (normalized) {
     window.history.replaceState(null, null, normalized + window.location.hash);
     url = window.location.pathname + window.location.search;
   }
 
-  // When the router boots it will always try to run a handler for the current
-  // route. We don't need this for the HTML of the initial page load so we
-  // cancel it, but wait for the page's JS to load.
+  // Ensure that the correct JS entrypoint is available.
+  const entrypointPromise = loadEntrypoint(url);
+
+  // When the router boots it will always try to run a handler for the current route. We don't need
+  // this for the HTML of the initial page load so we return early, but always wait for the page's
+  // JS to load.
   if (isFirstRun) {
     await entrypointPromise;
     return;
@@ -111,47 +120,36 @@ export async function swapContent(isFirstRun) {
 
   const main = document.querySelector("main");
 
-  // Grab the new page content
-  let page;
-  let content;
-  try {
-    page = await getPage(url);
-    content = page.querySelector("#content");
-    if (content === null) {
-      throw new Error(`no #content found: ${url}`);
-    }
-    await entrypointPromise;
-  } finally {
-    // We set the currentUrl in global state _after_ the page has loaded. This
-    // is different than the History API itself which transitions immediately.
-    store.setState({
-      isPageLoading: false,
-      currentUrl: url,
-    });
+  // Grab the new page content and wait for the JS entrypoint.
+  const partial = await getPartial(url);
+  await entrypointPromise;
+
+  // Throwing here will cause the router to just do a real page load.
+  if (typeof partial !== "object") {
+    // This will occur in the Netlify staging environment as we don't serve the 404 JSON.
+    throw new Error(`invalid partial for: ${url}`);
   }
+
+  // We set the currentUrl in global state _after_ the page has loaded. This is different than
+  // the History API itself which transitions immediately (like a real web browser).
+  store.setState({
+    isPageLoading: false,
+    currentUrl: url,
+
+    // bootstrap.js uses this to trigger a reload if we see an "online" event. Only returned via
+    // the Service Worker if we failed to fetch a 'real' page.
+    isOffline: Boolean(partial.offline),
+  });
 
   ga("set", "page", window.location.pathname);
   ga("send", "pageview");
 
-  // Remove the current #content element
-  main.querySelector("#content").remove();
-  main.appendChild(page.querySelector("#content"));
+  // Replace the current #content element with the new partial content.
+  main.querySelector("#content").innerHTML = partial.raw;
 
-  // Update the page title
-  document.title = page.title;
-  // Update the page description
-  const description = page.querySelector("meta[name=description]");
-  const updatedContent = description ? description.content : "";
-  document.querySelector("meta[name=description]").content = updatedContent;
+  // Update the page title.
+  document.title = partial.title || "";
 
-  // Focus on the first title (or fallback to content itself)
+  // Focus on the first title (or fallback to content itself).
   forceFocus(content.querySelector("h1, h2, h3, h4, h5, h6") || content);
-
-  // Determine if this was the offline page
-  const isOffline = Boolean(getMeta("offline", page));
-
-  store.setState({
-    isPageLoading: false,
-    isOffline,
-  });
 }

@@ -4,7 +4,7 @@ title: Total Blocking Time (TBT)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2019-11-07
+updated: 2020-03-03
 description: |
   This post introduces the Total Blocking Time (TBT) metric and explains
   how to measure it
@@ -126,7 +126,8 @@ TBT](/lighthouse-total-blocking-time) for usage details.
 ## What is a good TBT score?
 
 To provide a good user experience, sites should strive to have a Total Blocking
-Time of less than **300 milliseconds** when tested on average mobile hardware.
+Time of less than **300 milliseconds** when tested on **average mobile
+hardware**.
 
 For details on how your page's TBT affects your Lighthouse performance score,
 see [How Lighthouse determines your TBT

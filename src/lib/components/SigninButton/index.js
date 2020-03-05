@@ -1,6 +1,7 @@
 import {html} from "lit-element";
 import {signIn} from "../../fb";
 import {BaseStateElement} from "../BaseStateElement";
+import "./_styles.scss";
 
 /* eslint-disable require-jsdoc */
 class SigninButton extends BaseStateElement {
