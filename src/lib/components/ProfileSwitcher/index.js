@@ -66,7 +66,7 @@ class ProfileSwitcher extends BaseElement {
       image.onload = () => resolve(image);
 
       // Ignore errors and don't display a photo at all.
-      image.onerror = () => reject(emptyFrag);
+      image.onerror = () => resolve(emptyFrag);
     });
     return true;
   }

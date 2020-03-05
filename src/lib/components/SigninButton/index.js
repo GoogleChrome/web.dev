@@ -14,7 +14,8 @@ class SigninButton extends BaseStateElement {
 
   render() {
     if (this.isSignedIn) {
-      return "";
+      // lit-element ignores "" (prior to 2.2.2), so return an empty template.
+      return html``;
     }
 
     // We don't set "disabled" attribute on the <button> based on this, because
