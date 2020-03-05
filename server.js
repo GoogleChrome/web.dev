@@ -57,7 +57,7 @@ const notFoundHandler = (req, res, next) => {
 const invalidHostnames = ["www.web.dev", "appengine-test.web.dev"];
 const invalidHostnameHandler = (req, res, next) => {
   if (invalidHostnames.includes(req.hostname)) {
-    if (!req.url.endsWith(".js")) {
+    if (!req.headers["service-worker"]) {
       return res.redirect(301, "https://web.dev" + req.url);
     }
     req.url = "/nuke-sw.js";

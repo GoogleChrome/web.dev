@@ -133,7 +133,10 @@ async function build() {
   const manifest = isProd ? await buildCacheManifest() : [];
   const noticeDev = isProd ? "" : "// Not generated in dev";
 
-  const layoutTemplate = await fs.readFile("dist/_layout/index.html", "utf-8");
+  const layoutTemplate = await fs.readFile(
+    "dist/sw-partial-layout.partial",
+    "utf-8",
+  );
 
   const swBundle = await rollup.rollup({
     input: "src/lib/sw.js",

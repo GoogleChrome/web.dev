@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,6 +12,13 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+/**
+ * @fileoverview Builds a shortcode which writes article inner content to peer JSON files.
+ *
+ * This is needed so our SPA routing and Service Worker can fetch partials in order to hydrate the
+ * main web.dev template, cutting down on bytes needed to render further pages.
  */
 
 const fs = require("fs").promises;
@@ -27,16 +34,10 @@ const writePartial = async (to, raw) => {
 module.exports = function buildPartial() {
   const work = [];
 
-  return function(content, page, collections, renderData = {}) {
+  return function(content, page, lang, title, offline) {
     if (!page.outputPath.endsWith("/index.html")) {
       return content; // unexpected output format
     }
-
-    // nb. matches the Meta component, used for title
-    const pageData = {
-      ...collections.all.find((item) => item.fileSlug === page.fileSlug).data,
-      ...renderData,
-    };
 
     const outputPath =
       page.outputPath.substr(0, page.outputPath.length - suffixLength) +
@@ -44,9 +45,9 @@ module.exports = function buildPartial() {
 
     const partial = {
       raw: content,
-      lang: pageData.lang,
-      title: pageData.title || pageData.page.title,
-      offline: pageData.offline || undefined,
+      lang,
+      title,
+      offline: offline || undefined,
     };
 
     // Eleventy runs as a binary, and it can't be triggered programatically. So, these orphaned

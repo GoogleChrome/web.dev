@@ -14,7 +14,7 @@
     {%- endif %}
 
     {% if not nometa %}
-{% Meta locale, page, collections, renderData %}
+      {% Meta locale, page, collections, renderData %}
     {%- endif %}
 
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" data-title="web.dev feed">
@@ -150,7 +150,7 @@
     <main>
       {% include 'partials/banner.njk' %}
       <div id="content">
-        {% Partial page, collections, renderData %}{{ content | safe }}{% endPartial %}
+        {% Partial page, lang, title, offline %}{{ content | safe }}{% endPartial %}
       </div>
     </main>
     {% include 'partials/footer.njk' %}
