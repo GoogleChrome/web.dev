@@ -16,7 +16,6 @@
 
 const fs = require("fs").promises;
 const path = require("path");
-const postEleventyBuild = require("./post-eleventy-build");
 
 const suffixLength = "index.html".length;
 
@@ -27,10 +26,6 @@ const writePartial = async (to, raw) => {
 
 module.exports = function buildPartial() {
   const work = [];
-
-  postEleventyBuild(async () => {
-    await Promise.all(work);
-  });
 
   return function(content, page, collections, renderData = {}) {
     if (!page.outputPath.endsWith("/index.html")) {
@@ -53,7 +48,14 @@ module.exports = function buildPartial() {
       title: pageData.title || pageData.page.title,
       offline: pageData.offline || undefined,
     };
+
+    // Eleventy runs as a binary, and it can't be triggered programatically. So, these orphaned
+    // promises are actually fine, because they'll hold the Node process open until complete.
+    // If Eleventy or other code ever triggers process.exit(), then they could be preempted early.
     const p = writePartial(outputPath, partial);
+
+    // Push into an array, even though it's not used; and if Eleventy ever provides build hooks, we
+    // could `await Promise.all()` on it.
     work.push(p);
 
     return content;
