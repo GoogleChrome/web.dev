@@ -251,9 +251,10 @@ library only when `loading` isn't supported. This works as follows:
         .forEach(img => img.src = img.dataset.src);
     };
 
-    ['DOMContentLoaded', 'DOMNodeInserted', 'DOMAttrModified'].forEach(event => {
-      document.addEventListener(event, updateSrc, true);
-    });
+    ['DOMContentLoaded', 'DOMNodeInserted', 'DOMAttrModified']
+      .forEach(event => {
+        document.addEventListener(event, updateSrc, true);
+      });
   } else {
     // Dynamically import the LazySizes library
     const script = document.createElement('script');
