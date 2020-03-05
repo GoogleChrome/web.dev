@@ -8,7 +8,7 @@ authors:
   - jimper
 hero: hero.jpg
 thumbnail: thumbnail.jpg
-alt: Dew on a thin leaf in macro.
+alt: Dew on a thin leaf in macro
 description: |
     This case study explains how Google increased key ads business metrics by
     optimizing the performance of their third-party ads script with stale-while-revalidate.
