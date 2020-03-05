@@ -131,7 +131,7 @@ Unfortunately, the techniques used to identify legitimate users and block spamme
 The [Trust Tokens API](https://github.com/dvorak42/trust-token-api) proposes an alternative approach, allowing trust of a user in one context, such as gmail.com, to be conveyed to another context, such as an ad running on nytimes.com—without identifying the user or linking the two identities.
 
 ### IP address security
-**Goal: Control access to IP addresses to reduce covert fingerprinting, and allow sites to opt out of seeing IP addresses in order not to consume privacy budget.**
+**Goal: Control access to IP addresses to reduce covert fingerprinting, and allow sites to opt out of seeing IP addresses in order to not consume privacy budget.**
 
 Your IP address is the public 'address' of your computer on the internet, which in most cases is dynamically assigned by the network through which you connect to the internet. However, even dynamic IP addresses may remain stable over a significant period of time.
 
