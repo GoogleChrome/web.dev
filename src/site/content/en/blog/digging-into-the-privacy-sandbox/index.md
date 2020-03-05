@@ -189,7 +189,7 @@ Please comment on the explainers by filing issues on the repositories linked to 
 +   [Privacy Preserving Ad Click Attribution For the Web](https://webkit.org/blog/8943/privacy-preserving-ad-click-attribution-for-the-web/)
 +   [Brave, Fingerprinting, and Privacy Budgets](https://brave.com/brave-fingerprinting-and-privacy-budgets/)
 
-## Appendix: Glossary of terms used in the explainers
+## Appendix: Glossary of terms used in the explainers {: #glossary }
 
 ### Click-through rate (CTR)
 
