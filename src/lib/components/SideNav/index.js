@@ -14,19 +14,24 @@
  * limitations under the License.
  */
 
-import {html} from "lit-element";
-import {BaseElement} from "../BaseElement";
+import {html, css, unsafeCSS, LitElement} from "lit-element";
 import {store} from "../../store";
 import "wicg-inert";
 import {collapseSideNav} from "../../actions";
-import "./_styles.scss";
+import styles from "./_styles.scss";
 
-class SideNav extends BaseElement {
+class SideNav extends LitElement {
   static get properties() {
     return {
       animatable: {type: Boolean, reflect: true},
       expanded: {type: Boolean, reflect: true},
     };
+  }
+
+  static get styles() {
+    return css`
+      ${unsafeCSS(styles)}
+    `;
   }
 
   constructor() {

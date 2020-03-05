@@ -21,10 +21,11 @@
 @import '../../../styles/tools/mixins';
 
 body.web-side-nav--expanded {
+  // TODO: not supported here
   overflow: hidden;
 }
 
-web-side-nav {
+:host {
   position: fixed;
   left: 0;
   top: 0;
@@ -38,11 +39,12 @@ web-side-nav {
 // Prevent FOUC by hiding children until after firstUpdated(), as children are
 // reparented within .web-side-nav__container before use
 // This isn't ":not(:defined)" because firstUpdated occurs after a frame.
-web-side-nav.unresolved * {
+:host(.unresolved) * {
+  // TODO: not supported here
   display: none !important;
 }
 
-web-side-nav::before {
+:host::before {
   content: '';
   display: block;
   position: absolute;
@@ -56,12 +58,12 @@ web-side-nav::before {
   transition: opacity $TRANSITION_SPEED cubic-bezier(.4, 0, .2, 1);
 }
 
-web-side-nav[expanded] {
+:host([expanded]) {
   pointer-events: auto;
   visibility: visible;
 }
 
-web-side-nav[expanded]::before {
+:host([expanded])::before {
   opacity: 1;
 }
 
@@ -78,15 +80,15 @@ web-side-nav[expanded]::before {
   will-change: transform;
 }
 
-web-side-nav[expanded] .web-side-nav__container {
+:host([expanded]) .web-side-nav__container {
   transform: none;
 }
 
-web-side-nav[animatable] .web-side-nav__container {
+:host([animatable]) .web-side-nav__container {
   transition: transform $TRANSITION_SPEED cubic-bezier(.4, 0, .2, 1);
 }
 
-web-side-nav[expanded][animatable] .web-side-nav__container {
+:host([expanded][animatable]) .web-side-nav__container {
   transition: transform $TRANSITION_SPEED cubic-bezier(.4, 0, .2, 1);
 }
 

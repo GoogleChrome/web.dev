@@ -92,7 +92,9 @@ async function buildCacheManifest() {
  * to build the Service Worker.
  */
 async function build() {
-  const postcssConfig = {};
+  const postcssConfig = {
+    inject: false,
+  };
   if (isProd) {
     // nb. Only require() autoprefixer when used.
     const autoprefixer = require("autoprefixer");

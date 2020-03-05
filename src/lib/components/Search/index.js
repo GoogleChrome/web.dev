@@ -2,13 +2,12 @@
  * @fileoverview An Algolia search box.
  */
 
-import {html} from "lit-element";
-import {BaseElement} from "../BaseElement";
+import {html, css, unsafeCSS, LitElement} from "lit-element";
 import {store} from "../../store";
 import * as router from "../../utils/router";
 import {debounce} from "../../utils/debounce";
 import algoliasearch from "algoliasearch/dist/algoliasearchLite";
-import "./_styles.scss";
+import styles from "./_styles.scss";
 
 // Create an algolia client so we can get search results.
 // These keys are safe to be public.
@@ -20,10 +19,10 @@ const index = client.initIndex(indexName);
 
 /**
  * An Algolia search box.
- * @extends {BaseElement}
+ * @extends {LitElement}
  * @final
  */
-class Search extends BaseElement {
+class Search extends LitElement {
   static get properties() {
     return {
       // Manages the expanded/collapsed state of the UI.
@@ -36,6 +35,12 @@ class Search extends BaseElement {
       // Primarily used for keyboard behavior.
       cursor: {type: Number},
     };
+  }
+
+  static get styles() {
+    return css`
+      ${unsafeCSS(styles)}
+    `;
   }
 
   constructor() {
