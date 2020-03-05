@@ -60,7 +60,7 @@ cache-control: private, max-age=900, stale-while-revalidate=3600
 
 This setting means that if `gpt.js` is requested between 15 and 60 minutes after the previous cached value, then the cached value will be used to fulfill the request even though it's stale. At the same time, a revalidation request will be made in the background to populate the cache with a fresh value for future use.
 
-Chrome rolled out `stale-while-revalidate` in version 75 to 99% of all traffic, leaving 1% of traffic with the feature disabled temporarily to measure its impact. The Google display ads team logged metrics from this 1% (the experimental group) as well as a 1% sample of traffic with the feature enabled (the control group), to test the effectiveness of `stale-while-revalidate` for ad scripts. Over the course of 2 weeks of metrics logged from a sample size of 5.2 billion Google display ad impressions, the control group observed:
+Chrome rolled out `stale-while-revalidate` in version 75 to 99% of all traffic, leaving 1% of traffic with the feature disabled temporarily to measure its impact. The GPT team logged metrics from this 1% (the experimental group) as well as a 1% sample of traffic with the feature enabled (the control group), to test the effectiveness of `stale-while-revalidate` for ad scripts. Over the course of 2 weeks of metrics logged from a sample size of 5.2 billion Google display ad impressions, the control group observed:
 
 - 0.3% increase in ad impressions.
 - 0.5% increase in revenue.
