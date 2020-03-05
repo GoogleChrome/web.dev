@@ -69,8 +69,8 @@ Enable sites to 'blind' themselves to IP addresses and other network data so the
 Allow related domain names owned by the same entity (such as apple.com and icloud.com) to declare themselves as the same first party.
 +   [Aggregated Reporting API](https://github.com/csharrison/aggregate-reporting-api)<br>
 Provide privacy preserving ad reach measurement.
-+   [Conversion measurement](https://github.com/csharrison/conversion-measurement-api)<br>
-Provide privacy preserving conversion measurement.
++   [Event-level conversion measurement](https://github.com/csharrison/conversion-measurement-api)<br>
+Provide privacy preserving [click-through-conversion](#glossary-ctc) measurement.
 +   [Federated Learning of Cohorts](https://github.com/jkarlin/floc)<br>
 Target ads without cross-site user tracking.
 +   [TURTLEDOVE](https://github.com/michaelkleber/turtledove)<br>
@@ -85,7 +85,7 @@ You can dive into the explainers right away, and over the next few weeks we'll b
 
 There are two proposals for APIs that would allow the user's browser to gather impression and conversion data and report this back to advertisers in a way that prevents linking of identities across sites, or collecting user browsing history:
 
-+   [Click Through Conversion Measurement Event-Level](https://github.com/csharrison/conversion-measurement-api) allows advertisers to determine which ad clicks later turned into conversions. (API name suggestions welcome!)
++   [Event-Level Click Through Conversion Measurement](https://github.com/csharrison/conversion-measurement-api) allows advertisers to determine which ad clicks later turned into conversions. (API name suggestions welcome!)
 +   [Aggregated Reporting](https://github.com/csharrison/aggregate-reporting-api) aggregates browsing data for multiple sites and multiple users in a single report, while preserving privacy by only allowing aggregate reporting on things that a lot of different people did.
 
 Other companies have been investigating similar ideas, such as Facebook's [Cross-Browser Anonymous Conversion Reporting](https://github.com/w3c/web-advertising/blob/master/cross-browser-anonymous-conversion-reporting.md), Apple's [Ad Click Attribution API](https://webkit.org/blog/8943/privacy-preserving-ad-click-attribution-for-the-web/) and Brave's [ad conversion attribution](https://github.com/brave/brave-browser/issues/6536).
@@ -98,15 +98,16 @@ There are many ways to make ads relevant to the user, including the following:
 +   **First-party-data targeting**: Show ads relevant to topics a person has told a website they have an interest in, or content a person has looked at previously on this web site.
 +   **Contextual targeting**: Choose where to display ads based on site content. For example, 'Put this ad next to articles about knitting.'
 +   **Remarketing**: Advertise to people who've already visited your site, while they are not on your site. For example,  'Show this ad for discount wool to people who visited your store and left knitting items in their shopping cart—while they're visiting craft sites.'
-+   **Interest-based targeting**: Select ads based on a user's browsing history. For example, 'Show this ad to users who appear to like classical music'.
++   **Interest-based targeting**: Select ads based on a user's browsing history. For example, 'Show this ad to users whose browsing behaviour indicates they might be interested in knitting'.
 
-First-party-data and contextual targeting can be achieved without knowing anything about the user other than their activity within a site: they don't require cross-site tracking.
-Remarketing is usually done via cookies or some other way to recognize people across web sites: adding users to lists and then targeting them with specific ads.
+First-party-data and contextual targeting can be achieved without knowing anything about the user other than their activity within a site. These techniques don't require cross-site tracking.
 
-Interest-based targeting is currently done by using cookies or device fingerprinting to track user behaviour on as many sites as possible. Many people are concerned about the privacy implications of ad targeting. The Privacy Sandbox includes two alternative privacy preserving proposals:
+Remarketing is usually done by using cookies or some other way to recognize people across web sites: adding users to lists and then targeting them with specific ads.
 
-+   [FLoC](https://github.com/jkarlin/floc), which generates clusters of similar people locally on the user's device. Companies can then target ads based on the behavior of a cohort (or "flock") of people with similar browsing behaviour.
-+   [TURTLEDOVE](https://github.com/michaelkleber/turtledove), whereby the user's browser, not advertisers, holds information about what the user is interested in. Two (uncorrelated) requests are sent for ads: one to retrieve an ad based on contextual data, and one to retrieve an ad based on an advertiser-defined interest. An 'auction' is conducted by the browser to choose the most relevant ad, using JavaScript code provided by the advertiser. This code *can only be used to choose between ads*: it cannot make network requests or access external state.
+Interest-based targeting currently uses cookies or device fingerprinting to track user behaviour across as many sites as possible. Many people are concerned about the privacy implications of ad targeting. The Privacy Sandbox includes two alternatives:
+
++   [FLoC](https://github.com/jkarlin/floc), which generates clusters of similar people, known as cohorts or "flocks". Data is generated locally on the user's browser, not by a third party. The browser shares the generated flock data, but this cannot be used to identify or track individual users. This enables companies to target ads based on the behavior of people with similar browsing behaviour, while preserving privacy.
++   [TURTLEDOVE](https://github.com/michaelkleber/turtledove), whereby the user's browser, not advertisers, holds information about what the user is interested in. Two (uncorrelated) requests are sent for ads: one to retrieve an ad based on contextual data, and one to retrieve an ad based on an advertiser-defined interest. An 'auction' is then conducted by the browser to choose the most relevant ad, using JavaScript code provided by the advertiser. This code *can only be used to choose between ads*: it cannot make network requests or access the DOM or external state.
 
 ### Combat fingerprinting
 **Goal: Reduce the amount of sensitive data revealed by APIs and make access to sensitive data controllable by users, and measurable.**
@@ -124,9 +125,9 @@ Fingerprinting surfaces such as the [User-Agent](https://github.com/WICG/ua-clie
 ### Combat spam, fraud and denial-of-service attacks
 **Goal: Enable authentication without fingerprinting.**
 
-Anti-fraud protection is crucial for keeping users safe—and also for ensuring that advertisers and site owners can get accurate ad performance measurements.
+Anti-fraud protection is crucial for keeping users safe, and to ensure that advertisers and site owners can get accurate ad performance measurements.
 
-Unfortunately, the techniques used to identify legitimate users and block spammers, fraudsters, and bots work in ways similar to fingerprinting techniques.
+Unfortunately, the techniques used to identify legitimate users and block spammers, fraudsters, and bots work in ways similar to [fingerprinting](#glossary-fingerprinting) techniques that damage privacy.
 
 The [Trust Tokens API](https://github.com/dvorak42/trust-token-api) proposes an alternative approach, allowing trust of a user in one context, such as gmail.com, to be conveyed to another context, such as an ad running on nytimes.com—without identifying the user or linking the two identities.
 
@@ -191,11 +192,11 @@ Please comment on the explainers by filing issues on the repositories linked to 
 
 ## Appendix: Glossary of terms used in the explainers {: #glossary }
 
-### Click-through rate (CTR)
+### Click-through rate (CTR) {: #glossary-ctr }
 
-The ratio of users who click on an ad, having seen it. (See also [impression](#impression).)
+The ratio of users who click on an ad, having seen it. (See also [impression](#glossary-impression).)
 
-### Click-through-conversion (CTC)
+### Click-through-conversion (CTC) {: #glossary-ctc }
 
 A conversion attributed to an ad that was 'clicked'.
 
@@ -209,9 +210,9 @@ Share information about a dataset to reveal patterns of behaviour without reveal
 
 ### Domain
 
-(See section above.)
+See [Top-Level Domain](#glossary-tld) and [eTLD](#glossary-etld).
 
-### eTLD, eTLD+1
+### eTLD, eTLD+1 {: #glossary-etld }
 
 Pseudo top level domains are defined by the [Public Suffix List](https://publicsuffix.org/list/). For example:
 
@@ -221,6 +222,8 @@ appspot.com
 glitch.me
 ```
 Pseudo TLDs are what enable foo.appspot.com to be a different site from bar.appspot.com. The effective top-level domain (**eTLD**) in this case is appspot.com, and the whole **site** name (foo.appspot.com, bar.appspot.com) is known as the **eTLD+1**.
+
+See also [Top-Level Domain](#glossary-tld).
 
 ### Entropy
 
@@ -234,23 +237,21 @@ Each bit of entropy halves the possible number of potential individuals referred
 
 Data can be combined to identify an individual, but it can be difficult to work out whether new data adds to entropy. For example, knowing a person is from Australia doesn't reduce entropy if you already know the person is from Kangaroo Island.
 
-### Fingerprinting
+### Fingerprinting {: #glossary-fingerprinting }
 
 Techniques to identify and track the behaviour of individual users. Fingerprinting uses mechanisms that users aren't aware of and can't control. Sites such as [Panopticlick](https://panopticlick.eff.org) and [amiunique.org](https://amiunique.org/) show how fingerprint data can be combined to identify you as an individual.
 
-
-
-### Fingerprinting surface
+### Fingerprinting surface {: #glossary-fingerprinting-surface }
 
 Something that can be used (probably in combination with other surfaces) to identify a particular user or device. For example, the `navigator.userAgent()` JavaScript method and the `User-Agent` HTTP request header provide access to a fingerprinting surface (the user agent string).
 
-### First-party
+### First-party {: #glossary-first-party }
 
-Resources from the site you're visiting. For example, the page you're reading is on the site web.dev and includes resources from that site. See also [Third-party](#third-party).
+Resources from the site you're visiting. For example, the page you're reading is on the site web.dev and includes resources from that site. See also [Third-party](#glossary-third-party).
 
-### Impression
+### Impression {: #glossary-impression }
 
-View of an ad. (See also [click-through rate](#click-through-rate-(ctr)).)
+View of an ad. (See also [click-through rate](#glossary-ctr).)
 
 ### k-anonymity
 
@@ -259,7 +260,7 @@ A measure of anonymity within a data set. If you have _k_ anonymity, you can't b
 ### Origin
 The origin of a request, including the server name but no path information. For example: `https://web.dev`.
 
-### Passive surfaces
+### Passive surface {: #glossary-passive-surface }
 
 Some fingerprinting surfaces, such as user agent strings, IP addresses and accept-language headers, are available to every website whether the site asks for them or not. That means passive surfaces can easily consume a site's privacy budget.
 
@@ -279,22 +280,21 @@ Advertising to people who've already visited your site. For example, an online s
 
 ### Site
 
-(See above.)
+See [Top-Level Domain](#glossary-tld) and [eTLD](#glossary-etld).
 
 ### Surface
 
-(See Fingerprinting surface and also Passive surfaces above.)
+See [Fingerprinting surface](#glossary-fingerprinting-surface) and [Passive surface](#glossary-passive-surface).
 
-### Third-party
+### Third-party  {: #glossary-third-party }
 
-Resources served from a domain that's different from the website you're visiting. For example, a website foo.com might use analytics code from google-analytics.com (via JavaScript), fonts from use.typekit.net (via a link element) and a video from vimeo.com (in an iframe). See also [First-party](#first-party).
+Resources served from a domain that's different from the website you're visiting. For example, a website foo.com might use analytics code from google-analytics.com (via JavaScript), fonts from use.typekit.net (via a link element) and a video from vimeo.com (in an iframe). See also [First-party](#glossary-first-party).
 
-### Top-level domain (TLD)
+### Top-level domain (TLD) {: #glossary-tld }
 
 Top-level domains such as .com and .org are listed in the [Root Zone Database](https://www.iana.org/domains/root/db).
 
-Note that some 'sites' are actually just subdomains. For example, translate.google.com and maps.google.com are just subdomains of google.com (which is the eTLD+1).
-
+Note that some 'sites' are actually just subdomains. For example, translate.google.com and maps.google.com are just subdomains of google.com (which is the [eTLD + 1](#glossary-etld)).
 
 ### .well-known
 
