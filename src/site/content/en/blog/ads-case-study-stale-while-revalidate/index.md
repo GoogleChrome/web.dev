@@ -8,7 +8,7 @@ authors:
   - jimper
 hero: hero.jpg
 thumbnail: thumbnail.jpg
-alt: Dew on a thin leaf in macro photo.
+alt: Dew on a thin leaf in macro.
 description: |
     This case study explains how Google increased key ads business metrics by
     optimizing the performance of their third-party ads script with stale-while-revalidate.
@@ -80,4 +80,4 @@ As shown in the chart above, the results of this experiment can be attributed to
 
 The GPT team has seen that making a relatively simple change to HTTP headers with `stale-while-revalidate` can improve speed and boost business metrics. Check out the [Keeping things fresh with stale-while-revalidate](/stale-while-revalidate) post for more on implementing `stale-while-revalidate` on your own site.
 
-_Hero image by [Kahica](https://unsplash.com/@kahika) on [Unsplash](https://unsplash.com/photos/XSSibD1bt80)._
+Photo by [Kahica](https://unsplash.com/@kahika) on [Unsplash](https://unsplash.com/photos/XSSibD1bt80)
