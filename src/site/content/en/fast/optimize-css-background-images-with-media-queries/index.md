@@ -28,7 +28,7 @@ First, analyze the network traffic of the unoptimized demo:
 Check out [Inspect Network Activity With Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/network/) if you need more help with DevTools.
 {% endAside %}
 
-You'll see that the only image that’s being requested is `background-desktop.jpg`, which has a size of **1006KB**:
+You'll see that the only image that's being requested is `background-desktop.jpg`, which has a size of **1006KB**:
 
 <figure>
   <img src="./cdt-background-unoptimized.png"
