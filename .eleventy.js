@@ -196,19 +196,13 @@ module.exports = function(config) {
   config.addShortcode('Hero', Hero);
   config.addShortcode('Instruction', Instruction);
   config.addShortcode('Meta', Meta);
+  config.addPairedShortcode('Partial', buildPartial());
   config.addShortcode('PathCard', PathCard);
   config.addShortcode('PostCard', PostCard);
   config.addPairedShortcode('Tab', Tab);
   config.addPairedShortcode('Tabs', Tabs);
   config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('YouTube', YouTube);
-
-  //----------------------------------------------------------------------------
-  // PARTIALS
-  //----------------------------------------------------------------------------
-  // This writes all partial content to disk, and blocks Eleventy until writes
-  // are complete.
-  config.addPairedShortcode('Partial', buildPartial());
 
   //----------------------------------------------------------------------------
   // CUSTOM TAGS

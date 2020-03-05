@@ -187,7 +187,6 @@ workboxRouting.registerRoute(
   async ({params}) => {
     const pathname = params[1]; // 1st group from contentPathRe regexp
 
-    let status = 200;
     let response;
     try {
       // Use the same strategy for partials when hydrating a full request.
@@ -196,10 +195,6 @@ workboxRouting.registerRoute(
       response = await partialStrategy.handle({
         request: new Request(pathname + "index.json"),
       });
-      if (response.status === 404) {
-        response = await notFoundPartial();
-        status = 404;
-      }
     } catch (e) {
       // Offline pages are served with the default 200 status.
       response = await offlinePartial();
@@ -219,7 +214,7 @@ workboxRouting.registerRoute(
     );
     const headers = new Headers();
     headers.append("Content-Type", "text/html");
-    return new Response(output, {headers, status});
+    return new Response(output, {headers, status: response.status});
   },
 );
 
@@ -231,15 +226,6 @@ workboxRouting.setCatchHandler(async ({event, url}) => {
     return offlinePartial();
   }
 });
-
-async function notFoundPartial() {
-  const cachedResponse = await matchPrecache("/404/index.json");
-  if (!cachedResponse) {
-    // This occurs in development when the 404 partial isn't precached.
-    return new Response(JSON.stringify({raw: "<h1>Dev 404</h1>", title: ""}));
-  }
-  return cachedResponse;
-}
 
 async function offlinePartial() {
   const cachedResponse = await matchPrecache("/offline/index.json");
