@@ -24,11 +24,6 @@ body.web-side-nav--expanded {
   overflow: hidden;
 }
 
-web-side-nav:not(:defined),
-body.unresolved web-side-nav {
-  display: none;
-}
-
 web-side-nav {
   position: fixed;
   left: 0;

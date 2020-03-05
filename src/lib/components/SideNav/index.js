@@ -19,6 +19,7 @@ import {BaseElement} from "../BaseElement";
 import {store} from "../../store";
 import "wicg-inert";
 import {collapseSideNav} from "../../actions";
+import "./_styles.scss";
 
 class SideNav extends BaseElement {
   static get properties() {

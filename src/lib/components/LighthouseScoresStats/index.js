@@ -5,6 +5,7 @@
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
 import {categories} from "../../lighthouse";
+import "./_styles.scss";
 
 /* eslint-disable require-jsdoc */
 class LighthouseScoresStats extends BaseElement {

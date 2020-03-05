@@ -15,13 +15,12 @@
  */
 
 require("dotenv").config();
+const isProd = process.env.ELEVENTY_ENV === "prod";
 
 const fs = require("fs");
 const path = require("path");
 const mkdirp = require("mkdirp");
 const log = require("fancy-log");
-
-const isProd = process.env.ELEVENTY_ENV === "prod";
 
 const sassEngine = (function() {
   try {

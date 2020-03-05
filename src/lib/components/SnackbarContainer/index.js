@@ -23,6 +23,7 @@ import {BaseElement} from "../BaseElement";
 import {store} from "../../store";
 import {setUserAcceptsCookies, checkIfUserAcceptsCookies} from "../../actions";
 import "../Snackbar";
+import "./_styles.scss";
 
 class SnackbarContainer extends BaseElement {
   static get properties() {

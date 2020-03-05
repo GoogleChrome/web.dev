@@ -4,6 +4,7 @@
 
 import {html, svg} from "lit-element";
 import {BaseElement} from "../BaseElement";
+import "./_styles.scss";
 
 const HAS_RESIZE_OBSERVER = typeof ResizeObserver === "function";
 
