@@ -53,7 +53,7 @@ These APIs require web browsers to take on a new role. Rather than working with 
 
 In order to successfully transition away from third-party cookies the Privacy Sandbox authors need your support. The [explainers](https://blog.chromium.org/2019/08/potential-uses-for-privacy-sandbox.html) need feedback from publishers, developers, advertisers, and advertising platforms, to suggest missing use cases and more-private ways to accomplish their goals.
 
-<a name="privacy-sandbox-proposals"></a>
+### Privacy sandbox proposals {: #proposals }
 
 Please comment on the explainers by filing issues against each repository:
 
