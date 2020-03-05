@@ -2,7 +2,7 @@
 title: How Google improved ads performance with stale-while-revalidate
 subhead: |
     Find out how loading third-party resources faster can increase revenue.
-date: 2020-03-04
+date: 2020-03-05
 authors:
   - thebengeu
   - jimper
