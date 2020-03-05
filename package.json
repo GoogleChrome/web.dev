@@ -8,7 +8,7 @@
     "lint:js": "eslint . --fix",
     "build:gulp": "npx gulp build",
     "build:eleventy": "eleventy --quiet",
-    "build:rollup": "node build.js",
+    "build:rollup": "eleventy --input src/site/content/sw-partial-layout.njk; node build.js",
     "build:sass": "node ./compile-css.js src/styles/all.scss dist/app.css",
     "watch:gulp": "npx gulp build && gulp watch",
     "watch:eleventy": "eleventy --watch --quiet",

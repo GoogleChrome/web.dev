@@ -76,6 +76,8 @@ const removeDrafts = require(`./${filtersDir}/remove-drafts`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
 const stripLanguage = require(`./${filtersDir}/strip-language`);
 
+const buildPartial = require('./src/site/_utils/build-partial');
+
 module.exports = function(config) {
   //----------------------------------------------------------------------------
   // PLUGINS
@@ -194,6 +196,7 @@ module.exports = function(config) {
   config.addShortcode('Hero', Hero);
   config.addShortcode('Instruction', Instruction);
   config.addShortcode('Meta', Meta);
+  config.addPairedShortcode('Partial', buildPartial());
   config.addShortcode('PathCard', PathCard);
   config.addShortcode('PostCard', PostCard);
   config.addPairedShortcode('Tab', Tab);

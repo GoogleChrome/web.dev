@@ -68,13 +68,12 @@ async function buildCacheManifest() {
     throw new Error(`toplevel manifest: ${toplevelManifest.warnings}`);
   }
 
-  // Note that Workbox assumes "blah/index.html" is the same as requests to "blah/" for free, so
-  // rewriting the URLs below isn't neccessary.
+  // This doesn't include any HTML, as we bundle that directly into the source
+  // of the Service Worker below.
   const contentManifest = await getManifest({
     globDirectory: "dist/en",
     globPatterns: [
-      "index.html",
-      "offline/index.html",
+      "offline/index.json",
       "images/**/*.{png,svg}", // .jpg files are used for authors, skip
     ],
   });
@@ -132,7 +131,13 @@ async function build() {
   }
 
   const manifest = isProd ? await buildCacheManifest() : [];
-  const noticeDev = isProd ? "" : "// Manifest not generated in dev";
+  const noticeDev = isProd ? "" : "// Not generated in dev";
+
+  const layoutTemplate = await fs.readFile(
+    "dist/sw-partial-layout.partial",
+    "utf-8",
+  );
+
   const swBundle = await rollup.rollup({
     input: "src/lib/sw.js",
     plugins: [
@@ -147,6 +152,7 @@ async function build() {
         "cache-manifest": `export default ${JSON.stringify(
           manifest,
         )};${noticeDev}`,
+        "layout-template": `export default ${JSON.stringify(layoutTemplate)}`,
       }),
       ...defaultPlugins,
     ],
