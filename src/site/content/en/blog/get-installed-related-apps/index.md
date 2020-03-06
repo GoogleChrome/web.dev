@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: The getInstalledRelatedApps() API is a new web platform API that allows your web app to check whether your native app or PWA is installed on the user's device.
 date: 2018-12-20
-updated: 2020-03-04
+updated: 2020-03-06
 tags:
   - post
   - capabilities
@@ -32,11 +32,13 @@ The [`getInstalledRelatedApps()`][spec] makes it possible for a page to check if
 your native app, or Progressive Web App (PWA) is installed on a user's device.
 
 It allows you to customize the user experience if your app is already
-installed. For example, if the PWA is already installed, redirecting the user
-from a product marketing page directly into it. Centralizing some functionality
-like notifications in the native app to prevent duplicate notifications. Or,
-if your native app is already installed, not
-[promoting the installation](/customize-install/) of you PWA.
+installed. For example, if the PWA is already installed:
+
+* Redirecting the user from a product marketing page directly into the app.
+* Centralizing some functionality like notifications in the native app to
+  prevent duplicate notifications.
+* Not [promoting the installation](/customize-install/) of your PWA if your
+  native app is already installed.
 
 If `getInstalledRelatedApps()` looks familiar, it is. The Chrome team originally
 announced this feature in April 2017, when it first went through its first
@@ -158,7 +160,7 @@ Finally, publish your updated Android app to the Play store.
 
 {% Aside %}
 **Coming Soon!**
-Expected in Chrome 81, websites can check if their PWA, served from the same
+Starting in Chrome 81, websites can check if their PWA, served from the same
 domain is installed.
 Microsoft is actively working on enabling this API for Edge and we hope to
 see it land around Edge 82.
@@ -183,7 +185,7 @@ the full path to the PWAs web app manifest in the `url` property.
 
 {% Aside %}
 **Coming Soon!**
-In addition to detecting if their PWA is served from the same domain, 
+In addition to detecting if their PWA is served from the same domain,
 Chrome 82 lets websites check if their PWA is served from a different domain.
 Microsoft is actively working on enabling this API for Edge and we hope to
 see it land around Edge 82.
@@ -193,7 +195,7 @@ If the PWA you're testing for lives on a different domain, for instance
 `example.com` wants to check if the PWA served from `app.example.com` is
 installed, you'll also need to define the relationship between the two sites.
 
-Add an `assetslink.json` file to the [`/.well-known/`][well-known]
+Add an `assetlinks.json` file to the [`/.well-known/`][well-known]
 directory of the domain where the PWA lives (`app.example.com`). In the `site`
 property, provide the full path to the web app manifest from the other site.
 
@@ -263,7 +265,7 @@ browser vendors how critical it is to support them.
 * [Request an origin trial token]({{origin_trial.url}})
 * Blink Component: [`Mobile>WebAPKs`](https://chromestatus.com/features#component%3A%20Mobile%3EWebAPKs)
 
-[spec]: https://github.com/WICG/get-installed-related-apps
+[spec]: https://wicg.github.io/get-installed-related-apps/spec/
 [demo]: https://get-installed-apps.glitch.me
 [demo-source]: https://glitch.com/edit/#!/get-installed-apps
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=895854
