@@ -46,7 +46,7 @@ module.exports = function buildPartial() {
     const partial = {
       raw: content,
       lang,
-      title: title || pathData.title || undefined,
+      title: title || (pageData && pathData.title) || "web.dev",
       offline: offline || undefined,
     };
 

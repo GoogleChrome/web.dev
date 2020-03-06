@@ -222,8 +222,6 @@ workboxRouting.registerRoute(
 
     // Our target browsers all don't mind if we just place <title> in the middle of the document.
     // This is far simpler than trying to find the right place in <head>.
-    // Titles are not escaped, with the assumption that reviewier won't allow article to be named
-    // e.g., "</title><script>alert(1);".
     const meta = partial.offline ? `<meta name="offline" value="true" />` : "";
     const output = layoutTemplate.replace(
       "%_CONTENT_REPLACE_%",
