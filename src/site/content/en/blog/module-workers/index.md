@@ -207,6 +207,26 @@ to avoid worker instantiation having to wait to download the worker script. Howe
   </iframe>
 </div>
 
+## What about shared workers?
+
+[Shared workers](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorker/SharedWorker) have
+also now been updated with support for JavaScript modules as of Chrome 82. Like dedicated workers,
+constructing a shared worker with the `{type:"module"}` option now loads the worker script as a
+module rather than a classic script:
+
+```js
+const worker = new SharedWorker('/worker.js', {
+  type: 'module'
+});
+```
+
+Prior to the addition of JavaScript modules support, the `SharedWorker` constructor expected only a
+URL and optional name argument. This will continue to work for classic shared worker usage, however
+creating module shared workers requires using the new options argument. The [available
+options](https://html.spec.whatwg.org/multipage/workers.html#shared-workers-and-the-sharedworker-interface)
+are the same as those for dedicated worker, including the `name` option that supercedes
+`SharedWorker`'s previous name argument.
+
 ## What about service worker?
 
 The service worker specification [has already been
@@ -216,7 +236,7 @@ however this change has yet to be implemented in browsers. Once that happens, it
 to instantiate a service worker using a JavaScript module using the following code:
 
 ```js
-navigator.serviceWorker.register("/sw.js", {
+navigator.serviceWorker.register('/sw.js', {
   type: 'module'
 });
 ```
@@ -235,4 +255,5 @@ checking for updates.
 
 *   [Feature status, browser consensus and standardization](https://www.chromestatus.com/feature/5761300827209728)
 *   [Original module workers spec addition](https://github.com/whatwg/html/pull/608)
+*   [JavaScript modules for shared workers](https://www.chromestatus.com/feature/5169440012369920)
 *   JavaScript modules for service workers: [Chrome implementation status](https://bugs.chromium.org/p/chromium/issues/detail?id=824647)
