@@ -49,7 +49,7 @@ web-header {
     // sass-lint:enable class-name-format
 
     @include bp(md) {
-      display: none;
+      display: none !important;
     }
   }
 
