@@ -11,6 +11,7 @@ class AssessmentQuestion extends BaseElement {
   static get properties() {
     return {
       state: {type: String, reflect: true},
+      height: {attribute: "question-height"},
     };
   }
 
@@ -37,9 +38,11 @@ class AssessmentQuestion extends BaseElement {
       }
     }
 
+    const heightStyle = this.height ? "height: " + this.height + ";" : "";
+
     /* eslint-disable indent */
     return html`
-      <div class="web-question__content">
+      <div class="web-question__content" style="${heightStyle}">
         ${this.prerenderedChildren}
       </div>
       <div class="web-question__footer">

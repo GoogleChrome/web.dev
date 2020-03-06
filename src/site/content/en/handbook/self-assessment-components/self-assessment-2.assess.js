@@ -7,7 +7,7 @@ module.exports = {
     setLeader: "Test your knowledge of resource optimization",
     // The height parameter is optional. It specifies the height of the callout.
     // Default height is 40rem.
-    height: "38rem",
+    height: "25rem",
     // You can adjust the labels for the question tabs using tabLabel.
     // There are three options:
     // --"question" (default): Creates an auto-numbered "Question n" label.

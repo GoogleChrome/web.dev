@@ -7,7 +7,7 @@ module.exports = {
     setLeader: "Test your knowledge of resource optimization",
     // The height parameter is optional. It specifies the height of the callout.
     // Default height is 40rem.
-    height: "38rem",
+    height: "25rem",
     // You can adjust the labels for the question tabs using tabLabel.
     // There are three options:
     // --"question" (default): Creates an auto-numbered "Question n" label.
@@ -115,7 +115,7 @@ module.exports = {
       {
         // This is a multiple-select multiple-choice question presented in two columns.
         type: "multiple-choice",
-        cardinality: "1+",
+        cardinality: "2",
         correctAnswers: "1,4",
         stem: "Which **two** Sesame Street muppets are clearly the best?",
         columns: true,
@@ -168,7 +168,7 @@ module.exports = {
           {
             type: "multiple-choice",
             cardinality: "1",
-            correctAnswers: "0",
+            correctAnswers: "2",
             stem: "Just _how_ awesome is Webby?",
             options: [
               {
