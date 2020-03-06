@@ -225,7 +225,7 @@ workboxRouting.registerRoute(
     const meta = partial.offline ? `<meta name="offline" value="true" />` : "";
     const output = layoutTemplate.replace(
       "%_CONTENT_REPLACE_%",
-      meta + `<title>${escape(partial.title)}</title>` + partial.raw,
+      meta + `<title>${partial.title || ""}</title>` + partial.raw,
     );
     const headers = new Headers();
     headers.append("Content-Type", "text/html");

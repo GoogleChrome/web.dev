@@ -34,7 +34,7 @@ const writePartial = async (to, raw) => {
 module.exports = function buildPartial() {
   const work = [];
 
-  return function(content, page, lang, title, offline) {
+  return function(content, page, pathData, lang, title, offline) {
     if (!page.outputPath.endsWith("/index.html")) {
       return content; // unexpected output format
     }
@@ -46,7 +46,7 @@ module.exports = function buildPartial() {
     const partial = {
       raw: content,
       lang,
-      title,
+      title: title || (pathData && pathData.title) || "web.dev",
       offline: offline || undefined,
     };
 

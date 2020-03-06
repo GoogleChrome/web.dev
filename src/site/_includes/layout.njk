@@ -150,7 +150,7 @@
     <main>
       {% include 'partials/banner.njk' %}
       <div id="content">
-        {% Partial page, lang, title, offline %}{{ content | safe }}{% endPartial %}
+        {% Partial page, path, lang, title, offline %}{{ content | safe }}{% endPartial %}
       </div>
     </main>
     {% include 'partials/footer.njk' %}

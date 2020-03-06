@@ -109,7 +109,7 @@ module.exports = (locale, page, collections, renderData = {}) => {
 
   // prettier-ignore
   return html`
-    <title>${pageData.title || pageData.path.title}</title>
+    <title>${pageData.title || pageData.path.title || "web.dev"}</title>
     <meta name="description" content="${pageData.description || pageData.path.description}" />
 
     ${renderGoogleMeta()}
