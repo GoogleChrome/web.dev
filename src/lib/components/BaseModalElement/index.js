@@ -29,6 +29,7 @@ export class BaseModalElement extends BaseElement {
     return {
       open: {type: Boolean, reflect: true},
       animatable: {type: Boolean, reflect: true},
+      overflow: {type: Boolean, reflect: true},
     };
   }
 
@@ -38,6 +39,7 @@ export class BaseModalElement extends BaseElement {
     this.open_ = false;
     this.animatable = false;
     this.inert = true;
+    this.overflow = false;
 
     this.onKeyUp = this.onKeyUp.bind(this);
     this.onResize = this.onResize.bind(this);
@@ -114,22 +116,31 @@ export class BaseModalElement extends BaseElement {
     this.manageFocus();
     if (this.open) {
       this.onResize();
+      window.addEventListener("resize", this.onResize);
+    } else {
+      window.removeEventListener("resize", this.onResize);
     }
     this.inert = !this.open;
   }
 
   onResize() {
-    // Apply a class to the modal if it has overflow to allow for styling changes
+    // Set the modal's overflow prop to true if it has overflow to allow for styling changes
     // (e.g., adding borders to the child element handling overflow).
     // If the client component needs to use a different class for the element
     // handling overflow, it will need its own animationend listener.
-    // See the Assessment component for an example.
     const content = this.querySelector(".web-modal__content");
 
     if (!content) {
       return;
     }
-    handleOverflow(content, "height", "web-modal--overflow", this);
+
+    const hasOverflow = handleOverflow(content, "height");
+
+    if (hasOverflow) {
+      this.overflow = true;
+    } else {
+      this.overflow = false;
+    }
   }
 
   getTrigger() {
@@ -144,7 +155,7 @@ export class BaseModalElement extends BaseElement {
     // Inert everything other than the modal when it's open.
     const main = document.querySelector("main");
     const header = document.querySelector("web-header");
-    const footer = document.querySelector("footer");
+    const footer = document.querySelector(".w-footer");
     const overFlowClass = "web-modal__overflow-hidden";
 
     if (this.open) {
