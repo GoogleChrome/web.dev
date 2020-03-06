@@ -170,7 +170,7 @@ to use for saving. For the text editor, I also wanted it to automatically
 add a `.txt` extension, so I provided some additional parameters.
 
 ```js
-function getNewFileHandle() {
+async function getNewFileHandle() {
   const opts = {
     type: 'saveFile',
     accepts: [{
@@ -179,7 +179,7 @@ function getNewFileHandle() {
       mimeTypes: ['text/plain'],
     }],
   };
-  const handle = window.chooseFileSystemEntries(opts);
+  const handle = await window.chooseFileSystemEntries(opts);
   return handle;
 }
 ```
