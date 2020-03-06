@@ -246,15 +246,18 @@ library only when `loading` isn't supported. This works as follows:
 
 <script>
   if ('loading' in HTMLImageElement.prototype) {
-    const updateSrc = () => {
-      document.querySelectorAll('img[loading="lazy"]')
-        .forEach(img => img.src = img.dataset.src);
-    };
+      const events = [ 'DOMContentLoaded', 'DOMNodeInserted' ];
+      const updateSrc = () => {
+        for (let lazyImage of document.querySelectorAll('img[loading="lazy"]')) {
+          if (lazyImage.dataset.src) {
+            lazyImage.src = lazyImage.dataset.src;
+            lazyImage.removeAttribute('data-src');
+          }
+        }
+      };
 
-    ['DOMContentLoaded', 'DOMNodeInserted', 'DOMAttrModified']
-      .forEach(event => {
-        document.addEventListener(event, updateSrc, true);
-      });
+      events.forEach(event => document.addEventListener(event, updateSrc, true));
+      
   } else {
     // Dynamically import the LazySizes library
     const script = document.createElement('script');
