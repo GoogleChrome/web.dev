@@ -5,6 +5,7 @@
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
 import {countries} from "./countries";
+import "./_styles.scss";
 
 /**
  * Element that renders newsletter subscription form.
@@ -12,7 +13,7 @@ import {countries} from "./countries";
  * @extends {BaseElement}
  * @final
  */
-class SubscribeForm extends BaseElement {
+class Subscribe extends BaseElement {
   static get properties() {
     return {
       errors: {
@@ -112,7 +113,7 @@ class SubscribeForm extends BaseElement {
           `,
       );
       errorMessage = html`
-        <div class="web-subscribe-error">
+        <div class="web-subscribe__error">
           ${errorMessages}
         </div>
       `;
@@ -131,10 +132,11 @@ class SubscribeForm extends BaseElement {
     return this.submitted
       ? ""
       : html`
-          <form @submit="${this.handleSubmit}">
-            <div class="web-subscribe-fields">
-              <div class="web-subscribe-field">
+          <form class="web-subscribe__form" @submit="${this.handleSubmit}">
+            <div class="web-subscribe__fields">
+              <div class="web-subscribe__field">
                 <input
+                  class="web-subscribe__input"
                   id="sub-firstname"
                   name="FirstName"
                   placeholder="First Name"
@@ -142,8 +144,9 @@ class SubscribeForm extends BaseElement {
                   type="text"
                 />
               </div>
-              <div class="web-subscribe-field">
+              <div class="web-subscribe__field">
                 <input
+                  class="web-subscribe__input"
                   id="sub-lastname"
                   name="LastName"
                   placeholder="Last Name"
@@ -152,8 +155,9 @@ class SubscribeForm extends BaseElement {
                 />
               </div>
             </div>
-            <div class="web-subscribe-field">
+            <div class="web-subscribe__field">
               <input
+                class="web-subscribe__input"
                 id="sub-email"
                 name="EmailAddress"
                 placeholder="Your Email"
@@ -161,14 +165,19 @@ class SubscribeForm extends BaseElement {
                 type="email"
               />
             </div>
-            <div class="web-subscribe-field">
-              <div class="web-subscribe-border">
-                <select id="sub-country" name="Country" required>
+            <div class="web-subscribe__field">
+              <div class="web-subscribe__border">
+                <select
+                  class="web-subscribe__select"
+                  id="sub-country"
+                  name="Country"
+                  required
+                >
                   ${countriesOptions}
                 </select>
               </div>
             </div>
-            <div class="web-subscribe-field">
+            <div class="web-subscribe__field">
               <label for="sub-newsletter">
                 <input
                   id="sub-newsletter"
@@ -180,7 +189,7 @@ class SubscribeForm extends BaseElement {
                 <span>Add me to the web.dev mailing list.</span>
               </label>
             </div>
-            <div class="web-subscribe-field">
+            <div class="web-subscribe__field">
               <label for="sub-pii-spii">
                 <input
                   id="sub-pii-spii"
@@ -206,14 +215,17 @@ class SubscribeForm extends BaseElement {
                 </span>
               </label>
             </div>
-            <div class="web-subscribe-field">
+            <div class="web-subscribe__field">
               <input
                 type="text"
                 name="${this.robotName}"
                 style="position: absolute; left: -100vw; top: -100vh; z-index: -100;"
                 tabindex="-1"
               />
-              <button class="w-button w-button--primary" type="submit">
+              <button
+                class="web-subscribe__button w-button w-button--primary"
+                type="submit"
+              >
                 Subscribe
               </button>
             </div>
@@ -239,4 +251,4 @@ class SubscribeForm extends BaseElement {
   }
 }
 
-customElements.define("web-subscribe-form", SubscribeForm);
+customElements.define("web-subscribe", Subscribe);

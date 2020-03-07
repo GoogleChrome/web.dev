@@ -5,6 +5,11 @@ redirects:
 - from: /policies
   to: https://policies.google.com/
 
+# Newsletter
+
+- from: /subscribe
+  to: https://services.google.com/fb/forms/web-dev-subscribe/
+
 # Pre-v1 redirects
 
 - from: /fast/using-lighthouse-ci-to-set-a-performance-budget
