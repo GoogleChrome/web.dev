@@ -108,11 +108,12 @@ module.exports = (locale, page, collections, renderData = {}) => {
   }
 
   function renderCanonicalMeta() {
-    if (pageData.canonical) {
-      return html`
-        <link rel="canonical" href="${pageData.canonical}" />
-      `;
-    }
+    return html`
+      <link
+        rel="canonical"
+        href="${pageData.canonical ? pageData.canonical : site.url + pageUrl}"
+      />
+    `;
   }
 
   // prettier-ignore
