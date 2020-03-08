@@ -1,7 +1,7 @@
 setLeader: |
   Use the drop-down below each code sample
   to check your understanding of tab order
-height: 25rem
+height: unset
 tabLabel: sample
 questions:
   - stimulus: |
