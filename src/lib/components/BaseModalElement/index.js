@@ -156,7 +156,7 @@ export class BaseModalElement extends BaseElement {
   }
 
   getTrigger() {
-    // When the modal is opened, asign a class to the triggering element
+    // When the modal is opened, assign a class to the triggering element
     // so it can be refocused when the modal is closed.
     const trigger = document.activeElement;
 
