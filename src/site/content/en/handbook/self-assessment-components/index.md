@@ -19,7 +19,7 @@ to check their understanding of concepts covered in your post.
 To include a self-assessment in your post:
 1. Add this line to your post where you want the self-assessment to appear:
     ```html
-    {% raw %}{% Assessment page, 'self-assessment' %}{% endraw %}
+    {% raw %}{% Assessment page, 'my-first-self-assessment' %}{% endraw %}
     ```
 1. Copy `my-first-self-assessment.assess.yml` in `src/site/_drafts/_template-self-assessment`
    to your post's directory.
