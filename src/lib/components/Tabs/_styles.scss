@@ -101,14 +101,6 @@ web-tabs {
     flex-direction: column;
   }
 
-  // Use visibility:hidden and override default hidden style so scroll position
-  // can be reset on hidden panels if needed.
-  .web-tabs__panel[hidden] {
-    display: flex !important;
-    position: absolute;
-    visibility: hidden;
-  }
-
   // Prevent FOUC by hiding panels until after firstUpdated().
   // This isn't ":not(:defined)" because firstUpdated occurs after a frame.
   &.unresolved * {
