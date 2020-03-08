@@ -32,6 +32,7 @@ export class BaseModalElement extends BaseElement {
       open: {type: Boolean, reflect: true},
       animatable: {type: Boolean, reflect: true},
       overflow: {type: Boolean, reflect: true},
+      parentModal: {attribute: "parent-modal", reflect: true},
     };
   }
 
@@ -42,6 +43,7 @@ export class BaseModalElement extends BaseElement {
     this.animatable = false;
     this.inert = true;
     this.overflow = false;
+    this.idSalt = BaseElement.generateIdSalt("web-modal-");
 
     this.onKeyUp = this.onKeyUp.bind(this);
     this.onResize = this.onResize.bind(this);
@@ -74,9 +76,17 @@ export class BaseModalElement extends BaseElement {
     if (this.open_) {
       // Must get trigger before manipulating the DOM.
       this.getTrigger();
-      document.addEventListener("keyup", this.onKeyUp);
+      // Add keyup event listener to this element rather than document
+      // so a nested modal doesn't close its parent modal when the user presses Esc.
+      this.addEventListener("keyup", this.onKeyUp);
       window.addEventListener("resize", this.onResize);
     } else {
+      // Fire custom event to allow other components
+      // to respond when the modal closes, if needed
+      // (e.g., to reenable a button).
+      const event = new Event("close-modal");
+
+      this.dispatchEvent(event);
       window.removeEventListener("resize", this.onResize);
     }
 
@@ -106,7 +116,6 @@ export class BaseModalElement extends BaseElement {
     // Close modal when user presses Escape.
     if (e.key === "Escape") {
       this.open = false;
-      document.removeEventListener("keyup", this.onKeyUp);
     }
   }
 
@@ -121,6 +130,7 @@ export class BaseModalElement extends BaseElement {
       window.addEventListener("resize", this.onResize);
     } else {
       window.removeEventListener("resize", this.onResize);
+      this.removeEventListener("keyup", this.onKeyUp);
     }
     this.inert = !this.open;
   }
@@ -158,6 +168,25 @@ export class BaseModalElement extends BaseElement {
     if (this.open) {
       // When the modal is opened, inert the rest of the document.
       openModal();
+
+      // If the modal is triggered by an element in a parent modal,
+      // inert the triggering modal and tag it so it can be uninerted later.
+      // (Tagging prevents failure if elements move around in the DOM.)
+      const parent = this.closest(this.parentModal);
+
+      if (parent) {
+        parent.inert = true;
+        parent.classList.add("web-modal-" + this.idSalt);
+      }
+    } else if (!this.open && this.parentModal) {
+      // If the modal is triggered by an element in another modal,
+      // uninert the triggering modal but leave the document inert.
+      const parent = document.querySelector(".web-modal-" + this.idSalt);
+
+      if (parent) {
+        parent.inert = false;
+        parent.classList.remove("web-modal-" + this.idSalt);
+      }
     } else {
       // When the modal is closed, uninert the rest of the document.
       closeModal();
