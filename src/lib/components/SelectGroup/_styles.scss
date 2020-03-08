@@ -27,6 +27,7 @@
   margin: 0 !important; // Override w-article-text mixin
   padding: 0 1rem;
   position: relative;
+  z-index: 1; // Ensure selector states are always visible
 }
 
 .web-select-group__option[disabled] {
