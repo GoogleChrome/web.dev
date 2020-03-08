@@ -61,8 +61,13 @@ function questionTemplate(question, assessment) {
         <div data-role="stimulus">${mdBlock(question.stimulus)}</div>
       `
     : "";
+
+  const height = assessment.height
+    ? "question-height='" + assessment.height + "'"
+    : "";
+
   return html`
-    <web-question data-label="${assessment.tabLabel}">
+    <web-question ${height} data-label="${assessment.tabLabel}">
       ${stimulus} ${responsesTemplate(question)}
     </web-question>
   `;
@@ -189,16 +194,13 @@ module.exports = (page, targetAssessment) => {
   }
 
   const path = page.filePathStem.replace(/index$/, "");
-  const height = assessment.height
-    ? "style=height:" + assessment.height + ";"
-    : "";
   const source = "src/site/content" + path + targetAssessment + ".assess.yml";
   const data = fs.readFileSync(source, "utf8");
   const assessment = yaml.safeLoad(data);
 
   // prettier-ignore
   return html`
-    <web-assessment ${height} class="w-callout unresolved ${assessment.questions.length === 1 && "web-assessment--singleton"}" aria-label="Check your understanding">
+    <web-assessment class="w-callout unresolved ${assessment.questions.length === 1 && "web-assessment--singleton"}" aria-label="Check your understanding">
       ${headerTemplate(assessment)} ${contentTemplate(assessment)}
     </web-assessment>
   `;

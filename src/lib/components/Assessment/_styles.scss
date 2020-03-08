@@ -17,16 +17,10 @@ web-assessment {
     display: none !important;
   }
 
-  // Override inline style
-  @media (max-width: 480px) {
-    & {
-      height: unset !important;
-    }
-  }
-
   @include bp(sm) {
     & {
-      height: 40rem;
+      display: flex;
+      margin: 5em 0 !important; // Override .w-callout
       padding: 0 !important; // Override .w-callout
     }
   }
