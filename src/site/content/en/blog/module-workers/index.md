@@ -225,7 +225,7 @@ URL and an optional name argument. This will continue to work for classic shared
 creating module shared workers requires using the new options argument. The [available
 options](https://html.spec.whatwg.org/multipage/workers.html#shared-workers-and-the-sharedworker-interface)
 are the same as those for dedicated worker, including the `name` option that supercedes
-the previous name argument of a `SharedWorker`.
+the previous name argument.
 
 ## What about service worker?
 
