@@ -51,19 +51,19 @@ class AssessmentQuestion extends BaseElement {
       <div class="web-question__footer">
         <button
           @click="${this.onFeedbackModalOpen}"
-          class="w-button web-assessment-feedback-container__open-modal"
+          class="w-button web-assessment__button web-assessment-feedback-container__open-modal"
         >
           Report issue
         </button>
         <button
           @click="${this.onFeedbackDrawerOpen}"
-          class="w-button web-assessment-feedback-container__open-drawer"
+          class="w-button web-assessment__button web-assessment-feedback-container__open-drawer"
         >
           Report issue
         </button>
         <button
           @click="${this.onSubmit}"
-          class="w-button w-button--primary web-question__cta"
+          class="w-button w-button--primary web-assessment__button web-question__cta"
           ?disabled="${this.state !== "unanswered" ? false : true}"
         >
           ${this.ctaLabel}

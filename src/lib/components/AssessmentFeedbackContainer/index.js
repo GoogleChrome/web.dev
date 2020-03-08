@@ -52,7 +52,7 @@ class AssessmentFeedbackContainer extends BaseModalElement {
   }
 
   firstUpdated() {
-    // Listen for close event from Cancel button in child feedback form component
+    // Listen for close event from Cancel button in child feedback form component.
     const form = this.querySelector("web-assessment-feedback-form");
 
     form.addEventListener("cancel-question-feedback", this.onCloseClick);
@@ -78,7 +78,7 @@ class AssessmentFeedbackContainer extends BaseModalElement {
 
   // On desktop, the feedback container is a simulated details element
   // rather than a modal. So, we just need to open it and un-inert it,
-  // rather than inerting the document, etc.
+  // rather than the BaseModalElement logic (inerting the document, etc.).
   set openDrawer(val) {
     if (this.openDrawer_ === val) {
       return;
@@ -90,10 +90,11 @@ class AssessmentFeedbackContainer extends BaseModalElement {
     if (this.openDrawer_) {
       this.inert = false;
     } else {
-      const event = new Event("close-drawer");
-
-      this.dispatchEvent(event);
       this.inert = true;
+
+      // Fire event so parent question component can re-enable buttons.
+      const event = new Event("close-drawer");
+      this.dispatchEvent(event);
     }
     this.requestUpdate("openDrawer", oldVal);
   }
@@ -124,14 +125,14 @@ class AssessmentFeedbackContainer extends BaseModalElement {
   }
 
   openFeedbackModal() {
-    // Insert a placeholder element into the DOM where the form was
-    // so the form can be reinserted there once it's closed.
-    const placeholder = document.createElement("div");
+    // Tag the assessment's previous sibling
+    // so the assessment can be reinserted below it when it's closed.
+    this.previousElementSibling.classList.add(
+      "js-assessment-feedback-placeholder",
+    );
 
-    placeholder.className = "web-assessment-feedback__placeholder";
-    this.after(placeholder);
-    // Since the form is only modal on mobile, only set the dialog role
-    // while it's open.
+    // Since the form is only modal on mobile,
+    // wait to set the dialog role until it's open.
     this.setAttribute("role", "dialog");
 
     // Move the form to the end of the body so it's not
@@ -140,14 +141,14 @@ class AssessmentFeedbackContainer extends BaseModalElement {
   }
 
   closeFeedbackModal() {
-    const placeholder = document.querySelector(
-      ".web-assessment-feedback__placeholder",
+    const target = document.querySelector(
+      ".js-assessment-feedback-placeholder",
     );
 
     this.removeAttribute("role");
-    if (placeholder) {
-      placeholder.before(this);
-      placeholder.remove();
+    if (target) {
+      target.after(this);
+      target.classList.remove("js-assessment-feedback-placeholder");
     }
   }
 
@@ -158,6 +159,8 @@ class AssessmentFeedbackContainer extends BaseModalElement {
     this.open = false;
   }
 
+  // Close drawer when viewport is narrower than mobile breakpoint
+  // so things don't break if a mobile user switches from landscape to portrait.
   onMobileView() {
     this.openDrawer = false;
   }
