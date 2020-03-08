@@ -1,6 +1,11 @@
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
 
+/**
+ * Element that renders a radio group or checkbox group.
+ *
+ * @extends {BaseElement}
+ */
 class SelectGroup extends BaseElement {
   static get properties() {
     return {
