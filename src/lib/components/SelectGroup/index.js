@@ -61,7 +61,6 @@ class SelectGroup extends BaseElement {
     return html`
       <label
         class="web-select-group__option ${labelClass}"
-        data-role="option"
         data-category="Site-Wide Custom Events"
         data-label="${type}, web-select-group-${this.idSalt}-${i}"
       >
