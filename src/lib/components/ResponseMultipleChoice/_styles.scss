@@ -56,6 +56,7 @@ web-response-mc {
 }
 
 // Prevent selector states from appearing after an option has been submitted.
+[state=completed] .web-response-mc__selector::before,
 .web-select-group__option[data-submitted] .web-response-mc__selector::before {
   background: none !important;
 }
