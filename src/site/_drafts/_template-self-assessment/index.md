@@ -11,7 +11,7 @@ tags:
 
 Include a self-assessment in your post using this short code:
 
-{% Assessment page, 'self-assessment' %}
+{% Assessment page, 'my-first-self-assessment' %}
 
 Then populate the `your-post-directory-name.assess.js` file in your post's
 folder following the patterns in `_template-self-assessment/self-assessment.assess.js`.
