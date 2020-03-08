@@ -19,6 +19,7 @@ import "wicg-inert";
 import {handleOverflow} from "../../utils/handle-overflow";
 import {openModal} from "../../actions";
 import {closeModal} from "../../actions";
+import "./_styles.scss";
 
 /**
  * Base element that provides modal functionality.

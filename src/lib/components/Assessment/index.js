@@ -17,6 +17,7 @@
 import {html} from "lit-element";
 import {render} from "lit-html";
 import {BaseModalElement} from "../BaseModalElement";
+import "./_styles.scss";
 
 /**
  * Element that renders a self-assessment callout.
