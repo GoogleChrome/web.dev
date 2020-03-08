@@ -1,0 +1,176 @@
+@import '../../../styles/tools/mixins';
+
+$TEXTFIELD_BACKGROUND_COLOR: $WHITE;
+$TEXTFIELD_PADDING_TOP: .625rem;
+$TEXTFIELD_PADDING_LEFT: .875rem;
+$TEXTFIELD_BOX_SHADOW_WIDTH: 2px;
+$TEXTINPUT_LABEL_TRANSFORM: translateY(-128%) scale(.75);
+$TEXTAREA_LABEL_TRANSFORM: translateY(-100%) scale(.75);
+
+// Mixin for text field box shadow.
+
+// @param {?string=} $color - Color of the box shadow
+// @param {?Boolean=} $focused - Renders an inner shadow
+//    the color of the textfield background if value is true.
+// @param {?string=} $bg-color - Color of the inner shadow
+// @param {?string=} $width - Width of the box shadow
+@mixin textfield-boxshadow($color: $GREY_600, $focused: false, $bg-color: $TEXTFIELD_BACKGROUND_COLOR, $width: $TEXTFIELD_BOX_SHADOW_WIDTH) {
+  @if $focused {
+    box-shadow: 0 0 0 $width $color;
+  } @else {
+    box-shadow:
+      0 0 0 $width / 2 $bg-color,
+      0 0 0 $width $color;
+  }
+}
+
+.web-text-field__fieldset {
+  border: 0; // Reset fieldset styles
+  margin: 0; // Reset fieldset styles
+  padding: 0; // Reset fieldset styles
+  position: relative;
+}
+
+// -----------------------------------------------------------------------------
+// Text field
+// -----------------------------------------------------------------------------
+
+.web-text-field__actual {
+  appearance: none;
+  border: 0;
+  border-radius: $GLOBAL_RADIUS;
+  @include textfield-boxshadow();
+  caret-color: $WEB_PRIMARY_COLOR;
+  color: $PRIMARY_TEXT_COLOR;
+  display: block;
+  font: inherit;
+  line-height: normal;
+  margin: $TEXTFIELD_BOX_SHADOW_WIDTH;
+  overflow: auto;
+  padding: $TEXTFIELD_PADDING_TOP $TEXTFIELD_PADDING_LEFT .75rem;
+  vertical-align: top;
+}
+
+.web-text-field__actual--textarea {
+  line-height: inherit;
+  resize: vertical;
+  width: calc(100% - #{$TEXTFIELD_BOX_SHADOW_WIDTH * 2});
+}
+
+@include hover() {
+  .web-text-field__actual:hover {
+    @include textfield-boxshadow($GREY_900);
+  }
+}
+
+.web-text-field__actual:focus {
+  @include textfield-boxshadow($WEB_PRIMARY_COLOR, true);
+  outline: none;
+}
+
+.web-text-field__actual:invalid {
+  @include textfield-boxshadow($WARNING_COLOR);
+}
+
+.web-text-field__actual:invalid:focus {
+  @include textfield-boxshadow($WARNING_COLOR, true);
+  caret-color: $WARNING_COLOR;
+}
+
+.web-text-field__actual[disabled] {
+  background: none; // override browser disabled style
+  @include textfield-boxshadow($GREY_400);
+  color: $GREY_500;
+}
+
+// -----------------------------------------------------------------------------
+// Label
+// -----------------------------------------------------------------------------
+
+.web-text-field__label {
+  background: $TEXTFIELD_BACKGROUND_COLOR;
+  border-radius: $GLOBAL_RADIUS;
+  color: $GREY_700;
+  left: calc(#{$TEXTFIELD_PADDING_LEFT} - #{$TEXTFIELD_BOX_SHADOW_WIDTH});
+  line-height: 1;
+  max-width: 100%;
+  opacity: 1;
+  padding: .25em;
+  pointer-events: none;
+  position: absolute;
+  text-overflow: clip;
+  top: 1.1875rem;
+  transform-origin: left;
+  transition:
+    color .15s cubic-bezier(.4,0,.2,1),
+    opacity .15s cubic-bezier(.4,0,.2,1),
+    transform .15s cubic-bezier(.4,0,.2,1);
+}
+
+.web-text-field__actual--textarea ~ .web-text-field__label {
+  top: calc(#{$TEXTFIELD_PADDING_TOP} + #{$TEXTFIELD_BOX_SHADOW_WIDTH});
+}
+
+.web-text-field__actual:focus ~ .web-text-field__label {
+  color: $WEB_PRIMARY_COLOR;
+  transform: $TEXTINPUT_LABEL_TRANSFORM;
+}
+
+.web-text-field__actual--textarea:focus ~ .web-text-field__label {
+  transform: $TEXTAREA_LABEL_TRANSFORM;
+}
+
+.web-text-field__actual:invalid ~ .web-text-field__label {
+  color: $WARNING_COLOR;
+}
+
+.web-text-field__actual[disabled] ~ .web-text-field__label,
+.web-text-field__label--visually-hidden {
+  opacity: 0;
+}
+
+.web-text-field__actual--populated ~ .web-text-field__label {
+  color: $PRIMARY_TEXT_COLOR;
+  transform: $TEXTINPUT_LABEL_TRANSFORM;
+}
+
+.web-text-field__actual--populated.web-text-field__actual--textarea ~ .web-text-field__label {
+  transform: $TEXTAREA_LABEL_TRANSFORM;
+}
+
+input:invalid ~ .web-text-field__label::after,
+textarea:invalid ~ .web-text-field__label::after {
+  content: '*';
+}
+
+// -----------------------------------------------------------------------------
+// Helper text
+// -----------------------------------------------------------------------------
+
+.web-text-field__helper-container {
+  color: $GREY_800;
+  display: flex;
+  font-size: .75em;
+  justify-content: space-between;
+  line-height: 1.4167;
+  margin-top: .375rem;
+  padding: 0 calc(#{$TEXTFIELD_PADDING_LEFT} + #{$TEXTFIELD_BOX_SHADOW_WIDTH});
+}
+
+.web-text-field__actual[disabled] ~ .web-text-field__helper-container {
+  color: $GREY_400;
+}
+
+// Following blocks allow toggling of a custom error message when text field is invalid.
+.web-text-field__actual:invalid ~ .web-text-field__helper-container .web-text-field__helper {
+  display: none;
+}
+
+.web-text-field__helper--invalid {
+  color: $WARNING_COLOR;
+  display: none;
+}
+
+.web-text-field__actual:invalid .web-text-field__helper-container .web-text-field__helper--invalid {
+  display: block;
+}

@@ -27,6 +27,9 @@ class AssessmentQuestion extends BaseElement {
     this.requestAssessmentReset = this.requestAssessmentReset.bind(this);
     this.responseComponentUpdated = this.responseComponentUpdated.bind(this);
     this.reset = this.reset.bind(this);
+    this.toggleFooterButtons = this.toggleFooterButtons.bind(this);
+    this.onFeedbackModalClosed = this.onFeedbackModalClosed.bind(this);
+    this.onFeedbackDrawerClosed = this.onFeedbackDrawerClosed.bind(this);
   }
 
   render() {
@@ -46,7 +49,18 @@ class AssessmentQuestion extends BaseElement {
         ${this.prerenderedChildren}
       </div>
       <div class="web-question__footer">
-        <span></span>
+        <button
+          @click="${this.onFeedbackModalOpen}"
+          class="w-button web-assessment-feedback-container__open-modal"
+        >
+          Report issue
+        </button>
+        <button
+          @click="${this.onFeedbackDrawerOpen}"
+          class="w-button web-assessment-feedback-container__open-drawer"
+        >
+          Report issue
+        </button>
         <button
           @click="${this.onSubmit}"
           class="w-button w-button--primary web-question__cta"
@@ -54,6 +68,11 @@ class AssessmentQuestion extends BaseElement {
         >
           ${this.ctaLabel}
         </button>
+        <web-assessment-feedback-container
+          class="web-modal"
+          aria-label="Question feedback form"
+          parent-modal="web-assessment"
+        ></web-assessment-feedback-container>
       </div>
     `;
     /* eslint-enable indent */
@@ -62,13 +81,19 @@ class AssessmentQuestion extends BaseElement {
   firstUpdated() {
     // Listen to state updates from child response components.
     const responseComponents = this.querySelectorAll("[data-role=response]");
-
     for (const component of responseComponents) {
       component.addEventListener(
         "response-update",
         this.responseComponentUpdated,
       );
     }
+
+    // Listen for close event from child feedback form to reenable footer buttons
+    const feedbackForm = this.querySelector(
+      "web-assessment-feedback-container",
+    );
+    feedbackForm.addEventListener("close-modal", this.onFeedbackModalClosed);
+    feedbackForm.addEventListener("close-drawer", this.onFeedbackDrawerClosed);
   }
 
   // Update question state based on state of response components.
@@ -108,6 +133,54 @@ class AssessmentQuestion extends BaseElement {
         } else {
           this.requestAssessmentReset();
         }
+    }
+  }
+
+  // Open question feedback form
+  onFeedbackModalOpen(e) {
+    const feedbackForm = this.querySelector(
+      "web-assessment-feedback-container",
+    );
+
+    this.toggleFooterButtons(true);
+    feedbackForm.open = true;
+  }
+
+  // Re-enable question footer buttons when feedback form is closed
+  onFeedbackModalClosed() {
+    const openFormButton = this.querySelector(
+      ".web-assessment-feedback-container__open-modal",
+    );
+
+    this.toggleFooterButtons(false);
+    openFormButton.focus();
+  }
+
+  onFeedbackDrawerOpen(e) {
+    const feedbackForm = this.querySelector(
+      "web-assessment-feedback-container",
+    );
+
+    this.toggleFooterButtons(true);
+    feedbackForm.openDrawer = true;
+  }
+
+  onFeedbackDrawerClosed() {
+    const openFormButton = this.querySelector(
+      ".web-assessment-feedback-container__open-drawer",
+    );
+
+    this.toggleFooterButtons(false);
+    openFormButton.focus();
+  }
+
+  toggleFooterButtons(state) {
+    const footerButtons = this.querySelectorAll(
+      ".web-question__footer > button",
+    );
+
+    for (const button of footerButtons) {
+      button.disabled = state;
     }
   }
 
