@@ -36,8 +36,8 @@ class Assessment extends BaseModalElement {
     this.onAssessmentAnimationEnd = this.onAssessmentAnimationEnd.bind(this);
     this.onAssessmentResize = this.onAssessmentResize.bind(this);
     this.reset = this.reset.bind(this);
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+    this.openAssessment = this.openAssessment.bind(this);
+    this.closeAssessment = this.closeAssessment.bind(this);
   }
 
   render() {
@@ -94,6 +94,7 @@ class Assessment extends BaseModalElement {
 
   connectedCallback() {
     super.connectedCallback();
+    // Close modal if viewport is >481 px so document isn't inert on desktop
     const mqString = `(min-width: 481px)`;
 
     matchMedia(mqString).addListener(this.onAssessmentResize);
@@ -118,19 +119,16 @@ class Assessment extends BaseModalElement {
     if (changedProps.has("open")) {
       this.modal = this.open;
       if (this.open) {
-        this.openModal();
+        this.openAssessment();
       } else {
-        this.addEventListener("animationend", this.closeModal, {
+        this.addEventListener("animationend", this.closeAssessment, {
           once: true,
         });
       }
     }
   }
 
-  openModal() {
-    // TODO: Probably want to make a copy instead of moving the assessment
-    // if there's a way to do that while retaining state.
-
+  openAssessment() {
     // Insert a placeholder element into the DOM where the assessment was
     // so the assessment can be reinserted there once it's closed.
     const placeholder = document.createElement("div");
@@ -149,7 +147,7 @@ class Assessment extends BaseModalElement {
     document.body.append(this);
   }
 
-  closeModal() {
+  closeAssessment() {
     const placeholder = document.querySelector(".web-assessment__placeholder");
 
     // Since Assessment opens itself, override BaseModalElement's inert behavior

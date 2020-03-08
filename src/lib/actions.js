@@ -121,21 +121,37 @@ export const requestFetchReports = store.action((state, url, startDate) => {
 });
 
 export const expandSideNav = store.action(() => {
-  document.body.classList.add("web-side-nav--expanded");
-  const main = document.querySelector("main");
-  const header = document.querySelector("web-header");
-  main.inert = true;
-  header.inert = true;
+  openModal();
   return {isSideNavExpanded: true};
 });
 
 export const collapseSideNav = store.action(() => {
-  document.body.classList.remove("web-side-nav--expanded");
+  closeModal();
+  return {isSideNavExpanded: false};
+});
+
+export const openModal = store.action(() => {
   const main = document.querySelector("main");
   const header = document.querySelector("web-header");
+  const footer = document.querySelector(".w-footer");
+
+  document.documentElement.classList.add("web-modal__overflow-hidden");
+  main.inert = true;
+  header.inert = true;
+  footer.inert = true;
+  return {isModalOpen: true};
+});
+
+export const closeModal = store.action(() => {
+  const main = document.querySelector("main");
+  const header = document.querySelector("web-header");
+  const footer = document.querySelector(".w-footer");
+
+  document.documentElement.classList.remove("web-modal__overflow-hidden");
   main.inert = false;
   header.inert = false;
-  return {isSideNavExpanded: false};
+  footer.inert = false;
+  return {isModalOpen: false};
 });
 
 export const checkIfUserAcceptsCookies = store.action(() => {
