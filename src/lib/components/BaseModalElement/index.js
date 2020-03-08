@@ -17,6 +17,8 @@
 import {BaseElement} from "../BaseElement";
 import "wicg-inert";
 import {handleOverflow} from "../../utils/handle-overflow";
+import {openModal} from "../../actions";
+import {closeModal} from "../../actions";
 
 /**
  * Base element that provides modal functionality.
@@ -140,23 +142,14 @@ export class BaseModalElement extends BaseElement {
     trigger.classList.add("js-modal-trigger");
   }
 
+  // Manage state of the document based on the modal state.
   manageDocument() {
-    // Inert everything other than the modal when it's open.
-    const main = document.querySelector("main");
-    const header = document.querySelector("web-header");
-    const footer = document.querySelector("footer");
-    const overFlowClass = "web-modal__overflow-hidden";
-
     if (this.open) {
-      document.documentElement.classList.add(overFlowClass);
-      main.inert = true;
-      header.inert = true;
-      footer.inert = true;
+      // When the modal is opened, inert the rest of the document.
+      openModal();
     } else {
-      document.documentElement.classList.remove(overFlowClass);
-      main.inert = false;
-      header.inert = false;
-      footer.inert = false;
+      // When the modal is closed, uninert the rest of the document.
+      closeModal();
     }
   }
 

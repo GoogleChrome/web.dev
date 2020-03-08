@@ -35,8 +35,9 @@ class Assessment extends BaseModalElement {
 
     this.onAssessmentAnimationEnd = this.onAssessmentAnimationEnd.bind(this);
     this.onAssessmentResize = this.onAssessmentResize.bind(this);
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+    this.onOpenClick = this.onOpenClick.bind(this);
+    this.openAssessment = this.openAssessment.bind(this);
+    this.closeAssessment = this.closeAssessment.bind(this);
   }
 
   render() {
@@ -111,9 +112,9 @@ class Assessment extends BaseModalElement {
     if (changedProps.has("open")) {
       this.modal = this.open;
       if (this.open) {
-        this.openModal();
+        this.openAssessment();
       } else {
-        this.addEventListener("animationend", this.closeModal, {
+        this.addEventListener("animationend", this.closeAssessment, {
           once: true,
         });
       }
