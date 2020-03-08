@@ -4,8 +4,8 @@ const Prism = require("prismjs");
 const markdownItOptions = {
   html: true,
   highlight: function(str, lang) {
-    // TODO: Abstract this so it doesn't duplicate 11ty config
-    // TODO: Figure out why line breaks are ignored
+    // TODO (mfriesenhahn): Abstract this so it doesn't duplicate 11ty config
+    // TODO (mfriesenhahn): Figure out why line breaks are ignored
     if (lang && Prism.languages[lang]) {
       return Prism.highlight(str, Prism.languages[lang], "" + lang + "");
     }
@@ -31,7 +31,7 @@ const rules = {
 mdLib.renderer.rules = {...mdLib.renderer.rules, ...rules};
 
 /**
- * Render content as inline markdown.
+ * Render content as markdown.
  * @param {string} content
  * @return {?string}
  */
