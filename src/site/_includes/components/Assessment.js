@@ -17,6 +17,8 @@
 const {html} = require("common-tags");
 const md = require("markdown-it")();
 const mdBlock = require("../../_filters/md-block");
+const fs = require("fs");
+const yaml = require("js-yaml");
 
 function headerTemplate(assessment) {
   if (assessment.setLeader && assessment.questions.length > 1) {
@@ -81,7 +83,7 @@ function responseTemplate(response) {
   if (!response.type) {
     throw new Error(`
       Can't create a self-assessment response component without a type argument.
-      Check that all response component objects in your assessment's *.assess.js file
+      Check that all response component objects in your assessment's *.assess.yml file
       include a type key.
     `);
   }
@@ -94,7 +96,7 @@ function responseTemplate(response) {
   ) {
     throw new Error(`
       The cardinality value for self-assessment response components must be n, n+, or n-m.
-      Check your assessment's *.assess.js file for invalid cardinality values.
+      Check your assessment's *.assess.yml file for invalid cardinality values.
     `);
   }
 
@@ -102,7 +104,7 @@ function responseTemplate(response) {
     throw new Error(`
       The correctAnswers value for self-assessment response components
       must be a comma-separated list of positive integers.
-      Check your assessment's *.assess.js file for invalid correctAnswer values.
+      Check your assessment's *.assess.yml file for invalid correctAnswer values.
     `);
   }
 
@@ -113,7 +115,7 @@ function responseTemplate(response) {
   ) {
     throw new Error(`
       The columns value for self-assessment response components must be true or false.
-      Check your assessment's *.assess.js file for invalid columns values.
+      Check your assessment's *.assess.yml file for invalid columns values.
     `);
   }
 
@@ -129,7 +131,7 @@ function responseTemplate(response) {
     default:
       throw new Error(`
         Unrecognized self-assessment question response type.
-        Check your assessment's *.assess.js file for invalid type values.
+        Check your assessment's *.assess.yml file for invalid type values.
       `);
   }
 
@@ -182,19 +184,17 @@ module.exports = (page, targetAssessment) => {
   if (!targetAssessment) {
     throw new Error(`
       Can't create Assessment component without a target assessment.
-      Pass the file name, without ".assess.js", of the desired assessment as a string.
+      Pass the file name, without ".assess.yml", of the desired assessment as a string.
     `);
   }
 
   const path = page.filePathStem.replace(/index$/, "");
-  const data = require("../../content" +
-    path +
-    targetAssessment +
-    ".assess.js");
-  const assessment = data.assessment;
   const height = assessment.height
     ? "style=height:" + assessment.height + ";"
     : "";
+  const source = "src/site/content" + path + targetAssessment + ".assess.yml";
+  const data = fs.readFileSync(source, "utf8");
+  const assessment = yaml.safeLoad(data);
 
   // prettier-ignore
   return html`

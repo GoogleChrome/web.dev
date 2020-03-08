@@ -21,12 +21,13 @@ To include a self-assessment in your post:
     ```html
     {% raw %}{% Assessment page, 'self-assessment' %}{% endraw %}
     ```
-1. Copy `self-assessment.assess.js` in `src/site/_drafts/_template-self-assessment`
+1. Copy `my-first-self-assessment.assess.yml` in `src/site/_drafts/_template-self-assessment`
    to your post's directory.
-1. You can keep the file's name or change it to match
-   the topic of your assessment: `your-assessment-topic.assess.js`.
-   Just make sure to update the argument in the short code if you do change the file name.
-1. Follow the pattern in the file to create your question set.
+1. Change the file's name to match
+   the topic of your assessment: `your-assessment-topic.assess.yml`.
+1. Update the argument in the short code to match the new file name.
+1. Using the YAML template as a starting point,
+   follow the instructions below to create your question set.
 
 ## Question set parameters
 
@@ -34,8 +35,8 @@ When a self-assessment includes more than one question,
 include a statement about what the self-assessment covers
 using the `setLeader` key. For example:
 
-```js
-setLeader: "Test your knowledge of resource optimization",
+```yaml
+setLeader: Test your knowledge of resource optimization
 ```
 
 Self-assessments have a default height of 640&nbsp;px.
