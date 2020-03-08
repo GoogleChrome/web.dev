@@ -19,12 +19,15 @@
 @import '../../../styles/tools/mixins';
 
 web-tabs {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
   .web-tabs__tablist {
     border-bottom: 1px solid $GREY_300;
     display: flex;
-    margin: 0 -24px;
     overflow-x: auto;
-    width: calc(100% + 48px);
+    width: 100%;
   }
 
   .web-tabs__tab {
@@ -70,8 +73,16 @@ web-tabs {
     right: 0;
   }
 
-  .web-tabs__panel[hidden] {
-    display: none;
+  .web-tabs__panel {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+
+  // Prevent FOUC by hiding panels until after firstUpdated().
+  // This isn't ":not(:defined)" because firstUpdated occurs after a frame.
+  &.unresolved * {
+    display: none !important;
   }
 }
 

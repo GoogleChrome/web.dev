@@ -1,7 +1,20 @@
-web-assessment {
+@import '../../../styles/settings/colors';
+@import '../../../styles/tools/breakpoints';
+
+.web-assessment__launcher {
   display: flex;
   flex-direction: column;
-  padding: 0;
+  margin: 3em 0;
+}
+
+// Allows buttons to resize with root font-size, maximizing space for questions
+.web-assessment__button {
+  height: 3rem;
+}
+
+web-assessment {
+  display: none;
+  flex-direction: column;
 
   &[animatable] {
     animation: .25s ease reverse modal-slideup;
@@ -23,11 +36,6 @@ web-assessment {
       margin: 5em 0 !important; // Override .w-callout
       padding: 0 !important; // Override .w-callout
     }
-  }
-
-  // Allows buttons to resize with root font-size, maximizing space for questions
-  .w-button {
-    height: 3rem;
   }
 }
 
@@ -52,7 +60,6 @@ web-assessment {
 }
 
 .web-assessment__close {
-  display: none;
   position: absolute;
   right: .5rem;
   top: .75rem;
@@ -66,8 +73,12 @@ web-assessment {
   content: 'school';
 }
 
+.web-assessment--singleton .web-assessment__header {
+  border-bottom: 1px solid $BORDER_COLOR;
+}
+
 .web-assessment__content {
-  display: none;
+  display: flex;
   flex: 1;
 }
 
@@ -75,6 +86,7 @@ web-assessment[open],
 web-assessment[animatable] {
   background: $WHITE;
   bottom: 0;
+  display: flex;
   left: 0;
   margin: 0;
   position: fixed;
@@ -82,35 +94,18 @@ web-assessment[animatable] {
   top: 0;
   z-index: 250; // Between Header and SideNav
 
-  // Adjust visisbility of open button, close button, set leader, and content
-  // when in modal view on mobile.
-  .web-assessment__open {
-    display: none;
-  }
-
-  .web-assessment__close {
-    display: inline-flex;
-  }
-
   .web-assessment__header {
     padding: 1.5rem 3.5rem 1rem 1.5rem;
   }
 
-  &.web-assessment--singleton .web-assessment__header {
-    border-bottom: 1px solid $BORDER_COLOR;
-  }
-
+  // Adjust visisbility of set leader when in modal view on mobile.
   .web-assessment__set-leader {
     display: none;
-  }
-
-  .web-assessment__content {
-    display: flex;
   }
 }
 
 @include bp(sm) {
-  .web-assessment__open {
+  .web-assessment__launcher {
     display: none;
   }
 
@@ -120,33 +115,5 @@ web-assessment[animatable] {
 
   .web-assessment__header {
     padding: 1.5rem 1.5rem 1rem;
-  }
-
-  .web-assessment--singleton .web-assessment__header {
-    border-bottom: 1px solid $BORDER_COLOR;
-  }
-
-  .web-assessment__content {
-    display: flex;
-  }
-
-  // Override visisbility of close button and set leader
-  // when in modal view on desktop (in case JS fails).
-  web-assessment[open] {
-    margin: 2.25em 0;
-    position: unset;
-    z-index: unset;
-
-    .web-assessment__close {
-      display: none;
-    }
-
-    .web-assessment__header {
-      padding: 1.5rem 1.5rem 1rem;
-    }
-
-    .web-assessment__set-leader {
-      display: block;
-    }
   }
 }

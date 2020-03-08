@@ -15,6 +15,7 @@
  */
 
 import {html} from "lit-element";
+import {render} from "lit-html";
 import {BaseModalElement} from "../BaseModalElement";
 
 /**
@@ -33,6 +34,7 @@ class Assessment extends BaseModalElement {
     super();
     this.modal = false;
 
+    this.renderLauncher = this.renderLauncher.bind(this);
     this.onAssessmentAnimationEnd = this.onAssessmentAnimationEnd.bind(this);
     this.onAssessmentResize = this.onAssessmentResize.bind(this);
     this.onOpenClick = this.onOpenClick.bind(this);
@@ -70,24 +72,23 @@ class Assessment extends BaseModalElement {
           </span>
         </button>
       </div>
-      <button
-        @click="${this.onOpenClick}"
-        class="w-button w-button--primary web-assessment__open"
-      >
-        Open quiz
-      </button>
       ${this.prerenderedChildren}
     `;
   }
 
   firstUpdated() {
-    // Override BaseModalElement's inert behavior since Assessment opens itself.
-    this.inert = false;
     this.classList.remove("unresolved");
+    // Override BaseModalElement's inert behavior since Assessment
+    // is visible on desktop in closed state.
+    // (display: none used to remove it from the tab order when closed on mobile.)
+    this.inert = false;
+    // Render the launcher that appears in closed state on mobile.
+    this.renderLauncher();
   }
 
   connectedCallback() {
     super.connectedCallback();
+    // Close modal if viewport is >481 px so document isn't inert on desktop
     const mqString = `(min-width: 481px)`;
 
     matchMedia(mqString).addListener(this.onAssessmentResize);
@@ -98,6 +99,34 @@ class Assessment extends BaseModalElement {
     const mqString = `(min-width: 481px)`;
 
     matchMedia(mqString).removeListener(this.onAssessmentResize);
+  }
+
+  renderLauncher() {
+    const launcher = document.createElement("div");
+    const contentTemplate = (setLeader) => html`
+      <div class="w-callout__header web-assessment__header">
+        <h2 class="w-callout__lockup web-assessment__lockup">
+          Check your understanding
+        </h2>
+        <div class="w-callout__blurb web-assessment__set-leader">
+          ${setLeader}
+        </div>
+      </div>
+      <button
+        @click="${this.onOpenClick}"
+        class="w-button w-button--primary web-assessment__button web-assessment__open"
+      >
+        Open quiz
+      </button>
+    `;
+    // lit-element prevents children from being duplicated,
+    // so grab setLeader text content.
+    const text = this.setLeader[0] ? this.setLeader[0].innerText : "";
+    const content = contentTemplate(text);
+
+    render(content, launcher);
+    launcher.className = "web-assessment__launcher";
+    this.before(launcher);
   }
 
   onOpenClick() {
@@ -121,18 +150,13 @@ class Assessment extends BaseModalElement {
     }
   }
 
-  openModal() {
-    // TODO: Probably want to make a copy instead of moving the assessment
-    // if there's a way to do that while retaining state.
+  openAssessment() {
+    // Tag the assessment's previous sibling
+    // so the assessment can be reinserted below it when it's closed.
+    this.previousElementSibling.classList.add("js-assessment-placeholder");
 
-    // Insert a placeholder element into the DOM where the assessment was
-    // so the assessment can be reinserted there once it's closed.
-    const placeholder = document.createElement("div");
-
-    placeholder.className = "web-assessment__placeholder";
-    this.after(placeholder);
-    // Since the assessment opens itself, only set the dialog role
-    // while it's open.
+    // Since the assessment is visible when closed on desktop,
+    // wait to set the dialog role until it's open.
     this.setAttribute("role", "dialog");
     this.addEventListener("animationend", this.onAssessmentAnimationEnd, {
       once: true,
@@ -143,23 +167,19 @@ class Assessment extends BaseModalElement {
     document.body.append(this);
   }
 
-  closeModal() {
-    const placeholder = document.querySelector(".web-assessment__placeholder");
+  closeAssessment() {
+    const target = document.querySelector(".js-assessment-placeholder");
 
-    // Since Assessment opens itself, override BaseModalElement's inert behavior
-    // and remove the dialog role.
+    // Since the assessment is visible when closed on desktop,
+    // override BaseModalElement's inert behavior.
+    // (display: none used to remove it from the tab order when closed on mobile.)
     this.inert = false;
-    this.removeAttribute("role");
-    // Again, need to replace this.
-    if (placeholder) {
-      placeholder.before(this);
-      placeholder.remove();
+    // Move assessment back to its original location in case viewport
+    // becomes larger than the mobile breakpoint.
+    if (target) {
+      target.after(this);
+      target.classList.remove("js-assessment-placeholder");
     }
-
-    // Since the assessment is removed and reinserted into the DOM
-    // after BaseModalElement's manageFocus() method runs,
-    // focus reverts to the body, so need to focus the assessment's Open button.
-    this.querySelector(".web-assessment__open").focus();
   }
 
   onAssessmentAnimationEnd() {
@@ -176,11 +196,14 @@ class Assessment extends BaseModalElement {
     tabs.focusTab(tabs.activeTab);
   }
 
-  // Close modal when viewport is wider than mobile breakpoint
+  // When viewport is wider than mobile breakpoint
   // (src/styles/tools/_breakpoints.scss)
-  // so things don't break if a mobile user switches to landscape orientation.
+  // close modal and remove dialog role
+  // so things don't break if a mobile user switches to landscape orientation
+  // while the assessment modal is open.
   onAssessmentResize() {
     this.open = false;
+    this.removeAttribute("role");
   }
 }
 
