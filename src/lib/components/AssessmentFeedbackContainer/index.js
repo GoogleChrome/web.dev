@@ -157,6 +157,9 @@ class AssessmentFeedbackContainer extends BaseModalElement {
   // so things don't break if a mobile user switches to landscape orientation.
   onDesktopView() {
     this.open = false;
+    // Manually call closeFeedbackModal because the parent Assessment component's
+    // closeAssessment method prevents the feedback modal's close animation.
+    this.closeFeedbackModal();
   }
 
   // Close drawer when viewport is narrower than mobile breakpoint
