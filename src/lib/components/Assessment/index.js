@@ -37,6 +37,7 @@ class Assessment extends BaseModalElement {
     this.renderLauncher = this.renderLauncher.bind(this);
     this.onAssessmentAnimationEnd = this.onAssessmentAnimationEnd.bind(this);
     this.onAssessmentResize = this.onAssessmentResize.bind(this);
+    this.reset = this.reset.bind(this);
     this.onOpenClick = this.onOpenClick.bind(this);
     this.openAssessment = this.openAssessment.bind(this);
     this.closeAssessment = this.closeAssessment.bind(this);
@@ -84,6 +85,12 @@ class Assessment extends BaseModalElement {
     this.inert = false;
     // Render the launcher that appears in closed state on mobile.
     this.renderLauncher();
+    // Listen to reset requests from child question components.
+    const questions = this.querySelectorAll("web-question");
+
+    for (const question of questions) {
+      question.addEventListener("request-assessment-reset", this.reset);
+    }
   }
 
   connectedCallback() {
@@ -204,6 +211,20 @@ class Assessment extends BaseModalElement {
   onAssessmentResize() {
     this.open = false;
     this.removeAttribute("role");
+  }
+
+  // Reset assessment to initial state.
+  reset() {
+    const tabs = this.querySelector("web-tabs");
+    const questions = this.querySelectorAll("web-question");
+
+    for (const question of questions) {
+      question.reset();
+    }
+
+    if (tabs) {
+      tabs.focusTab(0);
+    }
   }
 }
 
