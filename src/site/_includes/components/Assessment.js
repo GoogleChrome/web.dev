@@ -195,8 +195,7 @@ module.exports = (page, targetAssessment) => {
   // prettier-ignore
   return html`
     <web-assessment class="w-callout unresolved ${assessment.questions.length === 1 && "web-assessment--singleton"}" aria-label="Check your understanding">
-      ${headerTemplate(assessment)}
-      ${contentTemplate(assessment)}
+      ${headerTemplate(assessment)} ${contentTemplate(assessment)}
     </web-assessment>
   `;
 };
