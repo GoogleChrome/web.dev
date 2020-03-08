@@ -54,8 +54,13 @@ You can omit the `setLeader` if there's only one question in the set.
 
 Self-assessments have a default question content height of 400&nbsp;px.
 (A stable height keeps the location of the **Check** / **Next** button predictable.)
+
 If most of your questions are taller or shorter than the default height,
 change it using the `height` key.
+
+If you want each question's height to match its content, set `height` to `unset`.
+(Note that this will cause the self-assessment height to change
+as users check their responses and navigate across items.)
 
 ### Question labels
 

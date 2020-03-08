@@ -1,7 +1,7 @@
 setLeader: |
   Use the drop-down below each cross-origin resource
   to check whether the specified action is allowed
-height: 25rem
+height: unset
 tabLabel: sample
 questions:
   - stimulus: |

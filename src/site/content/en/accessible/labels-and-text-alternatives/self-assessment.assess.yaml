@@ -1,7 +1,7 @@
 setLeader: |
   Use the drop-down below each code sample to check whether the HTML
   element in the sample has an accessible name
-height: 25rem
+height: unset
 tabLabel: sample
 questions:
   - stimulus: |
