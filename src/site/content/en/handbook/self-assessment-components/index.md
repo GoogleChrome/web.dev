@@ -31,18 +31,37 @@ To include a self-assessment in your post:
 
 ## Question set parameters
 
+### Set leader
+
 When a self-assessment includes more than one question,
-include a statement about what the self-assessment covers
-using the `setLeader` key. For example:
+add a **set leader**—a statement about what the question set
+as a whole covers—using the `setLeader` key. For example:
 
 ```yaml
 setLeader: Test your knowledge of resource optimization
 ```
 
-Self-assessments have a default height of 640&nbsp;px.
+You can omit the `setLeader` if there's only one question in the set.
+(One-question sets will ignore a `setLeader` if you accidentally include one.)
+
+{% Aside %}
+On mobile, the set leader will appear on its own with an **Open quiz** button,
+so make sure the set leader makes sense whether or not the questions are visible.
+{% endAside %}
+
+### Height
+
+Self-assessments have a default question content height of 400&nbsp;px.
 (A stable height keeps the location of the **Check** / **Next** button predictable.)
+
 If most of your questions are taller or shorter than the default height,
 change it using the `height` key.
+
+If you want each question's height to match its content, set `height` to `unset`.
+(Note that this will cause the self-assessment height to change
+as users check their responses and navigate across items.)
+
+### Question labels
 
 You can adjust the labels for the question tabs using the `tabLabel` key.
 There are three options:
@@ -50,7 +69,7 @@ There are three options:
   where _n_ is the number of the tab in the set.
   Use for sets that mostly ask users to submit a response.
 - `sample`: creates the label `Sample n`.
-  Use for sets composed mostly of think-and-checks.
+  Use for sets composed mostly of [think-and-checks](#think-and-checks).
 - `bare`: creates the label `n`
   Use for larger sets where horizontal space is limited.
 
