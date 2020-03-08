@@ -6,6 +6,7 @@ tabLabel: sample
 questions:
   - stimulus: |
       This HTML renders a modal dialog:
+
       ```html
       <div role="dialog" aria-labelledby="dialog-header">
       <button aria-label="Close"></button>

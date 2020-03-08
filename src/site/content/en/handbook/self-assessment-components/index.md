@@ -27,10 +27,10 @@ To include a self-assessment in your post:
     ```html
     {% raw %}{% Assessment page, 'my-first-self-assessment' %}{% endraw %}
     ```
-1. Copy `my-first-self-assessment.assess.yaml` in `src/site/_drafts/_template-self-assessment`
+1. Copy `my-first-self-assessment.assess.yml` in `src/site/_drafts/_template-self-assessment`
    to your post's directory.
 1. Change the file's name to match
-   the topic of your assessment: `your-assessment-topic.assess.yaml`.
+   the topic of your assessment: `your-assessment-topic.assess.yml`.
 1. Update the argument in the short code to match the new file name.
 1. Using the YAML template as a starting point,
    follow the instructions below to create your question set.
