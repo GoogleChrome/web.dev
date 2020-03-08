@@ -210,7 +210,7 @@ to avoid worker instantiation having to wait to download the worker script. Howe
 ## What about shared workers?
 
 [Shared workers](https://developer.mozilla.org/en-US/docs/Web/API/SharedWorker/SharedWorker) have
-also now been updated with support for JavaScript modules as of Chrome 82. Like dedicated workers,
+been updated with support for JavaScript modules as of Chrome 82. Like dedicated workers,
 constructing a shared worker with the `{type:"module"}` option now loads the worker script as a
 module rather than a classic script:
 
@@ -220,12 +220,12 @@ const worker = new SharedWorker('/worker.js', {
 });
 ```
 
-Prior to the addition of JavaScript modules support, the `SharedWorker` constructor expected only a
-URL and optional name argument. This will continue to work for classic shared worker usage, however
+Prior to support of JavaScript modules, the `SharedWorker` constructor expected only a
+URL and an optional name argument. This will continue to work for classic shared worker usage, however
 creating module shared workers requires using the new options argument. The [available
 options](https://html.spec.whatwg.org/multipage/workers.html#shared-workers-and-the-sharedworker-interface)
 are the same as those for dedicated worker, including the `name` option that supercedes
-`SharedWorker`'s previous name argument.
+the previous name argument of a `SharedWorker`.
 
 ## What about service worker?
 
