@@ -1,6 +1,5 @@
 setLeader: |
-  Use the drop-down below each code sample
-  to check your understanding of tab order
+  Check your understanding of tab order
 height: unset
 tabLabel: sample
 questions:

@@ -50,6 +50,11 @@ setLeader: Test your knowledge of resource optimization
 You can omit the `setLeader` if there's only one question in the set.
 (One-question sets will ignore a `setLeader` if you accidentally include one.)
 
+{% Aside %}
+On mobile, the set leader will appear on its own with an **Open quiz** button,
+so make sure the set leader makes sense whether or not the questions are visible.
+{% endAside %}
+
 ### Height
 
 Self-assessments have a default question content height of 400&nbsp;px.
