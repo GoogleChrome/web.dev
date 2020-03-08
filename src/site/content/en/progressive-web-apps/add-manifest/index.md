@@ -3,8 +3,9 @@ layout: post
 title: Add a web app manifest
 authors:
   - petelepage
+  - beaufortfrancois
 date: 2018-11-05
-updated: 2020-02-24
+updated: 2020-02-25
 description: |
   The web app manifest is a simple JSON file that tells the browser about your
   web application and how it should behave when installed on the user's mobile
@@ -118,14 +119,25 @@ be made to launch full screen.
         <td>
           Opens the web app to look and feel like a standalone native
           app. The app runs in its own window, separate from the browser, and
-          hides standard browser UI elements like the URL bar.</td>
+          hides standard browser UI elements like the URL bar.
+          <figure class="w-figure">
+            <img class="w-screenshot"
+                src="standalone-pwa-window.png"
+                alt="An example of a PWA window with standalone display.">
+          </figure>
+        </td>
       </tr>
       <tr>
         <td><code>minimal-ui</code></td>
         <td>
-          This mode is similar to <code>fullscreen</code>, but provides the
-          user a minimal set of UI elements for
-          controlling navigation (such as back, forward, and reload).
+          This mode is similar to <code>standalone</code>, but provides the
+          user a minimal set of UI elements for controlling navigation (such
+          as back and reload).
+          <figure class="w-figure">
+            <img class="w-screenshot"
+                src="minimal-ui-pwa-window.png"
+                alt="An example of a PWA window with minimal-ui display.">
+          </figure>
         </td>
       </tr>
       <tr>
@@ -167,6 +179,12 @@ A few other notes on `scope`:
 The `theme_color` sets the color of the tool bar, and may be reflected in
 the app's preview in task switchers. The `theme_color` should match the
 `meta` theme color specified in your document head.
+
+<figure class="w-figure">
+  <img class="w-screenshot"
+      src="theme_color-pwa-window.png"
+      alt="An example of a PWA window with custom theme_color.">
+</figure>
 
 ## Add the web app manifest to your pages {: #link-manifest }
 

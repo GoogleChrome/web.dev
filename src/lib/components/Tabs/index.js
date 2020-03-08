@@ -1,6 +1,7 @@
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
 import {handleOverflow} from "../../utils/handle-overflow";
+import "./_styles.scss";
 
 /**
  * Element that wraps each child element in a tab panel

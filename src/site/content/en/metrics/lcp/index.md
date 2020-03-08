@@ -4,7 +4,7 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2019-11-07
+updated: 2020-03-03
 description: |
   This post introduces the Largest Contentful Paint (LCP) metric and explains
   how to measure it
@@ -270,6 +270,13 @@ same as the largest element, and developers may be more interested in measuring
 the render times of these other elements instead. This is possible using the
 [Element Timing API](https://wicg.github.io/element-timing/), as described in
 the article on [custom metrics](/custom-metrics/#element-timing-api).
+
+## What is a good LCP score?
+
+To provide a good user experience, sites should strive to have Largest
+Contentful Paint occur within the first **2.5 seconds** of the page starting to
+load. To ensure you're hitting this target for most of your users, a good
+threshold to measure is the **75th percentile** of page loads on mobile devices.
 
 ## How to improve LCP
 

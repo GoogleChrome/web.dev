@@ -23,7 +23,7 @@ tags:
 Recently, I published [Virtual reality comes to the
 web](https://web.dev/vr-comes-to-the-web/), an article that introduced basic
 concepts behind the [WebXR Device
-API](https://wiki.developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API). I
+API](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API). I
 also provided instructions for requesting, entering, and ending an XR session.
 
 This article describes the frame loop, which is a user-agent controlled
@@ -157,7 +157,7 @@ Because steps 1 and 2a were covered in the previous article, I'll start at step
 It probably goes without saying. To draw anything in AR or VR, I need to know
 where the viewer is and where they're looking. The viewer's position and
 orientation are provided by an [XRViewerPose
-object](https://wiki.developer.mozilla.org/en-US/docs/Web/API/XRViewerPose). I
+object](https://developer.mozilla.org/en-US/docs/Web/API/XRViewerPose). I
 get the viewer's pose by calling `XRFrame.getViewerPose()` on the current
 animation frame. I pass it the reference space I acquired when I set up the
 session. The values returned by this object are always relative to the reference

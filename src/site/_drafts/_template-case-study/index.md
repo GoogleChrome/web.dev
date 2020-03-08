@@ -2,6 +2,8 @@
 title: TODO           # Title should mention the type of change that was made and the improvement.
 subhead: TODO         # Subhead can elaborate on the title, if needed.
 date: YYYY-MM-DD
+authors:
+  - TODO
 description: |
   TODO                # Description is the paragraph that appears in Search.
 tags:
@@ -39,7 +41,8 @@ tags:
 
 <!--
  # A general note for you, the author: how confident are you in the 
- # partner's data? Your name (and reputation) will be associated to this post.
+ # partner's data, and our interpretation of the data?
+ # Your name (and reputation) will be associated to this post.
 -->
 
 <!--

@@ -4,6 +4,7 @@ subhead: Reading and writing to NFC tags is now possible.
 authors:
   - beaufortfrancois
 date: 2020-02-12
+updated: 2020-03-03
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: A photo of NFC tags
@@ -17,10 +18,9 @@ tags:
 
 {% Aside %}
 Web apps should be able to do anything native apps can. The [Capabilities
-project](https://developers.google.com/web/updates/capabilities), of which Web
-NFC is only a part, aims to do just that. To learn about other capabilities and
-to keep up with their progress, follow [Unlocking new capabilities for the
-web](https://developers.google.com/web/updates/capabilities).
+project](/fugu-status/), of which Web NFC is only a part, aims to do just that.
+To learn about other capabilities and to keep up with their progress, follow
+[Unlocking new capabilities for the web](/fugu-status/).
 {% endAside %}
 
 ## What is Web NFC? {: #what }
@@ -90,10 +90,10 @@ trial is expected to end in Chrome 84.
 ### Enabling via chrome://flags
 
 To experiment with Web NFC locally on Android, without an origin trial token,
-enable the `#enable-webnfc` flag in `chrome://flags`.
+enable the `#experimental-web-platform-features` flag in `chrome://flags`.
 
 <figure class="w-figure">
-  <img src="./chrome-flag.png" alt="Screenshot of the chrome://flags internal page to enable for Web NFC on Android">
+  <img src="./chrome-flag.jpg" alt="Screenshot of the chrome://flags internal page to enable for Web NFC on Android">
   <figcaption class="w-figcaption">Experimental flag for Web NFC on Android</figcaption>
 </figure>
 

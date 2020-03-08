@@ -2,6 +2,7 @@ import {html} from "lit-element";
 import {until} from "lit-html/directives/until";
 import {BaseElement} from "../BaseElement";
 import {signIn, signOut} from "../../fb";
+import "./_styles.scss";
 
 const emptyFrag = document.createDocumentFragment();
 
@@ -65,7 +66,7 @@ class ProfileSwitcher extends BaseElement {
       image.onload = () => resolve(image);
 
       // Ignore errors and don't display a photo at all.
-      image.onerror = () => reject(emptyFrag);
+      image.onerror = () => resolve(emptyFrag);
     });
     return true;
   }

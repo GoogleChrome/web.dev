@@ -11,6 +11,7 @@ import {
   sortOnWeights,
   getAuditReferenceDocLink,
 } from "../../lighthouse";
+import "./_styles.scss";
 
 const NUM_AUDITS_TO_SHOW = 10;
 

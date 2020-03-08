@@ -1,6 +1,7 @@
-Fixes #SOME_ISSUE_NUMBER.
+<!-- Add the `DO NOT MERGE` label if you don't want the web.dev team 
+     to merge this PR immediately after approving it. -->
 
-Note: If this is written content for the site please include the issue number from your [content proposal](https://github.com/GoogleChrome/web.dev/issues?q=is%3Aissue+is%3Aopen+label%3A%22content+proposal%22).
+Fixes #SOME_ISSUE_NUMBER
 
 Changes proposed in this pull request:
 

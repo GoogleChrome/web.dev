@@ -40,16 +40,20 @@ const redirectHandler = (() => {
 
 // 404 handlers aren't special, they just run last.
 const notFoundHandler = (req, res, next) => {
+  // This 404 handler is vaguely approximated on Netlify in our staging environment.
   const options = {root: "dist/en"};
+  const suffix = req.url.endsWith(".json") ? "json" : "html";
   res
     .status(404)
-    .sendFile("404/index.html", options, (err) => err && next(err));
+    .sendFile(`404/index.${suffix}`, options, (err) => err && next(err));
 };
 
-// Disallow www.web.dev, and remove any active Service Worker too.
-const noWwwHandler = (req, res, next) => {
-  if (req.hostname === "www.web.dev") {
-    if (!req.url.endsWith(".js")) {
+// Disallow invalid hostnames, and remove any active Service Worker too (users
+// may have loaded this and otherwise they'll be stuck forever).
+const invalidHostnames = ["www.web.dev", "appengine-test.web.dev"];
+const invalidHostnameHandler = (req, res, next) => {
+  if (invalidHostnames.includes(req.hostname)) {
+    if (!req.headers["service-worker"]) {
       return res.redirect(301, "https://web.dev" + req.url);
     }
     req.url = "/nuke-sw.js";
@@ -58,7 +62,7 @@ const noWwwHandler = (req, res, next) => {
 };
 
 const handlers = [
-  noWwwHandler,
+  invalidHostnameHandler,
   localeHandler,
   express.static("dist"),
   express.static("dist/en"),

@@ -3,6 +3,7 @@
  */
 
 import {BaseElement} from "../BaseElement";
+import "./_styles.scss";
 
 /**
  * Renders code block that can easily be copied.
@@ -21,6 +22,7 @@ class CopyCode extends BaseElement {
 
     if (!this.copyButton) {
       this.copyButton = document.createElement("button");
+      this.copyButton.setAttribute("aria-label", "Copy code");
       this.copyButton.className = "web-copy-code__button";
       this.copyButton.addEventListener("click", this.onCopy);
       this.prepend(this.copyButton);

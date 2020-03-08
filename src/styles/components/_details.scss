@@ -1,11 +1,7 @@
-@import '../settings/colors';
-@import '../settings/global';
-@import '../settings/type';
 @import '../tools/mixins';
 
 $CHEVRON_SIZE: 24px;
 $CHEVRON_MARGIN: 12px;
-$BORDER_COLOR: $GREY_300;
 
 .w-details {
   border: 1px solid $BORDER_COLOR;
@@ -81,7 +77,7 @@ $BORDER_COLOR: $GREY_300;
     speak: none;
     top: 50%;
     transform: translateY(-50%);
-    transition: background .2s, transform .3s;
+    transition: background .2s;
     visibility: visible;
   }
 

@@ -16,21 +16,31 @@
 
 /**
  * @fileoverview A responsive header that can trigger a side-nav.
+ *
+ * This does not inherit from BaseStateElement as it is not a LitElement.
  */
 
 import {store} from "../../store";
 import {expandSideNav} from "../../actions";
 
 class Header extends HTMLElement {
-  connectedCallback() {
-    this.hamburgerBtn = this.querySelector(".web-header__hamburger-btn");
-    this.hamburgerBtn.addEventListener("click", expandSideNav);
+  constructor() {
+    super();
 
     this.onStateChanged = this.onStateChanged.bind(this);
+  }
+
+  connectedCallback() {
+    this.hamburgerBtn = this.querySelector(".web-header__hamburger-btn");
+    this.hamburgerBtn.classList.remove("unresolved");
+    this.hamburgerBtn.addEventListener("click", expandSideNav);
+
     store.subscribe(this.onStateChanged);
   }
 
   disconnectedCallback() {
+    this.hamburgerBtn.removeEventListener("click", expandSideNav);
+
     store.unsubscribe(this.onStateChanged);
   }
 

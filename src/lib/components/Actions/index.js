@@ -90,6 +90,7 @@ class Actions extends BaseElement {
         data-action="click"
         href="${url}"
         target="_blank"
+        rel="noreferrer"
         @click=${this.onTwitterShare}
       >
         <span>Share</span>

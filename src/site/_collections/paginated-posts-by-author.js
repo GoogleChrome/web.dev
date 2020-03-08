@@ -21,9 +21,12 @@ const setdefault = require("../_utils/setdefault");
 
 /**
  * Returns all posts as an array of paginated authors.
- * It's not as if every element in the array is a single page for an author, rather, its an array that includes every authors page.
- * Each element includes n number of posts as well as some basic information of that tag to pump into `_includes/partials/paged.njk`
- * This is because we can not paginate something already paginated... Pagination is effectively a loop, and we can't have an embedded loop O^2.
+ *
+ * It's not as if every element in the array is a single page for an author, rather, it is an array
+ * that includes every authors page. Each element includes n number of posts as well as some basic
+ * information of that tag to pump into `_includes/partials/paged.njk`. This is because we cannot
+ * paginate something already paginated... Pagination is effectively a loop, and we can't have an
+ * embedded loop O^2.
  *
  * @param {any} collection Eleventy collection object
  * @return {Array<{ title: string, href: string, description: string, posts: Array<object>, index: number, pages: number }>} An array where each element is a paged tag with some meta data and n posts for the page.
@@ -47,6 +50,19 @@ module.exports = (collection) => {
 
   let authors = [];
   authorsMap.forEach((value, key) => {
+    if (!(key in contributors)) {
+      // Warn if the contributor ID is missing, including pointing to the paths of the source
+      // inputs that are invalid.
+      // This could also be run as part of generating author chips, but it is sufficient to explode
+      // at only one place.
+      const posts = authorsMap
+        .get(key)
+        .map((post) => post.inputPath)
+        .join(", ");
+      throw new Error(
+        `unknown contributor ${key} [${posts}], are they in _data/contributors.js?`,
+      );
+    }
     authors = authors.concat(addPagination(value, contributors[key]));
   });
 
