@@ -1,0 +1,11 @@
+web-assessment-feedback-form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.web-assessment-feedback-form__text-field {
+  display: block;
+  margin-top: 2.5rem 0 0;
+}
