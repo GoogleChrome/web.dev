@@ -4,7 +4,7 @@
 .web-assessment__launcher {
   display: flex;
   flex-direction: column;
-  margin: 2.25em 0;
+  margin: 3em 0;
 }
 
 // Allows buttons to resize with root font-size, maximizing space for questions
@@ -33,6 +33,7 @@ web-assessment {
   @include bp(sm) {
     & {
       display: flex;
+      margin: 5em 0 !important; // Override .w-callout
       padding: 0 !important; // Override .w-callout
     }
   }
