@@ -1,6 +1,5 @@
 setLeader: |
-  Use the drop-down below each cross-origin resource
-  to check whether the specified action is allowed
+  Check whether specified actions in cross-origin resources are allowed
 height: unset
 tabLabel: sample
 questions:
