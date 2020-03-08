@@ -17,6 +17,8 @@
 const {html} = require("common-tags");
 const md = require("markdown-it")();
 const mdBlock = require("../../_filters/md-block");
+const fs = require("fs");
+const yaml = require("js-yaml");
 
 function headerTemplate(assessment) {
   if (assessment.setLeader && assessment.questions.length > 1) {
@@ -186,11 +188,9 @@ module.exports = (page, targetAssessment) => {
   }
 
   const path = page.filePathStem.replace(/index$/, "");
-  const source = require("../../content" +
-    path +
-    targetAssessment +
-    ".assess.js");
-  const assessment = source.assessment;
+  const source = "src/site/content" + path + targetAssessment + ".assess.yaml";
+  const data = fs.readFileSync(source, "utf8");
+  const assessment = yaml.safeLoad(data);
 
   // prettier-ignore
   return html`
