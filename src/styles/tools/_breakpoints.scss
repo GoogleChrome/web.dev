@@ -12,7 +12,8 @@ $BREAKPOINT_VALUE_XXSMALL: '(min-width: 241px)';
 
 // Smart phones
 $BREAKPOINT_VALUE_XSMALL: '(min-width: 321px)';
-// Update src/lib/Assessment/index.js if the following value changes.
+// Update src/lib/Assessment/index.js and src/lib/AssessmentFeedbackContainer/index.js
+// if $BREAKPOINT_VALUE_SMALL changes.
 $BREAKPOINT_VALUE_SMALL: '(min-width: 481px)';
 
 // Tablets
