@@ -35,6 +35,7 @@ const initialState = {
   currentUrl: window.location.pathname,
   isOffline: Boolean(getMeta("offline")),
   isSideNavExpanded: false,
+  isModalOpen: false,
   isSearchExpanded: false,
 
   // Whether to show the progressbar and mark the main content as busy, during a load.
