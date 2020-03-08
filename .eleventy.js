@@ -135,7 +135,7 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   // NON-11TY FILES TO WATCH
   //----------------------------------------------------------------------------
-  config.addWatchTarget("./src/site/content/**/*.yaml");
+  config.addWatchTarget("./src/site/content/en/**/*.yml");
 
   //----------------------------------------------------------------------------
   // COLLECTIONS
