@@ -47,7 +47,9 @@ module.exports = (req, res, next) => {
     const langInCookie = locales.isSupportedLocale(req.cookies.preferred_lang);
     // If language not in url, use accept-language header.
     lang =
-      langInCookie || req.acceptsLanguages(locales.supportedLocales) || locales.defaultLocale;
+      langInCookie ||
+      req.acceptsLanguages(locales.supportedLocales) ||
+      locales.defaultLocale;
     filePath = req.path;
   }
 
