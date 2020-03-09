@@ -13,17 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const fs = require("fs");
-const localeCode = require("iso-639-1");
-const path = require("path");
-const DEFAULT_LOCALE = require("./src/site/_data/site").defaultLocale;
-
-const isProd = Boolean(process.env.GAE_APPLICATION);
-const contentDir = isProd ? "dist" : "src/site/content";
-const dirs = fs.readdirSync(path.join(__dirname, contentDir));
-const SUPPORTED_LOCALES = dirs.filter((dir) => localeCode.validate(dir));
-
-const isSupported = (locale) => SUPPORTED_LOCALES.indexOf(locale) > -1;
+const locales = require("./src/lib/utils/locale");
 
 /**
  * A handler that redirects the request based on requested locale,
@@ -45,7 +35,7 @@ module.exports = (req, res, next) => {
 
   const pathParts = req.path.split("/");
   // Check if language is specified in the url.
-  const isLangInPath = isSupported(pathParts[1]);
+  const isLangInPath = locales.isSupportedLocale(pathParts[1]);
   let lang;
   let filePath;
 
@@ -54,14 +44,14 @@ module.exports = (req, res, next) => {
     pathParts.splice(1, 1);
     filePath = pathParts.join("/");
   } else {
-    const langInCookie = isSupported(req.cookies.preferred_lang);
+    const langInCookie = locales.isSupportedLocale(req.cookies.preferred_lang);
     // If language not in url, use accept-language header.
     lang =
-      langInCookie || req.acceptsLanguages(SUPPORTED_LOCALES) || DEFAULT_LOCALE;
+      langInCookie || req.acceptsLanguages(locales.supportedLocales) || locales.defaultLocale;
     filePath = req.path;
   }
 
-  if (lang === DEFAULT_LOCALE) {
+  if (lang === locales.defaultLocale) {
     // If this is alread default language, continue.
     return next();
   }
@@ -77,6 +67,6 @@ module.exports = (req, res, next) => {
   if (fs.existsSync(localizedFilePath)) {
     return isLangInPath ? next() : res.redirect(path.join("/", lang, filePath));
   } else {
-    return res.redirect(path.join("/", DEFAULT_LOCALE, filePath));
+    return res.redirect(path.join("/", locales.defaultLocale, filePath));
   }
 };

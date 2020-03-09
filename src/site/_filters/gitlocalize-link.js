@@ -16,14 +16,15 @@
 
 const path = require("path");
 const site = require("../_data/site");
+const locales = require("../../lib/utils/locale");
 
 module.exports = (inputPath, lang) => {
-  if (!inputPath) {
-    /* eslint-disable-next-line */
-    console.warn(
-      "inputPath passed to gitlocalizeLink filter was undefined or null.",
-    );
+  // Check if requested a supported locale and other than the default one.
+  if (!inputPath
+      || lang === locales.defaultLocale
+      || !locales.isSupportedLocale(lang)) {
+    return '';
   }
   inputPath = inputPath.replace(`/${lang}/`, `/${site.defaultLocale}/`);
-  return `${path.join(site.gitlocalize, lang, inputPath)}`;
+  return path.join(site.gitlocalize, lang, inputPath);
 };
