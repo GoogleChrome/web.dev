@@ -220,12 +220,12 @@ const worker = new SharedWorker('/worker.js', {
 });
 ```
 
-Prior to support of JavaScript modules, the `SharedWorker` constructor expected only a
-URL and an optional name argument. This will continue to work for classic shared worker usage, however
-creating module shared workers requires using the new options argument. The [available
+Prior to support of JavaScript modules, the `SharedWorker()` constructor expected only a
+URL and an optional `name` argument. This will continue to work for classic shared worker usage; however
+creating module shared workers requires using the new `options` argument. The [available
 options](https://html.spec.whatwg.org/multipage/workers.html#shared-workers-and-the-sharedworker-interface)
-are the same as those for dedicated worker, including the `name` option that supercedes
-the previous name argument.
+are the same as those for a dedicated worker, including the `name` option that supersedes
+the previous `name` argument.
 
 ## What about service worker?
 
