@@ -1,5 +1,6 @@
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
+import "./_styles.scss";
 
 /**
  * @fileoverview Displays the primary URL chooser for Lighthouse.

@@ -11,7 +11,7 @@
 // =============================================================================
 
 .w-card {
-  border-radius: 8px;
+  border-radius: $GLOBAL_RADIUS_MEDIUM;
   display: block;
   min-height: 506px;
   overflow: hidden;

@@ -7,9 +7,8 @@ const {DateTime} = require("luxon");
  */
 module.exports = (date) => {
   if (!date) {
-    /* eslint-disable-next-line */
-    console.warn('Date passed to htmlDateString filter was undefined or null.');
-    return;
+    // This occurs on pages like offline, 404, etc.
+    return "";
   }
   return DateTime.fromISO(date.toISOString(), {zone: "utc"}).toFormat(
     "yyyy-LL-dd",

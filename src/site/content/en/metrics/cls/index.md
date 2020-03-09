@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2019-11-07
+updated: 2020-03-03
 description: |
   This post introduces the Cumulative Layout Shift (CLS) metric and explains
   how to measure it
@@ -306,6 +306,13 @@ document.addEventListener('visibilitychange', () => {
   score of `0.01` when using the code example above would appear in the 0–5
   bucket in CrUX, and a score of `0.07` would appear in the 5–10 bucket in CrUX.
 {% endAside %}
+
+## What is a good CLS score?
+
+To provide a good user experience, sites should strive to have a Cumulative
+Layout Shift of less than **0.1**. To ensure you're hitting this target for
+most of your users, a good threshold to measure is the **75th percentile** of
+page loads on mobile devices.
 
 ## How to improve CLS
 

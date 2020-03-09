@@ -4,7 +4,7 @@ title: Time to Interactive (TTI)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2019-11-07
+updated: 2020-03-03
 description: |
   This post introduces the Time to Interactive (TTI) metric and explains
   how to measure it
@@ -85,6 +85,10 @@ TTI](/interactive/) for usage details.
 {% endAside %}
 
 ## What is a good TTI score?
+
+To provide a good user experience, sites should strive to have a Time to
+Interactive of less than **5 seconds** when tested on **average mobile
+hardware**.
 
 For details on how your page's TTI affects your Lighthouse performance score,
 see [How Lighthouse determines your TTI

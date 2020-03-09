@@ -4,6 +4,7 @@ title: Service workers and the Cache Storage API
 authors:
   - jeffposnick
 date: 2018-11-05
+updated: 2020-02-27
 description: |
   The browser's HTTP cache is your first line of defense. It's not necessarily
   the most powerful or flexible approach, and you have limited control over the
@@ -30,10 +31,10 @@ A service worker is built into the browser and controlled by a bit of extra
 JavaScript code that you are responsible for creating. You deploy this alongside
 the other files that make up your actual web application.
 
-A service worker has some special powers—among other duties, it patiently waits
+A service worker has some special powers. Among other duties, it patiently waits
 for your web app to make an outgoing request, and then springs into action by
 intercepting it. What the service worker does with this intercepted request is
-up to you!
+up to you.
 
 For some requests, the best course of action might be just to allow the request
 to continue on to the network, just like what would happen if there were no
@@ -51,7 +52,7 @@ developers complete control over the contents of the cache. Instead of relying
 on a combination of HTTP headers and the browser's built-in [heuristics](https://httpwg.org/specs/rfc7234.html#heuristic.freshness),
 the Cache
 Storage API exposes a code-driven approach to caching. The Cache Storage API
-proves very useful when called from your service worker's JavaScript code.
+is particularly useful when called from your service worker's JavaScript.
 
 ### Wait… there's another cache to think about now?
 
@@ -102,7 +103,7 @@ There are some things to keep in mind about the API's design:
     when caching data. There are no automatic, built-in expiration or freshness
     checks, and once you store an item in the cache, it will persist until your
     code explicitly removes it. (There are libraries to simplify cache
-    maintenance on your behalf—they'll be covered later on in this series.)
+    maintenance on your behalf. They'll be covered later on in this series.)
 +  Unlike with older, synchronous APIs such as
     [`LocalStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage),
     all Cache Storage API operations are asynchronous.

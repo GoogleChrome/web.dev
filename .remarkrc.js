@@ -40,6 +40,7 @@ exports.plugins = [
   require('remark-lint-no-duplicate-headings-in-section'),
 
   // Custom plugins.
+  require('./tools/linting/bad-urls.js'),
   require('./tools/linting/fenced-code-flag.js'),
   require('./tools/linting/no-dash-spaces.js'),
   require('./tools/linting/no-repeat-punctuation.js'),

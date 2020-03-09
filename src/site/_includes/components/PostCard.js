@@ -85,11 +85,13 @@ module.exports = ({post, featured = false}) => {
             const fullName = `${author.name.given} ${author.name.family}`;
             return html`
               <div class="w-author__image--row-item">
-                <img
-                  class="w-author__image w-author__image--small"
-                  src="/images/authors/${authorId}.jpg"
-                  alt="${fullName}"
-                />
+                <a href="${author.href}">
+                  <img
+                    class="w-author__image w-author__image--small"
+                    src="/images/authors/${authorId}.jpg"
+                    alt="${fullName}"
+                  />
+                </a>
               </div>
             `;
           })
@@ -108,7 +110,9 @@ module.exports = ({post, featured = false}) => {
             const author = data.contributors[authorId];
             const fullName = `${author.name.given} ${author.name.family}`;
             return html`
-              ${fullName}
+              <a class="w-author__name-link" href="/authors/${authorId}"
+                >${fullName}</a
+              >
             `;
           })
           .join(", ")}

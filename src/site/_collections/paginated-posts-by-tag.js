@@ -15,8 +15,9 @@
  */
 
 const postTags = require("../_data/postTags");
+const livePosts = require("../_filters/live-posts");
 const addPagination = require("../_utils/add-pagination");
-const postDescending = require("./post-descending");
+const setdefault = require("../_utils/setdefault");
 
 /**
  * Returns all posts as an array of paginated tags.
@@ -25,21 +26,20 @@ const postDescending = require("./post-descending");
  * This is because we can not paginate something already paginated... Pagination is effectively a loop, and we can't have an embedded loop O^2.
  *
  * @param {any} collection Eleventy collection object
- * @return {Array<{ title: string, href: string, description: string, tag: string, posts: Array<object>, index: number, pages: number }>} An array where each element is a paged tag with some meta data and n posts for the page.
+ * @return {Array<{ title: string, href: string, description: string, posts: Array<object>, index: number, pages: number }>} An array where each element is a paged tag with some meta data and n posts for the page.
  */
 module.exports = (collection) => {
-  const mapValue = (map, key) => {
-    return map.has(key) ? map.get(key) : [];
-  };
-
-  const posts = postDescending(collection);
-  const tagsMap = new Map();
+  const posts = collection
+    .getAll()
+    .filter(livePosts)
+    .sort((a, b) => b.date - a.date);
 
   // Map the posts to various tags in the post
+  const tagsMap = new Map();
   posts.forEach((post) => {
     const postDataTags = post.data.tags || [];
     postDataTags.forEach((postTag) => {
-      const tagsPosts = mapValue(tagsMap, postTag);
+      const tagsPosts = setdefault(tagsMap, postTag, []);
       tagsPosts.push(post);
       tagsMap.set(postTag, tagsPosts);
     });

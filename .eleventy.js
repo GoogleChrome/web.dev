@@ -52,6 +52,7 @@ const {Image, Figure} = require(`./${tagsDir}/Image`);
 
 const collectionsDir = 'src/site/_collections';
 const paginatedBlogPosts = require(`./${collectionsDir}/paginated-blog-posts`);
+const paginatedPostsByAuthor = require(`./${collectionsDir}/paginated-posts-by-author`);
 const paginatedPostsByTag = require(`./${collectionsDir}/paginated-posts-by-tag`);
 const postDescending = require(`./${collectionsDir}/post-descending`);
 const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
@@ -59,6 +60,7 @@ const recentPosts = require(`./${collectionsDir}/recent-posts`);
 // nb. algoliaPosts is only require'd if needed, below
 
 const filtersDir = 'src/site/_filters';
+const consoleDump = require(`./${filtersDir}/console-dump`);
 const {memoize, findByUrl} = require(`./${filtersDir}/find-by-url`);
 const pathSlug = require(`./${filtersDir}/path-slug`);
 const containsTag = require(`./${filtersDir}/contains-tag`);
@@ -74,6 +76,8 @@ const prettyDate = require(`./${filtersDir}/pretty-date`);
 const removeDrafts = require(`./${filtersDir}/remove-drafts`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
 const stripLanguage = require(`./${filtersDir}/strip-language`);
+
+const buildPartial = require('./src/site/_utils/build-partial');
 
 module.exports = function(config) {
   //----------------------------------------------------------------------------
@@ -110,7 +114,8 @@ module.exports = function(config) {
 
   const mdLib = markdownIt(markdownItOptions)
     .use(markdownItAnchor, markdownItAnchorOptions)
-    .use(markdownItAttrs, markdownItAttrsOpts);
+    .use(markdownItAttrs, markdownItAttrsOpts)
+    .disable('code');
 
   // custom renderer rules
   const fence = mdLib.renderer.rules.fence;
@@ -138,6 +143,7 @@ module.exports = function(config) {
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('recentPosts', recentPosts);
   config.addCollection('paginatedBlogPosts', paginatedBlogPosts);
+  config.addCollection('paginatedPostsByAuthor', paginatedPostsByAuthor);
   config.addCollection('paginatedPostsByTag', paginatedPostsByTag);
   // Turn collection.all into a lookup table so we can use findBySlug
   // to quickly find collection items without looping.
@@ -155,6 +161,7 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   // FILTERS
   //----------------------------------------------------------------------------
+  config.addFilter('consoleDump', consoleDump);
   config.addFilter('findByUrl', findByUrl);
   config.addFilter('findTags', findTags);
   config.addFilter('pathSlug', pathSlug);
@@ -191,6 +198,7 @@ module.exports = function(config) {
   config.addShortcode('Hero', Hero);
   config.addShortcode('Instruction', Instruction);
   config.addShortcode('Meta', Meta);
+  config.addPairedShortcode('Partial', buildPartial());
   config.addShortcode('PathCard', PathCard);
   config.addShortcode('PostCard', PostCard);
   config.addPairedShortcode('Tab', Tab);

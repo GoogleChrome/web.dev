@@ -1,0 +1,169 @@
+@import '../settings/colors';
+@import '../settings/global';
+@import '../tools/breakpoints';
+@import '../tools/mixins';
+
+// =============================================================================
+// HEADER
+//
+// This styles the header. The header Web Component is just a holder for HTML
+// that adds some functionality around opening/closing side nav, etc. It has
+// only a few styles which are needed by its JS source.
+//
+// =============================================================================
+
+web-header {
+  align-items: center;
+  background: $WHITE;
+  box-shadow: 0 1px 2px 0 rgba($GREY_800, .3), 0 2px 6px 2px rgba($GREY_800, .15);
+  color: $PRIMARY_TEXT_COLOR;
+  contain: layout;
+  display: flex;
+  font-size: 14px;
+  height: 64px;
+  padding: 0 24px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 200;
+
+  .web-header__hamburger-btn {
+    -webkit-tap-highlight-color: transparent;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    color: rgba($BLACK, .65);
+    display: inline-block;
+    height: auto;
+    line-height: 1;
+    margin: 0 8px 0 -8px;
+    padding: 8px;
+    transition: color $TRANSITION_SPEED;
+    width: auto;
+
+    // sass-lint:disable class-name-format
+    &.unresolved {
+      display: inline-block;  // override default .unresolved behavior
+      visibility: hidden;
+    }
+    // sass-lint:enable class-name-format
+
+    @include bp(md) {
+      display: none !important;
+    }
+  }
+
+  .web-header__hamburger-btn:hover,
+  .web-header__hamburger-btn:focus,
+  .web-header__hamburger-btn:active {
+    color: rgba($BLACK, .87);
+  }
+
+  .web-header__hamburger-btn::before {
+    @include font-material-icon();
+    content: 'menu';
+    display: inline-block;
+    height: 26px;
+    width: 24px;
+  }
+
+  .web-header__logo {
+    height: 30px;
+    width: 125px;
+  }
+
+  .web-header__middle {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    height: 100%;
+    /// This is used by web-search during its animation.
+    /// web-search is >200% the width of its parent. When focused it will
+    /// transition to completely fill the width of .web-header__middle.
+    overflow: hidden;
+    position: relative;
+  }
+
+  .web-header__links {
+    display: none;
+    flex: 1;
+    height: 100%;
+    line-height: 20px;
+    min-width: 50%;
+    padding-left: 48px;
+
+    @include bp(md) {
+      display: flex;
+    }
+  }
+
+  .web-header__link {
+    align-items: center;
+    color: $PRIMARY_TEXT_COLOR;
+    display: flex;
+    font-weight: 500;
+    margin: 0;
+    padding: 0 24px;
+    position: relative;
+
+    &[active] {
+      box-shadow: 0 -2px 0 $WEB_PRIMARY_COLOR inset;
+    }
+  }
+
+  .web-header__link:hover,
+  .web-header__link:focus,
+  .web-header__link:active {
+    outline: 0;
+    text-decoration: none;
+  }
+
+  .web-header__link:hover {
+    background-color: rgba($PRIMARY_TEXT_COLOR, .04);
+  }
+
+  .web-header__link:focus {
+    background-color: rgba($PRIMARY_TEXT_COLOR, .12);
+  }
+
+  .web-header__link:active {
+    background-color: rgba($PRIMARY_TEXT_COLOR, .16);
+  }
+
+  .web-header__link[data-active]::after {
+    background: $WEB_PRIMARY_COLOR;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+
+  web-search {
+    flex: 1;
+  }
+}
+
+web-header.web-header--has-expanded-search {
+  .web-header__logo-link {
+    display: none;
+
+    @include bp(md) {
+      display: inline;
+    }
+  }
+
+  .web-header__middle {
+    overflow: visible;
+  }
+
+  web-profile-switcher-container {
+    display: none;
+
+    @include bp(md) {
+      display: flex;
+    }
+  }
+}
