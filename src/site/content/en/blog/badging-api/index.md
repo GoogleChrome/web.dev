@@ -68,7 +68,7 @@ Examples of sites that may use this API include:
 | 2. Create initial draft of specification   | [Complete][spec]             |
 | 3. Gather feedback & iterate on design     | Complete                     |
 | 4. Origin trial                            | Complete                     |
-| **5. Launch**                              | Not started                  |
+| **5. Launch**                              | Complete                     |
 
 </div>
 
@@ -160,8 +160,6 @@ it is to support them.
 * [Badging API Demo][demo] | [Badging API Demo source][demo-source]
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
-* Request an [origin trial token]({{origin_trial.url}})
-* [How to use an origin trial token][ot-use]
 * Blink Component: `UI>Browser>WebAppInstalls`
 
 [spec]: https://wicg.github.io/badging/
@@ -170,8 +168,4 @@ it is to support them.
 [cr-status]: https://www.chromestatus.com/features/6068482055602176
 [demo]: https://badging-api.glitch.me/
 [demo-source]: https://glitch.com/edit/#!/badging-api?path=demo.js
-[ot-what-is]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/README.md
-[ot-dev-guide]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md
-[ot-use]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md#how-do-i-enable-an-experimental-feature-on-my-origin
-[wicg-discourse]: https://discourse.wicg.io/t/badging-api-for-showing-an-indicator-on-a-web-apps-shelf-icon/2900
 [explainer]: https://github.com/WICG/badging/blob/master/explainer.md
