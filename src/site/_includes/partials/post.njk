@@ -65,17 +65,16 @@
             <a href="{{ gitlocalizeUrl }}">here</a>.
           {% endif %}
         </div>
-      {% endif %}
-      {% if translation === 'machine' %}
+      {% elif translation === 'machine' %}
         <div class="w-banner w-banner--caution w-banner--body">
-          This page is automatically translated using Google Translation API.
+          This page is automatically translated using the Google Translation
+          API.
           {% if gitlocalizeUrl %}
             Consider improving it by contributing your translation
             <a href="{{ gitlocalizeUrl }}">here</a>.
           {% endif %}
         </div>
-      {% endif %}
-      {% if translation === 'manual' %}
+      {% elif translation === 'manual' %}
         <div class="w-banner w-banner--info w-banner--body">
         {{url}}
           This article was translated from
