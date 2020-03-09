@@ -12,6 +12,8 @@ description: |
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - media
+  - audio
+  - video
 ---
 
 To let users know what's currently playing in their browser and control it
@@ -25,7 +27,7 @@ article.
 
 <figure class="w-figure">
   <img src="./contexts.png" alt="Screenshots of Media Session contexts">
-  <figcaption class="w-figcaption">Media hub on desktop, media notification on mobile and wearable device</figcaption>
+  <figcaption class="w-figcaption">Media hub on desktop, media notification on mobile, and a wearable device</figcaption>
 </figure>
 
 ## About the Media Session API
@@ -33,10 +35,10 @@ article.
 The Media session API provides several benefits and capabilities:
 
 - Hardware media keys are supported.
-- Media notifications are customized  on mobile, Chrome OS, and paired wearable device.
+- Media notifications are customized on mobile, Chrome OS, and paired wearable device.
 - The [media hub] is available on desktop.
 - Lock screen media controls are available on [Chrome OS] and mobile.
-- PiP window controls are available.
+- Picture-in-Picture window controls are available.
 - Assistant integration on mobile is available.
 
 A few examples will illustrate some of these points.
@@ -75,6 +77,10 @@ document's title and the largest icon image it can find. With the Media Session
 API, it's possible to customize the media notification with some richer media
 metadata such as the title, artist name, album name, and artwork as shown below.
 
+Chrome requests "full" audio focus to show media notifications only when the
+media duration is [at least 5 seconds]. This ensures that incidental sounds
+such as dings don't show notifications.
+
 ```js
 // After media (video or audio) starts playing
 await document.querySelector("video").play();
@@ -104,6 +110,30 @@ notification will automatically disappear. Keep in mind that
 though. This is why it's important to update it when the media playback source
 changes to make sure relevant information is shown in the media notification.
 
+There are a few things to note about the media metadata.
+
+- Notification artwork array supports blob URLs and data URLs.
+- If no artwork is defined and there is an icon image (specified using `<link
+  rel=icon>`) at a desirable size, media notifications will use it.
+- Notification artwork target size in Chrome for Android is `512x512`. For
+  low-end devices, it is `256x256`.
+- The `title` attribute of the media HTML element is used in the "Now playing"
+  macOS widget.
+- If the media resource is embedded (e.g. in a iframe), Media Session API
+  information must be set from the embedded context. See snippet below.
+
+```js
+<iframe id="iframe">
+  <video>...</video>
+</iframe>
+<script>
+  iframe.contentWindow.navigator.mediaSession.metadata = new MediaMetadata({
+    title: 'Never Gonna Give You Up',
+    ...
+  });
+</script>
+```
+
 ## Let users control what's playing
 
 A media session action is an action (.e.g. "play", "pause") that a website can
@@ -115,7 +145,7 @@ buttons from a headset, another remote device, a keyboard, or interact with a
 media notification.
 
 Because some media session actions may not be supported, it is recommended to
-use a try…catch block when setting them.
+use a `try…catch` block when setting them.
 
 ```js
 const actionHandlers = [
@@ -157,14 +187,14 @@ won't be shown unless the proper action handler is set.
 
 ### Play / pause
 
-The "play" action user intent resumes the media playback while "pause"
-temporarily halts media playback.
+The "play" action indicates that the user wants to resume the media playback
+while "pause" indicates a desire to temporarily halt it.
 
 The "play/pause" icon is always shown in a media notification and the related
 media events are handled automatically by the browser. To override their default
 behavior, handle "play" and "pause" media actions as shown below.
 
-The browser may consider that a website to not be playing media when seeking or
+The browser may consider a website to not be playing media when seeking or
 loading for instance. In this case, override this behavior by setting
 `navigator.mediaSession.playbackState` to `"playing"` or `"paused"` to make sure
 the website UI stays in sync with media notification controls.
@@ -185,10 +215,10 @@ navigator.mediaSession.setActionHandler("pause", () => {
 
 ### Previous track
 
-The "previoustrack" action user intent either starts the current media playback
-from the beginning if the media playback has a notion of beginning, or moves to
-the previous item in the playlist if the media playback has a notion of
-playlist.
+The "previoustrack" action indicates that the user either wants to start the
+current media playback from the beginning if the media playback has a notion of
+beginning, or move to the previous item in the playlist if the media playback
+has a notion of a playlist.
 
 ```js
 navigator.mediaSession.setActionHandler("previoustrack", () => {
@@ -198,8 +228,8 @@ navigator.mediaSession.setActionHandler("previoustrack", () => {
 
 ### Next track
 
-The "nexttrack" action user intent moves media playback to the next item in the
-playlist if the media playback has a notion of playlist.
+The "nexttrack" action indicates that the user wants to move media playback to
+the next item in the playlist if the media playback has a notion of a playlist.
 
 ```js
 navigator.mediaSession.setActionHandler("nexttrack", () => {
@@ -209,8 +239,8 @@ navigator.mediaSession.setActionHandler("nexttrack", () => {
 
 ### Stop
 
-The "stop" action user intent stops the media playback and clears the state if
-appropriate.
+The "stop" action indicates that the user wants to stop the media playback and
+clear the state if appropriate.
 
 ```js
 navigator.mediaSession.setActionHandler("stop", () => {
@@ -220,9 +250,10 @@ navigator.mediaSession.setActionHandler("stop", () => {
 
 ### Seek backward / forward
 
-The  "seekbackward" action user intent moves the media playback time backward by
-a short period while "seekforward" moves the media playback time forward by a
-short period. In both cases, a short period means a few seconds.
+The "seekbackward" action indicates that the user wants to moves the media
+playback time backward by a short period while "seekforward" indicates a desire
+to move the media playback time forward by a short period. In both cases, a
+short period means a few seconds.
 
 The `seekOffset` value provided in the action handler is the time in seconds to
 move the media playback time by. If it is not provided (e.g. `undefined`), then
@@ -247,8 +278,8 @@ navigator.mediaSession.setActionHandler("seekforward", (details) => {
 
 ### Seek to a specific time
 
-The "seekto" action user intent moves the media playback time to a specific
-time.
+The "seekto" action indicates that the user wants to move the media playback
+time to a specific time.
 
 The `seekTime` value provided in the action handler is the time in seconds to
 move the media playback time to.
@@ -279,7 +310,7 @@ position state is a combination of the media playback rate, duration, and
 current time.
 
 {% Aside 'gotchas' %}
-The position state is supported on Android only as of Chrome 81.
+The position state is supported on Android as of Chrome 81 and later.
 {% endAside %}
 
 ```js
@@ -328,36 +359,6 @@ Resetting the position state is as easy as setting it to `null`.
 ```js
 // Reset position state when media is reset.
 navigator.mediaSession.setPositionState(null);
-```
-
-## Dev Tips
-
-Here's a list of things I wish I had known when I started playing with the Media
-Session API:
-
-- Chrome requests "full" audio focus to show media notifications only when the
-  media duration is [at least 5 seconds]. This ensures that incidental sounds
-  such as dings don't show notifications.
-- Notification artwork array supports blob URLs and data URLs.
-- If no artwork is defined and there is an icon image (specified using `<link
-  rel=icon>`) at a desirable size, media notifications will use it.
-- Notification artwork target size in Chrome for Android is `512x512`. For
-  [low-end devices], it is `256x256`.
-- The `title` attribute of the media HTML element is used in the "Now playing"
-  macOS widget.
-- If the media resource is embedded (e.g. in a iframe), Media Session API
-  information must be set from the embedded context. See snippet below.
-
-```js
-<iframe id="iframe">
-  <video>...</video>
-</iframe>
-<script>
-  iframe.contentWindow.navigator.mediaSession.metadata = new MediaMetadata({
-    title: 'Never Gonna Give You Up',
-    ...
-  });
-</script>
 ```
 
 ## Support
