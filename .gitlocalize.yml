@@ -11,18 +11,7 @@ pretranslate:
     - "authors"
   
     ignore_patterns:
-    - !ruby/regexp /{%\s?end([a-zA-Z0-9\.\-]*)\s?%}/
     - !ruby/regexp /{%\s?Aside([a-zA-Z0-9\.\-\?\'\"\,\!\s]*)\s?%}/
-    - !ruby/regexp /{%\s?AsessmentCallout([a-zA-Z0-9\.\-\?\'\"\,\!\s]*)\s?%}/
-    - !ruby/regexp /{%\s?Banner([a-zA-Z0-9\.\-\?\'\"\,\!\s]*)\s?%}/
-    - !ruby/regexp /{%\s?Blockquote([a-zA-Z0-9\.\-\?\'\"\,\!\s]*)\s?%}/
-    - !ruby/regexp /{%\s?Compare([a-zA-Z0-9\.\-\?\'\"\,\!\s]*)\s?%}/
-    - !ruby/regexp /{%\s?CompareCaption([a-zA-Z0-9\.\-\?\'\"\,\!\s]*)\s?%}/
-    - !ruby/regexp /{%\s?Details([a-zA-Z0-9\.\-\?\'\"\,\!\s]*)\s?%}/
-    - !ruby/regexp /{%\s?DetailsSummary([a-zA-Z0-9\.\-\?\'\"\,\!\s]*)\s?%}/
-    - !ruby/regexp /{%\s?Instruction([a-zA-Z0-9\.\-\?\'\"\,\!\s]*)\s?%}/
-    - !ruby/regexp /{%\s?Tabs([a-zA-Z0-9\.\-\?\'\"\,\!\s]*)\s?%}/
-    - !ruby/regexp /{%\s?Tooltip([a-zA-Z0-9\.\-\?\'\"\,\!\s]*)\s?%}/
 
   paths:
   - source: "src/site/content/en"
