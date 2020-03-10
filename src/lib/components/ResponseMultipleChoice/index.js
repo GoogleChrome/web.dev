@@ -111,10 +111,12 @@ class ResponseMultipleChoice extends BaseResponseElement {
         data-label="${this.selectType}, web-select-group-${this.idSalt}-${i}"
       >
         <input
-          class="web-select-group__input web-response-mc__input"
+          class="web-select-group__input web-response-mc__input gc-analytics-event"
           type="${this.selectType}"
           name="web-select-group-${this.idSalt}"
           value="${i}"
+          data-category="Self-assessments"
+          data-label="option ${i}, question"
         />
         <span
           class="web-select-group__selector web-response-mc__selector"

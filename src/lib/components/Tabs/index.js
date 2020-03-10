@@ -88,7 +88,7 @@ class Tabs extends BaseElement {
         id="web-tab-${this.idSalt}-${i}"
         aria-controls="web-tab-${this.idSalt}-${i}-panel"
         tabindex="-1"
-        data-category="Site-Wide Custom Events"
+        data-category="Self-assessments"
         data-label="tab, ${tabLabel}"
       >
         <span class="web-tabs__text-label">${tabLabel}</span>

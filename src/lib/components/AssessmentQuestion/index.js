@@ -21,6 +21,7 @@ class AssessmentQuestion extends BaseElement {
     this.state = "unanswered";
     this.prerenderedChildren = null;
     this.ctaLabel = "Check";
+    this.idSalt = BaseElement.generateIdSalt("web-question-");
 
     this.updateResponseComponents = this.updateResponseComponents.bind(this);
     this.checkNextQuestion = this.checkNextQuestion.bind(this);
@@ -52,19 +53,25 @@ class AssessmentQuestion extends BaseElement {
       <div class="web-question__footer">
         <button
           @click="${this.onFeedbackModalOpen}"
-          class="w-button web-assessment__button web-assessment-feedback-container__open-modal"
+          class="w-button web-assessment__button web-assessment-feedback-container__open-modal gc-analytics-event"
+          data-category="Self-assessments"
+          data-label="feedbackOpen, web-question-${this.idSalt}"
         >
           Report issue
         </button>
         <button
           @click="${this.onFeedbackDrawerOpen}"
-          class="w-button web-assessment__button web-assessment-feedback-container__open-drawer"
+          class="w-button web-assessment__button web-assessment-feedback-container__open-drawer gc-analytics-event"
+          data-category="Self-assessments"
+          data-label="feedbackOpen, web-question-${this.idSalt}"
         >
           Report issue
         </button>
         <button
           @click="${this.onSubmit}"
-          class="w-button w-button--primary web-assessment__button web-question__cta"
+          class="w-button w-button--primary web-assessment__button web-question__cta gc-analytics-event"
+          data-category="Self-assessments"
+          data-label="CTA, web-question-${this.idSalt}"
           ?disabled="${this.state !== "unanswered" ? false : true}"
         >
           ${this.ctaLabel}
