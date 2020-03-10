@@ -14,6 +14,25 @@
   {# Make sure Actions are first in the tab order. #}
   <web-actions actions="share|subscribe" authors="{{ authors | expandContributors | join('|') }}"></web-actions>
 
+  {% set gitlocalizeUrl =  page.inputPath | gitlocalizeLink(lang) %}
+  {% if translation %}
+    {% Banner 'neutral' %}
+      {% if translation === 'none' %}
+        This page is not translated yet.
+      {% elif translation === 'machine' %}
+        This page is automatically translated using the Google Translation
+        API.
+      {% elif translation === 'manual' %}
+        This article was translated from
+        [the original post](/en{{ page.url | stripLanguage}}).
+      {% endif %}
+      {% if gitlocalizeUrl %}
+        Consider improving it by contributing your translation
+        [here]({{ gitlocalizeUrl }}).
+      {% endif %}
+    {% endBanner %}
+  {% endif %}
+
   <div class="w-layout-container--narrow w-post-breadcrumbs">
     {% Breadcrumbs path %}
   </div>
@@ -52,39 +71,6 @@
       <div class="w-banner w-banner--warning w-banner--body">
         🚨 This post is a draft! 🚨
       </div>
-    {% endif %}
-
-    {% set gitlocalizeUrl =  page.inputPath | gitlocalizeLink(lang) %}
-
-    {% if translation %}
-      {% if translation === 'none' %}
-        <div class="w-banner w-banner--warning w-banner--body">
-          This page is not translated yet.
-          {% if gitlocalizeUrl %}
-            Consider improving it by contributing your translation
-            <a href="{{ gitlocalizeUrl }}">here</a>.
-          {% endif %}
-        </div>
-      {% elif translation === 'machine' %}
-        <div class="w-banner w-banner--caution w-banner--body">
-          This page is automatically translated using the Google Translation
-          API.
-          {% if gitlocalizeUrl %}
-            Consider improving it by contributing your translation
-            <a href="{{ gitlocalizeUrl }}">here</a>.
-          {% endif %}
-        </div>
-      {% elif translation === 'manual' %}
-        <div class="w-banner w-banner--info w-banner--body">
-        {{url}}
-          This article was translated from
-          <a href="/en{{ page.url | stripLanguage}}">the original post</a>.
-          {% if gitlocalizeUrl %}
-            Consider improving it by contributing your translation
-            <a href="{{ gitlocalizeUrl }}">here</a>.
-          {% endif %}
-        </div>
-      {% endif %}
     {% endif %}
 
     {{ content | safe }}
