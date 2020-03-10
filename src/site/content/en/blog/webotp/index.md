@@ -131,7 +131,7 @@ Let's say a user wants to verify their phone number with a website. The website
 sends a text message to the user over SMS and the user enters the OTP from the
 message to verify the ownership of the phone number.
 
-With the WebOTP API, these steps are as easy as one tap for the
+With the Web OTP API, these steps are as easy as one tap for the
 user, as demonstrated in the video. As the text message arrives, a bottom
 sheet pops up and prompts the user to verify their
 phone number. After clicking the **Verify** button within the bottom sheet,
