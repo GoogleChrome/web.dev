@@ -20,6 +20,7 @@ const mdBlock = require("../../_filters/md-block");
 const fs = require("fs");
 const yaml = require("js-yaml");
 
+// Renders the set leader at the top of the self-assessment
 function headerTemplate(assessment) {
   if (assessment.setLeader && assessment.questions.length > 1) {
     return html`
@@ -30,6 +31,9 @@ function headerTemplate(assessment) {
   }
 }
 
+// Renders the assessment content on its own (if there's only one question)
+// or in a web-tabs component (if there's more than one question).
+// Passes data for questions to the question template for rendering.
 /* eslint-disable indent */
 function contentTemplate(assessment) {
   if (assessment.questions.length > 1) {
@@ -55,6 +59,8 @@ function contentTemplate(assessment) {
 }
 /* eslint-enable indent */
 
+// Renders each question by creating the stimulus (if one exists in the YAML)
+// and passing the response components to the response template.
 function questionTemplate(question, assessment) {
   const stimulus = question.stimulus
     ? html`
@@ -82,6 +88,10 @@ function responsesTemplate(question) {
   return question.components.map(responseTemplate);
 }
 
+// Renders each question response by creating the appropriate response web component
+// with the question metadata as attributes.
+// Question options and rationales are passed to the relevant templates.
+// Also handles authoring errors in the correctAnswers and cardinality values.
 function responseTemplate(response) {
   if (!response.type) {
     throw new Error(`
@@ -155,6 +165,8 @@ function responseTemplate(response) {
   `;
 }
 
+// Wraps options in divs with the option data-type so they can be interpretted
+// by the response web components.
 function optionContentTemplate(option) {
   if (!option.content) return;
   return html`
@@ -164,6 +176,8 @@ function optionContentTemplate(option) {
   `;
 }
 
+// Wraps rationales in divs with the rationale data-type so they can be interpretted
+// by the response web components.
 function rationaleTemplate(option) {
   if (!option.rationale) return;
   return html`
@@ -173,6 +187,8 @@ function rationaleTemplate(option) {
   `;
 }
 
+// Gets the assessment object from the YAML file passed in the shortcode
+// and passes it to the template functions above.
 module.exports = (page, targetAssessment) => {
   if (!page) {
     throw new Error(
