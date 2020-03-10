@@ -80,8 +80,7 @@ class Tabs extends BaseElement {
 
     return html`
       <button
-        @click="${this.onClick}"
-        @focus="${this.onClick}"
+        @focus="${this.onFocus}"
         @keydown="${this.onKeydown}"
         class="web-tabs__tab gc-analytics-event"
         role="tab"
@@ -201,7 +200,7 @@ class Tabs extends BaseElement {
     }
   }
 
-  onClick(e) {
+  onFocus(e) {
     const tab = e.currentTarget;
     const tabs = this.querySelectorAll(".web-tabs__tab");
     const index = Array.from(tabs).indexOf(tab);
