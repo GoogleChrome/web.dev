@@ -22,7 +22,6 @@ class CopyCode extends BaseElement {
 
     if (!this.copyButton) {
       this.copyButton = document.createElement("button");
-      this.copyButton.setAttribute("aria-label", "Copy code");
       this.copyButton.className =
         "w-button--icon w-button--round web-copy-code__button";
       this.copyButton.setAttribute("data-icon", "file_copy");

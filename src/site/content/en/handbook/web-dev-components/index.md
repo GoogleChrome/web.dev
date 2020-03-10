@@ -283,7 +283,7 @@ instead, use the `codelabs` field in
 [the post's YAML](/handbook/markup-post-codelab/#set-up-the-yaml),
 which will automatically append a codelab callout to the end of the post.
 
-{% CodelabsCallout ['codelab-fix-sneaky-404', 'codelab-art-direction'], lang %}
+{% CodelabsCallout ['codelab-fix-sneaky-404', 'codelab-art-direction', 'codelab-cloudinary'], lang %}
 
 ### Self-assessment callouts
 
