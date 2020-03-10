@@ -159,19 +159,18 @@ function responseTemplate(response) {
     const minmax = getSelectionRange(response.cardinality);
     const maxVal = minmax.max ? minmax.max : 1;
 
-    // Exit if there's no maximum selection value
-    if (minmax.max === 0) {
-      return;
-    }
-
-    if (answersArr.length > maxVal) {
+    // Check that there aren't more correct answers than the max allowable selections.
+    // (When max = 0, there's no maximum number of selections, so don't fail.)
+    if (answersArr.length > maxVal && minmax.max !== 0) {
       throw new Error(`
         The maximum selections allowed for a self-assessment response component
         is ` + maxVal +`, but there are ` + answersArr.length + ` correct answers specified.
       `);
     }
 
-    if (answersArr.length < minmax.min) {
+    // Check that there aren't fewer correct answers than the min required selections.
+    // (When max = 0, there's no maximum number of selections, so don't fail.)
+    if (answersArr.length < minmax.min && minmax.max !== 0) {
       throw new Error(`
         The minimum selections required for a self-assessment response component
         is ` + maxVal +`, but there are only ` + answersArr.length + ` correct answers specified.
