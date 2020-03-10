@@ -20,6 +20,36 @@ const mdBlock = require("../../_filters/md-block");
 const fs = require("fs");
 const yaml = require("js-yaml");
 
+/**
+ * Returns an object containing the minimum and maximum allowed selections
+ * for a response component based on the passed cardinality string.
+ * @param {string} cardinality A string indicating the cardinality of the response.
+ *                 May be in the format n, n+, or n-m.
+ * @return {Object} An object containing the min and max allowed selections.
+ */
+function getSelectionRange(cardinality) {
+  let min = 1;
+  let max = null;
+
+  if (cardinality === "1") {
+    // noop
+  } else if (/^\d+$/.test(cardinality)) {
+    min = parseInt(cardinality);
+    max = min;
+  } else if (/^\d+\+$/.test(cardinality)) {
+    min = parseInt(cardinality);
+    max = 0;
+  } else if (/^\d-\d+$/.test(cardinality)) {
+    [min, max] = cardinality.split("-");
+    [min, max] = [parseInt(min), parseInt(max)];
+  }
+
+  return {
+    min: min,
+    max: max,
+  };
+}
+
 // Renders the set leader at the top of the self-assessment
 function headerTemplate(assessment) {
   if (assessment.setLeader && assessment.questions.length > 1) {
@@ -121,6 +151,32 @@ function responseTemplate(response) {
       must be a comma-separated list of positive integers.
       Check your assessment's *.assess.yml file for invalid correctAnswer values.
     `);
+  }
+
+  // prettier-ignore
+  if (response.correctAnswers && response.cardinality) {
+    const answersArr = response.correctAnswers.split(",").map(Number);
+    const minmax = getSelectionRange(response.cardinality);
+    const maxVal = minmax.max ? minmax.max : 1;
+
+    // Exit if there's no maximum selection value
+    if (minmax.max === 0) {
+      return;
+    }
+
+    if (answersArr.length > maxVal) {
+      throw new Error(`
+        The maximum selections allowed for a self-assessment response component
+        is ` + maxVal +`, but there are ` + answersArr.length + ` correct answers specified.
+      `);
+    }
+
+    if (answersArr.length < minmax.min) {
+      throw new Error(`
+        The minimum selections required for a self-assessment response component
+        is ` + maxVal +`, but there are only ` + answersArr.length + ` correct answers specified.
+      `);
+    }
   }
 
   if (
