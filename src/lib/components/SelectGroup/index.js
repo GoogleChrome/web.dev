@@ -19,8 +19,9 @@ class SelectGroup extends BaseElement {
   constructor() {
     super();
     this.idSalt = BaseElement.generateIdSalt("web-select-group-");
-
     this.selectors = null;
+
+    this.reportSelections = this.reportSelections.bind(this);
   }
 
   render() {
@@ -66,6 +67,7 @@ class SelectGroup extends BaseElement {
         data-label="${type}, web-select-group-${this.idSalt}-${i}"
       >
         <input
+          @change="${this.onChange}"
           class="web-select-group__input ${inputClass}"
           type="${type}"
           name="web-select-group-${this.idSalt}"
@@ -77,6 +79,29 @@ class SelectGroup extends BaseElement {
         </span>
       </label>
     `;
+  }
+
+  onChange() {
+    this.reportSelections();
+  }
+
+  reportSelections() {
+    const inputs = this.querySelectorAll("input");
+    let count = 0;
+
+    for (const input of inputs) {
+      if (input.checked) {
+        count++;
+      }
+    }
+
+    const event = new CustomEvent("change-selections", {
+      detail: {
+        numSelections: count,
+      },
+    });
+
+    this.dispatchEvent(event);
   }
 }
 

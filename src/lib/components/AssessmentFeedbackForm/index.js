@@ -38,32 +38,32 @@ class AssessmentFeedbackForm extends BaseElement {
     const options = optionContents.map((option) => this.optionTemplate(option));
 
     return html`
-      <section class="web-modal__content">
-        <web-select-group type="radio">
-          ${options}
-        </web-select-group>
-        <web-text-field
-          class="web-assessment-feedback-form__text-field"
-          label="Describe the problem*"
-          helper-text="Please don't share any personal information!"
-          autocomplete="off"
-        ></web-text-field>
-      </section>
-      <footer class="web-modal__footer">
-        <button
-          @click="${this.onFeedbackCancel}"
-          class="w-button web-modal__button web-assessment-feedback-container__close"
-        >
-          Cancel
-        </button>
-        <button
-          @click="${this.onFeedbackSubmit}"
-          class="w-button w-button--primary web-modal__button"
-          disabled
-        >
-          Report
-        </button>
-      </footer>
+      <form class="web-assessment-feedback-form__form">
+        <section class="web-modal__content">
+          <web-select-group
+            @change-selections="${this.onSelectionChange}"
+            type="radio"
+          >
+            ${options}
+          </web-select-group>
+        </section>
+        <footer class="web-modal__footer">
+          <button
+            @click="${this.onFeedbackCancel}"
+            class="w-button web-modal__button web-assessment-feedback-container__close"
+          >
+            Cancel
+          </button>
+          <button
+            @click="${this.onFeedbackSubmit}"
+            class="w-button w-button--primary web-modal__button"
+            type="submit"
+            disabled
+          >
+            Report
+          </button>
+        </footer>
+      </form>
     `;
   }
 
@@ -71,6 +71,15 @@ class AssessmentFeedbackForm extends BaseElement {
     return html`
       <span>${content}</span>
     `;
+  }
+
+  onSelectionChange(e) {
+    const selections = e.detail.numSelections;
+    const submit = this.querySelector("[type=submit]");
+
+    if (selections > 0) {
+      submit.disabled = false;
+    }
   }
 
   onFeedbackCancel() {
