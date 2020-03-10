@@ -98,23 +98,23 @@ and users must add it to their home screens.
 
 The Badge API consists of the following methods on `navigator`:
 
-* `setExperimentalAppBadge([number])`: Sets the app's badge. If a value is
+* `setAppBadge([number])`: Sets the app's badge. If a value is
   provided, set the badge to the provided value otherwise, display a plain
   white dot (or other flag as appropriate to the platform).
-* `clearExperimentalAppBadge()`: Removes app's badge.
+* `clearAppBadge()`: Removes app's badge.
 
 For example:
 
 ```js
 // Set the badge
 const unreadCount = 24;
-navigator.setExperimentalAppBadge(unreadCount);
+navigator.setAppBadge(unreadCount);
 
 // Clear the badge
-navigator.clearExperimentalAppBadge();
+navigator.clearAppBadge();
 ```
 
-You can only call `setExperimentalAppBadge()` and `clearExperimentalAppBadge()`
+You can only call `setAppBadge()` and `clearAppBadge()`
 from a foreground page, or potentially in the future, a service worker. In
 either case, it affects the whole app, not just the current page.
 
@@ -127,7 +127,7 @@ Don't assume anything about how the user agent displays the badge.
 Some user agents may take a number like "4000" and rewrite it as
 "99+". If you saturate the badge yourself (for example by setting it to "99")
 then the "+" won't appear. No matter the actual number, just call
-`setExperimentalAppBadge(unreadCount)` and let the user agent deal with
+`setAppBadge(unreadCount)` and let the user agent deal with
 displaying it accordingly.
 
 While the Badging API *in Chrome* requires an installed app, you shouldn't
