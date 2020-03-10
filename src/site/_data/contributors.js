@@ -1704,6 +1704,12 @@ const contributors = {
       en: "Developer working on Firefox Preview",
     },
   },
+  lchansson: {
+    name: {
+      given: "Lina",
+      family: "Hansson",
+    },
+  },
 };
 
 const processedContributors = {};
