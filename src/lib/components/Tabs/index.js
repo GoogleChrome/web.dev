@@ -1,6 +1,7 @@
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
 import {handleOverflow} from "../../utils/handle-overflow";
+import {generateIdSalt} from "../../utils/generate-salt";
 import "./_styles.scss";
 
 /**
@@ -23,7 +24,7 @@ class Tabs extends BaseElement {
     this.overflow = false;
     this.prerenderedChildren = null;
     this.tabs = null;
-    this.idSalt = BaseElement.generateIdSalt("web-tab-");
+    this.idSalt = generateIdSalt("web-tab-");
 
     this.onResize = this.onResize.bind(this);
     this.changeTab = this.changeTab.bind(this);
