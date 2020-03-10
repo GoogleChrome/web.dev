@@ -36,6 +36,7 @@ $TEXTAREA_LABEL_TRANSFORM: translateY(-100%) scale(.75);
 // -----------------------------------------------------------------------------
 
 .web-text-field__actual {
+  -webkit-appearance: none;
   appearance: none;
   border: 0;
   border-radius: $GLOBAL_RADIUS;
