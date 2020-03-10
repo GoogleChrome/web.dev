@@ -155,7 +155,7 @@ The whole process is diagrammed in the image below.
 Try [the demo](https://sms-receiver-demo.glitch.me) yourself. It doesn't ask for
 your phone number or send an SMS to your device, but you can send one from
 another device by copying the text displayed in the demo. This works because it
-doesn't matter who the sender is when using the WebOTP API.
+doesn't matter who the sender is when using the Web OTP API.
 
 1. Go to
    [https://sms-receiver-demo.glitch.me](https://sms-receiver-demo.glitch.me) in Chrome 81 or later.
