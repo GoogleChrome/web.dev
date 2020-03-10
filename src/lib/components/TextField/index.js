@@ -1,6 +1,7 @@
 import {html} from "lit-element";
 import {ifDefined} from "lit-html/directives/if-defined.js";
 import {BaseElement} from "../BaseElement";
+import "./_styles.scss";
 
 /**
  * Element that renders a text input or textarea.
