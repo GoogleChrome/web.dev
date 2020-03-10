@@ -1,6 +1,7 @@
 import {html} from "lit-element";
 import {BaseResponseElement} from "../BaseResponseElement";
 import "../SelectGroup";
+import "./_styles.scss";
 
 /* eslint-disable require-jsdoc */
 class ResponseMultipleChoice extends BaseResponseElement {

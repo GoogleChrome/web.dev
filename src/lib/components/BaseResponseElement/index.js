@@ -15,6 +15,7 @@
  */
 
 import {BaseElement} from "../BaseElement";
+import "./_styles.scss";
 
 /**
  * Base element used by all self-assessment response components.

@@ -16,6 +16,7 @@
 
 import {html} from "lit-element";
 import {BaseModalElement} from "../BaseModalElement";
+import "./_styles.scss";
 
 /**
  * Element that renders the feedback modal for self-assessments.

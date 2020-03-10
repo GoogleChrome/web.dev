@@ -1,5 +1,6 @@
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
+import "./_styles.scss";
 
 /**
  * Element that renders a radio group or checkbox group.

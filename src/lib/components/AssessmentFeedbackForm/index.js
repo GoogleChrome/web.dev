@@ -16,6 +16,7 @@
 
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
+import "./_styles.scss";
 
 /**
  * Element that renders the feedback form for self-assessments.
