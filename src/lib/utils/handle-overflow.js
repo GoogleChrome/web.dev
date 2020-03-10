@@ -4,13 +4,13 @@
  * @param {string} dimension The dimension to check (height or width).
  * @return {Boolean} Whether the passed element has overflow.
  */
-export const handleOverflow = (scroller, dimension) => {
+export const checkOverflow = (scroller, dimension) => {
   if (dimension !== "height" && dimension !== "width") {
-    return console.error("Can only check overflow for height or width.");
+    throw new TypeError("Can only check overflow for height or width.");
   }
 
   if (!scroller) {
-    return console.error("Can't check overflow on an undefined element.");
+    throw new TypeError("Can't check overflow on an undefined element.");
   }
 
   const clientDimension =
