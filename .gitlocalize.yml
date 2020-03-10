@@ -11,8 +11,8 @@ pretranslate:
     - "authors"
   
     ignore_patterns:
-    - !ruby/regexp /{%\s?end([a-zA-Z0-9\.\-\?\'\"\,\!\s]*)\s?%}/
     - !ruby/regexp /{%\s?([a-zA-Z0-9\.\-\?\'\"\,\!\s]*)\s?%}/
+    - !ruby/regexp /{%\s?end([a-zA-Z0-9\.\-\?\'\"\,\!\s]*)\s?%}/
    
   paths:
   - source: "src/site/content/en"
