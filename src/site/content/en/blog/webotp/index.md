@@ -56,7 +56,7 @@ this](https://developers.google.com/identity/sms-retriever/). So does
 and
 [Safari](https://developer.apple.com/documentation/security/password_autofill/enabling_password_autofill_on_an_html_input_element).
 
-The WebOTP API lets your app receive specially-formatted messages bound to
+The Web OTP API lets your app receive specially-formatted messages bound to
 your app's origin. From this, you can programmatically obtain an OTP from an SMS
 message and verify a phone number for the user more easily.
 
