@@ -373,13 +373,15 @@ partial support.
 Check out the some [Media Session samples] featuring [Blender Foundation] and
 [Jan Morgenstern's work].
 
-<video autoplay loop muted style="max-width: 100%"
-    poster="https://storage.googleapis.com/media-session/screenrecord.png">
-  <source src="https://storage.googleapis.com/media-session/screenrecord.webm"
-          type="video/webm; codecs=vp8">
-  <source src="https://storage.googleapis.com/media-session/screenrecord.mp4"
-          type="video/mp4; codecs=h264">
-</video>
+ <figure class="w-figure">
+  <video controls autoplay loop muted poster="https://storage.googleapis.com/webfundamentals-assets/videos/media-hub-desktop-720.png">
+    <source src="https://storage.googleapis.com/webfundamentals-assets/videos/media-hub-desktop-720.webm" type="video/webm; codecs=vp9">
+    <source src="https://storage.googleapis.com/webfundamentals-assets/videos/media-hub-desktop-720.mp4" type="video/mp4; codecs=h264">
+  </video>
+  <figcaption class="w-figcaption">
+    A screencast illustrating the Media Session API
+  </figcaption>
+</figure>
 
 ## Resources
 
