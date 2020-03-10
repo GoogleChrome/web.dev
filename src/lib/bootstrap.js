@@ -8,7 +8,7 @@
 import config from "webdev_config";
 import "./webcomponents-config"; // must go before -loader below
 import "@webcomponents/webcomponentsjs/webcomponents-loader.js";
-import {swapContent} from "./loader";
+import {swapContent, getPartial} from "./loader";
 import * as router from "./utils/router";
 import {store} from "./store";
 
@@ -41,7 +41,21 @@ if ("serviceWorker" in navigator) {
     allowedHostnames.indexOf(window.location.hostname) !== -1 ||
     window.location.hostname.endsWith(".netlify.com")
   ) {
-    navigator.serviceWorker.register("/sw.js");
+    const isFirstInstall = !navigator.serviceWorker.controller;
+    navigator.serviceWorker.register("/sw.js").then(() => {
+      const {pathname} = window.location;
+      if (isFirstInstall) {
+        // We don't fetch the partial for the initial, real, HTML fetch from out HTTP server. This
+        // ensures that if the user goes offline and reloads for some reason, the page still loads.
+        getPartial(pathname);
+      }
+      if (pathname !== '/') {
+        // Aggressively refetch the landing page every time the site is loaded.
+        // TODO(samthor): Check Workbox's cache time and fetch if needed. Additionally, cache a
+        // number of recent articles.
+        getPartial('/');
+      }
+    });
   } else {
     console.warn(
       "skipping SW, unsupported hostname:",
