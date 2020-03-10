@@ -168,6 +168,9 @@ redirects:
 - from: /pwa
   to: /progressive-web-apps/
 
+- from: /pwa/
+  to: /progressive-web-apps/
+
 - from: /installable/
   to: /progressive-web-apps/#installable
 
