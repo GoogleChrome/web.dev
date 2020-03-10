@@ -20,14 +20,14 @@ class Tabs extends BaseElement {
 
   constructor() {
     super();
-    this.activeTab_ = 0;
+    this.activeTab = 0;
     this.overflow = false;
     this.prerenderedChildren = null;
     this.tabs = null;
     this.idSalt = generateIdSalt("web-tab-");
 
     this.onResize = this.onResize.bind(this);
-    this.changeTab = this.changeTab.bind(this);
+    this._changeTab = this._changeTab.bind(this);
     this.focusTab = this.focusTab.bind(this);
     this.previousTab = this.previousTab.bind(this);
     this.nextTab = this.nextTab.bind(this);
@@ -138,21 +138,14 @@ class Tabs extends BaseElement {
     window.removeEventListener("resize", this.onResize);
   }
 
-  set activeTab(val) {
-    const oldVal = this.activeTab_;
-
-    this.activeTab_ = Math.floor(val);
-
-    this.changeTab();
-    this.requestUpdate("activeTab", oldVal);
-  }
-
-  get activeTab() {
-    return this.activeTab_;
+  updated(changedProperties) {
+    if (changedProperties.has("activeTab")) {
+      this._changeTab(); // _ prefix because it's an internal method
+    }
   }
 
   // Update state of tabs and associated panels.
-  changeTab() {
+  _changeTab() {
     const tabs = this.querySelectorAll(".web-tabs__tab");
     const panels = this.querySelectorAll(".web-tabs__panel");
     const activeTab = tabs[this.activeTab];
@@ -177,13 +170,13 @@ class Tabs extends BaseElement {
   }
 
   // Focus the tab at the specified index.
-  focusTab(idx) {
+  focusTab(index) {
     const tabs = this.querySelectorAll(".web-tabs__tab");
 
-    if (!tabs[idx]) {
+    if (!tabs[index]) {
       throw new RangeError("There is no tab at the specified index.");
     } else {
-      tabs[idx].focus();
+      this.activeTab = index;
     }
   }
 
