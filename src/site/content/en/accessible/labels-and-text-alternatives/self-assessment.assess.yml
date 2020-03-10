@@ -27,9 +27,9 @@ questions:
 
       ```html
       <button>
-      <svg class="icon">
-        <use xlink:href="#icon-1" />
-      </svg>
+        <svg class="icon">
+          <use xlink:href="#icon-1" />
+        </svg>
       </button>
       ```
     type: think-and-check
@@ -43,10 +43,10 @@ questions:
 
       ```html
       <button>
-      <svg class="icon">
-        <use xlink:href="#icon-1" />
-      </svg>
-      <span class="tooltip hidden">Open menu</span>
+        <svg class="icon">
+          <use xlink:href="#icon-1" />
+        </svg>
+        <span class="tooltip hidden">Open menu</span>
       </button>
       ```
     type: think-and-check
@@ -63,8 +63,8 @@ questions:
   - stimulus: |
       ```html
       <label>
-      <input type="checkbox" value="subscribe"></input>
-      Subscribe to the newsletter?
+        <input type="checkbox" value="subscribe"></input>
+        Subscribe to the newsletter?
       </label>
       ```
     type: think-and-check

@@ -66,10 +66,10 @@ questions:
 
       ```html
       <nav>
-      <button>About</button>
-      <button>Services</button>
-      <button>Work</button>
-      <button>Contact</button>
+        <button>About</button>
+        <button>Services</button>
+        <button>Work</button>
+        <button>Contact</button>
       </nav>
       ```
     type: think-and-check

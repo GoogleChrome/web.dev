@@ -28,9 +28,9 @@ questions:
 
       ```html
       <form action="https://example.com/results.json">
-      <label for="email">Enter your email: </label>
-      <input type="email" name="email" id="email" required>
-      <button type="submit">Subscribe</button>
+        <label for="email">Enter your email: </label>
+        <input type="email" name="email" id="email" required>
+        <button type="submit">Subscribe</button>
       </form>
       ```
     type: think-and-check
@@ -65,8 +65,8 @@ questions:
       ```js
       var context = document.getElementById('bargraph').getContext('2d');
       var img = new Image();
-      img.onload = function() {
-      context.drawImage(img, 0, 0);
+        img.onload = function() {
+        context.drawImage(img, 0, 0);
       };
       img.src = 'https://example.com/graph-axes.svg';
       ```

@@ -8,12 +8,12 @@ questions:
 
       ```html
       <div role="dialog" aria-labelledby="dialog-header">
-      <button aria-label="Close"></button>
-      <h2 id="dialog-header">
-        Do you want to allow notifications from this website?
-      </h2>
-      <button>No</button>
-      <button>Yes</button>
+        <button aria-label="Close"></button>
+        <h2 id="dialog-header">
+          Do you want to allow notifications from this website?
+        </h2>
+        <button>No</button>
+        <button>Yes</button>
       </div>
       ```
     type: think-and-check
@@ -30,11 +30,11 @@ questions:
   - stimulus: |
       ```html
       <section tabindex="-1">
-      <h2>Cat facts</h2>
-      <ul>
-        <li>A group of cats is called a <a href="https://m-w.com/dictionary/clowder">clowder</a>.</li>
-        <li>Most cats are <a href="https://www.catfacts.org/catnip.html"> unaffected by catnip</a>.</li>
-      </ul>
+        <h2>Cat facts</h2>
+        <ul>
+          <li>A group of cats is called a <a href="https://m-w.com/dictionary/clowder">clowder</a>.</li>
+          <li>Most cats are <a href="https://www.catfacts.org/catnip.html"> unaffected by catnip</a>.</li>
+        </ul>
       </section>
       ```
     type: think-and-check
@@ -52,10 +52,10 @@ questions:
 
       ```html
       <div role="menu" tabindex="0">
-      <a role="menuitem" href="/learn/" tabindex="-1">Learn</a>
-      <a role="menuitem" href="/measure/" tabindex="-1">Measure</a>
-      <a role="menuitem" href="/blog/" tabindex="-1">Blog</a>
-      <a role="menuitem" href="/about/" tabindex="-1">About</a>
+        <a role="menuitem" href="/learn/" tabindex="-1">Learn</a>
+        <a role="menuitem" href="/measure/" tabindex="-1">Measure</a>
+        <a role="menuitem" href="/blog/" tabindex="-1">Blog</a>
+        <a role="menuitem" href="/about/" tabindex="-1">About</a>
       </div>
       <input tabindex="1" type="text" role="search" aria-label="Search" placeholder="Search">
       ```
@@ -78,10 +78,10 @@ questions:
 
       ```html
       <div role="radiogroup" aria-labelledby="breed-header">
-      <h3 id="breed-header">Your cat's breed</h3>
-      <div role="radio" aria-checked="false" tabindex="0">Persian</div>
-      <div role="radio" aria-checked="false" tabindex="-1">Bengal</div>
-      <div role="radio" aria-checked="false" tabindex="-1">Maine Coon</div>
+        <h3 id="breed-header">Your cat's breed</h3>
+        <div role="radio" aria-checked="false" tabindex="0">Persian</div>
+        <div role="radio" aria-checked="false" tabindex="-1">Bengal</div>
+        <div role="radio" aria-checked="false" tabindex="-1">Maine Coon</div>
       </div>
       ```
     type: think-and-check
