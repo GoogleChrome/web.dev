@@ -31,10 +31,8 @@ class Tabs extends BaseElement {
     this.focusTab = this.focusTab.bind(this);
     this.previousTab = this.previousTab.bind(this);
     this.nextTab = this.nextTab.bind(this);
-    this.focusNextItem = this.focusNextItem.bind(this);
-    this.focusPreviousItem = this.focusPreviousItem.bind(this);
-    this.focusFirstItem = this.focusFirstItem.bind(this);
-    this.focusLastItem = this.focusLastItem.bind(this);
+    this.firstTab = this.firstTab.bind(this);
+    this.lastTab = this.lastTab.bind(this);
   }
 
   render() {
@@ -169,29 +167,6 @@ class Tabs extends BaseElement {
     panels[this.activeTab].hidden = false;
   }
 
-  // Focus the tab at the specified index.
-  focusTab(index) {
-    const tabs = this.querySelectorAll(".web-tabs__tab");
-
-    if (!tabs[index]) {
-      throw new RangeError("There is no tab at the specified index.");
-    } else {
-      this.activeTab = index;
-    }
-  }
-
-  // Helper function to allow other components to request
-  // navigation to the previous tab.
-  previousTab() {
-    this.focusTab(this.activeTab - 1);
-  }
-
-  // Helper function to allow other components to request
-  // navigation to the next tab.
-  nextTab() {
-    this.focusTab(this.activeTab + 1);
-  }
-
   onResize() {
     const tabs = this.querySelector(".web-tabs__tablist");
 
@@ -214,6 +189,7 @@ class Tabs extends BaseElement {
   }
 
   onKeydown(e) {
+    const tabs = this.querySelectorAll(".web-tabs__tab");
     const KEYCODE = {
       END: 35,
       HOME: 36,
@@ -224,55 +200,67 @@ class Tabs extends BaseElement {
     switch (e.keyCode) {
       case KEYCODE.RIGHT:
         e.preventDefault();
-        this.focusNextItem();
+        this.nextTab();
         break;
       case KEYCODE.LEFT:
         e.preventDefault();
-        this.focusPreviousItem();
+        this.previousTab();
         break;
       case KEYCODE.HOME:
         e.preventDefault();
-        this.focusFirstItem();
+        this.firstTab();
         break;
       case KEYCODE.END:
         e.preventDefault();
-        this.focusLastItem();
+        this.lastTab();
         break;
     }
+    tabs[this.activeTab].focus();
   }
 
-  // Figure out if the current element has a next sibling.
-  // If so, focus it. If not, focus the first sibling.
-  focusNextItem() {
-    const item = document.activeElement;
-    if (item.nextElementSibling) {
-      item.nextElementSibling.focus();
+  // Helper method to allow other components to focus an arbitrary tab.
+  focusTab(index) {
+    const tabs = this.querySelectorAll(".web-tabs__tab");
+
+    if (!tabs[index]) {
+      throw new RangeError("There is no tab at the specified index.");
     } else {
-      this.focusFirstItem();
+      this.activeTab = index;
     }
   }
 
-  // Figure out if the current element has a previous sibling.
-  // If so, focus it. If not, focus the last sibling.
-  focusPreviousItem() {
-    const item = document.activeElement;
-    if (item.previousElementSibling) {
-      item.previousElementSibling.focus();
+  // If previous tab exists, make it active. If not, make last tab active.
+  previousTab() {
+    const tabs = this.querySelectorAll(".web-tabs__tab");
+
+    if (tabs[this.activeTab - 1]) {
+      this.activeTab = this.activeTab - 1;
     } else {
-      this.focusLastItem();
+      this.activeTab = tabs.length - 1;
     }
   }
 
-  // Focus first element in set of siblings.
-  focusFirstItem() {
-    const item = document.activeElement;
-    item.parentElement.firstElementChild.focus();
+  // If next tab exists, make it active. If not, make first tab active.
+  nextTab() {
+    const tabs = this.querySelectorAll(".web-tabs__tab");
+
+    if (tabs[this.activeTab + 1]) {
+      this.activeTab = this.activeTab + 1;
+    } else {
+      this.activeTab = 0;
+    }
   }
 
-  // Focus last element in set of siblings.
-  focusLastItem() {
-    const item = document.activeElement;
-    item.parentElement.lastElementChild.focus();
+  // Make first tab active.
+  firstTab() {
+    this.activeTab = 0;
+  }
+
+  // Make last tab active.
+  lastTab() {
+    const tabs = this.querySelectorAll(".web-tabs__tab");
+
+    this.activeTab = tabs.length - 1;
   }
 }
 
