@@ -10,7 +10,7 @@ alt: A drawing of a woman using OTP to log in to a web app.
 
 description: |
   Finding, memorizing, and typing OTPs sent via SMS is cumbersome. The
-  WebOTP API simplifies the OTP workflow for users.
+  Web OTP API simplifies the OTP workflow for users.
 
 tags:
   - post # post is a required tag for the article to show up in the blog.
