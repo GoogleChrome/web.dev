@@ -1,6 +1,6 @@
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
-import {checkOverflow} from "../../utils/handle-overflow";
+import {checkOverflow} from "../../utils/check-overflow";
 import {generateIdSalt} from "../../utils/generate-salt";
 import "./_styles.scss";
 
