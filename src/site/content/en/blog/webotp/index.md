@@ -31,7 +31,7 @@ Sending this code back to the developer's server demonstrates control of the
 phone number.
 
 {% Aside %}
-The WebOTP API was originally called the SMS Receiver API. You may still see
+The Web OTP API was originally called the SMS Receiver API. You may still see
 it named that way in some places.
 {% endAside %}
 
