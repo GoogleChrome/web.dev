@@ -202,13 +202,7 @@ class Tabs extends BaseElement {
   onResize() {
     const tabs = this.querySelector(".web-tabs__tablist");
 
-    const hasOverflow = checkOverflow(tabs, "width");
-
-    if (hasOverflow) {
-      this.overflow = true;
-    } else {
-      this.overflow = false;
-    }
+    this.overflow = checkOverflow(tabs, "width");
   }
 
   onFocus(e) {
