@@ -166,7 +166,7 @@ doesn't matter who the sender is when using the Web OTP API.
 1. From the other phone, send yourself the copied text message via SMS.
 
 Did you receive the SMS and see the prompt to enter the code to the input area?
-That is how the WebOTP API works for users.
+That is how the Web OTP API works for users.
 
 {% Aside 'caution' %}
 If you are using a work profile on your Android device and the SMS Receiver does
