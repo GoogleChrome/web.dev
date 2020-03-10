@@ -120,7 +120,9 @@ class Tabs extends BaseElement {
     // listen for requests to navigate to the next tab.
     const questions = this.querySelectorAll("web-question");
 
-    if (!questions) return;
+    if (!questions) {
+      return;
+    }
     for (const question of questions) {
       question.addEventListener("request-nav-to-next", this.nextTab);
     }
@@ -155,7 +157,9 @@ class Tabs extends BaseElement {
     const panels = this.querySelectorAll(".web-tabs__panel");
     const activeTab = tabs[this.activeTab];
 
-    if (!panels[this.activeTab]) return;
+    if (!panels[this.activeTab]) {
+      return;
+    }
 
     for (const tab of tabs) {
       tab.setAttribute("aria-selected", "false");
