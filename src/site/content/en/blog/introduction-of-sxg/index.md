@@ -12,11 +12,13 @@ tags:
 ---
 
 ## Cross-browser support
+
 Chrome is currently the only browser that supports SXG.
 See the Consensus & Standardization section of [Origin-Signed HTTP Exchanges](https://www.chromestatus.com/feature/5745285984681984) for more up-to-date information.
 
 ## Prerequisites
-To implement SXG on your website, you must: 
+
+To implement SXG on your website, you must:
 
 - Have control over your domain, including DNS entries.
 - Get certificates. SXG requires the issuance of a dedicated certificate. In particular, you cannot reuse your TLS key or certificate.
