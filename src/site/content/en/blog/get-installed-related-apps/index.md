@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: The getInstalledRelatedApps() API is a new web platform API that allows your web app to check whether your native app or PWA is installed on the user's device.
 date: 2018-12-20
-updated: 2020-03-06
+updated: 2020-03-10
 tags:
   - post
   - capabilities
@@ -160,8 +160,8 @@ Finally, publish your updated Android app to the Play store.
 
 {% Aside %}
 **Coming Soon!**
-Starting in Chrome 81, websites can check if their PWA, served from the same
-domain is installed.
+Starting in Chrome 81, in addition to checking if its native app is already
+installed, a PWA can check if it (the PWA) is already installed.
 Microsoft is actively working on enabling this API for Edge and we hope to
 see it land around Edge 82.
 {% endAside %}
@@ -181,23 +181,29 @@ the full path to the PWAs web app manifest in the `url` property.
 }
 ```
 
-#### PWA served from a different domain
+#### PWA served from a different location
 
 {% Aside %}
 **Coming Soon!**
-In addition to detecting if their PWA is served from the same domain,
-Chrome 82 lets websites check if their PWA is served from a different domain.
-Microsoft is actively working on enabling this API for Edge and we hope to
-see it land around Edge 82.
+Starting in Chrome 82, a page can check if its PWA is installed, even if it
+is outside the scope of the PWA. Microsoft is actively working on enabling
+this API for Edge and we hope to see it land around Edge 82.
 {% endAside %}
 
-If the PWA you're testing for lives on a different domain, for instance
-`example.com` wants to check if the PWA served from `app.example.com` is
-installed, you'll also need to define the relationship between the two sites.
+A page can check if its PWA is installed, even if it is outside the
+[scope][scope] of the PWA. For instance, `www.example.com` wants to check if
+its PWA served from `app.example.com` is installed. Or a page under
+`/about/` to check if the PWA served from `/app/` is already installed.
 
-Add an `assetlinks.json` file to the [`/.well-known/`][well-known]
+First, add a web app manifest that includes the `related_applications` property
+([as indicated above](#relationship-web)) to the page that will check if it's
+related PWA is installed.
+
+Next, you must define the relationship between the two pages using digital
+asset links. Add an `assetlinks.json` file to the [`/.well-known/`][well-known]
 directory of the domain where the PWA lives (`app.example.com`). In the `site`
-property, provide the full path to the web app manifest from the other site.
+property, provide the full path to the web app manifest of the page that is
+performing the check.
 
 ```json
 // Served from https://app.example.com/.well-known/assetlinks.json
@@ -276,3 +282,4 @@ browser vendors how critical it is to support them.
 [cr-dev-twitter]: https://twitter.com/chromiumdev
 [dig-asset-links]: https://developers.google.com/digital-asset-links/v1/getting-started
 [well-known]: https://tools.ietf.org/html/rfc5785
+[scope]: /add-manifest/#scope
