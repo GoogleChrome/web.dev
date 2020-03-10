@@ -1,6 +1,6 @@
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
-import {handleOverflow} from "../../utils/handle-overflow";
+import {checkOverflow} from "../../utils/check-overflow";
 import "./_styles.scss";
 
 /**
@@ -187,7 +187,7 @@ class Tabs extends BaseElement {
   onResize() {
     const tabs = this.querySelector(".web-tabs__tablist");
 
-    const hasOverflow = handleOverflow(tabs, "width");
+    const hasOverflow = checkOverflow(tabs, "width");
 
     if (hasOverflow) {
       this.overflow = true;
