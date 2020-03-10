@@ -148,7 +148,7 @@ The whole process is diagrammed in the image below.
 <figure class="w-figure w-figure--center">
   <img src="./diagram.png" width="486" height="499" />
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    WebOTP API diagram
+    Web OTP API diagram
   </figcaption>
 </figure
 
