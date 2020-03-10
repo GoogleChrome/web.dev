@@ -1,5 +1,5 @@
 ---
-title: Verify phone numbers on the web with the WebOTP API
+title: Verify phone numbers on the web with the Web OTP API
 subhead: Help users type OTPs received through SMS
 authors:
   - agektmr
