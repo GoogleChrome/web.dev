@@ -174,7 +174,7 @@ not seem to be working, try installing and using Chrome on your personal profile
 instead (i.e. the same profile in which you receive SMS messages).
 {% endAside %}
 
-## Using the WebOTP API
+## Using the Web OTP API
 
 Using the WebOTP API consists of two parts: JavaScript in your web
 app and formatted message text sent via SMS.
