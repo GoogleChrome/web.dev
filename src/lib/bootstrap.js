@@ -35,27 +35,44 @@ WebComponents.waitFor(async () => {
 });
 
 if ("serviceWorker" in navigator) {
+  const ensurePartialCache = (isFirstInstall=false) => {
+    const {pathname} = window.location;
+    if (isFirstInstall) {
+      // We don't fetch the partial for the initial, real, HTML fetch from out HTTP server. This
+      // ensures that if the user goes offline and reloads for some reason, the page still loads.
+      getPartial(pathname);
+    }
+    if (pathname !== '/') {
+      // Aggressively refetch the landing page every time the site is loaded.
+      // TODO(samthor): Check Workbox's cache time and fetch if needed. Additionally, cache a
+      // number of recent articles.
+      getPartial('/');
+    }
+  };
+
   // Allow local/prod as well as .netlify staging deploy target.
   const allowedHostnames = ["web.dev", "localhost"];
   if (
     allowedHostnames.indexOf(window.location.hostname) !== -1 ||
     window.location.hostname.endsWith(".netlify.com")
   ) {
-    const isFirstInstall = !navigator.serviceWorker.controller;
-    navigator.serviceWorker.register("/sw.js").then(() => {
-      const {pathname} = window.location;
-      if (isFirstInstall) {
-        // We don't fetch the partial for the initial, real, HTML fetch from out HTTP server. This
-        // ensures that if the user goes offline and reloads for some reason, the page still loads.
-        getPartial(pathname);
-      }
-      if (pathname !== '/') {
-        // Aggressively refetch the landing page every time the site is loaded.
-        // TODO(samthor): Check Workbox's cache time and fetch if needed. Additionally, cache a
-        // number of recent articles.
-        getPartial('/');
-      }
-    });
+    if (navigator.serviceWorker.controller) {
+      // This isn't the first install, but ensure some partials are up-to-date.
+      ensurePartialCache();
+
+      // We claim active clients if the Service Worker's architecture rev changes. We can't
+      // reliably force a reload via the Client interface as it's unsupported in Safari.
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        window.location.reload();
+      });
+    } else {
+      // Watch for the brand new Service Worker to be activated. We claim this foreground page
+      // inside the Service Worker, so this event will fire when it is activated.
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        ensurePartialCache(true);
+      });
+    }
+    navigator.serviceWorker.register('/sw.js');
   } else {
     console.warn(
       "skipping SW, unsupported hostname:",

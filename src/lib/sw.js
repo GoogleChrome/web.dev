@@ -36,37 +36,16 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("activate", (event) => {
   const p = Promise.resolve().then(async () => {
     const previousArchitecture = await idb.get("arch");
-    if (previousArchitecture === undefined && replacingPreviousServiceWorker) {
-      // We're replacing a Service Worker that didn't have architecture info. Force reload.
-    } else if (
-      !replacingPreviousServiceWorker ||
-      previousArchitecture === serviceWorkerArchitecture
-    ) {
-      // The architecture didn't change (or this is a brand new install), don't force a reload,
-      // upgrades will happen in due course.
+    if (previousArchitecture === serviceWorkerArchitecture) {
+      // The architecture didn't change, don't force a reload, upgrades will happen in due course.
       return;
     }
-    console.debug(
-      "web.dev SW upgrade from",
-      previousArchitecture,
-      "to arch",
-      serviceWorkerArchitecture,
-    );
-
-    await self.clients.claim();
-
-    // Reload all open pages (includeUncontrolled shouldn't be needed as we've _just_ claimed
-    // clients, but include it anyway for sanity).
-    const windowClients = await self.clients.matchAll({
-      includeUncontrolled: true,
-      type: "window",
-    });
-
-    // It's impossible to 'await' this navigation because this event would literally be blocking
-    // our fetch handlers from running. These navigates must be 'fire-and-forget'.
-    windowClients.map((client) => client.navigate(client.url));
-
     await idb.set("arch", serviceWorkerArchitecture);
+
+    // If the architecture changed (including due to an initial install), claim our clients
+    // immediately. If this is an architecture rev change, this forces a reload on the client
+    // (required as `client.navigate()` is unsupported on Safari).
+    await self.clients.claim();
   });
   event.waitUntil(p);
 });
