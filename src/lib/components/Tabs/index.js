@@ -185,7 +185,14 @@ class Tabs extends BaseElement {
   // Helper function to allow child components to request
   // navigation to the next tab.
   nextTab() {
-    this.focusTab(this.activeTab + 1);
+    const idx = this.activeTab + 1;
+    const tabs = this.querySelectorAll(".web-tabs__tab");
+
+    if (!tabs[idx]) {
+      throw new RangeError("nextTab() was called, but there is no next tab.");
+    } else {
+      this.focusTab(idx);
+    }
   }
 
   onResize() {
