@@ -1,7 +1,15 @@
-# How to setup Signed HTTP Exchanges (SXG)
-
-[Signed HTTP Exchanges (SXG)](https://developers.google.com/web/updates/2018/11/signed-exchanges) is a new web technology that makes it easier for users to tell content creators apart from content distributors.
-This guide shows you how to set up SXG.
+---
+title: How to setup Signed HTTP Exchanges (SXG)
+subhead: The Wake Lock API provides a way to prevent devices from dimming or locking the screen when an application needs to keep running.
+authors:
+  - kumagi
+description: [Signed HTTP Exchanges (SXG)](https://developers.google.com/web/updates/2018/11/signed-exchanges) is a new web technology that makes it easier for users to tell content creators apart from content distributors. This guide shows you how to set up SXG.
+date: 2020-03-10
+hero: hero.jpg
+tags:
+  - SXG
+  - nginx
+---
 
 ## Cross-browser support
 Chrome is currently the only browser that supports SXG.
