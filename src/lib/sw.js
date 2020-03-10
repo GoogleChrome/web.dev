@@ -15,15 +15,7 @@ import {matchSameOriginRegExp} from "./utils/sw-match.js";
 // Used when the design of the SW changes dramatically, e.g. from DevSite to v2.
 const serviceWorkerArchitecture = "v3";
 
-let replacingPreviousServiceWorker = false;
-
 self.addEventListener("install", (event) => {
-  // This is non-null if there was a previous Service Worker registered. Record for "activate", so
-  // that a lack of current architecture can be seen as a reason to reload our clients.
-  if (self.registration.active) {
-    replacingPreviousServiceWorker = true;
-  }
-
   event.waitUntil(self.skipWaiting());
 });
 
@@ -43,7 +35,7 @@ self.addEventListener("activate", (event) => {
     await idb.set("arch", serviceWorkerArchitecture);
 
     // If the architecture changed (including due to an initial install), claim our clients
-    // immediately. If this is an architecture rev change, this forces a reload on the client
+    // immediately. If this is an architecture rev change, this triggers a reload on the client
     // (required as `client.navigate()` is unsupported on Safari).
     await self.clients.claim();
   });
