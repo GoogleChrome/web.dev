@@ -129,7 +129,7 @@ class Assessment extends BaseModalElement {
     `;
     // lit-element prevents children from being duplicated,
     // so grab setLeader text content.
-    const text = this.setLeader[0] ? this.setLeader[0].innerText : "";
+    const text = this.setLeader[0] ? this.setLeader[0].textContent : "";
     const content = contentTemplate(text);
 
     render(content, launcher);

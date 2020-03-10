@@ -16,7 +16,7 @@
 
 import {BaseElement} from "../BaseElement";
 import "wicg-inert";
-import {handleOverflow} from "../../utils/handle-overflow";
+import {checkOverflow} from "../../utils/check-overflow";
 import {openModal} from "../../actions";
 import {closeModal} from "../../actions";
 import "./_styles.scss";
@@ -64,6 +64,7 @@ export class BaseModalElement extends BaseElement {
   disconnectedCallback() {
     super.disconnectedCallback();
     this.removeEventListener("click", this.onClick);
+    this.open = false;
   }
 
   set open(val) {
@@ -147,13 +148,7 @@ export class BaseModalElement extends BaseElement {
       return;
     }
 
-    const hasOverflow = handleOverflow(content, "height");
-
-    if (hasOverflow) {
-      this.overflow = true;
-    } else {
-      this.overflow = false;
-    }
+    this.overflow = checkOverflow(content, "height");
   }
 
   getTrigger() {
