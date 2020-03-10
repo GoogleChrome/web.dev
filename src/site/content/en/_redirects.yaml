@@ -174,7 +174,7 @@ redirects:
 - from: /discover-installable/
   to: /progressive-web-apps/#installable
 
-# Redirect blog content
+# Redirect for spec name changes
 
 - from: /sms-receiver-api-announcement
-  to: /webotp
+  to: /web-otp
