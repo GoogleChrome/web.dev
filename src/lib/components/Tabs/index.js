@@ -29,6 +29,7 @@ class Tabs extends BaseElement {
     this.onResize = this.onResize.bind(this);
     this.changeTab = this.changeTab.bind(this);
     this.focusTab = this.focusTab.bind(this);
+    this.previousTab = this.previousTab.bind(this);
     this.nextTab = this.nextTab.bind(this);
     this.focusNextItem = this.focusNextItem.bind(this);
     this.focusPreviousItem = this.focusPreviousItem.bind(this);
@@ -186,7 +187,13 @@ class Tabs extends BaseElement {
     }
   }
 
-  // Helper function to allow child components to request
+  // Helper function to allow other components to request
+  // navigation to the previous tab.
+  previousTab() {
+    this.focusTab(this.activeTab - 1);
+  }
+
+  // Helper function to allow other components to request
   // navigation to the next tab.
   nextTab() {
     this.focusTab(this.activeTab + 1);
