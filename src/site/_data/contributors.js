@@ -1710,6 +1710,19 @@ const contributors = {
       family: "Hansson",
     },
   },
+  kumagi: {
+    name: {
+      given: "Hiroki",
+      family: "Kumazaki"
+    },
+    org: {
+      name: "Google",
+      unit: "Software engineering"
+    },
+    country: "JP",
+    twitter: "kumagi",
+    github: "kumagi"
+  },
 };
 
 const processedContributors = {};
