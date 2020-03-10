@@ -72,7 +72,7 @@ establish new sessions for these users.
 
 ## Current status
 
-The table below explains the current status of the WebOTP API.
+The table below explains the current status of the Web OTP API.
 
 <table>
 <tr>
