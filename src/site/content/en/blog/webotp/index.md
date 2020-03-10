@@ -20,7 +20,7 @@ tags:
   - fugu
 ---
 
-## What is the WebOTP API?
+## What is the Web OTP API?
 
 These days, most people in the world own a mobile device and developers are
 commonly using phone numbers as an identifier for users of their services.
