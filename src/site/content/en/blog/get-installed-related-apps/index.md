@@ -195,8 +195,8 @@ A page can check if its PWA is installed, even if it is outside the
 its PWA served from `app.example.com` is installed. Or a page under
 `/about/` to check if the PWA served from `/app/` is already installed.
 
-First, add a web app manifest that includes the `related_applications` property
-([as indicated above](#relationship-web)) to the page that will check if it's
+To enable this, first add a web app manifest that includes the `related_applications` property
+([as indicated above](#relationship-web)) to the page that will check if its
 related PWA is installed.
 
 Next, you must define the relationship between the two pages using digital
