@@ -1,8 +1,16 @@
-# How to distribute HTTP Signed Exchanges (SXG)
-
-As an HTTP Signed Exchanges (SXG) distributor, you can deliver SXG files on behalf of the original content creators. Web browsers that support SXG will display such SXG files as if they were delivered from the original content creators. This enables you to implement cross-site preloading without violating privacy. 
-
-This guide shows you how to distribute SXG properly.
+---
+title: How to distribute HTTP Signed Exchanges (SXG)
+subhead: SXG enables you a rapid cross site navigation.
+authors:
+  - kumagi
+date: 2020-03-10
+hero: hero.png
+alt : 
+description: As an HTTP Signed Exchanges (SXG) distributor, you can deliver SXG files on behalf of the original content creators. Web browsers that support SXG will display such SXG files as if they were delivered from the original content creators. This enables you to implement cross-site preloading without violating privacy. This guide shows you how to distribute SXG properly.
+tags:
+  - SXG
+  - nginx
+---
 
 ## Cross-browser support
 
