@@ -180,7 +180,7 @@ Using the Web OTP API consists of two parts: JavaScript in your web
 app and formatted message text sent via SMS.
 
 {% Aside %}
-The WebOTP API requires a secure origin (HTTPS).
+The Web OTP API requires a secure origin (HTTPS).
 {% endAside %}
 
 ### Feature detection
