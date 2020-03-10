@@ -41,7 +41,7 @@ web-assessment {
 
 @keyframes modal-slideup {
   0% {
-    transform: translatey(40%);
+    transform: translateY(40%);
     opacity: 0;
   }
 
@@ -52,6 +52,7 @@ web-assessment {
 }
 
 // Overrides .w-button--primary so button matches self-assessment color
+// (All states needed because they're specified for .w-button--primary.)
 .web-assessment__open,
 .web-assessment__open:hover,
 .web-assessment__open:active,
