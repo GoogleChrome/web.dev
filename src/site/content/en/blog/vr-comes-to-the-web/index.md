@@ -4,7 +4,7 @@ subhead: A few basics to prepare you for a spectrum of immersive experiences&#58
 authors:
   - joemedley
 date: 2019-10-31
-update: 2020-02-13
+update: 2020-03-02
 hero: hero.jpg
 alt: A person using a virtual reality headset.
 description:
@@ -86,9 +86,13 @@ sensors and cameras, which it needs in order to function.
 ### Request a session
 
 Entering an XR session requires a user gesture. To get that, use feature
-detection and make a call to `isSessionSupported()`. In the example below, I've
-indicated that I want a virtual reality session with the `'immersive-vr'`
-session type. The [other session
+detection to test for `XRSystem` (via `navigator.xr`) and make a call to
+`XRSystem.isSessionSupported()`. Be aware that in Chrome versions 79 and 80 the
+`XRSystem` object was called `XR`.
+
+In the example below, I've indicated that I
+want a virtual reality session with the `'immersive-vr'` session type. The
+[other session
 types](https://developer.mozilla.org/en-US/docs/Web/API/XR/isSessionSupported#Syntax)
 are `'immersive-ar'` and `'inline'`. An inline session is for presenting content
 within HTML and is maily used for teaser content. The [Immersive AR

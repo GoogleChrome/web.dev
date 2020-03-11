@@ -105,6 +105,7 @@ module.exports = {
           "how-can-performance-improve-conversion",
           "what-should-you-measure-to-improve-performance",
           "how-to-report-metrics",
+          "fixing-website-speed-cross-functionally",
         ],
       },
     ],

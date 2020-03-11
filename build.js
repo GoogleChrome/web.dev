@@ -22,6 +22,7 @@ const path = require("path");
 const log = require("fancy-log");
 const rollupPluginNodeResolve = require("rollup-plugin-node-resolve");
 const rollupPluginCJS = require("rollup-plugin-commonjs");
+const rollupPluginPostCSS = require("rollup-plugin-postcss");
 const rollupPluginVirtual = require("rollup-plugin-virtual");
 const rollupPluginReplace = require("rollup-plugin-replace");
 const rollup = require("rollup");
@@ -67,13 +68,12 @@ async function buildCacheManifest() {
     throw new Error(`toplevel manifest: ${toplevelManifest.warnings}`);
   }
 
-  // Note that Workbox assumes "blah/index.html" is the same as requests to "blah/" for free, so
-  // rewriting the URLs below isn't neccessary.
+  // This doesn't include any HTML, as we bundle that directly into the source
+  // of the Service Worker below.
   const contentManifest = await getManifest({
     globDirectory: "dist/en",
     globPatterns: [
-      "index.html",
-      "offline/index.html",
+      "offline/index.json",
       "images/**/*.{png,svg}", // .jpg files are used for authors, skip
     ],
   });
@@ -96,6 +96,16 @@ async function buildCacheManifest() {
 async function build() {
   const generated = [];
 
+  const postcssConfig = {};
+  if (isProd) {
+    // nb. Only require() autoprefixer when used.
+    const autoprefixer = require("autoprefixer");
+    postcssConfig.plugins = [autoprefixer];
+
+    // uses cssnano vs. our regular CSS usees sass' builtin compression
+    postcssConfig.minimize = true;
+  }
+
   // Rollup bootstrap to generate graph of source needs. This eventually uses
   // dynamic import to bring in code required for each page (see router.js).
   // Does not hash "bootstrap.js" entrypoint, but hashes all generated chunks,
@@ -106,6 +116,7 @@ async function build() {
       rollupPluginVirtual({
         webdev_config: `export default ${JSON.stringify(bootstrapConfig)};`,
       }),
+      rollupPluginPostCSS(postcssConfig),
       ...defaultPlugins,
     ],
   });
@@ -120,20 +131,28 @@ async function build() {
   }
 
   const manifest = isProd ? await buildCacheManifest() : [];
-  const noticeDev = isProd ? "" : "// Manifest not generated in dev";
+  const noticeDev = isProd ? "" : "// Not generated in dev";
+
+  const layoutTemplate = await fs.readFile(
+    "dist/sw-partial-layout.partial",
+    "utf-8",
+  );
+
   const swBundle = await rollup.rollup({
     input: "src/lib/sw.js",
     plugins: [
-      // Workbox uses a variable known to be undefined (!) and forces this plugin to be used.
-      // TODO(samthor): This generates statements like "if (1 !== 1)", which are NOT removed from
-      // the final bundle code. Terser/Rollup don't strip them.
+      // This variable is defined by Webpack (and some other tooling), but not by Rollup. Set it to
+      // "production" if we're in prod, which will hide all of Workbox's log messages.
+      // Note that Terser below will actually remove the conditionals (this replace will generate
+      // lots of `if ("production" !== "production")` statements).
       rollupPluginReplace({
-        "process.env.NODE_ENV": JSON.stringify("production"),
+        "process.env.NODE_ENV": JSON.stringify(isProd ? "production" : ""),
       }),
       rollupPluginVirtual({
         "cache-manifest": `export default ${JSON.stringify(
           manifest,
         )};${noticeDev}`,
+        "layout-template": `export default ${JSON.stringify(layoutTemplate)}`,
       }),
       ...defaultPlugins,
     ],

@@ -4,6 +4,7 @@
 
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
+import "./_styles.scss";
 
 /**
  * An indeterminate progress bar.

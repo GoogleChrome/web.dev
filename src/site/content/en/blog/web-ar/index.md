@@ -190,7 +190,7 @@ right, up, and backward, respectively.
 
 The coordinates returned by `XRFrame.getViewerPose()` depend on the requested
 [reference space
-type](https://wiki.developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpace#Reference_space_types).
+type](https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpace#Reference_space_types).
 More about that when we get to the frame loop. Right now we need to select a
 reference type that's appropriate for augmented reality. Again, this uses my
 convenience property.
@@ -219,7 +219,7 @@ function onSessionStarted(xrSession) {
 ```
 
 If you've visited the [Immersive AR Session
-Sample](https://immersive-web.github.io/webxr-samples/proposals/immersive-ar-session.html)
+Sample](https://immersive-web.github.io/webxr-samples/immersive-ar-session.html)
 you'll notice that initially the scene is static and not at all augmented
 reality. You can drag and swipe with your finger to move around the scene. If
 you click "START AR", the background drops out and you can move around the scene

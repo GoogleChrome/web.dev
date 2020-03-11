@@ -22,10 +22,8 @@ module.exports = {
   repo: "https://github.com/GoogleChrome/web.dev",
   subscribe: "https://web.dev/subscribe",
   thumbnail: "/images/social.png",
-  isBannerEnabled: true,
-  banner: `Take the [MDN Browser Compatibility Survey](https://qsurvey.mozilla.com/s3/4f853f5f79cc)
-  and help us understand your issues, and what we/browser vendors can do to help
-  make your life easier.`,
+  isBannerEnabled: false,
+  banner: ``,
   // Note that the imageCdn value is only used when we do a production build
   // of the site. Otherwise all image paths are local. This means you can
   // develop locally without having to mess with the CDN at all.

@@ -1,41 +1,19 @@
 import * as idb from "idb-keyval";
 import manifest from "cache-manifest";
+import layoutTemplate from "layout-template";
 import {initialize as initializeGoogleAnalytics} from "workbox-google-analytics";
 import * as workboxRouting from "workbox-routing";
 import * as workboxStrategies from "workbox-strategies";
 import {CacheableResponsePlugin} from "workbox-cacheable-response";
 import {ExpirationPlugin} from "workbox-expiration";
 import {matchPrecache, precacheAndRoute} from "workbox-precaching";
+import {cacheNames} from "workbox-core";
+import {matchSameOriginRegExp} from "./utils/sw-match.js";
 
 // Architecture revision of the Service Worker. If the previously saved revision doesn't match,
 // then this will cause clients to be aggressively claimed and reloaded on install/activate.
 // Used when the design of the SW changes dramatically, e.g. from DevSite to v2.
 const serviceWorkerArchitecture = "v3";
-
-const normalizeIndexCacheKeyPlugin = {
-  cacheKeyWillBeUsed({request, mode}) {
-    // web.dev does not have any handlers which respond to ?search queries, so strip them (useful
-    // for ?utm_... params, which aren't stripped by Workbox).
-    // From: https://github.com/GoogleChrome/workbox/issues/1709#issuecomment-429917667
-    const u = new URL(request.url);
-    if (u.search || u.hash) {
-      u.search = "";
-      u.hash = "";
-
-      // Request is immutable, so recreate it here.
-      request = new Request(u.href, {headers: request.headers});
-    }
-
-    // Take advantage of Workbox's built-in handling of .../index.html routes and ensure that its
-    // cache keys always include it. (e.g., requests for foo/ will load foo/index.html: but
-    // foo/index.html will not load foo/).
-    if (request.url.endsWith("/")) {
-      return request.url + "index.html";
-    }
-
-    return request;
-  },
-};
 
 let replacingPreviousServiceWorker = false;
 
@@ -47,6 +25,12 @@ self.addEventListener("install", (event) => {
   }
 
   event.waitUntil(self.skipWaiting());
+});
+
+self.addEventListener("activate", (event) => {
+  // This deletes the default Workbox runtime cache, which was previously growing unbounded. At the
+  // start of March 2020, caches must now have explicit expirations and custom names.
+  event.waitUntil(caches.delete(cacheNames.runtime));
 });
 
 self.addEventListener("activate", (event) => {
@@ -89,11 +73,25 @@ self.addEventListener("activate", (event) => {
 
 initializeGoogleAnalytics();
 
+const externalExpirationPlugin = new ExpirationPlugin({
+  maxAgeSeconds: 60 * 60 * 24 * 365, // 1 yr
+});
+
+const contentExpirationPlugin = new ExpirationPlugin({
+  maxEntries: 50, // store the most recent ~50 articles
+});
+
+const assetExpirationPlugin = new ExpirationPlugin({
+  maxAgeSeconds: 60 * 60 * 24 * 7, // 1 wk
+  maxEntries: 100, // allow a large number of images, but expire quickly
+});
+
 // Cache the Google Fonts stylesheets with a stale-while-revalidate strategy.
 workboxRouting.registerRoute(
   /^https:\/\/fonts\.googleapis\.com/,
   new workboxStrategies.StaleWhileRevalidate({
     cacheName: "google-fonts-stylesheets",
+    plugins: [externalExpirationPlugin],
   }),
 );
 
@@ -106,10 +104,7 @@ workboxRouting.registerRoute(
       new CacheableResponsePlugin({
         statuses: [0, 200],
       }),
-      new ExpirationPlugin({
-        maxAgeSeconds: 60 * 60 * 24 * 365,
-        maxEntries: 30,
-      }),
+      externalExpirationPlugin,
     ],
   }),
 );
@@ -118,55 +113,22 @@ workboxRouting.registerRoute(
 precacheAndRoute(manifest);
 
 /**
- * Match "/foo-bar/ "and "/foo-bar/as/many/of-these-as-you-like/" (with optional trailing
- * "index.html"), normal page nodes for web.dev. This only matches on pathname.
- */
-const contentPathRe = new RegExp("^/([\\w-]+/)*(|index.html)$");
-
-/**
- * Match "/foo-bar" and "/foo-bar/as-many/but/no/trailing/slash" (but not "/foo/bar/index.html").
- * This only matches on pathname (so it must always start with "/").
- */
-const untrailedContentPathRe = new RegExp("^(/[\\w-]+)+$");
-
-/**
- * Send normal nodes to cache first.
- */
-workboxRouting.registerRoute(
-  ({url, event}) => {
-    return url.host === self.location.host && contentPathRe.test(url.pathname);
-  },
-  new workboxStrategies.NetworkFirst({
-    plugins: [normalizeIndexCacheKeyPlugin],
-  }),
-);
-
-/**
- * Cache images that aren't included in the original manifest, such as author profiles.
- */
-workboxRouting.registerRoute(
-  new RegExp("/images/.*"),
-  new workboxStrategies.StaleWhileRevalidate(),
-);
-
-/**
  * This is a special handler for requests without a trailing "/". These requests _should_ go to
  * the network (so that we can match web.dev's redirects.yaml file) but fallback to the normalized
  * version of the request (e.g., "/foo" => "/foo/").
  */
-self.addEventListener("fetch", (event) => {
-  const u = new URL(event.request.url);
-  if (
-    !untrailedContentPathRe.test(u.pathname) ||
-    self.location.host !== u.host
-  ) {
-    return;
-  }
+const untrailedContentPathRe = new RegExp("^(/[\\w-]+)+$");
 
-  const p = Promise.resolve().then(async () => {
-    // First, check if there's actually something in the cache already. Workbox always suffixes
-    // with "/index.html" relative to our actual request paths.
-    const cachedResponse = await matchPrecache(u.pathname + "/index.html");
+workboxRouting.registerRoute(
+  matchSameOriginRegExp(untrailedContentPathRe),
+  async ({url, event}) => {
+    const {pathname} = url;
+
+    // First, check if there's actually a partial node in the cache already. If so, there's no need
+    // to do a real network fetch, as we know the modified request will be satisfied.
+    const cachedResponse = await caches.match(
+      new Request(pathname + "/index.json"),
+    );
     if (!cachedResponse) {
       // If there's not, then try the network.
       try {
@@ -184,23 +146,109 @@ self.addEventListener("fetch", (event) => {
       headers,
     });
     return redirectResponse;
-  });
+  },
+);
 
-  event.respondWith(p);
+/**
+ * Match fetches for patials, for SPA requests. Matches "/foo-bar/index.json" and
+ * "/foo-bar/many/parts/index.json", for partial SPA requests.
+ */
+const partialPathRe = new RegExp("^/([\\w-]+/)*index\\.json$");
+const partialStrategy = new workboxStrategies.NetworkFirst({
+  cacheName: "webdev-html-cache-v1", // nb. We used to cache HTML here, so we name it the same
+  plugins: [contentExpirationPlugin],
 });
 
-workboxRouting.setCatchHandler(async ({event}) => {
-  // Destination is set by loading this content normally; it's not set for fetch(), so look for our
-  // custom header.
-  const isDocumentRequest =
-    event.request.destination === "document" ||
-    event.request.headers.get("X-Document");
-  if (isDocumentRequest) {
-    const cachedOfflineResponse = await matchPrecache("/offline/index.html");
-    if (!cachedOfflineResponse) {
-      // This occurs in development when the offline page is in the runtime cache.
-      return caches.match("/offline/index.html", {ignoreSearch: true});
+workboxRouting.registerRoute(
+  matchSameOriginRegExp(partialPathRe),
+  partialStrategy,
+);
+
+/**
+ * Cache images that aren't included in the original manifest, such as author profiles.
+ */
+workboxRouting.registerRoute(
+  new RegExp("/images/.*"),
+  new workboxStrategies.StaleWhileRevalidate({
+    cacheName: "webdev-assets-cache-v1",
+    plugins: [assetExpirationPlugin],
+  }),
+);
+
+/**
+ * Match "/foo-bar/ "and "/foo-bar/as/many/of-these-as-you-like/" (with optional trailing
+ * "index.html"), normal page nodes for web.dev. This only matches on pathname.
+ *
+ * This fetch handler internally fetches the required partial using `partialStrategy`, and
+ * generates the page's real HTML based on the layout template.
+ */
+const contentPathRe = new RegExp("^(/(?:[\\w-]+/)*)(?:|index\\.html)$");
+
+workboxRouting.registerRoute(
+  matchSameOriginRegExp(contentPathRe),
+  async ({params}) => {
+    const pathname = params[1]; // 1st group from contentPathRe regexp
+
+    let response;
+    try {
+      // Use the same strategy for partials when hydrating a full request.
+      // Note that this doesn't implicitly invoke the global catch handler (as we're just using
+      // the strategy itself), so failures here flow to the catch block below.
+      response = await partialStrategy.handle({
+        request: new Request(pathname + "index.json"),
+      });
+    } catch (e) {
+      // Offline pages are served with the default 200 status.
+      response = await offlinePartial();
     }
-    return cachedOfflineResponse;
+
+    // Ignore anything but a 200 or 404.
+    if (!response.ok && response.status !== 404) {
+      throw response.status;
+    }
+
+    let partial;
+    try {
+      partial = await response.json();
+    } catch (e) {
+      if (response.status !== 404) {
+        throw e;
+      }
+      // This happens in our Netlify staging environment: we don't serve the 404 JSON correctly, so
+      // fetch it manually. If this fetch or JSON fails, throw normally.
+      response = await fetch("/404/index.json");
+      partial = await response.json();
+    }
+
+    // Our target browsers all don't mind if we just place <title> in the middle of the document.
+    // This is far simpler than trying to find the right place in <head>.
+    const meta = partial.offline ? `<meta name="offline" value="true" />` : "";
+    const output = layoutTemplate.replace(
+      "%_CONTENT_REPLACE_%",
+      meta + `<title>${partial.title || ""}</title>` + partial.raw,
+    );
+    const headers = new Headers();
+    headers.append("Content-Type", "text/html");
+    return new Response(output, {headers, status: response.status});
+  },
+);
+
+workboxRouting.setCatchHandler(async ({event, url}) => {
+  // This check is the same as the partialPathRe handler above. It only handles partial JSON
+  // failures (as the handler above is a simple NetworkFirst strategy). Regular HTML failures are
+  // handled by the in-depth contentPathRe path above.
+  if (url.host === self.location.host && partialPathRe.test(url.pathname)) {
+    return offlinePartial();
   }
 });
+
+async function offlinePartial() {
+  const cachedResponse = await matchPrecache("/offline/index.json");
+  if (!cachedResponse) {
+    // This occurs in development when the offline partial isn't precached.
+    return new Response(
+      JSON.stringify({offline: true, raw: "<h1>Dev offline</h1>", title: ""}),
+    );
+  }
+  return cachedResponse;
+}

@@ -5,6 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff"/>
     {% if noindex or draft -%}
       <meta name="robots" content="noindex">
     {%- endif %}
@@ -12,7 +13,9 @@
       <meta name="offline" content="true" />
     {%- endif %}
 
-    {% Meta locale, page, collections, renderData %}
+    {% if not nometa %}
+      {% Meta locale, page, collections, renderData %}
+    {%- endif %}
 
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" data-title="web.dev feed">
     <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
@@ -55,7 +58,7 @@
     <web-snackbar-container></web-snackbar-container>
     <div class="w-loading-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" hidden></div>
     <web-header role="navigation">
-      <button class="web-header__hamburger-btn" aria-label="menu"></button>
+      <button class="web-header__hamburger-btn unresolved" aria-label="menu"></button>
 
       <a
         href="/"
@@ -147,7 +150,7 @@
     <main>
       {% include 'partials/banner.njk' %}
       <div id="content">
-        {{ content | safe }}
+        {% Partial page, path, lang, title, offline %}{{ content | safe }}{% endPartial %}
       </div>
     </main>
     {% include 'partials/footer.njk' %}
