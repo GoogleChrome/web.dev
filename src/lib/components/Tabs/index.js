@@ -138,7 +138,7 @@ class Tabs extends BaseElement {
 
   updated(changedProperties) {
     if (changedProperties.has("activeTab")) {
-      this._changeTab(); // _ prefix because it's an internal method
+      this._changeTab();
     }
   }
 
@@ -147,24 +147,25 @@ class Tabs extends BaseElement {
     const tabs = this.querySelectorAll(".web-tabs__tab");
     const panels = this.querySelectorAll(".web-tabs__panel");
     const activeTab = tabs[this.activeTab];
+    const activePanel = panels[this.activeTab];
 
-    if (!panels[this.activeTab]) {
-      return;
+    if (activeTab) {
+      for (const tab of tabs) {
+        tab.setAttribute("aria-selected", "false");
+        tab.setAttribute("tabindex", "-1");
+      }
+
+      activeTab.setAttribute("aria-selected", "true");
+      activeTab.removeAttribute("tabindex");
     }
 
-    for (const tab of tabs) {
-      tab.setAttribute("aria-selected", "false");
-      tab.setAttribute("tabindex", "-1");
+    if (activePanel) {
+      for (const panel of panels) {
+        panel.hidden = true;
+      }
+
+      activePanel.hidden = false;
     }
-
-    activeTab.setAttribute("aria-selected", "true");
-    activeTab.removeAttribute("tabindex");
-
-    for (const panel of panels) {
-      panel.hidden = true;
-    }
-
-    panels[this.activeTab].hidden = false;
   }
 
   onResize() {
@@ -224,9 +225,8 @@ class Tabs extends BaseElement {
 
     if (!tabs[index]) {
       throw new RangeError("There is no tab at the specified index.");
-    } else {
-      this.activeTab = index;
     }
+    this.activeTab = index;
   }
 
   // If previous tab exists, make it active. If not, make last tab active.
@@ -244,11 +244,7 @@ class Tabs extends BaseElement {
   nextTab() {
     const tabs = this.querySelectorAll(".web-tabs__tab");
 
-    if (tabs[this.activeTab + 1]) {
-      this.activeTab = this.activeTab + 1;
-    } else {
-      this.activeTab = 0;
-    }
+    this.activeTab = (this.activeTab + 1) % tabs.length || 0;
   }
 
   // Make first tab active.
