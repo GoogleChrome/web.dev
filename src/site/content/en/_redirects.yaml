@@ -9,6 +9,9 @@ redirects:
 
 - from: /subscribe
   to: https://services.google.com/fb/forms/web-dev-subscribe/
+  
+- from: /csspodcast
+  to: http://thecsspodcast.googledevelopers.libsynpro.com
 
 # Pre-v1 redirects
 
