@@ -195,7 +195,7 @@ if ('sms' in navigator) {
 
 ### Process the OTP
 
-The WebOTP API itself is simple enough:
+The Web OTP API itself is simple enough:
 
 ```js
 const sms = await navigator.sms.receive();
