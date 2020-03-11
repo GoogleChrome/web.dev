@@ -319,7 +319,7 @@ page content.
 While SMS OTP is useful to verify a phone number when the number is first
 provided, phone number verification via SMS must be used carefully for
 re-authentication since phone numbers can be hijacked and recycled by carriers.
-WebOTP is a convenient re-auth and recovery mechanism, but services should
+Web OTP is a convenient re-auth and recovery mechanism, but services should
 combine it with additional factors, such as a knowledge challenge, or use the
 [Web Authentication
 API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API)
