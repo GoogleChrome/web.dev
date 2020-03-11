@@ -480,7 +480,7 @@ debugging the accessibility of your visual components.
   ![Screenshot of a code editor with an accessibility issue flagged by codelyzer.](./angular-a11y-testing.png)
 
 - You can examine the way that assistive technologies see web content by using
-  [Accessibility Inspector](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTesting/OSXAXTestingApps.html#//apple_ref/doc/uid/TP40001078-CH210-TPXREF101) (Mac)
+  [Accessibility Inspector](https://developer.apple.com/library/archive/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html#//apple_ref/doc/uid/TP40001078-CH210-SW1) (Mac)
   or [Windows Automation API Testing Tools](http://msdn.microsoft.com/en-us/library/windows/desktop/dd373661(v=vs.85).aspx)
   and [AccProbe](http://accessibility.linuxfoundation.org/a11yweb/util/accprobe/) (Windows).
   You can also see the full accessibility tree that Chrome creates
