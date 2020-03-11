@@ -23,11 +23,13 @@ const setdefault = require("../_utils/setdefault");
  */
 module.exports = (collections) => {
   const postToCollections = {};
-  const pathItems = collections
-    .getFilteredByTag("pathItem")
-    .map((p) => p.data.path);
+  const paths = new Map();
+  collections.getFilteredByTag("pathItem").forEach((p) => {
+    const path = p.data.path;
+    paths.set(path.slug, path);
+  });
 
-  pathItems.forEach((path) => {
+  paths.forEach((path) => {
     const details = {
       title: path.title,
       slug: path.slug,

@@ -1,6 +1,8 @@
 @import '../settings/colors';
 @import '../tools/breakpoints';
 
+$SIGNPOST_SPACING: 4px;
+
 // sass-lint:disable class-name-format
 .guide-landing-page {
   position: relative;
@@ -35,17 +37,23 @@
 }
 
 .w-post-signpost {
-  padding: 0 0 8px;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 20px;
+  margin-top: $SIGNPOST_SPACING;
+  padding: 0 0 $SIGNPOST_SPACING;
 }
 
 .w-post-signpost__divider {
-  margin: 0 8px 8px;
+  color: $GREY_700;
+  margin: 0 $SIGNPOST_SPACING $SIGNPOST_SPACING;
 }
 
 .w-post-signpost__link {
-  margin: 0 0 8px;
+  margin: 0 0 $SIGNPOST_SPACING;
 }
 
 .w-post-signpost__title {
-  margin: 0 8px 8px 0;
+  color: $GREY_700;
+  margin: 0 $SIGNPOST_SPACING $SIGNPOST_SPACING 0;
 }

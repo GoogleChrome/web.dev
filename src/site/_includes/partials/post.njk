@@ -20,11 +20,6 @@
         <div class="w-post-breadcrumbs">
           {% Breadcrumbs path %}
         </div>
-      {% else %}
-        {% SignPosts {
-          postToCollections: collections.postToCollections,
-          url: page.url
-        } %}
       {% endif %}
 
       <h1 class="w-article-header__headline">{{ title | md | safe }}</h1>
@@ -39,6 +34,12 @@
           <time>{{date | prettyDate}}</time>
           {% if updated %} <span class="w-author__separator">•</span> Updated <time>{{ updated | prettyDate }}</time> {% endif %}
         </div>
+      {% endif %}
+      {% if path.slug !== 'blog' %}
+        {% SignPosts {
+          postToCollections: collections.postToCollections,
+          url: page.url
+        } %}
       {% endif %}
 
       {% if authors %}
