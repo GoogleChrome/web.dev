@@ -93,15 +93,17 @@ function forceFocus(el) {
  * Either way, ensure that the correct JS entrypoint is available.
  *
  * @param {boolean} isFirstRun whether this is the first run
+ * @param {function(): boolean} isAborted call to determine if load is aborted
  * @return {!Promise<void>}
  */
-export async function swapContent(isFirstRun) {
+export async function swapContent(isFirstRun, isAborted) {
   let url = window.location.pathname + window.location.search;
 
   // If we disagree with the URL we're loaded at, then replace it inline.
   const normalized = normalizeUrl(url);
   if (normalized) {
-    window.history.replaceState(null, null, normalized + window.location.hash);
+    const update = normalized + window.location.hash;
+    window.history.replaceState(window.history.state, null, update);
     url = window.location.pathname + window.location.search;
   }
 
@@ -112,17 +114,31 @@ export async function swapContent(isFirstRun) {
   // this for the HTML of the initial page load so we return early, but always wait for the page's
   // JS to load.
   if (isFirstRun) {
-    await entrypointPromise;
-    return;
+    return entrypointPromise;
   }
 
   store.setState({isPageLoading: true});
 
   const main = document.querySelector("main");
 
-  // Grab the new page content and wait for the JS entrypoint.
-  const partial = await getPartial(url);
-  await entrypointPromise;
+  // If the partial is found in the current state, this means that this was a back/forward browser
+  // nav: just use it as a cache (which is basically how real pages operate). By doing this before
+  // any frames occur, the scroll position doesn't "jump" around unexpectedly.
+  // It's still possible to see invalid scroll positions, as the router won't preempt currently
+  // active page loads (e.g., I load a new page on a very bad network connection and then go back
+  // and forward a bunch).
+  const {state} = window.history;
+  const partialFromHistory = (state && state.partial) || null;
+
+  // Use the network if we don't have the partial (because this is a new navigation or it failed
+  // previously).
+  const partial = partialFromHistory || (await getPartial(url));
+  if (isAborted()) {
+    return null; // a further navigation prevented partial from loading
+  }
+  if (!partialFromHistory) {
+    window.history.replaceState({partial}, null, null);
+  }
 
   // Throwing here will cause the router to just do a real page load.
   if (typeof partial !== "object") {
@@ -130,7 +146,7 @@ export async function swapContent(isFirstRun) {
     throw new Error(`invalid partial for: ${url}`);
   }
 
-  // We set the currentUrl in global state _after_ the page has loaded. This is different than
+  // We set the currentUrl in global state _after_ the partial has loaded. This is different than
   // the History API itself which transitions immediately (like a real web browser).
   store.setState({
     isPageLoading: false,
@@ -152,4 +168,8 @@ export async function swapContent(isFirstRun) {
 
   // Focus on the first title (or fallback to content itself).
   forceFocus(content.querySelector("h1, h2, h3, h4, h5, h6") || content);
+
+  // Finally, just await for the entrypoint JS. It this fails we'll throw an exception and force a
+  // complete reload.
+  return entrypointPromise;
 }
