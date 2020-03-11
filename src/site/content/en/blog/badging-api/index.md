@@ -20,7 +20,7 @@ alt: Phone showing several notification badges
 
 {% Aside 'success' %}
   This API is part of the new
-  [capabilities project](https://web.dev/fugu-status/),
+  [capabilities project](/fugu-status/),
   and it is available in Chrome by default starting in Chrome 82.
 {% endAside %}
 
