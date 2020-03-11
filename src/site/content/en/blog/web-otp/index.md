@@ -293,7 +293,7 @@ Did you find a bug with Chrome's implementation?
 
 ### Planning to use the API?
 
-Are you planning to use the WebOTP API? Your public support helps us prioritize
+Are you planning to use the Web OTP API? Your public support helps us prioritize
 features, and shows other browser vendors how critical it is to support them.
 Send a Tweet to [@ChromiumDev](https://twitter.com/chromiumdev) with
 `#smsreceiver` and let us know where and how you're using it.
