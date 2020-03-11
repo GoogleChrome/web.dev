@@ -334,7 +334,7 @@ team to understand what's the best way to approach it.
 
 ### Will an SMS message timeout?
 
-Yes. You can use [`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) to time the request out.
+Yes. You can use [`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) to abort the request before the timeout expires.
 
 ### Will the apk hash change for an installed PWA?
 
