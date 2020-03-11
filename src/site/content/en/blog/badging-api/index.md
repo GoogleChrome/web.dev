@@ -68,7 +68,7 @@ Examples of sites that may use this API include:
 | 2. Create initial draft of specification   | [Complete][spec]             |
 | 3. Gather feedback & iterate on design     | Complete                     |
 | 4. Origin trial                            | Complete                     |
-| **5. Launch**                              | Complete                     |
+| **5. Launch**                              | Chrome 82                    |
 
 </div>
 
