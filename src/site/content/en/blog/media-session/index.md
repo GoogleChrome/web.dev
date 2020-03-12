@@ -1,5 +1,5 @@
 ---
-title: Customizing media notifications and playback controls with the Media Session API
+title: Customize media notifications and playback controls with the Media Session API
 subhead: How to integrate with hardware media keys, customize media notifications, and more.
 authors:
   - beaufortfrancois
