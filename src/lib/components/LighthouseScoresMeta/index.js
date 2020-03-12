@@ -49,7 +49,7 @@ class LighthouseScoresMeta extends BaseElement {
           </span>
           <span>
             <a
-              href="${LH_HOST}/lh/html?url=${this.url}"
+              href="${LH_HOST}/lh/html?url=${encodeURIComponent(this.url)}"
               title="View latest Lighthouse report"
               class="viewreport lh-report-link gc-analytics-event"
               data-category="web.dev"
