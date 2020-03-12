@@ -263,7 +263,7 @@ to move the media playback time forward by a short period. In both cases, a
 short period means a few seconds.
 
 The `seekOffset` value provided in the action handler is the time in seconds to
-move the media playback time by. If it is not provided (e.g. `undefined`), then
+move the media playback time by. If it is not provided (for example `undefined`), then
 you should use a sensible time (e.g. 10-30 seconds).
 
 ```js
