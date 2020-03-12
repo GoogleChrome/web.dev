@@ -33,6 +33,8 @@ use it to self-review their content and fix problems rather than waiting for rev
 1. Is the structure of the piece clear? Do headings convey the structure?
 1. Does each paragraph focus on one main idea?
 1. Does the subheading draw the reader in or provide extra context? Is it concise? Is it unique text?
+1. If the page describes a feature or API that isn't available on all browsers, is that clearly stated in a
+   `Cross-browser support` section at the top of the page?
 
 ## Instruction
 1. If the piece expects readers to have prior knowledge, is that made clear up front?
