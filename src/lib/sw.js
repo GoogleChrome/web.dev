@@ -12,10 +12,17 @@ import {matchSameOriginRegExp} from "./utils/sw-match.js";
 
 // Architecture revision of the Service Worker. If the previously saved revision doesn't match,
 // then this will cause clients to be aggressively claimed and reloaded on install/activate.
-// Used when the design of the SW changes dramatically, e.g. from DevSite to v2.
+// Used when the design of the SW changes dramatically.
 const serviceWorkerArchitecture = "v3";
 
+let replacingPreviousServiceWorker = false;
+
 self.addEventListener("install", (event) => {
+  // This is non-null if there was a previous Service Worker registered. Record for "activate", so
+  // that a lack of current architecture can be seen as a reason to reload our clients.
+  if (self.registration.active) {
+    replacingPreviousServiceWorker = true;
+  }
   event.waitUntil(self.skipWaiting());
 });
 
@@ -29,15 +36,23 @@ self.addEventListener("activate", (event) => {
   const p = Promise.resolve().then(async () => {
     const previousArchitecture = await idb.get("arch");
     if (previousArchitecture === serviceWorkerArchitecture) {
-      // The architecture didn't change, don't force a reload, upgrades will happen in due course.
-      return;
+      return; // no arch change, don't force reload, upgrade will happen over time
     }
     await idb.set("arch", serviceWorkerArchitecture);
 
-    // If the architecture changed (including due to an initial install), claim our clients
-    // immediately. If this is an architecture rev change, this triggers a reload on the client
-    // (required as `client.navigate()` is unsupported on Safari).
+    // If the architecture changed (including due to an initial install), claim our clients so they
+    // get the 'controllerchange' event and take over their network requests.
     await self.clients.claim();
+
+    // If this is not a new install, and the architecture has changed, force an immediate reload.
+    // Installs from March 2020 will do this in the client scope (but we need this for safety).
+    if (replacingPreviousServiceWorker) {
+      const windowClients = await self.clients.matchAll({
+        includeUncontrolled: true,
+        type: "window",
+      });
+      windowClients.map((client) => client.navigate(client.url));
+    }
   });
   event.waitUntil(p);
 });
