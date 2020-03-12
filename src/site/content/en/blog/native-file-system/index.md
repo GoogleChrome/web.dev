@@ -449,5 +449,5 @@ critical it is to support them.
 [text-editor-source]: https://github.com/GoogleChromeLabs/text-editor/
 [text-editor-fs-helper]: https://github.com/GoogleChromeLabs/text-editor/blob/master/src/inline-scripts/fs-helpers.js
 [text-editor-app-js]: https://github.com/GoogleChromeLabs/text-editor/blob/master/src/inline-scripts/app.js
-[download-file]: /web/updates/2011/08/Downloading-resources-in-HTML5-a-download
+[download-file]: https://developers.google.com/web/updates/2011/08/Downloading-resources-in-HTML5-a-download
 [cr-dev-twitter]: https://twitter.com/chromiumdev
