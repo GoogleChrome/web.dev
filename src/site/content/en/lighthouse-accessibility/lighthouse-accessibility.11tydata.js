@@ -81,7 +81,7 @@ module.exports = {
       },
       {
         title: "Audio and video",
-        pathItems: ["audio-caption", "video-caption", "video-description"],
+        pathItems: ["video-caption", "video-description"],
       },
       {
         title: "Internationalization and localization",
