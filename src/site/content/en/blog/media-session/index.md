@@ -126,7 +126,7 @@ There are a few things to note about the media metadata.
   low-end devices, it is `256x256`.
 - The `title` attribute of the media HTML element is used in the "Now playing"
   macOS widget.
-- If the media resource is embedded (e.g. in a iframe), Media Session API
+- If the media resource is embedded (for example in a iframe), Media Session API
   information must be set from the embedded context. See snippet below.
 
 ```js
