@@ -285,7 +285,7 @@ navigator.mediaSession.setActionHandler("seekforward", (details) => {
 
 ### Seek to a specific time
 
-The "seekto" action indicates that the user wants to move the media playback
+The `"seekto"` action indicates that the user wants to move the media playback
 time to a specific time.
 
 The `seekTime` value provided in the action handler is the time in seconds to
