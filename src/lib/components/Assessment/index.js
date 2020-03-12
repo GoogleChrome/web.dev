@@ -36,7 +36,6 @@ class Assessment extends BaseModalElement {
     this.modal = false;
     this._placeholder = null;
 
-    this.renderLauncher = this.renderLauncher.bind(this);
     this.onAssessmentAnimationEnd = this.onAssessmentAnimationEnd.bind(this);
     this.onAssessmentResize = this.onAssessmentResize.bind(this);
     this.reset = this.reset.bind(this);
