@@ -222,7 +222,7 @@ navigator.mediaSession.setActionHandler("pause", () => {
 
 ### Previous track
 
-The "previoustrack" action indicates that the user either wants to start the
+The `"previoustrack"` action indicates that the user either wants to start the
 current media playback from the beginning if the media playback has a notion of
 beginning, or move to the previous item in the playlist if the media playback
 has a notion of a playlist.
