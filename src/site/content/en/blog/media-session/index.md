@@ -35,7 +35,8 @@ article.
 At the time of writing, Chrome is the only browser that supports the Media
 Session API both on desktop and mobile. Firefox has partial support for the
 Media Session API on desktop behind a flag, and Samsung Internet also has
-partial support.
+partial support. See [Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/API/MediaSession#Browser_compatibility)
+for up-to-date information.
 
 ## About the Media Session API
 
