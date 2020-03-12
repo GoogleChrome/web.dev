@@ -246,7 +246,7 @@ navigator.mediaSession.setActionHandler("nexttrack", () => {
 
 ### Stop
 
-The "stop" action indicates that the user wants to stop the media playback and
+The `"stop"` action indicates that the user wants to stop the media playback and
 clear the state if appropriate.
 
 ```js
@@ -257,14 +257,14 @@ navigator.mediaSession.setActionHandler("stop", () => {
 
 ### Seek backward / forward
 
-The "seekbackward" action indicates that the user wants to moves the media
+The `"seekbackward"` action indicates that the user wants to moves the media
 playback time backward by a short period while `"seekforward"` indicates a desire
 to move the media playback time forward by a short period. In both cases, a
 short period means a few seconds.
 
 The `seekOffset` value provided in the action handler is the time in seconds to
 move the media playback time by. If it is not provided (for example `undefined`), then
-you should use a sensible time (e.g. 10-30 seconds).
+you should use a sensible time (for example 10-30 seconds).
 
 ```js
 const video = document.querySelector('video');
