@@ -1,15 +1,18 @@
 ---
-title: How to setup Signed HTTP Exchanges (SXG)
-subhead: The Wake Lock API provides a way to prevent devices from dimming or locking the screen when an application needs to keep running.
+layout: post
+title: How to set up Signed HTTP Exchanges (SXG)
+subhead: How to generate a TLS certificate with SXG extensions, install tools for generating SXG files, and configure nginx to serve SXG files.
 authors:
   - kumagi
-description: In short, [Signed HTTP Exchanges (SXG)](https://developers.google.com/web/updates/2018/11/signed-exchanges) is a new web technology that makes it easier for users to tell content creators apart from content distributors. This guide shows you how to set up SXG.
-date: 2020-03-10
-hero: hero.jpg
+description: How to generate a TLS certificate with SXG extensions, install tools for generating SXG files, and configure nginx to serve SXG files.
+date: 2020-03-11
 tags:
+  - post
   - SXG
   - nginx
 ---
+
+[Signed HTTP Exchanges (SXG)](https://developers.google.com/web/updates/2018/11/signed-exchanges) is a new web technology that makes it easier for users to tell content creators apart from content distributors. This guide shows you how to set up SXG.
 
 ## Cross-browser support
 
@@ -29,15 +32,15 @@ To implement SXG on your website, you must:
 This guide assumes that you:
 
 - Have an OpenSSL 1.1.1 environment. This guide was written with Ubuntu 18.04 LTS on amd64 ISA.
-- Have the ability to run sudo to install executables.
-- Use nginx as an HTTP server.
+- Have the ability to run `sudo` to install executables.
+- Use `nginx` as an HTTP server.
 - Are using DigiCert to generate certificates that include SXG-related extensions, because it currently appears to be the only provider that supports these extensions.
 
-Also, the example commands in this article assume your domain is "website.test", so you'll need to replace "website.test" with your actual domain.
+Also, the example commands in this article assume your domain is `website.test`, so you'll need to replace `website.test` with your actual domain.
 
-## Step 1: Get your certificate for SXG
+## Step 1: Get your certificate for SXG {: #step-1 }
 
-To generate SXG, you need a TLS certificate with the CanSignHttpExchanges extension, as well as a particular key type.
+To generate SXG, you need a TLS certificate with the `CanSignHttpExchanges` extension, as well as a particular key type.
 DigiCert provides certificates with this extension.
 You need a CSR file for issuance of a certificate, so generate it with the following commands:
 
@@ -59,32 +62,35 @@ Sg==
 -----END CERTIFICATE REQUEST-----
 ```
 
-![Screen shot of Digicert CSR](csr.png)
-
 Make sure that:
 
-The validity period does not exceed 90 days.
+- The validity period does not exceed 90 days.
+- The **Include the CanSignHttpExchanges extension in the certificate** checkbox is enabled,
+  which is found under Additional Certificate Options.
 
-- The Include the CanSignHttpExchanges extension in the certificate checkbox is enabled.
-- This can be found under Additional Certificate Options.
+<figure class="w-figure">
+  <img class="w-screenshot" src="sxg-check.png"/>
+  <figcaption class="w-figcaption">
+    The <b>Include the CanSignHttpExchanges extension in the certificate</b> checkbox.
+  </figcaption>
+</figure>
 
-![Screen shot of check-box](sxg-check.png)
 If your certificate does not match these conditions, browsers and distributors will reject your SXG for security reasons.
-We assume that the filename of the certificate you got from DigiCert is mySxg.pem.
+This guide assumes that the filename of the certificate you got from DigiCert is `mySxg.pem`.
 
-## Step 2: Install libsxg
+## Step 2: Install `libsxg`
 
 The SXG format is complex and hard to generate without using tools.
 You can use one of the following options to generate SXG:
 
 - The [gen-signedexchange](https://github.com/WICG/webpackage/tree/master/go/signedexchange) tool written in Go.
-- The [libsxg library](https://github.com/google/libsxg) written in C.
+- The [`libsxg` library](https://github.com/google/libsxg) written in C.
 
-This guide uses, `libsxg`.
+This guide uses `libsxg`.
 
-### Option 1: Install libsxg from a Debian package
+### Option 1: Install `libsxg` from a Debian package
 
-You can install the package in the usual Debian way, as long as the OpenSSL (libssl-dev) version matches.
+You can install the package in the usual Debian way, as long as the OpenSSL (`libssl-dev`) version matches.
 
 ```bash
 sudo apt install -y libssl-dev
@@ -94,10 +100,10 @@ sudo dpkg -i libsxg0_0.2_amd64.deb
 sudo dpkg -i libsxg-dev_0.2_amd64.deb
 ```
 
-### Option 2: Build libsxg manually
+### Option 2: Build `libsxg` manually
 
-If you are not using an environment compatible with `.deb` files, you can build libsxg yourself.
-As a precondition, you need to install git, cmake, openssl and gcc.
+If you are not using an environment compatible with `.deb` files, you can build `libsxg` yourself.
+As a precondition, you need to install `git`, `cmake`, `openssl`, and `gcc`.
 
 ```bash
 git clone https://github.com/google/libsxg
@@ -108,13 +114,13 @@ make
 sudo make install
 ```
 
-## Step 3: Install nginx plugin
-The nginx plugin allows you to generate SXG dynamically instead of statically generating them prior to serving.
+## Step 3: Install `nginx` plugin
+The `nginx` plugin allows you to generate SXG dynamically instead of statically generating them prior to serving.
 
-### Option 1: Install the plugin from a Debian package
+### Option 1: Install the plugin from a Debian package {: #step-3-option-1 }
 
-The SXG module for nginx is distributed on [GitHub](https://github.com/kumagi/nginx-sxg-module).
-On Debian-based systems, you can install it as a binary package.
+The [SXG module for `nginx`](https://github.com/kumagi/nginx-sxg-module) is distributed on GitHub.
+On Debian-based systems, you can install it as a binary package:
 
 ```bash
 sudo apt install nginx
@@ -122,9 +128,9 @@ wget https://github.com/google/nginx-sxg-module/releases/download/v0.1/libnginx-
 sudo dpkg -i libnginx-mod-http-sxg-filter_1.15.9-0ubuntu1.1_amd64.deb
 ```
 
-### Option 2: Build plugin manually
+### Option 2: Build plugin manually {: #step-3-option-2 }
 
-Building the nginx module requires the nginx source code.
+Building the `nginx` module requires the `nginx` source code.
 You can get the tarball and build it along with the SXG dynamic module using the commands below:
 
 ```bash
@@ -137,19 +143,16 @@ make
 sudo make install
 ```
 
-The nginx configuration has great flexibility.
-Install nginx anywhere in your system, then specify a respective path of `module/config/log/pidfile`.
-In this article, we assume you will install it in the `/opt/nginx` path.
+The `nginx` configuration has great flexibility.
+Install `nginx` anywhere in your system, then specify a respective path of `module/config/log/pidfile`.
+This guide assumes that you install it to `/opt/nginx`.
 
-## Step 4: Configure the nginx plugin to work with SXG
+## Step 4: Configure the `nginx` plugin to work with SXG
 
-Configure the nginx plugin to use the SXG certificate prepared in step 1.
-You need proper configuration to start nginx with SXG.
+### Option 1: Configure an installed-from-Debian `nginx` module
+Follow these instructions if you used [Step 3, Option 1](#step-3-option-1) earlier.
 
-### Option 1: Configure an installed-from-Debian nginx module
-Follow these instructions if you used Step 3, Option 1 earlier.
-
-Delivering SXG content requires HTTPS. You can get an SSL/TLS certificate from DigiCert, Let's Encrypt, and other services. Note that you CANNOT use an SXG certificate for SSL or vice versa, therefore you will need two certificates. The configuration file in /etc/nginx/nginx.conf should look similar to the following, assuming that you put the SSL key/cert pair in `/path/to/ssl/` and the SXG key/cert pair in `/path/to/sxg/`:
+Delivering SXG content requires HTTPS. You can get an SSL/TLS certificate from DigiCert, Let's Encrypt, and other services. Note that you CANNOT use an SXG certificate for SSL or vice versa, therefore you will need two certificates. The configuration file in `/etc/nginx/nginx.conf` should look similar to the following, assuming that you put the SSL key/certificate pair in `/path/to/ssl/` and the SXG key/certificate pair in `/path/to/sxg/`:
 
 ```nginx
 user www-data;
@@ -182,14 +185,10 @@ http {
 }
 ```
  
-{% Aside %}
-What is sxg_cert_url? cert-url is essential for browsers to load SXG properly because it locates the certificate chain. The certificate chain contains certificate and OCSP stapling information with cbor format. Note that you do not have to serve cert.cbor file from the same origin, so you can serve it via any CDNs or other static file serving services as long as it supports HTTPS (e.g. Amazon S3, Google Cloud Storage).
-{% endAside %}
-{% Aside %}
-What is sxg_validitiy_url? This endpoint is planned to serve SXG signature header related information. If the webpage is not modified since the last SXG, downloading the entire SXG file is not required technically. So updating signature header alone is expected to reduce network traffic. But the details are not implemented yet.
-{% endAside %}
+* `sxg_cert_url` is essential for browsers to load SXG properly because it locates the certificate chain. The certificate chain contains certificate and OCSP stapling information with cbor format. Note that you do not have to serve the `cert.cbor` file from the same origin. You can serve it via any CDNs or other static file serving services as long as it supports HTTPS.
+* `sxg_validitiy_url` is planned to serve SXG-signature-header-related information. If a page has not been modified since the last SXG, downloading the entire SXG file is not required technically. So updating signature header information alone is expected to reduce network traffic. But the details are not implemented yet.
 
-Start nginx and you are ready to serve SXG!
+Start `nginx` and you are ready to serve SXG!
 
 ```bash
 sudo systemctl start nginx.service
@@ -198,11 +197,11 @@ cat index.html.sxg
 sxg1-b3...https://website.test/...(omit)
 ```
 
-### Option 2: Configure a built-from-source nginx module
-Follow these instructions if you used Step 3, Option 2 earlier.
+### Option 2: Configure a built-from-source `nginx` module
 
+Follow these instructions if you used [Step 3, Option 2](#step-3-option-2) earlier.
 
-Configuration for nginx systems installed under /opt/nginx will look similar to the following example:
+Configure your `nginx` system installed under `/opt/nginx` to look similar to the following example:
 
 ```nginx
 load_module "/opt/nginx/modules/ngx_http_sxg_filter_module.so";
@@ -234,8 +233,7 @@ http {
 }
 ```
 
-After verifying the configuration looks correct, start nginx.
-Now you can get your SXG!
+Then start `nginx`. Now you can get your SXG!
 
 ```bash
 cd /opt/nginx/sbin
@@ -247,7 +245,7 @@ sxg1-b3...https://website.test/...(omit)
 
 ## Step 5: Serve your application backend
 
-In the above examples, nginx serves static files in the root directory, but you can use upstream directives for your applications to make SXG for arbitrary web application backends (such as Ruby on Rails, Django, or Express) as long as your nginx works as a front HTTP(S) server.
+In the above examples, `nginx` serves static files in the root directory, but you can use upstream directives for your applications to make SXG for arbitrary web application backends (such as Ruby on Rails, Django, or Express) as long as your `nginx` works as a front HTTP(S) server.
 
 ```nginx
 upstream app {
@@ -263,7 +261,7 @@ server {
 
 ## Send feedback
 
-Chromium engineers are keen to hear your feedback on this experiment at [webpackage-dev@chromium.org](webpackage-dev@chromium.org).
+The Chromium engineers working on SXG are keen to hear your feedback at [webpackage-dev@chromium.org](webpackage-dev@chromium.org).
 You can also join the [spec discussion](https://github.com/WICG/webpackage/issues), or report [a chrome bug](https://bugs.chromium.org/p/chromium/issues/entry?status=untriaged&components=Blink%3ELoader&labels=Type-Bug,Hotlist-SignedExchange) to the team.
-Your feedback will greatly help the standardization process and also help us address implementation issues.
+Your feedback will greatly help the standardization process and also help address implementation issues.
 Thank you!
