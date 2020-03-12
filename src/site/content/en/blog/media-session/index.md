@@ -4,8 +4,8 @@ subhead: Deliver the best media playback experience
 authors:
   - beaufortfrancois
 date: 2020-03-06
-hero: hero.png
-thumbnail: thumbnail.png
+hero: hero.jpg
+thumbnail: thumbnail.jpg
 description: |
   Web developers can customize media notifications and respond to media
   related events such as seeking or track changing with the Media Session API.
@@ -26,9 +26,16 @@ and even on wearable devices. I'll describe these customizations in this
 article.
 
 <figure class="w-figure">
-  <img src="./contexts.png" alt="Screenshots of Media Session contexts">
+  <img src="./contexts.jpg" alt="Screenshots of Media Session contexts">
   <figcaption class="w-figcaption">Media hub on desktop, media notification on mobile, and a wearable device</figcaption>
 </figure>
+
+## Cross-browser support
+
+At the time of writing, Chrome is the only browser that supports the Media
+Session API both on desktop and mobile. Firefox has partial support for the
+Media Session API on desktop behind a flag, and Samsung Internet also has
+partial support.
 
 ## About the Media Session API
 
@@ -64,7 +71,7 @@ To illustrate, the image below shows how these interfaces relate to specific
 media controls, in this case a media notification on mobile.
 
 <figure class="w-figure">
-  <img src="./tldr.png" alt="Media Session interfaces illustration">
+  <img src="./tldr.jpg" alt="Media Session interfaces illustration">
   <figcaption class="w-figcaption">Anatomy of a media notification on mobile</figcaption>
 </figure>
 
@@ -361,20 +368,13 @@ Resetting the position state is as easy as setting it to `null`.
 navigator.mediaSession.setPositionState(null);
 ```
 
-## Support
-
-At the time of writing, Chrome is the only browser that supports the Media
-Session API both on desktop and mobile. Firefox has partial support for the
-Media Session API on desktop behind a flag, and Samsung Internet also has
-partial support.
-
 ## Samples
 
 Check out the some [Media Session samples] featuring [Blender Foundation] and
 [Jan Morgenstern's work].
 
  <figure class="w-figure">
-  <video controls autoplay loop muted poster="https://storage.googleapis.com/webfundamentals-assets/videos/media-hub-desktop-720.png">
+  <video controls autoplay loop muted poster="https://storage.googleapis.com/webfundamentals-assets/videos/media-hub-desktop-720.jpg">
     <source src="https://storage.googleapis.com/webfundamentals-assets/videos/media-hub-desktop-720.webm" type="video/webm; codecs=vp9">
     <source src="https://storage.googleapis.com/webfundamentals-assets/videos/media-hub-desktop-720.mp4" type="video/mp4; codecs=h264">
   </video>
