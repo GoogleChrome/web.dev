@@ -195,7 +195,7 @@ won't be shown unless the proper action handler is set.
 ### Play / pause
 
 The `"play"` action indicates that the user wants to resume the media playback
-while "pause" indicates a desire to temporarily halt it.
+while `"pause"` indicates a desire to temporarily halt it.
 
 The "play/pause" icon is always shown in a media notification and the related
 media events are handled automatically by the browser. To override their default
