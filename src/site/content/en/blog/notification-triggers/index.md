@@ -9,7 +9,9 @@ description:
   The Notification Triggers API allows developers to schedule local notifications that don't require
   a network connection, which makes them ideal for use cases like calendar apps.
 date: 2019-10-24
-updated: 2019-12-12
+updated: 2020-03-12
+hero: hero.jpg
+hero_position: center
 tags:
   - post
   - capabilities
@@ -245,7 +247,8 @@ Notification Triggers was implemented by [Richard Knoll](https://uk.linkedin.com
 and the explainer written by [Peter Beverloo](https://twitter.com/beverloo?lang=en), with
 contributions from Richard. The following people have reviewed the article:
 [Joe Medley](https://twitter.com/medleyjp), [Pete LePage](https://twitter.com/petele), as well as
-Richard and Peter.
+Richard and Peter. [Hero image](https://unsplash.com/photos/UAvYasdkzq8) by
+[Lukas Blazek](https://unsplash.com/@goumbik) on Unsplash.
 
 [issues]: https://github.com/beverloo/notification-triggers/issues
 [demo]: https://notification-triggers.glitch.me/
