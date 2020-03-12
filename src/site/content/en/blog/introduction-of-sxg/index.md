@@ -1,5 +1,5 @@
 ---
-title: How to setup Signed HTTP Exchanges (SXG)
+title: How to set up Signed HTTP Exchanges (SXG)
 subhead: The Wake Lock API provides a way to prevent devices from dimming or locking the screen when an application needs to keep running.
 authors:
   - kumagi

@@ -1713,15 +1713,15 @@ const contributors = {
   kumagi: {
     name: {
       given: "Hiroki",
-      family: "Kumazaki"
+      family: "Kumazaki",
     },
     org: {
       name: "Google",
-      unit: "Software engineering"
+      unit: "Software engineering",
     },
     country: "JP",
     twitter: "kumagi",
-    github: "kumagi"
+    github: "kumagi",
   },
 };
 
