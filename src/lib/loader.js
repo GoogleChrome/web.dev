@@ -27,7 +27,7 @@ async function loadEntrypoint(url) {
  * @param {string} url of the page to fetch.
  * @return {{raw: string, title: string, offline: (boolean|undefined)}}
  */
-async function getPartial(url) {
+export async function getPartial(url) {
   if (!url.endsWith("/")) {
     throw new Error(`partial unsupported for non-folder: ${url}`);
   }
