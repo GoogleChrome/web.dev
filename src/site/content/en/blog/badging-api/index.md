@@ -68,13 +68,13 @@ Examples of sites that may use this API include:
 | 2. Create initial draft of specification   | [Complete][spec]             |
 | 3. Gather feedback & iterate on design     | Complete                     |
 | 4. Origin trial                            | Complete                     |
-| **5. Launch**                              | Chrome 82                    |
+| **5. Launch**                              | Chrome 81                    |
 
 </div>
 
 ## Try it
 
-1. Using Chrome 82 or later on Windows or Mac, open the [Badging API demo][demo].
+1. Using Chrome 81 or later on Windows or Mac, open the [Badging API demo][demo].
 2. When prompted, click **Install** to install the app, or use the Chrome
    menu to install it.
 3. Open it as an installed PWA. Note, it must be running as an installed PWA (in
