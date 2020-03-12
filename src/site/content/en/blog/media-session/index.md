@@ -235,7 +235,7 @@ navigator.mediaSession.setActionHandler("previoustrack", () => {
 
 ### Next track
 
-The "nexttrack" action indicates that the user wants to move media playback to
+The `"nexttrack"` action indicates that the user wants to move media playback to
 the next item in the playlist if the media playback has a notion of a playlist.
 
 ```js
