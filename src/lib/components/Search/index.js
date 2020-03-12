@@ -86,7 +86,7 @@ class Search extends BaseElement {
         <input
           class="web-search__input"
           type="text"
-          role="search"
+          role="searchbox"
           autocomplete="off"
           aria-autocomplete="list"
           aria-controls="web-search-popout__list"
@@ -110,7 +110,13 @@ class Search extends BaseElement {
   /* eslint-disable indent */
   get hitsTemplate() {
     if (!this.showHits) {
-      return "";
+      return html`
+        <div
+          id="web-search-popout__list"
+          role="listbox"
+          aria-hidden="true"
+        ></div>
+      `;
     }
 
     if (!this.hits.length) {
