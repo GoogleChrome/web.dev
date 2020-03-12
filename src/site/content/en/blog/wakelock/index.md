@@ -129,7 +129,7 @@ The `system` wake lock is not currently implemented.
 A `system` wake lock prevents the device's CPU from entering standby mode so
 that your app can continue running.
 
-### Get a wake lock {: #get-wake-lock }
+### Getting a wake lock {: #get-wake-lock }
 
 To request a wake lock, you need to call the `navigator.wakeLock.request()` method
 that returns a `WakeLockSentinel` object.
@@ -140,10 +140,16 @@ because the battery charge level is too low),
 so it's a good practice to wrap the call in a `try…catch` statement.
 The exception's message will contain more details in case of failure.
 
+### Releasing a wake lock {: #release-wake-lock }
+
 You also need a way to release the wake lock, which is achieved by calling the
 `release()` method of the `WakeLockSentinel` object.
 If you don't store a reference to the `WakeLockSentinel`, there's no way
 to release the lock manually, but it will be released once the current tab is invisible.
+
+If you want to automatically release the wake lock
+after a certain period of time has passed,
+you can use `window.setTimeout()` to call `release()`, as shown in the example below.
 
 ```js
 // The wake lock sentinel.

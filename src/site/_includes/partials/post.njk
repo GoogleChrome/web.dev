@@ -14,12 +14,14 @@
   {# Make sure Actions are first in the tab order. #}
   <web-actions actions="share|subscribe" authors="{{ authors | expandContributors | join('|') }}"></web-actions>
 
-  <div class="w-layout-container--narrow w-post-breadcrumbs">
-    {% Breadcrumbs path %}
-  </div>
-
   <div class="w-layout-container--narrow w-post-content">
     <header class="w-article-header">
+      {% if path.slug === 'blog' %}
+        <div class="w-post-breadcrumbs">
+          {% Breadcrumbs path %}
+        </div>
+      {% endif %}
+
       <h1 class="w-article-header__headline">{{ title | md | safe }}</h1>
       {% if subhead %}
         <p class="w-article-header__subhead w-mb--non">
@@ -32,6 +34,12 @@
           <time>{{date | prettyDate}}</time>
           {% if updated %} <span class="w-author__separator">•</span> Updated <time>{{ updated | prettyDate }}</time> {% endif %}
         </div>
+      {% endif %}
+      {% if path.slug !== 'blog' %}
+        {% SignPosts {
+          postToCollections: collections.postToCollections,
+          url: page.url
+        } %}
       {% endif %}
 
       {% if authors %}

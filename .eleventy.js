@@ -42,6 +42,7 @@ const Instruction = require(`./${componentsDir}/Instruction`);
 const Meta = require(`./${componentsDir}/Meta`);
 const PathCard = require(`./${componentsDir}/PathCard`);
 const PostCard = require(`./${componentsDir}/PostCard`);
+const SignPosts = require(`./${componentsDir}/SignPosts`);
 const Tab = require(`./${componentsDir}/Tab`);
 const Tabs = require(`./${componentsDir}/Tabs`);
 const Tooltip = require(`./${componentsDir}/Tooltip`);
@@ -55,6 +56,7 @@ const paginatedBlogPosts = require(`./${collectionsDir}/paginated-blog-posts`);
 const paginatedPostsByAuthor = require(`./${collectionsDir}/paginated-posts-by-author`);
 const paginatedPostsByTag = require(`./${collectionsDir}/paginated-posts-by-tag`);
 const postDescending = require(`./${collectionsDir}/post-descending`);
+const postToCollections = require(`./${collectionsDir}/post-to-collections`);
 const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
 const recentPosts = require(`./${collectionsDir}/recent-posts`);
 // nb. algoliaPosts is only require'd if needed, below
@@ -144,6 +146,7 @@ module.exports = function(config) {
   config.addCollection('paginatedBlogPosts', paginatedBlogPosts);
   config.addCollection('paginatedPostsByAuthor', paginatedPostsByAuthor);
   config.addCollection('paginatedPostsByTag', paginatedPostsByTag);
+  config.addCollection('postToCollections', postToCollections);
   // Turn collection.all into a lookup table so we can use findBySlug
   // to quickly find collection items without looping.
   config.addCollection('memoized', function(collection) {
@@ -199,6 +202,7 @@ module.exports = function(config) {
   config.addPairedShortcode('Partial', buildPartial());
   config.addShortcode('PathCard', PathCard);
   config.addShortcode('PostCard', PostCard);
+  config.addShortcode('SignPosts', SignPosts);
   config.addPairedShortcode('Tab', Tab);
   config.addPairedShortcode('Tabs', Tabs);
   config.addShortcode('Tooltip', Tooltip);

@@ -28,9 +28,7 @@
   border: 0;
 }
 
-.w-button:hover,
-.w-button:focus,
-.w-button:active {
+@mixin button-hover() {
   background: $WHITE; // DevSite override
   box-shadow:
   0 2px 4px -1px rgba($BLACK, .2),
@@ -38,6 +36,27 @@
   0 1px 10px 0 rgba($BLACK, .12);
   outline: none;
   text-decoration: none;
+}
+
+// Prevent hover and focus states from lingering on touch.
+@include hover() {
+  .w-button:hover,
+  .w-button:focus {
+    @include button-hover();
+  }
+}
+
+.w-button:active {
+  @include button-hover();
+}
+
+.w-button:focus {
+  outline: 1px solid rgba($WEB_PRIMARY_COLOR, .8);
+  outline-offset: -3px;
+}
+
+.js-focus-visible .w-button:focus:not(.focus-visible) { // sass-lint:disable-line class-name-format
+  outline: none;
 }
 
 .w-button[disabled] {
@@ -54,12 +73,15 @@
   @include w-overlay();
 }
 
-.w-button:hover::after {
-  background-color: rgba($WEB_PRIMARY_COLOR, .04);
-}
+// Prevent hover and focus states from lingering on touch.
+@include hover() {
+  .w-button:hover::after {
+    background-color: rgba($WEB_PRIMARY_COLOR, .04);
+  }
 
-.w-button:focus::after {
-  background-color: rgba($WEB_PRIMARY_COLOR, .12);
+  .w-button:focus::after {
+    background-color: rgba($WEB_PRIMARY_COLOR, .12);
+  }
 }
 
 .w-button:active::after {
@@ -75,16 +97,23 @@
   color: $WHITE;
 }
 
-.w-button--primary:hover::after {
-  background-color: rgba($WHITE, .08);
-}
+// Prevent hover and focus states from lingering on touch.
+@include hover() {
+  .w-button--primary:hover::after {
+    background-color: rgba($WHITE, .08);
+  }
 
-.w-button--primary:focus::after {
-  background-color: rgba($WHITE, .24);
+  .w-button--primary:focus::after {
+    background-color: rgba($WHITE, .24);
+  }
 }
 
 .w-button--primary:active::after {
   background-color: rgba($WHITE, .32);
+}
+
+.w-button--primary:focus {
+  outline: 1px solid rgba($WHITE, .8);
 }
 
 // Secondary action button.
@@ -97,16 +126,23 @@
   color: $PRIMARY_TEXT_COLOR;
 }
 
-.w-button--secondary:hover::after {
-  background-color: rgba($BLACK, .04);
-}
+// Prevent hover and focus states from lingering on touch.
+@include hover() {
+  .w-button--secondary:hover::after {
+    background-color: rgba($BLACK, .04);
+  }
 
-.w-button--secondary:focus::after {
-  background-color: rgba($BLACK, .08);
+  .w-button--secondary:focus::after {
+    background-color: rgba($BLACK, .08);
+  }
 }
 
 .w-button--secondary:active::after {
   background-color: rgba($BLACK, .1);
+}
+
+.w-button--secondary:focus {
+  outline: 1px solid rgba($PRIMARY_TEXT_COLOR, .6);
 }
 
 // A button with text and an icon.
@@ -166,4 +202,3 @@
 
 .w-button--icon::before {
   margin: 0;
-}

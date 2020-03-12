@@ -1704,6 +1704,25 @@ const contributors = {
       en: "Developer working on Firefox Preview",
     },
   },
+  lchansson: {
+    name: {
+      given: "Lina",
+      family: "Hansson",
+    },
+  },
+  kumagi: {
+    name: {
+      given: "Hiroki",
+      family: "Kumazaki"
+    },
+    org: {
+      name: "Google",
+      unit: "Software engineering"
+    },
+    country: "JP",
+    twitter: "kumagi",
+    github: "kumagi"
+  },
 };
 
 const processedContributors = {};
