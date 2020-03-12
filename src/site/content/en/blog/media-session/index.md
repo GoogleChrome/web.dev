@@ -143,7 +143,7 @@ There are a few things to note about the media metadata.
 
 ## Let users control what's playing
 
-A media session action is an action (.e.g. "play", "pause") that a website can
+A media session action is an action (for example "play" or "pause") that a website can
 handle for users when they interact with the current media playback. Actions are
 analogous to and work much the same as events. Like events, actions are
 implemented by setting handlers on an appropriate object, an instance of
