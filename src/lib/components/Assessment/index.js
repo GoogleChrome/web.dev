@@ -34,6 +34,7 @@ class Assessment extends BaseModalElement {
   constructor() {
     super();
     this.modal = false;
+    this._placeholder = null;
 
     this.renderLauncher = this.renderLauncher.bind(this);
     this.onAssessmentAnimationEnd = this.onAssessmentAnimationEnd.bind(this);
@@ -159,9 +160,9 @@ class Assessment extends BaseModalElement {
   }
 
   openAssessment() {
-    // Tag the assessment's previous sibling
+    // Get a ref to the assessment's previous sibling
     // so the assessment can be reinserted below it when it's closed.
-    this.previousElementSibling.classList.add("js-assessment-placeholder");
+    this._placeholder = this.previousElementSibling;
 
     // Since the assessment is visible when closed on desktop,
     // wait to set the dialog role until it's open.
@@ -176,17 +177,15 @@ class Assessment extends BaseModalElement {
   }
 
   closeAssessment() {
-    const target = document.querySelector(".js-assessment-placeholder");
-
     // Since the assessment is visible when closed on desktop,
     // override BaseModalElement's inert behavior.
     // (display: none used to remove it from the tab order when closed on mobile.)
     this.inert = false;
     // Move assessment back to its original location in case viewport
     // becomes larger than the mobile breakpoint.
-    if (target) {
-      target.after(this);
-      target.classList.remove("js-assessment-placeholder");
+    if (this._placeholder) {
+      this._placeholder.after(this);
+      this._placeholder = null;
     }
   }
 

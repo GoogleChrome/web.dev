@@ -44,14 +44,12 @@ export class BaseModalElement extends BaseElement {
     this.animatable = false;
     this.inert = true;
     this.overflow = false;
-    this.idSalt = BaseElement.generateIdSalt("web-modal-");
+    this._triggerElement = null;
+    this._parent = null;
 
     this.onKeyUp = this.onKeyUp.bind(this);
     this.onResize = this.onResize.bind(this);
     this.onAnimationEnd = this.onAnimationEnd.bind(this);
-    this.manageDocument = this.manageDocument.bind(this);
-    this.manageFocus = this.manageFocus.bind(this);
-    this.getTrigger = this.getTrigger.bind(this);
   }
 
   connectedCallback() {
@@ -77,7 +75,7 @@ export class BaseModalElement extends BaseElement {
     this.open_ = val;
     if (this.open_) {
       // Must get trigger before manipulating the DOM.
-      this.getTrigger();
+      this._triggerElement = document.activeElement;
       // Add keyup event listener to this element rather than document
       // so a nested modal doesn't close its parent modal when the user presses Esc.
       this.addEventListener("keyup", this.onKeyUp);
@@ -151,14 +149,6 @@ export class BaseModalElement extends BaseElement {
     this.overflow = checkOverflow(content, "height");
   }
 
-  getTrigger() {
-    // When the modal is opened, assign a class to the triggering element
-    // so it can be refocused when the modal is closed.
-    const trigger = document.activeElement;
-
-    trigger.classList.add("js-modal-trigger");
-  }
-
   // Manage state of the document based on the modal state.
   manageDocument() {
     if (this.open) {
@@ -172,16 +162,15 @@ export class BaseModalElement extends BaseElement {
 
       if (parent) {
         parent.inert = true;
-        parent.classList.add("web-modal-" + this.idSalt);
+        this._parent = parent;
       }
     } else if (!this.open && this.parentModal) {
       // If the modal is triggered by an element in another modal,
       // uninert the triggering modal but leave the document inert.
-      const parent = document.querySelector(".web-modal-" + this.idSalt);
 
       if (parent) {
         parent.inert = false;
-        parent.classList.remove("web-modal-" + this.idSalt);
+        this._parent = null;
       }
     } else {
       // When the modal is closed, uninert the rest of the document.
@@ -190,8 +179,6 @@ export class BaseModalElement extends BaseElement {
   }
 
   manageFocus() {
-    const triggerClass = "js-modal-trigger";
-
     if (this.open) {
       // When the modal is opened, move focus into the modal so
       // folks using a screen reader or switch can access it.
@@ -200,11 +187,9 @@ export class BaseModalElement extends BaseElement {
       // When the modal is closed, restore focus to the triggering element.
       // NOTE: It might be more techincally pure to
       // use a unistore action for this.
-      const trigger = document.querySelector("." + triggerClass);
-
-      if (trigger) {
-        trigger.focus();
-        trigger.classList.remove(triggerClass);
+      if (this._triggerElement) {
+        this._triggerElement.focus();
+        this._triggerElement = null;
       } else {
         document.body.focus();
       }
