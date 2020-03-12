@@ -37,7 +37,7 @@ screen.
 
 You'll notice that though some of the content has rendered, not all of it has
 rendered. This is an important distinction to make between _First_ Contentful
-Paint (FCP) and _[Largest Contentful Paint (LCP)](/largest-contentful-paint/)_
+Paint (FCP) and _[Largest Contentful Paint (LCP)](/lcp/)_
 &mdash;which aims to measure when the page's main contents have finished
 loading.
 
