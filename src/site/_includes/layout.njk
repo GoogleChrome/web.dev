@@ -34,9 +34,10 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="mask-icon" color="#0054ff" href="/images/safari-pinned-tab.svg">
-    <script defer src="//www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
-    <script defer src="//www.gstatic.com/firebasejs/6.6.1/firebase-auth.js"></script>
-    <script defer src="//www.gstatic.com/firebasejs/6.6.1/firebase-performance.js"></script>
+    {# This is used by src/lib/firebase-loader.js to dynamically load Firebase #}
+    <meta id="firebase-app" value="//www.gstatic.com/firebasejs/6.6.1/firebase-app.js" />
+    <meta id="firebase-auth" value="//www.gstatic.com/firebasejs/6.6.1/firebase-auth.js" />
+    <meta id="firebase-performance" value="//www.gstatic.com/firebasejs/6.6.1/firebase-performance.js" />
     {# This is used by src/lib/firestore-loader.js to dynamically load Firestore #}
     <meta id="firebase-firestore" value="//www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js" />
     <script>

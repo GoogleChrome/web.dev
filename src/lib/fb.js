@@ -1,120 +1,128 @@
 import config from "webdev_config";
 import {store} from "./store";
 import {clearSignedInState} from "./actions";
+import firebaseLoader from "./firebase-loader";
 import firestoreLoader from "./firestore-loader";
 
 /* eslint-disable require-jsdoc */
 
-const {firebaseConfig} = config;
+// Load dynamically Firebase
+firebaseLoader()
+  .then(() => {
+    const {firebaseConfig} = config;
 
-firebase.initializeApp(firebaseConfig);
+    firebase.initializeApp(firebaseConfig);
 
-// Initialize performance monitoring
-firebase.performance();
+    // Initialize performance monitoring
+    firebase.performance();
 
-// Listen for the user's signed in state and update the store.
-let firestoreUserUnsubscribe = null;
-firebase.auth().onAuthStateChanged((user) => {
-  store.setState({checkingSignedInState: false});
+    // Listen for the user's signed in state and update the store.
+    let firestoreUserUnsubscribe = null;
+    firebase.auth().onAuthStateChanged((user) => {
+      store.setState({checkingSignedInState: false});
 
-  if (firestoreUserUnsubscribe) {
-    firestoreUserUnsubscribe();
-    firestoreUserUnsubscribe = null;
-  }
+      if (firestoreUserUnsubscribe) {
+        firestoreUserUnsubscribe();
+        firestoreUserUnsubscribe = null;
+      }
 
-  // Cache whether the user was signed in, to help prevent FOUC in future, as
-  // this can be read synchronosly and Firebase's auth takes ~ms to come back.
-  window.localStorage["webdev_isSignedIn"] = user ? "probably" : "";
+      // Cache whether the user was signed in, to help prevent FOUC in future, as
+      // this can be read synchronosly and Firebase's auth takes ~ms to come back.
+      window.localStorage["webdev_isSignedIn"] = user ? "probably" : "";
 
-  if (!user) {
-    clearSignedInState();
-    return;
-  }
+      if (!user) {
+        clearSignedInState();
+        return;
+      }
 
-  // Don't clear userUrl, as the user might have requested something prior to
-  // signing in.
-  store.setState({
-    isSignedIn: true,
-    user,
-  });
-  let lastSavedUrl = null;
-
-  const onUserSnapshot = (snapshot) => {
-    let saveNewUrlToState = false;
-
-    // We expect the user snapshot to look like:
-    // {
-    //   currentUrl: String,         # current URL saved to Firestore
-    //   urls: {String: Timestamp},  # URL to first time used (including current URL)
-    // }
-    const data = snapshot.data() || {}; // is empty on new user
-    const savedUrl = data.currentUrl || "";
-
-    const {userUrl, userUrlSeen, activeLighthouseUrl} = store.getState();
-    if (activeLighthouseUrl !== null) {
-      // Do nothing, as the active URL action will eventually write its results.
-      // This will also trigger a write to Firestore.
-    } else if (lastSavedUrl && lastSavedUrl !== savedUrl) {
-      // The user changed their target URL in another browser. Update it.
-      // This doesn't fire on the first snapshot as |lastRemoteUserUrl| begins
-      // as null.
-      saveNewUrlToState = true;
-    } else if (!userUrl) {
-      // Update to remote if there was no URL run before signin.
-      saveNewUrlToState = true;
-    } else if (!lastSavedUrl && userUrl) {
-      // This is the first snapshot from Firebase, but the user has a local URL.
-      // The user has run Lighthouse, but then signed in. Save the new run
-      // to Firebase.
-      saveUserUrl(userUrl, userUrlSeen);
-      lastSavedUrl = userUrl;
-      // Return early as we preempt the Firestore snapshot via lastSavedUrl
-      return;
-    } else {
-      // Do nothing, as the last remote URL is already up-to-date. This occurs
-      // if a snapshot was triggered for a field we don't care about.
-    }
-    lastSavedUrl = savedUrl;
-
-    // The URL changed, so record it from remote, and optionally indicate that
-    // <web-lighthouse-scores-container> should request new content when it
-    // appears on the page.
-    if (saveNewUrlToState) {
-      const seen = (data.urls && data.urls[savedUrl]) || null;
-      const userUrlSeen = seen ? seen.toDate() : null;
-      const userUrlResultsPending = Boolean(savedUrl); // only fetch results if the URL was set
-
+      // Don't clear userUrl, as the user might have requested something prior to
+      // signing in.
       store.setState({
-        userUrl: savedUrl,
-        userUrlSeen,
-        userUrlResultsPending,
+        isSignedIn: true,
+        user,
       });
-    }
-  };
+      let lastSavedUrl = null;
 
-  // This unsubscribe function is used if the user signs out. However, the user's row cannot be
-  // watched until the Firestore library is ready, so wrap the actual internal unsubscribe call.
-  firestoreUserUnsubscribe = (function() {
-    let internalUnsubscribe = () => {};
-    let unsubscribed = false;
+      const onUserSnapshot = (snapshot) => {
+        let saveNewUrlToState = false;
 
-    userRef()
-      .then((ref) => {
-        if (unsubscribed) {
-          return; // signed out before Firestore library showed up
+        // We expect the user snapshot to look like:
+        // {
+        //   currentUrl: String,         # current URL saved to Firestore
+        //   urls: {String: Timestamp},  # URL to first time used (including current URL)
+        // }
+        const data = snapshot.data() || {}; // is empty on new user
+        const savedUrl = data.currentUrl || "";
+
+        const {userUrl, userUrlSeen, activeLighthouseUrl} = store.getState();
+        if (activeLighthouseUrl !== null) {
+          // Do nothing, as the active URL action will eventually write its results.
+          // This will also trigger a write to Firestore.
+        } else if (lastSavedUrl && lastSavedUrl !== savedUrl) {
+          // The user changed their target URL in another browser. Update it.
+          // This doesn't fire on the first snapshot as |lastRemoteUserUrl| begins
+          // as null.
+          saveNewUrlToState = true;
+        } else if (!userUrl) {
+          // Update to remote if there was no URL run before signin.
+          saveNewUrlToState = true;
+        } else if (!lastSavedUrl && userUrl) {
+          // This is the first snapshot from Firebase, but the user has a local URL.
+          // The user has run Lighthouse, but then signed in. Save the new run
+          // to Firebase.
+          saveUserUrl(userUrl, userUrlSeen);
+          lastSavedUrl = userUrl;
+          // Return early as we preempt the Firestore snapshot via lastSavedUrl
+          return;
+        } else {
+          // Do nothing, as the last remote URL is already up-to-date. This occurs
+          // if a snapshot was triggered for a field we don't care about.
         }
-        internalUnsubscribe = ref.onSnapshot(onUserSnapshot);
-      })
-      .catch((err) => {
-        console.warn("failed to load Firestore library", err);
-      });
+        lastSavedUrl = savedUrl;
 
-    return () => {
-      unsubscribed = true;
-      internalUnsubscribe();
-    };
-  })();
-});
+        // The URL changed, so record it from remote, and optionally indicate that
+        // <web-lighthouse-scores-container> should request new content when it
+        // appears on the page.
+        if (saveNewUrlToState) {
+          const seen = (data.urls && data.urls[savedUrl]) || null;
+          const userUrlSeen = seen ? seen.toDate() : null;
+          const userUrlResultsPending = Boolean(savedUrl); // only fetch results if the URL was set
+
+          store.setState({
+            userUrl: savedUrl,
+            userUrlSeen,
+            userUrlResultsPending,
+          });
+        }
+      };
+
+      // This unsubscribe function is used if the user signs out. However, the user's row cannot be
+      // watched until the Firestore library is ready, so wrap the actual internal unsubscribe call.
+      firestoreUserUnsubscribe = (function() {
+        let internalUnsubscribe = () => {};
+        let unsubscribed = false;
+
+        userRef()
+          .then((ref) => {
+            if (unsubscribed) {
+              return; // signed out before Firestore library showed up
+            }
+            internalUnsubscribe = ref.onSnapshot(onUserSnapshot);
+          })
+          .catch((err) => {
+            console.warn("failed to load Firestore library", err);
+          });
+
+        return () => {
+          unsubscribed = true;
+          internalUnsubscribe();
+        };
+      })();
+    });
+  })
+  .catch((err) => {
+    console.warn("failed to load Firebase library");
+  });
 
 async function userRef() {
   const state = store.getState();
@@ -182,10 +190,12 @@ export async function saveUserUrl(url, auditedOn = null) {
 
 // Sign in the user
 export async function signIn() {
-  const provider = new firebase.auth.GoogleAuthProvider();
-
   let user;
   try {
+    await firebaseLoader();
+
+    const provider = new firebase.auth.GoogleAuthProvider();
+
     const res = await firebase.auth().signInWithPopup(provider);
     user = res.user;
   } catch (err) {
@@ -198,6 +208,8 @@ export async function signIn() {
 // Sign out the user
 export async function signOut() {
   try {
+    await firebaseLoader();
+
     await firebase.auth().signOut();
   } catch (err) {
     console.error("error", err);
