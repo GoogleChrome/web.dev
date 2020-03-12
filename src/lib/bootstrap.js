@@ -45,22 +45,24 @@ if ("serviceWorker" in navigator) {
 function serviceWorkerIsSupported(hostname) {
   // Allow local/prod as well as .netlify staging deploy target.
   const allowedHostnames = ["web.dev", "localhost"];
-  return allowedHostnames.includes(hostname) || hostname.endsWith(".netlify.com");
+  return (
+    allowedHostnames.includes(hostname) || hostname.endsWith(".netlify.com")
+  );
 }
 
 function ensureServiceWorker() {
-  const ensurePartialCache = (isFirstInstall=false) => {
+  const ensurePartialCache = (isFirstInstall = false) => {
     const {pathname} = window.location;
     if (isFirstInstall) {
       // We don't fetch the partial for the initial, real, HTML fetch from out HTTP server. This
       // ensures that if the user goes offline and reloads for some reason, the page still loads.
       getPartial(pathname);
     }
-    if (pathname !== '/') {
+    if (pathname !== "/") {
       // Aggressively refetch the landing page every time the site is loaded.
       // TODO(samthor): Check Workbox's cache time and fetch if needed. Additionally, cache a
       // number of recent articles.
-      getPartial('/');
+      getPartial("/");
     }
   };
 
@@ -68,7 +70,7 @@ function ensureServiceWorker() {
   if (isFirstInstall) {
     // Watch for the brand new Service Worker to be activated. We claim this foreground page
     // inside the Service Worker, so this event will fire when it is activated.
-    navigator.serviceWorker.addEventListener('controllerchange', () => {
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
       ensurePartialCache(true);
     });
   } else {
@@ -77,18 +79,15 @@ function ensureServiceWorker() {
 
     // We claim active clients if the Service Worker's architecture rev changes. We can't
     // reliably force a reload via the Client interface as it's unsupported in Safari.
-    navigator.serviceWorker.addEventListener('controllerchange', () => {
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
       window.location.reload();
     });
   }
-  navigator.serviceWorker.register('/sw.js');
+  navigator.serviceWorker.register("/sw.js");
 }
 
 function removeServiceWorker() {
-  console.warn(
-    "skipping SW, unsupported hostname:",
-    window.location.hostname,
-  );
+  console.warn("skipping SW, unsupported hostname:", window.location.hostname);
 
   // Remove previous Service Worker instances from this hostname. This should never normally
   // happen but is here for safety.
