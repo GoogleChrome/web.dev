@@ -274,7 +274,7 @@ class Search extends BaseElement {
       return;
     }
     try {
-      const {hits} = await index.search({query, hitsPerPage: 10});
+      const {hits} = await index.search(query, {hitsPerPage: 10});
       if (this.query === query) {
         this.hits = hits;
       }
