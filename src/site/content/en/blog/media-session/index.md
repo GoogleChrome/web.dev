@@ -258,7 +258,7 @@ navigator.mediaSession.setActionHandler("stop", () => {
 ### Seek backward / forward
 
 The "seekbackward" action indicates that the user wants to moves the media
-playback time backward by a short period while "seekforward" indicates a desire
+playback time backward by a short period while `"seekforward"` indicates a desire
 to move the media playback time forward by a short period. In both cases, a
 short period means a few seconds.
 
