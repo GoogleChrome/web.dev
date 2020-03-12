@@ -1,5 +1,5 @@
 ---
-title: Customizing media notifications and playback controls
+title: Customizing media notifications and playback controls with the Media Session API
 subhead: Give users full control over background playback
 authors:
   - beaufortfrancois
