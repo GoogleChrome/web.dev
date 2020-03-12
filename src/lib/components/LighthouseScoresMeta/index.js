@@ -41,6 +41,8 @@ class LighthouseScoresMeta extends BaseElement {
       }
     }
 
+    const encodedUrl = encodeURIComponent(this.url);
+
     return html`
       <div class="lh-report-meta">
         <span class="lh-report-meta__links" ?hidden="${hidden}">
@@ -49,7 +51,7 @@ class LighthouseScoresMeta extends BaseElement {
           </span>
           <span>
             <a
-              href="${LH_HOST}/lh/html?url=${encodeURIComponent(this.url)}"
+              href="${LH_HOST}/lh/html?url=${encodedUrl}"
               title="View latest Lighthouse report"
               class="viewreport lh-report-link gc-analytics-event"
               data-category="web.dev"
@@ -61,7 +63,7 @@ class LighthouseScoresMeta extends BaseElement {
             >
             |
             <a
-              href="${LH_HOST}/lh/html?url=${this.url}&download"
+              href="${LH_HOST}/lh/html?url=${encodedUrl}&download"
               download
               class="downloadreport lh-report-link gc-analytics-event"
               data-category="web.dev"
