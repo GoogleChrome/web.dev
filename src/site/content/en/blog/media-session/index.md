@@ -1,6 +1,6 @@
 ---
 title: Customizing media notifications and playback controls with the Media Session API
-subhead: Give users full control over background playback
+subhead: How to integrate with hardware media keys, customize media notifications, and more.
 authors:
   - beaufortfrancois
 date: 2020-03-06
