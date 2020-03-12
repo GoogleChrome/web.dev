@@ -25,5 +25,5 @@ module.exports = (content, label) => {
 
   const dataLabel = 'data-label="' + label + '"';
   // prettier-ignore
-  return `<div class="web-tabs__panel" role="tabpanel" ${dataLabel} hidden>${content}</div>`;
+  return `<div ${dataLabel}>${content}</div>`;
 };
