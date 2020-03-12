@@ -68,13 +68,13 @@ Examples of sites that may use this API include:
 | 2. Create initial draft of specification   | [Complete][spec]             |
 | 3. Gather feedback & iterate on design     | Complete                     |
 | 4. Origin trial                            | Complete                     |
-| **5. Launch**                              | Chrome 82                    |
+| **5. Launch**                              | Chrome 81                    |
 
 </div>
 
 ## Try it
 
-1. Using Chrome 82 or later on Windows or Mac, open the [Badging API demo][demo].
+1. Using Chrome 81 or later on Windows or Mac, open the [Badging API demo][demo].
 2. When prompted, click **Install** to install the app, or use the Chrome
    menu to install it.
 3. Open it as an installed PWA. Note, it must be running as an installed PWA (in
@@ -134,6 +134,19 @@ While the Badging API *in Chrome* requires an installed app, you shouldn't
 make calls to the Badging API dependent on the install state. Just call the
 API when it exists, as other browsers may show the badge in other places.
 If it works, it works. If not, it simply doesn't.
+
+## Feedback {: #feedback }
+
+The Chrome team wants to hear about your experiences with the Badging API.
+
+### Tell us about the API design
+
+Is there something in the API that doesn't work as you expected? Or are
+there missing methods or properties that you need to implement your idea?
+Do you have a question or comment on the security model?
+
+* File a spec issue on the [Badging API GitHub repo][issues], or add your
+  thoughts to an existing issue.
 
 ### Report a problem with the implementation
 
