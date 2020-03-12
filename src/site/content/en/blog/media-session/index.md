@@ -1,6 +1,6 @@
 ---
 title: Customizing media notifications and playback controls
-subhead: Deliver the best media playback experience
+subhead: Give users full control over background playback
 authors:
   - beaufortfrancois
 date: 2020-03-06
