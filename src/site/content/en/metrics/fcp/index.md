@@ -37,7 +37,7 @@ screen.
 
 You'll notice that though some of the content has rendered, not all of it has
 rendered. This is an important distinction to make between _First_ Contentful
-Paint (FCP) and _[Largest Contentful Paint (LCP)](/largest-contentful-paint/)_
+Paint (FCP) and _[Largest Contentful Paint (LCP)](/lcp/)_
 &mdash;which aims to measure when the page's main contents have finished
 loading.
 
@@ -96,7 +96,7 @@ sends the FCP value to your analytics service.
 To provide a good user experience, sites should strive to have First Contentful
 Paint occur within **1 second** of the page starting to load. To ensure you're
 hitting this target for most of your users, a good threshold to measure is the
-**75th percentile** of page loads on mobile devices.
+**75th percentile** of page loads, segmented across mobile and desktop devices.
 
 ## How to improve FCP
 
