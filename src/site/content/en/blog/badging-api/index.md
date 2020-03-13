@@ -139,7 +139,7 @@ navigator.clearAppBadge();
 ```
 
 You can only call `setAppBadge()` and `clearAppBadge()`
-from a foreground page, or potentially in the future, a service worker. In
+from a foreground page. In the future, you may be able to call it from a service worker. In
 either case, it affects the whole app, not just the current page.
 
 In some cases, the OS may not allow the exact representation of the badge.
