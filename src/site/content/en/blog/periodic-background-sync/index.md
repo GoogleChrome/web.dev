@@ -337,7 +337,7 @@ self.addEventListener('periodicsync', (event) => {
 
 ### Adding periodic background sync to an existing web app
 
-[This set of changes](https://github.com/GoogleChromeLabs/so-pwa/pull/11) were needed to add in
+[This set of changes](https://github.com/GoogleChromeLabs/so-pwa/pull/11) were needed to add
 periodic background sync to an [existing web app](https://so-pwa.firebaseapp.com/) that already had
 offline support. This example includes a number of helpful logging statements that describe the
 state of periodic background sync in the web app.
