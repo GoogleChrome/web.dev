@@ -162,7 +162,7 @@ If it works, it works. If not, it simply doesn't.
 ## Supporting both the origin trial and the stable API {: #supporting }
 
 In the Chrome 79 and Chrome 80 [origin trial]({{origin_trial.url}}) the members
-of the badging API have different names than those in the current spec. If
+of the badging API have different names than those in the current implementation. If
 you're participating in that origin trial, you'll need to support both the
 origin trail and the standard names. You can wrap the calls in the following
 functions. Once the origin trial is over or all your users have migrated to
