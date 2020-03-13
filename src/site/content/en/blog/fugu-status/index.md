@@ -205,7 +205,7 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           Despite a stable version of the spec shipping in Chrome 81, an origin
           trial is running in Chrome 79 and Chrome 81 until Setempber 15, 2020.
           </div>
-          <em>Updated March 13, 2020</em>
+          <em>Updated March 16, 2020</em>
         </td>
       </tr>
       <tr>

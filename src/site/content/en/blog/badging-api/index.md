@@ -124,7 +124,7 @@ The Badge API consists of the following methods on `navigator`:
 These functions had different names for the origin trial than they do in the
 current spec. If you're still participating in the origin trial, you'll need to
 support both versions of the API. See [Supporting both the origin trial and the
-stable API](#supporing) for details.
+stable API](#supporting) for details.
 {% endAside %}
 
 For example:
@@ -181,7 +181,7 @@ function clearBadge() {
   if (navigator.clearExperimentalAppBadge) {
     navigator.clearExperimentalAppBadge();
   } else {
-    window.clearAppBadte(...args);
+    window.clearAppBadtge(...args);
   }
 }
 ```
