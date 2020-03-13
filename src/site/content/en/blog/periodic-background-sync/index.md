@@ -6,7 +6,7 @@ authors:
   - jeffposnick
   - joemedley
 date: 2019-11-10
-updated: 2019-12-18
+updated: 2020-03-13
 hero: hero.jpg
 alt: Colorful airplanes flying in sync
 origin_trial:
@@ -91,7 +91,7 @@ In Progress
 4. Origin trial
 </td>
 <td markdown="block">
-<a href="https://developers.chrome.com/origintrials/#/view_trial/4048736065006075905">Running from Chrome 77 to Chrome 80</a>
+Complete
 </td>
 </tr>
 <tr>
@@ -113,8 +113,7 @@ Before using it, make sure that:
 * You're using Chrome 80 or later.
 * You
   [install](https://developers.google.com/web/fundamentals/app-install-banners/)
-  the web app before enabling periodic background sync. (The demo app's
-  author already took the step of signing up for the origin trial.)
+  the web app before enabling periodic background sync.
 
 ## Concepts and usage
 
@@ -315,13 +314,13 @@ Sync API.
   syncs. Retrieve an instance of this class from the ServiceWorkerRegistration.periodicSync`
   property.
 * `ServiceWorkerGlobalScope.onperiodicsync`. Registers a handler to receive the `PeriodicSyncEvent`.
-* `ServiceWorkerRegistration.periodicSync`. Returns a reference to the `PeriodicSyncManager`.
+* `ServiceWorkerRegistration.periodicSync`. Holds a reference to the `PeriodicSyncManager`.
 
 ## Example
 
 ### Updating content
 
-The following example uses periodic background sync to download and cache up-to-date articles for a news site or blog. Notice the tag name, which indicates the kind of sync this is (`'update-articles'`). The call to `updatearticles()` is wrapped in `event.waitUntil()` so that the service worker won't terminate before the articles are downloaded and stored.
+The following example uses periodic background sync to download and cache up-to-date articles for a news site or blog. Notice the tag name, which indicates the kind of sync this is (`'update-articles'`). The call to `updateArticles()` is wrapped in `event.waitUntil()` so that the service worker won't terminate before the articles are downloaded and stored.
 
 ```js/7
 async function updateArticles() {
@@ -336,6 +335,13 @@ self.addEventListener('periodicsync', (event) => {
 });
 ```
 
+### Adding periodic background sync to an existing web app
+
+[This set of changes](https://github.com/GoogleChromeLabs/so-pwa/pull/11) were needed to add in
+periodic background sync to an [existing web app](https://so-pwa.firebaseapp.com/) that already had
+offline support. This example includes a number of helpful logging statements that describe the
+state of periodic background sync in the web app.
+
 ## Debugging
 
 It can be a challenge to get and end-to-end view of periodic background sync
@@ -345,9 +351,7 @@ your web app's behavior. Fortunately, you can find all of that information
 through an experimental feature in Chrome DevTools.
 
 {% Aside %}
-  Periodic background sync debugging is currently disabled by default. See [Enabling the DevTools
-  interface](https://developers.google.com/web/updates/2019/08/periodic-background-sync#enabling_the_devtools_interface)
-  for the steps needed to enable it during the origin trial.
+  Periodic background sync debugging is enabled in Chrome 81 and later.
 {% endAside %}
 
 ### Recording local activity
@@ -390,10 +394,7 @@ Chrome DevTools. The **Periodic Sync** field allows you to provide a tag for the
 event to use, and to trigger it as many times as you'd like.
 
 {% Aside %}
-  Manually triggering a `periodicsync` event requires Chrome 78 or later.
-  You'll need to follow the same [Enabling the DevTools
-  interface](https://developers.google.com/web/updates/2019/08/periodic-background-sync#enabling_the_devtools_interface)
-  steps to turn it on.
+  Manually triggering a `periodicsync` event requires Chrome 81 or later.
 {% endAside %}
 
 <figure class="w-figure  w-figure--center">
@@ -404,7 +405,7 @@ event to use, and to trigger it as many times as you'd like.
 
 ## Using the DevTools interface
 
-Starting in Chrome 80, you'll see a **Periodic Background Sync** section in the
+Starting in Chrome 81, you'll see a **Periodic Background Sync** section in the
 DevTools *Application* panel.
 
    <figure class="w-figure w-figure--center">
