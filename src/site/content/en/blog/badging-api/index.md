@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: The Badging API allows installed web apps to set an application-wide badge, shown in an operating-system-specific place associated with the application, such as the shelf or home screen. Badging makes it easy to subtly notify the user that there is some new activity that might require their attention, or it can be used to indicate a small amount of information, such as an unread count.
 date: 2018-12-11
-updated: 2020-03-13
+updated: 2020-03-16
 tags:
   - post
   - capabilities
@@ -16,12 +16,14 @@ tags:
   - origin-trial
 hero: hero.jpg
 alt: Phone showing several notification badges
+origin_trial:
+  url: https://developers.chrome.com/origintrials/#/view_trial/-5354779956943519743
 ---
 
 {% Aside 'success' %}
   This API is part of the new
   [capabilities project](/fugu-status/),
-  and it is available in Chrome by default starting in Chrome 82.
+  and it is available in Chrome by default starting in Chrome 81, though for Chrome 79 and Chrome 80, origin trial tokens are still available.
 {% endAside %}
 
 ## What is the Badging API? {: #what }
@@ -67,14 +69,15 @@ Examples of sites that may use this API include:
 | 1. Create explainer                        | [Complete][explainer]        |
 | 2. Create initial draft of specification   | [Complete][spec]             |
 | 3. Gather feedback & iterate on design     | Complete                     |
-| 4. Origin trial                            | Complete                     |
+| **4. Origin trial**                        | Chrome 79-80 [In progress](#ot) |
 | **5. Launch**                              | Chrome 81                    |
 
 </div>
 
 ## Try it
 
-1. Using Chrome 81 or later on Windows or Mac, open the [Badging API demo][demo].
+1. Using Chrome 81 or later on Windows or Mac (or Chrome 79 or 80, if you're
+   still participating in the origin trial), open the [Badging API demo][demo].
 2. When prompted, click **Install** to install the app, or use the Chrome
    menu to install it.
 3. Open it as an installed PWA. Note, it must be running as an installed PWA (in
@@ -90,6 +93,20 @@ On Android, the Badging API is not supported. Instead, Android automatically
 shows a badge on a web app when there is an unread notification, just as
 for native apps.
 
+### Register for the origin trial {: #ot }
+
+The origin trial is supported in both Chrome 79 and Chrome 80 and runs through
+September 2020.
+
+{% include 'content/origin-trials.njk' %}
+
+{% include 'content/origin-trial-register.njk' %}
+
+### Alternatives to the origin trial
+
+If you want to experiment with the Badging API locally, without an origin trial,
+enable the `#enable-experimental-web-platform-features` flag in `chrome://flags`.
+
 ### Setting and clearing a badge
 
 To use the Badging API, your web app needs to meet
@@ -102,6 +119,13 @@ The Badge API consists of the following methods on `navigator`:
   provided, set the badge to the provided value otherwise, display a plain
   white dot (or other flag as appropriate to the platform).
 * `clearAppBadge()`: Removes app's badge.
+
+{% Aside %}
+These functions had different names for the origin trial than they do in the
+current spec. If you're still participating in the origin trial, you'll need to
+support both versions of the API. See [Supporting both the origin trial and the
+stable API](#supporing) for details.
+{% endAside %}
 
 For example:
 
@@ -134,6 +158,33 @@ While the Badging API *in Chrome* requires an installed app, you shouldn't
 make calls to the Badging API dependent on the install state. Just call the
 API when it exists, as other browsers may show the badge in other places.
 If it works, it works. If not, it simply doesn't.
+
+## Supporting both the origin trial and the stable API {: #supporting }
+
+In the Chrome 79 and Chrome 80 [origin trial]({{origin_trial.url}}) the members
+of the badging API have different names than those in the current spec. If
+you're participating in that origin trial, you'll need to support both the
+origin trail and the standard names. You can wrap the calls in the following
+functions. Once the origin trial is over or all your users have migrated to
+Chrome 81 or later, you can remove these functions from your code.
+
+```js
+function setBadge(...args) {
+  if (navigator.setExperimentalAppBadge) {
+    navigator.setExperimentalAppBadge(...args);
+  } else {
+    window.setAppBadge(...args);
+  }
+}
+
+function clearBadge() {
+  if (navigator.clearExperimentalAppBadge) {
+    navigator.clearExperimentalAppBadge();
+  } else {
+    window.clearAppBadte(...args);
+  }
+}
+```
 
 ## Feedback {: #feedback }
 
