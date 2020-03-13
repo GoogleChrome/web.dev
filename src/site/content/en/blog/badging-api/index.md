@@ -122,7 +122,7 @@ The Badge API consists of the following methods on `navigator`:
 
 {% Aside %}
 These functions had different names for the origin trial than they do in the
-current spec. If you're still participating in the origin trial, you'll need to
+current implementation. If you're still participating in the origin trial, you'll need to
 support both versions of the API. See [Supporting both the origin trial and the
 stable API](#supporting) for details.
 {% endAside %}
