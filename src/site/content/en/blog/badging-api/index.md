@@ -181,7 +181,7 @@ function clearBadge() {
   if (navigator.clearExperimentalAppBadge) {
     navigator.clearExperimentalAppBadge();
   } else {
-    window.clearAppBadtge(...args);
+    window.clearAppBadge(...args);
   }
 }
 ```
