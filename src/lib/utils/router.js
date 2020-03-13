@@ -1,3 +1,5 @@
+import "./abort-controller-polyfill";
+
 let globalHandler;
 let recentActiveUrl; // current URL not including hash
 
@@ -72,7 +74,7 @@ function onClick(e) {
 /**
  * Adds global page listeners for SPA routing.
  *
- * @param {function(string, boolean=): void} handler
+ * @param {function(!Object): ?} handler which returns an optional Promise
  */
 export function listen(handler) {
   if (!handler) {
@@ -82,27 +84,60 @@ export function listen(handler) {
     throw new Error("listen can only be called once");
   };
 
-  let requestCount = 0;
+  let previousController = null;
 
-  // globalHandler is called for the current page URL (i.e., it reads
-  // window.location rather than accepting an argument) to trigger a load via
-  // the passed handler.
-  globalHandler = () => {
-    const localRequest = ++requestCount; // initial load will be 1
-    const isAborted = () => localRequest !== requestCount;
+  globalHandler = (url) => {
+    const isNavigation = Boolean(url);
+    if (!isNavigation) {
+      url = getUrl();
+    }
 
-    // Trigger the handler immediately, which will abort any previous fetch.
-    return Promise.resolve()
-      .then(async () => {
-        await handler(false, isAborted);
-        return isAborted();
+    const firstRun = previousController === null;
+    if (!firstRun) {
+      previousController.abort();
+    }
+
+    const controller = (previousController = new AbortController());
+    const currentState = isNavigation ? null : window.history.state;
+
+    // Pass ready() to handler. It can be invoked early by router users to replace the current URL,
+    // e.g. for navigation, and to push state. Otherwise, it's called automatically at completion.
+    let readyRun = false;
+    const ready = (url, state) => {
+      if (controller.signal.aborted || readyRun) {
+        return false;
+      }
+      readyRun = true;
+
+      const update = url + window.location.hash;
+      if (isNavigation) {
+        window.history.pushState(state, null, update);
+      } else {
+        window.history.replaceState(state, null, update);
+      }
+      recentActiveUrl = update;
+    };
+
+    const arg = {
+      firstRun,
+      url,
+      signal: controller.signal,
+      ready,
+      state: currentState,
+    };
+    return Promise.resolve(handler(arg))
+      .then(() => {
+        ready(url, currentState); // skipped if already run
+        return controller.signal.aborted;
       })
       .catch((err) => {
-        // Only throw errors if not prseempted and not the first load.
-        if (!isAborted() && localRequest !== 1) {
+        // Only throw errors if not preempted and not the first load.
+        if (!controller.signal.aborted && !firstRun) {
           window.location.href = window.location.href;
           throw err;
         }
+        console.warn("err loading (preempted)", url, err);
+        return true;
       });
   };
 
@@ -114,7 +149,10 @@ export function listen(handler) {
 }
 
 /**
- * Optionally routes to the target URL.
+ * Optionally kicks off routing to the target URL, as if a link were clicked or navigation
+ * triggered. This will not change the URL until the underlying handler completes.
+ *
+ * This return false if the request was pre-empted (or was a hash change).
  *
  * @param {string} url to load
  * @return {boolean} whether a route happened and to prevent default behavior
@@ -131,10 +169,8 @@ export function route(url) {
   if (candidateUrl === getUrl() && u.hash) {
     return false;
   }
-  recentActiveUrl = candidateUrl;
 
-  window.history.pushState(null, null, u.toString()); // Edge needs toString
-  globalHandler().then((aborted) => {
+  globalHandler(candidateUrl).then((aborted) => {
     if (aborted) {
       return false;
     }
