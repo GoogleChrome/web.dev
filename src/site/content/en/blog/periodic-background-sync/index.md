@@ -314,7 +314,7 @@ Sync API.
   syncs. Retrieve an instance of this class from the ServiceWorkerRegistration.periodicSync`
   property.
 * `ServiceWorkerGlobalScope.onperiodicsync`. Registers a handler to receive the `PeriodicSyncEvent`.
-* `ServiceWorkerRegistration.periodicSync`. Holds a reference to the `PeriodicSyncManager`.
+* `ServiceWorkerRegistration.periodicSync`. Returns a reference to the `PeriodicSyncManager`.
 
 ## Example
 
