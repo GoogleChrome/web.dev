@@ -1,0 +1,66 @@
+<web-subscribe id="subscribe">
+  <div class="w-subscribe">
+    <div>
+      <h1>Become a better web developer.</h1>
+      <p id="w-subscribe__message">Stay up to date with the latest about web platform.</p>
+    </div>
+    <form class="w-subscribe__form" action="{{ site.subscribeForm }}" method="post">
+      <div class="w-subscribe__fields">
+        <div class="w-subscribe__field">
+          <input class="w-subscribe__input" id="sub-firstname" name="FirstName" placeholder="First Name" required
+            type="text" />
+        </div>
+        <div class="w-subscribe__field">
+          <input class="w-subscribe__input" id="sub-lastname" name="LastName" placeholder="Last Name" required
+            type="text" />
+        </div>
+      </div>
+      <div class="w-subscribe__field">
+        <input class="w-subscribe__input" id="sub-email" name="EmailAddress" placeholder="Your Email" required
+          type="email" />
+      </div>
+      <div class="w-subscribe__field">
+        <div class="w-subscribe__border">
+          <select class="w-subscribe__select" id="sub-country" name="Country" required>
+            {% for country in countries %}
+              {% if country[1] === "United States" %}
+                <option selected value="{{country[0]}}">{{country[1]}}</option>
+              {% else %}
+                <option value="{{country[0]}}">{{country[1]}}</option>
+              {% endif %}
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="w-subscribe__field">
+        <label for="sub-newsletter">
+          <input id="sub-newsletter" name="WebDevNewsletter" required type="checkbox" value="Unconfirmed" />
+          <span>Add me to the web.dev mailing list.</span>
+        </label>
+      </div>
+      <div class="w-subscribe__field">
+        <label for="sub-pii-spii">
+          <input id="sub-pii-spii" name="collects-pii-spii-checkbox" required type="checkbox" value="Unconfirmed" />
+          <span>I accept Google's
+            <a href="//www.google.com/intl/en/policies/terms/" target="_blank">Terms and Conditions</a>
+            and acknowledge that my information will be used in accordance
+            with Google's
+            <a href="//www.google.com/intl/en/policies/privacy/" target="_blank">Privacy Policy</a>.
+          </span>
+        </label>
+      </div>
+      <div class="w-subscribe__field-hidden">
+        <input type="text" name="is-it-just-me-or-was-this-form-filled-out-by-a-robot" tabindex="-1" />
+        <select name="LanguagePreference" required tabindex="-1">
+          <option selected value="en-US">en-US</option>
+        </select>
+      </div>
+      <div class="w-subscribe__field">
+        <button class="w-subscribe__button w-button w-button--primary" type="submit">
+          Subscribe
+        </button>
+      </div>
+    </form>
+    <div id="w-subscribe__error"></div>
+  </div>
+</web-subscribe>

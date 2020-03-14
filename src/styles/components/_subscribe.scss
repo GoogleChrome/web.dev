@@ -1,0 +1,86 @@
+@import '../settings/colors';
+@import '../tools/breakpoints';
+
+.w-subscribe {
+  display: block;
+  margin-top: 32px;
+  text-align: center;
+  width: 100%;
+}
+
+.w-subscribe__border {
+  border: 2px solid #f1f3f4;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  width: 100%;
+}
+
+.w-subscribe__button {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#w-subscribe__error {
+  color: $WARNING_COLOR;
+}
+
+.w-subscribe__field {
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
+  text-align: left;
+}
+
+.w-subscribe__field-hidden {
+  left: -100vw;
+  position: absolute;
+  top: -100vh;
+  z-index: -100;
+}
+
+.w-subscribe__form {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 720px;
+  width: calc(100% - 32px);
+}
+
+.w-subscribe__input {
+  border: 2px solid #f1f3f4;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  font: inherit;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 8px;
+  width: 100%;
+
+  &:focus {
+    box-shadow: 0 2px 0 0 $WEB_SECONDARY_COLOR;
+    outline: none;
+  }
+}
+
+.w-subscribe__select {
+  background: white;
+  border: 0;
+  font: inherit;
+  height: 36px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@include bp(sm) {
+  .w-subscribe__fields {
+    display: flex;
+    justify-content: space-between;
+
+    .w-subscribe__field {
+      width: calc(50% - 4px);
+    }
+  }
+}
