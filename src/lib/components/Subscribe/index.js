@@ -99,6 +99,7 @@ class Subscribe extends BaseElement {
 
   onSuccess() {
     this.submitted = true;
+    this.subscribeError.innerHTML = "";
     this.subscribeMessage.innerText = "Thank you! You're all signed up.";
     this.form.removeEventListener("submit", this.onSubmit.bind(this));
     this.form.parentElement.removeChild(this.form);
