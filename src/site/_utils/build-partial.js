@@ -23,6 +23,8 @@
 
 const fs = require("fs").promises;
 const path = require("path");
+const site = require("../_data/site");
+const stripTitle = require("../_filters/strip-title");
 
 const suffixLength = "index.html".length;
 
@@ -46,7 +48,7 @@ module.exports = function buildPartial() {
     const partial = {
       raw: content,
       lang,
-      title: title || (pathData && pathData.title) || "web.dev",
+      title: stripTitle(title || (pathData && pathData.title) || site.title),
       offline: offline || undefined,
     };
 

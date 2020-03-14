@@ -77,6 +77,7 @@ const prettyDate = require(`./${filtersDir}/pretty-date`);
 const removeDrafts = require(`./${filtersDir}/remove-drafts`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
 const stripLanguage = require(`./${filtersDir}/strip-language`);
+const stripTitle = require(`./${filtersDir}/strip-title`);
 
 const buildPartial = require('./src/site/_utils/build-partial');
 
@@ -178,6 +179,7 @@ module.exports = function(config) {
   config.addFilter('removeDrafts', removeDrafts);
   config.addFilter('stripBlog', stripBlog);
   config.addFilter('stripLanguage', stripLanguage);
+  config.addFilter('stripTitle', stripTitle);
 
   //----------------------------------------------------------------------------
   // SHORTCODES

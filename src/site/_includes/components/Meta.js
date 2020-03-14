@@ -17,6 +17,7 @@
 const path = require("path");
 const site = require("../../_data/site");
 const stripLanguage = require("../../_filters/strip-language");
+const stripTitle = require("../../_filters/strip-title");
 const {html} = require("common-tags");
 
 module.exports = (locale, page, collections, renderData = {}) => {
@@ -42,7 +43,7 @@ module.exports = (locale, page, collections, renderData = {}) => {
         ? pageData.social[platform]
         : pageData;
 
-    const title = social.title || social.path.title;
+    const title = stripTitle(social.title || social.path.title);
     const description = social.description || social.path.description;
     let thumbnail = social.thumbnail || social.hero;
     const alt = social.alt || site.name;
@@ -118,7 +119,7 @@ module.exports = (locale, page, collections, renderData = {}) => {
 
   // prettier-ignore
   return html`
-    <title>${pageData.title || pageData.path.title || "web.dev"}</title>
+    <title>${stripTitle(pageData.title || pageData.path.title || site.title)}</title>
     <meta name="description" content="${pageData.description || pageData.path.description}" />
 
     ${renderCanonicalMeta()}
