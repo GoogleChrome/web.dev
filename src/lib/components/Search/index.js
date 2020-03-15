@@ -7,7 +7,7 @@ import {BaseElement} from "../BaseElement";
 import {store} from "../../store";
 import * as router from "../../utils/router";
 import {debounce} from "../../utils/debounce";
-import algoliasearch from "algoliasearch/dist/algoliasearchLite";
+import algoliasearch from "algoliasearch/dist/algoliasearch-lite.esm.browser";
 import "./_styles.scss";
 
 // Create an algolia client so we can get search results.
@@ -274,7 +274,7 @@ class Search extends BaseElement {
       return;
     }
     try {
-      const {hits} = await index.search({query, hitsPerPage: 10});
+      const {hits} = await index.search(query, {hitsPerPage: 10});
       if (this.query === query) {
         this.hits = hits;
       }
