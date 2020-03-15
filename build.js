@@ -137,7 +137,7 @@ async function build() {
   const noticeDev = isProd ? "" : "// Not generated in dev";
 
   const layoutTemplate = await fs.readFile(
-    "dist/sw-partial-layout.partial",
+    path.join("dist", "sw-partial-layout.partial"),
     "utf-8",
   );
 
