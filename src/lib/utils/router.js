@@ -115,7 +115,7 @@ export function listen(handler) {
       } else {
         window.history.replaceState(state, null, update);
       }
-      recentActiveUrl = update;
+      recentActiveUrl = url;
     };
 
     const arg = {
@@ -179,8 +179,7 @@ export function route(url) {
     // element (if any) and scroll to it.
     const target = document.getElementById(u.hash.substr(1)) || null;
     if (target) {
-      // nb. this avoids collision with top menubars etc
-      target.scrollIntoView({block: "center"});
+      target.scrollIntoView();
     } else {
       document.documentElement.scrollTop = 0;
     }
