@@ -12,6 +12,11 @@ to check their understanding of concepts covered in your post.
 {% Assessment page, 'self-assessment' %}
 
 1. [Start a self-assessment](#start-a-self-assessment)
+1. [Question set parameters](#question-set-parameters)
+1. [Question anatomy and parameters](#question-anatomy-and-parameters)
+1. [Response types](#response-types)
+    - [Multiple-choice](#multiple-choice)
+    - [Composite questions](#composite-questions)
 1. [Multiple sets in one post](#multiple-sets-in-one-post)
 
 ## Start a self-assessment
@@ -34,8 +39,8 @@ To include a self-assessment in your post:
 ### Set leader
 
 When a self-assessment includes more than one question,
-add a **set leader**�a statement about what the question set
-as a whole covers�using the `setLeader` key. For example:
+add a **set leader**—a statement about what the question set
+as a whole covers—using the `setLeader` key. For example:
 
 ```yaml
 setLeader: Test your knowledge of resource optimization
@@ -69,9 +74,135 @@ There are three options:
   where _n_ is the number of the tab in the set.
   Use for sets that mostly ask users to submit a response.
 - `sample`: creates the label `Sample n`.
-  Use for sets composed mostly of [think-and-checks](#think-and-checks).
 - `bare`: creates the label `n`
   Use for larger sets where horizontal space is limited.
+
+## Question anatomy and parameters
+A self-assessment question includes four components:
+- An optional **stimulus** that appears at the top of the question
+  and provides any information needed to respond to the question.
+  Stimuli may be text, media, or a combination.
+  Only one stimulus per question is allowed.
+- One or more **stems**, which are the questions or tasks
+  the user is being asked to respond to.
+  Stems are text only, but they do support inline MarkDown.
+- A [response type](#response-types) for each stem,
+  which includes several options to choose from
+  and accompanying rationales. Rationales are initially hidden.
+- An automatically generated question footer,
+  which includes the **Check** and **Report issue** buttons.
+
+Once the user submits an answer to a question,
+it shows:
+- Whether the option is correct or incorrect
+- The rationale for the option
+
+### Cardinality
+
+Use the `cardinality` key to control how many options a user may select:
+- `n`: The user must select **exactly _n_** options
+  before the response is considered complete.
+  If _n_&nbsp;>&nbsp;1, all unselected options will be disabled
+  when _n_ options are selected.
+- `n+`: The user must select **_n_ or more** options
+  before the response is considered complete.
+- `n–m`: The user must select at **least _n_ and at most _m_** options
+  before the response is considered complete.
+  All unselected options will be disabled when _m_ options are selected.
+
+For example,
+- `cardinality: "1"` allows users to select only one option.
+- `cardinality: "2+"` allows users to select two or more options.
+- `cardinality: "2-3"` requires users to select two options
+  before allowing them to check their answer
+  and doesn't allow them to select more than three options.
+
+{% Aside 'gotchas' %}
+Put quotes around `cardinality` values
+so YAML doesn't incorrectly interpret them as numbers.
+{% endAside %}
+
+### Correct answer(s)
+
+Use the `correctAnswers` key to indicate all correct answers to a question
+using a comma-separated, zero-indexed list.
+For example, `correctAnswers: "0,3"` indicates
+that the first and fourth answers are correct.
+
+{% Aside 'gotchas' %}
+Put quotes around `correctAnswers` values
+so YAML doesn't incorrectly interpret them as numbers.
+{% endAside %}
+
+### Layout
+
+The options of most response types can be presented in two columns
+by setting the `columns` key to `true`.
+(Response types that don't support a two-column layout
+will ignore the `columns` key.)
+
+{% Aside %}
+It's almost always best to use a single column for textual options.
+For image options,
+see which layout best balances legibility and screen real estate.
+{% endAside %}
+
+## Response types
+
+### Multiple-choice
+The multiple-choice response type lets users respond to a question
+by selecting from an array of options,
+which can include MarkDown or images.
+(But not both! Overstuffing your options can make them artificially hard.)
+
+{% Aside 'warning' %}
+To help ensure that users understand what selecting an option will do,
+don't include links or any other interactive elements in a multiple-choice option.
+{% endAside %}
+
+### Composite questions
+You can include more than one response component in a single question.
+
+To do that, add a `components` key to the question object
+and then include all question data _except_ the stimulus in each component object.
+(Each question can have only one stimulus.)
+
+Here's an example:
+```yaml
+- stimulus: "![Webby](./webby.png)"
+  components:
+    - type: multiple-choice
+      cardinality: "1"
+      correctAnswers: "1"
+      stem: Who's this Webby I've heard so much about?
+      options:
+        -content: A sentient system icon run amok
+          rationale: Like this helpful little being would ever go amok.
+        - content: The best darn mascot you could hope for
+          rationale: Webby is _everything_.
+        - content: Spiderman's lesser known sidekick
+          rationale: |
+            I really don't see Webby swinging around
+            on those small (but _adorable_) arms.
+    - type: multiple-choice
+      cardinality: "1"
+      correctAnswers: "2"
+      stem: How awesome is Webby?
+      options:
+        - content: Pretty awesome
+          rationale: Nope.
+        - content: The awesomest
+          rationale: Close but no.
+        - content: OMG 🤯
+          rationale: It was always you, Webby.
+```
+
+{% Aside 'caution' %}
+Use composite questions judiciously.
+The more response components there are, the harder the question is.
+It's better to break up a multi-part question into separate questions
+unless the parts are truly interdependent.
+{% endAside %}
 
 ## Multiple sets in one post
 To include another set in your post,
