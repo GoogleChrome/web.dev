@@ -10,6 +10,11 @@ import {matchPrecache, precacheAndRoute} from "workbox-precaching";
 import {cacheNames} from "workbox-core";
 import {matchSameOriginRegExp} from "./utils/sw-match.js";
 
+/**
+ * Configure default cache for standard web.dev files: the offline page, various images etc.
+ */
+precacheAndRoute(manifest);
+
 // Architecture revision of the Service Worker. If the previously saved revision doesn't match,
 // then this will cause clients to be aggressively claimed and reloaded on install/activate.
 // Used when the design of the SW changes dramatically.
@@ -94,9 +99,6 @@ workboxRouting.registerRoute(
     ],
   }),
 );
-
-// Configure default cache for standard web.dev files: the offline page, various images etc.
-precacheAndRoute(manifest);
 
 /**
  * This is a special handler for requests without a trailing "/". These requests _should_ go to
