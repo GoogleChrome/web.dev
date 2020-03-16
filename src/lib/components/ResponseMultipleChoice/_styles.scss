@@ -1,0 +1,96 @@
+@import '../../../styles/tools/mixins';
+
+// Applies self-assessment color scheme to radio buttons and checkboxes.
+// Needs specificity of web-response-mc to override default SelectGroup styles.
+web-response-mc {
+  .web-response-mc__selector {
+    border-color: $SELF_ASSESSMENT_PRIMARY_COLOR;
+  }
+
+  input[type='radio'] ~ .web-response-mc__selector::after {
+    border-color: $SELF_ASSESSMENT_PRIMARY_COLOR;
+  }
+
+  @include hover() {
+    .web-response-mc__option:hover .web-response-mc__selector::before,
+    .web-response-mc__input:focus ~ .web-response-mc__selector::before {
+      background: $SELF_ASSESSMENT_HOVER_COLOR;
+    }
+  }
+
+  .web-response-mc__option:active .web-response-mc__selector::before {
+    background: $SELF_ASSESSMENT_ACTIVE_COLOR;
+  }
+
+  input[type='checkbox']:checked ~ .web-response-mc__selector {
+    background: $SELF_ASSESSMENT_PRIMARY_COLOR;
+  }
+}
+
+// Style multiple-choice options when the question is complete
+// or the option has been submitted.
+[state=completed] .web-response-mc__option,
+.web-response-mc__option[data-submitted] {
+  align-items: flex-start;
+  justify-self: stretch;
+  padding: 1rem 1rem 1.5rem;
+}
+
+[state=completed] .web-response-mc__input[disabled] ~ .web-response-mc__selector {
+  background: $GREY_600;
+  border-color: $GREY_600;
+  transition: none;
+}
+
+.web-select-group__option[data-submitted] .web-response-mc__input ~ .web-response-mc__selector {
+  background: $SELF_ASSESSMENT_INCORRECT_COLOR !important;
+  border-color: $SELF_ASSESSMENT_INCORRECT_COLOR !important;
+  transition: none;
+}
+
+// This uses $SUCCESS_COLOR because it shows success and so should be
+// independent of the self-assessment color scheme.
+.web-select-group__option[data-submitted][data-correct] .web-response-mc__input ~ .web-response-mc__selector {
+  background: $SUCCESS_COLOR !important;
+  border-color: $SUCCESS_COLOR !important;
+  transition: none;
+}
+
+// Prevent selector states from appearing when the question is complete
+// or an option has been submitted.
+[state=completed] .web-response-mc__selector::before,
+.web-select-group__option[data-submitted] .web-response-mc__selector::before {
+  background: none !important;
+}
+
+// Override default SelectGroup radio button checked states.
+[state=completed] .web-response-mc__input ~ .web-response-mc__selector::after,
+.web-select-group__option[data-submitted] .web-response-mc__input ~ .web-response-mc__selector::after {
+  border: 0;
+  content: 'remove';
+  height: initial;
+  transform: initial;
+  transition: none;
+  width: initial;
+}
+
+.web-select-group__option[data-submitted] .web-response-mc__input ~ .web-response-mc__selector::after {
+  content: 'clear';
+}
+
+.web-select-group__option[data-submitted][data-correct] .web-response-mc__input ~ .web-response-mc__selector::after {
+  content: 'check';
+}
+
+// Override disabled state when the question is complete
+// or the option has been submitted
+// so it's fully visible and allows text selection.
+[state=completed] .web-select-group__option[disabled],
+.web-select-group__option[data-submitted][disabled] {
+  pointer-events: auto;
+}
+
+[state=completed] .web-select-group__option[disabled] .web-select-group__option-content,
+.web-select-group__option[data-submitted][disabled] .web-select-group__option-content {
+  opacity: 1;
+}
