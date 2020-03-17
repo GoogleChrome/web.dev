@@ -1723,6 +1723,19 @@ const contributors = {
     twitter: "kumagi",
     github: "kumagi",
   },
+  koto: {
+    name: {
+      given: "Krzysztof",
+      family: "Kotowicz",
+    },
+    org: {
+      name: "Google",
+      unit: "Information Security Engineering",
+    },
+    country: "CH",
+    twitter: "kkotowicz",
+    github: "koto",
+  },
 };
 
 const processedContributors = {};
