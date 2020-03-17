@@ -75,9 +75,9 @@ const pagedNavigation = require(`./${filtersDir}/paged-navigation`);
 const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
 const prettyDate = require(`./${filtersDir}/pretty-date`);
 const removeDrafts = require(`./${filtersDir}/remove-drafts`);
+const strip = require(`./${filtersDir}/strip`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
 const stripLanguage = require(`./${filtersDir}/strip-language`);
-const stripTitle = require(`./${filtersDir}/strip-title`);
 
 const buildPartial = require('./src/site/_utils/build-partial');
 
@@ -179,7 +179,7 @@ module.exports = function(config) {
   config.addFilter('removeDrafts', removeDrafts);
   config.addFilter('stripBlog', stripBlog);
   config.addFilter('stripLanguage', stripLanguage);
-  config.addFilter('stripTitle', stripTitle);
+  config.addFilter('strip', strip);
 
   //----------------------------------------------------------------------------
   // SHORTCODES

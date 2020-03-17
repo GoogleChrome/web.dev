@@ -15,16 +15,17 @@
  */
 
 /**
- * Removes any characters that should not exist in a title in the `<head>`.
+ * Removes any characters that should not exist in a string.
  *
- * @param {(string|number)} [title] Title of page, is a number for `404`
+ * @param {(string|number)} [text] Text to clean
+ * @param {(Array<string|RegExp>)} [additionallyForbidden] Additional rules to be removed.
  * @return {string} A string of the pages title without any forbidden characters.
  */
-module.exports = (title) => {
-  let cleaned = String(title || "");
+module.exports = (text, additionallyForbidden) => {
+  let cleaned = String(text || "");
   const forbidden = [/\`/g];
 
-  forbidden.forEach((rule) => {
+  [...forbidden, ...(additionallyForbidden || [])].forEach((rule) => {
     cleaned = cleaned.replace(rule, "");
   });
 
