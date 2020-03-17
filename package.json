@@ -33,7 +33,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^2.3.0",
-    "algoliasearch": "^3.35.0",
+    "algoliasearch": "^4.1.0",
     "babel-eslint": "^10.0.3",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.4",
