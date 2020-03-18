@@ -132,7 +132,7 @@ Next visualize the resulting site in different screen sizes and in simulated mob
 Notice how the `background-mobile.jpg` image was requested.
 1. Make your viewport wider. Once it's wider than `480px` notice how `background-tablet.jpg` is requested. Once it's wider than `1025px` notice how `background-desktop.jpg` is requested.
 
-You might have noticed that, at certain points, when the width of the browser screen is changed, new images are requested.
+When the width of the browser screen is changed, new images are requested.
 
 In particular when the width is below the value defined in the mobile breakpoint (480px), you see the following Network Log:
 
