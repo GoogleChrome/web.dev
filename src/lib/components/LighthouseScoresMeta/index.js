@@ -61,17 +61,6 @@ class LighthouseScoresMeta extends BaseElement {
               rel="noopener"
               >View Report</a
             >
-            |
-            <a
-              href="${LH_HOST}/lh/html?url=${encodedUrl}&download"
-              download
-              class="downloadreport lh-report-link gc-analytics-event"
-              data-category="web.dev"
-              data-label="download lighthouse report"
-              data-action="click"
-              title="Download latest Lighthouse report"
-              >Download Report</a
-            >
           </span>
         </span>
         <span class="lh-error-msg">${this.errorMessage}</span>
