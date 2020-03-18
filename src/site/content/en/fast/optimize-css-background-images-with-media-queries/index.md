@@ -126,9 +126,11 @@ The images used in the optimized demo are already resized to fit into different 
 Next visualize the resulting site in different screen sizes and in simulated mobile devices:
 
 1. Open the [optimized site](https://use-media-queries-optimized.glitch.me/) in a new Chrome tab.
+1. Make your viewport narrow (less than `480px`).
 {% Instruction 'devtools-network', 'ol' %}
 {% Instruction 'reload-page', 'ol' %}
-Resize the browser screen to different widths and notice in the Network Log how new network requests are made as the viewport changes its width.
+Notice how the `background-mobile.jpg` image was requested.
+1. Make your viewport wider. Once it's wider than `480px` notice how `background-tablet.jpg` is requested. Once it's wider than `1025px` notice how `background-desktop.jpg` is requested.
 
 You might have noticed that, at certain points, when the width of the browser screen is changed, new images are requested.
 
