@@ -10,7 +10,7 @@ date: 2020-03-05
 updated: 2020-03-05
 ---
 
-Many sites request heavy resources, like images, that are not optimized for certain screens, and send large CSS files containing styles that some devices will never use. Media queries are a popular technique for delivering tailored stylesheets and assets to different screens to reduce the amount of data transferred to users and improve page load performance. This guide shows you how to use media queries to send images that are only as large as they need to be, a technique commonly known as **responsive images**.
+Many sites request heavy resources, like images, that are not optimized for certain screens, and send large CSS files containing styles that some devices will never use. Using media queries is a popular technique for delivering tailored stylesheets and assets to different screens to reduce the amount of data transferred to users and improve page load performance. This guide shows you how to use media queries to send images that are only as large as they need to be, a technique commonly known as **responsive images**.
 
 ## Prerequisites
 
