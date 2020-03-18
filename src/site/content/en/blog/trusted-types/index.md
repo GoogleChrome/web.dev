@@ -1,6 +1,6 @@
 ---
 title: Trusted Types
-subhead: Use Trusted Types to prevent DOM XSS vulnerabilities.
+subhead: Use Trusted Types to prevent DOM cross-site scripting vulnerabilities.
 authors:
   - koto
 date: 2020-03-25
@@ -13,8 +13,8 @@ hero: hero.png
 # thumbnail: thumbnail.png
 alt: Code snippets demonstrating Cross-Site Scripting vulnerabilities.
 description: |
-  Introducing Trusted Types - a browser API to prevent DOM-Based Cross
-  Site Scripting in modern web applications.
+  Introducing Trusted Types: a browser API to prevent DOM-Based cross-site
+  scripting in modern web applications.
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - security
@@ -24,25 +24,25 @@ tags:
 ## Why should you care?
 
 DOM-Based Cross-Site Scripting (DOM XSS) is one of the most common web
-application security vulnerabilities, and it's very easy to introduce it in
+security vulnerabilities, and it's very easy to introduce it in
 your application. [Trusted Types](https://github.com/w3c/webappsec-trusted-types)
 give you the tools to write, security
-review and maintain DOM-XSS free applications by making the dangerous Web API
-functions secure by default. Trusted Types are supported in Chrome 82, with
-a [polyfill](https://github.com/w3c/webappsec-trusted-types#polyfill) available
+review, and maintain applications free of DOM XSS vulnerabilities by making the dangerous Web API
+functions secure by default. Trusted Types are supported in Chrome 82, and
+a [polyfill](https://github.com/w3c/webappsec-trusted-types#polyfill) is available
 for other browsers.
 
 {% Aside 'key-term' %}
-DOM Based Cross-Site Scripting (DOM XSS) happens when data from user controlled
+DOM based cross-site scripting happens when data from a user controlled
 _source_ (like user name, or redirect URL taken from the URL fragment)
-reaches a _sink_ - function that can execute arbitrary JavaScript code
-(like `eval` or `.innerHTML` property setter).
+reaches a _sink_, which is a function like `eval()` or a property setter like
+`.innerHTML`, that can execute arbitrary JavaScript code.
 {% endAside %}
 
 ## Chrome launches Trusted Types
 
-For many years [Cross Site Scripting](https://owasp.org/www-community/attacks/xss/),
-or XSS is one of the most prevalent—and dangerous—web security vulnerabilities.
+For many years [DOM XSS](https://owasp.org/www-community/attacks/xss/),
+has been one of the most prevalent—and dangerous—web security vulnerabilities.
 
 There are two distinct groups of Cross Site Scripting. Some
 XSSes are caused by the server-side code that insecurely creates the HTML code
@@ -58,7 +58,7 @@ XSSes with [Trusted Types](https://bit.ly/trusted-types).
 
 ## API introduction
 
-Trusted Types work by locking down the following risky Web APIs and element attributes.
+Trusted Types work by locking down the following risky sink functions.
 You might already recognize some of them, as browsers vendors and [web frameworks](https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml) already steer you away from using
 these features for security reasons.
 
@@ -76,7 +76,7 @@ these features for security reasons.
     `eval`, `setTimeout`, `setInterval`, `new Function()`
 
 Trusted Types require you to process the data before passing it to the above
-_sink_ functions. Just using a string will fail, as the browser doesn't know
+sink functions. Just using a string will fail, as the browser doesn't know
 if the data is trustworthy:
 
 {% Compare 'worse' %}
@@ -84,7 +84,7 @@ if the data is trustworthy:
 anElement.innerHTML  = location.href;
 ```
 {% CompareCaption %}
-With Trusted Types enabled, the browser throws a _TypeError_ and prevents using
+With Trusted Types enabled, the browser throws a _TypeError_ and prevents use of
 a DOM XSS sink with a string.
 {% endCompareCaption %}
 
@@ -94,7 +94,7 @@ To signify that the data was securely processed, create a special object - a Tru
 
 {% Compare 'better' %}
 ```javascript
-anElement.innerHTML  = aTrustedHTML;
+anElement.innerHTML = aTrustedHTML;
 ```
 {% CompareCaption %}
 With Trusted Types enabled, the browser accepts a `TrustedHTML` object for sinks
@@ -104,15 +104,15 @@ objects for other sensitive sinks.
 
 {% endCompare %}
 
-Trusted Types heavily reduce the DOM XSS [attack surface](https://en.wikipedia.org/wiki/Attack_surface) of your appliciation. It simplifies security reviews, and allows to enforce the type-based
-security checks done when compiling, linting or bundling your code at runtime,
+Trusted Types heavily reduce the DOM XSS [attack surface](https://en.wikipedia.org/wiki/Attack_surface) of your appliciation. It simplifies security reviews, and allows you to enforce the type-based
+security checks done when compiling, linting, or bundling your code at runtime,
 in the browser.
 
-## How to start using Trusted Types?
+## How to use Trusted Types
 
-### Prepare for receiving Content Security Policy violation reports
+### Prepare for Content Security Policy violation reports
 
-You can deploy a report collector on your own (there are many [open-source](https://github.com/jacobbednarz/go-csp-collector) solutions), or use one of the commercial equivalents.
+You can deploy a report collector (there are many [open-source](https://github.com/jacobbednarz/go-csp-collector) solutions), or use one of the commercial equivalents.
 You can also debug the violations in the browser:
 ```js
 window.addEventListener('securitypolicyviolation',
@@ -132,13 +132,12 @@ but the website continues to work.
 
 {% Aside 'caution' %}
 Trusted Types are only available in a [secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts)
-like HTTPS, so make sure your application is served in one - for example on
-`localhost` or over HTTPS.
+like HTTPS and `localhost`.
 {% endAside %}
 
 ### Identify Trusted Types violations
 
-From now on, everytime Trusted Types detect a violation, a report will be sent
+From now on, every time Trusted Types detect a violation, a report will be sent
 to a configured `report-uri`. For example, when your application
 passes a string to `innerHTML`, the browser sends the following report:
 
@@ -158,7 +157,7 @@ passes a string to `innerHTML`, the browser sends the following report:
 }
 ```
 
-In `https://my.url.example/script.js` on line 39 `innerHTML` was called with
+This tells me that in `https://my.url.example/script.js` on line 39 `innerHTML` was called with
 the string beginning with `<img src=x`.
 This information should help you narrow down which parts of code may be
 introducing DOM XSS and need to change.
@@ -166,7 +165,7 @@ introducing DOM XSS and need to change.
 {% Aside %}
 Most of the violations like this can also be detected by running a code linter
 or [static code checkers](https://github.com/mozilla/eslint-plugin-no-unsanitized)
-on your codebase. This is preferable to quickly identify a large chunk of
+on your codebase. This helps quickly identify a large chunk of
 violations.
 
 That said, we recommend also analyzing the CSP violations, as these trigger if
@@ -174,7 +173,7 @@ and only if the non-conforming code is executed.
 {% endAside %}
 
 ### Fix the violations
-There are a couple of options for fixing a Trusted Type violation. You can [Remove the offending code](#remove-the-offending-code), [Use a library](#use-a-library), [Create a Trusted Type policy](#create-a-trusted-type-policy) or, as a last resort, [create a default policy](#create-a-default-policy).
+There are a couple of options for fixing a Trusted Type violation. You can [remove the offending code](#remove-the-offending-code), [use a library](#use-a-library), [create a Trusted Type policy](#create-a-trusted-type-policy) or, as a last resort, [create a default policy](#create-a-default-policy).
 
 #### Rewrite the offending code
 Perhaps the non-conforming functionality is not needed anymore or can be
@@ -199,14 +198,14 @@ el.appendChild(img);
 Some libraries already generate Trusted Types that you can pass to the
 sink functions. For example, you can use
 [DOMPurify](https://github.com/cure53/DOMPurify) that will
-sanitize a HTML snippet, removing XSS payloads.
+sanitize an HTML snippet, removing XSS payloads.
 
 ```javascript
 import DOMPurify from 'dompurify';
 el.innerHTML = DOMPurify.sanitize(html, {RETURN_TRUSTED_TYPE: true);
 ```
 
-DOMPurify [supports Trusted Types](https://github.com/cure53/DOMPurify#what-about-dompurify-and-trusted-types) and will return a sanitized
+DOMPurify [supports Trusted Types](https://github.com/cure53/DOMPurify#what-about-dompurify-and-trusted-types) and will return sanitized
 HTML wrapped in a `TrustedHTML` object such that the browser does not generate
 a violation.
 {% Aside 'caution' %}
@@ -230,8 +229,8 @@ if (window.trustedTypes && trustedTypes.createPolicy) { // Feature testing
   });
 }
 ```
-This code creates a 'myEscapePolicy' policy that can produce `TrustedHTML`
-objects via its `createHTML` function. The defined rules will
+This code creates a policy I've named 'myEscapePolicy' policy that can produce `TrustedHTML`
+objects via its `createHTML()` function. The defined rules will
 HTML-escape `<` characters to prevent the creation of new HTML elements.
 
 Use the policy like so:
@@ -243,13 +242,13 @@ el.innerHTML = escaped;  // '&lt;img src=x onerror=alert(1)>'
 ```
 
 {% Aside %}
-While the JavaScript function passed to `trustedTypes.createPolicy` as
-`createHTML` returns a string, `createPolicy` returns a policy object that
+While the JavaScript function passed to `trustedTypes.createPolicy()` as
+`createHTML()` returns a string, `createPolicy()` returns a policy object that
 wraps the return value in a correct type - in this case `TrustedHTML`.
 {% endAside %}
 
 #### Use a default policy
-Sometimes you can't change the offending code. For example, this is the case if you're loading a 3rd party library from a CDN. In that case, use a
+Sometimes you can't change the offending code. For example, this is the case if you're loading a third-party library from a CDN. In that case, use a
 [default policy](https://w3c.github.io/webappsec-trusted-types/dist/spec/#default-policy-hdr):
 
 ```javascript
@@ -260,18 +259,18 @@ if (window.trustedTypes && trustedTypes.createPolicy) { // Feature testing
 }
 ```
 
-The policy with a name `default` is used by the browser every
-time when a string is used in a sink that only accepts Trusted Type.
+The policy with a name `default` is used wherever a string is
+used in a sink that only accepts Trusted Type.
 {% Aside 'gotchas' %}
 Use the default policy sparingly, and prefer refactoring the application to use
-regular policies instead. Doing so encourages the design in which the security
+regular policies instead. Doing so encourages designs in which the security
 rules are close to the data that they process, where you have the most context
 to correctly sanitize the value.
 {% endAside %}
 
 ### Switch to enforcing Content Security Policy
 
-When you application no longer produces violations, you can start enforcing
+When your application no longer produces violations, you can start enforcing
 Trusted Types:
 
 ```text
