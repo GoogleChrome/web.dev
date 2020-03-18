@@ -110,7 +110,7 @@ For desktop devices:
 ```css
 @media (min-width: 1025px) {
     body {
-	background-image: url(images/background-desktop.jpg);
+	    background-image: url(images/background-desktop.jpg);
    }
 }
 ```
