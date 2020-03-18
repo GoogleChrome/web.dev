@@ -54,7 +54,7 @@ Here's the meaning of each of the properties used:
 - `background-repeat: no-repeat` Show the image only once.
 - `background-attachment: fixed` Avoid making the background image scroll.   
 - `background-size: cover`: Resize the image to cover the entire container.
-- `background-image: url(images/background-desktop.jpg):` The URL of the image.
+- `background-image: url(images/background-desktop.jpg)`: The URL of the image.
 
 When combined, these styles tell the browser to adapt the background image to different screen heights and widths. This is the first step towards achieving a responsive background.
 
