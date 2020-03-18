@@ -52,7 +52,7 @@ Here's the meaning of each of the properties used:
 
 - `background-position: center center`: Center the image vertically and horizontally.
 - `background-repeat: no-repeat` Show the image only once.
-- `background-attachment: fixed` Avoid making the background image scroll.   
+- `background-attachment: fixed`: Avoid making the background image scroll.   
 - `background-size: cover`: Resize the image to cover the entire container.
 - `background-image: url(images/background-desktop.jpg)`: The URL of the image.
 
