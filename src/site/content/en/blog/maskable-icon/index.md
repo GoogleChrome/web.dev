@@ -97,4 +97,4 @@ Maskable icons should use a different purpose: `"maskable"`. This indicates that
 }
 ```
 
-With this, you can go forth and create your own maskable icons, making sure you app looks great edge-to-edge (and for what it's worth, circle to circle, oval to oval 😄).
+With this, you can go forth and create your own maskable icons, making sure your app looks great edge-to-edge (and for what it's worth, circle to circle, oval to oval 😄).
