@@ -29,7 +29,7 @@ const setdefault = require("../_utils/setdefault");
  * embedded loop O^2.
  *
  * @param {any} collection Eleventy collection object
- * @return {Array<{ title: string, href: string, description: string, posts: Array<object>, index: number, pages: number }>} An array where each element is a paged tag with some meta data and n posts for the page.
+ * @return {Array<{ title: string, href: string, description: string, elements: Array<object>, index: number, pages: number }>} An array where each element is a paged tag with some meta data and n posts for the page.
  */
 module.exports = (collection) => {
   const posts = collection

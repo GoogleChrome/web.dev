@@ -27,7 +27,7 @@ const addPagination = require("../_utils/add-pagination");
  * embedded loop O^2.
  *
  * @param {any} collections Eleventy collections object
- * @return {Array<{ title: string, href: string, description: string, posts: Array<object>, index: number, pages: number }>} An array where each element is a page with some meta data and n authors for the page.
+ * @return {Array<{ title: string, href: string, description: string, elements: Array<object>, index: number, pages: number }>} An array where each element is a page with some meta data and n authors for the page.
  */
 module.exports = (collections) => {
   const authorsWithPosts = {};
@@ -42,30 +42,32 @@ module.exports = (collections) => {
     (contributor) => authorsWithPosts[contributor.$key],
   );
 
-  const elements = Array.from(authors).map((c) => {
-    c.url = `/en${c.href}`;
-    c.data = {
+  const elements = authors.map((author) => {
+    author.url = `/en${author.href}`;
+    author.data = {
       tags: [],
-      title: c.title,
-      subhead: c.description,
+      title: author.title,
+      subhead: author.description,
     };
 
-    if (fs.existsSync(`src/site/content/en/images/authors/${c.$key}@3x.jpg`)) {
-      c.data.hero = `~/images/authors/${c.$key}@3x.jpg`;
-      c.data.alt = c.title;
-    } else if (
-      fs.existsSync(`src/site/content/en/images/authors/${c.$key}@2x.jpg`)
+    if (
+      fs.existsSync(`src/site/content/en/images/authors/${author.$key}@3x.jpg`)
     ) {
-      c.data.hero = `~/images/authors/${c.$key}@2x.jpg`;
-      c.data.alt = c.title;
+      author.data.hero = `~/images/authors/${author.$key}@3x.jpg`;
+      author.data.alt = author.title;
     } else if (
-      fs.existsSync(`src/site/content/en/images/authors/${c.$key}.jpg`)
+      fs.existsSync(`src/site/content/en/images/authors/${author.$key}@2x.jpg`)
     ) {
-      c.data.hero = `~/images/authors/${c.$key}.jpg`;
-      c.data.alt = c.title;
+      author.data.hero = `~/images/authors/${author.$key}@2x.jpg`;
+      author.data.alt = author.title;
+    } else if (
+      fs.existsSync(`src/site/content/en/images/authors/${author.$key}.jpg`)
+    ) {
+      author.data.hero = `~/images/authors/${author.$key}.jpg`;
+      author.data.alt = author.title;
     }
 
-    return c;
+    return author;
   });
 
   return addPagination(elements, {

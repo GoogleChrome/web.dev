@@ -1768,8 +1768,8 @@ Object.keys(contributors).forEach(($key) => {
     ...contributorData,
     description,
     href: `/authors/${$key}/`,
-    $key,
     title,
+    $key,
   };
 });
 
