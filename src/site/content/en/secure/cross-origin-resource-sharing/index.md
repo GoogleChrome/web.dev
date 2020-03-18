@@ -51,7 +51,7 @@ and **body**:
 
 ### header
 
-Information about the message such the type of message or the encoding of the
+Information about the message such as the type of message or the encoding of the
 message. A header can include a
 [variety of information](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields)
 expressed as key-value pairs. The request header and response header contain
@@ -69,7 +69,7 @@ Cookie: Version=1
 ```
 
 The above is equivalent to saying "I want to receive HTML in response. Here is
-cookie I have."
+a cookie I have."
 
 **Sample Response header**
 
@@ -83,7 +83,7 @@ please."
 
 ### body
 
-The message itself. This could be plain text, an image binary, JSON, HTML,etc.
+The message itself. This could be plain text, an image binary, JSON, HTML, etc.
 
 ## How does CORS work?
 
@@ -100,26 +100,26 @@ header with the current origin (scheme, host, and port).
 
 ### Step 2: server response
 
-On the server side, When a server sees this header, and wants to allow access,
+On the server side, when a server sees this header, and wants to allow access,
 it needs to add an `Access-Control-Allow-Origin` header to the response
 specifying the requesting origin (or `*` to allow any origin.)
 
 ### Step 3: browser receives response
 
-When the browser sees this response with appropriate
+When the browser sees this response with an appropriate
 `Access-Control-Allow-Origin` header, the browser allows the response data to be
 shared with the client site.
 
 ## See CORS in action
 
 Here is a tiny web server using Express. It is hosted at
-`https://cors-demo.glitch.me/`
+`https://cors-demo.glitch.me/`.
 
 ```js
 const express = require('express');
 const app = express();
 
-// No CORS Header set
+// No CORS header set
 app.get('/', function(request, response) {
   response.sendFile(__dirname + '/message.json');
 });
@@ -130,13 +130,13 @@ app.get('/allow-cors', function(request, response) {
   response.sendFile(__dirname + '/message.json');
 });
 
-// listen for requests :)
+// Listen for requests :)
 const listener = app.listen(process.env.PORT, function() {
   console.log('Your app is listening on port ' + listener.address().port);
 });
 ```
 
-([See the sever code in action on Glitch](https://glitch.com/edit/#!/cors-demo?path=server.js))
+([See the server code in action on Glitch](https://glitch.com/edit/#!/cors-demo?path=server.js))
 
 The first endpoint (line 5) does not have any response header set, it just sends
 a file in response.
@@ -223,9 +223,9 @@ with information about the methods the application accepts from this origin.
 ```text
 HTTP/1.1 200 OK
 Access-Control-Allow-Origin: https://example.com
-Access-Control-Allow-Methods: GET,DELETE,HEAD,OPTIONS
+Access-Control-Allow-Methods: GET, DELETE, HEAD, OPTIONS
 ```
 
 The server response can also include an `Access-Control-Max-Age` header to
 specify the duration to cache preflight results so the client does not need to
-make a preflight request every time it they sends a complex request.
+make a preflight request every time it sends a complex request.
