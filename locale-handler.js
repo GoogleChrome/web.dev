@@ -38,27 +38,32 @@ const isSupported = (locale) => SUPPORTED_LOCALES.indexOf(locale) > -1;
  * @return {!Function}
  */
 module.exports = (req, res, next) => {
+  const isNav = req.url.endsWith("/");
+  const isJson = req.url.endsWith(".json");
   // Exit early if the url is not navigational.
-  if (!req.url.endsWith("/")) {
+  if (!isNav && !isJson) {
     return next();
   }
 
-  const pathParts = req.path.split("/");
-  // Check if language is specified in the url.
+  const fileType = isJson ? "index.json" : "index.html";
+  const normalizedPath = req.path.replace("index.json", "");
+  const pathParts = normalizedPath.split("/");
   const isLangInPath = isSupported(pathParts[1]);
   let lang;
   let filePath;
 
+  // Check if language is specified in the url.
   if (isLangInPath) {
     lang = pathParts[1];
     pathParts.splice(1, 1);
+    pathParts.push(fileType);
     filePath = pathParts.join("/");
   } else {
     const langInCookie = isSupported(req.cookies.preferred_lang);
     // If language not in url, use accept-language header.
     lang =
       langInCookie || req.acceptsLanguages(SUPPORTED_LOCALES) || DEFAULT_LOCALE;
-    filePath = req.path;
+    filePath = path.join(normalizedPath, fileType);
   }
 
   if (lang === DEFAULT_LOCALE) {
@@ -71,7 +76,6 @@ module.exports = (req, res, next) => {
     "dist", // Must serve from dist directory even in dev mode.
     lang,
     filePath,
-    "index.html",
   );
 
   if (fs.existsSync(localizedFilePath)) {
