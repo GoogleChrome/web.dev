@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: Access to the user's contacts has been a feature of native apps since (almost) the dawn of time. The Contact Picker API is an on-demand API  that allows users to select an entry or entries from their contact list and share limited details of the selected contact(s) with a website. It allows users to share only what they want, when they want, and makes it easier for users to reach and connect with their friends and family.
 date: 2019-08-07
-updated: 2020-01-10
+updated: 2020-03-19
 tags:
   - post
   - capabilities
@@ -74,8 +74,9 @@ which friends have already joined.
 
 ## Using the Contact Picker API {: #how-to-use }
 
-The Contact Picker API requires a single API call with an options parameter
-that specifies the types of contact information you want.
+The Contact Picker API requires a method call with an options parameter that
+specifies the types of contact information you want. A second method tells you
+what information the underlying system will provide.
 
 {% Aside %}
   Check out the [Contact Picker API demo](https://contact-picker.glitch.me)
@@ -107,6 +108,11 @@ returned as the first parameter (with the allowed values being any of
 and optionally whether multiple contacts can be
 selected as a second parameter.
 
+If you need to know ahead of time which values the underlying platform provides,
+call `navigator.contacts.getProperties()`. This method returns an array of
+strings. Its possible return values are the same as those that can be passed to
+`select()`.
+
 {% Aside 'caution' %}
   While the Contacts Picker API was launched in Chrome 80,
   the newly added properties `'address'` and `'icon'` require registering for an
@@ -114,6 +120,8 @@ selected as a second parameter.
 {% endAside %}
 
 ```js
+// As an alternative to hard-coding the properties, you can retrieve avaialable
+//   propertids with navigator.contacts.getProperties().
 const props = ['name', 'email', 'tel', 'address', 'icon'];
 const opts = {multiple: true};
 
