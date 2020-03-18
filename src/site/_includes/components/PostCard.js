@@ -82,14 +82,13 @@ module.exports = ({post, featured = false}) => {
         ${authors
           .map((authorId) => {
             const author = data.contributors[authorId];
-            const fullName = `${author.name.given} ${author.name.family}`;
             return html`
               <div class="w-author__image--row-item">
                 <a href="${author.href}">
                   <img
                     class="w-author__image w-author__image--small"
                     src="/images/authors/${authorId}.jpg"
-                    alt="${fullName}"
+                    alt="${author.title}"
                   />
                 </a>
               </div>
@@ -108,10 +107,9 @@ module.exports = ({post, featured = false}) => {
         ${authors
           .map((authorId) => {
             const author = data.contributors[authorId];
-            const fullName = `${author.name.given} ${author.name.family}`;
             return html`
               <a class="w-author__name-link" href="/authors/${authorId}"
-                >${fullName}</a
+                >${author.title}</a
               >
             `;
           })
@@ -127,10 +125,7 @@ module.exports = ({post, featured = false}) => {
       <div class="w-authors__card">
         ${renderAuthorImages(authors)}
         <div>
-          ${renderAuthorNames(authors)}
-          <div class="w-author__published">
-            <time>${prettyDate(post.date)}</time>
-          </div>
+          ${renderAuthorNames(authors)} ${renderDate(post.date)}
         </div>
       </div>
     `;
@@ -151,6 +146,16 @@ module.exports = ({post, featured = false}) => {
         })}
       </div>
     `;
+  }
+
+  function renderDate(date) {
+    return date
+      ? html`
+          <div class="w-author__published">
+            <time>${prettyDate(date)}</time>
+          </div>
+        `
+      : "";
   }
 
   return html`

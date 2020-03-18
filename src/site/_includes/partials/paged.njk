@@ -1,7 +1,7 @@
 <section class="w-grid">
   <div class="w-grid__columns w-grid__columns--three" role="list">
-    {% for post in paged.posts %}
-      {% PostCard {post: post} %}
+    {% for element in paged.elements %}
+      {% PostCard {post: element} %}
     {% endfor %}
   </div>
 </section>

@@ -26,7 +26,9 @@ const site = require("../_data/site");
  * it's a production environment.
  */
 module.exports = function getImagePath(src, pageUrl) {
-  let imagePath = path.join(pageUrl, src);
+  let imagePath = (src || "").startsWith("~/")
+    ? src.replace("~/", "/")
+    : path.join(pageUrl, src);
   if (site.env === "prod") {
     imagePath = new URL(imagePath, site.imageCdn).href;
   }

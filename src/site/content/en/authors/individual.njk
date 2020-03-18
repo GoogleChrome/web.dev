@@ -4,13 +4,12 @@ title: Authors
 permalink: /en/{{ paged.href }}{% if paged.index > 0 %}{{ paged.index + 1 }}/{% endif %}index.html
 override:tags: []
 description: Our latest news, updates, and stories for developers
-noindex: true
-date: 2020-03-18
+date: 2020-02-12
 renderData:
   title: "{{ paged.title or title }}"
   description: "{{ paged.description or description }}"
 pagination:
-  data: collections.paginatedAuthors
+  data: collections.paginatedPostsByAuthor
   size: 1
   alias: paged
 ---

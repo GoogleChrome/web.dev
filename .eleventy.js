@@ -50,6 +50,7 @@ const tagsDir = 'src/site/_includes/components/tags';
 const {Image, Figure} = require(`./${tagsDir}/Image`);
 
 const collectionsDir = 'src/site/_collections';
+const paginatedAuthors = require(`./${collectionsDir}/paginated-authors`);
 const paginatedBlogPosts = require(`./${collectionsDir}/paginated-blog-posts`);
 const paginatedPostsByAuthor = require(`./${collectionsDir}/paginated-posts-by-author`);
 const paginatedPostsByTag = require(`./${collectionsDir}/paginated-posts-by-tag`);
@@ -151,6 +152,7 @@ module.exports = function(config) {
   config.addCollection('posts', postDescending);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('recentPosts', recentPosts);
+  config.addCollection('paginatedAuthors', paginatedAuthors);
   config.addCollection('paginatedBlogPosts', paginatedBlogPosts);
   config.addCollection('paginatedPostsByAuthor', paginatedPostsByAuthor);
   config.addCollection('paginatedPostsByTag', paginatedPostsByTag);
