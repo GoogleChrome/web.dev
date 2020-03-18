@@ -104,24 +104,11 @@ array of contacts selected by the user.
 
 When calling `select()` you must provide an array of properties you'd like
 returned as the first parameter (with the allowed values being any of
-`'name'`, `'email'`, `'tel'`, `'address'`, `'icon'`),
+`'name'`, `'email'`, `'tel'`, `'address'`, or `'icon'`),
 and optionally whether multiple contacts can be
 selected as a second parameter.
 
-If you need to know ahead of time which values the underlying platform provides,
-call `navigator.contacts.getProperties()`. This method returns an array of
-strings. Its possible return values are the same as those that can be passed to
-`select()`.
-
-{% Aside 'caution' %}
-  While the Contacts Picker API was launched in Chrome 80,
-  the newly added properties `'address'` and `'icon'` require registering for an
-  [origin trial](https://developers.chrome.com/origintrials/#/view_trial/-6951306024846360575).
-{% endAside %}
-
 ```js
-// As an alternative to hard-coding the properties, you can retrieve avaialable
-//   propertids with navigator.contacts.getProperties().
 const props = ['name', 'email', 'tel', 'address', 'icon'];
 const opts = {multiple: true};
 
@@ -136,6 +123,25 @@ try {
 The Contacts Picker API can only be called from a [secure][secure-contexts],
 top-level browsing context, and like other powerful APIs, it requires a
 user gesture.
+
+### Detecting available properties
+
+{% Aside 'caution' %}
+  While the Contacts Picker API was launched in Chrome 80, the newly added
+  properties `'address'` and `'icon'` require registering for an [origin
+  trial](https://developers.chrome.com/origintrials/#/view_trial/-6951306024846360575)
+  until at least Chrome 82.
+{% endAside %}
+
+Not all properties are available in every circumstances. The already mentioned
+origin trial means some versions of Android lack `'address'` and `'icon'`. In
+the future, other platforms and contact sources may be restrictive about which
+properties can be shared.
+
+To detect available properties, call `navigator.contacts.getProperties()`. This
+method returns a promise that resolves with an array of property strings,
+specifically any of `'name'`, `'email'`, `'tel'`, `'address'`, or `'icon'`.
+These are exactly the values you would pass to `select()`.
 
 ### Handling the results
 
