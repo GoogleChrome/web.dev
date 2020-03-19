@@ -5,8 +5,10 @@ authors:
   - houssein
 date: 2020-03-18
 hero: hero.jpg
-description: |
-  This post covers new optional font loading behavior with preloading in Chrome 82
+description: | 
+  By optimizing rendering cycles, Chrome 82 eliminates layout shifting when
+  preloading optional fonts. Combining <link rel="preload"> with font-display: optional is the
+  most effective way to guarantee jank-free rendering of custom fonts.
 tags:
   - post
   - performance
@@ -17,13 +19,13 @@ tags:
   In Chrome 82, new font loading improvements have been made to completely eliminate layout shifting and flash of invisible text (FOIT) when optional fonts are preloaded.
 {% endAside %}
 
-By optimizing rendering cycles, Chrome 82 removes any chance of layout shifting occurring when
-preloading optional fonts. Combining `<link rel="preload">` with `font-display: optional` is the
-most effective way to guarantee no layout jank when rendering custom fonts.
+By optimizing rendering cycles, Chrome 82 eliminates layout shifting when preloading optional fonts.
+Combining `<link rel="preload">` with `font-display: optional` is the most effective way to
+guarantee no layout jank when rendering custom fonts.
 
 ## Font rendering
 
-Layout shifting, or re-layout, occurs when a resource on a web page changes dynamically resulting in
+Layout shifting, or re-layout, occurs when a resource on a web page changes dynamically, resulting in
 a "shift" of content. Fetching and rendering web fonts can directly cause layout shifts in one of
 two ways:
 
@@ -71,9 +73,9 @@ font is rendered and used on the page.
 
 Chrome re-renders the page **twice** in both instances, regardless of whether the fallback font
 is used or if the custom font finishes loading in time. This causes a slight flicker of invisible
-text and, in cases when a new font is rendered, a layout jank that moves some of the page's content.
+text and, in cases when a new font is rendered, layout jank that moves some of the page's content.
 This occurs easily if the font is stored in the browser's disk cache and can load well before the
-block period is complete (~10ms).
+block period is complete (approximately 10ms).
 
 Optimizations have landed In Chrome 82 to entirely remove the first render cycle for optional fonts
 that are preloaded with [`<link rel="preload'>`](https://web.dev/codelab-preload-web-fonts/).
@@ -83,26 +85,26 @@ future to optimize performance.
 
 <figure class="w-figure">
   <img src="./new-behavior-fail.png" alt="Diagram showing new preloaded optional font behavior when font fails to load">
-  <figcaption class="w-figcaption">New <code>font-display: optional</code> behavior in Chrome when preloaded and font is downloaded <b>after</b> the 100ms block period (no flash of invisible text)</figcaption>
+  <figcaption class="w-figcaption">New <code>font-display: optional</code> behavior in Chrome when fonts are preloaded and font is downloaded <b>after</b> the 100ms block period (no flash of invisible text)</figcaption>
 </figure>
 
 <figure class="w-figure">
   <img src="./new-behavior-pass.png" alt="Diagram showing new preloaded optional font behavior when font loads in time">
-  <figcaption class="w-figcaption">New <code>font-display: optional</code> behavior in Chrome when preloaded and font is downloaded <b>before</b> the 100ms block period (no flash of invisible text)</figcaption>
+  <figcaption class="w-figcaption">New <code>font-display: optional</code> behavior in Chrome when fonts are preloaded and font is downloaded <b>before</b> the 100ms block period (no flash of invisible text)</figcaption>
 </figure>
 
 Preloading optional fonts in Chrome removes the possibility of layout jank and flash of unstyled
-text. This matches the required behavior as specified in the
-[W3C CSS specification](https://drafts.csswg.org/css-fonts-4/#valdef-font-face-font-display-optional)
-where optional fonts should never cause re-layout and user agents can instead delay rendering for a
-suitable period of time.
+text. This matches the required behavior as specified in [CSS Fonts Module Level
+4](https://drafts.csswg.org/css-fonts-4/#valdef-font-face-font-display-optional) where optional
+fonts should never cause re-layout and user agents can instead delay rendering for a suitable period
+of time.
 
 Although it is not necessary to preload an optional font, it greatly improves the chance for it to
-load in time before the first render cycle, especially if it is not yet stored in the browser's
+load before the first render cycle, especially if it is not yet stored in the browser's
 cache.
 
 ## Conclusion
 
-We're interested to hear your experiences using optional fonts, especially while preloading with
-these new optimizations in place! File an [issue](https://bugs.chromium.org/p/chromium/issues/entry)
-if you experience any problems or would like to drop any feature suggestions.
+We're interested to hear your experiences preloading optional fonts with these new optimizations in
+place! File an [issue](https://bugs.chromium.org/p/chromium/issues/entry) if you experience any
+problems or would like to drop any feature suggestions.
