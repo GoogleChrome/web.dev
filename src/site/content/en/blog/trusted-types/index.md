@@ -1,6 +1,6 @@
 ---
-title: Trusted Types
-subhead: Use Trusted Types to prevent DOM cross-site scripting vulnerabilities.
+title: Prevent DOM-based Cross-Site Scripting vulnerabilities with Trusted Types
+subhead: Reduce the DOM XSS attack surface of your application.
 authors:
   - koto
 date: 2020-03-25
@@ -13,8 +13,8 @@ hero: hero.png
 # thumbnail: thumbnail.png
 alt: Code snippets demonstrating Cross-Site Scripting vulnerabilities.
 description: |
-  Introducing Trusted Types: a browser API to prevent DOM-Based cross-site
-  scripting in modern web applications.
+  Introducing Trusted Types: a browser API to prevent DOM-based Cross-Site
+  Scripting in modern web applications.
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - security
@@ -23,17 +23,18 @@ tags:
 
 ## Why should you care?
 
-DOM-Based Cross-Site Scripting (DOM XSS) is one of the most common web
+DOM-based Cross-Site Scripting (DOM XSS) is one of the most common web
 security vulnerabilities, and it's very easy to introduce it in
 your application. [Trusted Types](https://github.com/w3c/webappsec-trusted-types)
 give you the tools to write, security
 review, and maintain applications free of DOM XSS vulnerabilities by making the dangerous web API
 functions secure by default. Trusted Types are supported in Chrome 82, and
 a [polyfill](https://github.com/w3c/webappsec-trusted-types#polyfill) is available
-for other browsers.
+for other browsers. See [Browser compatibility](https://developer.mozilla.org/es/docs/Web/HTTP/Headers/Content-Security-Policy/trusted-types#Browser_compatibility) for up-to-date
+cross-browser support information.
 
 {% Aside 'key-term' %}
-DOM-based cross-site scripting happens when data from a user controlled
+DOM-based Cross-Site Scripting happens when data from a user controlled
 _source_ (like user name, or redirect URL taken from the URL fragment)
 reaches a _sink_, which is a function like `eval()` or a property setter like
 `.innerHTML`, that can execute arbitrary JavaScript code.
@@ -41,7 +42,7 @@ reaches a _sink_, which is a function like `eval()` or a property setter like
 
 ## Background
 
-For many years [DOM XSS](https://owasp.org/www-community/attacks/xss/),
+For many years [DOM XSS](https://owasp.org/www-community/attacks/xss/)
 has been one of the most prevalent—and dangerous—web security vulnerabilities.
 
 There are two distinct groups of Cross-Site Scripting. Some
@@ -49,7 +50,7 @@ XSS vulnerabilities are caused by the server-side code that insecurely creates t
 forming the website. Others have a root cause on the client, where the JavaScript
 code calls dangerous functions with user-controlled content.
 
-To prevent server-side XSS, don't generate
+To [prevent server-side XSS](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html), don't generate
 HTML by concatenating strings and use safe contextual-autoescaping templating
 libraries instead. Use a [nonce-based Content Security Policy](https://csp.withgoogle.com/docs/strict-csp.html) for additional mitigation against the bugs as they inevitably happen.
 
@@ -104,7 +105,7 @@ objects for other sensitive sinks.
 
 {% endCompare %}
 
-Trusted Types heavily reduce the DOM XSS [attack surface](https://en.wikipedia.org/wiki/Attack_surface) 
+Trusted Types heavily reduce the DOM XSS [attack surface](https://en.wikipedia.org/wiki/Attack_surface)
 of your application. It simplifies security reviews, and allows you to enforce the type-based
 security checks done when compiling, linting, or bundling your code at runtime,
 in the browser.
@@ -113,7 +114,7 @@ in the browser.
 
 ### Prepare for Content Security Policy violation reports
 
-You can deploy a report collector 
+You can deploy a report collector
 (such as the open-source [go-csp-collector](https://github.com/jacobbednarz/go-csp-collector)),
 or use one of the commercial equivalents.
 You can also debug the violations in the browser:
@@ -171,8 +172,8 @@ or [static code checkers](https://github.com/mozilla/eslint-plugin-no-unsanitize
 on your codebase. This helps quickly identify a large chunk of
 violations.
 
-That said, you should also analyze the CSP violations, as these trigger if
-and only if the non-conforming code is executed.
+That said, you should also analyze the CSP violations, as these trigger when
+the non-conforming code is executed.
 {% endAside %}
 
 ### Fix the violations
