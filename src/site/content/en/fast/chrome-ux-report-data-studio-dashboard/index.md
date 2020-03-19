@@ -23,7 +23,7 @@ origin's user experience.
 The CrUX Dashboard is built with a Data Studio feature called [Community
 Connectors](https://developers.google.com/datastudio/connector/).
 This connector is a pre-established link between the raw CrUX data on
-[BigQuery](./bigquery.html) and the visualizations of Data Studio. It eliminates
+[BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report) and the visualizations of Data Studio. It eliminates
 the need for users of the dashboard to write any queries or generate any charts.
 Everything is built for you -- all you need is to provide an origin to look up.
 The connector code is also

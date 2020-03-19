@@ -69,7 +69,7 @@ This post focuses on the features you can use today,
 so be sure to watch the talk
 for a deeper discussion of upcoming features like Houdini.
 You can also find demos for all the features we discuss on our
-[CSS@CDS page](a.nerdy.dev/css-at-cds).
+[CSS@CDS page](https://a.nerdy.dev/css-at-cds).
 
 {% YouTube '-oyeaIirVC0' %}
 

@@ -64,7 +64,7 @@ use it to self-review their content and fix problems rather than waiting for rev
 1. Are code blocks and sample apps as simple as possible while still conveying the core concept?
 1. Is a brief description of a sample app's functionality provided before the app itself?
 1. Is [code highlighting](/handbook/markup-code/#code-highlighting) used to indicate lines that have been added or changed?
-1. Is all sample code [accessible](/inclusion-and-accessibility/#create-accessible-code-blocks)?
+1. Is all sample code [accessible](/handbook/inclusion-and-accessibility/#create-accessible-code-blocks)?
 
 ## Links
 1. Do all links work?
@@ -73,7 +73,7 @@ use it to self-review their content and fix problems rather than waiting for rev
 1. When referencing a web platform API, does the page link out to the canonical MDN API reference?
 
 ## Mechanics
-1. Is the text free of spelling and capitalization errors? (Check the [word list](/word-list).)
+1. Is the text free of spelling and capitalization errors? (Check the [word list](/handbook/word-list).)
 1. Are [dashes and hyphens](/handbook/grammar/#dashes-and-hyphens) used correctly?
 1. Are titles and headings in sentence case with no terminal period?
 1. Are [keyboard key commands](/handbook/grammar/#ui-elements-and-interaction) correctly formatted?
