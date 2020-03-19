@@ -8,6 +8,8 @@ description: |
   To defend against attacks, a developer needs to mitigate vulnerabilities and
   add security features to an application. Luckily, on the web, the browser
   provides many security features, including the idea of a "sandbox".
+tags:
+  - secure
 ---
 
 To defend against attacks, a developer needs to mitigate vulnerabilities and add

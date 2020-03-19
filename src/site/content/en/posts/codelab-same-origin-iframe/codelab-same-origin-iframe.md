@@ -9,6 +9,8 @@ description: |
   inside an iframe.
 glitch: same-origin-policy-iframe
 related_post: same-origin-policy
+tags:
+  - secure
 ---
 
 In this codelab, see how the same-origin policy works when accessing data inside an iframe.

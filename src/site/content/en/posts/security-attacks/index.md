@@ -10,6 +10,8 @@ description: |
   features to their advantage to cause damage, it is called an attack. We'll
   take a look at different types of attacks in this guide so you know what to
   look for when securing your application.
+tags:
+  - secure
 ---
 
 An insecure application could expose users and systems to various types of

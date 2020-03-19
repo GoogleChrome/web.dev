@@ -4,7 +4,7 @@ const accessible = require("./pages/accessible/accessible.11tydata.js").path;
 const reliable = require("./reliable/reliable.11tydata.js").path;
 const discoverable = require("./pages/discoverable/discoverable.11tydata.js")
   .path;
-const secure = require("./secure/secure.11tydata.js").path;
+const secure = require("./pages/secure/secure.11tydata.js").path;
 const installable = require("./pages/installable/installable.11tydata.js").path;
 
 // =============================================================================

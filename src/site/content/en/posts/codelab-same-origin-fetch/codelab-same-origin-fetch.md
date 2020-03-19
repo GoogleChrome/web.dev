@@ -9,6 +9,8 @@ description: |
   resources.
 glitch: same-origin-policy-fetch
 related_post: same-origin-policy
+tags:
+  - secure
 ---
 
 In this codelab, see how the same-origin works when fetching resources.
