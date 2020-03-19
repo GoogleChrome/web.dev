@@ -11,19 +11,19 @@ description: |
 
 ## Start a PWA in an Android app
 
-[Progressive Web Apps][1] (PWA) are web applications that make use of app-like features to create
+[Progressive Web Apps][1] (PWA) are web applications that use app-like features to create
 high quality experiences that are fast, reliable and engaging.
 
 The web has incredible reach and offers powerful ways for users to discover new experiences. But
 users are also used to searching for applications in their operating system store. Those users are,
-in many cases, already familiar with the brand or service and have a high level of intentionality
+in many cases, already familiar with the brand or service they're seeking and have a high level of intentionality
 that results in higher than average engagement metrics.
 
 The Play Store is a store for Android apps, and developers often want to open their Progressive Web
 Apps from their Android apps.
 
 Trusted Web Activity is an open standard that allows browsers to provide a fully web platform
-compatible container that developers can use to render their PWA inside an Android app. The feature
+compatible container that renders PWAs inside an Android app. The feature
 is available in [Chrome][2], in development in [Firefox Preview Nightly][3], with other browsers
 joining soon.
 
@@ -34,7 +34,7 @@ the [Android WebView][4] or frameworks like [Cordova][5].
 
 The limitation with Android WebView is that it's not intended as a browser replacement. The Android
 WebView is a developer tool for using web UI in an Android app and it doesn't provide complete
-access to modern web platform features such as [contact picker][6], [filesystem][7], among others.
+access to modern web platform features such as [contact picker][6], or [filesystem][7], among others.
 
 Cordova was designed to augment the shortcomings of WebView, but the APIs are then limited to the
 Cordova environment.  That means you need to maintain an additional codebase for using Cordova APIs
@@ -42,7 +42,7 @@ for your Android app, separate from your PWA on the open web.
 
 In addition, feature discoverability often doesn't always work as expected and compatibility issues
 between Android versions and OEMs can also be a problem. When using one of those solutions,
-developers need additional quality assurance processes and incur in extra development cost to
+developers need additional quality assurance processes and incur an extra development cost to
 detect and create workarounds.
 
 ### Trusted Web Activity is a new container for Web apps on Android
@@ -50,7 +50,7 @@ detect and create workarounds.
 Developers can now use a [Trusted Web Activity][8] as a container to include a PWA as a launch
 activity for an Android app. The technology leverages the browser to render the PWA in full screen,
 ensuring the Trusted Web Activity has the same compatibility with the Web Platform features and
-APIs that the underlying browser does.  There are also open source utilities to make implementing
+APIs that the underlying browser does. There are also open source utilities to make implementing
 an Android app using a Trusted Web Activity even easier.  
 
 Another advantage not available in other solutions is that the container shares storage with the
@@ -58,7 +58,7 @@ browser. Login states and users preferences are shared seamlessly across experie
 
 #### Browser Compatibility
 
-The feature has been available in Chrome, since version 75, with Firefox implementing it in their
+The feature has been available in Chrome since version 75, with Firefox implementing it in their
 nightly version. Other browsers are expected to follow soon.
 
 ### Quality Criteria
@@ -68,7 +68,7 @@ Android app.  Web content in a Trusted Web Activity must meet PWA install qualit
 additional Android-specific criteria such as [policy compliance][9].
 
 <figure class="w-figure w-figure--center">
-  <img src="./lh-score.png" style="max-width: 100%;"
+  <img src="lh-score.png" style="max-width: 100%;"
     alt="A screenshot showing the Lighthouse score for AirHorn, with the PWA badge and a performance score of 100."/>
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     The PWA badge and a minimum lighthouse score of 80 are required.
@@ -84,7 +84,7 @@ Graphical User Interface (GUI).
 
 ### Bubblewrap
 
-The [Bubblewrap][10] project provides tooling to generate Android apps in the form of a NodeJS
+The [Bubblewrap][10] project generates Android apps in the form of a NodeJS
 library and a Command Line Interface (CLI).
 
 Bootstrapping a new project is achieved by running the tool and passing the URL of the Web
@@ -163,4 +163,3 @@ Finally, move the application from the closed test channel to production
 [14]: https://developers.google.com/digital-asset-links/v1/getting-started
 [15]: https://play.google.com/store/apps/details?id=dev.conn.assetlinkstool
 [16]: /lighthouse-performance/
-
