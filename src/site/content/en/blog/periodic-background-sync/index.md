@@ -360,7 +360,7 @@ in the periodic background sync lifecycle: registering for sync, performing a
 background sync, and unregistering. To obtain information about these events,
 click **Start recording**.
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="1-record.png" alt="The record button in DevTools" style="max-width: 75%">
   <figcaption class="w-figcaption">
     The record button in DevTools
@@ -370,7 +370,7 @@ click **Start recording**.
 While recording, entries will appear in DevTools corresponding to events, with
 context and metadata logged for each.
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="2-record-result.png" alt="An example of recorded periodic background sync data"
        style="max-width: 75%">
   <figcaption class="w-figcaption">
@@ -396,7 +396,7 @@ event to use, and to trigger it as many times as you'd like.
   Manually triggering a `periodicsync` event requires Chrome 81 or later.
 {% endAside %}
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="3-sw-panel.png"
        alt="The 'Service Workers' section of the Application panel shows a 'Periodic Sync'
             text field and button." style="max-width: 90%">
@@ -407,7 +407,7 @@ event to use, and to trigger it as many times as you'd like.
 Starting in Chrome 81, you'll see a **Periodic Background Sync** section in the
 DevTools *Application* panel.
 
-   <figure class="w-figure w-figure--center">
+   <figure class="w-figure">
      <img class="w-screenshot" src="7-panel.png"
           alt="The Application panel showing the Periodic Background Sync section"
           style="max-width: 75%">

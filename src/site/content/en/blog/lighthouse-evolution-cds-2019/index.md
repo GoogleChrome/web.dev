@@ -31,7 +31,7 @@ server for visual diffing and basic category score history. Existing
 seamlessly alongside the new expressive syntax for asserting *any* Lighthouse
 audit or category result.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="./lighthouse-ci.png" alt="Lighthouse CI report."
        width="400">
 </figure>
@@ -54,7 +54,7 @@ blended](/performance-scoring/#weightings) to form the 0-100 Performance score:
 Paint](/first-meaningful-paint/), [Time to Interactive](/interactive/), and
 [First CPU Idle](/first-cpu-idle/).
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="./lighthouse-performance-score.png" alt="Comparison of Lighthouse performance score formulas in versions 5 and 6.">
 </figure>
 
@@ -101,7 +101,7 @@ Packs](https://github.com/GoogleChrome/lighthouse-stack-packs) add customized
 recommendations, curated by community experts (like you!), on top of Lighthouse
 report core audits.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="./lighthouse-stack-packs.png" 
        alt="Lighthouse report recommendation for deferring offscreen images in React applications.">
 </figure>
@@ -113,7 +113,7 @@ or [contact the Lighthouse team](https://github.com/GoogleChrome/lighthouse-stac
 
 ## Coming soon: Lighthouse plugins as Chrome Extensions
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="./lighthouse-plugin-icon.png" alt="Lighthouse plugin icon." width="250">
 </figure>
 
@@ -130,7 +130,7 @@ only work in [Lighthouse
 CLI](https://developers.google.com/web/tools/lighthouse#cli), but the goal is to
 enable running them in the DevTools **Audits** panel too.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="./lighthouse-plugin-devtools.png" alt="Chrome DevTools Audits panel with options for running Lighthouse plugins for Google Publisher Ads and User Experience." width="400">
   <figcaption class="w-figcaption">Community Plugins in DevTools Audits panel (beta)</figcaption>
 </figure>

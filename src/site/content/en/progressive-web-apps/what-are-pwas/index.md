@@ -30,7 +30,7 @@ like take pictures, see playing songs listed on the home screen, or control song
 playback while in another app. Native applications feel like _part_ of the
 device they run on.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="./capabilities-reach.svg" style="max-width: 100%;"
     alt="A graph illustrating the relative capabilites and reach of native apps, with high capabilities, web apps, with high reach, and progressive web apps, which have both high capabilities and high reach."/>
   <figcaption class="w-figcaption w-figcaption--fullbleed">

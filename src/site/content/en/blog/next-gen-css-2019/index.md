@@ -172,7 +172,7 @@ One exciting implication of these media queries is that we can design for multip
 
 It's important to Adam that "prefers reduced motion" doesn't get implemented as "no motion." The user is saying they prefer less motion, not that they don't want any animation. He asserts reduced motion is not no motion. Here's an example that uses a crossfade animation when the user prefers reduced motion:
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/next-gen-css-2019/reduced-motion.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/next-gen-css-2019/reduced-motion.mp4" type="video/mp4; codecs=h264">
@@ -223,7 +223,7 @@ Sticky positioning lets you create many useful effects that previously required 
 
 In this demo, all sticky elements share the same container. That means that each sticky element slides over the previous one as the user scrolls down. The sticky elements share the same stuck position.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/next-gen-css-2019/sticky-stack.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/next-gen-css-2019/sticky-stack.mp4" type="video/mp4; codecs=h264">
@@ -234,7 +234,7 @@ In this demo, all sticky elements share the same container. That means that each
 
 Here, the sticky elements are cousins. (That is, their parents are siblings.) When a sticky element hits the lower boundary of its container, it moves up with the container, creating the impression that lower sticky elements are pushing up higher ones. In other words, they appear to compete for the stuck position.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/next-gen-css-2019/sticky-slide.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/next-gen-css-2019/sticky-slide.mp4" type="video/mp4; codecs=h264">
@@ -245,7 +245,7 @@ Here, the sticky elements are cousins. (That is, their parents are siblings.) Wh
 
 Like Sticky Slide, the sticky elements in this demo are cousins. However, they've been placed in containers set to a two-column grid layout.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <video controls autoplay loop muted>
     <source src="https://storage.googleapis.com/web-dev-assets/next-gen-css-2019/sticky-desperado.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/next-gen-css-2019/sticky-desperado.mp4" type="video/mp4; codecs=h264">

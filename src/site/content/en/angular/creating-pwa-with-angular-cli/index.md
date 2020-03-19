@@ -79,13 +79,13 @@ You can customize any of these properties by changing the relevant value in `man
 
 A PWA references its manifest file with a `link` element in `index.html`. Once the browser finds the reference, it'll show the **Add to Home screen** prompt:
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img src="home.png" alt="A progressive web app install prompt">
 </figure>
 
 Since the `ng-add` schematics add everything needed to make your app [installable](/discover-installable/), they generate some shortcut icons that are shown once the user adds the app to their desktop:
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img src="icon.png" alt="A progressive web app shortcut icon">
 </figure>
 

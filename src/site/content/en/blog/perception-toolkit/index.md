@@ -56,7 +56,7 @@ then show and hide cards based on the information provided in the data. Try this
 for yourself using our [artifact-map
 demo](https://github.com/GoogleChromeLabs/perception-toolkit/tree/master/demo/artifact-map).
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="found-target.png"
        alt="The default interface is available by using just the linked data." class="screenshot"
        width="300">
