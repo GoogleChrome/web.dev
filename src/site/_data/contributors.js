@@ -1723,6 +1723,23 @@ const contributors = {
     twitter: "kumagi",
     github: "kumagi",
   },
+  andreban: {
+    name: {
+      given: "André",
+      family: "Cipriani Bandarra",
+    },
+    org: {
+      name: "Google",
+      unit: "Developer Relations",
+    },
+    country: "UK",
+    homepage: "https://bandarra.me/",
+    twitter: "andreban",
+    github: "andreban",
+    description: {
+      en: "Andre is a Developer Advocate",
+    },
+  },
 };
 
 const processedContributors = {};
