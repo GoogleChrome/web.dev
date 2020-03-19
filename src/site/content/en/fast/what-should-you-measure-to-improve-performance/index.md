@@ -18,7 +18,7 @@ tags:
 The different steps of a purchase funnel are prone to performance issues in
 different ways, and therefore need different measurement and optimizations:
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img src="./funnel.png" alt="A conversion funnel going from discover to engage to convert to re-engage." style="max-width: 600px; width: 100%;">
   <figcaption class="w-figcaption">
     A conversion funnel.
@@ -181,7 +181,7 @@ an eye on this though, and a great lab test tool for repeat visits is
 [WebPageTest](https://www.webpagetest.org/), which has a dedicated option for a
 direct repeat visit:
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="./webpagetest_repeat.png" alt="The WebPageTest homepage form for auditing a site. The repeat view option is highlighted.">
   <figcaption class="w-figcaption w-figcaption--center">
     Webpagetest offers options to test first load and repeat load as well
@@ -192,7 +192,7 @@ To get a better feeling for repeat visit performance in the field use your
 analytics package of choice to segment your performance metrics by user type.
 Here is an example of such a report in Google Analytics:
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="./ga_speed_repeat.png" alt="A Google Analytics dashboard shows a number of fields being added to a custom report.">
   <figcaption class="w-figcaption w-figcaption--center">
     A Google Analytics custom report can be used to report speed metrics for new and returning users.

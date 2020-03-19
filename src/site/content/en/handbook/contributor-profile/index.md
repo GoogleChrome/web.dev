@@ -32,7 +32,7 @@ description: |
     },
     ```
 
-    <figure class="w-figure  w-figure--center">
+    <figure class="w-figure">
       <img class="w-screenshot" src="./lockup.png" alt="Screenshot of a contributor lockup">
     </figure>
 

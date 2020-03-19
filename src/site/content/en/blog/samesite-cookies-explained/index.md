@@ -51,7 +51,7 @@ this:
 Set-Cookie: promo_shown=1; Max-Age=2600000; Secure
 ```
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img src="set-cookie-response-header.png" alt="Three cookies being sent to a
     browser from a server in a response" style="max-width: 60vw">
   <figcaption class="w-figcaption">
@@ -67,7 +67,7 @@ will send this header in its request:
 Cookie: promo_shown=1
 ```
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img src="cookie-request-header.png" alt="Three cookies being sent from a
     browser to a server in a request" style="max-width: 60vw;">
   <figcaption class="w-figcaption">
@@ -93,7 +93,7 @@ context, with each cookie separated by a semicolon:
 < "promo_shown=1; color_theme=peachpuff; sidebar_loc=left"
 ```
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img src="document-cookie.png" alt="JavaScript accessing cookies within the
     browser" style="max-width: 35vw;">
   <figcaption class="w-figcaption">
@@ -121,7 +121,7 @@ current site are referred to as **third-party** cookies. This isn't an absolute
 label but is relative to the user's context; the same cookie can be either
 first-party or third-party depending on which site the user is on at the time.
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img src="cross-site-set-cookie-response-header.png" alt="Three cookies being
     sent to a browser from different requests on the same page"
     style="max-width: 60vw;">
@@ -148,7 +148,7 @@ embedded player by a third-party cookie—meaning that "Watch later" button will
 just save the video in one go rather than prompting them to sign in or having to
 navigate them away from your page and back over to YouTube.
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img src="cross-site-cookie-request-header.png" alt="The same cookie being
     sent in three different contexts" style="max-width: 60vw;">
   <figcaption class="w-figcaption">
@@ -265,7 +265,7 @@ is being made explicit by introducing a new value of `SameSite=None`. This means
 you can use `None` to clearly communicate that you intentionally want the cookie
 sent in a third-party context.
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img src="samesite-none-lax-strict.png" alt="Three cookies labelled None,
     Lax, or Strict depending on their context" style="max-width: 60vw;">
   <figcaption class="w-figcaption">

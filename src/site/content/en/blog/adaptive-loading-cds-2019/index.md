@@ -173,7 +173,7 @@ and limit loading the next image in the carousel to loading images one at a time
 as users swipe. After implementing these optimizations, they've seen significant
 improvements in average swipe count in countries such as Indonesia. 
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="tinder.png" style="max-width: 75%"
        alt="A screenshot of two versions of Tinder chat: with autoplaying video and 
             with a video with play button overlay. A screenshot of a Tinder profile with 

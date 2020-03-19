@@ -28,7 +28,7 @@ origin_trial:
 
 ## What is the Badging API? {: #what }
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img  src="badges-on-windows.jpg" class="w-screenshot"
         alt="Example of Twitter with eight notifications and another app showing a flag type badge.">
   <figcaption class="w-figcaption">

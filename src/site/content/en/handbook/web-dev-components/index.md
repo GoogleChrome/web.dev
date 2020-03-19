@@ -394,13 +394,13 @@ by wrapping them in a `<div class="w-columns">` element:
 
 ```html
 <div class="w-columns">
-  <figure class="w-figure w-figure--center">
+  <figure class="w-figure">
     <img src="./image-small.png" alt="">
     <figcaption class="w-figcaption">
       Small image.
     </figcaption>
   </figure>
-  <figure class="w-figure w-figure--center">
+  <figure class="w-figure">
     <img src="./image-small.png" alt="">
     <figcaption class="w-figcaption">
       Small image.
@@ -410,13 +410,13 @@ by wrapping them in a `<div class="w-columns">` element:
 ```
 
 <div class="w-columns">
-  <figure class="w-figure w-figure--center">
+  <figure class="w-figure">
     <img src="./image-small.png" alt="">
     <figcaption class="w-figcaption">
       Small image.
     </figcaption>
   </figure>
-  <figure class="w-figure w-figure--center">
+  <figure class="w-figure">
     <img src="./image-small.png" alt="">
     <figcaption class="w-figcaption">
       Small image.
