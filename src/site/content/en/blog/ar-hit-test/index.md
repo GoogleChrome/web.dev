@@ -4,6 +4,7 @@ subhead: The Hit Test API lets you position virtual items in a real-world view.
 authors:
   - joemedley
 date: 2020-02-13
+updated: 2020-03-19
 hero: hero.jpg
 alt: A virtual object in a real-world view.
 description:
@@ -25,7 +26,7 @@ that some of the work is finished. In Chrome 81, two new features have arrived:
 * [Hit testing](https://www.chromestatus.com/features/4755348300759040)
 
 This article covers the [WebXR Hit Test
-API](https://github.com/immersive-web/hit-test/blob/master/explainer.md), a
+API](https://github.com/immersive-web/hit-test/blob/master/hit-testing-explainer.md), a
 means of placing virtual objects in a real-world camera view.
 
 In this article I assume you already know how to create an augmented reality
@@ -286,10 +287,7 @@ An object is placed in AR when the user taps the screen. I already added a
 
 The important thing in this step is knowing where to place it. Since the moving
 reticle gives you a constant source of hit tests, the simplest way to place an
-object is to draw it at the location of the reticle at the last hit test. If you
-need to, say you have a legitimate reason not to show a reticle, you can call
-`requestHitTest()` in the select event [as shown in the
-sample](https://github.com/immersive-web/webxr-samples/blob/master/proposals/phone-ar-hit-test.html#L187).
+object is to draw it at the location of the reticle at the last hit test.
 
 ```js
 function onSelect(event) {
@@ -304,7 +302,7 @@ function onSelect(event) {
 ## Conclusion
 
 The best way to get a handle on this is to step through the [sample
-code](https://immersive-web.github.io/webxr-samples/proposals/phone-ar.html) or
+code](https://immersive-web.github.io/webxr-samples/immersive-ar-session.html) or
 try out the
 [codelab](https://codelabs.developers.google.com/codelabs/ar-with-webxr). I hope
 I've given you enough background to make sense of both.
