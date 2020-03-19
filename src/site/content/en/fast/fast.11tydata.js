@@ -71,7 +71,7 @@ module.exports = {
           "defer-non-critical-css",
           "minify-css",
           "extract-critical-css",
-          "optimize-css-background-images-with-media-queries"
+          "optimize-css-background-images-with-media-queries",
         ],
       },
       {
