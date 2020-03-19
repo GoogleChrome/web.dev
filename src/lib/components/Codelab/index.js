@@ -45,8 +45,8 @@ class Codelab extends BaseElement {
   }
 
   get src() {
-    if (!this.glitch) {
-      return;
+    if (!this.glitch || window.matchMedia('(max-width: 865px)').matches) {
+      return '';
     }
 
     let url = `https://glitch.com/embed/?attributionHidden=true`;
