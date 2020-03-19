@@ -4,7 +4,6 @@ title: Using a PWA in your Android app
 authors:
   - andreban
 date: 2020-03-19
-updated: 2020-03-19
 description: |
   How to open a Progressive Web App in an Android app.
 ---
@@ -34,7 +33,8 @@ the [Android WebView][4] or frameworks like [Cordova][5].
 
 The limitation with Android WebView is that it's not intended as a browser replacement. The Android
 WebView is a developer tool for using web UI in an Android app and it doesn't provide complete
-access to modern web platform features such as [contact picker][6], or [filesystem][7], among others.
+access to modern web platform features such as [contact picker][6], or [filesystem][7],
+[among others][17].
 
 Cordova was designed to augment the shortcomings of WebView, but the APIs are then limited to the
 Cordova environment.  That means you need to maintain an additional codebase for using Cordova APIs
@@ -163,3 +163,4 @@ Finally, move the application from the closed test channel to production
 [14]: https://developers.google.com/digital-asset-links/v1/getting-started
 [15]: https://play.google.com/store/apps/details?id=dev.conn.assetlinkstool
 [16]: /lighthouse-performance/
+[17]: /fugu-status/
