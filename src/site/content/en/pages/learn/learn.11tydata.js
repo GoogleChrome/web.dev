@@ -8,7 +8,7 @@ const secure = require("../../secure/secure.11tydata.js").path;
 const pwa = require("../../progressive-web-apps/progressive-web-apps.11tydata.js")
   .path;
 const installable = require("../installable/installable.11tydata.js").path;
-const metrics = require("../../metrics/metrics.11tydata.js").path;
+const metrics = require("../metrics/metrics.11tydata.js").path;
 
 const react = require("../../react/react.11tydata.js").path;
 const angular = require("../angular/angular.11tydata.js").path;
