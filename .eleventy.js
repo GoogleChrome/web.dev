@@ -39,6 +39,7 @@ const Details = require(`./${componentsDir}/Details`);
 const DetailsSummary = require(`./${componentsDir}/DetailsSummary`);
 const Hero = require(`./${componentsDir}/Hero`);
 const Instruction = require(`./${componentsDir}/Instruction`);
+const Label = require(`./${componentsDir}/Label`);
 const Meta = require(`./${componentsDir}/Meta`);
 const PathCard = require(`./${componentsDir}/PathCard`);
 const PostCard = require(`./${componentsDir}/PostCard`);
@@ -200,6 +201,7 @@ module.exports = function(config) {
   config.addPairedShortcode('DetailsSummary', DetailsSummary);
   config.addShortcode('Hero', Hero);
   config.addShortcode('Instruction', Instruction);
+  config.addPairedShortcode('Label', Label);
   config.addShortcode('Meta', Meta);
   config.addPairedShortcode('Partial', buildPartial());
   config.addShortcode('PathCard', PathCard);

@@ -19,7 +19,7 @@ Brands that optimize speed will often find they regress quickly. This is because
 
 Performance budgets are one way to address this. A performance budget is a set of limits on metrics that affect site performance. The concept is similar to a financial budget: you set a limit and make sure you stay within it. In general, a good performance budget combines different types of metrics; so, for example, the performance budget for a product page might look as follows:
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="./performance-budget-example.png" alt="Image of a performance budget example" style="max-width: 600px;">
   <figcaption class="w-figcaption">
     Example performance budget

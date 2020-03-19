@@ -75,7 +75,7 @@ The Angular team has shipped a number of improvements to version 8 of the framew
 +   [Differential loading](https://angular.io/guide/deployment#differential-builds) by
     default to minimize unneeded polyfills for newer browsers.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="differential-loading-angular.png" class="w-screenshot" alt="Graph showing bundle size reduction of angular.io with and without differential builds">
   <figcaption class="w-figcaption">
     Bundle size reduction for angular.io with differential builds (from <a href="https://blog.angular.io/version-8-of-angular-smaller-bundles-cli-apis-and-alignment-with-the-ecosystem-af0261112a27">Version 8 of Angular</a>)
@@ -123,7 +123,7 @@ for comments (RFCs) and pull requests (PRs):
 3.  Improved performance metric tracking which utilizes the User Timing API
     ([PR](https://github.com/zeit/next.js/pull/8069)).
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="barnebys.png" class="w-screenshot-filled" alt="Homepage of Barnebys.com">
   <figcaption class="w-figcaption">
     <a href="https://www.barnebys.com/">Barnebys.com</a>, a large search engine for antiques and collectibles, saw a 23% reduction in total JavaScript after enabling granular chunking
@@ -137,7 +137,7 @@ Next.js, such as:
 +   A webpack based conformance system that analyzes all source files and generated assets to
     surface better errors and warnings ([RFC](https://github.com/zeit/next.js/issues/9310)).
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="conformance.png" class="w-screenshot-filled" alt="Example of a conformance build error in Next.js">
   <figcaption class="w-figcaption">
     An example of a conformance build error in Next.js (prototype)

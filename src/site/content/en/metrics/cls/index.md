@@ -32,7 +32,7 @@ else!
 Most of the time these kinds of experiences are just annoying, but in some
 cases, they can cause real damage.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <video autoplay controls loop muted
     class="w-screenshot"
     poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png"
