@@ -58,6 +58,7 @@ use it to self-review their content and fix problems rather than waiting for rev
 1. Are all images optimized so that the size of the repository stays as small as possible?
 1. Do the images have hardcoded English descriptions in them? If possible, use numbers instead
    and then use a numbered list below the image to explain each item. This makes the page easier to translate.
+1. Is the hero image `3200px` wide by `960px` tall and has it been optimized (to keep the size of the repository as small as possible)?
 
 ## Code
 1. Are code blocks and sample apps as simple as possible while still conveying the core concept?
