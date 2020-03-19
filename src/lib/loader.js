@@ -99,6 +99,7 @@ function forceFocus(el) {
  */
 function updateDom(partial) {
   const main = document.querySelector("main");
+  const content = main.querySelector("#content");
   main.querySelector("#content").innerHTML = partial.raw;
 
   // Update the page title.
@@ -164,12 +165,12 @@ export async function swapContent({firstRun, url, signal, ready, state}) {
   const isOffline = Boolean(partial.offline);
   store.setState({currentUrl: url, isOffline});
 
+  // Inform the router that we're ready early (even though the JS isn't done).
+  ready(url, {partial});
+
   ga("set", "page", window.location.pathname);
   ga("send", "pageview");
   updateDom(partial);
-
-  // Inform the router that we're ready early (even though the JS isn't done).
-  ready(url, {partial});
 
   // Finally, just await for the entrypoint JS. It this fails we'll throw an exception and force a
   // complete reload.
