@@ -1,5 +1,5 @@
 ---
-title: Prevent DOM-based Cross-Site Scripting vulnerabilities with Trusted Types
+title: Prevent DOM-based cross-site scripting vulnerabilities with Trusted Types
 subhead: Reduce the DOM XSS attack surface of your application.
 authors:
   - koto
@@ -11,10 +11,10 @@ hero: hero.png
 # Values: top | bottom | center (default)
 # hero_position: bottom
 # thumbnail: thumbnail.png
-alt: Code snippets demonstrating Cross-Site Scripting vulnerabilities.
+alt: Code snippets demonstrating cross-site scripting vulnerabilities.
 description: |
-  Introducing Trusted Types: a browser API to prevent DOM-based Cross-Site
-  Scripting in modern web applications.
+  Introducing Trusted Types: a browser API to prevent DOM-based cross-site
+  scripting in modern web applications.
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - security
@@ -23,7 +23,7 @@ tags:
 
 ## Why should you care?
 
-DOM-based Cross-Site Scripting (DOM XSS) is one of the most common web
+DOM-based cross-site scripting (DOM XSS) is one of the most common web
 security vulnerabilities, and it's very easy to introduce it in
 your application. [Trusted Types](https://github.com/w3c/webappsec-trusted-types)
 give you the tools to write, security
@@ -34,7 +34,7 @@ for other browsers. See [Browser compatibility](https://developer.mozilla.org/es
 cross-browser support information.
 
 {% Aside 'key-term' %}
-DOM-based Cross-Site Scripting happens when data from a user controlled
+DOM-based cross-site scripting happens when data from a user controlled
 _source_ (like user name, or redirect URL taken from the URL fragment)
 reaches a _sink_, which is a function like `eval()` or a property setter like
 `.innerHTML`, that can execute arbitrary JavaScript code.
@@ -45,7 +45,7 @@ reaches a _sink_, which is a function like `eval()` or a property setter like
 For many years [DOM XSS](https://owasp.org/www-community/attacks/xss/)
 has been one of the most prevalent—and dangerous—web security vulnerabilities.
 
-There are two distinct groups of Cross-Site Scripting. Some
+There are two distinct groups of cross-site scripting. Some
 XSS vulnerabilities are caused by the server-side code that insecurely creates the HTML code
 forming the website. Others have a root cause on the client, where the JavaScript
 code calls dangerous functions with user-controlled content.
