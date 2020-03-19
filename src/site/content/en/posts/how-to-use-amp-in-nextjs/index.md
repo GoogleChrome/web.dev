@@ -6,8 +6,12 @@ authors:
 subhead: |
   Try out the two ways that you can add AMP to a Next.js app
 date: 2019-11-08
+description: |
+  Try out the two ways that you can add AMP to a Next.js app
 glitch: next-amp-start
 related_post: how-amp-can-guarantee-fastness-in-your-nextjs-app
+tags:
+  - react
 ---
 
 ## What will you learn?

@@ -10,6 +10,8 @@ description: |
   precaches all static assets in your application with every build.
 authors:
   - houssein
+tags:
+  - react
 ---
 
 {% Aside %}

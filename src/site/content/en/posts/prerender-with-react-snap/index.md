@@ -10,6 +10,8 @@ description: |
   static HTML files. This can improve First Paint times in your application.
 authors:
   - houssein
+tags:
+  - react
 ---
 
 [`react-snap`](https://github.com/stereobooster/react-snap) is a third-party

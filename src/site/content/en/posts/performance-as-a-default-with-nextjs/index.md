@@ -6,6 +6,10 @@ authors:
 subhead: |
   Next.js takes care of many optimizations in your React app so you don’t have to
 date: 2019-11-08
+description: |
+  Next.js takes care of many optimizations in your React app so you don’t have to
+tags:
+  - react
 ---
 
 [Next.js](https://nextjs.org/) is an opinionated [React](https://reactjs.org/)

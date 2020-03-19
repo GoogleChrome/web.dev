@@ -11,6 +11,8 @@ description: |
   consider using to improve the performance and usability of your application.
 authors:
   - houssein
+tags:
+  - react
 ---
 
 [React](https://reactjs.org/) is an open-source library that makes building UIs

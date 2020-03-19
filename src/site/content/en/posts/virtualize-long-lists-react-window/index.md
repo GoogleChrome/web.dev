@@ -10,6 +10,8 @@ description: |
 authors:
   - houssein
   - developit
+tags:
+  - react
 ---
 
 [`react-window`](https://react-window.now.sh/#/examples/list/fixed-size) is a

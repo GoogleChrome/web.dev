@@ -6,7 +6,11 @@ authors:
 subhead: |
   Learn about the benefits and tradeoffs of supporting AMP in your Next.js app
 date: 2019-11-08
+description: |
+  Learn about the benefits and tradeoffs of supporting AMP in your Next.js app
 codelabs: how-to-use-amp-in-nextjs
+tags:
+  - react
 ---
 
 [AMP](https://amp.dev) is a web component framework that guarantees

@@ -6,6 +6,10 @@ authors:
 subhead: |
   How to speed up your Next.js app with code splitting and smart loading strategies.
 date: 2019-11-08
+description: |
+  How to speed up your Next.js app with code splitting and smart loading strategies.
+tags:
+  - react
 ---
 
 ## What will you learn?
