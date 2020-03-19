@@ -27,25 +27,25 @@ DOM-Based Cross-Site Scripting (DOM XSS) is one of the most common web
 security vulnerabilities, and it's very easy to introduce it in
 your application. [Trusted Types](https://github.com/w3c/webappsec-trusted-types)
 give you the tools to write, security
-review, and maintain applications free of DOM XSS vulnerabilities by making the dangerous Web API
+review, and maintain applications free of DOM XSS vulnerabilities by making the dangerous web API
 functions secure by default. Trusted Types are supported in Chrome 82, and
 a [polyfill](https://github.com/w3c/webappsec-trusted-types#polyfill) is available
 for other browsers.
 
 {% Aside 'key-term' %}
-DOM based cross-site scripting happens when data from a user controlled
+DOM-based cross-site scripting happens when data from a user controlled
 _source_ (like user name, or redirect URL taken from the URL fragment)
 reaches a _sink_, which is a function like `eval()` or a property setter like
 `.innerHTML`, that can execute arbitrary JavaScript code.
 {% endAside %}
 
-## Chrome launches Trusted Types
+## Background
 
 For many years [DOM XSS](https://owasp.org/www-community/attacks/xss/),
 has been one of the most prevalent—and dangerous—web security vulnerabilities.
 
-There are two distinct groups of Cross Site Scripting. Some
-XSSes are caused by the server-side code that insecurely creates the HTML code
+There are two distinct groups of Cross-Site Scripting. Some
+XSS vulnerabilities are caused by the server-side code that insecurely creates the HTML code
 forming the website. Others have a root cause on the client, where the JavaScript
 code calls dangerous functions with user-controlled content.
 
@@ -104,7 +104,8 @@ objects for other sensitive sinks.
 
 {% endCompare %}
 
-Trusted Types heavily reduce the DOM XSS [attack surface](https://en.wikipedia.org/wiki/Attack_surface) of your appliciation. It simplifies security reviews, and allows you to enforce the type-based
+Trusted Types heavily reduce the DOM XSS [attack surface](https://en.wikipedia.org/wiki/Attack_surface) 
+of your application. It simplifies security reviews, and allows you to enforce the type-based
 security checks done when compiling, linting, or bundling your code at runtime,
 in the browser.
 
@@ -112,7 +113,9 @@ in the browser.
 
 ### Prepare for Content Security Policy violation reports
 
-You can deploy a report collector (there are many [open-source](https://github.com/jacobbednarz/go-csp-collector) solutions), or use one of the commercial equivalents.
+You can deploy a report collector 
+(such as the open-source [go-csp-collector](https://github.com/jacobbednarz/go-csp-collector)),
+or use one of the commercial equivalents.
 You can also debug the violations in the browser:
 ```js
 window.addEventListener('securitypolicyviolation',
@@ -128,7 +131,7 @@ Content-Security-Policy-Report-Only: require-trusted-types-for 'script'; report-
 ```
 
 Now all the violations are reported to `//my-csp-endpoint.example`,
-but the website continues to work.
+but the website continues to work. The next section explains how `//my-csp-endpoint.example` works.
 
 {% Aside 'caution' %}
 Trusted Types are only available in a [secure context](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts)
@@ -157,7 +160,7 @@ passes a string to `innerHTML`, the browser sends the following report:
 }
 ```
 
-This tells me that in `https://my.url.example/script.js` on line 39 `innerHTML` was called with
+This says that in `https://my.url.example/script.js` on line 39 `innerHTML` was called with
 the string beginning with `<img src=x`.
 This information should help you narrow down which parts of code may be
 introducing DOM XSS and need to change.
@@ -168,7 +171,7 @@ or [static code checkers](https://github.com/mozilla/eslint-plugin-no-unsanitize
 on your codebase. This helps quickly identify a large chunk of
 violations.
 
-That said, we recommend also analyzing the CSP violations, as these trigger if
+That said, you should also analyze the CSP violations, as these trigger if
 and only if the non-conforming code is executed.
 {% endAside %}
 
@@ -197,7 +200,7 @@ el.appendChild(img);
 #### Use a library
 Some libraries already generate Trusted Types that you can pass to the
 sink functions. For example, you can use
-[DOMPurify](https://github.com/cure53/DOMPurify) that will
+[DOMPurify](https://github.com/cure53/DOMPurify) to
 sanitize an HTML snippet, removing XSS payloads.
 
 ```javascript
@@ -229,7 +232,7 @@ if (window.trustedTypes && trustedTypes.createPolicy) { // Feature testing
   });
 }
 ```
-This code creates a policy I've named 'myEscapePolicy' policy that can produce `TrustedHTML`
+This code creates a policy called `myEscapePolicy` that can produce `TrustedHTML`
 objects via its `createHTML()` function. The defined rules will
 HTML-escape `<` characters to prevent the creation of new HTML elements.
 
