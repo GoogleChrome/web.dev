@@ -371,7 +371,7 @@ navigator.mediaSession.setPositionState(null);
 
 ## Samples
 
-Check out the some [Media Session samples] featuring [Blender Foundation] and
+Check out some [Media Session samples] featuring [Blender Foundation] and
 [Jan Morgenstern's work].
 
  <figure class="w-figure">
