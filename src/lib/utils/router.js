@@ -179,10 +179,13 @@ export function route(url) {
     // element (if any) and scroll to it.
     const hash = u.hash.substr(1);
     if (hash) {
-      document.getElementById(hash).scrollIntoView();
-    } else {
-      document.documentElement.scrollTop = 0;
+      const target = document.getElementById(hash);
+      if (target) {
+        target.scrollIntoView();
+        return;
+      }
     }
+    document.documentElement.scrollTop = 0;
   });
   return true;
 }
