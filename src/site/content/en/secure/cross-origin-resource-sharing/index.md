@@ -83,7 +83,7 @@ please."
 
 ### body
 
-The message itself. This could be plain text, an image binary, JSON, HTML, etc.
+The message itself. This could be plain text, an image binary, JSON, HTML, and so on.
 
 ## How does CORS work?
 
