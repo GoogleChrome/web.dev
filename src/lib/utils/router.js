@@ -177,12 +177,15 @@ export function route(url) {
 
     // Since we're loading this page dynamically, look for the target hash-ed
     // element (if any) and scroll to it.
-    const target = document.getElementById(u.hash.substr(1)) || null;
-    if (target) {
-      target.scrollIntoView();
-    } else {
-      document.documentElement.scrollTop = 0;
+    const hash = u.hash.substr(1);
+    if (hash) {
+      const target = document.getElementById(hash);
+      if (target) {
+        target.scrollIntoView();
+        return;
+      }
     }
+    document.documentElement.scrollTop = 0;
   });
   return true;
 }
