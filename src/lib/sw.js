@@ -11,7 +11,7 @@ import {cacheNames} from "workbox-core";
 import {matchSameOriginRegExp} from "./utils/sw-match.js";
 
 /**
- * Configure default cache for standard web.dev files: the offline page, various images etc.
+ * Configure default cache for standard web.dev files: the offline page, various images, etc.
  *
  * This must occur first, as we cache images that are also matched by runtime handlers below. See
  * this workbox issue for updates: https://github.com/GoogleChrome/workbox/issues/2402
