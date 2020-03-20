@@ -32,9 +32,7 @@ class Codelab extends BaseElement {
     this._isMobile = true;
 
     this._mql = window.matchMedia("(min-width: 865px)");
-    this._toggleMobile = () => (
-      (this._isMobile = !this._mql.matches)
-    );
+    this._toggleMobile = () => (this._isMobile = !this._mql.matches);
   }
 
   connectedCallback() {
@@ -63,34 +61,50 @@ class Codelab extends BaseElement {
     return container;
   }
 
-  get src() {
+  glitchSrc(embed) {
     let url = `https://glitch.com/embed/?attributionHidden=true`;
 
     if (this.path) {
       url += `&path=${encodeURI(this.path)}`;
     }
 
-    url += `#!/embed/${encodeURI(this.glitch)}`;
+    if (embed) {
+      url += `#!/embed/${encodeURI(this.glitch)}`;
+    }
 
     return url;
   }
 
   render() {
     const loadGlitch = !this._isMobile && this.glitch;
-    const iframePart = loadGlitch
-      ? html`
-          <iframe
-            allow="geolocation; microphone; camera; midi; encrypted-media"
-            alt="Embedded glitch ${this.glitch}"
-            src="${this.src}"
-            style="height: 100%; width: 100%; border: 0;"
-          >
-          </iframe>
-        `
-      : "";
+    let iframePart = "";
+
+    if (loadGlitch) {
+      iframePart = html`
+        <iframe
+          allow="geolocation; microphone; camera; midi; encrypted-media"
+          alt="Embedded glitch ${this.glitch}"
+          src="${this.glitchSrc(true)}"
+          style="height: 100%; width: 100%; border: 0;"
+        >
+        </iframe>
+      `;
+    } else if (this.glitch) {
+      iframePart = html`
+        <div class="w-aside w-aside--warning">
+          <p>
+            <strong>Warning:</strong> This Glitch isn't available on small
+            screens,
+            <a target="_blank" rel="noopener" href=${this.glitchSrc(false)}>
+              open it in a new tab</a
+            >
+          </p>
+        </div>
+      `;
+    }
 
     return html`
-      <div style="height: 100%; width: 100%;">${iframePart}</div>
+      <div class="w-sizer">${iframePart}</div>
     `;
   }
 }

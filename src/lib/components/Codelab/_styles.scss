@@ -5,29 +5,42 @@ web-codelab {
   display: flex;
   height: 100%;
 
+  .w-sizer {
+    width: 100%;
+    height: 100%;
+  }
+
   .web-codelab__headline {
     margin-top: 0;
     margin-bottom: 8px;
   }
   
   .web-codelab__instructions {
-    overflow-x: hidden;
-    overflow-y: scroll;
     padding: 32px;
 
     @include bp(md) {
+      // on desktop, scroll the instructions so the Glitch can take up the full page size
       width: 600px;
+      overflow-x: hidden;
+      overflow-y: scroll;
     }
   }
   
   .web-codelab__glitch {
     flex: 1;
-    padding: 16px;
-    display: none;
+    padding: 0 32px;
+    order: -100;
 
     @include bp(md) {
-      display: block;
+      padding: 16px;
+      order: initial;
     }
+  }
+
+  flex-flow: column;
+
+  @include bp(md) {
+    flex-flow: row;
   }
 }
 
