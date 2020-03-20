@@ -19,6 +19,8 @@ class Codelab extends BaseElement {
       glitch: {type: String},
       // The file to show when the Glitch renders.
       path: {type: String},
+      // Whether to show the Glitch iframe or not.
+      iframeEnabled: {type: Boolean},
     };
   }
 
@@ -27,6 +29,7 @@ class Codelab extends BaseElement {
 
     this.glitch = "";
     this.path = "index.html";
+    this.iframeEnabled = false;
   }
 
   createRenderRoot() {
@@ -45,19 +48,17 @@ class Codelab extends BaseElement {
   }
 
   firstUpdated() {
-    const mql = window.matchMedia("(max-width: 865px)");
-    this.setGlitchIframeSrc({matches: mql.matches});
+    const mql = window.matchMedia("(min-width: 865px)");
+    this.toggleIframeEnabled({matches: mql.matches});
     // Update Glitch iframe src when the user changes the window size.
-    mql.addListener(this.setGlitchIframeSrc.bind(this));
+    mql.addListener(this.toggleIframeEnabled.bind(this));
   }
 
-  setGlitchIframeSrc(event) {
-    const iframe = document.querySelector(".web-codelab__glitch iframe");
-    if (!this.glitch || event.matches) {
-      iframe.src = "";
-      return;
-    }
+  toggleIframeEnabled(event) {
+    this.iframeEnabled = !!this.glitch && event.matches;
+  }
 
+  get src() {
     let url = `https://glitch.com/embed/?attributionHidden=true`;
 
     if (this.path) {
@@ -66,20 +67,27 @@ class Codelab extends BaseElement {
 
     url += `#!/embed/${encodeURI(this.glitch)}`;
 
-    iframe.src = url;
+    return url;
   }
 
   render() {
+    /* eslint-disable indent */
     return html`
       <div style="height: 100%; width: 100%;">
-        <iframe
-          allow="geolocation; microphone; camera; midi; encrypted-media"
-          alt="Embedded glitch ${this.glitch}"
-          style="height: 100%; width: 100%; border: 0;"
-        >
-        </iframe>
+        ${this.iframeEnabled
+          ? html`
+              <iframe
+                allow="geolocation; microphone; camera; midi; encrypted-media"
+                alt="Embedded glitch ${this.glitch}"
+                src="${this.src}"
+                style="height: 100%; width: 100%; border: 0;"
+              >
+              </iframe>
+            `
+          : ""}
       </div>
     `;
+    /* eslint-enable indent */
   }
 }
 
