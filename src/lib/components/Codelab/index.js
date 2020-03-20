@@ -44,9 +44,18 @@ class Codelab extends BaseElement {
     return container;
   }
 
-  get src() {
-    if (!this.glitch || window.matchMedia('(max-width: 865px)').matches) {
-      return '';
+  firstUpdated() {
+    const mql = window.matchMedia("(max-width: 865px)");
+    this.setGlitchIframeSrc({matches: mql.matches});
+    // Update Glitch iframe src when the user changes the window size.
+    mql.addListener(this.setGlitchIframeSrc.bind(this));
+  }
+
+  setGlitchIframeSrc(event) {
+    const iframe = document.querySelector(".web-codelab__glitch iframe");
+    if (!this.glitch || event.matches) {
+      iframe.src = "";
+      return;
     }
 
     let url = `https://glitch.com/embed/?attributionHidden=true`;
@@ -57,7 +66,7 @@ class Codelab extends BaseElement {
 
     url += `#!/embed/${encodeURI(this.glitch)}`;
 
-    return url;
+    iframe.src = url;
   }
 
   render() {
@@ -65,7 +74,6 @@ class Codelab extends BaseElement {
       <div style="height: 100%; width: 100%;">
         <iframe
           allow="geolocation; microphone; camera; midi; encrypted-media"
-          src="${this.src}"
           alt="Embedded glitch ${this.glitch}"
           style="height: 100%; width: 100%; border: 0;"
         >
