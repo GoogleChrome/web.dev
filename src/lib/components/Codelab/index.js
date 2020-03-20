@@ -19,8 +19,8 @@ class Codelab extends BaseElement {
       glitch: {type: String},
       // The file to show when the Glitch renders.
       path: {type: String},
-      // Whether we are a mobile browser or not.
-      _isMobile: {type: Boolean},
+      // Whether to show the Glitch iframe or not.
+      iframeEnabled: {type: Boolean},
     };
   }
 
@@ -29,23 +29,7 @@ class Codelab extends BaseElement {
 
     this.glitch = "";
     this.path = "index.html";
-    this._isMobile = true;
-
-    this._mql = window.matchMedia("(min-width: 865px)");
-    this._toggleMobile = () => (
-      (this._isMobile = !this._mql.matches)
-    );
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
-    this._mql.addListener(this._toggleMobile);
-    this._toggleMobile();
-  }
-
-  disconnectedCallback() {
-    super.connectedCallback();
-    this._mql.removeListener(this._toggleMobile);
+    this.iframeEnabled = false;
   }
 
   createRenderRoot() {
@@ -63,6 +47,17 @@ class Codelab extends BaseElement {
     return container;
   }
 
+  firstUpdated() {
+    const mql = window.matchMedia("(min-width: 865px)");
+    this.toggleIframeEnabled({matches: mql.matches});
+    // Update Glitch iframe src when the user changes the window size.
+    mql.addListener(this.toggleIframeEnabled.bind(this));
+  }
+
+  toggleIframeEnabled(event) {
+    this.iframeEnabled = !!this.glitch && event.matches;
+  }
+
   get src() {
     let url = `https://glitch.com/embed/?attributionHidden=true`;
 
@@ -76,22 +71,23 @@ class Codelab extends BaseElement {
   }
 
   render() {
-    const loadGlitch = !this._isMobile && this.glitch;
-    const iframePart = loadGlitch
-      ? html`
-          <iframe
-            allow="geolocation; microphone; camera; midi; encrypted-media"
-            alt="Embedded glitch ${this.glitch}"
-            src="${this.src}"
-            style="height: 100%; width: 100%; border: 0;"
-          >
-          </iframe>
-        `
-      : "";
-
+    /* eslint-disable indent */
     return html`
-      <div style="height: 100%; width: 100%;">${iframePart}</div>
+      <div style="height: 100%; width: 100%;">
+        ${this.iframeEnabled
+          ? html`
+              <iframe
+                allow="geolocation; microphone; camera; midi; encrypted-media"
+                alt="Embedded glitch ${this.glitch}"
+                src="${this.src}"
+                style="height: 100%; width: 100%; border: 0;"
+              >
+              </iframe>
+            `
+          : ""}
+      </div>
     `;
+    /* eslint-enable indent */
   }
 }
 
