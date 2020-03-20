@@ -14,10 +14,6 @@ import "./_styles.scss";
 class Subscribe extends BaseElement {
   constructor() {
     super();
-
-    this.form = this.querySelector("form");
-    this.subscribeError = this.querySelector("div#w-subscribe__error");
-    this.subscribeMessage = this.querySelector("p#w-subscribe__message");
     this.checkboxes = ["WebDevNewsletter", "collects-pii-spii-checkbox"];
     this.needsDoubleOptIn = [
       "AT: Austria",
@@ -27,11 +23,23 @@ class Subscribe extends BaseElement {
       "NO: Norway",
     ];
     this.robotName = "is-it-just-me-or-was-this-form-filled-out-by-a-robot";
-    this.submissionUrl = this.form.action;
     this.processing = false;
     this.submitted = false;
+    this.onSubmit = this.onSubmit.bind(this);
+  }
 
-    this.form.addEventListener("submit", this.onSubmit.bind(this));
+  connectedCallback() {
+    super.connectedCallback();
+    this.form = this.querySelector(".w-subscribe__form");
+    this.subscribeError = this.querySelector(".w-subscribe__error");
+    this.subscribeMessage = this.querySelector(".w-subscribe__message");
+    this.submissionUrl = this.form.action;
+    this.form.addEventListener("submit", this.onSubmit);
+  }
+
+  detachedCallback() {
+    super.detachedCallback();
+    this.form.removeEventListener("submit", this.onSubmit);
   }
 
   /**
@@ -55,11 +63,11 @@ class Subscribe extends BaseElement {
   }
 
   onError(errors) {
-    this.subscribeError.innerHTML = "";
+    this.subscribeError.textContent = "";
     if (errors) {
       Object.values(errors).forEach((e) => {
         const pTag = document.createElement("p");
-        pTag.innerText = typeof e === "string" ? e : e.join(" ");
+        pTag.textContent = typeof e === "string" ? e : e.join(" ");
         this.subscribeError.appendChild(pTag);
       });
     }
@@ -67,42 +75,44 @@ class Subscribe extends BaseElement {
 
   onSubmit(e) {
     e.preventDefault();
-    if (this.processing === false && this.submitted === false) {
-      this.processing = true;
-      const form = new FormData(e.target);
-      const formIsRobot = form.get(this.robotName).length !== 0;
-
-      if (!formIsRobot) {
-        const cleanedForm = this.cleanForm(form);
-
-        this.postForm(cleanedForm)
-          .then((response) => {
-            if (response && response.result === "accepted") {
-              this.onSuccess();
-            } else if (response && response.errors) {
-              this.onError(response.errors);
-            } else {
-              this.onError({any: ["Could not submit, please try again."]});
-            }
-          })
-          .catch(() =>
-            this.onError({any: ["Could not submit, please try again."]}),
-          )
-          .finally(() => (this.processing = false));
-      } else {
-        this.onSuccess();
-      }
+    if (this.processing || this.submitted) {
+      return false;
     }
+    this.processing = true;
+    const form = new FormData(e.target);
+    const formIsRobot = form.get(this.robotName).length !== 0;
 
-    return false;
+    if (formIsRobot) {
+      this.onSuccess();
+      return false;
+    }
+    const cleanedForm = this.cleanForm(form);
+
+    this.postForm(cleanedForm)
+      .then((response) => {
+        if (response && response.result === "accepted") {
+          this.onSuccess();
+        } else if (response && response.errors) {
+          this.onError(response.errors);
+        } else {
+          this.onError({any: ["Could not submit, please try again."]});
+        }
+      })
+      .catch(() => this.onError({any: ["Could not submit, please try again."]}))
+      .finally(() => (this.processing = false));
   }
 
   onSuccess() {
     this.submitted = true;
-    this.subscribeError.innerHTML = "";
-    this.subscribeMessage.innerText = "Thank you! You're all signed up.";
-    this.form.removeEventListener("submit", this.onSubmit.bind(this));
+    this.subscribeError.textContent = "";
+    this.subscribeMessage.textContent = "Thank you! You're all signed up.";
+    this.form.removeEventListener("submit", this.onSubmit);
     this.form.parentElement.removeChild(this.form);
+    ga("send", "event", {
+      eventCategory: "web.dev",
+      eventAction: "submit",
+      eventLabel: "subscribe, newsletter",
+    });
   }
 }
 

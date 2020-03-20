@@ -2,25 +2,29 @@
   <div class="w-subscribe">
     <div>
       <h1>Become a better web developer.</h1>
-      <p id="w-subscribe__message">Stay up to date with the latest about web platform.</p>
+      <p class="w-subscribe__message">Stay up to date with the latest about web platform.</p>
     </div>
     <form class="w-subscribe__form" action="{{ site.subscribeForm }}" method="post">
       <div class="w-subscribe__fields">
         <div class="w-subscribe__field">
+          <label class="w-visually-hidden" for="sub-firstname">First name</label>
           <input class="w-subscribe__input" id="sub-firstname" name="FirstName" placeholder="First Name" required
             type="text" />
         </div>
         <div class="w-subscribe__field">
+          <label class="w-visually-hidden" for="sub-lastname">Last name</label>
           <input class="w-subscribe__input" id="sub-lastname" name="LastName" placeholder="Last Name" required
             type="text" />
         </div>
       </div>
       <div class="w-subscribe__field">
+        <label class="w-visually-hidden" for="sub-email">Your Email</label>
         <input class="w-subscribe__input" id="sub-email" name="EmailAddress" placeholder="Your Email" required
           type="email" />
       </div>
       <div class="w-subscribe__field">
         <div class="w-subscribe__border">
+          <label class="w-visually-hidden" for="sub-country">Country</label>
           <select class="w-subscribe__select" id="sub-country" name="Country" required>
             {% for country in countries %}
               {% if country[1] === "United States" %}
@@ -49,9 +53,11 @@
           </span>
         </label>
       </div>
-      <div class="w-subscribe__field-hidden">
-        <input type="text" name="is-it-just-me-or-was-this-form-filled-out-by-a-robot" tabindex="-1" />
-        <select name="LanguagePreference" required tabindex="-1">
+      <div class="w-visually-hidden">
+        <label for="sub-is-it-just-me-or-was-this-form-filled-out-by-a-robot">Congrats on finding this field, I'd recommend you not filling it out though...</label>
+        <input type="text" id="sub-is-it-just-me-or-was-this-form-filled-out-by-a-robot" name="is-it-just-me-or-was-this-form-filled-out-by-a-robot" tabindex="-1" />
+        <label for="sub-language">Language</label>
+        <select id="sub-language" name="LanguagePreference" required tabindex="-1">
           <option selected value="en-US">en-US</option>
         </select>
       </div>
@@ -61,6 +67,6 @@
         </button>
       </div>
     </form>
-    <div id="w-subscribe__error"></div>
+    <div class="w-subscribe__error"></div>
   </div>
 </web-subscribe>

@@ -20,7 +20,7 @@
   margin-right: auto;
 }
 
-#w-subscribe__error {
+.w-subscribe__error {
   color: $WARNING_COLOR;
 }
 
@@ -31,13 +31,6 @@
   margin-right: auto;
   margin-top: 8px;
   text-align: left;
-}
-
-.w-subscribe__field-hidden {
-  left: -100vw;
-  position: absolute;
-  top: -100vh;
-  z-index: -100;
 }
 
 .w-subscribe__form {
