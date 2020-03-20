@@ -29,5 +29,5 @@ Lighthouse flags duplicate IDs found in a page:
 
 ## Resources
 
-- [Source code for **`[id]` attributes on the page are not unique** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/duplicate-id.js)
+- [Source code for **`[id]` attributes on the page are not unique** audit](https://github.com/GoogleChrome/lighthouse/blob/4e11bd297010a3957a6f76a8e25abddc7ed5a716/lighthouse-core/audits/accessibility/duplicate-id.js)
 - [ID attribute values must be unique (Deque University)](https://dequeuniversity.com/rules/axe/3.3/duplicate-id)

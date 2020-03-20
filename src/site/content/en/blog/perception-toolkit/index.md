@@ -42,7 +42,7 @@ UI.
 I'll show you enough of this to give you a taste of how it works. For a complete
 explanation, check out the [Getting
 Started](https://perceptiontoolkit.dev/getting-started/) guide, the [toolkit
-reference](https://perceptiontoolkit.dev/documentation/), the [I/O Sandbox demo](https://io.perceptiontoolkit.dev/) and the [sample demos](https://github.com/GoogleChromeLabs/perception-toolkit/tree/restructure_demo/demo).
+reference](https://perceptiontoolkit.dev/documentation/), the [I/O Sandbox demo](https://io.perceptiontoolkit.dev/) and the [sample demos](https://github.com/GoogleChromeLabs/perception-toolkit/tree/master/demo).
 
 ## Structured data
 
@@ -227,7 +227,7 @@ Toolkit](https://github.com/GoogleChromeLabs/perception-toolkit). Hopefully it g
 you a sense of how easy it is to add visual searching to a website. Learn more
 with the [Getting Started](https://perceptiontoolkit.dev/getting-started/) guide
 and the [sample
-demos](https://github.com/GoogleChromeLabs/perception-toolkit/tree/restructure_demo/demo).
+demos](https://github.com/GoogleChromeLabs/perception-toolkit/tree/master/demo).
 Dig in to the [toolkit
 documentation](https://perceptiontoolkit.dev/documentation/) to learn what it
 can do.

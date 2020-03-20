@@ -72,8 +72,8 @@ If you're familiar with early versions of the WebXR Device API, you should
 glance over all of this material. There have been changes.
 
 The code in this article is based on the Immersive Web Working Group's barebones
-sample ([demo](https://immersive-web.github.io/webxr-samples/xr-barebones.html),
-[source](https://github.com/immersive-web/webxr-samples/blob/master/xr-barebones.html)),
+sample ([demo](https://immersive-web.github.io/webxr-samples/vr-barebones.html),
+[source](https://github.com/immersive-web/webxr-samples/blob/master/vr-barebones.html)),
 but is edited for clarity and simplicity.
 
 Part of creating the WebXR specification has been fleshing out security and
