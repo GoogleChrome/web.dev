@@ -28,6 +28,7 @@
     "stage:personal": "ELEVENTY_ENV=dev npm run build && gcloud app deploy --project web-dev-staging --quiet --no-promote",
     "deploy": "ELEVENTY_ENV=prod npm run build && node index-algolia.js && gcloud app deploy --project web-dev-production-1 --quiet",
     "snapshots": "percy exec -- node tools/percy/snapshots.js",
+    "dev:snapshots": "node tools/percy/snapshots-dev.js",
     "test:snapshots": "ELEVENTY_ENV=test npm-run-all --serial build --parallel --race start snapshots"
   },
   "license": "Apache-2.0",
