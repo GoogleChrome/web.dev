@@ -37,9 +37,9 @@ For example:
 ```html
 <dl>
   <dt>Trail shoe</dt>
-  <dd>Extra grip for uneven, natural survaces, such as forest trails.</dd>
+    <dd>Extra grip for uneven, natural survaces, such as forest trails.</dd>
   <dt>Road shoe</dt>
-  <dd>Extra cushioning for hard surfaces, such as sidewalks and roads.</dd>
+    <dd>Extra cushioning for hard surfaces, such as sidewalks and roads.</dd>
 </dl>
 ```
 
