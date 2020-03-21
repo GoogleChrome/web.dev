@@ -1,6 +1,9 @@
 const PercyScript = require("@percy/script");
 const puppeteer = require('puppeteer');  // for types only
 
+// Puppeteer is imported so that Code and friends can provide types.
+const puppeteer = require('puppeteer');  // eslint-disable-line no-unused-vars
+
 const isDev = Boolean(process.env.WEBDEV_PERCY_DEV)  // set by snapshots-dev.js
 
 const pagesToTest = [
