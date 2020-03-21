@@ -5,7 +5,7 @@ description: |
   Learn how to improve the accessibility of audio on your web page by providing
   closed captions.
 date: 2019-05-02
-updated: 2019-09-19
+updated: 2020-03-20
 web_lighthouse:
   - audio-caption
 ---
@@ -32,7 +32,7 @@ See glitch: [meggin-accessibility-assets](https://glitch.com/edit/#!/meggin-acce
 
 ## How to add an audio track
 
-Add at least one track element to the `audio` element
+Add at least one `<track>` element to the `<audio>` element
 with attribute `kind="captions"`:
 
 ```html
