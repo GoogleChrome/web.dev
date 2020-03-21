@@ -5,7 +5,7 @@ description: |
   Learn how to structure definition lists on your web page so that
   assistive technologies can interpret them.
 date: 2019-05-02
-updated: 2019-09-19
+updated: 2020-03-20
 web_lighthouse:
   - definition-list
 ---
@@ -37,9 +37,9 @@ For example:
 ```html
 <dl>
   <dt>Trail shoe</dt>
-    <dd>Extra grip for uneven, natural survaces, such as forest trails.</dd>
+  <dd>Extra grip for uneven, natural survaces, such as forest trails.</dd>
   <dt>Road shoe</dt>
-    <dd>Extra cushioning for hard surfaces, such as sidewalks and roads.</dd>
+  <dd>Extra cushioning for hard surfaces, such as sidewalks and roads.</dd>
 </dl>
 ```
 
