@@ -5,14 +5,14 @@ description: |
   Learn how to make your web page more accessible by making sure that browser
   zoom isn't disabled.
 date: 2019-05-02
-updated: 2019-09-19
+updated: 2020-03-20
 web_lighthouse:
   - meta-viewport
 ---
 
 The `user-scalable="no"` parameter for the `<meta name="viewport">` element
 disables browser zoom on a web page.
-The `maximum-scale parameter` limits the amount the user can zoom.
+The `maximum-scale` parameter limits the amount the user can zoom.
 Both are problematic for users with low vision who rely on browser zoom
 to see the contents of a web page.
 
