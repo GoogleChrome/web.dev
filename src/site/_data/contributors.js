@@ -1756,20 +1756,20 @@ const contributors = {
 
 const processedContributors = {};
 
-Object.keys(contributors).forEach(($key) => {
-  const contributorData = contributors[$key];
+Object.keys(contributors).forEach((key) => {
+  const contributorData = contributors[key];
   const title = contributorData.name.given + " " + contributorData.name.family;
   const description =
     contributorData.description && contributorData.description.en
       ? contributorData.description.en
       : `Our latest news, updates, and stories by ${title}.`;
 
-  processedContributors[$key] = {
+  processedContributors[key] = {
     ...contributorData,
     description,
-    href: `/authors/${$key}/`,
+    href: `/authors/${key}/`,
     title,
-    $key,
+    key,
   };
 });
 

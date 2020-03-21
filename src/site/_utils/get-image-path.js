@@ -21,13 +21,14 @@ const site = require("../_data/site");
  * Takes a path to an image and converts it to an image CDN path if we're in
  * a production environment.
  * @param {!string} src A path to an image asset.
+ * If the url is prefixed with a `~` the `pageUrl` will be ignored.
  * @param {!string} pageUrl The url for the current page.
  * @return {string} An image path. May be converted to an image CDN path if
  * it's a production environment.
  */
 module.exports = function getImagePath(src, pageUrl) {
   let imagePath = (src || "").startsWith("~/")
-    ? src.replace("~/", "/")
+    ? src.replace(/^~\//, "/")
     : path.join(pageUrl, src);
   if (site.env === "prod") {
     imagePath = new URL(imagePath, site.imageCdn).href;

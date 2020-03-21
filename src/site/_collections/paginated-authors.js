@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const fs = require("fs");
+// const fs = require("fs");
 const contributors = require("../_data/contributors");
 const livePosts = require("../_filters/live-posts");
 const addPagination = require("../_utils/add-pagination");
@@ -38,9 +38,9 @@ module.exports = (collections) => {
     authors.forEach((author) => (authorsWithPosts[author] = true));
   });
 
-  const authors = Object.values(contributors).filter(
-    (contributor) => authorsWithPosts[contributor.$key],
-  );
+  const authors = Object.values(contributors)
+    .filter((contributor) => authorsWithPosts[contributor.key])
+    .sort((a, b) => a.title.localeCompare(b.title));
 
   const elements = authors.map((author) => {
     author.url = `/en${author.href}`;
@@ -50,22 +50,17 @@ module.exports = (collections) => {
       subhead: author.description,
     };
 
-    if (
-      fs.existsSync(`src/site/content/en/images/authors/${author.$key}@3x.jpg`)
-    ) {
-      author.data.hero = `~/images/authors/${author.$key}@3x.jpg`;
-      author.data.alt = author.title;
-    } else if (
-      fs.existsSync(`src/site/content/en/images/authors/${author.$key}@2x.jpg`)
-    ) {
-      author.data.hero = `~/images/authors/${author.$key}@2x.jpg`;
-      author.data.alt = author.title;
-    } else if (
-      fs.existsSync(`src/site/content/en/images/authors/${author.$key}.jpg`)
-    ) {
-      author.data.hero = `~/images/authors/${author.$key}.jpg`;
-      author.data.alt = author.title;
-    }
+    // for (const size of ["@3x", "@2x", ""]) {
+    //   if (
+    //     fs.existsSync(
+    //       `src/site/content/en/images/authors/${author.key}${size}.jpg`,
+    //     )
+    //   ) {
+    //     author.data.hero = `~/images/authors/${author.key}${size}.jpg`;
+    //     author.data.alt = author.title;
+    //     break;
+    //   }
+    // }
 
     return author;
   });

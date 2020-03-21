@@ -39,7 +39,7 @@ module.exports = (collections) => {
   });
 
   const tags = Object.values(postTags).filter(
-    (postTag) => tagsWithPosts[postTag.$key],
+    (postTag) => tagsWithPosts[postTag.key],
   );
 
   const elements = tags.map((tag) => {

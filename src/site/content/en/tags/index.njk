@@ -2,10 +2,8 @@
 layout: layout
 title: Tags
 permalink: /en/{{ paged.href }}{% if paged.index > 0 %}{{ paged.index + 1 }}/{% endif %}index.html
-override:tags: []
 description: Our latest news, updates, and stories for developers
 noindex: true
-date: 2020-03-18
 renderData:
   title: "{{ paged.title or title }}"
   description: "{{ paged.description or description }}"
@@ -23,7 +21,7 @@ pagination:
   <div class="w-layout-container w-pb--non">
     <header class="w-page-header">
       <h1 class="w-page-header__headline">{{ renderData.title }}</h1>
-      <p class="w-page-header__copy">{{ renderData.description | safe }}</p>
+      <p class="w-page-header__copy">{{ renderData.description }}</p>
     </header>
   </div>
   {% include 'partials/paged.njk' %}
