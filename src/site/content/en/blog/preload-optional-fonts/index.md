@@ -74,8 +74,8 @@ font is rendered and used on the page.
 Chrome re-renders the page **twice** in both instances, regardless of whether the fallback font
 is used or if the custom font finishes loading in time. This causes a slight flicker of invisible
 text and, in cases when a new font is rendered, layout jank that moves some of the page's content.
-This occurs easily if the font is stored in the browser's disk cache and can load well before the
-block period is complete (approximately 10ms).
+This occurs even if the font is stored in the browser's disk cache and can load well before the
+block period is complete.
 
 Optimizations have landed In Chrome 82 to entirely remove the first render cycle for optional fonts
 that are preloaded with [`<link rel="preload'>`](https://web.dev/codelab-preload-web-fonts/).
