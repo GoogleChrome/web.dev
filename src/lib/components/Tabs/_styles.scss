@@ -28,7 +28,7 @@ web-tabs {
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
-    width: calc(100% + 48px);
+    width: 100%;
   }
 
   &[overflow] .web-tabs__tablist {
