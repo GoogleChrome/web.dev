@@ -64,4 +64,6 @@ module.exports = {
       appId: "1:950800540990:web:5bfeb5de58f8ce7ceef86f",
     },
   },
+  gitlocalize: "https://gitlocalize.com/repo/3847/",
+  defaultLocale: "en",
 };

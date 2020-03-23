@@ -61,7 +61,7 @@ ways. For example, consider what happens if you define `--my-color` with a URL.
 
 ```css
 .thing {
-  --my-color: url(‘not-a-color’);
+  --my-color: url('not-a-color');
   color: var(--my-color);
 }
 ```

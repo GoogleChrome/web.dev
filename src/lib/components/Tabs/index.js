@@ -1,6 +1,7 @@
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
 import {checkOverflow} from "../../utils/check-overflow";
+import {generateIdSalt} from "../../utils/generate-salt";
 import "./_styles.scss";
 
 /**
@@ -19,20 +20,19 @@ class Tabs extends BaseElement {
 
   constructor() {
     super();
-    this.activeTab_ = 0;
+    this.activeTab = 0;
     this.overflow = false;
     this.prerenderedChildren = null;
     this.tabs = null;
-    this.idSalt = BaseElement.generateIdSalt("web-tab-");
+    this.idSalt = generateIdSalt("web-tab-");
 
     this.onResize = this.onResize.bind(this);
-    this.changeTab = this.changeTab.bind(this);
+    this._changeTab = this._changeTab.bind(this);
     this.focusTab = this.focusTab.bind(this);
+    this.previousTab = this.previousTab.bind(this);
     this.nextTab = this.nextTab.bind(this);
-    this.focusNextItem = this.focusNextItem.bind(this);
-    this.focusPreviousItem = this.focusPreviousItem.bind(this);
-    this.focusFirstItem = this.focusFirstItem.bind(this);
-    this.focusLastItem = this.focusLastItem.bind(this);
+    this.firstTab = this.firstTab.bind(this);
+    this.lastTab = this.lastTab.bind(this);
   }
 
   render() {
@@ -44,7 +44,7 @@ class Tabs extends BaseElement {
       for (const child of this.children) {
         // Set id and aria-labelledby attributes for each panel for a11y.
         this.prerenderedChildren.push(this.panelTemplate(i, child));
-        // Get tab label from panel data-label attribute
+        // Get tab label from child data-label attribute
         // and render a tab for each panel.
         const tabLabel = child.getAttribute("data-label");
         this.tabs.push(this.tabTemplate(i, tabLabel));
@@ -79,8 +79,7 @@ class Tabs extends BaseElement {
 
     return html`
       <button
-        @click="${this.onClick}"
-        @focus="${this.onClick}"
+        @focus="${this.onFocus}"
         @keydown="${this.onKeydown}"
         class="web-tabs__tab gc-analytics-event"
         role="tab"
@@ -111,15 +110,17 @@ class Tabs extends BaseElement {
   }
 
   firstUpdated() {
-    this.onResize();
     this.activeTab = 0;
     this.classList.remove("unresolved");
+    this.onResize();
 
     // If Tabs component contains AssessmentQuestion components,
     // listen for requests to navigate to the next tab.
     const questions = this.querySelectorAll("web-question");
 
-    if (!questions) return;
+    if (!questions) {
+      return;
+    
     for (const question of questions) {
       question.addEventListener("request-nav-to-next", this.nextTab);
     }
@@ -135,68 +136,45 @@ class Tabs extends BaseElement {
     window.removeEventListener("resize", this.onResize);
   }
 
-  set activeTab(val) {
-    const oldVal = this.activeTab_;
-
-    this.activeTab_ = Math.floor(val);
-
-    this.changeTab();
-    this.requestUpdate("activeTab", oldVal);
-  }
-
-  get activeTab() {
-    return this.activeTab_;
+  updated(changedProperties) {
+    if (changedProperties.has("activeTab")) {
+      this._changeTab();
+    }
   }
 
   // Update state of tabs and associated panels.
-  changeTab() {
+  _changeTab() {
     const tabs = this.querySelectorAll(".web-tabs__tab");
     const panels = this.querySelectorAll(".web-tabs__panel");
     const activeTab = tabs[this.activeTab];
+    const activePanel = panels[this.activeTab];
 
-    if (!panels[this.activeTab]) return;
+    if (activeTab) {
+      for (const tab of tabs) {
+        tab.setAttribute("aria-selected", "false");
+        tab.setAttribute("tabindex", "-1");
+      }
 
-    for (const tab of tabs) {
-      tab.setAttribute("aria-selected", "false");
-      tab.setAttribute("tabindex", "-1");
+      activeTab.setAttribute("aria-selected", "true");
+      activeTab.removeAttribute("tabindex");
     }
 
-    activeTab.setAttribute("aria-selected", "true");
-    activeTab.removeAttribute("tabindex");
+    if (activePanel) {
+      for (const panel of panels) {
+        panel.hidden = true;
+      }
 
-    for (const panel of panels) {
-      panel.hidden = true;
+      activePanel.hidden = false;
     }
-
-    panels[this.activeTab].hidden = false;
-  }
-
-  // Focus the tab at the specified index.
-  focusTab(idx) {
-    const tabs = this.querySelectorAll(".web-tabs__tab");
-
-    tabs[idx].focus();
-  }
-
-  // Helper function to allow child components to request
-  // navigation to the next tab.
-  nextTab() {
-    this.focusTab(this.activeTab + 1);
   }
 
   onResize() {
     const tabs = this.querySelector(".web-tabs__tablist");
 
-    const hasOverflow = checkOverflow(tabs, "width");
-
-    if (hasOverflow) {
-      this.overflow = true;
-    } else {
-      this.overflow = false;
-    }
+    this.overflow = checkOverflow(tabs, "width");
   }
 
-  onClick(e) {
+  onFocus(e) {
     const tab = e.currentTarget;
     const tabs = this.querySelectorAll(".web-tabs__tab");
     const index = Array.from(tabs).indexOf(tab);
@@ -212,6 +190,7 @@ class Tabs extends BaseElement {
   }
 
   onKeydown(e) {
+    const tabs = this.querySelectorAll(".web-tabs__tab");
     const KEYCODE = {
       END: 35,
       HOME: 36,
@@ -222,55 +201,62 @@ class Tabs extends BaseElement {
     switch (e.keyCode) {
       case KEYCODE.RIGHT:
         e.preventDefault();
-        this.focusNextItem();
+        this.nextTab();
         break;
       case KEYCODE.LEFT:
         e.preventDefault();
-        this.focusPreviousItem();
+        this.previousTab();
         break;
       case KEYCODE.HOME:
         e.preventDefault();
-        this.focusFirstItem();
+        this.firstTab();
         break;
       case KEYCODE.END:
         e.preventDefault();
-        this.focusLastItem();
+        this.lastTab();
         break;
     }
+    tabs[this.activeTab].focus();
   }
 
-  // Figure out if the current element has a next sibling.
-  // If so, focus it. If not, focus the first sibling.
-  focusNextItem() {
-    const item = document.activeElement;
-    if (item.nextElementSibling) {
-      item.nextElementSibling.focus();
+  // Helper method to allow other components to focus an arbitrary tab.
+  focusTab(index) {
+    const tabs = this.querySelectorAll(".web-tabs__tab");
+
+    if (!tabs[index]) {
+      throw new RangeError("There is no tab at the specified index.");
+    }
+    this.activeTab = index;
+  }
+
+  // If previous tab exists, make it active. If not, make last tab active.
+  previousTab() {
+    const tabs = this.querySelectorAll(".web-tabs__tab");
+
+    if (tabs[this.activeTab - 1]) {
+      this.activeTab = this.activeTab - 1;
     } else {
-      this.focusFirstItem();
+      this.activeTab = tabs.length - 1;
     }
   }
 
-  // Figure out if the current element has a previous sibling.
-  // If so, focus it. If not, focus the last sibling.
-  focusPreviousItem() {
-    const item = document.activeElement;
-    if (item.previousElementSibling) {
-      item.previousElementSibling.focus();
-    } else {
-      this.focusLastItem();
-    }
+  // If next tab exists, make it active. If not, make first tab active.
+  nextTab() {
+    const tabs = this.querySelectorAll(".web-tabs__tab");
+
+    this.activeTab = (this.activeTab + 1) % tabs.length || 0;
   }
 
-  // Focus first element in set of siblings.
-  focusFirstItem() {
-    const item = document.activeElement;
-    item.parentElement.firstElementChild.focus();
+  // Make first tab active.
+  firstTab() {
+    this.activeTab = 0;
   }
 
-  // Focus last element in set of siblings.
-  focusLastItem() {
-    const item = document.activeElement;
-    item.parentElement.lastElementChild.focus();
+  // Make last tab active.
+  lastTab() {
+    const tabs = this.querySelectorAll(".web-tabs__tab");
+
+    this.activeTab = tabs.length - 1;
   }
 }
 

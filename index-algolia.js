@@ -47,12 +47,14 @@ async function index() {
 
   // TODO(samthor): This is from https://www.algolia.com/doc/api-reference/api-methods/replace-all-objects/#examples,
   // are there more things that should be copied?
-  const toCopy = ["settings", "synonyms", "rules"];
-  await client.copyIndex(primaryIndex.indexName, deployIndex.indexName, toCopy);
+  const scope = ["settings", "synonyms", "rules"];
+  await client.copyIndex(primaryIndex.indexName, deployIndex.indexName, {
+    scope,
+  });
 
   // TODO(samthor): Batch uploads so that we don't send more than 10mb.
   // As of September 2019, the JSON itself is only ~70k. \shrug/
-  await deployIndex.addObjects(indexed);
+  await deployIndex.saveObjects(indexed);
   log(`Indexed, replacing existing index ${primaryIndex.indexName}`);
 
   // Move our temporary deploy index on-top of the primary index, atomically.

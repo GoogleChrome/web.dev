@@ -17,13 +17,6 @@ tags:
   - modules
 ---
 
-<style>
-  .wm-filename {
-    margin-bottom: 0;
-    opacity: 0.7;
-  }
-</style>
-
 JavaScript is single-threaded, which means it can only perform one operation at a time. This is
 intuitive and works well for lots of cases on the web, but can become problematic when we need to
 do heavy lifting tasks like data processing, parsing, computation, or analysis. As more and more
@@ -41,7 +34,7 @@ expensive operations on one or more background threads.
 Here's a typical example of worker usage, where a worker script listens for messages from the main
 thread and responds by sending back messages of its own:
 
-<p class="wm-filename">page.js:</p>
+{% Label %}page.js:{% endLabel %}
 
 ```js
 const worker = new Worker('worker.js');
@@ -51,7 +44,7 @@ worker.addEventListener(e => {
 worker.postMessage('hello');
 ```
 
-<p class="wm-filename">worker.js:</p>
+{% Label %}worker.js:{% endLabel %}
 
 ```js
 addEventListener('message', e => {
@@ -85,7 +78,7 @@ pauses execution of the worker in order to fetch and evaluate each script. It al
 in the global scope like a classic `<script>` tag, meaning the variables in one script can be
 overwritten by the variables in another.
 
-<p class="wm-filename">worker.js:</p>
+{% Label %}worker.js:{% endLabel %}
 
 ```js
 importScripts('greet.js');
@@ -95,7 +88,7 @@ addEventListener('message', e => {
 });
 ```
 
-<p class="wm-filename">greet.js:</p>
+{% Label %}greet.js:{% endLabel %}
 
 ```js
 // global to the whole worker
@@ -138,7 +131,7 @@ import](https://v8.dev/features/dynamic-import) for lazy-loading code without bl
 the worker. Dynamic import is much more explicit than using `importScripts()` to load dependencies,
 since the imported module's exports are returned rather than relying on global variables.
 
-<p class="wm-filename">worker.js:</p>
+{% Label %}worker.js:{% endLabel %}
 
 ```js
 import { sayHello } from './greet.js';
@@ -147,7 +140,7 @@ addEventListener('message', e => {
 });
 ```
 
-<p class="wm-filename">greet.js:</p>
+{% Label %}greet.js:{% endLabel %}
 
 ```js
 import greetings from './data.js';
@@ -207,6 +200,26 @@ to avoid worker instantiation having to wait to download the worker script. Howe
   </iframe>
 </div>
 
+## What about shared workers?
+
+[Shared workers](https://developer.mozilla.org/docs/Web/API/SharedWorker/SharedWorker) have
+been updated with support for JavaScript modules as of Chrome 82. Like dedicated workers,
+constructing a shared worker with the `{type:"module"}` option now loads the worker script as a
+module rather than a classic script:
+
+```js
+const worker = new SharedWorker('/worker.js', {
+  type: 'module'
+});
+```
+
+Prior to support of JavaScript modules, the `SharedWorker()` constructor expected only a
+URL and an optional `name` argument. This will continue to work for classic shared worker usage; however
+creating module shared workers requires using the new `options` argument. The [available
+options](https://html.spec.whatwg.org/multipage/workers.html#shared-workers-and-the-sharedworker-interface)
+are the same as those for a dedicated worker, including the `name` option that supersedes
+the previous `name` argument.
+
 ## What about service worker?
 
 The service worker specification [has already been
@@ -216,7 +229,7 @@ however this change has yet to be implemented in browsers. Once that happens, it
 to instantiate a service worker using a JavaScript module using the following code:
 
 ```js
-navigator.serviceWorker.register("/sw.js", {
+navigator.serviceWorker.register('/sw.js', {
   type: 'module'
 });
 ```
@@ -235,4 +248,5 @@ checking for updates.
 
 *   [Feature status, browser consensus and standardization](https://www.chromestatus.com/feature/5761300827209728)
 *   [Original module workers spec addition](https://github.com/whatwg/html/pull/608)
+*   [JavaScript modules for shared workers](https://www.chromestatus.com/feature/5169440012369920)
 *   JavaScript modules for service workers: [Chrome implementation status](https://bugs.chromium.org/p/chromium/issues/detail?id=824647)

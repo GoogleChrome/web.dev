@@ -32,7 +32,7 @@ else!
 Most of the time these kinds of experiences are just annoying, but in some
 cases, they can cause real damage.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <video autoplay controls loop muted
     class="w-screenshot"
     poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png"
@@ -310,9 +310,9 @@ document.addEventListener('visibilitychange', () => {
 ## What is a good CLS score?
 
 To provide a good user experience, sites should strive to have a Cumulative
-Layout Shift of less than **0.1**. To ensure you're hitting this target for
-most of your users, a good threshold to measure is the **75th percentile** of
-page loads on mobile devices.
+Layout Shift of less than **0.1**. To ensure you're hitting this target for most
+of your users, a good threshold to measure is the **75th percentile** of page
+loads, segmented across mobile and desktop devices.
 
 ## How to improve CLS
 

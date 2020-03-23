@@ -6,7 +6,7 @@ authors:
   - jeffposnick
   - joemedley
 date: 2019-11-10
-updated: 2019-12-18
+updated: 2020-03-13
 hero: hero.jpg
 alt: Colorful airplanes flying in sync
 origin_trial:
@@ -91,7 +91,7 @@ In Progress
 4. Origin trial
 </td>
 <td markdown="block">
-<a href="https://developers.chrome.com/origintrials/#/view_trial/4048736065006075905">Running from Chrome 77 to Chrome 80</a>
+Complete
 </td>
 </tr>
 <tr>
@@ -113,8 +113,7 @@ Before using it, make sure that:
 * You're using Chrome 80 or later.
 * You
   [install](https://developers.google.com/web/fundamentals/app-install-banners/)
-  the web app before enabling periodic background sync. (The demo app's
-  author already took the step of signing up for the origin trial.)
+  the web app before enabling periodic background sync.
 
 ## Concepts and usage
 
@@ -321,7 +320,7 @@ Sync API.
 
 ### Updating content
 
-The following example uses periodic background sync to download and cache up-to-date articles for a news site or blog. Notice the tag name, which indicates the kind of sync this is (`'update-articles'`). The call to `updatearticles()` is wrapped in `event.waitUntil()` so that the service worker won't terminate before the articles are downloaded and stored.
+The following example uses periodic background sync to download and cache up-to-date articles for a news site or blog. Notice the tag name, which indicates the kind of sync this is (`'update-articles'`). The call to `updateArticles()` is wrapped in `event.waitUntil()` so that the service worker won't terminate before the articles are downloaded and stored.
 
 ```js/7
 async function updateArticles() {
@@ -336,6 +335,12 @@ self.addEventListener('periodicsync', (event) => {
 });
 ```
 
+### Adding periodic background sync to an existing web app
+
+[This set of changes](https://github.com/GoogleChromeLabs/so-pwa/pull/11) were needed to add
+periodic background sync to an [existing PWA](https://so-pwa.firebaseapp.com/). This example includes a number of helpful logging statements that describe the
+state of periodic background sync in the web app.
+
 ## Debugging
 
 It can be a challenge to get and end-to-end view of periodic background sync
@@ -345,9 +350,7 @@ your web app's behavior. Fortunately, you can find all of that information
 through an experimental feature in Chrome DevTools.
 
 {% Aside %}
-  Periodic background sync debugging is currently disabled by default. See [Enabling the DevTools
-  interface](https://developers.google.com/web/updates/2019/08/periodic-background-sync#enabling_the_devtools_interface)
-  for the steps needed to enable it during the origin trial.
+  Periodic background sync debugging is enabled in Chrome 81 and later.
 {% endAside %}
 
 ### Recording local activity
@@ -357,7 +360,7 @@ in the periodic background sync lifecycle: registering for sync, performing a
 background sync, and unregistering. To obtain information about these events,
 click **Start recording**.
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="1-record.png" alt="The record button in DevTools" style="max-width: 75%">
   <figcaption class="w-figcaption">
     The record button in DevTools
@@ -367,7 +370,7 @@ click **Start recording**.
 While recording, entries will appear in DevTools corresponding to events, with
 context and metadata logged for each.
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="2-record-result.png" alt="An example of recorded periodic background sync data"
        style="max-width: 75%">
   <figcaption class="w-figcaption">
@@ -390,13 +393,10 @@ Chrome DevTools. The **Periodic Sync** field allows you to provide a tag for the
 event to use, and to trigger it as many times as you'd like.
 
 {% Aside %}
-  Manually triggering a `periodicsync` event requires Chrome 78 or later.
-  You'll need to follow the same [Enabling the DevTools
-  interface](https://developers.google.com/web/updates/2019/08/periodic-background-sync#enabling_the_devtools_interface)
-  steps to turn it on.
+  Manually triggering a `periodicsync` event requires Chrome 81 or later.
 {% endAside %}
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="3-sw-panel.png"
        alt="The 'Service Workers' section of the Application panel shows a 'Periodic Sync'
             text field and button." style="max-width: 90%">
@@ -404,10 +404,10 @@ event to use, and to trigger it as many times as you'd like.
 
 ## Using the DevTools interface
 
-Starting in Chrome 80, you'll see a **Periodic Background Sync** section in the
+Starting in Chrome 81, you'll see a **Periodic Background Sync** section in the
 DevTools *Application* panel.
 
-   <figure class="w-figure w-figure--center">
+   <figure class="w-figure">
      <img class="w-screenshot" src="7-panel.png"
           alt="The Application panel showing the Periodic Background Sync section"
           style="max-width: 75%">

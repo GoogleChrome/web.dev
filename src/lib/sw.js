@@ -10,9 +10,17 @@ import {matchPrecache, precacheAndRoute} from "workbox-precaching";
 import {cacheNames} from "workbox-core";
 import {matchSameOriginRegExp} from "./utils/sw-match.js";
 
+/**
+ * Configure default cache for standard web.dev files: the offline page, various images, etc.
+ *
+ * This must occur first, as we cache images that are also matched by runtime handlers below. See
+ * this workbox issue for updates: https://github.com/GoogleChrome/workbox/issues/2402
+ */
+precacheAndRoute(manifest);
+
 // Architecture revision of the Service Worker. If the previously saved revision doesn't match,
 // then this will cause clients to be aggressively claimed and reloaded on install/activate.
-// Used when the design of the SW changes dramatically, e.g. from DevSite to v2.
+// Used when the design of the SW changes dramatically.
 const serviceWorkerArchitecture = "v3";
 
 let replacingPreviousServiceWorker = false;
@@ -23,7 +31,6 @@ self.addEventListener("install", (event) => {
   if (self.registration.active) {
     replacingPreviousServiceWorker = true;
   }
-
   event.waitUntil(self.skipWaiting());
 });
 
@@ -36,37 +43,24 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("activate", (event) => {
   const p = Promise.resolve().then(async () => {
     const previousArchitecture = await idb.get("arch");
-    if (previousArchitecture === undefined && replacingPreviousServiceWorker) {
-      // We're replacing a Service Worker that didn't have architecture info. Force reload.
-    } else if (
-      !replacingPreviousServiceWorker ||
-      previousArchitecture === serviceWorkerArchitecture
-    ) {
-      // The architecture didn't change (or this is a brand new install), don't force a reload,
-      // upgrades will happen in due course.
-      return;
+    if (previousArchitecture === serviceWorkerArchitecture) {
+      return; // no arch change, don't force reload, upgrade will happen over time
     }
-    console.debug(
-      "web.dev SW upgrade from",
-      previousArchitecture,
-      "to arch",
-      serviceWorkerArchitecture,
-    );
+    await idb.set("arch", serviceWorkerArchitecture);
 
+    // If the architecture changed (including due to an initial install), claim our clients so they
+    // get the 'controllerchange' event and take over their network requests.
     await self.clients.claim();
 
-    // Reload all open pages (includeUncontrolled shouldn't be needed as we've _just_ claimed
-    // clients, but include it anyway for sanity).
-    const windowClients = await self.clients.matchAll({
-      includeUncontrolled: true,
-      type: "window",
-    });
-
-    // It's impossible to 'await' this navigation because this event would literally be blocking
-    // our fetch handlers from running. These navigates must be 'fire-and-forget'.
-    windowClients.map((client) => client.navigate(client.url));
-
-    await idb.set("arch", serviceWorkerArchitecture);
+    // If this is not a new install, and the architecture has changed, force an immediate reload.
+    // Installs from March 2020 will do this in the client scope (but we need this for safety).
+    if (replacingPreviousServiceWorker) {
+      const windowClients = await self.clients.matchAll({
+        includeUncontrolled: true,
+        type: "window",
+      });
+      windowClients.map((client) => client.navigate(client.url));
+    }
   });
   event.waitUntil(p);
 });
@@ -108,9 +102,6 @@ workboxRouting.registerRoute(
     ],
   }),
 );
-
-// Configure default cache for standard web.dev files: the offline page, various images etc.
-precacheAndRoute(manifest);
 
 /**
  * This is a special handler for requests without a trailing "/". These requests _should_ go to

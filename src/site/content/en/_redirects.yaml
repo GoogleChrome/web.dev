@@ -168,8 +168,16 @@ redirects:
 - from: /pwa
   to: /progressive-web-apps/
 
+- from: /pwa/
+  to: /progressive-web-apps/
+
 - from: /installable/
   to: /progressive-web-apps/#installable
 
 - from: /discover-installable/
   to: /progressive-web-apps/#installable
+
+# Redirect for spec name changes
+
+- from: /sms-receiver-api-announcement
+  to: /web-otp

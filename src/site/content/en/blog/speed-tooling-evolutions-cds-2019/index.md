@@ -61,14 +61,14 @@ A [task is considered long](/custom-metrics/#long-tasks-api) if it runs on the
 main thread for more than 50 milliseconds. Any millisecond over that is counted
 towards that task's blocking time. 
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="./tbt.png" alt="A diagram representing a 150 millisecond task which has 100 miliseconds of blocking time.">
 </figure>
 
 The Total Blocking Time for a page is the sum of the blocking times of all long
 tasks that occured between FCP and TTI. 
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="./tbt2.png" alt="A diagram representing a five tasks with 60 miliseconds of total blocking time out of 270 milliseconds of main thread time.">
 </figure>
 
@@ -84,7 +84,7 @@ quantifies how often users experience unexpected layout shifts. Unexpected
 movement of content can be very frustrating and this new metric helps you
 address that problem by measuring how often it's occurring for your users.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <video autoplay controls loop muted
     class="w-screenshot"
     poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png"
@@ -109,7 +109,7 @@ The new Lighthouse performance score formula will soon de-emphasize FMP and FCI
 and include the three new metrics—LCP, TBT, and CLS—as they better capture when
 a page feels usable. 
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="./performance-metrics.png"
        alt="In Lighthouse v6 First Contentful Paint, Speed Index, and Largest
             Contentful Paint are the main load performance metrics; Time To Interactive,
@@ -133,7 +133,7 @@ use to label a website "slow", 'moderate", or "fast" in field performance.
 "slow" and "fast" is now changed to "moderate" which is more fitting since this
 middle group was not related to a statistical average. {% endAside %}
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="./crux-data.png" alt="Two bar charts showing
   the distribution of slow, fast, and moderate speed for FCP and FID.">
 </figure>
@@ -175,7 +175,7 @@ PageSpeed Insights team has added a reanalyze prompt to PSI. For sites that are
 redirected to a new URL, you're prompted to rerun the report on the landing URL
 for a more complete picture of your actual performance.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="./psi-reanalyze.png" alt="PSI user interface
   showing the URL redirect and the 'Reanalyze' button">
 </figure>
@@ -190,14 +190,14 @@ Speed report automatically assigns groups of similar URLs into "Fast",
 "Moderate," and "Slow" buckets, and helps prioritize performance improvements
 for specific issues.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="./search-console-speed-report.png" alt="Search
   Console Speed report.">
 </figure>
 
 ## Web Almanac
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="./web-almanac-at-cds-2019.png" alt="Dion Almaer
   presenting Web Almanac at CDS 2019.">
 </figure>

@@ -62,7 +62,7 @@ const defaultPlugins = [
 async function buildCacheManifest() {
   const toplevelManifest = await getManifest({
     globDirectory: "dist",
-    globPatterns: ["images/**", "*.css"],
+    globPatterns: ["images/**", "*.css", "*.js"],
   });
   if (toplevelManifest.warnings.length) {
     throw new Error(`toplevel manifest: ${toplevelManifest.warnings}`);
@@ -90,12 +90,8 @@ async function buildCacheManifest() {
 /**
  * Performs main site compilation via Rollup: first on site code, and second
  * to build the Service Worker.
- *
- * @return {!Array<string>} generated source filenames
  */
 async function build() {
-  const generated = [];
-
   const postcssConfig = {};
   if (isProd) {
     // nb. Only require() autoprefixer when used.
@@ -119,6 +115,16 @@ async function build() {
       rollupPluginPostCSS(postcssConfig),
       ...defaultPlugins,
     ],
+    external(source, importer, isResolved) {
+      // We don't support any external imports. This most likely happens if you mistype a
+      // node_modules import or the package.json has changed.
+      if (isResolved && !source.match(/^\.{0,2}\//)) {
+        throw new Error(
+          `Unresolved external import: "${source}" (imported ` +
+            `by: ${importer}), did you forget to npm install?`,
+        );
+      }
+    },
   });
   const appGenerated = await appBundle.write({
     dynamicImportFunction: "window._import",
@@ -126,15 +132,22 @@ async function build() {
     dir: "dist",
     format: "esm",
   });
-  for (const {fileName} of appGenerated.output) {
-    generated.push(fileName);
+
+  // Compress the generated source here, as we need the final files and hashes for the Service
+  // Worker manifest.
+  if (isProd) {
+    const generated = [];
+    for (const {fileName} of appGenerated.output) {
+      generated.push(fileName);
+    }
+    await compressOutput(generated);
   }
 
   const manifest = isProd ? await buildCacheManifest() : [];
   const noticeDev = isProd ? "" : "// Not generated in dev";
 
   const layoutTemplate = await fs.readFile(
-    "dist/sw-partial-layout.partial",
+    path.join("dist", "sw-partial-layout.partial"),
     "utf-8",
   );
 
@@ -163,11 +176,22 @@ async function build() {
     dir: "dist",
     format: "esm",
   });
-  for (const {fileName} of swGenerated.output) {
-    generated.push(fileName);
+
+  if (swGenerated.output.length !== 1) {
+    throw new Error(
+      `using Rollup on Service Worker should generate single file, was: ${swGenerated.output.length}`,
+    );
   }
 
-  return generated;
+  if (isProd) {
+    const generated = [];
+    for (const {fileName} of swGenerated.output) {
+      generated.push(fileName);
+    }
+    await compressOutput(generated);
+  }
+
+  return appGenerated.output.length + swGenerated.output.length;
 }
 
 async function buildTest() {
@@ -212,11 +236,9 @@ async function compressOutput(generated) {
 }
 
 (async function() {
-  const generated = await build();
-  log(`Generated ${generated.length} files`);
+  const generatedCount = await build();
+  log(`Generated ${generatedCount} files`);
   if (!isProd) {
     await buildTest();
-  } else {
-    await compressOutput(generated);
   }
 })();

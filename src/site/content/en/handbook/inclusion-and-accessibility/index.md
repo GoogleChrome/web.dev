@@ -58,7 +58,7 @@ If you're creating an illustration, the parts that are essential for understandi
 Avoid images that may exclude certain audience members. Just like when you _write_ about people, remember to be inclusive when you _show_ people and the things they do and make. For example, avoid stock photos that show only male developers.
 
 ## Create accessible code blocks
-Make sure code blocks are [simple](/handbook/style#keep-it-simple) and follow  accessibility best practices. At a minimum:
+Make sure code blocks are [simple](/handbook/quality/#keep-it-simple) and follow accessibility best practices. At a minimum:
 * Add [labels](/labels-and-text-alternatives/#label-form-elements) to form elements.
 * Include [alt text](/image-alt) for every image.
 
