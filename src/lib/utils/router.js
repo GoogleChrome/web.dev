@@ -133,10 +133,10 @@ export function listen(handler) {
       .catch((err) => {
         // Only throw errors if not preempted and not the first load.
         if (!controller.signal.aborted && !firstRun) {
-          window.location.href = window.location.href;
+          window.location.href = url;  // always use the updated URL
           throw err;
         }
-        console.warn("err loading (preempted)", url, err);
+        console.warn("err loading", url, err);
         return true;
       });
   };
