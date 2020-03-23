@@ -2,6 +2,7 @@ import createStore from "unistore";
 import devtools from "unistore/devtools";
 import getMeta from "./utils/meta";
 import config from "webdev_config";
+import {localStorage} from "./utils/storage";
 
 /* eslint-disable require-jsdoc */
 
@@ -13,7 +14,7 @@ const initialState = {
   checkingSignedInState: true,
 
   // The user has successfully signed in; default to cached value to help prevent FOUC
-  isSignedIn: Boolean(window.localStorage["webdev_isSignedIn"]),
+  isSignedIn: Boolean(localStorage["webdev_isSignedIn"]),
   user: null,
 
   // The most recent URL measured and the Date when it was first analyzed by the user.
