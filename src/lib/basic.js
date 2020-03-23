@@ -14,9 +14,10 @@ try {
 }
 localStorage = localStorage || {};
 
+// eslint-disable-next-line
 window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', id);
-ga('set', 'transport', 'beacon');
-ga('set', dimensions.SIGNED_IN, localStorage["webdev_isSignedIn"] ? 1 : 0);
-ga('set', dimensions.TRACKING_VERSION, version);
-ga('send', 'pageview');
+ga("create", id);
+ga("set", "transport", "beacon");
+ga("set", dimensions.SIGNED_IN, localStorage["webdev_isSignedIn"] ? 1 : 0);
+ga("set", dimensions.TRACKING_VERSION, version);
+ga("send", "pageview");

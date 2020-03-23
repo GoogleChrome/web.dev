@@ -1,4 +1,3 @@
-
 /**
  * @fileoverview Helper that converts JSON into ESM that exports that JSON.
  *
@@ -9,21 +8,23 @@
 function createVirtualExport(object) {
   const parts = [`export default ${JSON.stringify(object)};`];
 
-  if (object && typeof object === 'object' && !Array.isArray(object)) {
+  if (object && typeof object === "object" && !Array.isArray(object)) {
     for (const key in object) {
+      // If this is a valid JS variable name, include as a named export.
       if (key.match(/^[\w_$][\w\d_$]*$/)) {
-        parts.push(`export const ${key} = ${JSON.stringify(object[key])};`);
+        // nb. We use var for compatibility with old browsers.
+        parts.push(`export var ${key} = ${JSON.stringify(object[key])};`);
       }
     }
   }
 
-  return parts.join('\n');
+  return parts.join("\n");
 }
 
 module.exports = (all) => {
   const out = {};
-  for (const key in all) {
+  Object.keys(all).forEach((key) => {
     out[key] = createVirtualExport(all[key]);
-  }
+  });
   return out;
 };

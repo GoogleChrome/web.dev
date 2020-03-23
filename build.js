@@ -54,7 +54,7 @@ const bootstrapConfig = {
  * JSON blobs, even if we're just using them for misc constants.
  */
 const virtualImports = {
-  "webdev_config": {
+  webdev_config: {
     prod: isProd,
     version:
       "v" +
@@ -64,7 +64,7 @@ const virtualImports = {
         .slice(0, 12),
     firebaseConfig: isProd ? site.firebase.prod : site.firebase.staging,
   },
-  "webdev_analytics": {
+  webdev_analytics: {
     id: site.analytics.ids.prod,
     dimensions: site.analytics.dimensions,
     version: site.analytics.version,
@@ -88,7 +88,7 @@ const defaultPlugins = [
 async function buildCacheManifest() {
   const maybeThrow = (manifest) => {
     if (manifest.warnings.length) {
-      console.error(manifest.warnings.join('\n') + '\n');
+      console.error(manifest.warnings.join("\n") + "\n");
       if (isProd) {
         throw new Error("unhandled manifest error in prod");
       }
@@ -121,6 +121,10 @@ async function buildCacheManifest() {
 /**
  * Passed to Rollup's config to disallow external imports. By default, Rollup
  * leaves unresolved imports in the output.
+ *
+ * @param {string} source
+ * @param {string} importer
+ * @param {boolean} isResolved
  */
 function disallowExternal(source, importer, isResolved) {
   // We don't support any external imports. This most likely happens if you mistype a
@@ -135,7 +139,7 @@ function disallowExternal(source, importer, isResolved) {
 
 /**
  * Ensures that the passed Rollup result only contains a single chunk.
- * 
+ *
  * @param {!Promise<rollup.RollupOutput>} rollupPromise
  * @return {!rollup.RollupChunk} the single output chunk
  */
@@ -168,10 +172,7 @@ async function build() {
   // useful for cache busting.
   const appBundle = await rollup.rollup({
     input: "src/lib/bootstrap.js",
-    plugins: [
-      rollupPluginPostCSS(postcssConfig),
-      ...defaultPlugins,
-    ],
+    plugins: [rollupPluginPostCSS(postcssConfig), ...defaultPlugins],
     external: disallowExternal,
   });
   const appGenerated = await appBundle.write({
@@ -182,25 +183,30 @@ async function build() {
   });
   const generated = appGenerated.output.map(({fileName}) => fileName);
 
-  // Rollup basic to generate the top-level script run by all browsers. This is just for Analytics.
-  const basicBundle = await rollup.rollup({
-    input: "src/lib/basic.js",
-    plugins: [
-      ...defaultPlugins,
-    ],
-    external: disallowExternal,
-  });
-  const basicOutput = await singleOutput(basicBundle.write({
-    sourcemap: true,
-    dir: "dist",
-    format: "iife",
-  }));
-  generated.push(basicOutput.fileName);
-
   // Compress the generated source here, as we need the final files and hashes for the Service
   // Worker manifest.
   if (isProd) {
     await compressOutput(generated);
+  }
+
+  // Rollup basic to generate the top-level script run by all browsers. This is just for Analytics.
+  const basicBundle = await rollup.rollup({
+    input: "src/lib/basic.js",
+    plugins: [...defaultPlugins],
+    external: disallowExternal,
+  });
+  const basicOutput = await singleOutput(
+    basicBundle.write({
+      sourcemap: true,
+      dir: "dist",
+      format: "iife",
+    }),
+  );
+  generated.push(basicOutput.fileName);
+
+  // Compress the basic bundle, but use Terser's simple ECMAScript mode to simplify the code.
+  if (isProd) {
+    await compressOutput(generated, {ecma: 5});
   }
 
   const manifest = isProd ? await buildCacheManifest() : [];
@@ -232,11 +238,13 @@ async function build() {
     inlineDynamicImports: true, // SW does not support imports
     external: disallowExternal,
   });
-  const swOutput = await singleOutput(swBundle.write({
-    sourcemap: true,
-    dir: "dist",
-    format: "esm",
-  }));
+  const swOutput = await singleOutput(
+    swBundle.write({
+      sourcemap: true,
+      dir: "dist",
+      format: "esm",
+    }),
+  );
 
   if (isProd) {
     await compressOutput([swOutput.fileName]);
@@ -256,7 +264,7 @@ async function buildTest() {
   });
 }
 
-async function compressOutput(generated) {
+async function compressOutput(generated, options = {}) {
   let inputSize = 0;
   let outputSize = 0;
 
@@ -271,6 +279,7 @@ async function compressOutput(generated) {
         content: await fs.readFile(target + ".map", "utf8"),
         url: fileName + ".map",
       },
+      ...options,
     });
 
     if (result.error) {
