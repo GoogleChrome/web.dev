@@ -15,7 +15,7 @@
  */
 const fs = require("fs");
 const path = require("path");
-const locales = require("./src/lib/utils/locale");
+const locale = require("./src/lib/utils/locale");
 
 /**
  * A handler that redirects the request based on requested locale,
@@ -37,7 +37,7 @@ module.exports = (req, res, next) => {
 
   const pathParts = req.path.split("/");
   // Check if language is specified in the url.
-  const isLangInPath = locales.isSupportedLocale(pathParts[1]);
+  const isLangInPath = locale.isSupportedLocale(pathParts[1]);
   let lang;
   let filePath;
 
@@ -46,16 +46,16 @@ module.exports = (req, res, next) => {
     pathParts.splice(1, 1);
     filePath = pathParts.join("/");
   } else {
-    const langInCookie = locales.isSupportedLocale(req.cookies.preferred_lang);
+    const langInCookie = locale.isSupportedLocale(req.cookies.preferred_lang);
     // If language not in url, use accept-language header.
     lang =
       langInCookie ||
-      req.acceptsLanguages(locales.supportedLocales) ||
-      locales.defaultLocale;
+      req.acceptsLanguages(locale.supportedLocales) ||
+      locale.defaultLocale;
     filePath = req.path;
   }
 
-  if (lang === locales.defaultLocale) {
+  if (lang === locale.defaultLocale) {
     // If this is alread default language, continue.
     return next();
   }
@@ -71,6 +71,6 @@ module.exports = (req, res, next) => {
   if (fs.existsSync(localizedFilePath)) {
     return isLangInPath ? next() : res.redirect(path.join("/", lang, filePath));
   } else {
-    return res.redirect(path.join("/", locales.defaultLocale, filePath));
+    return res.redirect(path.join("/", locale.defaultLocale, filePath));
   }
 };
