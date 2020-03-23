@@ -136,7 +136,7 @@ export function listen(handler) {
           window.location.href = url;  // always use the updated URL
           throw err;
         }
-        console.warn("err loading (preempted)", url, err);
+        console.warn("err loading", url, err);
         return true;
       });
   };
