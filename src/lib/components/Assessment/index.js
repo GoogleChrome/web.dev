@@ -35,6 +35,7 @@ class Assessment extends BaseModalElement {
     super();
     this.modal = false;
     this._placeholder = null;
+    this.breakpoint_ = matchMedia(`(min-width: 481px)`);
 
     this.onAssessmentAnimationEnd = this.onAssessmentAnimationEnd.bind(this);
     this.onAssessmentResize = this.onAssessmentResize.bind(this);
@@ -97,16 +98,12 @@ class Assessment extends BaseModalElement {
   connectedCallback() {
     super.connectedCallback();
     // Close modal if viewport is >481 px so document isn't inert on desktop
-    const mqString = `(min-width: 481px)`;
-
-    matchMedia(mqString).addListener(this.onAssessmentResize);
+    this.breakpoint_.addListener(this.onAssessmentResize);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    const mqString = `(min-width: 481px)`;
-
-    matchMedia(mqString).removeListener(this.onAssessmentResize);
+    this.breakpoint_.removeListener(this.onAssessmentResize);
   }
 
   renderLauncher() {
