@@ -17,6 +17,8 @@ const fs = require("fs");
 const path = require("path");
 const locale = require("./src/lib/utils/locale");
 
+const indexJsonRegExp = /\/index\.json$/;
+
 /**
  * A handler that redirects the request based on requested locale,
  * according to priority:
@@ -31,14 +33,14 @@ const locale = require("./src/lib/utils/locale");
  */
 module.exports = (req, res, next) => {
   const isNav = req.url.endsWith("/");
-  const isJson = req.url.endsWith(".json");
+  const isJson = req.url.endsWith("/index.json");
   // Exit early if the url is not navigational.
   if (!isNav && !isJson) {
     return next();
   }
 
   const fileType = isJson ? "index.json" : "index.html";
-  const normalizedPath = req.path.replace("index.json", "");
+  const normalizedPath = req.path.replace(indexJsonRegExp, "");
   const pathParts = normalizedPath.split("/");
   const isLangInPath = locale.isSupportedLocale(pathParts[1]);
   let lang;
