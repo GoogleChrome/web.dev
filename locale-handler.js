@@ -15,7 +15,7 @@
  */
 const fs = require("fs");
 const path = require("path");
-const locale = require("./src/lib/utils/locale");
+const locale = require("./locale");
 
 /**
  * A handler that redirects the request based on requested locale,
