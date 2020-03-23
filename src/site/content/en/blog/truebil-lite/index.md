@@ -175,7 +175,7 @@ For users who had interacted with the app for a while, the team used highly cont
 
 Finally, the team built in a non-intrusive banner with a notification-like design that's triggered at specific events, such as opening a listing page or after the user has spent a set amount of time spent in the app:
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="notification.png" alt="A screenshot of Truebil Lite's time-based installation prompt banner.">
 </figure>
 

@@ -73,7 +73,7 @@ Cookies may be used here to, among other things, maintain session state, store
 general preferences, enable statistics, or personalize content for users with
 existing accounts.
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img src="iframe.png"
       alt="Diagram of a browser window where the URL of embedded content does
         not match the URL of the page."
@@ -100,7 +100,7 @@ Cookies marked as `SameSite=Lax` will be sent on safe top-level navigations,
 e.g. clicking a link to go to a different site. However something like a
 `<form>` submission via POST to a different site would not include cookies.
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img src="safe-navigation.png"
       alt="Diagram of a request moving from one page to another."
       style="max-width: 35vw;">

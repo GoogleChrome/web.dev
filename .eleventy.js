@@ -39,6 +39,7 @@ const Details = require(`./${componentsDir}/Details`);
 const DetailsSummary = require(`./${componentsDir}/DetailsSummary`);
 const Hero = require(`./${componentsDir}/Hero`);
 const Instruction = require(`./${componentsDir}/Instruction`);
+const Label = require(`./${componentsDir}/Label`);
 const Meta = require(`./${componentsDir}/Meta`);
 const PathCard = require(`./${componentsDir}/PathCard`);
 const PostCard = require(`./${componentsDir}/PostCard`);
@@ -76,6 +77,7 @@ const pagedNavigation = require(`./${filtersDir}/paged-navigation`);
 const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
 const prettyDate = require(`./${filtersDir}/pretty-date`);
 const removeDrafts = require(`./${filtersDir}/remove-drafts`);
+const strip = require(`./${filtersDir}/strip`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
 const stripLanguage = require(`./${filtersDir}/strip-language`);
 
@@ -180,6 +182,7 @@ module.exports = function(config) {
   config.addFilter('removeDrafts', removeDrafts);
   config.addFilter('stripBlog', stripBlog);
   config.addFilter('stripLanguage', stripLanguage);
+  config.addFilter('strip', strip);
 
   //----------------------------------------------------------------------------
   // SHORTCODES
@@ -200,6 +203,7 @@ module.exports = function(config) {
   config.addPairedShortcode('DetailsSummary', DetailsSummary);
   config.addShortcode('Hero', Hero);
   config.addShortcode('Instruction', Instruction);
+  config.addPairedShortcode('Label', Label);
   config.addShortcode('Meta', Meta);
   config.addPairedShortcode('Partial', buildPartial());
   config.addShortcode('PathCard', PathCard);

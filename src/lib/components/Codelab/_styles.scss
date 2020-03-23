@@ -1,4 +1,5 @@
 @import '../../../styles/settings/colors';
+@import '../../../styles/tools/breakpoints';
 
 web-codelab {
   display: flex;
@@ -13,12 +14,20 @@ web-codelab {
     overflow-x: hidden;
     overflow-y: scroll;
     padding: 32px;
-    width: 600px;
+
+    @include bp(md) {
+      width: 600px;
+    }
   }
   
   .web-codelab__glitch {
     flex: 1;
     padding: 16px;
+    display: none;
+
+    @include bp(md) {
+      display: block;
+    }
   }
 }
 

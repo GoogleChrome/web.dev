@@ -5,7 +5,7 @@ authors:
   - thomassteiner
 description: Chrome 76 adds expands the functionality of the Async Clipboard API to add support for png images. Copying and pasting images to the clipboard has never been easier.
 date: 2019-07-03
-updated: 2020-02-26
+updated: 2020-03-19
 tags:
   - post
   - capabilities
@@ -159,8 +159,8 @@ try {
     })
   ]);
   console.log('Image copied.');
-} catch(e) {
-  console.error(e, e.message);
+} catch(err) {
+  console.error(err.name, err.message);
 }
 ```
 
@@ -184,17 +184,13 @@ async function getClipboardContents() {
   try {
     const clipboardItems = await navigator.clipboard.read();
     for (const clipboardItem of clipboardItems) {
-      try {
-        for (const type of clipboardItem.types) {
-          const blob = await clipboardItem.getType(type);
-          console.log(URL.createObjectURL(blob));
-        }
-      } catch (e) {
-        console.error(e, e.message);
+      for (const type of clipboardItem.types) {
+        const blob = await clipboardItem.getType(type);
+        console.log(URL.createObjectURL(blob));
       }
     }
-  } catch (e) {
-    console.error(e, e.message);
+  } catch (err) {
+    console.error(err.name, err.message);
   }
 }
 ```
@@ -232,8 +228,8 @@ document.addEventListener('copy', async (e) => {
       ]);
     }
     console.log('Image copied.');
-  } catch(e) {
-    console.error(e, e.message);
+  } catch(err) {
+    console.error(err.name, err.message);
   }
 });
 ```
