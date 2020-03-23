@@ -8,7 +8,6 @@ description: |
   Native HTML elements such as <button> or <input> have keyboard accessibility
   built-in for free. If you're building custom interactive components, use
   tabindex to ensure that they're keyboard accessible.
-translation: manual
 ---
 
 Native HTML elements such as `<button>` or `<input>` have keyboard accessibility
