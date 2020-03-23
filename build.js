@@ -36,18 +36,6 @@ process.on("unhandledRejection", (reason, p) => {
   process.exit(1);
 });
 
-const bootstrapConfig = {
-  prod: isProd,
-  env: process.env.ELEVENTY_ENV || "dev",
-  version:
-    "v" +
-    new Date()
-      .toISOString()
-      .replace(/[\D]/g, "")
-      .slice(0, 12),
-  firebaseConfig: isProd ? site.firebase.prod : site.firebase.staging,
-};
-
 /**
  * Virtual JSON files that are provided to all build targets. We provide small
  * chunks derived from site.js, as our build process can't tree shake large
@@ -56,6 +44,7 @@ const bootstrapConfig = {
 const virtualImports = {
   webdev_config: {
     prod: isProd,
+    env: process.env.ELEVENTY_ENV || "dev",
     version:
       "v" +
       new Date()

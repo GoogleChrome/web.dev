@@ -1,18 +1,13 @@
 /**
- * @fileoverview Run by all browsers in `script defer`.
+ * @fileoverview Run by all browsers in `script defer`. Used to set up
+ * Analytics, including with our known previous signed-in state that was cached
+ * in `localStorage`.
  *
- * This file is passed through Rollup, but separately to our core bundle.
+ * This file is built with Rollup, but separately to our core bundle.
  */
 
 import {dimensions, id, version} from "webdev_analytics";
-
-let localStorage;
-try {
-  localStorage = window.localStorage;
-} catch (e) {
-  // some browsers don't let us access this
-}
-localStorage = localStorage || {};
+import {localStorage} from "./utils/storage";
 
 // eslint-disable-next-line
 window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
