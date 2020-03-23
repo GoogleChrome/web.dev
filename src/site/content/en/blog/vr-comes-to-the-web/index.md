@@ -44,7 +44,7 @@ reality to completely virtual, with degrees of immersion in between. The 'X' in
 XR is intended to reflect that thinking by being a sort of algebraic variable
 that stands for anything in the spectrum of immersive experiences.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="./immersive-spectrum.png" style="max-width: 100%;" alt="A graph illustrating the spectrum of visual experiences from complete reality to completely immersive."/>
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     The spectrum of immersive experiences
@@ -72,8 +72,8 @@ If you're familiar with early versions of the WebXR Device API, you should
 glance over all of this material. There have been changes.
 
 The code in this article is based on the Immersive Web Working Group's barebones
-sample ([demo](https://immersive-web.github.io/webxr-samples/xr-barebones.html),
-[source](https://github.com/immersive-web/webxr-samples/blob/master/xr-barebones.html)),
+sample ([demo](https://immersive-web.github.io/webxr-samples/vr-barebones.html),
+[source](https://github.com/immersive-web/webxr-samples/blob/master/vr-barebones.html)),
 but is edited for clarity and simplicity.
 
 Part of creating the WebXR specification has been fleshing out security and

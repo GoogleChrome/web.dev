@@ -17,7 +17,9 @@ use it to self-review their content and fix problems rather than waiting for rev
 
 ## Basics
 1. Is the piece providing value for one or more of the web.dev [personas](/handbook/audience)?
-1. Do the title, subtitle, and description convey the value proposition?
+1. Does the title follow good SEO practices? See the example in
+   [Explain why a user should care about your content](/handbook/quality/#explanations).
+1. Do the `subtitle` and `description` convey the value proposition?
 1. Is the piece 1,000 words or less—or is there a good reason for it to be longer?
 1. Are all statements and advice accurate and aligned with best practices?
 1. Can you complete the task with the provided instructions? Are there any missing steps? Does the code work?
@@ -56,12 +58,13 @@ use it to self-review their content and fix problems rather than waiting for rev
 1. Are all images optimized so that the size of the repository stays as small as possible?
 1. Do the images have hardcoded English descriptions in them? If possible, use numbers instead
    and then use a numbered list below the image to explain each item. This makes the page easier to translate.
+1. Is the hero image `3200px` wide by `960px` tall and has it been optimized (to keep the size of the repository as small as possible)?
 
 ## Code
 1. Are code blocks and sample apps as simple as possible while still conveying the core concept?
 1. Is a brief description of a sample app's functionality provided before the app itself?
 1. Is [code highlighting](/handbook/markup-code/#code-highlighting) used to indicate lines that have been added or changed?
-1. Is all sample code [accessible](/inclusion-and-accessibility/#create-accessible-code-blocks)?
+1. Is all sample code [accessible](/handbook/inclusion-and-accessibility/#create-accessible-code-blocks)?
 
 ## Links
 1. Do all links work?
@@ -70,7 +73,7 @@ use it to self-review their content and fix problems rather than waiting for rev
 1. When referencing a web platform API, does the page link out to the canonical MDN API reference?
 
 ## Mechanics
-1. Is the text free of spelling and capitalization errors? (Check the [word list](/word-list).)
+1. Is the text free of spelling and capitalization errors? (Check the [word list](/handbook/word-list).)
 1. Are [dashes and hyphens](/handbook/grammar/#dashes-and-hyphens) used correctly?
 1. Are titles and headings in sentence case with no terminal period?
 1. Are [keyboard key commands](/handbook/grammar/#ui-elements-and-interaction) correctly formatted?

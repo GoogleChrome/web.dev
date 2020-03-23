@@ -75,14 +75,14 @@ To see how Next.js bundles the app, inspect the network trace in DevTools:
 When you load the page, all the necessary code, including the `Puppy.js`
 component, is bundled in `index.js`:
 
-<figure class="w-figure--center">
+<figure class="w-figure">
 <img src="./network1.png" alt="DevTools Network tab showing showing six JavaScript files: index.js, app.js, webpack.js, main.js, 0.js and the dll (dynamic-link library) file.">
 </figure>
 
 When you press the **Click me** button, only the request for the puppy JPEG is
 added to the **Network** tab:
 
-<figure class="w-figure--center">
+<figure class="w-figure">
 <img src="./network2.png" alt="DevTools Network tab after the button click, showing the same six JavaScript files and one image.">
 </figure>
 
@@ -117,14 +117,14 @@ When you first load the app, only `index.js` is downloaded. This time it's
 0.5&nbsp;KB smaller (it went down from 37.9&nbsp;KB to 37.4&nbsp;KB) because it
 doesn't include the code for the `Puppy` component:
 
-<figure class="w-figure--center">
+<figure class="w-figure">
 <img src="./network3.png" alt="DevTools Network showing the same six JavaScript files, except index.js is now 0.5 KB smaller.">
 </figure>
 
 The `Puppy` component is now in a separate chunk, `1.js`, which is loaded only
 when you press the button:
 
-<figure class="w-figure--center">
+<figure class="w-figure">
 <img src="./network4.png" alt="DevTools Network tab after the button click, showing the additional 1.js file and the image added to the bottom of the file list.">
 </figure>
 
@@ -169,7 +169,7 @@ DevTools:
 Now when you click the button it takes a while to load the component and the app
 displays the "Loading…" message in the meantime.
 
-<figure class="w-figure--center">
+<figure class="w-figure">
 <img src="./loading.png" alt='A dark screen with the text "Loading...".'>
 </figure>
 

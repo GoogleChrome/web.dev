@@ -27,6 +27,7 @@ guidance about how to use them effectively.
 1. [Glitches](#glitches)
 1. [Images](#images)
 1. [Instructions](#instructions)
+1. [Labels](#labels)
 1. [Lists](#lists)
 1. [Stats](#stats)
 1. [Tables](#tables)
@@ -176,6 +177,12 @@ instead, use the body variant, below.
 ```
 
 {% Banner 'warning' %}This is a warning banner. It supports Markdown.{% endBanner %}
+
+```text
+{% raw %}{% Banner 'neutral' %}This is a neutral banner, used to display a discreet suggestion for the user. It supports Markdown.{% endBanner %}{% endraw %}
+```
+
+{% Banner 'neutral' %}This is a neutral banner. It supports Markdown.{% endBanner %}
 
 ### Body banners
 
@@ -394,13 +401,13 @@ by wrapping them in a `<div class="w-columns">` element:
 
 ```html
 <div class="w-columns">
-  <figure class="w-figure w-figure--center">
+  <figure class="w-figure">
     <img src="./image-small.png" alt="">
     <figcaption class="w-figcaption">
       Small image.
     </figcaption>
   </figure>
-  <figure class="w-figure w-figure--center">
+  <figure class="w-figure">
     <img src="./image-small.png" alt="">
     <figcaption class="w-figcaption">
       Small image.
@@ -410,13 +417,13 @@ by wrapping them in a `<div class="w-columns">` element:
 ```
 
 <div class="w-columns">
-  <figure class="w-figure w-figure--center">
+  <figure class="w-figure">
     <img src="./image-small.png" alt="">
     <figcaption class="w-figcaption">
       Small image.
     </figcaption>
   </figure>
-  <figure class="w-figure w-figure--center">
+  <figure class="w-figure">
     <img src="./image-small.png" alt="">
     <figcaption class="w-figcaption">
       Small image.
@@ -828,6 +835,24 @@ by using the `audit-auditName` argument in the Instruction shortcode.
 For example, here are the instructions for the **Performance** audit:
 
 {% Instruction 'audit-performance', 'ol' %}
+
+## Labels
+
+Labels can be used to display a filename associated with a [code](/handbook/markup-code) snippet.
+
+````text
+{% raw %}{% Label %}filename.js:{% endLabel %}{% endraw %}
+
+```js
+console.log('hello');
+```
+````
+
+{% Label %}filename.js:{% endLabel %}
+
+```js
+console.log('hello');
+```
 
 ## Lists
 See the [Lists section of the Grammar, mechanics, and usage post](/handbook/grammar/#lists)

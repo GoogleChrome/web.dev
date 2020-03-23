@@ -18,12 +18,12 @@ Notifications present small chunks of information to a user. Web apps can use no
 
 The look-and-feel of notifications varies between platforms. For example: 
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="./predicaments-android.png" alt="">
   <figcaption class="w-figcaption">A notification on an Android device.</figcaption>
 </figure>
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="./predicaments-macbook.png" alt="">
   <figcaption class="w-figcaption">A notification on a MacBook.</figcaption>
 </figure>

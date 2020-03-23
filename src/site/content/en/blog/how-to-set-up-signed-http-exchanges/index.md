@@ -261,7 +261,7 @@ server {
 
 ## Send feedback
 
-The Chromium engineers working on SXG are keen to hear your feedback at [webpackage-dev@chromium.org](webpackage-dev@chromium.org).
+The Chromium engineers working on SXG are keen to hear your feedback at [webpackage-dev@chromium.org](mailto:webpackage-dev@chromium.org).
 You can also join the [spec discussion](https://github.com/WICG/webpackage/issues), or [report a bug](https://bugs.chromium.org/p/chromium/issues/entry?status=untriaged&components=Blink%3ELoader&labels=Type-Bug,Hotlist-SignedExchange) to the team.
 Your feedback will greatly help the standardization process and also help address implementation issues.
 Thank you!

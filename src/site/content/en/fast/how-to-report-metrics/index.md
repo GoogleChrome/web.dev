@@ -52,7 +52,7 @@ Finding this metric can be done by using your analytics tool of choice
 to map performance metrics to user engagement, conversions and transaction values.
 For example, a custom report to do so looks like this in Google Analytics:
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="./speed_report.png" alt="A Google Analytics dashboard shows a number of fields being added to a custom report.">
   <figcaption class="w-figcaption w-figcaption--center">
     Fig 1: Custom report in Google Analytics to analyze the impact of speed on conversions and engagement.
@@ -166,7 +166,7 @@ Some ways to handle third party content with respect to performance:
 -   Routinely audit and clean out redundant third party scripts, trackers
     and widgets. This can easily be done via [Ghostery Extension](https://chrome.google.com/webstore/detail/ghostery-%E2%80%93-privacy-ad-blo/mlomiejdfkolichcflejclcbmpeaniij?hl=en) or tools like [WhatRuns](https://chrome.google.com/webstore/detail/whatruns/cmkdbmfndkfgebldhnkbfhlneefdaaip?hl=en):
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="./ghostery.png" alt="A Ghostery report showing all loaded trackers.">
   <figcaption class="w-figcaption w-figcaption--center">
     A Ghostery report showing all loaded trackers

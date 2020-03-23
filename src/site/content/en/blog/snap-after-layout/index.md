@@ -59,7 +59,7 @@ snaps.
 </figure>
 
 ### Shortcomings
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/resizing-breaks-snap-positions.webm" type="video/webm;">
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/resizing-breaks-snap-positions.mp4" type="video/mp4;">
@@ -101,7 +101,7 @@ what happens when the layout changes in the following
 
 <div class="w-columns">
 {% Compare 'worse', 'Snap position lost' %}
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/snap-positions-lost.webm" type="video/webm;">
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/snap-positions-lost.mp4" type="video/mp4;">
@@ -118,7 +118,7 @@ scroll snap position was lost.
 {% endCompare %}
 
 {% Compare 'better', 'Snap position preserved' %}
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/snap-positions-preserved.webm" type="video/webm;">
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/snap-positions-preserved.mp4" type="video/mp4;">
@@ -157,7 +157,7 @@ lines of CSS:
 Want to learn more? See the following [demo chat
 UI](https://codepen.io/argyleink/pen/RwPWqKe) for visuals.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/scroll-snap-bottom.webm" type="video/webm;">
     <source src="https://storage.googleapis.com/web-dev-assets/snap-after-layout/scroll-snap-bottom.mp4" type="video/mp4;">

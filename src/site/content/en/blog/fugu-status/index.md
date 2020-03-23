@@ -2,7 +2,7 @@
 title: New capabilities status
 subhead: Web apps should be able to do anything native apps can. Google wants to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2020-03-04
+updated: 2020-03-13
 tags:
   - post
   - capabilities
@@ -74,20 +74,6 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>
-          <a href="/badging-api/">Badging API</a>
-        </td>
-        <td>
-          The Badging API allows web apps to set an application-wide badge,
-          shown in an operating-system-specific place associated with the
-          application, such as the shelf or home screen. Badging makes it easy
-          to subtly notify the user that there is some new activity that might
-          require their attention, or it can be used to indicate a small
-          amount of information, such as an unread count.<br/>
-          <em>Updated Nov 1, 2019</em>
-        </td>
-      </tr>
       <tr>
         <td>
           <a href="/content-indexing-api/">Content Indexing API</a>
@@ -204,6 +190,24 @@ latest version of Chrome, and in many cases other Chromium based browsers.
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td>
+          <a href="/badging-api/">Badging API</a>
+        </td>
+        <td>
+          The Badging API allows web apps to set an application-wide badge,
+          shown in an operating-system-specific place associated with the
+          application, such as the shelf or home screen. Badging makes it easy
+          to subtly notify the user that there is some new activity that might
+          require their attention, or it can be used to indicate a small
+          amount of information, such as an unread count.<br/>
+          <div class="w-aside w-aside--note">
+          Despite a stable version of the spec shipping in Chrome 81, an origin
+          trial is running in Chrome 79 and Chrome 81 until Setempber 15, 2020.
+          </div>
+          <em>Updated March 16, 2020</em>
+        </td>
+      </tr>
       <tr>
         <td>
           <a href="/image-support-for-async-clipboard/">

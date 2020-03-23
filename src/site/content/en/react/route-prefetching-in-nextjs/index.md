@@ -18,7 +18,7 @@ In [Next.js](https://nextjs.org/), you don't need to set up routing manually.
 Next.js uses file-system-based routing, which lets you just create files and folders
 inside the `./pages/` directory:
 
-<figure class="w-figure--center">
+<figure class="w-figure">
 <img class="w-screenshot" src="./pages-directory.png" alt="Screenshot of the pages directory containting three files: index.js, margherita.js, and pineapple-pizza.js.">
 </figure>
 

@@ -54,7 +54,7 @@ Turn on [performance hints](https://webpack.js.org/configuration/performance/) i
 
 After the build step, webpack outputs a color-coded list of assets and their sizes. Anything over budget is highlighted in yellow.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="./webpack-output.png" alt="Webpack output highlighting bundle.js">
   <figcaption class="w-figcaption">
     The highlighted bundle.js is bigger than your budget
@@ -63,7 +63,7 @@ After the build step, webpack outputs a color-coded list of assets and their siz
 
 The default limit for both assets and entry-points is **250 KB**. You can set your own targets in the configuration file.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="./webpack-warning.jpg" alt="Webpack bundle size warning">
   <figcaption class="w-figcaption">
     Webpack bundle size warning ⚠️
@@ -76,7 +76,7 @@ The budgets are compared against **uncompressed asset sizes**. Uncompressed [Jav
 Compressed asset sizes affect the transfer time, which is very important on slow networks.
 {% endAside %}
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="./webpack-recommendation.jpg" alt="Webpack performance optimization recommendation">
   <figcaption class="w-figcaption">
     Bonus feature: webpack won’t only warn you, it will give you a recommendation on how to downsize your bundles. 💁
@@ -97,14 +97,14 @@ bundlesize -f "dist/bundle.js" -s 170kB
 
 Bundlesize outputs color-coded test results in one line.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="./bundlesize-fail.png" alt="Failing bundlesize CLI test">
   <figcaption class="w-figcaption">
     Failing bundlesize CLI test ❌
   </figcaption>
 </figure>
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="./bundlesize-pass.png" alt="Passing bundlesize CLI test">
   <figcaption class="w-figcaption">
     Passing bundlesize CLI test ✔️
