@@ -183,12 +183,6 @@ async function build() {
   });
   const generated = appGenerated.output.map(({fileName}) => fileName);
 
-  // Compress the generated source here, as we need the final files and hashes for the Service
-  // Worker manifest.
-  if (isProd) {
-    await compressOutput(generated);
-  }
-
   // Rollup basic to generate the top-level script run by all browsers. This is just for Analytics.
   const basicBundle = await rollup.rollup({
     input: "src/lib/basic.js",
@@ -204,9 +198,10 @@ async function build() {
   );
   generated.push(basicOutput.fileName);
 
-  // Compress the basic bundle, but use Terser's simple ECMAScript mode to simplify the code.
+  // Compress the generated source here, as we need the final files and hashes for the Service
+  // Worker manifest.
   if (isProd) {
-    await compressOutput(generated, {ecma: 5});
+    await compressOutput(generated);
   }
 
   const manifest = isProd ? await buildCacheManifest() : [];
@@ -264,7 +259,7 @@ async function buildTest() {
   });
 }
 
-async function compressOutput(generated, options = {}) {
+async function compressOutput(generated) {
   let inputSize = 0;
   let outputSize = 0;
 
@@ -279,7 +274,6 @@ async function compressOutput(generated, options = {}) {
         content: await fs.readFile(target + ".map", "utf8"),
         url: fileName + ".map",
       },
-      ...options,
     });
 
     if (result.error) {
