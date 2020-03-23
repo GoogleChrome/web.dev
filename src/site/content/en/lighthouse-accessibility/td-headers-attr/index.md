@@ -5,7 +5,7 @@ description: |
   Learn how to improve the accessibility of tables on your web page by making
   sure that data cells always refer to existing header elements.
 date: 2019-05-02
-updated: 2019-09-19
+updated: 2020-03-20
 web_lighthouse:
   - td-headers-attr
 ---
@@ -15,7 +15,7 @@ announce table headers when they come to each table data cell.
 If the headers and data cells don't match up,
 it's very confusing.
 Every table data cell must relate to the correct table header;
-therefore, there should only be one table header per column
+therefore, there should only be one table header per column.
 
 ## How this Lighthouse audit fails
 
