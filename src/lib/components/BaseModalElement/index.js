@@ -62,7 +62,14 @@ export class BaseModalElement extends BaseElement {
   disconnectedCallback() {
     super.disconnectedCallback();
     this.removeEventListener("click", this.onClick);
-    this.open = false;
+    // To account for the Assessment modal, which opens itself,
+    // check whether the modal is connected before closing it
+    // to keep it from staying open after nav.
+    window.setTimeout(() => {
+      if (!this.isConnected) {
+        this.open = false;
+      }
+    }, 0);
   }
 
   set open(val) {
