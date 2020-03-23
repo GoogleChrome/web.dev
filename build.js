@@ -29,6 +29,7 @@ const rollup = require("rollup");
 const terser = isProd ? require("terser") : null;
 const {getManifest} = require("workbox-build");
 const site = require("./src/site/_data/site");
+const buildVirtualJSON = require("./src/build/virtual-json");
 
 process.on("unhandledRejection", (reason, p) => {
   log.error("Build had unhandled rejection", reason, p);
@@ -47,11 +48,35 @@ const bootstrapConfig = {
   firebaseConfig: isProd ? site.firebase.prod : site.firebase.staging,
 };
 
+/**
+ * Virtual JSON files that are provided to all build targets. We provide small
+ * chunks derived from site.js, as our build process can't tree shake large
+ * JSON blobs, even if we're just using them for misc constants.
+ */
+const virtualImports = {
+  "webdev_config": {
+    prod: isProd,
+    version:
+      "v" +
+      new Date()
+        .toISOString()
+        .replace(/[\D]/g, "")
+        .slice(0, 12),
+    firebaseConfig: isProd ? site.firebase.prod : site.firebase.staging,
+  },
+  "webdev_analytics": {
+    id: site.analytics.ids.prod,
+    dimensions: site.analytics.dimensions,
+    version: site.analytics.version,
+  },
+};
+
 const defaultPlugins = [
   rollupPluginNodeResolve(),
   rollupPluginCJS({
     include: "node_modules/**",
   }),
+  rollupPluginVirtual(buildVirtualJSON(virtualImports)),
 ];
 
 /**
@@ -61,13 +86,20 @@ const defaultPlugins = [
  * before the Rollup build script.
  */
 async function buildCacheManifest() {
+  const maybeThrow = (manifest) => {
+    if (manifest.warnings.length) {
+      console.error(manifest.warnings.join('\n') + '\n');
+      if (isProd) {
+        throw new Error("unhandled manifest error in prod");
+      }
+    }
+  };
+
   const toplevelManifest = await getManifest({
     globDirectory: "dist",
     globPatterns: ["images/**", "*.css", "*.js"],
   });
-  if (toplevelManifest.warnings.length) {
-    throw new Error(`toplevel manifest: ${toplevelManifest.warnings}`);
-  }
+  maybeThrow(toplevelManifest);
 
   // This doesn't include any HTML, as we bundle that directly into the source
   // of the Service Worker below.
@@ -78,14 +110,41 @@ async function buildCacheManifest() {
       "images/**/*.{png,svg}", // .jpg files are used for authors, skip
     ],
   });
-  if (contentManifest.warnings.length) {
-    throw new Error(`content manifest: ${contentManifest.warnings}`);
-  }
+  maybeThrow(contentManifest);
 
   const all = [];
   all.push(...toplevelManifest.manifestEntries);
   all.push(...contentManifest.manifestEntries);
   return all;
+}
+
+/**
+ * Passed to Rollup's config to disallow external imports. By default, Rollup
+ * leaves unresolved imports in the output.
+ */
+function disallowExternal(source, importer, isResolved) {
+  // We don't support any external imports. This most likely happens if you mistype a
+  // node_modules import or the package.json has changed.
+  if (isResolved && !source.match(/^\.{0,2}\//)) {
+    throw new Error(
+      `Unresolved external import: "${source}" (imported ` +
+        `by: ${importer}), did you forget to npm install?`,
+    );
+  }
+}
+
+/**
+ * Ensures that the passed Rollup result only contains a single chunk.
+ * 
+ * @param {!Promise<rollup.RollupOutput>} rollupPromise
+ * @return {!rollup.RollupChunk} the single output chunk
+ */
+async function singleOutput(rollupPromise) {
+  const result = await rollupPromise;
+  if (result.output.length !== 1) {
+    throw new Error(`expected single output, was: ${result.output.length}`);
+  }
+  return result.output[0];
 }
 
 /**
@@ -110,22 +169,10 @@ async function build() {
   const appBundle = await rollup.rollup({
     input: "src/lib/bootstrap.js",
     plugins: [
-      rollupPluginVirtual({
-        webdev_config: `export default ${JSON.stringify(bootstrapConfig)};`,
-      }),
       rollupPluginPostCSS(postcssConfig),
       ...defaultPlugins,
     ],
-    external(source, importer, isResolved) {
-      // We don't support any external imports. This most likely happens if you mistype a
-      // node_modules import or the package.json has changed.
-      if (isResolved && !source.match(/^\.{0,2}\//)) {
-        throw new Error(
-          `Unresolved external import: "${source}" (imported ` +
-            `by: ${importer}), did you forget to npm install?`,
-        );
-      }
-    },
+    external: disallowExternal,
   });
   const appGenerated = await appBundle.write({
     dynamicImportFunction: "window._import",
@@ -133,14 +180,26 @@ async function build() {
     dir: "dist",
     format: "esm",
   });
+  const generated = appGenerated.output.map(({fileName}) => fileName);
+
+  // Rollup basic to generate the top-level script run by all browsers. This is just for Analytics.
+  const basicBundle = await rollup.rollup({
+    input: "src/lib/basic.js",
+    plugins: [
+      ...defaultPlugins,
+    ],
+    external: disallowExternal,
+  });
+  const basicOutput = await singleOutput(basicBundle.write({
+    sourcemap: true,
+    dir: "dist",
+    format: "iife",
+  }));
+  generated.push(basicOutput.fileName);
 
   // Compress the generated source here, as we need the final files and hashes for the Service
   // Worker manifest.
   if (isProd) {
-    const generated = [];
-    for (const {fileName} of appGenerated.output) {
-      generated.push(fileName);
-    }
     await compressOutput(generated);
   }
 
@@ -171,28 +230,19 @@ async function build() {
       ...defaultPlugins,
     ],
     inlineDynamicImports: true, // SW does not support imports
+    external: disallowExternal,
   });
-  const swGenerated = await swBundle.write({
+  const swOutput = await singleOutput(swBundle.write({
     sourcemap: true,
     dir: "dist",
     format: "esm",
-  });
-
-  if (swGenerated.output.length !== 1) {
-    throw new Error(
-      `using Rollup on Service Worker should generate single file, was: ${swGenerated.output.length}`,
-    );
-  }
+  }));
 
   if (isProd) {
-    const generated = [];
-    for (const {fileName} of swGenerated.output) {
-      generated.push(fileName);
-    }
-    await compressOutput(generated);
+    await compressOutput([swOutput.fileName]);
+    generated.push(swOutput.fileName);
   }
-
-  return appGenerated.output.length + swGenerated.output.length;
+  return generated;
 }
 
 async function buildTest() {
@@ -237,8 +287,8 @@ async function compressOutput(generated) {
 }
 
 (async function() {
-  const generatedCount = await build();
-  log(`Generated ${generatedCount} files`);
+  const generated = await build();
+  log(`Generated ${generated.length} files`);
   if (!isProd) {
     await buildTest();
   }
