@@ -6,7 +6,7 @@ subhead:
 authors:
   - rowan_m
 date: 2019-10-30
-updated: 2020-01-06
+updated: 2020-03-23
 hero: cookie-hero.jpg
 description: |
   With the introduction of the new SameSite=None attribute value, sites can now
@@ -45,10 +45,18 @@ so that:
   enable inclusion in third party context.
 
 This will become the
-[default behavior in Chrome 80](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html), which is in beta as of December 19 and is
-planned for a stable release in February 2020. If you currently provide cookies
+[default behavior in Chrome 80](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html), 
+which is in Beta as of December 19 and is
+planned for a Stable release in February 2020. If you currently provide cookies
 that are intended for cross-site usage you will need to make changes before that
 date to support the new default.
+
+## Cross-browser support
+
+See the
+[Browser compatibility](https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie#Browser_compatibility)
+section of MDN's [`Set-Cookie`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie)
+page.
 
 ## Use cases for cross-site or third-party cookies
 
