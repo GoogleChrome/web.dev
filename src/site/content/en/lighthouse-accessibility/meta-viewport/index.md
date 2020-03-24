@@ -26,7 +26,7 @@ Lighthouse flags pages that disable browser zooming:
 
 A page fails the audit if it contains a `<meta name="viewport">` tag with either of the following:
 - A `content` attribute with a `user-scalable="no"` parameter
-- A `content` attribute with a `maximum-scale` paramater set to less than `5`
+- A `content` attribute with a `maximum-scale` parameter set to less than `5`
 
 {% include 'content/lighthouse-accessibility/scoring.njk' %}
 
