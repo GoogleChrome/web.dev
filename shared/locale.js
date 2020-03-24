@@ -19,7 +19,7 @@ const path = require("path");
 
 const defaultLocale = "en";
 const isProd = Boolean(process.env.GAE_APPLICATION);
-const contentDir = isProd ? "./dist" : "./src/site/content";
+const contentDir = isProd ? "../dist" : "../src/site/content";
 const dirs = fs.readdirSync(path.join(__dirname, contentDir));
 const supportedLocales = dirs.filter((dir) => localeCode.validate(dir));
 
