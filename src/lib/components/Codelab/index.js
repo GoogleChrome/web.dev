@@ -19,8 +19,8 @@ class Codelab extends BaseElement {
       glitch: {type: String},
       // The file to show when the Glitch renders.
       path: {type: String},
-      // Whether we are a mobile browser or not.
-      _isMobile: {type: Boolean},
+      // Whether we are a desktop-sized browser or not.
+      _isDesktop: {type: Boolean},
     };
   }
 
@@ -29,21 +29,21 @@ class Codelab extends BaseElement {
 
     this.glitch = "";
     this.path = "index.html";
-    this._isMobile = true;
+    this._isDesktop = false;
 
     this._mql = window.matchMedia("(min-width: 865px)");
-    this._toggleMobile = () => (this._isMobile = !this._mql.matches);
+    this._toggleDesktop = () => (this._isDesktop = this._mql.matches);
   }
 
   connectedCallback() {
     super.connectedCallback();
-    this._mql.addListener(this._toggleMobile);
-    this._toggleMobile();
+    this._mql.addListener(this._toggleDesktop);
+    this._toggleDesktop();
   }
 
   disconnectedCallback() {
     super.connectedCallback();
-    this._mql.removeListener(this._toggleMobile);
+    this._mql.removeListener(this._toggleDesktop);
   }
 
   createRenderRoot() {
@@ -76,11 +76,28 @@ class Codelab extends BaseElement {
   }
 
   render() {
-    const loadGlitch = !this._isMobile && this.glitch;
-    let iframePart = "";
+    if (!this.glitch) {
+      return html``;
+    }
 
-    if (loadGlitch) {
-      iframePart = html`
+    if (!this._isDesktop) {
+      return html`
+        <div class="w-sizer">
+          <div class="w-aside w-aside--warning">
+            <p>
+              <strong>Warning:</strong> This Glitch isn't available on small
+              screens,
+              <a target="_blank" rel="noopener" href=${this.glitchSrc(false)}>
+                open it in a new tab.</a
+              >
+            </p>
+          </div>
+        </div>
+      `;
+    }
+
+    return html`
+      <div class="w-sizer">
         <iframe
           allow="geolocation; microphone; camera; midi; encrypted-media"
           alt="Embedded glitch ${this.glitch}"
@@ -88,23 +105,7 @@ class Codelab extends BaseElement {
           style="height: 100%; width: 100%; border: 0;"
         >
         </iframe>
-      `;
-    } else if (this.glitch) {
-      iframePart = html`
-        <div class="w-aside w-aside--warning">
-          <p>
-            <strong>Warning:</strong> This Glitch isn't available on small
-            screens,
-            <a target="_blank" rel="noopener" href=${this.glitchSrc(false)}>
-              open it in a new tab</a
-            >
-          </p>
-        </div>
-      `;
-    }
-
-    return html`
-      <div class="w-sizer">${iframePart}</div>
+      </div>
     `;
   }
 }
