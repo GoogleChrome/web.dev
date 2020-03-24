@@ -178,6 +178,12 @@ instead, use the body variant, below.
 
 {% Banner 'warning' %}This is a warning banner. It supports Markdown.{% endBanner %}
 
+```text
+{% raw %}{% Banner 'neutral' %}This is a neutral banner, used to display a discreet suggestion for the user. It supports Markdown.{% endBanner %}{% endraw %}
+```
+
+{% Banner 'neutral' %}This is a neutral banner. It supports Markdown.{% endBanner %}
+
 ### Body banners
 
 ```text

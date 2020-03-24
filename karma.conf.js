@@ -32,7 +32,7 @@ module.exports = function(config) {
 
     client: {
       mocha: {
-        ui: 'tdd',
+        ui: "tdd",
       },
     },
   };
