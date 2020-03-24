@@ -26,6 +26,7 @@ web-header {
   top: 0;
   width: 100%;
   z-index: 200;
+  overflow-x: hidden;
 
   .web-header__hamburger-btn {
     height: 2.75rem;

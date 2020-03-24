@@ -20,7 +20,7 @@ body {
   );
   margin: 0;
   overflow-wrap: break-word;
-  overflow-x: hidden;
+  // nb. Don't set `overflow-x: hidden`, as this can break descendant sticky.
   padding: 0;
   word-wrap: break-word;
 }
