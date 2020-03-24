@@ -21,12 +21,12 @@ web-header {
   display: flex;
   font-size: 14px;
   height: 64px;
+  overflow-x: hidden;
   padding: 0 24px;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 200;
-  overflow-x: hidden;
 
   .web-header__hamburger-btn {
     height: 2.75rem;
