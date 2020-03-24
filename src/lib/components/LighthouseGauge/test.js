@@ -27,10 +27,12 @@ suite("web-lighthouse-gauge", async () => {
     try {
       gauge.score = 0.5;
       await gauge.updateComplete;
-      assert(gauge.getAttribute("aria-valuenow") === "50", "attr should reflect property");
+      assert(
+        gauge.getAttribute("aria-valuenow") === "50",
+        "attr should reflect property",
+      );
     } finally {
       gauge.remove();
     }
   });
-
 });

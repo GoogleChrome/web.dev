@@ -35,6 +35,13 @@
   background: $RED_100;
 }
 
+.w-banner--neutral {
+  background: transparent;
+  border-color: $GREY_300;
+  border-style: solid;
+  border-width: 1px 0;
+}
+
 .w-banner--body {
   font: inherit;
   padding: 24px;
