@@ -17,6 +17,8 @@ const fs = require("fs");
 const path = require("path");
 const locale = require("./shared/locale");
 
+const indexJsonRegExp = /\/index\.json$/;
+
 /**
  * A handler that redirects the request based on requested locale,
  * according to priority:
@@ -30,20 +32,25 @@ const locale = require("./shared/locale");
  * @return {!Function}
  */
 module.exports = (req, res, next) => {
+  const isNav = req.url.endsWith("/");
+  const isJson = req.url.endsWith("/index.json");
   // Exit early if the url is not navigational.
-  if (!req.url.endsWith("/")) {
+  if (!isNav && !isJson) {
     return next();
   }
 
-  const pathParts = req.path.split("/");
-  // Check if language is specified in the url.
+  const fileType = isJson ? "index.json" : "index.html";
+  const normalizedPath = req.path.replace(indexJsonRegExp, "");
+  const pathParts = normalizedPath.split("/");
   const isLangInPath = locale.isSupportedLocale(pathParts[1]);
   let lang;
   let filePath;
 
+  // Check if language is specified in the url.
   if (isLangInPath) {
     lang = pathParts[1];
     pathParts.splice(1, 1);
+    pathParts.push(fileType);
     filePath = pathParts.join("/");
   } else {
     const langInCookie = locale.isSupportedLocale(req.cookies.preferred_lang);
@@ -52,7 +59,7 @@ module.exports = (req, res, next) => {
       langInCookie ||
       req.acceptsLanguages(locale.supportedLocales) ||
       locale.defaultLocale;
-    filePath = req.path;
+    filePath = path.join(normalizedPath, fileType);
   }
 
   if (lang === locale.defaultLocale) {
@@ -65,7 +72,6 @@ module.exports = (req, res, next) => {
     "dist", // Must serve from dist directory even in dev mode.
     lang,
     filePath,
-    "index.html",
   );
 
   if (fs.existsSync(localizedFilePath)) {
