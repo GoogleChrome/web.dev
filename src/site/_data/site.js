@@ -14,10 +14,13 @@
  * limitations under the License.
  */
 
+const locale = require("../../../shared/locale");
+
 module.exports = {
   env: process.env.ELEVENTY_ENV || "dev",
   title: "web.dev",
   titleVariation: "Home",
+  defaultLocale: locale.defaultLocale,
   url: "https://web.dev",
   repo: "https://github.com/GoogleChrome/web.dev",
   subscribe: "https://web.dev/subscribe",

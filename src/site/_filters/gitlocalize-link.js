@@ -13,20 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const fs = require("fs");
-const localeCode = require("iso-639-1");
+
 const path = require("path");
+const site = require("../_data/site");
+const locales = require("../../../shared/locale");
 
-const defaultLocale = require("./src/site/_data/site").defaultLocale;
-const isProd = Boolean(process.env.GAE_APPLICATION);
-const contentDir = isProd ? "./dist" : "./src/site/content";
-const dirs = fs.readdirSync(path.join(__dirname, contentDir));
-const supportedLocales = dirs.filter((dir) => localeCode.validate(dir));
-
-const isSupportedLocale = (locale) => supportedLocales.indexOf(locale) > -1;
-
-module.exports = {
-  defaultLocale,
-  supportedLocales,
-  isSupportedLocale,
+module.exports = (inputPath, lang) => {
+  // Check if requested a supported locale and other than the default one.
+  if (
+    !inputPath ||
+    lang === locales.defaultLocale ||
+    !locales.isSupportedLocale(lang)
+  ) {
+    return "";
+  }
+  inputPath = inputPath.replace(`/${lang}/`, `/${site.defaultLocale}/`);
+  return path.join(site.gitlocalize, lang, inputPath);
 };
