@@ -22,5 +22,5 @@ jobs:
           service_account_key: ${{ secrets.GCLOUD_KEY }}
       - run: npm ci
       - run: npm run build
-      - run: gcloud app deploy --quiet --project web-dev-staging --no-promote --version $(md5 -q -s $GITHUB_REF)
+      - run: gcloud app deploy --quiet --project web-dev-staging --no-promote --version $(node -e "console.log(require('crypto').createHash('md5').update(process.argv[1]).digest('hex'))" $GITHUB_REF)
       # TODO(samthor): Write generated hash to comment on PR.
