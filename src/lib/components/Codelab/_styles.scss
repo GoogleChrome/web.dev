@@ -17,6 +17,25 @@ web-codelab {
       margin: 0;
     }
 
+    &.w-test {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      background: #eee;
+
+      &::before,
+      &::after {
+        background: blue;
+        color: white;
+        content: 'Top of codelab';
+        display: block;
+      }
+      &::after {
+        background: red;
+        content: 'Bottom of codelab';
+      }
+    }
+
     @include bp(md) {
       padding: 16px;
       position: sticky;

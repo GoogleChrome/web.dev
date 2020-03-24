@@ -4,17 +4,7 @@ permalink: "/{{lang}}/{{page.fileSlug}}/index.html"
 ---
 
 <div class="codelab-landing-page">
-  {% if site.env === 'prod' %}
-    <style>
-      devsite-content-footer,
-      devsite-footer-promos,
-      devsite-footer-linkboxes,
-      devsite-footer-utility {
-        display: none;
-      }
-    </style>
-  {% endif %}
-  <web-codelab glitch="{{ glitch }}" {% if glitch_path %}path="{{ glitch_path }}{% endif %}">
+  <web-codelab glitch="{{ glitch }}" {% if glitch_path %}path="{{ glitch_path }}"{% endif %} {% if site.env === 'test' %}testmode{% endif %}>
     <div class="web-codelab__instructions">
       <h1 class="w-headline w-headline--two web-codelab__headline">{{ title }}</h1>
       {% if date %}

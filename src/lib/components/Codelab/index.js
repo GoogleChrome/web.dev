@@ -5,7 +5,10 @@
 
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
+import config from "webdev_config";
 import "./_styles.scss";
+
+const {env} = config;
 
 /**
  * Render codelab instructions and Glitch
@@ -93,6 +96,14 @@ class Codelab extends BaseElement {
             </p>
           </div>
         </div>
+      `;
+    }
+
+    // Disable the Glitch in dev environments, as it takes a while to load.
+    // Used for screenshot testing.
+    if (env === "test") {
+      return html`
+        <div class="w-sizer w-test"></div>
       `;
     }
 
