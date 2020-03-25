@@ -5,10 +5,12 @@ description: |
   Learn how to improve the accessibility of audio on your web page by providing
   closed captions.
 date: 2019-05-02
-updated: 2020-03-20
+updated: 2020-03-25
 web_lighthouse:
   - audio-caption
 ---
+
+{% Banner 'caution', 'body' %}This audit has been deprecated.{% endBanner %}
 
 Captions make audio elements usable for deaf or hearing-impaired users,
 providing critical information such as who is talking, what they're saying,
