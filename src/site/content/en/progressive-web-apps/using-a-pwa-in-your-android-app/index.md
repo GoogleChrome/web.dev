@@ -23,8 +23,7 @@ Apps from their Android apps.
 
 Trusted Web Activity is an open standard that allows browsers to provide a fully web platform
 compatible container that renders PWAs inside an Android app. The feature
-is available in [Chrome][2], in development in [Firefox Preview Nightly][3], with other browsers
-joining soon.
+is available in [Chrome][2], and in development in [Firefox Preview Nightly][3].
 
 ### Existing solutions were limited
 
