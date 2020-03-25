@@ -90,7 +90,7 @@ trial is expected to end in Chrome 84.
 ### Enabling via chrome://flags
 
 To experiment with Web NFC locally on Android, without an origin trial token,
-enable the `#experimental-web-platform-features` flag in `chrome://flags`.
+enable the `#enable-experimental-web-platform-features` flag in `chrome://flags`.
 
 <figure class="w-figure">
   <img src="./chrome-flag.jpg" alt="Screenshot of the chrome://flags internal page to enable for Web NFC on Android">
