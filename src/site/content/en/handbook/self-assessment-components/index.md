@@ -19,7 +19,7 @@ to check their understanding of concepts covered in your post.
     - [Composite questions](#composite-questions)
 1. [Multiple sets in one post](#multiple-sets-in-one-post)
 
-## Start a self-assessmentf
+## Start a self-assessment
 
 To include a self-assessment in your post:
 1. Add this line to your post where you want the self-assessment to appear:
