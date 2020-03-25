@@ -227,7 +227,7 @@ class Tabs extends BaseElement {
     if (!tabs[index]) {
       throw new RangeError("There is no tab at the specified index.");
     }
-    this.activeTab = index;
+    tabs[index].focus();
   }
 
   // If previous tab exists, make it active. If not, make last tab active.
