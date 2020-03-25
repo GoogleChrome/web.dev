@@ -6,6 +6,7 @@ import "./_styles.scss";
 class ResponseMultipleChoice extends BaseResponseElement {
   static get properties() {
     return {
+      id: {type: String, reflect: true},
       cardinality: {type: String},
       columns: {type: Boolean},
       correctAnswer: {attribute: "correct-answer"},
@@ -20,7 +21,6 @@ class ResponseMultipleChoice extends BaseResponseElement {
     this.rationales = null;
     this.minSelections = null;
     this.maxSelections = null;
-    this.idSalt = BaseResponseElement.generateIdSalt("web-select-group-");
     this.selectType = null;
 
     this.onOptionInput = this.onOptionInput.bind(this);
@@ -67,12 +67,12 @@ class ResponseMultipleChoice extends BaseResponseElement {
             this.optionContents[i],
             this.rationales[i],
             isCorrect,
-            i,
           ),
         );
       }
     }
 
+    /* eslint-disable indent */
     return html`
       ${this.prerenderedChildren}
       <fieldset
@@ -80,13 +80,38 @@ class ResponseMultipleChoice extends BaseResponseElement {
         ?columns="${this.columns}"
       >
         <div class="web-select-group__options-wrapper">
-          ${this.options}
+          ${this.options.map(
+            (option, i) =>
+              html`
+                <label
+                  class="web-select-group__option web-response-mc__option"
+                  data-role="option"
+                >
+                  <input
+                    @input="${this.onOptionInput}"
+                    class="web-select-group__input web-response-mc__input gc-analytics-event"
+                    type="${this.selectType}"
+                    name="web-response-mc-${this.id}"
+                    value="${i}"
+                    data-category="Self-assessments"
+                    data-label="option ${i}, ${this.id}"
+                  />
+                  <span
+                    class="web-select-group__selector web-response-mc__selector"
+                  ></span>
+                  <span class="web-select-group__option-content">
+                    ${option}
+                  </span>
+                </label>
+              `,
+          )}
         </div>
       </fieldset>
     `;
+    /* eslint-enable indent */
   }
 
-  optionTemplate(content, rationale, isCorrect, i) {
+  optionTemplate(content, rationale, isCorrect) {
     const flag = document.createElement("div");
 
     flag.className = "web-response__correctness-flag";
@@ -100,37 +125,33 @@ class ResponseMultipleChoice extends BaseResponseElement {
     content.append(rationale);
 
     // Remove data-role since it's being applied to the option label
-    // in the template below.
+    // in render().
     content.removeAttribute("data-role");
 
-    return html`
-      <label
-        class="web-select-group__option web-response-mc__option"
-        data-role="option"
-        data-category="Site-Wide Custom Events"
-        data-label="${this.selectType}, web-select-group-${this.idSalt}-${i}"
-      >
-        <input
-          @input="${this.onOptionInput}"
-          class="web-select-group__input web-response-mc__input gc-analytics-event"
-          type="${this.selectType}"
-          name="web-select-group-${this.idSalt}"
-          value="${i}"
-          data-category="Self-assessments"
-          data-label="option ${i}, question"
-        />
-        <span
-          class="web-select-group__selector web-response-mc__selector"
-        ></span>
-        <span class="web-select-group__option-content">
-          ${content}
-        </span>
-      </label>
-    `;
+    return content;
   }
 
   firstUpdated() {
     super.firstUpdated();
+  }
+
+  async connectedCallback() {
+    super.connectedCallback();
+    const parentQuestion = this.closest("web-question");
+    // Fetch all elements that are not yet defined.
+    const undefinedElements = document.querySelectorAll(":not(:defined)");
+
+    const promises = [...undefinedElements].map((el) =>
+      customElements.whenDefined(el.localName),
+    );
+
+    // Wait for all elements to be upgraded.
+    // Then get the index of the question and set its id.
+    await Promise.all(promises);
+    const responses = parentQuestion.querySelectorAll("[data-role=response]");
+    const idx = [...responses].indexOf(this);
+
+    this.id = parentQuestion.id + "-response-" + idx;
   }
 
   onOptionInput(e) {
