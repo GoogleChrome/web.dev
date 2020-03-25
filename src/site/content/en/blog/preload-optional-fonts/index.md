@@ -1,5 +1,5 @@
 ---
-title: 'No layout shifting and FOIT with font-display: optional'
+title: 'Prevent layout shifting and flashes of invisibile text (FOIT) by preloading optional fonts'
 subhead: 'Starting in Chrome 82, link rel="preload" and font-display: optional can be combined to remove layout jank completely'
 authors:
   - houssein
