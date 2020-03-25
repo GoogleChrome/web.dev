@@ -177,6 +177,10 @@ aren't included in the table because they don't affect your score.
         <td>10</td>
       </tr>
       <tr>
+        <td><a href="/audio-caption/"><code>&#60;audio&#62;</code> elements are missing a <code>&#60;track&#62;</code> element with <code>[kind="captions"]</code></a></td>
+        <td>10</td>
+      </tr>
+      <tr>
         <td><a href="/video-caption/"><code>&#60;video&#62;</code> elements do not contain a <code>&#60;track&#62;</code> element with <code>[kind="captions"]</code></a></td>
         <td>10</td>
       </tr>
