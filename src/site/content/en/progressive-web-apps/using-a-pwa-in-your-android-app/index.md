@@ -70,7 +70,7 @@ additional Android-specific criteria such as [policy compliance][9].
   <img src="lh-score.png" style="max-width: 100%;"
     alt="A screenshot showing the Lighthouse score for AirHorn, with the PWA badge and a performance score of 100."/>
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    The PWA badge and a minimum lighthouse score of 80 are required.
+    The PWA badge and a minimum Lighthouse score of 80 are required.
   </figcaption>
 </figure>
 
