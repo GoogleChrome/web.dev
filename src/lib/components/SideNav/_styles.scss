@@ -91,6 +91,8 @@ web-side-nav[expanded][animatable] .web-side-nav__container {
 }
 
 .web-side-nav__header {
+  align-items: center;
+  display: flex;
   padding: 16px;
   border-bottom: 1px solid $GREY_300;
 }
@@ -101,17 +103,9 @@ web-side-nav[expanded][animatable] .web-side-nav__container {
 }
 
 .web-side-nav__hide {
-  -webkit-tap-highlight-color: transparent;
-  background: none;
-  border: none;
-  box-shadow: none;
-  color: rgba($BLACK, .65);
-  display: inline-block;
-  height: auto;
-  line-height: 1;
-  margin: 0 8px 0 -4px;
-  padding: 8px;
-  width: auto;
+  height: 2.75rem;
+  margin: 0 10px 0 -6px;
+  width: 2.75rem;
 }
 
 .web-side-nav__hide::before {
