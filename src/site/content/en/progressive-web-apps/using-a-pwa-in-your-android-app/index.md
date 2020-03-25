@@ -59,7 +59,7 @@ browser. Login states and users preferences are shared seamlessly across experie
 #### Browser Compatibility
 
 The feature has been available in Chrome since version 75, with Firefox implementing it in their
-nightly version. Other browsers are expected to follow soon.
+nightly version.
 
 ### Quality Criteria
 
