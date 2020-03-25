@@ -50,7 +50,7 @@ class AssessmentQuestion extends BaseElement {
           class="w-button w-button--primary web-assessment__button web-question__cta gc-analytics-event"
           data-category="Self-assessments"
           data-label="CTA, ${this.id}"
-          ?disabled="${this.state !== "unanswered" ? false : true}"
+          ?disabled="${this.state === "unanswered"}"
         >
           ${this.ctaLabel}
         </button>

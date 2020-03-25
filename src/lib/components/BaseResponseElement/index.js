@@ -63,10 +63,7 @@ export class BaseResponseElement extends BaseElement {
     }
     // Input errors handled in src/site/_includes/components/Assessment.js
 
-    return {
-      min: min,
-      max: max,
-    };
+    return {min, max};
   }
 
   async firstUpdated() {
@@ -170,16 +167,14 @@ export class BaseResponseElement extends BaseElement {
   checkIfCorrect() {
     const correctAnswersArr = this.correctAnswer.split(",").map(Number);
     const options = this.querySelectorAll("[data-role=option]");
-    const selectedOptions = this.querySelectorAll(
-      "[data-role=option][data-selected]",
-    );
     const selections = [];
 
-    for (let i = 0; i < selectedOptions.length; i++) {
-      const index = Array.from(options).indexOf(selectedOptions[i]);
+    options.forEach((el, index) => {
+      if (el.hasAttribute("data-selected")) {
+        selections.push(index);
+      }
+    });
 
-      selections.push(index);
-    }
     return correctAnswersArr.every((val) => selections.includes(val));
   }
 
