@@ -107,7 +107,7 @@ directory for the project. This is the file that will be [uploaded to the Play S
 
 [PWABuilder][12] helps developers transform existing websites into Progressive Web Apps. It also
 integrates with Bubblewrap to provide a GUI interface to wrap those PWAs into an Android app.
-The PWABuilder has put together a [great blog post][13] on how to generate an Android application
+The PWABuilder team has put together a [great blog post][13] on how to generate an Android application
 using the tool.
 
 ## Verifying ownership of the PWA in the Android app 
