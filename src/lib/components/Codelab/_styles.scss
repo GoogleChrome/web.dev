@@ -13,27 +13,22 @@ web-codelab {
   .w-sizer {
     padding: 16px 32px;
 
-    .w-aside {
-      margin: 0;
+    &.w-test {
+      @include bp(md) {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+
+        &::after {
+          content: '';
+          background: $WARNING_COLOR;
+          height: 2px;
+        }
+      }
     }
 
-    &.w-test {
-      display: flex;
-      flex-flow: column;
-      justify-content: space-between;
-      background: #eee;
-
-      &::before,
-      &::after {
-        background: blue;
-        color: white;
-        content: 'Top of codelab';
-        display: block;
-      }
-      &::after {
-        background: red;
-        content: 'Bottom of codelab';
-      }
+    .w-aside {
+      margin: 0;
     }
 
     @include bp(md) {

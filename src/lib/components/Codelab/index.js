@@ -82,28 +82,27 @@ class Codelab extends BaseElement {
     if (!this.glitch) {
       return html``;
     }
+    const isTest = env === "test";
 
-    if (!this._isDesktop) {
+    // If this is a test, always show the warning. Percy snapshots our DOM at a
+    // low resolution before resizing it, so we can't rely on _isDesktop being
+    // different for smaller or larger tests. The `w-test` ensures we test the
+    // sticky behavior of this element.
+    if (!this._isDesktop || isTest) {
+      const message = isTest
+        ? "This Glitch isn't loaded in a test environment"
+        : "This Glitch isn't available on small screens";
       return html`
-        <div class="w-sizer">
+        <div class="w-sizer ${isTest ? "w-test" : ""}">
           <div class="w-aside w-aside--warning">
             <p>
-              <strong>Warning:</strong> This Glitch isn't available on small
-              screens,
+              <strong>Warning:</strong> ${message},
               <a target="_blank" rel="noopener" href=${this.glitchSrc(false)}>
                 open it in a new tab.</a
               >
             </p>
           </div>
         </div>
-      `;
-    }
-
-    // Disable the Glitch in dev environments, as it takes a while to load.
-    // Used for screenshot testing.
-    if (env === "test") {
-      return html`
-        <div class="w-sizer w-test"></div>
       `;
     }
 
