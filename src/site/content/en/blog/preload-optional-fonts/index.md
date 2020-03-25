@@ -112,6 +112,6 @@ cache.
 
 ## Conclusion
 
-We're interested to hear your experiences preloading optional fonts with these new optimizations in
+The Chrome team is interested to hear your experiences preloading optional fonts with these new optimizations in
 place! File an [issue](https://bugs.chromium.org/p/chromium/issues/entry) if you experience any
 problems or would like to drop any feature suggestions.
