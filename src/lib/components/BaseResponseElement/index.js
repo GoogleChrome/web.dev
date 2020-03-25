@@ -33,14 +33,9 @@ export class BaseResponseElement extends BaseElement {
     super();
     this.state = "unanswered";
 
-    // this.reportUpdate = this.reportUpdate.bind(this);
-    // this.identifyCorrectOptions = this.identifyCorrectOptions.bind(this);
     this.enforceCardinality = this.enforceCardinality.bind(this);
-    // this.checkIfCorrect = this.checkIfCorrect.bind(this);
-    // this.submitResponse = this.submitResponse.bind(this);
+    this.submitResponse = this.submitResponse.bind(this);
     this.reset = this.reset.bind(this);
-    // this.enableOption = this.enableOption.bind(this);
-    // this.disableOption = this.disableOption.bind(this);
   }
 
   /**

@@ -1,5 +1,6 @@
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
+import {generateIdSalt} from "../../utils/generate-salt";
 import "./_styles.scss";
 
 /**
@@ -18,10 +19,8 @@ class SelectGroup extends BaseElement {
 
   constructor() {
     super();
-    this.idSalt = BaseElement.generateIdSalt("web-select-group-");
+    this.idSalt = generateIdSalt("web-select-group-");
     this.selectors = null;
-
-    // this.reportSelections = this.reportSelections.bind(this);
   }
 
   render() {
