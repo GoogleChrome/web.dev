@@ -23,6 +23,13 @@ By optimizing rendering cycles, Chrome 82 eliminates layout shifting when preloa
 Combining `<link rel="preload">` with `font-display: optional` is the most effective way to
 guarantee no layout jank when rendering custom fonts.
 
+## Browser compatibility {: #compatibility }
+
+Check out MDN's data for up-to-date cross-browser support information:
+
+* [`<link rel="preload">`](https://developer.mozilla.org/docs/Web/HTML/Preloading_content#Browser_compatibility)
+* [`font-display`](https://developer.mozilla.org/docs/Web/CSS/@font-face/font-display#Browser_compatibility)
+
 ## Font rendering
 
 Layout shifting, or re-layout, occurs when a resource on a web page changes dynamically, resulting in
