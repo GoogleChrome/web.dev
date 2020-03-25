@@ -176,7 +176,7 @@ Here's an example:
       correctAnswers: "1"
       stem: Who's this Webby I've heard so much about?
       options:
-        -content: A sentient system icon run amok
+        - content: A sentient system icon run amok
           rationale: Like this helpful little being would ever go amok.
         - content: The best darn mascot you could hope for
           rationale: Webby is _everything_.
