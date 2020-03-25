@@ -31,11 +31,9 @@ web-assessment {
   }
 
   @include bp(sm) {
-    & {
-      display: flex;
-      margin: 5em 0 !important; // Override .w-callout
-      padding: 0 !important; // Override .w-callout
-    }
+    display: flex;
+    margin: 5em 0 !important; // Override .w-callout
+    padding: 0 !important; // Override .w-callout
   }
 }
 

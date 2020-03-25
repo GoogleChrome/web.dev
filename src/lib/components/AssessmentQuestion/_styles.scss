@@ -15,10 +15,8 @@ web-question {
   overflow-y: auto;
 
   @include bp(sm) {
-    & {
-      flex: 1 1 auto;
-      height: 25rem; // Default height; can be overridden by content author
-    }
+    flex: 1 1 auto;
+    height: 25rem; // Default height; can be overridden by content author
   }
 }
 
@@ -30,9 +28,7 @@ web-question {
   padding: .625rem;
 
   @include bp(sm) {
-    & {
-      padding: 1rem;
-    }
+    padding: 1rem;
   }
 }
 
