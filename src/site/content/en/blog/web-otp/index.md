@@ -224,7 +224,7 @@ Next, pass the OTP value to an `input` field and submit it on behalf of the user
 document.querySelector('#input').value = content.code;
 ```
 
-### Set a message timeout
+### Aborting the message {: #aborting }
 
 To set a timeout that aborts the `get()` call, pass an `AbortController`
 instance in the [`options`
@@ -279,7 +279,7 @@ message to arrive and submits the form as soon as the OTP is passed.
 ```
 
 
-### Format the SMS message
+### Format the SMS message {: #format }
 
 The API itself should look simple enough, but a critical part is to
 format your SMS text message according to a specific convention. The message has
@@ -371,14 +371,15 @@ Send a Tweet to [@ChromiumDev](https://twitter.com/chromiumdev) with
 `#smsreceiver` and let us know where and how you're using it.
 
 ## Differences from SMS Receiver API {: #differences }
-Consider Web OTP API an evolved version of the SMS Receiver API. Web OTP API has a few significant differences compared to the SMS Receiver API.
-Expected text format for SMS is changed.
-API is now `navigator.credentials.get()` rather than `navigator.sms.receive()`.
-Web OTP is specialized in receiving an OTP rather than obtaining the entire SMS text.
-Aborting the promise is now possible.
+Consider Web OTP API an evolved version of the SMS Receiver API. Web OTP API has
+a few significant differences compared to the SMS Receiver API.
 
-* Because you need to change the SMS format anyway, you don't need to consider the transition period scenario.
-
+* The [expected text format](#format) for the SMS message has changed.
+* The method called is now `navigator.credentials.get()` rather than
+  `navigator.sms.receive()`.
+* The `get()` receives only the OTP rather than the entire SMS message as
+  `receive()` did before.
+* It's now possible to [abort the call to `get()`](#aborting).
 
 ## FAQ
 ### Why did you not align with Safari's one-time-code?
