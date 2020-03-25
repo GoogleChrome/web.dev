@@ -64,7 +64,7 @@ for information on optimizing your images.
 
 A few examples illustrate this. The following shows the default behavior when cutting an image's display size in half.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="./default-100x100.png" alt="The default resizing behavior" style="max-width: 326px;">
   <figcaption class="w-figcaption">
     The default resizing behavior.
@@ -75,7 +75,7 @@ If I apply the following feature policy, I get a placeholder image instead.
 
 `Feature-Policy: oversized-images *(2);`
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="./resize-both-dimensions.png" alt="When the image is too large for the container" style="max-width: 326px;">
   <figcaption class="w-figcaption">
     When the image is too large for the container.
@@ -84,7 +84,7 @@ If I apply the following feature policy, I get a placeholder image instead.
 
 I get similar results if I lower only the width or the height.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="./resize-width.png" alt="Resized width" style="max-width: 326px;">
   <img src="./resize-height.png" alt="Resized height" style="max-width: 326px;">
   <figcaption class="w-figcaption">
@@ -155,7 +155,7 @@ optimizing your images.
 
 The following shows the default browser behavior. Without the feature policy an unoptimized lossy image can be displayed just the same as an optimized image.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="./unoptimized-lossy.png" alt="Comparing an optimized image with an unoptimized image" style="max-width: 326px;">
   <figcaption class="w-figcaption">
     Comparing an optimized image with an unoptimized image.
@@ -166,7 +166,7 @@ If I apply the following feature policy, I get a placeholder image instead.
 
 `Feature-Policy: unoptimized-lossy-images *(0.5);`
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="./lossy-image-excluded.png" alt="When the image is not optimized" style="max-width: 326px;">
   <figcaption class="w-figcaption">
     When the image is not optimized.

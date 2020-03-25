@@ -38,7 +38,7 @@ very small subset of the entire list and the "window" of visible content _moves_
 when the user continues to scroll. This improves both the rendering and
 scrolling performance of the list.
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="./window-diagram.jpg" alt="Window of content in a virtualized list">
   <figcaption class="w-figcaption">
     Moving "window" of content in a virtualized list
@@ -170,7 +170,7 @@ an example.
 or grids. In this context, the "window" of visible content changes as the user
 scrolls horizontally **and** vertically.
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="./window-diagram-grid.jpg" alt="Moving window of content in a virtualized grid is two-dimensional">
   <figcaption class="w-figcaption">
     Moving "window" of content in a virtualized grid is two-dimensional
@@ -210,7 +210,7 @@ calculations and DOM mutations slower.
 
 The following diagram might help summarize this:
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="./difference-in-scrolling.jpg" alt="Difference in scrolling between a regular and virtualized list">
   <figcaption class="w-figcaption">
     Difference in scrolling between a regular and virtualized list

@@ -14,16 +14,10 @@
  * limitations under the License.
  */
 const fs = require("fs");
-const localeCode = require("iso-639-1");
 const path = require("path");
+const locale = require("./shared/locale");
 
-const isProd = Boolean(process.env.GAE_APPLICATION);
-const contentDir = isProd ? "dist" : "src/site/content";
-const dirs = fs.readdirSync(path.join(__dirname, contentDir));
-const SUPPORTED_LOCALES = dirs.filter((dir) => localeCode.validate(dir));
-const DEFAULT_LOCALE = "en";
-
-const isSupported = (locale) => SUPPORTED_LOCALES.indexOf(locale) > -1;
+const indexJsonRegExp = /\/index\.json$/;
 
 /**
  * A handler that redirects the request based on requested locale,
@@ -38,30 +32,37 @@ const isSupported = (locale) => SUPPORTED_LOCALES.indexOf(locale) > -1;
  * @return {!Function}
  */
 module.exports = (req, res, next) => {
+  const isNav = req.url.endsWith("/");
+  const isJson = req.url.endsWith("/index.json");
   // Exit early if the url is not navigational.
-  if (!req.url.endsWith("/")) {
+  if (!isNav && !isJson) {
     return next();
   }
 
-  const pathParts = req.path.split("/");
-  // Check if language is specified in the url.
-  const isLangInPath = isSupported(pathParts[1]);
+  const fileType = isJson ? "index.json" : "index.html";
+  const normalizedPath = req.path.replace(indexJsonRegExp, "");
+  const pathParts = normalizedPath.split("/");
+  const isLangInPath = locale.isSupportedLocale(pathParts[1]);
   let lang;
   let filePath;
 
+  // Check if language is specified in the url.
   if (isLangInPath) {
     lang = pathParts[1];
     pathParts.splice(1, 1);
+    pathParts.push(fileType);
     filePath = pathParts.join("/");
   } else {
-    const langInCookie = isSupported(req.cookies.preferred_lang);
+    const langInCookie = locale.isSupportedLocale(req.cookies.preferred_lang);
     // If language not in url, use accept-language header.
     lang =
-      langInCookie || req.acceptsLanguages(SUPPORTED_LOCALES) || DEFAULT_LOCALE;
-    filePath = req.path;
+      langInCookie ||
+      req.acceptsLanguages(locale.supportedLocales) ||
+      locale.defaultLocale;
+    filePath = path.join(normalizedPath, fileType);
   }
 
-  if (lang === DEFAULT_LOCALE) {
+  if (lang === locale.defaultLocale) {
     // If this is alread default language, continue.
     return next();
   }
@@ -71,12 +72,11 @@ module.exports = (req, res, next) => {
     "dist", // Must serve from dist directory even in dev mode.
     lang,
     filePath,
-    "index.html",
   );
 
   if (fs.existsSync(localizedFilePath)) {
     return isLangInPath ? next() : res.redirect(path.join("/", lang, filePath));
   } else {
-    return res.redirect(path.join("/", DEFAULT_LOCALE, filePath));
+    return res.redirect(path.join("/", locale.defaultLocale, filePath));
   }
 };

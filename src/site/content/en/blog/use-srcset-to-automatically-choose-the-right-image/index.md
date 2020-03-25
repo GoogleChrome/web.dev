@@ -26,7 +26,7 @@ According to [HTTP Archive](https://httparchive.org/reports/state-of-images), a
 typical mobile web page weighs over 2.6 MB, and more than two thirds of that
 weight is images. That's a great opportunity for optimization!
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="http-archive.svg">
   <figcaption class="w-figcaption">
     <a href="https://mobile.httparchive.org/">Average mobile page bytes by content type</a>
@@ -61,11 +61,11 @@ They appear nearly identical, but the file size of one is more than 10 times
 larger than the other.
 
 <div class="w-columns">
-  <figure class="w-figure w-figure--center">
+  <figure class="w-figure">
     <img class="w-screenshot" src="kittens-1000.jpg" alt="Little Puss and Lias: two ten week old tabby kittens." width="300">
     <figcaption class="w-figcaption">Saved width 1000 px, file size 184 KB</figcaption>
   </figure>
-  <figure class="w-figure w-figure--center">
+  <figure class="w-figure">
     <img class="w-screenshot" src="kittens-300.jpg" alt="Little Puss and Lias: two ten week old tabby kittens." width="300">
     <figcaption class="w-figcaption">Saved width 300 px, file size 16 KB</figcaption>
   </figure>

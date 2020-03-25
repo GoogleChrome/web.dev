@@ -6,6 +6,7 @@
  */
 
 import {store} from "./store";
+import {normalizeUrl} from "./urls";
 import "./utils/underscore-import-polyfill";
 
 /**
@@ -47,21 +48,6 @@ export async function getPartial(url, signal) {
   }
 }
 
-function normalizeUrl(url) {
-  const u = new URL(url, window.location);
-  let pathname = u.pathname;
-
-  if (pathname.endsWith("/index.html")) {
-    // If an internal link refers to "/foo/index.html", strip "index.html" and load.
-    pathname = pathname.slice(0, -"index.html".length);
-  } else if (!pathname.endsWith("/")) {
-    // All web.dev pages end with "/".
-    pathname = `${url}/`;
-  }
-
-  return pathname + u.search;
-}
-
 /**
  * Force the user's cursor to the target element, making it focusable if needed.
  * After the user blurs from the target, it will restore to its initial state.
@@ -98,8 +84,16 @@ function forceFocus(el) {
  * @param {!Object} partial
  */
 function updateDom(partial) {
-  const main = document.querySelector("main");
-  main.querySelector("#content").innerHTML = partial.raw;
+  const content = document.querySelector("main #content");
+  content.innerHTML = partial.raw;
+
+  // Close any open self-assessment modals.
+  // TODO(samthor): Replace this logic with a store subscriber that allows
+  // all components to clean up after themselves when the page changes.
+  const assessmentsOpen = document.querySelectorAll("web-assessment[open]");
+  for (const assessment of assessmentsOpen) {
+    assessment.remove();
+  }
 
   // Update the page title.
   document.title = partial.title || "";
@@ -164,12 +158,13 @@ export async function swapContent({firstRun, url, signal, ready, state}) {
   const isOffline = Boolean(partial.offline);
   store.setState({currentUrl: url, isOffline});
 
+  // Inform the router that we're ready early (even though the JS isn't done). This updates the URL,
+  // which must happen before DOM changes and ga event.
+  ready(url, {partial});
+
   ga("set", "page", window.location.pathname);
   ga("send", "pageview");
   updateDom(partial);
-
-  // Inform the router that we're ready early (even though the JS isn't done).
-  ready(url, {partial});
 
   // Finally, just await for the entrypoint JS. It this fails we'll throw an exception and force a
   // complete reload.

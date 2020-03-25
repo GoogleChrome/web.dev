@@ -92,9 +92,9 @@ To make an image extend slightly beyond the width of the content column (for emp
   </figcaption>
 </figure>
 
-To keep an image from growing beyond a specified size, add the `w-figure--center` class to the `figure` element and add a `width` attribute to the `img` element. For example, `width="400"`. All images will have a `max-width` of `100%` on mobile:
+To keep an image from growing beyond a specified size, add the `w-figure` class to the `figure` element and add a `width` attribute to the `img` element. For example, `width="400"`. All images will have a `max-width` of `100%` on mobile:
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="./image-small.png" alt="A screenshot of a section of the Chrome DevTools user interface." width="400">
   <figcaption class="w-figcaption">
     A small, centered image.

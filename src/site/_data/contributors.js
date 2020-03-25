@@ -1739,6 +1739,18 @@ const contributors = {
     description: {
       en: "Andre is a Developer Advocate",
     },
+  koto: {
+    name: {
+      given: "Krzysztof",
+      family: "Kotowicz",
+    },
+    org: {
+      name: "Google",
+      unit: "Information Security Engineering",
+    },
+    country: "CH",
+    twitter: "kkotowicz",
+    github: "koto",
   },
 };
 
