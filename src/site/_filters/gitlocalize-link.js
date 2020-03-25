@@ -16,7 +16,7 @@
 
 const path = require("path");
 const site = require("../_data/site");
-const locales = require("../../lib/utils/locale");
+const locales = require("../../../shared/locale");
 
 module.exports = (inputPath, lang) => {
   // Check if requested a supported locale and other than the default one.

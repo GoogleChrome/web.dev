@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2019 Google Inc. All rights reserved.
+ * Copyright 2020 Google Inc. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,23 @@
  */
 
 import {assert} from "../../test/assert";
+import "./index";
 
-suite("basic", () => {
-  test("works", () => {
-    assert(true, "something broke!");
+suite("web-lighthouse-gauge", async () => {
+  await customElements.whenDefined("web-lighthouse-gauge");
+
+  test("basic", async () => {
+    const gauge = document.createElement("web-lighthouse-gauge");
+    document.body.append(gauge);
+    try {
+      gauge.score = 0.5;
+      await gauge.updateComplete;
+      assert(
+        gauge.getAttribute("aria-valuenow") === "50",
+        "attr should reflect property",
+      );
+    } finally {
+      gauge.remove();
+    }
   });
 });

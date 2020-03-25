@@ -197,7 +197,7 @@ async function build() {
 async function buildTest() {
   const testBundle = await rollup.rollup({
     input: "src/lib/test/index.js",
-    plugins: defaultPlugins,
+    plugins: [rollupPluginPostCSS(), ...defaultPlugins],
   });
   await testBundle.write({
     dir: "dist/test",
