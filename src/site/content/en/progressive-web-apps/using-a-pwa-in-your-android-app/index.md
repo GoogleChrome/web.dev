@@ -161,5 +161,5 @@ Finally, move your application from the closed test channel to production!
 [13]: https://www.davrous.com/2020/02/07/publishing-your-pwa-in-the-play-store-in-a-couple-of-minutes-using-pwa-builder/
 [14]: https://developers.google.com/digital-asset-links/v1/getting-started
 [15]: https://play.google.com/store/apps/details?id=dev.conn.assetlinkstool
-[16]: /lighthouse-performance/
+[16]: https://developers.google.com/web/tools/lighthouse
 [17]: /fugu-status/
