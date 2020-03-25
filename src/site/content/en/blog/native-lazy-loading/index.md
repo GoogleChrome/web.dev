@@ -16,6 +16,10 @@ tags:
   - performance
 ---
 
+{% Aside %}
+  Please note `<iframe loading=lazy>` is currently non-standard. While implemented in Chromium, it does not yet have a specification and is subject to future change when this does happen. We suggest not to lazy-load iframes using the loading attribute until it becomes part of the specification.
+{% endAside %}
+
 Support for natively lazy-loading images and iframes is coming to the web! This video shows
 a [demo](https://mathiasbynens.be/demo/img-loading-lazy) of the feature:
 
@@ -74,6 +78,10 @@ Here are the supported values for the `loading` attribute:
   including the attribute.
 - `lazy`: Defer loading of the resource until it reaches a [calculated distance](#load-in-distance-threshold) from the viewport.
 - `eager`: Load the resource immediately, regardless of where it's located on the page.
+
+{% Aside 'caution' %}
+  Although available in Chromium, the `auto` value is not mentioned in the [specification](https://html.spec.whatwg.org/multipage/urls-and-fetching.html#lazy-loading-attributes). Since it may be subject to change, we recommend not to use it until it gets included.
+{% endAside %}
 
 ### Load-in distance threshold
 
