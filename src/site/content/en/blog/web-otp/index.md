@@ -1,6 +1,6 @@
 ---
 title: Verify phone numbers on the web with the Web OTP API
-subhead: Help users type OTPs received through SMS
+subhead: Help users with OTPs received through SMS
 authors:
   - agektmr
 date: 2019-10-07
@@ -26,13 +26,14 @@ These days, most people in the world own a mobile device and developers are
 commonly using phone numbers as an identifier for users of their services.
 
 There are a variety of ways to verify phone numbers, but a randomly generated
-one-time password (OTP) sent by SMS to the number is one of the most common.
-Sending this code back to the developer's server demonstrates control of the
-phone number.
+one-time password (OTP) sent by SMS is one of the most common. Sending this code
+back to the developer's server demonstrates control of the phone number.
 
 {% Aside %}
-The Web OTP API was originally called the SMS Receiver API. You may still see
-it named that way in some places.
+The Web OTP API was originally called the SMS Receiver API. You may still see it
+named that way in some places. If used that API, you should still read this
+article. [There are significant differences](#differences) between the current
+and earlier versions of the API.
 {% endAside %}
 
 This idea is already deployed in many scenarios to achieve:
@@ -88,7 +89,7 @@ Status
 1. Create explainer
 </td>
 <td markdown="block">
-<a href="https://github.com/samuelgoto/sms-receiver/blob/master/README.md" >Complete</a>
+<a href="https://github.com/samuelgoto/sms-receiver/blob/master/README.md">Complete</a>
 </td>
 </tr>
 <tr>
@@ -96,7 +97,7 @@ Status
 2. Create initial draft of specification
 </td>
 <td markdown="block">
-In Progress
+<a href="https://wicg.github.io/WebOTP/">Complete</a>
 </td>
 </tr>
 <tr>
@@ -131,12 +132,11 @@ Let's say a user wants to verify their phone number with a website. The website
 sends a text message to the user over SMS and the user enters the OTP from the
 message to verify the ownership of the phone number.
 
-With the Web OTP API, these steps are as easy as one tap for the
-user, as demonstrated in the video. As the text message arrives, a bottom
-sheet pops up and prompts the user to verify their
-phone number. After clicking the **Verify** button within the bottom sheet,
-the browser pastes the OTP into the form and the form is submitted without
-the user needing to press **Continue**.
+With the Web OTP API, these steps are as easy as one tap for the user, as
+demonstrated in the video. When the text message arrives, a bottom sheet pops up
+and prompts the user to verify their phone number. After clicking the **Verify**
+button on the bottom sheet, the browser pastes the OTP into the form and the
+form is submitted without the user needing to press **Continue**.
 
 <video autoplay loop muted playsinline>
   <source src="https://storage.googleapis.com/web-dev-assets/sms-receiver-announce/demo.mp4" type="video/mp4">
@@ -174,10 +174,10 @@ not seem to be working, try installing and using Chrome on your personal profile
 instead (i.e. the same profile in which you receive SMS messages).
 {% endAside %}
 
-## Using the Web OTP API
+## Use the Web OTP API
 
-Using the Web OTP API consists of two parts: JavaScript in your web
-app and formatted message text sent via SMS.
+Using the Web OTP API consists of two parts: JavaScript in your web app and
+formatted message text sent via SMS. I'll cover the JavaScript first.
 
 {% Aside %}
 The Web OTP API requires a secure origin (HTTPS).
@@ -188,35 +188,98 @@ The Web OTP API requires a secure origin (HTTPS).
 Feature detection is the same as for many other APIs:
 
 ```js
-if ('sms' in navigator) {
+if ('OTPCredential' in window) {
   ...
 }
 ```
 
 ### Process the OTP
 
-The Web OTP API itself is simple enough:
+The Web OTP API itself is simple enough. Use
+[`navigator.credentials.get()`](https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer/get)
+to obtain the OTP. Web OTP adds a new `otp` option to that method. It only has
+one property: `transport`, whose value must be an array with the string `'sms'`.
 
 ```js
-const sms = await navigator.sms.receive();
+const content = await navigator.credentials.get({
+  otp: {
+    transport:['sms']
+  }
+});
 ```
 
-Once a user taps **Verify**, displayed in the bottom sheet, the promise
-containing the entire text message will resolve. You can use a regular
-expression to extract the OTP and verify the user. Notably, you should parse and
-use the SMS message assuming it could have been altered by an attacker inserting
-their own SMSes into your app (e.g. following the formatting convention and
-sending it right after you called `navigator.sms.receive()`). For example, if a
-text message contains a six digit verification code following `otp=`, the code
-would look like this:
+This triggers the browser's permission flow. If permission is granted, the
+returned promise resolves with an `OTPCredential` object.
+
+```json
+{
+  code: "123456" // Obtained OTP
+  type: "otp"  // `type` is always "otp"
+}
+```
+
+Next, pass the OTP value to an `input` field and submit it on behalf of the user.
 
 ```js
-const code = sms.content.match(/^[\s\S]*otp=([0-9]{6})[\s\S]*$/m)[1];
+document.querySelector('#input').value = content.code;
 ```
 
-You can now submit the code to the server to verify it.
+### Set a message timeout
 
-### Formatting the SMS message
+To set a timeout that aborts the `get()` call, pass an `AbortController`
+instance in the [`options`
+object](https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer/get#Parameters).
+
+```js
+const signal = new AbortController();
+let timer = setTimeout(() => {
+  signal.abort();
+}, 10 * 1000);
+
+const content = await navigator.credentials.get({
+  otp: { transport:['sms'] },
+  abort: signal
+});
+```
+
+### Use the API declaratively
+
+The code below demonstrates a web component that extends `input`.
+
+```js
+customElements.define("one-time-code",
+  class extends HTMLInputElement {
+    connectedCallback() {
+      this.receive();
+    }
+    async receive() {
+      try {
+        const sms = await navigator.credentials.get({
+          otp: { transport:['sms'] }
+        });
+        this.value = sms.code;
+        this.form.submit();
+      } catch (e) {
+        console.error(e);
+      }
+    }
+  }, {
+    extends: "input"
+});
+```
+After this declaration you can add `is="one-time-code` to any `input` element.
+As soon as the element is added to the document tree, it waits for an SMS
+message to arrive and submits the form as soon as the OTP is passed.
+
+```html
+<form>
+  <input is="one-time-code" autocomplete="one-time-code" required />
+  <input type="submit">
+</form>
+```
+
+
+### Format the SMS message
 
 The API itself should look simple enough, but a critical part is to
 format your SMS text message according to a specific convention. The message has
@@ -245,7 +308,8 @@ For: https://sms-receiver-demo.glitch.me/?otp=123456&xFJnfg75+8v
 ```
 
 The application hash of Chrome instances are static. Use one of these strings
-for development depending on which Chrome build you will be working with.
+for development depending on which Chrome build you will be working with. These
+values may change. Watch this page for updates.
 
 <table>
 <tr>
@@ -255,6 +319,14 @@ for development depending on which Chrome build you will be working with.
 <th markdown="block">
 <strong>APK hash string</strong>
 </th>
+</tr>
+<tr>
+<td markdown="block">
+Chrome Canary
+</td>
+<td markdown="block">
+<code>PqEvUq15HeK</code>
+</td>
 </tr>
 <tr>
 <td markdown="block">
@@ -272,7 +344,7 @@ Chrome Stable
 <code>EvsSSj4C6vl</code>
 </td>
 </tr>
-</table>
+</table>ß
 
 ### Demos
 
@@ -297,6 +369,16 @@ Are you planning to use the Web OTP API? Your public support helps us prioritize
 features, and shows other browser vendors how critical it is to support them.
 Send a Tweet to [@ChromiumDev](https://twitter.com/chromiumdev) with
 `#smsreceiver` and let us know where and how you're using it.
+
+## Differences from SMS Receiver API {: #differences }
+Consider Web OTP API an evolved version of the SMS Receiver API. Web OTP API has a few significant differences compared to the SMS Receiver API.
+Expected text format for SMS is changed.
+API is now `navigator.credentials.get()` rather than `navigator.sms.receive()`.
+Web OTP is specialized in receiving an OTP rather than obtaining the entire SMS text.
+Aborting the promise is now possible.
+
+* Because you need to change the SMS format anyway, you don't need to consider the transition period scenario.
+
 
 ## FAQ
 ### Why did you not align with Safari's one-time-code?
