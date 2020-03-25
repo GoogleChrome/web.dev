@@ -82,6 +82,9 @@ const strip = require(`./${filtersDir}/strip`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
 const stripLanguage = require(`./${filtersDir}/strip-language`);
 
+const transformsDir = 'src/site/_transforms';
+const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
+
 const buildPartial = require('./src/site/_utils/build-partial');
 
 module.exports = function(config) {
@@ -226,6 +229,13 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   config.addNunjucksTag('Image', Image);
   config.addNunjucksTag('Figure', Figure);
+
+  //----------------------------------------------------------------------------
+  // TRANSFORMS
+  //----------------------------------------------------------------------------
+  if (process.env.ELEVENTY_ENV === 'test') {
+    config.addTransform('disable-lazy-load', disableLazyLoad);
+  }
 
   // https://www.11ty.io/docs/config/#data-deep-merge
   config.setDataDeepMerge(true);
