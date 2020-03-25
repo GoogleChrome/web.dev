@@ -29,6 +29,12 @@ module.exports = function(config) {
     plugins: ["karma-chrome-launcher", "karma-mocha", "karma-sourcemap-loader"],
     reporters: ["dots"], // report results in these formats.
     singleRun: true, // set this to false to leave the browser open.
+
+    client: {
+      mocha: {
+        ui: "tdd",
+      },
+    },
   };
 
   if (mode === "dev") {

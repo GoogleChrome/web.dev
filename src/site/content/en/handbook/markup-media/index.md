@@ -2,7 +2,7 @@
 layout: handbook
 title: Images and video
 date: 2019-06-26
-updated: 2019-12-17
+updated: 2020-03-25
 description: |
   Learn how to create the Markdown for images and video for web.dev.
 ---
@@ -50,7 +50,9 @@ If you don't provide a thumbnail, the post will attempt to reuse the hero image.
 If there is no hero image, the post will omit the thumbnail entirely.
 
 ## Body images
-Images intended to fill the full width of the content column should be at least 800 px wide.
+
+Images intended to fill the full width of the content column should be `800px` wide at a minimum,
+and `1600px` wide at a maximum (to account for screens that use 2x resolution).
 
 Use Markdown syntax for standard standalone images:
 
@@ -92,9 +94,9 @@ To make an image extend slightly beyond the width of the content column (for emp
   </figcaption>
 </figure>
 
-To keep an image from growing beyond a specified size, add the `w-figure--center` class to the `figure` element and add a `width` attribute to the `img` element. For example, `width="400"`. All images will have a `max-width` of `100%` on mobile:
+To keep an image from growing beyond a specified size, add the `w-figure` class to the `figure` element and add a `width` attribute to the `img` element. For example, `width="400"`. All images will have a `max-width` of `100%` on mobile:
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="./image-small.png" alt="A screenshot of a section of the Chrome DevTools user interface." width="400">
   <figcaption class="w-figcaption">
     A small, centered image.

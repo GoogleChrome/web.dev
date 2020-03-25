@@ -22,7 +22,7 @@ Image CDNs specialize in the transformation, optimization, and delivery of image
 
 
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="./image-cdn-requests.jpg" alt="Shows the request/response flow between the image CDN and the client. Parameters like size and format are used to request variations of the same image.">
   <figcaption class="w-figcaption">
     Examples of transformations image CDNs can perform based on parameters in image URLs.
@@ -39,7 +39,7 @@ Image URLs used by image CDNs convey important information about an image and th
 
 
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img src="./image-cdn-url.jpg" alt="Image URLs typically consist of the following components: origin, image, security key, and transformations.">
 </figure>
 

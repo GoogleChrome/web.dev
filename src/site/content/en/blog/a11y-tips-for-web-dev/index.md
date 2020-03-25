@@ -267,7 +267,7 @@ First, ensure that you have a sensible focus target for each component.
 For example, a complex component like a menu may be one focus target within a page
 but should then manage focus within itself so that the active menu item always takes focus.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="./manage-focus.png" alt="A screenshot of a menu and submenu that requires focus management.">
   <figcaption class="w-figcaption">
     Managing focus within a complex element.
@@ -335,7 +335,7 @@ to automate running keyboard accessibility tests for toggling UI states.
 [WalkMe Engineering](https://medium.com/walkme-engineering/web-accessibility-testing-d499a7f7a032)
 has a great guide on this I recommend reading.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="./aria-expanded.gif" alt="WalkMe state toggle test.">
 </figure>
 
@@ -404,7 +404,7 @@ By binding these attributes to the relevant properties on your custom component,
 you can allow users of assistive technology to interact with the element,
 change its value, and even cause the element's visual presentation to change accordingly.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="./slider.png" class="w-screenshot" alt="A screenshot of a slider.">
   <figcaption class="w-figcaption">
     A range slider component.
@@ -425,7 +425,7 @@ provide labels and values for each slice
 so users who have visual impairments can understand the information
 even if they can't tell where the slices begin and end:
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="./pie-chart.png" alt="A pie chart with labels and values to ensure accessibility.">
   <figcaption class="w-figcaption">An accessible pie chart. (From the <a href="https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Informational_Graphic_Contrast_(Minimum)" rel="noopener">W3C Web Accessibility Initiative</a>.)</figcaption>
 </figure>
@@ -480,7 +480,7 @@ debugging the accessibility of your visual components.
   ![Screenshot of a code editor with an accessibility issue flagged by codelyzer.](./angular-a11y-testing.png)
 
 - You can examine the way that assistive technologies see web content by using
-  [Accessibility Inspector](https://developer.apple.com/library/mac/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTesting/OSXAXTestingApps.html#//apple_ref/doc/uid/TP40001078-CH210-TPXREF101) (Mac)
+  [Accessibility Inspector](https://developer.apple.com/library/archive/documentation/Accessibility/Conceptual/AccessibilityMacOSX/OSXAXTestingApps.html#//apple_ref/doc/uid/TP40001078-CH210-SW1) (Mac)
   or [Windows Automation API Testing Tools](http://msdn.microsoft.com/en-us/library/windows/desktop/dd373661(v=vs.85).aspx)
   and [AccProbe](http://accessibility.linuxfoundation.org/a11yweb/util/accprobe/) (Windows).
   You can also see the full accessibility tree that Chrome creates

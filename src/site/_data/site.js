@@ -14,10 +14,13 @@
  * limitations under the License.
  */
 
+const locale = require("../../../shared/locale");
+
 module.exports = {
   env: process.env.ELEVENTY_ENV || "dev",
   title: "web.dev",
   titleVariation: "Home",
+  defaultLocale: locale.defaultLocale,
   url: "https://web.dev",
   repo: "https://github.com/GoogleChrome/web.dev",
   subscribe: "https://web.dev/subscribe",
@@ -28,6 +31,7 @@ module.exports = {
   // of the site. Otherwise all image paths are local. This means you can
   // develop locally without having to mess with the CDN at all.
   imageCdn: "https://webdev.imgix.net",
+  gitlocalize: "https://gitlocalize.com/repo/3847/",
   analytics: {
     ids: {
       prod: "UA-126406676-2",

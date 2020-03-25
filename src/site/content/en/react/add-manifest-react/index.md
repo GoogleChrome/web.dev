@@ -22,7 +22,7 @@ Create React App (CRA) includes a web app manifest by default. Modifying this
 file will allow you to change how your application is displayed when installed
 on the user's device.
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img src="./icon-home-screen.png" alt="A progressive web app icon on a mobile phone's home screen">
 </figure>
 

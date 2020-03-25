@@ -32,7 +32,7 @@ else!
 Most of the time these kinds of experiences are just annoying, but in some
 cases, they can cause real damage.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <video autoplay controls loop muted
     class="w-screenshot"
     poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png"
@@ -251,13 +251,19 @@ how to create a
 that listens for `layout-shift` entries and logs them to the console:
 
 ```js
-const observer = new PerformanceObserver((list) => {
- for (const entry of list.getEntries()) {
-   console.log(entry);
- }
-});
+// Catch errors since some browsers throw when using the new `type` option.
+// https://bugs.webkit.org/show_bug.cgi?id=209216
+try {
+  const observer = new PerformanceObserver((list) => {
+  for (const entry of list.getEntries()) {
+    console.log(entry);
+  }
+  });
 
-observer.observe({type: 'layout-shift', buffered: true});
+  observer.observe({type: 'layout-shift', buffered: true});
+} catch (e) {
+  // Do nothing if the browser doesn't support this API.
+}
 ```
 
 To calculate the cumulative layout shift score for your pages, declare a
@@ -271,34 +277,40 @@ state](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)
 changes to hidden:
 
 ```js
-// Stores the current layout shift score for the page.
-let cumulativeLayoutShiftScore = 0;
+// Catch errors since some browsers throw when using the new `type` option.
+// https://bugs.webkit.org/show_bug.cgi?id=209216
+try {
+  // Store the current layout shift score for the page.
+  let cumulativeLayoutShiftScore = 0;
 
-// Detects new layout shift occurrences and updates the
-// `cumulativeLayoutShiftScore` variable.
-const observer = new PerformanceObserver((list) => {
- for (const entry of list.getEntries()) {
-   // Only count layout shifts without recent user input.
-   if (!entry.hadRecentInput) {
-     cumulativeLayoutShiftScore += entry.value;
-   }
- }
-});
+  // Detect new layout shift occurrences and updates the
+  // `cumulativeLayoutShiftScore` variable.
+  const observer = new PerformanceObserver((list) => {
+  for (const entry of list.getEntries()) {
+    // Only count layout shifts without recent user input.
+    if (!entry.hadRecentInput) {
+      cumulativeLayoutShiftScore += entry.value;
+    }
+  }
+  });
 
-observer.observe({type: 'layout-shift', buffered: true});
+  observer.observe({type: 'layout-shift', buffered: true});
 
-// Sends the final score to your analytics back end once
-// the page's lifecycle state becomes hidden.
-document.addEventListener('visibilitychange', () => {
- if (document.visibilityState === 'hidden') {
-   // Force any pending records to be dispatched.
-   observer.takeRecords();
-   observer.disconnect();
+  // Send the final score to your analytics back end once
+  // the page's lifecycle state becomes hidden.
+  document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'hidden') {
+    // Force any pending records to be dispatched.
+    observer.takeRecords();
+    observer.disconnect();
 
-   // Log the final score to the console.
-   console.log('CLS:', cumulativeLayoutShiftScore);
- }
-});
+    // Log the final score to the console.
+    console.log('CLS:', cumulativeLayoutShiftScore);
+  }
+  });
+} catch (e) {
+  // Do nothing if the browser doesn't support this API.
+}
 ```
 
 {% Aside %}

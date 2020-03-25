@@ -75,16 +75,13 @@
 
 .w-figure {
   margin: 32px 0;
+  text-align: center;
 }
 
 // Allow images contained within a figure to be break outside of the main
 // container in articles and be full bleed on mobile.
 .w-figure--fullbleed {
   margin: 64px -32px;
-}
-
-.w-figure--center {
-  text-align: center;
 }
 
 // Inline images are typically quite small so we'll center them on smaller

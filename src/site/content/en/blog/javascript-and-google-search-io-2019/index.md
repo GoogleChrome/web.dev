@@ -40,7 +40,7 @@ In this post we'll focus on best practices for making JavaScript web apps discov
 
 This year we announced the much-awaited [new evergreen Googlebot](https://webmasters.googleblog.com/2019/05/the-new-evergreen-googlebot.html).
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="evergreen-googlebot.png" alt="Googlebot holding the Chrome logo" style="max-width: 400px;">
   <figcaption class="w-figcaption">
     Googlebot is now running a modern Chromium rendering engine.
@@ -53,7 +53,7 @@ Googlebot now uses a modern Chromium engine to render websites for Google Search
 
 Googlebot is a pipeline with several components. Let's take a look to understand how Googlebot indexes pages for Google Search.
 
-<figure class="w-figure w-figure--center w-figure--fullbleed">
+<figure class="w-figure w-figure--fullbleed">
   <img src="googlebot-process.png" alt="A diagram showing a URL moving from a crawling queue to a processing step that extracts linked URLs and adds them to the crawling queue, a rendering queue that feeds into a renderer which produces HTML. The processor uses this HTML to extract linked URLs again and index the content.">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     Googlebot's pipeline for crawling, rendering, and indexing a page.

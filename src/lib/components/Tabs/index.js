@@ -121,6 +121,7 @@ class Tabs extends BaseElement {
     if (!questions) {
       return;
     }
+
     for (const question of questions) {
       question.addEventListener("request-nav-to-next", this.nextTab);
     }

@@ -25,6 +25,7 @@ const slugify = require('slugify');
 const componentsDir = 'src/site/_includes/components';
 const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
 const Aside = require(`./${componentsDir}/Aside`);
+const Assessment = require(`./${componentsDir}/Assessment`);
 const AssessmentCallout = require(`./${componentsDir}/AssessmentCallout`);
 const AssessmentHint = require(`./${componentsDir}/AssessmentHint`);
 const Author = require(`./${componentsDir}/Author`);
@@ -39,6 +40,7 @@ const Details = require(`./${componentsDir}/Details`);
 const DetailsSummary = require(`./${componentsDir}/DetailsSummary`);
 const Hero = require(`./${componentsDir}/Hero`);
 const Instruction = require(`./${componentsDir}/Instruction`);
+const Label = require(`./${componentsDir}/Label`);
 const Meta = require(`./${componentsDir}/Meta`);
 const PathCard = require(`./${componentsDir}/PathCard`);
 const PostCard = require(`./${componentsDir}/PostCard`);
@@ -69,6 +71,7 @@ const containsTag = require(`./${filtersDir}/contains-tag`);
 const expandContributors = require(`./${filtersDir}/expand-contributors`);
 const findTags = require(`./${filtersDir}/find-tags`);
 const githubLink = require(`./${filtersDir}/github-link`);
+const gitlocalizeLink = require(`./${filtersDir}/gitlocalize-link`);
 const htmlDateString = require(`./${filtersDir}/html-date-string`);
 const md = require(`./${filtersDir}/md`);
 const pagedNavigation = require(`./${filtersDir}/paged-navigation`);
@@ -78,6 +81,9 @@ const removeDrafts = require(`./${filtersDir}/remove-drafts`);
 const strip = require(`./${filtersDir}/strip`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
 const stripLanguage = require(`./${filtersDir}/strip-language`);
+
+const transformsDir = 'src/site/_transforms';
+const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
 
 const buildPartial = require('./src/site/_utils/build-partial');
 
@@ -139,6 +145,11 @@ module.exports = function(config) {
   );
 
   //----------------------------------------------------------------------------
+  // NON-11TY FILES TO WATCH
+  //----------------------------------------------------------------------------
+  config.addWatchTarget("./src/site/content/en/**/*.yml");
+
+  //----------------------------------------------------------------------------
   // COLLECTIONS
   //----------------------------------------------------------------------------
   config.addCollection('posts', postDescending);
@@ -171,6 +182,7 @@ module.exports = function(config) {
   config.addFilter('containsTag', containsTag);
   config.addFilter('expandContributors', expandContributors);
   config.addFilter('githubLink', githubLink);
+  config.addFilter('gitlocalizeLink', gitlocalizeLink);
   config.addFilter('htmlDateString', htmlDateString);
   config.addFilter('md', md);
   config.addFilter('pagedNavigation', pagedNavigation);
@@ -186,6 +198,7 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   config.addShortcode('ArticleNavigation', ArticleNavigation);
   config.addPairedShortcode('Aside', Aside);
+  config.addShortcode('Assessment', Assessment);
   config.addPairedShortcode('AssessmentCallout', AssessmentCallout);
   config.addPairedShortcode('AssessmentHint', AssessmentHint);
   config.addShortcode('Author', Author);
@@ -200,6 +213,7 @@ module.exports = function(config) {
   config.addPairedShortcode('DetailsSummary', DetailsSummary);
   config.addShortcode('Hero', Hero);
   config.addShortcode('Instruction', Instruction);
+  config.addPairedShortcode('Label', Label);
   config.addShortcode('Meta', Meta);
   config.addPairedShortcode('Partial', buildPartial());
   config.addShortcode('PathCard', PathCard);
@@ -215,6 +229,13 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   config.addNunjucksTag('Image', Image);
   config.addNunjucksTag('Figure', Figure);
+
+  //----------------------------------------------------------------------------
+  // TRANSFORMS
+  //----------------------------------------------------------------------------
+  if (process.env.ELEVENTY_ENV === 'test') {
+    config.addTransform('disable-lazy-load', disableLazyLoad);
+  }
 
   // https://www.11ty.io/docs/config/#data-deep-merge
   config.setDataDeepMerge(true);

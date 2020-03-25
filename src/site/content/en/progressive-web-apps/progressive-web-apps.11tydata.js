@@ -30,7 +30,12 @@ module.exports = {
         subtopics: [
           {
             title: "Provide an installable experience",
-            pathItems: ["add-manifest", "customize-install", "promote-install"],
+            pathItems: [
+              "add-manifest",
+              "customize-install",
+              "promote-install",
+              "using-a-pwa-in-your-android-app",
+            ],
           },
           {
             title: "Codelabs",

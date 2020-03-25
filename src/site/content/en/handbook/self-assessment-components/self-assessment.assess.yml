@@ -1,0 +1,108 @@
+setLeader: Test your knowledge of resource optimization
+height: 25rem
+tabLabel: question
+questions:
+  - stimulus: |
+      ```html
+      <label for="pwd-input">Password</label>
+      <input type="text" role="textbox" id="pwd-input" name="password">
+      ```
+    type: think-and-check
+    stem: Does the sample need ARIA?
+    options:
+      - rationale: |
+          **No.** This sample is **incorrect**.
+          Since the text input is a native HTML form element,
+          it doesn't need ARIA for its semantics.
+          To fix the sample, remove the \`role\` attribute from the \`<input>\`
+          element.
+  - type: multiple-choice
+    cardinality: "1"
+    correctAnswers: "0"
+    stem: When is it appropriate to lazy load an image?
+    options:
+      - content: When the image is offscreen during initial page load.
+        rationale: |
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      - content: When the image is a PNG or JPG.
+        rationale: |
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      - content: When the image has a `lazyload` class.
+        rationale: |
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      - content: When the image is larger than 10&nbsp;KB.
+        rationale: |
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  - type: multiple-choice
+    cardinality: "1+"
+    correctAnswers: "1,3"
+    stem: Which statements about optimizing third-party resources are accurate?
+    options:
+      - content: The `async` and `defer` attributes can be used interchangeably.
+        rationale: |
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      - content: Pre-connecting to resources is sometimes appropriate.
+        rationale: |
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      - content: Lazy-loading ads should typically be avoided.
+        rationale: |
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      - content: Resources that don't provide value should be removed.
+        rationale: |
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      - content: Self-hosting resources requires minimal maintenance.
+        rationale: |
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  - type: multiple-choice
+    cardinality: "2"
+    correctAnswers: "1,4"
+    stem: "Which **two** Sesame Street muppets are clearly the best?"
+    columns: true
+    options:
+      - content: "![Elmo](./elmo.jpg)"
+        rationale: Don't give a second thought to this tickle-me-come-lately.
+      - content: "![Ernie](./ernie.jpg)"
+        rationale: I mean, c'mon. He's Ernie. I don't know🤷
+      - content: "![Cookie Monster](./cookiemonster.jpg)"
+        rationale: |
+          "[A cookie is a sometimes food](https://youtu.be/PaHkwE7TaNg)"?
+          I remember when you had integrity.
+      - content: "![Big Bird](./bigbird.jpg)"
+        rationale: Laying it on kinda thick with the wide-eyed childlike wonder, no?
+      - content: "![Grover](./grover.jpg)"
+        rationale: The OG monster. Never forget it.
+  - stimulus: "![Webby](./webby.png)"
+    components:
+      - type: multiple-choice
+        cardinality: "1"
+        correctAnswers: "1"
+        stem: Who's this Webby I've heard so much about?
+        options:
+          - content: A sentient system icon run amok
+            rationale: Like this helpful little being would ever go amok.
+          - content: The best darn mascot you could hope for
+            rationale: Webby is _everything_.
+          - content: Spiderman's lesser known sidekick
+            rationale: |
+              I really don't see Webby swinging around
+              on those small (but _adorable_) arms.
+      - type: multiple-choice
+        cardinality: "1"
+        correctAnswers: "2"
+        stem: How awesome is Webby?
+        options:
+          - content: Pretty awesome
+            rationale: Nope.
+          - content: The awesomest
+            rationale: Close but no.
+          - content: OMG 🤯
+            rationale: It was always you, Webby.
