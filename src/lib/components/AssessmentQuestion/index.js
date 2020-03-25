@@ -61,13 +61,7 @@ class AssessmentQuestion extends BaseElement {
 
   firstUpdated() {
     // Listen to state updates from child response components.
-    const responseComponents = this.querySelectorAll("[data-role=response]");
-    for (const component of responseComponents) {
-      component.addEventListener(
-        "response-update",
-        this.responseComponentUpdated,
-      );
-    }
+    this.addEventListener("response-update", this.responseComponentUpdated);
   }
 
   async connectedCallback() {
@@ -155,7 +149,7 @@ class AssessmentQuestion extends BaseElement {
   }
 
   requestAssessmentReset() {
-    const event = new Event("request-assessment-reset");
+    const event = new Event("request-assessment-reset", {bubbles: true});
 
     this.dispatchEvent(event);
   }

@@ -87,6 +87,7 @@ export class BaseResponseElement extends BaseElement {
 
   reportUpdate() {
     const event = new CustomEvent("response-update", {
+      bubbles: true,
       detail: {
         responseState: this.state,
       },
