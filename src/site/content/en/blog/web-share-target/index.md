@@ -251,8 +251,8 @@ the `text` field, or occasionally in the `title` field.
 <div class="w-clearfix"></div>
 
 [spec]: https://wicg.github.io/web-share-target/
-[demo]: https://web-share.glitch.me/
-[demo-source]: https://glitch.com/edit/#!/web-share?path=index.html
+[demo]: https://hn-share.now.sh/
+[demo-source]: https://github.com/PaulKinlan/hn-share-target
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=668389
 [cr-status]: https://www.chromestatus.com/features/5662315307335680
 [explainer]: https://github.com/WICG/web-share-target/blob/master/docs/explainer.md
