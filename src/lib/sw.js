@@ -131,7 +131,7 @@ workboxRouting.registerRoute(
 
     // Either way, redirect to the updated Location.
     const headers = new Headers();
-    headers.append("Location", event.request.url + "/");
+    headers.append("Location", `${pathname}/${url.search}`);
     const redirectResponse = new Response("", {
       status: 301,
       headers,

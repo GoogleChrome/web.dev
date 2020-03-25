@@ -18,7 +18,7 @@
 import {assert} from "../../test/assert";
 import "./index";
 
-suite("web-lighthouse-gauge", async () => {
+suite("element: web-lighthouse-gauge", async () => {
   await customElements.whenDefined("web-lighthouse-gauge");
 
   test("basic", async () => {

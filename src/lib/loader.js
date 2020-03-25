@@ -6,6 +6,7 @@
  */
 
 import {store} from "./store";
+import {normalizeUrl} from "./urls";
 import "./utils/underscore-import-polyfill";
 
 /**
@@ -45,21 +46,6 @@ export async function getPartial(url, signal) {
     }
     throw e;
   }
-}
-
-function normalizeUrl(url) {
-  const u = new URL(url, window.location);
-  let pathname = u.pathname;
-
-  if (pathname.endsWith("/index.html")) {
-    // If an internal link refers to "/foo/index.html", strip "index.html" and load.
-    pathname = pathname.slice(0, -"index.html".length);
-  } else if (!pathname.endsWith("/")) {
-    // All web.dev pages end with "/".
-    pathname = `${url}/`;
-  }
-
-  return pathname + u.search;
 }
 
 /**
@@ -102,9 +88,12 @@ function updateDom(partial) {
   content.innerHTML = partial.raw;
 
   // Close any open self-assessment modals.
-  // TODO (mfriesenhahn): Replace this logic with a store subscriber that allows
+  // TODO(samthor): Replace this logic with a store subscriber that allows
   // all components to clean up after themselves when the page changes.
-  document.querySelector("web-assessment[open]").remove();
+  const assessmentsOpen = document.querySelectorAll("web-assessment[open]");
+  for (const assessment of assessmentsOpen) {
+    assessment.remove();
+  }
 
   // Update the page title.
   document.title = partial.title || "";
