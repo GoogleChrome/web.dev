@@ -3,9 +3,10 @@ import {normalizeUrl} from "./urls";
 
 suite("urls", () => {
   test("normalizeUrl", () => {
+    assert(normalizeUrl("/foo?") == "/foo/", "search should be ignored");
     assert(
       normalizeUrl("/foo?bar/index.html") == "/foo/?bar/index.html",
-      "search should be ignored",
+      "search should be ignored if it has index.html",
     );
     assert(normalizeUrl("/foo") == "/foo/", "requries trailing slash");
     assert(
