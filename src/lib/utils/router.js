@@ -1,35 +1,13 @@
+import "./abort-controller-polyfill";
+
 let globalHandler;
 let recentActiveUrl; // current URL not including hash
-
-// Disable automatic scroll restoration. This is helpful as back/forward behavior is technically
-// async, and most browsers will move the scroll position automatically for us, even on old content.
-// Instead, we call `scrollOnFrame` when the async load helper is done.
-window.history.scrollRestoration = "manual";
-window.addEventListener("pagehide", (e) => {
-  // ... but re-enable when the page is unloaded, which happens if a user refreshes the page using
-  // their browser. This prevents this type of reload from jumping back to the top of the viewport.
-  window.history.scrollRestoration = "auto";
-});
 
 /**
  * @return {string} URL pathname plus optional search part
  */
 function getUrl() {
   return window.location.pathname + window.location.search;
-}
-
-/**
- * Brings the target element, or top scroll position, into view.
- *
- * @param {!Element|number} target
- */
-function scrollOnFrame(target) {
-  if (target instanceof Element) {
-    // nb. this avoids collision with top menubars etc
-    target.scrollIntoView({block: "center"});
-  } else {
-    document.documentElement.scrollTop = +target || 0;
-  }
 }
 
 /**
@@ -56,22 +34,7 @@ function onPopState(e) {
     return;
   }
   recentActiveUrl = updatedUrl;
-  const state = window.history.state;
-  globalHandler().then((success) => {
-    if (success) {
-      scrollOnFrame(state ? state.scrollTop : 0);
-    }
-  });
-}
-
-/**
- * Retain the current scroll position for forward/back stack changes.
- */
-function onDedupScroll() {
-  const state = {
-    scrollTop: document.documentElement.scrollTop,
-  };
-  window.history.replaceState(state, null, null);
+  globalHandler();
 }
 
 /**
@@ -111,7 +74,7 @@ function onClick(e) {
 /**
  * Adds global page listeners for SPA routing.
  *
- * @param {function(string, boolean=): void} handler
+ * @param {function(!Object): ?} handler which returns an optional Promise
  */
 export function listen(handler) {
   if (!handler) {
@@ -121,57 +84,75 @@ export function listen(handler) {
     throw new Error("listen can only be called once");
   };
 
-  let pendingHandlerPromise = Promise.resolve();
-  let requestCount = 0;
+  let previousController = null;
 
-  // globalHandler is called for the current page URL (i.e., it reads
-  // window.location rather than accepting an argument) to trigger a load via
-  // the passed handler. Only one handler can run at once.
-  globalHandler = () => {
-    const localRequest = ++requestCount;
+  globalHandler = (url) => {
+    const isNavigation = Boolean(url);
+    if (!isNavigation) {
+      url = getUrl();
+    }
 
-    // Delay until any previous load is complete, then run handler for the
-    // now-active URL.
-    pendingHandlerPromise = pendingHandlerPromise
-      .then(async () => {
-        if (localRequest !== requestCount) {
-          return false;
-        }
-        await handler();
-        return true;
+    const firstRun = previousController === null;
+    if (!firstRun) {
+      previousController.abort();
+    }
+
+    const controller = (previousController = new AbortController());
+    const currentState = isNavigation ? null : window.history.state;
+
+    // Pass ready() to handler. It can be invoked early by router users to replace the current URL,
+    // e.g. for navigation, and to push state. Otherwise, it's called automatically at completion.
+    let readyRun = false;
+    const ready = (url, state) => {
+      if (controller.signal.aborted || readyRun) {
+        return false;
+      }
+      readyRun = true;
+
+      const update = url + window.location.hash;
+      if (isNavigation) {
+        window.history.pushState(state, null, update);
+      } else {
+        window.history.replaceState(state, null, update);
+      }
+      recentActiveUrl = url;
+    };
+
+    const arg = {
+      firstRun,
+      url,
+      signal: controller.signal,
+      ready,
+      state: currentState,
+    };
+    return Promise.resolve(handler(arg))
+      .then(() => {
+        ready(url, currentState); // skipped if already run
+        return controller.signal.aborted;
       })
       .catch((err) => {
-        window.location.href = window.location.href;
-        throw err;
+        // Only throw errors if not preempted and not the first load.
+        if (!controller.signal.aborted && !firstRun) {
+          window.location.href = url; // always use the updated URL
+          throw err;
+        }
+        console.warn("err loading", url, err);
+        return true;
       });
-    return pendingHandlerPromise;
   };
 
   window.addEventListener("replacestate", onReplaceState);
   window.addEventListener("popstate", onPopState);
   window.addEventListener("click", onClick);
 
-  // Write scroll value after settling.
-  let scrollTimeout = 0;
-  window.addEventListener(
-    "scroll",
-    () => {
-      window.clearTimeout(scrollTimeout);
-      scrollTimeout = window.setTimeout(onDedupScroll, 250);
-    },
-    {passive: true},
-  );
-
-  // And on initial load.
-  onDedupScroll();
-
-  // Don't catch errors for the first load.
-  recentActiveUrl = getUrl();
-  handler(true);
+  globalHandler();
 }
 
 /**
- * Optionally routes to the target URL.
+ * Optionally kicks off routing to the target URL, as if a link were clicked or navigation
+ * triggered. This will not change the URL until the underlying handler completes.
+ *
+ * This return false if the request was pre-empted (or was a hash change).
  *
  * @param {string} url to load
  * @return {boolean} whether a route happened and to prevent default behavior
@@ -188,16 +169,23 @@ export function route(url) {
   if (candidateUrl === getUrl() && u.hash) {
     return false;
   }
-  recentActiveUrl = candidateUrl;
 
-  window.history.pushState(null, null, u.toString()); // Edge needs toString
-  globalHandler().then((success) => {
-    if (success) {
-      // Since we're loading this page dynamically, look for the target hash-ed
-      // element (if any) and scroll to it.
-      const target = document.getElementById(u.hash.substr(1)) || 0;
-      return scrollOnFrame(target);
+  globalHandler(candidateUrl).then((aborted) => {
+    if (aborted) {
+      return false;
     }
+
+    // Since we're loading this page dynamically, look for the target hash-ed
+    // element (if any) and scroll to it.
+    const hash = u.hash.substr(1);
+    if (hash) {
+      const target = document.getElementById(hash);
+      if (target) {
+        target.scrollIntoView();
+        return;
+      }
+    }
+    document.documentElement.scrollTop = 0;
   });
   return true;
 }

@@ -272,7 +272,7 @@ interface with a **Delete** menu item, giving people a chance to indicate that
 they're done viewing previously indexed content. This is how the deletion
 interface looks in Chrome 80:
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="delete-menu.png" alt="The delete menu item." width="550">
 </figure>
 

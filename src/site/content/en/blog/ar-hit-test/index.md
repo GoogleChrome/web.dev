@@ -25,7 +25,7 @@ that some of the work is finished. In Chrome 81, two new features have arrived:
 * [Hit testing](https://www.chromestatus.com/features/4755348300759040)
 
 This article covers the [WebXR Hit Test
-API](https://github.com/immersive-web/hit-test/blob/master/explainer.md), a
+API](https://github.com/immersive-web/hit-test/blob/master/hit-testing-explainer.md), a
 means of placing virtual objects in a real-world camera view.
 
 In this article I assume you already know how to create an augmented reality
@@ -289,7 +289,7 @@ reticle gives you a constant source of hit tests, the simplest way to place an
 object is to draw it at the location of the reticle at the last hit test. If you
 need to, say you have a legitimate reason not to show a reticle, you can call
 `requestHitTest()` in the select event [as shown in the
-sample](https://github.com/immersive-web/webxr-samples/blob/master/proposals/phone-ar-hit-test.html#L187).
+sample](https://github.com/immersive-web/webxr-samples/blob/429aeb7cd46f1009d2e529e69854418a5a0903d5/proposals/phone-ar-hit-test.html#L189).
 
 ```js
 function onSelect(event) {
@@ -304,7 +304,7 @@ function onSelect(event) {
 ## Conclusion
 
 The best way to get a handle on this is to step through the [sample
-code](https://immersive-web.github.io/webxr-samples/proposals/phone-ar.html) or
+code](https://github.com/immersive-web/webxr-samples/blob/4c0646414ebb55eb741838772ad4e80e901391a6/proposals/phone-ar.html) or
 try out the
 [codelab](https://codelabs.developers.google.com/codelabs/ar-with-webxr). I hope
 I've given you enough background to make sense of both.

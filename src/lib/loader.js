@@ -22,21 +22,29 @@ async function loadEntrypoint(url) {
 }
 
 /**
- * Gets the partial content of the target normalized URL.
+ * Gets the partial content of the target normalized URL. Returns null if aborted.
  *
  * @param {string} url of the page to fetch.
- * @return {{raw: string, title: string, offline: (boolean|undefined)}}
+ * @param {!AbortSignal=} signal
+ * @return {?{raw: string, title: string, offline: (boolean|undefined)}}
  */
-export async function getPartial(url) {
+export async function getPartial(url, signal) {
   if (!url.endsWith("/")) {
     throw new Error(`partial unsupported for non-folder: ${url}`);
   }
 
-  const res = await fetch(url + "index.json");
-  if (!res.ok && res.status !== 404) {
-    throw res.status;
+  try {
+    const res = await fetch(url + "index.json", {signal});
+    if (!res.ok && res.status !== 404) {
+      throw res.status;
+    }
+    return await res.json();
+  } catch (e) {
+    if (e instanceof DOMException && e.name === "AbortError") {
+      return null;
+    }
+    throw e;
   }
-  return await res.json();
 }
 
 function normalizeUrl(url) {
@@ -85,71 +93,95 @@ function forceFocus(el) {
 }
 
 /**
- * Swap the current page for a new one. Assumes the current URL is the target.
+ * Replaces the current #content element with new partial content.
  *
- * If this is the first run, then the correct HTML will already be in place (from server or Service
- * Worker). Otherwise, async load the partial and replace previous content.
- *
- * Either way, ensure that the correct JS entrypoint is available.
- *
- * @param {boolean} isFirstRun whether this is the first run
- * @return {!Promise<void>}
+ * @param {!Object} partial
  */
-export async function swapContent(isFirstRun) {
-  let url = window.location.pathname + window.location.search;
+function updateDom(partial) {
+  const content = document.querySelector("main #content");
+  content.innerHTML = partial.raw;
 
-  // If we disagree with the URL we're loaded at, then replace it inline.
-  const normalized = normalizeUrl(url);
-  if (normalized) {
-    window.history.replaceState(null, null, normalized + window.location.hash);
-    url = window.location.pathname + window.location.search;
-  }
-
-  // Ensure that the correct JS entrypoint is available.
-  const entrypointPromise = loadEntrypoint(url);
-
-  // When the router boots it will always try to run a handler for the current route. We don't need
-  // this for the HTML of the initial page load so we return early, but always wait for the page's
-  // JS to load.
-  if (isFirstRun) {
-    await entrypointPromise;
-    return;
-  }
-
-  store.setState({isPageLoading: true});
-
-  const main = document.querySelector("main");
-
-  // Grab the new page content and wait for the JS entrypoint.
-  const partial = await getPartial(url);
-  await entrypointPromise;
-
-  // Throwing here will cause the router to just do a real page load.
-  if (typeof partial !== "object") {
-    // This will occur in the Netlify staging environment as we don't serve the 404 JSON.
-    throw new Error(`invalid partial for: ${url}`);
-  }
-
-  // We set the currentUrl in global state _after_ the page has loaded. This is different than
-  // the History API itself which transitions immediately (like a real web browser).
-  store.setState({
-    isPageLoading: false,
-    currentUrl: url,
-
-    // bootstrap.js uses this to trigger a reload if we see an "online" event. Only returned via
-    // the Service Worker if we failed to fetch a 'real' page.
-    isOffline: Boolean(partial.offline),
-  });
-
-  ga("set", "page", window.location.pathname);
-  ga("send", "pageview");
-
-  // Replace the current #content element with the new partial content.
-  main.querySelector("#content").innerHTML = partial.raw;
+  // Close any open self-assessment modals.
+  // TODO (mfriesenhahn): Replace this logic with a store subscriber that allows
+  // all components to clean up after themselves when the page changes.
+  document.querySelector("web-assessment[open]").remove();
 
   // Update the page title.
   document.title = partial.title || "";
 
   // Focus on the first title (or fallback to content itself).
   forceFocus(content.querySelector("h1, h2, h3, h4, h5, h6") || content);
+}
+
+/**
+ * Swap the current page for a new one. Accepts an incoming URL.
+ *
+ * @param {{
+ *   firstRun: boolean,
+ *   url: string,
+ *   signal: !AbortSignal,
+ *   ready: function(string, ?Object): void,
+ *   state: ?Object,
+ * }} object
+ */
+export async function swapContent({firstRun, url, signal, ready, state}) {
+  url = normalizeUrl(url);
+
+  // Kick off loading the correct JS entrypoint.
+  const entrypointPromise = loadEntrypoint(url);
+
+  // If this is the first run, bail out early. We generate an inferred partial for back/forward nav,
+  // as we only have the initial prerendered HTML.
+  if (firstRun) {
+    const content = document.querySelector("main #content");
+    const inferredPartial = {
+      raw: content.innerHTML,
+      title: document.title,
+    };
+    if (store.getState().isOffline) {
+      inferredPartial.offline = true;
+    }
+    ready(url, {partial: inferredPartial});
+    return entrypointPromise;
+  }
+
+  // Either use a partial from the previous state (user has hit back/forward) if it's not offline,
+  // or fetch it anew from the network.
+  let partial;
+  if (state && state.partial && !state.partial.offline) {
+    partial = state.partial;
+  } else {
+    store.setState({isPageLoading: true});
+    partial = await getPartial(url, signal);
+    if (signal.aborted) {
+      return null;
+    }
+  }
+
+  // If the partial was bad, force a real page load. This will occur in Netlify or other simple
+  // staging environments on 404, where we don't serve real JSON.
+  if (!partial || typeof partial !== "object") {
+    throw new Error(`invalid partial for: ${url}`);
+  }
+
+  // The bootstrap code uses this to trigger a reload if we see an "online" event. Only returned via
+  // the Service Worker if we failed to fetch a 'real' page.
+  const isOffline = Boolean(partial.offline);
+  store.setState({currentUrl: url, isOffline});
+
+  // Inform the router that we're ready early (even though the JS isn't done). This updates the URL,
+  // which must happen before DOM changes and ga event.
+  ready(url, {partial});
+
+  ga("set", "page", window.location.pathname);
+  ga("send", "pageview");
+  updateDom(partial);
+
+  // Finally, just await for the entrypoint JS. It this fails we'll throw an exception and force a
+  // complete reload.
+  await entrypointPromise;
+
+  if (!signal.aborted) {
+    store.setState({isPageLoading: false});
+  }
 }

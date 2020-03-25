@@ -449,7 +449,7 @@ const reader = new NDEFReader();
 await reader.scan({ signal: abortController.signal });
 
 const writer = new NDEFWriter();
-await writer.push("Hello world", { signal: abortController.signal });
+await writer.write("Hello world", { signal: abortController.signal });
 
 document.querySelector("#abortButton").onclick = event => {
   abortController.abort();

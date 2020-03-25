@@ -2,7 +2,7 @@
 name: Update existing content
 about: Use this template for anything related to updating existing web.dev content
 title: 'content: TODO'
-labels: content
+labels: 'content update'
 assignees: 'kaycebasques'
 ---
 

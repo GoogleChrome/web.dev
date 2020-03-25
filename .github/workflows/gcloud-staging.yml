@@ -1,0 +1,33 @@
+name: Deploy to staging
+
+on:
+- pull_request
+
+jobs:
+  build:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: Build
+        env:
+          ELEVENTY_ENV: prod
+        run: npm ci && npm run build
+
+      - name: Configure gcloud
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@0.1.1
+        with:
+          version: '270.0.0'
+          service_account_email: ${{ secrets.GCLOUD_EMAIL }}
+          service_account_key: ${{ secrets.GCLOUD_KEY }}
+
+      - run: gcloud app deploy --quiet --project web-dev-staging --no-promote --version $(node -e "console.log(require('crypto').createHash('md5').update(process.argv[1]).digest('hex'))" $GITHUB_REF)
+
+# TODO(samthor): Write generated hash to comment on PR.

@@ -21,7 +21,7 @@ times in your application.
 Here's a comparison of the same application with and without pre-rendering
 loaded on a simulated 3G connection and mobile device:
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="./compare.gif" alt="A side by side loading comparsion. The version using pre-rendering loads 4.2 seconds faster.">
 </figure>
 

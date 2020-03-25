@@ -17,8 +17,8 @@
 
 import {assert} from "../../test/assert";
 
-describe("basic", function() {
-  it("works", function() {
+suite("basic", () => {
+  test("works", () => {
     assert(true, "something broke!");
   });
 });

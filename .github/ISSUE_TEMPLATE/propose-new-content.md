@@ -2,7 +2,7 @@
 name: Propose new content
 about: Use this template to propose new web.dev content
 title: 'content: TODO'
-labels: content
+labels: 'new content'
 assignees: 'kaycebasques'
 ---
 

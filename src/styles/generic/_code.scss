@@ -1,5 +1,4 @@
-@import '../settings/colors';
-@import '../settings/type';
+@import '../tools/mixins';
 
 // =============================================================================
 // CODE OVERVIEW
@@ -49,6 +48,7 @@ pre {
 // Code block
 pre,
 pre[class*='language-'] {
+  @include scrollbars();
   margin: 32px 0;
   overflow: auto;
   padding: 16px;

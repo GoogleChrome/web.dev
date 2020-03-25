@@ -138,7 +138,7 @@ period after the speed optimization (Aug–Sept in the example). You can find
 revenue data in Google Analytics under the section **Audience > Mobile >
 Overview**.
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img src="./period-revenue.jpg" alt="Revenue data for January through September showing Rel mCvR" style="max-width: 600px; width: 100%">
 </figure>
 
@@ -147,21 +147,21 @@ improved. Do this by dividing the revenue (€1,835,962) by the current Rel
 mCvR (51%) and multiplying by the Rel mCvR for the period before the speed
 optimization (42%).
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img src="./revenue-would-have-been.jpg" alt="Screenshot: spreadsheet cells showing formula for revenue without Rel mCvR improvements" style="max-width: 600px; width: 100%">
 </figure>
 
 **Step 9:** Subtract the revenue that the company earned from what it would have
 earned if Rel mCvR had not improved.
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img src="./extra-revenue-formula.jpg" alt="Screenshot: spreadsheet cells showing extra revenue formula" style="max-width: 600px; width: 100%">
 </figure>
 
 In this example, the company earned an additional €323,993 in eight weeks thanks
 to Rel mCvR improving—that is, thanks to the mobile site becoming faster.
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img src="./thanks-to-increased.jpg" alt="Screenshot: spreadsheet cells showing extra revenue due to Rel mCvR improvements" style="max-width: 600px; width: 100%">
 </figure>
 
