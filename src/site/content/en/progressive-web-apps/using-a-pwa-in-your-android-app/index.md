@@ -63,7 +63,7 @@ nightly version.
 ### Quality Criteria
 
 Web developers should use a Trusted Web Activity when they want to include web content in an
-Android app.  Web content in a Trusted Web Activity must meet PWA install quality criteria and
+Android app.  Web content in a Trusted Web Activity must meet Lighthouse's PWA install quality criteria and
 additional Android-specific criteria such as [policy compliance][9].
 
 <figure class="w-figure w-figure--center">
