@@ -101,7 +101,7 @@ The origin trial is expected to end in Chrome 81.
 
 ### Enabling via chrome://flags
 To experiment with the Wake Lock API locally, without an origin trial token,
-enable the `#experimental-web-platform-features` flag in `chrome://flags`.
+enable the `#enable-experimental-web-platform-features` flag in `chrome://flags`.
 
 ### Demo
 
