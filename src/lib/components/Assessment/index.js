@@ -88,11 +88,7 @@ class Assessment extends BaseModalElement {
     // Render the launcher that appears in closed state on mobile.
     this.renderLauncher();
     // Listen to reset requests from child question components.
-    const questions = this.querySelectorAll("web-question");
-
-    for (const question of questions) {
-      question.addEventListener("request-assessment-reset", this.reset);
-    }
+    this.addEventListener("request-assessment-reset", this.reset);
 
     // Fetch all assessments that are not yet defined.
     const undefinedAssessments = document.querySelectorAll(
