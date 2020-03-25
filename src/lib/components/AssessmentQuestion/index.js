@@ -11,6 +11,7 @@ import "./_styles.scss";
 class AssessmentQuestion extends BaseElement {
   static get properties() {
     return {
+      id: {type: String, reflect: true},
       state: {type: String, reflect: true},
       height: {attribute: "question-height"},
     };
@@ -21,7 +22,6 @@ class AssessmentQuestion extends BaseElement {
     this.state = "unanswered";
     this.prerenderedChildren = null;
     this.ctaLabel = "Check";
-    this.idSalt = BaseElement.generateIdSalt("web-question-");
 
     this.responseComponentUpdated = this.responseComponentUpdated.bind(this);
     this.reset = this.reset.bind(this);
@@ -49,7 +49,7 @@ class AssessmentQuestion extends BaseElement {
           @click="${this.onSubmit}"
           class="w-button w-button--primary web-assessment__button web-question__cta gc-analytics-event"
           data-category="Self-assessments"
-          data-label="CTA, web-question-${this.idSalt}"
+          data-label="CTA, ${this.id}"
           ?disabled="${this.state !== "unanswered" ? false : true}"
         >
           ${this.ctaLabel}
@@ -68,8 +68,25 @@ class AssessmentQuestion extends BaseElement {
         this.responseComponentUpdated,
       );
     }
+  }
 
+  async connectedCallback() {
+    super.connectedCallback();
+    const parentAssessment = this.closest("web-assessment");
+    // Fetch all elements that are not yet defined.
+    const undefinedElements = document.querySelectorAll(":not(:defined)");
+
+    const promises = [...undefinedElements].map((el) =>
+      customElements.whenDefined(el.localName),
     );
+
+    // Wait for all elements to be upgraded.
+    // Then get the index of the question and set its id.
+    await Promise.all(promises);
+    const questions = parentAssessment.querySelectorAll("web-question");
+    const idx = [...questions].indexOf(this);
+
+    this.id = parentAssessment.id + "-question-" + idx;
   }
 
   // Update question state based on state of response components.

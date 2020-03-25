@@ -79,7 +79,7 @@ class Assessment extends BaseModalElement {
     `;
   }
 
-  firstUpdated() {
+  async firstUpdated() {
     this.classList.remove("unresolved");
     // Override BaseModalElement's inert behavior since Assessment
     // is visible on desktop in closed state.
@@ -92,6 +92,32 @@ class Assessment extends BaseModalElement {
 
     for (const question of questions) {
       question.addEventListener("request-assessment-reset", this.reset);
+    }
+
+    // Fetch all assessments that are not yet defined.
+    const undefinedAssessments = document.querySelectorAll(
+      "web-assessment:not(:defined)",
+    );
+
+    const promises = [...undefinedAssessments].map((assessment) =>
+      customElements.whenDefined(assessment.localName),
+    );
+
+    // Wait for all assessments to be upgraded.
+    // Then get the index of the assessment and set its id.
+    await Promise.all(promises);
+    const assessments = document.querySelectorAll("web-assessment");
+    const idx = [...assessments].indexOf(this);
+
+    this.id = "web-assessment-" + idx;
+  }
+
+  // Add unique IDs to passed elements
+  addUniqueID(elements, target) {
+    const idx = [...elements].indexOf(target);
+
+    if (target.id === "undefined") {
+      target.id = idx;
     }
   }
 
