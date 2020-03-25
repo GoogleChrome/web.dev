@@ -17,7 +17,7 @@ tags:
 ---
 
 {% Aside %}
-  Please note `<iframe loading=lazy>` is currently non-standard. While implemented in Chromium, it does not yet have a specification and is subject to future change when this does happen. Be careful if you decide to lazy-load iframes using the loading attribute.
+  Please note `<iframe loading=lazy>` is currently non-standard. While implemented in Chromium, it does not yet have a specification and is subject to future change when this does happen. We suggest not to lazy-load iframes using the loading attribute until it becomes part of the specification.
 {% endAside %}
 
 Support for natively lazy-loading images and iframes is coming to the web! This video shows
