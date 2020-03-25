@@ -144,7 +144,7 @@ Then, use [Bubblewrap][10] or [PWABuilder][12] to generate the Android applicati
 [upload the application to a closed test channel on the Play Store][11] and pair it with the PWA
 using [Peter's Asset Link Tool][15].
 
-Finally, move the application from the closed test channel to production
+Finally, move your application from the closed test channel to production!
 
 [1]: /progressive-web-apps/
 [2]: https://play.google.com/store/apps/details?id=com.android.chrome
