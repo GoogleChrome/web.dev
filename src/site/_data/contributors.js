@@ -1739,6 +1739,7 @@ const contributors = {
     description: {
       en: "Andre is a Developer Advocate",
     },
+  },
   koto: {
     name: {
       given: "Krzysztof",
