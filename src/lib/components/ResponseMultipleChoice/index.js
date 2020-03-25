@@ -7,9 +7,9 @@ class ResponseMultipleChoice extends BaseResponseElement {
   static get properties() {
     return {
       id: {type: String, reflect: true},
-      cardinality: {type: String},
+      cardinality: {type: String}, // Allows a range, so it's a string
       columns: {type: Boolean},
-      correctAnswer: {attribute: "correct-answer"},
+      correctAnswer: {attribute: "correct-answer", type: String},
     };
   }
 
