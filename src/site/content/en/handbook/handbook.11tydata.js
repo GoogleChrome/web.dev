@@ -46,6 +46,7 @@ module.exports = {
           "handbook/markup-media",
           "handbook/markup-code",
           "handbook/markup-sample-app",
+          "handbook/self-assessment-components",
         ],
       },
     ],

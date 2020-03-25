@@ -101,6 +101,11 @@ function updateDom(partial) {
   const content = document.querySelector("main #content");
   content.innerHTML = partial.raw;
 
+  // Close any open self-assessment modals.
+  // TODO (mfriesenhahn): Replace this logic with a store subscriber that allows
+  // all components to clean up after themselves when the page changes.
+  document.querySelector("web-assessment[open]").remove();
+
   // Update the page title.
   document.title = partial.title || "";
 
