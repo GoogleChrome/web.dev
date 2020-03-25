@@ -9,24 +9,53 @@ questions:
     options:
       - content: When the image is offscreen during initial page load.
         rationale: |
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Images that are offscreen during page load aren't initially needed
+          and so can be lazy loaded to improve performance.
       - content: When the image is a PNG or JPG.
         rationale: |
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Improve performance by lazy loading all images—not just PNGs and
+          JPGs—that aren't needed when the page loads.
       - content: When the image has a `lazyload` class.
         rationale: |
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          The `lazyload` class is something _you_ add to tell
+          lazysizes which images to lazy load.
+          You can't use the class to determine
+          which images you _should_ lazy load.
       - content: When the image is larger than 10&nbsp;KB.
         rationale: |
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Lazy load any image that may improve performance
+          without hurting user experience, regardless of how big the file is.
   - type: multiple-choice
     cardinality: "1+"
     correctAnswers: "1,3"
     stem: Which statements about optimizing third-party resources are accurate?
+    options:
+      - content: The `async` and `defer` attributes can be used interchangeably.
+        rationale: |
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      - content: Pre-connecting to resources is sometimes appropriate.
+        rationale: |
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      - content: Lazy-loading ads should typically be avoided.
+        rationale: |
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      - content: Resources that don't provide value should be removed.
+        rationale: |
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      - content: Self-hosting resources requires minimal maintenance.
+        rationale: |
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  - type: multiple-choice
+    cardinality: "1-2"
+    correctAnswers: "1,3"
+    stem: |
+      Which statements about optimizing third-party resources are accurate?
+      Select **one to two** statements.
     options:
       - content: The `async` and `defer` attributes can be used interchangeably.
         rationale: |
