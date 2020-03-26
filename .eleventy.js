@@ -26,8 +26,6 @@ const componentsDir = 'src/site/_includes/components';
 const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
 const Aside = require(`./${componentsDir}/Aside`);
 const Assessment = require(`./${componentsDir}/Assessment`);
-const AssessmentCallout = require(`./${componentsDir}/AssessmentCallout`);
-const AssessmentHint = require(`./${componentsDir}/AssessmentHint`);
 const Author = require(`./${componentsDir}/Author`);
 const AuthorInfo = require(`./${componentsDir}/AuthorInfo`);
 const Banner = require(`./${componentsDir}/Banner`);
@@ -45,8 +43,6 @@ const Meta = require(`./${componentsDir}/Meta`);
 const PathCard = require(`./${componentsDir}/PathCard`);
 const PostCard = require(`./${componentsDir}/PostCard`);
 const SignPosts = require(`./${componentsDir}/SignPosts`);
-const Tab = require(`./${componentsDir}/Tab`);
-const Tabs = require(`./${componentsDir}/Tabs`);
 const Tooltip = require(`./${componentsDir}/Tooltip`);
 const YouTube = require(`./${componentsDir}/YouTube`);
 
@@ -199,8 +195,6 @@ module.exports = function(config) {
   config.addShortcode('ArticleNavigation', ArticleNavigation);
   config.addPairedShortcode('Aside', Aside);
   config.addShortcode('Assessment', Assessment);
-  config.addPairedShortcode('AssessmentCallout', AssessmentCallout);
-  config.addPairedShortcode('AssessmentHint', AssessmentHint);
   config.addShortcode('Author', Author);
   config.addShortcode('AuthorInfo', AuthorInfo);
   config.addPairedShortcode('Banner', Banner);
@@ -219,8 +213,6 @@ module.exports = function(config) {
   config.addShortcode('PathCard', PathCard);
   config.addShortcode('PostCard', PostCard);
   config.addShortcode('SignPosts', SignPosts);
-  config.addPairedShortcode('Tab', Tab);
-  config.addPairedShortcode('Tabs', Tabs);
   config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('YouTube', YouTube);
 
