@@ -95,7 +95,7 @@ class ResponseMultipleChoice extends BaseResponseElement {
                     @click=${this.onOptionClick}
                     class="web-select-group__input web-response-mc__input gc-analytics-event"
                     type="${this.selectType}"
-                    name="${this._formName}"
+                    name="web-response-mc-form-${this._formName}"
                     value="${i}"
                   />
                   <span
