@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -79,7 +79,7 @@ class Assessment extends BaseModalElement {
     `;
   }
 
-  async firstUpdated() {
+  firstUpdated() {
     this.classList.remove("unresolved");
     // Override BaseModalElement's inert behavior since Assessment
     // is visible on desktop in closed state.
@@ -90,22 +90,16 @@ class Assessment extends BaseModalElement {
     // Listen to reset requests from child question components.
     this.addEventListener("request-assessment-reset", this.reset);
 
-    // Fetch all assessments that are not yet defined.
-    const undefinedAssessments = document.querySelectorAll(
-      "web-assessment:not(:defined)",
-    );
-
-    const promises = [...undefinedAssessments].map((assessment) =>
-      customElements.whenDefined(assessment.localName),
-    );
-
-    // Wait for all assessments to be upgraded.
-    // Then get the index of the assessment and set its id.
-    await Promise.all(promises);
+    // Get our position within all assessments on the page, and use this as the
+    // basis for our Analytics ID.
     const assessments = document.querySelectorAll("web-assessment");
     const idx = [...assessments].indexOf(this);
-
     this.id = "web-assessment-" + idx;
+
+    const questions = Array.from(this.querySelectorAll("web-question"));
+    questions.forEach((question, i) => {
+      question.setAttribute("id", `${this.id}-question-${i}`);
+    });
   }
 
   // Add unique IDs to passed elements

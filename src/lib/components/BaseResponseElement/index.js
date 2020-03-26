@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ export class BaseResponseElement extends BaseElement {
   static get properties() {
     return {
       state: {type: String, reflect: true},
+      correctAnswer: {attribute: "correct-answer", type: String},
     };
   }
 
@@ -66,18 +67,7 @@ export class BaseResponseElement extends BaseElement {
     return {min, max};
   }
 
-  async firstUpdated() {
-    // Fetch all children that are not yet defined.
-    const undefinedElements = this.querySelectorAll(":not(:defined)");
-
-    const promises = [...undefinedElements].map((child) =>
-      customElements.whenDefined(child.localName),
-    );
-
-    // Wait for all children to be upgraded
-    // and then add the data-correct attribute to the correct options
-    // and report unanswered state to the parent AssessmentQuestion.
-    await Promise.all(promises);
+  firstUpdated() {
     this.identifyCorrectOptions();
   }
 
