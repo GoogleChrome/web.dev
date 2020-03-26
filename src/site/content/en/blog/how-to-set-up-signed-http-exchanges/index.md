@@ -259,6 +259,16 @@ server {
 }
 ```
 
+## Step 6: Test
+
+Use the [dump-signedexchange tool](https://github.com/WICG/webpackage/tree/master/go/signedexchange) to test that the SXGs being served are correct. Ensure that no errors are reported, and verify that the headers and body are as expected.
+
+```bash
+go get -u github.com/WICG/webpackage/go/signedexchange/cmd/dump-signedexchange
+export PATH=$PATH:~/go/bin
+dump-signedexchange -verify -uri https://website.test/ | less
+```
+
 ## Send feedback
 
 The Chromium engineers working on SXG are keen to hear your feedback at [webpackage-dev@chromium.org](mailto:webpackage-dev@chromium.org).
