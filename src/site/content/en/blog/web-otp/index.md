@@ -4,7 +4,7 @@ subhead: Help users with OTPs received through SMS
 authors:
   - agektmr
 date: 2019-10-07
-update: 2020-03-05
+update: 2020-03-26
 hero: hero.png
 alt: A drawing of a woman using OTP to log in to a web app.
 
@@ -305,7 +305,7 @@ For example:
 ```text
 Your OTP is: 123456.
 
-@https://www.example.com #123456
+@https://www.example.com #123456&xFJnfg75+8v
 ```
 
 ### Use the application hash {: #use-the-hash }
@@ -317,8 +317,8 @@ values may change. Watch this page for updates.
 {% Aside %}
 As of Chrome 83, you can turn off the hash requirement by setting the
 `chrome://flags/#web-otp-backend` flag to "User Consent API".
-
 {% endAside %}
+
 <table>
 <tr>
 <th markdown="block">
@@ -418,14 +418,7 @@ for strong authentication.
 
 ### Can't we omit the browser's app hash?
 
-We would [like to remove
-it](https://github.com/samuelgoto/sms-receiver/issues/4#issuecomment-528991114),
-but it's currently a platform restriction. We are working with the Android
-team to understand what's the best way to approach it.
-
-### Will an SMS message timeout?
-
-Yes. You can use [`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) to abort the request before the timeout expires.
+As of Chrome 83, the hash may be ommited if a runtime flag is enabled. See [Use the application hash](#use-the-hash) for details.
 
 ### Will the apk hash change for an installed PWA?
 

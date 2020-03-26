@@ -134,16 +134,6 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
       </tr>
       <tr>
         <td>
-          <a href="/sms-receiver-api-announcement/">SMS Receiver API</a>
-        </td>
-        <td>
-          Finding, memorizing, and typing OTPs sent via SMS is cumbersome.
-          The SMS Receiver API simplifies the OTP workflow for users.<br>
-          <em>Updated October 7, 2019</em>
-        </td>
-      </tr>
-      <tr>
-        <td>
           <a href="/wakelock/">Wake Lock API</a>
         </td>
         <td>
@@ -256,6 +246,17 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           synchronize data in the background, bringing web apps closer to
           the behavior of a native app.<br>
           <em>Updated December 18, 2019</em>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/sms-receiver-api-announcement/">Web OTP API</a>
+        </td>
+        <td>
+          Finding, memorizing, and typing OTPs sent via SMS is cumbersome.
+          The Web OTP API (formerly the SMS Receiver API) simplifies the OTP
+          workflow for users.<br>
+          <em>Updated March 26, 2020</em>
         </td>
       </tr>
       <tr>
