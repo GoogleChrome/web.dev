@@ -63,13 +63,13 @@ class AssessmentQuestion extends BaseElement {
     // Listen to state updates from child response components.
     this.addEventListener("response-update", this.responseComponentUpdated);
 
-    // Listen to clicks on contained `<input>` elements.
-    this.addEventListener("question-choice-select", (e) => {
+    // Listen to contained option selections.
+    this.addEventListener("question-option-select", (e) => {
       const {detail: optionIndex, target} = e;
 
-      // This event comes from the final <input> that the user clicks on. Find the index of the
-      // response that this input is contained within.
-      // We could also use `target.closest("[data-role=response]")` to look _up_ from the <input>,
+      // This event comes from the final option that the user selects.
+      // Find the index of the response that this input is contained within.
+      // We could also use `target.closest("[data-role=response]")` to look _up_ from the option,
       // but we'd still need to find its index.
       let responseIndex = -1;
       const responseComponents = Array.from(
@@ -86,7 +86,7 @@ class AssessmentQuestion extends BaseElement {
       }
 
       // Send an Analytics event manually. We don't want to pipe through the IDs all the way down
-      // to each individual <input>.
+      // to each individual option.
       ga("send", "event", {
         eventCategory: "Self-assessments",
         eventAction: "click",

@@ -146,7 +146,7 @@ class ResponseMultipleChoice extends BaseResponseElement {
     const {target} = /** @type {!HTMLInputElement} */ (e);
     const index = Number(target.value);
 
-    const ce = new CustomEvent("question-choice-select", {
+    const ce = new CustomEvent("question-option-select", {
       detail: index,
       bubbles: true,
     });
