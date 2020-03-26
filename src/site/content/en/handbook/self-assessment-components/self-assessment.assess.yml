@@ -2,6 +2,20 @@ setLeader: Test your knowledge of resource optimization
 height: 25rem
 tabLabel: question
 questions:
+  - stimulus: |
+      ```html
+      <label for="pwd-input">Password</label>
+      <input type="text" role="textbox" id="pwd-input" name="password">
+      ```
+    type: think-and-check
+    stem: Does the sample need ARIA?
+    options:
+      - rationale: |
+          **No.** This sample is **incorrect**.
+          Since the text input is a native HTML form element,
+          it doesn't need ARIA for its semantics.
+          To fix the sample, remove the \`role\` attribute from the \`<input>\`
+          element.
   - type: multiple-choice
     cardinality: "1"
     correctAnswers: "0"
