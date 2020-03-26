@@ -43,7 +43,8 @@ An important concept in the context of streams is
 [backpressure](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Concepts#Backpressure).
 This is the process by which a single stream or a pipe chain
 regulates the speed of reading or writing.
-When a stream later in the chain is still busy and isn't yet ready to accept more chunks,
+When the stream itself or a stream later in the pipe chain is still busy
+and isn't yet ready to accept more chunks,
 it sends a signal backwards through the chain to slow down delivery as appropriate.
 
 ### The Problem with the current WebSocket API
@@ -60,6 +61,7 @@ You would probably set up the flow similar to the code in the example below,
 and since you `await` the result of the `process()` call, you should be good, right?
 
 ```js
+// A heavy data crunching operation.
 const process = async (data) => {
   return new Promise((resolve) => {
     window.setTimeout(() => {
@@ -71,6 +73,7 @@ const process = async (data) => {
 
 webSocket.onmessage = async (event) => {
   const data = event.data;
+  // Await the result of the processing step in the message handler.
   await process(data);
 };
 ```
@@ -89,19 +92,25 @@ This read-only property returns the number of bytes of data that have been queue
 using calls to
 [`WebSocket.send()`](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/send),
 but not yet transmitted to the network.
-This value resets to zero once all queued data has been sent, but if you keep calling `send()`,
+This value resets to zero once all queued data has been sent,
+but if you keep calling `WebSocket.send()`,
 it will continue to climb.
 
 ## What is the WebSocketStream API? {: #what }
 
-
+The new WebSocketStream API deals with the problem of non-existent or non-ergonomic backpressure
+applicability by integrating Streams with the WebSocket API.
+This means backpressure can be applied "for free", without any extra hoops.
 
 ### Suggested use cases for the WebSocketStream API {: #use-cases }
 
 Examples of sites that may use this API include:
-* TODO.
-* TODO.
-* TODO.
+
+* High-bandwidth WebSocket applications that need to retain interactivity,
+  in particular video and screen-sharing.
+* Similarly, video capture and other applications that generate a lot of data in the browser
+  that needs to be uploaded to the server.
+  With backpressure, the client can stop producing data rather than accumulating data in memory.
 
 ## Current status {: #status }
 
@@ -119,16 +128,130 @@ Examples of sites that may use this API include:
 
 ## How to use the WebSocketStream API {: #use }
 
+### Introductory example
 
+The WebSocketStream API is promise-based, which makes dealing with it feel natural
+in a modern JavaScript world.
+You start by constructing a new `WebSocketStream` and passing it the URL of the WebSocket server.
+Next, you wait for the `connection` to be established,
+which results in a
+[`ReadableStream`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/ReadableStream)
+and/or a
+[`WritableStream`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStream/WritableStream).
 
-### Progressive enhancement
+By calling the
+[`ReadableStream.getReader()`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/getReader)
+method, you finally obtain a
+[`ReadableStreamDefaultReader`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultReader),
+which you can then [`read()`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultReader/read)
+data from until it is done, that is, until it returns an object of the form
+`{value: undefined, done: true}`.
 
-Applying backpressure to received messages is not possible.
+Accordingly, by calling the
+[`WritableStream.getWriter()`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStream/getWriter)
+method, you finally obtain a
+[`WritableStreamDefaultWriter`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter),
+which you can then [`write()`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/write)
+data to.
+
+```js
+  const readWSS = new WebSocketStream(READ_URL);
+  const {readable} = await readWSS.connection;
+  const reader = readable.getReader();
+
+  const writeWSS = new WebSocketStream(WRITE_URL);
+  const {writable} = await writeWSS.connection;
+  const writer = writable.getWriter();
+
+  while (true) {
+    const {value, done} = await reader.read();
+    if (done) {
+      break;
+    }
+    const result = await process(value);
+    await writer.write(result);
+  }
+```
+
+#### Backpressure
+
+What about the promised backpressure feature?
+As I wrote above, you get it "for free", no extra steps needed.
+If `process()` takes a second, the next message will only be consumed once the pipeline is ready.
+Likewise for the `WritableStreamDefaultWriter.write()` step:
+it will only proceed if it is safe to do so.
+
+### Advanced examples
+
+The second argument to WebSocketStream is an option bag to allow for future extension.
+Currently the only option is `protocols`,
+which behaves the same as the
+[second argument to the WebSocket constructor](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/WebSocket#Parameters:~:text=respond.-,protocols):
+
+```js
+const chatWSS = new WebSocketStream(CHAT_URL, {protocols: ['chat', 'chatv2']});
+const {protocol} = await wss.connection;
+```
+
+The selected protocol is part of the dictionary available
+via the `WebSocketStream.connection` promise,
+along with `extensions`.
+All the information about the live connection is provided by this promise,
+since it is not relevant if the connection failed.
+
+```js
+const {readable, writable, protocol, extensions} = await chatWSS.connection;
+```
+
+### Information about closed WebSocketStream connection
+
+The information that was available from the
+[`WebSocket.onclose`](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/onclose) and
+[`WebSocket.onerror`](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/onerror) events
+in the WebSocket API is now available via the `WebSocketStream.closed` promise.
+The promise rejects in the event of an unclean close,
+otherwise it resolves to the code and reason sent by the server.
+
+All possible status codes and their meaning is explained in the
+[list of `CloseEvent` status codes](https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent#Status_codes).
+
+```js
+const {code, reason} = await chatWSS.closed;
+```
+
+### Closing a WebSocketStream connection
+
+A WebSocketStream can be closed with an
+[`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController).
+Therefore, pass an [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)
+to the `WebSocketStream` constructor.
+
+```js
+const controller = new AbortController();
+const wss = new WebSocketStream(URL, {signal: controller.signal});
+setTimeout(() => controller.abort(), 1000);
+```
+
+As an alternative, you can also use the `WebSocketStream.close()` method,
+but its main purpose is to permit specifying the
+[code](https://developer.mozilla.org/en-US/docs/Web/API/CloseEvent#Status_codes)
+and reason which is sent to the server.
+
+```js
+wss.close({code: 4000, reason: 'Game over'});
+```
+
+### Progressive enhancement and interoperability
+
+Chrome is currently the only browser to implement the WebSocketStream API.
+For interoperability with the classic WebSocket API,
+applying backpressure to received messages is not possible.
 Applying backpressure to sent messages is possible, but involves polling the
 [`WebSocket.bufferedAmount`](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/bufferedAmount)
 property, which is inefficient and non-ergonomic.
 
-### Feature detection
+#### Feature detection
+
 To check if the WebSocketStream API is supported, use:
 
 ```javascript
@@ -137,11 +260,26 @@ if ('WebSocketStream' in window) {
 }
 ```
 
+## Demo
+
+On supporting browsers, you can see the WebSocketStream API in action in the embedded iframe,
+or [directly on Glitch](https://websocketstream-demo.glitch.me/).
+
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/websocketstream-demo?path=public/index.html&previewSize=100"
+    title="websocketstream-demo on Glitch"
+    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+
 ## Feedback {: #feedback }
 
 The Chrome team wants to hear about your experiences with the API_NAME API.
 
 ### Tell us about the API design
+
 Is there something about the API that doesn't work like you expected?
 Or are there missing methods or properties that you need to implement your idea?
 Have a question or comment on the security model?
@@ -149,6 +287,7 @@ File a spec issue on the corresponding [GitHub repo][issues],
 or add your thoughts to an existing issue.
 
 ### Report a problem with the implementation
+
 Did you find a bug with Chrome's implementation?
 Or is the implementation different from the spec?
 File a bug at [new.crbug.com](https://new.crbug.com).
@@ -157,6 +296,7 @@ and enter `Blink>Network>WebSockets` in the **Components** box.
 [Glitch](https://glitch.com/) works great for sharing quick and easy reproduction cases.
 
 ### Show support for the API
+
 Are you planning to use the WebSocketStream API?
 Your public support helps the Chrome team to prioritize features
 and shows other browser vendors how critical it is to support them.
@@ -174,6 +314,8 @@ and let us know where and how you're using it.
 
 ## Acknowledgements
 
+The WebSocketStream API was implemented by [Adam Rice](https://github.com/ricea) and
+[Yutaka Hirano](https://github.com/yutakahirano).
 Hero image by [Daan Mooij](https://unsplash.com/@daanmooij) on
 [Unsplash](https://unsplash.com/photos/91LGCVN5SAI).
 
