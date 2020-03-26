@@ -1,6 +1,7 @@
 import {html} from "lit-element";
 import {BaseResponseElement} from "../BaseResponseElement";
 import "./_styles.scss";
+import {generateIdSalt} from "../../utils/generate-salt";
 
 /* eslint-disable require-jsdoc */
 class ResponseMultipleChoice extends BaseResponseElement {
@@ -9,7 +10,6 @@ class ResponseMultipleChoice extends BaseResponseElement {
       id: {type: String, reflect: true},
       cardinality: {type: String}, // Allows a range, so it's a string
       columns: {type: Boolean},
-      correctAnswer: {attribute: "correct-answer", type: String},
     };
   }
 
@@ -26,6 +26,9 @@ class ResponseMultipleChoice extends BaseResponseElement {
     this.onOptionInput = this.onOptionInput.bind(this);
     this.deselectOption = this.deselectOption.bind(this);
     this.updateSelections = this.updateSelections.bind(this);
+
+    // Used to ensure grouping of radio buttons. Just needs to be unique.
+    this._formName = generateIdSalt("web-response-mc-form-");
   }
 
   render() {
@@ -88,13 +91,12 @@ class ResponseMultipleChoice extends BaseResponseElement {
                   data-role="option"
                 >
                   <input
-                    @input="${this.onOptionInput}"
+                    @input=${this.onOptionInput}
+                    @click=${this.onOptionClick}
                     class="web-select-group__input web-response-mc__input gc-analytics-event"
                     type="${this.selectType}"
-                    name="web-response-mc-${this.id}"
+                    name="${this._formName}"
                     value="${i}"
-                    data-category="Self-assessments"
-                    data-label="option ${i}, ${this.id}"
                   />
                   <span
                     class="web-select-group__selector web-response-mc__selector"
@@ -135,28 +137,20 @@ class ResponseMultipleChoice extends BaseResponseElement {
     super.firstUpdated();
   }
 
-  async connectedCallback() {
-    super.connectedCallback();
-    const parentQuestion = this.closest("web-question");
-    // Fetch all elements that are not yet defined.
-    const undefinedElements = document.querySelectorAll(":not(:defined)");
-
-    const promises = [...undefinedElements].map((el) =>
-      customElements.whenDefined(el.localName),
-    );
-
-    // Wait for all elements to be upgraded.
-    // Then get the index of the question and set its id.
-    await Promise.all(promises);
-    const responses = parentQuestion.querySelectorAll("[data-role=response]");
-    const idx = [...responses].indexOf(this);
-
-    this.id = parentQuestion.id + "-response-" + idx;
-  }
-
   onOptionInput(e) {
     this.updateSelections(e);
     this.enforceCardinality(e);
+  }
+
+  onOptionClick(e) {
+    const {target} = /** @type {!HTMLInputElement} */ (e);
+    const index = Number(target.value);
+
+    const ce = new CustomEvent("question-choice-select", {
+      detail: index,
+      bubbles: true,
+    });
+    this.dispatchEvent(ce);
   }
 
   updateSelections(e) {

@@ -13,7 +13,7 @@ class AssessmentQuestion extends BaseElement {
     return {
       id: {type: String, reflect: true},
       state: {type: String, reflect: true},
-      height: {attribute: "question-height"},
+      height: {type: String, attribute: "question-height"}, // used in CSS
     };
   }
 
@@ -62,25 +62,37 @@ class AssessmentQuestion extends BaseElement {
   firstUpdated() {
     // Listen to state updates from child response components.
     this.addEventListener("response-update", this.responseComponentUpdated);
-  }
 
-  async connectedCallback() {
-    super.connectedCallback();
-    const parentAssessment = this.closest("web-assessment");
-    // Fetch all elements that are not yet defined.
-    const undefinedElements = document.querySelectorAll(":not(:defined)");
+    // Listen to clicks on contained `<input>` elements.
+    this.addEventListener("question-choice-select", (e) => {
+      const {detail: optionIndex, target} = e;
 
-    const promises = [...undefinedElements].map((el) =>
-      customElements.whenDefined(el.localName),
-    );
+      // This event comes from the final <input> that the user clicks on. Find the index of the
+      // response that this input is contained within.
+      // We could also use `target.closest("[data-role=response]")` to look _up_ from the <input>,
+      // but we'd still need to find its index.
+      let responseIndex = -1;
+      const responseComponents = Array.from(
+        this.querySelectorAll("[data-role=response]"),
+      );
+      for (let i = 0; i < responseComponents.length; ++i) {
+        if (responseComponents[i].contains(target)) {
+          responseIndex = i;
+          break;
+        }
+      }
+      if (responseIndex === -1) {
+        return;
+      }
 
-    // Wait for all elements to be upgraded.
-    // Then get the index of the question and set its id.
-    await Promise.all(promises);
-    const questions = parentAssessment.querySelectorAll("web-question");
-    const idx = [...questions].indexOf(this);
-
-    this.id = parentAssessment.id + "-question-" + idx;
+      // Send an Analytics event manually. We don't want to pipe through the IDs all the way down
+      // to each individual <input>.
+      ga("send", "event", {
+        eventCategory: "Self-assessments",
+        eventAction: "click",
+        eventLabel: `${this.id}-response-${responseIndex}-option-${optionIndex}`,
+      });
+    });
   }
 
   // Update question state based on state of response components.
