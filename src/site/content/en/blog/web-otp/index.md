@@ -150,7 +150,7 @@ The whole process is diagrammed in the image below.
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     Web OTP API diagram
   </figcaption>
-</figure
+</figure>
 
 Try [the demo](https://sms-receiver-demo.glitch.me) yourself. It doesn't ask for
 your phone number or send an SMS to your device, but you can send one from
@@ -283,34 +283,42 @@ message to arrive and submits the form as soon as the OTP is passed.
 
 The API itself should look simple enough, but a critical part is to
 format your SMS text message according to a specific convention. The message has
-to be sent after `navigator.sms.receive()` is called and must comply with a
+to be sent after `avigator.credentials.get()` is called and must comply with the
 formatting convention.
 
-The SMS message must be received on the device where `navigator.sms.receive()`
+The SMS message must be received on the device where `avigator.credentials.get()`
 was called.
 
 The message must adhere to the following formatting:
 
 * The origin part of the URL of the website that invoked the API must be
-  preceded by `For: `.
+  preceded by `@`.
 * The URL must contain (for [the time
   being](https://github.com/samuelgoto/sms-receiver/issues/4#issuecomment-528991114))
   a query parameter whose value is the application hash of the user's Chrome
-  instance. (These are static strings. See the table below.)
-* The URL must contain a query parameter `otp` whose value is the OTP.
+  instance. See [Use the application hash](#use-the-hash) for a list of valid hashes.
+* The URL must contain a pound sign ('`#`') followed by the OTP.
+* Optionally, the message may contain additional text for the user.
 
-An example message that can be retrieved by the browser would look like this:
+For example:
 
 ```text
 Your OTP is: 123456.
 
-For: https://sms-receiver-demo.glitch.me/?otp=123456&xFJnfg75+8v
+@https://www.example.com #123456
 ```
+
+### Use the application hash {: #use-the-hash }
 
 The application hash of Chrome instances are static. Use one of these strings
 for development depending on which Chrome build you will be working with. These
 values may change. Watch this page for updates.
 
+{% aside %}
+As of Chrome 83, you can turn off the hash requirement by setting the
+`chrome://flags/#web-otp-backend` flag to "User Consent API".
+
+{% endAside %}
 <table>
 <tr>
 <th markdown="block">
@@ -344,7 +352,7 @@ Chrome Stable
 <code>EvsSSj4C6vl</code>
 </td>
 </tr>
-</table>ß
+</table>
 
 ### Demos
 
