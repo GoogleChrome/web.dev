@@ -5,7 +5,10 @@
 
 import {html} from "lit-element";
 import {BaseElement} from "../BaseElement";
+import config from "webdev_config";
 import "./_styles.scss";
+
+const {env} = config;
 
 /**
  * Render codelab instructions and Glitch
@@ -19,8 +22,8 @@ class Codelab extends BaseElement {
       glitch: {type: String},
       // The file to show when the Glitch renders.
       path: {type: String},
-      // Whether to show the Glitch iframe or not.
-      iframeEnabled: {type: Boolean},
+      // Whether we are a desktop-sized browser or not.
+      _isDesktop: {type: Boolean},
     };
   }
 
@@ -29,7 +32,22 @@ class Codelab extends BaseElement {
 
     this.glitch = "";
     this.path = "index.html";
-    this.iframeEnabled = false;
+    // _isDesktop has no default value as it's only correctly set between connected/disconnected
+    // callbacks via the MediaQueryList's listener.
+
+    this._mql = window.matchMedia("(min-width: 865px)");
+    this._toggleDesktop = () => (this._isDesktop = this._mql.matches);
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this._mql.addListener(this._toggleDesktop);
+    this._toggleDesktop();
+  }
+
+  disconnectedCallback() {
+    super.connectedCallback();
+    this._mql.removeListener(this._toggleDesktop);
   }
 
   createRenderRoot() {
@@ -47,47 +65,59 @@ class Codelab extends BaseElement {
     return container;
   }
 
-  firstUpdated() {
-    const mql = window.matchMedia("(min-width: 865px)");
-    this.toggleIframeEnabled({matches: mql.matches});
-    // Update Glitch iframe src when the user changes the window size.
-    mql.addListener(this.toggleIframeEnabled.bind(this));
-  }
-
-  toggleIframeEnabled(event) {
-    this.iframeEnabled = !!this.glitch && event.matches;
-  }
-
-  get src() {
+  glitchSrc(embed) {
     let url = `https://glitch.com/embed/?attributionHidden=true`;
 
     if (this.path) {
       url += `&path=${encodeURI(this.path)}`;
     }
 
-    url += `#!/embed/${encodeURI(this.glitch)}`;
+    if (embed) {
+      url += `#!/embed/${encodeURI(this.glitch)}`;
+    }
 
     return url;
   }
 
   render() {
-    /* eslint-disable indent */
-    return html`
-      <div style="height: 100%; width: 100%;">
-        ${this.iframeEnabled
-          ? html`
-              <iframe
-                allow="geolocation; microphone; camera; midi; encrypted-media"
-                alt="Embedded glitch ${this.glitch}"
-                src="${this.src}"
-                style="height: 100%; width: 100%; border: 0;"
+    if (!this.glitch) {
+      return html``;
+    }
+    const isTest = env === "test";
+
+    // If this is a test, always show the warning. Percy snapshots our DOM at a
+    // low resolution before resizing it, so we can't rely on _isDesktop being
+    // different for smaller or larger tests. The `w-test` ensures we test the
+    // sticky behavior of this element.
+    if (!this._isDesktop || isTest) {
+      const message = isTest
+        ? "This Glitch isn't loaded in a test environment"
+        : "This Glitch isn't available on small screens";
+      return html`
+        <div class="w-sizer ${isTest ? "w-test" : ""}">
+          <div class="w-aside w-aside--warning">
+            <p>
+              <strong>Warning:</strong> ${message},
+              <a target="_blank" rel="noopener" href=${this.glitchSrc(false)}>
+                open it in a new tab.</a
               >
-              </iframe>
-            `
-          : ""}
+            </p>
+          </div>
+        </div>
+      `;
+    }
+
+    return html`
+      <div class="w-sizer">
+        <iframe
+          allow="geolocation; microphone; camera; midi; encrypted-media"
+          alt="Embedded glitch ${this.glitch}"
+          src="${this.glitchSrc(true)}"
+          style="height: 100%; width: 100%; border: 0;"
+        >
+        </iframe>
       </div>
     `;
-    /* eslint-enable indent */
   }
 }
 

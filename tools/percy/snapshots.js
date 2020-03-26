@@ -20,6 +20,10 @@ const pagesToTest = [
     url: "about",
     title: "About page",
   },
+  {
+    url: "codelab-avoid-invisible-text",
+    title: "Test codelab page",
+  },
 ];
 
 // A script to navigate our app and take snapshots with Percy.

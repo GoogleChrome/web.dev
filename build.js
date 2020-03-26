@@ -37,6 +37,7 @@ process.on("unhandledRejection", (reason, p) => {
 
 const bootstrapConfig = {
   prod: isProd,
+  env: process.env.ELEVENTY_ENV || "dev",
   version:
     "v" +
     new Date()
