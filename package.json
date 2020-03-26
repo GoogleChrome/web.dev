@@ -38,7 +38,7 @@
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.4",
     "escape-string-regexp": "^2.0.0",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "focus-visible": "^5.0.2",
     "idb-keyval": "^3.2.0",
     "iso-639-1": "^2.1.0",
