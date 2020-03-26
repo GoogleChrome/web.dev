@@ -15,9 +15,9 @@ description: |
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - identity
-  - sms
   - capabilities
   - fugu
+  - otp
 ---
 
 ## What is the Web OTP API?
@@ -314,7 +314,7 @@ The application hash of Chrome instances are static. Use one of these strings
 for development depending on which Chrome build you will be working with. These
 values may change. Watch this page for updates.
 
-{% aside %}
+{% Aside %}
 As of Chrome 83, you can turn off the hash requirement by setting the
 `chrome://flags/#web-otp-backend` flag to "User Consent API".
 
