@@ -11,6 +11,7 @@ on:
       - '**.js'
       - '**.njk'
       - '**.scss'
+
 # By default, runs when a pull_request's activity type is opened, synchronize,
 # or reopened
   pull_request:
@@ -18,8 +19,9 @@ on:
       - '**.js'
       - '**.njk'
       - '**.scss'
+
 jobs:
-  build:
+  percy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -28,6 +30,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
       - name: Install
         run: npm ci
       - name: Percy Test
