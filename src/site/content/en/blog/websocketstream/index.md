@@ -45,7 +45,7 @@ This is the process by which a single stream or a pipe chain
 regulates the speed of reading or writing.
 When the stream itself or a stream later in the pipe chain is still busy
 and isn't yet ready to accept more chunks,
-it sends a signal backwards through the chain to slow down delivery as appropriate.
+it sends a signal backwards through the chain to slow delivery as appropriate.
 
 ### The Problem with the current WebSocket API
 
