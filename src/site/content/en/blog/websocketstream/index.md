@@ -98,7 +98,7 @@ it will continue to climb.
 
 ## What is the WebSocketStream API? {: #what }
 
-The new WebSocketStream API deals with the problem of non-existent or non-ergonomic backpressure
+The WebSocketStream API deals with the problem of non-existent or non-ergonomic backpressure
 applicability by integrating Streams with the WebSocket API.
 This means backpressure can be applied "for free", without any extra hoops.
 
