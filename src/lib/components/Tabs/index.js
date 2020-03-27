@@ -79,8 +79,9 @@ class Tabs extends BaseElement {
 
     return html`
       <button
-        @focus="${this.onFocus}"
-        @keydown="${this.onKeydown}"
+        @click=${this.onFocus}
+        @focus=${this.onFocus}
+        @keydown=${this.onKeydown}
         class="web-tabs__tab gc-analytics-event"
         role="tab"
         aria-selected="false"
