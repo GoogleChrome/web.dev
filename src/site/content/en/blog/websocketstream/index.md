@@ -100,7 +100,7 @@ it will continue to climb.
 
 The WebSocketStream API deals with the problem of non-existent or non-ergonomic backpressure
 applicability by integrating streams with the WebSocket API.
-This means backpressure can be applied "for free", without any extra hoops.
+This means backpressure can be applied "for free", without any extra cost.
 
 ### Suggested use cases for the WebSocketStream API {: #use-cases }
 
