@@ -94,10 +94,10 @@ You can install the package in the usual Debian way, as long as the OpenSSL (`li
 
 ```bash
 sudo apt install -y libssl-dev
-wget https://github.com/google/libsxg/releases/download/v0.2/libsxg0_0.2_amd64.deb
-wget https://github.com/googl/etwlibsxg/releases/download/v0.2/libsxg-dev_0.2_amd64.deb
-sudo dpkg -i libsxg0_0.2_amd64.deb
-sudo dpkg -i libsxg-dev_0.2_amd64.deb
+wget https://github.com/google/libsxg/releases/download/v0.2/libsxg0_0.2-1_amd64.deb
+wget https://github.com/google/libsxg/releases/download/v0.2/libsxg-dev_0.2-1_amd64.deb
+sudo dpkg -i libsxg0_0.2-1_amd64.deb
+sudo dpkg -i libsxg-dev_0.2-1_amd64.deb
 ```
 
 ### Option 2: Build `libsxg` manually
@@ -184,7 +184,7 @@ http {
     }
 }
 ```
- 
+
 * `sxg_cert_url` is essential for browsers to load SXG properly because it locates the certificate chain. The certificate chain contains certificate and OCSP stapling information with cbor format. Note that you do not have to serve the `cert.cbor` file from the same origin. You can serve it via any CDNs or other static file serving services as long as it supports HTTPS.
 * `sxg_validitiy_url` is planned to serve SXG-signature-header-related information. If a page has not been modified since the last SXG, downloading the entire SXG file is not required technically. So updating signature header information alone is expected to reduce network traffic. But the details are not implemented yet.
 
