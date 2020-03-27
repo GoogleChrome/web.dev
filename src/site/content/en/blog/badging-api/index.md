@@ -173,7 +173,7 @@ function setBadge(...args) {
   if (navigator.setExperimentalAppBadge) {
     navigator.setExperimentalAppBadge(...args);
   } else {
-    window.setAppBadge(...args);
+    navigator.setAppBadge(...args);
   }
 }
 
@@ -181,7 +181,7 @@ function clearBadge() {
   if (navigator.clearExperimentalAppBadge) {
     navigator.clearExperimentalAppBadge();
   } else {
-    window.clearAppBadge(...args);
+    navigator.clearAppBadge(...args);
   }
 }
 ```
