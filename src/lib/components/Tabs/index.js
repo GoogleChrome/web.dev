@@ -77,6 +77,7 @@ class Tabs extends BaseElement {
         break;
     }
 
+    // Need @click so tabs work on iOS Safari
     return html`
       <button
         @click=${this.onFocus}
