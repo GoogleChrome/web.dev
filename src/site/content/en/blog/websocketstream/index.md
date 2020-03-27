@@ -178,8 +178,8 @@ data to.
 What about the promised backpressure feature?
 As I wrote above, you get it "for free", no extra steps needed.
 If `process()` takes extra time, the next message will only be consumed once the pipeline is ready.
-Likewise for the `WritableStreamDefaultWriter.write()` step:
-it will only proceed if it is safe to do so.
+Likewise the `WritableStreamDefaultWriter.write()` step
+will only proceed if it is safe to do so.
 
 ### Advanced examples
 
