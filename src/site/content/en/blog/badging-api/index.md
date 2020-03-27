@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: The Badging API allows installed web apps to set an application-wide badge, shown in an operating-system-specific place associated with the application, such as the shelf or home screen. Badging makes it easy to subtly notify the user that there is some new activity that might require their attention, or it can be used to indicate a small amount of information, such as an unread count.
 date: 2018-12-11
-updated: 2020-03-13
+updated: 2020-03-27
 tags:
   - post
   - capabilities
@@ -115,10 +115,13 @@ and users must add it to their home screens.
 
 The Badge API consists of the following methods on `navigator`:
 
-* `setAppBadge([number])`: Sets the app's badge. If a value is
-  provided, set the badge to the provided value otherwise, display a plain
-  white dot (or other flag as appropriate to the platform).
+* `setAppBadge(*number*)`: Sets the app's badge. If a value is provided, set the
+  badge to the provided value otherwise, display a plain white dot (or other
+  flag as appropriate to the platform). Setting `*number*` to `0` is the same as
+  calling `clearAppBadge()`.
 * `clearAppBadge()`: Removes app's badge.
+
+Both return empty promises you can use for error handling.
 
 {% Aside %}
 These functions had different names for the origin trial than they do in the
@@ -132,10 +135,16 @@ For example:
 ```js
 // Set the badge
 const unreadCount = 24;
-navigator.setAppBadge(unreadCount);
+const setBadge = navigator.setAppBadge(unreadCount);
+setBadge.catch((error) => {
+  //Do something with the error.
+});
 
 // Clear the badge
-navigator.clearAppBadge();
+const clearBadge  = navigator.clearAppBadge();
+clearBadge.catch((error) => {
+  //Do something with the error.
+});
 ```
 
 You can only call `setAppBadge()` and `clearAppBadge()`
