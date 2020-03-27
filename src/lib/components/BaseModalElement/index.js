@@ -91,7 +91,9 @@ export class BaseModalElement extends BaseElement {
       // Fire custom event to allow other components
       // to respond when the modal closes, if needed
       // (e.g., to reenable a button).
-      const event = new Event("close-modal");
+      const event = new Event("close-modal", {
+        bubbles: true,
+      });
 
       this.dispatchEvent(event);
       window.removeEventListener("resize", this.onResize);
@@ -174,9 +176,8 @@ export class BaseModalElement extends BaseElement {
     } else if (!this.open && this.parentModal) {
       // If the modal is triggered by an element in another modal,
       // uninert the triggering modal but leave the document inert.
-
-      if (parent) {
-        parent.inert = false;
+      if (this._parent) {
+        this._parent.inert = false;
         this._parent = null;
       }
     } else {

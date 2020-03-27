@@ -3,6 +3,8 @@
  */
 
 import "../components/Actions";
+import "../components/AssessmentFeedbackContainer";
+import "../components/AssessmentFeedbackForm";
 import "../components/AssessmentQuestion";
 import "../components/Codelab";
 import "../components/Assessment";

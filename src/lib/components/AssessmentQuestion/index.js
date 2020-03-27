@@ -44,7 +44,22 @@ class AssessmentQuestion extends BaseElement {
         ${this.prerenderedChildren}
       </div>
       <div class="web-question__footer">
-        <span></span>
+        <button
+          @click="${this.onFeedbackOpen}"
+          class="w-button web-assessment__button web-assessment-feedback-container__open-modal gc-analytics-event"
+          data-category="Self-assessments"
+          data-label="feedbackOpen, ${this.id}"
+        >
+          Report issue
+        </button>
+        <button
+          @click="${this.onFeedbackOpen}"
+          class="w-button web-assessment__button web-assessment-feedback-container__open-drawer gc-analytics-event"
+          data-category="Self-assessments"
+          data-label="feedbackOpen, ${this.id}"
+        >
+          Report issue
+        </button>
         <button
           @click="${this.onSubmit}"
           class="w-button w-button--primary web-assessment__button web-question__cta gc-analytics-event"
@@ -54,6 +69,11 @@ class AssessmentQuestion extends BaseElement {
         >
           ${this.ctaLabel}
         </button>
+        <web-assessment-feedback-container
+          class="web-modal"
+          aria-label="Question feedback form"
+          parent-modal="web-assessment"
+        ></web-assessment-feedback-container>
       </div>
     `;
     /* eslint-enable indent */
@@ -93,6 +113,10 @@ class AssessmentQuestion extends BaseElement {
         eventLabel: `${this.id}-response-${responseIndex}-option-${optionIndex}`,
       });
     });
+
+    // On desktop, listen for close event from child feedback form
+    // to reenable footer buttons.
+    this.addEventListener("close-drawer", this.onFeedbackDrawerClosed);
   }
 
   // Update question state based on state of response components.
@@ -129,6 +153,40 @@ class AssessmentQuestion extends BaseElement {
         } else {
           this.requestAssessmentReset();
         }
+    }
+  }
+
+  onFeedbackOpen(e) {
+    const feedbackForm = this.querySelector(
+      "web-assessment-feedback-container",
+    );
+
+    // On desktop, the feedback form is a simulated <details> widget, not a modal,
+    // so it's easier to just use different logic rather than override BaseModalElement.
+    if (e.target.matches(".web-assessment-feedback-container__open-drawer")) {
+      feedbackForm.openDrawer = true;
+      this.toggleFooterButtons(true);
+    } else {
+      feedbackForm.open = true;
+    }
+  }
+
+  // On dekstop, re-enable question footer buttons and focus drawer trigger
+  // when feedback form drawer is closed.
+  onFeedbackDrawerClosed(e) {
+    this.toggleFooterButtons(false);
+    this.querySelector(
+      ".web-assessment-feedback-container__open-drawer",
+    ).focus();
+  }
+
+  toggleFooterButtons(state) {
+    const footerButtons = this.querySelectorAll(
+      ".web-question__footer > button",
+    );
+
+    for (const button of footerButtons) {
+      button.disabled = state;
     }
   }
 

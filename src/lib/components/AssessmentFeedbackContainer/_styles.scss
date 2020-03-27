@@ -1,0 +1,79 @@
+@import '../../../styles/tools/mixins';
+
+$FEEDBACK_MARGIN_TOP: 1rem;
+
+.web-assessment-feedback__placeholder {
+  display: none;
+}
+
+.web-assessment-feedback-container__open-drawer {
+  display: none;
+}
+
+@include bp(sm) {
+  .web-assessment-feedback-container__open-modal {
+    display: none;
+  }
+
+  .web-assessment-feedback-container__open-drawer {
+    display: inline-flex;
+  }
+
+  .web-assessment-feedback-container__open-drawer[disabled] {
+    background: $GREY_50;
+    border: 1px solid $BORDER_COLOR;
+    color: $PRIMARY_TEXT_COLOR;
+    overflow: initial;
+    transition: none;
+  }
+
+  .web-assessment-feedback-container__open-drawer[disabled]::after {
+    background: $GREY_50;
+    border: 1px solid $BORDER_COLOR;
+    border-width: 0 1px;
+    content: "";
+    display: block;
+    height: calc(#{$FEEDBACK_MARGIN_TOP} + #{$GLOBAL_RADIUS} + 2px); // Aligns bottom of connector with top of container
+    left: -1px;
+    position: absolute;
+    right: -1px;
+    top: calc(100% - #{$GLOBAL_RADIUS});
+    transition: none;
+  }
+
+  web-assessment-feedback-container.web-modal {
+    background: $GREY_50;
+    border: 1px solid $BORDER_COLOR;
+    border-radius: 0 $GLOBAL_RADIUS_MEDIUM $GLOBAL_RADIUS_MEDIUM;
+    display: none;
+    margin-top: $FEEDBACK_MARGIN_TOP;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    z-index: 0; // To keep feedback form below FABs and such
+
+    &[open-drawer=true] {
+      display: flex;
+      opacity: 1; // Override BaseModalElement styling
+      visibility: visible; // Override BaseModalElement styling
+    }
+
+    // Override BaseModalElement styling
+    .web-modal__container {
+      background: none;
+      box-shadow: none;
+      max-width: unset;
+      min-height: unset;
+      width: 100%;
+    }
+
+    // Hide header on desktop since trigger button is serving as header
+    .web-modal__header {
+      display: none;
+    }
+
+    .web-modal__content {
+      padding: 0 1rem;
+    }
+  }
+}
