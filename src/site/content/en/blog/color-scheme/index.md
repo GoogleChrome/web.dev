@@ -46,7 +46,7 @@ As the name suggests, a UA stylesheet is something that is dependent on the UA i
 You can have a look at
 [Chrome's](https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css)
 (and Chromium's) UA stylesheet and compare it to
-[Firefox’s](https://dxr.mozilla.org/mozilla-central/source/layout/style/res/html.css) or
+[Firefox's](https://dxr.mozilla.org/mozilla-central/source/layout/style/res/html.css) or
 [Safari's](https://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css) (and WebKit's).
 Typically, all UA stylesheets agree and make texts black and background colors white,
 but there are also differences, for example, how to display form controls.
