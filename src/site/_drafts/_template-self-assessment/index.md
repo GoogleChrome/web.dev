@@ -4,7 +4,7 @@ description: |
   A description of the article that will appear in search results.
 authors:
   - mfriesenhahn
-date: 2020-02-16
+date: 2020-03-26
 tags:
   - post
 ---
@@ -13,5 +13,9 @@ Include a self-assessment in your post using this short code:
 
 {% Assessment page, 'my-first-self-assessment' %}
 
-Then populate the `your-post-directory-name.assess.js` file in your post's
-folder following the patterns in `_template-self-assessment/self-assessment.assess.js`.
+Rename the file and the shortcode argument
+so it conveys the topic of your assessment.
+
+Then populate the `your-assessment-topic.assess.yml` file in your post's
+folder following the patterns in
+`_template-self-assessment/my-first-self-assessment.assess.yml`.

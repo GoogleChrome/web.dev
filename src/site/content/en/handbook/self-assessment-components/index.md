@@ -16,13 +16,14 @@ to check their understanding of concepts covered in your post.
 1. [Question anatomy and parameters](#question-anatomy-and-parameters)
 1. [Response types](#response-types)
     - [Multiple-choice](#multiple-choice)
+    - [Think-and-checks](#think-and-checks)
     - [Composite questions](#composite-questions)
 1. [Multiple sets in one post](#multiple-sets-in-one-post)
 
 ## Start a self-assessment
 
 To include a self-assessment in your post:
-1. Add this line to your post where you want the self-assessment to appear:
+1. Add this short code to your post where you want the self-assessment to appear:
     ```html
     {% raw %}{% Assessment page, 'my-first-self-assessment' %}{% endraw %}
     ```
@@ -50,7 +51,8 @@ You can omit the `setLeader` if there's only one question in the set.
 (One-question sets will ignore a `setLeader` if you accidentally include one.)
 
 {% Aside %}
-On mobile, the set leader will appear on its own with an **Open quiz** button,
+On mobile, the set leader appears on its own with an **Open quiz** button
+that launches the self-assessment set in a modal,
 so make sure the set leader makes sense whether or not the questions are visible.
 {% endAside %}
 
@@ -64,7 +66,7 @@ change it using the `height` key.
 
 If you want each question's height to match its content, set `height` to `unset`.
 (Note that this will cause the self-assessment height to change
-as users check their responses and navigate across items.)
+as users check their responses and navigate across questions.)
 
 ### Question labels
 
@@ -74,6 +76,7 @@ There are three options:
   where _n_ is the number of the tab in the set.
   Use for sets that mostly ask users to submit a response.
 - `sample`: creates the label `Sample n`.
+  Use for sets that mostly ask users to evaluate code samples.
 - `bare`: creates the label `n`
   Use for larger sets where horizontal space is limited.
 
@@ -93,7 +96,7 @@ A self-assessment question includes four components:
   which includes the **Check** and **Report issue** buttons.
 
 Once the user submits an answer to a question,
-it shows:
+the question shows:
 - Whether the option is correct or incorrect
 - The rationale for the option
 
@@ -136,7 +139,7 @@ so YAML doesn't incorrectly interpret them as numbers.
 
 ### Layout
 
-The options of most response types can be presented in two columns
+The options of most [response types](#response-types) can be presented in two columns
 by setting the `columns` key to `true`.
 (Response types that don't support a two-column layout
 will ignore the `columns` key.)
@@ -158,6 +161,20 @@ which can include MarkDown or images.
 {% Aside 'warning' %}
 To help ensure that users understand what selecting an option will do,
 don't include links or any other interactive elements in a multiple-choice option.
+{% endAside %}
+
+### Think-and-checks
+Think-and-checks let you present a stimulus of some kind
+(for example, a code sample) and ask a question about it.
+Users can formulate a mental response and then check it.
+
+Since think-and-checks don't have any options to submit,
+there's no need to provide `cardinality` or `correctAnswers` keys.
+
+{% Aside 'caution' %}
+Since think-and-checks don't provide a way for users to select
+and validate an actual response,
+it's generally better to use any other [response type](#response-types) instead.
 {% endAside %}
 
 ### Composite questions
@@ -206,7 +223,7 @@ unless the parts are truly interdependent.
 
 ## Multiple sets in one post
 To include another set in your post,
-create a second `*.assess.js` file and
+create a second `*.assess.yml` file and
 add a second `Assessment` short code to your post.
 You can add as many assessments as you want as long as each has a unique name.
 For example:
