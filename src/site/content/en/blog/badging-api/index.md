@@ -140,9 +140,8 @@ navigator.setAppBadge(unreadCount).catch((error) => {
 });
 
 // Clear the badge
-const clearBadge  = navigator.clearAppBadge();
-clearBadge.catch((error) => {
-  //Do something with the error.
+navigator.clearAppBadge().catch((error) => {
+  // Do something with the error.
 });
 ```
 
