@@ -115,9 +115,9 @@ and users must add it to their home screens.
 
 The Badge API consists of the following methods on `navigator`:
 
-* `setAppBadge(*number*)`: Sets the app's badge. If a value is provided, set the
+* `setAppBadge(`*`number`*`)`: Sets the app's badge. If a value is provided, set the
   badge to the provided value otherwise, display a plain white dot (or other
-  flag as appropriate to the platform). Setting `*number*` to `0` is the same as
+  flag as appropriate to the platform). Setting *`number`* to `0` is the same as
   calling `clearAppBadge()`.
 * `clearAppBadge()`: Removes app's badge.
 
