@@ -190,7 +190,7 @@ which behaves the same as the
 
 ```js
 const chatWSS = new WebSocketStream(CHAT_URL, {protocols: ['chat', 'chatv2']});
-const {protocol} = await wss.connection;
+const {protocol} = await chatWSS.connection;
 ```
 
 The selected protocol is part of the dictionary available
