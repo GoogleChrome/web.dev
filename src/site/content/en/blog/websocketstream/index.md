@@ -6,8 +6,7 @@ subhead: |
   or flooding a WebSocket server with messages by applying backpressure.
 authors:
   - thomassteiner
-date: 2020-03-24
-update: 2020-03-24
+date: 2020-03-27
 hero: hero.jpg
 alt: A fire hose with water dripping out of it.
 description: |
