@@ -51,9 +51,9 @@ it sends a signal backwards through the chain to slow delivery as appropriate.
 
 #### Applying backpressure to received messages is impossible
 
-With the current WebSocket API, reacting to a message happens via the
-[`WebSocket.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/onmessage)
-property, an `EventHandler` that is called when a message is received from the server.
+With the current WebSocket API, reacting to a message happens in
+[`WebSocket.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/onmessage),
+an `EventHandler` called when a message is received from the server.
 
 Let's assume you had an application that needed to perform some heavy data crunching operations
 whenever a new message is received.
