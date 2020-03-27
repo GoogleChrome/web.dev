@@ -135,8 +135,7 @@ For example:
 ```js
 // Set the badge
 const unreadCount = 24;
-const setBadge = navigator.setAppBadge(unreadCount);
-setBadge.catch((error) => {
+navigator.setAppBadge(unreadCount).catch((error) => {
   //Do something with the error.
 });
 
