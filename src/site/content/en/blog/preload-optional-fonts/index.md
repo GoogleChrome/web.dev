@@ -5,6 +5,7 @@ authors:
   - houssein
 date: 2020-03-18
 hero: hero.jpg
+alt: A large letter A from a type set sitting on a white table.
 description: | 
   By optimizing rendering cycles, Chrome 82 eliminates layout shifting when
   preloading optional fonts. Combining <link rel="preload"> with font-display: optional is the

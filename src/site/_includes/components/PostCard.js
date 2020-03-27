@@ -154,7 +154,7 @@ module.exports = ({post, featured = false}) => {
   }
 
   return html`
-    <div class="w-card">
+    <div class="w-card" role="listitem">
       <article class="w-post-card ${featured ? "w-post-card--featured" : ""}">
         <div
           class="w-post-card__cover ${thumbnail &&
