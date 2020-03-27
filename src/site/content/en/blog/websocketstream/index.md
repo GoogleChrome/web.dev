@@ -57,7 +57,7 @@ an `EventHandler` called when a message is received from the server.
 
 Let's assume you had an application that needs to perform heavy data crunching operations
 whenever a new message is received.
-You would probably set up the flow similar to the code in the example below,
+You would probably set up the flow similar to the code below,
 and since you `await` the result of the `process()` call, you should be good, right?
 
 ```js
