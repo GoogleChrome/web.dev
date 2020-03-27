@@ -55,7 +55,7 @@ With the current WebSocket API, reacting to a message happens in
 [`WebSocket.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/onmessage),
 an `EventHandler` called when a message is received from the server.
 
-Let's assume you had an application that needed to perform some heavy data crunching operations
+Let's assume you had an application that needs to perform heavy data crunching operations
 whenever a new message is received.
 You would probably set up the flow similar to the code in the example below,
 and since you `await` the result of the `process()` call, you should be good, right?
