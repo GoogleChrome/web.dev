@@ -6,13 +6,10 @@ const {env} = require('../_data/site');
  * @return {boolean} Whether or not the post should go live.
  */
 module.exports = function livePosts(post) {
-  // If we ever wanted to enable featured posts we could uncomment these lines.
-  // See https://github.com/GoogleChrome/web.dev/pull/1222#issuecomment-516621561
-  // for an explanation on why this feature is currently disabled.
-  // const now = new Date();
-  // if (post.date > now) {
-  //   post.data.draft = true;
-  // }
+  const now = new Date();
+  if (post.date > now) {
+    post.data.draft = true;
+  }
 
   // If we're in dev mode, force draft posts to show up.
   if (env === 'dev') {
