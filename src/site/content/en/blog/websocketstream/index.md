@@ -144,7 +144,7 @@ By calling the
 method, you finally obtain a
 [`ReadableStreamDefaultReader`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultReader),
 which you can then [`read()`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultReader/read)
-data from until it is done, that is, until it returns an object of the form
+data from until the stream is done, that is, until it returns an object of the form
 `{value: undefined, done: true}`.
 
 Accordingly, by calling the
