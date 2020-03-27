@@ -1,12 +1,12 @@
 ---
-title: WebSocketStream—Integrating Streams with the WebSocket API
+title: |
+  WebSocketStream: integrating Streams with the WebSocket API
 subhead: |
   Prevent your app from getting drowned in WebSocket messages
   or flooding a WebSocket server with messages by applying backpressure.
 authors:
   - thomassteiner
-date: 2020-03-24
-update: 2020-03-24
+date: 2020-03-27
 hero: hero.jpg
 alt: A fire hose with water dripping out of it.
 description: |
@@ -99,7 +99,7 @@ it will continue to climb.
 ## What is the WebSocketStream API? {: #what }
 
 The new WebSocketStream API deals with the problem of non-existent or non-ergonomic backpressure
-applicability by integrating Streams with the WebSocket API.
+by integrating Streams with the WebSocket API.
 This means backpressure can be applied "for free", without any extra hoops.
 
 ### Suggested use cases for the WebSocketStream API {: #use-cases }
