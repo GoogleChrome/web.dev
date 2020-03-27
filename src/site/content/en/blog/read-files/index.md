@@ -34,7 +34,7 @@ This guide assumes you're familiar with:
 * [Beginner web development concepts](https://developer.mozilla.org/docs/Learn)
 * [Events](https://developer.mozilla.org/docs/Learn/JavaScript/Building_blocks/Events), in
   particular [`Event.stopPropagation()`][propagation] and
-  [`Event.preventDefault()`][preventDefault]
+  [`Event.preventDefault()`][preventdefault]
 * [Feature detection][detection]
 * Modern JavaScript syntax like
   [arrow functions](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Arrow_functions),
@@ -261,4 +261,4 @@ Browser compatibility data for the APIs used in this section:
 [text]: https://developer.mozilla.org/docs/Web/API/FileReader/readAsText
 [dropeffect]: https://developer.mozilla.org/docs/Web/API/DataTransfer/dropEffect
 [propagation]: https://developer.mozilla.org/docs/Web/API/Document_Object_Model/Examples#Example_5:_Event_Propagation
-[preventDefault]: https://developer.mozilla.org/docs/Web/API/Event/preventDefault
+[preventdefault]: https://developer.mozilla.org/docs/Web/API/Event/preventDefault
