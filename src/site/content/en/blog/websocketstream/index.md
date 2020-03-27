@@ -269,7 +269,8 @@ or [directly on Glitch](https://websocketstream-demo.glitch.me/).
     src="https://glitch.com/embed/#!/embed/websocketstream-demo?path=public/index.html&previewSize=100"
     title="websocketstream-demo on Glitch"
     allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    style="height: 100%; width: 100%; border: 0;">
+    style="height: 100%; width: 100%; border: 0;"
+    loading="lazy">
   </iframe>
 </div>
 
