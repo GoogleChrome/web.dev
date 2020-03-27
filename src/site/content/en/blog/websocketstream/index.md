@@ -1,6 +1,6 @@
 ---
 title: |
-  WebSocketStream: integrating Streams with the WebSocket API
+  WebSocketStream: integrating streams with the WebSocket API
 subhead: |
   Prevent your app from getting drowned in WebSocket messages
   or flooding a WebSocket server with messages by applying backpressure.
@@ -32,32 +32,32 @@ provides a JavaScript interface to the [WebSocket protocol](https://tools.ietf.o
 which makes it possible to open a two-way interactive communication session
 between the user's browser and a server.
 With this API, you can send messages to a server and receive event-driven responses
-without having to poll the server for a reply.
+without polling the server for a reply.
 
 ### The Streams API
 
 The [Streams API](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API)
 allows JavaScript to programmatically access streams of data chunks received over the network
-and process them as desired by the developer.
+and process them as desired.
 An important concept in the context of streams is
 [backpressure](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Concepts#Backpressure).
 This is the process by which a single stream or a pipe chain
 regulates the speed of reading or writing.
 When the stream itself or a stream later in the pipe chain is still busy
 and isn't yet ready to accept more chunks,
-it sends a signal backwards through the chain to slow down delivery as appropriate.
+it sends a signal backwards through the chain to slow delivery as appropriate.
 
 ### The Problem with the current WebSocket API
 
 #### Applying backpressure to received messages is impossible
 
-With the current WebSocket API, reacting to a message happens via the
-[`WebSocket.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/onmessage)
-property, an `EventHandler` that is called when a message is received from the server.
+With the current WebSocket API, reacting to a message happens in
+[`WebSocket.onmessage`](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/onmessage),
+an `EventHandler` called when a message is received from the server.
 
-Let's assume you had an application that needed to perform some heavy data crunching operations
+Let's assume you had an application that needs to perform heavy data crunching operations
 whenever a new message is received.
-You would probably set up the flow similar to the code in the example below,
+You would probably set up the flow similar to the code below,
 and since you `await` the result of the `process()` call, you should be good, right?
 
 ```js
@@ -98,13 +98,13 @@ it will continue to climb.
 
 ## What is the WebSocketStream API? {: #what }
 
-The new WebSocketStream API deals with the problem of non-existent or non-ergonomic backpressure
-by integrating Streams with the WebSocket API.
-This means backpressure can be applied "for free", without any extra hoops.
+The WebSocketStream API deals with the problem of non-existent or non-ergonomic backpressure
+by integrating streams with the WebSocket API.
+This means backpressure can be applied "for free", without any extra cost.
 
 ### Suggested use cases for the WebSocketStream API {: #use-cases }
 
-Examples of sites that may use this API include:
+Examples of sites that can use this API include:
 
 * High-bandwidth WebSocket applications that need to retain interactivity,
   in particular video and screen-sharing.
@@ -144,7 +144,7 @@ By calling the
 method, you finally obtain a
 [`ReadableStreamDefaultReader`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultReader),
 which you can then [`read()`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultReader/read)
-data from until it is done, that is, until it returns an object of the form
+data from until the stream is done, that is, until it returns an object of the form
 `{value: undefined, done: true}`.
 
 Accordingly, by calling the
@@ -177,9 +177,9 @@ data to.
 
 What about the promised backpressure feature?
 As I wrote above, you get it "for free", no extra steps needed.
-If `process()` takes a second, the next message will only be consumed once the pipeline is ready.
-Likewise for the `WritableStreamDefaultWriter.write()` step:
-it will only proceed if it is safe to do so.
+If `process()` takes extra time, the next message will only be consumed once the pipeline is ready.
+Likewise the `WritableStreamDefaultWriter.write()` step
+will only proceed if it is safe to do so.
 
 ### Advanced examples
 
@@ -190,14 +190,13 @@ which behaves the same as the
 
 ```js
 const chatWSS = new WebSocketStream(CHAT_URL, {protocols: ['chat', 'chatv2']});
-const {protocol} = await wss.connection;
+const {protocol} = await chatWSS.connection;
 ```
 
-The selected protocol is part of the dictionary available
-via the `WebSocketStream.connection` promise,
-along with `extensions`.
+The selected `protocol` as well as potential `extensions` are part of the dictionary
+available via the `WebSocketStream.connection` promise.
 All the information about the live connection is provided by this promise,
-since it is not relevant if the connection failed.
+since it is not relevant if the connection fails.
 
 ```js
 const {readable, writable, protocol, extensions} = await chatWSS.connection;
