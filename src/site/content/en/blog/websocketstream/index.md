@@ -193,9 +193,8 @@ const chatWSS = new WebSocketStream(CHAT_URL, {protocols: ['chat', 'chatv2']});
 const {protocol} = await chatWSS.connection;
 ```
 
-The selected protocol is part of the dictionary available
-via the `WebSocketStream.connection` promise,
-along with `extensions`.
+The selected `protocol` as well as potential `extensions` are part of the dictionary
+available via the `WebSocketStream.connection` promise.
 All the information about the live connection is provided by this promise,
 since it is not relevant if the connection fails.
 
