@@ -98,11 +98,8 @@ class AssessmentQuestion extends BaseElement {
   // Update question state based on state of response components.
   responseComponentUpdated() {
     const responseComponents = this.querySelectorAll("[data-role=response]");
-    const stateArr = [];
+    const stateArr = Array.from(responseComponents).map(({state}) => state);
 
-    for (const component of responseComponents) {
-      stateArr.push(component.state);
-    }
     if (stateArr.includes("unanswered")) {
       this.state = "unanswered";
     } else if (stateArr.includes("answeredIncorrectly")) {
