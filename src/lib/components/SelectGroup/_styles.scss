@@ -1,0 +1,176 @@
+@import '../../../styles/tools/mixins';
+
+.web-select-group {
+  border: 0; // Reset default fieldset style
+  margin: 1.5rem 0;
+  padding: 0; // Reset default fieldset style
+}
+
+.web-select-group__options-wrapper {
+  display: grid;
+  gap: 1em;
+  justify-items: start;
+}
+
+// Need the specificity to avoid affecting nested SelectGroups
+// (e.g., the AssessmentFeedbackForm selections in AssessmentQuestion).
+[columns] > fieldset > .web-select-group__options-wrapper {
+  grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+  justify-items: stretch;
+}
+
+.web-select-group__option {
+  @include w-article-text();
+  -webkit-tap-highlight-color: transparent;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  line-height: 1.5 !important; // Override w-article-text mixin
+  margin: 0 !important; // Override w-article-text mixin
+  padding: 0 1rem;
+  position: relative;
+  z-index: 1; // Ensure selector states are always visible
+}
+
+// A standalone selector with no visible text label.
+.w-selectgroup__option--standalone {
+  justify-content: center;
+}
+
+.web-select-group__option[disabled] {
+  pointer-events: none;
+}
+
+.web-select-group__option-content {
+  transition: opacity .12s cubic-bezier(0, 0, .2, 1);
+}
+
+// Use opacity rather than changing the color
+// to account for image-based option content.
+.web-select-group__option[disabled] .web-select-group__option-content {
+  opacity: .5;
+}
+
+.web-select-group__input {
+  cursor: inherit;
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+}
+
+// Style checkboxes.
+.web-select-group__selector {
+  align-items: center;
+  border: 2px solid $WEB_PRIMARY_COLOR;
+  border-radius: 2px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  height: 18px;
+  justify-content: center;
+  margin: .4375rem 1.5625rem .4375rem .3125rem;
+  position: relative;
+  transition:
+    border .12s cubic-bezier(0, 0, .2, 1),
+    background .12s cubic-bezier(0, 0, .2, 1);
+  width: 18px;
+}
+
+.w-selectgroup__option--standalone ~ .w-selectgroup__selector {
+  margin: .4375rem;
+}
+
+// Style radio buttons.
+input[type='radio'] ~ .web-select-group__selector {
+  border-radius: $GLOBAL_ROUNDED;
+  height: 20px;
+  margin: .375rem 1.5rem .375rem .25rem;
+  width: 20px;
+}
+
+.w-selectgroup__option--standalone input[type='radio'] ~ .w-selectgroup__selector {
+  margin: .375rem;
+}
+
+// Handles hover, active, and focus states.
+.web-select-group__selector::before {
+  background: none;
+  border: 1px solid transparent;
+  border-radius: $GLOBAL_ROUNDED;
+  content: '';
+  display: block;
+  height: 40px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition:
+    background .12s cubic-bezier(0, 0, .2, 1),
+    border .12s cubic-bezier(0, 0, .2, 1);
+  width: 40px;
+  z-index: -1; // Position behind the selector.
+}
+
+// Checkbox check
+.web-select-group__selector::after {
+  @include font-material-icon();
+  color: $WHITE;
+  content: '';
+  display: block;
+  font-size: 18px;
+}
+
+// Radio button dot
+input[type='radio'] ~ .web-select-group__selector::after {
+  border: 5px solid $WEB_PRIMARY_COLOR;
+  border-radius: $GLOBAL_ROUNDED;
+  height: 0;
+  transform: scale(0);
+  transition: transform .12s cubic-bezier(0, 0, .2, 1);
+  width: 0;
+}
+
+@include hover() {
+  .web-select-group__option:hover .web-select-group__selector::before,
+  .web-select-group__input:focus ~ .web-select-group__selector::before {
+    background: rgba(55, 64, 255, 0.11);
+  }
+}
+
+.web-select-group__option:active .web-select-group__selector::before {
+  background: rgba(55, 64, 255, 0.26);
+}
+
+.web-select-group__input:focus ~ .web-select-group__selector::before {
+  border-color: $FOCUS_COLOR;
+}
+
+.js-focus-visible .web-select-group__input:focus:not(.focus-visible) ~ .web-select-group__selector::before {
+  border-color: transparent;
+}
+
+input[type='radio']:checked ~ .web-select-group__selector::after {
+  transform: scale(1);
+}
+
+input[type='checkbox']:checked ~ .web-select-group__selector {
+  background: $WEB_PRIMARY_COLOR;
+}
+
+input[type='checkbox']:checked ~ .web-select-group__selector::after {
+  content: 'check';
+}
+
+.web-select-group__input[disabled] ~ .web-select-group__selector {
+  border-color: $GREY_400;
+}
+
+input[type='checkbox'][disabled]:checked ~ .web-select-group__selector {
+  background: $GREY_400;
+}
+
+.web-select-group__input[disabled] ~ .web-select-group__selector::after {
+  border-color: $GREY_400;
+}

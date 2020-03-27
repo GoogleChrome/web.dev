@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,10 +88,26 @@ class Assessment extends BaseModalElement {
     // Render the launcher that appears in closed state on mobile.
     this.renderLauncher();
     // Listen to reset requests from child question components.
-    const questions = this.querySelectorAll("web-question");
+    this.addEventListener("request-assessment-reset", this.reset);
 
-    for (const question of questions) {
-      question.addEventListener("request-assessment-reset", this.reset);
+    // Get our position within all assessments on the page, and use this as the
+    // basis for our Analytics ID.
+    const assessments = document.querySelectorAll("web-assessment");
+    const idx = [...assessments].indexOf(this);
+    this.id = "web-assessment-" + idx;
+
+    const questions = Array.from(this.querySelectorAll("web-question"));
+    questions.forEach((question, i) => {
+      question.setAttribute("id", `${this.id}-question-${i}`);
+    });
+  }
+
+  // Add unique IDs to passed elements
+  addUniqueID(elements, target) {
+    const idx = [...elements].indexOf(target);
+
+    if (target.id === "undefined") {
+      target.id = idx;
     }
   }
 

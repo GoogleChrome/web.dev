@@ -1,0 +1,94 @@
+@import '../../../styles/settings/colors';
+@import '../../../styles/settings/global';
+
+// -----------------------------------------------------------------------------
+// General option styling
+// -----------------------------------------------------------------------------
+
+// Style option when the question is complete
+// or the option has been submitted.
+[state=completed] [data-role=option],
+[data-role=option][data-submitted] {
+  background: $GREY_100;
+  border-radius: $GLOBAL_RADIUS;
+  cursor: initial;
+}
+
+// Style correct options that have been submitted.
+// This uses $SUCCESS_COLOR because it shows the correct answer and so
+// should be independent of the self-assessment color.
+[data-role=option][data-correct][data-submitted] {
+  background: rgba($SUCCESS_COLOR, .08);
+  box-shadow: inset 0 0 0 1px $SUCCESS_COLOR;
+}
+
+// -----------------------------------------------------------------------------
+// Correct/incorrect flags
+// -----------------------------------------------------------------------------
+
+.web-response__correctness-flag {
+  color: $GREY_700;
+  display: none;
+  padding: .1875rem 0 .5rem;
+}
+
+// Show the correctness indicator when the question is complete
+// or the option has been submitted.
+[state=completed] .web-response__correctness-flag,
+[data-role=option][data-submitted] .web-response__correctness-flag {
+  display: block;
+}
+
+// Change color of the correctness indicator
+// when an incorrect option has been submitted.
+[data-role=option][data-submitted] .web-response__correctness-flag {
+  color: $SELF_ASSESSMENT_INCORRECT_COLOR;
+}
+
+// Change color of the correctness indicator
+// when a correct option has been submitted.
+// This uses $SUCCESS_COLOR because it shows the correct answer and so
+// should be independent of the self-assessment color.
+[data-role=option][data-submitted][data-correct] .web-response__correctness-flag {
+  color: $SUCCESS_COLOR;
+}
+
+// -----------------------------------------------------------------------------
+// Option rationales
+// -----------------------------------------------------------------------------
+
+.web-response__option-rationale {
+  color: $GREY_700;
+  display: none;
+  font-size: .833em;
+  padding: .5rem 0 0;
+}
+
+// Show the option rationale when the question is complete
+// or the option has been submitted.
+[state=completed] .web-response__option-rationale,
+[data-submitted] .web-response__option-rationale {
+  display: block;
+}
+
+.web-response__option-rationale > *:first-child {
+  margin-top: 0;
+}
+
+.web-response__option-rationale > *:last-child {
+  margin-bottom: 0;
+}
+
+.web-response__option-rationale p {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.web-response__option-rationale ol > li,
+.web-response__option-rationale ul > li {
+  font-size: 1em;
+}
+
+.web-response__option-rationale ol > li::before {
+  margin-top: .25em;
+}
