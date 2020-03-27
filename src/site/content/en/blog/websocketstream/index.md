@@ -1,5 +1,6 @@
 ---
-title: WebSocketStream—Integrating Streams with the WebSocket API
+title: |
+  WebSocketStream: integrating streams with the WebSocket API
 subhead: |
   Prevent your app from getting drowned in WebSocket messages
   or flooding a WebSocket server with messages by applying backpressure.
