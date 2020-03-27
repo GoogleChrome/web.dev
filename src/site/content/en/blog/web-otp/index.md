@@ -89,7 +89,7 @@ Status
 1. Create explainer
 </td>
 <td markdown="block">
-<a href="https://github.com/samuelgoto/sms-receiver/blob/master/README.md">Complete</a>
+<a href="https://github.com/WICG/WebOTP/blob/master/explainer.md">Complete</a>
 </td>
 </tr>
 <tr>
@@ -283,10 +283,10 @@ message to arrive and submits the form as soon as the OTP is passed.
 
 The API itself should look simple enough, but a critical part is to
 format your SMS text message according to a specific convention. The message has
-to be sent after `avigator.credentials.get()` is called and must comply with the
+to be sent after `navigator.credentials.get()` is called and must comply with the
 formatting convention.
 
-The SMS message must be received on the device where `avigator.credentials.get()`
+The SMS message must be received on the device where `navigator.credentials.get()`
 was called.
 
 The message must adhere to the following formatting:
