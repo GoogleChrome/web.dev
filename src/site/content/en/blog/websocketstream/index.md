@@ -197,7 +197,7 @@ The selected protocol is part of the dictionary available
 via the `WebSocketStream.connection` promise,
 along with `extensions`.
 All the information about the live connection is provided by this promise,
-since it is not relevant if the connection failed.
+since it is not relevant if the connection fails.
 
 ```js
 const {readable, writable, protocol, extensions} = await chatWSS.connection;
