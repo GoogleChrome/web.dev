@@ -140,7 +140,7 @@ class AssessmentQuestion extends BaseElement {
     }
   }
 
-  // This should maybe emit a custom event that the Tabs component responds to?
+  // TODO(samthor): This should maybe emit a custom event that the Tabs component responds to?
   checkNextQuestion() {
     const panel = this.closest(".web-tabs__panel");
 
