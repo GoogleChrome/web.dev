@@ -104,7 +104,7 @@ This means backpressure can be applied "for free", without any extra cost.
 
 ### Suggested use cases for the WebSocketStream API {: #use-cases }
 
-Examples of sites that may use this API include:
+Examples of sites that can use this API include:
 
 * High-bandwidth WebSocket applications that need to retain interactivity,
   in particular video and screen-sharing.
