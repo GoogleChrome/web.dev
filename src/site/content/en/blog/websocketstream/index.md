@@ -38,7 +38,7 @@ without having to poll the server for a reply.
 
 The [Streams API](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API)
 allows JavaScript to programmatically access streams of data chunks received over the network
-and process them as desired by the developer.
+and process them as desired.
 An important concept in the context of streams is
 [backpressure](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Concepts#Backpressure).
 This is the process by which a single stream or a pipe chain
