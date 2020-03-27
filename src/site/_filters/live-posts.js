@@ -6,8 +6,9 @@ const {env} = require('../_data/site');
  * @return {boolean} Whether or not the post should go live.
  */
 module.exports = function livePosts(post) {
-  const now = new Date();
-  if (post.date > now) {
+  const today = new Date();
+  today.setUTCHours(12, 0, 0, 0);
+  if (post.date && post.date > today) {
     post.data.draft = true;
   }
 
