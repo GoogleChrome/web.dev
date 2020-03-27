@@ -19,7 +19,6 @@ const isProd = process.env.ELEVENTY_ENV === "prod";
 
 const fs = require("fs");
 const path = require("path");
-const mkdirp = require("mkdirp");
 const log = require("fancy-log");
 
 const sassEngine = (function() {
@@ -38,7 +37,7 @@ const sassEngine = (function() {
  * @return {{css: !Buffer, map: !Buffer}}
  */
 function compileCSS(input, output) {
-  mkdirp.sync(path.dirname(output)); // make sure output dir exists
+  fs.mkdirSync(path.dirname(output), {recursive: true});
 
   // #1: Compile CSS with either engine.
   const compiledOptions = {
