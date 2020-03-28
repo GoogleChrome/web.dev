@@ -120,6 +120,9 @@ class AssessmentQuestion extends BaseElement {
         this.updateResponseComponents();
         this.state = "unanswered";
         this.ctaLabel = "Recheck";
+
+        const tabs = this.closest("web-tabs");
+        tabs.focusTab(tabs.activeTab);
         break;
       case "completed":
         const nextQuestion = this.checkNextQuestion();
