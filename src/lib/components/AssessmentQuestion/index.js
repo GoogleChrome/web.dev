@@ -122,7 +122,14 @@ class AssessmentQuestion extends BaseElement {
         this.ctaLabel = "Recheck";
 
         const tabs = this.closest("web-tabs");
-        tabs.focusTab(tabs.activeTab);
+        const assessment = this.closest("web-assessment");
+        if (tabs) {
+          // Focus currently active tab since submit button disables
+          tabs.focusTab(tabs.activeTab);
+        } else if (assessment) {
+          // For singleton questions, focus the parent assessment component
+          assessment.focus();
+        }
         break;
       case "completed":
         const nextQuestion = this.checkNextQuestion();
