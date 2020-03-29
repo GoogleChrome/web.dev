@@ -35,7 +35,7 @@ const run = async () => {
   const changedFiles = await getChangedFiles();
 
   for (const changedFile of changedFiles) {
-    if (changedFile.indexOf(contentDir) === -1) {
+    if (!changedFile.startsWith(contentDir)) {
       // File isn't a content file, skip it.
       continue;
     }
@@ -45,7 +45,7 @@ const run = async () => {
       continue;
     }
 
-    const fileContents = (await fs.readFile(changedFile)).toString();
+    const fileContents = await fs.readFile(changedFile, "utf-8");
     const matched = RE_UPDATED.exec(fileContents);
     if (!matched) {
       // Updated YAML property is not in the file - nothing to do.
