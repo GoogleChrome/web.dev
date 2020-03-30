@@ -99,7 +99,7 @@ cached pages.
 | 2. Create initial draft of specification   | [In progress](https://rayankans.github.io/content-index/spec/)          |
 | 3. Gather feedback & iterate on design     | In progress          |
 | **4. Origin trial**                        | **Started in Chrome 80** <br> Expected to run through Chrome 82 |
-| 5. Launch                                  | Not started                  |
+| 5. Launch                                  | Chrome 83                  |
 
 </div>
 
