@@ -1,4 +1,4 @@
-name: Percy
+name: Push
 
 # If you need to specify activity types or configuration for an event, you must
 # configure each event separately. You must append a colon (:) to all events,
@@ -12,16 +12,8 @@ on:
       - '**.njk'
       - '**.scss'
 
-# By default, runs when a pull_request's activity type is opened, synchronize,
-# or reopened
-  pull_request:
-    paths:
-      - '**.js'
-      - '**.njk'
-      - '**.scss'
-
 jobs:
-  percy:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -39,7 +31,9 @@ jobs:
             ${{ runner.os }}-node-
       - name: Install
         run: npm ci
-      - name: Percy Test
+      - name: Build
+        run: npm run build
+      - name: Percy
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
         run: npm run test:snapshots

@@ -1,0 +1,43 @@
+name: Pull request
+
+# By default, runs when a pull_request's activity type is opened, synchronize,
+# or reopened
+  pull_request:
+    paths:
+      - '**.js'
+      - '**.json'
+      - '**.njk'
+      - '**.scss'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1.0.0
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Install
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Lint
+        run: npm run lint
+      - name: Percy
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+        run: npm run test:snapshots
+      - name: Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v2
+          with:
+            configPath: ./tools/lhci/.lighthouserc
+            temporaryPublicStorage: true # upload lighthouse report to the temporary storage
