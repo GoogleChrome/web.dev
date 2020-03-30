@@ -40,6 +40,6 @@ jobs:
         run: npm run test:snapshots
       - name: Lighthouse CI
         uses: treosh/lighthouse-ci-action@v2
-          with:
-            configPath: ./tools/lhci/.lighthouserc
-            temporaryPublicStorage: true # upload lighthouse report to the temporary storage
+        with:
+          configPath: ./tools/lhci/.lighthouserc
+          temporaryPublicStorage: true # upload lighthouse report to the temporary storage
