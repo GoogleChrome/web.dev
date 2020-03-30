@@ -2,12 +2,14 @@ name: Pull request
 
 # By default, runs when a pull_request's activity type is opened, synchronize,
 # or reopened
+on:
   pull_request:
     paths:
       - '**.js'
       - '**.json'
       - '**.njk'
       - '**.scss'
+      - '**.yml'
 
 jobs:
   test:
