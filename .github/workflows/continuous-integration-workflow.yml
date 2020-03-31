@@ -9,7 +9,6 @@ on:
 
 jobs:
   ci:
-    name: Build and deploy
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -35,10 +34,23 @@ jobs:
           ALGOLIA_KEY: ${{ secrets.ALGOLIA_KEY }}
         run: npm ci && npm run build && node index-algolia.js
 
-      - name: Deploy
+      - name: Setup gcloud
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@0.1.1
         with:
           version: '270.0.0'
           service_account_email: ${{ secrets.GCLOUD_EMAIL }}
           service_account_key: ${{ secrets.GCLOUD_KEY }}
-      - run: gcloud app deploy --project web-dev-production-1
+
+      - name: Stage
+        run: gcloud app deploy --project web-dev-staging --version ${{ github.sha }} --no-promote --quiet
+      
+      - name: Verify staging is live
+        uses: srt32/uptime@v0.1
+        with:
+          url-to-hit: |
+            https://${{ github.sha }}-dot-web-dev-staging.appspot.com,
+            https://${{ github.sha }}-dot-web-dev-staging.appspot.com/blog/,
+            https://${{ github.sha }}-dot-web-dev-staging.appspot.com/measure/
+      
+      - name: Deploy to production
+        run: gcloud app deploy --project web-dev-production-1
