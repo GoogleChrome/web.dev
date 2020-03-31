@@ -107,7 +107,7 @@
     "rollup": "^1.16.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-postcss": "^2.5.0",
     "rollup-plugin-sourcemaps": "^0.4.2",
     "sass": "^1.22.7",
     "sass-lint": "^1.12.1",
