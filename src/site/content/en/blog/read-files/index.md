@@ -22,11 +22,11 @@ This guide shows you how to:
 
 {% Aside 'note' %}
   The [Native File System API](/native-file-system/) is the modern alternative
-  to many of the operations listed in the present article.
+  to many of the operations listed in this article.
   Since the API is not compatible with all browsers yet,
   we provide a library called
   [browser-nativefs](https://github.com/GoogleChromeLabs/browser-nativefs)
-  that uses the new API wherever possible, and else falls back to the legacy approaches.
+  that uses the new API wherever it is available, but falls back to legacy approaches when it is not.
 {% endAside %}
 
 ## Browser compatibility {: #compatibility }
