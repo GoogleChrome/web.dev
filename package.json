@@ -51,7 +51,7 @@
     "unistore": "^3.4.1",
     "wicg-inert": "^3.0.1",
     "workbox-build": "^5.0.0",
-    "workbox-cacheable-response": "^5.0.0",
+    "workbox-cacheable-response": "^5.1.2",
     "workbox-expiration": "^5.0.0",
     "workbox-google-analytics": "^5.0.0",
     "workbox-precaching": "^5.0.0",
