@@ -39,7 +39,7 @@ Ad targeting, conversion measurement, and other use cases currently rely on esta
 
 This is a dilemma for the web. How can we support legitimate third-party use cases without enabling users to be tracked across sites?
 
-In particular, how can websites fund content by enabling third parties to show ads and measure ad performance—but not let individual users be profiled? How can advertisers verify real users, and site owners check that users are trustworthy, without resorting to dark patterns such as device fingerprinting?
+In particular, how can websites fund content by enabling third parties to show ads and measure ad performance—but not allow individual users to be profiled? How can advertisers verify real users, and site owners check that users are trustworthy, without resorting to dark patterns such as device fingerprinting?
 
 The way things work at the moment can be problematic for everyone concerned, not just users. For publishers and advertisers, tracking identity and using a variety of non-native, un-standardised third-party solutions can add to technical debt, code complexity and data risk.
 
@@ -49,7 +49,9 @@ Users, developers, publishers, and advertisers shouldn't have to worry.
 
 The [Privacy Sandbox](https://www.blog.google/products/chrome/building-a-more-private-web/) introduces a set of privacy-preserving APIs to accomplish tasks that use tracking today.
 
-These APIs require web browsers to take on a new role. Rather than working with limited tools and protections, the user's browser can act on behalf of the user to ensure that data is never shared without the user's knowledge and consent. Private and personal information is never shared for use cases such as ad targeting or conversion measurement. This is a shift in direction for browsers. The Privacy Sandbox authors' vision of the future has browsers providing specific, privacy-preserving tools to target specific use cases.
+The Privacy Sandbox APIs require web browsers to take on a new role. Rather than working with limited tools and protections, the APIs enable the user's browser to act on their behalf to ensure that data is never shared without their knowledge and consent. The APIs enable use cases such as ad targeting and conversion measurement, but without revealing individual private and personal information.
+
+This is a shift in direction for browsers. The Privacy Sandbox authors' vision of the future has browsers providing specific tools to target specific use cases, while preserving user privacy.
 
 In order to successfully transition away from third-party cookies the Privacy Sandbox authors need your support. The [explainers](https://blog.chromium.org/2019/08/potential-uses-for-privacy-sandbox.html) need feedback from publishers, developers, advertisers, and advertising platforms, to suggest missing use cases and more-private ways to accomplish their goals.
 
@@ -76,14 +78,14 @@ Target ads without cross-site user tracking.
 +   [TURTLEDOVE](https://github.com/michaelkleber/turtledove)<br>
 Enable the user's browser, not the advertiser, to hold information about what a person is interested in. Enable some form of on-device 'auction' to choose the most relevant ads.
 
-You can dive into the explainers right away, and over the next few weeks we'll be publishing posts about each of the API proposals.
+You can dive into the explainers right away, and over the coming months we'll be publishing posts about each of the API proposals.
 
 ## Use cases and goals
 
 ### Measure conversion
 **Goal: Enable advertisers to measure ad performance.**
 
-There are two proposals for APIs that would allow the user's browser to gather impression and conversion data and report this back to advertisers in a way that prevents linking of identities across sites, or collecting user browsing history:
+There are two proposals for APIs that would allow the user's browser to gather impression and conversion data and report this back to advertisers in a way that prevents linking of identities across sites or collecting user browsing history:
 
 +   [Event-Level Click Through Conversion Measurement](https://github.com/csharrison/conversion-measurement-api) allows advertisers to determine which ad clicks later turned into conversions. (API name suggestions welcome!)
 +   [Aggregated Reporting](https://github.com/csharrison/aggregate-reporting-api) aggregates browsing data for multiple sites and multiple users in a single report, while preserving privacy by only allowing aggregate reporting on things that a lot of different people did.
