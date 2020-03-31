@@ -23,7 +23,7 @@ This guide shows you how to fix an overloaded server in 4 steps:
 
 {% Aside %}
 
-If you have questions or feedback on this guide, or you want to share your own tips and tricks, please leave a comment in PR #TODO.
+If you have questions or feedback on this guide, or you want to share your own tips and tricks, please leave a comment in PR #2479.
 
 {% endAside %}
 
