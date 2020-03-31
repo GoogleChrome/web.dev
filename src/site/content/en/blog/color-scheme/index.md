@@ -2,9 +2,7 @@
 title: The `color-scheme` CSS property and the corresponding meta tag
 subhead: |
   The `color-scheme` CSS property and the corresponding meta tag
-  allow developers to opt in their sites to theme-specific defaults of the user-agent stylesheet,
-  for example for form controls, scroll bars, as well as CSS system colors.
-  At the same time, this feature prevents browsers from applying any transformations on their own.
+  allow developers to opt in their pages to theme-specific defaults of the user-agent stylesheet.
 authors:
   - thomassteiner
 date: 2020-03-27
@@ -12,7 +10,7 @@ hero: hero.jpg
 alt: Pigeons on a wall with a sharp black and white contrast in the background.
 description: |
   The color-scheme CSS property and the corresponding meta tag
-  allow developers to opt in their sites to theme-specific defaults of the user-agent stylesheet,
+  allow developers to opt in their pages to theme-specific defaults of the user-agent stylesheet,
   for example for form controls, scroll bars, as well as CSS system colors.
   At the same time, this feature prevents browsers from applying any transformations on their own.
 tags:
@@ -30,7 +28,7 @@ draft: true
 
 The
 [`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
-user preference media feature gives developers full control over their sites' appearances.
+user preference media feature gives developers full control over their pages' appearances.
 You actually may have read my article
 [`prefers-color-scheme`: Hello darkness, my old friend](/prefers-color-scheme/),
 where I have documented everything I know about creating amazing dark mode experiences.
@@ -38,7 +36,7 @@ where I have documented everything I know about creating amazing dark mode exper
 One puzzle piece that was only mentioned briefly in the article is
 the `color-scheme` CSS property and the corresponding meta tag of the same name.
 They both make your life as a developer easier
-by allowing you to opt in your site to theme-specific defaults of the user-agent stylesheet,
+by allowing you to opt in your page to theme-specific defaults of the user-agent stylesheet,
 for example for form controls, scroll bars, as well as CSS system colors.
 At the same time, this feature prevents browsers from applying any transformations on their own.
 
@@ -55,9 +53,9 @@ You can have a look at
 [Firefox's](https://dxr.mozilla.org/mozilla-central/source/layout/style/res/html.css) or
 [Safari's](https://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css) (and WebKit's).
 Typically, UA stylesheets agree on the majority of things,
-for example, they all make texts black and background colors white,
+for example, they all make links blue, general texts black, and background colors white,
 but there are also important (and sometimes annoying) differences,
-for instance, how they display form controls.
+for instance, how they style form controls.
 
 Let's have a closer look at
 [WebKit's UA stylesheet](https://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css)
@@ -87,22 +85,30 @@ You will notice some non-standard values for the `color` and `background-color` 
 Neither `text` nor `-apple-system-control-background` are valid CSS colors.
 They are WebKit-internal *semantic* colors.
 
-Turns out, CSS has standardized semantic system colors, too.
+Turns out, CSS has standardized semantic system colors.
 They are specified in
 [CSS Color Module Level&nbsp;4](https://drafts.csswg.org/css-color/#css-system-colors).
-For example, `Canvas` (not to be confused with the `<canvas>` tag)
+For example,
+[`Canvas`](https://drafts.csswg.org/css-color/#valdef-system-color-canvas)
+(not to be confused with the `<canvas>` tag)
 is for the background of application content or documents,
-whereas `CanvasText` is for text in application content or documents.
+whereas
+[`CanvasText`](https://drafts.csswg.org/css-color/#valdef-system-color-canvastext)
+is for text in application content or documents.
 The two go together and should not be used in isolation.
 
 UA stylesheets can make use of their own proprietary, or the standardized semantic system colors,
 to determine how HTML elements should be rendered by default.
 If the operating system is set to dark mode or uses a dark theme,
-`CanvasText` (or `text` respectively) would be conditionally set to light white,
-and `Canvas` (or `-apple-system-control-background`) would be set to dark black.
+`CanvasText` (or `text` respectively) would be conditionally set to whitish,
+and `Canvas` (or `-apple-system-control-background`) would be set to blackish.
 The UA stylesheet would then assign the following CSS only once, and cover both light and dark mode.
 
 ```css
+/**
+  Not actual UA stylesheet code.
+  For illustrative purposes only.
+*/
 body {
   color: CanvasText;
   background-color: Canvas
@@ -111,11 +117,14 @@ body {
 
 ## The `color-scheme` CSS property
 
-The [CSS Color Adjustment Module Level&nbsp;1](https://drafts.csswg.org/css-color-adjust/) module
-introduces a model and controls over automatic color adjustment by the user-agent to handle
-user preferences, such as dark mode, contrast adjustment, or specific desired color schemes.
+The [CSS Color Adjustment Module Level&nbsp;1](https://drafts.csswg.org/css-color-adjust/)
+specification introduces a model and controls
+over automatic color adjustment by the user-agent to handle user preferences,
+such as dark mode, contrast adjustment, or specific desired color schemes.
 
-The therein defined `color-scheme` property allows an element to indicate
+The therein defined
+[`color-scheme`](https://drafts.csswg.org/css-color-adjust/#color-scheme-prop)
+property allows an element to indicate
 which color schemes it is comfortable being rendered with.
 These values are negotiated with the user's preferences, resulting in a chosen color scheme
 that affects user interface (UI) things such as the default colors of form controls
@@ -138,7 +147,7 @@ with light background colors and dark foreground colors,
 whereas `dark` represents the opposite, with dark background colors and light foreground colors.
 
 {% Aside 'warning' %}
-  Per the spec, the allowed additional value `light only` indicates that the element
+  Per the specification, the allowed additional value `light only` indicates that the element
   must be rendered with a light color scheme if possible,
   even if the user's preference is for a different color scheme.
   Authors *should not* use this value, and should instead ensure their page renders well
@@ -151,7 +160,7 @@ Examples are scroll bars, spellcheck underlines, form controls, etc.
 
 {% Aside 'note' %}
   The `color-scheme` CSS property can be used on both the `:root` level,
-  as well as on a per-element level.
+  as well as on an individual per-element level.
 {% endAside %}
 
 On the `:root` element, rendering with a color scheme
@@ -172,9 +181,11 @@ and should also affect the viewport's scroll bars.
 ## The `color-scheme` meta tag
 
 Honoring the `color-scheme` CSS property requires the CSS to be first downloaded
-(if it is referenced via `<link rel="stylesheet">`) and then to be parsed.
+(if it is referenced via `<link rel="stylesheet">`) and to be parsed.
 To aid user-agents in rendering the page background with the desired color scheme *immediately*,
-a `color-scheme` value can also be provided in a `<meta name="color-scheme">` element.
+a `color-scheme` value can also be provided in a
+[`<meta name="color-scheme">`](https://drafts.csswg.org/css-color-adjust/#color-scheme-meta)
+element.
 
 ```html
 <!--
@@ -233,70 +244,89 @@ To make this clearer, let's assume the following page:
   <form>
     <fieldset>
       <legend>Lorem ipsum</legend>
+      <button type="button">Lorem ipsum</button>
     </fieldset>
   </form>
 </body>
 ```
 
-It sets the `<fieldset>`'s `background-color` to `gainsboro` in the general case,
+The inline CSS code on the page
+sets the `<fieldset>`'s `background-color` to `gainsboro` in the general case,
 and to `darkslategray` if the user prefers a `dark` color scheme
 according to the `prefers-color-scheme` user preference media feature.
 
 Via the `<meta name="color-scheme" content="dark light">` element,
-it tells the browser that the page supports a dark and a light theme,
+the page tells the browser that it supports a dark and a light theme,
 with a preference for a dark theme.
 
 Depending on whether the operating system is set to dark or light mode,
-the whole page appears light on dark, or vice versa.
-There is *no* additional CSS involved for the paragraph text or the background color or the page.
+the whole page appears light on dark, or vice versa, based on the user-agent stylesheet.
+There is *no* additional developer-provided CSS involved to change the paragraph text
+or the background color of the page.
 
-Note, however, how the `<fieldset>`'s `background-color` changes
+Note how the `<fieldset>`'s `background-color` changes
 based on whether dark mode is enabled or not, following the rules
-in the inline stylesheet on the page.
+in the developer-provided inline stylesheet on the page.
 It is either `gainsboro` or `darkslategray`.
 
 <figure>
-  <img src="light-styles.png" width="3584" height=" 1582">
+  <img src="light-styles.png" width="3440" height=" 1386">
   <figcaption>
     <strong>Light mode:</strong> Styles specified by the developer and the user-agent.
     The text is black and the background is white as per the user-agent stylesheet.
     The <code>&lt;fieldset&gt;</code>'s <code>background-color</code> is <code>gainsboro</code>
-    as per the inlined stylesheet.
+    as per the inlined developer stylesheet.
   </figcaption>
 </figure>
 
 <figure>
-  <img src="dark-styles.png" width="3584" height=" 1582">
+  <img src="dark-styles.png" width="3440" height=" 1386">
   <figcaption>
     <strong>Dark mode:</strong> Styles specified by the developer and the user-agent.
     The text is white and the background is black as per the user-agent stylesheet.
     The <code>&lt;fieldset&gt;</code>'s <code>background-color</code> is <code>darkslategray</code>
-    as per the inlined stylesheet.
+    as per the inlined developer stylesheet.
   </figcaption>
 </figure>
 
-Finally, note how the `<fieldset>`'s `border-color` changes.
-The `border-color` is set to the semantic CSS system color
-[`threedface`](https://drafts.csswg.org/css-color/#threedface)
-(the character casing does not matter, it can also be written as `ThreeDFace`).
-This system color is used for the face background color for 3D elements that appear 3D
-due to two concentric layers of surrounding border.
-
-The computed value for the `outline-color`
-switches from `rgb(0, 0, 0)` (black) to `rgb(255, 255, 255)` (white),
-since the user-agent sets it dynamically based on the color scheme.
+The `<button>`'s appearance is controlled by the user-agent stylesheet.
+Its `color` is set to the
+[`ButtonText`](https://drafts.csswg.org/css-color/#valdef-system-color-buttontext)
+system color, and its `background-color` and the four `border-color`s are set to the system color
+[`ButtonFace`](https://drafts.csswg.org/css-color/#valdef-system-color-buttonface)
 
 <figure>
-  <img src="light-computed.png" width="3584" height=" 1582">
+  <img src="light-buttonface.png" width="3440" height=" 1386">
   <figcaption>
-    <strong>Light mode:</strong> Computed style values.
-    <code>outline-color</code>
+    <strong>Light mode:</strong> The <code>background-color</code> and the various
+    <code>border-color</code>s are set the the <a href="https://drafts.csswg.org/css-color/#valdef-system-color-buttonface">ButtonFace</a>
+    system color.
+  </figcaption>
+</figure>
+
+Now note how the `<button>`'s `border-color` changes.
+The *computed* value for the `border-top-color` and the `border-bottom-color`
+switches from `rgba(0, 0, 0, 0.847)` (blackish) to `rgba(255, 255, 255, 0.847)` (whitish),
+since the user-agent updates `ButtonFace` dynamically based on the color scheme.
+The same applies for the `<button>`'s `color`
+that is set to the corresponding system color `ButtonText`.
+
+<figure>
+  <img src="light-computed.png" width="3440" height=" 1386">
+  <figcaption>
+    <strong>Light mode:</strong> The computed values of the <code>border-top-color</code>
+    and the <code>border-bottom-color</code> that are both set to <code>ButtonFace</code>
+    in the user-agent stylesheet are now <code>rgba(0, 0, 0, 0.847)</code>.
   </figcaption>
 </figure>
 
 <figure>
-  <img src="dark-computed.png" width="3584" height=" 1582">
-  <figcaption>Dark mode: computed style values.</figcaption>
+  <img src="dark-computed.png" width="3440" height=" 1386">
+  <figcaption>
+    <strong>Dark mode:</strong> The computed values of the <code>border-top-color</code>
+    and the <code>border-bottom-color</code> that are both set to <code>ButtonFace</code>
+    in the user-agent stylesheet are now <code>rgba(255, 255, 255, 0.847)</code>.
+  </figcaption>
 </figure>
 
 ## Demo
@@ -305,6 +335,11 @@ You can see the effects of `color-scheme` applied to a large number of HTML elem
 in the demo embedded below, or
 [directly on Glitch](https://color-scheme-demo.glitch.me/).
 Remember that you need to switch your operating system to dark mode to enjoy this demo.
+
+The demo on purpose shows the WCAG&nbsp;AA and WCAG&nbsp;AAA
+[violation](https://webaim.org/resources/contrastchecker/?fcolor=0000EE&bcolor=000000)
+with the link colors that was mentioned in the
+[warning above](#using-color-scheme-in-practice).
 
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
   <iframe
