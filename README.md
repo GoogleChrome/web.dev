@@ -1,6 +1,6 @@
 # web.dev
 
-[![Build Status](https://travis-ci.org/GoogleChrome/web.dev.svg?branch=master)](https://travis-ci.org/GoogleChrome/web.dev)
+![Continuous integration](https://github.com/GoogleChrome/web.dev/workflows/Continuous%20integration/badge.svg)
 
 web.dev is the ultimate resource for developers of all backgrounds to learn,
 create, and solve on the web. It's meant to not only educate developers, but
