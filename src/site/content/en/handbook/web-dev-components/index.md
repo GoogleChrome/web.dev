@@ -926,11 +926,11 @@ to ensure correct whitespace around the table.
 </div>
 
 If you want content in `<td>` elements to be vertically aligned
-to the middle of the cell, add the `w-table--middle-align` class
+to the top of the cell, add the `w-table--top-align` class
 to the `<table>` element:
 
 <div class="w-table-wrapper">
-  <table class="w-table--middle-align">
+  <table class="w-table--top-align">
     <thead>
       <tr>
         <th>Tool</th>
