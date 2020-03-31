@@ -3,7 +3,7 @@ title: Fix an overloaded server
 subhead: |
   How to determine a server's bottleneck, quickly fix the bottleneck, improve server performance, and prevent regressions.
 authors:
-  - khempenius
+  - katiehempenius
 date: 2020-03-31
 
 description: |
