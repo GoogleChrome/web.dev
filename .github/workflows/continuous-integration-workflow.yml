@@ -47,10 +47,7 @@ jobs:
       - name: Verify staging is live
         uses: srt32/uptime@v0.1
         with:
-          url-to-hit: |
-            https://${{ github.sha }}-dot-web-dev-staging.appspot.com,
-            https://${{ github.sha }}-dot-web-dev-staging.appspot.com/blog/,
-            https://${{ github.sha }}-dot-web-dev-staging.appspot.com/measure/
+          url-to-hit: https://${{ github.sha }}-dot-web-dev-staging.appspot.com
       
       - name: Deploy to production
         run: gcloud app deploy --project web-dev-production-1
