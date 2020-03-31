@@ -1,12 +1,12 @@
 ---
 title: 'No layout shifting and FOIT with font-display: optional'
-subhead: 'Starting in Chrome 82, link rel="preload" and font-display: optional can be combined to remove layout jank completely'
+subhead: 'Starting in Chrome 83, link rel="preload" and font-display: optional can be combined to remove layout jank completely'
 authors:
   - houssein
 date: 2020-03-18
 hero: hero.jpg
 description: | 
-  By optimizing rendering cycles, Chrome 82 eliminates layout shifting when
+  By optimizing rendering cycles, Chrome 83 eliminates layout shifting when
   preloading optional fonts. Combining <link rel="preload"> with font-display: optional is the
   most effective way to guarantee jank-free rendering of custom fonts.
 tags:
@@ -16,10 +16,10 @@ tags:
 ---
 
 {% Aside %}
-  In Chrome 82, new font loading improvements have been made to completely eliminate layout shifting and flash of invisible text (FOIT) when optional fonts are preloaded.
+  In Chrome 83, new font loading improvements have been made to completely eliminate layout shifting and flash of invisible text (FOIT) when optional fonts are preloaded.
 {% endAside %}
 
-By optimizing rendering cycles, Chrome 82 eliminates layout shifting when preloading optional fonts.
+By optimizing rendering cycles, Chrome 83 eliminates layout shifting when preloading optional fonts.
 Combining `<link rel="preload">` with `font-display: optional` is the most effective way to
 guarantee no layout jank when rendering custom fonts.
 
@@ -77,7 +77,7 @@ text and, in cases when a new font is rendered, layout jank that moves some of t
 This occurs even if the font is stored in the browser's disk cache and can load well before the
 block period is complete.
 
-Optimizations have landed In Chrome 82 to entirely remove the first render cycle for optional fonts
+Optimizations have landed for Chrome 83 to entirely remove the first render cycle for optional fonts
 that are preloaded with [`<link rel="preload'>`](https://web.dev/codelab-preload-web-fonts/).
 Instead, rendering is blocked until the custom font has finished loading or a certain period of time
 has passed. This timeout period is currently set at 100ms, but may possibly change in the near
