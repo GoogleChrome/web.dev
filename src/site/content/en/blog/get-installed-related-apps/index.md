@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: The getInstalledRelatedApps() API is a new web platform API that allows your web app to check whether your native app or PWA is installed on the user's device.
 date: 2018-12-20
-updated: 2020-03-10
+updated: 2020-04-01
 tags:
   - post
   - capabilities
@@ -163,7 +163,7 @@ Finally, publish your updated Android app to the Play store.
 Starting in Chrome 81, in addition to checking if its native app is already
 installed, a PWA can check if it (the PWA) is already installed.
 Microsoft is actively working on enabling this API for Edge and we hope to
-see it land around Edge 82.
+see it land around Edge 83.
 {% endAside %}
 
 To define the relationship to an installed PWA, add a `related_applications`
@@ -185,9 +185,9 @@ the full path to the PWAs web app manifest in the `url` property.
 
 {% Aside %}
 **Coming Soon!**
-Starting in Chrome 82, a page can check if its PWA is installed, even if it
+Starting in Chrome 83, a page can check if its PWA is installed, even if it
 is outside the scope of the PWA. Microsoft is actively working on enabling
-this API for Edge and we hope to see it land around Edge 82.
+this API for Edge and we hope to see it land around Edge 83.
 {% endAside %}
 
 A page can check if its PWA is installed, even if it is outside the
