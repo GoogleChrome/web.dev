@@ -6,7 +6,7 @@ subhead:
 authors:
   - rowan_m
 date: 2019-10-30
-updated: 2020-03-23
+updated: 2020-04-01
 hero: cookie-hero.jpg
 description: |
   With the introduction of the new SameSite=None attribute value, sites can now
@@ -44,12 +44,10 @@ so that:
 - Cookies for cross-site usage **must** specify `SameSite=None; Secure` to
   enable inclusion in third party context.
 
-This will become the
-[default behavior in Chrome 80](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html), 
-which is in Beta as of December 19 and is
-planned for a Stable release in February 2020. If you currently provide cookies
-that are intended for cross-site usage you will need to make changes before that
-date to support the new default.
+This became the [default behavior in Chrome
+80](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html),
+released in February 2020. If you have not already done so, you should stop
+providing cookies intended for cross-site usage.
 
 ## Cross-browser support
 
