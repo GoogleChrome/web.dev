@@ -204,7 +204,6 @@ via the meta tag, so the browser can adopt to the preferred scheme faster.
 
 While for absolute baseline pages no additional CSS rules are necessary,
 in the general case you should always combine `color-scheme` with `prefers-color-scheme`.
-
 For example, the proprietary WebKit CSS color `-webkit-link`, used by WebKit and Chrome
 for the classic link blue `rgb(0,0,238)`,
 has an insufficient contrast ratio of 2.23:1 on a black background and
