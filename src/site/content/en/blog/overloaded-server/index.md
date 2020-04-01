@@ -104,7 +104,7 @@ Serving static assets can be offloaded from your server to a content delivery ne
 
 The primary function of a CDN is to deliver content to users quickly by providing a large network of servers that are located close to users. However, most CDNs also offer additional performance-related features like compression, load balancing, and media optimization.
 
-#### Setup a CDN
+#### Set up a CDN
 
 CDNs benefit from scale, so operating your own CDN rarely makes sense. A basic CDN configuration is fairly quick to set up (~30 minutes) and consists of updating DNS records to point at the CDN.
 
