@@ -229,7 +229,7 @@ Server monitoring tools provide data collection, dashboards, and alerting regard
 
 A monitoring setup should be kept as simple as possible. Excessive data collection and alerting has its costs: the greater the scope or frequency of data collection, the more expensive it is to collect and store; excessive alerting inevitably leads to ignored pages.
 
-Alerting should use metrics that consistently and accurately detect issues. Server response time (latency) is a metric that works particularly well for this: it catches a wide variety of issues and correlates directly with user experience. Alerting based on lower-level metrics like CPU usage can be a useful supplement but will catch a smaller subset of issues. In addition, alerting should be based on the performance observed at the tail (i.e. 95th or 99th percentiles), rather than averages. Otherwise, averages can easily obscure issues that don't affect all users.
+Alerting should use metrics that consistently and accurately detect issues. Server response time (latency) is a metric that works particularly well for this: it catches a wide variety of issues and correlates directly with user experience. Alerting based on lower-level metrics like CPU usage can be a useful supplement but will catch a smaller subset of issues. In addition, alerting should be based on the performance observed at the tail (in the other words the 95th or 99th percentiles), rather than averages. Otherwise, averages can easily obscure issues that don't affect all users.
 
 ### Fix
 
