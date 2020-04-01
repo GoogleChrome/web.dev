@@ -333,24 +333,32 @@ that is set to the corresponding system color `ButtonText`.
 ## Demo
 
 You can see the effects of `color-scheme` applied to a large number of HTML elements
-in the demo embedded below, or
-[directly on Glitch](https://color-scheme-demo.glitch.me/).
-Remember that you need to switch your operating system to dark mode to enjoy this demo.
-
-The demo deliberately shows the WCAG&nbsp;AA and WCAG&nbsp;AAA
+in a [demo on Glitch](https://color-scheme-demo.glitch.me/).
+The demo *deliberately* shows the WCAG&nbsp;AA and WCAG&nbsp;AAA
 [violation](https://webaim.org/resources/contrastchecker/?fcolor=0000EE&bcolor=000000)
 with the link colors mentioned in the
 [warning above](#using-color-scheme-in-practice).
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/color-scheme-demo?path=index.html&previewSize=100"
-    title="color-scheme-demo on Glitch"
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    style="height: 100%; width: 100%; border: 0;"
-    loading="lazy">
-  </iframe>
-</div>
+<figure>
+  <img src="demo-light.png" width="1336 " height="1640">
+  <figcaption>
+    The <a href="https://color-scheme-demo.glitch.me/">demo</a>
+    toggled to <code>color-scheme: light</code>.
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="demo-dark.png" width="1336 " height="1640">
+  <figcaption>
+    The <a href="https://color-scheme-demo.glitch.me/">demo</a>
+    toggled to <code>color-scheme: dark</code>.
+    Note the WCAG&nbsp;AA and WCAG&nbsp;AAA
+    <a href="https://webaim.org/resources/contrastchecker/?fcolor=0000EE&bcolor=000000">
+      violation
+    </a>
+    with the link colors.
+  </figcaption>
+</figure>
 
 ## Acknowledgements
 
