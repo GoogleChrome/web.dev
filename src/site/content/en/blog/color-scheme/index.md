@@ -59,7 +59,8 @@ for instance, how they style form controls.
 
 Have a closer look at
 [WebKit's UA stylesheet](https://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css)
-and what it does regarding dark mode (do a full text search for "dark" in the code).
+and what it does regarding dark mode.
+(Do a full text search for "dark" in the stylesheet.)
 The default provided by the stylesheet changes based on whether dark mode is on or off.
 To illustrate this, here is one such CSS rule (using the
 [`:matches`](https://css-tricks.com/almanac/selectors/m/matches/)
