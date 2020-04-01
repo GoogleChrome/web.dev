@@ -202,23 +202,21 @@ Since both the meta tag and the CSS property (if applied to the `:root` element)
 eventually result in the same behavior, I always recommend specifying the color scheme
 via the meta tag, so the browser can adopt to the preferred scheme faster.
 
-{% Aside 'warning' %}
-  While for absolute baseline pages no additional CSS rules are necessary,
-  in the general case you should always combine `color-scheme` with `prefers-color-scheme`.
+While for absolute baseline pages no additional CSS rules are necessary,
+in the general case you should always combine `color-scheme` with `prefers-color-scheme`.
 
-  For example, the proprietary WebKit CSS color `-webkit-link`, used by WebKit and Chrome
-  for the classic link blue `rgb(0,0,238)`,
-  has an insufficient contrast ratio of 2.23:1 on a black background and
-  [fails](https://webaim.org/resources/contrastchecker/?fcolor=0000EE&bcolor=000000)
-  both the WCAG&nbsp;AA as well as the WCAG&nbsp;AAA
-  [requirements](https://www.w3.org/WAI/WCAG21/Understanding/conformance#levels).
+For example, the proprietary WebKit CSS color `-webkit-link`, used by WebKit and Chrome
+for the classic link blue `rgb(0,0,238)`,
+has an insufficient contrast ratio of 2.23:1 on a black background and
+[fails](https://webaim.org/resources/contrastchecker/?fcolor=0000EE&bcolor=000000)
+both the WCAG&nbsp;AA as well as the WCAG&nbsp;AAA
+[requirements](https://www.w3.org/WAI/WCAG21/Understanding/conformance#levels).
 
-  I have opened bugs for [Chrome](https://crbug.com/1066811),
-  [WebKit](https://bugs.webkit.org/show_bug.cgi?id=209851), and
-  [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1626560)
-  as well as a [meta issue in the HTML Standard](https://github.com/whatwg/html/issues/5426)
-  to get this fixed.
-{% endAside %}
+I have opened bugs for [Chrome](https://crbug.com/1066811),
+[WebKit](https://bugs.webkit.org/show_bug.cgi?id=209851), and
+[Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1626560)
+as well as a [meta issue in the HTML Standard](https://github.com/whatwg/html/issues/5426)
+to get this fixed.
 
 ## Interplay with prefers-color-scheme
 
