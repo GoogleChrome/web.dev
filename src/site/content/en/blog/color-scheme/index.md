@@ -212,6 +212,10 @@ via the meta tag, so the browser can adopt to the preferred scheme faster.
   [fails](https://webaim.org/resources/contrastchecker/?fcolor=0000EE&bcolor=000000)
   both the WCAG&nbsp;AA as well as the WCAG&nbsp;AAA
   [requirements](https://www.w3.org/WAI/WCAG21/Understanding/conformance#levels).
+
+  I have opened bugs for [Chrome](https://crbug.com/1066811),
+  [WebKit](https://bugs.webkit.org/show_bug.cgi?id=209851), and
+  [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1626560) to get this fixed.
 {% endAside %}
 
 ## Interplay with `prefers-color-scheme`
