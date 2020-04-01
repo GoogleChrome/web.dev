@@ -29,7 +29,7 @@ draft: true
 The
 [`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
 user preference media feature gives developers full control over their pages' appearances.
-If you're unfamiliar with it read my article
+If you are unfamiliar with it, please read my article
 [`prefers-color-scheme`: Hello darkness, my old friend](/prefers-color-scheme/),
 where I documented everything I know about creating amazing dark mode experiences.
 
