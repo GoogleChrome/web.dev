@@ -196,7 +196,7 @@ element.
 <meta name="color-scheme" content="dark light">
 ```
 
-## Using color-scheme in practice
+## Combining color-scheme and prefers-color-scheme
 
 Since both the meta tag and the CSS property (if applied to the `:root` element)
 eventually result in the same behavior, I always recommend specifying the color scheme
