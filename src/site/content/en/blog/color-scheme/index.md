@@ -1,5 +1,5 @@
 ---
-title: The `color-scheme` CSS property and the corresponding meta tag
+title: Improved dark mode with the `color-scheme` CSS property and the corresponding meta tag
 subhead: |
   The `color-scheme` CSS property and the corresponding meta tag
   allow developers to opt their pages in to the theme-specific defaults of the user-agent stylesheet.
