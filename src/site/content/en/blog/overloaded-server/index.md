@@ -10,6 +10,7 @@ description: |
   How to determine a server's bottleneck, quickly fix the bottleneck, improve server performance, and prevent regressions.
 tags:
   - post # post is a required tag for the article to show up in the blog.
+  - performance
 ---
 
 ## Overview
