@@ -2,7 +2,7 @@
 layout: handbook
 title: Images and video
 date: 2019-06-26
-updated: 2020-03-25
+updated: 2020-04-01
 description: |
   Learn how to create the Markdown for images and video for web.dev.
 ---
@@ -26,6 +26,10 @@ alt: A description of the hero. # Also used by the thumbnail (when applicable).
 …
 ---
 ```
+
+{% Aside 'warning' %}
+If your post does not contain a hero image it will not be displayed on the homepage.
+{% endAside %}
 
 Hero images should be 3200 px x 960 px.
 
