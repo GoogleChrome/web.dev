@@ -336,7 +336,7 @@ in the demo embedded below, or
 [directly on Glitch](https://color-scheme-demo.glitch.me/).
 Remember that you need to switch your operating system to dark mode to enjoy this demo.
 
-The demo deliberately uses the WCAG&nbsp;AA and WCAG&nbsp;AAA
+The demo deliberately shows the WCAG&nbsp;AA and WCAG&nbsp;AAA
 [violation](https://webaim.org/resources/contrastchecker/?fcolor=0000EE&bcolor=000000)
 with the link colors mentioned in the
 [warning above](#using-color-scheme-in-practice).
