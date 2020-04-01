@@ -40,7 +40,7 @@ When traffic overloads a server, one or more of the following can become a bottl
 
 The techniques in this guide focus on addressing CPU and network bottlenecks. For most sites, CPU and network will be the most relevant bottlenecks during a traffic spike.
 
-Running [top](https://linux.die.net/man/1/top) on the affected server is a good starting place for investigating bottlenecks. If available, supplement this with historical data from your hosting provider or monitoring tooling.
+Running [`top`](https://linux.die.net/man/1/top) on the affected server is a good starting place for investigating bottlenecks. If available, supplement this with historical data from your hosting provider or monitoring tooling.
 
 
 ## Stabilize
