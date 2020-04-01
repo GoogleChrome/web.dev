@@ -25,9 +25,9 @@ Websites use services from other companies to provide analytics, serve video and
 
 Most notably, ads are included in web pages via third-party JavaScript and iframes. Ad views, clicks and conversions are tracked via third-party cookies and scripts. That's how most of the web is funded.
 
-Relevant ads are [less annoying to users and more profitable for publishers](https://services.google.com/fh/files/misc/disabling_third-party_cookies_publisher_revenue.pdf) (the people running ad-supported websites). Third party ad targeting tools make ad space more valuable to advertisers (the people who purchase ad space on websites) which in turn increases revenue for ad-supported websites.
+Relevant ads are [less annoying to users and more profitable for publishers](https://services.google.com/fh/files/misc/disabling_third-party_cookies_publisher_revenue.pdf) (the people running ad-supported websites). Third party ad targeting tools make ad space more valuable to advertisers (the people who purchase ad space on websites) which in turn increases revenue for ad-supported websites and enables content to get published.
 
-Reliable measurement and anti-fraud protection are also crucial. Advertisers and site owners must be able to distinguish between malicious bots and trustworthy humans. If advertisers can't reliably tell which ads work well, they spend less, so site publishers get less revenue. Many third party services currently use techniques such as [device fingerprinting](./#fingerprinting) to combat fraud.
+Reliable measurement and anti-fraud protection are also crucial. Advertisers and site owners must be able to distinguish between malicious bots and trustworthy humans. If advertisers can't reliably tell which ad clicks are from real humans, they spend less, so site publishers get less revenue. Many third party services currently use techniques such as [device fingerprinting](./#fingerprinting) to combat fraud.
 
 The problem is… privacy.
 
@@ -62,21 +62,21 @@ Please comment on the explainers by filing issues against each repository:
 +   [Privacy Model for the Web](https://github.com/michaelkleber/privacy-model)<br>
 Establish the range of web activity across which the user's browser can let websites treat a person as having a single identity. Identify the ways in which information can move across identity boundaries without compromising that separation.
 +   [Privacy Budget](https://github.com/bslassey/privacy-budget)<br>
-Limit the total amount of sensitive data that sites can access. Update APIs to reduce the amount of sensitive data revealed. Make access to sensitive data measurable.
+Limit the total amount of potentially identifiable data that sites can access. Update APIs to reduce the amount of sensitive data revealed. Make access to sensitive data measurable.
 +   [Trust Token API](https://github.com/dvorak42/trust-token-api)<br>
-Enable an origin that trusts a user to issue them with cryptographic tokens which are stored by the user's browser and then used in other contexts for authentication.
+Enable an origin that trusts a user to issue them with cryptographic tokens which are stored by the user's browser so they can used in other contexts to verify the user's authenticity.
 +   [Willful IP Blindness](https://github.com/bslassey/ip-blindness)<br>
-Enable sites to 'blind' themselves to IP addresses and other network data so they can avoid consuming privacy budget.
+Enable sites to 'blind' themselves to IP addresses so they can avoid consuming privacy budget.
 +   [First-Party Sets](https://github.com/krgovind/first-party-sets/)<br>
 Allow related domain names owned by the same entity (such as apple.com and icloud.com) to declare themselves as the same first party.
 +   [Aggregated Reporting API](https://github.com/csharrison/aggregate-reporting-api)<br>
-Provide privacy preserving ad reach measurement.
+Provide privacy preserving mechanisms to support a variety of use cases such as view-through-conversion, brand, lift, and reach measurement.
 +   [Event-level conversion measurement](https://github.com/csharrison/conversion-measurement-api)<br>
 Provide privacy preserving [click-through-conversion](#glossary-ctc) measurement.
 +   [Federated Learning of Cohorts](https://github.com/jkarlin/floc)<br>
-Target ads without cross-site user tracking.
+Enable the user's browser, not the advertiser, to hold information about what a person is interested in. Target ads based on these interests without cross-site user tracking and while preserving the privacy of the user.
 +   [TURTLEDOVE](https://github.com/michaelkleber/turtledove)<br>
-Enable the user's browser, not the advertiser, to hold information about what a person is interested in. Enable some form of on-device 'auction' to choose the most relevant ads.
+Enable some form of on-device 'auction' to choose the most relevant ads which would include ads that remarket an advertiser based on a prior expression of interest by the user.
 
 You can dive into the explainers right away, and over the coming months we'll be publishing posts about each of the API proposals.
 
@@ -106,10 +106,12 @@ First-party-data and contextual targeting can be achieved without knowing anythi
 
 Remarketing is usually done by using cookies or some other way to recognize people across web sites: adding users to lists and then targeting them with specific ads.
 
+[TURTLEDOVE](https://github.com/michaelkleber/turtledove) proposes that the user's browser, not advertisers, holds information about what the user is interested in. Two (uncorrelated) requests are sent for ads: one to retrieve an ad based on contextual data, and one to retrieve an ad based on an advertiser-defined interest. An 'auction' is then conducted by the browser to choose the most relevant ad, using JavaScript code provided by the advertiser. This code *can only be used to choose between ads*: it cannot make network requests, or access the DOM or external state.
+
 Interest-based targeting currently uses cookies or device fingerprinting to track user behaviour across as many sites as possible. Many people are concerned about the privacy implications of ad targeting. The Privacy Sandbox includes two alternatives:
 
-+   [FLoC](https://github.com/jkarlin/floc), which generates clusters of similar people, known as cohorts or "flocks". Data is generated locally on the user's browser, not by a third party. The browser shares the generated flock data, but this cannot be used to identify or track individual users. This enables companies to target ads based on the behavior of people with similar browsing behaviour, while preserving privacy.
-+   [TURTLEDOVE](https://github.com/michaelkleber/turtledove), whereby the user's browser, not advertisers, holds information about what the user is interested in. Two (uncorrelated) requests are sent for ads: one to retrieve an ad based on contextual data, and one to retrieve an ad based on an advertiser-defined interest. An 'auction' is then conducted by the browser to choose the most relevant ad, using JavaScript code provided by the advertiser. This code *can only be used to choose between ads*: it cannot make network requests or access the DOM or external state.
+[FLoC](https://github.com/jkarlin/floc) generates clusters of similar people, known as cohorts or "flocks". Data is generated locally on the user's browser, not by a third party. The browser shares the generated flock data, but this cannot be used to identify or track individual users. This enables companies to target ads based on the behavior of people with similar browsing behaviour, while preserving privacy.
+
 
 ### Combat fingerprinting
 **Goal: Reduce the amount of sensitive data revealed by APIs and make access to sensitive data controllable by users, and measurable.**
@@ -120,18 +122,18 @@ Browsers have taken steps to [deprecate third-party cookies](https://blog.chromi
 Sites such as [Panopticlick](https://panopticlick.eff.org) and [amiunique.org](https://amiunique.org/) show how fingerprint data can be combined to identify you as an individual.
 {% endAside %}
 
-The [Privacy Budget](https://github.com/bslassey/privacy-budget) proposal aims to limit the potential for fingerprinting by identifying how much fingerprint data is exposed by JavaScript APIs or other 'surfaces' (such as HTTP request headers) and then set a limit on how much of this data can be accessed.
+The [Privacy Budget](https://github.com/bslassey/privacy-budget) proposal aims to limit the potential for fingerprinting by identifying how much fingerprint data is exposed by JavaScript APIs or other 'surfaces' (such as HTTP request headers) and setting a limit on how much of this data can be accessed.
 
-Fingerprinting surfaces such as the [User-Agent](https://github.com/WICG/ua-client-hints) header will be phased out, and the data made available by alternative mechanisms such as [Client Hints](https://wicg.github.io/ua-client-hints/) will be subject to Privacy Budget limits. Other surfaces, such as the [device orientation](https://bugs.chromium.org/p/chromium/issues/detail?id=1018180) and [battery-level](https://bugs.chromium.org/p/chromium/issues/detail?id=661792) APIs, will be updated to keep the information exposed to a minimum.
+Fingerprinting surfaces such as the [User-Agent](https://github.com/WICG/ua-client-hints) header will be constrained, and the data made available by alternative mechanisms such as [Client Hints](https://wicg.github.io/ua-client-hints/) will be subject to Privacy Budget limits. Other surfaces, such as the [device orientation](https://bugs.chromium.org/p/chromium/issues/detail?id=1018180) and [battery-level](https://bugs.chromium.org/p/chromium/issues/detail?id=661792) APIs, will be updated to keep the information exposed to a minimum.
 
 ### Combat spam, fraud and denial-of-service attacks
-**Goal: Enable authentication without fingerprinting.**
+**Goal: Verify user authenticity without fingerprinting.**
 
 Anti-fraud protection is crucial for keeping users safe, and to ensure that advertisers and site owners can get accurate ad performance measurements.
 
 Unfortunately, the techniques used to identify legitimate users and block spammers, fraudsters, and bots work in ways similar to [fingerprinting](#glossary-fingerprinting) techniques that damage privacy.
 
-The [Trust Tokens API](https://github.com/dvorak42/trust-token-api) proposes an alternative approach, allowing trust of a user in one context, such as gmail.com, to be conveyed to another context, such as an ad running on nytimes.com—without identifying the user or linking the two identities.
+The [Trust Tokens API](https://github.com/dvorak42/trust-token-api) proposes an alternative approach, allowing authenticity of a user in one context, such as gmail.com, to be conveyed to another context, such as an ad running on nytimes.com—without identifying the user or linking the two identities.
 
 ### IP address security
 **Goal: Control access to IP addresses to reduce covert fingerprinting, and allow sites to opt out of seeing IP addresses in order to not consume privacy budget.**
