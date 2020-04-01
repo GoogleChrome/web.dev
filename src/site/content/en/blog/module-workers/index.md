@@ -203,7 +203,7 @@ to avoid worker instantiation having to wait to download the worker script. Howe
 ## What about shared workers?
 
 [Shared workers](https://developer.mozilla.org/docs/Web/API/SharedWorker/SharedWorker) have
-been updated with support for JavaScript modules as of Chrome 82. Like dedicated workers,
+been updated with support for JavaScript modules as of Chrome 83. Like dedicated workers,
 constructing a shared worker with the `{type:"module"}` option now loads the worker script as a
 module rather than a classic script:
 
