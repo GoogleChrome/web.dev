@@ -225,7 +225,7 @@ module.exports = function(config) {
   //----------------------------------------------------------------------------
   // TRANSFORMS
   //----------------------------------------------------------------------------
-  if (process.env.ELEVENTY_ENV === 'test') {
+  if (process.env.PERCY) {
     config.addTransform('disable-lazy-load', disableLazyLoad);
   }
 

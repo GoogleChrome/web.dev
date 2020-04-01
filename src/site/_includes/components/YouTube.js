@@ -33,7 +33,7 @@ module.exports = (id, startTime) => {
   // screenshot testing where the iframe can be slow or flaky to load and fail
   // because YouTube is always fiddling with their UI.
   // Load a placeholder to fill the space instead.
-  if (process.env.ELEVENTY_ENV === "test") {
+  if (process.env.PERCY) {
     return html`
       <div class="w-youtube" style="background: aquamarine;">
         YouTube iframe placeholder
