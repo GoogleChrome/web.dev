@@ -215,7 +215,9 @@ via the meta tag, so the browser can adopt to the preferred scheme faster.
 
   I have opened bugs for [Chrome](https://crbug.com/1066811),
   [WebKit](https://bugs.webkit.org/show_bug.cgi?id=209851), and
-  [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1626560) to get this fixed.
+  [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1626560)
+  as well as a [meta issue in the HTML Standard](https://github.com/whatwg/html/issues/5426)
+  to get this fixed.
 {% endAside %}
 
 ## Interplay with `prefers-color-scheme`
