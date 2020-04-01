@@ -24,7 +24,7 @@ draft: true
 ---
 ## Background
 
-### The `prefers-color-scheme` user preference media feature
+### The prefers-color-scheme user preference media feature
 
 The
 [`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
@@ -43,7 +43,7 @@ At the same time, this feature prevents browsers from applying any transformatio
 ### The user agent stylesheet
 
 Before I continue, let me briefly describe what a user agent stylesheet is.
-Most of the times, you can think of the word *user agent* (UA)
+Most of the time, you can think of the word *user agent* (UA)
 as a fancy way to say *browser*.
 The UA stylesheet determines the default look and feel of a page.
 As the name suggests, a UA stylesheet is something that depends on the UA in question.
@@ -98,7 +98,7 @@ whereas
 is for text in application content or documents.
 The two go together and should not be used in isolation.
 
-UA stylesheets can use their own proprietary, or the standardized semantic system colors,
+UA stylesheets can use either their own proprietary or the standardized semantic system colors,
 to determine how HTML elements should be rendered by default.
 If the operating system is set to dark mode or uses a dark theme,
 `CanvasText` (or `text`) would be conditionally set to white,
@@ -116,7 +116,7 @@ body {
 }
 ```
 
-## The `color-scheme` CSS property
+## The color-scheme CSS property
 
 The [CSS Color Adjustment Module Level&nbsp;1](https://drafts.csswg.org/css-color-adjust/)
 specification introduces a model and controls
@@ -196,7 +196,7 @@ element.
 <meta name="color-scheme" content="dark light">
 ```
 
-## Using `color-scheme` in practice
+## Using color-scheme in practice
 
 Since both the meta tag and the CSS property (if applied to the `:root` element)
 eventually result in the same behavior, I always recommend specifying the color scheme
@@ -220,7 +220,7 @@ via the meta tag, so the browser can adopt to the preferred scheme faster.
   to get this fixed.
 {% endAside %}
 
-## Interplay with `prefers-color-scheme`
+## Interplay with prefers-color-scheme
 
 The interplay of the `color-scheme` CSS property and the corresponding meta tag
 with the `prefers-color-scheme` user preference media feature may seem confusing at first.
