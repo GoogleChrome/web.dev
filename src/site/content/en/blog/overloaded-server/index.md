@@ -81,7 +81,7 @@ Run [Lighthouse](https://developers.google.com/web/tools/lighthouse) and look at
 
 #### Fix
 
-Set the [Cache-Control header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) `max-age` directive to the appropriate number of seconds.
+Set the [`Cache-Control`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) header's `max-age` directive to the appropriate number of seconds.
 
 Instructions:
 *   [NGINX](http://nginx.org/en/docs/http/ngx_http_headers_module.html)
