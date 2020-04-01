@@ -20,7 +20,7 @@ const livePosts = require("../_filters/live-posts");
 // Because these posts appear on the homepage they need to have a hero or
 // thumbnail image, otherwise the visual layout will not work.
 module.exports = (collection) => {
-  const tag = process.env.ELEVENTY_ENV === "test" ? "test-post" : "post";
+  const tag = process.env.PERCY ? "test-post" : "post";
   return collection
     .getFilteredByTag(tag)
     .filter(livePosts)

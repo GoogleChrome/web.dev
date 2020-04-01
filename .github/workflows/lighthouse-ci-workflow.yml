@@ -1,11 +1,8 @@
-name: Percy
+name: Lighthouse CI
 
 # By default, runs when a pull_request's activity type is opened, synchronize,
 # or reopened
 on:
-  push:
-    branches:
-      - master
   pull_request:
     paths:
       - '**.js'
@@ -16,7 +13,7 @@ on:
       - '**.yaml'
 
 jobs:
-  percy:
+  lhci:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -32,9 +29,14 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - name: Install
-        run: npm ci
-      - name: Percy
+      - name: Build
         env:
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-        run: npm run percy
+          ELEVENTY_ENV: prod
+        run: npm ci && npm run build
+      - name: Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v2
+        with:
+          runs: 3
+          configPath: ./tools/lhci/lighthouserc.json
+          serverBaseUrl: ${{ secrets.LHCI_SERVER }}
+          serverToken: ${{ secrets.LHCI_TOKEN }}

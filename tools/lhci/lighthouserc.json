@@ -1,0 +1,12 @@
+{	
+  "ci": {	
+    "collect": {	
+      "startServerCommand": "npm start",	
+      "url": [	
+        "http://localhost:8080/",	
+        "http://localhost:8080/blog/",	
+        "http://localhost:8080/measure/"	
+      ]	
+    }	
+  }	
+}
