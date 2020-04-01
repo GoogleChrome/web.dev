@@ -67,7 +67,7 @@ Further reading:
 
 ### HTTP Caching
 
-Look for ways to more aggressively cache content. If a resource can be served from a HTTP cache (whether it's the browser cache or a CDN), then it doesn't need to be requested from the origin server, which reduces server load.
+Look for ways to more aggressively cache content. If a resource can be served from an HTTP cache (whether it's the browser cache or a CDN), then it doesn't need to be requested from the origin server, which reduces server load.
 
 HTTP headers like [`Cache-Control`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control), [`Expires`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expires), and [`ETag`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag) indicate how a resource should be cached by an HTTP cache. Auditing and fixing these headers will improve caching.
 
