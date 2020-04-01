@@ -32,7 +32,7 @@ jobs:
       - name: Build
         env:
           ELEVENTY_ENV: prod
-        run: npm ci && npm run build && npm start
+        run: npm ci && npm run build
       - name: Lighthouse CI
         uses: treosh/lighthouse-ci-action@v2
         with:
