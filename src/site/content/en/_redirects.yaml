@@ -184,5 +184,5 @@ redirects:
 
 # Temporary redirects
 
-- from: /digging-into-the-privacy-sandbox/
+- from: /digging-into-the-privacy-sandbox
   to: https://www.chromium.org/Home/chromium-privacy/privacy-sandbox
