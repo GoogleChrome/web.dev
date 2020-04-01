@@ -120,7 +120,8 @@ body {
 
 The [CSS Color Adjustment Module Level&nbsp;1](https://drafts.csswg.org/css-color-adjust/)
 specification introduces a model and controls
-over automatic color adjustment by the user agent to handle user preferences,
+over automatic color adjustment by the user agent
+with the objective of handling user preferences
 such as dark mode, contrast adjustment, or specific desired color schemes.
 
 The [`color-scheme`](https://drafts.csswg.org/css-color-adjust/#color-scheme-prop)
