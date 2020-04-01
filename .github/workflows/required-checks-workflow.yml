@@ -1,0 +1,12 @@
+name: Required checks
+
+on:
+  pull_request
+
+jobs:
+  do_not_merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Do not merge
+        run: echo "::error ::PR can't be merged with the DO NOT MERGE label."
+        if: contains(github.event.pull_request.labels.*.name, 'DO NOT MERGE')
