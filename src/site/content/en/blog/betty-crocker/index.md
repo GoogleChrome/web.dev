@@ -38,7 +38,7 @@ to support updating and maintaining the app moving forward.
 The app did have one *killer feature*, though, that its users loved:
 
 > "Millennial cooking pro tip: the [@BettyCrocker](https://twitter.com/BettyCrocker) mobile app
-  doesn't dim or lock when you're following a recipe. TRYING THIS TONIGHT!!
+  doesn't dim or lock when you're following a recipe. TRYING THIS TONIGHT!
   […]"—[@AvaBeilke](https://twitter.com/AvaBeilke/status/996746473168670720)
 
 > "80% of people cook with a device in the kitchen, but screen dimming and locking is a problem.
