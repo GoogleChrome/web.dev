@@ -2,6 +2,9 @@
 title: TODO           # Title should mention the type of change that was made and the improvement.
 subhead: TODO         # Subhead can elaborate on the title, if needed.
 date: YYYY-MM-DD
+# !!! IMPORTANT: If your post does not contain a hero image it will not appear
+# on the homepage.
+hero: hero.jpg
 authors:
   - TODO
 description: |
