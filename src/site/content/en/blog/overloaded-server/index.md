@@ -183,7 +183,7 @@ Relevant Lighthouse audits:
 *   [Serve images in next-gen formats](https://developers.google.com/web/tools/lighthouse/audits/webp)
 *   [Use video formats for animated content](https://web.dev/efficient-animated-content/)
 
-DevTools workflow:
+Chrome DevTools workflow:
 - [Log network activity](https://developers.google.com/web/tools/chrome-devtools/network#load)
 - Click 'Img' to [filter out non-image resources](https://developers.google.com/web/tools/chrome-devtools/network/reference#filter-by-type)
 - Click the 'Size' column to sort the image files by size
