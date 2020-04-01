@@ -201,7 +201,7 @@ Things to keep in mind:
 
 *If you have more time…*
 
-Consider setting up an image CDN if images make up a non-negligible portion of your site. Image CDNs are designed for serving and optimizing images and they will offload image serving from the origin server. Setting up an image CDN is straightforward but requires updating existing image URLs to point at the image CDN.
+Consider setting up an image CDN if images make up a substantial portion of your site. Image CDNs are designed for serving and optimizing images and they will offload image serving from the origin server. Setting up an image CDN is straightforward but requires updating existing image URLs to point at the image CDN.
 
 Further reading:
 *   [Use image CDNs to optimize images](https://web.dev/image-cdns/#optimize-your-images)
