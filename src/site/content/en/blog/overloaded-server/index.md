@@ -5,7 +5,7 @@ subhead: |
 authors:
   - katiehempenius
 date: 2020-03-31
-
+hero: hero.jpg
 description: |
   How to determine a server's bottleneck, quickly fix the bottleneck, improve server performance, and prevent regressions.
 tags:
