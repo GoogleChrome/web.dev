@@ -62,10 +62,10 @@ Have a closer look at
 and what it does regarding dark mode.
 (Do a full text search for "dark" in the stylesheet.)
 The default provided by the stylesheet changes based on whether dark mode is on or off.
-To illustrate this, here is one such CSS rule (using the
+To illustrate this, here is one such CSS rule using the
 [`:matches`](https://css-tricks.com/almanac/selectors/m/matches/)
 pseudo class and WebKit-internal variables like `-apple-system-control-background`,
-as well as the WebKit-internal preprocessor directive `#if defined`):
+as well as the WebKit-internal preprocessor directive `#if defined`:
 
 ```css
 input,
