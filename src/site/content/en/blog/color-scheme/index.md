@@ -101,7 +101,7 @@ The two go together and should not be used in isolation.
 UA stylesheets can use their own proprietary, or the standardized semantic system colors,
 to determine how HTML elements should be rendered by default.
 If the operating system is set to dark mode or uses a dark theme,
-`CanvasText` (or `text` respectively) would be conditionally set to whitish,
+`CanvasText` (or `text` respectively) would be conditionally set to white,
 and `Canvas` (or `-apple-system-control-background`) would be set to blackish.
 The UA stylesheet then assigns the following CSS only once, and covers both light and dark mode.
 
