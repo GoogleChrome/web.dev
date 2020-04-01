@@ -2,7 +2,7 @@
 title: Improved dark mode with the `color-scheme` CSS property and the corresponding meta tag
 subhead: |
   The `color-scheme` CSS property and the corresponding meta tag
-  allow developers to opt their pages in to the theme-specific defaults of the user-agent stylesheet.
+  allow developers to opt their pages in to the theme-specific defaults of the user agent stylesheet.
 authors:
   - thomassteiner
 date: 2020-03-27
@@ -10,7 +10,7 @@ hero: hero.jpg
 alt: Pigeons on a wall with a sharp black and white contrast in the background.
 description: |
   The color-scheme CSS property and the corresponding meta tag
-  allow developers to opt their pages in to theme-specific defaults of the user-agent stylesheet,
+  allow developers to opt their pages in to theme-specific defaults of the user agent stylesheet,
   such as, for example, form controls, scroll bars, as well as CSS system colors.
   At the same time, this feature prevents browsers from applying any transformations on their own.
 tags:
@@ -36,13 +36,13 @@ where I documented everything I know about creating amazing dark mode experience
 One puzzle piece that was only mentioned briefly in the article is
 the `color-scheme` CSS property and the corresponding meta tag of the same name.
 They both make your life as a developer easier
-by allowing you to opt your page in to theme-specific defaults of the user-agent stylesheet,
+by allowing you to opt your page in to theme-specific defaults of the user agent stylesheet,
 such as, for example, form controls, scroll bars, as well as CSS system colors.
 At the same time, this feature prevents browsers from applying any transformations on their own.
 
-### The user-agent stylesheet
+### The user agent stylesheet
 
-Before I continue, let me briefly describe what a user-agent stylesheet is.
+Before I continue, let me briefly describe what a user agent stylesheet is.
 Most of the times, you can think of the word *user agent* (UA)
 as a fancy way to say *browser*.
 The UA stylesheet determines the default look and feel of a page.
@@ -120,7 +120,7 @@ body {
 
 The [CSS Color Adjustment Module Level&nbsp;1](https://drafts.csswg.org/css-color-adjust/)
 specification introduces a model and controls
-over automatic color adjustment by the user-agent to handle user preferences,
+over automatic color adjustment by the user agent to handle user preferences,
 such as dark mode, contrast adjustment, or specific desired color schemes.
 
 The [`color-scheme`](https://drafts.csswg.org/css-color-adjust/#color-scheme-prop)
@@ -182,7 +182,7 @@ and should also affect the viewport's scroll bars.
 
 Honoring the `color-scheme` CSS property requires the CSS to be first downloaded
 (if it is referenced via `<link rel="stylesheet">`) and to be parsed.
-To aid user-agents in rendering the page background with the desired color scheme *immediately*,
+To aid user agents in rendering the page background with the desired color scheme *immediately*,
 a `color-scheme` value can also be provided in a
 [`<meta name="color-scheme">`](https://drafts.csswg.org/css-color-adjust/#color-scheme-meta)
 element.
@@ -260,7 +260,7 @@ the page tells the browser that it supports a dark and a light theme,
 with a preference for a dark theme.
 
 Depending on whether the operating system is set to dark or light mode,
-the whole page appears light on dark, or vice versa, based on the user-agent stylesheet.
+the whole page appears light on dark, or vice versa, based on the user agent stylesheet.
 There is *no* additional developer-provided CSS involved to change the paragraph text
 or the background color of the page.
 
@@ -272,8 +272,8 @@ It is either `gainsboro` or `darkslategray`.
 <figure>
   <img src="light-styles.png" width="3440" height=" 1386">
   <figcaption>
-    <strong>Light mode:</strong> Styles specified by the developer and the user-agent.
-    The text is black and the background is white as per the user-agent stylesheet.
+    <strong>Light mode:</strong> Styles specified by the developer and the user agent.
+    The text is black and the background is white as per the user agent stylesheet.
     The <code>&lt;fieldset&gt;</code> element's <code>background-color</code> is <code>gainsboro</code>
     as per the inlined developer stylesheet.
   </figcaption>
@@ -282,14 +282,14 @@ It is either `gainsboro` or `darkslategray`.
 <figure>
   <img src="dark-styles.png" width="3440" height=" 1386">
   <figcaption>
-    <strong>Dark mode:</strong> Styles specified by the developer and the user-agent.
-    The text is white and the background is black as per the user-agent stylesheet.
+    <strong>Dark mode:</strong> Styles specified by the developer and the user agent.
+    The text is white and the background is black as per the user agent stylesheet.
     The <code>&lt;fieldset&gt;</code> element's <code>background-color</code> is <code>darkslategray</code>
     as per the inlined developer stylesheet.
   </figcaption>
 </figure>
 
-The `<button>` element's appearance is controlled by the user-agent stylesheet.
+The `<button>` element's appearance is controlled by the user agent stylesheet.
 Its `color` is set to the
 [`ButtonText`](https://drafts.csswg.org/css-color/#valdef-system-color-buttontext)
 system color, and its `background-color` and the four `border-color`s are set to the system color
@@ -307,7 +307,7 @@ system color, and its `background-color` and the four `border-color`s are set to
 Now note how the `<button>` element's `border-color` changes.
 The *computed* value for the `border-top-color` and the `border-bottom-color`
 switches from `rgba(0, 0, 0, 0.847)` (blackish) to `rgba(255, 255, 255, 0.847)` (whitish),
-since the user-agent updates `ButtonFace` dynamically based on the color scheme.
+since the user agent updates `ButtonFace` dynamically based on the color scheme.
 The same applies for the `<button>` element's `color`
 that is set to the corresponding system color `ButtonText`.
 
@@ -316,7 +316,7 @@ that is set to the corresponding system color `ButtonText`.
   <figcaption>
     <strong>Light mode:</strong> The computed values of the <code>border-top-color</code>
     and the <code>border-bottom-color</code> that are both set to <code>ButtonFace</code>
-    in the user-agent stylesheet are now <code>rgba(0, 0, 0, 0.847)</code>.
+    in the user agent stylesheet are now <code>rgba(0, 0, 0, 0.847)</code>.
   </figcaption>
 </figure>
 
@@ -325,7 +325,7 @@ that is set to the corresponding system color `ButtonText`.
   <figcaption>
     <strong>Dark mode:</strong> The computed values of the <code>border-top-color</code>
     and the <code>border-bottom-color</code> that are both set to <code>ButtonFace</code>
-    in the user-agent stylesheet are now <code>rgba(255, 255, 255, 0.847)</code>.
+    in the user agent stylesheet are now <code>rgba(255, 255, 255, 0.847)</code>.
   </figcaption>
 </figure>
 
