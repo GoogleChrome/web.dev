@@ -105,7 +105,7 @@ class Actions extends BaseElement {
         data-category="web.dev"
         data-label="subscribe, newsletter"
         data-action="click"
-        href="/newsletter"
+        href="https://web.dev/subscribe"
         target="_blank"
       >
         <span>Subscribe</span>

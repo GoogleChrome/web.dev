@@ -25,7 +25,9 @@ class Subscribe extends BaseElement {
     this.robotName = "is-it-just-me-or-was-this-form-filled-out-by-a-robot";
     this.processing = false;
     this.submitted = false;
+    this.onError = this.onError.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.onSuccess = this.onSuccess.bind(this);
   }
 
   connectedCallback() {
@@ -76,7 +78,7 @@ class Subscribe extends BaseElement {
   onSubmit(e) {
     e.preventDefault();
     if (this.processing || this.submitted) {
-      return false;
+      return;
     }
     this.processing = true;
     const form = new FormData(e.target);
@@ -84,7 +86,7 @@ class Subscribe extends BaseElement {
 
     if (formIsRobot) {
       this.onSuccess();
-      return false;
+      return;
     }
     const cleanedForm = this.cleanForm(form);
 
