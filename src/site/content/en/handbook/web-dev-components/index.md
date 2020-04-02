@@ -636,6 +636,12 @@ at.
 </div>
 ```
 
+<!-- Don't attempt to load Glitch if we're screenshot testing. -->
+{% if site.percy %}
+<div style="background: aquamarine; width: 400px; height: 400px;">
+  Glitch iframe placeholder
+</div>
+{% else %}
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
     src="https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&attributionHidden=true"
@@ -643,6 +649,7 @@ at.
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
+{% endif %}
 
 ## Images
 

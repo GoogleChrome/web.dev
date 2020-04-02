@@ -18,6 +18,7 @@ const locale = require("../../../shared/locale");
 
 module.exports = {
   env: process.env.ELEVENTY_ENV || "dev",
+  percy: process.env.PERCY || false,
   title: "web.dev",
   titleVariation: "Home",
   defaultLocale: locale.defaultLocale,
