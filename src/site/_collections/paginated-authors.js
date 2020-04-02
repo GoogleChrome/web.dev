@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// const fs = require("fs");
+const fs = require("fs");
 const contributors = require("../_data/contributors");
 const livePosts = require("../_filters/live-posts");
 const addPagination = require("../_utils/add-pagination");
@@ -50,17 +50,17 @@ module.exports = (collections) => {
       subhead: author.description,
     };
 
-    // for (const size of ["@3x", "@2x", ""]) {
-    //   if (
-    //     fs.existsSync(
-    //       `src/site/content/en/images/authors/${author.key}${size}.jpg`,
-    //     )
-    //   ) {
-    //     author.data.hero = `~/images/authors/${author.key}${size}.jpg`;
-    //     author.data.alt = author.title;
-    //     break;
-    //   }
-    // }
+    for (const size of ["@3x", "@2x", ""]) {
+      if (
+        fs.existsSync(
+          `src/site/content/en/images/authors/${author.key}${size}.jpg`,
+        )
+      ) {
+        author.data.hero = `/images/authors/${author.key}${size}.jpg`;
+        author.data.alt = author.title;
+        break;
+      }
+    }
 
     return author;
   });

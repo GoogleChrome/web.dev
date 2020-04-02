@@ -24,5 +24,13 @@ pagination:
       <p class="w-page-header__copy">{{ renderData.description }}</p>
     </header>
   </div>
-  {% include 'partials/paged.njk' %}
+  <section class="w-grid">
+    <div class="w-grid__columns w-grid__columns--three" role="list">
+      {% for element in paged.elements %}
+        {% AuthorCard {post: element} %}
+      {% endfor %}
+    </div>
+  </section>
+
+  {% include 'pagination.njk' %}
 </div>

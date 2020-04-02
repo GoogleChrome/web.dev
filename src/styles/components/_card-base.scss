@@ -10,7 +10,7 @@
 //
 // =============================================================================
 
-.w-post-card {
+.w-card-base {
   @include w-body-text();
   height: 100%;
   padding: 24px;
@@ -21,12 +21,12 @@
   }
 }
 
-.w-post-card__cover {
+.w-card-base__cover {
   display: block;
   margin: 32px 0 12px;
 }
 
-.w-post-card__cover--with-image {
+.w-card-base__cover--with-image {
   margin: 32px 0 12px;
 
   @include bp(md) {
@@ -34,7 +34,7 @@
   }
 }
 
-.w-post-card__figure {
+.w-card-base__figure {
   align-items: center;
   background-color: $GREY_100;
   display: flex;
@@ -45,32 +45,32 @@
   position: relative;
 }
 
-.w-post-card__image {
+.w-card-base__image {
   height: 240px;
   max-width: 100%;
   min-width: 100%;
   object-fit: cover;
 }
 
-.w-post-card__headline {
+.w-card-base__headline {
   @include w-headline--two();
 }
 
-.w-post-card__headline--with-image {
+.w-card-base__headline--with-image {
   @include w-headline--two-small();
 }
 
-.w-post-card__headline,
-.w-post-card__headline--with-image {
+.w-card-base__headline,
+.w-card-base__headline--with-image {
   margin-bottom: 8px;
   margin-top: 0;
 }
 
-.w-post-card__desc {
+.w-card-base__desc {
   display: block;
 }
 
-.w-post-card__desc::before {
+.w-card-base__desc::before {
   background-color: $WEB_PRIMARY_COLOR;
   content: '';
   display: block;
@@ -85,7 +85,7 @@
   }
 }
 
-.w-post-card__info-list {
+.w-card-base__info-list {
   height: 36px;
   list-style: none;
   margin: 0;
@@ -103,7 +103,7 @@
   }
 }
 
-.w-post-card__info-listitem {
+.w-card-base__info-listitem {
   color: $GREY_700;
   display: block;
   float: left;
@@ -115,23 +115,23 @@
   }
 }
 
-.w-post-card__info-listitem::after {
+.w-card-base__info-listitem::after {
   content: '·';
   display: inline-block;
   margin: 0 8px;
 }
 
-.w-post-card__info-listitem--category {
+.w-card-base__info-listitem--category {
   color: $WEB_PRIMARY_COLOR;
   font-weight: 500;
 }
 
-.w-post-card__info-listitem:last-of-type::after {
+.w-card-base__info-listitem:last-of-type::after {
   content: '';
   margin: 0;
 }
 
-.w-post-card__info-listitem--published::after {
+.w-card-base__info-listitem--published::after {
   content: '';
 
   @include bp(sm) {
@@ -139,7 +139,7 @@
   }
 }
 
-.w-post-card__info-listitem--updated {
+.w-card-base__info-listitem--updated {
   display: none;
 
   @include bp(sm) {
@@ -147,15 +147,15 @@
   }
 }
 
-.w-post-card__link:focus {
+.w-card-base__link:focus {
   outline: none;
 }
 
-.w-post-card__link:hover {
+.w-card-base__link:hover {
   text-decoration: none;
 }
 
-.w-post-card__subhead {
+.w-card-base__subhead {
   color: $GREY_700;
   font: inherit;
   margin: 0;
@@ -168,23 +168,23 @@
 // Because it would be onerous to extend the block and all of its elements, we
 // just use a descendant selector.
 @media (min-width: #{$BREAKPOINT_VALUE_MEDIUM}) and (max-width: #{$BREAKPOINT_VALUE_LARGE}) {
-  .w-post-card--featured {
+  .w-card-base--featured {
     // 32px * 2 of padding to match the columns below + 8px gap.
     column-gap: 72px;
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    .w-post-card__cover,
-    .w-post-card__figure {
+    .w-card-base__cover,
+    .w-card-base__figure {
       margin: 0;
     }
 
-    .w-post-card__cover,
-    .w-post-card__blurb {
+    .w-card-base__cover,
+    .w-card-base__blurb {
       grid-area: auto;
     }
 
-    .w-post-card__blurb {
+    .w-card-base__blurb {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -192,7 +192,7 @@
 
     // Normally this little symbol is obscured by the hero thumbnail image
     // but we need to hide it for the side-by-side featured layout.
-    .w-post-card__desc::before {
+    .w-card-base__desc::before {
       display: none;
     }
   }

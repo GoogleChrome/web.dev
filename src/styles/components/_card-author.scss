@@ -1,0 +1,13 @@
+@import '../settings/colors';
+
+.w-card-author {
+  text-align: center;
+}
+
+.w-card-author__figure {
+  background-color: $WHITE;
+}
+
+.w-card-author__image {
+  border-radius: 50%;
+}

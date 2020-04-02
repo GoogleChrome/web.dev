@@ -27,6 +27,7 @@ const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
 const Aside = require(`./${componentsDir}/Aside`);
 const Assessment = require(`./${componentsDir}/Assessment`);
 const Author = require(`./${componentsDir}/Author`);
+const AuthorCard = require(`./${componentsDir}/AuthorCard`);
 const AuthorInfo = require(`./${componentsDir}/AuthorInfo`);
 const Banner = require(`./${componentsDir}/Banner`);
 const Blockquote = require(`./${componentsDir}/Blockquote`);
@@ -200,6 +201,7 @@ module.exports = function(config) {
   config.addPairedShortcode('Aside', Aside);
   config.addShortcode('Assessment', Assessment);
   config.addShortcode('Author', Author);
+  config.addShortcode('AuthorCard', AuthorCard);
   config.addShortcode('AuthorInfo', AuthorInfo);
   config.addPairedShortcode('Banner', Banner);
   config.addPairedShortcode('Blockquote', Blockquote);
