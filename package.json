@@ -24,13 +24,14 @@
     "stage": "ELEVENTY_ENV=dev npm run build && gcloud app deploy --project web-dev-staging --quiet",
     "start": "node ./server.js",
     "percy": "PERCY=true npm-run-all build --parallel --race start snapshots",
-    "test:unit": "npm-run-all clean build:rollup karma",
+    "test": "npm run test:unit && npm run test:integration",
     "test:integration": "mocha ./test",
+    "test:unit": "npm-run-all clean rollup karma",
     "watch:eleventy": "eleventy --watch --quiet",
     "watch:gulp": "npx gulp build && gulp watch",
     "watch:rollup": "chokidar \"src/lib/**/*.{js,scss}\" -c \"npm run rollup\"",
     "watch:sass": "chokidar \"src/styles/**/*.scss\" -c \"npm run sass\"",
-    "watch:test": "TEST_MODE=dev npm-run-all clean build:rollup --parallel watch:rollup karma"
+    "watch:test": "TEST_MODE=dev npm-run-all clean rollup --parallel watch:rollup karma"
   },
   "license": "Apache-2.0",
   "dependencies": {
