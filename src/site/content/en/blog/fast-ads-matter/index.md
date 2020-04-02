@@ -159,7 +159,7 @@ Then, use this information to create a simple table like the one below, which
 maps each inventory type to its dependencies in an easily digestible format.
 
 <div class="w-table-wrapper">
-  <table class="w-table--middle-align">
+  <table>
     <thead>
       <tr>
       <th>Type of inventory</th>

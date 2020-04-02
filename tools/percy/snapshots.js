@@ -22,7 +22,11 @@ const pagesToTest = [
   },
   {
     url: "codelab-avoid-invisible-text",
-    title: "Test codelab page",
+    title: "Codelab page",
+  },
+  {
+    url: "handbook/web-dev-components",
+    title: "Components page",
   },
 ];
 

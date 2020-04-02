@@ -1,3 +1,4 @@
+@import '../settings/colors';
 @import '../settings/type';
 
 // =============================================================================
@@ -15,6 +16,15 @@
   overflow: auto;
 }
 
+.w-table-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.w-table-wrapper::-webkit-scrollbar-thumb {
+  background-color: $GREY_500;
+  border-radius: 8px;
+}
+
 table {
   border-collapse: collapse;
   font-size: inherit; // DevSite override
@@ -28,6 +38,10 @@ tr {
   border-bottom: 1px solid #dadce0;
   border-top: 0;
   height: 48px;
+}
+
+tr:last-of-type {
+  border-bottom: 0;
 }
 
 th,
@@ -49,11 +63,10 @@ th {
 td {
   line-height: 1.5;
   padding: 16px 24px 16px 0;
-  vertical-align: top;
 }
 
-.w-table--middle-align td {
-  vertical-align: middle;
+.w-table--top-align td {
+  vertical-align: top;
 }
 
 caption {

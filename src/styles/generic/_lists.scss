@@ -62,12 +62,15 @@ ul:not([class]) > li {
 }
 
 ul:not([class]) > li::before {
-  color: inherit;
-  content: '•';
-  font-size: 2em;
-  left: -2px;
-  margin: 2px 0 0;
+  background: $GREY_700;
+  border-radius: $GLOBAL_ROUNDED;
+  color: $WHITE;
+  content: '';
+  height: 8px;
+  left: 0;
+  margin: 12px 0 0;
   position: absolute;
+  width: 8px;
 }
 
 ul:not([class]) > li > p,

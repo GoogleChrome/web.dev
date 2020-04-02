@@ -176,7 +176,7 @@ If you find your pull request blocked by a poor Lighthouse score, run an audit w
 ## Summary
 
 <div class="w-table-wrapper">
-  <table class="w-table--middle-align">
+  <table>
     <tr>
       <th>Tool</th>
       <th>CLI</th>
