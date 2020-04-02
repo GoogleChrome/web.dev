@@ -5,7 +5,6 @@
   display: block;
   margin-top: 32px;
   text-align: center;
-  width: 100%;
 }
 
 .w-subscribe__border {
@@ -25,12 +24,7 @@
 }
 
 .w-subscribe__field {
-  display: flex;
-  justify-content: space-between;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 8px;
-  text-align: left;
 }
 
 .w-subscribe__form {
@@ -41,7 +35,7 @@
 }
 
 .w-subscribe__input {
-  border: 2px solid #f1f3f4;
+  border: 1px solid $GREY_300;
   font: inherit;
   font-size: 16px;
   line-height: 20px;
