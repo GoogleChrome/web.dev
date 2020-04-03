@@ -31,7 +31,7 @@
     "watch:gulp": "npx gulp build && gulp watch",
     "watch:rollup": "chokidar \"src/lib/**/*.{js,scss}\" -c \"npm run rollup\"",
     "watch:sass": "chokidar \"src/styles/**/*.scss\" -c \"npm run sass\"",
-    "watch:test": "TEST_MODE=dev npm-run-all clean rollup --parallel watch:rollup karma"
+    "watch:test:unit": "TEST_MODE=dev npm-run-all clean rollup --parallel watch:rollup karma"
   },
   "license": "Apache-2.0",
   "dependencies": {
