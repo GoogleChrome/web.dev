@@ -19,6 +19,10 @@ tags:
 
 {% YouTube 'WnCKlNE52tc' %}
 
+Thanks to Michael Kleber and Marshall Vale for their help writing this post.
+
+---
+
 ## Why does the web use third-party code?
 
 Websites use services from other companies to provide analytics, serve video and do lots of other useful stuff. Composability is one of the web's [superpowers](https://youtu.be/WnCKlNE52tc?t=930).
@@ -106,7 +110,7 @@ First-party-data and contextual targeting can be achieved without knowing anythi
 
 Remarketing is usually done by using cookies or some other way to recognize people across web sites: adding users to lists and then targeting them with specific ads.
 
-[TURTLEDOVE](https://github.com/michaelkleber/turtledove) proposes that the user's browser, not advertisers, holds information about what the user is interested in. Two (uncorrelated) requests are sent for ads: one to retrieve an ad based on contextual data, and one to retrieve an ad based on an advertiser-defined interest. An 'auction' is then conducted by the browser to choose the most relevant ad, using JavaScript code provided by the advertiser. This code *can only be used to choose between ads*: it cannot make network requests, or access the DOM or external state.
+[TURTLEDOVE](https://github.com/michaelkleber/turtledove) moves the final ad 'auction' (to choose the most relevant ads) to the browser. The API leverages information which is only stored in the user's browser itself, about advertisers the user had previously expressed an interest in, along with information about the current page. Two requests are sent for ads: one to retrieve an ad based on contextual data, and one to retrieve an ad based on an advertiser-defined interest. The browser has the responsibility of ensuring these requests are independent and *uncorrelated* so they can't be linked together to let an ad network know that the requests are from the same person. An 'auction' is then conducted by the browser to choose the most relevant ad, using JavaScript code provided by the advertiser. This code *can only be used to choose between ads*: it cannot make network requests, or access the DOM or external state.
 
 Interest-based targeting currently uses cookies or device fingerprinting to track user behaviour across as many sites as possible. Many people are concerned about the privacy implications of ad targeting. The Privacy Sandbox includes two alternatives:
 
