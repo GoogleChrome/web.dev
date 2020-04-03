@@ -47,8 +47,9 @@ to ensure sites are available during this time and accessible to all.
 {% Aside %} 
   This guidance is a work in progress and will be updated frequently.
   If you have any suggestions, please [file an
-  issue](https://github.com/GoogleChrome/web.dev/issues/new/choose) or [create a
-  pull request](https://github.com/GoogleChrome/web.dev/compare).
+  issue](https://github.com/GoogleChrome/web.dev/issues/new/choose), or [edit
+  this page](https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/blog/covid19/index.md)
+  and then open a pull request.
 {% endAside %}
 
 ### Availability, reliability, resilience, and stability {: #availability }
@@ -209,7 +210,7 @@ possible.
 
 ### SEO {: #seo }
 
-People are looking for critical health- and job-related information. It’s
+People are looking for critical health- and job-related information. It's
 important to ensure that your sites are discoverable by all search engines.
 Follow the official blogs of search engines for guidance and updates:
 [Google](https://webmasters.googleblog.com/),
