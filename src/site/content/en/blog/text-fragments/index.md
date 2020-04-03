@@ -1,6 +1,6 @@
 ---
 title: |
-  Text Fragment
+  Text Fragments
 subhead: |
 authors:
   - thomassteiner
