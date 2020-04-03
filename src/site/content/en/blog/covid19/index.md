@@ -109,8 +109,9 @@ before they become major issues.
 See [Network reliability](/reliable/) for more guidance.
 
 {% Aside %}
-  web.dev usually has a [content policy against mentioning commercial service
-  providers](/handbook/tooling-and-libraries/). In the interest of being helpful
+  web.dev usually has a 
+  [content policy against mentioning closed-source commercial services](/handbook/tooling-and-libraries/).
+  In the interest of being helpful
   first and foremost to web developers who may be under stress and don't have
   time to search for options, this page is relaxing that restriction.
 {% endAside %}
