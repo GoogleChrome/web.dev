@@ -121,7 +121,7 @@ Complete
 <strong>5. Launch</strong>
 </td>
 <td markdown="block">
-<strong>Chrome 81</strong>
+<strong>Chrome 83</strong>
 </td>
 </tr>
 </table>
@@ -152,14 +152,13 @@ The whole process is diagrammed in the image below.
   </figcaption>
 </figure>
 
-Try [the demo](https://sms-receiver-demo.glitch.me) yourself. It doesn't ask for
+Try [the demo](https://web-otp-demo.glitch.me) yourself. It doesn't ask for
 your phone number or send an SMS to your device, but you can send one from
 another device by copying the text displayed in the demo. This works because it
 doesn't matter who the sender is when using the Web OTP API.
 
 1. Go to
-   [https://sms-receiver-demo.glitch.me](https://sms-receiver-demo.glitch.me) in Chrome 81 or later.
-1. Select **Chrome Stable** from the provided list.
+   [https://web-otp-demo.glitch.me](https://web-otp-demo.glitch.me) in Chrome 81 or later.
 1. Press **Copy** to copy the text message.
 1. Using your SMS app send it to another phone.
 1. Press **Verify**.
@@ -169,7 +168,7 @@ Did you receive the SMS and see the prompt to enter the code to the input area?
 That is how the Web OTP API works for users.
 
 {% Aside 'caution' %}
-If you are using a work profile on your Android device and the SMS Receiver does
+If you are using a work profile on your Android device and the Web OTP does
 not seem to be working, try installing and using Chrome on your personal profile
 instead (i.e. the same profile in which you receive SMS messages).
 {% endAside %}
@@ -208,8 +207,8 @@ const content = await navigator.credentials.get({
 });
 ```
 
-This triggers the browser's permission flow. If permission is granted, the
-returned promise resolves with an `OTPCredential` object.
+This triggers the browser's permission flow as an SMS arrives. If permission is
+granted, the returned promise resolves with an `OTPCredential` object.
 
 ```json
 {
@@ -247,25 +246,34 @@ const content = await navigator.credentials.get({
 The code below demonstrates a web component that extends `input`.
 
 ```js
-customElements.define("one-time-code",
-  class extends HTMLInputElement {
-    connectedCallback() {
-      this.receive();
-    }
-    async receive() {
-      try {
-        const sms = await navigator.credentials.get({
-          otp: { transport:['sms'] }
-        });
-        this.value = sms.code;
-        this.form.submit();
-      } catch (e) {
-        console.error(e);
+if ('customElements' in window && 'OTPCredential' in window) {
+  customElements.define("one-time-code",
+    class extends HTMLInputElement {
+      connectedCallback() {
+        this.signal = new AbortController();
+        this.receive();
       }
-    }
-  }, {
-    extends: "input"
-});
+      disconnectedCallback() {
+        this.abort();
+      }
+      abort() {
+        this.signal.abort();
+      }
+      async receive() {
+        try {
+          const content = await navigator.credentials.get({
+            otp: {transport:['sms']}, abort: this.signal
+          });
+          this.value = content.code;
+          this.dispatchEvent(new Event('change'));
+        } catch (e) {
+          console.error(e);
+        }
+      }
+    }, {
+      extends: "input"
+  });
+}
 ```
 After this declaration you can add `is="one-time-code` to any `input` element.
 As soon as the element is added to the document tree, it waits for an SMS
@@ -293,10 +301,6 @@ The message must adhere to the following formatting:
 
 * The origin part of the URL of the website that invoked the API must be
   preceded by `@`.
-* The URL must contain (for [the time
-  being](https://github.com/samuelgoto/sms-receiver/issues/4#issuecomment-528991114))
-  a query parameter whose value is the application hash of the user's Chrome
-  instance. See [Use the application hash](#use-the-hash) for a list of valid hashes.
 * The URL must contain a pound sign ('`#`') followed by the OTP.
 * Optionally, the message may contain additional text for the user.
 
@@ -305,69 +309,23 @@ For example:
 ```text
 Your OTP is: 123456.
 
-@https://www.example.com #123456&xFJnfg75+8v
+@https://www.example.com #123456
 ```
-
-### Use the application hash {: #use-the-hash }
-
-The application hash of Chrome instances are static. Use one of these strings
-for development depending on which Chrome build you will be working with. These
-values may change. Watch this page for updates.
-
-{% Aside %}
-As of Chrome 83, you can turn off the hash requirement by setting the
-`chrome://flags/#web-otp-backend` flag to "User Consent API".
-{% endAside %}
-
-<table>
-<tr>
-<th markdown="block">
-<strong>Chrome build</strong>
-</th>
-<th markdown="block">
-<strong>APK hash string</strong>
-</th>
-</tr>
-<tr>
-<td markdown="block">
-Chrome Canary
-</td>
-<td markdown="block">
-<code>PqEvUq15HeK</code>
-</td>
-</tr>
-<tr>
-<td markdown="block">
-Chrome Beta
-</td>
-<td markdown="block">
-<code>xFJnfg75+8v</code>
-</td>
-</tr>
-<tr>
-<td markdown="block">
-Chrome Stable
-</td>
-<td markdown="block">
-<code>EvsSSj4C6vl</code>
-</td>
-</tr>
-</table>
 
 ### Demos
 
 Try various messages with the demo:
-[https://sms-receiver-demo.glitch.me](https://sms-receiver-demo.glitch.me)
+[https://web-otp-demo.glitch.me](https://web-otp-demo.glitch.me)
 
 You may also fork it and create your version:
-[https://glitch.com/edit/#!/sms-receiver-demo](https://glitch.com/edit/#!/sms-receiver-demo).
+[https://glitch.com/edit/#!/web-otp-demo](https://glitch.com/edit/#!/web-otp-demo).
 
 ### Problem with the implementation?
 
 Did you find a bug with Chrome's implementation?
 
 * File a bug at
-  [https://new.crbug.com](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EContacts).
+  [https://new.crbug.com](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3ESMS).
   Include as much detail as you can, simple instructions for reproducing, and
   set **Components** to `Blink>SMS`.
 
@@ -388,22 +346,15 @@ a few significant differences compared to the SMS Receiver API.
 * The `get()` receives only the OTP rather than the entire SMS message as
   `receive()` did before.
 * It's now possible to [abort the call to `get()`](#aborting).
+* It no longer requires an app hash string to be included in the SMS message.
 
 ## FAQ
-### Why did you not align with Safari's one-time-code?
+### Is this API compatible between different browsers?
 
-We [explored
-options](https://chromium-review.googlesource.com/c/chromium/src/+/1639728)
-similar to Safari's declarative
-[`autocomplete="one-time-code"`](https://developer.apple.com/documentation/security/password_autofill/enabling_password_autofill_on_an_html_input_element).
-We believe our imperative approach provides a more flexible user experience and
-reduces friction when verifying a phone number under certain circumstances. The
-declarative approach is easier to implement for developers, but requires a form
-field and at least several taps: focus on the input field, select the
-one-time-code, then submit the form. Our approach (inspired by what native
-[Android apps](https://developers.google.com/identity/sms-retriever/overview)
-do) means that people make only a single tap in the browser, inline with the
-page content.
+Chromium and WebKit at least agreed on the SMS text message format. Find WebKit's
+documentation here:
+https://github.com/WebKit/explainers/tree/master/sms-one-time-code-format
+
 
 ### Is it safe to use SMS as a way to authenticate?
 
@@ -415,19 +366,6 @@ combine it with additional factors, such as a knowledge challenge, or use the
 [Web Authentication
 API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API)
 for strong authentication.
-
-### Can't we omit the browser's app hash?
-
-As of Chrome 83, the hash may be ommited if a runtime flag is enabled. See [Use the application hash](#use-the-hash) for details.
-
-### Will the apk hash change for an installed PWA?
-
-No. A PWA's app hash is the same as the browser it runs in.
-
-### Can we localize the "For:" string required in the SMS?
-
-Not yet. Ultimately, we are planning to remove it or otherwise allow for
-localization.
 
 {% Aside %}
 Find more questions at [the FAQ section in the explainer](https://github.com/samuelgoto/sms-receiver/blob/master/FAQ.md).
