@@ -108,15 +108,6 @@ before they become major issues.
 
 See [Network reliability](/reliable/) for more guidance.
 
-{#
- # Note that web.dev has a content policy against mentioning
- # closed-source commercial services: https://web.dev/handbook/tooling-and-libraries/
- # In the interest of being helpful first and foremost to web developers who may be under
- # stress and don't have time to search for options, this page is relaxing that restriction.
- # We may need to revisit this decision depending on what kinds of community contributions
- # we see.
- #}
-
 ### Accessibility {: #accessibility }
 
 Focusing on accessibility is more important than ever because more people with a
