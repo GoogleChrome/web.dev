@@ -172,7 +172,8 @@ information](https://en.wikipedia.org/wiki/Personal_data) (PII) is safe.
   Encrypt](https://letsencrypt.org/getting-started/) or similar services to
   enable HTTPS on your servers.
 * Review [SameSite cookies explained](/samesite-cookies-explained/) to learn
-  how to make your use of cookies more secure.
+  how to make your use of cookies more secure. Note that 
+  [the enforcement of SameSite cookie labeling has been temporarily rolled back](https://blog.chromium.org/2020/04/temporarily-rolling-back-samesite.html).
 
 See [Safe and secure](/secure/) for more guidance.
 
