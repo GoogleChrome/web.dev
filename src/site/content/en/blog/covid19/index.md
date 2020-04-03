@@ -290,6 +290,6 @@ performance impact of reduced bandwidth.
 
 See [Fast load times](/fast/) for more guidance.
 
-*[Hero image](https://unsplash.com/photos/Q1p7bh3SHj8) by 
+[Hero image](https://unsplash.com/photos/Q1p7bh3SHj8) by 
 [NASA](https://unsplash.com/@nasa) on
-[Unsplash](https://unsplash.com/s/photos/earth)*
+[Unsplash](https://unsplash.com/s/photos/earth)
