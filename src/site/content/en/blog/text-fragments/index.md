@@ -55,7 +55,7 @@ of the URL of the page.
 Assuming I wanted to deep link to the *Give us feedback in our
 [Product Forums](http://support.google.com/bin/static.py?hl=en&page=portal_groups.cs)*
 box in the aside, I could do so by handcrafting the URL
-[`https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1`](https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1).
+<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#HTML1</strong></code></a>.
 As you can see in the Elements panel of the Developer Tools, the element in question
 has an `id` attribute with the value `HTML1`.
 
@@ -110,24 +110,61 @@ for specifying a text snippet in the URL fragment.
 When navigating to a URL with such a fragment, the user agent can quickly emphasize
 and/or bring it to the user's attention.
 
-### The Syntax
+### The `textStart` syntax
 
 In its simplest form, the syntax of Text Fragments is as follows:
 
 ```bash
-#:~:text=Some%20Text
+#:~:text=textStart
 ```
 
-The hash symbol `#` followed by `:~:text=` and the
+The hash symbol `#` followed by `:~:text=` and finally `textStart`, which represents the
 [percent-encoded](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent)
 text you want to link to.
 Taking up the example from above where I wanted to place a deep link to the
 *ECMAScript Modules in Web Workers* heading, the URL in this case would be
-[`https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript%20Modules%20in%20Web%20Workers`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent).
+<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript%20Modules%20in%20Web%20Workers"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#:~:text=ECMAScript%20Modules%20in%20Web%20Workers</strong></code></a>.
 If you click it, a supporting browser like Chrome will scroll the text fragment into view
 and highlight it.
 
 <figure class="w-figure">
   <img src="syntax-simple.png" alt="" class="w-screenshot">
-  <figcaption class="w-figcaption">Text fragment scrolled into view and highlighted..</figcaption>
+  <figcaption class="w-figcaption">Text fragment scrolled into view and highlighted.</figcaption>
 </figure>
+
+### The `textStart,textEnd` syntax
+
+Now what if I wanted to link to the entire section titled with *ECMAScript Modules in Web Workers*?
+Percent-encoding the entire text of the section would make the resulting URL impracticably long.
+Luckily there is a better way. Rather than the entire text, you can frame the desired text
+by making use of the `textStart,textEnd` syntax.
+Therefore you specify a couple of percent-encoded words at the beginning of the desired text,
+and a couple of percent-encoded words at the end of the desired text.
+In the example, it would look like this:
+<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript%20Modules%20in%20Web%20Workers,ES%20Modules%20in%20Web%20Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#:~:text=ECMAScript%20Modules%20in%20Web%20Workers,ES%20Modules%20in%20Web%20Workers.</strong></code></a>.
+For `textStart`, we have `ECMAScript%20Modules%20in%20Web%20Workers`, then a comma `,`
+followed by `ES%20Modules%20in%20Web%20Workers.` as `textEnd`.
+When you click through, on a supporting browser like Chrome, the whole section is highlighted
+and scrolled into view.
+
+<figure class="w-figure">
+  <img src="syntax-end.png" alt="" class="w-screenshot">
+  <figcaption class="w-figcaption">Text fragment scrolled into view and highlighted.</figcaption>
+</figure>
+
+Now you may wonder about my choice of `textStart` and `textEnd`.
+Actually, the slightly shorter URL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript%20Modules,Web%20Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#:~:text=ECMAScript%20Modules,Web%20Workers.</strong></code></a>
+would have worked, too.
+Compare `textStart` and `textEnd` with the previous values.
+
+If I take it one step further, and now use only one word for both `textStart` and `textEnd`,
+you can see that I am in trouble.
+The URL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript,Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#:~:text=ECMAScript,Workers.</strong></code></a>
+is even shorter now, but the highlighted text fragment is no longer the original one.
+The highlighting stops at the first occurrence of the word `Workers.`—yuck.
+
+<figure class="w-figure">
+  <img src="syntax-end-wrong.png" alt="" class="w-screenshot">
+  <figcaption class="w-figcaption">Non-intended text fragment scrolled into view and highlighted.</figcaption>
+</figure>
+
