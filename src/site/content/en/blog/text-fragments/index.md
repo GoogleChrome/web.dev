@@ -161,10 +161,48 @@ If I take it one step further, and now use only one word for both `textStart` an
 you can see that I am in trouble.
 The URL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript,Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#:~:text=ECMAScript,Workers.</strong></code></a>
 is even shorter now, but the highlighted text fragment is no longer the original one.
-The highlighting stops at the first occurrence of the word `Workers.`—yuck.
+The highlighting stops at the first occurrence of the word `Workers.`, which is correct,
+but not what I intended to highlight.
+The problem is that the text fragment is not uniquely identified
+with the current one-word `textStart` and `textEnd` values.
 
 <figure class="w-figure">
   <img src="syntax-end-wrong.png" alt="" class="w-screenshot">
   <figcaption class="w-figcaption">Non-intended text fragment scrolled into view and highlighted.</figcaption>
 </figure>
+
+### The `prefix-,textStart,textEnd,-suffix` syntax
+
+Using long enough values for `textStart` and `textEnd` is one solution to obtain a unique link.
+In some situations, however, this is not possible.
+Why did I choose the Chrome&nbsp;80 release blog post as my example?
+The answer is that in this release, Text Fragments were introduced.
+
+<figure class="w-figure">
+  <img src="text-fragments.png" alt="Blog post text: Text URL Fragments.
+    Users or authors can now link to a specific portion of a page
+    using a text fragment provided in a URL.
+    When the page is loaded, the browser highlights the text and scrolls the fragment into view.
+    For example, the URL below loads a wiki page for 'Cat'
+    and scrolls to the content listed in the `text` parameter." class="w-screenshot">
+  <figcaption class="w-figcaption">Text Fragments announcement blog post excerpt.</figcaption>
+</figure>
+
+If I wanted to link to the word `text` that is written in a green code font,
+I would set `textStart` to `text`.
+Since the text fragment is only one word, there cannot be a `textEnd`,
+but the blog post excerpt alone contains four times the word `text`.
+What now?
+The URL
+<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=text"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#:~:text=text</strong></code></a>
+matches at the first occurrence of the word `Text`.
+Note how the matching is case-insensitive.
+
+<figure class="w-figure">
+  <img src="first-text.png" alt="" class="w-screenshot">
+  <figcaption class="w-figcaption">Text Fragment matching at the first occurrence of <code>Text</code>.</figcaption>
+</figure>
+
+Luckily there is a solution.
+In cases like this, I can specify a `prefix-` and a `-suffix`.
 
