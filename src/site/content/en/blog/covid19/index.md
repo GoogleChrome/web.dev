@@ -263,12 +263,15 @@ performance impact of reduced bandwidth.
   is not 100% but the feature can be treated as a progressive enhancement. In
   other words, if a certain browser doesn't support native lazy-loading, the
   image should load as it normally does.
-* Consider disabling A/B testing and personalization. These are unprecedented
-  times, and data gathered during this time might not be useful depending on the
-  use case. A/B testing and personalization tools often require calls to external
-  libraries that block the main thread and therefore slow down page load time.
-  See [Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path)
-  to conceptually understand why freeing up the main thread is so important.
+* Check if your site has any **non-critical** A/B testing or personalization
+  scripts that can be loaded more asynchronously or disabled. A/B testing and
+  personalization scripts usually can't be loaded *completely* asynchronously
+  because they need to run before the page content loads, but there may be some
+  opportunity to load parts of the scripts more asynchronously. See [Critical
+  Rendering Path][CRP] to understand the fundamental tradeoff between
+  synchronous scripts (also known as render-blocking scripts) in general and
+  page load time, and then decide whether you need to prioritize the A/B testing
+  and personalization over page load time, or vice versa.
 * Third-party code constitutes [around half of all
   requests](https://almanac.httparchive.org/en/2019/third-parties) for most
   websites. Consider
@@ -288,3 +291,5 @@ See [Fast load times](/fast/) for more guidance.
 [Hero image](https://unsplash.com/photos/Q1p7bh3SHj8) by 
 [NASA](https://unsplash.com/@nasa) on
 [Unsplash](https://unsplash.com/s/photos/earth)
+
+[CRP]: https://developers.google.com/web/fundamentals/performance/critical-rendering-path
