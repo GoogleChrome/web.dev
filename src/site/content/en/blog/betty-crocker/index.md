@@ -70,7 +70,7 @@ This is when they learned about
 ![Doughy fingers](doughy-fingers.jpg)
 
 The Wake Lock API provides a way to prevent the device
-from dimming and locking the screen or going to sleep.
+from dimming or locking the screen.
 This capability enables new experiences that, until now, required a native app.
 The Wake Lock API reduces the need for hacky and potentially power-hungry workarounds.
 
