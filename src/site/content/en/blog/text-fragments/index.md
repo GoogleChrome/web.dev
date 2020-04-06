@@ -55,7 +55,7 @@ of the URL of the page.
 Assuming I wanted to deep link to the *Give us feedback in our
 [Product Forums](http://support.google.com/bin/static.py?hl=en&page=portal_groups.cs)*
 box in the aside, I could do so by handcrafting the URL
-`https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1`.
+[`https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1`](https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1).
 As you can see in the Elements panel of the Developer Tools, the element in question
 has an `id` attribute with the value `HTML1`.
 
@@ -114,7 +114,7 @@ and/or bring it to the user's attention.
 
 In its simplest form, the syntax of Text Fragments is as follows:
 
-```
+```bash
 #:~:text=Some%20Text
 ```
 
