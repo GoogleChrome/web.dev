@@ -134,7 +134,7 @@ everyone.
   audit](https://developers.google.com/web/tools/lighthouse#devtools) to catch
   common accessibility issues. The report also provides a list of manual checks
   that you can perform to improve the operability of your site. Note that an
-  Accessibility score of 100 does not mean that your site is accessible. There
+  Accessibility score of 100 does not guarantee that your site is accessible. There
   are many important issues that Lighthouse can't test for in an automated
   fashion so it's still important to do manual reviews. Other automated auditing
   tools include the [WAVE API](https://wave.webaim.org/api/) and the [AXE
