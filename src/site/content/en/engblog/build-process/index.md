@@ -8,6 +8,7 @@ description: |
   In this first post from the web.dev engineering team, learn about how we build the site—including
   our use of Eleventy and Web Components.
 tags:
+- post # to show up in blog
 - engineering-blog
 ---
 
@@ -91,10 +92,10 @@ Like most teams building static content sites, we started small and added shortc
 Most of these just generate further HTML (including our custom web components).
 Here's an example:
 
-```md
-{% Aside %}
+```text
+{% raw %}&#123;% Aside %&#125;
 [See how Asides work in the web.dev codebase](https://web.dev/handbook/web-dev-components/#asides)
-{% endAside %}
+&#123;% endAside %&#125;{% endraw %}
 ```
 
 It will end up looking like this:
@@ -107,10 +108,7 @@ But it's actually creating HTML that looks like:
 
 ```html
 <div class="w-aside w-aside--note">
-<p>See the
-<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#Clicking_and_focus">MDN reference for <code>&lt;button&gt;</code> focus behavior</a>
-for a summary of which browsers and operating systems will apply focus to
-<code>&lt;button&gt;</code> elements.</p>
+<p><a href="https://web.dev/handbook/web-dev-components/#asides">See how Asides work in the web.dev codebase</a></p>
 </div>
 ```
 
@@ -158,7 +156,10 @@ Importantly, these elements are just part of [our regular Markdown source code](
 Our Web Components most commonly utilize the [Container Component](https://flaviocopes.com/react-presentational-vs-container-components/) model, made popular by React, although this model [is now a bit passé](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0).
 Each `-container` element connects to our global state (provided by [unistore](https://github.com/developit/unistore)), and then renders a visual element, which in turn goes on to render actual DOM nodes that have styling or other built-in functionality.
 
-![A diagram that shows the relationship between global state and HTML elements that use it.](./state-and-elements.png)
+<figure class="w-figure">
+  <img src="./state-and-elements.png" alt="A diagram that shows the relationship between global state and HTML elements that use it.">
+  <figcaption class="w-figcaption">Global state and a Web Component</figcaption>
+</figure>
 
 Our most complex Web Components exist to visualize global actions and state.
 For example, web.dev lets you audit your favourite site and then navigate away from the Measure page.

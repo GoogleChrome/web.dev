@@ -1096,7 +1096,7 @@ const contributors = {
     github: "samthor",
     glitch: "samthor",
     description: {
-      en: "¯‍\‍_‍(‍ツ‍)‍_‍/‍¯",
+      en: "¯‍\\‍_‍(‍ツ‍)‍_‍/‍¯",
     },
   },
   majidvp: {
