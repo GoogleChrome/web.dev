@@ -328,7 +328,7 @@ BettyCrocker.com reported the following metrics:
 
 ## Conclusions
 
-Betty Crocker have seen fantastic results with the Wake Lock API.
+Betty Crocker has seen fantastic results using the Wake Lock API.
 You can test the feature yourself by searching for your favorite recipe on any of their sites
 ([BettyCrocker](https://www.bettycrocker.com/),
 [Pillsbury](https://www.pillsbury.com/), or [Tablespoon](https://www.tablespoon.com/))
