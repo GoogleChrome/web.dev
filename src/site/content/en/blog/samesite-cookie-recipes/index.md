@@ -46,8 +46,8 @@ so that:
 
 This became the [default behavior in Chrome
 80](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html),
-released in February 2020. If you have not already done so, you should stop
-providing cookies intended for cross-site usage.
+released in February 2020. If you have not already done so, you need to
+update the attributes for your third-party cookies or they will be blocked.
 
 ## Cross-browser support
 
