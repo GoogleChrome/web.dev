@@ -146,7 +146,7 @@ form is submitted without the user needing to press **Continue**.
 The whole process is diagrammed in the image below.
 
 <figure class="w-figure">
-  <img src="./diagram.png" width="486" height="499" />
+  <img src="./diagram.png" width="494" height="391" />
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     Web OTP API diagram
   </figcaption>
