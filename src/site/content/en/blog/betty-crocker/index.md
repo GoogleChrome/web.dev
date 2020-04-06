@@ -312,9 +312,9 @@ export default {
 
 ### Results
 
-The Vue.js component has been deployed on the three sites and delivered great results.
-The measuring period lasted from December 10th, 2019 to January 10th, 2020
-and covered the site BettyCrocker.com.
+The Vue.js component has been deployed on all three sites and delivered great results.
+During the period from December 10th, 2019 to January 10th, 2020,
+BettyCrocker.com reported the following metrics:
 
 - Of all Betty Crocker users with a browser compatible with the Wake Lock API,
   3.5% of them enabled the feature (~127,000 users).
