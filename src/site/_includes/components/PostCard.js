@@ -160,7 +160,12 @@ module.exports = ({post, featured = false}) => {
           class="w-post-card__cover ${thumbnail &&
             `w-post-card__cover--with-image`}"
         >
-          <a class="w-post-card__link" tabindex="-1" href="${url}">
+          <a
+            class="w-post-card__link"
+            tabindex="-1"
+            href="${url}"
+            aria-hidden="true"
+          >
             ${thumbnail && renderThumbnail(url, thumbnail, alt)}
           </a>
         </div>
