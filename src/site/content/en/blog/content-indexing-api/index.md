@@ -5,7 +5,7 @@ authors:
   - jeffposnick
 description: Your PWA might cache articles and media files, but how will your users know that your pages work while offline? The Content Indexing API is one answer to this question currently in an origin trial. Once the index is populated with content from your PWA, as well as any other installed PWAs, it will show up in dedicated areas of supported browsers.
 date: 2019-12-12
-updated: 2019-12-12
+updated: 2020-03-31
 tags:
   - post
   - capabilities
@@ -98,7 +98,7 @@ cached pages.
 | 1. Create explainer                        | [Complete](https://github.com/rayankans/content-index)        |
 | 2. Create initial draft of specification   | [In progress](https://rayankans.github.io/content-index/spec/)          |
 | 3. Gather feedback & iterate on design     | In progress          |
-| **4. Origin trial**                        | **Started in Chrome 80** <br> Expected to run through Chrome 82 |
+| **4. Origin trial**                        | **Started in Chrome 80** <br> Expected to run through Chrome 83 |
 | 5. Launch                                  | Not started                  |
 
 </div>
