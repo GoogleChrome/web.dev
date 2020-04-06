@@ -317,14 +317,13 @@ During the period from December 10th, 2019 to January 10th, 2020,
 BettyCrocker.com reported the following metrics:
 
 - Of all Betty Crocker users with a browser compatible with the Wake Lock API,
-  3.5% of them enabled the feature (~127,000 users).
-- The session duration for users who enabled the wake lock was 4min 18sec,
-  versus 1min 38sec for users who did not.
-- The bounce rate for users who enabled the wake lock was 21.85%,
-  versus 56.51% for users who did not.
-- During a one month time period, 27,563 users enabled the wake lock multiple times.
-- After enabling the wake lock, 1.43% of users intended to purchase ingredients
-  (measured by coupon code clicks), versus 0.37% for all users.
+  3.5% of them enabled the feature immediately, making it a top-5 action.
+- The session duration for users who enabled the wake lock was 3.1× longer
+  than for users who did not.
+- The bounce rate for users who enabled the wake lock was 50% lower
+  for those using the wake lock feature.
+- Coupon clicks (one indicator of purchase intent) was about 300% higher
+  for wake lock users compared to all users.
 
 ## Conclusions
 
