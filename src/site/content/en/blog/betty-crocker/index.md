@@ -65,8 +65,7 @@ Betty Crocker asked themselves how they could port the killer feature of their n
 over to the web app.
 This is when they learned about
 [Project Fugu](https://developers.google.com/web/updates/capabilities) and the
-[Wake Lock API](https://web.dev/wakelock/)
-that is being developed in the context of the project.
+[Wake Lock API](https://web.dev/wakelock/).
 
 ![Doughy fingers](doughy-fingers.jpg)
 
