@@ -1,4 +1,6 @@
-module.exports = [
+const site = require("./site");
+
+const podcasts = [
   {
     title: "HTTP 203",
     url: "https://developers.google.com/web/shows/http203/podcast",
@@ -31,4 +33,13 @@ module.exports = [
       and more.`,
     thumbnail: "/images/podcasts/state-of-the-web.jpg",
   },
-];
+].map((podcast) => {
+  // If we're in a production environment,
+  // use the image CDN for our show thumbnails.
+  if (process.env.ELEVENTY_ENV === "prod") {
+    podcast.thumbnail = new URL(podcast.thumbnail, site.imageCdn);
+  }
+  return podcast;
+});
+
+module.exports = podcasts;
