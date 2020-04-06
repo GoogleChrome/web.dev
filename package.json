@@ -114,7 +114,7 @@
     "sass": "^1.22.7",
     "sass-lint": "^1.12.1",
     "slugify": "^1.3.4",
-    "unified-lint-rule": "^1.0.4",
+    "unified-lint-rule": "^1.0.5",
     "unist-util-map": "^1.0.5",
     "unist-util-to-list-of-char": "^0.1.2",
     "unist-util-visit": "^1.4.1",
