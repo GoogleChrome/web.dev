@@ -60,7 +60,7 @@ The native apps did have one *killer feature*, though, that its users loved:
 ## The Wake Lock API
 
 When cooking with a device, there is nothing more frustrating
-than having to touch the screen with messy hands or even your nose when the screen locks up.
+than having to touch the screen with messy hands or even your nose when the screen turns off.
 Betty Crocker asked themselves how they could port the killer feature of their native app
 over to the web app.
 This is when they learned about
