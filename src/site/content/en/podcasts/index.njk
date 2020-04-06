@@ -2,11 +2,13 @@
 layout: layout
 title: Podcasts
 description: |
-  web.dev is the ultimate resource for developers of all backgrounds to learn,
-  create, and solve on the web.
-date: 2018-11-05
+  Level up your web development skills by listening to podcasts from Google
+  Developers. Our podcasts highlight the latest in modern web development with
+  pro-tips, insights, and techniques to help you learn what's new and how to
+  build with best practices in mind.
+date: 2020-04-06
 ---
-<div class="about-landing-page">
+<div class="podcast-landing-page">
   <header class="w-masthead-about">
     <div class="w-masthead-about__container">
       <div class="w-masthead-about__left">
@@ -29,243 +31,36 @@ date: 2018-11-05
   <section>
     <div class="w-layout-container w-pb--non">
       <header class="w-text--center">
-        <h2 class="w-headline--two-faded">
+        <h2 class="w-headline--two-faded w-mt--non">
           Featured podcasts
         </h2>
-        <p>
-          Which is your favorite? I know mine.
-        </p>
       </header>
 
       <div class="w-grid w-pb--std">
         <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--two" role="list">
-          {# {% for show in podcasts.shows %}
-            {% PathCard show, lang %}
-          {% endfor %} #}
-          <a href="https://developers.google.com/web/shows/http203/podcast" class="w-card" role="listitem">
-            <div class="w-path-card">
-              <div class="w-path-card__cover">
-                <img
-                  class="w-path-card__cover-image--fill"
-                  src="https://developers.google.com/web/shows/http203/podcast/images/surma-and-jake-2.jpg"
-                  alt=""
-                  loading="lazy"
-                  width="100%"
-                  height="240"
-                />
+          {% for podcast in podcasts %}
+            <a href="{{ podcast.url }}" class="w-card" role="listitem">
+              <div class="w-path-card">
+                <div class="w-path-card__cover">
+                  <img
+                    class="w-path-card__cover-image--fill"
+                    src="{{ podcast.thumbnail }}"
+                    alt=""
+                    loading="lazy"
+                    width="100%"
+                    height="240"
+                  />
+                </div>
+                <div class="w-path-card__desc">
+                  <h2 class="w-path-card__headline">{{ podcast.title }}</h2>
+                  <p class="w-path-card__subhead">
+                    {{ podcast.description }}
+                  </p>
+                </div>
               </div>
-              <div class="w-path-card__desc">
-                <h2 class="w-path-card__headline">HTTP 203</h2>
-                <p class="w-path-card__subhead">
-                  Surma and Jake talk about whatever’s going on in the world of web development.
-                </p>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://anchor.fm/mustafa-kurtuldu" class="w-card" role="listitem">
-            <div class="w-path-card">
-              <div class="w-path-card__cover">
-                <img
-                  class="w-path-card__cover-image--fill"
-                  src="designer-vs-developer.jpg"
-                  alt="Mustafa prepared and smiling at a table, waiting for a guest to arrive."
-                  loading="lazy"
-                  width="100%"
-                  height="240"
-                />
-              </div>
-              <div class="w-path-card__desc">
-                <h2 class="w-path-card__headline">Designer vs Developer</h2>
-                <p class="w-path-card__subhead">
-                  Mustafa discusses with developers the relationship between design and development.
-                </p>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://pod.link/thecsspodcast" class="w-card" role="listitem">
-            <div class="w-path-card">
-              <div class="w-path-card__cover">
-                <img
-                  class="w-path-card__cover-image--fill"
-                  src="css-podcast.jpg"
-                  alt=""
-                  loading="lazy"
-                  width="100%"
-                  height="240"
-                />
-              </div>
-              <div class="w-path-card__desc">
-                <h2 class="w-path-card__headline">The CSS Podcast</h2>
-                <p class="w-path-card__subhead">
-                  Una and Adam gleefully breakdown complex aspects of CSS into digestible episodes covering everything from accessibility to z-index.
-                </p>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ" class="w-card" role="listitem">
-            <div class="w-path-card">
-              <div class="w-path-card__cover">
-                <img
-                  class="w-path-card__cover-image--fill"
-                  src="https://i.ytimg.com/vi/zO9U88i2S1M/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLACPvK6PqG25U1z4wVJ2qE2d_ClIQ"
-                  alt=""
-                  loading="lazy"
-                  width="100%"
-                  height="240"
-                />
-              </div>
-              <div class="w-path-card__desc">
-                <h2 class="w-path-card__headline">State of the Web</h2>
-                <p class="w-path-card__subhead">
-                  The web and how we build it is rapidly changing. In this series, we'll be using big data to understand the macro trends that are pushing the web forward in the areas of performance, security, publishing, and more.
-                </p>
-              </div>
-            </div>
-          </a>
-
+            </a>
+          {% endfor %}
         </div>
-
     </div>
-
   </section>
-
-  {#  #}
-
-  {# <div class="w-about-principles">
-    <div class="w-layout-container">
-      <h2 class="w-headline w-headline--two w-font-weight--medium">
-        What the web can be
-      </h2>
-      <p>
-        You know your users, and you have solutions for their needs. But, to win
-        your users' loyalty, you also need to give them the best possible
-        experience with your site.
-      </p>
-      <p>
-        Make sure your audience can:
-      </p>
-      <ul class="w-unstyled-list w-grid-list">
-        <li class="w-grid-list__item">
-          Find your site
-        </li>
-        <li class="w-grid-list__item">
-          Open your site from any device
-        </li>
-        <li class="w-grid-list__item">
-          Load your site on a poor network connection
-        </li>
-        <li class="w-grid-list__item">
-          Use your site with assistive technology, like a screen reader
-        </li>
-      </ul>
-      <p>
-        While these principles seem basic, there's a lot of room for improvement
-        across the web. With web.dev, you can see how your website is
-        performing, and learn tips to improve your user experience.
-      </p>
-      <h2 class="w-headline w-headline--two w-font-weight--medium">
-        Reaching users on the mobile web
-      </h2>
-      <div class="w-about-video-wrapper">
-        {% YouTube '3bKMnYJzrqI' %}
-      </div>
-      <p>
-        At first, Pinterest's mobile site pushed all their users to
-        download their app. Then, they invested in building a modern web
-        experience.
-      </p>
-      <p>
-        With a new focus on speed and performance, Pinterest's mobile
-        site became more engaging to their users. Now, the mobile web is
-        their top channel where new users sign up to join Pinterest.
-      </p>
-    </div>
-  </div>
-
-  <div class="w-layout-container">
-    <h2 class="w-headline w-headline--two w-font-weight--medium w-text--center">
-      Your tools for success
-    </h2>
-    <p class="w-text--center">
-      To get started, all you need is a basic understanding of HTML, CSS, and
-      JavaScript.
-    </p>
-    <div class="w-about-boxes">
-      <div class="w-about-box">
-        <h3 class="w-about-box__headline">
-          Measure
-        </h3>
-        <p class="w-about-box__copy">
-          Audit your site with Lighthouse to get guidance you can use to improve:
-        </p>
-        <ul>
-          <li>
-            Performance
-          </li>
-          <li>
-            Progressive Web App status
-          </li>
-          <li>
-            Accessibility
-          </li>
-          <li>
-            Use of best practices
-          </li>
-          <li>
-            Search engine optimization
-          </li>
-        </ul>
-        <div class="w-text--center">
-          <a
-            class="w-button gc-analytics-event"
-            data-category="web.dev"
-            data-label="about, explore measure"
-            data-action="click"
-            href="/measure"
-          >
-            Test my site
-          </a>
-        </div>
-      </div>
-      <div class="w-about-box">
-        <h3 class="w-about-box__headline">Learn</h3>
-        <p class="w-about-box__copy">
-          Practice new skills for the modern web and expand your
-          knowledge on:
-        </p>
-        <ul>
-          <li>
-            Load speed
-          </li>
-          <li>
-            Network reliability
-          </li>
-          <li>
-            Data security
-          </li>
-          <li>
-            Site discoverability
-          </li>
-          <li>
-            Accessibility for all users
-          </li>
-        </ul>
-        <div class="w-text--center">
-          <a
-            class="w-button gc-analytics-event"
-            data-category="web.dev"
-            data-label="about, explore learn"
-            data-action="click"
-            href="/learn"
-          >
-            Explore topics
-          </a>
-        </div>
-      </div>
-    </div>
-  </div> #}
-
 </div>
