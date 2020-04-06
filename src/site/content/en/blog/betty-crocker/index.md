@@ -33,8 +33,8 @@ Today, the site receives more than 12&nbsp;million visitors per month.
 Launched to [much fanfare](https://consumergoods.com/betty-crocker-launches-cookbook-app) in 2014,
 Betty Crocker recently took their native apps out of the Apple App Store and the Google Play Store
 after it had been mostly neglected and deprioritized.
-For a long time, the Betty Crocker team have preferred adding features to the mobile site
-instead of to the native apps.
+For a long time, the Betty Crocker team has preferred adding new features to the mobile site
+instead of the native apps.
 The technical platform the native apps were created on was outdated,
 and the business did not have the resources
 to support updating and maintaining the apps moving forward.
