@@ -263,7 +263,7 @@ performance impact of reduced bandwidth.
   is not 100% but the feature can be treated as a progressive enhancement. In
   other words, if a certain browser doesn't support native lazy-loading, the
   image should load as it normally does.
-* Check if your site has any **non-critical** A/B testing or personalization
+* Check if your site has any A/B testing or personalization
   scripts that can be loaded more asynchronously or disabled. A/B testing and
   personalization scripts usually can't be loaded *completely* asynchronously
   because they need to run before the page content loads, but there may be some
