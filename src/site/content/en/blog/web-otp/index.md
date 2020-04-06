@@ -265,7 +265,7 @@ if ('customElements' in window && 'OTPCredential' in window) {
             otp: {transport:['sms']}, abort: this.signal
           });
           this.value = content.code;
-          this.dispatchEvent(new Event('change'));
+          this.dispatchEvent(new Event('autocomplete'));
         } catch (e) {
           console.error(e);
         }
@@ -353,7 +353,7 @@ a few significant differences compared to the SMS Receiver API.
 
 Chromium and WebKit at least agreed on the SMS text message format. Find WebKit's
 documentation here:
-https://github.com/WebKit/explainers/tree/master/sms-one-time-code-format
+[https://github.com/WebKit/explainers/tree/master/sms-one-time-code-format](https://github.com/WebKit/explainers/tree/master/sms-one-time-code-format)
 
 
 ### Is it safe to use SMS as a way to authenticate?
