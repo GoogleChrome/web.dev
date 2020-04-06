@@ -265,14 +265,14 @@ performance impact of reduced bandwidth.
   other words, if a certain browser doesn't support native lazy-loading, the
   image should load as it normally does.
 * Check if your site has any A/B testing or personalization
-  scripts that can be loaded more asynchronously or disabled. A/B testing and
-  personalization scripts usually can't be loaded *completely* asynchronously
+  scripts that can be loaded more asynchronously or non-critical functionality that can be disabled. 
+  A/B testing and personalization scripts usually can't be loaded *completely* asynchronously
   because they need to run before the page content loads, but there may be some
   opportunity to load parts of the scripts more asynchronously. See [Critical
   Rendering Path][crp] to understand the fundamental tradeoff between
   synchronous scripts (also known as render-blocking scripts) in general and
-  page load time, and then decide whether you need to prioritize the A/B testing
-  and personalization over page load time, or vice versa.
+  page load time, and then decide whether you need to prioritize the render-blocking
+  scripts over page load time, or vice versa.
 * Third-party code constitutes [around half of all
   requests](https://almanac.httparchive.org/en/2019/third-parties) for most
   websites. Consider
