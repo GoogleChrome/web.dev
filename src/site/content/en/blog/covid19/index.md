@@ -268,7 +268,7 @@ performance impact of reduced bandwidth.
   personalization scripts usually can't be loaded *completely* asynchronously
   because they need to run before the page content loads, but there may be some
   opportunity to load parts of the scripts more asynchronously. See [Critical
-  Rendering Path][CRP] to understand the fundamental tradeoff between
+  Rendering Path][crp] to understand the fundamental tradeoff between
   synchronous scripts (also known as render-blocking scripts) in general and
   page load time, and then decide whether you need to prioritize the A/B testing
   and personalization over page load time, or vice versa.
@@ -292,4 +292,4 @@ See [Fast load times](/fast/) for more guidance.
 [NASA](https://unsplash.com/@nasa) on
 [Unsplash](https://unsplash.com/s/photos/earth)
 
-[CRP]: https://developers.google.com/web/fundamentals/performance/critical-rendering-path
+[crp]: https://developers.google.com/web/fundamentals/performance/critical-rendering-path
