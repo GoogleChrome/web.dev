@@ -15,7 +15,10 @@ module.exports = {
     topics: [
       {
         title: "Understand security",
-        pathItems: ["security-not-scary", "security-attacks"],
+        pathItems: [
+          "security-not-scary",
+          "security-attacks",
+        "why-https-matters"],
       },
       {
         title: "How browsers mitigate against attacks",
