@@ -7,6 +7,8 @@ authors:
 description: |
   In this first post from the web.dev engineering team, learn about how we build the site—including
   our use of Eleventy and Web Components.
+hero: hero.jpg
+alt: Many train lines and associated infrastructure.
 tags:
 - post # to show up in blog
 - engineering-blog
