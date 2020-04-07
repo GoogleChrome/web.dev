@@ -178,9 +178,7 @@ export default {
       if ('wakeLock' in navigator && 'request' in navigator.wakeLock) {
         this.wakeLockComponent = 'wakeLockControl';
       } else {
-        if (window.GeneralMills.debugMode) {
-          console.log('Browser not supported');
-        }
+        console.log('Browser not supported');
       }
     },
   },
@@ -243,14 +241,8 @@ export default {
             debounce(this.$_handleAbortTimer, scrollDebounceMs),
           );
           this.$_raiseAnalyticsEvent('Wake Lock Toggle Enabled');
-          if (window.GeneralMills.debugMode) {
-            console.log('Wake Lock Active');
-          }
         } catch (e) {
           this.isChecked = false;
-          if (window.GeneralMills.debugMode) {
-            console.log(`Wake Lock Request Error: ${e.name}, ${e.message}`);
-          }
         }
       },
       $_releaseWakeLock: function() {
@@ -268,13 +260,8 @@ export default {
             'scroll',
             debounce(this.$_handleAbortTimer, scrollDebounceMs),
           );
-          if (window.GeneralMills.debugMode) {
-            console.log('Wake Lock Released');
-          }
         } catch (e) {
-          if (window.GeneralMills.debugMode) {
-            console.log(`Wake Lock Release Error: ${e.name}, ${e.message}`);
-          }
+          console.log(`Wake Lock Release Error: ${e.name}, ${e.message}`);
         }
       },
       $_handleAbortTimer: function() {
@@ -303,7 +290,7 @@ export default {
           EventType: eventType,
           Position: window.location.pathname || '',
         };
-        GeneralMills.Analytics && GeneralMills.Analytics.raiseEvent(eventParams);
+        Analytics.raiseEvent(eventParams);
       },
     },
   };
