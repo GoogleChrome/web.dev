@@ -13,17 +13,35 @@ module.exports = {
     video capabilities to your web site.`,
     topics: [
       {
-        title: "Basic Playback",
+        title: "What is a media experience",
+        pathItems: ["media-experience"],
+      },
+      {
+        title: "File Basics",
         pathItems: [
-          "media-prep-101",
+          "application-basics",
+          "containers",
+          "streams",
+          "codecs",
+          "bitrate",
+          "resolution",
+          "encryption",
+          "application-cheetsheet",
+        ],
+      },
+      {
+        title: "Use markup correctly",
+        pathItems: [
           "the-video-tag",
           "the-audio-tag",
           "the-source-tag",
           "the-track-tag",
           "media-controls",
-          "preloading",
-          "server-basics",
         ],
+      },
+      {
+        title: "Serving",
+        pathItems: ["preloading", "server-basics"],
       },
     ],
   },
