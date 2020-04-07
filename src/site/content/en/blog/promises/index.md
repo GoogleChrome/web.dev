@@ -7,7 +7,6 @@ description: >
   Promises simplify deferred and asynchronous computations. A promise represents
   an operation that hasn't completed yet.
 date: 2013-12-16
-updated: 2020-04-06
 tags:
   - javascript
 authors:
@@ -1074,10 +1073,15 @@ the below for all browsers.
 
 ### Static Methods
 
-<table class="responsive methods">
+<div class="w-table-wrapper">
+<table>
+<thead>
 <tr>
-<th colspan="2">Method summaries</th>
+<th>Signature</th>
+<th>Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
   <td><code>Promise.resolve(promise);</code></td>
   <td>Returns promise (only if <code>promise.constructor == Promise</code>)</td>
@@ -1119,17 +1123,24 @@ the below for all browsers.
     soon as any item rejects, whichever happens first.
   </td>
 </tr>
+</tbody>
 </table>
+</div>
 
 Note: I'm unconvinced of `Promise.race`'s usefulness; I'd rather have an
 opposite of `Promise.all` that only rejects if all items reject.
 
 ### Constructor
 
-<table class="responsive constructors">
+<div class="w-table-wrapper">
+<table>
+<thead>
 <tr>
-<th colspan="2">Constructor</th>
+<th>Signature</th>
+<th>Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
   <td><code>new Promise(function(resolve, reject) {});</code></td>
   <td>
@@ -1153,14 +1164,21 @@ opposite of `Promise.all` that only rejects if all items reject.
     </p>
   </td>
 </tr>
+</tbody>
 </table>
+</div>
 
 ### Instance Methods
 
-<table class="responsive methods">
+<div class="w-table-wrapper">
+<table>
+<thead>
 <tr>
-<th colspan="2">Instance Methods</th>
+<th>Signature</th>
+<th>Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
   <td><code>promise.then(onFulfilled, onRejected)</code></td>
   <td>
@@ -1179,7 +1197,9 @@ opposite of `Promise.all` that only rejects if all items reject.
   <td><code>promise.catch(onRejected)</code></td>
   <td>Sugar for <code>promise.then(undefined, onRejected)</code></td>
 </tr>
+</tbody>
 </table>
+</div>
 
 <div class="clearfix"></div>
 
