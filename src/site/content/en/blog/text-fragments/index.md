@@ -235,3 +235,7 @@ must be percent-encoded to avoid being interpreted as part of the text directive
 #:~:text=[prefix-,]textStart[,textEnd][,-suffix]
 ```
 
+## Acknowledgements
+
+Hero image by [Greg Rakozy](https://unsplash.com/@grakozy) on
+[Unsplash](https://unsplash.com/photos/oMpAz-DN-9I).
