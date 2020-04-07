@@ -83,6 +83,7 @@ const stripLanguage = require(`./${filtersDir}/strip-language`);
 
 const transformsDir = 'src/site/_transforms';
 const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
+const responsiveImages = require(`./${transformsDir}/responsive-images`);
 
 const buildPartial = require('./src/site/_utils/build-partial');
 
@@ -230,6 +231,10 @@ module.exports = function(config) {
   // ----------------------------------------------------------------------------
   if (process.env.PERCY) {
     config.addTransform('disable-lazy-load', disableLazyLoad);
+  }
+
+  if (process.env.ELEVENTY_ENV === 'prod') {
+    config.addTransform('responsive-images', responsiveImages);
   }
 
   // https://www.11ty.io/docs/config/#data-deep-merge

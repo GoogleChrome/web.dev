@@ -56,4 +56,17 @@ describe("determineImagePath", function() {
       isLocal: true,
     });
   });
+
+  it("returns the correct src for pages without an outputPath", function() {
+    // If a page has permalink: false, then it will not have an outputPath
+    // but will still run through the transform and could throw if we don't
+    // handle it correctly.
+    const src = "./foo.jpg";
+    const outputPath = false;
+    const actual = determineImagePath(src, outputPath);
+    assert.deepStrictEqual(actual, {
+      src: "./foo.jpg",
+      isLocal: true,
+    });
+  });
 });

@@ -111,6 +111,15 @@ describe("responsive-images", function() {
       );
       assert.deepStrictEqual(actual, $expected.html());
     });
+
+    it("can handle pages with permalink: false", function() {
+      outputPath = false;
+      $body.append(`<img src="./foo.jpg">`);
+      const actual = responsiveImages($.html(), outputPath);
+      // prettier-ignore
+      $expected("body").append(`<img src="./foo.jpg">`);
+      assert.deepStrictEqual(actual, $expected.html());
+    });
   });
 
   describe("helpers", function() {

@@ -11,7 +11,10 @@ const path = require("path");
 function determineImagePath(src, outputPath) {
   const isLocal = !RegExp("^https?://").test(src);
 
-  if (!isLocal) {
+  // If an image has a protocol then we should just return the src as is.
+  // If the outputPath is false then it means the file has permalink set to
+  // false. In this scenario we should also just return the src as is.
+  if (!isLocal || !outputPath) {
     return {
       src,
       isLocal,
