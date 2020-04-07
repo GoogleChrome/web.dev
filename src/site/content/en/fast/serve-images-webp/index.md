@@ -86,8 +86,9 @@ save them in the `compressed_images` directory.
 const imagemin = require('imagemin');
 const imageminWebp = require('imagemin-webp');
 
-imagemin(['images/*'], 'compressed_images', {
-  use: [imageminWebp({quality: 50})]
+imagemin(['images/*'], {
+  destination: 'compressed_images',
+  plugins: [imageminWebp({quality: 50})]
 }).then(() => {
   console.log('Done!');
 });
