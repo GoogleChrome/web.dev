@@ -814,9 +814,11 @@ getJSON('story.json').then(function(story) {
 And there we have it, a fully async version of the sync version. But we can do
 better. At the moment our page is downloading like this:
 
-
-<figure>
-  <img src="promise1.gif">
+<figure class="w-figure">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/promises/promise1.webm" type="video/webm; codecs=vp8">
+    <source src="https://storage.googleapis.com/web-dev-assets/promises/promise1.mp4" type="video/mp4; codecs=h264">
+  </video>
 </figure>
 
 Browsers are pretty good at downloading multiple things at once, so we're losing
@@ -871,8 +873,11 @@ Depending on connection, this can be seconds faster than loading one-by-one,
 and it's less code than our first try. The chapters can download in whatever
 order, but they appear on screen in the right order.
 
-<figure>
-  <img src="promise2.gif">
+<figure class="w-figure">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/promises/promise2.webm" type="video/webm; codecs=vp8">
+    <source src="https://storage.googleapis.com/web-dev-assets/promises/promise2.mp4" type="video/mp4; codecs=h264">
+  </video>
 </figure>
 
 However, we can still improve perceived performance. When chapter one arrives we
@@ -923,9 +928,11 @@ getJSON('story.json').then(function(story) {
 And there we go, the best of both! It takes the same amount of time to deliver
 all the content, but the user gets the first bit of content sooner.
 
-
-<figure>
-  <img src="promise3.gif">
+<figure class="w-figure">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/promises/promise3.webm" type="video/webm; codecs=vp8">
+    <source src="https://storage.googleapis.com/web-dev-assets/promises/promise3.mp4" type="video/mp4; codecs=h264">
+  </video>
 </figure>
 
 In this trivial example, all of the chapters arrive around the same time, but
@@ -1002,7 +1009,7 @@ function spawn(generatorFunc) {
 ```
 
 … which I pretty much
-[lifted verbatim fromQ](https://github.com/kriskowal/q/blob/db9220d714b16b96a05e9a037fa44ce581715e41/q.js#L500),
+[lifted verbatim from Q](https://github.com/kriskowal/q/blob/db9220d714b16b96a05e9a037fa44ce581715e41/q.js#L500),
 but adapted for JavaScript promises. With this, we can take our final
 best-case chapter example, mix it with a load of new ES6 goodness, and turn
 it into:
