@@ -1,1 +1,3 @@
-require('./build-test');
+describe('Integration', function() {
+  require('./build-test');
+});
