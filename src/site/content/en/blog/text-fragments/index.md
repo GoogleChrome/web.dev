@@ -1,6 +1,6 @@
 ---
 title: |
-  Link to where no human has linked before: Text Fragments
+  Link to where no human has linked to before: Text Fragments
 subhead: |
   Text Fragments adds support for specifying a text snippet in the URL fragment.
   When navigating to a URL with such a text fragment, the browser can quickly emphasize
@@ -110,7 +110,7 @@ for specifying a text snippet in the URL fragment.
 When navigating to a URL with such a text fragment, the user agent can quickly emphasize
 and/or bring it to the user's attention.
 
-#### `textStart`
+### `textStart`
 
 In its simplest form, the syntax of Text Fragments is as follows:
 The hash symbol `#` followed by `:~:text=` and finally `textStart`, which represents the
@@ -133,7 +133,7 @@ and highlight it:
   <figcaption class="w-figcaption">Text fragment scrolled into view and highlighted.</figcaption>
 </figure>
 
-#### `textStart` and `textEnd`
+### `textStart` and `textEnd`
 
 Now what if I wanted to link to the entire *section* titled *ECMAScript Modules in Web Workers*?
 Percent-encoding the entire text of the section would make the resulting URL impracticably long.
@@ -174,7 +174,7 @@ with the current one-word `textStart` and `textEnd` values:
   <figcaption class="w-figcaption">Non-intended text fragment scrolled into view and highlighted.</figcaption>
 </figure>
 
-#### `prefix-` and `-suffix`
+### `prefix-` and `-suffix`
 
 Using long enough values for `textStart` and `textEnd` is one solution to obtain a unique link.
 In some situations, however, this is not possible.
