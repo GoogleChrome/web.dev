@@ -188,7 +188,8 @@ for aggregation and analysis. The simplest way is to sample periodically, for
 example every `M` minutes. That however introduces bias to data because the
 memory peaks may occur between the samples. The following example shows how to
 do unbiased memory measurements using a [Poisson process][poisson], which
-guarantees that samples are equally likely to occur at any point in time.
+guarantees that samples are equally likely to occur at any point in time
+([demo][demo], [source][demo-source]).
 
 First, define a function that schedules the next memory measurement using
 setTimeout with a randomized interval. The function should be called after
