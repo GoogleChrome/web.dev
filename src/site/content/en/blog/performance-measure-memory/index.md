@@ -7,6 +7,7 @@ description: >
 date: 2020-04-09
 authors:
   - ulan
+hero: hero.jpg
 tags:
   - post
   - memory
@@ -69,9 +70,7 @@ implement the new API without relying on garbage collection.
 Memory usage of a web page depends on the timing of events, user actions, and
 garbage collections. That is why the memory measurement API is intended for
 aggregating memory usage data from production. The results of individual calls
-are less useful.
-
-Example use cases:
+are less useful. Example use cases:
 
 * Regression detection during rollout of a new version of the web page to catch new memory leaks.
 * A/B testing a new feature to evaluate its memory impact and detect memory leaks.
@@ -328,6 +327,8 @@ Inführ, Hannes Payer, Kentaro Hara, Michael Lippautz for code reviews in
 Chrome. I also thank Per Parker, Philipp Weis, Olga Belomestnykh, Matthew
 Bolohan, and Neil Mckay for providing valuable user feedback that greatly
 improved the API.
+
+[Hero image](https://unsplash.com/photos/5tLfQGURzHM) by [Harrison Broadbent](https://unsplash.com/@hbtography) on [Unsplash](https://unsplash.com)
 
 [coop-coep]: https://docs.google.com/document/d/1zDlfvfTJ_9e8Jdc8ehuV4zMEu9ySMCiTGMS9y0GU92k/edit
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=1049093
