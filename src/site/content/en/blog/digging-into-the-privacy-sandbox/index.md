@@ -29,7 +29,7 @@ Websites use services from other companies to provide analytics, serve video and
 
 Most notably, ads are included in web pages via third-party JavaScript and iframes. Ad views, clicks and conversions are tracked via third-party cookies and scripts. That's how most of the web is funded.
 
-Relevant ads are [less annoying to users and more profitable for publishers](https://services.google.com/fh/files/misc/disabling_third-party_cookies_publisher_revenue.pdf) (the people running ad-supported websites). Third party ad targeting tools make ad space more valuable to advertisers (the people who purchase ad space on websites) which in turn increases revenue for ad-supported websites and enables content to get published.
+Relevant ads are [less annoying to users and more profitable for publishers](https://services.google.com/fh/files/misc/disabling_third-party_cookies_publisher_revenue.pdf) (the people running ad-supported websites). Third party ad targeting tools make ad space more valuable to advertisers (the people who purchase ad space on websites) which in turn increases revenue for ad-supported websites and enables content to get created and published.
 
 Reliable measurement and anti-fraud protection are also crucial. Advertisers and site owners must be able to distinguish between malicious bots and trustworthy humans. If advertisers can't reliably tell which ad clicks are from real humans, they spend less, so site publishers get less revenue. Many third party services currently use techniques such as [device fingerprinting](./#fingerprinting) to combat fraud.
 
@@ -39,9 +39,9 @@ The problem is… privacy.
 
 When you visit a website you may not be aware of the third parties involved and what they're doing with your data. Even publishers and web developers may not understand the entire third-party supply chain.
 
-Ad targeting, conversion measurement, and other use cases currently rely on establishing stable cross-site identity. Historically this has been done by using [third-party cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Third-party_cookies), but browsers have begun to restrict access to these cookies, and there's been an [increase  in the use of other mechanisms](https://github.com/bslassey/privacy-budget/issues/6) for cross-site user tracking—such as covert browser storage, device fingerprinting, and requests for personal information like email addresses.
+Ad targeting, conversion measurement, and other use cases currently rely on establishing stable cross-site identity. Historically this has been done by using [third-party cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Third-party_cookies), but browsers have begun to restrict access to these cookies. There's been an [increase  in the use of other mechanisms](https://github.com/bslassey/privacy-budget/issues/6) for cross-site user tracking, such as covert browser storage, device fingerprinting, and requests for personal information like email addresses.
 
-This is a dilemma for the web. How can we support legitimate third-party use cases without enabling users to be tracked across sites?
+This is a dilemma for the web. How can legitimate third-party use cases be supported without enabling users to be tracked across sites?
 
 In particular, how can websites fund content by enabling third parties to show ads and measure ad performance—but not allow individual users to be profiled? How can advertisers verify real users, and site owners check that users are trustworthy, without resorting to dark patterns such as device fingerprinting?
 
@@ -53,15 +53,15 @@ Users, developers, publishers, and advertisers shouldn't have to worry.
 
 The [Privacy Sandbox](https://www.blog.google/products/chrome/building-a-more-private-web/) introduces a set of privacy-preserving APIs to accomplish tasks that use tracking today.
 
-The Privacy Sandbox APIs require web browsers to take on a new role. Rather than working with limited tools and protections, the APIs enable the user's browser to act on their behalf to ensure that data is never shared without their knowledge and consent. The APIs enable use cases such as ad targeting and conversion measurement, but without revealing individual private and personal information.
+The Privacy Sandbox APIs require web browsers to take on a new role. Rather than working with limited tools and protections, the APIs enable the user's browser to act on the user's behalf to ensure that data is never shared without their knowledge and consent. The APIs enable use cases such as ad targeting and conversion measurement, but without revealing individual private and personal information.
 
 This is a shift in direction for browsers. The Privacy Sandbox authors' vision of the future has browsers providing specific tools to target specific use cases, while preserving user privacy.
 
-In order to successfully transition away from third-party cookies the Privacy Sandbox authors need your support. The [explainers](https://blog.chromium.org/2019/08/potential-uses-for-privacy-sandbox.html) need feedback from publishers, developers, advertisers, and advertising platforms, to suggest missing use cases and more-private ways to accomplish their goals.
+### The Privacy Sandbox proposals {: #proposals }
 
-### Privacy sandbox proposals {: #proposals }
+In order to successfully transition away from third-party cookies the Privacy Sandbox authors need your support. The [explainers](https://blog.chromium.org/2019/08/potential-uses-for-privacy-sandbox.html) need feedback from developers as well as publishers, advertisers, and advertising platforms, to suggest missing use cases and more-private ways to accomplish their goals.
 
-Please comment on the explainers by filing issues against each repository:
+You can comment on the explainers by filing issues against each repository:
 
 +   [Privacy Model for the Web](https://github.com/michaelkleber/privacy-model)<br>
 Establish the range of web activity across which the user's browser can let websites treat a person as having a single identity. Identify the ways in which information can move across identity boundaries without compromising that separation.
