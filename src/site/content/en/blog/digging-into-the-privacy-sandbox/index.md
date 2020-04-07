@@ -3,7 +3,7 @@ title: Digging into the Privacy Sandbox
 subhead: The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms. The proposals need your feedback.
 authors:
   - samdutton
-date: 2020-04-02
+date: 2020-04-07
 description: The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms. The proposals need your feedback!
 tags:
   - post
