@@ -1149,12 +1149,10 @@ opposite of `Promise.all` that only rejects if all items reject.
       Your promise will be fulfilled/rejected with the outcome of
       <code>thenable</code>
     </p>
-
     <p>
       <code>resolve(obj)</code><br>
       Your promise is fulfilled with <code>obj</code>
     </p>
-
     <p>
       <code>reject(obj)</code><br>
       Your promise is rejected with <code>obj</code>. For consistency and
