@@ -18,7 +18,8 @@ module.exports = {
         pathItems: [
           "security-not-scary",
           "security-attacks",
-        "why-https-matters"],
+          "why-https-matters"
+        ],
       },
       {
         title: "How browsers mitigate against attacks",
