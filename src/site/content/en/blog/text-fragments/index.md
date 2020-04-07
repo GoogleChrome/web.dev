@@ -227,13 +227,80 @@ they need to be separated from the `textStart` and the optional `textEnd` with a
 ### The full syntax
 
 The full syntax of Text Fragments is shown below (square brackets indicate an optional parameter).
-All parameters need to be percent-encoded.
-The dash `-`, ampersand `&`, and comma `,` characters in the various parameters
-must be percent-encoded to avoid being interpreted as part of the text directive syntax.
+The values for all parameters need to be percent-encoded.
+This is especially important for the dash `-`, ampersand `&`, and comma `,` characters,
+so they are not being interpreted as part of the text directive syntax.
 
 ```bash
 #:~:text=[prefix-,]textStart[,textEnd][,-suffix]
 ```
+
+Each of `prefix-`, `textStart`, `textEnd`, and `-suffix` will only match text within a single block.
+For example, `:~:text=The quick,lazy dog` will fail to match in the following example,
+because the starting string "The quick" does not appear within a single, uninterrupted block:
+
+```html
+  <div>The<div> </div>quick brown fox</div>
+  <div>jumped over the lazy dog</div>
+```
+
+It does, however, match in this example:
+
+```html
+  <div>The quick brown fox</div>
+  <div>jumped over the lazy dog</div>
+```
+
+### Mixing element and text fragments
+
+Traditional element fragments can be combined with text fragments.
+It is perfectly fine to have both in the same URL, for example,
+to provide a meaningful fallback for browsers that do not support Text Fragments yet.
+The URL
+<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1:~:text=Give%20us%20feedback%20in%20our%20Product%20Forums."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#HTML1:~:text=Give%20us%20feedback%20in%20our%20Product%20Forums.</strong></code></a>
+linking to the *Give us feedback in our
+[Product Forums](http://support.google.com/bin/static.py?hl=en&page=portal_groups.cs)* section
+contains both an element fragment (`HTML1`), as well as a text fragment
+(`text=Give%20us%20feedback%20in%20our%20Product%20Forums.`):
+
+<figure class="w-figure">
+  <img src="text-feedback.png" alt="" class="w-screenshot">
+  <figcaption class="w-figcaption">Linking with both element fragment and text fragment.</figcaption>
+</figure>
+
+### The fragment directive
+
+So far I only quickly glanced over one important addition without actually explaining it:
+the fragment directive `:~:`.
+To avoid compatibility issues with the usage of existing URL element fragments as shown above,
+the [Text Fragments specification](https://wicg.github.io/ScrollToTextFragment/)
+introduces the fragment directive.
+The fragment directive is a portion of the URL fragment delimited by the code sequence `:~:`.
+It is reserved for user agent instructions, such as `text=`,
+and is stripped from the URL during loading so that author scripts cannot directly interact with it.
+User agent instructions are also called *directives*.
+In the concrete case, `text=` is therefore called a *text directive*.
+
+The fragment directive is a mechanism for URLs to specify instructions
+meant for the browser rather than the document.
+It is meant to avoid direct interaction with author script,
+so that future user agent instructions can be added without fear
+of introducing breaking changes to existing content.
+One potential example could be translation hints.
+
+### Security
+
+Text fragment directives are invoked only on full (non-same-page) navigations
+that are the result of a
+[user activation](https://html.spec.whatwg.org/multipage/interaction.html#tracking-user-activation).
+Additionally, navigations originating from a different origin than the destination
+will require the navigation to take place in a
+[`noopener`](https://html.spec.whatwg.org/multipage/links.html#link-type-noopener) context,
+such that the destination page is known to be sufficiently isolated.
+
+### Privacy
+
+
 
 ## Acknowledgements
 
