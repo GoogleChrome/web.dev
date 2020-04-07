@@ -4,10 +4,14 @@ subhead: >
   Learn how to measure memory usage of your web page in production to detect regressions.
 description: >
   Learn how to measure memory usage of your web page in production to detect regressions.
-date: 2020-04-09
+date: 2020-04-07
 authors:
   - ulan
 hero: hero.jpg
+alt: >
+  Green RAM stick. Photo by Harrison Broadbent on Unsplash.
+origin_trial:
+    url: https://developers.chrome.com/origintrials/#/view_trial/1281274093986906113
 tags:
   - post
   - memory
