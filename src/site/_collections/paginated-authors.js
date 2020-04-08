@@ -16,7 +16,6 @@
 const fs = require("fs");
 const path = require("path");
 const contributors = require("../_data/contributors");
-const livePosts = require("../_filters/live-posts");
 const addPagination = require("../_utils/add-pagination");
 
 /**
@@ -27,21 +26,12 @@ const addPagination = require("../_utils/add-pagination");
  * paginate something already paginated... Pagination is effectively a loop, and we can't have an
  * embedded loop O^2.
  *
- * @param {any} collections Eleventy collections object
  * @return {Array<{ title: string, href: string, description: string, elements: Array<object>, index: number, pages: number }>} An array where each element is a page with some meta data and n authors for the page.
  */
-module.exports = (collections) => {
-  const authorsWithPosts = {};
-  const posts = collections.getFilteredByGlob("**/*.md").filter(livePosts);
-
-  posts.forEach((post) => {
-    const authors = post.data.authors || [];
-    authors.forEach((author) => (authorsWithPosts[author] = true));
-  });
-
-  const authors = Object.values(contributors)
-    .filter((contributor) => authorsWithPosts[contributor.key])
-    .sort((a, b) => a.title.localeCompare(b.title));
+module.exports = () => {
+  const authors = Object.values(contributors).sort((a, b) =>
+    a.title.localeCompare(b.title),
+  );
 
   const elements = authors.map((author) => {
     author.url = path.join("/en", author.href);

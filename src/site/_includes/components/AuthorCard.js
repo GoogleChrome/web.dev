@@ -24,7 +24,6 @@ const BaseCard = require("./BaseCard");
 class AuthorCard extends BaseCard {
   constructor(arg) {
     super({...arg, className: "w-card-author"});
-    super.renderThumbnail = this.renderThumbnail.bind(this);
   }
 
   renderThumbnail(url, img, alt) {
