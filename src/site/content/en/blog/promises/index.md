@@ -891,7 +891,8 @@ To do this, we fetch JSON for all our chapters at the same time, then create a
 sequence to add them to the document:
 
 ```js
-getJSON('story.json').then(function(story) {
+getJSON('story.json')
+.then(function(story) {
   addHtmlToPage(story.heading);
 
   // Map our array of chapter urls to
