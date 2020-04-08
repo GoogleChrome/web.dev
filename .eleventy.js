@@ -83,7 +83,7 @@ const stripLanguage = require(`./${filtersDir}/strip-language`);
 
 const transformsDir = 'src/site/_transforms';
 const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
-const responsiveImages = require(`./${transformsDir}/responsive-images`);
+const {responsiveImages} = require(`./${transformsDir}/responsive-images`);
 
 const buildPartial = require('./src/site/_utils/build-partial');
 

@@ -22,7 +22,7 @@
 const cheerio = require("cheerio");
 const {determineImagePath} = require("./helpers");
 
-module.exports = (content, outputPath) => {
+const responsiveImages = (content, outputPath) => {
   const $ = cheerio.load(content);
   const $img = $("img");
   $img.each((i, elem) => {
@@ -31,3 +31,5 @@ module.exports = (content, outputPath) => {
   });
   return $.html();
 };
+
+module.exports = {responsiveImages};
