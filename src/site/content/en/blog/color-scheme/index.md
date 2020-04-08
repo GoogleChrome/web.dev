@@ -24,7 +24,7 @@ draft: true
 ---
 ## Background
 
-### The prefers-color-scheme user preference media feature
+### The `prefers-color-scheme` user preference media feature
 
 The
 [`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
@@ -116,7 +116,7 @@ body {
 }
 ```
 
-## The color-scheme CSS property
+## The `color-scheme` CSS property
 
 The [CSS Color Adjustment Module Level&nbsp;1](https://drafts.csswg.org/css-color-adjust/)
 specification introduces a model and controls
@@ -196,7 +196,7 @@ element.
 <meta name="color-scheme" content="dark light">
 ```
 
-## Combining color-scheme and prefers-color-scheme
+## Combining `color-scheme` and `prefers-color-scheme`
 
 Since both the meta tag and the CSS property (if applied to the `:root` element)
 eventually result in the same behavior, I always recommend specifying the color scheme
@@ -217,7 +217,7 @@ I have opened bugs for [Chrome](https://crbug.com/1066811),
 as well as a [meta issue in the HTML Standard](https://github.com/whatwg/html/issues/5426)
 to get this fixed.
 
-## Interplay with prefers-color-scheme
+## Interplay with `prefers-color-scheme`
 
 The interplay of the `color-scheme` CSS property and the corresponding meta tag
 with the `prefers-color-scheme` user preference media feature may seem confusing at first.
@@ -274,7 +274,7 @@ in the developer-provided inline stylesheet on the page.
 It is either `gainsboro` or `darkslategray`.
 
 <figure>
-  <img src="light-styles.png" width="3440" height=" 1386">
+  <img src="light-styles.png" width="3440" height=" 1386" class="w-screenshot-filled">
   <figcaption>
     <strong>Light mode:</strong> Styles specified by the developer and the user agent.
     The text is black and the background is white as per the user agent stylesheet.
@@ -284,7 +284,7 @@ It is either `gainsboro` or `darkslategray`.
 </figure>
 
 <figure>
-  <img src="dark-styles.png" width="3440" height=" 1386">
+  <img src="dark-styles.png" width="3440" height=" 1386" class="w-screenshot-filled">
   <figcaption>
     <strong>Dark mode:</strong> Styles specified by the developer and the user agent.
     The text is white and the background is black as per the user agent stylesheet.
@@ -297,10 +297,10 @@ The `<button>` element's appearance is controlled by the user agent stylesheet.
 Its `color` is set to the
 [`ButtonText`](https://drafts.csswg.org/css-color/#valdef-system-color-buttontext)
 system color, and its `background-color` and the four `border-color`s are set to the system color
-[`ButtonFace`](https://drafts.csswg.org/css-color/#valdef-system-color-buttonface)
+[`ButtonFace`](https://drafts.csswg.org/css-color/#valdef-system-color-buttonface).
 
 <figure>
-  <img src="light-buttonface.png" width="3440" height=" 1386">
+  <img src="light-buttonface.png" width="3440" height=" 1386" class="w-screenshot-filled">
   <figcaption>
     <strong>Light mode:</strong> The <code>background-color</code> and the various
     <code>border-color</code>s are set to the <a href="https://drafts.csswg.org/css-color/#valdef-system-color-buttonface">ButtonFace</a>
@@ -316,7 +316,7 @@ The same applies for the `<button>` element's `color`
 that is set to the corresponding system color `ButtonText`.
 
 <figure>
-  <img src="light-computed.png" width="3440" height=" 1386">
+  <img src="light-computed.png" width="3440" height=" 1386" class="w-screenshot-filled">
   <figcaption>
     <strong>Light mode:</strong> The computed values of the <code>border-top-color</code>
     and the <code>border-bottom-color</code> that are both set to <code>ButtonFace</code>
@@ -325,7 +325,7 @@ that is set to the corresponding system color `ButtonText`.
 </figure>
 
 <figure>
-  <img src="dark-computed.png" width="3440" height=" 1386">
+  <img src="dark-computed.png" width="3440" height=" 1386" class="w-screenshot-filled">
   <figcaption>
     <strong>Dark mode:</strong> The computed values of the <code>border-top-color</code>
     and the <code>border-bottom-color</code> that are both set to <code>ButtonFace</code>
@@ -343,7 +343,7 @@ with the link colors mentioned in the
 [warning above](#using-color-scheme-in-practice).
 
 <figure>
-  <img src="demo-light.png" width="1336 " height="1640">
+  <img src="demo-light.png" width="1336 " height="1640" class="w-screenshot-filled">
   <figcaption>
     The <a href="https://color-scheme-demo.glitch.me/">demo</a>
     toggled to <code>color-scheme: light</code>.
@@ -351,7 +351,7 @@ with the link colors mentioned in the
 </figure>
 
 <figure>
-  <img src="demo-dark.png" width="1336 " height="1640">
+  <img src="demo-dark.png" width="1336 " height="1640" class="w-screenshot-filled">
   <figcaption>
     The <a href="https://color-scheme-demo.glitch.me/">demo</a>
     toggled to <code>color-scheme: dark</code>.
