@@ -133,7 +133,8 @@ img1.ready()
 });
 
 // and…
-Promise.all([img1.ready(), img2.ready()]).then(function() {
+Promise.all([img1.ready(), img2.ready()])
+.then(function() {
   // all loaded
 }, function() {
   // one or more failed
