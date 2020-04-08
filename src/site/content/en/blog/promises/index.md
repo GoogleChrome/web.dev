@@ -902,7 +902,8 @@ getJSON('story.json')
     .reduce(function(sequence, chapterPromise) {
       // Use reduce to chain the promises together,
       // adding content to the page for each chapter
-      return sequence.then(function() {
+      return sequence
+      .then(function() {
         // Wait for everything in the sequence so far,
         // then wait for this chapter to arrive.
         return chapterPromise;
