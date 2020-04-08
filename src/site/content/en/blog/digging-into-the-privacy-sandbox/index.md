@@ -1,10 +1,10 @@
 ---
 title: Digging into the Privacy Sandbox
-subhead: The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms. The proposals need your feedback.
+subhead: The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms.
 authors:
   - samdutton
 date: 2020-04-08
-description: The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms. The proposals need your feedback!
+description: The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms. The proposals need your feedback.
 tags:
   - post
   - privacy
@@ -13,13 +13,15 @@ tags:
 ---
 
 ## Summary
- + The [Privacy Sandbox proposals](#proposals) need your feedback.
- + Please comment on the proposals by filing issues on the repositories linked to below.
-+ There's a [glossary for the proposals](#glossary) at the end of this post.
+
+* This post outlines APIs and concepts from the [Privacy Sandbox](https://www.chromium.org/Home/chromium-privacy/privacy-sandbox) proposals.
+* The proposals need your feedback.
+* You can comment on the proposals by filing issues on [the repositories linked to below](#proposals).
+* There's a [glossary](#glossary)  for the proposals at the end of this post.
 
 {% YouTube 'WnCKlNE52tc' %}
 
-Thanks to Michael Kleber and Marshall Vale for their help writing this post.
+Thanks to Michael Kleber and Marshall Vale for their help in writing this post.
 
 ---
 
@@ -45,9 +47,7 @@ This is a dilemma for the web. How can legitimate third-party use cases be suppo
 
 In particular, how can websites fund content by enabling third parties to show ads and measure ad performance—but not allow individual users to be profiled? How can advertisers verify real users, and site owners check that users are trustworthy, without resorting to dark patterns such as device fingerprinting?
 
-The way things work at the moment can be problematic for everyone concerned, not just users. For publishers and advertisers, tracking identity and using a variety of non-native, un-standardised third-party solutions can add to technical debt, code complexity and data risk.
-
-Users, developers, publishers, and advertisers shouldn't have to worry.
+The way things work at the moment can be problematic for everyone concerned, not just users. For publishers and advertisers, tracking identity and using a variety of non-native, un-standardised third-party solutions can add to technical debt, code complexity and data risk. Users, developers, publishers, and advertisers shouldn't have to worry.
 
 ## Introducing the Privacy Sandbox
 
@@ -59,7 +59,7 @@ This is a shift in direction for browsers. The Privacy Sandbox authors' vision o
 
 ### The Privacy Sandbox proposals {: #proposals }
 
-In order to successfully transition away from third-party cookies the Privacy Sandbox authors need your support. The [explainers](https://blog.chromium.org/2019/08/potential-uses-for-privacy-sandbox.html) need feedback from developers as well as publishers, advertisers, and advertising platforms, to suggest missing use cases and more-private ways to accomplish their goals.
+In order to successfully transition away from third-party cookies the Privacy Sandbox authors need your support. The proposal [explainers](https://blog.chromium.org/2019/08/potential-uses-for-privacy-sandbox.html) need feedback from developers as well as publishers, advertisers, and advertising platforms, to suggest missing use cases and more-private ways to accomplish their goals.
 
 You can comment on the explainers by filing issues against each repository:
 
@@ -157,8 +157,6 @@ Many organizations own sites across multiple domains. For example, google.com, g
 
 To reiterate: the Privacy Sandbox authors need your support. The [explainers](https://blog.chromium.org/2019/08/potential-uses-for-privacy-sandbox.html) need feedback—in particular to suggest missing use cases and more-private ways to accomplish their goals.
 
-Please comment on the explainers by filing issues on the repositories linked to below.
-
 ## Find out more
 
 ### Explainers
@@ -179,10 +177,6 @@ Please comment on the explainers by filing issues on the repositories linked to 
 +   Google AI Blog: [Federated Learning: Collaborative Machine Learning without Centralized Training Data](https://ai.googleblog.com/2017/04/federated-learning-collaborative.html)
 +   [The future of third-party cookies](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html)
 
-### Theory
-
-+   [A Primer on Information Theory and Privacy](https://www.eff.org/deeplinks/2010/01/primer-information-theory-and-privacy)
-
 ### Policy and requirements
 
 +   The [Tor Browser design's "Privacy Requirements"](https://2019.www.torproject.org/projects/torbrowser/design/#privacy), particularly the clear emphasis on "Unlinkability".
@@ -190,6 +184,8 @@ Please comment on the explainers by filing issues on the repositories linked to 
 +   WebKit tracking prevention policy: [webkit.org/tracking-prevention-policy](https://webkit.org/tracking-prevention-policy/)
 +   [Privacy Preserving Ad Click Attribution For the Web](https://webkit.org/blog/8943/privacy-preserving-ad-click-attribution-for-the-web/)
 +   [Brave, Fingerprinting, and Privacy Budgets](https://brave.com/brave-fingerprinting-and-privacy-budgets/)
+
+---
 
 ## Appendix: Glossary of terms used in the explainers {: #glossary }
 
