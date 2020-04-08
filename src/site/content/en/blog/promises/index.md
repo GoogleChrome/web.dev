@@ -95,7 +95,7 @@ img1.addEventListener('error', function() {
 
 This doesn't catch images that errored before we got a chance to listen for
 them; unfortunately the DOM doesn't give us a way to do that. Also, this is
-loading one image, things get even more complex if we want to know when a set
+loading one image. Things get even more complex if we want to know when a set
 of images have loaded.
 
 
