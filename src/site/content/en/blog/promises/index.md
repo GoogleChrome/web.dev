@@ -102,7 +102,7 @@ of images have loaded.
 ## Events aren't always the best way
 
 Events are great for things that can happen multiple times on the same
-object&mdash;keyup, touchstart etc. With those events you don't really care
+object&mdash;`keyup`, `touchstart` etc. With those events you don't really care
 about what happened before you attached the listener. But when it comes to
 async success/failure, ideally you want something like this:
 
