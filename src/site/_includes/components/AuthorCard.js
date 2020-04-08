@@ -36,8 +36,6 @@ class AuthorCard extends BaseCard {
               class="w-card-author__image"
               src="${img}"
               alt="${alt}"
-              width="240px"
-              height="240px"
               loading="lazy"
             />
           </figure>

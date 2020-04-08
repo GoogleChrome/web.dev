@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 const fs = require("fs");
+const path = require("path");
 const contributors = require("../_data/contributors");
 const livePosts = require("../_filters/live-posts");
 const addPagination = require("../_utils/add-pagination");
@@ -31,7 +32,7 @@ const addPagination = require("../_utils/add-pagination");
  */
 module.exports = (collections) => {
   const authorsWithPosts = {};
-  const posts = collections.getAll().filter(livePosts);
+  const posts = collections.getFilteredByGlob("**/*.md").filter(livePosts);
 
   posts.forEach((post) => {
     const authors = post.data.authors || [];
@@ -43,7 +44,7 @@ module.exports = (collections) => {
     .sort((a, b) => a.title.localeCompare(b.title));
 
   const elements = authors.map((author) => {
-    author.url = `/en${author.href}`;
+    author.url = path.join("/en", author.href);
     author.data = {
       tags: [],
       title: author.title,
@@ -53,10 +54,22 @@ module.exports = (collections) => {
     for (const size of ["@3x", "@2x", ""]) {
       if (
         fs.existsSync(
-          `src/site/content/en/images/authors/${author.key}${size}.jpg`,
+          path.join(
+            "src",
+            "site",
+            "content",
+            "en",
+            "images",
+            "authors",
+            `${author.key}${size}.jpg`,
+          ),
         )
       ) {
-        author.data.hero = `/images/authors/${author.key}${size}.jpg`;
+        author.data.hero = path.join(
+          "/images",
+          "authors",
+          `${author.key}${size}.jpg`,
+        );
         author.data.alt = author.title;
         break;
       }
