@@ -967,7 +967,7 @@ function *addGenerator() {
 }
 ```
 
-Notice the star before the function name, this makes it a generator. The yield
+Notice the star before the function name. This makes it a generator. The `yield`
 keyword is our return/resume point. We can use it like this:
 
 ```js
