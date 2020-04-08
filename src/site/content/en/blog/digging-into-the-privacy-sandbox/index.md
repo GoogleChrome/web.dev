@@ -211,14 +211,14 @@ See [Top-Level Domain](#glossary-tld) and [eTLD](#glossary-etld).
 
 ### eTLD, eTLD+1 {: #glossary-etld }
 
-Pseudo top level domains are defined by the [Public Suffix List](https://publicsuffix.org/list/). For example:
+'Effective' top level domains are defined by the [Public Suffix List](https://publicsuffix.org/list/). For example:
 
 ```text
 co.uk
 appspot.com
 glitch.me
 ```
-Pseudo TLDs are what enable foo.appspot.com to be a different site from bar.appspot.com. The effective top-level domain (**eTLD**) in this case is appspot.com, and the whole **site** name (foo.appspot.com, bar.appspot.com) is known as the **eTLD+1**.
+Effective TLDs are what enable foo.appspot.com to be a different site from bar.appspot.com. The effective top-level domain (**eTLD**) in this case is appspot.com, and the whole **site** name (foo.appspot.com, bar.appspot.com) is known as the **eTLD+1**.
 
 See also [Top-Level Domain](#glossary-tld).
 
