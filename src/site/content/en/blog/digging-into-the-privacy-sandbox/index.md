@@ -4,6 +4,8 @@ subhead: The Privacy Sandbox is a series of proposals to satisfy third-party use
 authors:
   - samdutton
 date: 2020-04-08
+hero: hero.jpg
+alt: A black-on-white printed sign saying Private, on a wooden wall.
 description: The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms. The proposals need your feedback.
 tags:
   - post
@@ -299,3 +301,5 @@ Note that some 'sites' are actually just subdomains. For example, translate.goog
 ### .well-known
 
 It can be useful to access policy or other information about a host _before_ making a request. For example, robots.txt tells web crawlers which pages to visit and which pages to ignore. IETF [RFC8615](https://tools.ietf.org/html/rfc8615) outlines a standardised way to make site-wide metadata accessible in standard locations in a /.well-known/ subdirectory. You can see a list of these at [iana.org/assignments/well-known-uris/well-known-uris.xhtml](https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml).
+
+Photo by [Pierre Bamin](https://unsplash.com/@bamin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
