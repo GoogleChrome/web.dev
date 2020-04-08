@@ -1000,7 +1000,8 @@ function spawn(generatorFunc) {
     if (result.done) {
       return result.value;
     } else {
-      return Promise.resolve(result.value).then(onFulfilled, onRejected);
+      return Promise.resolve(result.value)
+      .then(onFulfilled, onRejected);
     }
   }
   var generator = generatorFunc();
