@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+const path = require("path");
 const postTags = require("../_data/postTags");
 const livePosts = require("../_filters/live-posts");
 const addPagination = require("../_utils/add-pagination");
@@ -31,7 +32,7 @@ const addPagination = require("../_utils/add-pagination");
  */
 module.exports = (collections) => {
   const tagsWithPosts = {};
-  const posts = collections.getAll().filter(livePosts);
+  const posts = collections.getFilteredByGlob("**/*.md").filter(livePosts);
 
   posts.forEach((post) => {
     const tags = post.data.tags || [];
@@ -43,7 +44,7 @@ module.exports = (collections) => {
   );
 
   const elements = tags.map((tag) => {
-    tag.url = `/en${tag.href}`;
+    tag.url = path.join("/en", tag.href);
     tag.data = {
       tags: [],
       title: tag.title,

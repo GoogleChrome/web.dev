@@ -60,26 +60,22 @@ class BaseCard {
     const srcsetRange = getSrcsetRange(240, 768);
 
     return html`
-      <div class="w-card-base__cover w-card-base__cover--with-image">
-        <a class="w-card-base__link" tabindex="-1" href="${url}">
-          <figure class="w-card-base__figure">
-            <img
-              class="w-card-base__image"
-              sizes="365px"
-              srcset="${srcsetRange.map(
-                (width) => html`
-                  ${imagePath}?auto=format&fit=max&w=${width} ${width}w,
-                `,
-              )}"
-              src="${imagePath}"
-              alt="${alt}"
-              width="100%"
-              height="240"
-              loading="lazy"
-            />
-          </figure>
-        </a>
-      </div>
+      <figure class="w-card-base__figure">
+        <img
+          class="w-card-base__image"
+          sizes="365px"
+          srcset="${srcsetRange.map(
+            (width) => html`
+              ${imagePath}?auto=format&fit=max&w=${width} ${width}w,
+            `,
+          )}"
+          src="${imagePath}"
+          alt="${alt}"
+          width="100%"
+          height="240"
+          loading="lazy"
+        />
+      </figure>
     `;
   }
 
@@ -175,8 +171,15 @@ class BaseCard {
             ? "w-card-base--featured"
             : ""} ${this.className}"
         >
-          ${this.thumbnail &&
-            this.renderThumbnail(this.url, this.thumbnail, this.alt)}
+          <div
+            class="w-card-base__cover ${this.thumbnail &&
+              `w-card-base__cover--with-image`}"
+          >
+            <a class="w-card-base__link" tabindex="-1" href="${this.url}">
+              ${this.thumbnail &&
+                this.renderThumbnail(this.url, this.thumbnail, this.alt)}
+            </a>
+          </div>
           <div class="w-card-base__blurb">
             <a class="w-card-base__link" href="${this.url}">
               <h2
@@ -188,7 +191,10 @@ class BaseCard {
               </h2>
             </a>
             ${this.renderAuthorsAndDate(this.post)}
-            <div class="w-card-base__desc">
+            <div
+              class="w-card-base__desc ${this.className &&
+                `${this.className}__desc`}"
+            >
               <a class="w-card-base__link" tabindex="-1" href="${this.url}">
                 <p class="w-card-base__subhead">
                   ${md(this.data.subhead)}

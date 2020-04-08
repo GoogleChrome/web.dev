@@ -29,18 +29,14 @@ class AuthorCard extends BaseCard {
 
   renderThumbnail(url, img, alt) {
     return html`
-      <div class="w-card-base__cover w-card-base__cover--with-image">
-        <a class="w-card-base__link" tabindex="-1" href="${url}">
-          <figure class="w-card-base__figure w-card-author__figure">
-            <img
-              class="w-card-author__image"
-              src="${img}"
-              alt="${alt}"
-              loading="lazy"
-            />
-          </figure>
-        </a>
-      </div>
+      <figure class="w-card-base__figure w-card-author__figure">
+        <img
+          class="w-card-author__image"
+          src="${img}"
+          alt="${alt}"
+          loading="lazy"
+        />
+      </figure>
     `;
   }
 }

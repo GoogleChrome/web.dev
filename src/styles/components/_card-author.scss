@@ -1,4 +1,5 @@
 @import '../settings/colors';
+@import '../tools/mixins';
 
 .w-card-author {
   text-align: center;
@@ -12,4 +13,8 @@
   border-radius: 50%;
   height: 192px;
   width: 192px;
+}
+
+.w-card-author__desc::before {
+  background-color: inherit;
 }
