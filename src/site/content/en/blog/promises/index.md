@@ -125,7 +125,8 @@ This is what promises do, but with better naming. If HTML image elements had a
 "ready" method that returned a promise, we could do this:
 
 ```js
-img1.ready().then(function() {
+img1.ready()
+.then(function() {
   // loaded
 }, function() {
   // failed
