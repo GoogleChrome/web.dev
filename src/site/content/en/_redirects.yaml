@@ -181,8 +181,3 @@ redirects:
 
 - from: /sms-receiver-api-announcement
   to: /web-otp
-
-# Temporary redirects
-
-- from: /digging-into-the-privacy-sandbox
-  to: https://www.chromium.org/Home/chromium-privacy/privacy-sandbox
