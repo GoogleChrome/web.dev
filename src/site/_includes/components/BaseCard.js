@@ -39,7 +39,7 @@ class BaseCard {
     this.data = this.post.data;
     this.displayedTags = [];
 
-    for (const tag of this.data.tags) {
+    for (const tag of this.data.tags || []) {
       const foundTag = postTags[tag.toLowerCase()];
       if (foundTag) {
         this.displayedTags.push(foundTag);
@@ -165,11 +165,9 @@ class BaseCard {
 
   render() {
     return html`
-      <div class="w-card" role="listitem">
+      <div class="w-card ${this.className}" role="listitem">
         <article
-          class="w-card-base ${this.featured
-            ? "w-card-base--featured"
-            : ""} ${this.className}"
+          class="w-card-base ${this.featured ? "w-card-base--featured" : ""}"
         >
           <div
             class="w-card-base__cover ${this.thumbnail &&

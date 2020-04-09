@@ -29,14 +29,23 @@ const addPagination = require("../_utils/add-pagination");
  * @return {Array<{ title: string, href: string, description: string, elements: Array<object>, index: number, pages: number }>} An array where each element is a page with some meta data and n authors for the page.
  */
 module.exports = () => {
-  const authors = Object.values(contributors).sort((a, b) =>
-    a.title.localeCompare(b.title),
-  );
+  const testAuthors = [
+    "robdodson",
+    "samthor",
+    "surma",
+    "egsweeny",
+    "addyosmani",
+    "adamargyle",
+  ];
+  const authors = Object.values(contributors)
+    .sort((a, b) => a.title.localeCompare(b.title))
+    .filter((item) =>
+      process.env.PERCY ? testAuthors.includes(item.key) : true,
+    );
 
   const elements = authors.map((author) => {
     author.url = path.join("/en", author.href);
     author.data = {
-      tags: [],
       title: author.title,
       subhead: author.description,
     };

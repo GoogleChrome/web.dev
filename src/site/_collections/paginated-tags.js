@@ -31,6 +31,14 @@ const addPagination = require("../_utils/add-pagination");
  * @return {Array<{ title: string, href: string, description: string, elements: Array<object>, index: number, pages: number }>} An array where each element is a paged tag with some meta data and n posts for the page.
  */
 module.exports = (collections) => {
+  const testTags = [
+    "css",
+    "javascript",
+    "lighthouse",
+    "seo",
+    "progressive-web-apps",
+    "webxr",
+  ];
   const tagsWithPosts = {};
   const posts = collections.getFilteredByGlob("**/*.md").filter(livePosts);
 
@@ -39,8 +47,8 @@ module.exports = (collections) => {
     tags.forEach((tag) => (tagsWithPosts[tag] = true));
   });
 
-  const tags = Object.values(postTags).filter(
-    (postTag) => tagsWithPosts[postTag.key],
+  const tags = Object.values(postTags).filter((item) =>
+    process.env.PERCY ? testTags.includes(item.key) : tagsWithPosts[item.key],
   );
 
   const elements = tags.map((tag) => {
