@@ -272,7 +272,7 @@ or [directly on Glitch](https://websocketstream-demo.glitch.me/).
 
 ## Feedback {: #feedback }
 
-The Chrome team wants to hear about your experiences with the API_NAME API.
+The Chrome team wants to hear about your experiences with the WebSocketStream API.
 
 ### Tell us about the API design
 
