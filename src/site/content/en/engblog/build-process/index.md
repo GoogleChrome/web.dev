@@ -112,7 +112,7 @@ But it's actually creating HTML that looks like:
 
 ```html
 <div class="w-aside w-aside--note">
-<p><a href="https://web.dev/handbook/web-dev-components/#asides">See how Asides work in the web.dev codebase</a></p>
+<p><a href="/handbook/web-dev-components/#asides">See how Asides work in the web.dev codebase</a></p>
 </div>
 ```
 
