@@ -34,7 +34,7 @@ const pagesToTest = [
   },
   {
     url: "tags",
-    title: "Tags",
+    title: "Tags page",
   },
 ];
 
