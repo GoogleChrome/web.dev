@@ -98,7 +98,7 @@ Here's an example:
 
 ```text
 {% raw %}&#123;% Aside %&#125;
-[See how Asides work in the web.dev codebase](https://web.dev/handbook/web-dev-components/#asides)
+[See how Asides work in the web.dev codebase](/handbook/web-dev-components/#asides)
 &#123;% endAside %&#125;{% endraw %}
 ```
 
