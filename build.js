@@ -36,6 +36,9 @@ process.on('unhandledRejection', (reason, p) => {
   process.exit(1);
 });
 
+/**
+ * Virtual imports made available to all bundles. Used for site config and globals.
+ */
 const virtualImports = {
   webdev_config: {
     prod: isProd,
@@ -93,6 +96,39 @@ async function buildCacheManifest() {
 }
 
 /**
+ * Passed to Rollup's config to disallow external imports. By default, Rollup
+ * leaves unresolved imports in the output.
+ *
+ * @param {string} source
+ * @param {string} importer
+ * @param {boolean} isResolved
+ */
+function disallowExternal(source, importer, isResolved) {
+  // We don't support any external imports. This most likely happens if you mistype a
+  // node_modules import or the package.json has changed.
+  if (isResolved && !source.match(/^\.{0,2}\//)) {
+    throw new Error(
+      `Unresolved external import: "${source}" (imported ` +
+        `by: ${importer}), did you forget to npm install?`,
+    );
+  }
+}
+
+/**
+ * Ensures that the passed Rollup result only contains a single chunk.
+ *
+ * @param {!Promise<rollup.RollupOutput>} rollupPromise
+ * @return {!rollup.RollupChunk} the single output chunk
+ */
+async function singleOutput(rollupPromise) {
+  const result = await rollupPromise;
+  if (result.output.length !== 1) {
+    throw new Error(`expected single output, was: ${result.output.length}`);
+  }
+  return result.output[0];
+}
+
+/**
  * Performs main site compilation via Rollup: first on site code, and second
  * to build the Service Worker.
  */
@@ -112,7 +148,8 @@ async function build() {
   // Does not hash "bootstrap.js" entrypoint, but hashes all generated chunks,
   // useful for cache busting.
   const appBundle = await rollup.rollup({
-    input: 'src/lib/bootstrap.js',
+    input: "src/lib/bootstrap.js",
+    external: disallowExternal,
     plugins: [rollupPluginPostCSS(postcssConfig), ...defaultPlugins],
     external(source, importer, isResolved) {
       // We don't support any external imports. This most likely happens if you mistype a
@@ -151,7 +188,8 @@ async function build() {
   );
 
   const swBundle = await rollup.rollup({
-    input: 'src/lib/sw.js',
+    input: "src/lib/sw.js",
+    external: disallowExternal,
     plugins: [
       // This variable is defined by Webpack (and some other tooling), but not by Rollup. Set it to
       // "production" if we're in prod, which will hide all of Workbox's log messages.
@@ -170,29 +208,27 @@ async function build() {
     ],
     inlineDynamicImports: true, // SW does not support imports
   });
-  const swGenerated = await swBundle.write({
-    sourcemap: true,
-    dir: 'dist',
-    format: 'esm',
-  });
 
-  if (swGenerated.output.length !== 1) {
-    throw new Error(
-      `using Rollup on Service Worker should generate single file, was: ${swGenerated.output.length}`,
-    );
-  }
+  const swOutput = await singleOutput(
+    swBundle.write({
+      sourcemap: true,
+      dir: "dist",
+      format: "esm",
+    }),
+  );
 
   if (isProd) {
-    const generated = [];
-    for (const {fileName} of swGenerated.output) {
-      generated.push(fileName);
-    }
-    await compressOutput(generated);
+    const {fileName} = swOutput;
+    await compressOutput([fileName]);
+    generated.push(fileName);
   }
 
-  return appGenerated.output.length + swGenerated.output.length;
+  return generated.length;
 }
 
+/**
+ * Builds the test entrypoint.
+ */
 async function buildTest() {
   const testBundle = await rollup.rollup({
     input: 'src/lib/test/index.js',
@@ -204,6 +240,11 @@ async function buildTest() {
   });
 }
 
+/**
+ * Minify the passed on-disk script files. Assumes they have an adjacent ".map" source map.
+ *
+ * @param {!Array<string>} generated paths to generated script files
+ */
 async function compressOutput(generated) {
   let inputSize = 0;
   let outputSize = 0;
