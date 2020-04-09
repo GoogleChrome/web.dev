@@ -47,7 +47,7 @@ to have the same tools as external web developers.
 ## Static Generation
 
 Each page on web.dev is written in Markdown.
-All pages include front matter, which describes metadata about each post.
+All pages include [front matter](https://www.11ty.dev/docs/data-frontmatter/), which describes metadata about each post.
 This metadata is ingested into the layout of each page, creating headings, tags, and so on.
 Here's an example:
 
