@@ -44,7 +44,7 @@ within Google on behalf of the broader web developer ecosystem so it makes more 
 to have the same tools as external web developers.
 {% endAside %}
 
-## Static Generation
+## Static generation
 
 Each page on web.dev is written in Markdown.
 All pages include [front matter](https://www.11ty.dev/docs/data-frontmatter/), which describes metadata about each post.
