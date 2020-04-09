@@ -39,28 +39,20 @@ module.exports = (collections) => {
     "progressive-web-apps",
     "webxr",
   ];
-  const tagsWithPosts = {};
-  const posts = collections.getFilteredByGlob("**/*.md").filter(livePosts);
 
-  posts.forEach((post) => {
-    const tags = post.data.tags || [];
-    tags.forEach((tag) => (tagsWithPosts[tag] = true));
-  });
-
-  const tags = Object.values(postTags).filter((item) =>
-    process.env.PERCY ? testTags.includes(item.key) : tagsWithPosts[item.key],
-  );
-
-  const elements = tags.map((tag) => {
-    tag.url = path.join("/en", tag.href);
-    tag.data = {
-      tags: [],
-      title: tag.title,
-      subhead: tag.description,
-    };
-
-    return tag;
-  });
+  const elements = Object.values(postTags)
+    .filter((tag) => {
+      const posts = collections.getFilteredByTag(tag.key).filter(livePosts);
+      return process.env.PERCY ? testTags.includes(tag.key) : posts.length > 0;
+    })
+    .map((tag) => {
+      tag.url = path.join("/en", tag.href);
+      tag.data = {
+        title: tag.title,
+        subhead: tag.description,
+      };
+      return tag;
+    });
 
   return addPagination(elements, {
     href: "/tags/",
