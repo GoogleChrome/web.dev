@@ -1081,7 +1081,7 @@ const contributors = {
     country: "CA",
     twitter: "dtapuska",
   },
-  samthorogood: {
+  samthor: {
     name: {
       given: "Sam",
       family: "Thorogood",
@@ -1090,14 +1090,13 @@ const contributors = {
       name: "Google",
       unit: "Developer Relations",
     },
-    country: "Australia",
+    country: "AU",
     homepage: "https://whistlr.info/",
     twitter: "samthor",
     github: "samthor",
     glitch: "samthor",
     description: {
-      en:
-        "Evangelises Chrome and the mobile web in the Developer Relations team at Google.",
+      en: "¯‍\\‍_‍(‍ツ‍)‍_‍/‍¯",
     },
   },
   majidvp: {
