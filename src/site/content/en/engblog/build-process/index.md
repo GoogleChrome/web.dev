@@ -18,7 +18,7 @@ This is the first post in web.dev's engineering blog.
 Over the coming months, we hope to share actionable insights from our work—so watch for posts with the [Engineering Blog tag](/tags/engineering-blog/)!
 Here we'll be covering the build process for our static site and the (optional!) JavaScript behind our web components.
 
-web.dev provides content about building modern web experiences and allows you to [measure](https://web.dev/measure/) your site's performance.
+web.dev provides content about building modern web experiences and allows you to [measure](/measure/) your site's performance.
 Savvy users may have realized that [our Measure page](https://web.dev/measure/) is just an interface for [Lighthouse](https://developers.google.com/web/tools/lighthouse), which is also available in Chrome's DevTools.
 Signing in to web.dev lets you run regular Lighthouse audits on your site so you can see how its score changes over time.
 I'll be revisiting the Measure page a bit later, as we think it's fairly special. 🎊
