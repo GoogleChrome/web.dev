@@ -1,8 +1,7 @@
-[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/GoogleChrome/web.dev) 
-
 # web.dev
 
 ![Continuous integration](https://github.com/GoogleChrome/web.dev/workflows/Continuous%20integration/badge.svg)
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/GoogleChrome/web.dev)
 
 web.dev is the ultimate resource for developers of all backgrounds to learn,
 create, and solve on the web. It's meant to not only educate developers, but
