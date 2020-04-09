@@ -169,7 +169,7 @@ Our most complex Web Components exist to visualize global actions and state.
 For example, web.dev lets you audit your favourite site and then navigate away from the Measure page.
 If you return, you'll see that the task is still ongoing.
 
-Our simple components purely enhance otherwise static content or create amazing visualizations (e.g., each line graph is its own [`<web-sparkline-chart>`](https://github.com/GoogleChrome/web.dev/blob/master/src/lib/components/SparklineChart/index.js)), which has no relationship to the global state.
+Our simple components purely enhance otherwise static content or create amazing visualizations (for example, each line graph is its own [`<web-sparkline-chart>`](https://github.com/GoogleChrome/web.dev/blob/master/src/lib/components/SparklineChart/index.js)), which has no relationship to the global state.
 
 ## Let's chat
 
