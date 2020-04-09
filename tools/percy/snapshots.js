@@ -30,7 +30,7 @@ const pagesToTest = [
   },
   {
     url: "authors",
-    title: "Authors",
+    title: "Authors page",
   },
   {
     url: "tags",
