@@ -175,7 +175,12 @@ class BaseCard {
             class="w-card-base__cover ${this.thumbnail &&
               `w-card-base__cover--with-image`}"
           >
-            <a class="w-card-base__link" tabindex="-1" href="${this.url}">
+            <a
+              class="w-card-base__link"
+              tabindex="-1"
+              href="${this.url}"
+              aria-hidden="true"
+            >
               ${this.thumbnail &&
                 this.renderThumbnail(this.url, this.thumbnail, this.alt)}
             </a>
