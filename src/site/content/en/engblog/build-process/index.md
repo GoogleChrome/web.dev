@@ -39,7 +39,9 @@ These include redirects for invalid domains, as well as code [to parse a user's 
 {% Aside %}
 Despite being a Google product, web.dev doesn't use any internal Google tools or processes.
 You can check out [our repo](https://github.com/GoogleChrome/web.dev).
-We do this because the team that builds and maintains web.dev is responsible for advocating within Google on behalf of the broader web developer ecosystem.
+We do this because the team that builds and maintains web.dev is responsible for advocating 
+within Google on behalf of the broader web developer ecosystem so it makes more sense for us
+to have the same tools as external web developers.
 {% endAside %}
 
 ## Static Generation
