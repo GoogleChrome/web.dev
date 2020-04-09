@@ -133,6 +133,7 @@ async function singleOutput(rollupPromise) {
  * to build the Service Worker.
  */
 async function build() {
+  const generated = [];
   const postcssConfig = {};
   if (isProd) {
     // nb. Only require() autoprefixer when used.
@@ -172,7 +173,6 @@ async function build() {
   // Compress the generated source here, as we need the final files and hashes for the Service
   // Worker manifest.
   if (isProd) {
-    const generated = [];
     for (const {fileName} of appGenerated.output) {
       generated.push(fileName);
     }
