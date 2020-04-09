@@ -33,7 +33,7 @@ const setdefault = require("../_utils/setdefault");
  */
 module.exports = (collection) => {
   const posts = collection
-    .getAll()
+    .getFilteredByGlob("**/*.md")
     .filter(livePosts)
     .sort((a, b) => b.date - a.date);
 
@@ -50,7 +50,9 @@ module.exports = (collection) => {
 
   let authors = [];
   authorsMap.forEach((value, key) => {
-    if (!(key in contributors)) {
+    if (key in contributors) {
+      authors = authors.concat(addPagination(value, contributors[key]));
+    } else {
       // Warn if the contributor ID is missing, including pointing to the paths of the source
       // inputs that are invalid.
       // This could also be run as part of generating author chips, but it is sufficient to explode
@@ -63,7 +65,6 @@ module.exports = (collection) => {
         `unknown contributor ${key} [${posts}], are they in _data/contributors.js?`,
       );
     }
-    authors = authors.concat(addPagination(value, contributors[key]));
   });
 
   return authors;

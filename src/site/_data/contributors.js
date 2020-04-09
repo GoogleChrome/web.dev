@@ -1,4 +1,20 @@
 const contributors = {
+  jakearchibald: {
+    name: {
+      given: "Jake",
+      family: "Archibald",
+    },
+    org: {
+      name: "Google",
+      unit: "Developer Relations",
+    },
+    country: "UK",
+    homepage: "https://jakearchibald.com/",
+    twitter: "jaffathecake",
+    description: {
+      en: "Human boy working on web standards at Google",
+    },
+  },
   kaycebasques: {
     name: {
       given: "Kayce",
