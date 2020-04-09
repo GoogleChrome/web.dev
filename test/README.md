@@ -49,7 +49,7 @@ clicking through the site works as expected.
 
 ## Percy screenshot tests
 In addition to the automated tests mentioned above, we also use
-[Percy](percy.io) to do screenshot testing of key pages. These tests are run as
+[Percy](https://percy.io) to do screenshot testing of key pages. These tests are run as
 part of a GitHub Actions workflow that lives in
 `.github/workflows/percy-workflow.yml`.
 
