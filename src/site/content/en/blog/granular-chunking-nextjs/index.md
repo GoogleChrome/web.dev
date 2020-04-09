@@ -1,14 +1,13 @@
 ---
-title: Granular chunking in Next.js
-subhead: A newer webpack chunking strategy in Next.js minimizes duplicate code to improve page load performance 
+title: Granular chunking in Next.js and Gatsby
+subhead: A newer webpack chunking strategy in Next.js and Gatsby minimizes duplicate code to improve page load performance 
 authors:
   - houssein
 date: 2020-04-09
 hero: hero.png
 alt: Jigsaw pieces connecting 
 description: | 
-  A number of newer optimizations were recently added to improve the loading performance of
-  Next.js, including an improved granular chunking strategy that is now shipped by default.
+  Learn how both Next.js and Gatsby have improved their build output to minimize duplicate code and improve page load performance
 tags:
   - post
   - performance
@@ -17,16 +16,18 @@ tags:
 
 Chrome is [collaborating](https://web.dev/advancing-framework-ecosystem-cds-2019/) with tooling and
 frameworks in the JavaScript open-source ecosystem. A number of newer optimizations were recently
-added to improve the loading performance of [Next.js](https://nextjs.org/), and this article covers an improved granular
-chunking strategy that is now shipped by default in [version 9.2](https://nextjs.org/blog/next-9-2).
+added to improve the loading performance of [Next.js](https://nextjs.org/) and
+[Gatsby](https://www.gatsbyjs.org/), and this article covers an improved granular chunking strategy
+that is now shipped by default in both frameworks.
 
 ## Introduction
 
-Like many web frameworks, Next.js uses [webpack](https://webpack.js.org/) as its core bundler. webpack
-v3 introduced [`CommonsChunkPlugin`](https://webpack.js.org/plugins/commons-chunk-plugin/) to make it
-possible to output modules shared between different entry points in a single (or few) "commons"
-chunk. Shared code can be downloaded separately and stored in the browser cache early on which can
-result in a better loading performance.
+Like many web frameworks, Next.js and Gatsby use [webpack](https://webpack.js.org/) as their core
+bundler. webpack v3 introduced
+[`CommonsChunkPlugin`](https://webpack.js.org/plugins/commons-chunk-plugin/) to make it possible to
+output modules shared between different entry points in a single (or few) "commons" chunk. Shared
+code can be downloaded separately and stored in the browser cache early on which can result in a
+better loading performance.
 
 This pattern became popular with many single-page application frameworks adopting an entrypoint and
 bundle configuration that looked like this:
@@ -76,8 +77,9 @@ cached for any entrypoint, the usage-based heuristic of including common modules
 _half of pages_ isn't very effective. Modifying this ratio would only result in one of two outcomes:
 more unnecessary code gets downloaded or more code gets duplicated across multiple routes.
 
-To solve this problem, we adopted a [different configuration](https://github.com/zeit/next.js/pull/7696) for`SplitChunksPlugin`
-that reduces unecessary code for any route.
+To solve this problem, we adopted a [different
+configuration](https://github.com/zeit/next.js/pull/7696) for`SplitChunksPlugin` that reduces
+unecessary code for any route.
 
 +   Any sufficiently large third-party module (> 160 KB) is split into its own individual chunk
 +   A separate `frameworks` chunk is created for framework dependencies (`react`, `react-dom`,
@@ -151,7 +153,7 @@ getDependencies (route) {
 
 ![Output of multiple shared chunks in a Next.js application](./outputted-chunks.png)
 
-This newer granular chunking strategy was first rolled out in Next.j behind a flag, where it was tested on a
+This newer granular chunking strategy was first rolled out in Next.js behind a flag, where it was tested on a
 number of early adopters. Many saw significant reductions to the total JavaScript used for their
 entire site:
 
@@ -185,14 +187,38 @@ entire site:
   </table>
 </div>
 
+The final version was shipped by default in [version 9.2](https://nextjs.org/blog/next-9-2).
+
 ## Gatsby
 
-Next.js is not the only framework that utilized a usage-based heuristic for defining common modules
-in a single shared chunk. [Gatsby](https://www.gatsbyjs.org/), another major React framework, also
-used to follow the
-[same approach](https://github.com/gatsbyjs/gatsby/blob/e4dae4d6a46fe9ba1c3fb5398d8569e657553bd3/packages/gatsby/src/utils/webpack.config.js#L483-L489).
+[Gatsby](https://www.gatsbyjs.org/) used to follow the same approach of utilizing a usage-based
+heuristic for defining common modules:
+
+```javascript/13
+config.optimization = {
+  //...
+  splitChunks: {
+    name: false,
+    chunks: `all`,
+    cacheGroups: {
+      default: false,
+      vendors: false,
+      commons: {
+        name: `commons`,
+        chunks: `all`,
+        // if a chunk is used more than half the components count,
+        // we can assume it's pretty global
+        minChunks: componentsCount > 2 ? componentsCount * 0.5 : 2,
+      },
+      react: {
+        name: `commons`,
+        chunks: `all`,
+        test: /[\\/]node_modules[\\/](react|react-dom|scheduler)[\\/]/,
+      },
+```
+
 By optimizing their webpack configuration to adopt a similar granular chunking strategy, they also
-noticed sizeable reductions in many large sites:
+noticed sizeable JavaScript reductions in many large sites:
 
 <div class="w-table-wrapper">
   <table>
@@ -230,7 +256,7 @@ noticed sizeable reductions in many large sites:
 </div>
 
 Take a look at the [PR](https://github.com/gatsbyjs/gatsby/pull/22253) to understand how they
-implemented this logic into their build process, which is shipped by default in v2.20.7.
+implemented this logic into their webpack configuration, which is shipped by default in v2.20.7.
 
 ## Conclusion
 
@@ -238,16 +264,11 @@ It's important to mention that the concept of shipping granular chunks is not sp
 Gatsby or even webpack. Everyone should consider improving their application's chunking strategy if
 it follows a large "commons" bundle approach, regardless of the framework or module bundler used.
 
-Some resources that can help:
-
-+   Take a look at the [RFC](https://github.com/zeit/next.js/issues/7631) and
-    [PR](https://github.com/zeit/next.js/pull/7696) to learn more about how this was enabled for
-    Next.js.
-+   For Gatsby, the [PR](https://github.com/gatsbyjs/gatsby/pull/22253) that includes these
-    optimizations shows how they moved from a similar "common" style approach.
-+   If you would like to see this same chunking strategy applied to a vanilla React application,
-    take a look at this
-    [sample React app](https://github.com/housseindjirdeh/webpack-granular-split-chunks-sample/blob/master/webpack.config.js).
++   If you would like to see the same chunking optimizations applied to a vanilla React application,
+    take a look at this [sample React
+    app](https://glitch.com/edit/#!/webpack-granular-split-chunks?path=webpack.config.js). It uses a
+    simplified version of the granular chunking strategy and can help you start applying the same
+    sort of logic to your site.
 +   If you use Rollup instead of webpack, take a look at the
-    [`manualChunks`](https://rollupjs.org/guide/en/#manualchunks) function in order to create
-    custom shared chunks.
+    [`manualChunks`](https://rollupjs.org/guide/en/#manualchunks) function in order to create custom
+    shared chunks.
