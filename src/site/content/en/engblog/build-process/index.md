@@ -105,7 +105,7 @@ Here's an example:
 It will end up looking like this:
 
 {% Aside %}
-[See how Asides work in the web.dev codebase](https://web.dev/handbook/web-dev-components/#asides)
+[See how Asides work in the web.dev codebase](/handbook/web-dev-components/#asides)
 {% endAside %}
 
 But it's actually creating HTML that looks like:
