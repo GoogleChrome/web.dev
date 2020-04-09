@@ -139,8 +139,8 @@ button on the bottom sheet, the browser pastes the OTP into the form and the
 form is submitted without the user needing to press **Continue**.
 
 <video autoplay loop muted playsinline>
-  <source src="https://storage.googleapis.com/web-dev-assets/sms-receiver-announce/demo.mp4" type="video/mp4">
-  <source src="https://storage.googleapis.com/web-dev-assets/sms-receiver-announce/demo.webm" type="video/webm">
+  <source src="https://storage.googleapis.com/web-dev-assets/web-otp/demo.mp4" type="video/mp4">
+  <source src="https://storage.googleapis.com/web-dev-assets/web-otp/demo.webm" type="video/webm">
 </video>
 
 The whole process is diagrammed in the image below.
