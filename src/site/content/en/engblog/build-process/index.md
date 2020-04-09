@@ -108,7 +108,7 @@ It will end up looking like this:
 [See how Asides work in the web.dev codebase](/handbook/web-dev-components/#asides)
 {% endAside %}
 
-But it's actually creating HTML that looks like:
+But it's actually creating HTML that looks like this:
 
 ```html
 <div class="w-aside w-aside--note">
