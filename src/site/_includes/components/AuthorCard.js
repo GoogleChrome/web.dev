@@ -13,12 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+const {html} = require("common-tags");
 const BaseCard = require("./BaseCard");
 
 /**
- * PostCard used to preview posts.
- * @param {Object} args An eleventy collection item with post data.
+ * AuthorCard used to preview authors.
+ * @param {Object} post An eleventy collection item with post data.
  * @return {string}
  */
-module.exports = (args) => new BaseCard(args).render();
+class AuthorCard extends BaseCard {
+  constructor(arg) {
+    super({...arg, className: "w-card-author"});
+  }
+
+  renderThumbnail(url, img, alt) {
+    return html`
+      <figure class="w-card-base__figure w-card-author__figure">
+        <img
+          class="w-card-author__image"
+          src="${img}"
+          alt="${alt}"
+          loading="lazy"
+        />
+      </figure>
+    `;
+  }
+}
+module.exports = (args) => new AuthorCard(args).render();

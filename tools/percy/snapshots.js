@@ -28,6 +28,14 @@ const pagesToTest = [
     url: "handbook/web-dev-components",
     title: "Components page",
   },
+  {
+    url: "authors",
+    title: "Authors page",
+  },
+  {
+    url: "tags",
+    title: "Tags page",
+  },
 ];
 
 // A script to navigate our app and take snapshots with Percy.

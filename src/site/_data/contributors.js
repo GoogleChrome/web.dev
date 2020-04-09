@@ -15,39 +15,6 @@ const contributors = {
       en: "Human boy working on web standards at Google",
     },
   },
-  pbakaus: {
-    name: {
-      given: "Paul",
-      family: "Bakaus",
-    },
-    org: {
-      name: "Google",
-      unit: "Developer Relations",
-    },
-    country: "US",
-    homepage: "https://paulbakaus.com",
-    twitter: "pbakaus",
-    description: {
-      en:
-        "Open Web Developer Advocate at Google • Tools, Performance, Animation, UX",
-    },
-  },
-  ianbarber: {
-    name: {
-      given: "Ian",
-      family: "Barber",
-    },
-    org: {
-      name: "Google",
-      unit: "Developer Relations",
-    },
-    country: "UK",
-    homepage: "http://www.riskcompletefailure.com/",
-    twitter: "ianbarber",
-    description: {
-      en: "Ian is a DRE",
-    },
-  },
   kaycebasques: {
     name: {
       given: "Kayce",
@@ -80,64 +47,6 @@ const contributors = {
       en: "Dives into Chromium source code",
     },
   },
-  ericbidelman: {
-    name: {
-      given: "Eric",
-      family: "Bidelman",
-    },
-    org: {
-      name: "Google",
-      unit: "Developer Relations",
-    },
-    country: "USA",
-    homepage: "http://ericbidelman.com",
-    twitter: "ebidel",
-    github: "ebidel",
-    glitch: "ebidel",
-    description: {
-      en:
-        "Engineer @ Google working on web tooling: Headless Chrome, Puppeteer, Lighthouse",
-    },
-  },
-  bokan: {
-    name: {
-      given: "David",
-      family: "Bokan",
-    },
-    org: {
-      name: "Google",
-      unit: "Software Engineer",
-    },
-    country: "CA",
-    twitter: "david_bokan",
-  },
-  aliceboxhall: {
-    name: {
-      given: "Alice",
-      family: "Boxhall",
-    },
-    org: {
-      name: "Google",
-      unit: "Chrome",
-    },
-    country: "USA",
-    twitter: "sundress",
-  },
-  cbrand: {
-    name: {
-      given: "Christiaan",
-      family: "Brand",
-    },
-    org: {
-      name: "Google",
-    },
-    country: "USA",
-    twitter: "christiaanbrand",
-    github: "christiaanbrand",
-    description: {
-      en: "Security Product Manager",
-    },
-  },
   mathiasbynens: {
     name: {
       given: "Mathias",
@@ -155,124 +64,6 @@ const contributors = {
       en: "V8 JavaScript whisperer",
     },
   },
-  owencm: {
-    name: {
-      given: "Owen",
-      family: "Campbell-Moore",
-    },
-    org: {
-      name: "Google",
-      unit: "Product Management",
-    },
-    country: "US",
-    homepage: "http://www.owencampbellmoore.com/",
-    twitter: "owencm",
-  },
-  mcasas: {
-    name: {
-      given: "Miguel",
-      family: "Casas-Sanchez",
-    },
-    org: {
-      name: "Google",
-      unit: "Chrome",
-    },
-    country: "USA",
-    twitter: "yellowdoge",
-    github: "yellowdoge",
-    description: {
-      en: "Miguel is an engineer in the Chrome team",
-    },
-  },
-  hongchanchoi: {
-    name: {
-      given: "Hongchan",
-      family: "Choi",
-    },
-    org: {
-      name: "Google",
-    },
-    homepage: "https://hoch.io",
-    twitter: "hochsays",
-    description: {
-      en: "Software Engineer working on Web Audio in Chromium",
-    },
-  },
-  mco: {
-    name: {
-      given: "Marc",
-      family: "Cohen",
-    },
-    org: {
-      name: "Google",
-      unit: "Developer Relations",
-    },
-    country: "US",
-    twitter: "marcacohen",
-    homepage: "https://about.me/marc1",
-    description: {
-      en: "Eng Manager, Web Developer Relations",
-    },
-  },
-  victorcostan: {
-    name: {
-      given: "Victor",
-      family: "Costan",
-    },
-    twitter: "pwnall",
-    github: "pwnall",
-    description: {
-      en: "Tech Lead, Chrome Storage",
-    },
-    org: {
-      name: "Google",
-      unit: "Chrome",
-    },
-    country: "US",
-  },
-  dalecurtis: {
-    name: {
-      given: "Dale",
-      family: "Curtis",
-    },
-    org: {
-      name: "Google",
-      unit: "Chrome Media",
-    },
-    country: "US",
-    twitter: "DaleCurtis",
-    homepage: "https://github.com/dalecurtis",
-    description: {
-      en: "Dale is a Senior Software Engineer",
-    },
-  },
-  alexdanilo: {
-    name: {
-      given: "Alex",
-      family: "Danilo",
-    },
-    org: {
-      name: "Google",
-      unit: "Developer Relations",
-    },
-    country: "AU",
-    twitter: "alexanderdanilo",
-  },
-  wdenniss: {
-    name: {
-      given: "William",
-      family: "Denniss",
-    },
-    org: {
-      name: "Google",
-      unit: "Identity",
-    },
-    country: "US",
-    twitter: "WilliamDenniss",
-    description: {
-      en: "Google Identity Product Manager",
-    },
-  },
   robdodson: {
     name: {
       given: "Rob",
@@ -287,21 +78,6 @@ const contributors = {
     twitter: "rob_dodson",
     github: "robdodson",
     glitch: "robdodson",
-  },
-  tdresser: {
-    name: {
-      given: "Tim",
-      family: "Dresser",
-    },
-    org: {
-      name: "Google",
-      unit: "Software Engineer",
-    },
-    country: "CA",
-    twitter: "tdresser",
-    description: {
-      en: "Software Engineer working on performance metrics at Google",
-    },
   },
   samdutton: {
     name: {
@@ -330,78 +106,6 @@ const contributors = {
       en: "Arthur is a Tech Writer",
     },
   },
-  dgash: {
-    name: {
-      given: "Dave",
-      family: "Gash",
-    },
-    org: {
-      name: "Google",
-      unit: "Developer Relations",
-    },
-    country: "US",
-    description: {
-      en: "Dave is a Tech Writer",
-    },
-  },
-  ewagasperowicz: {
-    name: {
-      given: "Ewa",
-      family: "Gasperowicz",
-    },
-    org: {
-      name: "Google",
-      unit: "Developer Relations",
-    },
-    country: "UK",
-    twitter: "devnook",
-    glitch: "devnook",
-    github: "devnook",
-  },
-  mattgaunt: {
-    name: {
-      given: "Matt",
-      family: "Gaunt",
-    },
-    org: {
-      name: "Google",
-      unit: "Developer Relations",
-    },
-    country: "UK",
-    homepage: "https://gauntface.com/blog",
-    twitter: "gauntface",
-  },
-  sgomes: {
-    name: {
-      given: "Sérgio",
-      family: "Gomes",
-    },
-    org: {
-      name: "Google",
-      unit: "Developer Relations",
-    },
-    country: "UK",
-    twitter: "sergiomdgomes",
-    description: {
-      en: "Web DevRel @ Google",
-    },
-  },
-  greenido: {
-    name: {
-      given: "Ido",
-      family: "Green",
-    },
-    org: {
-      name: "Google",
-      unit: "Developer Relations",
-    },
-    country: "IL",
-    homepage: "https://greenido.wordpress.com",
-    twitter: "greenido",
-    description: {
-      en: "Ido is a Developer Advocate and a runner",
-    },
-  },
   tomgreenaway: {
     name: {
       given: "Tom",
@@ -417,38 +121,6 @@ const contributors = {
     description: {
       en:
         "Tom is the Games Lead for the Chrome & Web Developer Relations team at Google",
-    },
-  },
-  ilyagrigorik: {
-    name: {
-      given: "Ilya",
-      family: "Grigorik",
-    },
-    org: {
-      name: "Google",
-      unit: "Developer Relations",
-    },
-    country: "USA",
-    homepage: "https://igvita.com",
-    twitter: "igrigorik",
-    description: {
-      en: "Ilya is a Developer Advocate and Web Perf Guru",
-    },
-  },
-  jgruber: {
-    name: {
-      given: "Jakob",
-      family: "Gruber",
-    },
-    org: {
-      name: "Google",
-      unit: "V8",
-    },
-    country: "DE",
-    twitter: "schuay",
-    github: "schuay",
-    description: {
-      en: "Jakob is an engineer working on V8",
     },
   },
   yigu: {
@@ -479,33 +151,6 @@ const contributors = {
       name: "University of Waterloo",
     },
   },
-  yangguo: {
-    name: {
-      given: "Yang",
-      family: "Guo",
-    },
-    org: {
-      name: "Google",
-      unit: "V8",
-    },
-    country: "DE",
-    twitter: "hashseed",
-    github: "hashseed",
-    description: {
-      en: "Yang is an engineer working on V8",
-    },
-  },
-  chrishtr: {
-    name: {
-      given: "Chris",
-      family: "Harrelson",
-    },
-    org: {
-      name: "Google",
-      unit: "Software engineering",
-    },
-    country: "US",
-  },
   katiehempenius: {
     name: {
       given: "Katie",
@@ -521,78 +166,6 @@ const contributors = {
     github: "khempenius",
     glitch: "khempenius",
   },
-  patrickhulce: {
-    name: {
-      given: "Patrick",
-      family: "Hulce",
-    },
-    org: {
-      name: "Google",
-      unit: "Chrome DevTools",
-    },
-    country: "US",
-    description: {
-      en: "Performance Poet",
-    },
-    github: "patrickhulce",
-    twitter: "patrickhulce",
-  },
-  paulirish: {
-    name: {
-      given: "Paul",
-      family: "Irish",
-    },
-    org: {
-      name: "Google",
-      unit: "Developer Relations",
-    },
-    country: "US",
-    homepage: "https://www.paulirish.com",
-    twitter: "paul_irish",
-  },
-  katjackson: {
-    name: {
-      given: "Katherine",
-      family: "Jackson",
-    },
-    org: {
-      name: "Google",
-      unit: "Developer Relations",
-    },
-    country: "US",
-    description: {
-      en: "Technical Writer Intern, Chrome DevTools",
-    },
-  },
-  mkazi: {
-    name: {
-      given: "Minhaz",
-      family: "Kazi",
-    },
-    org: {
-      name: "Google",
-      unit: "Developer Relations",
-    },
-    twitter: "_mkazi_",
-    github: "minhaz",
-  },
-  megginkearney: {
-    name: {
-      given: "Meggin",
-      family: "Kearney",
-    },
-    org: {
-      name: "Google",
-      unit: "Developer Relations",
-    },
-    country: "US",
-    glitch: "Meggin",
-    github: "Meggin",
-    twitter: "megginkearney",
-    description: {
-      en: "Meggin is a Tech Writer",
-    },
-  },
   mihajlija: {
     name: {
       given: "Milica",
@@ -601,39 +174,6 @@ const contributors = {
     homepage: "https://mihajlija.github.io/",
     twitter: "bibydigital",
     github: "mihajlija",
-  },
-  brendankenny: {
-    name: {
-      given: "Brendan",
-      family: "Kenny",
-    },
-    org: {
-      name: "Google",
-      unit: "Developer Relations",
-    },
-    country: "US",
-    homepage: "http://twitter.com/brendankenny/",
-    twitter: "brendankenny",
-    description: {
-      en: "Lighthouse Bulb Installer",
-    },
-  },
-  paulkinlan: {
-    name: {
-      given: "Paul",
-      family: "Kinlan",
-    },
-    org: {
-      name: "Google",
-      unit: "Developer Relations",
-    },
-    country: "UK",
-    homepage: "https://paul.kinlan.me",
-    twitter: "paul_kinlan",
-    glitch: "PaulKinlan",
-    description: {
-      en: "Paul is a Developer Advocate",
-    },
   },
   agektmr: {
     name: {
@@ -650,20 +190,6 @@ const contributors = {
     github: "agektmr",
     description: {
       en: "Developer Advocate in Tokyo",
-    },
-  },
-  zkoch: {
-    name: {
-      given: "Zach",
-      family: "Koch",
-    },
-    org: {
-      name: "Google",
-      unit: "Chrome",
-    },
-    country: "US",
-    description: {
-      en: "Google Chrome Product Manager",
     },
   },
   kosamari: {
@@ -684,80 +210,6 @@ const contributors = {
       en: "Mariko is a drawsplainer",
     },
   },
-  mustafa: {
-    name: {
-      given: "Mustafa",
-      family: "Kurtuldu",
-    },
-    org: {
-      name: "Google",
-      unit: "Design Relations",
-    },
-    country: "UK",
-    homepage: "http://www.designtoday.info",
-    twitter: "mustafa_x",
-    description: {
-      en: "Design Advocate at Google • Material Design, UX & Design Sprints",
-    },
-  },
-  sethladd: {
-    name: {
-      given: "Seth",
-      family: "Ladd",
-    },
-    org: {
-      name: "Google",
-      unit: "Developer Relations",
-    },
-    country: "US",
-    homepage: "https://sethladd.com/",
-    twitter: "sethladd",
-  },
-  mlamouri: {
-    name: {
-      given: "Mounir",
-      family: "Lamouri",
-    },
-    org: {
-      name: "Google",
-      unit: "Chrome",
-    },
-    country: "CA",
-    description: {
-      en: "Software Engineer for Web Media Experience",
-    },
-  },
-  ericlawrence: {
-    name: {
-      given: "Eric",
-      family: "Lawrence",
-    },
-    org: {
-      name: "Google",
-      unit: "Chrome",
-    },
-    country: "US",
-    github: "ericlaw1979",
-    homepage: "https://textslashplain.com/",
-    twitter: "ericlaw",
-  },
-  plegner: {
-    name: {
-      given: "Philipp",
-      family: "Legner",
-    },
-    homepage: "https://mathigon.org",
-    twitter: "philipplegner",
-    github: "plegner",
-    description: {
-      en: "Software Engineer at Google",
-    },
-    org: {
-      name: "Google",
-      unit: "Software Engineer",
-    },
-    country: "GB",
-  },
   petelepage: {
     name: {
       given: "Pete",
@@ -775,50 +227,6 @@ const contributors = {
       en:
         "Developer Advocate on the web team at Google, taking the sharp edges off new stuff & helping make the web better for developers! (he/him)",
     },
-  },
-  paullewis: {
-    name: {
-      given: "Paul",
-      family: "Lewis",
-    },
-    org: {
-      name: "Google",
-      unit: "Developer Relations",
-    },
-    country: "UK",
-    homepage: "https://aerotwist.com/",
-    twitter: "aerotwist",
-    description: {
-      en: "Paul is a Design and Perf Advocate",
-    },
-  },
-  henrylim: {
-    name: {
-      given: "Henry",
-      family: "Lim",
-    },
-    org: {
-      name: "Google Developer Group Kuala Lumpur",
-      unit: "Community Co-organizer",
-    },
-    country: "MY",
-    twitter: "henrylim96",
-    homepage: "https://limhenry.xyz",
-    description: {
-      en:
-        "Henry is the community co-organizer @ Google Developer Group Kuala Lumpur.",
-    },
-  },
-  smcgruer: {
-    name: {
-      given: "Stephen",
-      family: "McGruer",
-    },
-    org: {
-      name: "Google",
-      unit: "Chrome",
-    },
-    country: "Canada",
   },
   pjmclachlan: {
     name: {
@@ -896,86 +304,6 @@ const contributors = {
     github: "demianrenzulli",
     glitch: "demianrenzulli",
   },
-  taylorsavage: {
-    name: {
-      given: "Taylor",
-      family: "Savage",
-    },
-    org: {
-      name: "Google",
-      unit: "Chrome",
-    },
-    country: "US",
-    twitter: "taylorthesavage",
-    description: {
-      en:
-        "Taylor is a PM on the Chrome Team, focusing on Web Components and Polymer.",
-    },
-  },
-  mscales: {
-    name: {
-      given: "Mat",
-      family: "Scales",
-    },
-    org: {
-      name: "Google",
-      unit: "Developer Relations",
-    },
-    country: "UK",
-    twitter: "wibblymat",
-  },
-  glenshires: {
-    name: {
-      given: "Glen",
-      family: "Shires",
-    },
-    org: {
-      name: "Google",
-      unit: "Software Engineer",
-    },
-    country: "USA",
-  },
-  sieke: {
-    name: {
-      given: "Alex",
-      family: "Sieke",
-    },
-    org: {
-      name: "Google",
-      unit: "Android",
-    },
-    country: "US",
-    description: {
-      en: "Payments Product Manager",
-    },
-  },
-  vinamratasingal: {
-    name: {
-      given: "Vinamrata",
-      family: "Singal",
-    },
-    org: {
-      name: "Google",
-      unit: "Chrome",
-    },
-    country: "US",
-    description: {
-      en: "Lighthouse Product Manager",
-    },
-  },
-  borissmus: {
-    name: {
-      given: "Boris",
-      family: "Smus",
-    },
-    org: {
-      name: "Google",
-      unit: "Developer Relations",
-    },
-    country: "USA",
-    homepage: "http://smus.com",
-    twitter: "borismus",
-  },
   rsolomakhin: {
     name: {
       given: "Rouslan",
@@ -987,19 +315,6 @@ const contributors = {
     },
     country: "USA",
     twitter: "rsolomakhin",
-  },
-  emilystark: {
-    name: {
-      given: "Emily",
-      family: "Stark",
-    },
-    org: {
-      name: "Google",
-      unit: "Chrome",
-    },
-    country: "USA",
-    homepage: "https://www.emilymstark.com/",
-    twitter: "estark37",
   },
   thomassteiner: {
     name: {
@@ -1018,32 +333,6 @@ const contributors = {
     },
     country: "DE",
   },
-  sunyunjia: {
-    name: {
-      given: "Sandra",
-      family: "Sun",
-    },
-    org: {
-      name: "Google",
-      unit: "Chrome",
-    },
-    country: "Canada",
-    description: {
-      en: "Software Engineer working on Chromium",
-    },
-  },
-  ossu: {
-    name: {
-      given: "Oskar",
-      family: "Sundbom",
-    },
-    org: {
-      name: "Google",
-    },
-    description: {
-      en: "Software Engineer working on WebRTC and Audio in Chromium",
-    },
-  },
   surma: {
     name: {
       given: "Surma",
@@ -1055,31 +344,6 @@ const contributors = {
     },
     country: "UK",
     twitter: "DasSurma",
-  },
-  franktang: {
-    name: {
-      given: "Frank",
-      family: "Tang",
-    },
-    org: {
-      name: "Google",
-    },
-    github: "FrankYFTang",
-    description: {
-      en: "i18n engineer",
-    },
-  },
-  dtapuska: {
-    name: {
-      given: "Dave",
-      family: "Tapuska",
-    },
-    org: {
-      name: "Google",
-      unit: "Software Engineer",
-    },
-    country: "CA",
-    twitter: "dtapuska",
   },
   samthor: {
     name: {
@@ -1098,36 +362,6 @@ const contributors = {
     description: {
       en: "¯‍\\‍_‍(‍ツ‍)‍_‍/‍¯",
     },
-  },
-  majidvp: {
-    name: {
-      given: "Majid",
-      family: "Valipour",
-    },
-    homepage: "http://zgrs.ca",
-    twitter: "majido",
-    github: "majido",
-    description: {
-      en: "Software Engineer working on Chromium",
-    },
-    org: {
-      name: "Google",
-      unit: "Software Engineer",
-    },
-    country: "CA",
-  },
-  johyphenel: {
-    name: {
-      given: "Jo-el",
-      family: "van Bergen",
-    },
-    org: {
-      name: "Google",
-      unit: "Software engineer",
-    },
-    country: "USA",
-    homepage: "https://plus.google.com/+Jo-elvanBergen",
-    twitter: "johyphenel",
   },
   rviscomi: {
     name: {
@@ -1158,47 +392,6 @@ const contributors = {
     github: "philipwalton",
     description: {
       en: "Engineer at Google working on the Web Platform",
-    },
-  },
-  mikewest: {
-    name: {
-      given: "Mike",
-      family: "West",
-    },
-    org: {
-      name: "Google",
-      unit: "Developer Relations",
-    },
-    country: "DE",
-    homepage: "https://mikewest.org/",
-    twitter: "mikewest",
-  },
-  chriswilson: {
-    name: {
-      given: "Chris",
-      family: "Wilson",
-    },
-    org: {
-      name: "Google",
-      unit: "Developer Relations",
-    },
-    country: "USA",
-    twitter: "cwilso",
-  },
-  kinukoyasuda: {
-    name: {
-      given: "Kinuko",
-      family: "Yasuda",
-    },
-    twitter: "kinu",
-    github: "kinu",
-    org: {
-      name: "Google",
-      unit: "Chrome",
-    },
-    country: "JPN",
-    description: {
-      en: "Software Engineer at Google working on the web platform",
     },
   },
   ekharvey: {
@@ -1495,39 +688,6 @@ const contributors = {
     twitter: "mohamedzamakhan",
     github: "mohammedzamakhan",
   },
-  ahmadawais: {
-    name: {
-      given: "Ahmad",
-      family: "Awais",
-    },
-    org: {
-      name: "Cloudinary",
-      unit: "Developer Relations",
-    },
-    country: "",
-    homepage: "https://AhmadAwais.com/",
-    twitter: "MrAhmadAwais",
-    github: "ahmadawais",
-    glitch: "ahmadawais",
-    description: {
-      en:
-        "Principal Developer Advocate ❯ Google Developers Expert ❯ Full-time Open Sourcerer.",
-    },
-  },
-  sherwinski: {
-    name: {
-      given: "Sherwin",
-      family: "Heydarbeygi",
-    },
-    github: "sherwinski",
-    glitch: "sherwinski",
-    org: {
-      name: "imgix",
-      unit: "SDK Engineer",
-    },
-    country: "US",
-    homepage: "https://sherwinski.com",
-  },
   dougsillars: {
     name: {
       given: "Doug",
@@ -1766,9 +926,10 @@ Object.keys(contributors).forEach((key) => {
 
   processedContributors[key] = {
     ...contributorData,
-    title,
     description,
     href: `/authors/${key}/`,
+    title,
+    key,
   };
 });
 

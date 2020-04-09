@@ -1,0 +1,41 @@
+<nav class="w-pagination">
+  {# Show first page anchor only if not on the first page #}
+  {% if paged.index != 0 %}
+    <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--first" aria-label="First Page" href="{{ paged.href }}"></a>
+  {% endif %}
+
+  {# Show previous page anchor only if not on the first two pages #}
+  {% if paged.index > 1 %}
+    <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--previous" aria-label="Previous Page" href="{{ paged.href }}{{ paged.index }}"></a>
+  {% endif %}
+
+  {%- for pageEntry in paged | pagedNavigation  %}
+    {% if pageEntry.showEllipses %}
+      <span class="w-pagination__spacer">…</span>
+    {% endif %}
+    <a
+      {% if paged.index == (pageEntry.index - 1) %}
+        class="w-pagination__link w-pagination__link--active"
+        aria-current="page"
+      {% else %}
+        class="w-pagination__link"
+      {% endif %}
+
+      aria-label="Page {{pageEntry.index}}"
+      href="{{ pageEntry.href }}"
+    >
+      {{ pageEntry.index }}
+    </a>
+  {%- endfor %}
+
+  {# Show next page anchor only if not on the last or penultimate pages #}
+  {% if (paged.index + 2) < (paged.pages) %}
+    <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--next" aria-label="Next Page" href="{{ paged.href }}{{ paged.index + 2 }}"></a>
+  {% endif %}
+
+  {# Show last page anchor only if not on the last page #}
+  {% if paged.index != (paged.pages - 1) %}
+    <a class="w-pagination__link w-pagination__arrow w-pagination__arrow--last" aria-label="Last Page" href="{{ paged.href }}{{ paged.pages }}"></a>
+  {% endif %}
+
+</nav>

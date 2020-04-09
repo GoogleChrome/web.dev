@@ -193,9 +193,16 @@ const tags = {
 const postTags = {};
 
 Object.keys(tags).forEach((key) => {
+  const tag = tags[key];
+  const description = tag.description
+    ? tag.description
+    : `Our latest news, updates, and stories about ${tag.title}.`;
+
   postTags[key] = {
-    ...tags[key],
+    ...tag,
+    description,
     href: `/tags/${key}/`,
+    key,
   };
 });
 
