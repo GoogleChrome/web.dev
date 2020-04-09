@@ -69,7 +69,7 @@ Your creations can reach users all across the world...
 
 This front matter lets us define arbitrary properties like author(s), publish date, and tags.
 Eleventy conveniently exposes the front matter as [data](https://www.11ty.dev/docs/data/) in nearly every plugin, template, or other context where we'd like to do something intelligent.
-The data object also contains what Eleventy describes as the [cascade](https://www.11ty.dev/docs/data-cascade/)—a variety of data pulled from each individual page, from the layout the page uses, and from data found in the hierarchical folder structure.
+The data object also contains what Eleventy describes as the [data cascade](https://www.11ty.dev/docs/data-cascade/)—a variety of data pulled from each individual page, from the layout the page uses, and from data found in the hierarchical folder structure.
 
 Each unique layout describes a different type of content and can [inherit](https://www.11ty.dev/docs/layout-chaining/) from _other_ layouts.
 On web.dev, we use this feature to correctly frame different types of content (like posts and codelabs) while still sharing one top-level HTML layout.
