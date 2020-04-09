@@ -146,7 +146,7 @@ And antiquated browsers just ignore Web Components altogether and render whateve
 Each Web Component is a class with methods including `connectedCallback()`, `disconnectedCallback()`, and `attributeChangedCallback()`.
 web.dev's custom elements mostly inherit from [LitElement](https://lit-element.polymer-project.org/), which provides a simple base for complex components.
 
-While web.dev uses web components on many pages, nowhere is it more necessary than on the [Measure](https://web.dev/measure) page.
+While web.dev uses Web Components on many pages, nowhere is it more necessary than on the [Measure](https://web.dev/measure) page.
 Two elements provide the bulk of the functionality you see on this page:
 
 ```html
