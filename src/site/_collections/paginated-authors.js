@@ -37,11 +37,13 @@ module.exports = () => {
     "addyosmani",
     "adamargyle",
   ];
-  const authors = Object.values(contributors)
-    .sort((a, b) => a.title.localeCompare(b.title))
-    .filter((item) =>
-      process.env.PERCY ? testAuthors.includes(item.key) : true,
-    );
+  let authors = Object.values(contributors).sort((a, b) =>
+    a.title.localeCompare(b.title),
+  );
+
+  if (process.env.PERCY) {
+    authors = authors.filter((item) => testAuthors.includes(item.key));
+  }
 
   const elements = authors.map((author) => {
     author.url = path.join("/en", author.href);
