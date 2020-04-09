@@ -292,7 +292,7 @@ Chrome 82
 
 * Support for [writable streams](#save-to-disk) was added, and the previous
   method for writing to disk (`FileSystemWriter`) was deprecated.
-* File handles can now be serialized and stored in IndexedDB, or `postMessage`ed
+* File handles can now be serialized and stored in IndexedDB, or sent via `postMessage`
   to other windows or workers within the same origin. Note that permissions
   are not retained between browser sessions. For example, when a browser tab
   is re-opened, and a file handle is obtained from IndexedDB, the user will
