@@ -152,16 +152,6 @@ async function build() {
     input: "src/lib/bootstrap.js",
     external: disallowExternal,
     plugins: [rollupPluginPostCSS(postcssConfig), ...defaultPlugins],
-    external(source, importer, isResolved) {
-      // We don't support any external imports. This most likely happens if you mistype a
-      // node_modules import or the package.json has changed.
-      if (isResolved && !source.match(/^\.{0,2}\//)) {
-        throw new Error(
-          `Unresolved external import: "${source}" (imported ` +
-            `by: ${importer}), did you forget to npm install?`,
-        );
-      }
-    },
   });
   const appGenerated = await appBundle.write({
     dynamicImportFunction: 'window._import',
