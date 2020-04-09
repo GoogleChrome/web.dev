@@ -1,11 +1,11 @@
 ---
-title: Improved dark mode with the `color-scheme` CSS property and the corresponding meta tag
+title: Improved dark mode default styling with the `color-scheme` CSS property and the corresponding meta tag
 subhead: |
   The `color-scheme` CSS property and the corresponding meta tag
   allow developers to opt their pages in to the theme-specific defaults of the user agent stylesheet.
 authors:
   - thomassteiner
-date: 2020-03-27
+date: 2020-04-08
 hero: hero.jpg
 alt: Pigeons on a wall with a sharp black and white contrast in the background.
 description: |
@@ -20,7 +20,6 @@ tags:
   - dark-theme
   - prefers-color-scheme
   - color-scheme
-draft: true
 ---
 ## Background
 
