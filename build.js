@@ -29,22 +29,25 @@ const rollup = require('rollup');
 const terser = isProd ? require('terser') : null;
 const {getManifest} = require('workbox-build');
 const site = require('./src/site/_data/site');
+const buildVirtualJSON = require('./src/build/virtual-json');
 
 process.on('unhandledRejection', (reason, p) => {
   log.error('Build had unhandled rejection', reason, p);
   process.exit(1);
 });
 
-const bootstrapConfig = {
-  prod: isProd,
-  env: process.env.ELEVENTY_ENV || 'dev',
-  version:
-    'v' +
-    new Date()
-      .toISOString()
-      .replace(/[\D]/g, '')
-      .slice(0, 12),
-  firebaseConfig: isProd ? site.firebase.prod : site.firebase.staging,
+const virtualImports = {
+  webdev_config: {
+    prod: isProd,
+    env: process.env.ELEVENTY_ENV || 'dev',
+    version:
+      'v' +
+      new Date()
+        .toISOString()
+        .replace(/[\D]/g, '')
+        .slice(0, 12),
+    firebaseConfig: isProd ? site.firebase.prod : site.firebase.staging,
+  },
 };
 
 const defaultPlugins = [
@@ -52,6 +55,7 @@ const defaultPlugins = [
   rollupPluginCJS({
     include: 'node_modules/**',
   }),
+  rollupPluginVirtual(buildVirtualJSON(virtualImports)),
 ];
 
 /**
@@ -109,13 +113,7 @@ async function build() {
   // useful for cache busting.
   const appBundle = await rollup.rollup({
     input: 'src/lib/bootstrap.js',
-    plugins: [
-      rollupPluginVirtual({
-        webdev_config: `export default ${JSON.stringify(bootstrapConfig)};`,
-      }),
-      rollupPluginPostCSS(postcssConfig),
-      ...defaultPlugins,
-    ],
+    plugins: [rollupPluginPostCSS(postcssConfig), ...defaultPlugins],
     external(source, importer, isResolved) {
       // We don't support any external imports. This most likely happens if you mistype a
       // node_modules import or the package.json has changed.
@@ -144,8 +142,8 @@ async function build() {
     await compressOutput(generated);
   }
 
+  // We don't generate a manifest in dev, so Workbox doesn't do a default cache step.
   const manifest = isProd ? await buildCacheManifest() : [];
-  const noticeDev = isProd ? '' : '// Not generated in dev';
 
   const layoutTemplate = await fs.readFile(
     path.join('dist', 'sw-partial-layout.partial'),
@@ -162,12 +160,12 @@ async function build() {
       rollupPluginReplace({
         'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : ''),
       }),
-      rollupPluginVirtual({
-        'cache-manifest': `export default ${JSON.stringify(
-          manifest,
-        )};${noticeDev}`,
-        'layout-template': `export default ${JSON.stringify(layoutTemplate)}`,
-      }),
+      rollupPluginVirtual(
+        buildVirtualJSON({
+          'cache-manifest': manifest,
+          'layout-template': layoutTemplate,
+        }),
+      ),
       ...defaultPlugins,
     ],
     inlineDynamicImports: true, // SW does not support imports
