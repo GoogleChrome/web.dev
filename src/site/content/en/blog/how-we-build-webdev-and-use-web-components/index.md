@@ -33,8 +33,8 @@ We also happily use features that are supported by evergreen browsers but not by
 Because we're a static site, JavaScript is _just not required_ to read our content.
 
 Once the build process—which involves generating static HTML and bundling our JavaScript with Rollup—is complete, web.dev can be hosted with a simple static server for testing.
-The site is _almost_ completely static, but we have a few special needs that still benefit from [a custom Node.js server](https://github.com/GoogleChrome/web.dev/blob/master/server.js).
-These include redirects for invalid domains, as well as code [to parse a user's preferred language](https://github.com/GoogleChrome/web.dev/blob/master/locale-handler.js) for an upcoming internationalization feature.
+The site is _almost_ completely static, but we have a few special needs that still benefit from [a custom Node.js server](https://github.com/GoogleChrome/web.dev/blob/2050fe6352e024943195a438841dc99217f34e63/server.js).
+These include redirects for invalid domains, as well as code [to parse a user's preferred language](https://github.com/GoogleChrome/web.dev/blob/2050fe6352e024943195a438841dc99217f34e63/locale-handler.js) for an upcoming internationalization feature.
 
 {% Aside %}
 Despite being a Google product, web.dev doesn't use any internal Google tools or processes.
@@ -78,9 +78,9 @@ On web.dev, we use this feature to correctly frame different types of content (l
 
 Eleventy provides a programmatic way to build arbitrary collections of content.
 This has let us build pagination support and generate virtual pages (pages that don't have a matching Markdown file on disk) for post authors.
-For example, we construct our authors pages using a template containing [an expression for its permalink](https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/authors/index.njk#L4) (so the template is re-rendered for every author) and a backing [collection](https://github.com/GoogleChrome/web.dev/blob/master/src/site/_collections/paginated-posts-by-author.js#L23).
+For example, we construct our authors pages using a template containing [an expression for its permalink](https://github.com/GoogleChrome/web.dev/blob/2050fe6352e024943195a438841dc99217f34e63/src/site/content/en/authors/index.njk#L4) (so the template is re-rendered for every author) and a backing [collection](https://github.com/GoogleChrome/web.dev/blob/2050fe6352e024943195a438841dc99217f34e63/src/site/_collections/paginated-posts-by-author.js#L23).
 
-This results in, for example, a simple page containing [all of Rob's posts](https://web.dev/authors/robdodson/)!
+This results in, for example, a simple page containing [all of Addy's posts](https://web.dev/authors/addyosmani/)!
 
 ### Limitations
 
@@ -133,7 +133,7 @@ However, our code for modern browsers consists of two major parts:
 The bootstrap code is fairly straightforward: web.dev can load new pages as a single-page application (SPA), so we install a global listener that listens for clicks on local `<a href="...">` elements.
 The SPA model helps us maintain global state about the user's current session, as otherwise every new page load would trigger calls to Firebase to access a user's signed-in state.
 
-We also specify a couple of different [entrypoints](https://github.com/GoogleChrome/web.dev/blob/master/src/lib/loader.js#L18) into our site based on which URL you've hit, and load the correct one using dynamic `import()`.
+We also specify a couple of different [entrypoints](https://github.com/GoogleChrome/web.dev/blob/2050fe6352e024943195a438841dc99217f34e63/src/lib/loader.js#L18) into our site based on which URL you've hit, and load the correct one using dynamic `import()`.
 This cuts down on the number of bytes our users need before the site is enhanced with code.
 
 ### Web Components
@@ -155,7 +155,7 @@ Two elements provide the bulk of the functionality you see on this page:
 ```
 
 These elements create further elements which provide more functionality.
-Importantly, these elements are just part of [our regular Markdown source code](https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/measure/index.njk#L33)—and our content team can add extended functionality to _any_ page, not just the Measure node.
+Importantly, these elements are just part of [our regular Markdown source code](https://github.com/GoogleChrome/web.dev/blob/2050fe6352e024943195a438841dc99217f34e63/src/site/content/en/measure/index.njk#L33)—and our content team can add extended functionality to _any_ page, not just the Measure node.
 
 Our Web Components most commonly utilize the [Container Component](https://flaviocopes.com/react-presentational-vs-container-components/) model, made popular by React, although this model [is now a bit passé](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0).
 Each `-container` element connects to our global state (provided by [unistore](https://github.com/developit/unistore)), and then renders a visual element, which in turn goes on to render actual DOM nodes that have styling or other built-in functionality.
@@ -169,7 +169,7 @@ Our most complex Web Components exist to visualize global actions and state.
 For example, web.dev lets you audit your favourite site and then navigate away from the Measure page.
 If you return, you'll see that the task is still ongoing.
 
-Our simple components purely enhance otherwise static content or create amazing visualizations (for example, each line graph is its own [`<web-sparkline-chart>`](https://github.com/GoogleChrome/web.dev/blob/master/src/lib/components/SparklineChart/index.js)), which has no relationship to the global state.
+Our simple components purely enhance otherwise static content or create amazing visualizations (for example, each line graph is its own [`<web-sparkline-chart>`](https://github.com/GoogleChrome/web.dev/blob/2050fe6352e024943195a438841dc99217f34e63/src/lib/components/SparklineChart/index.js)), which has no relationship to the global state.
 
 ## Let's chat
 
