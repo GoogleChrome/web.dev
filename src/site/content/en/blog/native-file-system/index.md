@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: The new Native File System API enables developers to build powerful web apps that interact with files on the user's local device, like IDEs, photo and video editors, text editors, and more. After a user grants a web app access, this API allows web apps to read or save changes directly to files and folders on the user's device.
 date: 2019-08-20
-updated: 2019-11-26
+updated: 2020-04-09
 tags:
   - post
   - capabilities
@@ -21,20 +21,21 @@ origin_trial:
 ---
 
 {% Aside %}
-  The Native File System API (formerly known as the Writeable Files API), is
-  available as an origin trial in Chrome 78 (beta in September,
-  stable in October) and later. It is part of
-  [capabilities project](https://developers.google.com/web/updates/capabilities),
-  and   this post will be updated as the implementation progresses.
+  The Native File System API is available as an origin trial in Chrome, and is
+  part of [capabilities project](/fugu-status/). This post will be updated as
+  the implementation progresses. See the [what's new](#whats-new) section for
+  the latest updates.
 {% endAside %}
 
 ## What is the Native File System API? {: #what-is-it }
 
-The [Native File System API][spec] enables developers to build powerful web apps
+The [Native File System API][spec]  (formerly known as the Writeable Files API)
+enables developers to build powerful web apps
 that interact with files on the user's local device, like IDEs, photo and video
 editors, text editors, and more. After a user grants a web app access, this
 API allows web apps to read or save changes directly to files and folders
-on the user's device.
+on the user's device. Beyond reading and writing files, the Native File System
+API provides the ability to open a directory and enumerate its contents.
 
 If you've worked with reading and writing files before, much of what I'm about
 to share will be familliar to you. I encourage you to read anyway because not
@@ -56,7 +57,7 @@ all systems are alike.
 | 1. Create explainer                        | [Complete][explainer]        |
 | 2. Create initial draft of specification   | [In progress][spec]          |
 | 3. Gather feedback & iterate on design     | [In progress][spec]          |
-| 4. Origin trial                            | [In progress](#origin-trial) |
+| 4. Origin trial                            | [In progress](#origin-trial)<br> Started in Chrome 78, expected to run through Chrome 85. |
 | 5. Launch                                  | Not started                  |
 
 </div>
@@ -164,7 +165,7 @@ new file handle.
 
 #### Create a new file
 
-Passing `{type: 'saveFile'}` to `chooseFileSystemEntries()` will show the
+Passing `{type: 'save-file'}` to `chooseFileSystemEntries()` will show the
 file picker in "save" mode, allowing the user to pick a new file they want
 to use for saving. For the text editor, I also wanted it to automatically
 add a `.txt` extension, so I provided some additional parameters.
@@ -172,7 +173,7 @@ add a `.txt` extension, so I provided some additional parameters.
 ```js
 async function getNewFileHandle() {
   const opts = {
-    type: 'saveFile',
+    type: 'save-file',
     accepts: [{
       description: 'Text file',
       extensions: ['txt'],
@@ -184,12 +185,50 @@ async function getNewFileHandle() {
 }
 ```
 
-#### Save changes to the original file
+#### Save changes to disk {: #save-to-disk }
 
 You can find all the code for saving changes to a file in my [text
 editor][text-editor] demo on [GitHub][text-editor-source]. The core file system
 interactions are in [`fs-helpers.js`][text-editor-fs-helper]. At its simpliest,
-the process looks like the code below. I'll walk through each step and explain it.
+the process looks like the code below. I'll walk through each step and explain
+it.
+
+```js
+async function writeFile(fileHandle, contents) {
+  // Create a FileSystemWritableFileStream to write to.
+  const writable = await fileHandle.createWritable();
+  // Write the contents of the file to the stream.
+  await writable.write(contents);
+  // Close the file and write the contents to disk.
+  await writable.close();
+}
+```
+
+Writing data to disk uses a [`FileSystemWritableFileStream`][fs-writablestream],
+essentially a [`WritableStream`][writable-stream]. Create the stream by calling
+`createWritable()` on the file handle object. When `createWritable()` is
+called, Chrome first checks if the user has granted write permission to the
+file. If permission to write hasn't been granted, the browser will prompt
+the user for permission. If permission isn't granted, `createWritable()`
+will throw a `DOMException`, and the app will not be able to write to the
+file. In the text editor, these `DOMException`s are handled in the
+[`saveFile()`][text-editor-app-js] method.
+
+The `write()` method takes a string, which is what we want for a text editor.
+But it can also take a [BufferSource][buffersource], or a [Blob][blob].
+Unlike most `WritableStreams`, changes are **not** written to disk until the
+stream is closed by calling `close()`.
+
+{% Details %}
+{% DetailsSummary 'h5' %}
+
+Chrome 81 and earlier
+
+Support for writable streams was added in Chrome 82, and the previous
+method for writing to disk was deprecated. It is temporarily documented
+below until Chrome 83 is available in stable.
+
+{% endDetailsSummary %}
 
 ```js
 async function writeFile(fileHandle, contents) {
@@ -216,17 +255,18 @@ takes a string, which is what we want for a text editor. But it can also take a
 [BufferSource][buffersource], or a [Blob][blob]. Finally, finish writing by
 calling `FileSystemWriter.close()`.
 
-{% Aside 'caution' %}
-  There's no guarantee that the contents are written to disk until
-  the `close()` method is called.
-{% endAside %}
+{% endDetails %}
 
-### What else is possible?
+### Storing file handles in IndexedDB
 
-Beyond reading and writing files, the Native File System API provides
-several other new capabilities.
+Starting in Chrome 82, you can save a file handle to IndexedDB. This makes
+it possible to keep a list of recently opened or edited files. For example
+you could offer to re-open the last file when the app is opened, or show a
+list of recently edited files within your app. You can also `postMessage`
+file handles between the same top-level origin, for example between tabs or
+from tabs to workers.
 
-#### Open a directory and enumerate its contents
+### Open a directory and enumerate its contents
 
 To enumerate all files in a directory, call `chooseFileSystemEntries()`
 with the `type` option set to `'openDirectory'`. The user selects a directory
@@ -236,7 +276,7 @@ is returned, which lets you enumerate and access the directory's files.
 ```js
 const butDir = document.getElementById('butDirectory');
 butDir.addEventListener('click', async (e) => {
-  const opts = {type: 'openDirectory'};
+  const opts = {type: 'open-directory'};
   const handle = await window.chooseFileSystemEntries(opts);
   const entries = await handle.getEntries();
   for await (const entry of entries) {
@@ -246,27 +286,40 @@ butDir.addEventListener('click', async (e) => {
 });
 ```
 
+## What's new/changed? {: #whats-new }
+
+Chrome 82
+
+* Support for [writable streams](#save-to-disk) was added, and the previous
+  method for writing to disk (`FileSystemWriter`) was deprecated.
+* File handles can now be serialized and stored in IndexedDB, or `postMessage`ed
+  to other windows or workers within the same origin. Note that permissions
+  are not retained between browser sessions. For example, when a browser tab
+  is re-opened, and a file handle is obtained from IndexedDB, the user will
+  need to grant permission to read/write to the file again.
+* Added support for `isSameEntry()`, which returns true if two entries
+  represent the same file or directory.
+* Updated usage indicators to indicate whether the user has granted the domain
+  permission to files, including a new read-only indicator.
+
 ## What's currently supported? {: #whats-supported }
 
 We're still working on some of the implementation for the
 Native File System API, and not everything in the [spec][spec]
 (or [explainer][explainer]) has been completed.
 
-As of Chrome 78, the following functionality is not available, or
+As of Chrome 82, the following functionality is not available, or
 doesn't match the spec:
 
-* Handles are not serializable, meaning they cannot be passed via
-  `postMessage()`, or stored in IndexedDB.
-* Non-atomic writes (i.e. calls to `FileSystemFileHandle.createWriter()`
+* Non-atomic writes (i.e. calls to `FileSystemFileHandle.createWritable()`
   with `inPlace: true`).
-* Writing to a file using a [`WritableStream`][writablestream].
-* The [`FileSystemDirectoryHandle.resolve()`][fs-dir-handle] method.
 
 {% Aside 'note' %}
   Since the API is not compatible with all browsers yet,
   we provide a library called
   [browser-nativefs](https://github.com/GoogleChromeLabs/browser-nativefs)
-  that uses the new API wherever it is available, but falls back to legacy approaches when it is not.
+  that uses the new API wherever it is available, but falls back to legacy
+  approaches when it is not.
 {% endAside %}
 
 ## Security and permissions {: #security-considerations }
@@ -458,3 +511,5 @@ critical it is to support them.
 [text-editor-app-js]: https://github.com/GoogleChromeLabs/text-editor/blob/master/src/inline-scripts/app.js
 [download-file]: https://developers.google.com/web/updates/2011/08/Downloading-resources-in-HTML5-a-download
 [cr-dev-twitter]: https://twitter.com/chromiumdev
+[fs-writablestream]: https://wicg.github.io/native-file-system/#api-filesystemwritablefilestream
+[writable-stream]: https://developer.mozilla.org/en-US/docs/Web/API/WritableStream
