@@ -48,7 +48,7 @@ describe("determineImagePath", function() {
     });
   });
 
-  it("returns the correct src for handbook urls", function() {
+  it("returns the correct src for nested urls", function() {
     // The handbook section of the site is the only place where we nest urls.
     // e.g. web.dev/handbook/audience.
     const src = "./foo.jpg";

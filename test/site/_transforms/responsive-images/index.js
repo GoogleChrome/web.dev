@@ -11,11 +11,8 @@ describe("responsive-images", function() {
     let $;
     let $body;
     let $expected;
-    let outputPath = "dist/en/add-manifest/index.html";
-    const outputDir = path
-      .dirname(outputPath)
-      .split(path.sep)
-      .pop();
+    let outputPath;
+    let outputDir;
 
     beforeEach(function() {
       $ = cheerio.load(`<html><head></head><body></body></html>`);
@@ -28,6 +25,11 @@ describe("responsive-images", function() {
       $ = null;
       $body = null;
       $expected = null;
+      outputPath = "dist/en/add-manifest/index.html";
+      outputDir = path
+        .dirname(outputPath)
+        .split(path.sep)
+        .pop();
     });
 
     it("is a noop if there are no images", function() {
@@ -103,7 +105,7 @@ describe("responsive-images", function() {
       assert.deepStrictEqual(actual, $expected.html());
     });
 
-    it("can handle handbook urls", function() {
+    it("can handle nested urls", function() {
       outputPath = "dist/en/handbook/audience/index.html";
       $body.append(`<img src="./foo.jpg"><img src="bar.jpg">`);
       const actual = responsiveImages($.html(), outputPath);
@@ -120,6 +122,22 @@ describe("responsive-images", function() {
       const actual = responsiveImages($.html(), outputPath);
       // prettier-ignore
       $expected("body").append(`<img src="./foo.jpg">`);
+      assert.deepStrictEqual(actual, $expected.html());
+    });
+
+    it("uses the new src for images with preexisting srcset", function() {
+      $body.append(
+        `<img src="./foo.jpg" srcset="./foo.jpg?w=1024 1024w, ./foo.jpg?w=640 640w, ./foo.jpg?w=320 320w" sizes="100vw">`,
+      );
+      const actual = responsiveImages($.html(), outputPath);
+      const base = new URL(outputDir + "/", site.imageCdn);
+      const src = new URL("./foo.jpg", base);
+      const large = new URL("./foo.jpg", base);
+      const medium = new URL("./foo.jpg", base);
+      const small = new URL("./foo.jpg", base);
+      $expected("body").append(
+        `<img src="${src}" srcset="${large}?w=1024 1024w, ${medium}?w=640 640w, ${small}?w=320 320w" sizes="100vw">`,
+      );
       assert.deepStrictEqual(actual, $expected.html());
     });
   });

@@ -27,7 +27,21 @@ const responsiveImages = (content, outputPath) => {
   const $img = $("img");
   $img.each((i, elem) => {
     const $elem = $(elem);
-    $elem.attr("src", determineImagePath($elem.attr("src"), outputPath).src);
+    const originalSrc = $elem.attr("src");
+    const newSrc = determineImagePath($elem.attr("src"), outputPath).src;
+    $elem.attr("src", newSrc);
+    // If the image already has srcset defined,
+    // update that to use the image CDN as well.
+    // Note that this assumes the srcset paths use the same src as the image.
+    // e.g. src=./foo.jpg srcset=./foo.jpg?w=640w
+    const originalSrcSet = $elem.attr("srcset");
+    if (originalSrcSet) {
+      const newSrcSet = originalSrcSet
+        .split(" ")
+        .map((src) => src.replace(originalSrc, newSrc))
+        .join(" ");
+      $elem.attr("srcset", newSrcSet);
+    }
   });
   return $.html();
 };

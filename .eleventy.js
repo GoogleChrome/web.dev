@@ -47,9 +47,6 @@ const SignPosts = require(`./${componentsDir}/SignPosts`);
 const Tooltip = require(`./${componentsDir}/Tooltip`);
 const YouTube = require(`./${componentsDir}/YouTube`);
 
-const tagsDir = 'src/site/_includes/components/tags';
-const {Image, Figure} = require(`./${tagsDir}/Image`);
-
 const collectionsDir = 'src/site/_collections';
 const paginatedAuthors = require(`./${collectionsDir}/paginated-authors`);
 const paginatedBlogPosts = require(`./${collectionsDir}/paginated-blog-posts`);
@@ -219,12 +216,6 @@ module.exports = function(config) {
   config.addShortcode('SignPosts', SignPosts);
   config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('YouTube', YouTube);
-
-  // ----------------------------------------------------------------------------
-  // CUSTOM TAGS
-  // ----------------------------------------------------------------------------
-  config.addNunjucksTag('Image', Image);
-  config.addNunjucksTag('Figure', Figure);
 
   // ----------------------------------------------------------------------------
   // TRANSFORMS
