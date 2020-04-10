@@ -2,7 +2,7 @@
   "name": "web.dev",
   "version": "2.0.0",
   "scripts": {
-    "build": "npm-run-all clean lint sass eleventy gulp rollup",
+    "build": "npm-run-all clean sass eleventy gulp rollup",
     "clean": "rm -rf dist",
     "debug:eleventy": "node --inspect-brk ./node_modules/.bin/eleventy",
     "debug:test:unit": "TEST_MODE=debug npm-run-all clean rollup --parallel watch:rollup karma",
@@ -12,7 +12,7 @@
     "eleventy": "eleventy --quiet",
     "gulp": "npx gulp build",
     "karma": "karma start",
-    "lint:js": "eslint . --fix",
+    "lint:js": "eslint .",
     "lint:md": "remark -q -f .",
     "lint:scss": "sass-lint -v -q",
     "lint": "npm-run-all lint:md lint:scss lint:js",
