@@ -207,7 +207,7 @@ const content = await navigator.credentials.get({
 });
 ```
 
-This triggers the browser's permission flow as an SMS arrives. If permission is
+This triggers the browser's permission flow when an SMS message arrives. If permission is
 granted, the returned promise resolves with an `OTPCredential` object.
 
 ```json
