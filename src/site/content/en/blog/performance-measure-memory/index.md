@@ -145,7 +145,7 @@ token, enable the `#experimental-web-platform-features` flag in `chrome://flags`
 
 ### Feature detection
 
-The `performance.measureMemory` function may fail with a
+The `performance.measureMemory()` function may fail with a
 [SecurityError][security-error] if the execution environment does not fulfil
 the security requirements for preventing cross-origin information leaks.
 During the origin trial in Chrome, the API requires that [Site
