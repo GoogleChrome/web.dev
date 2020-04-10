@@ -52,7 +52,7 @@ The first step in solving this problem is measuring it. The new
 measure memory usage of their web pages in production and thus detect memory
 leaks that slip through local testing.
 
-## How is performance.measureMemory() different from the legacy performance.memory API? {: #legacy-api }
+## How is `performance.measureMemory()` different from the legacy `performance.memory` API? {: #legacy-api }
 
 If you are familiar with the existing non-standard `performance.memory` API,
 you might be wondering how the new API differs from it. The main difference is
