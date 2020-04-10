@@ -44,6 +44,11 @@ describe("service-worker-partials", function() {
       const actual = await serviceWorkerPartials($.html(), "/foo/bar/baz.njk");
       assert.deepStrictEqual(actual, $.html());
     });
+
+    it("is a noop if outputPath is false because page doesn't have a permalink", async function() {
+      const actual = await serviceWorkerPartials($.html(), false);
+      assert.deepStrictEqual(actual, $.html());
+    });
   });
 
   describe("getPartial", function() {

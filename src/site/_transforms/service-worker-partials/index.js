@@ -42,8 +42,14 @@ const getPartial = (content) => {
 };
 
 const serviceWorkerPartials = async (content, outputPath) => {
+  // Page has permalink set to false and will not be rendered.
+  if (!outputPath) {
+    return content;
+  }
+
+  // Unexpected output format.
   if (!outputPath.endsWith("/index.html")) {
-    return content; // unexpected output format
+    return content;
   }
 
   const partial = getPartial(content, outputPath);
