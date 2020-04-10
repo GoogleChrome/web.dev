@@ -1,5 +1,5 @@
-import {store} from "../../store";
-import {BaseElement} from "../BaseElement";
+import {store} from '../../store';
+import {BaseElement} from '../BaseElement';
 
 /**
  * Base element which subscribes to global state.

@@ -1,6 +1,6 @@
-import {html} from "lit-element";
-import {BaseElement} from "../BaseElement";
-import "./_styles.scss";
+import {html} from 'lit-element';
+import {BaseElement} from '../BaseElement';
+import './_styles.scss';
 
 /**
  * @fileoverview Displays the primary URL chooser for Lighthouse.
@@ -72,23 +72,23 @@ class UrlChooser extends BaseElement {
 
   firstUpdated(changedProperties) {
     this._urlInput = this.renderRoot.querySelector('input[type="url"]');
-    this._runLighthouseButton = this.renderRoot.querySelector("#run-lh-button");
+    this._runLighthouseButton = this.renderRoot.querySelector('#run-lh-button');
   }
 
   updated(changedProperties) {
     const input = this._urlInput;
 
-    if (changedProperties.has("hasError")) {
+    if (changedProperties.has('hasError')) {
       if (this.hasError) {
         // hasError false -> true implies switching, but not the other way around
         this.switching = true;
       }
     }
-    if (changedProperties.has("switching") && this.switching) {
+    if (changedProperties.has('switching') && this.switching) {
       input.setSelectionRange(0, input.value.length);
       input.focus();
     }
-    if (changedProperties.has("url")) {
+    if (changedProperties.has('url')) {
       // Note: This behavior can't be performed in a setter as the <input /> might not have been
       // rendered yet.
       const url = this.url;
@@ -114,7 +114,7 @@ class UrlChooser extends BaseElement {
     this.fixUpUrl();
     if (!this._urlInput.validity.valid) {
       const detail = `Invalid URL. Please enter a full URL starting with https://.`;
-      const event = new CustomEvent("web-error", {bubbles: true, detail});
+      const event = new CustomEvent('web-error', {bubbles: true, detail});
       this.dispatchEvent(event);
       return;
     }
@@ -122,7 +122,7 @@ class UrlChooser extends BaseElement {
     // "Request Audit" finishes editing the URL.
     this.switching = false;
 
-    const event = new CustomEvent("audit", {detail: this._urlInput.value});
+    const event = new CustomEvent('audit', {detail: this._urlInput.value});
     this.dispatchEvent(event);
   }
 
@@ -134,9 +134,9 @@ class UrlChooser extends BaseElement {
   }
 
   onUrlKeyup(e) {
-    if (e.key === "Escape") {
+    if (e.key === 'Escape') {
       this.onClearInput();
-    } else if (e.key === "Enter") {
+    } else if (e.key === 'Enter') {
       this._runLighthouseButton.click();
     }
   }
@@ -146,7 +146,7 @@ class UrlChooser extends BaseElement {
    */
   fixUpUrl() {
     let url = this._urlInput.value.trim();
-    if (!url.startsWith("https://") && !url.startsWith("http://")) {
+    if (!url.startsWith('https://') && !url.startsWith('http://')) {
       url = `http://${url}`;
     }
     if (url !== this._urlInput.value) {
@@ -159,4 +159,4 @@ class UrlChooser extends BaseElement {
   }
 }
 
-customElements.define("web-url-chooser", UrlChooser);
+customElements.define('web-url-chooser', UrlChooser);

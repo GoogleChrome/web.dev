@@ -1,4 +1,4 @@
-const {findByUrl} = require("./find-by-url");
+const {findByUrl} = require('./find-by-url');
 
 /**
  * Remove any draft posts from a learning path.

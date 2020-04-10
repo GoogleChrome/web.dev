@@ -39,11 +39,11 @@
  * limitations under the License.
  */
 
-const rule = require("unified-lint-rule");
-const map = require("unist-util-map");
-const toList = require("unist-util-to-list-of-char");
+const rule = require('unified-lint-rule');
+const map = require('unist-util-map');
+const toList = require('unist-util-to-list-of-char');
 
-const punctuations = "！!~～.。,，·?？";
+const punctuations = '！!~～.。,，·?？';
 
 /* eslint-disable require-jsdoc */
 class Traveler {
@@ -56,7 +56,7 @@ class Traveler {
   process(node) {
     const {value} = node;
     if (this.config.indexOf(value) >= 0 && value === this.prev) {
-      if (value === ".") {
+      if (value === '.') {
         this.file.message(
           `Should not repeat "${value}". Use ellipsis "…" character instead.`,
           node,
@@ -80,16 +80,16 @@ function processor(tree, file, config = punctuations) {
     traveler.end();
   }
   const inlineCodeReplaced = map(tree, (node) => {
-    if (node.type !== "inlineCode") return node;
+    if (node.type !== 'inlineCode') return node;
     /**
      * Change the value of code, so that lint rule won't throw error for
      * anything inside. However, don't change the position info, so that warning
      * still shows the correct position.
      */
-    return Object.assign({}, node, {value: "\u200b"});
+    return Object.assign({}, node, {value: '\u200b'});
   });
-  toList(inlineCodeReplaced, "paragraph", callback);
-  toList(inlineCodeReplaced, "heading", callback);
+  toList(inlineCodeReplaced, 'paragraph', callback);
+  toList(inlineCodeReplaced, 'heading', callback);
 }
 
-module.exports = rule("remark-lint:no-repeat-punctuation", processor);
+module.exports = rule('remark-lint:no-repeat-punctuation', processor);

@@ -12,7 +12,7 @@ if (self instanceof ServiceWorkerGlobalScope) {
       // Match all window'ed pages.
       return clients.matchAll({
         includeUncontrolled: true,
-        type: "window",
+        type: 'window',
       });
     })
     .then((clients) => {

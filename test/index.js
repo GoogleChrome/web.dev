@@ -1,3 +1,3 @@
-describe("Integration tests", function() {
-  require("./integration");
+describe('Integration tests', function() {
+  require('./integration');
 });

@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const fs = require("fs");
-const path = require("path");
-const contributors = require("../_data/contributors");
-const addPagination = require("../_utils/add-pagination");
+const fs = require('fs');
+const path = require('path');
+const contributors = require('../_data/contributors');
+const addPagination = require('../_utils/add-pagination');
 
 /**
  * Returns all authors as a paginated array.
@@ -30,12 +30,12 @@ const addPagination = require("../_utils/add-pagination");
  */
 module.exports = () => {
   const testAuthors = [
-    "robdodson",
-    "samthor",
-    "surma",
-    "egsweeny",
-    "addyosmani",
-    "adamargyle",
+    'robdodson',
+    'samthor',
+    'surma',
+    'egsweeny',
+    'addyosmani',
+    'adamargyle',
   ];
   let authors = Object.values(contributors).sort((a, b) =>
     a.title.localeCompare(b.title),
@@ -46,29 +46,29 @@ module.exports = () => {
   }
 
   const elements = authors.map((author) => {
-    author.url = path.join("/en", author.href);
+    author.url = path.join('/en', author.href);
     author.data = {
       title: author.title,
       subhead: author.description,
     };
 
-    for (const size of ["@3x", "@2x", ""]) {
+    for (const size of ['@3x', '@2x', '']) {
       if (
         fs.existsSync(
           path.join(
-            "src",
-            "site",
-            "content",
-            "en",
-            "images",
-            "authors",
+            'src',
+            'site',
+            'content',
+            'en',
+            'images',
+            'authors',
             `${author.key}${size}.jpg`,
           ),
         )
       ) {
         author.data.hero = path.join(
-          "/images",
-          "authors",
+          '/images',
+          'authors',
           `${author.key}${size}.jpg`,
         );
         author.data.alt = author.title;
@@ -80,6 +80,6 @@ module.exports = () => {
   });
 
   return addPagination(elements, {
-    href: "/authors/",
+    href: '/authors/',
   });
 };

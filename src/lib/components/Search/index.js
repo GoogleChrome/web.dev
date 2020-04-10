@@ -2,19 +2,19 @@
  * @fileoverview An Algolia search box.
  */
 
-import {html} from "lit-element";
-import {BaseElement} from "../BaseElement";
-import {store} from "../../store";
-import * as router from "../../utils/router";
-import {debounce} from "../../utils/debounce";
-import algoliasearch from "algoliasearch/dist/algoliasearch-lite.esm.browser";
-import "./_styles.scss";
+import {html} from 'lit-element';
+import {BaseElement} from '../BaseElement';
+import {store} from '../../store';
+import * as router from '../../utils/router';
+import {debounce} from '../../utils/debounce';
+import algoliasearch from 'algoliasearch/dist/algoliasearch-lite.esm.browser';
+import './_styles.scss';
 
 // Create an algolia client so we can get search results.
 // These keys are safe to be public.
-const applicationID = "2JPAZHQ6K7";
-const apiKey = "01ca870a3f1cad9984ed72419a12577c";
-const indexName = "webdev";
+const applicationID = '2JPAZHQ6K7';
+const apiKey = '01ca870a3f1cad9984ed72419a12577c';
+const indexName = 'webdev';
 const client = algoliasearch(applicationID, apiKey);
 const index = client.initIndex(indexName);
 
@@ -43,7 +43,7 @@ class Search extends BaseElement {
     this.hits = [];
     this.showHits = false;
     this.cursor = -1;
-    this.query = "";
+    this.query = '';
     this.timeout = 0;
 
     // On smaller screens we don't do an animation so it's ok for us to fire off
@@ -60,13 +60,13 @@ class Search extends BaseElement {
 
   connectedCallback() {
     super.connectedCallback();
-    window.addEventListener("resize", this.onResize);
+    window.addEventListener('resize', this.onResize);
     this.onResize();
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    window.removeEventListener("resize", this.onResize);
+    window.removeEventListener('resize', this.onResize);
   }
 
   render() {
@@ -121,14 +121,14 @@ class Search extends BaseElement {
 
     if (!this.hits.length) {
       if (!this.query) {
-        return "";
+        return '';
       }
 
       // This is intentionally NOT "site:web.dev", as users can have a broader
       // result set that way. We tend to come up first regardless.
-      const query = "web.dev " + this.query.trim();
+      const query = 'web.dev ' + this.query.trim();
       const searchUrl =
-        "https://google.com/search?q=" + window.encodeURIComponent(query);
+        'https://google.com/search?q=' + window.encodeURIComponent(query);
       return html`
         <div class="web-search-popout">
           <div class="web-search-popout__heading">
@@ -173,8 +173,8 @@ class Search extends BaseElement {
           <a
             id="web-search-popout__link--${idx}"
             class="web-search-popout__link ${idx === this.cursor
-              ? "web-search-popout__link--active"
-              : ""}"
+              ? 'web-search-popout__link--active'
+              : ''}"
             aria-selected="${idx === this.cursor}"
             tabindex="-1"
             href="${hit.url}"
@@ -187,7 +187,7 @@ class Search extends BaseElement {
   /* eslint-enable indent */
 
   firstUpdated() {
-    this.inputEl = this.renderRoot.querySelector(".web-search__input");
+    this.inputEl = this.renderRoot.querySelector('.web-search__input');
   }
 
   /**
@@ -199,17 +199,17 @@ class Search extends BaseElement {
    * @param {Map} changedProperties A Map of LitElement properties that changed.
    */
   updated(changedProperties) {
-    if (!changedProperties.has("cursor")) {
+    if (!changedProperties.has('cursor')) {
       return;
     }
 
     if (this.cursor === -1) {
-      this.inputEl.removeAttribute("aria-activedescendant");
+      this.inputEl.removeAttribute('aria-activedescendant');
       return;
     }
 
     this.inputEl.setAttribute(
-      "aria-activedescendant",
+      'aria-activedescendant',
       `web-search-popout__link--${this.cursor}`,
     );
   }
@@ -220,7 +220,7 @@ class Search extends BaseElement {
    */
   onResize() {
     const styles = getComputedStyle(this);
-    const value = styles.getPropertyValue("--web-search-animation-time");
+    const value = styles.getPropertyValue('--web-search-animation-time');
     // value will either be "200ms" or "0".
     this.animationTime = parseInt(value, 10);
   }
@@ -228,33 +228,33 @@ class Search extends BaseElement {
   onKeyUp(e) {
     // Check if the user is navigating within the search popout.
     switch (e.key) {
-      case "Home":
+      case 'Home':
         this.firstHit();
         return;
 
-      case "End":
+      case 'End':
         this.lastHit();
         return;
 
-      case "Up": // IE/Edge specific value
-      case "ArrowUp":
+      case 'Up': // IE/Edge specific value
+      case 'ArrowUp':
         this.prevHit();
         return;
 
-      case "Down": // IE/Edge specific value
-      case "ArrowDown":
+      case 'Down': // IE/Edge specific value
+      case 'ArrowDown':
         this.nextHit();
         return;
 
-      case "Enter":
+      case 'Enter':
         const hit = this.hits[this.cursor];
         if (hit) {
           this.navigateToHit(hit);
         }
         return;
 
-      case "Esc": // IE/Edge specific value
-      case "Escape":
+      case 'Esc': // IE/Edge specific value
+      case 'Escape':
         document.activeElement.blur();
         return;
     }
@@ -275,7 +275,7 @@ class Search extends BaseElement {
     // We'll check against this copy when results come back to ensure
     // we don't show search results for a stale query.
     this.query = query;
-    if (query === "") {
+    if (query === '') {
       this.hits = [];
       return;
     }
@@ -324,7 +324,7 @@ class Search extends BaseElement {
   scrollHitIntoView() {
     this.requestUpdate().then(() => {
       this.renderRoot
-        .querySelector(".web-search-popout__link--active")
+        .querySelector('.web-search-popout__link--active')
         .scrollIntoView();
     });
   }
@@ -344,8 +344,8 @@ class Search extends BaseElement {
    * Empty out the search field.
    */
   clear() {
-    this.inputEl.value = "";
-    this.query = "";
+    this.inputEl.value = '';
+    this.query = '';
   }
 
   /**
@@ -379,7 +379,7 @@ class Search extends BaseElement {
     // Collapse the search box if the user scrolls while the seach box is
     // focused.
     window.addEventListener(
-      "scroll",
+      'scroll',
       () => {
         document.activeElement.blur();
       },
@@ -425,4 +425,4 @@ class Search extends BaseElement {
   }
 }
 
-customElements.define("web-search", Search);
+customElements.define('web-search', Search);

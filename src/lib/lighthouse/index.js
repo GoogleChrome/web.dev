@@ -6,8 +6,8 @@ const descriptionRegex = /^(.+) \[Learn more\]\((.+)\)\.$/;
 
 export const categories = [
   {
-    id: "performance",
-    title: "Performance",
+    id: 'performance',
+    title: 'Performance',
   },
   // TODO(b/119501689): remove PWA audits for now.
   /* {
@@ -15,43 +15,43 @@ export const categories = [
     title: 'PWA',
   },*/
   {
-    id: "accessibility",
-    title: "Accessibility",
+    id: 'accessibility',
+    title: 'Accessibility',
   },
   {
-    id: "best-practices",
-    title: "Best Practices",
+    id: 'best-practices',
+    title: 'Best Practices',
   },
   {
-    id: "seo",
-    title: "SEO",
+    id: 'seo',
+    title: 'SEO',
   },
 ];
 
 export const metrics = [
   {
-    title: "First Contentful Paint",
-    id: "first-contentful-paint",
+    title: 'First Contentful Paint',
+    id: 'first-contentful-paint',
   },
   {
-    title: "First Meaningful Paint",
-    id: "first-meaningful-paint",
+    title: 'First Meaningful Paint',
+    id: 'first-meaningful-paint',
   },
   {
-    title: "Speed Index",
-    id: "speed-index",
+    title: 'Speed Index',
+    id: 'speed-index',
   },
   {
-    title: "First CPU Idle",
-    id: "first-cpu-idle",
+    title: 'First CPU Idle',
+    id: 'first-cpu-idle',
   },
   {
-    title: "Time to Interactive",
-    id: "interactive",
+    title: 'Time to Interactive',
+    id: 'interactive',
   },
   {
-    title: "Estimated Input Latency",
-    id: "estimated-input-latency",
+    title: 'Estimated Input Latency',
+    id: 'estimated-input-latency',
   },
 ];
 
@@ -127,13 +127,13 @@ export function computeWeightForAuditResult(category) {
  */
 export function filterAuditResult(category) {
   // TODO(b/119501689): remove pwa audits for now.
-  if (category.ref.cat === "Progressive Web App") {
+  if (category.ref.cat === 'Progressive Web App') {
     return false;
   }
 
   // Some performance audits (for example "First Contentful Paint") provide
   // raw numbers. They do not actually contain "overallSavingsMs".
-  if (category.ref.cat === "Performance") {
+  if (category.ref.cat === 'Performance') {
     if (!category.audit.details) {
       return false;
     }

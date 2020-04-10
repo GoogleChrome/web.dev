@@ -1,4 +1,4 @@
-import "./abort-controller-polyfill";
+import './abort-controller-polyfill';
 
 let globalHandler;
 let recentActiveUrl; // current URL not including hash
@@ -43,7 +43,7 @@ function onPopState(e) {
 function scrollToHashOrTop(hash) {
   // Since we're loading this page dynamically, look for the target hash-ed
   // element (if any) and scroll to it.
-  if (hash.startsWith("#")) {
+  if (hash.startsWith('#')) {
     hash = hash.substr(1);
   }
   if (hash) {
@@ -75,7 +75,7 @@ function onClick(e) {
 
   // nb. If this ever supports Shadow DOM, we can use .composedPath to find
   // the nearest link inside an open Shadow Root.
-  const link = e.target.closest("a[href]");
+  const link = e.target.closest('a[href]');
   if (
     !link ||
     link.target ||
@@ -97,10 +97,10 @@ function onClick(e) {
  */
 export function listen(handler) {
   if (!handler) {
-    throw new Error("need handler");
+    throw new Error('need handler');
   }
   listen = () => {
-    throw new Error("listen can only be called once");
+    throw new Error('listen can only be called once');
   };
 
   let previousController = null;
@@ -156,14 +156,14 @@ export function listen(handler) {
           window.location.href = url; // always use the updated URL
           throw err;
         }
-        console.warn("err loading", url, err);
+        console.warn('err loading', url, err);
         return true;
       });
   };
 
-  window.addEventListener("replacestate", onReplaceState);
-  window.addEventListener("popstate", onPopState);
-  window.addEventListener("click", onClick);
+  window.addEventListener('replacestate', onReplaceState);
+  window.addEventListener('popstate', onPopState);
+  window.addEventListener('click', onClick);
 
   globalHandler();
 }
@@ -179,7 +179,7 @@ export function listen(handler) {
  */
 export function route(url) {
   if (!globalHandler) {
-    throw new Error("listen() not called");
+    throw new Error('listen() not called');
   }
   const u = new URL(url, window.location);
 
