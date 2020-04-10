@@ -351,7 +351,7 @@ a few significant differences compared to the SMS Receiver API.
 ## FAQ
 ### Is this API compatible between different browsers?
 
-Chromium and WebKit at least agreed on the SMS text message format. Find WebKit's
+Chromium and WebKit agreed on the SMS text message format. Find WebKit's
 documentation here:
 [https://github.com/WebKit/explainers/tree/master/sms-one-time-code-format](https://github.com/WebKit/explainers/tree/master/sms-one-time-code-format)
 
