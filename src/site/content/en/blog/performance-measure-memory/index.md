@@ -48,7 +48,7 @@ then its memory usage grows over time and the web page appears slow and
 bloated to the users.
 
 The first step in solving this problem is measuring it. The new
-[performance.measureMemory API][explainer] allows developers to
+[`performance.measureMemory()` API][explainer] allows developers to
 measure memory usage of their web pages in production and thus detect memory
 leaks that slip through local testing.
 
