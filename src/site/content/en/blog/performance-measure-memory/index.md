@@ -16,7 +16,6 @@ tags:
   - post
   - memory
   - javascript
-  - capabilities
 ---
 
 Browsers manage the memory of web pages automatically. Whenever a web page
