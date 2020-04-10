@@ -314,7 +314,7 @@ the bug, and have **Components** set to `Blink>PerformanceAPIs`.
 
 Are you planning to use `performance.measureMemory()`? Your public support
 helps the Chrome team prioritize features and shows other browser vendors how
-critical it is to support them. Send a tweet to @ChromiumDev and let us know
+critical it is to support them. Send a tweet to [@ChromiumDev](https://twitter.com/chromiumdev) and let us know
 where and how you're using it.
 
 ## Helpful links {: #helpful }
