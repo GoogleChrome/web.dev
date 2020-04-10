@@ -169,7 +169,7 @@ That is how the Web OTP API works for users.
 
 {% Aside 'caution' %}
 If you are using a work profile on your Android device and the Web OTP does
-not seem to be working, try installing and using Chrome on your personal profile
+not work, try installing and using Chrome on your personal profile
 instead (i.e. the same profile in which you receive SMS messages).
 {% endAside %}
 
