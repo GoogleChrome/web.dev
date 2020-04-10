@@ -4,8 +4,8 @@
  * @return {boolean}
  */
 export const checkOverflow = (scroller, dimension) => {
-  if (dimension !== "height" && dimension !== "width") {
-    throw new TypeError("Can only check overflow for height or width.");
+  if (dimension !== 'height' && dimension !== 'width') {
+    throw new TypeError('Can only check overflow for height or width.');
   }
 
   if (!scroller) {
@@ -13,9 +13,9 @@ export const checkOverflow = (scroller, dimension) => {
   }
 
   const clientDimension =
-    dimension === "width" ? scroller.clientWidth : scroller.clientHeight;
+    dimension === 'width' ? scroller.clientWidth : scroller.clientHeight;
   const scrollDimension =
-    dimension === "width" ? scroller.scrollWidth : scroller.scrollHeight;
+    dimension === 'width' ? scroller.scrollWidth : scroller.scrollHeight;
 
   return scrollDimension > clientDimension;
 };

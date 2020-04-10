@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-const contributors = require("../_data/contributors");
-const livePosts = require("../_filters/live-posts");
-const addPagination = require("../_utils/add-pagination");
-const setdefault = require("../_utils/setdefault");
+const contributors = require('../_data/contributors');
+const livePosts = require('../_filters/live-posts');
+const addPagination = require('../_utils/add-pagination');
+const setdefault = require('../_utils/setdefault');
 
 /**
  * Returns all posts as an array of paginated authors.
@@ -33,7 +33,7 @@ const setdefault = require("../_utils/setdefault");
  */
 module.exports = (collection) => {
   const posts = collection
-    .getFilteredByGlob("**/*.md")
+    .getFilteredByGlob('**/*.md')
     .filter(livePosts)
     .sort((a, b) => b.date - a.date);
 
@@ -60,7 +60,7 @@ module.exports = (collection) => {
       const posts = authorsMap
         .get(key)
         .map((post) => post.inputPath)
-        .join(", ");
+        .join(', ');
       throw new Error(
         `unknown contributor ${key} [${posts}], are they in _data/contributors.js?`,
       );

@@ -1,11 +1,11 @@
-const livePaths = require("../../_filters/live-paths");
-const fast = require("../en/fast/fast.11tydata.js").path;
-const accessible = require("../en/accessible/accessible.11tydata.js").path;
-const reliable = require("../en/reliable/reliable.11tydata.js").path;
-const discoverable = require("../en/discoverable/discoverable.11tydata.js")
+const livePaths = require('../../_filters/live-paths');
+const fast = require('../en/fast/fast.11tydata.js').path;
+const accessible = require('../en/accessible/accessible.11tydata.js').path;
+const reliable = require('../en/reliable/reliable.11tydata.js').path;
+const discoverable = require('../en/discoverable/discoverable.11tydata.js')
   .path;
-const secure = require("../en/secure/secure.11tydata.js").path;
-const pwa = require("../en/progressive-web-apps/progressive-web-apps.11tydata.js")
+const secure = require('../en/secure/secure.11tydata.js').path;
+const pwa = require('../en/progressive-web-apps/progressive-web-apps.11tydata.js')
   .path;
 
 // =============================================================================
@@ -21,7 +21,7 @@ module.exports = function() {
     livePaths,
   );
 
-  const lang = "en";
+  const lang = 'en';
 
   return {
     lang,

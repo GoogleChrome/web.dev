@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-const {html} = require("common-tags");
-const stripLanguage = require("../../_filters/strip-language");
-const getImagePath = require("../../_utils/get-image-path");
-const getSrcsetRange = require("../../_utils/get-srcset-range");
+const {html} = require('common-tags');
+const stripLanguage = require('../../_filters/strip-language');
+const getImagePath = require('../../_utils/get-image-path');
+const getSrcsetRange = require('../../_utils/get-srcset-range');
 
 /* eslint-disable max-len */
-module.exports = ({page, hero, alt, heroPosition, heroFit = "cover"}) => {
+module.exports = ({page, hero, alt, heroPosition, heroFit = 'cover'}) => {
   const imagePath = getImagePath(hero, stripLanguage(page.url));
   const srcsetRange = getSrcsetRange();
 

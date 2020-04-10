@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-const path = require("path");
-const postTags = require("../_data/postTags");
-const livePosts = require("../_filters/live-posts");
-const addPagination = require("../_utils/add-pagination");
+const path = require('path');
+const postTags = require('../_data/postTags');
+const livePosts = require('../_filters/live-posts');
+const addPagination = require('../_utils/add-pagination');
 
 /**
  * Returns all tags as a paginated array.
@@ -32,12 +32,12 @@ const addPagination = require("../_utils/add-pagination");
  */
 module.exports = (collections) => {
   const testTags = [
-    "css",
-    "javascript",
-    "lighthouse",
-    "seo",
-    "progressive-web-apps",
-    "webxr",
+    'css',
+    'javascript',
+    'lighthouse',
+    'seo',
+    'progressive-web-apps',
+    'webxr',
   ];
 
   const elements = Object.values(postTags)
@@ -46,7 +46,7 @@ module.exports = (collections) => {
       return process.env.PERCY ? testTags.includes(tag.key) : posts.length > 0;
     })
     .map((tag) => {
-      tag.url = path.join("/en", tag.href);
+      tag.url = path.join('/en', tag.href);
       tag.data = {
         title: tag.title,
         subhead: tag.description,
@@ -55,6 +55,6 @@ module.exports = (collections) => {
     });
 
   return addPagination(elements, {
-    href: "/tags/",
+    href: '/tags/',
   });
 };

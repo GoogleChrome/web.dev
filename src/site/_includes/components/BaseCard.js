@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-const {html} = require("common-tags");
-const prettyDate = require("../../_filters/pretty-date");
-const stripLanguage = require("../../_filters/strip-language");
-const md = require("../../_filters/md");
-const constants = require("../../_utils/constants");
-const getImagePath = require("../../_utils/get-image-path");
-const getSrcsetRange = require("../../_utils/get-srcset-range");
-const postTags = require("../../_data/postTags");
+const {html} = require('common-tags');
+const prettyDate = require('../../_filters/pretty-date');
+const stripLanguage = require('../../_filters/strip-language');
+const md = require('../../_filters/md');
+const constants = require('../../_utils/constants');
+const getImagePath = require('../../_utils/get-image-path');
+const getSrcsetRange = require('../../_utils/get-srcset-range');
+const postTags = require('../../_data/postTags');
 
 /* eslint-disable require-jsdoc,indent,max-len */
 
@@ -31,7 +31,7 @@ const postTags = require("../../_data/postTags");
  * @return {string}
  */
 class BaseCard {
-  constructor({post, featured = false, className = ""}) {
+  constructor({post, featured = false, className = ''}) {
     this.post = post;
     this.featured = featured;
     this.className = className;
@@ -52,7 +52,7 @@ class BaseCard {
     // If the post does not provide a thumbnail, attempt to reuse the hero image.
     // Otherwise, omit the image entirely.
     this.thumbnail = this.data.thumbnail || this.data.hero || null;
-    this.alt = this.data.alt || "";
+    this.alt = this.data.alt || '';
   }
 
   renderThumbnail(url, img, alt) {
@@ -118,7 +118,7 @@ class BaseCard {
               >
             `;
           })
-          .join(", ")}
+          .join(', ')}
       </span>
     `;
   }
@@ -160,14 +160,14 @@ class BaseCard {
             <time>${prettyDate(date)}</time>
           </div>
         `
-      : "";
+      : '';
   }
 
   render() {
     return html`
       <div class="w-card ${this.className}" role="listitem">
         <article
-          class="w-card-base ${this.featured ? "w-card-base--featured" : ""}"
+          class="w-card-base ${this.featured ? 'w-card-base--featured' : ''}"
         >
           <div
             class="w-card-base__cover ${this.thumbnail &&

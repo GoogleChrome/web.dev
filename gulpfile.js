@@ -14,35 +14,35 @@
  * limitations under the License.
  */
 
-const path = require("path");
-const gulp = require("gulp");
-const mozjpeg = require("imagemin-mozjpeg");
-const pngquant = require("imagemin-pngquant");
-const imagemin = require("gulp-imagemin");
-const rename = require("gulp-rename");
-const gulpif = require("gulp-if");
+const path = require('path');
+const gulp = require('gulp');
+const mozjpeg = require('imagemin-mozjpeg');
+const pngquant = require('imagemin-pngquant');
+const imagemin = require('gulp-imagemin');
+const rename = require('gulp-rename');
+const gulpif = require('gulp-if');
 
 /* eslint-disable max-len */
 const assetTypes = `jpg,jpeg,png,svg,gif,webp,webm,mp4,mov,ogg,wav,mp3,txt,yaml`;
 /* eslint-enable max-len */
 
-const isProd = process.env.ELEVENTY_ENV === "prod";
+const isProd = process.env.ELEVENTY_ENV === 'prod';
 
 // These are images that our CSS refers to.
-gulp.task("copy-global-images", () => {
-  return gulp.src(["./src/images/**/*"]).pipe(gulp.dest("./dist/images"));
+gulp.task('copy-global-images', () => {
+  return gulp.src(['./src/images/**/*']).pipe(gulp.dest('./dist/images'));
 });
 
 // These are misc top-level assets.
-gulp.task("copy-misc", () => {
-  return gulp.src(["./src/misc/**/*"]).pipe(gulp.dest("./dist"));
+gulp.task('copy-misc', () => {
+  return gulp.src(['./src/misc/**/*']).pipe(gulp.dest('./dist'));
 });
 
 // Images and any other assets in the content directory that should be copied
 // over along with the posts themselves.
 // Because we use permalinks to strip the parent directories form our posts
 // we need to also strip them from the content paths.
-gulp.task("copy-content-assets", () => {
+gulp.task('copy-content-assets', () => {
   return (
     gulp
       .src([`./src/site/content/en/**/*.{${assetTypes}}`])
@@ -56,40 +56,40 @@ gulp.task("copy-content-assets", () => {
       // they belong to.
       .pipe(
         rename(function(assetPath) {
-          const parts = assetPath.dirname.split("/");
+          const parts = assetPath.dirname.split('/');
           // Let the en/images directory pass through.
-          if (parts[0] === "images") {
+          if (parts[0] === 'images') {
             return;
           }
           // Let en/handbook images pass through.
-          if (parts[0] === "handbook") {
+          if (parts[0] === 'handbook') {
             return;
           }
           return (assetPath.dirname = path.basename(assetPath.dirname));
         }),
       )
-      .pipe(gulp.dest("./dist/en"))
+      .pipe(gulp.dest('./dist/en'))
   );
 });
 
-gulp.task("copy-node_modules-assets", () => {
+gulp.task('copy-node_modules-assets', () => {
   return gulp
     .src([`./node_modules/@webcomponents/webcomponentsjs/bundles/*.js`])
-    .pipe(gulp.dest("./dist/lib/webcomponents/bundles/"));
+    .pipe(gulp.dest('./dist/lib/webcomponents/bundles/'));
 });
 
 gulp.task(
-  "build",
+  'build',
   gulp.parallel(
-    "copy-global-images",
-    "copy-misc",
-    "copy-content-assets",
-    "copy-node_modules-assets",
+    'copy-global-images',
+    'copy-misc',
+    'copy-content-assets',
+    'copy-node_modules-assets',
   ),
 );
 
-gulp.task("watch", () => {
-  gulp.watch("./src/images/**/*", gulp.series("copy-global-images"));
-  gulp.watch("./src/misc/**/*", gulp.series("copy-misc"));
-  gulp.watch("./src/site/content/**/*", gulp.series("copy-content-assets"));
+gulp.task('watch', () => {
+  gulp.watch('./src/images/**/*', gulp.series('copy-global-images'));
+  gulp.watch('./src/misc/**/*', gulp.series('copy-misc'));
+  gulp.watch('./src/site/content/**/*', gulp.series('copy-content-assets'));
 });

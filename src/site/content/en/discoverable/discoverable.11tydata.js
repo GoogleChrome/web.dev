@@ -1,13 +1,13 @@
 module.exports = {
   // Tags are inherited by all posts.
-  tags: ["pathItem", "discoverable"],
+  tags: ['pathItem', 'discoverable'],
   path: {
     // Slug is used by landing pages like / and /learn to link to this path.
     // Because it affects urls, the slug should never be translated.
-    slug: "discoverable",
-    cover: "/images/collections/discoverable.svg",
-    title: "Easily discoverable",
-    updated: "August 23, 2019",
+    slug: 'discoverable',
+    cover: '/images/collections/discoverable.svg',
+    title: 'Easily discoverable',
+    updated: 'August 23, 2019',
     description: `Ensure users can find your site easily through search.`,
     overview: `Making your content discoverable matters because it's how you get
     more relevant users viewing your content. If a search engine has trouble
@@ -21,8 +21,8 @@ module.exports = {
     content.`,
     topics: [
       {
-        title: "How search works and how to measure discoverability",
-        pathItems: ["how-search-works", "pass-lighthouse-seo-audit"],
+        title: 'How search works and how to measure discoverability',
+        pathItems: ['how-search-works', 'pass-lighthouse-seo-audit'],
       },
     ],
   },

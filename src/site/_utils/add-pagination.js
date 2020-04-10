@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const constants = require("./constants");
+const constants = require('./constants');
 
 /**
  * Take array of elements and returns an array of paginated pages for the elements.

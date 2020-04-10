@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-const {html} = require("common-tags");
-const {findByUrl} = require("../../_filters/find-by-url");
-const stripLanguage = require("../../_filters/strip-language");
-const md = require("../../_filters/md");
+const {html} = require('common-tags');
+const {findByUrl} = require('../../_filters/find-by-url');
+const stripLanguage = require('../../_filters/strip-language');
+const md = require('../../_filters/md');
 
 /* eslint-disable require-jsdoc */
 

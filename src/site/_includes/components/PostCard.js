@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const BaseCard = require("./BaseCard");
+const BaseCard = require('./BaseCard');
 
 /**
  * PostCard used to preview posts.

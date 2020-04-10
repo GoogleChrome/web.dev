@@ -1,5 +1,5 @@
 // export const LH_HOST = "https://lighthouse-dot-webdotdevsite.appspot.com";
-export const LH_HOST = "https://lighthouse-dot-webdotdevsite.appspot.com/";
+export const LH_HOST = 'https://lighthouse-dot-webdotdevsite.appspot.com/';
 
 /**
  * Fetches recent median values for various Lighthouse categories. This is used as a baseline for
@@ -29,16 +29,16 @@ export async function runLighthouse(url, signedIn = false) {
   };
 
   const resp = await fetch(`${LH_HOST}/lh/newaudit`, {
-    method: "POST",
-    headers: {"Content-Type": "application/json"},
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(body),
   });
   const r = await resp.json();
 
   if (!resp.ok) {
-    throw new Error(r["errors"]);
-  } else if (!r["lhrSlim"]) {
-    throw new Error("unexpected result, no lhrSlim key");
+    throw new Error(r['errors']);
+  } else if (!r['lhrSlim']) {
+    throw new Error('unexpected result, no lhrSlim key');
   }
   return r;
 }
@@ -64,7 +64,7 @@ export async function fetchReports(url, startDate = null) {
   const r = await resp.json();
 
   if (!resp.ok) {
-    throw new Error(r["errors"]);
+    throw new Error(r['errors']);
   }
   return r;
 }

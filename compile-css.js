@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-require("dotenv").config();
-const isProd = process.env.ELEVENTY_ENV === "prod";
+require('dotenv').config();
+const isProd = process.env.ELEVENTY_ENV === 'prod';
 
-const fs = require("fs");
-const path = require("path");
-const log = require("fancy-log");
+const fs = require('fs');
+const path = require('path');
+const log = require('fancy-log');
 
 const sassEngine = (function() {
   try {
     // node-sass is faster, but regularly fails to install correctly (native bindings)
-    return require("node-sass");
+    return require('node-sass');
   } catch (e) {
     // fallback to the official transpiled version
-    return require("sass");
+    return require('sass');
   }
 })();
 
@@ -47,9 +47,9 @@ function compileCSS(input, output) {
     omitSourceMapUrl: true, // since we just read it from the result object
   };
   if (isProd) {
-    compiledOptions.outputStyle = "compressed";
+    compiledOptions.outputStyle = 'compressed';
   }
-  log("Compiling", input);
+  log('Compiling', input);
   const compiledResult = sassEngine.renderSync(compiledOptions);
 
   if (!isProd) {
@@ -57,8 +57,8 @@ function compileCSS(input, output) {
   }
 
   // nb. Only require() dependencies for autoprefixer when used.
-  const autoprefixer = require("autoprefixer");
-  const postcss = require("postcss");
+  const autoprefixer = require('autoprefixer');
+  const postcss = require('postcss');
 
   // #2: Run postcss for autoprefixer.
   const postcssOptions = {
@@ -69,7 +69,7 @@ function compileCSS(input, output) {
       annotation: true,
     },
   };
-  log("Running postcss (autoprefixer)...");
+  log('Running postcss (autoprefixer)...');
   const postcssResult = postcss([autoprefixer]).process(
     compiledResult.css.toString(),
     postcssOptions,
@@ -81,9 +81,9 @@ function compileCSS(input, output) {
   return postcssResult;
 }
 
-const target = process.argv[3] || "out.css";
+const target = process.argv[3] || 'out.css';
 const out = compileCSS(process.argv[2], target);
 
 fs.writeFileSync(target, out.css);
-fs.writeFileSync(target + ".map", out.map);
-log("Finished CSS!");
+fs.writeFileSync(target + '.map', out.map);
+log('Finished CSS!');

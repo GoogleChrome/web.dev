@@ -2,10 +2,10 @@
  * @fileoverview Shows meta information about a Lighthouse run, including an optional error.
  */
 
-import {html} from "lit-element";
-import {BaseElement} from "../BaseElement";
-import {LH_HOST} from "../../lighthouse-service";
-import "./_styles.scss";
+import {html} from 'lit-element';
+import {BaseElement} from '../BaseElement';
+import {LH_HOST} from '../../lighthouse-service';
+import './_styles.scss';
 
 /* eslint-disable require-jsdoc */
 class LighthouseScoresMeta extends BaseElement {
@@ -18,22 +18,22 @@ class LighthouseScoresMeta extends BaseElement {
   }
 
   firstUpdated() {
-    this.setAttribute("aria-label", "Lighthouse meta information");
+    this.setAttribute('aria-label', 'Lighthouse meta information');
   }
 
   render() {
     const hidden = !this.url || this.errorMessage || !this.auditedOn;
 
-    let auditedOnText = "\u2014"; // em dash
+    let auditedOnText = '\u2014'; // em dash
     if (!hidden && this.auditedOn) {
       try {
         const opts = {
-          day: "numeric",
-          month: "short",
-          hour: "numeric",
-          minute: "numeric",
+          day: 'numeric',
+          month: 'short',
+          hour: 'numeric',
+          minute: 'numeric',
         };
-        auditedOnText = new Intl.DateTimeFormat("en-US", opts).format(
+        auditedOnText = new Intl.DateTimeFormat('en-US', opts).format(
           this.auditedOn,
         );
       } catch (err) {
@@ -69,4 +69,4 @@ class LighthouseScoresMeta extends BaseElement {
   }
 }
 
-customElements.define("web-lighthouse-scores-meta", LighthouseScoresMeta);
+customElements.define('web-lighthouse-scores-meta', LighthouseScoresMeta);

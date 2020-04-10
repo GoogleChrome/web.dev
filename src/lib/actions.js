@@ -1,6 +1,6 @@
-import {store} from "./store";
-import {saveUserUrl} from "./fb";
-import {runLighthouse, fetchReports} from "./lighthouse-service";
+import {store} from './store';
+import {saveUserUrl} from './fb';
+import {runLighthouse, fetchReports} from './lighthouse-service';
 
 export const clearSignedInState = store.action(() => {
   const {isSignedIn} = store.getState();
@@ -56,7 +56,7 @@ export const requestRunLighthouse = store.action((state, url) => {
   })();
 
   return p.catch((err) => {
-    console.warn("failed to run Lighthouse", url, err);
+    console.warn('failed to run Lighthouse', url, err);
 
     const update = {
       lighthouseError: err.toString(),
@@ -96,7 +96,7 @@ export const requestFetchReports = store.action((state, url, startDate) => {
   })();
 
   return p.catch((err) => {
-    console.warn("failed to fetch reports for", url, err);
+    console.warn('failed to fetch reports for', url, err);
 
     // Don't show an error for another active Lighthouse fetch.
     const {activeLighthouseUrl} = store.getState();
@@ -131,11 +131,11 @@ export const collapseSideNav = store.action(() => {
 });
 
 export const openModal = store.action(() => {
-  const main = document.querySelector("main");
-  const header = document.querySelector("web-header");
-  const footer = document.querySelector(".w-footer");
+  const main = document.querySelector('main');
+  const header = document.querySelector('web-header');
+  const footer = document.querySelector('.w-footer');
 
-  document.documentElement.classList.add("web-modal__overflow-hidden");
+  document.documentElement.classList.add('web-modal__overflow-hidden');
   main.inert = true;
   header.inert = true;
   footer.inert = true;
@@ -143,11 +143,11 @@ export const openModal = store.action(() => {
 });
 
 export const closeModal = store.action(() => {
-  const main = document.querySelector("main");
-  const header = document.querySelector("web-header");
-  const footer = document.querySelector(".w-footer");
+  const main = document.querySelector('main');
+  const header = document.querySelector('web-header');
+  const footer = document.querySelector('.w-footer');
 
-  document.documentElement.classList.remove("web-modal__overflow-hidden");
+  document.documentElement.classList.remove('web-modal__overflow-hidden');
   main.inert = false;
   header.inert = false;
   footer.inert = false;
@@ -160,18 +160,18 @@ export const checkIfUserAcceptsCookies = store.action(
       return;
     }
 
-    if (localStorage.getItem("web-accepts-cookies")) {
+    if (localStorage.getItem('web-accepts-cookies')) {
       return {
         userAcceptsCookies: true,
       };
     }
 
-    return {showingSnackbar: true, snackbarType: "cookies"};
+    return {showingSnackbar: true, snackbarType: 'cookies'};
   },
 );
 
 export const setUserAcceptsCookies = store.action(() => {
-  localStorage.setItem("web-accepts-cookies", 1);
+  localStorage.setItem('web-accepts-cookies', 1);
   return {
     userAcceptsCookies: true,
     showingSnackbar: false,
