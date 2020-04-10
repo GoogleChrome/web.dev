@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: The new Native File System API enables developers to build powerful web apps that interact with files on the user's local device, like IDEs, photo and video editors, text editors, and more. After a user grants a web app access, this API allows web apps to read or save changes directly to files and folders on the user's device.
 date: 2019-08-20
-updated: 2020-04-09
+updated: 2020-04-10
 tags:
   - post
   - capabilities
@@ -17,7 +17,7 @@ tags:
 hero: hero.jpg
 alt: Image of hard disk platters
 origin_trial:
-  url: https://developers.chrome.com/origintrials/#/view_trial/3868592079911256065
+  url: https://developers.chrome.com/origintrials/#/view_trial/4019462667428167681
 ---
 
 {% Aside %}
@@ -57,7 +57,7 @@ all systems are alike.
 | 1. Create explainer                        | [Complete][explainer]        |
 | 2. Create initial draft of specification   | [In progress][spec]          |
 | 3. Gather feedback & iterate on design     | [In progress][spec]          |
-| 4. Origin trial                            | [In progress](#origin-trial)<br> Started in Chrome 78, expected to run through Chrome 85. |
+| 4. Origin trial                            | [In progress](#origin-trial)<br>First: Chrome 78-82<br>Second: Chrome 83-85 |
 | 5. Launch                                  | Not started                  |
 
 </div>
@@ -82,8 +82,14 @@ the `#native-file-system-api` flag in `chrome://flags`.
 
 ### Enabling support during the origin trial phase {: #origin-trial }
 
-Starting in Chrome 78, the Native File System API is available as an
-origin trial on all desktop platforms.
+Starting in Chrome 83, a **new** origin trial has started for the Native File
+System API for all desktop platforms.
+
+{% Aside %}
+If you had an origin trial token for the [first origin trial][ot-first]
+(that ran from Chrome 78 to Chrome 82), you will need to obtain a new origin
+trial token.
+{% endAside %}
 
 {% include 'content/origin-trials.njk' %}
 
@@ -216,8 +222,28 @@ file. In the text editor, these `DOMException`s are handled in the
 
 The `write()` method takes a string, which is what we want for a text editor.
 But it can also take a [BufferSource][buffersource], or a [Blob][blob].
-Unlike most `WritableStreams`, changes are **not** written to disk until the
-stream is closed by calling `close()`.
+
+For example, you can pipe a stream directly to it:
+
+```js
+async function writeURLToFile(fileHandle, url) {
+  // Create a FileSystemWritableFileStream to write to.
+  const writable = await fileHandle.createWritable();
+  // Make an HTTP request for the contents.
+  const response = await fetch(url);
+  // Stream the response into the file.
+  await response.body.pipeTo(writable);
+  // pipeTo() closes the destination pipe by default, no need to close it.
+}
+```
+
+You can also [`seek()`][spec-seek], or [`truncate`][spec-truncate] within the
+stream to update the file at a specific position, or resize the file.
+
+{% Aside 'caution' %}
+Changes are **not** written to disk until the stream is closed, either by
+calling `close()` or if the stream is closed by the pipe.
+{% endAside %}
 
 {% Details %}
 {% DetailsSummary 'h5' %}
@@ -269,7 +295,7 @@ from tabs to workers.
 ### Open a directory and enumerate its contents
 
 To enumerate all files in a directory, call `chooseFileSystemEntries()`
-with the `type` option set to `'openDirectory'`. The user selects a directory
+with the `type` option set to `'open-directory'`. The user selects a directory
 in a picker, after which a [`FileSystemDirectoryHandle`][fs-dir-handle]
 is returned, which lets you enumerate and access the directory's files.
 
@@ -291,28 +317,20 @@ butDir.addEventListener('click', async (e) => {
 Chrome 82
 
 * Support for [writable streams](#save-to-disk) was added, and the previous
-  method for writing to disk (`FileSystemWriter`) was deprecated.
-* File handles can now be serialized and stored in IndexedDB, or sent via `postMessage`
-  to other windows or workers within the same origin. Note that permissions
-  are not retained between browser sessions. For example, when a browser tab
-  is re-opened, and a file handle is obtained from IndexedDB, the user will
-  need to grant permission to read/write to the file again.
-* Added support for `isSameEntry()`, which returns true if two entries
-  represent the same file or directory.
+  method for writing to disk (`FileSystemWriter`) was removed.
+* File handles can now be serialized and stored in IndexedDB, or sent via
+  `postMessage` to other windows or workers within the same origin. Note that
+  permissions are not retained between browser sessions. For example, when a
+  browser tab is re-opened, and a file handle is obtained from IndexedDB, the
+  user will need to grant permission to read/write to the file again.
+* Added support for [`isSameEntry()`][spec-issameentry], which returns `true`
+  if two entries represent the same file or directory.
 * Updated usage indicators to indicate whether the user has granted the domain
   permission to files, including a new read-only indicator.
-
-## What's currently supported? {: #whats-supported }
-
-We're still working on some of the implementation for the
-Native File System API, and not everything in the [spec][spec]
-(or [explainer][explainer]) has been completed.
-
-As of Chrome 82, the following functionality is not available, or
-doesn't match the spec:
-
-* Non-atomic writes (i.e. calls to `FileSystemFileHandle.createWritable()`
-  with `inPlace: true`).
+* Added support for [`resolve()`][spec-resolve], which will return the
+  relative path from one entry to another. Especially helpful for multi-file
+  editors where you might want to highlight the parent directory of the file
+  being edited.
 
 {% Aside 'note' %}
   Since the API is not compatible with all browsers yet,
@@ -435,10 +453,7 @@ The user can easily revoke that access if they choose.
 The web app can continue to save changes to the file without prompting as long
 as the tab is open. Once a tab is closed, the site loses all access. The next
 time the user uses the web app, they will be re-prompted for access to the
-files. In the next few versions of Chrome, installed Progressive Web Apps (only)
-will also be able to save the handle to IndexedDB and persist access to handles
-across page reloads. In this case, an icon will be shown in the omnibox as long
-as the app has write access to local files.
+files.
 
 ## Feedback {: #feedback }
 
@@ -513,3 +528,8 @@ critical it is to support them.
 [cr-dev-twitter]: https://twitter.com/chromiumdev
 [fs-writablestream]: https://wicg.github.io/native-file-system/#api-filesystemwritablefilestream
 [writable-stream]: https://developer.mozilla.org/en-US/docs/Web/API/WritableStream
+[spec-resolve]: https://wicg.github.io/native-file-system/#api-filesystemdirectoryhandle-resolve
+[spec-issameentry]: https://wicg.github.io/native-file-system/#api-filesystemhandle-issameentry
+[spec-seek]: https://wicg.github.io/native-file-system/#api-filesystemwritablefilestream-seek
+[spec-truncate]: https://wicg.github.io/native-file-system/#api-filesystemwritablefilestream-truncate
+[ot-first]: https://developers.chrome.com/origintrials/#/view_trial/3868592079911256065
