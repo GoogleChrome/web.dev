@@ -44,7 +44,7 @@ Memory leaks are [prevalent on the Web][memory-leaks].
 It is easy to introduce one by forgetting to unregister an event listener, by
 accidentally capturing objects from an iframe, by not closing a worker, by
 accumulating objects in arrays, and so on. If a web page has memory leaks,
-then its memory usage grows over time and the web page appears as slow and
+then its memory usage grows over time and the web page appears slow and
 bloated to the users.
 
 The first step in solving this problem is measuring it. The new
