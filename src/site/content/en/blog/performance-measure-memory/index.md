@@ -212,7 +212,7 @@ window.onload = function () {
 }
 ```
 
-The `measurementInterval` function computes a random interval in milliseconds
+The `measurementInterval()` function computes a random interval in milliseconds
 such that on average there is one measurement every five minutes. See [this
 article][math] if you are interested in the math behind the function.
 
