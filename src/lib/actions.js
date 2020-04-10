@@ -2,8 +2,6 @@ import {store} from "./store";
 import {saveUserUrl} from "./fb";
 import {runLighthouse, fetchReports} from "./lighthouse-service";
 
-const foo = 'bar';
-foo = 'baz';
 export const clearSignedInState = store.action(() => {
   const {isSignedIn} = store.getState();
   if (isSignedIn) {

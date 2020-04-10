@@ -14,6 +14,8 @@ Native HTML elements such as `<button>` or `<input>` have keyboard accessibility
 built in for free. If you're building _custom_ interactive components, however,
 use the `tabindex` attribute to ensure that they're keyboard accessible.
 
+    {hello world this is now allowed.}
+
 {% Aside %}
 Whenever possible, use a native HTML element rather than building your
 own custom version. `<button>`, for example, is very easy to style and
