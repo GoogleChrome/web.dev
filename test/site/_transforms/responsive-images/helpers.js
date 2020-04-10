@@ -21,8 +21,9 @@ describe("determineImagePath", function() {
     const src = "/images/foo.jpg";
     const outputPath = "dist/en/add-manifest/index.html";
     const actual = determineImagePath(src, outputPath);
+    const url = new URL(src, site.imageCdn).href;
     assert.deepStrictEqual(actual, {
-      src: new URL(src, site.imageCdn),
+      src: url,
       isLocal: true,
     });
   });
@@ -31,16 +32,18 @@ describe("determineImagePath", function() {
     let src = "./foo.jpg";
     let outputPath = "dist/en/add-manifest/index.html";
     let actual = determineImagePath(src, outputPath);
+    let url = new URL("add-manifest/foo.jpg", site.imageCdn).href;
     assert.deepStrictEqual(actual, {
-      src: new URL("add-manifest/foo.jpg", site.imageCdn),
+      src: url,
       isLocal: true,
     });
 
     src = "foo.jpg";
     outputPath = "dist/en/add-manifest/index.html";
     actual = determineImagePath(src, outputPath);
+    url = new URL("add-manifest/foo.jpg", site.imageCdn);
     assert.deepStrictEqual(actual, {
-      src: new URL("add-manifest/foo.jpg", site.imageCdn),
+      src: url.href,
       isLocal: true,
     });
   });
@@ -51,8 +54,9 @@ describe("determineImagePath", function() {
     const src = "./foo.jpg";
     const outputPath = "dist/en/handbook/audience/index.html";
     const actual = determineImagePath(src, outputPath);
+    const url = new URL("handbook/audience/foo.jpg", site.imageCdn).href;
     assert.deepStrictEqual(actual, {
-      src: new URL("handbook/audience/foo.jpg", site.imageCdn),
+      src: url,
       isLocal: true,
     });
   });

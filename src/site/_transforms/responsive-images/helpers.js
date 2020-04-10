@@ -22,7 +22,8 @@ const site = require("../../_data/site");
 const path = require("path");
 
 /**
- *
+ * Convert an image path (relative or absolute) over to a full path that uses
+ * the image CDN. Will ignore paths that being with a protocol.
  * @param {string} src src attribute for image
  * @param {string} outputPath Output path for HTML file
  *
@@ -42,21 +43,21 @@ function determineImagePath(src, outputPath) {
   }
 
   if (path.isAbsolute(src)) {
-    return {src: new URL(src, site.imageCdn), isLocal};
+    const url = new URL(src, site.imageCdn);
+    return {src: url.href, isLocal};
   }
 
   // At this point we've determined that the image has a relative path.
-  let base = path
+  // outputPath will be something like dist/en/some-article/index.html
+  // so remove the first two items and use the rest to get the url directory.
+  const base = path
     .dirname(outputPath)
     .split(path.sep)
-    .pop();
+    .slice(2)
+    .join("/");
 
-  // The handbook is the only place on the site where we nest paths.
-  if (outputPath.includes("handbook")) {
-    base = path.join("handbook", base);
-  }
-
-  return {src: new URL(path.join(base, src), site.imageCdn), isLocal};
+  const url = new URL(path.join(base, src), site.imageCdn);
+  return {src: url.href, isLocal};
 }
 
 module.exports = {determineImagePath};
