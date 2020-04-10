@@ -125,7 +125,7 @@ results for the same browser.
 </table>
 </div>
 
-## Using performance.measureMemory() {: use }
+## Using `performance.measureMemory()` {: use }
 
 ### Enabling support during the origin trial phase
 
