@@ -250,15 +250,15 @@ calling `close()` or if the stream is automatically closed by the pipe.
 {% Details %}
 {% DetailsSummary 'h5' %}
 
-Saving changes to disk in Chrome 81 and earlier
+Saving changes to disk in Chrome 82 and earlier
 
-Support for writable streams was added in Chrome 82, and the previous
+Support for writable streams was added in Chrome 83, and the previous
 method for writing to disk was removed. It is temporarily documented
 below until Chrome 83 is available in stable.
 
 {% endDetailsSummary %}
 
-Support for writable streams was added in Chrome 82, and the previous
+Support for writable streams was added in Chrome 83, and the previous
 method for writing to disk was removed. It is temporarily documented
 below until Chrome 83 is available in stable.
 
@@ -291,7 +291,7 @@ calling `FileSystemWriter.close()`.
 
 ### Storing file handles in IndexedDB
 
-Starting in Chrome 82, file handles are serializable, which means that you
+Starting in Chrome 83, file handles are serializable, which means that you
 can save a file handle to IndexedDB, or `postMessage` them between the same
 top-level origin.
 
@@ -354,7 +354,7 @@ butDir.addEventListener('click', async (e) => {
 
 ## What's new/changed? {: #whats-new }
 
-Chrome 82
+Chrome 83
 
 * Support for [writable streams](#save-to-disk) was added, and the previous
   method for writing to disk (`FileSystemWriter`) was removed.
