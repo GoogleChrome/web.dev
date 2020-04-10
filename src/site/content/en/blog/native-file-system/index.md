@@ -86,7 +86,7 @@ Starting in Chrome 83, a **new** origin trial has started for the Native File
 System API for all desktop platforms.
 
 {% Aside %}
-If you had an origin trial token for the [first origin trial][ot-first]
+If you had an origin trial token for the [first origin trial](https://developers.chrome.com/origintrials/#/view_trial/3868592079911256065)
 (that ran from Chrome 78 to Chrome 82), you will need to obtain a new origin
 trial token.
 {% endAside %}
@@ -115,7 +115,7 @@ Like many other powerful APIs, calling `chooseFileSystemEntries()` must be
 done in a [secure context][secure-contexts], and must be called from within
 a user gesture.
 
-```js
+```js/2
 let fileHandle;
 butOpenFile.addEventListener('click', async (e) => {
   fileHandle = await window.chooseFileSystemEntries();
@@ -129,9 +129,7 @@ properties and methods needed to interact with the file.
 
 It's helpful to keep a reference to the file handle around so that it can be
 used later. It'll be needed to save changes back to the file, or to perform any
-other file operations. In the next few versions of Chrome, installed Progressive
-Web Apps will also be able to save the handle to IndexedDB and persist access to
-the file across page reloads.
+other file operations.
 
 #### Read a file from the file system
 
@@ -146,13 +144,18 @@ const file = await fileHandle.getFile();
 const contents = await file.text();
 ```
 
+The `File` object returned by `FileSystemFileHandle.getFile()` is only
+readable as long as the underlying file on disk hasn't changed. If the file
+on disk is modified the `File` object becomes unreadable, and you'll need to
+call `getFile()` again to get a new `File` object to read the changed data.
+
 #### Putting it all together
 
 When users click the Open button, the browser
 shows a file picker. Once they've selected a file, the app reads the
 contents and puts them into a `<textarea>`.
 
-```js
+```js/3-4
 let fileHandle;
 butOpenFile.addEventListener('click', async (e) => {
   fileHandle = await window.chooseFileSystemEntries();
@@ -221,11 +224,10 @@ file. In the text editor, these `DOMException`s are handled in the
 [`saveFile()`][text-editor-app-js] method.
 
 The `write()` method takes a string, which is what we want for a text editor.
-But it can also take a [BufferSource][buffersource], or a [Blob][blob].
+But it can also take a [BufferSource][buffersource], or a [Blob][blob]. For
+example, you can pipe a stream directly to it:
 
-For example, you can pipe a stream directly to it:
-
-```js
+```js/4,6
 async function writeURLToFile(fileHandle, url) {
   // Create a FileSystemWritableFileStream to write to.
   const writable = await fileHandle.createWritable();
@@ -242,19 +244,23 @@ stream to update the file at a specific position, or resize the file.
 
 {% Aside 'caution' %}
 Changes are **not** written to disk until the stream is closed, either by
-calling `close()` or if the stream is closed by the pipe.
+calling `close()` or if the stream is automatically closed by the pipe.
 {% endAside %}
 
 {% Details %}
 {% DetailsSummary 'h5' %}
 
-Chrome 81 and earlier
+Saving changes to disk in Chrome 81 and earlier
 
 Support for writable streams was added in Chrome 82, and the previous
-method for writing to disk was deprecated. It is temporarily documented
+method for writing to disk was removed. It is temporarily documented
 below until Chrome 83 is available in stable.
 
 {% endDetailsSummary %}
+
+Support for writable streams was added in Chrome 82, and the previous
+method for writing to disk was removed. It is temporarily documented
+below until Chrome 83 is available in stable.
 
 ```js
 async function writeFile(fileHandle, contents) {
@@ -285,12 +291,46 @@ calling `FileSystemWriter.close()`.
 
 ### Storing file handles in IndexedDB
 
-Starting in Chrome 82, you can save a file handle to IndexedDB. This makes
-it possible to keep a list of recently opened or edited files. For example
-you could offer to re-open the last file when the app is opened, or show a
-list of recently edited files within your app. You can also `postMessage`
-file handles between the same top-level origin, for example between tabs or
-from tabs to workers.
+Starting in Chrome 82, file handles are serializable, which means that you
+can save a file handle to IndexedDB, or `postMessage` them between the same
+top-level origin.
+
+Saving file handles to IndexedDB means that you can store state, or remember
+which files a user was working on. This makes it possible to keep a list of
+recently opened or edited files, offer to re-open the last file when the app
+is opened, et cetera. In the text editor, I store a list of the 5 most recent
+files the user has  opened, making it easy to access those files again.
+
+Since permissions are not persisted between sessions, you should verify
+whether the user has granted permission to the file using
+`queryPermission()`. If they haven't, use `requestPermission()` to
+request permission.
+
+In the text editor, I created a `verifyPermission()` method that checks
+if the user has already granted permission, and if required makes the request.
+
+```js/6,10
+async function verifyPermission(fileHandle, withWrite) {
+  const opts = {};
+  if (withWrite) {
+    opts.writable = true;
+  }
+  // Check if we already have permission, if so, return true.
+  if (await fileHandle.queryPermission(opts) === 'granted') {
+    return true;
+  }
+  // Request permission, if the user grants permission, return true.
+  if (await fileHandle.requestPermission(opts) === 'granted') {
+    return true;
+  }
+  // The user did nt grant permission, return false.
+  return false;
+}
+```
+
+By requesting write permission with the read request, I was reduced
+the number of permission prompts, the user sees one prompt when opening
+the file, and grants permission to both read and write to it.
 
 ### Open a directory and enumerate its contents
 
@@ -331,6 +371,10 @@ Chrome 82
   relative path from one entry to another. Especially helpful for multi-file
   editors where you might want to highlight the parent directory of the file
   being edited.
+* When permission to read or write to a file is granted, the permission is
+  shared among all same-origin tabs, aligning with other web platform APIs.
+* The `type` passed to `chooseFileSystemEntries` is now dash-separated as
+  opposed to camelCase.
 
 {% Aside 'note' %}
   Since the API is not compatible with all browsers yet,
@@ -450,10 +494,10 @@ The user can easily revoke that access if they choose.
 
 ### Permission persistence
 
-The web app can continue to save changes to the file without prompting as long
-as the tab is open. Once a tab is closed, the site loses all access. The next
-time the user uses the web app, they will be re-prompted for access to the
-files.
+The web app can continue to save changes to the file without prompting until
+all tabs for that origin are closed. Once a tab is closed, the site loses all
+access. The next time the user uses the web app, they will be re-prompted
+for access to the files.
 
 ## Feedback {: #feedback }
 
@@ -532,4 +576,3 @@ critical it is to support them.
 [spec-issameentry]: https://wicg.github.io/native-file-system/#api-filesystemhandle-issameentry
 [spec-seek]: https://wicg.github.io/native-file-system/#api-filesystemwritablefilestream-seek
 [spec-truncate]: https://wicg.github.io/native-file-system/#api-filesystemwritablefilestream-truncate
-[ot-first]: https://developers.chrome.com/origintrials/#/view_trial/3868592079911256065
