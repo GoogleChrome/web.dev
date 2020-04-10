@@ -126,6 +126,17 @@ Complete
 </tr>
 </table>
 
+## Changes from earlier versions
+
+Early versions of this API were called SMS Receiver. If you are famillar with
+that version of the API be aware of the changes made to it. Improvements from
+SMS Receiver API include:
+
+* The SMS message format is now aligned with WebKit's.
+* The web page only recives an OTP code regardless of whatever else is in the
+  message.
+* The browser's application hash code is no longer required in the message.
+
 ## See it in action
 
 Let's say a user wants to verify their phone number with a website. The website
