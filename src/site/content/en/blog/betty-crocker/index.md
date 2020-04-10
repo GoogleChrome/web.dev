@@ -309,8 +309,7 @@ BettyCrocker.com reported the following metrics:
   than for users who did not.
 - The bounce rate for users who enabled the wake lock was 50% lower
   for those using the wake lock feature.
-- Coupon clicks (one indicator of purchase intent) was about 300% higher
-  for wake lock users compared to all users.
+- Indicators of purchase intent were about 300% higher for wake lock users compared to all users.
 
 ## Conclusions
 
