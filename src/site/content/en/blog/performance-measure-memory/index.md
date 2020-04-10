@@ -191,7 +191,7 @@ guarantees that samples are equally likely to occur at any point in time
 ([demo][demo], [source][demo-source]).
 
 First, define a function that schedules the next memory measurement using
-setTimeout with a randomized interval. The function should be called after
+`setTimeout()` with a randomized interval. The function should be called after
 page load on the main window.
 
 ```javascript
