@@ -1,7 +1,5 @@
 module.exports = {
-  plugins: [
-    "prettier",
-  ],
+  plugins: ["prettier"],
   extends: [
     "eslint-config-prettier", // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier.
     "google", // Uses google style guide for js.
@@ -19,10 +17,10 @@ module.exports = {
     sourceType: "module",
   },
   globals: {
-    "customElements": true,
+    customElements: true,
   },
   rules: {
-    "indent": [
+    indent: [
       "error",
       2,
       {
