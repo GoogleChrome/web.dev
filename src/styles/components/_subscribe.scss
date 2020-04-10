@@ -4,19 +4,22 @@
 .w-subscribe {
   display: block;
   margin-top: 32px;
-  text-align: center;
 }
 
 .w-subscribe__border {
-  border: 2px solid #f1f3f4;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
+  border: 1px solid $GREY_300;
   width: 100%;
+
+  &:focus-within {
+    border-color: $WEB_EXTENDED_TERTIARY_COLOR;
+    outline: none;
+  }
 }
 
 .w-subscribe__button {
   margin-left: auto;
   margin-right: auto;
+  margin-top: 36px;
 }
 
 .w-subscribe__error {
@@ -24,37 +27,49 @@
 }
 
 .w-subscribe__field {
+  display: flex;
   margin-top: 8px;
 }
 
-.w-subscribe__form {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 720px;
-  width: calc(100% - 32px);
+.w-subscribe__field--checkbox {
+  padding-top: 30px;
 }
 
-.w-subscribe__input {
-  border: 1px solid $GREY_300;
-  font: inherit;
-  font-size: 16px;
-  line-height: 20px;
-  padding: 8px;
-  width: 100%;
+.w-subscribe__padded {
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 32px);
 
-  &:focus {
-    box-shadow: 0 2px 0 0 $WEB_SECONDARY_COLOR;
-    outline: none;
+  &.w-subscribe__padded--major {
+    max-width: 540px;
+  }
+
+  &.w-subscribe__padded--minor {
+    max-width: 720px;
   }
 }
 
+.w-subscribe__checkbox {
+  margin-right: 18px;
+}
+
+.w-subscribe__notice {
+  color: $GREY_600;
+  font: inherit;
+  font-size: 14px;
+  margin-bottom: 56px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
+}
+
 .w-subscribe__select {
-  background: white;
   border: 0;
   font: inherit;
-  height: 36px;
+  height: 52px;
 
   &:focus {
+    border: 0;
     outline: none;
   }
 }
