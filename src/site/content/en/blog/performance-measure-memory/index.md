@@ -82,7 +82,7 @@ are less useful. Example use cases:
 
 ## Browser compatibility {: #compatibility }
 
-Currently the API is supported only in Chrome 82 as an origin trial. The
+Currently the API is supported only in Chrome 83 as an origin trial. The
 result of the API is highly implementation-dependent because browsers have
 different ways of representing objects in memory and different ways of
 estimating the memory usage. Browsers may exclude some memory regions from
@@ -130,7 +130,7 @@ results for the same browser.
 ### Enabling support during the origin trial phase
 
 The `performance.measureMemory()` API is available as an origin trial in
-Chrome 82. The origin trial is expected to end in Chrome 84.
+Chrome 83. The origin trial is expected to end in Chrome 84.
 
 {% include 'content/origin-trials.njk' %}
 
