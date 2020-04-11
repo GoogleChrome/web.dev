@@ -1755,14 +1755,14 @@ const contributors = {
   },
   ulan: {
     name: {
-      given: "Ulan",
-      family: "Degenbaev",
+      given: 'Ulan',
+      family: 'Degenbaev',
     },
-    twitter: "ulandev",
-    github: "ulan",
+    twitter: 'ulandev',
+    github: 'ulan',
     org: {
-      name: "Google",
-      unit: "Chrome",
+      name: 'Google',
+      unit: 'Chrome',
     },
   },
 };
