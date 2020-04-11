@@ -1,201 +1,208 @@
 const tags = {
-  "3d": {
-    title: "3D",
+  '3d': {
+    title: '3D',
   },
   accessibility: {
-    title: "Accessibility",
+    title: 'Accessibility',
   },
   amp: {
-    title: "AMP",
+    title: 'AMP',
   },
   analytics: {
-    title: "Analytics",
+    title: 'Analytics',
   },
   audio: {
-    title: "Audio",
+    title: 'Audio',
   },
-  "augmented-reality": {
-    title: "Augmented Reality",
+  'augmented-reality': {
+    title: 'Augmented Reality',
   },
   canvas: {
-    title: "Canvas",
+    title: 'Canvas',
   },
   capabilities: {
-    title: "Capabilities",
+    title: 'Capabilities',
   },
-  "case-study": {
-    title: "Case Study",
+  'case-study': {
+    title: 'Case Study',
   },
   cast: {
-    title: "Cast",
+    title: 'Cast',
   },
-  "chrome-ux-report": {
-    title: "Chrome UX Report",
+  'chrome-ux-report': {
+    title: 'Chrome UX Report',
   },
-  "chrome-dev-summit": {
-    title: "Chrome Dev Summit",
+  'chrome-dev-summit': {
+    title: 'Chrome Dev Summit',
   },
-  "content-security-policy": {
-    title: "Content Security Policy",
+  'content-security-policy': {
+    title: 'Content Security Policy',
   },
   cookies: {
-    title: "Cookies",
+    title: 'Cookies',
   },
   cors: {
-    title: "CORS",
+    title: 'CORS',
   },
   css: {
-    title: "CSS",
+    title: 'CSS',
   },
   devtools: {
-    title: "DevTools",
+    title: 'DevTools',
   },
   dom: {
-    title: "DOM",
+    title: 'DOM',
   },
   encryption: {
-    title: "Encryption",
+    title: 'Encryption',
   },
-  "engineering-blog": {
-    title: "Engineering Blog",
+  'engineering-blog': {
+    title: 'Engineering Blog',
   },
-  "feature-policy": {
-    title: "Feature Policy",
+  'feature-policy': {
+    title: 'Feature Policy',
   },
-  "file-system": {
-    title: "File System",
+  'file-system': {
+    title: 'File System',
   },
   fonts: {
-    title: "Fonts",
+    title: 'Fonts',
   },
   forms: {
-    title: "Forms",
+    title: 'Forms',
   },
   fugu: {
-    title: "Fugu",
+    title: 'Fugu',
   },
   games: {
-    title: "Games",
+    title: 'Games',
   },
   graphics: {
-    title: "Graphics",
+    title: 'Graphics',
   },
   houdini: {
-    title: "Houdini",
+    title: 'Houdini',
   },
   identity: {
-    title: "Identity",
+    title: 'Identity',
   },
   images: {
-    title: "Images",
+    title: 'Images',
   },
   install: {
-    title: "Install",
+    title: 'Install',
   },
   intl: {
-    title: "Intl",
+    title: 'Intl',
   },
   iot: {
-    title: "IoT",
+    title: 'IoT',
   },
   javascript: {
-    title: "JavaScript",
+    title: 'JavaScript',
   },
   layout: {
-    title: "Layout",
+    title: 'Layout',
   },
   lighthouse: {
-    title: "Lighthouse",
+    title: 'Lighthouse',
   },
   media: {
-    title: "Media",
+    title: 'Media',
   },
-  "media-queries": {
-    title: "Media Queries",
+  'media-queries': {
+    title: 'Media Queries',
   },
   mobile: {
-    title: "Mobile",
+    title: 'Mobile',
   },
   modules: {
-    title: "Modules",
+    title: 'Modules',
   },
   monetization: {
-    title: "Monetization",
+    title: 'Monetization',
   },
   network: {
-    title: "Network",
+    title: 'Network',
   },
   node: {
-    title: "Node",
+    title: 'Node',
   },
   notifications: {
-    title: "Notifications",
+    title: 'Notifications',
   },
   offline: {
-    title: "Offline",
+    title: 'Offline',
   },
-  "origin-trials": {
-    title: "Origin Trials",
+  'origin-trials': {
+    title: 'Origin Trials',
   },
   payments: {
-    title: "Payments",
+    title: 'Payments',
   },
   performance: {
-    title: "Performance",
+    title: 'Performance',
   },
   permissions: {
-    title: "Permissions",
+    title: 'Permissions',
   },
-  "progressive-web-apps": {
-    title: "Progressive Web Apps",
+  'progressive-web-apps': {
+    title: 'Progressive Web Apps',
   },
   puppeteer: {
-    title: "Puppeteer",
+    title: 'Puppeteer',
   },
   rendering: {
-    title: "Rendering",
+    title: 'Rendering',
   },
   security: {
-    title: "Security",
+    title: 'Security',
   },
   seo: {
-    title: "SEO",
+    title: 'SEO',
   },
-  "service-worker": {
-    title: "Service Worker",
+  'service-worker': {
+    title: 'Service Worker',
   },
   storage: {
-    title: "Storage",
+    title: 'Storage',
   },
   svg: {
-    title: "SVG",
+    title: 'SVG',
   },
   testing: {
-    title: "Testing",
+    title: 'Testing',
   },
   ux: {
-    title: "UX",
+    title: 'UX',
   },
-  "virtual-reality": {
-    title: "Virtual Reality",
+  'virtual-reality': {
+    title: 'Virtual Reality',
   },
-  "web-assembly": {
-    title: "Web Assembly",
+  'web-assembly': {
+    title: 'Web Assembly',
   },
-  "web-bundles": {
-    title: "Web Bundles",
+  'web-bundles': {
+    title: 'Web Bundles',
   },
   webxr: {
-    title: "WebXR",
+    title: 'WebXR',
   },
 };
 
 const postTags = {};
 
 Object.keys(tags).forEach((key) => {
+  const tag = tags[key];
+  const description = tag.description
+    ? tag.description
+    : `Our latest news, updates, and stories about ${tag.title}.`;
+
   postTags[key] = {
-    ...tags[key],
+    ...tag,
+    description,
     href: `/tags/${key}/`,
+    key,
   };
 });
 

@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-require("dotenv").config();
+require('dotenv').config();
 
-const algoliasearch = require("algoliasearch");
-const fs = require("fs");
-const log = require("fancy-log");
+const algoliasearch = require('algoliasearch');
+const fs = require('fs');
+const log = require('fancy-log');
 
 // TODO(samthor): For now, we only index 'en' content.
-const raw = fs.readFileSync("dist/en/algolia.json", "utf-8");
+const raw = fs.readFileSync('dist/en/algolia.json', 'utf-8');
 const indexed = JSON.parse(raw);
 
 // Revision will look like "YYYYMMDDHHMM".
 const revision = new Date()
   .toISOString()
   .substring(0, 16)
-  .replace(/\D/g, "");
-const primaryIndexName = "webdev";
+  .replace(/\D/g, '');
+const primaryIndexName = 'webdev';
 const deployIndexName = `webdev_deploy_${revision}`;
 
 async function index() {
@@ -47,7 +47,7 @@ async function index() {
 
   // TODO(samthor): This is from https://www.algolia.com/doc/api-reference/api-methods/replace-all-objects/#examples,
   // are there more things that should be copied?
-  const scope = ["settings", "synonyms", "rules"];
+  const scope = ['settings', 'synonyms', 'rules'];
   await client.copyIndex(primaryIndex.indexName, deployIndex.indexName, {
     scope,
   });

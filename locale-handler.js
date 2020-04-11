@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const fs = require("fs");
-const path = require("path");
-const locale = require("./shared/locale");
+const fs = require('fs');
+const path = require('path');
+const locale = require('./shared/locale');
 
 const indexJsonRegExp = /\/index\.json$/;
 
@@ -32,16 +32,16 @@ const indexJsonRegExp = /\/index\.json$/;
  * @return {!Function}
  */
 module.exports = (req, res, next) => {
-  const isNav = req.url.endsWith("/");
-  const isJson = req.url.endsWith("/index.json");
+  const isNav = req.url.endsWith('/');
+  const isJson = req.url.endsWith('/index.json');
   // Exit early if the url is not navigational.
   if (!isNav && !isJson) {
     return next();
   }
 
-  const fileType = isJson ? "index.json" : "index.html";
-  const normalizedPath = req.path.replace(indexJsonRegExp, "");
-  const pathParts = normalizedPath.split("/");
+  const fileType = isJson ? 'index.json' : 'index.html';
+  const normalizedPath = req.path.replace(indexJsonRegExp, '');
+  const pathParts = normalizedPath.split('/');
   const isLangInPath = locale.isSupportedLocale(pathParts[1]);
   let lang;
   let filePath;
@@ -51,7 +51,7 @@ module.exports = (req, res, next) => {
     lang = pathParts[1];
     pathParts.splice(1, 1);
     pathParts.push(fileType);
-    filePath = pathParts.join("/");
+    filePath = pathParts.join('/');
   } else {
     const langInCookie = locale.isSupportedLocale(req.cookies.preferred_lang);
     // If language not in url, use accept-language header.
@@ -69,14 +69,14 @@ module.exports = (req, res, next) => {
 
   const localizedFilePath = path.join(
     __dirname,
-    "dist", // Must serve from dist directory even in dev mode.
+    'dist', // Must serve from dist directory even in dev mode.
     lang,
     filePath,
   );
 
   if (fs.existsSync(localizedFilePath)) {
-    return isLangInPath ? next() : res.redirect(path.join("/", lang, filePath));
+    return isLangInPath ? next() : res.redirect(path.join('/', lang, filePath));
   } else {
-    return res.redirect(path.join("/", locale.defaultLocale, filePath));
+    return res.redirect(path.join('/', locale.defaultLocale, filePath));
   }
 };

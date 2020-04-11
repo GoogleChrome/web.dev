@@ -1,4 +1,4 @@
-const contributors = require("../_data/contributors");
+const contributors = require('../_data/contributors');
 
 module.exports = (contributorSlugs = []) => {
   const profiles = contributorSlugs.map((slug) => contributors[slug]);

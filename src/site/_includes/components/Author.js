@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-const {html} = require("common-tags");
-const AuthorInfo = require("./AuthorInfo");
+const {html} = require('common-tags');
+const AuthorInfo = require('./AuthorInfo');
 
 module.exports = ({
   post,

@@ -8,4 +8,4 @@
 // Set the production path for the Web Components polyfills. Must have leading and trailing slash.
 // This actually looks inside the root PLUS "bundles/<filename>".
 // This isn't configurable as we don't need the polyfill in dev.
-window.WebComponents = {root: "/lib/webcomponents/"};
+window.WebComponents = {root: '/lib/webcomponents/'};

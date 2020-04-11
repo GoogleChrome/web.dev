@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const fs = require("fs");
-const localeCode = require("iso-639-1");
-const path = require("path");
+const fs = require('fs');
+const localeCode = require('iso-639-1');
+const path = require('path');
 
-const defaultLocale = "en";
+const defaultLocale = 'en';
 const isProd = Boolean(process.env.GAE_APPLICATION);
-const contentDir = isProd ? "../dist" : "../src/site/content";
+const contentDir = isProd ? '../dist' : '../src/site/content';
 const dirs = fs.readdirSync(path.join(__dirname, contentDir));
 const supportedLocales = dirs.filter((dir) => localeCode.validate(dir));
 

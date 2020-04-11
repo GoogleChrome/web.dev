@@ -21,12 +21,12 @@
  * main web.dev template, cutting down on bytes needed to render further pages.
  */
 
-const fs = require("fs").promises;
-const path = require("path");
-const site = require("../_data/site");
-const strip = require("../_filters/strip");
+const fs = require('fs').promises;
+const path = require('path');
+const site = require('../_data/site');
+const strip = require('../_filters/strip');
 
-const suffixLength = "index.html".length;
+const suffixLength = 'index.html'.length;
 
 const writePartial = async (to, raw) => {
   await fs.mkdir(path.dirname(to), {recursive: true});
@@ -37,13 +37,13 @@ module.exports = function buildPartial() {
   const work = [];
 
   return function(content, page, pathData, lang, title, offline) {
-    if (!page.outputPath.endsWith("/index.html")) {
+    if (!page.outputPath.endsWith('/index.html')) {
       return content; // unexpected output format
     }
 
     const outputPath =
       page.outputPath.substr(0, page.outputPath.length - suffixLength) +
-      "index.json";
+      'index.json';
 
     const partial = {
       raw: content,

@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-const postTags = require("../_data/postTags");
-const livePosts = require("../_filters/live-posts");
-const addPagination = require("../_utils/add-pagination");
-const setdefault = require("../_utils/setdefault");
+const postTags = require('../_data/postTags');
+const livePosts = require('../_filters/live-posts');
+const addPagination = require('../_utils/add-pagination');
+const setdefault = require('../_utils/setdefault');
 
 /**
  * Returns all posts as an array of paginated tags.
@@ -26,7 +26,7 @@ const setdefault = require("../_utils/setdefault");
  * This is because we can not paginate something already paginated... Pagination is effectively a loop, and we can't have an embedded loop O^2.
  *
  * @param {any} collection Eleventy collection object
- * @return {Array<{ title: string, href: string, description: string, posts: Array<object>, index: number, pages: number }>} An array where each element is a paged tag with some meta data and n posts for the page.
+ * @return {Array<{ title: string, href: string, description: string, elements: Array<object>, index: number, pages: number }>} An array where each element is a paged tag with some meta data and n posts for the page.
  */
 module.exports = (collection) => {
   const posts = collection

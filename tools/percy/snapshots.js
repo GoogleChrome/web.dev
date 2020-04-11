@@ -1,32 +1,40 @@
-const PercyScript = require("@percy/script");
+const PercyScript = require('@percy/script');
 const pagesToTest = [
   {
-    url: "",
-    title: "Home page",
+    url: '',
+    title: 'Home page',
   },
   {
-    url: "learn",
-    title: "Learn page",
+    url: 'learn',
+    title: 'Learn page',
   },
   {
-    url: "measure",
-    title: "Measure page",
+    url: 'measure',
+    title: 'Measure page',
   },
   {
-    url: "blog",
-    title: "Blog page",
+    url: 'blog',
+    title: 'Blog page',
   },
   {
-    url: "about",
-    title: "About page",
+    url: 'about',
+    title: 'About page',
   },
   {
-    url: "codelab-avoid-invisible-text",
-    title: "Codelab page",
+    url: 'codelab-avoid-invisible-text',
+    title: 'Codelab page',
   },
   {
-    url: "handbook/web-dev-components",
-    title: "Components page",
+    url: 'handbook/web-dev-components',
+    title: 'Components page',
+  },
+  {
+    url: 'authors',
+    title: 'Authors page',
+  },
+  {
+    url: 'tags',
+    title: 'Tags page',
   },
 ];
 
@@ -42,5 +50,5 @@ PercyScript.run(
   },
   // These flags remove Percy's single-process flag. Without these, any page
   // with an iframe will crash puppeteer (and percy).
-  {args: ["--no-sandbox", "--disable-setuid-sandbox"]},
+  {args: ['--no-sandbox', '--disable-setuid-sandbox']},
 );

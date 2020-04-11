@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-const contributors = require("../_data/contributors");
-const livePosts = require("../_filters/live-posts");
-const addPagination = require("../_utils/add-pagination");
-const setdefault = require("../_utils/setdefault");
+const contributors = require('../_data/contributors');
+const livePosts = require('../_filters/live-posts');
+const addPagination = require('../_utils/add-pagination');
+const setdefault = require('../_utils/setdefault');
 
 /**
  * Returns all posts as an array of paginated authors.
@@ -29,11 +29,11 @@ const setdefault = require("../_utils/setdefault");
  * embedded loop O^2.
  *
  * @param {any} collection Eleventy collection object
- * @return {Array<{ title: string, href: string, description: string, posts: Array<object>, index: number, pages: number }>} An array where each element is a paged tag with some meta data and n posts for the page.
+ * @return {Array<{ title: string, href: string, description: string, elements: Array<object>, index: number, pages: number }>} An array where each element is a paged tag with some meta data and n posts for the page.
  */
 module.exports = (collection) => {
   const posts = collection
-    .getAll()
+    .getFilteredByGlob('**/*.md')
     .filter(livePosts)
     .sort((a, b) => b.date - a.date);
 
@@ -50,7 +50,9 @@ module.exports = (collection) => {
 
   let authors = [];
   authorsMap.forEach((value, key) => {
-    if (!(key in contributors)) {
+    if (key in contributors) {
+      authors = authors.concat(addPagination(value, contributors[key]));
+    } else {
       // Warn if the contributor ID is missing, including pointing to the paths of the source
       // inputs that are invalid.
       // This could also be run as part of generating author chips, but it is sufficient to explode
@@ -58,12 +60,11 @@ module.exports = (collection) => {
       const posts = authorsMap
         .get(key)
         .map((post) => post.inputPath)
-        .join(", ");
+        .join(', ');
       throw new Error(
         `unknown contributor ${key} [${posts}], are they in _data/contributors.js?`,
       );
     }
-    authors = authors.concat(addPagination(value, contributors[key]));
   });
 
   return authors;

@@ -47,11 +47,11 @@
  *
  */
 
-const {oneLine} = require("common-tags");
-const {ifDefined} = require("../helpers");
-const md = require("markdown-it")();
-const stripLanguage = require("../../../_filters/strip-language");
-const getImagePath = require("../../../_utils/get-image-path");
+const {oneLine} = require('common-tags');
+const {ifDefined} = require('../helpers');
+const md = require('markdown-it')();
+const stripLanguage = require('../../../_filters/strip-language');
+const getImagePath = require('../../../_utils/get-image-path');
 
 /* eslint-disable no-invalid-this, max-len */
 
@@ -76,7 +76,7 @@ function renderImage({src, alt, maxWidth}, ctx) {
     <img
       src="${imagePath}"
       alt="${alt}"
-      ${ifDefined("style", style)}
+      ${ifDefined('style', style)}
     />
   `;
 }
@@ -88,7 +88,7 @@ function renderImage({src, alt, maxWidth}, ctx) {
  */
 const Image = (nunjucksEngine) => {
   return new (function() {
-    this.tags = ["Image"];
+    this.tags = ['Image'];
 
     this.parse = function(parser, nodes, lexer) {
       const tok = parser.nextToken();
@@ -96,7 +96,7 @@ const Image = (nunjucksEngine) => {
       const args = parser.parseSignature(null, true);
       parser.advanceAfterBlockEnd(tok.value);
 
-      return new nodes.CallExtensionAsync(this, "run", args);
+      return new nodes.CallExtensionAsync(this, 'run', args);
     };
 
     this.run = function({ctx}, args, callback) {
@@ -119,13 +119,13 @@ const Image = (nunjucksEngine) => {
  */
 function renderFigCaption(caption, figCaptionClasses) {
   if (!caption) {
-    return "";
+    return '';
   }
 
   // Needs to be one long line, else we get white space inside of the
   // figcaption element.
   return oneLine`
-    <figcaption class="${figCaptionClasses.join(" ")}">
+    <figcaption class="${figCaptionClasses.join(' ')}">
       ${md.renderInline(caption.trim())}
     </figcaption>
   `;
@@ -139,21 +139,21 @@ function renderFigCaption(caption, figCaptionClasses) {
  * @return {string}
  */
 function renderFigure(image, {type}, caption) {
-  const figClasses = ["w-figure"];
-  const figCaptionClasses = ["w-figcaption"];
+  const figClasses = ['w-figure'];
+  const figCaptionClasses = ['w-figcaption'];
 
   if (type) {
-    type.split(" ").forEach((entry) => {
+    type.split(' ').forEach((entry) => {
       figClasses.push(`w-figure--${entry}`);
       // w-figure--fulbleed is the only modifier class we use on figcaption.
-      if (entry === "fullbleed") {
+      if (entry === 'fullbleed') {
         figCaptionClasses.push(`w-figure--${entry}`);
       }
     });
   }
 
   return oneLine`
-    <figure class="${figClasses.join(" ")}">
+    <figure class="${figClasses.join(' ')}">
       ${image}
       ${renderFigCaption(caption, figCaptionClasses)}
     </figure>
@@ -167,17 +167,17 @@ function renderFigure(image, {type}, caption) {
  */
 const Figure = (nunjucksEngine) => {
   return new (function() {
-    this.tags = ["Figure"];
+    this.tags = ['Figure'];
 
     this.parse = function(parser, nodes, lexer) {
       const tok = parser.nextToken();
 
       const args = parser.parseSignature(null, true);
       parser.advanceAfterBlockEnd(tok.value);
-      const caption = parser.parseUntilBlocks("endFigure");
+      const caption = parser.parseUntilBlocks('endFigure');
       parser.advanceAfterBlockEnd();
 
-      return new nodes.CallExtensionAsync(this, "run", args, [caption]);
+      return new nodes.CallExtensionAsync(this, 'run', args, [caption]);
     };
 
     this.run = function({ctx}, args, caption, callback) {

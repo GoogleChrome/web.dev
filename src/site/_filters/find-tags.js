@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const postTags = require("../_data/postTags");
+const postTags = require('../_data/postTags');
 
 /**
  * @param {Array<string>} tags Array of tags.

@@ -8,11 +8,11 @@
 // is actually ignored in DevSite v2. Instead, any links that have `data-category` automatically
 // have clicks logged (see below).
 
-function getAnalyticsDataFromElement(elem, defaultAction = "click") {
-  const category = elem.dataset["category"] || undefined;
-  const action = elem.dataset["action"] || defaultAction;
-  const label = elem.dataset["label"] || undefined;
-  const value = Number(elem.dataset["value"]) || undefined; // must be number, or is ignored
+function getAnalyticsDataFromElement(elem, defaultAction = 'click') {
+  const category = elem.dataset['category'] || undefined;
+  const action = elem.dataset['action'] || defaultAction;
+  const label = elem.dataset['label'] || undefined;
+  const value = Number(elem.dataset['value']) || undefined; // must be number, or is ignored
   return {
     category,
     action,
@@ -22,7 +22,7 @@ function getAnalyticsDataFromElement(elem, defaultAction = "click") {
 }
 
 function trackEvent({category, action, label, value}) {
-  ga("send", "event", {
+  ga('send', 'event', {
     eventCategory: category,
     eventAction: action,
     eventLabel: label,
@@ -36,8 +36,8 @@ function trackEvent({category, action, label, value}) {
  * for (requiring at least `data-category`, but also allowing
  * `data-action`, `data-label` and `data-value`.
  */
-document.addEventListener("click", (e) => {
-  const clickableEl = e.target.closest("a[href], .gc-analytics-event");
+document.addEventListener('click', (e) => {
+  const clickableEl = e.target.closest('a[href], .gc-analytics-event');
   if (!clickableEl) {
     return;
   }

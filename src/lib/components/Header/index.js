@@ -20,8 +20,8 @@
  * This does not inherit from BaseStateElement as it is not a LitElement.
  */
 
-import {store} from "../../store";
-import {expandSideNav} from "../../actions";
+import {store} from '../../store';
+import {expandSideNav} from '../../actions';
 
 class Header extends HTMLElement {
   constructor() {
@@ -31,28 +31,28 @@ class Header extends HTMLElement {
   }
 
   connectedCallback() {
-    this.hamburgerBtn = this.querySelector(".web-header__hamburger-btn");
-    this.hamburgerBtn.classList.remove("unresolved");
-    this.hamburgerBtn.addEventListener("click", expandSideNav);
+    this.hamburgerBtn = this.querySelector('.web-header__hamburger-btn');
+    this.hamburgerBtn.classList.remove('unresolved');
+    this.hamburgerBtn.addEventListener('click', expandSideNav);
 
     store.subscribe(this.onStateChanged);
   }
 
   disconnectedCallback() {
-    this.hamburgerBtn.removeEventListener("click", expandSideNav);
+    this.hamburgerBtn.removeEventListener('click', expandSideNav);
 
     store.unsubscribe(this.onStateChanged);
   }
 
   onStateChanged({isSearchExpanded, currentUrl}) {
-    this.classList.toggle("web-header--has-expanded-search", isSearchExpanded);
+    this.classList.toggle('web-header--has-expanded-search', isSearchExpanded);
 
     // Ensure that the "active" attribute is applied to any matching header
     // link, or to none (for random subpages or articles).
     currentUrl = currentUrl.replace(/"/g, '\\"');
-    currentUrl = (currentUrl.match(/^\/\w+\//) || [""])[0];
+    currentUrl = (currentUrl.match(/^\/\w+\//) || [''])[0];
 
-    const active = this.querySelector("[active]");
+    const active = this.querySelector('[active]');
     const updated = this.querySelector(`[href="${currentUrl}"]`);
 
     if (active === updated) {
@@ -60,13 +60,13 @@ class Header extends HTMLElement {
     }
 
     if (active) {
-      active.removeAttribute("active");
-      active.removeAttribute("aria-current");
+      active.removeAttribute('active');
+      active.removeAttribute('aria-current');
     }
 
     if (updated) {
-      updated.setAttribute("active", "");
-      updated.setAttribute("aria-current", "page");
+      updated.setAttribute('active', '');
+      updated.setAttribute('aria-current', 'page');
     }
   }
 
@@ -80,4 +80,4 @@ class Header extends HTMLElement {
   }
 }
 
-customElements.define("web-header", Header);
+customElements.define('web-header', Header);
