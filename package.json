@@ -19,7 +19,7 @@
     "precommit": "node ./tools/update-updated/index.js",
     "rollup": "eleventy --input src/site/content/sw-partial-layout.njk; node build.js",
     "sass": "node ./compile-css.js src/styles/all.scss dist/app.css",
-    "snapshots": "percy exec -- node tools/percy/snapshots.js",
+    "snapshots": "percy exec --config ./tools/percy/.percy.conf.yml -- node tools/percy/snapshots.js",
     "stage:personal": "ELEVENTY_ENV=dev npm run build && gcloud app deploy --project web-dev-staging --quiet --no-promote",
     "stage": "ELEVENTY_ENV=dev npm run build && gcloud app deploy --project web-dev-staging --quiet",
     "start": "node ./server.js",
