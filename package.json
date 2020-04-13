@@ -56,7 +56,7 @@
     "workbox-cacheable-response": "^5.1.2",
     "workbox-expiration": "^5.0.0",
     "workbox-google-analytics": "^5.0.0",
-    "workbox-precaching": "^5.0.0",
+    "workbox-precaching": "^5.1.2",
     "workbox-routing": "^5.0.0",
     "workbox-strategies": "^5.0.0"
   },
