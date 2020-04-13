@@ -2,6 +2,7 @@ import config from 'webdev_config';
 import {store} from './store';
 import {clearSignedInState} from './actions';
 import firestoreLoader from './firestore-loader';
+import {localStorage} from './utils/storage';
 
 /* eslint-disable require-jsdoc */
 
@@ -24,7 +25,7 @@ firebase.auth().onAuthStateChanged((user) => {
 
   // Cache whether the user was signed in, to help prevent FOUC in future, as
   // this can be read synchronosly and Firebase's auth takes ~ms to come back.
-  window.localStorage['webdev_isSignedIn'] = user ? 'probably' : '';
+  localStorage['webdev_isSignedIn'] = user ? 'probably' : '';
 
   if (!user) {
     clearSignedInState();
