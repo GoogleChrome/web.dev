@@ -2,7 +2,7 @@
 title: New capabilities status
 subhead: Web apps should be able to do anything native apps can. Google wants to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2020-03-13
+updated: 2020-04-13
 tags:
   - post
   - capabilities
@@ -101,7 +101,7 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
           editors, and more. After a user grants a web app access, this API
           allows web apps to read or save changes directly to files and folders
           on the user's device.<br>
-          <em>Updated November 26, 2019</em>
+          <em>Updated April 13, 2020</em>
         </td>
       </tr>
       <tr>
