@@ -1,5 +1,6 @@
 @import '../settings/colors';
 @import '../settings/type';
+@import '../tools/breakpoints';
 @import '../tools/mixins';
 
 // =============================================================================
@@ -15,6 +16,10 @@
 .w-path-card {
   @include w-body-text();
   padding: 24px;
+
+  @include bp(sm) {
+    padding: 32px;
+  }
 }
 
 .w-path-card__info {
