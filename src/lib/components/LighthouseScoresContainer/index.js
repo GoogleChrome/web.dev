@@ -1,7 +1,7 @@
-import {html} from "lit-element";
-import {store} from "../../store";
-import {requestFetchReports} from "../../actions";
-import {BaseElement} from "../BaseElement";
+import {html} from 'lit-element';
+import {store} from '../../store';
+import {requestFetchReports} from '../../actions';
+import {BaseElement} from '../BaseElement';
 
 /**
  * @fileoverview Container element for displaying Lighthouse results.
@@ -102,6 +102,6 @@ class LighthouseScoresContainer extends BaseElement {
 }
 
 customElements.define(
-  "web-lighthouse-scores-container",
+  'web-lighthouse-scores-container',
   LighthouseScoresContainer,
 );

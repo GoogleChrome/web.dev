@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-const addPagination = require("../_utils/add-pagination");
-const postDescending = require("./post-descending");
+const addPagination = require('../_utils/add-pagination');
+const postDescending = require('./post-descending');
 
 /**
  * Returns all posts as an array of paginated posts.
@@ -27,5 +27,5 @@ const postDescending = require("./post-descending");
  */
 module.exports = (collection) => {
   const posts = postDescending(collection);
-  return addPagination(posts, {href: "/blog/"});
+  return addPagination(posts, {href: '/blog/'});
 };

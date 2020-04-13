@@ -6,12 +6,12 @@ export function normalizeUrl(url) {
   const u = new URL(url, window.location);
   let pathname = u.pathname;
 
-  if (pathname.endsWith("/index.html")) {
+  if (pathname.endsWith('/index.html')) {
     // If an internal link refers to "/foo/index.html", strip "index.html" and load.
-    pathname = pathname.slice(0, -"index.html".length);
-  } else if (pathname.indexOf(".") !== -1) {
+    pathname = pathname.slice(0, -'index.html'.length);
+  } else if (pathname.indexOf('.') !== -1) {
     // Do nothing, cannot handle any link with a loose dot.
-  } else if (!pathname.endsWith("/")) {
+  } else if (!pathname.endsWith('/')) {
     // All web.dev pages end with "/".
     pathname = `${pathname}/`;
   }

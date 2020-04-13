@@ -87,17 +87,17 @@ const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
 const buildPartial = require('./src/site/_utils/build-partial');
 
 module.exports = function(config) {
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
   // PLUGINS
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
   // Syntax highlighting for code snippets
   config.addPlugin(pluginSyntaxHighlight);
   // RSS feeds
   config.addPlugin(pluginRss);
 
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
   // MARKDOWN
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
   const markdownItOptions = {
     html: true,
   };
@@ -134,23 +134,20 @@ module.exports = function(config) {
     },
     table_close: () => '</table>\n</div>',
     table_open: () => '<div class="w-table-wrapper">\n<table>\n',
-  }
+  };
 
   mdLib.renderer.rules = {...mdLib.renderer.rules, ...rules};
 
-  config.setLibrary(
-    'md',
-    mdLib
-  );
+  config.setLibrary('md', mdLib);
 
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
   // NON-11TY FILES TO WATCH
-  //----------------------------------------------------------------------------
-  config.addWatchTarget("./src/site/content/en/**/*.yml");
+  // ----------------------------------------------------------------------------
+  config.addWatchTarget('./src/site/content/en/**/*.yml');
 
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
   // COLLECTIONS
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
   config.addCollection('posts', postDescending);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('recentPosts', recentPosts);
@@ -173,9 +170,9 @@ module.exports = function(config) {
     return [];
   });
 
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
   // FILTERS
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
   config.addFilter('consoleDump', consoleDump);
   config.addFilter('findByUrl', findByUrl);
   config.addFilter('findTags', findTags);
@@ -194,9 +191,9 @@ module.exports = function(config) {
   config.addFilter('stripLanguage', stripLanguage);
   config.addFilter('strip', strip);
 
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
   // SHORTCODES
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
   config.addShortcode('ArticleNavigation', ArticleNavigation);
   config.addPairedShortcode('Aside', Aside);
   config.addShortcode('Assessment', Assessment);
@@ -222,15 +219,15 @@ module.exports = function(config) {
   config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('YouTube', YouTube);
 
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
   // CUSTOM TAGS
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
   config.addNunjucksTag('Image', Image);
   config.addNunjucksTag('Figure', Figure);
 
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
   // TRANSFORMS
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
   if (process.env.PERCY) {
     config.addTransform('disable-lazy-load', disableLazyLoad);
   }

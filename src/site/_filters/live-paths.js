@@ -1,4 +1,4 @@
-const {env} = require("../_data/site");
+const {env} = require('../_data/site');
 
 /**
  * Filter draft learning paths out.
@@ -7,7 +7,7 @@ const {env} = require("../_data/site");
  */
 module.exports = function livePaths(path) {
   // If we're in dev mode, force draft learning paths to show up.
-  if (env === "dev") {
+  if (env === 'dev') {
     return true;
   }
 

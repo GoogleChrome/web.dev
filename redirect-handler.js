@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-const yaml = require("js-yaml");
-const fs = require("fs");
-const escapeStringRegexp = require("escape-string-regexp");
+const yaml = require('js-yaml');
+const fs = require('fs');
+const escapeStringRegexp = require('escape-string-regexp');
 
 /**
  * Normalizes the passed URL to ensure that it ends with a simple trailing
@@ -26,9 +26,9 @@ const escapeStringRegexp = require("escape-string-regexp");
  * @return {string}
  */
 function ensureTrailingSlashOnly(url) {
-  if (url.endsWith("/index.html")) {
-    return url.slice(0, -"index.html".length);
-  } else if (!url.endsWith("/")) {
+  if (url.endsWith('/index.html')) {
+    return url.slice(0, -'index.html'.length);
+  } else if (!url.endsWith('/')) {
     return `${url}/`;
   }
   return url;
@@ -43,13 +43,13 @@ function ensureTrailingSlashOnly(url) {
  * @return {!Function}
  */
 module.exports = function buildRedirectHandler(filename, code = 301) {
-  const doc = yaml.safeLoad(fs.readFileSync(filename, "utf8"));
+  const doc = yaml.safeLoad(fs.readFileSync(filename, 'utf8'));
 
   const groupRedirect = {};
   const singleRedirect = {};
 
   for (const {from, to} of doc.redirects) {
-    const hasExtra = from.indexOf("...") !== -1;
+    const hasExtra = from.indexOf('...') !== -1;
     if (!hasExtra) {
       singleRedirect[ensureTrailingSlashOnly(from)] = to;
       continue;
@@ -57,7 +57,7 @@ module.exports = function buildRedirectHandler(filename, code = 301) {
 
     // "Group" redirects' from and to must end with "/...", i.e., match the last
     // whole path component.
-    if (!from.endsWith("/...") || !to.endsWith("/...")) {
+    if (!from.endsWith('/...') || !to.endsWith('/...')) {
       throw new TypeError(`got redirect with invalid ...: ${from} => ${to}`);
     }
     groupRedirect[from.slice(0, -3)] = to.slice(0, -3); // but only slice "..."
@@ -65,7 +65,7 @@ module.exports = function buildRedirectHandler(filename, code = 301) {
 
   // Build a single RegExp for group matches, for speed of matching.
   const escaped = Object.keys(groupRedirect).map(escapeStringRegexp);
-  groupMatcher = new RegExp(`^(${escaped.join("|")})`);
+  groupMatcher = new RegExp(`^(${escaped.join('|')})`);
 
   return (req, res, next) => {
     const url = ensureTrailingSlashOnly(req.url);

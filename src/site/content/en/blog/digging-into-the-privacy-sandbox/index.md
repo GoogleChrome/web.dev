@@ -4,7 +4,7 @@ subhead: The Privacy Sandbox is a series of proposals to satisfy third-party use
 authors:
   - samdutton
 date: 2020-04-08
-updated: 2020-04-08
+updated: 2020-04-13
 hero: hero.jpg
 alt: A black-on-white printed sign saying Private, on a wooden wall.
 description: The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms. The proposals need your feedback.
@@ -175,8 +175,8 @@ To reiterate: the Privacy Sandbox authors need your support. The [explainers](ht
 
 ### The Privacy Sandbox
 
++   [The Privacy Sandbox](https://www.chromium.org/Home/chromium-privacy/privacy-sandbox)
 +   Privacy Sandbox overview: [Building a more private web](https://www.blog.google/products/chrome/building-a-more-private-web/)
-+   WebKit blog: [Privacy Preserving Ad Click Attribution For the Web](https://webkit.org/blog/8943/privacy-preserving-ad-click-attribution-for-the-web/)
 +   Google AI Blog: [Federated Learning: Collaborative Machine Learning without Centralized Training Data](https://ai.googleblog.com/2017/04/federated-learning-collaborative.html)
 +   [The future of third-party cookies](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html)
 

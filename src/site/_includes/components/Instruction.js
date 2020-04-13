@@ -16,8 +16,8 @@
 
 /* eslint-disable max-len */
 
-const {html} = require("common-tags");
-const capitalize = require("../../_filters/capitalize");
+const {html} = require('common-tags');
+const capitalize = require('../../_filters/capitalize');
 
 /**
  * A component to help DRY up common lists of instructions.
@@ -27,22 +27,22 @@ const capitalize = require("../../_filters/capitalize");
  * @param {string} listStyle The list style to use. Defaults to 'ul'.
  * @return {string} A list of instructions.
  */
-module.exports = (type, listStyle = "ul") => {
+module.exports = (type, listStyle = 'ul') => {
   let instruction;
   let substitution;
   let bullet;
 
   switch (listStyle) {
-    case "ol":
-      bullet = "1. ";
+    case 'ol':
+      bullet = '1. ';
       break;
 
-    case "ul":
-      bullet = "- ";
+    case 'ul':
+      bullet = '- ';
       break;
 
-    case "none":
-      bullet = "";
+    case 'none':
+      bullet = '';
       break;
 
     default:
@@ -57,7 +57,7 @@ module.exports = (type, listStyle = "ul") => {
   };
 
   switch (type) {
-    case "remix":
+    case 'remix':
       instruction = `${bullet}Click **Remix to Edit** to make the project editable.`;
       break;
 
@@ -78,7 +78,7 @@ module.exports = (type, listStyle = "ul") => {
       `;
       break;
 
-    case "preview":
+    case 'preview':
       // Note: This uses an inline style on the image button instead of pulling
       // from one of our CSS files. This is mainly because this style is only
       // used by this component so it's a bit easier to keep everything
@@ -94,31 +94,31 @@ module.exports = (type, listStyle = "ul") => {
       `;
       break;
 
-    case "source":
+    case 'source':
       instruction = html`
         ${bullet}To view the source, press **View&nbsp;Source**.
       `;
       break;
 
-    case "disable-cache":
+    case 'disable-cache':
       instruction = html`
         ${bullet}Select the **Disable cache** checkbox.
       `;
       break;
 
-    case "reload-app":
+    case 'reload-app':
       instruction = html`
         ${bullet}Reload the app.
       `;
       break;
 
-    case "reload-page":
+    case 'reload-page':
       instruction = html`
         ${bullet}Reload the page.
       `;
       break;
 
-    case "start-profiling":
+    case 'start-profiling':
       instruction = html`
         ${bullet}Click **Start profiling and reload page**
         <img
@@ -129,27 +129,27 @@ module.exports = (type, listStyle = "ul") => {
       `;
       break;
 
-    case "devtools-command":
+    case 'devtools-command':
       instruction = html`
         ${bullet}Press \`Control+Shift+P\` (or \`Command+Shift+P\` on Mac) to
         open the **Command** menu.
       `;
       break;
 
-    case "devtools":
-    case "devtools-elements":
-    case "devtools-console":
-    case "devtools-sources":
-    case "devtools-network":
-    case "devtools-performance":
-    case "devtools-memory":
-    case "devtools-application":
-    case "devtools-security":
-    case "devtools-audits":
+    case 'devtools':
+    case 'devtools-elements':
+    case 'devtools-console':
+    case 'devtools-sources':
+    case 'devtools-network':
+    case 'devtools-performance':
+    case 'devtools-memory':
+    case 'devtools-application':
+    case 'devtools-security':
+    case 'devtools-audits':
       instruction = html`
         ${shared.devtools}
       `;
-      substitution = type.substring("devtools-".length);
+      substitution = type.substring('devtools-'.length);
       if (substitution) {
         // prettier-ignore
         instruction = html`
@@ -159,19 +159,19 @@ module.exports = (type, listStyle = "ul") => {
       }
       break;
 
-    case "audit-performance":
-    case "audit-seo":
-    case "audit-accessibility":
-    case "audit-pwa":
-    case "audit-best-practices":
+    case 'audit-performance':
+    case 'audit-seo':
+    case 'audit-accessibility':
+    case 'audit-pwa':
+    case 'audit-best-practices':
       substitution = type
-        .split("-")
+        .split('-')
         .slice(1)
-        .join(" ");
-      if (substitution === "seo") {
+        .join(' ');
+      if (substitution === 'seo') {
         substitution = substitution.toUpperCase();
-      } else if (substitution === "pwa") {
-        substitution = "Progressive Web App";
+      } else if (substitution === 'pwa') {
+        substitution = 'Progressive Web App';
       } else {
         // Note: DevTools uses title case for Progressive Web App but
         // only capitalizes "Best practices"

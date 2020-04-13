@@ -19,7 +19,6 @@ tags:
   - websocketstream
   - capabilities
   - fugu
-draft: true
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/1977080236415647745
 ---
@@ -276,7 +275,7 @@ or [directly on Glitch](https://websocketstream-demo.glitch.me/).
 
 ## Feedback {: #feedback }
 
-The Chrome team wants to hear about your experiences with the API_NAME API.
+The Chrome team wants to hear about your experiences with the WebSocketStream API.
 
 ### Tell us about the API design
 

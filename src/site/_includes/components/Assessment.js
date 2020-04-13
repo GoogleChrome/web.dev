@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-const {html} = require("common-tags");
-const md = require("markdown-it")();
-const mdBlock = require("../../_filters/md-block");
-const fs = require("fs");
-const yaml = require("js-yaml");
+const {html} = require('common-tags');
+const md = require('markdown-it')();
+const mdBlock = require('../../_filters/md-block');
+const fs = require('fs');
+const yaml = require('js-yaml');
 
 // Renders the set leader at the top of the self-assessment
 function headerTemplate(assessment) {
@@ -66,11 +66,11 @@ function questionTemplate(question, assessment) {
     ? html`
         <div data-role="stimulus">${mdBlock(question.stimulus)}</div>
       `
-    : "";
+    : '';
 
   const height = assessment.height
     ? "question-height='" + assessment.height + "'"
-    : "";
+    : '';
 
   return html`
     <web-question ${height} data-label="${assessment.tabLabel}">
@@ -134,14 +134,14 @@ function responseTemplate(response) {
     `);
   }
 
-  let typeSuffix = "";
+  let typeSuffix = '';
 
   switch (response.type) {
-    case "think-and-check":
-      typeSuffix = "-tac";
+    case 'think-and-check':
+      typeSuffix = '-tac';
       break;
-    case "multiple-choice":
-      typeSuffix = "-mc";
+    case 'multiple-choice':
+      typeSuffix = '-mc';
       break;
     default:
       throw new Error(`
@@ -151,12 +151,12 @@ function responseTemplate(response) {
   }
 
   const cardinalityAttr = response.cardinality
-    ? "cardinality=" + response.cardinality
-    : "";
+    ? 'cardinality=' + response.cardinality
+    : '';
   const correctAnswersAttr = response.correctAnswers
-    ? "correct-answer=" + response.correctAnswers
-    : "";
-  const columnsAttr = response.columns ? "columns" : "";
+    ? 'correct-answer=' + response.correctAnswers
+    : '';
+  const columnsAttr = response.columns ? 'columns' : '';
 
   return html`
     <web-response${typeSuffix} ${cardinalityAttr} ${correctAnswersAttr} ${columnsAttr} data-role="response">
@@ -209,9 +209,9 @@ module.exports = (page, targetAssessment) => {
     `);
   }
 
-  const path = page.filePathStem.replace(/index$/, "");
-  const source = "src/site/content" + path + targetAssessment + ".assess.yml";
-  const data = fs.readFileSync(source, "utf8");
+  const path = page.filePathStem.replace(/index$/, '');
+  const source = 'src/site/content' + path + targetAssessment + '.assess.yml';
+  const data = fs.readFileSync(source, 'utf8');
   const assessment = yaml.safeLoad(data);
 
   // prettier-ignore

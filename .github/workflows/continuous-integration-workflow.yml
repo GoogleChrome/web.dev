@@ -27,6 +27,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - name: Install
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm run test
+
       - name: Build
         env:
           ELEVENTY_ENV: prod

@@ -1,11 +1,9 @@
 module.exports = {
-  plugins: [
-    "prettier",
-  ],
+  plugins: ['prettier'],
   extends: [
-    "eslint-config-prettier", // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier.
-    "google", // Uses google style guide for js.
-    "plugin:prettier/recommended", // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+    'eslint-config-prettier', // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier.
+    'google', // Uses google style guide for js.
+    'plugin:prettier/recommended', // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
   ],
   env: {
     es6: true,
@@ -13,23 +11,23 @@ module.exports = {
     mocha: true,
     browser: true,
   },
-  parser: "babel-eslint",
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: "module",
+    sourceType: 'module',
   },
   globals: {
-    "customElements": true,
+    customElements: true,
   },
   rules: {
-    "indent": [
-      "error",
+    indent: [
+      'error',
       2,
       {
         SwitchCase: 1,
       },
     ],
-    "new-cap": 0,
-    "require-jsdoc": 0,
+    'new-cap': 0,
+    'require-jsdoc': 0,
   },
 };

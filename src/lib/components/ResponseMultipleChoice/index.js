@@ -1,7 +1,7 @@
-import {html} from "lit-element";
-import {BaseResponseElement} from "../BaseResponseElement";
-import "./_styles.scss";
-import {generateIdSalt} from "../../utils/generate-salt";
+import {html} from 'lit-element';
+import {BaseResponseElement} from '../BaseResponseElement';
+import './_styles.scss';
+import {generateIdSalt} from '../../utils/generate-salt';
 
 /* eslint-disable require-jsdoc */
 class ResponseMultipleChoice extends BaseResponseElement {
@@ -28,12 +28,12 @@ class ResponseMultipleChoice extends BaseResponseElement {
     this.updateSelections = this.updateSelections.bind(this);
 
     // Used to ensure grouping of radio buttons. Just needs to be unique.
-    this._formName = generateIdSalt("web-response-mc-form-");
+    this._formName = generateIdSalt('web-response-mc-form-');
   }
 
   render() {
-    const correctArr = this.correctAnswer.split(",").map(Number);
-    this.selectType = this.cardinality === "1" ? "radio" : "checkbox";
+    const correctArr = this.correctAnswer.split(',').map(Number);
+    this.selectType = this.cardinality === '1' ? 'radio' : 'checkbox';
     const selectionRange = BaseResponseElement.getSelectionRange(
       this.cardinality,
     );
@@ -48,13 +48,13 @@ class ResponseMultipleChoice extends BaseResponseElement {
       this.rationales = [];
 
       for (const child of this.children) {
-        const role = child.getAttribute("data-role");
+        const role = child.getAttribute('data-role');
 
         switch (role) {
-          case "option":
+          case 'option':
             this.optionContents.push(child);
             break;
-          case "rationale":
+          case 'rationale':
             this.rationales.push(child);
             break;
           default:
@@ -114,21 +114,21 @@ class ResponseMultipleChoice extends BaseResponseElement {
   }
 
   optionTemplate(content, rationale, isCorrect) {
-    const flag = document.createElement("div");
+    const flag = document.createElement('div');
 
-    flag.className = "web-response__correctness-flag";
+    flag.className = 'web-response__correctness-flag';
     if (isCorrect) {
-      flag.textContent = "Correct";
+      flag.textContent = 'Correct';
     } else {
-      flag.textContent = "Incorrect";
+      flag.textContent = 'Incorrect';
     }
     content.prepend(flag);
-    rationale.className = "web-response__option-rationale";
+    rationale.className = 'web-response__option-rationale';
     content.append(rationale);
 
     // Remove data-role since it's being applied to the option label
     // in render().
-    content.removeAttribute("data-role");
+    content.removeAttribute('data-role');
 
     return content;
   }
@@ -146,7 +146,7 @@ class ResponseMultipleChoice extends BaseResponseElement {
     const {target} = /** @type {!HTMLInputElement} */ (e);
     const index = Number(target.value);
 
-    const ce = new CustomEvent("question-option-select", {
+    const ce = new CustomEvent('question-option-select', {
       detail: index,
       bubbles: true,
     });
@@ -154,26 +154,26 @@ class ResponseMultipleChoice extends BaseResponseElement {
   }
 
   updateSelections(e) {
-    const options = this.querySelectorAll("[data-role=option]");
-    const currentOption = e.target.closest("[data-role=option]");
+    const options = this.querySelectorAll('[data-role=option]');
+    const currentOption = e.target.closest('[data-role=option]');
 
     if (e.target.checked) {
-      if (this.cardinality === "1") {
+      if (this.cardinality === '1') {
         for (const option of options) {
-          option.removeAttribute("data-selected");
+          option.removeAttribute('data-selected');
         }
       }
-      currentOption.setAttribute("data-selected", "");
+      currentOption.setAttribute('data-selected', '');
     } else {
-      currentOption.removeAttribute("data-selected");
+      currentOption.removeAttribute('data-selected');
     }
   }
 
   // Helper function to allow BaseResponseElement to deselect options as needed.
   deselectOption(option) {
-    option.removeAttribute("data-selected");
-    option.querySelector("input").checked = false;
+    option.removeAttribute('data-selected');
+    option.querySelector('input').checked = false;
   }
 }
 
-customElements.define("web-response-mc", ResponseMultipleChoice);
+customElements.define('web-response-mc', ResponseMultipleChoice);

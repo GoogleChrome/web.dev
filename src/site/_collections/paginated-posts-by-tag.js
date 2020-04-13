@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-const postTags = require("../_data/postTags");
-const livePosts = require("../_filters/live-posts");
-const addPagination = require("../_utils/add-pagination");
-const setdefault = require("../_utils/setdefault");
+const postTags = require('../_data/postTags');
+const livePosts = require('../_filters/live-posts');
+const addPagination = require('../_utils/add-pagination');
+const setdefault = require('../_utils/setdefault');
 
 /**
  * Returns all posts as an array of paginated tags.

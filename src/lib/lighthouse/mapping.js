@@ -19,7 +19,7 @@ export function getAuditGuideMapping() {
     return cache;
   }
 
-  const codeElement = document.getElementById("guide-audit-mapping");
+  const codeElement = document.getElementById('guide-audit-mapping');
 
   if (codeElement === null) {
     return null;
@@ -29,7 +29,7 @@ export function getAuditGuideMapping() {
   try {
     guideToAudit = JSON.parse(codeElement.textContent);
   } catch (err) {
-    console.warn("LH id -> guide JSON was malformed. Check", codeElement);
+    console.warn('LH id -> guide JSON was malformed. Check', codeElement);
     throw err;
   }
 

@@ -1,4 +1,4 @@
-const md = require("markdown-it")();
+const md = require('markdown-it')();
 
 /**
  * Render content as inline markdown.

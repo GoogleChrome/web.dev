@@ -1,4 +1,4 @@
-const capitalize = require("./capitalize");
+const capitalize = require('./capitalize');
 
 /**
  * Title case a string of dash separated words
@@ -7,9 +7,9 @@ const capitalize = require("./capitalize");
  */
 module.exports = (str) => {
   return str
-    .split("-")
+    .split('-')
     .map((part) => {
       return capitalize(part);
     })
-    .join(" ");
+    .join(' ');
 };

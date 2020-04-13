@@ -16,18 +16,18 @@
 
 const isProd = Boolean(process.env.GAE_APPLICATION);
 
-const compression = require("compression");
-const express = require("express");
-const cookieParser = require("cookie-parser");
-const localeHandler = require("./locale-handler.js");
-const buildRedirectHandler = require("./redirect-handler.js");
+const compression = require('compression');
+const express = require('express');
+const cookieParser = require('cookie-parser');
+const localeHandler = require('./locale-handler.js');
+const buildRedirectHandler = require('./redirect-handler.js');
 
 const redirectHandler = (() => {
   // In development, Eleventy isn't guaranteed to have run, so read the actual
   // source file.
   const redirectsPath = isProd
-    ? "dist/en/_redirects.yaml"
-    : "src/site/content/en/_redirects.yaml";
+    ? 'dist/en/_redirects.yaml'
+    : 'src/site/content/en/_redirects.yaml';
 
   // Don't block loading the server if the redirect handler couldn't build.
   try {
@@ -41,8 +41,8 @@ const redirectHandler = (() => {
 // 404 handlers aren't special, they just run last.
 const notFoundHandler = (req, res, next) => {
   // This 404 handler is vaguely approximated on Netlify in our staging environment.
-  const options = {root: "dist/en"};
-  const suffix = req.url.endsWith(".json") ? "json" : "html";
+  const options = {root: 'dist/en'};
+  const suffix = req.url.endsWith('.json') ? 'json' : 'html';
   res
     .status(404)
     .sendFile(`404/index.${suffix}`, options, (err) => err && next(err));
@@ -50,13 +50,13 @@ const notFoundHandler = (req, res, next) => {
 
 // Disallow invalid hostnames, and remove any active Service Worker too (users
 // may have loaded this and otherwise they'll be stuck forever).
-const invalidHostnames = ["www.web.dev", "appengine-test.web.dev"];
+const invalidHostnames = ['www.web.dev', 'appengine-test.web.dev'];
 const invalidHostnameHandler = (req, res, next) => {
   if (invalidHostnames.includes(req.hostname)) {
-    if (!req.headers["service-worker"]) {
-      return res.redirect(301, "https://web.dev" + req.url);
+    if (!req.headers['service-worker']) {
+      return res.redirect(301, 'https://web.dev' + req.url);
     }
-    req.url = "/nuke-sw.js";
+    req.url = '/nuke-sw.js';
   }
   return next();
 };
@@ -64,8 +64,8 @@ const invalidHostnameHandler = (req, res, next) => {
 const handlers = [
   invalidHostnameHandler,
   localeHandler,
-  express.static("dist"),
-  express.static("dist/en"),
+  express.static('dist'),
+  express.static('dist/en'),
   redirectHandler,
   notFoundHandler,
 ];

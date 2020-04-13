@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-const path = require("path");
-const site = require("../../_data/site");
-const stripLanguage = require("../../_filters/strip-language");
-const strip = require("../../_filters/strip");
-const {html} = require("common-tags");
+const path = require('path');
+const site = require('../../_data/site');
+const stripLanguage = require('../../_filters/strip-language');
+const strip = require('../../_filters/strip');
+const {html} = require('common-tags');
 
 module.exports = (locale, page, collections, renderData = {}) => {
   const pageData = {
@@ -56,16 +56,16 @@ module.exports = (locale, page, collections, renderData = {}) => {
     } else {
       thumbnail = new URL(path.join(pageUrl, thumbnail), site.imageCdn);
     }
-    thumbnail.searchParams.set("auto", "format");
-    thumbnail.searchParams.set("fit", "max");
-    thumbnail.searchParams.set("w", 1200);
+    thumbnail.searchParams.set('auto', 'format');
+    thumbnail.searchParams.set('fit', 'max');
+    thumbnail.searchParams.set('w', 1200);
     thumbnail = thumbnail.toString();
 
     return {title, description, thumbnail, alt};
   }
 
   function renderGoogleMeta() {
-    const meta = getMetaByPlatform("google");
+    const meta = getMetaByPlatform('google');
     return html`
       <meta itemprop="name" content="${meta.title}" />
       <meta itemprop="description" content="${meta.description}" />
@@ -74,15 +74,15 @@ module.exports = (locale, page, collections, renderData = {}) => {
   }
 
   function renderFacebookMeta() {
-    const meta = getMetaByPlatform("facebook");
+    const meta = getMetaByPlatform('facebook');
     // nb. This will mark pages like /404/ and /offline/ as "article" but that's
     // probably fine as those shouldn't show up in search results anyway.
-    const type = pageUrl === "/" ? "website" : "article";
+    const type = pageUrl === '/' ? 'website' : 'article';
     // Filter out tags that we don't want to show up in Search.
     // These tags are only used internally to determine which layout a page
     // should use.
-    let tags = (type === "article" ? pageData.tags : null) || [];
-    tags = tags.filter((tag) => tag !== "pathItem" && tag !== "post");
+    let tags = (type === 'article' ? pageData.tags : null) || [];
+    tags = tags.filter((tag) => tag !== 'pathItem' && tag !== 'post');
 
     // prettier-ignore
     return html`
@@ -99,7 +99,7 @@ module.exports = (locale, page, collections, renderData = {}) => {
   }
 
   function renderTwitterMeta() {
-    const meta = getMetaByPlatform("twitter");
+    const meta = getMetaByPlatform('twitter');
     return html`
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="${meta.title}" />
