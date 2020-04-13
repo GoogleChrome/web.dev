@@ -2,7 +2,7 @@
 title: New capabilities status
 subhead: Web apps should be able to do anything native apps can. Google wants to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2020-03-13
+updated: 2020-04-13
 tags:
   - post
   - capabilities
@@ -40,13 +40,19 @@ change.
     <tbody>
       <tr>
         <td>
-          <a href="/shape-detection/">Shape&nbsp;Detection API</a>
+          <a href="/shape-detection/">Shape&nbsp;Detection</a>
         </td>
         <td>
-          The Shape Detection API opens up native implementations of shape
+          Shape detection opens up native implementations of shape
           detection services and exposes them through a set of JavaScript
-          interfaces.<br>
-          <em>Updated January 10, 2020</em>
+          interfaces. Shape detection three separate APIs, one of which
+          has already shipped.<br>
+          <ul>
+            <li>Barcade Detection API (Enabled by default)</li>
+            <li><a href="https://www.chromestatus.com/feature/5678216012365824">Face Detection API</a></li>
+            <li><a href="https://www.chromestatus.com/feature/5644087665360896">Text Detection API</a></li>
+          </ul>
+          <em>Updated April 14, 2020</em>
         </td>
       </tr>
     </tbody>
@@ -256,6 +262,23 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           synchronize data in the background, bringing web apps closer to
           the behavior of a native app.<br>
           <em>Updated December 18, 2019</em>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/shape-detection/">Shape&nbsp;Detection</a>
+        </td>
+        <td>
+          Shape detection opens up native implementations of shape
+          detection services and exposes them through a set of JavaScript
+          interfaces. Shape detection three separate APIs, one of which
+          has already shipped.<br>
+          <ul>
+            <li>Barcade Detection API (Enabled by default)</li>
+            <li><a href="https://www.chromestatus.com/feature/5678216012365824">Face Detection API</a></li>
+            <li><a href="https://www.chromestatus.com/feature/5644087665360896">Text Detection API</a></li>
+          </ul>
+          <em>Updated April 14, 2020</em>
         </td>
       </tr>
       <tr>
