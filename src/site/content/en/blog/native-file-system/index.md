@@ -356,24 +356,24 @@ butDir.addEventListener('click', async (e) => {
 
 Chrome 83
 
-* Support for [writable streams](#save-to-disk) was added, and the previous
-  method for writing to disk (`FileSystemWriter`) was removed.
-* File handles can now be serialized and stored in IndexedDB, or sent via
+* Adds support for [writable streams](#save-to-disk), and removes the previous
+  method for writing to disk (`FileSystemWriter`).
+* Allows serlializing and storing file handles in IndexedDB, or sending via
   `postMessage()` to other windows or workers within the same origin. Note that
   permissions are not retained between browser sessions. For example, when a
   browser tab is re-opened, and a file handle is obtained from IndexedDB, the
   user will need to grant permission to read and write to the file again.
-* Added support for [`isSameEntry()`][spec-issameentry], which returns `true`
+* Adds support for [`isSameEntry()`][spec-issameentry], which returns `true`
   if two entries represent the same file or directory.
-* Updated usage indicators to indicate whether the user has granted the domain
+* Updates usage indicators to indicate whether the user has granted the domain
   permission to files, including a new read-only indicator.
-* Added support for [`resolve()`][spec-resolve], which will return the
+* Adds support for [`resolve()`][spec-resolve], which will return the
   relative path from one entry to another. This is especially helpful for multi-file
   editors where you might want to highlight the parent directory of the file
   being edited.
-* When permission to read or write to a file is granted, the permission is
-  shared among all same-origin tabs, aligning with other web platform APIs.
-* The `type` passed to `chooseFileSystemEntries` is now dash-separated as
+* Allows sharing among all same-origin tabs when permission to read or write a
+  file is granted, aligning with other web platform APIs.
+* Changes the `type` passed to `chooseFileSystemEntries` to be dash-separated as
   opposed to camelCase.
 
 {% Aside 'note' %}
