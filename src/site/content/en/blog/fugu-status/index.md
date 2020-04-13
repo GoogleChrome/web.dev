@@ -40,13 +40,13 @@ change.
     <tbody>
       <tr>
         <td>
-          <a name="shape-face-text"><a href="/shape-detection/">Shape&nbsp;Detection (Face and Text)</a></a>
+          <a href="/shape-detection/">Shape&nbsp;Detection (Face and Text)</a>
         </td>
         <td>
-          Shape detection opens up native implementations of shape
-          detection services and exposes them through a set of JavaScript
-          interfaces. In additon to the APIs below, the Barcode Detection
-          API is available in stable. For more information,
+          <a name="shape-face-text"></a>Shape detection opens up native
+          implementations of shape detection services and exposes them through
+          a set of JavaScript interfaces. In additon to the APIs below, the
+          Barcode Detection API is available in stable. For more information,
           <a href="#shape-barcode">Shape Detection (Barcode)</a>.
           <ul>
             <li><a href="https://www.chromestatus.com/feature/5678216012365824">Face Detection API</a></li>
@@ -266,13 +266,13 @@ latest version of Chrome, and in many cases other Chromium based browsers.
       </tr>
       <tr>
         <td>
-          <a name="shape-barcode"><a href="/shape-detection/">Shape&nbsp;Detection (Barcode)</a></a>
+          <a href="/shape-detection/">Shape&nbsp;Detection (Barcode)</a>
         </td>
         <td>
-          Shape detection opens up native implementations of shape
-          detection services and exposes them through a set of JavaScript
-          interfaces. Shape detection has three separate APIs, of which
-          the Barcode API is only one. See
+          <a name="shape-barcode"></a>Shape detection opens up native
+          implementations of shape detection services and exposes them through
+          a set of JavaScript interfaces. Shape detection has three separate
+          APIs, of which the Barcode API is only one. See
           <a href="#shape-face-text">Shape Detection (Face and Text)</a>
           for information on other shape detection APIs that are under
           development.<br>
