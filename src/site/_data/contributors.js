@@ -912,6 +912,18 @@ const contributors = {
     twitter: 'kkotowicz',
     github: 'koto',
   },
+  ulan: {
+    name: {
+      given: 'Ulan',
+      family: 'Degenbaev',
+    },
+    twitter: 'ulandev',
+    github: 'ulan',
+    org: {
+      name: 'Google',
+      unit: 'Chrome',
+    },
+  },
 };
 
 const processedContributors = {};
