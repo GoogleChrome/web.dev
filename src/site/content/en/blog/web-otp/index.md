@@ -169,7 +169,7 @@ another device by copying the text displayed in the demo. This works because it
 doesn't matter who the sender is when using the Web OTP API.
 
 1. Go to
-   [https://web-otp-demo.glitch.me](https://web-otp-demo.glitch.me) in Chrome 81 or later.
+   [https://web-otp-demo.glitch.me](https://web-otp-demo.glitch.me) in Chrome 83 or later.
 1. Press **Copy** to copy the text message.
 1. Using your SMS app send it to another phone.
 1. Press **Verify**.
@@ -286,9 +286,10 @@ if ('customElements' in window && 'OTPCredential' in window) {
   });
 }
 ```
+
 After this declaration you can add `is="one-time-code` to any `input` element.
-As soon as the element is added to the document tree, it waits for an SMS
-message to arrive and submits the form as soon as the OTP is passed.
+As soon as the element is added to the document tree, it will start waiting
+for SMS to arrive and emit an `autocomplete` event as soon as an OTP is passed.
 
 ```html
 <form>
@@ -297,6 +298,12 @@ message to arrive and submits the form as soon as the OTP is passed.
 </form>
 ```
 
+```js
+const otp = document.querySelector('#otp');
+otp.addEventListener('autocomplete', e => {
+  this.form.submit();
+});
+```
 
 ### Format the SMS message {: #format }
 
@@ -320,7 +327,7 @@ For example:
 ```text
 Your OTP is: 123456.
 
-@https://www.example.com #123456
+@www.example.com #123456
 ```
 
 ### Demos
@@ -345,19 +352,19 @@ Did you find a bug with Chrome's implementation?
 Are you planning to use the Web OTP API? Your public support helps us prioritize
 features, and shows other browser vendors how critical it is to support them.
 Send a Tweet to [@ChromiumDev](https://twitter.com/chromiumdev) with
-`#smsreceiver` and let us know where and how you're using it.
+`#webotp` and let us know where and how you're using it.
 
 ## Differences from SMS Receiver API {: #differences }
 Consider Web OTP API an evolved version of the SMS Receiver API. Web OTP API has
 a few significant differences compared to the SMS Receiver API.
 
 * The [expected text format](#format) for the SMS message has changed.
+* It no longer requires an app hash string to be included in the SMS message.
 * The method called is now `navigator.credentials.get()` rather than
   `navigator.sms.receive()`.
 * The `get()` receives only the OTP rather than the entire SMS message as
   `receive()` did before.
 * It's now possible to [abort the call to `get()`](#aborting).
-* It no longer requires an app hash string to be included in the SMS message.
 
 ## FAQ
 ### Is this API compatible between different browsers?
@@ -379,5 +386,5 @@ API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API)
 for strong authentication.
 
 {% Aside %}
-Find more questions at [the FAQ section in the explainer](https://github.com/samuelgoto/sms-receiver/blob/master/FAQ.md).
+Find more questions at [the FAQ section in the explainer](https://github.com/WICG/WebOTP/blob/master/FAQ.md).
 {% endAside %}
