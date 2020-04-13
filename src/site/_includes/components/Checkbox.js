@@ -33,23 +33,17 @@ class Checkbox {
 
   render() {
     return html`
-      <div class="w-checkbox">
-        <label for="${this.id}" class="w-checkbox__label">
-          <div>
-            <input
-              id="${this.id}"
-              name="${this.name}"
-              ${this.required && 'required'}
-              ${this.value && `value="${this.value}"`}
-              class="w-checkbox__input"
-              type="checkbox"
-            />
-          </div>
-          <div>
-            <span>${this.label}</span>
-          </div>
-        </label>
-      </div>
+      <label for="${this.id}" class="w-checkbox__label">
+        <input
+          id="${this.id}"
+          name="${this.name}"
+          ${this.required && 'required'}
+          ${this.value && `value="${this.value}"`}
+          class="w-checkbox__input"
+          type="checkbox"
+        />
+        <span>${this.label}</span>
+      </label>
     `;
   }
 }

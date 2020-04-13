@@ -1,9 +1,7 @@
 @import '../settings/colors';
 
 .w-checkbox__label {
-  cursor: pointer;
   display: inline-flex;
-  position: relative;
 }
 
 .w-checkbox__input {
@@ -15,9 +13,8 @@
   border-radius: 4px;
   cursor: pointer;
   height: 28px;
-  margin: 0px 30px 0px 0px;
+  margin: 0px;
   outline: none;
-  transition-duration: .2s;
   width: 28px;
 }
 
