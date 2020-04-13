@@ -272,7 +272,7 @@ latest version of Chrome, and in many cases other Chromium based browsers.
         <td>
           Shape detection opens up native implementations of shape
           detection services and exposes them through a set of JavaScript
-          interfaces. Shape detection three separate APIs, one of which
+          interfaces. Shape detection has three separate APIs, one of which
           has already shipped.<br>
           <ul>
             <li>Barcade Detection API (Enabled by default)</li>
