@@ -27,7 +27,7 @@ the [Fugu API Tracker](https://goo.gle/fugu-api-tracker).
 These APIs are only available behind a flag. They're experimental and still
 under development. They are not ready for use in production. There's a good
 chance there are bugs, that these APIs will break, or the API surface will
-change.
+change.<a name="shape-face-text"></a>
 
 <div class="w-table-wrapper">
   <table>
@@ -43,7 +43,7 @@ change.
           <a href="/shape-detection/">Shape&nbsp;Detection (Face and Text)</a>
         </td>
         <td>
-          <a name="shape-face-text"></a>Shape detection opens up native
+          Shape detection opens up native
           implementations of shape detection services and exposes them through
           a set of JavaScript interfaces. In additon to the APIs below, the
           Barcode Detection API is available in stable. For more information,
@@ -261,7 +261,7 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           Periodic Background Sync enables web applications to periodically
           synchronize data in the background, bringing web apps closer to
           the behavior of a native app.<br>
-          <em>Updated December 18, 2019</em>
+          <em>Updated December 18, 2019</em><a name="shape-barcode">
         </td>
       </tr>
       <tr>
@@ -269,7 +269,7 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           <a href="/shape-detection/">Shape&nbsp;Detection (Barcode)</a>
         </td>
         <td>
-          <a name="shape-barcode"></a>Shape detection opens up native
+          </a>Shape detection opens up native
           implementations of shape detection services and exposes them through
           a set of JavaScript interfaces. Shape detection has three separate
           APIs, of which the Barcode API is only one. See
