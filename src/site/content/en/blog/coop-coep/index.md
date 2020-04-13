@@ -57,19 +57,19 @@ You can determine whether a web page is in a cross-origin isolated state by
 examining `self.crossOriginIsolated`. (This works on Firefox but has yet to be 
 implemented in Chrome).
 
-This article shows how to use these new headers. In a follow-up article provide 
-more background and context.
+This article shows how to use these new headers. In a follow-up article I will
+provide more background and context.
 
 {% Aside %}
 This article is aimed at those who would like to get their websites ready for 
-using `SharedArrayBuffer`, WebAssembly Threads, `performance.measureMemory`
+using `SharedArrayBuffer`, WebAssembly Threads, `performance.measureMemory()`
 or the JS Self-Profiling API in a more robust manner across browser 
 platforms.
 {% endAside %}
 
 {% Aside 'key-term' %}
-This article will use many similar-sounding terminologies. To make things 
-clearer, let's enumerate them first:
+This article uses many similar-sounding terminologies. To make things 
+clearer, let's define them first:
 
 * [COEP: Cross Origin Embedder 
   Policy](https://wicg.github.io/cross-origin-embedder-policy/)
@@ -87,7 +87,7 @@ clearer, let's enumerate them first:
 ### Integrate COOP and COEP
 #### 1. Set the `Cross-Origin-Opener-Policy: same-origin` header on the top-level document
 
-By enabling COOP (Cross Origin Opener Policy) on a top-level document, windows 
+By enabling COOP on a top-level document, windows 
 with the same origin, and windows opened from the document, will have a separate 
 browsing context group unless they are in the same origin with the same COOP 
 setting. Thus, isolation is enforced for opened windows.
@@ -112,8 +112,8 @@ params](https://first-party-test.glitch.me/coop).
 
 #### 2. Ensure resources have CORP or CORS enabled
 
-Make sure that all resources in the page are loaded with CORP (Cross Origin 
-Resource Policy) or CORS (Cross Origin Resource Sharing) HTTP headers. This step 
+Make sure that all resources in the page are loaded with CORP or CORS
+HTTP headers. This step 
 is required for step four, enable COEP.
 
 Here is what you need to do depending on the nature of the resource:
@@ -143,7 +143,7 @@ same-origin](/same-site-same-origin)".
 Before fully enabling COEP, you can do a dry run by using the
 `Cross-Origin-Embedder-Policy-Report-Only` header to examine whether the policy
 actually works. You will receive reports without blocking embedded content.
-Recursively apply this to all documents. for information on Report-Only HTTP
+Recursively apply this to all documents. For information on the Report-Only HTTP
 header, see [Observe issues using the Reporting
 API](#observe-issues-using-the-reporting-api).
 
@@ -160,24 +160,24 @@ parameters](https://first-party-test.glitch.me/coep).
 
 ### Determine whether isolation succeeded with `self.crossOriginIsolated`
 
-`self.crossOriginIsolated` returns `true` when the web page is in a 
+The `self.crossOriginIsolated` property returns `true` when the web page is in a 
 cross-origin isolated state and all resources and windows are isolated within 
 the same browsing context group. You can use this API to determine whether you 
 have successfully isolated the browsing context group and gained access to 
-powerful features like `performance.measureMemory`.
+powerful features like `performance.measureMemory()`.
 
 {% Aside 'caution' %}
-[`self.crossOriginIsolated`](https://www.chromestatus.com/feature/5953286387531776)
-is still under development and not available yet in Chrome as of version 83.
+The [`self.crossOriginIsolated`](https://www.chromestatus.com/feature/5953286387531776)
+property is still under development and not available yet in Chrome as of version 83.
 {% endAside %}
 
 ### Debug issues using Chrome DevTools
 
 For resources that are rendered on the screen such as images, it's fairly easy 
-to detect COEP issues because the request will be blocked and the user 
-experience will be visually broken. However, for resources that don't 
+to detect COEP issues because the request will be blocked and the page will
+indicate a missing image. However, for resources that don't 
 necessarily have a visual impact, such as scripts or styles, COEP issues might 
-go unnoticed. For those, we recommend using the DevTools Network panel. If 
+go unnoticed. For those, use the DevTools Network panel. If 
 there's an issue with COEP, you should see 
 `(blocked:NotSameOriginAfterDefaultedToSameOriginByCoep)` in the "Status" 
 column.  
@@ -187,7 +187,7 @@ You can then click the entry to see more details.
 ![Debugging COEP in DevTools 2](devtools2.png)
 
 {% Aside %}
-Note: While COEP debugging is already available, COOP debugging in Chrome 
+While COEP debugging is already available, COOP debugging in Chrome 
 DevTools is still [being worked 
 on](https://bugs.chromium.org/p/chromium/issues/detail?id=1051466).
 {% endAside %}
@@ -198,19 +198,19 @@ The [Reporting
 API](https://developers.google.com/web/updates/2018/09/reportingapi) is another 
 mechanism through which you can detect various issues. You can configure the 
 Reporting API to instruct your users' browser to send a report whenever COEP 
-blocks the loading of a resource. Chrome supports the `Report-To` header since 
+blocks the loading of a resource. Chrome has supported the `Report-To` header since 
 version 69 for a variety of uses including COEP.
 
 {% Aside %}
 The Reporting API is undergoing transition to [a new 
 ](https://w3c.github.io/reporting/)version. Chrome is planning to release it 
-soon, but will leave the older API in place simultaneously for some time. 
+soon, but will leave the older API in place for some time. 
 Firefox is also [considering the new 
 API](https://bugzilla.mozilla.org/show_bug.cgi?id=1620573). You may want to use 
 both APIs during the transition.
 {% endAside %}
 
-To specify where the browser should send the reports, append the `Report-To`
+To specify where the browser should send reports, append the `Report-To`
 HTTP header to any document that is served with a COEP HTTP header. The
 `Report-To` header also supports a few extra parameters to configure the
 reports. For example:
@@ -231,6 +231,10 @@ by providing the group name to `report-to=`. For example:
 ```http
 Cross-Origin-Embedder-Policy: require-corp; report-to="coep_rollout_1"
 ```
+When the browser encounters this, it will cross-reference the `report-to` value
+with the `group` property on the `Report-To` header to look up the endpoint.
+This example cross references on `coep_rollout_1' to find the endpoint
+`https://first-party-test.glitch.me/report`.
 
 When the browser encounters this, it will cross-reference the `report-to` value
 with the `group` property on the `Report-To` header to look up the endpoint.
