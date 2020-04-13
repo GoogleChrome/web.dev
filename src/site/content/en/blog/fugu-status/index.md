@@ -40,16 +40,15 @@ change.
     <tbody>
       <tr>
         <td>
-          <a href="/shape-detection/">Shape&nbsp;Detection (Barcode)</a>
+          <a name="shape-face-text"><a href="/shape-detection/">Shape&nbsp;Detection (Face and Text)</a></a>
         </td>
         <td>
           Shape detection opens up native implementations of shape
           detection services and exposes them through a set of JavaScript
-          interfaces. Shape detection has three separate APIs, only barcode
-          detection is available in stable. See below for other shape detection
-          APIs that are under development.
+          interfaces. In additon to the APIs below, the Barcode Detection
+          API is available in stable. For more information, [Share Detection
+          (Barcode)](#shape-barcode).
           <ul>
-            <li>Barcade Detection API (Enabled by default)</li>
             <li><a href="https://www.chromestatus.com/feature/5678216012365824">Face Detection API</a></li>
             <li><a href="https://www.chromestatus.com/feature/5644087665360896">Text Detection API</a></li>
           </ul>
@@ -267,18 +266,15 @@ latest version of Chrome, and in many cases other Chromium based browsers.
       </tr>
       <tr>
         <td>
-          <a href="/shape-detection/">Shape&nbsp;Detection (Face and Text)</a>
+          <a name="shape-barcode"><a href="/shape-detection/">Shape&nbsp;Detection (Barcode)</a></a>
         </td>
         <td>
           Shape detection opens up native implementations of shape
           detection services and exposes them through a set of JavaScript
-          interfaces. Shape detection has three separate APIs, one of which
-          has already shipped.<br>
-          <ul>
-            <li>Barcade Detection API (Enabled by default)</li>
-            <li><a href="https://www.chromestatus.com/feature/5678216012365824">Face Detection API</a></li>
-            <li><a href="https://www.chromestatus.com/feature/5644087665360896">Text Detection API</a></li>
-          </ul>
+          interfaces. Shape detection has three separate APIs, of which
+          the Barcode API is only one. See [Shape Detection (Face and
+          Text)](#shape-face-text) for information on other shape detection
+          APIs that are under development.<br>
           <em>Updated April 14, 2020</em>
         </td>
       </tr>
