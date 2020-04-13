@@ -1,13 +1,15 @@
 ---
 title: Making your website "cross-origin isolated" using COOP and COEP
 subhead: >
-  Some web APIs increase the risk of side-channel attacks like Spectre. To 
-  mitigate that risk, browsers offer an opt-in-based isolated environment called 
-  cross-origin isolated. Use COOP+COEP to set up such environment.
+  Use COOP+COEP to set up cross-origin isolated environment and enable powerful
+  features like `SharedArrayBuffer`, `performance.measureMemory` or JS
+  Self-Profiling API.
 description: >
-  Some web APIs increase the risk of side-channel attacks like Spectre. To 
-  mitigate that risk, browsers offer an opt-in-based isolated environment called 
-  cross-origin isolated. Use COOP+COEP to set up such environment.
+  Some web APIs increase the risk of side-channel attacks like Spectre. To
+  mitigate that risk, browsers offer an opt-in-based isolated environment called
+  cross-origin isolated. Use COOP+COEP to set up such an environment and enable
+  powerful features like `SharedArrayBuffer`, `performance.measureMemory` or JS
+  Self-Profiling API.
 authors:
   - agektmr
 date: 2020-04-13
@@ -65,7 +67,7 @@ or the JS Self-Profiling API in a more robust manner across browser
 platforms.
 {% endAside %}
 
-{% Aside 'gotchas' %}
+{% Aside 'key-term' %}
 This article will use many similar-sounding terminologies. To make things 
 clearer, let's enumerate them first:
 
@@ -83,7 +85,7 @@ clearer, let's enumerate them first:
 
 ## Deploy COOP and COEP to make your website cross-origin isolated
 ### Integrate COOP and COEP
-#### 1. Set the "Cross-Origin-Opener-Policy: same-origin" header on the top-level document
+#### 1. Set the `Cross-Origin-Opener-Policy: same-origin` header on the top-level document
 
 By enabling COOP (Cross Origin Opener Policy) on a top-level document, windows 
 with the same origin, and windows opened from the document, will have a separate 
@@ -94,9 +96,9 @@ A browsing context group is a group of tabs, windows or iframes which share the
 same context. For example, if a website (`https://a.example`) opens a popup
 window (`https://b.example`), the opener window and the popup window share the
 same browsing context and they have access to each other via DOM APIs such as
-window.opener.
+`window.opener`.
 
-![](browsing-context-group.png)
+![Browsing Context Group](browsing-context-group.png)
 
 As of Chrome 83, DevTools support is not yet available for COOP. However, you
 can examine `window.opener === null` from the opened window, or
@@ -123,7 +125,7 @@ Here is what you need to do depending on the nature of the resource:
 * If the resource is **loaded from cross origin(s) under your control**, set the 
   `Cross-Origin-Resource-Policy: cross-origin` header if possible. 
 * For cross origin resources that you have no control over:
-    * Use the crossorigin attribute in the loading HTML tag if the resource is 
+    * Use the `crossorigin` attribute in the loading HTML tag if the resource is
       served with CORS.
     * Ask the owner of the resource to support either CORS or CORP.
 * For iframes, use CORP and COEP headers as follows: 
@@ -143,7 +145,7 @@ Before fully enabling COEP, you can do a dry run by using the
 actually works. You will receive reports without blocking embedded content.
 Recursively apply this to all documents. for information on Report-Only HTTP
 header, see [Observe issues using the Reporting
-API](https://docs.google.com/document/d/1SFIqS5NM59CiJ3aPMv5EO8HMktj6NMAj4yM9lVh8kWM/edit?ts=5e86cf45#heading=h.hsfwx6kh2990).
+API](#observe-issues-using-the-reporting-api).
 
 #### 4. Enable COEP
 
@@ -162,7 +164,7 @@ parameters](https://first-party-test.glitch.me/coep).
 cross-origin isolated state and all resources and windows are isolated within 
 the same browsing context group. You can use this API to determine whether you 
 have successfully isolated the browsing context group and gained access to 
-powerful features like performance.measureMemory.
+powerful features like `performance.measureMemory`.
 
 {% Aside 'caution' %}
 [`self.crossOriginIsolated`](https://www.chromestatus.com/feature/5953286387531776)
@@ -179,10 +181,10 @@ go unnoticed. For those, we recommend using the DevTools Network panel. If
 there's an issue with COEP, you should see 
 `(blocked:NotSameOriginAfterDefaultedToSameOriginByCoep)` in the "Status" 
 column.  
-![](devtools1.png)
+![Debugging COEP in DevTools 1](devtools1.png)
 
 You can then click the entry to see more details.   
-![](devtools2.png)
+![Debugging COEP in DevTools 2](devtools2.png)
 
 {% Aside %}
 Note: While COEP debugging is already available, COOP debugging in Chrome 
@@ -221,9 +223,9 @@ The parameters object has three properties:
 
 #### `group`
 
-This allows you to name your various reporting endpoints. Use these names to 
-direct a subset of your reports. For instance, in the  
-`Cross-Origin-Embedder-Policy` directive you can specify the relevant endpoint 
+This allows you to name your various reporting endpoints. Use these names to
+direct a subset of your reports. For instance, in the
+`Cross-Origin-Embedder-Policy` directive you can specify the relevant endpoint
 by providing the group name to `report-to=`. For example:
 
 ```http
