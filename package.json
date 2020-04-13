@@ -69,7 +69,7 @@
     "autoprefixer": "^9.6.1",
     "chalk": "^2.4.2",
     "cheerio": "^1.0.0-rc.3",
-    "chokidar-cli": "^1.2.2",
+    "chokidar-cli": "^2.1.0",
     "common-tags": "^1.8.0",
     "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
