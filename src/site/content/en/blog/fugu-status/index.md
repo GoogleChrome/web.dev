@@ -267,7 +267,7 @@ latest version of Chrome, and in many cases other Chromium based browsers.
       </tr>
       <tr>
         <td>
-          <a href="/shape-detection/">Shape&nbsp;Detection</a>
+          <a href="/shape-detection/">Shape&nbsp;Detection (Face and Text)</a>
         </td>
         <td>
           Shape detection opens up native implementations of shape
