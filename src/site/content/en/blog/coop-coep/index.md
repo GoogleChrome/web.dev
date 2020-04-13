@@ -1,19 +1,19 @@
 ---
 title: Making your website "cross-origin isolated" using COOP and COEP
 subhead: >
-  Use COOP+COEP to set up cross-origin isolated environment and enable powerful
-  features like `SharedArrayBuffer`, `performance.measureMemory` or JS
-  Self-Profiling API.
+  Use COOP and COEP to set up a cross-origin isolated environment and enable
+  powerful features like `SharedArrayBuffer`, `performance.measureMemory()` or
+  the JS Self-Profiling API.
 description: >
   Some web APIs increase the risk of side-channel attacks like Spectre. To
   mitigate that risk, browsers offer an opt-in-based isolated environment called
-  cross-origin isolated. Use COOP+COEP to set up such an environment and enable
-  powerful features like `SharedArrayBuffer`, `performance.measureMemory` or JS
-  Self-Profiling API.
+  cross-origin isolated. Use COOP and COEP to set up such an environment and
+  enable powerful features like `SharedArrayBuffer`,
+  `performance.measureMemory()` or the JS Self-Profiling API.
 authors:
   - agektmr
 date: 2020-04-13
-updated: 2020-04-13
+updated: 2020-04-14
 hero: browsing-context-group.png
 tags:
   - post
@@ -26,7 +26,7 @@ able to use privileged features including:
 
 * [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
   (required for WebAssembly Threads)
-* [`performance.measureMemory`](https://github.com/WICG/performance-measure-memory)
+* [`performance.measureMemory()`](https://github.com/WICG/performance-measure-memory)
 * [JS Self-Profiling API](https://wicg.github.io/js-self-profiling/)
 
 The cross-origin isolated state also prevents modifications of 
@@ -223,7 +223,7 @@ The parameters object has three properties:
 
 #### `group`
 
-This allows you to name your various reporting endpoints. Use these names to
+The `group` property names your various reporting endpoints. Use these names to
 direct a subset of your reports. For instance, in the
 `Cross-Origin-Embedder-Policy` directive you can specify the relevant endpoint
 by providing the group name to `report-to=`. For example:
@@ -231,6 +231,11 @@ by providing the group name to `report-to=`. For example:
 ```http
 Cross-Origin-Embedder-Policy: require-corp; report-to="coep_rollout_1"
 ```
+
+When the browser encounters this, it will cross-reference the `report-to` value
+with the `group` property on the `Report-To` header to look up the endpoint.
+This example cross references on `coep_rollout_1` to find the endpoint
+`http://first-party-test.glitch.me/report`.
 
 If you prefer to receive reports without blocking any embedded content, use 
 `Cross-Origin-Embedder-Policy-Report-Only` instead of 
@@ -246,18 +251,18 @@ blocking those resources.
 
 #### `max_age`
 
-Specify the time after which unsent reports are to be dropped (seconds). The 
-browser doesn't send the reports right away. Instead, it transmits them 
-out-of-band whenever there aren't any other higher priority tasks. `max_age`
-prevents the browser from sending reports that are too stale to be useful. For 
-example, `max_age: 86400` means that reports older than 24 hours will not be 
-sent.
+The `max_age` property specifies the time in seconds after which unsent reports
+are to be dropped (seconds). The browser doesn't send the reports right away.
+Instead, it transmits them out-of-band whenever there aren't any other higher
+priority tasks. The `max_age` prevents the browser from sending reports that are
+too stale to be useful. For example, `max_age: 86400` means that reports older
+than 24 hours will not be sent.
 
 #### `endpoints`
 
-Specify the URLs of one or more reporting endpoints. The endpoint must accept 
-CORS if it's hosted on a different origin. The browser will send reports with a 
-Content-Type of `application/reports+json`.
+The `endpoints` property specifies the URLs of one or more reporting endpoints.
+The endpoint must accept CORS if it's hosted on a different origin. The browser
+will send reports with a Content-Type of `application/reports+json`.
 
 An example payload looks like this:
 
