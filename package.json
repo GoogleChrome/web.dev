@@ -58,7 +58,7 @@
     "workbox-google-analytics": "^5.0.0",
     "workbox-precaching": "^5.0.0",
     "workbox-routing": "^5.0.0",
-    "workbox-strategies": "^5.0.0"
+    "workbox-strategies": "^5.1.2"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
