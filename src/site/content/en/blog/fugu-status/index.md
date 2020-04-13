@@ -40,7 +40,7 @@ change.
     <tbody>
       <tr>
         <td>
-          <a href="/shape-detection/">Shape&nbsp;Detection</a>
+          <a href="/shape-detection/">Shape&nbsp;Detection (Barcode)</a>
         </td>
         <td>
           Shape detection opens up native implementations of shape
