@@ -1,7 +1,7 @@
-import {html} from "lit-element";
-import {signIn} from "../../fb";
-import {BaseStateElement} from "../BaseStateElement";
-import "./_styles.scss";
+import {html} from 'lit-element';
+import {signIn} from '../../fb';
+import {BaseStateElement} from '../BaseStateElement';
+import './_styles.scss';
 
 /* eslint-disable require-jsdoc */
 class SigninButton extends BaseStateElement {
@@ -73,4 +73,4 @@ class SigninButton extends BaseStateElement {
   }
 }
 
-customElements.define("web-signin-button", SigninButton);
+customElements.define('web-signin-button', SigninButton);

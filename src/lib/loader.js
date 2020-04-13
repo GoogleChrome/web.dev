@@ -5,9 +5,9 @@
  * template is correct, and that the correct JS entrypoint is ready.
  */
 
-import {store} from "./store";
-import {normalizeUrl} from "./urls";
-import "./utils/underscore-import-polyfill";
+import {store} from './store';
+import {normalizeUrl} from './urls';
+import './utils/underscore-import-polyfill';
 
 /**
  * Dynamically loads code required for the passed URL entrypoint.
@@ -16,13 +16,13 @@ import "./utils/underscore-import-polyfill";
  * @return {!Promise<?>}
  */
 async function loadEntrypoint(url) {
-  if (url.startsWith("/measure/")) {
-    return import("./pages/measure.js");
-  } else if (url.startsWith("/newsletter/")) {
-    return import("./pages/newsletter.js");
+  if (url.startsWith('/measure/')) {
+    return import('./pages/measure.js');
+  } else if (url.startsWith('/newsletter/')) {
+    return import('./pages/newsletter.js');
   }
 
-  return import("./pages/default.js");
+  return import('./pages/default.js');
 }
 
 /**
@@ -33,18 +33,18 @@ async function loadEntrypoint(url) {
  * @return {?{raw: string, title: string, offline: (boolean|undefined)}}
  */
 export async function getPartial(url, signal) {
-  if (!url.endsWith("/")) {
+  if (!url.endsWith('/')) {
     throw new Error(`partial unsupported for non-folder: ${url}`);
   }
 
   try {
-    const res = await fetch(url + "index.json", {signal});
+    const res = await fetch(url + 'index.json', {signal});
     if (!res.ok && res.status !== 404) {
       throw res.status;
     }
     return await res.json();
   } catch (e) {
-    if (e instanceof DOMException && e.name === "AbortError") {
+    if (e instanceof DOMException && e.name === 'AbortError') {
       return null;
     }
     throw e;
@@ -60,7 +60,7 @@ export async function getPartial(url, signal) {
 function forceFocus(el) {
   if (!el) {
     // do nothing
-  } else if (el.hasAttribute("tabindex")) {
+  } else if (el.hasAttribute('tabindex')) {
     el.focus();
   } else {
     // nb. This will also operate on elements that implicitly allow focus, but
@@ -68,13 +68,13 @@ function forceFocus(el) {
     // w-force-focus).
     el.tabIndex = -1;
     el.focus();
-    el.classList.add("w-force-focus");
+    el.classList.add('w-force-focus');
 
     el.addEventListener(
-      "blur",
+      'blur',
       (e) => {
-        el.removeAttribute("tabindex");
-        el.classList.remove("w-force-focus");
+        el.removeAttribute('tabindex');
+        el.classList.remove('w-force-focus');
       },
       {once: true},
     );
@@ -87,22 +87,22 @@ function forceFocus(el) {
  * @param {!Object} partial
  */
 function updateDom(partial) {
-  const content = document.querySelector("main #content");
+  const content = document.querySelector('main #content');
   content.innerHTML = partial.raw;
 
   // Close any open self-assessment modals.
   // TODO(samthor): Replace this logic with a store subscriber that allows
   // all components to clean up after themselves when the page changes.
-  const assessmentsOpen = document.querySelectorAll("web-assessment[open]");
+  const assessmentsOpen = document.querySelectorAll('web-assessment[open]');
   for (const assessment of assessmentsOpen) {
     assessment.remove();
   }
 
   // Update the page title.
-  document.title = partial.title || "";
+  document.title = partial.title || '';
 
   // Focus on the first title (or fallback to content itself).
-  forceFocus(content.querySelector("h1, h2, h3, h4, h5, h6") || content);
+  forceFocus(content.querySelector('h1, h2, h3, h4, h5, h6') || content);
 }
 
 /**
@@ -125,7 +125,7 @@ export async function swapContent({firstRun, url, signal, ready, state}) {
   // If this is the first run, bail out early. We generate an inferred partial for back/forward nav,
   // as we only have the initial prerendered HTML.
   if (firstRun) {
-    const content = document.querySelector("main #content");
+    const content = document.querySelector('main #content');
     const inferredPartial = {
       raw: content.innerHTML,
       title: document.title,
@@ -152,7 +152,7 @@ export async function swapContent({firstRun, url, signal, ready, state}) {
 
   // If the partial was bad, force a real page load. This will occur in Netlify or other simple
   // staging environments on 404, where we don't serve real JSON.
-  if (!partial || typeof partial !== "object") {
+  if (!partial || typeof partial !== 'object') {
     throw new Error(`invalid partial for: ${url}`);
   }
 
@@ -165,8 +165,8 @@ export async function swapContent({firstRun, url, signal, ready, state}) {
   // which must happen before DOM changes and ga event.
   ready(url, {partial});
 
-  ga("set", "page", window.location.pathname);
-  ga("send", "pageview");
+  ga('set', 'page', window.location.pathname);
+  ga('send', 'pageview');
   updateDom(partial);
 
   // Finally, just await for the entrypoint JS. It this fails we'll throw an exception and force a

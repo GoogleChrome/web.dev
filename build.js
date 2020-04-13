@@ -14,35 +14,35 @@
  * limitations under the License.
  */
 
-require("dotenv").config();
-const isProd = process.env.ELEVENTY_ENV === "prod";
+require('dotenv').config();
+const isProd = process.env.ELEVENTY_ENV === 'prod';
 
-const fs = require("fs").promises;
-const path = require("path");
-const log = require("fancy-log");
-const rollupPluginNodeResolve = require("rollup-plugin-node-resolve");
-const rollupPluginCJS = require("rollup-plugin-commonjs");
-const rollupPluginPostCSS = require("rollup-plugin-postcss");
-const rollupPluginVirtual = require("rollup-plugin-virtual");
-const rollupPluginReplace = require("rollup-plugin-replace");
-const rollup = require("rollup");
-const terser = isProd ? require("terser") : null;
-const {getManifest} = require("workbox-build");
-const site = require("./src/site/_data/site");
+const fs = require('fs').promises;
+const path = require('path');
+const log = require('fancy-log');
+const rollupPluginNodeResolve = require('rollup-plugin-node-resolve');
+const rollupPluginCJS = require('rollup-plugin-commonjs');
+const rollupPluginPostCSS = require('rollup-plugin-postcss');
+const rollupPluginVirtual = require('rollup-plugin-virtual');
+const rollupPluginReplace = require('rollup-plugin-replace');
+const rollup = require('rollup');
+const terser = isProd ? require('terser') : null;
+const {getManifest} = require('workbox-build');
+const site = require('./src/site/_data/site');
 
-process.on("unhandledRejection", (reason, p) => {
-  log.error("Build had unhandled rejection", reason, p);
+process.on('unhandledRejection', (reason, p) => {
+  log.error('Build had unhandled rejection', reason, p);
   process.exit(1);
 });
 
 const bootstrapConfig = {
   prod: isProd,
-  env: process.env.ELEVENTY_ENV || "dev",
+  env: process.env.ELEVENTY_ENV || 'dev',
   version:
-    "v" +
+    'v' +
     new Date()
       .toISOString()
-      .replace(/[\D]/g, "")
+      .replace(/[\D]/g, '')
       .slice(0, 12),
   firebaseConfig: isProd ? site.firebase.prod : site.firebase.staging,
 };
@@ -50,7 +50,7 @@ const bootstrapConfig = {
 const defaultPlugins = [
   rollupPluginNodeResolve(),
   rollupPluginCJS({
-    include: "node_modules/**",
+    include: 'node_modules/**',
   }),
 ];
 
@@ -62,8 +62,8 @@ const defaultPlugins = [
  */
 async function buildCacheManifest() {
   const toplevelManifest = await getManifest({
-    globDirectory: "dist",
-    globPatterns: ["images/**", "*.css", "*.js"],
+    globDirectory: 'dist',
+    globPatterns: ['images/**', '*.css', '*.js'],
   });
   if (toplevelManifest.warnings.length) {
     throw new Error(`toplevel manifest: ${toplevelManifest.warnings}`);
@@ -72,10 +72,10 @@ async function buildCacheManifest() {
   // This doesn't include any HTML, as we bundle that directly into the source
   // of the Service Worker below.
   const contentManifest = await getManifest({
-    globDirectory: "dist/en",
+    globDirectory: 'dist/en',
     globPatterns: [
-      "offline/index.json",
-      "images/**/*.{png,svg}", // .jpg files are used for authors, skip
+      'offline/index.json',
+      'images/**/*.{png,svg}', // .jpg files are used for authors, skip
     ],
   });
   if (contentManifest.warnings.length) {
@@ -96,7 +96,7 @@ async function build() {
   const postcssConfig = {};
   if (isProd) {
     // nb. Only require() autoprefixer when used.
-    const autoprefixer = require("autoprefixer");
+    const autoprefixer = require('autoprefixer');
     postcssConfig.plugins = [autoprefixer];
 
     // uses cssnano vs. our regular CSS usees sass' builtin compression
@@ -108,7 +108,7 @@ async function build() {
   // Does not hash "bootstrap.js" entrypoint, but hashes all generated chunks,
   // useful for cache busting.
   const appBundle = await rollup.rollup({
-    input: "src/lib/bootstrap.js",
+    input: 'src/lib/bootstrap.js',
     plugins: [
       rollupPluginVirtual({
         webdev_config: `export default ${JSON.stringify(bootstrapConfig)};`,
@@ -128,10 +128,10 @@ async function build() {
     },
   });
   const appGenerated = await appBundle.write({
-    dynamicImportFunction: "window._import",
+    dynamicImportFunction: 'window._import',
     sourcemap: true,
-    dir: "dist",
-    format: "esm",
+    dir: 'dist',
+    format: 'esm',
   });
 
   // Compress the generated source here, as we need the final files and hashes for the Service
@@ -145,28 +145,28 @@ async function build() {
   }
 
   const manifest = isProd ? await buildCacheManifest() : [];
-  const noticeDev = isProd ? "" : "// Not generated in dev";
+  const noticeDev = isProd ? '' : '// Not generated in dev';
 
   const layoutTemplate = await fs.readFile(
-    path.join("dist", "sw-partial-layout.partial"),
-    "utf-8",
+    path.join('dist', 'sw-partial-layout.partial'),
+    'utf-8',
   );
 
   const swBundle = await rollup.rollup({
-    input: "src/lib/sw.js",
+    input: 'src/lib/sw.js',
     plugins: [
       // This variable is defined by Webpack (and some other tooling), but not by Rollup. Set it to
       // "production" if we're in prod, which will hide all of Workbox's log messages.
       // Note that Terser below will actually remove the conditionals (this replace will generate
       // lots of `if ("production" !== "production")` statements).
       rollupPluginReplace({
-        "process.env.NODE_ENV": JSON.stringify(isProd ? "production" : ""),
+        'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : ''),
       }),
       rollupPluginVirtual({
-        "cache-manifest": `export default ${JSON.stringify(
+        'cache-manifest': `export default ${JSON.stringify(
           manifest,
         )};${noticeDev}`,
-        "layout-template": `export default ${JSON.stringify(layoutTemplate)}`,
+        'layout-template': `export default ${JSON.stringify(layoutTemplate)}`,
       }),
       ...defaultPlugins,
     ],
@@ -174,8 +174,8 @@ async function build() {
   });
   const swGenerated = await swBundle.write({
     sourcemap: true,
-    dir: "dist",
-    format: "esm",
+    dir: 'dist',
+    format: 'esm',
   });
 
   if (swGenerated.output.length !== 1) {
@@ -197,12 +197,12 @@ async function build() {
 
 async function buildTest() {
   const testBundle = await rollup.rollup({
-    input: "src/lib/test/index.js",
+    input: 'src/lib/test/index.js',
     plugins: [rollupPluginPostCSS(), ...defaultPlugins],
   });
   await testBundle.write({
-    dir: "dist/test",
-    format: "iife",
+    dir: 'dist/test',
+    format: 'iife',
   });
 }
 
@@ -211,15 +211,15 @@ async function compressOutput(generated) {
   let outputSize = 0;
 
   for (const fileName of generated) {
-    const target = path.join("dist", fileName);
+    const target = path.join('dist', fileName);
 
-    const raw = await fs.readFile(target, "utf8");
+    const raw = await fs.readFile(target, 'utf8');
     inputSize += raw.length;
 
     const result = terser.minify(raw, {
       sourceMap: {
-        content: await fs.readFile(target + ".map", "utf8"),
-        url: fileName + ".map",
+        content: await fs.readFile(target + '.map', 'utf8'),
+        url: fileName + '.map',
       },
     });
 
@@ -228,8 +228,8 @@ async function compressOutput(generated) {
     }
 
     outputSize += result.code.length;
-    await fs.writeFile(target, result.code, "utf8");
-    await fs.writeFile(target + ".map", result.map, "utf8");
+    await fs.writeFile(target, result.code, 'utf8');
+    await fs.writeFile(target + '.map', result.map, 'utf8');
   }
 
   const ratio = outputSize / inputSize;

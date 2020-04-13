@@ -3,6 +3,6 @@
  * the bulk of web.dev.
  */
 
-import "../components/Subscribe";
+import '../components/Subscribe';
 
-import "../app";
+import '../app';

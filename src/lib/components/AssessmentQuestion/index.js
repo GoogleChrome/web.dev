@@ -1,6 +1,6 @@
-import {html} from "lit-element";
-import {BaseElement} from "../BaseElement";
-import "./_styles.scss";
+import {html} from 'lit-element';
+import {BaseElement} from '../BaseElement';
+import './_styles.scss';
 
 /**
  * Element that renders an assessment question shell.
@@ -13,15 +13,15 @@ class AssessmentQuestion extends BaseElement {
     return {
       id: {type: String, reflect: true},
       state: {type: String, reflect: true},
-      height: {type: String, attribute: "question-height"}, // used in CSS
+      height: {type: String, attribute: 'question-height'}, // used in CSS
     };
   }
 
   constructor() {
     super();
-    this.state = "unanswered";
+    this.state = 'unanswered';
     this.prerenderedChildren = null;
-    this.ctaLabel = "Check";
+    this.ctaLabel = 'Check';
 
     this.responseComponentUpdated = this.responseComponentUpdated.bind(this);
     this.reset = this.reset.bind(this);
@@ -36,7 +36,7 @@ class AssessmentQuestion extends BaseElement {
       }
     }
 
-    const heightStyle = this.height ? "height: " + this.height + ";" : "";
+    const heightStyle = this.height ? 'height: ' + this.height + ';' : '';
 
     /* eslint-disable indent */
     return html`
@@ -50,7 +50,7 @@ class AssessmentQuestion extends BaseElement {
           class="w-button w-button--primary web-assessment__button web-question__cta gc-analytics-event"
           data-category="Self-assessments"
           data-label="CTA, ${this.id}"
-          ?disabled="${this.state === "unanswered"}"
+          ?disabled="${this.state === 'unanswered'}"
         >
           ${this.ctaLabel}
         </button>
@@ -61,10 +61,10 @@ class AssessmentQuestion extends BaseElement {
 
   firstUpdated() {
     // Listen to state updates from child response components.
-    this.addEventListener("response-update", this.responseComponentUpdated);
+    this.addEventListener('response-update', this.responseComponentUpdated);
 
     // Listen to contained option selections.
-    this.addEventListener("question-option-select", (e) => {
+    this.addEventListener('question-option-select', (e) => {
       const {detail: optionIndex, target} = e;
 
       // This event comes from the final option that the user selects.
@@ -73,7 +73,7 @@ class AssessmentQuestion extends BaseElement {
       // but we'd still need to find its index.
       let responseIndex = -1;
       const responseComponents = Array.from(
-        this.querySelectorAll("[data-role=response]"),
+        this.querySelectorAll('[data-role=response]'),
       );
       for (let i = 0; i < responseComponents.length; ++i) {
         if (responseComponents[i].contains(target)) {
@@ -87,9 +87,9 @@ class AssessmentQuestion extends BaseElement {
 
       // Send an Analytics event manually. We don't want to pipe through the IDs all the way down
       // to each individual option.
-      ga("send", "event", {
-        eventCategory: "Self-assessments",
-        eventAction: "click",
+      ga('send', 'event', {
+        eventCategory: 'Self-assessments',
+        eventAction: 'click',
         eventLabel: `${this.id}-response-${responseIndex}-option-${optionIndex}`,
       });
     });
@@ -97,32 +97,32 @@ class AssessmentQuestion extends BaseElement {
 
   // Update question state based on state of response components.
   responseComponentUpdated() {
-    const responseComponents = this.querySelectorAll("[data-role=response]");
+    const responseComponents = this.querySelectorAll('[data-role=response]');
     const stateArr = Array.from(responseComponents).map(({state}) => state);
 
-    if (stateArr.includes("unanswered")) {
-      this.state = "unanswered";
-    } else if (stateArr.includes("answeredIncorrectly")) {
-      this.state = "answeredIncorrectly";
+    if (stateArr.includes('unanswered')) {
+      this.state = 'unanswered';
+    } else if (stateArr.includes('answeredIncorrectly')) {
+      this.state = 'answeredIncorrectly';
     } else {
-      this.state = "answeredCorrectly";
+      this.state = 'answeredCorrectly';
     }
   }
 
   onSubmit(e) {
     switch (this.state) {
-      case "answeredCorrectly":
+      case 'answeredCorrectly':
         this.updateResponseComponents();
-        this.state = "completed";
-        this.ctaLabel = this.checkNextQuestion() ? "Next" : "Reset quiz";
+        this.state = 'completed';
+        this.ctaLabel = this.checkNextQuestion() ? 'Next' : 'Reset quiz';
         break;
-      case "answeredIncorrectly":
+      case 'answeredIncorrectly':
         this.updateResponseComponents();
-        this.state = "unanswered";
-        this.ctaLabel = "Recheck";
+        this.state = 'unanswered';
+        this.ctaLabel = 'Recheck';
 
-        const tabs = this.closest("web-tabs");
-        const assessment = this.closest("web-assessment");
+        const tabs = this.closest('web-tabs');
+        const assessment = this.closest('web-assessment');
         if (tabs) {
           // Focus currently active tab since submit button disables
           tabs.focusTab(tabs.activeTab);
@@ -131,7 +131,7 @@ class AssessmentQuestion extends BaseElement {
           assessment.focus();
         }
         break;
-      case "completed":
+      case 'completed':
         const nextQuestion = this.checkNextQuestion();
 
         if (nextQuestion) {
@@ -143,7 +143,7 @@ class AssessmentQuestion extends BaseElement {
   }
 
   updateResponseComponents() {
-    const responseComponents = this.querySelectorAll("[data-role=response]");
+    const responseComponents = this.querySelectorAll('[data-role=response]');
 
     for (const responseComponent of responseComponents) {
       responseComponent.submitResponse();
@@ -152,7 +152,7 @@ class AssessmentQuestion extends BaseElement {
 
   // TODO(samthor): This should maybe emit a custom event that the Tabs component responds to?
   checkNextQuestion() {
-    const panel = this.closest(".web-tabs__panel");
+    const panel = this.closest('.web-tabs__panel');
 
     if (!panel) {
       return;
@@ -162,13 +162,13 @@ class AssessmentQuestion extends BaseElement {
   }
 
   requestNextQuestionNav() {
-    const event = new Event("request-nav-to-next");
+    const event = new Event('request-nav-to-next');
 
     this.dispatchEvent(event);
   }
 
   requestAssessmentReset() {
-    const event = new Event("request-assessment-reset", {bubbles: true});
+    const event = new Event('request-assessment-reset', {bubbles: true});
 
     this.dispatchEvent(event);
   }
@@ -176,15 +176,15 @@ class AssessmentQuestion extends BaseElement {
   // Helper function to allow other components to reset the question
   // to its unanswered state.
   reset() {
-    const responseComponents = this.querySelectorAll("[data-role=response]");
-    const questionContent = this.querySelector(".web-question__content");
+    const responseComponents = this.querySelectorAll('[data-role=response]');
+    const questionContent = this.querySelector('.web-question__content');
 
     for (const responseComponent of responseComponents) {
       responseComponent.reset();
     }
-    this.ctaLabel = "Check";
+    this.ctaLabel = 'Check';
     questionContent.scrollTop = 0;
   }
 }
 
-customElements.define("web-question", AssessmentQuestion);
+customElements.define('web-question', AssessmentQuestion);

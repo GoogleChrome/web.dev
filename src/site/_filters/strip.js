@@ -22,11 +22,11 @@
  * @return {string} A string of the pages title without any forbidden characters.
  */
 module.exports = (text, additionallyForbidden) => {
-  let cleaned = String(text || "");
+  let cleaned = String(text || '');
   const forbidden = [/\`/g];
 
   [...forbidden, ...(additionallyForbidden || [])].forEach((rule) => {
-    cleaned = cleaned.replace(rule, "");
+    cleaned = cleaned.replace(rule, '');
   });
 
   return cleaned;

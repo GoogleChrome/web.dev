@@ -15,21 +15,21 @@
  * limitations under the License.
  */
 
-import {assert} from "../../test/assert";
-import "./index";
+import {assert} from '../../test/assert';
+import './index';
 
-suite("element: web-lighthouse-gauge", async () => {
-  await customElements.whenDefined("web-lighthouse-gauge");
+suite('element: web-lighthouse-gauge', async () => {
+  await customElements.whenDefined('web-lighthouse-gauge');
 
-  test("basic", async () => {
-    const gauge = document.createElement("web-lighthouse-gauge");
+  test('basic', async () => {
+    const gauge = document.createElement('web-lighthouse-gauge');
     document.body.append(gauge);
     try {
       gauge.score = 0.5;
       await gauge.updateComplete;
       assert(
-        gauge.getAttribute("aria-valuenow") === "50",
-        "attr should reflect property",
+        gauge.getAttribute('aria-valuenow') === '50',
+        'attr should reflect property',
       );
     } finally {
       gauge.remove();

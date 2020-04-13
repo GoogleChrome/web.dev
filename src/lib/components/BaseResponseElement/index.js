@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import {BaseElement} from "../BaseElement";
-import "./_styles.scss";
+import {BaseElement} from '../BaseElement';
+import './_styles.scss';
 
 /**
  * Base element used by all self-assessment response components.
@@ -26,13 +26,13 @@ export class BaseResponseElement extends BaseElement {
   static get properties() {
     return {
       state: {type: String, reflect: true},
-      correctAnswer: {attribute: "correct-answer", type: String},
+      correctAnswer: {attribute: 'correct-answer', type: String},
     };
   }
 
   constructor() {
     super();
-    this.state = "unanswered";
+    this.state = 'unanswered';
 
     this.enforceCardinality = this.enforceCardinality.bind(this);
     this.submitResponse = this.submitResponse.bind(this);
@@ -50,7 +50,7 @@ export class BaseResponseElement extends BaseElement {
     let min = 1;
     let max = null;
 
-    if (cardinality === "1") {
+    if (cardinality === '1') {
       // noop
     } else if (/^\d+$/.test(cardinality)) {
       min = parseInt(cardinality);
@@ -59,7 +59,7 @@ export class BaseResponseElement extends BaseElement {
       min = parseInt(cardinality);
       max = 0;
     } else if (/^\d-\d+$/.test(cardinality)) {
-      [min, max] = cardinality.split("-");
+      [min, max] = cardinality.split('-');
       [min, max] = [parseInt(min), parseInt(max)];
     }
     // Input errors handled in src/site/_includes/components/Assessment.js
@@ -76,7 +76,7 @@ export class BaseResponseElement extends BaseElement {
   }
 
   reportUpdate() {
-    const event = new CustomEvent("response-update", {
+    const event = new CustomEvent('response-update', {
       bubbles: true,
       detail: {
         responseState: this.state,
@@ -95,12 +95,12 @@ export class BaseResponseElement extends BaseElement {
 
     // Input errors for correctAnswer handled in
     // src/site/_includes/components/Assessment.js
-    const correctAnswersArr = this.correctAnswer.split(",").map(Number);
-    const options = this.querySelectorAll("[data-role=option]");
+    const correctAnswersArr = this.correctAnswer.split(',').map(Number);
+    const options = this.querySelectorAll('[data-role=option]');
 
     for (let i = 0; i < options.length; i++) {
       if (correctAnswersArr.includes(i)) {
-        options[i].setAttribute("data-correct", "");
+        options[i].setAttribute('data-correct', '');
       }
     }
   }
@@ -110,11 +110,11 @@ export class BaseResponseElement extends BaseElement {
   // NOTE: Assumes client components handle the data-selected attribute.
   // (Necessary because selection mechanism will vary by response type.)
   enforceCardinality(e) {
-    const options = this.querySelectorAll("[data-role=option]");
+    const options = this.querySelectorAll('[data-role=option]');
     let numSelected = 0;
 
     for (const option of options) {
-      if (option.hasAttribute("data-selected")) {
+      if (option.hasAttribute('data-selected')) {
         numSelected++;
       }
     }
@@ -125,11 +125,11 @@ export class BaseResponseElement extends BaseElement {
     const isAnsweredCorrectly = this.checkIfCorrect();
 
     if (numSelected >= this.minSelections && isAnsweredCorrectly) {
-      this.state = "answeredCorrectly";
+      this.state = 'answeredCorrectly';
     } else if (numSelected >= this.minSelections && !isAnsweredCorrectly) {
-      this.state = "answeredIncorrectly";
+      this.state = 'answeredIncorrectly';
     } else {
-      this.state = "unanswered";
+      this.state = 'unanswered';
     }
 
     // Disable remaining unselected options
@@ -140,8 +140,8 @@ export class BaseResponseElement extends BaseElement {
     }
 
     for (const option of options) {
-      const isSelected = option.hasAttribute("data-selected");
-      const hasBeenChecked = option.hasAttribute("data-submitted");
+      const isSelected = option.hasAttribute('data-selected');
+      const hasBeenChecked = option.hasAttribute('data-submitted');
 
       if (numSelected < this.maxSelections && !isSelected && !hasBeenChecked) {
         this.enableOption(option);
@@ -156,12 +156,12 @@ export class BaseResponseElement extends BaseElement {
   // AND some incorrect options as correct--because it's not clear what else
   // we'd do in that case other than reveal the full correct answer.
   checkIfCorrect() {
-    const correctAnswersArr = this.correctAnswer.split(",").map(Number);
-    const options = this.querySelectorAll("[data-role=option]");
+    const correctAnswersArr = this.correctAnswer.split(',').map(Number);
+    const options = this.querySelectorAll('[data-role=option]');
     const selections = [];
 
     options.forEach((el, index) => {
-      if (el.hasAttribute("data-selected")) {
+      if (el.hasAttribute('data-selected')) {
         selections.push(index);
       }
     });
@@ -173,35 +173,35 @@ export class BaseResponseElement extends BaseElement {
   // NOTE: Assumes client components have a deselectOption() method.
   // (Necessary because selection mechanisms will vary by response type.)
   submitResponse() {
-    const options = this.querySelectorAll("[data-role=option]");
+    const options = this.querySelectorAll('[data-role=option]');
 
     for (const option of options) {
-      const isSelected = option.hasAttribute("data-selected");
-      const isCorrect = option.hasAttribute("data-correct");
-      const isSubmitted = option.hasAttribute("data-submitted");
+      const isSelected = option.hasAttribute('data-selected');
+      const isCorrect = option.hasAttribute('data-correct');
+      const isSubmitted = option.hasAttribute('data-submitted');
 
-      if (this.state === "answeredIncorrectly") {
+      if (this.state === 'answeredIncorrectly') {
         if (isSelected && isCorrect) {
-          option.setAttribute("data-submitted", "");
+          option.setAttribute('data-submitted', '');
           this.disableOption(option);
         } else if (isSelected && !isCorrect) {
-          option.setAttribute("data-submitted", "");
+          option.setAttribute('data-submitted', '');
           this.disableOption(option);
           this.deselectOption(option);
         } else if (!isSelected && !isSubmitted) {
           this.enableOption(option);
         }
-      } else if (this.state === "answeredCorrectly") {
+      } else if (this.state === 'answeredCorrectly') {
         this.disableOption(option);
         if (isSelected) {
-          option.setAttribute("data-submitted", "");
+          option.setAttribute('data-submitted', '');
         }
       }
     }
     // Force responseComponent state change on next option selection
     // so AssessmentQuestion state updates.
-    if (this.state === "answeredIncorrectly") {
-      this.state = "unanswered";
+    if (this.state === 'answeredIncorrectly') {
+      this.state = 'unanswered';
     }
   }
 
@@ -210,12 +210,12 @@ export class BaseResponseElement extends BaseElement {
   // NOTE: Assumes client components have a deselectOption() method.
   // (Necessary because selection mechanisms will vary by response type.)
   reset() {
-    const options = this.querySelectorAll("[data-role=option]");
+    const options = this.querySelectorAll('[data-role=option]');
 
-    this.state = "unanswered";
+    this.state = 'unanswered';
     for (const option of options) {
-      option.removeAttribute("data-submitted");
-      if (typeof this.deselectOption == "function") {
+      option.removeAttribute('data-submitted');
+      if (typeof this.deselectOption == 'function') {
         this.deselectOption(option);
       }
       this.enableOption(option);
@@ -223,18 +223,18 @@ export class BaseResponseElement extends BaseElement {
   }
 
   disableOption(option) {
-    const inputs = option.querySelectorAll("input, button");
+    const inputs = option.querySelectorAll('input, button');
 
-    option.setAttribute("disabled", "");
+    option.setAttribute('disabled', '');
     for (const input of inputs) {
       input.disabled = true;
     }
   }
 
   enableOption(option) {
-    const inputs = option.querySelectorAll("input, button");
+    const inputs = option.querySelectorAll('input, button');
 
-    option.removeAttribute("disabled");
+    option.removeAttribute('disabled');
     for (const input of inputs) {
       input.disabled = false;
     }

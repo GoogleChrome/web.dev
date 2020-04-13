@@ -5,15 +5,15 @@
  */
 
 // This task only runs against files in this directory.
-const contentDir = "src/site/content";
+const contentDir = 'src/site/content';
 
-const chalk = require("chalk");
-const fs = require("fs").promises;
-const moment = require("moment");
-const util = require("util");
-const exec = util.promisify(require("child_process").exec);
+const chalk = require('chalk');
+const fs = require('fs').promises;
+const moment = require('moment');
+const util = require('util');
+const exec = util.promisify(require('child_process').exec);
 const RE_UPDATED = /^updated:\s?(.*?)\n/m;
-const MSG_UPDATE = `Updated ${chalk.bold("updated")} in`;
+const MSG_UPDATE = `Updated ${chalk.bold('updated')} in`;
 
 /**
  * Gets the list of modified and renamed files that have been staged.
@@ -23,8 +23,8 @@ const MSG_UPDATE = `Updated ${chalk.bold("updated")} in`;
 async function getChangedFiles() {
   const cmd = `git diff --cached --name-only --diff-filter=MR`;
   try {
-    const {stdout} = await exec(cmd, ".");
-    return stdout.split("\n");
+    const {stdout} = await exec(cmd, '.');
+    return stdout.split('\n');
   } catch (err) {
     throw err;
   }
@@ -40,12 +40,12 @@ const run = async () => {
       continue;
     }
 
-    if (!changedFile.endsWith(".md")) {
+    if (!changedFile.endsWith('.md')) {
       // File isn't a Markdown file, skip it.
       continue;
     }
 
-    const fileContents = await fs.readFile(changedFile, "utf-8");
+    const fileContents = await fs.readFile(changedFile, 'utf-8');
     const matched = RE_UPDATED.exec(fileContents);
     if (!matched) {
       // Updated YAML property is not in the file - nothing to do.

@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-const {html} = require("common-tags");
-const {findByUrl} = require("../../_filters/find-by-url");
-const stripLanguage = require("../../_filters/strip-language");
-const md = require("markdown-it")();
+const {html} = require('common-tags');
+const {findByUrl} = require('../../_filters/find-by-url');
+const stripLanguage = require('../../_filters/strip-language');
+const md = require('markdown-it')();
 
 /* eslint-disable require-jsdoc,max-len */
 
@@ -50,7 +50,7 @@ function getPathItemsFromTopics(topics) {
  * @return {string} The next pathItem slug or a terminating empty string.
  */
 function findNextPathItemBySlug(path, slug, lang) {
-  let next = "";
+  let next = '';
   const items = getPathItemsFromTopics(path.topics);
   const idx = items.indexOf(slug);
   for (let i = idx + 1; i < items.length; i++) {

@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const {html} = require("common-tags");
-const BaseCard = require("./BaseCard");
+const {html} = require('common-tags');
+const BaseCard = require('./BaseCard');
 
 /**
  * AuthorCard used to preview authors.
@@ -23,7 +23,7 @@ const BaseCard = require("./BaseCard");
  */
 class AuthorCard extends BaseCard {
   constructor(arg) {
-    super({...arg, className: "w-card-author"});
+    super({...arg, className: 'w-card-author'});
   }
 
   renderThumbnail(url, img, alt) {
