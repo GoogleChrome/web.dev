@@ -1,0 +1,30 @@
+@import '../settings/colors';
+
+.w-checkbox__label {
+  cursor: pointer;
+  display: inline-flex;
+  position: relative;
+}
+
+.w-checkbox__input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: url('/images/icons/check_box_outline_blank.svg');
+  border: 2px solid $WHITE;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 28px;
+  margin: 0px 30px 0px 0px;
+  outline: none;
+  transition-duration: .2s;
+  width: 28px;
+}
+
+.w-checkbox__input:checked {
+  background: url('/images/icons/check_box_tertiary.svg');
+}
+
+.w-checkbox__input:focus {
+  border: 2px solid $WEB_EXTENDED_TERTIARY_COLOR;
+}

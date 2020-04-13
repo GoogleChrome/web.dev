@@ -31,10 +31,6 @@
   margin-top: 8px;
 }
 
-.w-subscribe__field--checkbox {
-  padding-top: 30px;
-}
-
 .w-subscribe__padded {
   margin-left: auto;
   margin-right: auto;
@@ -64,6 +60,7 @@
 }
 
 .w-subscribe__select {
+  background-color: $WHITE;
   border: 0;
   font: inherit;
   height: 52px;
