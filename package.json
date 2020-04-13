@@ -67,7 +67,7 @@
     "@percy/script": "^1.0.3",
     "ansi-colors": "^3.2.4",
     "autoprefixer": "^9.6.1",
-    "chalk": "^2.4.2",
+    "chalk": "^4.0.0",
     "cheerio": "^1.0.0-rc.3",
     "chokidar-cli": "^1.2.2",
     "common-tags": "^1.8.0",
