@@ -39,11 +39,18 @@ date: 2020-04-06
       <div class="w-grid w-pb--std">
         <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--two" role="list">
           {% for podcast in podcasts %}
-            <a href="{{ podcast.url }}" class="w-card" role="listitem">
+            <a
+              href="{{ podcast.url }}"
+              class="w-card gc-analytics-event"
+              data-category="web.dev"
+              data-label="Podcasts: {{podcast.title}}"
+              data-action="click"
+              role="listitem"
+            >
               <div class="w-path-card">
                 <div class="w-path-card__cover">
                   <img
-                    class="w-path-card__cover-image--fill"
+                    class="w-path-card__cover-image w-path-card__cover-image--fill"
                     src="{{ podcast.thumbnail }}"
                     alt=""
                     loading="lazy"

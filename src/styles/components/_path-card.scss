@@ -84,6 +84,10 @@
   width: 100%;
 }
 
+.w-path-card__cover-image--fill {
+  object-fit: cover;
+}
+
 .w-path-card__headline {
   margin: 0 0 1rem;
 }
