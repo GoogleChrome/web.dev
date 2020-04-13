@@ -26,7 +26,7 @@ able to use privileged features including:
 
 * [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
   (required for WebAssembly Threads)
-* [`performance.measureMemory()`](https://github.com/WICG/performance-measure-memory)
+* [`performance.measureMemory()`](/monitor-total-page-memory-usage/)
 * [JS Self-Profiling API](https://wicg.github.io/js-self-profiling/)
 
 The cross-origin isolated state also prevents modifications of 
@@ -233,13 +233,8 @@ Cross-Origin-Embedder-Policy: require-corp; report-to="coep_rollout_1"
 ```
 When the browser encounters this, it will cross-reference the `report-to` value
 with the `group` property on the `Report-To` header to look up the endpoint.
-This example cross references on `coep_rollout_1' to find the endpoint
-`https://first-party-test.glitch.me/report`.
-
-When the browser encounters this, it will cross-reference the `report-to` value
-with the `group` property on the `Report-To` header to look up the endpoint.
 This example cross references on `coep_rollout_1` to find the endpoint
-`http://first-party-test.glitch.me/report`.
+`https://first-party-test.glitch.me/report`.
 
 If you prefer to receive reports without blocking any embedded content, use 
 `Cross-Origin-Embedder-Policy-Report-Only` instead of 
@@ -297,7 +292,7 @@ and will give access to powerful features such as:
 
 * [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) 
   (required for WebAssembly Threads)
-* [`performance.measureMemory`](https://github.com/WICG/performance-measure-memory)
+* [`performance.measureMemory`](/monitor-total-page-memory-usage/)
 * [JS Self-Profiling API](https://wicg.github.io/js-self-profiling/) and more.
 
 We'll keep this post updated as new features are made available to this 
