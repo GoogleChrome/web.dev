@@ -36,6 +36,10 @@ const pagesToTest = [
     url: 'tags',
     title: 'Tags page',
   },
+  {
+    url: 'podcasts',
+    title: 'Podcasts page',
+  },
 ];
 
 // A script to navigate our app and take snapshots with Percy.
