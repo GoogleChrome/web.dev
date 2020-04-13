@@ -51,9 +51,8 @@ splitting. Next.js, for example, would generate a `commons` bundle that containe
 used in more than 50% of pages and all framework dependencies (`react`, `react-dom`, etc…).
 
 ```javascript/11,16
-const splitChunksConfigs: {
-  [propName: string]: webpack.Options.SplitChunksOptions
-} = {
+const splitChunksConfigs = {
+  //...
   prod: {
     chunks: 'all',
     cacheGroups: {
@@ -269,6 +268,6 @@ it follows a large "commons" bundle approach, regardless of the framework or mod
     app](https://glitch.com/edit/#!/webpack-granular-split-chunks?path=webpack.config.js). It uses a
     simplified version of the granular chunking strategy and can help you start applying the same
     sort of logic to your site.
-+   If you use Rollup instead of webpack, take a look at the
-    [`manualChunks`](https://rollupjs.org/guide/en/#manualchunks) function in order to create custom
-    shared chunks.
++   For Rollup, chunks are created granularly by default. Take a look at
+    [`manualChunks`](https://rollupjs.org/guide/en/#manualchunks) if you would like to manually
+    configure the behavior.
