@@ -624,7 +624,15 @@ at.
 
 {% endDetails %}
 
-## Glitches
+## Glitches {: #glitches }
+
+* Remix the [web-dev-hello-webpage](https://glitch.com/~web-dev-hello-webpage) or
+  [web-dev-hello-express](https://glitch.com/~web-dev-hello-express) template.
+* Click **Project options** and update the description of the Glitch.
+* Update `README.md`.
+* Update `package.json` (if it exists).
+* Add the project to [the web.dev team on Glitch](https://glitch.com/@webdev).
+* Set the avatar of the project to the [web.dev logo](https://cdn.glitch.com/9b775a52-d700-4208-84e9-18578ee75266%2Ficon.jpeg?v=1585082912878).
 
 ```html
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
