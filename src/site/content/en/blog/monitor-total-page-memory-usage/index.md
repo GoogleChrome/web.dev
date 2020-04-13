@@ -4,7 +4,7 @@ subhead: >
   Learn how to measure memory usage of your web page in production to detect regressions.
 description: >
   Learn how to measure memory usage of your web page in production to detect regressions.
-date: 2020-04-07
+date: 2020-04-13
 authors:
   - ulan
 hero: hero.jpg
