@@ -45,8 +45,9 @@ change.
         <td>
           Shape detection opens up native implementations of shape
           detection services and exposes them through a set of JavaScript
-          interfaces. Shape detection three separate APIs, one of which
-          has already shipped.<br>
+          interfaces. Shape detection has three separate APIs, only barcode
+          detection is available in stable. See below for other shape detection
+          APIs that are under development.
           <ul>
             <li>Barcade Detection API (Enabled by default)</li>
             <li><a href="https://www.chromestatus.com/feature/5678216012365824">Face Detection API</a></li>
