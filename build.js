@@ -149,7 +149,7 @@ async function build() {
   // Does not hash "bootstrap.js" entrypoint, but hashes all generated chunks,
   // useful for cache busting.
   const appBundle = await rollup.rollup({
-    input: "src/lib/bootstrap.js",
+    input: 'src/lib/bootstrap.js',
     external: disallowExternal,
     plugins: [rollupPluginPostCSS(postcssConfig), ...defaultPlugins],
   });
@@ -178,7 +178,7 @@ async function build() {
   );
 
   const swBundle = await rollup.rollup({
-    input: "src/lib/sw.js",
+    input: 'src/lib/sw.js',
     external: disallowExternal,
     plugins: [
       // This variable is defined by Webpack (and some other tooling), but not by Rollup. Set it to
@@ -202,8 +202,8 @@ async function build() {
   const swOutput = await singleOutput(
     swBundle.write({
       sourcemap: true,
-      dir: "dist",
-      format: "esm",
+      dir: 'dist',
+      format: 'esm',
     }),
   );
 

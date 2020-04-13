@@ -12,9 +12,9 @@ function createVirtualExport(object) {
 
   // If this is an object, use its keys as top-level exports, where the keys are valid JS variable
   // names (e.g. "foo" will be exported but "foo-bar" will not).
-  if (object && typeof object === "object" && !Array.isArray(object)) {
+  if (object && typeof object === 'object' && !Array.isArray(object)) {
     for (const key in object) {
-      if (validJSName.test(key) && key !== "default") {
+      if (validJSName.test(key) && key !== 'default') {
         // nb. This doesn't check for all JS keywords. Don't try to export "class".
         // nb. We use var for compatibility with old browsers (as our basic bundle is run there).
         parts.push(`export var ${key} = ${JSON.stringify(object[key])};`);
@@ -22,7 +22,7 @@ function createVirtualExport(object) {
     }
   }
 
-  return parts.join("\n");
+  return parts.join('\n');
 }
 
 module.exports = (all) => {
