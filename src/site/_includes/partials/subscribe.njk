@@ -40,26 +40,18 @@
         <span class="w-subscribe__notice">Don't worry, no spam here! We will only share every 1-2 months. You can unsubscribe at anytime.</span>
       </div>
       <div class="w-subscribe__field w-subscribe__padded w-subscribe__padded--major">
-        {%
-          Checkbox {
-          id: 'sub-newsletter',
-          name: 'WebDevNewsletter',
-          label: 'Add me to the web.dev mailing list.',
-          value: 'Unconfirmed',
-          required: true
-          }
-        %}
+        <div class="w-display__inline-flex">
+          <input id="sub-newsletter" name="WebDevNewsletter" required value="Unconfirmed" class="w-checkbox" type="checkbox" />
+          <label for="sub-newsletter" class="w-label__checkbox">Add me to the web.dev mailing list.</label>
+        </div>
       </div>
       <div class="w-subscribe__field w-subscribe__padded w-subscribe__padded--major">
-        {%
-          Checkbox {
-          id: 'sub-pii-spii',
-          name: 'collects-pii-spii-checkbox',
-          label: 'I accept Google\'s <a href="//www.google.com/intl/en/policies/terms/" target="_blank">Terms and Conditions</a> and acknowledge that my information will be used in accordance with Google\'s <a href="//www.google.com/intl/en/policies/privacy/" target="_blank">Privacy Policy</a>.',
-          value: 'Unconfirmed',
-          required: true
-          }
-        %}
+        <div class="w-display__inline-flex">
+          <input id="sub-pii-spii" name="collects-pii-spii-checkbox" required value="Unconfirmed" class="w-checkbox" type="checkbox" />
+          <label for="sub-pii-spii" class="w-label__checkbox">
+            I accept Google's <a href="https://policies.google.com/terms" target="_blank">Terms and Conditions</a> and acknowledge that my information will be used in accordance with Google's <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a>.
+          </label>
+        </div>
       </div>
       <div class="w-visually-hidden">
         <label for="sub-is-it-just-me-or-was-this-form-filled-out-by-a-robot">Congrats on finding this field, I'd recommend you not filling it out though...</label>
