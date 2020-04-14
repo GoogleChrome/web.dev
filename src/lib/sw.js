@@ -104,8 +104,10 @@ workboxRouting.registerRoute(
 );
 
 /**
- * Match fetches for patials, for SPA requests. Matches "/foo-bar/index.json" and
- * "/foo-bar/many/parts/test.json", for partial SPA requests.
+ * Match fetches for partials, for SPA requests. Matches requests like:
+ *   - /index.json
+ *   - /foo-bar/index.json
+ *   - /foo-bar/many/parts/test.json
  */
 const partialPathRe = new RegExp('^/([\\w-]+/)*\\w+\\.json$');
 const partialStrategy = new workboxStrategies.NetworkFirst({
@@ -140,9 +142,9 @@ workboxRouting.registerRoute(
  * This won't match any URL that contains a "." except for a trailing ".html".
  *
  * Internally, the handler fetches the required partial using `partialStrategy`,
- * and generates the page's real HTML based on the layout template. If the
- * partial fails to load, it _then_ tries a real network request (for
- * redirects).
+ * and generates the page's real HTML based on the layout template. This can be
+ * an offline page if there was a network failure, but other failures (including
+ * a 404) fall through to the catch handler which does a network fetch.
  */
 const normalMatch = matchSameOriginRegExp(
   new RegExp('^/[\\w-/]*(?:|\\.html)$'),
@@ -182,7 +184,7 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
   // redirect handlers.
   if (!response.ok) {
     throw new Error(
-      `unhandled status for normal route '${pathname}': ${response.status}`,
+      `unhandled status for normal route '${url.pathname}': ${response.status}`,
     );
   }
   const partial = await response.json();
