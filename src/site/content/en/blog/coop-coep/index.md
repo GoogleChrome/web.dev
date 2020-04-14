@@ -134,8 +134,8 @@ Here is what you need to do depending on the nature of the resource:
 
 {% Aside 'key-term' %}
 It's important that you understand the difference between "same-site" and 
-"same-origin". Learn about the difference at "[Understanding same-site and 
-same-origin](/same-site-same-origin)".
+"same-origin". Learn about the difference at [Understanding same-site and 
+same-origin](/same-site-same-origin).
 {% endAside %}
 
 #### 3. Use the COEP Report-Only HTTP header to assess embedded resources
@@ -179,7 +179,7 @@ indicate a missing image. However, for resources that don't
 necessarily have a visual impact, such as scripts or styles, COEP issues might 
 go unnoticed. For those, use the DevTools Network panel. If 
 there's an issue with COEP, you should see 
-`(blocked:NotSameOriginAfterDefaultedToSameOriginByCoep)` in the "Status" 
+`(blocked:NotSameOriginAfterDefaultedToSameOriginByCoep)` in the **Status**
 column.  
 ![Debugging COEP in DevTools 1](devtools1.png)
 
@@ -231,7 +231,7 @@ by providing the group name to `report-to=`. For example:
 ```http
 Cross-Origin-Embedder-Policy: require-corp; report-to="coep_rollout_1"
 ```
-When the browser encounters this, it will cross-reference the `report-to` value
+When the browser encounters this, it will cross reference the `report-to` value
 with the `group` property on the `Report-To` header to look up the endpoint.
 This example cross references on `coep_rollout_1` to find the endpoint
 `https://first-party-test.glitch.me/report`.
@@ -251,11 +251,11 @@ blocking those resources.
 #### `max_age`
 
 The `max_age` property specifies the time in seconds after which unsent reports
-are to be dropped (seconds). The browser doesn't send the reports right away.
+are to be dropped. The browser doesn't send the reports right away.
 Instead, it transmits them out-of-band whenever there aren't any other higher
 priority tasks. The `max_age` prevents the browser from sending reports that are
 too stale to be useful. For example, `max_age: 86400` means that reports older
-than 24 hours will not be sent.
+than twenty-four hours will not be sent.
 
 #### `endpoints`
 
