@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: Access to the user's contacts has been a feature of native apps since (almost) the dawn of time. The Contact Picker API is an on-demand API  that allows users to select an entry or entries from their contact list and share limited details of the selected contact(s) with a website. It allows users to share only what they want, when they want, and makes it easier for users to reach and connect with their friends and family.
 date: 2019-08-07
-updated: 2020-03-19
+updated: 2020-04-14
 tags:
   - post
   - capabilities
@@ -130,7 +130,7 @@ user gesture.
   While the Contacts Picker API was launched in Chrome 80, the newly added
   properties `'address'` and `'icon'` require registering for an [origin
   trial](https://developers.chrome.com/origintrials/#/view_trial/-6951306024846360575)
-  until at least Chrome 82.
+  until at least Chrome 83.
 {% endAside %}
 
 Not all properties are available in every circumstances. The already mentioned
