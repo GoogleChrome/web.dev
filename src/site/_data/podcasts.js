@@ -1,7 +1,7 @@
 module.exports = [
   {
     title: 'HTTP 203',
-    url: 'https://developers.google.com/web/shows/http203/podcast',
+    url: 'https://http203.libsyn.com/',
     description: `Google Developers Jake and Surma discuss their philosophies
       about web development and the various aspects of it, meanwhile dropping in
       lifehacks, lessons and some rather honest truths.`,
