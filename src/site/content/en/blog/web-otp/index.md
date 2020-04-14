@@ -254,7 +254,7 @@ const content = await navigator.credentials.get({
 
 ### Use the API declaratively
 
-The code below demonstrates a web component that extends `input`.
+The code below demonstrates a Web Component that extends `input`.
 
 ```js
 if ('customElements' in window && 'OTPCredential' in window) {
