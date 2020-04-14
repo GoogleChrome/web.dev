@@ -241,14 +241,14 @@ instance in the [`options`
 object](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get#Parameters).
 
 ```js
-const signal = new AbortController();
+const abortController = new AbortController();
 let timer = setTimeout(() => {
-  signal.abort();
+  abortController.abort();
 }, 10 * 1000);
 
 const content = await navigator.credentials.get({
   otp: { transport:['sms'] },
-  abort: signal
+  signal: abortController.signal
 });
 ```
 
@@ -261,19 +261,19 @@ if ('customElements' in window && 'OTPCredential' in window) {
   customElements.define("one-time-code",
     class extends HTMLInputElement {
       connectedCallback() {
-        this.signal = new AbortController();
-        this.receive();
+        this.abortController = new AbortController();
+        this.receive(); 
       }
       disconnectedCallback() {
         this.abort();
       }
       abort() {
-        this.signal.abort();
+        this.abortController.abort();
       }
       async receive() {
         try {
           const content = await navigator.credentials.get({
-            otp: {transport:['sms']}, abort: this.signal
+            otp: {transport:['sms']}, signal: this.abortController.signal
           });
           this.value = content.code;
           this.dispatchEvent(new Event('autocomplete'));
