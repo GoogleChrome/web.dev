@@ -287,7 +287,7 @@ if ('customElements' in window && 'OTPCredential' in window) {
 }
 ```
 
-After this declaration you can add `is="one-time-code` to any `input` element.
+After this declaration you can add `is="one-time-code"` to any `input` element.
 As soon as the element is added to the document tree, it starts waiting
 for SMS messages to arrive and emits an `autocomplete` event as soon
 as an OTP is passed.
