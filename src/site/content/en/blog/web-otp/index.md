@@ -294,7 +294,7 @@ as an OTP is passed.
 
 ```html
 <form>
-  <input is="one-time-code" autocomplete="one-time-code" required />
+  <input is="one-time-code" autocomplete="one-time-code" required/>
   <input type="submit">
 </form>
 ```
