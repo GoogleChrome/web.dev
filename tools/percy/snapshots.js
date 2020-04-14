@@ -1,43 +1,43 @@
 const PercyScript = require('@percy/script');
 const pagesToTest = [
   {
-    url: '',
+    url: '/',
     title: 'Home page',
   },
   {
-    url: 'learn',
+    url: '/learn/',
     title: 'Learn page',
   },
   {
-    url: 'measure',
+    url: '/measure/',
     title: 'Measure page',
   },
   {
-    url: 'blog',
+    url: '/blog/',
     title: 'Blog page',
   },
   {
-    url: 'about',
+    url: '/about/',
     title: 'About page',
   },
   {
-    url: 'codelab-avoid-invisible-text',
+    url: '/codelab-avoid-invisible-text/',
     title: 'Codelab page',
   },
   {
-    url: 'handbook/web-dev-components',
+    url: '/handbook/web-dev-components/',
     title: 'Components page',
   },
   {
-    url: 'authors',
+    url: '/authors/',
     title: 'Authors page',
   },
   {
-    url: 'tags',
+    url: '/tags/',
     title: 'Tags page',
   },
   {
-    url: 'podcasts',
+    url: '/podcasts/',
     title: 'Podcasts page',
   },
 ];
@@ -46,7 +46,8 @@ const pagesToTest = [
 PercyScript.run(
   async (browser, percySnapshot) => {
     for (page of pagesToTest) {
-      await browser.goto(`http://localhost:8080/${page.url}`);
+      const url = new URL(page.url, 'http://localhost:8080').href;
+      await browser.goto(url);
       // Wait for the SPA to update the active link in the top nav.
       await browser.waitFor(2000);
       await percySnapshot(`${page.title}`);
