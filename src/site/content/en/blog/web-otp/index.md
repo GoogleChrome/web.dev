@@ -206,7 +206,7 @@ if ('OTPCredential' in window) {
 ### Process the OTP
 
 The Web OTP API itself is simple enough. Use
-[`navigator.credentials.get()`](https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer/get)
+[`navigator.credentials.get()`](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get)
 to obtain the OTP. Web OTP adds a new `otp` option to that method. It only has
 one property: `transport`, whose value must be an array with the string `'sms'`.
 
