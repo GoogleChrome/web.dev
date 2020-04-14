@@ -104,56 +104,17 @@ workboxRouting.registerRoute(
 );
 
 /**
- * This is a special handler for requests without a trailing "/". These requests _should_ go to
- * the network (so that we can match web.dev's redirects.yaml file) but fallback to the normalized
- * version of the request (e.g., "/foo" => "/foo/").
- */
-const untrailedContentPathRe = new RegExp('^(/[\\w-]+)+$');
-
-workboxRouting.registerRoute(
-  matchSameOriginRegExp(untrailedContentPathRe),
-  async ({url, event}) => {
-    const {pathname} = url;
-
-    // First, check if there's actually a partial node in the cache already. If so, there's no need
-    // to do a real network fetch, as we know the modified request will be satisfied.
-    const cachedResponse = await caches.match(
-      new Request(pathname + '/index.json'),
-    );
-    if (!cachedResponse) {
-      // If there's not, then try the network.
-      try {
-        return await fetch(event.request);
-      } catch (e) {
-        // If fetch fails, just redirect below.
-      }
-    }
-
-    // Either way, redirect to the updated Location.
-    const headers = new Headers();
-    headers.append('Location', `${pathname}/${url.search}`);
-    const redirectResponse = new Response('', {
-      status: 301,
-      headers,
-    });
-    return redirectResponse;
-  },
-);
-
-/**
  * Match fetches for patials, for SPA requests. Matches "/foo-bar/index.json" and
- * "/foo-bar/many/parts/index.json", for partial SPA requests.
+ * "/foo-bar/many/parts/test.json", for partial SPA requests.
  */
-const partialPathRe = new RegExp('^/([\\w-]+/)*index\\.json$');
+const partialPathRe = new RegExp('^/([\\w-]+/)*\\w+\\.json$');
 const partialStrategy = new workboxStrategies.NetworkFirst({
   cacheName: 'webdev-html-cache-v1', // nb. We used to cache HTML here, so we name it the same
   plugins: [contentExpirationPlugin],
 });
 
-workboxRouting.registerRoute(
-  matchSameOriginRegExp(partialPathRe),
-  partialStrategy,
-);
+const partialMatch = matchSameOriginRegExp(partialPathRe);
+workboxRouting.registerRoute(partialMatch, partialStrategy);
 
 /**
  * Cache images that aren't included in the original manifest, such as author profiles.
@@ -167,69 +128,87 @@ workboxRouting.registerRoute(
 );
 
 /**
- * Match "/foo-bar/ "and "/foo-bar/as/many/of-these-as-you-like/" (with optional trailing
- * "index.html"), normal page nodes for web.dev. This only matches on pathname.
+ * Matches normal web.dev routes. This will match pages like:
+ *   - /
+ *   - /foo-bar                  # without trailing slash
+ *   - /foo-bar/
+ *   - /zing/hello/
+ *   - /test/page/index.html     # trailing /index.html is special
+ *   - /hello/other.html         # also allows any html page
+ *   - ///////////.html          # valid but wrong
  *
- * This fetch handler internally fetches the required partial using `partialStrategy`, and
- * generates the page's real HTML based on the layout template.
+ * This won't match any URL that contains a "." except for a trailing ".html".
+ *
+ * Internally, the handler fetches the required partial using `partialStrategy`,
+ * and generates the page's real HTML based on the layout template. If the
+ * partial fails to load, it _then_ tries a real network request (for
+ * redirects).
  */
-const contentPathRe = new RegExp('^(/(?:[\\w-]+/)*)(?:|index\\.html)$');
-
-workboxRouting.registerRoute(
-  matchSameOriginRegExp(contentPathRe),
-  async ({params}) => {
-    const pathname = params[1]; // 1st group from contentPathRe regexp
-
-    let response;
-    try {
-      // Use the same strategy for partials when hydrating a full request.
-      // Note that this doesn't implicitly invoke the global catch handler (as we're just using
-      // the strategy itself), so failures here flow to the catch block below.
-      response = await partialStrategy.handle({
-        request: new Request(pathname + 'index.json'),
-      });
-    } catch (e) {
-      // Offline pages are served with the default 200 status.
-      response = await offlinePartial();
-    }
-
-    // Ignore anything but a 200 or 404.
-    if (!response.ok && response.status !== 404) {
-      throw response.status;
-    }
-
-    let partial;
-    try {
-      partial = await response.json();
-    } catch (e) {
-      if (response.status !== 404) {
-        throw e;
-      }
-      // This happens in our Netlify staging environment: we don't serve the 404 JSON correctly, so
-      // fetch it manually. If this fetch or JSON fails, throw normally.
-      response = await fetch('/404/index.json');
-      partial = await response.json();
-    }
-
-    // Our target browsers all don't mind if we just place <title> in the middle of the document.
-    // This is far simpler than trying to find the right place in <head>.
-    const meta = partial.offline ? `<meta name="offline" value="true" />` : '';
-    const output = layoutTemplate.replace(
-      '%_CONTENT_REPLACE_%',
-      meta + `<title>${partial.title || ''}</title>` + partial.raw,
-    );
-    const headers = new Headers();
-    headers.append('Content-Type', 'text/html');
-    return new Response(output, {headers, status: response.status});
-  },
+const normalMatch = matchSameOriginRegExp(
+  new RegExp('^/[\\w-/]*(?:|\\.html)$'),
 );
+workboxRouting.registerRoute(normalMatch, async ({url}) => {
+  let pathname = url.pathname;
 
-workboxRouting.setCatchHandler(async ({event, url}) => {
-  // This check is the same as the partialPathRe handler above. It only handles partial JSON
-  // failures (as the handler above is a simple NetworkFirst strategy). Regular HTML failures are
-  // handled by the in-depth contentPathRe path above.
-  if (url.host === self.location.host && partialPathRe.test(url.pathname)) {
+  // Ensure that the pathname always ends with ".html". This means that URLs
+  // ending with "foo.html" are valid, and we add a default "index.html" if
+  // it's otherwise missing.
+  if (!pathname.endsWith('.html')) {
+    if (!pathname.endsWith('/')) {
+      pathname += '/';
+    }
+    pathname += 'index.html';
+  }
+
+  // As we have a fully-formed URL with a trailing ".html", then just replace
+  // it to get the path of its respective partial.
+  const partialPath = pathname.replace(/\.html$/, '.json');
+
+  let response;
+  try {
+    // Use the same strategy for partials when hydrating a full request. Note
+    // that this doesn't implicitly invoke the global catch handler (as we're
+    // just using the strategy itself), so failures here flow to the catch
+    // block below.
+    const request = new Request(partialPath);
+    response = await partialStrategy.handle({request});
+  } catch (e) {
+    // Offline pages are served with the default 200 status.
+    response = await offlinePartial();
+  }
+
+  // If we can't get a real response (or the offline response), go to the
+  // network proper. This includes for 404 pages, as we don't want to mask a
+  // redirect handlers.
+  if (!response.ok) {
+    throw new Error(
+      `unhandled status for normal route '${pathname}': ${response.status}`,
+    );
+  }
+  const partial = await response.json();
+
+  // Our target browsers all don't mind if we just place <title> in the middle of the document.
+  // This is far simpler than trying to find the right place in <head>.
+  const meta = partial.offline ? `<meta name="offline" value="true" />` : '';
+  const output = layoutTemplate.replace(
+    '%_CONTENT_REPLACE_%',
+    meta + `<title>${partial.title || ''}</title>` + partial.raw,
+  );
+  const headers = new Headers();
+  headers.append('Content-Type', 'text/html');
+  return new Response(output, {headers, status: response.status});
+});
+
+workboxRouting.setCatchHandler(async ({url, request}) => {
+  // If we failed to fetch a partial, use the offline partial.
+  if (partialMatch({url})) {
     return offlinePartial();
+  }
+
+  // Go to the network for 'normal' pages. This will only fire if there's an
+  // internal error with the normalMatch route handler, above.
+  if (normalMatch({url})) {
+    return fetch(request);
   }
 });
 

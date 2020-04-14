@@ -1,3 +1,16 @@
+# Master redirects file for web.dev. This mirrors the old DevSite file.
+# There are two types of redirects:
+#
+#  (1) Simple redirects, e.g., "from: /foo"
+#      - These don't match anything under this URL, like "/foo/bar"
+#      - No trailing slash is required, as this matches "/foo", "/foo/" and
+#        "/foo/index.html"
+#
+#  (2) Group redirects, e.g., "from: /foo/...", which will match the top-level
+#      path (with the same rules as (1)) as well as any descendant paths
+#
+# WARNING! Redirects DO NOT take priority over static content.
+
 redirects:
 
 # Policies
@@ -168,13 +181,10 @@ redirects:
 - from: /pwa
   to: /progressive-web-apps/
 
-- from: /pwa/
-  to: /progressive-web-apps/
-
-- from: /installable/
+- from: /installable
   to: /progressive-web-apps/#installable
 
-- from: /discover-installable/
+- from: /discover-installable
   to: /progressive-web-apps/#installable
 
 # Redirect for spec name changes
