@@ -70,20 +70,24 @@ const defaultPlugins = [
 async function buildCacheManifest() {
   const toplevelManifest = await getManifest({
     globDirectory: 'dist',
-    globPatterns: ['images/**', '*.css', '*.js'],
+    globPatterns: [
+      'images/**/*.{png,svg}', // .jpg files are used for authors, skip
+      '*.css',
+      '*.js',
+    ],
+    globIgnores: [
+      'images/shared/**', // don't include article shared PNGs
+    ],
   });
   if (toplevelManifest.warnings.length) {
     throw new Error(`toplevel manifest: ${toplevelManifest.warnings}`);
   }
 
-  // This doesn't include any HTML, as we bundle that directly into the source
-  // of the Service Worker below.
+  // We need this manifest to be separate as we pretend it's rooted at the
+  // top-level, even though it comes from "dist/en".
   const contentManifest = await getManifest({
     globDirectory: 'dist/en',
-    globPatterns: [
-      'offline/index.json',
-      'images/**/*.{png,svg}', // .jpg files are used for authors, skip
-    ],
+    globPatterns: ['offline/index.json'],
   });
   if (contentManifest.warnings.length) {
     throw new Error(`content manifest: ${contentManifest.warnings}`);
