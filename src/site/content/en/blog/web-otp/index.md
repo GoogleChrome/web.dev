@@ -31,7 +31,7 @@ back to the developer's server demonstrates control of the phone number.
 
 {% Aside %}
 The Web OTP API was originally called the SMS Receiver API. You may still see it
-named that way in some places. If used that API, you should still read this
+named that way in some places. If you used that API, you should still read this
 article. [There are significant differences](#differences) between the current
 and earlier versions of the API.
 {% endAside %}
