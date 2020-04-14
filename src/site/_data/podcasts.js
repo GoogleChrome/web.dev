@@ -8,7 +8,7 @@ module.exports = [
     thumbnail: '/images/podcasts/http203.jpg',
   },
   {
-    title: 'Designers vs Developer',
+    title: 'Designer vs Developer',
     url: 'https://anchor.fm/mustafa-kurtuldu',
     description: `A show that tries to solve the challenges faced in industry
       by having an open conversation between the two.`,
