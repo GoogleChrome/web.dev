@@ -20,7 +20,7 @@ const mozjpeg = require('imagemin-mozjpeg');
 const pngquant = require('imagemin-pngquant');
 const imagemin = require('gulp-imagemin');
 const rename = require('gulp-rename');
-const gulpif = require('gulp-if');
+const through2 = require('through2');
 
 /* eslint-disable max-len */
 const assetTypes = `jpg,jpeg,png,svg,gif,webp,webm,mp4,mov,ogg,wav,mp3,txt,yaml`;
@@ -28,9 +28,23 @@ const assetTypes = `jpg,jpeg,png,svg,gif,webp,webm,mp4,mov,ogg,wav,mp3,txt,yaml`
 
 const isProd = process.env.ELEVENTY_ENV === 'prod';
 
-// These are images that our CSS refers to.
+const compressImagesTransform = (pngQuality, jpegQuality) => {
+  if (!isProd) {
+    return through2.obj();
+  }
+  return imagemin([
+    pngquant({quality: [pngQuality, pngQuality]}),
+    mozjpeg({quality: jpegQuality * 100}),
+  ]);
+};
+
+// These are global images used in CSS and base HTML, such as author profiles.
+// We don't compress the PNGs here as they are trivially small (site icons).
 gulp.task('copy-global-images', () => {
-  return gulp.src(['./src/images/**/*']).pipe(gulp.dest('./dist/images'));
+  return gulp
+    .src(['./src/images/**/*'])
+    .pipe(compressImagesTransform(1.0, 0.8))
+    .pipe(gulp.dest('./dist/images'));
 });
 
 // These are misc top-level assets.
@@ -40,29 +54,20 @@ gulp.task('copy-misc', () => {
 
 // Images and any other assets in the content directory that should be copied
 // over along with the posts themselves.
-// Because we use permalinks to strip the parent directories form our posts
+// Because we use permalinks to strip the parent directories from our posts
 // we need to also strip them from the content paths.
 gulp.task('copy-content-assets', () => {
   return (
     gulp
       .src([`./src/site/content/en/**/*.{${assetTypes}}`])
-      .pipe(
-        gulpif(
-          isProd,
-          imagemin([pngquant({quality: [0.8, 0.8]}), mozjpeg({quality: 80})]),
-        ),
-      )
+      .pipe(compressImagesTransform(0.8, 0.8))
       // This makes the images show up in the same spot as the permalinked posts
       // they belong to.
       .pipe(
-        rename(function(assetPath) {
-          const parts = assetPath.dirname.split('/');
-          // Let the en/images directory pass through.
-          if (parts[0] === 'images') {
-            return;
-          }
+        rename((assetPath) => {
+          const leftPart = assetPath.dirname.split('/')[0];
           // Let en/handbook images pass through.
-          if (parts[0] === 'handbook') {
+          if (leftPart === 'handbook') {
             return;
           }
           return (assetPath.dirname = path.basename(assetPath.dirname));

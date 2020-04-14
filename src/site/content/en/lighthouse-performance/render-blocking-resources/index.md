@@ -4,7 +4,7 @@ title: Eliminate render-blocking resources
 description: |
   Learn about the render-blocking-resources audit.
 date: 2019-05-02
-updated: 2019-10-04
+updated: 2020-04-14
 web_lighthouse:
   - render-blocking-resources
 ---
@@ -52,7 +52,7 @@ When you load or run a page, the tab tells you how much code was used,
 versus how much was loaded:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="/images/includes/coverage.png" alt="Chrome DevTools: Coverage tab">
+  <img class="w-screenshot w-screenshot--filled" src="coverage.png" alt="Chrome DevTools: Coverage tab">
   <figcaption class="w-figcaption">
     Chrome DevTools: Coverage tab.
   </figcaption>
