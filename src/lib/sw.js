@@ -108,6 +108,9 @@ workboxRouting.registerRoute(
  *   - /index.json
  *   - /foo-bar/index.json
  *   - /foo-bar/many/parts/test.json
+ *
+ * This matches all JSON files, but the only JSON files served on our domain are
+ * partials.
  */
 const partialPathRe = new RegExp('^/([\\w-]+/)*\\w+\\.json$');
 const partialStrategy = new workboxStrategies.NetworkFirst({
