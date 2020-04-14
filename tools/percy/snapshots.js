@@ -37,6 +37,10 @@ const pagesToTest = [
     title: 'Tags page',
   },
   {
+    url: 'podcasts',
+    title: 'Podcasts page',
+  },
+  {
     url: 'newsletter',
     title: 'Newsletter page',
   },
@@ -48,7 +52,7 @@ PercyScript.run(
     for (page of pagesToTest) {
       await browser.goto(`http://localhost:8080/${page.url}`);
       // Wait for the SPA to update the active link in the top nav.
-      await browser.waitFor(2000);
+      await browser.waitFor(5000);
       await percySnapshot(`${page.title}`);
     }
   },

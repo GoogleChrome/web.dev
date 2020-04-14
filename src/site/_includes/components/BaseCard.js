@@ -136,6 +136,20 @@ class BaseCard {
     `;
   }
 
+  renderSubhead(subhead) {
+    if (!subhead) {
+      return;
+    }
+
+    return html`
+      <a class="w-card-base__link" tabindex="-1" href="${this.url}">
+        <p class="w-card-base__subhead">
+          ${md(subhead)}
+        </p>
+      </a>
+    `;
+  }
+
   renderChips() {
     if (!this.displayedTags.length) {
       return;
@@ -164,6 +178,7 @@ class BaseCard {
   }
 
   render() {
+    // prettier-ignore
     return html`
       <div class="w-card ${this.className}" role="listitem">
         <article
@@ -198,11 +213,7 @@ class BaseCard {
               class="w-card-base__desc ${this.className &&
                 `${this.className}__desc`}"
             >
-              <a class="w-card-base__link" tabindex="-1" href="${this.url}">
-                <p class="w-card-base__subhead">
-                  ${md(this.data.subhead)}
-                </p>
-              </a>
+              ${this.renderSubhead(this.data.subhead)}
               ${this.renderChips()}
             </div>
           </div>
