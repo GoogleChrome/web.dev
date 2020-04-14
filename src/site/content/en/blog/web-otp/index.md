@@ -238,7 +238,7 @@ document.querySelector('#input').value = content.code;
 
 To set a timeout that aborts the `get()` call, pass an `AbortController`
 instance in the [`options`
-object](https://developer.mozilla.org/en-US/docs/Web/API/CredentialsContainer/get#Parameters).
+object](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get#Parameters).
 
 ```js
 const signal = new AbortController();
