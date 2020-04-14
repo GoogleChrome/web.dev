@@ -40,12 +40,18 @@ const redirectHandler = (() => {
 
 // 404 handlers aren't special, they just run last.
 const notFoundHandler = (req, res, next) => {
-  // This 404 handler is vaguely approximated on Netlify in our staging environment.
+  res.status(404);
+
+  const extMatch = /(\.[^.]*)$/.exec(req.url);
+  if (extMatch && extMatch[1] !== '.html') {
+    // If this had an extension and it was not ".html", don't send any bytes.
+    // This is just a minor optimization to not waste bytes.
+    // Pages without extensions won't match here: e.g., "/foo" will still send HTML.
+    return res.end();
+  }
+
   const options = {root: 'dist/en'};
-  const suffix = req.url.endsWith('.json') ? 'json' : 'html';
-  res
-    .status(404)
-    .sendFile(`404/index.${suffix}`, options, (err) => err && next(err));
+  res.sendFile(`404/index.html`, options, (err) => err && next(err));
 };
 
 // Disallow invalid hostnames, and remove any active Service Worker too (users

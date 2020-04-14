@@ -25,6 +25,10 @@ async function loadEntrypoint(url) {
 /**
  * Gets the partial content of the target normalized URL. Returns null if aborted.
  *
+ * If the partial is missing (i.e., 404) this throws an error. This means that
+ * requests to missing pages will do an additional network round-trip. This is
+ * important as there might be a configured redirect.
+ *
  * @param {string} url of the page to fetch.
  * @param {!AbortSignal=} signal
  * @return {?{raw: string, title: string, offline: (boolean|undefined)}}
@@ -33,10 +37,9 @@ export async function getPartial(url, signal) {
   if (!url.endsWith('/')) {
     throw new Error(`partial unsupported for non-folder: ${url}`);
   }
-
   try {
     const res = await fetch(url + 'index.json', {signal});
-    if (!res.ok && res.status !== 404) {
+    if (!res.ok) {
       throw res.status;
     }
     return await res.json();
@@ -143,14 +146,8 @@ export async function swapContent({firstRun, url, signal, ready, state}) {
     store.setState({isPageLoading: true});
     partial = await getPartial(url, signal);
     if (signal.aborted) {
-      return null;
+      return;
     }
-  }
-
-  // If the partial was bad, force a real page load. This will occur in Netlify or other simple
-  // staging environments on 404, where we don't serve real JSON.
-  if (!partial || typeof partial !== 'object') {
-    throw new Error(`invalid partial for: ${url}`);
   }
 
   // The bootstrap code uses this to trigger a reload if we see an "online" event. Only returned via
