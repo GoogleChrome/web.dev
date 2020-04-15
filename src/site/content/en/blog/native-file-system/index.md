@@ -299,7 +299,7 @@ Saving file handles to IndexedDB means that you can store state, or remember
 which files a user was working on. This makes it possible to keep a list of
 recently opened or edited files, offer to re-open the last file when the app
 is opened, et cetera. In the text editor, I store a list of the 5 most recent
-files the user has  opened, making it easy to access those files again.
+files the user has opened, making it easy to access those files again.
 
 Since permissions are not persisted between sessions, you should verify
 whether the user has granted permission to the file using
