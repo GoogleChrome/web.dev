@@ -1,14 +1,10 @@
 @import '../settings/colors';
 @import '../tools/breakpoints';
 
-web-subscribe {
-  // Prevent FOUC by applying base style until after firstUpdated().
-  // This isn't ":not(:defined)" because firstUpdated occurs after a frame.
-  &.unresolved { // sass-lint:disable-line class-name-format
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
+web-subscribe:not(:defined) {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .w-subscribe {
