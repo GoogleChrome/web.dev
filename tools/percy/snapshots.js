@@ -1,4 +1,5 @@
 const PercyScript = require('@percy/script');
+const scrollToBottom = require('scroll-to-bottomjs');
 const pagesToTest = [
   {
     url: '/',
@@ -48,6 +49,7 @@ PercyScript.run(
     for (page of pagesToTest) {
       const url = new URL(page.url, 'http://localhost:8080').href;
       await browser.goto(url, {waitUntil: 'networkidle0'});
+      await page.evaluate(scrollToBottom);
       // Wait for the SPA to update the active link in the top nav.
       await browser.waitFor(2000);
       await percySnapshot(`${page.title}`);
