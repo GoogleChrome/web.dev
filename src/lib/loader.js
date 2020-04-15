@@ -18,7 +18,10 @@ import './utils/underscore-import-polyfill';
 async function loadEntrypoint(url) {
   if (url.startsWith('/measure/')) {
     return import('./pages/measure.js');
+  } else if (url.startsWith('/newsletter/')) {
+    return import('./pages/newsletter.js');
   }
+
   return import('./pages/default.js');
 }
 
