@@ -4,7 +4,7 @@ subhead: The Privacy Sandbox is a series of proposals to satisfy third-party use
 authors:
   - samdutton
 date: 2020-04-08
-updated: 2020-04-09
+updated: 2020-04-15
 hero: hero.jpg
 alt: A black-on-white printed sign saying Private, on a wooden wall.
 description: The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms. The proposals need your feedback.
@@ -38,7 +38,7 @@ Relevant ads are [less annoying to users and more profitable for publishers](htt
 
 Reliable measurement and anti-fraud protection are also crucial. Advertisers and site owners must be able to distinguish between malicious bots and trustworthy humans. If advertisers can't reliably tell which ad clicks are from real humans, they spend less, so site publishers get less revenue. Many third party services currently use techniques such as [device fingerprinting](./#fingerprinting) to combat fraud.
 
-The problem is… privacy.
+Ads play a major role in making the internet an easily accessible, open place, but advertising has to work for everyone. When it does, it means users can get access to information and great content, creators and publishers can thrive by getting fair compensation for their work, and marketers can connect with people interested in what they have to offer. Which brings us to our goal: to evolve the web to better respect user privacy and support a vibrant, thriving ecosystem.
 
 ## The current state of privacy on the web
 
@@ -180,11 +180,11 @@ To reiterate: the Privacy Sandbox authors need your support. The [explainers](ht
 +   Google AI Blog: [Federated Learning: Collaborative Machine Learning without Centralized Training Data](https://ai.googleblog.com/2017/04/federated-learning-collaborative.html)
 +   [The future of third-party cookies](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html)
 
-### Policy and requirements
+### Use cases, policy and requirements
 
-+   The [Tor Browser design's "Privacy Requirements"](https://2019.www.torproject.org/projects/torbrowser/design/#privacy), particularly the clear emphasis on "Unlinkability".
-+   Mozilla anti-tracking policy: [wiki.mozilla.org/Security/Anti_tracking_policy](https://wiki.mozilla.org/Security/Anti_tracking_policy)
-+   WebKit tracking prevention policy: [webkit.org/tracking-prevention-policy](https://webkit.org/tracking-prevention-policy/)
++   [Advertising Use Cases](https://github.com/w3c/web-advertising/blob/master/support_for_advertising_use_cases.md)
++   [Mozilla anti-tracking policy](https://wiki.mozilla.org/Security/Anti_tracking_policy)
++   [WebKit tracking prevention policy](https://webkit.org/tracking-prevention-policy/)
 +   [Privacy Preserving Ad Click Attribution For the Web](https://webkit.org/blog/8943/privacy-preserving-ad-click-attribution-for-the-web/)
 +   [Brave, Fingerprinting, and Privacy Budgets](https://brave.com/brave-fingerprinting-and-privacy-budgets/)
 
