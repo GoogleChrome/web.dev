@@ -182,13 +182,13 @@ there's an issue with COEP, you should see
 column.
 
 <figure class="w-figure">
-  <img class="w-screenshot-filled" src="devtools1.png" alt="COEP issues in the Status column of the Network panel.">
+  <img class="w-screenshot-filled" src="devtools1.jpg" alt="COEP issues in the Status column of the Network panel.">
 </figure>
 
 You can then click the entry to see more details.
 
 <figure class="w-figure">
-  <img class="w-screenshot-filled" src="devtools2.png" alt="Details of the COEP issue are shown in the Headers tab after clicking a network resource in the Network panel.">
+  <img class="w-screenshot-filled" src="devtools2.jpg" alt="Details of the COEP issue are shown in the Headers tab after clicking a network resource in the Network panel.">
 </figure>
 
 {% Aside %}
