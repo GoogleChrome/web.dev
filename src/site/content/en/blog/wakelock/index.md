@@ -1,12 +1,12 @@
 ---
-title: Stay awake with the Wake Lock API
-subhead: The Wake Lock API provides a way to prevent devices from dimming or locking the screen when an application needs to keep running.
+title: Stay awake with the Screen Wake Lock API
+subhead: The Screen Wake Lock API provides a way to prevent devices from dimming or locking the screen when an application needs to keep running.
 authors:
   - petelepage
   - thomassteiner
-description: To avoid draining the battery, most devices will quickly fall asleep when left idle. While this is fine most of the time, there are some applications that need to keep the screen or the device awake in order to complete some work. The Wake Lock API provides a way to prevent the device from dimming or locking the screen or prevent the device from going to sleep when an application needs to keep running.
+description: To avoid draining the battery, most devices will quickly fall asleep when left idle. While this is fine most of the time, there are some applications that need to keep the screen awake in order to complete some work. The Screen Wake Lock API provides a way to prevent the device from dimming or locking the screen when an application needs to keep running.
 date: 2018-12-18
-updated: 2020-02-21
+updated: 2020-04-14
 hero: hero.jpg
 hero_position: center
 alt: |
@@ -22,31 +22,31 @@ tags:
 ---
 
 {% Aside %}
-  The Wake Lock API, part of Google's
+  The Screen Wake Lock API, part of Google's
   [capabilities project](https://developers.google.com/web/updates/capabilities),
   is currently in development. This post will be updated as the
   implementation progresses.
 {% endAside %}
 
-## What is the Wake Lock API? {: #what }
+## What is the Screen Wake Lock API? {: #what }
 
 To avoid draining the battery, most devices quickly go to sleep when left
 idle. While this is fine most of the time, some applications need to keep the
-screen or the device awake to complete their work. Examples include a
-run-tracking app, which turns the screen off but keeps the system awake, or a game
+screen awake to complete their work. Examples include cooking apps 
+that show the steps of a recipe or a game
 like [Ball Puzzle](https://ball-puzzle.appspot.com/), which uses the device
 motion APIs for input.
 
-The [Wake Lock API][spec-ed] provides a way to prevent the device from dimming
-and locking the screen or going to sleep. This
+The [Screen Wake Lock API][spec-ed] provides a way to prevent the device from dimming
+and locking the screen. This
 capability enables new experiences that, until now, required a native app.
 
-The Wake Lock API reduces the need for hacky and potentially
+The Screen Wake Lock API reduces the need for hacky and potentially
 power-hungry workarounds. It addresses the shortcomings of an older API
 that was limited to simply keeping the screen on and had a number of
 security and privacy issues.
 
-## Suggested use cases for the Wake Lock API {: #use-cases }
+## Suggested use cases for the Screen Wake Lock API {: #use-cases }
 
 [RioRun](https://www.theguardian.com/sport/2016/aug/06/rio-running-app-marathon-course-riorun),
 a web app developed by [The Guardian](https://www.theguardian.com/),
@@ -87,11 +87,12 @@ Of course, there are plenty of other use cases:
   committer is a Googler, and these contributors deserve special recognition!
 {% endAside %}
 
-## Using the Wake Lock API {: #use }
+## Using the Screen Wake Lock API {: #use }
 
 ### Enabling support during the origin trial phase
-The Wake Lock API will be available as an origin trial in Chrome 79.
-The origin trial is expected to end in Chrome 81.
+The Screen Wake Lock API is available as an origin trial in Chrome 79.
+The origin trial is expected to end in Chrome 83
+and the feature to launch in Chrome 84.
 
 {% include 'content/origin-trials.njk' %}
 
@@ -100,38 +101,34 @@ The origin trial is expected to end in Chrome 81.
 {% include 'content/origin-trial-register.njk' %}
 
 ### Enabling via chrome://flags
-To experiment with the Wake Lock API locally, without an origin trial token,
+To experiment with the Screen Wake Lock API locally, without an origin trial token,
 enable the `#experimental-web-platform-features` flag in `chrome://flags`.
 
 ### Demo
 
-Check out the [Wake Lock demo][demo] and [demo source][demo-source].
-Notice how the wake lock gets automatically released when you switch tabs
+Check out the [Screen Wake Lock demo][demo] and [demo source][demo-source].
+Notice how the screen wake lock gets automatically released when you switch tabs
 or switch to a different app.
 
 ### Wake lock types {: #wake-lock-types }
 
-The Wake Lock API provides two types of wake locks: `screen` and `system`.
-While they are treated independently, one may imply the effects of the other.
-For example, a screen wake lock implies that the app should continue running.
+The Screen Wake Lock API currently provides just one type of wake lock: `screen`.
 
 #### `screen` wake lock
 
 A `screen` wake lock prevents the device's screen from turning
 off so that the user can see the information that's displayed on screen.
 
-#### `system` wake lock
-
 {% Aside 'caution' %}
-The `system` wake lock is not currently implemented.
+An earlier version of the specification allowed an additional `system` wake lock
+that prevents the device's CPU from entering standby mode so
+that your app can continue running.
+We have decided to not proceed with this type for the moment.
 {% endAside %}
 
-A `system` wake lock prevents the device's CPU from entering standby mode so
-that your app can continue running.
+### Getting a screen wake lock {: #get-wake-lock }
 
-### Getting a wake lock {: #get-wake-lock }
-
-To request a wake lock, you need to call the `navigator.wakeLock.request()` method
+To request a screen wake lock, you need to call the `navigator.wakeLock.request()` method
 that returns a `WakeLockSentinel` object.
 You pass this method the desired wake lock type as a parameter,
 which *currently* is limited to just `'screen'`.
@@ -140,14 +137,14 @@ because the battery charge level is too low),
 so it's a good practice to wrap the call in a `try…catch` statement.
 The exception's message will contain more details in case of failure.
 
-### Releasing a wake lock {: #release-wake-lock }
+### Releasing a screen wake lock {: #release-wake-lock }
 
-You also need a way to release the wake lock, which is achieved by calling the
+You also need a way to release the screen wake lock, which is achieved by calling the
 `release()` method of the `WakeLockSentinel` object.
 If you don't store a reference to the `WakeLockSentinel`, there's no way
 to release the lock manually, but it will be released once the current tab is invisible.
 
-If you want to automatically release the wake lock
+If you want to automatically release the screen wake lock
 after a certain period of time has passed,
 you can use `window.setTimeout()` to call `release()`, as shown in the example below.
 
@@ -155,20 +152,20 @@ you can use `window.setTimeout()` to call `release()`, as shown in the example b
 // The wake lock sentinel.
 let wakeLock = null;
 
-// Function that attempts to request a wake lock.
+// Function that attempts to request a screen wake lock.
 const requestWakeLock = async () => {
   try {
     wakeLock = await navigator.wakeLock.request('screen');
     wakeLock.addEventListener('release', () => {
-      console.log('Wake Lock was released');
+      console.log('Screen Wake Lock was released');
     });
-    console.log('Wake Lock is active');
+    console.log('Screen Wake Lock is active');
   } catch (err) {
     console.error(`${err.name}, ${err.message}`);
   }
 };
 
-// Request a wake lock…
+// Request a screen wake lock…
 await requestWakeLock();
 // …and release it again after 5s.
 window.setTimeout(() => {
@@ -177,18 +174,18 @@ window.setTimeout(() => {
 }, 5000);
 ```
 
-### The wake lock lifecycle {: #wake-lock-lifecycle }
+### The screen wake lock lifecycle {: #wake-lock-lifecycle }
 
-When you play with the [wake lock demo][demo], you'll notice that wake locks
+When you play with the [screen wake lock demo][demo], you'll notice that screen wake locks
 are sensitive to [page visibility][page-visibility-api] and
-[full-screen mode][full-screen-api]. This means that the wake lock
+[full-screen mode][full-screen-api]. This means that the screen wake lock
 will automatically be released when you enter full-screen mode, minimize a
-tab or window, or switch away from a tab or window where a wake lock is active.
+tab or window, or switch away from a tab or window where a screen wake lock is active.
 
-To reacquire the wake lock,
+To reacquire the screen wake lock,
 listen for the [`visibilitychange`][visibility-change] event and
 the [`fullscreenchange`][fullscreen-change] event
-and request a new wake lock when they occur:
+and request a new screen wake lock when they occur:
 
 ```js
 const handleVisibilityChange = () => {
@@ -203,12 +200,12 @@ document.addEventListener('fullscreenchange', handleVisibilityChange);
 
 ## Minimize your impact on system resources {: #best-practices }
 
-Should you use a wake lock in your app?
+Should you use a screen wake lock in your app?
 The approach you take depends on the needs of your app. Regardless, you should
 use the most lightweight approach possible for your app to minimize its
 impact on system resources.
 
-Before adding wake lock to your app, consider whether your use cases could
+Before adding a screen wake lock to your app, consider whether your use cases could
 be solved with one of the following alternative solutions:
 
 * If your app is performing long-running downloads, consider using
@@ -217,7 +214,7 @@ be solved with one of the following alternative solutions:
   [background sync](https://developers.google.com/web/updates/2015/12/background-sync).
 
 {% Aside %}
-  Like most other powerful web APIs, the Wake Lock API is only available
+  Like most other powerful web APIs, the Screen Wake Lock API is only available
   when served over **HTTPS**.
 {% endAside %}
 
@@ -225,14 +222,14 @@ be solved with one of the following alternative solutions:
 
 The [Web Platform Incubator Community Group (WICG)](https://www.w3.org/community/wicg/)
 and the Chrome team want to hear about your
-thoughts and experiences with the Wake Lock API.
+thoughts and experiences with the Screen Wake Lock API.
 
 ### Tell us about the API design
 
 Is there something about the API that doesn't work as expected? Or
 are there missing methods or properties that you need to implement your idea?
 
-* File a spec issue on the [Wake Lock API GitHub repo][issues]
+* File a spec issue on the [Screen Wake Lock API GitHub repo][issues]
   or add your thoughts to an existing issue.
 
 ### Report a problem with the implementation
@@ -247,7 +244,7 @@ different from the spec?
 
 ### Show support for the API
 
-Are you planning to use the Wake Lock API? Your public support helps the
+Are you planning to use the Screen Wake Lock API? Your public support helps the
 Chrome team prioritize features and shows other browser vendors how
 critical it is to support them.
 
@@ -258,7 +255,7 @@ critical it is to support them.
 ## Helpful links {: #helpful }
 
 * Specification [Candidate Recommendation][spec-cr] | [Editor's Draft][spec-ed]
-* [Wake Lock Demo][demo] | [Wake Lock Demo source][demo-source]
+* [Screen Wake Lock Demo][demo] | [Screen Wake Lock Demo source][demo-source]
 * [Origin Trial][ot]
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
