@@ -51,7 +51,7 @@ PercyScript.run(
       await browser.goto(url, {waitUntil: 'networkidle0'});
       await page.evaluate(scrollToBottom);
       // Wait for the SPA to update the active link in the top nav.
-      await browser.waitFor(2000);
+      await browser.waitFor(5000);
       await percySnapshot(`${page.title}`);
     }
   },
