@@ -112,7 +112,7 @@ or switch to a different app.
 
 ### Wake lock types {: #wake-lock-types }
 
-The Wake Lock API currently provides just one type of wake lock: `screen`.
+The Screen Wake Lock API currently provides just one type of wake lock: `screen`.
 
 #### `screen` wake lock
 
