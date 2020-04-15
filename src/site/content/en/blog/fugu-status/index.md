@@ -101,7 +101,7 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
           editors, and more. After a user grants a web app access, this API
           allows web apps to read or save changes directly to files and folders
           on the user's device.<br>
-          <em>Updated November 26, 2019</em>
+          <em>Updated April 13, 2020</em>
         </td>
       </tr>
       <tr>
