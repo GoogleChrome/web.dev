@@ -41,7 +41,7 @@ process.on('unhandledRejection', (reason, p) => {
  */
 const virtualImports = {
   webdev_config: {
-    prod: isProd,
+    isProd,
     env: process.env.ELEVENTY_ENV || 'dev',
     version:
       'v' +
@@ -159,13 +159,13 @@ async function build() {
     dir: 'dist',
     format: 'esm',
   });
+  for (const {fileName} of appGenerated.output) {
+    generated.push(fileName);
+  }
 
   // Compress the generated source here, as we need the final files and hashes for the Service
   // Worker manifest.
   if (isProd) {
-    for (const {fileName} of appGenerated.output) {
-      generated.push(fileName);
-    }
     await compressOutput(generated);
   }
 
@@ -207,11 +207,11 @@ async function build() {
     }),
   );
 
+  const {fileName} = swOutput;
   if (isProd) {
-    const {fileName} = swOutput;
     await compressOutput([fileName]);
-    generated.push(fileName);
   }
+  generated.push(fileName);
 
   return generated.length;
 }

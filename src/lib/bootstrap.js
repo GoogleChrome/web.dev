@@ -5,15 +5,11 @@
  * correct entrypoint via our router.
  */
 
-import {version} from 'webdev_config';
 import './webcomponents-config'; // must go before -loader below
 import '@webcomponents/webcomponentsjs/webcomponents-loader.js';
 import {swapContent, getPartial} from './loader';
 import * as router from './utils/router';
 import {store} from './store';
-
-// TODO(samthor): This forces a rehash of the JS on every deploy. Remove this.
-console.info('web.dev', version);
 
 WebComponents.waitFor(async () => {
   // TODO(samthor): This isn't quite the right class name because not all Web Components are ready

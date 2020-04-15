@@ -2,7 +2,7 @@ import createStore from 'unistore';
 import devtools from 'unistore/devtools';
 import getMeta from './utils/meta';
 import {localStorage} from './utils/storage';
-import {prod as isProd} from 'webdev_config';
+import {isProd} from 'webdev_config';
 
 /* eslint-disable require-jsdoc */
 
