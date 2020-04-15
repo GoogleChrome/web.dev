@@ -328,7 +328,7 @@ async function verifyPermission(fileHandle, withWrite) {
 }
 ```
 
-By requesting write permission with the read request, I was reduced
+By requesting write permission with the read request, I reduced
 the number of permission prompts, the user sees one prompt when opening
 the file, and grants permission to both read and write to it.
 
