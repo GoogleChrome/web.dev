@@ -57,9 +57,11 @@ const notFoundHandler = (req, res, next) => {
   res.sendFile(`404/index.html`, options, (err) => err && next(err));
 };
 
-// Implement safety mechanics. Disallow invalid hostnames (and remove any
-// lasting Service Workers otherwise users could be stuck forever), and
-// optionally nuke our production Service Worker in an emergency.
+// Implement safety mechanics.
+//   * Disallow invalid hostnames (and remove any lasting Service Workers
+//     otherwise users could be stuck forever)
+//   * Optionally nuke our production Service Worker in an emergency.
+//   * Deny loading us in an iframe.
 const invalidHostnames = ['www.web.dev', 'appengine-test.web.dev'];
 const safetyHandler = (req, res, next) => {
   const isServiceWorkerRequest = Boolean(req.headers['service-worker']);
@@ -73,6 +75,10 @@ const safetyHandler = (req, res, next) => {
     // The kill switch is enabled, nuke the Service Worker.
     req.url = '/nuke-sw.js';
   }
+
+  // TODO: This should also be included in a CSP header like:
+  //   "Content-Security-Policy: frame-ancestors 'self'"
+  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
 
   return next();
 };
