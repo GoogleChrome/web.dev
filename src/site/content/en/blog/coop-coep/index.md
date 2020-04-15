@@ -12,6 +12,7 @@ description: >
   `performance.measureMemory()` or the JS Self-Profiling API.
 authors:
   - agektmr
+hero: hero.png
 date: 2020-04-13
 updated: 2020-04-14
 tags:
