@@ -199,8 +199,8 @@ match.
 
 ## How to check if a request is "same-site", "same-origin", or "cross-site"
 
-Chrome sends requests along with a `Sec-Fetch-Site` HTTP header (No other
-browsers support as of April 2020). This is part of a larger [Fetch Metadata
+Chrome sends requests along with a `Sec-Fetch-Site` HTTP header. No other
+browsers support `Sec-Fetch-Site` as of April 2020. This is part of a larger [Fetch Metadata
 Request Headers Request Headers](https://www.w3.org/TR/fetch-metadata/)
 proposal. The header will have one of the following values:
 
