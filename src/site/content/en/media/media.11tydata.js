@@ -17,16 +17,24 @@ module.exports = {
         pathItems: ["media-experience"],
       },
       {
-        title: "File Basics",
-        pathItems: [
-          "application-basics",
-          "containers",
-          "streams",
-          "codecs",
-          "bitrate",
-          "resolution",
-          "encryption",
-          "application-cheetsheet",
+        title: "Prepare files",
+        pathItems: ["preparing-files"],
+        subTopics: [
+          {
+            title: "For embedding",
+            pathItems: [
+              "application-basics",
+              "containers-and-codecs",
+              "bitrate",
+              "resolution",
+              "encryption",
+              "application-cheetsheet",
+            ],
+          },
+          {
+            title: "For media frameworks",
+            pathItems: ["streams"],
+          },
         ],
       },
       {
