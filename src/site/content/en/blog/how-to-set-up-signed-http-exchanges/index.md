@@ -16,8 +16,10 @@ tags:
 
 ## Cross-browser support
 
-Chrome is currently the only browser that supports SXG.
-See the Consensus & Standardization section of [Origin-Signed HTTP Exchanges](https://www.chromestatus.com/feature/5745285984681984) for more up-to-date information.
+Several Chromium-based browsers support SXG, including Google Chrome, Samsung
+Internet, and Microsoft Edge. See the Consensus and Standardization section of
+[Origin-Signed HTTP Exchanges](https://www.chromestatus.com/feature/5745285984681984)
+for more up-to-date information.
 
 ## Prerequisites
 
