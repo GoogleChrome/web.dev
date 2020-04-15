@@ -39,6 +39,10 @@ class Subscribe extends BaseElement {
     this.form.addEventListener('submit', this.onSubmit);
   }
 
+  firstUpdated() {
+    this.classList.remove('unresolved');
+  }
+
   detachedCallback() {
     super.detachedCallback();
     this.form.removeEventListener('submit', this.onSubmit);

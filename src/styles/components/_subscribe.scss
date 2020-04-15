@@ -2,11 +2,14 @@
 @import '../tools/breakpoints';
 
 web-subscribe {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  // Prevent FOUC by applying base style until after firstUpdated().
+  // This isn't ":not(:defined)" because firstUpdated occurs after a frame.
+  &.unresolved { // sass-lint:disable-line class-name-format
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 }
-
 
 .w-subscribe {
   max-width: 720px;
@@ -41,6 +44,7 @@ web-subscribe {
 .w-subscribe__field {
   display: flex;
   margin-top: 8px;
+  width: 100%;
 }
 
 .w-subscribe__notice {
