@@ -138,6 +138,7 @@ class Search extends BaseElement {
               data-label="search, open Google"
               data-action="click"
               target="_blank"
+              tabindex="-1"
               href=${searchUrl}
             >
               Google search
