@@ -179,11 +179,17 @@ necessarily have a visual impact, such as scripts or styles, COEP issues might
 go unnoticed. For those, use the DevTools Network panel. If 
 there's an issue with COEP, you should see 
 `(blocked:NotSameOriginAfterDefaultedToSameOriginByCoep)` in the **Status**
-column.  
-![Debugging COEP in DevTools 1](devtools1.png)
+column.
 
-You can then click the entry to see more details.   
-![Debugging COEP in DevTools 2](devtools2.png)
+<figure class="w-figure">
+  <img class="w-screenshot-filled" src="devtools1.png" alt="COEP issues in the Status column of the Network panel.">
+</figure>
+
+You can then click the entry to see more details.
+
+<figure class="w-figure">
+  <img class="w-screenshot-filled" src="devtools2.png" alt="Details of the COEP issue are shown in the Headers tab after clicking a network resource in the Network panel.">
+</figure>
 
 {% Aside %}
 While COEP debugging is already available, COOP debugging in Chrome 
