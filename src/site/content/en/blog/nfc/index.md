@@ -4,7 +4,7 @@ subhead: Reading and writing to NFC tags is now possible.
 authors:
   - beaufortfrancois
 date: 2020-02-12
-updated: 2020-03-03
+updated: 2020-04-14
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: A photo of NFC tags
@@ -45,7 +45,8 @@ binary message format that works across different tag formats.
 
 Web NFC is limited to NDEF because the security properties of reading and
 writing NDEF data are more easily quantifiable. Low-level I/O operations (e.g.
-ISO-DEP, NFC-A/B, NFC-F) and Host-based Card Emulation (HCE) are not supported.
+ISO-DEP, NFC-A/B, NFC-F), Peer-to-Peer communication mode and Host-based Card
+Emulation (HCE) are not supported.
 
 Examples of sites that may use Web NFC include:
 - Museums and art galleries can display additional information about a display
