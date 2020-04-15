@@ -261,7 +261,7 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           Periodic Background Sync enables web applications to periodically
           synchronize data in the background, bringing web apps closer to
           the behavior of a native app.<br>
-          <em>Updated December 18, 2019</em><a name="shape-barcode">
+          <em>Updated December 18, 2019</em><a name="shape-barcode"></a>
         </td>
       </tr>
       <tr>
