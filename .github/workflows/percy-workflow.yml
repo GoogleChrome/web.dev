@@ -3,9 +3,6 @@ name: Percy
 # By default, runs when a pull_request's activity type is opened, synchronize,
 # or reopened
 on:
-  push:
-    branches:
-      - master
   pull_request:
     paths:
       - '**.js'
