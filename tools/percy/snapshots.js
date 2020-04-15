@@ -47,9 +47,9 @@ PercyScript.run(
   async (browser, percySnapshot) => {
     for (page of pagesToTest) {
       const url = new URL(page.url, 'http://localhost:8080').href;
-      await browser.goto(url);
+      await browser.goto(url, {waitUntil: 'networkidle0'});
       // Wait for the SPA to update the active link in the top nav.
-      await browser.waitFor(5000);
+      await browser.waitFor(2000);
       await percySnapshot(`${page.title}`);
     }
   },
