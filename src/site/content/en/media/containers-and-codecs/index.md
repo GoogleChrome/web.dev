@@ -1,9 +1,10 @@
 ---
 layout: post
-title: Containers
+title: Containers and codecs
 description: |
-  Take a raw video file off a camera and transform it into an encrypted
-  resource for playing back using a video library.
+  Media files are a bit like onions. The file that you see in your operating
+  system shell is only a container multiple multiple data streams and different
+  allowable types of encodings.
 date: 2017-06-30
 updated: 2020-04-30
 tags:
@@ -14,10 +15,8 @@ tags:
 
 Now that I've introduced you to [applications used for manipulating media
 files](application-basics), I'm going to take a raw video file off a camera and
-transform it into an encrypted resource that you can play back using a video
-library such as [Google's Shaka
-Player](https://shaka-player-demo.appspot.com/demo/). I'm specifically going to
-show you how to format your video for mobile playback.
+transform it into an encrypted resource that you can embed in a web page. I'm
+specifically going to show you how to format your video for mobile playback.
 
 {% Aside %}
 This article provides explanations of file manipulation concepts,
@@ -29,13 +28,12 @@ for someone who knows the concepts.
 The result of these procedures will be media resources with the following
 characteristics:
 
-+  Audio and video streams are split into separate files
-+  Versions of the video file are in mp4 and webm format
-+  Versions of the audio file are in m4a and webm format
-+  A bitrate of 0.35 Megabits per second (Mbs)
-+  Resolution of 640 by 360
-+  Encrypted
-+  Viewable on all major browsers using appropriate technologies
++  Versions of the video file in mp4 and webm format.
++  Versions of the audio file in m4a and webm format.
++  A bitrate of 0.35 Megabits per second (Mbs).
++  Resolution of 640 by 360.
++  Encrypted.
++  Viewable on all major browsers using appropriate technologies.
 
 By "appropriate technologies" I mean Dynamic Adaptive Streaming over HTTP (DASH)
 or HTTP Live Streaming (HLS), which are the two primary means of providing video
@@ -133,6 +131,51 @@ packager input=glocken.mp4 --dump_stream_info
 ffmpeg -i glocken.mp4
 ```
 
+## Codecs
+
+Continuing downward, we arrive at the codec. _Codec_, which is short for _coder-
+decoder_, is a compression format for video or audio data.  As stated earlier, a
+codec is _not_ the same thing as a container. Two files of the same container
+type could hold data compressed using completely different codecs. The webm
+format for example allows audio to be encoded using either
+[vorbis](https://en.wikipedia.org/wiki/Vorbis) or
+[opus](https://en.wikipedia.org/wiki/Opus_(audio_format)). To change the codec I
+need FFmpeg.
+
+In the last section I demuxed the audio and video like this:
+
+```bash
+ffmpeg -i glocken.webm -vcodec copy -an glocken_video.webm
+ffmpeg -i glocken.webm -acodec copy -vn glocken_audio.webm
+```
+
+If I need to change the audio and video codec, I would replace the `copy` keyword
+with the name of a codec. For example, this command outputs an audio file
+encoded with the aac codec.
+
+```bash
+ffmpeg -i glocken.webm -vn -c:a vorbis glocken.m4a
+```
+
+The [cheat sheet](/web/fundamentals/media/manipulating/cheatsheet#codec) lists
+commands needed to convert codecs. The tables summarize the libraries used in
+FFmpeg to perform the codec conversions for webm and mp4 files. These are the
+formats recommended for DASH and HLS respectively.
+
+## Video
+
+| Extension | Codec | Library |
+| --- | ----- | --- |
+| mp4 | H264  | libx264 |
+| webm| VP9   | libvpx-vp9 |
+
+## Audio
+
+| Extension | Codec | Library |
+| --- | ----- | --- |
+| mp4 | aac   | aac |
+| webm| vorbis | libvorbis |
+|     | opus | libopus |
 
 
 
