@@ -14,7 +14,6 @@ authors:
   - agektmr
 date: 2020-04-13
 updated: 2020-04-14
-hero: browsing-context-group.png
 tags:
   - post
   - security
