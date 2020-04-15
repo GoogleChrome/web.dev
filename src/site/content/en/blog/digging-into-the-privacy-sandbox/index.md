@@ -180,7 +180,7 @@ To reiterate: the Privacy Sandbox authors need your support. The [explainers](ht
 +   Google AI Blog: [Federated Learning: Collaborative Machine Learning without Centralized Training Data](https://ai.googleblog.com/2017/04/federated-learning-collaborative.html)
 +   [The future of third-party cookies](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html)
 
-### Use cases, policy and requirements
+### Use cases, policies, and requirements {: #use-cases-policies-requirements }
 
 +   [Advertising Use Cases](https://github.com/w3c/web-advertising/blob/master/support_for_advertising_use_cases.md)
 +   [Mozilla anti-tracking policy](https://wiki.mozilla.org/Security/Anti_tracking_policy)
