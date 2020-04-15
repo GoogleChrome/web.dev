@@ -12,7 +12,7 @@ description: |
 
 "same-site" and "same-origin" are frequently cited but often misunderstood
 terms. For example, they are mentioned in the context of page transitions,
-`fetch()` requests, cookies, opening popups, and embedding resources and
+`fetch()` requests, cookies, opening popups, embedded resources, and
 iframes.
 
 ## Origin
