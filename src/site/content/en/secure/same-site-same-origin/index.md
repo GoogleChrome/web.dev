@@ -91,8 +91,8 @@ However, for domains such as `.co.jp` or `.github.io`, just using the TLD of
 `.jp` or `.io` is not granular enough to identify the "site". And there is no
 way to algorithmically determine the level of registrable domains for a
 particular TLD. That's why a list of "effective TLDs" was created. These are
-defined in the [Public Suffix List. The list of
-eTLDs](https://wiki.mozilla.org/Public_Suffix_List) is maintained at
+defined in the [Public Suffix List](https://wiki.mozilla.org/Public_Suffix_List).
+ The list of eTLDs is maintained at
 [publicsuffix.org/list](https://publicsuffix.org/list/).
 
 The whole site name is known as the eTLD+1. For example, given a URL of
