@@ -5,7 +5,7 @@ description: |
   Learn how Lighthouse generates the overall Performance score for your page.
 subhead: How Lighthouse calculates your overall Performance score
 date: 2019-09-19
-updated: 2020-02-13
+updated: 2020-04-13
 ---
 
 In general, only [metrics audits](/lighthouse-performance/#metrics)
@@ -79,6 +79,10 @@ The tables below show the weighting for each metric in each version of Lighthous
       <tr>
         <td><a href="/lighthouse-total-blocking-time/">Total Blocking Time</a></td>
         <td>25%</td>
+      </tr>
+      <tr>
+        <td><a href="/cls/">Cumulative Layout Shift</a></td>
+        <td>5%</td>
       </tr>
     </tbody>
   </table>
