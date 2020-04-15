@@ -27,7 +27,7 @@ resolutions.
 Which one do I use? That depends on your application. For simple embedding you
 may chose a single resolution. If you're preparing files for DASH or HLS, you
 may chose one, several, or all. Fortunately, this is one of the simplest
-transformations you'll make with ffmpeg.
+transformations you'll make with FFmpeg.
 
 ```bash
 ffmpeg -i glocken.webm -s 640x360 glocken_640x360.webm

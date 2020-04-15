@@ -45,8 +45,8 @@ coding](https://en.wikipedia.org/wiki/Advanced_Audio_Coding) format for which
 m4a is a common file extension.
 
 Shaka Packager presents demuxing as though you're _extracting_ a stream into a
-new file. It's a little different in ffmpeg, which presents as though you're
-_stripping_ the stream you don't want. With ffmpeg, you need two operations.
+new file. It's a little different in FFmpeg, which presents as though you're
+_stripping_ the stream you don't want. With FFmpeg, you need two operations.
 
 ```bash
 ffmpeg -i glocken.webm -vcodec copy -an glocken_video.webm
@@ -56,7 +56,7 @@ ffmpeg -i glocken.webm -acodec copy -vn glocken_audio.webm
 Just as with Shaka Packager, we have both an input and an output file. Another
 difference from Shaka Packager is that the streams are identified with flags
 that refer their codecs. The `-vcodec copy` and `-acodec copy` portions of the
-command tell ffmpeg to copy the streams I want while the `-an` and `-vn` flags
+command tell FFmpeg to copy the streams I want while the `-an` and `-vn` flags
 strip the streams I don't want. The keyword `copy` means I'm moving the streams
 without changing their codecs.
 

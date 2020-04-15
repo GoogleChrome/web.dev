@@ -15,7 +15,7 @@ type could hold data compressed using completely different codecs. The webm
 format for example allows audio to be encoded using either
 [vorbis](https://en.wikipedia.org/wiki/Vorbis) or
 [opus](https://en.wikipedia.org/wiki/Opus_(audio_format)). To change the codec I
-need ffmpeg.
+need FFmpeg.
 
 In the last section I demuxed the audio and video like this:
 
@@ -34,7 +34,7 @@ ffmpeg -i glocken.webm -vn -c:a vorbis glocken.m4a
 
 The [cheat sheet](/web/fundamentals/media/manipulating/cheatsheet#codec) lists
 commands needed to convert codecs. The tables summarize the libraries used in
-ffmpeg to perform the codec conversions for webm and mp4 files. These are the
+FFmpeg to perform the codec conversions for webm and mp4 files. These are the
 formats recommended for DASH and HLS respectively.
 
 ## Video
