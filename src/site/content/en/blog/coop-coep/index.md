@@ -146,7 +146,7 @@ Recursively apply this to all documents. For information on the Report-Only HTTP
 header, see [Observe issues using the Reporting
 API](#observe-issues-using-the-reporting-api).
 
-#### 4. Enable COEP
+#### 4. Enable COEP {: #enable-coep }
 
 Once you've confirmed that everything works, and that all resources can be 
 successfully loaded, apply the `Cross-Origin-Embedder-Policy: require-corp` HTTP 
