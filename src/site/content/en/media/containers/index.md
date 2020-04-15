@@ -2,24 +2,32 @@
 layout: post
 title: Containers
 description: |
-  Let's take a raw video file off a camera and transform it into an encrypted res
+  Take a raw video file off a camera and transform it into an encrypted
+  resource for playing back using a video library.
 date: 2017-06-30
 updated: 2020-04-30
+tags:
+  - FFmpeg
+  - files
+  - Shaka
 ---
 
-Now that I've introduced you to applications that do media file
-manipulation, I'm going to take a raw video file off a camera and transform it
-into an encrypted resource that you can play back using a video library such as
-[Google's Shaka Player](https://shaka-player-demo.appspot.com/demo/). I'm
-specifically going to show you how to format your video for mobile playback.
+Now that I've introduced you to [applications used for manipulating media
+files](application-basics), I'm going to take a raw video file off a camera and
+transform it into an encrypted resource that you can play back using a video
+library such as [Google's Shaka
+Player](https://shaka-player-demo.appspot.com/demo/). I'm specifically going to
+show you how to format your video for mobile playback.
 
-Objective: This article provides explanations of file manipulation concepts,
+{% Aside %}
+This article provides explanations of file manipulation concepts,
 with command lines only to illustrate the concepts. There is a companion [cheat
 sheet](cheatsheet) that shows more commands and is designed as a quick reference
 for someone who knows the concepts.
+{% endAside %}
 
-To be more specific about the goals, the result of the procedures described here
-will be media resources with the following characteristics:
+The result of these procedures will be media resources with the following
+characteristics:
 
 +  Audio and video streams are split into separate files
 +  Versions of the video file are in mp4 and webm format
@@ -29,19 +37,20 @@ will be media resources with the following characteristics:
 +  Encrypted
 +  Viewable on all major browsers using appropriate technologies
 
-By "appropriate technologies" I mean **DASH** and **HLS**, which are the two
-primary means of providing video in HTML on the major browsers. What those terms
-mean and how to use them is a whole topic itself. I won't be getting into those,
-but by the end of this article, you'll be able to create media files that are
-ready for use in DASH and HLS.
+By "appropriate technologies" I mean Dynamic Adaptive Streaming over HTTP (DASH)
+or HTTP Live Streaming (HLS), which are the two primary means of providing video
+in HTML on the major browsers. What those terms mean and how to use them is a
+whole topic itself. I won't be getting into those, but by the end of this
+article, you'll be able to create media files that are ready for use in DASH and
+HLS.
 
-One final note: selection of the file formats, bitrate and resolution are not
+One final note: selection of the file formats, bitrate, and resolution are not
 arbitrary. I've selected these values for speedy playback on the mobile web.
 
 If you want to play along at home, you'll need a raw video file off a camera,
 preferably one that contains both audio and video. If you don't have one handy,
-then here's
-<a href="https://storage.googleapis.com/webfundamentals-assets/fundamentals/media/videos/glocken.mov">ten seconds of an mov file</a>
+then here's [ten seconds of an mov
+file](https://storage.googleapis.com/webfundamentals-assets/fundamentals/media/videos/glocken.mov)
 that I took of the
 [Rathaus-Glockenspiel](https://en.wikipedia.org/wiki/Rathaus-Glockenspiel)
 in Munich's MarienPlatz.
@@ -58,23 +67,23 @@ single video stream. (Some may also contain captions and data, but I won't be
 covering those.)
 
 Within the audio and video streams, the actual data is compressed using a
-_codec_. As we'll see later, the distinction between a container and a codec is
-important as files with the same container can have their contents encoded with
+_codec_. As explained in [Media file characteristics](application-basics#Media
+file characteristics), the distinction between a container and a codec is
+important becasue files with the same container can have their contents encoded with
 different codecs.
-
-(If these terms are new
-to you, I explain them in
-[Media file characteristics](/web/fundamentals/media/manipulating/applications#media_file_characteristics).)
 
 The image below illustrates this. On the left is the basic structure. On the
 right are the specifics of that structure for an mp4. I'll explain file
 manipulation by moving downward through these layers.
 
-![Media container onion](images/media-container-onion.png)
+<figure class="w-figure">
+  <img src="./a.jpg" alt="Comparing media file structure with a hypothetical media file.">
+  <figcaption class="w-figcaption">Media container onion.</figcaption>
+</figure>
 
 ## Change the container
 
-Let's start by changing the file container. You'll recall that we're starting
+I'll start by changing the file container. You'll recall that I'm starting
 with a file that has an mov extension. I'm going to use FFmpeg to change the
 container type from mov to mp4 and webm. In actual practice, you would likely
 specify a codec at the same time. For this lesson, I'm letting FFmpeg use its
@@ -83,8 +92,10 @@ defaults.
 ```bash
 ffmpeg -i glocken.mov glocken.mp4
 ```
-
-Note: To create this article, I used FFmpeg version 3.2.2-tessus.
+{% Aside %}
+To create this article, I used FFmpeg version 3.2.2-tessus. If the command
+lines don't work for your version of FFmpeg, consult the FFmpeg documentation.
+{% endAside %}
 
 Creating a webm file is a bit more complicated. FFmpeg has no trouble converting
 a mov file to a webm file that will play in Chrome and Firefox. For whatever
@@ -109,10 +120,10 @@ file's size, webm is down in the single digits, though results may vary.
 
 ## Check your work
 
-This is a good place to remind you that you can verify the results of any task
-in this article using the same applications you're using to do the work.
-Remember that, as [described in the primers](applications), you'll need both
-FFmpeg and Shaka Packager since neither shows you everything.
+This is a good place to remind you that you can verify the results of these
+tasks using the same applications you're using to do the work. Remember that, as described in
+[Application basics](application-basics), you'll need both FFmpeg and Shaka
+Packager since neither shows you everything.
 
 ```bash
 packager input=glocken.mp4 --dump_stream_info
