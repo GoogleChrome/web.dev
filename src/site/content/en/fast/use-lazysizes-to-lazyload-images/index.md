@@ -8,6 +8,7 @@ description: |
   than in advance. This approach frees up resources during the initial page load
   and avoids loading assets that are never used.
 date: 2018-11-05
+updated: 2019-04-10
 codelabs:
   - codelab-use-lazysizes-to-lazyload-images
 ---
@@ -31,10 +32,7 @@ makes this a very simple strategy to implement.
 [lazysizes](https://github.com/aFarkas/lazysizes) is the most popular library
 for lazy loading images. It is a script that intelligently loads images as the
 user moves through the page and prioritizes images that the user will encounter
-soon. lazysizes is a good choice because it uses the highly performant
-[Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
-(where available) to detect the visibility of page elements. This makes it more
-performant than older solutions that use approaches like event handlers.
+soon.
 
 ## Add lazysizes
 
