@@ -24,7 +24,7 @@ mitigate that risk, browsers offer an opt-in-based isolated environment called
 cross-origin isolated. With a cross-origin isolated state, the webpage will be 
 able to use privileged features including:
 
-* [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
+* [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
   (required for WebAssembly Threads)
 * [`performance.measureMemory()`](/monitor-total-page-memory-usage/)
 * [JS Self-Profiling API](https://wicg.github.io/js-self-profiling/)
