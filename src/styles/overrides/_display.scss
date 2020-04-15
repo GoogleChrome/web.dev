@@ -1,3 +1,7 @@
-.w-display__inline-flex {
+.w-display--flex {
+  display: flex;
+}
+
+.w-display--inline-flex {
   display: inline-flex;
 }

@@ -1,12 +1,24 @@
 @import '../settings/colors';
 @import '../tools/breakpoints';
 
-.w-subscribe {
-  display: block;
-  margin-top: 32px;
+web-subscribe {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
-.w-subscribe__border {
+
+.w-subscribe {
+  max-width: 720px;
+  width: 100%;
+}
+
+.w-subscribe--padded {
+  margin: auto;
+  max-width: 540px;
+}
+
+.w-subscribe__select-border {
   border: 1px solid $GREY_300;
   width: 100%;
 
@@ -29,24 +41,6 @@
 .w-subscribe__field {
   display: flex;
   margin-top: 8px;
-}
-
-.w-subscribe__padded {
-  margin-left: auto;
-  margin-right: auto;
-  width: calc(100% - 32px);
-
-  &.w-subscribe__padded--major {
-    max-width: 540px;
-  }
-
-  &.w-subscribe__padded--minor {
-    max-width: 720px;
-  }
-}
-
-.w-subscribe__checkbox {
-  margin-right: 18px;
 }
 
 .w-subscribe__notice {

@@ -302,18 +302,18 @@ See the [Self-assessments](/handbook/self-assessment-components) post.
 The [Newsletter](/newsletter) page uses a new material styled checkbox.
 You can use it simply and easily by just adding the class `w-chechbox`
 to an `input[type=checkbox]` element. However to align a label to to the
-checkbox you'll want to wrap the label and checkbox in a `div.w-display__inline-flex`
-element, and add the `w-label__checkbox` class to the label. See below:
+checkbox you'll want to wrap the label and checkbox in a `div.w-display--inline-flex`
+element, and add the `w-ml--l` class to the label. See below:
 
-<div class="w-display__inline-flex">
+<div class="w-display--inline-flex">
   <input id="sub-newsletter" name="WebDevNewsletter" required value="Unconfirmed" class="w-checkbox" type="checkbox" />
-  <label for="sub-newsletter" class="w-label__checkbox">Add me to the web.dev mailing list.</label>
+  <label for="sub-newsletter" class="w-ml--l">Add me to the web.dev mailing list.</label>
 </div>
 
 ```html
-<div class="w-display__inline-flex">
+<div class="w-display--inline-flex">
   <input id="sub-newsletter" name="WebDevNewsletter" required value="Unconfirmed" class="w-checkbox" type="checkbox" />
-  <label for="sub-newsletter" class="w-label__checkbox">Add me to the web.dev mailing list.</label>
+  <label for="sub-newsletter" class="w-ml--l">Add me to the web.dev mailing list.</label>
 </div>
 ```
 

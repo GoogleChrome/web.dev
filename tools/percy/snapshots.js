@@ -41,7 +41,7 @@ const pagesToTest = [
     title: 'Podcasts page',
   },
   {
-    url: 'newsletter',
+    url: '/newsletter/',
     title: 'Newsletter page',
   },
 ];
