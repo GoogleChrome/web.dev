@@ -113,7 +113,7 @@ params](https://first-party-test.glitch.me/coop).
 
 Make sure that all resources in the page are loaded with CORP or CORS
 HTTP headers. This step 
-is required for step four, enable COEP.
+is required for [step four, enabling COEP](#enable-coep).
 
 Here is what you need to do depending on the nature of the resource:
 
