@@ -48,7 +48,7 @@ desktop, 4G, and 3G. If you're serving video in one of the markets referred to
 as "the next billion users", say India, for example, you'll want to include 2G
 as well. For demonstration purposes, I'm going to target 3G.
 
-In ffmpeg you set the bitrate with the (surprise!) bitrate (`-b`) flag.
+In FFmpeg you set the bitrate with the (surprise!) bitrate (`-b`) flag.
 
 ```bash
 ffmpeg -i glocken.mov -b:v 350k glocken.mp4

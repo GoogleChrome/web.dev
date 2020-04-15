@@ -1,6 +1,6 @@
 module.exports = {
   // Tags are inherited by all posts.
-  tags: ["pathItem", "media"],
+  tags: ["media"],
   path: {
     // Slug is used by landing pages like / and /learn to link to this path.
     // Because it affects urls, the slug should never be translated.
@@ -42,6 +42,10 @@ module.exports = {
       {
         title: "Serving",
         pathItems: ["preloading", "server-basics"],
+      },
+      {
+        title: "Extras",
+        pathItems: ["cheetsheet"],
       },
     ],
   },

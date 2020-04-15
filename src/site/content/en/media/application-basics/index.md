@@ -6,6 +6,10 @@ description: |
   section, I provide an onramp into that world.
 date: 2017-06-09
 updated: 2020-04-30
+tags:
+  - FFmpeg
+  - files
+  - Shaka
 ---
 
 Much media work requires changing characteristics of media files, such as
@@ -15,7 +19,7 @@ world.
 
 This page has basics for two common media command-line utilities: [Shaka
 Packager](https://github.com/google/shaka-packager) and
-[ffmpeg](https://ffmpeg.org/download.html). Why cover two applications? While
+[FFmpeg](https://ffmpeg.org/download.html). Why cover two applications? While
 both are powerful and useful by themselves, neither does everything needed to
 prepare media for the web. Elsewhere, you'll find a [cheat sheet](cheatsheet)
 showing common operations with those applications.
@@ -24,20 +28,20 @@ showing common operations with those applications.
 
 One thing you'll do often is look at the characteristics of a video: resolution,
 bitrate, codecs, and so on. Since this is just about the easiest thing to do in both
-Shaka Packager and ffmpeg, let's use this to get comfortable with these
+Shaka Packager and FFmpeg, you can use this to get comfortable with these
 packages.
 
-When we peek into a media file, we're going to see many file characteristics.
+When you peek into a media file, you'll to see many file characteristics.
 For this article, I'm only focusing on characteristics in the cheat sheet.
 
-Let's start with streams. Media files can almost be thought of as multiple files
+I'll start with streams. Media files can almost be thought of as multiple files
 in one. The multiple "files" are called _streams_. A media file can have any
 number of streams, of [more
 types](https://developer.mozilla.org/en-US/docs/Web/Media/Formats) than I will
-go into here. My examples will contain at most two, an audio stream and a video
-stream. (Among the other types you might encounter are captions and data, both
-of which are beyond the scope of this article.) There are many instances where
-audio and video streams are dealt with separately.
+go into here. My examples contain at most two streams: an audio stream and a
+video stream. Among the other types you might encounter are captions and data,
+both of which are beyond the scope of this article. There are many instances
+where audio and video streams are dealt with separately.
 
 There are several characteristics that apply to each stream.
 
@@ -49,14 +53,13 @@ _Resolution_ is the amount of information in a single frame of video, given as
 the number of logical pixels in each dimension. For example, a resolution of
 1920 by 1080 works out to 1080 stacked horizontal lines, each of which is one
 logical pixel high and 1920 logical pixels wide. This resolution is frequently
-abbreviated 1080p because technically the width can vary. The numbers I've given
-produce an
-[aspect ratio](https://en.wikipedia.org/wiki/Aspect_ratio_(image))
-of 16:9, which is the ratio of movie screens and modern television sets. By the
-way this is the resolution defined as
-[full HD](https://www.google.com/search?q=what+is+hd+resolution&oq=what+is+hd+resolution&aqs=chrome.0.0l6.3183j0j8&sourceid=chrome&ie=UTF-8#q=full+hd+resolution).
+abbreviated 1080p because technically the width can vary. These numbers produce
+an [aspect ratio](https://en.wikipedia.org/wiki/Aspect_ratio_(image)) of 16:9,
+which is the ratio of movie screens and modern television sets. By the way this
+is the resolution defined as [full
+HD](https://www.google.com/search?q=what+is+hd+resolution&oq=what+is+hd+resolution&aqs=chrome.0.0l6.3183j0j8&sourceid=chrome&ie=UTF-8#q=full+hd+resolution).
 
-When you look at the file characteristics using Shaka Packager and ffmpeg,
+When you look at the file characteristics using Shaka Packager and FFmpeg,
 you'll notice that the word 'resolution' doesn't appear. What the two
 applications output are just the dimensions, the numbers themselves.
 
@@ -72,8 +75,8 @@ for mp4 and webm files.
 
 | Extension | Codec |
 | --- | ----- |
-| mp4 | H264  |
-| webm| VP9   |
+| mp4 | AV1, H264  |
+| webm| AV1, VP9   |
 
 ### Audio
 
@@ -85,10 +88,12 @@ for mp4 and webm files.
 ## Shaka Packager
 
 [Shaka Packager](https://github.com/google/shaka-packager) is a free media
-packaging SDK for creating DASH/HLS packager applications with common encryption
-support, Widevine digital rights management (DRM) support, live video, and
-video-on-demand. Don't worry if you don't know what all those words mean. You
-won't need them to understand the rest of this article.
+packaging SDK for creating packager applications for Dynamic Adaptive Streaming
+over HTTP (DASH) or HTTP Live Streaming (HLS). Shaka Packager provides common
+encryption support, Widevine digital rights management (DRM) support, live
+video, and video-on-demand for these technologies. Don't worry if you don't know
+what all those words mean. You won't need them to understand the rest of this
+article.
 
 Despite what it says on the package, this utility is for more than C++
 developers. You can use it as both a library for building media software and as
@@ -97,23 +102,23 @@ capacity that interests me here. In fact, for web media creators, Shaka Packager
 is the only way to do some tasks without spending money on expensive commercial
 applications.
 
-Here's the basic pattern for a Shaka Packager command line.
+Here's the basic pattern for a Shaka Packager command:
 
 ```bash
-packager stream_descriptor[ stream_descriptor-2[ stream_descriptor-n]] [flags]
+packager stream_descriptor [stream_descriptor-2 [stream_descriptor-n]] [flags]
 ```
 
 This isn't quite what you get if you type `packager -help`. This is how I think
-of it, and this reflects the examples in the
-[Shaka Packager README](https://github.com/google/shaka-packager).
-Note the multiple `stream_descriptor` items. This is useful for manipulating the
-video and audio streams of the same file simultaneously.
+of it, and this reflects the examples in the [Shaka Packager
+README](https://github.com/google/shaka-packager). Note that there are multiple
+`stream_descriptor` items in the pattern. Though I don't show it, you could
+hypothetically manipulate the video and audio streams of a file simultaneously.
 
 Compare this basic pattern with a simple use of it to display file
 characteristics. In the example, I've lined up equivalent parts.
 
 ```bash
-packager stream_descriptor[ stream_descriptor-2[ stream_descriptor-n]] [flags]
+packager stream_descriptor [stream_descriptor-2 [stream_descriptor-n]] [flags]
 
 packager input=glocken.mp4                                              --dump_stream_info
 ```
@@ -154,29 +159,30 @@ Packaging completed successfully.
 
 Look for the characteristics discussed in the last section and notice a few
 things. The height and width are correct for full HD, and the audio and video
-codecs are the preferred codecs for their container types, AAC for audio and
-H264 for video. Notice also that streams are identified with numbers. These are
-useful for operations that manipulate the audio and video separately.
+codecs are among the preferred codecs for their container types, AAC for audio
+and H264 for video. Notice also that streams are identified with numbers. These
+are useful for operations that manipulate the audio and video separately.
 
 Notice that it doesn't show the bitrate. Despite what's missing, it's easier to
 read, which is why I use it whenever I can. When I need information that Shaka
-Packager can't get, such as the bitrate, I use ffmpeg.
+Packager can't get, such as the bitrate, I use FFmpeg.
 
-## ffmpeg
+## FFmpeg
 
-[ffmpeg](https://ffmpeg.org/download.html) is also a free application for
-recording, converting, and streaming media files. I won't say its
-capabilities are better or worse than Shaka Packager's. They're just different.
+[FFmpeg](https://ffmpeg.org/download.html) is also a free application for
+recording, converting, and streaming media files. Its capabilities are better or
+worse than Shaka Packager's. They're just different.
 
-The basic pattern for an ffmpeg command looks like this:
+The basic pattern for an FFmpeg command looks like this:
 
 ```bash
 ffmpeg [GeneralOptions] [InputFileOptions] -i input [OutputFileOptions] output
 ```
 
-Like Shaka Packager this application can handle multiple streams. Also, some of
-the options can be used in multiple locations and have different meanings
-depending on where they are in the command.
+Like Shaka Packager this application can handle multiple streams. Some of its
+options can be used in multiple locations and have different meanings depending
+on where they are in the command. Be aware of this as you look at command line
+examples on sites such as StackOverflow and similar sites.
 
 I'll again compare the basic pattern to the example for displaying file characteristics.
 
@@ -186,9 +192,9 @@ I'll again compare the basic pattern to the example for displaying file characte
     ffmpeg                                     -i glocken.mp4
 ```
 
-This is technically an incorrect usage of ffmpeg, but it displays information I
-care about. In addition to the information, it prints an error message, as shown
-in the example below.
+In additon to the information I requested, this also prints an error message as
+shown in the example below. That's because this is technically an incorrect
+usage of FFmpeg. I use it because it displays information I care about.
 
 ```bash
 Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'glocken.mp4':
@@ -209,5 +215,4 @@ At least one output file must be specified
 
 So those are a few bits about media manipulation software in a nutshell. Now jump
 next door to the
-[cheat sheet](cheatsheet). Check back every few weeks as we continue to add new
-content about media for the web.
+[cheat sheet](cheatsheet).

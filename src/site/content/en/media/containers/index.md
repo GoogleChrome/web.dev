@@ -75,20 +75,20 @@ manipulation by moving downward through these layers.
 ## Change the container
 
 Let's start by changing the file container. You'll recall that we're starting
-with a file that has an mov extension. I'm going to use ffmpeg to change the
+with a file that has an mov extension. I'm going to use FFmpeg to change the
 container type from mov to mp4 and webm. In actual practice, you would likely
-specify a codec at the same time. For this lesson, I'm letting ffmpeg use its
+specify a codec at the same time. For this lesson, I'm letting FFmpeg use its
 defaults.
 
 ```bash
 ffmpeg -i glocken.mov glocken.mp4
 ```
 
-Note: To create this article, I used ffmpeg version 3.2.2-tessus.
+Note: To create this article, I used FFmpeg version 3.2.2-tessus.
 
-Creating a webm file is a bit more complicated. ffmpeg has no trouble converting
+Creating a webm file is a bit more complicated. FFmpeg has no trouble converting
 a mov file to a webm file that will play in Chrome and Firefox. For whatever
-reason, the file created using ffmpeg's defaults (at least for the version I
+reason, the file created using FFmpeg's defaults (at least for the version I
 used) doesn't quite conform to the webm spec. (For the curious, it sets a
 `DisplayUnit` size that isn't defined by the webm spec.) Fortunately, I can fix
 this using a video filter. Do so with the `-vf` flag and the setsar filter.
@@ -112,7 +112,7 @@ file's size, webm is down in the single digits, though results may vary.
 This is a good place to remind you that you can verify the results of any task
 in this article using the same applications you're using to do the work.
 Remember that, as [described in the primers](applications), you'll need both
-ffmpeg and Shaka Packager since neither shows you everything.
+FFmpeg and Shaka Packager since neither shows you everything.
 
 ```bash
 packager input=glocken.mp4 --dump_stream_info
