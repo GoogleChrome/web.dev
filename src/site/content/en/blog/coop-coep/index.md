@@ -14,7 +14,7 @@ authors:
   - agektmr
 hero: hero.png
 date: 2020-04-13
-updated: 2020-04-14
+updated: 2020-04-16
 tags:
   - post
   - security
@@ -29,9 +29,9 @@ able to use privileged features including:
 * [`performance.measureMemory()`](/monitor-total-page-memory-usage/)
 * [JS Self-Profiling API](https://wicg.github.io/js-self-profiling/)
 
-The cross-origin isolated state also prevents modifications of 
-`document.domain`. (Being able to alter `document.domain` allows 
-communication between same-sites and has been considered a loophole in the 
+The cross-origin isolated state also prevents modifications of
+`document.domain`. (Being able to alter `document.domain` allows communication
+between same-site documents and has been considered a loophole in the
 same-origin policy.)
 
 {% Aside 'caution' %}
@@ -53,9 +53,10 @@ which haven't opted into being loaded by cross-origin documents, and prevent
 cross-origin windows from directly interacting with your document. This also 
 means those resources being loaded cross-origin require opt-ins.
 
-You can determine whether a web page is in a cross-origin isolated state by 
-examining `self.crossOriginIsolated`. (This works on Firefox but has yet to be 
-implemented in Chrome).
+You can determine whether a web page is in a cross-origin isolated state by
+examining
+[`self.crossOriginIsolated`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated.).
+(This works on Firefox but has yet to be implemented in Chrome).
 
 This article shows how to use these new headers. In a follow-up article I will
 provide more background and context.
@@ -100,8 +101,8 @@ same browsing context and they have access to each other via DOM APIs such as
 
 ![Browsing Context Group](browsing-context-group.png)
 
-As of Chrome 83, DevTools support is not yet available for COOP. However, you
-can examine `window.opener === null` from the opened window, or
+As of Chrome 83, dedicated DevTools support is not yet available for COOP.
+However, you can examine `window.opener === null` from the opened window, or
 `openedWindow.closed === true` from the opener window to determine if they are
 in separate browsing context groups.
 
@@ -167,8 +168,10 @@ have successfully isolated the browsing context group and gained access to
 powerful features like `performance.measureMemory()`.
 
 {% Aside 'caution' %}
-The [`self.crossOriginIsolated`](https://www.chromestatus.com/feature/5953286387531776)
-property is still under development and not available yet in Chrome as of version 83.
+The
+[`self.crossOriginIsolated`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated.)
+property is [still under development and not available yet in Chrome as of
+version 83](https://www.chromestatus.com/feature/5953286387531776).
 {% endAside %}
 
 ### Debug issues using Chrome DevTools
@@ -296,8 +299,6 @@ In upcoming releases of Chrome, this cross-origin isolated state will prevent
 `document.domain`](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy#Changing_origin)
 and will give access to powerful features such as:
 
-* [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) 
-  (required for WebAssembly Threads)
 * [`performance.measureMemory`](/monitor-total-page-memory-usage/)
 * [JS Self-Profiling API](https://wicg.github.io/js-self-profiling/) and more.
 
