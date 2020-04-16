@@ -23,6 +23,10 @@ const cheerio = require('cheerio');
 const {determineImagePath} = require('./helpers');
 
 const responsiveImages = (content, outputPath) => {
+  if (!outputPath || !outputPath.endsWith('.html')) {
+    return content;
+  }
+
   const $ = cheerio.load(content);
   const $img = $('img');
   $img.each((i, elem) => {
