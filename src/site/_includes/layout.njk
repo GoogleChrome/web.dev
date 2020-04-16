@@ -24,6 +24,7 @@
     <link rel="preconnect" href="//www.google-analytics.com" crossorigin="" />
     <link rel="preconnect" href="//firebaseremoteconfig.googleapis.com" crossorigin="" />
     <link rel="preconnect" href="//firebaseinstallations.googleapis.com" crossorigin="" />
+    <link rel="preconnect" href="//webdev.imgix.net" crossorigin="" />
     <link
       rel="stylesheet"
       href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
@@ -154,7 +155,7 @@
     <main>
       {% include 'partials/banner.njk' %}
       <div id="content">
-        {% Partial page, path, lang, title, offline %}{{ content | safe }}{% endPartial %}
+        {{ content | safe }}
       </div>
     </main>
     {% include 'partials/footer.njk' %}

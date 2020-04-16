@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
+const path = require('path');
 const {html} = require('common-tags');
 const prettyDate = require('../../_filters/pretty-date');
 const stripLanguage = require('../../_filters/strip-language');
 const md = require('../../_filters/md');
 const constants = require('../../_utils/constants');
-const getImagePath = require('../../_utils/get-image-path');
 const getSrcsetRange = require('../../_utils/get-srcset-range');
 const postTags = require('../../_data/postTags');
 
@@ -56,7 +56,7 @@ class BaseCard {
   }
 
   renderThumbnail(url, img, alt) {
-    const imagePath = getImagePath(img, url);
+    const imagePath = path.join(url, img);
     const srcsetRange = getSrcsetRange(240, 768);
 
     return html`
