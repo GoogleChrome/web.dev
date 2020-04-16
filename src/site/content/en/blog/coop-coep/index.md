@@ -2,7 +2,7 @@
 title: Making your website "cross-origin isolated" using COOP and COEP
 subhead: >
   Use COOP and COEP to set up a cross-origin isolated environment and enable
-  powerful features like `SharedArrayBuffer`, `performance.measureMemory()` or
+  powerful features like `SharedArrayBuffer`, `performance.measureMemory()`, and
   the JS Self-Profiling API.
 description: >
   Some web APIs increase the risk of side-channel attacks like Spectre. To
