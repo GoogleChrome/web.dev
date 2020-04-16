@@ -40,7 +40,7 @@ are not yet enabled in Chrome as of version 83. We'll update this post as they
 become available.
 {% endAside %}
 
-To opt in to a cross-origin isolated state, you need to send the following two 
+To opt in to a cross-origin isolated state, you need to send the following
 HTTP headers on the main document:
 
 ```http
