@@ -5,8 +5,7 @@ daysUntilClose: 7
 # Issues with these labels will never be considered stale
 exemptLabels:
   - pinned
-# Set to true to ignore issues with an assignee (defaults to false)
-exemptAssignees: true
+  - accepted
 # Label to use when marking an issue as stale
 staleLabel: stale
 # Comment to post when marking an issue as stale. Set to `false` to disable
