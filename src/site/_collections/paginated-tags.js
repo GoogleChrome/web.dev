@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-const path = require('path');
-const postTags = require('../_data/postTags');
-const livePosts = require('../_filters/live-posts');
+const tagsCollection = require('./tags');
 const addPagination = require('../_utils/add-pagination');
 
 /**
@@ -40,21 +38,13 @@ module.exports = (collections) => {
     'webxr',
   ];
 
-  const elements = Object.values(postTags)
-    .filter((tag) => {
-      const posts = collections.getFilteredByTag(tag.key).filter(livePosts);
-      return process.env.PERCY ? testTags.includes(tag.key) : posts.length > 0;
-    })
-    .map((tag) => {
-      tag.url = path.join('/en', tag.href);
-      tag.data = {
-        title: tag.title,
-        subhead: tag.description,
-      };
-      return tag;
-    });
+  let tags = tagsCollection(collections);
 
-  return addPagination(elements, {
+  if (process.env.PERCY) {
+    tags = tags.filter((item) => testTags.includes(item.key));
+  }
+
+  return addPagination(tags, {
     href: '/tags/',
   });
 };

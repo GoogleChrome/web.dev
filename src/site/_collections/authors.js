@@ -81,7 +81,7 @@ module.exports = (collections) => {
 
   const authors = Object.values(contributors)
     .sort((a, b) => a.title.localeCompare(b.title))
-    .map((author) => {
+    .reduce((accumulator, author) => {
       author.url = path.join('/en', author.href);
       author.data = {
         title: author.title,
@@ -95,8 +95,13 @@ module.exports = (collections) => {
         author.data.hero = authorsImage;
         author.data.alt = author.title;
       }
-      return author;
-    });
+
+      if (author.elements.length > 0) {
+        accumulator.push(author);
+      }
+
+      return accumulator;
+    }, []);
 
   return authors;
 };
