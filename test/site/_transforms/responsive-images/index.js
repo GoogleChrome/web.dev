@@ -32,6 +32,19 @@ describe('responsive-images', function() {
         .pop();
     });
 
+    it('is a noop if there is no output path', function() {
+      outputPath = false;
+      $body.append(`<img src="./foo.jpg">`);
+      const actual = responsiveImages($.html(), outputPath);
+      $expected('body').append(`<img src="./foo.jpg">`);
+      assert.deepStrictEqual(actual, $expected.html());
+    });
+
+    it('is a noop if the file is not an html file', function() {
+      const actual = responsiveImages('{"foo": "bar"}', 'dist/en/foo.json');
+      assert.deepStrictEqual(actual, '{"foo": "bar"}');
+    });
+
     it('is a noop if there are no images', function() {
       const actual = responsiveImages($.html(), outputPath);
       assert.deepStrictEqual(actual, $expected.html());
@@ -113,15 +126,6 @@ describe('responsive-images', function() {
       $expected("body").append(
         `<img src="${new URL(path.join("handbook", "audience", "foo.jpg"), site.imageCdn)}"><img src="${new URL(path.join("handbook", "audience", "bar.jpg"), site.imageCdn)}">`,
       );
-      assert.deepStrictEqual(actual, $expected.html());
-    });
-
-    it('can handle pages with permalink: false', function() {
-      outputPath = false;
-      $body.append(`<img src="./foo.jpg">`);
-      const actual = responsiveImages($.html(), outputPath);
-      // prettier-ignore
-      $expected("body").append(`<img src="./foo.jpg">`);
       assert.deepStrictEqual(actual, $expected.html());
     });
 
