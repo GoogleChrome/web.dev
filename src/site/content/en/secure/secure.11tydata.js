@@ -19,6 +19,7 @@ module.exports = {
           'security-not-scary',
           'security-attacks',
           'why-https-matters',
+          'same-site-same-origin',
         ],
       },
       {
