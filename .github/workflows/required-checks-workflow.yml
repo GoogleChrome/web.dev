@@ -2,7 +2,7 @@ name: Required checks
 
 on:
   pull_request:
-    types: [labeled, unlabeled]
+    types: [opened, reopened, labeled, unlabeled]
 
 jobs:
   do_not_merge:
