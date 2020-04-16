@@ -123,6 +123,18 @@ const contributors = {
         'Tom is the Games Lead for the Chrome & Web Developer Relations team at Google',
     },
   },
+  ilyagrigorik: {
+    name: {
+      given: 'Ilya',
+      family: 'Grigorik',
+    },
+    org: {
+      name: 'Google',
+      unit: 'Chrome',
+    },
+    twitter: 'igrigorik',
+    github: 'igrigorik',
+  },
   yigu: {
     name: {
       given: 'Yi',
