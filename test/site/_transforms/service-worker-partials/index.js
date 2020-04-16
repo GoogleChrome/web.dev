@@ -16,8 +16,9 @@ describe('service-worker-partials', function() {
     $ = cheerio.load(fixture);
   });
 
-  afterEach(function() {
+  afterEach(async function() {
     $ = null;
+    await fs.rmdir(path.join('.', '.tmp'), {recursive: true});
   });
 
   describe('serviceWorkerPartials', function() {
@@ -36,8 +37,6 @@ describe('service-worker-partials', function() {
         await fs.readFile(outputPath.replace('.html', '.json'), 'utf-8'),
       );
       assert.deepStrictEqual(actual, expected);
-      // Cleanup .tmp dir
-      fs.rmdir(path.join('.', '.tmp'), {recursive: true});
     });
 
     it('is a noop if outputPath does not end in index.html', async function() {
@@ -90,8 +89,6 @@ describe('service-worker-partials', function() {
       await writePartial(outputPath, expected);
       const actual = JSON.parse(await fs.readFile(outputPath, 'utf-8'));
       assert.deepStrictEqual(actual, expected);
-      // Cleanup .tmp dir
-      fs.rmdir(path.join('.', '.tmp'), {recursive: true});
     });
   });
 });

@@ -49,12 +49,18 @@ function determineImagePath(src, outputPath) {
 
   // At this point we've determined that the image has a relative path.
   // outputPath will be something like dist/en/some-article/index.html
-  // so remove the first two items and use the rest to get the url directory.
-  const base = path
-    .dirname(outputPath)
-    .split(path.sep)
-    .slice(2)
-    .join('/');
+  // We need to remove dist/en so we can just target the directory that holds
+  // the image.
+  const parts = path.dirname(outputPath).split(path.sep);
+  if (parts[0] !== 'dist') {
+    throw new Error(`Bad output directory. Files must be served from /dist/`);
+  }
+  parts.shift();
+  // Check to see if the path contains a language prefix like /en/ or /ja/.
+  if (parts[0].length === 2) {
+    parts.shift();
+  }
+  const base = parts.join('/');
 
   const url = new URL(path.join(base, src), site.imageCdn);
   return {src: url.href, isLocal};

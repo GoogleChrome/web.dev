@@ -30,10 +30,17 @@ const responsiveImages = (content, outputPath) => {
     const originalSrc = $elem.attr('src');
     const newSrc = determineImagePath($elem.attr('src'), outputPath).src;
     $elem.attr('src', newSrc);
+    // Note the code below is a short term fix and should be removed eventually.
     // If the image already has srcset defined,
     // update that to use the image CDN as well.
-    // Note that this assumes the srcset paths use the same src as the image.
-    // e.g. src=./foo.jpg srcset=./foo.jpg?w=640w
+    // This assumes the srcset paths use the same src as the image.
+    // e.g. src=./foo.jpg srcset=./foo.jpg?w=640w.
+    // We do this because some components, like Hero, and PostCard, will
+    // attempt to define a srcset for their images before their html makes it to
+    // this transform.
+    // Ultimately we'd like to add support for the sizes attribute, so authors
+    // can tell us what dimensions they want their images displayed at
+    // and then this transform can do all the srcsetting for the entire site.
     const originalSrcSet = $elem.attr('srcset');
     if (originalSrcSet) {
       const newSrcSet = originalSrcSet
