@@ -1,12 +1,10 @@
-import config from 'webdev_config';
+import {firebaseConfig} from 'webdev_config';
 import {store} from './store';
 import {clearSignedInState} from './actions';
 import firestoreLoader from './firestore-loader';
 import {localStorage} from './utils/storage';
 
 /* eslint-disable require-jsdoc */
-
-const {firebaseConfig} = config;
 
 firebase.initializeApp(firebaseConfig);
 
