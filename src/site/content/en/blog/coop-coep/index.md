@@ -283,7 +283,7 @@ An example payload looks like this:
   },  
   type: 'coep',  
   url: 'https://first-party-test.glitch.me/?coep=require-corp',  
-  ...  
+  …
 }]
 ```
 
