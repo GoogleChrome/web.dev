@@ -18,8 +18,8 @@
  * @fileoverview Utilities to be support rewriting image paths.
  */
 
-const site = require("../../_data/site");
-const path = require("path");
+const site = require('../../_data/site');
+const path = require('path');
 
 /**
  * Convert an image path (relative or absolute) over to a full path that uses
@@ -30,7 +30,7 @@ const path = require("path");
  * @return {{src: string, isLocal: boolean}}
  */
 function determineImagePath(src, outputPath) {
-  const isLocal = !RegExp("^https?://").test(src);
+  const isLocal = !RegExp('^https?://').test(src);
 
   // If an image has a protocol then we should just return the src as is.
   // If the outputPath is false then it means the file has permalink set to
@@ -54,7 +54,7 @@ function determineImagePath(src, outputPath) {
     .dirname(outputPath)
     .split(path.sep)
     .slice(2)
-    .join("/");
+    .join('/');
 
   const url = new URL(path.join(base, src), site.imageCdn);
   return {src: url.href, isLocal};

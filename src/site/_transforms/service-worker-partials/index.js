@@ -21,9 +21,9 @@
  * main web.dev template, cutting down on bytes needed to render further pages.
  */
 
-const fs = require("fs").promises;
-const path = require("path");
-const cheerio = require("cheerio");
+const fs = require('fs').promises;
+const path = require('path');
+const cheerio = require('cheerio');
 
 const writePartial = async (to, raw) => {
   await fs.mkdir(path.dirname(to), {recursive: true});
@@ -33,10 +33,10 @@ const writePartial = async (to, raw) => {
 const getPartial = (content) => {
   const $ = cheerio.load(content);
   const partial = {
-    raw: $("#content").html(),
-    lang: $("html").attr("lang"),
-    title: $("title").text(),
-    offline: Boolean($('meta[name="offline"]').attr("content")) || false,
+    raw: $('#content').html(),
+    lang: $('html').attr('lang'),
+    title: $('title').text(),
+    offline: Boolean($('meta[name="offline"]').attr('content')) || false,
   };
   return partial;
 };
@@ -48,14 +48,14 @@ const serviceWorkerPartials = async (content, outputPath) => {
   }
 
   // Unexpected output format.
-  if (!outputPath.endsWith("/index.html")) {
+  if (!outputPath.endsWith('/index.html')) {
     return content;
   }
 
   const partial = getPartial(content, outputPath);
-  const suffixLength = "index.html".length;
+  const suffixLength = 'index.html'.length;
   const partialOutputPath =
-    outputPath.substr(0, outputPath.length - suffixLength) + "index.json";
+    outputPath.substr(0, outputPath.length - suffixLength) + 'index.json';
   await writePartial(partialOutputPath, partial);
 
   return content;
