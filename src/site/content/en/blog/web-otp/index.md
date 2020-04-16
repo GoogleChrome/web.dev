@@ -4,7 +4,7 @@ subhead: Help users with OTPs received through SMS
 authors:
   - agektmr
 date: 2019-10-07
-update: 2020-04-13
+update: 2020-04-16
 hero: hero.png
 alt: A drawing of a woman using OTP to log in to a web app.
 
@@ -121,7 +121,7 @@ Complete
 <strong>5. Launch</strong>
 </td>
 <td markdown="block">
-<strong>Chrome 83</strong>
+Not started
 </td>
 </tr>
 </table>
