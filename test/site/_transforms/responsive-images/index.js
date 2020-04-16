@@ -1,13 +1,13 @@
-const assert = require("assert");
-const path = require("path");
-const cheerio = require("cheerio");
-const site = require("../../../../src/site/_data/site");
+const assert = require('assert');
+const path = require('path');
+const cheerio = require('cheerio');
+const site = require('../../../../src/site/_data/site');
 const {
   responsiveImages,
-} = require("../../../../src/site/_transforms/responsive-images/index");
+} = require('../../../../src/site/_transforms/responsive-images/index');
 
-describe("responsive-images", function() {
-  describe("responsiveImages", function() {
+describe('responsive-images', function() {
+  describe('responsiveImages', function() {
     let $;
     let $body;
     let $expected;
@@ -16,7 +16,7 @@ describe("responsive-images", function() {
 
     beforeEach(function() {
       $ = cheerio.load(`<html><head></head><body></body></html>`);
-      $body = $("body");
+      $body = $('body');
 
       $expected = cheerio.load(`<html><head></head><body></body></html>`);
     });
@@ -25,46 +25,46 @@ describe("responsive-images", function() {
       $ = null;
       $body = null;
       $expected = null;
-      outputPath = "dist/en/add-manifest/index.html";
+      outputPath = 'dist/en/add-manifest/index.html';
       outputDir = path
         .dirname(outputPath)
         .split(path.sep)
         .pop();
     });
 
-    it("is a noop if there are no images", function() {
+    it('is a noop if there are no images', function() {
       const actual = responsiveImages($.html(), outputPath);
       assert.deepStrictEqual(actual, $expected.html());
     });
 
-    it("ignores images with a protocol", function() {
+    it('ignores images with a protocol', function() {
       $body.append(`<img src="https://example.com/foo.jpg">`);
       const actual = responsiveImages($.html(), outputPath);
-      $expected("body").append('<img src="https://example.com/foo.jpg">');
+      $expected('body').append('<img src="https://example.com/foo.jpg">');
       assert.deepStrictEqual(actual, $expected.html());
     });
 
-    it("can handle more than one image with a protocol", function() {
+    it('can handle more than one image with a protocol', function() {
       $body.append(
         `<img src="https://example.com/foo.jpg"><img src="https://example.com/bar.jpg">`,
       );
       const actual = responsiveImages($.html(), outputPath);
-      $expected("body").append(
+      $expected('body').append(
         `<img src="https://example.com/foo.jpg"><img src="https://example.com/bar.jpg"></img>`,
       );
       assert.deepStrictEqual(actual, $expected.html());
     });
 
-    it("uses the image CDN for absolute urls", function() {
+    it('uses the image CDN for absolute urls', function() {
       $body.append(`<img src="/images/foo.jpg">`);
       const actual = responsiveImages($.html(), outputPath);
-      $expected("body").append(
-        `<img src="${new URL("/images/foo.jpg", site.imageCdn)}">`,
+      $expected('body').append(
+        `<img src="${new URL('/images/foo.jpg', site.imageCdn)}">`,
       );
       assert.deepStrictEqual(actual, $expected.html());
     });
 
-    it("can handle more than one image with an absolute url", function() {
+    it('can handle more than one image with an absolute url', function() {
       $body.append(`<img src="/images/foo.jpg"><img src="/images/bar.jpg">`);
       const actual = responsiveImages($.html(), outputPath);
       // prettier-ignore
@@ -74,7 +74,7 @@ describe("responsive-images", function() {
       assert.deepStrictEqual(actual, $expected.html());
     });
 
-    it("uses the image CDN for relative urls", function() {
+    it('uses the image CDN for relative urls', function() {
       $body.append(`<img src="./foo.jpg">`);
       let actual = responsiveImages($.html(), outputPath);
       // prettier-ignore
@@ -84,7 +84,7 @@ describe("responsive-images", function() {
       assert.deepStrictEqual(actual, $expected.html());
 
       $body.empty();
-      $expected("body").empty();
+      $expected('body').empty();
 
       $body.append(`<img src="bar.jpg">`);
       actual = responsiveImages($.html(), outputPath);
@@ -95,7 +95,7 @@ describe("responsive-images", function() {
       assert.deepStrictEqual(actual, $expected.html());
     });
 
-    it("can handle more than one image with relative urls", function() {
+    it('can handle more than one image with relative urls', function() {
       $body.append(`<img src="./foo.jpg"><img src="bar.jpg">`);
       const actual = responsiveImages($.html(), outputPath);
       // prettier-ignore
@@ -105,8 +105,8 @@ describe("responsive-images", function() {
       assert.deepStrictEqual(actual, $expected.html());
     });
 
-    it("can handle nested urls", function() {
-      outputPath = "dist/en/handbook/audience/index.html";
+    it('can handle nested urls', function() {
+      outputPath = 'dist/en/handbook/audience/index.html';
       $body.append(`<img src="./foo.jpg"><img src="bar.jpg">`);
       const actual = responsiveImages($.html(), outputPath);
       // prettier-ignore
@@ -116,7 +116,7 @@ describe("responsive-images", function() {
       assert.deepStrictEqual(actual, $expected.html());
     });
 
-    it("can handle pages with permalink: false", function() {
+    it('can handle pages with permalink: false', function() {
       outputPath = false;
       $body.append(`<img src="./foo.jpg">`);
       const actual = responsiveImages($.html(), outputPath);
@@ -125,24 +125,24 @@ describe("responsive-images", function() {
       assert.deepStrictEqual(actual, $expected.html());
     });
 
-    it("uses the new src for images with preexisting srcset", function() {
+    it('uses the new src for images with preexisting srcset', function() {
       $body.append(
         `<img src="./foo.jpg" srcset="./foo.jpg?w=1024 1024w, ./foo.jpg?w=640 640w, ./foo.jpg?w=320 320w" sizes="100vw">`,
       );
       const actual = responsiveImages($.html(), outputPath);
-      const base = new URL(outputDir + "/", site.imageCdn);
-      const src = new URL("./foo.jpg", base);
-      const large = new URL("./foo.jpg", base);
-      const medium = new URL("./foo.jpg", base);
-      const small = new URL("./foo.jpg", base);
-      $expected("body").append(
+      const base = new URL(outputDir + '/', site.imageCdn);
+      const src = new URL('./foo.jpg', base);
+      const large = new URL('./foo.jpg', base);
+      const medium = new URL('./foo.jpg', base);
+      const small = new URL('./foo.jpg', base);
+      $expected('body').append(
         `<img src="${src}" srcset="${large}?w=1024 1024w, ${medium}?w=640 640w, ${small}?w=320 320w" sizes="100vw">`,
       );
       assert.deepStrictEqual(actual, $expected.html());
     });
   });
 
-  describe("helpers", function() {
-    require("./helpers");
+  describe('helpers', function() {
+    require('./helpers');
   });
 });
