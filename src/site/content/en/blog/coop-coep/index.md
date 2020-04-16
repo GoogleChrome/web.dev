@@ -192,7 +192,7 @@ column.
 You can then click the entry to see more details.
 
 <figure class="w-figure">
-  <img class="w-screenshot-filled" src="devtools2.jpg" alt="Details of the COEP issue are shown in the Headers tab after clicking a network resource in the Network panel.">
+  <img class="w-screenshot w-screenshot-filled" src="devtools2.jpg" alt="Details of the COEP issue are shown in the Headers tab after clicking a network resource in the Network panel.">
 </figure>
 
 {% Aside %}
