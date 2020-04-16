@@ -1,6 +1,6 @@
 .w-align-items--center {
-  margin-left: auto;
-  margin-right: auto;
+  align-items: center;
+  display: flex;
 }
 
 .w-display--flex {
@@ -9,4 +9,10 @@
 
 .w-display--inline-flex {
   display: inline-flex;
+}
+
+
+.w-justify-content--center {
+  display: flex;
+  justify-content: center;
 }
