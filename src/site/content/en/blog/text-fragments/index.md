@@ -325,7 +325,7 @@ text fragments can be created by anyone.
 Imagine I ran an evil ad network `evil-ads.example.com`.
 Further imagine that in one of my ad iframes I opened a hidden cross-origin iframe
 to `dating.example.com` with a Text Fragment URL
-<code>https://dating.example.com<strong>#:~:text=Log%20Out</strong></code>.
+<code>&lt;https://dating.example.com<strong>#:~:text=Log%20Out</strong>&gt;</code>.
 If the text fragment is found, I know the victim is currently logged in to `dating.example.com`,
 which I could use for user profiling.
 Since a naive implementation might decide that a successful match should cause a focus switch,
