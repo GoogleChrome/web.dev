@@ -3,7 +3,9 @@ renderData:
   metadata:
     author: Google Developers
     category: "{{ paged.title }}"
+    icon: https://web.dev/images/social.png
     id: https://web.dev/
+    logo: https://web.dev/images/rss-banner.png
     subtitle: "{{ paged.description }}"
     title: "{{ paged.title }} on web.dev"
     url: https://web.dev{{ paged.href }}feed.xml
@@ -25,8 +27,8 @@ pagination:
   <link href="{{ renderData.metadata.url }}" rel="self"/>
   <link href="{{ renderData.metadata.id }}"/>
   <category term="{{ renderData.metadata.title }}"/>
-  <icon>/images/social.png</icon>
-  <logo>/images/rss-banner.png</logo>
+  <icon>{{ renderData.metadata.icon }}</icon>
+  <logo>{{ renderData.metadata.logo }}</logo>
   <subtitle>{{ renderData.metadata.subtitle }}</subtitle>
   {% for post in paged.elements -%}
   {% set absolutePostUrl -%}{{ post.url | stripLanguage | url | absoluteUrl(renderData.metadata.url) }}{%- endset %}
