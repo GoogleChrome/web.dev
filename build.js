@@ -71,12 +71,15 @@ async function buildCacheManifest() {
   const toplevelManifest = await getManifest({
     globDirectory: 'dist',
     globPatterns: [
-      'images/**/*.{png,svg}', // .jpg files are used for authors, skip
+      // We don't include jpg files, as they're used for authors and hero
+      // images, which are part of articles, and not the top-level site.
+      'images/**/*.{png,svg}',
       '*.css',
       '*.js',
     ],
     globIgnores: [
-      'images/shared/**', // don't include article shared PNGs
+      // This removes large shared PNG files that are used only for articles.
+      'images/{shared}/**',
     ],
   });
   if (toplevelManifest.warnings.length) {
