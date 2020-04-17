@@ -234,7 +234,7 @@ supports dark mode by checking if the media query `prefers-color-scheme` matches
 Note how I don't include any value, but purely check if the media query alone matches.
 
 ```js
-if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
+if (window.matchMedia('(prefers-color-scheme)').matches) {
   console.log('🎉 Dark mode is supported');
 }
 ```
