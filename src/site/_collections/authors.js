@@ -22,7 +22,7 @@ const setdefault = require('../_utils/setdefault');
 /**
  * Generate map the posts by author's username/key
  *
- * @param {*} posts
+ * @param {Array<any>} posts
  * @return {Map<string, Array<any>>} Map of posts by author's username/key
  */
 const findAuthorsPosts = (posts) => {
@@ -46,19 +46,16 @@ const findAuthorsPosts = (posts) => {
  */
 const findAuthorsImage = (key) => {
   for (const size of ['@3x', '@2x', '']) {
-    if (
-      fs.existsSync(
-        path.join(
-          'src',
-          'site',
-          'content',
-          'en',
-          'images',
-          'authors',
-          `${key}${size}.jpg`,
-        ),
-      )
-    ) {
+    const jpegPath = path.join(
+      'src',
+      'site',
+      'content',
+      'en',
+      'images',
+      'authors',
+      `${key}${size}.jpg`,
+    );
+    if (fs.existsSync(jpegPath)) {
       return path.join('/images', 'authors', `${key}${size}.jpg`);
     }
   }
@@ -82,6 +79,7 @@ module.exports = (collections) => {
   const authors = Object.values(contributors)
     .sort((a, b) => a.title.localeCompare(b.title))
     .reduce((accumulator, author) => {
+      // This updates the shared contributors object with meta information and is safe to be called multiple times.
       author.url = path.join('/en', author.href);
       author.data = {
         title: author.title,

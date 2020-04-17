@@ -26,6 +26,7 @@ const livePosts = require('../_filters/live-posts');
  */
 module.exports = (collections) => {
   return Object.values(postTags).reduce((accumulator, tag) => {
+    // This updates the shared postTags object with meta information and is safe to be called multiple times.
     tag.url = path.join('/en', tag.href);
     tag.data = {
       title: tag.title,
