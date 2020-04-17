@@ -283,7 +283,7 @@ I hide the content of the page until `light.css` has loaded.
 <script>
   // If `prefers-color-scheme` is not supported, fall back to light mode.
   // In this case, light.css will be downloaded with `highest` priority.
-  if (window.matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
+  if (!window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.documentElement.style.display = 'none';
     document.head.insertAdjacentHTML(
         'beforeend',
