@@ -6,6 +6,7 @@ description: Our latest news, updates, and stories for developers
 renderData:
   title: "{{ paged.title or title }}"
   description: "{{ paged.description or description }}"
+  rss: "{{ paged.href }}feed.xml"
 pagination:
   data: collections.paginatedPostsByAuthor
   size: 1
