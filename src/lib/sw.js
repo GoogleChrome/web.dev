@@ -192,13 +192,15 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
   }
   const partial = await response.json();
 
-  // Our target browsers all don't mind if we just place <title> in the middle of the document.
-  // This is far simpler than trying to find the right place in <head>.
   const meta = partial.offline ? `<meta name="offline" value="true" />` : '';
-  const output = layoutTemplate.replace(
-    '%_CONTENT_REPLACE_%',
-    meta + `<title>${partial.title || ''}</title>` + partial.raw,
-  );
+  const title = `<title>${partial.title || 'web.dev'}</title>`;
+  const rssHref = partial.rss || '/feed.xml';
+  const rssTitle = partial.rss ? `${partial.title} on web.dev` : 'web.dev feed';
+  const rss = `<link rel="alternate" href="${rssHref}" type="application/atom+xml" data-title="${rssTitle}"></link>`;
+
+  const output = layoutTemplate
+    .replace('%_HEAD_REPLACE_%', meta + title + rss)
+    .replace('%_CONTENT_REPLACE_%', partial.raw);
   const headers = new Headers();
   headers.append('Content-Type', 'text/html');
   return new Response(output, {headers, status: response.status});
