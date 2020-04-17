@@ -64,7 +64,7 @@ has an `id` attribute with the value `HTML1`.
   <figcaption class="w-figcaption">Dev Tools showing the <code>id</code> of an element.</figcaption>
 </figure>
 
-If I parse this URL with JavaScript, the different components are revealed.
+If I parse this URL with JavaScript's `URL()` constructor, the different components are revealed.
 Check the `hash` with the value `#HTML1`.
 
 ```js/3
@@ -87,7 +87,7 @@ URL {
 */
 ```
 
-The pure fact that I had to open the Developer Tools to find out the `id`
+The pure fact though that I had to open the Developer Tools to find out the `id`
 of the element in question speaks volumes about the probability this particular section of the page
 was meant to be linked to by the author of the blog post.
 
@@ -124,7 +124,7 @@ text I want to link to.
 Taking up the example from above where I wanted to place a deep link to the
 *ECMAScript Modules in Web Workers* heading, the URL in this case would be
 <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript%20Modules%20in%20Web%20Workers"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#:~:text=ECMAScript%20Modules%20in%20Web%20Workers</strong></code></a>
-(the Text Fragment in bold).
+(the Text Fragment is emphasized in bold).
 If you click it, a supporting browser like Chrome will scroll the text fragment into view
 and highlight it:
 
@@ -163,7 +163,7 @@ Compare `textStart` and `textEnd` with the previous values.
 If I take it one step further and now use only one word for both `textStart` and `textEnd`,
 you can see that I am in trouble.
 The URL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript,Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#:~:text=ECMAScript,Workers.</strong></code></a>
-is even shorter now, but the highlighted text fragment is no longer the original one.
+is even shorter now, but the highlighted text fragment is no longer the originally desired one.
 The highlighting stops at the first occurrence of the word `Workers.`, which is correct,
 but not what I intended to highlight.
 The problem is that the desired section is not uniquely identified
@@ -176,10 +176,10 @@ with the current one-word `textStart` and `textEnd` values:
 
 ### `prefix-` and `-suffix`
 
-Using long enough values for `textStart` and `textEnd` is one solution to obtain a unique link.
+Using long enough values for `textStart` and `textEnd` is one solution for obtaining a unique link.
 In some situations, however, this is not possible.
-Why did I choose the Chrome&nbsp;80 release blog post as my example?
-The answer is that in this release, Text Fragments were introduced:
+On a side note, why did I choose the Chrome&nbsp;80 release blog post as my example?
+The answer is that in this release Text Fragments were introduced:
 
 <figure class="w-figure">
   <img src="text-fragments.png" alt="Blog post text: Text URL Fragments.
@@ -215,6 +215,7 @@ In cases like this, I can specify a `prefix​-` and a `-suffix`.
 The word before the green code font `text` is `the`, and the word after is `parameter`.
 No other of the three occurrences of the word `text` has the same surrounding words.
 Armed with this knowledge, I can tweak the previous URL and add the `prefix-` and the `-suffix`.
+Like the other parameters, they, too, need to be percent-encoded.
 <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=the-,text,-parameter"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#:~:text=the-,text,-parameter</strong></code></a>.
 To allow the parser to clearly identify the `prefix-` and the `-suffix`,
 they need to be separated from the `textStart` and the optional `textEnd` with a dash&nbsp;`-`.
@@ -235,9 +236,11 @@ so they are not being interpreted as part of the text directive syntax.
 #:~:text=[prefix-,]textStart[,textEnd][,-suffix]
 ```
 
-Each of `prefix-`, `textStart`, `textEnd`, and `-suffix` will only match text within a single block.
+Each of `prefix-`, `textStart`, `textEnd`, and `-suffix` will only match text within a single
+[block-level element](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements#Elements).
 For example, `:~:text=The quick,lazy dog` will fail to match in the following example,
-because the starting string "The quick" does not appear within a single, uninterrupted block:
+because the starting string "The quick" does not appear within a single,
+uninterrupted block-level element:
 
 ```html
   <div>The<div> </div>quick brown fox</div>
@@ -270,7 +273,7 @@ contains both an element fragment (`HTML1`), as well as a text fragment
 
 ### The fragment directive
 
-So far I only quickly glanced over one important addition without actually explaining it:
+So far I have only quickly glanced over one important addition without actually explaining it:
 the fragment directive `:~:`.
 To avoid compatibility issues with the usage of existing URL element fragments as shown above,
 the [Text Fragments specification](https://wicg.github.io/ScrollToTextFragment/)
@@ -281,12 +284,24 @@ and is stripped from the URL during loading so that author scripts cannot direct
 User agent instructions are also called *directives*.
 In the concrete case, `text=` is therefore called a *text directive*.
 
+### Feature detectability
+
+Support for Text Fragments is feature-detectable
+by checking for the existence of the `fragmentDirective` in the `Location` interface.
+Unlike the other properties like `hash` that I have mentioned above,
+`fragmentDirective` does not return any value.
 The fragment directive is a mechanism for URLs to specify instructions
-meant for the browser rather than the document.
+directed to the browser rather than the document.
 It is meant to avoid direct interaction with author script,
 so that future user agent instructions can be added without fear
 of introducing breaking changes to existing content.
-One potential example could be translation hints.
+One potential example of such future additions could be translation hints.
+
+```js
+if ('fragmentDirective' in window.location) {
+  // Text Fragments is supported.
+}
+```
 
 ### Security
 
