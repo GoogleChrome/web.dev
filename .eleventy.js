@@ -48,6 +48,7 @@ const Tooltip = require(`./${componentsDir}/Tooltip`);
 const YouTube = require(`./${componentsDir}/YouTube`);
 
 const collectionsDir = 'src/site/_collections';
+const authors = require(`./${collectionsDir}/authors`);
 const paginatedAuthors = require(`./${collectionsDir}/paginated-authors`);
 const paginatedBlogPosts = require(`./${collectionsDir}/paginated-blog-posts`);
 const paginatedPostsByAuthor = require(`./${collectionsDir}/paginated-posts-by-author`);
@@ -57,6 +58,7 @@ const postDescending = require(`./${collectionsDir}/post-descending`);
 const postToCollections = require(`./${collectionsDir}/post-to-collections`);
 const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
 const recentPosts = require(`./${collectionsDir}/recent-posts`);
+const tags = require(`./${collectionsDir}/tags`);
 // nb. algoliaPosts is only require'd if needed, below
 
 const filtersDir = 'src/site/_filters';
@@ -147,6 +149,7 @@ module.exports = function(config) {
   // ----------------------------------------------------------------------------
   // COLLECTIONS
   // ----------------------------------------------------------------------------
+  config.addCollection('authors', authors);
   config.addCollection('posts', postDescending);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('recentPosts', recentPosts);
@@ -156,6 +159,7 @@ module.exports = function(config) {
   config.addCollection('paginatedPostsByTag', paginatedPostsByTag);
   config.addCollection('paginatedTags', paginatedTags);
   config.addCollection('postToCollections', postToCollections);
+  config.addCollection('tags', tags);
   // Turn collection.all into a lookup table so we can use findBySlug
   // to quickly find collection items without looping.
   config.addCollection('memoized', function(collection) {
