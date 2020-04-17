@@ -15,9 +15,10 @@
 
     {% if not nometa %}
       {% Meta locale, page, collections, renderData %}
+    {% else %}
+      <link rel="alternate" href="/feed.xml" type="application/atom+xml" data-title="web.dev feed">
     {%- endif %}
 
-    <link rel="alternate" href="/feed.xml" type="application/atom+xml" data-title="web.dev feed">
     <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
     <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
     <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />

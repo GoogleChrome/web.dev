@@ -121,6 +121,16 @@ module.exports = (locale, page, collections, renderData = {}) => {
     `;
   }
 
+  function renderRSS() {
+    const feed = pageData.rss || '/feed.xml';
+    const title = pageData.rss
+      ? `${pageData.title} on web.dev`
+      : 'web.dev feed';
+    return html`
+      <link rel="alternate" href="${feed}" type="application/atom+xml" data-title="${title}"></link>
+    `;
+  }
+
   // prettier-ignore
   return html`
     <title>${strip(pageData.title || pageData.path.title || site.title)}</title>
@@ -130,5 +140,6 @@ module.exports = (locale, page, collections, renderData = {}) => {
     ${renderGoogleMeta()}
     ${renderFacebookMeta()}
     ${renderTwitterMeta()}
+    ${renderRSS()}
   `;
 };
