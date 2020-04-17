@@ -315,7 +315,21 @@ such that the destination page is known to be sufficiently isolated.
 
 ### Privacy
 
+It is important that implementations of the Text Fragments specification
+do not leak whether a text fragment was found on a page or not.
+While element fragments are fully under the control of the original page author
+(remember how there was no way to link to the section
+I wanted to link to before in my running example),
+text fragments can be created by anyone.
 
+Imagine I ran an evil ad network `evil-ads.example.com`.
+Further imagine that in one of my ad iframes I opened a hidden cross-origin iframe
+to `dating.example.com` with a Text Fragment URL
+<code>https://dating.example.com<strong>#:~:text=Log%20Out</strong></code>.
+If the text fragment is found, I know the victim is currently logged in to `dating.example.com`,
+which I could use for user profiling.
+Since a naive implementation might decide that a successful match should cause a focus switch,
+on `evil.example.com` I could listen for the `blur` event and thus know when a match occurred.
 
 ## Acknowledgements
 
