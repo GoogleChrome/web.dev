@@ -62,8 +62,8 @@ for a more in-depth conceptual overview.
 While there are a number of important headers that should be included in your
 web app's outgoing requests, the browser almost always takes care of setting
 them on your behalf when it makes requests. Request headers that affect checking
-for freshness, like [`If-None-Match`][If-None-Match] and
-[`If-Modified-Since`][If-Modified-Since] just appear based on the browser's
+for freshness, like [`If-None-Match`][if-none-match] and
+[`If-Modified-Since`][if-modified-since] just appear based on the browser's
 understanding of the current values in the HTTP Cache.
 
 This is good news—it means that you can continue including tags like `<img
@@ -86,16 +86,16 @@ The part of the HTTP caching setup that matters the most is the headers that
 your web server adds to each outgoing response. The following headers all factor
 into effective caching behavior:
 
-* [`Cache-Control`][Cache-Control].
+* [`Cache-Control`][cache-control].
   The server can return a `Cache-Control` directive to specify how, and for how
   long, the browser and other intermediate caches should cache the individual
   response.
-* [`ETag`][ETag]. When
+* [`ETag`][etag]. When
   the browser finds an expired cached response, it can send a small token 
   (usually a hash of the file's contents) to the server to check if the file has
   changed. If the server returns the same token, then the file is the same, and there's
   no need to re-download it.
-* [`Last-Modified`][Last-Modified].
+* [`Last-Modified`][last-modified].
   This header serves the same purpose as `ETag`, but is less accurate.
 
 Some web servers have built-in support for setting those headers by default,
@@ -210,7 +210,7 @@ of deciding which `Cache-Control` value(s) to use. Note also that `Cache-Control
 accept a comma-separated list of directives. See [Appendix: `Cache-Control` examples](#examples).
 
 Along with that, setting one of two additional response headers can also help:
-either [`ETag`][ETag] or [`Last-Modified`][Last-Modified]. As mentioned in
+either [`ETag`][etag] or [`Last-Modified`][last-modified]. As mentioned in
 [Response headers](#response-headers), `ETag` and `Last-Modified` both serve the
 same purpose: determining if the browser needs to re-download a cached file
 that has expired. `ETag` is the recommended approach because it's more accurate.
@@ -224,9 +224,9 @@ that has expired. `ETag` is the recommended approach because it's more accurate.
   the HTTP Cache and finds the previous response. Unfortunately, the browser
   can't use the previous response because the response has now expired. At this
   point, the browser could dispatch a new request and fetch the new full
-  response. However, that’s inefficient because if the resource hasn't changed,
+  response. However, that's inefficient because if the resource hasn't changed,
   then there's no reason to download the same information that's already in the
-  cache! That’s the problem that validation tokens, as specified in the <code>ETag</code>
+  cache! That's the problem that validation tokens, as specified in the <code>ETag</code>
   header, are designed to solve. The server generates and returns an arbitrary
   token, which is typically a hash or some other fingerprint of the contents of
   the file. The browser doesn't need to know how the fingerprint is generated; it
@@ -237,7 +237,7 @@ that has expired. `ETag` is the recommended approach because it's more accurate.
 
 By setting `ETag` or `Last-Modified`, you'll end up making the
 revalidation request much more efficient. They end up triggering the
-[`If-Modified-Since`][If-Modified-Since] or [`If-None-Match`][If-None-Match]
+[`If-Modified-Since`][if-modified-since] or [`If-None-Match`][if-none-match]
 request headers that were mentioned in [Request headers](#request-headers).
 
 When a properly configured web server sees those incoming request headers, it
@@ -345,8 +345,8 @@ If you have more time, here are further ways that you can optimize your usage of
 
 [crp]: https://developers.google.com/web/fundamentals/performance/critical-rendering-path
 [304]: https://developer.mozilla.org/docs/Web/HTTP/Status/304
-[If-Modified-Since]: https://developer.mozilla.org/docs/Web/HTTP/Headers/If-Modified-Since
-[If-None-Match]: https://developer.mozilla.org/docs/Web/HTTP/Headers/If-None-Match
-[ETag]: https://developer.mozilla.org/docs/Web/HTTP/Headers/ETag
-[Last-Modified]: https://developer.mozilla.org/docs/Web/HTTP/Headers/Last-Modified
-[Cache-Control]: https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control
+[if-modified-since]: https://developer.mozilla.org/docs/Web/HTTP/Headers/If-Modified-Since
+[if-none-match]: https://developer.mozilla.org/docs/Web/HTTP/Headers/If-None-Match
+[etag]: https://developer.mozilla.org/docs/Web/HTTP/Headers/ETag
+[last-modified]: https://developer.mozilla.org/docs/Web/HTTP/Headers/Last-Modified
+[cache-control]: https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control
