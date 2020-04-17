@@ -217,7 +217,7 @@ that has expired. `ETag` is the recommended approach because it's more accurate.
 
 {% Details %}
   {% DetailsSummary 'h4' %}
-    `ETag` example
+    ETag example
   {% endDetailsSummary %}
   Assume that 120 seconds have passed since the initial fetch and the browser
   has initiated a new request for the same resource. First, the browser checks
