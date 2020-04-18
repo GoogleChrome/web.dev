@@ -58,6 +58,12 @@ class BaseCard {
     this.alt = this.data.alt || '';
   }
 
+  isDraft() {
+    if (this.data.draft) {
+      return 'w-card--draft';
+    }
+  }
+
   renderThumbnail(url, img, alt) {
     const imagePath = path.join(url, img);
     const srcsetRange = getSrcsetRange(240, 768);
@@ -194,7 +200,7 @@ class BaseCard {
   render() {
     // prettier-ignore
     return html`
-      <div class="w-card ${this.className}" role="listitem">
+      <div class="w-card ${this.className} ${this.isDraft()}" role="listitem">
         <article
           class="w-card-base ${this.featured ? 'w-card-base--featured' : ''}"
         >
