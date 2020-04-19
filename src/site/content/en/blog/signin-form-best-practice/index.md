@@ -29,6 +29,16 @@ Poorly designed signin forms get high bounce rates. Each bounce means a lost and
 [Stats for signup/signin bounce rates.]
 
 
+{% Aside 'caution' %}
+This article is about front-end best practice. It does not explain how to build back-end services to authenticate users, store their credentials or manage their accounts.
+
+[Authenticate with Firebase using Password-Based Accounts using JavaScript](https://firebase.google.com/docs/auth/web/password-auth) explains how to enable user authentication using email addresses and passwords, and how to manage your password-based accounts.
+
+[12 best practices for user account, authorization and password management](https://cloud.google.com/blog/products/gcp/12-best-practices-for-user-account) outlines core principles for running your own back-end.
+{% endAside %}
+
+
+
 ## Use meaningful HTML
 
 The basic principle here is to use elements built for the job: `<form>`, `<label>` and `<button>`. These enable built-in browser functionality, improve accessibility, and add meaning to your markup.
@@ -44,16 +54,16 @@ An HTML form can also make it simpler to build basic functional signin for older
 ### Use &lt;label&gt;
 To label an input, use a `<label>`!
 
-```
+```html
 <label for="email">Email</label>
-<input id="email" ...>
+<input id="email" …>
 ```
 
 Two reasons:
 * A tap or click on a label moves focus to its input. (You associate a label with an input by using the label's `for` attribute with the input's ID.)
 * Screenreaders announce label text when the label or the label's input gets focus.
 
-Don't use placeholders as input labels. People are liable to forget what the input was for once they've started entering text, especially if they get distracted. (Was I entering an email address or a phone number, or something else?) There are lots of other potential problems with placeholders: see [Don’t Use The Placeholder Attribute](https://www.smashingmagazine.com/2018/06/placeholder-attribute/) and [Placeholders in Form Fields Are Harmful](https://www.nngroup.com/articles/form-design-placeholders/) if you're unconvinced.
+Don't use placeholders as input labels. People are liable to forget what the input was for once they've started entering text, especially if they get distracted. (Was I entering an email address or a phone number, or something else?) There are lots of other potential problems with placeholders: see [Don't Use The Placeholder Attribute](https://www.smashingmagazine.com/2018/06/placeholder-attribute/) and [Placeholders in Form Fields Are Harmful](https://www.nngroup.com/articles/form-design-placeholders/) if you're unconvinced.
 
 It's probably best to put your labels above your inputs. This enables consistent design across mobile and desktop and, according to [Google AI research](https://ai.googleblog.com/2014/07/simple-is-better-making-your-web-forms.html), enables quicker scanning by users. You get full width labels and inputs, and you don't need to adjust label and input width to fit the label text.
 
@@ -157,23 +167,23 @@ To avoid this problem, use `name="new-password"` for the password input in a sig
 
 For an account creation form, password input code should look like this:
 
-```
-<input name="new-password" type="password" ...>
+```html
+<input name="new-password" type="password" …>
 ```
 
 For signin:
 
-```
-<input name="current-password" type="password" ...>
+```html
+<input name="current-password" type="password" …>
 ```
 
 Not surprisingly, different browsers handle things differently.
 
-On Safari, for example ...
+On Safari, for example …
 
 [Show screenshot]
 
-On Chrome ...
+On Chrome …
 
 [Show screenshot]
 
@@ -183,12 +193,12 @@ Browser password and autofill systems are not simple.
 
 The algorithms for guessing, storing and displaying values are not standardized, and vary from platform to platform.
 
-For example, as pointed out by [Hidde de Vries](https://hiddedevries.nl/en/blog/2018-01-13-making-password-managers-play-ball-with-your-login-form): "Firefox’s password manager complements [its heuristics](https://dxr.mozilla.org/firefox/source/toolkit/components/passwordmgr/src/nsLoginManager.js#626) with a [recipe system](https://bugzilla.mozilla.org/show_bug.cgi?id=1119454".
+For example, as pointed out by [Hidde de Vries](https://hiddedevries.nl/en/blog/2018-01-13-making-password-managers-play-ball-with-your-login-form): "Firefox's password manager complements [its heuristics](https://dxr.mozilla.org/firefox/source/toolkit/components/passwordmgr/src/nsLoginManager.js#626) with a [recipe system](https://bugzilla.mozilla.org/show_bug.cgi?id=1119454).
 {% endAside %}
 
 [Screencast video of Safari signin showing Touch ID]
 
-[Autofill: What web devs should know, but don’t](https://cloudfour.com/thinks/autofill-what-web-devs-should-know-but-dont) has a lot more information about using `name` and `autocomplete`. The [HTML spec](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#inappropriate-for-the-control) lists all 59 possible values.
+[Autofill: What web devs should know, but don't](https://cloudfour.com/thinks/autofill-what-web-devs-should-know-but-dont) has a lot more information about using `name` and `autocomplete`. The [HTML spec](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#inappropriate-for-the-control) lists all 59 possible values.
 
 
 ### Enable the browser to suggest a strong password
@@ -203,7 +213,7 @@ Add the `required` attribute to both email and password fields.
 
 Modern browsers automatically prompt and set focus if you miss a required field. No JavaScript required!
 
-[Video or screenshot of built-in browser prompting — Safari desktop is good]
+[Video or screenshot of built-in browser prompting—Safari desktop is good]
 
 
 ## CSS for fingers and thumbs
@@ -296,15 +306,15 @@ Use aria labels where necessary. For example **Show password**, make sure to us
 [Validation: see https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_javascript_for_more_complex_real-time_validation)
 Prevent submission of invalid forms
 Masking
-...
+…
 ]
 
 
 ### Analytics and RUM
 
-[...]
+[…]
 
-## ...and finally
+## …and finally
 
 Some general guidelines to help reduce signin form abandonment:
 
