@@ -4,6 +4,7 @@ subhead: Use cross-platform browser features to build signin forms that are secu
 authors:
   - samdutton
 date: 2020-04-24
+updated: 2020-04-24
 description: Use cross-platform browser features to build signin forms that are secure, accessible and easy to use.
 hero: hero.jpg
 alt: Closeup photo of a man holding a phone showing a login page
