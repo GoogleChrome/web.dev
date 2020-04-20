@@ -18,15 +18,15 @@
  * Removes any characters that should not exist in a string.
  *
  * @param {(string|number)} [text] Text to clean
- * @param {(Array<string|RegExp>)} [additionallyForbidden] Additional rules to be removed.
+ * @param {Array<{ searchValue: (string|RegExp), replaceValue: string}>} [additionallyForbidden] Additional rules to be removed or replaced.
  * @return {string} A string of the pages title without any forbidden characters.
  */
 module.exports = (text, additionallyForbidden) => {
   let cleaned = String(text || '');
-  const forbidden = [/\`/g];
+  const forbidden = [{searchValue: /\`/g, replaceValue: ''}];
 
   [...forbidden, ...(additionallyForbidden || [])].forEach((rule) => {
-    cleaned = cleaned.replace(rule, '');
+    cleaned = cleaned.replace(rule.searchValue, rule.replaceValue);
   });
 
   return cleaned;
