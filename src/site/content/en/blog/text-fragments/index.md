@@ -254,6 +254,14 @@ It does, however, match in this example:
   <div>jumped over the lazy dog</div>
 ```
 
+### Multiple text fragments in one URL
+
+Note that multiple text fragments can appear on one URL.
+The particular text fragments need to be separated by an ampersand character `&`.
+Here is an example link with three text fragments:
+<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=Text%20URL%20Fragments&text=text,-parameter&text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#:~:text=Text%20URL%20Fragments&text=text,-parameter&text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet<strong></code></a>.
+
+
 ### Mixing element and text fragments
 
 Traditional element fragments can be combined with text fragments.
