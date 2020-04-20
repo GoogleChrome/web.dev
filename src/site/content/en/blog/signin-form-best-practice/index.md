@@ -18,8 +18,6 @@ tags:
   - trust and safety
 ---
 
-## Summary
-
 
 If users ever need to log in to your site, then good signin form design is absolutely crucial.
 
@@ -30,10 +28,22 @@ Poorly designed signin forms get high bounce rates. Each bounce means a lost and
 [Stats for signup/signin bounce rates.]
 
 
+## Checklist
+
+* Use standard elements: form, input, label and button.
+* Use label elements to label inputs.
+* Make the most of attributes: type, name, autocomplete, required, autofocus.
+* Use `name="new-password"` for a signup password input.
+* Use `autocomplete="current-password"` for a signin password input.
+* Provide **Show password** functionality.
+* Don't double up email or password inputs.
+* Design forms so the mobile keyboard doesn't obscure inputs or buttons.
+* Ensure your forms are usable on mobile: legible text, inputs and buttons large enough to work as touch targets.
+* Build page analytics, interaction analytics and user-centric performance measurement into your signup and signin flow.
+
+
 {% Aside 'caution' %}
 This article is about front-end best practice. It does not explain how to build back-end services to authenticate users, store their credentials or manage their accounts.
-
-[Authenticate with Firebase using Password-Based Accounts using JavaScript](https://firebase.google.com/docs/auth/web/password-auth) explains how to enable user authentication using email addresses and passwords, and how to manage your password-based accounts.
 
 [12 best practices for user account, authorization and password management](https://cloud.google.com/blog/products/gcp/12-best-practices-for-user-account) outlines core principles for running your own back-end.
 {% endAside %}
@@ -76,6 +86,8 @@ Try out the example at [glitch.com/edit/#!/label-position](https://glitch.com/ed
   <img src="./label-position.png" alt="Screenshot showing form input label position on mobile: next to input and above input.">
   <figcaption class="w-figcaption">Label and input width is limited when both are on the same line.</figcaption>
 </figure>
+
+[Add information about `aria[describedby`?]
 
 ### Use &lt;button&gt;
 
@@ -123,7 +135,7 @@ Add an `autofocus` attribute to the first input in your login form. That makes i
 
 Passwords inputs should have `type="password"` to hide password text. (Sounds obvious, but some sites miss this.)
 
-However, you should add a **Show password** icon or button to enable users to check the text they've entered. [Usability suffers](https://www.nngroup.com/articles/stop-password-masking/) when users can't see the text they've entered. Currently there's no built-in way to do this, though [there are plans for implementation](https://twitter.com/sw12/status/1251191795377156099), so you'll need to use JavaScript. You can see this in action in the codelab for this article.
+However, you should add a **Show password** icon or button to enable users to check the text they've entered. (See [Enable password display](#enable-password-display).)
 
 [Screenshot from Google signin form.]
 
@@ -166,7 +178,7 @@ Remember that you need different behaviour for inputs in signup and signin forms
 
 To avoid this problem, use `name="new-password"` for the password input in a signup form, and `name="current-password"` in a signin form.
 
-For an account creation form, password input code should look like this:
+For a signup form, password input code should look like this:
 
 ```html
 <input name="new-password" type="password" …>
@@ -175,7 +187,7 @@ For an account creation form, password input code should look like this:
 For signin:
 
 ```html
-<input name="current-password" type="password" …>
+<input name="current-password" type="password" autocomplete="current-password" …>
 ```
 
 Not surprisingly, different browsers handle things differently.
@@ -295,11 +307,21 @@ You can use the :invalid CSS selector like this:
 `input[type=email]:invalid`
 
 
+
 ## Use JavaScript where necessary
 
-### Enable View Password
+### Enable password display
 
-Use aria labels where necessary. For example **Show password**, make sure to use an aria-label to warn
+You should add a **Show password** icon or button to enable users to check the text they've entered. [Usability suffers](https://www.nngroup.com/articles/stop-password-masking/) when users can't see the text they've entered. Currently there's no built-in way to display **Show password** UI, though [there are plans for implementation](https://twitter.com/sw12/status/1251191795377156099), so you'll need to use JavaScript. You can see this in action in the codelab for this article.
+
+With a **Show password** button, make sure to include an`aria-label` warn that the password will be displayed. Otherwise screenreader users may inadvertently reveal passwords:
+
+```html
+<button id="toggle-password" aria-label="Show password as plain text.
+Warning: this will display your password on the screen.">Show password</button>
+```
+
+[Creating Accessible Forms](https://webaim.org/techniques/forms/) has more tips to help make forms accessible.
 
 
 ### Validate before submission
@@ -313,13 +335,22 @@ Masking
 
 ### Analytics and RUM
 
-[…]
+"What you cannot measure, you cannot improve" is particularly true for signup and signin forms. You need to set goals, measure success, improve your site—and repeat.
+
+[Discount usability testing](https://www.nngroup.com/articles/discount-usability-20-years/) can be helpful for trying out changes, but you'll need real-world data to really understand how your users experience your signup and signin forms:
+
+* **Page analytics**: including page views, bounce rates, and exit pages.
+* **Interaction analytics**: such as [goal funnels](https://support.google.com/analytics/answer/6180923?hl=en) (where do users abandon your signin or signin flow?) and [events](https://developers.google.com/analytics/devguides/collection/gtagjs/events) (what actions do users take when interacting with your forms?)
+* **Website performance**: [user-centric metrics](/user-centric-performance-metrics) to understand the real experience of your users (are your signup and signin forms slow for some reason and, if so, what is the cause?).
+
+You may also want to consider implementing A/B testing in order to try out different approaches to signup and signin, and staged rollouts to 'test the water' before releasing changes to all your users.
+
 
 ## …and finally
 
 Some general guidelines to help reduce signin form abandonment:
 
-* Don't make users hunt for the signin form! (It's surprising how many sites get this wrong.) Put a link to your signin form at the top of the page with well-understood wording such as **Sign In**, **Create Account** or **Register**.
+* Don't make users hunt for signin. It's surprising how many sites get this wrong! Put a link to the signin form at the top of the page, with well-understood wording such as **Sign In**, **Create Account** or **Register**.
 * Keep it focused! This is not the place to distract people with offers and unrelated site features.
 * Where possible, keep signin separate from collection of other user data such as addresses or credit card details.
 * Before users start on your signin form, make it clear what the value proposition is. How do they benefit from signing in? Make sure users have real incentives to complete signin.
