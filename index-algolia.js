@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-require("dotenv").config();
+require('dotenv').config();
 
-const algoliasearch = require("algoliasearch");
-const fs = require("fs");
-const log = require("fancy-log");
+const algoliasearch = require('algoliasearch');
+const fs = require('fs');
+const log = require('fancy-log');
 
 // TODO(samthor): For now, we only index 'en' content.
-const raw = fs.readFileSync("dist/en/algolia.json", "utf-8");
+const raw = fs.readFileSync('dist/en/algolia.json', 'utf-8');
 const indexed = JSON.parse(raw);
 
 // Revision will look like "YYYYMMDDHHMM".
 const revision = new Date()
   .toISOString()
   .substring(0, 16)
-  .replace(/\D/g, "");
-const primaryIndexName = "webdev";
+  .replace(/\D/g, '');
+const primaryIndexName = 'webdev';
 const deployIndexName = `webdev_deploy_${revision}`;
 
 async function index() {
@@ -47,12 +47,14 @@ async function index() {
 
   // TODO(samthor): This is from https://www.algolia.com/doc/api-reference/api-methods/replace-all-objects/#examples,
   // are there more things that should be copied?
-  const toCopy = ["settings", "synonyms", "rules"];
-  await client.copyIndex(primaryIndex.indexName, deployIndex.indexName, toCopy);
+  const scope = ['settings', 'synonyms', 'rules'];
+  await client.copyIndex(primaryIndex.indexName, deployIndex.indexName, {
+    scope,
+  });
 
   // TODO(samthor): Batch uploads so that we don't send more than 10mb.
   // As of September 2019, the JSON itself is only ~70k. \shrug/
-  await deployIndex.addObjects(indexed);
+  await deployIndex.saveObjects(indexed);
   log(`Indexed, replacing existing index ${primaryIndex.indexName}`);
 
   // Move our temporary deploy index on-top of the primary index, atomically.

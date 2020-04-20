@@ -5,7 +5,7 @@ description: |
   Learn about the "Document doesn't have a <title> element"
   Lighthouse audit.
 date: 2019-05-02
-updated: 2019-08-21
+updated: 2020-04-20
 web_lighthouse:
   - document-title
 ---
@@ -56,20 +56,22 @@ clearly states what the page is about. For example:
 
 Here are examples of good and bad titles:
 
+{% Compare 'worse', 'Don\'t' %}
 ```html
 <title>Donut recipe</title>
 ```
-
-{% Compare 'worse', 'Don\'t' %}
+{% CompareCaption %}
 Too vague.
+{% endCompareCaption %}
 {% endCompare %}
 
+{% Compare 'better', 'Do' %}
 ```html
 <title>Mary's quick maple bacon donut recipe</title>
 ```
-
-{% Compare 'better', 'Do' %}
+{% CompareCaption %}
 Descriptive yet concise.
+{% endCompareCaption %}
 {% endCompare %}
 
 See Google's [Create good titles and snippets in Search Results](https://support.google.com/webmasters/answer/35624)

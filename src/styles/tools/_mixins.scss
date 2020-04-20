@@ -64,6 +64,44 @@
   }
 }
 
+// Mixin to add custom scrollbars to an element
+
+// @param {?string=} $size - Width of the scrollbar in pixels
+// @param {?string=} $thumbColor - Color of the scrollbar thumb
+// @param {?string=} $trackColor - Color of the scrollbar track
+@mixin scrollbars($size: 10px, $thumbColor: $GREY_600, $trackColor: transparent) {
+  & {
+    // Sass Lint doesn't recognize these shiny new properties
+    // sass-lint:disable-block no-misspelled-properties
+    scrollbar-color: $thumbColor $trackColor;
+    scrollbar-width: thin;
+  }
+
+  &::-webkit-scrollbar {
+    height: $size;
+    width:  $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $thumbColor;
+    background-clip: padding-box;
+    border: $size / 4 solid $trackColor;
+    border-radius: $size / 2;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: darken($thumbColor, 12%);
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background-color: darken($thumbColor, 22%);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $trackColor;
+  }
+}
+
 // Mixin for overflowing text to ellipsis (…).
 @mixin ellipsis() {
   overflow: hidden;
@@ -73,9 +111,11 @@
 
 // Mixin for base button styles
 @mixin base-button() {
+  -webkit-tap-highlight-color: transparent; // Prevents tap highlight on hidden tooltips
   align-items: center;
   background: transparent;
   border: 0;
+  border-radius: $GLOBAL_RADIUS;
   color: $WEB_PRIMARY_COLOR;
   cursor: pointer;
   display: inline-flex;
@@ -94,6 +134,11 @@
     $FONT_SMOOTHING_WEBKIT,
     $FONT_SMOOTHING_RENDERING
   );
+}
+
+// Mixin for exposing hover styles only on devices that support hover
+@mixin hover() {
+  @media (hover: hover) { @content; }
 }
 
 // Mixin for styling typography via maps containing required integer values for
@@ -150,11 +195,11 @@
 // 'material-icons' class defined at http://fonts.googleapis.com/css?family=Material+Icons.
 // You can look up the name of an icon at https://material.io/icons/.
 @mixin font-material-icon() {
-  -moz-osx-font-smoothing: grayscale; // @alternate
-  -webkit-font-smoothing: antialiased; // @alternate
+  -moz-osx-font-smoothing: $FONT_SMOOTHING_MOZ; // @alternate
+  -webkit-font-smoothing: $FONT_SMOOTHING_WEBKIT; // @alternate
   font: normal normal normal 24px / 1 'Material Icons';
   font-feature-settings: 'liga';
-  text-rendering: optimizeLegibility;
+  text-rendering: $FONT_SMOOTHING_RENDERING;
   text-transform: none;
   word-wrap: normal;
 }

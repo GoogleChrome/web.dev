@@ -1,0 +1,120 @@
+@import '../../../styles/tools/mixins';
+
+$MODAL_CONTENT_PADDING: 1.5rem;
+$MODAL_ANIMATION_DURATION: 150ms;
+
+.web-modal__overflow-hidden {
+  overflow: hidden;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleup {
+  0% {
+    transform: scale(.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+// Use a class selector so the components
+// that extend BaseModalElement can opt in to its styles.
+.web-modal {
+  align-items: center;
+  background: rgba(0,0,0,.32);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  overflow: auto;
+  padding: 1em;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: visibility 0s $MODAL_ANIMATION_DURATION;
+  visibility: hidden;
+  z-index: 275; // Between SideNav and Header
+
+  .web-modal__container {
+    background: $WHITE;
+    border-radius: $GLOBAL_RADIUS_MEDIUM;
+    box-shadow:
+      0 11px 15px -7px rgba(0,0,0,.2),
+      0 24px 38px 3px rgba(0,0,0,.14),
+      0 9px 46px 8px rgba(0,0,0,.12);
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-height: 100%;
+    max-width: 35em;
+    min-height: 20em;
+    pointer-events: auto;
+    width: 26em;
+  }
+
+  .web-modal__header {
+    border-bottom: 1px solid transparent;
+    margin: 0;
+    padding: $MODAL_CONTENT_PADDING $MODAL_CONTENT_PADDING .5rem;
+  }
+
+  .web-modal__content {
+    flex: 1;
+    overflow: auto;
+    padding: 0 $MODAL_CONTENT_PADDING;
+  }
+
+  .web-modal__footer {
+    border-top: 1px solid transparent;
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: 1fr auto;
+    justify-items: end;
+    padding: 1rem;
+  }
+
+  .web-modal__button {
+    height: 44px;
+  }
+
+  &[open] {
+    opacity: 1;
+    transition: visibility 0s;
+    visibility: visible;
+  }
+
+  &[animatable] {
+    animation: $MODAL_ANIMATION_DURATION / 2 linear reverse fadein;
+  }
+
+  &[animatable][open] {
+    animation: $MODAL_ANIMATION_DURATION linear fadein;
+
+    .web-modal__container {
+      animation:
+        $MODAL_ANIMATION_DURATION cubic-bezier(0,0,.2,1) scaleup,
+        $MODAL_ANIMATION_DURATION / 2 linear fadein;
+    }
+  }
+
+  &[overflow] {
+    .web-modal__header {
+      border-color: $BORDER_COLOR;
+    }
+
+    .web-modal__footer {
+      border-color: $BORDER_COLOR;
+    }
+  }
+}

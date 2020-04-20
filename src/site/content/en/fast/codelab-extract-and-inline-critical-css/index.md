@@ -10,6 +10,8 @@ date: 2019-05-29
 related_post: extract-critical-css
 ---
 
+{% include 'content/devtools-headsup.njk' %}
+
 Whether you use a UI library or handcraft your styles, shipping a significant amount of CSS delays rendering because the browser must download and parse CSS files before it can show the page.
 
 This responsive ice cream gallery is built with [Bootstrap](https://getbootstrap.com/). UI libraries like Bootstrap speed up development, but that often comes at the expense of bloated and unnecessary CSS, which can slow down your load times. Bootstrap 4 is 187 KB, while [Semantic UI](https://semantic-ui.com/), another UI library, is a whopping 730 KB uncompressed. Even when minified and gzipped, Bootstrap still weighs around 20 KB, well over the [14 KB threshold](/extract-critical-css/#14KB) for the first roundtrip.

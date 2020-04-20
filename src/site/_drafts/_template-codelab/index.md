@@ -43,7 +43,11 @@ related_post: remove-unused-code
 #     alt: Provide an alt for your thumbnail.
 ---
 
-In this codelab, improve the performance of the following application by
+<!-- If your codelab uses Chrome DevTools, keep the following include.
+If not, omit it. -->
+{% include 'content/devtools-headsup.njk' %}
+
+In this codelab, you'll improve the performance of a web app by
 removing any unused and unneeded dependencies.
 
 ![App screenshot](./kitties.png)

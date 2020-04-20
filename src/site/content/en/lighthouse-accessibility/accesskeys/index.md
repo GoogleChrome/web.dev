@@ -5,7 +5,7 @@ description: |
   Learn how to improve your web page's accessibility for keyboard users by
   removing duplicate accesskey values.
 date: 2019-05-02
-updated: 2019-09-19
+updated: 2020-04-20
 web_lighthouse:
   - accesskeys
 ---
@@ -17,6 +17,18 @@ by pressing the specified key, usually in combination with the `Alt` key
 
 Duplicating `accesskey` values creates unexpected effects
 for users navigating via the keyboard.
+
+{% Aside 'caution' %}
+Unless you're building a complex app (for example, a desktop publishing app),
+it's generally best to avoid access keys because of their limitations:
+- Not all browsers support access keys.
+- It's challenging to avoid conflicts with shortcut keys
+  across all operating systems and browsers.
+- Some access key values may not be present on all keyboards, particularly
+  if your app is intended for an international audience.
+- If users aren't aware of access keys, they may accidentally activate app
+  functionality, causing confusion.
+{% endAside %}
 
 ## How the Lighthouse access key audit fails
 
@@ -49,18 +61,6 @@ you can change the value for the GitHub link:
 For each defined `accesskey`,
 make sure the value doesn't conflict with any default browser
 or screen reader shortcut keys.
-
-{% Aside 'caution' %}
-Unless you're building a complex app (for example, a desktop publishing app),
-it's generally best to avoid access keys because of their limitations:
-- Not all browsers support access keys.
-- It's challenging to avoid conflicts with shortcut keys
-  across all operating systems and browsers.
-- Some access key values may not be present on all keyboards, particularly
-  if your app is intended for an international audience.
-- If users aren't aware of access keys, they may accidentally activate app
-  functionality, causing confusion.
-{% endAside %}
 
 ## Resources
 

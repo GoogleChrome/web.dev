@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const {html} = require("common-tags");
+const {html} = require('common-tags');
 
 /* eslint-disable max-len */
 
@@ -26,7 +26,19 @@ const {html} = require("common-tags");
  */
 module.exports = (id, startTime) => {
   if (!id) {
-    throw new Error("Cannot create YouTube component if id is undefined");
+    throw new Error('Cannot create YouTube component if id is undefined');
+  }
+
+  // Don't load YT iframe in our test environment. This specifically affects
+  // screenshot testing where the iframe can be slow or flaky to load and fail
+  // because YouTube is always fiddling with their UI.
+  // Load a placeholder to fill the space instead.
+  if (process.env.PERCY) {
+    return html`
+      <div class="w-youtube" style="background: aquamarine;">
+        YouTube iframe placeholder
+      </div>
+    `;
   }
 
   let src = `https://www.youtube.com/embed/${id}`;

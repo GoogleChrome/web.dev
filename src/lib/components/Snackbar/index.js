@@ -18,8 +18,9 @@
  * @fileoverview A Material snackbar for showing notifications.
  */
 
-import {html} from "lit-element";
-import {BaseElement} from "../BaseElement";
+import {html} from 'lit-element';
+import {BaseElement} from '../BaseElement';
+import './_styles.scss';
 
 const OPENING_ANIMATION_TIME = 150;
 const CLOSING_ANIMATION_TIME = 75;
@@ -35,16 +36,16 @@ class Snackbar extends BaseElement {
   }
 
   get open() {
-    return this.hasAttribute("open");
+    return this.hasAttribute('open');
   }
 
   set open(val) {
     let ms;
     if (Boolean(val)) {
-      this.setAttribute("open", "");
+      this.setAttribute('open', '');
       ms = OPENING_ANIMATION_TIME;
     } else {
-      this.removeAttribute("open");
+      this.removeAttribute('open');
       ms = CLOSING_ANIMATION_TIME;
     }
 
@@ -74,7 +75,7 @@ class Snackbar extends BaseElement {
   render() {
     let template;
     switch (this.type) {
-      case "cookies":
+      case 'cookies':
         template = this.cookiesTemplate;
         break;
       default:
@@ -89,4 +90,4 @@ class Snackbar extends BaseElement {
   }
 }
 
-customElements.define("web-snackbar", Snackbar);
+customElements.define('web-snackbar', Snackbar);

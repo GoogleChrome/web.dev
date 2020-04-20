@@ -1,6 +1,7 @@
 {
   "//": "Use git push --no-verify to bypass",
   "hooks": {
+    "pre-commit": "npm run precommit",
     "pre-push": "npm run lint"
   }
 }

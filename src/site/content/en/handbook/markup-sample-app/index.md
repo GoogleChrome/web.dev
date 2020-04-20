@@ -21,7 +21,7 @@ web.dev uses [Glitch](https://glitch.com/) to embed web-based sample apps and de
 ## Authoring tips
 Make all Glitch code [accessible](/handbook/inclusion-and-accessibility#create-accessible-code-blocks).
 
-[Be mindful of the development landscape](/handbook/style#be-mindful-of-the-development-landscape) when selecting tools and frameworks.
+[Be mindful of the development landscape](/handbook/quality/#be-mindful-of-the-development-landscape) when selecting tools and frameworks.
 
 Make sure the `README` for your Glitch links back to web.dev. Here's a template you can use:
 

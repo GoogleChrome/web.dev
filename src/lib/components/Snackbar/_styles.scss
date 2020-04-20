@@ -12,15 +12,16 @@ web-snackbar {
     background-color: $GREY_900;
     display: flex;
     justify-content: flex-start;
-    min-width: 344px;
     opacity: 0;
     transform: scale(.8);
+    width: 100vw;
 
     @include bp(sm) {
       border-radius: $GLOBAL_RADIUS;
       box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2),
                   0 6px 10px 0 rgba(0, 0, 0, .14),
                   0 1px 18px 0 rgba(0, 0, 0, .12);
+      min-width: 344px;
     }
 
     @include bp(md) {

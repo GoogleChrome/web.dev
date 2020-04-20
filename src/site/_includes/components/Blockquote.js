@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-const {html} = require("common-tags");
-const md = require("markdown-it")();
+const {html} = require('common-tags');
+const md = require('markdown-it')();
 
 module.exports = (content, source) => {
   if (!source) {

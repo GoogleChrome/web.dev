@@ -5,14 +5,14 @@ description: |
   Learn how to make form elements accessible to assistive technology users by
   providing labels.
 date: 2019-05-02
-updated: 2019-09-19
+updated: 2020-04-20
 web_lighthouse:
   - label
 ---
 
 Labels ensure that form controls are announced properly
 by assistive technologies like screen readers.
-assistive technology users rely on these labels
+Assistive technology users rely on these labels
 to navigate forms.
 Mouse and touchscreen users also benefit from labels
 because the label text makes a larger click target.

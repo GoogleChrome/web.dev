@@ -14,41 +14,51 @@
  * limitations under the License.
  */
 
-require("dotenv").config();
-const isProd = process.env.ELEVENTY_ENV === "prod";
+require('dotenv').config();
+const isProd = process.env.ELEVENTY_ENV === 'prod';
 
-const fs = require("fs").promises;
-const path = require("path");
-const log = require("fancy-log");
-const rollupPluginNodeResolve = require("rollup-plugin-node-resolve");
-const rollupPluginCJS = require("rollup-plugin-commonjs");
-const rollupPluginVirtual = require("rollup-plugin-virtual");
-const rollup = require("rollup");
-const terser = isProd ? require("terser") : null;
-const {getManifest} = require("workbox-build");
-const site = require("./src/site/_data/site");
+const fs = require('fs').promises;
+const path = require('path');
+const log = require('fancy-log');
+const rollupPluginNodeResolve = require('rollup-plugin-node-resolve');
+const rollupPluginCJS = require('rollup-plugin-commonjs');
+const rollupPluginPostCSS = require('rollup-plugin-postcss');
+const rollupPluginVirtual = require('rollup-plugin-virtual');
+const rollupPluginReplace = require('rollup-plugin-replace');
+const rollup = require('rollup');
+const terser = isProd ? require('terser') : null;
+const {getManifest} = require('workbox-build');
+const site = require('./src/site/_data/site');
+const buildVirtualJSON = require('./src/build/virtual-json');
 
-process.on("unhandledRejection", (reason, p) => {
-  log.error("Build had unhandled rejection", reason, p);
+process.on('unhandledRejection', (reason, p) => {
+  log.error('Build had unhandled rejection', reason, p);
   process.exit(1);
 });
 
-const bootstrapConfig = {
-  prod: isProd,
-  version:
-    "v" +
-    new Date()
-      .toISOString()
-      .replace(/[\D]/g, "")
-      .slice(0, 12),
-  firebaseConfig: isProd ? site.firebase.prod : site.firebase.staging,
+/**
+ * Virtual imports made available to all bundles. Used for site config and globals.
+ */
+const virtualImports = {
+  webdev_config: {
+    isProd,
+    env: process.env.ELEVENTY_ENV || 'dev',
+    version:
+      'v' +
+      new Date()
+        .toISOString()
+        .replace(/[\D]/g, '')
+        .slice(0, 12),
+    firebaseConfig: isProd ? site.firebase.prod : site.firebase.staging,
+  },
 };
 
 const defaultPlugins = [
   rollupPluginNodeResolve(),
   rollupPluginCJS({
-    include: "node_modules/**",
+    include: 'node_modules/**',
   }),
+  rollupPluginVirtual(buildVirtualJSON(virtualImports)),
 ];
 
 /**
@@ -59,21 +69,20 @@ const defaultPlugins = [
  */
 async function buildCacheManifest() {
   const toplevelManifest = await getManifest({
-    globDirectory: "dist",
-    globPatterns: ["images/**", "*.css"],
+    globDirectory: 'dist',
+    globPatterns: ['images/**', '*.css', '*.js'],
   });
   if (toplevelManifest.warnings.length) {
     throw new Error(`toplevel manifest: ${toplevelManifest.warnings}`);
   }
 
-  // Note that Workbox assumes "blah/index.html" is the same as requests to "blah/" for free, so
-  // rewriting the URLs below isn't neccessary.
+  // This doesn't include any HTML, as we bundle that directly into the source
+  // of the Service Worker below.
   const contentManifest = await getManifest({
-    globDirectory: "dist/en",
+    globDirectory: 'dist/en',
     globPatterns: [
-      "index.html",
-      "offline/index.html",
-      "images/**/*.{png,svg}", // .jpg files are used for authors, skip
+      'offline/index.json',
+      'images/**/*.{png,svg}', // .jpg files are used for authors, skip
     ],
   });
   if (contentManifest.warnings.length) {
@@ -87,88 +96,159 @@ async function buildCacheManifest() {
 }
 
 /**
+ * Passed to Rollup's config to disallow external imports. By default, Rollup
+ * leaves unresolved imports in the output.
+ *
+ * @param {string} source
+ * @param {string} importer
+ * @param {boolean} isResolved
+ */
+function disallowExternal(source, importer, isResolved) {
+  // We don't support any external imports. This most likely happens if you mistype a
+  // node_modules import or the package.json has changed.
+  if (isResolved && !source.match(/^\.{0,2}\//)) {
+    throw new Error(
+      `Unresolved external import: "${source}" (imported ` +
+        `by: ${importer}), did you forget to npm install?`,
+    );
+  }
+}
+
+/**
+ * Ensures that the passed Rollup result only contains a single chunk.
+ *
+ * @param {!Promise<rollup.RollupOutput>} rollupPromise
+ * @return {!rollup.RollupChunk} the single output chunk
+ */
+async function singleOutput(rollupPromise) {
+  const result = await rollupPromise;
+  if (result.output.length !== 1) {
+    throw new Error(`expected single output, was: ${result.output.length}`);
+  }
+  return result.output[0];
+}
+
+/**
  * Performs main site compilation via Rollup: first on site code, and second
  * to build the Service Worker.
- *
- * @return {!Array<string>} generated source filenames
  */
 async function build() {
   const generated = [];
+  const postcssConfig = {};
+  if (isProd) {
+    // nb. Only require() autoprefixer when used.
+    const autoprefixer = require('autoprefixer');
+    postcssConfig.plugins = [autoprefixer];
+
+    // uses cssnano vs. our regular CSS usees sass' builtin compression
+    postcssConfig.minimize = true;
+  }
 
   // Rollup bootstrap to generate graph of source needs. This eventually uses
   // dynamic import to bring in code required for each page (see router.js).
   // Does not hash "bootstrap.js" entrypoint, but hashes all generated chunks,
   // useful for cache busting.
   const appBundle = await rollup.rollup({
-    input: "src/lib/bootstrap.js",
-    plugins: [
-      rollupPluginVirtual({
-        webdev_config: `export default ${JSON.stringify(bootstrapConfig)};`,
-      }),
-      ...defaultPlugins,
-    ],
+    input: 'src/lib/bootstrap.js',
+    external: disallowExternal,
+    plugins: [rollupPluginPostCSS(postcssConfig), ...defaultPlugins],
   });
   const appGenerated = await appBundle.write({
-    dynamicImportFunction: "window._import",
+    dynamicImportFunction: 'window._import',
     sourcemap: true,
-    dir: "dist",
-    format: "esm",
+    dir: 'dist',
+    format: 'esm',
   });
   for (const {fileName} of appGenerated.output) {
     generated.push(fileName);
   }
 
+  // Compress the generated source here, as we need the final files and hashes for the Service
+  // Worker manifest.
+  if (isProd) {
+    await compressOutput(generated);
+  }
+
+  // We don't generate a manifest in dev, so Workbox doesn't do a default cache step.
   const manifest = isProd ? await buildCacheManifest() : [];
-  const noticeDev = isProd ? "" : "// Manifest not generated in dev";
+
+  const layoutTemplate = await fs.readFile(
+    path.join('dist', 'sw-partial-layout.partial'),
+    'utf-8',
+  );
+
   const swBundle = await rollup.rollup({
-    input: "src/lib/sw.js",
+    input: 'src/lib/sw.js',
+    external: disallowExternal,
     plugins: [
-      rollupPluginVirtual({
-        "cache-manifest": `export default ${JSON.stringify(
-          manifest,
-        )};${noticeDev}`,
+      // This variable is defined by Webpack (and some other tooling), but not by Rollup. Set it to
+      // "production" if we're in prod, which will hide all of Workbox's log messages.
+      // Note that Terser below will actually remove the conditionals (this replace will generate
+      // lots of `if ("production" !== "production")` statements).
+      rollupPluginReplace({
+        'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : ''),
       }),
+      rollupPluginVirtual(
+        buildVirtualJSON({
+          'cache-manifest': manifest,
+          'layout-template': layoutTemplate,
+        }),
+      ),
       ...defaultPlugins,
     ],
     inlineDynamicImports: true, // SW does not support imports
   });
-  const swGenerated = await swBundle.write({
-    sourcemap: true,
-    dir: "dist",
-    format: "esm",
-  });
-  for (const {fileName} of swGenerated.output) {
-    generated.push(fileName);
-  }
 
-  return generated;
+  const swOutput = await singleOutput(
+    swBundle.write({
+      sourcemap: true,
+      dir: 'dist',
+      format: 'esm',
+    }),
+  );
+
+  const {fileName} = swOutput;
+  if (isProd) {
+    await compressOutput([fileName]);
+  }
+  generated.push(fileName);
+
+  return generated.length;
 }
 
+/**
+ * Builds the test entrypoint.
+ */
 async function buildTest() {
   const testBundle = await rollup.rollup({
-    input: "src/lib/test/index.js",
-    plugins: defaultPlugins,
+    input: 'src/lib/test/index.js',
+    plugins: [rollupPluginPostCSS(), ...defaultPlugins],
   });
   await testBundle.write({
-    dir: "dist/test",
-    format: "iife",
+    dir: 'dist/test',
+    format: 'iife',
   });
 }
 
+/**
+ * Minify the passed on-disk script files. Assumes they have an adjacent ".map" source map.
+ *
+ * @param {!Array<string>} generated paths to generated script files
+ */
 async function compressOutput(generated) {
   let inputSize = 0;
   let outputSize = 0;
 
   for (const fileName of generated) {
-    const target = path.join("dist", fileName);
+    const target = path.join('dist', fileName);
 
-    const raw = await fs.readFile(target, "utf8");
+    const raw = await fs.readFile(target, 'utf8');
     inputSize += raw.length;
 
     const result = terser.minify(raw, {
       sourceMap: {
-        content: await fs.readFile(target + ".map", "utf8"),
-        url: fileName + ".map",
+        content: await fs.readFile(target + '.map', 'utf8'),
+        url: fileName + '.map',
       },
     });
 
@@ -177,8 +257,8 @@ async function compressOutput(generated) {
     }
 
     outputSize += result.code.length;
-    await fs.writeFile(target, result.code, "utf8");
-    await fs.writeFile(target + ".map", result.map, "utf8");
+    await fs.writeFile(target, result.code, 'utf8');
+    await fs.writeFile(target + '.map', result.map, 'utf8');
   }
 
   const ratio = outputSize / inputSize;
@@ -186,11 +266,9 @@ async function compressOutput(generated) {
 }
 
 (async function() {
-  const generated = await build();
-  log(`Generated ${generated.length} files`);
+  const generatedCount = await build();
+  log(`Generated ${generatedCount} files`);
   if (!isProd) {
     await buildTest();
-  } else {
-    await compressOutput(generated);
   }
 })();

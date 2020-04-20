@@ -4,7 +4,7 @@ title: First CPU Idle
 description: |
   Learn about Lighthouse's First CPU Idle metric and how to optimize it.
 date: 2019-05-02
-updated: 2019-11-05
+updated: 2020-04-20
 web_lighthouse:
   - first-cpu-idle
 ---
@@ -75,7 +75,7 @@ This table shows how to interpret your First CPU Idle score:
       </tr>
       <tr>
         <td>4.8–6.5</td>
-        <td>Orange (average)</td>
+        <td>Orange (moderate)</td>
         <td>50–74</td>
       </tr>
       <tr>

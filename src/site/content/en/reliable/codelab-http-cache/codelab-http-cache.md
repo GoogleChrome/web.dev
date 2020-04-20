@@ -7,9 +7,11 @@ date: 2018-11-05
 description: |
   In this codelab, learn how to control resource caching behavior using HTTP
   headers.
-glitch: make-it-installable
+glitch: configure-cache-control
 related_post: http-cache
 ---
+
+{% include 'content/devtools-headsup.njk' %}
 
 This codelab shows you how to change the HTTP caching headers returned by a
 Node.js-based web server, running the [Express](https://expressjs.com/) serving

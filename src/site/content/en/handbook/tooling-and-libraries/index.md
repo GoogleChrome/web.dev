@@ -12,10 +12,8 @@ Choosing tooling and libraries can be one of the most overwhelming and time cons
 
 When appropriate, provide multiple paths, frameworks, or tools to achieve a goal. Including a codelab for each path is often a good way to achieve that goal. To see an example, check out the codelab callout at the end of the [Use Imagemin to compress images](/use-imagemin-to-compress-images/#imagemin-npm-module) post.
 
-## Favor open-source software
-Use open-source tooling and libraries whenever possible. This approach keeps web.dev accessible to as many developers as possible.
-
-For topic areas that are dominated by proprietary tools, provide at least one open-source option, when available, along with the proprietary options.
+## Use open-source software
+This keeps web.dev accessible to as many developers as possible.
 
 ## Ensure tooling is well-established
 When you're planning to include tooling in a post or codelab, make sure it meets at least one of these criteria:

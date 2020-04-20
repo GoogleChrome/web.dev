@@ -2,9 +2,10 @@
  * @fileoverview An element which shows a number of sparklines and gauges.
  */
 
-import {html} from "lit-element";
-import {BaseElement} from "../BaseElement";
-import {categories} from "../../lighthouse";
+import {html} from 'lit-element';
+import {BaseElement} from '../BaseElement';
+import {categories} from '../../lighthouse';
+import './_styles.scss';
 
 /* eslint-disable require-jsdoc */
 class LighthouseScoresStats extends BaseElement {
@@ -18,8 +19,8 @@ class LighthouseScoresStats extends BaseElement {
   }
 
   firstUpdated() {
-    this.setAttribute("role", "table");
-    this.setAttribute("aria-label", "Lighthouse performance over time");
+    this.setAttribute('role', 'table');
+    this.setAttribute('aria-label', 'Lighthouse performance over time');
   }
 
   /**
@@ -33,7 +34,7 @@ class LighthouseScoresStats extends BaseElement {
     } else {
       this.category = e.target.value;
     }
-    const event = new CustomEvent("category", {
+    const event = new CustomEvent('category', {
       detail: this.category,
       bubbles: true,
     });
@@ -119,7 +120,7 @@ class LighthouseScoresStats extends BaseElement {
   }
 
   scoreLegend(inline = true) {
-    const className = inline ? "lh-score-card" : "";
+    const className = inline ? 'lh-score-card' : '';
 
     return html`
       <div class="${className} lh-score__label">
@@ -140,8 +141,8 @@ class LighthouseScoresStats extends BaseElement {
     const lhr = lastRun ? lastRun.lhr : null;
 
     return html`
-      <div class="${this.disabled ? "lh-audit-running" : ""}">
-        <div class="lh-score-cards ${!lhr ? "lh-score-cards--fade" : ""}">
+      <div class="${this.disabled ? 'lh-audit-running' : ''}">
+        <div class="lh-score-cards ${!lhr ? 'lh-score-cards--fade' : ''}">
           <web-progress-bar></web-progress-bar>
           ${this.generateCards()} ${this.scoreLegend(true)}
         </div>
@@ -151,4 +152,4 @@ class LighthouseScoresStats extends BaseElement {
   }
 }
 
-customElements.define("web-lighthouse-scores-stats", LighthouseScoresStats);
+customElements.define('web-lighthouse-scores-stats', LighthouseScoresStats);

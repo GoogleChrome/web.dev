@@ -11,6 +11,8 @@ glitch: fav-kitties-starter
 related_post: remove-unused-code
 ---
 
+{% include 'content/devtools-headsup.njk' %}
+
 In this codelab, improve the performance of the following application by
 removing any unused and unneeded dependencies.
 

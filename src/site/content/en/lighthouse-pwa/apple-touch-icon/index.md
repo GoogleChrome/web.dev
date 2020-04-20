@@ -7,7 +7,7 @@ web_lighthouse:
   - apple-touch-icon
 codelabs: codelab-apple-touch-icon
 date: 2019-08-27
-updated: 2019-09-19
+updated: 2020-04-20
 ---
 
 When iOS Safari users add [Progressive Web Apps (PWAs)](/discover-installable) to
@@ -70,7 +70,7 @@ To provide a good user experience, make sure that:
 ## Resources
 
 - [Source code for **Does not provide a valid `apple-touch-icon`** audit][source]
-- [Discover what it takes to be installable](/discover-installable)
+- [Discover what it takes to be installable](/install-criteria)
 - <a href="https://webhint.io/docs/user-guide/hints/hint-apple-touch-icons/" rel="noreferrer">Use Apple Touch Icon</a>
 
 [a2hs]: https://support.apple.com/guide/shortcuts/run-shortcuts-from-the-ios-home-screen-apd735880972/ios#apd175362e63

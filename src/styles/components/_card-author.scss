@@ -1,0 +1,21 @@
+@import '../settings/colors';
+@import '../tools/mixins';
+
+.w-card-author {
+  min-height: 350px;
+  text-align: center;
+}
+
+.w-card-author__figure {
+  background-color: $WHITE;
+}
+
+.w-card-author__image {
+  border-radius: 50%;
+  height: 192px;
+  width: 192px;
+}
+
+.w-card-author__desc::before {
+  background-color: inherit;
+}

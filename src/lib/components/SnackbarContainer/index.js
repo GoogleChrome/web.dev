@@ -18,11 +18,12 @@
  * @fileoverview A Snackbar container for handling Redux state and actions.
  */
 
-import {html} from "lit-element";
-import {BaseElement} from "../BaseElement";
-import {store} from "../../store";
-import {setUserAcceptsCookies} from "../../actions";
-import "../Snackbar";
+import {html} from 'lit-element';
+import {BaseElement} from '../BaseElement';
+import {store} from '../../store';
+import {setUserAcceptsCookies, checkIfUserAcceptsCookies} from '../../actions';
+import '../Snackbar';
+import './_styles.scss';
 
 class SnackbarContainer extends BaseElement {
   static get properties() {
@@ -40,33 +41,26 @@ class SnackbarContainer extends BaseElement {
 
   connectedCallback() {
     super.connectedCallback();
+    checkIfUserAcceptsCookies();
     store.subscribe(this.onStateChanged);
     this.onStateChanged();
 
-    if (!this.acceptedCookies) {
-      window.addEventListener(
-        "beforeinstallprompt",
-        this.onBeforeInstallPrompt,
-      );
-    }
+    window.addEventListener('beforeinstallprompt', this.onBeforeInstallPrompt);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     store.unsubscribe(this.onStateChanged);
     window.removeEventListener(
-      "beforeinstallprompt",
+      'beforeinstallprompt',
       this.onBeforeInstallPrompt,
     );
   }
 
   onBeforeInstallPrompt(e) {
-    e.preventDefault();
-    this.installPrompt = e;
-    window.removeEventListener(
-      "beforeinstallprompt",
-      this.onBeforeInstallPrompt,
-    );
+    if (!this.acceptedCookies) {
+      e.preventDefault();
+    }
   }
 
   onStateChanged() {
@@ -74,18 +68,13 @@ class SnackbarContainer extends BaseElement {
     this.open = state.showingSnackbar;
     this.type = state.snackbarType;
     this.acceptedCookies = state.userAcceptsCookies;
-
-    if (this.acceptedCookies && this.installPrompt) {
-      this.installPrompt.prompt();
-      this.installPrompt.userChoice.then(() => (this.installPrompt = null));
-    }
   }
 
   render() {
     let action;
     let isStacked;
     switch (this.type) {
-      case "cookies":
+      case 'cookies':
         action = setUserAcceptsCookies;
         isStacked = true;
         break;
@@ -104,4 +93,4 @@ class SnackbarContainer extends BaseElement {
   }
 }
 
-customElements.define("web-snackbar-container", SnackbarContainer);
+customElements.define('web-snackbar-container', SnackbarContainer);

@@ -7,7 +7,7 @@ authors:
   - ajain
   - mfriesenhahn
 date: 2019-11-07
-updated: 2019-11-08
+updated: 2020-04-20
 
 description: |
   How a hospitality startup built an Android app that relies on web content to
@@ -129,7 +129,7 @@ Here's what the OYO team did:
 * Created a custom splash screen.
 
 And here's the result:
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/oyo-case-study/oyo-lite.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/oyo-case-study/oyo-lite.mp4" type="video/mp4; codecs=h264">

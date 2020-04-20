@@ -5,7 +5,7 @@ description: |
   Learn about Lighthouse's Max Potential First Input Delay metric and
   how to measure and optimize it.
 date: 2019-05-02
-updated: 2019-10-16
+updated: 2020-04-20
 web_lighthouse:
   - max-potential-fid
 ---
@@ -61,7 +61,7 @@ This table shows how to interpret your TBT score:
       </tr>
       <tr>
         <td>130-250</td>
-        <td>Orange (average)</td>
+        <td>Orange (moderate)</td>
       </tr>
       <tr>
         <td>Over 250</td>

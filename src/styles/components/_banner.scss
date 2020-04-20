@@ -12,7 +12,7 @@
 
 .w-banner {
   font-size: .889rem;
-  padding: 24px;
+  padding: 16px;
 
   @include bp(sm) {
     padding: 24px 32px;
@@ -33,6 +33,13 @@
 
 .w-banner--warning {
   background: $RED_100;
+}
+
+.w-banner--neutral {
+  background: transparent;
+  border-color: $GREY_300;
+  border-style: solid;
+  border-width: 1px 0;
 }
 
 .w-banner--body {

@@ -4,7 +4,7 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2019-11-07
+updated: 2020-04-20
 description: |
   This post introduces the Largest Contentful Paint (LCP) metric and explains
   how to measure it
@@ -48,7 +48,8 @@ of a page is loaded is to look at when the largest element was rendered.
 
 ## What is LCP?
 
-The Largest Contentful Paint (LCP) metric reports the render time of the largest content element visible in the viewport.
+The Largest Contentful Paint (LCP) metric reports the render time of the largest
+content element visible in the viewport.
 
 ### What elements are considered?
 
@@ -215,44 +216,53 @@ largest element throughout the load process.
 
 LCP can be measured [in the lab](/metrics/#in-the-lab) or [in the
 field](/metrics/#in-the-field) though at the moment it's not yet available in
-any lab tools. [In the field](/metrics/#in-the-field), LCP is available in the [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report).
+any lab tools. [In the field](/metrics/#in-the-field), LCP is available in the
+[Chrome User Experience
+Report](https://developers.google.com/web/tools/chrome-user-experience-report).
 
 ### Measure LCP in JavaScript
 
-You can measure FCP in JavaScript using the [Largest Contentful Paint API](https://wicg.github.io/largest-contentful-paint/). The following example shows how to
-create a
+You can measure LCP in JavaScript using the [Largest Contentful Paint
+API](https://wicg.github.io/largest-contentful-paint/). The following example
+shows how to create a
 [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
-that listens for `largest-contentful-paint` entries and logs the LCP value
-to the console:
+that listens for `largest-contentful-paint` entries and logs the LCP value to
+the console:
 
 ```js
-// Create a variable to hold the latest LCP value (since it can change).
-let lcp;
+// Catch errors since some browsers throw when using the new `type` option.
+// https://bugs.webkit.org/show_bug.cgi?id=209216
+try {
+  // Create a variable to hold the latest LCP value (since it can change).
+  let lcp;
 
-// Create the PerformanceObserver instance.
-const po = new PerformanceObserver((entryList) => {
-  const entries = entryList.getEntries();
-  const lastEntry = entries[entries.length - 1];
+  // Create the PerformanceObserver instance.
+  const po = new PerformanceObserver((entryList) => {
+    const entries = entryList.getEntries();
+    const lastEntry = entries[entries.length - 1];
 
-  // Update `lcp` to the latest value, using `renderTime` if it's available,
-  // otherwise using `loadTime`. (Note: `renderTime` may not be available if
-  // the element is an image and it's loaded cross-origin without the
-  // `Timing-Allow-Origin` header.)
-  lcp = lastEntry.renderTime || lastEntry.loadTime;
-});
+    // Update `lcp` to the latest value, using `renderTime` if it's available,
+    // otherwise using `loadTime`. (Note: `renderTime` may not be available if
+    // the element is an image and it's loaded cross-origin without the
+    // `Timing-Allow-Origin` header.)
+    lcp = lastEntry.renderTime || lastEntry.loadTime;
+  });
 
-// Observe entries of type `largest-contentful-paint`, including buffered
-// entries, i.e. entries that occurred before calling `observe()`.
-po.observe({type: 'largest-contentful-paint', buffered: true});
+  // Observe entries of type `largest-contentful-paint`, including buffered
+  // entries, i.e. entries that occurred before calling `observe()`.
+  po.observe({type: 'largest-contentful-paint', buffered: true});
 
-// Send the latest LCP value to your analytics server once the user
-// leaves the tab.
-addEventListener('visibilitychange', function fn() {
-  if (lcp && document.visibilityState === 'hidden') {
-    console.log('LCP:', lcp);
-    removeEventListener('visibilitychange', fn, true);
-  }
-}, true);
+  // Send the latest LCP value to your analytics server once the user
+  // leaves the tab.
+  addEventListener('visibilitychange', function fn() {
+    if (lcp && document.visibilityState === 'hidden') {
+      console.log('LCP:', lcp);
+      removeEventListener('visibilitychange', fn, true);
+    }
+  }, true);
+} catch (e) {
+  // Do nothing if the browser doesn't support this API.
+}
 ```
 
 Note, this example waits to log LCP until the page's [lifecycle
@@ -264,7 +274,16 @@ changes to hidden. This is a way of ensuring that it only logs the latest entry.
 In some cases the most important element (or elements) on the page is not the
 same as the largest element, and developers may be more interested in measuring
 the render times of these other elements instead. This is possible using the
-[Element Timing API](https://wicg.github.io/element-timing/), as described in the article on [custom metrics](/custom-metrics/#element-timing-api).
+[Element Timing API](https://wicg.github.io/element-timing/), as described in
+the article on [custom metrics](/custom-metrics/#element-timing-api).
+
+## What is a good LCP score?
+
+To provide a good user experience, sites should strive to have Largest
+Contentful Paint occur within the first **2.5 seconds** of the page starting to
+load. To ensure you're hitting this target for most of your users, a good
+threshold to measure is the **75th percentile** of page loads, segmented across
+mobile and desktop devices.
 
 ## How to improve LCP
 

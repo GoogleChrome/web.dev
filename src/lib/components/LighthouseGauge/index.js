@@ -2,8 +2,9 @@
  * @fileoverview Element that shows a score in a gauge.
  */
 
-import {html} from "lit-element";
-import {BaseElement} from "../BaseElement";
+import {html} from 'lit-element';
+import {BaseElement} from '../BaseElement';
+import './_styles.scss';
 
 /**
  * @extends {BaseElement}
@@ -36,11 +37,11 @@ class LighthouseGauge extends BaseElement {
     const round = Math.round(clamped * 100);
 
     // nb. Pulled directly from report/html/renderer/util.js in Lighthouse.
-    let label = "fail";
+    let label = 'fail';
     if (clamped >= 0.9) {
-      label = "pass";
+      label = 'pass';
     } else if (clamped >= 0.5) {
-      label = "average";
+      label = 'average';
     }
     const className = `gauge__${label}`;
 
@@ -49,7 +50,7 @@ class LighthouseGauge extends BaseElement {
         <svg viewBox="0 0 120 120" class="gauge" fill="none" stroke-width="2">
           <circle class="gauge-base" r="53" cx="60" cy="60"></circle>
           <circle
-            class="gauge-arc ${this._bootstrap ? "bootstrap" : ""}"
+            class="gauge-arc ${this._bootstrap ? 'bootstrap' : ''}"
             transform="rotate(-90 60 60)"
             stroke-dasharray="${clamped * 329} 329"
             stroke-dashoffset="0"
@@ -64,14 +65,14 @@ class LighthouseGauge extends BaseElement {
   }
 
   firstUpdated() {
-    this.setAttribute("role", "progressbar");
-    this.setAttribute("aria-valuemin", 0);
-    this.setAttribute("aria-valuemax", 100);
+    this.setAttribute('role', 'progressbar');
+    this.setAttribute('aria-valuemin', 0);
+    this.setAttribute('aria-valuemax', 100);
   }
 
   updated() {
-    this.setAttribute("aria-valuenow", this.score * 100);
+    this.setAttribute('aria-valuenow', this.score * 100);
   }
 }
 
-customElements.define("web-lighthouse-gauge", LighthouseGauge);
+customElements.define('web-lighthouse-gauge', LighthouseGauge);

@@ -37,7 +37,7 @@ images, or stylesheets.
  are part of the [Web Packaging](https://goto.google.com/webpackaging-one-pager)
  proposal.
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img src="webbundle.png" 
        alt="A figure demonstrating that a Web Bundle is a collection of web resources." 
        style="max-width: 75%">
@@ -153,7 +153,7 @@ To try out a Web Bundle:
 1. Open `chrome://flags/#web-bundles`.
 1. Set the **Web Bundles** flag to **Enabled**.
 
-   <figure class="w-figure  w-figure--center">
+   <figure class="w-figure">
      <img src="chromeflag.png" alt="A screenshot of chrome://flags" style="max-width: 75%">
      <figcaption class="w-figcaption">
        Enabling Web Bundles in <code>chrome://flags</code>

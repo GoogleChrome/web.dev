@@ -20,6 +20,7 @@ guidance about how to use them effectively.
 1. [Block quotes](#blockquotes)
 1. [Buttons](#buttons)
 1. [Callouts](#callouts)
+1. [Checkbox](#checkbox)
 1. [Columns](#columns)
 1. [Code](#code)
 1. [Compare](#compare)
@@ -27,10 +28,10 @@ guidance about how to use them effectively.
 1. [Glitches](#glitches)
 1. [Images](#images)
 1. [Instructions](#instructions)
+1. [Labels](#labels)
 1. [Lists](#lists)
 1. [Stats](#stats)
 1. [Tables](#tables)
-1. [Tabs](#tabs)
 1. [Tooltips](#tooltips)
 1. [Video](#video)
 
@@ -177,6 +178,12 @@ instead, use the body variant, below.
 
 {% Banner 'warning' %}This is a warning banner. It supports Markdown.{% endBanner %}
 
+```text
+{% raw %}{% Banner 'neutral' %}This is a neutral banner, used to display a discreet suggestion for the user. It supports Markdown.{% endBanner %}{% endraw %}
+```
+
+{% Banner 'neutral' %}This is a neutral banner. It supports Markdown.{% endBanner %}
+
 ### Body banners
 
 ```text
@@ -222,6 +229,8 @@ a massa sit amet ullamcorper.
 In general, you shouldn't need to add buttons to your posts.
 These buttons are shown for reference.
 
+### Text buttons
+
 <div>
   <button class="w-button">
     Text button
@@ -251,141 +260,62 @@ These buttons are shown for reference.
   </button>
 </div>
 
+### Icon buttons
+
+A default icon button:
+
+<div>
+  <button class="w-button--icon" data-icon="format_align_justify">
+    <span role="tooltip" class="w-tooltip">
+      Justify
+    </span>
+  </button>
+</div>
+
+A round icon button:
+
+<div>
+  <button class="w-button--icon w-button--round" data-icon="close">
+    <span role="tooltip" class="w-tooltip">
+      Close
+    </span>
+  </button>
+</div>
+
 ## Callouts
 
-### Codelab Callouts
+### Codelab callouts
 
 In general, you shouldn't need to manually add a codelab callout to your page;
 instead, use the `codelabs` field in
 [the post's YAML](/handbook/markup-post-codelab/#set-up-the-yaml),
 which will automatically append a codelab callout to the end of the post.
 
-{% CodelabsCallout ['codelab-fix-sneaky-404', 'codelab-art-direction', 'codelab-cloudinary'] %}
+{% CodelabsCallout ['codelab-fix-sneaky-404', 'codelab-art-direction'], lang %}
 
-### Assessment Callouts
+### Self-assessment callouts
 
-Use an assessment callout to provide opportunities for users
-to check their understanding of concepts covered in your post.
+See the [Self-assessments](/handbook/self-assessment-components) post.
 
-```html
-{% raw %}{% AssessmentCallout 'Use the drop-down below each code sample to check whether it needs ARIA information.' %}
-{% Tabs 'Samples for knowledge self check' %}
+## Checkbox
 
-{% Tab 'sample' %}
+The [Newsletter](/newsletter) page uses a new material styled checkbox.
+You can use it simply and easily by just adding the class `w-chechbox`
+to an `input[type=checkbox]` element. However to align a label to to the
+checkbox you'll want to wrap the label and checkbox in a `div.w-display--inline-flex`
+element, and add the `w-ml--l` class to the label. See below:
 
-// Assessment item content
-
-{% AssessmentHint 'Does the sample need ARIA?' %}
-// Assessment hint content
-{% endAssessmentHint %}
-
-{% endTab %}
-{% Tab 'sample' %}
-
-// Assessment item content
-
-{% AssessmentHint 'Does the sample need ARIA?' %}
-// Assessment hint content
-{% endAssessmentHint %}
-
-{% endTab %}
-{% Tab 'sample' %}
-
-// Assessment item content
-
-{% AssessmentHint 'Does the sample need ARIA?' %}
-// Assessment hint content
-{% endAssessmentHint %}
-
-{% endTab %}
-{% endTabs %}
-{% endAssessmentCallout %}{% endraw %}
-```
-
-{% AssessmentCallout 'Use the drop-down below each code sample to check whether it needs ARIA information.' %}
-{% Tabs 'Samples for knowledge self check' %}
-
-{% Tab 'sample' %}
+<div class="w-display--inline-flex">
+  <input id="sub-newsletter" name="WebDevNewsletter" required value="Unconfirmed" class="w-checkbox" type="checkbox" />
+  <label for="sub-newsletter" class="w-ml--l">Add me to the web.dev mailing list.</label>
+</div>
 
 ```html
-<label for="pwd-input">Password</label>
-
-<input type="text" role="textbox" id="pwd-input" name="password">
+<div class="w-display--inline-flex">
+  <input id="sub-newsletter" name="WebDevNewsletter" required value="Unconfirmed" class="w-checkbox" type="checkbox" />
+  <label for="sub-newsletter" class="w-ml--l">Add me to the web.dev mailing list.</label>
+</div>
 ```
-
-{% AssessmentHint 'Does the sample need ARIA?' %}
-**No.** This sample is **incorrect**.
-Since the text input is a native HTML form element,
-it doesn't need ARIA for its semantics.
-To fix the sample, remove the `role` attribute from the `<input>` element.
-{% endAssessmentHint %}
-
-{% endTab %}
-{% Tab 'sample' %}
-
-```html
-<label for="inky">
-  Inky
-  <input type="radio" id="inky" name="ghosts" value="inky">
-</label>
-```
-
-{% AssessmentHint 'Does the sample need ARIA?' %}
-**No.** This sample is **correct**. Since radio inputs and labels are native HTML form elements, they come with built-in semantics. There's no need to add ARIA.
-{% endAssessmentHint %}
-
-{% endTab %}
-{% Tab 'sample' %}
-
-```html
-<ul role="menu">
-  <li>Menu item 1</li>
-  <li>Menu item 2</li>
-</ul>
-```
-
-{% AssessmentHint 'Does the sample need ARIA?' %}
-**Yes**. This sample is **partially correct**. `<ul>` and `<li>` elements aren't natively interactive, so they both need ARIA roles for their intended semantics as a menu to be accessible to assistive technologies. To fix the sample, add a `menuitem` role to each `<li>`.
-{% endAssessmentHint %}
-
-{% endTab %}
-{% endTabs %}
-{% endAssessmentCallout %}
-
-If you want to include a single self-assessment question,
-omit the `{% raw %}{% Tabs %}{% endraw %}` and `{% raw %}{% Tab %}{% endraw %}`shortcodes:
-
-````html
-{% raw %}{% AssessmentCallout 'Use the drop-down below the code sample to check whether it needs ARIA information.' %}
-
-```html
-<ul role="menu">
-  <li>Menu item 1</li>
-  <li>Menu item 2</li>
-</ul>
-```
-
-{% AssessmentHint 'Does the sample need ARIA?' %}
-**Yes**. This sample is **partially correct**. `<ul>` and `<li>` elements aren't natively interactive, so they both need ARIA roles for their intended semantics as a menu to be accessible to assistive technologies. To fix the sample, add a `menuitem` role to each `<li>`.
-{% endAssessmentHint %}
-
-{% endAssessmentCallout %}{% endraw %}
-````
-
-{% AssessmentCallout 'Use the drop-down below the code sample to check whether it needs ARIA information.' %}
-
-```html
-<ul role="menu">
-  <li>Menu item 1</li>
-  <li>Menu item 2</li>
-</ul>
-```
-
-{% AssessmentHint 'Does the sample need ARIA?' %}
-**Yes**. This sample is **partially correct**. `<ul>` and `<li>` elements aren't natively interactive, so they both need ARIA roles for their intended semantics as a menu to be accessible to assistive technologies. To fix the sample, add a `menuitem` role to each `<li>`.
-{% endAssessmentHint %}
-
-{% endAssessmentCallout %}
 
 ## Columns
 
@@ -394,13 +324,13 @@ by wrapping them in a `<div class="w-columns">` element:
 
 ```html
 <div class="w-columns">
-  <figure class="w-figure w-figure--center">
+  <figure class="w-figure">
     <img src="./image-small.png" alt="">
     <figcaption class="w-figcaption">
       Small image.
     </figcaption>
   </figure>
-  <figure class="w-figure w-figure--center">
+  <figure class="w-figure">
     <img src="./image-small.png" alt="">
     <figcaption class="w-figcaption">
       Small image.
@@ -410,13 +340,13 @@ by wrapping them in a `<div class="w-columns">` element:
 ```
 
 <div class="w-columns">
-  <figure class="w-figure w-figure--center">
+  <figure class="w-figure">
     <img src="./image-small.png" alt="">
     <figcaption class="w-figcaption">
       Small image.
     </figcaption>
   </figure>
-  <figure class="w-figure w-figure--center">
+  <figure class="w-figure">
     <img src="./image-small.png" alt="">
     <figcaption class="w-figcaption">
       Small image.
@@ -715,7 +645,15 @@ at.
 
 {% endDetails %}
 
-## Glitches
+## Glitches {: #glitches }
+
+* Remix the [web-dev-hello-webpage](https://glitch.com/~web-dev-hello-webpage) or
+  [web-dev-hello-express](https://glitch.com/~web-dev-hello-express) template.
+* Click **Project options** and update the description of the Glitch.
+* Update `README.md`.
+* Update `package.json` (if it exists).
+* Add the project to [the web.dev team on Glitch](https://glitch.com/@webdev).
+* Set the avatar of the project to the [web.dev logo](https://cdn.glitch.com/9b775a52-d700-4208-84e9-18578ee75266%2Ficon.jpeg?v=1585082912878).
 
 ```html
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
@@ -727,6 +665,12 @@ at.
 </div>
 ```
 
+<!-- Don't attempt to load Glitch if we're screenshot testing. -->
+{% if site.percy %}
+<div style="background: aquamarine; width: 400px; height: 400px;">
+  Glitch iframe placeholder
+</div>
+{% else %}
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
     src="https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&attributionHidden=true"
@@ -734,6 +678,7 @@ at.
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
+{% endif %}
 
 ## Images
 
@@ -828,6 +773,24 @@ by using the `audit-auditName` argument in the Instruction shortcode.
 For example, here are the instructions for the **Performance** audit:
 
 {% Instruction 'audit-performance', 'ol' %}
+
+## Labels
+
+Labels can be used to display a filename associated with a [code](/handbook/markup-code) snippet.
+
+````text
+{% raw %}{% Label %}filename.js:{% endLabel %}{% endraw %}
+
+```js
+console.log('hello');
+```
+````
+
+{% Label %}filename.js:{% endLabel %}
+
+```js
+console.log('hello');
+```
 
 ## Lists
 See the [Lists section of the Grammar, mechanics, and usage post](/handbook/grammar/#lists)
@@ -999,11 +962,11 @@ to ensure correct whitespace around the table.
 </div>
 
 If you want content in `<td>` elements to be vertically aligned
-to the middle of the cell, add the `w-table--middle-align` class
+to the top of the cell, add the `w-table--top-align` class
 to the `<table>` element:
 
 <div class="w-table-wrapper">
-  <table class="w-table--middle-align">
+  <table class="w-table--top-align">
     <thead>
       <tr>
         <th>Tool</th>
@@ -1225,107 +1188,28 @@ assumenda perspiciatis.
   </table>
 </div>
 
-## Tabs
-Tabs are currently only designed for use in callouts.
-Don't use tabs in the main post body because there's no visual indicator
-of where tab content stops and main post content resumes.
-
-You can use three keywords in the Tab shortcode argument
-to generate sequentially numbered tab labels:
-- `question`: creates the label `Question n`, where _n_ is the number of the tab in the set.
-- `sample`: creates the label `Sample n`.
-- `bare`: creates the label `n`.
-
-Any other text in the Tab shortcode argument will be presented as-is.
-
-````html
-{% raw %}{% Tabs 'Questions for knowledge self check' %}
-{% Tab 'question' %}
-
-Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a
-massa sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus
-nibh varius at.
-
-{% endTab %}
-{% Tab 'question' %}
-
-```html
-<label for="inky">
-  Inky
-  <input type="radio" id="inky" name="ghosts" value="inky">
-</label>
-```
-
-{% endTab %}
-{% Tab 'Custom' %}
-
-Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit.
-
-```html
-<ul role="menu">
-  <li>Menu item 1</li>
-  <li>Menu item 2</li>
-</ul>
-```
-
-{% endTab %}
-{% endTabs %}{% endraw %}
-````
-
-{% Tabs 'Questions for knowledge self check' %}
-{% Tab 'question' %}
-
-Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit. Proin dictum a
-massa sit amet ullamcorper. `Suspendisse` auctor ultrices ante, nec tempus
-nibh varius at.
-
-{% endTab %}
-{% Tab 'question' %}
-
-```html
-<label for="inky">
-  Inky
-  <input type="radio" id="inky" name="ghosts" value="inky">
-</label>
-```
-
-{% endTab %}
-{% Tab 'Custom' %}
-
-Lorem ipsum [dolor sit amet](#), consectetur adipiscing elit.
-
-```html
-<ul role="menu">
-  <li>Menu item 1</li>
-  <li>Menu item 2</li>
-</ul>
-```
-
-{% endTab %}
-{% endTabs %}
-
 ## Tooltips
 
 Use tooltips to provide information about UI controls
 that are too small to have a label:
 
 ```html
-<button class="w-button w-button--icon" data-icon="format_align_left">
+<button class="w-button--icon" data-icon="format_align_left">
   {% raw %}{% Tooltip 'Left align' %}{% endraw %}
 </button>
 ```
 
 <div>
-  <button class="w-button w-button--icon" data-icon="format_align_left">
+  <button class="w-button--icon" data-icon="format_align_left">
     {% Tooltip 'Left align' %}
   </button>
-  <button class="w-button w-button--icon" data-icon="format_align_center">
+  <button class="w-button--icon" data-icon="format_align_center">
     {% Tooltip 'Center align' %}
   </button>
-  <button class="w-button w-button--icon" data-icon="format_align_right">
+  <button class="w-button--icon" data-icon="format_align_right">
     {% Tooltip 'Right align' %}
   </button>
-  <button class="w-button w-button--icon" data-icon="format_align_justify">
+  <button class="w-button--icon" data-icon="format_align_justify">
     {% Tooltip 'Justify' %}
   </button>
 </div>
@@ -1334,24 +1218,24 @@ You can left- or right-align a tooltip to its parent
 by adding a `left` or `right` argument to the shortcode:
 
 ```html
-<button class="w-button w-button--icon" data-icon="unfold_less">
+<button class="w-button--icon" data-icon="unfold_less">
   {% raw %}{% Tooltip 'Collapse', 'left' %}{% endraw %}
 </button>
-<button class="w-button w-button--icon" data-icon="unfold_less">
+<button class="w-button--icon" data-icon="unfold_less">
   {% raw %}{% Tooltip 'Collapse' %}{% endraw %}
 </button>
-<button class="w-button w-button--icon" data-icon="unfold_less">
+<button class="w-button--icon" data-icon="unfold_less">
   {% raw %}{% Tooltip 'Collapse', 'right' %}{% endraw %}
 </button>
 ```
 
-<button class="w-button w-button--icon" data-icon="unfold_less">
+<button class="w-button--icon" data-icon="unfold_less">
   {% Tooltip 'Collapse', 'left' %}
 </button>
-<button class="w-button w-button--icon" data-icon="unfold_less">
+<button class="w-button--icon" data-icon="unfold_less">
   {% Tooltip 'Collapse' %}
 </button>
-<button class="w-button w-button--icon" data-icon="unfold_less">
+<button class="w-button--icon" data-icon="unfold_less">
   {% Tooltip 'Collapse', 'right' %}
 </button>
 

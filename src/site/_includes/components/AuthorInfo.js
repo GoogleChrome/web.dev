@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-const {html} = require("common-tags");
+const {html} = require('common-tags');
 
 /* eslint-disable require-jsdoc */
 
-module.exports = ({post, author, showSocialMedia = false}) => {
+module.exports = ({post, author, id, showSocialMedia = false}) => {
   if (!post) {
     throw new Error(`Can't generate AuthorInfo without post object`);
   }
@@ -73,7 +73,9 @@ module.exports = ({post, author, showSocialMedia = false}) => {
       class="w-author__info"
       style="display: flex; flex-direction: column; justify-content: center;"
     >
-      <cite class="w-author__name">${fullName}</cite>
+      <cite class="w-author__name">
+        <a class="w-author__name-link" href="/authors/${id}">${fullName}</a>
+      </cite>
       ${showSocialMedia && renderSocialMedia(author)}
     </div>
   `;

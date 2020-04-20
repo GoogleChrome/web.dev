@@ -1,3 +1,17 @@
+# Master redirects file for web.dev. This mirrors the old DevSite file.
+# There are two types of redirects:
+#
+#  (1) Simple redirects, e.g., "from: /foo"
+#      - These don't match subpaths, like "/foo/bar"
+#      - But it will match similar URLs "/foo", "/foo/" and "/foo/index.html"
+#
+#  (2) Group redirects, e.g., "from: /foo/...", which will match the top-level
+#      path (with the same rules as (1)) as well as any descendant paths
+#
+# WARNING! Redirects DO NOT take priority over static content.
+# For example, if you try to redirect "/foo" but the site contains a static file
+# "/foo/index.html", the static file will always win.
+
 redirects:
 
 # Policies
@@ -123,6 +137,9 @@ redirects:
 - from: /secure/...
   to: /...
 
+- from: /en/handbook/...
+  to: /en/...
+
 # Redirect duplicative /discoverable URLs to /lighthouse-seo
 
 - from: /write-descriptive-text
@@ -159,3 +176,19 @@ redirects:
 
 - from: /largest-contentful-paint
   to: /lcp
+
+# Redirects Progressive Web App content
+
+- from: /pwa
+  to: /progressive-web-apps/
+
+- from: /installable
+  to: /progressive-web-apps/#installable
+
+- from: /discover-installable
+  to: /progressive-web-apps/#installable
+
+# Redirect for spec name changes
+
+- from: /sms-receiver-api-announcement
+  to: /web-otp

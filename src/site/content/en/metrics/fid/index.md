@@ -4,7 +4,7 @@ title: First Input Delay (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2019-11-07
+updated: 2020-04-20
 description: |
   This post introduces the First Input Delay (FID) metric and explains
   how to measure it
@@ -182,19 +182,25 @@ that listens for
 entries, calculates FID, and logs the value to the console:
 
 ```js
-// Create the Performance Observer instance.
-const observer = new PerformanceObserver((list) => {
-  for (const entry of list.getEntries()) {
-    const fid = entry.processingStart - entry.startTime;
-    console.log('FID:', fid);
-  }
-});
+// Catch errors since some browsers throw when using the new `type` option.
+// https://bugs.webkit.org/show_bug.cgi?id=209216
+try {
+  // Create the Performance Observer instance.
+  const observer = new PerformanceObserver((list) => {
+    for (const entry of list.getEntries()) {
+      const fid = entry.processingStart - entry.startTime;
+      console.log('FID:', fid);
+    }
+  });
 
-// Start observing first-input entries.
-observer.observe({
-  type: 'first-input',
-  buffered: true,
-});
+  // Start observing first-input entries.
+  observer.observe({
+    type: 'first-input',
+    buffered: true,
+  });
+} catch (e) {
+  // Do nothing if the browser doesn't support this API.
+}
 ```
 
 ### Analyzing and reporting on FID data
@@ -211,13 +217,12 @@ care most about on desktop should be the 95th–99th percentile of desktop users
 and the FID value you care about most on mobile should be the 95th–99th
 percentile of mobile users.
 
-## What is a good FID?
+## What is a good FID score?
 
-[RAIL](https://developers.google.com/web/fundamentals/performance/rail)
-guidelines suggest that users perceive interaction delays less than 100 milliseconds (ms) to be immediate, so it's best to keep all input delays (including the first input) less than that.
-
-Page Speed Insights will [report](https://developers.google.com/speed/docs/insights/v5/about#distribution)
-FID values less than 100 ms as "fast", values between 100 ms and 300 ms as "moderate", and values greater than 300 ms as slow.
+To provide a good user experience, sites should strive to have a First Input
+Delay of less than **100 milliseconds**. To ensure you're hitting this target
+for most of your users, a good threshold to measure is the **75th percentile**
+of page loads, segmented across mobile and desktop devices.
 
 ## How to improve FID
 

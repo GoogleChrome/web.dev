@@ -5,7 +5,7 @@ description: |
   Learn how to improve the accessibility of your web page by making sure that
   all buttons have names that assistive technology users can access.
 date: 2019-05-02
-updated: 2019-09-19
+updated: 2020-04-20
 web_lighthouse:
   - button-name
 ---
@@ -16,7 +16,7 @@ which provides no information to users about what the button does.
 
 ## How the Lighthouse button name audit fails
 
-Lighthouse flags buttons that don't have accessible names:
+Lighthouse flags buttons that don't have text content or an `aria-label` property:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="button-name.png" alt="Lighthouse audit showing buttons do not have an accessible name">
@@ -27,7 +27,7 @@ Lighthouse flags buttons that don't have accessible names:
 ## How to add accessible names to buttons
 
 For buttons with visible labels,
-add inner text to the `button` element.
+add text content to the `button` element.
 Make the label a clear call to action.
 For example:
 

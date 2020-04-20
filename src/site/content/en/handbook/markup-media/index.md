@@ -2,7 +2,7 @@
 layout: handbook
 title: Images and video
 date: 2019-06-26
-updated: 2019-12-17
+updated: 2020-04-20
 description: |
   Learn how to create the Markdown for images and video for web.dev.
 ---
@@ -27,6 +27,10 @@ alt: A description of the hero. # Also used by the thumbnail (when applicable).
 ---
 ```
 
+{% Aside 'warning' %}
+If your post does not contain a hero image it will not be displayed on the homepage.
+{% endAside %}
+
 Hero images should be 3200 px x 960 px.
 
 Adjust hero image positioning using the [`hero_position`](/handbook/markup-post-codelab/#set-up-the-yaml) field in the YAML at the start of the post's Markdown file.
@@ -50,7 +54,9 @@ If you don't provide a thumbnail, the post will attempt to reuse the hero image.
 If there is no hero image, the post will omit the thumbnail entirely.
 
 ## Body images
-Images intended to fill the full width of the content column should be at least 800 px wide.
+
+Images intended to fill the full width of the content column should be `800px` wide at a minimum,
+and `1600px` wide at a maximum (to account for screens that use 2x resolution).
 
 Use Markdown syntax for standard standalone images:
 
@@ -92,10 +98,10 @@ To make an image extend slightly beyond the width of the content column (for emp
   </figcaption>
 </figure>
 
-To keep an image from growing beyond a specified size, add the `w-figure--center` class to the `figure` element and add an inline `max-width` style to the `img` element:
+To keep an image from growing beyond a specified size, add the `w-figure` class to the `figure` element and add a `width` attribute to the `img` element. For example, `width="400"`. All images will have a `max-width` of `100%` on mobile:
 
-<figure class="w-figure w-figure--center">
-  <img src="./image-small.png" alt="A screenshot of a section of the Chrome DevTools user interface." style="max-width: 400px;">
+<figure class="w-figure">
+  <img src="./image-small.png" alt="A screenshot of a section of the Chrome DevTools user interface." width="400">
   <figcaption class="w-figcaption">
     A small, centered image.
     </figcaption>
@@ -104,7 +110,7 @@ To keep an image from growing beyond a specified size, add the `w-figure--center
 To place an image inline with text, add the `w-figure--inline-left` or `w-figure--inline-right` class to the `figure` element, depending on what alignment you want:
 
 <figure class="w-figure w-figure--inline-left">
-  <img class="w-screenshot" src="./image-inline.png" alt="A diagram of the interactions between a client, a service worker, and the server." style="max-width: 200px;">
+  <img class="w-screenshot" src="./image-inline.png" alt="A diagram of the interactions between a client, a service worker, and the server." width="200">
   <figcaption class="w-figcaption">
     A left-aligned inline image.
   </figcaption>

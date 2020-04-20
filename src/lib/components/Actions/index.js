@@ -2,9 +2,9 @@
  * @fileoverview Element that renders configurable per-page actions.
  */
 
-import {html} from "lit-element";
-import {BaseElement} from "../BaseElement";
-import {isWebShareSupported} from "../../utils/web-share";
+import {html} from 'lit-element';
+import {BaseElement} from '../BaseElement';
+import {isWebShareSupported} from '../../utils/web-share';
 
 /**
  * Renders configurable per-page actions. This is expected to be created by
@@ -39,7 +39,7 @@ class Actions extends BaseElement {
 
   onTwitterShare(e) {
     e.preventDefault();
-    window.open(e.target.href, "share-twitter", "width=550,height=235");
+    window.open(e.target.href, 'share-twitter', 'width=550,height=235');
   }
 
   get shareUrl() {
@@ -47,16 +47,16 @@ class Actions extends BaseElement {
   }
 
   get shareText() {
-    let authorText = "";
+    let authorText = '';
 
     const authors = this._splitPipes(this.authors);
     if (authors.length) {
       // ListFormat isn't widely supported; feature-detect it first
-      if ("ListFormat" in Intl) {
-        const il = new Intl.ListFormat("en");
+      if ('ListFormat' in Intl) {
+        const il = new Intl.ListFormat('en');
         authorText = ` by ${il.format(authors)}`;
       } else {
-        authorText = ` by ${authors.join(", ")}`;
+        authorText = ` by ${authors.join(', ')}`;
       }
     }
 
@@ -79,9 +79,9 @@ class Actions extends BaseElement {
     }
 
     // Otherwise, fall back to a Twitter popup.
-    const url = new URL("https://twitter.com/share");
-    url.searchParams.set("url", this.shareUrl);
-    url.searchParams.set("text", this.shareText);
+    const url = new URL('https://twitter.com/share');
+    url.searchParams.set('url', this.shareUrl);
+    url.searchParams.set('text', this.shareText);
     return html`
       <a
         class="w-actions__fab w-actions__fab--share gc-analytics-event"
@@ -90,6 +90,7 @@ class Actions extends BaseElement {
         data-action="click"
         href="${url}"
         target="_blank"
+        rel="noreferrer"
         @click=${this.onTwitterShare}
       >
         <span>Share</span>
@@ -105,6 +106,7 @@ class Actions extends BaseElement {
         data-label="subscribe, newsletter"
         data-action="click"
         href="https://web.dev/subscribe"
+        target="_blank"
       >
         <span>Subscribe</span>
       </a>
@@ -115,11 +117,11 @@ class Actions extends BaseElement {
     const actions = this._splitPipes(this.actions);
     const parts = [];
 
-    if (actions.indexOf("share") !== -1) {
+    if (actions.indexOf('share') !== -1) {
       parts.push(this.shareTemplate);
     }
 
-    if (actions.indexOf("subscribe") !== -1) {
+    if (actions.indexOf('subscribe') !== -1) {
       parts.push(this.subscribeTemplate);
     }
 
@@ -142,4 +144,4 @@ class Actions extends BaseElement {
   }
 }
 
-customElements.define("web-actions", Actions);
+customElements.define('web-actions', Actions);

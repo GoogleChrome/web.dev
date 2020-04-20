@@ -5,7 +5,7 @@ description: |
   Learn about Lighthouse's Time to Interactive metric and
   how to measure and optimize it.
 date: 2019-05-02
-updated: 2019-10-10
+updated: 2020-04-20
 web_lighthouse:
   - interactive
 ---
@@ -73,7 +73,7 @@ This table shows how to interpret your TTI score:
       </tr>
       <tr>
         <td>5.3–7.3</td>
-        <td>Orange (average)</td>
+        <td>Orange (moderate)</td>
         <td>50–74</td>
       </tr>
       <tr>

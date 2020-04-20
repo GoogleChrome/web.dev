@@ -12,6 +12,8 @@ glitch: fav-kitties-compress-starter
 related_post: reduce-network-payloads-using-text-compression
 ---
 
+{% include 'content/devtools-headsup.njk' %}
+
 This codelab explores how both minifying and compressing the JavaScript
 bundle for the following application improves page performance by reducing
 the app's request size.

@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-const {html} = require("common-tags");
-const AuthorInfo = require("./AuthorInfo");
+const {html} = require('common-tags');
+const AuthorInfo = require('./AuthorInfo');
 
 module.exports = ({
   post,
   author,
-  avatar,
+  id,
   showSocialMedia = false,
   small = false,
 }) => {
@@ -41,12 +41,14 @@ module.exports = ({
   const fullName = `${author.name.given} ${author.name.family}`;
   return html`
     <div class="w-author">
-      <img
-        class="w-author__image ${small && `w-author__image--small`}"
-        src="/images/authors/${avatar}.jpg"
-        alt="${fullName}"
-      />
-      ${AuthorInfo({post, author, showSocialMedia})}
+      <a href="/authors/${id}">
+        <img
+          class="w-author__image ${small && `w-author__image--small`}"
+          src="/images/authors/${id}.jpg"
+          alt="${fullName}"
+        />
+      </a>
+      ${AuthorInfo({post, author, id, showSocialMedia})}
     </div>
   `;
 };

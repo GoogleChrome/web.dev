@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-import {assert} from "../../test/assert";
+import {assert} from '../../test/assert';
 
-describe("basic", function() {
-  it("works", function() {
-    assert(true, "something broke!");
+suite('basic', () => {
+  test('works', () => {
+    assert(true, 'something broke!');
   });
 });

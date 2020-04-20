@@ -2,9 +2,10 @@
  * @fileoverview An element which shows key metrics for a Lighthouse run.
  */
 
-import {html} from "lit-element";
-import {BaseElement} from "../BaseElement";
-import {metrics} from "../../lighthouse";
+import {html} from 'lit-element';
+import {BaseElement} from '../BaseElement';
+import {metrics} from '../../lighthouse';
+import './_styles.scss';
 
 /* eslint-disable require-jsdoc */
 class LighthouseScoresMetrics extends BaseElement {
@@ -15,12 +16,12 @@ class LighthouseScoresMetrics extends BaseElement {
   }
 
   firstUpdated() {
-    this.setAttribute("role", "table");
-    this.setAttribute("aria-label", "Lighthouse key metrics");
+    this.setAttribute('role', 'table');
+    this.setAttribute('aria-label', 'Lighthouse key metrics');
   }
 
   render() {
-    let inner = "";
+    let inner = '';
 
     if (this.lhr) {
       const metricToHtml = (metric) => {
@@ -28,11 +29,11 @@ class LighthouseScoresMetrics extends BaseElement {
 
         let label = null;
         if (audit.score >= 0.9) {
-          label = "pass";
+          label = 'pass';
         } else if (audit.score >= 0.5) {
-          label = "average";
+          label = 'average';
         } else {
-          label = "fail";
+          label = 'fail';
         }
 
         return html`
@@ -58,4 +59,4 @@ class LighthouseScoresMetrics extends BaseElement {
   }
 }
 
-customElements.define("web-lighthouse-scores-metrics", LighthouseScoresMetrics);
+customElements.define('web-lighthouse-scores-metrics', LighthouseScoresMetrics);

@@ -1,11 +1,10 @@
-import config from "webdev_config";
-import {store} from "./store";
-import {clearSignedInState} from "./actions";
-import firestoreLoader from "./firestore-loader";
+import {firebaseConfig} from 'webdev_config';
+import {store} from './store';
+import {clearSignedInState} from './actions';
+import firestoreLoader from './firestore-loader';
+import {localStorage} from './utils/storage';
 
 /* eslint-disable require-jsdoc */
-
-const {firebaseConfig} = config;
 
 firebase.initializeApp(firebaseConfig);
 
@@ -24,7 +23,7 @@ firebase.auth().onAuthStateChanged((user) => {
 
   // Cache whether the user was signed in, to help prevent FOUC in future, as
   // this can be read synchronosly and Firebase's auth takes ~ms to come back.
-  window.localStorage["webdev_isSignedIn"] = user ? "probably" : "";
+  localStorage['webdev_isSignedIn'] = user ? 'probably' : '';
 
   if (!user) {
     clearSignedInState();
@@ -48,7 +47,7 @@ firebase.auth().onAuthStateChanged((user) => {
     //   urls: {String: Timestamp},  # URL to first time used (including current URL)
     // }
     const data = snapshot.data() || {}; // is empty on new user
-    const savedUrl = data.currentUrl || "";
+    const savedUrl = data.currentUrl || '';
 
     const {userUrl, userUrlSeen, activeLighthouseUrl} = store.getState();
     if (activeLighthouseUrl !== null) {
@@ -106,7 +105,7 @@ firebase.auth().onAuthStateChanged((user) => {
         internalUnsubscribe = ref.onSnapshot(onUserSnapshot);
       })
       .catch((err) => {
-        console.warn("failed to load Firestore library", err);
+        console.warn('failed to load Firestore library', err);
       });
 
     return () => {
@@ -123,7 +122,7 @@ async function userRef() {
   }
 
   const firestore = await firestoreLoader();
-  return firestore.collection("users").doc(state.user.uid);
+  return firestore.collection('users').doc(state.user.uid);
 }
 
 /**
@@ -174,7 +173,7 @@ export async function saveUserUrl(url, auditedOn = null) {
   } catch (err) {
     // Note: We don't plan to do anything here. If we can't write to Firebase, we can still
     // try to invoke Lighthouse with the new URL.
-    console.warn("could not write URL to Firestore", err);
+    console.warn('could not write URL to Firestore', err);
   }
 
   return auditedOn;
@@ -189,7 +188,7 @@ export async function signIn() {
     const res = await firebase.auth().signInWithPopup(provider);
     user = res.user;
   } catch (err) {
-    console.error("error", err);
+    console.error('error', err);
   }
 
   return user;
@@ -200,6 +199,6 @@ export async function signOut() {
   try {
     await firebase.auth().signOut();
   } catch (err) {
-    console.error("error", err);
+    console.error('error', err);
   }
 }

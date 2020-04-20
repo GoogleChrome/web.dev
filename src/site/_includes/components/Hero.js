@@ -14,25 +14,24 @@
  * limitations under the License.
  */
 
-const {html} = require("common-tags");
-const stripLanguage = require("../../_filters/strip-language");
-const getImagePath = require("../../_utils/get-image-path");
-const getSrcsetRange = require("../../_utils/get-srcset-range");
+const {html} = require('common-tags');
+const getSrcsetRange = require('../../_utils/get-srcset-range');
 
 /* eslint-disable max-len */
-module.exports = ({page, hero, alt, heroPosition, heroFit = "cover"}) => {
-  const imagePath = getImagePath(hero, stripLanguage(page.url));
+module.exports = ({hero, alt, heroPosition, heroFit = 'cover'}) => {
   const srcsetRange = getSrcsetRange();
 
   // prettier-ignore
   return html`
     <img
       class="w-hero w-hero--${heroFit} ${heroPosition ? `w-hero--${heroPosition}` : ""}"
+      width="1600"
+      height="480"
       sizes="100vw"
       srcset="${srcsetRange.map((width) => html`
-        ${imagePath}?auto=format&fit=max&w=${width} ${width}w,
+        ${hero}?auto=format&fit=max&w=${width} ${width}w,
       `)}"
-      src="${imagePath}"
+      src="${hero}"
       alt="${alt}"
     />
   `;

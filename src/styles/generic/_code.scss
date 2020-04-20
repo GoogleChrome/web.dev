@@ -1,5 +1,4 @@
-@import '../settings/colors';
-@import '../settings/type';
+@import '../tools/mixins';
 
 // =============================================================================
 // CODE OVERVIEW
@@ -15,13 +14,13 @@
 // TODO (robdodson): Need to revsit this color palette.
 $CODE_COLORS: (
   blue: #183691,
-  teal: #0086b3,
+  bright-blue: #007aa2,
   black: $PRIMARY_TEXT_COLOR,
   purple: #a71d5d,
   maroon: #a71d5d,
   green: #63a35c,
   light-gray: #f7f7f7,
-  dark-gray: #969896
+  dimgrey: #696969
 );
 
 code {
@@ -49,6 +48,7 @@ pre {
 // Code block
 pre,
 pre[class*='language-'] {
+  @include scrollbars();
   margin: 32px 0;
   overflow: auto;
   padding: 16px;
@@ -82,7 +82,7 @@ h6 code {
   font-size: inherit;
   margin: 0;
   padding: 0;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 // Figcaptions and citations are smaller than body text,
@@ -104,7 +104,7 @@ cite code {
   &.prolog,
   &.doctype,
   &.cdata {
-    color: map-get($CODE_COLORS, dark-gray);
+    color: map-get($CODE_COLORS, dimgrey);
   }
 
   &.punctuation,
@@ -121,7 +121,7 @@ cite code {
 
   &.boolean,
   &.number {
-    color: map-get($CODE_COLORS, teal);
+    color: map-get($CODE_COLORS, bright-blue);
   }
 
   &.selector,

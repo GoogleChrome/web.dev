@@ -34,7 +34,7 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
 
 .w-author__image {
   background-color: $GREY_300;
-  border-radius: 50%;
+  border-radius: $GLOBAL_ROUNDED;
   flex-shrink: 0;
   height: 64px;
   margin: 0 12px 0 0;
@@ -58,6 +58,25 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
 
 .w-author__name {
   color: $GREY_900;
+}
+
+.w-author__name-link {
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+// Specificty required here because `a` tags in `.w-post-content` have higher priority.
+.w-post-content .w-author__name-link {
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
 }
 
 .w-author__published {
@@ -120,7 +139,7 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
 }
 
 .w-author__image--row-item {
-  border-radius: 50%;
+  border-radius: $GLOBAL_ROUNDED;
   height: $AUTHOR_IMAGE_SIZE_SMALL;
   margin-left: calc(-#{$AUTHOR_IMAGE_SIZE_SMALL} / 2);
   overflow: hidden;

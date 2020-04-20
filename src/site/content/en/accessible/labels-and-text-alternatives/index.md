@@ -296,7 +296,7 @@ This is especially helpful for screen readers that offer shortcuts to list all
 of the links on the page. If links are full of repetitive filler text, these
 shortcuts become much less useful:
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="./vo.jpg" alt="VoiceOver's links menu filled with the word 'here'.">
   <figcaption class="w-figcaption">
     Example of VoiceOver, a screen reader for macOS, showing the navigate by
@@ -330,7 +330,9 @@ When the checkbox has been labeled correctly, the screen reader can report that
 the element has a role of checkbox, is in a checked state, and is named "Receive
 promotional offers?" like in the VoiceOver example below:
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="./promo-offers.png"
   alt="VoiceOver text output showing 'Receive promotional offers?'">
 </figure>
+
+{% Assessment page, 'self-assessment' %}

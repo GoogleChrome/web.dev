@@ -5,7 +5,7 @@ description: |
   Learn about the browser's main thread and how you can optimize your web page
   to reduce main thread load and improve performance.
 date: 2019-05-02
-updated: 2019-10-04
+updated: 2020-04-20
 web_lighthouse:
   - mainthread-work-breakdown
 ---
@@ -44,8 +44,7 @@ while the browser loaded your page.
 
 Many activities, like parsing CSS and laying out the page,
 can keep the main thread busy.
-However, parsing, compiling, and executing JavaScript is often the
-the biggest source of work on the main thread.
+However, parsing, compiling, and executing JavaScript is often the biggest source of work on the main thread.
 
 Consider these tactics to improve JavaScript performance during page load:
 

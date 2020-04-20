@@ -1,5 +1,3 @@
-@import '../settings/colors';
-@import '../tools/breakpoints';
 @import '../tools/mixins';
 
 .w-callout {
@@ -7,13 +5,13 @@
 
   @include bp(sm) {
     // sass-lint:disable-block indentation
-    border-radius: 8px;
+    border-radius: $GLOBAL_RADIUS_MEDIUM;
     box-shadow:
     0 2px 4px -1px rgba(0, 0, 0, .2),
     0 4px 5px 0 rgba(0, 0, 0, .14),
     0 1px 10px 0 rgba(0, 0, 0, .12);
     grid-template-columns: 1fr 1fr;
-    padding: 24px;
+    padding: 1.5rem;
   }
 }
 
@@ -23,23 +21,14 @@
     font-size: .889em;
     // sass-lint:disable-all
     // scss-lint:disable all
-    gap: 16px;
-    grid-gap: 16px;
+    gap: 1rem;
     // sass-lint:enable-all
     // scss-lint:enable all
   }
 }
 
 .w-callout__header {
-  margin-bottom: 16px;
-  pointer-events: none;
-
-  // scss-lint thinks this is a pseudo class instead of a psuedo element
-  // and complains about the two colons.
-  // scss-lint:disable all
-  &::-webkit-details-marker {
-    display: none;
-  }
+  padding-bottom: 1rem;
 }
 
 .w-callout__lockup {
@@ -47,15 +36,11 @@
   display: inline-flex;
   // Ugh. Bad idea including margins in the heading styles.
   // They get reset at every breakpoint.
-  margin: 0 0 12px !important;
+  margin: 0 0 .75rem !important;
 }
 
 .w-callout__lockup--codelab {
   color: $WEB_EXTENDED_SECONDARY_COLOR;
-}
-
-.w-callout__lockup--assess {
-  color: $SUCCESS_COLOR;
 }
 
 .w-callout__lockup::before {
@@ -69,13 +54,9 @@
   content: 'code';
 }
 
-.w-callout__lockup--assess::before {
-  content: 'school';
-}
-
 .w-callout__headline {
   @include w-headline--two-small;
-  margin: 0 0 4px !important;
+  margin: 0 0 .25rem !important;
 }
 
 .w-callout__blurb {
@@ -100,17 +81,13 @@
   align-items: center;
   box-sizing: content-box;
   display: flex;
-  min-height: 40px;
-  padding: 8px 26px 8px 0;
+  min-height: 2.5rem;
+  padding: .5rem 26px .5rem 0;
   position: relative;
 }
 
 .w-callout__link--codelab {
   color: $WEB_EXTENDED_SECONDARY_COLOR;
-}
-
-.w-callout__link--assess {
-  color: $SUCCESS_COLOR;
 }
 
 .w-callout__link::after {

@@ -1,7 +1,7 @@
-import {html} from "lit-element";
-import {signIn} from "../../fb";
-import {BaseStateElement} from "../BaseStateElement";
-import "../ProfileSwitcher";
+import {html} from 'lit-element';
+import {signIn} from '../../fb';
+import {BaseStateElement} from '../BaseStateElement';
+import '../ProfileSwitcher';
 
 /* eslint-disable require-jsdoc */
 class ProfileSwitcherContainer extends BaseStateElement {
@@ -40,6 +40,6 @@ class ProfileSwitcherContainer extends BaseStateElement {
 }
 
 customElements.define(
-  "web-profile-switcher-container",
+  'web-profile-switcher-container',
   ProfileSwitcherContainer,
 );

@@ -5,10 +5,12 @@ description: |
   Learn how to improve the accessibility of audio on your web page by providing
   closed captions.
 date: 2019-05-02
-updated: 2019-09-19
+updated: 2020-04-20
 web_lighthouse:
   - audio-caption
 ---
+
+{% Banner 'caution', 'body' %}This audit has been deprecated.{% endBanner %}
 
 Captions make audio elements usable for deaf or hearing-impaired users,
 providing critical information such as who is talking, what they're saying,
@@ -32,7 +34,7 @@ See glitch: [meggin-accessibility-assets](https://glitch.com/edit/#!/meggin-acce
 
 ## How to add an audio track
 
-Add at least one track element to the `audio` element
+Add at least one `<track>` element to the `<audio>` element
 with attribute `kind="captions"`:
 
 ```html
@@ -45,5 +47,5 @@ with attribute `kind="captions"`:
 
 ## Resources
 
-- [Source code for **`<audio>` elements are missing a `<track>` element with `[kind="captions"]`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/audit-caption.js)
+- [Source code for **`<audio>` elements are missing a `<track>` element with `[kind="captions"]`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/audio-caption.js)
 - [`<audio> `elements must have a captions `<track>` (Deque University)](https://dequeuniversity.com/rules/axe/3.3/audio-caption)

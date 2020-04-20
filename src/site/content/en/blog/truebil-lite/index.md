@@ -20,6 +20,9 @@ tags:
   - fast
   - reliable
   - e-commerce
+  - case-study
+  - performance
+  - progressive-web-apps
 ---
 
 ## About
@@ -90,7 +93,7 @@ To mitigate overhead from DNS and TLS, Truebil used [`<link rel="preconnect">`](
 
 #### Dynamically prefetch the next page
 
-By analyzing their data, the team identified the most common user journeys that they could optimize for. In these cases, the app dynamically downloads the next page resource by using `<link rel=prefetch>` to ensure smooth navigation for users. While the team manually identifies the links to prefetch, they use webpack to bundle the JS for those links.  
+By analyzing their data, the team identified the most common user journeys that they could optimize for. In these cases, the app dynamically downloads the next page resource by using `<link rel=prefetch>` to ensure smooth navigation for users. While the team manually identifies the links to prefetch, they use webpack to bundle the JS for those links.
 
 <figure class="w-figure">
   <img class="w-screenshot" src="prefetch.png" alt="Screenshots of the Truebil Lit app and Chrome DevTools showing that network requests aren't needed on common navigations because the assets have already been prefetched.">
@@ -172,7 +175,7 @@ For users who had interacted with the app for a while, the team used highly cont
 
 Finally, the team built in a non-intrusive banner with a notification-like design that's triggered at specific events, such as opening a listing page or after the user has spent a set amount of time spent in the app:
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="notification.png" alt="A screenshot of Truebil Lite's time-based installation prompt banner.">
 </figure>
 

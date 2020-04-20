@@ -45,7 +45,7 @@ Netflix and most other video (or video calling) services automatically adjust
 the resolution during streaming. When Gmail is loading, it provides users with a
 link to "load basic HTML (for slow connections)".
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="./loading_gmail_slow_connection.png" alt="A link to load basic HTML version of Gmail when users are on slow connections">
 </figure>
 

@@ -1,10 +1,42 @@
+@import '../../../styles/settings/colors';
 @import '../../../styles/settings/dimensions';
+@import '../../../styles/tools/breakpoints';
+@import '../../../styles/tools/mixins';
+
 
 web-lighthouse-scores-meta {
   .lh-report-meta {
     margin-top: 8px;
     margin-bottom: 16px;
     font-size: 14px;
+  }
+
+  .lh-report-meta__links {
+    display: flex;
+    flex-direction: column;
+
+    @include bp(sm) {
+      justify-content: space-between;
+      flex-direction: row;
+    }
+
+    @include bp(md) {
+      display: block;
+    }
+  }
+
+  .lh-report-meta__lastaudit {
+    margin-left: 8px;
+
+    @include bp(sm) {
+      margin-left: 8px;
+    }
+
+    @include bp(md) {
+      min-width: 180px;
+      margin-right: 16px;
+      display: inline-block;
+    }
   }
 
   .lh-report-invisible {
@@ -37,35 +69,6 @@ web-lighthouse-scores-meta {
       // Disabled as `alt` is a new property only supported in Safari.
       // scss-lint:disable PropertySpelling
       alt: '';
-    }
-  }
-
-  /// @deprecated
-  @media screen and (min-width: $BREAKPOINT_VALUE_DESKTOP) {
-    .lh-report-meta {
-      margin-bottom: 32px;
-    }
-  }
-
-  /// @deprecated
-  @media screen and (min-width: $BREAKPOINT_VALUE_TABLET) {
-    .lh-report-meta {
-      display: flex;
-      align-items: center;
-    }
-
-    .lh-report-meta__lastaudit {
-      min-width: 180px;
-      margin-right: 16px;
-      display: inline-block;
-    }
-  }
-
-  /// @deprecated
-  @media screen and (max-width: $BREAKPOINT_VALUE_TABLET) {
-    .lh-report-meta__links {
-      display: flex;
-      justify-content: space-between;
     }
   }
 }

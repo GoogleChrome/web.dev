@@ -25,9 +25,9 @@ const slugify = require('slugify');
 const componentsDir = 'src/site/_includes/components';
 const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
 const Aside = require(`./${componentsDir}/Aside`);
-const AssessmentCallout = require(`./${componentsDir}/AssessmentCallout`);
-const AssessmentHint = require(`./${componentsDir}/AssessmentHint`);
+const Assessment = require(`./${componentsDir}/Assessment`);
 const Author = require(`./${componentsDir}/Author`);
+const AuthorCard = require(`./${componentsDir}/AuthorCard`);
 const AuthorInfo = require(`./${componentsDir}/AuthorInfo`);
 const Banner = require(`./${componentsDir}/Banner`);
 const Blockquote = require(`./${componentsDir}/Blockquote`);
@@ -39,49 +39,66 @@ const Details = require(`./${componentsDir}/Details`);
 const DetailsSummary = require(`./${componentsDir}/DetailsSummary`);
 const Hero = require(`./${componentsDir}/Hero`);
 const Instruction = require(`./${componentsDir}/Instruction`);
+const Label = require(`./${componentsDir}/Label`);
 const Meta = require(`./${componentsDir}/Meta`);
 const PathCard = require(`./${componentsDir}/PathCard`);
 const PostCard = require(`./${componentsDir}/PostCard`);
-const Tab = require(`./${componentsDir}/Tab`);
-const Tabs = require(`./${componentsDir}/Tabs`);
+const SignPosts = require(`./${componentsDir}/SignPosts`);
 const Tooltip = require(`./${componentsDir}/Tooltip`);
 const YouTube = require(`./${componentsDir}/YouTube`);
 
-const tagsDir = 'src/site/_includes/components/tags';
-const {Image, Figure} = require(`./${tagsDir}/Image`);
-
 const collectionsDir = 'src/site/_collections';
+const authors = require(`./${collectionsDir}/authors`);
+const paginatedAuthors = require(`./${collectionsDir}/paginated-authors`);
+const paginatedBlogPosts = require(`./${collectionsDir}/paginated-blog-posts`);
+const paginatedPostsByAuthor = require(`./${collectionsDir}/paginated-posts-by-author`);
+const paginatedPostsByTag = require(`./${collectionsDir}/paginated-posts-by-tag`);
+const paginatedTags = require(`./${collectionsDir}/paginated-tags`);
 const postDescending = require(`./${collectionsDir}/post-descending`);
+const postToCollections = require(`./${collectionsDir}/post-to-collections`);
 const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
 const recentPosts = require(`./${collectionsDir}/recent-posts`);
+const tags = require(`./${collectionsDir}/tags`);
 // nb. algoliaPosts is only require'd if needed, below
 
 const filtersDir = 'src/site/_filters';
-const {memoize, findBySlug} = require(`./${filtersDir}/find-by-slug`);
+const consoleDump = require(`./${filtersDir}/console-dump`);
+const {memoize, findByUrl} = require(`./${filtersDir}/find-by-url`);
 const pathSlug = require(`./${filtersDir}/path-slug`);
 const containsTag = require(`./${filtersDir}/contains-tag`);
 const expandContributors = require(`./${filtersDir}/expand-contributors`);
+const findTags = require(`./${filtersDir}/find-tags`);
 const githubLink = require(`./${filtersDir}/github-link`);
+const gitlocalizeLink = require(`./${filtersDir}/gitlocalize-link`);
 const htmlDateString = require(`./${filtersDir}/html-date-string`);
 const md = require(`./${filtersDir}/md`);
+const pagedNavigation = require(`./${filtersDir}/paged-navigation`);
 const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
 const prettyDate = require(`./${filtersDir}/pretty-date`);
 const removeDrafts = require(`./${filtersDir}/remove-drafts`);
+const strip = require(`./${filtersDir}/strip`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
 const stripLanguage = require(`./${filtersDir}/strip-language`);
 
+const transformsDir = 'src/site/_transforms';
+const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
+const {responsiveImages} = require(`./${transformsDir}/responsive-images`);
+const {
+  serviceWorkerPartials,
+} = require(`./${transformsDir}/service-worker-partials`);
+
 module.exports = function(config) {
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
   // PLUGINS
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
   // Syntax highlighting for code snippets
   config.addPlugin(pluginSyntaxHighlight);
   // RSS feeds
   config.addPlugin(pluginRss);
 
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
   // MARKDOWN
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
   const markdownItOptions = {
     html: true,
   };
@@ -105,7 +122,8 @@ module.exports = function(config) {
 
   const mdLib = markdownIt(markdownItOptions)
     .use(markdownItAnchor, markdownItAnchorOptions)
-    .use(markdownItAttrs, markdownItAttrsOpts);
+    .use(markdownItAttrs, markdownItAttrsOpts)
+    .disable('code');
 
   // custom renderer rules
   const fence = mdLib.renderer.rules.fence;
@@ -117,21 +135,31 @@ module.exports = function(config) {
     },
     table_close: () => '</table>\n</div>',
     table_open: () => '<div class="w-table-wrapper">\n<table>\n',
-  }
+  };
 
   mdLib.renderer.rules = {...mdLib.renderer.rules, ...rules};
 
-  config.setLibrary(
-    'md',
-    mdLib
-  );
+  config.setLibrary('md', mdLib);
 
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
+  // NON-11TY FILES TO WATCH
+  // ----------------------------------------------------------------------------
+  config.addWatchTarget('./src/site/content/en/**/*.yml');
+
+  // ----------------------------------------------------------------------------
   // COLLECTIONS
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
+  config.addCollection('authors', authors);
   config.addCollection('posts', postDescending);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('recentPosts', recentPosts);
+  config.addCollection('paginatedAuthors', paginatedAuthors);
+  config.addCollection('paginatedBlogPosts', paginatedBlogPosts);
+  config.addCollection('paginatedPostsByAuthor', paginatedPostsByAuthor);
+  config.addCollection('paginatedPostsByTag', paginatedPostsByTag);
+  config.addCollection('paginatedTags', paginatedTags);
+  config.addCollection('postToCollections', postToCollections);
+  config.addCollection('tags', tags);
   // Turn collection.all into a lookup table so we can use findBySlug
   // to quickly find collection items without looping.
   config.addCollection('memoized', function(collection) {
@@ -145,30 +173,35 @@ module.exports = function(config) {
     return [];
   });
 
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
   // FILTERS
-  //----------------------------------------------------------------------------
-  config.addFilter('findBySlug', findBySlug);
+  // ----------------------------------------------------------------------------
+  config.addFilter('consoleDump', consoleDump);
+  config.addFilter('findByUrl', findByUrl);
+  config.addFilter('findTags', findTags);
   config.addFilter('pathSlug', pathSlug);
   config.addFilter('containsTag', containsTag);
   config.addFilter('expandContributors', expandContributors);
   config.addFilter('githubLink', githubLink);
+  config.addFilter('gitlocalizeLink', gitlocalizeLink);
   config.addFilter('htmlDateString', htmlDateString);
   config.addFilter('md', md);
+  config.addFilter('pagedNavigation', pagedNavigation);
   config.addFilter('postsLighthouseJson', postsLighthouseJson);
   config.addFilter('prettyDate', prettyDate);
   config.addFilter('removeDrafts', removeDrafts);
   config.addFilter('stripBlog', stripBlog);
   config.addFilter('stripLanguage', stripLanguage);
+  config.addFilter('strip', strip);
 
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
   // SHORTCODES
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
   config.addShortcode('ArticleNavigation', ArticleNavigation);
   config.addPairedShortcode('Aside', Aside);
-  config.addPairedShortcode('AssessmentCallout', AssessmentCallout);
-  config.addPairedShortcode('AssessmentHint', AssessmentHint);
+  config.addShortcode('Assessment', Assessment);
   config.addShortcode('Author', Author);
+  config.addShortcode('AuthorCard', AuthorCard);
   config.addShortcode('AuthorInfo', AuthorInfo);
   config.addPairedShortcode('Banner', Banner);
   config.addPairedShortcode('Blockquote', Blockquote);
@@ -180,20 +213,34 @@ module.exports = function(config) {
   config.addPairedShortcode('DetailsSummary', DetailsSummary);
   config.addShortcode('Hero', Hero);
   config.addShortcode('Instruction', Instruction);
+  config.addPairedShortcode('Label', Label);
   config.addShortcode('Meta', Meta);
   config.addShortcode('PathCard', PathCard);
   config.addShortcode('PostCard', PostCard);
-  config.addPairedShortcode('Tab', Tab);
-  config.addPairedShortcode('Tabs', Tabs);
+  config.addShortcode('SignPosts', SignPosts);
   config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('YouTube', YouTube);
 
-  //----------------------------------------------------------------------------
-  // CUSTOM TAGS
-  //----------------------------------------------------------------------------
-  config.addNunjucksTag('Image', Image);
-  config.addNunjucksTag('Figure', Figure);
+  // ----------------------------------------------------------------------------
+  // TRANSFORMS
+  // ----------------------------------------------------------------------------
+  if (process.env.PERCY) {
+    config.addTransform('disable-lazy-load', disableLazyLoad);
+  }
 
+  if (process.env.ELEVENTY_ENV === 'prod') {
+    config.addTransform('responsive-images', responsiveImages);
+  }
+
+  // !!! Important !!!
+  // This transform should always go last.
+  // It takes the final html and turns it into partials that the
+  // service worker can load.
+  config.addTransform('service-worker-partials', serviceWorkerPartials);
+
+  // ----------------------------------------------------------------------------
+  // ELEVENTY OPTIONS
+  // ----------------------------------------------------------------------------
   // https://www.11ty.io/docs/config/#data-deep-merge
   config.setDataDeepMerge(true);
 

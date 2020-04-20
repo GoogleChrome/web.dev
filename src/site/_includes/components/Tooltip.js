@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-const {html} = require("common-tags");
-const md = require("markdown-it")();
+const {html} = require('common-tags');
+const md = require('markdown-it')();
 
 module.exports = (content, alignment) => {
   switch (alignment) {
-    case "left":
-      alignment = "w-tooltip--left";
+    case 'left':
+      alignment = 'w-tooltip--left';
       break;
-    case "right":
-      alignment = "w-tooltip--right";
+    case 'right':
+      alignment = 'w-tooltip--right';
       break;
     default:
-      alignment = "";
+      alignment = '';
   }
 
   return html`

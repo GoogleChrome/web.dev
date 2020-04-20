@@ -49,7 +49,7 @@ This table shows how to interpret your TBT score:
       </tr>
       <tr>
         <td>300-600</td>
-        <td>Orange (average)</td>
+        <td>Orange (moderate)</td>
       </tr>
       <tr>
         <td>Over 600</td>

@@ -85,7 +85,7 @@ rate.
 With 1&nbsp;s of added delay, impressions decreased by 1.1% for mobile traffic
 and 1.9% for desktop traffic:
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="./ad-latency-injected-vs-impressions-change.svg" alt="Chart showing latency injected vs. impressions change">
   <figcaption class="w-figcaption">
     Source: Google Internal Data, December 2016 to January 2017.
@@ -95,7 +95,7 @@ and 1.9% for desktop traffic:
 With 1&nbsp;s of added delay, viewability rate decreased by 3.6% for mobile
 traffic and 2.9% for desktop traffic:
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="./ad-latency-injected-vs-viewability-rate-change.svg" alt="Chart showing latency injected vs. viewability rate change">
   <figcaption class="w-figcaption">
     Source: Google Internal Data, December 2016 to January 2017.
@@ -159,7 +159,7 @@ Then, use this information to create a simple table like the one below, which
 maps each inventory type to its dependencies in an easily digestible format.
 
 <div class="w-table-wrapper">
-  <table class="w-table--middle-align">
+  <table>
     <thead>
       <tr>
       <th>Type of inventory</th>

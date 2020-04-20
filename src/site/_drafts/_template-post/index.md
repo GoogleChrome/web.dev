@@ -12,6 +12,8 @@ date: 2019-10-31
 # Add an updated date to your post if you edit in the future.
 # updated: 2019-11-01
 
+# !!! IMPORTANT: If your post does not contain a hero image it will not appear
+# on the homepage.
 hero: hero.jpg
 # You can adjust the fit of your hero image with this property.
 # Values: contain | cover (default)
@@ -97,7 +99,7 @@ ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
 
 <figure class="w-figure">
-  <img src="image-small.png" alt="" style="max-width: 400px;">
+  <img src="image-small.png" alt="" width="400">
   <figcaption class="w-figcaption">
     Small image.
   </figcaption>
@@ -122,7 +124,7 @@ quam sem.
 ## Image, Inline
 
 <figure class="w-figure w-figure--inline-right">
-  <img class="w-screenshot" src="image-inline.png" alt="" style="max-width: 200px;">
+  <img class="w-screenshot" src="image-inline.png" alt="" width="200">
   <figcaption class="w-figcaption">
     Inline right, outlined image.
   </figcaption>
@@ -143,7 +145,7 @@ aliquet urna ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet
 velit. Morbi at quam sem.
 
 <figure class="w-figure w-figure--inline-left">
-  <img class="w-screenshot" src="image-inline.png" alt="" style="max-width: 200px;">
+  <img class="w-screenshot" src="image-inline.png" alt="" width="200">
   <figcaption class="w-figcaption">
     Inline left, outlined image.
   </figcaption>

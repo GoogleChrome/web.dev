@@ -5,7 +5,7 @@ description: |
   Learn about Lighthouse's First Meaningful Paint metric and
   how to measure and optimize it.
 date: 2019-05-02
-updated: 2019-11-05
+updated: 2020-04-20
 web_lighthouse:
   - first-meaningful-paint
 ---
@@ -80,7 +80,7 @@ This table shows how to interpret your FMP score:
       </tr>
       <tr>
         <td>2–4</td>
-        <td>Orange (average)</td>
+        <td>Orange (moderate)</td>
         <td>50–74</td>
       </tr>
       <tr>

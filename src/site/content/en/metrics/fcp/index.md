@@ -4,7 +4,7 @@ title: First Contentful Paint (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2019-11-07
+updated: 2020-04-20
 description: |
   This post introduces the First Contentful Paint (FCP) metric and explains
   how to measure it
@@ -37,7 +37,7 @@ screen.
 
 You'll notice that though some of the content has rendered, not all of it has
 rendered. This is an important distinction to make between _First_ Contentful
-Paint (FCP) and _[Largest Contentful Paint (LCP)](/largest-contentful-paint/)_
+Paint (FCP) and _[Largest Contentful Paint (LCP)](/lcp/)_
 &mdash;which aims to measure when the page's main contents have finished
 loading.
 
@@ -72,43 +72,37 @@ that listens for paint timing entries and logs the start time of the
 `first-contentful-paint` entry to the console:
 
 ```js
-// Create the Performance Observer instance.
-const observer = new PerformanceObserver((list) => {
-  for (const entry of list.getEntriesByName('first-contentful-paint')) {
-    // Log the value of FCP to the console.
-    console.log('FCP:', entry.startTime);
-    observer.disconnect();
-  }
-});
+// Catch errors since some browsers throw when using the new `type` option.
+// https://bugs.webkit.org/show_bug.cgi?id=209216
+try {
+  // Create the Performance Observer instance.
+  const observer = new PerformanceObserver((list) => {
+    for (const entry of list.getEntriesByName('first-contentful-paint')) {
+      // Log the value of FCP to the console.
+      console.log('FCP:', entry.startTime);
+      observer.disconnect();
+    }
+  });
 
-// Start observing paint entry types.
-observer.observe({
-  type: 'paint',
-  buffered: true,
-});
+  // Start observing paint entry types.
+  observer.observe({
+    type: 'paint',
+    buffered: true,
+  });
+} catch (e) {
+  // Do nothing if the browser doesn't support this API.
+}
 ```
 
 Note, in your own code, you'd likely replace the `console.log()` with code that
 sends the FCP value to your analytics service.
 
-## What is a good FCP?
+## What is a good FCP score?
 
-[RAIL](https://developers.google.com/web/fundamentals/performance/rail)
-guidelines suggest that after 1000 milliseconds (ms), users may lose focus if
-nothing happens after performing a task. Since FCP is the first indication users
-have that something is happening, it's best if the majority of page loads report
-FCP is less than a second (1000 ms).
-
-**For field measurement:** Page Speed Insights will
-[report](https://developers.google.com/speed/docs/insights/v5/about#distribution)
-FCP as "fast" for values 1 second or less, "moderate" for values between 1 and 3
-seconds, and "slow" for any values above 3 seconds.
-
-**For lab measurement:** Lighthouse will give a perfect score (100) to an FCP
-value 1 second or less, and the score will go down as FCP gets slower. Refer to
-the [Lighthouse scoring
-guide](https://developers.google.com/web/tools/lighthouse/v3/scoring#perf) for
-more details.
+To provide a good user experience, sites should strive to have First Contentful
+Paint occur within **1 second** of the page starting to load. To ensure you're
+hitting this target for most of your users, a good threshold to measure is the
+**75th percentile** of page loads, segmented across mobile and desktop devices.
 
 ## How to improve FCP
 

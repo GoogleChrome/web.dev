@@ -5,7 +5,7 @@ description: |
   Learn how to make list items on your web page accessible to assistive
   technology users by placing them in list elements.
 date: 2019-05-02
-updated: 2019-09-19
+updated: 2020-04-20
 web_lighthouse:
   - listitem
 ---
@@ -22,7 +22,7 @@ assistive technologies can't set user expectations correctly.
 ## How this Lighthouse audit fails
 
 Lighthouse flags list items (`<li>`) that aren't contained
-in `<ul>` ' or `<ol>` parent elements:
+in `<ul>` or `<ol>` parent elements:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="listitem.png" alt="Lighthouse audit showing list item isn't contained within a parent list">

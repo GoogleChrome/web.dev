@@ -70,14 +70,20 @@ entries to listen for via the
 method:
 
 ```js
-const po = new PerformanceObserver((list) => {
-  for (const entry of list.getEntries()) {
-    // Log the entry and all associated details.
-    console.log(entry.toJSON());
-  }
-});
+// Catch errors since some browsers throw when using the new `type` option.
+// https://bugs.webkit.org/show_bug.cgi?id=209216
+try {
+  const po = new PerformanceObserver((list) => {
+    for (const entry of list.getEntries()) {
+      // Log the entry and all associated details.
+      console.log(entry.toJSON());
+    }
+  });
 
-po.observe({type: 'some-entry-type'});
+  po.observe({type: 'some-entry-type'});
+} catch (e) {
+  // Do nothing if the browser doesn't support this API.
+}
 ```
 
 The sections below list all the various entry types available for observing, but
@@ -166,15 +172,21 @@ To report User Timing measurements, you can use
 type `measure`:
 
 ```js
-// Create the performance observer.
-const po = new PerformanceObserver((list) => {
-  for (const entry of list.getEntries()) {
-    // Log the entry and all associated details.
-    console.log(entry.toJSON());
-  }
-});
-// Start listening for `measure` entries to be dispatched.
-po.observe({type: 'measure', buffered: true});
+// Catch errors since some browsers throw when using the new `type` option.
+// https://bugs.webkit.org/show_bug.cgi?id=209216
+try {
+  // Create the performance observer.
+  const po = new PerformanceObserver((list) => {
+    for (const entry of list.getEntries()) {
+      // Log the entry and all associated details.
+      console.log(entry.toJSON());
+    }
+  });
+  // Start listening for `measure` entries to be dispatched.
+  po.observe({type: 'measure', buffered: true});
+} catch (e) {
+  // Do nothing if the browser doesn't support this API.
+}
 ```
 
 ### Long Tasks API
@@ -195,20 +207,26 @@ To determine when long tasks happen, you can use
 and register to observe entries of type `longtask`:
 
 ```js
-// Create the performance observer.
-const po = new PerformanceObserver((list) => {
-  for (const entry of list.getEntries()) {
-    // Log the entry and all associated details.
-    console.log(entry.toJSON());
-  }
-});
-// Start listening for `longtask` entries to be dispatched.
-po.observe({type: 'longtask', buffered: true});
+// Catch errors since some browsers throw when using the new `type` option.
+// https://bugs.webkit.org/show_bug.cgi?id=209216
+try {
+  // Create the performance observer.
+  const po = new PerformanceObserver((list) => {
+    for (const entry of list.getEntries()) {
+      // Log the entry and all associated details.
+      console.log(entry.toJSON());
+    }
+  });
+  // Start listening for `longtask` entries to be dispatched.
+  po.observe({type: 'longtask', buffered: true});
+} catch (e) {
+  // Do nothing if the browser doesn't support this API.
+}
 ```
 
 {% Aside 'caution' %}
   The `buffered` flag does not currently work for Long Tasks (though
-  support is currently being added). In the meantime, you can track Long Tasks
+  support is being added). In the meantime, you can track Long Tasks
   by registering the `PerformanceObserver` in the `<head>` of your pages, before
   loading any other scripts.
 {% endAside %}
@@ -232,15 +250,21 @@ registering a PerformanceObserver to observe the element entry type.
 <p elementtiming="important-paragraph">This is text I care about.</p>
 ...
 <script>
-// Create the performance observer.
-const observer = new PerformanceObserver((list) => {
-  for (const entry of list.getEntries()) {
-    // Log the entry and all associated details.
-    console.log(entry.toJSON());
-  }
-});
-// Start listening for `element` entries to be dispatched.
-observer.observe({type: 'element', buffered: true});
+// Catch errors since some browsers throw when using the new `type` option.
+// https://bugs.webkit.org/show_bug.cgi?id=209216
+try {
+  // Create the performance observer.
+  const observer = new PerformanceObserver((list) => {
+    for (const entry of list.getEntries()) {
+      // Log the entry and all associated details.
+      console.log(entry.toJSON());
+    }
+  });
+  // Start listening for `element` entries to be dispatched.
+  observer.observe({type: 'element', buffered: true});
+} catch (e) {
+  // Do nothing if the browser doesn't support this API.
+}
 </script>
 ```
 
@@ -282,15 +306,21 @@ The following example logs all resources requested by the page and indicates
 whether or not each resource was fulfilled via the cache.
 
 ```js
-// Create the performance observer.
-const po = new PerformanceObserver((list) => {
-  for (const entry of list.getEntries()) {
-    // If transferSize is 0, the resource was fulfilled via the cache.
-    console.log(entry.name, entry.transferSize === 0);
-  }
-});
-// Start listening for `resource` entries to be dispatched.
-po.observe({type: 'resource', buffered: true});
+// Catch errors since some browsers throw when using the new `type` option.
+// https://bugs.webkit.org/show_bug.cgi?id=209216
+try {
+  // Create the performance observer.
+  const po = new PerformanceObserver((list) => {
+    for (const entry of list.getEntries()) {
+      // If transferSize is 0, the resource was fulfilled via the cache.
+      console.log(entry.name, entry.transferSize === 0);
+    }
+  });
+  // Start listening for `resource` entries to be dispatched.
+  po.observe({type: 'resource', buffered: true});
+} catch (e) {
+  // Do nothing if the browser doesn't support this API.
+}
 ```
 
 ### Navigation Timing API
@@ -309,15 +339,21 @@ First Byte](https://en.wikipedia.org/wiki/Time_to_first_byte)) is available via
 the Navigation Timing API—specifically it's entry's `responseStart` timestamp.
 
 ```js
-// Create the performance observer.
-const po = new PerformanceObserver((list) => {
-  for (const entry of list.getEntries()) {
-    // If transferSize is 0, the resource was fulfilled via the cache.
-    console.log('Time to first byte', entry.responseStart);
-  }
-});
-// Start listening for `navigation` entries to be dispatched.
-po.observe({type: 'navigation', buffered: true});
+// Catch errors since some browsers throw when using the new `type` option.
+// https://bugs.webkit.org/show_bug.cgi?id=209216
+try {
+  // Create the performance observer.
+  const po = new PerformanceObserver((list) => {
+    for (const entry of list.getEntries()) {
+      // If transferSize is 0, the resource was fulfilled via the cache.
+      console.log('Time to first byte', entry.responseStart);
+    }
+  });
+  // Start listening for `navigation` entries to be dispatched.
+  po.observe({type: 'navigation', buffered: true});
+} catch (e) {
+  // Do nothing if the browser doesn't support this API.
+}
 ```
 
 Another metric developers who user service worker may care about is the service
@@ -329,15 +365,21 @@ The service worker startup time for a particular navigation request can be
 determined from the delta between `entry.responseStart` and `entry.workerStart`.
 
 ```js
-// Create the performance observer.
-const po = new PerformanceObserver((list) => {
-  for (const entry of list.getEntries()) {
-    console.log('Service Worker startup time:',
-        entry.responseStart - entry.workerStart);
-  }
-});
-// Start listening for `navigation` entries to be dispatched.
-po.observe({type: 'navigation', buffered: true});
+// Catch errors since some browsers throw when using the new `type` option.
+// https://bugs.webkit.org/show_bug.cgi?id=209216
+try {
+  // Create the performance observer.
+  const po = new PerformanceObserver((list) => {
+    for (const entry of list.getEntries()) {
+      console.log('Service Worker startup time:',
+          entry.responseStart - entry.workerStart);
+    }
+  });
+  // Start listening for `navigation` entries to be dispatched.
+  po.observe({type: 'navigation', buffered: true});
+} catch (e) {
+  // Do nothing if the browser doesn't support this API.
+}
 ```
 
 ### Server Timing API
@@ -365,15 +407,21 @@ Then, from your pages, you can read this data on both `resource` or `navigation`
 entries from the Resource Timing and Navigation Timing APIs.
 
 ```js
-// Create the performance observer.
-const po = new PerformanceObserver((list) => {
-  for (const entry of list.getEntries()) {
-    // Logs all server timing data for this response
-    console.log('Server Timing', entry.serverTiming);
-  }
-});
-// Start listening for `navigation` entries to be dispatched.
-po.observe({type: 'navigation', buffered: true});
+// Catch errors since some browsers throw when using the new `type` option.
+// https://bugs.webkit.org/show_bug.cgi?id=209216
+try {
+  // Create the performance observer.
+  const po = new PerformanceObserver((list) => {
+    for (const entry of list.getEntries()) {
+      // Logs all server timing data for this response
+      console.log('Server Timing', entry.serverTiming);
+    }
+  });
+  // Start listening for `navigation` entries to be dispatched.
+  po.observe({type: 'navigation', buffered: true});
+} catch (e) {
+  // Do nothing if the browser doesn't support this API.
+}
 ```
 
 [devtools]: https://developers.google.com/web/updates/2018/04/devtools#tabs

@@ -160,7 +160,7 @@ got!" There's very little data to transfer when sending this type of response,
 so it's usually much faster than having to actually send back a copy of the
 actual resource being requested.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <img src="./http-cache.png" alt="A diagram of a client requesting a resource and the server responding with a 304 header.">
   <figcaption class="w-figcaption w-text--left">
     A request/response flow. The server uses a 304 Not Modifier header

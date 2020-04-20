@@ -16,16 +16,21 @@
 
 const isProd = Boolean(process.env.GAE_APPLICATION);
 
-const compression = require("compression");
-const express = require("express");
-const buildRedirectHandler = require("./redirect-handler.js");
+const compression = require('compression');
+const express = require('express');
+const cookieParser = require('cookie-parser');
+const localeHandler = require('./locale-handler.js');
+const buildRedirectHandler = require('./redirect-handler.js');
+
+// If true, we'll aggressively nuke the prod Service Worker. For emergencies.
+const serviceWorkerKill = false;
 
 const redirectHandler = (() => {
   // In development, Eleventy isn't guaranteed to have run, so read the actual
   // source file.
   const redirectsPath = isProd
-    ? "dist/en/_redirects.yaml"
-    : "src/site/content/en/_redirects.yaml";
+    ? 'dist/en/_redirects.yaml'
+    : 'src/site/content/en/_redirects.yaml';
 
   // Don't block loading the server if the redirect handler couldn't build.
   try {
@@ -38,27 +43,51 @@ const redirectHandler = (() => {
 
 // 404 handlers aren't special, they just run last.
 const notFoundHandler = (req, res, next) => {
-  const options = {root: "dist/en"};
-  res
-    .status(404)
-    .sendFile("404/index.html", options, (err) => err && next(err));
+  res.status(404);
+
+  const extMatch = /(\.[^.]*)$/.exec(req.url);
+  if (extMatch && extMatch[1] !== '.html') {
+    // If this had an extension and it was not ".html", don't send any bytes.
+    // This is just a minor optimization to not waste bytes.
+    // Pages without extensions won't match here: e.g., "/foo" will still send HTML.
+    return res.end();
+  }
+
+  const options = {root: 'dist/en'};
+  res.sendFile(`404/index.html`, options, (err) => err && next(err));
 };
 
-// Disallow www.web.dev, and remove any active Service Worker too.
-const noWwwHandler = (req, res, next) => {
-  if (req.hostname === "www.web.dev") {
-    if (!req.url.endsWith(".js")) {
-      return res.redirect(301, "https://web.dev" + req.url);
+// Implement safety mechanics.
+//   * Disallow invalid hostnames (and remove any lasting Service Workers
+//     otherwise users could be stuck forever)
+//   * Optionally nuke our production Service Worker in an emergency.
+//   * Deny loading us in an iframe.
+const invalidHostnames = ['www.web.dev', 'appengine-test.web.dev'];
+const safetyHandler = (req, res, next) => {
+  const isServiceWorkerRequest = Boolean(req.headers['service-worker']);
+  if (invalidHostnames.includes(req.hostname)) {
+    if (!isServiceWorkerRequest) {
+      return res.redirect(301, 'https://web.dev' + req.url);
     }
-    req.url = "/nuke-sw.js";
+    // We always nuke the Service Worker for invalid hostnames.
+    req.url = '/nuke-sw.js';
+  } else if (serviceWorkerKill && isServiceWorkerRequest) {
+    // The kill switch is enabled, nuke the Service Worker.
+    req.url = '/nuke-sw.js';
   }
+
+  // TODO: This should also be included in a CSP header like:
+  //   "Content-Security-Policy: frame-ancestors 'self'"
+  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+
   return next();
 };
 
 const handlers = [
-  noWwwHandler,
-  express.static("dist"),
-  express.static("dist/en"),
+  safetyHandler,
+  localeHandler,
+  express.static('dist'),
+  express.static('dist/en'),
   redirectHandler,
   notFoundHandler,
 ];
@@ -71,6 +100,7 @@ if (!isProd) {
 }
 
 const app = express();
+app.use(cookieParser());
 app.use(...handlers);
 
 const listener = app.listen(process.env.PORT || 8080, () => {

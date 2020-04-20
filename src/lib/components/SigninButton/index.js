@@ -1,6 +1,7 @@
-import {html} from "lit-element";
-import {signIn} from "../../fb";
-import {BaseStateElement} from "../BaseStateElement";
+import {html} from 'lit-element';
+import {signIn} from '../../fb';
+import {BaseStateElement} from '../BaseStateElement';
+import './_styles.scss';
 
 /* eslint-disable require-jsdoc */
 class SigninButton extends BaseStateElement {
@@ -13,7 +14,8 @@ class SigninButton extends BaseStateElement {
 
   render() {
     if (this.isSignedIn) {
-      return "";
+      // lit-element ignores "" (prior to 2.2.2), so return an empty template.
+      return html``;
     }
 
     // We don't set "disabled" attribute on the <button> based on this, because
@@ -71,4 +73,4 @@ class SigninButton extends BaseStateElement {
   }
 }
 
-customElements.define("web-signin-button", SigninButton);
+customElements.define('web-signin-button', SigninButton);

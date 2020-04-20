@@ -14,13 +14,17 @@
  * limitations under the License.
  */
 
-const path = require("path");
-const site = require("../../_data/site");
-const stripLanguage = require("../../_filters/strip-language");
-const {html} = require("common-tags");
+const path = require('path');
+const site = require('../../_data/site');
+const stripLanguage = require('../../_filters/strip-language');
+const strip = require('../../_filters/strip');
+const {html} = require('common-tags');
 
-module.exports = (locale, page, collections) => {
-  const pageData = collections.all.find((item) => item.url === page.url).data;
+module.exports = (locale, page, collections, renderData = {}) => {
+  const pageData = {
+    ...collections.all.find((item) => item.fileSlug === page.fileSlug).data,
+    ...renderData,
+  };
   const pageUrl = stripLanguage(page.url);
 
   /**
@@ -37,12 +41,12 @@ module.exports = (locale, page, collections) => {
     const social =
       pageData.social && pageData.social[platform]
         ? pageData.social[platform]
-        : {};
+        : pageData;
 
-    const title = social.title || pageData.title;
-    const description = social.description || pageData.description;
-    let thumbnail = social.thumbnail || pageData.thumbnail || pageData.hero;
-    const alt = social.alt || pageData.alt || site.name;
+    const title = strip(social.title || social.path.title);
+    const description = social.description || social.path.description;
+    let thumbnail = social.thumbnail || social.hero;
+    const alt = social.alt || site.name;
 
     // If the page doesn't have social media images, a hero, or a thumbnail,
     // fallback to using the site's default thumbnail.
@@ -52,16 +56,16 @@ module.exports = (locale, page, collections) => {
     } else {
       thumbnail = new URL(path.join(pageUrl, thumbnail), site.imageCdn);
     }
-    thumbnail.searchParams.set("auto", "format");
-    thumbnail.searchParams.set("fit", "max");
-    thumbnail.searchParams.set("w", 1200);
+    thumbnail.searchParams.set('auto', 'format');
+    thumbnail.searchParams.set('fit', 'max');
+    thumbnail.searchParams.set('w', 1200);
     thumbnail = thumbnail.toString();
 
     return {title, description, thumbnail, alt};
   }
 
   function renderGoogleMeta() {
-    const meta = getMetaByPlatform("google");
+    const meta = getMetaByPlatform('google');
     return html`
       <meta itemprop="name" content="${meta.title}" />
       <meta itemprop="description" content="${meta.description}" />
@@ -70,15 +74,15 @@ module.exports = (locale, page, collections) => {
   }
 
   function renderFacebookMeta() {
-    const meta = getMetaByPlatform("facebook");
+    const meta = getMetaByPlatform('facebook');
     // nb. This will mark pages like /404/ and /offline/ as "article" but that's
     // probably fine as those shouldn't show up in search results anyway.
-    const type = pageUrl === "/" ? "website" : "article";
+    const type = pageUrl === '/' ? 'website' : 'article';
     // Filter out tags that we don't want to show up in Search.
     // These tags are only used internally to determine which layout a page
     // should use.
-    let tags = (type === "article" ? pageData.tags : null) || [];
-    tags = tags.filter((tag) => tag !== "pathItem" && tag !== "post");
+    let tags = (type === 'article' ? pageData.tags : null) || [];
+    tags = tags.filter((tag) => tag !== 'pathItem' && tag !== 'post');
 
     // prettier-ignore
     return html`
@@ -95,7 +99,7 @@ module.exports = (locale, page, collections) => {
   }
 
   function renderTwitterMeta() {
-    const meta = getMetaByPlatform("twitter");
+    const meta = getMetaByPlatform('twitter');
     return html`
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="${meta.title}" />
@@ -104,11 +108,21 @@ module.exports = (locale, page, collections) => {
     `;
   }
 
+  function renderCanonicalMeta() {
+    return html`
+      <link
+        rel="canonical"
+        href="${pageData.canonical ? pageData.canonical : site.url + pageUrl}"
+      />
+    `;
+  }
+
   // prettier-ignore
   return html`
-    <title>${pageData.title || pageData.path.title}</title>
+    <title>${strip(pageData.title || pageData.path.title || site.title)}</title>
     <meta name="description" content="${pageData.description || pageData.path.description}" />
 
+    ${renderCanonicalMeta()}
     ${renderGoogleMeta()}
     ${renderFacebookMeta()}
     ${renderTwitterMeta()}

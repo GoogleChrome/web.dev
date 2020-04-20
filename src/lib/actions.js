@@ -1,6 +1,7 @@
-import {store} from "./store";
-import {saveUserUrl} from "./fb";
-import {runLighthouse, fetchReports} from "./lighthouse-service";
+import {store} from './store';
+import {saveUserUrl} from './fb';
+import {runLighthouse, fetchReports} from './lighthouse-service';
+import {localStorage} from './utils/storage';
 
 export const clearSignedInState = store.action(() => {
   const {isSignedIn} = store.getState();
@@ -56,7 +57,7 @@ export const requestRunLighthouse = store.action((state, url) => {
   })();
 
   return p.catch((err) => {
-    console.warn("failed to run Lighthouse", url, err);
+    console.warn('failed to run Lighthouse', url, err);
 
     const update = {
       lighthouseError: err.toString(),
@@ -96,7 +97,7 @@ export const requestFetchReports = store.action((state, url, startDate) => {
   })();
 
   return p.catch((err) => {
-    console.warn("failed to fetch reports for", url, err);
+    console.warn('failed to fetch reports for', url, err);
 
     // Don't show an error for another active Lighthouse fetch.
     const {activeLighthouseUrl} = store.getState();
@@ -121,35 +122,57 @@ export const requestFetchReports = store.action((state, url, startDate) => {
 });
 
 export const expandSideNav = store.action(() => {
-  document.body.classList.add("web-side-nav--expanded");
-  const main = document.querySelector("main");
-  const header = document.querySelector("web-header");
-  main.inert = true;
-  header.inert = true;
+  openModal();
   return {isSideNavExpanded: true};
 });
 
 export const collapseSideNav = store.action(() => {
-  document.body.classList.remove("web-side-nav--expanded");
-  const main = document.querySelector("main");
-  const header = document.querySelector("web-header");
-  main.inert = false;
-  header.inert = false;
+  closeModal();
   return {isSideNavExpanded: false};
 });
 
-export const checkIfUserAcceptsCookies = store.action(() => {
-  if (localStorage.getItem("web-accepts-cookies")) {
-    return {
-      userAcceptsCookies: true,
-    };
-  }
+export const openModal = store.action(() => {
+  const main = document.querySelector('main');
+  const header = document.querySelector('web-header');
+  const footer = document.querySelector('.w-footer');
 
-  return {showingSnackbar: true, snackbarType: "cookies"};
+  document.documentElement.classList.add('web-modal__overflow-hidden');
+  main.inert = true;
+  header.inert = true;
+  footer.inert = true;
+  return {isModalOpen: true};
 });
 
+export const closeModal = store.action(() => {
+  const main = document.querySelector('main');
+  const header = document.querySelector('web-header');
+  const footer = document.querySelector('.w-footer');
+
+  document.documentElement.classList.remove('web-modal__overflow-hidden');
+  main.inert = false;
+  header.inert = false;
+  footer.inert = false;
+  return {isModalOpen: false};
+});
+
+export const checkIfUserAcceptsCookies = store.action(
+  ({userAcceptsCookies}) => {
+    if (userAcceptsCookies) {
+      return;
+    }
+
+    if (localStorage['web-accepts-cookies']) {
+      return {
+        userAcceptsCookies: true,
+      };
+    }
+
+    return {showingSnackbar: true, snackbarType: 'cookies'};
+  },
+);
+
 export const setUserAcceptsCookies = store.action(() => {
-  localStorage.setItem("web-accepts-cookies", 1);
+  localStorage['web-accepts-cookies'] = 1;
   return {
     userAcceptsCookies: true,
     showingSnackbar: false,

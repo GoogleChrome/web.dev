@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2019-11-07
+updated: 2020-04-20
 description: |
   This post introduces the Cumulative Layout Shift (CLS) metric and explains
   how to measure it
@@ -32,7 +32,7 @@ else!
 Most of the time these kinds of experiences are just annoying, but in some
 cases, they can cause real damage.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <video autoplay controls loop muted
     class="w-screenshot"
     poster="https://storage.googleapis.com/web-dev-assets/layout-instability-api/layout-instability-poster.png"
@@ -251,64 +251,80 @@ how to create a
 that listens for `layout-shift` entries and logs them to the console:
 
 ```js
-const observer = new PerformanceObserver((list) => {
- for (const entry of list.getEntries()) {
-   console.log(entry);
- }
-});
+// Catch errors since some browsers throw when using the new `type` option.
+// https://bugs.webkit.org/show_bug.cgi?id=209216
+try {
+  const observer = new PerformanceObserver((list) => {
+  for (const entry of list.getEntries()) {
+    console.log(entry);
+  }
+  });
 
-observer.observe({type: 'layout-shift', buffered: true});
+  observer.observe({type: 'layout-shift', buffered: true});
+} catch (e) {
+  // Do nothing if the browser doesn't support this API.
+}
 ```
 
 To calculate the cumulative layout shift score for your pages, declare a
 variable that stores the current cumulative layout shift score, and then
 increment it any time a new, unexpected layout shift is detected.
 
-For consistency with how the [Chrome User Experience
-Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+For consistency with how the [Chrome User Experience Report
+(CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report)
 measures CLS, stop observing scores when the page's [lifecycle
 state](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)
 changes to hidden:
 
 ```js
-// Stores the current layout shift score for the page.
-let cumulativeLayoutShiftScore = 0;
+// Catch errors since some browsers throw when using the new `type` option.
+// https://bugs.webkit.org/show_bug.cgi?id=209216
+try {
+  // Store the current layout shift score for the page.
+  let cumulativeLayoutShiftScore = 0;
 
-// Detects new layout shift occurrences and updates the
-// `cumulativeLayoutShiftScore` variable.
-const observer = new PerformanceObserver((list) => {
- for (const entry of list.getEntries()) {
-   // Only count layout shifts without recent user input.
-   if (!entry.hadRecentInput) {
-     cumulativeLayoutShiftScore += entry.value;
-   }
- }
-});
+  // Detect new layout shift occurrences and updates the
+  // `cumulativeLayoutShiftScore` variable.
+  const observer = new PerformanceObserver((list) => {
+  for (const entry of list.getEntries()) {
+    // Only count layout shifts without recent user input.
+    if (!entry.hadRecentInput) {
+      cumulativeLayoutShiftScore += entry.value;
+    }
+  }
+  });
 
-observer.observe({type: 'layout-shift', buffered: true});
+  observer.observe({type: 'layout-shift', buffered: true});
 
-// Sends the final score to your analytics back end once
-// the page's lifecycle state becomes hidden.
-document.addEventListener('visibilitychange', () => {
- if (document.visibilityState === 'hidden') {
-   // Force any pending records to be dispatched.
-   observer.takeRecords();
-   observer.disconnect();
+  // Send the final score to your analytics back end once
+  // the page's lifecycle state becomes hidden.
+  document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'hidden') {
+    // Force any pending records to be dispatched.
+    observer.takeRecords();
+    observer.disconnect();
 
-   // Log the final score to the console.
-   console.log('CLS:', cumulativeLayoutShiftScore);
- }
-});
+    // Log the final score to the console.
+    console.log('CLS:', cumulativeLayoutShiftScore);
+  }
+  });
+} catch (e) {
+  // Do nothing if the browser doesn't support this API.
+}
 ```
 
-## What is a good CLS?
+{% Aside %}
+  Note: CrUX buckets CLS values as percentages with 5% granularity. This means a
+  score of `0.01` when using the code example above would appear in the 0–5
+  bucket in CrUX, and a score of `0.07` would appear in the 5–10 bucket in CrUX.
+{% endAside %}
 
-Ideally, pages would not have any layout shifts, so a CLS of `0` is the goal.
-Realistically, in some cases it's impossible to avoid 100% of layout shifts, so
-minimizing what you can is best.
+## What is a good CLS score?
 
-The Chrome Use Experience Report categorizes any page with a CLS less than 5 to
-be considered "small" (i.e. good).
+To provide a good user experience, sites should strive to have a Cumulative
+Layout Shift of less than **0.1**. To ensure you're hitting this target for most
+of your users, a good threshold to measure is the **75th percentile** of page
+loads, segmented across mobile and desktop devices.
 
 ## How to improve CLS
 

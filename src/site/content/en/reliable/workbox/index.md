@@ -116,7 +116,6 @@ Workbox integration found in many popular starter kits and add-on plugins:
 +  [preact-cli](https://github.com/prateekbh/preact-cli-workbox-plugin/blob/master/README.md)
 +  [Gatsby](https://www.gatsbyjs.org/packages/gatsby-plugin-offline/)
 +  [Next.js](https://github.com/hanford/next-offline/blob/master/readme.md)
-+  [PWA Starter Kit](https://polymer.github.io/pwa-starter-kit/what's-in-the-box/)
 
 ### Add Workbox to your existing build process
 

@@ -1,0 +1,27 @@
+---
+layout: layout
+title: Tags
+permalink: /en/{{ paged.href }}{% if paged.index > 0 %}{{ paged.index + 1 }}/{% endif %}index.html
+description: Our latest news, updates, and stories for developers
+renderData:
+  title: "{{ paged.title or title }}"
+  description: "{{ paged.description or description }}"
+pagination:
+  data: collections.paginatedPostsByTag
+  size: 1
+  alias: paged
+---
+{# *-landing-page classes are a holdover from devsite. #}
+{# It would be great to remove them as part of the v1 migration. #}
+<div class="tags-landing-page">
+  {# Make sure Actions are first in the tab order. #}
+  <web-actions actions="subscribe"></web-actions>
+
+  <div class="w-layout-container w-pb--non">
+    <header class="w-page-header">
+      <h1 class="w-page-header__headline">{{ renderData.title }}</h1>
+      <p class="w-page-header__copy">{{ renderData.description | safe }}</p>
+    </header>
+  </div>
+  {% include 'partials/paged.njk' %}
+</div>

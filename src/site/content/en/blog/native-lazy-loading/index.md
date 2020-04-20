@@ -16,6 +16,10 @@ tags:
   - performance
 ---
 
+{% Aside %}
+  Please note `<iframe loading=lazy>` is currently non-standard. While implemented in Chromium, it does not yet have a specification and is subject to future change when this does happen. We suggest not to lazy-load iframes using the loading attribute until it becomes part of the specification.
+{% endAside %}
+
 Support for natively lazy-loading images and iframes is coming to the web! This video shows
 a [demo](https://mathiasbynens.be/demo/img-loading-lazy) of the feature:
 
@@ -75,11 +79,9 @@ Here are the supported values for the `loading` attribute:
 - `lazy`: Defer loading of the resource until it reaches a [calculated distance](#load-in-distance-threshold) from the viewport.
 - `eager`: Load the resource immediately, regardless of where it's located on the page.
 
-The feature will continue to be updated until it's launched in a stable release (Chrome 76 at the
-earliest). But you can try it out by enabling the following flags in Chrome:
-
-- `chrome://flags/#enable-lazy-image-loading`
-- `chrome://flags/#enable-lazy-frame-loading`
+{% Aside 'caution' %}
+  Although available in Chromium, the `auto` value is not mentioned in the [specification](https://html.spec.whatwg.org/multipage/urls-and-fetching.html#lazy-loading-attributes). Since it may be subject to change, we recommend not to use it until it gets included.
+{% endAside %}
 
 ### Load-in distance threshold
 
@@ -126,6 +128,18 @@ browser reflow](https://www.youtube.com/watch?v=4-d_SoCHeWE).
   Take a look at this [demo](https://mathiasbynens.be/demo/img-loading-lazy) to see how the `loading` attribute works with 100 pictures.
 {% endAside %}
 
+Images that are defined using the `<picture>` element can also be lazy-loaded:
+
+```html
+<picture>
+  <source media="(min-width: 800px)" srcset="large.jpg 1x, larger.jpg 2x">
+  <img src="photo.jpg" loading="lazy">
+</picture>
+```
+
+Although a browser will decide which image to load from any of the `<source>` elements, the `loading`
+attribute only needs to be included to the fallback `<img>` element.
+
 ### iframe loading
 
 The `loading` attribute affects iframes differently than images, depending on whether the iframe is
@@ -158,7 +172,17 @@ future as the Chrome team experiments with different threshold distances and var
 
 No, it can currently only be used with `<img>` tags.
 
-### How does the `loading` attribute work with images that are in the viewport but not immediately visible (for example, behind a carousel)?
+### Is there a downside to lazy-loading images or iframes that are within the device viewport?
+
+Intersection observers for elements that are above the device fold may not fire before the window
+load event, and the lazy-loading functionality in Chrome relies on `IntersectionObserver`. There is
+an [open issue](https://bugs.chromium.org/p/chromium/issues/detail?id=992526) to modify this
+behavior so that intersection observers are fired _before_ the window load event. 
+
+In the meantime, it is safer to only use the `loading` attribute for elements that are outside of
+the device viewport to prevent late fetches of on-screen elements.
+
+### How does the `loading` attribute work with images that are in the viewport but not immediately visible (for example: behind a carousel, or hidden by CSS for certain screen sizes)?
 
 Only images that are below the device viewport by the [calculated
 distance](#load-in-distance-threshold) load lazily. All images above the viewport, regardless of
@@ -182,9 +206,7 @@ to provide a polyfill for browsers that do not yet support the attribute.
 
 The `loading` attribute can be treated as a progressive enhancement. Browsers that support it can
 lazy-load images and iframes. Those that don't yet can load images just like they would today. In
-terms of cross-browser support, `loading` should be supported in Chrome 76 and any Chromium 76-based
-browsers. There is also [an open implementation bug for
-Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1542784).
+terms of cross-browser support, currently `loading` is supported in Chrome 76, Mozilla Firefox 75 and in and any Chromium 76-based browsers.
 
 A [similar API](https://w3c.github.io/web-performance/specs/ResourcePriorities/Overview.html) was
 proposed and used in IE and Edge but was focused on lowering the download priorities of resources
@@ -232,7 +254,7 @@ library only when `loading` isn't supported. This works as follows:
     // Dynamically import the LazySizes library
     const script = document.createElement('script');
     script.src =
-      'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.1.8/lazysizes.min.js';
+      'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js';
     document.body.appendChild(script);
   }
 </script>

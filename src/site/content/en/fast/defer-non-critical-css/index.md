@@ -7,7 +7,7 @@ description: |
   Learn how to defer non-critical CSS with the goal of optimizing the Critical
   Rendering Path, and improving FCP (First Contentful Paint).
 date: 2019-02-17
-updated: 2019-10-30
+updated: 2020-04-20
 ---
 
 CSS files are [render-blocking resources](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources):
@@ -52,7 +52,7 @@ the opportunity **Eliminate render-blocking resources**, pointing to the
 {% Aside %}
 The CSS we are using for this demo site is quite small. If you were requesting
 larger CSS files (which are not uncommon in production scenarios), and if
-Lighthouse detects that a page has, at least, 2048 bytes of CSS rules that
+Lighthouse detects that a page has at least 2048&nbsp;bytes of CSS rules that
 weren't used while rendering the **above the fold** content, you'll
 also receive a suggestion called **Remove Unused CSS**.
 {% endAside %}
@@ -60,7 +60,7 @@ also receive a suggestion called **Remove Unused CSS**.
 To visualize how this CSS blocks rendering:
 
 1. Open [the page](https://defer-css-unoptimized.glitch.me/) in Chrome.
-{% Instruction 'devtools-performance' %}
+{% Instruction 'devtools-performance', 'ol' %}
 1. In the Performance panel, click **Reload**.
 
 In the resulting trace, you'll see that the **FCP** marker is placed immediately

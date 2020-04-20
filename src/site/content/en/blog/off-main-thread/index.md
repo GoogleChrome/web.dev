@@ -19,6 +19,7 @@ date: 2019-12-05
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - performance
+  - test-post
 ---
 
 In the past 20&nbsp;years,
@@ -222,7 +223,7 @@ the UI is frozen for six seconds after the user interacts with it.
 There's no feedback, and the user has to wait for the full six seconds
 before being able to do something else.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <video controls muted class="w-screenshot" style="max-width: 400px;">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-nonomt.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-nonomt.mp4" type="video/mp4; codecs=h264">
@@ -241,7 +242,7 @@ The user therefore knows that something is happening
 and can continue playing as the UI updates,
 making the game feel considerably better.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <video controls muted class="w-screenshot" style="max-width: 400px;">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-omt.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/off-main-thread/proxx-omt.mp4" type="video/mp4; codecs=h264">

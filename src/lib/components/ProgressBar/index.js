@@ -2,8 +2,9 @@
  * @fileoverview An indeterminate progress bar.
  */
 
-import {html} from "lit-element";
-import {BaseElement} from "../BaseElement";
+import {html} from 'lit-element';
+import {BaseElement} from '../BaseElement';
+import './_styles.scss';
 
 /**
  * An indeterminate progress bar.
@@ -20,8 +21,8 @@ class ProgressBar extends BaseElement {
   }
 
   firstUpdated() {
-    this.setAttribute("role", "progressbar");
+    this.setAttribute('role', 'progressbar');
   }
 }
 
-customElements.define("web-progress-bar", ProgressBar);
+customElements.define('web-progress-bar', ProgressBar);

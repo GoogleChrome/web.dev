@@ -2,10 +2,11 @@
  * @fileoverview Element that renders data as a spark line.
  */
 
-import {html, svg} from "lit-element";
-import {BaseElement} from "../BaseElement";
+import {html, svg} from 'lit-element';
+import {BaseElement} from '../BaseElement';
+import './_styles.scss';
 
-const HAS_RESIZE_OBSERVER = typeof ResizeObserver === "function";
+const HAS_RESIZE_OBSERVER = typeof ResizeObserver === 'function';
 
 /**
  * @typedef {{
@@ -95,15 +96,15 @@ class SparklineChart extends BaseElement {
 
     if (demo) {
       this.values = [
-        {score: 35, date: "2019-05-22"},
-        {score: 30, date: "2019-05-24"},
-        {score: 20, date: "2019-06-01"},
-        {score: 50, date: "2019-06-24"},
-        {score: 92, date: "2019-06-29"},
-        {score: 90, date: "2019-07-01"},
+        {score: 35, date: '2019-05-22'},
+        {score: 30, date: '2019-05-24'},
+        {score: 20, date: '2019-06-01'},
+        {score: 50, date: '2019-06-24'},
+        {score: 92, date: '2019-06-29'},
+        {score: 90, date: '2019-07-01'},
       ];
 
-      this.medians = [{score: 89, date: "2019-06-24"}];
+      this.medians = [{score: 89, date: '2019-06-24'}];
     }
   }
 
@@ -118,17 +119,17 @@ class SparklineChart extends BaseElement {
 
     // Clear the point if it was drawn on the screen.
     if (!this.point_) {
-      this.cursorElement_.setAttribute("x1", -10000);
-      this.cursorElement_.setAttribute("x2", -10000);
-      this.scoreElement_.setAttribute("transform", `translate(-10000,-10000)`);
+      this.cursorElement_.setAttribute('x1', -10000);
+      this.cursorElement_.setAttribute('x2', -10000);
+      this.scoreElement_.setAttribute('transform', `translate(-10000,-10000)`);
       return;
     }
 
     // Draw the point on the screen.
-    this.cursorElement_.setAttribute("x1", this.point_.x);
-    this.cursorElement_.setAttribute("x2", this.point_.x);
-    this.cursorElement_.setAttribute("y1", this.point_.y);
-    this.cursorElement_.setAttribute("y2", this.height_);
+    this.cursorElement_.setAttribute('x1', this.point_.x);
+    this.cursorElement_.setAttribute('x2', this.point_.x);
+    this.cursorElement_.setAttribute('y1', this.point_.y);
+    this.cursorElement_.setAttribute('y2', this.height_);
     const colorClass = this.computeColorClass_(this.point_.score);
     this.cursorElement_.style.stroke = colorClass;
     this.cursorElement_.classList.value = `sl-cursor result--${colorClass}`;
@@ -137,14 +138,14 @@ class SparklineChart extends BaseElement {
     this.scoreValueText_.textContent = this.point_.score;
 
     const d = new Date(this.point_.date);
-    let dateText = "\u2014"; // em dash
+    let dateText = '\u2014'; // em dash
 
     if (d.getTime()) {
       // d.getTime() is NaN/falsey if invalid
       try {
-        dateText = new Intl.DateTimeFormat("en-US", {
-          day: "numeric",
-          month: "short",
+        dateText = new Intl.DateTimeFormat('en-US', {
+          day: 'numeric',
+          month: 'short',
         }).format(d);
       } catch (err) {
         dateText = d.toLocaleDateString();
@@ -172,14 +173,14 @@ class SparklineChart extends BaseElement {
     const scoreTextWidth = this.scoreValueText_.getBoundingClientRect().width;
     const dateTextWidth = this.scoreDateText_.getBoundingClientRect().width;
     this.scoreDateText_.setAttribute(
-      "x",
+      'x',
       scoreHoverRectWidth / 2 - dateTextWidth / 2,
     );
     this.scoreValueText_.setAttribute(
-      "x",
+      'x',
       scoreHoverRectWidth / 2 - scoreTextWidth / 2,
     );
-    this.scoreElement_.setAttribute("transform", `translate(${x},${y})`);
+    this.scoreElement_.setAttribute('transform', `translate(${x},${y})`);
     this.scoreElement_.classList.value = `sl-caption result--${colorClass}`;
   }
 
@@ -203,17 +204,17 @@ class SparklineChart extends BaseElement {
   connectedCallback() {
     super.connectedCallback();
 
-    this.setAttribute("aria-valuemin", 0);
-    this.setAttribute("aria-valuemax", 100);
+    this.setAttribute('aria-valuemin', 0);
+    this.setAttribute('aria-valuemax', 100);
 
-    this.setAttribute("role", "group");
+    this.setAttribute('role', 'group');
     this.setAttribute(
-      "aria-label",
-      "scores over time. Use arrow keys to navigate",
+      'aria-label',
+      'scores over time. Use arrow keys to navigate',
     );
 
     if (!HAS_RESIZE_OBSERVER) {
-      window.addEventListener("resize", this.onResize);
+      window.addEventListener('resize', this.onResize);
     }
   }
 
@@ -221,7 +222,7 @@ class SparklineChart extends BaseElement {
     super.disconnectedCallback();
 
     if (!HAS_RESIZE_OBSERVER) {
-      window.removeEventListener("resize", this.onResize);
+      window.removeEventListener('resize', this.onResize);
     }
   }
 
@@ -263,13 +264,13 @@ class SparklineChart extends BaseElement {
    */
   onKeyDown(e) {
     switch (e.key) {
-      case "Right":
-      case "ArrowRight":
+      case 'Right':
+      case 'ArrowRight':
         this.setNextPoint_();
         break;
 
-      case "Left":
-      case "ArrowLeft":
+      case 'Left':
+      case 'ArrowLeft':
         this.setPrevPoint_();
         break;
 
@@ -287,7 +288,7 @@ class SparklineChart extends BaseElement {
   setNextPoint_() {
     // Unless the user has focused on the last, this should always find a point
     // as the disused cursor is hidden offscreen to the left.
-    const cursorX = this.cursorElement_.getAttribute("x1");
+    const cursorX = this.cursorElement_.getAttribute('x1');
     const nextPoint = this.datapoints.find((entry) => entry.x > cursorX);
     if (nextPoint) {
       this.point = nextPoint;
@@ -299,7 +300,7 @@ class SparklineChart extends BaseElement {
    * @private
    */
   setPrevPoint_() {
-    const cursorX = +this.cursorElement_.getAttribute("x1");
+    const cursorX = +this.cursorElement_.getAttribute('x1');
     const currentPointIdx = this.datapoints.findIndex(
       (entry) => entry.x === cursorX,
     );
@@ -328,7 +329,7 @@ class SparklineChart extends BaseElement {
   announce_(msg) {
     this.announcerElement_.textContent = msg;
     window.setTimeout(() => {
-      this.announcerElement_.textContent = "";
+      this.announcerElement_.textContent = '';
     }, 100);
   }
 
@@ -355,10 +356,10 @@ class SparklineChart extends BaseElement {
         datapoints: [],
         paths: [
           {
-            points: "M0 0 L0 0",
+            points: 'M0 0 L0 0',
             firstPoint: {x: 0, y: 0},
             lastPoint: {x: 0, y: 0},
-            color: "",
+            color: '',
           },
         ],
       };
@@ -420,13 +421,13 @@ class SparklineChart extends BaseElement {
   updated(changedProperties) {
     super.updated(changedProperties);
 
-    if (changedProperties.has("fill") || changedProperties.has("values")) {
-      const gradients = this.renderRoot.getElementsByClassName("gradient");
+    if (changedProperties.has('fill') || changedProperties.has('values')) {
+      const gradients = this.renderRoot.getElementsByClassName('gradient');
       for (const gradient of gradients) {
         if (this.fill) {
-          gradient.classList.add("fadein");
+          gradient.classList.add('fadein');
         } else {
-          gradient.classList.remove("fadein");
+          gradient.classList.remove('fadein');
         }
       }
     }
@@ -456,9 +457,9 @@ class SparklineChart extends BaseElement {
     this.datapoints = datapoints;
 
     if (this.datapoints.length) {
-      this.setAttribute("aria-valuenow", this.datapoints.slice(-1)[0].score);
+      this.setAttribute('aria-valuenow', this.datapoints.slice(-1)[0].score);
     } else {
-      this.removeAttribute("aria-valuenow");
+      this.removeAttribute('aria-valuenow');
     }
 
     const lastDataPoint = paths[paths.length - 1] || null;
@@ -481,7 +482,7 @@ class SparklineChart extends BaseElement {
         stroke-width="${this.strokeWidth}"
         class="result--${lastDataPoint.color}"
         style="fill:#fff" />`
-      : "";
+      : '';
 
     /* eslint-disable max-len,indent */
     const innerSVG = svg`
@@ -509,7 +510,7 @@ class SparklineChart extends BaseElement {
             return svg`
               <path class="gradient"
                   d="${d}"
-                  fill="${this.fill ? `url(#gradient-${color})` : "none"}" />
+                  fill="${this.fill ? `url(#gradient-${color})` : 'none'}" />
               <path d="${points}" class="path result--${color}" style="fill:none" />
             `;
           })}
@@ -550,11 +551,11 @@ class SparklineChart extends BaseElement {
    */
   computeColorClass_(val) {
     // Match to Lighthouse rating. See https://goo.gl/Pz6xfR.
-    let result = "fail";
+    let result = 'fail';
     if (val >= 90) {
-      result = "pass";
+      result = 'pass';
     } else if (val >= 50) {
-      result = "average";
+      result = 'average';
     }
     return result;
   }
@@ -567,14 +568,14 @@ class SparklineChart extends BaseElement {
   }
 
   firstUpdated() {
-    this.cursorElement_ = this.renderRoot.querySelector(".sl-cursor");
-    this.scoreElement_ = this.renderRoot.querySelector(".sl-caption");
-    this.announcerElement_ = this.querySelector(".sr-announcer");
+    this.cursorElement_ = this.renderRoot.querySelector('.sl-cursor');
+    this.scoreElement_ = this.renderRoot.querySelector('.sl-caption');
+    this.announcerElement_ = this.querySelector('.sr-announcer');
     this.scoreValueText_ = this.scoreElement_.querySelector(
-      ".sl-caption--value",
+      '.sl-caption--value',
     );
-    this.scoreDateText_ = this.scoreElement_.querySelector(".sl-caption--date");
+    this.scoreDateText_ = this.scoreElement_.querySelector('.sl-caption--date');
   }
 }
 
-customElements.define("web-sparkline-chart", SparklineChart);
+customElements.define('web-sparkline-chart', SparklineChart);

@@ -5,7 +5,7 @@ description: |
   Learn how to improve the accessibility of object elements on your web page by
   providing alternative text.
 date: 2019-05-02
-updated: 2019-09-19
+updated: 2020-04-20
 web_lighthouse:
   - object-alt
 ---
@@ -33,9 +33,9 @@ Rob's doc, the audit, and recommendations in deque docs.
 
 ## How to add alternative text to `<object>` elements
 
-The alternative text describes the information contained in the embedded object
-and goes inside the object element as regular text
-like "Annual report" below:
+Describe the object in the text content of the `<object>` element.
+In the example below `2019 Web Accessibility Report` is the description
+of the object.
 
 ```html
 <object type="application/pdf"

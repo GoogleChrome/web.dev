@@ -5,7 +5,7 @@ authors:
   - thomassteiner
 description: The Shape Detection API detects faces, barcodes, and text in images.
 date: 2019-01-07
-updated: 2019-10-08
+updated: 2020-04-20
 tags:
   - post
   - capabilities
@@ -16,14 +16,15 @@ tags:
   - webapp
 hero: hero.jpg
 alt: QR code being scanned by a mobile phone
-origin_trial:
+origin-trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/-2341871806232657919
 ---
 
 {% Aside %}
-  This API as part of the new
-  [capabilities project](https://developers.google.com/web/updates/capabilities),
-  and is available as an [**origin trial**](#ot). This post will be updated as
+  This API is part of the new
+  [capabilities project](https://developers.google.com/web/updates/capabilities).
+  Barcode detection has launched in Chrome 83.
+  Face and text detection are available behind a flag. This post will be updated as
   the Shape Detection API evolves.
 {% endAside %}
 
@@ -31,7 +32,7 @@ origin_trial:
 
 With APIs like
 [`navigator.mediaDevices.getUserMedia`](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia)
-and the new Chrome for Android
+and the Chrome for Android
 [photo picker](https://bugs.chromium.org/p/chromium/issues/detail?id=656015),
 it has become fairly easy to capture images or live video data from device
 cameras, or to upload local images. So far, this dynamic image data—as well as
@@ -114,37 +115,24 @@ of use cases for all three features.
 | ------------------------------------------ | ---------------------------- |
 | 1. Create explainer                        | [Complete][explainer]        |
 | 2. Create initial draft of specification   | [In Progress][spec]          |
-| 3. Gather feedback & iterate on design     | [In progress](#feedback)     |
-| **4. Origin trial**                        | [**In progress**](#ot)       |
-| 5. Launch                                  | Not started                  |
+| **3. Gather feedback & iterate on design** | [**In progress**](#feedback) |
+| 4. Origin trial                            | [Complete](https://developers.chrome.com/origintrials/#/view_trial/-2341871806232657919) |
+| **5. Launch**                              | **Complete** (Barcode detection) |
 
 </div>
 
 ## How to use the Shape Detection API {: #use }
 
 {% Aside 'warning' %}
-  The origin trial is expected to end in Chrome 78 and the API will be
-  turned off while the Chrome team integrates developer feedback. You can
-  always use the Shape Detection API for local experiments by enabling the
+  So far only barcode detection is available by default, starting in Chrome 83.
+  but face and text detection are available behind a flag.
+  You can always use the Shape Detection API for local experiments by enabling the
   `#enable-experimental-web-platform-features` flag.
 {% endAside %}
 
-The Shape Detection API is currently available as an origin trial.
-
-### Register for the origin trial {: #ot }
-
-{% include 'content/origin-trials.njk' %}
-
-{% include 'content/origin-trial-register.njk' %}
-
-### Alternatives to the origin trial
-
-If you want to experiment with the Shape Detection API locally, without an
-origin trial, enable the `#enable-experimental-web-platform-features`
+If you want to experiment with the Shape Detection API locally,
+enable the `#enable-experimental-web-platform-features`
 flag in `chrome://flags`.
-
-
-### Using the Shape Detection API during the origin trial
 
 The interfaces of all three detectors, `FaceDetector`, `BarcodeDetector`, and
 `TextDetector`, are similar. They all provide a single asynchronous method
@@ -331,7 +319,6 @@ critical it is to support them.
 * [API Demo][demo] | [API Demo source][demo-source]
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
-* Request an [origin trial token]({{origin_trial.url}})
 * Blink Component: `Blink>ImageCapture`
 
 [cr-dev-twitter]: https://twitter.com/chromiumdev

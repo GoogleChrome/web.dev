@@ -33,7 +33,7 @@ attribute are sometimes used for freeform text entry.
 It's easy to overlook the built-in keyboard support that these elements offer.
 Below are some example elements to explore. Instead of using your
 mouse, try using your keyboard to operate them. You can use `TAB` (or `SHIFT +
-TAB`) to move between controls, and you can use the arrow keys and keys like 
+TAB`) to move between controls, and you can use the arrow keys and keys like
 `ENTER` and `SPACE` to manipulate their values.
 
 <div class="glitch-embed-wrap" style="height: 450px; width: 100%;">
@@ -72,7 +72,7 @@ that the keycode is `ENTER` or `SPACE`, and then run your click handler. Ouch!
 That's a lot of extra work!
 
 Compare the difference in this example. `TAB` to either control, and use `ENTER`
-and `SPACE` to attempt to click on them. 
+and `SPACE` to attempt to click on them.
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
   <iframe
@@ -108,6 +108,8 @@ should you choose?
 The reason for this is that buttons and links are announced differently by
 screen readers. Using the correct element helps screen reader users know which
 outcome to expect.
+
+{% Assessment page, 'self-assessment' %}
 
 ## Styling
 

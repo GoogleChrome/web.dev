@@ -7,55 +7,6 @@ description: |
 date: 2018-11-05
 ---
 
-<style>
-.w-cds-promo {
-  margin: 0 auto;
-  max-width: 512px;
-  padding: 72px 24px 0; }
-  @media (min-width: 865px) {
-    .w-cds-promo {
-      max-width: 960px;
-      padding: 96px 32px 0; } }
-
-.w-cds-promo__grid {
-  align-items: center;
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: 1fr; }
-  @media (min-width: 865px) {
-    .w-cds-promo__grid {
-      gap: 3rem;
-      grid-template-columns: 1fr 1fr; } }
-
-.w-cds-promo__video {
-  box-shadow: 0 2px 3px 0 rgba(60, 64, 67, 0.3), 0 6px 10px 4px rgba(60, 64, 67, 0.15); }
-
-.w-cds-promo p {
-  text-align: center; }
-  @media (min-width: 865px) {
-    .w-cds-promo p {
-      text-align: left;
-      font: 400 18px / 1.33333 "Google Sans", sans-serif;
-      margin-top: 48px;
-      margin-bottom: 24px; } }
-  @media (min-width: 865px) and (min-width: 241px) {
-    .w-cds-promo p {
-      font: 400 21px / 1.33333 "Google Sans", sans-serif;
-      margin-top: 56px;
-      margin-bottom: 28px; } }
-  @media (min-width: 865px) and (min-width: 321px) {
-    .w-cds-promo p {
-      font: 400 24px / 1.33333 "Google Sans", sans-serif;
-      margin-top: 64px;
-      margin-bottom: 32px; } }
-
-.w-cds-promo p:first-of-type {
-  margin-top: 0; }
-
-.w-cds-promo p:last-of-type {
-  margin-bottom: 0; }
-</style>
-
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
 
@@ -94,7 +45,7 @@ date: 2018-11-05
     </div>
   </header>
 
-  {# <section class="w-layout-container w-text--center">
+  <section class="w-layout-container w-text--center">
     <p class="w-headline--two-small">
       As the web advances, users' expectations grow. With web.dev's guidance, you
       can give your users the best experience, wherever they are.
@@ -108,39 +59,6 @@ date: 2018-11-05
     >
       About web.dev
     </a>
-  </section> #}
-
-  <section class="w-cds-promo" id="cds">
-    <div class="w-cds-promo__grid">
-      <div>
-        <div class="w-cds-promo__video">
-          <div class="w-youtube">
-            <iframe
-              class="w-youtube__embed"
-              src="https://www.youtube.com/embed/videoseries?list=PLNYkxOF6rcIDA1uGhqy45bqlul0VcvKMr"
-              frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              loading="lazy"
-            ></iframe>
-          </div>
-        </div>
-      </div>
-      <div>
-        <p>
-          That's a wrap! Thank you for joining us at
-          <a href="https://developer.chrome.com/devsummit/">
-          Chrome Developer Summit
-          </a> 2019.
-        </p>
-        <p>
-          If you couldn't make the event, don't worry! You can catch all of the
-          talks on the <a
-          href="https://www.youtube.com/channel/UCnUYZLuoy1rq1aVMwx4aTzw">
-          Chrome Developers YouTube channel</a>. See you next year!
-        </p>
-      </div>
-    </div>
   </section>
 
   <section>
@@ -155,9 +73,13 @@ date: 2018-11-05
       </header>
     </div>
     <div class="w-grid w-pb--std">
-      <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
+      <div class="w-grid__columns w-grid__columns--featured" role="list">
         {% for post in collections.recentPosts %}
-          {% PostCard {post: post} %}
+          {% if loop.first %}
+            {% PostCard {post: post, featured: true} %}
+          {% else %}
+            {% PostCard {post: post} %}
+          {% endif %}
         {% endfor %}
       </div>
     </div>
@@ -185,7 +107,7 @@ date: 2018-11-05
     <div class="w-grid w-pb--std">
       <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
         {% for path in home.paths %}
-          {% PathCard path %}
+          {% PathCard path, lang %}
         {% endfor %}
       </div>
     </div>

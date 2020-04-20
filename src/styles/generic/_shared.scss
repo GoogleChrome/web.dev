@@ -1,4 +1,5 @@
 @import '../settings/colors';
+@import '../settings/dimensions';
 
 // =============================================================================
 // SHARED OVERVIEW
@@ -6,8 +7,6 @@
 // Shared properties across multiple html tags.
 //
 // =============================================================================
-
-$WEB_HEADER_HEIGHT: 65px;
 
 // Set box-sizing globally to handle padding and border widths
 *,
