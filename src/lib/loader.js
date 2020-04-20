@@ -5,7 +5,7 @@
  * template is correct, and that the correct JS entrypoint is ready.
  */
 
-import {addToContentIndex} from "./content-indexing";
+import {addToContentIndex} from './content-indexing';
 import {store} from './store';
 import {normalizeUrl} from './urls';
 import './utils/underscore-import-polyfill';
@@ -107,6 +107,22 @@ function updateDom(partial) {
 
   // Focus on the first title (or fallback to content itself).
   forceFocus(content.querySelector('h1, h2, h3, h4, h5, h6') || content);
+
+  const isPost = content.querySelector('.w-post-content');
+  const description = content.querySelector('.w-article-header__subhead');
+  // Let's assume that anything without a description isn't worth indexing.
+  if (isPost && description) {
+    const image =
+      content.querySelector('img.w-hero') ||
+      content.querySelector('img.w-author__image');
+    // This is a no-op on browsers that don't support the Content Indexing API.
+    addToContentIndex({
+      description,
+      imgSrc: image ? image.src : null,
+      title: document.title,
+      url: window.location.pathname,
+    });
+  }
 }
 
 /**
@@ -154,7 +170,7 @@ export async function swapContent({firstRun, url, signal, ready, state}) {
     }
   }
 
-  // The bootstrap code uses this to trigger a reload if we see an "online" event. Only returned via
+  // The bootstrap code uses this to trigger a reload if we see an 'online' event. Only returned via
   // the Service Worker if we failed to fetch a 'real' page.
   const isOffline = Boolean(partial.offline);
   store.setState({currentUrl: url, isOffline});
@@ -173,17 +189,5 @@ export async function swapContent({firstRun, url, signal, ready, state}) {
 
   if (!signal.aborted) {
     store.setState({isPageLoading: false});
-  }
-
-  const isPost = main.querySelector(".w-post-content");
-  if (isPost) {
-    const image = page.querySelector("meta[itemprop=image]");
-    // This is a no-op on browsers that don't support the Content Indexing API.
-    addToContentIndex({
-      description: updatedContent,
-      imgSrc: image ? image.content : null,
-      title: page.title,
-      url: window.location.pathname,
-    });
   }
 }
