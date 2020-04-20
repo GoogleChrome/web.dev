@@ -1,5 +1,5 @@
 ---
-title: Monitor your web page's total memory usage with `performance.measureMemory()`
+title: Monitor your web page's total memory usage with `measureMemory()`
 subhead: >
   Learn how to measure memory usage of your web page in production to detect regressions.
 description: >
