@@ -21,7 +21,7 @@ const strip = require('../../_filters/strip');
 const {html} = require('common-tags');
 
 module.exports = (locale, page, collections, renderData = {}) => {
-  const forbiddenCharacters = [{searchValue: /"/g, replaceValue: "'"}];
+  const forbiddenCharacters = [{searchValue: /"/g, replaceValue: '&quot;'}];
   const pageData = {
     ...collections.all.find((item) => item.fileSlug === page.fileSlug).data,
     ...renderData,
