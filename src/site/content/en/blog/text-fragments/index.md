@@ -289,7 +289,7 @@ In the concrete case, `text=` is therefore called a *text directive*.
 Support for Text Fragments is feature-detectable
 by checking for the existence of the `fragmentDirective` in the `Location` interface.
 Unlike the other properties like `hash` that I have mentioned above,
-`fragmentDirective` does not return any value.
+`fragmentDirective` does not return any value and is read-only.
 The fragment directive is a mechanism for URLs to specify instructions
 directed to the browser rather than the document.
 It is meant to avoid direct interaction with author script,
@@ -325,13 +325,74 @@ text fragments can be created by anyone.
 Imagine I ran an evil ad network `evil-ads.example.com`.
 Further imagine that in one of my ad iframes I opened a hidden cross-origin iframe
 to `dating.example.com` with a Text Fragment URL
-<code>https://dating.example.com<strong>#:~:text=Log%20Out</strong></code>.
-If the text fragment is found, I know the victim is currently logged in to `dating.example.com`,
+<code>dating.example.com<strong>#:~:text=Log%20Out</strong></code>
+when the user interacts with the ad.
+If the text "Log Out" is found, I know the victim is currently logged in to `dating.example.com`,
 which I could use for user profiling.
-Since a naive implementation might decide that a successful match should cause a focus switch,
-on `evil.example.com` I could listen for the `blur` event and thus know when a match occurred.
+Since a naive Text Fragments implementation might decide
+that a successful match should cause a focus switch,
+on `evil-ads.example.com` I could listen for the `blur` event and thus know when a match occurred.
+In Chrome, we have implemented Text Fragments in such a way that the above scenario cannot happen.
+
+Another attack might be to exploit network traffic based on scroll position.
+Assume I had access to network traffic logs of my victim, like as the admin of a company intranet.
+Now imagine there existed a long human resources document "what to do if you suffer from…"
+and then a list of conditions like "burn out", "anxiety", etc.
+I could place a tracking pixel next to each item on the list.
+If I then determine that loading the document temporally co-occurs
+with the loading of the tracking pixel next to, say, the "burn out" item,
+I can then, as the intranet admin, determine that an employee has clicked through
+on a text fragment link with `:~:text=burn%20out`
+that the employee may have assumed was confidential and not visible to anyone.
+Since this example is somewhat contrived
+and its exploitation requires very specific preconditions to be met,
+on the Chrome team we have decided to implement scroll on navigation,
+which is one of the preconditions.
+Other user agents may decide to show a manual scroll UI element instead.
+For sites that still wish to opt-out, we have proposed a
+[Document Policy](https://github.com/w3c/webappsec-feature-policy/blob/master/document-policy-explainer.md)
+header value that they can send, so user agents will not process Text Fragment URLs.
+
+```bash
+Document-Policy: force-load-at-top
+```
+
+## Creating Text Fragment URLs with a browser extension
+
+Creating Text Fragments URLs by hand is tedious,
+especially when it comes to making sure they are unique.
+If you really want to, the specification has some tips and lists the exact
+[steps for generating Text Fragment URLs](https://wicg.github.io/ScrollToTextFragment/#generating-text-fragment-directives).
+We provide a browser extension called
+[Link to Text Fragment](https://chrome.google.com/webstore/a/google.com/detail/link-to-text-fragment/pbcodcjpfjdpcineamnnmbkkmkdpajjg?hl=en)
+that lets you link to any text by selecting it, and then clicking "Copy Link to Selected Text"
+in the context menu.
+
+![Link to Text Fragment extension](extension.png)
+
+## Conclusion
+
+Text Fragments URL is a powerful feature to link to arbitrary text on webpages.
+The scholarly community can use it to provide highly accurate citation or reference links.
+Search engines can use it to deeplink to text results on pages.
+Social networking sites can use it to let users share specific passages of a webpage
+rather than inaccessible screenshots.
+I hope you start
+[using Text Fragment URLs](https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=Text%20URL%20Fragments&text=text,-parameter&text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%%20of%20a%20cat's%20diet)
+and find them as useful as I do.
+
+## Related links
+
+- [Chrome Platform Status entry](https://chromestatus.com/features/4733392803332096)
+- [Chrome tracking bug](https://crbug.com/919204)
+- [Intent to Ship thread](https://groups.google.com/a/chromium.org/d/topic/blink-dev/zlLSxQ9BA8Y/discussion)
+- [WebKit-Dev thread](https://lists.webkit.org/pipermail/webkit-dev/2019-December/030978.html)
+- [Mozilla standards position thread](https://github.com/mozilla/standards-positions/issues/194)
 
 ## Acknowledgements
 
+Text Fragments was implemented and specified by
+[Nick Burris](https://github.com/nickburris)
+and [David Bokan](https://github.com/bokand).
 Hero image by [Greg Rakozy](https://unsplash.com/@grakozy) on
 [Unsplash](https://unsplash.com/photos/oMpAz-DN-9I).
