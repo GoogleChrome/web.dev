@@ -4,6 +4,10 @@
   "scripts": {
     "build": "npm-run-all clean sass eleventy gulp rollup",
     "clean": "rm -rf dist",
+    "coverage": "npm-run-all coverage:unit coverage:site coverage:integration",
+    "coverage:integration": "c8 npm-run-all test:site test:integration",
+    "coverage:site": "c8 npm run test:site",
+    "coverage:unit": "c8 npm run test:unit",
     "debug:eleventy": "node --inspect-brk ./node_modules/.bin/eleventy",
     "debug:test:lib": "TEST_MODE=debug npm-run-all clean rollup --parallel watch:rollup karma",
     "debug:test:unit": "node --inspect-brk ./node_modules/.bin/mocha ./test/unit",
@@ -63,6 +67,7 @@
     "@surma/rollup-plugin-off-main-thread": "^1.4.1",
     "ansi-colors": "^3.2.4",
     "autoprefixer": "^9.6.1",
+    "c8": "^7.1.0",
     "chalk": "^2.4.2",
     "cheerio": "^1.0.0-rc.3",
     "chokidar-cli": "^1.2.2",
