@@ -393,6 +393,7 @@ and find them as useful as I do.
 
 Text Fragments was implemented and specified by
 [Nick Burris](https://github.com/nickburris)
-and [David Bokan](https://github.com/bokand).
+and [David Bokan](https://github.com/bokand),
+with contributions from [Grant Wang](https://github.com/grantjwang).
 Hero image by [Greg Rakozy](https://unsplash.com/@grakozy) on
 [Unsplash](https://unsplash.com/photos/oMpAz-DN-9I).
