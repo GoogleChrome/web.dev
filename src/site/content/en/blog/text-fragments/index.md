@@ -311,6 +311,13 @@ if ('fragmentDirective' in window.location) {
 }
 ```
 
+### Polyfillability
+
+The Text Fragments feature can be polyfilled to some extent.
+There is [work in progress](https://github.com/tomayac/text-fragments-polyfill/)
+to create an extension for browsers that do not support Text Fragments natively
+where the functionality is implemented in JavaScript.
+
 ### Security
 
 Text fragment directives are invoked only on full (non-same-page) navigations
