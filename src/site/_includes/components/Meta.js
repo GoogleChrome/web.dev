@@ -21,6 +21,7 @@ const strip = require('../../_filters/strip');
 const {html} = require('common-tags');
 
 module.exports = (locale, page, collections, renderData = {}) => {
+  const forbiddenCharacters = [{searchValue: /"/g, replaceValue: "'"}];
   const pageData = {
     ...collections.all.find((item) => item.fileSlug === page.fileSlug).data,
     ...renderData,
@@ -43,8 +44,11 @@ module.exports = (locale, page, collections, renderData = {}) => {
         ? pageData.social[platform]
         : pageData;
 
-    const title = strip(social.title || social.path.title);
-    const description = social.description || social.path.description;
+    const title = strip(social.title || social.path.title, forbiddenCharacters);
+    const description = strip(
+      social.description || social.path.description,
+      forbiddenCharacters,
+    );
     let thumbnail = social.thumbnail || social.hero;
     const alt = social.alt || site.name;
 
@@ -120,7 +124,7 @@ module.exports = (locale, page, collections, renderData = {}) => {
   // prettier-ignore
   return html`
     <title>${strip(pageData.title || pageData.path.title || site.title)}</title>
-    <meta name="description" content="${pageData.description || pageData.path.description}" />
+    <meta name="description" content="${strip(pageData.description || pageData.path.description, forbiddenCharacters)}" />
 
     ${renderCanonicalMeta()}
     ${renderGoogleMeta()}
