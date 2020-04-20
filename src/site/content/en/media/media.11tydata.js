@@ -23,6 +23,7 @@ module.exports = {
           {
             title: "For embedding",
             pathItems: [
+              "for-embedding",
               "containers-and-codecs",
               "bitrate",
               "resolution",
@@ -32,7 +33,7 @@ module.exports = {
           },
           {
             title: "For media frameworks",
-            pathItems: ["streams"],
+            pathItems: ["streams", "for-frameworks"],
           },
         ],
       },
