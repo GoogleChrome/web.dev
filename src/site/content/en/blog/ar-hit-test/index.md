@@ -4,14 +4,14 @@ subhead: The Hit Test API lets you position virtual items in a real-world view.
 authors:
   - joemedley
 date: 2020-02-13
-updated: 2020-03-19
+updated: 2020-04-20
 hero: hero.jpg
 alt: A virtual object in a real-world view.
 description:
   The WebXR Hit Test API is an enhancement to the web's augmented reality that
   lets you place virtual objects in a real-world view.
 tags:
-  - post
+  - blog
   - augmented-reality
   - hit-test
   - virtual-reality

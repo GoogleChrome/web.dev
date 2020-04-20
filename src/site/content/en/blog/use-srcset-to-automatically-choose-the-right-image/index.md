@@ -6,7 +6,7 @@ authors:
 date: 2019-06-24
 description: Use srcset to automatically choose the right image size.
 tags:
-  - post
+  - blog
   - top tips
   - images
   - performance

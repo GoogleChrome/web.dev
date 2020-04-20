@@ -4,7 +4,7 @@ subhead: Help users with OTPs received through SMS
 authors:
   - agektmr
 date: 2019-10-07
-updated: 2020-04-16
+updated: 2020-04-20
 hero: hero.png
 alt: A drawing of a woman using OTP to log in to a web app.
 
@@ -13,7 +13,7 @@ description: |
   Web OTP API simplifies the OTP workflow for users.
 
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - identity
   - capabilities
   - fugu
@@ -262,7 +262,7 @@ if ('customElements' in window && 'OTPCredential' in window) {
     class extends HTMLInputElement {
       connectedCallback() {
         this.abortController = new AbortController();
-        this.receive(); 
+        this.receive();
       }
       disconnectedCallback() {
         this.abort();

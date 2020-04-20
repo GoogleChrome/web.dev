@@ -10,7 +10,7 @@ description: |
   Web developers can customize media notifications and respond to media
   related events such as seeking or track changing with the Media Session API.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - media
   - audio
   - video

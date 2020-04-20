@@ -15,7 +15,7 @@
  */
 
 const addPagination = require('../_utils/add-pagination');
-const postDescending = require('./post-descending');
+const blogpostDescending = require('./blogpost-descending');
 
 /**
  * Returns all posts as an array of paginated posts.
@@ -26,6 +26,6 @@ const postDescending = require('./post-descending');
  * @return {Array<{ title: string, href: string, description: string, tag: string, elements: Array<object>, index: number, pages: number }>} An array where each element is a blog page with some meta data and n posts for the page.
  */
 module.exports = (collection) => {
-  const posts = postDescending(collection);
+  const posts = blogpostDescending(collection);
   return addPagination(posts, {href: '/blog/'});
 };

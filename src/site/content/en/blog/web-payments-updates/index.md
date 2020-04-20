@@ -14,7 +14,7 @@ description: |
   respective specifications. This post summarizes those updates and will
   continue accumulating those API changes.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - payment
 ---
 

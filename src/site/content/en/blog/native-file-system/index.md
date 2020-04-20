@@ -5,9 +5,9 @@ authors:
   - petelepage
 description: The new Native File System API enables developers to build powerful web apps that interact with files on the user's local device, like IDEs, photo and video editors, text editors, and more. After a user grants a web app access, this API allows web apps to read or save changes directly to files and folders on the user's device.
 date: 2019-08-20
-updated: 2020-04-13
+updated: 2020-04-20
 tags:
-  - post
+  - blog
   - capabilities
   - fugu
   - origin-trial

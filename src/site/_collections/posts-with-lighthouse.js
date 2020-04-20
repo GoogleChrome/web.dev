@@ -21,7 +21,7 @@ const livePosts = require('../_filters/live-posts');
 
 module.exports = (collection) => {
   return collection
-    .getFilteredByTag('pathItem')
+    .getFilteredByTag('post')
     .filter(livePosts)
     .filter((post) => {
       const audits = post.data.web_lighthouse;

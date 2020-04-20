@@ -3,7 +3,7 @@ title: "Create OS-style backgrounds with backdrop-filter"
 subhead: |
   Blurring and color shifting behind an element.
 date: 2019-07-26
-updated: 2019-08-29
+updated: 2020-04-20
 authors:
   - adamargyle
   - joemedley
@@ -13,7 +13,7 @@ description: |
   Learn how to add background effects like blurring and transparency to UI
   elements on the web using the CSS backdrop-filter property.
 tags:
-  - post
+  - blog
   - css
   - backdrop-filter
 ---

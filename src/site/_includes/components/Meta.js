@@ -82,7 +82,7 @@ module.exports = (locale, page, collections, renderData = {}) => {
     // These tags are only used internally to determine which layout a page
     // should use.
     let tags = (type === 'article' ? pageData.tags : null) || [];
-    tags = tags.filter((tag) => tag !== 'pathItem' && tag !== 'post');
+    tags = tags.filter((tag) => tag !== 'post');
 
     // prettier-ignore
     return html`

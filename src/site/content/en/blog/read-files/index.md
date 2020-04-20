@@ -4,11 +4,11 @@ subhead: How to select files, read file metadata and content, and monitor read p
 description: |
   How to select files, read file metadata and content, and monitor read progress.
 date: 2010-06-18
-updated: 2020-03-24
-authors: 
+updated: 2020-04-20
+authors:
  - kaycebasques
 tags:
-  - post
+  - blog
 draft: true
 ---
 
@@ -70,7 +70,7 @@ This guide assumes you're familiar with:
         const size = file.size ? file.size : 'NOT SUPPORTED';
         console.log({file, name, type, size});
       }
-    }); 
+    });
   }
 </script>
 ```
@@ -134,7 +134,7 @@ Browser compatibility data for the APIs used in this section:
         const size = file.size ? file.size : 'NOT SUPPORTED';
         console.log({file, name, type, size});
       }
-    }); 
+    });
   }
 </script>
 ```
@@ -179,7 +179,7 @@ Browser compatibility data for the APIs used in this section:
         img.src = event.target.result;
       });
       reader.readAsDataURL(event.target.files[0]);
-    }); 
+    });
   }
 </script>
 ```
@@ -229,7 +229,7 @@ Browser compatibility data for the APIs used in this section:
         }
       });
       reader.readAsDataURL(event.target.files[0]);
-    }); 
+    });
   }
 </script>
 ```
@@ -239,7 +239,7 @@ built-in file selection UI and then displays a progress bar that goes from `0%`
 to `100%` while the file's content is being loaded into memory.
 
 This is mostly the same as the [Read a file's content](#read) sample code.
-The key APIs here are the `progress` event and the 
+The key APIs here are the `progress` event and the
 [`ProgressEvent`](https://developer.mozilla.org/docs/Web/API/ProgressEvent)
 object, which lets you quantify the progress of the file read operation by
 dividing its `loaded` property by its `total` property.

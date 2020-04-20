@@ -7,16 +7,16 @@ authors:
 date: 2020-01-08
 description: |
   Learn about how Chrome is investing efforts in a number of open-source tools to advance the JavaScript ecosystem
-hero: hero.jpg 
-thumbnail: thumbnail.jpg 
+hero: hero.jpg
+thumbnail: thumbnail.jpg
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - fast
   - frameworks
 ---
 
 Chrome is an active contributor to the web framework ecosystem and our talk at Chrome Dev Summit
-2019 covers what we've worked on in the past year. 
+2019 covers what we've worked on in the past year.
 
 {% YouTube 'QDljY2I1Pfw' %}
 
@@ -27,7 +27,7 @@ Read on for an extended recap of the talk with additional details and resources.
 The goal of everyone on the Chrome team is to make the web better. We work on improving browser APIs
 and V8--the core JavaScript and WebAssembly engine that powers Chrome--so that developers are
 equipped with features that help them build great web pages. We also try to improve websites that
-are already in production today by contributing to open-source tooling in many ways. 
+are already in production today by contributing to open-source tooling in many ways.
 
 [Most web
 developers](https://almanac.httparchive.org/en/2019/javascript#open-source-libraries-and-frameworks)
@@ -66,11 +66,11 @@ styling system, server renderer and so forth, they often end up creating their o
 framework. Although opinionated, web frameworks take care of many of these concerns by default.
 
 The rest of this post highlights many improvements that have recently landed in different frameworks
-and tools, including contributions from the Chrome team. 
+and tools, including contributions from the Chrome team.
 
 ## Angular
 
-The Angular team has shipped a number of improvements to version 8 of the framework: 
+The Angular team has shipped a number of improvements to version 8 of the framework:
 
 +   [Differential loading](https://angular.io/guide/deployment#differential-builds) by
     default to minimize unneeded polyfills for newer browsers.
@@ -131,9 +131,9 @@ for comments (RFCs) and pull requests (PRs):
 </figure>
 
 We are also exploring other features to improve both the user and developer experience of using
-Next.js, such as:  
+Next.js, such as:
 
-+   Enabling concurrent mode to unlock progressive or partial hydration of components. 
++   Enabling concurrent mode to unlock progressive or partial hydration of components.
 +   A webpack based conformance system that analyzes all source files and generated assets to
     surface better errors and warnings ([RFC](https://github.com/zeit/next.js/issues/9310)).
 

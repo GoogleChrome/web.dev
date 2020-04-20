@@ -7,7 +7,7 @@ authors:
 date: 2020-03-11
 description: How to get and serve SXG files, and the challenges of subresource prefetching.
 tags:
-  - post
+  - blog
   - SXG
   - nginx
 ---
@@ -46,7 +46,7 @@ http {
         application/signed-exchange;v=b3  sxg;
     }
     add_header X-Content-Type-Options nosniff;
-    
+
     location / {
         more_set_headers "Content-Type: application/signed-exchange;v=b3";
         alias /var/www/sxg/;

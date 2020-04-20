@@ -6,7 +6,7 @@ subhead:
 authors:
   - rowan_m
 date: 2019-10-30
-updated: 2020-04-09
+updated: 2020-04-20
 hero: cookie-hero.jpg
 description: |
   With the introduction of the new SameSite=None attribute value, sites can now
@@ -16,7 +16,7 @@ description: |
   Learn how to mark up your cookies to ensure your first-party and third-party
   cookies continue to work once this change comes into effect.
 tags:
-  - post
+  - blog
   - security
   - cookies
   - chrome80
@@ -282,7 +282,7 @@ anyone has encountered it - so don't hesitate to reach out:
 
 - Raise an issue on the
   [`SameSite` examples repo on GitHub](https://github.com/GoogleChromeLabs/samesite-examples).
-- Post a question on the
+- blog a question on the
   ["samesite" tag on StackOverflow](https://stackoverflow.com/questions/tagged/samesite).
 - For issues with Chromium's behavior, raise a bug via the
   [\[SameSite cookies\] issue template](https://bit.ly/2lJMd5c).

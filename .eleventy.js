@@ -54,7 +54,7 @@ const paginatedBlogPosts = require(`./${collectionsDir}/paginated-blog-posts`);
 const paginatedPostsByAuthor = require(`./${collectionsDir}/paginated-posts-by-author`);
 const paginatedPostsByTag = require(`./${collectionsDir}/paginated-posts-by-tag`);
 const paginatedTags = require(`./${collectionsDir}/paginated-tags`);
-const postDescending = require(`./${collectionsDir}/post-descending`);
+const blogpostDescending = require(`./${collectionsDir}/blogpost-descending`);
 const postToCollections = require(`./${collectionsDir}/post-to-collections`);
 const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
 const recentPosts = require(`./${collectionsDir}/recent-posts`);
@@ -150,7 +150,7 @@ module.exports = function(config) {
   // COLLECTIONS
   // ----------------------------------------------------------------------------
   config.addCollection('authors', authors);
-  config.addCollection('posts', postDescending);
+  config.addCollection('blogposts', blogpostDescending);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('recentPosts', recentPosts);
   config.addCollection('paginatedAuthors', paginatedAuthors);

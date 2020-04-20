@@ -12,7 +12,7 @@ hero: hero.jpg
 alt: Multiple Shifting Gears.
 description: Multi-origin architectures presents many challenges when building PWAs. Explore the good and bad uses of multiple origins, and some workarounds to build PWAs in multi-origin sites.
 tags:
-  - post
+  - blog
   - PWA
   - caching
   - a2hs
@@ -55,7 +55,7 @@ For those cases where migrating to a single origin is not possible, what follows
 
 ## Challenges and Workarounds for PWAs across different origins
 
-When building a website on multiple origins, providing a unified PWA experience is challenging, mostly because of the [same-origin policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy), which imposes a number of constraints. Let's look at them one at a time. 
+When building a website on multiple origins, providing a unified PWA experience is challenging, mostly because of the [same-origin policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy), which imposes a number of constraints. Let's look at them one at a time.
 
 ### Service workers
 
@@ -63,7 +63,7 @@ The origin of the service worker script URL has to be the same as the origin of 
 
 Another consideration is that a service worker can only control pages hosted under the origin and path it belongs to. This means that, if the service worker is hosted at `https://www.example.com` it can only control URLs from that origin (according to the path defined in the [scope parameter](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerContainer/register#Parameters)), but won't control any page in other subdomains such as, for example, those in `https://section.example.com`.
 
-In this case, the only workaround is to use multiple service workers (one per origin). 
+In this case, the only workaround is to use multiple service workers (one per origin).
 
 {% Aside 'caution' %}
 Registering, and having multiple active service workers consumes additional resources (memory, CPU, etc.), so use your best judgement on how many active service workers a user will likely need to navigate across the site.

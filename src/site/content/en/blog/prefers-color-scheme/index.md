@@ -4,7 +4,7 @@ subhead: Overhyped or necessity? Learn everything about dark mode and how to sup
 authors:
   - thomassteiner
 date: 2019-06-27
-updated: 2019-11-25
+updated: 2020-04-20
 hero: hero.jpg
 hero_position: bottom
 alt: |
@@ -15,7 +15,7 @@ description: |
   and introduces a custom element named dark-mode-toggle that allows web developers
   to offer users a way to override their operating system level preference on specific web pages.
 tags:
-  - post
+  - blog
   - dark-mode
   - dark-theme
   - prefers-color-scheme
