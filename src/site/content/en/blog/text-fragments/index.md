@@ -237,7 +237,8 @@ so they are not being interpreted as part of the text directive syntax.
 ```
 
 Each of `prefix-`, `textStart`, `textEnd`, and `-suffix` will only match text within a single
-[block-level element](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements#Elements).
+[block-level element](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements#Elements),
+but full `textStart,textEnd` ranges *can* span multiple blocks.
 For example, `:~:text=The quick,lazy dog` will fail to match in the following example,
 because the starting string "The quick" does not appear within a single,
 uninterrupted block-level element:
@@ -266,7 +267,8 @@ Here is an example link with three text fragments:
 
 Traditional element fragments can be combined with text fragments.
 It is perfectly fine to have both in the same URL, for example,
-to provide a meaningful fallback for browsers that do not support Text Fragments yet.
+to provide a meaningful fallback in case the original text on the page changes,
+so the text fragment does not match anymore.
 The URL
 <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1:~:text=Give%20us%20feedback%20in%20our%20Product%20Forums."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#HTML1:~:text=Give%20us%20feedback%20in%20our%20Product%20Forums.</strong></code></a>
 linking to the *Give us feedback in our
@@ -327,6 +329,9 @@ Additionally, navigations originating from a different origin than the destinati
 will require the navigation to take place in a
 [`noopener`](https://html.spec.whatwg.org/multipage/links.html#link-type-noopener) context,
 such that the destination page is known to be sufficiently isolated.
+Text fragment directives are only applied to the main frame.
+This means that text will not be searched inside iframes,
+and iframe navigation will not invoke a text fragment.
 
 ### Privacy
 
@@ -367,6 +372,8 @@ Other user agents may decide to show a manual scroll UI element instead.
 For sites that still wish to opt-out, we have proposed a
 [Document Policy](https://github.com/w3c/webappsec-feature-policy/blob/master/document-policy-explainer.md)
 header value that they can send, so user agents will not process Text Fragment URLs.
+Since Document Policy is not yet shipped, we plan on running an origin trial to apply this policy
+as an intermediate solution.
 
 ```bash
 Document-Policy: force-load-at-top
