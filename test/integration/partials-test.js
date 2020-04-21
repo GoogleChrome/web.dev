@@ -3,7 +3,7 @@ const path = require('path');
 const dist = path.resolve(__dirname, '..', '..', 'dist');
 
 describe('Service worker partials', function() {
-  it('Partials include RSS urls', async function() {
+  it('includes RSS urls', function() {
     const expected = '/feed.xml';
     const partialPath = path.join(dist, 'en', 'index.json');
     const partial = require(partialPath);
