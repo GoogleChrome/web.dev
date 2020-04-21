@@ -326,9 +326,9 @@ where and how you're using it.
 * [ChromeStatus.com entry][cr-status]
 
 ## Acknowledgements
-Big thanks to Domenic Denicola, Yoav Weiss for API design reviews, and Dominik
-Inführ, Hannes Payer, Kentaro Hara, Michael Lippautz for code reviews in
-Chrome. I also thank Per Parker, Philipp Weis, Olga Belomestnykh, Matthew
+Big thanks to Domenic Denicola, Yoav Weiss, Mathias Bynens for API design reviews,
+and Dominik Inführ, Hannes Payer, Kentaro Hara, Michael Lippautz for code reviews
+in Chrome. I also thank Per Parker, Philipp Weis, Olga Belomestnykh, Matthew
 Bolohan, and Neil Mckay for providing valuable user feedback that greatly
 improved the API.
 
