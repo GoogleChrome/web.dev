@@ -220,6 +220,7 @@ await registration.index.add({
   value. Following the Origin Trial, only `url` will be supported.
 {% endAside %}
 
+
 Adding an entry only affects the content index; it does not add anything to the
 [Cache Storage
 API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api).
