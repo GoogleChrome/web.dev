@@ -1,16 +1,11 @@
 const assert = require('assert');
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
 const fs = require('fs');
 const path = require('path');
+const runEleventy = require('../runEleventy');
 
-const runEleventy = async function(env) {
-  try {
-    await exec(`ELEVENTY_ENV=${env} npx @11ty/eleventy --config=eleventy.js`);
-  } catch (err) {
-    assert.fail(err);
-  }
-};
+// Eleventy config must be relative to runEleventy script.
+const configPath = path.join('.', path.basename(__dirname), 'eleventy.js');
+const outputPath = path.join(__dirname, '.tmp', 'collection', 'index.html');
 
 describe('posts-with-lighthouse', function() {
   describe('postsWithLighthouse', function() {
@@ -19,20 +14,20 @@ describe('posts-with-lighthouse', function() {
     });
 
     it('creates postsWithLighthouse collection in dev env', async function() {
-      await runEleventy('dev');
+      await runEleventy('dev', configPath);
       const expected = '<p>test-3</p><p>test-5</p>';
       const actual = await fs.readFileSync(
-        '.tmp/collection/index.html',
+        outputPath,
         'utf8',
       );
       assert.equal(actual, expected);
     });
 
     it('does not include drafts in the postsWithLighthouse collection in prod', async function() {
-      await runEleventy('prod');
+      await runEleventy('prod', configPath);
       const expected = '<p>test-3</p>';
       const actual = await fs.readFileSync(
-        '.tmp/collection/index.html',
+        outputPath,
         'utf8',
       );
       assert.equal(actual, expected);
