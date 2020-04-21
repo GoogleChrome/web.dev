@@ -26,6 +26,8 @@ describe('Build test', function() {
       path.join('en', 'index.html'),
       path.join('en', 'index.json'),
       path.join('en', 'robots.txt'),
+      path.join('en', 'authors', 'addyosmani', 'feed.xml'),
+      path.join('en', 'tags', 'progressive-web-apps', 'feed.xml'),
       path.join('images', 'favicon.ico'),
       path.join('images', 'lockup.svg'),
       'app.css',

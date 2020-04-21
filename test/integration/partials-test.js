@@ -8,13 +8,10 @@ describe('Service worker partials', function() {
     const partialPath = path.join(dist, 'en', 'index.json');
     const partial = require(partialPath);
 
-    assert.ok(
-      partial.rss === expected,
-      `Partial "${partialPath}" did not have an RSS of "${expected}"`,
-    );
+    assert.deepStrictEqual(partial.rss, expected);
   });
 
-  it('Authors have unique RSS urls', async function() {
+  it('includes unique RSS urls for authors', function() {
     const expected = '/authors/addyosmani/feed.xml';
     const partialPath = path.join(
       dist,
@@ -25,13 +22,10 @@ describe('Service worker partials', function() {
     );
     const partial = require(partialPath);
 
-    assert.ok(
-      partial.rss === expected,
-      `Partial "${partialPath}" did not have an RSS of "${expected}"`,
-    );
+    assert.deepStrictEqual(partial.rss, expected);
   });
 
-  it('Tags have unique RSS urls', async function() {
+  it('includes unique RSS urls for tags', function() {
     const expected = '/tags/progressive-web-apps/feed.xml';
     const partialPath = path.join(
       dist,
@@ -42,9 +36,6 @@ describe('Service worker partials', function() {
     );
     const partial = require(partialPath);
 
-    assert.ok(
-      partial.rss === expected,
-      `Partial "${partialPath}" did not have an RSS of "${expected}"`,
-    );
+    assert.deepStrictEqual(partial.rss, expected);
   });
 });
