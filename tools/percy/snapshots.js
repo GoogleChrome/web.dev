@@ -10,12 +10,20 @@ const pagesToTest = [
     title: 'Learn page',
   },
   {
+    url: '/accessible/',
+    title: 'Collection page',
+  },
+  {
     url: '/measure/',
     title: 'Measure page',
   },
   {
     url: '/blog/',
     title: 'Blog page',
+  },
+  {
+    url: '/test-post/',
+    title: 'Post page',
   },
   {
     url: '/about/',
