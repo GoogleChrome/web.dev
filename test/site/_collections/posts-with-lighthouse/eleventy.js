@@ -1,6 +1,6 @@
 const postsWithLighthouse = require(`../../../../src/site/_collections/posts-with-lighthouse`);
 
-module.exports = (function(config) {
+module.exports = function(config) {
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   return {
     dir: {
@@ -8,4 +8,4 @@ module.exports = (function(config) {
       output: '.tmp',
     },
   };
-});
+};
