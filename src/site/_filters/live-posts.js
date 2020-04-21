@@ -39,9 +39,14 @@ module.exports = function livePosts(post) {
   // If a post has a future date it will automatically be set to `draft: true`.
   // When the date arrives, our daily GitHub Action that publishes the site
   // should pickup the new post and publish it.
-  // This action runs at around 7am PST.
+  // This action runs at around 7am PST / 15:00 UTC.
+  // Because Eleventy sets the post.date to midnight, UTC time, we offset it
+  // to be at 15:00.
+  // If we did not do this, then deploying the site at 4pm PST / 00:00 UTC
+  // would seemingly launch posts intended for the next day.
   const now = new Date();
-  if (post.date > now) {
+  const postDate = new Date(post.date).setUTCHours(15, 0, 0, 0);
+  if (postDate >= now) {
     post.data.draft = true;
   }
 
