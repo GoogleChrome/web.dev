@@ -269,7 +269,7 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           <a href="/shape-detection/">Shape&nbsp;Detection (Barcode)</a>
         </td>
         <td>
-          </a>Shape detection opens up native
+          Shape detection opens up native
           implementations of shape detection services and exposes them through
           a set of JavaScript interfaces. Shape detection has three separate
           APIs, of which the Barcode API is only one. See
