@@ -5,4 +5,4 @@ web_lighthouse:
 draft: true
 ---
 
-# A draft test post with a pathItem tag and with a web_lighthouse value.
+# A draft test post with a pathItem tag and with a web_lighthouse value
