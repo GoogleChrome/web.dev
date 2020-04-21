@@ -50,7 +50,6 @@ const findAuthorsImage = (key) => {
       'src',
       'site',
       'content',
-      'en',
       'images',
       'authors',
       `${key}${size}.jpg`,
