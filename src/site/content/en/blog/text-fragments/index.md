@@ -34,7 +34,7 @@ on the Chromium blog.
 You can see an excerpt of the blog post in the screenshot below.
 
 <figure class="w-figure">
-  <img src="blog-red-ids.png" alt="" class="w-screenshot">
+  <img src="blog-red-ids.png" alt="" class="w-screenshot" width="400">
   <figcaption class="w-figcaption">Chromium blog post with red boxes around elements with an <code>id</code> attribute.</figcaption>
 </figure>
 
@@ -60,7 +60,7 @@ As you can see in the Elements panel of the Developer Tools, the element in ques
 has an `id` attribute with the value `HTML1`.
 
 <figure class="w-figure">
-  <img src="id-html1.png" alt="" class="w-screenshot">
+  <img src="id-html1.png" alt="" class="w-screenshot" width="400">
   <figcaption class="w-figcaption">Dev Tools showing the <code>id</code> of an element.</figcaption>
 </figure>
 
@@ -99,7 +99,7 @@ Without a fragment identifier, there is no way how I could link to this heading.
 This is the problem that Text Fragments solve.
 
 <figure class="w-figure">
-  <img src="id-missing.png" alt="" class="w-screenshot">
+  <img src="id-missing.png" alt="" class="w-screenshot" width="400">
   <figcaption class="w-figcaption">Dev Tools showing a heading without an <code>`id`</code>.</figcaption>
 </figure>
 
@@ -129,7 +129,7 @@ If you click it, a supporting browser like Chrome will scroll the text fragment 
 and highlight it:
 
 <figure class="w-figure">
-  <img src="syntax-simple.png" alt="" class="w-screenshot">
+  <img src="syntax-simple.png" alt="" class="w-screenshot" width="400">
   <figcaption class="w-figcaption">Text fragment scrolled into view and highlighted.</figcaption>
 </figure>
 
@@ -151,7 +151,7 @@ When you click through, on a supporting browser like Chrome, the whole section i
 and scrolled into view:
 
 <figure class="w-figure">
-  <img src="syntax-end.png" alt="" class="w-screenshot">
+  <img src="syntax-end.png" alt="" class="w-screenshot" width="400">
   <figcaption class="w-figcaption">Text fragment scrolled into view and highlighted.</figcaption>
 </figure>
 
@@ -170,7 +170,7 @@ The problem is that the desired section is not uniquely identified
 with the current one-word `textStart` and `textEnd` values:
 
 <figure class="w-figure">
-  <img src="syntax-end-wrong.png" alt="" class="w-screenshot">
+  <img src="syntax-end-wrong.png" alt="" class="w-screenshot" width="400">
   <figcaption class="w-figcaption">Non-intended text fragment scrolled into view and highlighted.</figcaption>
 </figure>
 
@@ -187,7 +187,7 @@ The answer is that in this release Text Fragments were introduced:
     using a text fragment provided in a URL.
     When the page is loaded, the browser highlights the text and scrolls the fragment into view.
     For example, the URL below loads a wiki page for 'Cat'
-    and scrolls to the content listed in the `text` parameter." class="w-screenshot">
+    and scrolls to the content listed in the `text` parameter." class="w-screenshot" width="400">
   <figcaption class="w-figcaption">Text Fragments announcement blog post excerpt.</figcaption>
 </figure>
 
@@ -206,7 +206,7 @@ matches at the first occurrence of the word `Text`.
 {% endAside %}
 
 <figure class="w-figure">
-  <img src="first-text.png" alt="" class="w-screenshot">
+  <img src="first-text.png" alt="" class="w-screenshot" width="400">
   <figcaption class="w-figcaption">Text Fragment matching at the first occurrence of <code>Text</code>.</figcaption>
 </figure>
 
@@ -221,7 +221,7 @@ To allow the parser to clearly identify the `prefix-` and the `-suffix`,
 they need to be separated from the `textStart` and the optional `textEnd` with a dash&nbsp;`-`.
 
 <figure class="w-figure">
-  <img src="correct-text.png" alt="" class="w-screenshot">
+  <img src="correct-text.png" alt="" class="w-screenshot" width="400">
   <figcaption class="w-figcaption">Text Fragment matching at the correct occurrence of <code>Text</code>.</figcaption>
 </figure>
 
@@ -277,7 +277,7 @@ contains both an element fragment (`HTML1`), as well as a text fragment
 (`text=Give%20us%20feedback%20in%20our%20Product%20Forums.`):
 
 <figure class="w-figure">
-  <img src="text-feedback.png" alt="" class="w-screenshot">
+  <img src="text-feedback.png" alt="" class="w-screenshot" width="237">
   <figcaption class="w-figcaption">Linking with both element fragment and text fragment.</figcaption>
 </figure>
 
@@ -316,7 +316,7 @@ if ('fragmentDirective' in window.location) {
 ### Polyfillability
 
 The Text Fragments feature can be polyfilled to some extent.
-There is [work in progress](https://github.com/tomayac/text-fragments-polyfill/)
+There is early [work in progress](https://github.com/tomayac/text-fragments-polyfill/)
 to create an extension for browsers that do not support Text Fragments natively
 where the functionality is implemented in JavaScript.
 
