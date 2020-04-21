@@ -89,11 +89,9 @@ asking them to confirm they want to install your PWA.
 buttonInstall.addEventListener('click', (e) => {
   // Hide the app provided install promotion
   hideMyInstallPromotion();
-  // Show the install prompt
-  deferredPrompt.prompt();
-  // Wait for the user to respond to the prompt
-  deferredPrompt.userChoice.then((choiceResult) => {
-    if (choiceResult.outcome === 'accepted') {
+  // Show the install prompt and wait for the user to respond to the prompt
+  deferredPrompt.prompt().then((result) => {
+    if (result.userChoice === 'accepted') {
       console.log('User accepted the install prompt');
     } else {
       console.log('User dismissed the install prompt');
@@ -102,10 +100,10 @@ buttonInstall.addEventListener('click', (e) => {
 });
 ```
 
-The `userChoice` property is a promise that resolves with the user's choice.
+The `prompt()` function returns a promise that resolves with the user's choice.
 You can only call `prompt()` on the deferred event once. If the user
 dismisses it, you'll need to wait until the `beforeinstallprompt` event
-is fired again, typically immediately after the `userChoice` property
+is fired again, typically immediately after the `prompt()` promise
 has resolved.
 
 {% Aside 'codelab' %}
