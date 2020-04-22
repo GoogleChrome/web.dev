@@ -104,8 +104,8 @@ function updateDom(partial) {
   // Update the page title.
   document.title = partial.title || '';
 
-  const rss = document.querySelector('link[type="application/atom+xml"]');
-  rss.href = partial.rss || rss.href;
+  // const rss = document.querySelector('link[type="application/atom+xml"]');
+  // rss.href = partial.rss || rss.href;
 
   // Focus on the first title (or fallback to content itself).
   forceFocus(content.querySelector('h1, h2, h3, h4, h5, h6') || content);
