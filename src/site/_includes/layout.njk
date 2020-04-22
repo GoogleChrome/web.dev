@@ -13,10 +13,7 @@
       <meta name="offline" content="true" />
     {%- endif %}
 
-    {% if nometa %}
-      {# Area on page that service worker will load title, rss url and if offline #}
-      %_HEAD_REPLACE_%
-    {% else %}
+    {% if not nometa %}
       {% Meta locale, page, collections, renderData %}
     {%- endif %}
 
