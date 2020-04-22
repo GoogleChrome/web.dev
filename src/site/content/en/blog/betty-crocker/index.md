@@ -2,14 +2,16 @@
 title: |
   Better cooking with the Wake Lock API : A&nbsp;case study with Betty Crocker
 subhead: |
-
+  After they have implemented the Wake Lock API, cooking site BettyCrocker.com's
+  indicators of purchase intent were about 300% higher for wake lock users compared to all users.
 authors:
   - thomassteiner
-date: 2020-04-01
+date: 2020-04-22
+updated: 2020-04-22
 hero: hero.jpg
 alt: Betty Crocker Cake Mix—Coffee Cinnamon.
 description: |
-
+  Case study of cooking site BettyCrocker.com's experiences with implementing the Wake Lock API.
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - case-study
