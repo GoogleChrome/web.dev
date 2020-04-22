@@ -122,13 +122,18 @@ module.exports = (locale, page, collections, renderData = {}) => {
   }
 
   function renderRSS() {
-    const feed = pageData.rss || '/feed.xml';
-    const title = pageData.rss
-      ? `${pageData.title} on web.dev`
-      : 'web.dev feed';
-    return html`
-      <link rel="alternate" href="${feed}" type="application/atom+xml" data-title="${title}"></link>
-    `;
+    // const feed = pageData.rss || '/feed.xml';
+    // const title = pageData.rss
+    //   ? `${pageData.title} on web.dev`
+    //   : 'web.dev feed';
+    // return html`
+    //   <link
+    //     rel="alternate"
+    //     href="${feed}"
+    //     type="application/atom+xml"
+    //     data-title="${title}"
+    //   />
+    // `;
   }
 
   // prettier-ignore
@@ -140,6 +145,5 @@ module.exports = (locale, page, collections, renderData = {}) => {
     ${renderGoogleMeta()}
     ${renderFacebookMeta()}
     ${renderTwitterMeta()}
-    ${renderRSS()}
   `;
 };
