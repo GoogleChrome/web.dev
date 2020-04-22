@@ -199,10 +199,10 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
     partial.rss !== '/feed.xml'
       ? `${partial.title} on web.dev`
       : 'web.dev feed';
-  const rss = `<link rel="alternate" href="${rssHref}" type="application/atom+xml" data-title="${rssTitle}"></link>`;
+  const rss = `<link rel="alternate" href="${rssHref}" type="application/atom+xml" data-title="${rssTitle}" />`;
 
   const output = layoutTemplate
-    .replace('%_HEAD_REPLACE_%', `${meta}\n${title}\n${rss}`)
+    .replace('<title>web.dev</title>', `${meta}\n${title}\n${rss}`)
     .replace('%_CONTENT_REPLACE_%', partial.raw);
   const headers = new Headers();
   headers.append('Content-Type', 'text/html');

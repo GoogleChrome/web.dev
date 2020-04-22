@@ -127,7 +127,12 @@ module.exports = (locale, page, collections, renderData = {}) => {
       ? `${pageData.title} on web.dev`
       : 'web.dev feed';
     return html`
-      <link rel="alternate" href="${feed}" type="application/atom+xml" data-title="${title}"></link>
+      <link
+        rel="alternate"
+        href="${feed}"
+        type="application/atom+xml"
+        data-title="${title}"
+      />
     `;
   }
 

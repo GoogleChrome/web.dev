@@ -15,7 +15,7 @@
 
     {% if nometa %}
       {# Area on page that service worker will load title, rss url and if offline #}
-      %_HEAD_REPLACE_%
+      <title>web.dev</title>
     {% else %}
       {% Meta locale, page, collections, renderData %}
     {%- endif %}
