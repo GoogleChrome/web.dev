@@ -9,7 +9,7 @@ const outputPath = path.join(
   path.basename(__dirname),
   'pages',
   'collection',
-  'index.html'
+  'index.html',
 );
 
 describe('recent-posts', function() {

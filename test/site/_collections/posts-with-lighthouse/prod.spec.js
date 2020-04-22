@@ -1,9 +1,7 @@
 const assert = require('assert');
 const fs = require('fs');
 const path = require('path');
-const runEleventy = require('../runEleventy');
 
-// Eleventy config must be relative to runEleventy script.
 const outputPath = path.join(
   __dirname,
   '..',
@@ -11,7 +9,7 @@ const outputPath = path.join(
   path.basename(__dirname),
   'pages',
   'collection',
-  'index.html'
+  'index.html',
 );
 
 describe('posts-with-lighthouse', function() {
