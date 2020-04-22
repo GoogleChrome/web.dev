@@ -118,20 +118,6 @@ function disallowExternal(source, importer, isResolved) {
 }
 
 /**
- * Ensures that the passed Rollup result only contains a single chunk.
- *
- * @param {!Promise<rollup.RollupOutput>} rollupPromise
- * @return {!rollup.RollupChunk} the single output chunk
- */
-async function singleOutput(rollupPromise) {
-  const result = await rollupPromise;
-  if (result.output.length !== 1) {
-    throw new Error(`expected single output, was: ${result.output.length}`);
-  }
-  return result.output[0];
-}
-
-/**
  * Performs main site compilation via Rollup: first on site code, and second
  * to build the Service Worker.
  */
