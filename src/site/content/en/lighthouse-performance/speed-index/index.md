@@ -4,7 +4,7 @@ title: Speed Index
 description: |
   Learn about Lighthouse's Speed Index metric and how to optimize it.
 date: 2019-05-02
-updated: 2020-04-20
+updated: 2020-04-22
 web_lighthouse:
   - speed-index
 ---

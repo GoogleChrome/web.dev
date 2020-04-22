@@ -5,7 +5,7 @@ description: |
   Learn how Lighthouse generates the overall Performance score for your page.
 subhead: How Lighthouse calculates your overall Performance score
 date: 2019-09-19
-updated: 2020-04-20
+updated: 2020-04-22
 ---
 
 In general, only [metrics audits](/lighthouse-performance/#metrics)

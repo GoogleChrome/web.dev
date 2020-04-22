@@ -5,7 +5,7 @@ description: |
   Learn how to make your web page more accessible by making sure that browser
   zoom isn't disabled.
 date: 2019-05-02
-updated: 2020-04-20
+updated: 2020-04-22
 web_lighthouse:
   - meta-viewport
 ---

@@ -5,7 +5,7 @@ description: |
   Learn how to make form elements accessible to assistive technology users by
   providing labels.
 date: 2019-05-02
-updated: 2020-04-20
+updated: 2020-04-22
 web_lighthouse:
   - label
 ---

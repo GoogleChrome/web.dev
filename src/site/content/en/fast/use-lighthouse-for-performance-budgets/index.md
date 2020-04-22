@@ -8,7 +8,7 @@ description: |
   set up in under five minutes and provides feedvack on the size and quantity of
   page resources.
 date: 2019-06-14
-updated: 2020-04-20
+updated: 2020-04-22
 tags:
   - post
   - performance

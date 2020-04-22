@@ -4,7 +4,7 @@ title: Page has unsuccessful HTTP status code
 description: |
   Learn about the "Page has unsuccessful HTTP status code" Lighthouse audit.
 date: 2019-05-02
-updated: 2020-04-20
+updated: 2020-04-22
 web_lighthouse:
   - http-status-code
 ---

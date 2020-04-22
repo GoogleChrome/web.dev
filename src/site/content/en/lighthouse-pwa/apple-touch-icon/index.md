@@ -7,7 +7,7 @@ web_lighthouse:
   - apple-touch-icon
 codelabs: codelab-apple-touch-icon
 date: 2019-08-27
-updated: 2020-04-20
+updated: 2020-04-22
 ---
 
 When iOS Safari users add [Progressive Web Apps (PWAs)](/discover-installable) to

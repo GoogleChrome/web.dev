@@ -5,7 +5,7 @@ description: |
   Learn how to improve the accessibility of audio on your web page by providing
   closed captions.
 date: 2019-05-02
-updated: 2020-04-20
+updated: 2020-04-22
 web_lighthouse:
   - audio-caption
 ---

@@ -5,7 +5,7 @@ description: |
   Learn how to make list items on your web page accessible to assistive
   technology users by placing them in list elements.
 date: 2019-05-02
-updated: 2020-04-20
+updated: 2020-04-22
 web_lighthouse:
   - listitem
 ---

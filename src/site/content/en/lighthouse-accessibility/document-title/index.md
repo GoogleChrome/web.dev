@@ -5,7 +5,7 @@ description: |
   Learn about the "Document doesn't have a <title> element"
   Lighthouse audit.
 date: 2019-05-02
-updated: 2020-04-20
+updated: 2020-04-22
 web_lighthouse:
   - document-title
 ---

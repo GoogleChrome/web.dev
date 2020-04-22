@@ -4,7 +4,7 @@ title: Service workers and the Cache Storage API
 authors:
   - jeffposnick
 date: 2018-11-05
-updated: 2020-04-20
+updated: 2020-04-22
 description: |
   The browser's HTTP cache is your first line of defense. It's not necessarily
   the most powerful or flexible approach, and you have limited control over the

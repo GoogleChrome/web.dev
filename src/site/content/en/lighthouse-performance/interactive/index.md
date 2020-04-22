@@ -5,7 +5,7 @@ description: |
   Learn about Lighthouse's Time to Interactive metric and
   how to measure and optimize it.
 date: 2019-05-02
-updated: 2020-04-20
+updated: 2020-04-22
 web_lighthouse:
   - interactive
 ---

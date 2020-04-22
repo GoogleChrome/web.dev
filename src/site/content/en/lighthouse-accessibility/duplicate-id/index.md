@@ -5,7 +5,7 @@ description: |
   Learn how to make sure that all elements on your page are announced correctly
   by assistive technologies.
 date: 2019-05-02
-updated: 2020-04-20
+updated: 2020-04-22
 web_lighthouse:
   - duplicate-id
 noindex: true

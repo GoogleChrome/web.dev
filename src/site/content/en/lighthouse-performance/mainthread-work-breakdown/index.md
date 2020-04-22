@@ -5,7 +5,7 @@ description: |
   Learn about the browser's main thread and how you can optimize your web page
   to reduce main thread load and improve performance.
 date: 2019-05-02
-updated: 2020-04-20
+updated: 2020-04-22
 web_lighthouse:
   - mainthread-work-breakdown
 ---

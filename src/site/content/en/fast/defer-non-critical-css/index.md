@@ -7,7 +7,7 @@ description: |
   Learn how to defer non-critical CSS with the goal of optimizing the Critical
   Rendering Path, and improving FCP (First Contentful Paint).
 date: 2019-02-17
-updated: 2020-04-20
+updated: 2020-04-22
 ---
 
 CSS files are [render-blocking resources](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources):

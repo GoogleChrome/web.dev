@@ -4,7 +4,7 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-04-20
+updated: 2020-04-22
 description: |
   This post introduces the Largest Contentful Paint (LCP) metric and explains
   how to measure it

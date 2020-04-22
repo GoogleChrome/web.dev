@@ -4,7 +4,7 @@ title: Make it installable
 authors:
   - petelepage
 date: 2018-11-05
-updated: 2020-04-20
+updated: 2020-04-22
 description: |
   In this codelab, learn how to make a site installable using the
   beforeinstallprompt event.

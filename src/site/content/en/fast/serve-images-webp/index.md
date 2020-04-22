@@ -8,7 +8,7 @@ description: |
   magnitude of a 25–35% reduction in filesize. This decreases page sizes and
   improves performance.
 date: 2018-11-05
-updated: 2020-04-20
+updated: 2020-04-22
 codelabs:
   - codelab-serve-images-webp
 ---

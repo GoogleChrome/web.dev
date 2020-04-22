@@ -5,7 +5,7 @@ description: |
   Learn how to improve the accessibility of your web page by making sure that
   all buttons have names that assistive technology users can access.
 date: 2019-05-02
-updated: 2020-04-20
+updated: 2020-04-22
 web_lighthouse:
   - button-name
 ---

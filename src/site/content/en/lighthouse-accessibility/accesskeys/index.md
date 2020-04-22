@@ -5,7 +5,7 @@ description: |
   Learn how to improve your web page's accessibility for keyboard users by
   removing duplicate accesskey values.
 date: 2019-05-02
-updated: 2020-04-20
+updated: 2020-04-22
 web_lighthouse:
   - accesskeys
 ---

@@ -4,7 +4,7 @@ title: Time to Interactive (TTI)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-04-20
+updated: 2020-04-22
 description: |
   This post introduces the Time to Interactive (TTI) metric and explains
   how to measure it

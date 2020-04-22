@@ -3,7 +3,7 @@ title: "Create OS-style backgrounds with backdrop-filter"
 subhead: |
   Blurring and color shifting behind an element.
 date: 2019-07-26
-updated: 2020-04-20
+updated: 2020-04-22
 authors:
   - adamargyle
   - joemedley

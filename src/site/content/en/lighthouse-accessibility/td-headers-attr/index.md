@@ -5,7 +5,7 @@ description: |
   Learn how to improve the accessibility of tables on your web page by making
   sure that data cells always refer to existing header elements.
 date: 2019-05-02
-updated: 2020-04-20
+updated: 2020-04-22
 web_lighthouse:
   - td-headers-attr
 ---

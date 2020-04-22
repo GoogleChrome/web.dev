@@ -5,7 +5,7 @@ description: |
   Learn how to structure definition lists on your web page so that
   assistive technologies can interpret them.
 date: 2019-05-02
-updated: 2020-04-20
+updated: 2020-04-22
 web_lighthouse:
   - definition-list
 ---
