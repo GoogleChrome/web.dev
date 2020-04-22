@@ -33,10 +33,13 @@ const writePartial = async (to, raw) => {
 const getPartial = (content) => {
   const $ = cheerio.load(content);
   const partial = {
-    raw: $('#content').html(),
+    description: $('meta[name="description"]').attr('content'),
+    imageSrc: $('meta[itemprop="image"]').attr('content'),
     lang: $('html').attr('lang'),
-    title: $('title').text(),
     offline: Boolean($('meta[name="offline"]').attr('content')) || false,
+    raw: $('#content').html(),
+    title: $('title').text(),
+    url: $('link[rel="canonical"]').attr('href'),
   };
   return partial;
 };

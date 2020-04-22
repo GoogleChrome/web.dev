@@ -5,7 +5,7 @@
  */
 
 const CACHE_NAME = 'webdev-html-cache-v1';
-const ICON_SIZE = 192;
+const PREFERRED_ICON_SIZE = 192;
 
 const DEFAULT_ICON = {
   sizes: '128x128',
@@ -13,20 +13,7 @@ const DEFAULT_ICON = {
   type: 'image/png',
 };
 
-async function getRegistrationIfSupported() {
-  if (!('serviceWorker' in navigator)) {
-    return;
-  }
-
-  const registration = await navigator.serviceWorker.ready;
-  if (!('index' in registration)) {
-    return;
-  }
-
-  return registration;
-}
-
-function getIconFromImgSrc(imgSrc) {
+function getIconFromImageSrc(imgSrc) {
   if (!imgSrc) {
     return DEFAULT_ICON;
   }
@@ -39,66 +26,73 @@ function getIconFromImgSrc(imgSrc) {
     return DEFAULT_ICON;
   }
 
-  url.searchParams.set('w', ICON_SIZE);
-  url.searchParams.set('h', ICON_SIZE);
+  url.searchParams.set('w', PREFERRED_ICON_SIZE);
+  url.searchParams.set('h', PREFERRED_ICON_SIZE);
   url.searchParams.set('fit', 'crop');
   url.searchParams.set('fm', 'webp');
 
   return {
-    sizes: `${ICON_SIZE}x${ICON_SIZE}`,
+    sizes: `${PREFERRED_ICON_SIZE}x${PREFERRED_ICON_SIZE}`,
     src: url.href,
     type: 'image/webp',
   };
 }
 
-export async function addToContentIndex({description, imgSrc, title, url}) {
-  const registration = await getRegistrationIfSupported();
-  if (!registration) {
+// This method syncs the currently cached media with the Content Indexing API
+// (on browsers that support it). The Cache Storage is the source of truth.
+export async function syncContentIndex() {
+  const registration = await navigator.serviceWorker.ready;
+  //  Bail early if the Content Indexing API isn't supported.
+  if (!('index' in registration)) {
     return;
   }
 
-  const id = new URL(url, location.href);
-  id.hash = '';
-  id.search = '';
-  // Cache keys of partial content end with index.json.
-  if (id.pathname.endsWith('/')) {
-    id.pathname += 'index.json';
+  // Get a list of everything currently in the content index.
+  const idsInIndex = new Set();
+  for (const contentDescription of await registration.index.getAll()) {
+    // Add each currently indexed id to the set.
+    idsInIndex.add(contentDescription.id);
   }
 
-  const launchUrl = new URL(url, location.href);
-  launchUrl.searchParams.set('utm_medium', 'content-indexing');
-
-  const entry = {
-    description,
-    title,
-    category: 'article',
-    icons: [getIconFromImgSrc(imgSrc)],
-    // id should match the format used for service worker runtime caching keys.
-    id: id.href,
-    // launchUrl is deprecated; https://github.com/WICG/content-index/issues/16
-    launchUrl: launchUrl.href,
-    url: launchUrl.href,
-  };
-  await registration.index.add(entry);
-
-  console.debug('Added to the content index:', entry);
-}
-
-export async function cleanupContentIndex() {
-  const registration = await getRegistrationIfSupported();
-  if (!registration) {
-    return;
-  }
-
-  // This needs to be updated if the service worker cache names change.
+  // Get all the cached JSON partials.
   const cache = await caches.open(CACHE_NAME);
   const cachedRequests = await cache.keys();
-  const cachedUrls = new Set([...cachedRequests].map((r) => r.url));
 
-  for (const indexedEntry of await registration.index.getAll()) {
-    if (!cachedUrls.has(indexedEntry.id)) {
-      await registration.index.delete(indexedEntry.id);
-      console.debug('Removed an item from the content index:', indexedEntry.id);
+  for (const request of cachedRequests) {
+    // Use the cache key URL as the unique id value.
+    const id = request.url;
+
+    // If our id is already in the index, remove it from the set of ids that
+    // need to be deleted.
+    if (idsInIndex.has(id)) {
+      idsInIndex.delete(id);
+      continue;
     }
+
+    const response = await cache.match(request);
+    const {description, imageSrc, title, url} = await response.json();
+
+    // We can use a default image, but the other fields need to be set.
+    if (!(title && description && url)) {
+      continue;
+    }
+
+    const icon = getIconFromImageSrc(imageSrc);
+
+    await registration.index.add({
+      description,
+      id,
+      title,
+      url,
+      category: 'article',
+      icons: [icon],
+      launchUrl: url,
+    });
+  }
+
+  // Finally, for all of the ids that are currently in the index but aren't
+  // cached, remove them from the index.
+  for (const id of idsInIndex) {
+    await registration.index.delete(id);
   }
 }

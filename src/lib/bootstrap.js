@@ -7,9 +7,9 @@
 
 import './webcomponents-config'; // must go before -loader below
 import '@webcomponents/webcomponentsjs/webcomponents-loader.js';
-import {cleanupContentIndex} from './content-indexing';
 import {store} from './store';
 import {swapContent, getPartial} from './loader';
+import {syncContentIndex} from './content-indexing';
 import * as router from './utils/router';
 
 WebComponents.waitFor(async () => {
@@ -35,7 +35,9 @@ WebComponents.waitFor(async () => {
 if ('serviceWorker' in navigator) {
   if (serviceWorkerIsSupported(window.location.hostname)) {
     ensureServiceWorker();
-    cleanupContentIndex();
+    syncContentIndex().catch((error) => {
+      console.error('Content Indexing error:', error);
+    });
   } else {
     removeServiceWorker();
   }
