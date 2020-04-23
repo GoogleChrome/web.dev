@@ -3,7 +3,7 @@ tags: [ "post", "pathItem" ]
 date: 2020-01-04
 thumbnail: thumbnail.png
 web_lighthouse:
-  - aria-hidden-focus
+  - false
 ---
 
 # A test post
