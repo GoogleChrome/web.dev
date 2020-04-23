@@ -81,4 +81,22 @@ describe('live-posts', function() {
     const actual = livePosts(post);
     assert.strictEqual(actual, false);
   });
+
+  it("should return false if it's before 15:00 UTC on the publish date", function() {
+    const date = new Date().setUTCHours(14, 0, 0, 0);
+    const actual = livePosts(post, date);
+    assert.strictEqual(actual, false);
+  });
+
+  it("should return true if it's exactly 15:00 UTC on the publish date", function() {
+    const date = new Date().setUTCHours(15, 0, 0, 0);
+    const actual = livePosts(post, date);
+    assert.strictEqual(actual, true);
+  });
+
+  it("should return true if it's after 15:00 UTC on the publish date", function() {
+    const date = new Date().setUTCHours(15, 1, 0, 0);
+    const actual = livePosts(post, date);
+    assert.strictEqual(actual, true);
+  });
 });

@@ -22,9 +22,11 @@ const {env} = require('../_data/site');
 
 /**
  * @param {object} post An eleventy post object.
+ * @param {Date} now A Date object representing the current time. Only used for
+ * testing.
  * @return {boolean} Whether or not the post should go live.
  */
-module.exports = function livePosts(post) {
+module.exports = function livePosts(post, now = new Date()) {
   if (!post.date) {
     throw new Error(`${post.inputPath} did not specificy a date.`);
   }
@@ -44,9 +46,8 @@ module.exports = function livePosts(post) {
   // to be at 15:00.
   // If we did not do this, then deploying the site at 4pm PST / 00:00 UTC
   // would seemingly launch posts intended for the next day.
-  const now = new Date();
   const postDate = new Date(post.date).setUTCHours(15, 0, 0, 0);
-  if (postDate >= now) {
+  if (postDate > now) {
     post.data.draft = true;
   }
 
