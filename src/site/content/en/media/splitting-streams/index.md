@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Streams
+title: Splitting streams
 description: |
   When you package media resources for DASH you'll need to separate the
   video and audio streams.

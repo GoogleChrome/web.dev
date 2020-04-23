@@ -13,72 +13,41 @@ tags:
   - Shaka
 ---
 
-Before I start manipulating media files, I want to talk a bit about how media
-files are put together. I think of them as being like an onion. The file that
-you see in your operating system shell is a _container_, identified by a file
-extension (mp4, webm, etc.). The container houses one or more _streams_. Media
-files may contain many streams of varying types and even multiple streams of the
-same type. Most files you'll encounter will only contain a single audio and a
-single video stream. (Some may also contain captions and data, but I won't be
-covering those.)
 
-Within the audio and video streams, the actual data is compressed using a
-_codec_. As explained in [Media file characteristics](application-basics#Media
-file characteristics), the distinction between a container and a codec is
-important becasue files with the same container can have their contents encoded with
-different codecs.
-
-The image below illustrates this. On the left is the basic structure. On the
-right are the specifics of that structure for an mp4. I'll explain file
-manipulation by moving downward through these layers.
-
-<figure class="w-figure">
-  <img src="./a.jpg" alt="Comparing media file structure with a hypothetical media file.">
-  <figcaption class="w-figcaption">Media container onion.</figcaption>
-</figure>
 
 ## Change the container
 
-I'll start by changing the file container. You'll recall that I'm starting
-with a file that has an mov extension. I'm going to use FFmpeg to change the
-container type from mov to mp4 and webm. In actual practice, you would likely
-specify a codec at the same time. For this lesson, I'm letting FFmpeg use its
-defaults.
+To support multiple browsers, you'll need to convert your mov file to two different containers: a
+
+I'll start by changing the file container. You'll recall that I'm starting with
+a file that has an mov extension. I'm going to use FFmpeg to change the
+container type in two different ways. In so doing, I'll create two new files,
+one an mp4 and the other a webm file. In actual practice, you would likely
+specify a codec at the same time. For now, I'm letting FFmpeg use its defaults.
 
 ```bash
 ffmpeg -i glocken.mov glocken.mp4
 ```
 {% Aside %}
-To create this article, I used FFmpeg version 3.2.2-tessus. If the command
+To create this article, I used FFmpeg version 4.2.2-tessus. If the command
 lines don't work for your version of FFmpeg, consult the FFmpeg documentation.
 {% endAside %}
-
-Creating a webm file is a bit more complicated. FFmpeg has no trouble converting
-a mov file to a webm file that will play in Chrome and Firefox. For whatever
-reason, the file created using FFmpeg's defaults (at least for the version I
-used) doesn't quite conform to the webm spec. (For the curious, it sets a
-`DisplayUnit` size that isn't defined by the webm spec.) Fortunately, I can fix
-this using a video filter. Do so with the `-vf` flag and the setsar filter.
-
-```bash
-ffmpeg -i glocken.mov -vf setsar=1:1 glocken.webm
-```
 
 Webm takes quite a bit longer to create than mp4. This isn't surprising when
 you look at the results. While mp4 compresses to about a quarter of the original
 file's size, webm is down in the single digits, though results may vary.
 
 ```bash
--rw-r--r--. 1 fr  12M Jun 27 11:48 glocken.mov
--rw-rw-r--. 1 fr 9.7M Jun 27 14:47 glocken.mp4
--rw-rw-r--. 1 fr 480K Jun 27 14:50 glocken.webm
+-rw-r--r-- 1 jmedley  eng  12080306 Apr 21 13:13 glocken.mov
+-rw-r--r-- 1 jmedley  eng  10146121 Apr 21 13:25 glocken.mp4
+-rw-r--r-- 1 jmedley  eng    491743 Apr 21 13:30 glocken.webm
 ```
 
 ## Check your work
 
 This is a good place to remind you that you can verify the results of these
 tasks using the same applications you're using to do the work. Remember that, as described in
-[Application basics](application-basics), you'll need both FFmpeg and Shaka
+[Application basics](../application-basics), you'll need both FFmpeg and Shaka
 Packager since neither shows you everything.
 
 ```bash
@@ -91,14 +60,13 @@ ffmpeg -i glocken.mp4
 
 ## Codecs
 
-Continuing downward, we arrive at the codec. _Codec_, which is short for _coder-
-decoder_, is a compression format for video or audio data.  As stated earlier, a
+Next the codec. As stated earlier, a
 codec is _not_ the same thing as a container. Two files of the same container
 type could hold data compressed using completely different codecs. The webm
 format for example allows audio to be encoded using either
 [vorbis](https://en.wikipedia.org/wiki/Vorbis) or
 [opus](https://en.wikipedia.org/wiki/Opus_(audio_format)). To change the codec I
-need FFmpeg.
+use FFmpeg.
 
 In the last section I demuxed the audio and video like this:
 
@@ -108,11 +76,11 @@ ffmpeg -i glocken.webm -acodec copy -vn glocken_audio.webm
 ```
 
 If I need to change the audio and video codec, I would replace the `copy` keyword
-with the name of a codec. For example, this command outputs an audio file
+with the name of a codec. For example, this command outputs an audio file˜
 encoded with the aac codec.
 
 ```bash
-ffmpeg -i glocken.webm -vn -c:a vorbis glocken.m4a
+ffmpeg -i glocken.webm -c:a vorbis glocken.m4a
 ```
 
 The [cheat sheet](/web/fundamentals/media/manipulating/cheatsheet#codec) lists
