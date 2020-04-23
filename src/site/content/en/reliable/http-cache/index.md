@@ -140,7 +140,7 @@ web server's response headers.
   You can't, at least not without changing the URL of the resource. After the
   browser caches the response, the cached version is used until it's no longer
   fresh, as determined by <code>max-age</code> or <code>expires</code>, or until it is evicted from the cache
-  for some other reason— for example, the user clearing their browser cache. As a
+  for some other reason—for example, the user clearing their browser cache. As a
   result, different users might end up using different versions of the file when
   the page is constructed: users who just fetched the resource use the new
   version, while users who cached an earlier (but still valid) copy use an older
