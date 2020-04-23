@@ -45,7 +45,7 @@ Poorly designed signin forms get high bounce rates. Each bounce means a lost and
 * Build page analytics, interaction analytics and user-centric performance measurement into your signup and signin flow.
 
 
-{% Aside 'caution' %}
+{% Aside %}
 This article is about front-end best practice. It does not explain how to build back-end services to authenticate users, store their credentials or manage their accounts.
 
 [12 best practices for user account, authorization and password management](https://cloud.google.com/blog/products/gcp/12-best-practices-for-user-account) outlines core principles for running your own back-end.
@@ -263,10 +263,8 @@ Modern browsers automatically prompt and set focus for missing data.
 
 No JavaScript required!
 
-
-
 <figure class="w-figure">
-  <img src="./missing-field-firefox-android.png" alt="Screenshot of desktop Firefox and Chrome for Android showing 'Please fill out this field' prompt for missing data.">
+  <img src="./missing-field-firefox-android.png" alt="Screenshot of desktop Firefox and Chrome for Android showing 'Please fill out this field' prompt for missing data." width="600">
   <figcaption class="w-figcaption">Prompt and focus for missing data, desktop Firefox and Chrome for Android.</figcaption>
 </figure>
 
@@ -290,35 +288,28 @@ The default size and padding for inputs and buttons is too small on desktop and 
 </figure>
 
 
-According to [Android accessibility guidance](https://support.google.com/accessibility/android/answer/7101858?hl=en-GB) the recommended target size for touchscreen objects is 7–10 mm. Apple interface guidelines suggest 48x48 px, and the W3C suggest [at least 44x44 CSS pixels](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html).
-
-On that basis, add (at least) about 15 px of padding to input elements and buttons for mobile, and around 10 px on desktop. Try this out with a real mobile device and a real finger or thumb. You should comfortably be able to tap each of your inputs and buttons.
+According to [Android accessibility guidance](https://support.google.com/accessibility/android/answer/7101858?hl=en-GB) the recommended target size for touchscreen objects is 7–10 mm. Apple interface guidelines suggest 48x48 px, and the W3C suggest [at least 44x44 CSS pixels](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html). On that basis, add (at least) about 15 px of padding to input elements and buttons for mobile, and around 10 px on desktop. Try this out with a real mobile device and a real finger or thumb. You should comfortably be able to tap each of your inputs and buttons.
 
 {% Aside 'gotchas' %}
-Design for thumbs!
+Design for thumbs.
 
 Search for [touch target](https://www.google.com/search?q=touch+target) and you'll see lots of pictures of forefingers. However, in the real world, many people use their thumbs to interact with phones.
 
-Thumbs are bigger than forefingers, and control is less precise.
-
-All the more reason for adequately sized touch targets.
+Thumbs are bigger than forefingers, and control is less precise. All the more reason for adequately sized touch targets.
 {% endAside %}
 
 ### Make text big enough
 
 As with size and padding, the default browser font size for input elements and buttons is too small, particularly on mobile.
 
-[Screenshots of input with no styling on desktop and mobile, multiple browsers.]
+<figure class="w-figure">
+  <img src="./unstyled-form-text.png" alt="Screenshot of unstyled form in Chrome on desktop and on Android.">
+  <figcaption class="w-figcaption">Default styling on desktop and mobile: input text is too small to be legible for many users.</figcaption>
+</figure>
 
-Browsers on different platforms size fonts differently, so it's difficult to specify a particular font size that works well everywhere. A quick survey of popular websites shows sizes of 13–16 px on desktop: that's probably a good minimum
+Browsers on different platforms size fonts differently, so it's difficult to specify a particular font size that works well everywhere. A quick survey of popular websites shows sizes of 13–16 px on desktop: matching that physical size is a good minimum for text on mobile.
 
-Make sure to use a larger pixel size on mobile: 16 px on Chrome on desktop is quite large but, without 20/20 vision, is quite hard to read on Chrome on Android.
-
-[Screenshot: 16 px on desktop versus mobile]
-
-20 px is about right on mobile—but you can test this out with friends or colleagues who don't have 20/20 vision.
-
-[Screenshot: 20 px on Android and iOS.]
+This means you need to use a larger pixel size on mobile: 16 px on Chrome on desktop is quite legible, but even with 20/20 vision it's difficult to read 16 px text on Chrome on Android. You can set different font pixel sizes for different viewport sizes using [media queries](https://developers.google.com/web/fundamentals/design-and-ux/responsive#apply_media_queries_based_on_viewport_size). 20 px is about right on mobile—but you should test this out with friends or colleagues who don't have 20/20 vision.
 
 {% Aside 'caution' %}
 Unfortunately, autofill text (on Chrome for Android, at least) is small, and can't be sized with CSS.
@@ -329,32 +320,42 @@ There's a bug for this at [crbug.com/953689](crbug.com/953689). If you think thi
 
 ### Provide enough space between inputs
 
-Sounds obvious, but many sites get this wrong:
+Sounds obvious, but many sites get this wrong.
 
-[Screenshot of inputs too close together.]
-
-Add enough margin to make inputs work well as touch targets. In other words, aim for about a finger width of margin:
-
-[Screenshot of inputs with reasonable spacing.]
+Add enough margin to make inputs work well as touch targets. In other words, aim for about a finger width of margian.
 
 
 ### Make sure your inputs are clearly visible
 
-The default border styling for inputs makes them hard to see. They're almost invisible on some platforms such as Chrome for Android:
+The default border styling for inputs makes them hard to see. They're almost invisible on some platforms such as Chrome for Android.
 
-[Screenshot showing unstyled input element on Chrome for Android]
+As well as padding, add a border (#ccc or darker is a start).
 
-As well as padding, add a border (#ccc or darker is a start):
+<figure class="w-figure">
+  <img src="./styled-signin-form.png" alt="Screenshot of styled form in Chrome on Android." width="250">
+  <figcaption class="w-figcaption">Legible text, visible input borders, adequate padding and margins.</figcaption>
+</figure>
 
-[Screenshot showing input element with border-color: #ccc and padding on Chrome for Android]
 
+### Use built-in browser features to warn of invalid input values
 
-### Use CSS to show invalid input values
+Browsers have built-in features to do basic form validation for inputs with a `type` attribute.
 
-You can use the :invalid CSS selector like this:
+Browsers warn when you submit a form with an invalid value, and set focus on the problematic input.
 
-`input[type=email]:invalid`
+<figure class="w-figure">
+  <img src="./invalid-email.png" alt="Screenshot of a signin form in Chrome on desktop showing browser prompt and focus foor an invalid email value." width="300">
+  <figcaption class="w-figcaption">Basic built-in validation by the browser.</figcaption>
+</figure>
 
+You can use the :invalid CSS selector to highlight invalid data. The `:not(:placeholder-shown)` is used to avoid selecting inputs with no content. 
+
+```css
+input[type=email]:not(:placeholder-shown):invalid {
+  color: red;
+  outline-color: red;
+}
+```
 
 
 ## Use JavaScript where necessary
@@ -363,23 +364,82 @@ You can use the :invalid CSS selector like this:
 
 You should add a **Show password** icon or button to enable users to check the text they've entered. [Usability suffers](https://www.nngroup.com/articles/stop-password-masking/) when users can't see the text they've entered. Currently there's no built-in way to display **Show password** UI, though [there are plans for implementation](https://twitter.com/sw12/status/1251191795377156099), so you'll need to use JavaScript. You can see this in action in the codelab for this article.
 
-With a **Show password** button, make sure to include an`aria-label` warn that the password will be displayed. Otherwise screenreader users may inadvertently reveal passwords:
+<figure class="w-figure">
+  <img src="./show-password.png" alt="Google signin form showing Show password icon." width="300">
+  <figcaption class="w-figcaption">Google signin form: with <strong>Show password</strong> icon and <strong>Forgot password</strong> link.</figcaption>
+</figure>
+
+Codee to add **Show password** functionality is straightforward:
+
+```html
+<div>
+  <label for="password">Password</label>
+  <button id="toggle-password" type="button" aria-label="Show password as plain text. Warning: this will display your password on the screen.">Show password</button>
+  <input id="password" name="password" type="password" autocomplete="current-password" required>
+</div>
+```
+
+```css
+button#toggle-password {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--light-font);
+  font-size: 16px;
+  font-weight: 300;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+```
+
+```javascript
+const togglePasswordButton = document.getElementById('toggle-password');
+togglePasswordButton.addEventListener('click', togglePassword);
+
+function togglePassword() {
+  if (passwordInput.type === 'password') {
+    passwordInput.type = 'text';
+    togglePasswordButton.textContent = 'Hide password';
+    togglePasswordButton.setAttribute('aria-label',
+      'Hide password.');
+  } else {
+    passwordInput.type = 'password';
+    togglePasswordButton.textContent = 'Show password';
+    togglePasswordButton.setAttribute('aria-label',
+      'Show password as plain text. ' +
+      'Warning: this will display your password on the screen.');
+  }
+}
+```
+
+### Make password inputs accessible
+
+Use `aria-describedby` to explain password constraints, using the element that describes the constraints for your password input. Screenreaders will read the label, the input type (password), and then the description. 
+
+```html
+<input type="password" aria-describedby="password-constraints" ...>
+<div id="password-constraints">Eight or more characters with a mix of letters, numbers and symbols.</div>
+```
+
+When you add **Show password** functionality, make sure to include an`aria-label` to warn that the password will be displayed. Otherwise users may inadvertently reveal passwords.
 
 ```html
 <button id="toggle-password" aria-label="Show password as plain text.
 Warning: this will display your password on the screen.">Show password</button>
 ```
 
+You can see both these `aria` features in action at [glitch.com/#!/signup-form](https://glitch.com/edit/#!/signup-form).
+
 [Creating Accessible Forms](https://webaim.org/techniques/forms/) has more tips to help make forms accessible.
 
 
-### Validate before submission
+### Validate in realtime and before submission
 
-[Validation: see https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_javascript_for_more_complex_real-time_validation)
-Prevent submission of invalid forms
-Masking
-…
-]
+You can use built-in browser features to do basic form validation, but you should also use JavaScript for more robust validation while users are entering data, and when they attempt to submit the form. You must always validate and sanitize data on your back-end, but client-side validation helps users and avoids unnecessary server load.
+
+Find out more: [Use JavaScript for more complex real-time validation](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_javascript_for_more_complex_real-time_validation).
 
 
 ### Analytics and RUM
@@ -388,11 +448,12 @@ Masking
 
 [Discount usability testing](https://www.nngroup.com/articles/discount-usability-20-years/) can be helpful for trying out changes, but you'll need real-world data to really understand how your users experience your signup and signin forms:
 
-* **Page analytics**: including page views, bounce rates, and exit pages.
+* **Page analytics**: including signup and signin page views, bounce rates, and exits.
 * **Interaction analytics**: such as [goal funnels](https://support.google.com/analytics/answer/6180923?hl=en) (where do users abandon your signin or signin flow?) and [events](https://developers.google.com/analytics/devguides/collection/gtagjs/events) (what actions do users take when interacting with your forms?)
 * **Website performance**: [user-centric metrics](/user-centric-performance-metrics) to understand the real experience of your users (are your signup and signin forms slow for some reason and, if so, what is the cause?).
 
 You may also want to consider implementing A/B testing in order to try out different approaches to signup and signin, and staged rollouts to 'test the water' before releasing changes to all your users.
+
 
 
 ## …and finally
@@ -400,13 +461,13 @@ You may also want to consider implementing A/B testing in order to try out diffe
 Some general guidelines to help reduce signin form abandonment:
 
 * Don't make users hunt for signin. It's surprising how many sites get this wrong! Put a link to the signin form at the top of the page, with well-understood wording such as **Sign In**, **Create Account** or **Register**.
-* Keep it focused! This is not the place to distract people with offers and unrelated site features.
-* Where possible, keep signin separate from collection of other user data such as addresses or credit card details.
-* Before users start on your signin form, make it clear what the value proposition is. How do they benefit from signing in? Make sure users have real incentives to complete signin.
-* Allow for mobile phone or email.
-* Add CAPTCHA (such as reCAPTCHA) if necessary
+* Keep it focused! Signup forms are not the place to distract people with offers and other site features.
+* Minimize signin data. Collect other user data (such as addresses or credit card details) only when necessary, and when users understand the benefits.
+* Before users start on your signin form, make it clear what the value proposition is. How do they benefit from signing in? Give users have concrete incentives to complete signin.
+* If possible, allow users to identify themselves with a mobile phone number instead of an email address.
 * Make it easy for users to get a forgotten password, or reset their password.
 
+[Something about (re)CAPTCHA?]
 
 
 ## Find out more
@@ -414,5 +475,6 @@ Some general guidelines to help reduce signin form abandonment:
 * [Create Amazing Forms](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
 * [Best Practices For Mobile Form Design](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 * [More capable form controls](/more-capable-form-controls)
+* [Creating Accessible Forms](https://webaim.org/techniques/forms/)
 
 Photo by [Katka Pavlickova](https://unsplash.com/@katerinapavlickova) on [Unsplash](https://unsplash.com).
