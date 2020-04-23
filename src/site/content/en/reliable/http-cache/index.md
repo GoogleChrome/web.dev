@@ -201,8 +201,6 @@ are cached:
 * `no-store`. This instructs the browser and other intermediate caches (like CDNs) to never
   store any version of the file.
 * `private`. Browsers can cache the file but intermediate caches cannot.
-  For example, `private` would make sense for a server-side rendered HTML file
-  that contains private user information.
 * `public`. The response can be stored by any cache, even if it's usually not cacheable.
 
 
