@@ -2,7 +2,7 @@
 title: |
   Boldly link where no one has linked before: Text Fragments
 subhead: |
-  Text Fragments adds support for specifying a text snippet in the URL fragment.
+  Text Fragments let you specify a text snippet in the URL fragment.
   When navigating to a URL with such a text fragment, the browser can quickly emphasize
   and/or bring it to the user's attention.
 authors:
