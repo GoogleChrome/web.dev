@@ -201,7 +201,7 @@ are cached:
 * `no-store`. This instructs the browser and other intermediate caches (like CDNs) to never
   store any version of the file.
 * `private`. Browsers can cache the file but intermediate caches cannot.
-* `public`. The response can be stored by any cache, even if it's usually not cacheable.
+* `public`. The response can be stored by any cache.
 
 
 Check out [Appendix: `Cache-Control` flowchart](#flowchart) to visualize the process
