@@ -3,7 +3,7 @@ const path = require('path');
 const runEleventy = require('./runEleventy');
 
 describe('_collections', function() {
-  describe('_collections in DEV env', function() {
+  describe('in DEV env', function() {
     before(async function() {
       await runEleventy('dev', '.');
       console.log('Eleventy build finished. Starting tests...');
@@ -17,7 +17,7 @@ describe('_collections', function() {
     require('./recent-posts/dev.spec');
   });
 
-  describe('_collections in PROD env', function() {
+  describe('in PROD env', function() {
     before(async function() {
       await runEleventy('prod', '.');
       console.log('Eleventy build finished. Starting tests...');
