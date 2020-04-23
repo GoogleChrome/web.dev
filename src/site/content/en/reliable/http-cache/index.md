@@ -199,8 +199,7 @@ are cached:
 * `no-cache`. This instructs the browser that it must revalidate with the
   server every time before using a cached version of the URL.
 * `no-store`. This instructs the browser and other intermediate caches (like CDNs) to never
-  store any version of the file. `no-store` is often used for files that have sensitive or
-  personal data.
+  store any version of the file.
 * `private`. Browsers can cache the file but intermediate caches cannot.
   For example, `private` would make sense for a server-side rendered HTML file
   that contains private user information.
