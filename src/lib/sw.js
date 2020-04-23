@@ -202,7 +202,7 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
   const rss = `<link rel="alternate" href="${rssHref}" type="application/atom+xml" data-title="${rssTitle}" />`;
 
   const output = layoutTemplate
-    .replace(/<title\>.*\<\/title\>/, `${meta}\n${title}\n${rss}`)
+    .replace('<!-- %_HEAD_REPLACE_% -->', `${meta}\n${title}\n${rss}`)
     .replace('%_CONTENT_REPLACE_%', partial.raw);
   const headers = new Headers();
   headers.append('Content-Type', 'text/html');

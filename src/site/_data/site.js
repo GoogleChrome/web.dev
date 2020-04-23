@@ -19,7 +19,6 @@ const locale = require('../../../shared/locale');
 module.exports = {
   env: process.env.ELEVENTY_ENV || 'dev',
   percy: process.env.PERCY || false,
-  // This effects the title in `_includes/layout.njk`
   title: 'web.dev',
   titleVariation: 'Home',
   defaultLocale: locale.defaultLocale,
