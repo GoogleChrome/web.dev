@@ -13,8 +13,6 @@ tags:
   - Shaka
 ---
 
-
-
 ## Change the container
 
 To support multiple browsers, you'll need to convert your mov file to two different containers: a
