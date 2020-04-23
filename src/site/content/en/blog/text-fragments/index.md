@@ -39,7 +39,7 @@ You can see an excerpt of the blog post in the screenshot below.
 </figure>
 
 Probably you ask yourself what all the red boxes mean.
-They are the result of running the following snippet in the Developer Tools.
+They are the result of running the following snippet in DevTools.
 It highlights all elements that have an `id` attribute.
 
 ```js
