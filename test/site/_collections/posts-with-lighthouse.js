@@ -10,13 +10,33 @@ describe('posts-with-lighthouse', function() {
         data: {},
         date: new Date(),
       },
+      {
+        tags: ['pathItem'],
+        data: {},
+        date: new Date(),
+      },
     ];
     const collection = new MockCollection(posts);
     const actual = postsWithLighthouse(collection);
     assert.strictEqual(actual.length, 0);
   });
 
-  it('should include posts without web_lighthouse', function() {
+  it('should remove posts with web_lighthouse set to N/A', function() {
+    const posts = [
+      {
+        tags: ['pathItem'],
+        data: {
+          web_lighthouse: 'N/A',
+        },
+        date: new Date(),
+      },
+    ];
+    const collection = new MockCollection(posts);
+    const actual = postsWithLighthouse(collection);
+    assert.strictEqual(actual.length, 0);
+  });
+
+  it('should include posts with a valid web_lighthouse value', function() {
     const posts = [
       {
         tags: ['pathItem'],
