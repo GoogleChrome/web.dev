@@ -1,17 +1,9 @@
 ---
+layout: page
 title: Web Vitals
-subhead: Essential metrics for a healthy site
+description: Essential metrics for a healthy site
 date: 2020-04-20
-# authors:
-#   - philipwalton
-# date: 2020-04-13
-updated: 2020-04-22
-# hero: hero.jpg
-# alt: A pile of photos.
-# description: |
-#   Instructions on how to optimize images with Thumbor. Thumbor is an open-source image CDN and can be used for free to resize, compress, and transform images.
-tags:
-  # - post # post is a required tag for the article to show up in the blog.
+masthead: web-vitals.png
 ---
 
 Optimizing for quality of user experience is key to the long-term success of any site on the web. Whether you are a business owner, marketer, or developer, Web Vitals can help you quantify the experience of your site and identify opportunities to improve.
