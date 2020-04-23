@@ -82,21 +82,31 @@ describe('live-posts', function() {
     assert.strictEqual(actual, false);
   });
 
+  it('should throw if now argument is not a Date', function() {
+    assert.throws(
+      () => livePosts(post, undefined, undefined, 0),
+      /must by a Date object/,
+    );
+  });
+
   it("should return false if it's before 15:00 UTC on the publish date", function() {
-    const date = new Date().setUTCHours(14, 0, 0, 0);
-    const actual = livePosts(post, date);
+    const date = new Date();
+    date.setUTCHours(14, 0, 0, 0);
+    const actual = livePosts(post, undefined, undefined, date);
     assert.strictEqual(actual, false);
   });
 
   it("should return true if it's exactly 15:00 UTC on the publish date", function() {
-    const date = new Date().setUTCHours(15, 0, 0, 0);
-    const actual = livePosts(post, date);
+    const date = new Date();
+    date.setUTCHours(15, 0, 0, 0);
+    const actual = livePosts(post, undefined, undefined, date);
     assert.strictEqual(actual, true);
   });
 
   it("should return true if it's after 15:00 UTC on the publish date", function() {
-    const date = new Date().setUTCHours(15, 1, 0, 0);
-    const actual = livePosts(post, date);
+    const date = new Date();
+    date.setUTCHours(15, 1, 0, 0);
+    const actual = livePosts(post, undefined, undefined, date);
     assert.strictEqual(actual, true);
   });
 });

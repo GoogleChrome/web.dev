@@ -21,12 +21,26 @@
 const {env} = require('../_data/site');
 
 /**
+ * This function is commonly passed to Array.filter() and used to filter an
+ * Eleventy collection of posts. It will remove posts with a future publish
+ * date, or if the post's draft flag is set to true.
+ *
+ * Note, since Array.filter() always passes the index and array as arguments
+ * to the function we ignore them. However, we _do_ want to be able to pass
+ * a custom Date to the function so we can write unit tests for it. That's
+ * why we use the weird destructuring in the function signature.
  * @param {object} post An eleventy post object.
+ * @param {number} index Ignored.
+ * @param {Array} arr Ignored.
  * @param {Date} now A Date object representing the current time. Only used for
  * testing.
  * @return {boolean} Whether or not the post should go live.
  */
-module.exports = function livePosts(post, now = new Date()) {
+module.exports = function livePosts(...[post, , , now = new Date()]) {
+  if (!(now instanceof Date)) {
+    throw new Error(`now argument must by a Date object.`);
+  }
+
   if (!post.date) {
     throw new Error(`${post.inputPath} did not specificy a date.`);
   }
@@ -46,8 +60,9 @@ module.exports = function livePosts(post, now = new Date()) {
   // to be at 15:00.
   // If we did not do this, then deploying the site at 4pm PST / 00:00 UTC
   // would seemingly launch posts intended for the next day.
-  const postDate = new Date(post.date).setUTCHours(15, 0, 0, 0);
-  if (postDate > now) {
+  const postDate = new Date(post.date);
+  postDate.setUTCHours(15, 0, 0, 0);
+  if (postDate.getTime() > now.getTime()) {
     post.data.draft = true;
   }
 
