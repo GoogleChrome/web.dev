@@ -296,10 +296,7 @@ In the concrete case, `text=` is therefore called a *text directive*.
 
 ### Feature detectability
 
-Support for Text Fragments is feature-detectable
-by checking for the existence of the `fragmentDirective` in the `Location` interface.
-Unlike the other properties like `hash` that I have mentioned above,
-`fragmentDirective` does not return any value and is read-only.
+To detect support, test for the read-only `fragmentDirective` property on `window.location`.
 The fragment directive is a mechanism for URLs to specify instructions
 directed to the browser rather than the document.
 It is meant to avoid direct interaction with author script,
