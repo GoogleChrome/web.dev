@@ -9,32 +9,28 @@ module.exports = {
     title: "Media",
     updated: "April 30, 2020",
     description: `Add audio and video to your web sites`,
-    overview: `In this collection, you'll learn how to add basic audio and
-    video capabilities to your web site.`,
+    overview: `Learn to add media capabilities to your website using either
+    basic markdown or a media framework such as Google's Shaka Player, JW
+    Player or Video.js.`,
     topics: [
       {
-        title: "What is a media experience",
-        pathItems: ["media-experience"],
+        title: "Conceptual basics",
+        pathItems: [
+          "media-experience",
+          "file-basics",
+          "application-basics",
+          "cheetsheet",
+        ],
       },
       {
-        title: "Prepare files",
-        pathItems: ["files-introduction", "application-basics"],
-        subtopics: [
-          {
-            title: "For embedding",
-            pathItems: [
-              "for-embedding",
-              "containers-and-codecs",
-              "bitrate",
-              "resolution",
-              "encryption",
-              "application-cheetsheet",
-            ],
-          },
-          {
-            title: "For media frameworks",
-            pathItems: ["streams", "for-frameworks"],
-          },
+        title: "Prepare files for embedding",
+        pathItems: [
+          "for-embedding",
+          "containers-and-codecs",
+          "bitrate",
+          "resolution",
+          "encryption",
+          "application-cheetsheet",
         ],
       },
       {
@@ -48,12 +44,16 @@ module.exports = {
         ],
       },
       {
-        title: "Serving",
-        pathItems: ["preloading", "server-basics"],
+        title: "Using media frameworks",
+        pathItems: [
+          "for-frameworks",
+          "splitting-streams",
+          "selecting-a-framework",
+        ],
       },
       {
-        title: "Extras",
-        pathItems: ["cheetsheet"],
+        title: "Serving media",
+        pathItems: ["preloading", "server-basics"],
       },
     ],
   },
