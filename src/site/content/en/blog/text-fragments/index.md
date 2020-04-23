@@ -340,7 +340,7 @@ I wanted to link to before in my running example),
 text fragments can be created by anyone.
 
 Imagine I ran an evil ad network `evil-ads.example.com`.
-Further imagine that in one of my ad iframes I opened a hidden cross-origin iframe
+Further imagine that in one of my ad iframes I created a hidden cross-origin iframe
 to `dating.example.com` with a Text Fragment URL
 <code>dating.example.com<strong>#:~:text=Log%20Out</strong></code>
 when the user interacts with the ad.
