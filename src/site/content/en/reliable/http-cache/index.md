@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'The HTTP Cache: Avoiding unnecessary network requests with `Cache-Control` and `ETag`'
+title: 'Prevent unnecessary network requests with the HTTP Cache'
 authors:
   - jeffposnick
   - ilyagrigorik
