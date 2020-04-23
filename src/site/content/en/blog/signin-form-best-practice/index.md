@@ -251,7 +251,7 @@ The downside with this approach is that there's no way to share passwords across
 
 For example, a user may use Safari on their iPhone and Chrome on their Windows laptop.
 
-[So — what's our advice?]
+[So what's our advice?]
 {% endAside %}
 
 
