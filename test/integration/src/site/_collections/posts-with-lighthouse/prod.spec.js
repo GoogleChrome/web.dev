@@ -12,11 +12,9 @@ const outputPath = path.join(
 );
 
 describe('posts-with-lighthouse', function() {
-  describe('postsWithLighthouse', function() {
-    it('does not include drafts in the postsWithLighthouse collection in prod', async function() {
-      const expected = '<p>test-4</p>';
-      const actual = fs.readFileSync(outputPath, 'utf8');
-      assert.equal(actual, expected);
-    });
+  it('does not include drafts in the postsWithLighthouse collection in prod', async function() {
+    const expected = '<p>test-4</p>';
+    const actual = fs.readFileSync(outputPath, 'utf8');
+    assert.equal(actual, expected);
   });
 });
