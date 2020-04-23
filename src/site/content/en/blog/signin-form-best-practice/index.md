@@ -16,10 +16,13 @@ tags:
   - privacy
   - security
   - trust and safety
+codelabs:
+  - codelab-signup-form
+  - codelab-signin-form
 ---
 
 
-If users ever need to log in to your site, then good signin form design is absolutely crucial.
+If users ever need to log in to your site, then good signin form design is critical.
 
 This is especially true for people on poor connections, on mobile, in a hurry, or under stress.
 
@@ -56,11 +59,9 @@ The basic principle here is to use elements built for the job: `<form>`, `<label
 
 ### Use &lt;form&gt;
 
-You might be tempted to wrap inputs in a `<div>` and handle submission purely with JavaScript.
+You might be tempted to wrap inputs in a `<div>` and input data submission purely with JavaScript. It's generally better to use a plain old `<form>`. This makes your site accessible to screenreaders and other assistive devices, and enables a range of built-in browser features (see below).
 
-It's generally better to use a plain old `<form>`. This makes your site accessible to screenreaders and other assistive devices, and enables a range of built-in browser features (see below).
-
-An HTML form can also make it simpler to build basic functional signin for older browsers, and to enable signin even if JavaScript fails.
+An HTML form makes it simpler to build basic functional signin for older browsers, and to enable signin even if JavaScript fails.
 
 ### Use &lt;label&gt;
 To label an input, use a `<label>`!
@@ -71,7 +72,7 @@ To label an input, use a `<label>`!
 ```
 
 Two reasons:
-* A tap or click on a label moves focus to its input. (You associate a label with an input by using the label's `for` attribute with the input's ID.)
+* A tap or click on a label moves focus to its input. Associate a label with an input by using the label's `for` attribute with the input's ID.
 * Screenreaders announce label text when the label or the label's input gets focus.
 
 Don't use placeholders as input labels. People are liable to forget what the input was for once they've started entering text, especially if they get distracted. (Was I entering an email address or a phone number, or something else?) There are lots of other potential problems with placeholders: see [Don't Use The Placeholder Attribute](https://www.smashingmagazine.com/2018/06/placeholder-attribute/) and [Placeholders in Form Fields Are Harmful](https://www.nngroup.com/articles/form-design-placeholders/) if you're unconvinced.
@@ -83,21 +84,19 @@ Try out the example at [glitch.com/edit/#!/label-position](https://glitch.com/ed
 {% endAside %}
 
 <figure class="w-figure">
-  <img src="./label-position.png" alt="Screenshot showing form input label position on mobile: next to input and above input.">
+  <img src="./label-position.png" alt="Screenshot showing form input label position on mobile: next to input and above input." width="500">
   <figcaption class="w-figcaption">Label and input width is limited when both are on the same line.</figcaption>
 </figure>
 
-[Add information about `aria[describedby`?]
+[Add information about `aria-describedby`?]
 
 ### Use &lt;button&gt;
 
-As with forms and labels, use button elements for button behaviour, to improve accessibility and enable built-in browser functionality.
+Use button elements for button behaviour, to improve accessibility and enable built-in browser functionality. 
 
-Consider disabling the signin button when the user taps or clicks it. [Many users click buttons multiple times, every time](https://baymard.com/blog/users-double-click-online) even on sites that are fast and responsive! That just slows things down and can add to server load.
+Consider disabling the signin button once the user has tapped or clicked it. [Many users click buttons multiple times](https://baymard.com/blog/users-double-click-online) even on sites that are fast and responsive. That just slows things down and adds to server load.
 
-Conversely, don't disable the signin button awaiting user input. Users may miss out something in the form, then try tapping the (disabled) signin button and think it's not working. If they tap on the disabled button, tell them what's missing.
-
-[Screenshot: anonymised version of Google Meet login, which has this problem. Caption: 'The distracted user doesn't see that they need to provide a name, and taps repeatedly on the Sign In button, which seems to be broken.]
+Conversely, don't disable form submission awaiting user input. Users may miss out something in the form, then try repeatedly tapping the (disabled) signin button and think it's not working. At the very least, if you must disable form submission, tell them what's missing.
 
 {% Aside 'caution' %}
 The default type for a button in a form is `submit`.
@@ -110,7 +109,7 @@ If you want to add another button in a form (for **Show password**, for example)
 
 Some sites force users to enter emails or passwords twice.
 
-That might reduce errors for a few users, but causes extra work for *all* users—and [increases abandonment rates](https://uxmovement.com/forms/why-the-confirm-password-field-must-die/). Better to enable users to confirm their email address (you should do that anyway) and make it easy for them to reset their password.
+That might reduce errors for a few users, but causes extra work for *all* users, and [increases abandonment rates](https://uxmovement.com/forms/why-the-confirm-password-field-must-die/). Better to enable users to confirm their email address (you'll need to do that anyway) and make it easy for them to reset their password.
 
 [Do we stats for this?]
 
@@ -119,7 +118,7 @@ That might reduce errors for a few users, but causes extra work for *all* users�
 
 This is where the magic really happens!
 
-Browsers have a lot of helpful built-in features that use input element attributes.
+Browsers have multiple helpful built-in features that use input element attributes.
 
 
 ### Help users start faster
@@ -127,19 +126,22 @@ Browsers have a lot of helpful built-in features that use input element attribut
 Add an `autofocus` attribute to the first input in your login form. That makes it clear where to start and, on desktop at least, means users don't have to select the input to start typing.
 
 <figure class="w-figure">
-  <img src="./autofocus.png" alt="Screenshot showing form input with autofocus.">
+  <img src="./autofocus.png" alt="Screenshot showing form input with autofocus." width="500">
   <figcaption class="w-figcaption">Autofocus provides clear visual focus on desktop.</figcaption>
 </figure>
 
-## Keep passwords private—but let users see them if they want
+## Keep passwords private—but enable users to see them if they want
 
 Passwords inputs should have `type="password"` to hide password text. (Sounds obvious, but some sites miss this.)
 
-However, you should add a **Show password** icon or button to enable users to check the text they've entered. (See [Enable password display](#enable-password-display).)
-
-[Screenshot from Google signin form.]
-
 Using `<input type="password">` also means that browsers such as Firefox offer to save your password when a form is submitted (along with using the `name` and `id` attributes to guess the meaning of form inputs).
+
+However, you should add a **Show password** icon or button to enable users to check the text they've entered—and don't forget to add a **Forgot password** link. (See [Enable password display](#enable-password-display).)
+
+<figure class="w-figure">
+  <img src="./show-password.png" alt="Google signin form showing Show password icon." width="300">
+  <figcaption class="w-figcaption">Google signin form: with <strong>Show password</strong> icon and <strong>Forgot password</strong> link.</figcaption>
+</figure>
 
 ## Give mobile users the right keyboard
 
@@ -153,22 +155,33 @@ If you need to use a telephone number instead of an email address, `<input type=
 
 ### Avoid the mobile keyboard covering the Submit button
 
-Unfortunately, mobile keyboards can wind up covering your form or, worse, partially obscuring the Submit button:
+Unfortunately, if you're not careful, mobile keyboards may cover your form or, worse, partially obscure the Submit button. Users may give up before realizing what has happened.
 
-[Screenshot showing Submit button partially obscured by keyboard on Android and iOS.]
+<figure class="w-figure">
+  <img src="./keyboard-not-ok.png" alt="Two screenshots of signin form on an Android phone: one showing how the Submit button is obscured by the phone keyboard." width="400">
+  <figcaption class="w-figcaption">The <strong>Sign in</strong> button: now you see it, now you don't.</figcaption>
+</figure>
 
 Where possible, avoid this by displaying only the email/phone and password inputs and submit button at the top of your signin page. Put other content below.
 
-[Screenshot showing page on Android, with and without h1.]
+<figure class="w-figure">
+  <img src="./keyboard-ok.png" alt="Screenshot of signin form on an Android phone: the Submit button is not obscured by the phone keyboard." width="200">
+  <figcaption class="w-figcaption">The keyboard doesn't obscure the <strong>Sign in</strong> button.</figcaption>
+</figure>
 
-Some sites (including Amazon and eBay) avoid the problem by asking for email/phone and password on two different 'pages'.
+Some sites (including Amazon and eBay) avoid the problem by asking for email/phone and password on two 'pages'. This approach also simplifies the experience: the user is only tasked with one thing at a time.
 
-[Screenshot]
+<figure class="w-figure">
+  <img src="./amazon-signin-mobile.png" alt="Screenshot of signin form on Amazon website: email/phone and password on two separate 'pages'." width="400">
+  <figcaption class="w-figcaption">Two-stage signin: email or phone, then password.</figcaption>
+</figure>
 
 
 ### Help users avoid re-entering data
 
-You can help browsers to help users, by autofilling inputs where possible. This is particularly true for email inputs, which get [high abandonment rates](https://www.formisimo.com/blog/conversion-rate-increases-57-with-form-analytics-case-study/).
+You can help browsers help users by autofilling inputs. This is particularly important for email inputs, which get [high abandonment rates](https://www.formisimo.com/blog/conversion-rate-increases-57-with-form-analytics-case-study/).
+
+[Add something to refute warnings **against** autocomplete?]
 
 There are two parts to this:
 1. The input `name` attribute helps browsers store data for email and other input types. Some browsers, including Firefox, also take note of the `id` and `type` attributes.
@@ -176,7 +189,9 @@ There are two parts to this:
 
 Remember that you need different behaviour for inputs in signup and signin forms. In particular, passwords shouldn't be autofilled on signup.
 
-To avoid this problem, use `name="new-password"` for the password input in a signup form, and `name="current-password"` in a signin form.
+To avoid this problem, use: 
+* `name="new-password"` for the password input in a signup form, or the new password in a change-password form.
+* `name="current-password"` for a signin form, or the old password in a change-password form.
 
 For a signup form, password input code should look like this:
 
@@ -190,15 +205,21 @@ For signin:
 <input name="current-password" type="password" autocomplete="current-password" …>
 ```
 
-Not surprisingly, different browsers handle things differently.
+Different browsers handle the email autofill and password suggestion somewhat differently, but the effect is much the same.
 
-On Safari, for example …
+On Safari on desktop, for example, the password manager is displayed, then biometric authentication (fingerprint or facial recognition) is used if available.
 
-[Show screenshot]
+<figure class="w-figure">
+  <img src="./safari-signin-desktop.png" alt="Screenshots of three stages of signin process in Safari on desktop: password manager, biometric authentication, autofill.">
+  <figcaption class="w-figcaption">Signin with autocomplete—no text entry required!</figcaption>
+</figure>
 
-On Chrome …
+Chrome on desktop displays email suggestions depending on what you type, shows the password manager, then autofills the password.
 
-[Show screenshot]
+<figure class="w-figure">
+  <img src="./chrome-signin-desktop.png" alt="Screenshots of four stages of signin process in Chrome on desktop: email completion, email suggestion, password manager, autofill on selection.">
+  <figcaption class="w-figcaption">Autocomplete signin flow in Chrome.</figcaption>
+</figure>
 
 {% Aside 'caution' %}
 
@@ -209,37 +230,65 @@ The algorithms for guessing, storing and displaying values are not standardized,
 For example, as pointed out by [Hidde de Vries](https://hiddedevries.nl/en/blog/2018-01-13-making-password-managers-play-ball-with-your-login-form): "Firefox's password manager complements [its heuristics](https://dxr.mozilla.org/firefox/source/toolkit/components/passwordmgr/src/nsLoginManager.js#626) with a [recipe system](https://bugzilla.mozilla.org/show_bug.cgi?id=1119454).
 {% endAside %}
 
-[Screencast video of Safari signin showing Touch ID]
-
 [Autofill: What web devs should know, but don't](https://cloudfour.com/thinks/autofill-what-web-devs-should-know-but-dont) has a lot more information about using `name` and `autocomplete`. The [HTML spec](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#inappropriate-for-the-control) lists all 59 possible values.
 
 
 ### Enable the browser to suggest a strong password
 
-Modern browsers suggest a strong password if `autocomplete="new-password"` is included for the password input in a signin form.
+Modern browsers suggest a strong password if `autocomplete="new-password"` is included for the password input in a signup form.
 
-[Screenshots: Chrome, Safari, Firefox]
+Here's how Safari does it on desktop.
+
+<figure class="w-figure">
+  <img src="./safari-password-suggestion.png" alt="Screenshot of Firefox password manager on desktop.">
+  <figcaption class="w-figcaption">Password suggestion flow in Safari.</figcaption>
+</figure>
+
+Using built in browser password generators means users and developers don't need to work out what a 'strong password' is. Since browsers can securely store passwords and autofill them as necessary, there's no need for users to remember or enter passwords.
+
+{% Aside %}
+The downside with this approach is that there's no way to share passwords across platforms.
+
+For example, a user may use Safari on their iPhone and Chrome on their Windows laptop.
+
+[So — what's our advice?]
+{% endAside %}
+
 
 ### Help save users from accidentally missing input fields
 
 Add the `required` attribute to both email and password fields.
 
-Modern browsers automatically prompt and set focus if you miss a required field. No JavaScript required!
+Modern browsers automatically prompt and set focus for missing data. 
 
-[Video or screenshot of built-in browser prompting—Safari desktop is good]
+No JavaScript required!
+
+
+
+<figure class="w-figure">
+  <img src="./missing-field-firefox-android.png" alt="Screenshot of desktop Firefox and Chrome for Android showing 'Please fill out this field' prompt for missing data.">
+  <figcaption class="w-figcaption">Prompt and focus for missing data, desktop Firefox and Chrome for Android.</figcaption>
+</figure>
 
 
 ## CSS for fingers and thumbs
 
 [Do we have any stats for form filling on mobile versus desktop?]
 
-The browser default size for just about everything relating to input elements and buttons is too small, especially on mobile.
+The default browser size for just about everything relating to input elements and buttons is too small, especially on mobile. 
+
+This may seem obvious, but it's a common problem with signin forms on many sites.
+
 
 ### Make sure inputs and buttons are large enough
 
 The default size and padding for inputs and buttons is too small on desktop and even worse on mobile.
 
-[Screenshots of input with no styling on desktop and mobile, multiple browsers.]
+<figure class="w-figure">
+  <img src="./unstyled-form.png" alt="Screenshot of unstyled form in Chrome on desktop and on Android.">
+  <figcaption class="w-figcaption">Default styling on desktop and mobile: inputs and buttons are too small.</figcaption>
+</figure>
+
 
 According to [Android accessibility guidance](https://support.google.com/accessibility/android/answer/7101858?hl=en-GB) the recommended target size for touchscreen objects is 7–10 mm. Apple interface guidelines suggest 48x48 px, and the W3C suggest [at least 44x44 CSS pixels](https://www.w3.org/WAI/WCAG21/Understanding/target-size.html).
 
@@ -365,3 +414,5 @@ Some general guidelines to help reduce signin form abandonment:
 * [Create Amazing Forms](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
 * [Best Practices For Mobile Form Design](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 * [More capable form controls](/more-capable-form-controls)
+
+Photo by [Katka Pavlickova](https://unsplash.com/@katerinapavlickova) on [Unsplash](https://unsplash.com).
