@@ -25,6 +25,7 @@ const rollupPluginCJS = require('rollup-plugin-commonjs');
 const rollupPluginPostCSS = require('rollup-plugin-postcss');
 const rollupPluginVirtual = require('rollup-plugin-virtual');
 const rollupPluginReplace = require('rollup-plugin-replace');
+const OMT = require('@surma/rollup-plugin-off-main-thread');
 const rollup = require('rollup');
 const terser = isProd ? require('terser') : null;
 const {getManifest} = require('workbox-build');
@@ -69,6 +70,8 @@ const defaultPlugins = [
  */
 async function buildCacheManifest() {
   const toplevelManifest = await getManifest({
+    // JS files that include hashes don't need their own revision fields.
+    dontCacheBustURLsMatching: /-[0-9a-f]{8}\.js/,
     globDirectory: 'dist',
     globPatterns: [
       // We don't include jpg files, as they're used for authors and hero
@@ -122,20 +125,6 @@ function disallowExternal(source, importer, isResolved) {
 }
 
 /**
- * Ensures that the passed Rollup result only contains a single chunk.
- *
- * @param {!Promise<rollup.RollupOutput>} rollupPromise
- * @return {!rollup.RollupChunk} the single output chunk
- */
-async function singleOutput(rollupPromise) {
-  const result = await rollupPromise;
-  if (result.output.length !== 1) {
-    throw new Error(`expected single output, was: ${result.output.length}`);
-  }
-  return result.output[0];
-}
-
-/**
  * Performs main site compilation via Rollup: first on site code, and second
  * to build the Service Worker.
  */
@@ -186,7 +175,14 @@ async function build() {
 
   const swBundle = await rollup.rollup({
     input: 'src/lib/sw.js',
-    external: disallowExternal,
+    manualChunks: (id) => {
+      const chunkNames = ['idb-keyval', 'virtual', 'workbox'];
+      for (const chunkName of chunkNames) {
+        if (id.includes(chunkName)) {
+          return chunkName;
+        }
+      }
+    },
     plugins: [
       // This variable is defined by Webpack (and some other tooling), but not by Rollup. Set it to
       // "production" if we're in prod, which will hide all of Workbox's log messages.
@@ -202,23 +198,23 @@ async function build() {
         }),
       ),
       ...defaultPlugins,
+      OMT(),
     ],
-    inlineDynamicImports: true, // SW does not support imports
   });
 
-  const swOutput = await singleOutput(
-    swBundle.write({
-      sourcemap: true,
-      dir: 'dist',
-      format: 'esm',
-    }),
-  );
+  const {output} = await swBundle.write({
+    sourcemap: true,
+    dir: 'dist',
+    format: 'amd',
+  });
 
-  const {fileName} = swOutput;
-  if (isProd) {
-    await compressOutput([fileName]);
+  for (const swOutput of output) {
+    const {fileName} = swOutput;
+    if (isProd) {
+      await compressOutput([fileName]);
+    }
+    generated.push(fileName);
   }
-  generated.push(fileName);
 
   return generated.length;
 }

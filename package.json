@@ -52,20 +52,14 @@
     "rollup-plugin-virtual": "^1.0.1",
     "terser": "^4.6.4",
     "unistore": "^3.4.1",
-    "wicg-inert": "^3.0.1",
-    "workbox-build": "^5.0.0",
-    "workbox-cacheable-response": "^5.1.2",
-    "workbox-expiration": "^5.0.0",
-    "workbox-google-analytics": "^5.0.0",
-    "workbox-precaching": "^5.0.0",
-    "workbox-routing": "^5.0.0",
-    "workbox-strategies": "^5.0.0"
+    "wicg-inert": "^3.0.1"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
     "@11ty/eleventy-plugin-rss": "^1.0.7",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "@percy/script": "^1.0.3",
+    "@surma/rollup-plugin-off-main-thread": "^1.4.1",
     "ansi-colors": "^3.2.4",
     "autoprefixer": "^9.6.1",
     "chalk": "^2.4.2",
@@ -120,6 +114,13 @@
     "unist-util-map": "^1.0.5",
     "unist-util-to-list-of-char": "^0.1.2",
     "unist-util-visit": "^1.4.1",
+    "workbox-build": "^5.1.2",
+    "workbox-cacheable-response": "^5.1.2",
+    "workbox-expiration": "^5.1.2",
+    "workbox-google-analytics": "^5.1.2",
+    "workbox-precaching": "^5.1.2",
+    "workbox-routing": "^5.1.2",
+    "workbox-strategies": "^5.1.2",
     "yaml-front-matter": "^4.0.0"
   },
   "optionalDependencies": {
