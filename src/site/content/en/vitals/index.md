@@ -3,6 +3,7 @@ layout: page
 title: Web Vitals
 description: Essential metrics for a healthy site
 date: 2020-04-20
+updated: 2020-04-22
 masthead: web-vitals.png
 ---
 
