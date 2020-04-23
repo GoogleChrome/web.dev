@@ -4,7 +4,7 @@ title: Remove unused CSS
 description: |
   Learn about the unused-css-rules audit.
 date: 2019-05-02
-updated: 2020-04-14
+updated: 2020-04-23
 web_lighthouse:
   - unused-css-rules
 ---

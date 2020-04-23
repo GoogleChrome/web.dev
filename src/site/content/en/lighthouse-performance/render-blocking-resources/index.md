@@ -4,7 +4,7 @@ title: Eliminate render-blocking resources
 description: |
   Learn about the render-blocking-resources audit.
 date: 2019-05-02
-updated: 2020-04-14
+updated: 2020-04-23
 web_lighthouse:
   - render-blocking-resources
 ---
