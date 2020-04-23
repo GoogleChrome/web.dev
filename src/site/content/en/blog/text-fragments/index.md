@@ -38,7 +38,7 @@ You can see an excerpt of the blog post in the screenshot below.
   <figcaption class="w-figcaption">Chromium blog post with red boxes around elements with an <code>id</code> attribute.</figcaption>
 </figure>
 
-Probably you ask yourself what all the red boxes mean.
+You are probably asking yourself what all the red boxes mean.
 They are the result of running the following snippet in DevTools.
 It highlights all elements that have an `id` attribute.
 
