@@ -30,6 +30,8 @@ const isProd = process.env.ELEVENTY_ENV === 'prod';
 
 const compressImagesTransform = (pngQuality, jpegQuality) => {
   if (!isProd) {
+    // This is the identity transform, which does nothing and just passes
+    // the images through directly.
     return through2.obj();
   }
   return imagemin([
