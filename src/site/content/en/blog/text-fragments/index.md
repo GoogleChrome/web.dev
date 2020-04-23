@@ -363,7 +363,7 @@ on a text fragment link with `:~:text=burn%20out`
 that the employee may have assumed was confidential and not visible to anyone.
 Since this example is somewhat contrived
 and its exploitation requires very specific preconditions to be met,
-on the Chrome team we have decided to implement scroll on navigation,
+the Chrome team decided to implement scroll on navigation,
 which is one of the preconditions.
 Other user agents may decide to show a manual scroll UI element instead.
 For sites that still wish to opt-out, we have proposed a
