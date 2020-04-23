@@ -7,7 +7,6 @@ const outputPath = path.join(
   '..',
   '.tmp',
   path.basename(__dirname),
-  'pages',
   'collection',
   'index.html',
 );

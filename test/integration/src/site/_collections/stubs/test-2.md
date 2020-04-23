@@ -5,4 +5,7 @@ hero: hero.jpg
 thumbnail: thumbnail.png
 ---
 
-# A test blog post, with a hero and a thumbnail image
+# A test post
+
+This test post belongs to collections:
++ recentPosts (in prod)

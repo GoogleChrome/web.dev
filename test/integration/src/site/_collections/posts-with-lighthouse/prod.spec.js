@@ -7,7 +7,6 @@ const outputPath = path.join(
   '..',
   '.tmp',
   path.basename(__dirname),
-  'pages',
   'collection',
   'index.html',
 );
@@ -15,7 +14,7 @@ const outputPath = path.join(
 describe('posts-with-lighthouse', function() {
   describe('postsWithLighthouse', function() {
     it('does not include drafts in the postsWithLighthouse collection in prod', async function() {
-      const expected = '<p>test-3</p>';
+      const expected = '<p>test-4</p>';
       const actual = fs.readFileSync(outputPath, 'utf8');
       assert.equal(actual, expected);
     });
