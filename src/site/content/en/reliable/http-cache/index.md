@@ -96,7 +96,9 @@ into effective caching behavior:
   changed. If the server returns the same token, then the file is the same, and there's
   no need to re-download it.
 * [`Last-Modified`][last-modified].
-  This header serves the same purpose as `ETag`, but is less accurate.
+  This header serves the same purpose as `ETag`, but uses a time-based strategy
+  to determine if a resource has changed, as opposed to the content-based strategy
+  of `ETag`.
 
 Some web servers have built-in support for setting those headers by default,
 while others leave the headers out entirely unless you explicitly configure
