@@ -1,6 +1,6 @@
 ---
 title: |
-  Link to where no human has linked to before: Text Fragments
+  Boldly link where no one has linked before: Text Fragments
 subhead: |
   Text Fragments adds support for specifying a text snippet in the URL fragment.
   When navigating to a URL with such a text fragment, the browser can quickly emphasize
