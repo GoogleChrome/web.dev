@@ -50,7 +50,7 @@ document.querySelectorAll('[id]').forEach((el) => {
 
 I can place a deep link to any element highlighted with a red box thanks to the
 [fragment identifier](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Fragment)
-that I then use in the [hash](https://developer.mozilla.org/en-US/docs/Web/API/URL/hash)
+which I then use in the [hash](https://developer.mozilla.org/en-US/docs/Web/API/URL/hash)
 of the URL of the page.
 Assuming I wanted to deep link to the *Give us feedback in our
 [Product Forums](http://support.google.com/bin/static.py?hl=en&page=portal_groups.cs)*
