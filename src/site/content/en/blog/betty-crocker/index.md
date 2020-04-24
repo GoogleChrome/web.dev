@@ -312,7 +312,7 @@ BettyCrocker.com reported the following metrics:
 - The session duration for users who enabled the wake lock was 3.1× longer
   than for users who did not.
 - The bounce rate for users who enabled the wake lock was 50% lower
-  for those using the wake lock feature.
+  than for those not using the wake lock feature.
 - Indicators of purchase intent were about 300% higher for wake lock users compared to all users.
 
 ## Conclusions
