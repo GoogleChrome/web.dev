@@ -38,21 +38,21 @@ instead of the native apps.
 The technical platform the native apps were created on was outdated,
 and the business did not have the resources
 to support updating and maintaining the apps moving forward.
-In addition to that, the web app also was objectively way bigger traffic-wise,
+The web app also was objectively way bigger traffic-wise,
 more modern, and easier to enhance.
 
-The native apps did have one *killer feature*, though, that its users loved:
+The native apps did have one *killer feature*, though, that their users loved:
 
 > Millennial cooking pro tip: the [@BettyCrocker](https://twitter.com/BettyCrocker) mobile app
   doesn't dim or lock when you're following a recipe.
-  […]—[@AvaBeilke](https://twitter.com/AvaBeilke/status/996746473168670720)
+  —[@AvaBeilke](https://twitter.com/AvaBeilke/status/996746473168670720)
 
 > 80% of people cook with a device in the kitchen, but screen dimming and locking is a problem.
   What did [@BettyCrocker](https://twitter.com/BettyCrocker) do?
   Updated their app to NOT dim when users are in a recipe.
-  […]—[@Katie_Tweedy_](https://twitter.com/Katie_Tweedy_/status/996746567762763776)
+  —[@Katie_Tweedy_](https://twitter.com/Katie_Tweedy_/status/996746567762763776)
 
-## The Wake Lock API
+## Bringing the killer feature to the web with the Wake Lock API
 
 When cooking with a device, there is nothing more frustrating
 than having to touch the screen with messy hands or even your nose when the screen turns off.
@@ -62,7 +62,7 @@ This is when they learned about
 [Project Fugu](https://developers.google.com/web/updates/capabilities) and the
 [Wake Lock API](https://web.dev/wakelock/).
 
-![Doughy fingers](doughy-fingers.jpg)
+![A person kneading dough on a kitchen table covered in flour](doughy-fingers.jpg)
 
 The Wake Lock API provides a way to prevent the device
 from dimming or locking the screen.
@@ -72,7 +72,8 @@ The Wake Lock API reduces the need for hacky and potentially power-hungry workar
 ### Requesting a wake lock
 
 To request a wake lock, you need to call the `navigator.wakeLock.request()` method
-that returns a `WakeLockSentinel` object.
+that returns a `WakeLockSentinel` object. You will use this object as a
+[sentinel value](https://en.wikipedia.org/wiki/Sentinel_value).
 The browser can refuse the request for various reasons
 (for example, because the battery is too low),
 so it is a good practice to wrap the call in a `try…catch` statement.
@@ -141,9 +142,9 @@ as shown in the screenshots below.
   <figcaption class="w-figcaption">Tablespoon.com wake lock toggle.</figcaption>
 </figure>
 
-While focusing on the [`ViewModel` layer of the MVVM pattern](https://012.vuejs.org/guide/)
-in developing the component based on the new site's modernized framework,
-they developed with interoperability in mind
+When developing the component based on the new site's modernized framework,
+there was a strong focus on the [`ViewModel` layer of the MVVM pattern](https://012.vuejs.org/guide/).
+The team also programmed with interoperability in mind
 to enable functionality on legacy and new frameworks of the site.
 
 To keep track of viewability and usability, Betty Crocker integrated analytics tracking
