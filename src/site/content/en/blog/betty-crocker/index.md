@@ -25,7 +25,7 @@ and trusted recipe development.
 Launched in 1997, their site [BettyCrocker.com](https://www.bettycrocker.com/)
 today receives more than 12&nbsp;million visitors per month.
 After they **implemented the Wake Lock API**, their
-**indicators of purchase intent were about 300% higher**
+**indicators of [purchase intent](https://www.igi-global.com/dictionary/technology-and-sharing-economy-based-business-models-for-marketing-to-connected-consumers/24144) were about 300% higher**
 for wake lock users compared to all users.
 
 ## The retired iOS and Android apps
