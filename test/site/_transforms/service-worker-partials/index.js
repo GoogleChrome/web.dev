@@ -12,7 +12,7 @@ describe('service-worker-partials', function() {
   let $;
 
   beforeEach(function() {
-    const fixture = `<html lang="en"><head><title>Test title</title></head><body><div id="content"><div class="guide-landing-page"><div>Hello</div></div><div>Bonus sibling</div></div></body></html>`;
+    const fixture = `<html lang="en"><head><title>Test title</title><link rel="alternate" href="/feed.xml" type="application/atom+xml" data-title="web.dev feed"></head><body><div id="content"><div class="guide-landing-page"><div>Hello</div></div><div>Bonus sibling</div></div></body></html>`;
     $ = cheerio.load(fixture);
   });
 
@@ -27,6 +27,7 @@ describe('service-worker-partials', function() {
         raw: $('#content').html(),
         lang: $('html').attr('lang'),
         title: $('title').text(),
+        rss: $('link[type="application/atom+xml"]').attr('href'),
         offline: false,
       };
 
@@ -57,6 +58,7 @@ describe('service-worker-partials', function() {
         raw: $('#content').html(),
         lang: $('html').attr('lang'),
         title: $('title').text(),
+        rss: $('link[type="application/atom+xml"]').attr('href'),
         offline: false,
       };
       assert.deepStrictEqual(actual, expected);
@@ -69,6 +71,7 @@ describe('service-worker-partials', function() {
         raw: $('#content').html(),
         lang: $('html').attr('lang'),
         title: $('title').text(),
+        rss: $('link[type="application/atom+xml"]').attr('href'),
         offline: true,
       };
       assert.deepStrictEqual(actual, expected);
@@ -81,6 +84,7 @@ describe('service-worker-partials', function() {
         raw: $('#content').html(),
         lang: $('html').attr('lang'),
         title: $('title').text(),
+        rss: $('link[type="application/atom+xml"]').attr('href'),
         offline: false,
       };
 
