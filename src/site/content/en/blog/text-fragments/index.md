@@ -137,19 +137,21 @@ highlighted and scrolls into view:
 
 ### `textStart` and `textEnd`
 
-Now what if I wanted to link to the entire *section* titled *ECMAScript Modules in Web Workers*?
+Now what if I want to link to the entire *section* titled *ECMAScript Modules in Web Workers*, not just its heading?
 Percent-encoding the entire text of the section would make the resulting URL impracticably long.
 
 Luckily there is a better way. Rather than the entire text, I can frame the desired text
-by making use of the `textStart,textEnd` syntax.
+using the `textStart,textEnd` syntax.
 Therefore, I specify a couple of percent-encoded words at the beginning of the desired text,
 and a couple of percent-encoded words at the end of the desired text, separated by a comma&nbsp;`,`.
 
-In the running example, it would look like this:
+That looks like this:
+
 <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript%20Modules%20in%20Web%20Workers,ES%20Modules%20in%20Web%20Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#:~:text=ECMAScript%20Modules%20in%20Web%20Workers,ES%20Modules%20in%20Web%20Workers.</strong></code></a>.
-For `textStart`, we have `ECMAScript%20Modules%20in%20Web%20Workers`, then a comma&nbsp;`,`
+
+For `textStart`, I have `ECMAScript%20Modules%20in%20Web%20Workers`, then a comma&nbsp;`,`
 followed by `ES%20Modules%20in%20Web%20Workers.` as `textEnd`.
-When you click through, on a supporting browser like Chrome, the whole section is highlighted
+When you click through on a supporting browser like Chrome, the whole section is highlighted
 and scrolled into view:
 
 <figure class="w-figure">
@@ -204,7 +206,7 @@ The URL
 matches at the first occurrence of the word `Text`.
 
 {% Aside %}
-  Note that the Text Fragment matching is case-insensitive.
+  Note that text fragment matching is case-insensitive.
 {% endAside %}
 
 <figure class="w-figure">
@@ -214,8 +216,8 @@ matches at the first occurrence of the word `Text`.
 
 Luckily there is a solution.
 In cases like this, I can specify a `prefix​-` and a `-suffix`.
-The word before the green code font `text` is `the`, and the word after is `parameter`.
-No other of the three occurrences of the word `text` has the same surrounding words.
+The word before the green code font "text" is "the", and the word after is "parameter".
+None of the other three occurrences of the word "text" has the same surrounding words.
 Armed with this knowledge, I can tweak the previous URL and add the `prefix-` and the `-suffix`.
 Like the other parameters, they, too, need to be percent-encoded.
 <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=the-,text,-parameter"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#:~:text=the-,text,-parameter</strong></code></a>.
