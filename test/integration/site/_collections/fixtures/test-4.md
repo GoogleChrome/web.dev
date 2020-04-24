@@ -12,4 +12,3 @@ web_lighthouse:
 
 This test post belongs to collections:
 + recentPosts
-+ postsWithLighthouse
