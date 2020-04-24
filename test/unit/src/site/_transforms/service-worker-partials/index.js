@@ -6,7 +6,7 @@ const {
   serviceWorkerPartials,
   getPartial,
   writePartial,
-} = require('../../../../src/site/_transforms/service-worker-partials');
+} = require('../../../../../src/site/_transforms/service-worker-partials');
 
 describe('service-worker-partials', function() {
   let $;

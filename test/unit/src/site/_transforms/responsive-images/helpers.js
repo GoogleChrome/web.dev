@@ -1,8 +1,8 @@
 const assert = require('assert');
-const site = require('../../../../src/site/_data/site');
+const site = require('../../../../../src/site/_data/site');
 const {
   determineImagePath,
-} = require('../../../../src/site/_transforms/responsive-images/helpers');
+} = require('../../../../../src/site/_transforms/responsive-images/helpers');
 
 describe('determineImagePath', function() {
   it('returns the original src if src contains a protocol', function() {
