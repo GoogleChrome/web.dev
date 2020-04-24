@@ -36,7 +36,7 @@ describe('posts-with-lighthouse', function() {
     assert.strictEqual(actual.length, 0);
   });
 
-  it('should include posts with a valid web_lighthouse value', function() {
+  it('should include posts with a single web_lighthouse value', function() {
     const posts = [
       {
         tags: ['pathItem'],
@@ -50,5 +50,21 @@ describe('posts-with-lighthouse', function() {
     const actual = postsWithLighthouse(collection);
     assert.strictEqual(actual.length, 1);
     assert.strictEqual(actual[0].data.web_lighthouse, 'foo');
+  });
+
+  it('should include posts with multiple web_lighthouse values', function() {
+    const posts = [
+      {
+        tags: ['pathItem'],
+        data: {
+          web_lighthouse: ['foo', 'bar', 'baz'],
+        },
+        date: new Date(),
+      },
+    ];
+    const collection = new MockCollection(posts);
+    const actual = postsWithLighthouse(collection);
+    assert.strictEqual(actual.length, 1);
+    assert.deepEqual(actual[0].data.web_lighthouse, ['foo', 'bar', 'baz']);
   });
 });
