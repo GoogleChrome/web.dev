@@ -115,7 +115,7 @@ window.setTimeout(() => {
 With the new web app, users should be enabled to easily navigate through a recipe,
 complete steps, and even walk away without the screen locking.
 To achieve this goal, the team first built a quick front-end prototype
-as a proof the concept and to gather UX input.
+as a proof of concept and to gather UX input.
 
 After the prototype proved useful, they designed a
 [Vue.js component](https://vuejs.org/v2/guide/components.html)
