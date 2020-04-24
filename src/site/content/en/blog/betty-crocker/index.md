@@ -329,7 +329,7 @@ until the barcode has been scanned, kiosk-style apps that keep the screen on con
 or web-based presentation apps that prevent the screen from sleeping during a presentation.
 
 We have compiled [everything you need to know about the Wake Lock API](https://web.dev/wakelock/)
-in a comprehensive article over on our developer portal.
+in a comprehensive article on this very site.
 Happy reading, and happy cooking!
 
 ## Acknowledgements
