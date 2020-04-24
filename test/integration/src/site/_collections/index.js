@@ -13,8 +13,8 @@ describe('_collections', function() {
       fs.rmdirSync(path.join('.', '.tmp'), {recursive: true});
     });
 
-    require('./posts-with-lighthouse/dev.spec');
-    require('./recent-posts/dev.spec');
+    require('./posts-with-lighthouse/dev');
+    require('./recent-posts/dev');
   });
 
   describe('in PROD env', function() {
@@ -27,7 +27,7 @@ describe('_collections', function() {
       fs.rmdirSync(path.join('.', '.tmp'), {recursive: true});
     });
 
-    require('./posts-with-lighthouse/prod.spec');
-    require('./recent-posts/prod.spec');
+    require('./posts-with-lighthouse/prod');
+    require('./recent-posts/prod');
   });
 });
