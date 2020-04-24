@@ -2,7 +2,7 @@ const assert = require('assert');
 const containsTag = require('../../../src/site/_filters/contains-tag');
 
 describe('containsTag', function() {
-  it('returns true if the posts tags contain the requested tag' , function() {
+  it('returns true if the posts tags contain the requested tag', function() {
     const post = {
       data: {
         tags: ['tag-1', 'tag-2'],
@@ -12,10 +12,10 @@ describe('containsTag', function() {
     assert.strictEqual(containsTag(post, tags), true);
   });
 
-  it('returns true if the posts has only the requested tag' , function() {
+  it('returns true if the posts has only the requested tag', function() {
     const post = {
       data: {
-        tags: 'tag-1'
+        tags: 'tag-1',
       },
     };
     const tags = ['tag-1'];
@@ -33,7 +33,7 @@ describe('containsTag', function() {
   it('returns false if the post has empy tags array', function() {
     const post = {
       data: {
-        tags: []
+        tags: [],
       },
     };
     const tags = ['tag-1'];
