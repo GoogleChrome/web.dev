@@ -3,7 +3,7 @@ title: |
   Boldly link where no one has linked before: Text Fragments
 subhead: |
   Text Fragments let you specify a text snippet in the URL fragment.
-  When navigating to a URL with such a text fragment, the browser can quickly emphasize
+  When navigating to a URL with such a text fragment, the browser can emphasize
   and/or bring it to the user's attention.
 authors:
   - thomassteiner
@@ -12,7 +12,7 @@ hero: hero.jpg
 alt:
 description: |
   Text Fragments let you specify a text snippet in the URL fragment.
-  When navigating to a URL with such a text fragment, the browser can quickly emphasize
+  When navigating to a URL with such a text fragment, the browser can emphasize
   and/or bring it to the user's attention.
 tags:
   - post # post is a required tag for the article to show up in the blog.
@@ -51,7 +51,7 @@ document.querySelectorAll('[id]').forEach((el) => {
 I can place a deep link to any element highlighted with a red box thanks to the
 [fragment identifier](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Identifying_resources_on_the_Web#Fragment)
 which I then use in the [hash](https://developer.mozilla.org/en-US/docs/Web/API/URL/hash)
-of the URL of the page.
+of the page's URL.
 Assuming I wanted to deep link to the *Give us feedback in our
 [Product Forums](http://support.google.com/bin/static.py?hl=en&page=portal_groups.cs)*
 box in the aside, I could do so by handcrafting the URL
@@ -65,7 +65,7 @@ has an `id` attribute with the value `HTML1`.
 </figure>
 
 If I parse this URL with JavaScript's `URL()` constructor, the different components are revealed.
-Check the `hash` with the value `#HTML1`.
+Notice the `hash` property with the value `#HTML1`.
 
 ```js/3
 new URL('https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1');
@@ -87,15 +87,15 @@ URL {
 */
 ```
 
-The pure fact though that I had to open the Developer Tools to find out the `id`
-of the element in question speaks volumes about the probability this particular section of the page
+The fact though that I had to open the Developer Tools to find the `id`
+of an element speaks volumes about the probability this particular section of the page
 was meant to be linked to by the author of the blog post.
 
-But what about the sections I actually may have wanted to link to in real life?
-Unfortunately there is not a single red box in the entire blog post body.
-Say I wanted to deep link to the *ECMAScript Modules in Web Workers* heading.
-As you can see in the screenshot below, the `<h1>` in question does not have an `id` attribute.
-Without a fragment identifier, there is no way how I could link to this heading.
+What if I want to link to something without an `id`? What if I want to link
+where there there would be no red box.
+Say I wanted to link to the *ECMAScript Modules in Web Workers* heading.
+As you can see in the screenshot below, the `<h1>` in question does not have an `id` attribute
+meaning there is no way I can link to this heading.
 This is the problem that Text Fragments solve.
 
 <figure class="w-figure">
@@ -106,8 +106,8 @@ This is the problem that Text Fragments solve.
 ## Text Fragments
 
 The [Text Fragments](https://wicg.github.io/ScrollToTextFragment/) proposal adds support
-for specifying a text snippet in the URL fragment.
-When navigating to a URL with such a text fragment, the user agent can quickly emphasize
+for specifying a text snippet in the URL hash.
+When navigating to a URL with such a text fragment, the user agent can emphasize
 and/or bring it to the user's attention.
 
 ### `textStart`
@@ -121,12 +121,14 @@ text I want to link to.
 #:~:text=textStart
 ```
 
-Taking up the example from above where I wanted to place a deep link to the
-*ECMAScript Modules in Web Workers* heading, the URL in this case would be
+For example, say that I want to link to the
+*ECMAScript Modules in Web Workers* heading in the [blog post announcing features in Chrome 80](https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html), the URL in this case would be:
+
 <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript%20Modules%20in%20Web%20Workers"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#:~:text=ECMAScript%20Modules%20in%20Web%20Workers</strong></code></a>
-(the Text Fragment is emphasized in bold).
-If you click it, a supporting browser like Chrome will scroll the text fragment into view
-and highlight it:
+
+The text fragment is emphasized in bold.
+If you click it in a supporting browser like Chrome, the text fragment is
+highlighted and scrolls into view:
 
 <figure class="w-figure">
   <img src="syntax-simple.png" alt="" class="w-screenshot" width="400">
