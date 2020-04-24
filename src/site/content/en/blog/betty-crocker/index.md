@@ -321,7 +321,7 @@ Betty Crocker has seen fantastic results using the Wake Lock API.
 You can test the feature yourself by searching for your favorite recipe on any of their sites
 ([BettyCrocker](https://www.bettycrocker.com/),
 [Pillsbury](https://www.pillsbury.com/), or [Tablespoon](https://www.tablespoon.com/))
-and toggling the "Prevent your screen from going dark while you cook" toggle.
+and enabling the **Prevent your screen from going dark while you cook** toggle.
 
 Use cases for wake locks do not stop at recipe sites.
 Other examples are boarding pass or ticket apps that need to keep the screen on
