@@ -1,6 +1,6 @@
 ---
 title: |
-  Better cooking with the Wake Lock API : A&nbsp;case study with Betty Crocker
+  Wake Lock API case study: 300% increase in purchase intent indicators on BettyCrocker.com
 subhead: |
   After they have implemented the Wake Lock API, cooking site BettyCrocker.com's
   indicators of purchase intent were about 300% higher for wake lock users compared to all users.
