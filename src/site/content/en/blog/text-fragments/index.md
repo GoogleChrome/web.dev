@@ -231,7 +231,7 @@ they need to be separated from the `textStart` and the optional `textEnd` with a
 
 ### The full syntax
 
-The full syntax of Text Fragments is shown below (square brackets indicate an optional parameter).
+The full syntax of Text Fragments is shown below. (Square brackets indicate an optional parameter.)
 The values for all parameters need to be percent-encoded.
 This is especially important for the dash `-`, ampersand `&`, and comma `,` characters,
 so they are not being interpreted as part of the text directive syntax.
@@ -271,8 +271,8 @@ Here is an example link with three text fragments:
 
 Traditional element fragments can be combined with text fragments.
 It is perfectly fine to have both in the same URL, for example,
-to provide a meaningful fallback in case the original text on the page changes,
-so the text fragment does not match anymore.
+to provide a meaningful fallback in case the original text on the page changes
+so that the text fragment does not match anymore.
 The URL
 <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1:~:text=Give%20us%20feedback%20in%20our%20Product%20Forums."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#HTML1:~:text=Give%20us%20feedback%20in%20our%20Product%20Forums.</strong></code></a>
 linking to the *Give us feedback in our
@@ -287,9 +287,9 @@ contains both an element fragment (`HTML1`), as well as a text fragment
 
 ### The fragment directive
 
-So far I have only quickly glanced over one important addition without actually explaining it:
+There is one element of the syntax I have not explained yet:
 the fragment directive `:~:`.
-To avoid compatibility issues with the usage of existing URL element fragments as shown above,
+To avoid compatibility issues with existing URL element fragments as shown above,
 the [Text Fragments specification](https://wicg.github.io/ScrollToTextFragment/)
 introduces the fragment directive.
 The fragment directive is a portion of the URL fragment delimited by the code sequence `:~:`.
@@ -298,7 +298,7 @@ and is stripped from the URL during loading so that author scripts cannot direct
 User agent instructions are also called *directives*.
 In the concrete case, `text=` is therefore called a *text directive*.
 
-### Feature detectability
+### Feature detection
 
 To detect support, test for the read-only `fragmentDirective` property on `window.location`.
 The fragment directive is a mechanism for URLs to specify instructions
