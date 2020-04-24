@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const livePosts = require('../_filters/live-posts');
+const {livePosts} = require('../_filters/live-posts');
 const removeMarkdown = require('remove-markdown');
 const stripLanguage = require('../_filters/strip-language');
 

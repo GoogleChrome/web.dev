@@ -21,26 +21,35 @@
 const {env} = require('../_data/site');
 
 /**
- * This function is commonly passed to Array.filter() and used to filter an
- * Eleventy collection of posts. It will remove posts with a future publish
- * date, or if the post's draft flag is set to true.
- *
- * Note, since Array.filter() always passes the index and array as arguments
- * to the function we ignore them. However, we _do_ want to be able to pass
- * a custom Date to the function so we can write unit tests for it. That's
- * why we use the weird destructuring in the function signature.
- * @param {object} post An eleventy post object.
- * @param {number} index Ignored.
- * @param {Array} arr Ignored.
- * @param {Date} now A Date object representing the current time. Only used for
- * testing.
- * @return {boolean} Whether or not the post should go live.
+ * If a post has a future date it will automatically be set to `draft: true`.
+ * When the date arrives, our daily GitHub Action that publishes the site
+ * should pickup the new post and publish it.
+ * This action runs at around 7am PST / 15:00 UTC.
+ * Because Eleventy sets the post.date to midnight, UTC time, we offset it
+ * to be at 15:00.
+ * If we did not do this, then deploying the site at 4pm PST / 00:00 UTC
+ * would launch posts intended for the next day.
+ * @param {*} post An eleventy post object.
+ * @param {*} now A Date object representing the current time. You shouldn't
+ * ever need to pass a date into this function. We make it an argument so we
+ * can write tests against it.
+ * @return {boolean}
  */
-module.exports = function livePosts(...[post, , , now = new Date()]) {
+function isScheduledForTheFuture(post, now = new Date()) {
   if (!(now instanceof Date)) {
     throw new Error(`now argument must by a Date object.`);
   }
 
+  const postDate = new Date(post.date);
+  postDate.setUTCHours(15, 0, 0, 0);
+  return postDate.getTime() > now.getTime();
+}
+
+/**
+ * @param {object} post An eleventy post object.
+ * @return {boolean} Whether or not the post should go live.
+ */
+function livePosts(post) {
   if (!post.date) {
     throw new Error(`${post.inputPath} did not specificy a date.`);
   }
@@ -52,30 +61,27 @@ module.exports = function livePosts(...[post, , , now = new Date()]) {
   }
 
   // Scheduled posts.
-  // If a post has a future date it will automatically be set to `draft: true`.
-  // When the date arrives, our daily GitHub Action that publishes the site
-  // should pickup the new post and publish it.
-  // This action runs at around 7am PST / 15:00 UTC.
-  // Because Eleventy sets the post.date to midnight, UTC time, we offset it
-  // to be at 15:00.
-  // If we did not do this, then deploying the site at 4pm PST / 00:00 UTC
-  // would seemingly launch posts intended for the next day.
-  const postDate = new Date(post.date);
-  postDate.setUTCHours(15, 0, 0, 0);
-  if (postDate.getTime() > now.getTime()) {
+  // Check to see if the post is schedule to go live some date in the future.
+  // If it is, set its draft flag so it will behave like other draft posts
+  // on the site and be excluded from collections in production.
+  if (post.data.scheduled && isScheduledForTheFuture(post)) {
     post.data.draft = true;
   }
 
   // If we're in dev mode, force all posts to show up.
-  // We do this after the scheduled posts snippet above so we can ensure that
-  // `draft` is set to true. We rely on that flag to show a visual indicator
-  // that this post will not go live.
+  // We do this after checking for scheduled posts so scheduled posts will get
+  // their draft flag set and show the `draft` visual indicator.
   if (env === 'dev') {
     return true;
   }
 
   // Draft posts.
-  // If a post has the `draft: true` flag set then it *will* generate a file
-  // but it won't be crawlable or show up on the site in production.
+  // Draft posts should be excluded from collections in the prod environment.
+  // nb. If a post has the `draft: true` flag set then it *will* still
+  // generate a file but it will not be search crawlable.
+  // However, if you know the URL you can view it in prod.
+  // We may want to change this behavior someday.
   return !post.data.draft;
-};
+}
+
+module.exports = {livePosts, isScheduledForTheFuture};
