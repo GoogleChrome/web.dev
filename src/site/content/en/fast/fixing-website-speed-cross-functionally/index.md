@@ -3,7 +3,7 @@ layout: post
 title: Fixing website speed cross-functionally
 subhead: How other departments can help make your website speed optimization project a bigger success.
 authors:
-  - lchansson
+  - linahansson
 description: How other departments can help make your website speed optimization project a bigger success.
 date: 2020-02-28
 tags:
