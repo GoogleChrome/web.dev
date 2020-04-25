@@ -4,7 +4,7 @@ subhead: Use cross-platform browser features to build signin forms that are secu
 authors:
   - samdutton
 date: 2020-04-24
-updated: 2020-04-24
+updated: 2020-04-25
 description: Use cross-platform browser features to build signin forms that are secure, accessible and easy to use.
 hero: hero.jpg
 alt: Closeup photo of a man holding a phone showing a login page
@@ -39,9 +39,12 @@ Poorly designed signin forms get high bounce rates. Each bounce means a lost and
 * Use `name="new-password"` for a signup password input.
 * Use `autocomplete="current-password"` for a signin password input.
 * Provide **Show password** functionality.
+* Use **aria-label** and **aria-describedby** for password input.
 * Don't double up email or password inputs.
 * Design forms so the mobile keyboard doesn't obscure inputs or buttons.
-* Ensure your forms are usable on mobile: legible text, inputs and buttons large enough to work as touch targets.
+* Ensure forms are usable on mobile: legible text, inputs and buttons large enough to work as touch targets.
+* Display links to your Terms of Service and privacy policy documents.
+* Include branding (logo and name) on your signup and signin form pages. 
 * Build page analytics, interaction analytics and user-centric performance measurement into your signup and signin flow.
 
 
@@ -49,6 +52,8 @@ Poorly designed signin forms get high bounce rates. Each bounce means a lost and
 This article is about front-end best practice. It does not explain how to build back-end services to authenticate users, store their credentials or manage their accounts.
 
 [12 best practices for user account, authorization and password management](https://cloud.google.com/blog/products/gcp/12-best-practices-for-user-account) outlines core principles for running your own back-end.
+
+If you have users in different parts of the world, you need to consider localizing your site's use of third party identity services as well as its content.
 {% endAside %}
 
 
@@ -169,6 +174,15 @@ Where possible, avoid this by displaying only the email/phone and password input
   <figcaption class="w-figcaption">The keyboard doesn't obscure the <strong>Sign in</strong> button.</figcaption>
 </figure>
 
+You'll need to test on a range of devices for your target audience, and adjust accordingly.
+
+<figure class="w-figure">
+  <img src="./iphone-keyboard.png" alt="Screenshots of signin form on iPhone 7, 8 and 11. On iPhone 7 and 8 the Submit button is obscured by the phone keyboard, but not on iPhone 11">
+  <figcaption class="w-figcaption">The <strong>Sign in</strong> button: obscured on iPhone 7 and 8, but not on iPhone 11.</figcaption>
+</figure>
+
+
+
 Some sites (including Amazon and eBay) avoid the problem by asking for email/phone and password on two 'pages'. This approach also simplifies the experience: the user is only tasked with one thing at a time.
 
 <figure class="w-figure">
@@ -269,7 +283,7 @@ No JavaScript required!
 </figure>
 
 
-## CSS for fingers and thumbs
+## Design for fingers and thumbs
 
 [Do we have any stats for form filling on mobile versus desktop?]
 
@@ -322,7 +336,7 @@ There's a bug for this at [crbug.com/953689](crbug.com/953689). If you think thi
 
 Sounds obvious, but many sites get this wrong.
 
-Add enough margin to make inputs work well as touch targets. In other words, aim for about a finger width of margian.
+Add enough margin to make inputs work well as touch targets. In other words, aim for about a finger width of margin.
 
 
 ### Make sure your inputs are clearly visible
@@ -466,6 +480,8 @@ Some general guidelines to help reduce signin form abandonment:
 * Before users start on your signin form, make it clear what the value proposition is. How do they benefit from signing in? Give users have concrete incentives to complete signin.
 * If possible, allow users to identify themselves with a mobile phone number instead of an email address.
 * Make it easy for users to get a forgotten password, or reset their password.
+* Link to your Terms of Service and privacy policy documents. It's important to be clear to users from the start how you safeguard their data.
+* Include the logo and name of your company or organization on your signup and signin form pages. Sounds obvious, but many sites have 'blank' forms where it's not clear who 'owns' the form.
 
 [Something about (re)CAPTCHA?]
 
@@ -476,5 +492,6 @@ Some general guidelines to help reduce signin form abandonment:
 * [Best Practices For Mobile Form Design](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 * [More capable form controls](/more-capable-form-controls)
 * [Creating Accessible Forms](https://webaim.org/techniques/forms/)
+* 
 
 Photo by [Katka Pavlickova](https://unsplash.com/@katerinapavlickova) on [Unsplash](https://unsplash.com).
