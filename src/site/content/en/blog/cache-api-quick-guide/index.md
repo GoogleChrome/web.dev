@@ -16,7 +16,7 @@ requests and their corresponding responses. These might be regular requests
 and responses created in the course of running your application, or they could
 be created solely for the purpose of storing data for later use.
 
-The Cache API was created to enable Service Workers to cache network requests
+The Cache API was created to enable service workers to cache network requests
 so that they can provide fast responses, regardless of network speed or
 availablity. However, the API can also be used as a general storage mechanism.
 
