@@ -65,7 +65,7 @@ All three methods return a `Promise`.
 ### `cache.add`
 
 First, there is `cache.add()`. It takes one parameter, either a `Request`
-or a URL (`string`). It makes a request to the network and stores to response
+or a URL (`string`). It makes a request to the network and stores the response
 in the cache. If the
 fetch fails, or if the status code of the response is not in the 200 range,
 then nothing is stored and the `Promise` rejects. Note that cross-origin
