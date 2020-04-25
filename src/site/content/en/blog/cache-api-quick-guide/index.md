@@ -278,7 +278,7 @@ implement your own search using filtering or by creating an index.
 
 One way to implement your own search is to iterate over all entries and
 filter down to the ones that you want. Let's say that you want to find all
-items that have URLs ending with '.png'.
+items that have URLs ending with `.png`.
 
 ```js
 async function findImages() {
