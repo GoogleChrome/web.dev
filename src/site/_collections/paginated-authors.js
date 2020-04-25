@@ -28,20 +28,7 @@ const addPagination = require('../_utils/add-pagination');
  * @return {Array<{ title: string, href: string, description: string, elements: Array<object>, index: number, pages: number }>} An array where each element is a page with some meta data and n authors for the page.
  */
 module.exports = (collections) => {
-  const testAuthors = [
-    'robdodson',
-    'samthor',
-    'surma',
-    'egsweeny',
-    'addyosmani',
-    'adamargyle',
-  ];
-
-  let authors = authorsCollection(collections);
-
-  if (process.env.PERCY) {
-    authors = authors.filter((item) => testAuthors.includes(item.key));
-  }
+  const authors = authorsCollection(collections);
 
   return addPagination(authors, {
     href: '/authors/',

@@ -60,6 +60,15 @@ const findAuthorsImage = (key) => {
  * @return {Array<{ description: string, title: string, key: string, href: string, url: string, data: { title: string, subhead: string, hero: string, alt: string }, elements: Array<any> }>}
  */
 module.exports = (collections) => {
+  const testAuthors = [
+    'robdodson',
+    'samthor',
+    'surma',
+    'egsweeny',
+    'addyosmani',
+    'adamargyle',
+  ];
+
   // Get all posts and sort them
   const posts = collections
     .getFilteredByGlob('**/*.md')
@@ -71,6 +80,9 @@ module.exports = (collections) => {
   const authors = Object.values(contributors)
     .sort((a, b) => a.title.localeCompare(b.title))
     .reduce((accumulator, author) => {
+      if (process.env.PERCY && !testAuthors.includes(author.key)) {
+        return accumulator;
+      }
       // This updates the shared contributors object with meta information and is safe to be called multiple times.
       author.url = path.join('/en', author.href);
       author.data = {
@@ -87,6 +99,10 @@ module.exports = (collections) => {
       }
 
       if (author.elements.length > 0) {
+        if (process.env.PERCY) {
+          author.elements = author.elements.slice(-6);
+        }
+
         accumulator.push(author);
       }
 
