@@ -219,7 +219,7 @@ console.log(new Uint8Array(buffer));
 // Uint8Array(11) [72, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100]
 ```
 
-## Retrieving from a cache {: #retreiving }
+## Retrieving from a cache {: #retrieving }
 
 To find an item in a cache, you can use the `match` method.
 
