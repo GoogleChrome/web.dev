@@ -19,38 +19,36 @@ pagination:
   <web-actions actions="subscribe"></web-actions>
 
   <div class="w-layout-container w-pb--non">
-    <header class="w-page-header w-author-page-header">
-      {% if paged.data.hero %}
-        <div class="w-author-page__image--container">
-          <img src="{{paged.data.hero}}" alt="{{paged.data.alt}}" class="w-author-page__image">
+    <header class="w-page-header">
+      <img src="{{paged.data.hero}}" alt="{{paged.data.alt}}" class="w-author-page__image">
+      <h1 class="w-page-header__headline">{{ renderData.title }}</h1>
+      <p class="w-page-header__copy">{{ renderData.description | safe }}</p>
+      <div class="w-author-page__links">
+        <div>
+          {% if paged.homepage %}
+            <a href="{{ paged.homepage }}" target="_blank" class="w-author-page__link">
+              <img src="/images/icons/language.svg" alt="Homepage" class="w-author-page__icon">
+            </a>
+          {% endif %}
+          {% if paged.twitter %}
+            <a href="https://twitter.com/{{ paged.twitter }}" target="_blank" class="w-author-page__link">
+              <img src="/images/icons/twitter.svg" alt="Twitter" class="w-author-page__icon">
+            </a>
+          {% endif %}
+          {% if paged.github %}
+            <a href="https://github.com/{{ paged.github }}" target="_blank" class="w-author-page__link">
+              <img src="/images/icons/github.svg" alt="GitHub" class="w-author-page__icon">
+            </a>
+          {% endif %}
+          {% if paged.glitch %}
+            <a href="https://glitch.com/@{{ paged.glitch }}" target="_blank" class="w-author-page__link">
+              <img src="/images/icons/glitch.svg" alt="Glitch" class="w-author-page__icon">
+            </a>
+          {% endif %}
+          <a href="{{ renderData.rss }}" target="_blank" class="w-author-page__link">
+            <img src="/images/icons/rss.svg" alt="RSS Feed" class="w-author-page__icon">
+          </a>
         </div>
-      {% endif %}
-      <div class="w-author-page__description">
-        <h1 class="w-page-header__headline">{{ renderData.title }}</h1>
-        <p class="w-page-header__copy">{{ renderData.description | safe }}</p>
-        {% if paged.homepage %}
-          <a href="{{ paged.homepage }}" target="_blank" class="w-author-page__link">
-            <img src="/images/icons/language.svg" alt="Homepage" class="w-author-page__link--icon">
-          </a>
-        {% endif %}
-        {% if paged.twitter %}
-          <a href="https://twitter.com/{{ paged.twitter }}" target="_blank" class="w-author-page__link">
-            <img src="/images/icons/twitter.svg" alt="Twitter" class="w-author-page__link--icon">
-          </a>
-        {% endif %}
-        {% if paged.github %}
-          <a href="https://github.com/{{ paged.github }}" target="_blank" class="w-author-page__link">
-            <img src="/images/icons/github.svg" alt="GitHub" class="w-author-page__link--icon">
-          </a>
-        {% endif %}
-        {% if paged.glitch %}
-          <a href="https://glitch.com/@{{ paged.glitch }}" target="_blank" class="w-author-page__link">
-            <img src="/images/icons/glitch.svg" alt="Glitch" class="w-author-page__link--icon">
-          </a>
-        {% endif %}
-        <a href="{{ renderData.rss }}" target="_blank" class="w-author-page__link">
-          <img src="/images/icons/rss.svg" alt="RSS Feed" class="w-author-page__link--icon">
-        </a>
       </div>
     </header>
   </div>
