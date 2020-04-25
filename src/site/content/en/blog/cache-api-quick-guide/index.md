@@ -83,7 +83,7 @@ cache.add('/data.json');
 ### `cache.addAll`
 
 Next, there is `cache.addAll()`. It works similarly to `add()`, but takes an
-array of `Request` objects or URLs (`strings`). This works similarly to
+array of `Request` objects or URLs (`string`s). This works similarly to
 calling `cache.add` for each individual request, except that the `Promise`
 rejects if any single request is not cached.
 
