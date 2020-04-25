@@ -70,7 +70,7 @@ in the cache. If the
 fetch fails, or if the status code of the response is not in the 200 range,
 then nothing is stored and the `Promise` rejects. Note that cross-origin
 requests not in CORS mode cannot be stored because they return a `status` of
-`0`, such requests can only be stored with `put`.
+`0`. Such requests can only be stored with `put`.
 
 ```js
 // Retreive data.json from the server and store the response.
