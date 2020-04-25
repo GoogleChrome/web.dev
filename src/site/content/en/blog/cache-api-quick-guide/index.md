@@ -310,7 +310,7 @@ data.
 ### Creating an index
 
 The other way to implement your own search is to maintain a separate index of
-entries that can be searched, stored in IndexedDB. Since this is the kind of
+entries that can be searched and store the index in IndexedDB. Since this is the kind of
 operation that IndexedDB was designed for it has much better performance with
 large numbers of entries.
 
