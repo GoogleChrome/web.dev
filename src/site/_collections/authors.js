@@ -64,7 +64,7 @@ module.exports = (collections) => {
     'robdodson',
     'samthor',
     'surma',
-    'egsweeny',
+    'mgechev',
     'addyosmani',
     'adamargyle',
   ];

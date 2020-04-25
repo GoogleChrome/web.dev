@@ -42,7 +42,7 @@ const pagesToTest = [
     title: 'Authors page',
   },
   {
-    url: '/authors/robdodson/',
+    url: '/authors/mgechev/',
     title: 'Author page',
   },
   {
