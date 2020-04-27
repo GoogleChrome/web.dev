@@ -94,7 +94,7 @@ cache.addAll(urls);
 
 In each of these cases, a new entry overwrites any matching existing entry.
 This uses the same matching rules described in the section on
-[retrieving](#retreiving).
+[retrieving](#retrieving).
 
 ### `cache.put`
 
@@ -232,9 +232,9 @@ If `request` is a string the browser converts it to a `Request` by calling
 `new Request(request)`. The function returns a `Promise` that resolves to
 a `Response` if a matching entry is found, or `undefined` otherwise.
 
-To determine if two `Requests` match, more than just the URL is used. Two
+To determine if two `Requests` match, the browser uses more than just the URL. Two
 requests are considered different if they have different query strings,
-`Vary` headers and/or methods (`GET`, `POST`, `PUT`, etc.).
+`Vary` headers, or HTTP methods (`GET`, `POST`, `PUT`, etc.).
 
 You can ignore some or all of these things by passing an options object as a
 second parameter.
