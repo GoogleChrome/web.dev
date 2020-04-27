@@ -1,6 +1,6 @@
 ---
 title: Optimize Largest Contentful Paint
-subhead: 'Learn how to optimize LCP: a Core Web Vital metric'
+subhead: 'Learn how to optimize the Largest Contentful Paint on your site'
 authors:
   - houssein
 date: 2020-04-30
