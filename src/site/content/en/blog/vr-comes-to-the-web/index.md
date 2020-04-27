@@ -4,7 +4,7 @@ subhead: A few basics to prepare you for a spectrum of immersive experiences&#58
 authors:
   - joemedley
 date: 2019-10-31
-updated: 2020-04-27
+updated: 2020-03-02
 hero: hero.jpg
 alt: A person using a virtual reality headset.
 description:
@@ -12,7 +12,7 @@ description:
   this launch is the foundation for both augmented and virtual reality. This
   article is the first in a series, exploring basic concepts and describing how
   to enter an XR session. Other browsers will soon be supporting the WebXR
-  Device API, including Firefox Reality, Oculus Browser, Edge and Magic Leap's
+  Device API, including Firefox Reality, Oculus Browser, Edge and Magic Leap'sgit diff
   Helio browser, among others.
 tags:
   - blog
