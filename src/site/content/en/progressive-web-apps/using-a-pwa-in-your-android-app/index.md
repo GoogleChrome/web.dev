@@ -63,8 +63,12 @@ nightly version.
 ### Quality Criteria
 
 Web developers should use a Trusted Web Activity when they want to include web content in an
-Android app.  Web content in a Trusted Web Activity must meet Lighthouse's PWA install quality criteria and
-additional Android-specific criteria such as [policy compliance][9].
+Android app. Web content in a Trusted Web Activity must meet Lighthouse's PWA install quality
+criteria and additional Android-specific criteria such as [policy compliance][9].
+
+**Important:** When targeting an application for users under 13 years old on the Play Store
+additional [Play Family policies][18] apply, which may be incompatible with using Trusted Web
+Activity.
 
 <figure class="w-figure w-figure--center">
   <img src="lh-score.png" style="max-width: 100%;"
@@ -163,3 +167,4 @@ Finally, move your application from the closed test channel to production!
 [15]: https://play.google.com/store/apps/details?id=dev.conn.assetlinkstool
 [16]: https://developers.google.com/web/tools/lighthouse
 [17]: /fugu-status/
+[18]: https://play.google.com/about/families/
