@@ -267,7 +267,8 @@ this article. Thanks to Eiji Kitamura, Addy Osmani, and Marc Cohen who wrote
 the original articles that this is based on. Eiji wrote a helpful tool
 called [Browser Storage Abuser][storage-abuser] that was useful in validating
 current behavior. It allows you to store as much data as possible and see the
-storage limits on your browser.
+storage limits on your browser. The hero image is by Guillaume Bolduc on
+[Unsplash](https://unsplash.com/photos/uBe2mknURG4).
 
 
 [mdn-sessionstorage]: https://developer.mozilla.org/en/docs/Web/API/Window/sessionStorage
