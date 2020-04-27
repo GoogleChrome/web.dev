@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: Learn how to use the Cache API to make your application data available offline.
 date: 2017-10-03
-updated: 2020-04-21
+updated: 2020-04-27
 tags:
   - post
   - progressive-web-apps
@@ -228,7 +228,7 @@ const response = await cache.match(request);
 console.log(request, response);
 ```
 
-If `request` is a string it is first be converted to a `Request` by calling
+If `request` is a string the browser converts it to a `Request` by calling
 `new Request(request)`. The function returns a `Promise` that resolves to
 a `Response` if a matching entry is found, or `undefined` otherwise.
 
