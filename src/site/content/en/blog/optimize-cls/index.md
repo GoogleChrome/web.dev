@@ -1,10 +1,10 @@
 ---
 title: Optimize Cumulative Layout Shift 🕺💃
-subhead: TODO
+subhead: Learn how to avoid unexpected layout shifts to improve user-experience
 authors:
   - addyosmani
 date: 2020-04-26
-hero: hero.jpg
+hero: hero.png
 alt: TBD for hero
 description: |
   TBD
