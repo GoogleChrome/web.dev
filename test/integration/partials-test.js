@@ -10,7 +10,7 @@ describe('Service worker partials', function() {
 
     const htmlPath = path.join(dist, 'en', 'index.html');
     const $ = cheerio.load(fs.readFileSync(htmlPath));
-    const html = {
+    const partialFromHtml = {
       raw: $('#content').html(),
       lang: $('html').attr('lang'),
       title: $('title').text(),
@@ -18,7 +18,7 @@ describe('Service worker partials', function() {
       offline: Boolean($('meta[name="offline"]').attr('content')) || false,
     };
 
-    assert.deepStrictEqual(partial, html);
+    assert.deepStrictEqual(partial, partialFromHtml);
   });
 
   it('includes RSS urls', function() {
