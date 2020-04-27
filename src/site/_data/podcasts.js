@@ -23,8 +23,7 @@ module.exports = [
   },
   {
     title: 'State of the Web',
-    url:
-      'https://www.youtube.com/playlist?list=PLNYkxOF6rcIBGvYSYO-VxOsaYQDw5rifJ',
+    url: 'http://thestateoftheweb.googledevelopers.libsynpro.com/',
     description: `The web and how we build it is rapidly changing. In this
       series, we'll be using big data to understand the macro trends that are
       pushing the web forward in the areas of performance, security, publishing,

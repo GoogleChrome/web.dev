@@ -13,11 +13,13 @@
       <meta name="offline" content="true" />
     {%- endif %}
 
-    {% if not nometa %}
+    {% if nometa %}
+      {# Area on page that service worker will load title, rss url and if offline #}
+      <!-- %_HEAD_REPLACE_% -->
+    {% else %}
       {% Meta locale, page, collections, renderData %}
     {%- endif %}
 
-    <link rel="alternate" href="/feed.xml" type="application/atom+xml" data-title="web.dev feed">
     <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
     <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
     <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />

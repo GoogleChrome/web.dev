@@ -223,6 +223,7 @@ const contributors = {
     homepage: 'https://petelepage.com',
     twitter: 'petele',
     github: 'petele',
+    glitch: 'petele',
     description: {
       en:
         'Developer Advocate on the web team at Google, taking the sharp edges off new stuff & helping make the web better for developers! (he/him)',

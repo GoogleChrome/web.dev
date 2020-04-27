@@ -10,7 +10,7 @@ description: |
   for any other external references. The critical request chain represents the
   order of resources that are prioritized and fetched by the browser.
 date: 2018-11-05
-updated: 2019-09-17
+updated: 2020-04-27
 codelabs:
   - codelab-preload-critical-assets
   - codelab-preload-web-fonts
@@ -25,14 +25,14 @@ Preloading is best suited for resources typically discovered late by the browser
 <figure class="w-figure">
 <img src="./network-waterfall-before.png" alt="Screenshot of Chrome DevTools Network panel.">
 <figcaption class="w-figcaption">In this example, Pacifico font is defined in the stylesheet with a <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face)"><code>@font-face</code></a> rule. The browser loads the font file only after it has finished downloading and parsing the stylesheet.</figcaption>
-<figure>
+</figure>
 
 By preloading a certain resource, you are telling the browser that you would like to fetch it sooner than the browser would otherwise discover it because you are certain that it is important for the current page.
 
 <figure class="w-figure">
 <img src="./network-waterfall-after.png" alt="Screenshot of Chrome DevTools Network panel after applying preloading.">
 <figcaption class="w-figcaption">In this example, Pacifico font is preloaded, so the download happens in parallel with the stylesheet.</figcaption>
-<figure>
+</figure>
 
 The critical request chain represents the order of resources that are prioritized and fetched by the browser. Lighthouse identifies assets that are on the third level of this chain as late-discovered. You can use the [**Preload key requests**](/uses-rel-preload) audit to identify which resources to preload.
 

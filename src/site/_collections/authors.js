@@ -46,17 +46,9 @@ const findAuthorsPosts = (posts) => {
  */
 const findAuthorsImage = (key) => {
   for (const size of ['@3x', '@2x', '']) {
-    const jpegPath = path.join(
-      'src',
-      'site',
-      'content',
-      'en',
-      'images',
-      'authors',
-      `${key}${size}.jpg`,
-    );
+    const jpegPath = path.join('src/images/authors', `${key}${size}.jpg`);
     if (fs.existsSync(jpegPath)) {
-      return path.join('/images', 'authors', `${key}${size}.jpg`);
+      return path.join('/images/authors', `${key}${size}.jpg`);
     }
   }
 };
