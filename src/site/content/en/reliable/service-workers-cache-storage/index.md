@@ -88,6 +88,8 @@ uses that would be difficult or impossible with just the HTTP cache include:
     anything's changed, and enable the user to update content (with a button,
     for example)  when data has actually been updated.
 
+Check out [The Cache API: A quick guide](/cache-api-quick-guide/) to learn more.
+
 ### API nuts and bolts
 
 There are some things to keep in mind about the API's design:
