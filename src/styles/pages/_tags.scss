@@ -1,0 +1,9 @@
+@import '../tools/breakpoints';
+
+.w-tags-page-header__headline {
+  @include font($HEADLINE_1);
+
+  @include bp(sm) {
+    @include font($HEADLINE_1_XSMALL);
+  }
+}
