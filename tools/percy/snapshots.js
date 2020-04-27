@@ -42,6 +42,10 @@ const pagesToTest = [
     title: 'Authors page',
   },
   {
+    url: '/authors/mgechev/',
+    title: 'Author page',
+  },
+  {
     url: '/tags/',
     title: 'Tags page',
   },
