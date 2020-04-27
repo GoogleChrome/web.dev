@@ -925,6 +925,14 @@ const contributors = {
       unit: 'Chrome',
     },
   },
+  domenic: {
+    name: {
+      given: 'Domenic',
+      family: 'Denicola',
+    },
+    twitter: 'domenic',
+    github: 'domenic',
+  },
 };
 
 const processedContributors = {};

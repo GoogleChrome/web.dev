@@ -1,23 +1,47 @@
 ---
-title: Why you need "cross-origin isolated" state for powerful features
+title: Why you need "cross-origin isolated" for powerful features
 subhead: >
-  Use COOP and COEP to set up a cross-origin isolated environment and enable
-  powerful features like `SharedArrayBuffer`, `performance.measureMemory()`, and
-  the JS Self-Profiling API.
+  Learn why cross-origin isolation is needed to use powerful features such as
+  `SharedArrayBuffer`, `performance.measureMemory()`, and the JS Self-Profiling
+  API.
 description: >
   Some web APIs increase the risk of side-channel attacks like Spectre. To
   mitigate that risk, browsers offer an opt-in-based isolated environment called
-  cross-origin isolated. Use COOP and COEP to set up such an environment and
-  enable powerful features like `SharedArrayBuffer`,
-  `performance.measureMemory()` or the JS Self-Profiling API.
+  cross-origin isolated. Learn why cross-origin isolation is needed to use
+  powerful features such as `SharedArrayBuffer`, `performance.measureMemory()`,
+  and the JS Self-Profiling API.
 authors:
   - agektmr
+  - domenic
 hero: hero.jpg
 date: 2020-05-01
 tags:
   - post
   - security
 ---
+## Introduction
+In [Making your website "cross-origin isolated" using COOP and
+COEP](https://web.dev/coop-coep/) we explained how to adopt to "cross-origin
+isolated" state using COOP and COEP. This is a companion article that explains
+why cross-origin isolation is required to enable powerful features on the browser.
+
+{% Aside 'key-term' %}
+This article uses many similar-sounding terminologies. To make things 
+clearer, let's define them first:
+
+* [COEP: Cross Origin Embedder 
+  Policy](https://wicg.github.io/cross-origin-embedder-policy/)
+* [COOP: Cross Origin Opener 
+  Policy](https://github.com/whatwg/html/pull/5334/files)
+* [CORP: Cross Origin Resource 
+  Policy](https://developer.mozilla.org/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP))
+* [CORS: Cross Origin Resource 
+  Sharing](https://developer.mozilla.org/docs/Web/HTTP/CORS)
+* [CORB: Cross Origin Read 
+  Blocking](https://www.chromium.org/Home/chromium-security/corb-for-developers)
+{% endAside %}
+
+## Why you need "cross-origin isolated" for powerful features
 The web is built on the [same-origin
 policy](https://web.dev/same-origin-policy/): a security feature that restricts
 how documents and scripts can interact with resources from another origin. This
@@ -35,13 +59,14 @@ Unfortunately, by the time the web community realized the key benefits of a
 strict same-origin policy, the web was already relying on these exceptions.
 
 The security side-effects of such a lax same-origin policy were patched in two
-ways. One way was through the introduction of a new protocol called CORS (Cross
-Origin Resource Sharing) whose purpose is to make sure that the server allows
-sharing a resource with a given origin. The other way is by implicitly removing
-direct script access to cross-origin resources while preserving backward
-compatibility. Such cross-origin resources are called "opaque" resources. For
-example, this is why manipulating the pixels of a cross-origin image via
-`CanvasRenderingContext2D` fails unless CORS is applied to the image.
+ways. One way was through the introduction of a new protocol called [CORS (Cross
+Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS)
+whose purpose is to make sure that the server allows sharing a resource with a
+given origin. The other way is by implicitly removing direct script access to
+cross-origin resources while preserving backward compatibility. Such
+cross-origin resources are called "opaque" resources. For example, this is why
+manipulating the pixels of a cross-origin image via `CanvasRenderingContext2D`
+fails unless CORS is applied to the image.
 
 All these policy decisions are happening within a browsing context group.
 
@@ -71,15 +96,16 @@ attacks a web page could carry out. We call it a cross-origin isolated state.
 This is exactly what COOP+COEP is about.
 
 Under a cross-origin isolated state, the requesting site is considered less
-dangerous and unlocks powerful features such as `SharedArrayBuffer` and
-`performance.measureMemory` which could otherwise be used for Spectre-like
-attacks. It also prevents modifying `document.domain`.
+dangerous and unlocks powerful features such as `SharedArrayBuffer`,
+`performance.measureMemory` and JS Self-Profiling API which could otherwise be
+used for Spectre-like attacks. It also prevents modifying `document.domain`.
 
-### Cross Origin Embedder Policy
-COEP (Cross Origin Embedder Policy) prevents a document from loading any
-cross-origin resources which don't explicitly grant the document permission
-(using CORP or CORS). With this feature, you can declare that a document cannot
-load such resources. 
+### Cross Origin Embedder Policy {: #coep }
+[COEP (Cross Origin Embedder
+Policy)](https://wicg.github.io/cross-origin-embedder-policy/) prevents a
+document from loading any cross-origin resources which don't explicitly grant
+the document permission (using CORP or CORS). With this feature, you can declare
+that a document cannot load such resources. 
 
 ![How COEP works](coep.png)
 
@@ -96,7 +122,7 @@ resources explicitly marked as loadable from another origin.
 For resources to be loadable from another origin, they need to support either
 Cross Origin Resource Sharing (CORS) or Cross Origin Resource Policy (CORP).
 
-### Cross Origin Resource Sharing
+### Cross Origin Resource Sharing {: #cors }
 If a cross origin resource supports [Cross Origin Resource Sharing
 (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), you may use the
 [`crossorigin`
@@ -117,7 +143,7 @@ doesn't require special handling as long as the server responds with [the right
 HTTP
 headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#The_HTTP_response_headers).
 
-### Cross Origin Resource Policy
+### Cross Origin Resource Policy {: #corp }
 [Cross Origin Resource Policy
 (CORP)](https://developer.mozilla.org/docs/Web/HTTP/Cross-Origin_Resource_Policy_%28CORP%29)
 was originally introduced as an opt-in to protect your resources from being
@@ -142,13 +168,14 @@ is respected before the response enters the document process, or before it
 enters the service worker that is controlling the document.
 {% endAside %}
 
-### Cross Origin Opener Policy
-COOP (Cross Origin Opener Policy) allows you to ensure that a top-level window
-is isolated from other documents by putting them in a different browsing context
-group, so that they cannot directly interact with the top-level window. For
-example, if a document with COOP opens a pop-up, its `window.opener` will be
-`null`. Also, the `.closed` property of the opener's reference to it will return
-`true`.
+### Cross Origin Opener Policy {: #coop }
+[COOP (Cross Origin Opener
+Policy)](https://github.com/whatwg/html/pull/5334/files) allows you to ensure
+that a top-level window is isolated from other documents by putting them in a
+different browsing context group, so that they cannot directly interact with the
+top-level window. For example, if a document with COOP opens a pop-up, its
+`window.opener` will be `null`. Also, the `.closed` property of the opener's
+reference to it will return `true`.
 
 ![COOP](coop1.png)
 
@@ -189,14 +216,17 @@ While `noopener` can be replaced by COOP, it's still useful for when you want to
 protect your website in browsers that don't support COOP.
 {% endAside %}
 
-If you want guaranteed access to powerful features like `SharedArrayBuffer` or
-`performance.measureMemory`, just remember that your document needs to use both
-COEP with the value of `require-corp` and COOP with the value of `same-origin`.
-In the absence of either, the browser will not guarantee sufficient isolation to
-safely enable those powerful features. You can determine your page's situation
-by checking if `self.crossOriginIsolated` returns `true`.
+If you want guaranteed access to powerful features like `SharedArrayBuffer`,
+`performance.measureMemory` or JS Self-Profiling API, just remember that your
+document needs to use both COEP with the value of `require-corp` and COOP with
+the value of `same-origin`. In the absence of either, the browser will not
+guarantee sufficient isolation to safely enable those powerful features. You can
+determine your page's situation by checking if `self.crossOriginIsolated`
+returns `true`.
 
 ## Resources
+* [Making your website "cross-origin isolated" using COOP and
+  COEP](https://web.dev/coop-coep/)
 * [COOP and COEP
   explained](https://docs.google.com/document/d/1zDlfvfTJ_9e8Jdc8ehuV4zMEu9ySMCiTGMS9y0GU92k/edit)
 * [Planned changes to shared memory - JavaScript |
