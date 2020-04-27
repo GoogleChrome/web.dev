@@ -228,6 +228,7 @@ async function buildTest() {
     plugins: [
       rollupPluginNodeResolve(),
       rollupPluginCJS(),
+      rollupPluginVirtual(buildVirtualJSON(virtualImports)),
       rollupPluginPostCSS(),
     ],
   });
