@@ -3,6 +3,14 @@
 $ICON_SIZE: 32px;
 $IMAGE_WIDTH: 192px;
 
+.w-author-page-header__headline {
+  @include font($HEADLINE_1);
+
+  @include bp(sm) {
+    @include font($HEADLINE_1_XSMALL);
+  }
+}
+
 .w-author-page__icon {
   height: $ICON_SIZE;
 }

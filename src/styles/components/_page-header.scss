@@ -29,16 +29,10 @@
 }
 
 .w-page-header__headline {
-  @include font($HEADLINE_1);
-
   margin: 0 auto 11px;
 
   &.w-code {
     font: 400 64px/64px 'Roboto Mono', monospace;
-  }
-
-  @include bp(sm) {
-    @include font($HEADLINE_1_XSMALL);
   }
 }
 
