@@ -6,7 +6,7 @@ subhead:
 authors:
   - rowan_m
 date: 2019-10-30
-updated: 2020-04-20
+updated: 2020-04-27
 hero: cookie-hero.jpg
 description: |
   With the introduction of the new SameSite=None attribute value, sites can now

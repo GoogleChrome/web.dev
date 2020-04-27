@@ -3,7 +3,7 @@ title: "Hands-on with Portals: seamless navigation on the Web"
 subhead: |
   Learn how the proposed Portals API can improve your navigation UX.
 date: 2019-05-06
-updated: 2020-04-20
+updated: 2020-04-27
 authors:
   - uskay
 hero: hero.png

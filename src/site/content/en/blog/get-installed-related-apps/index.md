@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: The getInstalledRelatedApps() API is a new web platform API that allows your web app to check whether your native app or PWA is installed on the user's device.
 date: 2018-12-20
-updated: 2020-04-20
+updated: 2020-04-27
 tags:
   - blog
   - capabilities

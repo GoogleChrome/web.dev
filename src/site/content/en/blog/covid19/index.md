@@ -7,7 +7,7 @@ description: >
   How to ensure that the core functionality of your website is always
   available, accessible, secure, usable, discoverable, and fast.
 date: 2020-04-03
-updated: 2020-04-20
+updated: 2020-04-06
 hero: hero.jpg
 tags:
   - blog

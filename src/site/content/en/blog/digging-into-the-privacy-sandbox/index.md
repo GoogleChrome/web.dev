@@ -4,7 +4,7 @@ subhead: The Privacy Sandbox is a series of proposals to satisfy third-party use
 authors:
   - samdutton
 date: 2020-04-08
-updated: 2020-04-20
+updated: 2020-04-15
 hero: hero.jpg
 alt: A black-on-white printed sign saying Private, on a wooden wall.
 description: The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms. The proposals need your feedback.
