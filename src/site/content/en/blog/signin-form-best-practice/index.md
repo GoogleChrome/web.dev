@@ -4,7 +4,7 @@ subhead: Use cross-platform browser features to build signin forms that are secu
 authors:
   - samdutton
 date: 2020-04-24
-updated: 2020-04-25
+updated: 2020-04-27
 description: Use cross-platform browser features to build signin forms that are secure, accessible and easy to use.
 hero: hero.jpg
 alt: Closeup photo of a man holding a phone showing a login page
@@ -40,12 +40,13 @@ Poorly designed signin forms get high bounce rates. Each bounce means a lost and
 * Use `autocomplete="current-password"` for a signin password input.
 * Provide **Show password** functionality.
 * Use **aria-label** and **aria-describedby** for password input.
-* Don't double up email or password inputs.
+* Don't double up email  inputs.
 * Design forms so the mobile keyboard doesn't obscure inputs or buttons.
 * Ensure forms are usable on mobile: legible text, inputs and buttons large enough to work as touch targets.
 * Display links to your Terms of Service and privacy policy documents.
 * Include branding (logo and name) on your signup and signin form pages. 
 * Build page analytics, interaction analytics and user-centric performance measurement into your signup and signin flow.
+* Test across browsers and devices: form behaviour varies significantly across platforms.
 
 
 {% Aside %}
@@ -77,7 +78,7 @@ To label an input, use a `<label>`!
 ```
 
 Two reasons:
-* A tap or click on a label moves focus to its input. Associate a label with an input by using the label's `for` attribute with the input's ID.
+* A tap or click on a label moves focus to its input. Associate a label with an input by using the label's `for` attribute with the input's `name` or `id`.
 * Screenreaders announce label text when the label or the label's input gets focus.
 
 Don't use placeholders as input labels. People are liable to forget what the input was for once they've started entering text, especially if they get distracted. (Was I entering an email address or a phone number, or something else?) There are lots of other potential problems with placeholders: see [Don't Use The Placeholder Attribute](https://www.smashingmagazine.com/2018/06/placeholder-attribute/) and [Placeholders in Form Fields Are Harmful](https://www.nngroup.com/articles/form-design-placeholders/) if you're unconvinced.
@@ -198,8 +199,8 @@ You can help browsers help users by autofilling inputs. This is particularly imp
 [Add something to refute warnings **against** autocomplete?]
 
 There are two parts to this:
-1. The input `name` attribute helps browsers store data for email and other input types. Some browsers, including Firefox, also take note of the `id` and `type` attributes.
-2. The `autocomplete` attribute enables browsers to autofill inputs using stored data.
+1. The input `name` attribute helps browsers store data for email and other input types for use with `autcomplete`. Some browsers, including Firefox, also take note of the `id` and `type` attributes.
+2. The `autocomplete` attribute enables browsers to autofill inputs using data stored using the `name` attribute.
 
 Remember that you need different behaviour for inputs in signup and signin forms. In particular, passwords shouldn't be autofilled on signup.
 
@@ -374,42 +375,51 @@ input[type=email]:not(:placeholder-shown):invalid {
 
 ## Use JavaScript where necessary
 
-### Enable password display
+### Toggle password display
 
-You should add a **Show password** icon or button to enable users to check the text they've entered. [Usability suffers](https://www.nngroup.com/articles/stop-password-masking/) when users can't see the text they've entered. Currently there's no built-in way to display **Show password** UI, though [there are plans for implementation](https://twitter.com/sw12/status/1251191795377156099), so you'll need to use JavaScript. You can see this in action in the codelab for this article.
+You should add a **Show password** icon or button to enable users to check the text they've entered. [Usability suffers](https://www.nngroup.com/articles/stop-password-masking/) when users can't see the text they've entered. Currently there's no built-in way to do this, though [there are plans for implementation](https://twitter.com/sw12/status/1251191795377156099). You'll need to use JavaScript instead: you can see this in action in [step 4](https://glitch.com/edit/#!/signin-form-codelab-4) of the codelab for this article.
 
 <figure class="w-figure">
   <img src="./show-password.png" alt="Google signin form showing Show password icon." width="300">
   <figcaption class="w-figcaption">Google signin form: with <strong>Show password</strong> icon and <strong>Forgot password</strong> link.</figcaption>
 </figure>
 
-Codee to add **Show password** functionality is straightforward:
+Code to add **Show password** functionality is straightforward—this example uses text, not an icon.
 
-```html
-<div>
+HTML :
+
+```html/2
+<section>
   <label for="password">Password</label>
   <button id="toggle-password" type="button" aria-label="Show password as plain text. Warning: this will display your password on the screen.">Show password</button>
   <input id="password" name="password" type="password" autocomplete="current-password" required>
-</div>
+</section>
 ```
+
+CSS (so the button looks like plain text):
 
 ```css
 button#toggle-password {
   background: none;
   border: none;
   cursor: pointer;
-  font-family: var(--light-font);
-  font-size: 16px;
+  /* Media query isn't shown here. */
+  font-size: var(--mobile-font-size); 
   font-weight: 300;
   padding: 0;
+  /* Display at the top right of the container */
   position: absolute;
   top: 0;
   right: 0;
 }
 ```
 
+JavaScript:
+
 ```javascript
+const passwordInput = document.getElementById('password');
 const togglePasswordButton = document.getElementById('toggle-password');
+
 togglePasswordButton.addEventListener('click', togglePassword);
 
 function togglePassword() {
@@ -427,6 +437,8 @@ function togglePassword() {
   }
 }
 ```
+
+The result:
 
 ### Make password inputs accessible
 
@@ -451,7 +463,13 @@ You can see both these `aria` features in action at [glitch.com/#!/signup-form](
 
 ### Validate in realtime and before submission
 
-You can use built-in browser features to do basic form validation, but you should also use JavaScript for more robust validation while users are entering data, and when they attempt to submit the form. You must always validate and sanitize data on your back-end, but client-side validation helps users and avoids unnecessary server load.
+HTML form elements and attributes have built-in features for basic validation, but you should also use JavaScript to do more robust validation while users are entering data and when they attempt to submit the form. 
+
+{% Aside 'caution' %}
+Client-side validation helps users enter data and can avoid unnecessary server load, but you must always validate and sanitize data on your back-end.
+{% endAside %}
+
+[Step 5](https://glitch.com/edit/#!/signin-form-codelab-5) of the signin form codelab uses the [Constraint Validation API](https://html.spec.whatwg.org/multipage/forms.html#constraints) (which is [widely supported](https://caniuse.com/#search=constraint%20validation)) to add custom validation using built-in browser UI to set focus and display prompts.
 
 Find out more: [Use JavaScript for more complex real-time validation](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_javascript_for_more_complex_real-time_validation).
 
@@ -480,8 +498,8 @@ Some general guidelines to help reduce signin form abandonment:
 * Before users start on your signin form, make it clear what the value proposition is. How do they benefit from signing in? Give users have concrete incentives to complete signin.
 * If possible, allow users to identify themselves with a mobile phone number instead of an email address.
 * Make it easy for users to get a forgotten password, or reset their password.
-* Link to your Terms of Service and privacy policy documents. It's important to be clear to users from the start how you safeguard their data.
-* Include the logo and name of your company or organization on your signup and signin form pages. Sounds obvious, but many sites have 'blank' forms where it's not clear who 'owns' the form.
+* Link to your Terms of Service and privacy policy documents: make it clear to users from the start how you safeguard their data.
+* Include the logo and name of your company or organization on your signup and signin pages, and make sure that visual styles match the rest of your site. This may sound obvious, but many sites present users with forms that don't feel like they belong to the same site.
 
 [Something about (re)CAPTCHA?]
 
