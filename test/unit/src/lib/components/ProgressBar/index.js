@@ -15,10 +15,10 @@
  * limitations under the License.
  */
 
-import {assert} from '../../test/assert';
+const {assert} = require('../../assert');
 
-suite('basic', () => {
-  test('works', () => {
+describe('ProgressBar', function() {
+  it('should pass an example test', function() {
     assert(true, 'something broke!');
   });
 });
