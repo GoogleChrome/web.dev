@@ -1,14 +1,7 @@
-
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <g id="⇥-RSS-Feed-Placement-Redlines" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-    <g id="WebDev_RSS-Placement_Redlines" transform="translate(-843.000000, -875.000000)">
-      <g id="At-the-end-of-posts" transform="translate(230.000000, 444.000000)">
-        <g id="RSS-icon" transform="translate(613.000000, 431.000000)">
-          <path d="M4,0 L20,0 C22.209139,-4.05812251e-16 24,1.790861 24,4 L24,20 C24,22.209139 22.209139,24 20,24 L4,24 C1.790861,24 2.705415e-16,22.209139 0,20 L0,4 C-2.705415e-16,1.790861 1.790861,4.05812251e-16 4,0 Z" id="Path" fill="#FFA200"></path>
-          <circle id="Oval" fill="#FFFFFF" fill-rule="nonzero" cx="6.18" cy="17.82" r="2.18"></circle>
-          <path d="M4,4.44 L4,7.27 C11.03,7.27 16.73,12.97 16.73,20 L19.56,20 C19.56,11.41 12.59,4.44 4,4.44 Z M4,10.1 L4,12.93 C7.9,12.93 11.07,16.1 11.07,20 L13.9,20 C13.9,14.53 9.47,10.1 4,10.1 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
-        </g>
-      </g>
-    </g>
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" fill-rule="evenodd">
+    <path d="M4 0h16a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4z" fill="#FFA200"/>
+    <circle fill="#FFF" fill-rule="nonzero" cx="6.18" cy="17.82" r="2.18"/>
+    <path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z" fill="#FFF" fill-rule="nonzero"/>
   </g>
 </svg>

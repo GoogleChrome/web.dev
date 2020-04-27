@@ -1,27 +1,37 @@
+@import '../tools/breakpoints';
+
 $ICON_SIZE: 32px;
 $IMAGE_WIDTH: 192px;
 
 .w-author-page__icon {
   height: $ICON_SIZE;
-  margin: calc(#{$ICON_SIZE} / 4);
 }
 
 .w-author-page__image {
   border-radius: 100%;
   margin-bottom: 9px;
-  width: $IMAGE_WIDTH;
+  width: calc(#{$IMAGE_WIDTH} * calc(2/3));
 }
 
 .w-author-page__links {
-  display: flex;
   justify-content: center;
   margin-bottom: 16px;
   width: 100%;
 }
 
 .w-author-page__link {
+  display: inline-block;
+  margin: calc(#{$ICON_SIZE} / 4);
+
   &:hover,
   &:focus {
     text-decoration: none;
+  }
+}
+
+
+@include bp(sm) {
+  .w-author-page__image {
+    width: $IMAGE_WIDTH;
   }
 }
