@@ -304,4 +304,4 @@ Measuring real-world CLS aggregated at an origin-level is also possible using th
 
 That's it for this guide. I hope it helps keep your pages just a little less shifty :)
 
-_With thanks to Philip Walton, Kenji Baheux, Warren Maresca, Annie Sullivan and Steve Kobes for their reviews._
+_With thanks to Philip Walton, Kenji Baheux, Warren Maresca, Annie Sullivan and Steve Kobes for their helpful reviews._
