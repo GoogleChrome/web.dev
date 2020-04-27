@@ -66,9 +66,11 @@ Web developers should use a Trusted Web Activity when they want to include web c
 Android app. Web content in a Trusted Web Activity must meet Lighthouse's PWA install quality
 criteria and additional Android-specific criteria such as [policy compliance][9].
 
-**Important:** When targeting an application for users under 13 years old on the Play Store
-additional [Play Family policies][18] apply, which may be incompatible with using Trusted Web
-Activity.
+{% Aside 'caution' %}
+  When your app is designed primarily for children under 13,
+  additional [Play Family policies][18] apply, which may be incompatible
+  with using Trusted Web Activity.
+{% endAside %}
 
 <figure class="w-figure w-figure--center">
   <img src="lh-score.png" style="max-width: 100%;"
