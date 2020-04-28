@@ -22,6 +22,8 @@ Layout shifts can be distracting to users. Imagine you've started reading an art
 
 [Cumulative Layout Shift](https://web.dev/cls) (CLS) - a [Core Web Vitals](https://web.dev/metrics) metric, measures the instability of content by summing shift scores across layout shifts that don't occur within 500ms of user input. It looks at how much the viewport shifted as well as the distance the element impacted was shifted.
 
+In this guide, we'll cover optimizing common causes of layout shifts.
+
 
 <img src="Optimize-Cumulative0.png" alt="Cumulative layout shift measures layout shifts to ensure users experience smooth and natural interactions.">
 
@@ -38,7 +40,7 @@ The most common causes of a poor CLS are:
 **Summary:** Always include `width` and `height` size attributes on your images and video elements. Alternatively, reserve the required space with [CSS aspect ratio boxes](https://css-tricks.com/aspect-ratio-boxes/). This approach ensures that the browser can allocate the correct amount of space in the document while the image is loading.
 
   <figure class="w-figure">
-    <video controls autoplay loop muted class="w-screenshot">
+    <video controls loop muted class="w-screenshot" poster="video-image-dimensions.jpg">
       <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/image-dimensions.mp4" type="video/mp4; codecs=h264">
     </video>
    <figcaption class="w-figcaption">
@@ -47,7 +49,7 @@ The most common causes of a poor CLS are:
   </figure>
 
   <figure class="w-figure">
-    <video controls autoplay loop muted class="w-screenshot">
+    <video controls loop muted class="w-screenshot" poster="video-image-dimensions-fixed.jpg">
       <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/image-dimensions-fixed.mp4" type="video/mp4; codecs=h264">
     </video>
    <figcaption class="w-figcaption">
@@ -187,7 +189,7 @@ The good news is that it's possible for sites to follow best practices to reduce
 Some sites may find collapsing the slot initially can reduce layout shifts if the ad slot is unlikely to fill. There isn't an easy way to choose the exact size each time, unless you control the ad serving yourself.
 
   <figure class="w-figure">
-    <video controls autoplay loop muted class="w-screenshot">
+    <video controls loop muted class="w-screenshot" poster="video-final-ads-no-dimensions.jpg">
       <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/final_ads_no_dimensions.mp4" type="video/mp4; codecs=h264">
     </video>
    <figcaption class="w-figcaption">
@@ -196,7 +198,7 @@ Some sites may find collapsing the slot initially can reduce layout shifts if th
   </figure>
 
   <figure class="w-figure">
-    <video controls autoplay loop muted class="w-screenshot">
+    <video controls loop muted class="w-screenshot" poster="video-top-ad-after.jpg">
       <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/top-ad-after.mp4" type="video/mp4; codecs=h264">
     </video>
    <figcaption class="w-figcaption">
@@ -234,7 +236,7 @@ Embeddable widgets allow you to embed portable web content in your page (for exa
 These embeds often aren't aware in advance just how large an embed will be (for example, in the case of a social media post - does it have an embedded image? video? multiple rows of text?). As a result, platforms offering embeds do not always reserve enough space for their embeds and can cause layout shifts when they finally load.
 
   <figure class="w-figure">
-    <video controls autoplay loop muted class="w-screenshot">
+    <video controls loop muted class="w-screenshot" poster="video-embed-iframe.jpg">
       <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/embed-iframe.mp4" type="video/mp4; codecs=h264">
     </video>
    <figcaption class="w-figcaption">
@@ -243,7 +245,7 @@ These embeds often aren't aware in advance just how large an embed will be (for 
   </figure>
 
   <figure class="w-figure">
-    <video controls autoplay loop muted class="w-screenshot">
+    <video controls loop muted class="w-screenshot" poster="video-embeds-with-dimensions.jpg">
       <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/embeds-with-dimensions.mp4" type="video/mp4; codecs=h264">
     </video>
    <figcaption class="w-figcaption">
@@ -278,7 +280,7 @@ You've probably experienced layout shifts due to UI that pops-in at the top or b
 *   "GDPR notice"
 
   <figure class="w-figure">
-    <video controls autoplay loop muted class="w-screenshot">
+    <video controls loop muted class="w-screenshot" poster="video-related-articles-dynamic-content.jpg">
       <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/related-articles-dynamic-content.mp4" type="video/mp4; codecs=h264">
     </video>
    <figcaption class="w-figcaption">
