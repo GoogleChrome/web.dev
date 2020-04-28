@@ -1,6 +1,6 @@
 ---
 title: Optimize Largest Contentful Paint
-subhead: 'Learn how to optimize the Largest Contentful Paint on your site'
+subhead: How to render your main content faster.
 authors:
   - houssein
 date: 2020-04-30
@@ -16,7 +16,11 @@ tags:
   - web vitals
 ---
 
-"I can't see any useful content! Why does it take so long to load? 😖"
+<blockquote>
+  <p>
+    I can't see any useful content! Why does it take so long to load? 😖
+  </p>
+</blockquote>
 
 One factor contributing to a poor user experience is how long it takes a user to see any content
 rendered to the screen. [First Contentful Paint](/fcp) (FCP) measures how long it
@@ -30,16 +34,18 @@ Vitals](/metrics) metric and measures when the largest content element in the
 viewport becomes visible. It can be used to determine when the main content of the page has finished
 rendering on the screen.
 
-<img class="w-screenshot w-screenshot--filled" src="lcp-distributions.png" alt="Good, adequate, and poor LCP values">
+<img class="w-screenshot w-screenshot--filled" src="lcp-distributions.png" alt="Good LCP values are
+under 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs
+improvement">
 
 The most common causes of a poor LCP are:
 
-+   Slow server response times
-+   Render-blocking JavaScript and CSS
-+   Resource load times
-+   Client-side rendering
++   [Slow server response times](#slow-servers)
++   [Render-blocking JavaScript and CSS](#render-blocking-resources)
++   [Resource load times](#resources-load-times)
++   [Client-side rendering](#client-side-rendering)
 
-## Slow server response times
+## Slow server response times {: #slow-servers }
 
 The longer it takes a browser to receive content from the server, the longer it takes to render
 anything on the screen. A faster server response time directly improves every single page-load
@@ -55,7 +61,7 @@ improve your TTFB in a number of different ways:
 +   Serve HTML pages cache-first
 +   Establish third-party connections early
 
-## Optimize your server
+### Optimize your server
 
 Are you running expensive queries that take your server a significant amount of time to complete? Or
 are there other complex operations happening server-side that delay the process to return page
@@ -78,7 +84,7 @@ Check out [Fix an overloaded server](/overloaded-server/) for more tips.
 
 A Content Delivery Network (CDN) is a network of servers distributed in many different locations. If
 the content on your web page is being hosted on a single server, your website will load slower for
-users that are geographically further away because their browser requests literally have to travel
+users that are geographically farther away because their browser requests literally have to travel
 around the world. Consider using a CDN to ensure that your users never have to wait for network
 requests to faraway servers.
 
@@ -104,30 +110,31 @@ Depending on your toolchain, there are many different ways to apply server cachi
 
 When installed, a [service
 worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) runs in the browser
-background and can intercept requests from the server. This makes it possible to cache the HTML page
-and only go to the network when the file's content has changed.
+background and can intercept requests from the server. This level of programmatic cache control
+makes it possible to cache some or all of the HTML page's content and only update the cache when the
+content has changed.
 
 The following chart shows how LCP distributions have been reduced on a site using this pattern: 
 
 <figure class="w-figure">
   <img src="./lcp-sw-caching.png" alt="Largest Contentful Paint distributions before and after HTML caching">
-  <figcaption class="w-figcaption">Largest Contentful Paint distribution, with and without a service worker - <a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/">philipwalton.com</a></figcaption>
+  <figcaption class="w-figcaption">Largest Contentful Paint distribution, for page loads with and without a service worker - <a href="https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/">philipwalton.com</a></figcaption>
 </figure>
 
-This chart shows the number of page loads on a single site within the past 30 days with varying LCP
-values. Notice how far more page loads have a faster LCP value after HTML caching was introduced
-using a service worker (blue portion of chart).
+The chart shows the distribution for LCP from a single site over the last 28 days, segmented by
+service worker state. Notice how far more page loads have a faster LCP value after cache-first HTML
+page serving was introduced in the service worker (blue portion of chart).
 
 {% Aside %}
-To learn more about how service workers can serve HTML content cache-first, take a look at [Smaller
-HTML Payloads with Service
+To learn more about techniques for serving full or partial HTML pages cache-first, take a look at
+[Smaller HTML Payloads with Service
 Workers](https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/)
 {% endAside %}
 
 ### Establish third-party connections early
 
 Server requests to third-party origins can also impact LCP, especially if they're needed to display
-critical content on the page. Use `rel=preconnect` to inform the browser that your page intends to
+critical content on the page. Use `rel="preconnect"` to inform the browser that your page intends to
 establish a connection as soon as possible.
 
 ```html
@@ -156,11 +163,11 @@ Learn more by reading [Establish network connections early to improve perceived 
 speed](/preconnect-and-dns-prefetch/)
 {% endAside %}
 
-## Render blocking JavaScript and CSS
+## Render blocking JavaScript and CSS {: #render-blocking-resources }
 
 Before a browser can render any content, it needs to parse HTML markup into a DOM tree. The HTML
 parser will pause if it encounters any external stylesheets (`<link rel="stylesheet">`) or synchronous
-JavaScript tags (`<script src="main.js">)`.
+JavaScript tags (`<script src="main.js">`).
 
 Scripts and stylesheets are both render blocking resources which delay FCP, and consequently LCP.
 Defer any non-critical JavaScript and CSS to speed up loading of the main content of your web page.
@@ -240,7 +247,7 @@ If you cannot manually add inline styles to your site, use a library to automate
 examples:
 
 +   [Critical](https://github.com/addyosmani/critical),
-    [CriticalCSS](https://github.com/filamentgroup/criticalCSS) and
+    [CriticalCSS](https://github.com/filamentgroup/criticalCSS), and
     [Penthouse](https://github.com/pocketjoso/penthouse) are all packages that extract and inline
     above-the-fold CSS
 +   [Critters](https://github.com/GoogleChromeLabs/critters) is a webpack plugin that inlines
@@ -345,8 +352,8 @@ critical-path or above-the-fold content.
 <script async src="..."></script>
 ```
 
-Unless there is a specific reason not to, all third-party scripts should be loaded with either defer
-or async by default.
+Unless there is a specific reason not to, all third-party scripts should be loaded with either `defer`
+or `async` by default.
 
 ### Minimize unused polyfills
 
@@ -361,12 +368,12 @@ environments where they're needed.
 To optimize polyfill usage on your site:
 
 +   If you use [Babel](https://babeljs.io/docs/en/index.html) as a transpiler, use
-    [@babel/preset-env](https://babeljs.io/docs/en/babel-preset-env) to only include the polyfills
+    [`@babel/preset-env`](https://babeljs.io/docs/en/babel-preset-env) to only include the polyfills
     needed for the browsers you plan on targeting. For Babel 8, enable the
     [`bugfixes`](https://babeljs.io/docs/en/babel-preset-env#bugfixes) option to further cut down
     on any unneeded polyfills
-+   Use the module/nomodule pattern to deliver two separate bundles (@babel/preset-env also
-    supports this via [target.esmodules](https://babeljs.io/docs/en/babel-preset-env#targetsesmodules))
++   Use the module/nomodule pattern to deliver two separate bundles (`@babel/preset-env` also
+    supports this via [`target.esmodules`](https://babeljs.io/docs/en/babel-preset-env#targetsesmodules))
     
     ```html
     <script type="module" src="main.mjs"></script>
@@ -382,7 +389,7 @@ The [Serve modern code to modern browsers for faster page
 loads](/serve-modern-code-to-modern-browsers/) guide goes into more detail about this topic.
 {% endAside %}
 
-## Resource load times
+## Resource load times {: #resource-load-times }
 
 Although an increase in CSS or JavaScript blocking time will directly result in worse performance,
 the time it takes to load many other types of resources can also affect paint times. The types of
@@ -399,9 +406,8 @@ elements that affect LCP are:
 +   [Block-level](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements) elements
     containing text nodes or other inline-level text elements
 
-The time it takes to load these elements if rendered above-the-fold, including blocking resources
-such as JavaScript and CSS, will have a direct effect on LCP. There are a few ways to ensure these
-files are loaded as fast as possible:
+The time it takes to load these elements if rendered above-the-fold will have a direct effect on
+LCP. There are a few ways to ensure these files are loaded as fast as possible:
 
 +   Optimize and compress images
 +   Preload important resources
@@ -416,7 +422,7 @@ images, large carousels or banner images are all common examples of this.
 
 <figure class="w-figure">
   <img width="300" src="./image-largest-element.png">
-  <figcaption>Image as the largest page element: <a href="https://www.engadget.com/google-pixel-buds-review-2020-160030712.html">engadget.com</a></figcaption>
+  <figcaption>Image as the largest page element: <a href="https://design.google/">design.google</a></figcaption>
 </figure>
 
 Improving how long it takes to load and render these types of images will directly speed up LCP. To
@@ -551,7 +557,7 @@ updating precached assets easier than writing a custom service worker to handle 
 Take a look at [Network reliability](/reliable/) to learn more about service workers and Workbox.
 {% endAside %}
 
-## Client-side rendering
+## Client-side rendering {: #client-side-rendering }
 
 Many sites use client-side JavaScript logic to render pages directly in the browser. Frameworks and
 libraries, like [React](https://reactjs.org/), [Angular](https://angular.io/), and
@@ -624,7 +630,7 @@ web](https://developers.google.com/web/updates/2019/02/rendering-on-the-web).
 
 ## Developer tools
 
-A number of tools are available to measure and debug Largest Contentful Paint (LCP).
+A number of tools are available to measure and debug LCP:
 
 +   [Lighthouse 6.0](https://developers.google.com/web/tools/lighthouse) includes support for
     measuring LCP in a lab setting.
