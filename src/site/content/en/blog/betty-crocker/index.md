@@ -7,7 +7,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2020-04-22
-updated: 2020-04-22
+updated: 2020-04-28
 hero: hero.jpg
 alt: Betty Crocker Cake Mix—Coffee Cinnamon.
 description: |
@@ -315,6 +315,21 @@ BettyCrocker.com reported the following metrics:
 - The bounce rate for users who enabled the wake lock was 50% lower
   than for those not using the wake lock feature.
 - Indicators of purchase intent were about 300% higher for wake lock users compared to all users.
+
+<div class="w-stats">
+  <div class="w-stat">
+    <p class="w-stat__figure">3.1<sub class="w-stat__sub">×</sub></p>
+    <p class="w-stat__desc">Longer session duration</p>
+  </div>
+  <div class="w-stat">
+    <p class="w-stat__figure">50<sub class="w-stat__sub">%</sub></p>
+    <p class="w-stat__desc">Lower bounce rate</p>
+  </div>
+  <div class="w-stat">
+    <p class="w-stat__figure">300<sub class="w-stat__sub">%</sub></p>
+    <p class="w-stat__desc">Higher purchase intent indicators</p>
+  </div>
+</div>
 
 ## Conclusions
 
