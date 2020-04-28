@@ -16,7 +16,7 @@ tags:
   - lighthouse
 ---
 
-"I was about to click that! Why did it move? 😭"
+<blockquote>I was about to click that! Why did it move? 😭</blockquote>
 
 Layout shifts can be distracting to users. Imagine you've started reading an article when all of a sudden elements shift around the page, throwing you off and requiring you to find your place again. This is very common on the web, including when reading the news, or trying to click those 'Search' or 'Add to Cart' buttons. Such layout shifts happen when elements on a page move because another element was suddenly added to the page or resized. 
 
@@ -25,7 +25,7 @@ Layout shifts can be distracting to users. Imagine you've started reading an art
 In this guide, we'll cover optimizing common causes of layout shifts.
 
 
-<img src="Optimize-Cumulative0.png" alt="Cumulative layout shift measures layout shifts to ensure users experience smooth and natural interactions.">
+<img src="cls-graphic.svg" alt="Cumulative layout shift measures layout shifts to ensure users experience smooth and natural interactions.">
 
 The most common causes of a poor CLS are:
 
