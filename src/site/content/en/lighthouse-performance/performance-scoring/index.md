@@ -27,7 +27,7 @@ problems include:
 * Browser extensions that inject JavaScript and add/modify network requests
 * Antivirus software
 
-[Lighthouse's docs to Variability](https://github.com/GoogleChrome/lighthouse/blob/master/docs/variability.md) covers this in more depth.
+[Lighthouse's documentation on Variability](https://github.com/GoogleChrome/lighthouse/blob/master/docs/variability.md) covers this in more depth.
 
 Furthermore, even though Lighthouse can provide you a single overall Performance score, it might be more
 useful to think of your site performance as a distribution of scores, rather than a single number.
