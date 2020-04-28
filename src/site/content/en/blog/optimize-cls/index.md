@@ -37,19 +37,28 @@ The most common causes of a poor CLS are:
 
 **Summary:** Always include `width` and `height` size attributes on your images and video elements. Alternatively, reserve the required space with [CSS aspect ratio boxes](https://css-tricks.com/aspect-ratio-boxes/). This approach ensures that the browser can allocate the correct amount of space in the document while the image is loading.
 
-[Images without width and height specified](image-dimensions.mp4) (video)
+  <figure class="w-figure">
+    <video controls autoplay loop muted class="w-screenshot">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/image-dimensions.mp4" type="video/mp4; codecs=h264">
+    </video>
+   <figcaption class="w-figcaption">
+      Images without width and height specified.
+    </figcaption>
+  </figure>
 
-![alt_text](Optimize-Cumulative1.png "image_tooltip")
-
-[Images with width and height](image-dimensions-fixed.mp4) (video)
-
-
-![alt_text](Optimize-Cumulative2.png "image_tooltip")
+  <figure class="w-figure">
+    <video controls autoplay loop muted class="w-screenshot">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/image-dimensions-fixed.mp4" type="video/mp4; codecs=h264">
+    </video>
+   <figcaption class="w-figcaption">
+      Images with width and height specified.
+    </figcaption>
+  </figure>
 
 <figure class="w-figure">
   <img src="Optimize-Cumulative3.png " alt="Lighthouse report showing the before/after impact to Cumulative Layout Shift after setting dimensions on images">
   <figcaption class="w-figcaption">
-    Lighthouse 6.0 impact of setting image dimensions on CLS
+    Lighthouse 6.0 impact of setting image dimensions on CLS.
   </figcaption>
 </figure>
 
@@ -177,13 +186,23 @@ The good news is that it's possible for sites to follow best practices to reduce
 
 Some sites may find collapsing the slot initially can reduce layout shifts if the ad slot is unlikely to fill. There isn't an easy way to choose the exact size each time, unless you control the ad serving yourself.
 
-[Ads without sufficient space reserved](final_ads_no_dimensions.mp4)
+  <figure class="w-figure">
+    <video controls autoplay loop muted class="w-screenshot">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/final_ads_no_dimensions.mp4" type="video/mp4; codecs=h264">
+    </video>
+   <figcaption class="w-figcaption">
+      Ads without sufficient space reserved.
+    </figcaption>
+  </figure>
 
-![alt_text](Optimize-Cumulative4.png "image_tooltip")
-
-[Ads with sufficient space reserved](top-ad-after.mp4)
-
-![alt_text](Optimize-Cumulative5.png "image_tooltip")
+  <figure class="w-figure">
+    <video controls autoplay loop muted class="w-screenshot">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/top-ad-after.mp4" type="video/mp4; codecs=h264">
+    </video>
+   <figcaption class="w-figcaption">
+      Ads with sufficient space reserved.
+    </figcaption>
+  </figure>
 
 <figure class="w-figure">
   <img src="Optimize-Cumulative6.png " alt="Lighthouse report showing the before/after impact to Cumulative Layout Shift of reserving space for banners like ads">
@@ -214,14 +233,23 @@ Embeddable widgets allow you to embed portable web content in your page (for exa
 
 These embeds often aren't aware in advance just how large an embed will be (for example, in the case of a social media post - does it have an embedded image? video? multiple rows of text?). As a result, platforms offering embeds do not always reserve enough space for their embeds and can cause layout shifts when they finally load.
 
-[Embed without space reserved](embed-iframe.mp4)
+  <figure class="w-figure">
+    <video controls autoplay loop muted class="w-screenshot">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/embed-iframe.mp4" type="video/mp4; codecs=h264">
+    </video>
+   <figcaption class="w-figcaption">
+      Embed without space reserved.
+    </figcaption>
+  </figure>
 
-![alt_text](Optimize-Cumulative7.png "image_tooltip")
-
-[Embed with space reserved](embeds-with-dimensions.mp4)
-
-![alt_text](Optimize-Cumulative8.png "image_tooltip")
-
+  <figure class="w-figure">
+    <video controls autoplay loop muted class="w-screenshot">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/embeds-with-dimensions.mp4" type="video/mp4; codecs=h264">
+    </video>
+   <figcaption class="w-figcaption">
+      Embed with space reserved.
+    </figcaption>
+  </figure>
 
 <figure class="w-figure">
   <img src="Optimize-Cumulative9.png " alt="Lighthouse report showing the before/after impact to Cumulative Layout Shift of reserving space for this embed on CLS">
@@ -249,9 +277,14 @@ You've probably experienced layout shifts due to UI that pops-in at the top or b
 *   "We're still taking orders"
 *   "GDPR notice"
 
-[Dynamic content without space reserved](related-articles-dynamic-content.mp4)
-
-![alt_text](Optimize-Cumulative10.png "image_tooltip")
+  <figure class="w-figure">
+    <video controls autoplay loop muted class="w-screenshot">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/related-articles-dynamic-content.mp4" type="video/mp4; codecs=h264">
+    </video>
+   <figcaption class="w-figcaption">
+      Dynamic content without space reserved.
+    </figcaption>
+  </figure>
 
 If you need to display these types of UI affordances, reserve sufficient space in the viewport for it in advance (for example, using a placeholder or skeleton UI) so that when it loads, it does not cause content in the page to surprisingly shift around.
 
