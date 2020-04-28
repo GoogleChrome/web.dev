@@ -20,7 +20,7 @@ tags:
 
 Layout shifts can be distracting to users. Imagine you've started reading an article when all of a sudden elements shift around the page, throwing you off and requiring you to find your place again. This is very common on the web, including when reading the news, or trying to click those 'Search' or 'Add to Cart' buttons. Such layout shifts happen when elements on a page move because another element was suddenly added to the page or resized. 
 
-[Cumulative Layout Shift](https://web.dev/cls) (CLS) - a [Core Web Vitals](https://web.dev/metrics) metric, measures the instability of content by summing shift scores across layout shifts that don't occur within 500ms of user input. It looks at how much the viewport shifted as well as the distance the element impacted was shifted.
+[Cumulative Layout Shift](/cls) (CLS) - a [Core Web Vitals](/metrics) metric, measures the instability of content by summing shift scores across layout shifts that don't occur within 500ms of user input. It looks at how much the viewport shifted as well as the distance the element impacted was shifted.
 
 In this guide, we'll cover optimizing common causes of layout shifts.
 
@@ -108,7 +108,7 @@ Modern browsers now set the default aspect ratio of images based on an image's w
 <img src="cool-story.jpg" width="640" height="360" alt="cool story">
 ```
 
-...and the [UA stylesheets](https://developer.mozilla.org/docs/Web/CSS/Cascade#User-agent_stylesheets) of all browsers add a [default aspect ratio](https://html.spec.whatwg.org/multipage/rendering.html#attributes-for-embedded-content-and-images) based on the element's existing `width` and `height` attributes:
+…and the [UA stylesheets](https://developer.mozilla.org/docs/Web/CSS/Cascade#User-agent_stylesheets) of all browsers add a [default aspect ratio](https://html.spec.whatwg.org/multipage/rendering.html#attributes-for-embedded-content-and-images) based on the element's existing `width` and `height` attributes:
 
 
 ```css
@@ -137,7 +137,7 @@ img {
 
 **What about responsive images?**
 
-When working with [responsive images](https://web.dev/serve-responsive-), `srcset` defines the images you allow the browser to select between and what size each image is. To ensure `<img>` width and height attributes can be set, each image should use the same aspect ratio.
+When working with [responsive images](/serve-responsive-), `srcset` defines the images you allow the browser to select between and what size each image is. To ensure `<img>` width and height attributes can be set, each image should use the same aspect ratio.
 
 ```html
 <img width="1000" height="1000"
@@ -305,7 +305,7 @@ Downloading and rendering web fonts can cause layout shifts in two ways:
 
 The following tools can help you minimize this:
 
-* <code>[font-display](https://web.dev/font-display/)</code> allows you to modify the rendering behavior of custom fonts with values such as <code>auto</code>, <code>swap</code>, <code>block</code>, <code>fallback</code> and <code>optional</code>. Unfortunately, all of these values (except [optional](http://crrev.com/749080)) can cause a re-layout in one of the above ways.
+* <code>[font-display](/font-display/)</code> allows you to modify the rendering behavior of custom fonts with values such as <code>auto</code>, <code>swap</code>, <code>block</code>, <code>fallback</code> and <code>optional</code>. Unfortunately, all of these values (except [optional](http://crrev.com/749080)) can cause a re-layout in one of the above ways.
 * The [Font Loading API](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#the_font_loading_api) can reduce the time it takes to get necessary fonts.
 
 As of Chrome 83, I can recommend the following too:
@@ -313,7 +313,7 @@ As of Chrome 83, I can recommend the following too:
 * Using `<link rel=preload>` on the key web fonts: a preloaded font will have a higher chance to meet the first paint, in which case there's no layout shifting.
 * Combining `<link rel=preload>` and `font-display: optional`
 
-Read [Prevent layout shifting and flashes of invisible text (FOIT) by preloading optional fonts](https://web.dev/preload-optional-fonts/) for more details.
+Read [Prevent layout shifting and flashes of invisible text (FOIT) by preloading optional fonts](/preload-optional-fonts/) for more details.
 
 ### Animations 🏃‍♀️
 
