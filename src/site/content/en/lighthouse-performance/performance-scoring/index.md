@@ -42,7 +42,7 @@ The metric scores are not visible in the report, but are calculated under the ho
 
 
 {% Aside %}
-  The weightings are chosen to provide a balanced representation of the user perception of performance. The weightings have changed over time because the Lighthouse team is regularly
+  The weightings are chosen to provide a balanced representation of the user's perception of performance. The weightings have changed over time because the Lighthouse team is regularly
   doing research and gathering feedback to understand what has the biggest
   impact on user-perceived performance.
 {% endAside %}
@@ -139,12 +139,12 @@ the user initiating the page load and the page rendering its primary content. Ba
 website data, top-performing sites render LCP in about 1,220ms, so that metric value is mapped to
 a score of 99.
 
-Going a bit deeper, the Lighthouse scoring curve model uses HTTPArchive data to determine two control points that then set the shape of a [log-normal](https://en.wikipedia.org/wiki/Weber%E2%80%93Fechner_law) curve. The 25th percentile of HA data becomes a score of 50 (our median control point). And the 5th percentile of HA data becomes a score of 95-ish (our PODR - point of diminishing returns control point).
+Going a bit deeper, the Lighthouse scoring curve model uses HTTPArchive data to determine two control points that then set the shape of a [log-normal](https://en.wikipedia.org/wiki/Weber%E2%80%93Fechner_law) curve. The 25th percentile of HTTPArchive data becomes a score of 50 (our median control point), and the 5th percentile becomes a score of 95-ish (our PODR - point of diminishing returns control point).
 
 
 
 <figure class="w-figure">
-  <img src="./scoring-curve.png" alt="Image of a the scoring curve for TTI" style="max-width: 600px;">
+  <img src="./scoring-curve.png" alt="Image of the scoring curve for TTI" style="max-width: 600px;">
   <figcaption class="w-figcaption">
     <a href="https://www.desmos.com/calculator/dufar5rf4g">Explore the scoring curve for TTI</a>.
   </figcaption>
@@ -163,7 +163,7 @@ The metrics scores and the perf score are colored according to these ranges:
 ### What can developers do to improve their performance score?
 First, use the [Lighthouse scoring calculator](https://paulirish.github.io/lh-scorecalc/) to help understand what thresholds you should be aiming for achieving a certain Lighthouse performance score.
 
-In the Ligthhouse report, the _Opportunities_ section has detailed suggestions and documentation on how to implement them. Additionally, the _Diagnostics_ section lists additional guidance that developers can explore to further experiment and tweak with their performance.
+In the Ligthhouse report, the _Opportunities_ section has detailed suggestions and documentation on how to implement them. Additionally, the _Diagnostics_ section lists additional guidance that developers can explore to further improve their performance.
 
 
 <!--
