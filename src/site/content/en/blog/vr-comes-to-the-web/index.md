@@ -12,7 +12,7 @@ description:
   this launch is the foundation for both augmented and virtual reality. This
   article is the first in a series, exploring basic concepts and describing how
   to enter an XR session. Other browsers will soon be supporting the WebXR
-  Device API, including Firefox Reality, Oculus Browser, Edge and Magic Leap'sgit diff
+  Device API, including Firefox Reality, Oculus Browser, Edge and Magic Leap's
   Helio browser, among others.
 tags:
   - blog
