@@ -5,7 +5,7 @@ description: |
   Learn how Lighthouse generates the overall Performance score for your page.
 subhead: How Lighthouse calculates your overall Performance score
 date: 2019-09-19
-updated: 2020-04-13
+updated: 2020-04-28
 ---
 
 In general, only [metrics](/lighthouse-performance/#metrics)
@@ -13,8 +13,7 @@ contribute to your Lighthouse Performance score, not the results of Opportunitie
 That said, improving the opportunties and diagnostics likely improve the metric values, so there
 is an indirect relationship.
 
-Below you'll understand why the score can flutate, how it's comprised, and how Lighthouse scores
-each individual metric.
+Below, we've outlined why the score can flutate, how it's comprised, and how Lighthouse scores each individual metric.
 
 ## Why your score fluctuates {: #fluctuations }
 
