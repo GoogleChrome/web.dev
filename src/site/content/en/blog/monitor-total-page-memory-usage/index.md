@@ -269,7 +269,7 @@ The result may look as follows:
 ```
 
 The total memory usage estimate is returned in the `bytes` field. The value of
-bytes is using [Numeric separator][numeric-separators] syntax. This value is
+bytes is using [numeric separator syntax][numeric-separators]. This value is
 highly implementation-dependent and cannot be compared across browsers. It may
 even change between different versions of the same browser. During the origin
 trial the value includes JavaScript memory usage of the main window and all
@@ -348,7 +348,7 @@ improved the API.
 [math]: https://en.wikipedia.org/wiki/Exponential_distribution#Computational_methods
 [memory-leaks]: https://docs.google.com/presentation/d/14uV5jrJ0aPs0Hd0Ehu3JPV8IBGc3U8gU6daLAqj6NrM/edit#slide=id.p
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EPerformanceAPIs
-[numeric-separators]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Numeric_separators
+[numeric-separators]: https://v8.dev/features/numeric-separators
 [ot]: https://developers.chrome.com/origintrials/#/view_trial/1281274093986906113
 [poisson]: https://en.wikipedia.org/wiki/Poisson_point_process
 [security-error]: https://developer.mozilla.org/en-US/docs/Web/API/DOMException#exception-SecurityError

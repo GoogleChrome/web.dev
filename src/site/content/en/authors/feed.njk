@@ -2,7 +2,7 @@
 renderData:
   metadata:
     author: "{{ paged.title }}"
-    icon: https://web.dev/images/social.png
+    icon: "{{ paged.data.hero or '/images/social.png' }}"
     id: https://web.dev/
     logo: https://web.dev/images/rss-banner.png
     subtitle: "{{ paged.description }}"
@@ -25,7 +25,7 @@ pagination:
   </author>
   <link href="{{ renderData.metadata.url }}" rel="self"/>
   <link href="{{ renderData.metadata.id }}"/>
-  <icon>{{ renderData.metadata.icon }}</icon>
+  <icon>https://web.dev{{ renderData.metadata.icon }}</icon>
   <logo>{{ renderData.metadata.logo }}</logo>
   <subtitle>{{ renderData.metadata.subtitle }}</subtitle>
   {% for post in paged.elements -%}
