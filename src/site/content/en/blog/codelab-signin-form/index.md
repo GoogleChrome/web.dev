@@ -4,7 +4,7 @@ title: Signin form best practice
 authors:
   - samdutton
 date: 2020-04-24
-updated: 2020-04-27
+updated: 2020-04-28
 description: Use cross-platform browser features to build an email/password signin form that's secure, accessible and easy to use.
 tags:
   - identity
@@ -122,7 +122,7 @@ Code to add **Show password** functionality is straightforward—this example us
 
 Update [index.html](https://glitch.com/edit/#!/signin-form-codelab-4?path=index.html:22:2), [style.css](https://glitch.com/edit/#!/signin-form-codelab-4?path=style.css:34:0) and [script.js](https://glitch.com/edit/#!/signin-form-codelab-4?path=script.js) as follows.
 
-Replace the password section in the HTML:
+Add the toggle button to the password section in the HTML:
 
 ```html/2
 <section>
@@ -147,7 +147,7 @@ button#toggle-password {
 }
 ```
 
-Add JavaScript to toggle password display:
+Add JavaScript to toggle password display and set the appropriate `aria-label`:
 
 ```javascript
 const passwordInput = document.getElementById('password');
@@ -192,11 +192,20 @@ This step uses the [Constraint Validation API](https://html.spec.whatwg.org/mult
 
 Tell users the constraints for passwords and any other inputs. Don't make them guess!
 
-For this codelab, add the following HTML after the password input:
+Update the HTML for the password section:
 
 ```html
-<div id="password-constraints">At least eight characters, including at least one lowercase and one uppercase letter.</div>
+<section>
+  <label for="password">Password</label>
+  <button id="toggle-password" type="button" aria-label="Show password as plain text. Warning: this will display your password on the screen.">Show password</button>
+  <input id="password" name="password" type="password" autocomplete="current-password" aria-describedby="password-constraints" required>
+	<div id="password-constraints">At least eight characters, with at least one lowercase and one uppercase letter.</div>
+</section>
 ```
+
+This adds two new features:
+* Information about password constraints.
+* An `aria-describedby` attribute for the password input. Screenreaders read the label text, the input type (password), and then the description. 
 
 Add CSS: 
 
@@ -253,10 +262,12 @@ function handleFormSubmission(event) {
 {% endAside %}
 
 
-## And finally...
+## And finally…
 
-We won't show them here, but three crucial features are still missing:
+We won't show them here, but three crucial signin form features are still missing:
 
-* Make it easy for users to reset their password: add a **Forgot your password?** link.
-* Link to your Terms of Service and privacy policy documents: make it clear to users from the start how you safeguard their data.
-* Include the logo and name of your company or organization on your signin pages, and make sure that visual styles match the rest of your site. This may sound obvious, but many sites present users with forms that don't feel like they belong to the same site.
+* **Forgot your password?** link: make it easy for users to reset their password.
+
+* Links to your Terms of Service and privacy policy documents: make it clear to users from the start how you safeguard their data.
+
+* The logo and name of your company or organization: include these and make sure that visual styles match the rest of your site. This may sound obvious, but many sites present users with forms that don't feel like they belong to the same site.

@@ -4,7 +4,7 @@ subhead: Use cross-platform browser features to build signin forms that are secu
 authors:
   - samdutton
 date: 2020-04-24
-updated: 2020-04-27
+updated: 2020-04-28
 description: Use cross-platform browser features to build signin forms that are secure, accessible and easy to use.
 hero: hero.jpg
 alt: Closeup photo of a man holding a phone showing a login page
@@ -39,7 +39,7 @@ Poorly designed signin forms get high bounce rates. Each bounce means a lost and
 * Use `name="new-password"` for a signup password input.
 * Use `autocomplete="current-password"` for a signin password input.
 * Provide **Show password** functionality.
-* Use **aria-label** and **aria-describedby** for password input.
+* Use **aria-label** and **aria-describedby** for password inputs.
 * Don't double up email  inputs.
 * Design forms so the mobile keyboard doesn't obscure inputs or buttons.
 * Ensure forms are usable on mobile: legible text, inputs and buttons large enough to work as touch targets.
@@ -380,14 +380,13 @@ input[type=email]:not(:placeholder-shown):invalid {
 You should add a **Show password** icon or button to enable users to check the text they've entered. [Usability suffers](https://www.nngroup.com/articles/stop-password-masking/) when users can't see the text they've entered. Currently there's no built-in way to do this, though [there are plans for implementation](https://twitter.com/sw12/status/1251191795377156099). You'll need to use JavaScript instead: you can see this in action in [step 4](https://glitch.com/edit/#!/signin-form-codelab-4) of the codelab for this article.
 
 <figure class="w-figure">
-  <img src="./show-password.png" alt="Google signin form showing Show password icon." width="300">
+  <img src="./show-password-google.png" alt="Google signin form showing Show password icon." width="350" style="border: 1px solid #eee; padding: 20px;">
   <figcaption class="w-figcaption">Google signin form: with <strong>Show password</strong> icon and <strong>Forgot password</strong> link.</figcaption>
 </figure>
 
-Code to add **Show password** functionality is straightforward—this example uses text, not an icon.
+Code to add **Show password** functionality is straightforward. This example uses text, not an icon.
 
-HTML :
-
+HTML:
 ```html/2
 <section>
   <label for="password">Password</label>
@@ -397,7 +396,6 @@ HTML :
 ```
 
 CSS (so the button looks like plain text):
-
 ```css
 button#toggle-password {
   background: none;
@@ -415,7 +413,6 @@ button#toggle-password {
 ```
 
 JavaScript:
-
 ```javascript
 const passwordInput = document.getElementById('password');
 const togglePasswordButton = document.getElementById('toggle-password');
@@ -438,11 +435,17 @@ function togglePassword() {
 }
 ```
 
-The result:
+Here's the end result:
+
+<figure class="w-figure">
+  <img src="./show-password.png" alt="Screenshots of signin form with Show password text 'button', in Safari on Mac and on iPhone 7." width="800" style="border: 1px solid #999;>
+  <figcaption class="w-figcaption">Signin form with <strong>Show password</strong> text 'button', in Safari on Mac and iPhone 7.</figcaption>
+</figure>
+
 
 ### Make password inputs accessible
 
-Use `aria-describedby` to explain password constraints, using the element that describes the constraints for your password input. Screenreaders will read the label, the input type (password), and then the description. 
+Use `aria-describedby` to explain password constraints, using the element that describes the constraints for your password input. Screenreaders read the label text, the input type (password), and then the description. 
 
 ```html
 <input type="password" aria-describedby="password-constraints" ...>
@@ -492,14 +495,14 @@ You may also want to consider implementing A/B testing in order to try out diffe
 
 Some general guidelines to help reduce signin form abandonment:
 
-* Don't make users hunt for signin. It's surprising how many sites get this wrong! Put a link to the signin form at the top of the page, with well-understood wording such as **Sign In**, **Create Account** or **Register**.
+* Don't make users hunt for signin. It's surprising how many sites get this wrong! Put a link to the signin form at the top of the page, using well-understood wording such as **Sign In**, **Create Account** or **Register**.
 * Keep it focused! Signup forms are not the place to distract people with offers and other site features.
-* Minimize signin data. Collect other user data (such as addresses or credit card details) only when necessary, and when users understand the benefits.
-* Before users start on your signin form, make it clear what the value proposition is. How do they benefit from signing in? Give users have concrete incentives to complete signin.
-* If possible, allow users to identify themselves with a mobile phone number instead of an email address.
-* Make it easy for users to get a forgotten password, or reset their password.
+* Minimize signup complexity. Collect other user data (such as addresses or credit card details) only when users see a clear benefit from providing that data.
+* Before users start on your signup form, make it clear what the value proposition is. How do they benefit from signing in? Give users concrete incentives to complete signup.
+* If possible allow users to identify themselves with a mobile phone number instead of an email address.
+* Make it easy for users to reset their password, and make the **Forgot your password?** link obvious.
 * Link to your Terms of Service and privacy policy documents: make it clear to users from the start how you safeguard their data.
-* Include the logo and name of your company or organization on your signup and signin pages, and make sure that visual styles match the rest of your site. This may sound obvious, but many sites present users with forms that don't feel like they belong to the same site.
+* Include the logo and name of your company or organization on your signup and signin pages, and make sure that visual styles match the rest of your site. This may sound obvious, but many sites present users with forms that don't feel like they belong to the same site as other content.
 
 [Something about (re)CAPTCHA?]
 
