@@ -1,18 +1,18 @@
 ---
-title: Optimize Cumulative Layout Shift 🕺💃
-subhead: Learn how to avoid unexpected layout shifts to improve user-experience
+title: Optimize Cumulative Layout Shift
+subhead: Learn how to avoid sudden layout shifts to improve user-experience
 authors:
   - addyosmani
-date: 2020-04-26
+date: 2020-05-05
 hero: hero.png
-alt: TBD for hero
 description: |
-  TBD
+  Cumulative Layout Shift (CLS) is a metric that quantifies how often users experience sudden shifts in page content. In this guide, we'll cover optimizing common causes of CLS such as images and iframes without dimensions or dynamic content.
+alt: Layout shifts can suddenly push the content you are reading or are about to click further down the page, leading to a poor user-experience. Reserving space for dynamic content causing layout shifts leads to a more delightful user experience.
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - fast
+  - web vitals
   - cumulative layout shift
-  - layout shifts
   - lighthouse
 ---
 
@@ -25,7 +25,7 @@ Layout shifts can be distracting to users. Imagine you've started reading an art
 In this guide, we'll cover optimizing common causes of layout shifts.
 
 
-<img src="cls-graphic.svg" alt="Cumulative layout shift measures layout shifts to ensure users experience smooth and natural interactions.">
+<img src="cls-graphic.svg" alt="Cumulative layout shift measures layout shifts to ensure users experience smooth and natural interactions. In this graphic, we highlight sites should strive to have a CLS of less than 0.1 while a CLS of over 0.25 is considered poor.">
 
 The most common causes of a poor CLS are:
 
@@ -72,7 +72,7 @@ In the early days of the web, developers would add `width` and `height` attribut
 
 
 ```html
-<img src="cool-story.jpg" width="640" height="360" alt="A cool story">
+<img src="puppy.jpg" width="640" height="360" alt="Puppy with balloons">
 ```
 
 You may notice `width` and `height` above do not include units. These "pixel" dimensions would ensure a 640x360 area would be reserved. The image would stretch to fit this space, regardless of whether the true dimensions matched or not.
@@ -93,8 +93,8 @@ This is where aspect ratio comes in. The aspect ratio of an image is the ratio o
 
 This means if we know one of the dimensions, the other can be determined. For a 16:9 aspect ratio:
 
-*   If cool-story.jpg has a 360px height, width is 360 x (16 / 9) = 640px
-*   If cool-story.jpg has a 640px width, height is 640 x (9 / 16) = 360px
+*   If puppy.jpg has a 360px height, width is 360 x (16 / 9) = 640px
+*   If puppy.jpg has a 640px width, height is 640 x (9 / 16) = 360px
 
 Knowing the aspect ratio allows the browser to calculate and reserve sufficient space for the height and associated area.
 
@@ -105,7 +105,7 @@ Modern browsers now set the default aspect ratio of images based on an image's w
 
 ```html
 <!-- set a 640:360 i.e a 16:9 - aspect ratio -->
-<img src="cool-story.jpg" width="640" height="360" alt="cool story">
+<img src="puppy.jpg" width="640" height="360" alt="Puppy with balloons">
 ```
 
 …and the [UA stylesheets](https://developer.mozilla.org/docs/Web/CSS/Cascade#User-agent_stylesheets) of all browsers add a [default aspect ratio](https://html.spec.whatwg.org/multipage/rendering.html#attributes-for-embedded-content-and-images) based on the element's existing `width` and `height` attributes:
@@ -141,11 +141,11 @@ When working with [responsive images](/serve-responsive-), `srcset` defines the 
 
 ```html
 <img width="1000" height="1000"
-       src="cool-story-1000.jpg"
-    srcset="cool-story-1000.jpg 1000w,
-            cool-story-2000.jpg 2000w,
-            cool-story-3000.jpg 3000w" 
-           alt="a cool story"/>
+       src="puppy-1000.jpg"
+    srcset="puppy-1000.jpg 1000w,
+            puppy-2000.jpg 2000w,
+            puppy-3000.jpg 3000w" 
+           alt="Puppy with balloons"/>
 ```
 
 What about [art direction](https://developer.mozilla.org/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images#Art_direction)?
@@ -155,9 +155,9 @@ Pages may wish to include a cropped shot of an image on narrow viewports with th
 
 ```html
 <picture>
-  <source media="(max-width: 799px)" srcset="cool-story-480w-cropped.jpg">
-  <source media="(min-width: 800px)" srcset="cool-story-800w.jpg">
-  <img src="cool-story-800w.jpg" alt="A cool story">
+  <source media="(max-width: 799px)" srcset="puppy-480w-cropped.jpg">
+  <source media="(min-width: 800px)" srcset="puppy-800w.jpg">
+  <img src="puppy-800w.jpg" alt="Puppy with balloons">
 </picture>
 ```
 
