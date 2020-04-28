@@ -18,7 +18,7 @@ each individual metric.
 
 ## Why your score fluctuates {: #fluctuations }
 
-A lot of the variability in your overall Performance score and metric scores is not due to Lighthouse. When your Performance score fluctuates it's usually because of changes in underlying conditions. Common
+A lot of the variability in your overall Performance score and metric values is not due to Lighthouse. When your Performance score fluctuates it's usually because of changes in underlying conditions. Common
 problems include:
 
 * A/B tests or changes in ads being served
