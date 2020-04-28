@@ -57,7 +57,7 @@ const paginatedTags = require(`./${collectionsDir}/paginated-tags`);
 const blogpostDescending = require(`./${collectionsDir}/blogpost-descending`);
 const postToCollections = require(`./${collectionsDir}/post-to-collections`);
 const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
-const recentPosts = require(`./${collectionsDir}/recent-posts`);
+const recentBlogposts = require(`./${collectionsDir}/recent-blogposts`);
 const tags = require(`./${collectionsDir}/tags`);
 // nb. algoliaPosts is only require'd if needed, below
 
@@ -152,7 +152,7 @@ module.exports = function(config) {
   config.addCollection('authors', authors);
   config.addCollection('blogposts', blogpostDescending);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
-  config.addCollection('recentPosts', recentPosts);
+  config.addCollection('recentBlogposts', recentBlogposts);
   config.addCollection('paginatedAuthors', paginatedAuthors);
   config.addCollection('paginatedBlogPosts', paginatedBlogPosts);
   config.addCollection('paginatedPostsByAuthor', paginatedPostsByAuthor);
