@@ -1687,6 +1687,22 @@ const contributors = {
     github: "una",
     twitter: "una",
   },
+  phillipkriegel: {
+    name: {
+      given: "Phillip",
+      family: "Kriegel",
+    },
+    homepage: "https://www.philkrie.me/",
+    github: "philkrie",
+    description: {
+      en: "Phillip is a Specialist Engineer",
+    },
+    org: {
+      name: "Google",
+      unit: "Global Business",
+    },
+    country: "US",
+  },
   tigeroakes: {
     name: {
       given: "Tiger",

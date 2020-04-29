@@ -2,12 +2,14 @@
 title: |
   Wake Lock API case study: 300% increase in purchase intent indicators on BettyCrocker.com
 subhead: |
-  Nothing is worse when cooking with a mobile device than its screen turning off in the middle of a recipe step.
+  Nothing is worse when cooking with a mobile device than its screen turning off
+  in the middle of a recipe step.
   Learn how cooking site BettyCrocker.com used the Wake Lock API to prevent this from happening.
 authors:
   - thomassteiner
+  - phillipkriegel
 date: 2020-04-22
-updated: 2020-04-28
+updated: 2020-04-29
 hero: hero.jpg
 alt: Betty Crocker Cake Mix—Coffee Cinnamon.
 description: |
@@ -24,8 +26,9 @@ and trusted recipe development.
 Launched in 1997, their site [BettyCrocker.com](https://www.bettycrocker.com/)
 today receives more than 12&nbsp;million visitors per month.
 After they **implemented the Wake Lock API**, their
-**indicators of [purchase intent](https://www.igi-global.com/dictionary/technology-and-sharing-economy-based-business-models-for-marketing-to-connected-consumers/24144) were about 300% higher**
-for wake lock users compared to all users.
+**indicators of
+[purchase intent](https://www.igi-global.com/dictionary/technology-and-sharing-economy-based-business-models-for-marketing-to-connected-consumers/24144)
+were about 300% higher** for wake lock users compared to all users.
 
 ## The retired iOS and Android apps
 
@@ -142,7 +145,8 @@ as shown in the screenshots below.
 </figure>
 
 When developing the component based on the new site's modernized framework,
-there was a strong focus on the [`ViewModel` layer of the MVVM pattern](https://012.vuejs.org/guide/).
+there was a strong focus on the
+[`ViewModel` layer of the MVVM pattern](https://012.vuejs.org/guide/).
 The team also programmed with interoperability in mind
 to enable functionality on legacy and new frameworks of the site.
 
@@ -349,7 +353,6 @@ Happy reading, and happy cooking!
 
 ## Acknowledgements
 
-Hero image courtesy of the
-[collection of the Auckland Museum Tamaki Paenga Hira, 2015.4.50](https://commons.wikimedia.org/wiki/File:Packet,_food_product_(AM_2015.4.50-10).jpg).
-Doughy fingers photo by [Julian Hochgesang](https://unsplash.com/@julianhochgesang) on
-[Unsplash](https://unsplash.com/photos/huepD-06_pQ).
+The *person kneading dough* photo courtesy of
+[Julian Hochgesang](https://unsplash.com/@julianhochgesang)
+on [Unsplash](https://unsplash.com/photos/huepD-06_pQ).
