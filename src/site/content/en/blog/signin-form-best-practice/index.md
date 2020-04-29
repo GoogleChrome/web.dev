@@ -4,7 +4,7 @@ subhead: Use cross-platform browser features to build signin forms that are secu
 authors:
   - samdutton
 date: 2020-04-24
-updated: 2020-04-28
+updated: 2020-04-29
 description: Use cross-platform browser features to build signin forms that are secure, accessible and easy to use.
 hero: hero.jpg
 alt: Closeup photo of a man holding a phone showing a login page
@@ -33,9 +33,9 @@ Poorly designed signin forms get high bounce rates. Each bounce means a lost and
 
 ## Checklist
 
-* Use standard elements: form, input, label and button.
-* Use label elements to label inputs.
-* Make the most of attributes: type, name, autocomplete, required, autofocus.
+* Use meaningful HTML elements: form, input, label and button.
+* Label every input with a &lt;label&gt;.
+* Use element attributes to access built-in browser features: type, name, autocomplete, required, autofocus.
 * Use `name="new-password"` for a signup password input.
 * Use `autocomplete="current-password"` for a signin password input.
 * Provide **Show password** functionality.
