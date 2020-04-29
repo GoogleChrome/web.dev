@@ -11,8 +11,9 @@ alt: Layout shifts can suddenly push the content you are reading or are about to
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - fast
-  - web vitals
-  - cumulative layout shift
+  - web-vitals
+  - cumulative-layout-shift
+  - cls
   - lighthouse
 ---
 
