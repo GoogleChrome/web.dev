@@ -3,7 +3,7 @@ title: |
   Wake Lock API case study: 300% increase in purchase intent indicators on BettyCrocker.com
 subhead: |
   Nothing is worse when cooking with a mobile device than its screen turning off in the middle of a recipe step.
-  Learn how cooking site BettyCrocker.com used the Wake Lock API for profit to prevent this from happening.
+  Learn how cooking site BettyCrocker.com used the Wake Lock API to prevent this from happening.
 authors:
   - thomassteiner
 date: 2020-04-22
