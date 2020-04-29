@@ -29,7 +29,7 @@ much can you store? How do you prevent it from being evicted?
 
 Here's a general recommendation for storing resources:
 
-* For the network resources necessary to load your app and file based content,
+* For the network resources necessary to load your app and file-based content,
   use the [**Cache Storage API**][cache-primer] (part of
   [service workers][sw-primer]).
 * For other data, use [**IndexedDB**][mdn-indexeddb] (with a
