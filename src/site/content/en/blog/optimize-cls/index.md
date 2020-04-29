@@ -338,7 +338,7 @@ The [Performance panel](https://developers.google.com/web/tools/chrome-devtools/
 <figure class="w-figure">
   <img src="Optimize-Cumulative12.jpg" alt="Layout Shift records being displayed in the Chrome DevTools performance panel when expanding the Experience section">
   <figcaption class="w-figcaption">
-After recording a new trace in the Performance panel, the 'Experience' section of the results is populated with a red-tinted bar displaying a "Layout Shift" record. Clicking the record allows you to drill down into impacted elements (e.g note the moved from/to entries)
+After recording a new trace in the Performance panel, the <b>Experience</b> section of the results is populated with a red-tinted bar displaying a <code>Layout Shift</code> record. Clicking the record allows you to drill down into impacted elements (e.g. note the moved from/to entries).
   </figcaption>
 </figure>
 
