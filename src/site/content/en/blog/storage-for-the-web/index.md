@@ -21,7 +21,7 @@ offline support and reliable performance are common features in
 [progressive web apps](/progressive-web-apps/). Even in perfect wireless
 environments, judicious use of caching and other storage techniques can
 substantially improve the user experience. There are several ways to cache
-your static application resources (HTML, JavaScript, CSS, images, etc), and
+your static application resources (HTML, JavaScript, CSS, images, etc.), and
 data (user data, news articles, etc). But which is the best solution? How
 much can you store? How do you prevent it from being evicted?
 
