@@ -203,6 +203,7 @@ Some sites may find collapsing the slot initially can reduce layout shifts if th
   <figure class="w-figure">
     <video controls loop muted class="w-screenshot" poster="video-top-ad-after.jpg">
       <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/top-ad-after.mp4" type="video/mp4; codecs=h264">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/top-ad-after.webm" type="video/webm;">
     </video>
    <figcaption class="w-figcaption">
       Ads with sufficient space reserved.
