@@ -9,5 +9,5 @@ web_lighthouse:
 # A test post
 
 This test post belongs to collections:
-+ recentBlogposts
++ recentBlogPosts
 + postsWithLighthouse

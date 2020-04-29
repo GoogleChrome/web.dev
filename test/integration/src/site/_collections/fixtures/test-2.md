@@ -8,4 +8,4 @@ thumbnail: thumbnail.png
 # A test post
 
 This test post belongs to collections:
-+ recentBlogposts (in prod)
++ recentBlogPosts (in prod)

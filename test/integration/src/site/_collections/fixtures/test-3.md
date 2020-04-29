@@ -10,5 +10,5 @@ web_lighthouse:
 # A test post
 
 This test post belongs to collections:
-+ recentBlogposts (in dev)
++ recentBlogPosts (in dev)
 + postsWithLighthouse (in dev)

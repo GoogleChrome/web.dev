@@ -14,7 +14,7 @@ describe('_collections', function() {
     });
 
     require('./posts-with-lighthouse/dev');
-    require('./recent-blogposts/dev');
+    require('./recent-blog-posts/dev');
   });
 
   describe('in PROD env', function() {
@@ -28,6 +28,6 @@ describe('_collections', function() {
     });
 
     require('./posts-with-lighthouse/prod');
-    require('./recent-blogposts/prod');
+    require('./recent-blog-posts/prod');
   });
 });
