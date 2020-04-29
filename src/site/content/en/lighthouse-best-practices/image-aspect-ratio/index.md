@@ -9,7 +9,7 @@ date: 2019-05-02
 updated: 2019-08-28
 ---
 
-If a rendered image has an aspect ratio that's significantly different
+If a rendered image has an [aspect ratio][ar] that's significantly different
 from the aspect ratio in its source file (the _natural_ aspect ratio),
 the rendered image may look distorted,
 possibly creating an unpleasant user experience.
@@ -61,9 +61,18 @@ to help preserve aspect ratios for responsive images.
 Finally, check out the [Serve images with correct dimensions](/serve-images-with-correct-dimensions)
 post to learn how to serve images that are the right size for each user's device.
 
+### Use an image CDN
+
+An image CDN can make it easier to create different sized versions of your
+images. Check out [Use image CDNs to optimize images](/image-cdns/) for an overview
+and [How to install the Thumbor image CDN](/install-thumbor/) for a hands-on codelab
+that demonstrates a free and open source image CDN called Thumbor.
+
 ## Resources
 
 - [Source code for **Displays images with incorrect aspect ratio** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/image-aspect-ratio.js)
 - [CSS Aspect Ratio](https://www.npmjs.com/package/css-aspect-ratio)
 - [Aspect Ratio Boxes](https://css-tricks.com/aspect-ratio-boxes/)
 - [Serve images with correct dimensions](/serve-images-with-correct-dimensions)
+
+[ar]: https://en.wikipedia.org/wiki/Aspect_ratio_(image)
