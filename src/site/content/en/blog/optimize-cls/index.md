@@ -221,7 +221,7 @@ Some sites may find collapsing the slot initially can reduce layout shifts if th
 
 Statically style slot DOM elements with the same sizes passed to your tag library. This can help ensure the library doesn't introduce layout shifts when it loads. If you don't do this, the library may change the size of the slot element after page layout.
 
-Also consider the sizes of smaller ad serves. If a smaller ad is served, a publisher can style the (larger) container to avoid layout shifts. The downside to this approach will increase the amount of blank space, so keep in mind the trade-off here.
+Also consider the sizes of smaller ad serves. If a smaller ad is served, a publisher can style the (larger) container to avoid layout shifts. The downside to this approach is that it will increase the amount of blank space, so keep in mind the trade-off here.
 
 
 #### Avoid placing ads near the top of the viewport
