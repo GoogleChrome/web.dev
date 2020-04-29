@@ -6,7 +6,7 @@ description: |
 web_lighthouse:
   - image-aspect-ratio
 date: 2019-05-02
-updated: 2019-08-28
+updated: 2020-04-29
 ---
 
 If a rendered image has an [aspect ratio][ar] that's significantly different
