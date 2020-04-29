@@ -33,8 +33,12 @@ There are two common causes for an incorrect image aspect ratio:
 
 ## Ensure images display with the correct aspect ratio
 
-There are two places to check for incorrect image dimensions: your CSS and
-the `<img>` tag in your HTML.
+### Use an image CDN
+
+An image CDN can make it easier to automate the process of creating different sized
+versions of your images. Check out [Use image CDNs to optimize images](/image-cdns/)
+for an overview and [How to install the Thumbor image CDN](/install-thumbor/) for a
+hands-on codelab.
 
 ### Check the CSS that affects the image's aspect ratio
 If you're having trouble finding the CSS that's causing the incorrect aspect ratio,
@@ -60,13 +64,6 @@ to help preserve aspect ratios for responsive images.
 
 Finally, check out the [Serve images with correct dimensions](/serve-images-with-correct-dimensions)
 post to learn how to serve images that are the right size for each user's device.
-
-### Use an image CDN
-
-An image CDN can make it easier to create different sized versions of your
-images. Check out [Use image CDNs to optimize images](/image-cdns/) for an overview
-and [How to install the Thumbor image CDN](/install-thumbor/) for a hands-on codelab
-that demonstrates a free and open source image CDN called Thumbor.
 
 ## Resources
 
