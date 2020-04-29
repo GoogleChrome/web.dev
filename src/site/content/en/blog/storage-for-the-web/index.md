@@ -22,7 +22,7 @@ offline support and reliable performance are common features in
 environments, judicious use of caching and other storage techniques can
 substantially improve the user experience. There are several ways to cache
 your static application resources (HTML, JavaScript, CSS, images, etc.), and
-data (user data, news articles, etc). But which is the best solution? How
+data (user data, news articles, etc.). But which is the best solution? How
 much can you store? How do you prevent it from being evicted?
 
 ## What should I use? {: #recommendation }
