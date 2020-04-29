@@ -325,6 +325,7 @@ const contributors = {
     homepage: 'https://blog.tomayac.com/',
     twitter: 'tomayac',
     github: 'tomayac',
+    glitch: 'tomayac',
     description: {
       en: 'Tom is a Developer Advocate',
     },
