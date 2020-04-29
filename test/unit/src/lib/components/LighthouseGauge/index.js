@@ -15,13 +15,15 @@
  * limitations under the License.
  */
 
-import {assert} from '../../test/assert';
-import './index';
+const {assert} = require('../../assert');
+require('../../../../../../src/lib/components/LighthouseGauge/index');
 
-suite('element: web-lighthouse-gauge', async () => {
-  await customElements.whenDefined('web-lighthouse-gauge');
+describe('LighthouseGauge', function() {
+  before(async function() {
+    await customElements.whenDefined('web-lighthouse-gauge');
+  });
 
-  test('basic', async () => {
+  it('should reflect its score property to aria-valuenow', async function() {
     const gauge = document.createElement('web-lighthouse-gauge');
     document.body.append(gauge);
     try {
