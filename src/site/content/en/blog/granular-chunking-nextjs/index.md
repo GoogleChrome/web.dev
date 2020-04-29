@@ -3,7 +3,7 @@ title: Improved Next.js and Gatsby page load performance with granular chunking
 subhead: A newer webpack chunking strategy in Next.js and Gatsby minimizes duplicate code to improve page load performance.
 authors:
   - houssein
-date: 2020-04-09
+date: 2020-04-29
 hero: hero.png
 alt: Jigsaw pieces connecting 
 description: | 
