@@ -6,8 +6,6 @@ description: |
   accessible offline.
 web_lighthouse:
   - offline-start-url
-codelabs:
-  - codelab-service-workers
 date: 2019-05-04
 updated: 2020-04-29
 ---
