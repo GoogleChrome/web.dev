@@ -26,6 +26,9 @@ class LighthouseScoresMetrics extends BaseElement {
     if (this.lhr) {
       const metricToHtml = (metric) => {
         const audit = this.lhr.audits[metric.id];
+        if (!audit) {
+          return '';
+        }
 
         let label = null;
         if (audit.score >= 0.9) {
