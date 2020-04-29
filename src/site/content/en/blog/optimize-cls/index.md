@@ -176,7 +176,7 @@ During the ad lifecycle, many points can introduce layout shift:
 *   When a site inserts the ad container in the DOM
 *   When a site resizes the ad container with first-party code
 *   When the ad tag library loads (and resizes the ad container)
-*   When the ad fills a container (resizes if the final ad has a different size)
+*   When the ad fills a container (and resizes if the final ad has a different size)
 
 The good news is that it's possible for sites to follow best practices to reduce ad shift. Sites can mitigate these layout shifts by:
 
