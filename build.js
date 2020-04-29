@@ -229,11 +229,9 @@ async function buildTest() {
     plugins: [
       rollupPluginNodeResolve(),
       rollupPluginCJS(),
-      rollupPluginIstanbul({
-        exclude: ['node_modules/**/*', '**/*-test.js', '**/test/**/*.js'],
-      }),
       rollupPluginVirtual(buildVirtualJSON(virtualImports)),
       rollupPluginPostCSS(),
+      rollupPluginIstanbul(),
     ],
   });
   await testBundle.write({
