@@ -1,0 +1,13 @@
+{
+  "include": [
+    "src/**/*.js",
+    "shared/**/*.js",
+    "./*.js"
+  ],
+  "exclude": [
+    "node_modules/**/*.js",
+    "test/**/*.js",
+    ".eleventy.js",
+    "karma.conf.js"
+  ]
+}
