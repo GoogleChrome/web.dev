@@ -1,0 +1,15 @@
+---
+layout: layout
+title: Newsletter
+permalink: /en/{{ newsletter.permalink }}/index.html
+description: Our latest news, updates, and stories for developers
+renderData:
+  title: "{{ newsletter.title or title }}"
+pagination:
+  data: collections.newsletters
+  size: 1
+  alias: newsletter
+---
+<web-newsletter>
+  <iframe frameborder="0" scrolling="yes" width="100%" height="1000px" srcdoc="{{ newsletter.html }}"></iframe>
+</web-newsletter>

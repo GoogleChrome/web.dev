@@ -49,6 +49,7 @@ const YouTube = require(`./${componentsDir}/YouTube`);
 
 const collectionsDir = 'src/site/_collections';
 const authors = require(`./${collectionsDir}/authors`);
+const newsletters = require(`./${collectionsDir}/newsletters`);
 const paginatedAuthors = require(`./${collectionsDir}/paginated-authors`);
 const paginatedBlogPosts = require(`./${collectionsDir}/paginated-blog-posts`);
 const paginatedPostsByAuthor = require(`./${collectionsDir}/paginated-posts-by-author`);
@@ -150,6 +151,7 @@ module.exports = function(config) {
   // COLLECTIONS
   // ----------------------------------------------------------------------------
   config.addCollection('authors', authors);
+  config.addCollection('newsletters', newsletters);
   config.addCollection('posts', postDescending);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('recentPosts', recentPosts);
