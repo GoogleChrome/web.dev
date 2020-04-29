@@ -150,7 +150,7 @@ of stored cross origin resources.
 During development, you can use your browser's DevTools to inspect the
 different storage types, and easily clear all stored data.
 
-![Storage test tool](./storage-test-tool.png)
+<img class="w-screenshot w-screenshot-filled" alt="Storage test tool." src="storage-test-tool.png">
 
 While working on this article, I wrote a [simple tool][glitch-storage] to
 attempt to quickly use as much storage as possible. It's a quick and easy way
