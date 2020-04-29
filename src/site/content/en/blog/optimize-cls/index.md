@@ -121,7 +121,7 @@ This calculates an aspect ratio based on the `width` and `height` attributes bef
 
 Tip: If you're having a hard time understanding aspect ratio, a handy [calculator](https://aspectratiocalculator.com/16-9.html) is available to help.
 
-The above image aspect ratio changes have shipped in [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1547231), [Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=979891) and are coming to [WebKit](https://twitter.com/smfr/status/1220051332767174656) (Safari).
+The above image aspect ratio changes have shipped in [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1547231) and [Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=979891), and are coming to [WebKit](https://twitter.com/smfr/status/1220051332767174656) (Safari).
 
 For a fantastic deep-dive into aspect ratio with further thinking around responsive images, see [jank-free page loading with media aspect ratios](https://blog.logrocket.com/jank-free-page-loading-with-media-aspect-ratios/).
 
