@@ -1,10 +1,10 @@
 const assert = require('assert');
 const path = require('path');
 const cheerio = require('cheerio');
-const site = require('../../../../src/site/_data/site');
+const site = require('../../../../../../src/site/_data/site');
 const {
   responsiveImages,
-} = require('../../../../src/site/_transforms/responsive-images/index');
+} = require('../../../../../../src/site/_transforms/responsive-images');
 
 describe('responsive-images', function() {
   describe('responsiveImages', function() {

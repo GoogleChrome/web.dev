@@ -224,12 +224,18 @@ async function build() {
  */
 async function buildTest() {
   const testBundle = await rollup.rollup({
-    input: 'src/lib/test/index.js',
-    plugins: [rollupPluginPostCSS(), ...defaultPlugins],
+    input: 'test/unit/src/lib/index.js',
+    plugins: [
+      rollupPluginNodeResolve(),
+      rollupPluginCJS(),
+      rollupPluginVirtual(buildVirtualJSON(virtualImports)),
+      rollupPluginPostCSS(),
+    ],
   });
   await testBundle.write({
     dir: 'dist/test',
     format: 'iife',
+    name: 'test',
   });
 }
 
