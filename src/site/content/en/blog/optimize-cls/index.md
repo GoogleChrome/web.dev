@@ -179,14 +179,14 @@ During the ad lifecycle, many points can introduce layout shift:
 
 The good news is that it's possible for sites to follow best practices to reduce ad shift. Sites can mitigate these layout shifts by:
 
-* Statically reserving space for the ad slot
-  * In other words, style the element before the ad tag library loads
+* Statically reserve space for the ad slot.
+  * In other words, style the element before the ad tag library loads.
   * If placing ads in the content flow, ensure shifts are eliminated by reserving the slot size. These ads _shouldn't_ cause layout shifts if loaded off-screen.
 * Take care when placing non-sticky ads near the top of the viewport. 
   * In the below example, it's recommended to move the ad to below the "world vision" logo and make sure to reserve enough space for the slot.
-* Eliminate shifts by reserving the largest possible size for the ad slot
-  * Works, but risks having a blank space if a smaller ad creative fills the slot
-* Choose the most likely size for the ad slot based on historical data
+* Eliminate shifts by reserving the largest possible size for the ad slot.
+  * This works, but it risks having a blank space if a smaller ad creative fills the slot.
+* Choose the most likely size for the ad slot based on historical data.
 
 Some sites may find collapsing the slot initially can reduce layout shifts if the ad slot is unlikely to fill. There isn't an easy way to choose the exact size each time, unless you control the ad serving yourself.
 
