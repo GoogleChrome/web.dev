@@ -217,6 +217,8 @@ While `noopener` can be replaced by COOP, it's still useful for when you want to
 protect your website in browsers that don't support COOP.
 {% endAside %}
 
+## Summary {: #summary }
+
 If you want guaranteed access to powerful features like `SharedArrayBuffer`,
 `performance.measureMemory` or JS Self-Profiling API, just remember that your
 document needs to use both COEP with the value of `require-corp` and COOP with
