@@ -134,7 +134,7 @@ to load it to your web page without being blocked by COEP.
 <img src="https://third-party.example.com/image.jpg" crossorigin>
 ```
 
-For example, if this image resource is served with CORS headers, use  the
+For example, if this image resource is served with CORS headers, use the
 `crossorigin` attribute so that the request to fetch the resource will use [CORS
 mode](https://developer.mozilla.org/docs/Web/API/Request/mode). This also
 prevents the image from being loaded unless it sets CORS headers.
