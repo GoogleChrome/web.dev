@@ -177,7 +177,7 @@ we plan to auto-grant it.
 
 We always want to prevent malicious actors from misusing new APIs. Seemingly independent websites,
 but that in fact are controlled by the same entity, might obtain user idle information and
-correlate the data to identify unique users across origins. To mitigate this sort of attacks,
+correlate the data to identify unique users across origins. To mitigate these sort of attacks,
 the Idle Detection API limits the granularity of the reported idle events and user agents
 may choose to fuzz the reported data. In Chrome,
 we plan to do this as to render the attack vector useless.
