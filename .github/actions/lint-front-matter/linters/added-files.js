@@ -1,6 +1,5 @@
 const getYamlFrontMatter = require('../utils/get-yaml-front-matter');
 const urlMatchesTitle = require('../rules/url-matches-title');
-const updatedIsCurrent = require('../rules/updated-is-current');
 const urlLength = require('../rules/url-length');
 const sortResultsByStatus = require('../utils/sort-results-by-status');
 const {SKIP_URL_LABEL} = require('../utils/constants');
@@ -33,12 +32,6 @@ module.exports = async (files) => {
     if (!skipUrlTests()) {
       results.push(urlMatchesTitle.test(file, frontMatter));
       results.push(urlLength.test(file));
-    }
-
-    // The `updated` field is optional on newly added files
-    // but if one is present, verify that it's current.
-    if (frontMatter.updated) {
-      results.push(updatedIsCurrent.test(frontMatter));
     }
     // ---------------------------------------------------------
 
