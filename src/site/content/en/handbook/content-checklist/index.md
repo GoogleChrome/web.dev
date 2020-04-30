@@ -2,7 +2,7 @@
 layout: handbook
 title: web.dev content checklist
 date: 2019-06-26
-updated: 2019-11-25
+updated: 2020-04-29
 description: |
   A checklist for web.dev content reviews.
 ---
@@ -72,6 +72,8 @@ use it to self-review their content and fix problems rather than waiting for rev
 1. Is [code highlighting](/handbook/markup-code/#code-highlighting) used to indicate lines that have been added or changed?
 1. Is all sample code [accessible](/handbook/inclusion-and-accessibility/#create-accessible-code-blocks)?
 1. If the page has embedded Glitches, have they been [properly set up](/handbook/web-dev-components/#glitches)?
+1. Articles should mention specific versions of Chrome. They should not mention `Stable`, `Beta`, or `Canary`
+   because the Chrome version that's associated with those releases changes over time.
 
 ## Links
 
