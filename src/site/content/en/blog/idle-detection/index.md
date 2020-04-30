@@ -64,8 +64,8 @@ To experiment with the Idle Detection API locally, without an origin trial token
 
 ### Enabling support during the origin trial phase
 
-Starting in Chrome TODO, the Idle Detection API will be available as an origin trial in Chrome.
-The origin trial is expected to end in Chrome TODO.
+Starting with Chrome&nbsp;84, the Idle Detection API will be available as an origin trial.
+The origin trial is expected to end in Chrome 87.
 
 {% include 'content/origin-trials.njk' %}
 
