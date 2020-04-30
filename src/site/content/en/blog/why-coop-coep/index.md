@@ -92,7 +92,7 @@ Spectre attack to read its pixel data, which makes protections relying on
 Ideally, all cross-origin requests should be explicitly vetted by the server
 that owns the resource, in other words an opt-in approach. If vetting is not provided by
 the resource-owning server, then the data will never make it into the browsing
-context group of an evil actor, and therefore stay out of reach of any Spectre
+context group of an evil actor, and therefore will stay out of reach of any Spectre
 attacks a web page could carry out. We call it a cross-origin isolated state.
 This is exactly what COOP+COEP is about.
 
