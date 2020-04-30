@@ -16,9 +16,9 @@
 const newsletters = require('../_data/newsletters');
 
 /**
- * Returns an array of all Newsletters
+ * Returns an array of all past Newsletters.
  *
- * @return {Array<{ title: string, path: string, html: string }>}
+ * @return {Array<{ data: { title: string, subhead: string, thumbnail: string, alt: string; }, year: string, month: string, day: string, date: Date, permalink: string, url: string, html: string }>}
  */
 module.exports = () => {
   return newsletters;
