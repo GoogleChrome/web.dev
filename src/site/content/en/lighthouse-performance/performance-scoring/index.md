@@ -36,7 +36,7 @@ to understand why.
 
 ## How the Performance score is weighted {: #weightings }
 
-The Performance Score is a [weighted average](https://www.wikihow.com/Calculate-Weighted-Average#Weighted_Averages_without_Percentages_sub) of the _metric scores_. Naturally, more heavily weighted metrics have a bigger effect on your overall Performance score.
+The Performance score is a [weighted average](https://www.wikihow.com/Calculate-Weighted-Average#Weighted_Averages_without_Percentages_sub) of the _metric scores_. Naturally, more heavily weighted metrics have a bigger effect on your overall Performance score.
 The metric scores are not visible in the report, but are calculated under the hood.
 
 
