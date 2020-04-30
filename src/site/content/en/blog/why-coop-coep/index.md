@@ -27,7 +27,7 @@ why cross-origin isolation is required to enable powerful features on the browse
 
 {% Aside 'key-term' %}
 This article uses many similar-sounding terminologies. To make things 
-clearer, let's define them first:
+clearer, let's define them:
 
 * [COEP: Cross Origin Embedder 
   Policy](https://wicg.github.io/cross-origin-embedder-policy/)
