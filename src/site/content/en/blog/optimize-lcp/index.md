@@ -369,15 +369,15 @@ To optimize polyfill usage on your site:
 
 +   If you use [Babel](https://babeljs.io/docs/en/index.html) as a transpiler, use
     [`@babel/preset-env`](https://babeljs.io/docs/en/babel-preset-env) to only include the polyfills
-    needed for the browsers you plan on targeting. For Babel 8, enable the
+    needed for the browsers you plan on targeting. For Babel 7.9, enable the
     [`bugfixes`](https://babeljs.io/docs/en/babel-preset-env#bugfixes) option to further cut down
     on any unneeded polyfills
 +   Use the module/nomodule pattern to deliver two separate bundles (`@babel/preset-env` also
     supports this via [`target.esmodules`](https://babeljs.io/docs/en/babel-preset-env#targetsesmodules))
     
     ```html
-    <script type="module" src="main.mjs"></script>
-    <script nomodule src="compiled.js" defer></script>
+    <script type="module" src="modern.js"></script>
+    <script nomodule src="legacy.js" defer></script>
     ```
 
     Many newer ECMAScript features compiled with Babel are already supported in environments
