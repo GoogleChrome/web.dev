@@ -122,7 +122,7 @@ number of bytes used by IndexedDB and the Cache API, and makes it possible
 to calculate the approximate remaining storage space available.
 
 ```js
-if (navigator.storage.estimate) {
+if (navigator.storage && navigator.storage.estimate) {
   const quota = await navigator.storage.estimate();
   // quota.usage -> Number of bytes used.
   // quota.quota -> Maximum number of bytes available.
