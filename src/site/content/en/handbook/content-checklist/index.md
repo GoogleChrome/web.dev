@@ -89,3 +89,8 @@ use it to self-review their content and fix problems rather than waiting for rev
 1. Are titles and headings in sentence case with no terminal period?
 1. Are [keyboard key commands](/handbook/grammar/#ui-elements-and-interaction) correctly formatted?
 1. The title should not have inline code formatting because backtick characters show up verbatim in web.dev's search results.
+
+## Attribution
+
+1. An author should only be added to a page if that person has significantly updated the existing
+   content or contributed significant new content.
