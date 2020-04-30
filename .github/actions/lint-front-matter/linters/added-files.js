@@ -24,10 +24,10 @@ const skipUrlTests = () => {
  * @return {Array<Object>} Results objects from each check.
  */
 module.exports = async (files) => {
-  core.debug(`added-files linting: ${files}`);
+  core.debug(`added-files linting ${files.length}: ${files}`);
   const out = [];
   for (file of files) {
-    core.debug(`added-files linting: ${file}`);
+    core.debug(`added-files file: ${file}`);
     const results = [];
     const frontMatter = await getYamlFrontMatter(file);
 
