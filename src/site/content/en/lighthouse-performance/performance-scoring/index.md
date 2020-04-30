@@ -47,7 +47,7 @@ The metric scores are not visible in the report, but are calculated under the ho
 {% endAside %}
 
 
-See the [Lighthouse scoring calculator](https://paulirish.github.io/lh-scorecalc/) to better understand.
+See the [Lighthouse scoring calculator](https://paulirish.github.io/lh-scorecalc/) to get a detailed understanding of how this works.
 
 ### Lighthouse 6 (draft)
 
