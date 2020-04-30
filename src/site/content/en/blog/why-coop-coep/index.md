@@ -97,7 +97,7 @@ attacks a web page could carry out. We call it a cross-origin isolated state.
 This is exactly what COOP+COEP is about.
 
 Under a cross-origin isolated state, the requesting site is considered less
-dangerous and unlocks powerful features such as `SharedArrayBuffer`,
+dangerous and this unlocks powerful features such as `SharedArrayBuffer`,
 `performance.measureMemory` and JS Self-Profiling API which could otherwise be
 used for Spectre-like attacks. It also prevents modifying `document.domain`.
 
