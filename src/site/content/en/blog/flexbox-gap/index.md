@@ -157,7 +157,6 @@ Example #2 - lobotomized owl selector
 The above are not a full replacement for `gap` though, and often need `@media` query adjustments to account for wrapping scenarios or writing modes or direction. Adding 1 or 2 media queries doesn't seem so bad, but they can add up and lead to complicated layout logic.
 
 What the above author really intended was to have none of the child items touch. 
-s
 ### The Antidote
 
 Example #3 - gap
@@ -219,4 +218,3 @@ Pretty cool.
 ## Summary
 
 Flex gap wasn't all that came with Chromium 85, either. There was also a big multi-year refactor of flexbox: [flexNG](#). Enjoy performance enhancements and new features. It's a great day. 
-
