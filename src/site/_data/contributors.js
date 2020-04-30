@@ -64,6 +64,19 @@ const contributors = {
       en: 'V8 JavaScript whisperer',
     },
   },
+  hongchanchoi: {
+    name: {
+      given: 'Hongchan',
+      family: 'Choi',
+    },
+    org: {
+      name: 'Google',
+      unit: 'Chrome',
+    },
+    description: {
+      en: 'Software Engineer working on Chromium',
+    },
+  },
   robdodson: {
     name: {
       given: 'Rob',
