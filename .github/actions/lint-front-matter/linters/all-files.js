@@ -1,3 +1,4 @@
+const core = require('@actions/core');
 const getYamlFrontMatter = require('../utils/get-yaml-front-matter');
 const hasProperty = require('../rules/has-property');
 const hasAltText = require('../rules/has-alt-text');
