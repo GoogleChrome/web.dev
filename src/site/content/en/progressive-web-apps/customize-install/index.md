@@ -50,7 +50,7 @@ in-app install flow:
   from the Web App Manifest spec to their own
   [incubator](https://github.com/WICG/beforeinstallprompt). The Chrome team
   remains committed to supporting them, and has no plans to remove or deprecate
-  support. **We continue to recommend using them to provide a customized
+  support. **web.dev continues to recommend using them to provide a customized
   install experience.**
 {% endAside %}
 
