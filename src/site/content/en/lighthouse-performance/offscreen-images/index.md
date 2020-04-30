@@ -24,8 +24,8 @@ See also [Lazy load offscreen images with lazysizes codelab](/codelab-use-lazysi
 
 ## Bug: `loading="lazy"` images are incorrectly flagged
 
-Offscreen image audit incorrectly reports lazy-loaded images when using the new native `loading="lazy"` attribute:
-[LINK](https://github.com/GoogleChrome/lighthouse/issues/6677)
+This audit incorrectly flags [natively lazy-loaded images](/native-lazy-loading/).
+See [issue #6677](https://github.com/GoogleChrome/lighthouse/issues/6677) for details.
 
 ## Resources
 
