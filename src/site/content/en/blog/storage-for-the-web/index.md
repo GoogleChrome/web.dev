@@ -268,7 +268,7 @@ the original articles that this is based on. Eiji wrote a helpful tool
 called [Browser Storage Abuser][storage-abuser] that was useful in validating
 current behavior. It allows you to store as much data as possible and see the
 storage limits on your browser. Thanks to Francois Beaufort who did the digging
-into Safari to figure out it's storage limits.
+into Safari to figure out its storage limits.
 
 The hero image is by Guillaume Bolduc on
 [Unsplash](https://unsplash.com/photos/uBe2mknURG4).
