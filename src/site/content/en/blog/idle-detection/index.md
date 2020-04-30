@@ -15,7 +15,6 @@ tags:
   - capabilities
 hero: hero.jpg #https://images.unsplash.com/photo-1544239265-ee5eedde5469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1900&q=80
 alt: Abandoned computer on a bed with someone's leg next to it.
-draft: true
 origin_trial:
   url: TODO
 ---
