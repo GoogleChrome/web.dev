@@ -90,7 +90,7 @@ the user agent (that is, the browser), and the operating system of the device in
 This is represented in two dimensions:
 
 - **The user idle state:**
-  `active` or `idle`: the user has, respectively has not,
+  `active` or `idle`: the user has or has not
 interacted with the user agent for some period of time.
 - **The screen idle state:**
   `locked` or `unlocked`: the system has an active screen lock (like a screensaver) preventing
