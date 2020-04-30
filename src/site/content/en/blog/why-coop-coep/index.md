@@ -104,7 +104,7 @@ used for Spectre-like attacks. It also prevents modifying `document.domain`.
 ### Cross Origin Embedder Policy {: #coep }
 [Cross Origin Embedder
 Policy (COEP)](https://wicg.github.io/cross-origin-embedder-policy/) prevents a
-document from loading any cross-origin resources which don't explicitly grant
+document from loading any cross-origin resources that don't explicitly grant
 the document permission (using CORP or CORS). With this feature, you can declare
 that a document cannot load such resources. 
 
