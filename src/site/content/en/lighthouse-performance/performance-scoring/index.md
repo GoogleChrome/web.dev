@@ -127,7 +127,7 @@ See the [Lighthouse scoring calculator](https://paulirish.github.io/lh-scorecalc
 
 ### How metric scores are determined {: #metric-scores }
 
-Once Lighthouse is done gathering the raw performance metrics (mostly reported in miliseconds), it converts them into a score by mapping the raw performance number into a metric score from 0 to 100 by looking where the metric value falls on the Lighthouse scoring distribution. The scoring distribution is
+Once Lighthouse is done gathering the raw performance metrics (mostly reported in milliseconds), it converts them into a score by mapping the raw performance number into a metric score from 0 to 100 by looking where the metric value falls on the Lighthouse scoring distribution. The scoring distribution is
 a log-normal distribution derived from the performance metrics of real website performance
 data on [HTTP Archive](https://httparchive.org/).
 
@@ -137,7 +137,7 @@ the user initiating the page load and the page rendering its primary content. Ba
 website data, top-performing sites render LCP in about 1,220ms, so that metric value is mapped to
 a score of 99.
 
-Going a bit deeper, the Lighthouse scoring curve model uses HTTPArchive data to determine two control points that then set the shape of a [log-normal](https://en.wikipedia.org/wiki/Weber%E2%80%93Fechner_law) curve. The 25th percentile of HTTPArchive data becomes a score of 50 (our median control point), and the 5th percentile becomes a score of 95-ish (our PODR - point of diminishing returns control point).
+Going a bit deeper, the Lighthouse scoring curve model uses HTTPArchive data to determine two control points that then set the shape of a [log-normal](https://en.wikipedia.org/wiki/Weber%E2%80%93Fechner_law) curve. The 25th percentile of HTTPArchive data becomes a score of 50 (the median control point), and the 5th percentile becomes a score of 95-ish (the PODR - point of diminishing returns control point).
 
 
 
