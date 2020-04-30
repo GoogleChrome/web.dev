@@ -207,7 +207,7 @@ browsing context group unless the opener itself has a COOP of `same-origin` or
 The
 [`noopener`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Window_features)
 attribute has a similar effect to what you would expect from COOP except that it
-works only from the opener side. (You can't disassociate your window when opened
+works only from the opener side. (You can't disassociate your window when it is opened
 by a third party.) When you attach `noopener` by doing something such as
 `window.open(url, '_blank', 'noopener')` or `<a target="_blank"
 rel="noopener">`, you can deliberately disassociate your window from the opened
