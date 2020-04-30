@@ -13,7 +13,7 @@ contribute to your Lighthouse Performance score, not the results of Opportunitie
 That said, improving the opportunties and diagnostics likely improve the metric values, so there
 is an indirect relationship.
 
-Below, we've outlined why the score can flutate, how it's comprised, and how Lighthouse scores each individual metric.
+Below, we've outlined why the score can fluctuate, how it's comprised, and how Lighthouse scores each individual metric.
 
 ## Why your score fluctuates {: #fluctuations }
 
