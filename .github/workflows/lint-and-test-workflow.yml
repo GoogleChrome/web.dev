@@ -32,16 +32,17 @@ jobs:
       # Run all unit and integration tests.
       - name: Test
         run: npm run test
-      
+
       # Begin custom linters.
       # These will primarily focus on the YAML frontmatter of posts.
       # Note these linters will post their own message to the GitHub Issue
       # using the Create or update comment step.
       - name: Git diff
         id: git_diff
-        uses: futuratrepadeira/changed-files@v3.0.1
+        uses: futuratrepadeira/changed-files@v3.2.1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+          pattern: '^.*\.(md)$'
 
       - name: Lint yaml front matter
         id: lint_front_matter
@@ -61,7 +62,7 @@ jobs:
         if: always() && steps.lint_front_matter.outputs.message
 
       - name: Create or update comment
-        uses: peter-evans/create-or-update-comment@v1.1.0
+        uses: peter-evans/create-or-update-comment@v1.4.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.number }}
