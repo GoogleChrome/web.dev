@@ -166,6 +166,7 @@ In the Ligthhouse report, the _Opportunities_ section has detailed suggestions a
 
 
 <!--
+We don't think users care about the historical scoring rubrics, but we'd still prefer to keep them around because X
 ## Historical versions
 
 ### Lighthouse 3 and 4
