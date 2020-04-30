@@ -5,7 +5,7 @@ authors:
   - jeffposnick
   - ilyagrigorik
 date: 2018-11-05
-updated: 2020-04-30
+updated: 2020-04-17
 description: >
   How can you avoid unnecessary network requests? The browser's HTTP Cache is your
   first line of defense. It's not necessarily the most powerful or flexible

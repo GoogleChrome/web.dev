@@ -4,7 +4,7 @@ subhead: Reading and writing to NFC tags is now possible.
 authors:
   - beaufortfrancois
 date: 2020-02-12
-updated: 2020-04-30
+updated: 2020-04-14
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: A photo of NFC tags

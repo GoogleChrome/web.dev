@@ -10,7 +10,7 @@ description: |
   for any other external references. The critical request chain represents the
   order of resources that are prioritized and fetched by the browser.
 date: 2018-11-05
-updated: 2020-04-30
+updated: 2019-09-17
 codelabs:
   - codelab-preload-critical-assets
   - codelab-preload-web-fonts
