@@ -68,8 +68,8 @@ Android app. Web content in a Trusted Web Activity must meet Lighthouse's PWA in
 criteria and additional Android-specific criteria such as [policy compliance][9].
 
 {% Aside 'caution' %}
-  When your app is designed primarily for children under 13,
-  additional [Play Family policies][18] apply, which may be incompatible
+  When your app is designed primarily for children under 13, additional
+  [Play Family policies](https://play.google.com/about/families/) apply, which may be incompatible
   with using Trusted Web Activity.
 {% endAside %}
 
@@ -170,4 +170,3 @@ Finally, move your application from the closed test channel to production!
 [15]: https://play.google.com/store/apps/details?id=dev.conn.assetlinkstool
 [16]: https://developers.google.com/web/tools/lighthouse
 [17]: /fugu-status/
-[18]: https://play.google.com/about/families/
