@@ -62,6 +62,8 @@
     "@11ty/eleventy": "^0.11.0",
     "@11ty/eleventy-plugin-rss": "^1.0.7",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "@actions/core": "^1.2.4",
+    "@actions/github": "^2.1.1",
     "@percy/script": "^1.0.3",
     "@surma/rollup-plugin-off-main-thread": "^1.4.1",
     "ansi-colors": "^3.2.4",
@@ -130,7 +132,7 @@
     "workbox-precaching": "^5.1.2",
     "workbox-routing": "^5.1.2",
     "workbox-strategies": "^5.1.2",
-    "yaml-front-matter": "^4.0.0"
+    "yaml-front-matter": "^4.1.0"
   },
   "optionalDependencies": {
     "node-sass": "^4.12.0"
