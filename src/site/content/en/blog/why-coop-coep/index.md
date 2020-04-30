@@ -41,7 +41,8 @@ clearer, let's define them first:
   Blocking](https://www.chromium.org/Home/chromium-security/corb-for-developers)
 {% endAside %}
 
-## Why you need "cross-origin isolated" for powerful features
+## Background
+
 The web is built on the [same-origin
 policy](https://web.dev/same-origin-policy/): a security feature that restricts
 how documents and scripts can interact with resources from another origin. This
@@ -231,4 +232,3 @@ returns `true`.
   explained](https://docs.google.com/document/d/1zDlfvfTJ_9e8Jdc8ehuV4zMEu9ySMCiTGMS9y0GU92k/edit)
 * [Planned changes to shared memory - JavaScript |
   MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer/Planned_changes)
-
