@@ -1,10 +1,10 @@
 ---
 title: Chromium Lands Flexbox `gap`
-subhead: Chromium’s CSS Flexbox and Multi-Column layout engines now support gap. `grid-gap` is old news. 
+subhead: Chromium's CSS Flexbox and Multi-Column layout engines now support gap. `grid-gap` is old news. 
 authors:
   - adamargyle
   # - dgrogan
-description: Chromium’s CSS Flexbox and Multi-Column layout engines now support gap. `grid-gap` is old news. 
+description: Chromium's CSS Flexbox and Multi-Column layout engines now support gap. `grid-gap` is old news. 
 date: 2020-04-30
 updated: 2020-04-30
 tags:
@@ -34,7 +34,7 @@ At the time of writing `gap` is supported in desktop Firefox (version 63), Firef
 ## CSS Gap
 
 {% Aside 'key-term' %}
-`gap` is the spacing *between children*. You may have heard of this type of spacing being called "gutters" or "alleys". It’s space only where the children box edges touch.
+`gap` is the spacing *between children*. You may have heard of this type of spacing being called "gutters" or "alleys". It's space only where the children box edges touch.
 {% endAside %}
 
 `gap` is [flow relative](https://www.w3.org/TR/css-logical-1/#intro), meaning it changes dynamically based on the direction of content flow. For example, `gap` will automatically adjust for the different`writing-mode` or `direction` values that you set for your international users. This significantly eases the burden of spacing challenges for the component and CSS author. **Less code scaling further.**
@@ -154,7 +154,7 @@ Example #2 - lobotomized owl selector
 }
 ```
 
-The above are not a full replacement for `gap` though, and often need `@media` query adjustments to account for wrapping scenarios or writing modes or direction. Adding 1 or 2 media queries doesn’t seem so bad, but they can add up and lead to complicated layout logic.
+The above are not a full replacement for `gap` though, and often need `@media` query adjustments to account for wrapping scenarios or writing modes or direction. Adding 1 or 2 media queries doesn't seem so bad, but they can add up and lead to complicated layout logic.
 
 What the above author really intended was to have none of the child items touch. 
 s
@@ -187,7 +187,7 @@ DevTools supports both `grid-gap` and `gap`, this is because `gap` is essentiall
 
 ## New layout potential
 
-With `flex gap`, we unlock more than convenience, we unlock powerful, perfectly spaced, intrinsic layouts. In the video and following code sample below, `grid` cannot achieve the layout that `flex` can. `grid` must have equal rows and columns, even if they’re intrinsically assigned. 
+With `flex gap`, we unlock more than convenience, we unlock powerful, perfectly spaced, intrinsic layouts. In the video and following code sample below, `grid` cannot achieve the layout that `flex` can. `grid` must have equal rows and columns, even if they're intrinsically assigned. 
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
@@ -199,7 +199,7 @@ With `flex gap`, we unlock more than convenience, we unlock powerful, perfectly 
   </figcaption>
 </figure>
 
-Also, notice how dynamic the spacing between children is when they wrap intrinsically like that. Media queries can’t detect wrapping like that to make intelligent adjustments. Flexbox `gap` can, and will, do it for you across all internationalizations.
+Also, notice how dynamic the spacing between children is when they wrap intrinsically like that. Media queries can't detect wrapping like that to make intelligent adjustments. Flexbox `gap` can, and will, do it for you across all internationalizations.
 
 
 ## Multi-column `gap`
@@ -218,5 +218,5 @@ Pretty cool.
 
 ## Summary
 
-Flex gap wasn’t all that came with Chromium 85, either. There was also a big multi-year refactor of flexbox: [flexNG](#). Enjoy performance enhancements and new features. It’s a great day. 
+Flex gap wasn't all that came with Chromium 85, either. There was also a big multi-year refactor of flexbox: [flexNG](#). Enjoy performance enhancements and new features. It's a great day. 
 
