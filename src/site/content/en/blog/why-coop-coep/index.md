@@ -60,8 +60,8 @@ Unfortunately, by the time the web community realized the key benefits of a
 strict same-origin policy, the web was already relying on these exceptions.
 
 The security side-effects of such a lax same-origin policy were patched in two
-ways. One way was through the introduction of a new protocol called [CORS (Cross
-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS)
+ways. One way was through the introduction of a new protocol called [Cross
+Origin Resource Sharing (CORS)](https://developer.mozilla.org/docs/Web/HTTP/CORS)
 whose purpose is to make sure that the server allows sharing a resource with a
 given origin. The other way is by implicitly removing direct script access to
 cross-origin resources while preserving backward compatibility. Such
