@@ -4,7 +4,7 @@ title: Provide a custom install experience
 authors:
   - petelepage
 date: 2020-02-14
-updated: 2020-02-24
+updated: 2020-04-30
 description: |
   Use the beforeinstallprompt event to provide a custom, seamless install
   experience for your users.
@@ -44,6 +44,15 @@ in-app install flow:
    install flow later.
 3. Alert the user that your PWA is installable, and provide a button or other
    element to start the in-app installation flow.
+
+{% Aside %}
+  The `beforeinstallprompt` event, and the `appinstalled` event have been moved
+  from the Web App Manifest spec to their own
+  [incubator](https://github.com/WICG/beforeinstallprompt). The Chrome team
+  remains committed to supporting them, and has no plans to remove or deprecate
+  support. **We continue to recommend using them to provide a customized
+  install experience.**
+{% endAside %}
 
 ### Listen for the `beforeinstallprompt` event {: #beforeinstallprompt }
 
