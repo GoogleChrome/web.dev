@@ -12,8 +12,11 @@ description: |
   times, resource load times and client-side rendering.
 tags:
   - post
-  - performance
-  - web vitals
+  - fast
+  - web-vitals
+  - largest-contenful-paint
+  - lcp
+  - lighthouse
 ---
 
 <blockquote>
