@@ -1,5 +1,5 @@
 ---
-title: Detecting when the user is idle
+title: Detect inactive users with the Idle Detection API
 subhead: Use the Idle Detection API to find out when the user isn't actively using their device.
 authors:
   - thomassteiner
