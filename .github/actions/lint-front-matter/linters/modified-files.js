@@ -1,6 +1,5 @@
 const getYamlFrontMatter = require('../utils/get-yaml-front-matter');
 const hasProperty = require('../rules/has-property');
-const updatedIsCurrent = require('../rules/updated-is-current');
 const sortResultsByStatus = require('../utils/sort-results-by-status');
 
 /**
@@ -16,7 +15,6 @@ module.exports = async (files) => {
 
     // Tests ---------------------------------------------------
     results.push(hasProperty.test(frontMatter, 'updated'));
-    results.push(updatedIsCurrent.test(frontMatter));
     // ---------------------------------------------------------
 
     const {passes, failures, warnings} = sortResultsByStatus(results);
