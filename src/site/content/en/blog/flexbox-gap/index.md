@@ -1,5 +1,5 @@
 ---
-title: Chromium Lands Flexbox `gap`
+title: Chromium lands Flexbox `gap`
 subhead: Chromium's CSS Flexbox and Multi-Column layout engines now support gap. `grid-gap` is old news. 
 authors:
   - adamargyle
