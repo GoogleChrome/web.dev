@@ -32,11 +32,12 @@ const postTags = require('../../_data/postTags');
  */
 class BaseCard {
   constructor({post, featured = false, className = ''}) {
-    this.post = post;
+    this.element = post;
+    this.element.data = this.element.data || {};
     this.featured = featured;
     this.className = className;
-    this.url = stripLanguage(this.post.url);
-    this.data = this.post.data;
+    this.url = stripLanguage(this.element.url);
+    this.data = this.element.data;
     this.displayedTags = [];
 
     for (const tag of this.data.tags || []) {
@@ -56,7 +57,7 @@ class BaseCard {
   }
 
   renderThumbnail(url, img, alt) {
-    const imagePath = path.join(url, img);
+    const imagePath = img.match(/^http(s?):\/\//) ? img : path.join(url, img);
     const srcsetRange = getSrcsetRange(240, 768);
 
     return html`
@@ -80,7 +81,8 @@ class BaseCard {
   }
 
   renderAuthorImages(authors) {
-    if (!Array.isArray(authors) || authors.length > 2) return;
+    if (!Array.isArray(authors) || authors.length > 2 || authors.length === 0)
+      return;
 
     return html`
       <div class="w-author__image--row">
@@ -105,7 +107,7 @@ class BaseCard {
   }
 
   renderAuthorNames(authors) {
-    if (!Array.isArray(authors)) return;
+    if (!Array.isArray(authors) || authors.length === 0) return;
 
     return html`
       <span class="w-author__name">
@@ -123,14 +125,14 @@ class BaseCard {
     `;
   }
 
-  renderAuthorsAndDate(post) {
-    const authors = post.data.authors;
+  renderAuthorsAndDate(element) {
+    const authors = element.data.authors || [];
 
     return html`
       <div class="w-authors__card">
         ${this.renderAuthorImages(authors)}
         <div>
-          ${this.renderAuthorNames(authors)} ${this.renderDate(post.date)}
+          ${this.renderAuthorNames(authors)} ${this.renderDate(element.date)}
         </div>
       </div>
     `;
@@ -208,7 +210,7 @@ class BaseCard {
                 ${md(this.data.title)}
               </h2>
             </a>
-            ${this.renderAuthorsAndDate(this.post)}
+            ${this.renderAuthorsAndDate(this.element)}
             <div
               class="w-card-base__desc ${this.className &&
                 `${this.className}__desc`}"

@@ -1,12 +1,17 @@
 ---
 layout: layout
 title: Newsletter
+permalink: /en{{ paged.href }}{% if paged.index > 0 %}{{ paged.index + 1 }}/{% endif %}index.html
 description: Stay up to date with the latest about web platform.
 date: 2020-03-13
-noindex: true
+pagination:
+  data: collections.paginatedNewsletters
+  size: 1
+  alias: paged
 ---
 <div class="newsletter-landing-page">
   <div class="w-layout-container w-pb--non">
     {% include 'partials/subscribe.njk' %}
   </div>
+  {% include 'partials/paged.njk' %}
 </div>

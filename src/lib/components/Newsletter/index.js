@@ -14,23 +14,25 @@ import {debounce} from '../../utils/debounce';
 class Newsletter extends BaseElement {
   constructor() {
     super();
-    this.setHeight = debounce(this.setHeight.bind(this), 100);
+    this.adjustIFrame = debounce(this.adjustIFrame.bind(this), 100);
   }
 
   connectedCallback() {
     super.connectedCallback();
     this.iframe = this.querySelector('iframe');
-    this.iframe.scrolling = 'no';
-    this.setHeight();
-    window.addEventListener('resize', this.setHeight);
+    this.adjustIFrame();
+    window.addEventListener('resize', this.adjustIFrame);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    window.removeEventListener('resize', this.setHeight);
+    window.removeEventListener('resize', this.adjustIFrame);
   }
 
-  setHeight() {
+  adjustIFrame() {
+    if (this.iframe.scrolling !== 'no') {
+      this.iframe.scrolling = 'no';
+    }
     this.iframe.height = this.iframe.contentWindow.document.body.scrollHeight;
   }
 }

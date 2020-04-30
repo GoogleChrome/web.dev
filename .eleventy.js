@@ -52,6 +52,7 @@ const authors = require(`./${collectionsDir}/authors`);
 const newsletters = require(`./${collectionsDir}/newsletters`);
 const paginatedAuthors = require(`./${collectionsDir}/paginated-authors`);
 const paginatedBlogPosts = require(`./${collectionsDir}/paginated-blog-posts`);
+const paginatedNewsletters = require(`./${collectionsDir}/paginated-newsletters`);
 const paginatedPostsByAuthor = require(`./${collectionsDir}/paginated-posts-by-author`);
 const paginatedPostsByTag = require(`./${collectionsDir}/paginated-posts-by-tag`);
 const paginatedTags = require(`./${collectionsDir}/paginated-tags`);
@@ -157,6 +158,7 @@ module.exports = function(config) {
   config.addCollection('recentPosts', recentPosts);
   config.addCollection('paginatedAuthors', paginatedAuthors);
   config.addCollection('paginatedBlogPosts', paginatedBlogPosts);
+  config.addCollection('paginatedNewsletters', paginatedNewsletters);
   config.addCollection('paginatedPostsByAuthor', paginatedPostsByAuthor);
   config.addCollection('paginatedPostsByTag', paginatedPostsByTag);
   config.addCollection('paginatedTags', paginatedTags);

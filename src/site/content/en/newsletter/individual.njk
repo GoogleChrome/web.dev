@@ -4,7 +4,8 @@ title: Newsletter
 permalink: /en/{{ newsletter.permalink }}/index.html
 description: Our latest news, updates, and stories for developers
 renderData:
-  title: "{{ newsletter.title or title }}"
+  title: "{{ newsletter.data.title or title }}"
+  date: "{{ newsletter.data.year }}-{{ newsletter.data.month }}-{{ newsletter.data.day }}"
 pagination:
   data: collections.newsletters
   size: 1
