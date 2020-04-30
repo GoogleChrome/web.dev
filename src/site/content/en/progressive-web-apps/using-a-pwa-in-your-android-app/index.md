@@ -4,6 +4,7 @@ title: Using a PWA in your Android app
 authors:
   - andreban
 date: 2020-03-19
+updated: 2020-04-30
 description: |
   How to open a Progressive Web App in an Android app.
 ---
