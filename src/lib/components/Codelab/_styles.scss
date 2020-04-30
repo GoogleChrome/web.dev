@@ -3,16 +3,9 @@
 @import '../../../styles/tools/breakpoints';
 
 web-codelab {
-  display: flex;
-
-  flex-flow: column;
-  @include bp(md) {
-    flex-flow: row;
-  }
+  // This is `display: flex` inside styles/pages/_codelab.scss.
 
   .w-sizer {
-    padding: 16px 32px;
-
     &.w-test {
       @include bp(md) {
         display: flex;
@@ -28,31 +21,20 @@ web-codelab {
     }
 
     .w-aside {
-      margin: 0;
+      margin: 16px;
     }
 
     @include bp(md) {
-      padding: 16px;
       position: sticky;
-      top: $WEB_HEADER_HEIGHT;
-      height: calc(100vh - #{$WEB_HEADER_HEIGHT});
+      top: $WEB_HEADER_HEIGHT + 16px;
+      height: calc(100vh - #{$WEB_HEADER_HEIGHT + 32px});
     }
   }
 
   .web-codelab__headline {
-    margin-top: 0;
-    margin-bottom: 8px;
+    padding-top: 0;
   }
-  
-  .web-codelab__instructions {
-    padding: 32px;
 
-    @include bp(md) {
-      // on desktop, set the maximum size so the Glitch can fit to the right
-      width: 600px;
-    }
-  }
-  
   .web-codelab__glitch {
     flex: 1;
 
