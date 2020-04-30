@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: There are many different options for storing data in the browser. Which one is best for your needs?
 date: 2020-04-27
-updated: 2020-04-27
+updated: 2020-04-30
 tags:
   - post
   - progressive-web-apps
@@ -98,9 +98,9 @@ device.
 * Firefox allows an [origin to use up to 2GB][ff-usage-limits]. You can use
   the [StorageManager API](#check-available) to determine how much space is
   still available.
-* Safari (both desktop and mobile) has been tested with more than 750MB of
-  data storage. I was unable to find any official documentation that defines
-  the limits for Safari.
+* Safari (both desktop and mobile) appears to allow up to 1GB. When the limit
+  is reached, Safari will prompt the user, increasing the limit in 200MB
+  increments. I was unable to find any official documentation on this.
 
 In the past, if a site exceeded a certain threshold of data stored, the
 browser would prompt the user to grant permission to use more data. For
@@ -267,7 +267,10 @@ this article. Thanks to Eiji Kitamura, Addy Osmani, and Marc Cohen who wrote
 the original articles that this is based on. Eiji wrote a helpful tool
 called [Browser Storage Abuser][storage-abuser] that was useful in validating
 current behavior. It allows you to store as much data as possible and see the
-storage limits on your browser. The hero image is by Guillaume Bolduc on
+storage limits on your browser. Thanks to Francois Beaufort who did the digging
+into Safari to figure out it's storage limits.
+
+The hero image is by Guillaume Bolduc on
 [Unsplash](https://unsplash.com/photos/uBe2mknURG4).
 
 
