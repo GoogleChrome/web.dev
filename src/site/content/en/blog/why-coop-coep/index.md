@@ -180,7 +180,7 @@ reference to it will return `true`.
 
 ![COOP](coop1.png)
 
-COOP header takes three values:
+The COOP header takes three values:
 
 ```http
 Cross-Origin-Opener-Policy: same-origin
