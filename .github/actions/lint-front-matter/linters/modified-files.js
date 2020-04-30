@@ -9,10 +9,10 @@ const sortResultsByStatus = require('../utils/sort-results-by-status');
  * @return {Array<Object>} Results objects from each check.
  */
 module.exports = async (files) => {
-  core.debug(`modified-files linting: ${files}`);
+  core.debug(`modified-files linting ${files.length}: ${files}`);
   const out = [];
   for (file of files) {
-    core.debug(`modified-files linting: ${file}`);
+    core.debug(`modified-files file: ${file}`);
     const results = [];
     const frontMatter = await getYamlFrontMatter(file);
 

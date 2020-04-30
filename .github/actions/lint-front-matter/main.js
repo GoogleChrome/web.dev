@@ -7,8 +7,12 @@ const logOutput = require('./utils/log-output');
 
 async function run() {
   try {
-    const added = core.getInput('added').split(' ');
-    const modified = core.getInput('modified').split(' ');
+    const added = core.getInput('added').length
+      ? core.getInput('added').split(' ')
+      : [];
+    const modified = core.getInput('modified').length
+      ? core.getInput('modified').split(' ')
+      : [];
     const all = [...added, ...modified];
 
     const results = [
