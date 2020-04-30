@@ -44,8 +44,12 @@
     <script defer src="//www.gstatic.com/firebasejs/6.6.1/firebase-performance.js"></script>
     {# This is used by src/lib/firestore-loader.js to dynamically load Firestore #}
     <meta id="firebase-firestore" value="//www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js" />
-    <script async src="/basic.js"></script>
     <script async src="//www.google-analytics.com/analytics.js"></script>
+    {#
+      The basic script is "defer" as it should run before the normal bootstrap module code (which
+      is defer by default).
+    #}
+    <script defer src="/basic.js"></script>
     <script type="module" src="/bootstrap.js"></script>
   </head>
   <body class="unresolved">
