@@ -175,7 +175,7 @@ Policy)](https://github.com/whatwg/html/pull/5334/files) allows you to ensure
 that a top-level window is isolated from other documents by putting them in a
 different browsing context group, so that they cannot directly interact with the
 top-level window. For example, if a document with COOP opens a pop-up, its
-`window.opener` will be `null`. Also, the `.closed` property of the opener's
+`window.opener` property will be `null`. Also, the `.closed` property of the opener's
 reference to it will return `true`.
 
 ![COOP](coop1.png)
