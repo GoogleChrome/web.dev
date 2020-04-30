@@ -15,9 +15,9 @@ authors:
 You reached this documentation probably because you're developing on an app
 that uses the Web Audio API and experienced some unexpected glitches such as
 popping noises from the output. You might already be involved in a
-[crbug.com](crbug.com) discussion and a Chrome engineer asked you to upload
-"tracing data". This document shows how to obtain the data so you can help
-engineers triage, and eventually fix the issue.
+[crbug.com](https://crbug.com) discussion and a Chrome engineer asked you to
+upload "tracing data". This document shows how to obtain the data so you can
+help engineers triage, and eventually fix the issue.
 
 ## Web Audio profiling tools
 
@@ -78,7 +78,8 @@ Beta or Canary). Once you have the browser ready, follow the steps below:
 1. The tracing tab will visualize the result (see below).
 1. Press **Save** to save the tracing data.
 
-<img src="1-hello-audio-worklet.jpg" alt="TODO" class="w-screenshot w-screenshot-filled">
+<img src="1-hello-audio-worklet.jpg" class="w-screenshot w-screenshot-filled"
+     alt="Screen shot after tracing has completed.">
 
 ### How to analyze tracing data
 
@@ -97,7 +98,8 @@ it means the callback timing from the device can be jittery. Linux/Pulse Audio
 combination is known for this problem. (See [crbug.com/825823](https://crbug.com/825823)
 and [crbug.com/864463](https://crbug.com/864463).)
 
-<img src="2e-box2d.jpg" alt="TODO" class="w-screenshot w-screenshot-filled">
+<img src="2e-box2d.jpg" class="w-screenshot w-screenshot-filled"
+     alt="Screen shot of native mode tracing result." >
 
 #### Worklet Mode
 
@@ -109,12 +111,13 @@ worklet is activated all the web audio operations are rendered by the
 The common irregularity here is a big block caused by the garbage collection
 or missed render deadlines. Both cases lead to glitches in the audio stream.
 
-<img src="3e-hello-audio-worklet.png" alt="TODO" class="w-screenshot w-screenshot-filled">
+<img src="3e-hello-audio-worklet.png" class="w-screenshot w-screenshot-filled"
+     alt="Screen shot of worklet mode tracing result.">
 
 In both cases, the ideal tracing data is characterized by well-aligned audio
 device callback invocations and render tasks being completed well within the
-given render budget. Two screenshots above are great examples of the ideal
- tracing data.
+given render budget. The two screen shots above are great examples of the ideal
+tracing data.
 
 ### Learning from real-world examples
 
@@ -126,7 +129,8 @@ goes beyond a given render budget. The callback timing is well behaved but
 the audio processing function call of Web Audio API failed to complete the
 work before the next device callback.
 
-<img src="5e-render-budget.png" alt="TODO" class="w-screenshot w-screenshot-filled">
+<img src="5e-render-budget.png" class="w-screenshot w-screenshot-filled"
+     alt="Diagram showing audio glitch due to render task overflowing budget.">
 
 **Your options:**
 
@@ -144,7 +148,8 @@ garbage collection is bigger than a given render budget, it results in
 glitches in the audio stream. The screenshot is an extreme example of this
 case.
 
-<img src="https://via.placeholder.com/250" alt="TODO" class="w-screenshot w-screenshot-filled">
+<img src="https://via.placeholder.com/250" class="w-screenshot w-screenshot-filled"
+     alt="Screen shot showing garbage collection causing audio glitch.">
 
 {% Aside %}
   Chrome's `AudioWorkletProcessor` implementation generates `Float32Array`s for
@@ -171,7 +176,8 @@ subsequent operations will be impacted. The image shown below is an example
 of jittery audio callback. Compared to the previous two images, the interval
 between each callback varies significantly.
 
-<img src="4e-pulse-audio.png" alt="TODO" class="w-screenshot w-screenshot-filled">
+<img src="4e-pulse-audio.png" class="w-screenshot w-screenshot-filled"
+     alt="Screen shot comparing unstable vs stable callback timing.">
 
 This is a known issue of Linux platform, which uses Pulse Audio as an audio
 backend. This is still under investigation. (See
@@ -186,11 +192,13 @@ want to gauge the running performance of your application.
 Access the panel by clicking the "three dots" menu in the top right corner of
 DevTools, then go to **More tools** then **WebAudio**.
 
-<img src="https://via.placeholder.com/250" alt="TODO" class="w-screenshot w-screenshot-filled">
+<img src="https://via.placeholder.com/250" class="w-screenshot w-screenshot-filled"
+     alt="Screen shot showing how to open WebAudio panel in Chrome DevTools.">
 
 ### WebAudio Panel
 
-<img src="https://via.placeholder.com/250" alt="TODO" class="w-screenshot w-screenshot-filled">
+<img src="https://via.placeholder.com/250" class="w-screenshot w-screenshot-filled"
+     alt="Screen shot of WebAudio panel in Chrome DevTools.">
 
 This panel shows the information about running instances of `BaseAudioContext`.
 Use it to see how the web audio renderer is performing on the page.
