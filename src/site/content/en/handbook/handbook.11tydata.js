@@ -51,10 +51,7 @@ module.exports = {
       },
       {
         title: 'Content infrastructure',
-        pathItems: [
-          'handbook/resolving-glitch-issues',
-          'handbook/redirects',
-        ],
+        pathItems: ['handbook/resolving-glitch-issues', 'handbook/redirects'],
       },
     ],
   },
