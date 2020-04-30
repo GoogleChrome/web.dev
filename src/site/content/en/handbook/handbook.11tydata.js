@@ -35,7 +35,6 @@ module.exports = {
           'handbook/use-media',
           'handbook/word-list',
           'handbook/tooling-and-libraries',
-          'handbook/resolving-glitch-issues',
         ],
       },
       {
@@ -48,6 +47,13 @@ module.exports = {
           'handbook/markup-code',
           'handbook/markup-sample-app',
           'handbook/self-assessment-components',
+        ],
+      },
+      {
+        title: 'Content infrastructure',
+        pathItems: [
+          'handbook/resolving-glitch-issues',
+          'handbook/redirects',
         ],
       },
     ],
