@@ -26,6 +26,11 @@ opens up new use cases for the web. Imagine a world where you can:
 
 The Web Bundles API is a bleeding edge proposal that lets you do all of this.
 
+## Browser compatibility
+
+The Web Bundles API is currently only supported in Chromium-based browsers behind
+an experimental flag.
+
 ## Introducing the Web Bundles API
 
 A Web Bundle is a file format for encapsulating one or more HTTP resources in a
