@@ -1,3 +1,4 @@
+const core = require('@actions/core');
 const getYamlFrontMatter = require('../utils/get-yaml-front-matter');
 const urlMatchesTitle = require('../rules/url-matches-title');
 const urlLength = require('../rules/url-length');
