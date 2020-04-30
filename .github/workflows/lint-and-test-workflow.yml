@@ -6,6 +6,7 @@ on: pull_request
 
 jobs:
   lint_and_test:
+    name: Lint and test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

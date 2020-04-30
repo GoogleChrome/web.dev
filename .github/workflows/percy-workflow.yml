@@ -6,6 +6,13 @@ on:
   push:
     branches:
       - master
+    paths:
+      - '**.js'
+      - '**.json'
+      - '**.njk'
+      - '**.scss'
+      - '**.yml'
+      - '**.yaml'
   pull_request:
     paths:
       - '**.js'

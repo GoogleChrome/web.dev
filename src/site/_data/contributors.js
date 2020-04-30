@@ -123,6 +123,18 @@ const contributors = {
         'Tom is the Games Lead for the Chrome & Web Developer Relations team at Google',
     },
   },
+  ilyagrigorik: {
+    name: {
+      given: 'Ilya',
+      family: 'Grigorik',
+    },
+    org: {
+      name: 'Google',
+      unit: 'Chrome',
+    },
+    twitter: 'igrigorik',
+    github: 'igrigorik',
+  },
   yigu: {
     name: {
       given: 'Yi',
@@ -223,6 +235,7 @@ const contributors = {
     homepage: 'https://petelepage.com',
     twitter: 'petele',
     github: 'petele',
+    glitch: 'petele',
     description: {
       en:
         'Developer Advocate on the web team at Google, taking the sharp edges off new stuff & helping make the web better for developers! (he/him)',
@@ -324,6 +337,7 @@ const contributors = {
     homepage: 'https://blog.tomayac.com/',
     twitter: 'tomayac',
     github: 'tomayac',
+    glitch: 'tomayac',
     description: {
       en: 'Tom is a Developer Advocate',
     },
@@ -863,12 +877,6 @@ const contributors = {
       en: 'Developer working on Firefox Preview',
     },
   },
-  lchansson: {
-    name: {
-      given: 'Lina',
-      family: 'Hansson',
-    },
-  },
   kumagi: {
     name: {
       given: 'Hiroki',
@@ -911,6 +919,18 @@ const contributors = {
     country: 'CH',
     twitter: 'kkotowicz',
     github: 'koto',
+  },
+  ulan: {
+    name: {
+      given: 'Ulan',
+      family: 'Degenbaev',
+    },
+    twitter: 'ulandev',
+    github: 'ulan',
+    org: {
+      name: 'Google',
+      unit: 'Chrome',
+    },
   },
 };
 

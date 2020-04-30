@@ -8,7 +8,7 @@ description: |
   set up in under five minutes and provides feedvack on the size and quantity of
   page resources.
 date: 2019-06-14
-updated: 2020-04-03
+updated: 2020-04-29
 tags:
   - post
   - performance
@@ -40,7 +40,7 @@ Create a file named `budget.json`. In this file add the following JSON:
         "budget": 3000
       },
       {
-        "metric": "first-meaingful-paint",
+        "metric": "first-meaningful-paint",
         "budget": 1000
       }
     ],

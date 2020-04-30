@@ -5,7 +5,7 @@ authors:
   - jeffposnick
 description: Your PWA might cache articles and media files, but how will your users know that your pages work while offline? The Content Indexing API is one answer to this question currently in an origin trial. Once the index is populated with content from your PWA, as well as any other installed PWAs, it will show up in dedicated areas of supported browsers.
 date: 2019-12-12
-updated: 2020-03-31
+updated: 2020-04-29
 tags:
   - post
   - capabilities
@@ -190,7 +190,9 @@ await registration.index.add({
   // Required; set to something unique within your web app.
   id: 'article-123',
 
-  // Required; this URL needs to be an offline-capable HTML page.
+  // Required; url needs to be an offline-capable HTML page.
+  // For compatibility during the Origin Trial, include launchUrl as well.
+  url: '/articles/123',
   launchUrl: '/articles/123',
 
   // Required; used in user-visible lists of content.
@@ -211,6 +213,13 @@ await registration.index.add({
   category: 'article',
 });
 ```
+
+{% Aside 'note' %}
+  The `add()` method previously took a `launchUrl` parameter, which has been renamed to `url`.
+  During the Origin Trial period, you should include both `url` and `launchUrl`, set to the same
+  value. Following the Origin Trial, only `url` will be supported.
+{% endAside %}
+
 
 Adding an entry only affects the content index; it does not add anything to the
 [Cache Storage

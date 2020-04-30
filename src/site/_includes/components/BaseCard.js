@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
+const path = require('path');
 const {html} = require('common-tags');
 const prettyDate = require('../../_filters/pretty-date');
 const stripLanguage = require('../../_filters/strip-language');
 const md = require('../../_filters/md');
 const constants = require('../../_utils/constants');
-const getImagePath = require('../../_utils/get-image-path');
 const getSrcsetRange = require('../../_utils/get-srcset-range');
 const postTags = require('../../_data/postTags');
 
@@ -56,7 +56,7 @@ class BaseCard {
   }
 
   renderThumbnail(url, img, alt) {
-    const imagePath = getImagePath(img, url);
+    const imagePath = path.join(url, img);
     const srcsetRange = getSrcsetRange(240, 768);
 
     return html`
@@ -136,6 +136,20 @@ class BaseCard {
     `;
   }
 
+  renderSubhead(subhead) {
+    if (!subhead) {
+      return;
+    }
+
+    return html`
+      <a class="w-card-base__link" tabindex="-1" href="${this.url}">
+        <p class="w-card-base__subhead">
+          ${md(subhead)}
+        </p>
+      </a>
+    `;
+  }
+
   renderChips() {
     if (!this.displayedTags.length) {
       return;
@@ -164,6 +178,7 @@ class BaseCard {
   }
 
   render() {
+    // prettier-ignore
     return html`
       <div class="w-card ${this.className}" role="listitem">
         <article
@@ -198,11 +213,7 @@ class BaseCard {
               class="w-card-base__desc ${this.className &&
                 `${this.className}__desc`}"
             >
-              <a class="w-card-base__link" tabindex="-1" href="${this.url}">
-                <p class="w-card-base__subhead">
-                  ${md(this.data.subhead)}
-                </p>
-              </a>
+              ${this.renderSubhead(this.data.subhead)}
               ${this.renderChips()}
             </div>
           </div>

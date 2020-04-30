@@ -1,0 +1,16 @@
+@import '../settings/colors';
+
+input[type='email'],
+input[type='password'],
+input[type='text'] {
+  border: 1px solid $GREY_300;
+  font: inherit;
+  font-size: inherit;
+  padding: 14px 8px;
+  width: 100%;
+
+  &:focus {
+    border-color: $WEB_PRIMARY_COLOR;
+    outline: none;
+  }
+}

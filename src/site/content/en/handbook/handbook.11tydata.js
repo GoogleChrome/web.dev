@@ -35,6 +35,7 @@ module.exports = {
           'handbook/use-media',
           'handbook/word-list',
           'handbook/tooling-and-libraries',
+          'handbook/resolving-glitch-issues',
         ],
       },
       {

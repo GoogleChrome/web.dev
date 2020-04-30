@@ -154,12 +154,9 @@ which you can then [`write()`](https://developer.mozilla.org/en-US/docs/Web/API/
 data to.
 
 ```js
-  const readWSS = new WebSocketStream(READ_URL);
-  const {readable} = await readWSS.connection;
+  const wss = new WebSocketStream(WSS_URL);
+  const {readable, writable} = await wss.connection;
   const reader = readable.getReader();
-
-  const writeWSS = new WebSocketStream(WRITE_URL);
-  const {writable} = await writeWSS.connection;
   const writer = writable.getWriter();
 
   while (true) {
@@ -275,7 +272,7 @@ or [directly on Glitch](https://websocketstream-demo.glitch.me/).
 
 ## Feedback {: #feedback }
 
-The Chrome team wants to hear about your experiences with the API_NAME API.
+The Chrome team wants to hear about your experiences with the WebSocketStream API.
 
 ### Tell us about the API design
 

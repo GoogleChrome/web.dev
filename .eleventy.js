@@ -47,10 +47,8 @@ const SignPosts = require(`./${componentsDir}/SignPosts`);
 const Tooltip = require(`./${componentsDir}/Tooltip`);
 const YouTube = require(`./${componentsDir}/YouTube`);
 
-const tagsDir = 'src/site/_includes/components/tags';
-const {Image, Figure} = require(`./${tagsDir}/Image`);
-
 const collectionsDir = 'src/site/_collections';
+const authors = require(`./${collectionsDir}/authors`);
 const paginatedAuthors = require(`./${collectionsDir}/paginated-authors`);
 const paginatedBlogPosts = require(`./${collectionsDir}/paginated-blog-posts`);
 const paginatedPostsByAuthor = require(`./${collectionsDir}/paginated-posts-by-author`);
@@ -60,6 +58,7 @@ const postDescending = require(`./${collectionsDir}/post-descending`);
 const postToCollections = require(`./${collectionsDir}/post-to-collections`);
 const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
 const recentPosts = require(`./${collectionsDir}/recent-posts`);
+const tags = require(`./${collectionsDir}/tags`);
 // nb. algoliaPosts is only require'd if needed, below
 
 const filtersDir = 'src/site/_filters';
@@ -83,8 +82,10 @@ const stripLanguage = require(`./${filtersDir}/strip-language`);
 
 const transformsDir = 'src/site/_transforms';
 const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
-
-const buildPartial = require('./src/site/_utils/build-partial');
+const {responsiveImages} = require(`./${transformsDir}/responsive-images`);
+const {
+  serviceWorkerPartials,
+} = require(`./${transformsDir}/service-worker-partials`);
 
 module.exports = function(config) {
   // ----------------------------------------------------------------------------
@@ -148,6 +149,7 @@ module.exports = function(config) {
   // ----------------------------------------------------------------------------
   // COLLECTIONS
   // ----------------------------------------------------------------------------
+  config.addCollection('authors', authors);
   config.addCollection('posts', postDescending);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('recentPosts', recentPosts);
@@ -157,6 +159,7 @@ module.exports = function(config) {
   config.addCollection('paginatedPostsByTag', paginatedPostsByTag);
   config.addCollection('paginatedTags', paginatedTags);
   config.addCollection('postToCollections', postToCollections);
+  config.addCollection('tags', tags);
   // Turn collection.all into a lookup table so we can use findBySlug
   // to quickly find collection items without looping.
   config.addCollection('memoized', function(collection) {
@@ -212,18 +215,11 @@ module.exports = function(config) {
   config.addShortcode('Instruction', Instruction);
   config.addPairedShortcode('Label', Label);
   config.addShortcode('Meta', Meta);
-  config.addPairedShortcode('Partial', buildPartial());
   config.addShortcode('PathCard', PathCard);
   config.addShortcode('PostCard', PostCard);
   config.addShortcode('SignPosts', SignPosts);
   config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('YouTube', YouTube);
-
-  // ----------------------------------------------------------------------------
-  // CUSTOM TAGS
-  // ----------------------------------------------------------------------------
-  config.addNunjucksTag('Image', Image);
-  config.addNunjucksTag('Figure', Figure);
 
   // ----------------------------------------------------------------------------
   // TRANSFORMS
@@ -232,6 +228,19 @@ module.exports = function(config) {
     config.addTransform('disable-lazy-load', disableLazyLoad);
   }
 
+  if (process.env.ELEVENTY_ENV === 'prod') {
+    config.addTransform('responsive-images', responsiveImages);
+  }
+
+  // !!! Important !!!
+  // This transform should always go last.
+  // It takes the final html and turns it into partials that the
+  // service worker can load.
+  config.addTransform('service-worker-partials', serviceWorkerPartials);
+
+  // ----------------------------------------------------------------------------
+  // ELEVENTY OPTIONS
+  // ----------------------------------------------------------------------------
   // https://www.11ty.io/docs/config/#data-deep-merge
   config.setDataDeepMerge(true);
 

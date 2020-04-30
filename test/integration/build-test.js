@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const dist = path.resolve(__dirname, '..', '..', 'dist');
 
-describe('Build', function() {
+describe('Build test', function() {
   it('generates the expected files', async function() {
     // Disable the timeout as it'll take build a little while to finish.
     // eslint-disable-next-line
@@ -26,6 +26,8 @@ describe('Build', function() {
       path.join('en', 'index.html'),
       path.join('en', 'index.json'),
       path.join('en', 'robots.txt'),
+      path.join('en', 'authors', 'addyosmani', 'feed.xml'),
+      path.join('en', 'tags', 'progressive-web-apps', 'feed.xml'),
       path.join('images', 'favicon.ico'),
       path.join('images', 'lockup.svg'),
       'app.css',

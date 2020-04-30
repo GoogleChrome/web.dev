@@ -5,10 +5,8 @@
 
 import {html} from 'lit-element';
 import {BaseElement} from '../BaseElement';
-import config from 'webdev_config';
+import {env} from 'webdev_config';
 import './_styles.scss';
-
-const {env} = config;
 
 /**
  * Render codelab instructions and Glitch

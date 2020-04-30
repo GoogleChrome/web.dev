@@ -5,7 +5,7 @@ description: |
   Learn how Lighthouse generates the overall Performance score for your page.
 subhead: How Lighthouse calculates your overall Performance score
 date: 2019-09-19
-updated: 2020-04-28
+updated: 2020-04-29
 ---
 
 In general, only [metrics](/lighthouse-performance/#metrics)
@@ -118,7 +118,6 @@ See the [Lighthouse scoring calculator](https://paulirish.github.io/lh-scorecalc
       </tr>
       <tr>
         <td><a href="/first-cpu-idle/">First CPU Idle</a></td>
-        <td>13%</td>
       </tr>
     </tbody>
   </table>
@@ -198,7 +197,6 @@ We don't think users care about the historical scoring rubrics, but we'd still p
       </tr>
       <tr>
         <td><a href="/first-cpu-idle/">First CPU Idle</a></td>
-        <td>13%</td>
       </tr>
     </tbody>
   </table>

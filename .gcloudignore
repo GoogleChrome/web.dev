@@ -23,3 +23,13 @@ node_modules/
 /glitches/
 /lib/
 /src/
+/test/
+/tools/
+build.js
+CODE_OF_CONDUCT.md
+compile-css.js
+CONTRIBUTING.md
+gulpfile.js
+index-algolia.js
+karma.conf.js
+netlify.toml

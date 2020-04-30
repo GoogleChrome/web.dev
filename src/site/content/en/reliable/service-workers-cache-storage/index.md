@@ -4,7 +4,7 @@ title: Service workers and the Cache Storage API
 authors:
   - jeffposnick
 date: 2018-11-05
-updated: 2020-02-27
+updated: 2020-04-29
 description: |
   The browser's HTTP cache is your first line of defense. It's not necessarily
   the most powerful or flexible approach, and you have limited control over the
@@ -87,6 +87,8 @@ uses that would be difficult or impossible with just the HTTP cache include:
 +  Compare previously cached and fresh network responses to see if
     anything's changed, and enable the user to update content (with a button,
     for example)  when data has actually been updated.
+
+Check out [The Cache API: A quick guide](/cache-api-quick-guide/) to learn more.
 
 ### API nuts and bolts
 

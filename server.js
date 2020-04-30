@@ -22,6 +22,9 @@ const cookieParser = require('cookie-parser');
 const localeHandler = require('./locale-handler.js');
 const buildRedirectHandler = require('./redirect-handler.js');
 
+// If true, we'll aggressively nuke the prod Service Worker. For emergencies.
+const serviceWorkerKill = false;
+
 const redirectHandler = (() => {
   // In development, Eleventy isn't guaranteed to have run, so read the actual
   // source file.
@@ -40,29 +43,48 @@ const redirectHandler = (() => {
 
 // 404 handlers aren't special, they just run last.
 const notFoundHandler = (req, res, next) => {
-  // This 404 handler is vaguely approximated on Netlify in our staging environment.
+  res.status(404);
+
+  const extMatch = /(\.[^.]*)$/.exec(req.url);
+  if (extMatch && extMatch[1] !== '.html') {
+    // If this had an extension and it was not ".html", don't send any bytes.
+    // This is just a minor optimization to not waste bytes.
+    // Pages without extensions won't match here: e.g., "/foo" will still send HTML.
+    return res.end();
+  }
+
   const options = {root: 'dist/en'};
-  const suffix = req.url.endsWith('.json') ? 'json' : 'html';
-  res
-    .status(404)
-    .sendFile(`404/index.${suffix}`, options, (err) => err && next(err));
+  res.sendFile(`404/index.html`, options, (err) => err && next(err));
 };
 
-// Disallow invalid hostnames, and remove any active Service Worker too (users
-// may have loaded this and otherwise they'll be stuck forever).
+// Implement safety mechanics.
+//   * Disallow invalid hostnames (and remove any lasting Service Workers
+//     otherwise users could be stuck forever)
+//   * Optionally nuke our production Service Worker in an emergency.
+//   * Deny loading us in an iframe.
 const invalidHostnames = ['www.web.dev', 'appengine-test.web.dev'];
-const invalidHostnameHandler = (req, res, next) => {
+const safetyHandler = (req, res, next) => {
+  const isServiceWorkerRequest = Boolean(req.headers['service-worker']);
   if (invalidHostnames.includes(req.hostname)) {
-    if (!req.headers['service-worker']) {
+    if (!isServiceWorkerRequest) {
       return res.redirect(301, 'https://web.dev' + req.url);
     }
+    // We always nuke the Service Worker for invalid hostnames.
+    req.url = '/nuke-sw.js';
+  } else if (serviceWorkerKill && isServiceWorkerRequest) {
+    // The kill switch is enabled, nuke the Service Worker.
     req.url = '/nuke-sw.js';
   }
+
+  // TODO: This should also be included in a CSP header like:
+  //   "Content-Security-Policy: frame-ancestors 'self'"
+  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+
   return next();
 };
 
 const handlers = [
-  invalidHostnameHandler,
+  safetyHandler,
   localeHandler,
   express.static('dist'),
   express.static('dist/en'),
