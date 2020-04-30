@@ -22,7 +22,7 @@ to lower [Time to Interactive](/interactive):
 
 See also [Lazy load offscreen images with lazysizes codelab](/codelab-use-lazysizes-to-lazyload-images).
 
-## Warning
+## Bug: `loading="lazy"` images are incorrectly flagged
 
 Offscreen image audit incorrectly reports lazy-loaded images when using the new native `loading="lazy"` attribute:
 [LINK](https://github.com/GoogleChrome/lighthouse/issues/6677)
