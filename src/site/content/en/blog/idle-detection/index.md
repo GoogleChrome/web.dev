@@ -137,8 +137,6 @@ try {
 ```
 
 The second, _and preferred_, way is by subscribing to `change` events via an event listener.
-To extract the two properties of interest of the fired event, namely `user` and `screen`,
-you can use the new object destructuring syntax in JavaScript.
 
 ```js
 try {
