@@ -1,5 +1,4 @@
 const core = require('@actions/core');
-const getMarkdownFiles = require('./utils/get-markdown-files');
 const lintAllFiles = require('./linters/all-files');
 const lintAddedFiles = require('./linters/added-files');
 const lintModifiedFiles = require('./linters/modified-files');
@@ -8,8 +7,8 @@ const logOutput = require('./utils/log-output');
 
 async function run() {
   try {
-    const added = getMarkdownFiles(core.getInput('added'));
-    const modified = getMarkdownFiles(core.getInput('modified'));
+    const added = core.getInput('added');
+    const modified = core.getInput('modified');
     const all = [...added, ...modified];
 
     const results = [
