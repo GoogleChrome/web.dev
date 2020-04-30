@@ -7,6 +7,7 @@ const logOutput = require('./utils/log-output');
 
 async function run() {
   try {
+    // Inputs come in as a space separated list of file paths.
     const added = core.getInput('added').length
       ? core.getInput('added').split(' ')
       : [];
