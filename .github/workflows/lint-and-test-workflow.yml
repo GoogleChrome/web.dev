@@ -24,7 +24,49 @@ jobs:
             ${{ runner.os }}-node-
       - name: Install
         run: npm ci
+
+      # Run linters for js/css/markdown. These will lint the entire project.
       - name: Lint
         run: npm run lint
+
+      # Run all unit and integration tests.
       - name: Test
         run: npm run test
+      
+      # Begin custom linters.
+      # These will primarily focus on the YAML frontmatter of posts.
+      # Note these linters will post their own message to the GitHub Issue
+      # using the Create or update comment step.
+      - name: Git diff
+        id: git_diff
+        uses: futuratrepadeira/changed-files@v3.0.1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Lint yaml front matter
+        id: lint_front_matter
+        uses: ./.github/actions/lint-front-matter
+        with:
+          added: ${{ steps.git_diff.outputs.files_created }}
+          modified: ${{ steps.git_diff.outputs.files_updated }}
+        # Only run the linter if the previous step indicated that files were
+        # added or modified in the pull request.
+        if: steps.git_diff.outputs.files_created || steps.git_diff.outputs.files_updated
+      
+      - name: Find comment
+        id: find_comment
+        uses: ./.github/actions/find-comment
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+        if: always() && steps.lint_front_matter.outputs.message
+
+      - name: Create or update comment
+        uses: peter-evans/create-or-update-comment@v1.1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.number }}
+          comment-id: ${{ steps.find_comment.outputs.comment-id }}
+          body: |
+            ${{ steps.lint_front_matter.outputs.message }}
+          edit-mode: replace
+        if: always() && steps.lint_front_matter.outputs.message
