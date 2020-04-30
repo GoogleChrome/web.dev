@@ -20,6 +20,11 @@ function onGlobalStateChanged({isSignedIn, isPageLoading}) {
   } else {
     main.removeAttribute('aria-busy');
   }
+
+  // Cache whether the user was signed in, to help prevent FOUC in future and
+  // for Analytics, as this can be read synchronosly and Firebase's auth takes
+  // ~ms to arrive.
+  localStorage['webdev_isSignedIn'] = isSignedIn ? 'probably' : '';
 }
 store.subscribe(onGlobalStateChanged);
 onGlobalStateChanged(store.getState());
