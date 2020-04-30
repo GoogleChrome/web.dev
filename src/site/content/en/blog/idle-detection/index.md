@@ -7,7 +7,7 @@ description: |
   The Idle Detection API notifies developers when a user is idle, indicating such things as lack of
   interaction with the keyboard, mouse, screen, activation of a screensaver, locking of the screen,
   or moving to a different screen. A developer-defined threshold triggers the notification.
-date: 2020-04-20
+date: 2020-04-30
 tags:
   - post
   - idle-detection
