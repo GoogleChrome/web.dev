@@ -5,7 +5,7 @@ description: |
   Learn how Lighthouse generates the overall Performance score for your page.
 subhead: How Lighthouse calculates your overall Performance score
 date: 2019-09-19
-updated: 2020-04-29
+updated: 2020-04-30
 ---
 
 In general, only [metrics](/lighthouse-performance/#metrics)
@@ -46,8 +46,14 @@ The metric scores are not visible in the report, but are calculated under the ho
   impact on user-perceived performance.
 {% endAside %}
 
-
-See the [Lighthouse scoring calculator](https://paulirish.github.io/lh-scorecalc/) to get a detailed understanding of how this works.
+<figure class="w-figure">
+  <a href="https://paulirish.github.io/lh-scorecalc/">
+    <img src="./score-calc.png" alt="Lighthouse scoring calculator webapp" style="max-width: 600px;">
+  </a>
+  <figcaption class="w-figcaption">
+    Explore scoring with the <a href="https://paulirish.github.io/lh-scorecalc/">Lighthouse scoring calculator</a>
+  </figcaption>
+</figure>
 
 ### Lighthouse 6 (draft)
 
