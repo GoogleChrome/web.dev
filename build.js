@@ -164,22 +164,22 @@ async function build() {
 
   // Rollup basic to generate the top-level script run by all browsers (even ancient ones). This is
   // just for Analytics.
-  const basicBundle = await rollup.rollup({
-    input: 'src/lib/basic.js',
+  const pageviewBundle = await rollup.rollup({
+    input: 'src/lib/pageview.js',
     plugins: defaultPlugins,
     external: disallowExternal,
   });
-  const basicGenerated = await basicBundle.write({
+  const pageviewGenerated = await pageviewBundle.write({
     sourcemap: true,
     dir: 'dist',
     format: 'iife',
   });
-  if (basicGenerated.output.length !== 1) {
+  if (pageviewGenerated.output.length !== 1) {
     throw new Error(
-      `basic generated more than one file: ${basicGenerated.output.length}`,
+      `pageview generated more than one file: ${pageviewGenerated.output.length}`,
     );
   }
-  generated.push(basicGenerated.output[0].fileName);
+  generated.push(pageviewGenerated.output[0].fileName);
 
   // Compress the generated source here, as we need the final files and hashes for the Service
   // Worker manifest.
