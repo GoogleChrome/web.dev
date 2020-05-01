@@ -60,7 +60,7 @@ Beta or Canary). Once you have the browser ready, follow the steps below:
 
 1. Open your application (web page) on a tab.
 1. Open another tab and go to `chrome://tracing`.
-1. Press **Record** button and select **Manually select settings**.
+1. Press the **Record** button and select **Manually select settings**.
 1. Press the **None** buttons on both the **Record Categories** and
    **Disabled by Default Categories** sections.
 1. In the **Record Categories** section, select the following:
