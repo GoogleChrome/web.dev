@@ -70,7 +70,7 @@ Beta or Canary). Once you have the browser ready, follow the steps below:
     * `v8.execute` (if you're interested in `AudioWorklet` JS code performance)
     * `webaudio`
 1. In the **Disabled by Default Categories** section, select the following:
-    * `audio-worklet` (if you're interested in where `AudioWorklet` thread starts)
+    * `audio-worklet` (if you're interested in where the `AudioWorklet` thread starts)
     * `webaudio.audionode` (if you need the detailed trace for each `AudioNode`)
 1. Press **Record** at the bottom.
 1. Go back to your application tab and redo the steps that triggered the issue.
