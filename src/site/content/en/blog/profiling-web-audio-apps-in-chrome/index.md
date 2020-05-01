@@ -203,7 +203,7 @@ DevTools, then go to **More tools** then **WebAudio**.
 This panel shows the information about running instances of `BaseAudioContext`.
 Use it to see how the web audio renderer is performing on the page.
 
-Since a page can have multiple BaseAudioContexts, the context selector
+Since a page can have multiple `BaseAudioContext` instances, the context selector
 (drop-down menu), allows you to choose what you want to inspect. The inspector
 view shows the properties (i.e. sample rate, buffer size, channel count and
 context state) of a `BaseAudioContext` instance that you select, and it
