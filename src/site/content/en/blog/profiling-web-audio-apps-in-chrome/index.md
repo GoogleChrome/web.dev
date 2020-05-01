@@ -27,7 +27,7 @@ There are two tools that will help you when profiling Web Audio,
 ### When do you use `chrome://tracing`?
 
 When mysterious "glitches" happen. Profiling the app with the tracing tools
-gives you the insight on:
+gives you insights on:
 
 * **Time slices spent by specific function calls** on different threads
 * **Audio callback timing** in the timeline view
