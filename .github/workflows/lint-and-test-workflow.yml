@@ -28,3 +28,15 @@ jobs:
         run: npm run lint
       - name: Test
         run: npm run coverage
+      - name: Upload unit tests to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          file: ./coverage/unit/lcov.info
+          flags: unittests
+          fail_ci_if_error: true
+      - name: Upload integration tests to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          file: ./coverage/integration/lcov.info
+          flags: integrationtests
+          fail_ci_if_error: true
