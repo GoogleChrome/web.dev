@@ -105,7 +105,7 @@ for more details: [#825823](https://crbug.com/825823),
 #### Worklet mode
 
 In Worklet Mode, which is characterized by one thread jump from
-`AudioOutputDevice` to [`AudioWorklet` thread][cr-audio-worklet-thr], you
+`AudioOutputDevice` to the [`AudioWorklet` thread][cr-audio-worklet-thr], you
 should see well-aligned traces in two thread lanes as shown below.  When the
 worklet is activated all the web audio operations are rendered by the
 `AudioWorklet` thread. This thread is currently not a real-time priority one.
