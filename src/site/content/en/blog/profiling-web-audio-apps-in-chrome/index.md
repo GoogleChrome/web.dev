@@ -91,7 +91,7 @@ results also differ.
 #### Native Mode
 
 In Native mode, the [`AudioOutputDevice`][cr-audio-output-device] thread runs
-all the web audio codes. The `AudioOutputDevice` is a real-time priority thread
+all the web audio code. The `AudioOutputDevice` is a real-time priority thread
 originating from the browser's Audio Service that is driven by the audio
 hardware clock. If you see irregularity from the trace data in this lane,
 it means the callback timing from the device can be jittery. Linux/Pulse Audio
