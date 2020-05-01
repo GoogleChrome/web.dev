@@ -94,9 +94,10 @@ In Native mode, the [`AudioOutputDevice`][cr-audio-output-device] thread runs
 all the web audio code. The `AudioOutputDevice` is a real-time priority thread
 originating from the browser's Audio Service that is driven by the audio
 hardware clock. If you see irregularity from the trace data in this lane,
-it means the callback timing from the device can be jittery. Linux/Pulse Audio
-combination is known for this problem. (See [crbug.com/825823](https://crbug.com/825823)
-and [crbug.com/864463](https://crbug.com/864463).)
+it means the callback timing from the device may be jittery. The combination
+of Linux and Pulse Audio is known to have this problem. See the following Chromium issues
+for more details: [#825823](https://crbug.com/825823), 
+[#864463](https://crbug.com/864463).)
 
 <img src="2e-box2d.jpg" class="w-screenshot w-screenshot-filled"
      alt="Screen shot of native mode tracing result." >
