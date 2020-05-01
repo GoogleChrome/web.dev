@@ -920,6 +920,17 @@ const contributors = {
     twitter: 'kkotowicz',
     github: 'koto',
   },
+  dgrogan: {
+    name: {
+      given: 'David',
+      family: 'Grogan',
+    },
+    country: 'US',
+    github: 'davidsgrogan',
+    org: {
+      name: 'Google',
+    },
+  },
   ulan: {
     name: {
       given: 'Ulan',
