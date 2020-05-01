@@ -22,7 +22,7 @@ help engineers triage, and eventually fix the issue.
 ## Web Audio profiling tools
 
 There are two tools that will help you when profiling Web Audio,
-`chrome://tracing` and the WebAudio panel in Chrome DevTools.
+`chrome://tracing` and the **WebAudio** tab in Chrome DevTools.
 
 ### When do you chrome://tracing?
 
