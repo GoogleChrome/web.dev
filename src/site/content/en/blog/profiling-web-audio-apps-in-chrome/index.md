@@ -34,7 +34,7 @@ gives you insights on:
 
 It usually shows the missed deadlines or the big garbage collection stops that
 might cause unexpected audio glitches. This information is useful for triaging
-a bug and Chromium engineers will ask this if the local reproduction is not
+a bug and Chromium engineers will ask for tracing data if the local reproduction is not
 feasible. General [instructions for tracing][chromium-tracing] are available
 on chromium.org.
 
