@@ -183,7 +183,7 @@ This is a known issue of Linux platform, which uses Pulse Audio as an audio
 backend. This is still under investigation. (See
 [crbug.com/825823](https://crbug.com/825823).)
 
-## Use WebAudio DevTools
+## Use the **WebAudio** tab in Chrome DevTools
 
 You also can use the DevTools panel specifically designed for web audio. This
 is less comprehensive compared to the tracing tool, but it is useful if you
