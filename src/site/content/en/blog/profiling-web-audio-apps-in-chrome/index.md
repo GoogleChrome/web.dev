@@ -13,7 +13,7 @@ authors:
 ---
 
 You reached this documentation probably because you're developing an app
-that uses the Web Audio API and experienced some unexpected glitches such as
+that uses the [Web Audio API](https://developer.mozilla.org/docs/Web/API/Web_Audio_API) and experienced some unexpected glitches such as
 popping noises from the output. You might already be involved in a
 [crbug.com](https://crbug.com) discussion and a Chrome engineer asked you to
 upload "tracing data". This document shows how to obtain the data so you can
