@@ -12,7 +12,7 @@ authors:
   - hongchanchoi
 ---
 
-You reached this documentation probably because you're developing on an app
+You reached this documentation probably because you're developing an app
 that uses the Web Audio API and experienced some unexpected glitches such as
 popping noises from the output. You might already be involved in a
 [crbug.com](https://crbug.com) discussion and a Chrome engineer asked you to
