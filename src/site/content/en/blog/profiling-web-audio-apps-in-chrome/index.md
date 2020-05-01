@@ -105,7 +105,7 @@ and [crbug.com/864463](https://crbug.com/864463).)
 
 In Worklet Mode, which is characterized by one thread jump from
 `AudioOutputDevice` to [`AudioWorklet` thread][cr-audio-worklet-thr], you
-should see well-aligned traces in two thread lanes as shown above.  When the
+should see well-aligned traces in two thread lanes as shown below.  When the
 worklet is activated all the web audio operations are rendered by the
 `AudioWorklet` thread. This thread is currently not a real-time priority one.
 The common irregularity here is a big block caused by the garbage collection
