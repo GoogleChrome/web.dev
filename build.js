@@ -42,6 +42,11 @@ process.on('unhandledRejection', (reason, p) => {
  * Virtual imports made available to all bundles. Used for site config and globals.
  */
 const virtualImports = {
+  webdev_analytics: {
+    id: isProd ? site.analytics.ids.prod : site.analytics.ids.staging,
+    dimensions: site.analytics.dimensions,
+    version: site.analytics.version,
+  },
   webdev_config: {
     isProd,
     env: process.env.ELEVENTY_ENV || 'dev',
@@ -130,7 +135,6 @@ function disallowExternal(source, importer, isResolved) {
  * to build the Service Worker.
  */
 async function build() {
-  const generated = [];
   const postcssConfig = {};
   if (isProd) {
     // nb. Only require() autoprefixer when used.
@@ -156,9 +160,26 @@ async function build() {
     dir: 'dist',
     format: 'esm',
   });
-  for (const {fileName} of appGenerated.output) {
-    generated.push(fileName);
+  const generated = appGenerated.output.map(({fileName}) => fileName);
+
+  // Rollup basic to generate the top-level script run by all browsers (even ancient ones). This is
+  // just for Analytics.
+  const pageviewBundle = await rollup.rollup({
+    input: 'src/lib/pageview.js',
+    plugins: defaultPlugins,
+    external: disallowExternal,
+  });
+  const pageviewGenerated = await pageviewBundle.write({
+    sourcemap: true,
+    dir: 'dist',
+    format: 'iife',
+  });
+  if (pageviewGenerated.output.length !== 1) {
+    throw new Error(
+      `pageview generated more than one file: ${pageviewGenerated.output.length}`,
+    );
   }
+  generated.push(pageviewGenerated.output[0].fileName);
 
   // Compress the generated source here, as we need the final files and hashes for the Service
   // Worker manifest.
