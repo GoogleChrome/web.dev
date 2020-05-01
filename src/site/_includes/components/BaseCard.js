@@ -81,7 +81,7 @@ class BaseCard {
   }
 
   renderAuthorImages(authors) {
-    if (!Array.isArray(authors) || authors.length > 2 || authors.length === 0)
+    if (!Array.isArray(authors) || !authors.length || authors.length > 2)
       return;
 
     return html`
