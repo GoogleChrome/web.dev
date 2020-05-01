@@ -21,10 +21,11 @@ const addPagination = require('../_utils/add-pagination');
  * Each element includes n number of newsletters as well as some basic information to pump into `_includes/partials/paged.njk`
  * This is designed so that it follows a similar structure to `_collections/paged-tags.js`.
  *
+ * @param {object} collections 11ty collections object
  * @return {Array<{ href: string, elements: Array<object>, index: number, pages: number }>} An array where each element is a blog page with some meta data and n posts for the page.
  */
-module.exports = () => {
-  return addPagination(newsletters(), {
+module.exports = (collections) => {
+  return addPagination(newsletters(collections), {
     href: '/newsletter/',
   });
 };

@@ -13,13 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const newsletters = require('../_data/newsletters');
+
+const path = require('path');
 
 /**
  * Returns an array of all past Newsletters.
  *
+ * @param {object} collections 11ty collections object
  * @return {Array<{ data: { title: string, subhead: string, thumbnail: string, alt: string; }, year: string, month: string, day: string, date: Date, permalink: string, url: string, html: string }>}
  */
-module.exports = () => {
-  return newsletters;
+module.exports = (collections) => {
+  return collections
+    .getFilteredByTag('newsletter')
+    .reverse()
+    .map((newsletter) => {
+      const month =
+        (newsletter.date.getMonth() < 9 ? '0' : '') +
+        (newsletter.date.getMonth() + 1);
+      const year = String(newsletter.date.getFullYear());
+
+      newsletter.permalink = path.join('newsletter', 'archive', year, month);
+      newsletter.url = path.join('/en', newsletter.permalink);
+
+      return newsletter;
+    });
 };

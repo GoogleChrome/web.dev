@@ -6,7 +6,7 @@ import {BaseElement} from '../BaseElement';
 import {debounce} from '../../utils/debounce';
 
 /**
- * Renders code block that can easily be copied.
+ * Resizes newsletter iframe.
  *
  * @extends {BaseElement}
  * @final
@@ -14,25 +14,23 @@ import {debounce} from '../../utils/debounce';
 class Newsletter extends BaseElement {
   constructor() {
     super();
-    this.adjustIFrame = debounce(this.adjustIFrame.bind(this), 100);
+    this.resizeIFrame = debounce(this.resizeIFrame.bind(this), 100);
   }
 
   connectedCallback() {
     super.connectedCallback();
     this.iframe = this.querySelector('iframe');
-    this.adjustIFrame();
-    window.addEventListener('resize', this.adjustIFrame);
+    this.iframe.scrolling = 'no';
+    this.resizeIFrame();
+    window.addEventListener('resize', this.resizeIFrame);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    window.removeEventListener('resize', this.adjustIFrame);
+    window.removeEventListener('resize', this.resizeIFrame);
   }
 
-  adjustIFrame() {
-    if (this.iframe.scrolling !== 'no') {
-      this.iframe.scrolling = 'no';
-    }
+  resizeIFrame() {
     this.iframe.height = this.iframe.contentWindow.document.body.scrollHeight;
   }
 }
