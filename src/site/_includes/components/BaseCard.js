@@ -107,7 +107,7 @@ class BaseCard {
   }
 
   renderAuthorNames(authors) {
-    if (!Array.isArray(authors) || authors.length === 0) return;
+    if (!Array.isArray(authors) || !authors.length) return;
 
     return html`
       <span class="w-author__name">
