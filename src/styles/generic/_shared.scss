@@ -1,4 +1,5 @@
 @import '../settings/colors';
+@import '../settings/global';
 @import '../settings/dimensions';
 
 // =============================================================================
@@ -26,6 +27,10 @@
   outline: none !important;
 }
 
+// https://css-tricks.com/fixed-headers-on-page-links-and-overlapping-content-oh-my/
+html {
+  scroll-padding-top: calc($TOPNAV_HEIGHT + 24px);
+}
 
 // This will hide the focus indicator if the element receives focus via the
 // mouse, but it will still show up on keyboard focus.

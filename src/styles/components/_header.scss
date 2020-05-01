@@ -20,7 +20,7 @@ web-header {
   contain: layout;
   display: flex;
   font-size: 14px;
-  height: 64px;
+  height: $TOPNAV_HEIGHT;
   padding: 0 24px;
   position: fixed;
   top: 0;
