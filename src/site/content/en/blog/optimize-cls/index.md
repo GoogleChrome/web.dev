@@ -169,7 +169,7 @@ It's very possible these images could have different aspect ratios and browsers 
 
 ### Advertisements
 
-Ads are one of the largest contributors to layout shifts on the web. Ad networks and publishers often support dynamic ad sizes. Ad sizes increase performance/revenue due to higher click rates and more ads competing in the auction. Unfortunately, this can lead to a suboptimal user experience due to ads pushing content you're reading down the page.
+Ads are one of the largest contributors to layout shifts on the web. Ad networks and publishers often support dynamic ad sizes. Ad sizes increase performance/revenue due to higher click rates and more ads competing in the auction. Unfortunately, this can lead to a suboptimal user experience due to ads pushing visible content you're viewing down the page.
 
 During the ad lifecycle, many points can introduce layout shift:
 
@@ -185,6 +185,7 @@ The good news is that it's possible for sites to follow best practices to reduce
   * If placing ads in the content flow, ensure shifts are eliminated by reserving the slot size. These ads _shouldn't_ cause layout shifts if loaded off-screen.
 * Take care when placing non-sticky ads near the top of the viewport. 
   * In the below example, it's recommended to move the ad to below the "world vision" logo and make sure to reserve enough space for the slot.
+* Avoid collapsing the reserved space if there is no ad returned when the ad slot is visible by showing a placeholder.
 * Eliminate shifts by reserving the largest possible size for the ad slot.
   * This works, but it risks having a blank space if a smaller ad creative fills the slot.
 * Choose the most likely size for the ad slot based on historical data.
@@ -332,7 +333,7 @@ I'm happy to share there are a number of tools available to measure and debug Cu
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse) [6.0](https://github.com/GoogleChrome/lighthouse/releases) and above include support for measuring CLS in a lab setting. This release will also highlight the nodes that cause the most layout shifting.
 
-![alt_text](Optimize-Cumulative11.jpg "image_tooltip")
+![Lighthouse 6.0 includes support for measuring CLS in the metrics section](Optimize-Cumulative11.jpg "image_tooltip")
 
 The [Performance panel](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance) in DevTools highlights layout shifts in the **Experience** section as of Chrome 84. The **Summary** view for a `Layout Shift` record includes the cumulative layout shift score as well as a rectangle overlay showing the affected regions.
 
@@ -343,8 +344,8 @@ After recording a new trace in the Performance panel, the <b>Experience</b> sect
   </figcaption>
 </figure>
 
-Measuring real-world CLS aggregated at an origin-level is also possible using the [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report).
+Measuring real-world CLS aggregated at an origin-level is also possible using the [Chrome User Experience Report](/chrome-ux-report-bigquery/). CrUX CLS data is available via BigQuery and a [sample query](https://github.com/GoogleChrome/CrUX/blob/master/sql/cls-summary.sql) to look at CLS performance is available to use.
 
 That's it for this guide. I hope it helps keep your pages just a little less shifty :)
 
-_With thanks to Philip Walton, Kenji Baheux, Warren Maresca, Annie Sullivan and Steve Kobes for their helpful reviews._
+_With thanks to Philip Walton, Kenji Baheux, Warren Maresca, Annie Sullivan, Steve Kobes and Gilberto Cocchi for their helpful reviews._
