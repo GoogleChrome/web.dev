@@ -31,13 +31,17 @@ takes for initial DOM content to render, but it does not capture how long it too
 (usually more meaningful) content on the page to render.
 
 [Largest Contentful Paint](/lcp) (LCP) is a [Core Web
-Vitals](/metrics) metric and measures when the largest content element in the
+Vitals](/vitals/) metric and measures when the largest content element in the
 viewport becomes visible. It can be used to determine when the main content of the page has finished
 rendering on the screen.
 
-<img class="w-screenshot w-screenshot--filled" src="lcp-distributions.png" alt="Good LCP values are
-under 2.5 seconds, poor values are greater than 4.0 seconds and anything in between needs
-improvement">
+<picture>
+  <source srcset="../vitals/lcp_8x2.svg" media="(min-width: 640px)">
+  <img class="w-screenshot w-screenshot--filled"
+      src="../vitals/lcp_4x3.svg"
+      alt="Good LCP values are 2.5 seconds, poor values are greater than 4.0
+            seconds and anything in between needs improvement">
+</picture>
 
 The most common causes of a poor LCP are:
 
