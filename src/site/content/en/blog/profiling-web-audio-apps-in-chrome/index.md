@@ -24,7 +24,7 @@ help engineers triage, and eventually fix the issue.
 There are two tools that will help you when profiling Web Audio,
 `chrome://tracing` and the **WebAudio** tab in Chrome DevTools.
 
-### When do you chrome://tracing?
+### When do you use `chrome://tracing`?
 
 When mysterious "glitches" happen. Profiling the app with the tracing tools
 gives you the insight on:
