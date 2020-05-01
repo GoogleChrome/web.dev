@@ -153,6 +153,12 @@ owner's policy for who can load a resource.
 
 The `Cross-Origin-Resource-Policy` header takes three possible values:
 
+```http
+Cross-Origin-Resource-Policy: same-site
+Cross-Origin-Resource-Policy: same-origin
+Cross-Origin-Resource-Policy: cross-origin
+```
+
 * `same-site`: Resources can only be loaded from the same site.
 * `same-origin`: Resources can only be loaded from the same origin.
 * `cross-origin`: Resources can be loaded by any website. ([This
@@ -167,17 +173,17 @@ enters the service worker that is controlling the document.
 {% endAside %}
 
 ### Cross Origin Opener Policy {: #coop }
-[COOP (Cross Origin Opener
-Policy)](https://github.com/whatwg/html/pull/5334/files) allows you to ensure
+[Cross Origin Opener Policy
+(COOP)](https://github.com/whatwg/html/pull/5334/files) allows you to ensure
 that a top-level window is isolated from other documents by putting them in a
 different browsing context group, so that they cannot directly interact with the
 top-level window. For example, if a document with COOP opens a pop-up, its
-`window.opener` property will be `null`. Also, the `.closed` property of the opener's
-reference to it will return `true`.
+`window.opener` property will be `null`. Also, the `.closed` property of the
+opener's reference to it will return `true`.
 
 ![COOP](coop1.png)
 
-The COOP header takes three values:
+The `Cross-Origin-Opener-Policy` header takes three possible values:
 
 ```http
 Cross-Origin-Opener-Policy: same-origin
@@ -185,20 +191,20 @@ Cross-Origin-Opener-Policy: same-origin-allow-popups
 Cross-Origin-Opener-Policy: unsafe-none
 ```
 
-Documents that are marked `same-origin` can share the same browsing context
-group with same-origin documents that are also explicitly marked `same-origin`.
+* `same-origin`: Same-origin documents that are also explicitly marked
+  `same-origin` can share the same browsing context group.
 
 ![COOP](coop2.png)
 
-A top-level document with `same-origin-allow-popups` retains references to any
-of its popups which either don't set COOP or which opt out of isolation by
-setting a COOP of `unsafe-none`.
+* `same-origin-allow-popups`: A top-level document retains references to any of
+  its popups which either don't set COOP or which opt out of isolation by
+  setting a COOP of `unsafe-none`.
 
 ![COOP](coop3.png)
 
-The `unsafe-none` value is the default and allows the document to be added to its opener's
-browsing context group unless the opener itself has a COOP of `same-origin` or
-`same-origin-allow-popups`.
+* `unsafe-none` (default): Allows the document to be added to its opener's
+  browsing context group unless the opener itself has a COOP of `same-origin` or
+  `same-origin-allow-popups`.
 
 {% Aside %}
 The
@@ -221,12 +227,14 @@ If you want guaranteed access to powerful features like `SharedArrayBuffer`,
 document needs to use both COEP with the value of `require-corp` and COOP with
 the value of `same-origin`. In the absence of either, the browser will not
 guarantee sufficient isolation to safely enable those powerful features. You can
-determine your page's situation by checking if `self.crossOriginIsolated`
+determine your page's situation by checking if
+[`self.crossOriginIsolated`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated)
 returns `true`.
 
+Learn the steps to implement this at [Making your website "cross-origin
+isolated" using COOP and COEP](https://web.dev/coop-coep/).
+
 ## Resources
-* [Making your website "cross-origin isolated" using COOP and
-  COEP](https://web.dev/coop-coep/)
 * [COOP and COEP
   explained](https://docs.google.com/document/d/1zDlfvfTJ_9e8Jdc8ehuV4zMEu9ySMCiTGMS9y0GU92k/edit)
 * [Planned changes to shared memory - JavaScript |
