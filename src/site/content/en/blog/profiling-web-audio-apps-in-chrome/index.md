@@ -167,7 +167,7 @@ case.
     - [Audio Worklet Design Pattern (Web Audio Power House)][webfu-audio-worklet-dp]
     - [Audio Device Client Prototype][aud-dev-client-proto]
 
-#### Example 3: Jittery audio device callback from AudioOutputDevice
+#### Example 3: Jittery audio device callback from `AudioOutputDevice`
 
 The precise timing of audio callback is the most important thing for web audio.
 This should be the most precise clock in your system. If the operating system
