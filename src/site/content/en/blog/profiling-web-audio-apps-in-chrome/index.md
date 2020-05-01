@@ -38,7 +38,7 @@ a bug and Chromium engineers will ask for tracing data if the local reproduction
 feasible. General [instructions for tracing][chromium-tracing] are available
 on chromium.org.
 
-### When do you use the WebAudio devtool?
+### When do you use the **WebAudio** tab?
 
 When you want to get a feel for how the application performs in the real world.
 DevTools shows you a running estimate of render capacity, which indicates
