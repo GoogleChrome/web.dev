@@ -1,0 +1,8 @@
+// Sends the passed data to an analytics endpoint. This code
+// uses `/analytics`; you can replace it with your own URL.
+function sendToAnalytics(data) {
+  const body = JSON.stringify(data);
+  // Use `navigator.sendBeacon()` if available, falling back to `fetch()`.
+  (navigator.sendBeacon && navigator.sendBeacon('/analytics', body)) ||
+      fetch('/analytics', {body, method: 'POST', keepalive: true});
+}

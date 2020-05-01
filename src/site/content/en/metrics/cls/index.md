@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2020-03-03
+updated: 2020-04-30
 description: |
   This post introduces the Cumulative Layout Shift (CLS) metric and explains
   how to measure it
@@ -68,25 +68,43 @@ measuring how often it's occurring for real users.
 
 ## What is CLS?
 
-CLS measures the sum of the individual _layout shift scores_ for each
-_unexpected layout shift_ that occurs between when the page starts loading and
-when its [lifecycle
-state](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)
-changes to hidden.
+CLS measures the sum total of all individual _layout shift scores_ for every
+_unexpected layout shift_ that occurs during the entire lifespan of the page.
 
-### Layout shift score
+A _layout shift_ occurs any time a visible element changes its position from one
+frame to the next. (See below for details on how individual [layout shift
+scores](#layout-shift-score) are calculated.)
+
+<picture>
+  <source srcset="../vitals/cls_8x2.svg" media="(min-width: 640px)">
+  <img class="w-screenshot w-screenshot--filled"
+      src="../vitals/cls_4x3.svg"
+      alt="Good fid values are 2.5 seconds, poor values are greater than 4.0
+            seconds and anything in between needs improvement">
+</picture>
+
+### What is a good CLS score?
+
+To provide a good user experience, sites should strive to have a CLS score of
+less than **0.1**. To ensure you're hitting this target for most of your users,
+a good threshold to measure is the **75th percentile** of page loads, segmented
+across mobile and desktop devices.
+
+## Layout shifts in detail
 
 Layout shifts are defined by the [Layout Instability
-API](https://github.com/WICG/layout-instability) and they occur any time an
-element that is visible in the viewport changes its start position (for example,
-its top and left position in the default [writing
-mode](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode)) changes
-between two frames. Such elements are considered _unstable elements_.
+API](https://github.com/WICG/layout-instability), which reports `layout-shift`
+entries any time an element that is visible with the viewport changes its start
+position (for example, its top and left position in the default [writing
+mode](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode)) between
+two frames. Such elements are considered _unstable elements_.
 
 Note that layout shifts only occur when existing elements change their start
 position. If a new element is added to the DOM or an existing element changes
 size, it doesn't count as a layout shift&mdash;as long as the change doesn't
 cause other visible elements to change their start position.
+
+### Layout shift score
 
 To calculate the _layout shift score_, the browser looks at the viewport size
 and the movement of unstable elements in the viewport between two rendered
@@ -136,8 +154,8 @@ is `0.25`, so the _layout shift score_ is `0.75 * 0.25 = 0.1875`.
 
 {% Aside %}
   Initially, the layout shift score was calculated based only on _impact
-  fraction_. The _distance fraction_ is introduced to avoid overly penalizing
-  cases where large elements shift by small distances.
+  fraction_. The _distance fraction_ was introduced to avoid overly penalizing
+  cases where large elements shift by a small amount.
 {% endAside %}
 
 The next example illustrates how adding content to an existing element affects
@@ -237,80 +255,95 @@ property allows you to animate elements without triggering layout shifts:
 
 ## How to measure CLS
 
-CLS can be measured [in the lab](/metrics/#in-the-lab) or [in the
-field](/metrics/#in-the-field) though at the moment it's not yet available in
-any lab tools. CLS is available in the [Chrome User Experience
-Report](https://developers.google.com/web/tools/chrome-user-experience-report).
+CLS can be measured [in the lab](/user-centric-performance-metrics/#in-the-lab)
+or [in the field](/user-centric-performance-metrics/#in-the-field), and it's
+available in the following tools:
+
+### Field tools
+
+- [Chrome User Experience
+  Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+
+### Lab tools
+
+- [Lighthouse (v6)](https://developers.google.com/web/tools/lighthouse/)
+- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
 
 ### Measure CLS in JavaScript
 
-You can measure CLS in JavaScript using the [Layout Instability
+The easiest way to measure CLS (as well as all Web Vitals [field
+metrics]((/metrics/#in-the-field))) is with the [`web-vitals` JavaScript
+library](https://github.com/GoogleChrome/web-vitals), which wraps all the
+complexity of manually measuring CLS into a single function:
+
+```js
+import {getCLS} from 'web-vitals';
+
+// Measure and log the current CLS value,
+// any time it's ready to be reported.
+getCLS(console.log);
+```
+
+To manually measure CLS, you can use the [Layout Instability
 API](https://github.com/WICG/layout-instability). The following example shows
 how to create a
 [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
-that listens for `layout-shift` entries and logs them to the console:
+that listens for individual `layout-shift` entries and logs them to the console:
+
+{% set entryType = 'layout-shift' %}
 
 ```js
-// Catch errors since some browsers throw when using the new `type` option.
-// https://bugs.webkit.org/show_bug.cgi?id=209216
-try {
-  const observer = new PerformanceObserver((list) => {
-  for (const entry of list.getEntries()) {
-    console.log(entry);
-  }
+{% include 'content/metrics/performance-observer-try.njk' %}
+  const po = new PerformanceObserver((list) => {
+    for (const entry of list.getEntries()) {
+      console.log(entry);
+    }
   });
 
-  observer.observe({type: 'layout-shift', buffered: true});
-} catch (e) {
-  // Do nothing if the browser doesn't support this API.
-}
+  po.observe({type: 'layout-shift', buffered: true});
+{% include 'content/metrics/performance-observer-catch.njk' %}
 ```
 
-To calculate the cumulative layout shift score for your pages, declare a
-variable that stores the current cumulative layout shift score, and then
-increment it any time a new, unexpected layout shift is detected.
+CLS is the sum of those individual `layout-shift` entries that didn't occur with
+recent user input. To calculate CLS, declare a variable that stores the current
+score, and then increment it any time a new, unexpected layout shift is
+detected.
 
-For consistency with how the [Chrome User Experience Report
-(CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report)
-measures CLS, stop observing scores when the page's [lifecycle
+Rather than reporting every change to CLS (which could happen very frequently),
+it's better to keep track of the current CLS value and report it any time the
+page's [lifecycle
 state](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)
 changes to hidden:
 
-```js
-// Catch errors since some browsers throw when using the new `type` option.
-// https://bugs.webkit.org/show_bug.cgi?id=209216
-try {
-  // Store the current layout shift score for the page.
-  let cumulativeLayoutShiftScore = 0;
+{% set entryCallback = 'onLayoutShiftEntry' %}
 
-  // Detect new layout shift occurrences and updates the
-  // `cumulativeLayoutShiftScore` variable.
-  const observer = new PerformanceObserver((list) => {
-  for (const entry of list.getEntries()) {
+```js
+{% include 'content/metrics/send-to-analytics.njk' %}
+{% include 'content/metrics/performance-observer-try.njk' %}
+  // Store the current layout shift score for the page.
+  let cls = 0;
+
+  function onLayoutShiftEntry(entry) {
     // Only count layout shifts without recent user input.
     if (!entry.hadRecentInput) {
-      cumulativeLayoutShiftScore += entry.value;
+      cls += entry.value;
     }
   }
-  });
 
-  observer.observe({type: 'layout-shift', buffered: true});
+{% include 'content/metrics/performance-observer-init.njk' %}
 
-  // Send the final score to your analytics back end once
-  // the page's lifecycle state becomes hidden.
+  // Log the current CLS score any time the
+  // page's lifecycle state changes to hidden.
   document.addEventListener('visibilitychange', () => {
-  if (document.visibilityState === 'hidden') {
-    // Force any pending records to be dispatched.
-    observer.takeRecords();
-    observer.disconnect();
+    if (document.visibilityState === 'hidden') {
+      // Force any pending records to be dispatched.
+      po.takeRecords().forEach(onLayoutShiftEntry);
 
-    // Log the final score to the console.
-    console.log('CLS:', cumulativeLayoutShiftScore);
-  }
+      // Report the CLS value to an analytics endpoint.
+      sendToAnalytics({cls});
+    }
   });
-} catch (e) {
-  // Do nothing if the browser doesn't support this API.
-}
+{% include 'content/metrics/performance-observer-catch.njk' %}
 ```
 
 {% Aside %}
@@ -318,13 +351,6 @@ try {
   score of `0.01` when using the code example above would appear in the 0–5
   bucket in CrUX, and a score of `0.07` would appear in the 5–10 bucket in CrUX.
 {% endAside %}
-
-## What is a good CLS score?
-
-To provide a good user experience, sites should strive to have a Cumulative
-Layout Shift of less than **0.1**. To ensure you're hitting this target for most
-of your users, a good threshold to measure is the **75th percentile** of page
-loads, segmented across mobile and desktop devices.
 
 ## How to improve CLS
 
@@ -344,3 +370,14 @@ few guiding principles:
 - **Prefer transform animations to animations of properties that trigger layout
   changes.** Animate transitions in a way that provides context and continuity
   from state to state.
+
+For a deep dive on how to improve CLS, see [Optimize
+CLS](https://web.dev/optimize-cls/).
+
+## Additional resources
+
+- [Understanding Cumulative Layout Shift](https://youtu.be/zIJuY-JCjqw) by [Annie
+  Sullivan](https://anniesullie.com/) at
+  [#PerfMatters](https://perfmattersconf.com/) (2020)
+
+{% include 'content/metrics/metrics-changelog.njk' %}

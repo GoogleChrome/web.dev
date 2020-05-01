@@ -4,7 +4,7 @@ title: First Contentful Paint (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-03-03
+updated: 2020-04-30
 description: |
   This post introduces the First Contentful Paint (FCP) metric and explains
   how to measure it
@@ -43,59 +43,69 @@ loading.
 
 ## How to measure FCP
 
-FCP can be measured [in the lab](/user-centric-performance-metrics/#in-the-lab) or [in the
-field](/user-centric-performance-metrics/#in-the-field), and it's available in the following
-tools:
-
-### Lab tools
-
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
-- [WebPageTest](https://www.webpagetest.org/)
-- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+FCP can be measured [in the lab](/user-centric-performance-metrics/#in-the-lab)
+or [in the field](/user-centric-performance-metrics/#in-the-field), and it's
+available in the following tools:
 
 ### Field tools
 
 - [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
 - [Chrome User Experience
   Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [Search Console (Speed
+  Report)](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
 - [Firebase Performance
   Monitoring](https://firebase.google.com/docs/perf-mon/get-started-web) (beta)
 
+### Lab tools
+
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
+- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+
 ### Measure FCP in JavaScript
 
-You can measure FCP in JavaScript using the [Paint Timing
+The easiest way to measure FCP (as well as all Web Vitals [field
+metrics]((/metrics/#in-the-field))) is with the [`web-vitals` JavaScript
+library](https://github.com/GoogleChrome/web-vitals), which wraps all the
+complexity of manually measuring FCP into a single function:
+
+```js
+import {getFCP} from 'web-vitals';
+
+// Measure and log the current FCP value,
+// any time it's ready to be reported.
+getFCP(console.log);
+```
+
+To manually measure FCP, you can use the [Paint Timing
 API](https://w3c.github.io/paint-timing/). The following example shows how to
 create a
 [`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
 that listens for paint timing entries and logs the start time of the
 `first-contentful-paint` entry to the console:
 
+{% set entryType = 'paint' %}
+{% set entryCallback = 'onPaintEntry' %}
+
 ```js
-// Catch errors since some browsers throw when using the new `type` option.
-// https://bugs.webkit.org/show_bug.cgi?id=209216
-try {
-  // Create the Performance Observer instance.
-  const observer = new PerformanceObserver((list) => {
-    for (const entry of list.getEntriesByName('first-contentful-paint')) {
-      // Log the value of FCP to the console.
-      console.log('FCP:', entry.startTime);
-      observer.disconnect();
+{% include 'content/metrics/first-hidden-time.njk' %}
+{% include 'content/metrics/send-to-analytics.njk' %}
+{% include 'content/metrics/performance-observer-try.njk' %}
+  function onPaintEntry(entry) {
+    // Only report FCP if the page wasn't hidden prior to
+    // the entry being dispatched. This typically happens when a
+    // page is loaded in a background tab.
+    if (entry.name === 'first-contentful-paint' &&
+        entry.startTime < firstHiddenTime) {
+      // Report the FCP value to an analytics endpoint.
+      sendToAnalytics({fcp: entry.startTime});
     }
-  });
+  }
 
-  // Start observing paint entry types.
-  observer.observe({
-    type: 'paint',
-    buffered: true,
-  });
-} catch (e) {
-  // Do nothing if the browser doesn't support this API.
-}
+{% include 'content/metrics/performance-observer-init.njk' %}
+{% include 'content/metrics/performance-observer-catch.njk' %}
 ```
-
-Note, in your own code, you'd likely replace the `console.log()` with code that
-sends the FCP value to your analytics service.
 
 ## What is a good FCP score?
 
@@ -127,3 +137,5 @@ performance guides:
 - [Minimize critical request depth](/critical-request-chains/)
 - [Ensure text remains visible during webfont load](/font-display/)
 - [Keep request counts low and transfer sizes small](/resource-summary/)
+
+{% include 'content/metrics/metrics-changelog.njk' %}
