@@ -102,7 +102,7 @@ for more details: [#825823](https://crbug.com/825823),
 <img src="2e-box2d.jpg" class="w-screenshot w-screenshot-filled"
      alt="Screen shot of native mode tracing result." >
 
-#### Worklet Mode
+#### Worklet mode
 
 In Worklet Mode, which is characterized by one thread jump from
 `AudioOutputDevice` to [`AudioWorklet` thread][cr-audio-worklet-thr], you
