@@ -88,7 +88,7 @@ The renderer has two different render modes: **Native mode** and
 **Worklet mode**. Each mode uses a different threading model, so the tracing
 results also differ.
 
-#### Native Mode
+#### Native mode
 
 In Native mode, the [`AudioOutputDevice`][cr-audio-output-device] thread runs
 all the web audio code. The `AudioOutputDevice` is a real-time priority thread
