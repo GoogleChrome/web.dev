@@ -72,7 +72,7 @@ Beta or Canary). Once you have the browser ready, follow the steps below:
 1. In the **Disabled by Default Categories** section, select the following:
     * `audio-worklet` (if you're interested in where the `AudioWorklet` thread starts)
     * `webaudio.audionode` (if you need the detailed trace for each `AudioNode`)
-1. Press **Record** at the bottom.
+1. Press the **Record** button at the bottom.
 1. Go back to your application tab and redo the steps that triggered the issue.
 1. When you have enough trace data, go back to the tracing tab and press **Stop**.
 1. The tracing tab will visualize the result (see below).
