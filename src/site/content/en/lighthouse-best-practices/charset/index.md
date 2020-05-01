@@ -2,7 +2,7 @@
 layout: post
 title: Charset declaration is missing or occurs too late in the HTML
 description: |
-  Learn how to [fix the problem identified by the audit].
+  Learn how to add a character encoding declaration to your HTML.
 web_lighthouse:
   - charset
 date: 2020-05-01
@@ -12,7 +12,7 @@ Servers and browsers communicate with each other by sending bytes of data over t
 internet. If the server doesn't specify which [character encoding format][format] it's
 using when it sends an HTML file, the browser won't know what character each byte represents.
 The [character encoding declaration](https://html.spec.whatwg.org/multipage/semantics.html#charset)
-in the HTML spec solves this problem. 
+specification solves this problem. 
 
 ## How the Lighthouse `charset` audit fails
 
@@ -20,14 +20,15 @@ in the HTML spec solves this problem.
 flags pages that do not specify their character encoding:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="audit-slug.png" alt="Lighthouse audit showing [the problem]">
+  <img class="w-screenshot" src="charset.png" alt="The failing character encoding audit.">
 </figure>
 
 Lighthouse considers the character encoding to be declared if it finds any of the following:
 
 - A `<meta charset>` element in the `<head>` of the document that is completely
   contained in the first 1024 bytes of the document
-- A `Content-Type` HTTP response header with a `charset` directive
+- A `Content-Type` HTTP response header with a `charset` directive that matches a
+  [valid IANA name][iana]
 - A [byte-order mark](https://www.w3.org/International/questions/qa-byte-order-mark) (BOM)
 
 {% include 'content/lighthouse-best-practices/scoring.njk' %}
@@ -37,6 +38,7 @@ Lighthouse considers the character encoding to be declared if it finds any of th
 ### Add a `<meta chartset>` element to your HTML {: #html }
 
 Add a `<meta charset>` element within the first 1024 bytes of your HTML document.
+The element must be fully contained within the first 1024 bytes.
 The best practice is to make the `<meta charset>` element the first element in the
 `<head>` of your document.
 
@@ -45,32 +47,27 @@ The best practice is to make the `<meta charset>` element the first element in t
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    …
 ```
 
 ### Add a `Content-Type` HTTP response header {: #http }
 
+Configure your server to add a [`Content-Type`][type]
+HTTP response header that includes a `charset` directive.
 
-Brief explanation of the most common way(s) to fix the issue causing the audit
-to fail. Explanation should include:
-- Code sample(s) when appropriate
-- Links to further information if a full understanding of the issue requires
-  more text than is appropriate for a post focused on resolving a failed audit
-
-When a fix involves multiple steps, provide a codelab instead of sample code.
-
-### Add a byte-order mark {: #BOM }
-
-https://www.w3.org/International/questions/qa-byte-order-mark
+```http
+Content-Type: text/html; charset=UTF-8
+```
 
 ## Resources
-<!--
-  Include all links from the post that are immediately relevant to the audit,
-  along with any further reading that may be useful. The source code for the
-  audit always comes first. If there are no links other than the source code,
-  present it as a paragraph rather than an unordered list.
--->
-- [Charset declaration is missing or occurs too late in the HTML](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/charset.js)
-- [Link to another resource](#)
 
+- [Charset declaration is missing or occurs too late in the HTML](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/charset.js)
+- [Example page that fails the audit](https://charset.glitch.me/)
+  ([source](https://glitch.com/edit/#!/charset))
+- [Character encoding][format]
+- [`Content-Type`][type]
+- [IANA character set names][iana]
 
 [format]: https://en.wikipedia.org/wiki/Character_encoding
+[type]: https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Type
+[iana]: https://www.iana.org/assignments/character-sets/character-sets.xhtml
