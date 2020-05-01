@@ -29,7 +29,7 @@
 
 // https://css-tricks.com/fixed-headers-on-page-links-and-overlapping-content-oh-my/
 html {
-  scroll-padding-top: calc($TOPNAV_HEIGHT + 24px);
+  scroll-padding-top: calc(#{$TOPNAV_HEIGHT} + 24px);
 }
 
 // This will hide the focus indicator if the element receives focus via the
