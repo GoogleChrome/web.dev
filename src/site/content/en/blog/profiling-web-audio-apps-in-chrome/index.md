@@ -185,7 +185,7 @@ backend. This is still under investigation. (See
 
 ## Use the **WebAudio** tab in Chrome DevTools
 
-You also can use the DevTools panel specifically designed for web audio. This
+You also can use the DevTools tab specifically designed for web audio. This
 is less comprehensive compared to the tracing tool, but it is useful if you
 want to gauge the running performance of your application.
 
