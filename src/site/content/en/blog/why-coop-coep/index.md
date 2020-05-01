@@ -151,16 +151,13 @@ was originally introduced as an opt-in to protect your resources from being
 loaded by another origin. In the context of COEP, CORP can specify the resource
 owner's policy for who can load a resource.
 
-```http
-Cross-Origin-Resource-Policy: same-site
-Cross-Origin-Resource-Policy: same-origin
-Cross-Origin-Resource-Policy: cross-origin
-```
+The `Cross-Origin-Resource-Policy` header takes three possible values:
 
-Resources that are marked `same-site` can only be loaded from the same site,
-`same-origin` from the same origin. [`cross-origin` which was added to the CORP
-spec along with COEP](https://mikewest.github.io/corpp/#integration-fetch)
-declares that a resource can be loaded by any website.
+* `same-site`: Resources can only be loaded from the same site.
+* `same-origin`: Resources can only be loaded from the same origin.
+* `cross-origin`: Resources can be loaded by any website. ([This
+   value](https://mikewest.github.io/corpp/#integration-fetch) was added to the
+   CORP spec along with COEP.)
 
 {% Aside %}
 Once you add the COEP header, you won't be able to bypass the restriction by
