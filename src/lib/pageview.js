@@ -20,3 +20,17 @@ ga('set', 'transport', 'beacon');
 ga('set', dimensions.SIGNED_IN, localStorage['webdev_isSignedIn'] ? 1 : 0);
 ga('set', dimensions.TRACKING_VERSION, version);
 ga('send', 'pageview');
+
+if ('noModule' in HTMLScriptElement.prototype) {
+  function prepare() {
+    const s = document.createElement('script');
+    s.type = 'module';
+    s.href = '/bootstrap.js';
+    document.head.append(s);
+  }
+  if (document.readyState === 'complete') {
+    prepare();
+  } else {
+    window.addEventListener('load', prepare);
+  }
+}

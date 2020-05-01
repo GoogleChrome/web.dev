@@ -1,36 +1,33 @@
 import {firebaseConfig} from 'webdev_config';
 import {store} from './store';
 import {clearSignedInState} from './actions';
-import firestoreLoader from './firestore-loader';
+import firebaseLoader from './utils/firebase-loader';
 
-/* eslint-disable require-jsdoc */
+const firebasePromise = firebaseLoader('app', 'auth', 'performance');
+firebasePromise.then(initialize).catch((err) => {
+  console.error('failed to load Firebase', err);
+});
 
-firebase.initializeApp(firebaseConfig);
+const firestoreLoader = (() => {
+  let promise = null;
+  return () => {
+    if (promise) {
+      return promise;
+    }
+    return (promise = firebasePromise.then(async () => {
+      await firebaseLoader('firestore');
+      const {firebase} = window;
+      return firebase.firestore();
+    }));
+  };
+})();
 
-// Initialize performance monitoring
-firebase.performance();
+function initialize() {
+  const {firebase} = window;
+  firebase.initializeApp(firebaseConfig);
+  firebase.performance(); // initialize performance monitoring
 
-// Listen for the user's signed in state and update the store.
-let firestoreUserUnsubscribe = null;
-firebase.auth().onAuthStateChanged((user) => {
-  store.setState({checkingSignedInState: false});
-
-  if (firestoreUserUnsubscribe) {
-    firestoreUserUnsubscribe();
-    firestoreUserUnsubscribe = null;
-  }
-
-  if (!user) {
-    clearSignedInState();
-    return;
-  }
-
-  // Don't clear userUrl, as the user might have requested something prior to
-  // signing in.
-  store.setState({
-    isSignedIn: true,
-    user,
-  });
+  let firestoreUserUnsubscribe = () => {};
   let lastSavedUrl = null;
 
   const onUserSnapshot = (snapshot) => {
@@ -50,7 +47,7 @@ firebase.auth().onAuthStateChanged((user) => {
       // This will also trigger a write to Firestore.
     } else if (lastSavedUrl && lastSavedUrl !== savedUrl) {
       // The user changed their target URL in another browser. Update it.
-      // This doesn't fire on the first snapshot as |lastRemoteUserUrl| begins
+      // This doesn't fire on the first snapshot as |lastSavedUrl| begins
       // as null.
       saveNewUrlToState = true;
     } else if (!userUrl) {
@@ -86,30 +83,56 @@ firebase.auth().onAuthStateChanged((user) => {
     }
   };
 
-  // This unsubscribe function is used if the user signs out. However, the user's row cannot be
-  // watched until the Firestore library is ready, so wrap the actual internal unsubscribe call.
-  firestoreUserUnsubscribe = (function() {
-    let internalUnsubscribe = () => {};
-    let unsubscribed = false;
+  // Listen for the user's signed in state and update the store.
+  firebase.auth().onAuthStateChanged((user) => {
+    store.setState({checkingSignedInState: false});
+    firestoreUserUnsubscribe();
 
-    userRef()
-      .then((ref) => {
-        if (unsubscribed) {
-          return; // signed out before Firestore library showed up
+    if (!user) {
+      clearSignedInState();
+      return;
+    }
+
+    // Don't clear userUrl, as the user might have requested a Lighthouse prior to signing in, and
+    // there's an active action.
+    store.setState({
+      isSignedIn: true,
+      user,
+    });
+    lastSavedUrl = null;
+
+    // This unsubscribe function is used if the user signs out. However, the user's row cannot be
+    // watched until the Firestore library is ready, so wrap the actual internal unsubscribe call.
+    firestoreUserUnsubscribe = (function() {
+      let internalUnsubscribe = null;
+      let unsubscribed = false;
+
+      userRef()
+        .then((ref) => {
+          if (!unsubscribed) {
+            internalUnsubscribe = ref.onSnapshot(onUserSnapshot);
+          }
+        })
+        .catch((err) => {
+          console.warn('failed to load Firestore library', err);
+        });
+
+      return () => {
+        unsubscribed = true;
+        if (internalUnsubscribe) {
+          internalUnsubscribe();
+          internalUnsubscribe = null;
         }
-        internalUnsubscribe = ref.onSnapshot(onUserSnapshot);
-      })
-      .catch((err) => {
-        console.warn('failed to load Firestore library', err);
-      });
+      };
+    })();
+  });
+}
 
-    return () => {
-      unsubscribed = true;
-      internalUnsubscribe();
-    };
-  })();
-});
-
+/**
+ * Gets the Firestore reference to the user's document.
+ *
+ * @return {?Object}
+ */
 async function userRef() {
   const state = store.getState();
   if (!state.user) {
@@ -133,6 +156,7 @@ export async function saveUserUrl(url, auditedOn = null) {
     return null; // not signed in so user has never seen this site
   }
 
+  // This must exist, as userRef() forces Firestore to be loaded.
   const firestore = await firestoreLoader();
   const p = firestore.runTransaction(async (transaction) => {
     const snapshot = await transaction.get(ref);
@@ -174,26 +198,33 @@ export async function saveUserUrl(url, auditedOn = null) {
   return auditedOn;
 }
 
-// Sign in the user
+/**
+ * Request that the user signs in. Resolves on completion.
+ *
+ * @return {?Object} the auth user
+ */
 export async function signIn() {
-  const provider = new firebase.auth.GoogleAuthProvider();
-
-  let user;
+  let user = null;
   try {
+    await firebasePromise;
+    const provider = new firebase.auth.GoogleAuthProvider();
     const res = await firebase.auth().signInWithPopup(provider);
     user = res.user;
   } catch (err) {
-    console.error('error', err);
+    console.error('signIn error', err);
   }
 
   return user;
 }
 
-// Sign out the user
+/**
+ * Requests that the user signs out.
+ */
 export async function signOut() {
   try {
+    await firebasePromise;
     await firebase.auth().signOut();
   } catch (err) {
-    console.error('error', err);
+    console.error('signOut error', err);
   }
 }
