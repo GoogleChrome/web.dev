@@ -11,6 +11,7 @@
  */
 
 import {dimensions, id, version} from 'webdev_analytics';
+import entrypoint from 'webdev_entrypoint';
 import {localStorage} from './utils/storage';
 
 // eslint-disable-next-line
@@ -25,7 +26,7 @@ if ('noModule' in HTMLScriptElement.prototype) {
   function prepare() {
     const s = document.createElement('script');
     s.type = 'module';
-    s.href = '/bootstrap.js';
+    s.src = '/' + entrypoint;
     document.head.append(s);
   }
   if (document.readyState === 'complete') {
