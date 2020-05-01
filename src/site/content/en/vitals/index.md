@@ -257,8 +257,8 @@ measurement can accurately capture the complete picture.
 ### Recommendations for improving your scores
 
 Once you've measured the Core Web Vitals and identified areas for improvement,
-the next step is to optimize. The following guides go into great details on
-specific ways to optimize your site for each of the Core Web Vitals:
+the next step is to optimize. The following guides offer specific
+recommendations for optimizing each of the Core Web Vitals:
 
 - [How to improve LCP](https://web.dev/lcp/#how-to-improve-lcp)
 - [How to improve FID](https://web.dev/fid/#how-to-improve-fid)
