@@ -28,11 +28,9 @@ tags:
 One factor contributing to a poor user experience is how long it takes a user to see any content
 rendered to the screen. [First Contentful Paint](/fcp) (FCP) measures how long it
 takes for initial DOM content to render, but it does not capture how long it took the largest
-(usually more meaningful) content on the page to render. A large hero image that takes up most of
-the device screen is a good example, and could load much later than early DOM content that renders
-on the page such as text.
+(usually more meaningful) content on the page to render.
 
-[Largest Contentful Paint](/lcp) (LCP) is a newer [Core Web
+[Largest Contentful Paint](/lcp) (LCP) is a [Core Web
 Vitals](/metrics) metric and measures when the largest content element in the
 viewport becomes visible. It can be used to determine when the main content of the page has finished
 rendering on the screen.
@@ -45,7 +43,7 @@ The most common causes of a poor LCP are:
 
 +   [Slow server response times](#slow-servers)
 +   [Render-blocking JavaScript and CSS](#render-blocking-resources)
-+   [Resource load times](#resources-load-times)
++   [Slow resource load times](#slow-resource-load-times)
 +   [Client-side rendering](#client-side-rendering)
 
 ## Slow server response times {: #slow-servers }
@@ -272,127 +270,16 @@ blocking JavaScript results in a faster render, and consequently a better LCP.
 
 This can be accomplished by optimizing your scripts in a few different ways:
 
-+   Minify JavaScript
-+   Defer unused JavaScript
-+   Minimize unused polyfills
-
-### Minify JavaScript
-
-Just like with CSS, JavaScript files can also contain characters that are unnecessary for browsers
-but makes things easier to read during development. This includes spacing, indentation, and
-comments.
-
-[Terser](https://github.com/terser/terser) supports ES6+ syntax, and can be used to minify modern
-JavaScript files without the need to transpile them. If you use a module bundler and want to include
-Terser in your toolchain:
-
-+   webpack and Parcel already minify using Terser by default in production mode
-+   If you use Rollup, include
-    [rollup-plugin-terser](https://www.npmjs.com/package/rollup-plugin-terser) as an output plugin
-
-<figure class="w-figure">
-  <img src="./lcp-minify-js.png" alt="Example of LCP improvement: Before and after minifying JavaScript">
-  <figcaption class="w-figcaption">Example of LCP improvement: Before and after minifying JavaScript</figcaption>
-</figure>
-
-### Defer unused JavaScript
-
-The [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) tab in Chrome
-DevTools can tell you how much JavaScript is not being used on your web page.
-
-![Coverage tab in Chrome DevTools](./coverage-panel-js.png)
-
-To cut down on unused JavaScript:
-
-+   Code-split your bundle into multiple chunks
-+   Defer any non-critical JavaScript, including third-party scripts, using `async` or `defer`
-
-**Code-splitting** is the concept of splitting a single large JavaScript bundle into smaller chunks
-that can be conditionally loaded (also known as lazy-loading).
-[Most newer browsers support dynamic import syntax](https://caniuse.com/#feat=es6-module-dynamic-import),
-which allows for module fetching on demand:
-
-```js
-import('module.js')
-  .then((module) => {
-    // Do something with the module.
-  });
-```
-
-Dynamically importing JavaScript on certain user interactions (such as changing a route or
-displaying a modal) will make sure that code not used for the initial page load is only fetched when
-needed.
-
-Aside from general browser support, dynamic import syntax can be used in many different build
-systems.
-
-+   If you use [webpack](https://webpack.js.org/guides/code-splitting/),
-    [Rollup](https://medium.com/rollup/rollup-now-has-code-splitting-and-we-need-your-help-46defd901c82),
-    or [Parcel](https://parceljs.org/code_splitting.html) as a module bundler, take advantage of
-    their dynamic import support. 
-+   Client-side frameworks, like
-    [React](https://reactjs.org/docs/code-splitting.html#reactlazy),
-    [Angular](https://angular.io/guide/lazy-loading-ngmodules), and
-    [Vue](https://vuejs.org/v2/guide/components-dynamic-async.html#Async-Components) provide
-    abstractions to make it easier to lazy-load at the component-level.
-
-<figure class="w-figure">
-  <img src="./lcp-code-splitting.png" alt="Example of LCP improvement: Before and after code-splitting">
-  <figcaption class="w-figcaption">Example of LCP improvement: Before and after code-splitting</figcaption>
-</figure>
++   [Minify and compress JavaScript files](https://web.dev/reduce-network-payloads-using-text-compression/)
++   [Defer unused JavaScript](https://web.dev/reduce-javascript-payloads-with-code-splitting/)
++   [Minimize unused polyfills](https://web.dev/serve-modern-code-to-modern-browsers/)
 
 {% Aside %}
-Take a look at [Reduce JavaScript
-payloads with code splitting](/reduce-javascript-payloads-with-code-splitting/) to learn more about code-splitting.
+The [Optimize First Input Delay](/optimize-fid/) guide covers all techniques needed to reduce
+JavaScript blocking time in a little more detail.
 {% endAside %}
 
-Aside from code-splitting, always use [async or
-defer](https://javascript.info/script-async-defer) for scripts that are not necessary for
-critical-path or above-the-fold content.
-
-```html
-<script defer src="..."></script>
-<script async src="..."></script>
-```
-
-Unless there is a specific reason not to, all third-party scripts should be loaded with either `defer`
-or `async` by default.
-
-### Minimize unused polyfills
-
-If you author your code using modern JavaScript syntax and reference modern browsers APIs, you will
-need to transpile it and include polyfills in order for it to work in older browsers.
-
-One of the main performance concerns of including polyfills and transpiled code in your site is that
-newer browsers shouldn't have to download it if they do not need it. To cut down on the JavaScript
-size of your application, minimize unused polyfills as much as possible and restrict their usage to
-environments where they're needed.
-
-To optimize polyfill usage on your site:
-
-+   If you use [Babel](https://babeljs.io/docs/en/index.html) as a transpiler, use
-    [`@babel/preset-env`](https://babeljs.io/docs/en/babel-preset-env) to only include the polyfills
-    needed for the browsers you plan on targeting. For Babel 7.9, enable the
-    [`bugfixes`](https://babeljs.io/docs/en/babel-preset-env#bugfixes) option to further cut down
-    on any unneeded polyfills
-+   Use the module/nomodule pattern to deliver two separate bundles (`@babel/preset-env` also
-    supports this via [`target.esmodules`](https://babeljs.io/docs/en/babel-preset-env#targetsesmodules))
-    
-    ```html
-    <script type="module" src="modern.js"></script>
-    <script nomodule src="legacy.js" defer></script>
-    ```
-
-    Many newer ECMAScript features compiled with Babel are already supported in environments
-    that support JavaScript modules. So by doing this, you simplify the process of making sure that
-    only transpiled code is used for browsers that actually need it.
-
-{% Aside %}
-The [Serve modern code to modern browsers for faster page
-loads](/serve-modern-code-to-modern-browsers/) guide goes into more detail about this topic.
-{% endAside %}
-
-## Resource load times {: #resource-load-times }
+## Slow resource load times {: #slow-resource-load-times }
 
 Although an increase in CSS or JavaScript blocking time will directly result in worse performance,
 the time it takes to load many other types of resources can also affect paint times. The types of
