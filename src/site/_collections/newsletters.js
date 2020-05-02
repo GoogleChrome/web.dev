@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-const path = require('path');
-
 /**
  * Returns an array of all past Newsletters.
  *
@@ -23,18 +21,5 @@ const path = require('path');
  * @return {Array<{ data: { title: string, subhead: string, thumbnail: string, alt: string; }, year: string, month: string, day: string, date: Date, permalink: string, url: string, html: string }>}
  */
 module.exports = (collections) => {
-  return collections
-    .getFilteredByTag('newsletter')
-    .reverse()
-    .map((newsletter) => {
-      const month =
-        (newsletter.date.getMonth() < 9 ? '0' : '') +
-        (newsletter.date.getMonth() + 1);
-      const year = String(newsletter.date.getFullYear());
-
-      newsletter.permalink = path.join('newsletter', 'archive', year, month);
-      newsletter.url = path.join('/en', newsletter.permalink);
-
-      return newsletter;
-    });
+  return collections.getFilteredByTag('newsletter').reverse();
 };
