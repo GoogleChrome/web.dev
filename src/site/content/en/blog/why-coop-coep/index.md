@@ -155,15 +155,23 @@ The `Cross-Origin-Resource-Policy` header takes three possible values:
 
 ```http
 Cross-Origin-Resource-Policy: same-site
+```
+
+Resources that are marked `same-site` can only be loaded from the same site.
+
+```http
 Cross-Origin-Resource-Policy: same-origin
+```
+
+Resources that are marked `same-origin` can only be loaded from the same origin.
+
+```http
 Cross-Origin-Resource-Policy: cross-origin
 ```
 
-* `same-site`: Resources can only be loaded from the same site.
-* `same-origin`: Resources can only be loaded from the same origin.
-* `cross-origin`: Resources can be loaded by any website. ([This
-   value](https://mikewest.github.io/corpp/#integration-fetch) was added to the
-   CORP spec along with COEP.)
+Resources that are marked `cross-origin` can be loaded by any website. ([This
+value](https://mikewest.github.io/corpp/#integration-fetch) was added to the
+CORP spec along with COEP.)
 
 {% Aside %}
 Once you add the COEP header, you won't be able to bypass the restriction by
@@ -187,24 +195,30 @@ The `Cross-Origin-Opener-Policy` header takes three possible values:
 
 ```http
 Cross-Origin-Opener-Policy: same-origin
-Cross-Origin-Opener-Policy: same-origin-allow-popups
-Cross-Origin-Opener-Policy: unsafe-none
 ```
 
-* `same-origin`: Same-origin documents that are also explicitly marked
-  `same-origin` can share the same browsing context group.
+Documents that are marked `same-origin` can share the same browsing context
+group with same-origin documents that are also explicitly marked `same-origin`.
 
 ![COOP](coop2.png)
 
-* `same-origin-allow-popups`: A top-level document retains references to any of
-  its popups which either don't set COOP or which opt out of isolation by
-  setting a COOP of `unsafe-none`.
+```http
+Cross-Origin-Opener-Policy: same-origin-allow-popups
+```
+
+A top-level document with `same-origin-allow-popups` retains references to any
+of its popups which either don't set COOP or which opt out of isolation by
+setting a COOP of `unsafe-none`.
 
 ![COOP](coop3.png)
 
-* `unsafe-none` (default): Allows the document to be added to its opener's
-  browsing context group unless the opener itself has a COOP of `same-origin` or
-  `same-origin-allow-popups`.
+```http
+Cross-Origin-Opener-Policy: unsafe-none
+```
+
+`unsafe-none` is the default and allows the document to be added to its opener's
+browsing context group unless the opener itself has a COOP of `same-origin` or
+`same-origin-allow-popups`.
 
 {% Aside %}
 The
