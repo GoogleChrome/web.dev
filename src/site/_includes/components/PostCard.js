@@ -18,7 +18,10 @@ const BaseCard = require('./BaseCard');
 
 /**
  * PostCard used to preview posts.
- * @param {Object} args An eleventy collection item with post data.
+ * @param {Object} arg An eleventy collection item with post data.
  * @return {string}
  */
-module.exports = (args) => new BaseCard(args).render();
+module.exports = (arg) => {
+  arg.collectionItem = arg.post;
+  return new BaseCard(arg).render();
+};

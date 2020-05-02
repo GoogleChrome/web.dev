@@ -23,6 +23,7 @@ const BaseCard = require('./BaseCard');
  */
 class AuthorCard extends BaseCard {
   constructor(arg) {
+    arg.collectionItem = arg.author;
     super({...arg, className: 'w-card-author'});
   }
 

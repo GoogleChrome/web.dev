@@ -26,18 +26,18 @@ const postTags = require('../../_data/postTags');
 /* eslint-disable require-jsdoc,indent,max-len */
 
 /**
- * BaseCard used to preview posts.
- * @param {Object} post An eleventy collection item with post data.
+ * BaseCard used to preview collection items.
+ * @param {Object} obj An object with an eleventy collection item and other data.
  * @return {string}
  */
 class BaseCard {
-  constructor({post, featured = false, className = ''}) {
-    this.element = post;
-    this.element.data = this.element.data || {};
+  constructor({collectionItem, featured = false, className = ''}) {
+    this.collectionItem = collectionItem;
+    this.collectionItem.data = this.collectionItem.data || {};
     this.featured = featured;
     this.className = className;
-    this.url = stripLanguage(this.element.url);
-    this.data = this.element.data;
+    this.url = stripLanguage(this.collectionItem.url);
+    this.data = this.collectionItem.data;
     this.displayedTags = [];
 
     for (const tag of this.data.tags || []) {
@@ -125,14 +125,15 @@ class BaseCard {
     `;
   }
 
-  renderAuthorsAndDate(element) {
-    const authors = element.data.authors || [];
+  renderAuthorsAndDate(collectionItem) {
+    const authors = collectionItem.data.authors || [];
 
     return html`
       <div class="w-authors__card">
         ${this.renderAuthorImages(authors)}
         <div>
-          ${this.renderAuthorNames(authors)} ${this.renderDate(element.date)}
+          ${this.renderAuthorNames(authors)}
+          ${this.renderDate(collectionItem.date)}
         </div>
       </div>
     `;
@@ -210,7 +211,7 @@ class BaseCard {
                 ${md(this.data.title)}
               </h2>
             </a>
-            ${this.renderAuthorsAndDate(this.element)}
+            ${this.renderAuthorsAndDate(this.collectionItem)}
             <div
               class="w-card-base__desc ${this.className &&
                 `${this.className}__desc`}"
