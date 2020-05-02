@@ -35,9 +35,9 @@ that matter most, the **Core Web Vitals**.
 ## Core Web Vitals
 
 Core Web Vitals are the subset of Web Vitals that apply to all web pages, should
-be measured by all site owners, and surfaced across all Google tools. Each of
-the Core Web Vitals represents a distinct facet of the user experience, is
-measurable [in the
+be measured by all site owners, and will be surfaced across all Google tools.
+Each of the Core Web Vitals represents a distinct facet of the user experience,
+is measurable [in the
 field](https://web.dev/user-centric-performance-metrics/#how-metrics-are-measured),
 and reflects the real-world experience of a critical
 [user-centric](https://web.dev/user-centric-performance-metrics/#how-metrics-are-measured)
@@ -294,7 +294,7 @@ Web Vitals and Core Web Vitals represent the best available signals developers
 have today to measure quality of experience across the web, but these signals
 are not perfect and future improvements or additions should be expected.
 
-The **Core Web Vitals** are relevant to all web pages  and featured across
+The **Core Web Vitals** are relevant to all web pages and featured across
 relevant Google tools. Changes to these metrics will have wide-reaching impact;
 as such, developers should expect the definitions and thresholds of the Core Web
 Vitals to be stable, and updates to have prior notice and a predictable, annual

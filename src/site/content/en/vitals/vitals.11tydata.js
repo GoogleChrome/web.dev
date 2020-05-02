@@ -8,9 +8,6 @@ module.exports = {
     cover: '/vitals/web-vitals.svg',
     title: 'Web Vitals',
     description: 'Essential metrics for a healthy site',
-    overview: `User-centric performance metrics are a critical tool in
-      understanding and improving the experience of your site in a way that
-      benefits real users.`,
     topics: [
       {
         title: 'Web Vitals',
