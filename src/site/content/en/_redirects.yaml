@@ -177,9 +177,6 @@ redirects:
 - from: /largest-contentful-paint
   to: /lcp
 
-- from: /metrics
-  to: /vitals
-
 # Redirects Progressive Web App content
 
 - from: /pwa
