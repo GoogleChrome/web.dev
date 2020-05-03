@@ -34,6 +34,23 @@ function trackEvent({category, action, label, value}) {
 }
 
 /**
+ * Track an error via Analytics with optional context message and fatal notice.
+ *
+ * @param {!Error} error to log
+ * @param {string=} message context to provide around error message
+ * @param {boolean=} fatal whether this is fatal (as per Analytics' logging)
+ */
+export function trackError(error, message = '', fatal = false) {
+  const exDescription = message
+    ? `${message} (${error.message})`
+    : error.message;
+  ga('send', 'exception', {
+    exDescription,
+    exFatal: fatal,
+  });
+}
+
+/**
  * Configure tracking events for any clicks on a link (`<a href="...">`)
  * or another trackable element (class="gc-analytics-event"), searching
  * for (requiring at least `data-category`, but also allowing

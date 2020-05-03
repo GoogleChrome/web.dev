@@ -8,6 +8,7 @@ import {store} from '../../store';
 import * as router from '../../utils/router';
 import {debounce} from '../../utils/debounce';
 import algoliasearch from 'algoliasearch/dist/algoliasearch-lite.esm.browser';
+import {trackError} from '../../analytics';
 import './_styles.scss';
 
 // Create an algolia client so we can get search results.
@@ -288,6 +289,7 @@ class Search extends BaseElement {
     } catch (err) {
       console.error(err);
       console.error(err.debugData);
+      trackError('search', err);
     }
   }
 

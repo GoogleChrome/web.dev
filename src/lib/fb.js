@@ -2,25 +2,15 @@ import {firebaseConfig} from 'webdev_config';
 import {store} from './store';
 import {clearSignedInState} from './actions';
 import firebaseLoader from './utils/firebase-loader';
+import {trackError} from './analytics';
 
-const firebasePromise = firebaseLoader('app', 'auth', 'performance');
+const firebasePromise = firebaseLoader('app', 'auth', 'performance')();
 firebasePromise.then(initialize).catch((err) => {
   console.error('failed to load Firebase', err);
+  trackError(err, 'firebase load');
 });
 
-const firestoreLoader = (() => {
-  let promise = null;
-  return () => {
-    if (promise) {
-      return promise;
-    }
-    return (promise = firebasePromise.then(async () => {
-      await firebaseLoader('firestore');
-      const {firebase} = window;
-      return firebase.firestore();
-    }));
-  };
-})();
+const firestorePromiseLoader = firebaseLoader('firestore');
 
 function initialize() {
   const {firebase} = window;
@@ -115,6 +105,7 @@ function initialize() {
         })
         .catch((err) => {
           console.warn('failed to load Firestore library', err);
+          trackError(err, 'firestore load');
         });
 
       return () => {
@@ -139,7 +130,7 @@ async function userRef() {
     return null;
   }
 
-  const firestore = await firestoreLoader();
+  const firestore = await firestorePromiseLoader();
   return firestore.collection('users').doc(state.user.uid);
 }
 
@@ -157,7 +148,7 @@ export async function saveUserUrl(url, auditedOn = null) {
   }
 
   // This must exist, as userRef() forces Firestore to be loaded.
-  const firestore = await firestoreLoader();
+  const firestore = await firestorePromiseLoader();
   const p = firestore.runTransaction(async (transaction) => {
     const snapshot = await transaction.get(ref);
     const data = snapshot.data() || {};
@@ -193,6 +184,7 @@ export async function saveUserUrl(url, auditedOn = null) {
     // Note: We don't plan to do anything here. If we can't write to Firebase, we can still
     // try to invoke Lighthouse with the new URL.
     console.warn('could not write URL to Firestore', err);
+    trackError(err, 'write URL');
   }
 
   return auditedOn;
@@ -212,6 +204,7 @@ export async function signIn() {
     user = res.user;
   } catch (err) {
     console.error('signIn error', err);
+    trackError(err, 'signIn');
   }
 
   return user;
@@ -226,5 +219,6 @@ export async function signOut() {
     await firebase.auth().signOut();
   } catch (err) {
     console.error('signOut error', err);
+    trackError(err, 'signOut');
   }
 }

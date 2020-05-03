@@ -13,7 +13,7 @@ const firebasePrefix = '//www.gstatic.com/firebasejs/6.6.1';
  * @param {string} library to preload
  * @return {!Promise} for library
  */
-function preload(library) {
+function internalPreload(library) {
   if (library in libs) {
     return libs[library];
   }
@@ -32,12 +32,22 @@ function preload(library) {
 }
 
 /**
- * Preload a number of named Firebase libraries. This doesn't use dynamic import as Firebase code
- * must run in the global scope.
+ * Generates a function, which when called, preloads a number of named Firebase libraries (or
+ * returns the cached version).
+ *
+ * This is helpful as we don't want to load e.g., Firestore before it's needed.
  *
  * @param {...string} names to preload
- * @return {!Promise}
+ * @return {function(): !Promise}
  */
-export default function(...names) {
-  return Promise.all(names.map(preload));
+export default function loader(...names) {
+  let promise = null;
+
+  return () => {
+    if (promise) {
+      return promise;
+    }
+    promise = Promise.all(names.map(internalPreload));
+    return promise;
+  };
 }

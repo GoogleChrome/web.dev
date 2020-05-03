@@ -61,6 +61,12 @@ const virtualImports = {
   webdev_entrypoint: null,
 };
 
+/**
+ * Builds the default set of Rollup functions. Snapshots virtual imports on
+ * call, so should be used anew every run.
+ *
+ * @return {!Array<*>}
+ */
 function buildDefaultPlugins() {
   return [
     rollupPluginNodeResolve(),
