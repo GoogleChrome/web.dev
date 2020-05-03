@@ -14,7 +14,7 @@ authors:
   - agektmr
 hero: hero.jpg
 date: 2020-04-13
-updated: 2020-04-16
+updated: 2020-04-28
 tags:
   - post
   - security
@@ -58,8 +58,8 @@ examining
 [`self.crossOriginIsolated`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated.).
 (This works on Firefox but has yet to be implemented in Chrome).
 
-This article shows how to use these new headers. In a follow-up article I will
-provide more background and context.
+This article shows how to use these new headers. In [a follow-up
+article](/why-coop-coep) I will provide more background and context.
 
 {% Aside %}
 This article is aimed at those who would like to get their websites ready for 
