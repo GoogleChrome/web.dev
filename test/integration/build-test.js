@@ -49,7 +49,7 @@ describe('Build test', function() {
     // Check that there's a Rollup-generated file with the given name that looks
     // like `[name]-[hash].js`.
     ['bootstrap', 'measure', 'newsletter', 'default'].forEach((chunked) => {
-      const re = new RegExp(`^${chunked}-\w+\.js$`);
+      const re = new RegExp(`^${chunked}-\\w+\\.js$`);
       assert(
         contents.find((file) => re.test(file)),
         `Could not find Rollup output: ${chunked}`,
