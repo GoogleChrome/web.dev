@@ -188,6 +188,9 @@ const tags = {
   'web-bundles': {
     title: 'Web Bundles',
   },
+  'web-vitals': {
+    title: 'Web Vitals',
+  },
   webxr: {
     title: 'WebXR',
   },
