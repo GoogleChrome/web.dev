@@ -47,7 +47,7 @@ response delay.
             seconds and anything in between needs improvement">
 </picture>
 
-To approximate FID in the [lab](/how-to-measure-speed/#lab-data-vs-field-data), we
+To help predict FID in the [lab](/how-to-measure-speed/#lab-data-vs-field-data), we
 recommend [Total Blocking Time (TBT)](/tbt/). They measure different things, but
 improvements in TBT usually correspond to improvements in FID. 
 
