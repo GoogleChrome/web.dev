@@ -31,7 +31,7 @@ describe('Build test', function() {
       path.join('images', 'favicon.ico'),
       path.join('images', 'lockup.svg'),
       'app.css',
-      'pageview.js',
+      'bootstrap.js',
       'manifest.webmanifest',
       'nuke-sw.js',
       'sitemap.xml',
@@ -48,7 +48,7 @@ describe('Build test', function() {
 
     // Check that there's a Rollup-generated file with the given name that looks
     // like `[name]-[hash].js`.
-    ['bootstrap', 'measure', 'newsletter', 'default'].forEach((chunked) => {
+    ['entrypoint', 'measure', 'newsletter', 'default'].forEach((chunked) => {
       const re = new RegExp(`^${chunked}-\\w+\\.js$`);
       assert(
         contents.find((file) => re.test(file)),

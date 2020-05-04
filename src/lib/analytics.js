@@ -72,7 +72,7 @@ document.addEventListener('click', (e) => {
 
 // Update Analytics dimension if signed-in state changes. This doesn't cause a
 // new pageview implicitly but annotates all further events.
-// We log pageviews only in pageview.js (on entry, for all browsers) and in
+// We log pageviews only in bootstrap.js (on entry, for all browsers) and in
 // loader.js (for dynamic SPA page loads, part of our core bundle).
 store.subscribe(({isSignedIn}) => {
   ga('set', dimensions.SIGNED_IN, isSignedIn ? 1 : 0);
