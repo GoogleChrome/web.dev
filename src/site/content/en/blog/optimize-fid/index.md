@@ -207,7 +207,7 @@ be useful to break down long-running code  into **smaller, asynchronous tasks**.
 
 **Long Tasks** are JavaScript execution periods where users may
 find your UI unresponsive. Any piece of code that blocks the main thread for 50 ms or more can be
-characterized as a Long Task. Long Tasks are commonly a cause of poor FID scores and are a sign of
+characterized as a Long Task. Long Tasks are a sign of
 potential JavaScript bloat (loading and executing more than a user may need right now).  
 Splitting up long tasks can reduce input delay on your site. 
 
