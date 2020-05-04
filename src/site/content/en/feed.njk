@@ -21,14 +21,14 @@ permalink: "/{{lang}}/feed.xml"
   <subtitle>{{ metadata.feed.subtitle }}</subtitle>
   <link href="{{ metadata.feed.url }}" rel="self"/>
   <link href="{{ metadata.url }}"/>
-  <updated>{{ collections.blogposts | reverse | rssLastUpdatedDate }}</updated>
+  <updated>{{ collections.blogPosts | reverse | rssLastUpdatedDate }}</updated>
   <id>{{ metadata.feed.id }}</id>
   <author>
     <name>{{ metadata.author.name }}</name>
   </author>
   <icon>{{ metadata.icon }}</icon>
   <logo>{{ metadata.logo }}</logo>
-  {% for post in collections.blogposts -%}
+  {% for post in collections.blogPosts -%}
   {% set absolutePostUrl -%}{{ post.url | stripLanguage | url | absoluteUrl(metadata.url) }}{%- endset %}
   <entry>
     <title>{{ post.data.title }}</title>

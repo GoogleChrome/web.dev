@@ -150,7 +150,7 @@ module.exports = function(config) {
   // COLLECTIONS
   // ----------------------------------------------------------------------------
   config.addCollection('authors', authors);
-  config.addCollection('blogposts', blogPostsDescending);
+  config.addCollection('blogPosts', blogPostsDescending);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('recentBlogPosts', recentBlogPosts);
   config.addCollection('paginatedAuthors', paginatedAuthors);
