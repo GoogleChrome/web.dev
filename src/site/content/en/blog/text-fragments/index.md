@@ -339,10 +339,11 @@ and iframe navigation will not invoke a text fragment.
 
 It is important that implementations of the Text Fragments specification
 do not leak whether a text fragment was found on a page or not.
-While element fragments are fully under the control of the original page author
-(remember how there was no way to link to the section
-I wanted to link to before in my running example),
+While element fragments are fully under the control of the original page author,
 text fragments can be created by anyone.
+Remember how in my example above there was no way to link to the
+*ECMAScript Modules in Web Workers* heading since the `<h1>` did not have an `id`,
+but how anyone, including me, could just link to anywhere by carefully crafting the text fragment?
 
 Imagine I ran an evil ad network `evil-ads.example.com`.
 Further imagine that in one of my ad iframes I created a hidden cross-origin iframe
@@ -366,10 +367,10 @@ with the loading of the tracking pixel next to, say, the "burn out" item,
 I can then, as the intranet admin, determine that an employee has clicked through
 on a text fragment link with `:~:text=burn%20out`
 that the employee may have assumed was confidential and not visible to anyone.
-Since this example is somewhat contrived
-and its exploitation requires very specific preconditions to be met,
-the Chrome team decided to implement scroll on navigation,
-which is one of the preconditions.
+Since this example is somewhat contrived to begin with
+and since its exploitation requires *very* specific preconditions to be met,
+the Chrome security team evaluated the risk to be manageable
+and approved of the implementation of scroll on navigation.
 Other user agents may decide to show a manual scroll UI element instead.
 For sites that still wish to opt-out, we have proposed a
 [Document Policy](https://github.com/w3c/webappsec-feature-policy/blob/master/document-policy-explainer.md)
