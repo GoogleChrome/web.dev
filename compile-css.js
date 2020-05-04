@@ -20,70 +20,17 @@ const isProd = process.env.ELEVENTY_ENV === 'prod';
 const fs = require('fs');
 const path = require('path');
 const log = require('fancy-log');
-
-const sassEngine = (function() {
-  try {
-    // node-sass is faster, but regularly fails to install correctly (native bindings)
-    return require('node-sass');
-  } catch (e) {
-    // fallback to the official transpiled version
-    return require('sass');
-  }
-})();
-
-/**
- * @param {string} input filename to read for input
- * @param {string} output filename to use for output (but does not write)
- * @return {{css: !Buffer, map: !Buffer}}
- */
-function compileCSS(input, output) {
-  fs.mkdirSync(path.dirname(output), {recursive: true});
-
-  // #1: Compile CSS with either engine.
-  const compiledOptions = {
-    file: input,
-    outFile: output,
-    sourceMap: true,
-    omitSourceMapUrl: true, // since we just read it from the result object
-  };
-  if (isProd) {
-    compiledOptions.outputStyle = 'compressed';
-  }
-  log('Compiling', input);
-  const compiledResult = sassEngine.renderSync(compiledOptions);
-
-  if (!isProd) {
-    return compiledResult;
-  }
-
-  // nb. Only require() dependencies for autoprefixer when used.
-  const autoprefixer = require('autoprefixer');
-  const postcss = require('postcss');
-
-  // #2: Run postcss for autoprefixer.
-  const postcssOptions = {
-    from: output,
-    to: output,
-    map: {
-      prev: JSON.parse(compiledResult.map.toString()),
-      annotation: true,
-    },
-  };
-  log('Running postcss (autoprefixer)...');
-  const postcssResult = postcss([autoprefixer]).process(
-    compiledResult.css.toString(),
-    postcssOptions,
-  );
-  postcssResult.warnings().forEach((warn) => {
-    console.warn(warn.toString());
-  });
-
-  return postcssResult;
-}
+const compile = require('./src/build/compile-css.js');
 
 const target = process.argv[3] || 'out.css';
-const out = compileCSS(process.argv[2], target);
+const out = compile({
+  input: process.argv[2],
+  output: target,
+  compress: isProd,
+  autoprefixer: isProd,
+});
 
+fs.mkdirSync(path.dirname(target), {recursive: true});
 fs.writeFileSync(target, out.css);
 fs.writeFileSync(target + '.map', out.map);
 log('Finished CSS!');
