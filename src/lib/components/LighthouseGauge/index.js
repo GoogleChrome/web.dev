@@ -3,19 +3,22 @@
  */
 
 import {html} from 'lit-element';
-import {BaseElement} from '../BaseElement';
-import './_styles.scss';
+import {LitElement} from 'lit-element';
+import styles from './_styles.scss.js';
 
 /**
- * @extends {BaseElement}
  * @final
  */
-class LighthouseGauge extends BaseElement {
+class LighthouseGauge extends LitElement {
   static get properties() {
     return {
       score: {type: Number},
       _bootstrap: {type: Boolean}, // holds arc value at zero for hydration
     };
+  }
+
+  static get styles() {
+    return styles;
   }
 
   constructor() {
