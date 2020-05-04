@@ -66,7 +66,7 @@ browser can't respond to user interactions while the main thread is busy. To imp
 
 ### Reduce JavaScript execution time {: #reduce-javascript-execution }
 
-Reducing the amount of JavaScript on your page reduces the amount of time that the browser needs to
+Limiting the amount of JavaScript on your page reduces the amount of time that the browser needs to
 spend parsing, compiling, and executing JavaScript code. This speeds up how fast the browser can
 begin to respond to any user interactions.
 
