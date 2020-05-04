@@ -1,10 +1,16 @@
 ---
 layout: page
 title: Web Vitals
+subhead: Essential metrics for a healthy site
 description: Essential metrics for a healthy site
+authors:
+  - philipwalton
 date: 2020-04-30
 updated: 2020-05-04
 masthead: web-vitals.svg
+tags:
+  - metrics
+  - performance
 ---
 
 Optimizing for quality of user experience is key to the long-term success of any
@@ -234,10 +240,10 @@ environment:
       </tr>
       <tr>
         <td><a href="https://developers.google.com/web/tools/lighthouse">
-          Lighthouse</a></td>
-        <td>✔ (v6)</td>
+          Lighthouse</a> (v6)</td>
+        <td>✔</td>
         <td>✘ (use <a href="/tbt/">TBT</a> instead)</td>
-        <td>✔ (v6)</td>
+        <td>✔</td>
       </tr>
     </tbody>
   </table>
