@@ -7,6 +7,8 @@ date: 2019-11-08
 description: |
   Custom metrics allow you to measure and optimize aspects of your site's
   experience that are unique to your site.
+tags:
+  - performance
 ---
 
 There's a lot of value in having [user-centric metrics](/user-centric-performance-metrics/)

@@ -8,6 +8,7 @@ const secure = require('../secure/secure.11tydata.js').path;
 const pwa = require('../progressive-web-apps/progressive-web-apps.11tydata.js')
   .path;
 const metrics = require('../metrics/metrics.11tydata.js').path;
+const vitals = require('../vitals/vitals.11tydata.js').path;
 
 const react = require('../react/react.11tydata.js').path;
 const angular = require('../angular/angular.11tydata.js').path;
@@ -40,6 +41,7 @@ module.exports = function() {
     discoverable,
     pwa,
     metrics,
+    vitals,
   ].filter(livePaths);
 
   const frameworks = [react, angular].filter(livePaths);

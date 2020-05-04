@@ -1,0 +1,43 @@
+---
+layout: layout
+---
+
+{#
+  Use this template for custom landing pages that don't match any of the other
+  layout templates.
+#}
+
+{% if masthead %}
+  <header class="w-masthead-path">
+    <div class="w-masthead-path__container">
+      <div class="w-masthead-path__left">
+        <h1 class="w-masthead-path__headline no-link">{{title}}</h1>
+        <p class="w-masthead-path__description">{{description}}</p>
+      </div>
+      <div class="w-masthead-path__right">
+        <img class="w-masthead-path__image" src="{{masthead}}" alt="">
+      </div>
+    </div>
+  </header>
+{% elif hero %}
+  {% Hero {
+    hero: hero,
+    alt: alt,
+    heroPosition: hero_position,
+    heroFit: hero_fit
+  } %}
+{% endif %}
+
+{% if draft and site.env === 'dev' %}
+  <div class="w-banner w-banner--warning w-banner--body">
+    🚨 This page is a draft! 🚨
+  </div>
+{% endif %}
+
+{#
+  Blog posts have more padding on the sides so give page authors the option
+  of using either the full width or narrow layout.
+#}
+<section class="{{ 'w-layout-container--narrow' if narrow else 'w-layout-container' }}">
+  {{ content | safe }}
+</section>

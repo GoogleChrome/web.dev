@@ -113,6 +113,9 @@ const tags = {
   'media-queries': {
     title: 'Media Queries',
   },
+  metrics: {
+    title: 'Metrics',
+  },
   mobile: {
     title: 'Mobile',
   },
