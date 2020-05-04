@@ -2,22 +2,25 @@
 title: Profiling Web Audio in Chrome
 subhead: Learn how to profile the performance of Web Audio apps in Chrome using `chrome://tracing` and the WebAudio panel in DevTools.
 description: Learn how to profile the performance of Web Audio apps in Chrome using `chrome://tracing` and the WebAudio panel in DevTools.
-date: 2020-04-30
-updated: 2020-04-30
+date: 2020-05-04
+updated: 2020-05-04
 tags:
   - post # post is a required tag for the article to show up in the blog.
   - media
   - webaudio
 authors:
   - hongchanchoi
+hero: hero.jpg
+alt: Artistic image of microphone and pop filter
 ---
 
 You reached this documentation probably because you're developing an app
-that uses the [Web Audio API](https://developer.mozilla.org/docs/Web/API/Web_Audio_API) and experienced some unexpected glitches such as
-popping noises from the output. You might already be involved in a
-[crbug.com](https://crbug.com) discussion and a Chrome engineer asked you to
-upload "tracing data". This document shows how to obtain the data so you can
-help engineers triage, and eventually fix the issue.
+that uses the [Web Audio API](https://developer.mozilla.org/docs/Web/API/Web_Audio_API)
+and experienced some unexpected glitches such as popping noises from the
+output. You might already be involved in a [crbug.com](https://crbug.com)
+discussion and a Chrome engineer asked you to upload "tracing data". This
+document shows how to obtain the data so you can help engineers triage, and
+eventually fix the issue.
 
 ## Web Audio profiling tools
 
@@ -96,7 +99,7 @@ originating from the browser's Audio Service that is driven by the audio
 hardware clock. If you see irregularity from the trace data in this lane,
 it means the callback timing from the device may be jittery. The combination
 of Linux and Pulse Audio is known to have this problem. See the following Chromium issues
-for more details: [#825823](https://crbug.com/825823), 
+for more details: [#825823](https://crbug.com/825823),
 [#864463](https://crbug.com/864463).)
 
 <img src="2e-box2d.jpg" class="w-screenshot w-screenshot-filled"
@@ -149,7 +152,7 @@ garbage collection is bigger than a given render budget, it results in
 glitches in the audio stream. The screenshot is an extreme example of this
 case.
 
-<img src="https://via.placeholder.com/250" class="w-screenshot w-screenshot-filled"
+<img src="6e-garbage-collection.png" class="w-screenshot w-screenshot-filled"
      alt="Screen shot showing garbage collection causing audio glitch.">
 
 {% Aside %}
@@ -193,12 +196,12 @@ want to gauge the running performance of your application.
 Access the panel by clicking the "three dots" menu in the top right corner of
 DevTools, then go to **More tools** then **WebAudio**.
 
-<img src="https://via.placeholder.com/250" class="w-screenshot w-screenshot-filled"
+<img src="7e-devtools.jpg" class="w-screenshot w-screenshot-filled"
      alt="Screen shot showing how to open WebAudio panel in Chrome DevTools.">
 
 ### WebAudio Panel
 
-<img src="https://via.placeholder.com/250" class="w-screenshot w-screenshot-filled"
+<img src="8e-devtools.png" class="w-screenshot w-screenshot-filled"
      alt="Screen shot of WebAudio panel in Chrome DevTools.">
 
 This panel shows the information about running instances of `BaseAudioContext`.
@@ -237,6 +240,8 @@ audio does not behave as it should - then do not be afraid to
 [file a bug on crbug.com][cr-file-a-bug]. While filling out the information,
 you can follow the guideline above and submit the tracing data you captured
 with a reproducible test case. This way you can make the progress a lot faster.
+
+Photo by Jonathan Velasquez on [Unsplash](https://unsplash.com/photos/c1ZN57GfDB0)
 
 [cr-file-a-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EWebAudio
 [webfu-audio-worklet-dp]: https://developers.google.com/web/updates/2018/06/audio-worklet-design-pattern#webaudio_powerhouse_audio_worklet_and_sharedarraybuffer
