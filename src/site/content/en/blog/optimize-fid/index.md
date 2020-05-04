@@ -107,7 +107,7 @@ For more details, refer to the [Minify and compress network payloads](/reduce-ne
 
 By default all JavaScript is render-blocking. When the browser encounters a script tag that links to
 an external JavaScript file, it must pause what it's doing and download, parse, compile, and execute
-that JavaScript. Therefore you should only load the code that's needed for loading the page or
+that JavaScript. Therefore you should only load the code that's needed for the page or
 responding to user input.
 
 The [Coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) tab in Chrome
