@@ -52,7 +52,7 @@ recommend [Total Blocking Time (TBT)](/tbt/). They measure different things, but
 improvements in TBT usually correspond to improvements in FID. 
 
 The main cause of a poor FID is **heavy JavaScript execution**. Optimizing how JavaScript parses,
-compiles, and executes on your web page will directly reduce input delay.
+compiles, and executes on your web page will directly reduce FID.
 
 ## Heavy JavaScript execution
 
