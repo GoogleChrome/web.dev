@@ -6,7 +6,10 @@
  * importing '.scss' files on their own during migration.
  */
 
-module.exports = () => {
+const path = require('path');
+const compileCSS = require('./compile-css.js');
+
+module.exports = (isProd) => {
   return {
     name: 'lit-css',
 
