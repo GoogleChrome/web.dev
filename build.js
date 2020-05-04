@@ -154,12 +154,12 @@ async function build() {
     postcssConfig.minimize = true;
   }
 
-  // Rollup bootstrap to generate graph of source needs. This eventually uses
-  // dynamic import to bring in code required for each page (see router.js).
-  // Does not hash "bootstrap.js" entrypoint, but hashes all generated chunks,
-  // useful for cache busting.
+  // Rollup "entrypoint.js" to generate graph of source needs. This eventually
+  // uses dynamic import to bring in code required for each page (see router).
+  // The entrypoint itself is generated with a dynamic hash, so we can import
+  // it via bootstrap (which is run as ES5).
   const appBundle = await rollup.rollup({
-    input: 'src/lib/bootstrap.js',
+    input: 'src/lib/entrypoint.js',
     external: disallowExternal,
     plugins: [rollupPluginPostCSS(postcssConfig), ...buildDefaultPlugins()],
     manualChunks: (id) => {

@@ -158,8 +158,8 @@ export async function swapContent({firstRun, url, signal, ready, state}) {
     }
   }
 
-  // The bootstrap code uses this to trigger a reload if we see an "online" event. Only returned via
-  // the Service Worker if we failed to fetch a 'real' page.
+  // Code in entrypoint.jsuses this to trigger a reload if we see an "online" event. This partial
+  // value is only returned via the Service Worker if we failed to fetch a 'real' page.
   const isOffline = Boolean(partial.offline);
   store.setState({currentUrl: url, isOffline});
 
