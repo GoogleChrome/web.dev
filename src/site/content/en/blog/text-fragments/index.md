@@ -55,7 +55,7 @@ of the page's URL.
 Assuming I wanted to deep link to the *Give us feedback in our
 [Product Forums](http://support.google.com/bin/static.py?hl=en&page=portal_groups.cs)*
 box in the aside, I could do so by handcrafting the URL
-<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#HTML1</strong></code></a>.
+<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#HTML1</mark></code></a>.
 As you can see in the Elements panel of the Developer Tools, the element in question
 has an `id` attribute with the value `HTML1`.
 
@@ -124,7 +124,7 @@ text I want to link to.
 For example, say that I want to link to the
 *ECMAScript Modules in Web Workers* heading in the [blog post announcing features in Chrome 80](https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html), the URL in this case would be:
 
-<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript%20Modules%20in%20Web%20Workers"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#:~:text=ECMAScript%20Modules%20in%20Web%20Workers</strong></code></a>
+<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript%20Modules%20in%20Web%20Workers"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#:~:text=ECMAScript%20Modules%20in%20Web%20Workers</mark></code></a>
 
 The text fragment is emphasized in bold.
 If you click it in a supporting browser like Chrome, the text fragment is
@@ -147,7 +147,7 @@ and a couple of percent-encoded words at the end of the desired text, separated 
 
 That looks like this:
 
-<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript%20Modules%20in%20Web%20Workers,ES%20Modules%20in%20Web%20Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#:~:text=ECMAScript%20Modules%20in%20Web%20Workers,ES%20Modules%20in%20Web%20Workers.</strong></code></a>.
+<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript%20Modules%20in%20Web%20Workers,ES%20Modules%20in%20Web%20Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#:~:text=ECMAScript%20Modules%20in%20Web%20Workers,ES%20Modules%20in%20Web%20Workers.</mark></code></a>.
 
 For `textStart`, I have `ECMAScript%20Modules%20in%20Web%20Workers`, then a comma&nbsp;`,`
 followed by `ES%20Modules%20in%20Web%20Workers.` as `textEnd`.
@@ -160,13 +160,13 @@ and scrolled into view:
 </figure>
 
 Now you may wonder about my choice of `textStart` and `textEnd`.
-Actually, the slightly shorter URL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript%20Modules,Web%20Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#:~:text=ECMAScript%20Modules,Web%20Workers.</strong></code></a>
+Actually, the slightly shorter URL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript%20Modules,Web%20Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#:~:text=ECMAScript%20Modules,Web%20Workers.</mark></code></a>
 with only two words on each side would have worked, too.
 Compare `textStart` and `textEnd` with the previous values.
 
 If I take it one step further and now use only one word for both `textStart` and `textEnd`,
 you can see that I am in trouble.
-The URL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript,Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#:~:text=ECMAScript,Workers.</strong></code></a>
+The URL <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript,Workers."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#:~:text=ECMAScript,Workers.</mark></code></a>
 is even shorter now, but the highlighted text fragment is no longer the originally desired one.
 The highlighting stops at the first occurrence of the word `Workers.`, which is correct,
 but not what I intended to highlight.
@@ -191,26 +191,26 @@ The answer is that in this release Text Fragments were introduced:
     using a text fragment provided in a URL.
     When the page is loaded, the browser highlights the text and scrolls the fragment into view.
     For example, the URL below loads a wiki page for 'Cat'
-    and scrolls to the content listed in the `text` parameter." class="w-screenshot" width="400">
+    and scrolls to the content listed in the `text` parameter." class="w-screenshot" width="80%">
   <figcaption class="w-figcaption">Text Fragments announcement blog post excerpt.</figcaption>
 </figure>
 
-If I wanted to link to the word `text`
-that is written in a green code font at the bottom of the screenshot above,
+Notice how in the screenshot above the word "text" appears four times.
+The forth occurrence is written in a green code font.
+If I wanted to link to this particular word,
 I would set `textStart` to `text`.
-Since the word `text` is, well, only one word, there cannot be a `textEnd`,
-but even just the blog post excerpt alone contains four times the word `text`.
+Since the word `text` is, well, only one word, there cannot be a `textEnd`.
 What now?
 The URL
-<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=text"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#:~:text=text</strong></code></a>
-matches at the first occurrence of the word `Text`.
+<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=text"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#:~:text=text</mark></code></a>
+matches at the first occurrence of the word "Text".
 
 {% Aside %}
   Note that text fragment matching is case-insensitive.
 {% endAside %}
 
 <figure class="w-figure">
-  <img src="first-text.png" alt="" class="w-screenshot" width="400">
+  <img src="first-text.png" alt="" class="w-screenshot" width="80%">
   <figcaption class="w-figcaption">Text Fragment matching at the first occurrence of <code>Text</code>.</figcaption>
 </figure>
 
@@ -219,13 +219,14 @@ In cases like this, I can specify a `prefix​-` and a `-suffix`.
 The word before the green code font "text" is "the", and the word after is "parameter".
 None of the other three occurrences of the word "text" has the same surrounding words.
 Armed with this knowledge, I can tweak the previous URL and add the `prefix-` and the `-suffix`.
-Like the other parameters, they, too, need to be percent-encoded.
-<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=the-,text,-parameter"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#:~:text=the-,text,-parameter</strong></code></a>.
+Like the other parameters, they, too, need to be percent-encoded
+and can contain more than one word.
+<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=the-,text,-parameter"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#:~:text=the-,text,-parameter</mark></code></a>.
 To allow the parser to clearly identify the `prefix-` and the `-suffix`,
 they need to be separated from the `textStart` and the optional `textEnd` with a dash&nbsp;`-`.
 
 <figure class="w-figure">
-  <img src="correct-text.png" alt="" class="w-screenshot" width="400">
+  <img src="correct-text.png" alt="" class="w-screenshot" width="80%">
   <figcaption class="w-figcaption">Text Fragment matching at the correct occurrence of <code>Text</code>.</figcaption>
 </figure>
 
@@ -264,7 +265,7 @@ It does, however, match in this example:
 Note that multiple text fragments can appear on one URL.
 The particular text fragments need to be separated by an ampersand character `&`.
 Here is an example link with three text fragments:
-<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=Text%20URL%20Fragments&text=text,-parameter&text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#:~:text=Text%20URL%20Fragments&text=text,-parameter&text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet<strong></code></a>.
+<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=Text%20URL%20Fragments&text=text,-parameter&text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#:~:text=Text%20URL%20Fragments&text=text,-parameter&text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet<mark class="highlight-line highlight-line-active"></code></a>.
 
 
 ### Mixing element and text fragments
@@ -274,7 +275,7 @@ It is perfectly fine to have both in the same URL, for example,
 to provide a meaningful fallback in case the original text on the page changes
 so that the text fragment does not match anymore.
 The URL
-<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1:~:text=Give%20us%20feedback%20in%20our%20Product%20Forums."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<strong>#HTML1:~:text=Give%20us%20feedback%20in%20our%20Product%20Forums.</strong></code></a>
+<a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1:~:text=Give%20us%20feedback%20in%20our%20Product%20Forums."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#HTML1:~:text=Give%20us%20feedback%20in%20our%20Product%20Forums.</mark></code></a>
 linking to the *Give us feedback in our
 [Product Forums](http://support.google.com/bin/static.py?hl=en&page=portal_groups.cs)* section
 contains both an element fragment (`HTML1`), as well as a text fragment
@@ -346,7 +347,7 @@ text fragments can be created by anyone.
 Imagine I ran an evil ad network `evil-ads.example.com`.
 Further imagine that in one of my ad iframes I created a hidden cross-origin iframe
 to `dating.example.com` with a Text Fragment URL
-<code>dating.example.com<strong>#:~:text=Log%20Out</strong></code>
+<code>dating.example.com<mark class="highlight-line highlight-line-active">#:~:text=Log%20Out</mark></code>
 when the user interacts with the ad.
 If the text "Log Out" is found, I know the victim is currently logged in to `dating.example.com`,
 which I could use for user profiling.
