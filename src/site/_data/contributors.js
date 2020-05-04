@@ -73,6 +73,9 @@ const contributors = {
       name: 'Google',
       unit: 'Chrome',
     },
+    twitter: 'hochsays',
+    github: 'hoch',
+    homepage: 'https://hoch.io/',
     description: {
       en: 'Software Engineer working on Chromium',
     },
