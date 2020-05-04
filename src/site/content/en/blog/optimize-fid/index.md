@@ -205,7 +205,7 @@ loads](/serve-modern-code-to-modern-browsers/) guide goes into more detail about
 If you've already attempted to reduce the amount of JavaScript that loads on a single page, it can
 be useful to break down long-running code  into **smaller, asynchronous tasks**. 
 
-**Long Tasks** are JavaScript execution periods where users may
+[**Long Tasks**](/custom-metrics/#long-tasks-api) are JavaScript execution periods where users may
 find your UI unresponsive. Any piece of code that blocks the main thread for 50 ms or more can be
 characterized as a Long Task. Long Tasks are a sign of
 potential JavaScript bloat (loading and executing more than a user may need right now).  
