@@ -76,7 +76,7 @@ To reduce the amount of JavaScript executed on your page:
 +   Defer unused JavaScript
 +   Minimize unused polyfills
 
-In addition to minimizing JavaScript, breaking up long-running code into smaller tasks can allow the
+In addition to minimizing JavaScript, [breaking up long-running code into smaller tasks](#long-tasks) can allow the
 browser to run input handlers sooner, which can improve FID.
 
 ### Minify and compress JavaScript files
