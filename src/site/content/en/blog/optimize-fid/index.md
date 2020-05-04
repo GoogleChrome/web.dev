@@ -200,7 +200,7 @@ The [Serve modern code to modern browsers for faster page
 loads](/serve-modern-code-to-modern-browsers/) guide goes into more detail about this topic.
 {% endAside %}
 
-## Break up Long Tasks
+## Break up Long Tasks {: #long-tasks }
 
 If you've already attempted to reduce the amount of JavaScript that loads on a single page, it can
 be useful to break down long-running code  into **smaller, asynchronous tasks**. 
