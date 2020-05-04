@@ -241,7 +241,7 @@ JavaScript:
     even seconds, if route-based code splitting is being used. Consider shifting more logic
     server-side or generating more content statically during build time.
 
-Below are the TBT scores before and after optimizing first-party script loading for one of our
+Below are the TBT scores before and after optimizing first-party script loading for an
 applications. By moving costly script loading (and execution) for a non-essential component off the
 critical path, users were able to interact with the page much sooner.
 
