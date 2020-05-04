@@ -87,6 +87,11 @@ class BaseCard {
         ${authors
           .map((authorId) => {
             const author = this.data.contributors[authorId];
+            if (!author) {
+              throw new Error(
+                `Author '${authorId}' does not exist in '_data/contributors.js'.`,
+              );
+            }
             return html`
               <div class="w-author__image--row-item">
                 <a href="${author.href}">
@@ -112,6 +117,11 @@ class BaseCard {
         ${authors
           .map((authorId) => {
             const author = this.data.contributors[authorId];
+            if (!author) {
+              throw new Error(
+                `Author '${authorId}' does not exist in '_data/contributors.js'.`,
+              );
+            }
             return html`
               <a class="w-author__name-link" href="/authors/${authorId}"
                 >${author.title}</a
