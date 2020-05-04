@@ -4,7 +4,7 @@ subhead: Use cross-platform browser features to build signin forms that are secu
 authors:
   - samdutton
 date: 2020-04-24
-updated: 2020-04-29
+updated: 2020-05-04
 description: Use cross-platform browser features to build signin forms that are secure, accessible and easy to use.
 hero: hero.jpg
 alt: Closeup photo of a man holding a phone showing a login page
@@ -61,11 +61,11 @@ If you have users in different parts of the world, you need to consider localizi
 
 ## Use meaningful HTML
 
-The basic principle here is to use elements built for the job: `<form>`, `<label>` and `<button>`. These enable built-in browser functionality, improve accessibility, and add meaning to your markup.
+Use elements built for the job: `<form>`, `<label>` and `<button>`. These enable built-in browser functionality, improve accessibility, and add meaning to your markup.
 
-### Use &lt;form&gt;
+### Use a &lt;form&gt;
 
-You might be tempted to wrap inputs in a `<div>` and input data submission purely with JavaScript. It's generally better to use a plain old `<form>`. This makes your site accessible to screenreaders and other assistive devices, and enables a range of built-in browser features (see below).
+You might be tempted to wrap inputs in a `<div>` and handle input data submission purely with JavaScript. It's generally better to use a plain old `<form>`. This makes your site accessible to screenreaders and other assistive devices, and enables a range of built-in browser features (see below).
 
 An HTML form makes it simpler to build basic functional signin for older browsers, and to enable signin even if JavaScript fails.
 
@@ -81,7 +81,7 @@ Two reasons:
 * A tap or click on a label moves focus to its input. Associate a label with an input by using the label's `for` attribute with the input's `name` or `id`.
 * Screenreaders announce label text when the label or the label's input gets focus.
 
-Don't use placeholders as input labels. People are liable to forget what the input was for once they've started entering text, especially if they get distracted. (Was I entering an email address or a phone number, or something else?) There are lots of other potential problems with placeholders: see [Don't Use The Placeholder Attribute](https://www.smashingmagazine.com/2018/06/placeholder-attribute/) and [Placeholders in Form Fields Are Harmful](https://www.nngroup.com/articles/form-design-placeholders/) if you're unconvinced.
+Don't use placeholders as input labels. People are liable to forget what the input was for once they've started entering text, especially if they get distracted. (Was I entering an email address, a phone number, or an account ID?) There are lots of other potential problems with placeholders: see [Don't Use The Placeholder Attribute](https://www.smashingmagazine.com/2018/06/placeholder-attribute/) and [Placeholders in Form Fields Are Harmful](https://www.nngroup.com/articles/form-design-placeholders/) if you're unconvinced.
 
 It's probably best to put your labels above your inputs. This enables consistent design across mobile and desktop and, according to [Google AI research](https://ai.googleblog.com/2014/07/simple-is-better-making-your-web-forms.html), enables quicker scanning by users. You get full width labels and inputs, and you don't need to adjust label and input width to fit the label text.
 
@@ -94,15 +94,13 @@ Try out the example at [glitch.com/edit/#!/label-position](https://glitch.com/ed
   <figcaption class="w-figcaption">Label and input width is limited when both are on the same line.</figcaption>
 </figure>
 
-[Add information about `aria-describedby`?]
-
 ### Use &lt;button&gt;
 
-Use button elements for button behaviour, to improve accessibility and enable built-in browser functionality. 
+Use buttons for buttons! Button elements provide accessible behaviour and built-in form submission functionality, and they can easily be styled. There's no point in using a div or some other element pretending do be a button. 
 
-Consider disabling the signin button once the user has tapped or clicked it. [Many users click buttons multiple times](https://baymard.com/blog/users-double-click-online) even on sites that are fast and responsive. That just slows things down and adds to server load.
+Consider disabling the signin button once the user has tapped or clicked it. [Many users click buttons multiple times](https://baymard.com/blog/users-double-click-online) even on sites that are fast and responsive. That slows down interactions and adds to server load.
 
-Conversely, don't disable form submission awaiting user input. Users may miss out something in the form, then try repeatedly tapping the (disabled) signin button and think it's not working. At the very least, if you must disable form submission, tell them what's missing.
+Conversely, don't disable form submission awaiting user input. (For example, don't disable the **Sign in** button if users haven't entered their customer PIN.)  Users may miss out something in the form, then try repeatedly tapping the (disabled) signin button and think it's not working. At the very least, if you must disable form submission, prompt the user when they click on the disabled button to explain what's missing.
 
 {% Aside 'caution' %}
 The default type for a button in a form is `submit`.
