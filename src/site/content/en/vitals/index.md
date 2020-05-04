@@ -3,7 +3,7 @@ layout: page
 title: Web Vitals
 description: Essential metrics for a healthy site
 date: 2020-04-30
-updated: 2020-05-01
+updated: 2020-05-03
 masthead: web-vitals.svg
 ---
 
@@ -142,18 +142,18 @@ documentation for complete
 [API](https://github.com/GoogleChrome/web-vitals#api) details):
 
 ```js
-// Example of using web-vitals to measure & report CLS, FID, and LCP.
 import {getCLS, getFID, getLCP} from 'web-vitals';
 
-function reportToAnalytics(data) {
-  const body = JSON.stringify(data);
+function sendToAnalytics(metric) {
+  const body = JSON.stringify(metric);
+  // Use `navigator.sendBeacon()` if available, falling back to `fetch()`.
   (navigator.sendBeacon && navigator.sendBeacon('/analytics', body)) ||
       fetch('/analytics', {body, method: 'POST', keepalive: true});
 }
 
-getCLS((metric) => reportToAnalytics({cls: metric.value}));
-getFID((metric) => reportToAnalytics({fid: metric.value}));
-getLCP((metric) => reportToAnalytics({lcp: metric.value}));
+getCLS(sendToAnalytics);
+getFID(sendToAnalytics);
+getLCP(sendToAnalytics);
 ```
 
 You can also report on each of the Core Web Vitals without writing any code
