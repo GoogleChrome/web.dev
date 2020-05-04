@@ -3,7 +3,7 @@ title: Chromium lands Flexbox `gap`
 subhead: Chromium's CSS Flexbox and Multi-Column layout engines now support `gap`. `grid-gap` is old news. 
 authors:
   - adamargyle
-  # - dgrogan
+  - dgrogan
 description: Chromium's CSS Flexbox and Multi-Column layout engines now support `gap`. `grid-gap` is old news. 
 date: 2020-04-30
 tags:
@@ -11,24 +11,22 @@ tags:
   - flexbox
   - css
   - gap
-# hero: hero.jpg
+hero: hero.jpg
 alt: TODO
 ---
 
 CSS Grid brought a delightful spacing feature called [`grid-gap`](https://developer.mozilla.org/en-US/docs/Web/CSS/gap), which quickly became a popular way to put space into layouts. It was easy to fall in love with because it took upon itself so much responsibility with such elegance. Starting in Chromium 85 `grid-gap` is now just [`gap`](https://drafts.csswg.org/css-align-3/#propdef-gap), and you can use it with Flexbox. 💪
 
-## Browser compatibility
-
-At the time of writing `gap` is supported in desktop Firefox (version 63), Firefox for Android (version 63), and Chromium-based browsers (version 85). See [Browser compatibility](https://developer.mozilla.org/docs/Web/CSS/gap#Browser_compatibility) for updates.
-
-```css/3-4/1-2
-.grid {
-  display: grid;
+```css/2/1
+.layout {
   grid-gap: 10px;
-  display: flex;
   gap: 10px;
 }
 ```
+
+## Browser compatibility
+
+At the time of writing `gap` is supported in desktop Firefox (version 63), Firefox for Android (version 63), and Chromium-based browsers (version 85). See [Browser compatibility](https://developer.mozilla.org/docs/Web/CSS/gap#Browser_compatibility) for updates.
 
 ## CSS Gap
 
@@ -84,7 +82,7 @@ Set both rows and columns at once
 {% endCompare %}
 
 {% Compare 'better', 'Expanded' %}
-```css
+```css/2-3
 .grid {
   display: grid;
   row-gap: 10px;
@@ -119,7 +117,7 @@ Set both rows and columns **separately** at once
 {% endCompare %}
 
 {% Compare 'better', 'Expanded' %}
-```css
+```css/2-3
 .grid {
   display: grid;
   row-gap: 10px;
@@ -136,24 +134,35 @@ Set both rows and columns **separately** at once
 All of that `gap` goodness we just reviewed is available with Flexbox containers now! Before `gap` was in Flexbox, strategies involved negative margins, complex selectors, `:last` or `:first` type pseudo-class selectors, or other means to manage the space of a dynamically layed-out and wrapping set of children.
 
 ### Previous Attempts
+The following are patterns that folks have used to get gap-like spacing.
 
-Example #1 - pseudo-class selectors
+<div class="w-columns">
+{% Compare 'worse', 'pseudo-class selectors' %}
 ```css
-.layout > :not(:first-child) {
-  margin-block-end: 10px;
-  margin-inline-end: 5%;
+.layout > :not(:last-child) {
+  margin-bottom: 10px;
+  margin-right: 10px;
 }
 ```
 
-Example #2 - lobotomized owl selector
+{% endCompare %}
+
+{% Compare 'worse', 'lobotomized owl' %}
 ```css
 .layout > * + * {
-  margin-block-end: 10px; 
-  margin-inline-end: 5%; 
+  margin-bottom: 10px; 
+  margin-right: 10px; 
 }
 ```
 
-The above are not a full replacement for `gap` though, and often need `@media` query adjustments to account for wrapping scenarios or writing modes or direction. Adding 1 or 2 media queries doesn't seem so bad, but they can add up and lead to complicated layout logic.
+{% CompareCaption %}
+[Source](https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/)
+{% endCompareCaption %}
+
+{% endCompare %}
+</div>
+
+The above are not a full replacement for `gap` though, and often need `@media` query adjustments to account for wrapping scenarios, writing modes or direction. Adding 1 or 2 media queries doesn't seem so bad, but they can add up and lead to complicated layout logic.
 
 What the above author really intended was to have none of the child items touch. 
 ### The Antidote
@@ -162,7 +171,7 @@ Example #3 - gap
 ```css
 .layout {
   display: flex;
-  gap: 10px 5%;
+  gap: 10px;
 }
 ```
 
@@ -205,7 +214,7 @@ Also, notice how dynamic the spacing between children is when they wrap intrinsi
 In addition to Flexbox supporting the `gap` syntax, multi-column layouts also support the shorter `gap` syntax.
 
 ```css/3/2
-.grid {
+article {
   column-width: 40ch;
   column-gap: 5ch;
   gap: 5ch;
