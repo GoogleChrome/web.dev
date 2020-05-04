@@ -60,7 +60,7 @@ The browser cannot respond to most user input while it's executing JavaScript on
 browser can't respond to user interactions while the main thread is busy. To improve this:
 
 +   [Reduce JavaScript execution time](#reduce-javascript-execution)
-+   [Break up Long Tasks](#break-long-tasks)
++   [Break up Long Tasks](#long-tasks)
 +   [Optimize your page for interaction readiness](#optimize-interaction-readiness)
 +   [Use a web worker](#web-worker)
 
