@@ -28,7 +28,7 @@ It contained a number of highly anticipated features like
 [ECMAScript Modules in Web Workers](https://web.dev/module-workers/),
 [nullish coalescing](https://v8.dev/features/nullish-coalescing),
 [optional chaining](https://v8.dev/features/optional-chaining), and more.
-The release was, as usual, announced as a
+The release was, as usual, announced through a
 [blog post](https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html)
 on the Chromium blog.
 You can see an excerpt of the blog post in the screenshot below.
@@ -91,12 +91,11 @@ The fact though that I had to open the Developer Tools to find the `id`
 of an element speaks volumes about the probability this particular section of the page
 was meant to be linked to by the author of the blog post.
 
-What if I want to link to something without an `id`? What if I want to link
-where there there would be no red box.
-Say I wanted to link to the *ECMAScript Modules in Web Workers* heading.
-As you can see in the screenshot below, the `<h1>` in question does not have an `id` attribute
+What if I want to link to something without an `id`?
+Say I want to link to the *ECMAScript Modules in Web Workers* heading.
+As you can see in the screenshot below, the `<h1>` in question does not have an `id` attribute,
 meaning there is no way I can link to this heading.
-This is the problem that Text Fragments solve.
+This is the problem that Text Fragments solve 🎉.
 
 <figure class="w-figure">
   <img src="id-missing.png" alt="" class="w-screenshot" width="400">
@@ -126,8 +125,8 @@ For example, say that I want to link to the
 
 <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=ECMAScript%20Modules%20in%20Web%20Workers"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#:~:text=ECMAScript%20Modules%20in%20Web%20Workers</mark></code></a>
 
-The text fragment is emphasized in bold.
-If you click it in a supporting browser like Chrome, the text fragment is
+The text fragment is emphasized <mark class="highlight-line highlight-line-active">like this</mark>.
+If you click the link in a supporting browser like Chrome, the text fragment is
 highlighted and scrolls into view:
 
 <figure class="w-figure">
@@ -171,7 +170,7 @@ is even shorter now, but the highlighted text fragment is no longer the original
 The highlighting stops at the first occurrence of the word `Workers.`, which is correct,
 but not what I intended to highlight.
 The problem is that the desired section is not uniquely identified
-with the current one-word `textStart` and `textEnd` values:
+by the current one-word `textStart` and `textEnd` values:
 
 <figure class="w-figure">
   <img src="syntax-end-wrong.png" alt="" class="w-screenshot" width="400">
@@ -199,20 +198,20 @@ Notice how in the screenshot above the word "text" appears four times.
 The forth occurrence is written in a green code font.
 If I wanted to link to this particular word,
 I would set `textStart` to `text`.
-Since the word `text` is, well, only one word, there cannot be a `textEnd`.
+Since the word "text" is, well, only one word, there cannot be a `textEnd`.
 What now?
 The URL
 <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=text"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#:~:text=text</mark></code></a>
-matches at the first occurrence of the word "Text".
-
-{% Aside %}
-  Note that text fragment matching is case-insensitive.
-{% endAside %}
+matches at the first occurrence of the word "Text" already in the heading:
 
 <figure class="w-figure">
   <img src="first-text.png" alt="" class="w-screenshot" width="80%">
-  <figcaption class="w-figcaption">Text Fragment matching at the first occurrence of <code>Text</code>.</figcaption>
+  <figcaption class="w-figcaption">Text Fragment matching at the first occurrence of "Text".</figcaption>
 </figure>
+
+{% Aside 'caution' %}
+  Note that text fragment matching is case-insensitive.
+{% endAside %}
 
 Luckily there is a solution.
 In cases like this, I can specify a `prefix​-` and a `-suffix`.
@@ -227,7 +226,7 @@ they need to be separated from the `textStart` and the optional `textEnd` with a
 
 <figure class="w-figure">
   <img src="correct-text.png" alt="" class="w-screenshot" width="80%">
-  <figcaption class="w-figcaption">Text Fragment matching at the correct occurrence of <code>Text</code>.</figcaption>
+  <figcaption class="w-figcaption">Text Fragment matching at the desired occurrence of "text".</figcaption>
 </figure>
 
 ### The full syntax
@@ -260,19 +259,39 @@ It does, however, match in this example:
   <div>jumped over the lazy dog</div>
 ```
 
+### Creating Text Fragment URLs with a browser extension
+
+Creating Text Fragments URLs by hand is tedious,
+especially when it comes to making sure they are unique.
+If you really want to, the specification has some tips and lists the exact
+[steps for generating Text Fragment URLs](https://wicg.github.io/ScrollToTextFragment/#generating-text-fragment-directives).
+We provide a browser extension called
+[Link to Text Fragment](https://chrome.google.com/webstore/a/google.com/detail/link-to-text-fragment/pbcodcjpfjdpcineamnnmbkkmkdpajjg?hl=en)
+that lets you link to any text by selecting it, and then clicking "Copy Link to Selected Text"
+in the context menu.
+
+<figure class="w-figure">
+  <img src="extension.png" alt="" class="w-screenshot" width="100%">
+  <figcaption class="w-figcaption">Link to Text Fragment browser extension.</figcaption>
+</figure>
+
 ### Multiple text fragments in one URL
 
-Note that multiple text fragments can appear on one URL.
+Note that multiple text fragments can appear in one URL.
 The particular text fragments need to be separated by an ampersand character `&`.
 Here is an example link with three text fragments:
 <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=Text%20URL%20Fragments&text=text,-parameter&text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet"><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#:~:text=Text%20URL%20Fragments&text=text,-parameter&text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%25%20of%20a%20cat's%20diet<mark class="highlight-line highlight-line-active"></code></a>.
 
+<figure class="w-figure">
+  <img src="three-text-fragments.png" alt="" class="w-screenshot" width="80%">
+  <figcaption class="w-figcaption">Three text fragments in one URL.</figcaption>
+</figure>
 
 ### Mixing element and text fragments
 
 Traditional element fragments can be combined with text fragments.
 It is perfectly fine to have both in the same URL, for example,
-to provide a meaningful fallback in case the original text on the page changes
+to provide a meaningful fallback in case the original text on the page changes,
 so that the text fragment does not match anymore.
 The URL
 <a href="https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#HTML1:~:text=Give%20us%20feedback%20in%20our%20Product%20Forums."><code>https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html<mark class="highlight-line highlight-line-active">#HTML1:~:text=Give%20us%20feedback%20in%20our%20Product%20Forums.</mark></code></a>
@@ -301,7 +320,7 @@ In the concrete case, `text=` is therefore called a *text directive*.
 
 ### Feature detection
 
-To detect support, test for the read-only `fragmentDirective` property on `window.location`.
+To detect support, test for the read-only `fragmentDirective` property on `Location.prototype`.
 The fragment directive is a mechanism for URLs to specify instructions
 directed to the browser rather than the document.
 It is meant to avoid direct interaction with author script,
@@ -310,7 +329,7 @@ of introducing breaking changes to existing content.
 One potential example of such future additions could be translation hints.
 
 ```js
-if ('fragmentDirective' in window.location) {
+if ('fragmentDirective' in Location.prototype) {
   // Text Fragments is supported.
 }
 ```
@@ -342,14 +361,14 @@ do not leak whether a text fragment was found on a page or not.
 While element fragments are fully under the control of the original page author,
 text fragments can be created by anyone.
 Remember how in my example above there was no way to link to the
-*ECMAScript Modules in Web Workers* heading since the `<h1>` did not have an `id`,
+*ECMAScript Modules in Web Workers* heading, since the `<h1>` did not have an `id`,
 but how anyone, including me, could just link to anywhere by carefully crafting the text fragment?
 
 Imagine I ran an evil ad network `evil-ads.example.com`.
-Further imagine that in one of my ad iframes I created a hidden cross-origin iframe
+Further imagine that in one of my ad iframes I dynamically created a hidden cross-origin iframe
 to `dating.example.com` with a Text Fragment URL
 <code>dating.example.com<mark class="highlight-line highlight-line-active">#:~:text=Log%20Out</mark></code>
-when the user interacts with the ad.
+once the user interacts with the ad.
 If the text "Log Out" is found, I know the victim is currently logged in to `dating.example.com`,
 which I could use for user profiling.
 Since a naive Text Fragments implementation might decide
@@ -359,19 +378,19 @@ In Chrome, we have implemented Text Fragments in such a way that the above scena
 
 Another attack might be to exploit network traffic based on scroll position.
 Assume I had access to network traffic logs of my victim, like as the admin of a company intranet.
-Now imagine there existed a long human resources document "what to do if you suffer from…"
-and then a list of conditions like "burn out", "anxiety", etc.
+Now imagine there existed a long human resources document *What to Do If You Suffer From…*
+and then a list of conditions like *burn out*, *anxiety*, etc.
 I could place a tracking pixel next to each item on the list.
 If I then determine that loading the document temporally co-occurs
-with the loading of the tracking pixel next to, say, the "burn out" item,
+with the loading of the tracking pixel next to, say, the *burn out* item,
 I can then, as the intranet admin, determine that an employee has clicked through
 on a text fragment link with `:~:text=burn%20out`
 that the employee may have assumed was confidential and not visible to anyone.
 Since this example is somewhat contrived to begin with
 and since its exploitation requires *very* specific preconditions to be met,
-the Chrome security team evaluated the risk to be manageable
-and approved of the implementation of scroll on navigation.
+the Chrome security team evaluated the risk of implementing scroll on navigation to be manageable.
 Other user agents may decide to show a manual scroll UI element instead.
+
 For sites that still wish to opt-out, we have proposed a
 [Document Policy](https://github.com/w3c/webappsec-feature-policy/blob/master/document-policy-explainer.md)
 header value that they can send, so user agents will not process Text Fragment URLs.
@@ -381,19 +400,6 @@ as an intermediate solution.
 ```bash
 Document-Policy: force-load-at-top
 ```
-
-## Creating Text Fragment URLs with a browser extension
-
-Creating Text Fragments URLs by hand is tedious,
-especially when it comes to making sure they are unique.
-If you really want to, the specification has some tips and lists the exact
-[steps for generating Text Fragment URLs](https://wicg.github.io/ScrollToTextFragment/#generating-text-fragment-directives).
-We provide a browser extension called
-[Link to Text Fragment](https://chrome.google.com/webstore/a/google.com/detail/link-to-text-fragment/pbcodcjpfjdpcineamnnmbkkmkdpajjg?hl=en)
-that lets you link to any text by selecting it, and then clicking "Copy Link to Selected Text"
-in the context menu.
-
-![Link to Text Fragment extension](extension.png)
 
 ## Conclusion
 
@@ -405,6 +411,9 @@ rather than inaccessible screenshots.
 I hope you start
 [using Text Fragment URLs](https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=Text%20URL%20Fragments&text=text,-parameter&text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%%20of%20a%20cat's%20diet)
 and find them as useful as I do.
+Be sure to install the
+[Link to Text Fragment](https://chrome.google.com/webstore/a/google.com/detail/link-to-text-fragment/pbcodcjpfjdpcineamnnmbkkmkdpajjg?hl=en)
+browser extension.
 
 ## Related links
 
@@ -421,5 +430,6 @@ Text Fragments was implemented and specified by
 [Nick Burris](https://github.com/nickburris)
 and [David Bokan](https://github.com/bokand),
 with contributions from [Grant Wang](https://github.com/grantjwang).
+Thanks to [Joe Medley](https://github.com/jpmedley) for the thorough review of this article.
 Hero image by [Greg Rakozy](https://unsplash.com/@grakozy) on
 [Unsplash](https://unsplash.com/photos/oMpAz-DN-9I).
