@@ -56,7 +56,7 @@ compiles, and executes on your web page will directly reduce input delay.
 
 ## Heavy JavaScript execution
 
-The browser cannot respond to user input while it's executing JavaScript. In other words, the
+The browser cannot respond to most user input while it's executing JavaScript on the main thread. In other words, the
 browser can't respond to user interactions while the main thread is busy. To improve this:
 
 +   [Reduce JavaScript execution time](#reduce-javascript-execution)
