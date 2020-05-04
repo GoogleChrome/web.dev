@@ -28,6 +28,11 @@ module.exports = function addPagination(elements, additionalData = {}) {
       `addPagination only accepts an array, you passed in a ${typeof elements}`,
     );
   }
+
+  if (typeof additionalData !== 'object') {
+    throw new Error(`additionalData must be an object`);
+  }
+
   const pageCount = constants.PAGINATION_COUNT;
   const paginated = [];
   const pages = Math.ceil(elements.length / pageCount);

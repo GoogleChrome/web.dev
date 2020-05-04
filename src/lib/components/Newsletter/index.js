@@ -1,5 +1,5 @@
 /**
- * @fileoverview Element that renders copyable code.
+ * @fileoverview Element that resizes iframe based on content.
  */
 
 import {BaseElement} from '../BaseElement';

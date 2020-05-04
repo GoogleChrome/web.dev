@@ -7,16 +7,28 @@ describe('add-pagination', function() {
       return [...Array(n)].map((_, index) => ({index}));
     }
 
-    it('does not throw error for a valid argument', function() {
+    it('does not throw error for a valid `elements` argument', function() {
       const toPaginate = generateArray(1);
       assert.doesNotThrow(() => addPagination(toPaginate));
     });
 
-    it('throws error for invalid arguments', function() {
-      const invalidArguments = [{}, 1, 'string', null, undefined];
+    it('throws error for invalid `elements` arguments', function() {
+      const invalidElements = [() => {}, {}, 1, 'string', null, undefined];
 
-      invalidArguments.forEach((invalidArgument) =>
-        assert.throws(() => addPagination(invalidArgument)),
+      invalidElements.forEach((arg) => assert.throws(() => addPagination(arg)));
+    });
+
+    it('does not throw error for a valid `additionalData` argument', function() {
+      const toPaginate = generateArray(1);
+      assert.doesNotThrow(() => addPagination(toPaginate, {}));
+    });
+
+    it('throws error for invalid `additionalData` arguments', function() {
+      const toPaginate = generateArray(1);
+      const invalidAdditionalData = [() => {}, 1, 'string'];
+
+      invalidAdditionalData.forEach((arg) =>
+        assert.throws(() => addPagination(toPaginate, arg)),
       );
     });
 
@@ -30,6 +42,15 @@ describe('add-pagination', function() {
       const toPaginate = generateArray(96);
       const paginated = addPagination(toPaginate);
       assert.strictEqual(paginated.length, 4);
+    });
+
+    it('returns pages with `additionalData` when `additionalData` passed in', function() {
+      const toPaginate = generateArray(96);
+      const href = '/blog/';
+      const paginated = addPagination(toPaginate, {href});
+      paginated.forEach((page) => {
+        assert.strictEqual(page.href, href);
+      });
     });
   });
 });
