@@ -3,7 +3,7 @@ layout: page
 title: Web Vitals
 description: Essential metrics for a healthy site
 date: 2020-04-30
-updated: 2020-05-03
+updated: 2020-05-04
 masthead: web-vitals.svg
 ---
 
@@ -258,11 +258,11 @@ measurement can accurately capture the complete picture.
 
 Once you've measured the Core Web Vitals and identified areas for improvement,
 the next step is to optimize. The following guides offer specific
-recommendations for optimizing each of the Core Web Vitals:
+recommendations for how to optimize your pages for each of the Core Web Vitals:
 
-- [How to improve LCP](https://web.dev/lcp/#how-to-improve-lcp)
-- [How to improve FID](https://web.dev/fid/#how-to-improve-fid)
-- [How to improve CLS](https://web.dev/cls/#how-to-improve-cls)
+- [Optimize LCP](https://web.dev/optimize-lcp/)
+- [Optimize FID](https://web.dev/optimize-fid/)
+- [Optimize CLS](https://web.dev/optimize-cls/)
 
 ## Other Web Vitals
 
