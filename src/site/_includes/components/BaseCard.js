@@ -28,12 +28,12 @@ const postTags = require('../../_data/postTags');
 /**
  * BaseCard used to preview collection items.
  * @param {Object} collectionItem An eleventy collection item with additional data.
- * @param {boolean} featured If card is a featured post.
  * @param {string} className CSS class to apply to `div.w-card`
+ * @param {boolean} featured If card is a featured card.
  * @return {string}
  */
 class BaseCard {
-  constructor(collectionItem, featured = false, className = '') {
+  constructor(collectionItem, className = '', featured = false) {
     this.collectionItem = collectionItem;
     this.collectionItem.data = this.collectionItem.data || {};
     this.featured = featured;

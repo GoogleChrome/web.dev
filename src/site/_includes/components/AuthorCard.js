@@ -23,7 +23,7 @@ const BaseCard = require('./BaseCard');
  */
 class AuthorCard extends BaseCard {
   constructor(collectionItem) {
-    super(collectionItem, false, 'w-card-author');
+    super(collectionItem, 'w-card-author');
   }
 
   renderThumbnail(url, img, alt) {
