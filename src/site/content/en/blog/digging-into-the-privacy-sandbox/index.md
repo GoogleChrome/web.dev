@@ -4,8 +4,9 @@ subhead: The Privacy Sandbox is a series of proposals to satisfy third-party use
 authors:
   - samdutton
 date: 2020-04-08
-updated: 2020-04-24
+updated: 2020-05-04
 hero: hero.jpg
+thumbnail: thumbnail.jpg
 alt: A black-on-white printed sign saying Private, on a wooden wall.
 description: The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms. The proposals need your feedback.
 tags:
@@ -15,9 +16,9 @@ tags:
   - trust and safety
 ---
 
-## Summary
-
 {% YouTube 'WnCKlNE52tc' %}
+
+## Summary
 
 * This post outlines APIs and concepts from the [Privacy Sandbox](https://www.chromium.org/Home/chromium-privacy/privacy-sandbox) proposals.
 * The proposals need your feedback.
@@ -26,21 +27,11 @@ tags:
 
 ---
 
-## Why does the web use third-party code?
-
-Websites use services from other companies to provide analytics, serve video and do lots of other useful stuff. Composability is one of the web's [superpowers](https://youtu.be/WnCKlNE52tc?t=930).
-
-Most notably, ads are included in web pages via third-party JavaScript and iframes. Ad views, clicks and conversions are tracked via third-party cookies and scripts. That's how most of the web is funded.
-
-Relevant ads are [less annoying to users and more profitable for publishers](https://services.google.com/fh/files/misc/disabling_third-party_cookies_publisher_revenue.pdf) (the people running ad-supported websites). Third party ad targeting tools make ad space more valuable to advertisers (the people who purchase ad space on websites) which in turn increases revenue for ad-supported websites and enables content to get created and published.
-
-Reliable measurement and anti-fraud protection are also crucial. Advertisers and site owners must be able to distinguish between malicious bots and trustworthy humans. If advertisers can't reliably tell which ad clicks are from real humans, they spend less, so site publishers get less revenue. Many third party services currently use techniques such as [device fingerprinting](./#fingerprinting) to combat fraud.
-
-Ads play a major role in making the internet an easily accessible, open place, but advertising has to work for everyone. When it does, it means users can get access to information and great content, creators and publishers can thrive by getting fair compensation for their work, and marketers can connect with people interested in what they have to offer. Which brings us to our goal: to evolve the web to better respect user privacy and support a vibrant, thriving ecosystem.
-
 ## The current state of privacy on the web
 
-When you visit a website you may not be aware of the third parties involved and what they're doing with your data. Even publishers and web developers may not understand the entire third-party supply chain.
+Websites use services from other companies to provide analytics, serve video and do lots of other useful stuff. Composability is one of the web's [superpowers](https://youtu.be/WnCKlNE52tc?t=930). Most notably, ads are included in web pages via third-party JavaScript and iframes. Ad views, clicks and conversions are tracked via third-party cookies and scripts. That's how most of the web is funded. 
+
+However, when you visit a website you may not be aware of the third parties involved and what they're doing with your data. Even publishers and web developers may not understand the entire third-party supply chain.
 
 Ad targeting, conversion measurement, and other use cases currently rely on establishing stable cross-site identity. Historically this has been done by using [third-party cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Third-party_cookies), but browsers have begun to restrict access to these cookies. There's been an [increase  in the use of other mechanisms](https://github.com/bslassey/privacy-budget/issues/6) for cross-site user tracking, such as covert browser storage, device fingerprinting, and requests for personal information like email addresses.
 
@@ -48,7 +39,9 @@ This is a dilemma for the web. How can legitimate third-party use cases be suppo
 
 In particular, how can websites fund content by enabling third parties to show ads and measure ad performance—but not allow individual users to be profiled? How can advertisers verify real users, and site owners check that users are trustworthy, without resorting to dark patterns such as device fingerprinting?
 
-The way things work at the moment can be problematic for everyone concerned, not just users. For publishers and advertisers, tracking identity and using a variety of non-native, un-standardised third-party solutions can add to technical debt, code complexity and data risk. Users, developers, publishers, and advertisers shouldn't have to worry.
+The way things work at the moment can be problematic for everyone concerned, not just users. For publishers and advertisers, tracking identity and using a variety of un-standardized third-party solutions can add to technical debt, code complexity and data risk. Users, developers, publishers, and advertisers shouldn't have to worry.
+
+Ads play a major role in making the internet an easily accessible, open place, but advertising has to work for everyone. When it does, it means users can get access to information and great content, creators and publishers can thrive by getting fair compensation for their work, and marketers can connect with people interested in what they have to offer. Which brings us to our goal: to evolve the web to better respect user privacy and support a vibrant, thriving ecosystem.
 
 ## Introducing the Privacy Sandbox
 
@@ -102,6 +95,8 @@ Other companies have been investigating similar ideas, such as Facebook's [Cross
 
 **Goal:** Enable advertisers to display ads relevant to users.
 
+Relevant ads are [less annoying to users and more profitable for publishers](https://services.google.com/fh/files/misc/disabling_third-party_cookies_publisher_revenue.pdf) (the people running ad-supported websites). Third party ad targeting tools make ad space more valuable to advertisers (the people who purchase ad space on websites) which in turn increases revenue for ad-supported websites and enables content to get created and published.
+
 There are many ways to make ads relevant to the user, including the following:
 
 +   **First-party-data targeting**: Show ads relevant to topics a person has told a website they have an interest in, or content a person has looked at previously on this web site.
@@ -140,7 +135,9 @@ Your IP address is the public 'address' of your computer on the internet, which 
 
 **Goal:** Verify user authenticity without fingerprinting.
 
-Anti-fraud protection is crucial for keeping users safe, and to ensure that advertisers and site owners can get accurate ad performance measurements. Unfortunately, the techniques used to identify legitimate users and block spammers, fraudsters, and bots work in ways similar to [fingerprinting](#glossary-fingerprinting) techniques that damage privacy.
+Anti-fraud protection is crucial for keeping users safe, and to ensure that advertisers and site owners can get accurate ad performance measurements. Advertisers and site owners must be able to distinguish between malicious bots and trustworthy humans. If advertisers can't reliably tell which ad clicks are from real humans, they spend less, so site publishers get less revenue. Many third party services currently use techniques such as [device fingerprinting](./#fingerprinting) to combat fraud. 
+
+Unfortunately, the techniques used to identify legitimate users and block spammers, fraudsters, and bots work in ways similar to [fingerprinting](#glossary-fingerprinting) techniques that damage privacy.
 
 * The [Trust Tokens API](https://github.com/dvorak42/trust-token-api) proposes an alternative approach, allowing authenticity of a user in one context, such as gmail.com, to be conveyed to another context, such as an ad running on nytimes.com—without identifying the user or linking the two identities.
 
@@ -154,7 +151,7 @@ Many organizations own sites across multiple domains. For example, google.com, g
 
 ## Next steps
 
-To reiterate: the Privacy Sandbox authors need your support. The [explainers](https://blog.chromium.org/2019/08/potential-uses-for-privacy-sandbox.html) need feedback—in particular to suggest missing use cases and more-private ways to accomplish their goals.
+The Privacy Sandbox authors need your support. The [explainers](https://blog.chromium.org/2019/08/potential-uses-for-privacy-sandbox.html) need feedback—in particular to suggest missing use cases and more-private ways to accomplish their goals.
 
 ## Find out more
 
@@ -299,8 +296,8 @@ Note that some 'sites' are actually just subdomains. For example, translate.goog
 
 It can be useful to access policy or other information about a host _before_ making a request. For example, robots.txt tells web crawlers which pages to visit and which pages to ignore. IETF [RFC8615](https://tools.ietf.org/html/rfc8615) outlines a standardised way to make site-wide metadata accessible in standard locations in a /.well-known/ subdirectory. You can see a list of these at [iana.org/assignments/well-known-uris/well-known-uris.xhtml](https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml).
 
-Photo by [Pierre Bamin](https://unsplash.com/@bamin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
-
 ---
 
 Thanks to Michael Kleber and Marshall Vale for their help in writing this post.
+
+Photo by [Pierre Bamin](https://unsplash.com/@bamin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
