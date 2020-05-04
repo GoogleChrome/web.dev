@@ -70,7 +70,7 @@ const virtualImports = {
  */
 function buildDefaultPlugins() {
   return [
-    rollupPluginLitCSS,
+    rollupPluginLitCSS(),
     rollupPluginNodeResolve(),
     rollupPluginCJS({
       include: 'node_modules/**',
@@ -304,7 +304,7 @@ async function buildTest() {
   const testBundle = await rollup.rollup({
     input: 'test/unit/src/lib/index.js',
     plugins: [
-      rollupPluginLitCSS,
+      rollupPluginLitCSS(),
       rollupPluginNodeResolve(),
       rollupPluginCJS(),
       rollupPluginVirtual(buildVirtualJSON(virtualImports)),
