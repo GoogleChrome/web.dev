@@ -541,4 +541,4 @@ A number of tools are available to measure and debug LCP:
 +   [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
     provides real-world LCP values aggregated at the origin-level
 
-_With thanks to Philip Walton, Katie Hempenius, and Kayce Basques for their reviews._
+_With thanks to Philip Walton, Katie Hempenius, Kayce Basques, and Ilya Grigorik for their reviews._
