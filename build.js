@@ -190,12 +190,36 @@ async function build() {
   }
   virtualImports.webdev_entrypoint = entrypoints[0].fileName;
 
-  // Rollup basic to generate the top-level script run by all browsers (even ancient ones). This is
-  // just for Analytics.
+  // Rollup basic to generate the top-level script run by all browsers (even
+  // ancient ones). This runs Analytics and imports the entrypoint generated
+  // above (in supported module browsers).
+  const libPrefix = path.join(__dirname, '/src/lib/');
+  const utilsPrefix = path.join(libPrefix, 'utils');
   const bootstrapBundle = await rollup.rollup({
     input: 'src/lib/bootstrap.js',
     plugins: buildDefaultPlugins(),
     external: disallowExternal,
+    manualChunks: (id) => {
+      // This overloads Rollup's manualChunks feature to catch disallowed code.
+      // Bootstrap should only import:
+      //   * virtual imports (config only)
+      //   * itself (Rollup calls us for 'ourself')
+      //   * code inside `src/lib/utils`.
+      // Otherwise, we risk leaking core site code into this ES5-only, fast
+      // bootstrap chunk.
+      if (id in virtualImports || !path.isAbsolute(id)) {
+        return; // ok
+      }
+      if (id === path.join(libPrefix, 'bootstrap.js')) {
+        return undefined; // self, allowed
+      }
+      if (path.relative(utilsPrefix, id).startsWith('../')) {
+        // This looks for code outside the utils folder, which is disallowed.
+        throw new TypeError(
+          `can't import non-utils JS code in bootstrap: ${id}`,
+        );
+      }
+    },
   });
   const bootstrapGenerated = await bootstrapBundle.write({
     sourcemap: true,
