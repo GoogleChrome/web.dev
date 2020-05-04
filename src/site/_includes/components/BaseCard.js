@@ -89,7 +89,7 @@ class BaseCard {
             const author = this.data.contributors[authorId];
             if (!author) {
               throw new Error(
-                `Author '${authorId}' does not exist in '_data/contributors#contributors'.`,
+                `Author '${authorId}' does not exist in '_data/contributors.js'.`,
               );
             }
             return html`
@@ -119,7 +119,7 @@ class BaseCard {
             const author = this.data.contributors[authorId];
             if (!author) {
               throw new Error(
-                `Author '${authorId}' does not exist in '_data/contributors#contributors'.`,
+                `Author '${authorId}' does not exist in '_data/contributors.js'.`,
               );
             }
             return html`

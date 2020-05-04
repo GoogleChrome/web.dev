@@ -6,7 +6,7 @@ module.exports = (contributorSlugs = []) => {
 
     if (!profile) {
       throw new Error(
-        `Author '${contributor}' does not exist in '_data/contributors#contributors'.`,
+        `Author '${contributor}' does not exist in '_data/contributors.js'.`,
       );
     }
 
