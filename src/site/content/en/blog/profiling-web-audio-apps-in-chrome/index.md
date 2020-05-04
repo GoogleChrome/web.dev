@@ -138,7 +138,7 @@ work before the next device callback.
 
 **Your options:**
 
-* Reduce the workload of the audio graph. (Use fewer `AudioNodes`.)
+* Reduce the workload of the audio graph by using fewer `AudioNode` instances.
 * Reduce the workload of your code in the `AudioWorkletProcessor`.
 * Increase the base latency of `AudioContext`.
 
