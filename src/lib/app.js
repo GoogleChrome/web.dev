@@ -6,6 +6,7 @@ import './components/Search';
 import {store} from './store';
 import 'focus-visible';
 import './analytics';
+import {localStorage} from './utils/storage';
 
 // Configures global page state
 function onGlobalStateChanged({isSignedIn, isPageLoading}) {
