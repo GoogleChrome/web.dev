@@ -32,7 +32,7 @@ Paint](/lcp/) (LCP) are both metrics that measure the time it takes for content 
 visually render (paint) on a page. Although important, paint times do not capture _load
 responsiveness_: or how quickly a page responds to user interaction.
 
-[First Input Delay](/fid/) (FID) is a [Core Web Vitals](/metrics/) metric that captures a user's
+[First Input Delay](/fid/) (FID) is a [Core Web Vitals](/vitals/) metric that captures a user's
 first impression of a site's interactivity and responsiveness. It measures the time from when a user
 first interacts with a page to the time when the browser is actually able to respond to that
 interaction. FID is a [field metric](/user-centric-performance-metrics/#in-the-field) and cannot be
