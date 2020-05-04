@@ -17,11 +17,14 @@ const sassEngine = (function() {
  * @return {{css: !Buffer, map: !Buffer}}
  */
 module.exports = function compileCSS(options) {
-  options = Object.assign({
-    output: '.css',
-    compress: false,
-    autoprefixer: false,
-  }, options);
+  options = Object.assign(
+    {
+      output: '.css',
+      compress: false,
+      autoprefixer: false,
+    },
+    options,
+  );
 
   const compiledOptions = {
     file: options.input,
