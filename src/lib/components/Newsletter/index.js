@@ -20,12 +20,14 @@ class Newsletter extends BaseElement {
   connectedCallback() {
     super.connectedCallback();
     this.iframe = this.querySelector('iframe');
-    this.iframe.scrolling = 'no';
-    this.iframe.contentWindow.document.querySelectorAll('a').forEach((a) => {
-      a.target = a.target === '_blank' ? a.target : '_parent';
-    });
-    this.resizeIFrame();
-    window.addEventListener('resize', this.resizeIFrame);
+    if (this.iframe) {
+      this.iframe.scrolling = 'no';
+      this.iframe.contentWindow.document.querySelectorAll('a').forEach((a) => {
+        a.target = a.target === '_blank' ? a.target : '_parent';
+      });
+      this.resizeIFrame();
+      window.addEventListener('resize', this.resizeIFrame);
+    }
   }
 
   disconnectedCallback() {
