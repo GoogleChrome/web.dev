@@ -238,7 +238,7 @@ JavaScript:
 +   Server-side rendered apps may look like they're getting pixels painted on the screen
     quickly, but beware user interactions being blocked by large script executions (e.g
     re-hydration to wire up event listeners). This can take several hundred milliseconds, sometimes
-    even seconds, if route-based code-splitting is being used. Consider shifting more logic
+    even seconds, if route-based code splitting is being used. Consider shifting more logic
     server-side or generating more content statically during build time.
 
 Below are the TBT scores before and after optimizing first-party script loading for one of our
