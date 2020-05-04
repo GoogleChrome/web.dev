@@ -242,7 +242,7 @@ JavaScript:
     server-side or generating more content statically during build time.
 
 Below are the TBT scores before and after optimizing first-party script loading for an
-applications. By moving costly script loading (and execution) for a non-essential component off the
+application. By moving costly script loading (and execution) for a non-essential component off the
 critical path, users were able to interact with the page much sooner.
 
 ![Improvements in TBT score in Lighthouse after optimizing first-party script](./tbt-before-after-first-party.png)
