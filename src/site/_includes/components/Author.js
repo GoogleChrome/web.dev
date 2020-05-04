@@ -27,7 +27,7 @@ module.exports = ({
   if (!author) {
     throw new Error(`
       Can't create Author component without an author argument.
-      author was null or undefined. Please check _data/contributors.json
+      author was null or undefined. Please check '_data/contributors#contributors'
       and make sure the author you provide is a key in this object.
     `);
   }
