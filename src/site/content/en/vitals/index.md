@@ -88,35 +88,37 @@ them to manually instrument analytics on their pages, and powers tools like
 and [Search Console's Speed
 Report](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html).
 
-<table class="w-table-wrapper">
-  <tr>
-    <td>&nbsp;</td>
-    <td>LCP</td>
-    <td>FID</td>
-    <td>CLS</td>
-  </tr>
-  <tr>
-    <td><a href="https://developers.google.com/web/tools/chrome-user-experience-report">
-      Chrome User Experience Report</a></td>
-    <td>✔</td>
-    <td>✔</td>
-    <td>✔</td>
-  </tr>
-  <tr>
-    <td><a href="https://developers.google.com/speed/pagespeed/insights/">
-      PageSpeed Insights</a></td>
-    <td>(soon)</td>
-    <td>✔</td>
-    <td>(soon)</td>
-  </tr>
-  <tr>
-    <td><a href="https://webmasters.googleblog.com/2019/11/search-console-speed-report.html">
-      Search Console (Speed Report)</a></td>
-    <td>(soon)</td>
-    <td>✔</td>
-    <td>(soon)</td>
-  </tr>
-</table>
+<div class="w-table-wrapper">
+  <table>
+    <tr>
+      <td>&nbsp;</td>
+      <td>LCP</td>
+      <td>FID</td>
+      <td>CLS</td>
+    </tr>
+    <tr>
+      <td><a href="https://developers.google.com/web/tools/chrome-user-experience-report">
+        Chrome User Experience Report</a></td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>✔</td>
+    </tr>
+    <tr>
+      <td><a href="https://developers.google.com/speed/pagespeed/insights/">
+        PageSpeed Insights</a></td>
+      <td>(soon)</td>
+      <td>✔</td>
+      <td>(soon)</td>
+    </tr>
+    <tr>
+      <td><a href="https://webmasters.googleblog.com/2019/11/search-console-speed-report.html">
+        Search Console (Speed Report)</a></td>
+      <td>(soon)</td>
+      <td>✔</td>
+      <td>(soon)</td>
+    </tr>
+  </table>
+</div>
 
 The data provided by Chrome User Experience Report offers a quick way to assess
 the performance of sites, but it does not provide the detailed, per-pageview
@@ -165,31 +167,33 @@ measure each of these metrics and display them to users as they browse the web.
 This extension can be helpful in understanding the performance of your own
 sites, your competitor's sites, and the web at large.
 
-<table class="w-table-wrapper">
-  <thead>
-    <tr>
-      <th>&nbsp;</th>
-      <th>LCP</th>
-      <th>FID</th>
-      <th>CLS</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://github.com/GoogleChrome/web-vitals">web-vitals</a></td>
-      <td>✔</td>
-      <td>✔</td>
-      <td>✔</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/GoogleChrome/web-vitals-extension">
-        Web Vitals Extension</a></td>
-      <td>✔</td>
-      <td>✔</td>
-      <td>✔</td>
-    </tr>
-  </tbody>
-</table>
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>&nbsp;</th>
+        <th>LCP</th>
+        <th>FID</th>
+        <th>CLS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="https://github.com/GoogleChrome/web-vitals">web-vitals</a></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+      </tr>
+      <tr>
+        <td><a href="https://github.com/GoogleChrome/web-vitals-extension">
+          Web Vitals Extension</a></td>
+        <td>✔</td>
+        <td>✔</td>
+        <td>✔</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 Alternatively, developers who prefer to measure these metrics directly via the
 underlying web APIs can refer to these metric guides for implementation details:
@@ -210,32 +214,34 @@ catch performance regressions before they happen.
 The following tools can be used to measure the Core Web Vitals in a lab
 environment:
 
-<table class="w-table-wrapper">
-  <thead>
-    <tr>
-      <th>&nbsp;</th>
-      <th>LCP</th>
-      <th>FID</th>
-      <th>CLS</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://developers.google.com/web/tools/chrome-devtools">
-        Chrome DevTools</a></td>
-      <td>✔</td>
-      <td>✘ (use <a href="/tbt/">TBT</a> instead)</td>
-      <td>✔</td>
-    </tr>
-    <tr>
-      <td><a href="https://developers.google.com/web/tools/lighthouse">
-        Lighthouse</a></td>
-      <td>✔ (v6)</td>
-      <td>✘ (use <a href="/tbt/">TBT</a> instead)</td>
-      <td>✔ (v6)</td>
-    </tr>
-  </tbody>
-</table>
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>&nbsp;</th>
+        <th>LCP</th>
+        <th>FID</th>
+        <th>CLS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="https://developers.google.com/web/tools/chrome-devtools">
+          Chrome DevTools</a></td>
+        <td>✔</td>
+        <td>✘ (use <a href="/tbt/">TBT</a> instead)</td>
+        <td>✔</td>
+      </tr>
+      <tr>
+        <td><a href="https://developers.google.com/web/tools/lighthouse">
+          Lighthouse</a></td>
+        <td>✔ (v6)</td>
+        <td>✘ (use <a href="/tbt/">TBT</a> instead)</td>
+        <td>✔ (v6)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 {% Aside %}
   Tools like Lighthouse that load pages in a simulated environment without a
