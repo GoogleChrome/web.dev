@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +14,12 @@
  * limitations under the License.
  */
 
-const BaseCard = require('./BaseCard');
-
 /**
- * PostCard used to preview posts.
- * @param {Object} collectionItem An eleventy collection item with post data.
- * @param {boolean} featured If post is a featured post.
- * @return {string}
+ * Returns an array of all past Newsletters.
+ *
+ * @param {object} collections 11ty collections object
+ * @return {Array<{ data: { title: string, subhead: string, thumbnail: string, alt: string; }, date: Date, permalink: string, url: string, content: string }>}
  */
-module.exports = (collectionItem, featured = false) => {
-  return new BaseCard(collectionItem, null, featured).render();
+module.exports = (collections) => {
+  return collections.getFilteredByTag('newsletter').reverse();
 };
