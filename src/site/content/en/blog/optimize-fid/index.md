@@ -245,7 +245,8 @@ Below are the TBT scores before and after optimizing first-party script loading 
 application. By moving costly script loading (and execution) for a non-essential component off the
 critical path, users were able to interact with the page much sooner.
 
-![Improvements in TBT score in Lighthouse after optimizing first-party script](./tbt-before-after-first-party.png)
+<img class="w-screenshot" src="tbt-before-after-first-party.png" 
+     alt="Improvements in TBT score in Lighthouse after optimizing the first-party script.">
 
 ### Data-fetching can impact many aspects of interaction readiness
 
