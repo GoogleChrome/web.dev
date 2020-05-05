@@ -44,7 +44,9 @@ describe('firebase-loader', function() {
       try {
         assert(nodes.length === 2, 'JS should be added for uniques');
         assert(nodes[0].src.endsWith('-app.js'));
+        assert(!nodes[0].async);
         assert(nodes[1].src.endsWith('-performance.js'));
+        assert(!nodes[1].async);
       } finally {
         // This isn't an async test, we don't check that the scripts actually
         // load, so just remove them immediately after run.

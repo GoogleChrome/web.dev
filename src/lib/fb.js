@@ -16,7 +16,9 @@ const firestorePromiseLoader = (() => {
     if (p) {
       return p;
     }
-    p = firebasePromise.then(() => loadFirebase('firestore')).then(() => {
+    // We don't have to block on the top-level Promise, as the scripts run
+    // in-order of being added to the page (async=false).
+    p = loadFirebase('firestore').then(() => {
       const firestore = window.firebase.firestore();
       return firestore;
     });

@@ -23,6 +23,7 @@ function internalLoad(library) {
   const p = new Promise((resolve, reject) => {
     const s = document.createElement('script');
     s.src = `${firebasePrefix}/firebase-${library}.js`;
+    s.async = false; // prevent misordered execution
 
     s.onerror = reject;
     s.onload = () => resolve();
