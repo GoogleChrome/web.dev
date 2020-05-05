@@ -66,7 +66,6 @@ class BaseCard {
       <figure class="w-card-base__figure">
         <img
           class="w-card-base__image"
-          sizes="365px"
           srcset="${srcsetRange.map(
             (width) => html`
               ${imagePath}?auto=format&fit=max&w=${width} ${width}w,
