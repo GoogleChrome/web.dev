@@ -1,13 +1,10 @@
 const {assert} = require('../assert');
-const loader = require('../../../../../src/lib/utils/firebase-loader');
+const loadFirebase = require('../../../../../src/lib/utils/firebase-loader');
 
 describe('firebase-loader', function() {
   describe('loader', function() {
-    it('should be a function which returns a Promise', async function() {
-      const load = loader();
-      assert(typeof load === 'function');
-
-      const p = load();
+    it('should return a Promise', async function() {
+      const p = loadFirebase();
       assert(p instanceof Promise);
       await p; // doesn't do anything, nothing requested
 
@@ -17,17 +14,30 @@ describe('firebase-loader', function() {
       assert(node === null, 'no firebase loads requested');
     });
 
-    it('should not add script tags on loader', function() {
-      loader('app');
-      const node = document.head.querySelector(
-        'script[src^="//www.gstatic.com/firebasejs/"]',
-      );
-      assert(node === null, 'node should not be created yet');
+    it('should not add multiple nodes', async function() {
+      loadFirebase('app');
+      let nodes = [];
+
+      try {
+        nodes = document.head.querySelector(
+          'script[src^="//www.gstatic.com/firebasejs/"]',
+        );
+        assert(nodes.length === 1);
+
+        loadFirebase('app', 'performance');
+        nodes = document.head.querySelector(
+          'script[src^="//www.gstatic.com/firebasejs/"]',
+        );
+        assert(nodes.length === 2, 'nodes should only contain one additional');
+      } finally {
+        // This isn't an async test, we don't check that the scripts actually
+        // load, so just remove them immediately after run.
+        nodes.forEach((node) => node.remove());
+      }
     });
 
     it('should add script tags after invocation', function() {
-      const helper = loader('app', 'performance', 'app');
-      helper();
+      loadFirebase('app', 'performance', 'app');
       const nodes = document.head.querySelectorAll(
         'script[src^="//www.gstatic.com/firebasejs/"]',
       );

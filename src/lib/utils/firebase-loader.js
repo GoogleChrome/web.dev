@@ -34,23 +34,11 @@ function internalLoad(library) {
 }
 
 /**
- * Generates a function, which when called, loads a number of named Firebase
- * libraries (or returns their cached loads).
- *
- * Returning a function here is helpful as we don't want to load e.g., Firestore
- * before it's needed.
+ * Loads a number of named Firebase libaries (or their cached previous loads).
  *
  * @param {...string} names to load
- * @return {function(): !Promise}
+ * @return {!Promise<void>}
  */
-export default function buildLoader(...names) {
-  let promise = null;
-
-  return () => {
-    if (promise) {
-      return promise;
-    }
-    promise = Promise.all(names.map(internalLoad));
-    return promise;
-  };
+export default function loadFirebase(...names) {
+  return Promise.all(names.map(internalLoad));
 }
