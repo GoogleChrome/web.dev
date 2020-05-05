@@ -160,7 +160,7 @@ critical-path or above-the-fold content.
 
 ```html	
 <script defer src="…"></script>	
-<script async src="..."></script>	
+<script async src="…"></script>	
 ```	
 
 Unless there is a specific reason not to, all third-party scripts should be loaded with either `defer`	
