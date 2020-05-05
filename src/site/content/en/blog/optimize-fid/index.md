@@ -292,7 +292,7 @@ A number of tools are available to measure and debug FID:
     Time](/tbt/) (TBT) can be used as a proxy. Optimizations that improve TBT should
     also improve FID in the field.
 
-    ![Lighthouse 6.0](./lighthouse.jpg)
+    <img class="w-screenshot" src="lighthouse.jpg" alt="Lighthouse 6.0.">
 
 +   [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
     provides real-world LCP values aggregated at the origin-level
