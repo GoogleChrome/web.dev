@@ -1,8 +1,9 @@
 /**
- * @fileoverview Site bootstrap code.
+ * @fileoverview Site entrypoint. This runs only in supported browsers and is
+ * dynamically inserted by "bootstrap.js" if the user's browser is supported.
  *
- * This should import minimal site code, as it exists to load relevant polyfills and then the
- * correct entrypoint via our router.
+ * This is web.dev's core JS bundle; it includes unistore, routing, Service
+ * Worker initialization, component loading for routes, et al.
  */
 
 import './webcomponents-config'; // must go before -loader below

@@ -156,8 +156,8 @@ async function build() {
 
   // Rollup "entrypoint.js" to generate graph of source needs. This eventually
   // uses dynamic import to bring in code required for each page (see router).
-  // The entrypoint itself is generated with a dynamic hash, so we can import
-  // it via bootstrap (which is run as ES5).
+  // The entrypoint itself is generated with a dynamic hash, and is imported
+  // via "bootstrap.js" (which is run in all browsers via regular script tag).
   const appBundle = await rollup.rollup({
     input: 'src/lib/entrypoint.js',
     external: disallowExternal,
