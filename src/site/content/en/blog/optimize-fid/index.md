@@ -5,7 +5,7 @@ authors:
   - houssein
   - addyosmani
 date: 2020-05-05
-hero: hero.jpg
+hero: hero2.jpg
 alt: A hand touching a smartphone screen
 description: | 
   First Input Delay (FID) measures the time from when a user first interacts with your site
