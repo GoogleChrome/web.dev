@@ -58,15 +58,24 @@ const virtualImports = {
         .slice(0, 12),
     firebaseConfig: isProd ? site.firebase.prod : site.firebase.staging,
   },
+  webdev_entrypoint: null,
 };
 
-const defaultPlugins = [
-  rollupPluginNodeResolve(),
-  rollupPluginCJS({
-    include: 'node_modules/**',
-  }),
-  rollupPluginVirtual(buildVirtualJSON(virtualImports)),
-];
+/**
+ * Builds the default set of Rollup functions. Snapshots virtual imports on
+ * call, so should be used anew every run.
+ *
+ * @return {!Array<*>}
+ */
+function buildDefaultPlugins() {
+  return [
+    rollupPluginNodeResolve(),
+    rollupPluginCJS({
+      include: 'node_modules/**',
+    }),
+    rollupPluginVirtual(buildVirtualJSON(virtualImports)),
+  ];
+}
 
 /**
  * Builds the cache manifest for inclusion into the Service Worker.
@@ -145,14 +154,14 @@ async function build() {
     postcssConfig.minimize = true;
   }
 
-  // Rollup bootstrap to generate graph of source needs. This eventually uses
-  // dynamic import to bring in code required for each page (see router.js).
-  // Does not hash "bootstrap.js" entrypoint, but hashes all generated chunks,
-  // useful for cache busting.
+  // Rollup "entrypoint.js" to generate graph of source needs. This eventually
+  // uses dynamic import to bring in code required for each page (see router).
+  // The entrypoint itself is generated with a dynamic hash, and is imported
+  // via "bootstrap.js" (which is run in all browsers via regular script tag).
   const appBundle = await rollup.rollup({
-    input: 'src/lib/bootstrap.js',
+    input: 'src/lib/entrypoint.js',
     external: disallowExternal,
-    plugins: [rollupPluginPostCSS(postcssConfig), ...defaultPlugins],
+    plugins: [rollupPluginPostCSS(postcssConfig), ...buildDefaultPlugins()],
     manualChunks: (id) => {
       // lit-html/lit-element is our biggest dependency, and is always used
       // together. Return it in its own chunk (~30kb after Terser).
@@ -167,30 +176,62 @@ async function build() {
   });
   const appGenerated = await appBundle.write({
     dynamicImportFunction: 'window._import',
+    entryFileNames: '[name]-[hash].js',
     sourcemap: true,
     dir: 'dist',
     format: 'esm',
   });
   const outputFiles = appGenerated.output.map(({fileName}) => fileName);
 
-  // Rollup basic to generate the top-level script run by all browsers (even ancient ones). This is
-  // just for Analytics.
-  const pageviewBundle = await rollup.rollup({
-    input: 'src/lib/pageview.js',
-    plugins: defaultPlugins,
+  // Save the entrypoint (which has a hashed name) for the all-browser loader code.
+  const entrypoints = appGenerated.output.filter(({isEntry}) => isEntry);
+  if (entrypoints.length !== 1) {
+    throw new Error(`expected single entrypoint, was: ${entrypoints.length}`);
+  }
+  virtualImports.webdev_entrypoint = entrypoints[0].fileName;
+
+  // Rollup basic to generate the top-level script run by all browsers (even
+  // ancient ones). This runs Analytics and imports the entrypoint generated
+  // above (in supported module browsers).
+  const libPrefix = path.join(__dirname, '/src/lib/');
+  const utilsPrefix = path.join(libPrefix, 'utils');
+  const bootstrapBundle = await rollup.rollup({
+    input: 'src/lib/bootstrap.js',
+    plugins: buildDefaultPlugins(),
     external: disallowExternal,
+    manualChunks: (id) => {
+      // This overloads Rollup's manualChunks feature to catch disallowed code.
+      // Bootstrap should only import:
+      //   * virtual imports (config only)
+      //   * itself (Rollup calls us for 'ourself')
+      //   * code inside `src/lib/utils`.
+      // Otherwise, we risk leaking core site code into this ES5-only, fast
+      // bootstrap chunk.
+      if (id in virtualImports || !path.isAbsolute(id)) {
+        return; // ok
+      }
+      if (id === path.join(libPrefix, 'bootstrap.js')) {
+        return undefined; // self, allowed
+      }
+      if (path.relative(utilsPrefix, id).startsWith('../')) {
+        // This looks for code outside the utils folder, which is disallowed.
+        throw new TypeError(
+          `can't import non-utils JS code in bootstrap: ${id}`,
+        );
+      }
+    },
   });
-  const pageviewGenerated = await pageviewBundle.write({
+  const bootstrapGenerated = await bootstrapBundle.write({
     sourcemap: true,
     dir: 'dist',
     format: 'iife',
   });
-  if (pageviewGenerated.output.length !== 1) {
+  if (bootstrapGenerated.output.length !== 1) {
     throw new Error(
-      `pageview generated more than one file: ${pageviewGenerated.output.length}`,
+      `bootstrap generated more than one file: ${bootstrapGenerated.output.length}`,
     );
   }
-  outputFiles.push(pageviewGenerated.output[0].fileName);
+  outputFiles.push(bootstrapGenerated.output[0].fileName);
 
   // Compress the generated source here, as we need the final files and hashes for the Service
   // Worker manifest.
@@ -230,7 +271,7 @@ async function build() {
           'layout-template': layoutTemplate,
         }),
       ),
-      ...defaultPlugins,
+      ...buildDefaultPlugins(),
       OMT(),
     ],
   });

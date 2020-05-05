@@ -34,6 +34,23 @@ function trackEvent({category, action, label, value}) {
 }
 
 /**
+ * Track an error via Analytics with optional context message and fatal notice.
+ *
+ * @param {!Error} error to log
+ * @param {string=} message context to provide around error message
+ * @param {boolean=} fatal whether this is fatal (as per Analytics' logging)
+ */
+export function trackError(error, message = '', fatal = false) {
+  const exDescription = message
+    ? `${message} (${error.message})`
+    : error.message;
+  ga('send', 'exception', {
+    exDescription,
+    exFatal: fatal,
+  });
+}
+
+/**
  * Configure tracking events for any clicks on a link (`<a href="...">`)
  * or another trackable element (class="gc-analytics-event"), searching
  * for (requiring at least `data-category`, but also allowing
@@ -55,7 +72,7 @@ document.addEventListener('click', (e) => {
 
 // Update Analytics dimension if signed-in state changes. This doesn't cause a
 // new pageview implicitly but annotates all further events.
-// We log pageviews only in pageview.js (on entry, for all browsers) and in
+// We log pageviews only in bootstrap.js (on entry, for all browsers) and in
 // loader.js (for dynamic SPA page loads, part of our core bundle).
 store.subscribe(({isSignedIn}) => {
   ga('set', dimensions.SIGNED_IN, isSignedIn ? 1 : 0);
