@@ -225,7 +225,7 @@ For more information, take a look at [Are long JavaScript tasks delaying your Ti
 Interactive?](/long-tasks-devtools/) guide goes into more detail about this topic.
 {% endAside %}
 
-## Optimize your page for  interaction readiness 
+## Optimize your page for interaction readiness 
 
 There are a number of common causes for poor FID and TBT scores in web apps that rely heavily on
 JavaScript:
