@@ -17,6 +17,7 @@
 import {dimensions, id, version} from 'webdev_analytics';
 import entrypoint from 'webdev_entrypoint';
 import {localStorage} from './utils/storage';
+import removeServiceWorkers from './utils/sw-remove';
 
 // eslint-disable-next-line
 window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
@@ -28,7 +29,8 @@ ga('send', 'pageview');
 
 // In future, we can feature-detect other things here and prevent loading core
 // site code. This includes Shadow DOM.
-if ('noModule' in HTMLScriptElement.prototype) {
+const browserSupport = 'noModule' in HTMLScriptElement.prototype;
+if (browserSupport) {
   function prepare() {
     const s = document.createElement('script');
     s.type = 'module';
@@ -40,4 +42,8 @@ if ('noModule' in HTMLScriptElement.prototype) {
   } else {
     window.addEventListener('load', prepare);
   }
+} else {
+  // If we've transitioned into becoming an unsupported browser, then any
+  // previous Service Worker won't be updated. Aggressively remove on load.
+  removeServiceWorkers();
 }

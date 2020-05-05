@@ -11,6 +11,7 @@ import '@webcomponents/webcomponentsjs/webcomponents-loader.js';
 import {swapContent, getPartial} from './loader';
 import * as router from './utils/router';
 import {store} from './store';
+import removeServiceWorkers from './utils/sw-remove';
 
 WebComponents.waitFor(async () => {
   // TODO(samthor): This isn't quite the right class name because not all Web Components are ready
@@ -32,19 +33,18 @@ WebComponents.waitFor(async () => {
   });
 });
 
-if ('serviceWorker' in navigator) {
-  if (serviceWorkerIsSupported(window.location.hostname)) {
-    ensureServiceWorker();
-  } else {
-    removeServiceWorker();
-  }
+if (serviceWorkerIsSupported(window.location.hostname)) {
+  ensureServiceWorker();
+} else {
+  removeServiceWorkers();
 }
 
 function serviceWorkerIsSupported(hostname) {
   // Allow local/prod as well as .netlify staging deploy target.
   const allowedHostnames = ['web.dev', 'localhost'];
   return (
-    allowedHostnames.includes(hostname) || hostname.endsWith('.netlify.com')
+    'serviceWorker' in navigator &&
+    (allowedHostnames.includes(hostname) || hostname.endsWith('.netlify.com'))
   );
 }
 
@@ -82,17 +82,4 @@ function ensureServiceWorker() {
     });
   }
   navigator.serviceWorker.register('/sw.js');
-}
-
-function removeServiceWorker() {
-  console.warn('skipping SW, unsupported hostname:', window.location.hostname);
-
-  // Remove previous Service Worker instances from this hostname. This should never normally
-  // happen but is here for safety.
-  navigator.serviceWorker.getRegistrations().then(async (all) => {
-    await all.map((reg) => reg.unregister());
-    if (all.length) {
-      window.location.reload();
-    }
-  });
 }
