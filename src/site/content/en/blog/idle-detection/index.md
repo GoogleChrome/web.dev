@@ -83,17 +83,6 @@ if ('IdleDetector' in window) {
 }
 ```
 
-### Polyfilling
-
-Some aspects of the Idle Detection API are polyfillable
-and idle detection libraries like [idle.ts](https://github.com/dropbox/idle.ts) exist,
-but these approaches are constrained to a web app's own content area:
-The library running in the context of the web app
-needs to costly poll for input events or listen to visibility changes.
-More restrictively, though, libraries cannot tell today when a user goes idle
-outside of its content area (e.g., when a user is on a different tab
-or logged out of their computer altogether).
-
 ### Idle Detection API concepts
 
 The Idle Detection API assumes that there is some level of engagement between the user,
@@ -171,6 +160,17 @@ contents after 60 seconds of inactivity. You could imagine this being deployed i
 store for kids to doodle on.
 
 ![Ephemeral Canvas demo](demo.png)
+
+### Polyfilling
+
+Some aspects of the Idle Detection API are polyfillable
+and idle detection libraries like [idle.ts](https://github.com/dropbox/idle.ts) exist,
+but these approaches are constrained to a web app's own content area:
+The library running in the context of the web app
+needs to costly poll for input events or listen to visibility changes.
+More restrictively, though, libraries cannot tell today when a user goes idle
+outside of its content area (e.g., when a user is on a different tab
+or logged out of their computer altogether).
 
 ## Security and permissions {: #security-and-permissions }
 
