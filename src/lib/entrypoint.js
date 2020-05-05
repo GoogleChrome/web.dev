@@ -12,6 +12,7 @@ import {swapContent, getPartial} from './loader';
 import * as router from './utils/router';
 import {store} from './store';
 import removeServiceWorkers from './utils/sw-remove';
+import {syncContentIndex} from './content-indexing';
 
 WebComponents.waitFor(async () => {
   // TODO(samthor): This isn't quite the right class name because not all Web Components are ready
@@ -35,6 +36,9 @@ WebComponents.waitFor(async () => {
 
 if (serviceWorkerIsSupported(window.location.hostname)) {
   ensureServiceWorker();
+  syncContentIndex().catch((error) => {
+    console.error('Content Indexing error:', error);
+  });
 } else {
   removeServiceWorkers();
 }
