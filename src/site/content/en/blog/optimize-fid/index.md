@@ -212,7 +212,7 @@ potential JavaScript bloat (loading and executing more than a user may need righ
 Splitting up long tasks can reduce input delay on your site. 
 
 <figure class="w-figure">
-  <img src="./long-task.png" alt="Long Tasks in Chrome DevTools">
+  <img class="w-screenshot" src="./long-task.png" alt="Long Tasks in Chrome DevTools">
   <figcaption class="w-figcaption">Chrome DevTools <a href="https://developers.google.com/web/updates/2020/03/devtools#long-tasks">visualizes Long Tasks</a> in the Performance Panel</figcaption>
 </figure>
 
