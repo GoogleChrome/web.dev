@@ -1,19 +1,34 @@
 import {firebaseConfig} from 'webdev_config';
 import {store} from './store';
 import {clearSignedInState} from './actions';
-import firebaseLoader from './utils/firebase-loader';
+import loadFirebase from './utils/firebase-loader';
 import {trackError} from './analytics';
 
-const firebasePromise = firebaseLoader('app', 'auth', 'performance')();
+const firebasePromise = loadFirebase('app', 'auth', 'performance').then(
+  () => window.firebase,
+);
 firebasePromise.then(initialize).catch((err) => {
   console.error('failed to load Firebase', err);
   trackError(err, 'firebase load');
 });
 
-const firestorePromiseLoader = firebaseLoader('firestore');
+const firestorePromiseLoader = (() => {
+  let p;
+  return () => {
+    if (p) {
+      return p;
+    }
+    // We don't have to block on the top-level Promise, as the scripts run
+    // in-order of being added to the page (async=false).
+    p = loadFirebase('firestore').then(() => {
+      const firestore = window.firebase.firestore();
+      return firestore;
+    });
+    return p;
+  };
+})();
 
-function initialize() {
-  const {firebase} = window;
+function initialize(firebase) {
   firebase.initializeApp(firebaseConfig);
   firebase.performance(); // initialize performance monitoring
 
