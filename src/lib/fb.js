@@ -4,7 +4,9 @@ import {clearSignedInState} from './actions';
 import loadFirebase from './utils/firebase-loader';
 import {trackError} from './analytics';
 
-const firebasePromise = loadFirebase('app', 'auth', 'performance').then(() => window.firebase);
+const firebasePromise = loadFirebase('app', 'auth', 'performance').then(
+  () => window.firebase,
+);
 firebasePromise.then(initialize).catch((err) => {
   console.error('failed to load Firebase', err);
   trackError(err, 'firebase load');
