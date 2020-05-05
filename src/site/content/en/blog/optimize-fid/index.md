@@ -258,7 +258,7 @@ critical path, users were able to interact with the page much sooner.
 
 +   Many sites include third-party tags and analytics which can keep the network busy and
     make the main thread periodically unresponsive, impacting interaction latency. Explore
-    on-demand loading of third-party code (e.g maybe don't load those below-the-fold ads until
+    on-demand loading of third-party code (e.g. maybe don't load those below-the-fold ads until
     they're scrolled closer to the viewport).
 +   In some cases, third-party scripts can pre-empt first-party ones in terms of priority and
     bandwidth on the main thread, also delaying how soon a page is interaction-ready. Attempt to
