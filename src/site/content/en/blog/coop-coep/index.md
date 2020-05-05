@@ -14,7 +14,7 @@ authors:
   - agektmr
 hero: hero.jpg
 date: 2020-04-13
-updated: 2020-04-28
+updated: 2020-05-05
 tags:
   - post
   - security
@@ -55,7 +55,7 @@ means those resources being loaded cross-origin require opt-ins.
 
 You can determine whether a web page is in a cross-origin isolated state by
 examining
-[`self.crossOriginIsolated`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated.).
+[`self.crossOriginIsolated`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated).
 (This works on Firefox but has yet to be implemented in Chrome).
 
 This article shows how to use these new headers. In [a follow-up
