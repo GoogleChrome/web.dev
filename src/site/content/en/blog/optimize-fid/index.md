@@ -159,7 +159,7 @@ defer](https://javascript.info/script-async-defer) for scripts that are not nece
 critical-path or above-the-fold content.	
 
 ```html	
-<script defer src="..."></script>	
+<script defer src="…"></script>	
 <script async src="..."></script>	
 ```	
 
