@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2020-05-04
+updated: 2020-05-05
 description: |
   This post introduces the Cumulative Layout Shift (CLS) metric and explains
   how to measure it
@@ -78,8 +78,8 @@ scores](#layout-shift-score) are calculated.)
   <source srcset="../vitals/cls_8x2.svg" media="(min-width: 640px)">
   <img class="w-screenshot w-screenshot--filled"
       src="../vitals/cls_4x3.svg"
-      alt="Good fid values are 2.5 seconds, poor values are greater than 4.0
-            seconds and anything in between needs improvement">
+      alt="Good CLS values are under 0.1, poor values are greater than 0.25
+            and anything in between needs improvement">
 </picture>
 
 ### What is a good CLS score?
