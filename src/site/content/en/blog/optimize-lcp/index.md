@@ -4,7 +4,7 @@ subhead: How to render your main content faster.
 authors:
   - houssein
 date: 2020-05-05
-hero: hero.png
+hero: hero.jpg
 alt: Optimize LCP banner
 description: | 
   Largest Contentful Paint (LCP) can be used to determine when the main content of the page has
@@ -14,9 +14,6 @@ tags:
   - post
   - fast
   - web-vitals
-  - largest-contenful-paint
-  - lcp
-  - lighthouse
 ---
 
 <blockquote>
