@@ -3,7 +3,7 @@ title: Optimize Largest Contentful Paint
 subhead: How to render your main content faster.
 authors:
   - houssein
-date: 2020-04-30
+date: 2020-05-04
 hero: hero.png
 alt: Optimize LCP banner
 description: | 
