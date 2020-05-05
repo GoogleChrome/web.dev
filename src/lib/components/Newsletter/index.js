@@ -14,6 +14,7 @@ import {debounce} from '../../utils/debounce';
 class Newsletter extends BaseElement {
   constructor() {
     super();
+    this.onIFrameLoad = this.onIFrameLoad.bind(this);
     this.resizeIFrame = debounce(this.resizeIFrame.bind(this), 100);
   }
 
@@ -21,18 +22,27 @@ class Newsletter extends BaseElement {
     super.connectedCallback();
     this.iframe = this.querySelector('iframe');
     if (this.iframe) {
-      this.iframe.scrolling = 'no';
-      this.iframe.contentWindow.document.querySelectorAll('a').forEach((a) => {
-        a.target = a.target === '_blank' ? a.target : '_parent';
-      });
-      this.resizeIFrame();
-      window.addEventListener('resize', this.resizeIFrame);
+      if (this.iframe.contentWindow.document.readyState === 'complete') {
+        this.onIFrameLoad();
+      } else {
+        this.iframe.addEventListener('load', this.onIFrameLoad);
+      }
     }
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     window.removeEventListener('resize', this.resizeIFrame);
+  }
+
+  onIFrameLoad() {
+    this.iframe.scrolling = 'no';
+    this.iframe.contentWindow.document
+      .querySelectorAll('a')
+      .forEach((a) => (a.target = '_parent'));
+    this.resizeIFrame();
+    window.addEventListener('resize', this.resizeIFrame);
+    this.iframe.removeEventListener('load', this.onIFrameLoad);
   }
 
   resizeIFrame() {
