@@ -24,7 +24,7 @@ CSS Grid brought a delightful spacing feature called [`grid-gap`](https://develo
 }
 ```
 
-## Browser compatibility
+### Browser compatibility
 
 At the time of writing `gap` is supported in desktop Firefox (version 63), Firefox for Android (version 63), and Chromium-based browsers (version 85). See [Browser compatibility](https://developer.mozilla.org/docs/Web/CSS/gap#Browser_compatibility) for updates.
 
@@ -76,7 +76,7 @@ Gap can be passed 1 length, which will be used for both row and column.
 ```
 
 {% CompareCaption %}
-Set both rows and columns at once
+Set both rows and columns **together** at once
 {% endCompareCaption %}
 
 {% endCompare %}
@@ -89,10 +89,6 @@ Set both rows and columns at once
   column-gap: 10px;
 }
 ```
-
-{% CompareCaption %}
-Set them separately
-{% endCompareCaption %}
 
 {% endCompare %}
 </div>
@@ -165,9 +161,8 @@ The following are patterns that folks have used to get gap-like spacing.
 The above are not a full replacement for `gap` though, and often need `@media` query adjustments to account for wrapping scenarios, writing modes or direction. Adding 1 or 2 media queries doesn't seem so bad, but they can add up and lead to complicated layout logic.
 
 What the above author really intended was to have none of the child items touch. 
-### The Antidote
+### The Antidote: gap
 
-Example #3 - gap
 ```css
 .layout {
   display: flex;
@@ -175,11 +170,11 @@ Example #3 - gap
 }
 ```
 
-{% Compare 'better', 'Notice' %}
-The ownership of the *spacing shifts from the child to the parent*
-{% endCompare %}
+{% Aside %}
+The ownership of the spacing shifts from the child to the parent
+{% endAside %}
 
-In the first 2 examples (without Flexbox `gap`), the children are targeted and assigned spacing from other elements. In Example #3, the container owns the spacing and each child can relieve itself of the burden, while also centralizing the spacing ownership. 
+In the first 2 examples (without Flexbox `gap`), the children are targeted and assigned spacing from other elements. In antidote gap example, the container owns the spacing. Each child can relieve itself of the burden, while also centralizing the spacing ownership. Reorder, change viewports, remove elements, append new elements, etc and spacing remains consistent. No new selectors, no new media queries, just space.
 
 ## Chromium DevTools Updates
 With these updates come changes to Chromium DevTools, notice how the **Styles** pane handles `grid-gap` and `gap` now 👍
