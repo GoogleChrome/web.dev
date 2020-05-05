@@ -59,10 +59,10 @@ compiles, and executes on your web page will directly reduce FID.
 The browser cannot respond to most user input while it's executing JavaScript on the main thread. In other words, the
 browser can't respond to user interactions while the main thread is busy. To improve this:
 
-+   [Reduce JavaScript execution time](#reduce-javascript-execution)
-+   [Break up Long Tasks](#long-tasks)
-+   [Optimize your page for interaction readiness](#optimize-interaction-readiness)
-+   [Use a web worker](#web-worker)
+* [Reduce JavaScript execution time](#reduce-javascript-execution)
+* [Break up Long Tasks](#long-tasks)
+* [Optimize your page for interaction readiness](#optimize-interaction-readiness)
+* [Use a web worker](#web-worker)
 
 ### Reduce JavaScript execution time {: #reduce-javascript-execution }
 
