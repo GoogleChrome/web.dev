@@ -1,0 +1,17 @@
+@import '../settings/colors';
+
+#w-feedback__dropdown {
+  display: none;
+}
+
+#w-feedback__dropdown + .w-feedback__label + .w-feedback__form {
+  display: none;
+}
+
+#w-feedback__dropdown:checked + .w-feedback__label + .w-feedback__form {
+  display: block;
+}
+
+#w-feedback__dropdown:checked + .w-feedback__label .w-details__header::after {
+  transform: rotate(180deg) translateY(50%);
+}

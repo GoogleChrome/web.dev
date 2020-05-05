@@ -1,0 +1,80 @@
+<web-feedback>
+  <input id="w-feedback__dropdown" type="checkbox">
+  <label class="w-feedback__label" for="w-feedback__dropdown">
+    <h2 class="w-details__header">Give feedback</h2>
+  </label>
+  <form class="w-feedback__form">
+    <small>All fields optional</small>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Yes</th>
+          <th>No</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>
+            <label for="page_helpful">Was this page helpful?</label>
+          </th>
+          <td>
+            <input type="radio" name="page_helpful" value="yes">
+          </td>
+          <td>
+            <input type="radio" name="page_helpful" value="no">
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label for="met_goals">Did this page help you complete your goal(s)?</label>
+          </th>
+          <td>
+            <input type="radio" name="met_goals" value="yes">
+          </td>
+          <td>
+            <input type="radio" name="met_goals" value="no">
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label for="needed_info">Does this page have the information you needed?</label>
+          </th>
+          <td>
+            <input type="radio" name="needed_info" value="yes">
+          </td>
+          <td>
+            <input type="radio" name="needed_info" value="no">
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label for="accurate_info">Is the page's information accurate?</label>
+          </th>
+          <td>
+            <input type="radio" name="accurate_info" value="yes">
+          </td>
+          <td>
+            <input type="radio" name="accurate_info" value="no">
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label for="readable">Was this page easy to read?</label>
+          </th>
+          <td>
+            <input type="radio" name="readable" value="yes">
+          </td>
+          <td>
+            <input type="radio" name="readable" value="no">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="w-text--center">
+      <button class="w-button w-button--primary" type="submit">
+        Submit
+      </button>
+    </div>
+  </form>
+</web-feedback>

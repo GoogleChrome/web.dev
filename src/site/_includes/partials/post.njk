@@ -88,6 +88,8 @@
       <a href="#">Suggest translation</a> #}
     </div>
 
+    {% include 'partials/feedback.njk' %}
+
     {% if codelabs %}
       {% CodelabsCallout codelabs, lang %}
     {% endif %}
