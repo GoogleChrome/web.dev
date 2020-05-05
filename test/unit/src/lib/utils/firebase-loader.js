@@ -19,13 +19,13 @@ describe('firebase-loader', function() {
       let nodes = [];
 
       try {
-        nodes = document.head.querySelector(
+        nodes = document.head.querySelectorAll(
           'script[src^="//www.gstatic.com/firebasejs/"]',
         );
         assert(nodes.length === 1);
 
         loadFirebase('app', 'performance');
-        nodes = document.head.querySelector(
+        nodes = document.head.querySelectorAll(
           'script[src^="//www.gstatic.com/firebasejs/"]',
         );
         assert(nodes.length === 2, 'nodes should only contain one additional');
