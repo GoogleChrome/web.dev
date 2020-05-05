@@ -14,6 +14,12 @@ using when it sends an HTML file, the browser won't know what character each byt
 The [character encoding declaration](https://html.spec.whatwg.org/multipage/semantics.html#charset)
 specification solves this problem. 
 
+{% Aside %}
+  Theoretically, a late `<meta charset>` element (one that is not fully contained in
+  the first 1024 bytes of the document) can also significantly affect load performance.
+  See [Issue #10023](https://github.com/GoogleChrome/lighthouse/issues/10023#issuecomment-575129051).
+{% endAside %}
+
 ## How the Lighthouse `charset` audit fails
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
