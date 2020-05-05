@@ -5,7 +5,7 @@ description: |
   Learn how to add a character encoding declaration to your HTML.
 web_lighthouse:
   - charset
-date: 2020-05-01
+date: 2020-05-05
 ---
 
 Servers and browsers communicate with each other by sending bytes of data over the
