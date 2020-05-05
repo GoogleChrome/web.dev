@@ -44,7 +44,10 @@ class UrlChooser extends BaseElement {
           />
           <button
             ?disabled=${this.disabled}
-            class="lh-enterurl__close"
+            class="lh-enterurl__close gc-analytics-event"
+            data-category="web.dev"
+            data-label="measure, remove url"
+            data-action="click"
             aria-label="Remove URL"
             @click=${this.onClearInput}
           ></button>
@@ -52,14 +55,20 @@ class UrlChooser extends BaseElement {
         <div class="lh-controls">
           <button
             ?disabled=${this.disabled}
-            class="w-button w-button--secondary"
+            class="w-button w-button--secondary gc-analytics-event"
+            data-category="web.dev"
+            data-label="measure, switch url"
+            data-action="click"
             @click=${this.onSwitchUrl}
           >
             Switch URL
           </button>
           <button
             ?disabled=${this.disabled}
-            class="w-button w-button--primary"
+            class="w-button w-button--primary gc-analytics-event"
+            data-category="web.dev"
+            data-label="measure, run audit"
+            data-action="click"
             id="run-lh-button"
             @click=${this.onRequestAudit}
           >
