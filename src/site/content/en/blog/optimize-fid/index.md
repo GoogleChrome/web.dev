@@ -40,7 +40,7 @@ simulated in a lab environment. **A real user interaction** is required in order
 response delay.
 
 <picture>
-  <source srcset="../vitals/fid_8x2.svg" media="(min-width: 640px)">
+  <source srcset="/vitals/fid_8x2.svg" media="(min-width: 640px)">
   <img class="w-screenshot w-screenshot--filled"
       src="/vitals/fid_4x3.svg"
       alt="Good fid values are 2.5 seconds, poor values are greater than 4.0
