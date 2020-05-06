@@ -23,9 +23,9 @@ module.exports = {
         ],
       },
       {
-        title: "Prepare files for embedding",
+        title: "Prepare media files for the web",
         pathItems: [
-          "for-embedding",
+          "for-the-web",
           "containers-and-codecs",
           "bitrate",
           "resolution",
@@ -34,7 +34,7 @@ module.exports = {
         ],
       },
       {
-        title: "Use markup correctly",
+        title: "Prepare the web page",
         pathItems: [
           "the-video-tag",
           "the-audio-tag",
