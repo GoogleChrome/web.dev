@@ -44,7 +44,7 @@ module.exports = {
         ],
       },
       {
-        title: "Using media frameworks",
+        title: "Use media frameworks",
         pathItems: [
           "for-frameworks",
           "splitting-streams",
@@ -52,7 +52,7 @@ module.exports = {
         ],
       },
       {
-        title: "Serving media",
+        title: "The media server",
         pathItems: ["preloading", "server-basics"],
       },
     ],
