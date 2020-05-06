@@ -11,11 +11,14 @@ describe('Service worker partials', function() {
     const htmlPath = path.join(dist, 'en', 'index.html');
     const $ = cheerio.load(fs.readFileSync(htmlPath));
     const partialFromHtml = {
-      raw: $('#content').html(),
+      description: $('meta[name="description"]').attr('content'),
+      imageSrc: $('meta[itemprop="image"]').attr('content'),
       lang: $('html').attr('lang'),
-      title: $('title').text(),
-      rss: $('link[type="application/atom+xml"]').attr('href'),
       offline: Boolean($('meta[name="offline"]').attr('content')) || false,
+      raw: $('#content').html(),
+      rss: $('link[type="application/atom+xml"]').attr('href'),
+      title: $('title').text(),
+      url: $('link[rel="canonical"]').attr('href'),
     };
 
     assert.deepStrictEqual(partial, partialFromHtml);

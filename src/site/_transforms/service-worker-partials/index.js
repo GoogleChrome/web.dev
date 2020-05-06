@@ -38,6 +38,7 @@ const getPartial = (content) => {
     lang: $('html').attr('lang'),
     offline: Boolean($('meta[name="offline"]').attr('content')) || false,
     raw: $('#content').html(),
+    rss: $('link[type="application/atom+xml"]').attr('href'),
     title: $('title').text(),
     url: $('link[rel="canonical"]').attr('href'),
   };

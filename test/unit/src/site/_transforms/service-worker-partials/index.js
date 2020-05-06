@@ -12,7 +12,7 @@ describe('service-worker-partials', function() {
   let $;
 
   beforeEach(function() {
-    const fixture = `<html lang="en"><head><title>Test title</title><link rel="alternate" href="/feed.xml" type="application/atom+xml" data-title="web.dev feed"></head><body><div id="content"><div class="guide-landing-page"><div>Hello</div></div><div>Bonus sibling</div></div></body></html>`;
+    const fixture = `<html lang="en"><head><title>Test title</title><meta name="description" content="test description"><meta itemprop="image" content="https://example.com/image.png"><link rel="alternate" href="/feed.xml" type="application/atom+xml" data-title="web.dev feed"><link rel="canonical" href="https://web.dev/canonical-url/"></head><body><div id="content"><div class="guide-landing-page"><div>Hello</div></div><div>Bonus sibling</div</div></body></html>`;
     $ = cheerio.load(fixture);
   });
 
@@ -24,11 +24,14 @@ describe('service-worker-partials', function() {
   describe('serviceWorkerPartials', function() {
     it('converts a string of html to a partial and writes it to disk', async function() {
       const expected = {
-        raw: $('#content').html(),
+        description: $('meta[name="description"]').attr('content'),
+        imageSrc: $('meta[itemprop="image"]').attr('content'),
         lang: $('html').attr('lang'),
-        title: $('title').text(),
-        rss: $('link[type="application/atom+xml"]').attr('href'),
         offline: false,
+        raw: $('#content').html(),
+        rss: $('link[type="application/atom+xml"]').attr('href'),
+        title: $('title').text(),
+        url: $('link[rel="canonical"]').attr('href'),
       };
 
       const hash = Math.random().toString(36);
@@ -55,11 +58,14 @@ describe('service-worker-partials', function() {
     it('returns a partial for index.html pages', function() {
       const actual = getPartial($.html());
       const expected = {
-        raw: $('#content').html(),
+        description: $('meta[name="description"]').attr('content'),
+        imageSrc: $('meta[itemprop="image"]').attr('content'),
         lang: $('html').attr('lang'),
-        title: $('title').text(),
-        rss: $('link[type="application/atom+xml"]').attr('href'),
         offline: false,
+        raw: $('#content').html(),
+        rss: $('link[type="application/atom+xml"]').attr('href'),
+        title: $('title').text(),
+        url: $('link[rel="canonical"]').attr('href'),
       };
       assert.deepStrictEqual(actual, expected);
     });
@@ -68,11 +74,14 @@ describe('service-worker-partials', function() {
       $('head').append(`<meta name="offline" content="true">`);
       const actual = getPartial($.html());
       const expected = {
-        raw: $('#content').html(),
+        description: $('meta[name="description"]').attr('content'),
+        imageSrc: $('meta[itemprop="image"]').attr('content'),
         lang: $('html').attr('lang'),
-        title: $('title').text(),
-        rss: $('link[type="application/atom+xml"]').attr('href'),
         offline: true,
+        raw: $('#content').html(),
+        rss: $('link[type="application/atom+xml"]').attr('href'),
+        title: $('title').text(),
+        url: $('link[rel="canonical"]').attr('href'),
       };
       assert.deepStrictEqual(actual, expected);
     });
@@ -81,11 +90,14 @@ describe('service-worker-partials', function() {
   describe('writePartial', function() {
     it('writes a partial to disk', async function() {
       const expected = {
-        raw: $('#content').html(),
+        description: $('meta[name="description"]').attr('content'),
+        imageSrc: $('meta[itemprop="image"]').attr('content'),
         lang: $('html').attr('lang'),
-        title: $('title').text(),
-        rss: $('link[type="application/atom+xml"]').attr('href'),
         offline: false,
+        raw: $('#content').html(),
+        rss: $('link[type="application/atom+xml"]').attr('href'),
+        title: $('title').text(),
+        url: $('link[rel="canonical"]').attr('href'),
       };
 
       const hash = Math.random().toString(36);
