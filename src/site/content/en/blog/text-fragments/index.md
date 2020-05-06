@@ -99,7 +99,7 @@ This is the problem that Text Fragments solve 🎉.
 
 <figure class="w-figure">
   <img src="id-missing.png" alt="" class="w-screenshot" width="400">
-  <figcaption class="w-figcaption">Dev Tools showing a heading without an <code>`id`</code>.</figcaption>
+  <figcaption class="w-figcaption">Dev Tools showing a heading without an <code>id</code>.</figcaption>
 </figure>
 
 ## Text Fragments
