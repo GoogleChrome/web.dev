@@ -13,6 +13,30 @@ const DEFAULT_ICON = {
   type: 'image/png',
 };
 
+/**
+ * Returns an instance of the ContentIndex associated with the active
+ * registration, if supported in the current browser.
+ *
+ * @return {ContentIndex|undefined} The ContentIndex interface, or undefined if
+ * that functionality isn't supported.
+ */
+async function getContentIndexInterface() {
+  if ('serviceWorker' in navigator) {
+    const registration = await navigator.serviceWorker.ready;
+    return registration.index;
+  }
+
+  // Just to be explicit about the return value.
+  return undefined;
+}
+
+/**
+ * Normalizes an image URL to the dimensions and format expected by the
+ * Content Indexing API.
+ *
+ * @param {string} imgSrc The URL for an image asset, usually on imgix.
+ * @return {Object} The image metadata fields that the content index expects.
+ */
 function getIconFromImageSrc(imgSrc) {
   if (!imgSrc) {
     return DEFAULT_ICON;
@@ -38,18 +62,72 @@ function getIconFromImageSrc(imgSrc) {
   };
 }
 
-// This method syncs the currently cached media with the Content Indexing API
-// (on browsers that support it). The Cache Storage is the source of truth.
-export async function syncContentIndex() {
-  const registration = await navigator.serviceWorker.ready;
+/**
+ * Adds a given pageURL to the content index.
+ *
+ * Metadata for the indexed page is read from the Cache Storage API, by
+ * translating the page's URL into a cache key for the JSON metadata.
+ *
+ * @param {string} pageURL The URL of the page being indexed, or the cache key
+ * corresponding to that page's metadata.
+ * @param {Cache} [cache] If set, an open Cache object that the metadata can
+ * be read from.
+ */
+export async function addPageToContentIndex(pageURL, cache) {
+  const index = await getContentIndexInterface();
   //  Bail early if the Content Indexing API isn't supported.
-  if (!('index' in registration)) {
+  if (!index) {
+    return;
+  }
+
+  const cacheKey = pageURL.endsWith('index.json')
+    ? pageURL
+    : pageURL + 'index.json';
+
+  if (!cache) {
+    cache = await caches.open(CACHE_NAME);
+  }
+
+  const response = await cache.match(cacheKey);
+  // If for some reason there's no JSON in the cache for our cache key, bail.
+  if (!response) {
+    return;
+  }
+
+  const {description, imageSrc, title, url} = await response.json();
+
+  // We can use a default image, but the other fields need to be set.
+  if (!(title && description && url)) {
+    return;
+  }
+
+  const icon = getIconFromImageSrc(imageSrc);
+
+  await index.add({
+    description,
+    title,
+    url,
+    category: 'article',
+    id: cacheKey,
+    icons: [icon],
+    launchUrl: url,
+  });
+}
+
+/**
+ * Syncs the currently cached media with the Content Indexing API
+ * (on browsers that support it). The Cache Storage is the source of truth.
+ */
+export async function syncContentIndex() {
+  const index = await getContentIndexInterface();
+  //  Bail early if the Content Indexing API isn't supported.
+  if (!index) {
     return;
   }
 
   // Get a list of everything currently in the content index.
   const idsInIndex = new Set();
-  for (const contentDescription of await registration.index.getAll()) {
+  for (const contentDescription of await index.getAll()) {
     // Add each currently indexed id to the set.
     idsInIndex.add(contentDescription.id);
   }
@@ -69,30 +147,12 @@ export async function syncContentIndex() {
       continue;
     }
 
-    const response = await cache.match(request);
-    const {description, imageSrc, title, url} = await response.json();
-
-    // We can use a default image, but the other fields need to be set.
-    if (!(title && description && url)) {
-      continue;
-    }
-
-    const icon = getIconFromImageSrc(imageSrc);
-
-    await registration.index.add({
-      description,
-      id,
-      title,
-      url,
-      category: 'article',
-      icons: [icon],
-      launchUrl: url,
-    });
+    await addPageToContentIndex(id, cache);
   }
 
   // Finally, for all of the ids that are currently in the index but aren't
   // cached, remove them from the index.
   for (const id of idsInIndex) {
-    await registration.index.delete(id);
+    await index.delete(id);
   }
 }

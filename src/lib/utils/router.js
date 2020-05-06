@@ -1,4 +1,6 @@
 import './abort-controller-polyfill';
+import {addPageToContentIndex} from '../content-indexing';
+import {trackError} from '../analytics';
 
 let globalHandler;
 let recentActiveUrl; // current URL not including hash
@@ -193,6 +195,9 @@ export function route(url) {
   globalHandler(candidateUrl, u.hash).then((aborted) => {
     if (!aborted) {
       scrollToHashOrTop(u.hash);
+      addPageToContentIndex(u.href).catch((error) => {
+        trackError(error, 'Content Indexing error');
+      });
     }
   });
   return true;
