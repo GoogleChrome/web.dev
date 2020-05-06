@@ -6,7 +6,7 @@ description: |
   system shell is only a container multiple multiple data streams and different
   allowable types of encodings.
 date: 2017-06-30
-updated: 2020-04-30
+updated: 2020-5-15
 tags:
   - FFmpeg
   - files
@@ -15,13 +15,10 @@ tags:
 
 ## Change the container
 
-To support multiple browsers, you'll need to convert your mov file to two different containers: a
-
-I'll start by changing the file container. You'll recall that I'm starting with
-a file that has an mov extension. I'm going to use FFmpeg to change the
-container type in two different ways. In so doing, I'll create two new files,
-one an mp4 and the other a webm file. In actual practice, you would likely
-specify a codec at the same time. For now, I'm letting FFmpeg use its defaults.
+To support multiple browsers, you'll need to use FFmpeg toconvert your mov file
+to two different containers: an mp4 container and a webm container. In actual
+practice, you would likely specify a codec at the same time. For now, I'm
+letting FFmpeg use its defaults.
 
 ```bash
 ffmpeg -i glocken.mov glocken.mp4
