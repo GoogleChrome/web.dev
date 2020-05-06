@@ -11,7 +11,7 @@ description: |
   finished rendering on the screen. Learn how to optimize LCP by improving slow server response
   times, resource load times and client-side rendering.
 tags:
-  - post
+  - blog
   - fast
   - web-vitals
 ---

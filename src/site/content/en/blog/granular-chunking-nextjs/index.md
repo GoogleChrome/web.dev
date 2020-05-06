@@ -9,7 +9,7 @@ alt: Jigsaw pieces connecting
 description: | 
   Learn how both Next.js and Gatsby have improved their build output to minimize duplicate code and improve page load performance
 tags:
-  - post
+  - blog
   - performance
   - frameworks
 ---

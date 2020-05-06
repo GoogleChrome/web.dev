@@ -16,7 +16,7 @@ authors:
 hero: hero.jpg
 date: 2020-05-04
 tags:
-  - post
+  - blog
   - security
 ---
 ## Introduction
