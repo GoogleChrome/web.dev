@@ -1,5 +1,5 @@
 /**
- * @fileoverview Handles SPA loading and importing JS entrypoint for web.dev.
+ * @fileoverview Handles SPA loading and importing the correct page entrypoint for web.dev.
  *
  * Exports a single function, swapContent, which ensures that the inner contents of the web.dev
  * template is correct, and that the correct JS entrypoint is ready.

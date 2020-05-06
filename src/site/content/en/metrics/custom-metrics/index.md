@@ -358,7 +358,7 @@ try {
 }
 ```
 
-Another metric developers who user service worker may care about is the service
+Another metric developers who use service worker may care about is the service
 worker startup time for navigation requests. This is the amount of time it takes
 the browser to start the service worker thread before it can start intercepting
 fetch events.
