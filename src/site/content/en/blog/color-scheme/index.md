@@ -5,7 +5,7 @@ subhead: |
   allow developers to opt their pages in to the theme-specific defaults of the user agent stylesheet.
 authors:
   - thomassteiner
-date: 2019-11-25
+date: 2020-04-08
 hero: hero.jpg
 alt: Pigeons on a wall with a sharp black and white contrast in the background.
 description: |
