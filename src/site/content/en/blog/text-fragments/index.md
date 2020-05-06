@@ -98,7 +98,7 @@ meaning there is no way I can link to this heading.
 This is the problem that Text Fragments solve 🎉.
 
 <figure class="w-figure">
-  <img src="id-missing.png" alt="" class="w-screenshot" width="400">
+  <img src="id-missing.png" alt="" class="w-screenshot" width="600">
   <figcaption class="w-figcaption">Dev Tools showing a heading without an <code>id</code>.</figcaption>
 </figure>
 
