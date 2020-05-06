@@ -11,7 +11,7 @@ const outputPath = path.join(
   'index.html',
 );
 
-describe('recent-posts', function() {
+describe('recent-blog-posts', function() {
   it('does not include drafts', async function() {
     const expected = '<p>test-5</p><p>test-4</p><p>test-2</p>';
     const actual = fs.readFileSync(outputPath, 'utf8');

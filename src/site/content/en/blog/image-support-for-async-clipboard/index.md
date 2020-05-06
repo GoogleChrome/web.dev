@@ -7,7 +7,7 @@ description: Chrome 76 adds expands the functionality of the Async Clipboard API
 date: 2019-07-03
 updated: 2020-03-19
 tags:
-  - post
+  - blog
   - capabilities
   - fugu
   - chrome76

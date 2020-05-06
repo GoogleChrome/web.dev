@@ -7,7 +7,7 @@ description: Your PWA might cache articles and media files, but how will your us
 date: 2019-12-12
 updated: 2020-04-15
 tags:
-  - post
+  - blog
   - capabilities
   - fugu
   - service-worker
@@ -22,7 +22,7 @@ origin_trial:
 ---
 
 {% Aside %}
-  The Content Indexing API begins an origin trial in Chrome 80 as part of Chrome's 
+  The Content Indexing API begins an origin trial in Chrome 80 as part of Chrome's
   [Capabilities project](https://developers.google.com/web/updates/capabilities).
   This post will be updated as the implementation progresses.
 {% endAside %}

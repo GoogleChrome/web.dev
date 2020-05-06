@@ -7,7 +7,7 @@ description: Access to the user's contacts has been a feature of native apps sin
 date: 2019-08-07
 updated: 2020-04-15
 tags:
-  - post
+  - blog
   - capabilities
   - fugu
   - contacts

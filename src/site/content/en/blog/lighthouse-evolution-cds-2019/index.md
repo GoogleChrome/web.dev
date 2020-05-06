@@ -3,14 +3,14 @@ title: "Lighthouse evolution: continuous integration, new performance score form
 subhead: |
   Get the latest Lighthouse updates and insights from Chrome Developer Summit 2019.
 authors:
-  - egsweeny  
+  - egsweeny
 date: 2019-12-16
 description: |
   Read about the latest Lighthouse updates announced at Chrome Developer Summit 2019.
 hero: lighthouse-logo.svg
 alt: Lighthouse logo.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - fast
 ---
 
@@ -74,7 +74,7 @@ The Lighthouse team is still working to ensure that all scoring curves are
 fine-tuned, and the metrics are mature and thoroughly tested. They aim to ship
 the Lighthouse v6 Performance score in January 2020.
 
-{% Aside %} 
+{% Aside %}
 Performance engineers sometimes find speed tools results difficult
 to reproduce due to two discrete challenges--variability and cross-environment
 inconsistency. Variability is the issue of seeing numbers change even when the
@@ -88,7 +88,7 @@ and [how you can deal with
 it](https://developers.google.com/web/tools/lighthouse/variability#strategies_for_dealing_with_variance).
 The Lighthouse team is also investigating calibration methods to reduce
 differences between environments, but it's fair to expect that different
-conditions and hardware lead to different measurements—at least for now. 
+conditions and hardware lead to different measurements—at least for now.
 {% endAside %}
 
 ## Lighthouse Stack Packs
@@ -102,7 +102,7 @@ recommendations, curated by community experts (like you!), on top of Lighthouse
 report core audits.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./lighthouse-stack-packs.png" 
+  <img class="w-screenshot" src="./lighthouse-stack-packs.png"
        alt="Lighthouse report recommendation for deferring offscreen images in React applications.">
 </figure>
 

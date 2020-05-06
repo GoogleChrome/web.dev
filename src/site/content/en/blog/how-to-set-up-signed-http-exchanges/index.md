@@ -7,7 +7,7 @@ authors:
 description: How to generate a TLS certificate with SXG extensions, install tools for generating SXG files, and configure nginx to serve SXG files.
 date: 2020-03-11
 tags:
-  - post
+  - blog
   - SXG
   - nginx
 ---
