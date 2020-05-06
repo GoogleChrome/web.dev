@@ -7,7 +7,7 @@ description: |
   The Idle Detection API notifies developers when a user is idle, indicating such things as lack of
   interaction with the keyboard, mouse, screen, activation of a screensaver, locking of the screen,
   or moving to a different screen. A developer-defined threshold triggers the notification.
-date: 2020-04-30
+date: 2020-05-06
 tags:
   - post
   - idle-detection
@@ -50,7 +50,7 @@ can limit these calculations to moments when the user interacts with their devic
 | 1. Create explainer                      | [Complete][explainer]    |
 | 2. Create initial draft of specification | Not started              |
 | 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. Origin trial                          | Not started              |
+| 4. Origin trial                          | [In progress][OT]        |
 | 5. Launch                                | Not started              |
 
 </div>
@@ -106,10 +106,12 @@ this definition is left to the user agent.
 
 ### Using the Idle Detection API
 
-The first step when using the Idle Detection API is to initialize the `IdleDetector`.
+The first step when using the Idle Detection API is
+to ensure the `'notifications'` permission is granted.
+The second step is then to initialize the `IdleDetector`.
 It takes an object with the desired idle `threshold` in milliseconds.
 The minimum `threshold` is 60.000 milliseconds (1 minute).
-You start the idle detection by calling the
+You can finally start the idle detection by calling the
 `IdleDetector`'s `start()` method, and you can stop it again by calling the `stop()` method.
 
 There are two ways to get updates on the user's idle state: the first is for one-off requests by
@@ -117,40 +119,46 @@ checking the `IdleDetector`'s `state` property. The sample below polls the `stat
 which after one minute of inactivity will be reported as the `user` being `"idle"`.
 
 ```js
-try {
-  const idleDetector = new IdleDetector({ threshold: 60000 });
-  await idleDetector.start();
-  console.log("Initial idle state:", idleDetector.state);
-  // Every 10 seconds poll the user's idle state
-  const interval = setInterval(() => {
-    console.log("Current idle state:", idleDetector.state);
-  }, 10 * 1000);
-  // After 2min, stop the idle detection
-  setTimeout(async () => {
-    clearInterval(interval);
-    await idleDetector.stop();
-  }, 120 * 1000);
-} catch (err) {
-  // Deal with initialization errors like
-  // permission denied, running outside of top-level frame, etc.
-  console.error(err.name, err.message);
+const {state} = (await navigator.permissions.query({name: 'notifications'}));
+if (state === 'granted') {
+  try {
+    const idleDetector = new IdleDetector({threshold: 60000});  
+    await idleDetector.start();
+    console.log("Initial idle state:", idleDetector.state);
+    // Every 10 seconds poll the user's idle state
+    const interval = setInterval(() => {
+      console.log("Current idle state:", idleDetector.state);
+    }, 10 * 1000);
+    // After 2min, stop the idle detection
+    setTimeout(async () => {
+      clearInterval(interval);
+      await idleDetector.stop();
+    }, 120 * 1000);
+  } catch (err) {
+    // Deal with initialization errors like
+    // permission denied, running outside of top-level frame, etc.
+    console.error(err.name, err.message);
+  }
 }
 ```
 
 The second, _and preferred_, way is by subscribing to `change` events via an event listener.
 
 ```js
-try {
-  let idleDetector = new IdleDetector({ threshold: 60 });
-  idleDetector.addEventListener("change", (e) => {
-    const state = e.target.state;
-    console.log(`Idle change: ${state.user}, ${state.screen}`);
-  });
-  await idleDetector.start();
-} catch (err) {
-  // Deal with initialization errors like
-  // permission denied, running outside of top-level frame, etc.
-  console.error(err.name, err.message);
+const {state} = (await navigator.permissions.query({name: 'notifications'}));
+if (state === 'granted') {
+  try {
+    const idleDetector = new IdleDetector({threshold: 60000});
+    idleDetector.addEventListener("change", () => {
+      const state = idleDetector.state;
+      console.log(`Idle change: ${state.user}, ${state.screen}`);
+    });
+    await idleDetector.start();
+  } catch (err) {
+    // Deal with initialization errors like
+    // permission denied, running outside of top-level frame, etc.
+    console.error(err.name, err.message);
+  }
 }
 ```
 
@@ -178,14 +186,10 @@ or logged out of their computer altogether).
 The Chrome team has designed and implemented the Idle Detection API using the core principles
 defined in [Controlling Access to Powerful Web Platform Features][powerful-apis],
 including user control, transparency, and ergonomics.
+The ability to use this API is controlled by the
+[`'notifications'` permission](https://w3c.github.io/permissions/#notifications).
 
 ### User control and privacy
-
-A new [permission](https://w3c.github.io/permissions/), tentatively named `"idle-detection"`
-will be associated with this functionality. The permission might be auto-granted by user agents
-based on heuristics, such as user engagement, the install state of the web app,
-or having granted similar permissions such as [Wake Lock](/wakelock/). In Chrome,
-we plan to auto-grant it.
 
 We always want to prevent malicious actors from misusing new APIs. Seemingly independent websites,
 but that in fact are controlled by the same entity, might obtain user idle information and
@@ -245,3 +249,5 @@ The hero image is by [Fernando Hernandez](https://unsplash.com/@_ferh97) on Unsp
 [blink-component]: https://chromestatus.com/features#component%3ABlink%3EInput
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
+[OT]: ToDo
+
