@@ -38,7 +38,7 @@ At the time of writing `gap` is supported in desktop Firefox (version 63), Firef
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
-    <!-- <source src="https://storage.googleapis.com/web-dev-assets/portals_vp9.webm" type="video/webm; codecs=vp8"> -->
+    <source src="https://storage.googleapis.com/web-dev-assets/flexbox-gap/gap-i18n.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/flexbox-gap/gap-i18n.mp4">
   </video>
   <figcaption class="w-figcaption">
@@ -193,7 +193,7 @@ With `flex gap`, we unlock more than convenience, we unlock powerful, perfectly 
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
-    <!-- <source src="https://storage.googleapis.com/web-dev-assets/portals_vp9.webm" type="video/webm; codecs=vp8"> -->
+    <source src="https://storage.googleapis.com/web-dev-assets/flexbox-gap/flex-gap-v1.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/flexbox-gap/flex-gap-v1.mp4">
   </video>
   <figcaption class="w-figcaption">
