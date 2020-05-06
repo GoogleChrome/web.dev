@@ -8,19 +8,21 @@ on:
       - master
     paths:
       - '**.js'
-      - '**.json'
+      - '!src/site/_data/contributors.js'
+      - '!src/site/_data/countries.js'
+      - '!src/site/_data/postTags.js'
+      - 'package.json'
       - '**.njk'
       - '**.scss'
-      - '**.yml'
-      - '**.yaml'
   pull_request:
     paths:
       - '**.js'
-      - '**.json'
+      - '!src/site/_data/contributors.js'
+      - '!src/site/_data/countries.js'
+      - '!src/site/_data/postTags.js'
+      - 'package.json'
       - '**.njk'
       - '**.scss'
-      - '**.yml'
-      - '**.yaml'
 
 jobs:
   percy:

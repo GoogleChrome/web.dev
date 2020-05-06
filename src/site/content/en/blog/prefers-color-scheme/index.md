@@ -20,6 +20,7 @@ tags:
   - dark-theme
   - prefers-color-scheme
   - color-scheme
+  - css
 ---
 
 ## Introduction

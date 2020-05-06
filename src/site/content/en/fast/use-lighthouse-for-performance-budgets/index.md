@@ -40,7 +40,7 @@ Create a file named `budget.json`. In this file add the following JSON:
         "budget": 3000
       },
       {
-        "metric": "first-meaingful-paint",
+        "metric": "first-meaningful-paint",
         "budget": 1000
       }
     ],

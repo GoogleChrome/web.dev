@@ -1,3 +1,7 @@
+/**
+ * @fileoverview Service Worker entrypoint for web.dev.
+ */
+
 import * as idb from 'idb-keyval';
 import manifest from 'cache-manifest';
 import layoutTemplate from 'layout-template';

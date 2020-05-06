@@ -4,5 +4,6 @@
  */
 
 import '../components/Subscribe';
+import '../components/Newsletter';
 
-import '../app';
+import '../components/base';

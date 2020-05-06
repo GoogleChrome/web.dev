@@ -26,17 +26,20 @@ const postTags = require('../../_data/postTags');
 /* eslint-disable require-jsdoc,indent,max-len */
 
 /**
- * BaseCard used to preview posts.
- * @param {Object} post An eleventy collection item with post data.
+ * BaseCard used to preview collection items.
+ * @param {Object} collectionItem An eleventy collection item with additional data.
+ * @param {string} className CSS class to apply to `div.w-card`
+ * @param {boolean} featured If card is a featured card.
  * @return {string}
  */
 class BaseCard {
-  constructor({post, featured = false, className = ''}) {
-    this.post = post;
+  constructor(collectionItem, className = '', featured = false) {
+    this.collectionItem = collectionItem;
+    this.collectionItem.data = this.collectionItem.data || {};
     this.featured = featured;
     this.className = className;
-    this.url = stripLanguage(this.post.url);
-    this.data = this.post.data;
+    this.url = stripLanguage(this.collectionItem.url);
+    this.data = this.collectionItem.data;
     this.displayedTags = [];
 
     for (const tag of this.data.tags || []) {
@@ -63,7 +66,6 @@ class BaseCard {
       <figure class="w-card-base__figure">
         <img
           class="w-card-base__image"
-          sizes="365px"
           srcset="${srcsetRange.map(
             (width) => html`
               ${imagePath}?auto=format&fit=max&w=${width} ${width}w,
@@ -80,13 +82,19 @@ class BaseCard {
   }
 
   renderAuthorImages(authors) {
-    if (!Array.isArray(authors) || authors.length > 2) return;
+    if (!Array.isArray(authors) || !authors.length || authors.length > 2)
+      return;
 
     return html`
       <div class="w-author__image--row">
         ${authors
           .map((authorId) => {
             const author = this.data.contributors[authorId];
+            if (!author) {
+              throw new Error(
+                `Author '${authorId}' does not exist in '_data/contributors.js'.`,
+              );
+            }
             return html`
               <div class="w-author__image--row-item">
                 <a href="${author.href}">
@@ -105,13 +113,18 @@ class BaseCard {
   }
 
   renderAuthorNames(authors) {
-    if (!Array.isArray(authors)) return;
+    if (!Array.isArray(authors) || !authors.length) return;
 
     return html`
       <span class="w-author__name">
         ${authors
           .map((authorId) => {
             const author = this.data.contributors[authorId];
+            if (!author) {
+              throw new Error(
+                `Author '${authorId}' does not exist in '_data/contributors.js'.`,
+              );
+            }
             return html`
               <a class="w-author__name-link" href="/authors/${authorId}"
                 >${author.title}</a
@@ -123,14 +136,15 @@ class BaseCard {
     `;
   }
 
-  renderAuthorsAndDate(post) {
-    const authors = post.data.authors;
+  renderAuthorsAndDate(collectionItem) {
+    const authors = collectionItem.data.authors || [];
 
     return html`
       <div class="w-authors__card">
         ${this.renderAuthorImages(authors)}
         <div>
-          ${this.renderAuthorNames(authors)} ${this.renderDate(post.date)}
+          ${this.renderAuthorNames(authors)}
+          ${this.renderDate(collectionItem.date)}
         </div>
       </div>
     `;
@@ -208,7 +222,7 @@ class BaseCard {
                 ${md(this.data.title)}
               </h2>
             </a>
-            ${this.renderAuthorsAndDate(this.post)}
+            ${this.renderAuthorsAndDate(this.collectionItem)}
             <div
               class="w-card-base__desc ${this.className &&
                 `${this.className}__desc`}"

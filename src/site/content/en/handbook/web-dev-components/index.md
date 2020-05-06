@@ -842,7 +842,7 @@ to avoid layout issues.
     <p class="w-stat__desc">Higher CTR</p>
   </div>
   <div class="w-stat">
-    <p class="w-stat__figure">4<sub class="w-stat__sub">x</sub></p>
+    <p class="w-stat__figure">4<sub class="w-stat__sub">×</sub></p>
     <p class="w-stat__desc">Faster load times</p>
   </div>
 </div>
@@ -858,7 +858,7 @@ to avoid layout issues.
     <p class="w-stat__desc">Higher CTR</p>
   </div>
   <div class="w-stat">
-    <p class="w-stat__figure">4<sub class="w-stat__sub">x</sub></p>
+    <p class="w-stat__figure">4<sub class="w-stat__sub">×</sub></p>
     <p class="w-stat__desc">Faster load times</p>
   </div>
 </div>

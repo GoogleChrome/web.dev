@@ -68,8 +68,9 @@ gulp.task('copy-content-assets', () => {
       .pipe(
         rename((assetPath) => {
           const leftPart = assetPath.dirname.split('/')[0];
-          // Let en/handbook images pass through.
-          if (leftPart === 'handbook') {
+          // Let certain path's images to pass through.
+          const imagePassThroughs = ['handbook', 'newsletter'];
+          if (imagePassThroughs.includes(leftPart)) {
             return;
           }
           return (assetPath.dirname = path.basename(assetPath.dirname));

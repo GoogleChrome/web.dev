@@ -49,6 +49,10 @@ module.exports = {
           'handbook/self-assessment-components',
         ],
       },
+      {
+        title: 'Content infrastructure',
+        pathItems: ['handbook/resolving-glitch-issues', 'handbook/redirects'],
+      },
     ],
   },
 };

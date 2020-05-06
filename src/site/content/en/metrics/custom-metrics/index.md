@@ -7,6 +7,8 @@ date: 2019-11-08
 description: |
   Custom metrics allow you to measure and optimize aspects of your site's
   experience that are unique to your site.
+tags:
+  - performance
 ---
 
 There's a lot of value in having [user-centric metrics](/user-centric-performance-metrics/)
@@ -356,7 +358,7 @@ try {
 }
 ```
 
-Another metric developers who user service worker may care about is the service
+Another metric developers who use service worker may care about is the service
 worker startup time for navigation requests. This is the amount of time it takes
 the browser to start the service worker thread before it can start intercepting
 fetch events.

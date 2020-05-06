@@ -64,6 +64,22 @@ const contributors = {
       en: 'V8 JavaScript whisperer',
     },
   },
+  hongchanchoi: {
+    name: {
+      given: 'Hongchan',
+      family: 'Choi',
+    },
+    org: {
+      name: 'Google',
+      unit: 'Chrome',
+    },
+    twitter: 'hochsays',
+    github: 'hoch',
+    homepage: 'https://hoch.io/',
+    description: {
+      en: 'Software Engineer working on Chromium',
+    },
+  },
   robdodson: {
     name: {
       given: 'Rob',
@@ -122,6 +138,18 @@ const contributors = {
       en:
         'Tom is the Games Lead for the Chrome & Web Developer Relations team at Google',
     },
+  },
+  ilyagrigorik: {
+    name: {
+      given: 'Ilya',
+      family: 'Grigorik',
+    },
+    org: {
+      name: 'Google',
+      unit: 'Chrome',
+    },
+    twitter: 'igrigorik',
+    github: 'igrigorik',
   },
   yigu: {
     name: {
@@ -325,6 +353,7 @@ const contributors = {
     homepage: 'https://blog.tomayac.com/',
     twitter: 'tomayac',
     github: 'tomayac',
+    glitch: 'tomayac',
     description: {
       en: 'Tom is a Developer Advocate',
     },
@@ -907,6 +936,17 @@ const contributors = {
     twitter: 'kkotowicz',
     github: 'koto',
   },
+  dgrogan: {
+    name: {
+      given: 'David',
+      family: 'Grogan',
+    },
+    country: 'US',
+    github: 'davidsgrogan',
+    org: {
+      name: 'Google',
+    },
+  },
   ulan: {
     name: {
       given: 'Ulan',
@@ -918,6 +958,14 @@ const contributors = {
       name: 'Google',
       unit: 'Chrome',
     },
+  },
+  domenic: {
+    name: {
+      given: 'Domenic',
+      family: 'Denicola',
+    },
+    twitter: 'domenic',
+    github: 'domenic',
   },
 };
 

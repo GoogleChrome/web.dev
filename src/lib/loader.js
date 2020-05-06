@@ -1,5 +1,5 @@
 /**
- * @fileoverview Handles SPA loading and importing JS entrypoint for web.dev.
+ * @fileoverview Handles SPA loading and importing the correct page entrypoint for web.dev.
  *
  * Exports a single function, swapContent, which ensures that the inner contents of the web.dev
  * template is correct, and that the correct JS entrypoint is ready.
@@ -158,8 +158,8 @@ export async function swapContent({firstRun, url, signal, ready, state}) {
     }
   }
 
-  // The bootstrap code uses this to trigger a reload if we see an "online" event. Only returned via
-  // the Service Worker if we failed to fetch a 'real' page.
+  // Code in entrypoint.jsuses this to trigger a reload if we see an "online" event. This partial
+  // value is only returned via the Service Worker if we failed to fetch a 'real' page.
   const isOffline = Boolean(partial.offline);
   store.setState({currentUrl: url, isOffline});
 

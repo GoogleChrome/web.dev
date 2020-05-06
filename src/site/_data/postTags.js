@@ -113,6 +113,9 @@ const tags = {
   'media-queries': {
     title: 'Media Queries',
   },
+  metrics: {
+    title: 'Metrics',
+  },
   mobile: {
     title: 'Mobile',
   },
@@ -184,6 +187,9 @@ const tags = {
   },
   'web-bundles': {
     title: 'Web Bundles',
+  },
+  'web-vitals': {
+    title: 'Web Vitals',
   },
   webxr: {
     title: 'WebXR',

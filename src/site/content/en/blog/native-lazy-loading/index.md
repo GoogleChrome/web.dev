@@ -6,6 +6,7 @@ authors:
   - addyosmani
   - mathiasbynens
 date: 2019-08-06
+updated: 2020-04-29
 hero: hero.png
 alt: Phone outline with loading image and assets
 description: |
@@ -33,6 +34,15 @@ a [demo](https://mathiasbynens.be/demo/img-loading-lazy) of the feature:
 Starting with Chrome 76, you'll be able to use the new `loading` attribute to lazy-load resources
 without the need to write custom lazy-loading code or use a separate JavaScript library. Let's dive
 into the details.
+
+## Browser compatibility
+
+At the time of this update (April 2020) native lazy loading is supported in Chromium-based
+browsers and Firefox.
+
+See the `loading` field of MDN's 
+[Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Browser_compatibility)
+table for updates.
 
 ## Why native lazy-loading?
 

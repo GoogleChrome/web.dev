@@ -5,7 +5,7 @@ description: |
   Learn how to use the font-display API to make sure your web page text
   will always be visible to your users.
 date: 2019-05-02
-updated: 2019-10-04
+updated: 2020-04-29
 web_lighthouse:
   - font-display
 ---
@@ -49,6 +49,13 @@ Once the custom font is ready, it replaces the system font.
 (See the [Avoid invisible text during loading](/avoid-invisible-text) post
 for more information.)
 
+### Preload web fonts
+
+Use `<link rel="preload">` to fetch your font files earlier. Learn more:
+
+* [Preload web fonts to improve loading speed (codelab)](/codelab-preload-web-fonts/)
+* [Prevent layout shifting and flashes of invisibile text (FOIT) by preloading optional fonts](/preload-optional-fonts/)
+
 ### Google Fonts
 
 Add the `&display=swap` [parameter](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL#Basics_anatomy_of_a_URL) to the end of your Google Fonts URL:
@@ -60,11 +67,16 @@ Add the `&display=swap` [parameter](https://developer.mozilla.org/en-US/docs/Lea
 
 It's worth mentioning that not all major browsers support `font-display: swap`,
 so you may need to do a bit more work to fix the invisible text problem.
-See the [Avoid flash of invisible text codelab](/codelab-avoid-invisible-text)
-to learn how to avoid FOIT across all browsers.
+
+{% Aside 'codelab' %}
+  Check out the [Avoid flash of invisible text codelab](/codelab-avoid-invisible-text)
+  to learn how to avoid FOIT across all browsers.
+{% endAside %}
 
 ## Resources
 
-- [Source code for **Ensure text remains visible during webfont load** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/font-display.js)
-- [Avoid invisible text during loading](/avoid-invisible-text)
-- [Controlling font performance with font displays](https://developers.google.com/web/updates/2016/02/font-display)
+* [Source code for **Ensure text remains visible during webfont load** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/font-display.js)
+* [Avoid invisible text during loading](/avoid-invisible-text)
+* [Controlling font performance with font displays](https://developers.google.com/web/updates/2016/02/font-display)
+* [Preload web fonts to improve loading speed (codelab)](/codelab-preload-web-fonts/)
+* [Prevent layout shifting and flashes of invisibile text (FOIT) by preloading optional fonts](/preload-optional-fonts/)

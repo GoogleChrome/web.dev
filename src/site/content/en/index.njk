@@ -76,9 +76,9 @@ date: 2018-11-05
       <div class="w-grid__columns w-grid__columns--featured" role="list">
         {% for post in collections.recentBlogPosts %}
           {% if loop.first %}
-            {% PostCard {post: post, featured: true} %}
+            {% PostCard post, true %}
           {% else %}
-            {% PostCard {post: post} %}
+            {% PostCard post %}
           {% endif %}
         {% endfor %}
       </div>
