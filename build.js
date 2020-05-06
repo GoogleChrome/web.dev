@@ -154,12 +154,13 @@ async function build() {
     postcssConfig.minimize = true;
   }
 
-  // Rollup "entrypoint.js" to generate graph of source needs. This eventually
-  // uses dynamic import to bring in code required for each page (see router).
-  // The entrypoint itself is generated with a dynamic hash, and is imported
-  // via "bootstrap.js" (which is run in all browsers via regular script tag).
+  // Rollup "app.js" to generate graph of source needs. This eventually uses
+  // dynamic import to bring in code required for each page (see router). In
+  // Rollup's nonmenclature, this is the site entrypoint. We generated it with
+  // a dynamic hash, and is imported via "bootstrap.js" (which is run in all
+  // browsers via regular script tag).
   const appBundle = await rollup.rollup({
-    input: 'src/lib/entrypoint.js',
+    input: 'src/lib/app.js',
     external: disallowExternal,
     plugins: [rollupPluginPostCSS(postcssConfig), ...buildDefaultPlugins()],
     manualChunks: (id) => {
@@ -183,10 +184,13 @@ async function build() {
   });
   const outputFiles = appGenerated.output.map(({fileName}) => fileName);
 
-  // Save the entrypoint (which has a hashed name) for the all-browser loader code.
+  // Save the "app.js" entrypoint (which has a hashed name) for the all-browser
+  // loader code.
   const entrypoints = appGenerated.output.filter(({isEntry}) => isEntry);
   if (entrypoints.length !== 1) {
-    throw new Error(`expected single entrypoint, was: ${entrypoints.length}`);
+    throw new Error(
+      `expected single Rollup entrypoint, was: ${entrypoints.length}`,
+    );
   }
   virtualImports.webdev_entrypoint = entrypoints[0].fileName;
 

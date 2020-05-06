@@ -1,5 +1,5 @@
 /**
- * @fileoveriew Default entrypoint for content pages on web.dev.
+ * @fileoveriew Entrypoint for default content pages on web.dev.
  */
 
 import '../components/Actions';
