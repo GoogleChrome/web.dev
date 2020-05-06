@@ -158,7 +158,7 @@ The following are patterns that folks have used to get gap-like spacing.
 {% endCompare %}
 </div>
 
-The above are not a full replacement for `gap` though, and often need `@media` query adjustments to account for wrapping scenarios, writing modes or direction. Adding 1 or 2 media queries doesn't seem so bad, but they can add up and lead to complicated layout logic.
+The above are not a full replacement for `gap` though, and often need `@media` query adjustments to account for wrapping scenarios, writing modes or direction. Adding one or two media queries doesn't seem so bad, but they can add up and lead to complicated layout logic.
 
 What the above author really intended was to have none of the child items touch. 
 ### The Antidote: gap
