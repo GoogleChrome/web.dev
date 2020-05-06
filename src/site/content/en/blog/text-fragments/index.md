@@ -109,6 +109,12 @@ for specifying a text snippet in the URL hash.
 When navigating to a URL with such a text fragment, the user agent can emphasize
 and/or bring it to the user's attention.
 
+### Browser compatibility
+
+Text Fragments are supported in version 80 and beyond of Chromium-based browsers.
+At the time of writing, Safari and Firefox have not publicly signaled an intent to implement
+the feature. See [Related links](#related-links) for links to the Safari and Firefox discussions.
+
 ### `textStart`
 
 In its simplest form, the syntax of Text Fragments is as follows:
