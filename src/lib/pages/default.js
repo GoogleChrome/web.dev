@@ -1,5 +1,5 @@
 /**
- * @fileoveriew Default entrypoint for all pages.
+ * @fileoveriew Default entrypoint for content pages on web.dev.
  */
 
 import '../components/Actions';
@@ -12,4 +12,4 @@ import '../components/SelectGroup';
 import '../components/Tabs';
 import '../components/CopyCode';
 
-import '../app';
+import '../components/base';

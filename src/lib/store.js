@@ -4,8 +4,6 @@ import getMeta from './utils/meta';
 import {localStorage} from './utils/storage';
 import {isProd} from 'webdev_config';
 
-/* eslint-disable require-jsdoc */
-
 const initialState = {
   // The first time the app boots we won't know whether the user is signed
   // in or out.

@@ -8,9 +8,11 @@
 
 import './webcomponents-config'; // must go before -loader below
 import '@webcomponents/webcomponentsjs/webcomponents-loader.js';
+import './analytics'; // side effects
 import {swapContent, getPartial} from './loader';
 import * as router from './utils/router';
 import {store} from './store';
+import {localStorage} from './utils/storage';
 import removeServiceWorkers from './utils/sw-remove';
 
 WebComponents.waitFor(async () => {
@@ -33,6 +35,30 @@ WebComponents.waitFor(async () => {
   });
 });
 
+// Configures global page state (loading, signed in).
+function onGlobalStateChanged({isSignedIn, isPageLoading}) {
+  document.body.classList.toggle('lh-signedin', isSignedIn);
+
+  const progress = document.querySelector('.w-loading-progress');
+  progress.hidden = !isPageLoading;
+
+  const main = document.querySelector('main');
+  if (isPageLoading) {
+    main.setAttribute('aria-busy', 'true');
+  } else {
+    main.removeAttribute('aria-busy');
+  }
+
+  // Cache whether the user was signed in, to help prevent FOUC in future and
+  // for Analytics, as this can be read synchronosly and Firebase's auth takes
+  // ~ms to arrive.
+  localStorage['webdev_isSignedIn'] = isSignedIn ? 'probably' : '';
+}
+store.subscribe(onGlobalStateChanged);
+onGlobalStateChanged(store.getState());
+
+// Ensure/update the Service Worker, or remove it if unsupported (this should
+// never happen here unless the valid domains change, but left in for safety).
 if (serviceWorkerIsSupported(window.location.hostname)) {
   ensureServiceWorker();
 } else {
