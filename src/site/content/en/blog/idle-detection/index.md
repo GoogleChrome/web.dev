@@ -107,8 +107,9 @@ this definition is left to the user agent.
 ### Using the Idle Detection API
 
 The first step when using the Idle Detection API is to initialize the `IdleDetector`.
-It takes an object with the desired idle `threshold` in seconds.
-The minimum `threshold` is 60 seconds. You start the idle detection by calling the
+It takes an object with the desired idle `threshold` in milliseconds.
+The minimum `threshold` is 60.000 milliseconds (1 minute).
+You start the idle detection by calling the
 `IdleDetector`'s `start()` method, and you can stop it again by calling the `stop()` method.
 
 There are two ways to get updates on the user's idle state: the first is for one-off requests by
@@ -117,7 +118,7 @@ which after one minute of inactivity will be reported as the `user` being `"idle
 
 ```js
 try {
-  const idleDetector = new IdleDetector({ threshold: 60 });
+  const idleDetector = new IdleDetector({ threshold: 60000 });
   await idleDetector.start();
   console.log("Initial idle state:", idleDetector.state);
   // Every 10 seconds poll the user's idle state
