@@ -4,7 +4,7 @@ subhead: The Privacy Sandbox is a series of proposals to satisfy third-party use
 authors:
   - samdutton
 date: 2020-04-08
-updated: 2020-05-04
+updated: 2020-05-06
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: A black-on-white printed sign saying Private, on a wooden wall.
@@ -37,19 +37,21 @@ Ad targeting, conversion measurement, and other use cases currently rely on esta
 
 This is a dilemma for the web. How can legitimate third-party use cases be supported without enabling users to be tracked across sites?
 
-In particular, how can websites fund content by enabling third parties to show ads and measure ad performance—but not allow individual users to be profiled? How can advertisers verify real users, and site owners check that users are trustworthy, without resorting to dark patterns such as device fingerprinting?
+In particular, how can websites fund content by enabling third parties to show ads and measure ad performance—but not allow individual users to be profiled? How can advertisers and site owners evaluate a user's authenticity without resorting to dark patterns such as device fingerprinting?
 
-The way things work at the moment can be problematic for everyone concerned, not just users. For publishers and advertisers, tracking identity and using a variety of un-standardized third-party solutions can add to technical debt, code complexity and data risk. Users, developers, publishers, and advertisers shouldn't have to worry.
+The way things work at the moment can be problematic for the entire web ecosystem, not just users. For publishers and advertisers, tracking identity and using a variety of non-standard third-party solutions can add to technical debt, code complexity and data risk. Users, developers, publishers, and advertisers should be confident that the web is protecting user’s privacy choices. 
 
 Ads play a major role in making the internet an easily accessible, open place, but advertising has to work for everyone. When it does, it means users can get access to information and great content, creators and publishers can thrive by getting fair compensation for their work, and marketers can connect with people interested in what they have to offer. Which brings us to our goal: to evolve the web to better respect user privacy and support a vibrant, thriving ecosystem.
 
+
 ## Introducing the Privacy Sandbox
 
-The [Privacy Sandbox](https://www.blog.google/products/chrome/building-a-more-private-web/) introduces a set of privacy-preserving APIs to accomplish tasks that use tracking today.
+The [Privacy Sandbox](https://www.blog.google/products/chrome/building-a-more-private-web/) introduces a set of privacy-preserving APIs to support business models that fund the open web in the absence of tracking mechanisms like third-party cookies. 
 
 The Privacy Sandbox APIs require web browsers to take on a new role. Rather than working with limited tools and protections, the APIs enable the user's browser to act on the user's behalf to ensure that data is never shared without their knowledge and consent. The APIs enable use cases such as ad targeting and conversion measurement, but without revealing individual private and personal information.
 
-This is a shift in direction for browsers. The Privacy Sandbox authors' vision of the future has browsers providing specific tools to target specific use cases, while preserving user privacy.
+This is a shift in direction for browsers. The Privacy Sandbox authors' vision of the future has browsers providing specific tools to target specific use cases that support the free and open web, while preserving user privacy.
+
 
 ### The Privacy Sandbox proposals {: #proposals }
 
