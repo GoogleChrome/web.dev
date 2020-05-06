@@ -60,7 +60,7 @@ As you can see in the Elements panel of the Developer Tools, the element in ques
 has an `id` attribute with the value `HTML1`.
 
 <figure class="w-figure">
-  <img src="id-html1.png" alt="" class="w-screenshot" width="400">
+  <img src="id-html1.png" alt="" class="w-screenshot" width="600">
   <figcaption class="w-figcaption">Dev Tools showing the <code>id</code> of an element.</figcaption>
 </figure>
 
