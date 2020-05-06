@@ -1,6 +1,6 @@
 /**
- * @fileoveriew Entrypoint for Measure page, which requires a number of extra Web Components from
- * the bulk of web.dev.
+ * @fileoveriew Entrypoint for Measure page, which requires a number of extra
+ * Web Components from the rest of web.dev.
  */
 
 import '../components/ProgressBar';
@@ -15,4 +15,4 @@ import '../components/UrlChooser';
 import '../components/UrlChooserContainer';
 import '../components/SigninButton';
 
-import '../app';
+import '../components/base';

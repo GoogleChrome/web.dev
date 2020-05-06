@@ -2,6 +2,7 @@ import {html} from 'lit-element';
 import {BaseElement} from '../BaseElement';
 import {checkOverflow} from '../../utils/check-overflow';
 import {generateIdSalt} from '../../utils/generate-salt';
+import 'focus-visible';
 import './_styles.scss';
 
 /**

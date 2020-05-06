@@ -9,6 +9,7 @@ import * as router from '../../utils/router';
 import {debounce} from '../../utils/debounce';
 import algoliasearch from 'algoliasearch/dist/algoliasearch-lite.esm.browser';
 import {trackError} from '../../analytics';
+import 'focus-visible';
 import './_styles.scss';
 
 // Create an algolia client so we can get search results.
