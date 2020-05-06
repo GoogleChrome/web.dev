@@ -7,7 +7,7 @@ description: There are many different options for storing data in the browser. W
 date: 2020-04-27
 updated: 2020-04-30
 tags:
-  - post
+  - blog
   - progressive-web-apps
   - storage
   - indexeddb
