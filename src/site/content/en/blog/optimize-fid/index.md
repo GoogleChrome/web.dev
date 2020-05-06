@@ -13,8 +13,8 @@ description: |
   optimize FID by minimizing unused JavaScript, breaking up Long Tasks, and improving interaction
   readiness.
 tags:
-  - post
-  - fast
+  - blog
+  - performance
   - web-vitals
 ---
 
