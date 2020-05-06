@@ -111,7 +111,7 @@ and/or bring it to the user's attention.
 
 ### Browser compatibility
 
-Text Fragments are supported in version 80 and beyond of Chromium-based browsers.
+The Text Fragments feature is supported in version 80 and beyond of Chromium-based browsers.
 At the time of writing, Safari and Firefox have not publicly signaled an intent to implement
 the feature. See [Related links](#related-links) for links to the Safari and Firefox discussions.
 
