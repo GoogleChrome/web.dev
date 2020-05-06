@@ -224,7 +224,6 @@ Recent COVID-19-related posts:
 * [Bing adopts schema.org markup for special announcements for
   COVID-19](https://blogs.bing.com/webmaster/march-2020/Bing-adopts-schema-org-mark-up-for-Special-Announcements-about-COVID-19)
 * [Add structured data to COVID-19 announcements](https://developers.google.com/search/docs/data-types/special-announcements)
-* [COVID-19 Schema/SpecialAnnouncement JSON-LD generator](https://www.aymen-loukil.com/seo-tools/schema-json-ld-generator/special-announcement)
 * [Helping health organizations make COVID-19 information more
   accessible](https://webmasters.googleblog.com/2020/03/health-organizations-covid19.html)
 * [General best practices for Search for health & government
