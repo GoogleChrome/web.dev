@@ -26,7 +26,7 @@ CSS Grid brought a delightful spacing feature called [`grid-gap`](https://develo
 
 ### Browser compatibility
 
-At the time of writing `gap` is supported in desktop Firefox (version 63), Firefox for Android (version 63), and Chromium-based browsers (version 85). See [Browser compatibility](https://developer.mozilla.org/docs/Web/CSS/gap#Browser_compatibility) for updates.
+At the time of writing `gap` is supported in desktop Firefox 63, Firefox for Android 63, and planned for Chromium-based browsers as of 85. See [Browser compatibility](https://developer.mozilla.org/docs/Web/CSS/gap#Browser_compatibility) for updates.
 
 ## CSS Gap
 
