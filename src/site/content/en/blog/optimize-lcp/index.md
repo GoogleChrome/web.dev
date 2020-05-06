@@ -193,7 +193,7 @@ takes to fully render the main content of the page (LCP).
 If you use a module bundler or build tool, include an appropriate plugin to minify CSS files on
 every build:
 
-+   For webpack: [optimize-css-assets-webpack-plugin](optimize-css-assets-webpack-plugin)
++   For webpack: [optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin)
 +   For Gulp: [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css)
 +   For Rollup: [rollup-plugin-css-porter](https://www.npmjs.com/package/rollup-plugin-css-porter)
 
