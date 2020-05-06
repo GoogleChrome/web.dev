@@ -50,7 +50,7 @@ can limit these calculations to moments when the user interacts with their devic
 | 1. Create explainer                      | [Complete][explainer]    |
 | 2. Create initial draft of specification | Not started              |
 | 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. Origin trial                          | [In progress][OT]        |
+| 4. Origin trial                          | [In progress][ot]        |
 | 5. Launch                                | Not started              |
 
 </div>
@@ -249,5 +249,5 @@ The hero image is by [Fernando Hernandez](https://unsplash.com/@_ferh97) on Unsp
 [blink-component]: https://chromestatus.com/features#component%3ABlink%3EInput
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
-[OT]: ToDo
+[ot]: ToDo
 
