@@ -40,6 +40,7 @@ export const metrics = [
   {
     title: 'Largest Contentful Paint',
     id: 'largest-contentful-paint',
+    vitals: true,
   },
   {
     title: 'Speed Index',
@@ -60,10 +61,12 @@ export const metrics = [
   {
     title: 'Cumulative Layout Shift',
     id: 'cumulative-layout-shift',
+    vitals: true,
   },
   {
     title: 'First Input Delay',
     id: 'max-potential-fid',
+    vitals: true,
   },
 ];
 

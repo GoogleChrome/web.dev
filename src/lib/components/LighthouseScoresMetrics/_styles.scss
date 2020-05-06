@@ -14,20 +14,38 @@ web-lighthouse-scores-metrics {
   $PADDING: 16px;
   $CARDS_HEIGHT: 219px;
 
-  .lh-metrics-table {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
+  .lh-metrics-container {
     @include elevation(2);
     border-radius: inherit;
     background-color: $WHITE;
+    margin-top: $PADDING;
+    padding: $PADDING * 2;
     min-height: ($PADDING * 4);
   }
 
   .lh-metrics-table {
-    margin-top: $PADDING;
+    position: relative;
+    display: flex;
     flex-wrap: wrap;
-    padding: $PADDING * 2;
+  }
+
+  .lh-metrics-vitals {
+    display: flex;
+    font-size: 14px;
+    justify-content: center;
+    padding-top: $PADDING;
+
+    &::before {
+      @include font_material_icon();
+      content: 'beenhere';
+      opacity: 0.5;
+      margin-right: 5px;
+      font-size: 20px;
+    }
+  }
+
+  .lh-metrics-table {
+    flex-wrap: wrap;
     justify-content: center;
   }
 
@@ -56,6 +74,15 @@ web-lighthouse-scores-metrics {
     align-items: center;
     font-size: 16px;
     margin-left: 5px;
+  }
+
+  .lh-vital {
+    &::after {
+      @include font_material_icon();
+      content: 'beenhere';
+      opacity: 0.5;
+      margin-left: 5px;
+    }
   }
 
   .lh-metrics-table__score {

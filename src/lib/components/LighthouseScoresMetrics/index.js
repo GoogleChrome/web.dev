@@ -22,6 +22,7 @@ class LighthouseScoresMetrics extends BaseElement {
 
   render() {
     let inner = '';
+    let hasVitals = false;
 
     if (this.lhr) {
       const metricToHtml = (metric) => {
@@ -39,9 +40,12 @@ class LighthouseScoresMetrics extends BaseElement {
           label = 'fail';
         }
 
+        const vitalsClass = metric.vitals ? 'lh-vital' : '';
+        hasVitals = hasVitals || metric.vitals;
+
         return html`
           <div class="lh-metrics-table__metric">
-            <span>${metric.title}</span>
+            <span class="${vitalsClass}">${metric.title}</span>
             <span
               class="lh-metrics-table__score lh-score--${label}"
               aria-label="${label} score: ${audit.displayValue}"
@@ -57,7 +61,12 @@ class LighthouseScoresMetrics extends BaseElement {
     }
 
     return html`
-      <div class="lh-metrics-table">${inner}</div>
+      <div class="lh-metrics-container">
+        <div class="lh-metrics-table">${inner}</div>
+        <div class="lh-metrics-vitals" ?hidden=${!hasVitals}>
+          <span>This is a <a href="/vitals">Core Web Vital</a></span>
+        </div>
+      </div>
     `;
   }
 }
