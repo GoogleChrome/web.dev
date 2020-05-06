@@ -14,7 +14,7 @@ description: |
   such as, for example, form controls, scroll bars, as well as CSS system colors.
   At the same time, this feature prevents browsers from applying any transformations on their own.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - css
   - dark-mode
   - dark-theme

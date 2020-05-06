@@ -1,20 +1,20 @@
 ---
 title: "Adaptive loading: improving web performance on slow devices"
 subhead: |
-  Learn how to ensure every user gets the best possible experience by 
+  Learn how to ensure every user gets the best possible experience by
   optimizing your sites for specific hardware and network constraints.
 authors:
   - mihajlija
 date: 2019-12-16
 description: |
-  Learn about adaptive loading pattern, how to implement it, and how Facebook, Tinder, eBay, and 
+  Learn about adaptive loading pattern, how to implement it, and how Facebook, Tinder, eBay, and
   other companies use adaptive loading in production.
-hero: hero.png 
-thumbnail: thumbnail.png 
+hero: hero.png
+thumbnail: thumbnail.png
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - fast
---- 
+---
 
 Device capabilities and network connections vary a lot. Sites that delight users
 on high-end devices can be
@@ -67,7 +67,7 @@ The signals you can use for adaptive loading are:
 * CPU core count—for limiting costly JavaScript execution and reducing CPU
   intensive logic when a device can't handle it well (via
   [`navigator.hardwareConcurrency`](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency)).
-  
+
 
 There are two places where you can make a decision about what to serve to users:
 the client and the server. On the client, you have the JavaScript APIs noted
@@ -138,7 +138,7 @@ and users on the web saved 80%. Here's a React
 that uses the Save Data hook to replicate the Twitter timeline. Try
 opening your DevTools **Network** panel and looking at the difference in the amount
 of data transferred as you scroll while Save Data is disabled versus when it's
-enabled. 
+enabled.
 
   <figure class="w-figure">
     <video controls autoplay loop muted class="w-screenshot">
@@ -171,13 +171,13 @@ experience fast for everyone. If a user is on a slow network or has Data Saver
 enabled, they disable video autoplay, limit [route prefetching](/link-prefetch/)
 and limit loading the next image in the carousel to loading images one at a time
 as users swipe. After implementing these optimizations, they've seen significant
-improvements in average swipe count in countries such as Indonesia. 
+improvements in average swipe count in countries such as Indonesia.
 
 <figure class="w-figure">
   <img src="tinder.png" style="max-width: 75%"
-       alt="A screenshot of two versions of Tinder chat: with autoplaying video and 
-            with a video with play button overlay. A screenshot of a Tinder profile with 
-            caption 'Limit carousel images on Data Saver or 3G'.  
+       alt="A screenshot of two versions of Tinder chat: with autoplaying video and
+            with a video with play button overlay. A screenshot of a Tinder profile with
+            caption 'Limit carousel images on Data Saver or 3G'.
             A code snippet for prefetching in-viewport videos only on 4G.">
 </figure>
 
@@ -189,7 +189,7 @@ and low-end classes based on available signals. On mobile devices the
 provides the device name which enables Facebook to use publicly available data
 on device characteristics to group mobile devices into classes. However, on
 desktop devices the only relevant information the UA provides is the device's
-operating system. 
+operating system.
 
 For grouping desktop devices, Facebook logs the data about the operating system,
 CPU cores (from `navigator.hardwareConcurrency`), and RAM memory
@@ -198,7 +198,7 @@ relationships between different types of hardware and performance, they
 classified devices into five categories. With hardware classes integrated into
 performance monitoring, they get a more complete picture of how people use
 Facebook products depending on their device and can identify regressions more
-easily. 
+easily.
 
 Check out the video at [24 mins](https://youtu.be/puUPpVrIRkc?t=1443), where
 Nate walks through how Facebook approaches device grouping and uses adaptive

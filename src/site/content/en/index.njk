@@ -74,7 +74,7 @@ date: 2018-11-05
     </div>
     <div class="w-grid w-pb--std">
       <div class="w-grid__columns w-grid__columns--featured" role="list">
-        {% for post in collections.recentPosts %}
+        {% for post in collections.recentBlogPosts %}
           {% if loop.first %}
             {% PostCard post, true %}
           {% else %}

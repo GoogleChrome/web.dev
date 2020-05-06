@@ -7,7 +7,7 @@ description: The new Native File System API enables developers to build powerful
 date: 2019-08-20
 updated: 2020-04-13
 tags:
-  - post
+  - blog
   - capabilities
   - fugu
   - origin-trial

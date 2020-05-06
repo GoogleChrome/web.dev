@@ -12,7 +12,7 @@ description: |
   apps to share links, text, and files to other apps installed on the device in
   the same way as native apps.
 tags:
-  - post
+  - blog
   - capabilities
   - fugu
 ---

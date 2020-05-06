@@ -1,6 +1,6 @@
 ---
 title: "More capable form controls"
-subhead: With a new event, and custom elements APIs, participating in forms just got a lot easier. 
+subhead: With a new event, and custom elements APIs, participating in forms just got a lot easier.
 authors:
   - arthurevans
 date: 2019-08-08
@@ -10,16 +10,16 @@ hero: hero.jpg
 # hero_position: bottom
 alt: DJ mixer controls.
 description: |
-  New web platform features make it easier to build 
-  custom elements that work like native form controls. 
+  New web platform features make it easier to build
+  custom elements that work like native form controls.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - forms
   - web-components
 ---
 
 
-Many developers build custom form controls, either to provide controls that aren't built in to the browser, or to customize the look and feel beyond what's possible with the native form controls. 
+Many developers build custom form controls, either to provide controls that aren't built in to the browser, or to customize the look and feel beyond what's possible with the native form controls.
 
 However, it can be difficult to replicate the features of built-in HTML form controls. Consider some of the features an `<input>` element gets automatically when you add it to a form:
 
@@ -32,12 +32,12 @@ Custom form controls typically have few of these features. Developers can work a
 
 Two new web features make it easier to build custom form controls, and remove the limitations of current custom controls:
 
-*   The `formdata` event lets an arbitrary JavaScript object participate in form submission, so you can add form data without using a hidden `<input>`. 
+*   The `formdata` event lets an arbitrary JavaScript object participate in form submission, so you can add form data without using a hidden `<input>`.
 *   The Form-associated custom elements API lets custom elements act more like built-in form controls.
 
 These two features can be used to create new kinds of controls that work better with native web forms.
 
-{% Aside %}Building custom form controls is an advanced topic. This article assumes a certain knowledge of forms and form controls. When building a custom form control, there are many factors to consider, especially making sure that your controls are accessible to all users. To learn more about forms, go to the [MDN guide on forms](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms).{% endAside %} 
+{% Aside %}Building custom form controls is an advanced topic. This article assumes a certain knowledge of forms and form controls. When building a custom form control, there are many factors to consider, especially making sure that your controls are accessible to all users. To learn more about forms, go to the [MDN guide on forms](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms).{% endAside %}
 
 ## Event-based API
 
@@ -45,7 +45,7 @@ The `formdata` event is a low-level API that lets any JavaScript code participat
 
 1.  You add a `formdata` event listener to the form you want to interact with.
 1.  When a user clicks the submit button, the form fires a `formdata` event, which includes a [`FormData`](https://developer.mozilla.org/en-US/docs/Web/API/FormData) object that holds all of the data being submitted.
-1.  Each `formdata` listener gets a chance to add to or modify the data before the form is submitted. 
+1.  Each `formdata` listener gets a chance to add to or modify the data before the form is submitted.
 
 Here's an example of sending a single value in a `formdata` event listener:
 
@@ -93,7 +93,7 @@ To turn a custom element into a form-associated custom element requires a few ex
 
 *   Add a static `formAssociated` property to your custom element class. This tells the browser to treat the element like a form control.
 *   Call the `attachInternals()` method on the element to get access to extra methods and properties for form controls, like `setFormValue()` and `setValidity()`.
-*   Add the common properties and methods supported by form controls, like `name`, `value`, and `validity`. 
+*   Add the common properties and methods supported by form controls, like `name`, `value`, and `validity`.
 
 Here's how those items fit into a basic custom element definition:
 
@@ -117,7 +117,7 @@ class MyCounter extends HTMLElement {
   get value() { return this.value_; }
   set value(v) { this.value_ = v; }
 
-  // The following properties and methods aren't strictly required, 
+  // The following properties and methods aren't strictly required,
   // but native form controls provide them. Providing them helps
   // ensure consistency with native controls.
   get form() { return this.internals_.form; }
@@ -130,7 +130,7 @@ class MyCounter extends HTMLElement {
   checkValidity() { return this.internals_.checkValidity(); }
   reportValidity() {return this.internals_.reportValidity(); }
 
-  … 
+  …
 }
 customElements.define('my-counter', MyCounter);
 ```
@@ -138,7 +138,7 @@ customElements.define('my-counter', MyCounter);
 Once registered, you can use this element wherever you'd use a native form control:
 
 ```html
-<form> 
+<form>
   <label>Number of bunnies: <my-counter></my-counter></label>
   <button type="submit">Submit</button>
 </form>
@@ -146,7 +146,7 @@ Once registered, you can use this element wherever you'd use a native form contr
 
 ### Setting a value {: #setting-a-value }
 
-The `attachInternals()` method returns an `ElementInternals` object that provides access to form control APIs. The most basic of these is the `setFormValue()` method, which sets the current value of the control. 
+The `attachInternals()` method returns an `ElementInternals` object that provides access to form control APIs. The most basic of these is the `setFormValue()` method, which sets the current value of the control.
 
 The `setFormValue()` method can take one of three types of values:
 
@@ -184,7 +184,7 @@ onUpdateValue() {
   if (!this.matches(':disabled') && this.hasAttribute('required') &&
       this.value_ < 0) {
     this.internals_.setValidity({customError: true}, 'Value cannot be negative.');
-  } 
+  }
   else {
     this.internals_.setValidity({});
   }
@@ -235,10 +235,10 @@ this.internals_.setFormValue(value, state);
 
 The `value` represents the submittable value of the control. The optional `state` parameter is an _internal_ representation of the state of the control, which can include data that doesn't get sent to the server. The `state` parameter takes the same types as the `value` parameter—it can be a string, `File`, or `FormData` object.
 
-The `state` parameter is useful when you can't restore a control's state based on the value alone. For example, suppose you create a color picker with multiple modes: a palette or an RGB color wheel. The submittable _value_ would be the selected color in a canonical form, like `"#7fff00"`. But to restore the control to a specific state, you'd also need to know which mode it was in, so the _state_ might look like `"palette/#7fff00"`.  
+The `state` parameter is useful when you can't restore a control's state based on the value alone. For example, suppose you create a color picker with multiple modes: a palette or an RGB color wheel. The submittable _value_ would be the selected color in a canonical form, like `"#7fff00"`. But to restore the control to a specific state, you'd also need to know which mode it was in, so the _state_ might look like `"palette/#7fff00"`.
 
 ```js
-this.internals_.setFormValue(this.value_, 
+this.internals_.setFormValue(this.value_,
     this.mode_ + '/' + this.value_);
 ```
 
@@ -252,13 +252,13 @@ formStateRestoreCallback(state, mode) {
     this.mode_ = controlMode;
     this.value_ = value;
   }
-  // Chrome currently doesn't handle autofill for form-associated 
+  // Chrome currently doesn't handle autofill for form-associated
   // custom elements. In the autofill case, you might need to handle
   // a raw value.
 }
 ```
 
-In the case of a simpler control (for example a number input), the value is probably sufficient to restore the control to its previous state. If you omit `state` when calling `setFormValue()`, then the value is passed to `formStateRestoreCallback()`. 
+In the case of a simpler control (for example a number input), the value is probably sufficient to restore the control to its previous state. If you omit `state` when calling `setFormValue()`, then the value is passed to `formStateRestoreCallback()`.
 
 ```js
 formStateRestoreCallback(state, mode) {
@@ -281,7 +281,7 @@ Be sure to run it on Chrome 77 or later to see the API in action.
   </iframe>
 </div>
 
-## Feature detection 
+## Feature detection
 
 You can use feature detection to determine whether the `formdata` event and form-associated custom elements are available. There are currently no polyfills released for either feature. In both cases, you can fall back to adding a hidden form element to propagate the control's value to the form. Many of the more advanced features of form-associated custom elements will likely be difficult or impossible to polyfill.
 
@@ -290,7 +290,7 @@ if ('FormDataEvent' in window) {
   // formdata event is supported
 }
 
-if ('ElementInternals' in window && 
+if ('ElementInternals' in window &&
     'setFormData' in window.ElementInternals) {
   // Form-associated custom elements are supported
 }
@@ -298,7 +298,7 @@ if ('ElementInternals' in window &&
 
 ## Conclusion
 
-The `formdata` event and form-associated custom elements provide new tools for creating custom form controls. 
+The `formdata` event and form-associated custom elements provide new tools for creating custom form controls.
 
 The `formdata` event doesn't give you any new capabilities, but it gives you an interface for adding your form data to the submit process, without having to create a hidden `<input>` element.
 

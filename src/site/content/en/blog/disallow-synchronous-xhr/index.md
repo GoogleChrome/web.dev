@@ -13,7 +13,7 @@ date: 2019-12-18
 hero: hero.jpg
 alt: Roadblock barricades
 tags:
-  - post
+  - blog
   - deprecation
 ---
 

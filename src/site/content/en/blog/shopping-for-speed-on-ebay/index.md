@@ -14,7 +14,7 @@ description: |
   This case study explains how eBay increased key business metrics by optimizing the performance of
   their web and app experiences.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - case-study
   - fast
   - reliable

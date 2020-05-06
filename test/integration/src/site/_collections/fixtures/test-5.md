@@ -1,5 +1,5 @@
 ---
-tags: [ "post" ]
+tags: [ "blog" ]
 date: 2020-01-05
 hero: hero.jpg
 web_lighthouse:
@@ -9,4 +9,4 @@ web_lighthouse:
 # A test post
 
 This test post belongs to collections:
-+ recentPosts
++ recentBlogPosts

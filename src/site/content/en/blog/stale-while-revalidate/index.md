@@ -8,7 +8,7 @@ description: stale-while-revalidate helps developers balance between immediacyâ€
 hero: hero.jpg
 alt: A photograph of a half-painted wall.
 tags:
-  - post
+  - blog
   - speed
   - caching
 ---

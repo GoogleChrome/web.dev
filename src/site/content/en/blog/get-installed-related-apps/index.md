@@ -7,7 +7,7 @@ description: The getInstalledRelatedApps() API is a new web platform API that al
 date: 2018-12-20
 updated: 2020-04-29
 tags:
-  - post
+  - blog
   - capabilities
   - fugu
 hero: hero.jpg

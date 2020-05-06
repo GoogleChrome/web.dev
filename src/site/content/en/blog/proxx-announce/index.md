@@ -11,7 +11,7 @@ description: |
   of devices and progressively enhances the visual appearance the more capable
   the device is.
 tags:
-  - post
+  - blog
   - PROXX
   - games
 ---

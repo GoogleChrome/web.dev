@@ -52,7 +52,7 @@ alt: A description of the hero image for screen reader users.
 #     alt: Provide an alt for your thumbnail.
 
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - accessibility
   - ux
 ---
@@ -493,7 +493,7 @@ quam sem.
 
 <div class="w-text--center">
   <a href="https://example.com/some.pdf" class="w-button w-button--with-icon" data-icon="file_download">
-    Download case study 
+    Download case study
   </a>
 </div>
 
