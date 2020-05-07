@@ -1,3 +1,8 @@
+/**
+ * @fileoverview Verify the url is not a single word. Catches urls such as
+ * web.dev/foo to avoid authors accidentally squatting on high value terms.
+ */
+
 const id = 'url-length';
 const Rule = require('./rule');
 const path = require('path');

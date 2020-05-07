@@ -1,3 +1,7 @@
+/**
+ * @fileoverview Verify the specified property exists in the file's YAML.
+ */
+
 const id = 'has-property';
 const Rule = require('./rule');
 const {ok, fail} = require('../utils/status');

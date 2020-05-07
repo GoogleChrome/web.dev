@@ -1,7 +1,13 @@
+/**
+ * @fileoverview Verify tags used in posts also appear in postTags.js. We only
+ * display tags in our UI if they are present in postTags.js.
+ */
+
 const id = 'tags-are-valid';
 const Rule = require('./rule');
 const {ok, fail} = require('../utils/status');
 const postTags = require('../../../../src/site/_data/postTags');
+
 /**
  * @param {Object} yaml The yaml front matter from the file.
  * @return {Object} The result of the check and any failure/warning messages.
