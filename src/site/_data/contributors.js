@@ -1689,19 +1689,19 @@ const contributors = {
   },
   phillipkriegel: {
     name: {
-      given: "Phillip",
-      family: "Kriegel",
+      given: 'Phillip',
+      family: 'Kriegel',
     },
-    homepage: "https://www.philkrie.me/",
-    github: "philkrie",
+    homepage: 'https://www.philkrie.me/',
+    github: 'philkrie',
     description: {
-      en: "Phillip is a Specialist Engineer",
+      en: 'Phillip is a Specialist Engineer',
     },
     org: {
-      name: "Google",
-      unit: "Global Business",
+      name: 'Google',
+      unit: 'Global Business',
     },
-    country: "US",
+    country: 'US',
   },
   tigeroakes: {
     name: {
