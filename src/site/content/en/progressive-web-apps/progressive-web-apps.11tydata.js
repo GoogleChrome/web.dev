@@ -18,7 +18,7 @@ module.exports = {
       },
       {
         title: 'Capable',
-        pathItems: [],
+        pathItems: ['app-like-pwas'],
       },
       {
         title: 'Reliable',
