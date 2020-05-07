@@ -30,9 +30,9 @@ const {env} = require('../_data/site');
  * If we did not do this, then deploying the site at 4pm PST / 00:00 UTC
  * would launch posts intended for the next day.
  * @param {*} post An eleventy post object.
- * @param {*} now A Date object representing the current time. You shouldn't
- * ever need to pass a date into this function. We make it an argument so we
- * can write tests against it.
+ * @param {!Date=} now A Date object representing the current time. You
+ * shouldn't ever need to pass a date into this function. We make it an argument
+ * so we can write tests against it.
  * @return {boolean}
  */
 function isScheduledForTheFuture(post, now = new Date()) {

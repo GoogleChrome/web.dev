@@ -19,12 +19,12 @@ describe('live-posts', function() {
   let livePosts;
   const {
     isScheduledForTheFuture,
-  } = require('../../../src/site/_filters/live-posts');
+  } = require('../../../../../src/site/_filters/live-posts');
 
   beforeEach(function() {
     post = {date: new Date(), data: {}, inputPath: '/path/to/file.md'};
     siteStub = {env: 'prod'};
-    livePosts = proxyquire('../../../src/site/_filters/live-posts', {
+    livePosts = proxyquire('../../../../../src/site/_filters/live-posts', {
       '../_data/site': siteStub,
     }).livePosts;
   });
@@ -51,7 +51,7 @@ describe('live-posts', function() {
     post.data.draft = true;
     siteStub.env = 'dev';
     // nb. to update a destructured property you have to run proxyquire again.
-    livePosts = proxyquire('../../../src/site/_filters/live-posts', {
+    livePosts = proxyquire('../../../../../src/site/_filters/live-posts', {
       '../_data/site': siteStub,
     }).livePosts;
     const actual = livePosts(post);
