@@ -4,7 +4,7 @@ subhead: The Privacy Sandbox is a series of proposals to satisfy third-party use
 authors:
   - samdutton
 date: 2020-04-08
-updated: 2020-05-06
+updated: 2020-05-07
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: A black-on-white printed sign saying Private, on a wooden wall.
@@ -55,7 +55,7 @@ This is a shift in direction for browsers. The Privacy Sandbox authors' vision o
 
 ### The Privacy Sandbox proposals {: #proposals }
 
-In order to successfully transition away from third-party cookies the Privacy Sandbox authors need your support. The proposal [explainers](https://blog.chromium.org/2019/08/potential-uses-for-privacy-sandbox.html) need feedback from developers as well as publishers, advertisers, and advertising platforms, to suggest missing use cases and more-private ways to accomplish their goals.
+In order to successfully transition away from third-party cookies the Privacy Sandbox authors need your support. The proposal [explainers](https://blog.chromium.org/2019/08/potential-uses-for-privacy-sandbox.html) need feedback from developers as well as publishers, advertisers, and ad technology companies, to suggest missing use cases and share information about how to accomplish their goals in a privacy-safe way. This is how consensus is achieved for new web standards—and how the best, most complete solutions are developed. That’s the outcome we want, and the reason Chrome is encouraging broad participation in this process.
 
 You can comment on the explainers by filing issues against each repository:
 
@@ -63,10 +63,10 @@ You can comment on the explainers by filing issues against each repository:
 Establish the range of web activity across which the user's browser can let websites treat a person as having a single identity. Identify the ways in which information can move across identity boundaries without compromising that separation.
 +   [Privacy Budget](https://github.com/bslassey/privacy-budget)<br>
 Limit the total amount of potentially identifiable data that sites can access. Update APIs to reduce the amount of sensitive data revealed. Make access to sensitive data measurable.
-+   [Trust Token API](https://github.com/dvorak42/trust-token-api)<br>
-Enable an origin that trusts a user to issue them with cryptographic tokens which are stored by the user's browser so they can used in other contexts to verify the user's authenticity.
 +   [Willful IP Blindness](https://github.com/bslassey/ip-blindness)<br>
 Enable sites to 'blind' themselves to IP addresses so they can avoid consuming privacy budget.
++   [Trust Token API](https://github.com/dvorak42/trust-token-api)<br>
+Enable an origin that trusts a user to issue them with cryptographic tokens which are stored by the user's browser so they can be used in other contexts to evaluate  the user's authenticity.
 +   [First-Party Sets](https://github.com/krgovind/first-party-sets/)<br>
 Allow related domain names owned by the same entity (such as apple.com and icloud.com) to declare themselves as the same first party.
 +   [Aggregated Reporting](https://github.com/csharrison/aggregate-reporting-api)<br>
@@ -74,7 +74,7 @@ Provide privacy preserving mechanisms to support a variety of use cases such as 
 +   [Click Through Conversion Measurement Event-Level](https://github.com/csharrison/conversion-measurement-api)<br>
 Provide privacy preserving [click-through-conversion](#glossary-ctc) measurement.
 +   [Federated Learning of Cohorts](https://github.com/jkarlin/floc)<br>
-Enable the user's browser, not the advertiser, to hold information about what a person is interested in. Target ads based on these interests without cross-site user tracking and while preserving the privacy of the user.
+The browser groups together many users with similar browsing histories into a group (or "flock"). Advertisers can target ads at this large group based on mass observations, but cannot recognize individual people in it.
 +   [TURTLEDOVE](https://github.com/michaelkleber/turtledove)<br>
 Enable some form of on-device 'auction' to choose the most relevant ads which would include ads that remarket an advertiser based on a prior expression of interest by the user.
 
@@ -137,7 +137,7 @@ Your IP address is the public 'address' of your computer on the internet, which 
 
 **Goal:** Verify user authenticity without fingerprinting.
 
-Anti-fraud protection is crucial for keeping users safe, and to ensure that advertisers and site owners can get accurate ad performance measurements. Advertisers and site owners must be able to distinguish between malicious bots and trustworthy humans. If advertisers can't reliably tell which ad clicks are from real humans, they spend less, so site publishers get less revenue. Many third party services currently use techniques such as [device fingerprinting](./#fingerprinting) to combat fraud. 
+Anti-fraud protection is crucial for keeping users safe, and to ensure that advertisers and site owners can get accurate ad performance measurements. Advertisers and site owners must be able to distinguish between malicious bots and authentic users. If advertisers can't reliably tell which ad clicks are from real humans, they spend less, so site publishers get less revenue. Many third party services currently use techniques such as [device fingerprinting](./#fingerprinting) to combat fraud. 
 
 Unfortunately, the techniques used to identify legitimate users and block spammers, fraudsters, and bots work in ways similar to [fingerprinting](#glossary-fingerprinting) techniques that damage privacy.
 
