@@ -6,13 +6,14 @@ subhead: |
 hero: installable.jpg
 alt: Network cables.
 date: 2019-08-15
+modified: 2020-05-07
 description: |
   Learn how to create installable progressive Angular applications.
 authors:
   - mgechev
 tags:
   - angular
-  - pwa
+  - progressive-web-apps
 ---
 
 In this post, you'll learn how to use the Angular command line interface (CLI) to make a [Progressive Web App (PWA)](/discover-installable).
