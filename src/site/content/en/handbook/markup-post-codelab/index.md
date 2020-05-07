@@ -31,6 +31,7 @@ The YAML fields at the start of each piece of web.dev content define how the pie
 * `title`: The title for your piece.
 * `subhead`: The subtitle for your piece. Only required for posts.
 * `authors`: The [slug(s)](/handbook/contributor-profile) for the author(s) of the piece.
+* `scheduled` Set to `true` to schedule a post for a future date. Posts will deploy at 7am PST / 15:00 UTC. Example: A post with `date: 2050-01-01`, `scheduled: true`, will go live at 7am PST, January 1st, 2050. If you don't use the scheduled flag then setting a future date has no effect.
 * `date`: The publication date.
 * `hero`: The filename of the hero image, which appears full-bleed above the title. Optional.
 * `hero_position`: The position of the hero image. Optional. Possible values:
