@@ -36,10 +36,8 @@ remove it via their site settings.
 
 Persistent storage is [supported in many modern][caniuse-persistent] browsers.
 
-{% Aside %}
-  To learn more about eviction, how much you can store, and how to handle quota
-  limitations, see [Storage for the web](/storage-for-the-web/).
-{% endAside %}
+To learn more about eviction, how much you can store, and how to handle quota
+limitations, see [Storage for the web](/storage-for-the-web/).
 
 ## Check if your site's storage has been marked as persistent
 
@@ -91,7 +89,7 @@ if (navigator.storage && navigator.storage.persist) {
 
 ### How is permission granted?
 
-Persistent storage is technically granted as a permission. Browsers use
+Persistent storage is treated as a [permission][permission]. Browsers use
 different factors to decide whether to grant persistent storage permissions.
 
 #### Chrome and other Chromium-based browsers
@@ -164,3 +162,4 @@ Hero image by Umberto on [Unsplash](https://unsplash.com/photos/jXd2FSvcRr8)
 
 [caniuse-persistent]: https://caniuse.com/#feat=mdn-api_permissions_persistent-storage_permission
 [eviction]: /storage-for-the-web/#eviction
+[permission]: https://storage.spec.whatwg.org/#persistence
