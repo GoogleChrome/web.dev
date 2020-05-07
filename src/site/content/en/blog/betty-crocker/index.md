@@ -15,7 +15,7 @@ alt: Betty Crocker Cake Mix—Coffee Cinnamon.
 description: |
   Case study of cooking site BettyCrocker.com's experiences with implementing the Wake Lock API.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog
   - case-study
   - wake-lock
   - capabilities
