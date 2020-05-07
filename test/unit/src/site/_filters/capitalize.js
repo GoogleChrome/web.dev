@@ -1,5 +1,5 @@
 const assert = require('assert');
-const capitalize = require('../../../src/site/_filters/capitalize');
+const capitalize = require('../../../../../src/site/_filters/capitalize');
 
 describe('capitalize', function() {
   it('capitalizes the first letter of a string', function() {

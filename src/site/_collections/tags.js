@@ -16,7 +16,7 @@
 
 const path = require('path');
 const postTags = require('../_data/postTags');
-const livePosts = require('../_filters/live-posts');
+const {livePosts} = require('../_filters/live-posts');
 
 /**
  * Returns all tags with posts.

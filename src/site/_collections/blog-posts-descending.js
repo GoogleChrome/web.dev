@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const livePosts = require('../_filters/live-posts');
+const {livePosts} = require('../_filters/live-posts');
 
 module.exports = (collection) => {
   const tag = process.env.PERCY ? 'test-post' : 'blog';
