@@ -164,7 +164,20 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
   // it's otherwise missing.
   if (!pathname.endsWith('.html')) {
     if (!pathname.endsWith('/')) {
-      pathname += '/';
+      // Special-case a URL that doesn't end with "/". We must redirect before
+      // returning content as otherwise relative URLs don't work.
+      // This is not a problem as:
+      //   * this is occuring almost immediately (no network traffic)
+      //   * our webserver treats "/foo" and "/foo/" the same for other folders
+      //     and for the _redirects.yaml handler (i.e., a 404 on /foo and /foo/
+      //     will be treated the same way)
+      //   * a _real_ network request to "/foo" gets 301'ed to "/foo/"
+      const headers = new Headers();
+      headers.append('Location', pathname + '/');
+      return new Response('', {
+        status: 301,
+        headers,
+      });
     }
     pathname += 'index.html';
   }
