@@ -338,7 +338,7 @@ The iOS Podcasts app optionally can also notify you of new episodes of podcasts 
 Whenever there are new episodes available for one of the podcasts I am subscribed to, an app icon badge on the Podcasts home screen icon appears, again encouraging me to re-engage with the app in a way that is not intrusive.
 
 <figure class="w-figure">
-  <img src="./image21.png" alt="" class="w-screenshot" width="400">
+  <img src="./image13.png" alt="" class="w-screenshot" width="310">
   <figcaption class="w-figcaption"></figcaption>
 </figure>
 
@@ -357,7 +357,7 @@ When podcast media is playing, the screen may turn off, but the system will not 
 Apps can optionally keep the screen awake, too, for example to display lyrics or captions.
 
 <figure class="w-figure">
-  <img src="./image13.png" alt="" class="w-screenshot" width="310">
+  <img src="./image21.png" alt="" class="w-screenshot" width="400">
   <figcaption class="w-figcaption"></figcaption>
 </figure>
 
