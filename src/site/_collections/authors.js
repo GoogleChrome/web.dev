@@ -16,7 +16,7 @@
 const fs = require('fs');
 const path = require('path');
 const contributors = require('../_data/contributors');
-const livePosts = require('../_filters/live-posts');
+const {livePosts} = require('../_filters/live-posts');
 const setdefault = require('../_utils/setdefault');
 
 /**
