@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const livePosts = require('../_filters/live-posts');
+const {livePosts} = require('../_filters/live-posts');
 const removeMarkdown = require('remove-markdown');
 const stripLanguage = require('../_filters/strip-language');
 
@@ -42,7 +42,7 @@ function limitText(fulltext, limit = 7500) {
 module.exports = (collection) => {
   const validTags = ['post', 'pathItem'];
   const eleventyPosts = collection
-    .getAll()
+    .getFilteredByGlob('**/*.md')
     .filter((item) => {
       // nb. There's no easy 'getFilteredByMultipleTag' method in Eleventy.
       if (!Array.isArray(item.data.tags)) {

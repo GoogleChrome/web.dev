@@ -12,6 +12,13 @@ date: 2019-10-31
 # Add an updated date to your post if you edit in the future.
 # updated: 2019-11-01
 
+# Add the scheduled flag if you'd like your post to automatically go live
+# during a future date. Posts will deploy at 7am PST / 15:00 UTC.
+# Example: A post with `date: 2050-01-01`, `scheduled: true`, will go live at
+# 7am PST, January 1st, 2050.
+# If you don't use the scheduled flag then setting a future date has no effect.
+# scheduled: true
+
 # !!! IMPORTANT: If your post does not contain a hero image it will not appear
 # on the homepage.
 hero: hero.jpg

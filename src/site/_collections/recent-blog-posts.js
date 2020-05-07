@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const livePosts = require('../_filters/live-posts');
+const {livePosts} = require('../_filters/live-posts');
 
 // Return the three most recent blog posts.
 // Because these posts appear on the homepage they need to have a hero or
