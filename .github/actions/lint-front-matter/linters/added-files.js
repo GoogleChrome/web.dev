@@ -1,9 +1,11 @@
 const core = require('@actions/core');
 const getYamlFrontMatter = require('../utils/get-yaml-front-matter');
+const tagsAreValid = require('../rules/tags-are-valid');
 const urlMatchesTitle = require('../rules/url-matches-title');
 const urlLength = require('../rules/url-length');
 const sortResultsByStatus = require('../utils/sort-results-by-status');
 const {SKIP_URL_LABEL} = require('../utils/constants');
+const skipTagsTests = require('../utils/skip-tags-test');
 const github = require('@actions/github');
 
 /**
@@ -25,6 +27,8 @@ const skipUrlTests = () => {
  */
 module.exports = async (files) => {
   core.debug(`added-files linting ${files.length}: ${files}`);
+  const skipTags = skipTagsTests();
+  const skipUrls = skipUrlTests();
   const out = [];
   for (file of files) {
     core.debug(`added-files file: ${file}`);
@@ -32,10 +36,14 @@ module.exports = async (files) => {
     const frontMatter = await getYamlFrontMatter(file);
 
     // Tests ---------------------------------------------------
-    if (!skipUrlTests()) {
+    if (!skipUrls) {
       results.push(urlMatchesTitle.test(file, frontMatter));
       results.push(urlLength.test(file));
     }
+
+    tagsAreValid
+      .test(file, frontMatter, skipTags)
+      .forEach((result) => results.push(result));
     // ---------------------------------------------------------
 
     const {passes, failures, warnings} = sortResultsByStatus(results);
