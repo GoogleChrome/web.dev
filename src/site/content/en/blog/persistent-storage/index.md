@@ -11,14 +11,14 @@ tags:
   - storage
   - progressive-web-apps
 hero: hero.jpg
-alt: PCB circuit board of electronic device
+alt: Printed circuit board
 ---
 
 When faced with storage pressure like low disk space, browsers will
 typically [evict data][eviction], including from the Cache API and IndexedDB,
 from the least recently used origin. This may cause data loss if the app
-hasn't synced data to the server, and reduce the reliability of the app by
-removing resources required for the app to work. Both of which lead to
+hasn't synced data with the server, and reduce the reliability of the app by
+removing resources required for the app to work, both of which lead to
 negative user experiences.
 
 Thankfully, research by the Chrome team shows that data is very rarely
@@ -41,7 +41,7 @@ Persistent storage is [supported in many modern][caniuse-persistent] browsers.
   limitations, see [Storage for the web](/storage-for-the-web/).
 {% endAside %}
 
-## Check if your sites storage has been marked as persistent
+## Check if your site's storage has been marked as persistent
 
 You can use JavaScript to determine if your site's storage has been marked
 as persistent. Calling `navigator.storage.persisted()` returns a Promise that
@@ -118,10 +118,10 @@ the site to store data in persistent storage.
 
 <figure class="w-figure">
   <img src="ff-persist-request.jpg" class="w-screenshot"
-       alt="A screenshot UI popup shown by Firefox when a site requests persistent storage."
+       alt="A popup shown by Firefox when a site requests persistent storage."
        width="428">
   <figcaption class="w-figcaption">
-    UI popup shown by Firefox when a site requests persistent storage.
+    A popup shown by Firefox when a site requests persistent storage.
   </figcaption>
 </figure>
 
