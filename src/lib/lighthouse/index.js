@@ -34,8 +34,16 @@ export const metrics = [
     id: 'first-contentful-paint',
   },
   {
-    title: 'First Meaningful Paint',
-    id: 'first-meaningful-paint',
+    title: 'Time to Interactive',
+    id: 'interactive',
+  },
+  {
+    title: 'Speed Index',
+    id: 'speed-index',
+  },
+  {
+    title: 'Total Blocking Time',
+    id: 'total-blocking-time',
   },
   {
     title: 'Largest Contentful Paint',
@@ -43,25 +51,21 @@ export const metrics = [
     vitals: true,
   },
   {
-    title: 'Speed Index',
-    id: 'speed-index',
+    title: 'Cumulative Layout Shift',
+    id: 'cumulative-layout-shift',
+    vitals: true,
+  },
+  {
+    title: 'First Meaningful Paint',
+    id: 'first-meaningful-paint',
   },
   {
     title: 'First CPU Idle',
     id: 'first-cpu-idle',
   },
   {
-    title: 'Time to Interactive',
-    id: 'interactive',
-  },
-  {
     title: 'Estimated Input Latency',
     id: 'estimated-input-latency',
-  },
-  {
-    title: 'Cumulative Layout Shift',
-    id: 'cumulative-layout-shift',
-    vitals: true,
   },
   {
     title: 'First Input Delay',

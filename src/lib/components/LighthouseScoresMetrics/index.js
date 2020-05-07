@@ -64,7 +64,10 @@ class LighthouseScoresMetrics extends BaseElement {
       <div class="lh-metrics-container">
         <div class="lh-metrics-table">${inner}</div>
         <div class="lh-metrics-vitals" ?hidden=${!hasVitals}>
-          <span>This is a <a href="/vitals">Core Web Vital</a></span>
+          <span
+            >Core Web Vitals assessment. To learn more, see
+            <a href="/vitals">Web Vitals</a>.</span
+          >
         </div>
       </div>
     `;

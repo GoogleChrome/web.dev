@@ -37,8 +37,8 @@ web-lighthouse-scores-metrics {
 
     &::before {
       @include font_material_icon();
-      content: 'beenhere';
-      opacity: 0.5;
+      color: $WEB_VITALS_COLOR;
+      content: 'bookmark';
       margin-right: 5px;
       font-size: 20px;
     }
@@ -79,8 +79,8 @@ web-lighthouse-scores-metrics {
   .lh-vital {
     &::after {
       @include font_material_icon();
-      content: 'beenhere';
-      opacity: 0.5;
+      color: $WEB_VITALS_COLOR;
+      content: 'bookmark';
       margin-left: 5px;
     }
   }
