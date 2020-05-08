@@ -323,7 +323,7 @@ async function verifyPermission(fileHandle, withWrite) {
   if (await fileHandle.requestPermission(opts) === 'granted') {
     return true;
   }
-  // The user did nt grant permission, return false.
+  // The user didn't grant permission, return false.
   return false;
 }
 ```
