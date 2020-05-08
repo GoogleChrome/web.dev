@@ -173,7 +173,7 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
       //     will be treated the same way)
       //   * a _real_ network request to "/foo" gets 301'ed to "/foo/"
       const headers = new Headers();
-      headers.append('Location', pathname + '/');
+      headers.append('Location', pathname + '/' + url.search);
       return new Response('', {
         status: 301,
         headers,
