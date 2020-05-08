@@ -202,7 +202,7 @@ Object.keys(tags).forEach((key) => {
   const tag = tags[key];
   const description = tag.description
     ? tag.description
-    : `Our latest news, updates, and stories about ${tag.title}.`;
+    : `Our latest news, updates, and stories about ${(tag.title).toLowerCase()}.`;
 
   postTags[key] = {
     ...tag,
