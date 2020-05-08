@@ -252,6 +252,8 @@ function readFile(file) {
 }
 ```
 
+Hero image by Vincent Botta from [Unsplash](https://unsplash.com/photos/bv_rJXpNU9I)
+
 [mdn-file-input]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file
 [mdn-file-input-attributes]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#Additional_attributes
 [mdn-filelist]: https://developer.mozilla.org/en-US/docs/Web/API/FileList
