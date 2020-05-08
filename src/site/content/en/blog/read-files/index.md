@@ -4,86 +4,59 @@ subhead: How to select files, read file metadata and content, and monitor read p
 description: |
   How to select files, read file metadata and content, and monitor read progress.
 date: 2010-06-18
-updated: 2020-03-24
+updated: 2020-05-08
 authors:
  - kaycebasques
+ - petelepage
 tags:
   - blog
-draft: true
+  - storage
+hero: hero.jpg
+alt: 'A 3.5" floppy disk'
 ---
+
+Being able to select and interact with files on the user's local device is
+one of the most commonly used features of the web. It allows users to select
+files and upload them to a server, for example, uploading photos, or
+submitting tax documents, etc. But, it also allows sites to read and
+manipulate them without ever having to transfer the data across the network.
 
 This guide shows you how to:
 
-* [Select files with HTML and read file metadata](#input)
-* [Select files with a custom drag-and-drop UI](#drag-and-drop) (not recommended)
-* [Read a file's content](#read)
-* [Slice a file's content](#slice)
-* [Monitor the progress of a file read](#monitor)
+* Select files
+  * [Using the HTML input element](#select-input)
+  * [Using a drag-and-drop zone](#select-dnd)
+* [Read file metadata](#read-metadata)
+* [Read a file's content](#read-content)
 
-{% Aside 'note' %}
-  The [Native File System API](/native-file-system/) is the modern alternative
-  to many of the operations listed in this article.
-  Since the API is not compatible with all browsers yet,
-  we provide a library called
-  [browser-nativefs](https://github.com/GoogleChromeLabs/browser-nativefs)
-  that uses the new API wherever it is available, but falls back to legacy approaches when it is not.
-{% endAside %}
+## Select files {: #select }
 
-## Browser compatibility {: #compatibility }
+### HTML input element {: #select-input }
 
-Detailed browser compatibility data is listed at the bottom of each section.
-If you see the usual [feature detection design pattern][detection] in a code sample
-it means that it's unknown whether the API is 100% supported across all browsers
-at the time of writing.
-
-## Prerequisites {: #prerequisites }
-
-This guide assumes you're familiar with:
-
-* [Beginner web development concepts](https://developer.mozilla.org/docs/Learn)
-* [Events](https://developer.mozilla.org/docs/Learn/JavaScript/Building_blocks/Events), in
-  particular [`Event.stopPropagation()`][propagation] and
-  [`Event.preventDefault()`][preventdefault]
-* [Feature detection][detection]
-* Modern JavaScript syntax like
-  [arrow functions](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Functions/Arrow_functions),
-  [shorthand object declarations](https://alligator.io/js/object-property-shorthand-es6/),
-  [`const`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/const), and
-  [template literals](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Template_literals)
-
-## Select files with an `<input type="file">` element {: #input }
+The easiest way to allow users to select files is using the
+[`<input type="file">`][mdn-file-input] element, which is supported in every
+major browser. When clicked, it lets a user select a file, or multiple files
+if the [`multiple`][mdn-file-input-attributes] attribute is included, using
+their operating system's built-in file selection UI. When the user finishes
+selecting a file or files, the element's `change` event is fired. You can
+access the list of files from `event.target.files`, which is a
+[`FileList`][mdn-filelist] object. Each item in the `FileList` is a
+[`File`][mdn-file] object.
 
 ```html
 <!-- The `multiple` attribute lets users select multiple files. -->
 <input type="file" id="file-selector" multiple>
 <script>
-  if (window.FileList && window.File) {
-    document.getElementById('file-selector').addEventListener('change', event => {
-      // `file` is a `File` object.
-      // `event.target.files` is a `FileList` object.
-      for (const file of event.target.files) {
-        // Not supported in Safari for iOS.
-        const name = file.name ? file.name : 'NOT SUPPORTED';
-        // Not supported in Firefox for Android or Opera for Android.
-        const type = file.type ? file.type : 'NOT SUPPORTED';
-        // Unknown cross-browser support.
-        const size = file.size ? file.size : 'NOT SUPPORTED';
-        console.log({file, name, type, size});
-      }
-    });
-  }
+  const fileSelector = document.getElementById('file-selector');
+  fileSelector.addEventListener('change', (event) => {
+    const fileList = event.target.files;
+    console.log(fileList);
+  });
 </script>
 ```
 
-This example lets a user select multiple files using their operating system's built-in
-file selection UI and then logs out the name and file type of each selected file to the Console.
-
-After the user clicks the `<input type="file">` element the operating system's built-in
-file selection UI appears. Add the `multiple` attribute to your `<input type="file">` element
-to instruct the operating system to allow the user to select multiple files. When the
-user finishes selecting a file or files the browser fires the `<input type="file">` element's
-`change` event. You can access the list of files from `event.target.files`, which is a [`FileList`][filelist]
-object. Each item in the `FileList` is a [`File`][file] object.
+This example lets a user select multiple files using their operating system's
+built-in file selection UI and then logs each selected file to the console.
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe src="https://glitch.com/embed/#!/embed/input-type-file?previewSize=100"
@@ -92,109 +65,159 @@ object. Each item in the `FileList` is a [`File`][file] object.
   </iframe>
 </div>
 
-Browser compatibility data for the APIs used in this section:
-[`<input type="file">`](https://developer.mozilla.org/docs/Web/HTML/Element/input/file#Browser_compatibility),
-[`File`](https://developer.mozilla.org/docs/Web/API/File#Browser_compatibility),
-[`FileList`](https://developer.mozilla.org/docs/Web/API/FileList#Browser_compatibility)
+#### Limit the types of files user can select {: #accept }
 
-### Select files with a custom drag-and-drop UI {: #drag-and-drop }
-
-{% Aside 'caution' %}
-  If you're only going to provide one way to select files,
-  [selecting files with an `<input type="file">` element](#input) is the recommended
-  approach because browser vendors do a lot of work to ensure that their elements
-  are accessible. However, MDN doesn't currently have cross-browser support data
-  on how many browsers treat `<input type="file">` as built-in drag-and-drop targets.
-  After you provide an accessible `<input type="file">` element you can also
-  provide a large, custom drag-and-drop surface to achieve a best-of-both-worlds UX.
-{% endAside %}
+In some cases, you may want to limit the types of files users can select.
+For example, an image editing app should only accept images, not text files.
+To do that, you can add an [`accept`][mdn-file-input-attributes] attribute to
+the input element to specify which files are accepted.
 
 ```html
-<div id="file-selector"></div>
-<script>
-  const fileSelector = document.getElementById('file-selector');
-  if (window.FileList && window.File) {
-    fileSelector.addEventListener('dragover', event => {
-      event.stopPropagation();
-      event.preventDefault();
-      // Style the drag-and-drop as a "copy file" operation.
-      event.dataTransfer.dropEffect = 'copy';
-    });
-    fileSelector.addEventListener('drop', event => {
-      event.stopPropagation();
-      event.preventDefault();
-      // `file` is a `File` object.
-      // `event.dataTransfer.files` is a `FileList` object.
-      for (const file of event.dataTransfer.files) {
-        // Not supported in Safari for iOS.
-        const name = file.name ? file.name : 'NOT SUPPORTED';
-        // Not supported in Firefox for Android or Opera for Android.
-        const type = file.type ? file.type : 'NOT SUPPORTED';
-        // Unknown cross-browser support.
-        const size = file.size ? file.size : 'NOT SUPPORTED';
-        console.log({file, name, type, size});
-      }
-    });
-  }
-</script>
+<input type="file" id="file-selector" accept=".jpg, .jpeg, .png">
 ```
 
-This example lets users select multiple files by dragging and dropping them
-over a custom drag-and-drop target on the page and then logs the name and file type
-of each selected file to the Console.
+### Custom drag-and-drop {: #select-dnd }
 
-This is mostly the same as the [Select files with an `<input type="file">` element](#input)
-example. Check out the links in [Prerequisites](#prerequisites) if you're not familiar with
-`event.preventDefault()` or `event.stopPropagation()`.
-The `dragover` event listener may not seem necessary, but without it
-you'll probably find that the drag-and-drop UX doesn't work as intended.
-[`event.dataTransfer.dropEffect = 'copy'`][dropeffect] enables you instruct the browser to
-visually indicate that the drag-and-drop action is creating a copy of the file.
-In comparison, `event.dataTransfer.dropEffect = 'move'` instructs the browser to indicate
-that the original file is being moved from one location to another.
-When you do a custom drag-and-drop UI you access the selected files from
-`event.dataTransfer.files` in your `drop` event listener, which is a `FileList` object.
+In some browsers, the `<input type="file">` element is also a drop target,
+allowing users to drag-and-drop files into your app. But, the drop target is
+small, and can be hard to use. Instead, once you've provided the core
+functionality using an `<input type="file">` element, you can provide a
+large, custom drag-and-drop surface.
+
+#### Choose your drop zone {: #choose-drop-zone }
+
+Your drop surface will depend on the design of your application. You may
+only want part of the window to be a drop surface, or potentially the entire
+window.
+
+<figure class="w-figure">
+  <img src="squoosh.png" class="w-screenshot w-screenshot--filled"
+       alt="A screenshot of Squoosh, an image compression web app.">
+  <figcaption class="w-figcaption">
+    Squoosh makes the entire window a drop zone.
+  </figcaption>
+</figure>
+
+Squoosh allows the user to drag-and-drop an image anywhere into the window,
+and clicking **select an image** invokes the `<input type="file">` element.
+Whatever you choose as your drop zone, make sure it's clear to the user that
+they can drag-and-drop files onto that surface.
+
+#### Define the drop zone {: #define-drop-zone }
+
+To enable an element to be a drag-and-drop zone, you'll need to listen for
+two events, [`dragover`][mdn-dragover] and [`drop`][mdn-drop]. The `dragover`
+event updates the browser UI to visually indicate that the drag-and-drop
+action is creating a copy of the file. The `drop` event is fired after the
+user has dropped the files onto the surface. Similar to the input element,
+you can access the list of files from `event.dataTransfer.files`, which is
+a [`FileList`][mdn-filelist] object. Each item in the `FileList` is a
+[`File`][mdn-file] object.
+
+```js
+const dropArea = document.getElementById('drop-area');
+
+dropArea.addEventListener('dragover', (event) => {
+  event.stopPropagation();
+  event.preventDefault();
+  // Style the drag-and-drop as a "copy file" operation.
+  event.dataTransfer.dropEffect = 'copy';
+});
+
+dropArea.addEventListener('drop', (event) => {
+  event.stopPropagation();
+  event.preventDefault();
+  const fileList = event.dataTransfer.files;
+  console.log(fileList);
+});
+```
+
+[`event.stopPropagation()`][mdn-stoppropagation] and
+[`event.preventDefault()`][mdn-preventdefault] stop the browser's default
+behavior from happening, and allow your code to run instead. Without them,
+the browser would otherwise navigate away from your page and open the files
+the user dropped into the browser window.
 
 {# This example doesn't work as an embed. #}
 
-Check out [Custom drag-and-drop](https://custom-drag-and-drop.glitch.me/)
-for a live demonstration.
+Check out [Custom drag-and-drop][glitch-drag-and-drop] for a live demonstration.
 
-Browser compatibility data for the APIs used in this section:
-[`File`](https://developer.mozilla.org/docs/Web/API/File#Browser_compatibility),
-[`FileList`](https://developer.mozilla.org/docs/Web/API/FileList#Browser_compatibility),
-[`DataTransfer`](https://developer.mozilla.org/docs/Web/API/DataTransfer#Browser_compatibility)
+### What about directories? {: #directories }
 
-## Read a file's content {: #read }
+Unfortunately, today there isn't a good way to get access to a directory.
 
-```html
-<input type="file" id="file-selector">
-<img id="output">
-<script>
-  const img = document.getElementById('output');
-  if (window.FileList && window.File && window.FileReader) {
-    document.getElementById('file-selector').addEventListener('change', event => {
-      const reader = new FileReader();
-      reader.addEventListener('load', event => {
-        img.src = event.target.result;
-      });
-      reader.readAsDataURL(event.target.files[0]);
-    });
+The [`webkitdirectory`][mdn-webkitdirectory] attribute on the
+`<input type="file">` element allows the user to choose a directory or
+directories. It is supported in some Chromium-based browsers, and possibly
+desktop Safari, but has [conflicting][caniuse-webkitdirectory] reports of
+browser compatibility.
+
+If drag-and-drop is enabled, a user may try to drag a directory into the
+drop zone. When the drop event is fired, it will include a `File` object for
+the directory, but will be unable to access any of the files within the
+directory.
+
+In the future, the Native File System API provides an easy way to both read
+and write to files and directories on the user's local system. It's currently
+under development and only available as an origin trial in Chrome. To learn
+more about it, see the [Native File System API][native-file-system] article.
+
+Since the Native File System API is not compatible with all browsers yet,
+check out [browser-nativefs](https://github.com/GoogleChromeLabs/browser-nativefs),
+a helper library that uses the new API wherever it is available, but falls
+back to legacy approaches when it is not.
+
+## Read file metadata {: #read-metadata }
+
+The [`File`][mdn-file] object contains a number of metadata properties about
+the file. Most browsers provide the file name, the size of the file, and the
+MIME type, though depending on the platform, different browsers may provide
+different, or additional information.
+
+```js
+function getMetadataForFileList(fileList) {
+  for (const file of fileList) {
+    // Not supported in Safari for iOS.
+    const name = file.name ? file.name : 'NOT SUPPORTED';
+    // Not supported in Firefox for Android or Opera for Android.
+    const type = file.type ? file.type : 'NOT SUPPORTED';
+    // Unknown cross-browser support.
+    const size = file.size ? file.size : 'NOT SUPPORTED';
+    console.log({file, name, type, size});
   }
-</script>
+}
 ```
 
-This example lets the user select a single image file using their operating system's built-in
-file selection UI, then converts the file content to a data URL, then uses that data URL
-to display the image in an `<img>` element. Check out the `read-image-file` Glitch below
-to see how to verify that the user has selected an image file.
+You can see this in action in the [`input-type-file`][glitch-input-demo]
+Glitch demo.
 
-This is mostly the same as the [Select files with an `<input type="file">` element](#input)
-example. The key API here is [`FileReader`][filereader], which enables you to read
-the content of a `File` object into memory. You can instruct `FileReader` to read a file
-as an [array buffer][buffer], a [data URL][data], or [text][text].
-You can track the progress of your read operations by listening for the `loadstart`,
-`progress`, `abort`, `error`, and `loadend` events on your `FileReader` object.
+## Read a file's content {: #read-content }
+
+To read a file, use [`FileReader`][mdn-filereader], which enables you to read
+the content of a `File` object into memory. You can instruct `FileReader`
+to read a file as an [array buffer][mdn-filereader-as-buffer], a
+[data URL][mdn-filereader-as-dataurl], or [text][mdn-filereader-as-text].
+
+```js
+function readImage(file) {
+  // Check if the file is an image.
+  if (file.type && file.type.indexOf('image') === -1) {
+    console.log('File is not an image.', file.type, file);
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.addEventListener('load', (event) => {
+    img.src = event.target.result;
+  });
+  reader.readAsDataURL(file);
+}
+```
+
+The example above reads a `File` provided by the user, then converts it to a
+data URL, and uses that data URL to display the image in an `img` element.
+Check out the [`read-image-file`][glitch-read-image] Glitch to see how to
+verify that the user has selected an image file.
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe src="https://glitch.com/embed/#!/embed/read-image-file?previewSize=100"
@@ -203,71 +226,48 @@ You can track the progress of your read operations by listening for the `loadsta
   </iframe>
 </div>
 
-Browser compatibility data for the APIs used in this section:
-[`<input type="file">`](https://developer.mozilla.org/docs/Web/HTML/Element/input/file#Browser_compatibility),
-[`File`](https://developer.mozilla.org/docs/Web/API/File#Browser_compatibility),
-[`FileList`](https://developer.mozilla.org/docs/Web/API/FileList#Browser_compatibility),
-[`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader#Browser_compatibility)
+### Monitor the progress of a file read {: #monitor-progress }
 
-## Monitor the progress of a file read {: #monitor }
+When reading large files, it may be helpful to provide some UX to indicate
+how far the read has progressed. For that, use the
+[`progress`][mdn-filereader-progress] event provided by `FileReader`. The
+`progress` event provides two properties, `loaded`, the amount read, and
+`total`, the total amount to read.
 
-```html
-<input type="file" id="file-selector">
-<p id="output"></p>
-<script>
-  const output = document.getElementById('output');
-  if (window.FileList && window.File && window.FileReader) {
-    document.getElementById('file-selector').addEventListener('change', event => {
-      output.textContent = 'Progress: 0%';
-      const reader = new FileReader();
-      // `event` is a `ProgressEvent`.
-      reader.addEventListener('progress', event => {
-        // `loaded` and `total` are `ProgressEvent` properties. Not supported in IE.
-        if (event.loaded && event.total) {
-          const status = Math.round((event.loaded / event.total) * 100);
-          output.textContent = `Progress: ${status}%`;
-        }
-      });
-      reader.readAsDataURL(event.target.files[0]);
-    });
-  }
-</script>
+```js/7-12
+function readFile(file) {
+  const reader = new FileReader();
+  reader.addEventListener('load', (event) => {
+    const result = event.target.result;
+    // Do something with result
+  });
+
+  reader.addEventListener('progress', (event) => {
+    if (event.loaded && event.total) {
+      const percent = (event.loaded / event.total) * 100;
+      console.log(`Progress: ${Math.round(percent)}`);
+    }
+  });
+  reader.readAsDataURL(file);
+}
 ```
 
-This example lets the user select a single file using their operating system's
-built-in file selection UI and then displays a progress bar that goes from `0%`
-to `100%` while the file's content is being loaded into memory.
-
-This is mostly the same as the [Read a file's content](#read) sample code.
-The key APIs here are the `progress` event and the
-[`ProgressEvent`](https://developer.mozilla.org/docs/Web/API/ProgressEvent)
-object, which lets you quantify the progress of the file read operation by
-dividing its `loaded` property by its `total` property.
-
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe src="https://glitch.com/embed/#!/embed/monitor-file-read-progress?previewSize=100"
-          alt="How to monitor the progress of a file read in JavaScript."
-          style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
-
-Browser compatibility data for the APIs used in this section:
-[`<input type="file">`](https://developer.mozilla.org/docs/Web/HTML/Element/input/file#Browser_compatibility),
-[`File`](https://developer.mozilla.org/docs/Web/API/File#Browser_compatibility),
-[`FileList`](https://developer.mozilla.org/docs/Web/API/FileList#Browser_compatibility),
-[`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader#Browser_compatibility),
-[`ProgressEvent`](https://developer.mozilla.org/docs/Web/API/ProgressEvent#Browser_compatibility)
-
-[compat]: https://developer.mozilla.org/docs/Web/API/File#Browser_compatibility
-[file]: https://developer.mozilla.org/docs/Web/API/File
-[filereader]: https://developer.mozilla.org/docs/Web/API/FileReader
-[filelist]: https://developer.mozilla.org/docs/Web/API/FileList
-[input]: https://developer.mozilla.org/docs/Web/HTML/Element/input/file
-[detection]: https://developer.mozilla.org/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection
-[events]: https://developers.google.com/analytics/devguides/collection/analyticsjs/events
-[buffer]: https://developer.mozilla.org/docs/Web/API/FileReader/readAsArrayBuffer
-[data]: https://developer.mozilla.org/docs/Web/API/FileReader/readAsDataURL
-[text]: https://developer.mozilla.org/docs/Web/API/FileReader/readAsText
-[dropeffect]: https://developer.mozilla.org/docs/Web/API/DataTransfer/dropEffect
-[propagation]: https://developer.mozilla.org/docs/Web/API/Document_Object_Model/Examples#Example_5:_Event_Propagation
-[preventdefault]: https://developer.mozilla.org/docs/Web/API/Event/preventDefault
+[mdn-file-input]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file
+[mdn-file-input-attributes]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#Additional_attributes
+[mdn-filelist]: https://developer.mozilla.org/en-US/docs/Web/API/FileList
+[mdn-file]: https://developer.mozilla.org/en-US/docs/Web/API/File
+[mdn-dragover]: https://developer.mozilla.org/en-US/docs/Web/API/Document/dragover_event
+[mdn-drop]: https://developer.mozilla.org/en-US/docs/Web/API/Document/drop_event
+[native-file-system]: /native-file-system/
+[mdn-filereader]: https://developer.mozilla.org/en-US/docs/Web/API/FileReader
+[mdn-filereader-as-buffer]: https://developer.mozilla.org/docs/Web/API/FileReader/readAsArrayBuffer
+[mdn-filereader-as-dataurl]: https://developer.mozilla.org/docs/Web/API/FileReader/readAsDataURL
+[mdn-filereader-as-text]: https://developer.mozilla.org/docs/Web/API/FileReader/readAsText
+[mdn-filereader-progress]: https://developer.mozilla.org/en-US/docs/Web/API/FileReader/progress_event
+[mdn-stoppropagation]: https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation
+[mdn-preventdefault]: https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
+[mdn-webkitdirectory]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/webkitdirectory
+[glitch-read-image]: https://read-image-file.glitch.me/
+[glitch-input-demo]: https://input-type-file.glitch.me/
+[glitch-drag-and-drop]: https://custom-drag-and-drop.glitch.me/
+[caniuse-webkitdirectory]: https://caniuse.com/#search=webkitdirectory
