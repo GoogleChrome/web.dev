@@ -23,8 +23,9 @@ import removeServiceWorkers from './utils/sw-remove';
 window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', id);
 ga('set', 'transport', 'beacon');
-ga('set', dimensions.SIGNED_IN, localStorage['webdev_isSignedIn'] ? 1 : 0);
-ga('set', dimensions.TRACKING_VERSION, version);
+// nb. Analytics requires dimension values to be strings.
+ga('set', dimensions.SIGNED_IN, localStorage['webdev_isSignedIn'] ? '1' : '0');
+ga('set', dimensions.TRACKING_VERSION, version.toString());
 ga('send', 'pageview');
 
 // In future, we can feature-detect other things here and prevent loading core
