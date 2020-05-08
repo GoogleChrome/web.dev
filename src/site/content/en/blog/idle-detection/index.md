@@ -109,57 +109,49 @@ this definition is left to the user agent.
 The first step when using the Idle Detection API is
 to ensure the `'notifications'` permission is granted.
 The second step is then to initialize the `IdleDetector`.
-It takes an object with the desired idle `threshold` in milliseconds.
+It takes an object with the desired idle `threshold` in milliseconds
+and `signal` with an [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)
+to abort idle detection as parameters.
 The minimum `threshold` is 60.000 milliseconds (1 minute).
 You can finally start the idle detection by calling the
-`IdleDetector`'s `start()` method, and you can stop it again by calling the `stop()` method.
-
-There are two ways to get updates on the user's idle state: the first is for one-off requests by
-checking the `IdleDetector`'s `state` property. The sample below polls the `state`,
-which after one minute of inactivity will be reported as the `user` being `"idle"`.
+`IdleDetector`'s `start()` method.
 
 ```js
-const {state} = (await navigator.permissions.query({name: 'notifications'}));
-if (state === 'granted') {
-  try {
-    const idleDetector = new IdleDetector({threshold: 60000});  
-    await idleDetector.start();
-    console.log("Initial idle state:", idleDetector.state);
-    // Every 10 seconds poll the user's idle state
-    const interval = setInterval(() => {
-      console.log("Current idle state:", idleDetector.state);
-    }, 10 * 1000);
-    // After 2min, stop the idle detection
-    setTimeout(async () => {
-      clearInterval(interval);
-      await idleDetector.stop();
-    }, 120 * 1000);
-  } catch (err) {
-    // Deal with initialization errors like
-    // permission denied, running outside of top-level frame, etc.
-    console.error(err.name, err.message);
+const main = async () => {
+  // Feature detection.
+  if (!('IdleDetector' in window)) {
+    return console.log('IdleDetector is not available.');
   }
-}
-```
-
-The second, _and preferred_, way is by subscribing to `change` events via an event listener.
-
-```js
-const {state} = (await navigator.permissions.query({name: 'notifications'}));
-if (state === 'granted') {
+  // Check if notifications permission is granted.
+  if ((await navigator.permissions.query({name: 'notifications'})).state !== 'granted') {
+    return console.log('Notifications permission not granted.');
+  }    
   try {
-    const idleDetector = new IdleDetector({threshold: 60000});
-    idleDetector.addEventListener("change", () => {
-      const state = idleDetector.state;
-      console.log(`Idle change: ${state.user}, ${state.screen}`);
+    const controller = new AbortController();
+    const signal = controller.signal;
+    
+    const idleDetector = new IdleDetector({signal});
+    idleDetector.addEventListener('change', () => {
+      console.log(`Idle change: ${idleDetector.userState}, ${idleDetector.screenState}.`);
+    });    
+    await idleDetector.start({
+      threshold: 60000,
+      signal,
     });
-    await idleDetector.start();
+    console.log('IdleDetector is active.');
+    
+    window.setTimeout(() => {
+      controller.abort();
+      console.log('IdleDetector is stopped.');
+    }, 120000);
   } catch (err) {
-    // Deal with initialization errors like
-    // permission denied, running outside of top-level frame, etc.
+    // Deal with initialization errors like permission denied,
+    // running outside of top-level frame, etc.
     console.error(err.name, err.message);
   }
-}
+};
+
+main();
 ```
 
 ### Demo
