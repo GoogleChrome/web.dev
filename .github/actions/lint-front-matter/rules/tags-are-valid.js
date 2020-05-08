@@ -4,7 +4,7 @@ const {ok, fail} = require('../utils/status');
 const postTags = require('../../../../src/site/_data/postTags');
 /**
  * @param {Object} yaml The yaml front matter from the file.
- * @return {Array<Object>} The result of the check and any failure/warning messages.
+ * @return {Object} The result of the check and any failure/warning messages.
  */
 const test = (yaml) => {
   const invalidTags = [];

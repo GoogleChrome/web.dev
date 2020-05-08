@@ -22,9 +22,9 @@ module.exports = async (files) => {
     // Tests ---------------------------------------------------
     results.push(hasProperty.test(frontMatter, 'updated'));
 
-    tagsAreValid
-      .test(file, frontMatter, skipTags)
-      .forEach((result) => results.push(result));
+    if (!skipTags) {
+      results.push(tagsAreValid.test(frontMatter));
+    }
     // ---------------------------------------------------------
 
     const {passes, failures, warnings} = sortResultsByStatus(results);
