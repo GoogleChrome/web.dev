@@ -1,4 +1,5 @@
-describe.only('lint-front-matter', function() {
-  require('./linters');
+describe('lint-front-matter', function() {
+  // require('./linters');
+  require('./main');
   require('./rules');
 });

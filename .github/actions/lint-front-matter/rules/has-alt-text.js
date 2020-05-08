@@ -7,12 +7,12 @@ const Rule = require('./rule');
 const {ok, fail} = require('../utils/status');
 
 /**
- * @param {Object} yaml The yaml front matter from the file.
+ * @param {Object} frontMatter The yaml front matter from the file.
  * @return {Object} The result of the check and any failure/warning messages.
  */
-const test = (yaml) => {
-  if ('hero' in yaml) {
-    if (!('alt' in yaml) || yaml.alt === '') {
+const test = ({frontMatter}) => {
+  if ('hero' in frontMatter) {
+    if (!('alt' in frontMatter) || frontMatter.alt === '') {
       return fail(`Missing alt text property in YAML front matter.`);
     }
   }

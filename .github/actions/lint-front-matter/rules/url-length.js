@@ -12,7 +12,7 @@ const {ok, fail} = require('../utils/status');
  * @param {string} file Filename of the file being linted.
  * @return {Object} The result of the check and any failure/warning messages.
  */
-const test = (file) => {
+const test = ({file}) => {
   const dirname = path
     .dirname(file)
     .split('/')

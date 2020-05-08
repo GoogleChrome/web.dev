@@ -1,6 +1,14 @@
 const {okStatus, failStatus, warnStatus} = require('./status');
 
-module.exports = (results) => {
+/**
+ * Take the array of results returned from linting a sinlge file
+ * and bucket them by passes/failures/warnings.
+ * @param {!Object} data
+ * @param {!string} data.file A path to a file.
+ * @param {!Array} data.results An array of Rule results (pass/fail/warn).
+ * @return {{file: string, passes: Array, failures: Array, warnings: Array}}
+ */
+module.exports = (file, results) => {
   const passes = [];
   const failures = [];
   const warnings = [];
@@ -24,5 +32,5 @@ module.exports = (results) => {
     }
   }
 
-  return {passes, failures, warnings};
+  return {file, passes, failures, warnings};
 };

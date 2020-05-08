@@ -11,8 +11,8 @@ class Rule {
     this.testFn = testFn;
   }
 
-  test(...args) {
-    const result = this.testFn(...args);
+  test(args) {
+    const result = this.testFn(args);
     result.id = this.id;
     return result;
   }

@@ -9,15 +9,15 @@ const {ok, fail} = require('../utils/status');
 const postTags = require('../../../../src/site/_data/postTags');
 
 /**
- * @param {Object} yaml The yaml front matter from the file.
+ * @param {Object} frontMatter The yaml front matter from the file.
  * @return {Object} The result of the check and any failure/warning messages.
  */
-const test = (yaml) => {
+const test = ({frontMatter}) => {
   const invalidTags = [];
 
-  if ('tags' in yaml) {
-    if (Array.isArray(yaml.tags)) {
-      yaml.tags.forEach((tag) => {
+  if ('tags' in frontMatter) {
+    if (Array.isArray(frontMatter.tags)) {
+      frontMatter.tags.forEach((tag) => {
         if (!(tag in postTags)) {
           invalidTags.push(tag);
         }
