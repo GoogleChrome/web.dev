@@ -4,7 +4,7 @@ subhead: Persistent storage can help protect critical data from eviction, and re
 authors:
   - petelepage
 description: Persistent storage can help protect critical data from eviction, and reduce the chance of data loss.
-date: 2020-05-07
+date: 2020-05-08
 updated: 2020-05-08
 tags:
   - blog
@@ -29,7 +29,7 @@ your data, you can request that your entire site's storage be marked
 persistent.
 
 {% Aside %}
-  Requesting that all your site’s data be marked as persistent should only
+  Requesting that all your site's data be marked as persistent should only
   be done for critical data (for example, end-to-end encryption keys) that
   if not backed up to the cloud, could result in significant data loss if
   not saved. Persistent storage is not deleted by the browser, even if
