@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: Persistent storage can help protect critical data from eviction, and reduce the chance of data loss.
 date: 2020-05-07
-updated: 2020-05-07
+updated: 2020-05-08
 tags:
   - blog
   - storage
@@ -24,18 +24,20 @@ negative user experiences.
 Thankfully, research by the Chrome team shows that data is very rarely
 cleared automatically by Chrome. It is far more common for users to manually
 clear storage. Thus if a user visits your site regularly, the chances are
-small that your data will be evicted.
+small that your data will be evicted. To prevent the browser from deleting
+your data, you can request that your entire site's storage be marked
+persistent.
 
-To prevent the browser from deleting your data, you can request that your
-entire site's storage be marked persistent. **You should only do this if you
-have critical data that is not backed up to the cloud, for example end-to-end
-encryption keys, that if deleted could result in significant data loss.**
-Persistent storage will not be deleted by the browser, even if storage on the
-device is running tight. It will only be deleted if the user chooses to
-remove it via their site settings.
+{% Aside %}
+  Requesting that all your site’s data be marked as persistent should only
+  be done for critical data (for example, end-to-end encryption keys) that
+  if not backed up to the cloud, could result in significant data loss if
+  not saved. Persistent storage is not deleted by the browser, even if
+  storage running low. It will only be deleted if the user chooses to
+  remove it via their site settings.
+{% endAside %}
 
 Persistent storage is [supported in many modern][caniuse-persistent] browsers.
-
 To learn more about eviction, how much you can store, and how to handle quota
 limitations, see [Storage for the web](/storage-for-the-web/).
 
