@@ -124,7 +124,8 @@ const main = async () => {
     return console.log('IdleDetector is not available.');
   }
   // Check if notifications permission is granted.
-  if ((await navigator.permissions.query({name: 'notifications'})).state !== 'granted') {
+  const hasPermission = await navigator.permissions.query({name: 'notifications'});
+  if (hasPermission.state !== 'granted') {
     return console.log('Notifications permission not granted.');
   }
   try {
