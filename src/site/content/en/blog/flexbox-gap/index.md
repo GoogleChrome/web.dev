@@ -221,4 +221,4 @@ Pretty cool.
 
 ## Summary
 
-Flex gap wasn't all that came with Chromium 85, either. There was also a big multi-year refactor of flexbox: [flexNG](#). Enjoy performance enhancements and new features. It's a great day. 
+Flex gap wasn't all that will come with Chromium 85, either. There will also be a release of a big multi-year refactor of flexbox called flexNG. Stay tuned, mind the gaps. 
