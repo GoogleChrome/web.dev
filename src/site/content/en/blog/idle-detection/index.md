@@ -125,21 +125,21 @@ const main = async () => {
   // Check if notifications permission is granted.
   if ((await navigator.permissions.query({name: 'notifications'})).state !== 'granted') {
     return console.log('Notifications permission not granted.');
-  }    
+  }
   try {
     const controller = new AbortController();
     const signal = controller.signal;
-    
+
     const idleDetector = new IdleDetector();
     idleDetector.addEventListener('change', () => {
       console.log(`Idle change: ${idleDetector.userState}, ${idleDetector.screenState}.`);
-    });    
+    });
     await idleDetector.start({
       threshold: 60000,
       signal,
     });
     console.log('IdleDetector is active.');
-    
+
     window.setTimeout(() => {
       controller.abort();
       console.log('IdleDetector is stopped.');
@@ -180,6 +180,9 @@ defined in [Controlling Access to Powerful Web Platform Features][powerful-apis]
 including user control, transparency, and ergonomics.
 The ability to use this API is controlled by the
 [`'notifications'` permission](https://w3c.github.io/permissions/#notifications).
+We are starting with this permission since it matches the needs we have currently heard,
+but we are open to expanding this in the future and would be happy to
+[hear from you](#feedback) if it does not meet your use case of the API.
 
 ### User control and privacy
 
@@ -189,6 +192,9 @@ correlate the data to identify unique users across origins. To mitigate these so
 the Idle Detection API limits the granularity of the reported idle events and user agents
 may choose to fuzz the reported data. In Chrome,
 we plan to do this as to render the attack vector useless.
+Our security team's threat analysis also motivated gating this API behind the `'notifications'`
+permission. This relatively high bar prevents websites from attempting to abuse
+either of their two powers: sending notifications or detecting the user's idle state.
 
 ## Feedback {: #feedback }
 
@@ -232,7 +238,8 @@ The Idle Detection API was implemented by [Sam Goto](https://twitter.com/samuelg
 Thanks to [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques), and
 [Reilly Grant](https://github.com/reillyeon) for their reviews of this article.
-The hero image is by [Fernando Hernandez](https://unsplash.com/@_ferh97) on Unsplash.
+The hero image is by [Fernando Hernandez](https://unsplash.com/@_ferh97) on
+[Unsplash](https://unsplash.com/photos/8Facxtxqojc).
 
 [issues]: https://github.com/samuelgoto/idle-detection/issues
 [demo]: https://idle-detection.glitch.me/
