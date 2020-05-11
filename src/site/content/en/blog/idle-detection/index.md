@@ -130,7 +130,7 @@ const main = async () => {
     const controller = new AbortController();
     const signal = controller.signal;
     
-    const idleDetector = new IdleDetector({signal});
+    const idleDetector = new IdleDetector();
     idleDetector.addEventListener('change', () => {
       console.log(`Idle change: ${idleDetector.userState}, ${idleDetector.screenState}.`);
     });    
