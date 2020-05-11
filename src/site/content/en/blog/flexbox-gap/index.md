@@ -181,7 +181,7 @@ In the first 2 examples (without Flexbox `gap`), the children are targeted and a
 With these updates come changes to Chromium DevTools, notice how the **Styles** pane handles `grid-gap` and `gap` now 👍
 
 <figure class="w-figure">
-  <img src="./devtools-gap.png" alt="An office with two people working at a table." style="max-width: 400px; border-radius: 10px;">
+  <img src="./devtools-gap.png" alt="An office with two people working at a table." style="border-radius: 10px;" width="400">
   <figcaption class="w-figcaption">Devtools shows the both grid-gap and gap, with gap shown used below grid-gap as to let the cascade use the latest syntax.</figcaption>
 </figure>
 
@@ -221,4 +221,4 @@ Pretty cool.
 
 ## Summary
 
-Flex gap wasn't all that came with Chromium 85, either. There was also a big multi-year refactor of flexbox: [flexNG](#). Enjoy performance enhancements and new features. It's a great day. 
+Flex gap isn't all that will come with Chromium 85, either. There will also be a release of a big multi-year refactor of flexbox called flexNG. Stay tuned, mind the gaps. 
