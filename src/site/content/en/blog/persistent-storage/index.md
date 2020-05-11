@@ -4,8 +4,8 @@ subhead: Persistent storage can help protect critical data from eviction, and re
 authors:
   - petelepage
 description: Persistent storage can help protect critical data from eviction, and reduce the chance of data loss.
-date: 2020-05-08
-updated: 2020-05-08
+date: 2020-05-11
+updated: 2020-05-11
 tags:
   - blog
   - storage
