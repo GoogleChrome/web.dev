@@ -203,6 +203,14 @@ const contributors = {
     twitter: 'bibydigital',
     github: 'mihajlija',
   },
+  mustafakurtuldu: {
+    name: {
+      given: 'Mustafa',
+      family: 'Kurtuldu',
+    },
+    twitter: 'mustafa_x',
+    github: 'mustafa-x',
+  },
   agektmr: {
     name: {
       given: 'Eiji',
