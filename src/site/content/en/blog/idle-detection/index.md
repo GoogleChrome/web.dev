@@ -229,6 +229,9 @@ and let us know where and how you're using it.
 ## Acknowledgements
 
 The Idle Detection API was implemented by [Sam Goto](https://twitter.com/samuelgoto).
+Thanks to [Joe Medley](https://github.com/jpmedley),
+[Kayce Basques](https://github.com/kaycebasques), and
+[Reilly Grant](https://github.com/reillyeon) for their reviews of this article.
 The hero image is by [Fernando Hernandez](https://unsplash.com/@_ferh97) on Unsplash.
 
 [issues]: https://github.com/samuelgoto/idle-detection/issues
