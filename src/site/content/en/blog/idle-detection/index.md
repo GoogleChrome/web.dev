@@ -134,7 +134,9 @@ const main = async () => {
 
     const idleDetector = new IdleDetector();
     idleDetector.addEventListener('change', () => {
-      console.log(`Idle change: ${idleDetector.userState}, ${idleDetector.screenState}.`);
+      const userState = idleDetector.userState;
+      const screenState = idleDetector.screenState;
+      console.log(`Idle change: ${userState}, ${screenState}.`);
     });
     await idleDetector.start({
       threshold: 60000,
