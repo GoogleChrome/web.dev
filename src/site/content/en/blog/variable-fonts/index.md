@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 date: 2018-02-19
 updated: 2020-05-11
-hero: hero.png
+hero: hero.jpg
 tags:
   - blog
   - fonts
@@ -347,3 +347,6 @@ people:
 * Laurence Penney, developer of [axis-praxis.org](https://axis-praxis.org)
 * [Mandy Michael](https://twitter.com/Mandy_Kerr)
 * Dave Crossland, Program Manager, Google Fonts
+
+Hero image by [Bruno Martins](https://unsplash.com/@brunus) on
+[Unsplash](https://unsplash.com/photos/OhJmwB4XWLE).
