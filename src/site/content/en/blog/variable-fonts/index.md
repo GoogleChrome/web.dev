@@ -101,7 +101,7 @@ Amstelvar only supports the Latin writing system. Considering the needs of all
 the world's scripts, and many of today's typography applications, the quality
 of the reading experience can be remarkably enhanced by this diversity of type
 styles within a font. And, if it is without performance penalty, the user can
-use a few or as many styles as they wish – it's up to their design.
+use a few or as many styles as they wish–it's up to their design.
 
 ### Italics are slightly different
 
@@ -231,7 +231,7 @@ set their values in CSS:
 
 In order to add a variable font first we must link it, as with any custom font;
 
-```
+```css
 @font-face {
   font-family: 'AmstelvarAlpha';
   src: url('../fonts/AmstelvarAlpha-VF.ttf');
@@ -241,7 +241,7 @@ In order to add a variable font first we must link it, as with any custom font;
 The way we define an axis value is by using the CSS property `font-variations`
 which has a series of values that pair the axis tag with an instance location:
 
-```
+```css
 #font-amstelvar {
   font-family: 'AmstelvarAlpha';
   font-variation-settings: 'wdth' 400, 'wght' 98;
@@ -320,7 +320,7 @@ for more details.
 
 It is possible to use `@supports` in your CSS to create a viable fallback:
 
-```
+```css
 @supports (font-variation-settings: 'wdth' 200) {
   @font-face {
     /* https://github.com/TypeNetwork/Amstelvar */
