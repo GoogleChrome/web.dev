@@ -112,6 +112,9 @@ The second step is then to instantiate the `IdleDetector`.
 The minimum `threshold` is 60,000 milliseconds (1 minute).
 You can finally start the idle detection by calling the
 `IdleDetector`'s `start()` method.
+It takes an object with the desired idle `threshold` in milliseconds
+and `signal` with an [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)
+to abort idle detection as parameters.
 
 ```js
 const main = async () => {
