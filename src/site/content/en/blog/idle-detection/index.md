@@ -112,7 +112,7 @@ The second step is then to initialize the `IdleDetector`.
 It takes an object with the desired idle `threshold` in milliseconds
 and `signal` with an [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)
 to abort idle detection as parameters.
-The minimum `threshold` is 60.000 milliseconds (1 minute).
+The minimum `threshold` is 60,000 milliseconds (1 minute).
 You can finally start the idle detection by calling the
 `IdleDetector`'s `start()` method.
 
@@ -242,4 +242,3 @@ The hero image is by [Fernando Hernandez](https://unsplash.com/@_ferh97) on Unsp
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [ot]: ToDo
-
