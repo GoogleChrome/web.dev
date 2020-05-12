@@ -11,8 +11,6 @@ authors:
 tags:
   - blog
   - storage
-hero: hero.jpg
-alt: 'A 3.5" floppy disk'
 ---
 
 Being able to select and interact with files on the user's local device is
