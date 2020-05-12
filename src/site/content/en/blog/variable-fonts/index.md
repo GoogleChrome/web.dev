@@ -26,12 +26,12 @@ or "Roboto Italic." In other words, a typeface is what you _see_, and the font i
 what you _use_.
 
 <div class="w-figure w-figure--inline-left" style="max-width:50%">
-  <figure>
+  <figure class="w-figure w-figure--inline-left">
     <img src="robot-specimen.png" alt="A specimen of Roboto">
   </figure>
 </div>
 <div class="w-figure w-figure--inline-right" style="max-width:50%">
-  <figure>
+  <figure class="w-figure w-figure--inline-right">
     <img src="roboto-family.png" alt="Different members of the Roboto family">
   </figure>
 </div>
@@ -78,7 +78,7 @@ designer or developer:
 <figure class="w-figure">
   <img src="Amstelvar-Alpha-example.png"
   alt="Example of the Weight Axes for the typeface Amstelvar">
-  <figcaption>
+  <figcaption class="w-figcaption">
     Typeface Amstelvar, designed by David Berlow, type designer and
     typographer at Font Bureau.
   </figcaption>
@@ -116,10 +116,10 @@ that typically define a Roman lowercase "n" do not match the contours used to
 define an Italic lowercase "n". Instead of interpolating one contour to the
 other, the **Italic** axis toggles from Roman to Italic contours.
 
-<figure>
+<figure class="w-figure">
   <img src="Amstelvar-Ital-axis.png"
   alt="Example of the Weight Axes for the typeface Amstelvar">
-  <figcaption>
+  <figcaption class="w-figcaption">
     Amstelvar's "n" contours in Italic (12 point, regular weight, normal width),
     and in Roman. Image supplied by David Berlow, type designer and typographer
     at Font Bureau.
@@ -159,10 +159,10 @@ shapes, white or negative shapes, and the x and y dimensions. These 4 aspects
 can be mixed to form the other styles, such as Width and Weight, in the way
 that primary colors can be mixed to create any other color.
 
-<figure>
+<figure class="w-figure">
   <img src="amstel-grade-e.gif"
   alt="Amstelvar font's Grade being changed on the fly.">
-  <figcaption>
+  <figcaption class="w-figcaption">
     Grade axis being changed on the fly.
   </figcaption>
 </figure>
@@ -248,10 +248,10 @@ which has a series of values that pair the axis tag with an instance location:
 }
 ```
 
-<figure>
+<figure class="w-figure">
   <img src="gingham-weight-e.gif"
   alt="Ginghams font's Weight and Width being changed on the fly.">
-  <figcaption>
+  <figcaption class="w-figcaption">
     In this example you can see the Weight and Width axes being changed on the
     fly.
   </figcaption>
@@ -269,7 +269,7 @@ of the actual text. For titles, exploring different axes to create great
 artistic designs are exciting, but for body copy this risks making the text
 illegible.
 
-<figure>
+<figure class="w-figure">
   <img src="grass-mandy.png"
   alt="Grass example by Mandy Michael">
 </figure>
@@ -281,7 +281,7 @@ by Mandy Michael.
 You can view the working example and source code for the above sample
 [here](https://codepen.io/mandymichael/pen/YYaWop).
 
-<figure>
+<figure class="w-figure">
   <img src="axis-praxis.gif"
   alt="Typeface Zycon, designed for animation by David Berlow, type designer and
     typographer at Font Bureau.">
