@@ -64,7 +64,7 @@ gesture. Do not ask for persistent storage on page load, or in other bootstrap
 code, the browser may prompt the user for permission. If the user
 isn't doing anything that they think needs to be saved, the prompt may be
 confusing, and they'll likely reject the request. Additionally, don't prompt
-too frequently, if the user decided not to grant permission, don't immediately
+too frequently. If the user decided not to grant permission, don't immediately
 prompt again on the next save.
 
 ## Request persistent storage
