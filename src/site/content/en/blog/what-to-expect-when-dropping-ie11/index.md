@@ -56,7 +56,7 @@ Let's go! ⬇️
 
 * `Promise` [and `fetch`](https://developers.google.com/web/fundamentals/primers/async-functions) (no need for `XMLHttpRequest` anymore 🚫)
 
-  * ... XHR's `responseType` can also [now be set safely to "json"](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseType), but why would you bother? 🤷
+  * XHR's `responseType` can also [now be set safely to "json"](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseType), but why would you bother? 🤷
 
 * Methods on `Array`: `find`, `includes`; and on `String`: `includes`, `padStart` and `padEnd`
 
@@ -136,7 +136,7 @@ Let's go! ⬇️
 
 * [Stroke and fill on text](https://webkit.org/blog/85/introducing-text-stroke/)
 
-   * ... although supported on all evergreens, you'll need to include the `-webkit-` prefixes: yes, *even for Edge and Firefox*
+   * Although supported on all evergreens, you'll need to include the `-webkit-` prefixes: yes, *even for Edge and Firefox*
 
 * Risky bugs in IE11 are no longer an issue:
 
