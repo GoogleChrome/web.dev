@@ -86,6 +86,17 @@
   .w-column-left {
     flex-grow: 1;
     padding: 0 16px;
+    width: 100%;
+
+    p {
+      max-width: 512px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h3:first-of-type {
+      margin-top: 0;
+    }
   }
 
   .w-column-right {
@@ -115,6 +126,7 @@
     .w-column-left {
       flex-grow: 0;
       width: 37.5%;
+      padding-right: 48px;
     }
 
     .w-column-right {
