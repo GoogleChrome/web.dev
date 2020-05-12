@@ -70,7 +70,7 @@ called instances.
 
 For example, the variable font [Amstelvar](https://github.com/TypeNetwork/Amstelvar)
 has three masters for its **Weight** axis: The Regular master is at the center,
-and two masters, thinner and bolder, are at the opposite ends of the axis.
+and two masters, Thinner and Bolder, are at the opposite ends of the axis.
 Between these there are potentially 200 instances that can be chosen by the
 designer or developer:
 
@@ -83,18 +83,18 @@ designer or developer:
   </figcaption>
 </figure>
 
-The [OpenType specification](https://docs.microsoft.com/en-gb/typography/opentype/spec/dvaraxisreg))
+The [OpenType specification](https://docs.microsoft.com/en-gb/typography/opentype/spec/dvaraxisreg)
 specifies other axis, such as **Width**, **Optical Size**, **Italic** and
 **Slant**. All of these axes share the same default master, and we can combine
 them to explore an exponential number of typographic styles, like powers of 2,
-3 and 4 do to numbers.
+3, and 4 do to numbers.
 
 Amstelvar also has three masters in a Width axis: Again the Regular is at the
 center of the axis, and two masters, narrow and wider, are at the opposite ends
 of this axis. These not only provide all the widths of the Regular style, but
 also all the widths and weights combined.
 
-Among Amstelvar's registered axes (width, weight and optical size) there are
+Among Amstelvar's registered axes (Width, Weight and Optical Size) there are
 thousands of styles. This may seem like massive overkill, but consider that
 Amstelvar only supports the Latin writing system. Considering the needs of all
 the world's scripts, and many of today's typography applications, the quality
@@ -104,9 +104,9 @@ use a few or as many styles as they wish–it's up to their design.
 
 ### Italics are slightly different
 
-The way that Italics are handled in variable fonts is interesting, as there are
-two difference approaches. Typefaces like Helvetica or Roboto have interpolation
-compatible contours, so their Roman and Italic styles can be interpolated
+The way that italics are handled in variable fonts is interesting, as there are
+two different approaches. Typefaces like Helvetica or Roboto have 
+interpolation-compatible contours, so their Roman and Italic styles can be interpolated
 between and the **Slant** axis can be used to get from Roman to Italic.
 
 Other typefaces (such as Garamond, Baskerville, or Bodoni) have Roman and Italic
