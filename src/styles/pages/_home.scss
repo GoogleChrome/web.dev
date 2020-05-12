@@ -50,7 +50,6 @@
 
   @include bp(md) {
     text-align: left;
-    @include w-headline--two-small();
   }
 }
 
