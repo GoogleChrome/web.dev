@@ -53,7 +53,7 @@ On the web, we have to consider both aspects, plus the associated bandwidth
 costs. For every member of a typeface family used in our designs, we have had to
 require another font file to be downloaded by our users before they can see that
 text. Only including the Regular and Bold styles, plus their italic
-counterparts, can amount to 500k or more of data. This has been a sticking point
+counterparts, can amount to 500&nbsp;KB or more of data. This has been a sticking point
 for web designers and developers, as a richer typographic experience comes
 at a cost. This is even before we have dealt how the fonts are rendered, and the
 fallback or delayed-loading patterns we are going to use (such as ["FOIT" and
