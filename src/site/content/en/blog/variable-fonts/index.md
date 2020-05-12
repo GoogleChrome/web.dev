@@ -61,7 +61,7 @@ FOUT](https://css-tricks.com/fout-foit-foft/).
 
 ## Anatomy of a variable font
 
-A variable font is a collection of master styles, with one central 'default'
+A variable font is a collection of master styles, with one central "default"
 master (usually the Regular font style) and multiple registered "axes" which
 tie the central master to the other masters. For example, the **Weight** axis
 might connect a Light style master to the default style and through to the Bold
