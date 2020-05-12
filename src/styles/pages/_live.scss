@@ -89,9 +89,9 @@
     width: 100%;
 
     p {
-      max-width: 512px;
       margin-left: auto;
       margin-right: auto;
+      max-width: 512px;
     }
 
     h3:first-of-type {
@@ -125,8 +125,8 @@
 
     .w-column-left {
       flex-grow: 0;
-      width: 37.5%;
       padding-right: 48px;
+      width: 37.5%;
     }
 
     .w-column-right {
