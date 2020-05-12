@@ -44,7 +44,7 @@ The most common causes of a poor CLS are:
 
   <figure class="w-figure">
     <video controls loop muted class="w-screenshot" poster="video-image-dimensions.jpg">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/image-dimensions.webm" type="video/webm;">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/image-dimensions.webm" type="video/webm">
       <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/image-dimensions.mp4" type="video/mp4">
     </video>
    <figcaption class="w-figcaption">
@@ -54,7 +54,7 @@ The most common causes of a poor CLS are:
 
   <figure class="w-figure">
     <video controls loop muted class="w-screenshot" poster="video-image-dimensions-fixed.jpg">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/image-dimensions-fixed.webm" type="video/webm;">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/image-dimensions-fixed.webm" type="video/webm">
       <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/image-dimensions-fixed.mp4" type="video/mp4">
     </video>
    <figcaption class="w-figcaption">
@@ -196,7 +196,7 @@ Some sites may find collapsing the slot initially can reduce layout shifts if th
 
   <figure class="w-figure">
     <video controls loop muted class="w-screenshot" poster="video-final-ads-no-dimensions.jpg">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/final_ads_no_dimensions.webm" type="video/webm;">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/final_ads_no_dimensions.webm" type="video/webm">
       <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/final_ads_no_dimensions.mp4" type="video/mp4">
     </video>
    <figcaption class="w-figcaption">
@@ -206,7 +206,7 @@ Some sites may find collapsing the slot initially can reduce layout shifts if th
 
   <figure class="w-figure">
     <video controls loop muted class="w-screenshot" poster="video-top-ad-after.jpg">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/top-ad-after.webm" type="video/webm;">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/top-ad-after.webm" type="video/webm">
       <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/top-ad-after.mp4" type="video/mp4">
     </video>
    <figcaption class="w-figcaption">
@@ -245,7 +245,7 @@ These embeds often aren't aware in advance just how large an embed will be (for 
 
   <figure class="w-figure">
     <video controls loop muted class="w-screenshot" poster="video-embed-iframe.jpg">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/embed-iframe.webm" type="video/webm;">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/embed-iframe.webm" type="video/webm">
       <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/embed-iframe.mp4" type="video/mp4">
     </video>
    <figcaption class="w-figcaption">
@@ -255,7 +255,7 @@ These embeds often aren't aware in advance just how large an embed will be (for 
 
   <figure class="w-figure">
     <video controls loop muted class="w-screenshot" poster="video-embeds-with-dimensions.jpg">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/embeds-with-dimensions.webm" type="video/webm;">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/embeds-with-dimensions.webm" type="video/webm">
       <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/embeds-with-dimensions.mp4" type="video/mp4">
     </video>
    <figcaption class="w-figcaption">
@@ -291,7 +291,7 @@ You've probably experienced layout shifts due to UI that pops-in at the top or b
 
   <figure class="w-figure">
     <video controls loop muted class="w-screenshot" poster="video-related-articles-dynamic-content.jpg">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/related-articles-dynamic-content.webm" type="video/webm;">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/related-articles-dynamic-content.webm" type="video/webm">
       <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/related-articles-dynamic-content.mp4" type="video/mp4">
     </video>
    <figcaption class="w-figcaption">
