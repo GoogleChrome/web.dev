@@ -283,9 +283,6 @@ by Mandy Michael.
 You can view the working example and source code for the above sample
 [here](https://codepen.io/mandymichael/pen/YYaWop).
 
-    In this example you can see the Weight and Width axes being changed on the
-    fly.
-
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/axis-praxis.mp4" 
