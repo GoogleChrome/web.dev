@@ -3,7 +3,6 @@
 
 .w-live-landing-page {
   color: $GREY_800;
-  overflow-x: hidden;
 
   h1,
   h2 {
@@ -11,12 +10,13 @@
   }
 }
 
-.w-event-section {
-  border-bottom: 1px solid #dadce0;
-  padding: 0 8px;
+.w-live-top {
+  // We need this as the live background extends outside the normal l/r of the
+  // page. Contain it so it doesn't let users scroll.
+  overflow-x: hidden;
 }
 
-section.w-event-section-inner {
+.w-event-section {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;

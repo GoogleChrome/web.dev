@@ -9,8 +9,8 @@ draft: true
 
 <div class="w-live-landing-page">
 
-  <div class="w-event-section">
-    <section class="w-event-section-inner">
+  <div class="w-live-top">
+    <section class="w-event-section">
 
 <div class="w-column-left">
   <h1 class="w-event-heading">web.dev<span>/LIVE</span></h1>
@@ -35,10 +35,10 @@ Join Google’s Web Platform team to celebrate our community's actions, learn mo
   </p>
 
   <div class="w-masthead-home__buttons">
-    <a class="w-button w-button--primary w-masthead-home__button--primary gc-analytics-event" data-category="web.dev" data-label="home, test site" data-action="click">
+    <a class="w-button w-button--primary w-masthead-home__button--primary gc-analytics-event" data-category="web.dev" data-label="subscribe, newsletter" data-action="click" href="#subscribe">
       Get updates
     </a>
-    <a class="w-button w-button--secondary gc-analytics-event" data-category="web.dev" data-label="home, start learning" data-action="click">
+    <a class="w-button w-button--secondary gc-analytics-event" data-category="web.dev" data-label="live, add to calendar" data-action="click">
       Add to calendar
     </a>
   </div>
@@ -47,5 +47,11 @@ Join Google’s Web Platform team to celebrate our community's actions, learn mo
 
     </section>
   </div>
+
+  <hr />
+
+  <section class="w-layout-container">
+    {% include 'partials/subscribe.njk' %}
+  </section>
 
 </div>
