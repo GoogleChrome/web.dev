@@ -28,8 +28,8 @@ what you _use_.
 <figure class="w-figure">
   <img src="robot-specimen.png" alt="A specimen of Roboto">
   <figcaption class="w-figcaption">
-    Roboto was designed and developed by Christian Robertson.
-    Depicted is a specimen of the Roboto typeface.
+    Examples of the Roboto typeface that was designed and developed
+    Christian Robertson.
   </figcaption>
 </figure>
 
