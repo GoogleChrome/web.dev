@@ -1,0 +1,50 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M32 72C32 69.7909 33.7909 68 36 68H220C222.209 68 224 69.7909 224 72V82H32V72Z" fill="white" stroke="black"/>
+<circle cx="40" cy="75" r="2.5" fill="#3740FF" stroke="black"/>
+<circle cx="50" cy="75" r="2.5" fill="#2979FF" stroke="black"/>
+<circle cx="60" cy="75" r="2.5" fill="#3FC4FF" stroke="black"/>
+<path d="M224 188V82H32V188" stroke="black"/>
+<mask id="path-7-inside-1" fill="white">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M134 93H184V123H134V93ZM72 113H122V144H72V113ZM184 133H134V163H184V133Z"/>
+</mask>
+<path d="M184 93H185V92H184V93ZM134 93V92H133V93H134ZM184 123V124H185V123H184ZM134 123H133V124H134V123ZM122 113H123V112H122V113ZM72 113V112H71V113H72ZM122 144V145H123V144H122ZM72 144H71V145H72V144ZM134 133V132H133V133H134ZM184 133H185V132H184V133ZM134 163H133V164H134V163ZM184 163V164H185V163H184ZM184 92H134V94H184V92ZM185 123V93H183V123H185ZM134 124H184V122H134V124ZM133 93V123H135V93H133ZM122 112H72V114H122V112ZM123 144V113H121V144H123ZM72 145H122V143H72V145ZM71 113V144H73V113H71ZM134 134H184V132H134V134ZM135 163V133H133V163H135ZM184 162H134V164H184V162ZM183 133V163H185V133H183Z" fill="black" mask="url(#path-7-inside-1)"/>
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="72" y="93" width="112" height="70">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M134 93H184V123H134V93ZM72 113H122V144H72V113ZM184 133H134V163H184V133Z" fill="#C4C4C4"/>
+</mask>
+<g mask="url(#mask0)">
+<path d="M80 87.5V168" stroke="black"/>
+<path d="M92 87.5V168" stroke="black"/>
+<path d="M104 87.5V168" stroke="black"/>
+<path d="M116 87.5V168" stroke="black"/>
+<path d="M128 87.5V168" stroke="black"/>
+<path d="M140 87.5V168" stroke="black"/>
+<path d="M152 87.5V168" stroke="black"/>
+<path d="M164 87.5V168" stroke="black"/>
+<path d="M176 87.5V168" stroke="black"/>
+<path d="M68 104.5H188.5" stroke="black"/>
+<path d="M68 116.5H188.5" stroke="black"/>
+<path d="M68 128.5H188.5" stroke="black"/>
+<path d="M68 140.5H188.5" stroke="black"/>
+<path d="M68 152.5H188.5" stroke="black"/>
+</g>
+<path d="M9.5 128.5L72.5 113.5" stroke="black" stroke-dasharray="2 2"/>
+<path d="M134.5 93.5L151.5 48.5M183.5 122.5L246.5 107.5M104.5 187.5L121.5 143.5M134.5 162.5L151.5 207.5" stroke="black" stroke-dasharray="2 2"/>
+<path d="M183.5 133.5L246.5 148.5" stroke="black" stroke-dasharray="2 2"/>
+<circle cx="116" cy="128.5" r="3" fill="#3FC4FF" stroke="black"/>
+<circle cx="152" cy="116.5" r="3" fill="#2979FF" stroke="black"/>
+<circle cx="140" cy="152.5" r="3" fill="#3740FF" stroke="black"/>
+<circle cx="176" cy="140.5" r="3" fill="#3740FF" stroke="black"/>
+<rect x="9.5" y="128.5" width="95" height="59" fill="white" stroke="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M57 178C68.0457 178 77 169.046 77 158C77 146.954 68.0457 138 57 138C45.9543 138 37 146.954 37 158C37 169.046 45.9543 178 57 178ZM52 166.66L67 158L52 149.34V166.66Z" fill="#3FC4FF"/>
+<path d="M67 158L67.25 158.433L68 158L67.25 157.567L67 158ZM52 166.66H51.5V167.526L52.25 167.093L52 166.66ZM52 149.34L52.25 148.907L51.5 148.474V149.34H52ZM76.5 158C76.5 168.77 67.7696 177.5 57 177.5V178.5C68.3218 178.5 77.5 169.322 77.5 158H76.5ZM57 138.5C67.7696 138.5 76.5 147.23 76.5 158H77.5C77.5 146.678 68.3218 137.5 57 137.5V138.5ZM37.5 158C37.5 147.23 46.2304 138.5 57 138.5V137.5C45.6782 137.5 36.5 146.678 36.5 158H37.5ZM57 177.5C46.2304 177.5 37.5 168.77 37.5 158H36.5C36.5 169.322 45.6782 178.5 57 178.5V177.5ZM66.75 157.567L51.75 166.227L52.25 167.093L67.25 158.433L66.75 157.567ZM51.75 149.773L66.75 158.433L67.25 157.567L52.25 148.907L51.75 149.773ZM52.5 166.66V149.34H51.5V166.66H52.5Z" fill="black"/>
+<rect x="151.5" y="48.5" width="95" height="59" fill="white" stroke="black"/>
+<circle cx="183" cy="91" r="5.5" fill="#2979FF" stroke="black"/>
+<circle cx="207" cy="85" r="5.5" fill="#2979FF" stroke="black"/>
+<path d="M188.5 71.3658V65.3942L212.5 59.6342V65.6058L188.5 71.3658Z" fill="#2979FF" stroke="black"/>
+<path d="M188.5 67V91" stroke="black"/>
+<path d="M212.5 61V85" stroke="black"/>
+<rect x="151.5" y="148.5" width="95" height="59" fill="white" stroke="black"/>
+<path d="M192.072 174L199 162L205.928 174H192.072Z" fill="#3FC4FF" stroke="black"/>
+<circle cx="189" cy="186" r="7.5" fill="#2979FF" stroke="black"/>
+<rect x="202.5" y="179" width="14" height="14" fill="#3740FF" stroke="black"/>
+</svg>
