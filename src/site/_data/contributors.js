@@ -210,7 +210,7 @@ const contributors = {
     },
     twitter: 'mustafa_x',
     github: 'mustafa-x',
-    homepage: 'https://www.designtoday.info/'
+    homepage: 'https://www.designtoday.info/',
   },
   agektmr: {
     name: {
