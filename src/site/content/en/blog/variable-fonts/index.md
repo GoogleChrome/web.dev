@@ -56,8 +56,8 @@ text. Only including the Regular and Bold styles, plus their italic
 counterparts, can amount to 500&nbsp;KB or more of data. This has been a sticking point
 for web designers and developers, as a richer typographic experience comes
 at a cost. This is even before we have dealt with how the fonts are rendered, and the
-fallback or delayed-loading patterns we are going to use (such as ["FOIT" and
-"FOUT"](https://www.zachleat.com/web/fout-vs-foit/)).)
+fallback or delayed-loading patterns we are going to use to prevent [FOIT and
+FOUT](https://css-tricks.com/fout-foit-foft/).
 
 ## Anatomy of a variable font
 
