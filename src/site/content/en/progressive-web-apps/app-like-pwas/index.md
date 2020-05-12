@@ -7,11 +7,20 @@ description: |
 
 date: 2020-04-29
 ---
-When you play PWA buzzword bingo, it is a safe bet to set on "PWAs are just websites". Microsoft's PWA documentation [agrees](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/#progressive-web-apps-on-windows:~:text=PWAs%20are%20just%20websites), we [say it](https://web.dev/progressive-web-apps/#content:~:text=Progressive%20Web%20Apps,Websites) on this very site, and even PWA nominators Frances Berriman and Alex Russell [write so](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/#post-2263:~:text=they%E2%80%99re%20just%20websites), too. Yes, PWAs are just websites, but they are also more than that. If done right, a PWA will not feel like a website, but like a "real" app. Now what does it mean to feel like a real app?
+When you play Progressive Web App buzzword bingo, it is a safe bet to set on "PWAs are just websites". Microsoft's PWA documentation [agrees](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/#progressive-web-apps-on-windows:~:text=PWAs%20are%20just%20websites), we [say it](https://web.dev/progressive-web-apps/#content:~:text=Progressive%20Web%20Apps,Websites) on this very site, and even PWA nominators Frances Berriman and Alex Russell [write so](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/#post-2263:~:text=they%E2%80%99re%20just%20websites), too. Yes, PWAs are just websites, but they are also more than that. If done right, a PWA will not feel like a website, but like a "real" app. Now what does it mean to feel like a real app?
+
+In order to answer this question, let me use the native Apple [Podcasts](https://support.apple.com/en-us/HT201859) app as an example.
+It is available on macOS on desktop and on iOS (and iPadOS respectively) on mobile.
+While Podcasts is a media application, the core ideas I illustrate with its help apply to other categories of apps, too.
+
+<figure class="w-figure">
+  <img src="./image0.png" alt="" class="w-screenshot" width="600">
+  <figcaption class="w-figcaption">Apple Podcasts (<a href="https://support.apple.com/en-us/HT201859">Source</a>)</figcaption>
+</figure>
 
 ## Capable of running offline
 
-If you take a step back and think of some of the native applications you may have on your mobile phone or desktop computer, one thing clearly stands out: you never get nothing. Even if you are offline, there is always something. Let me illustrate this with Apple's macOS and iOS [Podcasts](https://support.apple.com/en-us/HT201859) app. Even when I am offline, the app naturally opens. The "Top Charts" section does not show any content, but instead it falls back to a "Can't connect right now" message paired with a "Retry" button. It may not be the most welcoming experience, but I get something.
+If you take a step back and think of some of the native applications you may have on your mobile phone or desktop computer, one thing clearly stands out: you never get nothing. In the Podcasts app, even if I am offline, there is always something. When there is no network connection, the app naturally still opens. The "Top Charts" section does not show any content, but instead falls back to a "Can't connect right now" message paired with a "Retry" button. It may not be the most welcoming experience, but I get something.
 
 <figure class="w-figure">
   <img src="./image4.png" alt="" width="600">
@@ -28,9 +37,10 @@ If you take a step back and think of some of the native applications you may hav
   to learn how to apply this architectural model to your web app.
 {% endDetails %}
 
-## Offline content playable
+## Offline content available and media playable
 
-Via the left-hand drawer, I can still navigate to the "Downloaded" section and enjoy downloaded podcast episodes that are ready to be played.
+While offline, via the left-hand drawer, I can still navigate to the "Downloaded" section and enjoy downloaded podcast episodes that are ready to be played
+and are displayed with all metadata like artwork and descriptions.
 
 <figure class="w-figure">
   <img src="./image16.png" alt="" width="600">
@@ -44,11 +54,13 @@ Via the left-hand drawer, I can still navigate to the "Downloaded" section and e
   Previously downloaded media content can be served from the cache, for example using the
   <a href="https://developers.google.com/web/tools/workbox/guides/advanced-recipes#cached-av">Serve cached audio and video</a>
   recipe from the <a href="https://developers.google.com/web/tools/workbox">Workbox</a> library.
+  Other content can always be stored in the cache, or in IndexedDB. Read the article <a href="https://web.dev/storage-for-the-web/">Storage for the web</a>
+  for all details and to know when to use what storage technology.
 {% endDetails %}
 
 ## Proactive background downloading
 
-When I am back online, I can of course search for content, and when I subscribe to a [podcast like HTTP 203](https://web.dev/podcasts/), the latest episode of the series is immediately downloaded, no questions asked.
+When I am back online, I can of course search for content, and when I decide to subscribe to a [podcast like HTTP 203](https://web.dev/podcasts/), the latest episode of the series is immediately downloaded, no questions asked.
 
 <figure class="w-figure">
   <img src="./image10.png" alt="" width="600">
@@ -60,11 +72,11 @@ When I am back online, I can of course search for content, and when I subscribe 
   How to do this on the web
 {% endDetailsSummary %}
   Downloading a podcast episode is an operation that potentially can take longer. The <a href="https://developers.google.com/web/updates/2018/12/background-fetch">Background Fetch API</a> lets you delegate downloads to the browser that takes care of them in the background.
-  On Android, the browser in turn can even delegate downloads to the operating system, so the browser does not need to be continuously running.
-  Once the download has completed, your service worker gets woken up and you can decide what to do with the response.
+  On Android, the browser in turn can even delegate these downloads further to the operating system, so the browser does not need to be continuously running.
+  Once the download has completed, your app's service worker gets woken up and you can decide what to do with the response.
 {% endDetails %}
 
-## Sharing to other applications
+## Sharing to and interacting with other applications
 
 The Podcasts app integrates naturally with other applications. For example, when I right-click an episode that I like, I can share it to other apps on my device, like the Messages app. It also naturally integrates with the system clipboard. I can right-click any episode and copy a link to it.
 
@@ -79,7 +91,7 @@ The Podcasts app integrates naturally with other applications. For example, when
 {% endDetailsSummary %}
   The <a href="https://web.dev/web-share/">Web Share API</a> and the <a href="https://web.dev/web-share-target/">Web Share Target API</a>
   allow your app to share and receive texts, files, and links to and from other applications on the device.
-  With the <a href="https://web.dev/image-support-for-async-clipboard/">Async Clipboard API</a> you can programmatically read and write
+  With the <a href="https://web.dev/image-support-for-async-clipboard/">Async Clipboard API</a>, you can programmatically read and write
   text and image data (PNG images) to the system clipboard.
   On Android, you can use the <a href="https://web.dev/contact-picker/">Contact Picker API</a> to select entries from the device's contacts manager.
   If you offer both a native app and a PWA, you can use the <a href="https://web.dev/get-installed-related-apps/">Get Installed Related Apps API</a>
@@ -88,7 +100,7 @@ The Podcasts app integrates naturally with other applications. For example, when
 
 ## Background app refreshing
 
-In the Podcasts app's settings, I can configure the app to download new episodes automatically, I do not even have to think about it, updated content will always just be there.
+In the Podcasts app's settings, I can configure the app to download new episodes automatically. I do not even have to think about it, updated content will always just be there. Magic.
 
 <figure class="w-figure">
   <img src="./image15.png" alt="" width="495">
@@ -101,12 +113,12 @@ In the Podcasts app's settings, I can configure the app to download new episodes
 {% endDetailsSummary %}
   The <a href="https://web.dev/periodic-background-sync/">Periodic Background Sync API</a>
   allows your app to refresh its content regularly in the background without the need for it to be running.
-  This means new content is proactively available, so your users can start delving into it right away.
+  This means new content is proactively available, so your users can start delving into it right away whenever they decide.
 {% endDetails %}
 
 ## State synchronized over the cloud
 
-At the same time, my subscriptions are synchronized across all devices I may own. In a seamless world, I do not have to worry about manually keeping my podcast subscriptions in sync. Likewise, I do not have to be afraid that my mobile device's memory will be consumed by episodes I have long listened to on my desktop or vice versa. The play state is kept in sync, and listened to episodes are automatically deleted.
+At the same time, my subscriptions are synchronized across all devices I own. In a seamless world, I do not have to worry about manually keeping my podcast subscriptions in sync. Likewise, I do not have to be afraid that my mobile device's memory will be consumed by episodes I have long listened to on my desktop or vice versa. The play state is kept in sync, and listened to episodes are automatically deleted.
 
 <figure class="w-figure">
   <img src="./image11.png" alt="" width="495">
@@ -117,12 +129,13 @@ At the same time, my subscriptions are synchronized across all devices I may own
 {% DetailsSummary %}
   How to do this on the web
 {% endDetailsSummary %}
-  Syncing app state data is a task that you can delegate to the <a href="https://developers.google.com/web/updates/2015/12/background-sync">Background Sync API</a>. It does not have to happen immediately, just eventually, and maybe even when the user has closed the app again already.
+  Syncing app state data is a task that you can delegate to the <a href="https://developers.google.com/web/updates/2015/12/background-sync">Background Sync API</a>. It does not have to happen immediately, just <em>eventually</em>, and maybe even when the user has closed the app again already.
 {% endDetails %}
 
 ## Hardware media key controls
 
 When I am busy with another application, say, the Chrome browser, I can still control the Podcasts app with the media keys on my laptop.
+There is no need to switch to the app just to skip forward or backward.
 
 <figure class="w-figure">
   <img src="./image9.png" alt="" width="600">
@@ -134,13 +147,13 @@ When I am busy with another application, say, the Chrome browser, I can still co
   How to do this on the web
 {% endDetailsSummary %}
   Media keys are supported by the <a href="https://web.dev/media-session/">Media Session API</a>.
-  Like that, users can profit from the hardware media keys on their physical keyboard, or even control the web app
+  Like that, users can profit from the hardware media keys on their physical keyboard, headphones, or even control the web app
   from the software media keys on their smartwatches.
 {% endDetails %}
 
 ## Multitasking and app shortcut
 
-Of course I can always tab back to the Podcasts app from anywhere. The app has a clearly distinguishable icon that I can also put on my desktop so Podcasts can be launched immediately when I feel like it.
+Of course I can always multitask back to the Podcasts app from anywhere. The app has a clearly distinguishable icon that I can also put on my desktop or application dock so Podcasts can be launched immediately when I feel like it.
 
 <figure class="w-figure w-figure--fullbleed">
   <img src="./image3.png" alt="" >
@@ -172,12 +185,12 @@ The most common app actions, "Search" for new content and "Check for New Episode
   By specifying <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/Shortcuts/explainer.md">app icon shortcuts</a>
   in the PWA's Web App Manifest, you can register quick routes to common tasks that users can reach directly from the app icon.
   On operating systems like macOS, users can also right-click the app icon and set the app to launch at login time.
-  There is also ongoing work on standardizing <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/tree/master/RunOnLogin">run on login</a>.
+  There is ongoing work on standardizing <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/tree/master/RunOnLogin">run on login</a>.
 {% endDetails %}
 
 ## Act as default app
 
-Other native applications and even websites or emails can integrate with the Podcasts app by leveraging the podcasts:// URL scheme. If I follow a link like [podcasts://podcasts.apple.com/podcast/the-css-podcast/id1042283903](podcasts://podcasts.apple.com/podcast/the-css-podcast/id1042283903), I am brought right into the Podcasts app and can decide to subscribe or listen to the podcast.
+Other native applications and even websites or emails can integrate with the Podcasts app by leveraging the `podcasts://` URL scheme. If I follow a link like [podcasts://podcasts.apple.com/podcast/the-css-podcast/id1042283903](podcasts://podcasts.apple.com/podcast/the-css-podcast/id1042283903) while in the browser, I am brought right into the Podcasts app and can decide to subscribe or listen to the podcast.
 
 <figure class="w-figure">
   <img src="./image20.png" alt="" width="600">
@@ -195,7 +208,7 @@ Other native applications and even websites or emails can integrate with the Pod
 
 ## Native file system integration
 
-You may not immediately think of it, but the Podcasts app naturally integrates with the native file system. When I download a podcast episode, on my laptop it is stored in ~/Library/Group Containers/243LU875E5.groups.com.apple.podcasts/Library/Cache. Unlike, say ~/Documents, this directory is not meant to be accessed directly by regular users, but it is there.
+You may not immediately think of it, but the Podcasts app naturally integrates with the native file system. When I download a podcast episode, on my laptop it is stored in `~/Library/Group Containers/243LU875E5.groups.com.apple.podcasts/Library/Cache`. Unlike, say `~/Documents`, this directory is not meant to be accessed directly by regular users, but it is there.
 
 <figure class="w-figure">
   <img src="./image5.png" alt="" width="600">
@@ -208,12 +221,12 @@ You may not immediately think of it, but the Podcasts app naturally integrates w
 {% endDetailsSummary %}
   The <a href="https://web.dev/native-file-system/">Native File System API</a> enables developers to get access to the local file system
   of the device. You can use it directly or via the <a href="https://github.com/GoogleChromeLabs/browser-nativefs">browser-nativefs</a>
-  support library that transparently provides fallbacks for browsers that do not support the API.
+  support library that transparently provides a fallback for browsers that do not support the API.
 {% endDetails %}
 
 ## Native look and feel
 
-A more subtle thing but that is self-evident for an application like Podcasts: none of the textual labels are selectable, all texts blend in with the system font of the machine. Also my choice of system color theme (dark mode) is respected.
+A more subtle thing but that is self-evident for an application like Podcasts: none of the textual labels are selectable and all texts blend in with the system font of the machine. Also my choice of system color theme (dark mode) is respected.
 
 <figure class="w-figure">
   <img src="./image2.png" alt="" width="350">
@@ -254,9 +267,9 @@ When you look at the Podcasts app window, you notice that it does not have a cla
   How to do this on the web
 {% endDetailsSummary %}
   While not currently possible, <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/TitleBarCustomization/explainer.md">title bar customization</a> is being standardized at the moment.
-  You should, however, specify the <a href="https://web.dev/add-manifest/#display"><code>display</code></a> and the
+  You can (and should), however, specify the <a href="https://web.dev/add-manifest/#display"><code>display</code></a> and the
   <a href="https://web.dev/add-manifest/#theme-color"><code>theme-color</code></a> properties of the Web App Manifest to
-  determine the look and feel of your application.
+  determine the look and feel of your application window.
 {% endDetails %}
 
 ## Snappy animations
@@ -274,11 +287,12 @@ In-app animations are snappy and smooth. For example, when I open the "Episode N
 {% endDetailsSummary %}
   Performant animations on the web are certainly possible if you take into account a number of best practices
   outlined in the article <a href="https://developers.google.com/web/fundamentals/design-and-ux/animations/animations-and-performance">Animations and Performance</a>.
+  Scroll animations as commonly seen in paginated content or media carousels can be massively improved by using the <a href="https://developers.google.com/web/updates/2018/07/css-scroll-snap">CSS Scroll Snap</a> feature.
 {% endDetails %}
 
 ## Content surfaced outside of app
 
-The Podcasts app on iOS can surface content in other locations than the actual application, for example, in the system's Widgets view, or in the form of a Siri Suggestion. Having proactive, usage-based calls-to-action that just require a tap to interact with can greatly increase the re-engagement of an app like Podcasts.
+The Podcasts app on iOS can surface content in other locations than the actual application, for example, in the system's Widgets view, or in the form of a Siri Suggestion. Having proactive, usage-based calls-to-action that just require a tap to interact with can greatly increase the re-engagement rate of an app like Podcasts.
 
 <figure class="w-figure">
   <img src="./image6.png" alt="" class="w-screenshot" width="300">
@@ -299,7 +313,7 @@ The Podcasts app on iOS can surface content in other locations than the actual a
 
 ## Lock screen media control widget
 
-When a podcast episode is playing, the Podcasts app shows a beautiful control widget on the lock screen that features metadata like the episode artwork, the episode title, and the podcast name. From there, the audio stream can also be broadcasted to a different device via AirPlay.
+When a podcast episode is playing, the Podcasts app shows a beautiful control widget on the lock screen that features metadata like the episode artwork, the episode title, and the podcast name.
 
 <figure class="w-figure">
   <img src="./image17.png" alt="" class="w-screenshot" width="300">
@@ -316,7 +330,8 @@ When a podcast episode is playing, the Podcasts app shows a beautiful control wi
 
 ## Push notifications
 
-The iOS Podcasts app optionally can also notify you of new episodes of podcasts you are subscribed to or recommend new ones as well as alert you about new features.
+Push notifications have become a bit of an annoyance on the web, but if used properly, they can add a lot of value.
+For example, the iOS Podcasts app can optionally notify me of new episodes of podcasts I am subscribed to or recommend me new ones, as well as alert me of new features.
 
 <figure class="w-figure">
   <img src="./image12.png" alt="" class="w-screenshot" width="300">
@@ -366,7 +381,7 @@ Apps can optionally keep the screen awake, too, for example to display lyrics or
   How to do this on the web
 {% endDetailsSummary %}
   The <a href="https://web.dev/wakelock/">Screen Wake Lock API</a> allows you to prevent the screen from turning off.
-  Media playback on the web prevents the system from entering standby mode.
+  Media playback on the web automatically prevents the system from entering standby mode.
 {% endDetails %}
 
 ## Conclusion
