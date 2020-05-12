@@ -1,0 +1,13 @@
+@import 'generic/all';
+@import 'components/all';
+@import 'pages/all';
+@import 'overrides/all';
+@import 'tools/helpers';
+
+// Elements marked with the unresolved class are hidden until the JS is first
+// loaded. Disable linter as it expects classes to only be ".w-...".
+// sass-lint:disable class-name-format
+*:not(body).unresolved {
+  display: none;
+}
+// sass-lint:enable class-name-format

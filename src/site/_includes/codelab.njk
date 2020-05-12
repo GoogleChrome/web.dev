@@ -1,0 +1,52 @@
+---
+layout: layout
+permalink: "/{{lang}}/{{page.fileSlug}}/index.html"
+---
+
+<div class="codelab-landing-page">
+  <web-codelab glitch="{{ glitch }}" {% if glitch_path %}path="{{ glitch_path }}"{% endif %} {% if site.env === 'test' %}testmode{% endif %}>
+    <div class="web-codelab__instructions">
+      <h1 class="w-headline w-headline--two web-codelab__headline">{{ title }}</h1>
+      {% if date %}
+        <div class="w-author__published">
+          <time>{{date | prettyDate}}</time>
+          {% if updated %} <span class="w-author__separator">•</span> Updated <time>{{ updated | prettyDate }}</time> {% endif %}
+        </div>
+      {% endif %}
+
+      {% if authors %}
+        <div class="w-authors w-mt--xl w-pt--sm">
+          {% for author in authors %}
+            {% Author {
+              post: page,
+              author: contributors[author],
+              id: author,
+              showSocialMedia: true}
+            %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if draft and site.env === 'dev' %}
+        <div class="w-banner w-banner--warning w-banner--body">
+          🚨 This post is a draft! 🚨
+        </div>
+      {% endif %}
+
+      {{ content | safe }}
+      {% if related_post %}
+        {% ArticleNavigation {
+          back: '/' + related_post,
+          backLabel: 'Return to article',
+          lang: lang
+        } %}
+      {% else %}
+        {% ArticleNavigation {
+          back: '/' + path.slug,
+          backLabel: 'Return to all articles',
+          lang: lang
+        } %}
+      {% endif %}
+    </div>
+  </web-codelab>
+</div>

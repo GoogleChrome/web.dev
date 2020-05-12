@@ -1,0 +1,104 @@
+@import '../settings/colors';
+@import '../settings/type';
+@import '../tools/breakpoints';
+@import '../tools/mixins';
+
+// =============================================================================
+// PATH CARD OVERVIEW
+//
+// A path-card is a preview for a grouping of posts. It lives inside of a card
+// and can be displayed in a list on the learn landing page, or at the end of a
+// post to point users at related content.
+//
+//
+// =============================================================================
+
+.w-path-card {
+  @include w-body-text();
+  padding: 24px;
+
+  @include bp(sm) {
+    padding: 32px;
+  }
+}
+
+.w-path-card__info {
+  margin-bottom: 1rem;
+}
+
+.w-path-card__info::before {
+  background-color: $WEB_PRIMARY_COLOR;
+  content: '';
+  display: block;
+  height: 2px;
+  width: 64px;
+}
+
+.w-path-card__info-list {
+  height: 36px;
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 10px 0 0;
+}
+
+.w-path-card__info-listitem {
+  color: $GREY_700;
+  display: block;
+  float: left;
+  font-family: $HEADLINE_FONT;
+  font-size: 14px;
+}
+
+.w-path-card__info-listitem::after {
+  content: '·';
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.w-path-card__info-listitem--category {
+  color: $WEB_PRIMARY_COLOR;
+  font-weight: 500;
+}
+
+.w-path-card__info-listitem:last-of-type::after {
+  content: '';
+  margin: 0;
+}
+
+.w-path-card__info-listitem--more-info::after {
+  content: '';
+}
+
+.w-path-card__info-listitem--updated {
+  display: none;
+}
+
+.w-path-card__cover {
+  background-color: $GREY_50;
+  border: 1px solid $GREY_300;
+  height: 208px;
+  margin: 0 0 1.3rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.w-path-card__cover-image {
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.w-path-card__cover-image--fill {
+  object-fit: cover;
+}
+
+.w-path-card__headline {
+  margin: 0 0 1rem;
+}
+
+.w-path-card__subhead {
+  color: $GREY_700;
+  font: inherit;
+  margin: 16px 0;
+}

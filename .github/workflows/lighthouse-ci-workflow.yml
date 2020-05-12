@@ -1,0 +1,42 @@
+name: Lighthouse CI
+
+# By default, runs when a pull_request's activity type is opened, synchronize,
+# or reopened
+on:
+  pull_request:
+    paths:
+      - '**.js'
+      - '**.json'
+      - '**.njk'
+      - '**.scss'
+      - '**.yml'
+      - '**.yaml'
+
+jobs:
+  lhci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1.0.0
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Build
+        env:
+          ELEVENTY_ENV: prod
+        run: npm ci && npm run build
+      - name: Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v2
+        with:
+          runs: 3
+          configPath: ./tools/lhci/lighthouserc.json
+          serverBaseUrl: ${{ secrets.LHCI_SERVER }}
+          serverToken: ${{ secrets.LHCI_TOKEN }}

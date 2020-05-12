@@ -1,0 +1,39 @@
+@import '../tools/breakpoints';
+
+// =============================================================================
+// STACK OVERVIEW
+//
+// Stacks can be used to display a set of elements as either a single row
+// (when space allows) or as a single column.
+// =============================================================================
+
+.w-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.w-stack--center {
+  justify-content: center;
+}
+
+.w-stack--center > * {
+  align-self: center;
+}
+
+.w-stack--sm {
+  @include bp(sm) {
+    flex-direction: row;
+  }
+}
+
+.w-stack--md {
+  @include bp(md) {
+    flex-direction: row;
+  }
+}
+
+.w-stack--lg {
+  @include bp(md) {
+    flex-direction: row;
+  }
+}

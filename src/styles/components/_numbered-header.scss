@@ -1,0 +1,71 @@
+@import '../tools/breakpoints';
+@import '../tools/mixins';
+
+// =============================================================================
+// NUMBERED HEADER OVERVIEW
+//
+// Numbered header have a round disc next to the header showing a step
+// number. They're useful when you want to guide the user through a series of
+// actions.
+//
+// =============================================================================
+
+$DISC_SHADOW: rgba(0, 0, 0, .25);
+$NUMBERED_COUNTER_SIZE_LARGE: 48px;
+$NUMBERED_COUNTER_SIZE_MEDIUM: 40px;
+$NUMBERED_COUNTER_SIZE_SMALL: 32px;
+
+// The element that contains .w-numbered-header children should apply this
+// class to make the number in the discs increment.
+.w-numbered-headers {
+  counter-reset: numbered-headers;
+}
+
+.w-numbered-header {
+  align-items: center;
+  display: flex;
+  overflow: visible;
+}
+
+.w-numbered-header::before {
+  border-radius: $GLOBAL_ROUNDED;
+  box-shadow: 0 2px 4px $DISC_SHADOW;
+  content: counter(numbered-headers);
+  counter-increment: numbered-headers;
+  display: block;
+  font-size: $NUMBERED_COUNTER_SIZE_SMALL / 2;
+  font-weight: 600;
+  height: $NUMBERED_COUNTER_SIZE_SMALL;
+  line-height: $NUMBERED_COUNTER_SIZE_SMALL;
+  min-width: $NUMBERED_COUNTER_SIZE_SMALL;
+  text-align: center;
+  width: $NUMBERED_COUNTER_SIZE_SMALL;
+
+  @include bp(sm) {
+    font-size: $NUMBERED_COUNTER_SIZE_LARGE / 2;
+    height: $NUMBERED_COUNTER_SIZE_LARGE;
+    line-height: $NUMBERED_COUNTER_SIZE_LARGE;
+    min-width: $NUMBERED_COUNTER_SIZE_LARGE;
+    width: $NUMBERED_COUNTER_SIZE_LARGE;
+  }
+}
+
+// HORIZONTAL VARIANT
+.w-numbered-header--horizontal::before {
+  margin-right: 16px;
+}
+
+// VERTICAL VARIANT
+.w-numbered-header--vertical {
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.w-numbered-header--vertical::before {
+  font-size: $NUMBERED_COUNTER_SIZE_MEDIUM / 2;
+  height: $NUMBERED_COUNTER_SIZE_MEDIUM;
+  line-height: $NUMBERED_COUNTER_SIZE_MEDIUM;
+  margin-bottom: 18px;
+  min-width: $NUMBERED_COUNTER_SIZE_MEDIUM;
+  width: $NUMBERED_COUNTER_SIZE_MEDIUM;
+}

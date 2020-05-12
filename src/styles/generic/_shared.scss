@@ -1,0 +1,76 @@
+@import '../settings/colors';
+@import '../settings/dimensions';
+
+// =============================================================================
+// SHARED OVERVIEW
+//
+// Shared properties across multiple html tags.
+//
+// =============================================================================
+
+// Set box-sizing globally to handle padding and border widths
+*,
+*::before,
+*::after {
+  -moz-box-sizing: border-box; // Firefox < 29
+  -webkit-box-sizing: border-box; // Android < 2.3, iOS < 4
+  box-sizing: border-box; // Chrome, IE 8+, Opera, Safari 5.1
+}
+
+*:focus {
+  outline: 1px solid $FOCUS_COLOR;
+}
+
+// Used when forcing focus cursor at a particular location on the page.
+.w-force-focus {
+  outline: none !important;
+}
+
+
+// This will hide the focus indicator if the element receives focus via the
+// mouse, but it will still show up on keyboard focus.
+.js-focus-visible :focus:not(.focus-visible) { // sass-lint:disable-line class-name-format
+  outline: none;
+}
+
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+// https://github.com/typeplate/starter-kit/blob/master/scss/_typeplate-styles.scss#L58
+input,
+abbr,
+acronym,
+blockquote,
+code,
+kbd,
+q,
+samp,
+var {
+  -moz-hyphens: none;
+  -webkit-hyphens: none;
+  hyphens: none;
+}
+
+// Ensures deep linking to headers has enough space to account for the
+// top navigation so they don't overlap.
+*:not([href])[id]::before {
+  content: ' ';
+  display: block;
+  height: $WEB_HEADER_HEIGHT;
+  margin-top: -$WEB_HEADER_HEIGHT;
+  pointer-events: none;
+  visibility: hidden;
+}

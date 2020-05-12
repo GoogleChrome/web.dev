@@ -1,0 +1,79 @@
+@import '../settings/colors';
+@import '../settings/global';
+@import '../tools/mixins';
+
+// =============================================================================
+// CROSS-LINKS OVERVIEW
+//
+// Cross-links are links styled like buttons which indicate that there is a
+// framework or library specific version of an article.
+//
+// =============================================================================
+
+.w-cross-links {
+  display: flex;
+}
+
+.w-cross-link {
+  align-items: center;
+  background-color: rgba($WEB_EXTENDED_SECONDARY_COLOR, .08);
+  border: 1px solid transparent;
+  border-radius: $GLOBAL_RADIUS;
+  color: rgba($WEB_EXTENDED_SECONDARY_COLOR, 1);
+  display: inline-flex;
+  height: 32px;
+  justify-content: center;
+  margin-right: 8px;
+  overflow: hidden;
+  padding: 0 10px 0 12px;
+  position: relative;
+  transition: background-color $TRANSITION_SPEED, border $TRANSITION_SPEED;
+}
+
+.w-cross-link:hover {
+  border: 1px solid rgba($WEB_EXTENDED_SECONDARY_COLOR, .2);
+}
+
+.w-cross-link:focus {
+  border: 1px solid rgba($WEB_EXTENDED_SECONDARY_COLOR, .28);
+}
+
+.w-cross-link:active {
+  border: 1px solid rgba($WEB_EXTENDED_SECONDARY_COLOR, .43);
+  // sass-lint:disable-block indentation
+  box-shadow:
+    0 5px 5px -3px rgba($WEB_EXTENDED_SECONDARY_COLOR, .2),
+    0 8px 10px 1px rgba($WEB_EXTENDED_SECONDARY_COLOR, .14),
+    0 3px 14px 2px rgba($WEB_EXTENDED_SECONDARY_COLOR, .12);
+}
+
+.w-cross-link:hover,
+.w-cross-link:focus,
+.w-cross-link:active {
+  background-color: rgba($WEB_EXTENDED_SECONDARY_COLOR, .08); // DevSite override
+  outline: 0;
+  text-decoration: none;
+}
+
+.w-cross-link::before {
+  @include w-overlay();
+}
+
+.w-cross-link:hover::before {
+  background-color: rgba($WEB_EXTENDED_SECONDARY_COLOR, .04);
+}
+
+.w-cross-link:focus::before {
+  background-color: rgba($WEB_EXTENDED_SECONDARY_COLOR, .12);
+}
+
+.w-cross-link:active::before {
+  background-color: rgba($WEB_EXTENDED_SECONDARY_COLOR, .16);
+}
+
+.w-cross-link::after {
+  @include font-material-icon();
+  content: attr(data-icon);
+  font-size: 1em;
+  margin-left: 10px;
+}

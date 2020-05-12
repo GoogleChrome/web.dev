@@ -1,0 +1,64 @@
+@import '../settings/colors';
+@import '../settings/type';
+
+// =============================================================================
+// COMPARE OVERVIEW
+//
+// A compare widget is used to show a good/bad variation of something.
+// Typically it's used with a code snippet to show what someone shouldn't do.
+//
+// =============================================================================
+
+.w-compare {
+  line-height: 1.5em;
+  margin: 0 0 32px;
+  padding: 0 0 0 16px;
+  position: relative;
+}
+
+// Markdown will put unclassed p tags inside of the compare widget as content
+// so we need to make them act like regular text content.
+.w-compare > ol,
+.w-compare > p,
+.w-compare > web-copy-code > pre,
+.w-compare > ul {
+  margin: 0;
+}
+
+.w-compare__label {
+  font-size: 1.125em;
+  font-weight: $FONT_WEIGHT_MEDIUM;
+  padding-bottom: .5em;
+}
+
+.w-compare__label::before {
+  bottom: 0;
+  content: '';
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 3px;
+}
+
+.w-compare__label--worse {
+  color: $RED_700;
+}
+
+.w-compare__label--worse::before {
+  background-color: $RED_700;
+}
+
+.w-compare__label--better {
+  color: $GREEN_800;
+}
+
+.w-compare__label--better::before {
+  background-color: $GREEN_800;
+}
+
+.w-compare__caption p {
+  color: $GREY_700;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: .75em 0 0;
+}

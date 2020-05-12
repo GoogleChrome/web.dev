@@ -1,0 +1,60 @@
+@import '../settings/colors';
+@import '../settings/global';
+
+// =============================================================================
+// CHIPS OVERVIEW
+//
+// Chips are little rounded rectangles that can be used as category tags.
+//
+// =============================================================================
+
+.w-chips {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+// Specificty required here because `a` tags in `.w-post-content` have higher priority.
+.w-post-content .w-chip,
+.w-chip {
+  background-color: rgba($GREY_900, 0);
+  border: 1px solid rgba($GREY_900, .16);
+  border-radius: $GLOBAL_RADIUS_LARGE;
+  box-sizing: border-box;
+  color: $GREY_900;
+  display: block;
+  font-size: 14px;
+  height: 32px;
+  line-height: 30px;
+  margin: 0 8px 12px 0;
+  overflow: hidden;
+  padding: 0 12px;
+  text-decoration: none;
+  transition: background-color $TRANSITION_SPEED, border $TRANSITION_SPEED;
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: rgba($GREY_900, .04);
+    border: 1px solid rgba($GREY_900, .20);
+  }
+
+  &:focus {
+    background-color: rgba($GREY_900, .12);
+    border: 1px solid rgba($GREY_900, .28);
+  }
+
+  &:active {
+    background-color: rgba($BLACK, .16);
+    border: 1px solid rgba($GREY_900, .43);
+    // sass-lint:disable-block indentation
+    box-shadow:
+      0 5px 5px -3px rgba($BLACK, .2),
+      0 8px 10px 1px rgba($BLACK, .14),
+      0 3px 14px 2px rgba($BLACK, .12);
+  }
+}

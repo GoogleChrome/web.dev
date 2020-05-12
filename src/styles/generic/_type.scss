@@ -1,0 +1,93 @@
+@import '../settings/colors';
+@import '../settings/global';
+@import '../settings/type';
+@import '../tools/mixins';
+
+// =============================================================================
+// TYPE OVERVIEW
+//
+// Generic type styles.
+//
+// =============================================================================
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include w-headline();
+}
+
+h1 {
+  @include w-headline--one();
+}
+
+h2 {
+  @include w-headline--two-small();
+}
+
+h3 {
+  @include w-headline--three();
+}
+
+h4 {
+  @include w-headline--four();
+}
+
+p {
+  @include w-article-text();
+}
+
+// If an element is coming after a heading,
+// let the heading create a consistent margin.
+h1 + *,
+h1 + [class],
+h2 + *,
+h2 + [class],
+h3 + *,
+h3 + [class],
+h4 + *,
+h4 + [class],
+h5 + *,
+h5 + [class],
+h6 + *,
+h6 + [class] {
+  margin-top: 0;
+}
+
+abbr,
+acronym {
+  border-bottom: 1px dotted $GREY_600;
+  cursor: $CURSOR_HELP_VALUE;
+  font-size: 90%;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+abbr {
+  text-transform: none;
+}
+
+address,
+cite,
+dfn,
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: $FONT_WEIGHT_MEDIUM;
+}
+
+
+// sass-lint:disable class-name-format
+.devsite-article h1:first-of-type {
+  position: static; // DevSite override
+}
+
+devsite-content-footer p {
+  font-size: 12px; // DevSite override
+  line-height: 1.5; // DevSite override
+  padding-top: 72px; // DevSite override
+}

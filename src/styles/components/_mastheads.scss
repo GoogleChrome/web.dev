@@ -1,0 +1,188 @@
+@import '../settings/type';
+@import '../tools/breakpoints';
+
+// =============================================================================
+// MASTHEADS OVERVIEW
+//
+// Mastheads are large, graphic areas at the top of landing pages.
+// They often combine a heading, some text, and a background image.
+// Because each landing page can be a bit unique, it's easier to define each
+// masthead as its own component, rather than have them try to share styles.
+//
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// HOME
+// -----------------------------------------------------------------------------
+
+.w-masthead-home {
+  background: $GREY_50;
+  background-image: url(../images/headers/future_web.svg);
+  background-position: left 50% top -215px;
+  background-repeat: no-repeat;
+  background-size: 400px;
+
+  @include bp(sm) {
+    background-position: left 430px top 50%;
+    background-size: 650px;
+  }
+
+  @include bp(md) {
+    background-position: left 50vw top 50%;
+  }
+}
+
+.w-masthead-home__container {
+  box-sizing: content-box;
+  margin: 0 auto;
+  max-width: 960px;
+  overflow: visible;
+  padding: 176px 24px 72px;
+
+  @include bp(sm) {
+    padding: 72px 24px;
+  }
+}
+
+.w-masthead-home__left {
+  max-width: 408px;
+}
+
+.w-masthead-home__buttons {
+  display: flex;
+  flex-direction: column;
+
+  @include bp(sm) {
+    display: block;
+  }
+}
+
+.w-masthead-home__button--primary {
+  margin: 0 0 16px;
+
+  @include bp(sm) {
+    margin: 0 16px 0 0;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// PATH
+// -----------------------------------------------------------------------------
+
+.w-masthead-path {
+  background: $GREY_50;
+}
+
+.w-masthead-path__container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 2em 2em 0;
+
+  @include bp(md) {
+    box-sizing: content-box;
+    flex-direction: row;
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 0 2em;
+  }
+}
+
+.w-masthead-path__container > * {
+  flex: 1;
+}
+
+.w-masthead-path__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  @include bp(md) {
+    text-align: left;
+  }
+}
+
+.w-masthead-path__headline {
+  @include font($HEADLINE_2);
+  font-weight: $FONT_WEIGHT_MEDIUM;
+
+  @include bp(xxsm) {
+    @include font($HEADLINE_2_XXSMALL);
+    font-weight: $FONT_WEIGHT_MEDIUM;
+  }
+
+  @include bp(xsm) {
+    @include font($HEADLINE_2_XSMALL);
+    font-weight: $FONT_WEIGHT_MEDIUM;
+  }
+
+  @include bp(md) {
+    @include font($HEADLINE_1_XSMALL);
+  }
+}
+
+.w-masthead-path__headline,
+.w-masthead-path__description {
+  margin: 0;
+}
+
+.w-masthead-path__image {
+  max-height: 280px;
+  max-width: 420px;
+  width: 100%;
+}
+
+// -----------------------------------------------------------------------------
+// ABOUT
+// -----------------------------------------------------------------------------
+
+.w-masthead-about {
+  background: $WHITE;
+}
+
+.w-masthead-about__container {
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 960px;
+  overflow: visible;
+  padding: 24px;
+
+  @include bp(md) {
+    flex-direction: row;
+    padding: 72px 24px;
+  }
+}
+
+.w-masthead-about__left {
+  flex: 1;
+
+  @include bp(md) {
+    margin-right: 32px;
+  }
+}
+
+.w-masthead-about__right {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 18px;
+  order: -1;
+
+  @include bp(md) {
+    margin-bottom: 0;
+    order: initial;
+  }
+}
+
+.w-masthead-about__image {
+  max-width: 44vw;
+
+  @include bp(md) {
+    max-width: 380px;
+  }
+}

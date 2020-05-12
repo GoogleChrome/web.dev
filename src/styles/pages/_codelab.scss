@@ -1,0 +1,42 @@
+@import '../tools/breakpoints';
+
+web-codelab {
+  // This spacing is put above the heading on mobile, so we can later load a 
+  // warning into it saying "not available on mobile". (Sorry.)
+  $CODELAB_TOP_BUFFER: 160px;
+
+  display: flex;
+  flex-flow: column;
+  padding: 16px;
+
+  @include bp(md) {
+    // At md or above, we show the Glitch to the right.
+    flex-flow: row;
+
+    .web-codelab__instructions {
+      padding-right: 32px;
+      width: 600px;
+    }
+  }
+
+  .web-codelab__instructions {
+    padding: 16px;
+  }
+
+  .web-codelab__headline {
+    // We use padding instead of margin, so we don't merge with any neighbour
+    // margin of the page broadly (although it's `padding` above).
+    margin-bottom: 8px;
+    margin-top: 0;
+    padding-top: $CODELAB_TOP_BUFFER;
+
+    @include bp(md) {
+      padding-top: 0;
+    }
+  }
+
+  .web-codelab__glitch {
+    min-height: $CODELAB_TOP_BUFFER;
+  }
+}
+

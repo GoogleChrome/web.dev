@@ -1,0 +1,360 @@
+/*
+ * Copyright 2019 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+require('dotenv').config();
+const isProd = process.env.ELEVENTY_ENV === 'prod';
+
+const fs = require('fs').promises;
+const path = require('path');
+const log = require('fancy-log');
+const rollupPluginNodeResolve = require('rollup-plugin-node-resolve');
+const rollupPluginCJS = require('rollup-plugin-commonjs');
+const rollupPluginPostCSS = require('rollup-plugin-postcss');
+const rollupPluginVirtual = require('rollup-plugin-virtual');
+const rollupPluginReplace = require('rollup-plugin-replace');
+const rollupPluginIstanbul = require('rollup-plugin-istanbul');
+const OMT = require('@surma/rollup-plugin-off-main-thread');
+const rollup = require('rollup');
+const terser = isProd ? require('terser') : null;
+const {getManifest} = require('workbox-build');
+const site = require('./src/site/_data/site');
+const buildVirtualJSON = require('./src/build/virtual-json');
+
+process.on('unhandledRejection', (reason, p) => {
+  log.error('Build had unhandled rejection', reason, p);
+  process.exit(1);
+});
+
+/**
+ * Virtual imports made available to all bundles. Used for site config and globals.
+ */
+const virtualImports = {
+  webdev_analytics: {
+    id: isProd ? site.analytics.ids.prod : site.analytics.ids.staging,
+    dimensions: site.analytics.dimensions,
+    version: site.analytics.version,
+  },
+  webdev_config: {
+    isProd,
+    env: process.env.ELEVENTY_ENV || 'dev',
+    version:
+      'v' +
+      new Date()
+        .toISOString()
+        .replace(/[\D]/g, '')
+        .slice(0, 12),
+    firebaseConfig: isProd ? site.firebase.prod : site.firebase.staging,
+  },
+  webdev_entrypoint: null,
+};
+
+/**
+ * Builds the default set of Rollup functions. Snapshots virtual imports on
+ * call, so should be used anew every run.
+ *
+ * @return {!Array<*>}
+ */
+function buildDefaultPlugins() {
+  return [
+    rollupPluginNodeResolve(),
+    rollupPluginCJS({
+      include: 'node_modules/**',
+    }),
+    rollupPluginVirtual(buildVirtualJSON(virtualImports)),
+  ];
+}
+
+/**
+ * Builds the cache manifest for inclusion into the Service Worker.
+ *
+ * TODO(samthor): This relies on both the gulp and CSS tasks occuring
+ * before the Rollup build script.
+ */
+async function buildCacheManifest() {
+  const toplevelManifest = await getManifest({
+    // JS files that include hashes don't need their own revision fields.
+    dontCacheBustURLsMatching: /-[0-9a-f]{8}\.js/,
+    globDirectory: 'dist',
+    globPatterns: [
+      // We don't include jpg files, as they're used for authors and hero
+      // images, which are part of articles, and not the top-level site.
+      'images/**/*.{png,svg}',
+      '*.css',
+      '*.js',
+    ],
+    globIgnores: [
+      // This removes large shared PNG files that are used only for articles.
+      'images/{shared}/**',
+    ],
+  });
+  if (toplevelManifest.warnings.length) {
+    throw new Error(`toplevel manifest: ${toplevelManifest.warnings}`);
+  }
+
+  // We need this manifest to be separate as we pretend it's rooted at the
+  // top-level, even though it comes from "dist/en".
+  const contentManifest = await getManifest({
+    globDirectory: 'dist/en',
+    globPatterns: ['offline/index.json'],
+  });
+  if (contentManifest.warnings.length) {
+    throw new Error(`content manifest: ${contentManifest.warnings}`);
+  }
+
+  const all = [];
+  all.push(...toplevelManifest.manifestEntries);
+  all.push(...contentManifest.manifestEntries);
+  return all;
+}
+
+/**
+ * Passed to Rollup's config to disallow external imports. By default, Rollup
+ * leaves unresolved imports in the output.
+ *
+ * @param {string} source
+ * @param {string} importer
+ * @param {boolean} isResolved
+ */
+function disallowExternal(source, importer, isResolved) {
+  // We don't support any external imports. This most likely happens if you mistype a
+  // node_modules import or the package.json has changed.
+  if (isResolved && !source.match(/^\.{0,2}\//)) {
+    throw new Error(
+      `Unresolved external import: "${source}" (imported ` +
+        `by: ${importer}), did you forget to npm install?`,
+    );
+  }
+}
+
+/**
+ * Performs main site compilation via Rollup: first on site code, and second
+ * to build the Service Worker.
+ */
+async function build() {
+  const postcssConfig = {};
+  if (isProd) {
+    // nb. Only require() autoprefixer when used.
+    const autoprefixer = require('autoprefixer');
+    postcssConfig.plugins = [autoprefixer];
+
+    // uses cssnano vs. our regular CSS usees sass' builtin compression
+    postcssConfig.minimize = true;
+  }
+
+  // Rollup "app.js" to generate graph of source needs. This eventually uses
+  // dynamic import to bring in code required for each page (see router). In
+  // Rollup's nonmenclature, this is the site entrypoint. We generated it with
+  // a dynamic hash, and is imported via "bootstrap.js" (which is run in all
+  // browsers via regular script tag).
+  const appBundle = await rollup.rollup({
+    input: 'src/lib/app.js',
+    external: disallowExternal,
+    plugins: [rollupPluginPostCSS(postcssConfig), ...buildDefaultPlugins()],
+    manualChunks: (id) => {
+      // lit-html/lit-element is our biggest dependency, and is always used
+      // together. Return it in its own chunk (~30kb after Terser).
+      if (/\/node_modules\/lit-.*\//.exec(id)) {
+        return 'lit';
+      }
+      // Algolia is smaller (~17kb after Terser).
+      if (id.includes('/node_modules/algoliasearch/')) {
+        return 'algolia';
+      }
+    },
+  });
+  const appGenerated = await appBundle.write({
+    dynamicImportFunction: 'window._import',
+    entryFileNames: '[name]-[hash].js',
+    sourcemap: true,
+    dir: 'dist',
+    format: 'esm',
+  });
+  const outputFiles = appGenerated.output.map(({fileName}) => fileName);
+
+  // Save the "app.js" entrypoint (which has a hashed name) for the all-browser
+  // loader code.
+  const entrypoints = appGenerated.output.filter(({isEntry}) => isEntry);
+  if (entrypoints.length !== 1) {
+    throw new Error(
+      `expected single Rollup entrypoint, was: ${entrypoints.length}`,
+    );
+  }
+  virtualImports.webdev_entrypoint = entrypoints[0].fileName;
+
+  // Rollup basic to generate the top-level script run by all browsers (even
+  // ancient ones). This runs Analytics and imports the entrypoint generated
+  // above (in supported module browsers).
+  const libPrefix = path.join(__dirname, '/src/lib/');
+  const utilsPrefix = path.join(libPrefix, 'utils');
+  const bootstrapBundle = await rollup.rollup({
+    input: 'src/lib/bootstrap.js',
+    plugins: buildDefaultPlugins(),
+    external: disallowExternal,
+    manualChunks: (id) => {
+      // This overloads Rollup's manualChunks feature to catch disallowed code.
+      // Bootstrap should only import:
+      //   * virtual imports (config only)
+      //   * itself (Rollup calls us for 'ourself')
+      //   * code inside `src/lib/utils`.
+      // Otherwise, we risk leaking core site code into this ES5-only, fast
+      // bootstrap chunk.
+      if (id in virtualImports || !path.isAbsolute(id)) {
+        return; // ok
+      }
+      if (id === path.join(libPrefix, 'bootstrap.js')) {
+        return undefined; // self, allowed
+      }
+      if (path.relative(utilsPrefix, id).startsWith('../')) {
+        // This looks for code outside the utils folder, which is disallowed.
+        throw new TypeError(
+          `can't import non-utils JS code in bootstrap: ${id}`,
+        );
+      }
+    },
+  });
+  const bootstrapGenerated = await bootstrapBundle.write({
+    sourcemap: true,
+    dir: 'dist',
+    format: 'iife',
+  });
+  if (bootstrapGenerated.output.length !== 1) {
+    throw new Error(
+      `bootstrap generated more than one file: ${bootstrapGenerated.output.length}`,
+    );
+  }
+  outputFiles.push(bootstrapGenerated.output[0].fileName);
+
+  // Compress the generated source here, as we need the final files and hashes for the Service
+  // Worker manifest.
+  if (isProd) {
+    await compressOutput(outputFiles);
+  }
+
+  // We don't generate a manifest in dev, so Workbox doesn't do a default cache step.
+  const manifest = isProd ? await buildCacheManifest() : [];
+
+  const layoutTemplate = await fs.readFile(
+    path.join('dist', 'sw-partial-layout.partial'),
+    'utf-8',
+  );
+
+  const swBundle = await rollup.rollup({
+    input: 'src/lib/sw.js',
+    manualChunks: (id) => {
+      const chunkNames = ['idb-keyval', 'virtual', 'workbox'];
+      for (const chunkName of chunkNames) {
+        if (id.includes(`/node_modules/${chunkName}/`)) {
+          return 'sw-' + chunkName;
+        }
+      }
+    },
+    plugins: [
+      // This variable is defined by Webpack (and some other tooling), but not by Rollup. Set it to
+      // "production" if we're in prod, which will hide all of Workbox's log messages.
+      // Note that Terser below will actually remove the conditionals (this replace will generate
+      // lots of `if ("production" !== "production")` statements).
+      rollupPluginReplace({
+        'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : ''),
+      }),
+      rollupPluginVirtual(
+        buildVirtualJSON({
+          'cache-manifest': manifest,
+          'layout-template': layoutTemplate,
+        }),
+      ),
+      ...buildDefaultPlugins(),
+      OMT(),
+    ],
+  });
+
+  const swGenerated = await swBundle.write({
+    sourcemap: true,
+    dir: 'dist',
+    format: 'amd',
+  });
+
+  const swOutputFiles = swGenerated.output.map(({fileName}) => fileName);
+  if (isProd) {
+    await compressOutput(swOutputFiles);
+  }
+  outputFiles.push(...swOutputFiles);
+
+  return outputFiles.length;
+}
+
+/**
+ * Builds the test entrypoint.
+ */
+async function buildTest() {
+  const testBundle = await rollup.rollup({
+    input: 'test/unit/src/lib/index.js',
+    plugins: [
+      rollupPluginNodeResolve(),
+      rollupPluginCJS(),
+      rollupPluginVirtual(buildVirtualJSON(virtualImports)),
+      rollupPluginPostCSS(),
+      rollupPluginIstanbul(),
+    ],
+  });
+  await testBundle.write({
+    dir: 'dist/test',
+    format: 'iife',
+    name: 'test',
+  });
+}
+
+/**
+ * Minify the passed on-disk script files. Assumes they have an adjacent ".map" source map.
+ *
+ * @param {!Array<string>} generated paths to generated script files
+ */
+async function compressOutput(generated) {
+  let inputSize = 0;
+  let outputSize = 0;
+
+  for (const fileName of generated) {
+    const target = path.join('dist', fileName);
+
+    const raw = await fs.readFile(target, 'utf8');
+    inputSize += raw.length;
+
+    const result = terser.minify(raw, {
+      sourceMap: {
+        content: await fs.readFile(target + '.map', 'utf8'),
+        url: fileName + '.map',
+      },
+    });
+
+    if (result.error) {
+      throw new Error(`could not minify ${fileName}: ${result.error}`);
+    }
+
+    outputSize += result.code.length;
+    await fs.writeFile(target, result.code, 'utf8');
+    await fs.writeFile(target + '.map', result.map, 'utf8');
+  }
+
+  const ratio = outputSize / inputSize;
+  log(`Terser JS output is ${(ratio * 100).toFixed(2)}% of source`);
+}
+
+(async function() {
+  const generatedCount = await build();
+  log(`Generated ${generatedCount} files`);
+  if (!isProd) {
+    await buildTest();
+  }
+})();

@@ -1,0 +1,9 @@
+<section class="w-grid">
+  <div class="w-grid__columns w-grid__columns--three" role="list">
+    {% for element in paged.elements %}
+      {% PostCard element %}
+    {% endfor %}
+  </div>
+</section>
+
+{% include 'pagination.njk' %}

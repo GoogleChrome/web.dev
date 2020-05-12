@@ -1,0 +1,173 @@
+@import '../../../styles/settings/colors';
+@import '../../../styles/settings/dimensions';
+@import '../../../styles/settings/type';
+@import '../../../styles/tools/mixins';
+
+// =============================================================================
+// LIGHTHOUSE SCORES OVERVIEW
+//
+// Shows a list of audits and what guides you could follow to fix them.
+//
+// =============================================================================
+
+web-lighthouse-scores-audits {
+  display: block;
+  min-height: 400px; // Give layout before CE upgrade.
+  margin-top: 40px;
+
+  $IMPACT_CHIP_WIDTH: 75px;
+  $ROW_PADDING: 16px;
+
+  // TODO(robdodson): Move this to `settings/_type.scss`.
+  $FILTERFONT: (
+    FONT_WEIGHT: 500,
+    FONT_SIZE:   14,
+    LINE_HEIGHT: 16,
+    FONT_FAMILY: $PRIMARY_FONT,
+  );
+
+  .lh-audit-list-headers {
+    @include font($FILTERFONT);
+    color: $GREY_700;
+    text-transform: uppercase;
+    display: flex;
+    padding: $ROW_PADDING / 2 $ROW_PADDING;
+
+    .lh-audit-list-row__item {
+      // Enforce vertical alignment w/o flex.
+      line-height: 60px;
+    }
+  }
+
+  .lh-audit-list-rows {
+    .lh-audit-list-row {
+      background-color: $WHITE;
+      margin: 8px 0;
+      padding: $ROW_PADDING;
+      border-radius: 2px;
+      @include elevation(1);
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .lh-audit-list-row__impact {
+      display: inline-flex;
+      background-color: transparentize($WEB_EXTENDED_TERTIARY_COLOR, .8);
+      color: $WEB_EXTENDED_TERTIARY_COLOR;
+      font-weight: $FONT_WEIGHT_MEDIUM;
+      border-radius: $GLOBAL_RADIUS_LARGE;
+      height: 32px;
+      flex-grow: 0;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lh-audit-list-row__impact--high {
+      background-color: $HIGH_IMPACT_BACKGROUND_COLOR;
+      color: $HIGH_IMPACT_COLOR;
+    }
+
+    .lh-audit-list-row__impact--medium {
+      background-color: $MEDIUM_IMPACT_BACKGROUND_COLOR;
+      color: $MEDIUM_IMPACT_COLOR;
+    }
+
+    .lh-audit-list-row__impact--low {
+      background-color: $LOW_IMPACT_BACKGROUND_COLOR;
+      color: $LOW_IMPACT_COLOR;
+    }
+  }
+
+  .lh-audit-list-row__item {
+    margin-right: 16px;
+  }
+
+  .lh-audit-list-row__link {
+    text-decoration: underline;
+  }
+
+  .lh-audit-list-row__item:last-of-type {
+    margin-right: 0;
+  }
+
+  // Sizes of each "column".
+  .lh-audit-list-row__impact {
+    min-width: $IMPACT_CHIP_WIDTH;
+    display: flex;
+    align-items: center;
+  }
+
+  // Button to flip the ordering of failing audits.
+  .lh-audit-list-row__impact-arrow {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: 0;
+    padding-left: 0;
+    border-bottom: 1px solid transparent;
+    color: inherit;
+    text-transform: uppercase;
+    outline: none;
+    box-shadow: none;
+    @include font($FILTERFONT);
+
+    &:focus-within {
+      border-bottom: 1px solid $GREY_700;
+      margin-bottom: 0;
+    }
+
+    &::after {
+      @include font-material-icon();
+      content: 'arrow_drop_down';
+    }
+
+    &[data-inverted]::after {
+      content: 'arrow_drop_up';
+    }
+  }
+
+  .lh-audit-list-row__category {
+    min-width: 150px;
+  }
+
+  .lh-audit-list-row__recommendation,
+  .lh-audit-list-row__guide {
+    width: 50%;
+    overflow: hidden;
+  }
+
+  .lh-audit-list-row__guide {
+    // Prevent focus ring from being clipped
+    padding: 0 4px;
+  }
+
+  .lh-audit-list-see-more__container {
+    display: flex;
+    margin-top: 32px;
+    flex-direction: column;
+  }
+
+  .lh-audit-list-see-more__button {
+    align-self: center;
+
+    &:disabled {
+      display: none;
+    }
+  }
+
+  /// @deprecated
+  // TODO(robdodson): This should be replaced with the @media rules from breakpoints.scss, but the
+  // Measure page is special and currently does not have a matching value.
+  @media screen and (max-width: $BREAKPOINT_VALUE_TABLET) {
+    .lh-audit-list-headers  .lh-audit-list-row__category,
+    .lh-audit-list-row__category {
+      display: none;
+    }
+  }
+}

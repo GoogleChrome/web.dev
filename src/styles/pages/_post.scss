@@ -1,0 +1,59 @@
+@import '../settings/colors';
+@import '../tools/breakpoints';
+
+$SIGNPOST_SPACING: 4px;
+
+// sass-lint:disable class-name-format
+.guide-landing-page {
+  position: relative;
+}
+// sass-lint:enable class-name-format
+
+.w-post-breadcrumbs {
+  padding: 0px 0 32px;
+
+  @include bp(md) {
+    padding: 0px 0 44px;
+  }
+}
+
+.w-post-content {
+  margin-bottom: 64px;
+
+  @include bp(sm) {
+    margin-bottom: 160px;
+  }
+}
+
+.w-post-github-link {
+  color: $GREY_700;
+  font-size: .875em;
+}
+
+.w-codelabs-callout {
+  @include bp(sm) {
+    margin-top: 64px;
+  }
+}
+
+.w-post-signpost {
+  font-size: 14px;
+  font-style: normal;
+  line-height: 20px;
+  margin-top: $SIGNPOST_SPACING;
+  padding: 0 0 $SIGNPOST_SPACING;
+}
+
+.w-post-signpost__divider {
+  color: $GREY_700;
+  margin: 0 $SIGNPOST_SPACING $SIGNPOST_SPACING;
+}
+
+.w-post-signpost__link {
+  margin: 0 0 $SIGNPOST_SPACING;
+}
+
+.w-post-signpost__title {
+  color: $GREY_700;
+  margin: 0 $SIGNPOST_SPACING $SIGNPOST_SPACING 0;
+}

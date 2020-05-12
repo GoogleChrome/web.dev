@@ -1,0 +1,86 @@
+setLeader: |
+  Check whether code samples should use buttons or links
+height: unset
+tabLabel: sample
+questions:
+  - stimulus: |
+      ```html
+      See <a href="https://webaim.org/intro/" rel="noopener">WebAIM's Introduction to Web Accessibility</a> for more information.
+      ```
+    type: think-and-check
+    stem: Should this sample use a button or a link?
+    options:
+      - rationale: |
+          This sample should use a **link**. The sample is **correct**.
+
+          When selected, the element navigates
+          the user to another page on a different domain,
+          so a link is semantic.
+  - stimulus: |
+      ```html
+      See the <a href="/semantics-and-screen-readers">Semantics and screen readers page</a> for more information.
+      ```
+    type: think-and-check
+    stem: Should this sample use a button or a link?
+    options:
+      - rationale: |
+          This sample should use a **link**. The sample is **correct**.
+
+          When selected, the element navigates
+          the user to a different page on the same domain.
+          No matter where a resource is located,
+          use a link to semantically indicate navigation.
+  - stimulus: |
+      When selected, this element opens a modal dialog:
+
+      ```html
+      <a href="#" onclick="openDialog()">
+      ```
+    type: think-and-check
+    stem: Should this sample use a button or a link?
+    options:
+      - rationale: |
+          This sample should use a **button**. The sample is **incorrect**.
+
+          When selected,
+          the element runs a function that opens a modal dialog on the same page;
+          since the element isn't navigating the user to a separate page,
+          a button is semantic.
+  - stimulus: |
+      When selected, this element opens a navigation menu:
+
+      ```html
+      <a href="#" onclick="openNavMenu()">
+      ```
+    type: think-and-check
+    stem: Should this sample use a button or a link?
+    options:
+      - rationale: |
+          This sample should use a **button**. The sample is **incorrect**.
+
+          When selected,
+          the element runs a function that opens a navigation menu on the same page.
+          Opening the menu is an action, so a button is semantic.
+  - stimulus: |
+      This code renders a horizontal navigation menu at the top of a website:
+
+      ```html
+      <nav>
+        <button>About</button>
+        <button>Services</button>
+        <button>Work</button>
+        <button>Contact</button>
+      </nav>
+      ```
+    type: think-and-check
+    stem: Should this sample use buttons or links?
+    options:
+      - rationale: |
+          This sample should use **links**. The sample is **incorrect**.
+
+          The elements in the `<nav>` menu navigate the user to other pages.
+          Those pages may be separate resources in a static site,
+          or they may be views in a
+          [single-page application](https://developers.google.com/web/fundamentals/architecture/app-shell).
+          Either way, since the user is navigating somewhere else,
+          links are semantic.

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+{% set lang = "en" %}
+{% set locale="en_US" %}
+<html lang="{{lang}}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff"/>
+    {% if noindex or draft -%}
+      <meta name="robots" content="noindex">
+    {%- endif %}
+    {% if offline %}
+      <meta name="offline" content="true" />
+    {%- endif %}
+
+    {% if nometa %}
+      {# Area on page that service worker will load title, rss url and if offline #}
+      <!-- %_HEAD_REPLACE_% -->
+    {% else %}
+      {% Meta locale, page, collections, renderData %}
+    {%- endif %}
+
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin="" />
+    <link rel="preconnect" href="//firebaseremoteconfig.googleapis.com" crossorigin="" />
+    <link rel="preconnect" href="//firebaseinstallations.googleapis.com" crossorigin="" />
+    <link rel="preconnect" href="//webdev.imgix.net" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link rel="stylesheet" href="/app.css" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    {# Include default icon even though we have a manifest #}
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="mask-icon" color="#0054ff" href="/images/safari-pinned-tab.svg">
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    <script defer src="/bootstrap.js"></script>
+  </head>
+  <body class="unresolved">
+    {#
+      Make the snackbar the first item in the DOM so we don't have to steal the
+      user's focus on initial visit to show them a cookie banner. Instead, the
+      snackbar will be the first stop for the screen reader / focus.
+    #}
+    <web-snackbar-container></web-snackbar-container>
+    <div class="w-loading-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" hidden></div>
+    <web-header role="navigation">
+      <button class="w-button--icon w-button--round web-header__hamburger-btn unresolved" aria-label="Open menu">
+        <span class="w-tooltip w-tooltip--left">Open menu</span>
+      </button>
+
+      <a
+        href="/"
+        class="web-header__logo-link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Site logo"
+      >
+        <img class="web-header__logo" src="/images/lockup.svg" alt="web.dev" />
+      </a>
+
+      <div class="web-header__middle">
+        <div class="web-header__links">
+          <a
+            href="/learn/"
+            class="web-header__link gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Tab: Learn"
+          >
+            Learn
+          </a>
+
+          <a
+            href="/measure/"
+            class="web-header__link gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Tab: Measure"
+          >
+            Measure
+          </a>
+
+          <a
+            href="/blog/"
+            class="web-header__link gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Tab: Blog"
+          >
+            Blog
+          </a>
+
+          <a
+            href="/about/"
+            class="web-header__link gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Tab: About"
+          >
+            About
+          </a>
+        </div>
+        <web-search></web-search>
+      </div>
+
+      <web-profile-switcher-container></web-profile-switcher-container>
+    </web-header>
+
+    <web-side-nav class="unresolved">
+      <a
+        href="/learn/"
+        class="web-side-nav__link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="SideNav: Learn"
+      >
+        Learn
+      </a>
+      <a
+        href="/measure/"
+        class="web-side-nav__link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="SideNav: Measure"
+      >
+        Measure
+      </a>
+      <a
+        href="/blog/"
+        class="web-side-nav__link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="SideNav: Blog"
+      >
+        Blog
+      </a>
+      <a
+        href="/about/"
+        class="web-side-nav__link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="SideNav: About"
+      >
+        About
+      </a>
+    </web-side-nav>
+    <main>
+      {% include 'partials/banner.njk' %}
+      <div id="content">
+        {{ content | safe }}
+      </div>
+    </main>
+    {% include 'partials/footer.njk' %}
+  </body>
+</html>

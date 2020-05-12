@@ -1,0 +1,282 @@
+<devsite-header
+  ds-is="header"
+  no-lower-row=""
+  top-row--height="64"
+  bottom-row--height="0"
+  bottom-tabs--height="0"
+  bottom-row--hidden=""
+  fixed=""
+  style="opacity: 1;"
+>
+  <div class="devsite-header--inner">
+    <div class="devsite-top-logo-row-wrapper-wrapper">
+      <div class="devsite-top-logo-row-wrapper">
+        <div class="devsite-top-logo-row">
+          <button
+            type="button"
+            id="devsite-hamburger-menu"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Navigation menu button"
+            aria-label="Close menu"
+          ></button>
+          <div class="devsite-product-name-wrapper">
+            <a
+              href="/"
+              class="devsite-site-logo-link gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                src="/images/lockup.svg"
+                class="devsite-site-logo"
+                alt="web.dev"
+              />
+            </a>
+          </div>
+          <div class="devsite-top-logo-row-middle">
+            <div class="devsite-header-upper-tabs">
+              <devsite-tabs ds-is="tabs" class="upper-tabs" connected="">
+                <div class="devsite-tabs-wrapper">
+                  <tab>
+                    <a
+                      href="/learn"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Learn"
+                    >
+                      Learn
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/measure"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Measure"
+                    >
+                      Measure
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/blog"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: Blog"
+                    >
+                      Blog
+                    </a>
+                  </tab>
+                  <tab>
+                    <a
+                      href="/about"
+                      class="gc-analytics-event"
+                      data-category="Site-Wide Custom Events"
+                      data-label="Tab: About"
+                    >
+                      About
+                    </a>
+                  </tab>
+                  <tab overflow-tab="" hidden=""
+                    ><a
+                      href="/fast/use-imagemin-to-compress-images#"
+                      class="devsite-icon devsite-icon-arrow-drop-down"
+                      >More</a
+                    >
+                    <div
+                      class="devsite-tabs-overflow-menu"
+                      scrollbars=""
+                      hidden=""
+                    ></div
+                  ></tab></div
+              ></devsite-tabs>
+            </div>
+            <devsite-search
+              ds-is="search"
+              enable-search=""
+              enable-signin=""
+              enable-suggestions=""
+              enable-query-completion=""
+              enable-product-suggestions=""
+              enable-title-suggestions=""
+              enable-reference-suggestions=""
+              project-path=""
+            >
+              <form
+                class="devsite-search-form"
+                action="/results/"
+                method="GET"
+              >
+                <div class="devsite-search-container">
+                  <div id="searchbox" class="devsite-searchbox">
+                    <input
+                      placeholder="Search"
+                      type="text"
+                      class="devsite-search-field devsite-search-query"
+                      name="q"
+                      value=""
+                      autocomplete="off"
+                      aria-label="Search box"
+                    />
+                    <div
+                      class="devsite-search-image material-icons"
+                    ></div>
+                  </div>
+                  <button
+                    type="button"
+                    search-open=""
+                    class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                    aria-label="Open search box"
+                  ></button>
+                </div>
+                <div class="devsite-popout">
+                  <div
+                    class="devsite-popout-result devsite-suggest-results-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  >
+                    <div class="devsite-suggest-wrapper">
+                      <div class="devsite-suggest-section">
+                        <div class="devsite-suggest-header">
+                          Suggested searches
+                        </div>
+                        <devsite-analytics-scope
+                          category="Site-Wide Custom Events"
+                          label="Search"
+                          action="Query Suggestion Click"
+                          ds-is="analytics-scope"
+                          ><div
+                            class="devsite-result-item devsite-nav-label"
+                            role="menuitem"
+                            index=":0"
+                          >
+                            <a
+                              class="devsite-result-item-link"
+                              href="/results/?q=api"
+                              ><span class="devsite-suggestion-fragment"
+                                ><b></b>a<b></b>p<b></b>i<b></b></span
+                            ></a>
+                          </div>
+                          <devsite-analytics-scope
+                            category="Site-Wide Custom Events"
+                            label="Search"
+                            action="Query Suggestion Click"
+                            ds-is="analytics-scope"
+                            ><div
+                              class="devsite-result-item devsite-nav-label"
+                              role="menuitem"
+                              index=":1"
+                            >
+                              <a
+                                class="devsite-result-item-link"
+                                href="/results/?q=google"
+                                ><span class="devsite-suggestion-fragment"
+                                  ><b></b>g<b></b>o<b></b>o<b></b>g<b
+                                  ></b>l<b></b>e<b></b></span
+                              ></a>
+                            </div>
+                            <devsite-analytics-scope
+                              category="Site-Wide Custom Events"
+                              label="Search"
+                              action="Query Suggestion Click"
+                              ds-is="analytics-scope"
+                              ><div
+                                class="devsite-result-item devsite-nav-label"
+                                role="menuitem"
+                                index=":2"
+                              >
+                                <a
+                                  class="devsite-result-item-link"
+                                  href="/results/?q=developers"
+                                  ><span
+                                    class="devsite-suggestion-fragment"
+                                    ><b></b>d<b></b>e<b></b>v<b></b>e<b
+                                    ></b>l<b></b>o<b></b>p<b></b>e<b
+                                    ></b>r<b></b>s<b></b></span
+                                ></a>
+                              </div>
+                              <devsite-analytics-scope
+                                category="Site-Wide Custom Events"
+                                label="Search"
+                                action="Query Suggestion Click"
+                                ds-is="analytics-scope"
+                                ><div
+                                  class="devsite-result-item devsite-nav-label"
+                                  role="menuitem"
+                                  index=":3"
+                                >
+                                  <a
+                                    class="devsite-result-item-link"
+                                    href="/results/?q=cloud"
+                                    ><span
+                                      class="devsite-suggestion-fragment"
+                                      ><b></b>c<b></b>l<b></b>o<b></b>u<b
+                                      ></b>d<b></b></span
+                                  ></a>
+                                </div>
+                                <devsite-analytics-scope
+                                  category="Site-Wide Custom Events"
+                                  label="Search"
+                                  action="Query Suggestion Click"
+                                  ds-is="analytics-scope"
+                                  ><div
+                                    class="devsite-result-item devsite-nav-label"
+                                    role="menuitem"
+                                    index=":4"
+                                  >
+                                    <a
+                                      class="devsite-result-item-link"
+                                      href="/results/?q=site"
+                                      ><span
+                                        class="devsite-suggestion-fragment"
+                                        ><b></b>s<b></b>i<b></b>t<b
+                                        ></b>e<b></b></span
+                                    ></a></div></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope></devsite-analytics-scope
+                        ></devsite-analytics-scope>
+                      </div>
+                      <div class="devsite-suggest-footer">
+                        <button
+                          type="submit"
+                          class="button button-white devsite-suggest-all-results"
+                        >
+                          See all results for ""
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="devsite-popout-result devsite-history-container"
+                    devsite-hide=""
+                    role="menu"
+                    aria-haspopup="true"
+                  ></div>
+                </div>
+              </form>
+              <button
+                type="button"
+                search-close=""
+                class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+                aria-label="Close search box"
+              ></button>
+            </devsite-search>
+
+            <devsite-search-background
+              style="opacity: 1;"
+            ></devsite-search-background>
+          </div>
+
+          <web-profile-switcher-container></web-profile-switcher-container>
+        </div>
+      </div>
+    </div>
+    <div
+      class="devsite-collapsible-section
+      devsite-header-no-lower-tabs
+"
+    >
+      <div class="devsite-header-background"></div>
+    </div>
+  </div>
+</devsite-header>

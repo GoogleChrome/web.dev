@@ -1,0 +1,16 @@
+@import '../../../styles/tools/mixins';
+
+web-snackbar-container {
+  bottom: 0;
+  display: block;
+  left: 0;
+  margin: 0;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  z-index: 300;
+
+  @include bp(sm) {
+    margin: 8px;
+  }
+}
