@@ -33,7 +33,7 @@ persistent.
   be done for critical data (for example, end-to-end encryption keys) that
   if not backed up to the cloud, could result in significant data loss if
   not saved. Persistent storage is not deleted by the browser, even if
-  storage running low. It will only be deleted if the user chooses to
+  storage is running low. It will only be deleted if the user chooses to
   remove it via their site settings.
 {% endAside %}
 
