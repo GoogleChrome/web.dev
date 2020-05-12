@@ -287,8 +287,8 @@ illegible.
   <img src="grass-mandy.png" alt="Grass example by Mandy Michael">
   <figcaption class="w-figcaption">
     A great example of artistic expression is 
-    [Mandy Michael's exploration](https://codepen.io/mandymichael/pen/YYaWop) of the typeface
-    [Decovar](https://www.typenetwork.com/brochure/decovar-a-decorative-variable-font-by-david-berlow).
+    <a href="https://codepen.io/mandymichael/pen/YYaWop">Mandy Michael's exploration</a> of the typeface
+    <a href="https://www.typenetwork.com/brochure/decovar-a-decorative-variable-font-by-david-berlow">Decovar</a>.
   </figcaption>
 </figure>
 
@@ -300,7 +300,7 @@ It's also possible to animate characters with variable fonts.
             type="video/mp4">
   </video>
   <figcaption class="w-figcaption">
-    [An example of using different axes to animate characters](https://www.axis-praxis.org/specimens/zycon) 
+    <a href="https://www.axis-praxis.org/specimens/zycon">An example of using different axes to animate characters</a>
     with the typeface Zycon. Zycon was designed for animation by David Berlow, type designer and
     typographer at Font Bureau.
   </figcaption>
