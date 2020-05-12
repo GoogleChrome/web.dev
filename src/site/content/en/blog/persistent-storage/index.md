@@ -133,7 +133,7 @@ data stored in:
 - Cache API
 - Cookies
 - DOM Storage
-- File System API (browser provided & sandboxed file system)
+- File System API (browser-provided and sandboxed file system)
 - IndexedDB
 - Service workers
 - App Cache (deprecated, should not be used)
