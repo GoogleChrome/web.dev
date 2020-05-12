@@ -6,8 +6,6 @@
  * Worker initialization, component loading for routes, et al.
  */
 
-import './webcomponents-config'; // must go before -loader below
-import '@webcomponents/webcomponentsjs/webcomponents-loader.js';
 import './analytics'; // side effects
 import {swapContent, getPartial} from './loader';
 import * as router from './utils/router';
@@ -15,7 +13,7 @@ import {store} from './store';
 import {localStorage} from './utils/storage';
 import removeServiceWorkers from './utils/sw-remove';
 
-WebComponents.waitFor(async () => {
+function initialize() {
   // TODO(samthor): This isn't quite the right class name because not all Web Components are ready
   // at this point due to code-splitting.
   document.body.classList.remove('unresolved');
@@ -33,7 +31,8 @@ WebComponents.waitFor(async () => {
       router.reload();
     }
   });
-});
+}
+initialize();
 
 // Configures global page state (loading, signed in).
 function onGlobalStateChanged({isSignedIn, isPageLoading}) {
