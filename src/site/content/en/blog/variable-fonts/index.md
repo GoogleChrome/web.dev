@@ -1,6 +1,9 @@
 ---
 title: Introduction to variable fonts on the web
-subhead: We will look at what variable fonts are, how we can use them in our work.
+subhead: A new font specification that can significantly reduce font file sizes
+description: >
+  How variable fonts work, how typographers implement variable fonts, and
+  how to work with variable fonts in CSS.
 authors:
   - mustafakurtuldu
   - thomassteiner
@@ -11,10 +14,17 @@ tags:
   - blog
   - fonts
 ---
-In this article, we will look at what variable fonts are, how we can use them in
-our work, and the potential possibilities they entail. But to understand what
-they offer, first we must explore how typography and font loading currently
-work on the web.
+
+Variable fonts can significantly reduce the size of your font files and make
+it possible to animate your font characters. This guide explains how
+variable fonts work, how typographers implement variable fonts, and how
+to work with variable fonts in CSS.
+
+## Browser compatibility {: #compatibility }
+
+As of May 2020 variable fonts are supported in most browsers. See
+[Can I use variable fonts?](https://caniuse.com/#feat=variable-fonts)
+and [Fallbacks](#fallbacks).
 
 ## Introduction
 
@@ -110,7 +120,7 @@ interpolation-compatible contours, so their Roman and Italic styles can be inter
 between and the **Slant** axis can be used to get from Roman to Italic.
 
 Other typefaces (such as Garamond, Baskerville, or Bodoni) have Roman and Italic
-glyph contours that are not interpolation compatible. For example, the contours
+glyph contours that are not interpolation-compatible. For example, the contours
 that typically define a Roman lowercase "n" do not match the contours used to
 define an Italic lowercase "n". Instead of interpolating one contour to the
 other, the **Italic** axis toggles from Roman to Italic contours.
@@ -149,12 +159,12 @@ two axes available, Width and Weight. The Amstelvar variable font does not
 contain a Slant axis, but does have an axis it calls Grade, plus many more axes.
 
 A Grade axis is interesting as it changes the weight of the font without
-changing the widths, so line breaks does not change. By playing with a
-Grade axis, you can avoid being forced to fiddle with changes to Weight axis
+changing the widths, so line breaks do not change. By playing with a
+Grade axis, you can avoid being forced to fiddle with changes to the Weight axis
 that effects the overall width, and then changes to the Width axis that effect
 the overall weight. This is possible because the Amstelvar default style has
 been deconstructed in the 4 fundamental aspects of form: black or positive
-shapes, white or negative shapes, and the x and y dimensions. These 4 aspects
+shapes, white or negative shapes, and the X and Y dimensions. These 4 aspects
 can be mixed to form the other styles, such as Width and Weight, in the way
 that primary colors can be mixed to create any other color.
 
@@ -168,8 +178,13 @@ that primary colors can be mixed to create any other color.
   </figcaption>
 </figure>
 
-You can view the working example and source code for the above sample
-[here](https://variable-font-experiments.glitch.me).
+<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/variable-font-experiments?previewSize=100&attributionHidden=true"
+    alt="Variable fonts experiments on Glitch."
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
 
 The five registered axes plus Grade have 4-character tags that are used to
 set their values in CSS:
@@ -259,9 +274,6 @@ which has a series of values that pair the axis tag with an instance location:
   </figcaption>
 </figure>
 
-You can view the working example and source code for the above sample
-[here](https://variable-font-experiments.glitch.me).
-
 ## Responsibility of the typesetter
 
 Setting the axes values comes down to personal taste and applying typographic
@@ -272,16 +284,15 @@ artistic designs are exciting, but for body copy this risks making the text
 illegible.
 
 <figure class="w-figure">
-  <img src="grass-mandy.png"
-  alt="Grass example by Mandy Michael">
+  <img src="grass-mandy.png" alt="Grass example by Mandy Michael">
+  <figcaption class="w-figcaption">
+    A great example of artistic expression is 
+    [Mandy Michael's exploration](https://codepen.io/mandymichael/pen/YYaWop) of the typeface
+    [Decovar](https://www.typenetwork.com/brochure/decovar-a-decorative-variable-font-by-david-berlow).
+  </figcaption>
 </figure>
 
-One great example of artistic expression is shown above, an explorations of the typeface
-[Decovar](https://www.typenetwork.com/brochure/decovar-a-decorative-variable-font-by-david-berlow)
-by Mandy Michael.
-
-You can view the working example and source code for the above sample
-[here](https://codepen.io/mandymichael/pen/YYaWop).
+It's also possible to animate characters with variable fonts.
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
@@ -289,17 +300,13 @@ You can view the working example and source code for the above sample
             type="video/mp4">
   </video>
   <figcaption class="w-figcaption">
-    Typeface Zycon, designed for animation by David Berlow, type designer and
+    [An example of using different axes to animate characters](https://www.axis-praxis.org/specimens/zycon) 
+    with the typeface Zycon. Zycon was designed for animation by David Berlow, type designer and
     typographer at Font Bureau.
   </figcaption>
 </figure>
 
-There is also a possibility to explore animating characters
-with variable fonts. Above is an example of different axes being used
-with the typeface Zycon. See the live
-[animation example on Axis Praxis](https://www.axis-praxis.org/specimens/zycon).
-
-## Variable fonts performance gains
+## Variable fonts performance gains {: #performance }
 
 OpenType variable fonts allow us to store multiple variations of a type
 family into a single font file. [Monotype](https://goo.gl/9gonHT)
@@ -309,8 +316,10 @@ styles. Storing 48 individual fonts in a single variable font file meant a
 **88% reduction in file size**.
 
 On the flip side, if you are animating the font between settings, this may
-cause the browser performance issues. Learn more about this on
-[Surma's Supercharged](https://www.youtube.com/watch?v=B42rUMdcB7c).
+cause the browser performance issues. Learn more about this in
+the Supercharged episode on variable fonts.
+
+{% YouTube 'B42rUMdcB7c' %}
 
 With variable fonts, app and website makers can offer really rich typography
 experiences that express each brand, without the previous bandwidth and latency
@@ -318,14 +327,11 @@ costs. However, if you are using a single font such as Roboto Regular and
 nothing else, you might see a net gain in font size if you were to switch to a
 variable font with many axes. As always, it depends on your use-case.
 
-## Fallbacks and browser support
+## Fallbacks {: #fallbacks }
 
-Current support is limited, but variable fonts will work today out of the box
-in Chrome and Safari, with support coming soon to Edge 17 and Firefox. See
-[caniuse.com](https://caniuse.com/#search=font-variation-settings)
-for more details.
-
-It is possible to use `@supports` in your CSS to create a viable fallback:
+As mentioned in [Browser compatibility](#compatibility), most browsers support
+variable fonts. For the remaining browsers that do not, you can use `@supports`
+to create a viable fallback:
 
 ```css
 @supports (font-variation-settings: 'wdth' 200) {
