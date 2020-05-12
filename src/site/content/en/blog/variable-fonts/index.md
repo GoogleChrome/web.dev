@@ -75,7 +75,7 @@ and two masters, thinner and bolder, are at the opposite ends of the axis.
 Between these there are potentially 200 instances that can be chosen by the
 designer or developer:
 
-<figure>
+<figure class="w-figure">
   <img src="Amstelvar-Alpha-example.png"
   alt="Example of the Weight Axes for the typeface Amstelvar">
   <figcaption>
