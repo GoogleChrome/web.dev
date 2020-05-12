@@ -208,9 +208,9 @@ const contributors = {
       given: 'Mustafa',
       family: 'Kurtuldu',
     },
+    homepage: 'https://www.designtoday.info/',
     twitter: 'mustafa_x',
     github: 'mustafa-x',
-    homepage: 'https://www.designtoday.info/',
   },
   agektmr: {
     name: {

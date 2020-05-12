@@ -5,7 +5,7 @@ authors:
   - mustafakurtuldu
   - thomassteiner
 date: 2018-02-19
-updated: 2020-05-11
+updated: 2020-05-12
 hero: hero.jpg
 tags:
   - blog
@@ -25,21 +25,20 @@ Meanwhile a font is one of the digital files of that family, like "Roboto Bold"
 or "Roboto Italic." In other words, a typeface is what you _see_, and the font is
 what you _use_.
 
-<div class="w-figure w-figure--inline-left" style="max-width:50%">
-  <figure class="w-figure w-figure--inline-left">
-    <img src="robot-specimen.png" alt="A specimen of Roboto">
-  </figure>
-</div>
-<div class="w-figure w-figure--inline-right" style="max-width:50%">
-  <figure class="w-figure w-figure--inline-right">
-    <img src="roboto-family.png" alt="Different members of the Roboto family">
-  </figure>
-</div>
-<div class="clearfix"></div>
+<figure class="w-figure">
+  <img src="robot-specimen.png" alt="A specimen of Roboto">
+  <figcaption class="w-figcaption">
+    Roboto was designed and developed by Christian Robertson.
+    Depicted is a specimen of the Roboto typeface.
+  </figcaption>
+</figure>
 
-Above: Roboto was designed and developed by Christian Robertson. On the left, a
-specimen of the Roboto typeface. On the right different fonts within the Roboto
-family.
+<figure class="w-figure">
+  <img src="roboto-family.png" alt="Different members of the Roboto family">
+  <figcaption class="w-figcaption">
+    Different fonts within the Roboto family.
+  </figcaption>
+</figure>
 
 ### Challenges for the Designer and Developer
 
