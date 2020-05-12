@@ -159,8 +159,10 @@ can be mixed to form the other styles, such as Width and Weight, in the way
 that primary colors can be mixed to create any other color.
 
 <figure class="w-figure">
-  <img src="amstel-grade-e.gif"
-  alt="Amstelvar font's Grade being changed on the fly.">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/amstel-grade-e.mp4" 
+            type="video/mp4">
+  </video>
   <figcaption class="w-figcaption">
     Grade axis being changed on the fly.
   </figcaption>
@@ -248,11 +250,12 @@ which has a series of values that pair the axis tag with an instance location:
 ```
 
 <figure class="w-figure">
-  <img src="gingham-weight-e.gif"
-  alt="Ginghams font's Weight and Width being changed on the fly.">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/gingham-weight-e.mp4" 
+            type="video/mp4">
+  </video>
   <figcaption class="w-figcaption">
-    In this example you can see the Weight and Width axes being changed on the
-    fly.
+    A demonstration of the Weight and Width axes being changed on the fly.
   </figcaption>
 </figure>
 
@@ -280,10 +283,18 @@ by Mandy Michael.
 You can view the working example and source code for the above sample
 [here](https://codepen.io/mandymichael/pen/YYaWop).
 
+    In this example you can see the Weight and Width axes being changed on the
+    fly.
+
 <figure class="w-figure">
-  <img src="axis-praxis.gif"
-  alt="Typeface Zycon, designed for animation by David Berlow, type designer and
-    typographer at Font Bureau.">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/variable-fonts/axis-praxis.mp4" 
+            type="video/mp4">
+  </video>
+  <figcaption class="w-figcaption">
+    Typeface Zycon, designed for animation by David Berlow, type designer and
+    typographer at Font Bureau.
+  </figcaption>
 </figure>
 
 There is also a possibility to explore animating characters
