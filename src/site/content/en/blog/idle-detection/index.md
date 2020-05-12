@@ -109,53 +109,59 @@ this definition is left to the user agent.
 
 The first step when using the Idle Detection API is
 to ensure the `'notifications'` permission is granted.
+If the permission is not granted, you need to 
+[request it](https://developers.google.com/web/fundamentals/push-notifications/subscribing-a-user#requesting_permission).
+
+```js
+// Check if notifications permission is granted.
+const hasPermission = await navigator.permissions.query({name: 'notifications'});
+if (hasPermission.state !== 'granted') {
+  // Need to request permission first.
+  return console.log('Notifications permission not granted.');
+}
+```
+
 The second step is then to instantiate the `IdleDetector`.
 The minimum `threshold` is 60,000 milliseconds (1 minute).
 You can finally start the idle detection by calling the
 `IdleDetector`'s `start()` method.
 It takes an object with the desired idle `threshold` in milliseconds
-and `signal` with an [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)
+and an optional `signal` with an
+[`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)
 to abort idle detection as parameters.
 
 ```js
-const main = async () => {
-  // Feature detection.
-  if (!('IdleDetector' in window)) {
-    return console.log('IdleDetector is not available.');
-  }
-  // Check if notifications permission is granted.
-  const hasPermission = await navigator.permissions.query({name: 'notifications'});
-  if (hasPermission.state !== 'granted') {
-    return console.log('Notifications permission not granted.');
-  }
-  try {
-    const controller = new AbortController();
-    const signal = controller.signal;
+try {
+  const controller = new AbortController();
+  const signal = controller.signal;
 
-    const idleDetector = new IdleDetector();
-    idleDetector.addEventListener('change', () => {
-      const userState = idleDetector.userState;
-      const screenState = idleDetector.screenState;
-      console.log(`Idle change: ${userState}, ${screenState}.`);
-    });
-    await idleDetector.start({
-      threshold: 60000,
-      signal,
-    });
-    console.log('IdleDetector is active.');
+  const idleDetector = new IdleDetector();
+  idleDetector.addEventListener('change', () => {
+    const userState = idleDetector.userState;
+    const screenState = idleDetector.screenState;
+    console.log(`Idle change: ${userState}, ${screenState}.`);
+  });
+  
+  await idleDetector.start({
+    threshold: 60000,
+    signal,
+  });
+  console.log('IdleDetector is active.');
+} catch (err) {
+  // Deal with initialization errors like permission denied,
+  // running outside of top-level frame, etc.
+  console.error(err.name, err.message);
+}
+```
 
-    window.setTimeout(() => {
-      controller.abort();
-      console.log('IdleDetector is stopped.');
-    }, 120000);
-  } catch (err) {
-    // Deal with initialization errors like permission denied,
-    // running outside of top-level frame, etc.
-    console.error(err.name, err.message);
-  }
-};
+You can abort the idle detection by calling the
+[`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController)'s
+[`abort()`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController/abort)
+method.
 
-main();
+```js
+controller.abort();
+console.log('IdleDetector is stopped.');
 ```
 
 ### Demo
