@@ -67,11 +67,6 @@ export const metrics = [
     title: 'Estimated Input Latency',
     id: 'estimated-input-latency',
   },
-  {
-    title: 'First Input Delay',
-    id: 'max-potential-fid',
-    vitals: true,
-  },
 ];
 
 // prettier-ignore
