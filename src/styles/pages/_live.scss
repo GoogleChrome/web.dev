@@ -1,0 +1,125 @@
+@import '../settings/colors';
+@import '../tools/breakpoints';
+
+.w-live-landing-page {
+  color: $GREY_800;
+  overflow-x: hidden;
+
+  h1,
+  h2 {
+    color: $GREY_900;
+  }
+}
+
+.w-event-section {
+  border-bottom: 1px solid #dadce0;
+  padding: 0 8px;
+}
+
+section.w-event-section-inner {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 64px auto;
+  max-width: 960px;
+  text-align: center;  // for mobile
+
+  .w-event-heading {
+    align-items: center;
+    color: #606369;
+    display: flex;
+    font-size: 32px;
+    justify-content: center;
+
+    span {
+      opacity: 0;
+      position: absolute;
+      text-indent: -99999px;
+    }
+
+    &::after {
+      background: url('../live/live.png');
+      background-position: left 50%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: '';
+      display: inline-block;
+      height: 1em;
+      margin-left: .25ch;
+      padding: 2px;
+      width: 2.3em; // 320px by 140px is about ~2.285em
+    }
+  }
+
+  .w-event-hero {
+    align-items: center;
+    box-sizing: content-box;
+    display: flex;
+    height: 192px;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0 0 64px;
+    position: relative;
+
+    &::before {
+      background-image: url('../live/hero-bg.png');
+      background-position: 50% 30%;
+      background-repeat: no-repeat;
+      background-size: auto 75%;
+      content: '';
+      height: 100%;
+      position: absolute;
+      width: 1600px;
+      z-index: -1;
+    }
+
+    img {
+      max-height: 100%;
+      min-width: 560px;
+    }
+  }
+
+  .w-column-head {
+    width: 100%;
+  }
+
+  .w-column-left {
+    flex-grow: 1;
+    padding: 0 16px;
+  }
+
+  .w-column-right {
+    max-width: 512px;
+    padding: 0 16px;
+
+    h2:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  @include bp(md) {
+    text-align: inherit;
+
+    .w-event-hero {
+      margin-bottom: 32px;
+    }
+
+    .w-event-heading {
+      justify-content: flex-start;
+    }
+
+    .w-column-head {
+      order: -1;
+    }
+
+    .w-column-left {
+      flex-grow: 0;
+      width: 37.5%;
+    }
+
+    .w-column-right {
+      max-width: none;
+      width: 62.5%;
+    }
+  }
+}
