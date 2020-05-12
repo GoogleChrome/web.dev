@@ -2,14 +2,9 @@
 layout: layout
 title: Authors
 permalink: /en/{{ paged.href }}{% if paged.index > 0 %}{{ paged.index + 1 }}/{% endif %}index.html
-override:tags: []
 description: Our latest news, updates, and stories for developers
-date: 2020-02-12
-renderData:
-  title: "{{ paged.title or title }}"
-  description: "{{ paged.description or description }}"
 pagination:
-  data: collections.paginatedPostsByAuthor
+  data: collections.paginatedAuthors
   size: 1
   alias: paged
 ---
@@ -21,9 +16,17 @@ pagination:
 
   <div class="w-layout-container w-pb--non">
     <header class="w-page-header">
-      <h1 class="w-page-header__headline">{{ renderData.title }}</h1>
-      <p class="w-page-header__copy">{{ renderData.description | safe }}</p>
+      <h1 class="w-page-header__headline">{{ title }}</h1>
+      <p class="w-page-header__copy">{{ description }}</p>
     </header>
   </div>
-  {% include 'partials/paged.njk' %}
+  <section class="w-grid">
+    <div class="w-grid__columns w-grid__columns--three" role="list">
+      {% for element in paged.elements %}
+        {% AuthorCard element %}
+      {% endfor %}
+    </div>
+  </section>
+
+  {% include 'pagination.njk' %}
 </div>

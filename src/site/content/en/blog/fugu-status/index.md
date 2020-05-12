@@ -2,9 +2,9 @@
 title: New capabilities status
 subhead: Web apps should be able to do anything native apps can. Google wants to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2020-03-13
+updated: 2020-04-13
 tags:
-  - post
+  - blog
   - capabilities
   - fugu
 ---
@@ -27,7 +27,7 @@ the [Fugu API Tracker](https://goo.gle/fugu-api-tracker).
 These APIs are only available behind a flag. They're experimental and still
 under development. They are not ready for use in production. There's a good
 chance there are bugs, that these APIs will break, or the API surface will
-change.
+change.<a name="shape-face-text"></a>
 
 <div class="w-table-wrapper">
   <table>
@@ -40,13 +40,19 @@ change.
     <tbody>
       <tr>
         <td>
-          <a href="/shape-detection/">Shape&nbsp;Detection API</a>
+          <a href="/shape-detection/">Shape&nbsp;Detection (Face and Text)</a>
         </td>
         <td>
-          The Shape Detection API opens up native implementations of shape
-          detection services and exposes them through a set of JavaScript
-          interfaces.<br>
-          <em>Updated January 10, 2020</em>
+          Shape detection opens up native
+          implementations of shape detection services and exposes them through
+          a set of JavaScript interfaces. In additon to the APIs below, the
+          Barcode Detection API is available in stable. For more information,
+          <a href="#shape-barcode">Shape Detection (Barcode)</a>.
+          <ul>
+            <li><a href="https://www.chromestatus.com/feature/5678216012365824">Face Detection API</a></li>
+            <li><a href="https://www.chromestatus.com/feature/5644087665360896">Text Detection API</a></li>
+          </ul>
+          <em>Updated April 14, 2020</em>
         </td>
       </tr>
     </tbody>
@@ -101,7 +107,7 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
           editors, and more. After a user grants a web app access, this API
           allows web apps to read or save changes directly to files and folders
           on the user's device.<br>
-          <em>Updated November 26, 2019</em>
+          <em>Updated April 13, 2020</em>
         </td>
       </tr>
       <tr>
@@ -130,16 +136,6 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
           the physical world by allowing websites to communicate with serial
           devices, such as microcontrollers and 3D printers.<br>
           <em>Updated March 1, 2020</em>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="/sms-receiver-api-announcement/">SMS Receiver API</a>
-        </td>
-        <td>
-          Finding, memorizing, and typing OTPs sent via SMS is cumbersome.
-          The SMS Receiver API simplifies the OTP workflow for users.<br>
-          <em>Updated October 7, 2019</em>
         </td>
       </tr>
       <tr>
@@ -255,7 +251,33 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           Periodic Background Sync enables web applications to periodically
           synchronize data in the background, bringing web apps closer to
           the behavior of a native app.<br>
-          <em>Updated December 18, 2019</em>
+          <em>Updated December 18, 2019</em><a name="shape-barcode"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/shape-detection/">Shape&nbsp;Detection (Barcode)</a>
+        </td>
+        <td>
+          Shape detection opens up native
+          implementations of shape detection services and exposes them through
+          a set of JavaScript interfaces. Shape detection has three separate
+          APIs, of which the Barcode API is only one. See
+          <a href="#shape-face-text">Shape Detection (Face and Text)</a>
+          for information on other shape detection APIs that are under
+          development.<br>
+          <em>Updated April 14, 2020</em>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/sms-receiver-api-announcement/">Web OTP API</a>
+        </td>
+        <td>
+          Finding, memorizing, and typing OTPs sent via SMS is cumbersome.
+          The Web OTP API (formerly the SMS Receiver API) simplifies the OTP
+          workflow for users.<br>
+          <em>Updated March 26, 2020</em>
         </td>
       </tr>
       <tr>

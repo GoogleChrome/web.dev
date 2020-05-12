@@ -10,7 +10,7 @@ class AbortControllerPolyfill {
     this.abort = () => {
       aborted = true;
 
-      const event = new CustomEvent("AbortEvent");
+      const event = new CustomEvent('AbortEvent');
       handlers.forEach((fn) => fn(event));
       handlers.splice(0, handlers.length);
     };
@@ -20,7 +20,7 @@ class AbortControllerPolyfill {
         return aborted;
       },
       addEventListener(name, fn) {
-        if (!aborted && name === "abort") {
+        if (!aborted && name === 'abort') {
           handlers.push(fn);
         }
       },

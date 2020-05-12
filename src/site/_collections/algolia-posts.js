@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-const livePosts = require("../_filters/live-posts");
-const removeMarkdown = require("remove-markdown");
-const stripLanguage = require("../_filters/strip-language");
+const {livePosts} = require('../_filters/live-posts');
+const removeMarkdown = require('remove-markdown');
+const stripLanguage = require('../_filters/strip-language');
 
 /**
  * Shrink the size of the given fulltext to fit within a certain limit, at the
@@ -32,7 +32,7 @@ function limitText(fulltext, limit = 7500) {
   }
 
   // Find the nearest prior newline to the 10k limit.
-  let newlineIndex = fulltext.lastIndexOf("\n", limit);
+  let newlineIndex = fulltext.lastIndexOf('\n', limit);
   if (newlineIndex === -1) {
     newlineIndex = limit;
   }
@@ -40,9 +40,9 @@ function limitText(fulltext, limit = 7500) {
 }
 
 module.exports = (collection) => {
-  const validTags = ["post", "pathItem"];
+  const validTags = ['post', 'pathItem'];
   const eleventyPosts = collection
-    .getAll()
+    .getFilteredByGlob('**/*.md')
     .filter((item) => {
       // nb. There's no easy 'getFilteredByMultipleTag' method in Eleventy.
       if (!Array.isArray(item.data.tags)) {
@@ -56,7 +56,7 @@ module.exports = (collection) => {
     .filter(livePosts);
 
   // For now, hard-code language to English.
-  const lang = "en";
+  const lang = 'en';
 
   // Convert 11ty-posts to a flat, indexable format.
   return eleventyPosts.map(({data, template}) => {
@@ -69,7 +69,7 @@ module.exports = (collection) => {
     const limited = limitText(fulltext);
 
     return {
-      objectID: data.page.url + "#" + lang,
+      objectID: data.page.url + '#' + lang,
       lang,
       title: data.title,
       url: stripLanguage(data.page.url),

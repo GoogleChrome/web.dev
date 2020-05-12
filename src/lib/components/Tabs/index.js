@@ -1,8 +1,9 @@
-import {html} from "lit-element";
-import {BaseElement} from "../BaseElement";
-import {checkOverflow} from "../../utils/check-overflow";
-import {generateIdSalt} from "../../utils/generate-salt";
-import "./_styles.scss";
+import {html} from 'lit-element';
+import {BaseElement} from '../BaseElement';
+import {checkOverflow} from '../../utils/check-overflow';
+import {generateIdSalt} from '../../utils/generate-salt';
+import 'focus-visible';
+import './_styles.scss';
 
 /**
  * Element that wraps each child element in a tab panel
@@ -24,7 +25,7 @@ class Tabs extends BaseElement {
     this.overflow = false;
     this.prerenderedChildren = null;
     this.tabs = null;
-    this.idSalt = generateIdSalt("web-tab-");
+    this.idSalt = generateIdSalt('web-tab-');
 
     this.onResize = this.onResize.bind(this);
     this._changeTab = this._changeTab.bind(this);
@@ -46,7 +47,7 @@ class Tabs extends BaseElement {
         this.prerenderedChildren.push(this.panelTemplate(i, child));
         // Get tab label from child data-label attribute
         // and render a tab for each panel.
-        const tabLabel = child.getAttribute("data-label");
+        const tabLabel = child.getAttribute('data-label');
         this.tabs.push(this.tabTemplate(i, tabLabel));
         i++;
       }
@@ -62,15 +63,15 @@ class Tabs extends BaseElement {
 
   tabTemplate(i, tabLabel) {
     switch (tabLabel) {
-      case "question":
-        tabLabel = "Question " + i;
+      case 'question':
+        tabLabel = 'Question ' + i;
         break;
-      case "sample":
-        tabLabel = "Sample " + i;
+      case 'sample':
+        tabLabel = 'Sample ' + i;
         break;
-      case "":
+      case '':
       case null:
-      case "bare":
+      case 'bare':
         tabLabel = i;
         break;
       default:
@@ -113,53 +114,53 @@ class Tabs extends BaseElement {
 
   firstUpdated() {
     this.activeTab = 0;
-    this.classList.remove("unresolved");
+    this.classList.remove('unresolved');
     this.onResize();
 
     // If Tabs component contains AssessmentQuestion components,
     // listen for requests to navigate to the next tab.
-    const questions = this.querySelectorAll("web-question");
+    const questions = this.querySelectorAll('web-question');
 
     if (!questions) {
       return;
     }
 
     for (const question of questions) {
-      question.addEventListener("request-nav-to-next", this.nextTab);
+      question.addEventListener('request-nav-to-next', this.nextTab);
     }
   }
 
   connectedCallback() {
     super.connectedCallback();
-    window.addEventListener("resize", this.onResize);
+    window.addEventListener('resize', this.onResize);
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    window.removeEventListener("resize", this.onResize);
+    window.removeEventListener('resize', this.onResize);
   }
 
   updated(changedProperties) {
-    if (changedProperties.has("activeTab")) {
+    if (changedProperties.has('activeTab')) {
       this._changeTab();
     }
   }
 
   // Update state of tabs and associated panels.
   _changeTab() {
-    const tabs = this.querySelectorAll(".web-tabs__tab");
-    const panels = this.querySelectorAll(".web-tabs__panel");
+    const tabs = this.querySelectorAll('.web-tabs__tab');
+    const panels = this.querySelectorAll('.web-tabs__panel');
     const activeTab = tabs[this.activeTab];
     const activePanel = panels[this.activeTab];
 
     if (activeTab) {
       for (const tab of tabs) {
-        tab.setAttribute("aria-selected", "false");
-        tab.setAttribute("tabindex", "-1");
+        tab.setAttribute('aria-selected', 'false');
+        tab.setAttribute('tabindex', '-1');
       }
 
-      activeTab.setAttribute("aria-selected", "true");
-      activeTab.removeAttribute("tabindex");
+      activeTab.setAttribute('aria-selected', 'true');
+      activeTab.removeAttribute('tabindex');
     }
 
     if (activePanel) {
@@ -172,28 +173,28 @@ class Tabs extends BaseElement {
   }
 
   onResize() {
-    const tabs = this.querySelector(".web-tabs__tablist");
+    const tabs = this.querySelector('.web-tabs__tablist');
 
-    this.overflow = checkOverflow(tabs, "width");
+    this.overflow = checkOverflow(tabs, 'width');
   }
 
   onFocus(e) {
     const tab = e.currentTarget;
-    const tabs = this.querySelectorAll(".web-tabs__tab");
+    const tabs = this.querySelectorAll('.web-tabs__tab');
     const index = Array.from(tabs).indexOf(tab);
 
     // Match behavior specified for Material scrollable tabs:
     // https://material.io/components/tabs/#scrollable-tabs
     tab.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "center",
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'center',
     });
     this.activeTab = index;
   }
 
   onKeydown(e) {
-    const tabs = this.querySelectorAll(".web-tabs__tab");
+    const tabs = this.querySelectorAll('.web-tabs__tab');
     const KEYCODE = {
       END: 35,
       HOME: 36,
@@ -224,17 +225,17 @@ class Tabs extends BaseElement {
 
   // Helper method to allow other components to focus an arbitrary tab.
   focusTab(index) {
-    const tabs = this.querySelectorAll(".web-tabs__tab");
+    const tabs = this.querySelectorAll('.web-tabs__tab');
 
     if (!tabs[index]) {
-      throw new RangeError("There is no tab at the specified index.");
+      throw new RangeError('There is no tab at the specified index.');
     }
     tabs[index].focus();
   }
 
   // If previous tab exists, make it active. If not, make last tab active.
   previousTab() {
-    const tabs = this.querySelectorAll(".web-tabs__tab");
+    const tabs = this.querySelectorAll('.web-tabs__tab');
 
     if (tabs[this.activeTab - 1]) {
       this.activeTab = this.activeTab - 1;
@@ -245,7 +246,7 @@ class Tabs extends BaseElement {
 
   // If next tab exists, make it active. If not, make first tab active.
   nextTab() {
-    const tabs = this.querySelectorAll(".web-tabs__tab");
+    const tabs = this.querySelectorAll('.web-tabs__tab');
 
     this.activeTab = (this.activeTab + 1) % tabs.length || 0;
   }
@@ -257,10 +258,10 @@ class Tabs extends BaseElement {
 
   // Make last tab active.
   lastTab() {
-    const tabs = this.querySelectorAll(".web-tabs__tab");
+    const tabs = this.querySelectorAll('.web-tabs__tab');
 
     this.activeTab = tabs.length - 1;
   }
 }
 
-customElements.define("web-tabs", Tabs);
+customElements.define('web-tabs', Tabs);

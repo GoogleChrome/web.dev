@@ -10,7 +10,7 @@ hero: hero.jpg
 thumbnail: thumbnail.png
 alt: Chrome User Experience logo, PageSpeed Insights logo, and a metrics chart.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - fast
 ---
 
@@ -59,14 +59,14 @@ enough to prevent input responsiveness.
 
 A [task is considered long](/custom-metrics/#long-tasks-api) if it runs on the
 main thread for more than 50 milliseconds. Any millisecond over that is counted
-towards that task's blocking time. 
+towards that task's blocking time.
 
 <figure class="w-figure">
   <img class="w-screenshot" src="./tbt.png" alt="A diagram representing a 150 millisecond task which has 100 miliseconds of blocking time.">
 </figure>
 
 The Total Blocking Time for a page is the sum of the blocking times of all long
-tasks that occured between FCP and TTI. 
+tasks that occured between FCP and TTI.
 
 <figure class="w-figure">
   <img class="w-screenshot" src="./tbt2.png" alt="A diagram representing a five tasks with 60 miliseconds of total blocking time out of 270 milliseconds of main thread time.">
@@ -107,7 +107,7 @@ it's calculated and how to measure it.
 
 The new Lighthouse performance score formula will soon de-emphasize FMP and FCI
 and include the three new metrics—LCP, TBT, and CLS—as they better capture when
-a page feels usable. 
+a page feels usable.
 
 <figure class="w-figure">
   <img class="w-screenshot" src="./performance-metrics.png"
@@ -142,7 +142,7 @@ In order to get an overall assessment for a site, [PageSpeed Insights
 (PSI)](https://developers.google.com/speed/pagespeed/insights) uses a certain
 percentile of the total distribution of field data as the golden number for that
 site; the previous thresholds used were 90th percentile for First Contentful
-Paint and 95th percentile for First Input Delay (FID).  
+Paint and 95th percentile for First Input Delay (FID).
 
 For example, if a site has an FCP distribution of 50% fast, 30% moderate, 20%
 slow, the 90th percentile FCP is in the slow section, making the overall field

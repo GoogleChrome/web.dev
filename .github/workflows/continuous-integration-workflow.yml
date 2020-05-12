@@ -27,12 +27,25 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - name: Install
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm run test
+
       - name: Build
         env:
           ELEVENTY_ENV: prod
+        run: npm run build
+      
+      - name: Index algolia
+        env:
           ALGOLIA_APP: ${{ secrets.ALGOLIA_APP }}
           ALGOLIA_KEY: ${{ secrets.ALGOLIA_KEY }}
-        run: npm ci && npm run build && node index-algolia.js
+        run: node index-algolia.js
 
       - name: Setup gcloud
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@0.1.1

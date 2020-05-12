@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-const {html} = require("common-tags");
-const removeDrafts = require("../../_filters/remove-drafts");
+const {html} = require('common-tags');
+const removeDrafts = require('../../_filters/remove-drafts');
 
 /* eslint-disable max-len */
 
@@ -49,7 +49,7 @@ function getPostCount(learningPath, lang) {
   const count = topics.reduce((pathItemsCount, topic) => {
     return pathItemsCount + topic.pathItems.length;
   }, 0);
-  const label = count > 1 ? "resources" : "resource";
+  const label = count > 1 ? 'resources' : 'resource';
   return `${count} ${label}`;
 }
 

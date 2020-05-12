@@ -76,3 +76,6 @@ local-devsite.js
 # IDEs
 .idea
 entrypoint.hashmanifest.json
+
+# Temporary files
+.tmp

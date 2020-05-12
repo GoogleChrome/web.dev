@@ -1,13 +1,13 @@
 /**
- * @fileoverview Handles SPA loading and importing JS entrypoint for web.dev.
+ * @fileoverview Handles SPA loading and importing the correct page entrypoint for web.dev.
  *
  * Exports a single function, swapContent, which ensures that the inner contents of the web.dev
  * template is correct, and that the correct JS entrypoint is ready.
  */
 
-import {store} from "./store";
-import {normalizeUrl} from "./urls";
-import "./utils/underscore-import-polyfill";
+import {store} from './store';
+import {normalizeUrl} from './urls';
+import './utils/underscore-import-polyfill';
 
 /**
  * Dynamically loads code required for the passed URL entrypoint.
@@ -16,32 +16,38 @@ import "./utils/underscore-import-polyfill";
  * @return {!Promise<?>}
  */
 async function loadEntrypoint(url) {
-  if (url.startsWith("/measure/")) {
-    return import("./pages/measure.js");
+  if (url.startsWith('/measure/')) {
+    return import('./pages/measure.js');
+  } else if (url.startsWith('/newsletter/')) {
+    return import('./pages/newsletter.js');
   }
-  return import("./pages/default.js");
+
+  return import('./pages/default.js');
 }
 
 /**
  * Gets the partial content of the target normalized URL. Returns null if aborted.
+ *
+ * If the partial is missing (i.e., 404) this throws an error. This means that
+ * requests to missing pages will do an additional network round-trip. This is
+ * important as there might be a configured redirect.
  *
  * @param {string} url of the page to fetch.
  * @param {!AbortSignal=} signal
  * @return {?{raw: string, title: string, offline: (boolean|undefined)}}
  */
 export async function getPartial(url, signal) {
-  if (!url.endsWith("/")) {
+  if (!url.endsWith('/')) {
     throw new Error(`partial unsupported for non-folder: ${url}`);
   }
-
   try {
-    const res = await fetch(url + "index.json", {signal});
-    if (!res.ok && res.status !== 404) {
+    const res = await fetch(url + 'index.json', {signal});
+    if (!res.ok) {
       throw res.status;
     }
     return await res.json();
   } catch (e) {
-    if (e instanceof DOMException && e.name === "AbortError") {
+    if (e instanceof DOMException && e.name === 'AbortError') {
       return null;
     }
     throw e;
@@ -57,7 +63,7 @@ export async function getPartial(url, signal) {
 function forceFocus(el) {
   if (!el) {
     // do nothing
-  } else if (el.hasAttribute("tabindex")) {
+  } else if (el.hasAttribute('tabindex')) {
     el.focus();
   } else {
     // nb. This will also operate on elements that implicitly allow focus, but
@@ -65,13 +71,13 @@ function forceFocus(el) {
     // w-force-focus).
     el.tabIndex = -1;
     el.focus();
-    el.classList.add("w-force-focus");
+    el.classList.add('w-force-focus');
 
     el.addEventListener(
-      "blur",
+      'blur',
       (e) => {
-        el.removeAttribute("tabindex");
-        el.classList.remove("w-force-focus");
+        el.removeAttribute('tabindex');
+        el.classList.remove('w-force-focus');
       },
       {once: true},
     );
@@ -84,22 +90,27 @@ function forceFocus(el) {
  * @param {!Object} partial
  */
 function updateDom(partial) {
-  const content = document.querySelector("main #content");
+  const content = document.querySelector('main #content');
   content.innerHTML = partial.raw;
 
   // Close any open self-assessment modals.
   // TODO(samthor): Replace this logic with a store subscriber that allows
   // all components to clean up after themselves when the page changes.
-  const assessmentsOpen = document.querySelectorAll("web-assessment[open]");
+  const assessmentsOpen = document.querySelectorAll('web-assessment[open]');
   for (const assessment of assessmentsOpen) {
     assessment.remove();
   }
 
   // Update the page title.
-  document.title = partial.title || "";
+  document.title = partial.title || '';
+
+  const rss = document.querySelector('link[type="application/atom+xml"]');
+  if (rss) {
+    rss.href = partial.rss || rss.href;
+  }
 
   // Focus on the first title (or fallback to content itself).
-  forceFocus(content.querySelector("h1, h2, h3, h4, h5, h6") || content);
+  forceFocus(content.querySelector('h1, h2, h3, h4, h5, h6') || content);
 }
 
 /**
@@ -122,7 +133,7 @@ export async function swapContent({firstRun, url, signal, ready, state}) {
   // If this is the first run, bail out early. We generate an inferred partial for back/forward nav,
   // as we only have the initial prerendered HTML.
   if (firstRun) {
-    const content = document.querySelector("main #content");
+    const content = document.querySelector('main #content');
     const inferredPartial = {
       raw: content.innerHTML,
       title: document.title,
@@ -143,18 +154,12 @@ export async function swapContent({firstRun, url, signal, ready, state}) {
     store.setState({isPageLoading: true});
     partial = await getPartial(url, signal);
     if (signal.aborted) {
-      return null;
+      return;
     }
   }
 
-  // If the partial was bad, force a real page load. This will occur in Netlify or other simple
-  // staging environments on 404, where we don't serve real JSON.
-  if (!partial || typeof partial !== "object") {
-    throw new Error(`invalid partial for: ${url}`);
-  }
-
-  // The bootstrap code uses this to trigger a reload if we see an "online" event. Only returned via
-  // the Service Worker if we failed to fetch a 'real' page.
+  // Code in entrypoint.jsuses this to trigger a reload if we see an "online" event. This partial
+  // value is only returned via the Service Worker if we failed to fetch a 'real' page.
   const isOffline = Boolean(partial.offline);
   store.setState({currentUrl: url, isOffline});
 
@@ -162,8 +167,8 @@ export async function swapContent({firstRun, url, signal, ready, state}) {
   // which must happen before DOM changes and ga event.
   ready(url, {partial});
 
-  ga("set", "page", window.location.pathname);
-  ga("send", "pageview");
+  ga('set', 'page', window.location.pathname);
+  ga('send', 'pageview');
   updateDom(partial);
 
   // Finally, just await for the entrypoint JS. It this fails we'll throw an exception and force a

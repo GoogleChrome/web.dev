@@ -1,9 +1,8 @@
-import createStore from "unistore";
-import devtools from "unistore/devtools";
-import getMeta from "./utils/meta";
-import config from "webdev_config";
-
-/* eslint-disable require-jsdoc */
+import createStore from 'unistore';
+import devtools from 'unistore/devtools';
+import getMeta from './utils/meta';
+import {localStorage} from './utils/storage';
+import {isProd} from 'webdev_config';
 
 const initialState = {
   // The first time the app boots we won't know whether the user is signed
@@ -13,7 +12,7 @@ const initialState = {
   checkingSignedInState: true,
 
   // The user has successfully signed in; default to cached value to help prevent FOUC
-  isSignedIn: Boolean(window.localStorage["webdev_isSignedIn"]),
+  isSignedIn: Boolean(localStorage['webdev_isSignedIn']),
   user: null,
 
   // The most recent URL measured and the Date when it was first analyzed by the user.
@@ -33,7 +32,7 @@ const initialState = {
   lighthouseError: null,
 
   currentUrl: window.location.pathname,
-  isOffline: Boolean(getMeta("offline")),
+  isOffline: Boolean(getMeta('offline')),
   isSideNavExpanded: false,
   isModalOpen: false,
   isSearchExpanded: false,
@@ -45,7 +44,7 @@ const initialState = {
   // cookie policy.
   // We automatically accept cookies in dev and test environments so the cookie
   // banner doesn't interfere with tests.
-  userAcceptsCookies: !config.prod,
+  userAcceptsCookies: !isProd,
 
   // Handle hiding/showing the snackbar.
   showingSnackbar: false,
@@ -53,7 +52,7 @@ const initialState = {
 };
 
 let store;
-if (config.prod) {
+if (isProd) {
   store = createStore(initialState);
 } else {
   store = devtools(createStore(initialState));

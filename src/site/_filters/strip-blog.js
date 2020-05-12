@@ -25,14 +25,14 @@ module.exports = (inputPath) => {
   // "./src/site/content/en/blog/test-post/index.md"
 
   // Find the content dir.
-  const parts = inputPath.split("/");
-  const startIdx = parts.indexOf("content");
+  const parts = inputPath.split('/');
+  const startIdx = parts.indexOf('content');
 
   // Chop off the content dir.
   // Filter out the blog dir and post markdown file.
   // This should leave en/<post-slug>.
   return parts
     .slice(startIdx + 1)
-    .filter((part) => part !== "blog" && part !== "index.md")
-    .join("/");
+    .filter((part) => part !== 'blog' && part !== 'index.md')
+    .join('/');
 };

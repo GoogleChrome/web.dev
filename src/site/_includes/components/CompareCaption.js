@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-const {oneLine} = require("common-tags");
-const md = require("markdown-it")();
+const {oneLine} = require('common-tags');
+const md = require('markdown-it')();
 
 /* eslint-disable require-jsdoc */
 

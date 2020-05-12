@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const {html} = require("common-tags");
+const {html} = require('common-tags');
 
 /* eslint-disable require-jsdoc */
 
@@ -27,15 +27,15 @@ module.exports = (content, type, labelOverride) => {
     /* eslint-enable max-len */
   }
 
-  let label = labelOverride || "";
+  let label = labelOverride || '';
   if (!label) {
     switch (type) {
-      case "worse":
+      case 'worse':
         label = "Don't";
         break;
 
-      case "better":
-        label = "Do";
+      case 'better':
+        label = 'Do';
         break;
 
       default:

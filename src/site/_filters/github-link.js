@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-const path = require("path");
-const repo = require("../_data/site").repo;
+const path = require('path');
+const repo = require('../_data/site').repo;
 
 module.exports = (inputPath) => {
   if (!inputPath) {
     /* eslint-disable-next-line */
     console.warn(
-      "inputPath passed to githubLink filter was undefined or null.",
+      'inputPath passed to githubLink filter was undefined or null.',
     );
   }
   const branch = `master`;
-  return `${repo}/${path.join("blob", branch, inputPath)}`;
+  return `${repo}/${path.join('blob', branch, inputPath)}`;
 };

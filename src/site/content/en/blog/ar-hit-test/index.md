@@ -11,7 +11,7 @@ description:
   The WebXR Hit Test API is an enhancement to the web's augmented reality that
   lets you place virtual objects in a real-world view.
 tags:
-  - post
+  - blog
   - augmented-reality
   - hit-test
   - virtual-reality

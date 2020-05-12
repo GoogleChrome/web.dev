@@ -9,5 +9,5 @@ export default function getMeta(name) {
   if (!node) {
     return null;
   }
-  return node.getAttribute("content") || node.getAttribute("value");
+  return node.getAttribute('content') || node.getAttribute('value');
 }

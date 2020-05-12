@@ -6,7 +6,7 @@ authors:
 date: 2019-06-24
 description: Use srcset to automatically choose the right image size.
 tags:
-  - post
+  - blog
   - top tips
   - images
   - performance
@@ -214,7 +214,7 @@ You can see this in action at
 
 {% Aside 'caution'%}
 `sizes` gives the browser information about the display width
-of on image element.
+of an image element.
 
 As with `srcset` it does NOT specify the size to display the image—you need
 CSS for that.

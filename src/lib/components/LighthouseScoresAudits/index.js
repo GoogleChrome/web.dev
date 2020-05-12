@@ -2,16 +2,16 @@
  * @fileoverview An element which shows a friendly list of failing audits and related guides.
  */
 
-import {html} from "lit-element";
-import {BaseElement} from "../BaseElement";
-import {getAuditGuideMapping} from "../../lighthouse/mapping";
+import {html} from 'lit-element';
+import {BaseElement} from '../BaseElement';
+import {getAuditGuideMapping} from '../../lighthouse/mapping';
 import {
   computeWeightForAuditResult,
   filterAuditResult,
   sortOnWeights,
   getAuditReferenceDocLink,
-} from "../../lighthouse";
-import "./_styles.scss";
+} from '../../lighthouse';
+import './_styles.scss';
 
 const NUM_AUDITS_TO_SHOW = 10;
 
@@ -23,7 +23,7 @@ const NUM_AUDITS_TO_SHOW = 10;
  * @return {!TemplateResult}
  */
 function createRowForAuditCategory(lhr, category) {
-  let relevantGuides = ["Guide coming soon"];
+  let relevantGuides = ['Guide coming soon'];
   const audit = lhr.audits[category.ref.id];
 
   const auditGuideMapping = getAuditGuideMapping();
@@ -114,7 +114,7 @@ class LighthouseScoresAudits extends BaseElement {
 
     const oldValue = this._lhr;
     this._lhr = value;
-    this.requestUpdate("lhr", oldValue);
+    this.requestUpdate('lhr', oldValue);
   }
 
   get lhr() {
@@ -122,8 +122,8 @@ class LighthouseScoresAudits extends BaseElement {
   }
 
   firstUpdated() {
-    this.setAttribute("role", "table");
-    this.setAttribute("aria-label", "Lighthouse audits and suggested guides");
+    this.setAttribute('role', 'table');
+    this.setAttribute('aria-label', 'Lighthouse audits and suggested guides');
   }
 
   /**
@@ -250,4 +250,4 @@ class LighthouseScoresAudits extends BaseElement {
   }
 }
 
-customElements.define("web-lighthouse-scores-audits", LighthouseScoresAudits);
+customElements.define('web-lighthouse-scores-audits', LighthouseScoresAudits);

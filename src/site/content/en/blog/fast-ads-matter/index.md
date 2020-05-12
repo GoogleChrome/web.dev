@@ -17,7 +17,7 @@ alt: |
 description: |
     Understand the value of fast ads and how to think about ad speed.
 tags:
-  - post
+  - blog
   - performance
   - fast
   - ads

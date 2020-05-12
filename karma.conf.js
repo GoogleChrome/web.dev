@@ -20,30 +20,23 @@ module.exports = function(config) {
   // quick: single run tests in headless browser.
   // dev:   watch tests in headless browser.
   // debug: watch tests in standard brower.
-  const mode = process.env.TEST_MODE || "quick";
+  const mode = process.env.TEST_MODE || 'quick';
   // Default options are for quick mode.
   const opts = {
-    browsers: ["ChromeHeadless"],
-    files: ["dist/test/index.js"],
-    frameworks: ["mocha"], // use the mocha test frameworkl
-    plugins: ["karma-chrome-launcher", "karma-mocha", "karma-sourcemap-loader"],
-    reporters: ["dots"], // report results in these formats.
+    browsers: ['ChromeHeadless'],
+    files: ['dist/test/index.js'],
+    frameworks: ['mocha'], // use the mocha test frameworkl
+    reporters: ['spec'], // report results in these formats.
     singleRun: true, // set this to false to leave the browser open.
-
-    client: {
-      mocha: {
-        ui: "tdd",
-      },
-    },
   };
 
-  if (mode === "dev") {
+  if (mode === 'dev') {
     Object.assign(opts, {
       singleRun: false,
     });
-  } else if (mode === "debug") {
+  } else if (mode === 'debug') {
     Object.assign(opts, {
-      browsers: ["Chrome"],
+      browsers: ['Chrome'],
       singleRun: false,
     });
   }

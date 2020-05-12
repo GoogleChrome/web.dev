@@ -7,11 +7,11 @@
  */
 export const debounce = (func, wait) => {
   if (!func) {
-    throw new TypeError("func is a required argument.");
+    throw new TypeError('func is a required argument.');
   }
 
   if (!wait) {
-    throw new TypeError("wait is a required argument.");
+    throw new TypeError('wait is a required argument.');
   }
 
   let timeout;

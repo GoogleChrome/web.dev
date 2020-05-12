@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-const path = require("path");
-const site = require("../_data/site");
-const locales = require("../../../shared/locale");
+const path = require('path');
+const site = require('../_data/site');
+const locales = require('../../../shared/locale');
 
 module.exports = (inputPath, lang) => {
   // Check if requested a supported locale and other than the default one.
@@ -25,7 +25,7 @@ module.exports = (inputPath, lang) => {
     lang === locales.defaultLocale ||
     !locales.isSupportedLocale(lang)
   ) {
-    return "";
+    return '';
   }
   inputPath = inputPath.replace(`/${lang}/`, `/${site.defaultLocale}/`);
   return path.join(site.gitlocalize, lang, inputPath);

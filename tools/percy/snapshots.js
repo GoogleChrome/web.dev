@@ -1,32 +1,61 @@
-const PercyScript = require("@percy/script");
+const PercyScript = require('@percy/script');
+const scrollToBottom = require('scroll-to-bottomjs');
 const pagesToTest = [
   {
-    url: "",
-    title: "Home page",
+    url: '/',
+    title: 'Home page',
   },
   {
-    url: "learn",
-    title: "Learn page",
+    url: '/learn/',
+    title: 'Learn page',
   },
   {
-    url: "measure",
-    title: "Measure page",
+    url: '/accessible/',
+    title: 'Collection page',
   },
   {
-    url: "blog",
-    title: "Blog page",
+    url: '/measure/',
+    title: 'Measure page',
   },
   {
-    url: "about",
-    title: "About page",
+    url: '/blog/',
+    title: 'Blog page',
   },
   {
-    url: "codelab-avoid-invisible-text",
-    title: "Codelab page",
+    url: '/test-post/',
+    title: 'Post page',
   },
   {
-    url: "handbook/web-dev-components",
-    title: "Components page",
+    url: '/about/',
+    title: 'About page',
+  },
+  {
+    url: '/codelab-avoid-invisible-text/',
+    title: 'Codelab page',
+  },
+  {
+    url: '/handbook/web-dev-components/',
+    title: 'Components page',
+  },
+  {
+    url: '/authors/',
+    title: 'Authors page',
+  },
+  {
+    url: '/authors/mgechev/',
+    title: 'Author page',
+  },
+  {
+    url: '/tags/',
+    title: 'Tags page',
+  },
+  {
+    url: '/podcasts/',
+    title: 'Podcasts page',
+  },
+  {
+    url: '/newsletter/',
+    title: 'Newsletter page',
   },
 ];
 
@@ -34,13 +63,15 @@ const pagesToTest = [
 PercyScript.run(
   async (browser, percySnapshot) => {
     for (page of pagesToTest) {
-      await browser.goto(`http://localhost:8080/${page.url}`);
+      const url = new URL(page.url, 'http://localhost:8080').href;
+      await browser.goto(url, {waitUntil: 'networkidle0'});
+      await browser.evaluate(scrollToBottom);
       // Wait for the SPA to update the active link in the top nav.
-      await browser.waitFor(2000);
+      await browser.waitFor(5000);
       await percySnapshot(`${page.title}`);
     }
   },
   // These flags remove Percy's single-process flag. Without these, any page
   // with an iframe will crash puppeteer (and percy).
-  {args: ["--no-sandbox", "--disable-setuid-sandbox"]},
+  {args: ['--no-sandbox', '--disable-setuid-sandbox']},
 );

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const {html} = require("common-tags");
+const {html} = require('common-tags');
 
 /* eslint-disable require-jsdoc */
 

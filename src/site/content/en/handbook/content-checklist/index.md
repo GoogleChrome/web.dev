@@ -2,7 +2,7 @@
 layout: handbook
 title: web.dev content checklist
 date: 2019-06-26
-updated: 2019-11-25
+updated: 2020-04-29
 description: |
   A checklist for web.dev content reviews.
 ---
@@ -16,6 +16,7 @@ that commonly appear in drafts. This page is primarily intended for web.dev revi
 use it to self-review their content and fix problems rather than waiting for reviewers to highlight them.
 
 ## Basics
+
 1. Is the piece providing value for one or more of the web.dev [personas](/handbook/audience)?
 1. Does the title follow good SEO practices? See the example in
    [Explain why a user should care about your content](/handbook/quality/#explanations).
@@ -25,11 +26,13 @@ use it to self-review their content and fix problems rather than waiting for rev
 1. Can you complete the task with the provided instructions? Are there any missing steps? Does the code work?
 
 ## Style and voice
+
 1. Is the [voice](/handbook/voice) appropriate for the web.dev audience?
 1. Can any language be removed without changing the meaning or voice?
 1. Is the language as simple as possible? Is there any unnecessary jargon?
 
 ## Organization
+
 1. Are top-level section headings `<h2>` elements rather than `<h1>` elements? (That is, do they begin with `##` in Markdown?)
 1. Headings should not [skip levels](/heading-levels).
 1. Is the structure of the piece clear? Do headings convey the structure?
@@ -43,6 +46,7 @@ use it to self-review their content and fix problems rather than waiting for rev
    very canonical and should be reserved for the canonical guidance on the User Timing API.
 
 ## Instruction
+
 1. If the piece expects readers to have prior knowledge, is that made clear up front?
 1. Does the piece explain why the process being taught matters?
 1. Are examples provided to support all key claims and ideas?
@@ -50,6 +54,7 @@ use it to self-review their content and fix problems rather than waiting for rev
 1. Are common instructions provided using the web.dev [Instruction components](/handbook/web-dev-components/#instruction)?
 
 ## Media
+
 1. Are images and videos used to clarify ideas that would be difficult to understand from text alone?
 1. Are any images or videos included that don't directly relate to ideas in the text?
 1. Are [image captions](/handbook/use-media/#image-captions) correctly formatted?
@@ -61,20 +66,31 @@ use it to self-review their content and fix problems rather than waiting for rev
 1. Is the hero image `3200px` wide by `960px` tall and has it been optimized (to keep the size of the repository as small as possible)?
 
 ## Code
+
 1. Are code blocks and sample apps as simple as possible while still conveying the core concept?
 1. Is a brief description of a sample app's functionality provided before the app itself?
 1. Is [code highlighting](/handbook/markup-code/#code-highlighting) used to indicate lines that have been added or changed?
 1. Is all sample code [accessible](/handbook/inclusion-and-accessibility/#create-accessible-code-blocks)?
+1. If the page has embedded Glitches, have they been [properly set up](/handbook/web-dev-components/#glitches)?
+1. Articles should mention specific versions of Chrome. They should not mention `Stable`, `Beta`, or `Canary`
+   because the Chrome version that's associated with those releases changes over time.
 
 ## Links
+
 1. Do all links work?
 1. Are all links to web.dev pages and assets [relative](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL#Examples_of_relative_URLs)?
    This is important because if we need to move content around, relative paths are less likely to break.
 1. When referencing a web platform API, does the page link out to the canonical MDN API reference?
 
 ## Mechanics
+
 1. Is the text free of spelling and capitalization errors? (Check the [word list](/handbook/word-list).)
 1. Are [dashes and hyphens](/handbook/grammar/#dashes-and-hyphens) used correctly?
 1. Are titles and headings in sentence case with no terminal period?
 1. Are [keyboard key commands](/handbook/grammar/#ui-elements-and-interaction) correctly formatted?
 1. The title should not have inline code formatting because backtick characters show up verbatim in web.dev's search results.
+
+## Attribution
+
+1. An author should only be added to a page if that person has significantly updated the existing
+   content or contributed significant new content.

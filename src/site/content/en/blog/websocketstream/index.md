@@ -13,13 +13,12 @@ description: |
   WebSocketStream integrates streams with the WebSocket API.
   This allows your app to apply backpressure to received messages.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - backpressure
   - websocket
   - websocketstream
   - capabilities
   - fugu
-draft: true
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/1977080236415647745
 ---
@@ -155,12 +154,9 @@ which you can then [`write()`](https://developer.mozilla.org/en-US/docs/Web/API/
 data to.
 
 ```js
-  const readWSS = new WebSocketStream(READ_URL);
-  const {readable} = await readWSS.connection;
+  const wss = new WebSocketStream(WSS_URL);
+  const {readable, writable} = await wss.connection;
   const reader = readable.getReader();
-
-  const writeWSS = new WebSocketStream(WRITE_URL);
-  const {writable} = await writeWSS.connection;
   const writer = writable.getWriter();
 
   while (true) {
@@ -276,7 +272,7 @@ or [directly on Glitch](https://websocketstream-demo.glitch.me/).
 
 ## Feedback {: #feedback }
 
-The Chrome team wants to hear about your experiences with the API_NAME API.
+The Chrome team wants to hear about your experiences with the WebSocketStream API.
 
 ### Tell us about the API design
 

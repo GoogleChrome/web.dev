@@ -12,7 +12,7 @@ description: |
   choosing an app, then choosing who to share with. The Web Share Target API
   allows installed web apps to register with the underlying operating system to receive shared content.
 tags:
-  - post
+  - blog
   - capabilities
   - fugu
 ---

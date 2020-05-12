@@ -15,11 +15,12 @@ description: |
   and introduces a custom element named dark-mode-toggle that allows web developers
   to offer users a way to override their operating system level preference on specific web pages.
 tags:
-  - post
+  - blog
   - dark-mode
   - dark-theme
   - prefers-color-scheme
   - color-scheme
+  - css
 ---
 
 ## Introduction
@@ -352,22 +353,17 @@ In the code sample above, you will probably have noticed a property
 [`color-scheme`](https://drafts.csswg.org/css-color-adjust-1/#propdef-color-scheme)
 with the space-separated value `light dark`.
 
-{% Aside 'warning' %}
-  The `color-scheme` property is still [in development](https://crbug.com/925935)
-  and it might not work as advertised, full support in Chrome will come later this year.
-{% endAside %}
-
 This tells the browser which color themes my app supports
 and allows it to activate special variants of the user agent stylesheet,
 which is useful to, for example, let the browser render form fields
-with a dark background and light text, adjust the scrollbars,
+with a dark background and light text, adjust the scroll bars,
 or to enable a theme-aware highlight color.
 The exact details of `color-scheme` are specified in
 [CSS Color Adjustment Module Level&nbsp;1](https://drafts.csswg.org/css-color-adjust-1/).
 
 {% Aside 'note' %}
   🌒 Read up more on
-  [what `color-scheme` actually does](https://medium.com/dev-channel/what-does-dark-modes-supported-color-schemes-actually-do-69c2eacdfa1d).
+  [what `color-scheme` actually does](color-scheme).
 {% endAside %}
 
 Everything else is then just a matter of defining CSS variables
@@ -790,6 +786,7 @@ Resources for the `prefers-color-scheme` media query:
   - [Media Queries Level&nbsp;5 spec](https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme)
 
 Resources for the `color-scheme` meta tag and CSS property:
+  - [The `color-scheme` CSS property and meta tag](/color-scheme)
   - [Chrome Platform Status page](https://chromestatus.com/feature/5330651267989504)
   - [Chromium bug](http://crbug.com/925935)
   - [CSS Color Adjustment Module Level&nbsp;1 spec](https://drafts.csswg.org/css-color-adjust-1/)

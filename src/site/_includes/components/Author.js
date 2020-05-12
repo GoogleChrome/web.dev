@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-const {html} = require("common-tags");
-const AuthorInfo = require("./AuthorInfo");
+const {html} = require('common-tags');
+const AuthorInfo = require('./AuthorInfo');
 
 module.exports = ({
   post,
@@ -27,7 +27,7 @@ module.exports = ({
   if (!author) {
     throw new Error(`
       Can't create Author component without an author argument.
-      author was null or undefined. Please check _data/contributors.json
+      author was null or undefined. Please check '_data/contributors.js'
       and make sure the author you provide is a key in this object.
     `);
   }
