@@ -113,7 +113,13 @@ and/or bring it to the user's attention.
 
 The Text Fragments feature is supported in version 80 and beyond of Chromium-based browsers.
 At the time of writing, Safari and Firefox have not publicly signaled an intent to implement
-the feature. See [Related links](#related-links) for links to the Safari and Firefox discussions.
+the feature. See [Related links](#related-links) for pointers to the Safari and Firefox discussions.
+
+Note that these links currently do not work when served across
+[client-side redirects](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections#Alternative_way_of_specifying_redirections)
+that some common services like Twitter use.
+Regular [HTTP redirects](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections#Principle)
+work fine.
 
 ### `textStart`
 
@@ -339,6 +345,15 @@ if ('fragmentDirective' in Location.prototype) {
   // Text Fragments is supported.
 }
 ```
+
+{% Aside 'caution' %}
+  This property might move to `document.fragmentDirective` in the future.
+  For details see [https://crbug.com/1057795](https://crbug.com/1057795).
+{% endAside %}
+
+Feature detection is mainly intended for cases where links are dynamically generated
+(for example by search engines) to avoid serving text fragments links
+to browsers that do not support them.
 
 ### Polyfillability
 
