@@ -1,5 +1,17 @@
 @import '../settings/colors';
 
+@keyframes ripple {
+  0% {
+    box-shadow: 0px 0px 0px 1px rgba($WEB_PRIMARY_COLOR, 0.0);
+  }
+  50% {
+    box-shadow: 0px 0px 0px 8px rgba($WEB_PRIMARY_COLOR, 0.1);
+  }
+  100% {
+    box-shadow: 0px 0px 0px 8px rgba($WEB_PRIMARY_COLOR, 0);
+  }
+}
+
 input[type='email'],
 input[type='password'],
 input[type='text'] {
@@ -20,21 +32,19 @@ input[type='radio'] {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij4KICA8cGF0aCBkPSJNMTIgMkM2LjQ4IDIgMiA2LjQ4IDIgMTJzNC40OCAxMCAxMCAxMCAxMC00LjQ4IDEwLTEwUzE3LjUyIDIgMTIgMnptMCAxOGMtNC40MiAwLTgtMy41OC04LThzMy41OC04IDgtOCA4IDMuNTggOCA4LTMuNTggOC04IDh6Ii8+CiAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPgo8L3N2Zz4K');
-  border: 1px solid rgba(0, 0, 0, 0);
+  border: 2px solid $GREY_300;
+  border-radius: 50%;
   cursor: pointer;
   flex-shrink: 0;
-  height: 26px;
-  margin: 0px;
-  outline: none;
-  width: 26px;
+  height: 24px;
+  margin: 2px;
+  width: 24px;
 
   &:checked {
-    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0Ij4KICA8cGF0aCBkPSJNMTIgN2MtMi43NiAwLTUgMi4yNC01IDVzMi4yNCA1IDUgNSA1LTIuMjQgNS01LTIuMjQtNS01LTV6bTAtNUM2LjQ4IDIgMiA2LjQ4IDIgMTJzNC40OCAxMCAxMCAxMCAxMC00LjQ4IDEwLTEwUzE3LjUyIDIgMTIgMnptMCAxOGMtNC40MiAwLTgtMy41OC04LThzMy41OC04IDgtOCA4IDMuNTggOCA4LTMuNTggOC04IDh6IiBmaWxsPSIjMzc0MGZmIiAvPgogIDxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz4KPC9zdmc+Cg==');
-  }
-
-  &:focus {
-    border: 1px solid $WEB_PRIMARY_COLOR;
-    border-radius: 100%;
+    animation: ripple .2s linear;
+    background-color: $WEB_PRIMARY_COLOR;
+    background-clip: content-box;
+    border: 2px solid $WEB_PRIMARY_COLOR;
+    padding: 4px;
   }
 }

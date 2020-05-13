@@ -1,0 +1,43 @@
+// Importing the styles needed when shadow dom is enabled
+@import '../../../styles/settings/colors';
+
+#w-feedback__dropdown {
+  display: none;
+}
+
+#w-feedback__dropdown + .w-feedback__label + .w-feedback__form {
+  display: none;
+}
+
+#w-feedback__dropdown:checked + .w-feedback__label + .w-feedback__form {
+  display: block;
+}
+
+#w-feedback__dropdown:checked + .w-feedback__label .w-details__header::after {
+  transform: rotate(180deg) translateY(50%);
+}
+
+.web-feedback__row {
+  align-items: center;
+  border-bottom: 1px solid $GREY_300;
+  display: grid;
+  font-family: "Google Sans", sans-serif;
+  font-size: .875em;
+  font-weight: 500;
+  grid-template-columns: 2fr 1fr 1fr;
+  line-height: 24px;
+
+  &:first-of-type,
+  &:last-of-type {
+    border-bottom: 0;
+  }
+
+  /* Center the contents of the 2nd and 3rd columns. */
+  > *:not(:first-child) {
+    justify-self: center;
+  }
+
+  > label {
+    padding: 1rem;
+  }
+}
