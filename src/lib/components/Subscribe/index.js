@@ -3,6 +3,7 @@
  */
 
 import {BaseElement} from '../BaseElement';
+import {trackEvent} from '../../analytics';
 import './_styles.scss';
 
 /**
@@ -110,10 +111,10 @@ class Subscribe extends BaseElement {
     this.subscribeMessage.textContent = "Thank you! You're all signed up.";
     this.form.removeEventListener('submit', this.onSubmit);
     this.form.parentElement.removeChild(this.form);
-    ga('send', 'event', {
-      eventCategory: 'web.dev',
-      eventAction: 'submit',
-      eventLabel: 'subscribe, newsletter',
+    trackEvent({
+      category: 'web.dev',
+      action: 'submit',
+      label: 'subscribe, newsletter',
     });
   }
 }

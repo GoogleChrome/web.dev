@@ -3,6 +3,7 @@
  */
 import {html} from 'lit-element';
 import {BaseElement} from '../BaseElement';
+// import {trackEvent} from '../../analytics';
 import './_styles.scss';
 
 /**
@@ -14,16 +15,28 @@ import './_styles.scss';
 class Feedback extends BaseElement {
   constructor() {
     super();
+    this.submitted = false;
     this.submit = this.submit.bind(this);
   }
 
   submit(event) {
     event.preventDefault();
     const form = new FormData(event.target);
-    const result = {};
+    const formIterable = Array.from(form.entries());
+    if (!formIterable.length) {
+      return;
+    }
 
-    Array.from(form.entries()).forEach((entry) => {
-      result[entry[0]] = entry[1];
+    this.submitted = true;
+    this.requestUpdate();
+
+    formIterable.forEach((entry) => {
+      trackEvent({
+        category: 'Feedback',
+        action: 'submit',
+        label: entry[0],
+        value: Number(entry[1]),
+      });
     });
   }
 
@@ -33,7 +46,20 @@ class Feedback extends BaseElement {
         <summary class="w-details__summary">
           <h2 class="w-details__header">Give feedback</h2>
         </summary>
-        <form class="w-feedback__form" @submit=${this.submit}>
+        <div
+          class="w-display--flex w-justify-content--center ${!this.submitted &&
+            'hidden'}"
+        >
+          <div class="w-subscribe--padded">
+            <p class="w-text--center w-mt--non">
+              Thank you for the feedback!
+            </p>
+          </div>
+        </div>
+        <form
+          class="w-feedback__form ${this.submitted && 'hidden'}"
+          @submit=${this.submit}
+        >
           <small>All fields optional</small>
           <div class="web-feedback__rows">
             <div class="web-feedback__row">
@@ -51,7 +77,7 @@ class Feedback extends BaseElement {
                   type="radio"
                   aria-labelledby="helpful-label yes-label"
                   name="Helpfulness"
-                  value="yes"
+                  value="1"
                 />
               </label>
               <label>
@@ -59,7 +85,7 @@ class Feedback extends BaseElement {
                   type="radio"
                   aria-labelledby="helpful-label no-label"
                   name="Helpfulness"
-                  value="no"
+                  value="0"
                 />
               </label>
             </div>
@@ -73,7 +99,7 @@ class Feedback extends BaseElement {
                   type="radio"
                   aria-labelledby="effective-label yes-label"
                   name="Effectiveness"
-                  value="yes"
+                  value="1"
                 />
               </label>
               <label>
@@ -81,7 +107,7 @@ class Feedback extends BaseElement {
                   type="radio"
                   aria-labelledby="effective-label no-label"
                   name="Effectiveness"
-                  value="no"
+                  value="0"
                 />
               </label>
             </div>
@@ -95,7 +121,7 @@ class Feedback extends BaseElement {
                   type="radio"
                   aria-labelledby="complete-label yes-label"
                   name="Completeness"
-                  value="yes"
+                  value="1"
                 />
               </label>
               <label>
@@ -103,7 +129,7 @@ class Feedback extends BaseElement {
                   type="radio"
                   aria-labelledby="complete-label no-label"
                   name="Completeness"
-                  value="no"
+                  value="0"
                 />
               </label>
             </div>
@@ -117,7 +143,7 @@ class Feedback extends BaseElement {
                   type="radio"
                   aria-labelledby="accuracy-label yes-label"
                   name="Accuracy"
-                  value="yes"
+                  value="1"
                 />
               </label>
               <label>
@@ -125,7 +151,7 @@ class Feedback extends BaseElement {
                   type="radio"
                   aria-labelledby="accuracy-label no-label"
                   name="Accuracy"
-                  value="no"
+                  value="0"
                 />
               </label>
             </div>
@@ -139,7 +165,7 @@ class Feedback extends BaseElement {
                   type="radio"
                   aria-labelledby="readable-label yes-label"
                   name="Readability"
-                  value="yes"
+                  value="1"
                 />
               </label>
               <label>
@@ -147,7 +173,7 @@ class Feedback extends BaseElement {
                   type="radio"
                   aria-labelledby="readable-label no-label"
                   name="Readability"
-                  value="no"
+                  value="0"
                 />
               </label>
             </div>
