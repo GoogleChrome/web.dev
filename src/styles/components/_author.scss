@@ -1,6 +1,5 @@
 @import '../settings/colors';
 @import '../tools/mixins';
-@import '../tools/breakpoints';
 
 // =============================================================================
 // AUTHOR OVERVIEW
@@ -13,18 +12,9 @@
 $AUTHOR_IMAGE_SIZE_SMALL: 40px;
 
 .w-authors {
-  display: grid;
-  grid-column-gap: 16px;
-  grid-row-gap: 32px;
-  grid-template-columns: 1fr;
-
-  @include bp(sm) {
-    grid-template-columns: 256px 256px;
-  }
-
-  @include bp(md) {
-    grid-template-columns: 256px 256px 256px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
 }
 
 .w-author {
@@ -69,7 +59,7 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
   }
 }
 
-// Specificty required here because `a` tags in `.w-post-content` have higher priority.
+// Specificity required here because `a` tags in `.w-post-content` have higher priority.
 .w-post-content .w-author__name-link {
   text-decoration: none;
 
@@ -122,14 +112,6 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
   display: flex;
   flex-direction: row;
   margin-bottom: 12px;
-
-  @include bp(sm) {
-    grid-template-columns: 256px 256px;
-  }
-
-  @include bp(md) {
-    grid-template-columns: 256px 256px 256px;
-  }
 }
 
 .w-author__image--row {

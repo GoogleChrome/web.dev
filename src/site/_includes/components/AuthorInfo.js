@@ -60,9 +60,7 @@ module.exports = ({post, author, id, showSocialMedia = false}) => {
   function renderHomepage({homepage}) {
     return html`
       <li class="w-author__link-listitem">
-        <a class="w-author__link" href="${homepage}"
-          >Homepage</a
-        >
+        <a class="w-author__link" href="${homepage}">Blog</a>
       </li>
     `;
   }
@@ -73,7 +71,7 @@ module.exports = ({post, author, id, showSocialMedia = false}) => {
         ${author.twitter && renderTwitter(author)}
         ${author.github && renderGitHub(author)}
         ${author.glitch && renderGlitch(author)}
-        ${author.homepage && renderGlitch(author)}
+        ${author.homepage && renderHomepage(author)}
       </ul>
     `;
   }
