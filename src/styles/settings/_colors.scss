@@ -216,12 +216,23 @@ $YELLOW_600: #fdd835;
 $YELLOW_700: #fbc02d;
 $YELLOW_800: #f9a825;
 
+$WEB_PRIMARY_COLOR_50: #E7E8FF;
+$WEB_PRIMARY_COLOR_100: #C3C6FF;
+$WEB_PRIMARY_COLOR_200: #9BA0FF;
+$WEB_PRIMARY_COLOR_300: #7379FF;
+$WEB_PRIMARY_COLOR_400: #555DFF;
+$WEB_PRIMARY_COLOR_500: #464FFF;
+$WEB_PRIMARY_COLOR_600: #3740FF;
+$WEB_PRIMARY_COLOR_700: #2E36FF;
+$WEB_PRIMARY_COLOR_800: #272EFF;
+$WEB_PRIMARY_COLOR_900: #1D23FF;
+
 // BRAND COLORS
 // =============================================================================
 // Note: These are slight variations on material palette colors. We spoke with
 // googleguidance@ and they said we're allowed to make reasonable tweaks to
 // the palette.
-$WEB_PRIMARY_COLOR: #3740ff;
+$WEB_PRIMARY_COLOR: $WEB_PRIMARY_COLOR_600;
 $WEB_SECONDARY_COLOR: #3fc4ff;
 $WEB_EXTENDED_SECONDARY_COLOR: #e51661;
 $WEB_EXTENDED_TERTIARY_COLOR: #6001ff;

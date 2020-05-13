@@ -2,13 +2,13 @@
 
 @keyframes ripple {
   0% {
-    box-shadow: 0px 0px 0px 1px rgba($WEB_PRIMARY_COLOR, 0.0);
+    box-shadow: 0px 0px 0px 1px $WEB_PRIMARY_COLOR_50;
   }
   50% {
-    box-shadow: 0px 0px 0px 8px rgba($WEB_PRIMARY_COLOR, 0.1);
+    box-shadow: 0px 0px 0px 8px $WEB_PRIMARY_COLOR_50;
   }
   100% {
-    box-shadow: 0px 0px 0px 8px rgba($WEB_PRIMARY_COLOR, 0);
+    box-shadow: 0px 0px 0px 1px $WEB_PRIMARY_COLOR_50;
   }
 }
 
