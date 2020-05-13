@@ -14,7 +14,7 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
 .w-authors {
   display: flex;
   flex-wrap: wrap;
-  gap: 32px;
+  gap: 32px; // sass-lint:disable-line no-misspelled-properties
 }
 
 .w-author {
@@ -78,7 +78,8 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
 }
 
 .w-author__link-list {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
   list-style: none;
   margin: 0;
   overflow: hidden;
