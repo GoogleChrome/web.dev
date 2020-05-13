@@ -1,9 +1,9 @@
 ---
-title: "Hands-on with Portals: seamless navigation on the Web"
+title: 'Hands-on with Portals: seamless navigation on the Web'
 subhead: |
   Learn how the proposed Portals API can improve your navigation UX.
 date: 2019-05-06
-updated: 2019-08-29
+updated: 2020-05-13
 authors:
   - uskay
 hero: hero.png
@@ -24,7 +24,11 @@ they move between pages.
 
 A new web platform API proposal called [Portals](https://github.com/WICG/portals) aims to
 help with this by streamlining the experience as users navigate _across_ your
-site. See Portals in action:
+site.
+
+Portals are currently experimental, but you can use them on your site today by taking part in the [origin trial](https://www.chromium.org/blink/origin-trials/portals).
+
+See Portals in action:
 
 <figure class="w-figure w-figure--fullbleed">
   <video controls autoplay loop muted class="w-screenshot">
@@ -141,11 +145,11 @@ portal.src = 'https://wicg.github.io/portals/';
 // `prefers-reduced-motion` media query to control the animation.
 // https://developers.google.com/web/updates/2019/03/prefers-reduced-motion
 portal.classList.add('portal-transition');
-portal.addEventListener('click', evt => {
+portal.addEventListener('click', (evt) => {
   // Animate the portal once user interacts
   portal.classList.add('portal-reveal');
 });
-portal.addEventListener('transitionend', evt => {
+portal.addEventListener('transitionend', (evt) => {
   if (evt.propertyName == 'transform') {
     // Activate the portal once the transition has completed
     portal.activate();
@@ -175,6 +179,10 @@ Be sure you access it with Chrome Canary and turn on the experimental flag!
 
 <img class="w-screenshot" src="glitch.gif" alt="A gif of using the glitch demo of using Portals">
 
+## Try out Portals on your site today
+
+Although Portals are experimental, and being actively developed, you can use them on your site today as part of an [origin trial](https://www.chromium.org/blink/origin-trials/portals). Your experience and feedback will help shape this proposal.
+
 ## Check out the spec
 
 We are actively discussing
@@ -183,67 +191,78 @@ To quickly get up to speed, take a look at
 [the explainer](https://github.com/WICG/portals/blob/master/explainer.md).
 These are the three important features to familiarize yourself with:
 
- - [The `<portal>` element:](https://wicg.github.io/portals/#the-portal-element) The HTML element itself. The API is very simple. It consists of the `src` attribute, the `activate` function and an interface for messaging (`postMessage`). `activate` takes an optional argument to pass data to the `<portal>` upon activation.
- - [The `portalHost` interface:](https://wicg.github.io/portals/#the-portalhost-interface) Adds a `portalHost` object to the `window` object. This lets you check if the page is embedded as a `<portal>` element. It also provides an interface for messaging (`postMessage`) back to the host.
- - [The PortalActivateEvent interface:](https://wicg.github.io/portals/#the-portalactivateevent-interface) An event that fires when the `<portal>` is activated. There is a neat function called `adoptPredecessor` which you can use to retrieve the previous page as a `<portal>` element. This allows you to create seamless navigations and composed experiences between two pages.
+- [The `<portal>` element:](https://wicg.github.io/portals/#the-portal-element) The HTML element itself. The API is very simple. It consists of the `src` attribute, the `activate` function and an interface for messaging (`postMessage`). `activate` takes an optional argument to pass data to the `<portal>` upon activation.
+- [The `portalHost` interface:](https://wicg.github.io/portals/#the-portalhost-interface) Adds a `portalHost` object to the `window` object. This lets you check if the page is embedded as a `<portal>` element. It also provides an interface for messaging (`postMessage`) back to the host.
+- [The PortalActivateEvent interface:](https://wicg.github.io/portals/#the-portalactivateevent-interface) An event that fires when the `<portal>` is activated. There is a neat function called `adoptPredecessor` which you can use to retrieve the previous page as a `<portal>` element. This allows you to create seamless navigations and composed experiences between two pages.
 
 Let's look beyond the basic usage pattern. Here is a non-exhaustive list of what you can achieve with Portals along with sample code.
+
 ### Customize the style when embedded as a `<portal>` element
+
 ```javascript
 // Detect whether this page is hosted in a portal
 if (window.portalHost) {
   // Customize the UI when being embedded as a portal
 }
 ```
+
 ### Messaging between the `<portal>` element and `portalHost`
+
 ```javascript
 // Send message to the portal element
 const portal = document.querySelector('portal');
 portal.postMessage({someKey: someValue}, ORIGIN);
 
 // Receive message via window.portalHost
-window.portalHost.addEventListener('message', evt => {
+window.portalHost.addEventListener('message', (evt) => {
   const data = evt.data.someKey;
   // handle the event
 });
 ```
+
 ### Activating the `<portal>` element and receiving the `portalactivate` event
+
 ```javascript
 // You can optionally add data to the argument of the activate function
-portal.activate({data: {'somekey': 'somevalue'}});
+portal.activate({data: {somekey: 'somevalue'}});
 
 // The portal content will receive the portalactivate event
 // when the activate happens
-window.addEventListener('portalactivate', evt => {
+window.addEventListener('portalactivate', (evt) => {
   // Data available as evt.data
   const data = evt.data;
 });
 ```
+
 ### Retrieving the predecessor
+
 ```javascript
 // Listen to the portalactivate event
-window.addEventListener('portalactivate', evt => {
+window.addEventListener('portalactivate', (evt) => {
   // ... and creatively use the predecessor
   const portal = evt.adoptPredecessor();
   document.querySelector('someElm').appendChild(portal);
 });
 ```
+
 ### Knowing your page was adopted as a predecessor
+
 ```javascript
 // The activate function returns a Promise.
 // When the promise resolves, it means that the portal has been activated.
 // If this document was adopted by it, then window.portalHost will exist.
-portal.activate().then(_ => {
+portal.activate().then((_) => {
   // Check if this document was adopted into a portal element.
   if (window.portalHost) {
     // You can start communicating with the portal element
     // i.e. listen to messages
-    window.portalHost.addEventListener('message', evt => {
+    window.portalHost.addEventListener('message', (evt) => {
       // handle the event
     });
   }
 });
 ```
+
 By combining all of the features supported by Portals,
 you can build really fancy user experiences.
 For instance, the demo below demonstrates how Portals can enable a seamless user experience
@@ -267,4 +286,4 @@ Another important thing to know is that Portals can be used in cross-origin navi
 
 ## Feedback welcome
 
-The Portals proposal is still in the early stages, so not everything is working yet. (That's why it's behind an experimental flag.) That said, it's ready for experimentation in Chrome Canary. Feedback from the community is crucial to the design of new APIs, so please try it out and tell us what you think! You can check the current limitations on the [Chromium bug tracker](https://bugs.chromium.org/p/chromium/issues/detail?id=957836). If you have any feature requests or feedback, please head over to the [WICG GitHub repo](https://github.com/WICG/portals/issues).
+Portals are ready for experimentation in Chrome Canary and via the [origin trial](https://www.chromium.org/blink/origin-trials/portals). Feedback from the community is crucial to the design of new APIs, so please try it out and tell us what you think! You can check the current limitations on the [Chromium bug tracker](https://bugs.chromium.org/p/chromium/issues/detail?id=957836). If you have any feature requests or feedback, please head over to the [WICG GitHub repo](https://github.com/WICG/portals/issues).
