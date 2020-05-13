@@ -15,8 +15,8 @@ module.exports = {
       {
         title: 'Introduction',
         pathItems: [
-          'what-are-pwas', 
-          'define-install-strategy', 
+          'what-are-pwas',
+          'define-install-strategy',
           'pwa-checklist',
         ],
       },
