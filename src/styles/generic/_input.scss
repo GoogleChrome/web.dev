@@ -4,9 +4,11 @@
   0% {
     box-shadow: 0px 0px 0px 1px $WEB_PRIMARY_COLOR_50;
   }
+
   50% {
     box-shadow: 0px 0px 0px 8px $WEB_PRIMARY_COLOR_50;
   }
+
   100% {
     box-shadow: 0px 0px 0px 1px $WEB_PRIMARY_COLOR_50;
   }
@@ -42,8 +44,8 @@ input[type='radio'] {
 
   &:checked {
     animation: ripple .2s linear;
-    background-color: $WEB_PRIMARY_COLOR;
     background-clip: content-box;
+    background-color: $WEB_PRIMARY_COLOR;
     border: 2px solid $WEB_PRIMARY_COLOR;
     padding: 4px;
   }
