@@ -3,7 +3,7 @@
  */
 import {html} from 'lit-element';
 import {BaseElement} from '../BaseElement';
-// import {trackEvent} from '../../analytics';
+import {trackEvent} from '../../analytics';
 import './_styles.scss';
 
 /**
