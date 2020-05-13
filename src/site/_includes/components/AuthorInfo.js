@@ -57,12 +57,21 @@ module.exports = ({post, author, id, showSocialMedia = false}) => {
     `;
   }
 
+  function renderHomepage({homepage}) {
+    return html`
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="${homepage}">Blog</a>
+      </li>
+    `;
+  }
+
   function renderSocialMedia(author) {
     return html`
       <ul class="w-author__link-list">
         ${author.twitter && renderTwitter(author)}
         ${author.github && renderGitHub(author)}
         ${author.glitch && renderGlitch(author)}
+        ${author.homepage && renderHomepage(author)}
       </ul>
     `;
   }
