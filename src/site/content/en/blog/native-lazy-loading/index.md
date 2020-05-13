@@ -6,13 +6,14 @@ authors:
   - addyosmani
   - mathiasbynens
 date: 2019-08-06
+updated: 2020-05-13
 hero: hero.png
 alt: Phone outline with loading image and assets
 description: |
   This post covers the loading attribute and how it can be used
   to control the loading of images and iframes.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - performance
 ---
 
@@ -33,6 +34,15 @@ a [demo](https://mathiasbynens.be/demo/img-loading-lazy) of the feature:
 Starting with Chrome 76, you'll be able to use the new `loading` attribute to lazy-load resources
 without the need to write custom lazy-loading code or use a separate JavaScript library. Let's dive
 into the details.
+
+## Browser compatibility
+
+At the time of this update (April 2020) native lazy loading is supported in Chromium-based
+browsers and Firefox.
+
+See the `loading` field of MDN's 
+[Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Browser_compatibility)
+table for updates.
 
 ## Why native lazy-loading?
 
@@ -177,7 +187,7 @@ No, it can currently only be used with `<img>` tags.
 Intersection observers for elements that are above the device fold may not fire before the window
 load event, and the lazy-loading functionality in Chrome relies on `IntersectionObserver`. There is
 an [open issue](https://bugs.chromium.org/p/chromium/issues/detail?id=992526) to modify this
-behavior so that intersection observers are fired _before_ the window load event. 
+behavior so that intersection observers are fired _before_ the window load event.
 
 In the meantime, it is safer to only use the `loading` attribute for elements that are outside of
 the device viewport to prevent late fetches of on-screen elements.

@@ -3,7 +3,7 @@ title: "Hands-on with Portals: seamless navigation on the Web"
 subhead: |
   Learn how the proposed Portals API can improve your navigation UX.
 date: 2019-05-06
-updated: 2019-08-29
+updated: 2020-05-13
 authors:
   - uskay
 hero: hero.png
@@ -13,7 +13,7 @@ description: |
   with custom transitions. In this article, get hands-on experience using
   Portals to improve user experience across your site.
 tags:
-  - post
+  - blog
   - portals
   - ux
 ---
@@ -216,7 +216,7 @@ portal.activate({data: {'somekey': 'somevalue'}});
 // when the activate happens
 window.addEventListener('portalactivate', evt => {
   // Data available as evt.data
-  const data = evt.data;   
+  const data = evt.data;
 });
 ```
 ### Retrieving the predecessor
@@ -261,7 +261,7 @@ and build your own version!
 
 ## Use cases and plans
 
-We hope you liked this brief tour of Portals! We can't wait to see what you can come up with. For instance, you might want to start using Portals for non-trivial navigations such as: pre-rendering the page for your best-seller product from a product category listing page. 
+We hope you liked this brief tour of Portals! We can't wait to see what you can come up with. For instance, you might want to start using Portals for non-trivial navigations such as: pre-rendering the page for your best-seller product from a product category listing page.
 
 Another important thing to know is that Portals can be used in cross-origin navigations, just like an `<iframe>`. So, if you have multiple websites that cross reference one another, you can also use Portals to create seamless navigations between two different websites. This cross-origin use case is very unique to Portals, and can even improve the user experience of SPAs.
 

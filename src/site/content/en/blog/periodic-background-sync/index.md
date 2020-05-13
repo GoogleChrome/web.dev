@@ -6,7 +6,7 @@ authors:
   - jeffposnick
   - joemedley
 date: 2019-11-10
-updated: 2020-03-13
+updated: 2020-05-13
 hero: hero.jpg
 alt: Colorful airplanes flying in sync
 origin_trial:
@@ -18,7 +18,7 @@ description: |
 tags:
   - capabilities
   - fugu
-  - post
+  - blog
   - progressive-web-apps
   - service-worker
   - chrome80

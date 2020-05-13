@@ -3,12 +3,10 @@
  * instructions and an embedded Glitch iframe.
  */
 
-import {html} from "lit-element";
-import {BaseElement} from "../BaseElement";
-import config from "webdev_config";
-import "./_styles.scss";
-
-const {env} = config;
+import {html} from 'lit-element';
+import {BaseElement} from '../BaseElement';
+import {env} from 'webdev_config';
+import './_styles.scss';
 
 /**
  * Render codelab instructions and Glitch
@@ -30,12 +28,12 @@ class Codelab extends BaseElement {
   constructor() {
     super();
 
-    this.glitch = "";
-    this.path = "index.html";
+    this.glitch = '';
+    this.path = 'index.html';
     // _isDesktop has no default value as it's only correctly set between connected/disconnected
     // callbacks via the MediaQueryList's listener.
 
-    this._mql = window.matchMedia("(min-width: 865px)");
+    this._mql = window.matchMedia('(min-width: 865px)');
     this._toggleDesktop = () => (this._isDesktop = this._mql.matches);
   }
 
@@ -59,8 +57,8 @@ class Codelab extends BaseElement {
     // https://lit-element.polymer-project.org/guide/templates#renderroot
     // This will render the glitch element as a sibling to the existing light
     // DOM children.
-    const container = document.createElement("div");
-    container.className = "web-codelab__glitch";
+    const container = document.createElement('div');
+    container.className = 'web-codelab__glitch';
     this.appendChild(container);
     return container;
   }
@@ -83,7 +81,7 @@ class Codelab extends BaseElement {
     if (!this.glitch) {
       return html``;
     }
-    const isTest = env === "test";
+    const isTest = env === 'test';
 
     // If this is a test, always show the warning. Percy snapshots our DOM at a
     // low resolution before resizing it, so we can't rely on _isDesktop being
@@ -94,7 +92,7 @@ class Codelab extends BaseElement {
         ? "This Glitch isn't loaded in a test environment"
         : "This Glitch isn't available on small screens";
       return html`
-        <div class="w-sizer ${isTest ? "w-test" : ""}">
+        <div class="w-sizer ${isTest ? 'w-test' : ''}">
           <div class="w-aside w-aside--warning">
             <p>
               <strong>Warning:</strong> ${message},
@@ -121,4 +119,4 @@ class Codelab extends BaseElement {
   }
 }
 
-customElements.define("web-codelab", Codelab);
+customElements.define('web-codelab', Codelab);

@@ -5,7 +5,7 @@ subhead:
 authors:
   - rowan_m
 date: 2019-05-07
-updated: 2020-01-06
+updated: 2020-05-13
 hero: cookie-hero.jpg
 description: |
   Learn how to mark your cookies for first-party and third-party usage with the
@@ -14,7 +14,7 @@ description: |
   Specifying the new None attribute allows you to explicitly mark your cookies
   for cross-site usage.
 tags:
-  - post
+  - blog
   - security
   - cookies
   - chrome80

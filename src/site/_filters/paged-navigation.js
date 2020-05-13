@@ -29,7 +29,7 @@ module.exports = function pagedNavigation(paged) {
   }).map((_, i) => {
     const index = i + start + 1;
     return {
-      href: paged.href + (index === 1 ? "" : index),
+      href: paged.href + (index === 1 ? '' : index),
       index,
     };
   });

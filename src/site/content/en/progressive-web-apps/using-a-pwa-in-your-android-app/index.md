@@ -4,6 +4,7 @@ title: Using a PWA in your Android app
 authors:
   - andreban
 date: 2020-03-19
+updated: 2020-05-13
 description: |
   How to open a Progressive Web App in an Android app.
 ---
@@ -63,8 +64,14 @@ nightly version.
 ### Quality Criteria
 
 Web developers should use a Trusted Web Activity when they want to include web content in an
-Android app.  Web content in a Trusted Web Activity must meet Lighthouse's PWA install quality criteria and
-additional Android-specific criteria such as [policy compliance][9].
+Android app. Web content in a Trusted Web Activity must meet Lighthouse's PWA install quality
+criteria and additional Android-specific criteria such as [policy compliance][9].
+
+{% Aside 'caution' %}
+  When your app is designed primarily for children under 13, additional
+  [Play Family policies](https://play.google.com/about/families/) apply, which may be incompatible
+  with using Trusted Web Activity.
+{% endAside %}
 
 <figure class="w-figure w-figure--center">
   <img src="lh-score.png" style="max-width: 100%;"

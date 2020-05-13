@@ -6,7 +6,7 @@ description: |
 web_lighthouse:
   - is-on-https
 date: 2019-05-04
-updated: 2019-09-19
+updated: 2020-05-13
 ---
 
 All websites should be protected with HTTPS, even ones that don't handle
@@ -17,7 +17,7 @@ A page can't qualify as a [Progressive Web App (PWA)](/discover-installable) if 
 many core PWA technologies, such as service workers, require HTTPS.
 
 For more information about why all sites should be protected with HTTPS, see
-[Why You Should Always Use HTTPS](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
+[Why HTTPS Matters](/why-https-matters/).
 
 ## How the Lighthouse HTTPS audit fails
 
@@ -36,9 +36,7 @@ If the event isn't heard within 10&nbsp;seconds, the audit fails.
 
 ## How to migrate your site to HTTPS
 
-Many hosting platforms, such as
-[Firebase](https://firebase.google.com/docs/hosting/) or
-[GitHub Pages](https://pages.github.com/), are secure by default.
+Consider hosting your site on a CDN. Most CDNs are secure by default.
 
 To learn how to enable HTTPS on your servers, see Google's
 [Enabling HTTPS on Your Servers](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/enable-https).

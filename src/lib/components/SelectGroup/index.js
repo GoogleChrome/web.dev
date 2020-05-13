@@ -1,7 +1,8 @@
-import {html} from "lit-element";
-import {BaseElement} from "../BaseElement";
-import {generateIdSalt} from "../../utils/generate-salt";
-import "./_styles.scss";
+import {html} from 'lit-element';
+import {BaseElement} from '../BaseElement';
+import {generateIdSalt} from '../../utils/generate-salt';
+import 'focus-visible';
+import './_styles.scss';
 
 /**
  * Element that renders a radio group or checkbox group.
@@ -19,13 +20,13 @@ class SelectGroup extends BaseElement {
 
   constructor() {
     super();
-    this.idSalt = generateIdSalt("web-select-group-");
+    this.idSalt = generateIdSalt('web-select-group-');
     this.selectors = null;
   }
 
   render() {
     if (!this.prefix) {
-      this.prefix = "";
+      this.prefix = '';
     }
 
     if (!this.selectors) {
@@ -51,14 +52,14 @@ class SelectGroup extends BaseElement {
   }
 
   selectorTemplate(i, content, type, prefix) {
-    let labelClass = "";
-    let inputClass = "";
-    let selectorClass = "";
+    let labelClass = '';
+    let inputClass = '';
+    let selectorClass = '';
 
     if (prefix) {
-      labelClass = prefix + "__option";
-      inputClass = prefix + "__input";
-      selectorClass = prefix + "__selector";
+      labelClass = prefix + '__option';
+      inputClass = prefix + '__input';
+      selectorClass = prefix + '__selector';
     }
 
     return html`
@@ -88,7 +89,7 @@ class SelectGroup extends BaseElement {
 
   // Tell parent components how many selections have been made.
   reportSelections() {
-    const inputs = this.querySelectorAll("input");
+    const inputs = this.querySelectorAll('input');
     let count = 0;
 
     for (const input of inputs) {
@@ -97,7 +98,7 @@ class SelectGroup extends BaseElement {
       }
     }
 
-    const event = new CustomEvent("change-selections", {
+    const event = new CustomEvent('change-selections', {
       detail: {
         numSelections: count,
       },
@@ -107,4 +108,4 @@ class SelectGroup extends BaseElement {
   }
 }
 
-customElements.define("web-select-group", SelectGroup);
+customElements.define('web-select-group', SelectGroup);

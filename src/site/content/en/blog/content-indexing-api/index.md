@@ -5,9 +5,9 @@ authors:
   - jeffposnick
 description: Your PWA might cache articles and media files, but how will your users know that your pages work while offline? The Content Indexing API is one answer to this question currently in an origin trial. Once the index is populated with content from your PWA, as well as any other installed PWAs, it will show up in dedicated areas of supported browsers.
 date: 2019-12-12
-updated: 2020-03-31
+updated: 2020-05-13
 tags:
-  - post
+  - blog
   - capabilities
   - fugu
   - service-worker
@@ -22,7 +22,7 @@ origin_trial:
 ---
 
 {% Aside %}
-  The Content Indexing API begins an origin trial in Chrome 80 as part of Chrome's 
+  The Content Indexing API begins an origin trial in Chrome 80 as part of Chrome's
   [Capabilities project](https://developers.google.com/web/updates/capabilities).
   This post will be updated as the implementation progresses.
 {% endAside %}
@@ -95,8 +95,8 @@ cached pages.
 
 | Step                                       | Status                       |
 | ------------------------------------------ | ---------------------------- |
-| 1. Create explainer                        | [Complete](https://github.com/rayankans/content-index)        |
-| 2. Create initial draft of specification   | [In progress](https://rayankans.github.io/content-index/spec/)          |
+| 1. Create explainer                        | [Complete](https://github.com/WICG/content-index/blob/master/README.md)        |
+| 2. Create initial draft of specification   | [In progress](https://wicg.github.io/content-index/spec/)          |
 | 3. Gather feedback & iterate on design     | In progress          |
 | **4. Origin trial**                        | **Started in Chrome 80** <br> Expected to run through Chrome 83 |
 | 5. Launch                                  | Not started                  |
@@ -190,7 +190,9 @@ await registration.index.add({
   // Required; set to something unique within your web app.
   id: 'article-123',
 
-  // Required; this URL needs to be an offline-capable HTML page.
+  // Required; url needs to be an offline-capable HTML page.
+  // For compatibility during the Origin Trial, include launchUrl as well.
+  url: '/articles/123',
   launchUrl: '/articles/123',
 
   // Required; used in user-visible lists of content.
@@ -211,6 +213,13 @@ await registration.index.add({
   category: 'article',
 });
 ```
+
+{% Aside 'note' %}
+  The `add()` method previously took a `launchUrl` parameter, which has been renamed to `url`.
+  During the Origin Trial period, you should include both `url` and `launchUrl`, set to the same
+  value. Following the Origin Trial, only `url` will be supported.
+{% endAside %}
+
 
 Adding an entry only affects the content index; it does not add anything to the
 [Cache Storage
@@ -325,7 +334,7 @@ Is there something about the API that's awkward or doesn't work as expected? Or
 are there missing pieces that you need to implement your idea?
 
 File an issue on the [Content Indexing API explainer GitHub
-repo](https://github.com/rayankans/content-index/issues), or add your thoughts
+repo](https://github.com/wicg/content-index/issues), or add your thoughts
 to an existing issue.
 
 ### Problem with the implementation? {: #feedback-implementation }
@@ -352,10 +361,10 @@ to support them.
 ## What are some security and privacy implications of content indexing? {: #security-privacy }
 
 Check out [the
-answers](https://github.com/rayankans/content-index/blob/master/SECURITY_AND_PRIVACY.md)
+answers](https://github.com/wicg/content-index/blob/master/SECURITY_AND_PRIVACY.md)
 provided in response to the W3C's [Security and Privacy
 questionnaire](https://www.w3.org/TR/security-privacy-questionnaire/). If you
 have further questions, please start a discussion via the project's [GitHub
-repo](https://github.com/rayankans/content-index/issues).
+repo](https://github.com/wicg/content-index/issues).
 
 _Hero image by Maksym Kaharlytskyi on [Unsplash](https://unsplash.com/photos/Q9y3LRuuxmg)._

@@ -6,7 +6,7 @@ subhead:
 authors:
   - rowan_m
 date: 2019-10-30
-updated: 2020-03-23
+updated: 2020-05-13
 hero: cookie-hero.jpg
 description: |
   With the introduction of the new SameSite=None attribute value, sites can now
@@ -16,7 +16,7 @@ description: |
   Learn how to mark up your cookies to ensure your first-party and third-party
   cookies continue to work once this change comes into effect.
 tags:
-  - post
+  - blog
   - security
   - cookies
   - chrome80
@@ -44,12 +44,13 @@ so that:
 - Cookies for cross-site usage **must** specify `SameSite=None; Secure` to
   enable inclusion in third party context.
 
-This will become the
-[default behavior in Chrome 80](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html), 
-which is in Beta as of December 19 and is
-planned for a Stable release in February 2020. If you currently provide cookies
-that are intended for cross-site usage you will need to make changes before that
-date to support the new default.
+This feature was scheduled to be the [default behavior from Chrome 80
+onward](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html) but
+has been [temporarily rolled
+back](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html) to
+improve the stability of the platform. If you have not already done so, should
+update the attributes for your third-party cookies so they will not be blocked
+in the future.
 
 ## Cross-browser support
 
@@ -281,7 +282,7 @@ anyone has encountered it - so don't hesitate to reach out:
 
 - Raise an issue on the
   [`SameSite` examples repo on GitHub](https://github.com/GoogleChromeLabs/samesite-examples).
-- Post a question on the
+- blog a question on the
   ["samesite" tag on StackOverflow](https://stackoverflow.com/questions/tagged/samesite).
 - For issues with Chromium's behavior, raise a bug via the
   [\[SameSite cookies\] issue template](https://bit.ly/2lJMd5c).

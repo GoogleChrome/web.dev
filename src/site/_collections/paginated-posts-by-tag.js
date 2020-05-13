@@ -14,10 +14,8 @@
  * limitations under the License.
  */
 
-const postTags = require("../_data/postTags");
-const livePosts = require("../_filters/live-posts");
-const addPagination = require("../_utils/add-pagination");
-const setdefault = require("../_utils/setdefault");
+const tagsCollection = require('./tags');
+const addPagination = require('../_utils/add-pagination');
 
 /**
  * Returns all posts as an array of paginated tags.
@@ -25,37 +23,16 @@ const setdefault = require("../_utils/setdefault");
  * Each element includes n number of posts as well as some basic information of that tag to pump into `_includes/partials/paged.njk`
  * This is because we can not paginate something already paginated... Pagination is effectively a loop, and we can't have an embedded loop O^2.
  *
- * @param {any} collection Eleventy collection object
- * @return {Array<{ title: string, href: string, description: string, posts: Array<object>, index: number, pages: number }>} An array where each element is a paged tag with some meta data and n posts for the page.
+ * @param {any} collections Eleventy collection object
+ * @return {Array<{ title: string, href: string, description: string, elements: Array<object>, index: number, pages: number }>} An array where each element is a paged tag with some meta data and n posts for the page.
  */
-module.exports = (collection) => {
-  const posts = collection
-    .getAll()
-    .filter(livePosts)
-    .sort((a, b) => b.date - a.date);
+module.exports = (collections) => {
+  const tags = tagsCollection(collections);
+  let paginated = [];
 
-  // Map the posts to various tags in the post
-  const tagsMap = new Map();
-  posts.forEach((post) => {
-    const postDataTags = post.data.tags || [];
-    postDataTags.forEach((postTag) => {
-      const tagsPosts = setdefault(tagsMap, postTag, []);
-      tagsPosts.push(post);
-      tagsMap.set(postTag, tagsPosts);
-    });
+  tags.forEach((tag) => {
+    paginated = paginated.concat(addPagination(tag.elements, tag));
   });
 
-  let tags = [];
-  Object.keys(postTags).forEach((tagName) => {
-    // Invalid tags will be skipped, assuming our linter will catch them later.
-    // Skips misspelled tags, internal tags, and tags that are not in `postTags.js`.
-    if (!tagsMap.has(tagName)) {
-      return;
-    }
-
-    const tagData = postTags[tagName];
-    tags = tags.concat(addPagination(tagsMap.get(tagName), tagData));
-  });
-
-  return tags;
+  return paginated;
 };

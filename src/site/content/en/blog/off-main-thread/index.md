@@ -17,7 +17,7 @@ date: 2019-12-05
 # updated: 2019-11-01
 
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - performance
   - test-post
 ---

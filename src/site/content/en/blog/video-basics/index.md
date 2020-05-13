@@ -10,7 +10,7 @@ description: |
   Research shows that web video lead to higher engagement and sales. Even if you haven't added video to your sites yet, it's just a matter of time until you do.
 tags:
   - media
-  - post
+  - blog
   - video
 ---
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-const addPagination = require("../_utils/add-pagination");
-const postDescending = require("./post-descending");
+const addPagination = require('../_utils/add-pagination');
+const blogPostsDescending = require('./blog-posts-descending');
 
 /**
  * Returns all posts as an array of paginated posts.
@@ -23,9 +23,9 @@ const postDescending = require("./post-descending");
  * This is designed so that it follows a similar structure to `_collections/paged-tags.js`.
  *
  * @param {any} collection Eleventy collection object
- * @return {Array<{ title: string, href: string, description: string, tag: string, posts: Array<object>, index: number, pages: number }>} An array where each element is a blog page with some meta data and n posts for the page.
+ * @return {Array<{ title: string, href: string, description: string, tag: string, elements: Array<object>, index: number, pages: number }>} An array where each element is a blog page with some meta data and n posts for the page.
  */
 module.exports = (collection) => {
-  const posts = postDescending(collection);
-  return addPagination(posts, {href: "/blog/"});
+  const posts = blogPostsDescending(collection);
+  return addPagination(posts, {href: '/blog/'});
 };

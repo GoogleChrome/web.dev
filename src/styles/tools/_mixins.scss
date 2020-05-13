@@ -195,11 +195,11 @@
 // 'material-icons' class defined at http://fonts.googleapis.com/css?family=Material+Icons.
 // You can look up the name of an icon at https://material.io/icons/.
 @mixin font-material-icon() {
-  -moz-osx-font-smoothing: grayscale; // @alternate
-  -webkit-font-smoothing: antialiased; // @alternate
+  -moz-osx-font-smoothing: $FONT_SMOOTHING_MOZ; // @alternate
+  -webkit-font-smoothing: $FONT_SMOOTHING_WEBKIT; // @alternate
   font: normal normal normal 24px / 1 'Material Icons';
   font-feature-settings: 'liga';
-  text-rendering: optimizeLegibility;
+  text-rendering: $FONT_SMOOTHING_RENDERING;
   text-transform: none;
   word-wrap: normal;
 }

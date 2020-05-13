@@ -12,12 +12,12 @@ description: |
   Web Bundles enable you to share websites as a single file over Bluetooth and run them
   offline in your origin's context.
 tags:
-  - post
+  - blog
   - web-bundles
 ---
 
 Bundling a full website as a single file and making it shareable
-opens up new use cases for the web. Imagine a world where you can: 
+opens up new use cases for the web. Imagine a world where you can:
 
 * Create your own content and distribute it in all sorts of ways without being
   restricted to the network
@@ -25,6 +25,11 @@ opens up new use cases for the web. Imagine a world where you can:
 * Carry your site on your own USB or even host it on your own local network
 
 The Web Bundles API is a bleeding edge proposal that lets you do all of this.
+
+## Browser compatibility
+
+The Web Bundles API is currently only supported in Chromium-based browsers behind
+an experimental flag.
 
 ## Introducing the Web Bundles API
 
@@ -38,8 +43,8 @@ images, or stylesheets.
  proposal.
 
 <figure class="w-figure">
-  <img src="webbundle.png" 
-       alt="A figure demonstrating that a Web Bundle is a collection of web resources." 
+  <img src="webbundle.png"
+       alt="A figure demonstrating that a Web Bundle is a collection of web resources."
        style="max-width: 75%">
   <figcaption class="w-figcaption">
     How Web Bundles work
@@ -138,7 +143,7 @@ There are other options for bundling and more are coming. The `go/bundle` CLI
 lets you build a Web Bundle using a HAR file or a custom list of resource
 URLs. Visit the [GitHub
 repo](https://github.com/WICG/webpackage/tree/master/go/bundle) to learn more
-about `go/bundle`. You can also try out the experimental Node.js module for bundling, 
+about `go/bundle`. You can also try out the experimental Node.js module for bundling,
 [`wbn`](https://www.npmjs.com/package/wbn). Note that `wbn` is still in the early stages of
 development.
 
@@ -168,7 +173,7 @@ Everything magically works.
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/web-bundles/preact-todomvc.mp4" 
+    <source src="https://storage.googleapis.com/web-dev-assets/web-bundles/preact-todomvc.mp4"
             type="video/mp4">
   </video>
   <figcaption class="w-figcaption">
@@ -178,11 +183,11 @@ Everything magically works.
 
 You could also try out other sample web bundles:
 
-- [web.dev.wbn](https://storage.googleapis.com/web-dev-assets/web-bundles/web.dev.wbn) is a 
+- [web.dev.wbn](https://storage.googleapis.com/web-dev-assets/web-bundles/web.dev.wbn) is a
    snapshot of the entire web.dev site, as of 2019 October 15.
 - [proxx.wbn](https://storage.googleapis.com/web-dev-assets/web-bundles/proxx.wbn):
   [PROXX](/proxx-announce/) is a Minesweeper clone that works offline.
-- [squoosh.wbn](https://storage.googleapis.com/web-dev-assets/web-bundles/squoosh.wbn): 
+- [squoosh.wbn](https://storage.googleapis.com/web-dev-assets/web-bundles/squoosh.wbn):
   [Squoosh](https://squoosh.app) is a convenient and fast image optimization tool that
   lets you do side-by-side comparisons of various image compression formats, with support for
   resizing and format conversions.

@@ -4,7 +4,7 @@ title: Defer offscreen images
 description: |
   Learn about the offscreen-images audit.
 date: 2019-05-02
-updated: 2019-10-04
+updated: 2020-05-13
 web_lighthouse:
   - offscreen-images
 ---
@@ -21,6 +21,11 @@ to lower [Time to Interactive](/interactive):
 </figure>
 
 See also [Lazy load offscreen images with lazysizes codelab](/codelab-use-lazysizes-to-lazyload-images).
+
+## Bug: `loading="lazy"` images are incorrectly flagged
+
+This audit incorrectly flags [natively lazy-loaded images](/native-lazy-loading/).
+See [issue #6677](https://github.com/GoogleChrome/lighthouse/issues/6677) for details.
 
 ## Resources
 

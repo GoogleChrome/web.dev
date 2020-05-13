@@ -9,7 +9,7 @@ alt: An illustration of a service worker interacting with a cache.
 description: |
   Search for just about any topic on Google, and you're presented with a page of meaningful, relevant results. What you probably didn't realize is that this search results page may be served by a powerful piece of web technology called a service worker.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - performance
   - service-worker
   - case-study

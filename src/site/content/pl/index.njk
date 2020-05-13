@@ -74,8 +74,8 @@ date: 2018-11-05
     </div>
     <div class="w-grid w-pb--std">
       <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
-        {% for post in collections.recentPosts %}
-          {% PostCard {post: post} %}
+        {% for post in collections.recentBlogPosts %}
+          {% PostCard post %}
         {% endfor %}
       </div>
     </div>

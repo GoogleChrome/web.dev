@@ -1,25 +1,30 @@
 // Inspired by https://github.com/GoogleChrome/devsummit/blob/master/src/nuke-sw.js
-// Not actually compiled, just served in places we no longer want a Service Worker
+// Not actually compiled, just served in places we no longer want a Service Worker.
+// This registers an empty Service Worker.
 
 // Is this actually being executed in a ServiceWorker?
-if (self instanceof ServiceWorkerGlobalScope) {
-  Promise.resolve()
-    .then(() => {
-      // Nuke the Service Worker.
-      return self.registration.unregister();
-    })
-    .then(() => {
-      // Match all window'ed pages.
-      return clients.matchAll({
+if (
+  typeof ServiceWorkerGlobalScope !== 'undefined' &&
+  self instanceof ServiceWorkerGlobalScope
+) {
+  self.addEventListener('install', (event) => {
+    event.waitUntil(self.skipWaiting());
+  });
+
+  self.addEventListener('activate', (event) => {
+    const p = (async () => {
+      await self.clients.claim();
+
+      const existingClients = await clients.matchAll({
         includeUncontrolled: true,
-        type: "window",
+        type: 'window',
       });
-    })
-    .then((clients) => {
-      // Reload all pages (this isn't part of the promise chain, as we can block ourselves).
-      clients.forEach((client) => client.navigate(client.url));
-    })
-    .catch((err) => {
-      console.error(err);
-    });
+
+      // We must activate and claim our clients before forcing them to navigate,
+      // even for a basic reload.
+      existingClients.forEach((client) => client.navigate(client.url));
+    })();
+
+    event.waitUntil(p);
+  });
 }

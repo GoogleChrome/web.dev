@@ -13,7 +13,7 @@ date: 2019-12-06
 hero: hero.jpg
 alt: Illustration showing images of common disabilities pinned to a corkboard.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - accessibility
   - ux
 ---

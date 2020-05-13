@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-import {html} from "lit-element";
-import {render} from "lit-html";
-import {BaseModalElement} from "../BaseModalElement";
-import "./_styles.scss";
+import {html} from 'lit-element';
+import {render} from 'lit-html';
+import {BaseModalElement} from '../BaseModalElement';
+import './_styles.scss';
 
 /**
  * Element that renders a self-assessment callout.
@@ -27,7 +27,7 @@ import "./_styles.scss";
 class Assessment extends BaseModalElement {
   static get properties() {
     return {
-      modal: {attribute: "aria-modal", reflect: true},
+      modal: {attribute: 'aria-modal', reflect: true},
     };
   }
 
@@ -51,7 +51,7 @@ class Assessment extends BaseModalElement {
       this.setLeader = [];
 
       for (const child of this.children) {
-        if (child.classList.contains("web-assessment__set-leader")) {
+        if (child.classList.contains('web-assessment__set-leader')) {
           this.setLeader.push(child);
         } else {
           this.prerenderedChildren.push(child);
@@ -80,7 +80,7 @@ class Assessment extends BaseModalElement {
   }
 
   firstUpdated() {
-    this.classList.remove("unresolved");
+    this.classList.remove('unresolved');
     // Override BaseModalElement's inert behavior since Assessment
     // is visible on desktop in closed state.
     // (display: none used to remove it from the tab order when closed on mobile.)
@@ -88,17 +88,17 @@ class Assessment extends BaseModalElement {
     // Render the launcher that appears in closed state on mobile.
     this.renderLauncher();
     // Listen to reset requests from child question components.
-    this.addEventListener("request-assessment-reset", this.reset);
+    this.addEventListener('request-assessment-reset', this.reset);
 
     // Get our position within all assessments on the page, and use this as the
     // basis for our Analytics ID.
-    const assessments = document.querySelectorAll("web-assessment");
+    const assessments = document.querySelectorAll('web-assessment');
     const idx = [...assessments].indexOf(this);
-    this.id = "web-assessment-" + idx;
+    this.id = 'web-assessment-' + idx;
 
-    const questions = Array.from(this.querySelectorAll("web-question"));
+    const questions = Array.from(this.querySelectorAll('web-question'));
     questions.forEach((question, i) => {
-      question.setAttribute("id", `${this.id}-question-${i}`);
+      question.setAttribute('id', `${this.id}-question-${i}`);
     });
   }
 
@@ -106,7 +106,7 @@ class Assessment extends BaseModalElement {
   addUniqueID(elements, target) {
     const idx = [...elements].indexOf(target);
 
-    if (target.id === "undefined") {
+    if (target.id === 'undefined') {
       target.id = idx;
     }
   }
@@ -123,7 +123,7 @@ class Assessment extends BaseModalElement {
   }
 
   renderLauncher() {
-    const launcher = document.createElement("div");
+    const launcher = document.createElement('div');
     const contentTemplate = (setLeader) => html`
       <div class="w-callout__header web-assessment__header">
         <h2 class="w-callout__lockup web-assessment__lockup">
@@ -142,11 +142,11 @@ class Assessment extends BaseModalElement {
     `;
     // lit-element prevents children from being duplicated,
     // so grab setLeader text content.
-    const text = this.setLeader[0] ? this.setLeader[0].textContent : "";
+    const text = this.setLeader[0] ? this.setLeader[0].textContent : '';
     const content = contentTemplate(text);
 
     render(content, launcher);
-    launcher.className = "web-assessment__launcher";
+    launcher.className = 'web-assessment__launcher';
     this.before(launcher);
   }
 
@@ -159,12 +159,12 @@ class Assessment extends BaseModalElement {
   }
 
   updated(changedProps) {
-    if (changedProps.has("open")) {
+    if (changedProps.has('open')) {
       this.modal = this.open;
       if (this.open) {
         this.openAssessment();
       } else {
-        this.addEventListener("animationend", this.closeAssessment, {
+        this.addEventListener('animationend', this.closeAssessment, {
           once: true,
         });
       }
@@ -178,8 +178,8 @@ class Assessment extends BaseModalElement {
 
     // Since the assessment is visible when closed on desktop,
     // wait to set the dialog role until it's open.
-    this.setAttribute("role", "dialog");
-    this.addEventListener("animationend", this.onAssessmentAnimationEnd, {
+    this.setAttribute('role', 'dialog');
+    this.addEventListener('animationend', this.onAssessmentAnimationEnd, {
       once: true,
     });
 
@@ -202,7 +202,7 @@ class Assessment extends BaseModalElement {
   }
 
   onAssessmentAnimationEnd() {
-    const tabs = this.querySelector("web-tabs");
+    const tabs = this.querySelector('web-tabs');
 
     if (!tabs) {
       return;
@@ -222,13 +222,13 @@ class Assessment extends BaseModalElement {
   // while the assessment modal is open.
   onAssessmentResize() {
     this.open = false;
-    this.removeAttribute("role");
+    this.removeAttribute('role');
   }
 
   // Reset assessment to initial state.
   reset() {
-    const tabs = this.querySelector("web-tabs");
-    const questions = this.querySelectorAll("web-question");
+    const tabs = this.querySelector('web-tabs');
+    const questions = this.querySelectorAll('web-question');
 
     for (const question of questions) {
       question.reset();
@@ -240,4 +240,4 @@ class Assessment extends BaseModalElement {
   }
 }
 
-customElements.define("web-assessment", Assessment);
+customElements.define('web-assessment', Assessment);

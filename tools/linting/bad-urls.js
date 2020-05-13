@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-const rule = require("unified-lint-rule");
-const url = require("url");
-const visit = require("unist-util-visit");
+const rule = require('unified-lint-rule');
+const url = require('url');
+const visit = require('unist-util-visit');
 
-module.exports = rule("remark-lint:bad-urls", checkURL);
+module.exports = rule('remark-lint:bad-urls', checkURL);
 
 /**
  * Walk the AST for the markdown file and find any bad URLs.
@@ -26,7 +26,7 @@ module.exports = rule("remark-lint:bad-urls", checkURL);
  * @param {*} file The markdown file.
  */
 function checkURL(tree, file) {
-  visit(tree, "link", visitor);
+  visit(tree, 'link', visitor);
 
   /* eslint-disable require-jsdoc */
   function visitor(node) {
@@ -38,7 +38,7 @@ function checkURL(tree, file) {
 
     // If URL hostname is "wiki.developer.mozilla.org", warn to change to
     // "developer.mozilla.org".
-    if (parsed.hostname == "wiki.developer.mozilla.org") {
+    if (parsed.hostname == 'wiki.developer.mozilla.org') {
       const reason = 'Change URL hostname to "developer.mozilla.org".';
       file.message(reason, node);
     }

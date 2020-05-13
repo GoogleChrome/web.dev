@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const setdefault = require("../_utils/setdefault");
+const setdefault = require('../_utils/setdefault');
 
 /**
  * Since a post can appear in more than one collection, this creates a quick way to look up which collection a post is in.
@@ -24,7 +24,7 @@ const setdefault = require("../_utils/setdefault");
 module.exports = (collections) => {
   const postToCollections = {};
   const paths = new Map();
-  collections.getFilteredByTag("pathItem").forEach((p) => {
+  collections.getFilteredByTag('pathItem').forEach((p) => {
     const path = p.data.path;
     paths.set(path.slug, path);
   });

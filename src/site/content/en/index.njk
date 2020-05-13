@@ -61,6 +61,22 @@ date: 2018-11-05
     </a>
   </section>
 
+  <section class="w-home-promo" id="cds">
+    <div class="w-home-promo__grid">
+      <div class="w-home-promo__box">
+        <a href="/covid19/" tabindex="-1"><img src="/covid19/banner.jpg" width="1320" height="739" /></a>
+      </div>
+      <div>
+        <p>
+          Ensure <a href="/covid19/">your website is available and usable</a> for everyone during COVID-19.
+        </p>
+        <p>
+          How to ensure that the core functionality of your website is always available, accessible, secure, usable, discoverable, and fast.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section>
     <div class="w-layout-container w-pb--non">
       <header class="w-text--center">
@@ -74,11 +90,11 @@ date: 2018-11-05
     </div>
     <div class="w-grid w-pb--std">
       <div class="w-grid__columns w-grid__columns--featured" role="list">
-        {% for post in collections.recentPosts %}
+        {% for post in collections.recentBlogPosts %}
           {% if loop.first %}
-            {% PostCard {post: post, featured: true} %}
+            {% PostCard post, true %}
           {% else %}
-            {% PostCard {post: post} %}
+            {% PostCard post %}
           {% endif %}
         {% endfor %}
       </div>

@@ -15,7 +15,7 @@ description: |
   Learn how the OpenSooq team used best practices to create a reliable,
   compelling marketplace progressive web app.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - e-commerce
   - fast
   - reliable

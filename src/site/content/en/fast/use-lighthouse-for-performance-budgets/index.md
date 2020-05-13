@@ -8,12 +8,13 @@ description: |
   set up in under five minutes and provides feedvack on the size and quantity of
   page resources.
 date: 2019-06-14
+updated: 2020-05-13
 tags:
-  - post
+  - blog
   - performance
 ---
 
-[Lighthouse](https://github.com/GoogleChrome/lighthouse) now supports performance budgets. This feature, [LightWallet](https://developers.google.com/web/tools/lighthouse/audits/budgets), can be set up in under five minutes and provides feedback on the size and quantity of page resources.
+[Lighthouse](https://github.com/GoogleChrome/lighthouse) now supports performance budgets. This feature, [LightWallet](https://developers.google.com/web/tools/lighthouse/audits/budgets), can be set up in under five minutes and provides feedback on performance metrics and the size and quantity of page resources.
 
 ## Install Lighthouse
 
@@ -32,6 +33,17 @@ Create a file named `budget.json`. In this file add the following JSON:
 ```json
 [
   {
+    "path": "/*",
+    "timings": [
+      {
+        "metric": "interactive",
+        "budget": 3000
+      },
+      {
+        "metric": "first-meaningful-paint",
+        "budget": 1000
+      }
+    ],
     "resourceSizes": [
       {
         "resourceType": "script",
@@ -52,14 +64,15 @@ Create a file named `budget.json`. In this file add the following JSON:
 ]
 ```
 
-This example `budget.json` file sets three separate budgets:
+This example `budget.json` file sets five separate budgets:
 
+* A budget of 3000ms for Time to Interactive.
+* A budget of 1000ms for First Meaningful Paint
 * A budget of 125 KB for the total amount of JavaScript on the page.
 * A budget of 300 KB for the overall size of the page.
 * A budget of 10 requests for the numer of requests made to third-party origins.
 
-You can set budgets for any of the following resource types: `document`, `font`, `image`, `media`, `other`,`script`, `stylesheet`, `third-party`, and `total`.
-
+For a complete list of supported performance metrics and resource types, refer to the [Performance Budgets](https://github.com/GoogleChrome/lighthouse/blob/master/docs/performance-budgets.md) section of the Lighthouse docs.
 
 ## Run Lighthouse
 

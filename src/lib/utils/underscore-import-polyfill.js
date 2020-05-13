@@ -10,7 +10,7 @@ const seen = {};
  */
 window._import = (src) => {
   // Rollup generates relative paths, but they're all relative to top level.
-  if (src.startsWith("./")) {
+  if (src.startsWith('./')) {
     src = src.substr(2);
   }
 
@@ -23,9 +23,9 @@ window._import = (src) => {
   }
 
   const p = new Promise((resolve, reject) => {
-    const n = Object.assign(document.createElement("script"), {
+    const n = Object.assign(document.createElement('script'), {
       src: `/${src}`, // Rollup generates sources only in top-level
-      type: "module",
+      type: 'module',
       onload: () => resolve(),
       onerror: reject,
     });

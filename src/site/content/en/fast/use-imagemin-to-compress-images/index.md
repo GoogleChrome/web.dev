@@ -4,6 +4,7 @@ title: Use Imagemin to compress images
 authors:
   - katiehempenius
 date: 2018-11-05
+updated: 2020-05-13
 description: |
   Uncompressed images bloat your pages with unnecessary bytes. Run Lighthouse to
   check for opportunities to improve page load by compressing images.
@@ -176,8 +177,10 @@ const imageminMozjpeg = require('imagemin-mozjpeg');
 (async() => {
   const files = await imagemin(
       ['source_dir/*.jpg', 'another_dir/*.jpg'],
-      'destination_dir',
-      {plugins: [imageminMozjpeg({quality: 50})]}
+      {
+        destination: 'destination_dir',
+        plugins: [imageminMozjpeg({quality: 50})]
+      }
   );
   console.log(files);
 })();

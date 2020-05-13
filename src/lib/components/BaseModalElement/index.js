@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-import {BaseElement} from "../BaseElement";
-import "wicg-inert";
-import {checkOverflow} from "../../utils/check-overflow";
-import {openModal} from "../../actions";
-import {closeModal} from "../../actions";
-import "./_styles.scss";
+import {BaseElement} from '../BaseElement';
+import 'wicg-inert';
+import {checkOverflow} from '../../utils/check-overflow';
+import {openModal} from '../../actions';
+import {closeModal} from '../../actions';
+import './_styles.scss';
 
 /**
  * Base element that provides modal functionality.
@@ -33,7 +33,7 @@ export class BaseModalElement extends BaseElement {
       open: {type: Boolean, reflect: true},
       animatable: {type: Boolean, reflect: true},
       overflow: {type: Boolean, reflect: true},
-      parentModal: {attribute: "parent-modal", reflect: true},
+      parentModal: {attribute: 'parent-modal', reflect: true},
     };
   }
 
@@ -54,14 +54,14 @@ export class BaseModalElement extends BaseElement {
 
   connectedCallback() {
     super.connectedCallback();
-    this.addEventListener("click", this.onClick);
+    this.addEventListener('click', this.onClick);
     // Set tabindex to -1 so modal can be focused when it's opened.
     this.tabIndex = -1;
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    this.removeEventListener("click", this.onClick);
+    this.removeEventListener('click', this.onClick);
     // To account for the Assessment modal, which opens itself,
     // check whether the modal is connected before closing it
     // to keep it from staying open after nav.
@@ -85,25 +85,25 @@ export class BaseModalElement extends BaseElement {
       this._triggerElement = document.activeElement;
       // Add keyup event listener to this element rather than document
       // so a nested modal doesn't close its parent modal when the user presses Esc.
-      this.addEventListener("keyup", this.onKeyUp);
-      window.addEventListener("resize", this.onResize);
+      this.addEventListener('keyup', this.onKeyUp);
+      window.addEventListener('resize', this.onResize);
     } else {
       // Fire custom event to allow other components
       // to respond when the modal closes, if needed
       // (e.g., to reenable a button).
-      const event = new Event("close-modal");
+      const event = new Event('close-modal');
 
       this.dispatchEvent(event);
-      window.removeEventListener("resize", this.onResize);
+      window.removeEventListener('resize', this.onResize);
     }
 
     this.manageDocument();
     this.animatable = true;
-    this.addEventListener("animationend", this.onAnimationEnd, {
+    this.addEventListener('animationend', this.onAnimationEnd, {
       once: true,
     });
 
-    this.requestUpdate("open", oldVal);
+    this.requestUpdate('open', oldVal);
   }
 
   get open() {
@@ -121,7 +121,7 @@ export class BaseModalElement extends BaseElement {
 
   onKeyUp(e) {
     // Close modal when user presses Escape.
-    if (e.key === "Escape") {
+    if (e.key === 'Escape') {
       this.open = false;
     }
   }
@@ -134,10 +134,10 @@ export class BaseModalElement extends BaseElement {
     this.manageFocus();
     if (this.open) {
       this.onResize();
-      window.addEventListener("resize", this.onResize);
+      window.addEventListener('resize', this.onResize);
     } else {
-      window.removeEventListener("resize", this.onResize);
-      this.removeEventListener("keyup", this.onKeyUp);
+      window.removeEventListener('resize', this.onResize);
+      this.removeEventListener('keyup', this.onKeyUp);
     }
     this.inert = !this.open;
   }
@@ -147,13 +147,13 @@ export class BaseModalElement extends BaseElement {
     // (e.g., adding borders to the child element handling overflow).
     // If the client component needs to use a different class for the element
     // handling overflow, it will need its own animationend listener.
-    const content = this.querySelector(".web-modal__content");
+    const content = this.querySelector('.web-modal__content');
 
     if (!content) {
       return;
     }
 
-    this.overflow = checkOverflow(content, "height");
+    this.overflow = checkOverflow(content, 'height');
   }
 
   // Manage state of the document based on the modal state.

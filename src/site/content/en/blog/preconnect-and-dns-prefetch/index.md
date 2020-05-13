@@ -10,7 +10,7 @@ authors:
 description: |
     Learn about rel=preconnect and rel=dns-prefetch resource hints and how to use them.
 tags:
-  - post
+  - blog
   - performance
   - fast
 ---

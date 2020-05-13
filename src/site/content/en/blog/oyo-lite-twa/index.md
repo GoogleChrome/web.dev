@@ -7,13 +7,13 @@ authors:
   - ajain
   - mfriesenhahn
 date: 2019-11-07
-updated: 2019-11-08
+updated: 2020-05-13
 
 description: |
   How a hospitality startup built an Android app that relies on web content to
   dramatically increase user engagement and keep file size low.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - twa
   - case-study
 ---

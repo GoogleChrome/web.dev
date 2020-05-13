@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Minimize critical request depth
+title: Avoid chaining critical requests
 description: |
   Learn what critical request chains are, how they affect web page performance,
   and how you can reduce the effect.
 date: 2019-05-02
-updated: 2019-12-17
+updated: 2020-05-13
 web_lighthouse:
   - critical-request-chains
 ---

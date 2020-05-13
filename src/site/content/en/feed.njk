@@ -2,6 +2,8 @@
 metadata:
   title: web.dev
   url: https://web.dev
+  icon: https://web.dev/images/social.png
+  logo: https://web.dev/images/rss-banner.png
   author:
     name: Google Developers
   feed:
@@ -19,12 +21,14 @@ permalink: "/{{lang}}/feed.xml"
   <subtitle>{{ metadata.feed.subtitle }}</subtitle>
   <link href="{{ metadata.feed.url }}" rel="self"/>
   <link href="{{ metadata.url }}"/>
-  <updated>{{ collections.posts | reverse | rssLastUpdatedDate }}</updated>
+  <updated>{{ collections.blogPosts | reverse | rssLastUpdatedDate }}</updated>
   <id>{{ metadata.feed.id }}</id>
   <author>
     <name>{{ metadata.author.name }}</name>
   </author>
-  {% for post in collections.posts -%}
+  <icon>{{ metadata.icon }}</icon>
+  <logo>{{ metadata.logo }}</logo>
+  {% for post in collections.blogPosts -%}
   {% set absolutePostUrl -%}{{ post.url | stripLanguage | url | absoluteUrl(metadata.url) }}{%- endset %}
   <entry>
     <title>{{ post.data.title }}</title>

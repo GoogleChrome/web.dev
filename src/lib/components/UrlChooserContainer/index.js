@@ -1,7 +1,7 @@
-import {html} from "lit-element";
-import {BaseStateElement} from "../BaseStateElement";
-import {requestRunLighthouse} from "../../actions";
-import "../UrlChooser";
+import {html} from 'lit-element';
+import {BaseStateElement} from '../BaseStateElement';
+import {requestRunLighthouse} from '../../actions';
+import '../UrlChooser';
 
 /**
  * @fileoverview Manages state interaction with UrlChooser.
@@ -53,4 +53,4 @@ class UrlChooserContainer extends BaseStateElement {
   }
 }
 
-customElements.define("web-url-chooser-container", UrlChooserContainer);
+customElements.define('web-url-chooser-container', UrlChooserContainer);

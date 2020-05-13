@@ -1,16 +1,16 @@
 ---
 title: Ensure your website is available and usable for everyone during COVID-19
 subhead: >
-  How to ensure that the core functionality of your website is always 
+  How to ensure that the core functionality of your website is always
   available, accessible, secure, usable, discoverable, and fast.
 description: >
-  How to ensure that the core functionality of your website is always 
+  How to ensure that the core functionality of your website is always
   available, accessible, secure, usable, discoverable, and fast.
 date: 2020-04-03
-updated: 2020-04-06
+updated: 2020-05-13
 hero: hero.jpg
 tags:
-  - post
+  - blog
   - accessibility
   - performance
   - seo
@@ -45,7 +45,7 @@ to ensure sites are available during this time and accessible to all.
 
 ## Guidance {: #guidance }
 
-{% Aside %} 
+{% Aside %}
   This guidance is a work in progress and will be updated frequently.
   If you have any suggestions, please [file an
   issue](https://github.com/GoogleChrome/web.dev/issues/new/choose), or [edit
@@ -63,11 +63,11 @@ before they become major issues.
   how to detect, mitigate, and prevent traffic spike issues.
 * Remove unnecessary images, videos, scripts, and fonts. Ensure each page focuses
   on just delivering the functionality that the people using your site really
-  need. 
+  need.
 * [Optimizing your images](/fast/#optimize-your-images) may
   significantly reduce your server bandwidth usage because [images are the
   number one source of bloat on the web](https://images.guide/#introduction).
-* Offload as much of your static content to CDNs as possible. 
+* Offload as much of your static content to CDNs as possible.
   More details from common providers:
   [AWS](https://aws.amazon.com/cloudfront/),
   [Azure](https://azure.microsoft.com/en-us/services/cdn/),
@@ -164,7 +164,7 @@ information](https://en.wikipedia.org/wiki/Personal_data) (PII) is safe.
   Encrypt](https://letsencrypt.org/getting-started/) or similar services to
   enable HTTPS on your servers.
 * Review [SameSite cookies explained](/samesite-cookies-explained/) to learn
-  how to make your use of cookies more secure. Note that 
+  how to make your use of cookies more secure. Note that
   [the enforcement of SameSite cookie labeling has been temporarily rolled back](https://blog.chromium.org/2020/04/temporarily-rolling-back-samesite.html).
 
 See [Safe and secure](/secure/) for more guidance.
@@ -223,6 +223,7 @@ Recent COVID-19-related posts:
   events](https://webmasters.googleblog.com/2020/03/new-properties-virtual-or-canceled-events.html)
 * [Bing adopts schema.org markup for special announcements for
   COVID-19](https://blogs.bing.com/webmaster/march-2020/Bing-adopts-schema-org-mark-up-for-Special-Announcements-about-COVID-19)
+* [Add structured data to COVID-19 announcements](https://developers.google.com/search/docs/data-types/special-announcements)
 * [Helping health organizations make COVID-19 information more
   accessible](https://webmasters.googleblog.com/2020/03/health-organizations-covid19.html)
 * [General best practices for Search for health & government
@@ -279,18 +280,18 @@ performance impact of reduced bandwidth.
   websites. Consider
   [optimizing](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript)
   or temporarily removing or disabling third-party code that isn't fundamental
-  to running your site. 
+  to running your site.
 * If feature releases are deprioritized, this might be the perfect time to clean
   up. Remove tags from your tag managers, clean up bloated CSS and JS, and
-  remove deprecated features or code. The 
+  remove deprecated features or code. The
   [Coverage tab](https://developers.google.com/web/tools/chrome-devtools/coverage)
-  in Chrome DevTools and the 
+  in Chrome DevTools and the
   [`Coverage`](https://pptr.dev/#?product=Puppeteer&version=v2.1.1&show=api-class-coverage) class
   in Puppeteer can help you detect unused code.
 
 See [Fast load times](/fast/) for more guidance.
 
-[Hero image](https://unsplash.com/photos/Q1p7bh3SHj8) by 
+[Hero image](https://unsplash.com/photos/Q1p7bh3SHj8) by
 [NASA](https://unsplash.com/@nasa) on
 [Unsplash](https://unsplash.com/s/photos/earth)
 

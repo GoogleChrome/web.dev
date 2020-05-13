@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-const path = require("path");
-const site = require("../_data/site");
+const path = require('path');
+const site = require('../_data/site');
 
 /**
  * Takes a path to an image and converts it to an image CDN path if we're in
@@ -27,7 +27,7 @@ const site = require("../_data/site");
  */
 module.exports = function getImagePath(src, pageUrl) {
   let imagePath = path.join(pageUrl, src);
-  if (site.env === "prod") {
+  if (site.env === 'prod') {
     imagePath = new URL(imagePath, site.imageCdn).href;
   }
   return imagePath;

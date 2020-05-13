@@ -1,8 +1,8 @@
-import {html} from "lit-element";
-import {until} from "lit-html/directives/until";
-import {BaseElement} from "../BaseElement";
-import {signIn, signOut} from "../../fb";
-import "./_styles.scss";
+import {html} from 'lit-element';
+import {until} from 'lit-html/directives/until';
+import {BaseElement} from '../BaseElement';
+import {signIn, signOut} from '../../fb';
+import './_styles.scss';
 
 const emptyFrag = document.createDocumentFragment();
 
@@ -25,14 +25,14 @@ class ProfileSwitcher extends BaseElement {
       >
         ${until(this.photoPromise)}
       </button>
-      ${this.expanded && this.user ? this.expandedTemplate : ""}
+      ${this.expanded && this.user ? this.expandedTemplate : ''}
     `;
   }
 
   firstUpdated() {
     // Close the profile switcher if it's open and the user presses escape.
-    this.addEventListener("keyup", (e) => {
-      if (e.key === "Escape") {
+    this.addEventListener('keyup', (e) => {
+      if (e.key === 'Escape') {
         if (this.expanded) {
           this.expanded = false;
         }
@@ -40,7 +40,7 @@ class ProfileSwitcher extends BaseElement {
     });
 
     // Close the profile switcher if it's open and the user clicks outside.
-    document.addEventListener("click", (e) => {
+    document.addEventListener('click', (e) => {
       if (this.expanded && !this.contains(e.target)) {
         this.expanded = false;
       }
@@ -48,7 +48,7 @@ class ProfileSwitcher extends BaseElement {
   }
 
   shouldUpdate(changedProperties) {
-    if (!changedProperties.has("user")) {
+    if (!changedProperties.has('user')) {
       return true;
     }
 
@@ -62,7 +62,7 @@ class ProfileSwitcher extends BaseElement {
     this.photoPromise = new Promise((resolve) => {
       const image = new Image();
       image.src = this.user.photoURL;
-      image.className = "w-profile-toggle__photo";
+      image.className = 'w-profile-toggle__photo';
       image.onload = () => resolve(image);
 
       // Ignore errors and don't display a photo at all.
@@ -123,4 +123,4 @@ class ProfileSwitcher extends BaseElement {
   }
 }
 
-customElements.define("web-profile-switcher", ProfileSwitcher);
+customElements.define('web-profile-switcher', ProfileSwitcher);

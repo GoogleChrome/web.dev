@@ -8,9 +8,9 @@ authors:
 description: |
     Learn about rel=prefetch resource hint and how to use it.
 tags:
-  - post
+  - blog
   - performance
-  - fast  
+  - fast
 codelabs: codelab-two-ways-to-prefetch
 ---
 
@@ -92,24 +92,24 @@ webpack enables you to prefetch scripts for routes or functionality you're reaso
 The following code snippet lazy-loads a sorting functionality from the [lodash](https://lodash.com/) library to sort a group of numbers that will be submitted by a form:
 
 ```js
-form.addEventListener("submit", e => { 
-	e.preventDefault() 
+form.addEventListener("submit", e => {
+	e.preventDefault()
 	import('lodash.sortby')
 		.then(module => module.default)
-		.then(sortInput()) 
-		.catch(err => { alert(err) }); 
+		.then(sortInput())
+		.catch(err => { alert(err) });
 });
 ```
 
 Instead of waiting for the 'submit' event to take place to load this functionality, you can prefetch this resource to increase the chances of having it available in the cache by the time the user submits the form. webpack allows that using the [magic comments](https://webpack.js.org/api/module-methods/#magic-comments) inside `import()`:
 
 ```js/2
-form.addEventListener("submit", e => { 
-   e.preventDefault() 
+form.addEventListener("submit", e => {
+   e.preventDefault()
    import(/* webpackPrefetch: true */ 'lodash.sortby')
          .then(module => module.default)
-         .then(sortInput()) 
-         .catch(err => { alert(err) }); 
+         .then(sortInput())
+         .catch(err => { alert(err) });
 });
 ```
 

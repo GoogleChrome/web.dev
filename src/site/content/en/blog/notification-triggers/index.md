@@ -9,11 +9,11 @@ description:
   The Notification Triggers API allows developers to schedule local notifications that don't require
   a network connection, which makes them ideal for use cases like calendar apps.
 date: 2019-10-24
-updated: 2020-03-12
+updated: 2020-05-13
 hero: hero.jpg
 hero_position: center
 tags:
-  - post
+  - blog
   - capabilities
   - fugu
   - origin-trial

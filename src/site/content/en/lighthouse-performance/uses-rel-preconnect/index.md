@@ -4,7 +4,7 @@ title: Preconnect to required origins
 description: |
   Learn about the uses-rel-preconnect audit.
 date: 2019-05-02
-updated: 2019-10-04
+updated: 2020-05-13
 web_lighthouse:
   - uses-rel-preconnect
 ---
@@ -15,6 +15,11 @@ that aren't yet prioritizing fetch requests with `<link rel=preconnect>`:
 <figure class="w-figure">
   <img class="w-screenshot" src="uses-rel-preconnect.png" alt="A screenshot of the Lighthouse Preconnect to required origins audit">
 </figure>
+
+## Browser compatibility
+
+`<link rel=preconnect>` is supported on most browsers. See
+[Browser compatibility](https://developer.mozilla.org/docs/Web/HTML/Link_types/preconnect#Browser_compatibility).
 
 ## Improve page load speed with preconnect
 
@@ -67,3 +72,4 @@ You use it the exact same way:
 - [Source code for **Preconnect to required origins** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/uses-rel-preconnect.js)
 - [Resource Prioritization–Getting the Browser to Help You](https://developers.google.com/web/fundamentals/performance/resource-prioritization#preconnect)
 - [Establish network connections early to improve perceived page speed](/preconnect-and-dns-prefetch/)
+- [Link types: preconnect](https://developer.mozilla.org/docs/Web/HTML/Link_types/preconnect#Browser_compatibility)
