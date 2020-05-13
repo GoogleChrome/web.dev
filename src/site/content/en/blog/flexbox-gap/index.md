@@ -190,7 +190,7 @@ DevTools supports both `grid-gap` and `gap`, this is because `gap` is essentiall
 
 ## New layout potential
 
-With `flex gap`, we unlock more than convenience, we unlock powerful, perfectly spaced, intrinsic layouts. In the video and following code sample below, `grid` cannot achieve the layout that `flex` can. `grid` must have equal rows and columns, even if they're intrinsically assigned. 
+With Flexbox `gap`, we unlock more than convenience, we unlock powerful, perfectly spaced, intrinsic layouts. In the video and following code sample below, Grid cannot achieve the layout that Flexbox can. Grid must have equal rows and columns, even if they're intrinsically assigned. 
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
