@@ -91,25 +91,39 @@ Why are we calling this a "reverse" origin trial? Normally, an origin trial allo
 
 To participate in the "reverse" origin trial:
 
-- [Request a token](https://developers.chrome.com/origintrials/#/register_trial/1776670052997660673) for your origin.
+<ol>
+  <li>
+    <a href="https://developers.chrome.com/origintrials/#/register_trial/1776670052997660673">Request a token</a> for your origin.
+  </li>
 
-- Add the token to your HTML pages. There are [two ways](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md#how-do-i-enable-an-experimental-feature-on-my-origin) to do that:
+  <li>
+    Add the token to your HTML pages. There are <a href="https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md#how-do-i-enable-an-experimental-feature-on-my-origin">two ways</a> to do that:
 
-  - Add an `origin-trial` `<meta>` tag to the head of each page. For example: `<meta http-equiv="origin-trial" content="TOKEN_GOES_HERE">`
+    <ul>
+      <li>
+        Add an `origin-trial` `<meta>` tag to the head of each page. For example: `<meta http-equiv="origin-trial" content="TOKEN_GOES_HERE">`
+      </li>
 
-  - Alternatively, configure your server to return responses containing the `Origin-Trial` HTTP header. The resulting response header should look something like: `Origin-Trial: TOKEN_GOES_HERE`
+      <li>
+        Alternatively, configure your server to return responses containing the `Origin-Trial` HTTP header. The resulting response header should look something like: `Origin-Trial: TOKEN_GOES_HERE`
+      </li>
+    </ul>
+  </li>
 
-- Add the same token to your AppCache manifests. This is done via a new field in your manifest, with the format:
+  <li>
+    Add the same token to your AppCache manifests. Do this via a new field in your manifest, with the format:
 
 ```text
 ORIGIN-TRIAL:
 TOKEN_GOES_HERE
 ```
 
-(There needs to be a new line between `ORIGIN-TRIAL` and your token.)
+    (There needs to be a new line between `ORIGIN-TRIAL` and your token.)
+  </li>
+</ol>
 
 {% Aside %}
-The token for a manifest **must** be in an `ORIGIN-TRIAL:` field of the manifest itself. Unlike an HTML page's token, it can't be provided via an HTTP header.
+The token for a manifest **must** be in an `ORIGIN-TRIAL` field of the manifest itself. Unlike an HTML page's token, it can't be provided via an HTTP header.
 {% endAside %}
 
 You can see a sample project embedded below which demonstrates adding the correct origin trial tokens into both the `index.html` and `manifest.appcache` files.
@@ -125,7 +139,7 @@ You can see a sample project embedded below which demonstrates adding the correc
 The **same origin trial token** needs to be associated with:
 
 - **All of your HTML pages** that use AppCache.
-- **All of your AppCache manifests** via the `ORIGIN-TRIAL` manifest field. 
+- **All of your AppCache manifests** via the `ORIGIN-TRIAL` manifest field.
 
 If you've participated in origin trials in the past, you might have added the token just to your HTML pages. The AppCache "reverse" origin trial is special in that you need to associate a token with each of your AppCache manifests as well.
 
@@ -177,7 +191,7 @@ Safari [deprecated](https://bugs.webkit.org/show_bug.cgi?id=181764) AppCache in 
 
 ### Chrome on iOS
 
-Chrome for iOS is a special case, as it uses a different browser engine than Chrome on other platforms: the [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview). Service workers are not currently supported on Chrome for iOS, and Chrome's AppCache removal announcement does not cover the [availability of AppCache on Chrome for iOS](https://webkit.org/status/#specification-application-cache). Please keep this in mind if you know that your web app has a significant Chrome for iOS audience.
+Chrome for iOS is a special case, as it uses a different browser engine than Chrome on other platforms: the [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview). Service workers are not currently supported in iOS apps using WKWebView, and Chrome's AppCache removal announcement does not cover the [availability of AppCache on Chrome for iOS](https://webkit.org/status/#specification-application-cache). Please keep this in mind if you know that your web app has a significant Chrome for iOS audience.
 
 ### Android WebViews
 
