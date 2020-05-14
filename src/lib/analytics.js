@@ -75,5 +75,6 @@ document.addEventListener('click', (e) => {
 // We log pageviews only in bootstrap.js (on entry, for all browsers) and in
 // loader.js (for dynamic SPA page loads, part of our core bundle).
 store.subscribe(({isSignedIn}) => {
-  ga('set', dimensions.SIGNED_IN, isSignedIn ? 1 : 0);
+  // nb. Analytics requires dimension values to be strings.
+  ga('set', dimensions.SIGNED_IN, isSignedIn ? '1' : '0');
 });

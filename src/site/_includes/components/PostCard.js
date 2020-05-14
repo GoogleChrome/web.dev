@@ -18,7 +18,10 @@ const BaseCard = require('./BaseCard');
 
 /**
  * PostCard used to preview posts.
- * @param {Object} args An eleventy collection item with post data.
+ * @param {Object} collectionItem An eleventy collection item with post data.
+ * @param {boolean} featured If post is a featured post.
  * @return {string}
  */
-module.exports = (args) => new BaseCard(args).render();
+module.exports = (collectionItem, featured = false) => {
+  return new BaseCard(collectionItem, null, featured).render();
+};

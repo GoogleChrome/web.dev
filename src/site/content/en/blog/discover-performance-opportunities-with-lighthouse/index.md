@@ -10,7 +10,7 @@ description: |
   provides a score for each metric and a list of opportunities which, if you
   implement them, should make the page load faster.
 tags:
-    - post
+    - blog
     - performance
     - devtools
 ---

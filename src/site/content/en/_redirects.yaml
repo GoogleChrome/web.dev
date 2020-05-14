@@ -22,7 +22,7 @@ redirects:
 # Newsletter
 
 - from: /subscribe
-  to: https://services.google.com/fb/forms/web-dev-subscribe/
+  to: /newsletter
 
 # Pre-v1 redirects
 

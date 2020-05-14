@@ -14,7 +14,7 @@ alt: |
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/902971725287784449
 tags:
-  - post
+  - blog
   - capabilities
   - fugu
   - behind-a-flag
@@ -32,7 +32,7 @@ tags:
 
 To avoid draining the battery, most devices quickly go to sleep when left
 idle. While this is fine most of the time, some applications need to keep the
-screen awake to complete their work. Examples include cooking apps 
+screen awake to complete their work. Examples include cooking apps
 that show the steps of a recipe or a game
 like [Ball Puzzle](https://ball-puzzle.appspot.com/), which uses the device
 motion APIs for input.

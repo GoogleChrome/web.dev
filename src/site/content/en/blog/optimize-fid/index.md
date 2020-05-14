@@ -5,7 +5,7 @@ authors:
   - houssein
   - addyosmani
 date: 2020-05-05
-hero: hero.png
+hero: hero2.jpg
 alt: A hand touching a smartphone screen
 description: | 
   First Input Delay (FID) measures the time from when a user first interacts with your site
@@ -13,12 +13,9 @@ description: |
   optimize FID by minimizing unused JavaScript, breaking up Long Tasks, and improving interaction
   readiness.
 tags:
-  - post
-  - fast
+  - blog
+  - performance
   - web-vitals
-  - first-input-delay
-  - fid
-  - lighthouse
 ---
 
 <blockquote>

@@ -64,6 +64,22 @@ const contributors = {
       en: 'V8 JavaScript whisperer',
     },
   },
+  hongchanchoi: {
+    name: {
+      given: 'Hongchan',
+      family: 'Choi',
+    },
+    org: {
+      name: 'Google',
+      unit: 'Chrome',
+    },
+    twitter: 'hochsays',
+    github: 'hoch',
+    homepage: 'https://hoch.io/',
+    description: {
+      en: 'Software Engineer working on Chromium',
+    },
+  },
   robdodson: {
     name: {
       given: 'Rob',
@@ -186,6 +202,15 @@ const contributors = {
     homepage: 'https://mihajlija.github.io/',
     twitter: 'bibydigital',
     github: 'mihajlija',
+  },
+  mustafakurtuldu: {
+    name: {
+      given: 'Mustafa',
+      family: 'Kurtuldu',
+    },
+    homepage: 'https://www.designtoday.info/',
+    twitter: 'mustafa_x',
+    github: 'mustafa-x',
   },
   agektmr: {
     name: {

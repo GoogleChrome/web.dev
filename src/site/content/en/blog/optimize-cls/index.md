@@ -9,12 +9,9 @@ description: |
   Cumulative Layout Shift (CLS) is a metric that quantifies how often users experience sudden shifts in page content. In this guide, we'll cover optimizing common causes of CLS such as images and iframes without dimensions or dynamic content.
 alt: Layout shifts can suddenly push the content you are reading or are about to click further down the page, leading to a poor user-experience. Reserving space for dynamic content causing layout shifts leads to a more delightful user experience.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - fast
   - web-vitals
-  - cumulative-layout-shift
-  - cls
-  - lighthouse
 ---
 
 "I was about to click that! Why did it move? 😭"
@@ -25,8 +22,13 @@ Layout shifts can be distracting to users. Imagine you've started reading an art
 
 In this guide, we'll cover optimizing common causes of layout shifts.
 
-
-<img src="cls-graphic.svg" alt="Cumulative layout shift measures layout shifts to ensure users experience smooth and natural interactions. In this graphic, we highlight sites should strive to have a CLS of less than 0.1 while a CLS of over 0.25 is considered poor.">
+<picture>
+  <source srcset="../vitals/cls_8x2.svg" media="(min-width: 640px)">
+  <img class="w-screenshot w-screenshot--filled"
+      src="../vitals/cls_4x3.svg"
+      alt="Good CLS values are under 0.1, poor values are greater than 0.25
+            and anything in between needs improvement">
+</picture>
 
 The most common causes of a poor CLS are:
 

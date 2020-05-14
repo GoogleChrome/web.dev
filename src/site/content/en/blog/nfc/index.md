@@ -13,7 +13,7 @@ description: |
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/236438980436951041
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
   - fugu
 ---

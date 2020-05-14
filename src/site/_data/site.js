@@ -24,7 +24,7 @@ module.exports = {
   defaultLocale: locale.defaultLocale,
   url: 'https://web.dev',
   repo: 'https://github.com/GoogleChrome/web.dev',
-  subscribe: 'https://web.dev/subscribe',
+  subscribe: 'https://web.dev/newsletter',
   subscribeForm:
     'https://services.google.com/fb/submissions/591768a1-61a6-4f16-8e3c-adf1661539da/',
   thumbnail: '/images/social.png',

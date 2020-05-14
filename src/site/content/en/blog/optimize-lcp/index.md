@@ -4,19 +4,16 @@ subhead: How to render your main content faster.
 authors:
   - houssein
 date: 2020-05-05
-hero: hero.png
+hero: hero2.jpg
 alt: Optimize LCP banner
 description: | 
   Largest Contentful Paint (LCP) can be used to determine when the main content of the page has
   finished rendering on the screen. Learn how to optimize LCP by improving slow server response
   times, resource load times and client-side rendering.
 tags:
-  - post
+  - blog
   - fast
   - web-vitals
-  - largest-contenful-paint
-  - lcp
-  - lighthouse
 ---
 
 <blockquote>
@@ -196,7 +193,7 @@ takes to fully render the main content of the page (LCP).
 If you use a module bundler or build tool, include an appropriate plugin to minify CSS files on
 every build:
 
-+   For webpack: [optimize-css-assets-webpack-plugin](optimize-css-assets-webpack-plugin)
++   For webpack: [optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin)
 +   For Gulp: [gulp-clean-css](https://www.npmjs.com/package/gulp-clean-css)
 +   For Rollup: [rollup-plugin-css-porter](https://www.npmjs.com/package/rollup-plugin-css-porter)
 

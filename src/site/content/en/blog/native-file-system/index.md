@@ -7,7 +7,7 @@ description: The new Native File System API enables developers to build powerful
 date: 2019-08-20
 updated: 2020-04-13
 tags:
-  - post
+  - blog
   - capabilities
   - fugu
   - origin-trial
@@ -323,7 +323,7 @@ async function verifyPermission(fileHandle, withWrite) {
   if (await fileHandle.requestPermission(opts) === 'granted') {
     return true;
   }
-  // The user did nt grant permission, return false.
+  // The user didn't grant permission, return false.
   return false;
 }
 ```

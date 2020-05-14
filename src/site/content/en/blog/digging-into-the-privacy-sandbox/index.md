@@ -9,7 +9,7 @@ hero: hero.jpg
 alt: A black-on-white printed sign saying Private, on a wooden wall.
 description: The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms. The proposals need your feedback.
 tags:
-  - post
+  - blog
   - privacy
   - security
   - trust and safety

@@ -13,7 +13,7 @@ description: |
     This case study explains how Google increased key ads business metrics by
     optimizing the performance of their third-party ads script with stale-while-revalidate.
 tags:
-  - post
+  - blog
   - case-study
   - performance
   - fast

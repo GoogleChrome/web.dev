@@ -14,7 +14,7 @@ description: |
   Specifying the new None attribute allows you to explicitly mark your cookies
   for cross-site usage.
 tags:
-  - post
+  - blog
   - security
   - cookies
   - chrome80
