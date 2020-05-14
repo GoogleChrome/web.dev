@@ -145,7 +145,7 @@ Once you've added a token to your AppCache manifest, you can visit `chrome://app
 
 ## Testing prior to removal
 
-We strongly encourage you to migrate off of AppCache as soon as is feasible. If you want to test of removing AppCache on your web apps, use the `chrome://flags/#app-cache` [flag](https://www.chromium.org/developers/how-tos/run-chromium-with-flags) to simulate its removal. This flag is available starting with Chrome 84.
+We strongly encourage you to migrate off of AppCache as soon as is feasible. If you want to test removal of AppCache on your web apps, use the `chrome://flags/#app-cache` [flag](https://www.chromium.org/developers/how-tos/run-chromium-with-flags) to simulate its removal. This flag is available starting with Chrome 84.
 
 ## Migration strategies
 
