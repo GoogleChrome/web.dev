@@ -28,7 +28,7 @@
   flex-flow: column wrap;
 
   .w-button--primary {
-    margin: 0 0 16px 0;
+    margin: 0 0 16px;
   }
 
   @include bp(sm) {
@@ -72,7 +72,7 @@
 }
 
 .w-event-heading__subhead {
-  font-family: "Google Sans", sans-serif;
+  font-family: 'Google Sans', sans-serif;
 }
 
 .w-event-section {
@@ -121,13 +121,13 @@
 }
 
 .w-event-section__column-left {
-  flex-grow: 1;
-  padding: 0 16px;
-  width: 100%;
+  align-items: center;
   display: flex;
   flex-flow: column wrap;
-  align-items: center;
+  flex-grow: 1;
+  padding: 0 16px;
   text-align: center;
+  width: 100%;
 
   p {
     max-width: 512px;
@@ -153,11 +153,11 @@
   }
 
   .w-event-section__column-left {
+    align-items: flex-start;
     flex-grow: 0;
     padding-right: 48px;
-    width: 37.5%;
     text-align: inherit;
-    align-items: flex-start;
+    width: 37.5%;
   }
 
   .w-event-section__column-right {
