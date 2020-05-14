@@ -52,7 +52,7 @@ class Feedback extends BaseElement {
             'hidden'}"
         >
           <div class="w-subscribe--padded">
-            <p class="w-text--center w-mt--non">
+            <p class="w-feedback__confirmation w-text--center w-mt--non w-force-focus" tabindex="-1">
               Thank you for the feedback!
             </p>
           </div>
