@@ -153,7 +153,7 @@ app.get('/route', (req, res) => {
 Finally, create your own logic to map this information to device categories, and show the corresponding app install prompt on each case:
 
 ```javascript
-if(isDeviceMidOrLowEnd() {
+if (isDeviceMidOrLowEnd()) {
    // show “Lite app” install banner or PWA A2HS prompt 
 } else {
   // show “Core app” install banner
