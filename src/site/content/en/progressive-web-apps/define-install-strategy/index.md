@@ -111,7 +111,7 @@ On the web, it's possible to obtain device signals and approximately map them to
 
 #### Using JavaScript APIs
 
-Using JavaScript APIs like [navigator.hardwareConcurrency](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency), [navigator.deviceMemory](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deviceMemory) and [navigator.connection](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/connection) you can get information about the device CPU, memory and network status respectively. For example:
+Using JavaScript APIs like [navigator.hardwareConcurrency](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency), [navigator.deviceMemory](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deviceMemory), and [navigator.connection](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/connection) you can get information about the device CPU, memory and network status respectively. For example:
 
 ```javascript
 const deviceCategory = req.get('Device-Memory') < 1 ? 'lite' : 'full';`
