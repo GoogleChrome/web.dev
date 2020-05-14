@@ -1,11 +1,11 @@
 ---
-title: Signin form best practice
-subhead: Use cross-platform browser features to build signin forms that are secure, accessible and easy to use.
+title: Sign-in form best practice
+subhead: Use cross-platform browser features to build sign-in forms that are secure, accessible and easy to use.
 authors:
   - samdutton
 date: 2020-04-24
-updated: 2020-05-04
-description: Use cross-platform browser features to build signin forms that are secure, accessible and easy to use.
+updated: 2020-05-14
+description: Use cross-platform browser features to build sign-in forms that are secure, accessible and easy to use.
 hero: hero.jpg
 alt: Closeup photo of a man holding a phone showing a login page
 thumbnail: thumbnail.jpg
@@ -17,18 +17,17 @@ tags:
   - security
   - trust and safety
 codelabs:
-  - codelab-signup-form
-  - codelab-signin-form
+  - codelab-sign-in-form
 ---
 
 
-If users ever need to log in to your site, then good signin form design is critical.
+If users ever need to log in to your site, then good sign-in form design is critical.
 
 This is especially true for people on poor connections, on mobile, in a hurry, or under stress.
 
-Poorly designed signin forms get high bounce rates. Each bounce means a lost and disgruntled user—not just a missed signin opportunity.
+Poorly designed sign-in forms get high bounce rates. Each bounce means a lost and disgruntled user—not just a missed sign-in opportunity.
 
-[Stats for signup/signin bounce rates.]
+[Stats for sign-up/sign-in bounce rates.]
 
 
 ## Checklist
@@ -36,16 +35,17 @@ Poorly designed signin forms get high bounce rates. Each bounce means a lost and
 * Use meaningful HTML elements: form, input, label and button.
 * Label every input with a &lt;label&gt;.
 * Use element attributes to access built-in browser features: type, name, autocomplete, required, autofocus.
-* Use `name="new-password"` for a signup password input.
-* Use `autocomplete="current-password"` for a signin password input.
+* Use `name="new-password"` for a sign-up password input.
+* Use `autocomplete="current-password"` for a sign-in password input.
+* Don't use autocomplete in a sign-up password input.
 * Provide **Show password** functionality.
 * Use **aria-label** and **aria-describedby** for password inputs.
 * Don't double up email  inputs.
 * Design forms so the mobile keyboard doesn't obscure inputs or buttons.
 * Ensure forms are usable on mobile: legible text, inputs and buttons large enough to work as touch targets.
 * Display links to your Terms of Service and privacy policy documents.
-* Include branding (logo and name) on your signup and signin form pages. 
-* Build page analytics, interaction analytics and user-centric performance measurement into your signup and signin flow.
+* Include branding (logo and name) on your sign-up and sign-in form pages. 
+* Build page analytics, interaction analytics and user-centric performance measurement into your sign-up and sign-in flow.
 * Test across browsers and devices: form behaviour varies significantly across platforms.
 
 
@@ -67,7 +67,7 @@ Use elements built for the job: `<form>`, `<label>` and `<button>`. These enable
 
 You might be tempted to wrap inputs in a `<div>` and handle input data submission purely with JavaScript. It's generally better to use a plain old `<form>`. This makes your site accessible to screenreaders and other assistive devices, and enables a range of built-in browser features (see below).
 
-An HTML form makes it simpler to build basic functional signin for older browsers, and to enable signin even if JavaScript fails.
+An HTML form makes it simpler to build basic functional sign-in for older browsers, and to enable sign-in even if JavaScript fails.
 
 ### Use &lt;label&gt;
 To label an input, use a `<label>`!
@@ -98,9 +98,11 @@ Try out the example at [glitch.com/edit/#!/label-position](https://glitch.com/ed
 
 Use buttons for buttons! Button elements provide accessible behaviour and built-in form submission functionality, and they can easily be styled. There's no point in using a div or some other element pretending do be a button. 
 
-Consider disabling the signin button once the user has tapped or clicked it. [Many users click buttons multiple times](https://baymard.com/blog/users-double-click-online) even on sites that are fast and responsive. That slows down interactions and adds to server load.
+Give the submit button in a sign-up or sign-in form a value that says what it does, such as **Create account** or **Sign in**, not **Submit** or **Start**.
 
-Conversely, don't disable form submission awaiting user input. (For example, don't disable the **Sign in** button if users haven't entered their customer PIN.)  Users may miss out something in the form, then try repeatedly tapping the (disabled) signin button and think it's not working. At the very least, if you must disable form submission, prompt the user when they click on the disabled button to explain what's missing.
+Consider disabling the **Sign in** button once the user has tapped or clicked it. [Many users click buttons multiple times](https://baymard.com/blog/users-double-click-online) even on sites that are fast and responsive. That slows down interactions and adds to server load.
+
+Conversely, don't disable form submission awaiting user input. (For example, don't disable the **Sign in** button if users haven't entered their customer PIN.)  Users may miss out something in the form, then try repeatedly tapping the (disabled) **Sign in** button and think it's not working. At the very least, if you must disable form submission, prompt the user when they click on the disabled button to explain what's missing.
 
 {% Aside 'caution' %}
 The default type for a button in a form is `submit`.
@@ -136,15 +138,15 @@ Add an `autofocus` attribute to the first input in your login form. That makes i
 
 ## Keep passwords private—but enable users to see them if they want
 
-Passwords inputs should have `type="password"` to hide password text. (Sounds obvious, but some sites miss this.)
+Passwords inputs should have `type="password"` to hide password text. 
 
 Using `<input type="password">` also means that browsers such as Firefox offer to save your password when a form is submitted (along with using the `name` and `id` attributes to guess the meaning of form inputs).
 
 However, you should add a **Show password** icon or button to enable users to check the text they've entered—and don't forget to add a **Forgot password** link. (See [Enable password display](#enable-password-display).)
 
 <figure class="w-figure">
-  <img src="./show-password.png" alt="Google signin form showing Show password icon." width="300">
-  <figcaption class="w-figcaption">Google signin form: with <strong>Show password</strong> icon and <strong>Forgot password</strong> link.</figcaption>
+  <img src="./show-password.png" alt="Google sign-in form showing Show password icon." width="300">
+  <figcaption class="w-figcaption">Google sign-in form: with <strong>Show password</strong> icon and <strong>Forgot password</strong> link.</figcaption>
 </figure>
 
 ## Give mobile users the right keyboard
@@ -157,27 +159,27 @@ If you need to use a telephone number instead of an email address, `<input type=
 `type="number"` adds an up/down arrow to increment numbers, so don't use it for numbers that aren't meant to be incremented, such as ID and account numbers.
 {% endAside %}
 
-### Avoid the mobile keyboard covering the Submit button
+### Prevent mobile keyboard from obscuring the "Submit" button
 
 Unfortunately, if you're not careful, mobile keyboards may cover your form or, worse, partially obscure the Submit button. Users may give up before realizing what has happened.
 
 <figure class="w-figure">
-  <img src="./keyboard-not-ok.png" alt="Two screenshots of signin form on an Android phone: one showing how the Submit button is obscured by the phone keyboard." width="400">
-  <figcaption class="w-figcaption">The <strong>Sign in</strong> button: now you see it, now you don't.</figcaption>
+  <img src="./keyboard-not-ok.png" alt="Two screenshots of a sign-in form on an Android phone: one showing how the Submit button is obscured by the phone keyboard." width="400">
+  <figcaption class="w-figcaption">The "Sign in" button: now you see it, now you don't.</figcaption>
 </figure>
 
-Where possible, avoid this by displaying only the email/phone and password inputs and submit button at the top of your signin page. Put other content below.
+Where possible, avoid this by displaying only the email/phone and password inputs and submit button at the top of your sign-in page. Put other content below.
 
 <figure class="w-figure">
-  <img src="./keyboard-ok.png" alt="Screenshot of signin form on an Android phone: the Submit button is not obscured by the phone keyboard." width="200">
-  <figcaption class="w-figcaption">The keyboard doesn't obscure the <strong>Sign in</strong> button.</figcaption>
+  <img src="./keyboard-ok.png" alt="Screenshot of a sign-in form on an Android phone: the Submit button is not obscured by the phone keyboard." width="200">
+  <figcaption class="w-figcaption">The keyboard doesn't obscure the "Sign in" button.</figcaption>
 </figure>
 
 You'll need to test on a range of devices for your target audience, and adjust accordingly.
 
 <figure class="w-figure">
-  <img src="./iphone-keyboard.png" alt="Screenshots of signin form on iPhone 7, 8 and 11. On iPhone 7 and 8 the Submit button is obscured by the phone keyboard, but not on iPhone 11">
-  <figcaption class="w-figcaption">The <strong>Sign in</strong> button: obscured on iPhone 7 and 8, but not on iPhone 11.</figcaption>
+  <img src="./iphone-keyboard.png" alt="Screenshots of a sign-in form on iPhone 7, 8 and 11. On iPhone 7 and 8 the Submit button is obscured by the phone keyboard, but not on iPhone 11">
+  <figcaption class="w-figcaption">The "Sign in" button: obscured on iPhone 7 and 8, but not on iPhone 11.</figcaption>
 </figure>
 
 
@@ -185,8 +187,8 @@ You'll need to test on a range of devices for your target audience, and adjust a
 Some sites (including Amazon and eBay) avoid the problem by asking for email/phone and password on two 'pages'. This approach also simplifies the experience: the user is only tasked with one thing at a time.
 
 <figure class="w-figure">
-  <img src="./amazon-signin-mobile.png" alt="Screenshot of signin form on Amazon website: email/phone and password on two separate 'pages'." width="400">
-  <figcaption class="w-figcaption">Two-stage signin: email or phone, then password.</figcaption>
+  <img src="./amazon-sign-in-mobile.png" alt="Screenshot of a sign-in form on the Amazon website: email/phone and password on two separate 'pages'." width="400">
+  <figcaption class="w-figcaption">Two-stage sign-in: email or phone, then password.</figcaption>
 </figure>
 
 
@@ -200,38 +202,38 @@ There are two parts to this:
 1. The input `name` attribute helps browsers store data for email and other input types for use with `autcomplete`. Some browsers, including Firefox, also take note of the `id` and `type` attributes.
 2. The `autocomplete` attribute enables browsers to autofill inputs using data stored using the `name` attribute.
 
-Remember that you need different behaviour for inputs in signup and signin forms. In particular, passwords shouldn't be autofilled on signup.
+You need different behaviour for password inputs in sign-up and sign-in forms. 
 
-To avoid this problem, use: 
-* `name="new-password"` for the password input in a signup form, or the new password in a change-password form.
-* `name="current-password"` for a signin form, or the old password in a change-password form.
+Don't add autofill to a password input in a sign-up form. The browser may already have a password stored for the site, and autofilling a password doesn't make sense on sign-up: for example, if two people share the same device and one wants to create a new account.
 
-For a signup form, password input code should look like this:
+Use the appropriate password input name to help the browser differentiate between new and current passwords:
+* `name="new-password"` for the password input in a sign-up form, or the new password in a change-password form.
+* `name="current-password"` for the password input in a sign-in form, or the input for the user's old password in a change-password form.
+
+For a sign-up form, code should look like this:
 
 ```html
 <input name="new-password" type="password" …>
 ```
 
-For signin:
+For sign-in:
 
 ```html
 <input name="current-password" type="password" autocomplete="current-password" …>
 ```
 
-Different browsers handle the email autofill and password suggestion somewhat differently, but the effect is much the same.
-
-On Safari on desktop, for example, the password manager is displayed, then biometric authentication (fingerprint or facial recognition) is used if available.
+Different browsers handle email autofill and password suggestion somewhat differently, but the effect is much the same. On Safari on desktop, for example, the password manager is displayed, then biometric authentication (fingerprint or facial recognition) is used if available.
 
 <figure class="w-figure">
-  <img src="./safari-signin-desktop.png" alt="Screenshots of three stages of signin process in Safari on desktop: password manager, biometric authentication, autofill.">
-  <figcaption class="w-figcaption">Signin with autocomplete—no text entry required!</figcaption>
+  <img src="./safari-signin-desktop.png" alt="Screenshots of three stages of sign-in process in Safari on desktop: password manager, biometric authentication, autofill.">
+  <figcaption class="w-figcaption">Sign-in with autocomplete—no text entry required!</figcaption>
 </figure>
 
 Chrome on desktop displays email suggestions depending on what you type, shows the password manager, then autofills the password.
 
 <figure class="w-figure">
-  <img src="./chrome-signin-desktop.png" alt="Screenshots of four stages of signin process in Chrome on desktop: email completion, email suggestion, password manager, autofill on selection.">
-  <figcaption class="w-figcaption">Autocomplete signin flow in Chrome.</figcaption>
+  <img src="./chrome-signin-desktop.png" alt="Screenshots of four stages of sign-in process in Chrome on desktop: email completion, email suggestion, password manager, autofill on selection.">
+  <figcaption class="w-figcaption">Autocomplete sign-in flow in Chrome.</figcaption>
 </figure>
 
 {% Aside 'caution' %}
@@ -248,7 +250,7 @@ For example, as pointed out by [Hidde de Vries](https://hiddedevries.nl/en/blog/
 
 ### Enable the browser to suggest a strong password
 
-Modern browsers suggest a strong password if `autocomplete="new-password"` is included for the password input in a signup form.
+Modern browsers suggest a strong password if `autocomplete="new-password"` is included for the password input in a sign-up form.
 
 Here's how Safari does it on desktop.
 
@@ -288,7 +290,7 @@ No JavaScript required!
 
 The default browser size for just about everything relating to input elements and buttons is too small, especially on mobile. 
 
-This may seem obvious, but it's a common problem with signin forms on many sites.
+This may seem obvious, but it's a common problem with sign-in forms on many sites.
 
 
 ### Make sure inputs and buttons are large enough
@@ -357,7 +359,7 @@ Browsers have built-in features to do basic form validation for inputs with a `t
 Browsers warn when you submit a form with an invalid value, and set focus on the problematic input.
 
 <figure class="w-figure">
-  <img src="./invalid-email.png" alt="Screenshot of a signin form in Chrome on desktop showing browser prompt and focus foor an invalid email value." width="300">
+  <img src="./invalid-email.png" alt="Screenshot of a sign-in form in Chrome on desktop showing browser prompt and focus foor an invalid email value." width="300">
   <figcaption class="w-figcaption">Basic built-in validation by the browser.</figcaption>
 </figure>
 
@@ -378,8 +380,8 @@ input[type=email]:not(:placeholder-shown):invalid {
 You should add a **Show password** icon or button to enable users to check the text they've entered. [Usability suffers](https://www.nngroup.com/articles/stop-password-masking/) when users can't see the text they've entered. Currently there's no built-in way to do this, though [there are plans for implementation](https://twitter.com/sw12/status/1251191795377156099). You'll need to use JavaScript instead: you can see this in action in [step 4](https://glitch.com/edit/#!/signin-form-codelab-4) of the codelab for this article.
 
 <figure class="w-figure">
-  <img src="./show-password-google.png" alt="Google signin form showing Show password icon." width="350" style="border: 1px solid #eee; padding: 20px;">
-  <figcaption class="w-figcaption">Google signin form: with <strong>Show password</strong> icon and <strong>Forgot password</strong> link.</figcaption>
+  <img src="./show-password-google.png" alt="Google sign-in form showing Show password icon." width="350" style="border: 1px solid #eee; padding: 20px;">
+  <figcaption class="w-figcaption">Google sign-in form: with <strong>Show password</strong> icon and <strong>Forgot password</strong> link.</figcaption>
 </figure>
 
 Code to add **Show password** functionality is straightforward. This example uses text, not an icon.
@@ -436,8 +438,8 @@ function togglePassword() {
 Here's the end result:
 
 <figure class="w-figure">
-  <img src="./show-password.png" alt="Screenshots of signin form with Show password text 'button', in Safari on Mac and on iPhone 7." width="800" style="border: 1px solid #999;>
-  <figcaption class="w-figcaption">Signin form with <strong>Show password</strong> text 'button', in Safari on Mac and iPhone 7.</figcaption>
+  <img src="./show-password.png" alt="Screenshots of sign-in form with Show password text 'button', in Safari on Mac and on iPhone 7." width="800" style="border: 1px solid #999;">
+  <figcaption class="w-figcaption">Sign-in form with <strong>Show password</strong> text 'button', in Safari on Mac and iPhone 7.</figcaption>
 </figure>
 
 
@@ -457,7 +459,7 @@ When you add **Show password** functionality, make sure to include an`aria-label
 Warning: this will display your password on the screen.">Show password</button>
 ```
 
-You can see both these `aria` features in action at [glitch.com/#!/signup-form](https://glitch.com/edit/#!/signup-form).
+You can see both these `aria` features in action at [glitch.com/#!/signin-form](https://glitch.com/edit/#!/signin-form).
 
 [Creating Accessible Forms](https://webaim.org/techniques/forms/) has more tips to help make forms accessible.
 
@@ -470,37 +472,37 @@ HTML form elements and attributes have built-in features for basic validation, b
 Client-side validation helps users enter data and can avoid unnecessary server load, but you must always validate and sanitize data on your back-end.
 {% endAside %}
 
-[Step 5](https://glitch.com/edit/#!/signin-form-codelab-5) of the signin form codelab uses the [Constraint Validation API](https://html.spec.whatwg.org/multipage/forms.html#constraints) (which is [widely supported](https://caniuse.com/#search=constraint%20validation)) to add custom validation using built-in browser UI to set focus and display prompts.
+[Step 5](https://glitch.com/edit/#!/signin-form-codelab-5) of the sign-in form codelab uses the [Constraint Validation API](https://html.spec.whatwg.org/multipage/forms.html#constraints) (which is [widely supported](https://caniuse.com/#search=constraint%20validation)) to add custom validation using built-in browser UI to set focus and display prompts.
 
 Find out more: [Use JavaScript for more complex real-time validation](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_javascript_for_more_complex_real-time_validation).
 
 
 ### Analytics and RUM
 
-"What you cannot measure, you cannot improve" is particularly true for signup and signin forms. You need to set goals, measure success, improve your site—and repeat.
+"What you cannot measure, you cannot improve" is particularly true for sign-up and sign-in forms. You need to set goals, measure success, improve your site—and repeat.
 
-[Discount usability testing](https://www.nngroup.com/articles/discount-usability-20-years/) can be helpful for trying out changes, but you'll need real-world data to really understand how your users experience your signup and signin forms:
+[Discount usability testing](https://www.nngroup.com/articles/discount-usability-20-years/) can be helpful for trying out changes, but you'll need real-world data to really understand how your users experience your sign-up and sign-in forms:
 
-* **Page analytics**: including signup and signin page views, bounce rates, and exits.
-* **Interaction analytics**: such as [goal funnels](https://support.google.com/analytics/answer/6180923?hl=en) (where do users abandon your signin or signin flow?) and [events](https://developers.google.com/analytics/devguides/collection/gtagjs/events) (what actions do users take when interacting with your forms?)
-* **Website performance**: [user-centric metrics](/user-centric-performance-metrics) to understand the real experience of your users (are your signup and signin forms slow for some reason and, if so, what is the cause?).
+* **Page analytics**: including sign-up and sign-in page views, bounce rates, and exits.
+* **Interaction analytics**: such as [goal funnels](https://support.google.com/analytics/answer/6180923?hl=en) (where do users abandon your sign-in or sign-in flow?) and [events](https://developers.google.com/analytics/devguides/collection/gtagjs/events) (what actions do users take when interacting with your forms?)
+* **Website performance**: [user-centric metrics](/user-centric-performance-metrics) to understand the real experience of your users (are your sign-up and sign-in forms slow for some reason and, if so, what is the cause?).
 
-You may also want to consider implementing A/B testing in order to try out different approaches to signup and signin, and staged rollouts to 'test the water' before releasing changes to all your users.
+You may also want to consider implementing A/B testing in order to try out different approaches to sign-up and sign-in, and staged rollouts to 'test the water' before releasing changes to all your users.
 
 
 
 ## …and finally
 
-Some general guidelines to help reduce signin form abandonment:
+Some general guidelines to help reduce sign-in form abandonment:
 
-* Don't make users hunt for signin. It's surprising how many sites get this wrong! Put a link to the signin form at the top of the page, using well-understood wording such as **Sign In**, **Create Account** or **Register**.
-* Keep it focused! Signup forms are not the place to distract people with offers and other site features.
-* Minimize signup complexity. Collect other user data (such as addresses or credit card details) only when users see a clear benefit from providing that data.
-* Before users start on your signup form, make it clear what the value proposition is. How do they benefit from signing in? Give users concrete incentives to complete signup.
+* Don't make users hunt for sign-in. It's surprising how many sites get this wrong! Put a link to the sign-in form at the top of the page, using well-understood wording such as **Sign In**, **Create Account** or **Register**.
+* Keep it focused! Sign-up forms are not the place to distract people with offers and other site features.
+* Minimize sign-up complexity. Collect other user data (such as addresses or credit card details) only when users see a clear benefit from providing that data.
+* Before users start on your sign-up form, make it clear what the value proposition is. How do they benefit from signing in? Give users concrete incentives to complete sign-up.
 * If possible allow users to identify themselves with a mobile phone number instead of an email address.
 * Make it easy for users to reset their password, and make the **Forgot your password?** link obvious.
 * Link to your Terms of Service and privacy policy documents: make it clear to users from the start how you safeguard their data.
-* Include the logo and name of your company or organization on your signup and signin pages, and make sure that visual styles match the rest of your site. This may sound obvious, but many sites present users with forms that don't feel like they belong to the same site as other content.
+* Include the logo and name of your company or organization on your sign-up and sign-in pages, and make sure that visual styles match the rest of your site. This may sound obvious, but many sites present users with forms that don't feel like they belong to the same site as other content.
 
 [Something about (re)CAPTCHA?]
 
