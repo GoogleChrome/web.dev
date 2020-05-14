@@ -38,7 +38,7 @@ If the size of this segment is considerable, that's a good indication that you n
 
 ## Promoting the installing of your PWA through the browser
 
-If you have a high quality PWA, it may be better to promote its installation over your native app. For example, if the native app is missing functionality offered by your PWA, or if it hasn't been updated in a while. It can also be helpful to promote installation of your PWA if the native app wasn't optimized for bigger screens, such as on ChromeOS.
+If you have a high quality PWA, it may be better to promote its installation over your native app. For example, if the native app is missing functionality offered by your PWA, or if it hasn't been updated in a while. It can also be helpful to promote installation of your PWA if the native app wasn't optimized for bigger screens, such as on Chrome OS.
 
 For some apps, driving native app installations is a key part of the business model, in that case, it makes business sense to show a native app install promotion. But, some users might be more comfortable staying on the web. If that segment can be identified, the PWA prompt can be shown only to them (what we call "PWA as fallback").
 
