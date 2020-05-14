@@ -202,7 +202,7 @@ Here are some resources for developers migrating from AppCache to service worker
 
 ## Getting help
 
-If you run into an issue using a specific tool, opening an issue in its GitHub repository.
+If you run into an issue using a specific tool, open an issue in its GitHub repository.
 
 You can ask a general question about migrating off of AppCache on [Stack Overflow](https://stackoverflow.com/), using the tag <code>[html5-appcache](https://stackoverflow.com/questions/tagged/html5-appcache)</code>.
 
