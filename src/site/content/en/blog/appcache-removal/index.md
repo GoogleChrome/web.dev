@@ -106,7 +106,7 @@ ORIGIN-TRIAL:
 TOKEN_GOES_HERE
 ```
 
-(There needs to be a new line between `ORIGIN-TRIAL:` and your token.)
+(There needs to be a new line between `ORIGIN-TRIAL` and your token.)
 
 {% Aside %}
 The token for a manifest **must** be in an `ORIGIN-TRIAL:` field of the manifest itself. Unlike an HTML page's token, it can't be provided via an HTTP header.
