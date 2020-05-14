@@ -76,7 +76,7 @@ Then, the heuristic can be implemented in the following way:
 
 ## Promoting the installing of your PWA through an app store
 
-Apps that are available in App stores can be built with different technologies, including PWA techniques. In [this talk](https://www.youtube.com/watch?v=V7YX4cZ_Cto&feature=youtu.be) you can find a summary of the technologies that can be used to that end.
+Apps that are available in App stores can be built with different technologies, including PWA techniques. In [Blending PWA into native environments](https://youtu.be/V7YX4cZ_Cto) you can find a summary of the technologies that can be used to that end.
 
 In this section we'll classify apps in the store in two groups:
 
