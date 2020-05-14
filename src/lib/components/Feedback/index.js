@@ -23,7 +23,7 @@ class Feedback extends BaseElement {
     event.preventDefault();
     const form = new FormData(event.target);
     const formIterable = Array.from(form.entries());
-    if (!formIterable.length) {
+    if (!formIterable.length || this.submitted) {
       return;
     }
 
