@@ -159,7 +159,7 @@ For more complex cases, libraries like [Workbox](https://developers.google.com/w
 
 While working on your migration strategy, please keep in mind that Chrome will disable AppCache functionality on any page that's loaded under the [control](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#scope_and_control) of a service worker. In other words, as soon as you deploy a service worker that controls a given page, you're no longer able to use AppCache on that page.
 
-Because of this, we recommend that you do not attempt to migrate to service workers piece-by-piece. It would be a mistake to deploy a service worker that only contains some of your caching logic. You can not fall back on AppCache to "fill in the gaps."
+Because of this, we recommend that you do not attempt to migrate to service workers piece-by-piece. It would be a mistake to deploy a service worker that only contains some of your caching logic. You cannot fall back on AppCache to "fill in the gaps."
 
 Similarly, if you deploy a service worker prior to AppCache removal, and then discover that you need to roll back to your previous AppCache implementation, you need to ensure that you [unregister](https://stackoverflow.com/a/33705250/385997) that service worker. As long as there's a registered service worker in scope for a given page, AppCache will not be used.
 
