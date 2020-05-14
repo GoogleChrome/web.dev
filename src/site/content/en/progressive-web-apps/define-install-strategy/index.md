@@ -71,7 +71,7 @@ Then, the heuristic can be implemented in the following way:
 1. Show the native app install banner.
 1. If a user dismisses the banner, set a cookie with that information (e.g. `document.cookie = "app-install-banner=dismissed"`).
 1. Use another cookie to track the number of user visits to the site (e.g. `document.cookie = "user-visits=1"`).
-1. Write a function `isPWAUser()`, that uses the information previously stored in the cookies, along with the [`getInstalledRelatedApps()`](https://web.dev/get-installed-related-apps/) API to determine if a user is considered a "PWA user".
+1. Write a function, such as `isPWAUser()`, that uses the information previously stored in the cookies along with the [`getInstalledRelatedApps()`](https://web.dev/get-installed-related-apps/) API to determine if a user is considered a "PWA user".
 1. At the moment when the user performs a meaningful action, call `isPWAUser()`. If the function returns true and the PWA install prompt was saved previously, you can show the PWA install button.
 
 ## Promoting the installing of your PWA through an app store
