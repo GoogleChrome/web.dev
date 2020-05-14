@@ -25,7 +25,7 @@ This guide explores best practices for combining different installation offering
 
 Installed Progressive Web Apps run in a standalone window instead of a browser tab. They're launchable from the user's home screen, dock, taskbar, or shelf. It's possible to search for them on a device and jump between them with the app switcher, making them feel like part of the device they're installed on. 
 
-But having both an installable web app, and a native app can be confusing for users. For some users native apps may be the best choice, but for others they can present some drawbacks:
+But having both an installable web app and a native app can be confusing for users. For some users native apps may be the best choice, but for others they can present some drawbacks:
 
 - **Storage constraints:** Installing a new app might mean deleting others, or cleaning up space, by removing valuable content. This is especially disadvantageous for users on low-end devices.
 - **Available bandwidth:** Downloading an app can be a costly and slow process, even more for users on slow connections and expensive data plans.
