@@ -41,6 +41,7 @@ class Feedback extends BaseElement {
   }
 
   render() {
+    // Because we share CSS with the `app.css` we want this to be in the light DOM
     return html`
       <details class="w-details">
         <summary class="w-details__summary">
