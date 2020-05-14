@@ -7,7 +7,7 @@ import {trackEvent} from '../../analytics';
 import './_styles.scss';
 
 /**
- * Catches feedback submission on posts to submit to Analytics.
+ * Element that handles feedback on posts to submit to Analytics.
  *
  * @extends {BaseElement}
  * @final
