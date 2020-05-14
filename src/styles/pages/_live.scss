@@ -15,6 +15,12 @@
   h2 {
     color: $GREY_900;
   }
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: inherit;
+  }
 }
 
 .w-live-top {
@@ -29,6 +35,10 @@
 
   .w-button--primary {
     margin: 0 0 16px;
+  }
+
+  .w-button:not(.w-button--primary) {
+    color: inherit;
   }
 
   @include bp(sm) {
@@ -57,17 +67,11 @@
     text-indent: -99999px;
   }
 
-  &::after {
-    background: url('../live/live.png');
-    background-position: left 50%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    content: '';
-    display: inline-block;
+  video {
     height: 1em;
     margin-left: .25ch;
-    padding: 2px;
-    width: 2.3em; // 320px by 140px is about ~2.285em
+    pointer-events: none;
+    width: auto;
   }
 }
 
@@ -125,12 +129,12 @@
   display: flex;
   flex-flow: column wrap;
   flex-grow: 1;
-  padding: 0 16px;
+  padding: 0 32px;
   text-align: center;
   width: 100%;
 
   p {
-    max-width: 512px;
+    max-width: 512px - 64px;
   }
 
   h3:first-of-type {
@@ -140,7 +144,7 @@
 
 .w-event-section__column-right {
   max-width: 512px;
-  padding: 0 16px;
+  padding: 0 32px;
 
   h2:first-of-type {
     margin-top: 0;
@@ -155,13 +159,14 @@
   .w-event-section__column-left {
     align-items: flex-start;
     flex-grow: 0;
-    padding-right: 48px;
+    padding-left: 16px;
     text-align: inherit;
     width: 37.5%;
   }
 
   .w-event-section__column-right {
     max-width: none;
+    padding: 0 16px;
     width: 62.5%;
   }
 }
