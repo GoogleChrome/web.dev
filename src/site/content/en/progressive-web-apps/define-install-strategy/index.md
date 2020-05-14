@@ -146,7 +146,7 @@ app.get('/route', (req, res) => {
 
   // Set cookie
   res.setCookie('Device-Category', deviceCategory);
-  ...
+  …
 });
 ```
 
