@@ -19,6 +19,7 @@ async function loadEntrypoint(url) {
   const prefixTo = url.indexOf('/', 1);
   const prefix = url.substring(1, prefixTo === -1 ? url.length : prefixTo);
 
+  // This is a switch as it's easy to see all entrypoints (vs. lots of if/else).
   // We can't dynamically generate the argument to import as Rollup rewrites
   // import() statements as a whole for us.
   switch (prefix) {

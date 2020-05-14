@@ -52,7 +52,8 @@
 }
 
 .w-event-heading {
-  // Intentionally empty for BEM.
+  // We don't use this BEM selector but it's the parent of logo and subhead.
+  // This is the "web.dev LIVE" logo.
 }
 
 .w-event-heading__logo {
