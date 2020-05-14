@@ -92,34 +92,30 @@ Why are we calling this a "reverse" origin trial? Normally, an origin trial allo
 To participate in the "reverse" origin trial:
 
 <ol>
-  <li>
-    <a href="https://developers.chrome.com/origintrials/#/register_trial/1776670052997660673">Request a token</a> for your origin.
-  </li>
-
-  <li>
-    Add the token to your HTML pages. There are <a href="https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md#how-do-i-enable-an-experimental-feature-on-my-origin">two ways</a> to do that:
-
-    <ul>
-      <li>
-        Add an `origin-trial` `<meta>` tag to the head of each page. For example: `<meta http-equiv="origin-trial" content="TOKEN_GOES_HERE">`
-      </li>
-
-      <li>
-        Alternatively, configure your server to return responses containing the `Origin-Trial` HTTP header. The resulting response header should look something like: `Origin-Trial: TOKEN_GOES_HERE`
-      </li>
-    </ul>
-  </li>
-
-  <li>
-    Add the same token to your AppCache manifests. Do this via a new field in your manifest, with the format:
+<li>
+<a href="https://developers.chrome.com/origintrials/#/register_trial/1776670052997660673">Request a token</a> for your origin.
+</li>
+<li>
+Add the token to your HTML pages. There are <a href="https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md#how-do-i-enable-an-experimental-feature-on-my-origin">two ways</a> to do that:
+<ul>
+<li>
+Add an <code>origin-trial</code> <code>&lt;meta&gt;</code> tag to the head of each page. For example: <code>&lt;meta http-equiv="origin-trial" content="TOKEN_GOES_HERE"&gt;</code>
+</li>
+<li>
+Alternatively, configure your server to return responses containing the <code>Origin-Trial</code> HTTP header. The resulting response header should look something like: <code>Origin-Trial: TOKEN_GOES_HERE</code>
+</li>
+</ul>
+</li>
+<li>
+Add the same token to your AppCache manifests. Do this via a new field in your manifest, with the format:
 
 ```text
 ORIGIN-TRIAL:
 TOKEN_GOES_HERE
 ```
 
-    (There needs to be a new line between `ORIGIN-TRIAL` and your token.)
-  </li>
+(There needs to be a new line between `ORIGIN-TRIAL` and your token.)
+</li>
 </ol>
 
 {% Aside %}
