@@ -30,11 +30,10 @@ module.exports = {
           'bitrate',
           'resolution',
           'encryption',
-          'application-cheetsheet',
         ],
       },
       {
-        title: 'Prepare the web page',
+        title: 'Add media to a web page',
         pathItems: [
           'the-video-tag',
           'the-audio-tag',

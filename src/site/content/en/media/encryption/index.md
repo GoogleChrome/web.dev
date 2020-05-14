@@ -4,7 +4,7 @@ title: Encryption
 description: |
   If you plan to enforce copyright on your media, you'll want to encrypt them.
 date: 2017-06-30
-updated: 2020-05-15
+updated: 2020-05-21
 ---
 
 If you plan to enforce copyright on your media, you'll want to encrypt them. I'm

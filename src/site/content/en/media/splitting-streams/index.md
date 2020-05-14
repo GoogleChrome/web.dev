@@ -5,7 +5,7 @@ description: |
   When you package media resources for DASH you'll need to separate the
   video and audio streams.
 date: 2017-06-30
-updated: 2020-05-15
+updated: 2020-05-21
 tags:
   - FFmpeg
   - files

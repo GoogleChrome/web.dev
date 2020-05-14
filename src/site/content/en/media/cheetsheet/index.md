@@ -5,7 +5,7 @@ description: |
   An ordered rundown of commands needed to get from a raw mov file to encrypted
   assets packaged for DASH or HLS.
 date: 2018-09-20
-updated: 2020-05-15
+updated: 2020-05-21
 ---
 
 This document shows in order commands needed to get from a raw mov file to
@@ -14,10 +14,12 @@ illustrate, I'm converting my source file to a bitrate of 8Mbs at a resolution
 of 1080p (1920 x 1080). Adjust these values as your needs dictate.
 
 Conversion is done with two applications:
-[Shaka Packager](https://github.com/google/shaka-packager) and
-[ffmpeg](https://ffmpeg.org/download.html), version 3.2.2-tessus. Although
-I've tried to show equivalent operations for all procedures, not all operations
-are possible in both applications.
+
+* [Shaka Packager](https://github.com/google/shaka-packager) and
+* [ffmpeg](https://ffmpeg.org/download.html), version 3.2.2-tessus.
+
+Although I've tried to show equivalent operations for all procedures, not all
+operations are possible in both applications.
 
 In many cases, commands may be combined in a single command line operation, and
 in actual use would be. For example, there's nothing preventing you from setting
@@ -26,7 +28,7 @@ cheat sheet, I will show these operations (among others) as separate commands
 for the sake of clarity.
 
 Please let me know of useful additions or corrections.
-[Pull requests are welcome](https://github.com/google/WebFundamentals/tree/master/src/content/en/fundamentals/media/manipulating/cheatsheet).
+[Pull requests are welcome](https://github.com/GoogleChrome/web.dev/tree/media/src/site/content/en/media/cheetsheet).
 
 ## Display characteristics
 
@@ -38,21 +40,23 @@ ffmpeg -i myvideo.mp4
 
 Technically, ffmpeg always requires an output file format. Calling ffmpeg this
 way will give you an error message explaining that; however, it lists
-information not available from the Shaka Packager command.
+information not available using Shaka Packager.
 
 ## Demux (split) audio and video
 
-Most of you wouldn't care about this, but Shaka Packager requires demuxing in
-order to convert.
+Shaka Packager requires demuxing when converting files. This is also required
+for using media frameworks.
 
-***mp4/Shaka Packager***
+### Shaka Packager
+
+***mp4***
 
 ```bash
 packager input=myvideo.mp4,stream=video,output=myvideo_video.mp4
 packager input=myvideo.mp4,stream=audio,output=myvideo_audio.m4a
 ```
 
-With Shaka Packager you can combine these.
+Or:
 
 ```bash
 packager \
@@ -60,22 +64,23 @@ packager \
   input=myvideo.mp4,stream=audio,output=myvideo_audio.m4a
 ```
 
-***webm/Shaka Packager***
+***webm***
 
 ```bash
 packager \
   input=myvideo.webm,stream=video,output=myvideo_video.webm \
   input=myvideo.webm,stream=audio,output=myvideo_audio.webm
 ```
+### FFMpeg
 
-***mp4/ffmpeg***
+***mp4***
 
 ```bash
 ffmpeg -i myvideo.mp4 -vcodec copy -an myvideo_video.mp4
 ffmpeg -i myvideo.mp4 -acodec copy -vn myvideo_audio.m4a
 ```
 
-***webm/ffmpeg***
+***webm***
 
 ```bash
 ffmpeg -i myvideo.webm -vcodec copy -an myvideo_video.webm
@@ -106,11 +111,8 @@ ffmpeg -i myvideo.mov myvideo.mp4
 
 ***mov to webm***
 
-When converting a file to webm, ffmpeg doesn't provide the correct aspect
-ratio. Fix this with a filter (`-vf setsar=1:1`).
-
 ```bash
-ffmpeg -i myvideo.mov -vf setsar=1:1 myvideo.webm
+ffmpeg -i myvideo.mov myvideo.webm
 ```
 
 ### Resolution
@@ -130,8 +132,28 @@ ffmpeg -i myvideo.mp4 -keyint_min 150 -g 150 -f webm -vf setsar=1:1 out.webm
 
 ### Codec
 
-You might have an older file whose codec you want to update. The examples below
-change codecs, but do not demux.
+The tables below list common containers and codecs for both audio and video, as
+well as the FFmpeg libary needed for conversion.
+
+#### Video
+
+| Codec | Container | Library    |
+| ----- | --------- | ---------- |
+| av1   | mkv       | libaom-av1 |
+|       | webm      | libaom-av1 |
+| h264  | mp4       | libx264    |
+| vp9   | webm      | libvpx-vp9 |
+
+#### Audio
+
+| Codec  | Container | Library    |
+| ------ | --------- | ---------- |
+| aac    | mp4       | aac        |
+| opus   | webm      | libopus    |
+| vorbis | webm      | libvorbis  |
+
+
+You might have an older file whose codec you want to update.
 
 ***mp4/H.264***
 
