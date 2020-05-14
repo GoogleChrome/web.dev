@@ -136,7 +136,7 @@ GET /main.js HTTP/1.1
 Device-Memory: 0.5
 ```
 
-You can use this information in your backends, to store a cookie with the category of the user's device:
+You can use this information in your backends to store a cookie with the category of the user's device:
 
 ```javascript
 app.get('/route', (req, res) => {
