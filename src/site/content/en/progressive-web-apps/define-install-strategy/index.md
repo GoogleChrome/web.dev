@@ -107,7 +107,7 @@ Oyo kept both the flagship and "lite" app versions in the store, leaving the fin
 
 Intuitively, users on low-end devices, might be more inclined to download lightweight versions of apps than users on high-end phones. Therefore, if it's possible to identify a user's device, one could prioritize the lightweight app install banner over the heavier native app version.
 
-On the web, it's possible to obtain device signals and approximately map them to device categories ("high", "mid", "low"). You can obtain this information in different ways, using either JavaScript APIs or client hints.
+On the web, it's possible to obtain device signals and approximately map them to device categories (e.g. "high", "mid", or "low"). You can obtain this information in different ways, using either JavaScript APIs or client hints.
 
 #### Using JavaScript APIs
 
