@@ -66,7 +66,7 @@ class Feedback extends BaseElement {
             <div class="web-feedback__row">
               <div></div>
               <div id="yes-label">Yes</div>
-              <div>No</div>
+              <div id="no-label">No</div>
             </div>
 
             <div class="web-feedback__row">
