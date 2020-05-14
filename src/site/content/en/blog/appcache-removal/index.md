@@ -151,7 +151,7 @@ We strongly encourage you to migrate off of AppCache as soon as is feasible. If 
 
 Service workers, which are widely supported in current browsers, offer an alternative to the offline experience provided by AppCache.
 
-We've provided a [polyfill library](https://github.com/GoogleChromeLabs/sw-appcache-behavior) that uses a service worker to replicate some of the functionality of AppCache, though it does not replicate the entire AppCache interface. In particular, it does not provide a replacement for the `window.applicationCache` interface or the related AppCache events.
+We've provided a [polyfill](https://github.com/GoogleChromeLabs/sw-appcache-behavior) that uses a service worker to replicate some of the functionality of AppCache, though it does not replicate the entire AppCache interface. In particular, it does not provide a replacement for the `window.applicationCache` interface or the related AppCache events.
 
 For more complex cases, libraries like [Workbox](https://developers.google.com/web/tools/workbox/) provide an easy way to create a modern service worker for your web app.
 
