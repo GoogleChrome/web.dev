@@ -86,7 +86,7 @@ This timeline applies to Chrome on **all platforms other than iOS**. There is al
 The timeline lists two upcoming milestones for removal. Beginning with Chrome 85, AppCache will no longer be available in Chrome by default. Developers who require additional time to migrate off of AppCache can [sign up](https://developers.chrome.com/origintrials/#/register_trial/1776670052997660673) for a "reverse" [origin trial](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md) to extend the availability of AppCache for their web apps. The origin trial will start in Chrome 84 (in advance of the default removal in Chrome 85), and will be active through Chrome 89. Starting with Chrome 90, AppCache will be fully removed for everyone, even those who had signed up for the origin trial.
 
 {% Aside %}
-Why are we calling this a "reverse" origin trial? Normally, an origin trial allows developers to opt-in to early access to new functionality before it has shipped by default in Chrome. In this case, we're allowing developers to opt-in to using legacy technology even after it's been removed from Chrome.
+Why are we calling this a "reverse" origin trial? Normally, an origin trial allows developers to opt-in to early access to new functionality before it has shipped by default in Chrome. In this case, we're allowing developers to opt-in to using legacy technology even after it's been removed from Chrome, but only temporarily.
 {% endAside %}
 
 To participate in the "reverse" origin trial:
