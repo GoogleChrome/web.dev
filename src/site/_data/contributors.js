@@ -411,7 +411,7 @@ const contributors = {
     homepage: 'https://rachelandrew.co.uk/',
     twitter: 'rachelandrew',
     github: 'rachelandrew',
-    glitch: 'rachelandrew'
+    glitch: 'rachelandrew',
   },
   rviscomi: {
     name: {
