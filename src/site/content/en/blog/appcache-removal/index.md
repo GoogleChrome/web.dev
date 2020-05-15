@@ -4,8 +4,9 @@ subhead: Chrome 85 removes support for AppCache by default. Most developers shou
 authors:
   - jeffposnick
 description: Details of Chrome's and other browsers' plans to remove AppCache.
-date: 2020-05-14
-updated: 2020-05-14
+date: 2020-05-18
+updated: 2020-05-18
+scheduled: true
 tags:
   - appcache
   - blog
