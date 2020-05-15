@@ -22,6 +22,10 @@ web-tabs {
   flex: 1;
   flex-direction: column;
 
+  --primary-color: var(--hover-color, #{$SELF_ASSESSMENT_PRIMARY_COLOR});
+  --hover-color: var(--hover-color, #{$SELF_ASSESSMENT_HOVER_COLOR});
+  --active-color: var(--active-color, #{$SELF_ASSESSMENT_ACTIVE_COLOR});
+
   .web-tabs__tablist {
     @include scrollbars();
     border-bottom: 1px solid $GREY_300;
@@ -52,7 +56,7 @@ web-tabs {
   @include hover() {
     .web-tabs__tab:hover,
     .web-tabs__tab:focus {
-      background: $SELF_ASSESSMENT_HOVER_COLOR;
+      background: var(--hover-color);
     }
   }
 
@@ -62,12 +66,12 @@ web-tabs {
   }
 
   .web-tabs__tab:active {
-    background: $SELF_ASSESSMENT_ACTIVE_COLOR;
+    background: var(--active-color);
     box-shadow: none;
   }
 
   .web-tabs__tab[aria-selected="true"] {
-    color: $SELF_ASSESSMENT_PRIMARY_COLOR;
+    color: var(--primary-color);
   }
 
   .web-tabs__tab::after {
@@ -83,7 +87,7 @@ web-tabs {
   }
 
   .web-tabs__tab[aria-selected="true"]::after {
-    background: $SELF_ASSESSMENT_PRIMARY_COLOR;
+    background: var(--primary-color);
   }
 
   .web-tabs__text-label {
