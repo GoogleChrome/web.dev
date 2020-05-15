@@ -122,7 +122,7 @@ TOKEN_GOES_HERE
 The token for a manifest **must** be in an `ORIGIN-TRIAL` field of the manifest itself. Unlike an HTML page's token, it can't be provided via an HTTP header.
 {% endAside %}
 
-You can see a sample project embedded below which demonstrates adding the correct origin trial tokens into both the `index.html` and `manifest.appcache` files.
+You can see a sample project embedded below that demonstrates adding the correct origin trial tokens into both the `index.html` and `manifest.appcache` files.
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe src="https://glitch.com/embed/#!/embed/appcache-reverse-ot?path=manfiest.appcache&attributionHidden=true"
