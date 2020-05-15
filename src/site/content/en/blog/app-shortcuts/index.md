@@ -4,8 +4,8 @@ subhead: App shortcuts give quick access to a handful of common actions that use
 authors:
   - beaufortfrancois
   - jungkees
-date: 2020-05-28
-updated: 2020-05-28
+date: 2020-05-27
+updated: 2020-05-27
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: A photo of an Android phone showing an app shortcuts menu
