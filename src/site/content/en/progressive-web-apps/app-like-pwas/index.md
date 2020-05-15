@@ -56,6 +56,9 @@ and are displayed with all metadata like artwork and descriptions.
   recipe from the <a href="https://developers.google.com/web/tools/workbox">Workbox</a> library.
   Other content can always be stored in the cache, or in IndexedDB. Read the article <a href="https://web.dev/storage-for-the-web/">Storage for the web</a>
   for all details and to know when to use what storage technology.
+  If you have data that should be persistently stored without the risk of being purged when the
+  available amount of memory gets low, you can use
+  <a href="https://web.dev/persistent-storage/">Persistent Storage</a>.
 {% endDetails %}
 
 ## Proactive background downloading
