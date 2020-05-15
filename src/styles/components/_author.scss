@@ -31,10 +31,12 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
   object-fit: cover;
   overflow: hidden;
   width: 64px;
+  min-width: 64px; // prevent from being shrunk
 }
 
 .w-author__image--small {
   height: $AUTHOR_IMAGE_SIZE_SMALL;
+  min-width: $AUTHOR_IMAGE_SIZE_SMALL; // prevent from being shrunk
   width: $AUTHOR_IMAGE_SIZE_SMALL;
 }
 
