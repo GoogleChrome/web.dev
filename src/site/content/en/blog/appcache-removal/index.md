@@ -23,7 +23,9 @@ origin_trial:
 
 Following up on [previous announcements](https://blog.chromium.org/2020/01/appcache-scope-restricted.html), support for [AppCache](https://developer.mozilla.org/docs/Web/HTML/Using_the_application_cache) will be removed from Chrome and other Chromium-based browsers. We encourage developers to migrate off of AppCache now, rather than waiting any longer.
 
-[Service workers](https://developers.google.com/web/fundamentals/primers/service-workers), which are widely supported in current browsers, offer an alternative to providing the offline experience that AppCache had offered.
+[Service workers](https://developers.google.com/web/fundamentals/primers/service-workers), 
+which are widely supported in current browsers, offer an alternative to providing the offline 
+experience that AppCache had offered. See [Migration strategies](#migration-strategies).
 
 ## Timeline
 
