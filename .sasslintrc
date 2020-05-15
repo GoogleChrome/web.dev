@@ -40,7 +40,6 @@
     "no-trailing-whitespace": 2,
     "no-transition-all": 2,
     "placeholder-in-extend": 2,
-    "property-sort-order": 2,
     "pseudo-element": 2,
     "quotes": 2,
     "shorthand-values": 2,
