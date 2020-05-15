@@ -34,7 +34,7 @@ const checkTimezone = () => {
 };
 
 /**
- * Renders code block that can easily be copied.
+ * Renders an event's time in the user's local timezone, including optional duration.
  *
  * @extends {BaseElement}
  * @final
