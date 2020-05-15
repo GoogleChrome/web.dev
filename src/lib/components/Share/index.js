@@ -1,21 +1,24 @@
 /**
- * @fileoverview Element that renders configurable per-page actions.
+ * @fileoverview Element that renders share action.
  */
 
 import {html} from 'lit-element';
 import {BaseElement} from '../BaseElement';
+import {splitPipes} from '../../utils/split-pipes';
 import {isWebShareSupported} from '../../utils/web-share';
 
 /**
- * Renders configurable per-page actions. This is expected to be created by
+ * Renders share action. This is expected to be created by
  * page content.
  *
  * @extends {BaseElement}
  * @final
  */
-class EventShare extends BaseElement {
+export class Share extends BaseElement {
   static get properties() {
     return {
+      // Pipe-seperated handles of authors of this page, including "@" if e.g. a Twitter user
+      authors: {type: String},
       // Whether the Web Share API is supported
       _webShareSupported: {type: Boolean},
     };
@@ -26,6 +29,16 @@ class EventShare extends BaseElement {
     this._webShareSupported = isWebShareSupported();
   }
 
+  onShare(e) {
+    e.preventDefault();
+    window.open(e.target.href, 'share-window', 'width=550,height=235');
+  }
+
+  onTwitterShare(e) {
+    e.preventDefault();
+    window.open(e.target.href, 'share-twitter', 'width=550,height=235');
+  }
+
   onWebShare() {
     navigator.share({
       url: this.shareUrl,
@@ -33,17 +46,25 @@ class EventShare extends BaseElement {
     });
   }
 
-  onShare(e) {
-    e.preventDefault();
-    window.open(e.target.href, 'share-window', 'width=550,height=235');
-  }
-
   get shareUrl() {
     return window.location.href;
   }
 
   get shareText() {
-    return document.title;
+    let authorText = '';
+
+    const authors = splitPipes(this.authors);
+    if (authors.length) {
+      // ListFormat isn't widely supported; feature-detect it first
+      if ('ListFormat' in Intl) {
+        const il = new Intl.ListFormat('en');
+        authorText = ` by ${il.format(authors)}`;
+      } else {
+        authorText = ` by ${authors.join(', ')}`;
+      }
+    }
+
+    return document.title + authorText;
   }
 
   get shareTemplate() {
@@ -82,12 +103,8 @@ class EventShare extends BaseElement {
   }
 
   render() {
-    return html`
-      <div class="w-actions w-actions--inline">
-        ${this.shareTemplate}
-      </div>
-    `;
+    return this.shareTemplate;
   }
 }
 
-customElements.define('web-event-share', EventShare);
+customElements.define('web-share', Share);

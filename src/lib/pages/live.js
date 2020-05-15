@@ -2,7 +2,7 @@
  * @fileoveriew Entrypoint for web.dev LIVE page.
  */
 
-import '../components/EventShare';
+import '../components/Share';
 import '../components/Subscribe';
 import '../components/Tabs';
 
