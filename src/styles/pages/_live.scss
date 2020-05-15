@@ -10,6 +10,7 @@
     @include bp(sm) {
       font-size: 16px;
     }
+
   }
 
   h2 {
@@ -119,6 +120,7 @@
   img {
     max-height: 100%;
     min-width: 560px;
+    object-fit: contain;
   }
 }
 
@@ -152,6 +154,14 @@
     margin-top: 0;
   }
 }
+
+.w-event-share {
+  p,
+  web-event-share {
+    margin-bottom: 12px;
+  }
+}
+
 
 @include bp(md) {
   .w-event-section__column-head {

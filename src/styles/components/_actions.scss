@@ -8,6 +8,9 @@
 //
 // A material floating action button ('FAB').
 //
+// TODO(samthor): This is only used by <web-actions> and <web-event-share>.
+// Merge this CSS inline with those elements, and merge those elements.
+//
 // =============================================================================
 
 $W_FAB_LARGE_RADIUS: 28px;
@@ -20,6 +23,23 @@ $W_FAB_LARGE_RADIUS: 28px;
   position: fixed;
   right: 24px;
   z-index: 100;
+
+  &.w-actions--inline {
+    position: static;
+    z-index: auto;
+
+    .w-actions__fab {
+      box-shadow: initial;
+      transition: box-shadow $TRANSITION_SPEED;
+
+      &:hover {
+        box-shadow:
+          0 2px 4px -1px rgba($BLACK, .2),
+          0 4px 5px 0 rgba($BLACK, .14),
+          0 1px 10px 0 rgba($BLACK, .12);
+      }
+    }
+  }
 }
 
 .w-actions__fab {
