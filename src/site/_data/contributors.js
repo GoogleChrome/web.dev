@@ -1051,6 +1051,22 @@ const contributors = {
     country: 'US',
     org: {
       name: 'Google',
+    }
+  },
+  jungkees: {
+    name: {
+      given: 'Jungkee',
+      family: 'Song',
+    },
+    org: {
+      name: 'Microsoft',
+      unit: 'Edge',
+    },
+    country: 'US',
+    twitter: 'jungkees',
+    github: 'jungkees',
+    description: {
+      en: 'PM on the Microsoft Edge team',
     },
   },
 };
