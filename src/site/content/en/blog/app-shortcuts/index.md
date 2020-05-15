@@ -13,6 +13,7 @@ description: App shortcuts give quick access to a handful of common actions that
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
+  - fugu
   - progressive-web-apps
 ---
 
