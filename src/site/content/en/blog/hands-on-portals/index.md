@@ -286,4 +286,4 @@ Another important thing to know is that Portals can be used in cross-origin navi
 
 ## Feedback welcome
 
-Portals are ready for experimentation in Chrome Canary and via the [origin trial](https://www.chromium.org/blink/origin-trials/portals). Feedback from the community is crucial to the design of new APIs, so please try it out and tell us what you think! You can check the current limitations on the [Chromium bug tracker](https://bugs.chromium.org/p/chromium/issues/detail?id=957836). If you have any feature requests or feedback, please head over to the [WICG GitHub repo](https://github.com/WICG/portals/issues).
+Portals are ready for experimentation in Chrome Canary and via the [origin trial](https://www.chromium.org/blink/origin-trials/portals). Feedback from the community is crucial to the design of new APIs, so please try it out and tell us what you think! If you have any feature requests or feedback, please head over to the [WICG GitHub repo](https://github.com/WICG/portals/issues).
