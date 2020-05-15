@@ -153,6 +153,28 @@
   }
 }
 
+web-tabs.w-event-tabs {
+  --primary-color: #{$WEB_PRIMARY_COLOR};
+  --hover-color: #{$GOOGLE_BLUE_50};
+  --active-color: #{$GOOGLE_BLUE_100};
+}
+
+table.w-event-schedule {
+  // TODO(robdodson): The generic table has `min-width: 512px`, which extends over the side of
+  // small devices.
+  min-width: auto;
+
+  td {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.w-event-schedule__title {
+  width: 60%;
+}
+
+
 @include bp(md) {
   .w-event-section__column-head {
     order: -1;
