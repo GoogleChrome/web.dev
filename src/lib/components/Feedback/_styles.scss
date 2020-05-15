@@ -1,26 +1,30 @@
 @import '../../../styles/settings/colors';
 
-.web-feedback__row {
-  align-items: center;
-  border-bottom: 1px solid $GREY_300;
-  display: grid;
-  font-family: "Google Sans", sans-serif;
-  font-size: .875em;
-  font-weight: 500;
-  grid-template-columns: 2fr 1fr 1fr;
-  line-height: 24px;
+web-feedback {
+  display: block;
 
-  &:first-of-type,
-  &:last-of-type {
-    border-bottom: 0;
-  }
+  .web-feedback__row {
+    align-items: center;
+    border-bottom: 1px solid $GREY_300;
+    display: grid;
+    font-family: "Google Sans", sans-serif;
+    font-size: .875em;
+    font-weight: 500;
+    grid-template-columns: 2fr 1fr 1fr;
+    line-height: 24px;
 
-  /* Center the contents of the 2nd and 3rd columns. */
-  > *:not(:first-child) {
-    justify-self: center;
-  }
+    &:first-of-type,
+    &:last-of-type {
+      border-bottom: 0;
+    }
 
-  > label {
-    padding: 1rem;
+    /* Center the contents of the 2nd and 3rd columns. */
+    > *:not(:first-child) {
+      justify-self: center;
+    }
+
+    > label {
+      padding: 1rem;
+    }
   }
 }

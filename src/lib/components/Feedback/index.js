@@ -39,11 +39,14 @@ class Feedback extends BaseElement {
       });
     });
   }
-updated() {
-    if (this.submitted) {
-      this.querySelector('.w-feedback__confirmation').focus();
+
+  updated() {
+    const confirmationElement = this.querySelector('.w-feedback__confirmation');
+    if (this.submitted && confirmationElement) {
+      confirmationElement.focus();
     }
   }
+
   render() {
     // Because we share CSS with the `app.css` we want this to be in the light DOM
     return html`
@@ -55,11 +58,12 @@ updated() {
           class="w-display--flex w-justify-content--center ${!this.submitted &&
             'hidden'}"
         >
-          <div class="w-subscribe--padded">
-            <p class="w-feedback__confirmation w-text--center w-mt--non w-force-focus" tabindex="-1">
-              Thank you for the feedback!
-            </p>
-          </div>
+          <p
+            class="w-feedback__confirmation w-text--center w-force-focus"
+            tabindex="-1"
+          >
+            Thank you for the feedback!
+          </p>
         </div>
         <form
           class="w-feedback__form ${this.submitted && 'hidden'}"

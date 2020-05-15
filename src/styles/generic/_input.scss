@@ -1,19 +1,5 @@
 @import '../settings/colors';
 
-@keyframes ripple {
-  0% {
-    box-shadow: 0px 0px 0px 1px $WEB_PRIMARY_COLOR_50;
-  }
-
-  50% {
-    box-shadow: 0px 0px 0px 8px $WEB_PRIMARY_COLOR_50;
-  }
-
-  100% {
-    box-shadow: 0px 0px 0px 1px $WEB_PRIMARY_COLOR_50;
-  }
-}
-
 input[type='email'],
 input[type='password'],
 input[type='text'] {
@@ -43,7 +29,6 @@ input[type='radio'] {
   width: 24px;
 
   &:checked {
-    animation: ripple .2s linear;
     background-clip: content-box;
     background-color: $WEB_PRIMARY_COLOR;
     border: 2px solid $WEB_PRIMARY_COLOR;
