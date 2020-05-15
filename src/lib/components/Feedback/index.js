@@ -39,7 +39,11 @@ class Feedback extends BaseElement {
       });
     });
   }
-
+updated() {
+    if (this.submitted) {
+      this.querySelector('.w-feedback__confirmation').focus();
+    }
+  }
   render() {
     // Because we share CSS with the `app.css` we want this to be in the light DOM
     return html`
