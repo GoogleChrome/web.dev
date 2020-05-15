@@ -1,6 +1,6 @@
 ---
 title: Get things done quickly with app shortcuts
-subhead: App shortcuts give quick access to a handful of common actions that users need to do with relative frequency.
+subhead: App shortcuts give quick access to a handful of common actions that users need frequently.
 authors:
   - beaufortfrancois
   - jungkees
@@ -9,7 +9,7 @@ updated: 2020-05-28
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: A photo of an Android phone showing an app shortcuts menu
-description: App shortcuts give quick access to a handful of common actions that users need to do with relative frequency.
+description: App shortcuts give quick access to a handful of common actions that users need frequently.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
@@ -18,10 +18,9 @@ tags:
 
 To improve users' productivity and facilitate re-engagement with key tasks, the
 web platform now supports app shortcuts. They allow web developers to provide
-quick access to a handful of common actions that users need to do with relative
-frequency.
+quick access to a handful of common actions that users need frequently.
 
-{% Aside 'caution' %}
+{% Aside %}
 At the time of writing, app shortcuts are available in Chrome 84 for Android. On
 Windows, you can experiment with them on both Chrome 84 and Edge 84 by enabling
 the flag `about://flags/#enable-desktop-pwas-app-icon-shortcuts-menu`.
@@ -53,10 +52,10 @@ Each app shortcut expresses a user intent, each of which is associated with a
 URL within the [scope] of your web app. The URL is opened when users activate
 the app shortcut. Examples of app shortcuts include the following:
 
-- Top-level navigation items (e.g., home, timeline, recent orders),
-- Search,
-- Data entry tasks (e.g., compose an email or tweet, add a receipt),
-- Activities (e.g., start a chat with the most popular contacts).
+- Top-level navigation items (e.g., home, timeline, recent orders)
+- Search
+- Data entry tasks (e.g., compose an email or tweet, add a receipt)
+- Activities (e.g., start a chat with the most popular contacts)
 
 {% Aside %}
 Big thanks to the folks at Microsoft Edge and Intel for designing and
@@ -70,7 +69,7 @@ Googler, and these contributors deserve special recognition!
 App shortcuts are optionally defined in the [web app manifest], a JSON file that
 tells the browser about your Progressive Web App and how it should behave when
 installed on the user's desktop or mobile device. More specifically, they are
-declared in the `shortcuts` array member of the web app manifest. Below is an
+declared in the `shortcuts` array member. Below is an
 example of a potential web app manifest.
 
 ```json
@@ -102,34 +101,34 @@ Each member of the `shortcuts` array is a dictionary that contains at least a
 
 ### name
 
-The `name` property is the human-readable label for the app shortcut when
+The human-readable label for the app shortcut when
 displayed to the user.
 
 ### short_name (optional)
 
-The `short_name` property is the same as `name`, except it is used where space
-may be limited. It is recommended that you provide it, even though it's
+The human-readable label used where space is limited. It is recommended
+that you provide it, even though it's
 optional.
 
 ### description (optional)
 
-The `description` property is the human-readable purpose for the app shortcut.
+The human-readable purpose for the app shortcut.
 It is not used at the time of writing.
 
 ### url
 
-The `url` property is the URL that is opened when a user activates the app
+The URL opened when a user activates the app
 shortcut. This URL must exist within the scope of the web app manifest. If it is
 a relative URL, the base URL will be the URL of the web app manifest.
 
 ### icons (optional)
 
-The `icons` property is an array of image resource objects. Each object must
+An array of image resource objects. Each object must
 include the `src` and a `sizes` property. The `type` of image is optional.
 
 SVG files are not supported at the time of writing, use PNG instead.
 
-If you prefer to adjust your icons for pixel-perfection, provide icons in
+If you want pixel-perfect icons, provide them in
 increments of 48dp. Otherwise, it is recommended that you use a 192x192 pixels
 icon.
 
@@ -147,7 +146,7 @@ This pane provides a human-readable version of many of your manifest's
 properties, including app shortcuts. It makes it easy to verify that all of the
 shortcut icons, if provided, are loading properly.
 
-{% Aside 'caution' %}
+{% Aside %}
 DevTools support for app shortcuts is available in Chrome 84 and Edge 84 and later.
 {% endAside %}
 
