@@ -141,7 +141,7 @@ If you've participated in origin trials in the past, you might have added the to
 
 Adding the origin trial token to your HTML pages enables the `window.applicationCache` interface from within your web apps. Pages that are not associated with a token won't be able to use `window.applicationCache` methods and events. Pages without a token also won't be able to load resources from the AppCache. Starting with Chrome 85, they will behave as if AppCache did not exist.
 
-Adding the origin trial token to your AppCache manifests indicates that each manifest is still valid. Starting with Chrome 85, any manifests that do not have an `ORIGIN-TRIAL` field will be treated as malformed, and the rules within the manifest will be ignored.
+Adding the origin trial token to your AppCache manifests indicates that each manifest is still valid. Starting with Chrome 85, any manifests that does not have an `ORIGIN-TRIAL` field will be treated as malformed, and the rules within the manifest will be ignored.
 
 ### Origin trial deployment timing and logistics
 
