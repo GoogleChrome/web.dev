@@ -48,7 +48,9 @@ changelog. (**TODO: link to changelog)**. We'll cover the highlights in this art
 
 ## New metrics {: #new-metrics }
 
-![image](lighthouse-new-metrics.png)
+<figure class="w-figure">
+  <img class="w-screenshot" src="lighthouse-new-metrics.png" alt="Lighthouse 6.0 metrics." width="600">
+</figure>
 
 Lighthouse 6.0 introduces three new metrics to the report. Two of these new metrics–Largest
 Contentful Paint (LCP) and Cumulative Layout Shift (CLS)–are lab implementations of [Core Web
