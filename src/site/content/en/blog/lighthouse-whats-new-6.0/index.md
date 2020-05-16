@@ -26,7 +26,7 @@ Canary](https://www.google.com/chrome/canary/). Other Google services that lever
 update by the end of the month. It will land in Chrome Stable in Chrome 84 (mid-July).
 
 To try the Lighthouse Node CLI, use the following commands:  
-```sh
+```bash
 npm install -g lighthouse
 lighthouse https://www.example.com --view
 ```
@@ -436,7 +436,7 @@ The Unused JavaScript audit using source maps to show unused code in specific bu
 These features will be enabled by default in a future version of Lighthouse. For now, you can view
 Lighthouse's experimental audits with the following CLI flag:  
   
-```sh
+```bash
 lighthouse https://web.dev --view --preset experimental
 ```
 
