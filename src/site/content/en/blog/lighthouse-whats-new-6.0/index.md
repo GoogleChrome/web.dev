@@ -247,16 +247,17 @@ dataset](http://httparchive.org/). Excluding sites affected by major implementat
 adjustments to the score curve for individual metrics improved the scores of ~3% of sites and
 decreased the scores of ~4% of sites. ~93% of sites were unaffected by this change.
 
-### Calculator {: #calculator }
+### Scoring Calculator {: #calculator }
 
 We've published a [scoring calculator](https://googlechrome.github.io/lighthouse/scorecalc/) to help
 you explore performance scoring. The calculator also gives you a comparison between version v5 and
 v6 scores. When you run an audit with Lighthouse 6.0, the report comes with a link to the calculator
 with your results populated.
 
-![image](lighthouse-scorecalc.png)
-
-Huge thanks to [Ana Tudor](https://twitter.com/anatudor) for the gauge upgrade!
+<figure class="w-figure">
+  <img class="w-screenshot" src="lighthouse-scorecalc.png" alt="Lighthouse Score Calculator." width="600">
+  <figcaption class="w-figcaption">Huge thanks to <a href="https://twitter.com/anatudor">Ana Tudor</a> for the gauge upgrade!</figcaption>
+</figure>
 
 ## New audits {: #new-audits }
 
@@ -315,11 +316,15 @@ in Lighthouse for detailed analysis.
 Start using Lighthouse CI on your project today by following our
 [getting started guide](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/getting-started.md).
 
-![image](lighthouse-ci-1.png)
-
-![image](lighthouse-ci-2.png)
-
-![image](lighthouse-ci-3.png)
+<figure class="w-figure">
+  <img class="w-screenshot" src="lighthouse-ci-1.png" alt="Lighthouse CI." width="600">
+</figure>
+<figure class="w-figure">
+  <img class="w-screenshot" src="lighthouse-ci-2.png" alt="Lighthouse CI." width="600">
+</figure>
+<figure class="w-figure">
+  <img class="w-screenshot" src="lighthouse-ci-3.png" alt="Lighthouse CI." width="600">
+</figure>
 
 ## Renamed Chrome DevTools panel {: #devtools }
 
@@ -409,12 +414,12 @@ source code and the report will state the exact file and line that's relevant. T
 explore in DevTools, clicking on the locations specified in the report will open the relevant files
 in the **Sources** panel.
 
-<figure>
+<figure class="w-figure">
   <video autoplay loop muted playsinline>
     <source src="./lighthouse-source-location.webm" type="video/webm">
     <source src="./lighthouse-source-location.mp4" type="video/mp4">
   </video>
-  <figcaption>
+  <figcaption class="w-caption">
     DevTools reveals the exact line of code that causes the issue.
   </figcaption>
 </figure>
@@ -429,9 +434,12 @@ Lighthouse has begun experimenting with collecting source maps to power new feat
 -  Treemap visualizations highlighting the modules that require action.
 -  Displaying the original source code for report items with a "source location".
 
-![image](lighthouse-sourcemaps-unusedjs.png)
-
-The Unused JavaScript audit using source maps to show unused code in specific bundled modules
+<figure class="w-figure">
+  <img class="w-screenshot" src="lighthouse-sourcemaps-unusedjs.png" alt="Unused JavaScript showing modules from source maps." width="600">
+  <figcaption class="w-caption">
+    The Unused JavaScript audit using source maps to show unused code in specific bundled modules.
+  </figcaption>
+</figure>
 
 These features will be enabled by default in a future version of Lighthouse. For now, you can view
 Lighthouse's experimental audits with the following CLI flag:  
@@ -453,7 +461,7 @@ What can you do next?
 -  Get [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci#lighthouse-ci) running with
    your project.
 -  Review the [Lighthouse audit documentation](https://web.dev/learn/#lighthouse).
--  Have fun making the web better! 
+-  Have fun making the web better!
 
 We're passionate about the web and we love working with the developer community to build tooling to
 help improve the web. Lighthouse is an open source project and we extend a huge thanks to all the
