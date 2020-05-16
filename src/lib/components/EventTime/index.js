@@ -78,6 +78,7 @@ class EventTime extends BaseElement {
       if (this.datetime) {
         const d = new Date(Date.parse(this.datetime));
         if (+d) {
+          // +d checks the validity of the parsed date (0 if invalid).
           this._date = d;
         }
       }
@@ -89,7 +90,7 @@ class EventTime extends BaseElement {
   render() {
     if (!this._date) {
       return html`
-        <time>?</time>
+        <!-- Invalid time "${this.datetime || ''}" -->
       `;
     }
 
@@ -109,20 +110,20 @@ class EventTime extends BaseElement {
 
     return html`
       <time datetime=${this._date.toISOString()}>
-        <div class="et-date-feat">
-          <div class="et-date-feat__month">
+        <div class="date">
+          <div class="date__month">
             ${months[this._date.getMonth()]}
           </div>
-          <div class="et-date-feat__day">
+          <div class="date__day">
             ${this._date.getDate()}
           </div>
         </div>
-        <div class="et-time-feat">
-          <div class="et-time-feat__value">
+        <div class="time">
+          <div class="time__value">
             ${format(this._date, {hour: 'numeric', minute: '2-digit'})}
             ${durationPart}
           </div>
-          <div class="et-time-feat__timezone">
+          <div class="time__timezone">
             ${options.timeZoneName || options.timeZone || 'Local Time'}
           </div>
         </div>

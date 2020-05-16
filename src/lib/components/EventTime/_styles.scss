@@ -6,7 +6,7 @@ web-event-time {
     display: flex;
   }
 
-  .et-date-feat {
+  .date {
     text-align: left;
     align-items: center;
     display: flex;
@@ -16,21 +16,21 @@ web-event-time {
     width: 68px;
   }
 
-  .et-date-feat__month {
+  .date__month {
     text-transform: uppercase;
   }
 
-  .et-date-feat__day {
+  .date__day {
     font-size: 44px;
     line-height: 1;
     text-transform: uppercase;
   }
 
-  .et-time-feat {
+  .time {
     text-align: left;
   }
 
-  .et-time-feat__timezone {
+  .time__timezone {
     color: $GREY_500;
   }
 }

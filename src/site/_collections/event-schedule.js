@@ -34,10 +34,18 @@ module.exports = () => {
   };
 
   // This updates the raw event data with links to the relevant contributor.
-  for (const {sessions} of data) {
-    for (const session of sessions) {
+  for (const day of data) {
+    for (const session of day.sessions) {
       session.info =
         contributors[session.speaker] || buildFallback(session.speaker);
+    }
+
+    // ... and parses the JS date of the start time.
+    day.date = new Date(Date.parse(day.when)) || null;
+    if (!day.date) {
+      throw new TypeError(
+        `each conference day needs a valid date, source: ${day.when}`,
+      );
     }
   }
 
