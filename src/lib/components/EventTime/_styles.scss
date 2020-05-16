@@ -7,13 +7,13 @@ web-event-time {
   }
 
   .date {
-    text-align: left;
     align-items: center;
     display: flex;
     flex-flow: column;
     font-family: 'Google Sans', sans-serif;
     padding: 16px;
-    width: 68px;
+    text-align: left;
+    width: 80px;
   }
 
   .date__month {
