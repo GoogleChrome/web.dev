@@ -35,6 +35,8 @@ module.exports = (collections) => {
   };
 
   const renderDay = (day) => {
+    // nb. prettyDate is used as a fallback if the `web-event-time` Web Component doesn't wake up
+    // and render a fancy timestamp in the user's local time.
     return html`
       <div data-label="${day.title}">
         <div class="w-event-section__schedule_header">

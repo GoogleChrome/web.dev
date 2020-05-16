@@ -25,13 +25,17 @@ const connected = new Set();
 let timezoneCheckInterval = 0;
 let previous = 0;
 
-const checkTimezone = () => {
+/**
+ * This runs every ten minutes while any `web-event-time` element exists on the page. It checks for
+ * the rare but frustrating case where a user's timezone changes while the page is open.
+ */
+function checkTimezone() {
   const now = new Date().getTimezoneOffset();
   if (now !== previous) {
     previous = now;
     connected.forEach((node) => node.requestUpdate());
   }
-};
+}
 
 /**
  * Renders an event's time in the user's local timezone, including optional duration.
