@@ -7,8 +7,8 @@ description: |
   The Idle Detection API notifies developers when a user is idle, indicating such things as lack of
   interaction with the keyboard, mouse, screen, activation of a screensaver, locking of the screen,
   or moving to a different screen. A developer-defined threshold triggers the notification.
-date: 2020-05-11
-updated: 2020-05-11
+date: 2020-05-18
+updated: 2020-05-18
 tags:
   - post
   - idle-detection
@@ -17,7 +17,7 @@ tags:
 hero: hero.jpg #https://images.unsplash.com/photo-1544239265-ee5eedde5469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1900&q=80
 alt: Abandoned computer on a bed with someone's leg next to it.
 origin_trial:
-  url: TODO
+  url: https://developers.chrome.com/origintrials/#/view_trial/551690954352885761
 ---
 {% Aside %}
 The Idle Detection API is part of the
@@ -261,4 +261,4 @@ The hero image is by [Fernando Hernandez](https://unsplash.com/@_ferh97) on
 [blink-component]: https://chromestatus.com/features#component%3ABlink%3EInput
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
-[ot]: ToDo
+[ot]: https://developers.chrome.com/origintrials/#/view_trial/551690954352885761
