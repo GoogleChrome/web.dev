@@ -18,8 +18,6 @@ permalink: "/{{lang}}/{{page.fileSlug}}/index.html"
         <div class="w-authors w-mt--xl w-pt--sm">
           {% for author in authors %}
             {% Author {
-              post: page,
-              author: contributors[author],
               id: author,
               showSocialMedia: true}
             %}

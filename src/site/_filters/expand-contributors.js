@@ -14,6 +14,6 @@ module.exports = (contributorSlugs = []) => {
       return `@${profile.twitter}`;
     }
 
-    return `${profile.name.given} ${profile.name.family}`;
+    return profile.title;
   });
 };

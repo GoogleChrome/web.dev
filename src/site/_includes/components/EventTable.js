@@ -14,26 +14,18 @@
  * limitations under the License.
  */
 
-// const path = require('path');
 const {html} = require('common-tags');
-// const prettyDate = require('../../_filters/pretty-date');
-// const stripLanguage = require('../../_filters/strip-language');
-// const md = require('../../_filters/md');
-// const constants = require('../../_utils/constants');
-// const getSrcsetRange = require('../../_utils/get-srcset-range');
-// const postTags = require('../../_data/postTags');
 
 const Author = require('./Author');
 
 module.exports = (collections) => {
   const schedule = collections.eventSchedule;
 
-  // TODO(MichaelSolati): "Author" needs a post but doesn't use it, we pass an empty object.
-  const renderSession = ({speaker, info, title}) => {
+  const renderSession = ({speaker, title}) => {
     return html`
       <tr>
         <td class="w-event-schedule__speaker">
-          ${Author({post: {}, author: info, id: speaker, small: true})}
+          ${Author({id: speaker, small: true})}
         </td>
         <td class="w-event-schedule__session">${title}</td>
       </tr>

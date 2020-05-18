@@ -982,7 +982,15 @@ const processedContributors = {};
 
 Object.keys(contributors).forEach((key) => {
   const contributorData = contributors[key];
-  const title = contributorData.name.given + ' ' + contributorData.name.family;
+
+  // Generate the contributor's name out of valid given/family parts. This
+  // allows our authors to just have a single name.
+  const parts = [
+    contributorData.name.given,
+    contributorData.name.family,
+  ].filter((s) => s && s.length);
+  const title = parts.join(' ');
+
   const description =
     contributorData.description && contributorData.description.en
       ? contributorData.description.en
