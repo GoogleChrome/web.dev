@@ -555,7 +555,7 @@ but Chrome DevTools has a built-in feature that makes it easy to see how a page 
 under different breakpoints.
 
 <figure class="w-figure">
-  <img src="./devtools-large.png" alt="Screenshot of DevTools with our weather app open and a width of 822 pixels selected.">
+  <img class="w-screenshot" src="./devtools-large.png" alt="Screenshot of DevTools with our weather app open and a width of 822 pixels selected.">
   <figcaption class="w-figcaption">
     DevTools showing the weather app as it looks at a wider viewport size.
   </figcaption>
