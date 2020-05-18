@@ -508,7 +508,7 @@ consider adding a breakpoint.
 </figure>
 
 <figure class="w-figure">
-  <img src="./readability-wide.png" alt="Screenshot of a a page of text on a desktop browser">
+  <img class="w-screenshot" src="./readability-wide.png" alt="Screenshot of a a page of text on a desktop browser">
   <figcaption class="w-figcaption">
     The text as read on a desktop browser with a breakpoint added to constrain the line length.
   </figcaption>
