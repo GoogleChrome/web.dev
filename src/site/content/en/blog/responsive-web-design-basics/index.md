@@ -412,7 +412,7 @@ and the forecast simply doesn't look as good.
 The decision is somewhat subjective, but above `600px` is certainly too wide.
 
 <figure class="w-figure">
-  <img src="./weather-2-2x.png" width="400" alt="Screenshot of a weather app with wide gaps between items">
+  <img class="w-screenshot" src="./weather-2-2x.png" width="400" alt="Screenshot of a weather app with wide gaps between items">
   <figcaption class="w-figcaption">
     The app at a point where we feel we should tweak the design.
   </figcaption>
