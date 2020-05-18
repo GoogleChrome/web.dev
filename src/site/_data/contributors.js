@@ -987,7 +987,7 @@ const contributors = {
     },
     country: 'US',
     twitter: 'cjamcl',
-    github: 'cjamcl',
+    github: 'connorjclark',
   },
 };
 
