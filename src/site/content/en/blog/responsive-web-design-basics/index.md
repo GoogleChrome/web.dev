@@ -562,7 +562,7 @@ under different breakpoints.
 </figure>
 
 <figure class="w-figure">
-  <img src="./devtools-small.png" alt="Screenshot of DevTools with our weather app open and a width of 436 pixels selected.">
+  <img class="w-screenshot" src="./devtools-small.png" alt="Screenshot of DevTools with our weather app open and a width of 436 pixels selected.">
   <figcaption class="w-figcaption">
     DevTools showing the weather app as it looks at a narrower viewport size.
   </figcaption>
