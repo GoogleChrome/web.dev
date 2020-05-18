@@ -66,7 +66,7 @@ captures the very beginning of the loading experience. LCP provides a signal to 
 quickly a user is actually able to see the content of a page. An LCP score below 2.5 seconds is
 considered 'Good.'
 
-For more information, [watch this deep-dive on LCP](https://youtu.be/diAc65p15ag) by Paul Irish:
+For more information, [watch this deep-dive on LCP](https://youtu.be/diAc65p15ag) by Paul Irish.
 
 ### Cumulative Layout Shift (CLS) {: #cls }
 
@@ -78,7 +78,7 @@ considered 'Good.'
 CLS in a lab environment is measured through the end of page load. Whereas in the field, you can
 measure CLS up to the first user interaction or including all user input.
 
-For more information, [watch this deep-dive on CLS](https://youtu.be/zIJuY-JCjqw) by Annie Sullivan:
+For more information, [watch this deep-dive on CLS](https://youtu.be/zIJuY-JCjqw) by Annie Sullivan.
 
 ### Total Blocking Time (TBT) {: #tbt }
 
