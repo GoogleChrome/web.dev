@@ -501,7 +501,7 @@ Thus, each time the width of a text block grows past about 10 words,
 consider adding a breakpoint.
 
 <figure class="w-figure">
-  <img src="./readability-narrow.png" width="400" alt="Screenshot of a a page of text on a mobile device">
+  <img class="w-screenshot" src="./readability-narrow.png" width="400" alt="Screenshot of a a page of text on a mobile device">
   <figcaption class="w-figcaption">
     The text as read on a mobile device.
   </figcaption>
