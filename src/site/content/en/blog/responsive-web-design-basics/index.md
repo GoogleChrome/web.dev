@@ -141,7 +141,7 @@ so that you will never have a problem with images causing a scrollbar.
 
 ```css
 img {
-  max-width: 100%:
+  max-width: 100%;
   display: block;
 }
 ```
