@@ -311,14 +311,28 @@ in Lighthouse for detailed analysis.
 Start using Lighthouse CI on your project today by following our
 [getting started guide](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/getting-started.md).
 
-<figure class="w-figure">
-  <img class="w-screenshot" src="lighthouse-ci-1.png" alt="Lighthouse CI." width="600">
+<style>
+@media (min-width: 865px) {
+  .w-figure--inline-left {
+    margin: 0 20px 40px 0;
+  }
+}
+</style>
+
+<figure class="w-figure w-figure--inline-left">
+  <a href="lighthouse-ci-1.png" target="_blank">
+    <img class="w-screenshot" src="lighthouse-ci-1.png" alt="Lighthouse CI." width="600">
+  </a>
+</figure>
+<figure class="w-figure w-figure--inline-left">
+  <a href="lighthouse-ci-2.png" target="_blank">
+    <img class="w-screenshot" src="lighthouse-ci-2.png" alt="Lighthouse CI." width="600">
+  </a>
 </figure>
 <figure class="w-figure">
-  <img class="w-screenshot" src="lighthouse-ci-2.png" alt="Lighthouse CI." width="600">
-</figure>
-<figure class="w-figure">
-  <img class="w-screenshot" src="lighthouse-ci-3.png" alt="Lighthouse CI." width="600">
+  <a href="lighthouse-ci-3.png" target="_blank">
+    <img class="w-screenshot" src="lighthouse-ci-3.png" alt="Lighthouse CI." width="600">
+  </a>
 </figure>
 
 ## Renamed Chrome DevTools panel {: #devtools }
