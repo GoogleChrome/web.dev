@@ -356,8 +356,8 @@ the tab to change the order.
 To quickly reveal the panel with the [Command
 menu](https://developers.google.com/web/tools/chrome-devtools/command-menu): 
 
-1. {% Instruction 'devtools' %}
-1. {% Instruction 'devtools-command', 'ol' %}
+1. {% Instruction 'devtools', 'none' %}
+1. {% Instruction 'devtools-command', 'none' %}
 1. Start typing "Lighthouse".
 1. Press `Enter`.
 
