@@ -14,4 +14,4 @@ jobs:
     name: Do not merge
     runs-on: ubuntu-latest
     steps:
-      - run: ${{ contains(github.event.pull_request.labels.*.name, 'DO NOT MERGE') && ::set-failed }}
+      - run: ${{ contains(github.event.pull_request.labels.*.name, 'DO NOT MERGE') && echo '::set-failed' }}
