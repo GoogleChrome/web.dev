@@ -221,8 +221,6 @@ Some highlights of scoring changes between Lighthouse versions 5 and 6:
    are the go-to metrics for interactivity now.
 -  CLS's weight is relatively low, though we expect to increase it in a future major version.
 
-**TODO(cjamcl)**: Make two images for v5/v6 scoring weights.
-
 ### Shifts in scores {: #score-shifts }
 
 How do these changes affect the scores of real sites? We have published an
