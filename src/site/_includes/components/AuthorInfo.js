@@ -18,16 +18,10 @@ const {html} = require('common-tags');
 
 /* eslint-disable require-jsdoc */
 
-module.exports = ({post, author, id, showSocialMedia = false}) => {
-  if (!post) {
-    throw new Error(`Can't generate AuthorInfo without post object`);
-  }
-
+module.exports = ({author, id, showSocialMedia = false}) => {
   if (!author) {
     throw new Error(`Can't generate AuthorInfo without author object`);
   }
-
-  const fullName = `${author.name.given} ${author.name.family}`;
 
   function renderTwitter({twitter}) {
     return html`
@@ -83,7 +77,7 @@ module.exports = ({post, author, id, showSocialMedia = false}) => {
       style="display: flex; flex-direction: column; justify-content: center;"
     >
       <cite class="w-author__name">
-        <a class="w-author__name-link" href="/authors/${id}">${fullName}</a>
+        <a class="w-author__name-link" href="/authors/${id}">${author.title}</a>
       </cite>
       ${showSocialMedia && renderSocialMedia(author)}
     </div>
