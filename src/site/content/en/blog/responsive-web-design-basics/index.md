@@ -68,14 +68,14 @@ content to match different screen sizes, whether rendered on a small mobile
 phone or a large desktop monitor.
 
 <figure class="w-figure">
-  <img src="./without-vp-meta.png" width="440" alt="Screenshot of a page with the text hard to read as it is very zoomed out">
+  <img src="./without-vp-meta.png" width="500" alt="Screenshot of a page with the text hard to read as it is very zoomed out">
   <figcaption class="w-figcaption">
     An example of how the page loads in a device without the viewport meta tag. <a href="https://without-vp-meta.glitch.me/">See this example on Glitch</a>.
   </figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img src="./with-vp-meta.png" width="440" alt="Screenshot of the same page with the text at a size that can be read">
+  <img src="./with-vp-meta.png" width="500" alt="Screenshot of the same page with the text at a size that can be read">
   <figcaption class="w-figcaption">
     An example of how the page loads in a device with the viewport meta tag. <a href="https://with-vp-meta.glitch.me/">See this example on Glitch</a>.
   </figcaption>
@@ -501,14 +501,14 @@ Thus, each time the width of a text block grows past about 10 words,
 consider adding a breakpoint.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./readability-narrow.png" width="400" alt="Screenshot of a a page of text on a mobile device">
+  <img class="w-screenshot" src="./readability-narrow.jpg" width="400" alt="Screenshot of a a page of text on a mobile device">
   <figcaption class="w-figcaption">
     The text as read on a mobile device.
   </figcaption>
 </figure>
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./readability-wide.png" alt="Screenshot of a a page of text on a desktop browser">
+  <img class="w-screenshot" src="./readability-wide.jpg" alt="Screenshot of a a page of text on a desktop browser">
   <figcaption class="w-figcaption">
     The text as read on a desktop browser with a breakpoint added to constrain the line length.
   </figcaption>
