@@ -31,8 +31,9 @@ npm install -g lighthouse
 lighthouse https://www.example.com --view
 ```
 
-This version of Lighthouse comes with a large number of changes that are all listed in the
-changelog. (**TODO: link to changelog)**. We'll cover the highlights in this article.
+This version of Lighthouse comes with a large number of changes that are
+[listed in the 6.0 changelog](https://github.com/GoogleChrome/lighthouse/releases/tag/v6.0.0). We'll cover
+the highlights in this article.
 
 - [New metrics](#new-metrics)
 - [Performance score update](#score)
