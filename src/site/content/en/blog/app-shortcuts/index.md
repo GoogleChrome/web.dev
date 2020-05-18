@@ -7,7 +7,6 @@ authors:
 date: 2020-05-27
 updated: 2020-05-27
 hero: hero.jpg
-thumbnail: thumbnail.jpg
 alt: A photo of an Android phone showing an app shortcuts menu
 description: App shortcuts give quick access to a handful of common actions that users need frequently.
 tags:
@@ -42,7 +41,7 @@ The app shortcuts menu is invoked by right-clicking the app icon in the taskbar
 launcher icon on Android.
 
 <figure class="w-figure">
-  <img src="./app-shortcuts-menu-android.png" alt="Screenshot of an app shortcuts menu opened on Android">
+  <img class="w-screenshot" src="./app-shortcuts-menu-android.png" alt="Screenshot of an app shortcuts menu opened on Android">
   <figcaption class="w-figcaption">App shortcuts menu opened on Android</figcaption>
 </figure>
 
@@ -173,7 +172,7 @@ shortcuts menu. Use distinct names for each app shortcut.
 ### Measure app shortcuts usage
 
 You should annotate app shortcuts `url` entries like you would do with
-`start_url` for analytics purposes (.e.g. `url:
+`start_url` for analytics purposes (e.g. `url:
 "/my-shortcut?utm_source=homescreen"`).
 
 ## Browser support
