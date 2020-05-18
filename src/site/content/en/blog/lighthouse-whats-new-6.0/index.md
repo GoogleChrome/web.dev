@@ -376,16 +376,16 @@ Instead of running Lighthouse locally, the extension now uses the [PageSpeed Ins
 API](https://developers.google.com/speed/docs/insights/v5/get-started). We recognize that this will
 not be a sufficient replacement for some of our users. These are the key differences:
 
--  Pagespeed Insights is unable to audit non-public websites, since it is run via a remote
+-  PageSpeed Insights is unable to audit non-public websites, since it is run via a remote
    server and not your local Chrome instance. 
    -  If you need to audit a non-public website, use the DevTools Lighthouse panel, or the
       Node CLI.
 
--  Pagespeed Insights is not guaranteed to use the latest Lighthouse version.
-   -  If you want to use the latest Lighthouse version, use the Node CLI. The browser
+-  PageSpeed Insights is not guaranteed to use the latest Lighthouse release.
+   -  If you want to use the latest release, use the Node CLI. The browser
       extension will get the update ~1-2 weeks after release.
 
--  Pagespeed Insights is a Google API, using it constitutes accepting the Google API Terms of
+-  PageSpeed Insights is a Google API, using it constitutes accepting the Google API Terms of
    Service.
    -  If you do not wish to/cannot accept the terms of service, use the DevTools Lighthouse
       panel, or the Node CLI.
