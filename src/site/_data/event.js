@@ -21,7 +21,8 @@
 module.exports = [
   {
     title: 'Day 1',
-    from: Date.UTC(2020, 5, 30, 16), // 4pm UTC = 9am PST
+    when: '2020-06-30T16:00Z',
+    duration: 8,
     sessions: [
       {
         speaker: 'addyosmani',
@@ -35,7 +36,8 @@ module.exports = [
   },
   {
     title: 'Day 2',
-    from: Date.UTC(2020, 5, 30, 16), // 4pm UTC = 9am PST
+    when: '2020-07-01T16:00Z',
+    duration: 8,
     sessions: [
       {
         speaker: 'samthor',
@@ -45,7 +47,8 @@ module.exports = [
   },
   {
     title: 'Day 3',
-    from: Date.UTC(2020, 6, 2, 16), // 4pm UTC = 9am PST
+    when: '2020-07-02T16:00Z',
+    duration: 8,
     sessions: [],
   },
 ];

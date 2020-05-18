@@ -14,14 +14,8 @@
  * limitations under the License.
  */
 
-// const path = require('path');
 const {html} = require('common-tags');
-// const prettyDate = require('../../_filters/pretty-date');
-// const stripLanguage = require('../../_filters/strip-language');
-// const md = require('../../_filters/md');
-// const constants = require('../../_utils/constants');
-// const getSrcsetRange = require('../../_utils/get-srcset-range');
-// const postTags = require('../../_data/postTags');
+const prettyDate = require('../../_filters/pretty-date');
 
 const Author = require('./Author');
 
@@ -40,16 +34,22 @@ module.exports = (collections) => {
     `;
   };
 
-  const renderDay = ({title, sessions}) => {
+  const renderDay = (day) => {
+    // nb. prettyDate is used as a fallback if the `web-event-time` Web Component doesn't wake up
+    // and render a fancy timestamp in the user's local time.
     return html`
-      <div data-label="${title}">
+      <div data-label="${day.title}">
         <div class="w-event-section__schedule_header">
-          <web-event-time></web-event-time>
+          <web-event-time
+            datetime="${day.date.toISOString()}"
+            duration="${day.duration}"
+            >${prettyDate(day.date)}</web-event-time
+          >
         </div>
 
         <table class="w-event-schedule">
           <tbody>
-            ${sessions.map(renderSession)}
+            ${day.sessions.map(renderSession)}
           </tbody>
         </table>
       </div>
