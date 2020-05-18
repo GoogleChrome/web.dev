@@ -16,6 +16,8 @@ tags:
  - ux
 ---
 
+{# TODO(kayce): Remove this hard-coded ToC once #1983 lands. #}
+
 * [Set the viewport](#viewport)
 * [Size content to the viewport](#size-content)
 * [Use CSS media queries for responsiveness](#media-queries)
