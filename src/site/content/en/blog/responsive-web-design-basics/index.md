@@ -83,7 +83,7 @@ phone or a large desktop monitor.
 
 [Some browsers](https://css-tricks.com/probably-use-initial-scale1/)
 keep the page's width constant when rotating to landscape
-mode, and zoom rather than reflow to fill the screen. Adding the attribute
+mode, and zoom rather than reflow to fill the screen. Adding the value
 `initial-scale=1` instructs browsers to establish a 1:1 relationship between CSS
 pixels and device-independent pixels regardless of device orientation, and
 allows the page to take advantage of the full landscape width.
