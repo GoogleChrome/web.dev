@@ -56,7 +56,7 @@ module.exports = (collections) => {
   };
 
   return html`
-    <web-tabs class="w-event-tabs">
+    <web-tabs class="w-event-tabs" label="schedule">
       ${schedule.map(renderDay)}
     </web-tabs>
   `;

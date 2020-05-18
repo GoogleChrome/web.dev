@@ -216,7 +216,6 @@ module.exports = function(config) {
   config.addPairedShortcode('CompareCaption', CompareCaption);
   config.addPairedShortcode('Details', Details);
   config.addPairedShortcode('DetailsSummary', DetailsSummary);
-  config.addShortcode('EventTable', EventTable);
   config.addShortcode('Hero', Hero);
   config.addShortcode('Instruction', Instruction);
   config.addPairedShortcode('Label', Label);
@@ -226,6 +225,10 @@ module.exports = function(config) {
   config.addShortcode('SignPosts', SignPosts);
   config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('YouTube', YouTube);
+
+  // This table is used for the web.dev/LIVE event, and should be taken down
+  // when the event is over or we no longer use it.
+  config.addShortcode('EventTable', EventTable);
 
   // ----------------------------------------------------------------------------
   // TRANSFORMS
