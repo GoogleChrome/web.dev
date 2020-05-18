@@ -113,7 +113,8 @@ optional.
 ### description (optional)
 
 The human-readable purpose for the app shortcut.
-It is not used at the time of writing.
+It is not used at the time of writing but may be exposed to assistive technology
+in the future.
 
 ### url
 
