@@ -337,7 +337,7 @@ Start using Lighthouse CI on your project today by following our
 
 ## Renamed Chrome DevTools panel {: #devtools }
 
-We've renamed the `Audits` panel to the `Lighthouse` panel. Enough said!
+We've renamed the **Audits** panel to the **Lighthouse** panel. Enough said!
 
 Depending on your DevTools window size, the panel is probably behind the `»` button. You can drag
 the tab to change the order.
@@ -378,7 +378,7 @@ As of Chrome 81, Moto G4 is also available in the Chrome DevTools device emulati
 The
 [Chrome extension for Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk)
 has been a convenient way to run Lighthouse locally. Unfortunately, it was complicated to support.
-We felt that because the Chrome DevTools Lighthouse panel is a better experience (the report
+We felt that because the Chrome DevTools **Lighthouse** panel is a better experience (the report
 integrates with other panels), we could reduce our engineering overhead by simplifying the Chrome
 extension.
 
@@ -388,11 +388,11 @@ not be a sufficient replacement for some of our users. These are the key differe
 
 -  PageSpeed Insights is unable to audit non-public websites, since it is run via a remote
    server and not your local Chrome instance. If you need to audit a non-public website, use
-   the DevTools Lighthouse panel, or the Node CLI.
+   the DevTools **Lighthouse** panel, or the Node CLI.
 -  PageSpeed Insights is not guaranteed to use the latest Lighthouse release. If you want to use
    the latest release, use the Node CLI. The browser extension will get the update ~1-2 weeks after release.
 -  PageSpeed Insights is a Google API, using it constitutes accepting the Google API Terms of
-   Service. If you do not wish to/cannot accept the terms of service, use the DevTools Lighthouse panel,
+   Service. If you do not wish to or cannot accept the terms of service, use the DevTools **Lighthouse** panel,
    or the Node CLI.
 
 The good news is that simplifying the product story allowed us to focus on other engineering
@@ -460,7 +460,7 @@ websites.
 
 What can you do next?
 
--  Open Chrome Canary and give the Lighthouse panel a go.
+-  Open Chrome Canary and give the **Lighthouse** panel a go.
 -  Use the Node CLI: `npm install -g lighthouse && lighthouse https://yoursite.com --view`.
 -  Get [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci#lighthouse-ci) running with
    your project.
