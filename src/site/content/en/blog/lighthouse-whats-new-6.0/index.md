@@ -259,8 +259,8 @@ with your results populated.
 ### Unused JavaScript {: #unused-javascript }
 
 We are leveraging [DevTools code
-coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) in a new audit: [Unused
-JavaScript](https://web.dev/remove-unused-code/).
+coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) in a new audit: [**Unused
+JavaScript**](https://web.dev/remove-unused-code/).
 
 This audit isn't _entirely_ new: it was [added in
 mid-2017](https://github.com/GoogleChrome/lighthouse/issues/1852#issuecomment-306900595), but
