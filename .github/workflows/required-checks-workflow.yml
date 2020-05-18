@@ -1,5 +1,7 @@
 name: Required checks
 
+# Run this check any time a PR is opened, synchronized, reopened,
+# labeled or unlabeled.
 on:
   pull_request:
     types: [opened, synchronize, reopened, labeled, unlabeled]
