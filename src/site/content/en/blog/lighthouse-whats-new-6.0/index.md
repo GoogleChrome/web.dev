@@ -96,7 +96,16 @@ The [performance score in Lighthouse](https://web.dev/performance-scoring/) is c
 weighted blend of multiple metrics to summarize a page's speed. The 6.0 performance score formula
 follows.
 
-<table>
+<style>
+.lh-table {
+  min-width: unset;
+}
+.lh-table td {
+  min-width: unset;
+}
+</style>
+
+<table class="lh-table">
 <thead>
 <tr>
 <th><strong>Phase</strong></th>
@@ -144,7 +153,7 @@ emphasize main thread interactivity and layout predictability.
 
 For comparison, here is version 5 scoring:
 
-<table>
+<table class="lh-table">
 <thead>
 <tr>
 <th><strong>Phase</strong></th>
@@ -185,6 +194,8 @@ For comparison, here is version 5 scoring:
 </tr>
 </tbody>
 </table>
+
+![Lighthouse scoring changes between versions 5 and 6.](lighthouse-weight-changes.png)
 
 Some highlights of scoring changes between Lighthouse versions 5 and 6:
 
