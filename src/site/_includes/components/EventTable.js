@@ -19,9 +19,11 @@ const prettyDate = require('../../_filters/pretty-date');
 
 const Author = require('./Author');
 
-module.exports = (collections) => {
-  const schedule = collections.eventSchedule;
-
+/**
+ * @param {!Array<{title: string, from: !Date, sessions: !Array}>} event
+ * @return {string}
+ */
+module.exports = (event) => {
   const renderSession = ({speaker, title}) => {
     return html`
       <tr>
@@ -57,7 +59,7 @@ module.exports = (collections) => {
 
   return html`
     <web-tabs class="w-event-tabs" label="schedule">
-      ${schedule.map(renderDay)}
+      ${event.map(renderDay)}
     </web-tabs>
   `;
 };

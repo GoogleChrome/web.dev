@@ -18,7 +18,7 @@
  * @fileoverview Contains event data for web.dev/LIVE.
  */
 
-module.exports = [
+const eventData = [
   {
     title: 'Day 1',
     when: '2020-06-30T16:00Z',
@@ -52,3 +52,5 @@ module.exports = [
     sessions: [],
   },
 ];
+
+module.exports = eventData;
