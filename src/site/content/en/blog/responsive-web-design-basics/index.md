@@ -166,7 +166,7 @@ Once the viewport becomes smaller than the total width of the columns, we have t
 to see the content.
 
 <figure class="w-figure">
-  <img src="./fixed-width-layout.jpg" alt="Screenshot of a two-column layout with most of the second column outside the viewport">
+  <img class="w-screenshot" src="./fixed-width-layout.jpg" alt="Screenshot of a two-column layout with most of the second column outside the viewport">
   <figcaption class="w-figcaption">
     A floated layout using pixels. <a href="https://layout-floats-px.glitch.me/">See this example on Glitch</a>.
   </figcaption>
