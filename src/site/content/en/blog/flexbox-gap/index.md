@@ -7,8 +7,6 @@ authors:
 description: The CSS `gap` property is coming to Chromium's CSS Flexbox and Multi-Column layout engines. 
 date: 2020-05-07
 updated: 2020-05-18
-tags:
-  - blog
 hero: hero.jpg
 alt: A brick wall with gaps.
 ---
