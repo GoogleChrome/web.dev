@@ -23,7 +23,7 @@ Insights](https://developers.google.com/speed/pagespeed/insights/).
 
 Lighthouse 6.0 is available immediately on npm and in [Chrome
 Canary](https://www.google.com/chrome/canary/). Other Google services that leverage Lighthouse will
-update by the end of the month. It will land in Chrome Stable in Chrome 84 (mid-July).
+get the update by the end of the month. It will land in Chrome Stable in Chrome 84 (mid-July).
 
 To try the Lighthouse Node CLI, use the following commands:  
 ```bash
@@ -190,7 +190,7 @@ For comparison, here is version 5 scoring:
 </tbody>
 </table>
 
-Some highlights of scoring changes between v5 and v6:
+Some highlights of scoring changes between Lighthouse versions 5 and 6:
 
 -  **TTI's weight has been reduced from 33% to 15%**. This was in direct response to user
    feedback about TTI variability, as well as inconsistencies in metric optimizations leading to
@@ -227,33 +227,30 @@ scores, ~30% have hardly any change, and ~50% see a decrease of at least five po
 
 The score changes can be broken down into three primary components:
 
-1. Score weight changes
-1. Bug fixes to underlying metric implementations
-1. Individual score curve changes
+- score weight changes
+- bug fixes to underlying metric implementations
+- individual score curve changes
 
 Score weight changes and the introduction of three new metrics drove a majority of overall score
-changes. New metrics that developers have yet to optimize for carry significant weight in the v6
-performance score. While the average performance score of the test corpus in v5 was ~50, the average
-scores on the new Total Blocking Time and Largest Contentful Paint metrics were in the 30s. Together
-those two metrics account for 50% of the weight in the v6 performance score, so naturally a large
-percentage of sites saw decreases.
+changes. New metrics that developers have yet to optimize for carry significant weight in the version 6
+performance score. While the average performance score of the test corpus in version 5 was around 50, the average scores on the new Total Blocking Time and Largest Contentful Paint metrics were around 30. Together those two metrics account for 50% of the weight in the Lighthouse version 6 performance score, so naturally a large percentage of sites saw decreases.
 
 Bug fixes to the underlying metric computation can result in different scores. This affects
-relatively few sites but can have sizable impacts in certain situations. Overall, ~8% of sites
-experienced a score improvement due to metric implementation changes and ~4% of sites saw a score
-decrease due to metric implementation changes. ~88% of sites were unaffected by these fixes. 
+relatively few sites but can have sizable impact in certain situations. Overall, about 8% of sites
+experienced a score improvement due to metric implementation changes and about 4% of sites saw a score
+decrease due to metric implementation changes. Approximately 88% of sites were unaffected by these fixes. 
 
 Individual score curve changes also impacted the overall score shifts although very slightly. We
 periodically ensure that the score curve aligns with the observed metrics in the [HTTPArchive
 dataset](http://httparchive.org/). Excluding sites affected by major implementation changes, minor
-adjustments to the score curve for individual metrics improved the scores of ~3% of sites and
-decreased the scores of ~4% of sites. ~93% of sites were unaffected by this change.
+adjustments to the score curve for individual metrics improved the scores of about 3% of sites and
+decreased the scores of about 4% of sites. Approximately 93% of sites were unaffected by this change.
 
-### Scoring Calculator {: #calculator }
+### Scoring calculator {: #calculator }
 
 We've published a [scoring calculator](https://googlechrome.github.io/lighthouse/scorecalc/) to help
-you explore performance scoring. The calculator also gives you a comparison between version v5 and
-v6 scores. When you run an audit with Lighthouse 6.0, the report comes with a link to the calculator
+you explore performance scoring. The calculator also gives you a comparison between Lighthouse version 5 and
+6 scores. When you run an audit with Lighthouse 6.0, the report comes with a link to the calculator
 with your results populated.
 
 <figure class="w-figure">
@@ -278,7 +275,7 @@ it by default.
 ### Accessibility audits {: #a11y }
 
 Lighthouse uses the wonderful [axe-core](https://github.com/dequelabs/axe-core) library to power the
-accessibility category. For 6.0, we've added the following audits:
+accessibility category. In Lighthouse 6.0, we've added the following audits:
 
 -  [aria-hidden-body](https://web.dev/aria-hidden-body/)
 -  [aria-hidden-focus](https://web.dev/aria-hidden-focus/)
@@ -330,16 +327,16 @@ Start using Lighthouse CI on your project today by following our
 
 ## Renamed Chrome DevTools panel {: #devtools }
 
-We've renamed the Audits panel to the Lighthouse panel. Enough said!
+We've renamed the `Audits` panel to the `Lighthouse` panel. Enough said!
 
-Depending on your DevTools window size, the panel is probably behind the "»" button. You can drag
+Depending on your DevTools window size, the panel is probably behind the `»` button. You can drag
 the tab to change the order.
 
 To quickly reveal the panel with the [Command
 menu](https://developers.google.com/web/tools/chrome-devtools/command-menu): 
 
-1. Press {% Instruction 'devtools' %} to open DevTools.
-1. Press {% Instruction 'devtools-command', 'ol' %} to open the **Command** menu.
+1. {% Instruction 'devtools' %}
+1. {% Instruction 'devtools-command', 'ol' %}
 1. Start typing "Lighthouse".
 1. Press `Enter`.
 
@@ -353,18 +350,18 @@ configuration in Lighthouse applies mobile emulation. The emulation consists of:
    [Lantern](https://github.com/GoogleChrome/lighthouse/blob/master/docs/lantern.md)).
 -  Device screen emulation (the same found in Chrome DevTools).
 
-Since the beginning, Lighthouse has used a Nexus 5X as its reference device. In recent years, most
+Since the beginning, Lighthouse has used Nexus 5X as its reference device. In recent years, most
 performance engineers have been using Moto G4 for testing purposes. Now Lighthouse is following suit
-and has changed its reference device to the Moto G4. In practice, this change is not very noticable,
+and has changed its reference device to Moto G4. In practice, this change is not very noticeable,
 but here are all the changes detectable by a webpage:
 
 -  Screen size is changed from 412x660 px to 360x640 px.
--  The useragent changes slightly, just the device portion (previously "`Nexus 5 Build/MRA58N`"
-   will now be `"Moto G (4)"`.
+-  The user agent string is changed slightly, the device portion that was previously `Nexus 5 Build/MRA58N`
+   will now be `Moto G (4)`.
 
-As of Chrome 81, Moto G4 is available in the Chrome DevTools device emulation list.
+As of Chrome 81, Moto G4 is also available in the Chrome DevTools device emulation list.
 
-![image](lighthouse-motog4.png)
+![Chrome DevTools device emulation list with Moto G4 included.](lighthouse-motog4.png)
 
 ## Browser extension {: #extension }
 
@@ -470,4 +467,4 @@ help improve the web. Lighthouse is an open source project and we extend a huge 
 contributors helping out with everything from typo fixes to documentation refactors to brand new
 audits.
 [Interested in contributing?](https://github.com/GoogleChrome/lighthouse/blob/master/CONTRIBUTING.md)
-Swing by the [GitHub repo](https://github.com/GoogleChrome/lighthouse).
+Swing by the [Lighthouse GitHub repo](https://github.com/GoogleChrome/lighthouse).
