@@ -2,7 +2,7 @@
 title: "What's New in Lighthouse 6.0"
 authors:
   - cjamcl
-date: 2020-05-18
+date: 2020-05-19
 hero: lighthouse-logo.svg
 alt: Lighthouse logo.
 tags:
