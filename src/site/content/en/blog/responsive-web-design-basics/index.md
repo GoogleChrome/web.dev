@@ -401,7 +401,7 @@ Let's work through the example we saw at the beginning: the weather forecast.
 The first step is to make the forecast look good on a small screen.
 
 <figure class="w-figure">
-  <img src="./weather-1-2x.png" width="400" alt="Screenshot of a weather app at a mobile width">
+  <img class="w-screenshot" src="./weather-1-2x.png" width="400" alt="Screenshot of a weather app at a mobile width">
   <figcaption class="w-figcaption">
     The app at a narrow width.
   </figcaption>
