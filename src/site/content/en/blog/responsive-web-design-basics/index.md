@@ -30,8 +30,7 @@ Responsive web design, originally defined by [Ethan Marcotte in A List Apart](ht
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="resize.webm" type="video/webm; codecs=vp8">
-    <source src="resize.mp4" type="video/mp4; codecs=h264">
+    <source src="https://storage.googleapis.com/web-dev-assets/responsive-web-design-basics/resize.mp4" type="video/mp4">
   </video>
 </figure>
 
