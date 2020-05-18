@@ -17,7 +17,7 @@ alt: A brick wall with gaps.
 Please excuse our dirty laundry. You are seeing this page so that links are not
 broken. 
 
-A technical error has causeed this article to be pulbished before it was clear
+A technical error has caused this article to be published before it was clear
 which version of Chrome Flexbox `gap` is shipping in. We expect it to land
 sometime in the next few versions of Chrome. Watch this space for details.
 {% endBanner %}
