@@ -14,7 +14,6 @@ tags:
  - layout
  - mobile
  - ux
-draft: true
 ---
 
 * [Set the viewport](#viewport)
@@ -576,4 +575,3 @@ to display your breakpoints as colored bars above your page.
 
 Click on one of the bars to view your page while that media query is active.
 Right-click on a bar to jump to the media query's definition.
-
