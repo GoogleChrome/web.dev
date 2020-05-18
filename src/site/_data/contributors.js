@@ -976,6 +976,83 @@ const contributors = {
     twitter: 'domenic',
     github: 'domenic',
   },
+  paullewis: {
+    name: {
+      given: 'Paul',
+      family: 'Lewis',
+    },
+    twitter: 'aerotwist',
+    country: 'UK',
+    org: {
+      name: 'Google',
+    },
+  },
+  patrickkettner: {
+    name: {
+      given: 'Patrick',
+      family: 'Kettner',
+    },
+    twitter: 'patrickkettner',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
+  sebabenz: {
+    name: {
+      given: 'Sebastian',
+      family: 'Benz',
+    },
+    twitter: 'sebabenz',
+    country: 'DE',
+    org: {
+      name: 'Google',
+    },
+  },
+  syg: {
+    name: {
+      given: 'Shu-yu',
+      family: 'Guo',
+    },
+    twiter: '_shu',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
+  nattestad: {
+    name: {
+      given: 'Thomas',
+      family: 'Nattestad',
+    },
+    twiter: 'fractorious',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
+  maudn: {
+    name: {
+      given: 'Maud',
+      family: 'Nalpas',
+    },
+    twitter: 'maudnals',
+    country: 'DE',
+    org: {
+      name: 'Google',
+    },
+  },
+  morss: {
+    name: {
+      given: 'Ben',
+      family: 'Morss',
+    },
+    twitter: 'benmorss',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
 };
 
 const processedContributors = {};
