@@ -17,7 +17,7 @@ how much will it grow my business, what is technically feasible?
 
 To shape your digital strategy, several stakeholders are often involved: the
 product manager and CMO are co-owners of the business impact of each feature,
-the CTO assess the feasibility and reliability of a technology, the UX
+the CTO assesses the feasibility and reliability of a technology, the UX
 Researchers validate that a feature answers a real customer issue.
 
 This article aims to help you answer those three questions and shape your
@@ -45,12 +45,12 @@ When doing user research, we find some interesting patterns:
   less than 1MB).
 * Smartphone users are more likely to purchase from mobile sites that
   [offer relevant recommendations][twg-purchase] on products, and 85% of
-  smartphone users say mobile notifications are useful.
+  smartphone users say [mobile notifications are useful][twg-notifications].
 
 According to those observations, we found out that customers prefer
 experiences that are fast, installable, reliable, and engaging (F.I.R.E.)!
 
-## PWAs leverages modern web capabilities {: #modern-capabilities }
+## PWAs leverage modern web capabilities {: #modern-capabilities }
 
 PWAs provide a set of best practices and modern web APIs that are aimed at
 meeting your customers' needs by making your site fast, installable, reliable,
@@ -305,6 +305,7 @@ measure precisely how much extra money your PWA generated.
 [twg-uninstall]: https://www.thinkwithgoogle.com/data/why-users-uninstall-travel-apps/
 [twg-purchase]: https://www.thinkwithgoogle.com/data/smartphone-mobile-app-and-site-purchase-data/
 [twg-trivago]: https://www.thinkwithgoogle.com/intl/en-154/insights-inspiration/case-studies/trivago-embrace-progressive-web-apps-as-the-future-of-mobile/
+[twg-notifications]: https://www.thinkwithgoogle.com/data/smartphone-user-notification-preferences/
 [not-ux-bp]: https://developers.google.com/web/fundamentals/push-notifications/permission-ux
 [dgc-web-push]: https://developers.google.com/web/fundamentals/push-notifications/
 [carrefour-45x]: https://useinsider.com/case-studies/carrefour/

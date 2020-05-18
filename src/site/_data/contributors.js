@@ -131,6 +131,9 @@ const contributors = {
       name: 'Google',
       unit: 'Mobile Solutions Consultant',
     },
+    twitter: 'SebFourault',
+    github: 'krustydaclown',
+    homepage: 'https://medium.com/@sebFourault',
     country: 'FR',
   },
   tomgreenaway: {
