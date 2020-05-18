@@ -551,8 +551,8 @@ to determine if they can go outside or not.
 Once you've got your media query breakpoints set up,
 you'll want to see how your site looks with them.
 You could resize your browser window to trigger the breakpoints,
-but there's a better way: Chrome DevTools.
-The two screenshots below demonstrate using DevTools to view how a page looks under different breakpoints.
+but Chrome DevTools has a built-in feature that makes it easy to see how a page looks
+under different breakpoints.
 
 <figure class="w-figure">
   <img src="./devtools-large.png" alt="Screenshot of DevTools with our weather app open and a width of 822 pixels selected.">
