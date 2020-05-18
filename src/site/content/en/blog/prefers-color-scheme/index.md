@@ -363,7 +363,7 @@ The exact details of `color-scheme` are specified in
 
 {% Aside 'note' %}
   🌒 Read up more on
-  [what `color-scheme` actually does](color-scheme).
+  [what `color-scheme` actually does](/color-scheme).
 {% endAside %}
 
 Everything else is then just a matter of defining CSS variables
