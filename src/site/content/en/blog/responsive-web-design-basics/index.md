@@ -88,8 +88,10 @@ mode, and zoom rather than reflow to fill the screen. Adding the value
 pixels and device-independent pixels regardless of device orientation, and
 allows the page to take advantage of the full landscape width.
 
-Note: To ensure that older browsers can properly parse the attributes,
-use a comma to separate attributes.
+{% Aside 'caution' %}
+  To ensure that older browsers can properly parse the attributes,
+  use a comma to separate attributes.
+{% endAside %}
 
 The [Does not have a `<meta name="viewport">` tag with `width` or `initial-scale`](/viewport/)
 Lighthouse audit can help you automate the process of making sure that your HTML documents are using the viewport meta tag correctly.
