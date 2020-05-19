@@ -10,7 +10,7 @@ description: |
 date: 2020-05-18
 updated: 2020-05-19
 tags:
-  - post
+  - blog
   - idle-detection
   - fugu
   - capabilities
