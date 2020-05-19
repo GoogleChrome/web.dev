@@ -976,6 +976,19 @@ const contributors = {
     twitter: 'domenic',
     github: 'domenic',
   },
+  cjamcl: {
+    name: {
+      given: 'Connor',
+      family: 'Clark',
+    },
+    org: {
+      name: 'Google',
+      unit: 'Connor is a software engineer working on Lighthouse',
+    },
+    country: 'US',
+    twitter: 'cjamcl',
+    github: 'connorjclark',
+  },
   paullewis: {
     name: {
       given: 'Paul',
