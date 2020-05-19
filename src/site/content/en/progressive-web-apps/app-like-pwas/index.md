@@ -255,6 +255,8 @@ A more subtle thing but that is self-evident for a native application like Podca
   By leveraging the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/user-select"><code>user-select</code></a>
   CSS property with the value of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/user-select#Syntax:~:text=none,-The"><code>none</code></a>,
   you can protect UI elements from being accidentally selected.
+  Be sure, though, to not abuse this property for making *app contents* unselectable,
+  it should only be used for UI elements like button texts, etc.
   The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#<generic-name>:~:text=system%2Dui,-Glyphs"><code>system-ui</code></a>
   value for the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family"><code>font-family</code></a> CSS property allows you to
   specify the default UI font of the system to be used for your app, whatever it may be in the concrete case.
