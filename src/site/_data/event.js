@@ -18,7 +18,7 @@
  * @fileoverview Contains event data for web.dev/LIVE.
  */
 
-module.exports = [
+const eventData = [
   {
     title: 'Day 1',
     when: '2020-06-30T16:00Z',
@@ -183,3 +183,12 @@ module.exports = [
     ],
   },
 ];
+
+// Include parsed Date objects for each day.
+for (const day of eventData) {
+  // nb. We specify dates with a "Z" suffix, which effectively means 'parse in
+  // UTC'.
+  day.date = new Date(day.when);
+}
+
+module.exports = eventData;

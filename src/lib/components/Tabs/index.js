@@ -54,7 +54,11 @@ class Tabs extends BaseElement {
     }
 
     return html`
-      <div class="web-tabs__tablist" role="tablist" aria-label="${this.label}">
+      <div
+        class="web-tabs__tablist"
+        role="tablist"
+        aria-label="${this.label || 'tabs'}"
+      >
         ${this.tabs}
       </div>
       ${this.prerenderedChildren}
