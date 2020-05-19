@@ -409,13 +409,31 @@ choose a payment app, shipping options and delivery address, and payer's contact
 information. After pressing the "Continue" button in the Payment Request UI, the
 selected payment app is launched.
 
-![](skip-the-sheet.png)
+<figure class="w-figure">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/payments/without-skip-the-sheet.webm" type="video/webm">
+    <source src="https://storage.googleapis.com/web-dev-assets/payments/without-skip-the-sheet2.mp4" type="video/mp4">
+  </video>
+  <figcaption class="w-figcaption">
+    Payment Request UI intervenes before launching the payment app.
+  </figcaption>
+</figure>
 
 Showing the Payment Request UI before launching a payment app increases the
 number of steps needed for a user to fulfill a payment. To optimize the process,
 the browser can delegate fulfillment of that information to payment apps and
 launch a payment app directly without showing the Payment Request UI when
 `.show()` is called.
+
+<figure class="w-figure">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet.webm" type="video/webm">
+    <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet2.mp4" type="video/mp4">
+  </video>
+  <figcaption class="w-figcaption">
+    Skip the Payment Request UI and launch the payment app directly. 
+  </figcaption>
+</figure>
 
 To launch a payment app directly, the following conditions must be met:
 - `.show()` is triggered with a user gesture (for example, a mouse click).
