@@ -430,8 +430,8 @@ in the **Sources** panel.
 
 <figure class="w-figure">
   <video autoplay loop muted playsinline>
-    <source src="./lighthouse-source-location.webm" type="video/webm">
-    <source src="./lighthouse-source-location.mp4" type="video/mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/lighthouse-whats-new-6.0/lighthouse-source-location.webm" type="video/webm">
+    <source src="https://storage.googleapis.com/web-dev-assets/lighthouse-whats-new-6.0/lighthouse-source-location.mp4" type="video/mp4">
   </video>
   <figcaption class="w-caption">
     DevTools reveals the exact line of code that causes the issue.
