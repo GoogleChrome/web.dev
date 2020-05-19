@@ -53,4 +53,11 @@ const eventData = [
   },
 ];
 
+// Include parsed Date objects for each day.
+for (const day of eventData) {
+  // nb. We specify dates with a "Z" suffix, which effectively means 'parse in
+  // UTC'.
+  day.date = new Date(day.when);
+}
+
 module.exports = eventData;
