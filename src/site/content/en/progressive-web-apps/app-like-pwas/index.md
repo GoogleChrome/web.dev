@@ -424,6 +424,297 @@ A quick search for "podcast", "podcasts", or "apple podcasts" immediately turns 
   which you can use without touching the command line.
 {% endDetails %}
 
+## Feature summary
+
+The table below shows a compact overview of all features and provides a list of useful resources for realizing them on the web.
+
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Useful resources for doing this on the web</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Capable of running offline</td>
+        <td>
+          <ul>
+            <li>
+              <a href="https://developers.google.com/web/fundamentals/architecture/app-shell"
+                >App shell model</a
+              >
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Offline content available and media playable</td>
+        <td>
+          <ul>
+            <li>
+              <a
+                href="https://developers.google.com/web/tools/workbox/guides/advanced-recipes#cached-av"
+                >Serve cached audio and video</a
+              >
+            </li>
+            <li><a href="https://developers.google.com/web/tools/workbox">Workbox library</a></li>
+            <li><a href="https://web.dev/storage-for-the-web/">Storage API</a></li>
+            <li><a href="https://web.dev/persistent-storage/">Persistent Storage API</a></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Proactive background downloading</td>
+        <td>
+          <ul>
+            <li>
+              <a href="https://developers.google.com/web/updates/2018/12/background-fetch"
+                >Background Fetch API</a
+              >
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Sharing to and interacting with other applications</td>
+        <td>
+          <ul>
+            <li><a href="https://web.dev/web-share/">Web Share API</a></li>
+            <li><a href="https://web.dev/web-share-target/">Web Share Target API</a></li>
+            <li>
+              <a href="https://web.dev/image-support-for-async-clipboard/">Async Clipboard API</a>
+            </li>
+            <li><a href="https://web.dev/contact-picker/">Contact Picker API</a></li>
+            <li>
+              <a href="https://web.dev/get-installed-related-apps/"
+                >Get Installed Related Apps API</a
+              >
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Background app refreshing</td>
+        <td>
+          <ul>
+            <li>
+              <a href="https://web.dev/periodic-background-sync/">Periodic Background Sync API</a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>State synchronized over the cloud</td>
+        <td>
+          <ul>
+            <li>
+              <a href="https://developers.google.com/web/updates/2015/12/background-sync"
+                >Background Sync API</a
+              >
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Hardware media key controls</td>
+        <td>
+          <ul>
+            <li><a href="https://web.dev/media-session/">Media Session API</a></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Multitasking and app shortcut</td>
+        <td>
+          <ul>
+            <li><a href="https://web.dev/install-criteria/">Installability criteria</a></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Quick actions in context menu</td>
+        <td>
+          <ul>
+            <li><a href="https://web.dev/app-shortcuts/">App icon shortcuts</a></li>
+            <li>
+              <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/tree/master/RunOnLogin"
+                >Run on login</a
+              > (early stage)
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Act as default app</td>
+        <td>
+          <ul>
+            <li>
+              <a
+                href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/URLProtocolHandler/explainer.md"
+                >URL protocol handling</a
+              > (early stage)
+            </li>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/registerProtocolHandler"
+                ><code>registerProtocolHandler()</code></a
+              >
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Native file system integration</td>
+        <td>
+          <ul>
+            <li><a href="https://web.dev/native-file-system/">Native File System API</a></li>
+            <li>
+              <a href="https://github.com/GoogleChromeLabs/browser-nativefs"
+                >browser-nativefs library</a
+              >
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Native look and feel</td>
+        <td>
+          <ul>
+            <li>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/CSS/user-select#Syntax:~:text=none,-The"
+                ><code>user-select: none</code></a
+              >
+            </li>
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family"
+                ><code>font-family: system-ui</code></a
+              >
+            </li>
+            <li>
+              <a href="https://web.dev/prefers-color-scheme/"><code>prefers-color-scheme</code></a>
+            </li>
+            <li>
+              <a href="https://github.com/GoogleChromeLabs/dark-mode-toggle">Dark mode toggle</a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Customized title bar</td>
+        <td>
+          <ul>
+            <li>
+              <a
+                href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/TitleBarCustomization/explainer.md"
+                >Title bar customization</a
+              > (early stage)
+            </li>
+            <li><a href="https://web.dev/add-manifest/#display">Display mode</a></li>
+            <li><a href="https://web.dev/add-manifest/#theme-color">Theme color</a></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Snappy animations</td>
+        <td>
+          <ul>
+            <li>
+              <a
+                href="https://developers.google.com/web/fundamentals/design-and-ux/animations/animations-and-performance"
+                >Animations and performance tips</a
+              >
+            </li>
+            <li>
+              <a href="https://developers.google.com/web/updates/2018/07/css-scroll-snap"
+                >CSS Scroll Snap</a
+              >
+            </li>
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API"
+                >Web Animations API</a
+              >
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Content surfaced outside of app</td>
+        <td>
+          <ul>
+            <li><a href="https://web.dev/content-indexing-api/">Content Index API</a></li>
+            <li>
+              <a href="https://developers.google.com/search/docs/data-types/speakable"
+                >Speakable content</a
+              >
+            </li>
+            <li>
+              <a href="https://developers.google.com/search/docs/guides/search-gallery"
+                >Structured markup</a
+              >
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Lock screen media control widget</td>
+        <td>
+          <ul>
+            <li><a href="https://web.dev/media-session/">Media Session API</a></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Push notifications</td>
+        <td>
+          <ul>
+            <li>
+              <a href="https://developers.google.com/web/fundamentals/push-notifications"
+                >Push API</a
+              >
+            </li>
+            <li><a href="https://web.dev/notification-triggers/">Notification Triggers API</a></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>App icon badging</td>
+        <td>
+          <ul>
+            <li><a href="https://web.dev/badging-api/">Badging API</a></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Media playback trumps energy saver settings</td>
+        <td>
+          <ul>
+            <li><a href="https://web.dev/wakelock/">Screen Wake Lock API</a></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>App discovery through an app store</td>
+        <td>
+          <ul>
+            <li>
+              <a href="https://web.dev/using-a-pwa-in-your-android-app/">Trusted Web Activity</a>
+            </li>
+            <li>
+              <a href="https://github.com/GoogleChromeLabs/bubblewrap"
+                ><code>bubblewrap</code> library</a
+              >
+            </li>
+            <li><a href="https://www.pwabuilder.com/">PWABuilder tool</a></li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 ## Conclusion
 
 PWAs have come a long way since their introduction in 2015.
