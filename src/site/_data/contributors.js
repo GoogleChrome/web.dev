@@ -1082,6 +1082,27 @@ const contributors = {
       name: 'Google',
     },
   },
+  leszeks: {
+    name: {
+      given: 'Leszek',
+      family: 'Swirski',
+    },
+    twitter: 'leszekswirski',
+    country: 'DE',
+    org: {
+      name: 'Google',
+    },
+  },
+  nainar: {
+    name: {
+      given: 'Naina',
+      family: 'Raisinghani',
+    },
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
 };
 
 const processedContributors = {};

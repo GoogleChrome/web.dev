@@ -146,7 +146,17 @@
 
 .w-event-section__column-right {
   max-width: 512px;
-  padding: 0 32px;
+  padding: 0 8px;
+
+  &.w-event-section__column-right__schedule {
+    padding: 0px;
+  }
+
+  @include bp(sm) {
+    // On larger devices, force padding even on the schedule (this wins over
+    // ...__schedule, above).
+    padding: 0 16px !important;
+  }
 
   h2:first-of-type {
     margin-top: 0;
@@ -164,9 +174,25 @@ table.w-event-schedule {
   // small devices.
   min-width: auto;
 
+  .w-event-schedule__speaker {
+    min-width: 180px;
+    max-width: 50vw;
+  }
+
   td {
     font-size: 14px;
     line-height: 20px;
+    padding: 8px;
+
+    @include bp(sm) {
+      padding: 16px 8px;
+    }
+  }
+
+  .w-authors__card {
+    // TODO(samthor): This margin is unnessecary for our schedule, and
+    // needlessly pads out each row.
+    margin-bottom: 0;
   }
 }
 
