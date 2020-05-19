@@ -8,7 +8,7 @@ hero: lighthouse-logo.svg
 alt: Lighthouse logo.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - fast
+  - performance
   - lighthouse
 ---
 
