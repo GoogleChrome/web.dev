@@ -46,7 +46,8 @@ launcher icon on Android.
 </figure>
 
 The app shortcuts menu is shown only for [Progressive Web Apps] that are
-installed on the user's desktop or mobile device.
+installed on the user's desktop or mobile device. Check out [What does it take
+to be installable?] to learn about installability requirements.
 
 Each app shortcut expresses a user intent, each of which is associated with a
 URL within the [scope] of your web app. The URL is opened when users activate
@@ -223,6 +224,7 @@ Check out the [app shortcuts sample] and its [source].
 
 <!-- lint disable definition-case -->
 [Progressive Web Apps]: /progressive-web-apps/
+[What does it take to be installable?]: https://web.dev/install-criteria/
 [scope]: /add-manifest/#scope
 [web app manifest]: /add-manifest
 [web app manifest icons]: /add-manifest/#icons
