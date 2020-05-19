@@ -1,0 +1,36 @@
+@import '../../../styles/settings/colors';
+
+web-event-time {
+  time {
+    align-items: center;
+    display: flex;
+  }
+
+  .date {
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    font-family: 'Google Sans', sans-serif;
+    padding: 16px;
+    text-align: left;
+    width: 80px;
+  }
+
+  .date__month {
+    text-transform: uppercase;
+  }
+
+  .date__day {
+    font-size: 44px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .time {
+    text-align: left;
+  }
+
+  .time__timezone {
+    color: $GREY_500;
+  }
+}

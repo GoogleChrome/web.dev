@@ -989,13 +989,98 @@ const contributors = {
     twitter: 'cjamcl',
     github: 'connorjclark',
   },
+  paullewis: {
+    name: {
+      given: 'Paul',
+      family: 'Lewis',
+    },
+    twitter: 'aerotwist',
+    country: 'UK',
+    org: {
+      name: 'Google',
+    },
+  },
+  patrickkettner: {
+    name: {
+      given: 'Patrick',
+      family: 'Kettner',
+    },
+    twitter: 'patrickkettner',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
+  sebabenz: {
+    name: {
+      given: 'Sebastian',
+      family: 'Benz',
+    },
+    twitter: 'sebabenz',
+    country: 'DE',
+    org: {
+      name: 'Google',
+    },
+  },
+  syg: {
+    name: {
+      given: 'Shu-yu',
+      family: 'Guo',
+    },
+    twiter: '_shu',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
+  nattestad: {
+    name: {
+      given: 'Thomas',
+      family: 'Nattestad',
+    },
+    twiter: 'fractorious',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
+  maudn: {
+    name: {
+      given: 'Maud',
+      family: 'Nalpas',
+    },
+    twitter: 'maudnals',
+    country: 'DE',
+    org: {
+      name: 'Google',
+    },
+  },
+  morss: {
+    name: {
+      given: 'Ben',
+      family: 'Morss',
+    },
+    twitter: 'benmorss',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
 };
 
 const processedContributors = {};
 
 Object.keys(contributors).forEach((key) => {
   const contributorData = contributors[key];
-  const title = contributorData.name.given + ' ' + contributorData.name.family;
+
+  // Generate the contributor's name out of valid given/family parts. This
+  // allows our authors to just have a single name.
+  const parts = [
+    contributorData.name.given,
+    contributorData.name.family,
+  ].filter((s) => s && s.length);
+  const title = parts.join(' ');
+
   const description =
     contributorData.description && contributorData.description.en
       ? contributorData.description.en

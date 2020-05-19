@@ -37,6 +37,7 @@ const Compare = require(`./${componentsDir}/Compare`);
 const CompareCaption = require(`./${componentsDir}/CompareCaption`);
 const Details = require(`./${componentsDir}/Details`);
 const DetailsSummary = require(`./${componentsDir}/DetailsSummary`);
+const EventTable = require(`./${componentsDir}/EventTable`);
 const Hero = require(`./${componentsDir}/Hero`);
 const Instruction = require(`./${componentsDir}/Instruction`);
 const Label = require(`./${componentsDir}/Label`);
@@ -222,6 +223,10 @@ module.exports = function(config) {
   config.addShortcode('SignPosts', SignPosts);
   config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('YouTube', YouTube);
+
+  // This table is used for the web.dev/LIVE event, and should be taken down
+  // when the event is over or we no longer use it.
+  config.addShortcode('EventTable', EventTable);
 
   // ----------------------------------------------------------------------------
   // TRANSFORMS
