@@ -135,6 +135,10 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
   position: relative;
   width: $AUTHOR_IMAGE_SIZE_SMALL;
 
+  a {
+    display: block;
+  }
+
   > .w-author__image {
     border: solid white 2px;
   }
