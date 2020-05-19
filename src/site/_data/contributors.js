@@ -1051,7 +1051,7 @@ const contributors = {
     country: 'US',
     org: {
       name: 'Google',
-    }
+    },
   },
   jungkees: {
     name: {

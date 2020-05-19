@@ -125,7 +125,8 @@ a relative URL, the base URL will be the URL of the web app manifest.
 ### icons (optional)
 
 An array of image resource objects. Each object must
-include the `src` and a `sizes` property. The `type` of image is optional.
+include the `src` and a `sizes` property. Unlike [web app manifest icons], the
+`type` of image is optional.
 
 SVG files are not supported at the time of writing, use PNG instead.
 
@@ -195,22 +196,27 @@ behaviors.
 
 ## Sample
 
-Check out the app shortcuts [sample] and its [source].
+<figure class="w-figure">
+  <video controls autoplay loop muted class="w-screenshot"
+    src="https://storage.googleapis.com/web-dev-assets/app-shortcuts/app-shortcuts-recording.mp4">
+  </video>
+</figure>
 
-<video
-  autoplay
-  loop
-  muted
-  style=" height: 480px; width: 100%"
-  poster="https://storage.cloud.google.com/webfundamentals-assets/videos/app-shortcuts-recording.png"
-  src="https://storage.cloud.google.com/webfundamentals-assets/videos/app-shortcuts-recording.mp4">
-</video>
+Check out the [app shortcuts sample] and its [source].
+
+<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/app-shortcuts?path=public/manifest.json&attributionHidden=true"
+    alt="app-shortcuts on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
 
 ## Helpful links
 
 * [Explainer][explainer]
 * [Spec][spec]
-* [App shortcuts sample][sample] | [App shortcuts sample source][source]
+* [App shortcuts sample][app shortcuts sample] | [App shortcuts sample source][source]
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
 * Blink Component: [`UI>Browser>WebAppInstalls`]
@@ -219,9 +225,10 @@ Check out the app shortcuts [sample] and its [source].
 [Progressive Web Apps]: /progressive-web-apps/
 [scope]: /add-manifest/#scope
 [web app manifest]: /add-manifest
+[web app manifest icons]: /add-manifest/#icons
 [explainer]: https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/Shortcuts/explainer.md
 [spec]: https://w3c.github.io/manifest/#shortcuts-member
-[sample]: https://app-shortcuts.glitch.me
+[app shortcuts sample]: https://app-shortcuts.glitch.me
 [source]: https://glitch.com/edit/#!/app-shortcuts
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=955497
 [cr-status]: https://chromestatus.com/feature/5706099464339456
