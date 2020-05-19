@@ -1,5 +1,6 @@
 ---
 title: "What's New in Lighthouse 6.0"
+subhead: New metrics, Performance score update, new audits, and more.
 authors:
   - cjamcl
 date: 2020-05-19
@@ -381,7 +382,11 @@ but here are all the changes detectable by a webpage:
 
 As of Chrome 81, Moto G4 is also available in the Chrome DevTools device emulation list.
 
-![Chrome DevTools device emulation list with Moto G4 included.](lighthouse-motog4.png)
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" 
+       src="lighthouse-motog4.png" 
+       alt="Chrome DevTools device emulation list with Moto G4 included.">
+</figure>
 
 ## Browser extension {: #extension }
 
@@ -429,7 +434,7 @@ explore in DevTools, clicking on the locations specified in the report will open
 in the **Sources** panel.
 
 <figure class="w-figure">
-  <video autoplay loop muted playsinline>
+  <video autoplay loop muted playsinline class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/lighthouse-whats-new-6.0/lighthouse-source-location.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/lighthouse-whats-new-6.0/lighthouse-source-location.mp4" type="video/mp4">
   </video>
