@@ -11,7 +11,7 @@ description: |
   Using the Media Capabilities API lets you better target video codecs, frame
   rates, and resolutions based on the capabilities of your users' devices.
 tags:
-  - post
+  - blog
   - media
   - ux
   - case-study

@@ -13,7 +13,7 @@ description:
   configurations that allow content to be shown appropriately for augmented
   reality.
 tags:
-  - post
+  - blog
   - augmented-reality
   - virtual-reality
   - webxr

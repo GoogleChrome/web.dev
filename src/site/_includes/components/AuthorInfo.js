@@ -18,16 +18,10 @@ const {html} = require('common-tags');
 
 /* eslint-disable require-jsdoc */
 
-module.exports = ({post, author, id, showSocialMedia = false}) => {
-  if (!post) {
-    throw new Error(`Can't generate AuthorInfo without post object`);
-  }
-
+module.exports = ({author, id, showSocialMedia = false}) => {
   if (!author) {
     throw new Error(`Can't generate AuthorInfo without author object`);
   }
-
-  const fullName = `${author.name.given} ${author.name.family}`;
 
   function renderTwitter({twitter}) {
     return html`
@@ -57,12 +51,21 @@ module.exports = ({post, author, id, showSocialMedia = false}) => {
     `;
   }
 
+  function renderHomepage({homepage}) {
+    return html`
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="${homepage}">Blog</a>
+      </li>
+    `;
+  }
+
   function renderSocialMedia(author) {
     return html`
       <ul class="w-author__link-list">
         ${author.twitter && renderTwitter(author)}
         ${author.github && renderGitHub(author)}
         ${author.glitch && renderGlitch(author)}
+        ${author.homepage && renderHomepage(author)}
       </ul>
     `;
   }
@@ -74,7 +77,7 @@ module.exports = ({post, author, id, showSocialMedia = false}) => {
       style="display: flex; flex-direction: column; justify-content: center;"
     >
       <cite class="w-author__name">
-        <a class="w-author__name-link" href="/authors/${id}">${fullName}</a>
+        <a class="w-author__name-link" href="/authors/${id}">${author.title}</a>
       </cite>
       ${showSocialMedia && renderSocialMedia(author)}
     </div>

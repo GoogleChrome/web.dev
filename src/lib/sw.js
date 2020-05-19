@@ -1,3 +1,7 @@
+/**
+ * @fileoverview Service Worker entrypoint for web.dev.
+ */
+
 import * as idb from 'idb-keyval';
 import manifest from 'cache-manifest';
 import layoutTemplate from 'layout-template';
@@ -160,7 +164,20 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
   // it's otherwise missing.
   if (!pathname.endsWith('.html')) {
     if (!pathname.endsWith('/')) {
-      pathname += '/';
+      // Special-case a URL that doesn't end with "/". We must redirect before
+      // returning content as otherwise relative URLs don't work.
+      // This is not a problem as:
+      //   * this is occuring almost immediately (no network traffic)
+      //   * our webserver treats "/foo" and "/foo/" the same for other folders
+      //     and for the _redirects.yaml handler (i.e., a 404 on /foo and /foo/
+      //     will be treated the same way)
+      //   * a _real_ network request to "/foo" gets 301'ed to "/foo/"
+      const headers = new Headers();
+      headers.append('Location', pathname + '/' + url.search);
+      return new Response('', {
+        status: 301,
+        headers,
+      });
     }
     pathname += 'index.html';
   }
@@ -192,13 +209,18 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
   }
   const partial = await response.json();
 
-  // Our target browsers all don't mind if we just place <title> in the middle of the document.
-  // This is far simpler than trying to find the right place in <head>.
   const meta = partial.offline ? `<meta name="offline" value="true" />` : '';
-  const output = layoutTemplate.replace(
-    '%_CONTENT_REPLACE_%',
-    meta + `<title>${partial.title || ''}</title>` + partial.raw,
-  );
+  const title = `<title>${partial.title || 'web.dev'}</title>`;
+  const rssHref = partial.rss || '/feed.xml';
+  const rssTitle =
+    partial.rss !== '/feed.xml'
+      ? `${partial.title} on web.dev`
+      : 'web.dev feed';
+  const rss = `<link rel="alternate" href="${rssHref}" type="application/atom+xml" data-title="${rssTitle}" />`;
+
+  const output = layoutTemplate
+    .replace('<!-- %_HEAD_REPLACE_% -->', `${meta}\n${title}\n${rss}`)
+    .replace('%_CONTENT_REPLACE_%', partial.raw);
   const headers = new Headers();
   headers.append('Content-Type', 'text/html');
   return new Response(output, {headers, status: response.status});

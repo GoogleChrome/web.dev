@@ -10,7 +10,7 @@ alt: Service workers lining up.
 description: |
   Working with service workers is new and unfamiliar for many web devs. This post provides some tips for wrapping your mind around them.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - service-worker
   - PWA
   - offline

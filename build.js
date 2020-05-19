@@ -25,6 +25,8 @@ const rollupPluginCJS = require('rollup-plugin-commonjs');
 const rollupPluginPostCSS = require('rollup-plugin-postcss');
 const rollupPluginVirtual = require('rollup-plugin-virtual');
 const rollupPluginReplace = require('rollup-plugin-replace');
+const rollupPluginIstanbul = require('rollup-plugin-istanbul');
+const OMT = require('@surma/rollup-plugin-off-main-thread');
 const rollup = require('rollup');
 const terser = isProd ? require('terser') : null;
 const {getManifest} = require('workbox-build');
@@ -40,6 +42,11 @@ process.on('unhandledRejection', (reason, p) => {
  * Virtual imports made available to all bundles. Used for site config and globals.
  */
 const virtualImports = {
+  webdev_analytics: {
+    id: isProd ? site.analytics.ids.prod : site.analytics.ids.staging,
+    dimensions: site.analytics.dimensions,
+    version: site.analytics.version,
+  },
   webdev_config: {
     isProd,
     env: process.env.ELEVENTY_ENV || 'dev',
@@ -51,15 +58,24 @@ const virtualImports = {
         .slice(0, 12),
     firebaseConfig: isProd ? site.firebase.prod : site.firebase.staging,
   },
+  webdev_entrypoint: null,
 };
 
-const defaultPlugins = [
-  rollupPluginNodeResolve(),
-  rollupPluginCJS({
-    include: 'node_modules/**',
-  }),
-  rollupPluginVirtual(buildVirtualJSON(virtualImports)),
-];
+/**
+ * Builds the default set of Rollup functions. Snapshots virtual imports on
+ * call, so should be used anew every run.
+ *
+ * @return {!Array<*>}
+ */
+function buildDefaultPlugins() {
+  return [
+    rollupPluginNodeResolve(),
+    rollupPluginCJS({
+      include: 'node_modules/**',
+    }),
+    rollupPluginVirtual(buildVirtualJSON(virtualImports)),
+  ];
+}
 
 /**
  * Builds the cache manifest for inclusion into the Service Worker.
@@ -69,21 +85,30 @@ const defaultPlugins = [
  */
 async function buildCacheManifest() {
   const toplevelManifest = await getManifest({
+    // JS files that include hashes don't need their own revision fields.
+    dontCacheBustURLsMatching: /-[0-9a-f]{8}\.js/,
     globDirectory: 'dist',
-    globPatterns: ['images/**', '*.css', '*.js'],
+    globPatterns: [
+      // We don't include jpg files, as they're used for authors and hero
+      // images, which are part of articles, and not the top-level site.
+      'images/**/*.{png,svg}',
+      '*.css',
+      '*.js',
+    ],
+    globIgnores: [
+      // This removes large shared PNG files that are used only for articles.
+      'images/{shared}/**',
+    ],
   });
   if (toplevelManifest.warnings.length) {
     throw new Error(`toplevel manifest: ${toplevelManifest.warnings}`);
   }
 
-  // This doesn't include any HTML, as we bundle that directly into the source
-  // of the Service Worker below.
+  // We need this manifest to be separate as we pretend it's rooted at the
+  // top-level, even though it comes from "dist/en".
   const contentManifest = await getManifest({
     globDirectory: 'dist/en',
-    globPatterns: [
-      'offline/index.json',
-      'images/**/*.{png,svg}', // .jpg files are used for authors, skip
-    ],
+    globPatterns: ['offline/index.json'],
   });
   if (contentManifest.warnings.length) {
     throw new Error(`content manifest: ${contentManifest.warnings}`);
@@ -115,25 +140,10 @@ function disallowExternal(source, importer, isResolved) {
 }
 
 /**
- * Ensures that the passed Rollup result only contains a single chunk.
- *
- * @param {!Promise<rollup.RollupOutput>} rollupPromise
- * @return {!rollup.RollupChunk} the single output chunk
- */
-async function singleOutput(rollupPromise) {
-  const result = await rollupPromise;
-  if (result.output.length !== 1) {
-    throw new Error(`expected single output, was: ${result.output.length}`);
-  }
-  return result.output[0];
-}
-
-/**
  * Performs main site compilation via Rollup: first on site code, and second
  * to build the Service Worker.
  */
 async function build() {
-  const generated = [];
   const postcssConfig = {};
   if (isProd) {
     // nb. Only require() autoprefixer when used.
@@ -144,29 +154,93 @@ async function build() {
     postcssConfig.minimize = true;
   }
 
-  // Rollup bootstrap to generate graph of source needs. This eventually uses
-  // dynamic import to bring in code required for each page (see router.js).
-  // Does not hash "bootstrap.js" entrypoint, but hashes all generated chunks,
-  // useful for cache busting.
+  // Rollup "app.js" to generate graph of source needs. This eventually uses
+  // dynamic import to bring in code required for each page (see router). In
+  // Rollup's nonmenclature, this is the site entrypoint. We generated it with
+  // a dynamic hash, and is imported via "bootstrap.js" (which is run in all
+  // browsers via regular script tag).
   const appBundle = await rollup.rollup({
-    input: 'src/lib/bootstrap.js',
+    input: 'src/lib/app.js',
     external: disallowExternal,
-    plugins: [rollupPluginPostCSS(postcssConfig), ...defaultPlugins],
+    plugins: [rollupPluginPostCSS(postcssConfig), ...buildDefaultPlugins()],
+    manualChunks: (id) => {
+      // lit-html/lit-element is our biggest dependency, and is always used
+      // together. Return it in its own chunk (~30kb after Terser).
+      if (/\/node_modules\/lit-.*\//.exec(id)) {
+        return 'lit';
+      }
+      // Algolia is smaller (~17kb after Terser).
+      if (id.includes('/node_modules/algoliasearch/')) {
+        return 'algolia';
+      }
+    },
   });
   const appGenerated = await appBundle.write({
     dynamicImportFunction: 'window._import',
+    entryFileNames: '[name]-[hash].js',
     sourcemap: true,
     dir: 'dist',
     format: 'esm',
   });
-  for (const {fileName} of appGenerated.output) {
-    generated.push(fileName);
+  const outputFiles = appGenerated.output.map(({fileName}) => fileName);
+
+  // Save the "app.js" entrypoint (which has a hashed name) for the all-browser
+  // loader code.
+  const entrypoints = appGenerated.output.filter(({isEntry}) => isEntry);
+  if (entrypoints.length !== 1) {
+    throw new Error(
+      `expected single Rollup entrypoint, was: ${entrypoints.length}`,
+    );
   }
+  virtualImports.webdev_entrypoint = entrypoints[0].fileName;
+
+  // Rollup basic to generate the top-level script run by all browsers (even
+  // ancient ones). This runs Analytics and imports the entrypoint generated
+  // above (in supported module browsers).
+  const libPrefix = path.join(__dirname, '/src/lib/');
+  const utilsPrefix = path.join(libPrefix, 'utils');
+  const bootstrapBundle = await rollup.rollup({
+    input: 'src/lib/bootstrap.js',
+    plugins: buildDefaultPlugins(),
+    external: disallowExternal,
+    manualChunks: (id) => {
+      // This overloads Rollup's manualChunks feature to catch disallowed code.
+      // Bootstrap should only import:
+      //   * virtual imports (config only)
+      //   * itself (Rollup calls us for 'ourself')
+      //   * code inside `src/lib/utils`.
+      // Otherwise, we risk leaking core site code into this ES5-only, fast
+      // bootstrap chunk.
+      if (id in virtualImports || !path.isAbsolute(id)) {
+        return; // ok
+      }
+      if (id === path.join(libPrefix, 'bootstrap.js')) {
+        return undefined; // self, allowed
+      }
+      if (path.relative(utilsPrefix, id).startsWith('../')) {
+        // This looks for code outside the utils folder, which is disallowed.
+        throw new TypeError(
+          `can't import non-utils JS code in bootstrap: ${id}`,
+        );
+      }
+    },
+  });
+  const bootstrapGenerated = await bootstrapBundle.write({
+    sourcemap: true,
+    dir: 'dist',
+    format: 'iife',
+  });
+  if (bootstrapGenerated.output.length !== 1) {
+    throw new Error(
+      `bootstrap generated more than one file: ${bootstrapGenerated.output.length}`,
+    );
+  }
+  outputFiles.push(bootstrapGenerated.output[0].fileName);
 
   // Compress the generated source here, as we need the final files and hashes for the Service
   // Worker manifest.
   if (isProd) {
-    await compressOutput(generated);
+    await compressOutput(outputFiles);
   }
 
   // We don't generate a manifest in dev, so Workbox doesn't do a default cache step.
@@ -179,7 +253,14 @@ async function build() {
 
   const swBundle = await rollup.rollup({
     input: 'src/lib/sw.js',
-    external: disallowExternal,
+    manualChunks: (id) => {
+      const chunkNames = ['idb-keyval', 'virtual', 'workbox'];
+      for (const chunkName of chunkNames) {
+        if (id.includes(`/node_modules/${chunkName}/`)) {
+          return 'sw-' + chunkName;
+        }
+      }
+    },
     plugins: [
       // This variable is defined by Webpack (and some other tooling), but not by Rollup. Set it to
       // "production" if we're in prod, which will hide all of Workbox's log messages.
@@ -194,26 +275,24 @@ async function build() {
           'layout-template': layoutTemplate,
         }),
       ),
-      ...defaultPlugins,
+      ...buildDefaultPlugins(),
+      OMT(),
     ],
-    inlineDynamicImports: true, // SW does not support imports
   });
 
-  const swOutput = await singleOutput(
-    swBundle.write({
-      sourcemap: true,
-      dir: 'dist',
-      format: 'esm',
-    }),
-  );
+  const swGenerated = await swBundle.write({
+    sourcemap: true,
+    dir: 'dist',
+    format: 'amd',
+  });
 
-  const {fileName} = swOutput;
+  const swOutputFiles = swGenerated.output.map(({fileName}) => fileName);
   if (isProd) {
-    await compressOutput([fileName]);
+    await compressOutput(swOutputFiles);
   }
-  generated.push(fileName);
+  outputFiles.push(...swOutputFiles);
 
-  return generated.length;
+  return outputFiles.length;
 }
 
 /**
@@ -221,12 +300,19 @@ async function build() {
  */
 async function buildTest() {
   const testBundle = await rollup.rollup({
-    input: 'src/lib/test/index.js',
-    plugins: [rollupPluginPostCSS(), ...defaultPlugins],
+    input: 'test/unit/src/lib/index.js',
+    plugins: [
+      rollupPluginNodeResolve(),
+      rollupPluginCJS(),
+      rollupPluginVirtual(buildVirtualJSON(virtualImports)),
+      rollupPluginPostCSS(),
+      rollupPluginIstanbul(),
+    ],
   });
   await testBundle.write({
     dir: 'dist/test',
     format: 'iife',
+    name: 'test',
   });
 }
 

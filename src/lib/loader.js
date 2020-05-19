@@ -1,5 +1,5 @@
 /**
- * @fileoverview Handles SPA loading and importing JS entrypoint for web.dev.
+ * @fileoverview Handles SPA loading and importing the correct page entrypoint for web.dev.
  *
  * Exports a single function, swapContent, which ensures that the inner contents of the web.dev
  * template is correct, and that the correct JS entrypoint is ready.
@@ -16,10 +16,21 @@ import './utils/underscore-import-polyfill';
  * @return {!Promise<?>}
  */
 async function loadEntrypoint(url) {
-  if (url.startsWith('/measure/')) {
-    return import('./pages/measure.js');
-  } else if (url.startsWith('/newsletter/')) {
-    return import('./pages/newsletter.js');
+  const prefixTo = url.indexOf('/', 1);
+  const prefix = url.substring(1, prefixTo === -1 ? url.length : prefixTo);
+
+  // This is a switch as it's easy to see all entrypoints (vs. lots of if/else).
+  // We can't dynamically generate the argument to import as Rollup rewrites
+  // import() statements as a whole for us.
+  switch (prefix) {
+    case 'measure':
+      return import('./pages/measure.js');
+
+    case 'live':
+      return import('./pages/live.js');
+
+    case 'newsletter':
+      return import('./pages/newsletter.js');
   }
 
   return import('./pages/default.js');
@@ -104,6 +115,11 @@ function updateDom(partial) {
   // Update the page title.
   document.title = partial.title || '';
 
+  const rss = document.querySelector('link[type="application/atom+xml"]');
+  if (rss) {
+    rss.href = partial.rss || rss.href;
+  }
+
   // Focus on the first title (or fallback to content itself).
   forceFocus(content.querySelector('h1, h2, h3, h4, h5, h6') || content);
 }
@@ -153,8 +169,8 @@ export async function swapContent({firstRun, url, signal, ready, state}) {
     }
   }
 
-  // The bootstrap code uses this to trigger a reload if we see an "online" event. Only returned via
-  // the Service Worker if we failed to fetch a 'real' page.
+  // Code in entrypoint.jsuses this to trigger a reload if we see an "online" event. This partial
+  // value is only returned via the Service Worker if we failed to fetch a 'real' page.
   const isOffline = Boolean(partial.offline);
   store.setState({currentUrl: url, isOffline});
 

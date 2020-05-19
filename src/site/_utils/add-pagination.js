@@ -23,6 +23,16 @@ const constants = require('./constants');
  * @return {Array<{ title: string, href: string, description: string, tag: string, posts: Array<object>, index: number, pages: number }>} An array of items to display, including href and index.
  */
 module.exports = function addPagination(elements, additionalData = {}) {
+  if (!Array.isArray(elements)) {
+    throw new Error(
+      `addPagination only accepts an array, you passed in a ${typeof elements}`,
+    );
+  }
+
+  if (typeof additionalData !== 'object') {
+    throw new Error(`additionalData must be an object`);
+  }
+
   const pageCount = constants.PAGINATION_COUNT;
   const paginated = [];
   const pages = Math.ceil(elements.length / pageCount);

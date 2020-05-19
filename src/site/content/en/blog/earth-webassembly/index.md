@@ -10,7 +10,7 @@ alt: A globe with code overlaid
 description: |
   Improving cross-browser access to Google Earth with WebAssembly
 tags:
-  - post
+  - blog
   - web-assembly
   - Earth
   - Web App

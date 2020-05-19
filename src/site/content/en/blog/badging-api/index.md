@@ -7,7 +7,7 @@ description: The Badging API allows installed web apps to set an application-wid
 date: 2018-12-11
 updated: 2020-03-27
 tags:
-  - post
+  - blog
   - capabilities
   - fugu
   - badging

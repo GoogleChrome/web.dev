@@ -1,0 +1,196 @@
+@import '../settings/colors';
+@import '../tools/breakpoints';
+
+.w-live-landing-page {
+  color: $GREY_800;
+
+  p {
+    font-size: 14px;
+    line-height: 1.5;
+    @include bp(sm) {
+      font-size: 16px;
+    }
+  }
+
+  h2 {
+    color: $GREY_900;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: inherit;
+  }
+}
+
+.w-live-top {
+  // We need this as the live background extends outside the normal l/r of the
+  // page. Contain it so it doesn't let users scroll.
+  overflow-x: hidden;
+}
+
+.w-event-buttons {
+  display: inline-flex;
+  flex-flow: column wrap;
+
+  .w-button--primary {
+    margin: 0 0 16px;
+  }
+
+  .w-button:not(.w-button--primary) {
+    color: inherit;
+  }
+
+  @include bp(sm) {
+    flex-direction: row;
+
+    .w-button--primary {
+      margin: 0 16px 0 0;
+    }
+  }
+}
+
+.w-event-heading {
+  // We don't use this BEM selector but it's the parent of logo and subhead.
+  // This is the "web.dev LIVE" logo.
+}
+
+.w-event-heading__logo {
+  align-items: center;
+  color: #606369;
+  display: flex;
+  font-size: 32px;
+  justify-content: center;
+
+  span {
+    opacity: 0;
+    position: absolute;
+    text-indent: -99999px;
+  }
+
+  video {
+    height: 1em;
+    margin-left: .25ch;
+    pointer-events: none;
+    width: auto;
+  }
+}
+
+.w-event-heading__subhead {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.w-event-section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 64px auto;
+  max-width: 960px;
+  text-align: center;  // for mobile
+
+  @include bp(md) {
+    text-align: inherit;
+  }
+}
+
+.w-event-hero {
+  align-items: center;
+  box-sizing: content-box;
+  display: flex;
+  height: 192px;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 0 64px;
+  position: relative;
+
+  &::before {
+    background-image: url('../live/hero-bg.png');
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    background-size: auto 75%;
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 1600px;
+    z-index: -1;
+  }
+
+  img {
+    max-height: 100%;
+    min-width: 560px;
+  }
+}
+
+.w-event-section__column-head {
+  width: 100%;
+}
+
+.w-event-section__column-left {
+  align-items: center;
+  display: flex;
+  flex-flow: column wrap;
+  flex-grow: 1;
+  padding: 0 32px;
+  text-align: center;
+  width: 100%;
+
+  p {
+    max-width: 512px - 64px;
+  }
+
+  h3:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.w-event-section__column-right {
+  max-width: 512px;
+  padding: 0 32px;
+
+  h2:first-of-type {
+    margin-top: 0;
+  }
+}
+
+web-tabs.w-event-tabs {
+  --primary-color: #{$WEB_PRIMARY_COLOR};
+  --hover-color: #{$GOOGLE_BLUE_50};
+  --active-color: #{$GOOGLE_BLUE_100};
+}
+
+table.w-event-schedule {
+  // TODO(robdodson): The generic table has `min-width: 512px`, which extends over the side of
+  // small devices.
+  min-width: auto;
+
+  td {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.w-event-schedule__title {
+  width: 60%;
+}
+
+
+@include bp(md) {
+  .w-event-section__column-head {
+    order: -1;
+  }
+
+  .w-event-section__column-left {
+    align-items: flex-start;
+    flex-grow: 0;
+    padding-left: 16px;
+    text-align: inherit;
+    width: 37.5%;
+  }
+
+  .w-event-section__column-right {
+    max-width: none;
+    padding: 0 16px;
+    width: 62.5%;
+  }
+}

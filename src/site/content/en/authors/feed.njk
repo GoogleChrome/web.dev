@@ -1,0 +1,47 @@
+---
+renderData:
+  metadata:
+    author: "{{ paged.title }}"
+    icon: "{{ paged.data.hero or '/images/social.png' }}"
+    id: https://web.dev/
+    logo: https://web.dev/images/rss-banner.png
+    subtitle: "{{ paged.description }}"
+    title: "{{ paged.title }} on web.dev"
+    url: https://web.dev{{ paged.href }}feed.xml
+noindex: true
+permalink: "/{{lang}}{{ paged.href }}feed.xml"
+pagination:
+  data: collections.authors
+  size: 1
+  alias: paged
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>{{ renderData.metadata.id }}</id>
+  <title>{{ renderData.metadata.title }}</title>
+  <updated>{{ paged.elements | reverse | rssLastUpdatedDate }}</updated>
+  <author>
+    <name>{{ renderData.metadata.author }}</name>
+  </author>
+  <link href="{{ renderData.metadata.url }}" rel="self"/>
+  <link href="{{ renderData.metadata.id }}"/>
+  <icon>https://web.dev{{ renderData.metadata.icon }}</icon>
+  <logo>{{ renderData.metadata.logo }}</logo>
+  <subtitle>{{ renderData.metadata.subtitle }}</subtitle>
+  {% for post in paged.elements -%}
+  {% set absolutePostUrl -%}{{ post.url | stripLanguage | url | absoluteUrl(renderData.metadata.url) }}{%- endset %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ absolutePostUrl }}"/>
+    <updated>{{ post.date | rssDate }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    <content type="html">{{ post.templateContent | replace("web-copy-code", "div") | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+    {% for entry in post.data.authors %}
+    {%- set author =  contributors[entry] -%}
+    <author>
+      <name>{{ author.name.title }}</name>
+    </author>
+    {%- endfor %}
+  </entry>
+  {%- endfor %}
+</feed>

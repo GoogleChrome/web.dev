@@ -16,13 +16,13 @@
 const fs = require('fs');
 const path = require('path');
 const contributors = require('../_data/contributors');
-const livePosts = require('../_filters/live-posts');
+const {livePosts} = require('../_filters/live-posts');
 const setdefault = require('../_utils/setdefault');
 
 /**
  * Generate map the posts by author's username/key
  *
- * @param {*} posts
+ * @param {Array<any>} posts
  * @return {Map<string, Array<any>>} Map of posts by author's username/key
  */
 const findAuthorsPosts = (posts) => {
@@ -46,20 +46,9 @@ const findAuthorsPosts = (posts) => {
  */
 const findAuthorsImage = (key) => {
   for (const size of ['@3x', '@2x', '']) {
-    if (
-      fs.existsSync(
-        path.join(
-          'src',
-          'site',
-          'content',
-          'en',
-          'images',
-          'authors',
-          `${key}${size}.jpg`,
-        ),
-      )
-    ) {
-      return path.join('/images', 'authors', `${key}${size}.jpg`);
+    const jpegPath = path.join('src/images/authors', `${key}${size}.jpg`);
+    if (fs.existsSync(jpegPath)) {
+      return path.join('/images/authors', `${key}${size}.jpg`);
     }
   }
 };
@@ -71,6 +60,15 @@ const findAuthorsImage = (key) => {
  * @return {Array<{ description: string, title: string, key: string, href: string, url: string, data: { title: string, subhead: string, hero: string, alt: string }, elements: Array<any> }>}
  */
 module.exports = (collections) => {
+  const testAuthors = [
+    'robdodson',
+    'samthor',
+    'surma',
+    'mgechev',
+    'addyosmani',
+    'adamargyle',
+  ];
+
   // Get all posts and sort them
   const posts = collections
     .getFilteredByGlob('**/*.md')
@@ -82,6 +80,10 @@ module.exports = (collections) => {
   const authors = Object.values(contributors)
     .sort((a, b) => a.title.localeCompare(b.title))
     .reduce((accumulator, author) => {
+      if (process.env.PERCY && !testAuthors.includes(author.key)) {
+        return accumulator;
+      }
+      // This updates the shared contributors object with meta information and is safe to be called multiple times.
       author.url = path.join('/en', author.href);
       author.data = {
         title: author.title,
@@ -97,6 +99,10 @@ module.exports = (collections) => {
       }
 
       if (author.elements.length > 0) {
+        if (process.env.PERCY) {
+          author.elements = author.elements.slice(-6);
+        }
+
         accumulator.push(author);
       }
 

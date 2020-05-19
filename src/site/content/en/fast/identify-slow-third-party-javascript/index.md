@@ -6,7 +6,7 @@ authors:
   - mihajlija
 date: 2019-08-14
 # Add an updated date to your post if you edit in the future.
-# updated: 2019-08-08
+# updated: 2020-04-29
 hero: hero.jpg
 alt: Inspecting a laptop with a magnifying glass.
 # You can adjust the position of your hero image with this property.
@@ -58,59 +58,7 @@ The Lighthouse [Avoid enormous network payloads](/total-byte-weight) audit ident
 
 <img class="w-screenshot" src="./network-payloads.png" alt='Screenshot of the Chrome DevTools "Avoid enormous network payloads" audit.'>
 
-## If you only have 15 minutes
-Lighthouse audits call out only the worst speed offenders, so you might have room for improvement even if your site passes all audits. Chrome DevTools **Network** and **Performance** panels can help you identify slow third-party scripts.
-
-### Chrome DevTools third-party script badging
-DevTools can highlight third-party scripts by their product name in the **Network** panel. This feature can help you identify which third-party scripts are making requests on a page and understand what they do.
-
-To enable third-party badges:
-
-{% Instruction 'devtools', 'ol' %}
-1. Press `Control+Shift+P` (or `Command+Shift+P` on Mac) to bring up the **Command** menu.
-1. Enter `Show third party badges` in the box.
-
-<figure class="w-figure">
-  <img src="./badges.png" alt="Screenshot of the Chrome DevTools Command menu.">
-</figure>
-
-Now you can see third-party badges on any site you visit. To test this, navigate to [https://developers.google.com/web/](https://developers.google.com/web/).
-
-{% Instruction 'devtools-network', 'ol' %}
-{% Instruction 'disable-cache', 'ol' %}
-1. Reload the page.
-
-You should now see a badge next to each third-party script. Click on a badge to display more information about that script.
-
-![Screenshot of the Chrome DevTools Network panel with third-party badges turned on.](badge-popup.png)
-
-{% Aside %}
-For more info about the impact of third-party JavaScript on performance, check out [https://www.thirdpartyweb.today](https://www.thirdpartyweb.today/). It uses [HTTP Archive](https://httparchive.org/) data to give an overview of third-party vendors and their impact on the web.
-{% endAside %}
-
-### Chrome DevTools Performance panel
-Once enabled, third-party badges also appear in the DevTools **Performance** panel. The **Performance** panel records a waterfall representing where your site is spending time and helps you inspect performance in detail.
-
-To record a page load:
-
-{% Instruction 'devtools-performance', 'ol' %}
-{% Instruction 'start-profiling', 'ol' %}
-
-To view activity that occurred on the page's main thread, check out the **Main** section. **Long tasks** are labeled with red flags, and hovering them gives more detail about their execution time.
-
-{% Aside 'key-term' %}
-A [**Long Task**](/long-tasks-devtools) is JavaScript code that monopolizes the main thread for 50 ms or longer, causing the UI to freeze.
-{% endAside %}
-
-![A screenshot of the Chrome DevTools Performance panel with Long Task flags highlighted.](long-tasks.jpg)
-
-You can also sort JavaScript tasks by execution time to identify which third-party resources are the slowest:
-1. At the bottom of the **Performance** panel, click the **Bottom-Up** tab.
-1. In the **Grouping** drop-down list, select **Group by Product**.
-
-![A screenshot of the Chrome DevTools Performance panel with tasks grouped by product.](execution-time.png)
-
-## If you only have 30 minutes
+## Block network requests in Chrome DevTools
 
 Chrome DevTools [network request blocking](https://developers.google.com/web/updates/2017/04/devtools-release-notes#block-requests) allows you to see how your page behaves when a particular script, stylesheet, or other resource isn't available. After you identify third-party scripts that you suspect affect performance, measure how your load time changes by blocking the requests to those scripts.
 

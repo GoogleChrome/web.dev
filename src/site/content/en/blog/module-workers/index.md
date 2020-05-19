@@ -11,7 +11,7 @@ description: |
   Module workers make it easy to unblock the main thread by moving expensive code to a background
   thread while keeping the ergonomic and performance benefits of standard JavaScript modules.
 tags:
-  - post
+  - blog
   - web-workers
   - javascript-modules
   - modules

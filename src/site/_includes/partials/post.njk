@@ -47,8 +47,6 @@
         <div class="w-authors w-mt--xl w-pt--sm">
           {% for author in authors %}
             {% Author {
-              post: page,
-              author: contributors[author],
               id: author,
               showSocialMedia: true}
             %}
@@ -98,7 +96,7 @@
     {% ArticleNavigation {
       back: '/blog',
       backLabel: 'Return to all articles',
-      collection: collections.posts,
+      collection: collections.blogPosts,
       slug: page.fileSlug,
       lang: lang
     } %}
@@ -113,26 +111,4 @@
       lang: lang
     } %}
   {% endif %}
-
-  {# Hide related content for now. #}
-  {# <div>
-    <!-- Unstyled -->
-    <h3>Related content</h3>
-    <ul>
-      {% if related_content %} {% for url in related_content %}
-      <li>
-        <a href="{{ url | stripLanguage }}">{{
-          macros.getTitleFromUrl(url, collections.all)
-        }}</a>
-      </li>
-      {% endfor %} {% endif %} {% for article in collections.all %} {% set
-      isRelated = article | containsTag(tags) %} {% if isRelated %}
-      <li>
-        <a href="{{ article.url | stripLanguage }}">
-          {{ article.data.title }}
-        </a>
-      </li>
-      {% endif %} {% endfor %}
-    </ul>
-  </div> #}
 </div>

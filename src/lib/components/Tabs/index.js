@@ -2,6 +2,7 @@ import {html} from 'lit-element';
 import {BaseElement} from '../BaseElement';
 import {checkOverflow} from '../../utils/check-overflow';
 import {generateIdSalt} from '../../utils/generate-salt';
+import 'focus-visible';
 import './_styles.scss';
 
 /**
@@ -53,7 +54,11 @@ class Tabs extends BaseElement {
     }
 
     return html`
-      <div class="web-tabs__tablist" role="tablist" aria-label="${this.label}">
+      <div
+        class="web-tabs__tablist"
+        role="tablist"
+        aria-label="${this.label || 'tabs'}"
+      >
         ${this.tabs}
       </div>
       ${this.prerenderedChildren}

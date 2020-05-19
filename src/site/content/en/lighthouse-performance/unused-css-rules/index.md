@@ -57,7 +57,7 @@ The Coverage tab of Chrome DevTools can help you discover critical and uncritica
 See [View used and unused CSS with the Coverage tab](https://developers.google.com/web/tools/chrome-devtools/css/reference#coverage).
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="/images/includes/coverage.png" alt="Chrome DevTools: Coverage tab">
+  <img class="w-screenshot w-screenshot--filled" src="coverage.png" alt="Chrome DevTools: Coverage tab">
   <figcaption class="w-figcaption">
     Chrome DevTools: Coverage tab.
   </figcaption>
