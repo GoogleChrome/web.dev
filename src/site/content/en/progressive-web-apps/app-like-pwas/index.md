@@ -274,6 +274,9 @@ A more subtle thing but that is self-evident for a native application like Podca
   specify the default UI font of the system to be used for your app, whatever it may be in the concrete case.
   Finally, your app can obey to the user's color scheme preference by respecting their <a href="https://web.dev/prefers-color-scheme/"><code>prefers-color-scheme</code></a> choice, with an optional <a href="https://github.com/GoogleChromeLabs/dark-mode-toggle">dark mode toggle</a>
   to override it.
+  Another thing to decide on might be what the browser should do when reaching
+  the boundary of a scrolling area, for example, to implement custom <em>pull to refresh</em>.
+  This is possible with the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior"><code>overscroll-behavior</code></a> CSS property.
 {% endDetails %}
 
 ## Customized title bar
@@ -739,4 +742,4 @@ how your app is built (and why should they?), as long as it feels like a *real* 
 ## Acknowledgements
 
 This article was reviewed by Kayce Basques, Joe Medley, Joshua Bell, Dion Almaer, Ade Oshineye,
-Pete LePage, and Jeffrey Yasskin.
+Pete LePage, Sam Thorogood, and Jeffrey Yasskin.
