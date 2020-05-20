@@ -405,7 +405,7 @@ Apps can optionally keep the screen awake, too, for example to display lyrics or
 ## App discovery through an app store
 
 While the Podcasts app is part of the macOS desktop experience, on iOS it needs to be installed from the App Store.
-A quick search for "podcast", "podcasts", or "apple podcasts" immediately turns the app up in the App Store.
+A quick search for `podcast`, `podcasts`, or `apple podcasts` immediately turns the app up in the App Store.
 
 <figure class="w-figure">
   <img src="./image22.png" alt="iOS App Store search for 'podcasts' reveals the Podcasts app." width="300">
