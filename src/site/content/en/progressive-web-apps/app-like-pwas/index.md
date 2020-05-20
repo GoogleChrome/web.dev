@@ -7,7 +7,6 @@ authors:
 description: |
   Learn how to make your Progressive Web App feel like a "real" app by understanding
   how to implement native app patterns with web technologies.
-hero: hero.jpg
 date: 2020-05-19
 updated: 2020-05-19
 tags:
