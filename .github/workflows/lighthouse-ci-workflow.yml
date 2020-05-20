@@ -38,5 +38,4 @@ jobs:
         with:
           runs: 3
           configPath: ./tools/lhci/lighthouserc.json
-          serverBaseUrl: ${{ secrets.LHCI_SERVER }}
-          serverToken: ${{ secrets.LHCI_TOKEN }}
+          temporaryPublicStorage: true
