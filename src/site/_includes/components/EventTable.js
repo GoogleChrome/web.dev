@@ -17,7 +17,7 @@
 const {html} = require('common-tags');
 const prettyDate = require('../../_filters/pretty-date');
 
-const Author = require('./Author');
+const AuthorsDate = require('./AuthorsDate');
 
 /**
  * @param {!Array<{title: string, from: !Date, sessions: !Array}>} event
@@ -25,10 +25,13 @@ const Author = require('./Author');
  */
 module.exports = (event) => {
   const renderSession = ({speaker, title}) => {
+    // Always pass an Array of author IDs.
+    const authors = typeof speaker === 'string' ? [speaker] : speaker;
+
     return html`
       <tr>
         <td class="w-event-schedule__speaker">
-          ${Author({id: speaker, small: true})}
+          ${AuthorsDate({authors})}
         </td>
         <td class="w-event-schedule__session">${title}</td>
       </tr>

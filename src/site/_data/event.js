@@ -49,7 +49,7 @@ const eventData = [
         title: 'AMPs performance secrets',
       },
       {
-        speaker: 'sebabenz', // TODO(samthor): add nainar
+        speaker: ['sebabenz', 'nainar'],
         title: 'AMP at your Service',
       },
       {
@@ -76,7 +76,7 @@ const eventData = [
         title: "What's new in DevTools",
       },
       {
-        speaker: 'syg', // TODO(samthor): add leszeks
+        speaker: ['syg', 'leszeks'],
         title: "What's new in V8/JavaScript",
       },
       {
@@ -141,7 +141,7 @@ const eventData = [
         title: '10 modern layouts in 1 line of CSS',
       },
       {
-        speaker: 'jakearchibald', // TODO(samthor): add jasonjmiller
+        speaker: ['jakearchibald', 'developit'],
         title: 'Writing rollup plugins',
       },
       {
@@ -169,7 +169,7 @@ const eventData = [
         title: 'Find and fix problems with the DevTools Issues Panel',
       },
       {
-        speaker: 'maudn', // TODO(samthor): add rowan_m
+        speaker: ['maudn', 'rowan_m'],
         title: 'Get a (User-Agent Client) Hint',
       },
       {
