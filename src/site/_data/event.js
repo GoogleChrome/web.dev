@@ -53,11 +53,11 @@ const eventData = [
         title: 'AMPs performance secrets',
       },
       {
-        speaker: ['sebabenz', 'nainar'],
+        speaker: ['nainar', 'sebabenz'],
         title: 'AMP at your Service',
       },
       {
-        speaker: ['morss', 'crystallambert'],
+        speaker: ['crystallambert', 'morss'],
         title: 'Workerized JavaScript Made Easy',
       },
       {
@@ -153,7 +153,7 @@ const eventData = [
         title: '10 modern layouts in 1 line of CSS',
       },
       {
-        speaker: ['jakearchibald', 'developit'],
+        speaker: ['developit', 'jakearchibald'],
         title: 'Writing rollup plugins',
       },
       {
