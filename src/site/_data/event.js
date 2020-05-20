@@ -21,8 +21,8 @@
 const eventData = [
   {
     title: 'Day 1',
-    when: '2020-06-30T16:00Z',
-    duration: 8,
+    when: '2020-06-30T16:00Z', // 9am PST (-7)
+    duration: 3,
     sessions: [
       {
         speaker: 'dalmaer',
@@ -72,8 +72,8 @@ const eventData = [
   },
   {
     title: 'Day 2',
-    when: '2020-07-01T16:00Z',
-    duration: 8,
+    when: '2020-07-01T13:00Z', // 1pm GMT/UTC (+0), note UK time will be 2pm
+    duration: 3,
     sessions: [
       {
         speaker: 'dalmaer',
@@ -137,8 +137,8 @@ const eventData = [
   },
   {
     title: 'Day 3',
-    when: '2020-07-02T16:00Z',
-    duration: 8,
+    when: '2020-07-02T07:30Z', // 1pm IST (+5:30)
+    duration: 3,
     sessions: [
       {
         speaker: 'dalmaer',
