@@ -3,7 +3,7 @@ layout: layout
 title: web.dev LIVE
 description: |
   Bringing web developers together, from home
-date: 2020-12-31
+date: 2020-06-31
 draft: true
 ---
 
@@ -14,12 +14,12 @@ draft: true
 
       <div class="w-event-section__column-left w-event-heading">
         <h1 class="w-event-heading__logo">web.dev<span>/LIVE</span>
-<video width="156" height="72" autoplay muted loop playsinline>
-  <source src="live.mp4" type="video/mp4" />
-  <img src="live.png" title="LIVE" />
-</video>
+          <video width="156" height="72" autoplay muted loop playsinline>
+            <source src="live.mp4" type="video/mp4" />
+            <img src="live.png" title="LIVE" />
+          </video>
         </h1>
-        <p class="w-event-heading__subhead">Smarch 28 &mdash; Crtober 1, 2020</p>
+        <p class="w-event-heading__subhead">June 30 &mdash; July 2, 2020</p>
       </div>
 
       <div class="w-event-section__column-head w-event-hero">
@@ -42,7 +42,8 @@ draft: true
           <a class="w-button w-button--primary gc-analytics-event" data-category="web.dev" data-label="subscribe, newsletter" data-action="click" href="#subscribe">
             Get updates
           </a>
-          <a class="w-button w-button--with-icon w-button--secondary gc-analytics-event" data-category="web.dev" data-label="live, add to calendar" data-action="click" data-icon="calendar_today">
+          <a class="w-button w-button--with-icon w-button--secondary gc-analytics-event" data-category="web.dev" data-label="live, add to calendar" data-action="click" data-icon="calendar_today" target="_blank"
+            href="https://calendar.google.com/event?action=TEMPLATE&tmeid=MzVwaDlxYWllMWZuZjlicjhpcGc4Y3NjOWMgZ29vZ2xlLmNvbV9rMGM1a2tzbGg1ZjlrdDU3bTU5bGhqYjRsZ0Bn&tmsrc=google.com_k0c5kkslh5f9kt57m59lhjb4lg%40group.calendar.google.com">
             Add to calendar
           </a>
         </div>
@@ -64,8 +65,8 @@ draft: true
       </p>
     </div>
 
-    <div class="w-event-section__column-right">
-{% EventTable collections %}
+    <div class="w-event-section__column-right w-event-section__column-right__schedule">
+      {% EventTable event %}
     </div>
 
   </section>

@@ -885,6 +885,22 @@ const contributors = {
     github: 'una',
     twitter: 'una',
   },
+  phillipkriegel: {
+    name: {
+      given: 'Phillip',
+      family: 'Kriegel',
+    },
+    homepage: 'https://www.philkrie.me/',
+    github: 'philkrie',
+    description: {
+      en: 'Phillip is a Specialist Engineer',
+    },
+    org: {
+      name: 'Google',
+      unit: 'Global Business',
+    },
+    country: 'US',
+  },
   tigeroakes: {
     name: {
       given: 'Tiger',
@@ -990,13 +1006,148 @@ const contributors = {
     twitter: 'domenic',
     github: 'domenic',
   },
+  cjamcl: {
+    name: {
+      given: 'Connor',
+      family: 'Clark',
+    },
+    org: {
+      name: 'Google',
+      unit: 'Connor is a software engineer working on Lighthouse',
+    },
+    country: 'US',
+    twitter: 'cjamcl',
+    github: 'connorjclark',
+  },
+  paullewis: {
+    name: {
+      given: 'Paul',
+      family: 'Lewis',
+    },
+    twitter: 'aerotwist',
+    country: 'UK',
+    org: {
+      name: 'Google',
+    },
+  },
+  patrickkettner: {
+    name: {
+      given: 'Patrick',
+      family: 'Kettner',
+    },
+    twitter: 'patrickkettner',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
+  sebabenz: {
+    name: {
+      given: 'Sebastian',
+      family: 'Benz',
+    },
+    twitter: 'sebabenz',
+    country: 'DE',
+    org: {
+      name: 'Google',
+    },
+  },
+  syg: {
+    name: {
+      given: 'Shu-yu',
+      family: 'Guo',
+    },
+    twiter: '_shu',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
+  nattestad: {
+    name: {
+      given: 'Thomas',
+      family: 'Nattestad',
+    },
+    twiter: 'fractorious',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
+  maudn: {
+    name: {
+      given: 'Maud',
+      family: 'Nalpas',
+    },
+    twitter: 'maudnals',
+    country: 'DE',
+    org: {
+      name: 'Google',
+    },
+  },
+  morss: {
+    name: {
+      given: 'Ben',
+      family: 'Morss',
+    },
+    twitter: 'benmorss',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
+  jungkees: {
+    name: {
+      given: 'Jungkee',
+      family: 'Song',
+    },
+    org: {
+      name: 'Microsoft',
+      unit: 'Edge',
+    },
+    country: 'US',
+    twitter: 'jungkees',
+    github: 'jungkees',
+    description: {
+      en: 'PM on the Microsoft Edge team',
+    },
+  },
+  leszeks: {
+    name: {
+      given: 'Leszek',
+      family: 'Swirski',
+    },
+    twitter: 'leszekswirski',
+    country: 'DE',
+    org: {
+      name: 'Google',
+    },
+  },
+  nainar: {
+    name: {
+      given: 'Naina',
+      family: 'Raisinghani',
+    },
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
 };
 
 const processedContributors = {};
 
 Object.keys(contributors).forEach((key) => {
   const contributorData = contributors[key];
-  const title = contributorData.name.given + ' ' + contributorData.name.family;
+
+  // Generate the contributor's name out of valid given/family parts. This
+  // allows our authors to just have a single name.
+  const parts = [
+    contributorData.name.given,
+    contributorData.name.family,
+  ].filter((s) => s && s.length);
+  const title = parts.join(' ');
+
   const description =
     contributorData.description && contributorData.description.en
       ? contributorData.description.en
