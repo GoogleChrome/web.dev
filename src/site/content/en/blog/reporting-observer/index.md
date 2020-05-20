@@ -195,26 +195,6 @@ that goes wrong in your app:
 - JS exceptions and errors (currently serviced by `window.onerror`).
 - Unhandled JS promise rejections (currently serviced by `window.onunhandledrejection`)
 
-I'm also excited about tools integrating `ReportingObserver` into
-their workflows. [Lighthouse](/web/tools/lighthouse/) is an example of a tool
-that already flags browser deprecations when you run its
-"[Avoids deprecated APIs](/web/tools/lighthouse/audits/deprecated-apis)" audit:
-
-<figure>
-  <img src="/web/updates/images/2018/07/reporting/lighthouse_deprecations.png"
-       class="screenshot" alt="Lighthouse audit for using deprecated APIs."
-       title="Lighthouse audit for using deprecated APIs.">
-  <figcaption>The Lighthouse audit for using deprecated APIs could use ReportingObserver.</figcaption>
-</figure>
-
-Lighthouse currently uses the [DevTools
-protocol](https://chromedevtools.github.io/devtools-protocol/) to scrape console
-messages and report these issues to developers. Instead, it might be interesting
-to [switch to
-`ReportingObserver`](https://github.com/GoogleChrome/lighthouse/issues/5707) for
-its well structured deprecation reports and additional metadata like
-`anticipatedRemoval` date.
-
 **Additional resources**:
 
 - [W3c spec][reportingobserver]
