@@ -1125,7 +1125,7 @@ const contributors = {
     org: {
       name: 'Google',
     },
-  }
+  },
 };
 
 const processedContributors = {};
