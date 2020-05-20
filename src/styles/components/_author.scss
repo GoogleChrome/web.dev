@@ -117,6 +117,12 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
   margin-bottom: 12px;
 }
 
+.w-authors__card--holder {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
 .w-author__image--row {
   display: inline-flex;
   flex-direction: row-reverse;
@@ -124,14 +130,16 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
 }
 
 .w-author__image--row-item {
-  border-radius: $GLOBAL_ROUNDED;
   height: $AUTHOR_IMAGE_SIZE_SMALL;
   margin-left: calc(-#{$AUTHOR_IMAGE_SIZE_SMALL} / 2);
-  overflow: hidden;
   position: relative;
   width: $AUTHOR_IMAGE_SIZE_SMALL;
-}
 
-.w-author__image--row-item > .w-author__image {
-  border: solid white 2px;
+  a {
+    display: block;
+  }
+
+  > .w-author__image {
+    border: solid white 2px;
+  }
 }

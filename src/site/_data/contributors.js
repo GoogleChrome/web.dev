@@ -885,6 +885,22 @@ const contributors = {
     github: 'una',
     twitter: 'una',
   },
+  phillipkriegel: {
+    name: {
+      given: 'Phillip',
+      family: 'Kriegel',
+    },
+    homepage: 'https://www.philkrie.me/',
+    github: 'philkrie',
+    description: {
+      en: 'Phillip is a Specialist Engineer',
+    },
+    org: {
+      name: 'Google',
+      unit: 'Global Business',
+    },
+    country: 'US',
+  },
   tigeroakes: {
     name: {
       given: 'Tiger',
@@ -975,6 +991,19 @@ const contributors = {
     },
     twitter: 'domenic',
     github: 'domenic',
+  },
+  cjamcl: {
+    name: {
+      given: 'Connor',
+      family: 'Clark',
+    },
+    org: {
+      name: 'Google',
+      unit: 'Connor is a software engineer working on Lighthouse',
+    },
+    country: 'US',
+    twitter: 'cjamcl',
+    github: 'connorjclark',
   },
   paullewis: {
     name: {
@@ -1067,6 +1096,27 @@ const contributors = {
     github: 'jungkees',
     description: {
       en: 'PM on the Microsoft Edge team',
+    },
+  },
+  leszeks: {
+    name: {
+      given: 'Leszek',
+      family: 'Swirski',
+    },
+    twitter: 'leszekswirski',
+    country: 'DE',
+    org: {
+      name: 'Google',
+    },
+  },
+  nainar: {
+    name: {
+      given: 'Naina',
+      family: 'Raisinghani',
+    },
+    country: 'US',
+    org: {
+      name: 'Google',
     },
   },
 };

@@ -8,9 +8,9 @@ description: |
   interaction with the keyboard, mouse, screen, activation of a screensaver, locking of the screen,
   or moving to a different screen. A developer-defined threshold triggers the notification.
 date: 2020-05-18
-updated: 2020-05-18
+updated: 2020-05-19
 tags:
-  - post
+  - blog
   - idle-detection
   - fugu
   - capabilities
@@ -190,6 +190,8 @@ defined in [Controlling Access to Powerful Web Platform Features][powerful-apis]
 including user control, transparency, and ergonomics.
 The ability to use this API is controlled by the
 [`'notifications'` permission](https://w3c.github.io/permissions/#notifications).
+In order to use the API, an app also must be running in a
+[top-level secure context](https://www.w3.org/TR/secure-contexts/#examples-top-level).
 We are starting with this permission since it matches the needs we have currently heard,
 but we are open to expanding this in the future and would be happy to
 [hear from you](#feedback) if it does not meet your use case of the API.
