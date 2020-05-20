@@ -11,5 +11,6 @@ import '../components/ResponseThinkAndCheck';
 import '../components/SelectGroup';
 import '../components/Tabs';
 import '../components/CopyCode';
+import '../components/Feedback';
 
 import '../components/base';
