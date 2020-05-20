@@ -200,8 +200,6 @@ that goes wrong in your app:
 - [W3c spec][reportingobserver]
 - [chromestatus.com entry][chromestatus]
 
-{% include "web/_shared/rss-widget-updates.html" %}
-
 [spec]: https://w3c.github.io/reporting
 [reportingobserver]: https://w3c.github.io/reporting/#observers
 [explainer]: https://github.com/W3C/reporting/blob/master/EXPLAINER.md

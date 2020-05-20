@@ -1082,6 +1082,16 @@ const contributors = {
       name: 'Google',
     },
   },
+  ericbidelman: {
+    name: {
+      given: 'Eric',
+      family: 'Bidelman',
+    },
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
 };
 
 const processedContributors = {};
