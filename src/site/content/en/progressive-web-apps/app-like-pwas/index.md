@@ -31,6 +31,7 @@ component that you can open for more details.
 Please note that not all browsers on the various operating systems support all the listed APIs
 or functionalities. Be sure to carefully review the compatibility notes in the linked articles.
 {% endAside %}
+
 ## Capable of running offline
 
 If you take a step back and think of some of the native applications you may have on your mobile phone or desktop computer, one thing clearly stands out: you never get nothing. In the Podcasts app, even if I am offline, there is always something. When there is no network connection, the app naturally still opens. The **Top Charts** section does not show any content, but instead falls back to a **Can't connect right now** message paired with a **Retry** button. It may not be the most welcoming experience, but I get something.
