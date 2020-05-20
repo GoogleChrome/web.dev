@@ -402,6 +402,17 @@ const contributors = {
       en: '¯‍\\‍_‍(‍ツ‍)‍_‍/‍¯',
     },
   },
+  rachelandrew: {
+    name: {
+      given: 'Rachel',
+      family: 'Andrew',
+    },
+    country: 'GB',
+    homepage: 'https://rachelandrew.co.uk/',
+    twitter: 'rachelandrew',
+    github: 'rachelandrew',
+    glitch: 'rachelandrew',
+  },
   rviscomi: {
     name: {
       given: 'Rick',
