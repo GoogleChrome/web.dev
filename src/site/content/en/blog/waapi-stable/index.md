@@ -137,7 +137,7 @@ Let's re-write our example above with an animation timeline. Doing so will enabl
 
 [TODO:  REVERSE EXAMPLE ]
 
-Timeline example with pause state from Sam Thorogood: https://codepen.io/samthor/pen/mJxPRK?editors=0010
+Timeline example with pause state from Sam Thorogood: codepen.io/samthor/pen/mJxPRK?editors=0010
 
 ## Replaceable Animations
 
@@ -186,7 +186,7 @@ In this example, the persist method prevents the first animation from being remo
 
 With the onremove event handler, we can run custom JavaScript code when an animation is replaced. This handler provides a convenient place for commitStyles to be called, and has the advantage of not requiring "persist" or "cancel".  Our" persist" example from above, becomes:
 
-```
+```js
 const base = box.animate([{transform: 'translateX(100px)' }], 
                          { duration: 1000, fill: 'forwards' });
 box.animate([{transform: 'translateX(100px)', composite: 'add' }], 
@@ -198,7 +198,7 @@ base.onRemove = () => { base.commitStyles(); });
 
 The replaceState attribute provides a means of tracking whether an animation is active, persisted or removed.  Animations that are explicitly marked as persisted, are not flagged as replaceable, and thus not automatically removed.  The following example shows one method for clean up of persisted animations: 
 
-```
+```js
 function commitPersistedAnimations() {
   document.getAnimations().forEach((anim) => {
     if (anim.playState == 'finished' && 
