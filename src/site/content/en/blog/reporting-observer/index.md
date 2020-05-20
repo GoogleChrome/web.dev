@@ -43,7 +43,7 @@ can be notified about them.
 other browsers.
 {: .dogfood }
 
-# Background
+## Background
 
 A while back, I wrote a blog post ("[Observing your web
 app](https://ericbidelman.tumblr.com/post/149032341876/observing-your-web-app)")
@@ -89,7 +89,7 @@ these different reports to a backend. The Reporting API is a generic framework
 to specify a set of server endpoints to report issues to.
 {% endAside %}
 
-# The API
+## The API
 
 `ReportingObserver` is not unlike the other "observer" APIs such as
 `IntersectionObserver` and `ResizeObserver`. You give it a callback; it gives
@@ -113,7 +113,7 @@ const observer = new ReportingObserver((reports, observer) => {
 observer.observe();
 ```
 
-## Filtered reports
+### Filtered reports
 
 Reports can be pre-filtered to only observe certain report types. Right now,
 there are two report types: `'deprecation'` and `'intervention'`.
@@ -124,7 +124,7 @@ const observer = new ReportingObserver((reports, observer) => {
 }, {types: ['deprecation']});
 ```
 
-## Buffered reports
+### Buffered reports
 
 Use the The `buffered: true` option when you want to see the reports that were
 generated before the observer instance was created:
@@ -139,7 +139,7 @@ This option is great for situations like lazy-loading a library that uses a
 `ReportingObserver`. The observer gets added late, but you don't miss out on
 anything that happened earlier in the page load.
 
-## Stop observing
+### Stop observing
 
 Stop observing using the `disconnect()` method:
 
@@ -147,9 +147,9 @@ Stop observing using the `disconnect()` method:
 observer.disconnect();
 ```
 
-# Examples
+## Examples
 
-## Report browser interventions to an analytics provider
+### Report browser interventions to an analytics provider
 
 ```js
 const observer = new ReportingObserver((reports, observer) => {
@@ -161,7 +161,7 @@ const observer = new ReportingObserver((reports, observer) => {
 observer.observe();
 ```
 
-## Be notified when APIs are going to be removed
+### Be notified when APIs are going to be removed
 
 ```js
 const observer = new ReportingObserver((reports, observer) => {
@@ -176,7 +176,7 @@ const observer = new ReportingObserver((reports, observer) => {
 observer.observe();
 ```
 
-# Conclusion
+## Conclusion
 
 `ReportingObserver` gives you an additional way for discovering and monitoring
 potential issues in your web app. It's even a useful tool for understanding the
