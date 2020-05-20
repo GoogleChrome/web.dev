@@ -129,7 +129,7 @@ In the Podcasts app's settings, I can configure the app to download new episodes
 
 ## State synchronized over the cloud
 
-At the same time, my subscriptions are synchronized across all devices I own. In a seamless world, I do not have to worry about manually keeping my podcast subscriptions in sync. Likewise, I do not have to be afraid that my mobile device's memory will be consumed by episodes I have long listened to on my desktop and vice versa. The play state is kept in sync, and listened to episodes are automatically deleted.
+At the same time, my subscriptions are synchronized across all devices I own. In a seamless world, I do not have to worry about manually keeping my podcast subscriptions in sync. Likewise, I do not have to be afraid that my mobile device's memory will be consumed by episodes I have already listened to on my desktop and vice versa. The play state is kept in sync, and listened to episodes are automatically deleted.
 
 <figure class="w-figure">
   <img src="./image11.png" alt="The Podcasts app's settings menu in the 'Advanced' section where the 'Sync subscriptions across devices' option is activated." width="495">
