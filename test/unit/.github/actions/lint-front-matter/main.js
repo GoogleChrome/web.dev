@@ -56,4 +56,58 @@ describe('main', function() {
     assert.strictEqual(firstPost.failures[0].status, failStatus);
     assert.ok(secondPost.failures.length === 0);
   });
+
+  it('should return results for modified files', async function() {
+    coreStub.getInput = function(type) {
+      if (type === 'modified') {
+        return [
+          path.join(__dirname, 'fixtures', 'no-updated', 'index.md'),
+        ].join(' ');
+      }
+
+      return '';
+    }
+
+    githubStub.context = {
+      payload: {
+        pull_request: {
+          labels: [],
+        },
+      },
+    }
+
+    const results = await main.run();
+    const [firstPost] = Object.values(results);
+    assert.ok(firstPost.failures.length);
+    const failure = firstPost.failures[0];
+    assert.strictEqual(failure.status, failStatus);
+    // Verifies the rule that checks for the `updated` property
+    // ran against the modified file.
+    assert.strictEqual(failure.id, 'has-property');
+    assert.ok(failure.message.includes('updated'));
+  });
+
+  it('should skip audits with ignore labels', async function() {
+    coreStub.getInput = function(type) {
+      if (type === 'modified') {
+        return [
+          path.join(__dirname, 'fixtures', 'no-updated', 'index.md'),
+        ].join(' ');
+      }
+
+      return '';
+    }
+
+    githubStub.context = {
+      payload: {
+        pull_request: {
+          labels: ['ignore: has-property'],
+        },
+      },
+    }
+
+    const results = await main.run();
+    const [firstPost] = Object.values(results);
+    assert.strictEqual(firstPost.failures.length, 0);
+  });
 });

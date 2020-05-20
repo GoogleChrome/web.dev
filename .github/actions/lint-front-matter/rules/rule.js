@@ -5,12 +5,24 @@
  * results.
  */
 
+/** @typedef {{id: string, status: string, message: string}} RuleResult */
+
 class Rule {
+  /**
+   * @constructor
+   * @param {!string} id A unique identifier for the rule.
+   * @param {!Function} testFn The function to call as part of the test.
+   */
   constructor(id, testFn) {
     this.id = id;
     this.testFn = testFn;
   }
 
+  /**
+   * A facade for running the test function and supplying its arguments.
+   * @param {{file: string, frontMatter: Object, args: ?Array}} args
+   * @return {RuleResult}
+   */
   test(args) {
     const result = this.testFn(args);
     result.id = this.id;

@@ -1,11 +1,12 @@
 const {okStatus, failStatus, warnStatus} = require('./status');
 
+/** @typedef {import('../rules/rule').RuleResult} RuleResult */
+
 /**
  * Take the array of results returned from linting a sinlge file
  * and bucket them by passes/failures/warnings.
- * @param {!Object} data
- * @param {!string} data.file A path to a file.
- * @param {!Array} data.results An array of Rule results (pass/fail/warn).
+ * @param {string} file The file associated with the results.
+ * @param {Array<RuleResult>} results The collection of rule results.
  * @return {{file: string, passes: Array, failures: Array, warnings: Array}}
  */
 module.exports = (file, results) => {
