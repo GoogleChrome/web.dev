@@ -101,11 +101,9 @@ Lighthouse audit can help you automate the process of making sure that your HTML
 In addition to setting an `initial-scale`,
 you can also set the following attributes on the viewport:
 
-{% Compare 'worse' %}
-  * `minimum-scale`
-  * `maximum-scale`
-  * `user-scalable`
-{% endCompare %}
+* `minimum-scale`
+* `maximum-scale`
+* `user-scalable`
 
 When set, these can disable the user's ability to zoom the viewport,
 potentially causing accessibility issues.
