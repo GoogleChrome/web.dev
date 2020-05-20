@@ -92,7 +92,7 @@ When I am back online, I can of course search for content with a query like `htt
 The Podcasts app integrates naturally with other applications. For example, when I right-click an episode that I like, I can share it to other apps on my device, like the Messages app. It also naturally integrates with the system clipboard. I can right-click any episode and copy a link to it.
 
 <figure class="w-figure">
-  <img src="./image19.png" alt="The Podcasts app's context menu invoked on a podcast episode with the 'Share Episode > Messages' option selected." width="600">
+  <img src="./image19.png" class="w-screenshot" alt="The Podcasts app's context menu invoked on a podcast episode with the 'Share Episode > Messages' option selected." width="600">
   <figcaption class="w-figcaption">Sharing a podcast episode to the Messages app.</figcaption>
 </figure>
 
