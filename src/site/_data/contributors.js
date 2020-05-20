@@ -1115,6 +1115,17 @@ const contributors = {
       name: 'Google',
     },
   },
+  dalmaer: {
+    name: {
+      given: 'Dion',
+      family: 'Almaer',
+    },
+    twitter: 'dalmaer',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  }
 };
 
 const processedContributors = {};

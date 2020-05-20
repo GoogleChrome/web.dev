@@ -25,6 +25,10 @@ const eventData = [
     duration: 8,
     sessions: [
       {
+        speaker: 'dalmaer',
+        title: 'Opener',
+      },
+      {
         speaker: 'addyosmani',
         title: 'Optimize User Experience for Core Web Vitals',
       },
@@ -71,6 +75,10 @@ const eventData = [
     when: '2020-07-01T16:00Z',
     duration: 8,
     sessions: [
+      {
+        speaker: 'dalmaer',
+        title: 'Opener',
+      },
       {
         speaker: 'paullewis',
         title: "What's new in DevTools",
@@ -132,6 +140,10 @@ const eventData = [
     when: '2020-07-02T16:00Z',
     duration: 8,
     sessions: [
+      {
+        speaker: 'dalmaer',
+        title: 'Opener',
+      },
       {
         speaker: 'kosamari',
         title: 'Building better in the world of build tools!',
