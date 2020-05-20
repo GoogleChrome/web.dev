@@ -40,7 +40,7 @@ If you take a step back and think of some of the native applications you may hav
 {% endDetailsSummary %}
   The Podcasts app follows the so-called app shell model. All the static content that is needed to show the core app is cached locally,
   including decorative images like the left-hand menu icons and the core player UI icons.
-  Dynamic content like the "Top Charts" data is only loaded on demand, with locally cached fallback content available should the loading fail.
+  Dynamic content like the <b>Top Charts</b> data is only loaded on demand, with locally cached fallback content available should the loading fail.
   Read the  article <a href="https://developers.google.com/web/fundamentals/architecture/app-shell">The App Shell Model</a>
   to learn how to apply this architectural model to your web app.
 {% endDetails %}
