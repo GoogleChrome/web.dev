@@ -9,7 +9,7 @@ web-feedback {
     display: grid;
     font-family: "Google Sans", sans-serif;
     font-size: .875em;
-    font-weight: 500;
+    font-weight: $FONT_WEIGHT_MEDIUM;
     grid-template-columns: 2fr 1fr 1fr;
     line-height: 24px;
 
