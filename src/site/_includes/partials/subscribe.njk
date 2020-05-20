@@ -1,11 +1,11 @@
-<web-subscribe id="subscribe" class="w-pt--l w-pb--l">
+<web-subscribe class="w-pt--l w-pb--l">
   <div class="w-subscribe">
     <div class="w-display--flex w-justify-content--center">
-      <h1 class="w-text--center">Developer Newsletter</h1>
+      <h1 class="w-text--center">{{ subscribeTitle | default('Developer Newsletter', false) }}</h1>
     </div>
     <div class="w-display--flex w-justify-content--center">
       <div class="w-subscribe--padded">
-        <p class="w-text--center w-mt--non w-subscribe__message">Get the latest news, techniques and updates straight to your inbox.</p>
+        <p class="w-text--center w-mt--non w-subscribe__message">{{ subscribeNotes | default('Get the latest news, techniques and updates straight to your inbox.', false) }}</p>
       </div>
     </div>
     <form class="w-subscribe__form" action="{{ site.subscribeForm }}" method="post">

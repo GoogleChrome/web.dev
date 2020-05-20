@@ -55,7 +55,7 @@ draft: true
 
   <hr />
 
-  <section class="w-event-section">
+  <section id="schedule" class="w-event-section">
 
     <div class="w-event-section__column-left">
       <h3>What to expect</h3>
@@ -73,7 +73,9 @@ draft: true
 
   <hr />
 
-  <section class="w-layout-container">
+  <section id="subscribe" class="w-layout-container">
+    {% set subscribeTitle = "Sign up for web.dev updates" %}
+    {% set subscribeNotes = "Enjoying the content of web.dev LIVE? Get the latest news and techniques about web development straight to your inbox." %}
     {% include 'partials/subscribe.njk' %}
   </section>
 
