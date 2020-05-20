@@ -71,7 +71,7 @@ and are displayed with all metadata like artwork and descriptions.
 
 ## Proactive background downloading
 
-When I am back online, I can of course search for content with a query like "http 203", and when I decide to subscribe to the search result, the [HTTP 203 podcast](https://web.dev/podcasts/), the latest episode of the series is immediately downloaded, no questions asked.
+When I am back online, I can of course search for content with a query like `http 203`, and when I decide to subscribe to the search result, the [HTTP 203 podcast](https://web.dev/podcasts/), the latest episode of the series is immediately downloaded, no questions asked.
 
 <figure class="w-figure">
   <img src="./image10.png" alt="The Podcasts app downloading the latest episode of a podcast immediately after subscribing." width="600">
