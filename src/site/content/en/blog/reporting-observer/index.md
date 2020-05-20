@@ -1,6 +1,6 @@
 ---
 title: Know your code health
-subhead: TBD
+subhead: Find deprecated APIs in your production apps
 authors:
   - ericbidelman
 date: 2019-08-21
@@ -8,7 +8,9 @@ updated: 2020-05-27
 hero: hero.jpg
 alt: TBD.
 description: |
-  TBD
+  `ReportingObserver` lets you know when your site uses a deprecated API or runs
+  into a browser intervention. The basic functionality originally landed in Chrome
+  69. As of Chrome 84, it can be used in workers. It's pretty simple.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
 ---
