@@ -4,8 +4,8 @@ subhead: App shortcuts give quick access to a handful of common actions that use
 authors:
   - beaufortfrancois
   - jungkees
-date: 2020-05-27
-updated: 2020-05-27
+date: 2020-05-20
+updated: 2020-05-20
 hero: hero.jpg
 alt: A photo of an Android phone showing an app shortcuts menu
 description: App shortcuts give quick access to a handful of common actions that users need frequently.
