@@ -8,7 +8,6 @@ description: |
   payment app. Learn how to set up a payment method and get your payment app
   ready for merchants and customers to make payment.
 date: 2020-05-25
-draft: true
 ---
 
 To be used with the Payment Request API, a payment app must be associated with a
