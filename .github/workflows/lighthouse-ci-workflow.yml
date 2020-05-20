@@ -33,10 +33,7 @@ jobs:
         env:
           ELEVENTY_ENV: prod
         run: npm ci && npm run build
+      - name: Install Canary Lighthouse CI
+        run: npm install @lhci/cli@next
       - name: Lighthouse CI
-        uses: treosh/lighthouse-ci-action@v2
-        with:
-          runs: 3
-          configPath: ./tools/lhci/lighthouserc.json
-          serverBaseUrl: ${{ secrets.LHCI_SERVER }}
-          serverToken: ${{ secrets.LHCI_TOKEN }}
+        run: npx lhci --config=./tools/lhci/lighthouserc.json --upload.serverBaseUrl=${{ secrets.LHCI_SERVER }} --upload.token=${{ secrets.LHCI_TOKEN }}
