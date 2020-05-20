@@ -19,9 +19,9 @@ tags:
   - chrome 84
 ---
 
-Adding delightful animations to your website is not only for cosmetic reasons. When used correctly, animations improve user perception and [memory](https://www.researchgate.net/publication/229351931_The_Effects_of_Animation_and_Format_on_the_Perception_and_Memory_of_Online_Advertising) of your brand, guide user actions, but also helps users navigate your application — providing context in a digital space.
+Adding delightful animations to your website is not only for cosmetic reasons. When used correctly, animations improve user perception and [memory](https://www.researchgate.net/publication/229351931_The_Effects_of_Animation_and_Format_on_the_Perception_and_Memory_of_Online_Advertising) of your brand, guide user actions, but also helps users navigate your application—providing context in a digital space.
 
-And an exciting piece of news: the [Web Animations API](https://www.w3.org/TR/web-animations-1/) has just hit Chrome stable! This API enables developers to incorporate [imperative](https://www.youtube.com/watch?v=WaNoqBAp8NI) animations with JavaScript. It was written to underlie both CSS animation and transition implementations and enable future effects to be developed, as well as existing effects to be composed and timed. This lets us take advantage of CSS animations, but extend those in a way that we can’t do with CSS alone.
+And an exciting piece of news: the [Web Animations API](https://www.w3.org/TR/web-animations-1/) has just hit Chrome stable! This API enables developers to incorporate [imperative](https://www.youtube.com/watch?v=WaNoqBAp8NI) animations with JavaScript. It was written to underlie both CSS animation and transition implementations and enable future effects to be developed, as well as existing effects to be composed and timed. This lets us take advantage of CSS animations, but extend those in a way that we can't do with CSS alone.
 
 ## Getting Started
 
@@ -29,7 +29,7 @@ With the Web Animations API, we can take advantage of some really great features
 
 These are hugely beneficial when orchestrating animations for complex components, such as a you may need for a getting started guide or even to just apply multiple, tiered animations to a modal opening.
 
-Let’s take a look at an example of creating an animation using the Web Animations API. First, we’ll need to create a Keyframe Object. If you’re familiar with CSS `@keyframe`s, this is very similar. What might look like [this](https://codepen.io/una/pen/RwWMvPw) in CSS:
+Let's take a look at an example of creating an animation using the Web Animations API. First, we'll need to create a Keyframe Object. If you're familiar with CSS `@keyframe`s, this is very similar. What might look like [this](https://codepen.io/una/pen/RwWMvPw) in CSS:
 
 ```css
 @keyframes openAnimation {
@@ -46,8 +46,8 @@ Would look like [this](https://codepen.io/una/pen/abvYXJX) in JS:
 
 ```js
 const openAnimation = [
-  { transform: 'scale(0)’ }, 
-  { transform: 'scale(1)’ }, 
+  { transform: 'scale(0)' }, 
+  { transform: 'scale(1)' }, 
 ];
 ```
 
@@ -62,16 +62,16 @@ Where we set parameters for animation in CSS:
 We would set in JS:
 
 ```js
-document.querySelector(‘.modal’).animate(
+document.querySelector('.modal').animate(
     openAnimation ,  {
     duration: 1000, // 1s
     iterations: 1, // single iteration
-easing: 'ease-in’ // easing function
+easing: 'ease-in' // easing function
   }
 );
 ```
 
-So the amount of code is about the same, but with JavaScript, we get a couple of superpowers that we don’t have with CSS alone. A few of those are the ability to group effects, and to move within an animation timeline.
+So the amount of code is about the same, but with JavaScript, we get a couple of superpowers that we don't have with CSS alone. A few of those are the ability to group effects, and to move within an animation timeline.
 
 ## Orchestrating Animations with Promises
 
@@ -97,16 +97,16 @@ box.animate([{transform: 'translateX(100px)' }],
 });
 ```
 
-Let’s continue with our previous example, and create an orchestrated animation chain with `animation.finished` and a promise. In this example, we have a vertical transformation (`scaleY`), followed by a horizontal transformation (`scaleX`), followed by an opacity change on a child element: 
+Let's continue with our previous example, and create an orchestrated animation chain with `animation.finished` and a promise. In this example, we have a vertical transformation (`scaleY`), followed by a horizontal transformation (`scaleX`), followed by an opacity change on a child element: 
 
 [https://codepen.io/una/pen/eYpKEzp](https://codepen.io/una/pen/eYpKEzp) and [https://codepen.io/una/pen/dyYKJMz](https://codepen.io/una/pen/dyYKJMz) (two ways to write it)
 -- CODE BLOCK HERE FROM THE ABOVE --
 
 <img src='./modal-open.gif' alt='an opening modal'>
 
-We’ve chained these animations using `animation.finished.then()` prior to executing the next animation set in the chain. This way, the animations appear in order, and we are even applying effects to different target elements with different options set (such as speed and ease).
+We've chained these animations using `animation.finished.then()` prior to executing the next animation set in the chain. This way, the animations appear in order, and we are even applying effects to different target elements with different options set (such as speed and ease).
 
-Within CSS, this would be cumbersome to recreate. You’d have to use a `@keyframe` and sort out the correct percentages to place the animations, and use animation delays prior to triggering the animations in the sequence. Another factor is applying the animations to different elements (the parents vs the child, for example). This would need to be calculated properly with delays and there’s a lot of room for error.
+Within CSS, this would be cumbersome to recreate. You'd have to use a `@keyframe` and sort out the correct percentages to place the animations, and use animation delays prior to triggering the animations in the sequence. Another factor is applying the animations to different elements (the parents vs the child, for example). This would need to be calculated properly with delays and there's a lot of room for error.
 
 ## Grouping Effects with the Animation Timeline
 
@@ -141,7 +141,7 @@ Timeline example with pause state from Sam Thorogood: https://codepen.io/samthor
 
 ## Replaceable Animations
 
-Fill modes provide a convenient means of ‘sticking’ the start or end value of an animation, but at a cost.  For a small number of animations, this is not typically a problem, but consider the following example:
+Fill modes provide a convenient means of 'sticking' the start or end value of an animation, but at a cost.  For a small number of animations, this is not typically a problem, but consider the following example:
  
  ```js
 elem.addEventListener('mousemove', evt => {
@@ -171,7 +171,7 @@ elem.addEventListener('mousemove', evt => {
 ```
  
 ### `animation.persist`
-The persist method marks an animation as non-replaceable. Persisting an animation is useful when used in conjunction with composite modes ‘add’ or ‘accumulate’.
+The persist method marks an animation as non-replaceable. Persisting an animation is useful when used in conjunction with composite modes 'add' or 'accumulate'.
 
 ```js
 box.animate([{transform: 'translateX(100px)' }], 
@@ -184,7 +184,7 @@ In this example, the persist method prevents the first animation from being remo
 
 ### `animation.onremove`
 
-With the onremove event handler, we can run custom JavaScript code when an animation is replaced. This handler provides a convenient place for commitStyles to be called, and has the advantage of not requiring “persist” or “cancel”.  Our” persist” example from above, becomes:
+With the onremove event handler, we can run custom JavaScript code when an animation is replaced. This handler provides a convenient place for commitStyles to be called, and has the advantage of not requiring "persist" or "cancel".  Our" persist" example from above, becomes:
 
 ```
 const base = box.animate([{transform: 'translateX(100px)' }], 
@@ -201,8 +201,8 @@ The replaceState attribute provides a means of tracking whether an animation is 
 ```
 function commitPersistedAnimations() {
   document.getAnimations().forEach((anim) => {
-    if (anim.playState == ‘finished’ && 
-        anim.replaceState == ‘persisted’) {
+    if (anim.playState == 'finished' && 
+        anim.replaceState == 'persisted') {
     anim.commitStyles();
     anim.cancel();
   });
@@ -213,7 +213,7 @@ function commitPersistedAnimations() {
 
 ### Replaceable Animations
 
-Fill modes provide a convenient means of ‘sticking’ the start or end value of an animation, but at a cost.   For a small number of animations, this is not typically a problem, but consider the following example:
+Fill modes provide a convenient means of 'sticking' the start or end value of an animation, but at a cost.   For a small number of animations, this is not typically a problem, but consider the following example:
  
 ```js
 elem.addEventListener('mousemove', evt => {
@@ -243,7 +243,7 @@ elem.addEventListener('mousemove', evt => {
 ```
  
 ### `animation.persist`
-The persist method marks an animation as non-replaceable. Persisting an animation is useful when used in conjunction with composite modes ‘add’ or ‘accumulate’.
+The persist method marks an animation as non-replaceable. Persisting an animation is useful when used in conjunction with composite modes 'add' or 'accumulate'.
 
 ```js
 box.animate([{transform: 'translateX(100px)' }], 
@@ -255,7 +255,7 @@ box.animate([{transform: 'translateX(100px)', composite: 'add' }],
 In this example, the persist method prevents the first animation from being removed and resulting transformation is between 0 and 200px.  Composite modes are described in more detail below.  Caution should be exercised when using persist as resources for these animations can only be reclaimed once the animation is cancelled.
 animation.onremove
 
-With the onremove event handler, we can run custom JavaScript code when an animation is replaced. This handler provides a convenient place for commitStyles to be called, and has the advantage of not requiring “persist” or “cancel”.  Our” persist” example from above, becomes:
+With the onremove event handler, we can run custom JavaScript code when an animation is replaced. This handler provides a convenient place for commitStyles to be called, and has the advantage of not requiring "persist" or "cancel".  Our" persist" example from above, becomes:
 
 ```js
 const base = box.animate([{transform: 'translateX(100px)' }], 
@@ -272,8 +272,8 @@ The replaceState attribute provides a means of tracking whether an animation is 
 ```js
 function commitPersistedAnimations() {
   document.getAnimations().forEach((anim) => {
-    if (anim.playState == ‘finished’ && 
-        anim.replaceState == ‘persisted’) {
+    if (anim.playState == 'finished' && 
+        anim.replaceState == 'persisted') {
     anim.commitStyles();
     anim.cancel();
   });
@@ -298,7 +298,7 @@ function TweakPropertyInterpolation(propertyName, tweaker) {
     const replacementKeyframes = tweaker(keyframes);
     transition.effect.setKeyframes(replacementKeyframes);
   };
-  document.addEventListener(‘transitionrun’, handler);
+  document.addEventListener('transitionrun', handler);
 }
 ```
 
@@ -347,8 +347,8 @@ This example doubles the playback rate of all active animations that target elem
 
 ## Animation Guidelines
 
-Let’s quickly go over a few considerations when adding animation to your web experiences.
+Let's quickly go over a few considerations when adding animation to your web experiences.
 
 Provide a reduced-animation option for folks with vestibular impairments or for those who simple prefer fewer animations
-For most cases, you’ll likely want to use easing curves to imitate natural movements rather than the default linear movement. This will make your animations feel more fluid.
+For most cases, you'll likely want to use easing curves to imitate natural movements rather than the default linear movement. This will make your animations feel more fluid.
 
