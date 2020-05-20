@@ -168,7 +168,7 @@ There is no need to switch to the app just to skip forward or backward.
 Of course I can always multitask back to the Podcasts app from anywhere. The app has a clearly distinguishable icon that I can also put on my desktop or application dock so Podcasts can be launched immediately when I feel like it.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="./image3.png" alt="The macOS task switcher with a number of app icons to choose from, one of them the Podcasts one." >
+  <img class="w-screenshot" src="./image3.png" alt="The macOS task switcher with a number of app icons to choose from, one of them the Podcasts one." >
   <figcaption class="w-figcaption w-figcaption--fullbleed">Multitasking back to the Podcasts app.</figcaption>
 </figure>
 
