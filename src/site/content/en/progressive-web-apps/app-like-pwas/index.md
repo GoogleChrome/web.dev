@@ -720,7 +720,7 @@ The table below shows a compact overview of all features and provides a list of 
 PWAs have come a long way since their introduction in 2015.
 In the context of [Project Fugu 🐡](/fugu-status), Chrome is working on closing the last remaining gaps.
 By following even only some of the pieces of advice in this article,
-you can reach that holy grail app-like native feeling and make your users forget
+you can piece by piece get closer to that app-like native feeling and make your users forget
 that they are dealing with "just a website", because, honestly, most of them do not care
 how your app is built (and why should they?), as long as it feels like a *real* app.
 
