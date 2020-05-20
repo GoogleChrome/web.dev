@@ -102,6 +102,7 @@ The Podcasts app integrates naturally with other applications. For example, when
 {% endDetailsSummary %}
   The <a href="https://web.dev/web-share/">Web Share API</a> and the <a href="https://web.dev/web-share-target/">Web Share Target API</a>
   allow your app to share and receive texts, files, and links to and from other applications on the device.
+  Although it is not yet possible for a web app to add menu items to the operating system's built-in right-click menu, there are lots of other ways to link to and from other apps on the device.
   With the <a href="https://web.dev/image-support-for-async-clipboard/">Async Clipboard API</a>, you can programmatically read and write
   text and image data (PNG images) to the system clipboard.
   On Android, you can use the <a href="https://web.dev/contact-picker/">Contact Picker API</a> to select entries from the device's contacts manager.
@@ -158,7 +159,7 @@ There is no need to switch to the app just to skip forward or backward.
   How to do this on the web
 {% endDetailsSummary %}
   Media keys are supported by the <a href="https://web.dev/media-session/">Media Session API</a>.
-  Like that, users can profit from the hardware media keys on their physical keyboards, headphones, or even control the web app
+  Like that, users can make use of the hardware media keys on their physical keyboards, headphones, or even control the web app
   from the software media keys on their smartwatches.
 {% endDetails %}
 
@@ -167,7 +168,7 @@ There is no need to switch to the app just to skip forward or backward.
 Of course I can always multitask back to the Podcasts app from anywhere. The app has a clearly distinguishable icon that I can also put on my desktop or application dock so Podcasts can be launched immediately when I feel like it.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="./image3.png" alt="The macOS task switcher with a number of app icons to choose from, one of them the Podcasts one." >
+  <img class="w-screenshot" src="./image3.png" alt="The macOS task switcher with a number of app icons to choose from, one of them the Podcasts one." >
   <figcaption class="w-figcaption w-figcaption--fullbleed">Multitasking back to the Podcasts app.</figcaption>
 </figure>
 
@@ -242,8 +243,8 @@ You may not immediately think of it, but the Podcasts app naturally integrates w
 A more subtle thing but that is self-evident for a native application like Podcasts: none of the text labels are selectable and all texts blend in with the system font of the machine. Also my choice of system color theme (dark mode) is respected.
 
 <figure class="w-figure">
-  <img src="./image2.png" alt="The Podcasts app in dark mode." width="350">
-  <img src="./image7.png" alt="The Podcasts app in light mode." width="350">
+  <img src="./image2.png" alt="The Podcasts app in dark mode." class="w-screenshot w-screenshot--filled" width="350">
+  <img src="./image7.png" alt="The Podcasts app in light mode." class="w-screenshot w-screenshot--filled" width="350">
   <figcaption class="w-figcaption">Podcasts supports Dark Mode and uses the default system font.</figcaption>
 </figure>
 
@@ -719,7 +720,7 @@ The table below shows a compact overview of all features and provides a list of 
 PWAs have come a long way since their introduction in 2015.
 In the context of [Project Fugu 🐡](/fugu-status), Chrome is working on closing the last remaining gaps.
 By following even only some of the pieces of advice in this article,
-you can reach that holy grail app-like native feeling and make your users forget
+you can piece by piece get closer to that app-like native feeling and make your users forget
 that they are dealing with "just a website", because, honestly, most of them do not care
 how your app is built (and why should they?), as long as it feels like a *real* app.
 
