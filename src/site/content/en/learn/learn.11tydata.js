@@ -11,7 +11,6 @@ const metrics = require('../metrics/metrics.11tydata.js').path;
 const vitals = require('../vitals/vitals.11tydata.js').path;
 const payments = require('../payments/payments.11tydata.js').path;
 
-
 const react = require('../react/react.11tydata.js').path;
 const angular = require('../angular/angular.11tydata.js').path;
 
