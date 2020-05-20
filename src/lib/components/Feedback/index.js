@@ -78,9 +78,7 @@ class Feedback extends BaseElement {
             </div>
 
             <div class="web-feedback__row">
-              <div id="helpful-label">
-                <label>Was this page helpful?</label>
-              </div>
+              <div id="helpful-label">Was this page helpful?</div>
               <label>
                 <input
                   type="radio"
@@ -101,7 +99,7 @@ class Feedback extends BaseElement {
 
             <div class="web-feedback__row">
               <div id="effective-label">
-                <label>Did this page help you complete your goal(s)?</label>
+                Did this page help you complete your goal(s)?
               </div>
               <label>
                 <input
@@ -123,7 +121,7 @@ class Feedback extends BaseElement {
 
             <div class="web-feedback__row">
               <div id="complete-label">
-                <label>Did this page have the information you needed?</label>
+                Did this page have the information you needed?
               </div>
               <label>
                 <input
@@ -145,7 +143,7 @@ class Feedback extends BaseElement {
 
             <div class="web-feedback__row">
               <div id="accuracy-label">
-                <label>Was this page's information accurate?</label>
+                Was this page's information accurate?
               </div>
               <label>
                 <input
@@ -166,9 +164,7 @@ class Feedback extends BaseElement {
             </div>
 
             <div class="web-feedback__row">
-              <div id="readable-label">
-                <label>Was this page easy to read?</label>
-              </div>
+              <div id="readable-label">Was this page easy to read?</div>
               <label>
                 <input
                   type="radio"
@@ -188,7 +184,7 @@ class Feedback extends BaseElement {
             </div>
           </div>
 
-          <div class="w-text--center">
+          <div class="w-text--center w-mt--sm">
             <button class="w-button w-button--primary" type="submit">
               Submit
             </button>
