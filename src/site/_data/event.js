@@ -41,11 +41,11 @@ const eventData = [
         title: "What's New in Speed Tooling",
       },
       {
-        speaker: 'paullewis',
+        speaker: ['paullewis', 'philipwalton'],
         title: 'Core Web Vitals in the DevTools Timeline',
       },
       {
-        speaker: 'patrickkettner',
+        speaker: ['patrickkettner', 'philipwalton'],
         title: 'AMPs performance secrets',
       },
       {
@@ -53,7 +53,7 @@ const eventData = [
         title: 'AMP at your Service',
       },
       {
-        speaker: 'morss',
+        speaker: ['morss', 'crystallambert'],
         title: 'Workerized JavaScript Made Easy',
       },
       {
@@ -105,7 +105,7 @@ const eventData = [
         title: 'Advanced PWA Patterns',
       },
       {
-        speaker: 'pjmclachlan',
+        speaker: ['pjmclachlan', 'andreban'],
         title: 'Giving your PWA superpowers 🦹‍♀️',
       },
       {

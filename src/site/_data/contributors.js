@@ -1098,6 +1098,18 @@ const contributors = {
       given: 'Naina',
       family: 'Raisinghani',
     },
+    twitter: 'nainar92',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
+  crystallambert: {
+    name: {
+      given: 'Crystal',
+      family: 'Lambert',
+    },
+    twitter: 'CrystalOnScript',
     country: 'US',
     org: {
       name: 'Google',
