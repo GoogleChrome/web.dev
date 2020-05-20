@@ -384,7 +384,7 @@ Whenever there are new episodes available for one of the podcasts I am subscribe
   to unobtrusively draw the user's attention back to the app.
 {% endDetails %}
 
-## Media playback trumps energy saver settings
+## Media playback takes precedence over energy saver settings
 
 When podcast media is playing, the screen may turn off, but the system will not enter standby mode.
 Apps can optionally keep the screen awake, too, for example to display lyrics or captions.
