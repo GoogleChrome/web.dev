@@ -21,9 +21,13 @@
 const eventData = [
   {
     title: 'Day 1',
-    when: '2020-06-30T16:00Z',
-    duration: 8,
+    when: '2020-06-30T16:00Z', // 9am PDT (-7)
+    duration: 3,
     sessions: [
+      {
+        speaker: 'dalmaer',
+        title: 'Opener',
+      },
       {
         speaker: 'addyosmani',
         title: 'Optimize User Experience for Core Web Vitals',
@@ -41,19 +45,19 @@ const eventData = [
         title: "What's New in Speed Tooling",
       },
       {
-        speaker: 'paullewis',
+        speaker: ['paullewis', 'philipwalton'],
         title: 'Core Web Vitals in the DevTools Timeline',
       },
       {
-        speaker: 'patrickkettner',
+        speaker: ['patrickkettner', 'philipwalton'],
         title: 'AMPs performance secrets',
       },
       {
-        speaker: ['sebabenz', 'nainar'],
+        speaker: ['nainar', 'sebabenz'],
         title: 'AMP at your Service',
       },
       {
-        speaker: 'morss',
+        speaker: ['crystallambert', 'morss'],
         title: 'Workerized JavaScript Made Easy',
       },
       {
@@ -68,9 +72,13 @@ const eventData = [
   },
   {
     title: 'Day 2',
-    when: '2020-07-01T16:00Z',
-    duration: 8,
+    when: '2020-07-01T13:00Z', // 1pm GMT/UTC (+0), note UK time will be 2pm
+    duration: 3,
     sessions: [
+      {
+        speaker: 'dalmaer',
+        title: 'Opener',
+      },
       {
         speaker: 'paullewis',
         title: "What's new in DevTools",
@@ -105,7 +113,7 @@ const eventData = [
         title: 'Advanced PWA Patterns',
       },
       {
-        speaker: 'pjmclachlan',
+        speaker: ['pjmclachlan', 'andreban'],
         title: 'Giving your PWA superpowers 🦹‍♀️',
       },
       {
@@ -129,9 +137,13 @@ const eventData = [
   },
   {
     title: 'Day 3',
-    when: '2020-07-02T16:00Z',
-    duration: 8,
+    when: '2020-07-02T07:30Z', // 1pm IST (+5:30)
+    duration: 3,
     sessions: [
+      {
+        speaker: 'dalmaer',
+        title: 'Opener',
+      },
       {
         speaker: 'kosamari',
         title: 'Building better in the world of build tools!',
@@ -141,7 +153,7 @@ const eventData = [
         title: '10 modern layouts in 1 line of CSS',
       },
       {
-        speaker: ['jakearchibald', 'developit'],
+        speaker: ['developit', 'jakearchibald'],
         title: 'Writing rollup plugins',
       },
       {
