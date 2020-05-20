@@ -3,7 +3,6 @@ title: Know your code health
 subhead: TBD
 authors:
   - ericbidelman
-  -
 date: 2019-08-21
 updated: 2020-05-27
 hero: hero.jpg
@@ -14,10 +13,10 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
 ---
 
-`ReportingObserver` is a recent API that lets you know when your site uses a
-deprecated API or runs into a [browser intervention][interventions]. The basic
-functionality originally landed in Chrome 69. As of Chrome 84, it can be used in
-workers. It's pretty simple to use as you can see from the code sample below:
+`ReportingObserver` lets you know when your site uses a deprecated API or runs
+into a [browser intervention][interventions]. The basic functionality originally
+landed in Chrome 69. As of Chrome 84, it can be used in workers. It's pretty
+simple to use as you can see from the code sample below:
 
 ```js
 const observer = new ReportingObserver((reports, observer) => {
