@@ -183,7 +183,7 @@ Of course I can always multitask back to the Podcasts app from anywhere. The app
 
 ## Quick actions in context menu
 
-The most common app actions, "Search" for new content and "Check for New Episodes", are available right from the context menu of the app in the Dock. Via the "Options" menu, I can also decide to open the app at login time.
+The most common app actions, **Search** for new content and **Check for New Episodes**, are available right from the context menu of the app in the Dock. Via the **Options** menu, I can also decide to open the app at login time.
 
 <figure class="w-figure">
   <img src="./image18.png" alt="Podcasts app icon context menu showing the 'Search' and 'Check for New Episodes' options." width="267">
@@ -195,17 +195,17 @@ The most common app actions, "Search" for new content and "Check for New Episode
   How to do this on the web
 {% endDetailsSummary %}
   By specifying <a href="https://web.dev/app-shortcuts/">app icon shortcuts</a>
-  in the PWA's Web App Manifest, you can register quick routes to common tasks that users can reach directly from the app icon.
+  in the PWA's web app manifest, you can register quick routes to common tasks that users can reach directly from the app icon.
   On operating systems like macOS, users can also right-click the app icon and set the app to launch at login time.
   There is ongoing work on a proposal for <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/tree/master/RunOnLogin">run on login</a>.
 {% endDetails %}
 
 ## Act as default app
 
-Other native applications and even websites or emails can integrate with the Podcasts app by leveraging the `podcasts://` URL scheme. If I follow a link like [podcasts://podcasts.apple.com/podcast/the-css-podcast/id1042283903](podcasts://podcasts.apple.com/podcast/the-css-podcast/id1042283903) while in the browser, I am brought right into the Podcasts app and can decide to subscribe or listen to the podcast.
+Other native applications and even websites or emails can integrate with the Podcasts app by leveraging the `podcasts://` URL scheme. If I follow a link like [`podcasts://podcasts.apple.com/podcast/the-css-podcast/id1042283903`](podcasts://podcasts.apple.com/podcast/the-css-podcast/id1042283903) while in the browser, I am brought right into the Podcasts app and can decide to subscribe or listen to the podcast.
 
 <figure class="w-figure">
-  <img src="./image20.png" alt="The Chrome browser showing a confirmation dialog asking the user whether they want to open the Podcasts app." width="600">
+  <img src="./image20.png" class="w-screenshot w-screenshot--filled" alt="The Chrome browser showing a confirmation dialog asking the user whether they want to open the Podcasts app.">
   <figcaption class="w-figcaption">The Podcasts app can be opened right from the browser.</figcaption>
 </figure>
 
@@ -223,7 +223,7 @@ Other native applications and even websites or emails can integrate with the Pod
 You may not immediately think of it, but the Podcasts app naturally integrates with the native file system. When I download a podcast episode, on my laptop it is stored in `~/Library/Group Containers/243LU875E5.groups.com.apple.podcasts/Library/Cache`. Unlike, say `~/Documents`, this directory is of course not meant to be accessed directly by regular users, but it is there.
 
 <figure class="w-figure">
-  <img src="./image5.png" alt="The macOS Finder navigated to the Podcasts app's system directory." width="600">
+  <img src="./image5.png" class="w-screenshot w-screenshot--filled" alt="The macOS Finder navigated to the Podcasts app's system directory.">
   <figcaption class="w-figcaption">Podcast episodes are stored in a special system app folder.</figcaption>
 </figure>
 
@@ -254,7 +254,7 @@ A more subtle thing but that is self-evident for a native application like Podca
   By leveraging the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/user-select"><code>user-select</code></a>
   CSS property with the value of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/user-select#Syntax:~:text=none,-The"><code>none</code></a>,
   you can protect UI elements from being accidentally selected.
-  Be sure, though, to not abuse this property for making *app contents* unselectable,
+  Be sure, though, to not abuse this property for making <em>app contents</em> unselectable,
   it should only be used for UI elements like button texts, etc.
   The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#<generic-name>:~:text=system%2Dui,-Glyphs"><code>system-ui</code></a>
   value for the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family"><code>font-family</code></a> CSS property allows you to
@@ -273,7 +273,7 @@ When you look at the Podcasts app window, you notice that it does not have a cla
 </figure>
 
 <figure class="w-figure">
-  <img src="./image1.png" alt="The Podcasts app's customized split customized title bar.">
+  <img src="./image1.png" class="w-screenshot" alt="The Podcasts app's customized split customized title bar.">
   <figcaption class="w-figcaption">Customized title bars of Safari and Podcasts.</figcaption>
 </figure>
 
@@ -283,16 +283,16 @@ When you look at the Podcasts app window, you notice that it does not have a cla
 {% endDetailsSummary %}
   While not currently possible, <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/TitleBarCustomization/explainer.md">title bar customization</a> is being worked on at the moment.
   You can (and should), however, specify the <a href="https://web.dev/add-manifest/#display"><code>display</code></a> and the
-  <a href="https://web.dev/add-manifest/#theme-color"><code>theme-color</code></a> properties of the Web App Manifest to
+  <a href="https://web.dev/add-manifest/#theme-color"><code>theme-color</code></a> properties of the web app manifest to
   determine the look and feel of your application window and to decide which default browser controls—potentially none of them—should be shown.
 {% endDetails %}
 
 ## Snappy animations
 
-In-app animations are snappy and smooth in Podcasts. For example, when I open the "Episode Notes" drawer on the right, it elegantly slides in. When I remove one episode from my downloads, the remaining episodes float up and consume the screen real estate that was freed by the deleted episode.
+In-app animations are snappy and smooth in Podcasts. For example, when I open the **Episode Notes** drawer on the right, it elegantly slides in. When I remove one episode from my downloads, the remaining episodes float up and consume the screen real estate that was freed by the deleted episode.
 
 <figure class="w-figure">
-  <img src="./image14.png" alt="The Podcasts app with the 'Episode Notes' drawer expanded." width="600">
+  <img src="./image14.png" class="w-screenshot w-screenshot--filled" alt="The Podcasts app with the 'Episode Notes' drawer expanded.">
   <figcaption class="w-figcaption">In-app animations like when opening a drawer are snappy.</figcaption>
 </figure>
 
@@ -390,7 +390,7 @@ When podcast media is playing, the screen may turn off, but the system will not 
 Apps can optionally keep the screen awake, too, for example to display lyrics or captions.
 
 <figure class="w-figure">
-  <img src="./image21.png" alt="macOS Preferences in the 'Energy Saver' section." width="400">
+  <img src="./image21.png" class="w-screenshot w-screenshot--filled" alt="macOS Preferences in the 'Energy Saver' section.">
   <figcaption class="w-figcaption">Apps can keep the screen awake.</figcaption>
 </figure>
 
