@@ -731,4 +731,5 @@ how your app is built (and why should they?), as long as it feels like a *real* 
 
 ## Acknowledgements
 
-Hero image by [Leio McLaren](https://unsplash.com/@leio) on [Unsplash](https://unsplash.com/photos/R6IWobiTW1k).
+This article was reviewed by Kayce Basques, Joe Medley, Joshua Bell, Dion Almaer, Ade Oshineye,
+Pete LePage, and Jeffrey Yasskin.
