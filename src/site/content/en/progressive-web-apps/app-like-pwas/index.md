@@ -206,7 +206,7 @@ The most common app actions, **Search** for new content and **Check for New Epis
 Other native applications and even websites or emails can integrate with the Podcasts app by leveraging the `podcasts://` URL scheme. If I follow a link like [`podcasts://podcasts.apple.com/podcast/the-css-podcast/id1042283903`](podcasts://podcasts.apple.com/podcast/the-css-podcast/id1042283903) while in the browser, I am brought right into the Podcasts app and can decide to subscribe or listen to the podcast.
 
 <figure class="w-figure">
-  <img src="./image20.png" class="w-screenshot w-screenshot--filled" alt="The Chrome browser showing a confirmation dialog asking the user whether they want to open the Podcasts app.">
+  <img src="./image20.png" alt="The Chrome browser showing a confirmation dialog asking the user whether they want to open the Podcasts app.">
   <figcaption class="w-figcaption">The Podcasts app can be opened right from the browser.</figcaption>
 </figure>
 
@@ -224,7 +224,7 @@ Other native applications and even websites or emails can integrate with the Pod
 You may not immediately think of it, but the Podcasts app naturally integrates with the native file system. When I download a podcast episode, on my laptop it is stored in `~/Library/Group Containers/243LU875E5.groups.com.apple.podcasts/Library/Cache`. Unlike, say `~/Documents`, this directory is of course not meant to be accessed directly by regular users, but it is there.
 
 <figure class="w-figure">
-  <img src="./image5.png" class="w-screenshot w-screenshot--filled" alt="The macOS Finder navigated to the Podcasts app's system directory.">
+  <img src="./image5.png" alt="The macOS Finder navigated to the Podcasts app's system directory.">
   <figcaption class="w-figcaption">Podcast episodes are stored in a special system app folder.</figcaption>
 </figure>
 
@@ -243,8 +243,8 @@ You may not immediately think of it, but the Podcasts app naturally integrates w
 A more subtle thing but that is self-evident for a native application like Podcasts: none of the text labels are selectable and all texts blend in with the system font of the machine. Also my choice of system color theme (dark mode) is respected.
 
 <figure class="w-figure">
-  <img src="./image2.png" alt="The Podcasts app in dark mode." class="w-screenshot w-screenshot--filled" width="350">
-  <img src="./image7.png" alt="The Podcasts app in light mode." class="w-screenshot w-screenshot--filled" width="350">
+  <img src="./image2.png" alt="The Podcasts app in dark mode." width="350">
+  <img src="./image7.png" alt="The Podcasts app in light mode." width="350">
   <figcaption class="w-figcaption">Podcasts supports Dark Mode and uses the default system font.</figcaption>
 </figure>
 
@@ -269,7 +269,7 @@ A more subtle thing but that is self-evident for a native application like Podca
 When you look at the Podcasts app window, you notice that it does not have a classic integrated title bar and toolbar, like, for example, the Safari browser window, but a customized experience that looks like a sidebar docked to the main player window.
 
 <figure class="w-figure">
-  <img src="./image8.png" alt="The Safari browser's integrated tile bar and toolbar.">
+  <img src="./image8.png" class="w-screenshot" alt="The Safari browser's integrated tile bar and toolbar.">
   <figcaption class="w-figcaption"></figcaption>
 </figure>
 
@@ -293,7 +293,7 @@ When you look at the Podcasts app window, you notice that it does not have a cla
 In-app animations are snappy and smooth in Podcasts. For example, when I open the **Episode Notes** drawer on the right, it elegantly slides in. When I remove one episode from my downloads, the remaining episodes float up and consume the screen real estate that was freed by the deleted episode.
 
 <figure class="w-figure">
-  <img src="./image14.png" class="w-screenshot w-screenshot--filled" alt="The Podcasts app with the 'Episode Notes' drawer expanded.">
+  <img src="./image14.png" alt="The Podcasts app with the 'Episode Notes' drawer expanded.">
   <figcaption class="w-figcaption">In-app animations like when opening a drawer are snappy.</figcaption>
 </figure>
 
@@ -391,7 +391,7 @@ When podcast media is playing, the screen may turn off, but the system will not 
 Apps can optionally keep the screen awake, too, for example to display lyrics or captions.
 
 <figure class="w-figure">
-  <img src="./image21.png" class="w-screenshot w-screenshot--filled" alt="macOS Preferences in the 'Energy Saver' section.">
+  <img src="./image21.png" alt="macOS Preferences in the 'Energy Saver' section.">
   <figcaption class="w-figcaption">Apps can keep the screen awake.</figcaption>
 </figure>
 
