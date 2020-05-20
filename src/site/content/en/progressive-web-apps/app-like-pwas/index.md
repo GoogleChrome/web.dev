@@ -242,11 +242,16 @@ You may not immediately think of it, but the Podcasts app naturally integrates w
 
 A more subtle thing but that is self-evident for a native application like Podcasts: none of the text labels are selectable and all texts blend in with the system font of the machine. Also my choice of system color theme (dark mode) is respected.
 
-<figure class="w-figure">
-  <img src="./image2.png" alt="The Podcasts app in dark mode." width="350">
-  <img src="./image7.png" alt="The Podcasts app in light mode." width="350">
-  <figcaption class="w-figcaption">Podcasts supports Dark Mode and uses the default system font.</figcaption>
-</figure>
+<div class="w-columns">
+  <figure class="w-figure">
+    <img src="./image2.png" alt="The Podcasts app in dark mode." width="350">
+    <figcaption class="w-figcaption">Podcasts supports light and dark mode.</figcaption>    
+  </figure>
+  <figure class="w-figure">
+    <img src="./image7.png" alt="The Podcasts app in light mode." width="350">
+    <figcaption class="w-figcaption">The app uses the default system font.</figcaption>
+  </figure>
+</div>
 
 {% Details %}
 {% DetailsSummary %}
