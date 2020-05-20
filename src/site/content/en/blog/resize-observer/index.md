@@ -15,18 +15,18 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
 ---
 
-Before `ResizeObserver`, you had to attach a listener to the document’s `resize`
-event to get notified of any change of the viewport’s dimensions. In the event
+Before `ResizeObserver`, you had to attach a listener to the document's `resize`
+event to get notified of any change of the viewport's dimensions. In the event
 handler, you would then have to figure out which elements have been affected by
 that change and call a specific routine to react appropriately. If you needed
 the new dimensions of an element after a resize, you had to call
 `getBoundingClientRect()` or `getComputerStyle()`, which can cause layout
-thrashing if you don’t take care of batching *all* your reads and *all* your
+thrashing if you don't take care of batching *all* your reads and *all* your
 writes.
 
 This didn't even cover cases where elements change their size without the main
 window having been resized. For example, appending new children, setting an
-element’s `display` style to `none`, or similar actions can change the size of
+element's `display` style to `none`, or similar actions can change the size of
 an element, its siblings, or its ancestors.
 
 This is why `ResizeObserver` is a useful primitive. It reacts to changes in
@@ -35,7 +35,7 @@ It provides access to the new size of the observed elements too.
 
 # API
 
-All the APIs with the “observer” suffix I mentioned above share a simple API
+All the APIs with the "observer" suffix I mentioned above share a simple API
 design. `ResizeObserver` is no exception. You create a `ResizeObserver` object
 and pass a callback to the constructor. The callback is passed an array of
 `ResizeObserverEntries`&mdash;one entry per observed element&mdash;which
@@ -100,7 +100,7 @@ the first two.
 
 The spec proscribes that `ResizeObserver` should process all resize events
 before paint and after layout. This makes the callback of a `ResizeObserver` the
-ideal place to make changes to your page’s layout. Because `ResizeObserver`
+ideal place to make changes to your page's layout. Because `ResizeObserver`
 processing happens between layout and paint, doing so will only invalidate
 layout, not paint.
 
@@ -112,13 +112,13 @@ another call to the callback right away. Fortunately, `ResizeObserver` has a
 mechanism to avoid infinite callback loops and cyclic dependencies. Changes will
 only be processed in the same frame if the resized element is deeper in the DOM
 tree than the *shallowest* element processed in the previous callback.
-Otherwise, they’ll get deferred to the next frame.
+Otherwise, they'll get deferred to the next frame.
 
 # Application
 
 One thing that `ResizeObserver` allows you to do is to implement per-element
 media queries. By observing elements, you can imperatively define your
-design breakpoints and change an element’s styles. In the following
+design breakpoints and change an element's styles. In the following
 [example](https://googlechrome.github.io/samples/resizeobserver/), the second box
 will change its border radius according to its width.
 
@@ -180,12 +180,13 @@ dimensions change so its children can be laid out again.
 
 # Conclusion
 
-`ResizeObserver` is available in [most major browsers](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver#Browser_compatibility). In same cases, that availability is quite recent. There are [some polyfills available](https://github.com/WICG/ResizeObserver/issues/3) but it is not possible to completely duplicate the functionality of `ResizeObserver`. Current implementations either rely on
-polling or on adding sentinel elements to the DOM. The former will drain your
-battery on mobile by keeping the CPU busy while the latter modifies your DOM and
-might mess up styling and other DOM-reliant code.
-
-[MutationObserver]: https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
-[PerformanceObserver]: https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver
-[IntersectionObserver]: https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver
+`ResizeObserver` is available in [most major
+browsers](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver#Browser_compatibility).
+In same cases, that availability is quite recent. There are [some polyfills
+available](https://github.com/WICG/ResizeObserver/issues/3) but it is not
+possible to completely duplicate the functionality of `ResizeObserver`. Current
+implementations either rely on polling or on adding sentinel elements to the
+DOM. The former will drain your battery on mobile by keeping the CPU busy while
+the latter modifies your DOM and might mess up styling and other DOM-reliant
+code.
 
