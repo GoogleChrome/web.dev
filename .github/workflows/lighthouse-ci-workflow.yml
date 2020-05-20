@@ -1,7 +1,7 @@
 name: Lighthouse CI
 
 # By default, runs when a pull_request's activity type is opened, synchronize,
-# or reopened
+# or reopened and on master so comparisons to ancestors can be made.
 on:
   push:
     branches: 
