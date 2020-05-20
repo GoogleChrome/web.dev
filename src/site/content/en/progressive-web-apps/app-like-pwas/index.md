@@ -47,7 +47,7 @@ If you take a step back and think of some of the native applications you may hav
 
 ## Offline content available and media playable
 
-While offline, via the left-hand drawer, I can still navigate to the "Downloaded" section and enjoy downloaded podcast episodes that are ready to be played
+While offline, via the left-hand drawer, I can still navigate to the **Downloaded** section and enjoy downloaded podcast episodes that are ready to be played
 and are displayed with all metadata like artwork and descriptions.
 
 <figure class="w-figure">
