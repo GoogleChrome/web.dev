@@ -1,21 +1,23 @@
 ---
 layout: codelab
-title: Signin form best practice
+title: Login form best practices codelab
 authors:
   - samdutton
-date: 2020-04-24
-updated: 2020-04-28
-description: Use cross-platform browser features to build an email/password signin form that's secure, accessible and easy to use.
+date: 2020-05-20
+updated: 2020-05-20
+description: Use cross-platform browser features to build an email/password login form that's secure, accessible and easy to use.
 tags:
   - identity
   - login
   - privacy
   - security
-  - signin
+  - login
   - trust and safety
-glitch: signin-form
+glitch: login-form-best-practices-codelab-step-0
 related_post: signin-form-best-practice
 ---
+
+This codelab shows you how to build a login form that is secure, accessible, and easy to use.
 
 ## Step 1: Use meaningful HTML
 
@@ -30,89 +32,134 @@ As you'll see, these elements enable built-in browser functionality, improve acc
 Add the following code inside the `<body>` element:
 
 ```html
-<form id="signin" action="#" method="post">
-
+<form id="login" action="#" method="post">
   <h1>Sign in</h1>
-
   <section>
     <label>Email</label>
     <input />
   </section>
-
   <section>
     <label>Password</label>
     <input />
   </section>
-
   <button>Sign in</button>
-
 </form>
 ```
-{% Aside 'codelab' %}
-[View complete code for Step 1](https://glitch.com/edit/#!/signin-form-codelab-1).
-{% endAside %}
+
+Here's how your `index.html` should look at this point:
+
+<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/login-form-best-practices-codelab-step-1?path=index.html&attributionHidden=true&sidebarCollapsed=true"
+    alt="How the Glitch should look after completing step 1."
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+
+Click **View App** to preview your login form. 
+The HTML you just added is valid and correct, but the default browser styling
+means it looks terrible and it's hard to use, especially on mobile.
+
+Click **View Source** to return to your source code.
 
 ## Step 2: Design for fingers and thumbs
 
-The HTML in Step 1 is valid and correct, but the default browser styling means it looks terrible and it's hard to use, especially on mobile.
+TODO(kayce): One-sentence description of the goal here. 
 
-Copy and paste the [complete CSS from step 2](https://glitch.com/edit/#!/signin-form-codelab-2?path=style.css) into [style.css](https://glitch.com/edit/#!/signin-form-codelab?path=style.css).
+Copy and paste the following CSS into your `style.css`:
+
+<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/login-form-best-practices-codelab-step-2?path=style.css&attributionHidden=true&sidebarCollapsed=true"
+    alt="The CSS to copy-paste."
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+
+Click **View App** to check out your freshly styled login form, and then
+click **View Source** to return to `style.css`.
 
 That's quite a lot of code! The main things to be aware of are the changes to sizes:
-* Padding and margin are added to inputs.
-* Font-size is set for mobile and desktop.
 
-Styles are also set using the `:invalid` selector for when the email input has an invalid value.
+* `padding` and `margin` are added to inputs.
+* `font-size` is different for mobile and desktop.
 
-The CSS layout is mobile-first: 
-* The default CSS is for viewports less than 450 px wide.
-* The media query section sets overrides for viewports that are at least 450 px wide.
-* There are CSS variables for mobile and desktop font size.
+The `:invalid` selector is used to indicate when an input has an invalid value.
+
+The CSS layout is mobile-first:
+
+* The default CSS is for viewports less than `450px` wide.
+* The media query section sets overrides for viewports that are at least `450px` wide.
 
 It's very important at this point to test your code on real devices on desktop and mobile:
-* Is label and input text readable, especially for people whose vision isn't 20/20?
-* Are the inputs and **Sign in** button large enough to use as touch targets for thumbs?
 
-{% Aside 'codelab' %}
-[View complete code for Step 2](https://glitch.com/edit/#!/signin-form-codelab-2).
-{% endAside %}
+* Is label and input text readable, especially for people with low vision?
+* Are the inputs and **Log in** button large enough to use as touch targets for thumbs?
 
 ## Step 3: Add input attributes to enable built-in browser features
 
 Add attributes to your form HTML so it looks like this:
 
-```html
-<form id="signin" action="#" method="post">
-      
-  <h1>Sign in</h1>
+TODO(kayce): Is the placeholder value intentional?
 
+TODO(kayce): Clicking on the password label doesn't focus the password input.
+
+```html/3,4,7,8,10
+<form id="login" action="#" method="post">
+  <h1>Sign in</h1>
   <section>        
     <label for="email">Email</label>
     <input id="email" name="email" type="email" placeholder=" " autocomplete="email" required autofocus>
   </section>
-        
   <section>        
     <label for="current-password">Password</label>
     <input id="password" name="password" type="password" autocomplete="new-password" required>
   </section>
-
   <button id="sign-in">Sign in</button>
-  
 </form>
 ```
 
-The important parts to notice are the attributes on the label and input elements:
-*  `for="email"` and `for="current-password"`: a tap or click on the label moves focus to its input, and screenreaders announce label text when the label or the label's input gets focus.
-* `type="email"`: enable browsers to understand that the meaning of this input and, on mobile, provide a keyboard suitable for entering an email address.
-* `type="password"`: ensure browsers hide the value by default and understand that the value of this input is a password.
+Click the label that says **Email**. Notice how focus moves to the email input.
+This is because the label is associated to the input via the `for="email"` attribute.
+Screenreaders also announce the label text when the label or the label's associated
+input gets focus.
+
+Try focusing the email input on a mobile device. Notice how the keyboard is optimized
+for typing an email address. For example, the `@` and `.` characters might be shown on
+the primary keyboard, and the operating system might show stored emails above the keyboard.
+All of this happened because the `type="email"` attribute is applied to an `<input>` element.
+
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" 
+       src="email-keyboard.jpg" 
+       alt="The default email keyboard on iOS.">
+</figure>
+
+Try typing some text into the password input. The text is hidden by default because the
+`type="password"` attribute has been applied to the element.
+
+TODO(kayce): There doesn't seem to be any user-facing change because of the name attributes?
+
 * `name="email"` and `name="current-password"`: help browsers store named values.
+
+Try focusing the email input on a desktop device. If you've stored any email addresses
+in your browser, you'll probably see a popup that allows you to select from those
+stored emails. This happened because the `autocomplete="email"` attribute was applied
+to the email input.
+
 * `autocomplete="email"` and `autocomplete="current-password"`: help browsers use stored values to autofill the inputs.
 
 Once again, it's extremely important to test behaviour across platforms. Try entering values and submitting the form in different browsers on different devices.
 
-{% Aside 'codelab' %}
-[View complete code for Step 3](https://glitch.com/edit/#!/signin-form-codelab-3).
-{% endAside %}
+Here's how your `index.html` should look at this point:
+
+<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/login-form-best-practices-codelab-step-3?path=index.html&attributionHidden=true&sidebarCollapsed=true"
+    alt="How index.html should look after step 3."
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
 
 ## Step 4: Add UI to toggle password display
 
@@ -240,7 +287,7 @@ function validatePassword() {
 }
 
 const form = document.querySelector('form');
-const signinButton = document.querySelector('button#signin');
+const loginButton = document.querySelector('button#login');
 
 form.addEventListener('submit', handleFormSubmission);                       
 
@@ -251,8 +298,8 @@ function handleFormSubmission(event) {
   if (form.checkValidity() === false) {
   } else {
     // On a production site do form submission.
-    alert('Signing in!')
-    signinButton.disabled = 'true';
+    alert('Logging in!')
+    loginButton.disabled = 'true';
   }
 }
 ```
