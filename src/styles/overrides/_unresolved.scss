@@ -1,4 +1,10 @@
-
+// =============================================================================
+// UNRESOLVED
+//
+// Specifies behavior for unresolved elements. This uses the "unresolved"
+// class as lit doesn't render for a frame after :defined is removed.
+//
+// =============================================================================
 // sass-lint:disable class-name-format
 
 // Elements marked with the unresolved class are hidden until the JS is first
