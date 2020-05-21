@@ -243,7 +243,7 @@ first arrive and without exposing the benefits can be perceived as spammy
 and negatively affect your experience. Make sure to follow
 [best practices][not-ux-bp] when prompting for notifications and inspire
 acceptance through relevant usages like train delays, price tracking, out
-of stock products etc.
+of stock products, etc.
 
 Technically, [push notifications][dgc-web-push] on the web run in the
 background thanks to a service worker and are often sent by a system built for
