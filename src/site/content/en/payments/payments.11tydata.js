@@ -7,7 +7,7 @@ module.exports = {
     slug: 'payments',
     cover: '/images/collections/payments.svg',
     title: 'Web Payments',
-    updated: 'May 20, 2020',
+    updated: 'May 25, 2020',
     description: `Easy way to implement payments on the web.`,
     overview: `In this section you'll learn how to use Web Payments APIs.`,
     topics: [
