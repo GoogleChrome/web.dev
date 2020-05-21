@@ -7,7 +7,7 @@ authors:
 date: 2016-10-07
 updated: 2020-05-26
 hero: hero.jpg
-alt: TBD
+alt: Growing plants in boxes.
 description: |
   `ResizeObserver` notifies you  when an element’s content rectangle changes
   size so that you can react accordingly.
@@ -190,3 +190,7 @@ DOM. The former will drain your battery on mobile by keeping the CPU busy while
 the latter modifies your DOM and might mess up styling and other DOM-reliant
 code.
 
+Photo by [Markus
+Spiske](https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+on
+[Unsplash](https://unsplash.com/s/photos/observe-growth?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
