@@ -8,7 +8,7 @@ description: |
 date: 2020-05-21
 hero: hero.jpg
 glitch: gui-challenges-stories
-glitch_path: index.html%3A17%3A3
+glitch_path: app/index.html
 related_post: stories-component
 ---
 
@@ -25,9 +25,9 @@ We'll be first going over the HTML, then the CSS, and last the Javascript. By th
 ## HTML
 Since each friend can have any number of stories, I thought it was meaningful to make my friends `<section>`'s and each of their stories `<article>`'s. Let's start from the beginning though. 
 
-We need a container to start from, this will be our stories component:
+We need a container to start from, this will be our stories component. Our first lines of code are a simple div with a class of stories. Paste the follow code inside of our `<body>` tag of `app/index.html`.
 
-```html
+```html/0-2
 <div class="stories">
 
 </div>
