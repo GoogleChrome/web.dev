@@ -19,10 +19,11 @@ const {html} = require('common-tags');
 const AuthorsDate = require('./AuthorsDate');
 
 /**
- * @param {!Array<{title: string, from: !Date, sessions: !Array}>} event
+ * @param {!Array<{title: string, from: !Date, sessions: !Array<any>}>} event
+ * @param {Object.<string, Author>} authorsCollection
  * @return {string}
  */
-module.exports = (event) => {
+module.exports = (event, authorsCollection) => {
   // Find the default day to show, as a very basic non-JS fallback. Pick the
   // first day where the build time is before the end time of the sessions.
   // This isn't a very good fallback as our build happens at minimum of once per
@@ -47,7 +48,7 @@ module.exports = (event) => {
     return html`
       <tr>
         <td class="w-event-schedule__speaker">
-          ${AuthorsDate({authors})}
+          ${AuthorsDate({authors}, authorsCollection)}
         </td>
         <td class="w-event-schedule__session">${title}</td>
       </tr>

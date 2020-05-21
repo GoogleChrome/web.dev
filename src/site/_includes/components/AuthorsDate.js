@@ -69,9 +69,9 @@ const renderAuthorNames = (pairs) => {
   }
 
   const inner = pairs
-    .map(({id, info}) => {
+    .map(({info}) => {
       return html`
-        <a class="w-author__name-link" href="/authors/${id}/">${info.title}</a>
+        <a class="w-author__name-link" href="${info.href}">${info.title}</a>
       `;
     })
     .join(', ');
@@ -87,11 +87,15 @@ const renderAuthorNames = (pairs) => {
  * Render an authors card, including any number of authors and an optional date.
  *
  * @param {{authors: !Array<string>, date: ?Date, images: number}} arg
+ * @param {Object.<string, Author>} [authorsCollection]
  * @return {string}
  */
-const renderAuthorsDate = ({authors, date = null, images = 2}) => {
+const renderAuthorsDate = (
+  {authors, date = null, images = 2},
+  authorsCollection,
+) => {
   const pairs = (authors || []).map((id) => {
-    const info = contributors[id];
+    const info = (authorsCollection ? authorsCollection : contributors)[id];
     if (!info) {
       throw new Error(
         `Can't create Author component for "${id}" without contributor ` +
