@@ -8,6 +8,7 @@ description: Chromium 80 had a system-ui font weight regression on macOS. The re
 date: 2020-05-21
 updated: 2020-05-21
 hero: hero.jpg
+thumbnail: thumb.png
 alt: A bright pink and purple gradient with "macOS Catalina system-ui" going from thin to think from left to right, demonstrating some of the new variation settings
 ---
 
@@ -91,7 +92,7 @@ font-variation-settings: 'wght' 750;
 
 <figure class="w-figure w-figure--fullbleed">
   <video controls autoplay loop muted class="w-screenshot">
-    <!-- <source src="https://storage.googleapis.com/web-dev-assets/hands-on-portals/portals_vp9.webm" type="video/webm; codecs=vp8"> -->
+    <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_wght.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_wght.mp4">
   </video>
 </figure>
@@ -106,7 +107,7 @@ font-variation-settings: 'opsz' 20;
 
 <figure class="w-figure w-figure--fullbleed">
   <video controls autoplay loop muted class="w-screenshot">
-    <!-- <source src="https://storage.googleapis.com/web-dev-assets/hands-on-portals/portals_vp9.webm" type="video/webm; codecs=vp8"> -->
+    <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_opsz_v2.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_opsz_v2.mp4">
   </video>
 </figure>
@@ -121,6 +122,7 @@ font-variation-settings: 'GRAD' 500;
 
 <figure class="w-figure w-figure--fullbleed">
   <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_grad_v2.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_grad_v2.mp4">
   </video>
 </figure>
@@ -135,6 +137,7 @@ font-variation-settings: 'YAXS' 500;
 
 <figure class="w-figure w-figure--fullbleed">
   <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_yaxs_v2.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_yaxs_v2.mp4">
   </video>
 </figure>
@@ -150,7 +153,7 @@ font-variation-settings: 'wght' 750, 'YAXS' 600, 'GRAD' 500, 'opsz' 20;
 
 <figure class="w-figure w-figure--fullbleed">
   <video controls autoplay loop muted class="w-screenshot">
-    <!-- <source src="https://storage.googleapis.com/web-dev-assets/hands-on-portals/portals_vp9.webm" type="video/webm; codecs=vp8"> -->
+    <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_combined_v2.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_combined_v2.mp4">
   </video>
 </figure>
@@ -188,7 +191,7 @@ Did you ever notice on macOS 10.14 how your paragraphs or headers "snapped" to a
 
 <figure class="w-figure w-figure--fullbleed">
   <video controls autoplay loop muted class="w-screenshot">
-    <!-- <source src="https://storage.googleapis.com/web-dev-assets/hands-on-portals/portals_vp9.webm" type="video/webm; codecs=vp8"> -->
+    <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_20to19.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_20to19.mp4">
   </video>
 </figure>
