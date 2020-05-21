@@ -25,7 +25,7 @@ origin-trial:
   [capabilities project](https://developers.google.com/web/updates/capabilities).
   Barcode detection has launched in Chrome 83
   on certified devices with
-  [Google Play Services](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en_US)
+  [Google Play Services](https://play.google.com/store/apps/details?id=com.google.android.gms)
   installed.
   Face and text detection are available behind a flag. This post will be updated as
   the Shape Detection API evolves.
