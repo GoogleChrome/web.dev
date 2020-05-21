@@ -1,14 +1,13 @@
 ---
 title: Defining the Core Web Vitals metrics thresholds
-subhead: The research and methodology behind Core Web Vitals
+subhead: The research and methodology behind Core Web Vitals thresholds
 authors:
   - bmcquade
-description: The research and methodology behind Core Web Vitals
+description: The research and methodology behind Core Web Vitals thresholds
 date: 2020-05-21
 updated: 2020-05-21
-hero: hero.jpg
-thumbnail: thumbnail.jpg
-alt: The research and methodology behind Core Web Vitals
+hero: hero.png
+alt: The research and methodology behind Core Web Vitals thresholds
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - performance
@@ -22,7 +21,6 @@ help developers qualitatively understand whether the experience of their site is
 good, needs improvement, or is poor. This post will explain the approach used to
 choose thresholds for Core Web Vitals metrics generally, as well as how the
 thresholds for each specific Core Web Vitals metric were chosen.
-
 
 ## Refresher: Core Web Vitals metrics and thresholds
 
@@ -92,7 +90,6 @@ evaluating 2020 Core Web Vitals metric thresholds. The subsequent sections will
 go into more detail on how these criteria were applied to select the thresholds
 for each metric in 2020. In future years, in response to we may make
 improvements or additions to the criteria and thresholds.
-
 
 ### High-quality user experience
 
