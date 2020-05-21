@@ -16,7 +16,7 @@ how much will it grow my business, what is technically feasible?
 ![Identify your stakeholders](img-1.jpg)
 
 To shape your digital strategy, several stakeholders are often involved: the
-product manager and CMO are co-owners of the business impact of each feature,
+Product Manager and CMO are co-owners of the business impact of each feature,
 the CTO assesses the feasibility and reliability of a technology, the UX
 Researchers validate that a feature answers a real customer issue.
 
