@@ -232,7 +232,8 @@ However, this preserves more of the CoreText 'magic' in the font. One of these s
 
 Since the fix for the spacing issue required a set of interconnected Blink and Skia fixes, the Chromium engineers could not "just revert" to fix the problem. The Chromium engineers also tried using a different build flag for changing a font-related codepath in Skia, which fixed the bold fonts problem, but regressed the spacing problem.
 
-## The Fix
+## The fix
+
 In the end, of course Chromium wanted to fix both things. Chromium now resorts to using a different implementation for retrieving horizontal metrics directly from the binary data in the system font's font tables. Using this, Chromium is sidestepping `CoreText` and Skia when the font has a `trak` table (except when it's the emoji font). 
 
 <figure class="w-figure">
