@@ -279,7 +279,7 @@ priorities.
 
 To accelerate the modernization of your website and make it a real PWA,
 we encourage you to be agile: launch feature by feature. First, research
-with your users what features would bring them most value, then deliver
+with your users what features would bring them the most value, then deliver
 them with your designers and developers, and finally do not forget to
 measure precisely how much extra money your PWA generated.
 
