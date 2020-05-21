@@ -93,12 +93,12 @@ critical user journeys for all of your users. If you don't know where to
 start, take a look at our [Fast](/fast/) section, and use
 [Lighthouse][lighthouse] to prioritize the most important things to fix.
 
-When working on your speed optimisations, start measuring your site speed
+When working on your speed optimizations, start measuring your site speed
 frequently with appropriate tools and metrics to monitor your progress.
-For example, measure your Speed Index daily with [Lighthouse][lighthouse],
-fix clear targets like having a Time-to-Interactive below five seconds, and
+For example, measure your metrics with [Lighthouse][lighthouse],
+fix clear targets like having ["Good" Core Web Vitals scores](/vitals/#core-web-vitals), and
 incorporate a [performance budget into your build process][perf-budget-ci].
-Thanks to your daily measurements and [this methodology][value-of-speed],
+Thanks to your daily measurements and [the "value of speed" methodology][value-of-speed],
 you can isolate the impact of your incremental speed changes and calculate
 how much extra revenue your work has generated.
 
