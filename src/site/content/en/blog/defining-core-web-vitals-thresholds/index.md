@@ -84,12 +84,12 @@ classified as "poor".
 
 ## Criteria for the Core Web Vitals metric thresholds
 
-When establishing thresholds for Core Web Vitals metrics, we identified criteria
-that each threshold had to meet. Below, we explain the criteria used for
-evaluating 2020 Core Web Vitals metric thresholds. The subsequent sections will
-go into more detail on how these criteria were applied to select the thresholds
-for each metric in 2020. In future years, in response to we may make
-improvements or additions to the criteria and thresholds.
+When establishing thresholds for Core Web Vitals metrics, we first identified
+criteria that each threshold had to meet. Below, I explain the criteria we used
+at Google for evaluating 2020 Core Web Vitals metric thresholds. The subsequent
+sections will go into more detail on how these criteria were applied to select
+the thresholds for each metric in 2020. In future years we may make improvements
+or additions to the criteria and thresholds.
 
 ### High-quality user experience
 
