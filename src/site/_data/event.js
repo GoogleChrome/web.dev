@@ -29,8 +29,12 @@ const eventData = [
         title: 'Welcome to Day One',
       },
       {
+        speaker: 'egsweeny',
+        title: "What's New in Speed Tooling",
+      },
+      {
         speaker: 'addyosmani',
-        title: 'Optimize User Experience for Core Web Vitals',
+        title: 'How to Optimize for Web Vitals',
       },
       {
         speaker: 'rviscomi',
@@ -41,20 +45,16 @@ const eventData = [
         title: 'How to Analyze Your JavaScript Bundles',
       },
       {
-        speaker: 'egsweeny',
-        title: "What's New in Speed Tooling",
-      },
-      {
         speaker: ['paullewis', 'philipwalton'],
         title: 'Core Web Vitals in the DevTools Timeline',
       },
       {
         speaker: ['patrickkettner', 'philipwalton'],
-        title: 'AMPs performance secrets',
+        title: 'AMPs Performance Secrets',
       },
       {
         speaker: ['nainar', 'sebabenz'],
-        title: 'AMP at your Service',
+        title: 'AMP at Your Service',
       },
       {
         speaker: ['crystallambert', 'morss'],
@@ -62,7 +62,7 @@ const eventData = [
       },
       {
         speaker: 'martinsplitt',
-        title: 'Debugging SEO problems in JavaScript web apps',
+        title: 'Debugging JavaScript SEO issues',
       },
       {
         speaker: 'martinsplitt',
@@ -81,15 +81,15 @@ const eventData = [
       },
       {
         speaker: 'paullewis',
-        title: "What's new in DevTools",
+        title: "What's New in DevTools",
       },
       {
         speaker: ['syg', 'leszeks'],
-        title: "What's new in V8/JavaScript",
+        title: "What's New in V8/JavaScript",
       },
       {
         speaker: 'mathiasbynens',
-        title: "What's new in Puppeteer",
+        title: "What's New in Puppeteer",
       },
       {
         speaker: 'andreban',
@@ -97,7 +97,7 @@ const eventData = [
       },
       {
         speaker: 'demianrenzulli',
-        title: 'How to define your install strategy',
+        title: 'How to Define your Install Strategy',
       },
       {
         speaker: 'thomassteiner',
@@ -110,7 +110,7 @@ const eventData = [
       },
       {
         speaker: ['pjmclachlan', 'andreban'],
-        title: 'Giving your PWA superpowers 🦹‍♀️',
+        title: 'Giving Your PWA Superpowers 🦹‍♀️',
       },
       {
         speaker: 'samthor',
@@ -118,7 +118,7 @@ const eventData = [
       },
       {
         speaker: 'pjmclachlan',
-        title: 'Taming web notifications',
+        title: 'Quieter Notifications Permissions',
       },
       {
         speaker: 'petelepage',
@@ -126,8 +126,7 @@ const eventData = [
       },
       {
         speaker: 'nattestad',
-        title:
-          'Building Zoom on the Web: Advanced APIs for high performance web apps',
+        title: 'Advanced APIs for Bringing People Together',
       },
     ],
   },
@@ -142,23 +141,23 @@ const eventData = [
       },
       {
         speaker: 'kosamari',
-        title: 'Building better in the world of build tools!',
+        title: 'Building Better in the World of Build Tools',
       },
       {
         speaker: 'una',
-        title: '10 modern layouts in 1 line of CSS',
+        title: '10 Layouts in 10 Lines or Less',
       },
       {
         speaker: ['developit', 'jakearchibald'],
-        title: 'Writing rollup plugins',
+        title: 'Writing Rollup Plugins',
       },
       {
         speaker: 'jakearchibald',
-        title: 'Image compression formats compared',
+        title: 'Image Compression Formats Compared',
       },
       {
         speaker: 'sfluin',
-        title: 'Stay Fast and Fresh with Angular',
+        title: 'How to Stay Fast and Fresh with Angular',
       },
       {
         speaker: 'samdutton',
@@ -166,27 +165,27 @@ const eventData = [
       },
       {
         speaker: 'rowan_m',
-        title: 'Cookie recipes - SameSite and beyond',
+        title: 'Cookie Recipes - SameSite and Beyond',
       },
       {
         speaker: 'agektmr',
-        title: 'Isolate your origin using COOP+COEP',
+        title: 'Prevent Info Leaks and Enable Powerful Features: COOP and COEP',
       },
       {
         speaker: 'samdutton',
-        title: 'Find and fix problems with the DevTools Issues Panel',
+        title: 'Find and Fix Problems with Chrome DevTools Issues Tab',
       },
       {
         speaker: ['maudn', 'rowan_m'],
-        title: 'Get a (User-Agent Client) Hint',
+        title: 'Just the Data you Need',
       },
       {
         speaker: 'samdutton',
-        title: 'Signin form best practice',
+        title: 'Sign-in Form Best Practice',
       },
       {
         speaker: 'agektmr',
-        title: "What's new in Web Payments",
+        title: "What's New in Web Payments",
       },
     ],
   },
