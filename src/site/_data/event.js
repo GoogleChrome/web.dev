@@ -126,8 +126,7 @@ const eventData = [
       },
       {
         speaker: 'nattestad',
-        title:
-          'Advanced APIs for Bringing People Together',
+        title: 'Advanced APIs for Bringing People Together',
       },
     ],
   },
