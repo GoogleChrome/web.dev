@@ -174,7 +174,7 @@ Click **Remix to Edit** in the Glitch below to get an editable copy of the Glitc
 
 macOS 10.15 added new features to its system font, and in macOS 10.15 a tricky `system-ui` bug was logged in the Chromium bug tracker. I wonder if they are related!?
 
-{% Aside %}The image for this article was made with CSS and system-ui. Here's the [codepen](https://codepen.io/argyleink/pen/eYpbwWd).{% endAside %}
+{% Aside %}The image for this article was made with CSS and `system-ui`. Here's the [codepen](https://codepen.io/argyleink/pen/eYpbwWd).{% endAside %}
 
 ## Appendix: The `system-ui` regression {: #regression }
 
