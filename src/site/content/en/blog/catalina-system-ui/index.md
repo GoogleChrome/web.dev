@@ -90,7 +90,7 @@ Accepts a font weight between `0` and `900` and is applied equally to all charac
 font-variation-settings: 'wght' 750;
 ```
 
-<figure class="w-figure w-figure--fullbleed">
+<figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_wght.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_wght.mp4">
@@ -105,7 +105,7 @@ Optical sizing is similar to kerning or letter-spacing, but the spacing is done 
 font-variation-settings: 'opsz' 20;
 ```
 
-<figure class="w-figure w-figure--fullbleed">
+<figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_opsz_v2.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_opsz_v2.mp4">
@@ -120,7 +120,7 @@ Similar to weight, but without touching horizontal spacing. It accepts values be
 font-variation-settings: 'GRAD' 500;
 ```
 
-<figure class="w-figure w-figure--fullbleed">
+<figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_grad_v2.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_grad_v2.mp4">
@@ -135,7 +135,7 @@ Stretches the glyph vertically. It accepts values between `400` and `1000`.
 font-variation-settings: 'YAXS' 500;
 ```
 
-<figure class="w-figure w-figure--fullbleed">
+<figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_yaxs_v2.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_yaxs_v2.mp4">
@@ -151,7 +151,7 @@ font-weight: bold;
 font-variation-settings: 'wght' 750, 'YAXS' 600, 'GRAD' 500, 'opsz' 20;
 ```
 
-<figure class="w-figure w-figure--fullbleed">
+<figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_combined_v2.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_combined_v2.mp4">
@@ -193,7 +193,7 @@ This story starts with a different bug: [#1005969](https://crbug.com/1005969). T
 
 Did you ever notice on macOS 10.14 how your paragraphs or headers "snapped" to a different looking font when the size went up or down?
 
-<figure class="w-figure w-figure--fullbleed">
+<figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_20to19.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_20to19.mp4">
