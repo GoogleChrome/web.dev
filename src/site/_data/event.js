@@ -160,7 +160,7 @@ const eventData = [
         title: 'How to Stay Fast and Fresh with Angular',
       },
       {
-        speaker: 'samdutton',
+        speaker: ['maudn', 'samdutton'],
         title: 'Security and Privacy for the Open Web',
       },
       {
