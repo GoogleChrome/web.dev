@@ -56,7 +56,7 @@ PWAs provide a set of best practices and modern web APIs that are aimed at
 meeting your customers' needs by making your site fast, installable, reliable,
 and engaging.
 
-For example, using a Service Worker to [cache your resources][cache-resources]
+For example, using a service worker to [cache your resources][cache-resources]
 and doing [predictive prefetching][wb-precache] makes your site faster, and
 more reliable. Making your site Installable provides an easy way for your
 customers to access it directly from their home screen or app launcher. And
