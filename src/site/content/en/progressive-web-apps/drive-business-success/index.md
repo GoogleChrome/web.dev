@@ -204,7 +204,7 @@ markets with unreliable or expensive mobile data like India, Brazil, Mexico,
 or Indonesia.
 
 When a native app, installed from an app store, is launched, users expect
-it to open, regardless of whether they're connected to the Internet.
+it to open, regardless of whether they're connected to the internet.
 Progressive Web Apps should be no different.
 
 At a minimum, a simple offline page that tells the user the app isn't
