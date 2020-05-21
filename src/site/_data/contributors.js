@@ -1119,6 +1119,17 @@ const contributors = {
       name: 'Google',
     },
   },
+  drott: {
+    name: {
+      given: 'Dominik',
+      family: 'Röttsches',
+    },
+    country: 'FI',
+    github: 'drott',
+    org: {
+      name: 'Google',
+    },
+  },
 };
 
 const processedContributors = {};
