@@ -16,7 +16,7 @@ tags:
   - fonts
 ---
 
-The ['system-ui' section](https://drafts.csswg.org/css-fonts-4/#system-ui-def) of the CSS Fonts Module Level 4 spec defines a `system-ui` font keyword that allows developers to use the built-in, turbo-optimized, localized, mega-high-quality, no-download-needed, default operating system font font right in their sites and apps. 
+The ['system-ui' section](https://drafts.csswg.org/css-fonts-4/#system-ui-def) of the CSS Fonts Module Level 4 spec defines a `system-ui` font keyword that allows developers to use the built-in, turbo-optimized, localized, mega-high-quality, no-download-needed, default operating system font right in their sites and apps. 
 
 ```css
 body {
