@@ -166,7 +166,7 @@ Click **Remix to Edit** in the Glitch below to get an editable copy of the Glitc
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/macos-system-ui?path=style.css&attributionHidden=true&previewSize=25"
+    src="https://glitch.com/embed/#!/embed/macos-system-ui?path=style.css&attributionHidden=true&previewSize=25&sidebarCollapsed=true"
     alt="macOS Catalina system-ui sandbox on Glitch"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
