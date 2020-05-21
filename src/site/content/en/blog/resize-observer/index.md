@@ -55,9 +55,9 @@ var ro = new ResizeObserver( entries => {
 ro.observe(someElement);
 ```
 
-# Some details
+## Some details
 
-## What is being reported?
+### What is being reported?
 
 Generally, a
 `[ResizeObserverEntry](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry)`
@@ -96,7 +96,7 @@ Platform support for these properties is limited, but [Firefox already
 supports](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry#Browser_compatibility)
 the first two.
 
-## When is it being reported?
+### When is it being reported?
 
 The spec proscribes that `ResizeObserver` should process all resize events
 before paint and after layout. This makes the callback of a `ResizeObserver` the
@@ -104,7 +104,7 @@ ideal place to make changes to your page's layout. Because `ResizeObserver`
 processing happens between layout and paint, doing so will only invalidate
 layout, not paint.
 
-## Gotcha
+### Gotcha
 
 You might be asking yourself: what happens if I change the size of an observed
 element inside the callback to `ResizeObserver`? The answer is: you will trigger
@@ -114,7 +114,7 @@ only be processed in the same frame if the resized element is deeper in the DOM
 tree than the *shallowest* element processed in the previous callback.
 Otherwise, they'll get deferred to the next frame.
 
-# Application
+## Application
 
 One thing that `ResizeObserver` allows you to do is to implement per-element
 media queries. By observing elements, you can imperatively define your
@@ -178,7 +178,7 @@ Another use case is for any kind of custom element that is doing its own layout.
 Until `ResizeObserver`, there was no reliable way to get notified when its
 dimensions change so its children can be laid out again.
 
-# Conclusion
+## Conclusion
 
 `ResizeObserver` is available in [most major
 browsers](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver#Browser_compatibility).
