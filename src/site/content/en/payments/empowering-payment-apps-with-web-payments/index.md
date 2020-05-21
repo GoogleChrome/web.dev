@@ -36,8 +36,13 @@ of billing data for every purchase. See a demo below of how Google Pay leverages
 Web Payments to build a seamless flow. The same can be achieved by any other
 payment apps:
 
-TODO: insert
-[https://drive.google.com/file/d/1FItM-wrYENd58B32N-BWblnpc4Sy4wp_/view](https://drive.google.com/file/d/1FItM-wrYENd58B32N-BWblnpc4Sy4wp_/view)
+  <figure class="w-figure">
+    <video controls autoplay loop muted class="w-screenshot">
+      <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app2.mp4" type="video/mp4">
+    </video>
+   <figcaption class="w-figcaption">Checkout flow with Google Pay and Web Payments.</a>.
+    </figcaption>
+  </figure>
 
 1. The customer goes to checkout and presses the "Buy with Google" button.
 
