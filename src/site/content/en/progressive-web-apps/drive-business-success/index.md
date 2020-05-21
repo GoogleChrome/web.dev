@@ -184,7 +184,7 @@ more than twice as likely to book a stay with them.
 ![Installed users had a 2.5x higher conversion rate](img-9.jpg)
 
 Installation is a great way to make people return on your site and improve
-your customer loyalty. You can also think of personalising the experience for
+your customer loyalty. You can also think of personalizing the experience for
 those premium users.
 
 Even if you already have a native app, you may test to propose your app first
