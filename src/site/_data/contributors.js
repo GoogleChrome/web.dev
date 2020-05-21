@@ -1087,6 +1087,7 @@ const contributors = {
       given: 'Eric',
       family: 'Bidelman',
     },
+    twitter: 'ebidel',
     country: 'US',
     org: {
       name: 'Google',
