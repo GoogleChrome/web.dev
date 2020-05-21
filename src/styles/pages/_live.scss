@@ -200,6 +200,43 @@ table.w-event-schedule {
   width: 60%;
 }
 
+.w-event-calendar {
+  display: flex;
+  align-items: center;
+
+  a.w-button {
+    margin-left: 8px;
+  }
+}
+
+.w-event-calendar__note {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+
+  &::before {
+    content: '';
+    background: url(/images/icons/calendar.svg) center / contain no-repeat;
+    width: 24px;
+    height: 24px;
+  }
+
+  span {
+    text-indent: -99999px;
+    opacity: 0;
+    position: absolute;
+  }
+
+  @include bp(md) {
+    span {
+      margin-left: 6px;
+      text-indent: 0;
+      opacity: initial;
+      position: initial;
+    }
+  }
+}
 
 @include bp(md) {
   .w-event-section__column-head {
