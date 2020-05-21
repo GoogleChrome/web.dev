@@ -72,7 +72,7 @@ const eventData = [
   },
   {
     title: 'Day 2',
-    when: '2020-07-01T13:00Z', // 1pm GMT/UTC (+0), note UK time will be 2pm
+    when: '2020-07-01T12:00Z', // 12pm GMT/UTC (+0), note UK time will be 1pm
     duration: 3,
     sessions: [
       {
