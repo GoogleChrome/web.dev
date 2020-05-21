@@ -172,7 +172,7 @@ And just like that, Chromium users on macOS see your upgraded, custom 750 weight
 
 macOS 10.15 added new features to its system font, and in macOS 10.15 a tricky `system-ui` bug was logged in the Chromium bug tracker. I wonder if they are related!?
 
-{% Banner 'neutral' %}The image for this article was made with CSS and system-ui, here's the [codepen](https://codepen.io/argyleink/pen/eYpbwWd){% endBanner %}
+{% Aside %}The image for this article was made with CSS and system-ui. Here's the [codepen](https://codepen.io/argyleink/pen/eYpbwWd).{% endAside %}
 
 ## Appendix: The 'system-ui' regression {: #regression }
 
