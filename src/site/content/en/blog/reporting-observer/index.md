@@ -6,7 +6,7 @@ authors:
 date: 2019-08-21
 updated: 2020-05-27
 hero: hero.jpg
-alt: TBD.
+alt: A reporter observing something.
 description: |
   `ReportingObserver` lets you know when your site uses a deprecated API or runs
   into a browser intervention. The basic functionality originally landed in Chrome
@@ -201,6 +201,11 @@ that goes wrong in your app:
 
 - [W3c spec][reportingobserver]
 - [chromestatus.com entry][chromestatus]
+
+Photo by [Artem
+Maltsev](https://unsplash.com/@art_maltsev?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+on
+[Unsplash](https://unsplash.com/s/photos/report?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
 
 [spec]: https://w3c.github.io/reporting
 [reportingobserver]: https://w3c.github.io/reporting/#observers
