@@ -42,10 +42,23 @@ draft: true
           <a class="w-button w-button--primary gc-analytics-event" data-category="web.dev" data-label="subscribe, newsletter" data-action="click" href="#subscribe">
             Get notified
           </a>
-          <a class="w-button w-button--with-icon w-button--secondary gc-analytics-event" data-category="web.dev" data-label="live, add to calendar" data-action="click" data-icon="calendar_today" target="_blank"
-            href="https://calendar.google.com/event?action=TEMPLATE&tmeid=MzVwaDlxYWllMWZuZjlicjhpcGc4Y3NjOWMgZ29vZ2xlLmNvbV9rMGM1a2tzbGg1ZjlrdDU3bTU5bGhqYjRsZ0Bn&tmsrc=google.com_k0c5kkslh5f9kt57m59lhjb4lg%40group.calendar.google.com">
-            Add to calendar
-          </a>
+          <div class="w-event-calendar">
+            <div class="w-event-calendar__note">
+              <span>Add to calendar</span>
+            </div>
+            <a class="w-button w-button--secondary w-button--small gc-analytics-event" data-category="web.dev" data-label="live, add to Google Calendar" data-action="click" target="_blank"
+              href="https://calendar.google.com/calendar/r?cid=webcal://calendar.google.com/calendar/ical/c_ta9vmmo7jqm7j2bqgg3bsn47oc%40group.calendar.google.com/public/basic.ics">
+              Google
+            </a>
+            <a class="w-button w-button--secondary w-button--small gc-analytics-event" data-category="web.dev" data-label="live, add to iCal" data-action="click" target="_blank"
+              href="webcal://calendar.google.com/calendar/ical/c_ta9vmmo7jqm7j2bqgg3bsn47oc%40group.calendar.google.com/public/basic.ics">
+              iCal
+            </a>
+            <a class="w-button w-button--secondary w-button--small gc-analytics-event" data-category="web.dev" data-label="live, add to Outlook" data-action="click" target="_blank"
+              href="webcal://calendar.google.com/calendar/ical/c_ta9vmmo7jqm7j2bqgg3bsn47oc%40group.calendar.google.com/public/basic.ics">
+              Outlook
+            </a>
+          </div>
         </div>
 
       </div>
