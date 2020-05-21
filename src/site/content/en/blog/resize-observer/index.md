@@ -60,10 +60,10 @@ ro.observe(someElement);
 ### What is being reported?
 
 Generally, a
-`[ResizeObserverEntry](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry)`
+[`ResizeObserverEntry`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry)
 reports the content rectangle of an element through a property called
 `contentRect`, which returns a
-`[DOMRectReadOnly](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly)`
+[`DOMRectReadOnly`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly)
 object. The content rectangle is the box in which content can be placed. It is
 the border box minus the padding.
 
