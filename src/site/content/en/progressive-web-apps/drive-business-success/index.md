@@ -29,7 +29,7 @@ brings to the table.
 
 One rule we love to follow at Google when making products is
 "[focus on the user and all else will follow][ten-things-we-know]". Think
-_user-first_, what are my customers' needs, and how does a PWA provide them?
+_user-first_: what are my customers' needs, and how does a PWA provide them?
 
 ![Identify customer needs](img-2.jpg)
 
