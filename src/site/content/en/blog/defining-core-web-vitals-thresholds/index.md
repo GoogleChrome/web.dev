@@ -88,8 +88,9 @@ When establishing thresholds for Core Web Vitals metrics, we first identified
 criteria that each threshold had to meet. Below, I explain the criteria we used
 at Google for evaluating 2020 Core Web Vitals metric thresholds. The subsequent
 sections will go into more detail on how these criteria were applied to select
-the thresholds for each metric in 2020. In future years we may make improvements
-or additions to the criteria and thresholds.
+the thresholds for each metric in 2020. In future years we anticipate making
+improvements and additions to the criteria and thresholds to further improve our
+ability to measure great user experiences on the web.
 
 ### High-quality user experience
 
