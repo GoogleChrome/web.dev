@@ -100,10 +100,6 @@ const eventData = [
         title: 'How to define your install strategy',
       },
       {
-        speaker: 'beaufortfrancois',
-        title: 'Taking your media experience to the next level',
-      },
-      {
         speaker: 'thomassteiner',
         title:
           "Building for Modern Browsers and Progressively Enhancing Like It's 2003",
