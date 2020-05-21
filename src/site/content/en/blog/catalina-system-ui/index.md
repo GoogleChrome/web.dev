@@ -182,7 +182,7 @@ macOS 10.15 added new features to its system font, and in macOS 10.15 a tricky `
 The rest of this blog post explains how `system-ui` broke in Chromium 80 and how the Chromium engineers fixed it. If this isn't interesting or relevant for you, you can stop reading now.
 {% endAside %}
 
-This story starts with a different bug: [#1005969](https://crbug.com/1005969). This was reported against macOS 10.15 because the system-ui font spacing looked narrow and crammed.
+This story starts with a different bug: [#1005969](https://crbug.com/1005969). This was reported against macOS 10.15 because the `system-ui` font spacing looked narrow and crammed.
 
 <figure class="w-figure">
   <img src="./tight-chrome-spacing.png" alt="A comparison of two paragraphs from a Facebook group page. On the left is Chrome and the right is Safari, and Chrome is subtle but slightly tighter in spacing">
