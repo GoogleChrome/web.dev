@@ -140,10 +140,6 @@
     max-width: 512px - 64px;
   }
 
-  h3:first-of-type {
-    margin-top: 0;
-  }
-
   .w-event-buttons {
     margin: 16px 0;
   }
@@ -161,10 +157,6 @@
     // On larger devices, force padding even on the schedule (this wins over
     // ...__schedule, above).
     padding: 0 16px !important;
-  }
-
-  h2:first-of-type {
-    margin-top: 0;
   }
 }
 
