@@ -14,7 +14,8 @@ module.exports = {
       {
         title: 'Web Payments',
         pathItems: [
-          'empowering-payment-apps-with-web-payments','setting-up-a-payment-method',
+          'empowering-payment-apps-with-web-payments',
+          'setting-up-a-payment-method',
         ],
       },
     ],
