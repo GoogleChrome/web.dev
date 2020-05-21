@@ -241,7 +241,7 @@ relevant content.
 Be careful, though. Asking users to sign up for web notifications when they
 first arrive and without exposing the benefits can be perceived as spammy
 and negatively affect your experience. Make sure to follow
-[best-practices][not-ux-bp] when prompting for notifications and inspire
+[best practices][not-ux-bp] when prompting for notifications and inspire
 acceptance through relevant usages like train delays, price tracking, out
 of stock products etc.
 
