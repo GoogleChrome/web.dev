@@ -50,14 +50,8 @@ const YouTube = require(`./${componentsDir}/YouTube`);
 
 const collectionsDir = 'src/site/_collections';
 const authors = require(`./${collectionsDir}/authors`);
-const authorsWithPosts = require(`./${collectionsDir}/authors-with-posts`);
-const paginatedAuthors = require(`./${collectionsDir}/paginated-authors`);
-const paginatedBlogPosts = require(`./${collectionsDir}/paginated-blog-posts`);
-const paginatedNewsletters = require(`./${collectionsDir}/paginated-newsletters`);
-const paginatedPostsByAuthor = require(`./${collectionsDir}/paginated-posts-by-author`);
-const paginatedPostsByTag = require(`./${collectionsDir}/paginated-posts-by-tag`);
-const paginatedTags = require(`./${collectionsDir}/paginated-tags`);
 const blogPostsDescending = require(`./${collectionsDir}/blog-posts-descending`);
+const newsletters = require(`./${collectionsDir}/newsletters`);
 const postToCollections = require(`./${collectionsDir}/post-to-collections`);
 const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
 const recentBlogPosts = require(`./${collectionsDir}/recent-blog-posts`);
@@ -152,18 +146,12 @@ module.exports = function(config) {
   // ----------------------------------------------------------------------------
   // COLLECTIONS
   // ----------------------------------------------------------------------------
-  config.addCollection('authorsWithPosts', authorsWithPosts);
   config.addCollection('authors', authors);
   config.addCollection('blogPosts', blogPostsDescending);
+  config.addCollection('newsletters', newsletters);
+  config.addCollection('postToCollections', postToCollections);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('recentBlogPosts', recentBlogPosts);
-  config.addCollection('paginatedAuthors', paginatedAuthors);
-  config.addCollection('paginatedBlogPosts', paginatedBlogPosts);
-  config.addCollection('paginatedNewsletters', paginatedNewsletters);
-  config.addCollection('paginatedPostsByAuthor', paginatedPostsByAuthor);
-  config.addCollection('paginatedPostsByTag', paginatedPostsByTag);
-  config.addCollection('paginatedTags', paginatedTags);
-  config.addCollection('postToCollections', postToCollections);
   config.addCollection('tags', tags);
   // Turn collection.all into a lookup table so we can use findBySlug
   // to quickly find collection items without looping.

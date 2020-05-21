@@ -8,9 +8,10 @@ renderData:
   description: "{{ paged.description or description }}"
   rss: "{{ paged.href }}feed.xml"
 pagination:
-  data: collections.paginatedPostsByTag
+  data: collections.tags
   size: 1
   alias: paged
+  resolve: values
 ---
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}

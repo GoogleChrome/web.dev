@@ -11,9 +11,10 @@ renderData:
 noindex: true
 permalink: "/{{lang}}{{ paged.href }}feed.xml"
 pagination:
-  data: collections.authorsWithPosts
+  data: collections.authors
   size: 1
   alias: paged
+  resolve: values
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
