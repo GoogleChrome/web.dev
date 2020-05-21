@@ -5,27 +5,18 @@ authors:
   - jeffposnick
 description: Your PWA might cache articles and media files, but how will your users know that your pages work while offline? The Content Indexing API is one answer to this question currently in an origin trial. Once the index is populated with content from your PWA, as well as any other installed PWAs, it will show up in dedicated areas of supported browsers.
 date: 2019-12-12
-updated: 2020-05-07
+updated: 2020-05-26
 tags:
   - blog
   - capabilities
   - fugu
   - service-worker
   - chrome80
-  - origin-trial
   - index
   - caching
 hero: hero.jpg
 alt: Index cards in a filing cabinet.
-origin_trial:
-  url: https://developers.chrome.com/origintrials/#/view_trial/85568392920039425
 ---
-
-{% Aside %}
-  The Content Indexing API begins an origin trial in Chrome 80 as part of Chrome's
-  [Capabilities project](https://developers.google.com/web/updates/capabilities).
-  This post will be updated as the implementation progresses.
-{% endAside %}
 
 ## What is the Content Indexing API? {: #what }
 
@@ -45,16 +36,13 @@ put into implementing that functionality.
 
 This is a **discovery** problem; how can your PWA make users aware of its
 offline-capable content so that they can discover and view what's available? The
-Content Indexing API is the currently proposed solution to this problem that the
-Chrome team is experimenting with. The developer-facing portion of this solution
-is an extension to service workers, which allows developers to add URLs and
-metadata of offline-capable pages to a local index maintained by the browser.
+Content Indexing API is a solution to this problem. The developer-facing portion
+of this solution is an extension to service workers, which allows developers to
+add URLs and metadata of offline-capable pages to a local index maintained by
+the browser. That enhancement is available in Chrome 84 and later.
 
 Once the index is populated with content from your PWA, as well as any other
-installed PWAs, it will be surfaced by the browser. Experiments are also being
-run to determine how and where this offline content listing will be presented,
-and the initial plans include a dedicated area of Chrome for Android's **Downloads**
-page:
+installed PWAs, it will be surfaced by the browser as shown below.
 
 <div class="w-columns">
   <figure class="w-figure">
@@ -74,8 +62,8 @@ page:
   </figure>
 </div>
 
-Additionally, Chrome is running experiments to proactively recommend this
-content when it detects that a user is offline.
+Additionally, Chrome can proactively recommend content when it detects that a
+user is offline.
 
 The Content Indexing API **is not an alternative way of caching content**. It's
 a way of providing metadata about pages that are already cached by your service
@@ -89,27 +77,13 @@ cached pages.
   directly.
 {% endAside %}
 
-## Current status {: #status }
-
-<div class="w-table-wrapper">
-
-| Step                                       | Status                       |
-| ------------------------------------------ | ---------------------------- |
-| 1. Create explainer                        | [Complete](https://github.com/WICG/content-index/blob/master/README.md)        |
-| 2. Create initial draft of specification   | [In progress](https://wicg.github.io/content-index/spec/)          |
-| 3. Gather feedback & iterate on design     | In progress          |
-| **4. Origin trial**                        | **Started in Chrome 80** <br> Expected to run through Chrome 83 |
-| 5. Launch                                  | Not started                  |
-
-</div>
-
 ## See it in action {: #see-it-in-action }
 
 The best way to get a feel for the Content Indexing API is to try a sample
 application.
 
 1. Make sure that you're using a supported browser and platform. Currently,
-   that's limited to **Chrome 80 or later on Android**. Go to `chrome://version` to see
+   that's limited to **Chrome 84 or later on Android**. Go to `chrome://version` to see
    what version of Chrome you're running.
 1. Visit [https://contentindex.dev](https://contentindex.dev)
 1. Click the `+` button next to one or more of the items on the list.
@@ -214,16 +188,8 @@ await registration.index.add({
 });
 ```
 
-{% Aside 'note' %}
-  The `add()` method previously took a `launchUrl` parameter, which has been renamed to `url`.
-  During the Origin Trial period, you should include both `url` and `launchUrl`, set to the same
-  value. Following the Origin Trial, only `url` will be supported.
-{% endAside %}
-
-
 Adding an entry only affects the content index; it does not add anything to the
-[Cache Storage
-API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api).
+[cache](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api).
 
 #### Edge case: Call `add()` from `window` context if your icons rely on a `fetch` handler
 
@@ -263,12 +229,11 @@ remove:
 await registration.index.delete('article-123');
 ```
 
-Calling `delete()` only affects the index. It does not
-delete anything from the [Cache Storage
-API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api).
+Calling `delete()` only affects the index. It does not delete anything from the
+[cache](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api).
 
 {% Aside 'warning' %}
-  Once indexed, entries are not automatically expired. It's
+  Once indexed, entries do not automatically expire. It's
   up to you to either present an interface in your web app for clearing out
   entries, or periodically remove older entries that you know should no longer be
   available offline.
@@ -308,25 +273,10 @@ self.addEventListener('contentdelete', (event) => {
   The `contentdelete` event is only fired when the deletion happens due to
   interaction with the browser's built-in user interface. It is _not_ fired when
   `registration.index.delete()` is called. If your web app triggers the index
-  deletion using that API method, it should also take care of [cleaning up cached
+  deletion using that API method, it should also [clean up cached
   content](https://developer.mozilla.org/en-US/docs/Web/API/Cache/delete) at the
   same time.
 {% endAside %}
-
-## Enabling support during the Origin Trial {: #origin-trial }
-
-Starting in Chrome 80, the API is available as an Origin Trial on Chrome for Android.
-
-{% include 'content/origin-trials.njk' %}
-
-To participate in an origin trial:
-
-{% include 'content/origin-trial-register.njk' %}
-
-## Feedback {: #feedback }
-
-Chrome wants to hear your thoughts and experiences using this API throughout the
-Origin Trial process.
 
 ### Feedback about the API design {: #feedback-design }
 
@@ -350,10 +300,6 @@ to `Blink>ContentIndexing`.
 Planning to use the Content Indexing API in your web app? Your public support
 helps Chrome prioritize features, and shows other browser vendors how critical it is
 to support them.
-
-- Be sure you have signed up for the [Origin
-  Trial](https://developers.chrome.com/origintrials/#/view_trial/2272066012008415233)
-  to show your interest and provide your domain and contact info.
 
 - Send a Tweet to [@ChromiumDev](https://twitter.com/chromiumdev) with
   `#ContentIndexingAPI` and details on where and how you're using it.
