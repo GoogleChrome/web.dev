@@ -238,7 +238,7 @@ Web push notifications allow users to opt-in to timely updates from sites
 they love and allow you to effectively re-engage them with customized,
 relevant content.
 
-Be careful though, asking users to sign up for web notifications when they
+Be careful, though. Asking users to sign up for web notifications when they
 first arrive and without exposing the benefits can be perceived as spammy
 and negatively affect your experience. Make sure to follow
 [best-practices][not-ux-bp] when prompting for notifications and inspire
