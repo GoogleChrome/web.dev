@@ -26,7 +26,11 @@ const eventData = [
     sessions: [
       {
         speaker: 'dalmaer',
-        title: 'Opener',
+        title: 'Welcome to Day One',
+      },
+      {
+        speaker: 'egsweeny',
+        title: "What's New in Speed Tooling",
       },
       {
         speaker: 'egsweeny',
@@ -77,7 +81,7 @@ const eventData = [
     sessions: [
       {
         speaker: 'dalmaer',
-        title: 'Opener',
+        title: 'Day Two Opening Note',
       },
       {
         speaker: 'paullewis',
@@ -137,7 +141,7 @@ const eventData = [
     sessions: [
       {
         speaker: 'dalmaer',
-        title: 'Opener',
+        title: 'Day Three Opening Note',
       },
       {
         speaker: 'kosamari',
