@@ -277,7 +277,7 @@ priorities.
 
 ![Progressively launch your PWA](img-14.jpg)
 
-To accelerate the modernisation of your website and make it a real PWA,
+To accelerate the modernization of your website and make it a real PWA,
 we encourage you to be agile: launch feature by feature. First, research
 with your users what features would bring them most value, then deliver
 them with your designers and developers, and finally do not forget to
