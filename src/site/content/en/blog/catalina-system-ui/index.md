@@ -24,11 +24,7 @@ body {
 }
 ```
 
-This typography choice is akin to saying:
-
-{% Blockquote 'browser' %}
-use the native system font for the current locale of this user
-{% endBlockquote %}
+This typography choice is akin to saying "use the native system font for the current locale of this user."
 
 On macOS, the `system-ui` font is San Francisco, a font that a design team vetted, tested, and… recently upgraded! First we'll cover the [new exciting variable font features in Catalina](#new-powers), then we'll cover a couple of [bugs and how Chromium engineers resolved them](#regression).
 
