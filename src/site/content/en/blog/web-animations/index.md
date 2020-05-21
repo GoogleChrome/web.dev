@@ -1,5 +1,5 @@
 ---
-title: The Web Animations API just hit Chrome stable — here's what you need to know
+title: The Web Animations API is complete in Chrome — here's what you need to know
 subhead: Wrangling your web animations is about to get much easier
 authors:
   - una
@@ -21,13 +21,16 @@ tags:
 
 Adding delightful animations to your website is not only for cosmetic reasons. When used correctly, animations improve user perception and [memory](https://www.researchgate.net/publication/229351931_The_Effects_of_Animation_and_Format_on_the_Perception_and_Memory_of_Online_Advertising) of your brand, guide user actions, but also helps users navigate your application—providing context in a digital space.
 
-And an exciting piece of news: the [Web Animations API](https://www.w3.org/TR/web-animations-1/) has just hit Chrome stable! This API enables developers to incorporate [imperative](https://www.youtube.com/watch?v=WaNoqBAp8NI) animations with JavaScript. It was written to underlie both CSS animation and transition implementations and enable future effects to be developed, as well as existing effects to be composed and timed. This lets us take advantage of CSS animations, but extend those in a way that we can't do with CSS alone.
+<figure class="w-figure">
+  <img class="w-screenshot" src='./waapi-timeline.png' alt="The Web Animations API first hit Chrome in version 36, July of 2014. Now the spec is going to be complete, in version 84, launching July 2020.">
+  <figcaption class="w-figcaption">
+    The long history of the Web Animations API.
+  </figcaption>
+</figure>
+
+The [Web Animations API](https://www.w3.org/TR/web-animations-1/) has a long history. Original it was released Chrome 36, and the latest release (Chrome 84) brings us all the previously unsupported bits. This API enables developers to incorporate [imperative](https://www.youtube.com/watch?v=WaNoqBAp8NI) animations with JavaScript. It was written to underlie both CSS animation and transition implementations and enable future effects to be developed, as well as existing effects to be composed and timed.
 
 ## Getting Started
-
-With the Web Animations API, we can take advantage of some really great features that allow for more robust animations! Specifically, new features to both the document and individual elements allow for you to pause, rewind, and wait for an animation to end before triggering another animation.
-
-These are hugely beneficial when orchestrating animations for complex components, such as a you may need for a getting started guide or even to just apply multiple, tiered animations to a modal opening.
 
 To use the Web Animations API, we'll need to create a Keyframe Object. If you're familiar with CSS `@keyframe`s, this is very similar. What might look like [this](https://codepen.io/una/pen/RwWMvPw) in CSS:
 
@@ -66,16 +69,20 @@ document.querySelector('.modal').animate(
     openAnimation ,  {
     duration: 1000, // 1s
     iterations: 1, // single iteration
-easing: 'ease-in' // easing function
+    easing: 'ease-in' // easing function
   }
 );
 ```
 
 So the amount of code is about the same, but with JavaScript, we get a couple of superpowers that we don't have with CSS alone. A few of those are the ability to group effects, and to move within an animation timeline.
 
+{% Aside %}
+  Heiphenated property names become camel case when in keyframes (i.e. `background-color` to `backgroundColor`)
+{% endAside %}
+
 ## Orchestrating Animations with Promises
 
-Now in Chrome stable, we have two methods that can be used with promises: `animation.ready()` and `animation.finished`
+In Chrome 84, we now have two methods that can be used with promises: `animation.ready()` and `animation.finished`
 
 -  `animation.ready` is a promise that enables you to wait for pending changes to take effect (i.e. switching between playback control methods such as play and pause)
 - `animation.finished` is a promise provides a means of executing custom JavaScript code when an animation is complete.
@@ -97,7 +104,7 @@ Within CSS, this would be cumbersome to recreate. You'd have to use a `@keyframe
 
 ## Play, Pause, Reverse
 
-What can open, should close! Luckily, the WAAPI provides us the ability to play, pause, and reverse our animations. 
+What can open, should close! Luckily, since Chrome 39, the WAAPI has provided us the ability to play, pause, and reverse our animations.
 
 We can take the above animation, and give it a smooth, reversed animation when clicking the button again using `.reverse()`. This way, we can create a smoother and more contextual interaction for our modal.
 
@@ -141,16 +148,29 @@ document.querySelector('button').addEventListener('click', () => {
 });
 ```
 
--- code block -- 
-
 {% Aside %}
-  For a great example of `GroupEffect` and `playState` using start and pause states, check out [this example](https://codepen.io/samthor/pen/mJxPRK?editors=0010) from [Sam Thorogood](/authors/samthor/).
+  For a great example of `GroupEffect` and `playState`, check out [this example](https://codepen.io/samthor/pen/mJxPRK?editors=0010) from [Sam Thorogood](/authors/samthor/).
 {% endAside %}
 
 
-## Replaceable Animations
+## Performance Improvements with Replaceable Animations
 
-The next really exciting addition are replaceable animations. Fill modes provide a convenient means of 'sticking' the start or end value of an animation, but at a cost.  For a small number of animations, this is not typically a problem, but consider the following example:
+When creating animations based on events, such as on mousemose, a new animation is created each time, which can quickly consume memory and degrade performance.  To address this problem, replaceable animations were introduced, enabling finished animation effects to be overriden by other finished animations and removed from the set of active animations.
+
+For a small number of animations, this is not typically a problem, but consider the following example:
+
+-- have graphic here to match DEMO with mouse cursor trail --
+
+There are a few new methods to take your animation control even  further:
+
+- `animation.commitStyles` is a method used to update the style of an element based on underlying style along with all animatinos on the element in the composite order.
+- `animation.onremove` - with the onremove event handler, we can run custom JavaScript code when an animation is replaced.
+- `animation.replaceState` provides a means of tracking whether an animation is active, persisted or removed.
+- `animation.persist` marks an animation as non-replaceable. Persisting an animation is useful when used with animation compositing modes, such as add.
+
+Speaking of compositing modes, with the Web Animations API, you can now composite your animations, meaning they can be additive or accumulate.
+
+## Partial Keyframes
 
 <figure class="w-figure">
   <img class="w-screenshot" src='./retargetting-demo.gif' alt="retargetting demo">
@@ -168,21 +188,21 @@ elem.addEventListener('mousemove', evt => {
 });
 ```
 
--- have graphic here to match --
+Example here shows retargetting. This highlights partial keyframes. 
 
-
-To address this problem, replaceable animations were introduced. When the effect of an animation in the finished state is overridden by another finished animation, it is removed from the set of active animations. There are a few new methods to take your animation control even  further:
-
-- `animation.commitStyles` is a method used to update the style of an element based on underlying style along with all animatinos on the element in the composite order.
-- `animation.onremove` - with the onremove event handler, we can run custom JavaScript code when an animation is replaced.
-- `animation.replaceState` provides a means of tracking whether an animation is active, persisted or removed.
-- `animation.persist` marks an animation as non-replaceable. Persisting an animation is useful when used with animation compositing modes, such as add.
-
-Speaking of compositing modes, with the Web Animations API, you can now composite your animations, meaning they can be additive or accumulate.
+- only a to keyframe, no from keyframe, the from from is implicit from where you are now
 
 ## Compositing Animations
 
-[Composite modes](https://css-tricks.com/additive-animation-web-animations-api/) provide additional control over how effects are combined. Currently, three composite modes are supported: `replace` (default mode), `add`, and `accumulate`.
+[Composite modes](https://css-tricks.com/additive-animation-web-animations-api/) allow developers to write distinct animations and have control over how effects are combined. Three composite modes are now supported: `replace` (the default mode), `add`, and `accumulate`.
+
+When you composite animations, a develoepr can write short, distinct effects and see them combined together:
+
+-- example of dropdown w/a bounce w/ add --
+
+-- show what that looks like w/o add and explain why its much more cumbersome --
+
+-- accumulate -- 
 
 A box animating without composite (default of replace) would look like this:
 
@@ -194,6 +214,8 @@ The composite mode `accumulate` behaves slightly differently from add. For prope
 
 
 ### What's Coming Next!
+
+These are all exciting additions to the Web Animations capabilities in todays browsers. And even more capabilities are coming down the pipeline:
 
 - Scroll-linked animations (Houdini API)
 - Mutable timelines
