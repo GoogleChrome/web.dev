@@ -4,7 +4,7 @@ title: First Input Delay (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-05-04
+updated: 2020-05-21
 description: |
   This post introduces the First Input Delay (FID) metric and explains
   how to measure it
@@ -65,6 +65,11 @@ Delay of less than **100 milliseconds**. To ensure you're hitting this target
 for most of your users, a good threshold to measure is the **75th percentile**
 of page loads, segmented across mobile and desktop devices.
 
+{% Aside %}
+  To learn more about the research and methodology behind this recommendation,
+  see: [Defining the Core Web Vitals metrics
+  thresholds](/defining-core-web-vitals-thresholds/)
+{% endAside %}
 
 ## FID in detail
 

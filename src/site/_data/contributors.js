@@ -1153,6 +1153,17 @@ const contributors = {
       name: 'Google',
     },
   },
+  bmcquade: {
+    name: {
+      given: 'Bryan',
+      family: 'McQuade',
+    },
+    twitter: 'bryanmcquade',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
   drott: {
     name: {
       given: 'Dominik',

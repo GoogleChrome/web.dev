@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2020-05-05
+updated: 2020-05-21
 description: |
   This post introduces the Cumulative Layout Shift (CLS) metric and explains
   how to measure it
@@ -88,6 +88,12 @@ To provide a good user experience, sites should strive to have a CLS score of
 less than **0.1**. To ensure you're hitting this target for most of your users,
 a good threshold to measure is the **75th percentile** of page loads, segmented
 across mobile and desktop devices.
+
+{% Aside %}
+  To learn more about the research and methodology behind this recommendation,
+  see: [Defining the Core Web Vitals metrics
+  thresholds](/defining-core-web-vitals-thresholds/)
+{% endAside %}
 
 ## Layout shifts in detail
 

@@ -6,7 +6,7 @@ description: Essential metrics for a healthy site
 authors:
   - philipwalton
 date: 2020-04-30
-updated: 2020-05-04
+updated: 2020-05-21
 masthead: web-vitals.svg
 tags:
   - metrics
@@ -44,9 +44,9 @@ Core Web Vitals are the subset of Web Vitals that apply to all web pages, should
 be measured by all site owners, and will be surfaced across all Google tools.
 Each of the Core Web Vitals represents a distinct facet of the user experience,
 is measurable [in the
-field](https://web.dev/user-centric-performance-metrics/#how-metrics-are-measured),
+field](/user-centric-performance-metrics/#how-metrics-are-measured),
 and reflects the real-world experience of a critical
-[user-centric](https://web.dev/user-centric-performance-metrics/#how-metrics-are-measured)
+[user-centric](/user-centric-performance-metrics/#how-metrics-are-measured)
 outcome.
 
 The metrics that make up Core Web Vitals will [evolve](#evolving-web-vitals)
@@ -63,19 +63,25 @@ following metrics (and their respective thresholds):
        alt="Cumulative Layout Shift threshold recommendations">
 </div>
 
-- **[Largest Contentful Paint (LCP)](https://web.dev/lcp/)**: measures _loading_
-  performance. To provide a good user experience, LCP should occur within **2.5
-  seconds** of when the page first starts loading.
-- **[First Input Delay (FID)](https://web.dev/fid/)**: measures _interactivity_.
-  To provide a good user experience, pages should have a FID of less than **100
+- **[Largest Contentful Paint (LCP)](/lcp/)**: measures _loading_ performance.
+  To provide a good user experience, LCP should occur within **2.5 seconds** of
+  when the page first starts loading.
+- **[First Input Delay (FID)](/fid/)**: measures _interactivity_. To provide a
+  good user experience, pages should have a FID of less than **100
   milliseconds**.
-- **[Cumulative Layout Shift (CLS)](https://web.dev/cls/)**: measures _visual
-  stability_. To provide a good user experience, pages should maintain a CLS of
-  less than **0.1.**
+- **[Cumulative Layout Shift (CLS)](/cls/)**: measures _visual stability_. To
+  provide a good user experience, pages should maintain a CLS of less than
+  **0.1.**
 
 For each of the above metrics, to ensure you're hitting the recommended target
 for most of your users, a good threshold to measure is the **75th percentile**
 of page loads, segmented across mobile and desktop devices.
+
+{% Aside %}
+  To learn more about the research and methodology behind these recommendations,
+  see: [Defining the Core Web Vitals metrics
+  thresholds](/defining-core-web-vitals-thresholds/)
+{% endAside %}
 
 ### Tools to measure and report Core Web Vitals
 
@@ -204,9 +210,9 @@ sites, your competitor's sites, and the web at large.
 Alternatively, developers who prefer to measure these metrics directly via the
 underlying web APIs can refer to these metric guides for implementation details:
 
-- [Measure LCP in JavaScript](https://web.dev/lcp/#measure-lcp-in-javascript)
-- [Measure FID in JavaScript](https://web.dev/fid/#measure-fid-in-javascript)
-- [Measure CLS in JavaScript](https://web.dev/cls/#measure-cls-in-javascript)
+- [Measure LCP in JavaScript](/lcp/#measure-lcp-in-javascript)
+- [Measure FID in JavaScript](/fid/#measure-fid-in-javascript)
+- [Measure CLS in JavaScript](/cls/#measure-cls-in-javascript)
 
 #### Lab tools to measure Core Web Vitals
 
@@ -272,9 +278,9 @@ Once you've measured the Core Web Vitals and identified areas for improvement,
 the next step is to optimize. The following guides offer specific
 recommendations for how to optimize your pages for each of the Core Web Vitals:
 
-- [Optimize LCP](https://web.dev/optimize-lcp/)
-- [Optimize FID](https://web.dev/optimize-fid/)
-- [Optimize CLS](https://web.dev/optimize-cls/)
+- [Optimize LCP](/optimize-lcp/)
+- [Optimize FID](/optimize-fid/)
+- [Optimize CLS](/optimize-cls/)
 
 ## Other Web Vitals
 
@@ -285,19 +291,18 @@ These other Web Vitals often serve as proxy or supplemental metrics for the Core
 Web Vitals, to help capture a larger part of the experience or to aid in
 diagnosing a specific issue.
 
-For example, the metrics [Time to First Byte
-(TTFB)](https://web.dev/time-to-first-byte/) and [First Contentful Paint
-(FCP)](https://web.dev/fcp/) are both vital aspects of the _loading_ experience,
-and are both useful in diagnosing issues with LCP (slow [server response
-times](https://web.dev/overloaded-server/) or [render-blocking
-resources](https://web.dev/render-blocking-resources/), respectively).
+For example, the metrics [Time to First Byte (TTFB)](/time-to-first-byte/) and
+[First Contentful Paint (FCP)](/fcp/) are both vital aspects of the _loading_
+experience, and are both useful in diagnosing issues with LCP (slow [server
+response times](/overloaded-server/) or [render-blocking
+resources](/render-blocking-resources/), respectively).
 
-Similarly, metrics like [Total Blocking Time (TBT)](https://web.dev/tbt/) and
-[Time to Interactive (TTI)](https://web.dev/tti/) are lab metrics that are vital
-in catching and diagnosing potential _interactivity_ issues that will impact
-FID. However, they are not part of the Core Web Vitals set because they are not
-field-measurable, nor do they reflect a
-[user-centric](https://web.dev/user-centric-performance-metrics/#how-metrics-are-measured)
+Similarly, metrics like [Total Blocking Time (TBT)](/tbt/) and [Time to
+Interactive (TTI)](/tti/) are lab metrics that are vital in catching and
+diagnosing potential _interactivity_ issues that will impact FID. However, they
+are not part of the Core Web Vitals set because they are not field-measurable,
+nor do they reflect a
+[user-centric](/user-centric-performance-metrics/#how-metrics-are-measured)
 outcome.
 
 ## Evolving Web Vitals
