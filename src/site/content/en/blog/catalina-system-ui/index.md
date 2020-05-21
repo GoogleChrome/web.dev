@@ -32,7 +32,7 @@ This post assumes that you're already familiar with variable fonts. If not, chec
 
 {% YouTube 'B42rUMdcB7c' %}
 
-### Browser Compatibility
+### Browser compatibility
 At the time of writing, `system-ui` has support from Chromium (since 56), Edge (since 79), Safari (since 11), and from Firefox (since 43) but with the `-apple-system` keyword. See Can I use variable fonts? for updates.
 
 
