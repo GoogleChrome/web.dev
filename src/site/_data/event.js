@@ -161,7 +161,7 @@ const eventData = [
       },
       {
         speaker: 'samdutton',
-        title: 'Digging into the Privacy Sandbox',
+        title: 'Security and Privacy for the Open Web',
       },
       {
         speaker: 'rowan_m',
