@@ -22,7 +22,19 @@ const authorsCollection = require('./authors');
  * @return {Array<Author>}
  */
 module.exports = (collections) => {
-  return Object.values(authorsCollection(collections)).filter(
-    (a) => a.elements.length > 0,
-  );
+  const testAuthors = [
+    'robdodson',
+    'samthor',
+    'surma',
+    'mgechev',
+    'addyosmani',
+    'adamargyle',
+  ];
+
+  return Object.values(authorsCollection(collections)).filter((author) => {
+    if (process.env.PERCY && !testAuthors.includes(author.key)) {
+      return;
+    }
+    return author.elements.length > 0;
+  });
 };
