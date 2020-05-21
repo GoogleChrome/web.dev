@@ -176,7 +176,7 @@ macOS 10.15 added new features to its system font, and in macOS 10.15 a tricky `
 
 {% Aside %}The image for this article was made with CSS and system-ui. Here's the [codepen](https://codepen.io/argyleink/pen/eYpbwWd).{% endAside %}
 
-## Appendix: The 'system-ui' regression {: #regression }
+## Appendix: The `system-ui` regression {: #regression }
 
 {% Aside %}
 The rest of this blog post explains how `system-ui` broke in Chromium 80 and how the Chromium engineers fixed it. If this isn't interesting or relevant for you, you can stop reading now.
