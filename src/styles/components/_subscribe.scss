@@ -58,6 +58,10 @@ web-subscribe:not(:defined) {
   border: 0;
   font: inherit;
   height: 52px;
+  // The native select has a built-in 4px left margin in its shadow dom.
+  // Add 4px of padding to make values left align with our other form fields.
+  // Annoyingly the little down arrow on the right is not styleable.
+  padding-left: 4px;
 
   &:focus {
     border: 0;
