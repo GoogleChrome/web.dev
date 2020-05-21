@@ -129,7 +129,7 @@ of use cases for all three features.
 {% Aside 'warning' %}
   So far only barcode detection is available by default, starting in Chrome 83
   on certified devices with
-  [Google Play Services](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en_US)
+  [Google Play Services](https://play.google.com/store/apps/details?id=com.google.android.gms)
   installed,
   but face and text detection are available behind a flag.
   You can always use the Shape Detection API for local experiments by enabling the
