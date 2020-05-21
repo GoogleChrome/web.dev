@@ -1,5 +1,5 @@
 ---
-title: The Web Animations API is complete in Chrome — here's what you need to know
+title: "What's coming to Chrome 84 in the Web Animations API"
 subhead: Wrangling your web animations is about to get much easier
 authors:
   - una
