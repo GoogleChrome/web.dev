@@ -22,9 +22,9 @@ tags:
 
 ## Why should you care about isolating your web resources?
 
-Many web applications are vulnerable to cross-origin attacks like [cross-site request forgery](https://portswigger.net/web-security/csrf) (CSRF), [cross-site script inclusion](https://portswigger.net/research/json-hijacking-for-the-modern-web) (XSSI), timing attacks, and cross-origin information leaks like [COSI](https://arxiv.org/pdf/1908.02204.pdf) or due to speculative execution side-channels (Spectre).
+Many web applications are vulnerable to cross-origin attacks like [cross-site request forgery](https://portswigger.net/web-security/csrf) (CSRF), [cross-site script inclusion](https://portswigger.net/research/json-hijacking-for-the-modern-web) (XSSI), timing attacks, and [cross-origin information leaks](https://arxiv.org/pdf/1908.02204.pdf) or due to speculative execution side-channels ([Spectre](https://developers.google.com/web/updates/2018/02/meltdown-spectre)).
 
-[Fetch Metadata](https://www.w3.org/TR/fetch-metadata/) request headers sent by modern browsers allow you to deploy a strong defense-in-depth mechanism – a Resource Isolation Policy – to protect your application against these common cross-origin attacks.
+[Fetch Metadata](https://www.w3.org/TR/fetch-metadata/) request headers sent by modern browsers allow you to deploy a strong defense-in-depth mechanism - a Resource Isolation Policy - to protect your application against these common cross-origin attacks.
 
 Fetch Metadata request headers are currently supported in Chrome 76 and other Chromium-based browsers, and are under development in Firefox.
 See [Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site#Browser_compatibility) for up-to-date browser support information.
@@ -38,7 +38,7 @@ It is common for resources exposed by a given web application to only be loaded 
 ## Background
 Many cross-site attacks are possible because the web is open by default and your application server cannot easily protect itself from communication originating from external applications. 
 A typical cross-origin attack is cross-site request forgery (CSRF) where an attacker lures a user onto a site they control and then submits a form to the server the user is logged-in to. Since the server cannot tell if the request originated from another domain (cross-site) and the browser automatically attaches cookies to cross-site requests, the server will execute the action requested by the attacker on behalf of the user.
-Other cross-site attacks like XSSI or cross-origin information leaks are similar in nature to CSRF and arise because the server wasn't able so far to differentiate between legitimate `same-origin` traffic and potential malicious cross-site traffic.
+Other cross-site attacks like XSSI or cross-origin information leaks are similar in nature to CSRF and rely on loading resources from a victim application in an attacker-controlled document and leaking information about them. Since applications cannot easily distinguish trusted requests from untrusted ones, they cannot discard malicious cross-site traffic.
 
 ## Fetch Metadata introduction
 Fetch Metadata request headers are a new web platform security feature designed to help servers defend themselves against cross-origin attacks. By providing information about the context of an HTTP request in a set of `Sec-Fetch-*` headers, they allow the responding server to apply security policies before processing the request. This lets developers decide whether to accept or reject a request based on the way it was made and the context in which it will be used, making it possible to respond to only legitimate requests made by their own application.
@@ -68,7 +68,7 @@ Malicious cross-site requests can be rejected by the server because of the addit
 The first request header, `Sec-Fetch-Site`, tells the server which [site](https://web.dev/same-site-same-origin) sent the request. This value is set to:
  - `same-origin`, if the request was made by your own application (e.g. site.example), 
  - `same-site`, if the request was made by a subdomain of your site (e.g. bar.site.example),
- - `none`, if the request was explicitly caused by a user’s interaction with the user agent (e.g. clicking on a bookmark),
+ - `none`, if the request was explicitly caused by a user's interaction with the user agent (e.g. clicking on a bookmark),
  - `cross-site`, if it was sent by another website (e.g. evil.example). 
 
 ### Sec-Fetch-Mode Request Header
@@ -101,7 +101,7 @@ Since Fetch Metadata is only supported in modern browsers, it should be used as 
 Any requests that do not originate from a cross-origin context (like *evil.example*) will be allowed. In particular these are requests that:
  -  Originate from your own application (e.g. a same-origin request where *site.example* requests *site.example/foo.json* will always be allowed).
  - Originate from your subdomains.
- -  Are explicitly caused by a user’s interaction with the user agent (e.g. direct navigation or by clicking a bookmark, etc.).
+ -  Are explicitly caused by a user's interaction with the user agent (e.g. direct navigation or by clicking a bookmark, etc.).
 
 ```python
   if req['sec-fetch-site'] in ('same-origin', 'same-site', 'none'):
@@ -180,9 +180,9 @@ We recommend testing your policy in a side-effect free way by first enabling it 
 From our experience of rolling out a Fetch Metadata Resource Isolation Policy at Google, most applications are by default compatible with such a policy and rarely require exempting endpoints to allow cross-site traffic.
 However there are a few legitimate cases that are safe to opt out:
 
-- Endpoints meant to be accessed cross-origin – If your application is serving endpoints that are `CORS` enabled, you need to explicitly opt them out from resource isolation to ensure that cross-site requests to these endpoints are still possible.
+- Endpoints meant to be accessed cross-origin - If your application is serving endpoints that are `CORS` enabled, you need to explicitly opt them out from resource isolation to ensure that cross-site requests to these endpoints are still possible.
 
--  Public resources (e.g. images, styles, etc) – Any public and unauthenticated resources that should be loadable cross-origin from other sites can be exempted as well. 
+-  Public resources (e.g. images, styles, etc) - Any public and unauthenticated resources that should be loadable cross-origin from other sites can be exempted as well. 
 
 ### Enforcing a Resource Isolation Policy
 After you've checked that your policy doesn't impact legitimate production traffic, you're ready to start enforcing the restrictions, guaranteeing that other sites will not be able to request your resources, protecting your users from cross-site attacks.
