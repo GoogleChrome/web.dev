@@ -246,7 +246,7 @@ acceptance through relevant usages like train delays, price tracking, out
 of stock products etc.
 
 Technically, [push notifications][dgc-web-push] on the web run in the
-background thanks to a Service Worker and are often sent by a system built for
+background thanks to a service worker and are often sent by a system built for
 managing campaigns (e.g. Firebase). This feature brings great business value
 for mobile (Android) and desktop users: it increases repeated visits and
 consequently sales and conversions.
