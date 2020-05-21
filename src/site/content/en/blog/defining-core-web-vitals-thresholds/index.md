@@ -18,7 +18,7 @@ tags:
 measure important aspects of real-world user experience on the web. Core Web
 Vitals includes metrics, as well as target thresholds for each metric, which
 help developers qualitatively understand whether the experience of their site is
-good, needs improvement, or is poor. This post will explain the approach used to
+"good", "needs improvement", or is "poor". This post will explain the approach used to
 choose thresholds for Core Web Vitals metrics generally, as well as how the
 thresholds for each specific Core Web Vitals metric were chosen.
 
