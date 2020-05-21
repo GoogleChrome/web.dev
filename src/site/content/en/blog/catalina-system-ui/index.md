@@ -1,6 +1,6 @@
 ---
 title: More variable font options for the macOS `system-ui` font in Chromium 83
-subhead: Catalina brings a new united variable system font to macOS 
+subhead: Catalina brings a new united variable system font to macOS.
 authors:
   - adamargyle
   - drott
