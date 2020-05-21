@@ -8,7 +8,7 @@ description: Chromium 80 had a system-ui font weight regression on macOS. The re
 date: 2020-05-21
 updated: 2020-05-21
 hero: hero.jpg
-thumbnail: thumb.png
+thumbnail: thumb.jpg
 alt: A bright pink and purple gradient with "macOS Catalina system-ui" going from thin to think from left to right, demonstrating some of the new variation settings
 tags:
   - blog
