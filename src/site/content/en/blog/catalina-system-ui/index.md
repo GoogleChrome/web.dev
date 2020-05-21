@@ -216,7 +216,7 @@ To fix that, Chromium needed to apply `opsz` correctly to the system font. This 
 
 ### Not done yet
 
-This is where it got tricky: Chromium applied `opsz` but something did not look right still. System fonts on Mac have an additional font table called [`trak`](https://developer.apple.com/fonts/TrueType-Reference-Manual/RM06/Chap6trak.html), which tweaks horizontal spacing. While working on the fix, we noticed that on macOS, when retrieving horizontal metrics from a `CTFontRef CoreText` object, the `trak` metrics were already getting factored into the metrics results. Chromium's shaping library [HarfBuzz](https://github.com/harfbuzz/harfbuzz) needs metrics where the `trak` values are not yet factored in.
+This is where it got tricky: Chromium applied `opsz` but something did not look right still. System fonts on Mac have an additional font table called [`trak`](https://developer.apple.com/fonts/TrueType-Reference-Manual/RM06/Chap6trak.html), which tweaks horizontal spacing. While working on the fix, Chromium engineers noticed that on macOS, when retrieving horizontal metrics from a `CTFontRef` object, the `trak` metrics were already getting factored into the metrics results. Chromium's shaping library [`HarfBuzz`](https://github.com/harfbuzz/harfbuzz) needs metrics where the `trak` values are not yet factored in.
 
 <figure class="w-figure">
   <img src="./weight-loss.png" alt="A master display of system-ui and all of it's font weight and variations in a list. Half of them have no weight differences applied.">
