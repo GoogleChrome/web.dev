@@ -200,7 +200,7 @@ Did you ever notice on macOS 10.14 how your paragraphs or headers "snapped" to a
   </video>
 </figure>
 
-On macOS 10.14, the `system-ui` font switched between two fonts depending on the target font size. When text was under `20px`, macOS used "San Francisco Text". When text was `20px` or over, macOS used "San Francisco Display". Optical sizing was built statically into two separate fonts.
+On Mojave (macOS 10.14), the `system-ui` font switched between two fonts depending on the target font size. When text was under `20px`, macOS used "San Francisco Text". When text was `20px` or over, macOS used "San Francisco Display". Optical sizing was built statically into two separate fonts.
 
 Catalina (macOS 10.15) shipped a new united variable font for San Francisco. No more managing "Text" and "Display". It also gained the new variation setting [`opsz`](#opsz) described earlier.
 
