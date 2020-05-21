@@ -148,7 +148,9 @@ document.querySelector('button').addEventListener('click', () => {
 {% endAside %}
 
 
-## Retargeting
+## Replaceable Animations
+
+The next really exciting addition are replaceable animations. Fill modes provide a convenient means of 'sticking' the start or end value of an animation, but at a cost.  For a small number of animations, this is not typically a problem, but consider the following example:
 
 <figure class="w-figure">
   <img class="w-screenshot" src='./retargetting-demo.gif' alt="retargetting demo">
@@ -156,12 +158,8 @@ document.querySelector('button').addEventListener('click', () => {
     <a href="https://codepen.io/una/pen/BaoveQJ">See Demo on Codepen </a>
   </figcaption>
 </figure>
-
-## Replaceable Animations
-
-The next really exciting addition are replaceable animations. Fill modes provide a convenient means of 'sticking' the start or end value of an animation, but at a cost.  For a small number of animations, this is not typically a problem, but consider the following example:
  
- ```js
+```js
 elem.addEventListener('mousemove', evt => {
   circle.animate(
     { transform: translate(${evt.clientX}px, ${evt.clientY}px) },
@@ -184,31 +182,16 @@ Speaking of compositing modes, with the Web Animations API, you can now composit
 
 ## Compositing Animations
 
-[Composite modes](https://css-tricks.com/additive-animation-web-animations-api/) provide additional control over how effects are combined. Currently, three composite modes are supported: 'replace’ (default mode), 'add’, and 'accumulate’.
+[Composite modes](https://css-tricks.com/additive-animation-web-animations-api/) provide additional control over how effects are combined. Currently, three composite modes are supported: `replace` (default mode), `add`, and `accumulate`.
 
 A box animating without composite (default of replace) would look like this:
 
--- gif here --
-
-```js
-box.animate([{transform: 'translateX(100px)', composite: 'add' }], { duration: 1000, fill: 'forwards' });
-```
+-- gif here showing the differences with the box demo --
 
 If we added an `add` composite, the animation would look much different:
 
--- gif here --
-
-```js
-box.animate([{transform: 'translateX(100px)', composite: 'add' }], { duration: 1000, fill: 'forwards' });
-```
-
 The composite mode `accumulate` behaves slightly differently from add. For properties that are additive such as translations or rotations, the results are the same.  Properties like scale behave differently.  
 
--- gif here --
-
-```js
-box.animate([{transform: 'translateX(100px)', composite: 'accumulate' }], { duration: 1000, fill: 'forwards' });
-```
 
 ### What's Coming Next!
 
