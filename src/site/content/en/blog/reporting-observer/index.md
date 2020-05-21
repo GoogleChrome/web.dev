@@ -68,7 +68,7 @@ existing APIs. When your site uses a deprecated API or runs up against a
 them:
 
 <figure>
-  <img src="/web/updates/images/2018/07/reporting/consolewarnings.png"
+  <img src="./consolewarnings.png"
        class="screenshot" alt="DevTools console warnings for deprecations and interventions."
        title="DevTools console warnings for deprecations and interventions.">
   <figcaption>Browser-initiated warnings in the DevTools console.</figcaption>
