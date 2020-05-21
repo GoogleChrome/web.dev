@@ -213,7 +213,7 @@ taking the experience a step further by providing some
 [functionality that makes sense while offline][pwabook-ch6]. For example,
 you could provide access to tickets or boarding passes, offline wish lists,
 call center contact information, articles or recipes that the user has
-recently viewed, et cetera.
+recently viewed, etc.
 
 ![Be helpful, even when offline](img-11.jpg)
 
