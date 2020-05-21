@@ -4,6 +4,7 @@ web-event-time {
   time {
     align-items: center;
     display: flex;
+    min-height: 100px;
   }
 
   .date {
@@ -11,7 +12,6 @@ web-event-time {
     display: flex;
     flex-flow: column;
     font-family: 'Google Sans', sans-serif;
-    padding: 16px;
     text-align: left;
     width: 80px;
   }

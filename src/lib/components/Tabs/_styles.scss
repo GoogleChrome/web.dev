@@ -28,8 +28,10 @@ web-tabs {
 
   .web-tabs__tablist {
     @include scrollbars();
+    align-items: flex-end;
     border-bottom: 1px solid $GREY_300;
     display: flex;
+    min-height: 50px;
     overflow-x: auto;
     scroll-behavior: smooth;
     width: 100%;
@@ -109,18 +111,6 @@ web-tabs {
     display: flex;
     flex: 1;
     flex-direction: column;
-  }
-
-  // Prevent FOUC by hiding panels until after firstUpdated().
-  // This isn't ":not(:defined)" because firstUpdated occurs after a frame.
-  &.unresolved * {
-    display: none !important;
-  }
-
-  // Prevent FOUC by hiding panels until after firstUpdated().
-  // This isn't ":not(:defined)" because firstUpdated occurs after a frame.
-  &.unresolved * {
-    display: none !important;
   }
 }
 
