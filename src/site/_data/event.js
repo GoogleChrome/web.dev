@@ -26,7 +26,7 @@ const eventData = [
     sessions: [
       {
         speaker: 'dalmaer',
-        title: 'Opener',
+        title: 'Welcome to Day One',
       },
       {
         speaker: 'addyosmani',
@@ -77,7 +77,7 @@ const eventData = [
     sessions: [
       {
         speaker: 'dalmaer',
-        title: 'Opener',
+        title: 'Day Two Opening Note',
       },
       {
         speaker: 'paullewis',
@@ -138,7 +138,7 @@ const eventData = [
     sessions: [
       {
         speaker: 'dalmaer',
-        title: 'Opener',
+        title: 'Day Three Opening Note',
       },
       {
         speaker: 'kosamari',
