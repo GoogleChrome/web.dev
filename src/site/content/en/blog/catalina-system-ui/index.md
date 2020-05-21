@@ -25,7 +25,7 @@ This typography choice is akin to saying:
 use the native system font for the current locale of this user
 {% endBlockquote %}
 
-On macOS, the `system-ui` font is San Francisco, a font that a design team vetted, tested, and… recently upgraded! First we’ll cover the [new exciting variable font features in Catalina](#new-powers), then we’ll cover a couple of [bugs and how Chromium engineers resolved them](#regression).
+On macOS, the `system-ui` font is San Francisco, a font that a design team vetted, tested, and… recently upgraded! First we'll cover the [new exciting variable font features in Catalina](#new-powers), then we'll cover a couple of [bugs and how Chromium engineers resolved them](#regression).
 
 This post assumes that you're already familiar with variable fonts. If not, check out [Introduction to variable fonts on the web](/variable-fonts/) and the video below.
 
@@ -81,7 +81,7 @@ Looks like some neat progressive enhancement design opportunities to me! Really 
 
 
 
-#### `wght`  {: #wght }
+### `wght`  {: #wght }
 Accepts a font weight between `0` and `900` and is applied equally to all characters.
 
 ```css
@@ -96,7 +96,7 @@ font-variation-settings: 'wght' 750;
   </video>
 </figure>
 
-#### `opsz` {: #opsz }
+### `opsz` {: #opsz }
 Optical sizing is similar to kerning or letter-spacing, but the spacing is done by a human eye instead of math. A value of `19` or below is intended for text and body copy spacing, while `20` or above is for spacing display headers and titles.
 
 ```css
@@ -111,7 +111,7 @@ font-variation-settings: 'opsz' 20;
   </video>
 </figure>
 
-#### `GRAD`
+### `GRAD`
 Similar to weight, but without touching horizontal spacing. It accepts values between `400` and `1000`.
 
 ```css
@@ -125,7 +125,7 @@ font-variation-settings: 'GRAD' 500;
   </video>
 </figure>
 
-#### `YAXS`
+### `YAXS`
 Stretches the glyph vertically. It accepts values between `400` and `1000`.
 
 ```css
@@ -139,7 +139,7 @@ font-variation-settings: 'YAXS' 500;
   </video>
 </figure>
 
-#### Combining the options
+### Combining the options
 With a few lines of CSS, we can tweak the font settings into a bold of our choice or try out other interesting combinations:
 
 ```css
@@ -157,7 +157,7 @@ font-variation-settings: 'wght' 750, 'YAXS' 600, 'GRAD' 500, 'opsz' 20;
 
 And just like that, Chromium users on macOS see your upgraded, custom 750 weight with some fun other tweaks 👍 
 
-### Sandbox
+## Sandbox
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
@@ -217,18 +217,18 @@ This is where it got tricky: Chromium applied `opsz` but something did not look 
 
 Internally, [Skia](https://skia.org/) uses both the `CGFontRef` class from [CoreGraphics](https://developer.apple.com/documentation/coregraphics) and the `CTFontRef` class from [CoreText](https://developer.apple.com/documentation/coretext). Due to required internal conversions between those objects (used for keeping backwards compatibility and accessing needed APIs on both classes), Skia would lose weight information in certain circumstances and bold fonts would stop working. This was tracked in [Issue #1057654](https://crbug.com/1057654). 
 
-Skia still needs to support macOS 10.11 because Chromium still supports it. On 10.11 the San Francisco Text and San Francisco Display fonts weren’t even variable fonts, but each was a family of separate fonts for every weight available. At some point their glyph IDs became out of sync with each other. So if Skia did text shaping (converting text into glyphs that can be drawn) with San Francisco Text, it would be gibberish if drawn with San Francisco Display, and vice versa. And even if Skia just asked for a different size macOS might switch to the other. It should be possible to always use one of the fonts and just scale it (using a matrix to scale it up instead of asking for a larger size) but CoreText has an issue where it will not scale sbix (color emoji) glyphs up (only down). It’s a bit more complex than that. CoreText actually seems to cap the vertical extent after matrix application, which seems to be related to it not being able to draw emoji at 45 degree angles. In any event, if you want your emoji to be shown big, you need to make a copy of the font to get a big version.
+Skia still needs to support macOS 10.11 because Chromium still supports it. On 10.11 the San Francisco Text and San Francisco Display fonts weren't even variable fonts, but each was a family of separate fonts for every weight available. At some point their glyph IDs became out of sync with each other. So if Skia did text shaping (converting text into glyphs that can be drawn) with San Francisco Text, it would be gibberish if drawn with San Francisco Display, and vice versa. And even if Skia just asked for a different size macOS might switch to the other. It should be possible to always use one of the fonts and just scale it (using a matrix to scale it up instead of asking for a larger size) but CoreText has an issue where it will not scale sbix (color emoji) glyphs up (only down). It's a bit more complex than that. CoreText actually seems to cap the vertical extent after matrix application, which seems to be related to it not being able to draw emoji at 45 degree angles. In any event, if you want your emoji to be shown big, you need to make a copy of the font to get a big version.
 
 So in order to create copies of `CTFont` objects at different sizes internally while ensuring that the same underlying font data is used, Chromium pulled the `CGFont` off the `CTFont`, then made a new `CTFont` from the `CGFont` (`CGFont` objects are size independent, the magic switching happens at the CoreText level). This worked fine until 10.154. In 10.15 this round trip ended up losing too much information, resulting in the weight issue. [Flutter noticed the weight issue](https://github.com/flutter/flutter/issues/49492) and an alternate fix for resizing was made to create the new `CTFont` directly from the original `CTFont` while controlling the optical size directly using an old but undocumented attribute in `CoreText`. This keeps things working on 10.11 and fixes other issues (like explicitly setting the optical size to the default value).
 
-However, this preserves more of the CoreText 'magic' in the font. One of these seems to be that it still tweaks the glyph advances in some way other than just the ‘trak’ table (the application of which Chromium was already trying to suppress through yet another undocumented attribute).
+However, this preserves more of the CoreText 'magic' in the font. One of these seems to be that it still tweaks the glyph advances in some way other than just the `trak` table (the application of which Chromium was already trying to suppress through yet another undocumented attribute).
 
-`CGFont` doesn’t do any of this 'magic' so maybe Chromium could get the `CGFont` off the `CTFont` and just use it to get advances? Unfortunately this wouldn't work because CoreText is known to muck with fonts in other ways as well. For example, it makes small emoji slightly bigger than you actually requested (boosting their size a bit). `CGFont` doesn’t know about this, so you’d end up with your sbix-based emoji too close to each other since you’d be measuring at one size but `CoreText` would draw them bigger by some amount. Chromium does want the `CTFont` advances, but it wants them without tracking, and preferably without any other mucking about.
+`CGFont` doesn't do any of this 'magic' so maybe Chromium could get the `CGFont` off the `CTFont` and just use it to get advances? Unfortunately this wouldn't work because CoreText is known to muck with fonts in other ways as well. For example, it makes small emoji slightly bigger than you actually requested (boosting their size a bit). `CGFont` doesn't know about this, so you'd end up with your sbix-based emoji too close to each other since you'd be measuring at one size but `CoreText` would draw them bigger by some amount. Chromium does want the `CTFont` advances, but it wants them without tracking, and preferably without any other mucking about.
 
 Since the fix for the spacing issue required a set of interconnected Blink and Skia fixes, the Chromium engineers could not "just revert" to fix the problem. The Chromium engineers also tried using a different build flag for changing a font-related codepath in Skia, which fixed the bold fonts problem, but regressed the spacing problem.
 
 ## The Fix
-In the end, of course Chromium wanted to fix both things. Chromium now resorts to using a different implementation for retrieving horizontal metrics directly from the binary data in the system font's font tables. Using this, Chromium is sidestepping `CoreText` and Skia when the font has a `trak` table (except when it’s the emoji font). 
+In the end, of course Chromium wanted to fix both things. Chromium now resorts to using a different implementation for retrieving horizontal metrics directly from the binary data in the system font's font tables. Using this, Chromium is sidestepping `CoreText` and Skia when the font has a `trak` table (except when it's the emoji font). 
 
 <figure class="w-figure">
   <img src="./weight-back.png" alt="A master display of system-ui and all of it's font weight and variations in a list. The half previously not working looks great now.">
