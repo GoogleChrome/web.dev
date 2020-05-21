@@ -166,7 +166,7 @@ Click **Remix to Edit** in the Glitch below to get an editable copy of the Glitc
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/macos-system-ui?path=style.css&attributionHidden=true&previewSize=25&sidebarCollapsed=true"
+    src="https://glitch.com/embed/#!/embed/macos-system-ui?path=style.css&attributionHidden=true&previewSize=50&sidebarCollapsed=true"
     alt="macOS Catalina system-ui sandbox on Glitch"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
@@ -174,7 +174,7 @@ Click **Remix to Edit** in the Glitch below to get an editable copy of the Glitc
 
 macOS 10.15 added new features to its system font, and in macOS 10.15 a tricky `system-ui` bug was logged in the Chromium bug tracker. I wonder if they are related!?
 
-{% Aside %}The image for this article was made with CSS and `system-ui`. Here's the [codepen](https://codepen.io/argyleink/pen/eYpbwWd).{% endAside %}
+{% Banner 'neutral' %}The image for this article was made with CSS and `system-ui`. Here's the [codepen](https://codepen.io/argyleink/pen/eYpbwWd).{% endBanner %}
 
 ## Appendix: The `system-ui` regression {: #regression }
 
