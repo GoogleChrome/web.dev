@@ -31,7 +31,7 @@ web-tabs {
     align-items: flex-end;
     border-bottom: 1px solid $GREY_300;
     display: flex;
-    min-height: 50px;
+    min-height: 50px; // matches _unresolved.scss to avoid FOUC
     overflow-x: auto;
     scroll-behavior: smooth;
     width: 100%;

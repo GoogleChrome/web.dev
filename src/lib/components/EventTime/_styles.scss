@@ -4,7 +4,7 @@ web-event-time {
   time {
     align-items: center;
     display: flex;
-    min-height: 100px;
+    min-height: 100px; // matches _unresolved.scss to avoid FOUC
   }
 
   .date {
