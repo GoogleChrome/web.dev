@@ -482,5 +482,5 @@ identify a threshold met by most origins:
 </div>
 
 For a 0.25 threshold, roughly 20% of phone origins, and 18% of desktop origins,
-would be classified as poor. This falls in our target range of 10-30%, so we
+would be classified as "poor". This falls in our target range of 10-30%, so we
 concluded that 0.25 is an acceptable "poor" threshold.
