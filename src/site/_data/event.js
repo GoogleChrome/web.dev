@@ -33,10 +33,6 @@ const eventData = [
         title: "What's New in Speed Tooling",
       },
       {
-        speaker: 'egsweeny',
-        title: "What's New in Speed Tooling",
-      },
-      {
         speaker: 'addyosmani',
         title: 'How to Optimize for Web Vitals',
       },
