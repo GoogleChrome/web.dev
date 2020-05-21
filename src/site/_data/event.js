@@ -29,6 +29,10 @@ const eventData = [
         title: 'Opener',
       },
       {
+        speaker: 'egsweeny',
+        title: "What's New in Speed Tooling",
+      },
+      {
         speaker: 'addyosmani',
         title: 'How to Optimize for Web Vitals',
       },
@@ -74,10 +78,6 @@ const eventData = [
       {
         speaker: 'dalmaer',
         title: 'Opener',
-      },
-      {
-        speaker: 'egsweeny',
-        title: "What's New in Speed Tooling",
       },
       {
         speaker: 'paullewis',
@@ -141,7 +141,7 @@ const eventData = [
       },
       {
         speaker: 'kosamari',
-        title: 'Building Better in the World of Build Tools!',
+        title: 'Building Better in the World of Build Tools',
       },
       {
         speaker: 'una',
