@@ -2,8 +2,7 @@
 layout: text
 title: Google Community Guidelines and Anti-Harassment Policy for In-Person and Virtual Events
 description: Community Guidelines
-date: 2020-06-31
-draft: true
+noindex: true
 ---
 
 Google is dedicated to providing a harassment-free and inclusive event experience for everyone regardless of gender identity and expression, sexual orientation, disabilities, neurodiversity, physical appearance, body size, ethnicity, nationality, race, age, religion, or other protected category. We do not tolerate harassment of event participants in any form. Google takes violations of our policy seriously and will respond appropriately.
