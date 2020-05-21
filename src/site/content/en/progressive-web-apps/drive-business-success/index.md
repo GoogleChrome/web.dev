@@ -70,10 +70,10 @@ re-engage your users with personalized content to generate loyalty.
 The business success definition can be a lot of things depending on your
 activity:
 
-* users spending more time on your service
-* reduced bounce rates for your leads
-* improved conversion rates
-* more returning visitors
+* Users spending more time on your service
+* Reduced bounce rates for your leads
+* Improved conversion rates
+* More returning visitors
 
 Most PWA projects result in a higher mobile conversion rate, and you can
 learn more from the numerous [PWA case studies][pwa-case-studies]. Depending
