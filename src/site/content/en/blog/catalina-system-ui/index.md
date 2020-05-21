@@ -37,7 +37,7 @@ At the time of writing, `system-ui` has support from Chromium (since 56), Edge (
 
 
 
-## New Powers {: #new-powers }
+## New powers {: #new-powers }
 
 The new abilities that Catalina brought to the system font are now available to web developers as of Chromium 83. The `system-ui` font now **has more variable settings**: optical sizing and 2 unique weight adjustments: 
 
