@@ -33,6 +33,7 @@
 .w-event-buttons {
   display: inline-flex;
   flex-flow: column wrap;
+  margin-bottom: 8px;
 
   .w-button--primary {
     margin: 0 0 16px;
@@ -142,6 +143,10 @@
   h3:first-of-type {
     margin-top: 0;
   }
+
+  .w-event-buttons {
+    margin: 16px 0;
+  }
 }
 
 .w-event-section__column-right {
@@ -218,5 +223,15 @@ table.w-event-schedule {
     max-width: none;
     padding: 0 16px;
     width: 62.5%;
+  }
+}
+
+.w-event-antihero {
+  padding: 0 !important;
+
+  img {
+    // nb. 128px is important as it matches the max-width of 512px
+    min-height: 128px;
+    object-fit: cover;
   }
 }
