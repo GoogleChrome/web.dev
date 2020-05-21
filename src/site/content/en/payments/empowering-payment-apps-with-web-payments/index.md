@@ -4,7 +4,7 @@ title: Empowering payment apps with Web Payments
 authors:
   - agektmr
 description: |
-  Web Payments evolves user's payment experience on the web. Learn how it works, its benefits and get ready to integrate your payment app to the Web Payments.
+  Web Payments evolves user's payment experience on the web. Learn how it works, its benefits and get ready to integrate your payment app with Web Payments.
 date: 2020-05-25
 ---
 
@@ -38,6 +38,7 @@ payment apps:
 
   <figure class="w-figure">
     <video controls autoplay loop muted class="w-screenshot">
+      <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.webm" type="video/webm">
       <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app2.mp4" type="video/mp4">
     </video>
    <figcaption class="w-figcaption">Checkout flow with Google Pay and Web Payments.</a>.
@@ -204,7 +205,7 @@ through a payment method of their choice, depending on the environment.
   Payments performs signature verification before running the payment app which
   makes malicious payment apps impossible to be sideloaded.
 
-See the video above which is a native application based payment app.
+In the video above, Google Pay is a native payment app.
 
 ###  Web based payment apps
 
@@ -217,8 +218,16 @@ See the video above which is a native application based payment app.
 * The web-based route is ideal for web services that have a large number of
   customers with their card on file.
 
-TODO: Insert a video that illustrates how a web-based payment app works with
-skip-ui
+  <figure class="w-figure">
+    <video controls autoplay loop muted class="w-screenshot">
+      <source src="https://storage.googleapis.com/web-dev-assets/payments/web-based-payment-app.webm" type="video/webm">
+      <source src="https://storage.googleapis.com/web-dev-assets/payments/web-based-payment-app2.mp4" type="video/mp4">
+    </video>
+   <figcaption class="w-figcaption">
+      Checkout flow with a web-based payment app.
+    </figcaption>
+  </figure>
+
 
 ##  How does merchant adoption work?
 
