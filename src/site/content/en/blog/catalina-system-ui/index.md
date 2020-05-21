@@ -239,4 +239,4 @@ In the end, of course Chromium wanted to fix both things. Chromium now resorts t
   <img src="./weight-back.png" alt="A master display of system-ui and all of it's font weight and variations in a list. The half previously not working looks great now.">
 </figure>
 
-In the meantime there's still [Skia Issue #10123](https://bugs.chromium.org/p/skia/issues/detail?id=10123) to track fixing this fully in Skia, and to go back to using Skia to retrieve the system font metrics from there, instead of the current fix that goes through HarfBuzz.
+In the meantime there's still [Skia Issue #10123](https://bugs.chromium.org/p/skia/issues/detail?id=10123) to track fixing this fully in Skia, and to go back to using Skia to retrieve the system font metrics from there, instead of the current fix that goes through `HarfBuzz`.
