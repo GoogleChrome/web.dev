@@ -160,7 +160,9 @@ font-variation-settings: 'wght' 750, 'YAXS' 600, 'GRAD' 500, 'opsz' 20;
 
 And just like that, Chromium users on macOS see your upgraded, custom 750 weight with some fun other tweaks 👍 
 
-## Sandbox
+## Playground
+
+Click **Remix to Edit** in the Glitch below to get an editable copy of the Glitch, and then edit the new `font-variation-settings` options to see how it affects your font. Remember that this Glitch will only work if you're using a macOS Catalina device.
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
