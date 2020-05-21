@@ -212,7 +212,7 @@ h1 {
 
 Unfortunately, the default `opsz` value in the new Catalina font is `20`, and Chromium engineers were not prepared to apply `opsz` to the system font. This led to smaller sizes displaying too narrow. 
 
-To fix that, Chromium needed to apply `opsz` correctly to the system font. This lead to [Issue #1005969](https://crbug.com/1005969) getting fixed. Victory!…?
+To fix that, Chromium needed to apply `opsz` correctly to the system font. This led to [Issue #1005969](https://crbug.com/1005969) getting fixed. Victory! Or was it…?
 
 ### Not done yet
 
