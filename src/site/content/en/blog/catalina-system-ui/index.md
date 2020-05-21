@@ -10,6 +10,10 @@ updated: 2020-05-21
 hero: hero.jpg
 thumbnail: thumb.png
 alt: A bright pink and purple gradient with "macOS Catalina system-ui" going from thin to think from left to right, demonstrating some of the new variation settings
+tags:
+  - blog
+  - css
+  - fonts
 ---
 
 The ['system-ui' section](https://drafts.csswg.org/css-fonts-4/#system-ui-def) of the CSS Fonts Module Level 4 spec defines a `system-ui` font keyword that allows developers to use the built-in, turbo-optimized, localized, mega-high-quality, no-download-needed, default operating system font font right in their sites and apps. 
