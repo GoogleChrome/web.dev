@@ -72,7 +72,7 @@ Payment apps can support third party payment methods as well.
 A `PaymentRequest` object is constructed with a list of [payment method
 identifiers](https://www.w3.org/TR/payment-method-id/) that identifies payment
 apps a merchant decides to accept. Payment method identifiers are set as a value
-for `supportedMethods` property. For example:
+for the `supportedMethods` property. For example:
 
 {% Label %}[merchant] requests payment:{% endLabel %}
 
