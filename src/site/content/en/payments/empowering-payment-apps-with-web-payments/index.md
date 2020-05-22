@@ -47,7 +47,7 @@ payment apps:
 
 1. The customer goes to checkout and presses the **Buy with Google** button.
 
-2. Google Pay app launches **in front of the merchant website**.
+2. The Google Pay app launches *in front of the merchant website*.
 
 3. The customer confirms payment in the Google Pay app after examining the
    details.
