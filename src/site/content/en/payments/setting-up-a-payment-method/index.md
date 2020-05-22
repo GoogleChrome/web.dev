@@ -351,18 +351,17 @@ property is used as the payment app icon.
 
 To launch the native payment app, the following conditions must be met:
 
-- The `related_applications` field is specified in the web app manifest that
-  has:
-    - The installed app's package id and signature matches, while the minimum
+- The `related_applications` field is specified in the web app manifest and:
+    - The installed app's package ID and signature match, while the minimum
       version (`min_version`) in the web app manifest is less than or equal to
       the version of the installed application.
 - The `prefer_related_applications` field is `true`.
-- The native payment app is installed that has:
-    - An intent filter of `org.chromium.action.PAY` is specified.
-    - The payment method identifier is specified as the value of `org.chromium.default_payment_method_name` metadata.
-    -   Learn more details about how to set these up: [Android payment apps:
-        developer's
-        guide](/native-payment-apps-overview)
+- The native payment app is installed and has:
+    - An intent filter of `org.chromium.action.PAY`.
+    - A payment method identifier specified as the value for the `org.chromium.default_payment_method_name` property.
+
+Check out the [Android payment apps: developer's guide](/native-payment-apps-overview)
+for more details about how to set these up.
 
 {% Label %}[payment handler] /manifest.json{% endLabel %}
 
