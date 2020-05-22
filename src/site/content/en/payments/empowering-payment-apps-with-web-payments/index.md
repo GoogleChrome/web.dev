@@ -120,8 +120,8 @@ Consider the existing approaches to integrating payments on the web:
 
 * **OAuth:** Merchant lets the customer authenticate and authorize with a
   payment handler's identity via OAuth, select a payment method, shipping
-  address etc through in-context iframe UI. (ex: [Amazon
-  Pay](https://developer.amazon.com/docs/amazon-pay-onetime/amazon-pay-and-login-with-amazon-introduction.html))
+  address etc through in-context iframe UI. For example, [Amazon
+  Pay](https://developer.amazon.com/docs/amazon-pay-onetime/amazon-pay-and-login-with-amazon-introduction.html).
 
 Here's how they compare to Web Payments:
 
