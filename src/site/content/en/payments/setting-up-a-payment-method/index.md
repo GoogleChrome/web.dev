@@ -47,7 +47,7 @@ The discovery process starts when a merchant initiates a transaction:
    manifest](https://developer.mozilla.org/docs/Web/Manifest) URL from the
    payment method manifest and fetches the web app manifest.
 3. The browser determines whether to launch the native payment app or the
-   web-based payment app from the web app manifest
+   web-based payment app from the web app manifest.
 
 The next sections explain in detail how to set up your own payment method so
 that browsers can discover it.
