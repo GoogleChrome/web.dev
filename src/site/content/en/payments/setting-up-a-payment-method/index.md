@@ -282,7 +282,7 @@ payment app appears in the Payment Request UI.
       </tr>
       <tr>
         <td>
-          <code><a href="https://developer.mozilla.org/docs/Web/Manifest/serviceworker">serviceworer</a></code>
+          <code><a href="https://developer.mozilla.org/docs/Web/Manifest/serviceworker">serviceworker</a></code>
         </td>
         <td>
         Used to detect the service worker that runs as the web-based payment
