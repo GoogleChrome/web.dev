@@ -405,7 +405,7 @@ just-in-time?](#jit-register).
 In Chrome, when `.show()` method is called, the Payment Request API displays a
 browser native UI called the "Payment Request UI". This UI allows users to
 choose a payment app, shipping options and delivery address, and payer's contact
-information. After pressing the "Continue" button in the Payment Request UI, the
+information. After pressing the **Continue** button in the Payment Request UI, the
 selected payment app is launched.
 
 <figure class="w-figure">
@@ -471,4 +471,3 @@ payment app and a web-based payment app.
 
 - [Android payment apps: developer's guide](/native-payment-apps-overview)
 - Web based payment apps developer guide
-
