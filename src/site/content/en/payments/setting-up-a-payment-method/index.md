@@ -397,10 +397,6 @@ The browser launches the web-based payment app by sending a `paymentrequest`
 event to the service worker. The service worker doesn't have to be registered in
 advance. [It can be registered just-in-time](#jit-register).
 
-{% Aside %}
-Learn more how that works in [When a web-based payment app is registered
-just-in-time?](#jit-register).
-{% endAside %}
 
 ## Understanding the special optimizations
 ### How browsers can skip the Payment Request UI and launch a payment app directly
