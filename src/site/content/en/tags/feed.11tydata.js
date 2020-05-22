@@ -16,9 +16,6 @@
 
 module.exports = {
   pagination: {
-    before: (authors) =>
-      process.env.ELEVENTY_ENV === 'dev'
-        ? []
-        : authors.filter((a) => a.elements.length > 0),
+    before: (tags) => (process.env.ELEVENTY_ENV === 'dev' ? [] : tags),
   },
 };

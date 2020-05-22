@@ -12,7 +12,7 @@
     "debug:test:lib": "TEST_MODE=debug npm-run-all clean rollup --parallel watch:rollup karma",
     "debug:test:unit": "node --inspect-brk ./node_modules/.bin/mocha ./test/unit",
     "deploy": "ELEVENTY_ENV=prod npm run build && node index-algolia.js && gcloud app deploy --project web-dev-production-1 --quiet",
-    "dev": "npm-run-all clean rollup sass --parallel --race watch:rollup watch:sass watch:eleventy watch:gulp start",
+    "dev": "ELEVENTY_ENV=dev npm-run-all clean rollup sass --parallel --race watch:rollup watch:sass watch:eleventy watch:gulp start",
     "eleventy": "eleventy --quiet",
     "gulp": "npx gulp build",
     "karma": "karma start",
