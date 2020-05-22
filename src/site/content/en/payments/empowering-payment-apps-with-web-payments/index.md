@@ -213,7 +213,7 @@ In the video above, Google Pay is a native payment app.
   are based on third party cookies [that are at
   risk](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html).
   While it's still hard to foresee the consequences, Web Payments look to the
-  web with better privacy and the world without third party cookies.
+  web with better privacy and a world without third party cookies.
 
 * The web-based route is ideal for web services that have a large number of
   customers with their card on file.
