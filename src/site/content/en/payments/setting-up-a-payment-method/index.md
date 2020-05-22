@@ -98,9 +98,9 @@ A [payment method manifest](https://w3c.github.io/payment-method-manifest/) is a
 JSON file that defines which payment app can use this payment method.
 
 ### Provide the payment method manifest
-When a merchant initiates a payment transaction, the browser [sends an HTTP
-`GET` request to](https://w3c.github.io/payment-method-manifest/#accessing) the
-payment method identifier URL. The server responds with the payment method
+When a merchant initiates a payment transaction, [the browser sends an HTTP
+`GET` request to the payment method identifier URL](https://w3c.github.io/payment-method-manifest/#accessing).
+The server responds with the payment method
 manifest body.
 
 A payment method manifest has two fields, `default_applications` and
