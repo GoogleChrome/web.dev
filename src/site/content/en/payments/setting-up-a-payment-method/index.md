@@ -56,7 +56,7 @@ that browsers can discover it.
 
 A [payment method
 identifier](https://w3c.github.io/payment-method-id/#dfn-payment-method-identifiers)
-is a URL based string. For example, Google Pay's identifier is
+is a URL-based string. For example, Google Pay's identifier is
 `https://google.com/pay`. Payment app developers can pick any URL as a payment
 method identifier as long as they have control over it and can serve arbitrary
 content. In this article, we'll use
