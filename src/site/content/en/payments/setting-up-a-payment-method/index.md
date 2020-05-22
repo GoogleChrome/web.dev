@@ -179,7 +179,7 @@ Link: <https://bobpay.xyz/payment-manifest.json>; rel="payment-method-manifest"
 
 The URL can be a fully-qualified domain name or a relative path. Inspect
 `https://bobpay.xyz/pay/` for network traffic to see an example. You may use a
-curl command as well:
+`curl` command as well:
 
 ```shell
 curl --include https://bobpay.xyz/pay
