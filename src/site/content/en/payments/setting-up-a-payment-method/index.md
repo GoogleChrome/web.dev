@@ -395,7 +395,7 @@ The web-based payment app should be specified in the web app manifest's `service
 
 The browser launches the web-based payment app by sending a `paymentrequest`
 event to the service worker. The service worker doesn't have to be registered in
-advance. It can be registered just-in-time.
+advance. [It can be registered just-in-time](#jit-register).
 
 {% Aside %}
 Learn more how that works in [When a web-based payment app is registered
