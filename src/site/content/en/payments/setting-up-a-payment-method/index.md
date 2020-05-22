@@ -332,8 +332,8 @@ payment app appears in the Payment Request UI.
         </td>
         <td>
         A string array used to determine the additional information that the
-        payment app can provide. `shippingAddress`, `payerName`, `payerEmail`,
-        and `payerPhone` are valid values.
+        payment app can provide. <code>shippingAddress</code>, <code>payerName</code>, <code>payerEmail</code>,
+        and <code>payerPhone</code> are valid values.
         </td>
       </tr>
     </tbody>
