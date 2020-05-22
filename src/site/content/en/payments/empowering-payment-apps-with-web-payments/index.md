@@ -78,7 +78,7 @@ security.
   payment app or a web-based payment app.
 
 * **Low integration cost:** Merchants can integrate Web Payments with JavaScript
-  and basic level server side integration.
+  and basic level server-side integration.
 
 * **Standards:** The protocol and data format for exchanging information with
   merchants is standardized and doesn't require deep integration.
