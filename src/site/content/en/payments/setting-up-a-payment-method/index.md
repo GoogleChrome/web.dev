@@ -439,7 +439,7 @@ To launch a payment app directly, the following conditions must be met:
 - There is only a single payment app that:
     - Supports the requested payment method identifier.
     - Can fulfill all the delegated requirements (such as shipping address,
-      payer's phone number, payer's name, and other).
+      payer's phone number, payer's name, etc.).
 
 {% Aside %}
 Safari currently only supports Apple Pay so it always launches the app directly,
