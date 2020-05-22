@@ -41,8 +41,8 @@ The app shortcuts menu is invoked by right-clicking the app icon in the taskbar
 launcher icon on Android.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./app-shortcuts-menu-android.png" alt="Screenshot of an app shortcuts menu opened on Android">
-  <figcaption class="w-figcaption">App shortcuts menu opened on Android</figcaption>
+  <img class="w-screenshot" src="./app-shortcuts-menu-android-windows.png" alt="Screenshot of an app shortcuts menu opened on Android and Windows">
+  <figcaption class="w-figcaption">App shortcuts menu opened on Android (left) and Windows (right)</figcaption>
 </figure>
 
 The app shortcuts menu is shown only for [Progressive Web Apps] that are
