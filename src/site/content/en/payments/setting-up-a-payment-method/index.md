@@ -16,8 +16,8 @@ will use the payment method identifier to indicate that to the browser. This
 article discusses how payment app discovery works,  and how to configure your
 payment app to be properly discovered and invoked by a browser.
 
-If you are new to the concept of Web Payments, how a payment transaction works
-through payment apps, please read following articles first:
+If you are new to the concept of Web Payments or how a payment transaction works
+through payment apps, read the following articles first:
 
 - [Empowering payment apps with Web Payments](/empowering-payment-apps)
 - [Life of a payment transaction](/life-of-a-payment-transaction)
