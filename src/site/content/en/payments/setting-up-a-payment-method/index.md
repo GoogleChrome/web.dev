@@ -468,4 +468,4 @@ Now that you have your payment app discoverable, learn how to develop a native
 payment app and a web-based payment app.
 
 - [Android payment apps: developer's guide](/native-payment-apps-overview)
-- Web based payment apps developer guide
+- Web based payment apps developer guide (Coming soon)
