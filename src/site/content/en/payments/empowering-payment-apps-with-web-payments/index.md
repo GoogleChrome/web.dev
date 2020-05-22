@@ -210,8 +210,8 @@ In the video above, Google Pay is a native payment app.
 ###  Web based payment apps
 
 * More future proof: typical payment app techniques like redirects or pop-ups
-  are based on third party cookies [that are at
-  risk](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html).
+  are based on third party cookies [that may become
+  obsolete](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html).
   While it's still hard to foresee the consequences, Web Payments look to the
   web with better privacy and a world without third party cookies.
 
