@@ -1,3 +1,7 @@
+---
+show_banner: true
+---
+
 <!DOCTYPE html>
 {% set lang = "en" %}
 {% set locale="en_US" %}
@@ -143,7 +147,9 @@
       </a>
     </web-side-nav>
     <main>
-      {% include 'partials/banner.njk' %}
+      {% if show_banner %}
+        {% include 'partials/banner.njk' %}
+      {% endif %}
       <div id="content">
         {{ content | safe }}
       </div>

@@ -1,4 +1,5 @@
 @import '../settings/colors';
+@import '../settings/dimensions';
 @import '../tools/breakpoints';
 
 // =============================================================================
@@ -21,6 +22,11 @@
   @include bp(md) {
     padding: 24px 64px;
   }
+}
+
+.w-banner--fixed {
+  position: fixed;
+  top: $WEB_HEADER_HEIGHT;
 }
 
 .w-banner--info {
