@@ -91,7 +91,7 @@ font-variation-settings: 'wght' 750;
 ```
 
 <figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+  <video playsinline controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_wght.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_wght.mp4">
   </video>
@@ -106,7 +106,7 @@ font-variation-settings: 'opsz' 20;
 ```
 
 <figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+  <video playsinline controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_opsz_v2.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_opsz_v2.mp4">
   </video>
@@ -121,7 +121,7 @@ font-variation-settings: 'GRAD' 500;
 ```
 
 <figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+  <video playsinline controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_grad_v2.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_grad_v2.mp4">
   </video>
@@ -136,7 +136,7 @@ font-variation-settings: 'YAXS' 500;
 ```
 
 <figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+  <video playsinline controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_yaxs_v2.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_yaxs_v2.mp4">
   </video>
@@ -152,7 +152,7 @@ font-variation-settings: 'wght' 750, 'YAXS' 600, 'GRAD' 500, 'opsz' 20;
 ```
 
 <figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+  <video playsinline controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_combined_v2.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_combined_v2.mp4">
   </video>
@@ -194,7 +194,7 @@ This story starts with a different bug: [#1005969](https://crbug.com/1005969). T
 Did you ever notice on macOS 10.14 how your paragraphs or headers "snapped" to a different looking font when the size went up or down?
 
 <figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
+  <video playsinline controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_20to19.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_20to19.mp4">
   </video>
