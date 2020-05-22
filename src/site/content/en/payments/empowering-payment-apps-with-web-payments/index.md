@@ -34,7 +34,7 @@ abandonment](https://baymard.com/blog/checkout-flow-average-form-fields). With
 Web Payments, checkout flow is simplified to a few taps instead of manual entry
 of billing data for every purchase. See a demo below of how Google Pay leverages
 Web Payments to build a seamless flow. The same can be achieved by any other
-payment apps:
+payment app:
 
   <figure class="w-figure">
     <video controls autoplay loop muted class="w-screenshot">
