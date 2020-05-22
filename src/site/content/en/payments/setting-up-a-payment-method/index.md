@@ -453,7 +453,7 @@ worker can be registered just-in-time when the user chooses to pay with the
 web-based payment app. There are two variations for the registration timing:
 
 - If the Payment Request UI is shown to the user, the app is registered
-  just-in-time and launched when the user clicks "Continue".
+  just-in-time and launched when the user clicks **Continue**.
 - If the Payment Request UI is skipped, the payment app is registered
   just-in-time and launched directly. Skipping the Payment Request UI to launch
   a just-in-time registered app requires a user gesture, which prevents
