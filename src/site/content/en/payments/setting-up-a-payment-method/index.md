@@ -444,7 +444,7 @@ Safari currently only supports Apple Pay so it always launches the app directly,
 skipping the Payment Request UI.
 {% endAside %}
 
-### When is a web-based payment app registered just-in-time? {: #jit-register}
+### When is a web-based payment app registered just-in-time (JIT)? {: #jit-register}
 Web-based payment apps can be launched without the user's explicit prior visit
 to the payment app website and registering the service worker. The service
 worker can be registered just-in-time when the user chooses to pay with the
