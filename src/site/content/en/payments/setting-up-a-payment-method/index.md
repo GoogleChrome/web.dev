@@ -31,8 +31,11 @@ Every payment app needs to provide the following:
   provided by a third party)
 - a web app manifest
 
-![Diagram: How a browser discovers the payment app from a URL-based payment
-method identifier](diagram_direct.png)
+<figure class="w-figure">
+  <img src="diagram_direct.png" 
+       alt="Diagram: How a browser discovers the payment app from a URL-based payment
+method identifier">
+</figure>
 
 The discovery process starts when a merchant initiates a transaction:
 
