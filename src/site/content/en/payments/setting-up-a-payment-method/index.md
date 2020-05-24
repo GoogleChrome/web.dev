@@ -406,7 +406,7 @@ choose a payment app, shipping options and delivery address, and payer's contact
 information. After pressing the **Continue** button in the Payment Request UI, the
 selected payment app is launched.
 
-<figure class="w-figure">
+<figure class="w-figure" style="width:300px; margin:auto;">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/payments/without-skip-the-sheet3.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/payments/without-skip-the-sheet3.mp4" type="video/mp4">
@@ -422,7 +422,7 @@ the browser can delegate fulfillment of that information to payment apps and
 launch a payment app directly without showing the Payment Request UI when
 `.show()` is called.
 
-<figure class="w-figure">
+<figure class="w-figure" style="width:300px; margin:auto;">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet3.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet3.mp4" type="video/mp4">
