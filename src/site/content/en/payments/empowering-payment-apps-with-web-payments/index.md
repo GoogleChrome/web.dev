@@ -36,14 +36,14 @@ of billing data for every purchase. See a demo below of how Google Pay leverages
 Web Payments to build a seamless flow. The same can be achieved by any other
 payment app:
 
-  <figure class="w-figure">
-    <video controls autoplay loop muted class="w-screenshot">
-      <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.webm" type="video/webm">
-      <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app2.mp4" type="video/mp4">
-    </video>
-   <figcaption class="w-figcaption">Checkout flow with Google Pay and Web Payments.</a>.
-    </figcaption>
-  </figure>
+<figure class="w-figure" style="width:300px; margin:auto;">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app3.webm" type="video/webm">
+    <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app3.mp4" type="video/mp4">
+  </video>
+  <figcaption class="w-figcaption">Checkout flow with Google Pay and Web Payments.</a>.
+  </figcaption>
+</figure>
 
 1. The customer goes to checkout and presses the **Buy with Google** button.
 
@@ -125,64 +125,66 @@ Consider the existing approaches to integrating payments on the web:
 
 Here's how they compare to Web Payments:
 
-<table>
-  <tr>
-    <td></td>
-    <td>Web Payments</td>
-    <td>iframe</td>
-    <td>Popup</td>
-    <td>Redirect</td>
-    <td>OAuth</td>
-  </tr>
-  <tr>
-    <td>In-context payments</td>
-    <td>✔</td>
-    <td>✔</td>
-    <td></td>
-    <td>✔*</td>
-    <td>✔</td>
-  </tr>
-  <tr>
-    <td>Dynamic price updates</td>
-    <td>✔</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>✔</td>
-  </tr>
-  <tr>
-    <td>Streamlined purchase experience</td>
-    <td>✔</td>
-    <td>✔</td>
-    <td></td>
-    <td></td>
-    <td>✔</td>
-  </tr>
-  <tr>
-    <td>Native app integration</td>
-    <td>✔</td>
-    <td></td>
-    <td></td>
-    <td>✔</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Low integration cost</td>
-    <td>✔</td>
-    <td>✔</td>
-    <td>✔</td>
-    <td>✔</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Standards</td>
-    <td>✔</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+<div class="w-table-wrapper">
+  <table>
+    <tr>
+      <td></td>
+      <td>Web Payments</td>
+      <td>iframe</td>
+      <td>Popup</td>
+      <td>Redirect</td>
+      <td>OAuth</td>
+    </tr>
+    <tr>
+      <td>In-context payments</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td></td>
+      <td>✔*</td>
+      <td>✔</td>
+    </tr>
+    <tr>
+      <td>Dynamic price updates</td>
+      <td>✔</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>✔</td>
+    </tr>
+    <tr>
+      <td>Streamlined purchase experience</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td></td>
+      <td></td>
+      <td>✔</td>
+    </tr>
+    <tr>
+      <td>Native app integration</td>
+      <td>✔</td>
+      <td></td>
+      <td></td>
+      <td>✔</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Low integration cost</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Standards</td>
+      <td>✔</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</div>
 
 {% Aside %} *Redirecting to a native payment app can be done in-context with the
 merchant website though redirecting to another website completely loses the
@@ -218,15 +220,15 @@ In the video above, Google Pay is a native payment app.
 * The web-based route is ideal for web services that have a large number of
   customers with their card on file.
 
-  <figure class="w-figure">
-    <video controls autoplay loop muted class="w-screenshot">
-      <source src="https://storage.googleapis.com/web-dev-assets/payments/web-based-payment-app.webm" type="video/webm">
-      <source src="https://storage.googleapis.com/web-dev-assets/payments/web-based-payment-app2.mp4" type="video/mp4">
-    </video>
-   <figcaption class="w-figcaption">
-      Checkout flow with a web-based payment app.
-    </figcaption>
-  </figure>
+<figure class="w-figure" style="width:300px; margin:auto;">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/payments/web-based-payment-app3.webm" type="video/webm">
+    <source src="https://storage.googleapis.com/web-dev-assets/payments/web-based-payment-app3.mp4" type="video/mp4">
+  </video>
+  <figcaption class="w-figcaption">
+    Checkout flow with a web-based payment app.
+  </figcaption>
+</figure>
 
 
 ##  How does merchant adoption work?
@@ -254,53 +256,55 @@ itself.
 Web Payments consists of a few different pieces of technologies and the support
 status depends on the browser.
 
-<table>
-  <tr>
-    <td></td>
-    <td>Chrome (Chromium)</td>
-    <td></td>
-    <td></td>
-    <td>Safari</td>
-    <td></td>
-    <td>Firefox</td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>Desktop</td>
-    <td>Android</td>
-    <td>iOS</td>
-    <td>Desktop</td>
-    <td>Mobile</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Payment Request API</td>
-    <td>✔</td>
-    <td>✔</td>
-    <td></td>
-    <td>✔</td>
-    <td>✔</td>
-    <td>Under active development</td>
-  </tr>
-  <tr>
-    <td>Payment Handler API</td>
-    <td>✔</td>
-    <td>✔</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>Under active development</td>
-  </tr>
-  <tr>
-    <td>Native payment app</td>
-    <td>✔</td>
-    <td>✔</td>
-    <td>*</td>
-    <td>✔**</td>
-    <td>✔**</td>
-    <td></td>
-  </tr>
-</table>
+<div class="w-table-wrapper">
+  <table>
+    <tr>
+      <td></td>
+      <td>Chrome (Chromium)</td>
+      <td></td>
+      <td></td>
+      <td>Safari</td>
+      <td></td>
+      <td>Firefox</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Desktop</td>
+      <td>Android</td>
+      <td>iOS</td>
+      <td>Desktop</td>
+      <td>Mobile</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Payment Request API</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td></td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>Under active development</td>
+    </tr>
+    <tr>
+      <td>Payment Handler API</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Under active development</td>
+    </tr>
+    <tr>
+      <td>Native payment app</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>*</td>
+      <td>✔**</td>
+      <td>✔**</td>
+      <td></td>
+    </tr>
+  </table>
+</div>
 
 {% Aside %} *Chrome team is considering making native payment apps available on
 iOS. **Safari supports Apple Pay but no third party payment apps. {% endAside %}
