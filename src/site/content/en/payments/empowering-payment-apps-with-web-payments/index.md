@@ -38,8 +38,8 @@ payment app:
 
 <figure class="w-figure" style="width:300px; margin:auto;">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app3.webm" type="video/webm">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app3.mp4" type="video/mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.webm" type="video/webm">
+    <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.mp4" type="video/mp4">
   </video>
   <figcaption class="w-figcaption">Checkout flow with Google Pay and Web Payments.</a>.
   </figcaption>
@@ -222,8 +222,8 @@ In the video above, Google Pay is a native payment app.
 
 <figure class="w-figure" style="width:300px; margin:auto;">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/web-based-payment-app3.webm" type="video/webm">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/web-based-payment-app3.mp4" type="video/mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/payments/web-based-payment-app.webm" type="video/webm">
+    <source src="https://storage.googleapis.com/web-dev-assets/payments/web-based-payment-app.mp4" type="video/mp4">
   </video>
   <figcaption class="w-figcaption">
     Checkout flow with a web-based payment app.

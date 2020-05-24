@@ -408,8 +408,8 @@ selected payment app is launched.
 
 <figure class="w-figure" style="width:300px; margin:auto;">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/without-skip-the-sheet3.webm" type="video/webm">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/without-skip-the-sheet3.mp4" type="video/mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/payments/without-skip-the-sheet.webm" type="video/webm">
+    <source src="https://storage.googleapis.com/web-dev-assets/payments/without-skip-the-sheet.mp4" type="video/mp4">
   </video>
   <figcaption class="w-figcaption">
     Payment Request UI intervenes before launching the payment app.
@@ -424,8 +424,8 @@ launch a payment app directly without showing the Payment Request UI when
 
 <figure class="w-figure" style="width:300px; margin:auto;">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet3.webm" type="video/webm">
-    <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet3.mp4" type="video/mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet.webm" type="video/webm">
+    <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet.mp4" type="video/mp4">
   </video>
   <figcaption class="w-figcaption">
     Skip the Payment Request UI and launch the payment app directly. 
