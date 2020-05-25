@@ -341,7 +341,13 @@ payment app appears in the Payment Request UI.
   </table>
 </div>
 
-![](web-app-manifest.png)
+<figure class="w-figure">
+  <img class="w-screenshot" src="./web-app-manifest.png" 
+       alt="Payment app with an icon.">
+  <figcaption class="w-figcaption">
+    Payment app label and icon.
+  </figcaption>
+</figure>
 
 The web app manifest's `name` property is used as the payment app name, `icons`
 property is used as the payment app icon.

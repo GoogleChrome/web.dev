@@ -9,12 +9,14 @@ module.exports = {
     title: 'Web Payments',
     updated: 'May 25, 2020',
     description: `Build the next generation of payments on the web.`,
-    overview: `In this section you'll learn how to use Web Payments APIs.`,
+    overview: `Build the next generation of payments on the web.`,
+    overview: `Web Payments aims to provide frictionless payment experience on the web. Learn how it works, its benefits, and get ready to integrate your payment app with Web Payments.`,
     topics: [
       {
         title: 'Web Payments',
         pathItems: [
           'empowering-payment-apps-with-web-payments',
+          'life-of-a-payment-transaction',
           'setting-up-a-payment-method',
         ],
       },

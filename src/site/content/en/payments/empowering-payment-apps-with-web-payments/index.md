@@ -1,16 +1,17 @@
 ---
 layout: post
 title: Empowering payment apps with Web Payments
+subhead: New web standards for frictionless payment experience on the web.
 authors:
   - agektmr
 description: |
-  Web Payments evolves user's payment experience on the web. Learn how it works, its benefits and get ready to integrate your payment app with Web Payments.
+  Web Payments aims to provide frictionless payment experience on the web. Learn how it works, its benefits, and get ready to integrate your payment app with Web Payments.
 date: 2020-05-25
 ---
 
 One of the key ecosystem drivers for the web are payments. With secure,
 seamless, and flexible payment systems, the web can become a sustainable and
-profitable platform. We believe that the Web Payments standards will be a key
+profitable platform. The Web Payments standards have the potential to be a key
 building block that will enable seamless integration of payment solutions into
 merchant checkout flows.
 
@@ -45,7 +46,7 @@ payment app:
   </figcaption>
 </figure>
 
-1. The customer goes to checkout and presses the **Buy with Google** button.
+1. The customer goes to checkout and presses the **GPay** button.
 
 2. The Google Pay app launches *in front of the merchant website*.
 
@@ -67,7 +68,7 @@ security.
   merchant website, without redirects or pop-up windows. 
 
 * **Faster checkout**: Customers can save their payment details securely in
-  their browser or a payment app, ready to be used on any supporting web app.
+  their browser or a payment app, ready to be used on any supporting merchant site.
 
 * **Streamlined purchase experience:** After completing (or aborting) the
   payment, the customer is on the merchant website exactly where they left off.
@@ -108,12 +109,12 @@ Consider the existing approaches to integrating payments on the web:
   example, [Braintree Drop-in
   UI](https://developers.braintreepayments.com/guides/drop-in/overview/javascript/v2).
 
-* **pop-ups:** Using JavaScript to open a pop-up window and collect the
+* **Pop-ups:** Using JavaScript to open a pop-up window and collect the
   customer's payment credentials, either through a form or by having the
   customer authenticate and select a payment credential. For example,  [PayPal
   Checkout](https://developer.paypal.com/docs/business/checkout/set-up-standard-payments/).
 
-* **redirects:** Merchant redirects the customer to a payment handler's website
+* **Redirects:** Merchant redirects the customer to a payment handler's website
   and lets the customer authenticate and select payment credentials. The
   redirect URL is communicated via a server. For example, [Stripe
   Checkout](https://stripe.com/docs/payments/checkout).
@@ -306,5 +307,10 @@ status depends on the browser.
   </table>
 </div>
 
-{% Aside %} *Chrome team is considering making native payment apps available on
-iOS. **Safari supports Apple Pay but no third party payment apps. {% endAside %}
+{% Aside %} 
+*Chrome team is considering making native payment apps available on
+iOS. 
+
+**Safari supports Apple Pay but no third party payment apps. 
+
+{% endAside %}
