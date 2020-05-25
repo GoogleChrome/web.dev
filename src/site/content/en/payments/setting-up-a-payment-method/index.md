@@ -410,11 +410,10 @@ advance. [It can be registered just-in-time](#jit-register).
 
 ## Understanding the special optimizations
 ### How browsers can skip the Payment Request UI and launch a payment app directly
-In Chrome, when `.show()` method is called, the Payment Request API displays a
+In Chrome, when `show()` method of `PaymentRequest` is called, the Payment Request API displays a
 browser native UI called the "Payment Request UI". This UI allows users to
 choose a payment app, shipping options and delivery address, and payer's contact
-information. After pressing the **Continue** button in the Payment Request UI, the
-selected payment app is launched.
+information. After pressing the **Continue** button in the Payment Request UI, the selected payment app is launched.
 
 <figure class="w-figure" style="width:300px; margin:auto;">
   <video controls autoplay loop muted class="w-screenshot">
@@ -430,7 +429,7 @@ Showing the Payment Request UI before launching a payment app increases the
 number of steps needed for a user to fulfill a payment. To optimize the process,
 the browser can delegate fulfillment of that information to payment apps and
 launch a payment app directly without showing the Payment Request UI when
-`.show()` is called.
+`show()` is called.
 
 <figure class="w-figure" style="width:300px; margin:auto;">
   <video controls autoplay loop muted class="w-screenshot">
@@ -443,11 +442,11 @@ launch a payment app directly without showing the Payment Request UI when
 </figure>
 
 To launch a payment app directly, the following conditions must be met:
-- `.show()` is triggered with a user gesture (for example, a mouse click).
+- `show()` is triggered with a user gesture (for example, a mouse click).
 - There is only a single payment app that:
     - Supports the requested payment method identifier.
     - Can fulfill all the delegated requirements (such as shipping address,
-      payer's phone number, payer's name, etc.).
+      payer's phone number, or payer's name).
 
 {% Aside %}
 Safari currently only supports Apple Pay so it always launches the app directly,

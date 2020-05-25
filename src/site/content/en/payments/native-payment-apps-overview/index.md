@@ -21,7 +21,7 @@ The [Payment Request API](https://www.w3.org/TR/payment-request/) brings to the 
   </figcaption>
 </figure>
 
-Compared to Android Intents implementations, Web Payments allow better integration with the browser, security and user experience:
+Compared to using just Android Intents, Web Payments allow better integration with the browser, security and user experience:
 
 * The payment app is launched as a modal, in context of the merchant website.
 
@@ -33,7 +33,10 @@ Compared to Android Intents implementations, Web Payments allow better integrati
 
 * Any payment method, such as cryptocurrency, bank transfers adn more, can be integrated. Payment apps on Android devices can even integrate methods that require access to the hardware chip on the device.
 
-To understand how merchants integrate with payment apps, check out [Life of a payment transaction](https://docs.google.com/document/d/1iRihdGtJKNSxFgvgKdHx2llI5O3NG4DL6-OGndSTnD0/edit#heading=h.7qj1cmapoeqf).
+{% Aside %}
+To understand how merchants integrate with payment apps, check out [Life of a payment transaction](/life-of-a-payment-transaction/).
+
+{% endAside%}
 
 It takes four steps to implement Web Payments in an Android native payment app:
 
@@ -53,11 +56,14 @@ In order for a merchant to use your payment app, they need to use the [Payment R
 
 If you have a payment method identifier that is unique to your payment app, you can set up your own [payment method manifest](https://w3c.github.io/payment-method-manifest/) so browsers can discover your app.
 
+{% Aside %}
 To learn how the discovery process works in detail and how to set up a new payment method check out [Setting up a payment method](/setting-up-a-payment-method).
+
+{% endAside %}
 
 ## Step 2: Let a merchant know if a customer has an enrolled instrument that is ready to pay
 
-The merchant can call `.hasEnrolledInstrument()` to [query whether the customer is able to make a payment](/life-of-a-payment-transaction#ready-to-pay). You can implement `IS_READY_TO_PAY` as an Android service to answer this query.
+The merchant can call `hasEnrolledInstrument()` to [query whether the customer is able to make a payment](/life-of-a-payment-transaction#ready-to-pay). You can implement `IS_READY_TO_PAY` as an Android service to answer this query.
 
 ### `AndroidManifest.xml`
 
@@ -77,7 +83,7 @@ Declare your service with an intent filter with the action `org.chromium.intent.
 </table>
 ```
 
-The `IS_READY_TO_PAY` service is optional. If there’s no such intent handler in the payment app, then the web browser assumes that the app can always make payments.
+The `IS_READY_TO_PAY` service is optional. If there's no such intent handler in the payment app, then the web browser assumes that the app can always make payments.
 
 ### AIDL
 
@@ -264,7 +270,7 @@ See [Verify the caller's signing certificate](#heading=h.czr8ye23zg2e) about how
 
 ## Step 3: Let a customer make payment
 
-The merchant calls `.show()` to [launch the payment app](/life-of-a-payment-transaction#step-4:-the-browser-launches-the-payment-app) so the customer can make a payment. The payment app is invoked via an Android intent `PAY` with transaction information in the intent parameters.
+The merchant calls `show()` to [launch the payment app](/life-of-a-payment-transaction#step-4:-the-browser-launches-the-payment-app) so the customer can make a payment. The payment app is invoked via an Android intent `PAY` with transaction information in the intent parameters.
 
 The payment app responds with `methodName` and `details`, which are payment app specific and are opaque to the browser. The browser converts the `details` string into a JavaScript object for the merchant via JSON deserialization, but does not enforce any validity beyond that. The browser does not modify the `details`; that parameter's value is passed directly to the merchant.
 

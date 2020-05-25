@@ -10,9 +10,9 @@ description: |
   Learn how merchants integrate payment apps, how payment transactions work with the Payment Request API, and what's possible in Web Payments.
 ---
 
-Web Payments APIs are dedicated payment features built into the browser natively for the first time. With Web Payments, merchant integration with payment apps becomes simpler while the customer experience is streamlined and more secure.
+Web Payments APIs are dedicated payment features built into the browser natively for the first time. With Web Payments, merchant integration with payment apps becomes simpler while the customer experience gets streamlined and more secure.
 
-To learn more about the benefits of using Web Payments check out [Empowering payment apps with Web Payments](/empowering-payment-apps).
+To learn more about the benefits of using Web Payments check out [Empowering payment apps with Web Payments](/empowering-payment-apps-with-web-payments).
 
 This article walks you through a payment transaction on a merchant website and helps you understand how payment app integration works.
 
@@ -100,7 +100,7 @@ Using a `PaymentRequest` instance, a merchant can query whether a customer is el
 
 ### Does the customer have the payment app available?
 
-[`.canMakePayment()`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/canMakePayment) method of `PaymentRequest` returns `true` if a payment app is available on the customer's device. "Available" means only that a payment app that supports the payment method is discovered, and that the native payment app is installed, or the web-based payment app is [ready to be registered](/setting-up-a-payment-method#jit-register).
+[`canMakePayment()`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/canMakePayment) method of `PaymentRequest` returns `true` if a payment app is available on the customer's device. "Available" means only that a payment app that supports the payment method is discovered, and that the native payment app is installed, or the web-based payment app is [ready to be registered](/setting-up-a-payment-method#jit-register).
 
 ```js
 const canMakePayment = await request.canMakePayment();
@@ -111,7 +111,7 @@ if (!canMakePayment) {
 
 ### Is the customer ready to pay using the payment app? {: #ready-to-pay}
 
-[`.hasEnrolledInstrument()`](https://web.dev/web-payments-updates/#new-method:-hasenrolledinstrument()) serves as a signal from the payment app to the merchant that the user is able to complete the payment with low friction. It returns `true` if the customer has a payment app available and is ready to pay with it (for example, the customer has added a valid credit card to the payment app).
+[`hasEnrolledInstrument()`](https://web.dev/web-payments-updates/#new-method:-hasenrolledinstrument()) serves as a signal from the payment app to the merchant that the user is able to complete the payment with low friction. It returns `true` if the customer has a payment app available and is ready to pay with it (for example, the customer has added a valid credit card to the payment app).
 
 ```js
 const hasEnrolledInstrument = await request.hasEnrolledInstrument();
@@ -125,7 +125,7 @@ The criteria to return `true` for `hasEnrolledInstrument()` depends on the payme
 
 ## Step 3: The customer presses the payment button {: #show}
 
-When the customer presses the payment button, the merchant calls the `.show()` method of the `PaymentRequest` instance which immediately triggers the launch of the payment UI. 
+When the customer presses the payment button, the merchant calls the `show()` method of the `PaymentRequest` instance which immediately triggers the launch of the payment UI. 
 
 In case the final total price is set dynamically (for example, retrieved from a server), the merchant can defer the launch of the payment UI until the total is known.
 
@@ -133,7 +133,7 @@ In case the final total price is set dynamically (for example, retrieved from a 
 
 Check out a demo of [defering the payment UI](https://rsolomakhin.github.io/pr/wait/) until the final total price is determined. 
 
-To defer the payment UI, the merchant passes a promise to the `.show()` method. The browser will show a loading indicator until the promise resolves and the transaction is ready to begin.
+To defer the payment UI, the merchant passes a promise to the `show()` method. The browser will show a loading indicator until the promise resolves and the transaction is ready to begin.
 
 ```js
 const getTotalAmount = async () => {
@@ -148,7 +148,7 @@ try {
 }
 ```
 
-If there is no promise specified as an argument for `.show()`, the browser will launch the payment UI immediately.
+If there is no promise specified as an argument for `show()`, the browser will launch the payment UI immediately.
 
 {% Aside %}
 If the payment handler is designed to return a transaction ID upon setting the total price, the ID can be passed as part of the promise result.
@@ -181,7 +181,7 @@ Under certain conditions, before launching the payment app, the browser will lau
 </figure>
 
 The Payment Request UI can intervene before the payment app is launched if one of the following conditions is met:
-* `.show()` is invoked without a user gesture (such as a click).
+* `show()` is invoked without a user gesture (for example, without a click).
 * Multiple payment apps match the given payment method identifier on the device.
 * The payment app can't provide the shipping address, shipping option, or contact information.
 
@@ -284,7 +284,7 @@ The support for merchant validation event is limited to Apple Safari. Chromium b
 
 ## Step 6: The merchant validates the payment and completes the transaction
 
-When the customer successfully authorizes the payment, the `.show()` method returns a promise that resolves to a [`PaymentResponse`](https://w3c.github.io/payment-request/#paymentresponse-interface). The `PaymentResponse` object includes the following information:
+When the customer successfully authorizes the payment, the `show()` method returns a promise that resolves to a [`PaymentResponse`](https://w3c.github.io/payment-request/#paymentresponse-interface). The `PaymentResponse` object includes the following information:
 
 * the payment result details
 * the shipping address
@@ -293,7 +293,7 @@ When the customer successfully authorizes the payment, the `.show()` method retu
 
 At this point, the browser UI may still show a loading indicator meaning that the transaction is not completed yet.
 
-If the payment app is terminated because of a payment failure or error, the promise returned from `.show()` rejects, and the browser terminates the payment transaction.
+If the payment app is terminated because of a payment failure or error, the promise returned from `show()` rejects, and the browser terminates the payment transaction.
 
 ### Processing and validating the payment
 
@@ -303,7 +303,7 @@ The `details` in `PaymentResponse` is the payment credential object returned fro
 
 After the merchant determines whether the transaction has succeded or failed, they can either:
 * call the `.complete()` method to complete the transaction and dismiss the loading indicator
-* or let the customer retry by calling the `.retry()` method.
+* or let the customer retry by calling the `retry()` method.
 
 ```js
 async function doPaymentRequest() {
@@ -338,5 +338,5 @@ doPaymentRequest();
 ## Next Steps
 
 * Learn how to declare a payment method identifier in detail in [Setting up a new payment method](/setting-up-a-payment-method)
-* Learn how to build a native payment app in [Android payment apps developer guide](/native-payment-apps-overview)
-* Learn how to build a web-based payment app in Web based payment apps developer guide (Coming soon).
+* Learn how to build a native payment app in [Android payment apps: developer's guide](/native-payment-apps-overview)
+* Learn how to build a web-based payment app in Web based payment apps developer guide (Coming soon)
