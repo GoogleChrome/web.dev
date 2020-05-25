@@ -2,7 +2,7 @@
  * @fileoveriew Entrypoint for default content pages on web.dev.
  */
 
-import '../components/Actions';
+import '../components/ShareAction';
 import '../components/AssessmentQuestion';
 import '../components/Codelab';
 import '../components/Assessment';

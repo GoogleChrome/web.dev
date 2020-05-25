@@ -11,7 +11,19 @@
   {% endif %}
 
   {# Make sure Actions are first in the tab order. #}
-  <web-actions actions="share|subscribe" authors="{{ authors | expandContributors | join('|') }}"></web-actions>
+  <div class="w-actions">
+    <share-action authors="{{ authors | expandContributors | join('|') }}"
+      class="gc-analytics-event"
+      data-category="web.dev"
+      data-label="live, share"
+      data-action="click"
+    >
+      <span class="w-actions__fab w-actions__fab--share" data-icon="share">
+        Share
+      </span>
+    </share-action>
+    {% include 'partials/subscribe-action.njk' %}
+  </div>
 
   {% include 'partials/translation-disclaimer.njk' %}
 
