@@ -96,10 +96,6 @@ $W_FAB_LARGE_RADIUS: 28px;
   @include w-overlay();
 }
 
-.w-actions__fab * {
-  pointer-events: none;
-}
-
 .w-actions__fab:hover::after {
   background-color: rgba($WHITE, .08);
 }

@@ -13,14 +13,13 @@
   {# Make sure Actions are first in the tab order. #}
   <div class="w-actions">
     <share-action authors="{{ authors | expandContributors | join('|') }}"
-      class="gc-analytics-event"
+      class="gc-analytics-event w-actions__fab w-actions__fab--share"
       data-category="web.dev"
       data-label="live, share"
       data-action="click"
+      data-icon="share"
     >
-      <span class="w-actions__fab w-actions__fab--share" data-icon="share">
-        Share
-      </span>
+      <span>Share</span>
     </share-action>
     {% include 'partials/subscribe-action.njk' %}
   </div>
