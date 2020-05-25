@@ -8,8 +8,6 @@ authors:
 date: 2020-05-25
 description: |
   Learn how merchants integrate payment apps, how payment transactions work with the Payment Request API, and what's possible in Web Payments.
-tags:
-  - payments
 ---
 
 Web Payments APIs are dedicated payment features built into the browser natively for the first time. With Web Payments, merchant integration with payment apps becomes simpler while the customer experience is streamlined and more secure.

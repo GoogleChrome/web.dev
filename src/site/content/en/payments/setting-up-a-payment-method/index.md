@@ -1,12 +1,16 @@
 ---
 layout: post
 title: Setting up a payment method
+subhead: |
+  A payment transaction using Web Payments starts with the discovery of your
+  payment app. Learn how to set up a payment method and get your payment app
+  ready for merchants and customers to make payments.
 authors:
   - agektmr
 description: |
-  A payment transaction using Web Payments starts with a discovery of your
+  A payment transaction using Web Payments starts with the discovery of your
   payment app. Learn how to set up a payment method and get your payment app
-  ready for merchants and customers to make payment.
+  ready for merchants and customers to make payments.
 date: 2020-05-25
 ---
 

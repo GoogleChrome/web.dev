@@ -18,6 +18,7 @@ module.exports = {
           'empowering-payment-apps-with-web-payments',
           'life-of-a-payment-transaction',
           'setting-up-a-payment-method',
+          'native-payment-apps-overview',
         ],
       },
     ],
