@@ -77,7 +77,7 @@ Declare your service with an intent filter with the action `org.chromium.intent.
 </table>
 ```
 
-The `IS_READY_TO_PAY` service is optional. If there’s no such intent handler in the payment app, then the web browser assumes that the app can always make payments.
+The `IS_READY_TO_PAY` service is optional. If there's no such intent handler in the payment app, then the web browser assumes that the app can always make payments.
 
 ### AIDL
 
