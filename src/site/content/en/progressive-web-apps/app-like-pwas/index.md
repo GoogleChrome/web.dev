@@ -8,7 +8,7 @@ description: |
   Learn how to make your Progressive Web App feel like a "real" app by understanding
   how to implement native app patterns with web technologies.
 date: 2020-05-19
-updated: 2020-05-19
+updated: 2020-05-25
 tags:
   - capabilities
   - fugu
@@ -252,7 +252,7 @@ A more subtle thing but that is self-evident for a native application like Podca
 <div class="w-columns">
   <figure class="w-figure">
     <img src="./image2.png" alt="The Podcasts app in dark mode." width="350">
-    <figcaption class="w-figcaption">Podcasts supports light and dark mode.</figcaption>    
+    <figcaption class="w-figcaption">Podcasts supports light and dark mode.</figcaption>
   </figure>
   <figure class="w-figure">
     <img src="./image7.png" alt="The Podcasts app in light mode." width="350">
@@ -453,7 +453,7 @@ The table below shows a compact overview of all features and provides a list of 
     </thead>
     <tbody>
       <tr>
-        <td>Capable of running offline</td>
+        <td><a href="#capable-of-running-offline">Capable of running offline</a></td>
         <td>
           <ul>
             <li>
@@ -465,7 +465,7 @@ The table below shows a compact overview of all features and provides a list of 
         </td>
       </tr>
       <tr>
-        <td>Offline content available and media playable</td>
+        <td><a href="#offline-content-available-and-media-playable">Offline content available and media playable</a></td>
         <td>
           <ul>
             <li>
@@ -481,7 +481,7 @@ The table below shows a compact overview of all features and provides a list of 
         </td>
       </tr>
       <tr>
-        <td>Proactive background downloading</td>
+        <td><a href="#proactive-background-downloading">Proactive background downloading</a></td>
         <td>
           <ul>
             <li>
@@ -493,7 +493,7 @@ The table below shows a compact overview of all features and provides a list of 
         </td>
       </tr>
       <tr>
-        <td>Sharing to and interacting with other applications</td>
+        <td><a href="#sharing-to-and-interacting-with-other-applications">Sharing to and interacting with other applications</a></td>
         <td>
           <ul>
             <li><a href="https://web.dev/web-share/">Web Share API</a></li>
@@ -511,7 +511,7 @@ The table below shows a compact overview of all features and provides a list of 
         </td>
       </tr>
       <tr>
-        <td>Background app refreshing</td>
+        <td><a href="#background-app-refreshing">Background app refreshing</a></td>
         <td>
           <ul>
             <li>
@@ -521,7 +521,7 @@ The table below shows a compact overview of all features and provides a list of 
         </td>
       </tr>
       <tr>
-        <td>State synchronized over the cloud</td>
+        <td><a href="#state-synchronized-over-the-cloud">State synchronized over the cloud</a></td>
         <td>
           <ul>
             <li>
@@ -533,7 +533,7 @@ The table below shows a compact overview of all features and provides a list of 
         </td>
       </tr>
       <tr>
-        <td>Hardware media key controls</td>
+        <td><a href="#hardware-media-key-controls">Hardware media key controls</a></td>
         <td>
           <ul>
             <li><a href="https://web.dev/media-session/">Media Session API</a></li>
@@ -541,7 +541,7 @@ The table below shows a compact overview of all features and provides a list of 
         </td>
       </tr>
       <tr>
-        <td>Multitasking and app shortcut</td>
+        <td><a href="#multitasking-and-app-shortcut">Multitasking and app shortcut</a></td>
         <td>
           <ul>
             <li><a href="https://web.dev/install-criteria/">Installability criteria</a></li>
@@ -549,7 +549,7 @@ The table below shows a compact overview of all features and provides a list of 
         </td>
       </tr>
       <tr>
-        <td>Quick actions in context menu</td>
+        <td><a href="#quick-actions-in-context-menu">Quick actions in context menu</a></td>
         <td>
           <ul>
             <li><a href="https://web.dev/app-shortcuts/">App icon shortcuts</a></li>
@@ -562,7 +562,7 @@ The table below shows a compact overview of all features and provides a list of 
         </td>
       </tr>
       <tr>
-        <td>Act as default app</td>
+        <td><a href="#act-as-default-app">Act as default app</a></td>
         <td>
           <ul>
             <li>
@@ -581,7 +581,7 @@ The table below shows a compact overview of all features and provides a list of 
         </td>
       </tr>
       <tr>
-        <td>Native file system integration</td>
+        <td><a href="#native-file-system-integration">Native file system integration</a></td>
         <td>
           <ul>
             <li><a href="https://web.dev/native-file-system/">Native File System API</a></li>
@@ -594,7 +594,7 @@ The table below shows a compact overview of all features and provides a list of 
         </td>
       </tr>
       <tr>
-        <td>Native look and feel</td>
+        <td><a href="#native-look-and-feel">Native look and feel</a></td>
         <td>
           <ul>
             <li>
@@ -618,7 +618,7 @@ The table below shows a compact overview of all features and provides a list of 
         </td>
       </tr>
       <tr>
-        <td>Customized title bar</td>
+        <td><a href="#customized-title-bar">Customized title bar</a></td>
         <td>
           <ul>
             <li>
@@ -633,7 +633,7 @@ The table below shows a compact overview of all features and provides a list of 
         </td>
       </tr>
       <tr>
-        <td>Snappy animations</td>
+        <td><a href="#snappy-animations">Snappy animations</a></td>
         <td>
           <ul>
             <li>
@@ -656,7 +656,7 @@ The table below shows a compact overview of all features and provides a list of 
         </td>
       </tr>
       <tr>
-        <td>Content surfaced outside of app</td>
+        <td><a href="#content-surfaced-outside-of-app">Content surfaced outside of app</a></td>
         <td>
           <ul>
             <li><a href="https://web.dev/content-indexing-api/">Content Index API</a></li>
@@ -674,7 +674,7 @@ The table below shows a compact overview of all features and provides a list of 
         </td>
       </tr>
       <tr>
-        <td>Lock screen media control widget</td>
+        <td><a href="#lock-screen-media-control-widget">Lock screen media control widget</a></td>
         <td>
           <ul>
             <li><a href="https://web.dev/media-session/">Media Session API</a></li>
@@ -682,7 +682,7 @@ The table below shows a compact overview of all features and provides a list of 
         </td>
       </tr>
       <tr>
-        <td>Push notifications</td>
+        <td><a href="#push-notifications">Push notifications</a></td>
         <td>
           <ul>
             <li>
@@ -695,7 +695,7 @@ The table below shows a compact overview of all features and provides a list of 
         </td>
       </tr>
       <tr>
-        <td>App icon badging</td>
+        <td><a href="#app-icon-badging">App icon badging</a></td>
         <td>
           <ul>
             <li><a href="https://web.dev/badging-api/">Badging API</a></li>
@@ -703,7 +703,7 @@ The table below shows a compact overview of all features and provides a list of 
         </td>
       </tr>
       <tr>
-        <td>Media playback trumps energy saver settings</td>
+        <td><a href="#media-playback-takes-precedence-over-energy-saver-settings">Media playback trumps energy saver settings</a></td>
         <td>
           <ul>
             <li><a href="https://web.dev/wakelock/">Screen Wake Lock API</a></li>
@@ -711,7 +711,7 @@ The table below shows a compact overview of all features and provides a list of 
         </td>
       </tr>
       <tr>
-        <td>App discovery through an app store</td>
+        <td><a href="#app-discovery-through-an-app-store">App discovery through an app store</a></td>
         <td>
           <ul>
             <li>
@@ -741,5 +741,13 @@ how your app is built (and why should they?), as long as it feels like a *real* 
 
 ## Acknowledgements
 
-This article was reviewed by Kayce Basques, Joe Medley, Joshua Bell, Dion Almaer, Ade Oshineye,
-Pete LePage, Sam Thorogood, Reilly Grant, and Jeffrey Yasskin.
+This article was reviewed by
+[Kayce Basques](https://web.dev/authors/kaycebasques/),
+[Joe Medley](https://web.dev/authors/joemedley/),
+[Joshua Bell](https://github.com/inexorabletash),
+[Dion Almaer](https://blog.almaer.com/),
+[Ade Oshineye](http://www.oshineye.com/),
+[Pete LePage](https://web.dev/authors/petelepage/),
+[Sam Thorogood](https://web.dev/authors/samthor/),
+[Reilly Grant](https://github.com/reillyeon),
+and [Jeffrey Yasskin](https://github.com/jyasskin).
