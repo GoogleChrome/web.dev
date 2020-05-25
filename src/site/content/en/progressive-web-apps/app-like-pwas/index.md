@@ -742,4 +742,4 @@ how your app is built (and why should they?), as long as it feels like a *real* 
 ## Acknowledgements
 
 This article was reviewed by Kayce Basques, Joe Medley, Joshua Bell, Dion Almaer, Ade Oshineye,
-Pete LePage, Sam Thorogood, and Jeffrey Yasskin.
+Pete LePage, Sam Thorogood, Reilly Grant, and Jeffrey Yasskin.
