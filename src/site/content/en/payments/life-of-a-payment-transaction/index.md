@@ -2,53 +2,69 @@
 layout: post
 title: Life of a payment transaction
 subhead: |
-    Learn how merchants integrate payment apps and how payment transactions work with the Payment Request API.
+  Learn how merchants integrate payment apps and how payment transactions work
+  with the Payment Request API.
 authors:
   - agektmr
 date: 2020-05-25
 description: |
-  Learn how merchants integrate payment apps, how payment transactions work with the Payment Request API, and what's possible in Web Payments.
+  Learn how merchants integrate payment apps, how payment transactions work with
+  the Payment Request API, and what's possible in Web Payments.
 ---
 
-Web Payments APIs are dedicated payment features built into the browser natively for the first time. With Web Payments, merchant integration with payment apps becomes simpler while the customer experience gets streamlined and more secure.
+Web Payments APIs are dedicated payment features built into the browser natively
+for the first time. With Web Payments, merchant integration with payment apps
+becomes simpler while the customer experience gets streamlined and more secure.
 
-To learn more about the benefits of using Web Payments check out [Empowering payment apps with Web Payments](/empowering-payment-apps-with-web-payments).
+To learn more about the benefits of using Web Payments check out [Empowering
+payment apps with Web Payments](/empowering-payment-apps-with-web-payments).
 
-This article walks you through a payment transaction on a merchant website and helps you understand how payment app integration works.
+This article walks you through a payment transaction on a merchant website and
+helps you understand how payment app integration works.
 
 The process involves 6 steps:
 
 1. The merchant initiates a payment transaction.
-
 2. The merchant shows a payment button.
-
 3. The customer presses the payment button.
 
-    ![A diagram of a cheese shop website with a BobPay (payment app) button.](123.svg)
+    ![A diagram of a cheese shop website with a BobPay (payment app)
+    button.](123.svg)
 
 4. The browser launches the payment app.
 
-    ![A diagram of the cheese shop website with BobPay app launched in a modal. The modal shows shipping options and total cost.](4.svg)
+    ![A diagram of the cheese shop website with BobPay app launched in a modal.
+    The modal shows shipping options and total cost.](4.svg)
 
-5. If the customer changes any details (such as shipping options or their address), the merchant updates the transaction details reflecting the change.
+5. If the customer changes any details (such as shipping options or their
+   address), the merchant updates the transaction details reflecting the change.
 
-    ![A diagram showing the customer choosing a different shipping option in BobPay app modal. A second diagram showing the merchant updating the total cost displayed in BobPay.](5.svg)
+    ![A diagram showing the customer choosing a different shipping option in
+    BobPay app modal. A second diagram showing the merchant updating the total
+    cost displayed in BobPay.](5.svg)
 
-6. After the customer confirms the purchase, the merchant validates the payment and completes the transaction.
+6. After the customer confirms the purchase, the merchant validates the payment
+   and completes the transaction.
 
-  ![A diagram showing the customer pressing the "Pay" button in BobPay, followed by a diagram of the cheese shop page showing "Payment accepted".](6.svg)
+    ![A diagram showing the customer pressing the "Pay" button in BobPay,
+    followed by a diagram of the cheese shop page showing "Payment
+    accepted".](6.svg)
 
 ## Step 1: The merchant initiates a payment transaction
 
-When a customer decides to make a purchase, the merchant initiates the payment transaction by constructing a [`PaymentRequest`](https://developers.google.com/web/fundamentals/payments/basics/how-payment-request-api-works) object. This object includes important information about the transaction:
+When a customer decides to make a purchase, the merchant initiates the payment
+transaction by constructing a
+[`PaymentRequest`](https://developers.google.com/web/fundamentals/payments/basics/how-payment-request-api-works)
+object. This object includes important information about the transaction:
 
 * Acceptable payment methods and their data to process the transaction.
-
 * Details, such as the total price (required) and information about the items. 
-
-* Options in which merchants can define any additional information required from the customer including the payer's name, email, and phone number. 
-
-* Merchants can also include optional [shipping type](https://developers.google.com/web/fundamentals/payments/merchant-guide/deep-dive-into-payment-request#changing_the_shipping_type) (`shipping`, `delivery`, or `pickup`) in the `PaymentRequest`. The payment app can use that as a hint to display the correct labels in its UI.
+* Options in which merchants can define any additional information required from
+  the customer including the payer's name, email, and phone number. 
+* Merchants can also include optional [shipping
+  type](https://developers.google.com/web/fundamentals/payments/merchant-guide/deep-dive-into-payment-request#changing_the_shipping_type)
+  (`shipping`, `delivery`, or `pickup`) in the `PaymentRequest`. The payment app
+  can use that as a hint to display the correct labels in its UI.
 
 ```js
 
@@ -80,27 +96,50 @@ const request = new PaymentRequest([{
 Including a transaction ID
 
 
-Some payment handlers may require the merchant to provide the transaction ID which they have issued in advance as part of the transaction information. A typical integration includes communication between the merchant's and the payment handler's server to reserve the total price. This prevents malicious customers from manipulating the price and cheating the merchant with a validation at the end of the transaction.
+Some payment handlers may require the merchant to provide the transaction ID
+which they have issued in advance as part of the transaction information. A
+typical integration includes communication between the merchant's and the
+payment handler's server to reserve the total price. This prevents malicious
+customers from manipulating the price and cheating the merchant with a
+validation at the end of the transaction.
 
-The merchant can pass a transaction ID as part of the [`PaymentMethodData`](https://www.w3.org/TR/payment-request/#dom-paymentmethoddata) object's `data` property.
+The merchant can pass a transaction ID as part of the
+[`PaymentMethodData`](https://www.w3.org/TR/payment-request/#dom-paymentmethoddata)
+object's `data` property.
 {% endAside %}
 
-Provided the transaction information, the browser goes through a discovery process of payment apps specified in the `PaymentRequest` based on the payment method identifiers. This way, the browser can determine the payment app to launch as soon as the merchant is ready to proceed with the transaction.
+Provided the transaction information, the browser goes through a discovery
+process of payment apps specified in the `PaymentRequest` based on the payment
+method identifiers. This way, the browser can determine the payment app to
+launch as soon as the merchant is ready to proceed with the transaction.
 
-To learn how the discovery process works in detail check out [Setting up a payment method](/setting-up-a-payment-method#how-a-browser-discovers-a-payment-app).
+To learn how the discovery process works in detail check out [Setting up a
+payment
+method](/setting-up-a-payment-method#how-a-browser-discovers-a-payment-app).
 
 ## Step 2: The merchant shows a payment button
 
-Merchants can support many payment methods, but should only present the payment buttons for those that a customer can actually use. Showing a payment button that is eventually unusable is poor user experience and if a merchant can predict that a payment method specified in the `PaymentRequest` object won't work for the customer, they can provide a fallback solution or not show that button at all.
+Merchants can support many payment methods, but should only present the payment
+buttons for those that a customer can actually use. Showing a payment button
+that is eventually unusable is poor user experience and if a merchant can
+predict that a payment method specified in the `PaymentRequest` object won't
+work for the customer, they can provide a fallback solution or not show that
+button at all.
 
-Using a `PaymentRequest` instance, a merchant can query whether a customer is eligible for making the payment in two ways:
+Using a `PaymentRequest` instance, a merchant can query whether a customer is
+eligible for making the payment in two ways:
 
 * Does the customer have the payment app available?
 * Is the customer ready to pay using the payment app?
 
 ### Does the customer have the payment app available?
 
-[`canMakePayment()`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/canMakePayment) method of `PaymentRequest` returns `true` if a payment app is available on the customer's device. "Available" means only that a payment app that supports the payment method is discovered, and that the native payment app is installed, or the web-based payment app is [ready to be registered](/setting-up-a-payment-method#jit-register).
+[`canMakePayment()`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/canMakePayment)
+method of `PaymentRequest` returns `true` if a payment app is available on the
+customer's device. "Available" means only that a payment app that supports the
+payment method is discovered, and that the native payment app is installed, or
+the web-based payment app is [ready to be
+registered](/setting-up-a-payment-method#jit-register).
 
 ```js
 const canMakePayment = await request.canMakePayment();
@@ -111,7 +150,11 @@ if (!canMakePayment) {
 
 ### Is the customer ready to pay using the payment app? {: #ready-to-pay}
 
-[`hasEnrolledInstrument()`](https://web.dev/web-payments-updates/#new-method:-hasenrolledinstrument()) serves as a signal from the payment app to the merchant that the user is able to complete the payment with low friction. It returns `true` if the customer has a payment app available and is ready to pay with it (for example, the customer has added a valid credit card to the payment app).
+[`hasEnrolledInstrument()`](https://web.dev/web-payments-updates/#new-method:-hasenrolledinstrument())
+serves as a signal from the payment app to the merchant that the user is able to
+complete the payment with low friction. It returns `true` if the customer has a
+payment app available and is ready to pay with it (for example, the customer has
+added a valid credit card to the payment app).
 
 ```js
 const hasEnrolledInstrument = await request.hasEnrolledInstrument();
@@ -120,20 +163,31 @@ if (!hasEnrolledInstrument) {
 }
 ```
 {% Aside %}
-The criteria to return `true` for `hasEnrolledInstrument()` depends on the payment app's implementation. In general, the response is positive when at least one payment instrument is available and all requested information such as a shipping address is ready to be provided by the payment app.
+The criteria to return `true` for `hasEnrolledInstrument()` depends on the
+payment app's implementation. In general, the response is positive when at least
+one payment instrument is available and all requested information such as a
+shipping address is ready to be provided by the payment app.
 {% endAside %}
 
 ## Step 3: The customer presses the payment button {: #show}
 
-When the customer presses the payment button, the merchant calls the `show()` method of the `PaymentRequest` instance which immediately triggers the launch of the payment UI. 
+When the customer presses the payment button, the merchant calls the `show()`
+method of the `PaymentRequest` instance which immediately triggers the launch of
+the payment UI. 
 
-In case the final total price is set dynamically (for example, retrieved from a server), the merchant can defer the launch of the payment UI until the total is known.
+In case the final total price is set dynamically (for example, retrieved from a
+server), the merchant can defer the launch of the payment UI until the total is
+known.
 
 ### Defering the launch of the payment UI
 
-Check out a demo of [defering the payment UI](https://rsolomakhin.github.io/pr/wait/) until the final total price is determined. 
+Check out a demo of [defering the payment
+UI](https://rsolomakhin.github.io/pr/wait/) until the final total price is
+determined. 
 
-To defer the payment UI, the merchant passes a promise to the `show()` method. The browser will show a loading indicator until the promise resolves and the transaction is ready to begin.
+To defer the payment UI, the merchant passes a promise to the `show()` method.
+The browser will show a loading indicator until the promise resolves and the
+transaction is ready to begin.
 
 ```js
 const getTotalAmount = async () => {
@@ -148,26 +202,37 @@ try {
 }
 ```
 
-If there is no promise specified as an argument for `show()`, the browser will launch the payment UI immediately.
+If there is no promise specified as an argument for `show()`, the browser will
+launch the payment UI immediately.
 
 {% Aside %}
-If the payment handler is designed to return a transaction ID upon setting the total price, the ID can be passed as part of the promise result.
+If the payment handler is designed to return a transaction ID upon setting the
+total price, the ID can be passed as part of the promise result.
 {% endAside %}
 
 ## Step 4: The browser launches the payment app
 
-The browser can launch a native or a web-based payment app. (You can learn more about [how Chrome determines which payment app to launch](/setting-up-a-payment-method#how-chrome-determines-which-payment-app-to-launch).)
+The browser can launch a native or a web-based payment app. (You can learn more
+about [how Chrome determines which payment app to
+launch](/setting-up-a-payment-method#how-chrome-determines-which-payment-app-to-launch).)
 
-How the payment app is built is up to the developer for the most part, but the events emitted from and to the merchant, as well as the structure of the data passed along with those events, are standardized.
+How the payment app is built is up to the developer for the most part, but the
+events emitted from and to the merchant, as well as the structure of the data
+passed along with those events, are standardized.
 
-When the payment app is launched, it receives [the transaction information](https://w3c.github.io/payment-handler/#the-paymentrequestevent) passed to the `PaymentRequest` object in Step 1, which includes:
+When the payment app is launched, it receives [the transaction
+information](https://w3c.github.io/payment-handler/#the-paymentrequestevent)
+passed to the `PaymentRequest` object in Step 1, which includes:
+
 * the payment method data
 * the total price
 * payment options
 
 The payment app uses the transaction information to label its UI.
 
-Under certain conditions, before launching the payment app, the browser will launch the Payment Request UI—a browser native dialog in which the customer can input and edit their details.
+Under certain conditions, before launching the payment app, the browser will
+launch the Payment Request UI—a browser native dialog in which the customer can
+input and edit their details.
 
 ### When does the browser launch the Payment Request UI?
 
@@ -180,10 +245,12 @@ Under certain conditions, before launching the payment app, the browser will lau
   </figcaption>
 </figure>
 
-The Payment Request UI can intervene before the payment app is launched if one of the following conditions is met:
+The Payment Request UI can intervene before the payment app is launched if one
+of the following conditions is met:
 * `show()` is invoked without a user gesture (for example, without a click).
 * Multiple payment apps match the given payment method identifier on the device.
-* The payment app can't provide the shipping address, shipping option, or contact information.
+* The payment app can't provide the shipping address, shipping option, or
+  contact information.
 
 <figure class="w-figure w-figure--inline-right">
   <img class="w-screenshot" src="./payment-request-UI-mobile.png"
@@ -200,13 +267,19 @@ In the Payment Request UI, the customer can:
 * Select or edit a shipping address.
 * Select or edit contact information.
 
-Each customer update to the UI causes an event to be emitted to the merchant who can then update the transaction information. The exact process is described in the next step.
+Each customer update to the UI causes an event to be emitted to the merchant who
+can then update the transaction information. The exact process is described in
+the next step.
 
-After the customer sets all the required information for making the payment, they can proceed to launch the payment app with the *Continue* button.
+After the customer sets all the required information for making the payment,
+they can proceed to launch the payment app with the *Continue* button.
 
 ## Step 5: How can merchant update the transaction details depending on customer's actions
 
-Customers have an option to change the transaction details such as payment method and shipping option in the Payment Request UI or the payment app. While the customer makes changes, the merchant receives the change events and updates the transaction details.
+Customers have an option to change the transaction details such as payment
+method and shipping option in the Payment Request UI or the payment app. While
+the customer makes changes, the merchant receives the change events and updates
+the transaction details.
 
 There are four types of events a merchant can receive:
 
@@ -217,7 +290,11 @@ There are four types of events a merchant can receive:
 
 ### Payment method change event
 
-A payment app can support multiple payment methods and a merchant may offer a special discount depending on the customer's selection. To cover this use case, the payment method change event can inform the merchant of the new payment method so that they can update the total price with the discount and return it back to the payment app.
+A payment app can support multiple payment methods and a merchant may offer a
+special discount depending on the customer's selection. To cover this use case,
+the payment method change event can inform the merchant of the new payment
+method so that they can update the total price with the discount and return it
+back to the payment app.
 
 ```js
 request.addEventListener('paymentmethodchange', e => {
@@ -229,9 +306,15 @@ request.addEventListener('paymentmethodchange', e => {
 
 ### Shipping address change event
 
-A payment app can optionally provide the customer's shipping address. This is convenient for customers because they don't have to manually enter any details into a form and they can store their shipping address in their prefered payment apps, rather than on multiple different merchant websites. 
+A payment app can optionally provide the customer's shipping address. This is
+convenient for customers because they don't have to manually enter any details
+into a form and they can store their shipping address in their prefered payment
+apps, rather than on multiple different merchant websites. 
 
-If a customer updates their shipping address in a payment app after the transaction has been initiated, a shipping address change event will be emitted to the merchant. This helps the merchant to determine the shipping cost based on the new address, update the total price, and return it back to the payment app.
+If a customer updates their shipping address in a payment app after the
+transaction has been initiated, a shipping address change event will be emitted
+to the merchant. This helps the merchant to determine the shipping cost based on
+the new address, update the total price, and return it back to the payment app.
 
 ```js
 request.addEventListener('shippingaddresschange', e => {
@@ -241,20 +324,28 @@ request.addEventListener('shippingaddresschange', e => {
 });
 ```
 
-If the merchant can't ship to the updated address, they can provide an error message by adding an error parameter to the transaction details returned to the payment app.
+If the merchant can't ship to the updated address, they can provide an error
+message by adding an error parameter to the transaction details returned to the
+payment app.
 
 {% Aside %}
-Merchants don't receive customers' full shipping address until they've authorized the payment.
+Merchants don't receive customers' full shipping address until they've
+authorized the payment.
 {% endAside %}
 
 ### Shipping option change event
 
-A merchant can offer multiple shipping options to the customer and can delegate that choice to the payment app. The shipping options are displayed as a list of prices and service names the customer can select from. For example:
+A merchant can offer multiple shipping options to the customer and can delegate
+that choice to the payment app. The shipping options are displayed as a list of
+prices and service names the customer can select from. For example:
 
 * Standard shipping - Free
 * Express shipping - $5
 
-When a customer updates the shipping option in a payment app, a shipping option change event will be emitted to the merchant. The merchant can then determine the shipping cost, update the total price, and return it back to the payment app.
+When a customer updates the shipping option in a payment app, a shipping option
+change event will be emitted to the merchant. The merchant can then determine
+the shipping cost, update the total price, and return it back to the payment
+app.
 
 ```js
 request.addEventListener('shippingoptionchange', e => {
@@ -264,11 +355,16 @@ request.addEventListener('shippingoptionchange', e => {
 });
 ```
 
-The merchant can modify the shipping options dynamically based on the customer's shipping address as well. This is useful when a merchant wants to offer different sets of shipping options for domestic and international customers.
+The merchant can modify the shipping options dynamically based on the customer's
+shipping address as well. This is useful when a merchant wants to offer
+different sets of shipping options for domestic and international customers.
 
 ### Merchant validation event
 
-For additional security, a payment app can perform a merchant validation before proceeding to the payment flow. The design of the validation mechanism is up to the payment app, but the merchant validation event serves to inform the merchant of the URL they can use to validate themselves.
+For additional security, a payment app can perform a merchant validation before
+proceeding to the payment flow. The design of the validation mechanism is up to
+the payment app, but the merchant validation event serves to inform the merchant
+of the URL they can use to validate themselves.
 
 ```js
 request.addEventListener('merchantvalidation', e => {
@@ -279,30 +375,42 @@ request.addEventListener('merchantvalidation', e => {
 ```
 
 {% Aside %}
-The support for merchant validation event is limited to Apple Safari. Chromium based browsers have not implemented this event as of May 2020.
+The support for merchant validation event is limited to Apple Safari. Chromium
+based browsers have not implemented this event as of May 2020.
 {% endAside %}
 
 ## Step 6: The merchant validates the payment and completes the transaction
 
-When the customer successfully authorizes the payment, the `show()` method returns a promise that resolves to a [`PaymentResponse`](https://w3c.github.io/payment-request/#paymentresponse-interface). The `PaymentResponse` object includes the following information:
+When the customer successfully authorizes the payment, the `show()` method
+returns a promise that resolves to a
+[`PaymentResponse`](https://w3c.github.io/payment-request/#paymentresponse-interface).
+The `PaymentResponse` object includes the following information:
 
 * the payment result details
 * the shipping address
 * the shipping option
 * contact information
 
-At this point, the browser UI may still show a loading indicator meaning that the transaction is not completed yet.
+At this point, the browser UI may still show a loading indicator meaning that
+the transaction is not completed yet.
 
-If the payment app is terminated because of a payment failure or error, the promise returned from `show()` rejects, and the browser terminates the payment transaction.
+If the payment app is terminated because of a payment failure or error, the
+promise returned from `show()` rejects, and the browser terminates the payment
+transaction.
 
 ### Processing and validating the payment
 
-The `details` in `PaymentResponse` is the payment credential object returned from the payment app. The merchant can use the credential to process or validate the payment. How this critical process works is up to the payment handler.
+The `details` in `PaymentResponse` is the payment credential object returned
+from the payment app. The merchant can use the credential to process or validate
+the payment. How this critical process works is up to the payment handler.
 
 ### Completing or retrying the transaction
 
-After the merchant determines whether the transaction has succeded or failed, they can either:
-* call the `.complete()` method to complete the transaction and dismiss the loading indicator
+After the merchant determines whether the transaction has succeded or failed,
+they can either:
+
+* call the `.complete()` method to complete the transaction and dismiss the
+  loading indicator
 * or let the customer retry by calling the `retry()` method.
 
 ```js
@@ -337,6 +445,9 @@ doPaymentRequest();
 
 ## Next Steps
 
-* Learn how to declare a payment method identifier in detail in [Setting up a new payment method](/setting-up-a-payment-method)
-* Learn how to build a native payment app in [Android payment apps: developer's guide](/native-payment-apps-overview)
-* Learn how to build a web-based payment app in Web based payment apps developer guide (Coming soon)
+* Learn how to declare a payment method identifier in detail in [Setting up a
+  new payment method](/setting-up-a-payment-method)
+* Learn how to build a native payment app in [Android payment apps: developer's
+  guide](/native-payment-apps-overview)
+* Learn how to build a web-based payment app in Web based payment apps developer
+  guide (Coming soon)
