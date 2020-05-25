@@ -105,24 +105,19 @@ restrictions on payment processing and payment methods.
 Consider the existing approaches to integrating payments on the web:
 
 * **iframes:** Using JavaScript to inject the payment handler's website in an
-  iframe and collect the customer's payment credential through a form. For
-  example, [Braintree Drop-in
-  UI](https://developers.braintreepayments.com/guides/drop-in/overview/javascript/v2).
+  iframe and collect the customer's payment credential through a form.
 
 * **Pop-ups:** Using JavaScript to open a pop-up window and collect the
   customer's payment credentials, either through a form or by having the
-  customer authenticate and select a payment credential. For example,  [PayPal
-  Checkout](https://developer.paypal.com/docs/business/checkout/set-up-standard-payments/).
+  customer authenticate and select a payment credential.
 
 * **Redirects:** Merchant redirects the customer to a payment handler's website
   and lets the customer authenticate and select payment credentials. The
-  redirect URL is communicated via a server. For example, [Stripe
-  Checkout](https://stripe.com/docs/payments/checkout).
+  redirect URL is communicated via a server.
 
 * **OAuth:** Merchant lets the customer authenticate and authorize with a
   payment handler's identity via OAuth, select a payment method, shipping
-  address etc through in-context iframe UI. For example, [Amazon
-  Pay](https://developer.amazon.com/docs/amazon-pay-onetime/amazon-pay-and-login-with-amazon-introduction.html).
+  address etc through in-context iframe UI.
 
 Here's how they compare to Web Payments:
 
