@@ -4,6 +4,7 @@ title: "Android payment apps: developers' guide"
 subhead: |
   Learn how to adapt your Android payment app to work with Web Payments and provide a better user experience for customers.
 authors:
+  - yaraki
   - agektmr
 date: 2020-05-25
 description: |
