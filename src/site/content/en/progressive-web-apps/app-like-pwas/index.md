@@ -194,7 +194,7 @@ Of course I can always multitask back to the Podcasts app from anywhere. The app
 The most common app actions, **Search** for new content and **Check for New Episodes**, are available right from the context menu of the app in the Dock. Via the **Options** menu, I can also decide to open the app at login time.
 
 <figure class="w-figure">
-  <img src="./image18.png" alt="Podcasts app icon context menu showing the 'Search' and 'Check for New Episodes' options." class="w-screenshot w-screenshot--filled" width="267">
+  <img src="./image18.png" alt="Podcasts app icon context menu showing the 'Search' and 'Check for New Episodes' options." class="w-screenshot" width="267">
   <figcaption class="w-figcaption">Quick actions are immediately available right from the app icon.</figcaption>
 </figure>
 
