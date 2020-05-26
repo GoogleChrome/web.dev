@@ -31,7 +31,7 @@ The [Web Animations API](https://www.w3.org/TR/web-animations-1/) is a tool that
 
 While it has a long history, originally launching in Chrome 36, the latest release, Chrome 84, brings us a slew of previously unsupported features. 
 
-## Getting Started
+## Getting started
 
 Creating an animation via the web animations API should feel very familiar if you've used `"@keyframe"` rules. First you'll need to create a Keyframe Object. What might look like [this](https://codepen.io/una/pen/RwWMvPw) in CSS:
 
@@ -81,7 +81,7 @@ The amount of code is about the same, but with JavaScript, you get a couple of s
   Hyphenated property names become camel case when used in keyframes (i.e. `background-color` to `backgroundColor`)
 {% endAside %}
 
-## Orchestrating Animations with Promises
+## Orchestrating animations with promises
 
 In Chrome 84, you now have two methods that can be used with promises: `"animation.ready"` and `"animation.finished"`.
 
@@ -108,7 +108,7 @@ We've chained these animations using `"animation.finished.then()"` prior to exec
 
 Within CSS, this would be cumbersome to recreate, especially when applying unique, yet sequenced animations to multiple elements. You'd have to use a `"@keyframe"`, sort out the correct timing percentages to place the animations, and use `"animation-delay"` prior to triggering the animations in the sequence.
 
-## Play, Pause, Reverse
+## Play, pause, and reverse
 
 What can open, should close! Luckily, since [Chrome 39](https://developers.google.com/web/updates/2014/12/web-animation-playback), the WAAPI has provided us the ability to play, pause, and reverse our animations.
 
@@ -151,7 +151,7 @@ document.querySelector('button').addEventListener('click', () => {
 });
 ```
 
-## Performance Improvements with Replaceable Animations
+## Performance improvements with replaceable animations
 
 When creating animations based on events, such as on `"mousemove"`, a new animation is created each time, which can quickly consume memory and degrade performance.  To address this problem, replaceable animations were introduced, enabling automated cleanup, where finished animations are flagged as replaceable and automatically removed if replaced by another finished animation. Consider the following example:
 
@@ -179,7 +179,7 @@ There are a few additional methods to take your animation control even further:
 - `animation.replaceState()` provides a means of tracking whether an animation is active, persisted, or removed.
 - `animation.persist()` marks an animation as non-replaceable. Persisting an animation is useful when used with animation compositing modes, such as "add".
 
-## Dynamic Interactions with Partial Keyframes
+## Dynamic interactions with partial keyframes
 
 <figure class="w-figure">
 <video controls autoplay loop muted class="w-screenshot">
@@ -200,7 +200,7 @@ elem.addEventListener('mousemove', evt => {
 
 In this example, there is no initial location from which to move. This is called a **partial keyframe**. Instead, the mouse click does a few things: it sets a new end location, triggers a new animation, and sets the a new initial location based. New animations can occur *during* existing animations, meaning that the current animation will be interrupted, a new start and end point set, and a new animation triggered.
 
-## Compositing Animations
+## Smoother animations with composite modes
 
 With the Web Animations API, you can now composite your animations, meaning they can be additive or accumulative. [Composite modes](https://css-tricks.com/additive-animation-web-animations-api/) allow developers to write distinct animations and have control over how effects are combined. Three composite modes are now supported: `"replace"` (the default mode), `"add"`, and `"accumulate"`.
 
@@ -227,8 +227,6 @@ Let's take a look at a UI element example:
   </figcaption>
 </figure>
 
--- TODO: adjust demo CSS --
-
 Here, two `"top"` animations are composited. The first is a macro-animation, which moves the dropdown by the full height of the menu itself as a slide-in effect from the top of the page, and the second, a micro-animation, applies a little bounce as it hits the bottom. Using the `"add"` composite mode enables a smoother transition.
 
 ```js/12
@@ -248,7 +246,7 @@ const dropDown = menu.animate(
   });
 ```
 
-### What's Next for the Web Animations API
+### What's next for the web animations API
 
 These are all exciting additions to animations capabilities in today's browsers, and even more additions are coming down the pipeline. Check out these future specifications for some further reading on what's coming next:
 
