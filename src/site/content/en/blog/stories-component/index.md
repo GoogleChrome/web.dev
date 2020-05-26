@@ -33,16 +33,23 @@ Stories are commonly found as a mobile only, tap centric pattern for navigating 
 
 {% YouTube '-oyeaIirVC0' %}
 
-## Platform Features
-This component was able to come together so smoothly because of a few critical features that made it all possible. 
+## The Web Platform
+This component was able to come together so smoothly because of a few critical features of the web that made it all possible. Let's cover some of them!
 
 ### `scroll-snap-points`
 I chose these for a Stories component because I knew I was going to want touch centric horizontal pagination, and snap points are a way to codify scroll pagination scenic moments. Like friends' stories, I think those make great scenic moments. 
 
+<figure class="w-figure">
+  <video playsinline controls autoplay loop muted class="w-screenshot">
+    <!-- <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_wght.webm" type="video/webm"> -->
+    <source src="https://storage.googleapis.com/web-dev-assets/gui-challenges/scroll-snap-example.mp4">
+  </video>
+</figure>
+
 More specifically, to me that meant:
-- **Free native inertia:** every platform will get native swiping through friends
-- **Free keyboard support:** left/right move through the snap points
-- **A growing spec:** new features and improvements are being added
+- **Free native inertia** <br>every platform will get native swiping through friends
+- **Free keyboard support** <br>left/right move through the snap points
+- **A growing spec** <br>new features and improvements are being added
 
 <div class="w-columns">
 {% Compare 'better', 'parent' %}
@@ -90,6 +97,11 @@ Our layout turned into a few swift tasks for CSS grid as it's equipped with some
 
 #### Horizontal Scrolling Container
 Our primary component wrapper is a horizontal scroll container, we knocked it out with this CSS:
+
+<figure class="w-figure">
+  <img src="./horizontal-scroll-with-grid.png" alt="Chrome and DevTools open with a grid visual showing the full width layout">
+  <figcaption class="w-figcaption">DevTools showing grid column overflow, making a horizontal scroller</figcaption>
+</figure>
 
 ```css/1-3
 .stories {
