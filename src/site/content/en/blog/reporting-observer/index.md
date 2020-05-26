@@ -65,7 +65,7 @@ existing APIs. When your site uses a deprecated API or runs up against a
 [browser intervention][interventions], DevTools is the first to tell you about
 them:
 
-<figure>
+<figure class="w-figure">
   <img src="./consolewarnings.png"
        class="screenshot" alt="DevTools console warnings for deprecations and interventions."
        title="DevTools console warnings for deprecations and interventions.">
