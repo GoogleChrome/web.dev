@@ -51,7 +51,7 @@ function isScheduledForTheFuture(post, now = new Date()) {
  */
 function livePosts(post) {
   if (!post.date) {
-    throw new Error(`${post.inputPath} did not specificy a date.`);
+    throw new Error(`${post.inputPath} did not specify a date.`);
   }
 
   if (!post.data) {

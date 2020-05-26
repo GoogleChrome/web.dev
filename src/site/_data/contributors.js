@@ -370,7 +370,7 @@ const contributors = {
   },
   thomassteiner: {
     name: {
-      given: 'Thomas',
+      given: 'Tommy',
       family: 'Steiner',
     },
     homepage: 'https://blog.tomayac.com/',
@@ -1068,7 +1068,7 @@ const contributors = {
       given: 'Shu-yu',
       family: 'Guo',
     },
-    twiter: '_shu',
+    twitter: '_shu',
     country: 'US',
     org: {
       name: 'Google',
@@ -1079,7 +1079,7 @@ const contributors = {
       given: 'Thomas',
       family: 'Nattestad',
     },
-    twiter: 'fractorious',
+    twitter: 'fractorious',
     country: 'US',
     org: {
       name: 'Google',

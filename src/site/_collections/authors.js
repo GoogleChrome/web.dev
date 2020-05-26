@@ -85,8 +85,21 @@ module.exports = (collections) => {
         ? authorsPosts.get(author.key)
         : [];
 
+      // If the author doesn't have any posts, use their Twitter profile.
       if (author.elements.length === 0) {
-        author.href = `https://twitter.com/${author.twitter}`;
+        if (!author.twitter) {
+          // TODO(samthor): Don't crash if there's no posts at all. This happens early as we run
+          // Eleventy with no data to generate partials.
+          if (posts.length) {
+            throw new Error(
+              `author ${
+                author.title
+              } has no posts and no social: ${JSON.stringify(author)}`,
+            );
+          }
+        } else {
+          author.href = `https://twitter.com/${author.twitter}`;
+        }
       }
 
       const authorsImage = findAuthorsImage(author.key);
