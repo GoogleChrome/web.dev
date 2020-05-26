@@ -126,7 +126,7 @@ const observer = new ReportingObserver((reports, observer) => {
 
 ### Buffered reports
 
-Use the The `buffered: true` option when you want to see the reports that were
+Use the `buffered: true` option when you want to see the reports that were
 generated before the observer instance was created:
 
 ```js
