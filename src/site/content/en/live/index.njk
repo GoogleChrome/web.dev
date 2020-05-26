@@ -103,10 +103,19 @@ draft: true
         Share this event with your friends
       </p>
       <div class="w-event-buttons">
-        <a class="w-button w-button--primary w-button--with-icon gc-analytics-event" data-category="web.dev" data-label="live, share" data-action="click" data-icon="share" target="_blank"
-          href="#">
-          Share
-        </a>
+        <share-action
+          data-category="web.dev"
+          data-label="share"
+          data-action="click"
+          class="w-button w-button--primary w-button--with-icon gc-analytics-event"
+          data-icon="share"
+          tabindex="0"
+          role="button"
+        >
+          <span>
+            Share
+          </span>
+        </share-action>
       </div>
     </div>
     <div class="w-event-section__column-right w-event-antihero">
