@@ -65,15 +65,15 @@ ro.observe(someElement);
 
 Generally, a
 [`ResizeObserverEntry`](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry)
-reports the content rectangle of an element through a property called
+reports the content box of an element through a property called
 `contentRect`, which returns a
 [`DOMRectReadOnly`](https://developer.mozilla.org/en-US/docs/Web/API/DOMRectReadOnly)
-object. The content rectangle is the box in which content can be placed. It is
+object. The content box is the box in which content can be placed. It is
 the border box minus the padding.
 
 <figure class="w-figure">
-  <img src="./contentbox.png" alt="An image showing the content box.">
-  <figcaption class="w-figcaption">An image showing the content box.</figcaption>
+  <img src="./contentbox.png" 
+       alt="A diagram of the CSS box model.">
 </figure>
 
 It's important to note that while `ResizeObserver` *reports* both the dimensions
@@ -126,15 +126,20 @@ design breakpoints and change an element's styles. In the following
 [example](https://googlechrome.github.io/samples/resizeobserver/), the second box
 will change its border radius according to its width.
 
-<video controls autoplay loop muted class="w-screenshot">
-  <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/elem-mq_vp8.webm" type="video/webm; codecs=vp8">
-  <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/elem-mq_x264.mp4" type="video/mp4; codecs=h264">
-</video>
+<figure class="w-figure">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/elem-mq_vp8.webm"
+            type="video/webm; codecs=vp8">
+    <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/elem-mq_x264.mp4"
+            type="video/mp4; codecs=h264">
+  </video>
+</figure>
 
 ```js
 const ro = new ResizeObserver(entries => {
   for (let entry of entries) {
-    entry.target.style.borderRadius = Math.max(0, 250 - entry.contentRect.width) + 'px';
+    entry.target.style.borderRadius = 
+        Math.max(0, 250 - entry.contentRect.width) + 'px';
   }
 });
 // Only observe the second box
@@ -149,16 +154,20 @@ change (think of a phone going from landscape to portrait or vice versa) should
 achieve the same.
 
 `ResizeObserver` allows you to write a *single* piece of code that takes care of
-*both* scenarios. Resizing the window is an event that `ResizeObservers` can
+*both* scenarios. Resizing the window is an event that a `ResizeObserver` can
 capture by definition, but calling `appendChild()` also resizes that element
 (unless`overflow: hidden` is set), because it needs to make space for the new
 elements. With this in mind, it takes very few lines to achieve the desired
 effect:
 
-<video controls autoplay loop muted class="w-screenshot">
-  <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/chat_vp8.webm" type="video/webm; codecs=vp8">
-  <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/chat_x264.mp4" type="video/mp4; codecs=h264">
-</video>
+<figure class="w-figure">
+ <video controls autoplay loop muted class="w-screenshot">
+   <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/chat_vp8.webm"
+           type="video/webm; codecs=vp8">
+   <source src="https://storage.googleapis.com/webfundamentals-assets/resizeobserver/chat_x264.mp4"
+           type="video/mp4; codecs=h264">
+ </video>
+</figure>
 
 ```js
 const ro = new ResizeObserver(entries => {
@@ -185,8 +194,8 @@ dimensions change so its children can be laid out again.
 ## Conclusion
 
 `ResizeObserver` is available in [most major
-browsers](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver#Browser_compatibility).
-In same cases, that availability is quite recent. There are [some polyfills
+browsers](https://developer.mozilla.org/docs/Web/API/ResizeObserver#Browser_compatibility).
+In some cases, that availability is quite recent. There are [some polyfills
 available](https://github.com/WICG/ResizeObserver/issues/3) but it is not
 possible to completely duplicate the functionality of `ResizeObserver`. Current
 implementations either rely on polling or on adding sentinel elements to the
