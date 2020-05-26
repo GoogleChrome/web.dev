@@ -242,3 +242,8 @@ In some cases, if the library you're using follows specific conventions on how i
 ## Conclusion
 
 **To ensure the bundler can successfully optimize your application, avoid depending on CommonJS modules, and use ECMAScript module syntax in your entire application.**
+
+Few actionable tips to verify you're on the optimal path:
+- Using Rollup.js' [node-resolve](https://github.com/rollup/plugins/tree/master/packages/node-resolve) plugin you can specify you want to depend only on ECMAScript modules by setting the `modulesOnly` flag
+- To verify if an npm package uses ECMAScript modules you can use the package [`is-esm`](https://github.com/mgechev/is-esm)
+- If you're using Angular, by default you'd get a warning if you depend on non-tree-shakable module
