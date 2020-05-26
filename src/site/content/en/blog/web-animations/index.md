@@ -13,8 +13,7 @@ hero: hero.png
 description: Wrangling your web animations is about to get much easier.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - web animation
-  - web animations api
+   - web animations
   - waapi
   - chrome84
 ---
