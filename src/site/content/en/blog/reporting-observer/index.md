@@ -131,7 +131,7 @@ generated before the observer instance was created:
 
 ```js
 const observer = new ReportingObserver((reports, observer) => {
-  ...
+  …
 }, {types: ['intervention'], buffered: true});
 ```
 
