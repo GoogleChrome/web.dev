@@ -1107,6 +1107,17 @@ const contributors = {
       name: 'Google',
     },
   },
+  ericbidelman: {
+    name: {
+      given: 'Eric',
+      family: 'Bidelman',
+    },
+    twitter: 'ebidel',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
   jungkees: {
     name: {
       given: 'Jungkee',
