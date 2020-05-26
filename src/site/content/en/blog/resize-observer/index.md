@@ -1,6 +1,6 @@
 ---
-title: ResizeObserver&#58; it’s like document.onresize for elements
-subhead: ResizeObserver lets you know when an element's size changes.
+title: "`ResizeObserver`: It’s like `document.onresize` for elements"
+subhead: "`ResizeObserver` lets you know when an element's size changes."
 authors:
   - surma
   - joemedley
@@ -13,6 +13,10 @@ description: |
   size so that you can react accordingly.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
+  - dom
+  - javascript
+  - layout
+  - rendering
 ---
 
 Before `ResizeObserver`, you had to attach a listener to the document's `resize`
@@ -20,7 +24,7 @@ event to get notified of any change of the viewport's dimensions. In the event
 handler, you would then have to figure out which elements have been affected by
 that change and call a specific routine to react appropriately. If you needed
 the new dimensions of an element after a resize, you had to call
-`getBoundingClientRect()` or `getComputerStyle()`, which can cause layout
+`getBoundingClientRect()` or `getComputedStyle()`, which can cause layout
 thrashing if you don't take care of batching *all* your reads and *all* your
 writes.
 
@@ -33,16 +37,16 @@ This is why `ResizeObserver` is a useful primitive. It reacts to changes in
 size of any of the observed elements, independent of what caused the change.
 It provides access to the new size of the observed elements too.
 
-# API
+## API
 
-All the APIs with the "observer" suffix I mentioned above share a simple API
+All the APIs with the `Observer` suffix we mentioned above share a simple API
 design. `ResizeObserver` is no exception. You create a `ResizeObserver` object
 and pass a callback to the constructor. The callback is passed an array of
-`ResizeObserverEntries`&mdash;one entry per observed element&mdash;which
+`ResizeObserverEntry` objects—one entry per observed element—which
 contains the new dimensions for the element.
 
 ```js
-var ro = new ResizeObserver( entries => {
+var ro = new ResizeObserver(entries => {
   for (let entry of entries) {
     const cr = entry.contentRect;
     console.log('Element:', entry.target);
