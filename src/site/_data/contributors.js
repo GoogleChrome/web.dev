@@ -122,6 +122,20 @@ const contributors = {
       en: 'Arthur is a Tech Writer',
     },
   },
+  sfourault: {
+    name: {
+      given: 'Sébastien',
+      family: 'Fourault',
+    },
+    org: {
+      name: 'Google',
+      unit: 'Mobile Solutions Consultant',
+    },
+    twitter: 'SebFourault',
+    github: 'krustydaclown',
+    homepage: 'https://medium.com/@sebFourault',
+    country: 'FR',
+  },
   tomgreenaway: {
     name: {
       given: 'Tom',
