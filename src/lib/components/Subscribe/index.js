@@ -111,13 +111,14 @@ class Subscribe extends BaseElement {
     this.subscribeMessage.textContent = "Thank you! You're all signed up.";
     this.form.removeEventListener('submit', this.onSubmit);
     this.form.parentElement.removeChild(this.form);
-    if (isRobot === false) {
-      trackEvent({
-        category: 'web.dev',
-        action: 'submit',
-        label: 'subscribe, newsletter',
-      });
+    if (isRobot) {
+      return;
     }
+    trackEvent({
+      category: 'web.dev',
+      action: 'submit',
+      label: 'subscribe, newsletter',
+    });
   }
 }
 
