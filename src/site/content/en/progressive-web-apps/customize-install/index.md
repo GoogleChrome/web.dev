@@ -168,7 +168,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 ### Track when the display mode changes
 
-To track if the user changes between standalone, and browser tab, listen for
+To track if the user changes between `standalone`, and `browser tab`, listen for
 changes to the `display-mode` media query.
 
 ```js
