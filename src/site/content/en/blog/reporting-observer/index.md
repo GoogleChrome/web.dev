@@ -17,8 +17,7 @@ tags:
 
 `ReportingObserver` lets you know when your site uses a deprecated API or runs
 into a [browser intervention][interventions]. The basic functionality originally
-landed in Chrome 69. As of Chrome 84, it can be used in workers. It's pretty
-simple to use as you can see from the code sample below:
+landed in Chrome 69. As of Chrome 84, it can be used in workers.
 
 ```js
 const observer = new ReportingObserver((reports, observer) => {
