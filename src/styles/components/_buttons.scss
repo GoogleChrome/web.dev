@@ -14,10 +14,7 @@
 .w-button {
   @include base-button();
   overflow: hidden;
-  padding: 0 16px;
   position: relative;
-  text-decoration: none;
-  text-transform: uppercase;
   transition: background-color $TRANSITION_SPEED, box-shadow $TRANSITION_SPEED;
   vertical-align: middle;
   white-space: nowrap;
@@ -203,4 +200,11 @@
 
 .w-button--icon::before {
   margin: 0;
+}
+
+.w-button--small {
+  padding: 0 8px;
+  height: 32px;
+  text-transform: initial;
+  letter-spacing: initial;
 }

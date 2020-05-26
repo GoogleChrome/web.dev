@@ -14,42 +14,65 @@
  * limitations under the License.
  */
 
-// const path = require('path');
 const {html} = require('common-tags');
-// const prettyDate = require('../../_filters/pretty-date');
-// const stripLanguage = require('../../_filters/strip-language');
-// const md = require('../../_filters/md');
-// const constants = require('../../_utils/constants');
-// const getSrcsetRange = require('../../_utils/get-srcset-range');
-// const postTags = require('../../_data/postTags');
 
-const Author = require('./Author');
+const AuthorsDate = require('./AuthorsDate');
 
-module.exports = (collections) => {
-  const schedule = collections.eventSchedule;
+/**
+ * @param {!Array<{title: string, from: !Date, sessions: !Array<any>}>} event
+ * @param {Object.<string, Author>} authorsCollection
+ * @return {string}
+ */
+module.exports = (event, authorsCollection) => {
+  // Find the default day to show, as a very basic non-JS fallback. Pick the
+  // first day where the build time is before the end time of the sessions.
+  // This isn't a very good fallback as our build happens at minimum of once per
+  // day, but it's better than nothing.
+  const now = new Date();
+  let defaultScheduleDay = 0;
+  for (let i = 0; i < event.length; ++i) {
+    const {date, duration} = event[i];
+    const endTime = new Date(date);
+    endTime.setHours(endTime.getHours() + duration);
 
-  // TODO(MichaelSolati): "Author" needs a post but doesn't use it, we pass an empty object.
-  const renderSession = ({speaker, info, title}) => {
+    if (now < endTime) {
+      defaultScheduleDay = i;
+      break;
+    }
+  }
+
+  const renderSession = ({speaker, title}) => {
+    // Always pass an Array of author IDs.
+    const authors = typeof speaker === 'string' ? [speaker] : speaker;
+
     return html`
       <tr>
         <td class="w-event-schedule__speaker">
-          ${Author({post: {}, author: info, id: speaker, small: true})}
+          ${AuthorsDate({authors}, authorsCollection)}
         </td>
         <td class="w-event-schedule__session">${title}</td>
       </tr>
     `;
   };
 
-  const renderDay = ({title, sessions}) => {
+  const renderDay = (day, index) => {
+    // nb. We don't render a fallback time for browsers without JS.
     return html`
-      <div data-label="${title}">
+      <div
+        data-label="${day.title}"
+        class="${index === defaultScheduleDay ? 'w-tabs-default' : ''}"
+      >
         <div class="w-event-section__schedule_header">
-          <web-event-time></web-event-time>
+          <web-event-time
+            class="unresolved"
+            datetime="${day.date.toISOString()}"
+            duration="${day.duration}"
+          ></web-event-time>
         </div>
 
         <table class="w-event-schedule">
           <tbody>
-            ${sessions.map(renderSession)}
+            ${day.sessions.map(renderSession)}
           </tbody>
         </table>
       </div>
@@ -57,8 +80,8 @@ module.exports = (collections) => {
   };
 
   return html`
-    <web-tabs class="w-event-tabs">
-      ${schedule.map(renderDay)}
+    <web-tabs class="w-event-tabs unresolved" label="schedule">
+      ${event.map(renderDay)}
     </web-tabs>
   `;
 };

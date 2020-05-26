@@ -1,3 +1,7 @@
+---
+show_banner: true
+---
+
 <!DOCTYPE html>
 {% set lang = "en" %}
 {% set locale="en_US" %}
@@ -94,6 +98,15 @@
           </a>
 
           <a
+            href="/live/"
+            class="web-header__link gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Tab: Live"
+          >
+            Live
+          </a>
+
+          <a
             href="/about/"
             class="web-header__link gc-analytics-event"
             data-category="Site-Wide Custom Events"
@@ -134,6 +147,14 @@
         Blog
       </a>
       <a
+        href="/live/"
+        class="web-side-nav__link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="SideNav: Live"
+      >
+        Live
+      </a>
+      <a
         href="/about/"
         class="web-side-nav__link gc-analytics-event"
         data-category="Site-Wide Custom Events"
@@ -143,8 +164,10 @@
       </a>
     </web-side-nav>
     <main>
-      {% include 'partials/banner.njk' %}
       <div id="content">
+        {% if show_banner %}
+          {% include 'partials/banner.njk' %}
+        {% endif %}
         {{ content | safe }}
       </div>
     </main>

@@ -1,6 +1,7 @@
 ---
 layout: layout
 permalink: "/{{lang}}/{{page.fileSlug}}/index.html"
+show_banner: false
 ---
 
 <div class="codelab-landing-page">
@@ -18,8 +19,6 @@ permalink: "/{{lang}}/{{page.fileSlug}}/index.html"
         <div class="w-authors w-mt--xl w-pt--sm">
           {% for author in authors %}
             {% Author {
-              post: page,
-              author: contributors[author],
               id: author,
               showSocialMedia: true}
             %}

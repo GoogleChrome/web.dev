@@ -11,7 +11,7 @@ renderData:
 noindex: true
 permalink: "/{{lang}}{{ paged.href }}feed.xml"
 pagination:
-  data: collections.authors
+  data: collections.authorsWithPosts
   size: 1
   alias: paged
 ---
@@ -39,7 +39,7 @@ pagination:
     {% for entry in post.data.authors %}
     {%- set author =  contributors[entry] -%}
     <author>
-      <name>{{ author.name.given }} {{ author.name.family }}</name>
+      <name>{{ author.name.title }}</name>
     </author>
     {%- endfor %}
   </entry>

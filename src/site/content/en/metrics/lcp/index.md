@@ -4,7 +4,7 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-05-04
+updated: 2020-05-21
 description: |
   This post introduces the Largest Contentful Paint (LCP) metric and explains
   how to measure it
@@ -82,6 +82,12 @@ Contentful Paint occur within the first **2.5 seconds** of the page starting to
 load. To ensure you're hitting this target for most of your users, a good
 threshold to measure is the **75th percentile** of page loads, segmented across
 mobile and desktop devices.
+
+{% Aside %}
+  To learn more about the research and methodology behind this recommendation,
+  see: [Defining the Core Web Vitals metrics
+  thresholds](/defining-core-web-vitals-thresholds/)
+{% endAside %}
 
 ### What elements are considered?
 

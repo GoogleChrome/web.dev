@@ -50,7 +50,7 @@ const YouTube = require(`./${componentsDir}/YouTube`);
 
 const collectionsDir = 'src/site/_collections';
 const authors = require(`./${collectionsDir}/authors`);
-const eventSchedule = require(`./${collectionsDir}/event-schedule`);
+const authorsWithPosts = require(`./${collectionsDir}/authors-with-posts`);
 const paginatedAuthors = require(`./${collectionsDir}/paginated-authors`);
 const paginatedBlogPosts = require(`./${collectionsDir}/paginated-blog-posts`);
 const paginatedNewsletters = require(`./${collectionsDir}/paginated-newsletters`);
@@ -152,8 +152,8 @@ module.exports = function(config) {
   // ----------------------------------------------------------------------------
   // COLLECTIONS
   // ----------------------------------------------------------------------------
+  config.addCollection('authorsWithPosts', authorsWithPosts);
   config.addCollection('authors', authors);
-  config.addCollection('eventSchedule', eventSchedule);
   config.addCollection('blogPosts', blogPostsDescending);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('recentBlogPosts', recentBlogPosts);
@@ -216,7 +216,6 @@ module.exports = function(config) {
   config.addPairedShortcode('CompareCaption', CompareCaption);
   config.addPairedShortcode('Details', Details);
   config.addPairedShortcode('DetailsSummary', DetailsSummary);
-  config.addShortcode('EventTable', EventTable);
   config.addShortcode('Hero', Hero);
   config.addShortcode('Instruction', Instruction);
   config.addPairedShortcode('Label', Label);
@@ -226,6 +225,10 @@ module.exports = function(config) {
   config.addShortcode('SignPosts', SignPosts);
   config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('YouTube', YouTube);
+
+  // This table is used for the web.dev/LIVE event, and should be taken down
+  // when the event is over or we no longer use it.
+  config.addShortcode('EventTable', EventTable);
 
   // ----------------------------------------------------------------------------
   // TRANSFORMS

@@ -6,6 +6,11 @@ export class BaseElement extends LitElement {
     super();
   }
 
+  firstUpdated() {
+    this.classList.remove('unresolved');
+    super.firstUpdated();
+  }
+
   createRenderRoot() {
     // Disable shadow DOM.
     // Instead templates will be rendered in the light DOM.

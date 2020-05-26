@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const authorsCollection = require('./authors');
+const authorsCollection = require('./authors-with-posts');
 const addPagination = require('../_utils/add-pagination');
 
 /**
@@ -25,7 +25,7 @@ const addPagination = require('../_utils/add-pagination');
  * embedded loop O^2.
  *
  * @param {any} collections Eleventy collection object
- * @return {Array<{ title: string, href: string, description: string, elements: Array<object>, index: number, pages: number }>} An array where each element is a page with some meta data and n authors for the page.
+ * @return {Array<Paginated>} An array where each element is a page with some meta data and n authors for the page.
  */
 module.exports = (collections) => {
   const authors = authorsCollection(collections);
