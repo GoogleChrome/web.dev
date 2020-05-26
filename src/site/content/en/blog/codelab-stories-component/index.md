@@ -22,6 +22,9 @@ get our hands dirty with the code to maximize learnings
 ### Introduction
 We'll be first going over the HTML, then the CSS, and last the Javascript. By the end you'll have a working component that you can use the same strategy for on something else.
 
+Prep
+- open `app/index.html`
+
 ## HTML
 Since each friend can have any number of stories, I thought it was meaningful to make my friends `<section>`'s and each of their stories `<article>`'s. Let's start from the beginning though. 
 
@@ -33,7 +36,7 @@ We need a container to start from, this will be our stories component. Our first
 </div>
 ```
 
-Inside of here we want to list our friends and I made our friends a `<section>`:
+Inside of `.stories` we'll be listing our friends, I made each of our friends a `<section>`. Like, here's a section for their contextual stories. You could even name each of these if you wanted hehe.
 
 ```html/1-4
 <div class="stories"> 
@@ -44,7 +47,10 @@ Inside of here we want to list our friends and I made our friends a `<section>`:
 </div>
 ```
 
-Each user has some pictures, we'll call each picture a story. Each story will have a background image that we set to fill the space, giving us a nice full screen story image ready for overlaying text or other fun stuff like stickers:
+Each friend has some pictures, we'll call each picture a `.story`. Let's dig into how and where we're putting pictures into this component. 
+
+#### Placeholder Loading Technique
+I want to share a placeholder loading technique for these pictures. To do this, we'll be using CSS's `background-image` property. It allows us to specify more than one background image. We can put them in an order so that our user picture is on top and will show up automatically when it's done loading. To enable this, we'll be putting our image url into a custom property (`--bg`), and use it within our CSS to layer with the loading placeholder.
 
 ```html/2-14
 <div class="stories"> 
@@ -67,13 +73,23 @@ Each user has some pictures, we'll call each picture a story. Each story will ha
 
 ```
 
-This sets us up for a container to be a horizontal list (`.stories`) and a place for each of our friends stories (`.user`). You'll see in the HTML there that I'm using an image service to help me simulate friend's stories.
+#### That's All For HTML
+This sets us up with a container to be a horizontal list (`.stories`) and a place for each of our friends stories (`.user`). You'll see in the HTML there that I'm using an image service to help me prototype friend's stories.
 
 ## CSS
-Our content is ready for style, let's turn those bones into something folks will want to interact with.
+Our content is ready for style, let's turn those bones into something folks will want to interact with. We'll be working mobile first today. Open `app/css/index.css` and collapse the `body {}` styles, let's clear our workspace!
+
+{% Aside 'success' %}
+Feel free to stop and study the styles in the `body` tag if you like! They're handling the responsive nature of our stories workspace.
+{% endAside %}
 
 ### .stories
 For our main component, we want a horizontal scrolling container, and so we made the component a grid, set each child to fill the row track and told each child to be the width of the viewport (mobile device). Grid will continue placing new `100vw` wide columns to the right of the previous one, until it's placed all the HTML elements in your markup. 
+
+<figure class="w-figure">
+  <img src="./horizontal-scroll-with-grid.png" alt="Chrome and DevTools open with a grid visual showing the full width layout">
+  <figcaption class="w-figcaption">DevTools showing grid column overflow, making a horizontal scroller</figcaption>
+</figure>
 
 ```css
 .stories {
@@ -104,6 +120,13 @@ It takes both the parent container and the children to agree to scroll snapping,
   scroll-snap-stop: always;
 }
 ```
+
+<figure class="w-figure">
+  <video playsinline controls autoplay loop muted class="w-screenshot">
+    <!-- <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_wght.webm" type="video/webm"> -->
+    <source src="https://storage.googleapis.com/web-dev-assets/gui-challenges/scroll-snap-example.mp4">
+  </video>
+</figure>
 
 That will get you scrolling through your friends, but we still have an issue with the stories to solve.
 
@@ -191,6 +214,13 @@ A keen eye would notice the `pointer-events: none` there and scratch their head.
 
 ## Javascript
 The interactions of a stories component are quite simple to the user: tap on the right to go forward, tap on the left to go back. Simple things for users tends to be hard work for developers. We'll take care of lots of it though, it'll get us really far.
+
+<figure class="w-figure">
+  <video playsinline controls autoplay loop muted class="w-screenshot">
+    <!-- <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_wght.webm" type="video/webm"> -->
+    <source src="https://storage.googleapis.com/web-dev-assets/gui-challenges/stories-desktop-demo.mp4">
+  </video>
+</figure>
 
 ### Setup
 To start out, let's compute and store as much information as we can. Our first line of js grabs and stores a reference to our primary HTML element root. The next line calculates where the middle of our element is, so we can decide if a tap is to go forward or backward.
