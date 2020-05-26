@@ -49,6 +49,7 @@ const renderAuthorImages = (limit, pairs) => {
               class="w-author__image w-author__image--small"
               src="/images/authors/${id}.jpg"
               alt="${info.title}"
+              loading="lazy"
             />
           </a>
         </div>
