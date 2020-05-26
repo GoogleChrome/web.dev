@@ -20,7 +20,6 @@ describe('Build test', function() {
     console.log('Build completed. Starting tests.');
 
     [
-      path.join('en', '_redirects.yaml'),
       path.join('en', 'algolia.json'),
       path.join('en', 'feed.xml'),
       path.join('en', 'index.html'),
@@ -30,6 +29,7 @@ describe('Build test', function() {
       path.join('en', 'tags', 'progressive-web-apps', 'feed.xml'),
       path.join('images', 'favicon.ico'),
       path.join('images', 'lockup.svg'),
+      '_redirects.yaml',
       'app.css',
       'bootstrap.js',
       'manifest.webmanifest',
