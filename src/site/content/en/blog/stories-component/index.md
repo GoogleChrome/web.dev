@@ -7,6 +7,7 @@ description: |
   Adam Argyle shares his strategy of recreating stories, a mobile UI pattern commonly found on native platforms, with web technology. With CSS grid and scroll-snap-points it turned out to be swift work.
 date: 2020-05-21
 hero: hero.jpg
+thumbnail: thumb.jpg
 codelabs: codelab-stories-component
 tags:
   - blog
@@ -14,19 +15,23 @@ tags:
   - ui
 ---
 
-<figure class="w-figure">
-  <img src="./intro.png" alt="TODO">
-  <figcaption class="w-figcaption">Screenshot of our Stories component responsive to desktop</figcaption>
-</figure>
-
-<!-- {% YouTube 'B42rUMdcB7c' %} -->
-
 Let's explore and get inspired by this minimal way to layout an interactive Stories element. It's fairly similar to a carousel, but allows navigating a multidimensional array as opposed to an array. As if there's a carousel inside each carousel 🤯 
+
+<figure class="w-figure w-figure--fullbleed">
+  <video playsinline controls autoplay loop muted class="w-screenshot">
+    <!-- <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_wght.webm" type="video/webm"> -->
+    <source src="https://storage.googleapis.com/web-dev-assets/gui-challenges/stories-desktop-demo.mp4">
+  </video>
+</figure>
 
 ### Introduction
 Stories are commonly found as a mobile only, tap centric pattern for navigating multiple subscriptions. For example: on Instagram, users open a friend's story and go through the pictures in it. They generally do this many friends at a time. By tapping on the right side of the device, users move forward through "their stories," which are their friends and their friends' stories.
 
-Today's is mobile web focused and supports keyboard navigation. We'll also be testing cross platform, sharing the differences we end up with and why it's okay and awesome. 
+**Today's is mobile web focused and supports keyboard navigation.** We'll also be testing cross platform too, sharing the differences we end up with and why it's okay and awesome.  
+
+{% Banner 'neutral' %}This is the written companion for the following YouTube video.{% endBanner %}
+
+{% YouTube '-oyeaIirVC0' %}
 
 ## Platform Features
 This component was able to come together so smoothly because of a few critical features that made it all possible. 
