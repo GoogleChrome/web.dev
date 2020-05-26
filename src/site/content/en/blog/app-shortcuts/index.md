@@ -5,7 +5,7 @@ authors:
   - beaufortfrancois
   - jungkees
 date: 2020-05-20
-updated: 2020-05-20
+updated: 2020-05-26
 hero: hero.jpg
 alt: A photo of an Android phone showing an app shortcuts menu
 description: App shortcuts give quick access to a handful of common actions that users need frequently.
@@ -43,6 +43,11 @@ launcher icon on Android.
 <figure class="w-figure">
   <img class="w-screenshot" src="./app-shortcuts-menu-android.png" alt="Screenshot of an app shortcuts menu opened on Android">
   <figcaption class="w-figcaption">App shortcuts menu opened on Android</figcaption>
+</figure>
+
+<figure class="w-figure">
+  <img class="w-screenshot" src="./app-shortcuts-menu-windows.png" alt="Screenshot of an app shortcuts menu opened on Windows">
+  <figcaption class="w-figcaption">App shortcuts menu opened on Windows</figcaption>
 </figure>
 
 The app shortcuts menu is shown only for [Progressive Web Apps] that are
