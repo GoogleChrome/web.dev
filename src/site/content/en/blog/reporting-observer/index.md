@@ -120,7 +120,7 @@ there are two report types: `'deprecation'` and `'intervention'`.
 
 ```js
 const observer = new ReportingObserver((reports, observer) => {
-  ...
+  …
 }, {types: ['deprecation']});
 ```
 
