@@ -49,11 +49,18 @@ class ShareAction extends HTMLElement {
   }
 
   get shareText() {
-    let authorText = '';
+    // Check for a custom message.
+    const messageText = this.getAttribute('message');
+    if (messageText && messageText.length) {
+      return messageText;
+    }
 
-    const raw = this.getAttribute('authors') || '';
-    if (raw && raw.length) {
-      const authors = raw
+    // If no custom message is found, fallback to using the page title
+    // plus the author's names.
+    let authorText = '';
+    const rawAuthors = this.getAttribute('authors') || '';
+    if (rawAuthors && rawAuthors.length) {
+      const authors = rawAuthors
         .split('|')
         .map((x) => x.trim())
         .filter(Boolean);
