@@ -61,7 +61,7 @@ gulp.task('copy-misc', () => {
 gulp.task('copy-content-assets', () => {
   return (
     gulp
-      .src([`./src/site/content/en/**/*.{${assetTypes}}`])
+      .src([`./src/site/content/**/*.{${assetTypes}}`])
       .pipe(compressImagesTransform(0.8, 0.8))
       // This makes the images show up in the same spot as the permalinked posts
       // they belong to.
