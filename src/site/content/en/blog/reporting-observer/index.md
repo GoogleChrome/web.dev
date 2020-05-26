@@ -1,18 +1,19 @@
 ---
-title: Know your code health
-subhead: Find deprecated APIs in your production apps
+title: Know your code health with the `ReportingObserver` API
+subhead: Find deprecated APIs in your production apps.
 authors:
   - ericbidelman
 date: 2019-08-21
 updated: 2020-05-27
 hero: hero.jpg
-alt: A reporter observing something.
+alt: Apollo Mission Control Center.
 description: |
   `ReportingObserver` lets you know when your site uses a deprecated API or runs
   into a browser intervention. The basic functionality originally landed in Chrome
   69. As of Chrome 84, it can be used in workers. It's pretty simple.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
+  - javascript
 ---
 
 `ReportingObserver` lets you know when your site uses a deprecated API or runs
@@ -29,11 +30,11 @@ const observer = new ReportingObserver((reports, observer) => {
 observer.observe();
 ```
 
-Use the callback to send reports to a back end or analytics provider for
+Use the callback to send reports to a backend or analytics provider for
 analysis.
 
 Why is that useful? Until this API, deprecation and intervention warnings were
-only available in DevTools as a console messages. Interventions, in particular,
+only available in DevTools as Console messages. Interventions, in particular,
 are only triggered by various real-world constraints like device and network
 conditions. Thus, you may never even see these messages when developing/testing
 a site locally. `ReportingObserver` provides a solution to this problem. When
@@ -45,8 +46,8 @@ other browsers.
 
 ## Background
 
-A while back, I wrote a blog post ("[Observing your web
-app](https://ericbidelman.tumblr.com/post/149032341876/observing-your-web-app)")
+A while back, I wrote a blog post ([Observing your web
+app](https://ericbidelman.tumblr.com/post/149032341876/observing-your-web-app))
 because I found it fascinating how many APIs there are for monitoring the
 "stuff" that happens in a web app. For example, there are APIs that can observe
 information about the DOM:
@@ -67,14 +68,14 @@ them:
 
 <figure class="w-figure">
   <img src="./consolewarnings.png"
-       class="w-screenshot" alt="DevTools console warnings for deprecations and interventions."
-       title="DevTools console warnings for deprecations and interventions.">
-  <figcaption>Browser-initiated warnings in the DevTools console.</figcaption>
+       class="w-screenshot" alt="DevTools Console warnings for deprecations and interventions."
+       title="DevTools Console warnings for deprecations and interventions.">
+  <figcaption>Browser-initiated warnings in the DevTools Console.</figcaption>
 </figure>
 
 One would naturally think `window.onerror` captures these warnings. It does not.
 That's because `window.onerror` does not fire for warnings generated directly by
-the user agent itself. It fires for runtime errors (JavaScriptß exceptions and
+the user agent itself. It fires for runtime errors (JavaScript exceptions and
 syntax errors) caused by code execution.
 
 `ReportingObserver` picks up the slack. It provides a programmatic way to be
@@ -91,7 +92,7 @@ to specify a set of server endpoints to report issues to.
 
 ## The API
 
-`ReportingObserver` is not unlike the other "observer" APIs such as
+`ReportingObserver` is not unlike the other `Observer` APIs such as
 `IntersectionObserver` and `ResizeObserver`. You give it a callback; it gives
 you information. The information that the callback receives is a list of issues
 that the page caused:
@@ -180,7 +181,7 @@ observer.observe();
 
 `ReportingObserver` gives you an additional way for discovering and monitoring
 potential issues in your web app. It's even a useful tool for understanding the
-health of your code base (or lack thereof). Send reports to a back end, know
+health of your code base (or lack thereof). Send reports to a backend, know
 about the real-world issues, update code, profit!
 
 ## Future work {: #future }
@@ -200,10 +201,9 @@ that goes wrong in your app:
 - [W3c spec][reportingobserver]
 - [chromestatus.com entry][chromestatus]
 
-Photo by [Artem
-Maltsev](https://unsplash.com/@art_maltsev?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-on
-[Unsplash](https://unsplash.com/s/photos/report?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
+[Hero image](https://unsplash.com/photos/6SyrBaRjLJ4) by 
+[Sieuwert Otterloo](https://unsplash.com/@sieuwert)
+on [Unsplash](https://unsplash.com).
 
 [spec]: https://w3c.github.io/reporting
 [reportingobserver]: https://w3c.github.io/reporting/#observers
