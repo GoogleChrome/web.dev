@@ -149,7 +149,7 @@ const eventData = [
       },
       {
         speaker: ['developit', 'jakearchibald'],
-        title: 'Writing Rollup Plugins',
+        title: 'Writing Build Plugins',
       },
       {
         speaker: 'jakearchibald',

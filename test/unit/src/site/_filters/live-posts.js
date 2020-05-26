@@ -38,7 +38,7 @@ describe('live-posts', function() {
   it('should throw if the post does not have a date', function() {
     post.date = null;
     // nb. to test throws in mocha you have to call the fn within another fn.
-    assert.throws(() => livePosts(post), /did not specificy a date/);
+    assert.throws(() => livePosts(post), /did not specify a date/);
   });
 
   it('should throw if the post does not have a data object', function() {

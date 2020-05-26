@@ -85,8 +85,21 @@ module.exports = (collections) => {
         ? authorsPosts.get(author.key)
         : [];
 
+      // If the author doesn't have any posts, use their Twitter profile.
       if (author.elements.length === 0) {
-        author.href = `https://twitter.com/${author.twitter}`;
+        if (!author.twitter) {
+          // Don't crash if there's no posts at all, or we're running in test mode, as the list of
+          // posts won't be complete. This also happens when we run Eleventy with generate partials.
+          if (process.env.PERCY && posts.length) {
+            throw new Error(
+              `author ${
+                author.title
+              } has no posts and no social: ${JSON.stringify(author)}`,
+            );
+          }
+        } else {
+          author.href = `https://twitter.com/${author.twitter}`;
+        }
       }
 
       const authorsImage = findAuthorsImage(author.key);
