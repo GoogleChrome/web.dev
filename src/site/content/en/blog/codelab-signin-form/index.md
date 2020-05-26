@@ -4,7 +4,7 @@ title: Signin form best practice
 authors:
   - samdutton
 date: 2020-04-24
-updated: 2020-04-28
+updated: 2020-05-26
 description: Use cross-platform browser features to build an email/password signin form that's secure, accessible and easy to use.
 tags:
   - identity
@@ -36,12 +36,12 @@ Add the following code inside the `<body>` element:
 
   <section>
     <label>Email</label>
-    <input />
+    <input>
   </section>
 
   <section>
     <label>Password</label>
-    <input />
+    <input>
   </section>
 
   <button>Sign in</button>
