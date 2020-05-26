@@ -67,7 +67,7 @@ them:
 
 <figure class="w-figure">
   <img src="./consolewarnings.png"
-       class="screenshot" alt="DevTools console warnings for deprecations and interventions."
+       class="w-screenshot" alt="DevTools console warnings for deprecations and interventions."
        title="DevTools console warnings for deprecations and interventions.">
   <figcaption>Browser-initiated warnings in the DevTools console.</figcaption>
 </figure>
