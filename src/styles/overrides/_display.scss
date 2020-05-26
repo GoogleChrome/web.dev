@@ -1,7 +1,3 @@
-.w-align-items--center {
-  align-items: center;
-}
-
 .w-display--flex {
   display: flex;
 }
@@ -10,7 +6,19 @@
   display: inline-flex;
 }
 
+.w-flex--row {
+  flex-direction: row;
+}
+
+.w-flex--column {
+  flex-direction: column;
+}
+
+.w-align-items--center {
+  align-items: center;
+}
 
 .w-justify-content--center {
   justify-content: center;
 }
+
