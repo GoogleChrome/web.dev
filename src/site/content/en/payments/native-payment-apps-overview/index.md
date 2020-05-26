@@ -417,8 +417,8 @@ finish()
 
 You must specify two parameters as Intent extras:
 
-* `methodName` - The name of the method being used.
-* `details` - JSON string containing information necessary for the merchant to
+* `methodName`: The name of the method being used.
+* `details`: JSON string containing information necessary for the merchant to
   complete the transaction. If success is `true`, then `details` must be
   constructed in such a way that `JSON.parse(details)` will succeed.
 

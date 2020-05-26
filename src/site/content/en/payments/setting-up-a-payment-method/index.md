@@ -30,10 +30,10 @@ through payment apps, read the following articles first:
 
 Every payment app needs to provide the following: 
 
-- a URL-based payment method identifier
-- a payment method manifest (except when the payment method identifier is
+- URL-based payment method identifier
+- Payment method manifest (except when the payment method identifier is
   provided by a third party)
-- a web app manifest
+- Web app manifest
 
 <figure class="w-figure">
   <img src="diagram_direct.png" 

@@ -222,11 +222,11 @@ passed along with those events, are standardized.
 
 When the payment app is launched, it receives [the transaction
 information](https://w3c.github.io/payment-handler/#the-paymentrequestevent)
-passed to the `PaymentRequest` object in Step 1, which includes:
+passed to the `PaymentRequest` object in Step 1, which includes the following:
 
-* the payment method data
-* the total price
-* payment options
+* Payment method data
+* Total price
+* Payment options
 
 The payment app uses the transaction information to label its UI.
 
@@ -261,7 +261,7 @@ of the following conditions is met:
   </figcaption>
 </figure>
 
-In the Payment Request UI, the customer can:
+In the Payment Request UI, the customer can do any of the following:
 * Select a payment method.
 * Select a shipping option.
 * Select or edit a shipping address.
@@ -283,10 +283,10 @@ the transaction details.
 
 There are four types of events a merchant can receive:
 
-* payment method change event
-* shipping address change event
-* shipping option change event
-* merchant validation event
+* Payment method change event
+* Shipping address change event
+* Shipping option change event
+* Merchant validation event
 
 ### Payment method change event
 
@@ -386,10 +386,10 @@ returns a promise that resolves to a
 [`PaymentResponse`](https://w3c.github.io/payment-request/#paymentresponse-interface).
 The `PaymentResponse` object includes the following information:
 
-* the payment result details
-* the shipping address
-* the shipping option
-* contact information
+* Payment result details
+* Shipping address
+* Shipping option
+* Contact information
 
 At this point, the browser UI may still show a loading indicator meaning that
 the transaction is not completed yet.
@@ -446,8 +446,8 @@ doPaymentRequest();
 ## Next Steps
 
 * Learn how to declare a payment method identifier in detail in [Setting up a
-  new payment method](/setting-up-a-payment-method)
+  new payment method](/setting-up-a-payment-method).
 * Learn how to build a native payment app in [Android payment apps: developer's
-  guide](/native-payment-apps-overview)
+  guide](/native-payment-apps-overview).
 * Learn how to build a web-based payment app in Web based payment apps developer
-  guide (Coming soon)
+  guide (Coming soon).
