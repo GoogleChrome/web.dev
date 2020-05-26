@@ -49,7 +49,7 @@ Inside of `.stories` we'll be listing our friends, I made each of our friends a 
 
 Each friend has some pictures, we'll call each picture a `.story`. Let's dig into how and where we're putting pictures into this component. 
 
-#### Placeholder Loading Technique
+### Placeholder Loading Technique
 I want to share a placeholder loading technique for these pictures. To do this, we'll be using CSS's `background-image` property. It allows us to specify more than one background image. We can put them in an order so that our user picture is on top and will show up automatically when it's done loading. To enable this, we'll be putting our image url into a custom property (`--bg`), and use it within our CSS to layer with the loading placeholder.
 
 ```html/2-14
