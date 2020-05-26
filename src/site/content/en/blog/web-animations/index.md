@@ -92,7 +92,7 @@ Let's continue with our previous example, and create an orchestrated animation c
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="./modal-open.mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/web-animations/modal-open.mp4">
   </video>
   <figcaption class="w-figcaption">
     Applying transformations and opacity to an opening modal element. <a href="https://codepen.io/una/pen/dyYKJMz">See Demo on Codepen</a>
@@ -116,7 +116,7 @@ You can take the above animation, and give it a smooth, reversed animation when 
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="./modal-reverse.mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/web-animations/modal-reverse.mp4">
   </video>
   <figcaption class="w-figcaption">
     An example of a modal opening and closing upon button click. <a href="https://codepen.io/kevers-google/details/LYpvdNG">See Demo on Codepen </a>
@@ -157,7 +157,7 @@ When creating animations based on events, such as on `"mousemove"`, a new animat
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="./comet-trail.mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/web-animations/comet-trail.mp4">
   </video>
   <figcaption class="w-figcaption">
   A comet trail animates when the mouse moves. <a href="https://codepen.io/kevers-google/details/gOaqXoQ">View Demo on Codepen</a>
@@ -183,7 +183,7 @@ There are a few additional methods to take your animation control even further:
 
 <figure class="w-figure">
 <video controls autoplay loop muted class="w-screenshot">
-    <source src="./retargetting.mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/web-animations/retargetting.mp4">
   </video>  <figcaption class="w-figcaption">
     Retargeting example, where a mouse click adjusts the animation to a new location. <a href="https://codepen.io/una/details/BaoveQJ">See Demo on Codepen </a>
   </figcaption>
@@ -208,7 +208,7 @@ When you composite animations, a developer can write short, distinct effects and
 
 <figure class="w-figure">
 <video controls autoplay loop muted class="w-screenshot">
-    <source src="./replace-add-accumulate.mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/web-animations/replace-add-accumulate.mp4">
   </video>  <figcaption class="w-figcaption">
     <a href="https://codepen.io/kevers-google/pen/wvKbaGM"> See Demo on Codepen </a>
   </figcaption>
@@ -220,7 +220,7 @@ Let's take a look at a UI element example:
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="./dropdown.mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/web-animations/dropdown.mp4">
   </video>
   <figcaption class="w-figcaption">
   A bouncy dropdown menu which has two composited animations applied to it. <a href="https://codepen.io/kevers-google/details/ExVrbEm">View Demo on Codepen</a>
