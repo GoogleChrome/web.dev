@@ -30,16 +30,16 @@ const observer = new ReportingObserver((reports, observer) => {
 observer.observe();
 ```
 
-Use the callback to send reports to a backend or analytics provider for
+Use the callback to send reports to a back end or analytics provider for
 analysis.
 
 Why is that useful? Until this API, deprecation and intervention warnings were
-only available in the DevTools as console messages. Interventions, in
-particular, are only triggered by various real-world constraints like device and
-network conditions. Thus, you may never even see these messages when
-developing/testing a site locally. `ReportingObserver` provides the solution to
-this problem. When users experience potential issues in the wild, web developers
-can be notified about them.
+only available in DevTools as a console messages. Interventions, in particular,
+are only triggered by various real-world constraints like device and network
+conditions. Thus, you may never even see these messages when developing/testing
+a site locally. `ReportingObserver` provides a solution to this problem. When
+users experience potential issues in the wild, web developers can be notified
+about them.
 
 `ReportingObserver` has only shipped in Chrome 69. It is being considered by
 other browsers.
@@ -76,8 +76,8 @@ them:
 
 One would naturally think `window.onerror` captures these warnings. It does not.
 That's because `window.onerror` does not fire for warnings generated directly by
-the user agent itself. It fires for runtime errors (JS exceptions and syntax
-errors) caused by code execution.
+the user agent itself. It fires for runtime errors (JavaScriptß exceptions and
+syntax errors) caused by code execution.
 
 `ReportingObserver` picks up the slack. It provides a programmatic way to be
 notified about browser-issued warnings such as [deprecations][deprecations] and
@@ -87,7 +87,7 @@ sleep wondering if users are hitting unexpected issues on your live site.
 {% Aside 'key-term' %}
 `ReportingObserver` is part of a larger spec, the [Reporting
 API](/web/updates/2018/09/reportingapi), which provides a common way to send
-these different reports to a backend. The Reporting API is a generic framework
+these different reports to a back end. The Reporting API is a generic framework
 to specify a set of server endpoints to report issues to.
 {% endAside %}
 
@@ -182,7 +182,7 @@ observer.observe();
 
 `ReportingObserver` gives you an additional way for discovering and monitoring
 potential issues in your web app. It's even a useful tool for understanding the
-health of your code base (or lack thereof). Send reports to a backend, know
+health of your code base (or lack thereof). Send reports to a back end, know
 about the real-world issues, update code, profit!
 
 ## Future work {: #future }
