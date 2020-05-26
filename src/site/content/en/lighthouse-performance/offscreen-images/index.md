@@ -22,11 +22,6 @@ to lower [Time to Interactive](/interactive):
 
 See also [Lazy load offscreen images with lazysizes codelab](/codelab-use-lazysizes-to-lazyload-images).
 
-## Bug: `loading="lazy"` images are incorrectly flagged
-
-This audit incorrectly flags [natively lazy-loaded images](/native-lazy-loading/).
-See [issue #6677](https://github.com/GoogleChrome/lighthouse/issues/6677) for details.
-
 ## Resources
 
 - [Source code for **Defer offscreen images** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/offscreen-images.js)
