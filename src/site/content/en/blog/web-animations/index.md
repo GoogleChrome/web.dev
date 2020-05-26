@@ -18,7 +18,7 @@ tags:
   - chrome84
 ---
 
-Adding delightful animations to your website is not only for cosmetic reasons. When used correctly, animations improve user perception and [memory](https://www.researchgate.net/publication/229351931_The_Effects_of_Animation_and_Format_on_the_Perception_and_Memory_of_Online_Advertising) of your brand, guide user actions, but also helps users navigate your application—providing context in a digital space.
+Adding animations to your website is not only for cosmetic reasons. When used correctly, animations improve user perception and [memory](https://www.researchgate.net/publication/229351931_The_Effects_of_Animation_and_Format_on_the_Perception_and_Memory_of_Online_Advertising) of your brand, guide user actions, but also helps users navigate your application—providing context in a digital space.
 
 <figure class="w-figure">
   <img class="w-screenshot" src='./waapi-timeline.png' alt="The Web Animations API first hit Chrome in version 36, July of 2014. Now the spec is going to be complete, in version 84, launching July 2020.">
