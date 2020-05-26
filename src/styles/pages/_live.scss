@@ -86,14 +86,30 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  margin: 64px auto;
+  margin: (64px - $WEB_HEADER_HEIGHT - 48px) auto 64px;
   max-width: 960px;
+  padding-top: ($WEB_HEADER_HEIGHT + 48px);
   text-align: center;  // for mobile
+
+  &::before {
+    display: none !important;
+  }
 
   @include bp(md) {
     text-align: inherit;
   }
 }
+
+.w-event-section--subscribe {
+  padding-left: 32px;
+  padding-right: 32px;
+
+  // Make the subscribe area less huge as it has its own padding.
+  web-subscribe {
+    margin-top: -32px;
+  }
+}
+
 
 .w-event-hero {
   align-items: center;
