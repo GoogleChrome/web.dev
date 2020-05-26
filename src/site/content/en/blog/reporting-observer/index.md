@@ -42,7 +42,6 @@ about them.
 
 `ReportingObserver` has only shipped in Chrome 69. It is being considered by
 other browsers.
-{: .dogfood }
 
 ## Background
 
