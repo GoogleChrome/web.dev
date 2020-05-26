@@ -191,7 +191,7 @@ that goes wrong in your app:
 
 - [Browser interventions][interventions]
 - Deprecations
-- [Feature Policy][featurepolicy] violations. See [crbug.com/867471](https://bugs.chromium.org/p/chromium/issues/detail?id=867471).
+- [Feature Policy][featurepolicy] violations. See [Chromium Issue #867471](https://crbug.com/867471).
 - JS exceptions and errors (currently serviced by `window.onerror`).
 - Unhandled JS promise rejections (currently serviced by `window.onunhandledrejection`)
 
