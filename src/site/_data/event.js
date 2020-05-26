@@ -145,7 +145,7 @@ const eventData = [
       },
       {
         speaker: 'una',
-        title: '10 Layouts in 10 Lines or Less',
+        title: '10 Modern Layouts in 1 Line of CSS',
       },
       {
         speaker: ['developit', 'jakearchibald'],
