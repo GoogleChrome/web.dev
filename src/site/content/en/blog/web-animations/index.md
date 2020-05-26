@@ -34,7 +34,7 @@ While it has a long history, originally launching in Chrome 36, the latest relea
 
 ## Getting Started
 
-To use the Web Animations API, we'll need to create a Keyframe Object. If you're familiar with CSS `@keyframe`s, this is very similar. What might look like [this](https://codepen.io/una/pen/RwWMvPw) in CSS:
+Creating an animation via the web animations API should feel very familiar if you've used `@keyframe` rules. First you'll need to create a Keyframe Object. What might look like [this](https://codepen.io/una/pen/RwWMvPw) in CSS:
 
 ```css
 @keyframes openAnimation {
@@ -76,11 +76,17 @@ document.querySelector('.modal').animate(
 );
 ```
 
-So the amount of code is about the same, but with JavaScript, we get a couple of superpowers that we don't have with CSS alone. This includes the ability to group effects, and to move within an animation timeline.
+So the amount of code is about the same, but with JavaScript, we get a couple of superpowers that we don't have with CSS alone. This includes the ability to sequence effects, and to control their play states.
 
 {% Aside %}
   Hyphenated property names become camel case when used in keyframes (i.e. `background-color` to `backgroundColor`)
 {% endAside %}
+
+### Get | Set Animations
+
+Creating keyframes in JavaScript is no longer the only way to interact with animations using the Web Animations API. We can now get and set CSS animations.
+
+-- MORE HERE --
 
 ## Orchestrating Animations with Promises
 
@@ -120,45 +126,42 @@ We can take the above animation, and give it a smooth, reversed animation when c
     <source src="./modal-reverse.mp4">
   </video>
   <figcaption class="w-figcaption">
-    An example of a modal opening and closing upon button click. <a href="https://codepen.io/una/pen/eYpbaOb">See Demo on Codepen </a>
+    An example of a modal opening and closing upon button click. <a href="https://codepen.io/kevers-google/details/LYpvdNG">See Demo on Codepen </a>
   </figcaption>
 </figure>
 
-What we need to do is create two play-pending animations, and then pause one of the animations, delaying it until the other is finished. We can then use promises to wait for each to be finished before playing. Finally, we can check to see if a flag (such as an `open` variable in this case) is set, and then reverse each animation.
+What we need to do is create two play-pending animations (`openModal`, and an inline opacity transformation), and then pause one of the animations, delaying it until the other is finished. We can then use promises to wait for each to be finished before playing. Finally, we can check to see if a flag (such as an `open` variable in this case) is set, and then reverse each animation.
 
 ```js/13-14
-document.querySelector('button').addEventListener('click', () => {
+document.querySelector('button').addEventListener('click', () => {                                 
   // Create two play-pending animations.
-  const expandCollapseAnim = modal.animate(openModal, openModalSettings);
-  const showFadeAnim = text.animate(fadeIn, fadeInSettings);
-  
+  let animations = [
+    document.querySelector('.modal').animate(openModal, openModalSettings),
+    document.querySelector('.text').animate({ opacity: [0, 1] }, 
+                       openModalSettings)
+  ];
+
   // Pause one of the animations and delay it's start until the
   // other is finished.
-  let firstAnimation, secondAnimation;
   if (open) {
-    firstAnimation = showFadeAnim;
-    secondAnimation = expandCollapseAnim;
-    showFadeAnim.currentTime = fadeInSettings.duration;
-    expandCollapseAnim.currentTime = openModalSettings.duration;
-    expandCollapseAnim.reverse();
-    showFadeAnim.reverse();
-  } else {
-    firstAnimation = expandCollapseAnim;
-    secondAnimation = showFadeAnim;
+    animations.forEach((anim) => {
+      anim.currentTime = anim.effect.getTiming().duration;
+      anim.reverse();
+    });
+    animations = animations.reverse();
   }
-  secondAnimation.pause();
   
-  firstAnimation.finished.then(() => {
-    secondAnimation.play();
+  // Run animations sequentially.
+  animations[1].pause();  
+  animations[0].finished.then(() => {
+    animations[1].play();
   });
-
-  // set open state
   open = !open;
 });
 ```
 
 {% Aside %}
-  For a great example of `GroupEffect` and `playState`, check out [this example](https://codepen.io/samthor/pen/mJxPRK?editors=0010) from [Sam Thorogood](/authors/samthor/).
+  For a great example of `playState`, check out [this example](https://codepen.io/samthor/pen/mJxPRK?editors=0010) from [Sam Thorogood](/authors/samthor/).
 {% endAside %}
 
 -- More concise snippet/way of writing this here --
@@ -166,7 +169,7 @@ document.querySelector('button').addEventListener('click', () => {
 
 ## Performance Improvements with Replaceable Animations
 
-When creating animations based on events, such as on `mousemove`, a new animation is created each time, which can quickly consume memory and degrade performance.  To address this problem, replaceable animations were introduced, enabling finished animation effects to be overridden by other finished animations and removed from the set of active animations.
+When creating animations based on events, such as on `mousemove`, a new animation is created each time, which can quickly consume memory and degrade performance.  To address this problem, replaceable animations were introduced, enabling automated cleanup, where finished animations are flagged as replaceable and automatically removed if replaced by another finished animation.
 
 For a small number of animations, this is not typically a problem, but consider the following example:
 
@@ -175,15 +178,19 @@ For a small number of animations, this is not typically a problem, but consider 
     <source src="./comet-trail.mp4">
   </video>
   <figcaption class="w-figcaption">
-  A comet trail animates when the mouse moves. <a href="https://codepen.io/kevers-google/pen/gOaqXoQ">View Demo on Codepen</a>
+  A comet trail animates when the mouse moves. <a href="https://codepen.io/kevers-google/details/gOaqXoQ">View Demo on Codepen</a>
   </figcaption>
 </figure>
 
--- this section needs some work, how does the above example showcase replaceable animations? --
+-- Is this right, below: --
+
+In the example above, we are denoting replaceable animations with `fill:forwards`, and can calculate exactly how many animations are being replaced by tallying up the count with each removed animation, using `anim.onremove` to trigger the counter. 
+
+-- animation.commitStyles demo --
 
 There are a few new methods to take your animation control even further:
 
-- `animation.commitStyles` is a method used to update the style of an element based on underlying style along with all animations on the element in the composite order.
+- `animation.commitStyles` is a method used to update the style of an element based on the underlying style along with all animations on the element in the composite order.
 - `animation.onremove` - with the `onremove` event handler, we can run custom JavaScript code when an animation is replaced.
 - `animation.replaceState` provides a means of tracking whether an animation is active, persisted or removed.
 - `animation.persist` marks an animation as non-replaceable. Persisting an animation is useful when used with animation compositing modes, such as add.
@@ -217,12 +224,17 @@ With the Web Animations API, you can now composite your animations, meaning they
 
 When you composite animations, a developer can write short, distinct effects and see them combined together:
 
+-- example with boxes here ---
+
+
+--- reconfigure this one ---
+
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="./dropdown.mp4">
   </video>
   <figcaption class="w-figcaption">
-  A bouncy dropdown menu which has two composites animations applied to it. <a href="https://codepen.io/kevers-google/pen/ExVrbEm">View Demo on Codepen</a>
+  A bouncy dropdown menu which has two composited animations applied to it. <a href="https://codepen.io/kevers-google/details/ExVrbEm">View Demo on Codepen</a>
   </figcaption>
 </figure>
 
@@ -255,8 +267,8 @@ The composite mode `accumulate` behaves slightly differently from add. For prope
 
 ### What's Coming Next!
 
-These are all exciting additions to the Web Animations capabilities in todays browsers. And even more capabilities are coming down the pipeline:
+These are all exciting additions to the Web Animations capabilities in today's browsers. And even more capabilities are coming down the pipeline:
 
 - [Scroll-linked animations with the Houdini API](https://www.w3.org/TR/css-animation-worklet-1/#scroll-timeline)
-- Mutable timelines <-- link?
-- 1 more item here with links
+- [Mutable timelines](https://drafts.csswg.org/web-animations-2/#setting-the-timeline)
+- [Group Effect and Synchronization](https://drafts.csswg.org/web-animations-2/#grouping-and-synchronization)
