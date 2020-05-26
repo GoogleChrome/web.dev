@@ -1,5 +1,5 @@
 ---
-title: "ResizeObserver: it’s like `document.onresize` for elements"
+title: "ResizeObserver: it’s like document.onresize for elements"
 subhead: "`ResizeObserver` lets you know when an element's size changes."
 authors:
   - surma
