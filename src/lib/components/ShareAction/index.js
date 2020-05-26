@@ -1,30 +1,31 @@
 /**
- * @fileoverview Element that wraps another element and adds a share action on click.
+ * @fileoverview Element that adds a share action on click.
  */
 
-import {html} from 'lit-element';
-import {BaseElement} from '../BaseElement';
 import {isWebShareSupported} from '../../utils/web-share';
 
 /**
- * Renders share element. It renders its children as content of the element.
+ * Renders share element. This simply adds behavaior to share, and does not
+ * render any HTML.
  *
  * @extends {BaseElement}
  * @final
  */
-class ShareAction extends BaseElement {
-  static get properties() {
-    return {
-      // Comma-seperated handles of authors of the content to be shared, including "@" if e.g. a Twitter user
-      authors: {type: String},
-      // Whether the Web Share API is supported
-      webShareSupported: {type: Boolean},
-    };
-  }
-
+class ShareAction extends HTMLElement {
   constructor() {
     super();
-    this.webShareSupported = isWebShareSupported();
+    const webShareSupported = isWebShareSupported();
+
+    // Add "share" or "twitter" to the data-label of this element, for Analytics.
+    let label = this.getAttribute('data-label') || '';
+    if (label) {
+      label += ', ';
+    }
+    label += webShareSupported ? 'share' : 'twitter';
+    this.setAttribute('data-label', label);
+
+    const handler = webShareSupported ? this.onWebShare : this.onTwitterShare;
+    this.addEventListener('click', handler.bind(this));
   }
 
   onWebShare(e) {
@@ -49,9 +50,11 @@ class ShareAction extends BaseElement {
 
   get shareText() {
     let authorText = '';
-    if (this.authors && this.authors.length) {
-      const authors = this.authors
-        .split(',')
+
+    const raw = this.getAttribute('authors') || '';
+    if (raw && raw.length) {
+      const authors = raw
+        .split('|')
         .map((x) => x.trim())
         .filter(Boolean);
       // ListFormat isn't widely supported; feature-detect it first
@@ -62,24 +65,8 @@ class ShareAction extends BaseElement {
         authorText = ` by ${authors.join(', ')}`;
       }
     }
+
     return document.title + authorText;
-  }
-
-  // Extracting this function makes linter happy by avoiding double html`` call.
-  renderChild(el) {
-    return html`
-      ${el}
-    `;
-  }
-
-  render() {
-    return html`
-      <div
-        @click=${this.webShareSupported ? this.onWebShare : this.onTwitterShare}
-      >
-        ${Array.from(this.children).map((el) => this.renderChild(el))}
-      </div>
-    `;
   }
 }
 
