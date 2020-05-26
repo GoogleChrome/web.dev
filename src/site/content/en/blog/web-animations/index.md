@@ -13,7 +13,7 @@ hero: hero.png
 description: Wrangling your web animations is about to get much easier.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-   - web animations
+  - web animations
   - waapi
   - chrome84
 ---
@@ -33,7 +33,7 @@ While it has a long history, originally launching in Chrome 36, the latest relea
 
 ## Getting Started
 
-Creating an animation via the web animations API should feel very familiar if you've used `@keyframe` rules. First you'll need to create a Keyframe Object. What might look like [this](https://codepen.io/una/pen/RwWMvPw) in CSS:
+Creating an animation via the web animations API should feel very familiar if you've used `"@keyframe"` rules. First you'll need to create a Keyframe Object. What might look like [this](https://codepen.io/una/pen/RwWMvPw) in CSS:
 
 ```css
 @keyframes openAnimation {
@@ -89,12 +89,12 @@ Creating keyframes in JavaScript is no longer the only way to interact with anim
 
 ## Orchestrating Animations with Promises
 
-In Chrome 84, you now have two methods that can be used with promises: `animation.ready()` and `animation.finished`
+In Chrome 84, you now have two methods that can be used with promises: `"animation.ready"` and `"animation.finished"`.
 
--  `animation.ready` is a promise that enables you to wait for pending changes to take effect (i.e. switching between playback control methods such as play and pause)
-- `animation.finished` is a promise that provides a means of executing custom JavaScript code when an animation is complete.
+- `animation.ready` enables you to wait for pending changes to take effect (i.e. switching between playback control methods such as play and pause)
+- `animation.finished` provides a means of executing custom JavaScript code when an animation is complete.
 
-Let's continue with our previous example, and create an orchestrated animation chain with `animation.finished`. Here, you have a vertical transformation (`scaleY`), followed by a horizontal transformation (`scaleX`), followed by an opacity change on a child element: 
+Let's continue with our previous example, and create an orchestrated animation chain with `"animation.finished"`. Here, you have a vertical transformation (`"scaleY"`), followed by a horizontal transformation (`"scaleX"`), followed by an opacity change on a child element: 
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
@@ -110,15 +110,15 @@ const anim1 = modal.animate(openModal, openModalSettings);
 anim1.finished.then(() => { text.animate(fadeIn, fadeInSettings)});
 ```
 
-We've chained these animations using `animation.finished.then()` prior to executing the next animation set in the chain. This way, the animations appear in order, and you are even applying effects to different target elements with different options set (such as speed and ease).
+We've chained these animations using `"animation.finished.then()"` prior to executing the next animation set in the chain. This way, the animations appear in order, and you are even applying effects to different target elements with different options set (such as speed and ease).
 
-Within CSS, this would be cumbersome to recreate, especially when applying unique, yet sequenced animations to multiple elements. You'd have to use a `@keyframe`, sort out the correct timing percentages to place the animations, and use `animation-delay` prior to triggering the animations in the sequence.
+Within CSS, this would be cumbersome to recreate, especially when applying unique, yet sequenced animations to multiple elements. You'd have to use a `"@keyframe"`, sort out the correct timing percentages to place the animations, and use `"animation-delay"` prior to triggering the animations in the sequence.
 
 ## Play, Pause, Reverse
 
 What can open, should close! Luckily, since Chrome 39, the WAAPI has provided us the ability to play, pause, and reverse our animations.
 
-You can take the above animation, and give it a smooth, reversed animation when clicking the button again using `.reverse()`. This way, you can create a smoother and more contextual interaction for our modal.
+You can take the above animation, and give it a smooth, reversed animation when clicking the button again using `".reverse()"`. This way, you can create a smoother and more contextual interaction for our modal.
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
@@ -129,7 +129,7 @@ You can take the above animation, and give it a smooth, reversed animation when 
   </figcaption>
 </figure>
 
-What you need to do is create two play-pending animations (`openModal`, and an inline opacity transformation), and then pause one of the animations, delaying it until the other is finished. You can then use promises to wait for each to be finished before playing. Finally, you can check to see if a flag (such as an `open` variable in this case) is set, and then reverse each animation.
+What you need to do is create two play-pending animations (`"openModal"`, and an inline opacity transformation), and then pause one of the animations, delaying it until the other is finished. You can then use promises to wait for each to be finished before playing. Finally, you can check to see if a flag (such as an `"open"` variable in this case) is set, and then reverse each animation.
 
 ```js/13-14
 document.querySelector('button').addEventListener('click', () => {                                 
@@ -160,7 +160,7 @@ document.querySelector('button').addEventListener('click', () => {
 ```
 
 {% Aside %}
-  For a great example of `playState`, check out [this example](https://codepen.io/samthor/pen/mJxPRK?editors=0010) from [Sam Thorogood](/authors/samthor/).
+  For a great example of `"playState"`, check out [this example](https://codepen.io/samthor/pen/mJxPRK?editors=0010) from [Sam Thorogood](/authors/samthor/).
 {% endAside %}
 
 -- More concise snippet/way of writing this here --
@@ -168,7 +168,7 @@ document.querySelector('button').addEventListener('click', () => {
 
 ## Performance Improvements with Replaceable Animations
 
-When creating animations based on events, such as on `mousemove`, a new animation is created each time, which can quickly consume memory and degrade performance.  To address this problem, replaceable animations were introduced, enabling automated cleanup, where finished animations are flagged as replaceable and automatically removed if replaced by another finished animation.
+When creating animations based on events, such as on `"mousemove"`, a new animation is created each time, which can quickly consume memory and degrade performance.  To address this problem, replaceable animations were introduced, enabling automated cleanup, where finished animations are flagged as replaceable and automatically removed if replaced by another finished animation.
 
 For a small number of animations, this is not typically a problem, but consider the following example:
 
@@ -183,16 +183,16 @@ For a small number of animations, this is not typically a problem, but consider 
 
 -- Is this right, below: --
 
-In the example above, you are denoting replaceable animations with `fill:forwards`, and can calculate exactly how many animations are being replaced by tallying up the count with each removed animation, using `anim.onremove` to trigger the counter. 
+In the example above, you are denoting replaceable animations with `"fill:forwards"`, and can calculate exactly how many animations are being replaced by tallying up the count with each removed animation, using `"anim.onremove"` to trigger the counter. 
 
 -- animation.commitStyles demo --
 
 There are a few new methods to take your animation control even further:
 
-- `animation.commitStyles` is a method used to update the style of an element based on the underlying style along with all animations on the element in the composite order.
-- `animation.onremove` - calls some custom JavaScript code when an animation is replaced.
-- `animation.replaceState` provides a means of tracking whether an animation is active, persisted or removed.
-- `animation.persist` marks an animation as non-replaceable. Persisting an animation is useful when used with animation compositing modes, such as add.
+- `animation.commitStyles()` updates the style of an element based on the underlying style along with all animations on the element in the composite order.
+- `animation.onremove()` - calls some custom JavaScript code when an animation is replaced.
+- `animation.replaceState()` provides a means of tracking whether an animation is active, persisted, or removed.
+- `animation.persist()` marks an animation as non-replaceable. Persisting an animation is useful when used with animation compositing modes, such as "add".
 
 ## Dynamic Interactions with Partial Keyframes
 
@@ -219,7 +219,7 @@ Example here shows re-targeting. This highlights partial keyframes.
 
 ## Compositing Animations
 
-With the Web Animations API, you can now composite your animations, meaning they can be additive or accumulative. [Composite modes](https://css-tricks.com/additive-animation-web-animations-api/) allow developers to write distinct animations and have control over how effects are combined. Three composite modes are now supported: `replace` (the default mode), `add`, and `accumulate`.
+With the Web Animations API, you can now composite your animations, meaning they can be additive or accumulative. [Composite modes](https://css-tricks.com/additive-animation-web-animations-api/) allow developers to write distinct animations and have control over how effects are combined. Three composite modes are now supported: `"replace"` (the default mode), `"add"`, and `"accumulate"`.
 
 When you composite animations, a developer can write short, distinct effects and see them combined together:
 
@@ -239,7 +239,7 @@ When you composite animations, a developer can write short, distinct effects and
 
 -- note: I will jazz the style up later --
 
-In the example above, two animations are composited. The first is a macro-animation, which animates the `top` property, moving the dropdown vertically downwards by the full height of the menu itself as a slide-in effect, and the second micro-animation applies a little bounce as it hits the bottom.
+In the example above, two animations are composited. The first is a macro-animation, which animates the `"top"` property, moving the dropdown vertically downwards by the full height of the menu itself as a slide-in effect, and the second micro-animation applies a little bounce as it hits the bottom.
 
 ```js/12
 const dropDown = menu.animate(
@@ -258,11 +258,11 @@ const dropDown = menu.animate(
   });
 ```
 
-Without `composite: add`, the animation would look like:
+Without `"composite: add"`, the animation would look like:
 
 -- does this look any different? --
 
-The composite mode `accumulate` behaves slightly differently from add. For properties that are additive such as translations or rotations, the results are the same. Properties like scale, which are multiplicative, behave differently.  <-- is this right? is there an example?
+The composite mode `"accumulate"` behaves slightly differently from add. For properties that are additive such as translations or rotations, the results are the same. Properties like scale, which are multiplicative, behave differently.  <-- is this right? is there an example?
 
 ### What's Coming Next!
 
