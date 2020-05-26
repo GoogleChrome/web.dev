@@ -75,10 +75,10 @@ document.querySelector('.modal').animate(
 );
 ```
 
-The amount of code is about the same, but with JavaScript, you get a couple of superpowers that you don't have with CSS alone. This includes the ability to sequence effects, and to control their play states.
+The amount of code is about the same, but with JavaScript, you get a couple of superpowers that you don't have with CSS alone. This includes the ability to sequence effects, and an increased control of their play states.
 
 {% Aside %}
-  Hyphenated property names become camel case when used in keyframes (i.e. `background-color` to `backgroundColor`)
+  Hyphenated property names become camel case when used in keyframes (i.e. `"background-color"` to `"backgroundColor"`)
 {% endAside %}
 
 ## Orchestrating animations with promises
@@ -88,7 +88,7 @@ In Chrome 84, you now have two methods that can be used with promises: `"animati
 - `animation.ready` enables you to wait for pending changes to take effect (i.e. switching between playback control methods such as play and pause).
 - `animation.finished` provides a means of executing custom JavaScript code when an animation is complete.
 
-Let's continue with our previous example, and create an orchestrated animation chain with `"animation.finished"`. Here, you have a vertical transformation (`"scaleY"`), followed by a horizontal transformation (`"scaleX"`), followed by an opacity change on a child element: 
+Let's continue with our example, and create an orchestrated animation chain with `"animation.finished"`. Here, you have a vertical transformation (`"scaleY"`), followed by a horizontal transformation (`"scaleX"`), followed by an opacity change on a child element: 
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
@@ -123,7 +123,7 @@ You can take the above animation, and give it a smooth, reversed animation when 
   </figcaption>
 </figure>
 
-What you need to do is create two play-pending animations (`"openModal"`, and an inline opacity transformation), and then pause one of the animations, delaying it until the other is finished. You can then use promises to wait for each to be finished before playing. Finally, you can check to see if a flag (such as an "open" variable in this case) is set, and then reverse each animation.
+What you can do is create two play-pending animations (`"openModal"`, and an inline opacity transformation), and then pause one of the animations, delaying it until the other is finished. You can then use promises to wait for each to be finished before playing. Finally, you can check to see if a flag is set, and then reverse each animation.
 
 ```js/17-20
 document.querySelector('button').addEventListener('click', () => {                                 
@@ -151,6 +151,21 @@ document.querySelector('button').addEventListener('click', () => {
 });
 ```
 
+## Dynamic interactions with partial keyframes
+
+<figure class="w-figure">
+<video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/web-animations/retargetting.mp4">
+  </video>  <figcaption class="w-figcaption">
+    Retargeting example, where a mouse click adjusts the animation to a new location. <a href="https://codepen.io/una/details/BaoveQJ">See Demo on Codepen </a>
+  </figcaption>
+</figure>
+
+
+In this example, there is no specified start position. This is an example of using **partial keyframes**. The mouse handler does a few things here: it sets a new end location and triggers a new animation. The new start position is inferred from the current underlying position. 
+
+New transitions can be triggered while existing ones are still running. This means that the current transition is interrupted, and a new one is created.
+
 ## Performance improvements with replaceable animations
 
 When creating animations based on events, such as on `"mousemove"`, a new animation is created each time, which can quickly consume memory and degrade performance.  To address this problem, replaceable animations were introduced, enabling automated cleanup, where finished animations are flagged as replaceable and automatically removed if replaced by another finished animation. Consider the following example:
@@ -164,31 +179,6 @@ When creating animations based on events, such as on `"mousemove"`, a new animat
   </figcaption>
 </figure>
 
-Each time the mouse moves, the browser re-calculates the position for each ball in the comet trail and creates an animation to this new point. The browser now knows to replace these animations instead of add new animations when:
-
-1. The animation is finished
-2. There is one or more animations higher in composite ordering that are also finished
-3. The new animations are animating the same properties.
-
-You can see exactly how many animations are being replaced by tallying up a counter with each removed animation, using `"anim.onremove"` to trigger the counter.
-
-There are a few additional methods to take your animation control even further:
-
-- `animation.commitStyles()` updates the style of an element based on the underlying style along with all animations on the element in the composite order.
-- `animation.onremove()` calls some custom JavaScript code when an animation is replaced.
-- `animation.replaceState()` provides a means of tracking whether an animation is active, persisted, or removed.
-- `animation.persist()` marks an animation as non-replaceable. Persisting an animation is useful when used with animation compositing modes, such as "add".
-
-## Dynamic interactions with partial keyframes
-
-<figure class="w-figure">
-<video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/web-animations/retargetting.mp4">
-  </video>  <figcaption class="w-figcaption">
-    Retargeting example, where a mouse click adjusts the animation to a new location. <a href="https://codepen.io/una/details/BaoveQJ">See Demo on Codepen </a>
-  </figcaption>
-</figure>
- 
  ```js
 elem.addEventListener('mousemove', evt => {
   rectangle.animate(
@@ -198,11 +188,28 @@ elem.addEventListener('mousemove', evt => {
 });
 ```
 
-In this example, there is no initial location from which to move. This is called a **partial keyframe**. Instead, the mouse click does a few things: it sets a new end location, triggers a new animation, and sets the a new initial location based. New animations can occur *during* existing animations, meaning that the current animation will be interrupted, a new start and end point set, and a new animation triggered.
+Each time the mouse moves, the browser re-calculates the position for each ball in the comet trail and creates an animation to this new point. The browser now knows to remove old animations (enabling replacement) when:
+
+1. The animation is finished
+2. There is one or more animations higher in composite ordering that are also finished
+3. The new animations are animating the same properties.
+
+You can see exactly how many animations are being replaced by tallying up a counter with each removed animation, using `"anim.onremove"` to trigger the counter.
+
+There are a few additional methods to take your animation control even further:
+
+- `animation.onremove()` calls some custom JavaScript code when an animation is replaced.
+- `animation.replaceState()` provides a means of tracking whether an animation is active, persisted, or removed.
+- `animation.commitStyles()` updates the style of an element based on the underlying style along with all animations on the element in the composite order.
+- `animation.persist()` marks an animation as non-replaceable.
+
+{% Aside %}
+  The last two methods are commonly used with compositing modes, such as "add". Check out the demo below to see them in action.
+{% endAside %}
 
 ## Smoother animations with composite modes
 
-With the Web Animations API, you can now composite your animations, meaning they can be additive or accumulative. [Composite modes](https://css-tricks.com/additive-animation-web-animations-api/) allow developers to write distinct animations and have control over how effects are combined. Three composite modes are now supported: `"replace"` (the default mode), `"add"`, and `"accumulate"`.
+With the Web Animations API, you can now set the composite mode of your animations, meaning they can be additive or accumulative, in addition to the default mode of "replace". [Composite modes](https://css-tricks.com/additive-animation-web-animations-api/) allow developers to write distinct animations and have control over how effects are combined. Three composite modes are now supported: `"replace"` (the default mode), `"add"`, and `"accumulate"`.
 
 When you composite animations, a developer can write short, distinct effects and see them combined together. In the example below, we are applying a rotation and scale keyframe to each box, with the only adjustment being the composite mode, added as an option:
 
@@ -214,7 +221,7 @@ When you composite animations, a developer can write short, distinct effects and
   </figcaption>
 </figure>
 
-In the default, `"replace"` composite mode, the final animation replaces the transform property and ends up at `rotate(360deg) scale(1.4)`. For `"add"`, composite adds the rotation and multiplies the scale, resulting in a final state of `rotate(720deg) scale(1.96)`. `"accumulate"` combines the transformations, resulting in `rotate(720deg) scale(1.8)`. For more on the intricasies of these composite modes, check out the [Web Animations Spec](https://www.w3.org/TR/web-animations-1/#the-compositeoperation-enumeration).
+In the default, `"replace"` composite mode, the final animation replaces the transform property and ends up at `rotate(360deg) scale(1.4)`. For `"add"`, composite adds the rotation and multiplies the scale, resulting in a final state of `rotate(720deg) scale(1.96)`. `"accumulate"` combines the transformations, resulting in `rotate(720deg) scale(1.8)`. For more on the intricacies of these composite modes, check out the [Web Animations Spec](https://www.w3.org/TR/web-animations-1/#the-compositeoperation-enumeration).
 
 Let's take a look at a UI element example:
 
