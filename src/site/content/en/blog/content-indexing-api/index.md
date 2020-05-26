@@ -46,14 +46,16 @@ installed PWAs, it will be surfaced by the browser as shown below.
 
 <div class="w-columns">
   <figure class="w-figure">
-    <img src="downloads-menu.png"
+    <img class="w-screenshot w-screenshot--filled"
+         src="downloads-menu.png"
          alt="A screenshot of the Downloads menu item on Chrome's new tab page.">
     <figcaption class="w-figcaption">
       First, select the <b>Downloads</b> menu item on Chrome's new tab page.
     </figcaption>
   </figure>
   <figure class="w-figure">
-    <img src="articles-for-you.png"
+    <img class="w-screenshot w-screenshot--filled"
+         src="articles-for-you.png"
          alt="Media and articles that have been added to the index.">
     <figcaption class="w-figcaption">
       Media and articles that have been added to the index will be shown in the
@@ -247,7 +249,7 @@ they're done viewing previously indexed content. This is how the deletion
 interface looks in Chrome 80:
 
 <figure class="w-figure">
-  <img src="delete-menu.png" alt="The delete menu item." width="550">
+  <img class="w-screenshot" src="delete-menu.png" alt="The delete menu item." width="550">
 </figure>
 
 When someone selects that menu item, your web app's service worker will receive
