@@ -234,7 +234,7 @@ Let's take a look at a UI element example:
   </figcaption>
 </figure>
 
-Here, two `"top"` animations are composited. The first is a macro-animation, which moves the dropdown by the full height of the menu itself as a slide-in effect from the top of the page, and the second, a micro-animation, applies a little bounce as it hits the bottom. Using the `"add"` composite mode enables a smoother transition.
+Here, two `top` animations are composited. The first is a macro-animation, which moves the dropdown by the full height of the menu itself as a slide-in effect from the top of the page, and the second, a micro-animation, applies a little bounce as it hits the bottom. Using the `'add'` composite mode enables a smoother transition.
 
 ```js/12
 const dropDown = menu.animate(
