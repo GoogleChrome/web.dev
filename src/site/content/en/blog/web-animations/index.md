@@ -85,12 +85,10 @@ However, with the update, the Web Animations API is no longer restricted to anim
 
 `getAnimations()` is a method that returns all animations on an element regardless of whether it was created via `element.animate()` or via CSS rules (CSS animation or transition). Here is an example of what this looks like:
 
-
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/waapi-getanimations?path=style.css&previewSize=100"
-    title="waapi-getanimations on Glitch"
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
+    src="https://glitch.com/embed/#!/embed/waapi-getanimations?path=index.html&previewSize=100"
+    alt="waapi-getanimations on Glitch"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -141,11 +139,10 @@ You can take the above animation, and give it a smooth, reversed animation when 
 
 What you can do is create two play-pending animations (`openModal`, and an inline opacity transformation), and then pause one of the animations, delaying it until the other is finished. You can then use promises to wait for each to be finished before playing. Finally, you can check to see if a flag is set, and then reverse each animation.
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/waapi-promises?path=script.js&previewSize=0"
-    title="waapi-promises on Glitch"
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
+    src="https://glitch.com/embed/#!/embed/waapi-promises?path=script.js&attributionHidden=true"
+    alt="waapi-promises on Glitch"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
