@@ -204,7 +204,7 @@ There are a few additional methods to take your animation control even further:
 - `animation.persist()` marks an animation as non-replaceable.
 
 {% Aside %}
-  The last two methods are commonly used with compositing modes, such as "add". Check out the demo below to see them in action.
+  `animation.commitStyles()` and `animation.persist()` are commonly used with compositing modes, such as "add". Check out the composite modes demo below to see them in action.
 {% endAside %}
 
 ## Smoother animations with composite modes
