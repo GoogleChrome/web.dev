@@ -221,7 +221,7 @@ When you composite animations, a developer can write short, distinct effects and
   </figcaption>
 </figure>
 
-In the default, `"replace"` composite mode, the final animation replaces the transform property and ends up at `rotate(360deg) scale(1.4)`. For `"add"`, composite adds the rotation and multiplies the scale, resulting in a final state of `rotate(720deg) scale(1.96)`. `"accumulate"` combines the transformations, resulting in `rotate(720deg) scale(1.8)`. For more on the intricacies of these composite modes, check out the [Web Animations Spec](https://www.w3.org/TR/web-animations-1/#the-compositeoperation-enumeration).
+In the default `'replace'` composite mode, the final animation replaces the transform property and ends up at `rotate(360deg) scale(1.4)`. For `'add'`, composite adds the rotation and multiplies the scale, resulting in a final state of `rotate(720deg) scale(1.96)`. `'accumulate'` combines the transformations, resulting in `rotate(720deg) scale(1.8)`. For more on the intricacies of these composite modes, check out [The CompositeOperation and CompositeOperationOrAuto enumerations](https://www.w3.org/TR/web-animations-1/#the-compositeoperation-enumeration) from the Web Animations spec.
 
 Let's take a look at a UI element example:
 
