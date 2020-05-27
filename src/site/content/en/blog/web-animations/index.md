@@ -99,7 +99,7 @@ You first `"get"` the keyframes for the transition to determine where we are tra
 
 ## Orchestrating animations with promises
 
-In Chrome 84, you now have two methods that can be used with promises: `"animation.ready"` and `"animation.finished"`.
+In Chromium 84, you now have two methods that can be used with promises: `animation.ready` and `animation.finished`.
 
 - `animation.ready` enables you to wait for pending changes to take effect (i.e. switching between playback control methods such as play and pause).
 - `animation.finished` provides a means of executing custom JavaScript code when an animation is complete.
