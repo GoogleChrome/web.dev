@@ -1,6 +1,6 @@
 ---
-title: "What's coming to Chrome 84 in the Web Animations API"
-subhead: Wrangling your web animations is about to get much easier
+title: Web Animations API improvements in Chromium 84
+subhead: Orchestrating animations with promises, performance improvements with replaceable animations, smoother animations with composite modes, and more.
 authors:
   - una
   - kevinellis
