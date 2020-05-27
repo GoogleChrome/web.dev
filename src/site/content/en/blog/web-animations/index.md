@@ -79,6 +79,24 @@ The amount of code is about the same, but with JavaScript, you get a couple of s
   Hyphenated property names become camel case when used in keyframes (i.e. `"background-color"` to `"backgroundColor"`)
 {% endAside %}
 
+### Getting and setting animations beyond `element.animate()`
+
+However, with the update, the Web Animations API is no longer restricted to animations created via `element.animate()`. Now, we can use `setAnimations()` and `getAnimations()` as well.
+
+`getAnimations()` is a method that returns all animations on an element regardless of whether it was created via `element.animate()` or via CSS rules (CSS animation or transition). Here is an example of what this looks like:
+
+
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/waapi-getanimations?path=style.css&previewSize=100"
+    title="waapi-getanimations on Glitch"
+    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+
+You first `"get"` the keyframes for the transition to determine where we are transitioning from. Then, you create two new opacity animations, enabling the   cross fade effect. Once the cross-fade completes, you delete the copy. 
+
 ## Orchestrating animations with promises
 
 In Chrome 84, you now have two methods that can be used with promises: `"animation.ready"` and `"animation.finished"`.
