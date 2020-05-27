@@ -370,7 +370,7 @@ const contributors = {
   },
   thomassteiner: {
     name: {
-      given: 'Tommy',
+      given: 'Thomas',
       family: 'Steiner',
     },
     homepage: 'https://blog.tomayac.com/',
