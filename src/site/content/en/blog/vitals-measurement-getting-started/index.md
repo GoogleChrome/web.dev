@@ -20,7 +20,7 @@ Collecting data on your site's Web Vitals is the first step towards improving th
 
 ## Measuring Web Vitals using RUM data
 
-[Real user monitoring](https://en.wikipedia.org/wiki/Real_user_monitoring) (RUM) data, also known as field data, captures the performance experienced by a site's actual users. RUM data is what Google uses to determine whether a site meets the [recommended Core Web Vitals thresholds.](https://web.dev/vitals/)
+[Real User Monitoring](https://en.wikipedia.org/wiki/Real_user_monitoring) (RUM) data, also known as field data, captures the performance experienced by a site's actual users. RUM data is what Google uses to determine whether a site meets the [recommended Core Web Vitals thresholds.](https://web.dev/vitals/)
 
 ### Getting started
 
