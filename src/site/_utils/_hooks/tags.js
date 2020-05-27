@@ -14,24 +14,18 @@
  * limitations under the License.
  */
 
-const addPagination = require('./add-pagination');
+const addPagination = require('../add-pagination');
 
 /**
  * @param {any[]} tags
- * @param {string} language
  * @return {any[]}
  */
-const tagsFeed = (tags, language = 'en') => {
+const tagsFeed = (tags) => {
   let filteredTags = [];
 
   if (process.env.ELEVENTY_ENV !== 'dev') {
     filteredTags = tags.reduce((accumulator, tag) => {
-      const elements = tag.elements.filter(
-        (e) => e.template.dataCache.lang === language,
-      );
-
-      if (elements.length > 0) {
-        tag.elements = elements;
+      if (tag.elements.length > 0) {
         accumulator.push(tag);
       }
 
@@ -44,10 +38,9 @@ const tagsFeed = (tags, language = 'en') => {
 
 /**
  * @param {any[]} tags
- * @param {string} language
  * @return {Paginated[]}
  */
-const tagsIndex = (tags, language = 'en') => {
+const tagsIndex = (tags) => {
   const testTags = [
     'css',
     'javascript',
@@ -59,15 +52,8 @@ const tagsIndex = (tags, language = 'en') => {
   const tagsWithPosts = tags.reduce((accumulator, tag) => {
     if (process.env.PERCY && !testTags.includes(tag.key)) {
       accumulator.push(tag);
-    } else {
-      const elements = tag.elements.filter(
-        (e) => e.template.dataCache.lang === language,
-      );
-
-      if (elements.length > 0) {
-        tag.elements = elements;
-        accumulator.push(tag);
-      }
+    } else if (tag.elements.length > 0) {
+      accumulator.push(tag);
     }
 
     return accumulator;
@@ -78,19 +64,13 @@ const tagsIndex = (tags, language = 'en') => {
 
 /**
  * @param {any[]} tags
- * @param {string} language
  * @return {Paginated[]}
  */
-const tagsIndividual = (tags, language = 'en') => {
+const tagsIndividual = (tags) => {
   let paginated = [];
 
   tags.forEach((tag) => {
-    const elements = tag.elements.filter(
-      (e) => e.template.dataCache.lang === language,
-    );
-
-    if (elements.length > 0) {
-      tag.elements = elements;
+    if (tag.elements.length > 0) {
       paginated = paginated.concat(addPagination(tag.elements, tag));
     }
   });

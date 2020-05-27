@@ -14,24 +14,18 @@
  * limitations under the License.
  */
 
-const addPagination = require('./add-pagination');
+const addPagination = require('../add-pagination');
 
 /**
  * @param {Author[]} authors
- * @param {string} language
  * @return {Author[]}
  */
-const authorsFeed = (authors, language = 'en') => {
+const authorsFeed = (authors) => {
   let filteredAuthors = [];
 
   if (process.env.ELEVENTY_ENV !== 'dev') {
     filteredAuthors = authors.reduce((accumulator, author) => {
-      const elements = author.elements.filter(
-        (e) => e.template.dataCache.lang === language,
-      );
-
-      if (elements.length > 0) {
-        author.elements = elements;
+      if (author.elements.length > 0) {
         accumulator.push(author);
       }
 
@@ -44,10 +38,9 @@ const authorsFeed = (authors, language = 'en') => {
 
 /**
  * @param {Author[]} authors
- * @param {string} language
  * @return {Paginated[]}
  */
-const authorsIndex = (authors, language = 'en') => {
+const authorsIndex = (authors) => {
   const testAuthors = [
     'robdodson',
     'samthor',
@@ -59,15 +52,8 @@ const authorsIndex = (authors, language = 'en') => {
   const authorsWithPosts = authors.reduce((accumulator, author) => {
     if (process.env.PERCY && !testAuthors.includes(author.key)) {
       accumulator.push(author);
-    } else {
-      const elements = author.elements.filter(
-        (e) => e.template.dataCache.lang === language,
-      );
-
-      if (elements.length > 0) {
-        author.elements = elements;
-        accumulator.push(author);
-      }
+    } else if (author.elements.length > 0) {
+      accumulator.push(author);
     }
 
     return accumulator;
@@ -78,19 +64,13 @@ const authorsIndex = (authors, language = 'en') => {
 
 /**
  * @param {Author[]} authors
- * @param {string} language
  * @return {Paginated[]}
  */
-const authorsIndividual = (authors, language = 'en') => {
+const authorsIndividual = (authors) => {
   let paginated = [];
 
   authors.forEach((author) => {
-    const elements = author.elements.filter(
-      (e) => e.template.dataCache.lang === language,
-    );
-
-    if (elements.length > 0) {
-      author.elements = elements;
+    if (author.elements.length > 0) {
       paginated = paginated.concat(addPagination(author.elements, author));
     }
   });

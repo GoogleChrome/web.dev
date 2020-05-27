@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const {feed} = require('../../../_utils/authors');
+const {feed} = require('../../../_utils/_hooks/authors');
 
 module.exports = {
   pagination: {

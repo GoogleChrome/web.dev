@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const {index} = require('../../../_utils/newsletter');
+const {index} = require('../../../_utils/_hooks/newsletter');
 
 module.exports = {
   pagination: {
