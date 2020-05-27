@@ -126,6 +126,16 @@ that your app can continue running.
 We have decided to not proceed with this type for the moment.
 {% endAside %}
 
+### Feature detection
+
+Browser support for the Screen Wake Lock API can be tested as follows:
+
+```js
+if ('wakeLock' in navigator) {
+  // Screen Wake Lock API supported 🎉
+}
+```
+
 ### Getting a screen wake lock {: #get-wake-lock }
 
 To request a screen wake lock, you need to call the `navigator.wakeLock.request()` method
