@@ -76,7 +76,7 @@ document.querySelector('.modal').animate(
 The amount of code is about the same, but with JavaScript, you get a couple of superpowers that you don't have with CSS alone. This includes the ability to sequence effects, and an increased control of their play states.
 
 {% Aside %}
-  Hyphenated property names become camel case when used in keyframes (e.g. `"background-color"` to `"backgroundColor"`)
+  Hyphenated property names become camel case when used in keyframes (e.g. `background-color` to `backgroundColor`)
 {% endAside %}
 
 ### Getting and setting animations beyond `element.animate()`
@@ -161,8 +161,8 @@ What you can do is create two play-pending animations (`openModal`, and an inlin
 </figure>
 
 ```js
-selector.animate([{transform: `translate(${x}px, ${y}px)`}], {duration: 1000, fill: 'forwards'});
-}
+selector.animate([{transform: `translate(${x}px, ${y}px)`}], 
+    {duration: 1000, fill: 'forwards'});
 ```
 
 In this example, there is only one keyframe, and no specified start position. This is an example of using **partial keyframes**. The mouse handler does a few things here: it sets a new end location and triggers a new animation. The new start position is inferred from the current underlying position. 
