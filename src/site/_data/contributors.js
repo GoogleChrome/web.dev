@@ -1201,6 +1201,18 @@ const contributors = {
       name: 'Google',
     },
   },
+  yaraki: {
+    name: {
+      given: 'Yuichi',
+      family: 'Araki',
+    },
+    twitter: 'yuichi_araki',
+    github: 'yaraki',
+    country: 'JP',
+    description: {
+      en: 'Developer Programs Engineer at Google',
+    },
+  },
 };
 
 const processedContributors = {};
