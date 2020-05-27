@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: The getInstalledRelatedApps() API is a new web platform API that allows your web app to check whether your native app or PWA is installed on the user's device.
 date: 2018-12-20
-updated: 2020-04-29
+updated: 2020-05-27
 tags:
   - blog
   - capabilities
@@ -14,8 +14,10 @@ hero: hero.jpg
 alt: mobile device with app panel open
 ---
 
-{% Aside %}
-  This API is part of the [capabilities project](https://developers.google.com/web/updates/capabilities).
+{% Aside 'warning' %}
+  `getInstalledRelatedApps()` is currently broken on Chrome for Android. It
+  will silently fail, and not return any results. The fix is being tracked in
+  [crbug.com/1086686](https://bugs.chromium.org/p/chromium/issues/detail?id=1086686).
 {% endAside %}
 
 ## What is the getInstalledRelatedApps() API? {: #what }
@@ -114,7 +116,7 @@ In the `related_applications` entry, the `platform` value must be `play`,
 and the `id` is the Google Play application ID for your app. The `url`
 property is optional and can be excluded.
 
-```json/3-4
+```json
 {
   …
   "related_applications": [{
@@ -129,7 +131,7 @@ In `AndroidManifest.xml` of your native app, use the
 [Digital Asset Links system][dig-asset-links] to define the relationship
 between your website and Android application:
 
-```xml/3
+```xml
 <manifest>
   <application>
    …
@@ -160,17 +162,17 @@ Finally, publish your updated Android app to the Play store.
 
 {% Aside %}
 **Coming Soon!**
-Starting in Chrome 81, in addition to checking if its native app is already
+Starting in Chrome 84, in addition to checking if its native app is already
 installed, a PWA can check if it (the PWA) is already installed.
-Microsoft is actively working on enabling this API for Edge and we hope to
-see it land around Edge 83.
+Microsoft is actively working on enabling this API for Edge for Windows and we
+hope to see it land in Q3 2020.
 {% endAside %}
 
 To define the relationship to an installed PWA, add a `related_applications`
 entry in the web app manifest, set `"platform": "webapp"` and provide
 the full path to the PWAs web app manifest in the `url` property.
 
-```json/3-4
+```json
 {
   …
   "related_applications": [{
@@ -185,9 +187,9 @@ the full path to the PWAs web app manifest in the `url` property.
 
 {% Aside %}
 **Coming Soon!**
-Starting in Chrome 83, a page can check if its PWA is installed, even if it
+Starting in Chrome 84, a page can check if its PWA is installed, even if it
 is outside the scope of the PWA. Microsoft is actively working on enabling
-this API for Edge and we hope to see it land around Edge 83.
+this API for Edge on Windows and we hope to see it land in Q3 2020.
 {% endAside %}
 
 A page can check if its PWA is installed, even if it is outside the
@@ -224,22 +226,24 @@ you can check for their presence within your web site. Calling
 array of your apps that are installed on the user's device.
 
 ```js
-navigator.getInstalledRelatedApps()
-.then((relatedApps) => {
-  relatedApps.forEach((app) => {
-    console.log(app.id, app.platform, app.url);
-  });
+const relatedApps = await navigator.getInstalledRelatedApps();
+relatedApps.forEach((app) => {
+  console.log(app.id, app.platform, app.url);
 });
 ```
 
-{% Aside %}
-Like most other powerful web APIs, the `getInstalledRelatedApps()` API is
-only available when served over **HTTPS**.
+{% Aside 'caution' %}
+`getInstalledRelatedApps()` is currently supported on the following platforms:
+
+* Chrome - Android ([currently broken](https://bugs.chromium.org/p/chromium/issues/detail?id=1086686)),
+  Windows (coming soon)
+* Edge - Windows (coming soon)
 {% endAside %}
 
 To prevent sites from testing an overly broad set of their own apps,
 only the first three apps declared in the web app manifest will be
-taken into account.
+taken into account. Like most other powerful web APIs, the
+`getInstalledRelatedApps()` API is only available when served over **HTTPS**.
 
 ## Feedback {: #feedback }
 
