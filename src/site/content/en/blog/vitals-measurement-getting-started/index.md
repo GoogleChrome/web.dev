@@ -15,7 +15,6 @@ tags:
   - web-vitals
 ---
 
-## Overview
 
 Collecting data on your site's Web Vitals is the first step towards improving them. A well-rounded analysis will collect performance data from both real-world and lab environments. Measuring Web Vitals requires minimal code changes and can be accomplished using free tooling.
 
