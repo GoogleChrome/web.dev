@@ -44,7 +44,7 @@ You can collect your own RUM data by using a dedicated RUM provider, or, by sett
 
 Dedicated RUM providers specialize in collecting and reporting RUM data. To use Core Web Vitals with these services, ask your RUM provider about enabling Core Web Vitals monitoring for your site.
 
-If you don't have a RUM provider, you may be able to augment your existing analytics setup to collect and report on these metrics by using the [web-vitals JavaScript library](https://github.com/GoogleChrome/web-vitals). This method is explained in more detail below.
+If you don't have a RUM provider, you may be able to augment your existing analytics setup to collect and report on these metrics by using the [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals). This method is explained in more detail below.
 
 ### The web-vitals JavaScript library
 
