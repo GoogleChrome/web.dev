@@ -61,7 +61,7 @@ Where you set parameters for animation in CSS:
 }
 ```
 
-You would set in JS:
+you would set in JS:
 
 ```js
 document.querySelector('.modal').animate(
