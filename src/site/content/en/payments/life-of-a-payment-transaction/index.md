@@ -450,6 +450,6 @@ doPaymentRequest();
 * Learn how to declare a payment method identifier in detail in [Setting up a
   payment method](/setting-up-a-payment-method).
 * Learn how to build a native payment app in 
-  [Android payment apps developer's guide](/native-payment-apps-overview).
+  [Android payment apps developer's guide](/android-payment-apps-overview).
 * Learn how to build a web-based payment app in *Web-based payment apps developer's
   guide* (coming soon).
