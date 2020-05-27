@@ -31,7 +31,7 @@ While it has a long history, originally launching in Chrome 36, the latest relea
 
 ## Getting started
 
-Creating an animation via the web animations API should feel very familiar if you've used `"@keyframe"` rules. First you'll need to create a Keyframe Object. What might look like [this](https://codepen.io/una/pen/RwWMvPw) in CSS:
+Creating an animation via the Web Animations API should feel very familiar if you've used `@keyframe` rules. First you'll need to create a Keyframe Object. What might look like [this](https://codepen.io/una/pen/RwWMvPw) in CSS:
 
 ```css
 @keyframes openAnimation {
