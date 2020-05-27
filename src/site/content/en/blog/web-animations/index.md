@@ -27,7 +27,7 @@ When used correctly, animations improve user perception and [memory](https://www
   </figcaption>
 </figure>
 
-The [Web Animations API](https://www.w3.org/TR/web-animations-1/) is a tool that enables developers to write [imperative](https://www.youtube.com/watch?v=WaNoqBAp8NI) animations with JavaScript. It was written to underpin both CSS animation and transition implementations and enable future effects to be developed, as well as existing effects to be composed and timed.
+The [Web Animations API](https://www.w3.org/TR/web-animations-1/) is a tool that enables developers to write [imperative animations with JavaScript](https://www.youtube.com/watch?v=WaNoqBAp8NI). It was written to underpin both CSS animation and transition implementations and enable future effects to be developed, as well as existing effects to be composed and timed.
 
 While it has a long history, originally launching in Chrome 36, the latest release, Chrome 84, brings us a slew of previously unsupported features. 
 
