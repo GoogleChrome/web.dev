@@ -20,10 +20,10 @@ When used correctly, [animations improve user perception and memory](https://www
 
 The [Web Animations API](https://www.w3.org/TR/web-animations-1/) is a tool that enables developers to write [imperative animations with JavaScript](https://www.youtube.com/watch?v=WaNoqBAp8NI). It was written to underpin both CSS animation and transition implementations and enable future effects to be developed, as well as existing effects to be composed and timed.
 
-While it has a long history, originally launching in Chrome 36, the latest release, Chrome 84, brings us a slew of previously unsupported features. 
+While it has a long history, originally launching in Chromium 36, the latest release, Chromium 84, brings us a slew of previously unsupported features. 
 
 <figure class="w-figure">
-  <img class="w-screenshot" src='./waapi-timeline.png' alt="The Web Animations API first hit Chrome in version 36, July of 2014. Now the spec is going to be complete, in version 84, launching July 2020.">
+  <img class="w-screenshot" src='./waapi-timeline.png' alt="The Web Animations API first hit Chromium in version 36, July of 2014. Now the spec is going to be complete, in version 84, launching July 2020.">
   <figcaption class="w-figcaption">
     The long history of the Web Animations API.
   </figcaption>
