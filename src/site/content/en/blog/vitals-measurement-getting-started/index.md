@@ -30,7 +30,7 @@ If you don't have a RUM setup, the following tools will quickly provide you with
 * **Search Console**: [Search Console](https://search.google.com/search-console/welcome) reports performance data on a per-page basis. This makes it well-suited for identifying specific pages that need improvement. Unlike PageSpeed Insights, Search Console reporting includes historical performance data. Search Console can only be used with sites that you own and have verified ownership of.
 * **CrUX dashboard**: [CrUX dashboard](https://developers.google.com/web/updates/2018/08/chrome-ux-report-dashboard) is a pre-built dashboard that surfaces CrUX data for an origin of your choosing. It is built on top of Data Studio and the setup process takes about a minute. Compared to PageSpeed Insights and Search Console, CrUX dashboard reporting includes more dimensions - for example, data can be broken down by device and connection type.
 
-It's worth noting that although the tools listed above are well-suited for "getting started" with measuring Web Vitals, they can be useful in other contexts as well. In particular, both CrUX and PSI are available via API and can be used to [build dashboards](https://dev.to/chromiumdev/a-step-by-step-guide-to-monitoring-the-competition-with-the-chrome-ux-report-4k1o) and other reporting.
+It's worth noting that although the tools listed above are well-suited for "getting started" with measuring Web Vitals, they can be useful in other contexts as well. In particular, both CrUX and PSI are available as an API and can be used to [build dashboards](https://dev.to/chromiumdev/a-step-by-step-guide-to-monitoring-the-competition-with-the-chrome-ux-report-4k1o) and other reporting.
 
 ### Collecting RUM data
 
