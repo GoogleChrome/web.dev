@@ -5,12 +5,12 @@ authors:
   - una
   - kevinellis
 date: 2020-05-27
-hero: hero.png
+hero: hero.jpg
 alt: Option screen with illustrated characters and a moving blue target.
 description: Wrangling your web animations is about to get much easier.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - web-animations
+  - animations
   - chrome84
   - javascript
 ---
@@ -79,7 +79,7 @@ The amount of code is about the same, but with JavaScript, you get a couple of s
   Hyphenated property names become camel case when used in keyframes (e.g. `background-color` to `backgroundColor`)
 {% endAside %}
 
-### Getting and setting animations beyond `element.animate()`
+### Beyond `element.animate()`
 
 However, with the update, the Web Animations API is no longer restricted to animations created via `element.animate()`. We can manipulate CSS animations and transitions as well.
 
