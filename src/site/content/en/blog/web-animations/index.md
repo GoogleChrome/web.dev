@@ -209,7 +209,7 @@ There are a few additional methods to take your animation control even further:
 
 ## Smoother animations with composite modes
 
-With the Web Animations API, you can now set the composite mode of your animations, meaning they can be additive or accumulative, in addition to the default mode of "replace". [Composite modes](https://css-tricks.com/additive-animation-web-animations-api/) allow developers to write distinct animations and have control over how effects are combined. Three composite modes are now supported: `"replace"` (the default mode), `"add"`, and `"accumulate"`.
+With the Web Animations API, you can now set the composite mode of your animations, meaning they can be additive or accumulative, in addition to the default mode of "replace". [Composite modes](https://css-tricks.com/additive-animation-web-animations-api/) allow developers to write distinct animations and have control over how effects are combined. Three composite modes are now supported: `'replace'` (the default mode), `'add'`, and `'accumulate'`.
 
 When you composite animations, a developer can write short, distinct effects and see them combined together. In the example below, we are applying a rotation and scale keyframe to each box, with the only adjustment being the composite mode, added as an option:
 
