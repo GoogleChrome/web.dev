@@ -66,7 +66,6 @@ class BaseCard {
   }
 
   renderThumbnail(url, img, alt) {
-    // const imagePath = path.join(url, img);
     const imagePath = path.isAbsolute(img) ? img : path.join(url, img);
 
     const srcsetRange = getSrcsetRange(240, 768);

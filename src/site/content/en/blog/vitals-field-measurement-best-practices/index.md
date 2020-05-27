@@ -21,11 +21,12 @@ data](https://github.com/user-centric-performance-metrics/#how-metrics-are-measu
 it's impossible to know for sure whether the changes you're making to your site
 are actually achieving their desired results.
 
-Many popular Real User Monitoring (RUM) analytics providers already support the
-[Core Web Vitals](/vitals/#core-web-vitals) metrics in their tools (as well as
-many [other Web Vitals](/vitals/#other-web-vitals)). If you're currently using
-one of these RUM analytics tools, you're in great shape to assess how well the
-pages on your site meet the [recommended Core Web Vitals
+Many popular [Real User Monitoring
+(RUM)](https://en.wikipedia.org/wiki/Real_user_monitoring) analytics providers
+already support the [Core Web Vitals](/vitals/#core-web-vitals) metrics in their
+tools (as well as many [other Web Vitals](/vitals/#other-web-vitals)). If you're
+currently using one of these RUM analytics tools, you're in great shape to
+assess how well the pages on your site meet the [recommended Core Web Vitals
 thresholds](https://github.com/vitals/#core-web-vitals) and prevent regressions
 in the future.
 
