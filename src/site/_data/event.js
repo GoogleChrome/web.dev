@@ -152,8 +152,8 @@ const eventData = [
         title: 'Writing Build Plugins',
       },
       {
-        speaker: 'jakearchibald',
-        title: 'Image Compression Formats Compared',
+        speaker: ['jakearchibald', 'surma'],
+        title: 'Image Compression Deep-dive',
       },
       {
         speaker: 'sfluin',
