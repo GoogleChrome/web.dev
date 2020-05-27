@@ -36,7 +36,9 @@ It's worth noting that although the tools listed above are well-suited for "gett
 
 Although CrUX-based tools are a good starting point for investigating Web Vitals performance, we strongly recommend supplementing it with your own RUM. RUM data that you collect yourself can provide more detailed and immediate feedback on your site's performance. This makes it easier to identify issues and test possible solutions.
 
-Note: CrUX-based data sources report data using a granularity of approximately one month - however, the details of this vary slightly by tool. For example, PSI and Search Console report the performance observed over the past 28 days, whereas the CrUX dataset and dashboard is broken down by calendar month.
+{% Aside %}
+CrUX-based data sources report data using a granularity of approximately one month - however, the details of this vary slightly by tool. For example, PSI and Search Console report the performance observed over the past 28 days, whereas the CrUX dataset and dashboard is broken down by calendar month.
+{% endAside %}
 
 You can collect your own RUM data by using a dedicated RUM provider, or, by setting up your own tooling.
 
