@@ -81,7 +81,7 @@ The amount of code is about the same, but with JavaScript, you get a couple of s
 
 ### Getting and setting animations beyond `element.animate()`
 
-However, with the update, the Web Animations API is no longer restricted to animations created via `element.animate()`. Now, we can use `setAnimations()` and `getAnimations()` as well.
+However, with the update, the Web Animations API is no longer restricted to animations created via `element.animate()`. We can manipulate CSS animations and transitions as well.
 
 `getAnimations()` is a method that returns all animations on an element regardless of whether it was created via `element.animate()` or via CSS rules (CSS animation or transition). Here is an example of what this looks like:
 
