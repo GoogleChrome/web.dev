@@ -117,9 +117,9 @@ In case your subdomains are not fully trusted, you can make the policy stricter 
 To ensure that your site can still be linked from other sites, you have to allow simple (`HTTP GET`) top-level navigation.  
 
 ```python
-  if (req['sec-fetch-mode'] == 'navigate' and req.method == 'GET'
-     # <object> and <embed> send navigation requests, which we disallow.
-     and req['sec-fetch-dest'] not in ('object', 'embed')):
+  if req['sec-fetch-mode'] == 'navigate' and req.method == 'GET'
+    # <object> and <embed> send navigation requests, which we disallow.
+    and req['sec-fetch-dest'] not in ('object', 'embed'):
       return True  # Allow this request
 ```
 {% Aside 'gotchas' %}
@@ -160,7 +160,7 @@ def allow_request(req):
 
   # Allow simple top-level navigations except <object> and <embed>
   if req['sec-fetch-mode'] == 'navigate' and req.method == 'GET'
-     and req['sec-fetch-dest'] not in ('object', 'embed'):
+    and req['sec-fetch-dest'] not in ('object', 'embed'):
       return True
 
   # [OPTIONAL] Exempt paths/endpoints meant to be served cross-origin.
@@ -197,6 +197,6 @@ Make sure that you reject invalid requests before running authentication checks 
 ## Further reading
 
 - [W3C Fetch Metadata Request Headers specification](https://www.w3.org/TR/fetch-metadata/)
-- [Google I/O - Securing Web Apps with Modern Platform Features](https://speakerdeck.com/lweichselbaum/o-securing-web-apps-with-modern-platform-features)
+- [Google I/O - Securing Web Apps with Modern Platform Features](https://webappsec.dev/assets/pub/Google_IO-Securing_Web_Apps_with_Modern_Platform_Features.pdf)
 - [Fetch Metadata Playground](https://secmetadata.appspot.com/)
 
