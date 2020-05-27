@@ -6,16 +6,13 @@ authors:
   - kevinellis
 date: 2020-05-27
 hero: hero.png
-# You can adjust the position of your hero image with this property.
-# Values: top | bottom | center (default)
-# hero_position: bottom
-# thumbnail: thumbnail.png
+alt: Option screen with illustrated characters and a moving blue target.
 description: Wrangling your web animations is about to get much easier.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - web animations
-  - waapi
+  - web-animations
   - chrome84
+  - javascript
 ---
 
 When used correctly, [animations improve user perception and memory](https://www.researchgate.net/publication/229351931_The_Effects_of_Animation_and_Format_on_the_Perception_and_Memory_of_Online_Advertising) of your brand, guide user actions, and help users navigate your application—providing context in a digital space.
@@ -162,8 +159,12 @@ document.querySelector('button').addEventListener('click', () => {
   </figcaption>
 </figure>
 
+```js
+selector.animate([{transform: `translate(${x}px, ${y}px)`}], {duration: 1000, fill: 'forwards'});
+}
+```
 
-In this example, there is no specified start position. This is an example of using **partial keyframes**. The mouse handler does a few things here: it sets a new end location and triggers a new animation. The new start position is inferred from the current underlying position. 
+In this example, there is only one keyframe, and no specified start position. This is an example of using **partial keyframes**. The mouse handler does a few things here: it sets a new end location and triggers a new animation. The new start position is inferred from the current underlying position. 
 
 New transitions can be triggered while existing ones are still running. This means that the current transition is interrupted, and a new one is created.
 

@@ -204,6 +204,10 @@ const tags = {
   'virtual-reality': {
     title: 'Virtual Reality',
   },
+  'web-animations': {
+    title: 'Web Animations',
+    description: 'Our latest news, updates, and stories about Web Animations.',
+  },
   'web-assembly': {
     title: 'Web Assembly',
   },
