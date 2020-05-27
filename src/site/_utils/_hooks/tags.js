@@ -50,9 +50,9 @@ const tagsIndex = (tags) => {
     'webxr',
   ];
   const tagsWithPosts = tags.reduce((accumulator, tag) => {
-    if (process.env.PERCY && !testTags.includes(tag.key)) {
+    if (process.env.PERCY && testTags.includes(tag.key)) {
       accumulator.push(tag);
-    } else if (tag.elements.length > 0) {
+    } else if (!process.env.PERCY && tag.elements.length > 0) {
       accumulator.push(tag);
     }
 

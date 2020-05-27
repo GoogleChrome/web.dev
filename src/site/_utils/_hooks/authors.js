@@ -50,9 +50,9 @@ const authorsIndex = (authors) => {
     'adamargyle',
   ];
   const authorsWithPosts = authors.reduce((accumulator, author) => {
-    if (process.env.PERCY && !testAuthors.includes(author.key)) {
+    if (process.env.PERCY && testAuthors.includes(author.key)) {
       accumulator.push(author);
-    } else if (author.elements.length > 0) {
+    } else if (!process.env.PERCY && author.elements.length > 0) {
       accumulator.push(author);
     }
 
