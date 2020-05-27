@@ -120,7 +120,7 @@ const transformAnimation = modal.animate(openModal, openModalSettings);
 transformAnimation.finished.then(() => { text.animate(fadeIn, fadeInSettings)});
 ```
 
-We've chained these animations using `"animation.finished.then()"` prior to executing the next animation set in the chain. This way, the animations appear in order, and you are even applying effects to different target elements with different options set (such as speed and ease).
+We've chained these animations using `animation.finished.then()` prior to executing the next animation set in the chain. This way, the animations appear in order, and you are even applying effects to different target elements with different options set (such as speed and ease).
 
 Within CSS, this would be cumbersome to recreate, especially when applying unique, yet sequenced animations to multiple elements. You'd have to use a `"@keyframe"`, sort out the correct timing percentages to place the animations, and use `"animation-delay"` prior to triggering the animations in the sequence.
 
