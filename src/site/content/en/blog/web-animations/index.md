@@ -76,7 +76,7 @@ document.querySelector('.modal').animate(
 The amount of code is about the same, but with JavaScript, you get a couple of superpowers that you don't have with CSS alone. This includes the ability to sequence effects, and an increased control of their play states.
 
 {% Aside %}
-  Hyphenated property names become camel case when used in keyframes (i.e. `"background-color"` to `"backgroundColor"`)
+  Hyphenated property names become camel case when used in keyframes (e.g. `"background-color"` to `"backgroundColor"`)
 {% endAside %}
 
 ### Getting and setting animations beyond `element.animate()`
