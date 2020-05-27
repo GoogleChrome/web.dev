@@ -17,7 +17,7 @@ alt: mobile device with app panel open
 {% Aside 'warning' %}
   `getInstalledRelatedApps()` is currently broken on Chrome for Android. It
   will silently fail, and not return any results. The fix is being tracked in
-  [crbug.com/1086686](https://bugs.chromium.org/p/chromium/issues/detail?id=1086686).
+  [Chromium Issue #1086686](https://bugs.chromium.org/p/chromium/issues/detail?id=1086686).
 {% endAside %}
 
 ## What is the getInstalledRelatedApps() API? {: #what }
