@@ -191,8 +191,8 @@ elem.addEventListener('mousemove', evt => {
 
 Each time the mouse moves, the browser re-calculates the position for each ball in the comet trail and creates an animation to this new point. The browser now knows to remove old animations (enabling replacement) when:
 
-1. The animation is finished
-2. There is one or more animations higher in composite ordering that are also finished
+1. The animation is finished.
+2. There is one or more animations higher in composite ordering that are also finished.
 3. The new animations are animating the same properties.
 
 You can see exactly how many animations are being replaced by tallying up a counter with each removed animation, using `"anim.onremove"` to trigger the counter.
