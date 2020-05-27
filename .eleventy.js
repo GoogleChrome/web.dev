@@ -86,6 +86,7 @@ const stripLanguage = require(`./${filtersDir}/strip-language`);
 const transformsDir = 'src/site/_transforms';
 const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
 const {responsiveImages} = require(`./${transformsDir}/responsive-images`);
+const {absoluteImages} = require(`./${transformsDir}/absolute-images`);
 const {
   serviceWorkerPartials,
 } = require(`./${transformsDir}/service-worker-partials`);
@@ -236,6 +237,9 @@ module.exports = function(config) {
   if (process.env.PERCY) {
     config.addTransform('disable-lazy-load', disableLazyLoad);
   }
+
+  // TODO: remove after testing. This is here only to test the transform.
+  config.addTransform('absolute-images', absoluteImages);
 
   if (process.env.ELEVENTY_ENV === 'prod') {
     config.addTransform('responsive-images', responsiveImages);

@@ -29,7 +29,7 @@ const path = require('path');
  *
  * @return {{src: string, isLocal: boolean}}
  */
-function determineImagePath(src, outputPath) {
+function determineImagePath(src, outputPath, useCdn) {
   const isLocal = !RegExp('^https?://').test(src);
 
   // If an image has a protocol then we should just return the src as is.
@@ -43,7 +43,7 @@ function determineImagePath(src, outputPath) {
   }
 
   if (path.isAbsolute(src)) {
-    const url = new URL(src, site.imageCdn);
+    const url = useCdn ? new URL(src, site.imageCdn) : {href: src};
     return {src: url.href, isLocal};
   }
 
@@ -62,7 +62,7 @@ function determineImagePath(src, outputPath) {
   }
   const base = parts.join('/');
 
-  const url = new URL(path.join(base, src), site.imageCdn);
+  const url = new URL(path.join(base, src), useCdn ? site.imageCdn : site.url);
   return {src: url.href, isLocal};
 }
 
