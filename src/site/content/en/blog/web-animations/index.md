@@ -25,6 +25,13 @@ The [Web Animations API](https://www.w3.org/TR/web-animations-1/) is a tool that
 
 While it has a long history, originally launching in Chrome 36, the latest release, Chrome 84, brings us a slew of previously unsupported features. 
 
+<figure class="w-figure">
+  <img class="w-screenshot" src='./waapi-timeline.png' alt="The Web Animations API first hit Chrome in version 36, July of 2014. Now the spec is going to be complete, in version 84, launching July 2020.">
+  <figcaption class="w-figcaption">
+    The long history of the Web Animations API.
+  </figcaption>
+</figure>
+
 ## Getting started
 
 Creating an animation via the web animations API should feel very familiar if you've used `"@keyframe"` rules. First you'll need to create a Keyframe Object. What might look like [this](https://codepen.io/una/pen/RwWMvPw) in CSS:
