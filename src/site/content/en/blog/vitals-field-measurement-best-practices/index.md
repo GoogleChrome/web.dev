@@ -1,6 +1,6 @@
 ---
 title: Best practices for measuring Web Vitals in the field
-subhead: How to measure Web Vitals with your current analytics tool
+subhead: How to measure Web Vitals with your current analytics tool.
 authors:
   - philipwalton
 description: How to measure Web Vitals with your current analytics tool
