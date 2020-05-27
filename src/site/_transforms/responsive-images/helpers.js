@@ -26,6 +26,7 @@ const path = require('path');
  * the image CDN. Will ignore paths that being with a protocol.
  * @param {string} src src attribute for image
  * @param {string} outputPath Output path for HTML file
+ * @param {Boolean} useCdn Whether to use CDN or use local images.
  *
  * @return {{src: string, isLocal: boolean}}
  */

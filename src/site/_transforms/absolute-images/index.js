@@ -32,6 +32,7 @@ const absoluteImages = (content, outputPath) => {
   }
 
   const useCdn = process.env.ELEVENTY_ENV === 'prod';
+  /* eslint-disable no-invalid-this */
   const replace = rewriteUrl.bind(this, outputPath, useCdn);
 
   // TODO: add srcset logic.
