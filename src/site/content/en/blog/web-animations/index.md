@@ -44,7 +44,7 @@ Creating an animation via the Web Animations API should feel very familiar if yo
 }
 ```
 
-Would look like [this](https://codepen.io/una/pen/abvYXJX) in JavaScript:
+would look like [this](https://codepen.io/una/pen/abvYXJX) in JavaScript:
 
 ```js
 const openAnimation = [
