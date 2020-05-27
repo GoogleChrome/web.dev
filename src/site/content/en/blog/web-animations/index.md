@@ -104,7 +104,7 @@ In Chromium 84, you now have two methods that can be used with promises: `animat
 - `animation.ready` enables you to wait for pending changes to take effect (i.e. switching between playback control methods such as play and pause).
 - `animation.finished` provides a means of executing custom JavaScript code when an animation is complete.
 
-Let's continue with our example, and create an orchestrated animation chain with `"animation.finished"`. Here, you have a vertical transformation (`"scaleY"`), followed by a horizontal transformation (`"scaleX"`), followed by an opacity change on a child element: 
+Let's continue with our example, and create an orchestrated animation chain with `animation.finished`. Here, you have a vertical transformation (`scaleY`), followed by a horizontal transformation (`scaleX`), followed by an opacity change on a child element: 
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
@@ -122,13 +122,13 @@ transformAnimation.finished.then(() => { text.animate(fadeIn, fadeInSettings)});
 
 We've chained these animations using `animation.finished.then()` prior to executing the next animation set in the chain. This way, the animations appear in order, and you are even applying effects to different target elements with different options set (such as speed and ease).
 
-Within CSS, this would be cumbersome to recreate, especially when applying unique, yet sequenced animations to multiple elements. You'd have to use a `"@keyframe"`, sort out the correct timing percentages to place the animations, and use `"animation-delay"` prior to triggering the animations in the sequence.
+Within CSS, this would be cumbersome to recreate, especially when applying unique, yet sequenced animations to multiple elements. You'd have to use a `@keyframe`, sort out the correct timing percentages to place the animations, and use `animation-delay` prior to triggering the animations in the sequence.
 
-## Play, pause, and reverse
+### Example: Play, pause, and reverse
 
-What can open, should close! Luckily, since [Chrome 39](https://developers.google.com/web/updates/2014/12/web-animation-playback), the WAAPI has provided us the ability to play, pause, and reverse our animations.
+What can open, should close! Luckily, since [Chromium 39](https://developers.google.com/web/updates/2014/12/web-animation-playback), the Web Animations API has provided us the ability to play, pause, and reverse our animations.
 
-You can take the above animation, and give it a smooth, reversed animation when clicking the button again using `".reverse()"`. This way, you can create a smoother and more contextual interaction for our modal.
+You can take the above animation, and give it a smooth, reversed animation when clicking the button again using `.reverse()`. This way, you can create a smoother and more contextual interaction for our modal.
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
@@ -139,7 +139,7 @@ You can take the above animation, and give it a smooth, reversed animation when 
   </figcaption>
 </figure>
 
-What you can do is create two play-pending animations (`"openModal"`, and an inline opacity transformation), and then pause one of the animations, delaying it until the other is finished. You can then use promises to wait for each to be finished before playing. Finally, you can check to see if a flag is set, and then reverse each animation.
+What you can do is create two play-pending animations (`openModal`, and an inline opacity transformation), and then pause one of the animations, delaying it until the other is finished. You can then use promises to wait for each to be finished before playing. Finally, you can check to see if a flag is set, and then reverse each animation.
 
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
   <iframe
@@ -150,7 +150,7 @@ What you can do is create two play-pending animations (`"openModal"`, and an inl
   </iframe>
 </div>
 
-## Dynamic interactions with partial keyframes
+### Example: Dynamic interactions with partial keyframes
 
 <figure class="w-figure">
 <video controls autoplay loop muted class="w-screenshot">
@@ -171,7 +171,7 @@ New transitions can be triggered while existing ones are still running. This mea
 
 ## Performance improvements with replaceable animations
 
-When creating animations based on events, such as on `"mousemove"`, a new animation is created each time, which can quickly consume memory and degrade performance.  To address this problem, replaceable animations were introduced, enabling automated cleanup, where finished animations are flagged as replaceable and automatically removed if replaced by another finished animation. Consider the following example:
+When creating animations based on events, such as on `'mousemove'`, a new animation is created each time, which can quickly consume memory and degrade performance.  To address this problem, replaceable animations were introduced in Chromium 83, enabling automated cleanup, where finished animations are flagged as replaceable and automatically removed if replaced by another finished animation. Consider the following example:
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
@@ -197,11 +197,10 @@ Each time the mouse moves, the browser re-calculates the position for each ball 
 2. There is one or more animations higher in composite ordering that are also finished.
 3. The new animations are animating the same properties.
 
-You can see exactly how many animations are being replaced by tallying up a counter with each removed animation, using `"anim.onremove"` to trigger the counter.
+You can see exactly how many animations are being replaced by tallying up a counter with each removed animation, using `anim.onremove` to trigger the counter.
 
 There are a few additional methods to take your animation control even further:
 
-- `animation.onremove()` calls some custom JavaScript code when an animation is replaced.
 - `animation.replaceState()` provides a means of tracking whether an animation is active, persisted, or removed.
 - `animation.commitStyles()` updates the style of an element based on the underlying style along with all animations on the element in the composite order.
 - `animation.persist()` marks an animation as non-replaceable.
