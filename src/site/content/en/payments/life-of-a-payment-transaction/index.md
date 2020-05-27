@@ -67,7 +67,6 @@ object. This object includes important information about the transaction:
   can use that as a hint to display the correct labels in its UI.
 
 ```js
-
 const request = new PaymentRequest([{
   supportedMethods: 'https://bobpay.xyz/pay',
   data: {
@@ -92,9 +91,11 @@ const request = new PaymentRequest([{
 });
 ```
 
-{% Aside %} 
-Including a transaction ID
+{% Details %} 
 
+{% DetailsSummary %}
+Including a transaction ID
+{% endDetailsSummary %}
 
 Some payment handlers may require the merchant to provide the transaction ID
 which they have issued in advance as part of the transaction information. A
@@ -106,7 +107,7 @@ validation at the end of the transaction.
 The merchant can pass a transaction ID as part of the
 [`PaymentMethodData`](https://www.w3.org/TR/payment-request/#dom-paymentmethoddata)
 object's `data` property.
-{% endAside %}
+{% endDetails %}
 
 Provided the transaction information, the browser goes through a discovery
 process of payment apps specified in the `PaymentRequest` based on the payment
@@ -121,7 +122,7 @@ method](/setting-up-a-payment-method#how-a-browser-discovers-a-payment-app).
 
 Merchants can support many payment methods, but should only present the payment
 buttons for those that a customer can actually use. Showing a payment button
-that is eventually unusable is poor user experience and if a merchant can
+that is eventually unusable is poor user experience. If a merchant can
 predict that a payment method specified in the `PaymentRequest` object won't
 work for the customer, they can provide a fallback solution or not show that
 button at all.
@@ -134,7 +135,7 @@ eligible for making the payment in two ways:
 
 ### Does the customer have the payment app available?
 
-[`canMakePayment()`](https://developer.mozilla.org/en-US/docs/Web/API/PaymentRequest/canMakePayment)
+The [`canMakePayment()`](https://developer.mozilla.org/docs/Web/API/PaymentRequest/canMakePayment)
 method of `PaymentRequest` returns `true` if a payment app is available on the
 customer's device. "Available" means only that a payment app that supports the
 payment method is discovered, and that the native payment app is installed, or
@@ -162,14 +163,13 @@ if (!hasEnrolledInstrument) {
   // Fallback to other means of payment or hide the button.
 }
 ```
-{% Aside %}
+
 The criteria to return `true` for `hasEnrolledInstrument()` depends on the
 payment app's implementation. In general, the response is positive when at least
 one payment instrument is available and all requested information such as a
 shipping address is ready to be provided by the payment app.
-{% endAside %}
 
-## Step 3: The customer presses the payment button {: #show}
+## Step 3: The customer presses the payment button {: #show }
 
 When the customer presses the payment button, the merchant calls the `show()`
 method of the `PaymentRequest` instance which immediately triggers the launch of
@@ -179,9 +179,9 @@ In case the final total price is set dynamically (for example, retrieved from a
 server), the merchant can defer the launch of the payment UI until the total is
 known.
 
-### Defering the launch of the payment UI
+### Deferring the launch of the payment UI
 
-Check out a demo of [defering the payment
+Check out a demo of [deferring the payment
 UI](https://rsolomakhin.github.io/pr/wait/) until the final total price is
 determined. 
 
@@ -191,12 +191,12 @@ transaction is ready to begin.
 
 ```js
 const getTotalAmount = async () => {
-  // Fetch the total amount from the server etc...
+  // Fetch the total amount from the server, etc.
 };
 
 try {
   const result = await request.show(getTotalAmount());
-  // Process the result...
+  // Process the result…
 } catch(e) {
   handleError(e);
 }
@@ -247,6 +247,7 @@ input and edit their details.
 
 The Payment Request UI can intervene before the payment app is launched if one
 of the following conditions is met:
+
 * `show()` is invoked without a user gesture (for example, without a click).
 * Multiple payment apps match the given payment method identifier on the device.
 * The payment app can't provide the shipping address, shipping option, or
@@ -257,11 +258,12 @@ of the following conditions is met:
        alt="The Payment Request UI modal on mobile screen, showing the order summary, pre-populated shipping address and contact information, the chosen payment app, and options to cancel or continue the payment."
        width="300">
   <figcaption class="w-figcaption">
-        The Payment Request UI on mobile screen.
+    The Payment Request UI on mobile screen.
   </figcaption>
 </figure>
 
 In the Payment Request UI, the customer can do any of the following:
+
 * Select a payment method.
 * Select a shipping option.
 * Select or edit a shipping address.
@@ -274,7 +276,7 @@ the next step.
 After the customer sets all the required information for making the payment,
 they can proceed to launch the payment app with the *Continue* button.
 
-## Step 5: How can merchant update the transaction details depending on customer's actions
+## Step 5: How a merchant can update the transaction details depending on customer's actions
 
 Customers have an option to change the transaction details such as payment
 method and shipping option in the Payment Request UI or the payment app. While
@@ -313,7 +315,7 @@ apps, rather than on multiple different merchant websites.
 
 If a customer updates their shipping address in a payment app after the
 transaction has been initiated, a shipping address change event will be emitted
-to the merchant. This helps the merchant to determine the shipping cost based on
+to the merchant. This helps the merchant determine the shipping cost based on
 the new address, update the total price, and return it back to the payment app.
 
 ```js
@@ -375,8 +377,8 @@ request.addEventListener('merchantvalidation', e => {
 ```
 
 {% Aside %}
-The support for merchant validation event is limited to Apple Safari. Chromium
-based browsers have not implemented this event as of May 2020.
+The support for the merchant validation event is limited to Apple Safari. Chromium-based
+browsers have not implemented this event as of May 2020.
 {% endAside %}
 
 ## Step 6: The merchant validates the payment and completes the transaction
@@ -409,9 +411,9 @@ the payment. How this critical process works is up to the payment handler.
 After the merchant determines whether the transaction has succeded or failed,
 they can either:
 
-* call the `.complete()` method to complete the transaction and dismiss the
-  loading indicator
-* or let the customer retry by calling the `retry()` method.
+* Call the `.complete()` method to complete the transaction and dismiss the
+  loading indicator.
+* Let the customer retry by calling the `retry()` method.
 
 ```js
 async function doPaymentRequest() {
@@ -434,7 +436,7 @@ async function validateResponse(response) {
     }
     await response.complete("success");
   } catch (err) {
-    // Something went wrong...
+    // Something went wrong…
     await response.complete("fail");
   }
 }
@@ -446,8 +448,8 @@ doPaymentRequest();
 ## Next Steps
 
 * Learn how to declare a payment method identifier in detail in [Setting up a
-  new payment method](/setting-up-a-payment-method).
-* Learn how to build a native payment app in [Android payment apps: developer's
-  guide](/native-payment-apps-overview).
-* Learn how to build a web-based payment app in Web based payment apps developer
-  guide (Coming soon).
+  payment method](/setting-up-a-payment-method).
+* Learn how to build a native payment app in 
+  [Android payment apps developer's guide](/native-payment-apps-overview).
+* Learn how to build a web-based payment app in *Web-based payment apps developer's
+  guide* (coming soon).

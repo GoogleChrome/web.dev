@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Android payment apps: developers' guide"
+title: Android payment app developers guide
 subhead: |
   Learn how to adapt your Android payment app to work with Web Payments and provide a better user experience for customers.
 authors:
@@ -21,12 +21,12 @@ apps.
     <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">Checkout flow with native Google Pay app that uses Web Payments.</a>.
+  <figcaption class="w-figcaption">Checkout flow with native Google Pay app that uses Web Payments</a>.
   </figcaption>
 </figure>
 
 Compared to using just Android Intents, Web Payments allow better integration
-with the browser, security and user experience:
+with the browser, security, and user experience:
 
 * The payment app is launched as a modal, in context of the merchant website.
 * Implementation is supplemental to your existing payment app, enabling you to
@@ -34,7 +34,7 @@ with the browser, security and user experience:
 * The payment app's signature is checked to prevent
   [sideloading](https://en.wikipedia.org/wiki/Sideloading).
 * Payment apps can support multiple payment methods.
-* Any payment method, such as cryptocurrency, bank transfers adn more, can be
+* Any payment method, such as cryptocurrency, bank transfers, and more, can be
   integrated. Payment apps on Android devices can even integrate methods that
   require access to the hardware chip on the device.
 
@@ -51,8 +51,9 @@ It takes four steps to implement Web Payments in an Android native payment app:
 3. Let a customer make payment.
 4. Verify the caller's signing certificate.
 
-To see Web Payments in action, check out [this demo Android payment
-app](https://github.com/GoogleChromeLabs/android-web-payment/).
+To see Web Payments in action, check out the
+[android-web-payment](https://github.com/GoogleChromeLabs/android-web-payment/)
+demo.
 
 ## Step 1: Let merchants discover your payment app
 
@@ -84,13 +85,13 @@ Declare your service with an intent filter with the action
 `org.chromium.intent.action.IS_READY_TO_PAY`.
 
 ```xml
-  <service
-    android:name=".SampleIsReadyToPayService"
-    android:exported="true">
-    <intent-filter>
-      <action android:name="org.chromium.intent.action.IS_READY_TO_PAY" />
-    </intent-filter>
-  </service>
+<service
+  android:name=".SampleIsReadyToPayService"
+  android:exported="true">
+  <intent-filter>
+    <action android:name="org.chromium.intent.action.IS_READY_TO_PAY" />
+  </intent-filter>
+</service>
 ```
 
 The `IS_READY_TO_PAY` service is optional. If there's no such intent handler in
@@ -155,7 +156,7 @@ Pass the following parameters to `onBind` as Intent extras:
 ```kotlin
 override fun onBind(intent: Intent?): IBinder? {
   val extras: Bundle? = intent?.extras
-  // ...
+  // …
 }
 ```
 
@@ -236,7 +237,7 @@ have to do this in the `isReadyToPay` method, not in the `onBind` method.
 override fun isReadyToPay(callback: IsReadyToPayServiceCallback?) {
   try {
     val callingPackage = packageManager.getNameForUid(Binder.getCallingUid())
-    // ...
+    // …
 ```
 
 See [Verify the caller's signing certificate](#heading=h.czr8ye23zg2e) about how
@@ -265,20 +266,20 @@ To support multiple payment methods, add a `<meta-data>` tag with a
 `<string-array>` resource.
 
 ```xml
-  <activity
-    android:name=".PaymentActivity"
-    android:theme="@style/Theme.SamplePay.Dialog">
-    <intent-filter>
-      <action android:name="org.chromium.intent.action.PAY" />
-    </intent-filter>
+<activity
+  android:name=".PaymentActivity"
+  android:theme="@style/Theme.SamplePay.Dialog">
+  <intent-filter>
+    <action android:name="org.chromium.intent.action.PAY" />
+  </intent-filter>
 
-    <meta-data
-      android:name="org.chromium.default_payment_method_name"
-      android:value="https://bobpay.xyz/pay" />
-    <meta-data
-      android:name="org.chromium.payment_method_names"
-      android:resource="@array/method_names" />
-  </activity>
+  <meta-data
+    android:name="org.chromium.default_payment_method_name"
+    android:value="https://bobpay.xyz/pay" />
+  <meta-data
+    android:name="org.chromium.payment_method_names"
+    android:resource="@array/method_names" />
+</activity>
 ```
 
 The `resource` must be a list of strings, each of which must be a valid,
@@ -467,8 +468,8 @@ that has a single signing certificate, you can use
 `PackageManager.hasSigningCertificate()`.
 
 ```kotlin
-val packageName: String = ... // The caller's package name
-val certificate: ByteArray = ... // The correct signing certificate.
+val packageName: String = … // The caller's package name
+val certificate: ByteArray = … // The correct signing certificate.
 val verified = packageManager.hasSigningCertificate(
   callingPackage,
   certificate,
@@ -486,8 +487,8 @@ browsers with multiple signing certificates, you can use
 `PackageManager.GET_SIGNATURES`.
 
 ```kotlin
-val packageName: String = ... // The caller's package name
-val certificates: Set<ByteArray> = ... // The correct set of signing certificates
+val packageName: String = … // The caller's package name
+val certificates: Set<ByteArray> = … // The correct set of signing certificates
 
 val packageInfo = getPackageInfo(packageName, PackageManager.GET_SIGNATURES)
 val sha256 = MessageDigest.getInstance("SHA-256")

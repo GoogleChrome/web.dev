@@ -22,7 +22,7 @@ module.exports = {
       },
       {
         title: 'Build a native payment app',
-        pathItems: ['native-payment-apps-overview'],
+        pathItems: ['android-payment-app-developers-guide'],
       },
     ],
   },
