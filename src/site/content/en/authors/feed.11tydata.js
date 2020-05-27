@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
+const {feed} = require('../../../_utils/authors');
+
 module.exports = {
   pagination: {
-    before: (authors) =>
-      process.env.ELEVENTY_ENV === 'dev'
-        ? []
-        : authors.filter((a) => a.elements.length > 0),
+    before: (authors) => feed(authors),
   },
 };

@@ -14,16 +14,10 @@
  * limitations under the License.
  */
 
-const addPagination = require('../../../_utils/add-pagination');
+const {individual} = require('../../../_utils/tags');
 
 module.exports = {
   pagination: {
-    before: (tags) => {
-      let paginated = [];
-      tags.forEach((tag) => {
-        paginated = paginated.concat(addPagination(tag.elements, tag));
-      });
-      return paginated;
-    },
+    before: (tags) => individual(tags),
   },
 };

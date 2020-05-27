@@ -14,10 +14,16 @@
  * limitations under the License.
  */
 
-const {index} = require('../../../_utils/blog');
+const addPagination = require('./add-pagination');
+
+/**
+ * @param {any[]} newsletters
+ * @return {Paginated[]}
+ */
+const newsletterIndex = (newsletters) => {
+  return addPagination(newsletters, {href: '/newsletter/'});
+};
 
 module.exports = {
-  pagination: {
-    before: (blogPosts) => index(blogPosts),
-  },
+  index: newsletterIndex,
 };

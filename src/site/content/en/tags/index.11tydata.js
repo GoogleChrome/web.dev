@@ -14,27 +14,10 @@
  * limitations under the License.
  */
 
-const addPagination = require('../../../_utils/add-pagination');
+const {index} = require('../../../_utils/tags');
 
 module.exports = {
   pagination: {
-    before: (tags) => {
-      const testTags = [
-        'css',
-        'javascript',
-        'lighthouse',
-        'seo',
-        'progressive-web-apps',
-        'webxr',
-      ];
-
-      if (process.env.PERCY) {
-        tags = tags.filter((item) => testTags.includes(item.key));
-      }
-
-      return addPagination(tags, {
-        href: '/tags/',
-      });
-    },
+    before: (tags) => index(tags),
   },
 };

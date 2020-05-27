@@ -14,17 +14,10 @@
  * limitations under the License.
  */
 
-const addPagination = require('../../../_utils/add-pagination');
+const {individual} = require('../../../_utils/authors');
 
 module.exports = {
   pagination: {
-    before: (authors) => {
-      const authorsWithPosts = authors.filter((a) => a.elements.length > 0);
-      let paginated = [];
-      authorsWithPosts.forEach((author) => {
-        paginated = paginated.concat(addPagination(author.elements, author));
-      });
-      return paginated;
-    },
+    before: (authors) => individual(authors),
   },
 };

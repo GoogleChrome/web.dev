@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 
+const {feed} = require('../../../_utils/tags');
+
 module.exports = {
   pagination: {
-    before: (tags) => (process.env.ELEVENTY_ENV === 'dev' ? [] : tags),
+    before: (tags) => feed(tags),
   },
 };

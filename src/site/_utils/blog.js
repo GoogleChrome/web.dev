@@ -14,10 +14,21 @@
  * limitations under the License.
  */
 
-const {index} = require('../../../_utils/blog');
+const addPagination = require('./add-pagination');
+
+/**
+ * @param {any[]} blogPosts
+ * @param {string} language
+ * @return {Paginated[]}
+ */
+const blogIndex = (blogPosts, language = 'en') => {
+  const filteredBlogPosts = blogPosts.filter(
+    (blogPost) => blogPost.template.dataCache.lang === language,
+  );
+
+  return addPagination(filteredBlogPosts, {href: '/blog/'});
+};
 
 module.exports = {
-  pagination: {
-    before: (blogPosts) => index(blogPosts),
-  },
+  index: blogIndex,
 };

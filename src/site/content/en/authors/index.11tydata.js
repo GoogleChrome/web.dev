@@ -14,26 +14,10 @@
  * limitations under the License.
  */
 
-const addPagination = require('../../../_utils/add-pagination');
+const {index} = require('../../../_utils/authors');
 
 module.exports = {
   pagination: {
-    before: (authors) => {
-      const testAuthors = [
-        'robdodson',
-        'samthor',
-        'surma',
-        'mgechev',
-        'addyosmani',
-        'adamargyle',
-      ];
-      const authorsWithPosts = authors.filter((author) => {
-        if (process.env.PERCY && !testAuthors.includes(author.key)) {
-          return;
-        }
-        return author.elements.length > 0;
-      });
-      return addPagination(authorsWithPosts, {href: '/authors/'});
-    },
+    before: (authors) => index(authors),
   },
 };

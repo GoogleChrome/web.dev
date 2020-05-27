@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-const addPagination = require('../../../_utils/add-pagination');
+const {index} = require('../../../_utils/newsletter');
 
 module.exports = {
   pagination: {
-    before: (newsletters) => addPagination(newsletters, {href: '/newsletter/'}),
+    before: (newsletters) => index(newsletters),
   },
 };
