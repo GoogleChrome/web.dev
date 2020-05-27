@@ -254,7 +254,7 @@ const dropDown = menu.animate(
   });
 ```
 
-### What's next for the web animations API
+### What's next for the Web Animations API
 
 These are all exciting additions to animations capabilities in today's browsers, and even more additions are coming down the pipeline. Check out these future specifications for some further reading on what's coming next:
 
