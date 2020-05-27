@@ -141,31 +141,14 @@ You can take the above animation, and give it a smooth, reversed animation when 
 
 What you can do is create two play-pending animations (`"openModal"`, and an inline opacity transformation), and then pause one of the animations, delaying it until the other is finished. You can then use promises to wait for each to be finished before playing. Finally, you can check to see if a flag is set, and then reverse each animation.
 
-```js/17-20
-document.querySelector('button').addEventListener('click', () => {                                 
-  // Create two play-pending animations.
-  let animations = [
-    document.querySelector('.modal').animate(openModal, openModalSettings),
-    document.querySelector('.text').animate({ opacity: [0, 1] }, openModalSettings)
-  ];
-
-  // Pause one of the animations and delay it until the other is finished.
-  if (open) {
-    animations.forEach((anim) => {
-      anim.currentTime = anim.effect.getTiming().duration;
-      anim.reverse();
-    });
-    animations = animations.reverse();
-  }
-  
-  // Run animations sequentially.
-  animations[1].pause();  
-  animations[0].finished.then(() => {
-    animations[1].play();
-  });
-  open = !open;
-});
-```
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/waapi-promises?path=script.js&previewSize=0"
+    title="waapi-promises on Glitch"
+    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
 
 ## Dynamic interactions with partial keyframes
 
