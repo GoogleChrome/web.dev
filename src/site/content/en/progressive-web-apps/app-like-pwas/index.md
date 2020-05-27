@@ -229,6 +229,7 @@ Other native applications and even websites or emails can integrate with the Pod
 ## Native file system integration
 
 You may not immediately think of it, but the Podcasts app naturally integrates with the native file system. When I download a podcast episode, on my laptop it is stored in `~/Library/Group Containers/243LU875E5.groups.com.apple.podcasts/Library/Cache`. Unlike, say `~/Documents`, this directory is of course not meant to be accessed directly by regular users, but it is there.
+Other storage mechanisms than files are referenced in the [offline content](#offline-content-available-and-media-playable) section.
 
 <figure class="w-figure">
   <img src="./image5.png" alt="The macOS Finder navigated to the Podcasts app's system directory.">
