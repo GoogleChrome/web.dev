@@ -65,11 +65,11 @@ you would set in JS:
 
 ```js
 document.querySelector('.modal').animate(
-    openAnimation ,  {
-    duration: 1000, // 1s
-    iterations: 1, // single iteration
-    easing: 'ease-in' // easing function
-  }
+    openAnimation, {
+      duration: 1000, // 1s
+      iterations: 1, // single iteration
+      easing: 'ease-in' // easing function
+    }
 );
 ```
 
