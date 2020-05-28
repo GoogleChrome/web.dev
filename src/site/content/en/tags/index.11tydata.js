@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const {index} = require('../../../_utils/_hooks/tags');
+const {index} = require('../../../_collections/_hooks/tags');
 
 module.exports = {
   pagination: {

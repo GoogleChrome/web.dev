@@ -14,7 +14,11 @@
  * limitations under the License.
  */
 
-const addPagination = require('../add-pagination');
+/**
+ * Reusable hooks for authors and tags
+ */
+
+const addPagination = require('../../_utils/add-pagination');
 
 /**
  * @param {any[]} items

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const {feed} = require('../../../_utils/_hooks/tags');
+const {feed} = require('../../../_collections/_hooks/tags');
 
 module.exports = {
   pagination: {

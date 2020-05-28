@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const {index} = require('../../../_utils/_hooks/blog');
+const {index} = require('../../../_collections/_hooks/blog');
 
 module.exports = {
   pagination: {

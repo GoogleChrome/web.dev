@@ -14,15 +14,14 @@
  * limitations under the License.
  */
 
-const addPagination = require('../add-pagination');
+const addPagination = require('../../_utils/add-pagination');
 
 /**
- * @param {any[]} newsletters
+ * @param {any[]} blogPosts
  * @return {Paginated[]}
  */
-const newsletterIndex = (newsletters) =>
-  addPagination(newsletters, {href: '/newsletter/'});
+const blogIndex = (blogPosts) => addPagination(blogPosts, {href: '/blog/'});
 
 module.exports = {
-  index: newsletterIndex,
+  index: blogIndex,
 };
