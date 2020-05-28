@@ -18,6 +18,8 @@ tags:
 
 The recently announced [Web Vitals](/vitals/) initiative provides unified guidance about quality signals that are essential for all sites to deliver a great user experience on the web. We're happy to announce that **all of Google's popular tools for web developers now support measurement of Core Web Vitals**, helping you more easily diagnose and fix user experience issues. This includes [Lighthouse](https://github.com/GoogleChrome/lighthouse), [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/), [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools), [Search Console](https://search.google.com/search-console/about), [web.dev's measure tool](/measure/), the [Web Vitals Chrome extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) and a new (!) [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) API. 
 
+With Google Search now including Core Web Vitals as the foundation for evaluating [page experience](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html), it's important that these metrics are as available and actionable as possible. 
+
 <figure class="w-figure">
   <img class="w-screenshot" src="./Vitals-Tools1.png" alt="Summary of Chrome and Search Tools that support the Core Web Vitals metrics">
 </figure>
