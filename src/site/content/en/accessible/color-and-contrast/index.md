@@ -15,7 +15,7 @@ tags:
 ---
 
 If you have good vision, it's easy to assume that everyone perceives colors,
-or text legibility, the same way you do — but of course that's not the case.
+or text legibility, the same way you do—but of course that's not the case.
 
 As you might imagine,
 some color combinations that are easy for some people to read are difficult or impossible for others.

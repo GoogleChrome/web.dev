@@ -37,7 +37,7 @@ Here's the same page magnified to 400%:
 
 In fact, just by designing responsively,
 we're meeting rule [1.4.4 of the WebAIM checklist](https://webaim.org/standards/wcag/checklist#sc1.4.4),
-which states that a page "...should be readable and functional when the text size is doubled."
+which states that a page "… should be readable and functional when the text size is doubled."
 
 Going over all of responsive design is outside the scope of this guide,
 but here are a few important takeaways that will benefit your responsive experience
