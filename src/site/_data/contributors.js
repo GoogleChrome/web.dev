@@ -324,7 +324,7 @@ const contributors = {
     },
     country: 'USA',
     twitter: 'addyosmani',
-    glitch: 'addyosmani',
+    github: 'addyosmani',
     description: {
       en: 'Eng Manager working on Chrome and Web Platform',
     },

@@ -4,7 +4,7 @@ title: First Input Delay (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-05-21
+updated: 2020-05-27
 description: |
   This post introduces the First Input Delay (FID) metric and explains
   how to measure it
@@ -202,15 +202,23 @@ FID is a metric that can only be measured [in the
 field](/user-centric-performance-metrics/#in-the-field), as it requires a real
 user to interact with your page. You can measure FID with the following tools.
 
+{% Aside %}
+  FID requires a real user and thus cannot be measured in the lab. However, the
+  [Total Blocking Time (TBT)](/tbt/) metric is lab-measurable, correlates well
+  with FID in the field, and also captures issues that affect interactivity.
+  Optimizations that improve TBT in the lab should also improve FID for your
+  users.
+{% endAside %}
+
 ### Field tools
 
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
 - [Chrome User Experience
   Report](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [Search Console (Speed
-  Report)](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
-- [Firebase Performance
-  Monitoring](https://firebase.google.com/docs/perf-mon/get-started-web) (beta)
+- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [Search Console (Core Web Vitals
+  report)](https://support.google.com/webmasters/answer/9205520)
+- [Firebase Performance Monitoring
+  (beta)](https://firebase.google.com/docs/perf-mon/get-started-web)
 
 ### Measure FID in JavaScript
 
@@ -262,9 +270,13 @@ entries, calculates FID, and logs the value to the console:
 
 Due to the expected variance in FID values, it's critical that when reporting on
 FID you look at the distribution of values and focus on the higher percentiles.
-In fact, we recommend specifically focusing on the 95th–99th percentile, as that
-will correspond to the particularly bad first experiences users are having with
-your site. And it will show you the areas that need the most improvement.
+
+While [choice of
+percentile](/defining-core-web-vitals-thresholds/#choice-of-percentile) for all
+Core Web Vitals thresholds is the 75th, for FID in particular we still strongly
+recommend looking at the 95th–99th percentiles, as those will correspond to the
+particularly bad first experiences users are having with your site. And it will
+show you the areas that need the most improvement.
 
 This is true even if you segment your reports by device category or type. For
 example, if you run separate reports for desktop and mobile, the FID value you
