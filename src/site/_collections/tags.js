@@ -25,22 +25,25 @@ const {livePosts} = require('../_filters/live-posts');
  * @return {Array<{ title: string, key: string, description: string, href: string, url: string, data: { title: string, subhead: string }, elements: Array<object> }>} An array where each element is a paged tag with some meta data and n posts for the page.
  */
 module.exports = (collections) => {
-  return Object.values(postTags).reduce((accumulator, tag) => {
+  const tags = {};
+
+  Object.values(postTags).forEach((tag) => {
     // This updates the shared postTags object with meta information and is safe to be called multiple times.
     tag.url = path.join('/en', tag.href);
     tag.data = {
       title: tag.title,
       subhead: tag.description,
     };
+
     tag.elements = collections
       .getFilteredByTag(tag.key)
       .filter(livePosts)
       .sort((a, b) => b.date - a.date);
 
     if (tag.elements.length > 0) {
-      accumulator.push(tag);
+      tags[tag.key] = tag;
     }
+  });
 
-    return accumulator;
-  }, []);
+  return tags;
 };
