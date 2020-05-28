@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const {individual} = require('../../../_collections/_hooks/tags');
+const {individual} = require('../../../_collections/hooks/tags');
 
 module.exports = {
   pagination: {

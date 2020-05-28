@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const {individual} = require('../../../_collections/_hooks/authors');
+const {individual} = require('../../../_collections/hooks/authors');
 
 module.exports = {
   pagination: {
