@@ -192,3 +192,7 @@ redirects:
 
 - from: /sms-receiver-api-announcement
   to: /web-otp
+
+# Redirect /payments content
+- from: /android-payment-app-developers-guide
+  to: /android-payment-apps-overview
