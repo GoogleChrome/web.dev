@@ -156,7 +156,7 @@ The extension is now available to install from the [Chrome Web Store](https://ch
   <img class="w-screenshot" src="./Vitals-Tools10.png" alt="Core Web Vitals displayed in real-time with the Web Vitals Chrome Extension">
 </figure>
 
-#### Quick Highlights
+#### Quick highlights
 
 That's a wrap! What can you do next:
 
