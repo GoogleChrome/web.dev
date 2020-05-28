@@ -2,16 +2,20 @@
 layout: post
 title: Color and contrast
 authors:
+  - dgash
+  - megginkearney
   - rachelandrew
-date: 2020-05-22
+  - robdodson
+date: 2020-05-28
 description: |
-  intro
+  If you have good vision, it's easy to assume that everyone perceives colors, or text legibility, the same way you do — but of course that's not the case.
+tags:
+  - blog
+  - accessibility
 ---
 
 If you have good vision, it's easy to assume that everyone perceives colors,
 or text legibility, the same way you do — but of course that's not the case.
-Let's wrap things up by looking at how we can effectively use color and contrast
-to create pleasant designs that are accessible to everyone.
 
 As you might imagine,
 some color combinations that are easy for some people to read are difficult or impossible for others.
@@ -39,7 +43,7 @@ You can use the Accessibility Audit in Lighthouse to check your color contrast.
 Open DevTools, click Audits, and select Accessibility to run the report.
 
 <figure class="w-figure">
-  <img src="./contrast-ratios.jpg" alt="An image showing the different contrast ratios">
+  <img src="./accessibility-audit.jpg" alt="An image showing the different contrast ratios">
 </figure>
 
 For a more complete report, install the [Accessibility Insights Extension](https://accessibilityinsights.io/).
@@ -47,12 +51,12 @@ One of the checks in the Fastpass report, is color contrast.
 You will get a detailed report of any failing elements.
 
 <figure class="w-figure">
-  <img src="./contrast-ratios.jpg" alt="An image showing the different contrast ratios">
+  <img src="./fastpass-contrast.jpg" alt="The report in Accessibility Insights">
 </figure>
 
 ## Don't convey information with color alone
 
-There are roughly 320 million users with color vision deficiency.
+There are roughly 320 million people worldwide with color vision deficiency.
 About 1 in 12 men and 1 in 200 women have some form of "color blindness";
 that means about 1/20th, or 5%, of your users will not experience your site the way you intended.
 When we rely on color to convey information, we push that number to unacceptable levels.
@@ -105,7 +109,7 @@ you can then emulate the following color deficiencies.
 - Achromatopsia: the inability to perceive any color except for shades of grey (extremely rare).
 
 <figure class="w-figure">
-  <img src="./emulate.png" alt="Emulating the vision of a person with Achromatopsia shows our page in greyscale.">
+  <img src="./emulate.jpg" alt="Emulating the vision of a person with Achromatopsia shows our page in greyscale.">
 </figure>
 
 ## High contrast mode
@@ -131,7 +135,7 @@ If you view it in a high-contrast extension, that subtlety completely disappears
 and with it goes the reader's understanding of which page is active.
 
 <figure class="w-figure">
-  <img src="./tab-contrast.jpg" alt="Screenshot of a navigation bar in high contrast mode where the acvtive tab is hard to read">
+  <img src="./tab-contrast.png" alt="Screenshot of a navigation bar in high contrast mode where the acvtive tab is hard to read">
 </figure>
 
 Similarly, if you consider the example from the previous lesson,
@@ -139,7 +143,7 @@ the red underline on the invalid phone number field might be
 displayed in a hard-to-distinguish blue-green color.
 
 <figure class="w-figure">
-  <img src="./high-contrast.png" alt="Screenshot of the address form used earlier, this time in high contrast mode. The color change of the invalid element is hard to read.">
+  <img src="./high-contrast.jpg" alt="Screenshot of the address form used earlier, this time in high contrast mode. The color change of the invalid element is hard to read.">
 </figure>
 
 If you are meeting the contrast ratios covered earlier

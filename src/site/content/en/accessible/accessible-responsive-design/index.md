@@ -2,10 +2,16 @@
 layout: post
 title: Accessible Responsive Design
 authors:
+  - dgash
+  - megginkearney
   - rachelandrew
-date: 2020-05-20
+  - robdodson
+date: 2020-05-28
 description: |
-  intro to do
+  We know that it's a good idea to design responsively to provide the best multi-device experience, but responsive design also yields a win for accessibility.
+tags:
+  - blog
+  - accessibility
 ---
 
 We know that it's a good idea to design responsively to provide the best multi-device experience,
@@ -48,13 +54,15 @@ and setting `initial-scale=1` establishes a 1:1 relationship between CSS pixels 
 Doing this instructs the browser to fit your content to the screen size,
 so users don't just see a bunch of scrunched-up text.
 
+See [Size content to viewport](/responsive-web-design-basics/#viewport) to learn more.
+
 ## Allow users to zoom
 
 It is possible to use the viewport meta tag to prevent zooming,
 by setting `maximum-scale=1` or `user-scaleable=no`.
 Avoid doing this, and let your users zoom in if they need to.
 
-## Design with a flexible grid
+## Design with flexibility
 
 Avoid targetting specific screen sizes and instead use a flexible grid,
 making changes to the layout when the content dictates.
@@ -79,14 +87,14 @@ creating the reading experience they need to use your site.
 
 A visitor who is tabbing through your site with the keyboard
 will be following the order of the content in the HTML document.
-When using modern layout methods such as flexbox and grid,
+When using modern layout methods such as [flexbox and grid](/responsive-web-design-basics/#flexbox),
 it is easy to make the visual rendering not match the source order.
 This can lead to disconcerting jumps around the page for someone using the keyboard to move around.
 
 Make sure to test your design at each breakpoint by tabbing through the content,
 does the flow through the page still make sense?
 
-Read more about the source and visual display disconnect. TO DO: link to new piece.
+Read more about [the source and visual display disconnect](/source-reordering).
 
 ## Take care with spatial clues
 
@@ -99,4 +107,4 @@ when the navigation is at the top of the screen.
 On touchscreen devices make sure your tap targets are large enough
 to make them easy to activate without hitting other links.
 A good size for any tappable element is 48px,
-read more guidance on [tap targets](/tap-targets/).
+read more guidance on [tap targets](/accessible-tap-targets/).

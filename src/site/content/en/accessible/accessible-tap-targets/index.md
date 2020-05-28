@@ -2,10 +2,16 @@
 layout: post
 title: Tap target guidance
 authors:
+  - dgash
+  - megginkearney
   - rachelandrew
-date: 2020-05-18
+  - robdodson
+date: 2020-05-28
 description: |
-  intro
+  It's important that interactive elements have enough space around them, when used on a mobile or touchscreen device. This will help everyone, but especially those with motor impairments.
+tags:
+  - blog
+  - accessibility
 ---
 
 When your design is displayed on a mobile device,

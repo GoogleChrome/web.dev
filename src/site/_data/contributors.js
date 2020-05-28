@@ -470,6 +470,24 @@ const contributors = {
     github: 'housseindjirdeh',
     glitch: 'housseindjirdeh',
   },
+  megginkearney: {
+    name: {
+      given: 'Meggin',
+      family: 'Kearney',
+    },
+    description: {
+      en: 'Meggin is a Tech Writer',
+    },
+  },
+  dgash: {
+    name: {
+      given: 'Dave',
+      family: 'Gash',
+    },
+    description: {
+      en: 'Dave is a Tech Writer',
+    },
+  },
   mdiblasio: {
     name: {
       given: 'Michael',
