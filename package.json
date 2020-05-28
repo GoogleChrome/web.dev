@@ -50,6 +50,7 @@
     "focus-visible": "^5.0.2",
     "idb-keyval": "^3.2.0",
     "iso-639-1": "^2.1.0",
+    "js-cookie": "^2.2.1",
     "js-yaml": "^3.13.1",
     "lit-element": "^2.2.0",
     "rollup-plugin-replace": "^2.2.0",

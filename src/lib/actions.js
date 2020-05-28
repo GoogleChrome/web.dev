@@ -2,6 +2,7 @@ import {store} from './store';
 import {saveUserUrl} from './fb';
 import {runLighthouse, fetchReports} from './lighthouse-service';
 import {localStorage} from './utils/storage';
+import cookies from 'js-cookie';
 
 export const clearSignedInState = store.action(() => {
   const {isSignedIn} = store.getState();
@@ -180,5 +181,43 @@ export const setUserAcceptsCookies = store.action(() => {
     // snackbar to re-render and break the animation.
     // Instead, snackbarType is allowed to stick around and future updates can
     // overwrite it.
+  };
+});
+
+// TODO(devnook): Extract isSupportedLocale to a common format.
+// Temp validation.
+function isValidLocale(locale) {
+  return ['en', 'pl'].indexOf(locale) > -1;
+}
+
+export const checkUserPreferredLocale = store.action(
+  ({userPreferredLocale}) => {
+    if (!userPreferredLocale) {
+      const cookie = cookies.get('preferred_lang');
+      if (isValidLocale(cookie)) {
+        return {
+          userPreferredLocale: cookie,
+        };
+      }
+    }
+    return {userPreferredLocale};
+  },
+);
+
+export const setLocale = store.action((state, preferredLocale) => {
+  if (!isValidLocale(preferredLocale)) {
+    console.warn('Invalid locale: ', preferredLocale);
+    return;
+  }
+  const options = {
+    expires: 365,
+    samesite: 'strict',
+  };
+  cookies.set('preferred_lang', preferredLocale, options);
+  if (preferredLocale !== state.userPreferredLocale) {
+    location.pathname = preferredLocale;
+  }
+  return {
+    userPreferredLocale: preferredLocale,
   };
 });
