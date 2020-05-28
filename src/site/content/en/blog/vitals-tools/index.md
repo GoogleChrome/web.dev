@@ -43,9 +43,9 @@ Lighthouse is an automated website auditing tool that helps developers diagnose 
   <img class="w-screenshot" src="./lighthouse.png" alt="Lighthouse 6.0 showing the latest Core Web Vitals metrics">
 </figure>
 
-Lighthouse 6.0 introduces three new metrics to the report. Two of these new metrics - [Largest Contentful Paint](/lcp/) (LCP) and [Cumulative Layout Shift](/cls/) (CLS) - are lab implementations of Core Web Vitals and provide important diagnostic information for optimizing user experience. Given their importance for assessing user experience, the new metrics are not only measured and included in the report, they are also factored in calculating the performance score.
+Lighthouse 6.0 introduces three new metrics to the report. Two of these new metrics—[Largest Contentful Paint](/lcp/) (LCP) and [Cumulative Layout Shift](/cls/) (CLS)—are lab implementations of Core Web Vitals and provide important diagnostic information for optimizing user experience. Given their importance for assessing user experience, the new metrics are not only measured and included in the report, they are also factored in calculating the performance score.
 
-The third new metric included in Lighthouse - [Total Blocking Time](/tbt/) (TBT) - correlates well with the field metric [First Input Delay](/fid/) (FID), another Core Web Vitals metric. Following the recommendations provided in the Lighthouse report and optimizing against your scores sets you up to provide the best possible experience to your users. 
+The third new metric included in Lighthouse—[Total Blocking Time](/tbt/) (TBT)—correlates well with the field metric [First Input Delay](/fid/) (FID), another Core Web Vitals metric. Following the recommendations provided in the Lighthouse report and optimizing against your scores sets you up to provide the best possible experience to your users. 
 
 All of the products that Lighthouse powers are updated to reflect the latest version, including [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci) which enables you to easily measure your Core Web Vitals on pull requests before they're merged and deployed.
 
