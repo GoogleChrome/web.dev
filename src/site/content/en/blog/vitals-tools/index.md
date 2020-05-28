@@ -22,7 +22,9 @@ The recently announced [Web Vitals](/vitals/) initiative provides unified guidan
   <img class="w-screenshot" src="./Vitals-Tools1.png" alt="Summary of Chrome and Search Tools that support the Core Web Vitals metrics">
 </figure>
 
-**_[Quick Refresher]_** Lab tools provide insight into how a _potential user_ will likely experience your website and offer reproducible results for debugging. **Field** tools provide insight into how your _real users_ are experiencing your website; this type of measurement is often called Real User Monitoring (RUM). Each [lab or field tool](/how-to-measure-speed/#lab-data-vs-field-data) offers distinct value for optimizing your user experience. 
+{% Aside 'key-term' %}
+**Lab tools** provide insight into how a _potential user_ will likely experience your website and offer reproducible results for debugging. **Field** tools provide insight into how your _real users_ are experiencing your website; this type of measurement is often called Real User Monitoring (RUM). Each [lab or field tool](/how-to-measure-speed/#lab-data-vs-field-data) offers distinct value for optimizing your user experience.
+{% endAside %}
 
 To begin your journey optimizing user-experience with Core Web Vitals, try the following workflow: 
 
