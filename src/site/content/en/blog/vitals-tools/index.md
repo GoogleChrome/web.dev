@@ -1,6 +1,6 @@
 ---
 title: "Tools to measure Core Web Vitals"
-subhead: Your favorite developer tools can now measure the Core Web Vitals metrics.
+subhead: Your favorite developer tools can now measure the Core Web Vitals.
 authors:
   - addyosmani
   - egsweeny
