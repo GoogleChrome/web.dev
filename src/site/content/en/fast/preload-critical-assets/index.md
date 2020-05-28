@@ -10,7 +10,7 @@ description: |
   for any other external references. The critical request chain represents the
   order of resources that are prioritized and fetched by the browser.
 date: 2018-11-05
-updated: 2019-09-17
+updated: 2020-05-28
 codelabs:
   - codelab-preload-critical-assets
   - codelab-preload-web-fonts
@@ -20,7 +20,7 @@ When you open a web page, the browser requests the HTML document from a server, 
 
 ## How preloading works
 
-Preloading is best suited for resources typically discovered late by the browser. 
+Preloading is best suited for resources typically discovered late by the browser.
 
 <figure class="w-figure">
 <img src="./network-waterfall-before.png" alt="Screenshot of Chrome DevTools Network panel.">
@@ -50,7 +50,7 @@ The browser caches preloaded resources so they are available immediately when ne
 After implementing preloading, many sites, including [Shopify, Financial Times and Treebo, saw 1-second improvements](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf) in user-centric metrics such as [Time to Interactive](/interactive) and [First Contentful Paint](/first-contentful-paint).
 {% endAside %}
 
-Resource hints, for example, [`preconnect`](/preconnect-and-dns-prefetch)and [`prefetch`](/link-prefetch), are executed as the browser sees fit. The `preload`, on the other hand, is mandatory for the browser. Modern browsers are already pretty good at prioritizing resources, that's why it's important to use `preload` sparingly and only preload the most critical resources. 
+Resource hints, for example, [`preconnect`](/preconnect-and-dns-prefetch)and [`prefetch`](/link-prefetch), are executed as the browser sees fit. The `preload`, on the other hand, is mandatory for the browser. Modern browsers are already pretty good at prioritizing resources, that's why it's important to use `preload` sparingly and only preload the most critical resources.
 
 Unused preloads trigger a Console warning in Chrome, approximately 3 seconds after the `load` event.
 
@@ -70,7 +70,7 @@ Fonts defined with [`@font-face`](https://developers.google.com/web/fundamentals
 
 If you are using the [critical CSS approach](/extract-critical-css), you split your CSS into two parts. The critical CSS required for rendering the above-the-fold content is inlined in the `<head>` of the document and non-critical CSS is usually lazy-loaded with JavaScript. Waiting for JavaScript to execute before loading non-critical CSS can cause delays in rendering when users scroll, so it's a good idea to use `<link rel="preload">` to initiate the download sooner.
 
-### Preloading JavaScript files 
+### Preloading JavaScript files
 
 Because browsers don't execute preloaded files, preloading is useful to separate fetching from [execution](/bootup-time) which can improve metrics such as Time to Interactive. Preloading works best if you [split](/reduce-javascript-payloads-with-code-splitting) your JavaScript bundles and only preload critical chunks.
 
@@ -84,7 +84,7 @@ The simplest way to implement `preload` is to add a `<link>` tag to the `<head>`
 </head>
 ```
 
-Supplying the `as` attribute helps the browser set the priority of the prefetched resource according to its type, set the right headers, and determine whether the resource already exists in the cache. Accepted values for this attribute include: `script`, `style`, `font`, `image`, and [others](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#Attributes). 
+Supplying the `as` attribute helps the browser set the priority of the prefetched resource according to its type, set the right headers, and determine whether the resource already exists in the cache. Accepted values for this attribute include: `script`, `style`, `font`, `image`, and [others](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#Attributes).
 
 {% Aside %}
 Take a look at the [Chrome Resource Priorities and Scheduling](https://docs.google.com/document/d/1bCDuq9H1ih9iNjgzyAL0gpwNFiEP4TZS-YLRp_RuMlc/edit) document to learn more about how the browser prioritizes different types of resources.
@@ -94,14 +94,14 @@ Take a look at the [Chrome Resource Priorities and Scheduling](https://docs.goog
 Omitting the `as` attribute, or having an invalid value is equivalent to an [XHR request,](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) where the browser doesn't know what it is fetching so it can't determine the correct priority. It can also cause some resources, such as scripts, to be fetched twice.
 {% endAside %}
 
-Some types of resources, such as fonts, are loaded in [anonymous mode](https://www.w3.org/TR/css-fonts-3/#font-fetching-requirements). For those you must set the `crossorigin` attribute with `preload`: 
+Some types of resources, such as fonts, are loaded in [anonymous mode](https://www.w3.org/TR/css-fonts-3/#font-fetching-requirements). For those you must set the `crossorigin` attribute with `preload`:
 
 ```html
 <link rel="preload" href="ComicSans.woff2" as="font" type="font/woff2" crossorigin>
 ```
 
 {% Aside 'caution' %}
-Fonts preloaded without the `crossorigin` attribute will be fetched twice! 
+Fonts preloaded without the `crossorigin` attribute will be fetched twice!
 {% endAside %}
 
 `<link>` elements also accept a [`type` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#attr-type), which contains the [MIME type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types) of the linked resource. The browsers use the value of the `type` attribute to make sure that resources get preloaded only if their file type is supported. If a browser doesn't support the specified resource type, it will ignore the `<link rel="preload">`.
@@ -114,7 +114,7 @@ You can also preload any type of resource via the [`Link` HTTP header](https://d
 
 `Link: </css/style.css>; rel="preload"; as="style"`
 
-A benefit of specifying `preload` in the HTTP Header is that the browser doesn't need to parse the document to discover it, which can offer small improvements in some cases. 
+A benefit of specifying `preload` in the HTTP Header is that the browser doesn't need to parse the document to discover it, which can offer small improvements in some cases.
 
 ### Preloading JavaScript modules with webpack
 
@@ -126,6 +126,6 @@ import(_/* webpackPreload: true */_ "CriticalChunk")
 
 If you are using an older version of webpack, use a third-party plugin such as [preload-webpack-plugin](https://github.com/GoogleChromeLabs/preload-webpack-plugin).
 
-## Conclusion 
+## Conclusion
 
 To improve page speed, preload important resources that are discovered late by the browser. Preloading everything would be counterproductive so use `preload` sparingly and [measure the impact in the real-world](/fast#measure-performance-in-the-field).
