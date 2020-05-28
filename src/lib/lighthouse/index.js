@@ -55,18 +55,6 @@ export const metrics = [
     id: 'cumulative-layout-shift',
     vitals: true,
   },
-  {
-    title: 'First Meaningful Paint',
-    id: 'first-meaningful-paint',
-  },
-  {
-    title: 'First CPU Idle',
-    id: 'first-cpu-idle',
-  },
-  {
-    title: 'Estimated Input Latency',
-    id: 'estimated-input-latency',
-  },
 ];
 
 // prettier-ignore
