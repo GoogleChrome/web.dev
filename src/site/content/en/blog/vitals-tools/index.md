@@ -16,7 +16,7 @@ tags:
   - performance
 ---
 
-The recently announced [Web Vitals](/vitals/) initiative provides unified guidance about quality signals that are essential for all sites to deliver a great user experience on the web. We're happy to announce that **all of Google's popular tools for web developers now support measurement of Core Web Vitals**, helping you more easily diagnose and fix user experience issues. This includes [Lighthouse](https://github.com/GoogleChrome/lighthouse), [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/), [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools), [Search Console](https://search.google.com/search-console/about), the [Web Vitals Chrome extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) and a new (!) [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) API. 
+The recently announced [Web Vitals](/vitals/) initiative provides unified guidance about quality signals that are essential for all sites to deliver a great user experience on the web. We're happy to announce that **all of Google's popular tools for web developers now support measurement of Core Web Vitals**, helping you more easily diagnose and fix user experience issues. This includes [Lighthouse](https://github.com/GoogleChrome/lighthouse), [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/), [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools), [Search Console](https://search.google.com/search-console/about), [web.dev's measure tool](/measure/), the [Web Vitals Chrome extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) and a new (!) [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) API. 
 
 <figure class="w-figure">
   <img class="w-screenshot" src="./Vitals-Tools1.png" alt="Summary of Chrome and Search Tools that support the Core Web Vitals metrics">
@@ -27,9 +27,10 @@ The recently announced [Web Vitals](/vitals/) initiative provides unified guidan
 To begin your journey optimizing user-experience with Core Web Vitals, try the following workflow: 
 
 * Use Search Console's new Core Web Vitals report to identify groups of pages that require attention (based on the field data).
-* Once you've identified pages that need work, use PageSpeed Insights (powered by Lighthouse and Chrome UX Report) to diagnose lab and field issues on a page. PageSpeed Insights is available via Search Console or you can enter a URL on PSI directly.
+* Once you've identified pages that need work, use PageSpeed Insights (powered by Lighthouse and Chrome UX Report) to diagnose lab and field issues on a page. PageSpeed Insights (PSI) is available via Search Console or you can enter a URL on PSI directly.
 * Ready to optimize your site locally in the lab? Use Lighthouse and Chrome DevTools to measure Core Web Vitals and get actionable guidance on exactly what to fix. The Web Vitals Chrome extension can give you a real-time view of metrics on desktop.
 * Need a custom dashboard of Core Web Vitals? Use the updated CrUX Dashboard or new Chrome UX Report API for field data or PageSpeed Insights API for lab data.
+* Looking for guidance? web.dev/measure can measure your page and show you a prioritized set of guides and codelabs for optimization, using PSI data.
 * Finally, use Lighthouse CI on pull requests to ensure there are no regressions in Core Web Vitals before you deploy a change to production.
 
 With that introduction, let's dive into the specific updates for each tool! 
@@ -145,6 +146,13 @@ The report is based on the three Core Web Vitals metrics: LCP, FID, and CLS.  If
 
 Once you identify a type of page that has Core Web Vitals related issues, you can use PageSpeed Insights to learn about specific optimization suggestions for representative pages.
 
+#### web.dev
+
+[web.dev/measure](/measure/) allows you to measure the performance of your page over time, providing a prioritized list of guides and codelabs on how to improve. It's measurement is powered by PageSpeed Insights. The measure tool now also supports the Core Web Vitals metrics, as shown below:
+
+<figure class="w-figure">
+  <img class="w-screenshot" src="./web-dev-measure.png" alt="Measure Core Web Vitals metrics over time and get prioritized guidance with the web.dev measure tool">
+</figure>
 
 ### Web Vitals extension
 
