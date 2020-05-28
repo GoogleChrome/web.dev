@@ -14,33 +14,20 @@
  * limitations under the License.
  */
 
-const addPagination = require('../add-pagination');
+const {feed, index, individual} = require('./utils');
 
 /**
  * @param {Author[]} authors
  * @return {Author[]}
  */
-const authorsFeed = (authors) => {
-  let filteredAuthors = [];
-
-  if (process.env.ELEVENTY_ENV !== 'dev') {
-    filteredAuthors = authors.reduce((accumulator, author) => {
-      if (author.elements.length > 0) {
-        accumulator.push(author);
-      }
-
-      return accumulator;
-    }, []);
-  }
-
-  return filteredAuthors;
-};
+const authorsFeed = (authors) => feed(authors);
 
 /**
  * @param {Author[]} authors
  * @return {Paginated[]}
  */
 const authorsIndex = (authors) => {
+  const href = '/authors/';
   const testAuthors = [
     'robdodson',
     'samthor',
@@ -49,34 +36,15 @@ const authorsIndex = (authors) => {
     'addyosmani',
     'adamargyle',
   ];
-  const authorsWithPosts = authors.reduce((accumulator, author) => {
-    if (process.env.PERCY && testAuthors.includes(author.key)) {
-      accumulator.push(author);
-    } else if (!process.env.PERCY && author.elements.length > 0) {
-      accumulator.push(author);
-    }
 
-    return accumulator;
-  }, []);
-
-  return addPagination(authorsWithPosts, {href: '/authors/'});
+  return index(authors, href, testAuthors);
 };
 
 /**
  * @param {Author[]} authors
  * @return {Paginated[]}
  */
-const authorsIndividual = (authors) => {
-  let paginated = [];
-
-  authors.forEach((author) => {
-    if (author.elements.length > 0) {
-      paginated = paginated.concat(addPagination(author.elements, author));
-    }
-  });
-
-  return paginated;
-};
+const authorsIndividual = (authors) => individual(authors);
 
 module.exports = {
   feed: authorsFeed,

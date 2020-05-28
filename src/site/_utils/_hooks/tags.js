@@ -14,33 +14,20 @@
  * limitations under the License.
  */
 
-const addPagination = require('../add-pagination');
+const {feed, index, individual} = require('./utils');
 
 /**
  * @param {any[]} tags
  * @return {any[]}
  */
-const tagsFeed = (tags) => {
-  let filteredTags = [];
-
-  if (process.env.ELEVENTY_ENV !== 'dev') {
-    filteredTags = tags.reduce((accumulator, tag) => {
-      if (tag.elements.length > 0) {
-        accumulator.push(tag);
-      }
-
-      return accumulator;
-    }, []);
-  }
-
-  return filteredTags;
-};
+const tagsFeed = (tags) => feed(tags);
 
 /**
  * @param {any[]} tags
  * @return {Paginated[]}
  */
 const tagsIndex = (tags) => {
+  const href = '/tags/';
   const testTags = [
     'css',
     'javascript',
@@ -49,34 +36,15 @@ const tagsIndex = (tags) => {
     'progressive-web-apps',
     'webxr',
   ];
-  const tagsWithPosts = tags.reduce((accumulator, tag) => {
-    if (process.env.PERCY && testTags.includes(tag.key)) {
-      accumulator.push(tag);
-    } else if (!process.env.PERCY && tag.elements.length > 0) {
-      accumulator.push(tag);
-    }
 
-    return accumulator;
-  }, []);
-
-  return addPagination(tagsWithPosts, {href: '/tags/'});
+  return index(tags, href, testTags);
 };
 
 /**
  * @param {any[]} tags
  * @return {Paginated[]}
  */
-const tagsIndividual = (tags) => {
-  let paginated = [];
-
-  tags.forEach((tag) => {
-    if (tag.elements.length > 0) {
-      paginated = paginated.concat(addPagination(tag.elements, tag));
-    }
-  });
-
-  return paginated;
-};
+const tagsIndividual = (tags) => individual(tags);
 
 module.exports = {
   feed: tagsFeed,
