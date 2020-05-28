@@ -274,7 +274,7 @@ FID you look at the distribution of values and focus on the higher percentiles.
 While [choice of
 percentile](/defining-core-web-vitals-thresholds/#choice-of-percentile) for all
 Core Web Vitals thresholds is the 75th, for FID in particular we still strongly
-recommend looking at the 95th�99th percentiles, as those will correspond to the
+recommend looking at the 95th–99th percentiles, as those will correspond to the
 particularly bad first experiences users are having with your site. And it will
 show you the areas that need the most improvement.
 
