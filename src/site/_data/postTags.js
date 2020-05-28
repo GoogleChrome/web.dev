@@ -13,6 +13,9 @@ const tags = {
   analytics: {
     title: 'Analytics',
   },
+  animations: {
+    title: 'Animations',
+  },
   audio: {
     title: 'Audio',
   },
@@ -203,10 +206,6 @@ const tags = {
   },
   'virtual-reality': {
     title: 'Virtual Reality',
-  },
-  'web-animations': {
-    title: 'Web Animations',
-    description: 'Our latest news, updates, and stories about Web Animations.',
   },
   'web-assembly': {
     title: 'Web Assembly',
