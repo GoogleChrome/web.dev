@@ -189,61 +189,63 @@ that primary colors can be mixed to create any other color.
 The five registered axes plus Grade have 4-character tags that are used to
 set their values in CSS:
 
-<table class="responsive">
-  <tbody>
-    <tr>
-      <th colspan=2>Axis names and CSS values</th>
-    </tr>
-    <tr>
-      <td>
-        Weight
-      </td>
-      <td>
-        <code>wght</code>
-      </td>
-    </tr>
+<div class="w-table-wrapper">
+  <table>
+    <tbody>
       <tr>
-      <td>
-        Width
-      </td>
-      <td>
-        <code>wdth</code>
-      </td>
-    </tr>
-          <tr>
-      <td>
-        Slant
-      </td>
-      <td>
-        <code>slnt</code>
-      </td>
-    </tr>
-          <tr>
-      <td>
-        Optical Size
-      </td>
-      <td>
-        <code>opsz</code>
-      </td>
-    </tr>
-          <tr>
-      <td>
-        Italics
-      </td>
-      <td>
-        <code>ital</code>
-      </td>
-    </tr>
-          <tr>
-      <td>
-        Grade
-      </td>
-      <td>
-        <code>GRAD</code>
-      </td>
-    </tr>
-  </tbody>
-</table>
+        <th colspan=2>Axis names and CSS values</th>
+      </tr>
+      <tr>
+        <td>
+          Weight
+        </td>
+        <td>
+          <code>wght</code>
+        </td>
+      </tr>
+        <tr>
+        <td>
+          Width
+        </td>
+        <td>
+          <code>wdth</code>
+        </td>
+      </tr>
+            <tr>
+        <td>
+          Slant
+        </td>
+        <td>
+          <code>slnt</code>
+        </td>
+      </tr>
+            <tr>
+        <td>
+          Optical Size
+        </td>
+        <td>
+          <code>opsz</code>
+        </td>
+      </tr>
+            <tr>
+        <td>
+          Italics
+        </td>
+        <td>
+          <code>ital</code>
+        </td>
+      </tr>
+            <tr>
+        <td>
+          Grade
+        </td>
+        <td>
+          <code>GRAD</code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 In order to add a variable font first we must link it, as with any custom font;
 

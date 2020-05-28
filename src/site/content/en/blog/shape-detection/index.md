@@ -5,7 +5,7 @@ authors:
   - thomassteiner
 description: The Shape Detection API detects faces, barcodes, and text in images.
 date: 2019-01-07
-updated: 2020-04-14
+updated: 2020-05-20
 tags:
   - blog
   - capabilities
@@ -23,7 +23,10 @@ origin-trial:
 {% Aside %}
   This API is part of the new
   [capabilities project](https://developers.google.com/web/updates/capabilities).
-  Barcode detection has launched in Chrome 83.
+  Barcode detection has launched in Chrome 83
+  on certified devices with
+  [Google Play Services](https://play.google.com/store/apps/details?id=com.google.android.gms)
+  installed.
   Face and text detection are available behind a flag. This post will be updated as
   the Shape Detection API evolves.
 {% endAside %}
@@ -124,7 +127,10 @@ of use cases for all three features.
 ## How to use the Shape Detection API {: #use }
 
 {% Aside 'warning' %}
-  So far only barcode detection is available by default, starting in Chrome 83.
+  So far only barcode detection is available by default, starting in Chrome 83
+  on certified devices with
+  [Google Play Services](https://play.google.com/store/apps/details?id=com.google.android.gms)
+  installed,
   but face and text detection are available behind a flag.
   You can always use the Shape Detection API for local experiments by enabling the
   `#enable-experimental-web-platform-features` flag.

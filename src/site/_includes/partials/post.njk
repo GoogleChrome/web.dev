@@ -11,7 +11,20 @@
   {% endif %}
 
   {# Make sure Actions are first in the tab order. #}
-  <web-actions actions="share|subscribe" authors="{{ authors | expandContributors | join('|') }}"></web-actions>
+  <div class="w-actions">
+    <share-action authors="{{ authors | expandContributors | join('|') }}"
+      class="gc-analytics-event w-actions__fab w-actions__fab--share"
+      data-category="web.dev"
+      data-label="share"
+      data-action="click"
+      data-icon="share"
+      tabindex="0"
+      role="button"
+    >
+      <span>Share</span>
+    </share-action>
+    {% include 'partials/subscribe-action.njk' %}
+  </div>
 
   {% include 'partials/translation-disclaimer.njk' %}
 
@@ -85,6 +98,8 @@
       {# Hide suggest translation for now. #} {#
       <a href="#">Suggest translation</a> #}
     </div>
+
+    <web-feedback></web-feedback>
 
     {% if codelabs %}
       {% CodelabsCallout codelabs, lang %}

@@ -13,6 +13,9 @@ const tags = {
   analytics: {
     title: 'Analytics',
   },
+  animations: {
+    title: 'Animations',
+  },
   audio: {
     title: 'Audio',
   },

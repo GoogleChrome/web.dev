@@ -33,6 +33,7 @@
 .w-event-buttons {
   display: inline-flex;
   flex-flow: column wrap;
+  margin-bottom: 8px;
 
   .w-button--primary {
     margin: 0 0 16px;
@@ -85,14 +86,30 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  margin: 64px auto;
+  margin: (64px - $WEB_HEADER_HEIGHT - 48px) auto 64px;
   max-width: 960px;
+  padding-top: ($WEB_HEADER_HEIGHT + 48px);
   text-align: center;  // for mobile
+
+  &::before {
+    display: none !important;
+  }
 
   @include bp(md) {
     text-align: inherit;
   }
 }
+
+.w-event-section--subscribe {
+  padding-left: 32px;
+  padding-right: 32px;
+
+  // Make the subscribe area less huge as it has its own padding.
+  web-subscribe {
+    margin-top: -32px;
+  }
+}
+
 
 .w-event-hero {
   align-items: center;
@@ -139,17 +156,23 @@
     max-width: 512px - 64px;
   }
 
-  h3:first-of-type {
-    margin-top: 0;
+  .w-event-buttons {
+    margin: 16px 0;
   }
 }
 
 .w-event-section__column-right {
   max-width: 512px;
-  padding: 0 32px;
+  padding: 0 8px;
 
-  h2:first-of-type {
-    margin-top: 0;
+  &.w-event-section__column-right__schedule {
+    padding: 0px;
+  }
+
+  @include bp(sm) {
+    // On larger devices, force padding even on the schedule (this wins over
+    // ...__schedule, above).
+    padding: 0 16px !important;
   }
 }
 
@@ -164,9 +187,25 @@ table.w-event-schedule {
   // small devices.
   min-width: auto;
 
+  .w-event-schedule__speaker {
+    min-width: 180px;
+    max-width: 50vw;
+  }
+
   td {
     font-size: 14px;
     line-height: 20px;
+    padding: 8px;
+
+    @include bp(sm) {
+      padding: 16px 8px;
+    }
+  }
+
+  .w-authors__card {
+    // TODO(samthor): This margin is unnessecary for our schedule, and
+    // needlessly pads out each row.
+    margin-bottom: 0;
   }
 }
 
@@ -174,6 +213,43 @@ table.w-event-schedule {
   width: 60%;
 }
 
+.w-event-calendar {
+  display: flex;
+  align-items: center;
+
+  a.w-button {
+    margin-left: 8px;
+  }
+}
+
+.w-event-calendar__note {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+
+  &::before {
+    content: '';
+    background: url(/images/icons/calendar.svg) center / contain no-repeat;
+    width: 24px;
+    height: 24px;
+  }
+
+  span {
+    text-indent: -99999px;
+    opacity: 0;
+    position: absolute;
+  }
+
+  @include bp(md) {
+    span {
+      margin-left: 6px;
+      text-indent: 0;
+      opacity: initial;
+      position: initial;
+    }
+  }
+}
 
 @include bp(md) {
   .w-event-section__column-head {
@@ -192,5 +268,15 @@ table.w-event-schedule {
     max-width: none;
     padding: 0 16px;
     width: 62.5%;
+  }
+}
+
+.w-event-antihero {
+  padding: 0 !important;
+
+  img {
+    // nb. 128px is important as it matches the max-width of 512px
+    min-height: 128px;
+    object-fit: cover;
   }
 }

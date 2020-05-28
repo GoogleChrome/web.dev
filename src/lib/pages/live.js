@@ -4,6 +4,7 @@
 
 import '../components/EventTime';
 import '../components/Subscribe';
+import '../components/ShareAction';
 import '../components/Tabs';
 
 import '../components/base';

@@ -14,3 +14,24 @@ input[type='text'] {
     outline: none;
   }
 }
+
+
+input[type='radio'] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 2px solid $GREY_300;
+  border-radius: 50%;
+  cursor: pointer;
+  flex-shrink: 0;
+  height: 24px;
+  margin: 2px;
+  width: 24px;
+
+  &:checked {
+    background-clip: content-box;
+    background-color: $WEB_PRIMARY_COLOR;
+    border: 2px solid $WEB_PRIMARY_COLOR;
+    padding: 4px;
+  }
+}

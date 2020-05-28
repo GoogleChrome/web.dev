@@ -21,12 +21,20 @@
 const eventData = [
   {
     title: 'Day 1',
-    when: '2020-06-30T16:00Z',
-    duration: 8,
+    when: '2020-06-30T16:00Z', // 9am PDT (-7)
+    duration: 3,
     sessions: [
       {
+        speaker: 'dalmaer',
+        title: 'Welcome to Day One',
+      },
+      {
+        speaker: 'egsweeny',
+        title: "What's New in Speed Tooling",
+      },
+      {
         speaker: 'addyosmani',
-        title: 'Optimize User Experience for Core Web Vitals',
+        title: 'How to Optimize for Web Vitals',
       },
       {
         speaker: 'rviscomi',
@@ -37,28 +45,24 @@ const eventData = [
         title: 'How to Analyze Your JavaScript Bundles',
       },
       {
-        speaker: 'egsweeny',
-        title: "What's New in Speed Tooling",
-      },
-      {
-        speaker: 'paullewis',
+        speaker: ['paullewis', 'philipwalton'],
         title: 'Core Web Vitals in the DevTools Timeline',
       },
       {
-        speaker: 'patrickkettner',
-        title: 'AMPs performance secrets',
+        speaker: ['patrickkettner', 'philipwalton'],
+        title: 'AMPs Performance Secrets',
       },
       {
-        speaker: 'sebabenz', // TODO(samthor): add nainar
-        title: 'AMP at your Service',
+        speaker: ['nainar', 'sebabenz'],
+        title: 'AMP at Your Service',
       },
       {
-        speaker: 'morss',
+        speaker: ['crystallambert', 'morss'],
         title: 'Workerized JavaScript Made Easy',
       },
       {
         speaker: 'martinsplitt',
-        title: 'Debugging SEO problems in JavaScript web apps',
+        title: 'Debugging JavaScript SEO issues',
       },
       {
         speaker: 'martinsplitt',
@@ -68,20 +72,24 @@ const eventData = [
   },
   {
     title: 'Day 2',
-    when: '2020-07-01T16:00Z',
-    duration: 8,
+    when: '2020-07-01T12:00Z', // 12pm GMT/UTC (+0), note UK time will be 1pm
+    duration: 3,
     sessions: [
       {
-        speaker: 'paullewis',
-        title: "What's new in DevTools",
+        speaker: 'dalmaer',
+        title: 'Day Two Opening Note',
       },
       {
-        speaker: 'syg', // TODO(samthor): add leszeks
-        title: "What's new in V8/JavaScript",
+        speaker: 'paullewis',
+        title: "What's New in DevTools",
+      },
+      {
+        speaker: ['syg', 'leszeks'],
+        title: "What's New in V8/JavaScript",
       },
       {
         speaker: 'mathiasbynens',
-        title: "What's new in Puppeteer",
+        title: "What's New in Puppeteer",
       },
       {
         speaker: 'andreban',
@@ -89,11 +97,7 @@ const eventData = [
       },
       {
         speaker: 'demianrenzulli',
-        title: 'How to define your install strategy',
-      },
-      {
-        speaker: 'beaufortfrancois',
-        title: 'Taking your media experience to the next level',
+        title: 'How to Define your Install Strategy',
       },
       {
         speaker: 'thomassteiner',
@@ -105,8 +109,8 @@ const eventData = [
         title: 'Advanced PWA Patterns',
       },
       {
-        speaker: 'pjmclachlan',
-        title: 'Giving your PWA superpowers 🦹‍♀️',
+        speaker: ['pjmclachlan', 'andreban'],
+        title: 'Giving Your PWA Superpowers 🦹‍♀️',
       },
       {
         speaker: 'samthor',
@@ -114,7 +118,7 @@ const eventData = [
       },
       {
         speaker: 'pjmclachlan',
-        title: 'Taming web notifications',
+        title: 'Quieter Notifications Permissions',
       },
       {
         speaker: 'petelepage',
@@ -122,63 +126,66 @@ const eventData = [
       },
       {
         speaker: 'nattestad',
-        title:
-          'Building Zoom on the Web: Advanced APIs for high performance web apps',
+        title: 'Advanced APIs for Bringing People Together',
       },
     ],
   },
   {
     title: 'Day 3',
-    when: '2020-07-02T16:00Z',
-    duration: 8,
+    when: '2020-07-02T07:30Z', // 1pm IST (+5:30)
+    duration: 3,
     sessions: [
       {
+        speaker: 'dalmaer',
+        title: 'Day Three Opening Note',
+      },
+      {
         speaker: 'kosamari',
-        title: 'Building better in the world of build tools!',
+        title: 'Building Better in the World of Build Tools',
       },
       {
         speaker: 'una',
-        title: '10 modern layouts in 1 line of CSS',
+        title: '10 Modern Layouts in 1 Line of CSS',
       },
       {
-        speaker: 'jakearchibald', // TODO(samthor): add jasonjmiller
-        title: 'Writing rollup plugins',
+        speaker: ['developit', 'jakearchibald'],
+        title: 'Writing Build Plugins',
       },
       {
-        speaker: 'jakearchibald',
-        title: 'Image compression formats compared',
+        speaker: ['jakearchibald', 'surma'],
+        title: 'Image Compression Deep-dive',
       },
       {
         speaker: 'sfluin',
-        title: 'Stay Fast and Fresh with Angular',
+        title: 'How to Stay Fast and Fresh with Angular',
       },
       {
-        speaker: 'samdutton',
-        title: 'Digging into the Privacy Sandbox',
+        speaker: ['maudn', 'samdutton'],
+        title: 'Security and Privacy for the Open Web',
       },
       {
         speaker: 'rowan_m',
-        title: 'Cookie recipes - SameSite and beyond',
+        title: 'Cookie Recipes - SameSite and Beyond',
       },
       {
         speaker: 'agektmr',
-        title: 'Isolate your origin using COOP+COEP',
+        title: 'Prevent Info Leaks and Enable Powerful Features: COOP and COEP',
       },
       {
         speaker: 'samdutton',
-        title: 'Find and fix problems with the DevTools Issues Panel',
+        title: 'Find and Fix Problems with Chrome DevTools Issues Tab',
       },
       {
-        speaker: 'maudn', // TODO(samthor): add rowan_m
-        title: 'Get a (User-Agent Client) Hint',
+        speaker: ['maudn', 'rowan_m'],
+        title: 'Just the Data you Need',
       },
       {
         speaker: 'samdutton',
-        title: 'Signin form best practice',
+        title: 'Sign-in Form Best Practice',
       },
       {
         speaker: 'agektmr',
-        title: "What's new in Web Payments",
+        title: "What's New in Web Payments",
       },
     ],
   },

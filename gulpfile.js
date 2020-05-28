@@ -61,13 +61,13 @@ gulp.task('copy-misc', () => {
 gulp.task('copy-content-assets', () => {
   return (
     gulp
-      .src([`./src/site/content/en/**/*.{${assetTypes}}`])
+      .src([`./src/site/content/**/*.{${assetTypes}}`])
       .pipe(compressImagesTransform(0.8, 0.8))
       // This makes the images show up in the same spot as the permalinked posts
       // they belong to.
       .pipe(
         rename((assetPath) => {
-          const leftPart = assetPath.dirname.split('/')[0];
+          const leftPart = assetPath.dirname.split('/')[1];
           // Let certain path's images to pass through.
           const imagePassThroughs = ['handbook', 'newsletter'];
           if (imagePassThroughs.includes(leftPart)) {
@@ -76,7 +76,7 @@ gulp.task('copy-content-assets', () => {
           return (assetPath.dirname = path.basename(assetPath.dirname));
         }),
       )
-      .pipe(gulp.dest('./dist/en'))
+      .pipe(gulp.dest('./dist/'))
   );
 });
 

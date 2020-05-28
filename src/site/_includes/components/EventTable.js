@@ -15,37 +15,59 @@
  */
 
 const {html} = require('common-tags');
-const prettyDate = require('../../_filters/pretty-date');
 
-const Author = require('./Author');
+const AuthorsDate = require('./AuthorsDate');
 
 /**
- * @param {!Array<{title: string, from: !Date, sessions: !Array}>} event
+ * @param {!Array<{title: string, from: !Date, sessions: !Array<any>}>} event
+ * @param {Object.<string, Author>} authorsCollection
  * @return {string}
  */
-module.exports = (event) => {
+module.exports = (event, authorsCollection) => {
+  // Find the default day to show, as a very basic non-JS fallback. Pick the
+  // first day where the build time is before the end time of the sessions.
+  // This isn't a very good fallback as our build happens at minimum of once per
+  // day, but it's better than nothing.
+  const now = new Date();
+  let defaultScheduleDay = 0;
+  for (let i = 0; i < event.length; ++i) {
+    const {date, duration} = event[i];
+    const endTime = new Date(date);
+    endTime.setHours(endTime.getHours() + duration);
+
+    if (now < endTime) {
+      defaultScheduleDay = i;
+      break;
+    }
+  }
+
   const renderSession = ({speaker, title}) => {
+    // Always pass an Array of author IDs.
+    const authors = typeof speaker === 'string' ? [speaker] : speaker;
+
     return html`
       <tr>
         <td class="w-event-schedule__speaker">
-          ${Author({id: speaker, small: true})}
+          ${AuthorsDate({authors}, authorsCollection)}
         </td>
         <td class="w-event-schedule__session">${title}</td>
       </tr>
     `;
   };
 
-  const renderDay = (day) => {
-    // nb. prettyDate is used as a fallback if the `web-event-time` Web Component doesn't wake up
-    // and render a fancy timestamp in the user's local time.
+  const renderDay = (day, index) => {
+    // nb. We don't render a fallback time for browsers without JS.
     return html`
-      <div data-label="${day.title}">
+      <div
+        data-label="${day.title}"
+        class="${index === defaultScheduleDay ? 'w-tabs-default' : ''}"
+      >
         <div class="w-event-section__schedule_header">
           <web-event-time
+            class="unresolved"
             datetime="${day.date.toISOString()}"
             duration="${day.duration}"
-            >${prettyDate(day.date)}</web-event-time
-          >
+          ></web-event-time>
         </div>
 
         <table class="w-event-schedule">
@@ -58,7 +80,7 @@ module.exports = (event) => {
   };
 
   return html`
-    <web-tabs class="w-event-tabs" label="schedule">
+    <web-tabs class="w-event-tabs unresolved" label="schedule">
       ${event.map(renderDay)}
     </web-tabs>
   `;

@@ -24,7 +24,10 @@ function getAnalyticsDataFromElement(elem, defaultAction = 'click') {
   };
 }
 
-function trackEvent({category, action, label, value}) {
+/**
+ * @param {{ category: string, action: string, label: string, value: number }} param
+ */
+export function trackEvent({category, action, label, value}) {
   ga('send', 'event', {
     eventCategory: category,
     eventAction: action,
