@@ -6,22 +6,23 @@ authors:
   - egsweeny
 date: 2020-05-28
 description: |
-  Read about the newly announced Core Web Vitals measurement support across popular web developer tools like Lighthouse, PageSpeed Insights, Chrome UX Report and many others. 
+  Read about the newly announced Core Web Vitals measurement support across popular web developer tools like Lighthouse, PageSpeed Insights, Chrome UX Report, and many others.
 hero: hero.png
 thumbnail: thumbnail.png
-alt: Chrome User Experience logo, PageSpeed Insights logo, Lighthouse logo, Search Console logo, DevTools logo, Web Vitals extension logo.
+alt: Chrome User Experience logo, PageSpeed Insights logo, Lighthouse logo, Search Console logo, Chrome DevTools logo, Web Vitals extension logo.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - fast
+  - web-vitals
+  - performance
 ---
 
-The recently announced [Web Vitals](/vitals/) initiative provides unified guidance about quality signals that are essential for all sites to deliver a great user experience on the web. We're happy to announce that **all of our popular tools for web developers now support measurement of Core Web Vitals**, helping you more easily diagnose and fix user experience issues. This includes [Lighthouse](https://github.com/GoogleChrome/lighthouse), [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/), [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools), [Search Console](https://search.google.com/search-console/about), the [Web Vitals Chrome extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) and a new (!) [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) API. 
+The recently announced [Web Vitals](/vitals/) initiative provides unified guidance about quality signals that are essential for all sites to deliver a great user experience on the web. We're happy to announce that **all of Google's popular tools for web developers now support measurement of Core Web Vitals**, helping you more easily diagnose and fix user experience issues. This includes [Lighthouse](https://github.com/GoogleChrome/lighthouse), [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/), [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools), [Search Console](https://search.google.com/search-console/about), the [Web Vitals Chrome extension](https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma) and a new (!) [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) API. 
 
 <figure class="w-figure">
   <img class="w-screenshot" src="./Vitals-Tools1.png" alt="Summary of Chrome and Search Tools that support the Core Web Vitals metrics">
 </figure>
 
-**_[Quick Refresher]_** Lab tools provide insight into how a _potential user_ will likely experience your website and offer reproducible results for debugging. **Field** tools provide insight into how your _real users_ are experiencing your website; this type of measurement is often called 'Real-User Measurement' (RUM for short). Each [lab or field tool](/how-to-measure-speed/#lab-data-vs-field-data) offers distinct value for optimizing your user experience. 
+**_[Quick Refresher]_** Lab tools provide insight into how a _potential user_ will likely experience your website and offer reproducible results for debugging. **Field** tools provide insight into how your _real users_ are experiencing your website; this type of measurement is often called Real User Monitoring (RUM). Each [lab or field tool](/how-to-measure-speed/#lab-data-vs-field-data) offers distinct value for optimizing your user experience. 
 
 To begin your journey optimizing user-experience with Core Web Vitals, try the following workflow: 
 
@@ -51,7 +52,8 @@ All of the products that Lighthouse powers are updated to reflect the latest ver
   <img class="w-screenshot" src="./lhci.png" alt="Lighthouse CI displaying a diff view with Largest Contentful Paint">
 </figure>
 
-To learn more about the latest updates to Lighthouse, check out our '[What's New in Lighthouse 6.0](/lighthouse-whats-new-6.0/)' blog post. 
+To learn more about the latest updates to Lighthouse, check out our 
+[What's New in Lighthouse 6.0](/lighthouse-whats-new-6.0/) blog post. 
 
 ### PageSpeed Insights
 
@@ -63,11 +65,11 @@ PageSpeed Insights and the [PageSpeed Insights API](https://developers.google.co
   <img class="w-screenshot" src="./pagespeed.png" alt="PageSpeed Insights with Core Web Vitals data displayed for field and lab">
 </figure>
 
-While [Search Console](https://search.google.com/search-console/) provides site owners with a great overview of groups of pages that need attention, PSI helps identify per-page opportunities to improve page experience. In PSI, you are able to clearly see whether or not your page meets the thresholds for a good experience across all Core Web Vitals at the top of the report, indicated by 'passes/does not pass the Core Web Vitals assessment'. 
+While [Search Console](https://search.google.com/search-console/) provides site owners with a great overview of groups of pages that need attention, PSI helps identify per-page opportunities to improve page experience. In PSI, you are able to clearly see whether or not your page meets the thresholds for a good experience across all Core Web Vitals at the top of the report, indicated by **passes the Core Web Vitals assessment** or **does not pass the Core Web Vitals assessment**. 
 
 ### CrUX
 
-The [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/) (CrUX) is a public dataset of real user experience data on millions of websites. It measures field versions of all the Core Web Vitals. Unlike lab data, CrUX data comes from [opted-in users](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology) in the field. Using this data, developers are able to understand the distribution of real-world user experiences on their own or even competitors' websites. Even if you don't have RUM on your site, CrUX can provide a quick and easy way to assess your Core Web Vitals. The [CrUX dataset on BigQuery](https://developers.google.com/web/tools/chrome-user-experience-report/bigquery/getting-started) includes fine-grained performance data for allCore Web Vitals and is available in monthly snapshots at the origin-level. 
+The [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/) (CrUX) is a public dataset of real user experience data on millions of websites. It measures field versions of all the Core Web Vitals. Unlike lab data, CrUX data comes from [opted-in users](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology) in the field. Using this data, developers are able to understand the distribution of real-world user experiences on their own or even competitors' websites. Even if you don't have RUM on your site, CrUX can provide a quick and easy way to assess your Core Web Vitals. The [CrUX dataset on BigQuery](https://developers.google.com/web/tools/chrome-user-experience-report/bigquery/getting-started) includes fine-grained performance data for all Core Web Vitals and is available in monthly snapshots at the origin-level. 
 
 The only way to truly know how your site performs for your users is to actually measure its performance in the field as those users are loading and interacting with it. This type of measurement is commonly referred to as Real User Monitoring—or RUM for short. Even if you don't have RUM on your site, CrUX can provide a quick and easy way to assess your Core Web Vitals. 
 
@@ -82,10 +84,10 @@ Today we're happy to announce the [CrUX API](http://developers.google.com/web/to
 
 Developers can query for an origin or URL and segment results by different form factors. The API updates daily and summarizes the previous 28 days worth of data (unlike the BigQuery dataset, which is aggregated monthly). The API also has the same relaxed public API quotas we place on our other API, the PageSpeed Insights API (25,000 requests per day). 
 
-Below is a [demo](https://developers.google.com/web/tools/chrome-user-experience-report/api/guides/getting-started) using the CrUX API to visualize the Core Web Vitals metrics with distributions for good, needs improvement, and poor:
+Below is a [demo](https://developers.google.com/web/tools/chrome-user-experience-report/api/guides/getting-started) using the CrUX API to visualize the Core Web Vitals metrics with distributions for **good**, **needs improvement**, and **poor**:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./Vitals-Tools5.png" alt="Chrome User Experience Report API demo showing Core Web Vitals metrics">
+  <img class="w-screenshot w-screenshot--filled" src="./Vitals-Tools5.png" alt="Chrome User Experience Report API demo showing Core Web Vitals metrics">
 </figure>
 
 In future releases, we plan to expand the API to enable access to additional CrUX dataset dimensions and metrics. 
@@ -95,7 +97,7 @@ In future releases, we plan to expand the API to enable access to additional CrU
 The newly redesigned [CrUX Dashboard](http://g.co/chromeuxdash) allows you to easily track an origin's performance over time, and now you can use it to monitor the distributions of all of the Core Web Vitals metrics. To get started with the dashboard, check out our [tutorial](/chrome-ux-report-data-studio-dashboard/) on web.dev. 
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./crux-dashboard.png" alt="Chrome UX Report dashboard displaying the Core Web Vitals metrics in a new landing page">
+  <img class="w-screenshot w-screenshot--filled" src="./crux-dashboard.png" alt="Chrome UX Report dashboard displaying the Core Web Vitals metrics in a new landing page">
 </figure>
 
 We've introduced a new Core Web Vitals landing page to make it even easier to see how your site is performing at a glance. We welcome your feedback on all CrUX tooling; to share your thoughts and questions reach us at the [@ChromeUXReport](https://twitter.com/chromeuxreport) Twitter account or [Google Group](https://groups.google.com/a/chromium.org/g/chrome-ux-report).
@@ -105,10 +107,10 @@ We've introduced a new Core Web Vitals landing page to make it even easier to se
 
 **Debug Layout Shift events in the Experience section**
 
-The Chrome DevTools **Performance** panel has a new **[Experience section](https://developers.google.com/web/updates/2020/05/devtools#cls )** that can help you detect unexpected layout shifts. This is helpful for finding and fixing visual instability issues on your page that contribute to Cumulative Layout Shift. 
+The Chrome DevTools **Performance** panel has a new **[Experience section](https://developers.google.com/web/updates/2020/05/devtools#cls)** that can help you detect unexpected layout shifts. This is helpful for finding and fixing visual instability issues on your page that contribute to Cumulative Layout Shift. 
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./Vitals-Tools7.png" alt="Cumulative Layout Shift displayed with red records in the Performance panel">
+  <img class="w-screenshot w-screenshot--filled" src="./Vitals-Tools7.png" alt="Cumulative Layout Shift displayed with red records in the Performance panel">
 </figure>
 
 Select a Layout Shift to view its details in the **Summary** tab. To visualize where the shift itself occurred, hover over the **Moved from** and **Moved to** fields.
@@ -128,7 +130,7 @@ TBT is now shown in the footer of the Chrome DevTools **Performance** panel when
 1.  Manually reload the page.
 1.  Wait for the page to load and then stop recording. 
 
-For more information, see [What's new in DevTools](https://developers.google.com/web/updates/2020/05/devtools#cls). 
+For more information, see [What's New In DevTools (Chrome 84)](https://developers.google.com/web/updates/2020/05/devtools#cls). 
 
 
 ### Search Console
