@@ -25,7 +25,7 @@ However, it is possible to undo some of that good work when you start using CSS.
 ## Source vs. visual order
 
 Website navigation is often marked up as a list of links.
-You can then use Flexbox to turn these into a horizontal bar.
+You can then use [Flexbox](/responsive-web-design-basics/#flexbox) to turn these into a horizontal bar.
 In the Glitch example below, I have created this commonly used pattern.
 Click into the example, and tab between the links.
 The focus will move in a logical direction from left to right,
