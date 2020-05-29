@@ -146,5 +146,5 @@ displayed in a hard-to-distinguish blue-green color.
 If you are meeting the contrast ratios covered earlier
 you should be fine when it comes to supporting high-contrast mode.
 But for added peace of mind, consider installing the
-[Chrome High Contrast extension](https://chrome.google.com/webstore/detail/high-contrast/djcfdncoelnlbldjfhinnjlhdjlikmph?hl=en)
+[High Contrast Chrome Extension](https://chrome.google.com/webstore/detail/high-contrast/djcfdncoelnlbldjfhinnjlhdjlikmph?hl=en)
 and giving your page a once-over just to check that everything works, and looks, as expected.
