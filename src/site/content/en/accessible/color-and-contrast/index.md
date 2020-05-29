@@ -83,7 +83,7 @@ The [WebAIM checklist states in section 1.4.1](https://webaim.org/standards/wcag
 It also notes that "color alone should not be used to distinguish links from surrounding text"
 unless they meet certain contrast requirements.
 Instead, the checklist recommends adding an additional indicator such as an underscore
-(using the CSS text-decoration property) to indicate when the link is active.
+(using the CSS `text-decoration` property) to indicate when the link is active.
 
 An easy way to fix the previous example is to add an additional message to the field,
  announcing that it is invalid and why.
