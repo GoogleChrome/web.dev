@@ -201,7 +201,6 @@ function getCanonicalPath(path) {
 export const checkUserPreferredLanguage = store.action(
   ({userPreferredLanguage}) => {
     if (!userPreferredLanguage) {
-      const cookie = cookies.get('preferred_lang');
       return {
         userPreferredLanguage: cookies.get('preferred_lang'),
       };
@@ -212,13 +211,12 @@ export const checkUserPreferredLanguage = store.action(
 
 export const setLanguage = store.action((state, preferredLanguage) => {
   const options = {
-    expires: 10 * 365,  // 10 years
+    expires: 10 * 365, // 10 years
     samesite: 'strict',
   };
   cookies.set('preferred_lang', preferredLanguage, options);
   if (preferredLanguage !== state.userPreferredLanguage) {
-    console.log(getCanonicalPath(location.pathname))
-    location.pathname = getCanonicalPath(location.pathname)
+    location.pathname = getCanonicalPath(location.pathname);
   }
   return {
     userPreferredLanguage: preferredLanguage,

@@ -24,8 +24,8 @@ import {store} from '../../store';
 import {setLanguage, checkUserPreferredLanguage} from '../../actions';
 
 const languageNames = {
-  'en': 'English',
-  'pl': 'Polish'
+  en: 'English',
+  pl: 'Polish',
 };
 
 class LanguageSelect extends BaseStateElement {
@@ -57,10 +57,14 @@ class LanguageSelect extends BaseStateElement {
   renderOption(language) {
     return this.userPreferredLanguage === language
       ? html`
-          <option value="${language}" selected>${languageNames[language]} (${language})</option>
+          <option value="${language}" selected>
+            ${languageNames[language]} (${language})
+          </option>
         `
       : html`
-          <option value="${language}">${languageNames[language]} (${language})</option>
+          <option value="${language}">
+            ${languageNames[language]} (${language})
+          </option>
         `;
   }
 
