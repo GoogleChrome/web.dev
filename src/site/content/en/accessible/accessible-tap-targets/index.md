@@ -62,7 +62,7 @@ and see what pixel size they resolve to.
 In Firefox DevTools there is a Layout Panel.
 In that Panel you get the actual size of the inspected element.
 
-<figure class="w-figure">
+<figure class="w-figure" style="max-width: 500px">
   <img src="./firefox-layout.jpg" alt="The Layout Panel in Firefox DevTools showing the size of the a element">
 </figure>
 
