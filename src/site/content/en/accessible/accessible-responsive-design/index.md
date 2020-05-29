@@ -17,7 +17,7 @@ tags:
 We know that it's a good idea to design responsively to provide the best multi-device experience,
 but responsive design also yields a win for accessibility.
 
-Consider a site like <a href="https://udacity.com">Udacity.com</a>:
+Consider a site like [Udacity](https://udacity.com):
 
 <figure class="w-figure">
   <img src="./udacity-100.jpg" alt="The Udacity site">
