@@ -57,7 +57,7 @@ In the example below I am using `em` for my text and padding.
 </div>
 
 Inspect the `a` of the link,
-and in Chrome DevTools switch to the Computed Panel where you can inspect the various parts of the box
+and in Chrome DevTools switch to the [Computed pane](https://developers.google.com/web/tools/chrome-devtools/css/overrides#computed)  where you can inspect the various parts of the box
 and see what pixel size they resolve to.
 In Firefox DevTools there is a Layout Panel.
 In that Panel you get the actual size of the inspected element.
