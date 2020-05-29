@@ -6,7 +6,7 @@ description: Essential metrics for a healthy site
 authors:
   - philipwalton
 date: 2020-04-30
-updated: 2020-05-29
+updated: 2020-05-27
 masthead: web-vitals.svg
 tags:
   - metrics
