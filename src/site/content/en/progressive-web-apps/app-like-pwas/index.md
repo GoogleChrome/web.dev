@@ -137,7 +137,7 @@ In the Podcasts app's settings, I can configure the app to download new episodes
 
 ## State synchronized over the cloud
 
-At the same time, my subscriptions are synchronized across all devices I own. In a seamless world, I do not have to worry about manually keeping my podcast subscriptions in sync. Likewise, I do not have to be afraid that my mobile device's memory will be consumed by episodes I have already listened to on my desktop and vice versa. The play state is kept in sync, and listened to episodes are automatically deleted.
+At the same time, my subscriptions are synchronized across all devices I own. In a seamless world, I do not have to worry about manually keeping my podcast subscriptions in sync. Likewise, I do not have to be afraid that my mobile device's memory will be consumed by episodes I have already listened to on my desktop and vice versa. The play state is kept in sync, and listened-to episodes are automatically deleted.
 
 <figure class="w-figure">
   <img src="./image11.png" alt="The Podcasts app's settings menu in the 'Advanced' section where the 'Sync subscriptions across devices' option is activated." width="495">
@@ -175,7 +175,7 @@ There is no need to switch to the app just to skip forward or backward.
 Of course I can always multitask back to the Podcasts app from anywhere. The app has a clearly distinguishable icon that I can also put on my desktop or application dock so Podcasts can be launched immediately when I feel like it.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img class="w-screenshot" src="./image3.png" alt="The macOS task switcher with a number of app icons to choose from, one of them the Podcasts one." >
+  <img class="w-screenshot" src="./image3.png" alt="The macOS task switcher with a number of app icons to choose from, one of them the Podcasts app." >
   <figcaption class="w-figcaption w-figcaption--fullbleed">Multitasking back to the Podcasts app.</figcaption>
 </figure>
 
@@ -223,7 +223,7 @@ Other native applications and even websites or emails can integrate with the Pod
 {% endDetailsSummary %}
   Handling fully custom URL schemes is not yet possible, but there is ongoing work on a proposal for
   <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/URLProtocolHandler/explainer.md">URL Protocol Handling</a>
-  for PWAs. Currently, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/registerProtocolHandler"><code>registerProtocolHandler()</code></a> with a <code>web+</code> scheme prefix is the second best alternative.
+  for PWAs. Currently, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/registerProtocolHandler"><code>registerProtocolHandler()</code></a> with a <code>web+</code> scheme prefix is the best alternative.
 {% endDetails %}
 
 ## Native file system integration
@@ -248,12 +248,12 @@ Other storage mechanisms than files are referenced in the [offline content](#off
 
 ## Native look and feel
 
-A more subtle thing but that is self-evident for a native application like Podcasts: none of the text labels are selectable and all texts blend in with the system font of the machine. Also my choice of system color theme (dark mode) is respected.
+There is a more subtle thing that is self-evident for a native application like Podcasts: none of the text labels are selectable and all text blends in with the system font of the machine. Also my choice of system color theme (dark mode) is respected.
 
 <div class="w-columns">
   <figure class="w-figure">
     <img src="./image2.png" alt="The Podcasts app in dark mode." width="350">
-    <figcaption class="w-figcaption">Podcasts supports light and dark mode.</figcaption>
+    <figcaption class="w-figcaption">The Podcasts app supports light and dark mode.</figcaption>
   </figure>
   <figure class="w-figure">
     <img src="./image7.png" alt="The Podcasts app in light mode." width="350">
@@ -268,11 +268,11 @@ A more subtle thing but that is self-evident for a native application like Podca
   By leveraging the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/user-select"><code>user-select</code></a>
   CSS property with the value of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/user-select#Syntax:~:text=none,-The"><code>none</code></a>,
   you can protect UI elements from being accidentally selected.
-  Be sure, though, to not abuse this property for making <em>app contents</em> unselectable,
-  it should only be used for UI elements like button texts, etc.
+  Be sure, though, to not abuse this property for making <em>app contents</em> unselectable.
+  It should only be used for UI elements like button texts, etc.
   The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#<generic-name>:~:text=system%2Dui,-Glyphs"><code>system-ui</code></a>
   value for the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family"><code>font-family</code></a> CSS property allows you to
-  specify the default UI font of the system to be used for your app, whatever it may be in the concrete case.
+  specify the default UI font of the system to be used for your app.
   Finally, your app can obey to the user's color scheme preference by respecting their <a href="https://web.dev/prefers-color-scheme/"><code>prefers-color-scheme</code></a> choice, with an optional <a href="https://github.com/GoogleChromeLabs/dark-mode-toggle">dark mode toggle</a>
   to override it.
   Another thing to decide on might be what the browser should do when reaching
@@ -364,9 +364,9 @@ When a podcast episode is playing, the Podcasts app shows a beautiful control wi
 ## Push notifications
 
 Push notifications have become a bit of an annoyance on the web
-(albeit [notification prompts are a lot quieter](https://blog.chromium.org/2020/01/introducing-quieter-permission-ui-for.html) now),
-but if used properly, they can add a lot of value.
-For example, the iOS Podcasts app can optionally notify me of new episodes of podcasts I am subscribed to or recommend me new ones, as well as alert me of new app features.
+(albeit [notification prompts are a lot quieter](https://blog.chromium.org/2020/01/introducing-quieter-permission-ui-for.html) now).
+But if used properly, they can add a lot of value.
+For example, the iOS Podcasts app can optionally notify me of new episodes of podcasts I am subscribed to or recommend new ones, as well as alert me of new app features.
 
 <figure class="w-figure">
   <img src="./image12.png" alt="iOS Podcasts app in the 'Notifications' settings screen showing the 'New Episodes' notifications toggle activated." width="300">
@@ -389,7 +389,7 @@ Whenever there are new episodes available for one of the podcasts I am subscribe
 
 <figure class="w-figure">
   <img src="./image13.png" alt="iOS settings screen showing the 'Badges' toggle activated." width="310">
-  <figcaption class="w-figcaption">Badges are a subtle way for applications to inform about new content.</figcaption>
+  <figcaption class="w-figcaption">Badges are a subtle way for applications to inform users about new content.</figcaption>
 </figure>
 
 {% Details %}
