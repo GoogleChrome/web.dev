@@ -75,7 +75,7 @@ But to a color deficient or screen reader user, that information is not conveyed
 Thus, you should always try to provide multiple avenues for the user to access critical information.
 
 <figure class="w-figure" style="width: 200px">
-  <img src="./input-form1.png" alt="A image of an input form with an incorrect phone number highlighted only with a red color.">
+  <img class="w-screenshot" src="./input-form1.png" alt="A image of an input form with an incorrect phone number highlighted only with a red color.">
 </figure>
 
 The [WebAIM checklist states in section 1.4.1](https://webaim.org/standards/wcag/checklist#sc1.4.1) that
