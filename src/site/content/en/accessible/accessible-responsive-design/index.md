@@ -69,7 +69,7 @@ making changes to the layout when the content dictates.
 As we saw with the Udacity example above, this approach ensures that the design responds
 whether the reduced space is due to a smaller screen or a higher zoom level.
 
-You can read more about these techniques in the [Responsive Web Design Basics](/responsive-web-design-basics/) article.
+You can read more about these techniques in the [Responsive web design basics](/responsive-web-design-basics/) article.
 
 ## Use relative units for text
 
