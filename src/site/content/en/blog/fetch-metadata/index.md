@@ -1,6 +1,6 @@
 ---
 title: Protect your resources from web attacks with Fetch Metadata 
-subhead: Prevent CSRF, XSSI, and other cross-origin information leaks.
+subhead: Prevent CSRF, XSSI, and cross-origin information leaks.
 authors:
   - lwe
 date: 2020-05-20
@@ -22,7 +22,7 @@ tags:
 
 ## Why should you care about isolating your web resources?
 
-Many web applications are vulnerable to cross-origin attacks like [cross-site request forgery](https://portswigger.net/web-security/csrf) (CSRF), [cross-site script inclusion](https://portswigger.net/research/json-hijacking-for-the-modern-web) (XSSI), timing attacks, and [cross-origin information leaks](https://arxiv.org/pdf/1908.02204.pdf) or due to speculative execution side-channels ([Spectre](https://developers.google.com/web/updates/2018/02/meltdown-spectre)).
+Many web applications are vulnerable to [cross-origin](https://web.dev/same-site-same-origin/#%22same-origin%22-and-%22cross-origin%22) attacks like [cross-site request forgery](https://portswigger.net/web-security/csrf) (CSRF), [cross-site script inclusion](https://portswigger.net/research/json-hijacking-for-the-modern-web) (XSSI), timing attacks, and [cross-origin information leaks](https://arxiv.org/pdf/1908.02204.pdf) or due to speculative execution side-channels ([Spectre](https://developers.google.com/web/updates/2018/02/meltdown-spectre)).
 
 [Fetch Metadata](https://www.w3.org/TR/fetch-metadata/) request headers sent by modern browsers allow you to deploy a strong defense-in-depth mechanism - a Resource Isolation Policy - to protect your application against these common cross-origin attacks.
 
@@ -44,7 +44,7 @@ Other cross-site attacks like XSSI or cross-origin information leaks are similar
 ## Fetch Metadata introduction
 Fetch Metadata request headers are a new web platform security feature designed to help servers defend themselves against cross-origin attacks. By providing information about the context of an HTTP request in a set of `Sec-Fetch-*` headers, they allow the responding server to apply security policies before processing the request. This lets developers decide whether to accept or reject a request based on the way it was made and the context in which it will be used, making it possible to respond to only legitimate requests made by their own application.
 
-{% Compare 'better', 'Allowed' %}
+{% Compare 'better', 'Same-Origin' %}
 {% CompareCaption %}
 Requests originating from sites served by your own server (same-origin) will continue to work.
 {% endCompareCaption %}
@@ -54,7 +54,7 @@ Requests originating from sites served by your own server (same-origin) will con
 {% endCompare %}
 
 
-{% Compare 'worse', 'Blocked' %}
+{% Compare 'worse', 'Cross-site' %}
 {% CompareCaption %}
 Malicious cross-site requests can be rejected by the server because of the additional context in the HTTP request provided by `Sec-Fetch-*` headers.
 {% endCompareCaption %}
