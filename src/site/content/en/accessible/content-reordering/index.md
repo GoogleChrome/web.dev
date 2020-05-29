@@ -39,7 +39,7 @@ the order that we read in English.
   </iframe>
 </div>
 
-If you have created this sort of pattern and then were asked to move "Contact Us",
+If you have created this sort of pattern and then were asked to move **Contact Us**,
 which is second in the source, to the end. You could use the `order` property which works in Flexbox.
 Try tabbing through the items in the example below, which has used the `order` property to rearrange the items.
 
