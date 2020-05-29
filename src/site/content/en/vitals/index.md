@@ -6,7 +6,7 @@ description: Essential metrics for a healthy site
 authors:
   - philipwalton
 date: 2020-04-30
-updated: 2020-05-27
+updated: 2020-05-29
 masthead: web-vitals.svg
 tags:
   - metrics
@@ -331,3 +331,5 @@ may change with greater frequency.
 
 For all Web Vitals, changes will be clearly documented in this public
 [CHANGELOG](http://bit.ly/chrome-speed-metrics-changelog).
+
+<web-feedback></web-feedback>
