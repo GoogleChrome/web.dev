@@ -1,12 +1,12 @@
 const {okStatus, failStatus, warnStatus} = require('./status');
 
-/** @typedef {import('../rules/rule').RuleResult} RuleResult */
+/** @typedef {import('../rules/rule').TestResult} TestResult */
 
 /**
  * Take the array of results returned from linting a single file
  * and sort them by passes/failures/warnings.
  * @param {string} file The file associated with the results.
- * @param {Array<RuleResult>} results The collection of rule results.
+ * @param {Array<TestResult>} results The collection of rule results.
  * @return {{file: string, passes: Array, failures: Array, warnings: Array}}
  */
 module.exports = (file, results) => {

@@ -8,6 +8,12 @@ const template = (items, symbol) => {
   return out;
 };
 
+/** @typedef {import('./combine-by-file').ResultsByFile} ResultsByFile */
+
+/**
+ * @param {ResultsByFile} files
+ * @return {string}
+ */
 module.exports = (files) => {
   const messages = [];
 

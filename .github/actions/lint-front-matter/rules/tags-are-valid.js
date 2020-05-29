@@ -8,9 +8,11 @@ const Rule = require('./rule');
 const {ok, fail} = require('../utils/status');
 const postTags = require('../../../../src/site/_data/postTags');
 
+/** @typedef {import('../utils/status').Status} Status */
+
 /**
  * @param {Object} frontMatter The yaml front matter from the file.
- * @return {Object} The result of the check and any failure/warning messages.
+ * @return {Status}
  */
 const test = ({frontMatter}) => {
   const invalidTags = [];

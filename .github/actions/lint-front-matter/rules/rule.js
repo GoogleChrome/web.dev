@@ -5,7 +5,7 @@
  * results.
  */
 
-/** @typedef {{id: string, status: string, message: string}} RuleResult */
+/** @typedef {{id: string, status: string, message: string}} TestResult */
 
 class Rule {
   /**
@@ -21,7 +21,7 @@ class Rule {
   /**
    * A facade for running the test function and supplying its arguments.
    * @param {{file: string, frontMatter: Object, args: ?Array}} args
-   * @return {RuleResult}
+   * @return {TestResult}
    */
   test(args) {
     const result = this.testFn(args);

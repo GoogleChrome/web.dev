@@ -1,6 +1,11 @@
 const core = require('@actions/core');
 const createMessage = require('./create-message');
 
+/** @typedef {import('./combine-by-file').ResultsByFile} ResultsByFile */
+
+/**
+ * @param {ResultsByFile} files
+ */
 module.exports = (files) => {
   for (const [file, results] of Object.entries(files)) {
     const {failures} = results;

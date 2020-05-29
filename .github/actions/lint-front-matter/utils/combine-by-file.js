@@ -1,17 +1,17 @@
 /**
- * @typedef {import('../main').FileResults} FileResults
- * @typedef {import('../rules/rule').RuleResult} RuleResult
+ * @typedef {import('../main').TestResults} TestResults
+ * @typedef {import('../rules/rule').TestResult} TestResult
  */
 
 /**
- * @typedef {{string, {passes: Array<RuleResult>, failures: Array<RuleResult>, warnings: Array<RuleResult>}}} CombinedResults
+ * @typedef {{[key: string]: {passes: Array<TestResult>, failures: Array<TestResult>, warnings: Array<TestResult>}}} ResultsByFile
  */
 
 /**
  * Returns a new object where each key is a file name, and the values are
  * the combined results of all of the rules that checked the file.
- * @param {Array<FileResults>} results
- * @return {Object}
+ * @param {Array<TestResults>} results
+ * @return {ResultsByFile}
  */
 module.exports = (results) => {
   const out = {};

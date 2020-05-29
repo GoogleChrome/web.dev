@@ -6,10 +6,12 @@ const id = 'has-property';
 const Rule = require('./rule');
 const {ok, fail} = require('../utils/status');
 
+/** @typedef {import('../utils/status').Status} Status */
+
 /**
  * @param {Object} frontMatter The yaml front matter from the file.
  * @param {string} property The name of the property to check for.
- * @return {Object} The result of the check and any failure/warning messages.
+ * @return {Status}
  */
 const test = ({frontMatter, args}) => {
   const [property] = args;

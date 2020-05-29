@@ -8,9 +8,11 @@ const Rule = require('./rule');
 const path = require('path');
 const {ok, fail} = require('../utils/status');
 
+/** @typedef {import('../utils/status').Status} Status */
+
 /**
  * @param {string} file Filename of the file being linted.
- * @return {Object} The result of the check and any failure/warning messages.
+ * @return {Status}
  */
 const test = ({file}) => {
   const dirname = path

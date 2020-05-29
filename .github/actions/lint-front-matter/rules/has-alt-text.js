@@ -6,9 +6,11 @@ const id = 'has-alt-text';
 const Rule = require('./rule');
 const {ok, fail} = require('../utils/status');
 
+/** @typedef {import('../utils/status').Status} Status */
+
 /**
  * @param {Object} frontMatter The yaml front matter from the file.
- * @return {Object} The result of the check and any failure/warning messages.
+ * @return {Status}
  */
 const test = ({frontMatter}) => {
   if ('hero' in frontMatter) {

@@ -36,7 +36,7 @@ jobs:
       # Begin custom linters.
       # These will primarily focus on the YAML frontmatter of posts.
       # Note these linters will post their own message to the GitHub Issue
-      # using the Create or update comment step.
+      # using the create-or-update-comment step.
       - name: Git diff
         id: git_diff
         uses: futuratrepadeira/changed-files@v3.2.1
@@ -54,6 +54,9 @@ jobs:
         # added or modified in the pull request.
         if: steps.git_diff.outputs.files_created || steps.git_diff.outputs.files_updated
       
+      # Use a custom action to find the first comment by our GitHub Actions bot.
+      # This comment id, plus the yaml test results, will get passed to the
+      # final step which will post to the issue thread.
       - name: Find comment
         id: find_comment
         uses: ./.github/actions/find-comment
