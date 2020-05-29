@@ -4,14 +4,14 @@ title: Properly size images
 description: |
   Learn about the uses-responsive-images audit.
 date: 2019-05-02
-updated: 2019-10-04
+updated: 2020-05-29
 web_lighthouse:
   - uses-responsive-images
 ---
 
 The Opportunities section of your Lighthouse report lists all images in your page
 that aren't appropriately sized,
-along with the potential savings in kilobytes (KB).
+along with the potential savings in [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte).
 Resize these images to save data and improve page load time:
 
 <figure class="w-figure">
@@ -24,7 +24,7 @@ Resize these images to save data and improve page load time:
 For each image on the page,
 Lighthouse compares the size of the rendered image against the size of the actual image.
 The rendered size also accounts for device pixel ratio.
-If the rendered size is at least 25KB smaller than the actual size,
+If the rendered size is at least 25KiB smaller than the actual size,
 then the image fails the audit.
 
 ## Strategies for properly sizing images

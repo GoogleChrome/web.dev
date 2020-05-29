@@ -4,7 +4,7 @@ title: Serve images in next-gen formats
 description: |
   Learn about the uses-webp-images audit.
 date: 2019-05-02
-updated: 2019-10-04
+updated: 2020-05-29
 codelabs:
   - codelab-serve-images-webp
 web_lighthouse:
@@ -38,7 +38,7 @@ and then converts each to WebP,
 reporting the potential savings based on the conversion figures.
 
 {% Aside 'note' %}
-Lighthouse omits the image from its report if the potential savings are less than 8KB.
+Lighthouse omits the image from its report if the potential savings are less than 8KiB.
 {% endAside %}
 
 ## WebP browser support
