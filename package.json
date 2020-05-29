@@ -8,6 +8,7 @@
     "coverage:unit": "c8 npm run test:unit",
     "coverage": "npm-run-all coverage:unit coverage:integration",
     "debug:eleventy": "node --inspect-brk ./node_modules/.bin/eleventy",
+    "debug:gulp": "node --inspect-brk ./node_modules/.bin/gulp",
     "debug:test:integration": "node --inspect-brk ./node_modules/.bin/mocha ./test/integration",
     "debug:test:lib": "TEST_MODE=debug npm-run-all clean rollup --parallel watch:rollup karma",
     "debug:test:unit": "node --inspect-brk ./node_modules/.bin/mocha ./test/unit",
