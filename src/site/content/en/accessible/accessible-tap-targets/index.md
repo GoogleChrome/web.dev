@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tap target guidance
+title: Accessible tap targets
 authors:
   - dgash
   - megginkearney
