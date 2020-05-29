@@ -6,11 +6,11 @@ authors:
   - megginkearney
   - rachelandrew
   - robdodson
-date: 2020-05-28
+date: 2020-03-31
+updated: 2020-05-29
 description: |
   If you have good vision, it's easy to assume that everyone perceives colors, or text legibility, the same way you do — but of course that's not the case.
 tags:
-  - blog
   - accessibility
 ---
 

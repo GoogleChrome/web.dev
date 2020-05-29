@@ -3,11 +3,10 @@ layout: post
 title: Content re-ordering
 authors:
   - rachelandrew
-date: 2020-05-28
+date: 2020-05-29
 description: |
   When creating a layout using CSS, you need to take care that you don't create a disconnected experience for users who are navigation with the keyboard.
 tags:
-  - blog
   - accessibility
 ---
 

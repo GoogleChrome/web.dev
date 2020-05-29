@@ -475,6 +475,7 @@ const contributors = {
       given: 'Meggin',
       family: 'Kearney',
     },
+    twitter: 'megginkearney',
     description: {
       en: 'Meggin is a Tech Writer',
     },
