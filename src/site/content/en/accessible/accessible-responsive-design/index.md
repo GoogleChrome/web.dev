@@ -87,7 +87,7 @@ creating the reading experience they need to use your site.
 
 A visitor who is tabbing through your site with the keyboard
 will be following the order of the content in the HTML document.
-When using modern layout methods such as [flexbox and grid](/responsive-web-design-basics/#flexbox),
+When using modern layout methods such as [Flexbox](/responsive-web-design-basics/#flexbox) and [Grid](/responsive-web-design-basics/#grid),
 it is easy to make the visual rendering not match the source order.
 This can lead to disconcerting jumps around the page for someone using the keyboard to move around.
 
