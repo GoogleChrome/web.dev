@@ -20,7 +20,7 @@ but responsive design also yields a win for accessibility.
 Consider a site like [Udacity](https://udacity.com):
 
 <figure class="w-figure">
-  <img src="./udacity-100.jpg" alt="The Udacity site">
+  <img class="w-screenshot" src="./udacity-100.jpg" alt="The Udacity site">
 </figure>
 
 A low-vision user who has difficulty reading small print might zoom in the page,
