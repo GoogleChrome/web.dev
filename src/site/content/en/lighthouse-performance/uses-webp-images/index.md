@@ -56,3 +56,5 @@ To see the current browser support for each next-gen format, check out the entri
 
 - [Source code for **Serve images in next-gen formats** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-webp-images.js)
 - [Use WebP images](/serve-images-webp)
+
+{# https://www.reddit.com/r/webdev/comments/gspjwe/serve_images_in_nextgen_formats/ #} 
