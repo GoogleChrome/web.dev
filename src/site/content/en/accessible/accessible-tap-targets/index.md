@@ -94,4 +94,4 @@ while testing for width only gives you mobile users.
 ```
 
 You can find out more about interaction media features such as pointer
-in the [Responsive Web Design Basics](/responsive-web-design-basics/) article.
+in the [Responsive web design basics](/responsive-web-design-basics/) article.
