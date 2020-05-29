@@ -74,7 +74,7 @@ a telephone number might be underlined in red to show that it is invalid.
 But to a color deficient or screen reader user, that information is not conveyed well, if at all.
 Thus, you should always try to provide multiple avenues for the user to access critical information.
 
-<figure class="w-figure">
+<figure class="w-figure" style="width: 200px">
   <img src="./input-form1.png" alt="A image of an input form with an incorrect phone number highlighted only with a red color.">
 </figure>
 
