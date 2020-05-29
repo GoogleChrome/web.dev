@@ -19,14 +19,19 @@
  */
 
 import {html} from 'lit-element';
-import {BaseElement} from '../BaseElement';
+import {BaseStateElement} from '../BaseStateElement';
 import {store} from '../../store';
-import {setLocale, checkUserPreferredLocale} from '../../actions';
+import {setLanguage, checkUserPreferredLanguage} from '../../actions';
 
-class LanguageSelect extends BaseElement {
+const languageNames = {
+  'en': 'English',
+  'pl': 'Polish'
+};
+
+class LanguageSelect extends BaseStateElement {
   static get properties() {
     return {
-      userPreferredLocale: {type: String},
+      userPreferredLanguage: {type: String},
     };
   }
 
@@ -37,32 +42,25 @@ class LanguageSelect extends BaseElement {
 
   connectedCallback() {
     super.connectedCallback();
-    checkUserPreferredLocale();
-    store.subscribe(this.onStateChanged);
-    this.onStateChanged();
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback();
-    store.unsubscribe(this.onStateChanged);
+    checkUserPreferredLanguage();
   }
 
   onStateChanged() {
     const state = store.getState();
-    this.userPreferredLocale = state.userPreferredLocale;
+    this.userPreferredLanguage = state.userPreferredLanguage;
   }
 
   onSelect(e) {
-    setLocale(e.target.value);
+    setLanguage(e.target.value);
   }
 
-  renderOption(locale) {
-    return this.userPreferredLocale === locale
+  renderOption(language) {
+    return this.userPreferredLanguage === language
       ? html`
-          <option value="${locale}" selected>${locale}</option>
+          <option value="${language}" selected>${languageNames[language]} (${language})</option>
         `
       : html`
-          <option value="${locale}">${locale}</option>
+          <option value="${language}">${languageNames[language]} (${language})</option>
         `;
   }
 
@@ -73,7 +71,7 @@ class LanguageSelect extends BaseElement {
           Choose language
         </label>
         <select id="preferred-language" @change=${this.onSelect}>
-          ${['en', 'pl'].map((locale) => this.renderOption(locale))}
+          ${['en', 'pl'].map((language) => this.renderOption(language))}
         </select>
       </div>
     `;

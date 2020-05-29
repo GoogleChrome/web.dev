@@ -186,38 +186,41 @@ export const setUserAcceptsCookies = store.action(() => {
 
 // TODO(devnook): Extract isSupportedLocale to a common format.
 // Temp validation.
-function isValidLocale(locale) {
-  return ['en', 'pl'].indexOf(locale) > -1;
+function isValidLanguage(lang) {
+  return ['en', 'pl'].indexOf(lang) > -1;
 }
 
-export const checkUserPreferredLocale = store.action(
-  ({userPreferredLocale}) => {
-    if (!userPreferredLocale) {
+function getCanonicalPath(path) {
+  const parts = path.split('/');
+  if (isValidLanguage(parts[1])) {
+    parts.splice(1, 1);
+  }
+  return parts.join('/');
+}
+
+export const checkUserPreferredLanguage = store.action(
+  ({userPreferredLanguage}) => {
+    if (!userPreferredLanguage) {
       const cookie = cookies.get('preferred_lang');
-      if (isValidLocale(cookie)) {
-        return {
-          userPreferredLocale: cookie,
-        };
-      }
+      return {
+        userPreferredLanguage: cookies.get('preferred_lang'),
+      };
     }
-    return {userPreferredLocale};
+    return {userPreferredLanguage};
   },
 );
 
-export const setLocale = store.action((state, preferredLocale) => {
-  if (!isValidLocale(preferredLocale)) {
-    console.warn('Invalid locale: ', preferredLocale);
-    return;
-  }
+export const setLanguage = store.action((state, preferredLanguage) => {
   const options = {
-    expires: 365,
+    expires: 10 * 365,  // 10 years
     samesite: 'strict',
   };
-  cookies.set('preferred_lang', preferredLocale, options);
-  if (preferredLocale !== state.userPreferredLocale) {
-    location.pathname = preferredLocale;
+  cookies.set('preferred_lang', preferredLanguage, options);
+  if (preferredLanguage !== state.userPreferredLanguage) {
+    console.log(getCanonicalPath(location.pathname))
+    location.pathname = getCanonicalPath(location.pathname)
   }
   return {
-    userPreferredLocale: preferredLocale,
+    userPreferredLanguage: preferredLanguage,
   };
 });
