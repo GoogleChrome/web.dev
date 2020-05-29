@@ -94,7 +94,7 @@ try the Tab Stop checker in the Accessibility Insights extension for Chrome.
 The image below shows the CSS Grid example in that tool.
 You can see how the focus has to jump around the layout.
 
-<figure class="w-figure">
+<figure class="w-figure" style="max-width: 600px">
   <img src="./a11y-insights.jpg" alt="A screenshot of the Accessibility Insights Tool demonstrating the confusing order of items.">
 </figure>
 
