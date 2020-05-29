@@ -6,7 +6,7 @@ subhead:
 authors:
   - rowan_m
 date: 2019-10-30
-updated: 2020-04-09
+updated: 2020-05-29
 hero: cookie-hero.jpg
 description: |
   With the introduction of the new SameSite=None attribute value, sites can now
@@ -44,13 +44,10 @@ so that:
 - Cookies for cross-site usage **must** specify `SameSite=None; Secure` to
   enable inclusion in third party context.
 
-This feature was scheduled to be the [default behavior from Chrome 80
-onward](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html) but
-has been [temporarily rolled
-back](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html) to
-improve the stability of the platform. If you have not already done so, should
-update the attributes for your third-party cookies so they will not be blocked
-in the future.
+This feature is the [default behavior from Chrome 84 stable
+onward](https://blog.chromium.org/2020/05/resuming-samesite-cookie-changes-in-july.html).
+If you have not already done so, you should update the attributes for your
+third-party cookies so they will not be blocked in the future.
 
 ## Cross-browser support
 
@@ -147,7 +144,7 @@ included in cross-site requests.
 
 A WebView in a native app is powered by a browser and you will need to test if
 the same restrictions or issues apply. In Android, if the WebView is powered by
-Chrome the new defaults **will not** immediately be applied with Chrome 80.
+Chrome the new defaults **will not** immediately be applied with Chrome 84.
 However the intent is to apply them in the future, so you should still test and
 prepare for this. Additionally, Android allows native apps to set cookies
 directly via the

@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2020-05-21
+updated: 2020-05-29
 description: |
   This post introduces the Cumulative Layout Shift (CLS) metric and explains
   how to measure it
@@ -264,15 +264,26 @@ CLS can be measured [in the lab](/user-centric-performance-metrics/#in-the-lab)
 or [in the field](/user-centric-performance-metrics/#in-the-field), and it's
 available in the following tools:
 
+{% Aside 'caution' %}
+  Lab tools typically load pages in a synthetic environment and are thus only
+  able to measure layout shifts that occur during page load. As a result, CLS
+  values reported by lab tools for a given page may be less than what real users
+  experience in the field.
+{% endAside %}
+
 ### Field tools
 
 - [Chrome User Experience
   Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [Search Console (Core Web Vitals
+  report)](https://support.google.com/webmasters/answer/9205520)
 
 ### Lab tools
 
-- [Lighthouse (v6)](https://developers.google.com/web/tools/lighthouse/)
 - [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [WebPageTest](https://webpagetest.org/)
 
 ### Measure CLS in JavaScript
 

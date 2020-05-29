@@ -13,28 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const authorsCollection = require('./authors');
 
-/**
- * Returns authors filtered by if they have a post.
- *
- * @param {any} collections Eleventy collection object
- * @return {Array<Author>}
- */
-module.exports = (collections) => {
-  const testAuthors = [
-    'robdodson',
-    'samthor',
-    'surma',
-    'mgechev',
-    'addyosmani',
-    'adamargyle',
-  ];
+const {feed} = require('../../../_collections/hooks/tags');
 
-  return Object.values(authorsCollection(collections)).filter((author) => {
-    if (process.env.PERCY && !testAuthors.includes(author.key)) {
-      return;
-    }
-    return author.elements.length > 0;
-  });
+module.exports = {
+  pagination: {
+    before: (tags) => feed(tags),
+  },
 };

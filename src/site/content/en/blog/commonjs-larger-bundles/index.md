@@ -4,7 +4,7 @@ subhead: Learn how CommonJS modules are impacting the tree-shaking of your appli
 authors:
   - mgechev
 date: 2020-05-08
-updated: 2020-05-08
+updated: 2020-05-29
 hero: hero.jpg
 alt: How CommonJS is making your bundles larger
 description:
@@ -20,7 +20,7 @@ tags:
 
 In this post, we'll look into what CommonJS is and why it's making your JavaScript bundles larger than necessary.
 
-Summary: **To ensure the bundler can successfully optimize your application, avoid depending on CommonJS modules, and use ES2015 module syntax in your entire application.**
+Summary: **To ensure the bundler can successfully optimize your application, avoid depending on CommonJS modules, and use ECMAScript module syntax in your entire application.**
 
 
 ## What's CommonJS?
@@ -87,7 +87,7 @@ $ cd dist && ls -lah
 
 Notice that **the bundle is 625KB**. If we look into the output, we'll find all the functions from `utils.js` plus a lot of modules from [`lodash`](https://lodash.com/)**. Although we do not use `lodash` in `index.js` it's part of the output**, which adds a lot of extra weight to our production assets.
 
-Now let us change the module format to [ECMAScript 2015 modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) and try again. This time, `utils.js` would look like this:
+Now let us change the module format to [ECMAScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) and try again. This time, `utils.js` would look like this:
 
 ```javascript
 export const add = (a, b) => a + b;
@@ -100,7 +100,7 @@ import { maxBy } from 'lodash-es';
 export const max = arr => maxBy(arr);
 ```
 
-And `index.js` would import from `utils.js` using ES2015 module syntax:
+And `index.js` would import from `utils.js` using ECMAScript module syntax:
 
 ```javascript
 import { add } from './utils';
@@ -118,9 +118,9 @@ Notice that the final bundle does not contain any of the functions from `utils.j
 
 A fair question you might ask is, **why does using CommonJS cause the output bundle to be almost 16,000 times bigger**? Of course, this is a toy example, in reality, the size difference might not be that large, but the chances are that CommonJS adds significant weight to your production build.
 
-**CommonJS modules are harder to optimize in the general case because they are much more dynamic than ES modules. To ensure your bundler and minifier can successfully optimize your application, avoid depending on CommonJS modules, and use ES2015 module syntax in your entire application.**
+**CommonJS modules are harder to optimize in the general case because they are much more dynamic than ES modules. To ensure your bundler and minifier can successfully optimize your application, avoid depending on CommonJS modules, and use ECMAScript module syntax in your entire application.**
 
-Notice that even if you're using ES2015 in `index.js`, if the module you're consuming is a CommonJS module, your app's bundle size will suffer.
+Notice that even if you're using ECMAScript modules in `index.js`, if the module you're consuming is a CommonJS module, your app's bundle size will suffer.
 
 
 ## Why does CommonJS make your app larger?
@@ -141,7 +141,7 @@ const subtract = (a, b) => a - b;
 console.log(add(1, 2));
 ```
 
-Above, we have an ES2015 module, which we import in `index.js`. We also define a `subtract` function. We can build the project using the same `webpack` configuration as above, but this time, we'll disable minimization:
+Above, we have an ECMAScript module, which we import in `index.js`. We also define a `subtract` function. We can build the project using the same `webpack` configuration as above, but this time, we'll disable minimization:
 
 ```javascript
 const path = require('path');
@@ -241,4 +241,12 @@ In some cases, if the library you're using follows specific conventions on how i
 
 ## Conclusion
 
-**To ensure the bundler can successfully optimize your application, avoid depending on CommonJS modules, and use ES2015 module syntax in your entire application.**
+**To ensure the bundler can successfully optimize your application, avoid depending on CommonJS modules, and use ECMAScript module syntax in your entire application.**
+
+Here are a few actionable tips to verify you're on the optimal path:
+
+- Use Rollup.js's [node-resolve](https://github.com/rollup/plugins/tree/master/packages/node-resolve)
+  plugin and set the `modulesOnly` flag to specify that you want to depend only on ECMAScript modules.
+- Use the package [`is-esm`](https://github.com/mgechev/is-esm)
+  to verify that an npm package uses ECMAScript modules.
+- If you're using Angular, by default you'll get a warning if you depend on non-tree-shakeable modules.
