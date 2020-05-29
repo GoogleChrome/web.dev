@@ -109,7 +109,7 @@ you can then emulate the following color deficiencies.
 - Achromatopsia: the inability to perceive any color except for shades of grey (extremely rare).
 
 <figure class="w-figure">
-  <img src="./emulate.jpg" alt="Emulating the vision of a person with Achromatopsia shows our page in greyscale.">
+  <img class="w-screenshot--filled" src="./emulate.jpg" alt="Emulating the vision of a person with Achromatopsia shows our page in greyscale.">
 </figure>
 
 ## High contrast mode
