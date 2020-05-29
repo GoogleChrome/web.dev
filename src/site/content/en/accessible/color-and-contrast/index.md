@@ -100,7 +100,7 @@ or if you rely heavily on the use of color in your UI,
 you can use DevTools to simulate various forms of visual impairment,
 including different types of color blindness.
 Chrome includes an [Emulate Vision Deficiencies feature](https://developers.google.com/web/updates/2020/03/devtools#vision-deficiencies).
-To access it open DevTools and select Rendering,
+To access it open DevTools and then open the **Rendering** tab in the Drawer,
 you can then emulate the following color deficiencies.
 
 - Protanopia: the inability to perceive any red light.
