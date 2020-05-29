@@ -135,7 +135,7 @@ If you view it in a high-contrast extension, that subtlety completely disappears
 and with it goes the reader's understanding of which page is active.
 
 <figure class="w-figure" style="width: 500px">
-  <img src="./tab-contrast.png" alt="Screenshot of a navigation bar in high contrast mode where the acvtive tab is hard to read">
+  <img class="w-screenshot" src="./tab-contrast.png" alt="Screenshot of a navigation bar in high contrast mode where the acvtive tab is hard to read">
 </figure>
 
 Similarly, if you consider the example from the previous lesson,
