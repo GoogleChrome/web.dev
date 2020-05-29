@@ -80,7 +80,7 @@ The third header, `Sec-Fetch-Dest`, exposes a request's [destination](https://de
 
 
 ## How to use Fetch Metadata to protect against cross-origin attacks
-The extra information these request headers provide is quite simple, but the additional context allows building powerful security logic on the server-side, also referred to as a Resource Isolation Policy, with just a few lines of code.
+The extra information these request headers provide is quite simple, but the additional context allows you to build powerful security logic on the server-side, also referred to as a Resource Isolation Policy, with just a few lines of code.
 
 ### Implementing a Resource Isolation Policy
 A Resource Isolation Policy prevents your resources from being requested by external websites. Blocking such traffic mitigates common cross-site web vulnerabilities such as CSRF, XSSI, timing attacks, and cross-origin information leaks. This policy can be enabled for all endpoints of your application and will allow all resource requests coming from your own application as well as direct navigations (via an HTTP `GET` request). Endpoints that are supposed to be loaded in a cross-site context (e.g. endpoints loaded using CORS) can be opted out of this logic
