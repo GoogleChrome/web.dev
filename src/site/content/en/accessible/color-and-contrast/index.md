@@ -122,9 +122,6 @@ There are a few ways to get a high-contrast setup on your machine.
 
 Operating systems like Mac OSX and Windows offer high-contrast modes
 that can be enabled for everything at the system level.
-Or users can install an extension, like the
-[Chrome High Contrast extension](https://chrome.google.com/webstore/detail/high-contrast/djcfdncoelnlbldjfhinnjlhdjlikmph?hl=en)
-to enable high-contrast only in that specific app.
 
 A useful exercise is to turn on high-contrast settings
 and verify that all of the UI in your application is still visible and usable.
