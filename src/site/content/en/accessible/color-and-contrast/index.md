@@ -88,7 +88,7 @@ Instead, the checklist recommends adding an additional indicator such as an unde
 An easy way to fix the previous example is to add an additional message to the field,
  announcing that it is invalid and why.
 
-<figure class="w-figure">
+<figure class="w-figure" style="width: 200px">
   <img src="./input-form2.png" alt="The same input form as in the last example, this time with a text label indicating the problem with the field.">
 </figure>
 
