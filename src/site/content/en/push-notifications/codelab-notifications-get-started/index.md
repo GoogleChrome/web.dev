@@ -11,7 +11,6 @@ glitch: codelab-notifications-get-started
 # Specify which file the glitch should start on.
 glitchPath: public/index.js
 related_post: use-push-notifications-to-engage-users
-draft: true
 ---
 
 {#
@@ -29,27 +28,7 @@ In this codelab, you'll use basic features of the
 * Send notifications
 * Experiment with notification options 
 
-If you got stuck, here's the completed code for this codelab: [glitch.com/edit/#!/codelab-notifications-get-started-completed](https://glitch.com/edit/#!/codelab-notifications-get-started-completed) 
-
-## Prereqs
-
-Template literals
-
-Promises
-
-{% Aside %}
-
-`Notification.requestPermission()` returns a `Promise`. To perform actions after this promise resolves, you must place them inside a function and pass that function as a parameter to the promise's `then()` method:
-
-```js
-Notification.requestPermission().then((result) => {
-  /* do stuff */ 
-});
-```
-
-See the [`Promise` documentation on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) for more information on how promises work.
-
-{% endAside %}
+If you got stuck, here's the completed code for this codelab: [glitch.com/edit/#!/codelab-notifications-get-started-completed](https://glitch.com/edit/#!/codelab-notifications-get-started-completed)
 
 ## Remix the sample app and view it in a new tab
 

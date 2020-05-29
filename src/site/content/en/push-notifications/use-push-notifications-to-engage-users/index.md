@@ -9,14 +9,13 @@ date: 2019-10-21
 codelabs:
   - codelab-notifications-get-started
   - codelab-notifications-service-worker
-draft: true
 ---
 
 ## Why use push notifications?
 
 Notifications present small chunks of information to a user. Web apps can use notifications to tell users about important, time-sensitive events, or actions the user needs to take. 
 
-The look-and-feel of notifications varies between platforms. For example: 
+The look-and-feel of notifications varies between platforms.
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="./predicaments-android.png" alt="">
@@ -28,7 +27,11 @@ The look-and-feel of notifications varies between platforms. For example:
   <figcaption class="w-figcaption">A notification on a MacBook.</figcaption>
 </figure>
 
-Traditionally, web browsers had to initiate the exchange of information between server and client by making a request. [Web push technology](https://developer.mozilla.org/en-US/docs/Web/API/Push_API), on the other hand, lets you configure your server to send notifications when it makes sense for your app. A push service creates unique push subscriptions for each subscribed service worker. Sending messages to a user's push subscriptions raises events on that service worker, prompting it to display a notification.
+Traditionally, web browsers had to initiate the exchange of information between server and client by making a request. [Web push technology](https://developer.mozilla.org/en-US/docs/Web/API/Push_API), on the other hand, lets you configure your server to send notifications when it makes sense for your app. 
+
+{# Too much technical detail too quickly. #}
+
+A push service creates unique push subscriptions for each subscribed service worker. Sending messages to a user's push subscriptions raises events on that service worker, prompting it to display a notification.
 
 {% Aside 'key-term' %}
 
