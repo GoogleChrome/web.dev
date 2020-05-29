@@ -65,7 +65,7 @@ Any layout method that allows you to move elements around can cause this problem
 The following CSS properties commonly cause content reordering problems:
 
 - Using `position: absolute` and taking an item out of flow visually.
-- The `order` property in Flexbox and Grid Layout.
+- The `order` property in Flexbox and Grid layout.
 - The `row-reverse` and `column-reverse` values for `flex-direction` in Flexbox.
 - The `dense` value for `grid-auto-flow` in Grid Layout.
 - Any positioning by line name or number, or with `grid-template-areas` in Grid Layout.
