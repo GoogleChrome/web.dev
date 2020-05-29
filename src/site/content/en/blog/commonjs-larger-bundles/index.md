@@ -4,7 +4,7 @@ subhead: Learn how CommonJS modules are impacting the tree-shaking of your appli
 authors:
   - mgechev
 date: 2020-05-08
-updated: 2020-05-29
+updated: 2020-05-26
 hero: hero.jpg
 alt: How CommonJS is making your bundles larger
 description:
