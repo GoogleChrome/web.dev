@@ -62,7 +62,7 @@ rather than using CSS.
 ## Which CSS properties can cause reordering?
 
 Any layout method that allows you to move elements around can cause this problem.
-The following list being key places to consider if you are causing the problem.
+The following CSS properties commonly cause content reordering problems:
 
 - Using `position: absolute` and taking an item out of flow visually.
 - The `order` property in Flexbox and Grid Layout.
