@@ -6,7 +6,7 @@ authors:
 date: 2020-03-31
 description: The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms. The proposals need your feedback!
 tags:
-  - post
+  - blog
   - privacy
   - security
   - trust and safety

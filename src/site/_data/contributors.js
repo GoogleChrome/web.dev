@@ -64,6 +64,22 @@ const contributors = {
       en: 'V8 JavaScript whisperer',
     },
   },
+  hongchanchoi: {
+    name: {
+      given: 'Hongchan',
+      family: 'Choi',
+    },
+    org: {
+      name: 'Google',
+      unit: 'Chrome',
+    },
+    twitter: 'hochsays',
+    github: 'hoch',
+    homepage: 'https://hoch.io/',
+    description: {
+      en: 'Software Engineer working on Chromium',
+    },
+  },
   robdodson: {
     name: {
       given: 'Rob',
@@ -106,6 +122,20 @@ const contributors = {
       en: 'Arthur is a Tech Writer',
     },
   },
+  sfourault: {
+    name: {
+      given: 'Sébastien',
+      family: 'Fourault',
+    },
+    org: {
+      name: 'Google',
+      unit: 'Mobile Solutions Consultant',
+    },
+    twitter: 'SebFourault',
+    github: 'krustydaclown',
+    homepage: 'https://medium.com/@sebFourault',
+    country: 'FR',
+  },
   tomgreenaway: {
     name: {
       given: 'Tom',
@@ -122,6 +152,18 @@ const contributors = {
       en:
         'Tom is the Games Lead for the Chrome & Web Developer Relations team at Google',
     },
+  },
+  ilyagrigorik: {
+    name: {
+      given: 'Ilya',
+      family: 'Grigorik',
+    },
+    org: {
+      name: 'Google',
+      unit: 'Chrome',
+    },
+    twitter: 'igrigorik',
+    github: 'igrigorik',
   },
   yigu: {
     name: {
@@ -175,6 +217,15 @@ const contributors = {
     twitter: 'bibydigital',
     github: 'mihajlija',
   },
+  mustafakurtuldu: {
+    name: {
+      given: 'Mustafa',
+      family: 'Kurtuldu',
+    },
+    homepage: 'https://www.designtoday.info/',
+    twitter: 'mustafa_x',
+    github: 'mustafa-x',
+  },
   agektmr: {
     name: {
       given: 'Eiji',
@@ -223,6 +274,7 @@ const contributors = {
     homepage: 'https://petelepage.com',
     twitter: 'petele',
     github: 'petele',
+    glitch: 'petele',
     description: {
       en:
         'Developer Advocate on the web team at Google, taking the sharp edges off new stuff & helping make the web better for developers! (he/him)',
@@ -272,7 +324,7 @@ const contributors = {
     },
     country: 'USA',
     twitter: 'addyosmani',
-    glitch: 'addyosmani',
+    github: 'addyosmani',
     description: {
       en: 'Eng Manager working on Chrome and Web Platform',
     },
@@ -324,6 +376,7 @@ const contributors = {
     homepage: 'https://blog.tomayac.com/',
     twitter: 'tomayac',
     github: 'tomayac',
+    glitch: 'tomayac',
     description: {
       en: 'Tom is a Developer Advocate',
     },
@@ -362,6 +415,17 @@ const contributors = {
     description: {
       en: '¯‍\\‍_‍(‍ツ‍)‍_‍/‍¯',
     },
+  },
+  rachelandrew: {
+    name: {
+      given: 'Rachel',
+      family: 'Andrew',
+    },
+    country: 'GB',
+    homepage: 'https://rachelandrew.co.uk/',
+    twitter: 'rachelandrew',
+    github: 'rachelandrew',
+    glitch: 'rachelandrew',
   },
   rviscomi: {
     name: {
@@ -846,6 +910,22 @@ const contributors = {
     github: 'una',
     twitter: 'una',
   },
+  phillipkriegel: {
+    name: {
+      given: 'Phillip',
+      family: 'Kriegel',
+    },
+    homepage: 'https://www.philkrie.me/',
+    github: 'philkrie',
+    description: {
+      en: 'Phillip is a Specialist Engineer',
+    },
+    org: {
+      name: 'Google',
+      unit: 'Global Business',
+    },
+    country: 'US',
+  },
   tigeroakes: {
     name: {
       given: 'Tiger',
@@ -861,12 +941,6 @@ const contributors = {
     github: 'NotWoods',
     description: {
       en: 'Developer working on Firefox Preview',
-    },
-  },
-  lchansson: {
-    name: {
-      given: 'Lina',
-      family: 'Hansson',
     },
   },
   kumagi: {
@@ -912,6 +986,17 @@ const contributors = {
     twitter: 'kkotowicz',
     github: 'koto',
   },
+  dgrogan: {
+    name: {
+      given: 'David',
+      family: 'Grogan',
+    },
+    country: 'US',
+    github: 'davidsgrogan',
+    org: {
+      name: 'Google',
+    },
+  },
   ulan: {
     name: {
       given: 'Ulan',
@@ -924,13 +1009,234 @@ const contributors = {
       unit: 'Chrome',
     },
   },
+  domenic: {
+    name: {
+      given: 'Domenic',
+      family: 'Denicola',
+    },
+    twitter: 'domenic',
+    github: 'domenic',
+  },
+  cjamcl: {
+    name: {
+      given: 'Connor',
+      family: 'Clark',
+    },
+    org: {
+      name: 'Google',
+      unit: 'Connor is a software engineer working on Lighthouse',
+    },
+    country: 'US',
+    twitter: 'cjamcl',
+    github: 'connorjclark',
+  },
+  paullewis: {
+    name: {
+      given: 'Paul',
+      family: 'Lewis',
+    },
+    twitter: 'aerotwist',
+    country: 'UK',
+    org: {
+      name: 'Google',
+    },
+  },
+  patrickkettner: {
+    name: {
+      given: 'Patrick',
+      family: 'Kettner',
+    },
+    twitter: 'patrickkettner',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
+  sebabenz: {
+    name: {
+      given: 'Sebastian',
+      family: 'Benz',
+    },
+    twitter: 'sebabenz',
+    country: 'DE',
+    org: {
+      name: 'Google',
+    },
+  },
+  syg: {
+    name: {
+      given: 'Shu-yu',
+      family: 'Guo',
+    },
+    twitter: '_shu',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
+  nattestad: {
+    name: {
+      given: 'Thomas',
+      family: 'Nattestad',
+    },
+    twitter: 'fractorious',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
+  maudn: {
+    name: {
+      given: 'Maud',
+      family: 'Nalpas',
+    },
+    twitter: 'maudnals',
+    country: 'DE',
+    org: {
+      name: 'Google',
+    },
+  },
+  morss: {
+    name: {
+      given: 'Ben',
+      family: 'Morss',
+    },
+    twitter: 'benmorss',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
+  ericbidelman: {
+    name: {
+      given: 'Eric',
+      family: 'Bidelman',
+    },
+    twitter: 'ebidel',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
+  jungkees: {
+    name: {
+      given: 'Jungkee',
+      family: 'Song',
+    },
+    org: {
+      name: 'Microsoft',
+      unit: 'Edge',
+    },
+    country: 'US',
+    twitter: 'jungkees',
+    github: 'jungkees',
+    description: {
+      en: 'PM on the Microsoft Edge team',
+    },
+  },
+  leszeks: {
+    name: {
+      given: 'Leszek',
+      family: 'Swirski',
+    },
+    twitter: 'leszekswirski',
+    country: 'DE',
+    org: {
+      name: 'Google',
+    },
+  },
+  nainar: {
+    name: {
+      given: 'Naina',
+      family: 'Raisinghani',
+    },
+    twitter: 'nainar92',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
+  crystallambert: {
+    name: {
+      given: 'Crystal',
+      family: 'Lambert',
+    },
+    twitter: 'CrystalOnScript',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
+  dalmaer: {
+    name: {
+      given: 'Dion',
+      family: 'Almaer',
+    },
+    twitter: 'dalmaer',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
+  bmcquade: {
+    name: {
+      given: 'Bryan',
+      family: 'McQuade',
+    },
+    twitter: 'bryanmcquade',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
+  drott: {
+    name: {
+      given: 'Dominik',
+      family: 'Röttsches',
+    },
+    country: 'FI',
+    github: 'drott',
+    twitter: 'abrax5',
+    org: {
+      name: 'Google',
+    },
+  },
+  yaraki: {
+    name: {
+      given: 'Yuichi',
+      family: 'Araki',
+    },
+    twitter: 'yuichi_araki',
+    github: 'yaraki',
+    country: 'JP',
+    description: {
+      en: 'Developer Programs Engineer at Google',
+    },
+  },
+  kevinellis: {
+    name: {
+      given: 'Kevin',
+      family: 'Ellis',
+    },
+    description: {
+      en: 'Software Engineer on the web platform.',
+    },
+  },
 };
 
 const processedContributors = {};
 
 Object.keys(contributors).forEach((key) => {
   const contributorData = contributors[key];
-  const title = contributorData.name.given + ' ' + contributorData.name.family;
+
+  // Generate the contributor's name out of valid given/family parts. This
+  // allows our authors to just have a single name.
+  const parts = [
+    contributorData.name.given,
+    contributorData.name.family,
+  ].filter((s) => s && s.length);
+  const title = parts.join(' ');
+
   const description =
     contributorData.description && contributorData.description.en
       ? contributorData.description.en

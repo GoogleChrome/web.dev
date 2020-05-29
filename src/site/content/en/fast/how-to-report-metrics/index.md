@@ -11,7 +11,7 @@ description: |
   Learn what impact website performance has on different parts of the e-commerce funnel
 wf_blink_components: Blink>Performance
 tags:
-  - post
+  - blog
   - e-commerce
   - performance
 ---

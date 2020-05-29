@@ -5,7 +5,7 @@ authors:
   - petelepage
   - beaufortfrancois
 date: 2018-11-05
-updated: 2020-02-25
+updated: 2020-05-28
 description: |
   The web app manifest is a simple JSON file that tells the browser about your
   web application and how it should behave when installed on the user's mobile
@@ -48,7 +48,23 @@ directory).
   "background_color": "#3367D6",
   "display": "standalone",
   "scope": "/",
-  "theme_color": "#3367D6"
+  "theme_color": "#3367D6",
+  "shortcuts": [
+    {
+      "name": "How's weather today?",
+      "short_name": "Today",
+      "description": "View weather information for today",
+      "url": "/today?source=pwa",
+      "icons": [{ "src": "/images/today.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "How's weather tomorrow?",
+      "short_name": "Tomorrow",
+      "description": "View weather information for tomorrow",
+      "url": "/tomorrow?source=pwa",
+      "icons": [{ "src": "/images/tomorrow.png", "sizes": "192x192" }]
+    }
+  ]
 }
 ```
 
@@ -185,6 +201,12 @@ the app's preview in task switchers. The `theme_color` should match the
       src="theme_color-pwa-window.png"
       alt="An example of a PWA window with custom theme_color.">
 </figure>
+
+#### `shortcuts` {: #shortcuts }
+
+The `shortcuts` property is an array of [app shortcut](/app-shortcuts) objects
+whose goal is to provide quick access to key tasks within your app. Each member
+is a dictionary that contains at least a `name` and a `url`.
 
 ## Add the web app manifest to your pages {: #link-manifest }
 

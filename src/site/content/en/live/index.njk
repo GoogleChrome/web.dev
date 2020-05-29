@@ -1,0 +1,129 @@
+---
+layout: layout
+title: web.dev LIVE
+description: |
+  Bringing web developers together, from home
+show_banner: false
+date: 2020-06-31
+---
+
+<div class="w-live-landing-page">
+
+  <div class="w-live-top">
+    <section class="w-event-section">
+
+      <div class="w-event-section__column-left w-event-heading">
+        <h1 class="w-event-heading__logo">web.dev<span>/LIVE</span>
+          <video width="156" height="72" autoplay muted loop playsinline>
+            <source src="live.mp4" type="video/mp4" />
+            <img src="live.png" alt="live" />
+          </video>
+        </h1>
+        <p class="w-event-heading__subhead">June 30 &mdash; July 2, 2020</p>
+      </div>
+
+      <div class="w-event-section__column-head w-event-hero">
+        <img src="hero.png" alt="" />
+      </div>
+
+      <div class="w-event-section__column-right">
+        <h2 class="w-mt--non">
+          Bringing web developers together, from home
+        </h2>
+        <p>
+          These are unprecedented times, with people worldwide looking to stay connected and informed.
+          The Web plays a special role here, and we're proud to see how the community has stepped up.
+        </p>
+        <p>
+          Join Google's Web Platform team, from the comfort of your homes, to celebrate our community's actions, learn modern web techniques and connect with each other.
+        </p>
+
+        <div class="w-event-buttons">
+          <a class="w-button w-button--primary gc-analytics-event" data-category="web.dev" data-label="subscribe, newsletter" data-action="click" href="#subscribe">
+            Get notified
+          </a>
+          <div class="w-event-calendar">
+            <div class="w-event-calendar__note">
+              <span>Add to calendar</span>
+            </div>
+            <a class="w-button w-button--secondary w-button--small gc-analytics-event" data-category="web.dev" data-label="live, add to Google Calendar" data-action="click" target="_blank"
+              href="https://calendar.google.com/calendar/r?cid=webcal://calendar.google.com/calendar/ical/c_ta9vmmo7jqm7j2bqgg3bsn47oc%40group.calendar.google.com/public/basic.ics"
+              rel="noopener">
+              Google
+            </a>
+            <a class="w-button w-button--secondary w-button--small gc-analytics-event" data-category="web.dev" data-label="live, add to iCal" data-action="click" target="_blank"
+              href="webcal://calendar.google.com/calendar/ical/c_ta9vmmo7jqm7j2bqgg3bsn47oc%40group.calendar.google.com/public/basic.ics"
+              rel="noopener">
+              iCal
+            </a>
+            <a class="w-button w-button--secondary w-button--small gc-analytics-event" data-category="web.dev" data-label="live, add to Outlook" data-action="click" target="_blank"
+              href="webcal://calendar.google.com/calendar/ical/c_ta9vmmo7jqm7j2bqgg3bsn47oc%40group.calendar.google.com/public/basic.ics"
+              rel="noopener">
+              Outlook
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+  </div>
+
+  <hr />
+
+  <section id="schedule" class="w-event-section">
+
+    <div class="w-event-section__column-left">
+      <h3 class="w-mt--non">What to expect</h3>
+      <p>
+        Over three days, we'll share quick tips on aspects of modern web development.
+        <strong>Each day, we'll "travel" to a new timezone</strong> to cover a couple aspects in short 10-20 min sessions and answer your questions.
+      </p>
+    </div>
+
+    <div class="w-event-section__column-right w-event-section__column-right__schedule">
+      {% EventTable event, collections.authors %}
+    </div>
+
+  </section>
+
+  <hr />
+
+  <section id="subscribe" class="w-event-section w-event-section--subscribe">
+    {% set subscribeTitle = "Sign up for web.dev updates" %}
+    {% set subscribeNotes = "Get updates related to web.dev LIVE as well as the latest news and techniques straight to your inbox." %}
+    {% include 'partials/subscribe.njk' %}
+  </section>
+
+  <hr />
+
+  <section id="share" class="w-event-section">
+    <div class="w-event-section__column-left">
+      <div class="w-display--flex w-flex--column w-align-items--center w-justify-content--center">
+        <p class="w-mb--non">
+          Share this event with your friends
+        </p>
+        <div class="w-event-buttons">
+          <share-action
+            message=" web.dev LIVE, a three day digital event for web developers by Google."
+            data-category="web.dev"
+            data-label="share"
+            data-action="click"
+            class="w-button w-button--primary w-button--with-icon w-mr--non gc-analytics-event"
+            data-icon="share"
+            tabindex="0"
+            role="button"
+          >
+            <span>
+              Share
+            </span>
+          </share-action>
+        </div>
+      </div>
+    </div>
+    <div class="w-event-section__column-right w-event-antihero">
+      <img src="hero.png" width="1572" height="394" alt="" />
+    </div>
+  </section>
+
+</div>

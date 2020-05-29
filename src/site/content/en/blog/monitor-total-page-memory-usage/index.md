@@ -1,9 +1,10 @@
 ---
-title: Monitor your web page's total memory usage with `performance.measureMemory()`
+title: Monitor your web page's total memory usage with `measureMemory()`
 subhead: >
   Learn how to measure memory usage of your web page in production to detect regressions.
 description: >
   Learn how to measure memory usage of your web page in production to detect regressions.
+update: 2020-05-27
 date: 2020-04-13
 authors:
   - ulan
@@ -13,7 +14,7 @@ alt: >
 origin_trial:
     url: https://developers.chrome.com/origintrials/#/view_trial/1281274093986906113
 tags:
-  - post
+  - blog
   - memory
   - javascript
 ---
@@ -129,8 +130,8 @@ results for the same browser.
 
 ### Enabling support during the origin trial phase
 
-The `performance.measureMemory()` API is available as an origin trial in
-Chrome 83. The origin trial is expected to end in Chrome 84.
+The `performance.measureMemory()` API is available as an origin trial starting in
+Chrome 83. The origin trial is expected to end in Chrome 86.
 
 {% include 'content/origin-trials.njk' %}
 
@@ -269,7 +270,7 @@ The result may look as follows:
 ```
 
 The total memory usage estimate is returned in the `bytes` field. The value of
-bytes is using [Numeric separator][numeric-separators] syntax. This value is
+bytes is using [numeric separator syntax][numeric-separators]. This value is
 highly implementation-dependent and cannot be compared across browsers. It may
 even change between different versions of the same browser. During the origin
 trial the value includes JavaScript memory usage of the main window and all
@@ -326,9 +327,9 @@ where and how you're using it.
 * [ChromeStatus.com entry][cr-status]
 
 ## Acknowledgements
-Big thanks to Domenic Denicola, Yoav Weiss for API design reviews, and Dominik
-Inführ, Hannes Payer, Kentaro Hara, Michael Lippautz for code reviews in
-Chrome. I also thank Per Parker, Philipp Weis, Olga Belomestnykh, Matthew
+Big thanks to Domenic Denicola, Yoav Weiss, Mathias Bynens for API design reviews,
+and Dominik Inführ, Hannes Payer, Kentaro Hara, Michael Lippautz for code reviews
+in Chrome. I also thank Per Parker, Philipp Weis, Olga Belomestnykh, Matthew
 Bolohan, and Neil Mckay for providing valuable user feedback that greatly
 improved the API.
 
@@ -348,7 +349,7 @@ improved the API.
 [math]: https://en.wikipedia.org/wiki/Exponential_distribution#Computational_methods
 [memory-leaks]: https://docs.google.com/presentation/d/14uV5jrJ0aPs0Hd0Ehu3JPV8IBGc3U8gU6daLAqj6NrM/edit#slide=id.p
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EPerformanceAPIs
-[numeric-separators]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Numeric_separators
+[numeric-separators]: https://v8.dev/features/numeric-separators
 [ot]: https://developers.chrome.com/origintrials/#/view_trial/1281274093986906113
 [poisson]: https://en.wikipedia.org/wiki/Poisson_point_process
 [security-error]: https://developer.mozilla.org/en-US/docs/Web/API/DOMException#exception-SecurityError

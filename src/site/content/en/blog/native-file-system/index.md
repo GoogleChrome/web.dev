@@ -7,7 +7,7 @@ description: The new Native File System API enables developers to build powerful
 date: 2019-08-20
 updated: 2020-04-13
 tags:
-  - post
+  - blog
   - capabilities
   - fugu
   - origin-trial
@@ -323,7 +323,7 @@ async function verifyPermission(fileHandle, withWrite) {
   if (await fileHandle.requestPermission(opts) === 'granted') {
     return true;
   }
-  // The user did nt grant permission, return false.
+  // The user didn't grant permission, return false.
   return false;
 }
 ```
@@ -358,7 +358,7 @@ Chrome 83
 
 * Adds support for [writable streams](#save-to-disk), and removes the previous
   method for writing to disk (`FileSystemWriter`).
-* Allows serlializing and storing file handles in IndexedDB, or sending via
+* Allows serializing and storing file handles in IndexedDB, or sending via
   `postMessage()` to other windows or workers within the same origin. Note that
   permissions are not retained between browser sessions. For example, when a
   browser tab is re-opened, and a file handle is obtained from IndexedDB, the

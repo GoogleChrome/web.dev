@@ -10,12 +10,20 @@ const pagesToTest = [
     title: 'Learn page',
   },
   {
+    url: '/accessible/',
+    title: 'Collection page',
+  },
+  {
     url: '/measure/',
     title: 'Measure page',
   },
   {
     url: '/blog/',
     title: 'Blog page',
+  },
+  {
+    url: '/test-post/',
+    title: 'Post page',
   },
   {
     url: '/about/',
@@ -32,6 +40,10 @@ const pagesToTest = [
   {
     url: '/authors/',
     title: 'Authors page',
+  },
+  {
+    url: '/authors/mgechev/',
+    title: 'Author page',
   },
   {
     url: '/tags/',

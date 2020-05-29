@@ -13,7 +13,7 @@ description: |
   Starting in Chrome 81, scrollers remain snapped when the page layout changes.
   In other words, you no longer need to add event listeners to force resnapping.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
 ---
 
 [CSS Scroll Snap](https://developers.google.com/web/updates/2018/07/css-scroll-snap)

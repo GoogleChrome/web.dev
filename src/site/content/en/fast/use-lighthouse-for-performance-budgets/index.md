@@ -10,7 +10,7 @@ description: |
 date: 2019-06-14
 updated: 2020-04-03
 tags:
-  - post
+  - blog
   - performance
 ---
 
@@ -40,7 +40,7 @@ Create a file named `budget.json`. In this file add the following JSON:
         "budget": 3000
       },
       {
-        "metric": "first-meaingful-paint",
+        "metric": "first-meaningful-paint",
         "budget": 1000
       }
     ],

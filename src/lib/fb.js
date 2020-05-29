@@ -1,41 +1,38 @@
 import {firebaseConfig} from 'webdev_config';
 import {store} from './store';
 import {clearSignedInState} from './actions';
-import firestoreLoader from './firestore-loader';
-import {localStorage} from './utils/storage';
+import loadFirebase from './utils/firebase-loader';
+import {trackError} from './analytics';
 
-/* eslint-disable require-jsdoc */
+const firebasePromise = loadFirebase('app', 'auth', 'performance').then(
+  () => window.firebase,
+);
+firebasePromise.then(initialize).catch((err) => {
+  console.error('failed to load Firebase', err);
+  trackError(err, 'firebase load');
+});
 
-firebase.initializeApp(firebaseConfig);
+const firestorePromiseLoader = (() => {
+  let p;
+  return () => {
+    if (p) {
+      return p;
+    }
+    // We don't have to block on the top-level Promise, as the scripts run
+    // in-order of being added to the page (async=false).
+    p = loadFirebase('firestore').then(() => {
+      const firestore = window.firebase.firestore();
+      return firestore;
+    });
+    return p;
+  };
+})();
 
-// Initialize performance monitoring
-firebase.performance();
+function initialize(firebase) {
+  firebase.initializeApp(firebaseConfig);
+  firebase.performance(); // initialize performance monitoring
 
-// Listen for the user's signed in state and update the store.
-let firestoreUserUnsubscribe = null;
-firebase.auth().onAuthStateChanged((user) => {
-  store.setState({checkingSignedInState: false});
-
-  if (firestoreUserUnsubscribe) {
-    firestoreUserUnsubscribe();
-    firestoreUserUnsubscribe = null;
-  }
-
-  // Cache whether the user was signed in, to help prevent FOUC in future, as
-  // this can be read synchronosly and Firebase's auth takes ~ms to come back.
-  localStorage['webdev_isSignedIn'] = user ? 'probably' : '';
-
-  if (!user) {
-    clearSignedInState();
-    return;
-  }
-
-  // Don't clear userUrl, as the user might have requested something prior to
-  // signing in.
-  store.setState({
-    isSignedIn: true,
-    user,
-  });
+  let firestoreUserUnsubscribe = () => {};
   let lastSavedUrl = null;
 
   const onUserSnapshot = (snapshot) => {
@@ -55,7 +52,7 @@ firebase.auth().onAuthStateChanged((user) => {
       // This will also trigger a write to Firestore.
     } else if (lastSavedUrl && lastSavedUrl !== savedUrl) {
       // The user changed their target URL in another browser. Update it.
-      // This doesn't fire on the first snapshot as |lastRemoteUserUrl| begins
+      // This doesn't fire on the first snapshot as |lastSavedUrl| begins
       // as null.
       saveNewUrlToState = true;
     } else if (!userUrl) {
@@ -91,37 +88,64 @@ firebase.auth().onAuthStateChanged((user) => {
     }
   };
 
-  // This unsubscribe function is used if the user signs out. However, the user's row cannot be
-  // watched until the Firestore library is ready, so wrap the actual internal unsubscribe call.
-  firestoreUserUnsubscribe = (function() {
-    let internalUnsubscribe = () => {};
-    let unsubscribed = false;
+  // Listen for the user's signed in state and update the store.
+  firebase.auth().onAuthStateChanged((user) => {
+    store.setState({checkingSignedInState: false});
+    firestoreUserUnsubscribe();
 
-    userRef()
-      .then((ref) => {
-        if (unsubscribed) {
-          return; // signed out before Firestore library showed up
+    if (!user) {
+      clearSignedInState();
+      return;
+    }
+
+    // Don't clear userUrl, as the user might have requested a Lighthouse prior to signing in, and
+    // there's an active action.
+    store.setState({
+      isSignedIn: true,
+      user,
+    });
+    lastSavedUrl = null;
+
+    // This unsubscribe function is used if the user signs out. However, the user's row cannot be
+    // watched until the Firestore library is ready, so wrap the actual internal unsubscribe call.
+    firestoreUserUnsubscribe = (function() {
+      let internalUnsubscribe = null;
+      let unsubscribed = false;
+
+      userRef()
+        .then((ref) => {
+          if (!unsubscribed) {
+            internalUnsubscribe = ref.onSnapshot(onUserSnapshot);
+          }
+        })
+        .catch((err) => {
+          console.warn('failed to load Firestore library', err);
+          trackError(err, 'firestore load');
+        });
+
+      return () => {
+        unsubscribed = true;
+        if (internalUnsubscribe) {
+          internalUnsubscribe();
+          internalUnsubscribe = null;
         }
-        internalUnsubscribe = ref.onSnapshot(onUserSnapshot);
-      })
-      .catch((err) => {
-        console.warn('failed to load Firestore library', err);
-      });
+      };
+    })();
+  });
+}
 
-    return () => {
-      unsubscribed = true;
-      internalUnsubscribe();
-    };
-  })();
-});
-
+/**
+ * Gets the Firestore reference to the user's document.
+ *
+ * @return {?Object}
+ */
 async function userRef() {
   const state = store.getState();
   if (!state.user) {
     return null;
   }
 
-  const firestore = await firestoreLoader();
+  const firestore = await firestorePromiseLoader();
   return firestore.collection('users').doc(state.user.uid);
 }
 
@@ -138,7 +162,8 @@ export async function saveUserUrl(url, auditedOn = null) {
     return null; // not signed in so user has never seen this site
   }
 
-  const firestore = await firestoreLoader();
+  // This must exist, as userRef() forces Firestore to be loaded.
+  const firestore = await firestorePromiseLoader();
   const p = firestore.runTransaction(async (transaction) => {
     const snapshot = await transaction.get(ref);
     const data = snapshot.data() || {};
@@ -174,31 +199,41 @@ export async function saveUserUrl(url, auditedOn = null) {
     // Note: We don't plan to do anything here. If we can't write to Firebase, we can still
     // try to invoke Lighthouse with the new URL.
     console.warn('could not write URL to Firestore', err);
+    trackError(err, 'write URL');
   }
 
   return auditedOn;
 }
 
-// Sign in the user
+/**
+ * Request that the user signs in. Resolves on completion.
+ *
+ * @return {?Object} the auth user
+ */
 export async function signIn() {
-  const provider = new firebase.auth.GoogleAuthProvider();
-
-  let user;
+  let user = null;
   try {
+    await firebasePromise;
+    const provider = new firebase.auth.GoogleAuthProvider();
     const res = await firebase.auth().signInWithPopup(provider);
     user = res.user;
   } catch (err) {
-    console.error('error', err);
+    console.error('signIn error', err);
+    trackError(err, 'signIn');
   }
 
   return user;
 }
 
-// Sign out the user
+/**
+ * Requests that the user signs out.
+ */
 export async function signOut() {
   try {
+    await firebasePromise;
     await firebase.auth().signOut();
   } catch (err) {
-    console.error('error', err);
+    console.error('signOut error', err);
+    trackError(err, 'signOut');
   }
 }

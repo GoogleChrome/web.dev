@@ -1,3 +1,7 @@
+---
+show_banner: true
+---
+
 <!DOCTYPE html>
 {% set lang = "en" %}
 {% set locale="en_US" %}
@@ -13,11 +17,13 @@
       <meta name="offline" content="true" />
     {%- endif %}
 
-    {% if not nometa %}
+    {% if nometa %}
+      {# Area on page that service worker will load title, rss url and if offline #}
+      <!-- %_HEAD_REPLACE_% -->
+    {% else %}
       {% Meta locale, page, collections, renderData %}
     {%- endif %}
 
-    <link rel="alternate" href="/feed.xml" type="application/atom+xml" data-title="web.dev feed">
     <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
     <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
     <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
@@ -37,20 +43,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="mask-icon" color="#0054ff" href="/images/safari-pinned-tab.svg">
-    <script defer src="//www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
-    <script defer src="//www.gstatic.com/firebasejs/6.6.1/firebase-auth.js"></script>
-    <script defer src="//www.gstatic.com/firebasejs/6.6.1/firebase-performance.js"></script>
-    {# This is used by src/lib/firestore-loader.js to dynamically load Firestore #}
-    <meta id="firebase-firestore" value="//www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js" />
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', '{{ site.analytics.ids.prod }}');
-      ga('set', 'transport', 'beacon');
-      ga('set', '{{ site.analytics.dimensions.TRACKING_VERSION }}', '{{ site.analytics.version }}');
-      ga('send', 'pageview');
-    </script>
     <script async src="//www.google-analytics.com/analytics.js"></script>
-    <script type="module" src="/bootstrap.js"></script>
+    <script defer src="/bootstrap.js"></script>
   </head>
   <body class="unresolved">
     {#
@@ -104,6 +98,15 @@
           </a>
 
           <a
+            href="/live/"
+            class="web-header__link gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Tab: Live"
+          >
+            Live
+          </a>
+
+          <a
             href="/about/"
             class="web-header__link gc-analytics-event"
             data-category="Site-Wide Custom Events"
@@ -144,6 +147,14 @@
         Blog
       </a>
       <a
+        href="/live/"
+        class="web-side-nav__link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="SideNav: Live"
+      >
+        Live
+      </a>
+      <a
         href="/about/"
         class="web-side-nav__link gc-analytics-event"
         data-category="Site-Wide Custom Events"
@@ -153,8 +164,10 @@
       </a>
     </web-side-nav>
     <main>
-      {% include 'partials/banner.njk' %}
       <div id="content">
+        {% if show_banner %}
+          {% include 'partials/banner.njk' %}
+        {% endif %}
         {{ content | safe }}
       </div>
     </main>

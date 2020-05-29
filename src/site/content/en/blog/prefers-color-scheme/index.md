@@ -15,11 +15,12 @@ description: |
   and introduces a custom element named dark-mode-toggle that allows web developers
   to offer users a way to override their operating system level preference on specific web pages.
 tags:
-  - post
+  - blog
   - dark-mode
   - dark-theme
   - prefers-color-scheme
   - color-scheme
+  - css
 ---
 
 ## Introduction
@@ -362,7 +363,7 @@ The exact details of `color-scheme` are specified in
 
 {% Aside 'note' %}
   🌒 Read up more on
-  [what `color-scheme` actually does](color-scheme).
+  [what `color-scheme` actually does](/color-scheme/).
 {% endAside %}
 
 Everything else is then just a matter of defining CSS variables
@@ -785,7 +786,7 @@ Resources for the `prefers-color-scheme` media query:
   - [Media Queries Level&nbsp;5 spec](https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme)
 
 Resources for the `color-scheme` meta tag and CSS property:
-  - [The `color-scheme` CSS property and meta tag](/color-scheme)
+  - [The `color-scheme` CSS property and meta tag](/color-scheme/)
   - [Chrome Platform Status page](https://chromestatus.com/feature/5330651267989504)
   - [Chromium bug](http://crbug.com/925935)
   - [CSS Color Adjustment Module Level&nbsp;1 spec](https://drafts.csswg.org/css-color-adjust-1/)

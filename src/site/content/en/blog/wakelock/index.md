@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: To avoid draining the battery, most devices will quickly fall asleep when left idle. While this is fine most of the time, there are some applications that need to keep the screen awake in order to complete some work. The Screen Wake Lock API provides a way to prevent the device from dimming or locking the screen when an application needs to keep running.
 date: 2018-12-18
-updated: 2020-04-14
+updated: 2020-05-27
 hero: hero.jpg
 hero_position: center
 alt: |
@@ -14,7 +14,7 @@ alt: |
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/902971725287784449
 tags:
-  - post
+  - blog
   - capabilities
   - fugu
   - behind-a-flag
@@ -32,7 +32,7 @@ tags:
 
 To avoid draining the battery, most devices quickly go to sleep when left
 idle. While this is fine most of the time, some applications need to keep the
-screen awake to complete their work. Examples include cooking apps 
+screen awake to complete their work. Examples include cooking apps
 that show the steps of a recipe or a game
 like [Ball Puzzle](https://ball-puzzle.appspot.com/), which uses the device
 motion APIs for input.
@@ -125,6 +125,16 @@ that prevents the device's CPU from entering standby mode so
 that your app can continue running.
 We have decided to not proceed with this type for the moment.
 {% endAside %}
+
+### Feature detection
+
+Browser support for the Screen Wake Lock API can be tested as follows:
+
+```js
+if ('wakeLock' in navigator) {
+  // Screen Wake Lock API supported 🎉
+}
+```
 
 ### Getting a screen wake lock {: #get-wake-lock }
 

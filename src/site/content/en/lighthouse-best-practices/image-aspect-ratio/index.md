@@ -6,10 +6,10 @@ description: |
 web_lighthouse:
   - image-aspect-ratio
 date: 2019-05-02
-updated: 2019-08-28
+updated: 2020-04-29
 ---
 
-If a rendered image has an aspect ratio that's significantly different
+If a rendered image has an [aspect ratio][ar] that's significantly different
 from the aspect ratio in its source file (the _natural_ aspect ratio),
 the rendered image may look distorted,
 possibly creating an unpleasant user experience.
@@ -33,8 +33,12 @@ There are two common causes for an incorrect image aspect ratio:
 
 ## Ensure images display with the correct aspect ratio
 
-There are two places to check for incorrect image dimensions: your CSS and
-the `<img>` tag in your HTML.
+### Use an image CDN
+
+An image CDN can make it easier to automate the process of creating different sized
+versions of your images. Check out [Use image CDNs to optimize images](/image-cdns/)
+for an overview and [How to install the Thumbor image CDN](/install-thumbor/) for a
+hands-on codelab.
 
 ### Check the CSS that affects the image's aspect ratio
 If you're having trouble finding the CSS that's causing the incorrect aspect ratio,
@@ -67,3 +71,5 @@ post to learn how to serve images that are the right size for each user's device
 - [CSS Aspect Ratio](https://www.npmjs.com/package/css-aspect-ratio)
 - [Aspect Ratio Boxes](https://css-tricks.com/aspect-ratio-boxes/)
 - [Serve images with correct dimensions](/serve-images-with-correct-dimensions)
+
+[ar]: https://en.wikipedia.org/wiki/Aspect_ratio_(image)

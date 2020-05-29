@@ -20,14 +20,16 @@ describe('Build test', function() {
     console.log('Build completed. Starting tests.');
 
     [
-      path.join('en', '_redirects.yaml'),
       path.join('en', 'algolia.json'),
       path.join('en', 'feed.xml'),
       path.join('en', 'index.html'),
       path.join('en', 'index.json'),
       path.join('en', 'robots.txt'),
+      path.join('en', 'authors', 'addyosmani', 'feed.xml'),
+      path.join('en', 'tags', 'progressive-web-apps', 'feed.xml'),
       path.join('images', 'favicon.ico'),
       path.join('images', 'lockup.svg'),
+      '_redirects.yaml',
       'app.css',
       'bootstrap.js',
       'manifest.webmanifest',
@@ -41,5 +43,17 @@ describe('Build test', function() {
         `Could not find ${file} in ${dist}`,
       ),
     );
+
+    const contents = fs.readdirSync(dist);
+
+    // Check that there's a Rollup-generated file with the given name that looks
+    // like `[name]-[hash].js`.
+    ['app', 'measure', 'newsletter', 'default'].forEach((chunked) => {
+      const re = new RegExp(`^${chunked}-\\w+\\.js$`);
+      assert(
+        contents.find((file) => re.test(file)),
+        `Could not find Rollup output: ${chunked}`,
+      );
+    });
   });
 });

@@ -14,7 +14,12 @@ module.exports = {
     topics: [
       {
         title: 'Introduction',
-        pathItems: ['what-are-pwas', 'pwa-checklist'],
+        pathItems: [
+          'what-are-pwas',
+          'drive-business-success',
+          'define-install-strategy',
+          'pwa-checklist',
+        ],
       },
       {
         title: 'Capable',

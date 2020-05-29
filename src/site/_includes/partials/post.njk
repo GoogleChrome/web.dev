@@ -11,7 +11,20 @@
   {% endif %}
 
   {# Make sure Actions are first in the tab order. #}
-  <web-actions actions="share|subscribe" authors="{{ authors | expandContributors | join('|') }}"></web-actions>
+  <div class="w-actions">
+    <share-action authors="{{ authors | expandContributors | join('|') }}"
+      class="gc-analytics-event w-actions__fab w-actions__fab--share"
+      data-category="web.dev"
+      data-label="share"
+      data-action="click"
+      data-icon="share"
+      tabindex="0"
+      role="button"
+    >
+      <span>Share</span>
+    </share-action>
+    {% include 'partials/subscribe-action.njk' %}
+  </div>
 
   {% include 'partials/translation-disclaimer.njk' %}
 
@@ -47,8 +60,6 @@
         <div class="w-authors w-mt--xl w-pt--sm">
           {% for author in authors %}
             {% Author {
-              post: page,
-              author: contributors[author],
               id: author,
               showSocialMedia: true}
             %}
@@ -88,6 +99,8 @@
       <a href="#">Suggest translation</a> #}
     </div>
 
+    <web-feedback></web-feedback>
+
     {% if codelabs %}
       {% CodelabsCallout codelabs, lang %}
     {% endif %}
@@ -98,7 +111,7 @@
     {% ArticleNavigation {
       back: '/blog',
       backLabel: 'Return to all articles',
-      collection: collections.posts,
+      collection: collections.blogPosts,
       slug: page.fileSlug,
       lang: lang
     } %}
@@ -113,26 +126,4 @@
       lang: lang
     } %}
   {% endif %}
-
-  {# Hide related content for now. #}
-  {# <div>
-    <!-- Unstyled -->
-    <h3>Related content</h3>
-    <ul>
-      {% if related_content %} {% for url in related_content %}
-      <li>
-        <a href="{{ url | stripLanguage }}">{{
-          macros.getTitleFromUrl(url, collections.all)
-        }}</a>
-      </li>
-      {% endfor %} {% endif %} {% for article in collections.all %} {% set
-      isRelated = article | containsTag(tags) %} {% if isRelated %}
-      <li>
-        <a href="{{ article.url | stripLanguage }}">
-          {{ article.data.title }}
-        </a>
-      </li>
-      {% endif %} {% endfor %}
-    </ul>
-  </div> #}
 </div>

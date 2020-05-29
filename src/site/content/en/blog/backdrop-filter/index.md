@@ -13,7 +13,7 @@ description: |
   Learn how to add background effects like blurring and transparency to UI
   elements on the web using the CSS backdrop-filter property.
 tags:
-  - post
+  - blog
   - css
   - backdrop-filter
 ---

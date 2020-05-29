@@ -4,13 +4,12 @@ title: Total Blocking Time (TBT)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-03-03
+updated: 2020-05-27
 description: |
   This post introduces the Total Blocking Time (TBT) metric and explains
   how to measure it
 tags:
   - performance
-  - metrics
 ---
 
 {% Aside %}
@@ -115,6 +114,12 @@ TBT is a metric that should be measured [in the
 lab](/user-centric-performance-metrics/#in-the-lab). The best way to measure TBT is to run a
 Lighthouse performance audit on your site. See the [Lighthouse documentation on
 TBT](/lighthouse-total-blocking-time) for usage details.
+
+### Lab tools
+
+* [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
+* [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+* [WebPageTest](https://www.webpagetest.org/)
 
 {% Aside %}
   While it is possible to measure TBT in the field, it's not recommended as user

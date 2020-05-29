@@ -13,7 +13,7 @@ description: |
   The key to building a modern web game is embracing the best practices of game design and monetization.
   This post provides provides guidance towards this goal.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - games
   - game-design
   - monetization
@@ -35,7 +35,7 @@ Before joining Google I created a mobile game known as [Duet](https://www.duetga
 - Users
 - A way to monetize users
 
-Without these three elements, a game developer cannot succeed. Nowadays, these last two points are the most critical. Closed HTML5 ecosystems such as WeChat, Facebook Instant Games, and more have demonstrated that building games using HTML5 is achievable. 
+Without these three elements, a game developer cannot succeed. Nowadays, these last two points are the most critical. Closed HTML5 ecosystems such as WeChat, Facebook Instant Games, and more have demonstrated that building games using HTML5 is achievable.
 
 ## Modern best practices
 

@@ -18,7 +18,7 @@ description: |
 tags:
   - capabilities
   - fugu
-  - post
+  - blog
   - progressive-web-apps
   - service-worker
   - chrome80

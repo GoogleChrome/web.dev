@@ -17,11 +17,11 @@
 // Return posts that reference a Lighthouse audit.
 // These posts will be displayed in the user's TODO list on the /measure page.
 
-const livePosts = require('../_filters/live-posts');
+const {livePosts} = require('../_filters/live-posts');
 
 module.exports = (collection) => {
   return collection
-    .getFilteredByTag('pathItem')
+    .getFilteredByTag('post')
     .filter(livePosts)
     .filter((post) => {
       const audits = post.data.web_lighthouse;

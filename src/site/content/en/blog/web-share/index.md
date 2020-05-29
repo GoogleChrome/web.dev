@@ -4,6 +4,7 @@ subhead: Web apps can use the same system-provided share capabilities as native 
 authors:
   - joemedley
 date: 2019-11-08
+updated: 2020-05-12
 hero: hero.png
 alt: An illustration demonstrating that web apps can use the system-provided sharing UI.
 description: |
@@ -12,7 +13,7 @@ description: |
   apps to share links, text, and files to other apps installed on the device in
   the same way as native apps.
 tags:
-  - post
+  - blog
   - capabilities
   - fugu
 ---
@@ -45,6 +46,10 @@ Web share has the following capabilities and limitations:
 * It must be invoked in response to a user action such as a click. Invoking it
   through the `onload` handler is impossible.
 * It can share, URLs, text, or files.
+* As of mid 2020, it is only available on Safari and on Android in Chromium
+  forks. See
+  [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share#Browser_compatibility)
+  for details.
 
 <div class="w-clearfix"></div>
 

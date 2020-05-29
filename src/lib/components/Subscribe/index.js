@@ -3,6 +3,7 @@
  */
 
 import {BaseElement} from '../BaseElement';
+import {trackEvent} from '../../analytics';
 import './_styles.scss';
 
 /**
@@ -85,7 +86,7 @@ class Subscribe extends BaseElement {
     const formIsRobot = form.get(this.robotName).length !== 0;
 
     if (formIsRobot) {
-      this.onSuccess();
+      this.onSuccess(true);
       return;
     }
     const cleanedForm = this.cleanForm(form);
@@ -104,16 +105,19 @@ class Subscribe extends BaseElement {
       .finally(() => (this.processing = false));
   }
 
-  onSuccess() {
+  onSuccess(isRobot = false) {
     this.submitted = true;
     this.subscribeError.textContent = '';
     this.subscribeMessage.textContent = "Thank you! You're all signed up.";
     this.form.removeEventListener('submit', this.onSubmit);
     this.form.parentElement.removeChild(this.form);
-    ga('send', 'event', {
-      eventCategory: 'web.dev',
-      eventAction: 'submit',
-      eventLabel: 'subscribe, newsletter',
+    if (isRobot) {
+      return;
+    }
+    trackEvent({
+      category: 'web.dev',
+      action: 'submit',
+      label: 'subscribe, newsletter',
     });
   }
 }

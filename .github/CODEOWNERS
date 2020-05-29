@@ -23,3 +23,7 @@ content/en/angular/ @mgechev @kaycebasques
 *.yaml @robdodson @samthor
 *.toml @robdodson @samthor
 *.sh @robdodson @samthor
+
+# Exceptions
+src/site/_data/contributors.js @kaycebasques @robdodson
+src/site/_data/postTags.js @kaycebasques @robdodson

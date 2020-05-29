@@ -10,7 +10,7 @@ alt: A man at a whiteboard draws a flow diagram depicting shopping cart abandonm
 description: |
   Learn what impact website performance has on different parts of the e-commerce funnel
 tags:
-  - post
+  - blog
   - performance
   - e-commerce
 ---

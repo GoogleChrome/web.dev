@@ -52,7 +52,7 @@ alt: Adam Argyle and Una Kravetz showing that they'll talk about 12 CSS features
 #     alt: Provide an alt for your thumbnail.
 
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - css
   - accessibility
   - houdini

@@ -10,7 +10,7 @@ description: |
 hero: hero.jpg
 alt: Wind turbines on a hill
 tags:
-- post # to show up in blog
+- blog # to show up in blog
 - engineering-blog
 ---
 
@@ -39,7 +39,7 @@ These include redirects for invalid domains, as well as code [to parse a user's 
 {% Aside %}
 Despite being a Google product, web.dev doesn't use any internal Google tools or processes.
 You can check out [our repo](https://github.com/GoogleChrome/web.dev).
-We do this because the team that builds and maintains web.dev is responsible for advocating 
+We do this because the team that builds and maintains web.dev is responsible for advocating
 within Google on behalf of the broader web developer ecosystem so it makes more sense for us
 to have the same tools as external web developers.
 {% endAside %}
@@ -177,3 +177,5 @@ The web.dev engineering team ([Rob](https://twitter.com/rob_dodson), [Ewa](https
 
 We hope hearing about how we do things gave you some ideas for your own projects.
 Hit us up on Twitter if you've got questions or topic requests for this blog!
+
+<!-- Test content change --> 
