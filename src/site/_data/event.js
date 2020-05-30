@@ -102,7 +102,7 @@ const eventData = [
       {
         speaker: 'thomassteiner',
         title:
-          "Building for Modern Browsers and Progressively Enhancing Like It's 2003",
+          "Progressively Enhancing Like It's 2003",
       },
       {
         speaker: 'demianrenzulli',
