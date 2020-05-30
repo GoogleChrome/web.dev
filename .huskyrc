@@ -3,6 +3,6 @@
   "//2": "Use git push --no-verify to bypass the pre-push hook",
   "hooks": {
     "pre-commit": "npm run precommit",
-    "pre-push": "npm run lint -- --fix"
+    "pre-push": "npm run lint"
   }
 }
