@@ -58,10 +58,11 @@ ffmpeg -i glocken.mp4
 
 ## Codecs
 
-Next the codec. As stated in [File basics](../file-basics), a codec is _not_ the same thing as a
-container. Two files of the same container type could hold data compressed using
-completely different codecs. The webm format for example allows audio to be
-encoded using either [vorbis](https://en.wikipedia.org/wiki/Vorbis) or
+Next the codec. As stated in [File basics](../file-basics), a codec is _not_ the
+same thing as a container (file type). Two files of the same container type
+could hold data compressed using completely different codecs. The webm format
+for example allows audio to be encoded using either
+[vorbis](https://en.wikipedia.org/wiki/Vorbis) or
 [opus](https://en.wikipedia.org/wiki/Opus_(audio_format)). To change the codec I
 use FFmpeg. For example, this command outputs an mkv file with a vorbis audio
 codec and an av1 video codec.

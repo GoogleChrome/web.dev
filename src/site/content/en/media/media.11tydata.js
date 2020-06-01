@@ -25,7 +25,7 @@ module.exports = {
       {
         title: 'Prepare media files for the web',
         pathItems: [
-          'for-the-web',
+          'prepare-media',
           'containers-and-codecs',
           'bitrate',
           'resolution',
