@@ -4,13 +4,13 @@ title: Efficiently encode images
 description: |
   Learn about the uses-optimized-images audit.
 date: 2019-05-02
-updated: 2019-10-04
+updated: 2020-05-29
 web_lighthouse:
   - uses-optimized-images
 ---
 
 The Opportunities section of your Lighthouse report lists
-all unoptimized images, with potential savings in kilobytes.
+all unoptimized images, with potential savings in [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte).
 Optimize these images so that the page loads faster and consumes less data:
 
 <figure class="w-figure">
@@ -23,7 +23,7 @@ Optimize these images so that the page loads faster and consumes less data:
 Lighthouse collects all the JPEG or BMP images on the page,
 sets each image's compression level to 85,
 and then compares the original version with the compressed version.
-If the potential savings are 4KB or greater, Lighthouse flags the image as optimizable.
+If the potential savings are 4KiB or greater, Lighthouse flags the image as optimizable.
 
 ## How to optimize images
 

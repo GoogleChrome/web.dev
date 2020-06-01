@@ -5,7 +5,7 @@ description: |
   Learn how to improve your web page's load time by reducing the total file
   size of resources you serve to your users.
 date: 2019-05-02
-updated: 2019-10-04
+updated: 2020-05-29
 web_lighthouse:
   - total-byte-weight
 ---
@@ -25,7 +25,7 @@ You can adjust the results to factor in purchasing power.
 ## How the Lighthouse network payload audit fails
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
-shows the total size in kilobytes of all resources requested by your page.
+shows the total size in [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte) of all resources requested by your page.
 The largest requests are presented first:
 
 <figure class="w-figure">
@@ -33,15 +33,15 @@ The largest requests are presented first:
 </figure>
 
 Based on [HTTP Archive data](https://httparchive.org/reports/state-of-the-web?start=latest#bytesTotal),
-the median network payload is between 1,700 and 1,900&nbsp;KB.
+the median network payload is between 1,700 and 1,900&nbsp;KiB.
 To help surface the highest payloads,
-Lighthouse flags pages whose total network requests exceed 5,000&nbsp;KB.
+Lighthouse flags pages whose total network requests exceed 5,000&nbsp;KiB.
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
 
 ## How to reduce payload size
 
-Aim to keep your total byte size below 1,600&nbsp;KB.
+Aim to keep your total byte size below 1,600&nbsp;KiB.
 This target is based on the amount of data that can be
 theoretically downloaded on a 3G connection
 while still achieving a [Time to Interactive](/interactive) of 10&nbsp;seconds or less.
