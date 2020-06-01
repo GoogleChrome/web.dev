@@ -21,6 +21,13 @@ const escapeStringRegexp = require('escape-string-regexp');
 const baseUrlPrefix = 'https://web.dev/';
 const baseUrl = new URL(baseUrlPrefix);
 
+if (!baseUrlPrefix.endsWith('/')) {
+  // Prevents abuse by having a domain "https://web.dev.another.owner.com".
+  throw new Error(
+    `warning: baseUrlPrefix must end with /, was: ${baseUrlPrefix}`,
+  );
+}
+
 /**
  * Normalizes the passed URL to ensure that it ends with a simple trailing
  * slash. Removes "index.html" if found.
@@ -86,16 +93,15 @@ module.exports = function buildRedirectHandler(filename, code = 301) {
       target = new URL(base + rest, baseUrl);
     }
 
-    // Clone Express' parsed query into the target URL, so any params configured
-    // in redirects themselves take precedence.
-    for (const key in req.query) {
-      if (key in req.query) {
-        target.searchParams.append(key, req.query[key]);
-      }
+    // Merge the original request's params into the target.
+    const requestParams = new URLSearchParams(req.url.substr(req.path.length));
+    for (const [key, value] of requestParams) {
+      target.searchParams.append(key, value);
     }
 
-    // If the result URL ends with "https://web.dev/" (with trailing slash),
-    // then strip it. This allows redirects to work in dev.
+    // If the result URL starts with "https://web.dev/" (with trailing slash),
+    // then strip it and treat as local. This allows redirects to work in dev,
+    // where the domain is localhost or a staging URL.
     let s = target.toString();
     if (s.startsWith(baseUrlPrefix)) {
       s = '/' + s.substr(baseUrlPrefix.length);
