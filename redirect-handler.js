@@ -93,7 +93,9 @@ module.exports = function buildRedirectHandler(filename, code = 301) {
       target = new URL(base + rest, baseUrl);
     }
 
-    // Merge the original request's params into the target.
+    // Merge the original request's params into the target. We don't use
+    // Express' req.query here as it expands the query too much, e.g.,
+    // 'foo[bar]=123' ends up like "{foo: {bar: 123}}".
     const requestParams = new URLSearchParams(req.url.substr(req.path.length));
     for (const [key, value] of requestParams) {
       target.searchParams.append(key, value);
