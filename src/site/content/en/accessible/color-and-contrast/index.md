@@ -43,14 +43,14 @@ You can use the Accessibility Audit in Lighthouse to check your color contrast.
 Open DevTools, click Audits, and select Accessibility to run the report.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./accessibility-audit.jpg" alt="An image showing the different contrast ratios">
+  <img class="w-screenshot" src="./accessibility-audit.png" alt="A screenshot of the output of an audit for color contrast.">
 </figure>
 
 For a more complete report, install the [Accessibility Insights Extension](https://accessibilityinsights.io/).
 One of the checks in the Fastpass report, is color contrast.
 You will get a detailed report of any failing elements.
 
-<figure class="w-figure">
+<figure class="w-figure w-screenshot">
   <img src="./fastpass-contrast.jpg" alt="The report in Accessibility Insights">
 </figure>
 

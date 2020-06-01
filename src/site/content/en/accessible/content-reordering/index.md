@@ -89,7 +89,7 @@ A very simple test is to keyboard navigate through your page. Can you get to eve
 Are there any strange jumps as you do so?
 
 For a visual demonstration of content reordering,
-try the Tab Stop checker in the Accessibility Insights extension for Chrome.
+try the Tab Stop checker in the [Accessibility Insights](https://accessibilityinsights.io/) extension for Chrome.
 The image below shows the CSS Grid example in that tool.
 You can see how the focus has to jump around the layout.
 
