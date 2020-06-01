@@ -69,7 +69,7 @@ gulp.task('copy-content-assets', () => {
           const parts = assetPath.dirname.split('/');
           // Landing pages should keep their assets.
           // e.g. en/vitals, en/about
-          if (parts.length === 2) {
+          if (parts.length <= 2) {
             return;
           }
 
