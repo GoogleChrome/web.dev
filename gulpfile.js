@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-const path = require('path');
 const gulp = require('gulp');
 const mozjpeg = require('imagemin-mozjpeg');
 const pngquant = require('imagemin-pngquant');
@@ -67,13 +66,30 @@ gulp.task('copy-content-assets', () => {
       // they belong to.
       .pipe(
         rename((assetPath) => {
-          const leftPart = assetPath.dirname.split('/')[1];
-          // Let certain path's images to pass through.
-          const imagePassThroughs = ['handbook', 'newsletter'];
-          if (imagePassThroughs.includes(leftPart)) {
+          const parts = assetPath.dirname.split('/');
+          // Landing pages should keep their assets.
+          // e.g. en/vitals, en/about
+          if (parts.length <= 2) {
             return;
           }
-          return (assetPath.dirname = path.basename(assetPath.dirname));
+
+          // Let images pass through if they're special, i.e. part of the
+          // handbook or newsletter. We don't treat these URLs like the
+          // rest of the site and they're allowed to nest.
+          const subdir = parts[1];
+          const imagePassThroughs = ['handbook', 'newsletter'];
+          if (imagePassThroughs.includes(subdir)) {
+            return;
+          }
+
+          // Some assets are nested under directories which aren't part of
+          // their url. For example, we have /en/blog/some-post/foo.jpg.
+          // For these assets we need to remove the /blog/ directory so they
+          // can live at /en/some-post/foo.jpg since that's what we'll actually
+          // serve in production.
+          // e.g. en/blog/foo/bar.jpg -> en/foo/bar.jpg
+          parts.splice(1, 1);
+          assetPath.dirname = parts.join('/');
         }),
       )
       .pipe(gulp.dest('./dist/'))
