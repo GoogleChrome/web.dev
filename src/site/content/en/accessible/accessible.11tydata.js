@@ -41,8 +41,8 @@ module.exports = {
           'color-and-contrast',
           'accessible-responsive-design',
           'content-reordering',
-        ]
-      }
+        ],
+      },
     ],
   },
 };
