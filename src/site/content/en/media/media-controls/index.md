@@ -4,7 +4,7 @@ title: Media controls
 authors:
   - beaufortfrancois
 date: 2020-03-06
-updated: 2020-05-21
+updated: 2020-06-10
 description: |
   Web developers can customize media notifications and respond to media
   related events such as seeking or track changing with the Media Session API.

@@ -4,7 +4,7 @@ title: Resolution
 description: |
   Resolution is the amount of information in a frame of video.
 date: 2017-06-30
-updated: 2020-05-21
+updated: 2020-06-10
 ---
 
 _Resolution_ is the amount of information in a single frame of video, given as

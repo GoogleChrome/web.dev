@@ -3,8 +3,8 @@ layout: post
 title: File basics
 description: |
   TBD
-date: 2020-05-21
-updated: 2020-05-21
+date: 2020-06-10
+updated: 2020-06-10
 tags:
   - FFmpeg
   - files

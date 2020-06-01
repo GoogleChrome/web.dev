@@ -42,18 +42,6 @@ module.exports = {
           'media-controls',
         ],
       },
-      {
-        title: 'Use media frameworks',
-        pathItems: [
-          'for-frameworks',
-          'splitting-streams',
-          'selecting-a-framework',
-        ],
-      },
-      {
-        title: 'The media server',
-        pathItems: ['preloading', 'server-basics'],
-      },
     ],
   },
 };
