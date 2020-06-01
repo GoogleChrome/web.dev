@@ -133,19 +133,19 @@ You can take the above animation, and give it a smooth, reversed animation when 
     <source src="https://storage.googleapis.com/web-dev-assets/web-animations/modal-reverse.mp4">
   </video>
   <figcaption class="w-figcaption">
-    An example of a modal opening and closing upon button click. <a href="https://codepen.io/kevers-google/details/LYpvdNG">See Demo on Codepen </a>
+    An example of a modal opening and closing upon button click. <a href="https://glitch.com/~waapi-promises">See Demo on Glitch </a>
   </figcaption>
 </figure>
 
-What you can do is create two play-pending animations (`openModal`, and an inline opacity transformation), and then pause one of the animations, delaying it until the other is finished. You can then use promises to wait for each to be finished before playing. Finally, you can check to see if a flag is set, and then reverse each animation.
-
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/waapi-promises?path=script.js&attributionHidden=true"
+    src="https://glitch.com/embed/#!/embed/waapi-promises?path=script.js&previewSize=100"
     alt="waapi-promises on Glitch"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
+
+What you can do is create two play-pending animations (`openModal`, and an inline opacity transformation), and then pause one of the animations, delaying it until the other is finished. You can then use promises to wait for each to be finished before playing. Finally, you can check to see if a flag is set, and then reverse each animation.
 
 ### Example: Dynamic interactions with partial keyframes
 
@@ -153,7 +153,7 @@ What you can do is create two play-pending animations (`openModal`, and an inlin
 <video controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/web-animations/retargetting.mp4">
   </video>  <figcaption class="w-figcaption">
-    Retargeting example, where a mouse click adjusts the animation to a new location. <a href="https://codepen.io/una/details/BaoveQJ">See Demo on Codepen </a>
+    Retargeting example, where a mouse click adjusts the animation to a new location. <a href="https://glitch.com/~waapi-retargetting">See Demo on Glitch </a>
   </figcaption>
 </figure>
 
@@ -175,7 +175,7 @@ When creating animations based on events, such as on `'mousemove'`, a new animat
     <source src="https://storage.googleapis.com/web-dev-assets/web-animations/comet-trail.mp4">
   </video>
   <figcaption class="w-figcaption">
-  A comet trail animates when the mouse moves. <a href="https://codepen.io/kevers-google/details/gOaqXoQ">View Demo on Codepen</a>
+  A comet trail animates when the mouse moves. <a href="https://glitch.com/~waapi-replaced">See Demo on Glitch</a>
   </figcaption>
 </figure>
 
@@ -216,7 +216,7 @@ When you composite animations, a developer can write short, distinct effects and
 <video controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/web-animations/replace-add-accumulate.mp4">
   </video>  <figcaption class="w-figcaption">
-    <a href="https://codepen.io/kevers-google/pen/wvKbaGM"> See Demo on Codepen </a>
+    A demo showing the default, add, and accumulate composite modes. <a href="https://glitch.com/~waapi-composite-demos">See Demo on Glitch</a>
   </figcaption>
 </figure>
 
@@ -229,7 +229,7 @@ Let's take a look at a UI element example:
     <source src="https://storage.googleapis.com/web-dev-assets/web-animations/dropdown.mp4">
   </video>
   <figcaption class="w-figcaption">
-  A bouncy dropdown menu which has two composited animations applied to it. <a href="https://codepen.io/kevers-google/details/ExVrbEm">View Demo on Codepen</a>
+  A bouncy dropdown menu which has two composited animations applied to it. <a href="https://glitch.com/~waapi-composited">See Demo on Glitch</a>
   </figcaption>
 </figure>
 

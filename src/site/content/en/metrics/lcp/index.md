@@ -4,7 +4,7 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-05-27
+updated: 2020-06-01
 description: |
   This post introduces the Largest Contentful Paint (LCP) metric and explains
   how to measure it
@@ -254,7 +254,7 @@ largest element throughout the load process.
 
 ## How to measure LCP
 
-FCP can be measured [in the lab](/user-centric-performance-metrics/#in-the-lab)
+LCP can be measured [in the lab](/user-centric-performance-metrics/#in-the-lab)
 or [in the field](/user-centric-performance-metrics/#in-the-field), and it's
 available in the following tools:
 
