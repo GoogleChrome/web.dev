@@ -90,6 +90,10 @@ Each page includes a chart showing distributions over time for each available
 monthly release. As new datasets are released, you can simply refresh the
 dashboard to get the latest data.
 
+The monthly datasets are released on the second Tuesday of every month. For 
+example, the dataset consisting of user experience data from the month of May 
+is released on the second Tuesday of June.
+
 ### Core Web Vitals overview
 
 The first page is an overview of the origin's monthly
@@ -135,8 +139,8 @@ month-over-month.
 
 {% Aside 'caution' %}
 Due to a quirk with Data Studio, you may sometimes see "No Data" here. This is
-normal and due to the previous month's release not being available yet.
-Datasets are released on the second Tuesday of each month.
+normal and due to the previous month's release not being available until the
+second Tuesday.
 {% endAside %}
 
 Additionally, for metrics like LCP and other Core Web Vitals that provide 
