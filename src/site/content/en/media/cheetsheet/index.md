@@ -8,27 +8,35 @@ date: 2018-09-20
 updated: 2020-06-10
 ---
 
-This document shows in order commands needed to get from a raw mov file to
-encrypted assets packaged for DASH or HLS. For the sake of having a goal to
-illustrate, I'm converting my source file to a bitrate of 8Mbs at a resolution
-of 1080p (1920 x 1080). Adjust these values as your needs dictate.
+This page offers kinds sets of resources:
 
-Conversion is done with two applications:
+* Commands for manipulating specific characteristics of media files.
+* The sequence of commands needed to get from a raw mov file to encrypted media assets.
 
-* [Shaka Packager](https://github.com/google/shaka-packager) and
-* [ffmpeg](https://ffmpeg.org/download.html), version 3.2.2-tessus.
+Conversion is done with these applications:
+
+* [Shaka Packager](https://github.com/google/shaka-packager) ([on StackOverflow](https://stackoverflow.com/questions/tagged/shaka))
+* [ffmpeg](https://ffmpeg.org/download.html), version 4.2.2-tessus ([on StackOverflow](https://stackoverflow.com/questions/tagged/ffmpeg))
+* [OpenSSL](https://www.openssl.org/)  ([on StackOverflow](https://stackoverflow.com/questions/tagged/openssl))
+
 
 Although I've tried to show equivalent operations for all procedures, not all
 operations are possible in both applications.
 
-In many cases, commands may be combined in a single command line operation, and
-in actual use would be. For example, there's nothing preventing you from setting
-an output file's bitrate in the same operation as a file conversion. For this
-cheat sheet, I will show these operations (among others) as separate commands
-for the sake of clarity.
+In many cases, the commands I'm showing may be combined in a single command line
+operation, and in actual use would be. For example, there's nothing preventing
+you from setting an output file's bitrate in the same operation as a file
+conversion. For this cheat sheet, I often show these operations as separate
+commands for the sake of clarity.
 
 Please let me know of useful additions or corrections.
 [Pull requests are welcome](https://github.com/GoogleChrome/web.dev/tree/media/src/site/content/en/media/cheetsheet).
+
+{% Aside %}
+This page contains a few more commands than are covered in this section. Not
+only are there plans to cover these topics (we have drafts already), we also
+hope this page will be a resource for multiple levels of expertise.
+{% endAside %}
 
 ## Display characteristics
 
@@ -98,6 +106,12 @@ ffmpeg -i myvideo.mov -b:v 350K myvideo.mp4
 ffmpeg -i myvideo.mov -vf setsar=1:1 -b:v 350K myvideo.webm
 ```
 
+### Dimensions (resolution)
+
+```bash
+ffmpeg -i myvideo.webm -s 1920x1080 myvideo_1920x1080.webm
+```
+
 ### File type
 
 Shaka Packager cannot process mov files and hence cannot be used to convert
@@ -115,12 +129,6 @@ ffmpeg -i myvideo.mov myvideo.mp4
 ffmpeg -i myvideo.mov myvideo.webm
 ```
 
-### Resolution
-
-```bash
-ffmpeg -i myvideo.webm -s 1920x1080 myvideo_1920x1080.webm
-```
-
 ### Synchronize audio and video
 
 To ensure that audio and video synchronize during playback insert keyframes.
@@ -133,7 +141,8 @@ ffmpeg -i myvideo.mp4 -keyint_min 150 -g 150 -f webm -vf setsar=1:1 out.webm
 ### Codec
 
 The tables below list common containers and codecs for both audio and video, as
-well as the FFmpeg libary needed for conversion.
+well as the FFmpeg libary needed for conversion. A conversion library must be
+specified when converting files using FFmpeg.
 
 #### Video
 
@@ -151,9 +160,6 @@ well as the FFmpeg libary needed for conversion.
 | aac    | mp4       | aac        |
 | opus   | webm      | libopus    |
 | vorbis | webm      | libvorbis  |
-
-
-You might have an older file whose codec you want to update.
 
 ***mp4/H.264***
 
@@ -180,7 +186,7 @@ ffmpeg -i myvideo.webm -v:c copy -v:a libvorbis myvideo.webm
 ffmpeg -i myvideo.webm -v:c copy -v:a libopus myvideo.webm
 ```
 
-## Package
+## Packager
 
 ### DASH/MPD
 
@@ -211,7 +217,8 @@ ffmpeg -i myvideo.mp4 -c:a copy -b:v 8M -c:v copy -f hls -hls_time 10 \
 ### Create a key
 
 You can use the same method to create a key for both DASH and HLS. Do this using
-openssl. The following will create a key made of 16 hex values.
+[openssl](https://www.openssl.org/). The following will create a key made of 16
+hex values.
 
 ```bash
 openssl rand -out media.key 16
@@ -282,7 +289,12 @@ packager \
   --aes_signing_iv "d58ce954203b7c9a9a9d467f59839249"
 ```
 
-## All Together Now
+## Media conversion sequence
+
+This section shows in order commands needed to get from a raw mov file to
+encrypted assets packaged for DASH or HLS. For the sake of having a goal to
+illustrate, I'm converting my source file to a bitrate of 8Mbs at a resolution
+of 1080p (1920 x 1080). Adjust these values as your needs dictate.
 
 ### DASH/webm with Shaka Packager
 
@@ -305,8 +317,8 @@ Not all steps are possible with Shaka Packager, so I'll use ffmpeg when I need t
     openssl rand -out media.key 16
     ```
 
-3. Demux the audio and video, encrypt the new files, and output a media
-   presentation description (MPD) file.
+3. Demux (separate) the audio and video, encrypt the new files, and output a
+   media presentation description (MPD) file.
 
     The `-key` and `-key_id` flags are copied from the `media.key` file.
 
@@ -318,6 +330,13 @@ Not all steps are possible with Shaka Packager, so I'll use ffmpeg when I need t
       -key INSERT_KEY_HERE -key_id INSERT_KEY_ID_HERE \
       --mpd_output myvideo_vod.mpd
     ```
+
+4. Remux (recombine) the audio and video streams. If you're using a video
+   framework, you may not need to do this.
+
+   ```bash
+   TBD
+   ```
 
 ### DASH/mp4 with Shaka Packager
 
@@ -343,8 +362,8 @@ Not all steps are possible with Shaka Packager, so I'll use ffmpeg when I need t
     openssl rand -out media.key 16
     ```
 
-3. Demux the audio and video, encrypt the new files, and output a media
-   presentation description (MPD) file.
+3. Demux (separate) the audio and video, encrypt the new files, and output a
+   media presentation description (MPD) file.
 
     The `-key` and `-key_id` flags are copied from the `media.key` file.
 
@@ -357,6 +376,13 @@ Not all steps are possible with Shaka Packager, so I'll use ffmpeg when I need t
       --mpd_output myvideo_vod.mpd
     ```
 
+4. Remux (recombine) the audio and video streams. If you're using a video
+   framework, you may not need to do this.
+
+   ```bash
+   TBD
+   ```
+
 ### Widevine
 
 The two previous examples used Clear Key encryption. For widevine the final two
@@ -367,16 +393,26 @@ flag should be copied exactly from the example. The `--content-id` is 16 or 32
 random hex digits. Use the keys provided here instead of your own.  (This is how
 Widevine works.)
 
-```bash
-packager \
-  input=mymovie.mp4,stream=audio,output=myaudio.m4a \
-  input=mymovie.mp4,stream=video,output=myvideo.mp4 \
-  --enable_widevine_encryption \
-  --key_server_url "https://license.uat.widevine.com/cenc/getcontentkey/widevine_test" \
-  --content_id "fd385d9f9a14bb09" --signer "widevine_test" \
-  --aes_signing_key "1ae8ccd0e7985cc0b6203a55855a1034afc252980e970ca90e5202689f947ab9" \
-  --aes_signing_iv "d58ce954203b7c9a9a9d467f59839249"
-  ```
+1. Demux (separate) the audio and video, encrypt the new files, and output a
+   media presentation description (MPD) file.
+
+    ```bash
+    packager \
+      input=mymovie.mp4,stream=audio,output=myaudio.m4a \
+      input=mymovie.mp4,stream=video,output=myvideo.mp4 \
+      --enable_widevine_encryption \
+      --key_server_url "https://license.uat.widevine.com/cenc/getcontentkey/widevine_test" \
+      --content_id "fd385d9f9a14bb09" --signer "widevine_test" \
+      --aes_signing_key "1ae8ccd0e7985cc0b6203a55855a1034afc252980e970ca90e5202689f947ab9" \
+      --aes_signing_iv "d58ce954203b7c9a9a9d467f59839249"
+    ```
+
+2. Remux (recombine) the audio and video streams. If you're using a video
+   framework, you may not need to do this.
+
+   ```bash
+   TBD
+   ```
 
 ### HLS/mp4
 

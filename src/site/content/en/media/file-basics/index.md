@@ -30,11 +30,12 @@ more _streams_. A media file can have any number of streams, of [more
 types](https://developer.mozilla.org/en-US/docs/Web/Media/Formats) than I will
 go into here.
 
-My examples contain at most two streams: an audio stream and a video stream.
-Among the other types you might encounter are captions and data, both of which
-are beyond the scope of this article. There are instances where audio and
-video streams are dealt with separately. Most files you'll encounter will only
-contain a single audio and a single video stream.
+The sample files used later in this section contain at most two streams: an
+audio stream and a video stream. Among the other types you might encounter are
+captions and data, both of which are beyond the scope of this article. There are
+instances where audio and video streams are dealt with separately. Most files
+you'll encounter will only contain a single audio stream and a single video
+stream.
 
 Within the audio and video streams, the actual data is compressed using a codec.
 A _codec_, or coder/decoder, is a compression format for video or audio data. The
@@ -42,7 +43,7 @@ distinction between a container and a codec is important becasue files with the
 same container can have their contents encoded with different codecs.
 
 The image below illustrates this structure. On the left is the basic structure.
-On the right are the specifics of that structure for a webm file.
+On the right are the specifics of that structure for a single webm file.
 
 <figure class="w-figure  w-figure--inline-right">
   <img src="./media-container-onion.png" alt="Comparing media file structure with a hypothetical media file.">
@@ -56,7 +57,7 @@ and [audio
 codecs](ttps://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs)
 would be a whole website itself. The links just provided are for MDN's practical
 lists of what's usable on the web. Listed below are the currently preferred file
-types and the codecs they may use. Follow the links for browser support.
+types and the codecs they may use. Follow the links for browser support lists.
 
 | File type | Video Codec | Audio Codec |
 | ---- | ----- | ---- |
@@ -79,13 +80,4 @@ resolution defined as [full
 HD](https://www.google.com/search?q=what+is+hd+resolution&oq=what+is+hd+resolution&aqs=chrome.0.0l6.3183j0j8&sourceid=chrome&ie=UTF-8#q=full+hd+resolution).
 
 In the next section, you'll examine these characteristics using two command line
-tools: Shaka Packager and FFmpeg. You'll notice that the word 'resolution'
-doesn't appear. What the two applications output are just the dimensions, the
-numbers themselves.
-
-
-
-
-
-
-
+tools: Shaka Packager and FFmpeg.

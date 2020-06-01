@@ -12,10 +12,17 @@ tags:
   - Shaka
 ---
 
+
+
 Much media work requires changing characteristics of media files, such as
 bitrate or resolution. Finding a straightforward way to get started can be
-bewildering and intimidating. In this section, I provide an onramp into that
+bewildering and intimidating. On this page, I provide an onramp into that
 world.
+
+You'll notice in what follows that the word 'resolution' doesn't appear. What
+the two applications output are just the dimensions, the numbers themselves. As
+explained on the previous page, resolution is just an informal shorthand for the
+dimensions of a video.
 
 This page has basics for two common media command-line utilities: [Shaka
 Packager](https://github.com/google/shaka-packager) and
@@ -62,9 +69,9 @@ Compare this basic pattern with a simple use of it to display file
 characteristics. In the example, I've lined up equivalent parts.
 
 ```bash
-packager stream_descriptor [stream_descriptor-2 [stream_descriptor-n]] [flags]
+packager stream_descriptor [stream_descriptor-n] [flags]
 
-packager input=glocken.mp4                                              --dump_stream_info
+packager input=glocken.mp4                       --dump_stream_info
 ```
 
 The command outputs this:
@@ -102,11 +109,12 @@ Stream [1] type: Audio
 Packaging completed successfully.
 ```
 
-Look for the characteristics discussed in the last section and notice a few
-things. The height and width are correct for full HD, and the audio and video
-codecs are among the preferred codecs for their container types, AAC for audio
-and H264 for video. Notice also that streams are identified with numbers. These
-are useful for operations that manipulate the audio and video separately.
+Look for the characteristics discussed in [the previous
+section](../application-basics) and notice a few things. The height and width
+are correct for full HD, and the audio and video codecs are among the preferred
+codecs for their container types, AAC for audio and H264 for video. Notice also
+that streams are identified with numbers. These are useful for operations that
+manipulate the audio and video separately.
 
 Notice that it doesn't show the bitrate. Despite what's missing, it's easier to
 read, which is why I use it whenever I can. When I need information that Shaka
@@ -125,9 +133,11 @@ ffmpeg [GeneralOptions] [InputFileOptions] -i input [OutputFileOptions] output
 ```
 
 Like Shaka Packager this application can handle multiple streams. Some of its
-options can be used in multiple locations and have different meanings depending
-on where they are in the command. Be aware of this as you look at command line
-examples on sites such as StackOverflow and similar sites.
+options are used in multiple locations and have different effects on file output
+depending on where they are in the command. Be aware of this as you look at
+[FFmpeg](https://stackoverflow.com/questions/tagged/ffmpeg) or
+[Shaka](https://stackoverflow.com/questions/tagged/shaka) Packager examples on
+sites such as StackOverflow and similar sites.
 
 I'll again compare the basic pattern to the example for displaying file characteristics.
 
