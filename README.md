@@ -25,19 +25,19 @@ You'll need a recent version of Node: v12.10 or higher.
 
 ### Clone the repo
 
-```bash
+```sh
 git clone https://github.com/GoogleChrome/web.dev.git
 ```
 
 ### Install dependencies
 
-```bash
+```sh
 npm ci
 ```
 
 ### Start a local server to preview the site
 
-```bash
+```sh
 npm run dev
 ```
 
