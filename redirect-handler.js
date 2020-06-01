@@ -18,6 +18,9 @@ const yaml = require('js-yaml');
 const fs = require('fs');
 const escapeStringRegexp = require('escape-string-regexp');
 
+const baseUrlPrefix = 'https://web.dev/';
+const baseUrl = new URL(baseUrlPrefix);
+
 /**
  * Normalizes the passed URL to ensure that it ends with a simple trailing
  * slash. Removes "index.html" if found.
@@ -68,18 +71,35 @@ module.exports = function buildRedirectHandler(filename, code = 301) {
   const groupMatcher = new RegExp(`^(${escaped.join('|')})`);
 
   return (req, res, next) => {
+    let target;
+
     const url = ensureTrailingSlashOnly(req.path);
     if (url in singleRedirect) {
-      return res.redirect(code, singleRedirect[url]);
-    }
-
-    const m = groupMatcher.exec(url);
-    if (m && m[1] in groupRedirect) {
+      target = new URL(singleRedirect[url], baseUrl);
+    } else {
+      const m = groupMatcher.exec(url);
+      if (!(m && m[1] in groupRedirect)) {
+        return next();
+      }
       const base = groupRedirect[m[1]];
       const rest = url.slice(m[1].length);
-      return res.redirect(code, base + rest);
+      target = new URL(base + rest, baseUrl);
     }
 
-    next();
+    // Clone Express' parsed query into the target URL, so any params configured
+    // in redirects themselves take precedence.
+    for (const key in req.query) {
+      if (key in req.query) {
+        target.searchParams.append(key, req.query[key]);
+      }
+    }
+
+    // If the result URL ends with "https://web.dev/" (with trailing slash),
+    // then strip it. This allows redirects to work in dev.
+    let s = target.toString();
+    if (s.startsWith(baseUrlPrefix)) {
+      s = '/' + s.substr(baseUrlPrefix.length);
+    }
+    return res.redirect(code, s);
   };
 };
