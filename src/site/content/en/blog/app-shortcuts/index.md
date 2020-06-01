@@ -5,7 +5,7 @@ authors:
   - beaufortfrancois
   - jungkees
 date: 2020-05-20
-updated: 2020-05-26
+updated: 2020-06-02
 hero: hero.jpg
 alt: A photo of an Android phone showing an app shortcuts menu
 description: App shortcuts give quick access to a handful of common actions that users need frequently.
@@ -136,9 +136,15 @@ include the `src` and a `sizes` property. Unlike [web app manifest icons], the
 
 SVG files are not supported at the time of writing, use PNG instead.
 
-If you want pixel-perfect icons, provide them in
-increments of 48dp. Otherwise, it is recommended that you use a 192x192 pixels
-icon.
+If you want pixel-perfect icons, provide them in increments of 48dp. Otherwise,
+it is recommended that you use a 192x192 pixels icon.
+
+{% Aside %}
+As a quality measure, icons must be at least half of the device's ideal size
+(48dp) on Android. This means the shortcut icon won't be visible on xxhdpi
+screens for instance if a 72x72 pixels icon is not included (`48 x (480 / 160) /
+2 = 72`).
+{% endAside %}
 
 ## Test your app shortcuts
 
