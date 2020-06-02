@@ -105,7 +105,7 @@ module.exports = function (config) {
   config.addPlugin(pluginRss);
   config.addPlugin(
     toc.opts({
-      tags: ['h2', 'h3'],
+      tags: ['h2'],
       wrapper: 'div',
       ul: true,
     }),
