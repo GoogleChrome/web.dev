@@ -8,6 +8,7 @@ on:
       - master
     paths:
       - '**.js'
+      - '!.github/**.js'
       - '!src/site/_data/contributors.js'
       - '!src/site/_data/countries.js'
       - '!src/site/_data/postTags.js'
