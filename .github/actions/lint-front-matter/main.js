@@ -76,10 +76,9 @@ function getConfig() {
 function getIgnoredLabels(context, prefix = 'ignore:') {
   return context.payload.pull_request.labels
     .filter((label) => {
-      console.log('label', label);
-      return label.startsWith(prefix);
+      return label.name.startsWith(prefix);
     })
-    .map((label) => label.substring(prefix.length).trim());
+    .map((label) => label.name.substring(prefix.length).trim());
 }
 
 /**

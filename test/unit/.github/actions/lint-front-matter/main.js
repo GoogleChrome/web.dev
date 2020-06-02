@@ -24,7 +24,7 @@ describe('main', function() {
     main = null;
   });
 
-  it.only('should return results for added files', async function() {
+  it('should return results for added files', async function() {
     // Mock the @actions/core object.
     // This mock makes it seem like there was one added file.
     coreStub.getInput = function(type) {
@@ -111,7 +111,7 @@ describe('main', function() {
     githubStub.context = {
       payload: {
         pull_request: {
-          labels: ['ignore: has-property'],
+          labels: [{name: 'ignore: has-property'}],
         },
       },
     }
