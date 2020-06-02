@@ -34,6 +34,8 @@ TODO add these to "authors" in yaml ↑
 
 [xxx](https://alistapart.com/article/how-we-read/) ??
 
+- Spell check
+
 - Apply smart quotes throughout
 
 - Inter w/slnt: https://codepen.io/rs42/full/WNvWRqM -- RN: Using Roboto Flex in this document, so no need?
@@ -182,90 +184,64 @@ This gives you granular control over your typography, and a great deal of power.
 
 ## Axes Definitions
 
-Since the font developer defines which axes are available in a variable font, it is essential to find out what each font offers.
-The font's documentation should provide this, or you can inspect the font using a tool like [Wakamai Fondue](https://wakamaifondue.com).
-
-For example, in the Oswald and Hepta Slab variable fonts there is only one axis available, Weight, but the ranges are different – Oswald has the same range as before it was upgraded to be variable, 200 to 700, but Hepta Slab has an extreme hairline weight at 1 that goes all the up to 900.
-
-<!-- TODO explain custom axes -->
-
-<!--
-RN's attempt:
-
 There are five [registered axes](https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg#registered-axis-tags), which control known, predictible features of the font: weight, width, optical size, slant and italics. Besides those, a font can contain custom axes. These can control any design aspect of the font the type designer wishes: the size of serifs, the length of swashes, the height of ascenders or the size of the dot on the i.
--->
 
-A Grade axis is interesting as it changes the weight of the font without changing the widths, so line breaks do not change.
-By playing with a Grade axis, you can avoid being forced to fiddle with changes to Weight axis that effects the overall width, and then changes to the Width axis that effect the overall weight.
+Even though axes can control the same feature, they might use different values. For example, in the Oswald and Hepta Slab variable fonts there is only one axis available, Weight, but the ranges are different – Oswald has the same range as before it was upgraded to be variable, 200 to 700, but Hepta Slab has an extreme hairline weight at 1 that goes all the up to 900.
 
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="roboto-flex-grade.mp4" type="video/mp4">
-    <!-- TODO: video file should be hosted on https://storage.googleapis.com/web-dev-assets/variable-fonts -->
-  </video>
-    <figcaption>
-    Roboto Flex' Grade axis being changed from its minimum to its maximum.
-  </figcaption>
-</figure>
-
-The five registered axes plus Grade have 4-character tags that are used to
+The five registered axes have 4-character lowercase tags that are used to
 set their values in CSS:
 
 <table class="responsive">
-  <tbody>
-    <tr>
-      <th colspan=2>Axis names and CSS values</th>
-    </tr>
-    <tr>
-      <td>
-        Weight
-      </td>
-      <td>
-        <code>wght</code>
-      </td>
-    </tr>
-      <tr>
-      <td>
-        Width
-      </td>
-      <td>
-        <code>wdth</code>
-      </td>
-    </tr>
-          <tr>
-      <td>
-        Slant
-      </td>
-      <td>
-        <code>slnt</code>
-      </td>
-    </tr>
-          <tr>
-      <td>
-        Optical Size
-      </td>
-      <td>
-        <code>opsz</code>
-      </td>
-    </tr>
-          <tr>
-      <td>
-        Italics
-      </td>
-      <td>
-        <code>ital</code>
-      </td>
-    </tr>
-          <tr>
-      <td>
-        Grade
-      </td>
-      <td>
-        <code>GRAD</code>
-      </td>
-    </tr>
-  </tbody>
+	<tbody>
+		<tr>
+			<th colspan="2">Axis names and CSS values</th>
+		</tr>
+		<tr>
+			<td>
+				Weight
+			</td>
+			<td>
+				<code>wght</code>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Width
+			</td>
+			<td>
+				<code>wdth</code>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Slant
+			</td>
+			<td>
+				<code>slnt</code>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Optical Size
+			</td>
+			<td>
+				<code>opsz</code>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Italics
+			</td>
+			<td>
+				<code>ital</code>
+			</td>
+		</tr>
+	</tbody>
 </table>
+
+
+Since the font developer defines which axes are available in a variable font, and which values they can have, it is essential to find out what each font offers.
+The font's documentation should provide this, or you can inspect the font using a tool like [Wakamai Fondue](https://wakamaifondue.com).
 
 ## Variable Fonts in CSS
 
@@ -374,8 +350,6 @@ i, em, .italic {
 
 ### Using Optical Sizes
 
-<!-- TODO explain what optical size is -->
-
 A typeface can be rendered very small (a 12px footnote) or very large (a 80px headline). Fonts can respond to these size changes by changing its lettershapes to better suit its size. A small size might be better off without fine details, while a large size might benefit from more details and thinner strokes.
 
 <!-- TODO explain how opsz is defined as px and pt -->
@@ -404,10 +378,20 @@ You can also set a custom value for the `opsz` axis, if you deliberately want an
 
 ### Using Custom Axes
 
-Roboto Flex offers a few custom axes, and the most important is Grade (`GRAD`).
+Roboto Flex offers a few custom axes, and the most important is Grade (`GRAD`). A Grade axis is interesting as it changes the weight of the font without changing the widths, so line breaks do not change.
+By playing with a Grade axis, you can avoid being forced to fiddle with changes to Weight axis that effects the overall width, and then changes to the Width axis that effect the overall weight.
 
-<!-- TODO explain what grade is -->
-<!-- RN: Refer to grade explanation in ## Axes Definitions ? -->
+Note that tags for custom axes are always in uppercase, to destinguish them from registered axes.
+
+<figure class="w-figure">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="roboto-flex-grade.mp4" type="video/mp4">
+    <!-- TODO: video file should be hosted on https://storage.googleapis.com/web-dev-assets/variable-fonts -->
+  </video>
+    <figcaption>
+    Roboto Flex' Grade axis being changed from its minimum to its maximum.
+  </figcaption>
+</figure>
 
 As `GRAD` is a custom axis, with a range of -1 to 1, we need to address it with `font-variation-settings`. We could create three classes:
 
@@ -539,6 +523,7 @@ body {
 For older browsers, text with the class `.super-bold` will get rendered in the normal bold, as that's the only bold font we have available. When variable fonts are supported, we can actually use the heaviest weight of 1000.
 
 
+
 ## Use Cases and Benefits
 
 Setting the axes values comes down to personal taste and applying typographic
@@ -589,7 +574,6 @@ with the typeface Zycon. See the live
     A few examples of hover animations from Anicon's color icon font
   </figcaption>
 </figure>
-
 
 ### Finesse
 
