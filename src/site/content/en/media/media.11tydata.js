@@ -35,6 +35,7 @@ module.exports = {
       {
         title: 'Add media to a web page',
         pathItems: [
+          'add-media',
           'the-video-tag',
           'the-audio-tag',
           'the-source-tag',

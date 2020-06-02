@@ -16,7 +16,8 @@ files](../application-basics), over the next few pages, I'm going to take a raw
 video file off a camera and transform it into an encrypted resource that you can
 embed in a web page. I'm specifically going to show you how to format your video
 for mobile playback, and how to create multiple files to cover a range of
-browsers.
+browsers. Specifically, I'll create a webm file for use on Chrome and an mp4
+file for use on other browsers.
 
 {% Aside %}
 This section provides explanations of file manipulation concepts,
