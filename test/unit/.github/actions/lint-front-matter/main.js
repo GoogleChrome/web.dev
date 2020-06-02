@@ -24,7 +24,11 @@ describe('main', function() {
     });
   });
 
-  it('should return results for added files', async function() {
+  afterEach(function() {
+    main = null;
+  });
+
+  it.only('should return results for added files', async function() {
     // Mock the @actions/core object.
     // This mock makes it seem like there was one added file.
     coreStub.getInput = function(type) {
