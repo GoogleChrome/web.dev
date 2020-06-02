@@ -136,15 +136,14 @@ include the `src` and a `sizes` property. Unlike [web app manifest icons], the
 
 SVG files are not supported at the time of writing, use PNG instead.
 
-If you want pixel-perfect icons, provide them in increments of 48dp. Otherwise,
-it is recommended that you use a 192x192 pixels icon.
+If you want pixel-perfect icons, provide them in increments of 48dp (i.e. 36x36,
+48x48, 72x72, 96x96, 144x144, 192x192 pixel icons). Otherwise, it is recommended
+that you use a single 192x192 pixel icon.
 
-{% Aside %}
 As a quality measure, icons must be at least half of the device's ideal size
-(48dp) on Android. This means the shortcut icon won't be visible on xxhdpi
-screens for instance if a 72x72 pixels icon is not included (`48 x (480 / 160) /
-2 = 72`).
-{% endAside %}
+(48dp) on Android. This means the shortcut icon won't be visible on
+[xxhdpi screens] for instance if a 72x72 pixel icon is not included (`48 x
+(480 / 160) / 2 = 72`).
 
 ## Test your app shortcuts
 
@@ -249,5 +248,6 @@ Check out the [app shortcuts sample] and its [source].
 [bubblewrap]: https://github.com/GoogleChromeLabs/bubblewrap
 [Trusted Web Activity]: /using-a-pwa-in-your-android-app/
 [Android app shortcuts]: https://developer.android.com/guide/topics/ui/shortcuts
+[xxhdpi screens]: https://developer.android.com/training/multiscreen/screendensities#TaskProvideAltBmp
 [article]: https://developers.google.com/web/fundamentals/integration/webapks#update-webapk
 <!-- lint enable definition-case -->
