@@ -18,10 +18,6 @@ describe('main', function() {
   beforeEach(function() {
     coreStub = {};
     githubStub = {};
-    main = proxyquire(modulePath, {
-      '@actions/core': coreStub,
-      '@actions/github': githubStub,
-    });
   });
 
   afterEach(function() {
@@ -54,6 +50,11 @@ describe('main', function() {
       },
     }
 
+    main = proxyquire(modulePath, {
+      '@actions/core': coreStub,
+      '@actions/github': githubStub,
+    });
+
     const results = await main.run();
     const [firstPost, secondPost] = Object.values(results);
     assert.ok(firstPost.failures.length);
@@ -79,6 +80,11 @@ describe('main', function() {
         },
       },
     }
+
+    main = proxyquire(modulePath, {
+      '@actions/core': coreStub,
+      '@actions/github': githubStub,
+    });
 
     const results = await main.run();
     const [firstPost] = Object.values(results);
@@ -109,6 +115,11 @@ describe('main', function() {
         },
       },
     }
+
+    main = proxyquire(modulePath, {
+      '@actions/core': coreStub,
+      '@actions/github': githubStub,
+    });
 
     const results = await main.run();
     const [firstPost] = Object.values(results);
