@@ -5,7 +5,15 @@
  * results.
  */
 
-/** @typedef {{id: string, status: string, message: string}} TestResult */
+/**
+ * @typedef {{
+ *  id: string,
+ *  status: string,
+ *  message: string,
+ *  actual?: string,
+ *  expected?: string
+ * }} TestResult
+ */
 
 class Rule {
   /**

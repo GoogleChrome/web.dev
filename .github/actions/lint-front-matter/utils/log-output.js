@@ -1,3 +1,10 @@
+/**
+ * @fileoverview Output the results of the linter to the GitHub Actions
+ * workflow so another action can ingest and display those results.
+ * This utility will also handle setting the state (pass/fail) of the GitHub
+ * Action itself.
+ */
+
 const core = require('@actions/core');
 const createMessage = require('./create-message');
 

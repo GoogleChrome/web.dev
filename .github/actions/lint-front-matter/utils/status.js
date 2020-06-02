@@ -1,3 +1,8 @@
+/**
+ * @fileoverview
+ * Utility functions for generating pass/fail/warning statuses for tests.
+ */
+
 const okStatus = 'ok';
 const failStatus = 'fail';
 const warnStatus = 'warn';

@@ -1,4 +1,8 @@
 /**
+ * @fileoverview Combine results into an object keyed by filenames.
+ */
+
+/**
  * @typedef {import('../main').TestResults} TestResults
  * @typedef {import('../rules/rule').TestResult} TestResult
  */

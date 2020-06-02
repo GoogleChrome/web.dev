@@ -1,3 +1,9 @@
+/**
+ * @fileoverview Main entrypoint for front matter linter.
+ * Handles parsing the config file, and running linter rules against
+ * added/modified/all files.
+ */
+
 const core = require('@actions/core');
 const github = require('@actions/github');
 const path = require('path');
@@ -7,29 +13,33 @@ const combineByFile = require('./utils/combine-by-file');
 const logOutput = require('./utils/log-output');
 
 /**
- * @typedef {Object} Config - An object that defines which rules should run for
- * each category (added/modified/all) of changed files.
- * This object is exported from the .frontmatterrc.js file.
- * @property {Array<ConfigRule>} addedFiles
- * @property {Array<ConfigRule>} modifiedFiles
- * @property {Array<ConfigRule>} allFiles
+ * @typedef {{
+ *  id: string,
+ *  args?: string[]
+ * }} ConfigRule - Represents a linter rule.
+ * These can be organized in a config file to express which rules should run
+ * against each category of changed files.
  */
 
 /**
- * @typedef {Object} ConfigRule - Represents a linter rule.
- * These can be organized in a config file to express which rules should run
- * against each category of changed files.
- * @property {string} id - The id of the rule. Corresponds to its filename.
- * @property {?string[]} args - Optional arguments to pass to the rule function.
+ * @typedef {{
+ *  addedFiles: ConfigRule[],
+ *  modifiedFiles: ConfigRule[],
+ *  allFiles: ConfigRule[]
+ * }} Config - An object that defines which rules should run for
+ * each category (added/modified/all) of changed files.
+ * This object is exported from the .frontmatterrc.js file.
  */
 
 /**
  * @typedef {import('./rules/rule').TestResult} TestResult
- * @typedef {Object} TestResults
- * @property {!string} file - The path to the file that was linted.
- * @property {Array<TestResult>} passes
- * @property {Array<TestResult>} failures
- * @property {Array<TestResult>} warnings
+ * @typedef {{
+ *  file: string,
+ *  passes: TestResult[],
+ *  failures: TestResult[],
+ *  warnings: TestResult[]
+ * }} TestResults - An object representing all of the test results for a single
+ * file.
  */
 
 /**

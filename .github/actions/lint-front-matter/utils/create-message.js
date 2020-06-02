@@ -1,16 +1,25 @@
-const template = (items, symbol) => {
+/** @typedef {import('../rules/rule').TestResult} TestResult */
+/** @typedef {import('./combine-by-file').ResultsByFile} ResultsByFile */
+
+/**
+ * Create markdown table rows from an array of test results.
+ * @param {Array<TestResult>} items
+ * @param {string} prefix A prefix to put in front of the output message.
+ * Usually this is an emoji to signify a pass/fail/warning.
+ * @return {string}
+ */
+const template = (items, prefix) => {
   let out = '';
   for (item of items) {
     const actual = item.actual || 'N/A';
     const expected = item.expected || 'N/A';
-    out += `| ${symbol} ${item.message} | ${actual} | ${expected} |\n`;
+    out += `| ${prefix} ${item.message} | ${actual} | ${expected} |\n`;
   }
   return out;
 };
 
-/** @typedef {import('./combine-by-file').ResultsByFile} ResultsByFile */
-
 /**
+ * Create a markdown table with rows for failures and warnings.
  * @param {ResultsByFile} files
  * @return {string}
  */

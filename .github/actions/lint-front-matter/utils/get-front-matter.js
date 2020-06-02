@@ -1,8 +1,11 @@
+/**
+ * @fileoverview Utility to fetch and return frontmatter.
+ */
+
 const fs = require('fs').promises;
 const yaml = require('yaml-front-matter');
 
 /**
- * Get YAML frontmatter for a file.
  * @param {!string} file A path to a file.
  * @return {{file: string, frontMatter: Object}}
  */

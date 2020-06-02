@@ -1,6 +1,15 @@
+/**
+ * @fileoverview Find the first comment by a specific author.
+ */
+
 const github = require('@actions/github');
 const core = require('@actions/core');
 
+/**
+ * @param {Object} octokit The GitHub OctoKit library object.
+ * @param {Object} pr The PR object associated with the webhook event.
+ * @return {string}
+ */
 async function getCommentId(octokit, pr) {
   core.debug(`Fetching comments for #${pr.number}`);
   const {data: comments} = await octokit.issues.listComments({
