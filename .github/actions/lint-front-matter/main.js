@@ -123,15 +123,12 @@ async function run() {
       core.getInput('added'),
       core.getInput('modified'),
     );
-    console.log('allFiles', allFiles);
 
     // Get the configuration file and remove any skipped rules.
     const config = filterConfigByLabels(
       getConfig(),
       getIgnoredLabels(github.context),
     );
-
-    console.log('config', config);
 
     // For each list of files (added, modified, all),
     // lint them using their respective rules found in the config file.
@@ -140,18 +137,15 @@ async function run() {
       lint(addedFiles, config.addedFiles),
       lint(modifiedFiles, config.modifiedFiles),
     ]);
-    console.log('results', results);
     // Merge all results into a Object keyed by the file names.
     results = combineByFile(results.flat());
-    console.log('results', results);
 
     // If we're running in the GH Actions environment,
     // log the results. Otherwise, just return them.
-    if (process.env.GITHUB_ACTIONS) {
-      logOutput(results);
-    } else {
-      console.log('returning results...');
+    if (process.env.NODE_ENV === 'test') {
       return results;
+    } else {
+      logOutput(results);
     }
   } catch (err) {
     console.error(err);
@@ -159,9 +153,9 @@ async function run() {
   }
 }
 
-// Only run the action if it's being executed as part of a GH Actions workflow.
-// Prevents the action from running when we require it in our tests.
-if (process.env.GITHUB_ACTIONS) {
+// Prevent the action from running when we require it in our tests locally
+// or as part of our CI.
+if (process.env.NODE_ENV !== 'test') {
   run();
 }
 

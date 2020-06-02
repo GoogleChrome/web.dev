@@ -31,7 +31,7 @@
     "test:integration": "mocha ./test/integration",
     "test:lib": "npm-run-all clean rollup karma",
     "test:unit": "mocha ./test/unit",
-    "test": "npm run test:unit && npm run test:lib && npm run test:integration",
+    "test": "NODE_ENV=test npm run test:unit && npm run test:lib && npm run test:integration",
     "watch:eleventy": "eleventy --watch --quiet",
     "watch:gulp": "npx gulp build && gulp watch",
     "watch:rollup": "chokidar \"src/lib/**/*.{js,scss}\" -c \"npm run rollup\"",
