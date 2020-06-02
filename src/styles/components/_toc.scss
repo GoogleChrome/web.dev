@@ -1,0 +1,91 @@
+@import '../../styles/settings/colors';
+@import '../../styles/tools/breakpoints';
+
+.w-toc__button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -66px;
+  padding-bottom: 24px;
+  padding-right: 24px;
+  position: sticky;
+  top: 88px;
+  z-index: 1;
+}
+
+.w-toc__button {
+  background-color: $WHITE;
+  border: 1px solid $GREY_300;
+  height: auto;
+  padding: 7px;
+}
+
+.w-toc {
+  background-color: $WHITE;
+  border-bottom: 1px solid $BORDER_COLOR;
+  border-top: 1px solid $BORDER_COLOR;
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  padding: 24px 24px 24px 32px;
+  position: sticky;
+  top: 63px;
+  z-index: 1;
+
+  @include bp(md) {
+    border-bottom: 0;
+    border-left: 1px solid $BORDER_COLOR;
+    border-top: 0;
+    height: 100%;
+    padding: 24px;
+    position: fixed;
+    right: 0;
+    width: 268px;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+      &::before {
+        content: none;
+      }
+    }
+  }
+}
+
+.w-toc__label {
+  display: flex;
+  height: 40px;
+
+  * {
+    line-height: 40px;
+    height: 40px;
+    vertical-align: middle;
+  }
+}
+
+.w-toc__label-spacer {
+  flex-grow: 1;
+}
+
+#w-toc__open-state:checked {
+  ~ * {
+    @include bp(md) {
+      width: calc(100vw - 268px);
+
+      .w-actions {
+        right: calc(24px + 268px);
+      }
+    }
+
+    .w-toc__button-wrapper {
+      display: none;
+    }
+
+    .w-toc {
+      display: block;
+    }
+  }
+}

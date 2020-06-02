@@ -19,6 +19,7 @@ const chalk = require('chalk');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
+const toc = require('eleventy-plugin-toc');
 const resourcePath = require('./src/build/resource-path');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
@@ -102,6 +103,13 @@ module.exports = function (config) {
   config.addPlugin(pluginSyntaxHighlight);
   // RSS feeds
   config.addPlugin(pluginRss);
+  config.addPlugin(
+    toc.opts({
+      tags: ['h2', 'h3'],
+      wrapper: 'div',
+      ul: true,
+    }),
+  );
 
   // ----------------------------------------------------------------------------
   // MARKDOWN
