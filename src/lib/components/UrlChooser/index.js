@@ -37,6 +37,7 @@ class UrlChooser extends BaseElement {
             ?disabled=${this.disabled}
             type="url"
             class="lh-input"
+            name="url"
             placeholder="Enter a web page URL"
             pattern="https?://.*"
             minlength="7"
