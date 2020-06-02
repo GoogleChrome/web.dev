@@ -8,7 +8,7 @@ authors:
   - mustafakurtuldu
   - thomassteiner
 date: 2018-02-19
-updated: 2020-05-29
+updated: 2020-06-02
 hero: hero.jpg
 tags:
   - blog
@@ -151,7 +151,7 @@ The variable font [Roboto Flex](https://github.com/TypeNetwork/Roboto-Flex) has 
 Between these, you can choose from 900 instances:
 
 <figure class="w-figure">
-  <img src="aaaaa-roboto-flex.png" style="max-width: 100%;"
+  <img src="roboto-flex-aaaaaa.png" style="max-width: 100%;"
   alt="The letter 'A' shown in different weights">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     Above: Illustrated anatomy of the Weight axis for the typeface Roboto.
@@ -183,7 +183,7 @@ that typically define a Roman lowercase “n” do not match the contours used t
 define an Italic lowercase “n”. Instead of interpolating one contour to the
 other, the **Italic** axis toggles from Roman to Italic contours.
 
-<figure>
+<figure class="w-figure">
   <img src="Amstelvar-Ital-axis.png"
   alt="Example of the Weight Axes for the typeface Amstelvar">
   <figcaption>
@@ -301,7 +301,7 @@ Variable fonts are loaded though the same `@font-face` mechanism as traditional 
 @font-face {
 	font-family: 'Roboto Flex';
 	src: url('RobotoFlex-VF.woff2') format('woff2 supports variations'),
-		 url('RobotoFlex-VF.woff2') format('woff2-variations');
+       url('RobotoFlex-VF.woff2') format('woff2-variations');
 	font-weight: 100 1000;
 	font-stretch: 25% 151%;
 }
@@ -319,7 +319,7 @@ Currently, the axes you can reliably set from CSS are `wght` through `font-weigh
 
 Traditionally, you would set `font-weight` as a keyword (`light`, `bold`) or as a numerical value in steps of 100. With variable fonts, you can set any value within the font's Width range:
 
-```
+```css
 .kinda-light {
   font-weight: 125;
 }
@@ -341,7 +341,7 @@ Traditionally, you would set `font-weight` as a keyword (`light`, `bold`) or as 
 
 Likewise, we can set `font-stretch` with keywords (`condensed`, `ultra-expanded`) or with percentage values:
 
-```
+```css
 .kinda-narrow {
   font-stretch: 33.3%;
 }
@@ -372,7 +372,7 @@ The `slnt` axis is different from italics in that it's not a new *style*, but ju
 
 It would be intuitive to set these axis through the `font-style` property, but as of April 2020, how to exactly do this is [still being worked out](https://github.com/w3c/csswg-drafts/issues/3125). So for now, you should treat these as custom axes, and set them through `font-variation-settings`:
 
-```
+```css
 i, em, .italic {
 	/* Should be font-style: italic; */
 	font-variation-settings: 'ital' 1;
@@ -408,14 +408,21 @@ So picking the best optical size is done automatically, but if you wish to turn 
 
 You can also set a custom value for the `opsz` axis, if you deliberately want an optical size that doesn't match the font size. The following CSS would cause text to be displayed at a large size, but at an optical size as if it were printed in `8pt`:
 
-```
+```css
 .small-yet-large {
   font-size: 100px;
   font-variation-settings: 'opsz' 8;
 }
 ```
 
-<!-- TODO: opsz animation/"Nick Sherman's aaaaaa -->
+<figure class="w-figure">
+  <img src="roboto-flex-opsz.png"
+  alt="">
+  <figcaption>
+    Example of different designs for Roboto Flex' letter 'a' at different sizes.
+    <a href="https://codepen.io/RoelN/pen/PoPvdeV">Try it yourself on Codepen</a>
+  </figcaption>
+</figure>
 
 ## Using Custom Axes
 
@@ -428,7 +435,7 @@ Roboto Flex offers a few custom axes, and the most important is Grade (`GRAD`).
 
 As `GRAD` is a custom axis, with a range of -1 to 1, we need to address it with `font-variation-settings`. We could create three classes:
 
-```
+```css
 .grade-light {
 	font-variation-settings: `GRAD` -1;
 }
@@ -444,7 +451,7 @@ As `GRAD` is a custom axis, with a range of -1 to 1, we need to address it with 
 
 However, here's a little gotcha. Every property you don't set through `font-variation-settings` will automatically be reset to their defaults. Previously set values aren't inherited. This means the following will not work as expected:
 
-```
+```html
 <span class="slanted grade-light">
 	I should be slanted and have a light grade
 </span>
@@ -454,7 +461,7 @@ First the browser will apply `font-variation-settings: 'slnt' 10` from the `.sla
 
 We can work around this by using CSS variables:
 
-```
+```css
 /* Set the default values */
 :root {
 	--slnt: 0;
@@ -487,24 +494,6 @@ We can work around this by using CSS variables:
 }
 ```
 
-<!--
-
-RN: proposing to remove this animation as it is very similar to the previous animations?
-
-<figure>
-  <img src="images/gingham-weight-e.gif"
-  alt="Ginghams font's Weight and Width being changed on the fly.">
-  <figcaption>
-    In this example you can see the Weight and Width axes being changed on the
-    fly.
-  </figcaption>
-</figure>
-
-You can view the working example and source code for the above sample
-[here](https://variable-font-experiments.glitch.me).
- -->
-
-
 ## Use Cases and Benefits
 
 Setting the axes values comes down to personal taste and applying typographic
@@ -514,8 +503,8 @@ For titles, exploring different axes to create great artistic designs are exciti
 
 #### Exciting Expression
 
-<figure>
-  <img src="images/grass-mandy.png"
+<figure class="w-figure">
+  <img src="grass-mandy.png"
   alt="Grass example by Mandy Michael">
 </figure>
 
@@ -529,10 +518,15 @@ You can view the working example and source code for the above sample
 
 #### Animation
 
-<figure>
-  <img src="images/axis-praxis.gif"
-  alt="Typeface Zycon, designed for animation by David Berlow, type designer and
-    typographer at Font Bureau.">
+<figure class="w-figure">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="axis-praxis.mp4" type="video/mp4">
+    <!-- TODO: video file should be hosted on https://storage.googleapis.com/web-dev-assets/variable-fonts -->
+  </video>
+    <figcaption>
+    Typeface Zycon, designed for animation by David Berlow, type designer and
+    typographer at Font Bureau.
+  </figcaption>
 </figure>
 
 There is also a possibility to explore animating characters
@@ -546,7 +540,7 @@ with the typeface Zycon. See the live
 
 #### Finesse
 
-<figure>
+<figure class="w-figure">
   <img src="TODO"
   alt="Amstelvar, designed by David Berlow (Font Bureau), fine tuning by adjusting ascenders and descenders in response to line length.">
 </figure>
@@ -575,7 +569,7 @@ All modern browsers support variable fonts.
 See [caniuse.com](https://caniuse.com/#search=font-variation-settings) for more details.
 In case you need to support older browsers, you can choose to build your site with static fonts, and use variable fonts as progessive enhancement.
 
-```
+```css
 /* Set up Roboto for old browsers, only regular + bold */
 @font-face {
   font-family: Roboto;
