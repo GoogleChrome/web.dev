@@ -14,39 +14,21 @@ tags:
   - blog
   - fonts
 ---
-
 <!--
+MAIN URL: https://web.dev/variable-fonts/
 
-Changelog Roel
+Changelog RN:
 
 - Removed original Grade demo image and https://variable-font-experiments.glitch.me in favor of Roboto Flex
+- Moved "Use cases and benefits" below browser/CSS tech stuff
+- Removed ". I write code like I mix paint:  Dribbble · http://dribbble.com/mustafa_x" -- Dave, did you want to incorporate this somewhere?
 
 
- -->
 
-<!-- TODO add these to "authors" in yaml ↑
+TODO add these to "authors" in yaml ↑
 { % include "web/_shared/contributors/dcrossland.html" %}
 { % include "web/_shared/contributors/roeln.html" %}
--->
 
-
-
-<!--
-
-https://web.dev/variable-fonts/
-
-TODOs
-
-
-"""
-Congrats!! One detail: the linked "Learn more" article is outdated regarding browser support. If you wanna hate on Google, it's easy to take this as being a little too pro-Chrome:
-
-- Using `font-weight` and `font-stretch` instead of setting the axes directly through `font-variation-settings`.
-
-- Clamping the weight with `font-weight: 100 900` in the `@font-face` example at the bottom so you can use all the weights, instead of mapping it to `normal` and triggering synthesized weights when doing `font-weight: 700`
-
-- It's also missing info on the formats, if you want to load variable and static fonts in the same `@font-face` declaration, which I'd consider in scope for this article?
-"""
 
 - redo all images
 
@@ -54,30 +36,12 @@ Congrats!! One detail: the linked "Learn more" article is outdated regarding bro
 
 - Apply smart quotes throughout
 
-- Inter w/slnt: https://codepen.io/rs42/full/WNvWRqM
+- Inter w/slnt: https://codepen.io/rs42/full/WNvWRqM -- RN: Using Roboto Flex in this document, so no need?
 
-- add notes about font-stretch not working with css animation (https://bugs.chromium.org/p/chromium/issues/detail?id=924353)
-
-- add note about animation:
-
-```
-Animating CSS variables doesn't work (by design), so something like this doesn't work:
-
-@keyframes width-animation {
-   from { --wdth: 25; }
-   to   { --wdth: 151; }
-}
-
-So animation will have to happen directly on `font-variation-settings`.
-```
-
--->
+- add notes about font-stretch not working with css animation (https://bugs.chromium.org/p/chromium/issues/detail?id=924353) -- RN: This has been fixed, let's not mention?
 
 
-<!--
-
-Can we get rid of this?
-
+RN: Can we get rid of this?
 project_path: /web/fundamentals/_project.yaml
 book_path: /web/fundamentals/_book.yaml
 description: Introduction to variable fonts – what they are and how to use them
@@ -106,7 +70,7 @@ With variable fonts, all styles can be contained in a single file.
   </figcaption>
 </figure>
 
-### Challenges for the Designer and Developer
+## Challenges for the Designer and Developer
 
 <!--
 RN: Are we still doing print industry references in 2020? How many web developers would relate to that in an article called "Introduction to variable fonts on the web"?
@@ -162,7 +126,15 @@ The font developer can offer a set of different axes, and because they all share
 Roboto has three masters in a Width axis: the Regular is at the center of the axis, and two masters, narrower and wider, are at each end.
 These provide all the widths of the Regular style, and combine with the Weight axis to provide all the widths for every weight.
 
-<!-- TODO: insert dance.move -->
+<figure class="w-figure">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="roboto-dance.mp4" type="video/mp4">
+    <!-- TODO: video file should be hosted on https://storage.googleapis.com/web-dev-assets/variable-fonts -->
+  </video>
+    <figcaption>
+    Roboto Flex in random combinations of Width and Weight
+  </figcaption>
+</figure>
 
 This means there are thousands of styles!
 This may seem like massive overkill, but the quality of the reading experience can be remarkably enhanced by this diversity of type styles.
@@ -217,7 +189,13 @@ For example, in the Oswald and Hepta Slab variable fonts there is only one axis 
 
 <!-- TODO explain custom axes -->
 
-A Grade axis is interesting as it changes the weight of the font without changing the widths, so line breaks does not change.
+<!--
+RN's attempt:
+
+There are five [registered axes](https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg#registered-axis-tags), which control known, predictible features of the font: weight, width, optical size, slant and italics. Besides those, a font can contain custom axes. These can control any design aspect of the font the type designer wishes: the size of serifs, the length of swashes, the height of ascenders or the size of the dot on the i.
+-->
+
+A Grade axis is interesting as it changes the weight of the font without changing the widths, so line breaks do not change.
 By playing with a Grade axis, you can avoid being forced to fiddle with changes to Weight axis that effects the overall width, and then changes to the Width axis that effect the overall weight.
 
 <figure class="w-figure">
@@ -289,9 +267,9 @@ set their values in CSS:
   </tbody>
 </table>
 
-# Variable Fonts in CSS
+## Variable Fonts in CSS
 
-## Loading Variale Font Files
+### Loading Variale Font Files
 
 <!-- TODO something about GF API here -->
 
@@ -313,7 +291,7 @@ Variable fonts are loaded though the same `@font-face` mechanism as traditional 
 
 **2. Style Ranges:** You'll notice we're supplying two values for `font-weight` and `font-stretch`. Instead of telling the browser which specific weight this font provides (e.g. `font-weight: 500;`), we now give it the **range** of weights supported by the font. For Roboto Flex, the Weight axis ranges from 100 to 1000, and CSS directly maps the axis range to the `font-weight` style property. By specifying the range in `@font-face`, any value outside this range will be "capped" to the nearest valid value. The Width axis range is mapped in the same way to the `font-stretch` property.
 
-## Using Weights and Widths
+### Using Weights and Widths
 
 Currently, the axes you can reliably set from CSS are `wght` through `font-weight`, and `wdth` through `font-stretch`.
 
@@ -361,7 +339,7 @@ Likewise, we can set `font-stretch` with keywords (`condensed`, `ultra-expanded`
   </figcaption>
 </figure>
 
-## Using Italics and Obliques
+### Using Italics and Obliques
 
 <!-- TODO explain what italic and oblique are in typeface design -->
 <!-- RN: Already explained in ### Italics ? Still gave it a shot: -->
@@ -394,7 +372,7 @@ i, em, .italic {
   </figcaption>
 </figure>
 
-## Using Optical Sizes
+### Using Optical Sizes
 
 <!-- TODO explain what optical size is -->
 
@@ -424,9 +402,7 @@ You can also set a custom value for the `opsz` axis, if you deliberately want an
   </figcaption>
 </figure>
 
-## Using Custom Axes
-
-Besides the five [registered axes](https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg#registered-axis-tags), a font can contain custom axes. These can control any design aspect of the font the type designer wishes: the size of serifs, the length of swashes, the height of ascenders or the size of the dot on the i.
+### Using Custom Axes
 
 Roboto Flex offers a few custom axes, and the most important is Grade (`GRAD`).
 
@@ -494,63 +470,16 @@ We can work around this by using CSS variables:
 }
 ```
 
-## Use Cases and Benefits
+Animating CSS variables doesn't work (by design), so something like this doesn't work:
 
-Setting the axes values comes down to personal taste and applying typographic
-best practices.
-The danger with any new technology is possible misuse, and settings that are overly artistic or exploratory could also decrease legibility of the actual text.
-For titles, exploring different axes to create great artistic designs are exciting, but for body copy this risks making the text illegible.
+```css
+@keyframes width-animation {
+   from { --wdth: 25; }
+   to   { --wdth: 151; }
+}
+```
 
-#### Exciting Expression
-
-<figure class="w-figure">
-  <img src="grass-mandy.png"
-  alt="Grass example by Mandy Michael">
-</figure>
-
-One great example of artistic expression is shown above, an explorations of the typeface
-[Decovar](https://www.typenetwork.com/brochure/decovar-a-decorative-variable-font-by-david-berlow)
-by Mandy Michael.
-
-You can view the working example and source code for the above sample
-[here](https://codepen.io/mandymichael/pen/YYaWop).
-
-
-#### Animation
-
-<figure class="w-figure">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="axis-praxis.mp4" type="video/mp4">
-    <!-- TODO: video file should be hosted on https://storage.googleapis.com/web-dev-assets/variable-fonts -->
-  </video>
-    <figcaption>
-    Typeface Zycon, designed for animation by David Berlow, type designer and
-    typographer at Font Bureau.
-  </figcaption>
-</figure>
-
-There is also a possibility to explore animating characters
-with variable fonts. Above is an example of different axes being used
-with the typeface Zycon. See the live
-[animation example on Axis Praxis](https://www.axis-praxis.org/specimens/zycon).
-
-[Anicons](https://typogram.github.io/Anicons) is the world’s first animated color icon font, based on Material Design Icons. Anicons is an experiment that combines two cutting edge font technologies: variable fonts and color fonts.
-
-<!-- TODO insert anicons-animation.mov -->
-
-#### Finesse
-
-<figure class="w-figure">
-  <img src="TODO"
-  alt="Amstelvar, designed by David Berlow (Font Bureau), fine tuning by adjusting ascenders and descenders in response to line length.">
-</figure>
-
-Roboto Flex and Amstelvar offer a set of "Parametric Axes."
-In these axes, the letters are deconstructed into 4 fundamental aspects of form:
-black or positive shapes, white or negative shapes, and the x and y dimensions.
-In the same way that primary colors can be blended with any other color to adjust it, these 4 aspects can be used to fine tune any other axis.
-
-Ascender and descender lengths are adjusted in the Optical Size axis, but a "one size fits all" approach does not work: Further adjustments are needed, such as in response to line length, shown above.
+So animations will have to happen directly on `font-variation-settings`.
 
 ## Performance Gains
 
@@ -609,12 +538,77 @@ body {
 
 For older browsers, text with the class `.super-bold` will get rendered in the normal bold, as that's the only bold font we have available. When variable fonts are supported, we can actually use the heaviest weight of 1000.
 
+
+## Use Cases and Benefits
+
+Setting the axes values comes down to personal taste and applying typographic
+best practices.
+The danger with any new technology is possible misuse, and settings that are overly artistic or exploratory could also decrease legibility of the actual text.
+For titles, exploring different axes to create great artistic designs are exciting, but for body copy this risks making the text illegible.
+
+### Exciting Expression
+
+<figure class="w-figure">
+  <img src="grass-mandy.png"
+  alt="Grass example by Mandy Michael">
+</figure>
+
+One great example of artistic expression is shown above, an explorations of the typeface
+[Decovar](https://www.typenetwork.com/brochure/decovar-a-decorative-variable-font-by-david-berlow)
+by Mandy Michael.
+
+You can view the working example and source code for the above sample
+[here](https://codepen.io/mandymichael/pen/YYaWop).
+
+### Animation
+
+<figure class="w-figure">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="axis-praxis.mp4" type="video/mp4">
+    <!-- TODO: video file should be hosted on https://storage.googleapis.com/web-dev-assets/variable-fonts -->
+  </video>
+    <figcaption>
+    Typeface Zycon, designed for animation by David Berlow, type designer and
+    typographer at Font Bureau.
+  </figcaption>
+</figure>
+
+There is also a possibility to explore animating characters
+with variable fonts. Above is an example of different axes being used
+with the typeface Zycon. See the live
+[animation example on Axis Praxis](https://www.axis-praxis.org/specimens/zycon).
+
+[Anicons](https://typogram.github.io/Anicons) is the world’s first animated color icon font, based on Material Design Icons. Anicons is an experiment that combines two cutting edge font technologies: variable fonts and color fonts.
+
+<figure class="w-figure">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="anicons-animation.mp4" type="video/mp4">
+    <!-- TODO: video file should be hosted on https://storage.googleapis.com/web-dev-assets/variable-fonts -->
+  </video>
+    <figcaption>
+    A few examples of hover animations from Anicon's color icon font
+  </figcaption>
+</figure>
+
+
+### Finesse
+
+<figure class="w-figure">
+  <img src="TODO"
+  alt="Amstelvar, designed by David Berlow (Font Bureau), fine tuning by adjusting ascenders and descenders in response to line length.">
+</figure>
+
+Roboto Flex and Amstelvar offer a set of "Parametric Axes."
+In these axes, the letters are deconstructed into 4 fundamental aspects of form:
+black or positive shapes, white or negative shapes, and the x and y dimensions.
+In the same way that primary colors can be blended with any other color to adjust it, these 4 aspects can be used to fine tune any other axis.
+
+Ascender and descender lengths are adjusted in the Optical Size axis, but a "one size fits all" approach does not work: Further adjustments are needed, such as in response to line length, shown above.
+
 ## Thanks {: .hide-from-toc }
 
 This article would have only been made possible with the help of the following
 people:
-
-. I write code like I mix paint:  Dribbble · http://dribbble.com/mustafa_x
 
 * [Mustafa Kurtuldu](https://twitter.com/mustafa_x), UX designer and design advocate at Google
 * [Roel Nieskens](https://twitter.com/PixelAmbacht), UX designer/developer and typography expert at [Kabisa](https://kabisa.nl)
