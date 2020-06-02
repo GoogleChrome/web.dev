@@ -68,7 +68,7 @@ class Subscribe extends BaseElement {
   /**
    *
    * @param {Error} [error]
-   * @param {boolean} [useDefault]
+   * @param {boolean} [useDefault=false]
    */
   onError(error, useDefault = false) {
     const pTag = document.createElement('p');
