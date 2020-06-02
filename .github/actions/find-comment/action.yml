@@ -4,6 +4,10 @@ runs:
   using: 'node12'
   main: 'main.js'
 inputs:
+  token:
+    description: |
+      The secrets.GITHUB_TOKEN.
+    required: true
   author:
     description: |
       The name of the author to search for in the list of comments to update.
