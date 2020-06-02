@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The <video> tag
+title: The <video> and <source> tags
 authors:
   - samdutton
   - joemedley
@@ -10,13 +10,23 @@ date: 2014-14-15
 updated: 2020-06-10
 ---
 
-Add the `video` element to load, decode, and play video in your site:
+You've properly [prepared a video](prepare-media/) file for the web. You've
+given it correct dimensions and the correct resolution. You've encrypted it.
+You've even created separate webm and mp4 files for different browsers.
 
----EMBEDD HERE---
+For anyone to see it, you still need to add it to a web page. Doing so properly
+requies two HTML elements: the `<video>` element and the `<source>`.  Because it
+makes no sense to cover them separately, the page explains both.
+
+## Specify a single file
+
+Although it's not recommended, the video element may be used by itself. Always
+use the `type` attribute as shown below. the browser uses this to determine if
+it can play the provided video file. If it can't, the next text displays.
 
 ```html
 <video src="chrome.webm" type="video/webm">
-    <p>Your browser does not support the video element.</p>
+    <p>Your browser cannot play the provided video file.</p>
 </video>
 ```
 
@@ -32,14 +42,14 @@ For example:
 <video controls>
   <source src="https://storage.googleapis.com/webfundamentals-assets/videos/chrome.webm" type="video/webm">
   <source src="https://storage.googleapis.com/webfundamentals-assets/videos/chrome.mp4" type="video/mp4">
-  <p>This browser does not support the video element.</p>
+    <p>Your browser cannot play the provided video file.</p>
 </video>
 ```
 
 
 [Try it](https://googlesamples.github.io/web-fundamentals/fundamentals/media/video-main.html)
 
-When the browser parses the `<source>` tags, it uses the optional `type`
+When the browser parses the `<source>` tags, it uses the (optional) `type`
 attribute to determine which file to download and play. If the browser
 supports WebM, it plays that; if not, it checks whether it can play
 MPEG-4 videos.

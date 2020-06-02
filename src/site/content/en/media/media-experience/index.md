@@ -3,6 +3,7 @@ layout: post
 title: What is a media experience?
 authors:
   - joemedley
+  - samdutton
 description: |
   TBD
 date: 2017-06-30
@@ -23,3 +24,9 @@ media streaming application beyond the scope of this site. Frankly, it requries
 a team of expert programmers and thousands of human-hours of work. Unless your
 goal is to enter that market as a competitor, you're better off using one of the
 first two methods.
+
+
+
+from Sam:
+
+Users like videos; videos can be fun and informative. On mobile devices, videos can be an easier way to consume information. But videos take bandwidth and they don't always work the same across every platform. Users don't like waiting for videos to load; they don't like it when they press play and nothing happens. Read on to find the simplest way to add video to your site and ensure users get the best possible experience on any device.
