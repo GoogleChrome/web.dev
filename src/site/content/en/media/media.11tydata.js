@@ -7,7 +7,7 @@ module.exports = {
     slug: 'media',
     cover: '/images/collections/media.svg',
     title: 'Media',
-    updated: 'April 30, 2020',
+    updated: 'June 10, 2020',
     description: `Add audio and video to your web sites`,
     overview: `Learn to add media capabilities to your website using either
     basic markdown or a media framework such as Google's Shaka Player, JW
@@ -37,7 +37,6 @@ module.exports = {
         pathItems: [
           'add-media',
           'the-video-tag',
-          'the-audio-tag',
           'the-source-tag',
           'the-track-tag',
           'media-controls',
