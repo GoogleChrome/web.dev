@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Encryption
+authors:
+  - joemedley
 description: |
   If you plan to enforce copyright on your media, you'll want to encrypt them.
 date: 2017-06-30

@@ -1,6 +1,9 @@
 ---
 layout: post
 title: The <video> tag
+authors:
+  - samdutton
+  - joemedley
 description: |
   TBD
 date: 2014-14-15

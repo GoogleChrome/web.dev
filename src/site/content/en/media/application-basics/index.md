@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Application basics
+authors:
+  - joemedley
 description: |
   Much media work requires changing characteristics of media files. In this
   section, I provide an onramp into that world.

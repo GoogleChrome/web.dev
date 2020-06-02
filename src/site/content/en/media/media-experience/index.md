@@ -1,6 +1,8 @@
 ---
 layout: post
 title: What is a media experience?
+authors:
+  - joemedley
 description: |
   TBD
 date: 2017-06-30

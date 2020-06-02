@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Resolution
+authors:
+  - joemedley
 description: |
   Resolution is the amount of information in a frame of video.
 date: 2017-06-30

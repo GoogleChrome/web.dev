@@ -1,6 +1,8 @@
 ---
 layout: post
 title: File basics
+authors:
+  - joemedley
 description: |
   TBD
 date: 2020-06-10

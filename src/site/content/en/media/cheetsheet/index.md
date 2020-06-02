@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Media Manipulation Cheat Sheet
+authors:
+  - joemedley
 description: |
   An ordered rundown of commands needed to get from a raw mov file to encrypted
   assets packaged for DASH or HLS.

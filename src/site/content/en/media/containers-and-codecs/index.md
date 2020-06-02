@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Containers and codecs
+authors:
+  - joemedley
 description: |
   Media files are a bit like onions. The file that you see in your operating
   system shell is only a container multiple multiple data streams and different

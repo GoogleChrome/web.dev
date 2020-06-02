@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Prepare media files for the web
+authors:
+  - joemedley
 description: |
   TBD
 date: 2017-06-30

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Bitrate
+authors:
+  - joemedley
 description: |
   Bitrate_ is the maximum number of bits used to encode one second of a stream.
   The more bits used to encode a second of stream, the higher the fidelity.
