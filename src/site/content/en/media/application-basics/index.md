@@ -12,8 +12,6 @@ tags:
   - Shaka
 ---
 
-
-
 Much media work requires changing characteristics of media files, such as
 bitrate or resolution. Finding a straightforward way to get started can be
 bewildering and intimidating. On this page, I provide an onramp into that
@@ -31,7 +29,14 @@ both are powerful and useful by themselves, neither does everything needed to
 prepare media for the web. I've also created a [cheat sheet](cheatsheet) showing
 common operations with those applications.
 
+These aren't the only options available for many file manipulation tasks. But
+they are two of the most common and powerful.
 
+* GUI applications: [Miro](http://www.mirovideoconverter.com/),
+  [HandBrake](//handbrake.fr/), [VLC](//www.videolan.org/)
+* Online encoding/transcoding services:
+  [Zencoder](//en.wikipedia.org/wiki/Zencoder),
+  [Amazon Elastic Encoder](//aws.amazon.com/elastictranscoder)
 
 ## Shaka Packager
 

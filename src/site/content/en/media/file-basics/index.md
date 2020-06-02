@@ -50,6 +50,12 @@ On the right are the specifics of that structure for a single webm file.
   <figcaption class="w-figcaption">Parts of a media file.</figcaption>
 </figure>
 
+Not all browsers support the same containers and codecs. To cover the major
+browsers, you'll need at least two formats: webm for Chromium-based browsers and
+mp4 for everyone else. Although webm was created specifically for the web, it's
+support is not yet universal. Safari in particular does not, as of this writing
+support webm for embedded video.
+
 Many file formats support multiple codecs for the same stream type. A complete
 list of available [video
 codecs](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs)
@@ -61,8 +67,9 @@ types and the codecs they may use. Follow the links for browser support lists.
 
 | File type | Video Codec | Audio Codec |
 | ---- | ----- | ---- |
-| mp4  | [AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1), [AVC (H.264)](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AVC_H.264), [VP9](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9) | [aac](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#AAC) |
-| webm | [AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1), [VP9](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9) | [vorbis](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#Vorbis), [opus](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#Opus) |
+| [mp4](https://caniuse.com/#search=mp4)  | [AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1), [AVC (H.264)](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AVC_H.264)*, [VP9](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9) | [aac](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#AAC) |
+| [webm](https://caniuse.com/#feat=webm) | [AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1), [VP9](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9)* | [vorbis](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#Vorbis), [opus](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#Opus) |
+&#42; Indicates the the preferred video codec.
 
 _Bitrate_ is the maximum number of bits used to encode one second of a stream.
 The more bits used to encode a second of stream, the higher the potential

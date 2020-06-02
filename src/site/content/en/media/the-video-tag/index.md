@@ -19,9 +19,9 @@ Add the `video` element to load, decode, and play video in your site:
 
 ### Specify multiple file formats
 
-Not all browsers support the same video formats. The `<source>` element lets
-you specify multiple formats as a fallback in case the user's browser  doesn't
-support one of them.
+Recall from [File basics](../file-basics) that not all browsers support the same
+video formats. The `<source>` element lets you specify multiple formats as a
+fallback in case the user's browser doesn't support one of them.
 
 For example:
 
@@ -37,8 +37,8 @@ For example:
 [Try it](https://googlesamples.github.io/web-fundamentals/fundamentals/media/video-main.html)
 
 When the browser parses the `<source>` tags, it uses the optional `type`
-attribute to help decide which file to download and play. If the browser
-supports `WebM`, it plays chrome.webm; if not, it checks whether it can play
+attribute to determine which file to download and play. If the browser
+supports WebM, it plays that; if not, it checks whether it can play
 MPEG-4 videos.
 
 Check out [A Digital Media Primer for Geeks](//www.xiph.org/video/vid1.shtml) to
@@ -55,54 +55,60 @@ scripting, especially on mobile:
 * Specifying each file source's type improves network performance; the browser can select a
   video source without having to download part of the video to "sniff" the format.
 
-All of these points are especially important in mobile contexts, where bandwidth
-and latency are at a premium and the user's patience is likely to be limited.
-Not including a type attribute can affect performance when there are
-multiple sources with unsupported types.
+These issues are especially important in mobile contexts, where bandwidth and
+latency are at a premium and the user's patience is likely limited. Omitting the
+type attribute can affect performance when there are multiple sources with
+unsupported types.
 
-Using your mobile browser developer tools, compare network activity
-[with type attributes](https://googlesamples.github.io/web-fundamentals/fundamentals/media/video-main.html)
-and [without type attributes](https://googlesamples.github.io/web-fundamentals/fundamentals/design-and-ux/responsive/notype.html).
+{% Aside %}
+If you want to dig into the details, you can use [remote
+debugging](https://developers.google.com/web/tools/chrome-devtools/remote-debugging)
+in DevTools to compare network activity [with type
+attributes](https://googlesamples.github.io/web-fundamentals/fundamentals/media/video-main.html)
+and [without type
+attributes](https://googlesamples.github.io/web-fundamentals/fundamentals/design-and-ux/responsive/notype.html).
 
 Also check the response headers in your browser developer tools to
 [ensure your server reports the right MIME type](//developer.mozilla.org/en/docs/Properly_Configuring_Server_MIME_Types);
 otherwise video source type checks won't work.
+{% endAside %}
 
 ### Specify start and end times
 
-Save bandwidth and make your site feel more responsive: use the Media
-Fragments API to add start and end times to the video element.
+Save bandwidth and make your site feel more responsive: use media fragments to
+add start and end times to the video element.
 
 ---EMBED HERE---
 
-To add a media fragment, you simply add `#t=[start_time][,end_time]` to the
-media URL. For example, to play the video between seconds 5 through 10,
-specify:
+To use a media fragment, add `#t=[start_time][,end_time]` to the media URL. For
+example, to play the video from seconds 5 to 10, specify:
 
 ```html
 <source src="video/chrome.webm#t=5,10" type="video/webm">
 ```
 
-You can also use the Media Fragments API to deliver multiple views on the same
-video&ndash;like cue points in a DVD&ndash;without having to encode and
-serve multiple files.
+You can use this feature to deliver multiple views on the same video&ndash;like
+cue points in a DVD&ndash;without having to encode and serve multiple files.
 
+{% Aside 'caution' %}
+By default, most servers enable range requests, which is required for media
+fragments to work.
+{% endAside %}
 
-Caution: Most platforms except iOS support the Media Fragments API. Also, make
-sure that your server supports Range Requests. By default, most servers enable
-Range Requests, but some hosting services may turn them off.
+Because some hosting services turn them off, you should test this feature with
+your server before using it on a live site. Using your browser developer tools,
+check for `Accept-Ranges: bytes` in the response headers:
 
-Using your browser developer tools, check for `Accept-Ranges: bytes` in the
-response headers:
-
-<img class="center" alt="Chrome DevTools screenshot: Accept-Ranges: bytes"
-src="images/Accept-Ranges-Chrome-Dev-Tools.png">
+<figure class="w-figure">
+  <img src="./accept-ranges-chrome-devtools.png" alt="Chrome DevTools screenshot: Accept-Ranges: bytes.">
+  <figcaption class="w-figcaption">Chrome DevTools screenshot: Accept-Ranges: bytes.</figcaption>
+</figure>
 
 ### Include a poster image
 
-Add a poster attribute to the `video` element so that your users have an idea
-of the content as soon as the element loads, without needing to download
-video or start playback.
+Add a poster attribute to the `video` element so that viewers have an idea of
+the content as soon as the element loads, without needing to download video or
+start playback.
 
 ```html
 <video poster="poster.jpg" ...>
@@ -116,121 +122,79 @@ video formats supplied are supported. The only downside to poster images is
 an additional file request, which consumes some bandwidth and requires
 rendering. For more information see [Image Optimization](/web/fundamentals/performance/optimizing-content-efficiency/image-optimization).
 
-Here's a side-by-side comparison of videos without and with a poster
-image&ndash;we've made the poster image grayscale to prove it's not the video:
 
-<div class="attempt-left">
-  <figure>
-    <img alt="Android Chrome screenshot, portrait: no poster"
-    src="images/Chrome-Android-video-no-poster.png">
-    <figcaption>
-      Android Chrome screenshot, portrait: no poster
-     </figcaption>
-  </figure>
+<div class="w-columns">
+{% Compare 'worse' %}
+<figure class="w-figure" w-figure--inline-left>
+  <img src="./chrome-android-video-no-poster.png" alt="Without a fallback poster, the video just looks broken.">
+</figure>
+
+{% CompareCaption %}
+Without a fallback poster, the video just looks broken.
+{% endCompareCaption %}
+
+{% endCompare %}
+
+{% Compare 'better' %}
+<figure class="w-figure" w-figure--inline-right>
+  <img src="./chrome-android-video-poster.png" alt="A fallback poster makes it seem as if the first frame has been captured.">
+</figure>
+
+{% CompareCaption %}
+A fallback poster makes it seem as if the first frame has been captured.
+{% endCompareCaption %}
+
+{% endCompare %}
 </div>
-<div class="attempt-right">
-  <figure>
-    <img alt="Android Chrome screenshot, portrait: with poster"
-    src="images/Chrome-Android-video-poster.png">
-    <figcaption>
-      Android Chrome screenshot, portrait: with poster
-     </figcaption>
-  </figure>
-</div>
 
-<div style="clear:both;"></div>
+### Autoplay {: #autoplay }
 
+On desktop, `autoplay` tells the browser to download and play the video
+immediately. On mobile, don't assume `autoplay` will always work. See the [WebKit
+blog](https://webkit.org/blog/6784/new-video-policies-for-ios/), for instance.
 
-## Provide alternatives for legacy platforms
+Even on platforms where autoplay is possible, you need to consider whether
+it's a good idea to enable it:
 
-Not all video formats are supported on all platforms. Check which formats
-are supported on the major platforms and make sure your video works in each
-of these.
+* Data usage can be expensive.
+* Playing media before the user wants it can hog bandwidth and CPU, and thereby
+  delay page rendering.
+* Users may be in a context where playing video or audio is intrusive.
 
+### Preload {: #preload }
 
-### Check which formats are supported {: #check-formats }
-
-Use `canPlayType()` to find out which video formats are supported. The method
-takes a string argument consisting of a `mime-type` and optional codecs and
-returns one of the following values:
+The `preload` attribute provides a hint to the browser as to how much
+information or content to preload.
 
 <table class="responsive">
   <thead>
     <tr>
-      <th colspan="2">Return value and Description</th>
+      <th>Value</th>
+      <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td data-th="Return value">(empty string)</td>
-      <td data-th="Description">The container and/or codec isn't supported.</td>
+      <td data-th="Value"><code>none</code></td>
+      <td data-th="Description">The user might chose not to watch the video, so don't
+      preload anything.</td>
     </tr>
     <tr>
-      <td data-th="Return value"><code>maybe</code></td>
-      <td data-th="Description">
-        The container and codec(s) might be supported, but the browser
-        will need to download some video to check.
-      </td>
+      <td data-th="Value"><code>metadata</code></td>
+      <td data-th="Description">Metadata (duration, dimensions, text tracks) should be
+      preloaded, but with minimal video.</td>
     </tr>
     <tr>
-      <td data-th="Return value"><code>probably</code></td>
-      <td data-th="Description">The format appears to be supported.
-      </td>
+      <td data-th="Value"><code>auto</code></td>
+      <td data-th="Description">Downloading the entire video right away is considered
+      desirable.</td>
     </tr>
   </tbody>
 </table>
 
-Here are some examples of `canPlayType()` arguments and return values when
-run in Chrome:
-
-<table class="responsive">
-  <thead>
-    <tr>
-      <th colspan="2">Type and Response</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td data-th="Type"><code>video/xyz</code></td>
-      <td data-th="Response">(empty string)</td>
-    </tr>
-    <tr>
-      <td data-th="Type"><code>video/xyz; codecs="avc1.42E01E, mp4a.40.2"</code></td>
-      <td data-th="Response">(empty string)</td>
-    </tr>
-    <tr>
-      <td data-th="Type"><code>video/xyz; codecs="nonsense, noise"</code></td>
-      <td data-th="Response">(empty string)</td>
-    </tr>
-    <tr>
-      <td data-th="Type"><code>video/mp4; codecs="avc1.42E01E, mp4a.40.2"</code></td>
-      <td data-th="Response"><code>probably</code></td>
-    </tr>
-    <tr>
-      <td data-th="Type"><code>video/webm</code></td>
-      <td data-th="Response"><code>maybe</code></td>
-    </tr>
-    <tr>
-      <td data-th="Type"><code>video/webm; codecs="vp8, vorbis"</code></td>
-      <td data-th="Response"><code>probably</code></td>
-    </tr>
-  </tbody>
-</table>
-
-
-### Produce video in multiple formats
-
-There are lots of tools to help save the same video in different formats:
-
-* Desktop tools: [FFmpeg](//ffmpeg.org/)
-* GUI applications: [Miro](http://www.mirovideoconverter.com/),
-  [HandBrake](//handbrake.fr/), [VLC](//www.videolan.org/)
-* Online encoding/transcoding services:
-  [Zencoder](//en.wikipedia.org/wiki/Zencoder),
-  [Amazon Elastic Encoder](//aws.amazon.com/elastictranscoder)
-
-### Check which format was used
-
-Want to know which video format was actually chosen by the browser?
-
-In JavaScript, use the video's `currentSrc` property to return the source used.
+The `preload` attribute has different effects on different platforms.
+For example, Chrome buffers 25 seconds of video on desktop but none on iOS or
+Android. This means that on mobile, there may be playback startup delays
+that don't happen on desktop. See [Steve Souders'
+blog](https://www.stevesouders.com/blog/2013/04/12/html5-video-preload/) for
+full details.
