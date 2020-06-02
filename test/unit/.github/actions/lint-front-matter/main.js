@@ -1,6 +1,6 @@
 const assert = require('assert');
 const path = require('path');
-const proxyquire = require('proxyquire');
+const proxyquire = require('proxyquire').noCallThru();
 const {failStatus} = require('../../../../../.github/actions/lint-front-matter/utils/status');
 
 /**
