@@ -1,5 +1,5 @@
 ---
-title: Responsive Web Design Basics
+title: Responsive web design basics
 subhead: How to create sites which respond to the needs and capabilities of the device they are viewed on.
 description: |
   How to create sites which respond to the needs and capabilities of the device they are viewed on.
@@ -249,7 +249,7 @@ with a minimum size of `200px`.
 
 [Read more about CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids)
 
-#### Multiple-column Layout {: #multicol }
+#### Multiple-column layout {: #multicol }
 
 For some types of layout you can use Multiple-column Layout (Multicol),
 which can create responsive numbers of columns with the `column-width` property.
