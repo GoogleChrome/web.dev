@@ -34,6 +34,16 @@ module.exports = {
           'labels-and-text-alternatives',
         ],
       },
+      {
+        title:
+          'Create a design and CSS that supports users with different needs',
+        pathItems: [
+          'accessible-tap-targets',
+          'color-and-contrast',
+          'accessible-responsive-design',
+          'content-reordering',
+        ],
+      },
     ],
   },
 };
