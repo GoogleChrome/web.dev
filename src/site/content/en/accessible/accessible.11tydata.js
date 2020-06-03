@@ -39,7 +39,7 @@ module.exports = {
           'Create a design and CSS that supports users with different needs',
         pathItems: [
           'accessible-tap-targets',
-          'color-and-contrast',
+          'color-and-contrast-accessibility',
           'accessible-responsive-design',
           'content-reordering',
         ],
