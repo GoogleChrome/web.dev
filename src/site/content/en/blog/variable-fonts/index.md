@@ -107,7 +107,7 @@ Variable fonts address these challenges, by packing styles into a single file.
 
 <!-- RN: I'm just a yokel and English isn't my 1st language, but maybe ease into this anatomy a bit more? Or make it less complex? -->
 
-This works by starting with a central or 'default' master style, usually the 'Regular' – an upright roman design with the most typical weight and width that is most suitable for plain text.
+This works by starting with a central or 'default' master style, usually the 'Regular'–an upright roman design with the most typical weight and width that is most suitable for plain text.
 This is then connected to other style masters in a continuous range, called an 'axis.'
 The most common axis is **Weight**, which can connect the default style through to a Bold master style.
 Any individual style can be located along an axis, and is called an 'instance' of the variable font.
@@ -140,7 +140,7 @@ These provide all the widths of the Regular style, and combine with the Weight a
 
 This means there are thousands of styles!
 This may seem like massive overkill, but the quality of the reading experience can be remarkably enhanced by this diversity of type styles.
-And, if it is without performance penalty, web developers can use a few or as many styles as they wish – it’s up to their design.
+And, if it is without performance penalty, web developers can use a few or as many styles as they wish–it’s up to their design.
 
 <!-- TODO DC restart here -->
 
@@ -186,7 +186,7 @@ This gives you granular control over your typography, and a great deal of power.
 
 There are five [registered axes](https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg#registered-axis-tags), which control known, predictable features of the font: weight, width, optical size, slant and italics. Besides those, a font can contain custom axes. These can control any design aspect of the font the type designer wishes: the size of serifs, the length of swashes, the height of ascenders or the size of the dot on the i.
 
-Even though axes can control the same feature, they might use different values. For example, in the Oswald and Hepta Slab variable fonts there is only one axis available, Weight, but the ranges are different – Oswald has the same range as before it was upgraded to be variable, 200 to 700, but Hepta Slab has an extreme hairline weight at 1 that goes all the up to 900.
+Even though axes can control the same feature, they might use different values. For example, in the Oswald and Hepta Slab variable fonts there is only one axis available, Weight, but the ranges are different–Oswald has the same range as before it was upgraded to be variable, 200 to 700, but Hepta Slab has an extreme hairline weight at 1 that goes all the up to 900.
 
 The five registered axes have 4-character lowercase tags that are used to
 set their values in CSS:
