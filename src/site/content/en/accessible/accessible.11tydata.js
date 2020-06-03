@@ -36,7 +36,7 @@ module.exports = {
       },
       {
         title:
-          'Understand how your design and CSS can support users with different needs.',
+          'Create a design and CSS that supports users with different needs',
         pathItems: [
           'accessible-tap-targets',
           'color-and-contrast',
