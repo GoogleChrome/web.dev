@@ -36,9 +36,8 @@ class LanguageSelect extends BaseStateElement {
     checkUserPreferredLanguage();
   }
 
-  onStateChanged() {
-    const state = store.getState();
-    this.userPreferredLanguage = state.userPreferredLanguage;
+  onStateChanged({userPreferredLanguage}) {
+    this.userPreferredLanguage = userPreferredLanguage;
   }
 
   onChange(e) {
@@ -66,7 +65,7 @@ class LanguageSelect extends BaseStateElement {
           Choose language
         </label>
         <select id="preferred-language" @change=${this.onChange}>
-          ${['en', 'pl'].map((language) => this.renderOption(language))}
+          ${lang.supportedLanguages.map((language) => this.renderOption(language))}
         </select>
       </div>
     `;

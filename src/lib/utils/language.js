@@ -13,15 +13,22 @@ const languageNames = {
 };
 
 /**
+ * A list of supported languages.
+ * @const
+ */
+const supportedLanguages = Object.keys(languageNames);
+
+/**
  * Temporary validation function (see TODO).
  * @param {string} lang Language code.
  * @return {Boolean} Whether the language code is supported.
  */
 function isValidLanguage(lang) {
-  return Object.keys(languageNames).indexOf(lang) > -1;
+  return supportedLanguages.indexOf(lang) > -1;
 }
 
 export default {
   languageNames,
-  isValidLanguage
+  isValidLanguage,
+  supportedLanguages,
 }
