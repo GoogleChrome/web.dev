@@ -195,7 +195,7 @@ cross-origin images that lack the
 header. Instead, only their load time is exposed (since this is already exposed
 via many other web APIs).
 
-The [usage example](#how-to-measure-largest-contentful-paint-in-javascript)
+The [usage example](#measure-lcp-in-javascript)
 below shows how to handle elements whose render time is not available. But,
 when possible, it's always recommended to set the
 [`Timing-Allow-Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin)
