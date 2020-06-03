@@ -169,7 +169,7 @@ By default, requests violating your policy should be rejected with an `HTTP 403`
 **Example:** The following code demonstrates a complete implementation of a robust Resource Isolation Policy on the server or as a middleware to deny potentially malicious cross-site resource requests, while allowing simple navigational requests:
 
 ```python
-# Reject cross-origin requests to protect from CSRF, XSSI, & other bugs
+# Reject cross-origin requests to protect from CSRF, XSSI, and other bugs
 def allow_request(req):
   # Allow requests from browsers which don't send Fetch Metadata
   if not req['sec-fetch-site']:
