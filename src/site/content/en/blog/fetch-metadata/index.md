@@ -144,7 +144,7 @@ The logic above protects your application's endpoints from being used as resourc
 In some cases, your application might provide resources which are meant to be loaded cross-site. These resources need to be exempted on a per-path or per-endpoint basis. Examples of such endpoints are:
 
  - Endpoints meant to be accessed cross-origin - If your application is serving endpoints that are `CORS` enabled, you need to explicitly opt them out from resource isolation to ensure that cross-site requests to these endpoints are still possible.
- - Public resources (e.g. images, styles, etc) - Any public and unauthenticated resources that should be loadable cross-origin from other sites can be exempted as well.
+ - Public resources (e.g. images, styles, etc.) - Any public and unauthenticated resources that should be loadable cross-origin from other sites can be exempted as well.
 
 ```python
   if req.path in ('/my_CORS_endpoint', '/favicon.png'):
