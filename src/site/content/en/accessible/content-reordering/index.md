@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Content re-ordering
+title: Content reordering
 authors:
   - rachelandrew
 date: 2020-05-29
