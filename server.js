@@ -23,7 +23,7 @@ const localeHandler = require('./locale-handler.js');
 const buildRedirectHandler = require('./redirect-handler.js');
 
 // If true, we'll aggressively nuke the prod Service Worker. For emergencies.
-const serviceWorkerKill = true;
+const serviceWorkerKill = false;
 
 const redirectHandler = (() => {
   // In development, Eleventy isn't guaranteed to have run, so read the actual
