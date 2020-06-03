@@ -103,7 +103,7 @@ When using so few of these capabilities, we reduce the reading experience of our
 
 ## Anatomy of a Variable Font
 
-Variable fonts addresses these callenges, by packing styles into a single file.
+Variable fonts address these challenges, by packing styles into a single file.
 
 <!-- RN: I'm just a yokel and English isn't my 1st language, but maybe ease into this anatomy a bit more? Or make it less complex? -->
 
@@ -184,7 +184,7 @@ This gives you granular control over your typography, and a great deal of power.
 
 ## Axes Definitions
 
-There are five [registered axes](https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg#registered-axis-tags), which control known, predictible features of the font: weight, width, optical size, slant and italics. Besides those, a font can contain custom axes. These can control any design aspect of the font the type designer wishes: the size of serifs, the length of swashes, the height of ascenders or the size of the dot on the i.
+There are five [registered axes](https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg#registered-axis-tags), which control known, predictable features of the font: weight, width, optical size, slant and italics. Besides those, a font can contain custom axes. These can control any design aspect of the font the type designer wishes: the size of serifs, the length of swashes, the height of ascenders or the size of the dot on the i.
 
 Even though axes can control the same feature, they might use different values. For example, in the Oswald and Hepta Slab variable fonts there is only one axis available, Weight, but the ranges are different – Oswald has the same range as before it was upgraded to be variable, 200 to 700, but Hepta Slab has an extreme hairline weight at 1 that goes all the up to 900.
 
@@ -245,7 +245,7 @@ The font's documentation should provide this, or you can inspect the font using 
 
 ## Variable Fonts in CSS
 
-### Loading Variale Font Files
+### Loading Variable Font Files
 
 Variable fonts are loaded though the same `@font-face` mechanism as traditional static web fonts, but with two new enhancements:
 
@@ -317,9 +317,9 @@ Likewise, we can set `font-stretch` with keywords (`condensed`, `ultra-expanded`
 
 ### Using Italics and Obliques
 
-The `ital` axis is intended for fonts that contain both a regular style, and an italic style. The axis is meant to be an on/off switch: value `0` is off and will show the regular style, value `1` will show the italics. Different from other axis, there's no transition. A value of `0.5` won't give you "half italics".
+The `ital` axis is intended for fonts that contain both a regular style, and an italic style. The axis is meant to be an on/off switch: value `0` is off and will show the regular style, value `1` will show the italics. Unlike other axis, there's no transition. A value of `0.5` won't give you "half italics".
 
-The `slnt` axis is different from italics in that it's not a new _style_, but just slants the regular style. By default its value is `0`, which means the default upright lettershapes. Roboto Flex has a maximum slant of -10 degrees, meaning the letters will lean to the right when going from 0 to -10.
+The `slnt` axis is different from italics in that it's not a new _style_, but just slants the regular style. By default its value is `0`, which means the default upright letter shapes. Roboto Flex has a maximum slant of -10 degrees, meaning the letters will lean to the right when going from 0 to -10.
 
 It would be intuitive to set these axis through the `font-style` property, but as of April 2020, how to exactly do this is [still being worked out](https://github.com/w3c/csswg-drafts/issues/3125). So for now, you should treat these as custom axes, and set them through `font-variation-settings`:
 
@@ -347,7 +347,7 @@ i, em, .italic {
 
 ### Using Optical Sizes
 
-A typeface can be rendered very small (a 12px footnote) or very large (a 80px headline). Fonts can respond to these size changes by changing its lettershapes to better suit its size. A small size might be better off without fine details, while a large size might benefit from more details and thinner strokes.
+A typeface can be rendered very small (a 12px footnote) or very large (a 80px headline). Fonts can respond to these size changes by changing its letter shapes to better suit its size. A small size might be better off without fine details, while a large size might benefit from more details and thinner strokes.
 
 <figure class="w-figure">
   <img src="roboto-flex-opsz.png"
@@ -496,7 +496,7 @@ In case you need to support older browsers, you can choose to build your site wi
 /* Set up Roboto for old browsers, only regular + bold */
 @font-face {
   font-family: Roboto;
-  src: url('Roboto-Regalar.woff2');
+  src: url('Roboto-Regular.woff2');
   font-weight: normal;
 }
 
