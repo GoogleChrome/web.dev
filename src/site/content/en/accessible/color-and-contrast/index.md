@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Color and contrast
+title: Color and contrast accessibility
 authors:
   - dgash
   - megginkearney
