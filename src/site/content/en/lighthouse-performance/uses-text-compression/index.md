@@ -4,7 +4,7 @@ title: Enable text compression
 description: |
   Learn about the uses-text-compression audit.
 date: 2019-05-02
-updated: 2019-10-04
+updated: 2020-05-29
 web_lighthouse:
   - uses-text-compression
 ---
@@ -30,7 +30,7 @@ Lighthouse then compresses each of these with
 [GZIP](https://www.gnu.org/software/gzip/) to compute the potential
 savings.
 
-If the original size of a response is less than 1.4KB, or if the
+If the original size of a response is less than 1.4KiB, or if the
 potential compression savings is less than 10% of the original size, then
 Lighthouse does not flag that response in the results.
 

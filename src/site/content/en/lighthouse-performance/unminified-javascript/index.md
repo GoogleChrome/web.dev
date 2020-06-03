@@ -4,7 +4,7 @@ title: Minify JavaScript
 description: |
   Learn about the unminified-javascript audit.
 date: 2019-05-02
-updated: 2019-10-04
+updated: 2020-05-29
 web_lighthouse:
   - unminified-javascript
 ---
@@ -12,7 +12,7 @@ web_lighthouse:
 Minifying JavaScript files can reduce payload sizes and script parse time.
 The Opportunities section of your Lighthouse report lists
 all unminified JavaScript files,
-along with the potential savings in kilobytes (KB)
+along with the potential savings in [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte)
 when these files are minified:
 
 <figure class="w-figure">

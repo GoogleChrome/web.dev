@@ -68,7 +68,7 @@ module.exports = function buildRedirectHandler(filename, code = 301) {
   groupMatcher = new RegExp(`^(${escaped.join('|')})`);
 
   return (req, res, next) => {
-    const url = ensureTrailingSlashOnly(req.url);
+    const url = ensureTrailingSlashOnly(req.path);
     if (url in singleRedirect) {
       return res.redirect(code, singleRedirect[url]);
     }

@@ -4,7 +4,7 @@ title: "`robots.txt` is not valid"
 description: |
   Learn about the "robots.txt is not valid" Lighthouse audit.
 date: 2019-05-02
-updated: 2019-08-21
+updated: 2020-05-29
 web_lighthouse:
   - robots-txt
 ---
@@ -61,10 +61,10 @@ content from being indexed.
 To check the HTTP status code, open `robots.txt` in Chrome and
 [check the request in Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/network/reference#analyze).
 
-### Keep `robots.txt` smaller than 500 KB
+### Keep `robots.txt` smaller than 500 KiB
 
 Search engines may stop processing `robots.txt` midway through if the file is
-larger than 500 KB. This can confuse the search engine, leading to incorrect
+larger than 500 KiB. This can confuse the search engine, leading to incorrect
 crawling of your site.
 
 To keep `robots.txt` small, focus less on individually excluded pages and more
