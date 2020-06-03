@@ -478,6 +478,14 @@ On the flip side, if you are animating the font between settings, this may cause
 
 With variable fonts, app and website makers can offer really rich typography experiences that express each brand, without the previous bandwidth and latency costs. However, if you are using a single font such as Roboto Regular and nothing else, you might see a net gain in font size if you were to switch to a variable font with many axes. As always, it depends on your use-case.
 
+Speaking of performance: if you're using Google Fonts, it's a good idea to preconnect to `https://fonts.gstatic.com`, the domain where Google's fonts are hosted. This will make sure the browser knows early on where to get the fonts when it comes across them in the CSS:
+
+```html
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+```
+
+Find more performance tips for loading Google Fonts in [Harry Roberts' post](https://csswizardry.com/2020/05/the-fastest-google-fonts/).
+
 ## Fallbacks and Browser Support
 
 All modern browsers support variable fonts.
