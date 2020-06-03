@@ -205,7 +205,7 @@ It's recommended that you test your policy in a side-effect free way by first en
 From our experience of rolling out a Fetch Metadata Resource Isolation Policy at Google, most applications are by default compatible with such a policy and rarely require exempting endpoints to allow cross-site traffic.
 
 ### Enforcing a Resource Isolation Policy
-After you've checked that your policy doesn't impact legitimate production traffic, you're ready to start enforcing the restrictions, guaranteeing that other sites will not be able to request your resources and protecting your users from cross-site attacks.
+After you've checked that your policy doesn't impact legitimate production traffic, you're ready to enforce restrictions, guaranteeing that other sites will not be able to request your resources and protecting your users from cross-site attacks.
 
 {% Aside 'caution' %}
 Make sure that you reject invalid requests before running authentication checks or any other processing of the request to prevent revealing sensitive timing information. 
