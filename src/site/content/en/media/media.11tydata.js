@@ -37,8 +37,7 @@ module.exports = {
         pathItems: [
           'add-media',
           'video-and-source-tags',
-          'the-track-tag',
-          'media-controls',
+          'accessibility-with-the-track-tag',
         ],
       },
     ],

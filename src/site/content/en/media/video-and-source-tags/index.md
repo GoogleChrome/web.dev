@@ -10,19 +10,28 @@ date: 2014-14-15
 updated: 2020-06-10
 ---
 
-You've properly [prepared a video](prepare-media/) file for the web. You've
+You've properly [prepared a video file](prepare-media/) for the web. You've
 given it correct dimensions and the correct resolution. You've encrypted it.
 You've even created separate webm and mp4 files for different browsers.
 
 For anyone to see it, you still need to add it to a web page. Doing so properly
 requies two HTML elements: the `<video>` element and the `<source>`.  Because it
-makes no sense to cover them separately, the page explains both.
+makes no sense to cover them separately, the page explains both. It also
+explains attributes you should add to those tags to craft a good user
+experience.
+
+{% Aside %}
+You always have the option of uploading your file to YouTube or Vimeo. In many
+cases, this is preferable to the procedure described here. Those services
+handle formatting and filetype conversion for you, as well as provide the means
+to embedd a video in your web page. If need to manage this yourself, read on.
+{% endAside %}
 
 ## Specify a single file
 
-Although it's not recommended, the video element may be used by itself. Always
+Although it's not recommended, you can use the video element by itself. Always
 use the `type` attribute as shown below. the browser uses this to determine if
-it can play the provided video file. If it can't, the next text displays.
+it can play the provided video file. If it can't, the enclosed text displays.
 
 ```html
 <video src="chrome.webm" type="video/webm">
@@ -54,13 +63,10 @@ attribute to determine which file to download and play. If the browser
 supports WebM, it plays that; if not, it checks whether it can play
 MPEG-4 videos.
 
-Check out [A Digital Media Primer for Geeks](//www.xiph.org/video/vid1.shtml) to
-find out more about how video and audio work on the web.
-
 This approach has several advantages over serving different HTML or server-side
 scripting, especially on mobile:
 
-* Developers can list formats in order of preference.
+* You can list formats in order of preference.
 * Native client-side switching reduces latency; only one request is made to
   get content.
 * Letting the browser choose a format is simpler, quicker, and potentially
@@ -73,8 +79,9 @@ latency are at a premium and the user's patience is likely limited. Omitting the
 type attribute can affect performance when there are multiple sources with
 unsupported types.
 
-{% Aside %}
-If you want to dig into the details, you can use [remote
+{% Aside %} There are a few ways you can dig into the details. Check out [A
+Digital Media Primer for Geeks](//www.xiph.org/video/vid1.shtml) to find out
+more about how video and audio work on the web. You can also use [remote
 debugging](https://developers.google.com/web/tools/chrome-devtools/remote-debugging)
 in DevTools to compare network activity [with type
 attributes](https://googlesamples.github.io/web-fundamentals/fundamentals/media/video-main.html)
@@ -105,12 +112,12 @@ cue points in a DVD&ndash;without having to encode and serve multiple files.
 
 {% Aside 'caution' %}
 By default, most servers enable range requests, which is required for media
-fragments to work.
+fragments to work. Because some hosting services turn them off, you should test
+this feature with your server before using it on a live site.
 {% endAside %}
 
-Because some hosting services turn them off, you should test this feature with
-your server before using it on a live site. Using your browser developer tools,
-check for `Accept-Ranges: bytes` in the response headers:
+Using your browser developer tools, check for `Accept-Ranges: bytes` in the
+response headers:
 
 <figure class="w-figure">
   <img src="./accept-ranges-chrome-devtools.png" alt="Chrome DevTools screenshot: Accept-Ranges: bytes.">
@@ -200,7 +207,7 @@ information or content to preload.
     <tr>
       <td data-th="Value"><code>auto</code></td>
       <td data-th="Description">Downloading the entire video right away is considered
-      desirable.</td>
+      desirable. An empty string produces the same result.</td>
     </tr>
   </tbody>
 </table>
