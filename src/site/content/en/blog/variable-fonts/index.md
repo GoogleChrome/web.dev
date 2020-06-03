@@ -247,8 +247,6 @@ The font's documentation should provide this, or you can inspect the font using 
 
 ### Loading Variale Font Files
 
-<!-- TODO something about GF API here -->
-
 Variable fonts are loaded though the same `@font-face` mechanism as traditional static web fonts, but with two new enhancements:
 
 ```css
@@ -266,6 +264,8 @@ Variable fonts are loaded though the same `@font-face` mechanism as traditional 
 <!-- TODO 2021 Q1 revisit this, based on progress in https://www.w3.org/TR/css-fonts-4/#font-face-src-requirement-types to allow removing the 2nd src -->
 
 **2. Style Ranges:** You'll notice we're supplying two values for `font-weight` and `font-stretch`. Instead of telling the browser which specific weight this font provides (for example `font-weight: 500;`), we now give it the **range** of weights supported by the font. For Roboto Flex, the Weight axis ranges from 100 to 1000, and CSS directly maps the axis range to the `font-weight` style property. By specifying the range in `@font-face`, any value outside this range will be "capped" to the nearest valid value. The Width axis range is mapped in the same way to the `font-stretch` property.
+
+If you're using the Google Fonts API, this will all be taken care of. Not only will the CSS contain the proper source formats and ranges, Google Fonts will also send static fallback fonts in case variable fonts aren't supported.
 
 ### Using Weights and Widths
 
@@ -405,7 +405,7 @@ As `GRAD` is a custom axis, with a range of -1 to 1, we need to address it with 
 }
 ```
 
-## Font-variation-settings inheritance
+## Font-variation-settings Inheritance
 
 While all registered axes will soon be supported through existing CSS properties, for the time being you might need to rely on `font-variation-settings` as a fallback. And if your font has custom axes, you'll need `font-variation-settings` too.
 
@@ -610,6 +610,4 @@ people:
 * [Laurence Penney](https://twitter.com/lorp), developer of [axis-praxis.org](https://axis-praxis.org)
 * [Mandy Michael](https://twitter.com/Mandy_Kerr), developer of [variablefonts.dev](https://variablefonts.dev)
 
-## Feedback {: #feedback }
-
-{ % include "web/_shared/helpful.html" %}
+Hero image by [Bruno Martins](https://unsplash.com/@brunus) on [Unsplash](https://unsplash.com/photos/OhJmwB4XWLE).
