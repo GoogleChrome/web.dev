@@ -16,9 +16,6 @@
     } %}
   {% endif %}
 
-  <div class="w-toc__button-wrapper">
-    <label for="w-toc__open-state" class="w-toc__button w-button w-button--secondary w-button--icon" data-icon="list_alt" aria-label="Toggle table of contents"></label>
-  </div>
   <div class="w-toc">
     <div class="w-toc__label">
       <span>In this article</span>
@@ -27,7 +24,6 @@
     </div>
     {{ content | toc | safe }}
   </div>
-
 
   {# Make sure Actions are first in the tab order. #}
   <div class="w-actions">
@@ -45,6 +41,9 @@
     {% include 'partials/subscribe-action.njk' %}
   </div>
 
+  <div class="w-toc__button-wrapper">
+    <label for="w-toc__open-state" class="w-toc__button w-button w-button--secondary w-button--icon" data-icon="list_alt" aria-label="Toggle table of contents"></label>
+  </div>
   <div class="w-layout-container--narrow w-post-content">
     <header class="w-article-header">
       {% if 'blog' in tags %}

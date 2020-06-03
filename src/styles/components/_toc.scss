@@ -3,19 +3,25 @@
 
 .w-toc__button-wrapper {
   display: flex;
+  height: 0;
   justify-content: flex-end;
-  margin-top: -66px;
-  padding-bottom: 24px;
-  padding-right: 24px;
+  margin-right: 24px;
+  margin-bottom: -24px;
+  padding-top: 24px;
   position: sticky;
-  top: 88px;
+  top: 64px;
   z-index: 1;
+
+  @include bp(sm) {
+    margin-bottom: -32px;
+    padding-top: 32px;
+  }
 }
 
 .w-toc__button {
   background-color: $WHITE;
   border: 1px solid $GREY_300;
-  height: auto;
+  height: 40px;
   padding: 7px;
 }
 
@@ -24,20 +30,21 @@
   border-bottom: 1px solid $BORDER_COLOR;
   border-top: 1px solid $BORDER_COLOR;
   display: none;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 800px;
-  padding: 24px 24px 24px 32px;
+  padding: 24px;
   position: sticky;
   top: 63px;
+  width: 100%;
   z-index: 1;
+
+  @include bp(sm) {
+    padding-top: 32px;
+  }
 
   @include bp(md) {
     border-bottom: 0;
     border-left: 1px solid $BORDER_COLOR;
     border-top: 0;
-    height: 100%;
-    padding: 24px;
+    height: calc(100% - 64px);
     position: fixed;
     right: 0;
     width: 268px;
