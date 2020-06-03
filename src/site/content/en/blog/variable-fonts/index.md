@@ -8,7 +8,7 @@ authors:
   - mustafakurtuldu
   - thomassteiner
 date: 2018-02-19
-updated: 2020-06-02
+updated: 2020-06-03
 hero: hero.jpg
 tags:
   - blog
@@ -50,8 +50,8 @@ description: Introduction to variable fonts – what they are and how to use the
 -->
 
 In this article, we will look at what variable fonts are, the benefits they offer,
-and how we can use them in our work. First, let's review how typography and
-font loading work on the web before variable fonts became available.
+and how we can use them in our work. First, let's review how typography
+works on the web, and what innovations variable fonts bring.
 
 ## Introduction
 
@@ -316,9 +316,6 @@ Likewise, we can set `font-stretch` with keywords (`condensed`, `ultra-expanded`
 </figure>
 
 ### Using Italics and Obliques
-
-<!-- TODO explain what italic and oblique are in typeface design -->
-<!-- RN: Already explained in ### Italics ? Still gave it a shot: -->
 
 The `ital` axis is intended for fonts that contain both a regular style, and an italic style. The axis is meant to be an on/off switch: value `0` is off and will show the regular style, value `1` will show the italics. Different from other axis, there's no transition. A value of `0.5` won't give you "half italics".
 
