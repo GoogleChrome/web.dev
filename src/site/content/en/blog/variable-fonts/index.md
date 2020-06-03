@@ -425,7 +425,7 @@ Luckily, we can work around this by using CSS variables:
 /* Set the default values */
 :root {
 	--slnt: 0;
-	--GRAD: 0
+	--GRAD: 0;
 }
 
 /* Change value for these elements and their children */
