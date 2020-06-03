@@ -17,7 +17,7 @@ tags:
 
 ## Why should you care about isolating your web resources?
 
-Many web applications are vulnerable to [cross-origin](/same-site-same-origin/#%22same-origin%22-and-%22cross-origin%22) attacks like [cross-site request forgery](https://portswigger.net/web-security/csrf) (CSRF), [cross-site script inclusion](https://portswigger.net/research/json-hijacking-for-the-modern-web) (XSSI), timing attacks, [cross-origin information leaks](https://arxiv.org/pdf/1908.02204.pdf) or speculative execution side-channels ([Spectre](https://developers.google.com/web/updates/2018/02/meltdown-spectre)).
+Many web applications are vulnerable to [cross-origin](/same-site-same-origin/#%22same-origin%22-and-%22cross-origin%22) attacks like [cross-site request forgery](https://portswigger.net/web-security/csrf) (CSRF), [cross-site script inclusion](https://portswigger.net/research/json-hijacking-for-the-modern-web) (XSSI), timing attacks, [cross-origin information leaks](https://arxiv.org/pdf/1908.02204.pdf) or speculative execution side-channel ([Spectre](https://developers.google.com/web/updates/2018/02/meltdown-spectre)) attacks.
 
 [Fetch Metadata](https://www.w3.org/TR/fetch-metadata/) request headers allow you to deploy a strong defense-in-depth mechanism - a Resource Isolation Policy - to protect your application against these common cross-origin attacks.
 
@@ -218,4 +218,3 @@ Make sure that you reject invalid requests before running authentication checks 
 - [Fetch Metadata Playground](https://secmetadata.appspot.com/)
 - [Google I/O - Securing Web Apps with Modern Platform Features](https://webappsec.dev/assets/pub/Google_IO-Securing_Web_Apps_with_Modern_Platform_Features.pdf)
 {% YouTube 'DDtM9caQ97I', '1856' %} 
-
