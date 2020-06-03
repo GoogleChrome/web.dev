@@ -98,8 +98,8 @@ Since not all browsers support Fetch Metadata, you need to allow requests that d
 {% endAside %}
 
 ```python
-  if not req['sec-fetch-site']:
-    return True  # Allow this request
+if not req['sec-fetch-site']:
+  return True  # Allow this request
  ```
 
 {% Aside 'caution' %}
