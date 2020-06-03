@@ -140,7 +140,7 @@ These provide all the widths of the Regular style, and combine with the Weight a
 
 This means there are thousands of styles!
 This may seem like massive overkill, but the quality of the reading experience can be remarkably enhanced by this diversity of type styles.
-And, if it is without performance penalty, web developers can use a few or as many styles as they wish–it’s up to their design.
+And, if it is without performance penalty, web developers can use a few or as many styles as they wish–it's up to their design.
 
 <!-- TODO DC restart here -->
 
@@ -153,15 +153,15 @@ between and the **Slant** axis can be used to get from Roman to Italic.
 
 Other typefaces (such as Garamond, Baskerville, or Bodoni) have Roman and Italic
 glyph contours that are not interpolation compatible. For example, the contours
-that typically define a Roman lowercase “n” do not match the contours used to
-define an Italic lowercase “n”. Instead of interpolating one contour to the
+that typically define a Roman lowercase "n" do not match the contours used to
+define an Italic lowercase "n". Instead of interpolating one contour to the
 other, the **Italic** axis toggles from Roman to Italic contours.
 
 <figure class="w-figure">
   <img src="Amstelvar-Ital-axis.png"
   alt="Example of the Weight Axes for the typeface Amstelvar">
   <figcaption>
-    Amstelvar's “n” contours in Italic (12 point, regular weight, normal width),
+    Amstelvar's "n" contours in Italic (12 point, regular weight, normal width),
     and in Roman. Image supplied by David Berlow, type designer and typographer
     at Font Bureau.
   </figcaption>
@@ -579,7 +579,7 @@ with variable fonts. Above is an example of different axes being used
 with the typeface Zycon. See the live
 [animation example on Axis Praxis](https://www.axis-praxis.org/specimens/zycon).
 
-[Anicons](https://typogram.github.io/Anicons) is the world’s first animated color icon font, based on Material Design Icons. Anicons is an experiment that combines two cutting edge font technologies: variable fonts and color fonts.
+[Anicons](https://typogram.github.io/Anicons) is the world's first animated color icon font, based on Material Design Icons. Anicons is an experiment that combines two cutting edge font technologies: variable fonts and color fonts.
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
