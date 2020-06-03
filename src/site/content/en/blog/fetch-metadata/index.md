@@ -216,5 +216,5 @@ Make sure that you reject invalid requests before running authentication checks 
 
 - [W3C Fetch Metadata Request Headers specification](https://www.w3.org/TR/fetch-metadata/)
 - [Fetch Metadata Playground](https://secmetadata.appspot.com/)
-- [Google I/O - Securing Web Apps with Modern Platform Features](https://webappsec.dev/assets/pub/Google_IO-Securing_Web_Apps_with_Modern_Platform_Features.pdf)
+- [Google I/O - Securing Web Apps with Modern Platform Features](https://webappsec.dev/assets/pub/Google_IO-Securing_Web_Apps_with_Modern_Platform_Features.pdf) (Slides)
 {% YouTube 'DDtM9caQ97I', '1856' %} 
