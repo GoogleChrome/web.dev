@@ -352,7 +352,7 @@ and critical-path CSS or JavaScript.
 <link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin>
 ```
 
-Starting in Chrome 83, reloading can be used along with [responsive images](/preload-responsive-images/) to combine both
+Starting in Chrome 83, preloading can be used along with [responsive images](/preload-responsive-images/) to combine both
 patterns for much faster image loading.
 
 ```html
