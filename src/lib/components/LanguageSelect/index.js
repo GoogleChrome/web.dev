@@ -20,7 +20,6 @@
 
 import {html} from 'lit-element';
 import {BaseStateElement} from '../BaseStateElement';
-import {store} from '../../store';
 import {setLanguage, checkUserPreferredLanguage} from '../../actions';
 import lang from '../../utils/language';
 
@@ -59,13 +58,14 @@ class LanguageSelect extends BaseStateElement {
   }
 
   render() {
+    const langList = lang.supportedLanguages;
     return html`
       <div class="w-display-flex">
         <label class="w-visually-hidden" for="preferred-language">
           Choose language
         </label>
         <select id="preferred-language" @change=${this.onChange}>
-          ${lang.supportedLanguages.map((language) => this.renderOption(language))}
+          ${langList.map((language) => this.renderOption(language))}
         </select>
       </div>
     `;

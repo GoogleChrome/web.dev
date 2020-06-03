@@ -31,4 +31,4 @@ export default {
   languageNames,
   isValidLanguage,
   supportedLanguages,
-}
+};
