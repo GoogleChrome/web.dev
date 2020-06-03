@@ -129,10 +129,10 @@ In case your subdomains are not fully trusted, you can make the policy stricter 
 To ensure that your site can still be linked from other sites, you have to allow simple (`HTTP GET`) top-level navigation.  
 
 ```python
-  if req['sec-fetch-mode'] == 'navigate' and req.method == 'GET'
-    # <object> and <embed> send navigation requests, which we disallow.
-    and req['sec-fetch-dest'] not in ('object', 'embed'):
-      return True  # Allow this request
+if req['sec-fetch-mode'] == 'navigate' and req.method == 'GET'
+  # <object> and <embed> send navigation requests, which we disallow.
+  and req['sec-fetch-dest'] not in ('object', 'embed'):
+    return True  # Allow this request
 ```
 {% Aside 'gotchas' %}
 The logic above protects your application's endpoints from being used as resources by other websites, but will permit top-level navigation and embedding (e.g. loading in an <iframe>). To further improve security, you can use Fetch Metadata headers to restrict cross-site navigations to only an allowed set of pages.
