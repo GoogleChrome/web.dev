@@ -22,22 +22,13 @@ import {html} from 'lit-element';
 import {BaseStateElement} from '../BaseStateElement';
 import {store} from '../../store';
 import {setLanguage, checkUserPreferredLanguage} from '../../actions';
-
-const languageNames = {
-  en: 'English',
-  pl: 'Polish',
-};
+import lang from '../../utils/language';
 
 class LanguageSelect extends BaseStateElement {
   static get properties() {
     return {
       userPreferredLanguage: {type: String},
     };
-  }
-
-  constructor() {
-    super();
-    this.onStateChanged = this.onStateChanged.bind(this);
   }
 
   connectedCallback() {
@@ -50,7 +41,7 @@ class LanguageSelect extends BaseStateElement {
     this.userPreferredLanguage = state.userPreferredLanguage;
   }
 
-  onSelect(e) {
+  onChange(e) {
     setLanguage(e.target.value);
   }
 
@@ -58,12 +49,12 @@ class LanguageSelect extends BaseStateElement {
     return this.userPreferredLanguage === language
       ? html`
           <option value="${language}" selected>
-            ${languageNames[language]} (${language})
+            ${lang.languageNames[language]} (${language})
           </option>
         `
       : html`
           <option value="${language}">
-            ${languageNames[language]} (${language})
+            ${lang.languageNames[language]} (${language})
           </option>
         `;
   }
@@ -74,7 +65,7 @@ class LanguageSelect extends BaseStateElement {
         <label class="w-visually-hidden" for="preferred-language">
           Choose language
         </label>
-        <select id="preferred-language" @change=${this.onSelect}>
+        <select id="preferred-language" @change=${this.onChange}>
           ${['en', 'pl'].map((language) => this.renderOption(language))}
         </select>
       </div>

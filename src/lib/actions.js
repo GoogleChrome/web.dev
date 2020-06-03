@@ -1,6 +1,7 @@
 import {store} from './store';
 import {saveUserUrl} from './fb';
 import {runLighthouse, fetchReports} from './lighthouse-service';
+import lang from './utils/language';
 import {localStorage} from './utils/storage';
 import cookies from 'js-cookie';
 
@@ -184,15 +185,9 @@ export const setUserAcceptsCookies = store.action(() => {
   };
 });
 
-// TODO(devnook): Extract isSupportedLocale to a common format.
-// Temp validation.
-function isValidLanguage(lang) {
-  return ['en', 'pl'].indexOf(lang) > -1;
-}
-
 function getCanonicalPath(path) {
   const parts = path.split('/');
-  if (isValidLanguage(parts[1])) {
+  if (lang.isValidLanguage(parts[1])) {
     parts.splice(1, 1);
   }
   return parts.join('/');

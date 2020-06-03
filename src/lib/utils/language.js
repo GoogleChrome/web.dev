@@ -1,0 +1,27 @@
+/**
+ * @fileoverview Tools for language selection and validation.
+ * TODO(devnook): Extract isSupportedLocale to a common format.
+ */
+
+/**
+ * A map of supported language codes to their full names.
+ * @const
+ */
+const languageNames = {
+  en: 'English',
+  pl: 'Polish',
+};
+
+/**
+ * Temporary validation function (see TODO).
+ * @param {string} lang Language code.
+ * @return {Boolean} Whether the language code is supported.
+ */
+function isValidLanguage(lang) {
+  return Object.keys(languageNames).indexOf(lang) > -1;
+}
+
+export default {
+  languageNames,
+  isValidLanguage
+}
