@@ -265,13 +265,13 @@ Variable fonts are loaded though the same `@font-face` mechanism as traditional 
 
 <!-- TODO 2021 Q1 revisit this, based on progress in https://www.w3.org/TR/css-fonts-4/#font-face-src-requirement-types to allow removing the 2nd src -->
 
-**2. Style Ranges:** You'll notice we're supplying two values for `font-weight` and `font-stretch`. Instead of telling the browser which specific weight this font provides (e.g. `font-weight: 500;`), we now give it the **range** of weights supported by the font. For Roboto Flex, the Weight axis ranges from 100 to 1000, and CSS directly maps the axis range to the `font-weight` style property. By specifying the range in `@font-face`, any value outside this range will be "capped" to the nearest valid value. The Width axis range is mapped in the same way to the `font-stretch` property.
+**2. Style Ranges:** You'll notice we're supplying two values for `font-weight` and `font-stretch`. Instead of telling the browser which specific weight this font provides (for example `font-weight: 500;`), we now give it the **range** of weights supported by the font. For Roboto Flex, the Weight axis ranges from 100 to 1000, and CSS directly maps the axis range to the `font-weight` style property. By specifying the range in `@font-face`, any value outside this range will be "capped" to the nearest valid value. The Width axis range is mapped in the same way to the `font-stretch` property.
 
 ### Using Weights and Widths
 
-Currently, the axes you can reliably set from CSS are `wght` through `font-weight`, and `wdth` through `font-stretch`.
+Currently, the axes you can reliably set from CSS are the `wght` axis through `font-weight`, and the `wdth` axis through `font-stretch`.
 
-Traditionally, you would set `font-weight` as a keyword (`light`, `bold`) or as a numerical value in steps of 100. With variable fonts, you can set any value within the font's Width range:
+Traditionally, you would set `font-weight` as a keyword (`light`, `bold`) or as a numerical value between 100 and 900, in steps of 100. With variable fonts, you can set any value within the font's Width range:
 
 ```css
 .kinda-light {
@@ -319,7 +319,7 @@ Likewise, we can set `font-stretch` with keywords (`condensed`, `ultra-expanded`
 
 The `ital` axis is intended for fonts that contain both a regular style, and an italic style. The axis is meant to be an on/off switch: value `0` is off and will show the regular style, value `1` will show the italics. Different from other axis, there's no transition. A value of `0.5` won't give you "half italics".
 
-The `slnt` axis is different from italics in that it's not a new *style*, but just slants the regular style. By default its value is `0`, which means the default upright lettershapes. Roboto Flex has a maximum slant of -10 degrees, meaning the letters will lean to the right when going from 0 to -10.
+The `slnt` axis is different from italics in that it's not a new _style_, but just slants the regular style. By default its value is `0`, which means the default upright lettershapes. Roboto Flex has a maximum slant of -10 degrees, meaning the letters will lean to the right when going from 0 to -10.
 
 It would be intuitive to set these axis through the `font-style` property, but as of April 2020, how to exactly do this is [still being worked out](https://github.com/w3c/csswg-drafts/issues/3125). So for now, you should treat these as custom axes, and set them through `font-variation-settings`:
 
@@ -349,11 +349,19 @@ i, em, .italic {
 
 A typeface can be rendered very small (a 12px footnote) or very large (a 80px headline). Fonts can respond to these size changes by changing its lettershapes to better suit its size. A small size might be better off without fine details, while a large size might benefit from more details and thinner strokes.
 
+<figure class="w-figure">
+  <img src="roboto-flex-opsz.png"
+  alt="">
+  <figcaption>
+    The letter 'a' in Roboto Flex at different pixel sizes, then scaled to be the same size,
+    shows the differences in design.
+    <a href="https://codepen.io/RoelN/pen/PoPvdeV">Try it yourself on Codepen</a>
+  </figcaption>
+</figure>
 <!-- TODO explain how opsz is defined as px and pt -->
+<!-- RN: throw innocent web devs in an "intro to var fonts" article into the deep snakepit that is https://github.com/w3c/csswg-drafts/issues/4430 ? -->
 
-A new CSS property has been introduced for this axis: `font-optical-sizing`. By default it's set to `auto`, which makes the browser set the axis value automatically based on the `font-size`.
-
-So picking the best optical size is done automatically, but if you wish to turn this off you can set `font-optical-sizing` to `none`.
+A new CSS property has been introduced for this axis: `font-optical-sizing`. By default it's set to `auto`, which makes the browser set the axis value based on the `font-size`. This means the browser will pick the best optical size automatically, but if you wish to turn this off you can set `font-optical-sizing` to `none`.
 
 You can also set a custom value for the `opsz` axis, if you deliberately want an optical size that doesn't match the font size. The following CSS would cause text to be displayed at a large size, but at an optical size as if it were printed in `8pt`:
 
@@ -364,21 +372,12 @@ You can also set a custom value for the `opsz` axis, if you deliberately want an
 }
 ```
 
-<figure class="w-figure">
-  <img src="roboto-flex-opsz.png"
-  alt="">
-  <figcaption>
-    Example of different designs for Roboto Flex' letter 'a' at different sizes.
-    <a href="https://codepen.io/RoelN/pen/PoPvdeV">Try it yourself on Codepen</a>
-  </figcaption>
-</figure>
-
 ### Using Custom Axes
+
+Unlike registered axes, custom axes will not be mapped to an existing CSS property, so you will always have to set them through `font-variation-settings`. Tags for custom axes are always in uppercase, to distinguish them from registered axes.
 
 Roboto Flex offers a few custom axes, and the most important is Grade (`GRAD`). A Grade axis is interesting as it changes the weight of the font without changing the widths, so line breaks do not change.
 By playing with a Grade axis, you can avoid being forced to fiddle with changes to Weight axis that effects the overall width, and then changes to the Width axis that effect the overall weight.
-
-Note that tags for custom axes are always in uppercase, to destinguish them from registered axes.
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
@@ -390,7 +389,7 @@ Note that tags for custom axes are always in uppercase, to destinguish them from
   </figcaption>
 </figure>
 
-As `GRAD` is a custom axis, with a range of -1 to 1, we need to address it with `font-variation-settings`. We could create three classes:
+As `GRAD` is a custom axis, with a range of -1 to 1, we need to address it with `font-variation-settings`:
 
 ```css
 .grade-light {
@@ -406,7 +405,11 @@ As `GRAD` is a custom axis, with a range of -1 to 1, we need to address it with 
 }
 ```
 
-However, here's a little gotcha. Every property you don't set through `font-variation-settings` will automatically be reset to their defaults. Previously set values aren't inherited. This means the following will not work as expected:
+## Font-variation-settings inheritance
+
+While all registered axes will soon be supported through existing CSS properties, for the time being you might need to rely on `font-variation-settings` as a fallback. And if your font has custom axes, you'll need `font-variation-settings` too.
+
+However, here's a little gotcha with `font-variation-settings`. Every property you _don't explicitly set_ will automatically be reset to its default. Previously set values aren't inherited! This means the following will not work as expected:
 
 ```html
 <span class="slanted grade-light">
@@ -416,7 +419,7 @@ However, here's a little gotcha. Every property you don't set through `font-vari
 
 First the browser will apply `font-variation-settings: 'slnt' 10` from the `.slanted` class. Then it will apply `font-variation-settings: 'GRAD' -1` from the `.grade-light` class. But this will reset the `slnt` back to its default of 0! The result will be text in a light grade, but not slanted.
 
-We can work around this by using CSS variables:
+Luckily, we can work around this by using CSS variables:
 
 ```css
 /* Set the default values */
@@ -451,7 +454,9 @@ We can work around this by using CSS variables:
 }
 ```
 
-Animating CSS variables doesn't work (by design), so something like this doesn't work:
+CSS variables will cascade, so if an element (or one of its parents) will have set the `slnt` to `10`, it will keep that value, even if you set `GRAD` to something else. See [this post](https://pixelambacht.nl/2019/fixing-variable-font-inheritance/) for an in-depth explanation of this technique.
+
+Note that animating CSS variables doesn't work (by design), so something like this doesn't work:
 
 ```css
 @keyframes width-animation {
@@ -460,14 +465,14 @@ Animating CSS variables doesn't work (by design), so something like this doesn't
 }
 ```
 
-So animations will have to happen directly on `font-variation-settings`.
+For animations will have to happen directly on `font-variation-settings`.
 
 ## Performance Gains
 
 OpenType variable fonts allow us to store multiple variations of a type
 family into a single font file.
 [Monotype](https://medium.com/@monotype/part-2-from-truetype-gx-to-variable-fonts-4c28b16997c3) ran an experiment by combining 12 input fonts to generate eight weights, across three widths, across both the Italic and Roman styles.
-Storing 48 individual fonts in a single variable font file meant a **88% reduction in file size**.
+Storing 48 individual fonts in a single variable font file meant a _88% reduction in file size_.
 
 On the flip side, if you are animating the font between settings, this may cause the browser performance issues. Learn more about this on [Surma's Supercharged](https://www.youtube.com/watch?v=B42rUMdcB7c).
 
@@ -504,12 +509,12 @@ body {
 /* Set up Roboto for modern browsers, all weights */
 @supports (font-variation-settings: normal) {
   @font-face {
-    font-family: Roboto;
-    src: url('RobotoFlex-VF.woff2');
+    font-family: 'Roboto';
+    src: url('RobotoFlex-VF.woff2') format('woff2 supports variations'),
+         url('RobotoFlex-VF.woff2') format('woff2-variations');
     font-weight: 100 1000;
+    font-stretch: 25% 151%;
   }
-
-  <!-- TODO insert @import GF API here using weight 400..1000 --- although, in this case, isn't the supports stuff all taken care of and style selection algo means this isn't needed ? -->
 
   .super-bold {
 	font-weight: 1000;
@@ -519,7 +524,13 @@ body {
 
 For older browsers, text with the class `.super-bold` will get rendered in the normal bold, as that's the only bold font we have available. When variable fonts are supported, we can actually use the heaviest weight of 1000.
 
+If you are using the Google Fonts API, it will take care of loading the proper fonts for your visitor's browsers. Say you request the font Oswald in weight range 200 to 700, like so:
 
+```html
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+```
+
+Modern browsers that can handle variable fonts will get the variable font, and will have every weight between 200 and 700 available. Older browsers will get served individual static fonts for every weight. In this case, this means they'll download 6 font files: one for weight 200, one for weight 300, and so on.
 
 ## Use Cases and Benefits
 
