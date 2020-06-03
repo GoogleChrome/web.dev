@@ -147,8 +147,8 @@ In some cases, your application might provide resources which are meant to be lo
  - Public resources (e.g. images, styles, etc.) - Any public and unauthenticated resources that should be loadable cross-origin from other sites can be exempted as well.
 
 ```python
-  if req.path in ('/my_CORS_endpoint', '/favicon.png'):
-    return True
+if req.path in ('/my_CORS_endpoint', '/favicon.png'):
+  return True
 ```
 {% Aside 'caution' %}
 Before opting out parts of your application from these security restrictions, make sure they are static and don't contain any sensitive user information.
