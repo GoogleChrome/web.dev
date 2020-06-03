@@ -116,8 +116,8 @@ Any requests that do not originate from a cross-origin context (like `evil.examp
  -  Are explicitly caused by a user's interaction with the user agent (e.g. direct navigation or by clicking a bookmark, etc.).
 
 ```python
-  if req['sec-fetch-site'] in ('same-origin', 'same-site', 'none'):
-    return True  # Allow this request
+if req['sec-fetch-site'] in ('same-origin', 'same-site', 'none'):
+  return True  # Allow this request
 ```
 
 {% Aside 'gotchas' %}
