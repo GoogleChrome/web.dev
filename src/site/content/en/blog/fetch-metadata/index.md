@@ -33,7 +33,7 @@ See [Browser compatibility](https://developer.mozilla.org/docs/Web/HTTP/Headers/
 Many cross-site attacks are possible because the web is open by default and your application server cannot easily protect itself from communication originating from external applications. 
 A typical cross-origin attack is cross-site request forgery (CSRF) where an attacker lures a user onto a site they control and then submits a form to the server the user is logged in to. Since the server cannot tell if the request originated from another domain (cross-site) and the browser automatically attaches cookies to cross-site requests, the server will execute the action requested by the attacker on behalf of the user.
 
-Other cross-site attacks like cross-site script inclusion (XSSI) or cross-origin information leaks are similar in nature to CSRF and rely on loading resources from a victim application in an attacker-controlled document and leaking information about them. Since applications cannot easily distinguish trusted requests from untrusted ones, they cannot discard malicious cross-site traffic.
+Other cross-site attacks like cross-site script inclusion (XSSI) or cross-origin information leaks are similar in nature to CSRF and rely on loading resources from a victim application in an attacker-controlled document and leaking information about the victim applications. Since applications cannot easily distinguish trusted requests from untrusted ones, they cannot discard malicious cross-site traffic.
 
 {% Aside 'gotchas' %}
 Apart from attacks on resources as described above, *window references* can also lead to cross-origin information leaks and Spectre attacks. You can prevent them by setting the `Cross-Origin-Opener-Policy` response header to `same-origin`.
