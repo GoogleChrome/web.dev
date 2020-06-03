@@ -77,7 +77,7 @@ The goals of a structural review are to ensure that:
 A structural review is usually conducted by a technical writer but it can theoretically
 be conducted by anyone who is considered an excellent writer.
 
-
+Product managers usually have strong opinions about narrative, presentation, etc.
 
 #### Legal reviews {: #legal }
 
