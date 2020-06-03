@@ -1,4 +1,5 @@
 @import '../settings/colors';
+@import '../settings/dimensions';
 @import '../settings/global';
 @import '../tools/breakpoints';
 @import '../tools/mixins';
@@ -20,7 +21,7 @@ web-header {
   contain: layout;
   display: flex;
   font-size: 14px;
-  height: $TOPNAV_HEIGHT;
+  height: $WEB_HEADER_HEIGHT;
   padding: 0 24px;
   position: fixed;
   top: 0;

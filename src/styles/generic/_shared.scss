@@ -1,5 +1,4 @@
 @import '../settings/colors';
-@import '../settings/global';
 @import '../settings/dimensions';
 
 // =============================================================================
@@ -25,11 +24,6 @@
 // Used when forcing focus cursor at a particular location on the page.
 .w-force-focus {
   outline: none !important;
-}
-
-// https://css-tricks.com/fixed-headers-on-page-links-and-overlapping-content-oh-my/
-html {
-  scroll-padding-top: calc(#{$TOPNAV_HEIGHT} + 24px);
 }
 
 // This will hide the focus indicator if the element receives focus via the
@@ -69,13 +63,11 @@ var {
   hyphens: none;
 }
 
-// Ensures deep linking to headers has enough space to account for the
-// top navigation so they don't overlap.
 *:not([href])[id]::before {
   content: ' ';
   display: block;
-  height: $WEB_HEADER_HEIGHT;
-  margin-top: -$WEB_HEADER_HEIGHT;
+  height: calc(#{$WEB_HEADER_HEIGHT} + 1.5rem);
+  margin-top: calc(-#{$WEB_HEADER_HEIGHT} - 1.5rem);
   pointer-events: none;
   visibility: hidden;
 }
