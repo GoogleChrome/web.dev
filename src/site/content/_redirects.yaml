@@ -197,5 +197,11 @@ redirects:
   to: /web-otp
 
 # Redirect /payments content
+
 - from: /android-payment-app-developers-guide
   to: /android-payment-apps-overview
+
+# Redirect for misconfigured Lighthouse report
+
+- from: /image-size-responsive
+  to: /image-aspect-ratio
