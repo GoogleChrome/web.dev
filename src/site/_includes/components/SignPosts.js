@@ -29,7 +29,7 @@ module.exports = ({postToCollections, url}) => {
         >
       `;
     })
-    .join(html` <span class="w-post-signpost__divider">|</span> `);
+    .join(html`<span class="w-post-signpost__divider">|</span>`);
 
   return collections.length === 0
     ? ''

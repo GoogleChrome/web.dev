@@ -30,7 +30,7 @@ function renderPreview(contentArr) {
 
   const preview = contentArr.join('\n');
 
-  return html` <p class="w-details__preview">${md.renderInline(preview)}</p> `;
+  return html`<p class="w-details__preview">${md.renderInline(preview)}</p>`;
 }
 
 module.exports = (content, headingLevel = 'h2') => {

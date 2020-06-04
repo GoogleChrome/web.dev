@@ -93,7 +93,7 @@ class EventTime extends BaseElement {
 
   render() {
     if (!this._date) {
-      return html` <!-- Invalid time "${this.datetime || ''}" --> `;
+      return html`<!-- Invalid time "${this.datetime || ''}" -->`;
     }
 
     const format = (d, options) => {

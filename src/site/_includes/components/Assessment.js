@@ -63,7 +63,7 @@ function contentTemplate(assessment) {
 // and passing the response components to the response template.
 function questionTemplate(question, assessment) {
   const stimulus = question.stimulus
-    ? html` <div data-role="stimulus">${mdBlock(question.stimulus)}</div> `
+    ? html`<div data-role="stimulus">${mdBlock(question.stimulus)}</div>`
     : '';
 
   const height = assessment.height

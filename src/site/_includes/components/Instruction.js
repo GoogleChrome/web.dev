@@ -101,15 +101,15 @@ module.exports = (type, listStyle = 'ul') => {
       break;
 
     case 'disable-cache':
-      instruction = html` ${bullet}Select the **Disable cache** checkbox. `;
+      instruction = html`${bullet}Select the **Disable cache** checkbox.`;
       break;
 
     case 'reload-app':
-      instruction = html` ${bullet}Reload the app. `;
+      instruction = html`${bullet}Reload the app.`;
       break;
 
     case 'reload-page':
-      instruction = html` ${bullet}Reload the page. `;
+      instruction = html`${bullet}Reload the page.`;
       break;
 
     case 'start-profiling':
@@ -140,7 +140,7 @@ module.exports = (type, listStyle = 'ul') => {
     case 'devtools-application':
     case 'devtools-security':
     case 'devtools-audits':
-      instruction = html` ${shared.devtools} `;
+      instruction = html`${shared.devtools}`;
       substitution = type.substring('devtools-'.length);
       if (substitution) {
         // prettier-ignore
