@@ -18,12 +18,12 @@
 const {assert} = require('../../assert');
 require('../../../../../../src/lib/components/LighthouseGauge/index');
 
-describe('LighthouseGauge', () => {
-  before(async () => {
+describe('LighthouseGauge', function () {
+  before(async function () {
     await customElements.whenDefined('web-lighthouse-gauge');
   });
 
-  it('should reflect its score property to aria-valuenow', async () => {
+  it('should reflect its score property to aria-valuenow', async function () {
     const gauge = document.createElement('web-lighthouse-gauge');
     document.body.append(gauge);
     try {

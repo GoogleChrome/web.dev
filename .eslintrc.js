@@ -44,4 +44,13 @@ module.exports = {
     quotes: ['error', 'single', {allowTemplateLiterals: true}],
     'require-jsdoc': 0,
   },
+  overrides: [
+    {
+      files: ['test/**/*.js'],
+      env: {mocha: true},
+      rules: {
+        'prefer-arrow-callback': 0,
+      },
+    },
+  ],
 };

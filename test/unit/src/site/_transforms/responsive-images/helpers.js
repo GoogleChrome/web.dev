@@ -4,8 +4,8 @@ const {
   determineImagePath,
 } = require('../../../../../../src/site/_transforms/responsive-images/helpers');
 
-describe('determineImagePath', () => {
-  it('returns the original src if src contains a protocol', () => {
+describe('determineImagePath', function () {
+  it('returns the original src if src contains a protocol', function () {
     let src = 'https://example.com/foo.jpg';
     let outputPath = 'dist/en/add-manifest/index.html';
     let actual = determineImagePath(src, outputPath);
@@ -17,7 +17,7 @@ describe('determineImagePath', () => {
     assert.deepStrictEqual(actual, {src, isLocal: false});
   });
 
-  it('returns an image CDN src if src is absolute', () => {
+  it('returns an image CDN src if src is absolute', function () {
     const src = '/images/foo.jpg';
     const outputPath = 'dist/en/add-manifest/index.html';
     const actual = determineImagePath(src, outputPath);
@@ -28,7 +28,7 @@ describe('determineImagePath', () => {
     });
   });
 
-  it('returns an image CDN src if src is relative', () => {
+  it('returns an image CDN src if src is relative', function () {
     let src = './foo.jpg';
     let outputPath = 'dist/en/add-manifest/index.html';
     let actual = determineImagePath(src, outputPath);
@@ -48,7 +48,7 @@ describe('determineImagePath', () => {
     });
   });
 
-  it('returns the correct src for nested urls', () => {
+  it('returns the correct src for nested urls', function () {
     // The handbook section of the site is the only place where we nest urls.
     // e.g. web.dev/handbook/audience.
     const src = './foo.jpg';
@@ -61,7 +61,7 @@ describe('determineImagePath', () => {
     });
   });
 
-  it('returns the correct src for pages without an outputPath', () => {
+  it('returns the correct src for pages without an outputPath', function () {
     // If a page has permalink: false, then it will not have an outputPath
     // but will still run through the transform and could throw if we don't
     // handle it correctly.

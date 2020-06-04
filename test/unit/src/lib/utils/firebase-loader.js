@@ -4,9 +4,9 @@ const loadFirebase = require('../../../../../src/lib/utils/firebase-loader');
 // TODO(samthor): This test doesn't clear the internal cache between tests, as
 // it uses a singleton loading cache. Add a reset for test method.
 
-describe('firebase-loader', () => {
-  describe('loader', () => {
-    it('should return a Promise', async () => {
+describe('firebase-loader', function () {
+  describe('loader', function () {
+    it('should return a Promise', async function () {
       const p = loadFirebase();
       assert(p instanceof Promise);
       await p; // doesn't do anything, nothing requested
@@ -17,7 +17,7 @@ describe('firebase-loader', () => {
       assert(node === null, 'no firebase loads requested');
     });
 
-    it('should add script tags after invocation', () => {
+    it('should add script tags after invocation', function () {
       loadFirebase('app', 'performance', 'app');
       let nodes = [];
       try {

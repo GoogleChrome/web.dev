@@ -11,8 +11,8 @@ const outputPath = path.join(
   'index.html',
 );
 
-describe('posts-with-lighthouse', () => {
-  it('does not include drafts', async () => {
+describe('posts-with-lighthouse', function () {
+  it('does not include drafts', async function () {
     const expected = '<p>test-4</p>';
     const actual = fs.readFileSync(outputPath, 'utf8');
     assert.equal(actual, expected);

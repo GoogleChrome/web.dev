@@ -8,22 +8,22 @@ const {
   writePartial,
 } = require('../../../../../../src/site/_transforms/service-worker-partials');
 
-describe('service-worker-partials', () => {
+describe('service-worker-partials', function () {
   let $;
 
-  beforeEach(() => {
+  beforeEach(function () {
     const fixture =
       '<html lang="en"><head><title>Test title</title><link rel="alternate" href="/feed.xml" type="application/atom+xml" data-title="web.dev feed"></head><body><div id="content"><div class="guide-landing-page"><div>Hello</div></div><div>Bonus sibling</div></div></body></html>';
     $ = cheerio.load(fixture);
   });
 
-  afterEach(async () => {
+  afterEach(async function () {
     $ = null;
     await fs.rmdir(path.join('.', '.tmp'), {recursive: true});
   });
 
-  describe('serviceWorkerPartials', () => {
-    it('converts a string of html to a partial and writes it to disk', async () => {
+  describe('serviceWorkerPartials', function () {
+    it('converts a string of html to a partial and writes it to disk', async function () {
       const expected = {
         raw: $('#content').html(),
         lang: $('html').attr('lang'),
@@ -41,19 +41,19 @@ describe('service-worker-partials', () => {
       assert.deepStrictEqual(actual, expected);
     });
 
-    it('is a noop if outputPath does not end in index.html', async () => {
+    it('is a noop if outputPath does not end in index.html', async function () {
       const actual = await serviceWorkerPartials($.html(), '/foo/bar/baz.njk');
       assert.deepStrictEqual(actual, $.html());
     });
 
-    it(`is a noop if outputPath is false because page doesn't have a permalink`, async () => {
+    it(`is a noop if outputPath is false because page doesn't have a permalink`, async function () {
       const actual = await serviceWorkerPartials($.html(), false);
       assert.deepStrictEqual(actual, $.html());
     });
   });
 
-  describe('getPartial', () => {
-    it('returns a partial for index.html pages', () => {
+  describe('getPartial', function () {
+    it('returns a partial for index.html pages', function () {
       const actual = getPartial($.html());
       const expected = {
         raw: $('#content').html(),
@@ -65,7 +65,7 @@ describe('service-worker-partials', () => {
       assert.deepStrictEqual(actual, expected);
     });
 
-    it('sets offline to true when processing the offline page', () => {
+    it('sets offline to true when processing the offline page', function () {
       $('head').append('<meta name="offline" content="true">');
       const actual = getPartial($.html());
       const expected = {
@@ -79,8 +79,8 @@ describe('service-worker-partials', () => {
     });
   });
 
-  describe('writePartial', () => {
-    it('writes a partial to disk', async () => {
+  describe('writePartial', function () {
+    it('writes a partial to disk', async function () {
       const expected = {
         raw: $('#content').html(),
         lang: $('html').attr('lang'),

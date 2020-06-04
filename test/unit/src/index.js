@@ -1,3 +1,3 @@
-describe('src', () => {
+describe('src', function () {
   require('./site');
 });
