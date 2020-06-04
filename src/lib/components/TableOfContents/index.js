@@ -15,7 +15,6 @@
  */
 
 import {BaseElement} from '../BaseElement';
-import {debounce} from '../../utils/debounce';
 
 /**
  * Element that renders table of contents.
@@ -34,7 +33,7 @@ class TableOfContents extends BaseElement {
     super();
     this.close = this.close.bind(this);
     this.open = this.open.bind(this);
-    this.scrollSpy = debounce(this.scrollSpy.bind(this), 50);
+    this.scrollSpy = this.scrollSpy.bind(this);
   }
 
   connectedCallback() {
