@@ -41,7 +41,7 @@ Common errors include:
 - `Pattern should either be empty, start with "/" or "*"`
 - `Unknown directive`
 - `Invalid sitemap URL`
-- `"$" should only be used at the end of the pattern`
+- `$ should only be used at the end of the pattern`
 
 Lighthouse doesn't check that your `robots.txt` file is
 in the correct location. To function correctly, the file must be in the root of
@@ -91,14 +91,15 @@ published list. (For example, here's
 
 Use `*` to match all otherwise unmatched crawlers.
 
+{% Compare 'worse', 'Don\'t' %}
 ```text
 user-agent:
 disallow: /downloads/
 ```
-{% Compare 'worse', 'Don\'t' %}
 No user agent is defined.
 {% endCompare %}
 
+{% Compare 'better', 'Do' %}
 ```text
 user-agent: *
 disallow: /downloads/
@@ -106,7 +107,6 @@ disallow: /downloads/
 user-agent: magicsearchbot
 disallow: /uploads/
 ```
-{% Compare 'better', 'Do' %}
 A general user agent and a `magicsearchbot` user agent are defined.
 {% endCompare %}
 
@@ -117,6 +117,7 @@ crawlers use those sections to determine which directives to follow. Placing a
 directive _before_ the first user-agent name means that no crawlers will follow
 it.
 
+{% Compare 'worse', 'Don\'t' %}
 ```text
 # start of file
 disallow: /downloads/
@@ -124,16 +125,15 @@ disallow: /downloads/
 user-agent: magicsearchbot
 allow: /
 ```
-{% Compare 'worse', 'Don\'t' %}
 No search engine crawler will read the `disallow: /downloads` directive.
 {% endCompare %}
 
+{% Compare 'better', 'Do' %}
 ```text
 # start of file
 user-agent: *
 disallow: /downloads/
 ```
-{% Compare 'better', 'Do' %}
 All search engines are disallowed from crawling the `/downloads` folder.
 {% endCompare %}
 
@@ -152,16 +152,16 @@ changed.
 If you choose to submit a sitemap file in `robots.txt`, make sure to
 use an [absolute URL](https://tools.ietf.org/html/rfc3986#page-27).
 
+{% Compare 'worse', 'Don\'t' %}
 ```text
 sitemap: /sitemap-file.xml
 ```
-{% Compare 'worse', 'Don\'t' %}
 {% endCompare %}
 
+{% Compare 'better', 'Do' %}
 ```text
 sitemap: https://example.com/sitemap-file.xml
 ```
-{% Compare 'better', 'Do' %}
 {% endCompare %}
 
 ## Resources
