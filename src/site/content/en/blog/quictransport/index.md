@@ -5,11 +5,11 @@ authors:
   - jeffposnick
 description: QuicTransport is a new API offering low-latency, bi-directional, client-server messaging. Learn more about its use cases, and how to give feedback about the future of the implementation.
 date: 2020-06-03
-updated: 2020-06-03
+updated: 2020-06-04
 hero: hero.jpg
 hero_position: center
 alt: |
-  Blurry picture of traffic. Photo by Robin Pierre on Unsplash
+  Photo of fast-moving traffic.
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/-6744140441987317759
 tags:
@@ -28,15 +28,15 @@ tags:
 
 [QuicTransport](https://wicg.github.io/web-transport/#quic-transport) is a web API that uses the [QUIC](https://www.chromium.org/quic) protocol in a bidirectional, non-HTTP transport. It's intended for two-way communications between a web client and a QUIC server. It supports sending data both unreliably via its [datagram APIs](#datagram), and reliably via its [streams APIs](#stream).
 
-[Datagrams](https://tools.ietf.org/html/draft-ietf-quic-datagram-00) are ideal for sending and receiving data that do not need strong delivery guarantees. Individual packets of data are limited in size by the [maximum transmission unit (MTU)](https://en.wikipedia.org/wiki/Maximum_transmission_unit) of the underlying connection, and may or may not be transmitted successfully, and if they are transferred, they may arrive in an arbitrary order. These characteristics make the datagram APIs ideal for low-latency, best-effort data transmission. You can think of datagrams as [user datagram protocol (UDP)](https://en.wikipedia.org/wiki/User_Datagram_Protocol), but encrypted and congestion-controlled.
+[Datagrams](https://tools.ietf.org/html/draft-ietf-quic-datagram-00) are ideal for sending and receiving data that do not need strong delivery guarantees. Individual packets of data are limited in size by the [maximum transmission unit (MTU)](https://en.wikipedia.org/wiki/Maximum_transmission_unit) of the underlying connection, and may or may not be transmitted successfully, and if they are transferred, they may arrive in an arbitrary order. These characteristics make the datagram APIs ideal for low-latency, best-effort data transmission. You can think of datagrams as [user datagram protocol (UDP)](https://en.wikipedia.org/wiki/User_Datagram_Protocol) messages, but encrypted and congestion-controlled.
 
-The streams APIs, in contrast, provide reliable, ordered data transfer. They're [well-suited](https://quicwg.org/base-drafts/draft-ietf-quic-transport.html#name-streams) to scenarios where you need to send or receive one or more streams of ordered data. Using multiple QUIC streams is analogous to establishing multiple [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol) connections, but QUIC streams are lightweight, and can be opened and closed without much overhead.
+The streams APIs, in contrast, provide [reliable](https://en.wikipedia.org/wiki/Reliability_(computer_networking)), ordered data transfer. They're [well-suited](https://quicwg.org/base-drafts/draft-ietf-quic-transport.html#name-streams) to scenarios where you need to send or receive one or more streams of ordered data. Using multiple QUIC streams is analogous to establishing multiple [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol) connections, but QUIC streams are lightweight, and can be opened and closed without much overhead.
 
 ### What's WebTransport?
 
 QuicTransport is one part of the larger [WebTransport proposal](https://wicg.github.io/web-transport/). WebTransport is a collection of APIs for sending and receiving data between a web client and a server. QuicTransport is the interface for using the QUIC protocol in the context of bi-directional WebTransport communications.
 
-Chrome is implementing the QuicTransport portion of WebTransport first, before any of the other proposed interfaces. The Chrome team decided to start with a QuicTransport after speaking to web developers about their use cases, and we hope to solicit early feedback on the overall WebTransport effort based on developers' experiences with QuicTransport.
+Chrome is implementing the QuicTransport portion of WebTransport first, before any of the other proposed interfaces. The Chrome team made the decision to start with a QuicTransport after speaking to web developers about their use cases, and we hope to solicit early feedback on the overall WebTransport effort based on developers' experiences with QuicTransport.
 
 ### Use cases
 
@@ -98,7 +98,7 @@ The best way to experiment with QuicTransport is to use [this Python code](https
 
 ## Using the API
 
-QuicTransport was designed on top of modern web platform primitives, like the [Streams API](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API). It relies heavily on [promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises), and works well with <code>[async and await](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await)</code>.
+QuicTransport was designed on top of modern web platform primitives, like the [Streams API](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API). It relies heavily on [promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises), and works well with [<code>async</code> and <code>await</code>](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await).
 
 The QuicTransport [origin trial](#register-for-ot) supports three distinct types of traffic: datagrams, as well as both unidirectional and bidirectional streams.
 
@@ -172,7 +172,7 @@ Each chunk of all streams is a `Uint8Array`. Unlike with the Datagram APIs, thes
 
 A <code>[SendStream](https://wicg.github.io/web-transport/#sendstream)</code> is created by the web client using <code>createSendStream()</code>, which returns a promise for the <code>SendStream</code>.
 
-Use the <code>[close()](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/close)</code> method of the <code>[WritableStreamDefaultWriter](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter)</code> instance associated with the stream to send a [QUIC Stream FIN bit](https://tools.ietf.org/html/draft-ietf-quic-transport-27#section-19.8) to the server. The browser tries to send all pending data before actually closing the associated QUIC stream.
+Use the <code>[close()](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/close)</code> method of the <code>[WritableStreamDefaultWriter](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter)</code> associated with the stream to send a [QUIC Stream FIN bit](https://tools.ietf.org/html/draft-ietf-quic-transport-27#section-19.8) to the server. The browser tries to send all pending data before actually closing the associated QUIC stream.
 
 ```js
 // Send two Uint8Arrays to the server.
@@ -190,7 +190,7 @@ try {
 }
 ```
 
-Similarly, use the <code>[abort()](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/abort)</code> method of the <code>[WritableStreamDefaultWriter](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter)</code> instance to send a [QUIC RESET\_STREAM](https://tools.ietf.org/html/draft-ietf-quic-transport-27#section-19.4) to the server. When calling <code>abort()</code>, the browser may discard any pending data that hasn't yet been sent.
+Similarly, use the <code>[abort()](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/abort)</code> method of the <code>[WritableStreamDefaultWriter](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter)</code> to send a [QUIC RESET\_STREAM](https://tools.ietf.org/html/draft-ietf-quic-transport-27#section-19.4) to the server. When using <code>abort()</code>, the browser may discard any pending data that hasn't yet been sent.
 
 ```js
 const ws = await transport.createSendStream();
@@ -275,7 +275,7 @@ A `BidirectionalStream` is just a combination of a `SendStream` and `ReceiveStre
 
 ### More examples
 
-The [WebTransport draft specification](https://wicg.github.io/web-transport/#quic-transport) includes a number of additional examples, along with full documentation for all of the methods and properties.
+The [WebTransport draft specification](https://wicg.github.io/web-transport/#quic-transport) includes a number of additional inline examples, along with full documentation for all of the methods and properties.
 
 ## Enabling support during the origin trial {: #register-for-ot }
 
@@ -310,7 +310,7 @@ File a bug at [https://new.crbug.com](https://new.crbug.com). Include as much de
 
 Your public support helps Chrome prioritize features, and shows other browser vendors how critical it is to support them.
 
-- Be sure to sign up for the [origin trial](https://developers.chrome.com/origintrials/#/view_trial/-6744140441987317759) to show your interest and provide your domain and contact info.
+- Be sure you have signed up for the [origin trial](https://developers.chrome.com/origintrials/#/view_trial/-6744140441987317759) to show your interest and provide your domain and contact info.
 - Send a Tweet to [@ChromiumDev](https://twitter.com/chromiumdev) with `#QuicTransport` and details on where and how you're using it.
 
 ### General discussion
