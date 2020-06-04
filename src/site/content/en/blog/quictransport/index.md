@@ -36,7 +36,7 @@ The streams APIs, in contrast, provide [reliable](https://en.wikipedia.org/wiki/
 
 QuicTransport is one part of the larger [WebTransport proposal](https://wicg.github.io/web-transport/). WebTransport is a collection of APIs for sending and receiving data between a web client and a server. QuicTransport is the interface for using the QUIC protocol in the context of bi-directional WebTransport communications.
 
-Chrome is implementing the QuicTransport portion of WebTransport first, before any of the other proposed interfaces. The Chrome team made the decision to start with a QuicTransport after speaking to web developers about their use cases, and we hope to solicit early feedback on the overall WebTransport effort based on developers' experiences with QuicTransport.
+Chrome is implementing the QuicTransport portion of WebTransport first, before any of the other proposed interfaces. The Chrome team made the decision to start with a QuicTransport after speaking to web developers about their use cases. We hope to solicit early feedback on the overall WebTransport effort based on developers' experiences with QuicTransport.
 
 ### Use cases
 
