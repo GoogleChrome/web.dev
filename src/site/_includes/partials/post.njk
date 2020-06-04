@@ -110,20 +110,13 @@
     {# Find next blog post #}
     {% ArticleNavigation {
       back: '/blog',
-      backLabel: 'Return to all articles',
-      collection: collections.blogPosts,
-      slug: page.fileSlug,
-      lang: lang
+      backLabel: 'Return to all articles'
     } %}
   {% else %}
     {# Find next item in this learning path #}
     {% ArticleNavigation {
       back: '/' + path.slug,
-      backLabel: 'Return to all articles',
-      path: path,
-      collection: collections[path.slug],
-      slug: page.fileSlug,
-      lang: lang
+      backLabel: 'Return to all articles'
     } %}
   {% endif %}
 </div>
