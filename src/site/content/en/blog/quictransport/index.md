@@ -275,7 +275,7 @@ A `BidirectionalStream` is just a combination of a `SendStream` and `ReceiveStre
 
 ### More examples
 
-The [WebTransport draft specification](https://wicg.github.io/web-transport/#quic-transport) includes a number of additional inline examples, along with full documentation for all of the methods and properties.
+The [WebTransport draft specification](https://wicg.github.io/web-transport/#quic-transport) includes a number of additional examples, along with full documentation for all of the methods and properties.
 
 ## Enabling support during the origin trial {: #register-for-ot }
 
