@@ -7,7 +7,7 @@ description: |
 web_lighthouse:
   - no-vulnerable-libraries
 date: 2019-05-02
-updated: 2019-08-28
+updated: 2020-06-04
 ---
 
 Intruders have automated web crawlers that can scan your site
@@ -41,8 +41,8 @@ upgrade to that version.
 If the library hasn't released a new version or is no longer maintained,
 consider using a different library.
 
-See [snyk's Vulnerability DB](https://snyk.io/vuln?packageManager=all)
-to learn more about each library's vulnerability.
+Click the links in the **Library Version** column of your report to learn more about
+each library's vulnerabilities.
 
 ## Resources
 
