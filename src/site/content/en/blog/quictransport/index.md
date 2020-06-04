@@ -172,7 +172,7 @@ Each chunk of all streams is a `Uint8Array`. Unlike with the Datagram APIs, thes
 
 A <code>[SendStream](https://wicg.github.io/web-transport/#sendstream)</code> is created by the web client using <code>createSendStream()</code>, which returns a promise for the <code>SendStream</code>.
 
-Use the <code>[close()](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/close)</code> method of the <code>[WritableStreamDefaultWriter](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter)</code> associated with the stream to send a [QUIC Stream FIN bit](https://tools.ietf.org/html/draft-ietf-quic-transport-27#section-19.8) to the server. The browser tries to send all pending data before actually closing the associated QUIC stream.
+Use the <code>[close()](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/close)</code> method of the <code>[WritableStreamDefaultWriter](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter)</code> instance associated with the stream to send a [QUIC Stream FIN bit](https://tools.ietf.org/html/draft-ietf-quic-transport-27#section-19.8) to the server. The browser tries to send all pending data before actually closing the associated QUIC stream.
 
 ```js
 // Send two Uint8Arrays to the server.
