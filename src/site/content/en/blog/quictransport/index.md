@@ -190,7 +190,7 @@ try {
 }
 ```
 
-Similarly, use the <code>[abort()](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/abort)</code> method of the <code>[WritableStreamDefaultWriter](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter)</code> to send a [QUIC RESET\_STREAM](https://tools.ietf.org/html/draft-ietf-quic-transport-27#section-19.4) to the server. When using <code>abort()</code>, the browser may discard any pending data that hasn't yet been sent.
+Similarly, use the <code>[abort()](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/abort)</code> method of the <code>[WritableStreamDefaultWriter](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter)</code> instance to send a [QUIC RESET\_STREAM](https://tools.ietf.org/html/draft-ietf-quic-transport-27#section-19.4) to the server. When calling <code>abort()</code>, the browser may discard any pending data that hasn't yet been sent.
 
 ```js
 const ws = await transport.createSendStream();
