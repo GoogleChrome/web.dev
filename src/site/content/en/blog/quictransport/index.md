@@ -310,7 +310,7 @@ File a bug at [https://new.crbug.com](https://new.crbug.com). Include as much de
 
 Your public support helps Chrome prioritize features, and shows other browser vendors how critical it is to support them.
 
-- Be sure you have signed up for the [origin trial](https://developers.chrome.com/origintrials/#/view_trial/-6744140441987317759) to show your interest and provide your domain and contact info.
+- Be sure to sign up for the [origin trial](https://developers.chrome.com/origintrials/#/view_trial/-6744140441987317759) to show your interest and provide your domain and contact info.
 - Send a Tweet to [@ChromiumDev](https://twitter.com/chromiumdev) with `#QuicTransport` and details on where and how you're using it.
 
 ### General discussion
