@@ -1,5 +1,3 @@
-import {BaseElement} from '../../lib/components/BaseElement';
-
 /**
  * Generates a random string that can be used to ensure uniqueness of
  * the elements id on a page.
@@ -10,6 +8,6 @@ import {BaseElement} from '../../lib/components/BaseElement';
 export const generateIdSalt = (idPrefix) => {
   const salt = Math.random().toString(36).substr(2, 9);
   return document.getElementById(idPrefix + salt)
-    ? BaseElement.generateIdSalt(idPrefix)
+    ? generateIdSalt(idPrefix)
     : salt;
 };
