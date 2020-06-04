@@ -108,7 +108,7 @@ dependency imports and exports.
 ## Enter module workers
 
 A new mode for web workers with the ergonomics and performance benefits of [JavaScript
-modules](https://v8.dev/feature/modules) is shipping in Chrome 80, called module workers. The
+modules](https://v8.dev/features/modules) is shipping in Chrome 80, called module workers. The
 `Worker` constructor now accepts a new `{type:"module"}` option, which changes script loading and
 execution to match `<script type="module">`.
 
@@ -127,7 +127,7 @@ parallel. Module loading also caches parsed code, which means modules that are u
 thread and in a worker only need to be parsed once.
 
 Moving to JavaScript modules also enables the use of [dynamic
-import](https://v8.dev/feature/dynamic-import) for lazy-loading code without blocking execution of
+import](https://v8.dev/features/dynamic-import) for lazy-loading code without blocking execution of
 the worker. Dynamic import is much more explicit than using `importScripts()` to load dependencies,
 since the imported module's exports are returned rather than relying on global variables.
 

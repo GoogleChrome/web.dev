@@ -38,7 +38,7 @@ audit or category result.
 
 Lighthouse CI supports [Travis CI](https://travis-ci.com/), [Circle
 CI](https://circleci.com/), and [GitHub
-Actions](https://github.com/feature/actions) out-of-the-box and any Ubuntu or
+Actions](https://github.com/features/actions) out-of-the-box and any Ubuntu or
 container-based CI service with some configuration. You can install the
 Lighthouse CI server on-premise or use a [docker image for instant
 setup](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/recipes/docker-server/README.md).
