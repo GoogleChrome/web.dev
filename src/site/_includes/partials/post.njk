@@ -16,14 +16,9 @@
     } %}
   {% endif %}
 
-  <div class="w-toc">
-    <div class="w-toc__label">
-      <span>In this article</span>
-      <span class="w-toc__label-spacer"></span>
-      <label for="w-toc__open-state" class="w-button w-button--secondary w-button--icon" data-icon="close" aria-label="Close table of contents"></label>
-    </div>
+  <web-table-of-contents title="{{ title | md | safe }}" title-id="{{ title | md | safe | slugify }}">
     {{ content | toc | safe }}
-  </div>
+  </web-table-of-contents>
 
   {# Make sure Actions are first in the tab order. #}
   <div class="w-actions">
@@ -44,6 +39,7 @@
   <div class="w-toc__button-wrapper">
     <label for="w-toc__open-state" class="w-toc__button w-button w-button--secondary w-button--icon" data-icon="list_alt" aria-label="Toggle table of contents"></label>
   </div>
+
   <div class="w-layout-container--narrow w-post-content">
     <header class="w-article-header">
       {% if 'blog' in tags %}
@@ -52,7 +48,7 @@
         </div>
       {% endif %}
 
-      <h1 class="w-article-header__headline">{{ title | md | safe }}</h1>
+      <h1 id="{{ title | md | safe | slugify }}" class="w-article-header__headline">{{ title | md | safe }}</h1>
       {% if subhead %}
         <p class="w-article-header__subhead w-mb--non">
           {{ subhead | md | safe }}

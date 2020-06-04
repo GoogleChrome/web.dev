@@ -9,6 +9,7 @@ import '../components/Assessment';
 import '../components/ResponseMultipleChoice';
 import '../components/ResponseThinkAndCheck';
 import '../components/SelectGroup';
+import '../components/TableOfContents';
 import '../components/Tabs';
 import '../components/CopyCode';
 import '../components/Feedback';
