@@ -45,6 +45,7 @@ web-table-of-contents {
   border-bottom: 1px solid $BORDER_COLOR;
   border-top: 1px solid $BORDER_COLOR;
   display: none;
+  overflow: scroll;
   padding: 24px;
   position: sticky;
   top: 63px;
