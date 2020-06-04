@@ -1,10 +1,5 @@
 module.exports = {
-  plugins: ['prettier'],
-  extends: [
-    'eslint-config-prettier', // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier.
-    'google', // Uses google style guide for js.
-    'plugin:prettier/recommended', // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
-  ],
+  extends: ['./node_modules/gts/.eslintrc.json'],
   env: {
     es6: true,
     node: true,
@@ -29,5 +24,6 @@ module.exports = {
     ],
     'new-cap': 0,
     'require-jsdoc': 0,
+    'node/no-unpublished-require': 0,
   },
 };
