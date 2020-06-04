@@ -187,7 +187,7 @@ export const setUserAcceptsCookies = store.action(() => {
 
 function getCanonicalPath(path) {
   const parts = path.split('/');
-  if (lang.isValidLanguage(parts[1])) {
+  if (parts[1] && lang.isValidLanguage(parts[1])) {
     parts.splice(1, 1);
   }
   return parts.join('/');

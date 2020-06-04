@@ -1,6 +1,7 @@
 /**
  * @fileoverview Tools for language selection and validation.
  * TODO(devnook): Extract isSupportedLocale to a common format.
+ * @see https://github.com/GoogleChrome/web.dev/issues/3131
  */
 
 /**
@@ -9,7 +10,7 @@
  */
 const languageNames = {
   en: 'English',
-  pl: 'Polish',
+  // pl: 'Polish', TODO: Uncomment when PL language is prod-ready.
 };
 
 /**

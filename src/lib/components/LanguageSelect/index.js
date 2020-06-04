@@ -44,15 +44,19 @@ class LanguageSelect extends BaseStateElement {
   }
 
   renderOption(language) {
+    const languageName = lang.languageNames[language];
+    if (!languageName) {
+      return '';
+    }
     return this.userPreferredLanguage === language
       ? html`
           <option value="${language}" selected>
-            ${lang.languageNames[language]} (${language})
+            ${languageName.toUpperCase()} (${language})
           </option>
         `
       : html`
           <option value="${language}">
-            ${lang.languageNames[language]} (${language})
+            ${languageName.toUpperCase()} (${language})
           </option>
         `;
   }
