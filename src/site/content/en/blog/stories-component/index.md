@@ -21,14 +21,6 @@ In this post I want to share with you how I built a Stories component for
 the web that is mobile-focused, supports keyboard navigation, and works across
 browsers.
 
-<!--
-
-**Today's is mobile web focused and supports keyboard navigation.** We'll also
-be testing cross platform too, sharing the differences we end up with and why
-it's okay and awesome.  
-
--->
-
 <figure class="w-figure w-figure--fullbleed">
   <video playsinline controls autoplay loop muted class="w-screenshot">
     <!-- <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_wght.webm" type="video/webm"> -->
@@ -54,6 +46,16 @@ next story. By swiping right, a user skips ahead to a different friend's story.
 A Story component is fairly similar to a carousel, but allows navigating a
 multidimensional array as opposed to an array. It's as if there's a carousel inside
 each carousel. 🤯 
+
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" src="./carousel-of-carousels.png" 
+       alt="Visualized multi-dimensional array using cards. Left to right is a stack of purple borders cards, and inside each card is 1-many cyan bordered cards. List in a list.">
+  <figcaption class="w-figcaption">
+    <span style="width: 1rem; height: 1rem; background: #EB00FF; display: inline-block; border-radius: 3px; position: relative; top: .2em;"></span> 1st carousel of your friends array
+    <br><span style="width: 1rem; height: 1rem; background: #00D8FF; display: inline-block; border-radius: 3px; position: relative; top: .2em;"></span> 2nd "stacked" carousel for the stories array of a friend
+    <br>👍 List in a list, a multi-dimensional array
+  </figcaption>
+</figure>
 
 ## Picking the right tools for the job {: #features }
 
@@ -96,13 +98,9 @@ better visualization.
 
 Let's breakdown that `grid` value:
 
-* `1fr` lays out the row, and `auto-flow 100vw` lays out the column
-* [`1fr`](https://alligator.io/css/css-grid-layout-fr-unit/) is
-  technically "1 part of the available space" but in this case you can
-  think of it as filling the height 
-* The placement of `auto-flow` after the `/` is shorthand for 
-  [`grid-auto-flow: column`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow)
-* `100vw` sets the column to the full width of the device
+* [`1fr`](https://alligator.io/css/css-grid-layout-fr-unit/) specifies a full height row 
+* `/` separates our row and column templates
+* `auto-flow 100vw` lays out the columns as `auto-columns` set to the full viewport width [`grid-auto-flow: column`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow)
 
 {% Aside %}
   Note that the location of the `/` separator relative to `auto-flow` is important.
@@ -159,23 +157,15 @@ you had to use JavaScript, and it was… tricky, to say the least. Check out
 [Introducing CSS Scroll Snap Points](https://css-tricks.com/introducing-css-scroll-snap-points/)
 by Sarah Drasner for a great breakdown of how to use them.
 
-<!-- TODO(kayce): Not sure what this one means.
-- **Free native inertia** <br>every platform will get native swiping through
-  friends
--->
-
-<!-- TODO(kayce): I think we should remove this video because we don't really explain
-     how Scroll Snap Points work. We just assume that readers already know. If we keep
-     this video we need to provide more context around it.
-
 <figure class="w-figure">
   <video playsinline controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_wght.webm" type="video/webm">
+    <!-- <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_wght.webm" type="video/webm"> -->
     <source src="https://storage.googleapis.com/web-dev-assets/gui-challenges/scroll-snap-example.mp4">
   </video>
+  <figcaption class="w-figcaption">
+    Shows horizontal scrolling without and with `scroll-snap-points` styles. Without it, users can free scroll as normal. With it, browser rests gently on each item.
+  </figcaption>
 </figure>
-
--->
 
 <div class="w-columns">
 {% Compare 'better', 'parent' %}
@@ -221,6 +211,7 @@ I chose Scroll Snap Points for a few reasons:
   here on out.
 * **Ease of implementation**. Scroll Snap Points are practically built for the
   touch-centric horizontal-pagination use case.
+* **Free native inertia**. Every platform will swipe and scroll with 100% native feel
 
 ## Cross-browser compatibility {: #compatibility }
 
@@ -301,7 +292,7 @@ the [Community remixes](#community-remixes) section below.
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/hello-world?path=index.html&attributionHidden=true"
+    src="https://glitch.com/embed/#!/embed/gui-challenges-stories?path=app/index.html&attributionHidden=true"
     alt="TODO"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
