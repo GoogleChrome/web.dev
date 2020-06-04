@@ -88,7 +88,7 @@ Here's what this looks like when you run it in the browser's console:
 <img class="w-screenshot" src="./network_information_in_console.jpg" alt="Chrome DevTools console displaying the values of navigator.connection object's properties">
 
 The `effectiveType` values are also available via
-[Client Hints](https://www.chromestatus.com/features/5407907378102272)
+[Client Hints](https://www.chromestatus.com/feature/5407907378102272)
 and allow you to communicate the browser's connection type to servers.
 
 {% Aside %}

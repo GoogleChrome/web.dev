@@ -121,7 +121,7 @@ example above, 2G, Slow 2G, and offline are all 0%.
 
 Data Studio dashboards can be shared just like a Google Doc to provide access to
 your team or to make the dashboard publicly viewable by permalink. Needless to
-say, you don't have to own the site you are getting a dashboard for, so you can 
+say, you don't have to own the site you are getting a dashboard for, so you can
 easily use this tool to keep an eye on your competitors' sites.
 
 ![CrUX Data Studio embedding and sharing](./dash_embed.png)
@@ -147,5 +147,5 @@ drill down into segments like specific countries or form factors.
 
 ### Where can I learn more about Data Studio?
 
-Check out the [Data Studio features page](https://marketingplatform.google.com/about/data-studio/features/)
+Check out the [Data Studio features page](https://marketingplatform.google.com/about/data-studio/feature/)
 for more info.

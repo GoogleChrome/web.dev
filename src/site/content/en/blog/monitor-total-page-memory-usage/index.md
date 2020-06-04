@@ -349,7 +349,7 @@ improved the API.
 [math]: https://en.wikipedia.org/wiki/Exponential_distribution#Computational_methods
 [memory-leaks]: https://docs.google.com/presentation/d/14uV5jrJ0aPs0Hd0Ehu3JPV8IBGc3U8gU6daLAqj6NrM/edit#slide=id.p
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EPerformanceAPIs
-[numeric-separators]: https://v8.dev/features/numeric-separators
+[numeric-separators]: https://v8.dev/feature/numeric-separators
 [ot]: https://developers.chrome.com/origintrials/#/view_trial/1281274093986906113
 [poisson]: https://en.wikipedia.org/wiki/Poisson_point_process
 [security-error]: https://developer.mozilla.org/en-US/docs/Web/API/DOMException#exception-SecurityError

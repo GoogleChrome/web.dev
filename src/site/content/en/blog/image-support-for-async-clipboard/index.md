@@ -5,7 +5,7 @@ authors:
   - thomassteiner
 description: Chrome 76 adds expands the functionality of the Async Clipboard API to add support for png images. Copying and pasting images to the clipboard has never been easier.
 date: 2019-07-03
-updated: 2020-05-14
+updated: 2020-06-04
 tags:
   - blog
   - capabilities
@@ -290,7 +290,7 @@ Happy copying and pasting!
 * [Explainer](https://github.com/w3c/clipboard-apis/blob/master/explainer.adoc)
 * [Raw Clipboard Access Design Doc](https://docs.google.com/document/d/1XDOtTv8DtwTi4GaszwRFIJCOuzAEA4g9Tk0HrasQAdE/edit?usp=sharing)
 * [Chromium bug](https://crbug.com/150835)
-* [Chrome Platform Status entry](https://www.chromestatus.com/features/5074658793619456)
+* [Chrome Platform Status entry](https://www.chromestatus.com/feature/5074658793619456)
 * [Technical Architecture Group (TAG) Review](https://github.com/w3ctag/design-reviews/issues/350)
 
 ## Acknowledgements

@@ -12,7 +12,7 @@ date: 2019-11-08
 
 This post explains different types of [code
 splitting](/reduce-javascript-payloads-with-code-splitting/) and how to use
-dynamic imports to speed up your Next.js apps. 
+dynamic imports to speed up your Next.js apps.
 
 ## Route-based and component-based code splitting
 
@@ -21,15 +21,15 @@ When users load your application, Next.js only sends the code needed for the
 initial route. When users navigate around the application, they fetch the chunks
 associated with the other routes. Route-based code splitting minimizes the
 amount of script that needs to be parsed and compiled at once, which results in
-faster page load times. 
+faster page load times.
 
 While route-based code splitting is a good default, you can further optimize the
 loading process with code splitting on the component level. If you have large
 components in your app, it's a great idea to split them into separate chunks.
 That way, any large components that are not critical or only render on certain
-user interactions (like clicking a button) can be lazy-loaded. 
+user interactions (like clicking a button) can be lazy-loaded.
 
-Next.js supports [dynamic `import()`](https://v8.dev/features/dynamic-import),
+Next.js supports [dynamic `import()`](https://v8.dev/feature/dynamic-import),
 which allows you to import JavaScript modules (including React components)
 dynamically and load each import as a separate chunk. This gives you
 component-level code splitting and enables you to control resource loading so

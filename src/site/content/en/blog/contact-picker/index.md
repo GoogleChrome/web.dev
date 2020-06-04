@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: Access to the user's contacts has been a feature of native apps since (almost) the dawn of time. The Contact Picker API is an on-demand API  that allows users to select an entry or entries from their contact list and share limited details of the selected contact(s) with a website. It allows users to share only what they want, when they want, and makes it easier for users to reach and connect with their friends and family.
 date: 2019-08-07
-updated: 2020-04-15
+updated: 2020-06-04
 tags:
   - blog
   - capabilities
@@ -298,7 +298,7 @@ PS: The names in my contact picker are characters from Alice in Wonderland.
 [demo]: https://contact-picker.glitch.me
 [demo-source]: https://glitch.com/edit/#!/contact-picker?path=demo.js:20:0
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=860467
-[cr-status]: https://www.chromestatus.com/features/6511327140904960
+[cr-status]: https://www.chromestatus.com/feature/6511327140904960
 [explainer]: https://github.com/WICG/contact-api/
 [wicg-discourse]: https://discourse.wicg.io/t/proposal-contact-picker-api/3507
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EContacts

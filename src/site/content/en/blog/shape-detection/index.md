@@ -5,7 +5,7 @@ authors:
   - thomassteiner
 description: The Shape Detection API detects faces, barcodes, and text in images.
 date: 2019-01-07
-updated: 2020-05-20
+updated: 2020-06-04
 tags:
   - blog
   - capabilities
@@ -120,7 +120,7 @@ of use cases for all three features.
 | 2. Create initial draft of specification   | [In Progress][spec]          |
 | **3. Gather feedback & iterate on design** | [**In progress**](#feedback) |
 | 4. Origin trial                            | [Complete](https://developers.chrome.com/origintrials/#/view_trial/-2341871806232657919) |
-| **5. Launch**                              | Barcode detection **Complete**<br>Face Detection [In Progress](https://www.chromestatus.com/feature/5678216012365824)<br>Text Detection [In Progress](https://www.chromestatus.com/features/5644087665360896) |
+| **5. Launch**                              | Barcode detection **Complete**<br>Face Detection [In Progress](https://www.chromestatus.com/feature/5678216012365824)<br>Text Detection [In Progress](https://www.chromestatus.com/feature/5644087665360896) |
 
 </div>
 
