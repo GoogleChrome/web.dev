@@ -117,7 +117,7 @@ class Subscribe extends BaseElement {
   onSuccess(isRobot = false) {
     this.submitted = true;
     this.subscribeError.textContent = '';
-    this.subscribeMessage.textContent = "Thank you! You're all signed up.";
+    this.subscribeMessage.textContent = `Thank you! You're all signed up.`;
     this.form.removeEventListener('submit', this.onSubmit);
     this.form.parentElement.removeChild(this.form);
     if (isRobot) {

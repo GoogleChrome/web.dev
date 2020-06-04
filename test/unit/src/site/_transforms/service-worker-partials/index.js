@@ -46,7 +46,7 @@ describe('service-worker-partials', () => {
       assert.deepStrictEqual(actual, $.html());
     });
 
-    it("is a noop if outputPath is false because page doesn't have a permalink", async () => {
+    it(`is a noop if outputPath is false because page doesn't have a permalink`, async () => {
       const actual = await serviceWorkerPartials($.html(), false);
       assert.deepStrictEqual(actual, $.html());
     });

@@ -23,15 +23,16 @@ module.exports = ({id, showSocialMedia = false, small = false}) => {
   if (!author) {
     throw new Error(
       `Can't create Author component for "${id}" without contributor ` +
-        "information. Please check '_data/contributors.js' and make sure the " +
+        `information. Please check '_data/contributors.js' and make sure the ` +
         'author you provide is a key in this object.',
     );
   }
 
   if (!author.name) {
     throw new Error(
-      "Can't create Author with missing author.name. author object: " +
-        JSON.stringify(author),
+      `Can't create Author with missing author.name. author object: ${JSON.stringify(
+        author,
+      )}`,
     );
   }
 

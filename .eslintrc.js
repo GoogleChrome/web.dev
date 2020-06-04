@@ -41,6 +41,7 @@ module.exports = {
         ],
       },
     ],
+    quotes: ['error', 'single', {allowTemplateLiterals: true}],
     'require-jsdoc': 0,
   },
 };

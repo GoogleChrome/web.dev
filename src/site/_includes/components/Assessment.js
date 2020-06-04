@@ -67,7 +67,7 @@ function questionTemplate(question, assessment) {
     : '';
 
   const height = assessment.height
-    ? "question-height='" + assessment.height + "'"
+    ? `question-height="${assessment.height}"`
     : '';
 
   return html`
@@ -192,7 +192,7 @@ function rationaleTemplate(option) {
 module.exports = (page, targetAssessment) => {
   if (!page) {
     throw new Error(
-      "Can't create Assessment component without the page argument.",
+      `Can't create Assessment component without the page argument.`,
     );
   }
 

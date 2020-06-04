@@ -102,21 +102,21 @@ describe('live-posts', () => {
       );
     });
 
-    it("should return true if it's before 15:00 UTC on the publish date", () => {
+    it(`should return true if it's before 15:00 UTC on the publish date`, () => {
       const date = new Date();
       date.setUTCHours(14, 0, 0, 0);
       const actual = isScheduledForTheFuture(post, date);
       assert.strictEqual(actual, true);
     });
 
-    it("should return false if it's exactly 15:00 UTC on the publish date", () => {
+    it(`should return false if it's exactly 15:00 UTC on the publish date`, () => {
       const date = new Date();
       date.setUTCHours(15, 0, 0, 0);
       const actual = isScheduledForTheFuture(post, date);
       assert.strictEqual(actual, false);
     });
 
-    it("should return false if it's after 15:00 UTC on the publish date", () => {
+    it(`should return false if it's after 15:00 UTC on the publish date`, () => {
       const date = new Date();
       date.setUTCHours(15, 1, 0, 0);
       const actual = isScheduledForTheFuture(post, date);

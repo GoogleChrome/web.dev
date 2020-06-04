@@ -21,7 +21,7 @@ module.exports = (content, source) => {
   if (!source) {
     /* eslint-disable max-len */
     throw new Error(
-      "Can't create Blockquote component without a source. Did you forget to pass the source as a string?",
+      `Can't create Blockquote component without a source. Did you forget to pass the source as a string?`,
     );
     /* eslint-enable max-len */
   }
