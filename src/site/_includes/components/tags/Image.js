@@ -87,10 +87,10 @@ function renderImage({src, alt, maxWidth}, ctx) {
  * @return {function}
  */
 const Image = (nunjucksEngine) => {
-  return new (function() {
+  return new (function () {
     this.tags = ['Image'];
 
-    this.parse = function(parser, nodes, lexer) {
+    this.parse = function (parser, nodes) {
       const tok = parser.nextToken();
 
       const args = parser.parseSignature(null, true);
@@ -99,7 +99,7 @@ const Image = (nunjucksEngine) => {
       return new nodes.CallExtensionAsync(this, 'run', args);
     };
 
-    this.run = function({ctx}, args, callback) {
+    this.run = function ({ctx}, args, callback) {
       const ret = new nunjucksEngine.runtime.SafeString(renderImage(args, ctx));
       callback(null, ret);
     };
@@ -166,10 +166,10 @@ function renderFigure(image, {type}, caption) {
  * @return {function}
  */
 const Figure = (nunjucksEngine) => {
-  return new (function() {
+  return new (function () {
     this.tags = ['Figure'];
 
-    this.parse = function(parser, nodes, lexer) {
+    this.parse = function (parser, nodes) {
       const tok = parser.nextToken();
 
       const args = parser.parseSignature(null, true);
@@ -180,7 +180,7 @@ const Figure = (nunjucksEngine) => {
       return new nodes.CallExtensionAsync(this, 'run', args, [caption]);
     };
 
-    this.run = function({ctx}, args, caption, callback) {
+    this.run = function ({ctx}, args, caption, callback) {
       const ret = new nunjucksEngine.runtime.SafeString(
         renderFigure(renderImage(args, ctx), args, caption()),
       );

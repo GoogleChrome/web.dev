@@ -34,11 +34,11 @@ function checkURL(tree, file) {
     if (!nodeUrl) {
       return;
     }
-    const parsed = url.parse(nodeUrl);
+    const parsed = new url.URL(nodeUrl, 'https://web.dev');
 
     // If URL hostname is "wiki.developer.mozilla.org", warn to change to
     // "developer.mozilla.org".
-    if (parsed.hostname == 'wiki.developer.mozilla.org') {
+    if (parsed.hostname === 'wiki.developer.mozilla.org') {
       const reason = 'Change URL hostname to "developer.mozilla.org".';
       file.message(reason, node);
     }

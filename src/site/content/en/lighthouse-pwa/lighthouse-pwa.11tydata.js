@@ -8,7 +8,7 @@ module.exports = {
     cover: '/images/collections/lighthouse-pwa.svg',
     title: 'PWA audits',
     description: 'Measure if your site is fast, reliable and installable.',
-    overview: `These checks validate the aspects of a Progressive Web App.`,
+    overview: 'These checks validate the aspects of a Progressive Web App.',
     topics: [
       {
         title: 'Fast and reliable',

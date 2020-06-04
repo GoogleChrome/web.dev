@@ -30,7 +30,7 @@ module.exports = function addPagination(elements, additionalData = {}) {
   }
 
   if (typeof additionalData !== 'object') {
-    throw new Error(`additionalData must be an object`);
+    throw new Error('additionalData must be an object');
   }
 
   const pageCount = constants.PAGINATION_COUNT;

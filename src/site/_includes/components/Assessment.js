@@ -63,9 +63,7 @@ function contentTemplate(assessment) {
 // and passing the response components to the response template.
 function questionTemplate(question, assessment) {
   const stimulus = question.stimulus
-    ? html`
-        <div data-role="stimulus">${mdBlock(question.stimulus)}</div>
-      `
+    ? html` <div data-role="stimulus">${mdBlock(question.stimulus)}</div> `
     : '';
 
   const height = assessment.height
@@ -125,8 +123,8 @@ function responseTemplate(response) {
 
   if (
     response.columns &&
-    response.columns != true &&
-    response.columns != false
+    response.columns !== true &&
+    response.columns !== false
   ) {
     throw new Error(`
       The columns value for self-assessment response components must be true or false.
@@ -198,7 +196,7 @@ function rationaleTemplate(option) {
 module.exports = (page, targetAssessment) => {
   if (!page) {
     throw new Error(
-      `Can't create Assessment component without the page argument.`,
+      "Can't create Assessment component without the page argument.",
     );
   }
 
@@ -216,7 +214,7 @@ module.exports = (page, targetAssessment) => {
 
   // prettier-ignore
   return html`
-    <web-assessment class="w-callout unresolved ${assessment.questions.length === 1 && "web-assessment--singleton"}" aria-label="Check your understanding">
+    <web-assessment class="w-callout unresolved ${assessment.questions.length === 1 && 'web-assessment--singleton'}" aria-label="Check your understanding">
       ${headerTemplate(assessment)} ${contentTemplate(assessment)}
     </web-assessment>
   `;

@@ -5,8 +5,8 @@ const fs = require('fs');
 const path = require('path');
 const dist = path.resolve(__dirname, '..', '..', 'dist');
 
-describe('Build test', function() {
-  it('generates the expected files', async function() {
+describe('Build test', () => {
+  it('generates the expected files', async function () {
     // Disable the timeout as it'll take build a little while to finish.
     // eslint-disable-next-line
     this.timeout(0);

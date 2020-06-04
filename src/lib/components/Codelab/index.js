@@ -64,7 +64,7 @@ class Codelab extends BaseElement {
   }
 
   glitchSrc(embed) {
-    let url = `https://glitch.com/embed/?attributionHidden=true`;
+    let url = 'https://glitch.com/embed/?attributionHidden=true';
 
     if (this.path) {
       url += `&path=${encodeURI(this.path)}`;

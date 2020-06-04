@@ -22,9 +22,4 @@ export class BaseStateElement extends BaseElement {
     super.disconnectedCallback();
     store.unsubscribe(this.onStateChanged);
   }
-
-  /**
-   * @param {!Object<string, *>} state
-   */
-  onStateChanged(state) {}
 }

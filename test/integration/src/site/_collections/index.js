@@ -2,14 +2,14 @@ const fs = require('fs');
 const path = require('path');
 const runEleventy = require('./runEleventy');
 
-describe('_collections', function() {
-  describe('in DEV env', function() {
-    before(async function() {
+describe('_collections', () => {
+  describe('in DEV env', () => {
+    before(async () => {
       await runEleventy('dev', '.');
       console.log('Eleventy build finished. Starting tests...');
     });
 
-    after(function() {
+    after(() => {
       fs.rmdirSync(path.join('.', '.tmp'), {recursive: true});
     });
 
@@ -17,13 +17,13 @@ describe('_collections', function() {
     require('./recent-blog-posts/dev');
   });
 
-  describe('in PROD env', function() {
-    before(async function() {
+  describe('in PROD env', () => {
+    before(async () => {
       await runEleventy('prod', '.');
       console.log('Eleventy build finished. Starting tests...');
     });
 
-    after(function() {
+    after(() => {
       fs.rmdirSync(path.join('.', '.tmp'), {recursive: true});
     });
 

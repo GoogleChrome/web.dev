@@ -53,7 +53,7 @@ function determineImagePath(src, outputPath) {
   // the image.
   const parts = path.dirname(outputPath).split(path.sep);
   if (parts[0] !== 'dist') {
-    throw new Error(`Bad output directory. Files must be served from /dist/`);
+    throw new Error('Bad output directory. Files must be served from /dist/');
   }
   parts.shift();
   // Check to see if the path contains a language prefix like /en/ or /ja/.

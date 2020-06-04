@@ -17,8 +17,8 @@
 
 const {assert} = require('../../assert');
 
-describe('ProgressBar', function() {
-  it('should pass an example test', function() {
+describe('ProgressBar', () => {
+  it('should pass an example test', () => {
     assert(true, 'something broke!');
   });
 });

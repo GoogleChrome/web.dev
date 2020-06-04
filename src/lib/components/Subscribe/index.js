@@ -104,7 +104,7 @@ class Subscribe extends BaseElement {
         if (response && response.result === 'accepted') {
           this.onSuccess();
         } else if (response && response.errors) {
-          const errorMessage = Object.values(error).join(' ');
+          const errorMessage = Object.values(response.errors).join(' ');
           this.onError(new Error(errorMessage));
         } else {
           this.onError(new Error(response.result), true);

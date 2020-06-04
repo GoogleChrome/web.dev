@@ -21,15 +21,15 @@ module.exports = ({postToCollections, url}) => {
   // When @devnook lands her localization work we might need to update this file.
   const strippedUrl = stripLanguage(url).replace(/\//g, '');
   const collections = postToCollections[strippedUrl] || [];
-  const aTags = collections.map((collection) => {
-    return html`
-      <a class="w-post-signpost__link" href="${collection.href}"
-        >${collection.title}</a
-      >
-    `;
-  }).join(html`
-    <span class="w-post-signpost__divider">|</span>
-  `);
+  const aTags = collections
+    .map((collection) => {
+      return html`
+        <a class="w-post-signpost__link" href="${collection.href}"
+          >${collection.title}</a
+        >
+      `;
+    })
+    .join(html` <span class="w-post-signpost__divider">|</span> `);
 
   return collections.length === 0
     ? ''

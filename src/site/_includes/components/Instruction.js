@@ -62,7 +62,7 @@ module.exports = (type, listStyle = 'ul') => {
       break;
 
     // prettier-ignore
-    case "console":
+    case 'console':
       instruction = html`
         ${bullet}Click **Tools**.
         ${bullet}Click **Logs**.
@@ -71,7 +71,7 @@ module.exports = (type, listStyle = 'ul') => {
       break;
 
     // prettier-ignore
-    case "create":
+    case 'create':
       instruction = html`
         ${bullet}Click **New File** and give it a name.
         ${bullet}Click **Add This File**.
@@ -101,21 +101,15 @@ module.exports = (type, listStyle = 'ul') => {
       break;
 
     case 'disable-cache':
-      instruction = html`
-        ${bullet}Select the **Disable cache** checkbox.
-      `;
+      instruction = html` ${bullet}Select the **Disable cache** checkbox. `;
       break;
 
     case 'reload-app':
-      instruction = html`
-        ${bullet}Reload the app.
-      `;
+      instruction = html` ${bullet}Reload the app. `;
       break;
 
     case 'reload-page':
-      instruction = html`
-        ${bullet}Reload the page.
-      `;
+      instruction = html` ${bullet}Reload the page. `;
       break;
 
     case 'start-profiling':
@@ -146,9 +140,7 @@ module.exports = (type, listStyle = 'ul') => {
     case 'devtools-application':
     case 'devtools-security':
     case 'devtools-audits':
-      instruction = html`
-        ${shared.devtools}
-      `;
+      instruction = html` ${shared.devtools} `;
       substitution = type.substring('devtools-'.length);
       if (substitution) {
         // prettier-ignore
@@ -164,10 +156,7 @@ module.exports = (type, listStyle = 'ul') => {
     case 'audit-accessibility':
     case 'audit-pwa':
     case 'audit-best-practices':
-      substitution = type
-        .split('-')
-        .slice(1)
-        .join(' ');
+      substitution = type.split('-').slice(1).join(' ');
       if (substitution === 'seo') {
         substitution = substitution.toUpperCase();
       } else if (substitution === 'pwa') {

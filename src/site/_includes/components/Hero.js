@@ -24,7 +24,7 @@ module.exports = ({hero, alt, heroPosition, heroFit = 'cover'}) => {
   // prettier-ignore
   return html`
     <img
-      class="w-hero w-hero--${heroFit} ${heroPosition ? `w-hero--${heroPosition}` : ""}"
+      class="w-hero w-hero--${heroFit} ${heroPosition ? `w-hero--${heroPosition}` : ''}"
       width="1600"
       height="480"
       sizes="100vw"

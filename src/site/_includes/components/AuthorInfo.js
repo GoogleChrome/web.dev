@@ -20,7 +20,7 @@ const {html} = require('common-tags');
 
 module.exports = ({author, id, showSocialMedia = false}) => {
   if (!author) {
-    throw new Error(`Can't generate AuthorInfo without author object`);
+    throw new Error("Can't generate AuthorInfo without author object");
   }
 
   function renderTwitter({twitter}) {

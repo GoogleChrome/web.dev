@@ -158,7 +158,7 @@ class SideNav extends BaseElement {
     this.currentX_ = e.touches[0].pageX;
   }
 
-  onTouchEnd(e) {
+  onTouchEnd() {
     if (!this.touchingSideNav_) {
       return;
     }

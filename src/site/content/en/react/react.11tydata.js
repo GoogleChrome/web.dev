@@ -8,7 +8,7 @@ module.exports = {
     cover: '/images/collections/react.svg',
     title: 'React',
     updated: 'October 11, 2019',
-    description: `Build performant and progressive React applications.`,
+    description: 'Build performant and progressive React applications.',
     overview: `In this section you'll learn how to use built-in APIs and
     third-party libraries to improve the performance of your
     React applications.`,

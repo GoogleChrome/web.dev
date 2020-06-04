@@ -1,3 +1,3 @@
-describe('Unit tests', function() {
+describe('Unit tests', () => {
   require('./src');
 });

@@ -4,8 +4,8 @@ const fs = require('fs');
 const path = require('path');
 const dist = path.resolve(__dirname, '..', '..', 'dist');
 
-describe('Service worker partials', function() {
-  it('includes correct fields for home page', function() {
+describe('Service worker partials', () => {
+  it('includes correct fields for home page', () => {
     const partial = require(path.join(dist, 'en', 'index.json'));
 
     const htmlPath = path.join(dist, 'en', 'index.html');
@@ -21,7 +21,7 @@ describe('Service worker partials', function() {
     assert.deepStrictEqual(partial, partialFromHtml);
   });
 
-  it('includes RSS urls', function() {
+  it('includes RSS urls', () => {
     const expected = '/feed.xml';
     const partialPath = path.join(dist, 'en');
     const partial = require(path.join(partialPath, 'index.json'));
@@ -33,7 +33,7 @@ describe('Service worker partials', function() {
     );
   });
 
-  it('includes unique RSS urls for authors', function() {
+  it('includes unique RSS urls for authors', () => {
     const expected = '/authors/addyosmani/feed.xml';
     const partialPath = path.join(dist, 'en', 'authors', 'addyosmani');
     const partial = require(path.join(partialPath, 'index.json'));
@@ -45,7 +45,7 @@ describe('Service worker partials', function() {
     );
   });
 
-  it('includes unique RSS urls for tags', function() {
+  it('includes unique RSS urls for tags', () => {
     const expected = '/tags/progressive-web-apps/feed.xml';
     const partialPath = path.join(dist, 'en', 'tags', 'progressive-web-apps');
     const partial = require(path.join(partialPath, 'index.json'));
