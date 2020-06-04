@@ -290,9 +290,9 @@ approaches and learn all the ways to build on the web. Remix the Glitch,
 [tweet me](https://twitter.com/argyleink) your version and I'll add it 
 the [Community remixes](#community-remixes) section below.
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
+<div class="glitch-embed-wrap" style="height: 720px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/gui-challenges-stories?path=app/index.html&attributionHidden=true"
+    src="https://glitch.com/embed/#!/embed/stories-gui-challenge?path=app/index.html&attributionHidden=true&previewSize=100"
     alt="TODO"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
