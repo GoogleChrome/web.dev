@@ -121,11 +121,7 @@ function responseTemplate(response) {
     `);
   }
 
-  if (
-    response.columns &&
-    response.columns !== true &&
-    response.columns !== false
-  ) {
+  if (response.columns && typeof response.columns !== 'boolean') {
     throw new Error(`
       The columns value for self-assessment response components must be true or false.
       Check your assessment's *.assess.yml file for invalid columns values.
