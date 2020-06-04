@@ -34,7 +34,7 @@ class TableOfContents extends BaseElement {
     super();
     this.close = this.close.bind(this);
     this.open = this.open.bind(this);
-    this.scrollSpy = debounce(this.scrollSpy.bind(this), 100);
+    this.scrollSpy = debounce(this.scrollSpy.bind(this), 50);
   }
 
   connectedCallback() {
