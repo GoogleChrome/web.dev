@@ -12,9 +12,12 @@ hero: hero.jpg
 thumbnail: thumb.jpg
 codelabs: codelab-stories-component
 tags:
-  - blog
+  - css
+  - dom
+  - javascript
   - layout
-  - ui
+  - mobile
+  - ux
 ---
 
 In this post I want to share with you how I built a Stories component for
