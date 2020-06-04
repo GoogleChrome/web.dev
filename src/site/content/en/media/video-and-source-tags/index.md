@@ -45,15 +45,21 @@ Recall from [File basics](../file-basics) that not all browsers support the same
 video formats. The `<source>` element lets you specify multiple formats as a
 fallback in case the user's browser doesn't support one of them.
 
-For example:
+For example the code below produces the ebedded video that immediately follows.
 
 ```html
 <video controls>
-  <source src="https://storage.googleapis.com/webfundamentals-assets/videos/chrome.webm" type="video/webm">
-  <source src="https://storage.googleapis.com/webfundamentals-assets/videos/chrome.mp4" type="video/mp4">
+  <source src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.webm" type="video/webm">
+  <source src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.mp4" type="video/mp4">
     <p>Your browser cannot play the provided video file.</p>
 </video>
 ```
+
+<video controls>
+  <source src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.webm" type="video/webm">
+  <source src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.mp4" type="video/mp4">
+  <p>This browser does not support the video element.</p>
+</video>
 
 
 [Try it](https://googlesamples.github.io/web-fundamentals/fundamentals/media/video-main.html)
@@ -98,7 +104,11 @@ otherwise video source type checks won't work.
 Save bandwidth and make your site feel more responsive: use media fragments to
 add start and end times to the video element.
 
----EMBED HERE---
+<video controls>
+  <source src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.webm#t=5,10" type="video/webm">
+  <source src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.mp4#t=5,10" type="video/mp4">
+  <p>This browser does not support the video element.</p>
+</video>
 
 To use a media fragment, add `#t=[start_time][,end_time]` to the media URL. For
 example, to play the video from seconds 5 to 10, specify:
