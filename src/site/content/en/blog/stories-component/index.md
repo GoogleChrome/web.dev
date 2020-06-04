@@ -20,8 +20,8 @@ tags:
   - ux
 ---
 
-In this post I want to share with you how I built a Stories component for
-the web that is mobile-focused, supports keyboard navigation, and works across
+In this post I want to share with you how I prototyped a Stories component for
+the web that is responsive, supports keyboard navigation, and works across
 browsers.
 
 <figure class="w-figure w-figure--fullbleed">
@@ -45,7 +45,7 @@ In general UX terms, Stories are usually a mobile-only, tap-centric pattern for 
 multiple subscriptions. For example, on Instagram, users open a friend's story
 and go through the pictures in it. They generally do this many friends at a
 time. By tapping on the right side of the device, a user skips ahead to that friend's
-next story. By swiping right, a user skips ahead to a different friend's story.
+next story. By swiping right, a user skips ahead to a different friend.
 A Story component is fairly similar to a carousel, but allows navigating a
 multidimensional array as opposed to an array. It's as if there's a carousel inside
 each carousel. 🤯 
@@ -54,56 +54,63 @@ each carousel. 🤯
   <img class="w-screenshot w-screenshot--filled" src="./carousel-of-carousels.png" 
        alt="Visualized multi-dimensional array using cards. Left to right is a stack of purple borders cards, and inside each card is 1-many cyan bordered cards. List in a list.">
   <figcaption class="w-figcaption">
-    <span style="width: 1rem; height: 1rem; background: #EB00FF; display: inline-block; border-radius: 3px; position: relative; top: .2em;"></span> 1st carousel of your friends array
-    <br><span style="width: 1rem; height: 1rem; background: #00D8FF; display: inline-block; border-radius: 3px; position: relative; top: .2em;"></span> 2nd "stacked" carousel for the stories array of a friend
-    <br>👍 List in a list, a multi-dimensional array
+    <span style="width: 1rem; height: 1rem; background: #EB00FF; display: inline-block; border-radius: 3px; position: relative; top: .2em;"></span> 1st carousel of friends
+    <br><span style="width: 1rem; height: 1rem; background: #00D8FF; display: inline-block; border-radius: 3px; position: relative; top: .2em;"></span> 2nd "stacked" carousel of stories
+    <br>👍 List in a list, aka: a multi-dimensional array
   </figcaption>
 </figure>
 
 ## Picking the right tools for the job {: #features }
 
-All in all I found this component pretty easy to build, thanks to a few
-critical new web platform features. Let's cover some of them!
+All in all I found this component pretty straightforward to build, thanks to a few
+critical web platform features. Let's cover them!
 
 ### CSS Grid {: #grid }
 
 Our layout turned out to be no tall order for CSS Grid as it's equipped with some
 powerful ways to wrangle content.
 
-#### Primary content wrapper
+#### Friends Layout
 
-Our primary component wrapper is a horizontal scroll container:
+Our primary `.stories` component wrapper is a mobile first horizontal scrollview :
 
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="./horizontal-scroll-with-grid.png" 
-       alt="Chrome and DevTools open with a grid visual showing the full width layout">
-  <figcaption class="w-figcaption">
-    DevTools showing grid column overflow, making a horizontal scroller
-  </figcaption>
-</figure>
-
-<!--
-TODO(kayce): Remove DevTools from this screenshot. Undock DevTools if we want to
-have the Grid lines. Note also that it's OK to use Firefox here if they have
-better visualization.
--->
-
-```css/1-3
+```css/4-6
 .stories {
+  inline-size: 100vw;
+  block-size: 100vh;
+
   display: grid;
-  grid: 1fr / auto-flow 100vw;
+  grid: 1fr / auto-flow 100%;
   gap: 1ch;
+
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   overscroll-behavior-x: contain;
 }
+
+/* desktop constraint */
+@media (hover: hover) and (min-width: 480px) {
+  max-inline-size: 480px;
+  max-block-size: 848px;
+}
 ```
 
-Let's breakdown that `grid` value:
+<figure class="w-figure">
+  <video playsinline controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/gui-challenges/stories-overflow-columns.webm" type="video/webm">
+    <source src="https://storage.googleapis.com/web-dev-assets/gui-challenges/stories-overflow-columns.mp4">
+  </video>
+  <figcaption class="w-figcaption">
+    Stories in desktop mode showing Devtools toggling `overflow` and highlighting the columns created by CSS grid
+  </figcaption>
+</figure>
 
-* [`1fr`](https://alligator.io/css/css-grid-layout-fr-unit/) specifies a full height row 
+Let's breakdown that `grid` layout:
+
+* We explicitly fill the viewport on mobile with `100vh` and `100vw` and constrain the size on desktop 
 * `/` separates our row and column templates
-* `auto-flow 100vw` lays out the columns as `auto-columns` set to the full viewport width [`grid-auto-flow: column`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow)
+* `auto-flow` after the `/` translates to [`grid-auto-flow: column`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow)
+* The autoflow template is `100%`, which in this case is whatever the scroll window width is
 
 {% Aside %}
   Note that the location of the `/` separator relative to `auto-flow` is important.
@@ -115,7 +122,7 @@ and each column being the viewport width. Continuing with the Snapchat Stories
 and Instagram Stories example, each column will be a friend's story. We want
 friends stories to continue outside of the viewport so
 we have somewhere to scroll to. Grid will make however many columns it needs to
-layout your HTML for each friend story, creating a perfect scrolling container for us. 
+layout your HTML for each friend story, creating a dynamic and responsive scrolling container for us. Grid enabled us to centralized the whole effect. 
 
 #### Stacking
 
@@ -158,7 +165,7 @@ The [CSS Scroll Snap Points spec](https://www.w3.org/TR/css-scroll-snap-1/) make
 a cinch to lock elements into the viewport on scroll. Before these CSS properties existed, 
 you had to use JavaScript, and it was… tricky, to say the least. Check out
 [Introducing CSS Scroll Snap Points](https://css-tricks.com/introducing-css-scroll-snap-points/)
-by Sarah Drasner for a great breakdown of how to use them.
+by Sarah Drasner for a great breakdown of how to use them. 
 
 <figure class="w-figure">
   <video playsinline controls autoplay loop muted class="w-screenshot">
@@ -166,7 +173,7 @@ by Sarah Drasner for a great breakdown of how to use them.
     <source src="https://storage.googleapis.com/web-dev-assets/gui-challenges/scroll-snap-example.mp4">
   </video>
   <figcaption class="w-figcaption">
-    Shows horizontal scrolling without and with `scroll-snap-points` styles. Without it, users can free scroll as normal. With it, browser rests gently on each item.
+    Shows horizontal scrolling without and with `scroll-snap-points` styles. Without it, users can free scroll as normal. With it, the browser rests gently on each item.
   </figcaption>
 </figure>
 
@@ -175,7 +182,7 @@ by Sarah Drasner for a great breakdown of how to use them.
 ```css/4-5
 .stories {
   display: grid;
-  grid: 1fr / auto-flow 100vw;
+  grid: 1fr / auto-flow 100%;
   gap: 1ch;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -214,7 +221,8 @@ I chose Scroll Snap Points for a few reasons:
   here on out.
 * **Ease of implementation**. Scroll Snap Points are practically built for the
   touch-centric horizontal-pagination use case.
-* **Free native inertia**. Every platform will swipe and scroll with 100% native feel
+* **Free native inertia**. Every platform will scroll and rest in it's style, as opposed to 
+  normalized inertia which can have an uncanny scrolling and resting style.
 
 ## Cross-browser compatibility {: #compatibility }
 
@@ -239,6 +247,13 @@ on each image after a user interacts with it. It might be fine or encouraged to
 quickly cycle through the Carousel. Stories, on the other hand, are best navigated one-by-one,
 and that's exactly what `scroll-snap-stop` provides.
 
+```css/2
+.user {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+```
+
 At the time of writing this post, `scroll-snap-stop` is only supported on Chromium-based
 browsers. You should check out
 [Browser compatibility](https://developer.mozilla.org/docs/Web/CSS/scroll-snap-stop#Browser_compatibility)
@@ -260,7 +275,14 @@ start scrolling the content behind the modal?
 lets the developer trap that scroll and never let it
 leave. It's nice for all sorts of occasions. My Stories component uses it
 to prevent additional swipes and scrolling gestures from leaving the
-component. 
+component.
+
+```css
+.stories {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+```
 
 Safari and Opera were the 2 browser's that didn't
 [support](https://caniuse.com/#search=overscroll-behavior) this, and that's
@@ -280,6 +302,12 @@ scrolled into view. The support for the basics of this are great; every browser
 scrolled it into view. But, not every browser did it `smooth`. This just means
 it's scrolled into view instead of snapped, which makes for a more seamless
 transition.
+
+```js
+element.scrollIntoView({
+  behavior: 'smooth'
+})
+```
 
 Safari was the only one not to support `behavior: 'smooth'` here.
 Check out

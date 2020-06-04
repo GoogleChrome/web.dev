@@ -94,7 +94,7 @@ For our main component, we want a horizontal scrolling container, and so we made
 ```css
 .stories {
   display: grid;
-  grid: 1fr / auto-flow 100vw;
+  grid: 1fr / auto-flow 100%;
   gap: 1ch;
 }
 ```
@@ -104,7 +104,7 @@ Now that we have content extending beyond the viewport, it's time to tell that c
 ```css/4-6
 .stories {
   display: grid;
-  grid: 1fr / auto-flow 100vw;
+  grid: 1fr / auto-flow 100%;
   gap: 1ch;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
