@@ -23,5 +23,8 @@ export class BaseStateElement extends BaseElement {
     store.unsubscribe(this.onStateChanged);
   }
 
+  /**
+   * Required for `constructor`.
+   */
   onStateChanged() {}
 }
