@@ -39,6 +39,10 @@ class TableOfContents extends BaseElement {
   connectedCallback() {
     super.connectedCallback();
 
+    const innerText = this.innerText;
+    this.innerText = '';
+    this.innerHTML = innerText;
+
     this.divContent = document.querySelector('div#content');
     this.headers = this.divContent.querySelectorAll(
       'h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]',
