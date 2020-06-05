@@ -21,7 +21,6 @@ const {html} = require('common-tags');
 /* eslint-disable max-len */
 
 module.exports = ({title, slug}) => {
-
   return html`
     <ul class="w-breadcrumbs">
       <li class="w-breadcrumbs__crumb">

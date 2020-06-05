@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 const setdefault = require('../_utils/setdefault');
+const paths = require('../_data/paths/all.js');
+const postToPaths = require('../_data/postToPaths.js');
 
 /**
  * Since a post can appear in more than one collection, this creates a quick way to look up which collection a post is in.
@@ -23,31 +25,17 @@ const setdefault = require('../_utils/setdefault');
  */
 module.exports = (collections) => {
   const postToCollections = {};
-  const paths = new Map();
-  collections.getFilteredByTag('pathItem').forEach((p) => {
-    const path = p.data.path;
-    paths.set(path.slug, path);
-  });
-
-  paths.forEach((path) => {
-    const details = {
-      title: path.title,
-      slug: path.slug,
-      href: `/${path.slug}/`,
-    };
-
-    path.topics.forEach((topic) => {
-      const subPathItems = (topic.subtopics || []).reduce(
-        (accumulator, subtopic) => [...accumulator, ...subtopic.pathItems],
-        [],
-      );
-      const pathItems = [...topic.pathItems, ...subPathItems];
-
-      pathItems.forEach((postSlug) => {
-        const postSlugMap = postToCollections[postSlug] || new Map();
-        setdefault(postSlugMap, path.slug, details);
-        postToCollections[postSlug] = postSlugMap;
-      });
+  Object.keys(postToPaths).forEach((slug) => {
+    postToPaths[slug].forEach((pathName) => {
+      const path = paths[pathName];
+      const entry = postToCollections[slug] || new Map();
+      const details = {
+        title: path.title,
+        slug: path.slug,
+        href: `/${path.slug}/`,
+      };
+      setdefault(entry, path.slug, details);
+      postToCollections[slug] = entry;
     });
   });
 

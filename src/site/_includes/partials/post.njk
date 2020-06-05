@@ -2,7 +2,9 @@
 {# It would be great to remove them as part of the v1 migration. #}
 <div class="guide-landing-page">
   {% if path === undefined  %}
-    {% set path = page | getPath %}
+    {% set postPaths = page | getPaths %}
+    {# Use first found path as a default path. #}
+    {% set path = paths[postPaths[0]] %}
   {% endif %}
 
   {% if hero %}
