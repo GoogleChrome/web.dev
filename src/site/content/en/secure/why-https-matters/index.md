@@ -20,6 +20,12 @@ a requirement for many new browser features, particularly those required for
 
 {% YouTube 'iP75a1Y9saY' %}
 
+Also, having https on your website gives users the assurance of security on your 
+platform. Most users leave a website immediately they see the tag `Not Secured`, 
+who wouldn't? As a website owner, you should be concerned about your users 
+information and alld data on your website both sensitive and insensitive ones.
+
+
 ## Summary {: #summary }
 
 * Intruders both malignant and benign exploit every unprotected resource between
