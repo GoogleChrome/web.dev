@@ -24,22 +24,22 @@ Performance budgets are one way to address this. A performance budget is a set o
     <tbody>
       <tr>
         <td>Time To Interactive on slow 3G</td>
-        <td>&lt;</td>
+        <td>Less than</td>
         <td>5 seconds</td>
       </tr>
       <tr>
         <td>First Contentful Paint on slow 3G</td>
-        <td>&lt;</td>
+        <td>Less than</td>
         <td>2 seconds</td>
       </tr>
       <tr>
         <td>Lighthouse performance score</td>
-        <td>&gt;</td>
+        <td>Greater than</td>
         <td>80</td>
       </tr>
       <tr>
         <td>Total JavaScript size</td>
-        <td>&lt;</td>
+        <td>Less than</td>
         <td>170 kb</td>
       </tr>
     </tbody>
