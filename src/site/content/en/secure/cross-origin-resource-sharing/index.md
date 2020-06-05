@@ -123,7 +123,7 @@ Here is a tiny web server using Express.
   </iframe>
 </div>
 
-The first endpoint (line 5) does not have any response header set, it just sends
+The first endpoint (line 8) does not have any response header set, it just sends
 a file in response.
 
 {% Instruction 'devtools' %}
@@ -141,7 +141,7 @@ request has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header
 is present on the requested resource.
 ```
 
-The second endpoint (line 10) sends the same file in response but adds
+The second endpoint (line 13) sends the same file in response but adds
 `Access-Control-Allow-Origin: *` in the header. From the console, try
 
 ```js
