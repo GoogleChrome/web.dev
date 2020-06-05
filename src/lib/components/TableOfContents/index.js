@@ -39,9 +39,11 @@ class TableOfContents extends BaseElement {
   connectedCallback() {
     super.connectedCallback();
 
-    const innerText = this.innerText;
+    this.tocInnerDiv = document.createElement('div');
+    this.tocInnerDiv.classList.add('w-toc__content');
+    this.tocInnerDiv.innerHTML = this.innerText;
     this.innerText = '';
-    this.innerHTML = innerText;
+    this.append(this.tocInnerDiv);
 
     this.divContent = document.querySelector('div#content');
     this.headers = this.divContent.querySelectorAll(
@@ -93,22 +95,10 @@ class TableOfContents extends BaseElement {
   }
 
   addTocDetails() {
-    const tocTitle = document.createElement('h2');
-    tocTitle.classList.add('w-toc__header');
-
-    const tocTitleLink = document.createElement('a');
-    tocTitleLink.href = `#${this.titleId}`;
-    tocTitleLink.classList.add('w-toc__header--link');
-    tocTitleLink.append(document.createTextNode(this.title));
-
-    tocTitle.append(tocTitleLink);
-
     const tocLabel = document.createElement('div');
     tocLabel.classList.add('w-toc__label');
-
     const inThisArticle = document.createElement('span');
     inThisArticle.append(document.createTextNode('In this article'));
-
     const tocCloseButton = document.createElement('button');
     tocCloseButton.classList.add(
       'w-button',
@@ -117,10 +107,17 @@ class TableOfContents extends BaseElement {
     );
     tocCloseButton.setAttribute('data-icon', 'close');
     tocCloseButton.addEventListener('click', this.close);
-
     tocLabel.append(inThisArticle, tocCloseButton);
+    this.tocInnerDiv.before(tocLabel);
 
-    this.prepend(tocLabel, tocTitle);
+    const tocTitle = document.createElement('h2');
+    tocTitle.classList.add('w-toc__header');
+    const tocTitleLink = document.createElement('a');
+    tocTitleLink.href = `#${this.titleId}`;
+    tocTitleLink.classList.add('w-toc__header--link');
+    tocTitleLink.append(document.createTextNode(this.title));
+    tocTitle.append(tocTitleLink);
+    this.tocInnerDiv.prepend(tocTitle);
 
     this.querySelectorAll('a').forEach((a) =>
       a.addEventListener('click', this.close),

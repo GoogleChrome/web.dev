@@ -45,7 +45,6 @@ web-table-of-contents {
   border-bottom: 1px solid $BORDER_COLOR;
   border-top: 1px solid $BORDER_COLOR;
   display: none;
-  overflow: scroll;
   padding: 24px;
   position: sticky;
   top: 63px;
@@ -88,6 +87,25 @@ web-table-of-contents {
   @include bp(sm) {
     margin-bottom: -32px;
     padding-top: 32px;
+  }
+}
+
+.w-toc__content {
+  -ms-overflow-style: none;
+  height: calc(100% - 24px);
+  overflow-y: auto;
+  max-height: 270px;
+
+  @include bp(sm) {
+    height: calc(100% - 32px);
+  }
+
+  @include bp(md) {
+    max-height: none;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
 
