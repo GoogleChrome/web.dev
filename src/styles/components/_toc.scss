@@ -14,6 +14,10 @@
   }
 }
 
+@mixin TOC_PADDING {
+  padding: 0 24px;
+}
+
 .w-toc__active--border {
   border-left: 3px solid $WEB_PRIMARY_COLOR;
   margin-left: -24px;
@@ -45,7 +49,7 @@ web-table-of-contents {
   border-bottom: 1px solid $BORDER_COLOR;
   border-top: 1px solid $BORDER_COLOR;
   display: none;
-  padding: 24px;
+  padding: 24px 0;
   position: sticky;
   top: 63px;
   width: 100%;
@@ -96,6 +100,8 @@ web-table-of-contents {
   overflow-y: auto;
   max-height: 270px;
 
+  @include TOC_PADDING;
+
   @include bp(sm) {
     height: calc(100% - 32px);
   }
@@ -126,6 +132,8 @@ web-table-of-contents {
   display: flex;
   height: 40px;
   justify-content: space-between;
+
+  @include TOC_PADDING;
 
   > * {
     font-size: .9rem;
