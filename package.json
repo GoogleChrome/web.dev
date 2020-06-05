@@ -58,6 +58,7 @@
     "rollup-plugin-virtual": "^1.0.1",
     "terser": "^4.6.4",
     "unistore": "^3.4.1",
+    "web-vitals": "^0.2.1",
     "wicg-inert": "^3.0.1"
   },
   "devDependencies": {
