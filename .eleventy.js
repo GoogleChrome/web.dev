@@ -70,7 +70,6 @@ const gitlocalizeLink = require(`./${filtersDir}/gitlocalize-link`);
 const htmlDateString = require(`./${filtersDir}/html-date-string`);
 const md = require(`./${filtersDir}/md`);
 const pagedNavigation = require(`./${filtersDir}/paged-navigation`);
-const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
 const prettyDate = require(`./${filtersDir}/pretty-date`);
 const removeDrafts = require(`./${filtersDir}/remove-drafts`);
 const strip = require(`./${filtersDir}/strip`);
@@ -181,7 +180,6 @@ module.exports = function(config) {
   config.addFilter('htmlDateString', htmlDateString);
   config.addFilter('md', md);
   config.addFilter('pagedNavigation', pagedNavigation);
-  config.addFilter('postsLighthouseJson', postsLighthouseJson);
   config.addFilter('prettyDate', prettyDate);
   config.addFilter('removeDrafts', removeDrafts);
   config.addFilter('stripBlog', stripBlog);
