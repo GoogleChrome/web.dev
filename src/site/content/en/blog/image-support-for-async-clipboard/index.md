@@ -5,7 +5,7 @@ authors:
   - thomassteiner
 description: Chrome 76 adds expands the functionality of the Async Clipboard API to add support for png images. Copying and pasting images to the clipboard has never been easier.
 date: 2019-07-03
-updated: 2020-03-19
+updated: 2020-06-04
 tags:
   - blog
   - capabilities
@@ -236,10 +236,18 @@ document.addEventListener('copy', async (e) => {
 
 ### Demo
 
+You can play with the Async Clipboard API in the demo below.
+You might get a `NotAllowedError` that is caused by a not yet
+implemented Feature Policy (see
+[this issue](https://github.com/w3c/webappsec-feature-policy/issues/322) for details).
+In this case just run the demo
+[directly on Glitch](https://async-clipboard-api.glitch.me/).
+
 <div class="glitch-embed-wrap" style="height: 500px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/async-clipboard-api?path=index.html&attributionHidden=true&previewSize=100"
-    alt="Async Clipboard on Glitch"
+    src="https://glitch.com/embed/#!/embed/async-clipboard-api?path=README.md&previewSize=100"
+    title="async-clipboard-api on Glitch"
+    allow="geolocation; microphone; camera; midi; vr; encrypted-media; clipboard; clipboard-read; clipboard-write"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -282,7 +290,7 @@ Happy copying and pasting!
 * [Explainer](https://github.com/w3c/clipboard-apis/blob/master/explainer.adoc)
 * [Raw Clipboard Access Design Doc](https://docs.google.com/document/d/1XDOtTv8DtwTi4GaszwRFIJCOuzAEA4g9Tk0HrasQAdE/edit?usp=sharing)
 * [Chromium bug](https://crbug.com/150835)
-* [Chrome Platform Status entry](https://www.chromestatus.com/features/5074658793619456)
+* [Chrome Platform Status entry](https://www.chromestatus.com/feature/5074658793619456)
 * [Technical Architecture Group (TAG) Review](https://github.com/w3ctag/design-reviews/issues/350)
 
 ## Acknowledgements

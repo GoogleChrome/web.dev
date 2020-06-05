@@ -4,6 +4,7 @@ title: web.dev
 description: |
   Get the web's modern capabilities on your own sites and apps with useful
   guidance and analysis from web.dev.
+show_banner: false
 date: 2018-11-05
 ---
 
@@ -45,7 +46,7 @@ date: 2018-11-05
     </div>
   </header>
 
-  <section class="w-layout-container w-text--center">
+  {# <section class="w-layout-container w-text--center">
     <p class="w-headline--two-small">
       As the web advances, users' expectations grow. With web.dev's guidance, you
       can give your users the best experience, wherever they are.
@@ -59,6 +60,22 @@ date: 2018-11-05
     >
       About web.dev
     </a>
+  </section> #}
+
+  {# IMPORTANT — Restore the about section above when we take down this banner #}
+  <section class="w-home-promo" id="live">
+    <div class="w-home-promo__grid">
+      <div class="w-home-promo__box" aria-hidden="true">
+        <a href="/live/" tabindex="-1"><img src="/live/banner.png" alt="" width="1320" height="740" /></a>
+      </div>
+      <div>
+        <p>
+          Join us for <a href="/live/">a three day digital event</a>, to
+          celebrate the web community’s actions, learn modern web techniques and
+          connect with each other. 
+        </p>
+      </div>
+    </div>
   </section>
 
   <section>

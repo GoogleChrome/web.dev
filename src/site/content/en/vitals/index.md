@@ -6,7 +6,7 @@ description: Essential metrics for a healthy site
 authors:
   - philipwalton
 date: 2020-04-30
-updated: 2020-05-04
+updated: 2020-05-29
 masthead: web-vitals.svg
 tags:
   - metrics
@@ -23,15 +23,9 @@ opportunities to improve.
 Web Vitals is an initiative by Google to provide unified guidance for quality
 signals that are essential to delivering a great user experience on the web.
 
-Google has provided a number of tools over the years
-([Lighthouse](https://developers.google.com/web/tools/lighthouse), [Chrome
-DevTools](https://developers.google.com/web/tools/chrome-devtools), [PageSpeed
-Insights](https://developers.google.com/speed/pagespeed/insights/), [Search
-Console's Speed
-Report](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html))
-to measure and report on performance. Some developers are experts at using these
-tools, while others have found the abundance of both tools and metrics
-challenging to keep up with.
+Google has provided a number of tools over the years to measure and report on
+performance. Some developers are experts at using these tools, while others have
+found the abundance of both tools and metrics challenging to keep up with.
 
 Site owners should not have to be performance gurus in order to understand the
 quality of experience they are delivering to their users. The Web Vitals
@@ -44,9 +38,9 @@ Core Web Vitals are the subset of Web Vitals that apply to all web pages, should
 be measured by all site owners, and will be surfaced across all Google tools.
 Each of the Core Web Vitals represents a distinct facet of the user experience,
 is measurable [in the
-field](https://web.dev/user-centric-performance-metrics/#how-metrics-are-measured),
+field](/user-centric-performance-metrics/#how-metrics-are-measured),
 and reflects the real-world experience of a critical
-[user-centric](https://web.dev/user-centric-performance-metrics/#how-metrics-are-measured)
+[user-centric](/user-centric-performance-metrics/#how-metrics-are-measured)
 outcome.
 
 The metrics that make up Core Web Vitals will [evolve](#evolving-web-vitals)
@@ -63,25 +57,32 @@ following metrics (and their respective thresholds):
        alt="Cumulative Layout Shift threshold recommendations">
 </div>
 
-- **[Largest Contentful Paint (LCP)](https://web.dev/lcp/)**: measures _loading_
-  performance. To provide a good user experience, LCP should occur within **2.5
-  seconds** of when the page first starts loading.
-- **[First Input Delay (FID)](https://web.dev/fid/)**: measures _interactivity_.
-  To provide a good user experience, pages should have a FID of less than **100
+- **[Largest Contentful Paint (LCP)](/lcp/)**: measures _loading_ performance.
+  To provide a good user experience, LCP should occur within **2.5 seconds** of
+  when the page first starts loading.
+- **[First Input Delay (FID)](/fid/)**: measures _interactivity_. To provide a
+  good user experience, pages should have a FID of less than **100
   milliseconds**.
-- **[Cumulative Layout Shift (CLS)](https://web.dev/cls/)**: measures _visual
-  stability_. To provide a good user experience, pages should maintain a CLS of
-  less than **0.1.**
+- **[Cumulative Layout Shift (CLS)](/cls/)**: measures _visual stability_. To
+  provide a good user experience, pages should maintain a CLS of less than
+  **0.1.**
 
 For each of the above metrics, to ensure you're hitting the recommended target
 for most of your users, a good threshold to measure is the **75th percentile**
 of page loads, segmented across mobile and desktop devices.
 
+{% Aside %}
+  To learn more about the research and methodology behind these recommendations,
+  see: [Defining the Core Web Vitals metrics
+  thresholds](/defining-core-web-vitals-thresholds/)
+{% endAside %}
+
 ### Tools to measure and report Core Web Vitals
 
 Google believes that the Core Web Vitals are critical to all web experiences. As
-a result, it is committed to surfacing these metrics in its tools. The following
-sections details which tools support the Core Web Vitals.
+a result, it is committed to surfacing these metrics [in all of its popular
+tools](/vitals-tools/). The following sections details which tools support the
+Core Web Vitals.
 
 #### Field tools to measure Core Web Vitals
 
@@ -91,8 +92,8 @@ collects anonymized, real user measurement data for each Core Web Vital. This
 data enables site owners to quickly assess their performance without requiring
 them to manually instrument analytics on their pages, and powers tools like
 [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/),
-and [Search Console's Speed
-Report](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html).
+and Search Console's [Core Web Vitals
+report](https://support.google.com/webmasters/answer/9205520).
 
 <div class="w-table-wrapper">
   <table>
@@ -112,25 +113,31 @@ Report](https://webmasters.googleblog.com/2019/11/search-console-speed-report.ht
     <tr>
       <td><a href="https://developers.google.com/speed/pagespeed/insights/">
         PageSpeed Insights</a></td>
-      <td>(soon)</td>
       <td>✔</td>
-      <td>(soon)</td>
+      <td>✔</td>
+      <td>✔</td>
     </tr>
     <tr>
-      <td><a href="https://webmasters.googleblog.com/2019/11/search-console-speed-report.html">
-        Search Console (Speed Report)</a></td>
-      <td>(soon)</td>
+      <td><a href="https://support.google.com/webmasters/answer/9205520">
+        Search Console (Core Web Vitals report)</a></td>
       <td>✔</td>
-      <td>(soon)</td>
+      <td>✔</td>
+      <td>✔</td>
     </tr>
   </table>
 </div>
 
+{% Aside %}
+  For guidance on how to use these tools, and which tool is right for your use
+  case, see: [Getting started with measuring Web
+  Vitals](/vitals-measurement-getting-started/)
+{% endAside %}
+
 The data provided by Chrome User Experience Report offers a quick way to assess
 the performance of sites, but it does not provide the detailed, per-pageview
 telemetry that is often necessary to accurately diagnose, monitor, and quickly
-react to regressions. As a result, we strongly recommend that all sites set up
-their own real-user monitoring.
+react to regressions. As a result, we strongly recommend that sites set up their
+own real-user monitoring.
 
 #### Measure Core Web Vitals in JavaScript
 
@@ -204,9 +211,16 @@ sites, your competitor's sites, and the web at large.
 Alternatively, developers who prefer to measure these metrics directly via the
 underlying web APIs can refer to these metric guides for implementation details:
 
-- [Measure LCP in JavaScript](https://web.dev/lcp/#measure-lcp-in-javascript)
-- [Measure FID in JavaScript](https://web.dev/fid/#measure-fid-in-javascript)
-- [Measure CLS in JavaScript](https://web.dev/cls/#measure-cls-in-javascript)
+- [Measure LCP in JavaScript](/lcp/#measure-lcp-in-javascript)
+- [Measure FID in JavaScript](/fid/#measure-fid-in-javascript)
+- [Measure CLS in JavaScript](/cls/#measure-cls-in-javascript)
+
+{% Aside %}
+  For additional guidance on how to measure these metrics using popular
+  analytics services (or your own in-house analytics tools), see: [Best
+  practices for measuring Web Vitals in the
+  field](/vitals-field-measurement-best-practices/)
+{% endAside %}
 
 #### Lab tools to measure Core Web Vitals
 
@@ -240,7 +254,7 @@ environment:
       </tr>
       <tr>
         <td><a href="https://developers.google.com/web/tools/lighthouse">
-          Lighthouse</a> (v6)</td>
+          Lighthouse</a></td>
         <td>✔</td>
         <td>✘ (use <a href="/tbt/">TBT</a> instead)</td>
         <td>✔</td>
@@ -272,9 +286,9 @@ Once you've measured the Core Web Vitals and identified areas for improvement,
 the next step is to optimize. The following guides offer specific
 recommendations for how to optimize your pages for each of the Core Web Vitals:
 
-- [Optimize LCP](https://web.dev/optimize-lcp/)
-- [Optimize FID](https://web.dev/optimize-fid/)
-- [Optimize CLS](https://web.dev/optimize-cls/)
+- [Optimize LCP](/optimize-lcp/)
+- [Optimize FID](/optimize-fid/)
+- [Optimize CLS](/optimize-cls/)
 
 ## Other Web Vitals
 
@@ -285,19 +299,18 @@ These other Web Vitals often serve as proxy or supplemental metrics for the Core
 Web Vitals, to help capture a larger part of the experience or to aid in
 diagnosing a specific issue.
 
-For example, the metrics [Time to First Byte
-(TTFB)](https://web.dev/time-to-first-byte/) and [First Contentful Paint
-(FCP)](https://web.dev/fcp/) are both vital aspects of the _loading_ experience,
-and are both useful in diagnosing issues with LCP (slow [server response
-times](https://web.dev/overloaded-server/) or [render-blocking
-resources](https://web.dev/render-blocking-resources/), respectively).
+For example, the metrics [Time to First Byte (TTFB)](/time-to-first-byte/) and
+[First Contentful Paint (FCP)](/fcp/) are both vital aspects of the _loading_
+experience, and are both useful in diagnosing issues with LCP (slow [server
+response times](/overloaded-server/) or [render-blocking
+resources](/render-blocking-resources/), respectively).
 
-Similarly, metrics like [Total Blocking Time (TBT)](https://web.dev/tbt/) and
-[Time to Interactive (TTI)](https://web.dev/tti/) are lab metrics that are vital
-in catching and diagnosing potential _interactivity_ issues that will impact
-FID. However, they are not part of the Core Web Vitals set because they are not
-field-measurable, nor do they reflect a
-[user-centric](https://web.dev/user-centric-performance-metrics/#how-metrics-are-measured)
+Similarly, metrics like [Total Blocking Time (TBT)](/tbt/) and [Time to
+Interactive (TTI)](/tti/) are lab metrics that are vital in catching and
+diagnosing potential _interactivity_ issues that will impact FID. However, they
+are not part of the Core Web Vitals set because they are not field-measurable,
+nor do they reflect a
+[user-centric](/user-centric-performance-metrics/#how-metrics-are-measured)
 outcome.
 
 ## Evolving Web Vitals
@@ -318,3 +331,5 @@ may change with greater frequency.
 
 For all Web Vitals, changes will be clearly documented in this public
 [CHANGELOG](http://bit.ly/chrome-speed-metrics-changelog).
+
+<web-feedback></web-feedback>

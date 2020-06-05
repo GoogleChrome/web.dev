@@ -4,6 +4,7 @@
 
 import './ProfileSwitcherContainer';
 import './Header';
+import './LanguageSelect';
 import './SideNav';
 import './SnackbarContainer';
 import './Search';

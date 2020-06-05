@@ -6,20 +6,25 @@
 // =============================================================================
 
 .w-text--left {
-  text-align: left;
+  text-align: left !important;
 
   [dir='rtl'] & {
-    text-align: right;
+    text-align: right !important;
   }
 }
 
 .w-text--right {
-  text-align: right;
+  text-align: right !important;
 
   [dir='rtl'] & {
-    text-align: left;
+    text-align: left !important;
   }
 }
 
-.w-text--center { text-align: center; }
-.w-text--justify { text-align: justify; }
+.w-text--center {
+  text-align: center !important;
+}
+
+.w-text--justify {
+  text-align: justify !important;
+}

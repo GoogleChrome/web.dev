@@ -4,7 +4,7 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-05-04
+updated: 2020-05-29
 description: |
   This post introduces the Largest Contentful Paint (LCP) metric and explains
   how to measure it
@@ -82,6 +82,12 @@ Contentful Paint occur within the first **2.5 seconds** of the page starting to
 load. To ensure you're hitting this target for most of your users, a good
 threshold to measure is the **75th percentile** of page loads, segmented across
 mobile and desktop devices.
+
+{% Aside %}
+  To learn more about the research and methodology behind this recommendation,
+  see: [Defining the Core Web Vitals metrics
+  thresholds](/defining-core-web-vitals-thresholds/)
+{% endAside %}
 
 ### What elements are considered?
 
@@ -189,7 +195,7 @@ cross-origin images that lack the
 header. Instead, only their load time is exposed (since this is already exposed
 via many other web APIs).
 
-The [usage example](#how-to-measure-largest-contentful-paint-in-javascript)
+The [usage example](#measure-lcp-in-javascript)
 below shows how to handle elements whose render time is not available. But,
 when possible, it's always recommended to set the
 [`Timing-Allow-Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin)
@@ -248,7 +254,7 @@ largest element throughout the load process.
 
 ## How to measure LCP
 
-FCP can be measured [in the lab](/user-centric-performance-metrics/#in-the-lab)
+LCP can be measured [in the lab](/user-centric-performance-metrics/#in-the-lab)
 or [in the field](/user-centric-performance-metrics/#in-the-field), and it's
 available in the following tools:
 
@@ -256,11 +262,15 @@ available in the following tools:
 
 - [Chrome User Experience
   Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [Search Console (Core Web Vitals
+  report)](https://support.google.com/webmasters/answer/9205520)
 
 ### Lab tools
 
-- [Lighthouse (v6)](https://developers.google.com/web/tools/lighthouse/)
 - [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [WebPageTest](https://webpagetest.org/)
 
 ### Measure LCP in JavaScript
 

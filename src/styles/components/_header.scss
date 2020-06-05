@@ -94,11 +94,15 @@ web-header {
     display: flex;
     font-weight: 500;
     margin: 0;
-    padding: 0 24px;
+    padding: 0 16px;
     position: relative;
 
     &[active] {
       box-shadow: 0 -2px 0 $WEB_PRIMARY_COLOR inset;
+    }
+
+    @include bp(lg) {
+      padding: 0 24px;
     }
   }
 
