@@ -76,6 +76,7 @@ const removeDrafts = require(`./${filtersDir}/remove-drafts`);
 const strip = require(`./${filtersDir}/strip`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
 const stripLanguage = require(`./${filtersDir}/strip-language`);
+const getPath = require(`./${filtersDir}/get-path`);
 
 const transformsDir = 'src/site/_transforms';
 const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
@@ -185,6 +186,7 @@ module.exports = function(config) {
   config.addFilter('removeDrafts', removeDrafts);
   config.addFilter('stripBlog', stripBlog);
   config.addFilter('stripLanguage', stripLanguage);
+  config.addFilter('getPath', getPath);
   config.addFilter('strip', strip);
 
   // ----------------------------------------------------------------------------
