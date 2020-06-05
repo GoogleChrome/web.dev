@@ -5,7 +5,7 @@ authors:
   - jeffposnick
 description: QuicTransport is a new API offering low-latency, bi-directional, client-server messaging. Learn more about its use cases, and how to give feedback about the future of the implementation.
 date: 2020-06-03
-updated: 2020-06-04
+updated: 2020-06-05
 hero: hero.jpg
 hero_position: center
 alt: |
@@ -170,7 +170,7 @@ Each chunk of all streams is a `Uint8Array`. Unlike with the Datagram APIs, thes
 
 #### SendStream
 
-A <code>[SendStream](https://wicg.github.io/web-transport/#sendstream)</code> is created by the web client using <code>createSendStream()</code>, which returns a promise for the <code>SendStream</code>.
+A <code>[SendStream](https://wicg.github.io/web-transport/#sendstream)</code> is created by the web client using the <code>createSendStream()</code> method of a `QuicTransport` instance, which returns a promise for the <code>SendStream</code>.
 
 Use the <code>[close()](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/close)</code> method of the <code>[WritableStreamDefaultWriter](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter)</code> associated with the stream to send a [QUIC Stream FIN bit](https://tools.ietf.org/html/draft-ietf-quic-transport-27#section-19.8) to the server. The browser tries to send all pending data before actually closing the associated QUIC stream.
 
@@ -203,7 +203,7 @@ await writer.abort();
 
 #### ReceiveStream
 
-A <code>[ReceiveStream](https://wicg.github.io/web-transport/#receivestream)</code> is initiated by the server. Obtaining a <code>ReceiveStream</code> is a two-step process for a web client. First, it calls <code>receiveStreams()</code>, which returns a <code>ReadableStream</code>. Each chunk of that <code>ReadableStream</code>, is, in turn, a <code>ReceiveStream</code> that can be used to read <code>Uint8Array</code> instances sent by the server.
+A <code>[ReceiveStream](https://wicg.github.io/web-transport/#receivestream)</code> is initiated by the server. Obtaining a <code>ReceiveStream</code> is a two-step process for a web client. First, it calls the <code>receiveStreams()</code> method of a `QuicTransport` instance, which returns a <code>ReadableStream</code>. Each chunk of that <code>ReadableStream</code>, is, in turn, a <code>ReceiveStream</code> that can be used to read <code>Uint8Array</code> instances sent by the server.
 
 ```js
 async function readFrom(receiveStream) {
@@ -246,7 +246,7 @@ reader.closed.then(() => {
 
 A <code>[BidirectionalStream](https://wicg.github.io/web-transport/#bidirectional-stream)</code> might be created either by the server or the client.
 
-Web clients can create one using `createBidirectionalStream()`, which returns a promise for a `BidirectionalStream`.
+Web clients can create one using the `createBidirectionalStream()` method of a `QuicTransport` instance, which returns a promise for a `BidirectionalStream`.
 
 ```js
 const stream = await transport.createBidirectionalStream();
@@ -255,7 +255,7 @@ const stream = await transport.createBidirectionalStream();
 // stream.writable is a WritableStream
 ```
 
-You can listen for a `BidirectionalStream` created by the server with `receiveBidirectionalStreams()`, which returns a `ReadableStream`. Each chunk of that `ReadableStream`, is, in turn, a `BidirectionalStream`.
+You can listen for a `BidirectionalStream` created by the server with the `receiveBidirectionalStreams()` method of a `QuicTransport` instance, which returns a `ReadableStream`. Each chunk of that `ReadableStream`, is, in turn, a `BidirectionalStream`.
 
 ```js
 const rs = transport.receiveBidrectionalStreams();
