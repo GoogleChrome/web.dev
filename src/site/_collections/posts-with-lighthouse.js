@@ -32,7 +32,7 @@ function hasLighthouseAudit(post) {
   if (typeof audits === 'string' && audits !== 'N/A') {
     return true;
   }
-  return audits instanceof Array && audits.length;
+  return audits instanceof Array && audits.length !== 0;
 }
 
 /**
