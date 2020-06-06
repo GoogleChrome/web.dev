@@ -17,7 +17,7 @@ Before you start writing take a moment to look over the [web.dev
 handbook](https://web.dev/handbook) and familiarize yourself with the process.
 When you're ready, follow the steps in the
 [Quickstart](https://web.dev/handbook/quick-start/) to create your content
-proposal.
+proposal..
 
 ## Building the site 🏗
 
