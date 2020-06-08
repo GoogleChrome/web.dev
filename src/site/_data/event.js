@@ -30,7 +30,7 @@ const eventData = [
       },
       {
         speaker: 'egsweeny',
-        title: `What's New in Speed Tooling`,
+        title: "What's New in Speed Tooling",
       },
       {
         speaker: 'addyosmani',
@@ -81,15 +81,15 @@ const eventData = [
       },
       {
         speaker: 'paullewis',
-        title: `What's New in DevTools`,
+        title: "What's New in DevTools",
       },
       {
         speaker: ['syg', 'leszeks'],
-        title: `What's New in V8/JavaScript`,
+        title: "What's New in V8/JavaScript",
       },
       {
         speaker: 'mathiasbynens',
-        title: `What's New in Puppeteer`,
+        title: "What's New in Puppeteer",
       },
       {
         speaker: 'andreban',
@@ -101,7 +101,7 @@ const eventData = [
       },
       {
         speaker: 'thomassteiner',
-        title: `Progressively Enhancing Like It's 2003`,
+        title: "Progressively Enhancing Like It's 2003",
       },
       {
         speaker: 'demianrenzulli',
@@ -184,7 +184,7 @@ const eventData = [
       },
       {
         speaker: 'agektmr',
-        title: `What's New in Web Payments`,
+        title: "What's New in Web Payments",
       },
     ],
   },

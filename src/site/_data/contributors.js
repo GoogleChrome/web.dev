@@ -585,7 +585,7 @@ const contributors = {
     github: 'jpmedley',
     twitter: 'medleyjp',
     description: {
-      en: `If an API's not documented it doesn't exist`,
+      en: "If an API's not documented it doesn't exist",
     },
   },
   egsweeny: {

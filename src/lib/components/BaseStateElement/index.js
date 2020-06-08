@@ -25,6 +25,8 @@ export class BaseStateElement extends BaseElement {
 
   /**
    * Required for `constructor`.
+   * @param {!Object<string, *>} state
    */
-  onStateChanged() {}
+  // eslint-disable-next-line
+  onStateChanged(state) {}
 }

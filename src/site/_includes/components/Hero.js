@@ -17,7 +17,6 @@
 const {html} = require('common-tags');
 const getSrcsetRange = require('../../_utils/get-srcset-range');
 
-/* eslint-disable max-len */
 module.exports = ({hero, alt, heroPosition, heroFit = 'cover'}) => {
   const srcsetRange = getSrcsetRange();
 

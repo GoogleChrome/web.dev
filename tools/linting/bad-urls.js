@@ -15,8 +15,9 @@
  */
 
 const rule = require('unified-lint-rule');
-const url = require('url');
+const {URL} = require('url');
 const visit = require('unist-util-visit');
+const siteData = require('../../src/site/_data/site');
 
 module.exports = rule('remark-lint:bad-urls', checkURL);
 
@@ -34,7 +35,7 @@ function checkURL(tree, file) {
     if (!nodeUrl) {
       return;
     }
-    const parsed = new url.URL(nodeUrl, 'https://web.dev');
+    const parsed = new URL(nodeUrl, siteData.url);
 
     // If URL hostname is "wiki.developer.mozilla.org", warn to change to
     // "developer.mozilla.org".

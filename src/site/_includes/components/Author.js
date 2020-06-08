@@ -24,7 +24,7 @@ module.exports = ({id, showSocialMedia = false, small = false}) => {
     throw new Error(
       `Can't create Author component for "${id}" without contributor ` +
         `information. Please check '_data/contributors.js' and make sure the ` +
-        'author you provide is a key in this object.',
+        `author you provide is a key in this object.`,
     );
   }
 

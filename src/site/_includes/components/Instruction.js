@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-/* eslint-disable max-len */
-
 const {html} = require('common-tags');
 const capitalize = require('../../_filters/capitalize');
 

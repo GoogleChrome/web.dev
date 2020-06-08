@@ -41,7 +41,11 @@ module.exports = {
         ],
       },
     ],
-    quotes: ['error', 'single', {allowTemplateLiterals: true}],
+    quotes: [
+      'warn',
+      'single',
+      {avoidEscape: true, allowTemplateLiterals: true},
+    ],
     'require-jsdoc': 0,
   },
   overrides: [
