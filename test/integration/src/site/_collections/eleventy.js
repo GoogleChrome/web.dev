@@ -1,5 +1,7 @@
 const path = require('path');
-const postsWithLighthouse = require(`../../../../../src/site/_collections/posts-with-lighthouse`);
+const {
+  postsWithLighthouse,
+} = require(`../../../../../src/site/_collections/posts-with-lighthouse`);
 const recentBlogPosts = require(`../../../../../src/site/_collections/recent-blog-posts`);
 
 module.exports = function(config) {

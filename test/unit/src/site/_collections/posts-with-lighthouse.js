@@ -7,7 +7,7 @@ describe('posts-with-lighthouse', function() {
   describe('hasLighthouseAudit', function() {
     it('should reject posts without web_lighthouse', function() {
       const post = {
-        tags: ['pathItem'],
+        tags: [],
         data: {},
         date: new Date(),
       };
@@ -17,7 +17,7 @@ describe('posts-with-lighthouse', function() {
 
     it('should reject posts with web_lighthouse set to N/A', function() {
       const post = {
-        tags: ['pathItem'],
+        tags: [],
         data: {
           web_lighthouse: 'N/A',
         },
@@ -29,7 +29,7 @@ describe('posts-with-lighthouse', function() {
 
     it('should allow posts with a single web_lighthouse value', function() {
       const post = {
-        tags: ['pathItem'],
+        tags: [],
         data: {
           web_lighthouse: 'foo',
         },
@@ -41,7 +41,7 @@ describe('posts-with-lighthouse', function() {
 
     it('should allow posts with multiple web_lighthouse values', function() {
       const post = {
-        tags: ['pathItem'],
+        tags: [],
         data: {
           web_lighthouse: ['foo', 'bar', 'baz'],
         },
