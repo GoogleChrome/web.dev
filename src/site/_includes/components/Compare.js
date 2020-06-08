@@ -20,11 +20,9 @@ const {html} = require('common-tags');
 
 module.exports = (content, type, labelOverride) => {
   if (!type) {
-    /* eslint-disable max-len */
     throw new Error(
-      `Can't create Compare component without a type. Did you forget to pass the type as a string?`,
+      "Can't create Compare component without a type. Did you forget to pass the type as a string?",
     );
-    /* eslint-enable max-len */
   }
 
   let label = labelOverride || '';

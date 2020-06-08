@@ -33,7 +33,7 @@ const lighthouseSeo = require('../lighthouse-seo/lighthouse-seo.11tydata.js')
 //
 // =============================================================================
 
-module.exports = function() {
+module.exports = function () {
   const paths = [
     fast,
     accessible,

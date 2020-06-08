@@ -65,7 +65,7 @@ module.exports = function buildRedirectHandler(filename, code = 301) {
 
   // Build a single RegExp for group matches, for speed of matching.
   const escaped = Object.keys(groupRedirect).map(escapeStringRegexp);
-  groupMatcher = new RegExp(`^(${escaped.join('|')})`);
+  const groupMatcher = new RegExp(`^(${escaped.join('|')})`);
 
   return (req, res, next) => {
     const url = ensureTrailingSlashOnly(req.path);

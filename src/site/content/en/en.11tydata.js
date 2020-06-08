@@ -15,7 +15,7 @@ const vitals = require('../en/vitals/vitals.11tydata.js').path;
 //
 // =============================================================================
 
-module.exports = function() {
+module.exports = function () {
   const paths = [fast, accessible, reliable, secure, pwa, vitals].filter(
     livePaths,
   );
