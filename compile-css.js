@@ -21,7 +21,7 @@ const fs = require('fs');
 const path = require('path');
 const log = require('fancy-log');
 
-const sassEngine = (function() {
+const sassEngine = (function () {
   try {
     // node-sass is faster, but regularly fails to install correctly (native bindings)
     return require('node-sass');

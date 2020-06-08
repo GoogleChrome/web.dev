@@ -8,7 +8,7 @@ module.exports = {
     cover: '/images/collections/angular.svg',
     title: 'Angular',
     updated: 'June 24, 2019',
-    description: `Build performant and progressive Angular applications.`,
+    description: 'Build performant and progressive Angular applications.',
     overview: `In this collection you’ll learn practical tips and tricks to
     make your Angular applications faster, more reliable, more accessible,
     and generally awesome.`,

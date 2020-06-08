@@ -1,3 +1,3 @@
-describe('_utils', function() {
+describe('_utils', function () {
   require('./add-pagination');
 });

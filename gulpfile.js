@@ -22,7 +22,8 @@ const rename = require('gulp-rename');
 const through2 = require('through2');
 
 /* eslint-disable max-len */
-const assetTypes = `jpg,jpeg,png,svg,gif,webp,webm,mp4,mov,ogg,wav,mp3,txt,yaml`;
+const assetTypes =
+  'jpg,jpeg,png,svg,gif,webp,webm,mp4,mov,ogg,wav,mp3,txt,yaml';
 /* eslint-enable max-len */
 
 const isProd = process.env.ELEVENTY_ENV === 'prod';
@@ -98,7 +99,7 @@ gulp.task('copy-content-assets', () => {
 
 gulp.task('copy-node_modules-assets', () => {
   return gulp
-    .src([`./node_modules/@webcomponents/webcomponentsjs/bundles/*.js`])
+    .src(['./node_modules/@webcomponents/webcomponentsjs/bundles/*.js'])
     .pipe(gulp.dest('./dist/lib/webcomponents/bundles/'));
 });
 

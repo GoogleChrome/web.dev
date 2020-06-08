@@ -37,7 +37,7 @@ const {env} = require('../_data/site');
  */
 function isScheduledForTheFuture(post, now = new Date()) {
   if (!(now instanceof Date)) {
-    throw new Error(`now argument must by a Date object.`);
+    throw new Error('now argument must by a Date object.');
   }
 
   const postDate = new Date(post.date);

@@ -104,7 +104,7 @@ class Subscribe extends BaseElement {
         if (response && response.result === 'accepted') {
           this.onSuccess();
         } else if (response && response.errors) {
-          const errorMessage = Object.values(error).join(' ');
+          const errorMessage = Object.values(response.errors).join(' ');
           this.onError(new Error(errorMessage));
         } else {
           this.onError(new Error(response.result), true);
@@ -117,7 +117,7 @@ class Subscribe extends BaseElement {
   onSuccess(isRobot = false) {
     this.submitted = true;
     this.subscribeError.textContent = '';
-    this.subscribeMessage.textContent = "Thank you! You're all signed up.";
+    this.subscribeMessage.textContent = `Thank you! You're all signed up.`;
     this.form.removeEventListener('submit', this.onSubmit);
     this.form.parentElement.removeChild(this.form);
     if (isRobot) {

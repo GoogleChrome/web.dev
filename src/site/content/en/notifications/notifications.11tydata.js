@@ -9,8 +9,8 @@ module.exports = {
     cover: '',
     title: 'Notifications',
     updated: 'May 24, 2018',
-    description: `Notifications`,
-    overview: `Notifications`,
+    description: 'Notifications',
+    overview: 'Notifications',
     topics: [
       {
         title: 'Notifications',

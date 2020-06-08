@@ -74,11 +74,13 @@ class BaseCard {
       <figure class="w-card-base__figure">
         <img
           class="w-card-base__image"
-          srcset="${srcsetRange.map(
-            (width) => html`
-              ${imagePath}?auto=format&fit=max&w=${width} ${width}w,
-            `,
-          )}"
+          srcset="
+            ${srcsetRange.map(
+              (width) => html`
+                ${imagePath}?auto=format&fit=max&w=${width} ${width}w,
+              `,
+            )}
+          "
           src="${imagePath}"
           alt="${alt}"
           width="100%"
@@ -131,7 +133,7 @@ class BaseCard {
         >
           <div
             class="w-card-base__cover ${this.thumbnail &&
-              `w-card-base__cover--with-image`}"
+              'w-card-base__cover--with-image'}"
           >
             <a
               class="w-card-base__link"
@@ -147,8 +149,8 @@ class BaseCard {
             <a class="w-card-base__link" href="${this.url}">
               <h2
                 class="${this.thumbnail
-                  ? `w-card-base__headline--with-image`
-                  : `w-card-base__headline`}"
+                  ? 'w-card-base__headline--with-image'
+                  : 'w-card-base__headline'}"
               >
                 ${md(this.data.title)}
               </h2>
