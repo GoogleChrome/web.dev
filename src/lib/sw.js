@@ -172,12 +172,7 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
       //     and for the _redirects.yaml handler (i.e., a 404 on /foo and /foo/
       //     will be treated the same way)
       //   * a _real_ network request to "/foo" gets 301'ed to "/foo/"
-      const headers = new Headers();
-      headers.append('Location', pathname + '/' + url.search);
-      return new Response('', {
-        status: 301,
-        headers,
-      });
+      return Response.redirect(pathname + '/' + url.search, 301);
     }
     pathname += 'index.html';
   }

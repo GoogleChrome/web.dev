@@ -8,22 +8,13 @@ web-subscribe:not(:defined) {
 }
 
 .w-subscribe {
+  margin: 0 auto;
   max-width: 720px;
   width: 100%;
 }
 
 .w-subscribe--padded {
   max-width: 540px;
-}
-
-.w-subscribe__select-border {
-  border: 1px solid $GREY_300;
-  width: 100%;
-
-  &:focus-within {
-    border-color: $WEB_PRIMARY_COLOR;
-    outline: none;
-  }
 }
 
 .w-subscribe__button {
@@ -50,18 +41,6 @@ web-subscribe:not(:defined) {
   margin-left: auto;
   margin-right: auto;
   margin-top: 8px;
-}
-
-.w-subscribe__select {
-  background-color: $WHITE;
-  border: 0;
-  font: inherit;
-  height: 52px;
-
-  &:focus {
-    border: 0;
-    outline: none;
-  }
 }
 
 @include bp(sm) {

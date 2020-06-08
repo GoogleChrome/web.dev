@@ -22,8 +22,8 @@ const setdefault = require('../_utils/setdefault');
 /**
  * Generate map the posts by author's username/key
  *
- * @param {Array<any>} posts
- * @return {Map<string, Array<any>>} Map of posts by author's username/key
+ * @param {Array<{ data: { authors: any[] }}>} posts
+ * @return {Map<string, Array<Object>>} Map of posts by author's username/key
  */
 const findAuthorsPosts = (posts) => {
   const authorsMap = new Map();
@@ -42,7 +42,7 @@ const findAuthorsPosts = (posts) => {
  * Finds image of author, returns path.
  *
  * @param {string} key
- * @return {string} Path for image.
+ * @return {string | void} Path for image.
  */
 const findAuthorsImage = (key) => {
   for (const size of ['@3x', '@2x', '']) {
@@ -57,18 +57,9 @@ const findAuthorsImage = (key) => {
  * Returns all authors with their posts.
  *
  * @param {any} collections Eleventy collection object
- * @return {Array<{ description: string, title: string, key: string, href: string, url: string, data: { title: string, subhead: string, hero: string, alt: string }, elements: Array<any> }>}
+ * @return {Object.<string, Author>}
  */
 module.exports = (collections) => {
-  const testAuthors = [
-    'robdodson',
-    'samthor',
-    'surma',
-    'mgechev',
-    'addyosmani',
-    'adamargyle',
-  ];
-
   // Get all posts and sort them
   const posts = collections
     .getFilteredByGlob('**/*.md')
@@ -77,37 +68,52 @@ module.exports = (collections) => {
 
   const authorsPosts = findAuthorsPosts(posts);
 
-  const authors = Object.values(contributors)
+  /** @constant @type {Object.<string, Author>} @default */
+  const authors = {};
+
+  Object.values(contributors)
     .sort((a, b) => a.title.localeCompare(b.title))
-    .reduce((accumulator, author) => {
-      if (process.env.PERCY && !testAuthors.includes(author.key)) {
-        return accumulator;
-      }
+    .forEach((author) => {
       // This updates the shared contributors object with meta information and is safe to be called multiple times.
       author.url = path.join('/en', author.href);
       author.data = {
         title: author.title,
         subhead: author.description,
       };
+
       author.elements = authorsPosts.has(author.key)
         ? authorsPosts.get(author.key)
         : [];
+
+      // If the author doesn't have any posts, use their Twitter profile.
+      if (author.elements.length === 0) {
+        if (!author.twitter) {
+          // Don't crash if there's no posts at all, or we're running in test mode, as the list of
+          // posts won't be complete. This also happens when we run Eleventy with generate partials.
+          if (process.env.PERCY && posts.length) {
+            throw new Error(
+              `author ${
+                author.title
+              } has no posts and no social: ${JSON.stringify(author)}`,
+            );
+          }
+        } else {
+          author.href = `https://twitter.com/${author.twitter}`;
+        }
+      }
+
       const authorsImage = findAuthorsImage(author.key);
       if (authorsImage) {
         author.data.hero = authorsImage;
         author.data.alt = author.title;
       }
 
-      if (author.elements.length > 0) {
-        if (process.env.PERCY) {
-          author.elements = author.elements.slice(-6);
-        }
-
-        accumulator.push(author);
+      if (process.env.PERCY) {
+        author.elements = author.elements.slice(-6);
       }
 
-      return accumulator;
-    }, []);
+      authors[author.key] = author;
+    });
 
   return authors;
 };

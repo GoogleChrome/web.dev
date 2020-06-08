@@ -1,6 +1,5 @@
 @import '../settings/colors';
 @import '../tools/mixins';
-@import '../tools/breakpoints';
 
 // =============================================================================
 // AUTHOR OVERVIEW
@@ -13,18 +12,9 @@
 $AUTHOR_IMAGE_SIZE_SMALL: 40px;
 
 .w-authors {
-  display: grid;
-  grid-column-gap: 16px;
-  grid-row-gap: 32px;
-  grid-template-columns: 1fr;
-
-  @include bp(sm) {
-    grid-template-columns: 256px 256px;
-  }
-
-  @include bp(md) {
-    grid-template-columns: 256px 256px 256px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px; // sass-lint:disable-line no-misspelled-properties
 }
 
 .w-author {
@@ -41,10 +31,12 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
   object-fit: cover;
   overflow: hidden;
   width: 64px;
+  min-width: 64px; // prevent from being shrunk
 }
 
 .w-author__image--small {
   height: $AUTHOR_IMAGE_SIZE_SMALL;
+  min-width: $AUTHOR_IMAGE_SIZE_SMALL; // prevent from being shrunk
   width: $AUTHOR_IMAGE_SIZE_SMALL;
 }
 
@@ -69,7 +61,7 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
   }
 }
 
-// Specificty required here because `a` tags in `.w-post-content` have higher priority.
+// Specificity required here because `a` tags in `.w-post-content` have higher priority.
 .w-post-content .w-author__name-link {
   text-decoration: none;
 
@@ -88,7 +80,8 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
 }
 
 .w-author__link-list {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
   list-style: none;
   margin: 0;
   overflow: hidden;
@@ -122,14 +115,12 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
   display: flex;
   flex-direction: row;
   margin-bottom: 12px;
+}
 
-  @include bp(sm) {
-    grid-template-columns: 256px 256px;
-  }
-
-  @include bp(md) {
-    grid-template-columns: 256px 256px 256px;
-  }
+.w-authors__card--holder {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
 }
 
 .w-author__image--row {
@@ -139,14 +130,16 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
 }
 
 .w-author__image--row-item {
-  border-radius: $GLOBAL_ROUNDED;
   height: $AUTHOR_IMAGE_SIZE_SMALL;
   margin-left: calc(-#{$AUTHOR_IMAGE_SIZE_SMALL} / 2);
-  overflow: hidden;
   position: relative;
   width: $AUTHOR_IMAGE_SIZE_SMALL;
-}
 
-.w-author__image--row-item > .w-author__image {
-  border: solid white 2px;
+  a {
+    display: block;
+  }
+
+  > .w-author__image {
+    border: solid white 2px;
+  }
 }

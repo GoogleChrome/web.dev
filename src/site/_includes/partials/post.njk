@@ -11,7 +11,20 @@
   {% endif %}
 
   {# Make sure Actions are first in the tab order. #}
-  <web-actions actions="share|subscribe" authors="{{ authors | expandContributors | join('|') }}"></web-actions>
+  <div class="w-actions">
+    <share-action authors="{{ authors | expandContributors | join('|') }}"
+      class="gc-analytics-event w-actions__fab w-actions__fab--share"
+      data-category="web.dev"
+      data-label="share"
+      data-action="click"
+      data-icon="share"
+      tabindex="0"
+      role="button"
+    >
+      <span>Share</span>
+    </share-action>
+    {% include 'partials/subscribe-action.njk' %}
+  </div>
 
   {% include 'partials/translation-disclaimer.njk' %}
 
@@ -47,8 +60,6 @@
         <div class="w-authors w-mt--xl w-pt--sm">
           {% for author in authors %}
             {% Author {
-              post: page,
-              author: contributors[author],
               id: author,
               showSocialMedia: true}
             %}
@@ -88,6 +99,8 @@
       <a href="#">Suggest translation</a> #}
     </div>
 
+    <web-feedback></web-feedback>
+
     {% if codelabs %}
       {% CodelabsCallout codelabs, lang %}
     {% endif %}
@@ -97,20 +110,13 @@
     {# Find next blog post #}
     {% ArticleNavigation {
       back: '/blog',
-      backLabel: 'Return to all articles',
-      collection: collections.blogPosts,
-      slug: page.fileSlug,
-      lang: lang
+      backLabel: 'Return to all articles'
     } %}
   {% else %}
     {# Find next item in this learning path #}
     {% ArticleNavigation {
       back: '/' + path.slug,
-      backLabel: 'Return to all articles',
-      path: path,
-      collection: collections[path.slug],
-      slug: page.fileSlug,
-      lang: lang
+      backLabel: 'Return to all articles'
     } %}
   {% endif %}
 </div>

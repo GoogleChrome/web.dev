@@ -29,8 +29,8 @@ const redirectHandler = (() => {
   // In development, Eleventy isn't guaranteed to have run, so read the actual
   // source file.
   const redirectsPath = isProd
-    ? 'dist/en/_redirects.yaml'
-    : 'src/site/content/en/_redirects.yaml';
+    ? 'dist/_redirects.yaml'
+    : 'src/site/content/_redirects.yaml';
 
   // Don't block loading the server if the redirect handler couldn't build.
   try {

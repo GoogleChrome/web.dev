@@ -37,6 +37,7 @@ const Compare = require(`./${componentsDir}/Compare`);
 const CompareCaption = require(`./${componentsDir}/CompareCaption`);
 const Details = require(`./${componentsDir}/Details`);
 const DetailsSummary = require(`./${componentsDir}/DetailsSummary`);
+const EventTable = require(`./${componentsDir}/EventTable`);
 const Hero = require(`./${componentsDir}/Hero`);
 const Instruction = require(`./${componentsDir}/Instruction`);
 const Label = require(`./${componentsDir}/Label`);
@@ -49,13 +50,8 @@ const YouTube = require(`./${componentsDir}/YouTube`);
 
 const collectionsDir = 'src/site/_collections';
 const authors = require(`./${collectionsDir}/authors`);
-const paginatedAuthors = require(`./${collectionsDir}/paginated-authors`);
-const paginatedBlogPosts = require(`./${collectionsDir}/paginated-blog-posts`);
-const paginatedNewsletters = require(`./${collectionsDir}/paginated-newsletters`);
-const paginatedPostsByAuthor = require(`./${collectionsDir}/paginated-posts-by-author`);
-const paginatedPostsByTag = require(`./${collectionsDir}/paginated-posts-by-tag`);
-const paginatedTags = require(`./${collectionsDir}/paginated-tags`);
 const blogPostsDescending = require(`./${collectionsDir}/blog-posts-descending`);
+const newsletters = require(`./${collectionsDir}/newsletters`);
 const postToCollections = require(`./${collectionsDir}/post-to-collections`);
 const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
 const recentBlogPosts = require(`./${collectionsDir}/recent-blog-posts`);
@@ -152,15 +148,10 @@ module.exports = function(config) {
   // ----------------------------------------------------------------------------
   config.addCollection('authors', authors);
   config.addCollection('blogPosts', blogPostsDescending);
+  config.addCollection('newsletters', newsletters);
+  config.addCollection('postToCollections', postToCollections);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('recentBlogPosts', recentBlogPosts);
-  config.addCollection('paginatedAuthors', paginatedAuthors);
-  config.addCollection('paginatedBlogPosts', paginatedBlogPosts);
-  config.addCollection('paginatedNewsletters', paginatedNewsletters);
-  config.addCollection('paginatedPostsByAuthor', paginatedPostsByAuthor);
-  config.addCollection('paginatedPostsByTag', paginatedPostsByTag);
-  config.addCollection('paginatedTags', paginatedTags);
-  config.addCollection('postToCollections', postToCollections);
   config.addCollection('tags', tags);
   // Turn collection.all into a lookup table so we can use findBySlug
   // to quickly find collection items without looping.
@@ -222,6 +213,10 @@ module.exports = function(config) {
   config.addShortcode('SignPosts', SignPosts);
   config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('YouTube', YouTube);
+
+  // This table is used for the web.dev/LIVE event, and should be taken down
+  // when the event is over or we no longer use it.
+  config.addShortcode('EventTable', EventTable);
 
   // ----------------------------------------------------------------------------
   // TRANSFORMS

@@ -16,12 +16,13 @@
 
 const path = require('path');
 const {html} = require('common-tags');
-const prettyDate = require('../../_filters/pretty-date');
 const stripLanguage = require('../../_filters/strip-language');
 const md = require('../../_filters/md');
 const constants = require('../../_utils/constants');
 const getSrcsetRange = require('../../_utils/get-srcset-range');
 const postTags = require('../../_data/postTags');
+
+const AuthorsDate = require('./AuthorsDate');
 
 /* eslint-disable require-jsdoc,indent,max-len */
 
@@ -65,7 +66,8 @@ class BaseCard {
   }
 
   renderThumbnail(url, img, alt) {
-    const imagePath = path.join(url, img);
+    const imagePath = path.isAbsolute(img) ? img : path.join(url, img);
+
     const srcsetRange = getSrcsetRange(240, 768);
 
     return html`
@@ -84,75 +86,6 @@ class BaseCard {
           loading="lazy"
         />
       </figure>
-    `;
-  }
-
-  renderAuthorImages(authors) {
-    if (!Array.isArray(authors) || !authors.length || authors.length > 2)
-      return;
-
-    return html`
-      <div class="w-author__image--row">
-        ${authors
-          .map((authorId) => {
-            const author = this.data.contributors[authorId];
-            if (!author) {
-              throw new Error(
-                `Author '${authorId}' does not exist in '_data/contributors.js'.`,
-              );
-            }
-            return html`
-              <div class="w-author__image--row-item">
-                <a href="${author.href}">
-                  <img
-                    class="w-author__image w-author__image--small"
-                    src="/images/authors/${authorId}.jpg"
-                    alt="${author.title}"
-                  />
-                </a>
-              </div>
-            `;
-          })
-          .reverse()}
-      </div>
-    `;
-  }
-
-  renderAuthorNames(authors) {
-    if (!Array.isArray(authors) || !authors.length) return;
-
-    return html`
-      <span class="w-author__name">
-        ${authors
-          .map((authorId) => {
-            const author = this.data.contributors[authorId];
-            if (!author) {
-              throw new Error(
-                `Author '${authorId}' does not exist in '_data/contributors.js'.`,
-              );
-            }
-            return html`
-              <a class="w-author__name-link" href="/authors/${authorId}"
-                >${author.title}</a
-              >
-            `;
-          })
-          .join(', ')}
-      </span>
-    `;
-  }
-
-  renderAuthorsAndDate(collectionItem) {
-    const authors = collectionItem.data.authors || [];
-
-    return html`
-      <div class="w-authors__card">
-        ${this.renderAuthorImages(authors)}
-        <div>
-          ${this.renderAuthorNames(authors)}
-          ${this.renderDate(collectionItem.date)}
-        </div>
-      </div>
     `;
   }
 
@@ -187,17 +120,9 @@ class BaseCard {
     `;
   }
 
-  renderDate(date) {
-    return date
-      ? html`
-          <div class="w-author__published">
-            <time>${prettyDate(date)}</time>
-          </div>
-        `
-      : '';
-  }
-
   render() {
+    const authors = this.collectionItem.data.authors || [];
+
     // prettier-ignore
     return html`
       <div class="w-card ${this.className} ${this.isDraft()}" role="listitem">
@@ -228,7 +153,7 @@ class BaseCard {
                 ${md(this.data.title)}
               </h2>
             </a>
-            ${this.renderAuthorsAndDate(this.collectionItem)}
+            ${AuthorsDate({authors, date: this.collectionItem.date})}
             <div
               class="w-card-base__desc ${this.className &&
                 `${this.className}__desc`}"

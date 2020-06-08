@@ -3,6 +3,7 @@
  */
 
 import {BaseElement} from '../BaseElement';
+import {trackError, trackEvent} from '../../analytics';
 import './_styles.scss';
 
 /**
@@ -64,15 +65,23 @@ class Subscribe extends BaseElement {
     }).then((r) => r.json());
   }
 
-  onError(errors) {
+  /**
+   *
+   * @param {Error} [error]
+   * @param {boolean} [useDefault=false]
+   */
+  onError(error, useDefault = false) {
+    const pTag = document.createElement('p');
+    const defaultError = new Error('Could not submit, please try again.');
     this.subscribeError.textContent = '';
-    if (errors) {
-      Object.values(errors).forEach((e) => {
-        const pTag = document.createElement('p');
-        pTag.textContent = typeof e === 'string' ? e : e.join(' ');
-        this.subscribeError.appendChild(pTag);
-      });
-    }
+
+    pTag.textContent = useDefault
+      ? defaultError.message
+      : (error || defaultError).message;
+
+    this.subscribeError.appendChild(pTag);
+
+    trackError(error, 'Email form failed to submit because');
   }
 
   onSubmit(e) {
@@ -85,7 +94,7 @@ class Subscribe extends BaseElement {
     const formIsRobot = form.get(this.robotName).length !== 0;
 
     if (formIsRobot) {
-      this.onSuccess();
+      this.onSuccess(true);
       return;
     }
     const cleanedForm = this.cleanForm(form);
@@ -95,25 +104,29 @@ class Subscribe extends BaseElement {
         if (response && response.result === 'accepted') {
           this.onSuccess();
         } else if (response && response.errors) {
-          this.onError(response.errors);
+          const errorMessage = Object.values(error).join(' ');
+          this.onError(new Error(errorMessage));
         } else {
-          this.onError({any: ['Could not submit, please try again.']});
+          this.onError(new Error(response.result), true);
         }
       })
-      .catch(() => this.onError({any: ['Could not submit, please try again.']}))
+      .catch((e) => this.onError(e, true))
       .finally(() => (this.processing = false));
   }
 
-  onSuccess() {
+  onSuccess(isRobot = false) {
     this.submitted = true;
     this.subscribeError.textContent = '';
     this.subscribeMessage.textContent = "Thank you! You're all signed up.";
     this.form.removeEventListener('submit', this.onSubmit);
     this.form.parentElement.removeChild(this.form);
-    ga('send', 'event', {
-      eventCategory: 'web.dev',
-      eventAction: 'submit',
-      eventLabel: 'subscribe, newsletter',
+    if (isRobot) {
+      return;
+    }
+    trackEvent({
+      category: 'web.dev',
+      action: 'submit',
+      label: 'subscribe, newsletter',
     });
   }
 }

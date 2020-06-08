@@ -4,15 +4,18 @@ title: Authors
 permalink: /en/{{ paged.href }}{% if paged.index > 0 %}{{ paged.index + 1 }}/{% endif %}index.html
 description: Our latest news, updates, and stories for developers
 pagination:
-  data: collections.paginatedAuthors
+  data: collections.authors
   size: 1
   alias: paged
+  resolve: values
 ---
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
 <div class="authors-landing-page">
   {# Make sure Actions are first in the tab order. #}
-  <web-actions actions="subscribe"></web-actions>
+  <div class="w-actions">
+    {% include 'partials/subscribe-action.njk' %}
+  </div>
 
   <div class="w-layout-container w-pb--non">
     <header class="w-page-header">

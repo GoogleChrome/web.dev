@@ -49,22 +49,18 @@ there's a table header column, "Marathon pace", without table data cells:
       <th scope="col">Marathon pace</th>
     </tr>
   </thead>
-
   <tbody>
     <tr>
       <th scope="row">1</th>
       <td>14</td>
       <td>5</td>
     </tr>
-
     <tr>
       <th scope="row">2</th>
       <td>16</td>
       <td>6</td>
     </tr>
-
   </tbody>
-
 </table>
 ```
 
@@ -74,16 +70,29 @@ add the missing table data cells for the table header column, "Marathon pace":
 
 ```html
 <table>
-  <caption><strong>My marathon training log</strong></caption>
+  <caption>My marathon training log</caption>
   <thead>
     <tr>
+      <th scope="col">Week</th>
+      <th scope="col">Total miles</th>
+      <th scope="col">Longest run</th>
+      <th scope="col">Marathon pace</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>14</td>
+      <td>5</td>
+      <td>4:45:00</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
       <td>16</td>
       <td>6</td>
-      <td>12.10</td>
+      <td>4:33:00</td>
     </tr>
-
   </tbody>
-
 </table>
 ```
 

@@ -65,9 +65,10 @@ available in the following tools:
 ### Measure FCP in JavaScript
 
 The easiest way to measure FCP (as well as all Web Vitals [field
-metrics]((/metrics/#in-the-field))) is with the [`web-vitals` JavaScript
-library](https://github.com/GoogleChrome/web-vitals), which wraps all the
-complexity of manually measuring FCP into a single function:
+metrics](/vitals/#field-tools-to-measure-core-web-vitals) 
+is with the [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals), 
+which wraps all the complexity of manually measuring FCP into a single
+function:
 
 ```js
 import {getFCP} from 'web-vitals';

@@ -30,7 +30,7 @@ example [HTTP](https://developer.mozilla.org/en-US/docs/Glossary/HTTP) or
 (if specified). For example, given a URL of `https://www.example.com:443/foo` ,
 the "origin" is `https://www.example.com:443`.
 
-### "same-origin" and "cross-origin"
+### "same-origin" and "cross-origin" {: #same-origin-and-cross-origin }
 Websites that have the combination of the same scheme, hostname, and port are
 considered "same-origin". Everything else is considered "cross-origin".
 

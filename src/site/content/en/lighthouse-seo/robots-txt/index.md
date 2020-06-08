@@ -4,7 +4,7 @@ title: "`robots.txt` is not valid"
 description: |
   Learn about the "robots.txt is not valid" Lighthouse audit.
 date: 2019-05-02
-updated: 2019-08-21
+updated: 2020-05-29
 web_lighthouse:
   - robots-txt
 ---
@@ -41,7 +41,7 @@ Common errors include:
 - `Pattern should either be empty, start with "/" or "*"`
 - `Unknown directive`
 - `Invalid sitemap URL`
-- `"$" should only be used at the end of the pattern`
+- `$ should only be used at the end of the pattern`
 
 Lighthouse doesn't check that your `robots.txt` file is
 in the correct location. To function correctly, the file must be in the root of
@@ -61,10 +61,10 @@ content from being indexed.
 To check the HTTP status code, open `robots.txt` in Chrome and
 [check the request in Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/network/reference#analyze).
 
-### Keep `robots.txt` smaller than 500 KB
+### Keep `robots.txt` smaller than 500 KiB
 
 Search engines may stop processing `robots.txt` midway through if the file is
-larger than 500 KB. This can confuse the search engine, leading to incorrect
+larger than 500 KiB. This can confuse the search engine, leading to incorrect
 crawling of your site.
 
 To keep `robots.txt` small, focus less on individually excluded pages and more
@@ -91,14 +91,15 @@ published list. (For example, here's
 
 Use `*` to match all otherwise unmatched crawlers.
 
+{% Compare 'worse', 'Don\'t' %}
 ```text
 user-agent:
 disallow: /downloads/
 ```
-{% Compare 'worse', 'Don\'t' %}
 No user agent is defined.
 {% endCompare %}
 
+{% Compare 'better', 'Do' %}
 ```text
 user-agent: *
 disallow: /downloads/
@@ -106,7 +107,6 @@ disallow: /downloads/
 user-agent: magicsearchbot
 disallow: /uploads/
 ```
-{% Compare 'better', 'Do' %}
 A general user agent and a `magicsearchbot` user agent are defined.
 {% endCompare %}
 
@@ -117,6 +117,7 @@ crawlers use those sections to determine which directives to follow. Placing a
 directive _before_ the first user-agent name means that no crawlers will follow
 it.
 
+{% Compare 'worse', 'Don\'t' %}
 ```text
 # start of file
 disallow: /downloads/
@@ -124,16 +125,15 @@ disallow: /downloads/
 user-agent: magicsearchbot
 allow: /
 ```
-{% Compare 'worse', 'Don\'t' %}
 No search engine crawler will read the `disallow: /downloads` directive.
 {% endCompare %}
 
+{% Compare 'better', 'Do' %}
 ```text
 # start of file
 user-agent: *
 disallow: /downloads/
 ```
-{% Compare 'better', 'Do' %}
 All search engines are disallowed from crawling the `/downloads` folder.
 {% endCompare %}
 
@@ -152,16 +152,16 @@ changed.
 If you choose to submit a sitemap file in `robots.txt`, make sure to
 use an [absolute URL](https://tools.ietf.org/html/rfc3986#page-27).
 
+{% Compare 'worse', 'Don\'t' %}
 ```text
 sitemap: /sitemap-file.xml
 ```
-{% Compare 'worse', 'Don\'t' %}
 {% endCompare %}
 
+{% Compare 'better', 'Do' %}
 ```text
 sitemap: https://example.com/sitemap-file.xml
 ```
-{% Compare 'better', 'Do' %}
 {% endCompare %}
 
 ## Resources

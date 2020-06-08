@@ -19,8 +19,8 @@ const constants = require('./constants');
 /**
  * Take array of elements and returns an array of paginated pages for the elements.
  * @param {Array<object>} elements Elements to paginate
- * @param {{ title: string, href: string, description: string, tag: string }} additionalData Aditional data that may be relevant to a page.
- * @return {Array<{ title: string, href: string, description: string, tag: string, posts: Array<object>, index: number, pages: number }>} An array of items to display, including href and index.
+ * @param {AdditionalData} additionalData Aditional data that may be relevant to a page.
+ * @return {Array<Paginated>} An array of items to display, including href and index.
  */
 module.exports = function addPagination(elements, additionalData = {}) {
   if (!Array.isArray(elements)) {
