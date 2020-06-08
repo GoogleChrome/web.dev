@@ -4,7 +4,7 @@ subhead: QuicTransport is a new API offering low-latency, bidirectional, client-
 authors:
   - jeffposnick
 description: QuicTransport is a new API offering low-latency, bidirectional, client-server messaging. Learn more about its use cases, and how to give feedback about the future of the implementation.
-date: 2020-06-03
+date: 2020-06-08
 updated: 2020-06-08
 hero: hero.jpg
 hero_position: center
@@ -15,11 +15,7 @@ origin_trial:
 tags:
   - blog
   - capabilities
-  - quic
-  - networking
-  - udp
-  - webtransport
-  - behind-a-flag
+  - network
 ---
 
 ## Background
@@ -149,7 +145,7 @@ writer.write(data2);
 const rs = transport.receiveDatagrams();
 const reader = rs.getReader();
 while (true) {
-  const {value, done} = await rs.read();
+  const {value, done} = await reader.read();
   if (done) {
     break;
   }
