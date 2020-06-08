@@ -1,11 +1,11 @@
 ---
 title: Experimenting with QuicTransport
-subhead: QuicTransport is a new API offering low-latency, bi-directional, client-server messaging. Learn more about its use cases, and how to give feedback about the future of the implementation.
+subhead: QuicTransport is a new API offering low-latency, bidirectional, client-server messaging. Learn more about its use cases, and how to give feedback about the future of the implementation.
 authors:
   - jeffposnick
-description: QuicTransport is a new API offering low-latency, bi-directional, client-server messaging. Learn more about its use cases, and how to give feedback about the future of the implementation.
+description: QuicTransport is a new API offering low-latency, bidirectional, client-server messaging. Learn more about its use cases, and how to give feedback about the future of the implementation.
 date: 2020-06-03
-updated: 2020-06-05
+updated: 2020-06-08
 hero: hero.jpg
 hero_position: center
 alt: |
