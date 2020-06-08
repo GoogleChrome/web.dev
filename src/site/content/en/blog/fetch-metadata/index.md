@@ -3,7 +3,7 @@ title: Protect your resources from web attacks with Fetch Metadata
 subhead: Prevent CSRF, XSSI, and cross-origin information leaks.
 authors:
   - lwe
-date: 2020-06-01
+date: 2020-06-04
 # updated: 2019-06-27
 hero: hero.jpg
 alt: A screenshot of Python code related to Resource Isolation Policy.
