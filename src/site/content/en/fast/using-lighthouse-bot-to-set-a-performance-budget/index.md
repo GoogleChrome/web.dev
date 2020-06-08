@@ -281,7 +281,7 @@ any of those with Lighthouse Bot flags:
 Example:
 
 ```bash
-npm run lh --perf=93 --seo=100 https://staging.example.com
+npm run lh -- --perf=93 --seo=100 https://staging.example.com
 ```
 
 This will fail the PR if the performance score drops below 93 **or** the SEO
