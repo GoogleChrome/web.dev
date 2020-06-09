@@ -52,7 +52,6 @@ const collectionsDir = 'src/site/_collections';
 const authors = require(`./${collectionsDir}/authors`);
 const blogPostsDescending = require(`./${collectionsDir}/blog-posts-descending`);
 const newsletters = require(`./${collectionsDir}/newsletters`);
-const postToCollections = require(`./${collectionsDir}/post-to-collections`);
 const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
 const recentBlogPosts = require(`./${collectionsDir}/recent-blog-posts`);
 const tags = require(`./${collectionsDir}/tags`);
@@ -150,7 +149,6 @@ module.exports = function(config) {
   config.addCollection('authors', authors);
   config.addCollection('blogPosts', blogPostsDescending);
   config.addCollection('newsletters', newsletters);
-  config.addCollection('postToCollections', postToCollections);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
   config.addCollection('recentBlogPosts', recentBlogPosts);
   config.addCollection('tags', tags);
