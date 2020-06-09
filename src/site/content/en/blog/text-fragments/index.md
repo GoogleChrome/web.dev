@@ -7,8 +7,8 @@ subhead: |
   and/or bring it to the user's attention.
 authors:
   - thomassteiner
-date: 2020-05-12
-updated: 2020-05-12
+date: 2020-06-09
+updated: 2020-06-09
 hero: hero.jpg
 alt:
 description: |
@@ -20,7 +20,6 @@ tags:
   - text-fragments
   - capabilities
   - fugu
-draft: true
 ---
 ## Fragment Identifiers
 
@@ -430,6 +429,24 @@ origin trial is running from Chrome version 83 to 84.
 ```bash
 Document-Policy: force-load-at-top
 ```
+
+## Text fragments in web search
+
+For some searches, the search engine Google provides a quick answer or summary
+with a content snippet from a relevant website.
+These *featured snippets* are most likely to show up when a search is in the form of a question.
+Clicking a featured snippet takes the user directly to the featured snippet text on the source web page.
+This works thanks to automatically created Text Fragments URLs.
+
+<figure class="w-figure">
+  <img src="google-serp.png" alt="" class="w-screenshot" width="80%">
+  <figcaption class="w-figcaption">Google search engine results page showing a featured snippet. The status bar shows the Text Fragments URL.</figcaption>
+</figure>
+
+<figure class="w-figure">
+  <img src="google-help.png" alt="" class="w-screenshot" width="80%">
+  <figcaption class="w-figcaption">After clicking through, the relevant section of the page is scrolled into view.</figcaption>
+</figure>
 
 ## Conclusion
 
