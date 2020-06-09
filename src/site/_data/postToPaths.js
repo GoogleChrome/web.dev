@@ -19,7 +19,12 @@ const paths = require('./paths/all.js');
 const postToPathsMap = {};
 Object.keys(paths).forEach((path) => {
   (paths[path].topics || []).forEach((topic) => {
-    (topic.pathItems || []).forEach((slug) => {
+    const subPathItems = (topic.subtopics || []).reduce(
+      (accumulator, subtopic) => [...accumulator, ...subtopic.pathItems],
+      [],
+    );
+    const pathItems = [...topic.pathItems, ...subPathItems];
+    (pathItems || []).forEach((slug) => {
       postToPathsMap[slug] = postToPathsMap[slug] || [];
       postToPathsMap[slug].push(paths[path].slug);
     });
