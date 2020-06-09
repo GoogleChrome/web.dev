@@ -376,7 +376,7 @@ const state = {
 }
 ```
 
-TODO(kayce): All JS code needs semicolons: https://google.github.io/styleguide/jsguide.html#formatting-semicolons-are-required
+<!-- TODO(kayce): All JS code needs semicolons: https://google.github.io/styleguide/jsguide.html#formatting-semicolons-are-required -->
 
 ### Listeners
 
