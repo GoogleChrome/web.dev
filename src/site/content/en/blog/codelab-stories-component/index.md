@@ -1,42 +1,63 @@
 ---
 layout: codelab
-title: Building A Stories Component
+title: Stories component codelab
 authors:
   - adamargyle
 description: |
-  TODO.
-date: 2020-05-21
+  Learn how to build an experience similar to Instagram Stories on the web.
+date: 2020-06-08
 hero: hero.jpg
-glitch: gui-challenges-stories
+#glitch: gui-challenges-stories
+glitch: sand-polite-order
 glitch_path: app/index.html
 related_post: stories-component
+tags:
+  - css
+  - dom
+  - javascript
+  - layout
+  - mobile
+  - ux
 ---
 
-This is the hands-on experience companion sandbox for this [YouTube video](#). We'll be walking through the HTML, CSS and Javascript, assembling the component as we go! The [associated blog post](#) is great for learning the tradeoffs we made with the strategy.
+This codelab teaches you how to build an experience like Instagram Stories
+on the web. We'll build the component as we go, starting with HTML, then CSS,
+then JavaScript.
 
-{% Aside 'objective' %}
-get our hands dirty with the code to maximize learnings
+Check out my blog post [Building a Stories component on the web](/building-a-stories-component)
+to learn about the tradeoffs I had to make while building this component.
+
+{% YouTube '5_sfnQDr1-o' %}
+
+{% Aside %}
+This post assumes that you're familiar with the Instagram Stories UX
+and will use terminology from that experience (e.g. a "friend's story").
 {% endAside %}
 
+## Setup
 
-### Introduction
-We'll be first going over the HTML, then the CSS, and last the Javascript. By the end you'll have a working component that you can use the same strategy for on something else.
-
-Prep
-- open `app/index.html`
+{% Instruction 'remix', 'ol' %}
+1. Open `app/index.html`.
 
 ## HTML
-Since each friend can have any number of stories, I thought it was meaningful to make my friends `<section>`'s and each of their stories `<article>`'s. Let's start from the beginning though. 
 
-We need a container to start from, this will be our stories component. Our first lines of code are a simple div with a class of stories. Paste the follow code inside of our `<body>` tag of `app/index.html`.
+I always aim to use [semantic HTML](https://en.wikipedia.org/wiki/Semantic_HTML).
+Since each friend can have any number of stories, I thought it was meaningful to use a
+`<section>` element for each friend and an `<article>` element for each story.
+Let's start from the beginning though. First, we need a container for our
+stories component.
 
-```html/0-2
+Add a `<div>` element to your `<body>`:
+
+```html/0,2
 <div class="stories">
 
 </div>
 ```
 
-Inside of `.stories` we'll be listing our friends, I made each of our friends a `<section>`. Like, here's a section for their contextual stories. You could even name each of these if you wanted hehe.
+<!-- TODO(kayce): Why not use "friend" instead of "user"? -->
+
+Add some `<section>` elements to represent friends:
 
 ```html/1-4
 <div class="stories"> 
@@ -47,12 +68,25 @@ Inside of `.stories` we'll be listing our friends, I made each of our friends a 
 </div>
 ```
 
-Each friend has some pictures, we'll call each picture a `.story`. Let's dig into how and where we're putting pictures into this component. 
+Add some `<article>` elements to represent stories:
 
-### Placeholder Loading Technique
-I want to share a placeholder loading technique for these pictures. To do this, we'll be using CSS's `background-image` property. It allows us to specify more than one background image. We can put them in an order so that our user picture is on top and will show up automatically when it's done loading. To enable this, we'll be putting our image url into a custom property (`--bg`), and use it within our CSS to layer with the loading placeholder.
+<!--
 
-```html/2-14
+Each friend has some pictures. We'll call each picture a `.story`.
+Next, let's dig into how and where we'll put pictures in this component. 
+
+### Placeholder loading technique
+
+Let's use a placeholder loading technique for each `.story`. We'll use CSS's
+`background-image` property, which allows us to specify more than one background
+image. We can put them in an order so that our user picture is on top and will
+show up automatically when it's done loading. To enable this, we'll put
+our image URL into a custom property (`--bg`), and use it within our CSS to
+layer with the loading placeholder.
+
+-->
+
+```html/2-3,6,9,12-14
 <div class="stories"> 
   <section class="user">
     <article class="story" style="--bg: url(https://picsum.photos/480/840);"></article> 
@@ -70,26 +104,44 @@ I want to share a placeholder loading technique for these pictures. To do this, 
     <article class="story" style="--bg: url(https://picsum.photos/482/844);"></article>
   </section>
 </div>
-
 ```
 
-#### That's All For HTML
-This sets us up with a container to be a horizontal list (`.stories`) and a place for each of our friends stories (`.user`). You'll see in the HTML there that I'm using an image service to help me prototype friend's stories.
+* We're using an image service (`picsum.com`) to help prototype stories.
+* The `style` attribute on each `<article>` is part of a placeholder loading
+  technique, which you'll learn more about in the next section.
 
 ## CSS
-Our content is ready for style, let's turn those bones into something folks will want to interact with. We'll be working mobile first today. Open `app/css/index.css` and collapse the `body {}` styles, let's clear our workspace!
 
-{% Aside 'success' %}
-Feel free to stop and study the styles in the `body` tag if you like! They're handling the responsive nature of our stories workspace.
+Our content is ready for style. Let's turn those bones into something folks will
+want to interact with. We'll be working mobile first today.
+
+{% Aside %}
+Feel free to stop and study the `body` styles if you like!
+They're handling the responsive nature of our Stories component.
+You can also collapse the `body` styles by clicking the **&or;**
+symbol next to `body` on line 1.
 {% endAside %}
 
-### .stories
-For our main component, we want a horizontal scrolling container, and so we made the component a grid, set each child to fill the row track and told each child to be the width of the viewport (mobile device). Grid will continue placing new `100vw` wide columns to the right of the previous one, until it's placed all the HTML elements in your markup. 
+### `.stories`
+
+For our `<div class="stories">` container we want a horizontal scrolling container.
+We can achieve this by:
+
+* Making the container a [Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
+* Setting each child to fill the row track
+* Making the width of each child the width of a mobile device viewport
+
+Grid will continue placing new `100vw` wide columns to the right of the previous
+one, until it's placed all the HTML elements in your markup. 
+
+<!-- TODO(kayce): Resize this screenshot so there's less whitespace -->
 
 <figure class="w-figure">
   <img src="./horizontal-scroll-with-grid.png" alt="Chrome and DevTools open with a grid visual showing the full width layout">
-  <figcaption class="w-figcaption">DevTools showing grid column overflow, making a horizontal scroller</figcaption>
+  <figcaption class="w-figcaption">Chrome DevTools showing grid column overflow, making a horizontal scroller</figcaption>
 </figure>
+
+Add the following CSS to the bottom of `app/css/index.css`:
 
 ```css
 .stories {
@@ -99,7 +151,8 @@ For our main component, we want a horizontal scrolling container, and so we made
 }
 ```
 
-Now that we have content extending beyond the viewport, it's time to tell that container how to handle it. We want horizontal scrolling, so we'll overflow-x to auto, and we even throw in some extras to help iron out some UX. Check out [the associated blog post](/a-stories-component) for more information about why 👍
+Now that we have content extending beyond the viewport, it's time to tell that
+container how to handle it. Add the highlighted lines of code to your `.stories` ruleset:
 
 ```css/4-6
 .stories {
@@ -112,14 +165,24 @@ Now that we have content extending beyond the viewport, it's time to tell that c
 }
 ```
 
-It takes both the parent container and the children to agree to scroll snapping, so let's cover how each `.user` opts into the snapping behavior:
+We want horizontal scrolling, so we'll set `overflow-x` to
+`auto`. When the user scrolls we want the component to gently rest on the next story,
+so we'll use `scroll-snap-type: x mandatory`.
+You can learn more about that in [CSS Scroll Snap Points](/building-a-stories-component/#scroll-snap-points).
+And check out [overscroll-behavior](building-a-stories-component/#overscroll-behavior)
+to learn about the browser compatibility issue that `overscroll-behavior-x: contain` fixes.
 
-```css/1-2
+It takes both the parent container and the children to agree to scroll snapping, so
+let's handle that now. Add the following code to the bottom of `app/css/index.css`:
+
+```css
 .user {
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
 ```
+
+<!-- TODO(kayce): Is my component supposed to look like the video below at this point? -->
 
 <figure class="w-figure">
   <video playsinline controls autoplay loop muted class="w-screenshot">
@@ -128,10 +191,18 @@ It takes both the parent container and the children to agree to scroll snapping,
   </video>
 </figure>
 
-That will get you scrolling through your friends, but we still have an issue with the stories to solve.
+That will get you scrolling through your friends, but we still have an issue
+with the stories to solve.
 
-### .user
-Let's create a layout in the `.user` section that wrangles those child story elements into place. We're going to use a handy stacking trick to solve this. We're essentially creating a 1x1 grid where the row and column have the same alias of `story`, and each story grid item is going to try and claim that space, resulting in a stack.
+### `.user`
+
+Let's create a layout in the `.user` section that wrangles those child story
+elements into place. We're going to use a handy stacking trick to solve this.
+We're essentially creating a 1x1 grid where the row and column have the same Grid
+alias of `story`, and each story grid item is going to try and claim that space,
+resulting in a stack.
+
+Add the highlighted code to your `.user` ruleset:
 
 ```css/3-4
 .user {
@@ -142,22 +213,38 @@ Let's create a layout in the `.user` section that wrangles those child story ele
 }
 ```
 
-```css/1-1
+Add the following ruleset to the bottom of `app/css/index.css`:
+
+```css
 .story {
   grid-area: story;
 }
 ```
 
-Now, without absolute positioning, floats, or other layout directives that take an element out of flow, we're still in flow. Plus, it's like barely any code, look at that. This also get's broken down in the video and the blog post better, in case you'd like additional explanation. 
+Now, without absolute positioning, floats, or other layout directives that take
+an element out of flow, we're still in flow. Plus, it's like barely any code,
+look at that! This gets broken down in the video and the blog post better,
+in case you'd like additional explanation. 
 
-### .story
-Our last CSS style to do is for the story item itself. Our HTML had put these as background images, and we have some interesting things in our CSS to checkout here.
+### `.story`
 
-I set the `background-size` to cover which will ensure there's no empty space in the viewport, our image will be filling it up. Then, we define 2 background images and pull a neat CSS web trick: loading tombstone.
-- Background image 1 (top): is our `var(--bg)`, a url we passed inline in the HTML
-- Background image 2 (bottom): a gradient to show while the url is loading
+Now we just need to style the story item itself.
 
-CSS will automatically replace the gradient with the image, once it's done downloading:
+Earlier we mentioned that the `style` attribute on each `<article>` element is part of a
+placeholder loading technique:
+
+```html
+<article class="story" style="--bg: url(https://picsum.photos/480/840);"></article> 
+```
+
+We're going to use CSS's `background-image` property, which allows us to specify
+more than one background image. We can put them in an order so that our user
+picture is on top and will show up automatically when it's done loading. To
+enable this, we'll put our image URL into a custom property (`--bg`), and use it
+within our CSS to layer with the loading placeholder.
+
+First, let's update the `.story` ruleset to replace a gradient with a background image
+once it's done loading. Add the highlighted code to your `.story` ruleset:
 
 ```css/3-6
 .story {
@@ -170,7 +257,18 @@ CSS will automatically replace the gradient with the image, once it's done downl
 }
 ```
 
-Next we'll add some CSS to remove some behavior, freeing up the browser to move faster. The first is `user-select`, which we set to none so that users don't accidentally start a text-selection moment, like to copy text. The next is to specify the item as interaction to touch events, like drag and tap. This frees the browser from trying to decide if you're clicking a link or not, resulting in an instant interaction instead of one `300ms` behind.
+Setting `background-size` to `cover` ensures there's no empty space in the
+viewport because our image will be filling it up. Defining 2 background images
+enables us to pull a neat CSS web trick called the *loading tombstone*:
+
+- Background image 1 (`var(--bg)`) is the URL we passed inline in the HTML
+- Background image 2 (`linear-gradient(to top, lch(98 0 0), lch(90 0 0))` is a gradient
+  to show while the URL is loading
+
+CSS will automatically replace the gradient with the image, once the image is done downloading.
+
+Next we'll add some CSS to remove some behavior, freeing up the browser to move faster. 
+Add the highlighted code to your `.story` ruleset:
 
 ```css/8-9
 .story {
@@ -186,9 +284,15 @@ Next we'll add some CSS to remove some behavior, freeing up the browser to move 
 }
 ```
 
-Last, we're using Javascript to toggle between our stories, why not give CSS a little hook to animate with? We'll be putting a `.seen` class onto our stories that need an exit. I decided a slight fade would be nice, so I added that transition CSS to tell it what I wanted. I instructed to animate only `opacity`, over `300ms` with a custom easing function that I got from [Material](https://material.io/design/motion/speed.html#easing).
+* `user-select: none` prevents users from accidentally selecting text
+* `touch-action: manipulation` instructs the browser that these interactions
+  should be treated as touch events, which frees up the browser from trying to
+  decide whether you're clicking a URL or not
 
-```css/11-16
+Last, let's add a little CSS to animate the transition between stories. Add the
+highlighted code to your `.story` ruleset:
+
+```scss/11-16
 .story {
   grid-area: story;
 
@@ -209,11 +313,32 @@ Last, we're using Javascript to toggle between our stories, why not give CSS a l
 }
 ```
 
-A keen eye would notice the `pointer-events: none` there and scratch their head. I'd say this is the only downside of the solution so far, is that a `.seen.story` is still on top and will receive taps, even though it's invisible. By setting the `pointer-events` to none, we turn the glass story into a window, and steal more user interactions. Not too bad of a trade off, not too hard to manage here in our CSS right now. We're not juggling `z-index`, I'm feeling good about this still.
+The `.seen` class will be added to a story that needs an exit.
+I got the custom easing function (`cubic-bezier(0.4, 0.0, 1,1)`)
+from Material Design's [Easing](https://material.io/design/motion/speed.html#easing)
+guide (see the *Accerlerated easing* section).
 
+{% Aside %}
+TODO(kayce): Explain the ampersand syntax
+{% endAside %}
 
-## Javascript
-The interactions of a stories component are quite simple to the user: tap on the right to go forward, tap on the left to go back. Simple things for users tends to be hard work for developers. We'll take care of lots of it though, it'll get us really far.
+If you've got a keen eye you probably noticed the `pointer-events: none`
+declaration and are scratching your head right now. I'd say this is the only
+downside of the solution so far. We need this because a `.seen.story` element
+will be on top and will receive taps, even though it's invisible. By setting the
+`pointer-events` to `none`, we turn the glass story into a window, and steal
+more user interactions. Not too bad of a trade off, not too hard to manage here
+in our CSS right now. We're not juggling `z-index`. I'm feeling good about this
+still.
+
+TODO(kayce): We need to rephrase the last paragraph. Turning the glass story into
+a window? Stealing more user interactions? 
+
+## JavaScript
+
+The interactions of a stories component are quite simple to the user: tap on the
+right to go forward, tap on the left to go back. Simple things for users tends
+to be hard work for developers. We'll take care of lots of it, though.
 
 <figure class="w-figure">
   <video playsinline controls autoplay loop muted class="w-screenshot">
@@ -223,15 +348,25 @@ The interactions of a stories component are quite simple to the user: tap on the
 </figure>
 
 ### Setup
-To start out, let's compute and store as much information as we can. Our first line of js grabs and stores a reference to our primary HTML element root. The next line calculates where the middle of our element is, so we can decide if a tap is to go forward or backward.
 
-```js/0-1
+To start out, let's compute and store as much information as we can.
+Add the following code to `app/js/index.js`:
+
+```js
 const stories = document.querySelector('.stories')
 const median = stories.offsetLeft + (stories.clientWidth / 2)
 ```
 
+Our first line of JavaScript grabs and stores a reference to our primary HTML
+element root. The next line calculates where the middle of our element is, so we
+can decide if a tap is to go forward or backward.
+
 ### State
-Next I make a small object with some state relevant to our logic, and in this case, we're only interested in the current story. In our HTML markup, we can access it by grabbing the 1st user and their 1st story, like this:
+
+Next we make a small object with some state relevant to our logic. In this
+case, we're only interested in the current story. In our HTML markup, we can
+access it by grabbing the 1st user and their 1st story. Add the highlighted code
+to your `app/js/index.js`:
 
 ```js/3-5
 const stories = document.querySelector('.stories')
@@ -242,16 +377,16 @@ const state = {
 }
 ```
 
+TODO(kayce): All JS code needs semicolons: https://google.github.io/styleguide/jsguide.html#formatting-semicolons-are-required
+
 ### Listeners
+
 We have enough logic now to start listening for user events and directing them. 
 
 #### Mouse
-Let's start by listening to the `'click'` event on our stories container. If a click happens and it's not on an article (which is the element type of a `.story`), we bail and do nothing. If it is an article, the `clientX` of the click is used, which grabs the horizontal position of the mouse or finger used. If that user position is greater than the media, we know the stories needs to go `next`, otherwise `previous`. 
 
-Ignoring `navigateStories()` for now, what we've done is: 
-- Guarded the event to only those on stories
-- Compared the user interaction point with the middle of the screen
-- Directed user interaction to business logic
+Let's start by listening to the `'click'` event on our stories container.
+Add the highlighted code to `app/js/index.js`:
 
 ```js/7-15
 const stories = document.querySelector('.stories')
@@ -272,8 +407,19 @@ stories.addEventListener('click', e => {
 })
 ```
 
+If a click happens and it's not on a `<article>` element we bail and do nothing.
+If it is an article, we grab the horizontal position of the mouse or finger with
+`clientX`. We haven't implemented `navigateStories` yet, but the argument that
+it takes specifies what direction we need to go. If that user position is
+greater than the median, we know we need to navigate to `next`, otherwise
+`prev` (previous).
+
 #### Keyboard
-This time we're listening for keyboard presses in the browser window, and if the arrow is down we send navigate `next`, and if the arrow is up we navigate `previous`.
+
+Now, let's listen for keyboard presses. If the <kbd>Down Arrow</kbd> is pressed we navigate
+to `next`. If it's the <kbd>Up Arrow</kbd>, we go to `prev`.
+
+Add the highlighted code to `app/js/index.js`:
 
 ```js/17-23
 const stories = document.querySelector('.stories')
@@ -302,14 +448,23 @@ document.addEventListener('keydown', ({key}) => {
 })
 ```
 
-### Stories Navigation
-Time to tackle the unique business logic of stories and the UX they've become famous for. This looks chunky and tricky, but I think if you take it line by line, you'll find it's quite digestible. 
+### Stories navigation
 
-Upfront, we stash some selectors that help us decide whether to scroll to a friend or show/hide a story. Since the HTML is where we're working, we'll be querying it for presence of friends (users) or stories (story). 
+Time to tackle the unique business logic of stories and the UX they've become
+famous for. This looks chunky and tricky, but I think if you take it line by
+line, you'll find it's quite digestible. 
 
-These variables will help us answer questions like, "given story x, does "next" mean move to another story or to a user," etc. I did it by using the tree structure we built, reaching into parents and their children:
+Upfront, we stash some selectors that help us decide whether to scroll to a
+friend or show/hide a story. Since the HTML is where we're working, we'll be
+querying it for presence of friends (users) or stories (story). 
 
-```js/1-5
+These variables will help us answer questions like, "given story x, does "next"
+mean move to another story or to a user?" I did it by using the tree
+structure we built, reaching into parents and their children.
+
+Add the following code to the bottom of `app/js/index.js`:
+
+```js
 const navigateStories = direction => {
   const story = state.current_story
   const lastItemInUserStory = story.parentNode.firstElementChild
@@ -319,13 +474,15 @@ const navigateStories = direction => {
 }
 ```
 
-The argument this function accepts is the direction that was pre-determined by our event listener directors. With it and our DOM, we're ready to make a smart decision about what to do in our code.
-
 Here's our business logic goal, as close to natural language as possible:
-If there's a next/previous story: show that story
-If it's the last/first story of the friend: show a new friend
-If there's no story to go to in that direction: do nothing
-Stash the new current story into state
+
+* Decide how to handle the tap
+  * If there's a next/previous story: show that story
+  * If it's the last/first story of the friend: show a new friend
+  * If there's no story to go to in that direction: do nothing
+* Stash the new current story into `state`
+
+Add the highlighted code to your `navigateStories` function:
 
 ```js/7-36
 const navigateStories = direction => {
@@ -366,5 +523,13 @@ const navigateStories = direction => {
 }
 ```
 
+## Try it out
+
+{% Instruction 'preview' %}
+
 ## Conclusion
-That's a wrap up for the needs I had with the component. Feel free to build upon it, drive it with data, etc! 
+
+That's a wrap up for the needs I had with the component. Feel free to build upon
+it, drive it with data, etc.! 
+
+TODO(kayce): Encourage them to share and mention we'll update the list

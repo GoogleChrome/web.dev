@@ -2,16 +2,16 @@
 layout: post
 title: Building a Stories component on the web
 # TODO(kayce): Rename URL to match the title
-subhead: TODO
+subhead: An overview of how Adam Argyle built an experience similar to Instagram Stories on the web.
 authors:
   - adamargyle
-description: |
-  Adam Argyle shares his strategy of recreating stories, a mobile UI pattern commonly found on native platforms, with web technology. With CSS grid and scroll-snap-points it turned out to be swift work.
-date: 2020-05-21
+description: An overview of how Adam Argyle built an Instagram Stories experience on the web.
+date: 2020-06-08
 hero: hero.jpg
 thumbnail: thumb.jpg
 codelabs: codelab-stories-component
 tags:
+  - blog
   - css
   - dom
   - javascript
@@ -32,7 +32,7 @@ browsers.
 </figure>
 
 If you would prefer a hands-on demonstration of building this Stories component yourself,
-check out the [Stories component codelab](TODO).
+check out the [Stories component codelab](/codelab-stories-component).
 
 If you prefer video, here's a YouTube version of this post:
 
@@ -101,7 +101,7 @@ Our primary `.stories` component wrapper is a mobile first horizontal scrollview
     <source src="https://storage.googleapis.com/web-dev-assets/gui-challenges/stories-overflow-columns.mp4">
   </video>
   <figcaption class="w-figcaption">
-    Stories in desktop mode showing Devtools toggling `overflow` and highlighting the columns created by CSS grid
+    Stories in desktop mode showing Devtools toggling <code>overflow</code> and highlighting the columns created by CSS grid
   </figcaption>
 </figure>
 
