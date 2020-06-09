@@ -3,8 +3,7 @@ layout: layout
 ---
 
 {% set path = paths[pathName] %}
-{% set topics = path.topics  %}
-{# {% set topics = path.topics | removeDrafts(lang) %} #}
+{% set topics = path.topics | removeDrafts(lang) %}
 
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
