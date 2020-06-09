@@ -4,7 +4,7 @@ title: Use lazysizes to lazyload images
 authors:
   - katiehempenius
 description: |
-  Lazy loading is the strategy of loading resources as they are needed, rather
+  lazy-loading is the strategy of loading resources as they are needed, rather
   than in advance. This approach frees up resources during the initial page load
   and avoids loading assets that are never used.
 date: 2018-11-05
@@ -16,12 +16,12 @@ tags:
 ---
 
 {% Aside 'note' %}
-  Browser-level native lazy loading is now available! Refer to the [Native lazy loading for the
+  Browser-level native lazy-loading is now available! Refer to the [Native lazy-loading for the
   web](/native-lazy-loading) article to learn how to use the `loading` attribute and leverage
   lazysizes as a fallback for browsers that do not yet support it.
 {% endAside %}
 
-**Lazy loading** is the strategy of loading resources as they are needed, rather
+**lazy-loading** is the strategy of loading resources as they are needed, rather
 than in advance. This approach frees up resources during the initial page load
 and avoids loading assets that are never used.
 
@@ -32,7 +32,7 @@ makes this a very simple strategy to implement.
 ## What is lazysizes?
 
 [lazysizes](https://github.com/aFarkas/lazysizes) is the most popular library
-for lazy loading images. It is a script that intelligently loads images as the
+for lazy-loading images. It is a script that intelligently loads images as the
 user moves through the page and prioritizes images that the user will encounter
 soon.
 
@@ -71,7 +71,7 @@ your pages:
 When you update the `<img>` tag you make two changes:
 
 +  **Add the `lazyload` class**: This indicates to lazysizes that the
-    image should be lazy loaded.
+    image should be lazy-loaded.
 +  **Change the `src` attribute to `data-src`**: When it is time to load the
     image, the lazysizes code sets the image `src` attribute using the value
     from the `data-src` attribute.
@@ -112,6 +112,6 @@ scroll, you should see new network requests occur and `<img>` tag classes change
 from `lazyload` to `lazyloaded`.
 
 Additionally, you can use Lighthouse to verify that you haven't forgotten to
-lazy load any offscreen images. Run the Lighthouse Performance Audit
+lazy-load any offscreen images. Run the Lighthouse Performance Audit
 (**Lighthouse > Options > Performance**) and look for the results of the
 **Defer offscreen images** audit.

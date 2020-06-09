@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Native lazy-loading for the web
 subhead: Browser-level native lazy-loading is finally here!
 authors:
@@ -37,10 +38,10 @@ into the details.
 
 ## Browser compatibility
 
-At the time of this update (April 2020) native lazy loading is supported in Chromium-based
+At the time of this update (April 2020) native lazy-loading is supported in Chromium-based
 browsers and Firefox.
 
-See the `loading` field of MDN's 
+See the `loading` field of MDN's
 [Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Browser_compatibility)
 table for updates.
 
