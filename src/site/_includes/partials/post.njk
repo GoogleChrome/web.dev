@@ -55,10 +55,7 @@
           {% if updated %} <span class="w-author__separator">•</span> Updated <time>{{ updated | prettyDate }}</time> {% endif %}
         </div>
       {% endif %}
-      {% SignPosts {
-        postToCollections: collections.postToCollections,
-        url: page.url
-      } %}
+      {% SignPosts page.fileSlug %}
 
       {% if authors %}
         <div class="w-authors w-mt--xl w-pt--sm">

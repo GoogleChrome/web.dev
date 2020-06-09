@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const paths = require('./paths/all.js');
+const paths = require('./paths');
 
 const postToPathsMap = {};
 Object.keys(paths).forEach((path) => {

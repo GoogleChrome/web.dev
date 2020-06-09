@@ -1,5 +1,5 @@
 const livePaths = require('../../../_filters/live-paths');
-const allPaths = require('../../../_data/paths/all.js');
+const allPaths = require('../../../_data/paths');
 
 // =============================================================================
 // LEARN OVERVIEW

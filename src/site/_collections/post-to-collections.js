@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 const setdefault = require('../_utils/setdefault');
-const paths = require('../_data/paths/all.js');
+const paths = require('../_data/paths');
 const postToPaths = require('../_data/postToPaths.js');
 
 /**
