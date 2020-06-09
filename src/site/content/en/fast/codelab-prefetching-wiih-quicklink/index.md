@@ -28,7 +28,7 @@ The website is a simple demo built with [create-react-app](https://reactjs.org/d
 {% Instruction 'disable-cache', 'ol' %}
 1. In the [Throttling drop-down list](https://developers.google.com/web/tools/chrome-devtools/network/reference#throttling), select **Fast 3G** to simulate a slow connection type.
 {% Instruction 'reload-app', 'ol' %}
-1. Filter requests for the word “chunk”, to visualize the chunks that are loaded for this particular page.
+1. Filter requests for the word "chunk", to visualize the chunks that are loaded for this particular page.
 
 <img class="w-screenshot" src="./cdt-home-unoptimized.png" alt="Network panel showing the home page chunks.">
 
@@ -46,7 +46,7 @@ Next, you'll implement `quicklink` in this site, so that these chunks can be pre
 This allows you to combine the best of both techniques: 
 
 - Route-based code splitting tells the browser to only load the necessary chunks at a higher priority at page load time.
-- Prefetching tells the browser to load the chunks for in-viewport links at the lowest priority, during the browser’s idle time.
+- Prefetching tells the browser to load the chunks for in-viewport links at the lowest priority, during the browser's idle time.
 
 ## Configure `webpack-route-manifest`
 
@@ -99,7 +99,7 @@ module.exports = function override(config) {
 The new code does the following:
 
 - `config.resolve` declares variables with the internal routes to pages, assets and components.
-- `config.plugins.push()` creates a `RouteManifest` object and passes it the configuration so that the `manifest.json` file can be generated based on the site’s routes and chunks.
+- `config.plugins.push()` creates a `RouteManifest` object and passes it the configuration so that the `manifest.json` file can be generated based on the site's routes and chunks.
 
 The `manifest.json` file will be generated and made available at `https://site_url/rmanifest.json`.
 
@@ -171,7 +171,7 @@ If the Glitch console throws an error at this point about the lack of a dependen
 {% Instruction 'disable-cache', 'ol' %}
 1. In the Throttling drop-down list, select **Fast 3G** to simulate a slow connection type.
 {% Instruction 'reload-app', 'ol' %}
-1. Filter requests for “chunk” in the network panel.
+1. Filter requests for "chunk" in the network panel.
 
 When the home page loads the chunks for that route are loaded. After that, `quicklink` prefetches the route's chunks for the in-viewport links:
 
@@ -183,8 +183,8 @@ Next:
 
 1. Clear the network panel.
 1. Click on the **Blog** link to navigate to that page.
-1. Filter requests for “chunk” in the network panel.
+1. Filter requests for "chunk" in the network panel.
 
 <img class="w-screenshot" src="./cdt-blog-optimized.png" alt="Network panel showing the blog page with chunks picked up from cache.">
 
-The **Size** column indicates that these chunks were retrieved from the “prefetch cache”, instead of the network. Loading these chunks without a `quicklink` took approximately **580ms**. Using the library it now takes **2ms**, which represents a **99% reduction**!
+The **Size** column indicates that these chunks were retrieved from the "prefetch cache", instead of the network. Loading these chunks without a `quicklink` took approximately **580ms**. Using the library it now takes **2ms**, which represents a **99% reduction**!
