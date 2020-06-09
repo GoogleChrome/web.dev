@@ -17,7 +17,6 @@
 import {dimensions, id, version} from 'webdev_analytics';
 import entrypoint from 'webdev_entrypoint';
 import {localStorage} from './utils/storage';
-import removeServiceWorkers from './utils/sw-remove';
 
 window.ga =
   window.ga ||
@@ -41,8 +40,4 @@ if (browserSupport) {
   s.type = 'module';
   s.src = '/' + entrypoint;
   document.head.append(s);
-} else {
-  // If we've transitioned into becoming an unsupported browser, then any
-  // previous Service Worker won't be updated. Aggressively remove on load.
-  removeServiceWorkers();
 }

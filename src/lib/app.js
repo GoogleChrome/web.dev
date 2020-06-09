@@ -58,12 +58,20 @@ function onGlobalStateChanged({isSignedIn, isPageLoading}) {
 store.subscribe(onGlobalStateChanged);
 onGlobalStateChanged(store.getState());
 
-// Ensure/update the Service Worker, or remove it if unsupported (this should
-// never happen here unless the valid domains change, but left in for safety).
-if (serviceWorkerIsSupported(window.location.hostname)) {
-  ensureServiceWorker();
+const featureDetectServiceWorker = () => {
+  // Ensure/update the Service Worker, or remove it if unsupported (this should
+  // never happen here unless the valid domains change, but left in for safety).
+  if (serviceWorkerIsSupported(window.location.hostname)) {
+    registerOrEnsureServiceWorker();
+  } else {
+    removeServiceWorkers();
+  }
+};
+
+if (document.readyState === 'complete') {
+  featureDetectServiceWorker();
 } else {
-  removeServiceWorkers();
+  window.addEventListener('load', featureDetectServiceWorker);
 }
 
 function serviceWorkerIsSupported(hostname) {
@@ -75,7 +83,7 @@ function serviceWorkerIsSupported(hostname) {
   );
 }
 
-function ensureServiceWorker() {
+function registerOrEnsureServiceWorker() {
   const ensurePartialCache = (isFirstInstall = false) => {
     const {pathname} = window.location;
     if (isFirstInstall) {
@@ -102,11 +110,9 @@ function ensureServiceWorker() {
     // This isn't the first install, but ensure some partials are up-to-date.
     ensurePartialCache();
 
-    // We claim active clients if the Service Worker's architecture rev changes. We can't
-    // reliably force a reload via the Client interface as it's unsupported in Safari.
-    navigator.serviceWorker.addEventListener('controllerchange', () => {
-      window.location.reload();
-    });
+    // TODO(robdodson): Offer a page reload to users if they want to get the
+    // latest version.
+    // https://developers.google.com/web/tools/workbox/guides/advanced-recipes
   }
   navigator.serviceWorker.register('/sw.js');
 }
