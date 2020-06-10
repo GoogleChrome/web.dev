@@ -1,11 +1,6 @@
 ---
 layout: post
 title: Measure performance with the RAIL model
-authors:
-  - addyosmani
-  - developit
-  - kaycebasques
-  - megginkearney
 description: |
   RAIL model enables designers and developers to reliably target the performance optimization work that has the highest impact on user experience. Learn what goals and guidelines the RAIL model sets out and which tools you can use to achieve them.
 date: 2020-06-05
