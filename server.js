@@ -20,7 +20,7 @@ const compression = require('compression');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const localeHandler = require('./locale-handler.js');
-const buildRedirectHandler = require('./redirect-handler.js');
+const {build: buildRedirectHandler} = require('./redirect-handler.js');
 
 // If true, we'll aggressively nuke the prod Service Worker. For emergencies.
 const serviceWorkerKill = false;
