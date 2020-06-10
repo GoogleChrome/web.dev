@@ -11,7 +11,7 @@ description: |
   contacts retrieval, periodic background sync, screen wake lock, web sharing features,
   and many more.
 date: 2020-06-09
-updated: 2020-06-09
+updated: 2020-06-10
 tags:
   - blog
   - capabilities
@@ -143,21 +143,23 @@ const loadImportAndExport = () => {
 
 Let's see how I can feature-detect if the API exists.
 The Native File System API exposes a new method `window.chooseFileSystemEntries()`.
-I can use this to conditionally load `import_image.mjs` and `export_image.mjs` if the API
-exists,
-and if it isn't available, load the files with the legacy approaches from the earlier
-slides.
+I can use this to conditionally load `import_image.mjs` and `export_image.mjs` if the API exists,
+and if it isn't available, load the files with the legacy approaches from above.
 But before I dive into the Native File System API details,
 let me just quickly highlight the progressive enhancement pattern here.
 On browsers that don't support the Native File System API, I load the legacy scripts.
-You can see the network tabs of Firefox and Safari here.
+You can see the network tabs of Firefox and Safari below.
+
 However, on Chrome, only the new scripts are loaded.
-This is made elegantly possible thanks to dynamic imports that all modern browsers
-support.
+This is made elegantly possible thanks to dynamic imports that all modern browsers support.
 As I said earlier, the grass is pretty green these days.
-The Native File System API
+
+## The Native File System API
+
 With this out of the way, let's look at the actual Native File System API based
 implementation.
+
+```js
 const importImage = async () => {
  try {
  const handle = await window.chooseFileSystemEntries({
@@ -172,11 +174,15 @@ const importImage = async () => {
  console.error(err.name, err.message);
  }
 };
-For importing an image, I call window.chooseFileSystemEntries
-and pass it an accepts option parameter where I say I want image files.
+```
+
+For importing an image, I call `window.chooseFileSystemEntries()`
+and pass it an `accepts` option parameter where I say I want image files.
 Both file extensions as well as MIME types are supported.
 This results in a file handle. From the file handle, I can obtain the actual file by calling
-its getFile method.
+its `getFile()` method.
+
+```js
 const exportImage = async (blob) => {
  try {
  const handle = await window.chooseFileSystemEntries({
@@ -194,12 +200,16 @@ const exportImage = async (blob) => {
  console.error(err.name, err.message);
  }
 };
+```
+
 Exporting an image is almost the same, but this time
-I need to pass a type parameter of "save-file" to the chooseFileSystemEntries
+I need to pass a type parameter of `"save-file"` to the `chooseFileSystemEntries()`
 method,
 so I get a file save dialog.
-Before, this wasn't necessary since open-file is the default.
-I set the accept parameter similar as before, but this time limited to just PNG images.
+Before, this wasn't necessary since `"open-file"` is the default.
+I set the `accepts` parameter similar as before, but this time limited to just PNG images.
+
+```js
 const exportImage = async (blob) => {
  try {
  const handle = await window.chooseFileSystemEntries({
@@ -217,10 +227,14 @@ const exportImage = async (blob) => {
  console.error(err.name, err.message);
  }
 };
+```
+
 Again I get back a file handle, but rather than getting the file,
-this time I'm creating a writable stream by calling createWritable.
+this time I'm creating a writable stream by calling `createWritable()`.
 Next, I write the blob, which is my greeting card image, to the file.
 Finally, I close the writable stream.
+
+```js
 const exportImage = async (blob) => {
  try {
  const handle = await window.chooseFileSystemEntries({
@@ -238,23 +252,30 @@ const exportImage = async (blob) => {
  console.error(err.name, err.message);
  }
 };
+```
+
 Everything can always fail: The disk could be out of space,
 there could be a write or read error, or maybe simply the user cancels the file dialog.
-This is why I always wrap the calls in a try catch statement.
+This is why I always wrap the calls in a `try...catch` statement.
+
 I can now open a file as before.
 The imported file is drawn right onto the canvas.
 I can make my edits, and finally save them.
 With a real save dialog, where I can choose the name and storage location of the file.
 Now the file is ready to be preserved for the eternity.
-The Web Share and Web Share Target APIs
+
+### The Web Share and Web Share Target APIs
+
 Apart from storing for the eternity, maybe I actually want to share my greeting card.
 This is something that the Web Share and Web Share Target APIs allow me to do.
 Mobile, and more recently also desktop operating systems have gained native sharing
 mechanisms.
 For example, here's Safari's share sheet on macOS Safari triggered from an article on
-my site blog.tomayac,com.
+my site [blog.tomayac.com](https://blog.tomayac.com/).
 When you click the share button, you can share a link to the article with a friend, for
 example, via the native Messages app.
+
+```js
 try {
  await navigator.share({
  title: '',
@@ -264,11 +285,14 @@ try {
 } catch (err) {
  console.warn(err.name, err.message);
 }
-The code to make this happen is pretty straightforward. I call navigator.share and
-pass it an optional title, text, and url.
-But what if I want to attach an image? Level 1 of the Web Share API that you can see
-on the screen doesn't support this yet.
-The good news is that Web Share Level 2 has added file sharing capabilities.
+```
+
+The code to make this happen is pretty straightforward. I call `navigator.share()` and
+pass it an optional `title`, `text`, and `url`.
+But what if I want to attach an image? Level&nbsp;1 of the Web Share API doesn't support this yet.
+The good news is that Web Share Level&nbsp;2 has added file sharing capabilities.
+
+```js
 const share = async (title, text, blob) => {
  const data = {
  files: [
@@ -288,9 +312,13 @@ const share = async (title, text, blob) => {
  console.error(err.name, err.message);
  }
 };
+```
+
 Let me show you how to make this work with the Fugu Greeting card application.
-First, I need to prepare a data object with a files array consisting of one blob, and then
+First, I need to prepare a data object with a `files` array consisting of one blob, and then
 a title and a text.
+
+```js
 const share = async (title, text, blob) => {
  const data = {
  files: [
@@ -310,10 +338,14 @@ const share = async (title, text, blob) => {
  console.error(err.name, err.message);
  }
 };
+```
+
 Next, as a best practice, I make use of the new navigator.canShare method that does
 what its name suggests:
 It tells me if the data object I'm trying to share can technically be shared by the
 browser.
+
+```js
 const share = async (title, text, blob) => {
  const data = {
  files: [
@@ -333,25 +365,32 @@ const share = async (title, text, blob) => {
  console.error(err.name, err.message);
  }
 };
-If navigator.canShare tells me the data can be shared, I am in the final step ready to
-call navigator.share as before.
+```
+
+If `navigator.canShare()` tells me the data can be shared, I am in the final step ready to
+call `navigator.share()` as before.
 Again everything can fail, in the simplest way when the user cancels the sharing
 operation,
-So it's all wrapped in try...catch blocks.
+So it's all wrapped in `try...catch` blocks.
+
+```js
 const loadShare = () => {
  if ('share' in navigator && 'canShare' in navigator) {
  import('./share.mjs');
  }
 };
+```
+
 As before, I use a progressive enhancement loading strategy.
-If both share and canShare exist on the navigator object, only then I go forward and
-load share.mjs via dynamic import.
+If both `'share'` and `'canShare'` exist on the `navigator` object, only then I go forward and
+load `share.mjs` via dynamic import.
 On browsers like Mobile Safari that only fulfill one of the two conditions, I don't load
 the functionality.
 If I tap the share button on a supporting browser, the native share sheet opens.
 I can, for example, choose Gmail, and the email composer widget pops up with the
 image attached.
-The Contact Picker API
+
+### The Contact Picker API
 Up next, I want to talk about contacts. And when I say contacts,
 I mean contacts as in the device's address book.
 When you write a greeting card, it may not always be easy to correctly write
