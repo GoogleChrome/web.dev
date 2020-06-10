@@ -6,7 +6,6 @@ module.exports = {
   title: 'Web Payments',
   updated: 'May 25, 2020',
   description: `Build the next generation of payments on the web.`,
-  overview: `Build the next generation of payments on the web.`,
   overview: `Web Payments aims to provide frictionless payment experience on the web. Learn how it works, its benefits, and get ready to integrate your payment app with Web Payments.`,
   topics: [
     {
