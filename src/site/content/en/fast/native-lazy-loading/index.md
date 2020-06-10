@@ -27,8 +27,8 @@ a [demo](https://mathiasbynens.be/demo/img-loading-lazy) of the feature:
 
 <figure class="w-figure w-figure--fullbleed">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="./lazyload.webm" type="video/webm">
-    <source src="./lazyload.mp4" type="video/mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/native-lazy-loading/lazyload.webm" type="video/webm">
+    <source src="https://storage.googleapis.com/web-dev-assets/native-lazy-loading/lazyload.mp4" type="video/mp4">
   </video>
 </figure>
 
