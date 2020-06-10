@@ -19,7 +19,7 @@ delays](https://www.nngroup.com/articles/response-times-3-important-limits/).
 
 <figure class="w-figure">
   <img src="./rail.png" alt="The 4 parts of the RAIL performance model: response, animation, idle, and load.">
-  <figcaption class="w-figcaption">Figure 1. The 4 parts of the RAIL performance model
+  <figcaption class="w-figcaption">The 4 parts of the RAIL performance model
 </figcaption>
 </figure>
 
