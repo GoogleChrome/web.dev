@@ -1222,15 +1222,6 @@ const contributors = {
       en: 'Software Engineer on the web platform.',
     },
   },
-  megginkearney: {
-    name: {
-      given: 'Meggin',
-      family: 'Kearney',
-    },
-    description: {
-      en: 'Meggin is a Tech Writer.',
-    },
-  },
 };
 
 const processedContributors = {};
