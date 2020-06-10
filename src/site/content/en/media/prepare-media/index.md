@@ -4,7 +4,8 @@ title: Prepare media files for the web
 authors:
   - joemedley
 description: |
-  TBD
+  Take a raw video file off a camera and transform it into an encrypted resource
+  that you can embed in a web page.
 date: 2017-06-30
 updated: 2020-06-19
 tags:

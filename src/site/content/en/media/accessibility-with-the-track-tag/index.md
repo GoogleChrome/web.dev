@@ -4,8 +4,11 @@ title: Accessibility with the <track> tag
 authors:
   - samdutton
 description: |
-  TBD
-date: 2020-06-19
+  Accessibility isn't a feature. Users who can't hear or see won't be able to
+  experience a video without captions or descriptions. The time it takes to add
+  these to your video is much less than the bad experience you're delivering to
+  users.
+date: 2014-14-15
 updated: 2020-06-19
 ---
 

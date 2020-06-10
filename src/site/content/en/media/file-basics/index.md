@@ -4,7 +4,9 @@ title: File basics
 authors:
   - joemedley
 description: |
-  TBD
+  You might think that you can take a video camera and upload it to the web as
+  is. Preparing a video for serving from your own site is a bit more
+  complicated.
 date: 2020-06-19
 updated: 2020-06-19
 tags:
