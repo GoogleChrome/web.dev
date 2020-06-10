@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Speed up navigations in React with quicklink
+title: Speed up navigations in React with Quicklink
 subhead: |
   Automatically prefetch in-viewport links with quicklink for React single page applications.
 date: 2020-06-08
@@ -14,9 +14,9 @@ authors:
 
 [Prefetching](https://web.dev/link-prefetch/) is a technique to speed up navigations by downloading the resources for the next page, ahead of time. [Quicklink](https://github.com/GoogleChromeLabs/quicklink) is a library that allows you to implement this technique at scale, by automatically prefetching links as they come into the view.
 
-In multi page apps the library prefetches documents (e.g. `/article.html`), for in-viewport links, so that when the user clicks on these links they can be picked up from the [HTTP cache](https://web.dev/http-cache/).
+In multi-page apps the library prefetches documents (e.g. `/article.html`), for in-viewport links, so that when the user clicks on these links they can be picked up from the [HTTP cache](https://web.dev/http-cache/).
 
-[Single page apps](https://en.wikipedia.org/wiki/Single-page_application) commonly use a technique called [route-based code splitting](https://web.dev/reduce-javascript-payloads-with-code-splitting/). This allows the site to load the code for a given route only when the user navigates to it. These files (JS, CSS) are commonly referred to as "chunks".
+[Single-page apps](https://en.wikipedia.org/wiki/Single-page_application) commonly use a technique called [route-based code splitting](https://web.dev/reduce-javascript-payloads-with-code-splitting/). This allows the site to load the code for a given route only when the user navigates to it. These files (JS, CSS) are commonly referred to as "chunks".
 
 With that said, in these sites, instead of prefetching documents the biggest performance gains come from prefetching these chunks before the page needs them.
 
@@ -25,7 +25,7 @@ Achieving this presents some challenges:
 - It's not trivial to determine which chunks (e.g. `article.chunk.js`) are associated with a given route (e.g. `/article`) before landing on it.
 - The final URL names of these chunks can't be predicted, as modern module bundlers typically use long-term hashing for versioning (e.g. `article.chunk.46e51.js`).
 
-This guide explains how `quicklink` solves these challenges and allows you to achieve prefetching at scale in React single page apps.
+This guide explains how Quicklink solves these challenges and allows you to achieve prefetching at scale in React single page apps.
 
 {% Aside %}
 At the moment this solution is only compatible with [react-router](https://www.npmjs.com/package/react-router).
@@ -70,7 +70,7 @@ This manifest file can be requested in two ways:
 
 ## Prefetch chunks for in-viewport routes
 
-Once the manifest file is available, the next step is to install `quicklink` by running `npm install quicklink`.
+Once the manifest file is available, the next step is to install Quicklink by running `npm install quicklink`.
 
 Then, the [higher order component (HOC)](https://reactjs.org/docs/higher-order-components.html) `withQuicklink()` can be used to indicate that a given route should be prefetched when the link comes into the view.
 
@@ -81,7 +81,7 @@ const App = () => (
   <div className={style.app}>
     <Hero />
     <main className={style.wrapper}>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div>Loading…</div>}>
         <Route path="/" exact component={Home} />
         <Route path="/blog" exact component={Blog} />
         <Route path="/blog/:title" component={Article} />
@@ -93,7 +93,7 @@ const App = () => (
 );
 ```
 
-To tell `quicklink` that these routes should be prefetched as they come into the view:
+To tell Quicklink that these routes should be prefetched as they come into the view:
 
 1. Import the `quicklink` HOC at the beginning of the component.
 1. Wrap each route with the `withQuicklink()` HOC, passing the page component and options parameter to it.
@@ -106,7 +106,7 @@ const App = () => (
   <div className={style.app}>
     <Hero />
     <main className={style.wrapper}>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div>Loading…</div>}>
         <Route path="/" exact component={withQuicklink(Home, options)} />
         <Route path="/blog" exact component={withQuicklink(Blog, options)} />
         <Route
@@ -128,6 +128,6 @@ As a result of this, when a user clicks on a link and moves to a given route, th
 
 ## Conclusion
 
-Prefetching can greatly improve load times for future navigations. In React single page apps, this can be achieved by loading the chunks associated with each route, before the user lands in them.
-`quicklink`'s solution for React SPA uses `webpack-route-manifest` to create a map of routes and chunks, in order to determine which files to prefetch, when a link comes into the view.
+Prefetching can greatly improve load times for future navigations. In React single-page apps, this can be achieved by loading the chunks associated with each route, before the user lands in them.
+Quicklink's solution for React SPA uses `webpack-route-manifest` to create a map of routes and chunks, in order to determine which files to prefetch, when a link comes into the view.
 Implementing this technique throughout your site can greatly improve navigations to the point of making them appear instant.
