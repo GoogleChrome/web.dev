@@ -40,13 +40,7 @@ returns a service worker version. If it doesn't, the audit fails.
 
 ## How to register a service worker
 
-{% Aside 'success' %}
-  [Workbox](/workbox) is the recommended approach for adding
-  service workers to websites because it automates a lot of
-  boilerplate, makes it easier to follow best practices, and
-  prevents subtle bugs that are common when using the low-level
-  `ServiceWorker` API directly.
-{% endAside %}
+{% include 'content/reliable/workbox.njk' %}
 
 Registering a service worker involves only a few lines of code,
 but the only reason you'd use a service worker
