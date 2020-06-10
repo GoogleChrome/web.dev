@@ -61,9 +61,6 @@ For example the code below produces the ebedded video that immediately follows.
   <p>This browser does not support the video element.</p>
 </video>
 
-
-[Try it](https://googlesamples.github.io/web-fundamentals/fundamentals/media/video-main.html)
-
 When the browser parses the `<source>` tags, it uses the (optional) `type`
 attribute to determine which file to download and play. If the browser
 supports WebM, it plays that; if not, it checks whether it can play
@@ -177,7 +174,114 @@ A fallback poster makes it seem as if the first frame has been captured.
 {% endCompare %}
 </div>
 
-### Autoplay {: #autoplay }
+### Ensure videos don't overflow containers
+
+When video elements are too big for the viewport, they may overflow their
+container, making it impossible for the user to see the content or use the
+controls.
+
+<div class="w-columns">
+  <figure class="w-figure">
+    <img src="./chrome-android-portrait-video-unstyled.png" alt="Android Chrome screenshot, portrait: unstyled video element overflows
+    viewport.">
+    <figcaption class="w-figcaption">Android Chrome screenshot, portrait: unstyled video element overflows
+    viewport.</figcaption>
+  </figure>
+  <figure class="w-figure">
+    <img src="./chrome-android-landscape-video-unstyled.png" alt="Android Chrome screenshot, landscape: unstyled video element overflows
+    viewport.">
+    <figcaption class="w-figcaption">Android Chrome screenshot, landscape: unstyled video element overflows
+    viewport.</figcaption>
+  </figure>
+</div>
+
+You can control video dimensions using JavaScript or CSS. JavaScript libraries
+and plugins such as [FitVids](http://fitvidsjs.com/) make it possible to
+maintain appropriate size and aspect ratio, even for videos from YouTube and
+other sources.
+
+Use [CSS media
+queries](/web/fundamentals/design-and-ux/responsive/#css-media-queries) to
+specify the size of elements depending on the viewport dimensions; `max- width:
+100%` is your friend.
+
+For media content in iframes (such as YouTube videos), try a responsive approach
+(like the one [proposed by John
+Surdakowski](http://avexdesigns.com/responsive-youtube-embed/)).
+
+{% Aside 'caution' %}
+Don't force element sizing that results in an aspect ratio different from the
+original video. Squashed or stretched looks bad.
+{% endAside %}
+
+**CSS:**
+
+```css
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+```
+
+**HTML:**
+
+```html
+<div class="video-container">
+  <iframe src="//www.youtube.com/embed/l-BA9Ee2XuM"
+          frameborder="0" width="560" height="315">
+  </iframe>
+</div>
+```
+
+---ADD SAMPLES HERE---
+
+### Device orientation
+
+Device orientation isn't an issue for desktop monitors or laptops, but it's
+hugely important when considering web page design for mobile devices and
+tablets.
+
+Safari on iPhone do a good job of switching between portrait and landscape
+orientation:
+
+<div class="w-columns">
+<figure class="w-figure">
+  <img src="./iphone-video-playing-portrait.png" alt="Screenshot of video playing in Safari on iPhone, portrait.">
+  <figcaption class="w-figcaption">Screenshot of video playing in Safari on iPhone, portrait.</figcaption>
+</figure>
+<figure class="w-figure">
+  <img src="./iphone-video-playing-landscape.png" alt="Screenshot of video playing in Safari on iPhone, landscape.">
+  <figcaption class="w-figcaption">Screenshot of video playing in Safari on iPhone, landscape.</figcaption>
+</figure>
+</div>
+
+Device orientation on an iPad and Chrome on Android can be problematic.
+For example, without any customization a video playing on an iPad in landscape
+orientation looks like this:
+
+
+<figure class="w-figure">
+  <img src="./ipad-retina-landscape-video-playing.png" alt="Screenshot of video playing in Safari on iPad Retina, landscape.">
+  <figcaption class="w-figcaption">Screenshot of video playing in Safari on iPad Retina, landscape.</figcaption>
+</figure>
+
+Setting the video `width: 100%` or `max-width: 100%` with CSS can resolve
+many device orientation layout problems.
+
+### Autoplay
 
 On desktop, `autoplay` tells the browser to download and play the video
 immediately. On mobile, don't assume `autoplay` will always work. See the [WebKit
@@ -191,7 +295,7 @@ it's a good idea to enable it:
   delay page rendering.
 * Users may be in a context where playing video or audio is intrusive.
 
-### Preload {: #preload }
+### Preload
 
 The `preload` attribute provides a hint to the browser as to how much
 information or content to preload.
