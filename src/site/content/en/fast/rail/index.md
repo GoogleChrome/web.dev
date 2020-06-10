@@ -3,7 +3,7 @@ layout: post
 title: Measure performance with the RAIL model
 description: |
   RAIL model enables designers and developers to reliably target the performance optimization work that has the highest impact on user experience. Learn what goals and guidelines the RAIL model sets out and which tools you can use to achieve them.
-date: 2020-06-05
+date: 2020-06-10
 tags:
   - performance
   - animations
@@ -44,19 +44,19 @@ key metrics of how users perceive performance delays:
   User perception of performance delays
   </thead>
   <tr>
-    <td>0 to 16&nbsp;ms</td>
+    <td>0&nbsp;to&nbsp;16&nbsp;ms</td>
     <td>Users are exceptionally good at tracking motion, and they dislike it when animations aren't smooth. They perceive animations as smooth so long as 60 new frames are rendered every second. That's 16&nbsp;ms per frame, including the time it takes for the browser to paint the new frame to the screen, leaving an app about 10&nbsp;ms to produce a frame.</td>
   </tr>
   <tr>
-    <td>0 to 100&nbsp;ms</td>
+    <td>0&nbsp;to&nbsp;100&nbsp;ms</td>
     <td>Respond to user actions within this time window and users feel like the result is immediate. Any longer, and the connection between action and reaction is broken.</td>
   </tr>
   <tr>
-    <td>100 to 1000&nbsp;ms</td>
+    <td>100&nbsp;to&nbsp;1000&nbsp;ms</td>
     <td>Within this window, things feel part of a natural and continuous progression of tasks. For most users on the web, loading pages or changing views represents a task.</td>
   </tr>
   <tr>
-    <td>1000&nbsp;ms or more</td>
+    <td>1000&nbsp;ms&nbsp;or&nbsp;more</td>
     <td>Beyond 1000 milliseconds (1 second), users lose focus on the task they are performing.</td>
   </tr>
   <tr>
@@ -120,7 +120,7 @@ processing time:
 
 <figure class="w-figure">
   <img src="./rail-response-details.png" alt="Diagram showing how input received during an idle task is queued, reducing available input processing time to 50ms">
-  <figcaption class="w-figcaption">Figure 2. How idle tasks affect input response budget.</figcaption>
+  <figcaption class="w-figcaption">How idle tasks affect input response budget.</figcaption>
 </figure>
 
 ## Animation: produce a frame in 10&nbsp;ms
