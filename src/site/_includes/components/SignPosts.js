@@ -25,7 +25,7 @@ module.exports = (slug, x) => {
   }
   const aTags = postPaths.map((pathName) => {
     return html`
-      <a class="w-post-signpost__link" href="${paths[pathName].href}"
+      <a class="w-post-signpost__link" href="/${paths[pathName].slug}"
         >${paths[pathName].title}</a
       >
     `;
