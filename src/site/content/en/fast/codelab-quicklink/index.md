@@ -136,7 +136,7 @@ const Article = lazy(() => import(/* webpackChunkName: "article" */ '@pages/Arti
 const Blog = lazy(() => import(/* webpackChunkName: "blog" */ '@pages/Blog'));
 ```
 
-Next, create an `options` object to use as an argument when calling `quicklink`:
+Next, create an `options` object after the `Blog` variable declaration, to use as an argument when calling `quicklink`:
 
 ```javascript/0-2/
 const options = {
