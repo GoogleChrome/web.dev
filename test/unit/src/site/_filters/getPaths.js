@@ -11,7 +11,7 @@ describe('getPaths', function () {
     assert.deepStrictEqual(actual, expected);
   });
 
-  it('returns indefined for a non-existent post', function () {
+  it('returns undefined for a non-existent post', function () {
     const post = {
       fileSlug: 'non-existent-post',
     };
@@ -28,5 +28,4 @@ describe('getPaths', function () {
     const actual = getPaths(post);
     assert.deepStrictEqual(actual, expected);
   });
-
 });

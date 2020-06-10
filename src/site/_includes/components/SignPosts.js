@@ -18,20 +18,20 @@ const {html} = require('common-tags');
 const paths = require('../../_data/paths');
 const postToPaths = require('../../_data/postToPaths');
 
-module.exports = (slug, x) => {
+module.exports = (slug) => {
   const postPaths = postToPaths[slug];
   if (!postPaths) {
     return '';
   }
-  const aTags = postPaths.map((pathName) => {
-    return html`
-      <a class="w-post-signpost__link" href="/${paths[pathName].slug}"
+  const aTags = postPaths
+    .map((pathName) => {
+      return html`<a
+        class="w-post-signpost__link"
+        href="/${paths[pathName].slug}"
         >${paths[pathName].title}</a
-      >
-    `;
-  }).join(html`
-    <span class="w-post-signpost__divider">|</span>
-  `);
+      >`;
+    })
+    .join(html`<span class="w-post-signpost__divider">|</span>`);
 
   return html`
     <div class="w-layout-container--narrow w-post-signpost">
