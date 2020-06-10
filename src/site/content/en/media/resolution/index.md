@@ -6,7 +6,7 @@ authors:
 description: |
   Resolution is the amount of information in a frame of video.
 date: 2017-06-30
-updated: 2020-06-10
+updated: 2020-06-19
 ---
 
 In previous sections I showed you how to change a media file's [codec,

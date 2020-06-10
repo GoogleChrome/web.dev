@@ -5,8 +5,8 @@ authors:
   - samdutton
 description: |
   TBD
-date: 2020-06-10
-updated: 2020-06-10
+date: 2020-06-19
+updated: 2020-06-19
 ---
 
 Accessibility isn't a feature. Users who can't hear or see won't be able to

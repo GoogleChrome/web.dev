@@ -7,7 +7,7 @@ description: |
   An ordered rundown of commands needed to get from a raw mov file to encrypted
   assets packaged for DASH or HLS.
 date: 2018-09-20
-updated: 2020-06-10
+updated: 2020-06-19
 ---
 
 This page offers kinds sets of resources:
