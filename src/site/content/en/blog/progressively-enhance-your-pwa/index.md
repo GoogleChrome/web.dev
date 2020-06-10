@@ -29,7 +29,7 @@ progressive enhancement in 2020 is about using modern browser capabilities.
 
 Talking of JavaScript, the browser support situation for the latest core JavaScript
 features is great.
-Promises, modules, classes, template literals, arrow functions,... You name them. All
+Promises, modules, classes, template literals, arrow functions,… You name them. All
 supported.
 
 Async functions work across the board in all major browsers.
@@ -430,7 +430,7 @@ Finally, I can call `navigator.contacts.select()`, which results in the desired 
 once the user selects one or multiple of their contacts.
 
 In Fugu Greeting, when I tap the contacts button and select my two best pals,
-Сергей Михайлович Брин and 劳伦斯·爱德华·“拉里”·佩奇, you can see how the
+Сергей Михайлович Брин and 劳伦斯·爱德华·"拉里"·佩奇, you can see how the
 contacts picker is limited to only show their names,
 but not their email addresses, or other information like their phone numbers.
 Their names are then drawn onto my greeting card.
