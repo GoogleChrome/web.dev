@@ -48,7 +48,7 @@ The track element `src` attribute gives the location of the track file.
 
 A track file consists of timed "cues" in WebVTT format:
 
-```
+```text
 WEBVTT
 
 00:00.000 --> 00:04.000
