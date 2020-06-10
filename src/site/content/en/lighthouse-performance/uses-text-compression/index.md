@@ -2,9 +2,9 @@
 layout: post
 title: Enable text compression
 description: |
-  Learn about the uses-text-compression audit.
+  Learn about how enabling text compression can improve your webpage load performance.
 date: 2019-05-02
-updated: 2020-05-29
+updated: 2020-06-04
 web_lighthouse:
   - uses-text-compression
 ---
@@ -45,20 +45,33 @@ If Brotli is used, even more savings are possible.
 Enable text compression on the server(s) that served these responses in order to
 pass this audit.
 
-Configure your server to compress the response with [Brotli](https://opensource.googleblog.com/2015/09/introducing-brotli-new-compression.html),
-if the browser
-supports it.
-Brotli is a newer compression format, but it's not universally
-supported in browsers.
-Do a search for "how to enable Brotli compression in
-`<server>`" to learn how to implement it, where `<server>` is the name of
-your server.
+When a browser requests a resource, it will use the
+[`Accept-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding)
+HTTP request header to indicate what compression algorithms it supports.
 
-Use GZIP as a fallback to Brotli.
-GZIP is universally supported in all
-modern browsers, but is less efficient than Brotli.
-See [Server Configs](https://github.com/h5bp/server-configs)
+```text
+Accept-Encoding: gzip, compress, br
+```
+
+If the browser supports [Brotli](https://opensource.googleblog.com/2015/09/introducing-brotli-new-compression.html)
+(`br`) you should use Brotli because it can reduce the file size of the resources more than the
+other compression algorithms. Search for `how to enable Brotli compression in <X>`, where
+`<X>` is the name of your server. As of June 2020 Brotli is supported in all major browsers except
+Internet Explorer, desktop Safari, and Safari on iOS. See
+[Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding#Browser_compatibility)
+for updates.
+
+Use GZIP as a fallback to Brotli. GZIP is supported in all major browsers,
+but is less efficient than Brotli. See [Server Configs](https://github.com/h5bp/server-configs)
 for examples.
+
+Your server should return the
+[`Content-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding)
+HTTP response header to indicate what compression algorithm it used.
+
+```text
+Content-Encoding: br
+```
 
 ## Check if a response was compressed in Chrome DevTools
 
@@ -86,7 +99,6 @@ See [Use large request rows](https://developers.google.com/web/tools/chrome-devt
    size.
 
 See also [Minify and compress network payloads](/reduce-network-payloads-using-text-compression).
-
 
 ## Resources
 

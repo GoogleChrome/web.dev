@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Share cross-origin resources safely
+title: Cross-Origin Resource Sharing (CORS)
+subhead: Share cross-origin resources safely
 authors:
   - kosamari
 date: 2018-11-05
@@ -112,33 +113,17 @@ shared with the client site.
 
 ## See CORS in action
 
-Here is a tiny web server using Express. It is hosted at
-`https://cors-demo.glitch.me/`.
+Here is a tiny web server using Express.
 
-```js
-const express = require('express');
-const app = express();
+<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/cors-demo?path=server.js&attributionHidden=true"
+    alt="tabindex-zero on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
 
-// No CORS header set
-app.get('/', function(request, response) {
-  response.sendFile(__dirname + '/message.json');
-});
-
-// CORS header `Access-Control-Allow-Origin` set to accept all
-app.get('/allow-cors', function(request, response) {
-  response.set('Access-Control-Allow-Origin', '*');
-  response.sendFile(__dirname + '/message.json');
-});
-
-// Listen for requests :)
-const listener = app.listen(process.env.PORT, function() {
-  console.log('Your app is listening on port ' + listener.address().port);
-});
-```
-
-([See the server code in action on Glitch](https://glitch.com/edit/#!/cors-demo?path=server.js))
-
-The first endpoint (line 5) does not have any response header set, it just sends
+The first endpoint (line 8) does not have any response header set, it just sends
 a file in response.
 
 {% Instruction 'devtools' %}
@@ -156,7 +141,7 @@ request has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header
 is present on the requested resource.
 ```
 
-The second endpoint (line 10) sends the same file in response but adds
+The second endpoint (line 13) sends the same file in response but adds
 `Access-Control-Allow-Origin: *` in the header. From the console, try
 
 ```js

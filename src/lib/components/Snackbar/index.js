@@ -41,7 +41,7 @@ class Snackbar extends BaseElement {
 
   set open(val) {
     let ms;
-    if (Boolean(val)) {
+    if (val) {
       this.setAttribute('open', '');
       ms = OPENING_ANIMATION_TIME;
     } else {

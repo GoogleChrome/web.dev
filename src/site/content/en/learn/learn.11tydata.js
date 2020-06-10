@@ -9,7 +9,7 @@ const allPaths = require('../../../_data/paths');
 //
 // =============================================================================
 
-module.exports = function() {
+module.exports = function () {
   const paths = [
     allPaths['fast'],
     allPaths['accessible'],

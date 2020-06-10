@@ -61,11 +61,11 @@ const memoize = (collection) => {
  */
 const findByUrl = (url) => {
   if (!url) {
-    throw new Error(`url is either null or undefined`);
+    throw new Error('url is either null or undefined');
   }
 
   if (!memo) {
-    throw new Error(`No collection has been memoized yet.`);
+    throw new Error('No collection has been memoized yet.');
   }
 
   return memo[url];

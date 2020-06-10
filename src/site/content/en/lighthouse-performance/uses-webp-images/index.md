@@ -41,7 +41,7 @@ reporting the potential savings based on the conversion figures.
 Lighthouse omits the image from its report if the potential savings are less than 8KiB.
 {% endAside %}
 
-## WebP browser support
+## Browser compatibility
 
 Browser support is not universal for WebP, but similar savings should be available in most major browsers in an alternative next-gen format. You'll need to serve a fallback PNG or JPEG image for other browser support. See
 [How can I detect browser support for WebP?](https://developers.google.com/speed/webp/faq#how_can_i_detect_browser_support_for_webp) for an overview of fallback techniques and the list below for browser support of image formats.

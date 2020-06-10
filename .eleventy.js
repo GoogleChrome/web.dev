@@ -84,7 +84,7 @@ const {
   serviceWorkerPartials,
 } = require(`./${transformsDir}/service-worker-partials`);
 
-module.exports = function(config) {
+module.exports = function (config) {
   // ----------------------------------------------------------------------------
   // PLUGINS
   // ----------------------------------------------------------------------------
@@ -104,7 +104,7 @@ module.exports = function(config) {
     permalink: true,
     permalinkClass: 'w-headline-link',
     permalinkSymbol: '#',
-    slugify: function(str) {
+    slugify: function (str) {
       return slugify(str, {
         replacement: '-',
         lower: true,
@@ -114,7 +114,7 @@ module.exports = function(config) {
   const markdownItAttrsOpts = {
     leftDelimiter: '{:',
     rightDelimiter: '}',
-    allowedAttributes: ['id', 'class', /^data\-.*$/],
+    allowedAttributes: ['id', 'class', /^data-.*$/],
   };
 
   const mdLib = markdownIt(markdownItOptions)
@@ -154,10 +154,10 @@ module.exports = function(config) {
   config.addCollection('tags', tags);
   // Turn collection.all into a lookup table so we can use findBySlug
   // to quickly find collection items without looping.
-  config.addCollection('memoized', function(collection) {
+  config.addCollection('memoized', (collection) => {
     return memoize(collection.getAll());
   });
-  config.addCollection('algolia', function(collection) {
+  config.addCollection('algolia', (collection) => {
     if (process.env.ELEVENTY_ENV === 'prod') {
       const algoliaPosts = require(`./${collectionsDir}/algolia-posts`);
       return algoliaPosts(collection);

@@ -15,11 +15,11 @@ export const debounce = (func, wait) => {
   }
 
   let timeout;
-  return function(...args) {
+  return function (...args) {
     if (timeout) {
       clearTimeout(timeout);
     }
-    timeout = setTimeout(function() {
+    timeout = setTimeout(() => {
       func(...args);
     }, wait);
   };

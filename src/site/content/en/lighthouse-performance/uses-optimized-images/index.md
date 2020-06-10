@@ -4,7 +4,7 @@ title: Efficiently encode images
 description: |
   Learn about the uses-optimized-images audit.
 date: 2019-05-02
-updated: 2020-05-29
+updated: 2020-06-20
 web_lighthouse:
   - uses-optimized-images
 ---
@@ -29,12 +29,13 @@ If the potential savings are 4KiB or greater, Lighthouse flags the image as opti
 
 There are many steps you can take to optimize your images, including:
 
-- [Compressing images](/use-imagemin-to-compress-images).
-- [Replacing animated GIFs with video](/replace-gifs-with-videos).
-- [Lazy loading images](/use-lazysizes-to-lazyload-images).
-- [Serving responsive images](/serve-responsive-images).
-- [Serving images with correct dimensions](/serve-images-with-correct-dimensions).
-- [Using WebP images](/serve-images-webp).
+- [Using image CDNs](/image-cdns/)
+- [Compressing images](/use-imagemin-to-compress-images)
+- [Replacing animated GIFs with video](/replace-gifs-with-videos)
+- [Lazy loading images](/use-lazysizes-to-lazyload-images)
+- [Serving responsive images](/serve-responsive-images)
+- [Serving images with correct dimensions](/serve-images-with-correct-dimensions)
+- [Using WebP images](/serve-images-webp)
 
 ## Optimize images using GUI tools
 
