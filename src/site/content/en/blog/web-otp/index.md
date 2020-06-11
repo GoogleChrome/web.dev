@@ -179,7 +179,7 @@ Did you receive the SMS and see the prompt to enter the code to the input area?
 That is how the Web OTP API works for users.
 
 {% Aside 'caution' %}
-* If the sender's phone number is included in receiver's contact list, this API
+* If the sender's phone number is included in the receiver's contact list, this API
   will not be triggered due to the design of the underlying [SMS
 User Consent  API](https://developers.google.com/identity/sms-retriever/user-consent/request#2_start_listening_for_incoming_messages).
 * If you are using a work profile on your Android device and the Web OTP does
