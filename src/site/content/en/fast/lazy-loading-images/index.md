@@ -62,13 +62,13 @@ efficient way to do the work of checking element visibility via [the
 intersection observer API](https://developers.google.com/web/updates/2016/04/intersectionobserver).
 
 {% Aside %}
-  Intersection observer is not supported in all browsers.
+  Intersection Observer is not supported in all browsers.
   If compatibility across browsers is crucial,
   be sure to read [the next section](#using_event_handlers_the_most_compatible_way),
   which shows you how to lazy-load images using less performant (but more compatible!) scroll and resize event handlers.
 {% endAside %}
 
-Intersection observer is easier to use and read than code relying on various
+Intersection Observer is easier to use and read than code relying on various
 event handlers, because you only need to register an observer to watch
 elements rather than writing tedious element visibility detection code. All
 that's left to do is to decide what to do when an element is visible.
@@ -87,7 +87,7 @@ the page first loads.
 3. The `data-src` and `data-srcset` attributes, which are placeholder attributes
 containing the URL for the image you'll load once the element is in the viewport.
 
-Now let's see how to use intersection observer in JavaScript to lazy-load
+Now let's see how to use Intersection Observer in JavaScript to lazy-load
 images using this markup pattern:
 
 ```javascript
@@ -111,13 +111,13 @@ document.addEventListener("DOMContentLoaded", function() {
       lazyImageObserver.observe(lazyImage);
     });
   } else {
-    // Possibly fall back to a more compatible method here
+    // Possibly fall back to event handlers here
   }
 });
 ```
 
 On the document's `DOMContentLoaded` event, this script queries the DOM for all
-`<img>` elements with a class of `lazy`. If intersection observer is available,
+`<img>` elements with a class of `lazy`. If Intersection Observer is available,
 create a new observer that runs a callback when `img.lazy` elements enter the
 viewport.
 
@@ -129,11 +129,11 @@ viewport.
   </iframe>
 </div>
 
-Intersection observer is available in all modern browsers.
+Intersection Observer is available in all modern browsers.
 Therefore using it as a polyfill for `loading=lazy` will ensure that lazy-loading is available for most visitors.
 It is not available in Internet Explorer. If Internet Explorer support is critical, read on.
 
-#### Using event handlers (the most compatible way) {: #images-inline-event-handlers }
+#### Using event handlers for Internet Explorer support {: #images-inline-event-handlers }
 
 While you _should_ use intersection observer for lazy-loading, your application
 requirements may be such that browser compatibility is critical. [You _can_
@@ -148,49 +148,8 @@ event handlers in concert with
 [`getBoundingClientRect`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
 to determine whether an element is in the viewport.
 
-Assuming the same markup pattern from before, the following JavaScript provides
-the lazy-loading functionality:
-
-```javascript
-document.addEventListener("DOMContentLoaded", function() {
-  let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-  let active = false;
-
-  const lazyLoad = function() {
-    if (active === false) {
-      active = true;
-
-      setTimeout(function() {
-        lazyImages.forEach(function(lazyImage) {
-          if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
-            lazyImage.src = lazyImage.dataset.src;
-            lazyImage.srcset = lazyImage.dataset.srcset;
-            lazyImage.classList.remove("lazy");
-
-            lazyImages = lazyImages.filter(function(image) {
-              return image !== lazyImage;
-            });
-
-            if (lazyImages.length === 0) {
-              document.removeEventListener("scroll", lazyLoad);
-              window.removeEventListener("resize", lazyLoad);
-              window.removeEventListener("orientationchange", lazyLoad);
-            }
-          }
-        });
-
-        active = false;
-      }, 200);
-    }
-  };
-
-  document.addEventListener("scroll", lazyLoad);
-  window.addEventListener("resize", lazyLoad);
-  window.addEventListener("orientationchange", lazyLoad);
-});
-```
-
-This code uses `getBoundingClientRect` in a `scroll` event handler to check if
+Assuming the same markup pattern from before,
+this Glitch example uses `getBoundingClientRect` in a `scroll` event handler to check if
 any of `img.lazy` elements are in the viewport. A `setTimeout` call is used to
 delay processing, and an `active` variable contains the processing state which
 is used to throttle function calls. As images are lazy-loaded, they're removed
@@ -211,7 +170,8 @@ within them is throttled. In this example, a check is being run every 200
 milliseconds on document scroll or window resize regardless of whether there's
 an image in the viewport or not. Plus, the tedious work of tracking how many
 elements are left to lazy-load and unbinding the scroll event handler are left
-to the developer.
+to the developer. You can find out more about this technique in
+ [this CSS Tricks article](https://css-tricks.com/the-complete-guide-to-lazy-loading-images/#method-1-trigger-the-image-load-using-javascript-events).
 
 Simply put: Use native lazy-loading with a fallback intersection observer wherever possible, and only use event
 handlers if the widest possible compatibility is a critical application
@@ -267,7 +227,7 @@ class added to the element when it's in the viewport:
 ```
 
 From here, use JavaScript to check if the element is in the viewport (with
-intersection observer!), and add the `visible` class to the
+Intersection Observer!), and add the `visible` class to the
 `div.lazy-background` element at that time, which loads the image:
 
 ```javascript
@@ -310,8 +270,8 @@ loading library that lazy-loads images and iframes. The pattern it uses is quite
 similar to the code examples shown here in that it automatically binds to a
 `lazyload` class on `<img>` elements, and requires you to specify image URLs in
 `data-src` and/or `data-srcset` attributes, the contents of which are swapped
-into `src` and/or `srcset` attributes, respectively. It uses intersection
-observer (which you can polyfill), and can be extended with [a number of
+into `src` and/or `srcset` attributes, respectively. It uses Intersection
+Observer (which you can polyfill), and can be extended with [a number of
 plugins](https://github.com/aFarkas/lazysizes#available-plugins-in-this-repo) to
 do things like lazy-load video. [Find out more about using lazysizes](/use-lazysizes-to-lazyload-images/).
 - [lozad.js](https://github.com/ApoorvSaxena/lozad.js) is a super lightweight

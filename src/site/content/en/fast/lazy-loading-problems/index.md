@@ -7,7 +7,7 @@ authors:
 date: 2019-08-16
 updated: 2020-06-11
 description: |
-  This post explains lazy-loading, why you might want to lazy-load elements on your site, and some of the pitfalls to look out for.
+  This post details some of the potential pitfalls of lazy-loading.
 tags:
   - performance
 ---
