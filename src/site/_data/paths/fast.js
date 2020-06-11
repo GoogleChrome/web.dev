@@ -61,6 +61,7 @@ module.exports = {
         'remove-unused-code',
         'reduce-network-payloads-using-text-compression',
         'serve-modern-code-to-modern-browsers',
+        'commonjs-larger-bundles',
       ],
     },
     {
