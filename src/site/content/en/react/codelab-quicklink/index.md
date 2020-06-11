@@ -185,6 +185,7 @@ These chunks are requested at the lowest priority and without blocking the page.
 Next: 
 
 1. Clear the Network log again.
+1. Disable the **Disable cache** checkbox.
 1. Click the **Blog** link to navigate to that page.
 
 <img class="w-screenshot" src="./cdt-blog-optimized.png" alt="Network panel showing the blog page with chunks picked up from cache.">
