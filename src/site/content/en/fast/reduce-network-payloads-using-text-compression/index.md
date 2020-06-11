@@ -10,7 +10,7 @@ description: |
   techniques reduces payload sizes and in turn improves page load times.
 codelabs:
   - codelab-text-compression
-	- codelab-text-compression-brotli
+  - codelab-text-compression-brotli
 tags:
   - performance
 ---
