@@ -5,7 +5,7 @@ authors:
   - beaufortfrancois
   - jungkees
 date: 2020-05-20
-updated: 2020-06-02
+updated: 2020-06-05
 hero: hero.jpg
 alt: A photo of an Android phone showing an app shortcuts menu
 description: App shortcuts give quick access to a handful of common actions that users need frequently.
@@ -199,7 +199,9 @@ platform support will follow.
 
 [Bubblewrap], the recommended tool to build Android apps that use [Trusted Web
 Activity], reads app shortcuts from the web app manifest and automatically
-generates the corresponding configuration for the Android app.
+generates the corresponding configuration for the Android app. Note that icons
+for app shortcuts are [required] and must be at least 96 by 96 pixels in
+Bubblewrap.
 
 For developers integrating Trusted Web Activity manually into their Android
 application, [Android app shortcuts] can be used to implement the same
@@ -246,6 +248,7 @@ Check out the [app shortcuts sample] and its [source].
 [cr-status]: https://chromestatus.com/feature/5706099464339456
 [`UI>Browser>WebAppInstalls`]: https://crbug.com/?q=component:UI>Browser>WebAppInstalls
 [bubblewrap]: https://github.com/GoogleChromeLabs/bubblewrap
+[required]: https://github.com/GoogleChromeLabs/bubblewrap/issues/116
 [Trusted Web Activity]: /using-a-pwa-in-your-android-app/
 [Android app shortcuts]: https://developer.android.com/guide/topics/ui/shortcuts
 [xxhdpi screen]: https://developer.android.com/training/multiscreen/screendensities#TaskProvideAltBmp

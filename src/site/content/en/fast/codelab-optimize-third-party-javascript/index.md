@@ -11,7 +11,7 @@ description: |
 glitch: 3rd-party-optimization-starter
 related_post: efficiently-load-third-party-javascript
 tags:
-  - fast
+  - performance
 ---
 
 {% include 'content/devtools-headsup.njk' %}

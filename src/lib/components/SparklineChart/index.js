@@ -121,7 +121,7 @@ class SparklineChart extends BaseElement {
     if (!this.point_) {
       this.cursorElement_.setAttribute('x1', -10000);
       this.cursorElement_.setAttribute('x2', -10000);
-      this.scoreElement_.setAttribute('transform', `translate(-10000,-10000)`);
+      this.scoreElement_.setAttribute('transform', 'translate(-10000,-10000)');
       return;
     }
 
@@ -448,8 +448,9 @@ class SparklineChart extends BaseElement {
     // and showing the user's cursor.
     // Align the SVG content by `pixelBuffer` on the top, left, and right sides. Add topPadding on
     // the top, to allow the popup to be contained properly.
-    const groupTransform = `translate(${pixelBuffer},${pixelBuffer +
-      this.topPadding})`;
+    const groupTransform = `translate(${pixelBuffer},${
+      pixelBuffer + this.topPadding
+    })`;
     this.width_ = rect.width - pixelBuffer * 2;
     this.height_ = rect.height - pixelBuffer - this.topPadding;
 
@@ -465,7 +466,7 @@ class SparklineChart extends BaseElement {
     const lastDataPoint = paths[paths.length - 1] || null;
 
     // Only render medians if there's actually a value contained here.
-    let medianPaths = ``;
+    let medianPaths = '';
     if (this.medians && this.medians.length) {
       const {paths} = this.processValues(this.medians);
       medianPaths = paths.map(({points}) => {

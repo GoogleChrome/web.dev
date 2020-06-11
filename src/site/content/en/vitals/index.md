@@ -6,11 +6,12 @@ description: Essential metrics for a healthy site
 authors:
   - philipwalton
 date: 2020-04-30
-updated: 2020-05-29
+updated: 2020-06-05
 masthead: web-vitals.svg
 tags:
   - metrics
   - performance
+  - web-vitals
 ---
 
 Optimizing for quality of user experience is key to the long-term success of any

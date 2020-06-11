@@ -1005,6 +1005,20 @@ const contributors = {
     twitter: 'kkotowicz',
     github: 'koto',
   },
+  lwe: {
+    name: {
+      given: 'Lukas',
+      family: 'Weichselbaum',
+    },
+    org: {
+      name: 'Google',
+      unit: 'Information Security Engineering',
+    },
+    country: 'CH',
+    twitter: 'we1x',
+    github: 'lweichselbaum',
+    homepage: 'https://webappsec.dev',
+  },
   dgrogan: {
     name: {
       given: 'David',

@@ -64,7 +64,7 @@ class Codelab extends BaseElement {
   }
 
   glitchSrc(embed) {
-    let url = `https://glitch.com/embed/?attributionHidden=true`;
+    let url = 'https://glitch.com/embed/?attributionHidden=true';
 
     if (this.path) {
       url += `&path=${encodeURI(this.path)}`;
@@ -89,8 +89,8 @@ class Codelab extends BaseElement {
     // sticky behavior of this element.
     if (!this._isDesktop || isTest) {
       const message = isTest
-        ? "This Glitch isn't loaded in a test environment"
-        : "This Glitch isn't available on small screens";
+        ? `This Glitch isn't loaded in a test environment`
+        : `This Glitch isn't available on small screens`;
       return html`
         <div class="w-sizer ${isTest ? 'w-test' : ''}">
           <div class="w-aside w-aside--warning">

@@ -8,6 +8,8 @@ description: |
 date: 2018-11-05
 glitch: webp-cli
 related_post: serve-images-webp
+tags:
+  - performance
 ---
 
 The webp

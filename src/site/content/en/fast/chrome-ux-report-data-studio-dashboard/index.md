@@ -9,6 +9,8 @@ description: |
   guide, learn how to create your own custom CrUX Dashboard to track an origin's
   user experience.
 date: 2018-11-05
+tags:
+  - performance
 ---
 
 [Data Studio](https://marketingplatform.google.com/about/data-studio/) is a

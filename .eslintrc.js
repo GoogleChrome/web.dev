@@ -1,10 +1,5 @@
 module.exports = {
-  plugins: ['prettier'],
-  extends: [
-    'eslint-config-prettier', // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier.
-    'google', // Uses google style guide for js.
-    'plugin:prettier/recommended', // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
-  ],
+  extends: ['./node_modules/gts/.eslintrc.json'],
   env: {
     es6: true,
     node: true,
@@ -18,6 +13,8 @@ module.exports = {
   },
   globals: {
     customElements: true,
+    firebase: true,
+    ga: true,
   },
   rules: {
     indent: [
@@ -28,6 +25,36 @@ module.exports = {
       },
     ],
     'new-cap': 0,
+    'no-case-declarations': 0,
+    'node/no-unpublished-import': 0,
+    'node/no-unpublished-require': 0,
+    'node/no-unsupported-features/es-syntax': 0,
+    'node/no-missing-import': [
+      'error',
+      {
+        allowModules: [
+          'cache-manifest',
+          'layout-template',
+          'webdev_analytics',
+          'webdev_config',
+          'webdev_entrypoint',
+        ],
+      },
+    ],
+    quotes: [
+      'warn',
+      'single',
+      {avoidEscape: true, allowTemplateLiterals: true},
+    ],
     'require-jsdoc': 0,
   },
+  overrides: [
+    {
+      files: ['test/**/*.js'],
+      env: {mocha: true},
+      rules: {
+        'prefer-arrow-callback': 0,
+      },
+    },
+  ],
 };

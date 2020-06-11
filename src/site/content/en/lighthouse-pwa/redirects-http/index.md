@@ -6,7 +6,7 @@ description: |
 web_lighthouse:
   - redirects-http
 date: 2019-05-04
-updated: 2019-09-19
+updated: 2020-06-10
 ---
 
 All sites should be protected with HTTPS.
@@ -34,8 +34,11 @@ make sure that all unsecure HTTP traffic to your site is redirected to HTTPS:
 
 - Use [canonical links](/canonical) in the head of your HTML page
   to help search engines figure out the best way to get to the page.
-- Configure your server to redirect HTTP traffic to HTTPS.
-  See your server's documentation to figure out the best way to do this.
+- Configure your server to redirect HTTP traffic to HTTPS:
+  * [nginx](https://serverfault.com/questions/67316)
+  * [Apache](https://stackoverflow.com/questions/16200501)
+  * [Cloudflare](https://www.cloudflare.com/website-optimization/automatic-https-rewrite/)
+  * [Microsoft IIS](https://serverfault.com/q/893315)
 
 ## Resources
 - [Source code for **Does not redirect HTTP traffic to HTTPS** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/redirects-http.js)

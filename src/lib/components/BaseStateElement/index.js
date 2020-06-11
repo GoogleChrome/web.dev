@@ -24,7 +24,11 @@ export class BaseStateElement extends BaseElement {
   }
 
   /**
+   * This method will be called whenever unistore state changes,
+   * you can overwrite the method to hook into the event and deconstruct the state.
+   *
    * @param {!Object<string, *>} state
    */
+  // eslint-disable-next-line
   onStateChanged(state) {}
 }

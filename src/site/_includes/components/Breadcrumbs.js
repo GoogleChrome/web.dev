@@ -20,14 +20,7 @@ const {html} = require('common-tags');
 
 /* eslint-disable max-len */
 
-module.exports = (learningPath) => {
-  let linkText;
-  if (learningPath.slug === 'blog') {
-    linkText = learningPath.titleVariation;
-  } else {
-    linkText = learningPath.title;
-  }
-
+module.exports = ({title, slug}) => {
   return html`
     <ul class="w-breadcrumbs">
       <li class="w-breadcrumbs__crumb">
@@ -47,9 +40,9 @@ module.exports = (learningPath) => {
           data-category="web.dev"
           data-label="post, path breadcrumb"
           data-action="click"
-          href=${path.join('/', learningPath.slug)}
+          href=${path.join('/', slug)}
         >
-          ${linkText}
+          ${title}
         </a>
       </li>
     </ul>

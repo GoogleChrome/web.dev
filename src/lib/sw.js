@@ -204,7 +204,7 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
   }
   const partial = await response.json();
 
-  const meta = partial.offline ? `<meta name="offline" value="true" />` : '';
+  const meta = partial.offline ? '<meta name="offline" value="true" />' : '';
   const title = `<title>${partial.title || 'web.dev'}</title>`;
   const rssHref = partial.rss || '/feed.xml';
   const rssTitle =
