@@ -15,6 +15,7 @@
  */
 
 const {html} = require('common-tags');
+const slugify = require('slugify');
 
 const AuthorsDate = require('./AuthorsDate');
 
@@ -41,17 +42,34 @@ module.exports = (event, authorsCollection) => {
     }
   }
 
+  const slugs = {};
+  const slugForTitle = (title) => {
+    // Find a slug for this title, but prevent duplicate IDs.
+    const base = slugify(title);
+    let id = base;
+    let suffix = 0;
+    while (id in slugs) {
+      id = base + (++suffix);
+    }
+    slugs[id] = title;
+    return id;
+  };
+
   const renderSession = ({speaker, title}) => {
     // Always pass an Array of author IDs.
     const authors = typeof speaker === 'string' ? [speaker] : speaker;
 
+    const id = slugForTitle(title);
+
     return html`
-      <tr>
-        <td class="w-event-schedule__speaker">
+      <div class="w-event-schedule__row" data-session-id=${id}>
+        <div class="w-event-schedule__cell w-event-schedule__speaker">
           ${AuthorsDate({authors}, authorsCollection)}
-        </td>
-        <td class="w-event-schedule__session">${title}</td>
-      </tr>
+        </div>
+        <div class="w-event-schedule__cell w-event-schedule__session">
+          <a class="w-event-schedule__open" href="#${id}">${title}</a>
+        </div>
+      </div>
     `;
   };
 
@@ -70,11 +88,9 @@ module.exports = (event, authorsCollection) => {
           ></web-event-time>
         </div>
 
-        <table class="w-event-schedule">
-          <tbody>
-            ${day.sessions.map(renderSession)}
-          </tbody>
-        </table>
+        <div class="w-event-schedule">
+          ${day.sessions.map(renderSession)}
+        </div>
       </div>
     `;
   };

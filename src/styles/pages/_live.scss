@@ -182,17 +182,28 @@ web-tabs.w-event-tabs {
   --active-color: #{$GOOGLE_BLUE_100};
 }
 
-table.w-event-schedule {
-  // TODO(robdodson): The generic table has `min-width: 512px`, which extends over the side of
-  // small devices.
-  min-width: auto;
+.w-event-schedule {
+  text-align: left;
+  $width-speaker: calc(10% + 180px);
 
-  .w-event-schedule__speaker {
-    min-width: 180px;
-    max-width: 50vw;
+  .w-event-schedule__row {
+    border-bottom: 1px solid #dadce0;
+    min-height: 48px;
+    position: relative;
+    display: flex;
+    align-items: center;
   }
 
-  td {
+  .w-event-schedule__speaker {
+    width: #{$width-speaker};
+  }
+
+  .w-event-schedule__session {
+    flex-grow: 1;
+    width: 50%;
+  }
+
+  .w-event-schedule__cell {
     font-size: 14px;
     line-height: 20px;
     padding: 8px;
@@ -206,6 +217,37 @@ table.w-event-schedule {
     // TODO(samthor): This margin is unnessecary for our schedule, and
     // needlessly pads out each row.
     margin-bottom: 0;
+  }
+
+  .w-event-schedule__open {
+    display: block;
+
+    // This creates a large clickable area around the link itself, but which
+    // doesn't extend into the speakers area on the left.
+    &::after {
+      content: '';
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: calc(100% - #{$width-speaker});
+      display: block;
+      position: absolute;
+    }
+
+    // When the link is hovered, highlight the whole row, even though the
+    // speakers' area isn't clickable.
+    &:hover::before {
+      content: '';
+      background: rgba(0, 0, 0, 0.05);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -10;
+      display: block;
+      position: absolute;
+      pointer-events: none;
+    }
   }
 }
 
