@@ -59,7 +59,7 @@ If you've written lazy-loading code before, you may have accomplished your task
 by using event handlers such as `scroll` or `resize`. While this approach is the
 most compatible across browsers, modern browsers offer a more performant and
 efficient way to do the work of checking element visibility via [the
-intersection observer API](/web/updates/2016/04/intersectionobserver).
+intersection observer API](https://developers.google.com/web/updates/2016/04/intersectionobserver).
 
 {% Aside %}
   Intersection observer is not supported in all browsers.
