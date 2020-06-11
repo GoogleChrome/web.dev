@@ -20,7 +20,7 @@ emerged with limited implementation). _How_ we lazy-load `<video>` depends on th
 use case, though. Let's discuss a couple of scenarios that each require a
 different solution.
 
-### For video that doesn't autoplay {: #video-no-autoplay }
+## For video that doesn't autoplay {: #video-no-autoplay }
 
 For videos where playback is initiated by the user (i.e., videos that _don't_
 autoplay), specifying the [`preload`
@@ -61,7 +61,7 @@ some ideas and insight into working with video playback in JavaScript.
 Unfortunately, it doesn't prove useful when we want to use video in place of
 animated GIFs, which we'll cover next.
 
-### For video acting as an animated GIF replacement {: #video-gif-replacement }
+## For video acting as an animated GIF replacement {: #video-gif-replacement }
 
 While animated GIFs enjoy wide use, they're subpar to video equivalents in a
 number of ways, particularly in output file size. Animated GIFs can stretch into
@@ -149,3 +149,22 @@ per the `autoplay` attribute.
 Using this method, you have a video solution that emulates animated GIF behavior,
 but doesn't incur the same intensive data usage as animated GIFs do,
 and you can lazy-load that content.
+
+## lazy-loading libraries {: #libraries }
+
+The following libraries can help you to lazy-load video:
+
+- [lozad.js](https://github.com/ApoorvSaxena/lozad.js) is a super lightweight
+option that uses intersection observer only. As such, it's highly performant,
+but will need to be polyfilled before you can use it on older browsers.
+- [yall.js](https://github.com/malchata/yall.js) is a library I wrote that uses
+IntersectionObserver and falls back to event handlers. It's compatible with IE11
+and major browsers.
+- If you're seeking a React-specific lazy-loading library, you might consider
+[react-lazyload](https://github.com/jasonslyvia/react-lazyload). While it
+doesn't use intersection observer, it _does_ provide a familiar method of lazy
+loading images for those accustomed to developing applications with React.
+
+Each of these lazy-loading libraries is well documented, with plenty of markup
+patterns for your various lazy-loading endeavors. If you're not one to tinker,
+grab a library and go. It will take the least amount of effort.

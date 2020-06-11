@@ -1,6 +1,6 @@
 ---
 layout: post
-title: lazy-loading images
+title: Lazy-loading images
 authors:
   - jeremywagner
   - rachelandrew
@@ -300,3 +300,27 @@ document.addEventListener("DOMContentLoaded", function() {
 
 As indicated earlier, if you need Internet Explorer support for lazy-loading of background images,
 you will need to polyfill the Intersection Observer code, due to lack of support in that browser.
+
+## lazy-loading libraries {: #libraries }
+
+The following libraries can be used to lazy-load images.
+
+- [lazysizes](https://github.com/aFarkas/lazysizes) is a full-featured lazy
+loading library that lazy-loads images and iframes. The pattern it uses is quite
+similar to the code examples shown here in that it automatically binds to a
+`lazyload` class on `<img>` elements, and requires you to specify image URLs in
+`data-src` and/or `data-srcset` attributes, the contents of which are swapped
+into `src` and/or `srcset` attributes, respectively. It uses intersection
+observer (which you can polyfill), and can be extended with [a number of
+plugins](https://github.com/aFarkas/lazysizes#available-plugins-in-this-repo) to
+do things like lazy-load video. [Find out more about using lazysizes](/use-lazysizes-to-lazyload-images/).
+- [lozad.js](https://github.com/ApoorvSaxena/lozad.js) is a super lightweight
+option that uses intersection observer only. As such, it's highly performant,
+but will need to be polyfilled before you can use it on older browsers.
+- [yall.js](https://github.com/malchata/yall.js) is a library I wrote that uses
+IntersectionObserver and falls back to event handlers. It's compatible with IE11
+and major browsers.
+- If you're seeking a React-specific lazy-loading library, you might consider
+[react-lazyload](https://github.com/jasonslyvia/react-lazyload). While it
+doesn't use intersection observer, it _does_ provide a familiar method of lazy
+loading images for those accustomed to developing applications with React.
