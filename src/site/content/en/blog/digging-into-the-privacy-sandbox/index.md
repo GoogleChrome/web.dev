@@ -226,10 +226,6 @@ A measure of how much an item of data reveals individual identity.
 
 Data entropy is measured in bits. The more that data reveals identity, the higher its entropy value.
 
-The total number of humans on the planet is around eight billion, which is almost equal to two to the power of 33. This means you need around 33 bits worth of entropy to identify an individual.
-
-Each bit of entropy halves the possible number of potential individuals referred to. For example, binary gender data has an entropy value of around 1 bit. Assuming that birthdays are evenly distributed throughout the year, revealing your birthday (such as 1 January) would reduce your data entropy by around 8.5 bits (since 2 to the power of 8.5 is approximately 365). A postal code might be worth somewhere between 10 and 25 bits. This means that for postal areas with a small population, knowing a person's birthday and postal code means you might have 8.5 + 25 (= 33.5) bits of data—which is likely to be enough to identify individuals.
-
 Data can be combined to identify an individual, but it can be difficult to work out whether new data adds to entropy. For example, knowing a person is from Australia doesn't reduce entropy if you already know the person is from Kangaroo Island.
 
 ### Fingerprinting {: #glossary-fingerprinting }
