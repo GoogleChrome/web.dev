@@ -15,6 +15,7 @@
  */
 
 import {BaseElement} from '../BaseElement';
+import {stringToBoolean} from '../../utils/string-to-boolean';
 
 /**
  * Element that renders table of contents.
@@ -26,13 +27,12 @@ class TableOfContents extends BaseElement {
     return {
       title: {type: String},
       titleId: {type: String, attribute: 'title-id'},
+      opened: {type: Boolean, converter: stringToBoolean, reflect: true},
     };
   }
 
   constructor() {
     super();
-    this.close = this.close.bind(this);
-    this.open = this.open.bind(this);
     this.scrollSpy = this.scrollSpy.bind(this);
   }
 
@@ -45,24 +45,29 @@ class TableOfContents extends BaseElement {
     this.innerText = '';
     this.append(this.tocInnerDiv);
 
-    this.divContent = document.querySelector('div#content');
-    this.headers = this.divContent.querySelectorAll(
-      'h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]',
-    );
+    this.divContent = document.querySelector('#content');
+    this.headers = this.divContent.querySelectorAll('h1[id], h2[id], h3[id]');
 
     this.addTocDetails();
     this.addOpenButton();
+  }
 
-    this.scrollSpy();
-    document.addEventListener('touchmove', this.scrollSpy);
-    document.addEventListener('scroll', this.scrollSpy);
+  updated(changedProperties) {
+    if (
+      changedProperties.has('opened') &&
+      changedProperties.get('opened') !== this.opened
+    ) {
+      if (this.opened) {
+        this.open();
+      } else {
+        this.close();
+      }
+    }
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
     this.close();
-    document.removeEventListener('touchmove', this.scrollSpy);
-    document.removeEventListener('scroll', this.scrollSpy);
   }
 
   addOpenButton() {
@@ -77,7 +82,8 @@ class TableOfContents extends BaseElement {
       'w-button--icon',
     );
     tocButton.setAttribute('data-icon', 'list_alt');
-    tocButton.addEventListener('click', this.open);
+    tocButton.setAttribute('aria-label', 'Open Table of Contents');
+    tocButton.addEventListener('click', () => (this.opened = true));
 
     tocWrapper.append(tocButton);
     this.after(tocWrapper);
@@ -106,7 +112,8 @@ class TableOfContents extends BaseElement {
       'w-button--icon',
     );
     tocCloseButton.setAttribute('data-icon', 'close');
-    tocCloseButton.addEventListener('click', this.close);
+    tocCloseButton.setAttribute('aria-label', 'Close Table of Contents');
+    tocCloseButton.addEventListener('click', () => (this.opened = false));
     tocLabel.append(inThisArticle, tocCloseButton);
     this.tocInnerDiv.before(tocLabel);
 
@@ -120,7 +127,7 @@ class TableOfContents extends BaseElement {
     this.tocInnerDiv.prepend(tocTitle);
 
     this.querySelectorAll('a').forEach((a) =>
-      a.addEventListener('click', this.close),
+      a.addEventListener('click', () => (this.opened = false)),
     );
   }
 
@@ -128,12 +135,17 @@ class TableOfContents extends BaseElement {
     if (this.divContent) {
       this.divContent.classList.remove('w-toc-open');
     }
+    document.removeEventListener('touchmove', this.scrollSpy);
+    document.removeEventListener('scroll', this.scrollSpy);
   }
 
   open() {
     if (this.divContent) {
       this.divContent.classList.add('w-toc-open');
     }
+    this.scrollSpy();
+    document.addEventListener('touchmove', this.scrollSpy, {passive: true});
+    document.addEventListener('scroll', this.scrollSpy, {passive: true});
   }
 
   setActive(id) {

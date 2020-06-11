@@ -6,6 +6,7 @@
     {# Use first found path as a default path. #}
     {% set path = paths[postPaths[0]] %}
   {% endif %}
+  {% set safeTitle = title | md | safe %}
 
   {% if hero %}
     {% Hero {
@@ -16,7 +17,7 @@
     } %}
   {% endif %}
 
-  <web-table-of-contents title="{{ title | md | safe }}" title-id="{{ title | md | safe | slugify }}">
+  <web-table-of-contents title="{{ safeTitle }}" title-id="{{ safeTitle | slugify }}">
     {{ content | toc }}
   </web-table-of-contents>
 
@@ -48,7 +49,7 @@
         </div>
       {% endif %}
 
-      <h1 id="{{ title | md | safe | slugify }}" class="w-article-header__headline">{{ title | md | safe }}</h1>
+      <h1 id="{{ safeTitle | slugify }}" class="w-article-header__headline">{{ safeTitle }}</h1>
       {% if subhead %}
         <p class="w-article-header__subhead w-mb--non">
           {{ subhead | md | safe }}

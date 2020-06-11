@@ -1,4 +1,5 @@
 @import '../../styles/settings/colors';
+@import '../../styles/settings/dimensions';
 @import '../../styles/settings/type';
 @import '../../styles/tools/breakpoints';
 @import '../../styles/tools/mixins';
@@ -27,10 +28,10 @@
 div#content.w-toc-open {
   > * {
     @include bp(md) {
-      width: calc(100% - 268px);
+      width: calc(100% - $TOC_WIDTH_DESKTOP);
 
       .w-actions {
-        right: calc(24px + 268px);
+        right: calc(24px + $TOC_WIDTH_DESKTOP);
       }
     }
 
@@ -50,10 +51,9 @@ web-table-of-contents {
   border-top: 1px solid $BORDER_COLOR;
   display: none;
   padding: 24px 0;
-  position: sticky;
   top: 63px;
   width: 100%;
-  z-index: 1;
+  z-index: 100;
 
   @include bp(sm) {
     padding-top: 32px;
@@ -66,7 +66,7 @@ web-table-of-contents {
     height: calc(100% - 64px);
     position: fixed;
     right: 0;
-    width: 268px;
+    width: $TOC_WIDTH_DESKTOP;
   }
 }
 
@@ -84,7 +84,6 @@ web-table-of-contents {
   margin-bottom: -24px;
   margin-right: 24px;
   padding-top: 24px;
-  position: sticky;
   top: 64px;
   z-index: 1;
 
@@ -92,22 +91,22 @@ web-table-of-contents {
     margin-bottom: -32px;
     padding-top: 32px;
   }
+
+  @include bp(md) {
+    max-height: none;
+    position: sticky;
+  }
 }
 
 .w-toc__content {
   -ms-overflow-style: none;
   height: calc(100% - 24px);
   overflow-y: auto;
-  max-height: 270px;
 
   @include TOC_PADDING;
 
   @include bp(sm) {
     height: calc(100% - 32px);
-  }
-
-  @include bp(md) {
-    max-height: none;
   }
 
   &::-webkit-scrollbar {
