@@ -8,6 +8,7 @@ description: |
   Implement the Quicklink library in a React SPA demo to demonstrate how prefetching speeds up subsequent navigations.
 date: 2020-06-08
 glitch: create-react-app-unoptimized
+related_post: quicklink
 ---
 
 {% Aside %}
