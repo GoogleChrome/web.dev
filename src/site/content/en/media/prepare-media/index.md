@@ -32,12 +32,13 @@ for someone who knows the concepts.
 The result of this procedure will be media resources with the following
 characteristics:
 
-+  Versions of a media file in common web-friendly formats containing both audio
-   and video streams.
-+  A bitrate of 0.35 Megabits per second (Mbs).
-+  Resolution of 640 by 360.
-+  Encrypted.
-+  Viewable on all major browsers using appropriate technologies.
+
+* Versions of a media file in common web-friendly formats containing both audio
+  and video streams.
+* A resolution appropriate for your users' devices.
+* A bitrate that doesn't overload your users' network bandwidth.
+* (Optional) Encryption.
+* Viewable on all major browsers using appropriate technologies.
 
 By "appropriate technologies" I mean [Dynamic Adaptive Streaming over HTTP
 (DASH)](https://developer.mozilla.org/en-US/docs/Web/HTML/DASH_Adaptive_Streaming_for_HTML_5_Video)

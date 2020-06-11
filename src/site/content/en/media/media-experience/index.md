@@ -24,9 +24,9 @@ service to the user experience. Those technical requirements are:
 
 * Versions of a media file in common web-friendly formats containing both audio
   and video streams.
-* A bitrate of 0.35 Megabits per second (Mbs).
-* A resolution of 640 by 360.
-* Encrypted.
+* A resolution appropriate for your users' devices.
+* A bitrate that doesn't overload your users' network bandwidth.
+* (Optional) Encryption.
 * Viewable on all major browsers using appropriate technologies.
 
 The media section of this site will help you achieve these technical
@@ -38,7 +38,7 @@ There are four three approaches you can take displaying video on a site.
 * Upload your content to a hosting site such as YouTube or Vimeo. These options
   do not preclude displaying from within your website.
 * Basic embedding using HTML media tags such as &lt;video> and &lt;audio>.
-* More complicated embedding using a video library such as [Google's Shaka
+* More full-featured embedding using a video library such as [Google's Shaka
   Player](https://github.com/google/shaka-player), [JW
   Player](https://developer.jwplayer.com/), or [Video.js](http://videojs.com/).
 * Building your own media streaming application.
