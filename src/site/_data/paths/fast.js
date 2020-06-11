@@ -26,6 +26,7 @@ module.exports = {
         'what-is-speed',
         'how-to-measure-speed',
         'how-to-stay-fast',
+        'rail',
       ],
     },
     {
