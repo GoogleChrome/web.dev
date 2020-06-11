@@ -67,28 +67,28 @@ Here is an example of a sign-in form that demonstrates all of the best practices
 * [Test across browsers and devices](#range-of-devices): form behaviour varies
   significantly across platforms.
 
-
 {% Aside %}
-This article is about frontend best practice. It does not explain how to build backend services to authenticate users, store their credentials or manage their accounts.
-
-[12 best practices for user account, authorization and password management](https://cloud.google.com/blog/products/gcp/12-best-practices-for-user-account) outlines core principles for running your own backend.
-
-If you have users in different parts of the world, you need to consider localizing your site's use of third party identity services as well as its content.
+This article is about frontend best practices. It does not explain how to build
+backend services to authenticate users, store their credentials or manage their
+accounts. [12 best practices for user account, authorization and password
+management](https://cloud.google.com/blog/products/gcp/12-best-practices-for-user-account)
+outlines core principles for running your own backend. If you have users in
+different parts of the world, you need to consider localizing your site's use of
+third party identity services as well as its content.
 {% endAside %}
 
-
-
-## Use meaningful HTML {​: #use-meaningful-html }
+## Use meaningful HTML {: #meaningful-html }
 
 Use elements built for the job: `<form>`, `<label>` and `<button>`. These enable built-in browser functionality, improve accessibility, and add meaning to your markup.
 
-### Use &lt;form&gt; {​: #use-form }
+### Use &lt;form&gt; {: #form }
 
 You might be tempted to wrap inputs in a `<div>` and handle input data submission purely with JavaScript. It's generally better to use a plain old `<form>`. This makes your site accessible to screenreaders and other assistive devices, and enables a range of built-in browser features (see below).
 
 An HTML form makes it simpler to build basic functional sign-in for older browsers, and to enable sign-in even if JavaScript fails.
 
-### Use &lt;label&gt; {​: #use-label }
+### Use &lt;label&gt; {: #label }
+
 To label an input, use a `<label>`!
 
 ```html
@@ -113,7 +113,7 @@ Try out the example at [glitch.com/edit/#!/label-position](https://glitch.com/ed
   <figcaption class="w-figcaption">Label and input width is limited when both are on the same line.</figcaption>
 </figure>
 
-### Use &lt;button&gt; {​: #use-button }
+### Use &lt;button&gt; {: #button }
 
 Use buttons for buttons! Button elements provide accessible behaviour and built-in form submission functionality, and they can easily be styled. There's no point in using a div or some other element pretending to be a button. 
 
@@ -130,7 +130,7 @@ If you want to add another button in a form (for **Show password**, for example)
 {% endAside %}
 
 
-### Don't double up inputs {​: #no-double-inputs }
+### Don't double up inputs {: #double-inputs }
 
 Some sites force users to enter emails or passwords twice.
 
@@ -139,14 +139,14 @@ That might reduce errors for a few users, but causes extra work for *all* users,
 [Do we stats for this?]
 
 
-## Make the most of element attributes {​: #element-attributes }
+## Make the most of element attributes {: #element-attributes }
 
 This is where the magic really happens!
 
 Browsers have multiple helpful built-in features that use input element attributes.
 
 
-### Help users start faster {​: #autofocus }
+### Help users start faster {: #autofocus }
 
 Add an `autofocus` attribute to the first input in your login form. That makes it clear where to start and, on desktop at least, means users don't have to select the input to start typing.
 
@@ -155,7 +155,7 @@ Add an `autofocus` attribute to the first input in your login form. That makes i
   <figcaption class="w-figcaption">Autofocus provides clear visual focus on desktop.</figcaption>
 </figure>
 
-## Keep passwords private—but enable users to see them if they want {​: #show-password }
+## Keep passwords private—but enable users to see them if they want {: #show-password }
 
 Passwords inputs should have `type="password"` to hide password text. 
 
@@ -168,7 +168,7 @@ However, you should add a **Show password** icon or button to enable users to ch
   <figcaption class="w-figcaption">Password input from the Google sign-in form: with <strong>Show password</strong> icon and <strong>Forgot password</strong> link.</figcaption>
 </figure>
 
-## Give mobile users the right keyboard {​: #mobile-keyboard }
+## Give mobile users the right keyboard {: #mobile-keyboards }
 
 Use `<input type="email">` to give mobile users an appropriate keyboard and enable basic built-in email address validation by the browser (no JavaScript required!)
 
@@ -178,7 +178,7 @@ If you need to use a telephone number instead of an email address, `<input type=
 `type="number"` adds an up/down arrow to increment numbers, so don't use it for numbers that aren't meant to be incremented, such as ID and account numbers.
 {% endAside %}
 
-### Prevent mobile keyboard from obscuring the "Sign in" button {​: #keyboard-obscures-form }
+### Prevent mobile keyboard from obstructing the "Sign in" button {: #keyboard-obstruction }
 
 Unfortunately, if you're not careful, mobile keyboards may cover your form or, worse, partially obscure the **Sign in** button. Users may give up before realizing what has happened.
 
@@ -213,7 +213,7 @@ Some sites (including Amazon and eBay) avoid the problem by asking for email/pho
 </figure>
 
 
-### Help users avoid re-entering data {​: #autofill }
+### Help users avoid re-entering data {: #autofill }
 
 You can help browsers help users by autofilling inputs. This is particularly important for email inputs, which get [high abandonment rates](https://www.formisimo.com/blog/conversion-rate-increases-57-with-form-analytics-case-study/).
 
@@ -278,7 +278,7 @@ For example, as pointed out by [Hidde de Vries](https://hiddedevries.nl/en/blog/
 [Autofill: What web devs should know, but don't](https://cloudfour.com/thinks/autofill-what-web-devs-should-know-but-dont) has a lot more information about using `name` and `autocomplete`. The [HTML spec](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#inappropriate-for-the-control) lists all 59 possible values.
 
 
-### Enable the browser to suggest a strong password {​: #enable-browser-password-suggestion }
+### Enable the browser to suggest a strong password {: #password-suggestions }
 
 Modern browsers suggest a strong password if `autocomplete="new-password"` is included for the password input in a sign-up form.
 
@@ -301,7 +301,7 @@ For example, a user may use Safari on their iPhone and Chrome on their Windows l
 
 {​: #use-required-attribute }
 
-### Help save users from accidentally missing input fields
+### Help save users from accidentally missing input fields {: #required-fields }
 
 Add the `required` attribute to both email and password fields.
 
@@ -315,7 +315,7 @@ No JavaScript required!
 </figure>
 
 
-## Design for fingers and thumbs {​: #design-for-mobile }
+## Design for fingers and thumbs {: #mobile-design }
 
 [Do we have any stats for form filling on mobile versus desktop?]
 
@@ -324,7 +324,7 @@ The default browser size for just about everything relating to input elements an
 This may seem obvious, but it's a common problem with sign-in forms on many sites.
 
 
-### Make sure inputs and buttons are large enough {​: #size-correctly }
+### Make sure inputs and buttons are large enough {: #tap-targets }
 
 The default size and padding for inputs and buttons is too small on desktop and even worse on mobile.
 
@@ -348,7 +348,7 @@ Search for [touch target](https://www.google.com/search?q=touch+target) and you'
 Thumbs are bigger than forefingers, and control is less precise. All the more reason for adequately sized touch targets.
 {% endAside %}
 
-### Make text big enough {​: #size-text-correctly }
+### Make text big enough {: #size-text-correctly }
 
 As with size and padding, the default browser font size for input elements and buttons is too small, particularly on mobile.
 
@@ -370,12 +370,12 @@ There's a bug for this at [crbug.com/953689](https://crbug.com/953689). If you t
 {% endAside %}
 
 
-### Provide enough space between inputs {​: #size-margins-correctly }
+### Provide enough space between inputs {: #size-margins-correctly }
 
 Add enough margin to make inputs work well as touch targets. In other words, aim for about a finger width of margin.
 
 
-### Make sure your inputs are clearly visible {​: #ensure-inputs-visible }
+### Make sure your inputs are clearly visible {: #visible-inputs }
 
 The default border styling for inputs makes them hard to see. They're almost invisible on some platforms such as Chrome for Android.
 
@@ -387,7 +387,7 @@ As well as padding, add a border: on a white background, a good general rule is 
 </figure>
 
 
-### Use built-in browser features to warn of invalid input values {​: #use-built-in-validation }
+### Use built-in browser features to warn of invalid input values {: #validation }
 
 Browsers have built-in features to do basic form validation for inputs with a `type` attribute.
 
@@ -408,9 +408,9 @@ input[type=email]:not(:placeholder-shown):invalid {
 ```
 
 
-## Use JavaScript where necessary
+## Use JavaScript where necessary {: #javascript }
 
-### Toggle password display {​: #enable-password-display-toggle }
+### Toggle password display {: #password-display }
 
 You should add a **Show password** icon or button to enable users to check the text they've entered. [Usability suffers](https://www.nngroup.com/articles/stop-password-masking/) when users can't see the text they've entered. Currently there's no built-in way to do this, though [there are plans for implementation](https://twitter.com/sw12/status/1251191795377156099). You'll need to use JavaScript instead: you can see this in action in [step 4](https://glitch.com/edit/#!/signin-form-codelab-4) of the codelab for this article.
 
@@ -480,7 +480,7 @@ Here's the end result:
 </figure>
 
 
-### Make password inputs accessible {​: #accessible-password-inputs }
+### Make password inputs accessible {: #accesible-password-inputs }
 
 Use `aria-describedby` to explain password constraints, using the element that describes the constraints for your password input. Screenreaders read the label text, the input type (password), and then the description. 
 
@@ -501,7 +501,7 @@ You can see both these `aria` features in action at [glitch.com/#!/signin-form](
 [Creating Accessible Forms](https://webaim.org/techniques/forms/) has more tips to help make forms accessible.
 
 
-### Validate in realtime and before submission {​: #javascript-validation }
+### Validate in realtime and before submission {: #validation }
 
 HTML form elements and attributes have built-in features for basic validation, but you should also use JavaScript to do more robust validation while users are entering data and when they attempt to submit the form. 
 
@@ -514,7 +514,7 @@ Client-side validation helps users enter data and can avoid unnecessary server l
 Find out more: [Use JavaScript for more complex real-time validation](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_javascript_for_more_complex_real-time_validation).
 
 
-### Analytics and RUM {​: #analytics-rum }
+### Analytics and RUM {: #analytics }
 
 "What you cannot measure, you cannot improve" is particularly true for sign-up and sign-in forms. You need to set goals, measure success, improve your site—and repeat.
 
@@ -527,7 +527,7 @@ Find out more: [Use JavaScript for more complex real-time validation](https://de
 You may also want to consider implementing A/B testing in order to try out different approaches to sign-up and sign-in, and staged rollouts to validate the changes on a subset of users before releasing changes to all users.
 
 
-## …and finally {​: #general-guidelines }
+## General guidelines {: #general-guidelines }
 
 Some general guidelines to help reduce sign-in form abandonment:
 
@@ -543,7 +543,7 @@ Some general guidelines to help reduce sign-in form abandonment:
 [Something about (re)CAPTCHA?]
 
 
-## Find out more {​: #find-out-more }
+## Find out more {: #resources }
 
 * [Create Amazing Forms](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
 * [Best Practices For Mobile Form Design](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
