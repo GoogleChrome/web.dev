@@ -38,21 +38,34 @@ Here is an example of a sign-in form that demonstrates all of the best practices
 
 ## Checklist
 
-* [Use meaningful HTML elements](#use-meaningful-html): `<form>`, `<input>`, `<label>`, and `<button>`.
+* [Use meaningful HTML elements](#use-meaningful-html): `<form>`, `<input>`,
+  `<label>`, and `<button>`.
 * [Label every input with a `<label>`](#use-label).
-* Use element attributes to [access built-in browser features](#element-attributes): `type`, `name`, `autocomplete`, `required`, `autofocus`.
-* [Use `name="new-password"`](#new-password) for a sign-up password input and for the new password in a "Change password" form.
-* [Use `autocomplete="current-password"`](#current-password) for a sign-in password input.
+* Use element attributes to [access built-in browser
+  features](#element-attributes): `type`, `name`, `autocomplete`, `required`,
+  `autofocus`.
+* [Use `name="new-password"`](#new-password) for a sign-up password input and
+  for the new password in a "Change password" form.
+* [Use `autocomplete="current-password"`](#current-password) for a sign-in
+  password input.
 * [Don't use autocomplete for a new password](#no-new-password-autocomplete).
 * [Provide **Show password** functionality](#show-password).
-* [Use **aria-label** and **aria-describedby**](#accessible-password-inputs) for password inputs.
+* [Use **aria-label** and **aria-describedby**](#accessible-password-inputs) for
+  password inputs.
 * [Don't double up inputs](#no-double-inputs).
-* Design forms so the [mobile keyboard doesn't obscure inputs or buttons](#keyboard-obscures-form).
-* Ensure forms are usable on mobile: [legible text](#size-text-correctly), inputs and buttons [large enough to work as touch targets](#size-correctly).
-* [Display links to your Terms of Service and privacy policy documents](#tos-privacy-policy).
-* [Maintain site style and include branding](#branding) (logo and name) on your sign-up and sign-in form pages. 
-* [Test in the field as well as the lab](#analytics-rum): build page analytics, interaction analytics and user-centric performance measurement into your sign-up and sign-in flow.
-* [Test across browsers and devices](#range-of-devices): form behaviour varies significantly across platforms.
+* Design forms so the [mobile keyboard doesn't obscure inputs or
+  buttons](#keyboard-obscures-form).
+* Ensure forms are usable on mobile: [legible text](#size-text-correctly),
+  inputs and buttons [large enough to work as touch targets](#size-correctly).
+* [Display links to your Terms of Service and privacy policy
+  documents](#tos-privacy-policy).
+* [Maintain site style and include branding](#branding) (logo and name) on your
+  sign-up and sign-in form pages. 
+* [Test in the field as well as the lab](#analytics-rum): build page analytics,
+  interaction analytics and user-centric performance measurement into your
+  sign-up and sign-in flow.
+* [Test across browsers and devices](#range-of-devices): form behaviour varies
+  significantly across platforms.
 
 
 {% Aside %}
