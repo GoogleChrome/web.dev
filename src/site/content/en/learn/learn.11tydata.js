@@ -11,14 +11,14 @@ const allPaths = require('../../../_data/paths');
 
 module.exports = function () {
   const paths = [
-    allPaths['fast'],
+    allPaths['vitals'],
+    allPaths['progressive-web-apps'],
     allPaths['accessible'],
+    allPaths['fast'],
     allPaths['reliable'],
     allPaths['secure'],
     allPaths['discoverable'],
-    allPaths['progressive-web-apps'],
     allPaths['metrics'],
-    allPaths['vitals'],
     allPaths['payments'],
   ].filter(livePaths);
 
