@@ -4,7 +4,7 @@ subhead: The Privacy Sandbox is a series of proposals to satisfy third-party use
 authors:
   - samdutton
 date: 2020-04-08
-updated: 2020-05-13
+updated: 2020-06-19
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: A black-on-white printed sign saying Private, on a wooden wall.
@@ -21,7 +21,7 @@ tags:
 ## Summary
 
 * This post outlines APIs and concepts from the [Privacy Sandbox](https://www.chromium.org/Home/chromium-privacy/privacy-sandbox) proposals.
-* The proposals need your feedback.
+* The proposals are looking for feedback from the community, particularly from those in the advertising space (publishers, advertisers, and ad tech companies), to suggest missing use cases and share information about how to support your business use cases. 
 * You can comment on the proposals by filing issues on [the repositories linked to below](#proposals).
 * There's a [glossary](#glossary)  for the proposals at the end of this post.
 
@@ -33,7 +33,7 @@ Websites use services from other companies to provide analytics, serve video and
 
 However, when you visit a website you may not be aware of the third parties involved and what they're doing with your data. Even publishers and web developers may not understand the entire third-party supply chain.
 
-Ad targeting, conversion measurement, and other use cases currently rely on establishing stable cross-site identity. Historically this has been done by using [third-party cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Third-party_cookies), but browsers have begun to restrict access to these cookies. There's been an [increase  in the use of other mechanisms](https://github.com/bslassey/privacy-budget/issues/6) for cross-site user tracking, such as covert browser storage, device fingerprinting, and requests for personal information like email addresses.
+Ad selection, conversion measurement, and other use cases currently rely on establishing stable cross-site identity. Historically this has been done by using [third-party cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Third-party_cookies), but browsers have begun to restrict access to these cookies. There's been an [increase  in the use of other mechanisms](https://github.com/bslassey/privacy-budget/issues/6) for cross-site user tracking, such as covert browser storage, device fingerprinting, and requests for personal information like email addresses.
 
 This is a dilemma for the web. How can legitimate third-party use cases be supported without enabling users to be tracked across sites?
 
@@ -41,14 +41,14 @@ In particular, how can websites fund content by enabling third parties to show a
 
 The way things work at the moment can be problematic for the entire web ecosystem, not just users. For publishers and advertisers, tracking identity and using a variety of non-standard third-party solutions can add to technical debt, code complexity and data risk. Users, developers, publishers, and advertisers should be confident that the web is protecting user privacy choices. 
 
-Ads play a major role in making the internet an easily accessible, open place, but advertising has to work for everyone. When it does, it means users can get access to information and great content, creators and publishers can thrive by getting fair compensation for their work, and marketers can connect with people interested in what they have to offer. Which brings us to our goal: to evolve the web to better respect user privacy and support a vibrant, thriving ecosystem.
+Ads play a major role in making the internet an easily accessible, open place, but advertising has to work for everyone. When it does, it means users can get access to information and great content, creators and publishers can thrive by getting fair compensation for their work, and marketers can connect with people interested in what they have to offer. Which brings us to our goal: to evolve the web to better respect user privacy and support a vibrant, thriving content ecosystem.
 
 
 ## Introducing the Privacy Sandbox
 
 The [Privacy Sandbox](https://www.blog.google/products/chrome/building-a-more-private-web/) introduces a set of privacy-preserving APIs to support business models that fund the open web in the absence of tracking mechanisms like third-party cookies. 
 
-The Privacy Sandbox APIs require web browsers to take on a new role. Rather than working with limited tools and protections, the APIs enable the user's browser to act on the user's behalf to ensure that data is never shared without their knowledge and consent. The APIs enable use cases such as ad targeting and conversion measurement, but without revealing individual private and personal information.
+The Privacy Sandbox APIs require web browsers to take on a new role. Rather than working with limited tools and protections, the APIs enable the user's browser to act on the user's behalf to ensure that data is never shared without their knowledge and consent. The APIs enable use cases such as ad selection and conversion measurement, but without revealing individual private and personal information.
 
 This is a shift in direction for browsers. The Privacy Sandbox authors' vision of the future has browsers providing specific tools to target specific use cases that support the free and open web, while preserving user privacy.
 
@@ -86,7 +86,8 @@ You can dive into the explainers right away, and over the coming months we'll be
 
 **Goal:** Enable advertisers to measure ad performance.
 
-There are two proposals for APIs that would allow the user's browser to gather impression and conversion data and report this back to advertisers in a way that prevents linking of identities across sites or collecting user browsing history:
+There are two proposals for APIs that allow the user's browser, rather than a third party, to gather impression and conversion data. This data can then be reported back to advertisers in a way that does not enable linking of identities across sites or collection of user browsing history:
+
 
 +   [Click Through Conversion Measurement Event-Level](https://github.com/csharrison/conversion-measurement-api) allows advertisers to determine which ad clicks later turned into conversions. (API name suggestions welcome!)
 +   [Aggregated Reporting](https://github.com/csharrison/aggregate-reporting-api) aggregates browsing data for multiple sites and multiple users in a single report, while preserving privacy by only allowing aggregate reporting on things that a lot of different people did.
@@ -97,7 +98,7 @@ Other companies have been investigating similar ideas, such as Facebook's [Cross
 
 **Goal:** Enable advertisers to display ads relevant to users.
 
-Relevant ads are [less annoying to users and more profitable for publishers](https://services.google.com/fh/files/misc/disabling_third-party_cookies_publisher_revenue.pdf) (the people running ad-supported websites). Third party ad targeting tools make ad space more valuable to advertisers (the people who purchase ad space on websites) which in turn increases revenue for ad-supported websites and enables content to get created and published.
+Relevant ads are [less annoying to users and more profitable for publishers](https://services.google.com/fh/files/misc/disabling_third-party_cookies_publisher_revenue.pdf) (the people running ad-supported websites). Third party ad selection tools make ad space more valuable to advertisers (the people who purchase ad space on websites) which in turn increases revenue for ad-supported websites and enables content to get created and published.
 
 There are many ways to make ads relevant to the user, including the following:
 
@@ -108,18 +109,18 @@ There are many ways to make ads relevant to the user, including the following:
 
 First-party-data and contextual targeting can be achieved without knowing anything about the user other than their activity within a site. These techniques don't require cross-site tracking. Remarketing is usually done by using cookies or some other way to recognize people across web sites: adding users to lists and then targeting them with specific ads.
 
-Interest-based targeting currently uses cookies or device fingerprinting to track user behaviour across as many sites as possible. Many people are concerned about the privacy implications of ad targeting. The Privacy Sandbox includes two alternatives:
+Interest-based targeting currently uses cookies or device fingerprinting to track user behaviour across as many sites as possible. Many people are concerned about the privacy implications of ad selection. The Privacy Sandbox includes two alternatives, for remarketing and interest-based ad selection:
 
-* [TURTLEDOVE](https://github.com/michaelkleber/turtledove) moves the final ad "auction" (to choose the most relevant ads) to the browser. The API leverages information which is only stored in the user's browser itself, about advertisers the user had previously expressed an interest in, along with information about the current page. Two requests are sent for ads: one to retrieve an ad based on contextual data, and one to retrieve an ad based on an advertiser-defined interest. The browser has the responsibility of ensuring these requests are independent and *uncorrelated* so they can't be linked together to let an ad network know that the requests are from the same person. An "auction" is then conducted by the browser to choose the most relevant ad, using JavaScript code provided by the advertiser. This code *can only be used to choose between ads*: it cannot make network requests, or access the DOM or external state.
+* [TURTLEDOVE](https://github.com/michaelkleber/turtledove): for [remarketing](#remarketing). The API enables the final ad "auction" to choose the most relevant ads to be moved to the browser. The API leverages information which is only stored in the user's browser itself, about advertisers the user had previously expressed an interest in, along with information about the current page. Two requests are sent for ads: one to retrieve an ad based on contextual data, and one to retrieve an ad based on an advertiser-defined interest. The browser has the responsibility of ensuring these requests are independent and *uncorrelated* so they can't be linked together to let an ad network know that the requests are from the same person. An "auction" is then conducted by the browser to choose the most relevant ad, using JavaScript code provided by the advertiser. This code *can only be used to choose between ads*: it cannot make network requests, or access the DOM or external state.
 
-* [FLoC](https://github.com/jkarlin/floc) generates clusters of similar people, known as cohorts or "flocks". Data is generated locally on the user's browser, not by a third party. The browser shares the generated flock data, but this cannot be used to identify or track individual users. This enables companies to target ads based on the behavior of people with similar browsing behaviour, while preserving privacy.
+* [FLoC](https://github.com/jkarlin/floc): for interest-based audience. This generates clusters of similar people, known as cohorts or "flocks". Data is generated locally on the user's browser, not by a third party. The browser shares the generated flock data, but this cannot be used to identify or track individual users. This enables companies to target ads based on the behavior of people with similar browsing behaviour, while preserving privacy.
 
 
 ### Combat fingerprinting
 
 **Goal:** Reduce the amount of sensitive data revealed by APIs and make access to sensitive data controllable by users, and measurable.
 
-Browsers have taken steps to [deprecate third-party cookies](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html?mod=article_inline), but techniques to identify and track the behaviour individual users, known as fingerprinting, have continued to evolve. Fingerprinting uses mechanisms that users aren't aware of and can't control.
+Browsers have taken steps to [deprecate third-party cookies](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html?mod=article_inline), but techniques to identify and track the behaviour of individual users, known as fingerprinting, have continued to evolve. Fingerprinting uses mechanisms that users aren't aware of and can't control.
 
 * The [Privacy Budget](https://github.com/bslassey/privacy-budget) proposal aims to limit the potential for fingerprinting by identifying how much fingerprint data is exposed by JavaScript APIs or other 'surfaces' (such as HTTP request headers) and setting a limit on how much of this data can be accessed. 
 
@@ -127,7 +128,7 @@ Browsers have taken steps to [deprecate third-party cookies](https://blog.chromi
 
 ### IP address security
 
-**Goal:** Control access to IP addresses to reduce covert fingerprinting, and allow sites to opt out of seeing IP addresses in order to not consume privacy budget.
+**Goal:** Control access to IP addresses to reduce covert fingerprinting, and allow sites to opt out of seeing IP addresses in order to not consume [privacy budget](https://github.com/bslassey/privacy-budget).
 
 Your IP address is the public 'address' of your computer on the internet, which in most cases is dynamically assigned by the network through which you connect to the internet. However, even dynamic IP addresses may remain stable over a significant period of time. not surprisingly, this means that IP addresses are a significant source of fingerprint data. 
 
@@ -151,13 +152,12 @@ Many organizations own sites across multiple domains. For example, google.com, g
 
 * [First Party Sets](https://github.com/krgovind/first-party-sets/) aims to make the web's concept of first and third parties more closely aligned with the real world's by enabling multiple domains to declare themselves as belonging to the same first party.
 
-## Next steps
-
-The Privacy Sandbox authors need your support. The [explainers](https://blog.chromium.org/2019/08/potential-uses-for-privacy-sandbox.html) need feedback—in particular to suggest missing use cases and more-private ways to accomplish their goals.
 
 ## Find out more
 
 ### Explainers
+
+The Privacy Sandbox authors need your support. The [explainers](https://blog.chromium.org/2019/08/potential-uses-for-privacy-sandbox.html) need feedback—in particular to suggest missing use cases and more-private ways to accomplish their goals.
 
 +   [Privacy Model for the Web](https://github.com/michaelkleber/privacy-model)
 +   [Privacy Budget](https://github.com/bslassey/privacy-budget)
