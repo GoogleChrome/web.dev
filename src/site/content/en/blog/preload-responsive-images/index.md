@@ -11,7 +11,7 @@ alt: A wall with a bunch of image frames in different sizes.
 date: 2019-09-30
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - fast
+  - performance
   - images
 ---
 

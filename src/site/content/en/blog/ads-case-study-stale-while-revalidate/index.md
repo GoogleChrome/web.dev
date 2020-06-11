@@ -16,7 +16,6 @@ tags:
   - blog
   - case-study
   - performance
-  - fast
   - ads
 ---
 

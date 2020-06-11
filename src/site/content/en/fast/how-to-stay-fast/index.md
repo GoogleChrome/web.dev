@@ -9,6 +9,8 @@ description: |
   we explore how to make sure your fast experience stays fast.
 web_lighthouse: N/A
 date: 2019-05-01
+tags:
+  - performance
 ---
 
 Brands that optimize speed will often find they regress quickly. This is because website performance is a lot like getting fit: it's not enough to make a one time effort; you have to change your lifestyle.

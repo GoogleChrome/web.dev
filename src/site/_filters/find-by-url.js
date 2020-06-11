@@ -68,12 +68,7 @@ const findByUrl = (url) => {
     throw new Error('No collection has been memoized yet.');
   }
 
-  const found = memo[url];
-  if (!found) {
-    throw new Error(`Could not find post with url: ${url}`);
-  }
-
-  return found;
+  return memo[url];
 };
 
 module.exports = {memoize, findByUrl};

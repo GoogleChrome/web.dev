@@ -10,6 +10,8 @@ description: |
 date: 2018-04-24
 glitch: fav-kitties-compress-starter
 related_post: reduce-network-payloads-using-text-compression
+tags:
+  - performance
 ---
 
 {% include 'content/devtools-headsup.njk' %}

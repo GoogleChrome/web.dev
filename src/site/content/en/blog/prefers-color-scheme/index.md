@@ -4,7 +4,7 @@ subhead: Overhyped or necessity? Learn everything about dark mode and how to sup
 authors:
   - thomassteiner
 date: 2019-06-27
-updated: 2019-11-25
+updated: 2020-06-09
 hero: hero.jpg
 hero_position: bottom
 alt: |
@@ -215,16 +215,20 @@ media feature is used to detect
 if the user has requested the page to use a light or dark color theme.
 It works with the following values:
 
-- `no-preference`:
-  Indicates that the user has made no preference known to the system.
-  This keyword value evaluates as `false` in the
-  [boolean context](https://drafts.csswg.org/mediaqueries-5/#boolean-context).
 - `light`:
   Indicates that the user has notified the system that they prefer a page that has a light theme
   (dark text on light background).
 - `dark`:
   Indicates that the user has notified the system that they prefer a page that has a dark theme
   (light text on dark background).
+
+{% Aside 'note' %}
+  An earlier version of the spec included a third value, `no-preference`.
+  It was meant to indicate that the user has made no preference known to the system.
+  Since no browser ever implemented it, the value was
+  [removed](https://github.com/w3c/csswg-drafts/issues/3857#issuecomment-634779976)
+  from the spec.
+{% endAside%}
 
 ## Supporting dark mode
 
@@ -300,7 +304,7 @@ I hide the content of the page until `light.css` has loaded.
   above I already force `highest` priority for my default light experience).
 -->
 <link rel="stylesheet" href="/dark.css" media="(prefers-color-scheme: dark)">
-<link rel="stylesheet" href="/light.css" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)">
+<link rel="stylesheet" href="/light.css" media="(prefers-color-scheme: light)">
 <!-- The main stylesheet -->
 <link rel="stylesheet" href="/style.css">
 ```
@@ -689,7 +693,7 @@ Toggle dark mode on your device to see the difference.
 ```html
 <picture>
   <source srcset="western.webp" media="(prefers-color-scheme: dark)">
-  <source srcset="eastern.webp" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+  <source srcset="eastern.webp" media="(prefers-color-scheme: light)">
   <img src="eastern.webp">
 </picture>
 ```

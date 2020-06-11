@@ -44,9 +44,12 @@ module.exports = (locale, page, collections, renderData = {}) => {
         ? pageData.social[platform]
         : pageData;
 
-    const title = strip(social.title || social.path.title, forbiddenCharacters);
+    const title = strip(
+      social.title || (social.path && social.path.title),
+      forbiddenCharacters,
+    );
     const description = strip(
-      social.description || social.path.description,
+      social.description || (social.path && social.path.description),
       forbiddenCharacters,
     );
     let thumbnail = social.thumbnail || social.hero;
@@ -138,8 +141,11 @@ module.exports = (locale, page, collections, renderData = {}) => {
 
   // prettier-ignore
   return html`
-    <title>${strip(pageData.title || pageData.path.title || site.title)}</title>
-    <meta name="description" content="${strip(pageData.description || pageData.path.description, forbiddenCharacters)}" />
+    <title>${strip(pageData.title
+      || (pageData.path && pageData.path.title)
+      || site.title)}</title>
+    <meta name="description" content="${strip(pageData.description
+      || (pageData.path && pageData.path.description), forbiddenCharacters)}" />
 
     ${renderCanonicalMeta()}
     ${renderGoogleMeta()}

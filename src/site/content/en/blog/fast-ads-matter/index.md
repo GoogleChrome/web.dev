@@ -19,7 +19,6 @@ description: |
 tags:
   - blog
   - performance
-  - fast
   - ads
 ---
 

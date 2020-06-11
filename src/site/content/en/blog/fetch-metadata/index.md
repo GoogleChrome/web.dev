@@ -4,7 +4,7 @@ subhead: Prevent CSRF, XSSI, and cross-origin information leaks.
 authors:
   - lwe
 date: 2020-06-04
-# updated: 2019-06-27
+updated: 2020-06-10
 hero: hero.jpg
 alt: A screenshot of Python code related to Resource Isolation Policy.
 description: |
@@ -19,7 +19,7 @@ tags:
 
 Many web applications are vulnerable to [cross-origin](/same-site-same-origin/#%22same-origin%22-and-%22cross-origin%22) attacks like [cross-site request forgery](https://portswigger.net/web-security/csrf) (CSRF), [cross-site script inclusion](https://portswigger.net/research/json-hijacking-for-the-modern-web) (XSSI), timing attacks, [cross-origin information leaks](https://arxiv.org/pdf/1908.02204.pdf) or speculative execution side-channel ([Spectre](https://developers.google.com/web/updates/2018/02/meltdown-spectre)) attacks.
 
-[Fetch Metadata](https://www.w3.org/TR/fetch-metadata/) request headers allow you to deploy a strong defense-in-depth mechanism - a Resource Isolation Policy - to protect your application against these common cross-origin attacks.
+[Fetch Metadata](https://www.w3.org/TR/fetch-metadata/) request headers allow you to deploy a strong defense-in-depth mechanism—a Resource Isolation Policy—to protect your application against these common cross-origin attacks.
 
 It is common for resources exposed by a given web application to only be loaded by the application itself, and not by other websites. In such cases, deploying a Resource Isolation Policy based on Fetch Metadata request headers takes little effort, and at the same time protects the application from cross-site attacks.
 
@@ -143,8 +143,8 @@ The logic above protects your application's endpoints from being used as resourc
 
 In some cases, your application might provide resources which are meant to be loaded cross-site. These resources need to be exempted on a per-path or per-endpoint basis. Examples of such endpoints are:
 
- - Endpoints meant to be accessed cross-origin - If your application is serving endpoints that are `CORS` enabled, you need to explicitly opt them out from resource isolation to ensure that cross-site requests to these endpoints are still possible.
- - Public resources (e.g. images, styles, etc.) - Any public and unauthenticated resources that should be loadable cross-origin from other sites can be exempted as well.
+ - Endpoints meant to be accessed cross-origin: If your application is serving endpoints that are `CORS` enabled, you need to explicitly opt them out from resource isolation to ensure that cross-site requests to these endpoints are still possible.
+ - Public resources (e.g. images, styles, etc.): Any public and unauthenticated resources that should be loadable cross-origin from other sites can be exempted as well.
 
 ```python
 if req.path in ('/my_CORS_endpoint', '/favicon.png'):
@@ -216,5 +216,6 @@ Make sure that you reject invalid requests before running authentication checks 
 
 - [W3C Fetch Metadata Request Headers specification](https://www.w3.org/TR/fetch-metadata/)
 - [Fetch Metadata Playground](https://secmetadata.appspot.com/)
-- [Google I/O - Securing Web Apps with Modern Platform Features](https://webappsec.dev/assets/pub/Google_IO-Securing_Web_Apps_with_Modern_Platform_Features.pdf) (Slides)
+- [Google I/O talk: Securing Web Apps with Modern Platform Features](https://webappsec.dev/assets/pub/Google_IO-Securing_Web_Apps_with_Modern_Platform_Features.pdf) (Slides)
+
 {% YouTube 'DDtM9caQ97I', '1856' %} 

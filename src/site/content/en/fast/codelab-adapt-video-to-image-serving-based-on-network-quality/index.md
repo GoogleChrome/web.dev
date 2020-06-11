@@ -9,6 +9,8 @@ description: |
   your content based on the network quality.
 glitch: adaptive-serving-netinfo-starter
 related_post: adaptive-serving-based-on-network-quality
+tags:
+  - performance
 ---
 
 {% include 'content/devtools-headsup.njk' %}
