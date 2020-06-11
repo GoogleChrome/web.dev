@@ -11,7 +11,7 @@ thumbnail: thumbnail.png
 alt: Chrome User Experience logo, PageSpeed Insights logo, and a metrics chart.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - fast
+  - performance
 ---
 
 At Chrome Developer Summit, Paul Irish and I announced updates to

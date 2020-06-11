@@ -14,6 +14,8 @@ updated: 2020-05-27
 codelabs:
   - codelab-preload-critical-assets
   - codelab-preload-web-fonts
+tags:
+  - performance
 ---
 
 When you open a web page, the browser requests the HTML document from a server, parses its contents, and submits separate requests for any referenced resources. As a developer, you already know about all the resources your page needs and which of them are the most important. You can use that knowledge to request the critical resources ahead of time and speed up the loading process. This post explains how to achieve that with `<link rel="preload">`.
