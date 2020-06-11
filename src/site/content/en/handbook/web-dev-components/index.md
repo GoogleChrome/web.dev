@@ -1239,5 +1239,5 @@ by adding a `left` or `right` argument to the shortcode:
   {% Tooltip 'Collapse', 'right' %}
 </button>
 
-## Video
+## Video / YouTube {: #video }
 See the [Images and video](/handbook/markup-media#video) post.
