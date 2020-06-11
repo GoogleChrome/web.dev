@@ -27,19 +27,20 @@ a hurry, or under stress. Poorly designed sign-in forms get high bounce rates.
 Each bounce could mean a lost and disgruntled user—not just a missed sign-in
 opportunity.
 
-[Stats for sign-up/sign-in bounce rates.]
+<!-- Stats for sign-up/sign-in bounce rates. -->
 
-If you would prefer to learn these best practices with a hands-on tutorial, check out the Sign-in best practices codelab.
+If you would prefer to learn these best practices with a hands-on tutorial,
+check out the Sign-in best practices codelab.
 
 Here is an example of a sign-in form that demonstrates all of the best practices:
 
-[Add Glitch.]
+<!-- Add Glitch. -->
 
 ## Checklist
 
-* [Use meaningful HTML elements](#use-meaningful-html): form, input, label and button.
-* [Label every input with a &lt;label&gt;](#use-label).
-* Use element attributes to [access built-in browser features](#element-attributes): type, name, autocomplete, required, autofocus.
+* [Use meaningful HTML elements](#use-meaningful-html): `<form>`, `<input>`, `<label>`, and `<button>`.
+* [Label every input with a `<label>`](#use-label).
+* Use element attributes to [access built-in browser features](#element-attributes): `type`, `name`, `autocomplete`, `required`, `autofocus`.
 * [Use `name="new-password"`](#new-password) for a sign-up password input and for the new password in a "Change password" form.
 * [Use `autocomplete="current-password"`](#current-password) for a sign-in password input.
 * [Don't use autocomplete for a new password](#no-new-password-autocomplete).
