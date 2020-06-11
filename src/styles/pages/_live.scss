@@ -184,7 +184,11 @@ web-tabs.w-event-tabs {
 
 .w-event-schedule {
   text-align: left;
-  $width-speaker: calc(10% + 180px);
+
+  // Measures the width of the left-hand cell, containing speaker information.
+  // Uses a mix of fixed size (for small devices, down to 320px) and percentage
+  // (to give more space on larger screens).
+  $WIDTH_SPEAKER: calc(10% + 180px);
 
   .w-event-schedule__row {
     border-bottom: 1px solid #dadce0;
@@ -195,7 +199,7 @@ web-tabs.w-event-tabs {
   }
 
   .w-event-schedule__speaker {
-    width: #{$width-speaker};
+    width: #{$WIDTH_SPEAKER};
   }
 
   .w-event-schedule__session {
@@ -229,7 +233,7 @@ web-tabs.w-event-tabs {
       top: 0;
       bottom: 0;
       right: 0;
-      width: calc(100% - #{$width-speaker});
+      width: calc(100% - #{$WIDTH_SPEAKER});
       display: block;
       position: absolute;
     }
@@ -238,7 +242,7 @@ web-tabs.w-event-tabs {
     // speakers' area isn't clickable.
     &:hover::before {
       content: '';
-      background: rgba(0, 0, 0, 0.05);
+      background: rgba(0, 0, 0, .05);
       top: 0;
       left: 0;
       right: 0;
