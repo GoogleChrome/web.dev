@@ -14,7 +14,7 @@ tags:
   - login
   - trust and safety
 glitch: login-form-best-practices-codelab-step-0
-related_post: signin-form-best-practice
+related_post: sign-in-form-best-practices
 ---
 
 This codelab shows you how to build a login form that is secure, accessible, and easy to use.
