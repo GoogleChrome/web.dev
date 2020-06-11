@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import '../EventScheduleModal';
+
 /**
  * @fileoverview A schedule manager which opens and closes modals based on
  * the current href. Looks in children for content.
@@ -27,34 +29,18 @@ class EventSchedule extends HTMLElement {
 
     this._positionElement = document.createElement('div');
     this._positionElement.className = 'w-event-modal-position';
-    this._positionElement.textContent = 'Hello';
-    this._positionElement.tabIndex = -1;
 
-    this._positionElement.addEventListener(
-      'blur',
-      () => {
-        console.info('active element', document.activeElement);
-
-        window.setTimeout(() => {
-          console.debug(
-            'after a frame, hash=',
-            window.location.hash,
-            'session=',
-            this._currentSession,
-            'active=',
-            this.activeElement,
-          );
-          if (!this._currentSession) {
-            return;
-          }
-
-          const url = window.location.pathname + window.location.search;
-          window.history.pushState(null, null, url);
-          this._updateHash();
-        }, 0);
-      },
-      {passive: true, capture: true},
-    );
+    this._modalElement = document.createElement('web-event-schedule-modal');
+    this._modalElement.className = 'web-modal';
+    this._modalElement.open = false;
+    this._modalElement.addEventListener('close-modal', () => {
+      if (!window.location.hash.substr(1)) {
+        return; // we closed ourselves, so got an event that can be ignored
+      }
+      const url = window.location.pathname + window.location.search;
+      window.history.pushState(null, null, url);
+      this._updateHash();
+    });
 
     this._currentSession = null;
     this._updateHash = this._updateHash.bind(this);
@@ -72,13 +58,19 @@ class EventSchedule extends HTMLElement {
 
     this._currentSession = session;
     if (!session) {
+      this._modalElement.open = false;
       this._positionElement.remove();
       return;
     }
 
     this._updatePosition();
-    this._positionElement.focus();
-    this._positionElement.scrollIntoView(true);
+    this._positionElement.scrollIntoView();
+
+    this._positionElement.append(this._modalElement);
+    this._modalElement.open = true;
+
+    // TODO(samthor): Update the modal with content based on the row we just
+    // created the modal in, e.g. with full talk description.
   }
 
   _updatePosition() {
@@ -86,7 +78,11 @@ class EventSchedule extends HTMLElement {
     this._positionElement.style.top = window.scrollY + bounds.top + 'px';
     this._positionElement.style.left = window.scrollX + bounds.left + 'px';
     this._positionElement.style.width = bounds.width + 'px';
-    this.append(this._positionElement);
+
+    document.body.append(this._positionElement);
+
+    // TODO(samthor): If we resize, we might have to scroll the modal into view
+    // again.
   }
 
   connectedCallback() {

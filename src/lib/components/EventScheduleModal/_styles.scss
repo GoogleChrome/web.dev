@@ -1,0 +1,27 @@
+web-event-schedule-modal {
+  &.web-modal {
+    position: static;
+    background: transparent;
+    display: block;
+
+    &::before {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(2px);
+      z-index: -1;
+      content: '';
+    }
+  }
+
+  main {
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .5);
+    margin: 8px;
+    padding: 12px;
+    background: white;
+  }
+}
