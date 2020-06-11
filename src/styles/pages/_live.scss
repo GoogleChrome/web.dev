@@ -326,3 +326,10 @@ web-tabs.w-event-tabs {
     object-fit: cover;
   }
 }
+
+.w-event-modal-position {
+  position: absolute;
+  background: red;
+  margin-top: -100px;
+  padding-top: 100px;
+}

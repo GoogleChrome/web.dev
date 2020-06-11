@@ -96,8 +96,10 @@ module.exports = (event, authorsCollection) => {
   };
 
   return html`
-    <web-tabs class="w-event-tabs unresolved" label="schedule">
-      ${event.map(renderDay)}
-    </web-tabs>
+    <web-event-schedule>
+      <web-tabs class="w-event-tabs unresolved" label="schedule">
+        ${event.map(renderDay)}
+      </web-tabs>
+    </web-event-schedule>
   `;
 };
