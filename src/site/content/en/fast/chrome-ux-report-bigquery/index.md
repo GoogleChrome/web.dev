@@ -8,6 +8,8 @@ description: |
   dataset to extract insightful results about the state of user experiences on 
   the web.
 date: 2018-11-05
+tags:
+  - performance
 ---
 
 The raw data of the Chrome UX Report 

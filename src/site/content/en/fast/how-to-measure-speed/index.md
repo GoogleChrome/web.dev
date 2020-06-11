@@ -10,6 +10,8 @@ description: |
   tools that can help you collect lab or field data to assess page performance.
 web_lighthouse: N/A
 date: 2019-05-01
+tags:
+  - performance
 ---
 
 Real-world performance is highly variable due to differences in users' devices, network connections, and other factors. For example, if you load your website using a cable network connection in your office and compare it against the load using WiFi in a coffee shop, the experiences are likely to be very different. There are many tools on the market that can help you collect lab or field data to assess page performance.

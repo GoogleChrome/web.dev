@@ -8,6 +8,8 @@ description: |
   Rendering Path, and improving FCP (First Contentful Paint).
 date: 2019-02-17
 updated: 2019-10-30
+tags:
+  - performance
 ---
 
 CSS files are [render-blocking resources](https://developers.google.com/web/tools/lighthouse/audits/blocking-resources):

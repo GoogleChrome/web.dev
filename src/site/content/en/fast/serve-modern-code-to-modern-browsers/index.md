@@ -12,6 +12,8 @@ description: |
 date: 2018-11-05
 codelabs:
   - codelab-serve-modern-code
+tags:
+  - performance
 ---
 
 Building websites that work well on all major browsers is a core tenet of an

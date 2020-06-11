@@ -9,6 +9,8 @@ description: |
 date: 2018-12-12
 glitch: serve-modern-code
 related_post: serve-modern-code-to-modern-browsers
+tags:
+  - performance
 ---
 
 {% include 'content/devtools-headsup.njk' %}

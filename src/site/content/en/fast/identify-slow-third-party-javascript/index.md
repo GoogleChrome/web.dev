@@ -15,7 +15,7 @@ alt: Inspecting a laptop with a magnifying glass.
 description: |
   Learn how to use Lighthouse and Chrome DevTools to identify slow third-party resources.
 tags:
-  - fast
+  - performance
 ---
 
 As a developer, you often don't have control over [which third-party scripts](/third-party-javascript/#network) your site loads. Before you can optimize third-party content you have to do some detective work to find out what's making your site slow. 🕵️
