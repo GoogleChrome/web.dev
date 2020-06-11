@@ -15,28 +15,28 @@
  */
 
 const {html} = require('common-tags');
-const stripLanguage = require('../../_filters/strip-language');
+const paths = require('../../_data/paths');
+const postToPaths = require('../../_data/postToPaths');
 
-module.exports = ({postToCollections, url}) => {
-  // When @devnook lands her localization work we might need to update this file.
-  const strippedUrl = stripLanguage(url).replace(/\//g, '');
-  const collections = postToCollections[strippedUrl] || [];
-  const aTags = collections
-    .map((collection) => {
-      return html`
-        <a class="w-post-signpost__link" href="${collection.href}"
-          >${collection.title}</a
-        >
-      `;
+module.exports = (slug) => {
+  const postPaths = postToPaths[slug];
+  if (!postPaths) {
+    return '';
+  }
+  const aTags = postPaths
+    .map((pathName) => {
+      return html`<a
+        class="w-post-signpost__link"
+        href="/${paths[pathName].slug}"
+        >${paths[pathName].title}</a
+      >`;
     })
     .join(html`<span class="w-post-signpost__divider">|</span>`);
 
-  return collections.length === 0
-    ? ''
-    : html`
-        <div class="w-layout-container--narrow w-post-signpost">
-          <span class="w-post-signpost__title">Appears in:</span>
-          ${aTags}
-        </div>
-      `;
+  return html`
+    <div class="w-layout-container--narrow w-post-signpost">
+      <span class="w-post-signpost__title">Appears in:</span>
+      ${aTags}
+    </div>
+  `;
 };
