@@ -7,6 +7,8 @@ description: |
   You've done hard work to get fast, now make sure you stay fast by automating
   performance testing in Travis CI with Lighthouse Bot.
 date: 2019-01-28
+tags:
+  - performance
 ---
 
 You've done hard work to get fast, now make sure you stay fast by automating
