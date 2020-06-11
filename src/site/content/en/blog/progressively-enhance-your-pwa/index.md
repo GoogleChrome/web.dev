@@ -973,7 +973,7 @@ although at times you might still want to consider a bundler for really large ap
 </figure>
 
 If you're interested in the [Fugu Greetings](https://tomayac.github.io/fugu-greetings/public/) app,
-go find and [fork it on GitHub.](https://github.com/tomayac/fugu-greetings).
+go find and [fork it on GitHub](https://github.com/tomayac/fugu-greetings).
 
 <figure class="w-figure">
   <img class="w-screenshot"
