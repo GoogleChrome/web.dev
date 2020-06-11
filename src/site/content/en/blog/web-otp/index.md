@@ -180,9 +180,8 @@ That is how the Web OTP API works for users.
 
 {% Aside 'caution' %}
 * If the sender's phone number is included in receiver's contact list, this API
-  will not be triggered due to the underlying [SMS User Consent
-  API](https://developers.google.com/identity/sms-retriever/user-consent/request#2_start_listening_for_incoming_messages)'s
-  design.
+  will not be triggered due to the design of the underlying [SMS
+User Consent  API](https://developers.google.com/identity/sms-retriever/user-consent/request#2_start_listening_for_incoming_messages).
 * If you are using a work profile on your Android device and the Web OTP does
   not work, try installing and using Chrome on your personal profile instead
   (i.e. the same profile in which you receive SMS messages).
