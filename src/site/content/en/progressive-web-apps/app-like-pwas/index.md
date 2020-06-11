@@ -1,6 +1,6 @@
 ---
 layout: post
-title: App-like Progressive Web Apps
+title: Make your PWA feel more like an app
 subhead: Make your Progressive Web App not feel like a website, but like a "real" app
 authors:
   - thomassteiner
@@ -11,6 +11,7 @@ date: 2020-05-19
 updated: 2020-05-25
 tags:
   - capabilities
+  - progressive-web-apps
   - fugu
 ---
 
