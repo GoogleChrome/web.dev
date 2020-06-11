@@ -15,7 +15,7 @@ tags:
 Images can appear on a webpage due to being inline in the HTML as `<img>` elements
 or as CSS background images. In this guide you will find out how to lazy-load both types of image.
 
-### Inline images {: #images-inline }
+## Inline images {: #images-inline }
 
 The most common lazy-loading candidates are images as used in `<img>` elements.
 With inline images we have three options for lazy-loading,
@@ -25,7 +25,7 @@ which may be used in combination for the best compatibility across browsers.
 - [Using intersection observer](#images-inline-intersection-observer).
 - [Using scroll and resize event handlers](#images-inline-event-handlers).
 
-#### Using native browser lazy-loading {: #images-inline-native }
+### Using native browser lazy-loading {: #images-inline-native }
 
 Chrome and Firefox both support native browser lazy-loading with the `loading` attribute.
 This attribute can be added to `<img>` elements, and also to `<iframe>` elements.
@@ -49,7 +49,7 @@ and save users loading images that they may not ever scroll to.
 If you have large numbers of images and want to be sure that users of browsers without support for native lazy-loading benefit
 you will need to combine this with one of the methods explained next.
 
-#### Using intersection observer {: #images-inline-intersection-observer }
+### Using intersection observer {: #images-inline-intersection-observer }
 
 To polyfill lazy-loading of `<img>` elements, we use JavaScript to check if they're in the
 viewport. If they are, their `src` (and sometimes `srcset`) attributes are
@@ -133,7 +133,7 @@ Intersection Observer is available in all modern browsers.
 Therefore using it as a polyfill for `loading=lazy` will ensure that lazy-loading is available for most visitors.
 It is not available in Internet Explorer. If Internet Explorer support is critical, read on.
 
-#### Using event handlers for Internet Explorer support {: #images-inline-event-handlers }
+### Using event handlers for Internet Explorer support {: #images-inline-event-handlers }
 
 While you _should_ use intersection observer for lazy-loading, your application
 requirements may be such that browser compatibility is critical. [You _can_
@@ -177,7 +177,7 @@ Simply put: Use native lazy-loading with a fallback intersection observer wherev
 handlers if the widest possible compatibility is a critical application
 requirement.
 
-### Images in CSS {: #images-css }
+## Images in CSS {: #images-css }
 
 While `<img>` tags are the most common way of using images on web pages, images
 can also be invoked via the CSS
