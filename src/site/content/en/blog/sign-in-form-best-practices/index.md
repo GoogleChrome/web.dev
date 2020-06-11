@@ -21,11 +21,11 @@ codelabs:
 ---
 
 
-If users ever need to log in to your site, then good sign-in form design is critical.
-
-This is especially true for people on poor connections, on mobile, in a hurry, or under stress.
-
-Poorly designed sign-in forms get high bounce rates. Each bounce could mean a lost and disgruntled user—not just a missed sign-in opportunity.
+If users ever need to log in to your site, then good sign-in form design is
+critical. This is especially true for people on poor connections, on mobile, in
+a hurry, or under stress. Poorly designed sign-in forms get high bounce rates.
+Each bounce could mean a lost and disgruntled user—not just a missed sign-in
+opportunity.
 
 [Stats for sign-up/sign-in bounce rates.]
 
