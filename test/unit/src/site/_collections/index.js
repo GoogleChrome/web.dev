@@ -1,3 +1,3 @@
-describe('_collections', function() {
+describe('_collections', function () {
   require('./posts-with-lighthouse');
 });
