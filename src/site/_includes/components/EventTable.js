@@ -45,11 +45,11 @@ module.exports = (event, authorsCollection) => {
   const slugs = {};
   const slugForTitle = (title) => {
     // Find a slug for this title, but prevent duplicate IDs.
-    const base = slugify(title);
+    const base = slugify(title, {lower: true, strict: true, remove: /'/});
     let id = base;
     let suffix = 0;
     while (id in slugs) {
-      id = base + (++suffix);
+      id = base + ++suffix;
     }
     slugs[id] = title;
     return id;
