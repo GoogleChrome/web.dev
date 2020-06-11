@@ -52,7 +52,9 @@ const collectionsDir = 'src/site/_collections';
 const authors = require(`./${collectionsDir}/authors`);
 const blogPostsDescending = require(`./${collectionsDir}/blog-posts-descending`);
 const newsletters = require(`./${collectionsDir}/newsletters`);
-const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
+const {
+  postsWithLighthouse,
+} = require(`./${collectionsDir}/posts-with-lighthouse`);
 const recentBlogPosts = require(`./${collectionsDir}/recent-blog-posts`);
 const tags = require(`./${collectionsDir}/tags`);
 // nb. algoliaPosts is only require'd if needed, below
