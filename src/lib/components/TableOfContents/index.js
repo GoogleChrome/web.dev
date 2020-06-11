@@ -41,8 +41,8 @@ class TableOfContents extends BaseElement {
 
     this.tocInnerDiv = document.createElement('div');
     this.tocInnerDiv.classList.add('w-toc__content');
-    this.tocInnerDiv.innerHTML = this.innerText;
-    this.innerText = '';
+    this.tocInnerDiv.innerHTML = this.innerHTML;
+    this.innerHTML = null;
     this.append(this.tocInnerDiv);
 
     this.divContent = document.querySelector('#content');

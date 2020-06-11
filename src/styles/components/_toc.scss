@@ -28,10 +28,10 @@
 div#content.w-toc-open {
   > * {
     @include bp(md) {
-      width: calc(100% - $TOC_WIDTH_DESKTOP);
+      width: calc(100% - #{$TOC_WIDTH_DESKTOP});
 
       .w-actions {
-        right: calc(24px + $TOC_WIDTH_DESKTOP);
+        right: calc(24px + #{$TOC_WIDTH_DESKTOP});
       }
     }
 

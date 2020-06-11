@@ -18,7 +18,7 @@
   {% endif %}
 
   <web-table-of-contents title="{{ safeTitle }}" title-id="{{ safeTitle | slugify }}">
-    {{ content | toc }}
+    {{ content | toc | safe }}
   </web-table-of-contents>
 
   {# Make sure Actions are first in the tab order. #}
