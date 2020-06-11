@@ -4,7 +4,7 @@ subhead: Help users with OTPs received through SMS
 authors:
   - agektmr
 date: 2019-10-07
-updated: 2020-04-16
+updated: 2020-06-11
 hero: hero.png
 alt: A drawing of a woman using OTP to log in to a web app.
 
@@ -121,7 +121,7 @@ Complete
 <strong>5. Launch</strong>
 </td>
 <td markdown="block">
-Not started
+Chrome 84
 </td>
 </tr>
 </table>
@@ -169,7 +169,7 @@ another device by copying the text displayed in the demo. This works because it
 doesn't matter who the sender is when using the Web OTP API.
 
 1. Go to
-   [https://web-otp-demo.glitch.me](https://web-otp-demo.glitch.me) in Chrome 83 or later.
+   [https://web-otp-demo.glitch.me](https://web-otp-demo.glitch.me) in Chrome 84 or later.
 1. Press **Copy** to copy the text message.
 1. Using your SMS app send it to another phone.
 1. Press **Verify**.
@@ -179,9 +179,13 @@ Did you receive the SMS and see the prompt to enter the code to the input area?
 That is how the Web OTP API works for users.
 
 {% Aside 'caution' %}
-If you are using a work profile on your Android device and the Web OTP does
-not work, try installing and using Chrome on your personal profile
-instead (i.e. the same profile in which you receive SMS messages).
+* If the sender's phone number is included in receiver's contact list, this API
+  will not be triggered due to the underlying [SMS User Consent
+  API](https://developers.google.com/identity/sms-retriever/user-consent/request#2_start_listening_for_incoming_messages)'s
+  design.
+* If you are using a work profile on your Android device and the Web OTP does
+  not work, try installing and using Chrome on your personal profile instead
+  (i.e. the same profile in which you receive SMS messages).
 {% endAside %}
 
 ## Use the Web OTP API
