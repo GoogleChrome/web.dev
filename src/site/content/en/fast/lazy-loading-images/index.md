@@ -7,7 +7,7 @@ authors:
 date: 2019-08-16
 updated: 2020-06-09
 description: |
-  This post explains lazy-loading and the options available to you when lazy-loading images and video.
+  This post explains lazy-loading and the options available to you when lazy-loading images.
 tags:
   - performance
 ---
