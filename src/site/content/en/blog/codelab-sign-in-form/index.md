@@ -1,11 +1,11 @@
 ---
 layout: codelab
-title: Login form best practices codelab
+title: Sign-in form best practice codelab
 authors:
   - samdutton
 date: 2020-04-24
-updated: 2020-05-29
-description: Use cross-platform browser features to build a simple email/password login form that's secure, accessible and easy to use.
+updated: 2020-06-11
+description: Use cross-platform browser features to build a simple email/password sign-in form that's secure, accessible and easy to use.
 tags:
   - identity
   - login
@@ -13,11 +13,11 @@ tags:
   - security
   - login
   - trust and safety
-glitch: login-form-best-practices-codelab-step-0
-related_post: signin-form-best-practice
+glitch: sign-in-form-best-practice-codelab-step-0
+related_post: sign-in-form-best-practice
 ---
 
-This codelab shows you how to build a login form that is secure, accessible, and easy to use.
+This codelab shows you how to build a sign-in form that is secure, accessible, and easy to use.
 
 ## Step 1: Use meaningful HTML
 
@@ -50,13 +50,13 @@ Here's how your `index.html` should look at this point:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/login-form-best-practices-codelab-step-1?path=index.html&attributionHidden=true&sidebarCollapsed=true"
+    src="https://glitch.com/embed/#!/embed/sign-in-form-best-practice-codelab-step-1?path=index.html&attributionHidden=true&sidebarCollapsed=true"
     alt="How the Glitch should look after completing step 1."
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
 
-Click **View App** to preview your login form. 
+Click **View App** to preview your sign-in form. 
 The HTML you just added is valid and correct, but the default browser styling
 means it looks terrible and it's hard to use, especially on mobile.
 
@@ -70,13 +70,13 @@ Copy and paste the following CSS into your `style.css`:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/login-form-best-practices-codelab-step-2?path=style.css&attributionHidden=true&sidebarCollapsed=true"
+    src="https://glitch.com/embed/#!/embed/sign-in-form-best-practice-codelab-step-2?path=style.css&attributionHidden=true&sidebarCollapsed=true"
     alt="The CSS to copy-paste."
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
 
-Click **View App** to check out your freshly styled login form, and then
+Click **View App** to check out your freshly styled sign-in form, and then
 click **View Source** to return to `style.css`.
 
 That's quite a lot of code! The main things to be aware of are the changes to sizes:
@@ -94,7 +94,7 @@ The CSS layout is mobile-first:
 It's very important at this point to test your code on real devices on desktop and mobile:
 
 * Is label and input text readable, especially for people with low vision?
-* Are the inputs and **Log in** button large enough to use as touch targets for thumbs?
+* Are the inputs and **Sign in** button large enough to use as touch targets for thumbs?
 
 ## Step 3: Add input attributes to enable built-in browser features
 
@@ -155,7 +155,7 @@ Here's how your `index.html` should look at this point:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/login-form-best-practices-codelab-step-3?path=index.html&attributionHidden=true&sidebarCollapsed=true"
+    src="https://glitch.com/embed/#!/embed/sign-in-form-best-practice-codelab-step-3?path=index.html&attributionHidden=true&sidebarCollapsed=true"
     alt="How index.html should look after step 3."
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
@@ -167,7 +167,7 @@ Usability experts [strongly recommend](https://www.nngroup.com/articles/stop-pas
 
 Code to add **Show password** functionality is straightforward—this example uses text, not an icon.
 
-Update [index.html](https://glitch.com/edit/#!/signin-form-codelab-4?path=index.html:22:2), [style.css](https://glitch.com/edit/#!/signin-form-codelab-4?path=style.css:34:0) and [script.js](https://glitch.com/edit/#!/signin-form-codelab-4?path=script.js) as follows.
+Update [index.html](https://glitch.com/edit/#!/sign-in-form-codelab-4?path=index.html:22:2), [style.css](https://glitch.com/edit/#!/sign-in-form-codelab-4?path=style.css:34:0) and [script.js](https://glitch.com/edit/#!/sign-in-form-codelab-4?path=script.js) as follows.
 
 Add the toggle button to the password section in the HTML:
 
@@ -223,7 +223,7 @@ Once again, make sure to test your work on different browsers on different platf
 **Bonus points**: Sites such as [Gmail](https://mail.google.com) use icons, not text, to toggle password display. Try implementing this using SVG images. 
 
 {% Aside 'codelab' %}
-[View complete code for Step 4](https://glitch.com/edit/#!/signin-form-codelab-4).
+[View complete code for Step 4](https://glitch.com/edit/#!/sign-in-form-codelab-4).
 {% endAside %}
 
 
@@ -305,13 +305,13 @@ function handleFormSubmission(event) {
 ```
 
 {% Aside 'codelab' %}
-[View complete code for Step 5](https://glitch.com/edit/#!/signin-form-codelab-5).
+[View complete code for Step 5](https://glitch.com/edit/#!/sign-in-form-codelab-5).
 {% endAside %}
 
 
 ## And finally…
 
-We won't show them here, but three crucial signin form features are still missing:
+We won't show them here, but three crucial sign-in form features are still missing:
 
 * **Forgot your password?** link: make it easy for users to reset their password.
 
