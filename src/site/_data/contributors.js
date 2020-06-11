@@ -1255,6 +1255,20 @@ const contributors = {
       en: 'Software Engineer on the web platform.',
     },
   },
+  olgademidova: {
+    name: {
+      given: 'Olga',
+      family: 'Demidova',
+    },
+    org: {
+      name: 'Google',
+      unit: 'Ads Marketing EMEA',
+    },
+    description: {
+      en: 'Product Marketing Manager',
+    },
+    country: 'UK',
+  },
 };
 
 const processedContributors = {};
