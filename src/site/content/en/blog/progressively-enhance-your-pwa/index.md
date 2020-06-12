@@ -460,7 +460,7 @@ const loadShare = () => {
 };
 ```
 
-In Fugu Greetings, if I tap the share button on a supporting browser like Chrome on Android,
+In Fugu Greetings, if I tap the Share button on a supporting browser like Chrome on Android,
 the native share sheet opens.
 I can, for example, choose Gmail, and the email composer widget pops up with the
 image attached.
@@ -486,19 +486,19 @@ image attached.
 ## The Contact Picker API
 
 Up next, I want to talk about contacts. And when I say contacts,
-I mean contacts as in the device's address book.
+I mean contacts as in a device's address book or contacts manager app.
 When you write a greeting card, it may not always be easy to correctly write
 someone's name.
 For example, I have a friend who prefers their name to be spelled in Cyrillic letters. I'm
 using a German QWERTZ keyboard and have no idea how to type their name.
-This is a problem that the Contact Picker API solves.
+This is a problem that the [Contact Picker API](https://web.dev/contact-picker/) can help solve.
 Since I have my friend stored in my phone's contacts app,
-via the Contacts Picker API I can tap into my contacts from the web.
+via the Contacts Picker API, I can tap into my contacts from the web.
 
 First, I need to specify the list of properties I want to access.
 In this case, I only want the names,
 but for other use cases I might be interested in telephone numbers, emails, avatar
-icon, or physical addresses.
+icons, or physical addresses.
 Next, I configure an `options` object and set `multiple` to `true`, so that I can select more
 than one entry.
 Finally, I can call `navigator.contacts.select()`, which results in the desired properties
@@ -516,8 +516,18 @@ const getContacts = async () => {
 };
 ```
 
-In Fugu Greeting, when I tap the contacts button and select my two best pals,
-Сергей Михайлович Брин and 劳伦斯·爱德华·"拉里"·佩奇, you can see how the
+And by now you've probably learned the pattern:
+I only load the file when the API is actually supported.
+
+```js
+if ('contacts' in navigator) {
+  import('./contacts.mjs');
+}
+```
+
+In Fugu Greeting, when I tap the Contacts button and select my two best pals,
+[Сергей Михайлович Брин](https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%B8%D0%BD,_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87) and [劳伦斯·爱德华·"拉里"·佩奇](https://zh.wikipedia.org/wiki/%E6%8B%89%E9%87%8C%C2%B7%E4%BD%A9%E5%A5%87),
+you can see how the
 contacts picker is limited to only show their names,
 but not their email addresses, or other information like their phone numbers.
 Their names are then drawn onto my greeting card.
@@ -525,7 +535,7 @@ Their names are then drawn onto my greeting card.
 <figure class="w-figure">
   <img class="w-screenshot"
        src="10000201000003E400000800AD376E3B4B3386C6.png"
-       alt="">
+       alt="Contacts picker showing the names of two contacts in the address book.">
   <figcaption class="w-figcaption">
     Selecting two names with the contact picker from the address book.
   </figcaption>
@@ -534,20 +544,11 @@ Their names are then drawn onto my greeting card.
 <figure class="w-figure">
   <img class="w-screenshot"
        src="1000000000000438000008AC945569E52CE934FA.png"
-       alt="">
+       alt="The names of the two previously picked contacts drawn on the greeting card.">
   <figcaption class="w-figcaption">
     The names get inserted in the greeting card.
   </figcaption>
 </figure>
-
-```js
-if ('contacts' in navigator) {
-  import('./contacts.mjs');
-}
-```
-
-And by now you've probably learned the pattern:
-I only load the file when the API is actually supported.
 
 ## The Asynchronous Clipboard API
 
