@@ -49,10 +49,6 @@ const eventData = [
         title: 'Core Web Vitals in the DevTools Timeline',
       },
       {
-        speaker: ['patrickkettner', 'philipwalton'],
-        title: 'AMPs Performance Secrets',
-      },
-      {
         speaker: ['nainar', 'sebabenz'],
         title: 'AMP at Your Service',
       },
