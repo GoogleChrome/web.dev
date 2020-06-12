@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+import {html} from 'lit-element';
 import {BaseElement} from '../BaseElement';
 import {stringToBoolean} from '../../utils/string-to-boolean';
 
@@ -33,23 +34,41 @@ class TableOfContents extends BaseElement {
 
   constructor() {
     super();
+    this.openedToFalse = this.openedToFalse.bind(this);
+    this.openedToTrue = this.openedToTrue.bind(this);
     this.scrollSpy = this.scrollSpy.bind(this);
   }
 
   connectedCallback() {
     super.connectedCallback();
-
-    this.tocInnerDiv = document.createElement('div');
-    this.tocInnerDiv.classList.add('w-toc__content');
-    this.tocInnerDiv.innerHTML = this.innerHTML;
-    this.innerHTML = null;
-    this.append(this.tocInnerDiv);
+    this.tocHTML = html([this.innerHTML]);
 
     this.divContent = document.querySelector('#content');
     this.headers = this.divContent.querySelectorAll('h1[id], h2[id], h3[id]');
 
-    this.addTocDetails();
     this.addOpenButton();
+  }
+
+  render() {
+    return html`
+      <div class="w-toc__label">
+        <span>In this article</span>
+        <button
+          class="w-button w-button--secondary w-button--icon"
+          data-icon="close"
+          aria-close="Close Table of Contents"
+          @click="${this.openedToFalse}"
+        ></button>
+      </div>
+      <div class="w-toc__content">
+        <h2 class="w-toc__header">
+          <a href="#${this.titleId}" class="w-toc__header--link">
+            ${this.title}
+          </a>
+        </h2>
+        ${this.tocHTML}
+      </div>
+    `;
   }
 
   updated(changedProperties) {
@@ -83,7 +102,7 @@ class TableOfContents extends BaseElement {
     );
     tocButton.setAttribute('data-icon', 'list_alt');
     tocButton.setAttribute('aria-label', 'Open Table of Contents');
-    tocButton.addEventListener('click', () => (this.opened = true));
+    tocButton.addEventListener('click', this.openedToTrue);
 
     tocWrapper.append(tocButton);
     this.after(tocWrapper);
@@ -98,37 +117,6 @@ class TableOfContents extends BaseElement {
         }
       }
     }
-  }
-
-  addTocDetails() {
-    const tocLabel = document.createElement('div');
-    tocLabel.classList.add('w-toc__label');
-    const inThisArticle = document.createElement('span');
-    inThisArticle.append(document.createTextNode('In this article'));
-    const tocCloseButton = document.createElement('button');
-    tocCloseButton.classList.add(
-      'w-button',
-      'w-button--secondary',
-      'w-button--icon',
-    );
-    tocCloseButton.setAttribute('data-icon', 'close');
-    tocCloseButton.setAttribute('aria-label', 'Close Table of Contents');
-    tocCloseButton.addEventListener('click', () => (this.opened = false));
-    tocLabel.append(inThisArticle, tocCloseButton);
-    this.tocInnerDiv.before(tocLabel);
-
-    const tocTitle = document.createElement('h2');
-    tocTitle.classList.add('w-toc__header');
-    const tocTitleLink = document.createElement('a');
-    tocTitleLink.href = `#${this.titleId}`;
-    tocTitleLink.classList.add('w-toc__header--link');
-    tocTitleLink.append(document.createTextNode(this.title));
-    tocTitle.append(tocTitleLink);
-    this.tocInnerDiv.prepend(tocTitle);
-
-    this.querySelectorAll('a').forEach((a) =>
-      a.addEventListener('click', () => (this.opened = false)),
-    );
   }
 
   close() {
@@ -146,6 +134,14 @@ class TableOfContents extends BaseElement {
     this.scrollSpy();
     document.addEventListener('touchmove', this.scrollSpy, {passive: true});
     document.addEventListener('scroll', this.scrollSpy, {passive: true});
+  }
+
+  openedToFalse() {
+    this.opened = false;
+  }
+
+  openedToTrue() {
+    this.opened = true;
   }
 
   setActive(id) {
