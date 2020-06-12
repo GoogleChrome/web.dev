@@ -4,7 +4,7 @@ subhead: Reading and writing to NFC tags is now possible.
 authors:
   - beaufortfrancois
 date: 2020-02-12
-updated: 2020-04-14
+updated: 2020-06-04
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: A photo of NFC tags
@@ -887,7 +887,7 @@ contributors deserve special recognition!
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3ENFC
 [cr-dev-twitter]: https://twitter.com/chromiumdev
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=520391
-[cr-status]: https://www.chromestatus.com/features/6261030015467520
+[cr-status]: https://www.chromestatus.com/feature/6261030015467520
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/master/docs/security/permissions-for-powerful-web-platform-features.md
 [Permissions API]: https://www.w3.org/TR/permissions/
 [AbortController]: https://developer.mozilla.org/en-US/docs/Web/API/AbortController

@@ -108,7 +108,7 @@ if (request.hasEnrolledInstrument) {
 billing addresses for `basic-card`. The billing addresses of other payment
 methods (such as Google Pay) are not affected.
 
-This change has been implemented [in Chrome 74, Firefox, and Safari](https://chromestatus.com/features/4992562146312192).
+This change has been implemented [in Chrome 74, Firefox, and Safari](https://chromestatus.com/feature/4992562146312192).
 
 ## `PaymentRequest.show()` now takes an optional `detailsPromise`
 

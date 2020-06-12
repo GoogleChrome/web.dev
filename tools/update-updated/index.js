@@ -21,13 +21,9 @@ const MSG_UPDATE = `Updated ${chalk.bold('updated')} in`;
  * @return {Promise<Array<string>>} Returns array of changed files.
  */
 async function getChangedFiles() {
-  const cmd = `git diff --cached --name-only --diff-filter=MR`;
-  try {
-    const {stdout} = await exec(cmd, '.');
-    return stdout.split('\n');
-  } catch (err) {
-    throw err;
-  }
+  const cmd = 'git diff --cached --name-only --diff-filter=MR';
+  const {stdout} = await exec(cmd, '.');
+  return stdout.split('\n');
 }
 
 const run = async () => {
@@ -51,7 +47,7 @@ const run = async () => {
       // Updated YAML property is not in the file - nothing to do.
       console.log(
         `${chalk.black.bgYellow(
-          `Warning:`,
+          'Warning:',
         )} Could not find updated field in ${changedFile}.`,
       );
       continue;
@@ -68,7 +64,7 @@ const run = async () => {
 
     const newUpdated = originalUpdated.replace(
       originalTimestamp,
-      momentNow.format(`YYYY-MM-DD`),
+      momentNow.format('YYYY-MM-DD'),
     );
     const newContents = fileContents.replace(originalUpdated, newUpdated);
     await fs.writeFile(changedFile, newContents);

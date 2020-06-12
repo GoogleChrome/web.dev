@@ -5,7 +5,7 @@ authors:
   - beaufortfrancois
   - jungkees
 date: 2020-05-20
-updated: 2020-05-26
+updated: 2020-06-05
 hero: hero.jpg
 alt: A photo of an Android phone showing an app shortcuts menu
 description: App shortcuts give quick access to a handful of common actions that users need frequently.
@@ -136,9 +136,14 @@ include the `src` and a `sizes` property. Unlike [web app manifest icons], the
 
 SVG files are not supported at the time of writing, use PNG instead.
 
-If you want pixel-perfect icons, provide them in
-increments of 48dp. Otherwise, it is recommended that you use a 192x192 pixels
-icon.
+If you want pixel-perfect icons, provide them in increments of 48dp (i.e. 36x36,
+48x48, 72x72, 96x96, 144x144, 192x192 pixel icons). Otherwise, it is recommended
+that you use a single 192x192 pixel icon.
+
+As a quality measure, icons must be at least half of the device's ideal size on
+Android, which is 48dp. For example, to display on an [xxhdpi screen], the icon
+must be at least 72 by 72 pixels. (This is derived from the
+[formula for converting] dp units for pixel units.)
 
 ## Test your app shortcuts
 
@@ -194,7 +199,9 @@ platform support will follow.
 
 [Bubblewrap], the recommended tool to build Android apps that use [Trusted Web
 Activity], reads app shortcuts from the web app manifest and automatically
-generates the corresponding configuration for the Android app.
+generates the corresponding configuration for the Android app. Note that icons
+for app shortcuts are [required] and must be at least 96 by 96 pixels in
+Bubblewrap.
 
 For developers integrating Trusted Web Activity manually into their Android
 application, [Android app shortcuts] can be used to implement the same
@@ -241,7 +248,10 @@ Check out the [app shortcuts sample] and its [source].
 [cr-status]: https://chromestatus.com/feature/5706099464339456
 [`UI>Browser>WebAppInstalls`]: https://crbug.com/?q=component:UI>Browser>WebAppInstalls
 [bubblewrap]: https://github.com/GoogleChromeLabs/bubblewrap
+[required]: https://github.com/GoogleChromeLabs/bubblewrap/issues/116
 [Trusted Web Activity]: /using-a-pwa-in-your-android-app/
 [Android app shortcuts]: https://developer.android.com/guide/topics/ui/shortcuts
+[xxhdpi screen]: https://developer.android.com/training/multiscreen/screendensities#TaskProvideAltBmp
+[formula for converting]: https://developer.android.com/training/multiscreen/screendensities#dips-pels
 [article]: https://developers.google.com/web/fundamentals/integration/webapks#update-webapk
 <!-- lint enable definition-case -->

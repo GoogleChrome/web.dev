@@ -10,6 +10,8 @@ description: |
   business results.
 web_lighthouse: N/A
 date: 2019-05-01
+tags:
+  - performance
 ---
 
 Consumers increasingly rely on mobile to access digital content and services, and if you look at your site analytics, you'll probably see this story playing out in your own data. Consumers are also more demanding than they've ever been, and when they weigh up the experience on your site, they aren't just comparing you with your competitors, they're rating you against the best in class services they use every day.

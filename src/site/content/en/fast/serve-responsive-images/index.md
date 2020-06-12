@@ -12,6 +12,8 @@ codelabs:
   - codelab-specifying-multiple-slot-widths
   - codelab-art-direction
   - codelab-density-descriptors
+tags:
+  - performance
 ---
 
 Serving desktop-sized images to mobile devices can use 2–4x more data than

@@ -6,6 +6,7 @@
  * Worker initialization, component loading for routes, et al.
  */
 
+/* global WebComponents */
 import './webcomponents-config'; // must go before -loader below
 import '@webcomponents/webcomponentsjs/webcomponents-loader.js';
 import './analytics'; // side effects

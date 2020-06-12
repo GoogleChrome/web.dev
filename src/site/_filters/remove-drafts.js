@@ -12,7 +12,8 @@ module.exports = function removeDrafts(topics, lang) {
   return topics.reduce((accumulator, topic) => {
     // Remove draft posts from a topic.
     const posts = topic.pathItems.filter((slug) => {
-      return !findByUrl(`/${lang}/${slug}/`).data.draft;
+      const post = findByUrl(`/${lang}/${slug}/`);
+      return post && !post.data.draft;
     });
     // If all of the posts in a topic are drafts then don't add the topic
     // to the final TOC.

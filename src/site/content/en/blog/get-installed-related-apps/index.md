@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: The getInstalledRelatedApps() API is a new web platform API that allows your web app to check whether your native app or PWA is installed on the user's device.
 date: 2018-12-20
-updated: 2020-05-27
+updated: 2020-06-11
 tags:
   - blog
   - capabilities
@@ -13,12 +13,6 @@ tags:
 hero: hero.jpg
 alt: mobile device with app panel open
 ---
-
-{% Aside 'warning' %}
-  `getInstalledRelatedApps()` is currently broken on Chrome for Android. It
-  will silently fail, and not return any results. The fix is being tracked in
-  [Chromium Issue #1086686](https://bugs.chromium.org/p/chromium/issues/detail?id=1086686).
-{% endAside %}
 
 ## What is the getInstalledRelatedApps() API? {: #what }
 
@@ -232,12 +226,11 @@ relatedApps.forEach((app) => {
 });
 ```
 
-{% Aside 'caution' %}
+{% Aside %}
 `getInstalledRelatedApps()` is currently supported on the following platforms:
 
-* Chrome - Android ([currently broken](https://bugs.chromium.org/p/chromium/issues/detail?id=1086686)),
-  Windows (coming soon)
-* Edge - Windows (coming soon)
+* Android: Chrome 80+
+* Windows: Edge (coming soon), Chrome (coming soon)
 {% endAside %}
 
 To prevent sites from testing an overly broad set of their own apps,
@@ -279,7 +272,7 @@ browser vendors how critical it is to support them.
 [demo]: https://get-installed-apps.glitch.me
 [demo-source]: https://glitch.com/edit/#!/get-installed-apps
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=895854
-[cr-status]: https://www.chromestatus.com/features/5695378309513216
+[cr-status]: https://www.chromestatus.com/feature/5695378309513216
 [explainer]: https://github.com/WICG/get-installed-related-apps/blob/master/EXPLAINER.md
 [wicg-discourse]: https://discourse.wicg.io/t/proposal-get-installed-related-apps-api/1602
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Mobile%3EWebAPKs

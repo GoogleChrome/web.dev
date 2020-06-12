@@ -4,7 +4,7 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-05-27
+updated: 2020-05-29
 description: |
   This post introduces the Largest Contentful Paint (LCP) metric and explains
   how to measure it
@@ -195,7 +195,7 @@ cross-origin images that lack the
 header. Instead, only their load time is exposed (since this is already exposed
 via many other web APIs).
 
-The [usage example](#how-to-measure-largest-contentful-paint-in-javascript)
+The [usage example](#measure-lcp-in-javascript)
 below shows how to handle elements whose render time is not available. But,
 when possible, it's always recommended to set the
 [`Timing-Allow-Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin)
@@ -254,7 +254,7 @@ largest element throughout the load process.
 
 ## How to measure LCP
 
-FCP can be measured [in the lab](/user-centric-performance-metrics/#in-the-lab)
+LCP can be measured [in the lab](/user-centric-performance-metrics/#in-the-lab)
 or [in the field](/user-centric-performance-metrics/#in-the-field), and it's
 available in the following tools:
 

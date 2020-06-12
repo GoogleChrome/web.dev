@@ -4,6 +4,7 @@ title: Understanding "same-site" and "same-origin"
 authors:
   - agektmr
 date: 2020-04-15
+updated: 2020-06-10
 description: |
   "same-site" and "same-origin" are frequently cited but often misunderstood
   terms. This article helps you understand what they are and how they are
@@ -30,7 +31,7 @@ example [HTTP](https://developer.mozilla.org/en-US/docs/Glossary/HTTP) or
 (if specified). For example, given a URL of `https://www.example.com:443/foo` ,
 the "origin" is `https://www.example.com:443`.
 
-### "same-origin" and "cross-origin"
+### "same-origin" and "cross-origin" {: #same-origin-and-cross-origin }
 Websites that have the combination of the same scheme, hostname, and port are
 considered "same-origin". Everything else is considered "cross-origin".
 
@@ -154,9 +155,9 @@ that must strictly distinguish between schemes in order to prevent HTTP being
 used as [a weak
 channel](https://tools.ietf.org/html/draft-west-cookie-incrementalism-01#page-8).
 In those cases, some documents refer to "same-site" more explicitly as
-"schemeful same-site". In that case, `http://www.example.com` and
-`https://www.example.com` are considered cross-site because the schemes don't
-match.
+"[schemeful same-site](https://github.com/sbingler/schemeful-same-site/)". In
+that case, `http://www.example.com` and `https://www.example.com` are considered
+cross-site because the schemes don't match.
 
 <div class="w-table-wrapper">
   <table>
@@ -210,4 +211,5 @@ proposal. The header will have one of the following values:
 * `none`
 
 By examining the value of `Sec-Fetch-Site`, you can determine if the request is
-"same-site", "same-origin", or "cross-site".
+"same-site", "same-origin", or "cross-site" ("schemeful-same-site" is not
+captured in `Sec-Fetch-Site`).

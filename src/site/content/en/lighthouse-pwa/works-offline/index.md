@@ -6,22 +6,24 @@ description: |
 web_lighthouse:
   - works-offline
 date: 2019-05-04
-updated: 2019-09-19
+updated: 2020-06-04
 codelabs:
   - codelab-service-workers
 ---
 
-[Progressive Web Apps (PWAs)](/discover-installable) must work offline.
-To determine whether a page is accessible while the user is offline,
-Lighthouse checks that the page sends an [HTTP&nbsp;200 response](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#Successful_responses),
-which indicates that the request for the page was successful.
+The [Core Progressive Web App checklist](/pwa-checklist/#core) says that a PWA
+should provide a custom offline page. The [Optimial Progressive Web App checklist](/pwa-checklist/#optimal)
+says that a PWA should provide an offline experience where the PWA works the same offline as
+it does online (wherever network connectivity isn't strictly required).
 
 Learn more in the [What is network reliability and how do you measure it?](/network-connections-unreliable/) post.
 
 ## How the Lighthouse offline audit fails
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
-flags pages that don't respond with a 200 when offline:
+flags pages that don't respond with an
+[HTTP 200 response](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#Successful_responses)
+when offline:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="works-offline.png" alt="Lighthouse audit showing page doesn't respond with a 200 when offline">
@@ -33,6 +35,8 @@ and then attempts to retrieve the page using [`XMLHttpRequest`](https://develope
 {% include 'content/lighthouse-pwa/scoring.njk' %}
 
 ## How to make your PWA work offline
+
+{% include 'content/reliable/workbox.njk' %}
 
 1. Add a [service worker](https://developers.google.com/web/fundamentals/primers/service-workers) to your app.
 2. Use the service worker to cache files locally.

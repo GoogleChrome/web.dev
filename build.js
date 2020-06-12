@@ -35,7 +35,7 @@ const buildVirtualJSON = require('./src/build/virtual-json');
 
 process.on('unhandledRejection', (reason, p) => {
   log.error('Build had unhandled rejection', reason, p);
-  process.exit(1);
+  throw new Error(`Build had unhandled rejection ${reason}`);
 });
 
 /**
@@ -50,12 +50,7 @@ const virtualImports = {
   webdev_config: {
     isProd,
     env: process.env.ELEVENTY_ENV || 'dev',
-    version:
-      'v' +
-      new Date()
-        .toISOString()
-        .replace(/[\D]/g, '')
-        .slice(0, 12),
+    version: 'v' + new Date().toISOString().replace(/[\D]/g, '').slice(0, 12),
     firebaseConfig: isProd ? site.firebase.prod : site.firebase.staging,
   },
   webdev_entrypoint: null,
@@ -351,7 +346,7 @@ async function compressOutput(generated) {
   log(`Terser JS output is ${(ratio * 100).toFixed(2)}% of source`);
 }
 
-(async function() {
+(async function () {
   const generatedCount = await build();
   log(`Generated ${generatedCount} files`);
   if (!isProd) {

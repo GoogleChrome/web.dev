@@ -16,7 +16,6 @@ description: |
   performance budgets, and hackathons to optimize their React app's runtime performance.
 tags:
   - blog
-  - fast
   - case-study
   - performance
 ---

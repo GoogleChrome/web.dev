@@ -484,6 +484,25 @@ const contributors = {
     github: 'housseindjirdeh',
     glitch: 'housseindjirdeh',
   },
+  megginkearney: {
+    name: {
+      given: 'Meggin',
+      family: 'Kearney',
+    },
+    twitter: 'megginkearney',
+    description: {
+      en: 'Meggin is a Tech Writer',
+    },
+  },
+  dgash: {
+    name: {
+      given: 'Dave',
+      family: 'Gash',
+    },
+    description: {
+      en: 'Dave is a Tech Writer',
+    },
+  },
   mdiblasio: {
     name: {
       given: 'Michael',
@@ -985,6 +1004,20 @@ const contributors = {
     country: 'CH',
     twitter: 'kkotowicz',
     github: 'koto',
+  },
+  lwe: {
+    name: {
+      given: 'Lukas',
+      family: 'Weichselbaum',
+    },
+    org: {
+      name: 'Google',
+      unit: 'Information Security Engineering',
+    },
+    country: 'CH',
+    twitter: 'we1x',
+    github: 'lweichselbaum',
+    homepage: 'https://webappsec.dev',
   },
   dgrogan: {
     name: {

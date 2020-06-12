@@ -18,32 +18,34 @@ const yaml = require('js-yaml');
 const fs = require('fs');
 const escapeStringRegexp = require('escape-string-regexp');
 
+const baseUrlPrefix = 'https://web.dev/';
+
 /**
- * Normalizes the passed URL to ensure that it ends with a simple trailing
- * slash. Removes "index.html" if found.
+ * Normalizes the passed path (not a whole URL) to ensure that it ends with a
+ * simple trailing slash. Removes "index.html" if found.
  *
- * @param {string} url to normalize
+ * @param {string} path to normalize
  * @return {string}
  */
-function ensureTrailingSlashOnly(url) {
-  if (url.endsWith('/index.html')) {
-    return url.slice(0, -'index.html'.length);
-  } else if (!url.endsWith('/')) {
-    return `${url}/`;
+function ensureTrailingSlashOnly(path) {
+  if (path.endsWith('/index.html')) {
+    return path.slice(0, -'index.html'.length);
+  } else if (!path.endsWith('/')) {
+    return `${path}/`;
   }
-  return url;
+  return path;
 }
 
 /**
- * Builds HTTP middleware that serves redirects for web.dev's _redirects.yaml
- * configuration file, originally from DevSite.
+ * Builds a method which returns a URL to redirect to.
  *
- * @param {string} filename to load configuration from
- * @param {number=} code to use (DevSite uses 301)
- * @return {!Function}
+ * @param {string} yamlSource to parse redirects from
+ * @param {string} baseUrlPrefix domain prefix to use, e.g. "https://web.dev/"
+ * @return {function(string): ?string}
  */
-module.exports = function buildRedirectHandler(filename, code = 301) {
-  const doc = yaml.safeLoad(fs.readFileSync(filename, 'utf8'));
+function prepareHandler(yamlSource, baseUrlPrefix) {
+  const doc = yaml.safeLoad(yamlSource);
+  baseUrlPrefix = ensureTrailingSlashOnly(baseUrlPrefix);
 
   const groupRedirect = {};
   const singleRedirect = {};
@@ -55,31 +57,89 @@ module.exports = function buildRedirectHandler(filename, code = 301) {
       continue;
     }
 
-    // "Group" redirects' from and to must end with "/...", i.e., match the last
+    // "Group" redirects' from must end with "/...", i.e., match the last
     // whole path component.
-    if (!from.endsWith('/...') || !to.endsWith('/...')) {
+    if (!from.endsWith('/...')) {
       throw new TypeError(`got redirect with invalid ...: ${from} => ${to}`);
     }
-    groupRedirect[from.slice(0, -3)] = to.slice(0, -3); // but only slice "..."
+    groupRedirect[from.slice(0, -3)] = to;
   }
 
   // Build a single RegExp for group matches, for speed of matching.
   const escaped = Object.keys(groupRedirect).map(escapeStringRegexp);
-  groupMatcher = new RegExp(`^(${escaped.join('|')})`);
+  const groupMatcher = new RegExp(`^(${escaped.join('|')})`);
 
-  return (req, res, next) => {
-    const url = ensureTrailingSlashOnly(req.url);
+  return (raw) => {
+    let target;
+
+    // Split the raw URL (expected to be "/foo?bar") into path and query parts.
+    const parts = raw.split('?');
+    const path = parts[0];
+    const query = parts[1] || '';
+
+    const url = ensureTrailingSlashOnly(path);
     if (url in singleRedirect) {
-      return res.redirect(code, singleRedirect[url]);
-    }
-
-    const m = groupMatcher.exec(url);
-    if (m && m[1] in groupRedirect) {
+      target = new URL(singleRedirect[url], baseUrlPrefix);
+    } else {
+      const m = groupMatcher.exec(url);
+      if (!(m && m[1] in groupRedirect)) {
+        return null;
+      }
       const base = groupRedirect[m[1]];
       const rest = url.slice(m[1].length);
-      return res.redirect(code, base + rest);
+
+      if (base.endsWith('/...')) {
+        target = new URL(base.slice(0, -3) + rest, baseUrlPrefix);
+      } else {
+        target = new URL(base, baseUrlPrefix);
+      }
     }
 
-    next();
+    // Merge the original request's params into the target. We don't use
+    // Express' req.query here as it expands the query too much, e.g.,
+    // 'foo[bar]=123' ends up like "{foo: {bar: 123}}".
+    const requestParams = new URLSearchParams(query);
+    for (const [key, value] of requestParams) {
+      target.searchParams.append(key, value);
+    }
+
+    // If the result URL starts with "https://web.dev/" (with trailing slash),
+    // then strip it and treat as local. This allows redirects to work in dev,
+    // where the domain is localhost or a staging URL.
+    let s = target.toString();
+    if (s.startsWith(baseUrlPrefix)) {
+      s = '/' + s.substr(baseUrlPrefix.length);
+    }
+    return s;
   };
+}
+
+/**
+ * Builds HTTP middleware that serves redirects for web.dev's _redirects.yaml
+ * configuration file, originally from DevSite.
+ *
+ * @param {string} filename to load configuration from
+ * @param {number=} code to use (DevSite uses 301)
+ * @return {!Function}
+ */
+function build(filename, code = 301) {
+  const handler = prepareHandler(
+    fs.readFileSync(filename, 'utf8'),
+    baseUrlPrefix,
+  );
+
+  return (req, res, next) => {
+    const target = handler(req.url);
+    if (target !== null) {
+      return res.redirect(code, target);
+    }
+    return next();
+  };
+}
+
+module.exports = {
+  build,
+  prepareHandler,
+  baseUrlPrefix,
+  ensureTrailingSlashOnly,
 };

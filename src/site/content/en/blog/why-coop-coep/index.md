@@ -217,8 +217,7 @@ Cross-Origin-Opener-Policy: unsafe-none
 ```
 
 `unsafe-none` is the default and allows the document to be added to its opener's
-browsing context group unless the opener itself has a COOP of `same-origin` or
-`same-origin-allow-popups`.
+browsing context group unless the opener itself has a COOP of `same-origin`.
 
 {% Aside %}
 The

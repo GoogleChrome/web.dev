@@ -19,10 +19,15 @@ import entrypoint from 'webdev_entrypoint';
 import {localStorage} from './utils/storage';
 import removeServiceWorkers from './utils/sw-remove';
 
-// eslint-disable-next-line
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+window.ga =
+  window.ga ||
+  function () {
+    (ga.q = ga.q || []).push(arguments);
+  };
+ga.l = +new Date();
 ga('create', id);
 ga('set', 'transport', 'beacon');
+ga('set', 'page', window.location.pathname);
 // nb. Analytics requires dimension values to be strings.
 ga('set', dimensions.SIGNED_IN, localStorage['webdev_isSignedIn'] ? '1' : '0');
 ga('set', dimensions.TRACKING_VERSION, version.toString());
@@ -32,17 +37,10 @@ ga('send', 'pageview');
 // site code. This includes Shadow DOM.
 const browserSupport = 'noModule' in HTMLScriptElement.prototype;
 if (browserSupport) {
-  function prepare() {
-    const s = document.createElement('script');
-    s.type = 'module';
-    s.src = '/' + entrypoint;
-    document.head.append(s);
-  }
-  if (document.readyState === 'complete') {
-    prepare();
-  } else {
-    window.addEventListener('load', prepare);
-  }
+  const s = document.createElement('script');
+  s.type = 'module';
+  s.src = '/' + entrypoint;
+  document.head.append(s);
 } else {
   // If we've transitioned into becoming an unsupported browser, then any
   // previous Service Worker won't be updated. Aggressively remove on load.
