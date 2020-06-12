@@ -130,13 +130,13 @@ The primary visualizations on these pages are the monthly distributions of
 experiences categorized as "Good", "Needs Improvement", and "Poor". The 
 color-coded legend below the chart indicates the range of experiences included
 in the category. For example, in the screenshot above, you can see the 
-percent of good
+percent of "good"
 [Largest Contentful Paint](/lcp/#what-is-a-good-lcp-score) (LCP) experiences
 fluctuating and getting slightly worse in recent months.
 
-The most recent month's percentages of good and poor experiences are shown 
+The most recent month's percentages of "good" and "poor" experiences are shown 
 above the chart along with an indicator of the percent difference from the 
-previous month. For this origin, good LCP experiences fell by 3.2% to 56.04% 
+previous month. For this origin, "good" LCP experiences fell by 3.2% to 56.04% 
 month-over-month.
 
 {% Aside 'caution' %}
@@ -147,7 +147,7 @@ second Tuesday.
 
 Additionally, for metrics like LCP and other Core Web Vitals that provide 
 explicit percentile recommendations, you'll find the "P75" metric between the 
-good and poor percentages. This value corresponds to the origin's 75th 
+"good" and "poor" percentages. This value corresponds to the origin's 75th 
 percentile of user experiences. In other words, 75% of experiences are better
 than this value. One thing to note is that this applies to the overall 
 distribution across _all devices_ on the origin. Toggling specific devices 
@@ -222,7 +222,7 @@ granularity.
 
 The CrUX Dashboard also trades away some of the versatility of the raw data on 
 BigQuery for simplicity and convenience. For example, metric distributions are 
-only given as good, needs improvement, and poor, as opposed to the full 
+only given as "good", "needs improvement", and "poor", as opposed to the full 
 histograms. The CrUX Dashboard also provides data at a global level, while the 
 BigQuery dataset allows you to zoom in on particular countries.
 

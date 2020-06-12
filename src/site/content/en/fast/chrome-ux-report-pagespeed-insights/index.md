@@ -37,9 +37,10 @@ controlled test in the lab.
 
 <img class="w-screenshot" src="./psi_page.png" alt="Field data from CrUX in PageSpeed Insights">
 
-In the Field Data section, you'll see four metrics: [First Contentful Paint](/fcp/)
-(FCP), [First Input Delay](/fid/) (FID), [Largest Contentful Paint](/lcp/)
-(LCP), and [Cumulative Layout Shift](/cls/) (CLS). FID, LCP, and CLS are
+In the **Field Data** section, you'll see four metrics: 
+[First Contentful Paint](/fcp/) (FCP), [First Input Delay](/fid/) (FID), 
+[Largest Contentful Paint](/lcp/) (LCP), and 
+[Cumulative Layout Shift](/cls/) (CLS). FID, LCP, and CLS are
 considered the [Core Web Vitals](/vitals/#core-web-vitals) metrics. These 
 metrics are representative of the user experience in different ways:
 
@@ -52,7 +53,7 @@ metrics are representative of the user experience in different ways:
 - **CLS** measures the degree of layout instability on the page, due to shifts
   like asynchronously loaded content being injected.
 
-Metric | Good | Needs Improvement | Poor
+Metric | "Good" | "Needs Improvement" | "Poor"
 -- | -- | -- | --
 FCP | 0–1000ms | 1000ms–3000ms | 3000ms+
 FID | 0–100ms | 100–300ms | 300ms+
@@ -60,15 +61,15 @@ LCP | 0–2500ms | 2500–4000ms | 4000ms+
 CLS | 0.00-0.10 | 0.10–0.25 | 0.25+
 
 This table describes how values for these metrics are categorized as either
-good, needing improvement, or poor.
+"good", "needing improvement", or "poor".
 
 There are three ways that the user experience is displayed in PSI:
 
 - a label summarizing the page as passing or not passing the Core Web Vitals 
   assessment
 - percentiles measured in seconds or milliseconds (CLS is unitless)
-- a distribution representing the percent of good, needing improvement, and
-  poor experiences
+- a distribution representing the percent of "good", "needing improvement", and
+  "poor" experiences
 
 In the screenshot above, the page is labelled as "passing" the Core Web Vitals
 assessment. To pass, the percentile must be categorized as "good".
@@ -79,15 +80,15 @@ statistics, a percentile is a measure that indicates the value below which a
 given percentage of samples fall. For example, the screenshot above shows that
 FID's 75th percentile is 15ms, meaning that 75% of FID experiences are faster
 than 15ms. These values are color-coded according to the threshold table above
-where good values are green, values needing improvement are orange, and poor
-values are red.
+where "good" values are green, values "needing improvement" are orange, and 
+"poor" values are red.
 
 Finally, the distributions for each metric are illustrated using the "good",
 "needs improvement", and "poor" grouping. For example, FCP experiences on this
 page are "good" (less than 1 second) 44% of the time. FID is "poor" (at least
 300 milliseconds) 1% of the time. These distributions represent all user
 experiences on the page and their shapes indicate the tendency to be either
-good or poor.
+"good" or "poor".
 
 ## Summary of origin performance
 
