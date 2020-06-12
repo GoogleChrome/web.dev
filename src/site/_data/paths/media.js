@@ -11,7 +11,7 @@ module.exports = {
   Player or Video.js.`,
   topics: [
     {
-      title: 'Conceptual basics',
+      title: 'Concepts',
       pathItems: [
         'media-experience',
         'file-basics',
