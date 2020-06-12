@@ -34,7 +34,7 @@ At the moment this solution is only compatible with [react-router](https://www.n
 {% endAside %}
 
 {% Aside 'codelab' %}
-  Check out the [Prefetching in create-react-app with Quicklink](codelab-quicklink)
+  Check out the [Prefetching in create-react-app with Quicklink](/codelab-quicklink/)
   codelab for a guided, hands-on demonstration of Quicklink.
 {% endAside %}
 
