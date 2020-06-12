@@ -29,6 +29,7 @@ module.exports = {
         'prerender-with-react-snap',
         'add-manifest-react',
         'accessibility-auditing-react',
+        'quicklink',
       ],
     },
   ],
