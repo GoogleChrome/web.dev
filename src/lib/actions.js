@@ -217,3 +217,15 @@ export const setLanguage = store.action((state, preferredLanguage) => {
     userPreferredLanguage: preferredLanguage,
   };
 });
+
+export const closeToC = store.action(() => {
+  return {
+    tocOpened: false,
+  };
+});
+
+export const openToC = store.action(() => {
+  return {
+    tocOpened: true,
+  };
+});

@@ -15,38 +15,35 @@
  */
 
 import {html} from 'lit-element';
-import {BaseElement} from '../BaseElement';
-import {stringToBoolean} from '../../utils/string-to-boolean';
+import {BaseStateElement} from '../BaseStateElement';
+import {closeToC} from '../../actions';
 
 /**
  * Element that renders table of contents.
- * @extends {BaseElement}
+ * @extends {BaseStateElement}
  * @final
  */
-class TableOfContents extends BaseElement {
+class TableOfContents extends BaseStateElement {
   static get properties() {
     return {
       title: {type: String},
       titleId: {type: String, attribute: 'title-id'},
-      opened: {type: Boolean, converter: stringToBoolean, reflect: true},
+      opened: {type: Boolean, reflect: true},
     };
   }
 
   constructor() {
     super();
     this.openedToFalse = this.openedToFalse.bind(this);
-    this.openedToTrue = this.openedToTrue.bind(this);
     this.scrollSpy = this.scrollSpy.bind(this);
   }
 
   connectedCallback() {
     super.connectedCallback();
-    this.tocHTML = html([this.innerHTML]);
-
-    this.divContent = document.querySelector('#content');
+    this.tocHTML = this.innerHTML;
+    this.divContent =
+      document.querySelector('#content') || document.createElement('div');
     this.headers = this.divContent.querySelectorAll('h1[id], h2[id], h3[id]');
-
-    this.addOpenButton();
   }
 
   render() {
@@ -66,17 +63,14 @@ class TableOfContents extends BaseElement {
             ${this.title}
           </a>
         </h2>
-        ${this.tocHTML}
+        ${html([this.tocHTML])}
       </div>
     `;
   }
 
   updated(changedProperties) {
-    if (
-      changedProperties.has('opened') &&
-      changedProperties.get('opened') !== this.opened
-    ) {
-      if (this.opened) {
+    if (changedProperties.has('opened')) {
+      if (!changedProperties.get('opened')) {
         this.open();
       } else {
         this.close();
@@ -89,59 +83,34 @@ class TableOfContents extends BaseElement {
     this.close();
   }
 
-  addOpenButton() {
-    const tocWrapper = document.createElement('div');
-    tocWrapper.classList.add('w-toc__button--wrapper');
-
-    const tocButton = document.createElement('button');
-    tocButton.classList.add(
-      'w-toc__button--open',
-      'w-button',
-      'w-button--secondary',
-      'w-button--icon',
-    );
-    tocButton.setAttribute('data-icon', 'list_alt');
-    tocButton.setAttribute('aria-label', 'Open Table of Contents');
-    tocButton.addEventListener('click', this.openedToTrue);
-
-    tocWrapper.append(tocButton);
-    this.after(tocWrapper);
+  onStateChanged({tocOpened}) {
+    this.opened = tocOpened;
   }
 
   scrollSpy() {
-    if (this.divContent) {
-      for (const header of this.headers) {
-        const rect = header.getBoundingClientRect();
-        if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-          this.setActive(header.id);
-        }
+    for (const header of this.headers) {
+      const rect = header.getBoundingClientRect();
+      if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+        this.setActive(header.id);
       }
     }
   }
 
   close() {
-    if (this.divContent) {
-      this.divContent.classList.remove('w-toc-open');
-    }
+    this.divContent.classList.remove('w-toc-open');
     document.removeEventListener('touchmove', this.scrollSpy);
     document.removeEventListener('scroll', this.scrollSpy);
   }
 
   open() {
-    if (this.divContent) {
-      this.divContent.classList.add('w-toc-open');
-    }
+    this.divContent.classList.add('w-toc-open');
     this.scrollSpy();
     document.addEventListener('touchmove', this.scrollSpy, {passive: true});
     document.addEventListener('scroll', this.scrollSpy, {passive: true});
   }
 
   openedToFalse() {
-    this.opened = false;
-  }
-
-  openedToTrue() {
-    this.opened = true;
+    closeToC();
   }
 
   setActive(id) {

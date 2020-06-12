@@ -34,39 +34,35 @@ div#content.w-toc-open {
         right: calc(24px + #{$TOC_WIDTH_DESKTOP});
       }
     }
-
-    .w-toc__button--wrapper {
-      display: none;
-    }
-
-    web-table-of-contents {
-      display: block;
-    }
   }
 }
 
 web-table-of-contents {
-  background-color: $WHITE;
-  border-bottom: 1px solid $BORDER_COLOR;
-  border-top: 1px solid $BORDER_COLOR;
   display: none;
-  padding: 24px 0;
-  top: 63px;
-  width: 100%;
-  z-index: 100;
 
-  @include bp(sm) {
-    padding-top: 32px;
-  }
+  &[opened] {
+    background-color: $WHITE;
+    border-bottom: 1px solid $BORDER_COLOR;
+    border-top: 1px solid $BORDER_COLOR;
+    display: block;
+    padding: 24px 0;
+    top: 63px;
+    width: 100%;
+    z-index: 100;
 
-  @include bp(md) {
-    border-bottom: 0;
-    border-left: 1px solid $BORDER_COLOR;
-    border-top: 0;
-    height: calc(100% - 64px);
-    position: fixed;
-    right: 0;
-    width: $TOC_WIDTH_DESKTOP;
+    @include bp(sm) {
+      padding-top: 32px;
+    }
+
+    @include bp(md) {
+      border-bottom: 0;
+      border-left: 1px solid $BORDER_COLOR;
+      border-top: 0;
+      height: calc(100% - 64px);
+      position: fixed;
+      right: 0;
+      width: $TOC_WIDTH_DESKTOP;
+    }
   }
 }
 
@@ -77,7 +73,7 @@ web-table-of-contents {
   padding: 7px;
 }
 
-.w-toc__button--wrapper {
+web-table-of-contents-button {
   display: flex;
   height: 0;
   justify-content: flex-end;
@@ -95,6 +91,10 @@ web-table-of-contents {
   @include bp(md) {
     max-height: none;
     position: sticky;
+  }
+
+  &[opened] {
+    display: none;
   }
 }
 

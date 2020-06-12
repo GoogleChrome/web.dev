@@ -20,6 +20,7 @@
   <web-table-of-contents title="{{ safeTitle }}" title-id="{{ safeTitle | slugify }}">
     {{ content | toc | safe }}
   </web-table-of-contents>
+  <web-table-of-contents-button></web-table-of-contents-button>
 
   {# Make sure Actions are first in the tab order. #}
   <div class="w-actions">
