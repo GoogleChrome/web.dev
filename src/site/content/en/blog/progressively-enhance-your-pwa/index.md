@@ -11,7 +11,7 @@ description: |
   contacts retrieval, periodic background sync, screen wake lock, web sharing features,
   and many more.
 date: 2020-06-09
-updated: 2020-06-11
+updated: 2020-06-12
 tags:
   - blog
   - capabilities
@@ -26,8 +26,8 @@ with the concept of
 A strategy for web design that emphasizes core webpage content first,
 and that then progressively adds more nuanced
 and technically rigorous layers of presentation and features on top of the content.
-While in 2003, progressive enhancement was about using, at the time,
-modern CSS features, unobtrusive JavaScript, and even Scalable Vector Graphics,
+While in 2003, progressive enhancement was about using—at the time—modern
+CSS features, unobtrusive JavaScript, and even Scalable Vector Graphics,
 progressive enhancement in 2020 is about using modern browser capabilities.
 
 <figure class="w-figure">
@@ -39,6 +39,8 @@ progressive enhancement in 2020 is about using modern browser capabilities.
     (<a href="http://www.hesketh.com/publications/inclusive_web_design_for_the_future/">Source</a>)
   </figcaption>
 </figure>
+
+## Modern JavaScript
 
 Talking of JavaScript, the browser support situation for the latest core JavaScript
 features is great.
@@ -52,18 +54,18 @@ default parameters, generators, the destructuring assignment, rest and Spread, `
        src="10000000000009C40000039EF0A6FE5C50E42DEA.png"
        alt="">
   <figcaption class="w-figcaption">
-    ECMAScript 2015 (ES6) browser support table.
+    ECMAScript 2015 (ES6) browser support table. (<a href="https://caniuse.com/#feat=es6">Source</a>)
   </figcaption>
 </figure>
 
-Async functions [work](https://caniuse.com/#feat=async-functions) across the board in all major browsers.
+Async functions [can be used](https://caniuse.com/#feat=async-functions) across the board in all major browsers.
 
 <figure class="w-figure">
   <img class="w-screenshot"
        src="10000000000009C400000304A19EF0FF1D72987D.png"
        alt="">
   <figcaption class="w-figcaption">
-    Async functions browser support table.
+    Async functions browser support table. (<a href="https://caniuse.com/#feat=async-functions">Source</a>)
   </figcaption>
 </figure>
 
@@ -93,6 +95,8 @@ is today.
        alt="">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     The grass is green when it comes to core JavaScript features.
+    (Microsoft product screenshot, used with
+    <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/permissions/default">permission</a>.)
   </figcaption>
 </figure>
 
@@ -102,8 +106,8 @@ For this article, I work with a simple PWA, called
 [Fugu Greetings](https://tomayac.github.io/fugu-greetings/public/).
 The name of this app is a hat tip to Project Fugu 🐡, where we work on giving the web all
 the powers of native applications.
-You can read more about the project on the
-[Project Fugu 🐡landing page](https://web.dev/fugu-status).
+You can read more about the project on its
+[landing page](https://web.dev/fugu-status).
 
 Fugu Greetings is a drawing app that allows you to create virtual greeting cards.
 Just imagine you actually had traveled to Google I/O and you wanted to send a
@@ -119,17 +123,39 @@ and integrates seamlessly into the operating system as a stand-alone application
        src="10000201000009C4000006A2F58B840608CEA761.png"
        alt="">
   <figcaption class="w-figcaption">
-    The Fugu Greetings sample app.
+    The <a href="https://tomayac.github.io/fugu-greetings/public/">Fugu Greetings</a> sample app.
   </figcaption>
 </figure>
 
 ## Progressive enhancement
 
-With this out of the way, let's dive into the actual topic of this talk: progressive
-enhancement.
+With this out of the way, let's dive into the actual topic of this talk: progressive enhancement.
+The MDN Web Docs Glossary [defines](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement)
+the concept as follows:
+
+<blockquote>
+  <p>
+    Progressive enhancement is a design philosophy that centers around providing a baseline of
+    essential content and functionality to as many users as possible, while at the same time going
+    further and delivering the best possible experience only to users of the most modern browsers
+    that can run all the required code.
+  </p>
+  <p>
+    Feature detection is generally used to determine whether browsers can handle the high level
+    content or not, with polyfills often being used to build in missing features with JavaScript.
+  </p>
+  <p>
+    It is a useful technique that allows Web developers to focus on developing the best possible
+    websites while balancing the issues in those websites being accessed by multiple unknown
+    user-agents. Graceful degradation is related but different—often seen as going in the opposite
+    direction to progressive enhancement. In reality both approaches are valid and can often
+    complement one another.
+  </p>
+</blockquote>
 
 {%Aside 'note' %}
-  This article assumes you are already familiar with the concept of progressive enhancement.
+  This article is not a full introduction to progressive enhancement, but assumes you are at least
+  somewhat familiar with the concept.
   For a good introduction, I recommend Steve Champeon's article
   [Progressive Enhancement and the Future of Web Design](http://www.hesketh.com/progressive_enhancement_and_the_future_of_web_design.html).
 {% endAside %}
