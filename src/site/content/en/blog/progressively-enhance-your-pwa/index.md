@@ -558,14 +558,15 @@ As greeting card authors, at times, I may want to do the same.
 Either paste an image into a greeting card I'm working on,
 or the other way round: copy my greeting card so I can continue editing it from
 somewhere else.
-The Async Clipboard API, apart from text, also supports images.
+The [Async Clipboard API](https://web.dev/image-support-for-async-clipboard/),
+apart from text, also supports images.
 Let me walk you through how I have added copy and paste support to the Fugu
 Greetings app.
 
 In order to copy something onto the system's clipboard, I need to write to it.
 The `navigator.clipboard.write()` method takes an array of clipboard items as a
 parameter.
-Each clipboard item essentially is an object with a blob as a value, and the blob's type
+Each clipboard item is essentially an object with a blob as a value, and the blob's type
 as the key.
 
 ```js
@@ -611,7 +612,7 @@ const paste = async () => {
 };
 ```
 
-And almost needless to say by now, I only do this only on supporting browsers.
+And almost needless to say by now, I only do this on supporting browsers.
 
 ```js
 if ('clipboard' in navigator && 'write' in navigator.clipboard) {
@@ -619,7 +620,7 @@ if ('clipboard' in navigator && 'write' in navigator.clipboard) {
 }
 ```
 
-So how does this work? I have an image open in the macOS Preview app and
+So how does this work in practice? I have an image open in the macOS Preview app and
 copy it to the clipboard.
 When I click Paste, the Fugu Greetings app then asks me
 whether I want to allow the app to see text and images on the clipboard.
@@ -627,7 +628,7 @@ whether I want to allow the app to see text and images on the clipboard.
 <figure class="w-figure">
   <img class="w-screenshot"
        src="10000201000009C4000006A2FE8CEB5EE2FB3F83.png"
-       alt="">
+       alt="Fugu Greetings app showing the clipboard permission prompt.">
   <figcaption class="w-figcaption">
     The clipboard permission prompt.
   </figcaption>
@@ -642,7 +643,7 @@ the greeting card gets pasted into a new untitled image.
 <figure class="w-figure">
   <img class="w-screenshot"
        src="10000201000009C4000005A941A3287F1A5052A8.png"
-       alt="">
+       alt="The macOS Preview app with an untitled, just pasted image.">
   <figcaption class="w-figcaption">
     An image pasted into the macOS Preview app.
   </figcaption>
