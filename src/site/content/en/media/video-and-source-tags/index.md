@@ -58,7 +58,7 @@ For example the code below produces the ebedded video that immediately follows.
 </video>
 ```
 
-[Try it](https://googlesamples.github.io/web-fundamentals/fundamentals/media/video-main.html){: target="_blank" .external }
+[Try it](https://googlesamples.github.io/web-fundamentals/fundamentals/media/video-main.html)
 
 When the browser parses the `<source>` tags, it uses the (optional) `type`
 attribute to determine which file to download and play. If the browser

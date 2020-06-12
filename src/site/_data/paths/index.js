@@ -7,6 +7,7 @@ const lighthouseBestPractices = require('./lighthouse-best-practices.js');
 const lighthousePerformance = require('./lighthouse-performance.js');
 const lighthousePwa = require('./lighthouse-pwa.js');
 const lighthouseSeo = require('./lighthouse-seo.js');
+const media = require('./media.js');
 const metrics = require('./metrics.js');
 const notifications = require('./notifications.js');
 const payments = require('./payments.js');
@@ -30,6 +31,7 @@ module.exports = {
   notifications,
   payments,
   'progressive-web-apps': progressiveWebApps,
+  media,
   react,
   reliable,
   secure,
