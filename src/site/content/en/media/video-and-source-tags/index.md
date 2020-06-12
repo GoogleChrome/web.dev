@@ -58,11 +58,7 @@ For example the code below produces the ebedded video that immediately follows.
 </video>
 ```
 
-<video controls>
-  <source src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.webm" type="video/webm">
-  <source src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.mp4" type="video/mp4">
-  <p>This browser does not support the video element.</p>
-</video>
+[Try it](https://googlesamples.github.io/web-fundamentals/fundamentals/media/video-main.html){: target="_blank" .external }
 
 When the browser parses the `<source>` tags, it uses the (optional) `type`
 attribute to determine which file to download and play. If the browser
@@ -249,7 +245,10 @@ original video. Squashed or stretched looks bad.
 </div>
 ```
 
----ADD SAMPLES HERE---
+[Try it](https://googlesamples.github.io/web-fundamentals/fundamentals/media/responsive_embed.html)
+
+Compare the [responsive sample](https://googlesamples.github.io/web-fundamentals/fundamentals/media/responsive_embed.html)
+to the [unresponsive version](https://googlesamples.github.io/web-fundamentals/fundamentals/design-and-ux/responsive/unyt.html).
 
 ### Device orientation
 
