@@ -10,7 +10,7 @@ description: |
   new web capabilities like native file system access, system clipboard access,
   contacts retrieval, periodic background sync, screen wake lock, web sharing features,
   and many more.
-date: 2020-06-09
+date: 2020-06-12
 updated: 2020-06-12
 tags:
   - blog
@@ -27,13 +27,14 @@ A strategy for web design that emphasizes core webpage content first,
 and that then progressively adds more nuanced
 and technically rigorous layers of presentation and features on top of the content.
 While in 2003, progressive enhancement was about using—at the time—modern
-CSS features, unobtrusive JavaScript, and even Scalable Vector Graphics,
-progressive enhancement in 2020 is about using modern browser capabilities.
+CSS features, unobtrusive JavaScript, and even just Scalable Vector Graphics,
+progressive enhancement in 2020 and beyond is about using
+[modern browser capabilities](https://web.dev/fugu-status/).
 
 <figure class="w-figure">
   <img class="w-screenshot"
        src="100002010000053C000003E8B978FE17E590BC9A.png"
-       alt="">
+       alt="Inclusive web design for the future with progressive enhancement. Title slide from the original presentation.">
   <figcaption class="w-figcaption">
     Inclusive web design for the future with progressive enhancement.
     (<a href="http://www.hesketh.com/publications/inclusive_web_design_for_the_future/">Source</a>)
@@ -45,25 +46,26 @@ progressive enhancement in 2020 is about using modern browser capabilities.
 Talking of JavaScript, the browser support situation for the latest core JavaScript
 features is great.
 Promises, modules, classes, template literals, arrow functions, `let` and `const`,
-default parameters, generators, the destructuring assignment, rest and Spread, `Map`/`Set`,
+default parameters, generators, the destructuring assignment, rest and spread, `Map`/`Set`,
 `WeakMap`/`WeakSet`, and many more.
 [All supported](https://caniuse.com/#feat=es6).
 
 <figure class="w-figure">
   <img class="w-screenshot"
        src="10000000000009C40000039EF0A6FE5C50E42DEA.png"
-       alt="">
+       alt="CanIUse support table for ES6 features showing support across all major browsers.">
   <figcaption class="w-figcaption">
     ECMAScript 2015 (ES6) browser support table. (<a href="https://caniuse.com/#feat=es6">Source</a>)
   </figcaption>
 </figure>
 
-Async functions [can be used](https://caniuse.com/#feat=async-functions) across the board in all major browsers.
+Async functions, one of my favorite features, [can be used](https://caniuse.com/#feat=async-functions)
+across the board in all major browsers.
 
 <figure class="w-figure">
   <img class="w-screenshot"
        src="10000000000009C400000304A19EF0FF1D72987D.png"
-       alt="">
+       alt="CanIUse support table for async functions showing support across all major browsers.">
   <figcaption class="w-figcaption">
     Async functions browser support table. (<a href="https://caniuse.com/#feat=async-functions">Source</a>)
   </figcaption>
@@ -92,7 +94,7 @@ is today.
 
 <figure class="w-figure w-figure--fullbleed">
   <img src="1000020100000640000003E810E16D93C747B2D5.png"
-       alt="">
+       alt="The iconic Windows XP green grass background image.">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     The grass is green when it comes to core JavaScript features.
     (Microsoft product screenshot, used with
@@ -104,7 +106,7 @@ is today.
 
 For this article, I work with a simple PWA, called
 [Fugu Greetings](https://tomayac.github.io/fugu-greetings/public/).
-The name of this app is a hat tip to Project Fugu 🐡, where we work on giving the web all
+The name of this app is a hat tip to Project Fugu 🐡, where we collaborate on giving the web all
 the powers of native applications.
 You can read more about the project on its
 [landing page](https://web.dev/fugu-status).
@@ -121,7 +123,7 @@ and integrates seamlessly into the operating system as a stand-alone application
 <figure class="w-figure">
   <img class="w-screenshot"
        src="10000201000009C4000006A2F58B840608CEA761.png"
-       alt="">
+       alt="Fugu Greetings PWA with a drawing that resembles the PWA community logo.">
   <figcaption class="w-figcaption">
     The <a href="https://tomayac.github.io/fugu-greetings/public/">Fugu Greetings</a> sample app.
   </figcaption>
@@ -129,7 +131,7 @@ and integrates seamlessly into the operating system as a stand-alone application
 
 ## Progressive enhancement
 
-With this out of the way, let's dive into the actual topic of this talk: progressive enhancement.
+With this out of the way, let's dive into the actual topic of this talk: *progressive enhancement*.
 The MDN Web Docs Glossary [defines](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement)
 the concept as follows:
 
@@ -144,6 +146,7 @@ the concept as follows:
     Feature detection is generally used to determine whether browsers can handle the high level
     content or not, with polyfills often being used to build in missing features with JavaScript.
   </p>
+  <p>[…]</p>
   <p>
     It is a useful technique that allows Web developers to focus on developing the best possible
     websites while balancing the issues in those websites being accessed by multiple unknown
@@ -156,7 +159,7 @@ the concept as follows:
 {%Aside 'note' %}
   This article is not a full introduction to progressive enhancement, but assumes you are at least
   somewhat familiar with the concept.
-  For a good introduction, I recommend Steve Champeon's article
+  For a more profound foundation, I recommend Steve Champeon's article
   [Progressive Enhancement and the Future of Web Design](http://www.hesketh.com/progressive_enhancement_and_the_future_of_web_design.html).
 {% endAside %}
 
@@ -166,7 +169,7 @@ With a traditional approach, you'd have used an
 [`<input type=file>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file)
 element to make this happen.
 First, you'd create the element, set its `type` and the to-be-`accept`ed MIME types,
-and then programmatically click it and listen for changes.
+and then programmatically "click" it and listen for changes.
 And it works perfectly fine. When you select an image, it is imported straight onto the canvas.
 
 ```js
@@ -183,14 +186,13 @@ const importImage = async () => {
 };
 ```
 
-When there's an import feature, there probably should be an export feature,
+When there's an *import* feature, there probably should be an *export* feature,
 so users can save their greeting cards locally.
-Similarly to before, the traditional way to saving files is to create an anchor link
+Similarly to before, the traditional way of saving files is to create an anchor link
 with a [`download`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-download:~:text=download)
 attribute and with a blob URL as its `href`.
-You would then programmatically click it to trigger the download,
-and to prevent memory leaks, hopefully make sure not to forget to revoke the blob
-URL.
+You'd then again programmatically "click" it to trigger the download,
+and, to prevent memory leaks, hopefully not forget to revoke the blob object URL.
 
 ```js
 const exportImage = async (blob) => {
@@ -207,8 +209,8 @@ const exportImage = async (blob) => {
 But wait a minute. Mentally, you haven't "downloaded" a greeting card, you have
 "saved" it.
 Rather than showing you a "save" dialog that lets you choose where to put the file,
-the browser has directly downloaded the greeting card without interaction
-And has put it straight into your Downloads folder. This isn't great.
+the browser has directly downloaded the greeting card without user interaction
+and has put it straight into your Downloads folder. This isn't great.
 
 What if there were a better way?
 What if you could just open a local file, edit it, and then save the modifications,
@@ -219,13 +221,17 @@ directories, make modifications, and save them back.
 
 Let's see how I can feature-detect if the API exists.
 The Native File System API exposes a new method `window.chooseFileSystemEntries()`.
-I can use this to conditionally load `import_image.mjs` and `export_image.mjs` if the API exists,
-and if it isn't available, load the files with the legacy approaches from above.
+I can use this fact to conditionally load `import_image.mjs` and `export_image.mjs` if the API exists,
+and if it isn't available, load the files `import_image_legacy.mjs` and `export_image_legacy.mjs`
+with the legacy approaches from above.
 
 ```js
 const loadImportAndExport = () => {
   if ('chooseFileSystemEntries' in window) {
-    Promise.all([import('./import_image.mjs'), import('./export_image.mjs')]);
+    Promise.all([
+      import('./import_image.mjs'),
+      import('./export_image.mjs'),
+    ]);
   } else {
     Promise.all([
       import('./import_image_legacy.mjs'),
@@ -243,7 +249,7 @@ You can see the network tabs of Firefox and Safari below.
 <figure class="w-figure">
   <img class="w-screenshot"
        src="100002010000058C000000CA65613FEC1D7FB3E2.png"
-       alt="">
+       alt="Safari Web Inspector showing the legacy files getting loaded.">
   <figcaption class="w-figcaption">
     Safari Web Inspector network tab.
   </figcaption>
@@ -252,7 +258,7 @@ You can see the network tabs of Firefox and Safari below.
 <figure class="w-figure">
   <img class="w-screenshot"
        src="10000201000005800000012430B7B8786BF315DD.png"
-       alt="">
+       alt="Firefox Developer Tools showing the legacy files getting loaded.">
   <figcaption class="w-figcaption">
     Firefox Developer Tools network tab.
   </figcaption>
@@ -274,8 +280,7 @@ As I said earlier, the grass is pretty green these days.
 
 ## The Native File System API
 
-So now that I have addressed this, let's look at the actual Native File System API based
-implementation.
+So now that I have addressed this, let's look at the actual implementation based on the Native File System API.
 For importing an image, I call `window.chooseFileSystemEntries()`
 and pass it an `accepts` option parameter where I say I want image files.
 Both file extensions as well as MIME types are supported.
@@ -302,14 +307,15 @@ const importImage = async () => {
 ```
 
 Exporting an image is almost the same, but this time
-I need to pass a type parameter of `"save-file"` to the `chooseFileSystemEntries()` method,
+I need to pass a type parameter of `'save-file'` to the `chooseFileSystemEntries()` method,
 so I get a file save dialog.
-Before with file open, this wasn't necessary since `"open-file"` is the default.
+Before with file open, this wasn't necessary since `'open-file'` is the default.
 I set the `accepts` parameter similar as before, but this time limited to just PNG images.
 Again I get back a file handle, but rather than getting the file,
-this time I'm creating a writable stream by calling `createWritable()`.
+this time I create a writable stream by calling `createWritable()`.
 Next, I write the blob, which is my greeting card image, to the file.
 Finally, I close the writable stream.
+
 Everything can always fail: The disk could be out of space,
 there could be a write or read error, or maybe simply the user cancels the file dialog.
 This is why I always wrap the calls in a `try...catch` statement.
@@ -336,17 +342,17 @@ const exportImage = async (blob) => {
 };
 ```
 
-After the progressive enhancement of using the Native File System API if it's supported,
+Now with this progressive enhancement of using the Native File System API where it's supported,
 I can open a file as before.
 The imported file is drawn right onto the canvas.
-I can make my edits, and finally save them, with a real save dialog
+I can make my edits, and finally save them: with a real save dialog
 where I can choose the name and storage location of the file.
 Now the file is ready to be preserved for the eternity.
 
 <figure class="w-figure">
   <img class="w-screenshot"
        src="10000201000009C4000005DB39851711E3CB3BF0.png"
-       alt="">
+       alt="Fugu Greetings app with a file open dialog.">
   <figcaption class="w-figcaption">
     The file open dialog.
   </figcaption>
@@ -355,7 +361,7 @@ Now the file is ready to be preserved for the eternity.
 <figure class="w-figure">
   <img class="w-screenshot"
        src="10000201000009C4000005DB01941257D7BE6A85.png"
-       alt="">
+       alt="Fugu Greetings app now with an imported image.">
   <figcaption class="w-figcaption">
     The imported image.
   </figcaption>
@@ -363,8 +369,8 @@ Now the file is ready to be preserved for the eternity.
 
 <figure class="w-figure">
   <img class="w-screenshot"
-       src="10000201000006FC0000021AD16A28BA8F5CBF1A.png"
-       alt="">
+       src="10000201000009C4000005DB01941257D7BE6A85.png"
+       alt="Fugu Greetings app with the modified image.">
   <figcaption class="w-figcaption">
     Saving the modified image to a new file.
   </figcaption>
