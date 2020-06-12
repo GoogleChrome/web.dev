@@ -31,6 +31,11 @@ This guide explains how Quicklink solves these challenges and allows you to achi
 At the moment this solution is only compatible with [react-router](https://www.npmjs.com/package/react-router).
 {% endAside %}
 
+{% Aside 'codelab' %}
+  Check out the [Prefetching in create-react-app with Quicklink](codelab-quicklink)
+  codelab for a guided, hands-on demonstration of Quicklink.
+{% endAside %}
+
 ## Determine chunks associated with each route
 
 One of the core components of `quicklink` is [webpack-route-manifest](https://github.com/lukeed/webpack-route-manifest), a [webpack](https://webpack.js.org/) plugin that lets you generate a JSON dictionary of routes and chunks.
