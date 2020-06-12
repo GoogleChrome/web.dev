@@ -125,7 +125,7 @@ const eventData = [
       },
       {
         speaker: 'nattestad',
-        title: 'Advanced APIs for Bringing People Together',
+        title: 'Zoom on Web: Getting Connected with Advanced Web Technology',
       },
     ],
   },
