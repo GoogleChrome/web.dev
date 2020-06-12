@@ -6,10 +6,10 @@ authors:
 hero: hero.png
 description: |
   Data Studio is a powerful data visualization tool that enables you to build
-  dashboards on top of big data sources, like the Chrome UX Report In this
+  dashboards on top of big data sources, like the Chrome UX Report. In this
   guide, learn how to create your own custom CrUX Dashboard to track an origin's
   user experience.
-date: 2018-11-05
+date: 2020-06-12
 tags:
   - performance
 ---
@@ -56,7 +56,7 @@ https://developers.google.com/web/tools/chrome-user-experience-report/
 
 If you omit the protocol, HTTPS is assumed. Subdomains matter, for example
 `https://developers.google.com` and `https://www.google.com` are considered to 
-be very different origins.
+be different origins.
 
 Some common issues with origins are providing the wrong protocol, for example
 `http://` instead of `https://`, and omitting the subdomain when needed.
@@ -75,7 +75,7 @@ If the origin exists, you'll be taken to the schema page for the dashboard.
 This shows you all of the fields that are included: each effective connection
 type, each form factor, the month of the dataset release, the distribution of
 performance for each metric, and of course the name of the origin. There's
-nothing you need to do or change on this page, just click "Create Report" to 
+nothing you need to do or change on this page, just click **Create Report** to 
 continue.
 
 <img class="w-screenshot" src="./dash_schema.png" alt="CrUX Dashboard schema">
@@ -106,10 +106,10 @@ The first page is an overview of the origin's monthly
 Use the Core Web Vitals page to understand how the origin is experienced by 
 desktop and phone users. By default, the most recent month at the time you 
 created the dashboard is selected. To change between older or newer monthly 
-releases, use the "Month" filter at the top of the page.
+releases, use the **Month** filter at the top of the page.
 
 Note that tablet is omitted from these charts by default, but if needed you 
-could remove the "No Tablet" filter in the bar chart configuration, shown 
+could remove the **No Tablet** filter in the bar chart configuration, shown 
 below.
 
 <img class="w-screenshot" src="./dash_cwv_tablet.png" alt="Editing the CrUX Dashboard to show tablets on the Core Web Vitals page">
@@ -122,7 +122,7 @@ in the CrUX dataset.
 
 <img class="w-screenshot" src="./dash_lcp.png" alt="CrUX Dashboard LCP page">
 
-Atop each page is the "Device" filter, which you can use to restrict the form 
+Atop each page is the **Device** filter, which you can use to restrict the form 
 factors included in the experience data. For example, you can drill down 
 specifically into phone experiences. This setting persists across pages.
 
@@ -130,9 +130,9 @@ The primary visualizations on these pages are the monthly distributions of
 experiences categorized as "Good", "Needs Improvement", and "Poor". The 
 color-coded legend below the chart indicates the range of experiences included
 in the category. For example, in the screenshot above, you can see the 
-percent of good [Largest Contentful Paint](/lcp/) (LCP) experiences, which are 
-categorized as those less than 2500ms, fluctuating and getting slightly worse 
-in recent months.
+percent of good
+[Largest Contentful Paint](/lcp/#what-is-a-good-lcp-score) (LCP) experiences
+fluctuating and getting slightly worse in recent months.
 
 The most recent month's percentages of good and poor experiences are shown 
 above the chart along with an indicator of the percent difference from the 
@@ -140,7 +140,7 @@ previous month. For this origin, good LCP experiences fell by 3.2% to 56.04%
 month-over-month.
 
 {% Aside 'caution' %}
-Due to a quirk with Data Studio, you may sometimes see "No Data" here. This is
+Due to a quirk with Data Studio, you may sometimes see `No Data` here. This is
 normal and due to the previous month's release not being available until the
 second Tuesday.
 {% endAside %}
@@ -151,7 +151,7 @@ good and poor percentages. This value corresponds to the origin's 75th
 percentile of user experiences. In other words, 75% of experiences are better
 than this value. One thing to note is that this applies to the overall 
 distribution across _all devices_ on the origin. Toggling specific devices 
-with the "Device" filter will not recalculate the percentile.
+with the **Device** filter will not recalculate the percentile.
 
 {% Details %}
 {% DetailsSummary %}
@@ -169,10 +169,10 @@ which densities of user experiences are intrinsically grouped into very coarse
 bins of decreasing granularity. This allows us to include minute densities in 
 the tail of the distribution without having to exceed four digits of 
 precision. For example, LCP values less than 3 seconds are grouped into bins 
-200ms wide. Between 3 and 10 seconds, bins are 500ms wide, then 5000ms wide, 
-etc. Rather than having bins of varying widths, bin spreading ensures that all 
-bins are a constant 100ms wide, and the distribution is linearly interpolated 
-across each bin.
+200ms wide. Between 3 and 10 seconds, bins are 500ms wide. Beyond 10 seconds, 
+bins are 5000ms wide, etc. Rather than having bins of varying widths, bin 
+spreading ensures that all bins are a constant 100ms wide (the greatest common 
+divisor), and the distribution is linearly interpolated across each bin.
 
 Corresponding P75 values in tools like PageSpeed Insights are not based on the 
 public BigQuery dataset and are able to provide millisecond-precision values.
@@ -197,7 +197,7 @@ slow 2G, and offline experiences.
 {% Aside 'key-term' %}
 Effective connection types are considered _effective_ because they're based 
 on bandwidth measurements on users' devices, and don't imply any particular 
-technology used. For example, a desktop user on fast WiFi may be labelled as 
+technology used. For example, a desktop user on fast Wi-Fi may be labelled as 
 4G while a slower mobile connection might be labelled as 2G.
 {% endAside %}
 
