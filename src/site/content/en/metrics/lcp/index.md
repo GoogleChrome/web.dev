@@ -275,7 +275,7 @@ available in the following tools:
 ### Measure LCP in JavaScript
 
 The easiest way to measure LCP (as well as all Web Vitals [field
-metrics]((/metrics/#in-the-field))) is with the [`web-vitals` JavaScript
+metrics](/user-centric-performance-metrics/#in-the-field) is with the [`web-vitals` JavaScript
 library](https://github.com/GoogleChrome/web-vitals), which wraps all the
 complexity of manually measuring LCP into a single function:
 
