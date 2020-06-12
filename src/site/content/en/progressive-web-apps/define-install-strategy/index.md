@@ -5,7 +5,7 @@ authors:
   - demianrenzulli
   - petelepage
 date: 2020-05-12
-updated: 2020-05-13
+updated: 2020-06-12
 description: |
   Best practices for combining different installation offerings to increase installation rates and avoid platform competition and cannibalization.
 ---
@@ -114,7 +114,11 @@ On the web, it's possible to obtain device signals and approximately map them to
 Using JavaScript APIs like [navigator.hardwareConcurrency](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency), [navigator.deviceMemory](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/deviceMemory), and [navigator.connection](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/connection) you can get information about the device CPU, memory and network status respectively. For example:
 
 ```javascript
-const deviceCategory = req.get('Device-Memory') < 1 ? 'lite' : 'full';`
+const memory = navigator.deviceMemory;
+
+const logicalProcessors = navigator.hardwareConcurrency;
+
+const network = navigator.connection.effectiveType;
 ```
 
 #### Using client hints
