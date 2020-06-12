@@ -652,12 +652,11 @@ the greeting card gets pasted into a new untitled image.
 
 ## The Badging API
 
-Another useful API is the Badging API.
+Another useful API is the [Badging API](https://web.dev/badging-api/).
 As an installable PWA, Fugu Greetings of course does have an app icon
 that users can place on the app dock or the home screen.
-Something fun to do with it in the context of Fugu Greetings is to use it as a pen
-stroke counter.
-
+Something fun to do with it in the context of Fugu Greetings is to (ab)use it as a pen
+strokes counter.
 With the Badging API, it is a straightforward task to do this.
 I have added an event listener that on pointer down increments the pen strokes
 counter
@@ -677,28 +676,6 @@ clearButton.addEventListener('click', () => {
 });
 ```
 
-In this example, I have drawn the numbers from one to seven, using one pen stroke
-for each number.
-The badge counter on the icon is now at seven.
-
-<figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000201000009C4000005DBE9BF427ABD63947A.png"
-       alt="">
-  <figcaption class="w-figcaption">
-    Drawing the numbers from 1 to 7, using seven pen strokes.
-  </figcaption>
-</figure>
-
-<figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000201000002E6000001C0855AA2DF1E30228C.png"
-       alt="">
-  <figcaption class="w-figcaption">
-    The pen strokes counter in form of the app icon badge reflects this.
-  </figcaption>
-</figure>
-
 This feature is a progressive enhancement, so the loading logic is as usual.
 
 ```js
@@ -707,15 +684,38 @@ if ('setAppBadge' in navigator) {
 }
 ```
 
+In this example, I have drawn the numbers from one to seven, using one pen stroke
+per number.
+The badge counter on the icon is now at seven.
+
+<figure class="w-figure">
+  <img class="w-screenshot"
+       src="10000201000009C4000005DBE9BF427ABD63947A.png"
+       alt="The numbers from one to seven drawn onto the greeting card, each with just one pen stroke.">
+  <figcaption class="w-figcaption">
+    Drawing the numbers from 1 to 7, using seven pen strokes.
+  </figcaption>
+</figure>
+
+<figure class="w-figure">
+  <img class="w-screenshot"
+       src="10000201000002E6000001C0855AA2DF1E30228C.png"
+       alt="Badge icon on the Fugu Greetings app showing the number 7.">
+  <figcaption class="w-figcaption">
+    The pen strokes counter in form of the app icon badge reflects this.
+  </figcaption>
+</figure>
+
 ## The Periodic Background Sync API
 
 Want to start each day fresh with something new?
 A neat feature of the Fugu Greetings app is that in can inspire you each morning
 with a new background image to start your greeting card.
-The app uses the Periodic Background Sync API to achieve this.
+The app uses the [Periodic Background Sync API](https://web.dev/periodic-background-sync/)
+to achieve this.
 
-The first step is to register a periodic sync event in the service worker registration.
-It listens for a sync tag called `"image-of-the-day"`
+The first step is to *register* a periodic sync event in the service worker registration.
+It listens for a sync tag called `'image-of-the-day'`
 and has a minimum interval of one day,
 so the user can get a new background image every 24 hours.
 
@@ -733,8 +733,8 @@ const registerPeriodicBackgroundSync = async () => {
 };
 ```
 
-The second step is to listen for the periodic sync event in the service worker.
-If the event tag is the one that was registered before,
+The second step is to *listen* for the periodic sync event in the service worker.
+If the event tag is `'image-of-the-day'`, that is, the one that was registered before,
 the image of the day is retrieved via the `getImageOfTheDay()` function,
 and the result propagated to all clients, so they can update their canvases and
 caches.
@@ -762,8 +762,8 @@ API is supported by the browser.
 This applies to both the client code and the service worker code.
 On non-supporting browsers, neither of them is loaded.
 Note how in the service worker, instead of a dynamic `import()`, I use the classic
-`importScripts()` function to the same effect.
-
+[`importScripts()`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts)
+function to the same effect.
 
 ```js
 // In the client:
@@ -780,10 +780,13 @@ if ('periodicSync' in self.registration) {
 }
 ```
 
+In Fugu Greetings, pressing the Wallpaper button reveals the greeting card image of the day
+that is updated every day via the Periodic Background Sync API.
+
 <figure class="w-figure">
   <img class="w-screenshot"
        src="10000201000009C4000005E0B042853D0E77C224.png"
-       alt="">
+       alt="Fugu Greetings app with a new greeting card image of the day.">
   <figcaption class="w-figcaption">
     Pressing the Wallpaper button displays the image of the day.
   </figcaption>
@@ -793,9 +796,9 @@ if ('periodicSync' in self.registration) {
 
 Sometimes even with a lot of inspiration, you need a nudge to finish a started greeting
 card.
-This is a feature that is enabled by the Notification Triggers API.
-As a user, I can enter a time when I want to be nudged to finish my greeting card,
-and when that time has come, I will get a notification that my greeting card is waiting.
+This is a feature that is enabled by the [Notification Triggers API](https://web.dev/notification-triggers/).
+As a user, I can enter a time when I want to be nudged to finish my greeting card.
+When that time has come, I will get a notification that my greeting card is waiting.
 
 After prompting for the target time,
 the application schedules the notification with a `showTrigger`.
@@ -817,17 +820,19 @@ if (targetDate) {
 As everything else I have shown so far, this is a progressive enhancement,
 so the code is only conditionally loaded.
 
-
 ```js
 if ('Notification' in window && 'showTrigger' in Notification.prototype) {
   import('./notification_triggers.mjs');
 }
 ```
 
+When I check the Reminder checkbox in Fugu Greetings, a prompt asks 
+me when I want to be reminded to finish my greeting card.
+
 <figure class="w-figure">
   <img class="w-screenshot"
        src="10000201000009C4000005DB0D42F493ACFD1B53.png"
-       alt="">
+       alt="Fugu Greetings app with a prompt asking the user when they want to be reminded to finish their greeting card.">
   <figcaption class="w-figcaption">
     Scheduling a local notification to be reminded to finish a greeting card.
   </figcaption>
@@ -835,7 +840,7 @@ if ('Notification' in window && 'showTrigger' in Notification.prototype) {
 
 ## The Wake Lock API
 
-I also want to include the wake lock API.
+I also want to include the [Wake Lock API](https://web.dev/wakelock/).
 Sometimes you need to just stare long enough on the screen until the inspiration
 kisses you.
 The worst that can happen then is the screen to turn off.
