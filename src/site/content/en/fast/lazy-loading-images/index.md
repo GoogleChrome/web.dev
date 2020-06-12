@@ -123,7 +123,7 @@ viewport.
 
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/lazy-intersection-observer?path=index.html&previewSize=100"
+    src="https://glitch.com/embed/#!/embed/lazy-intersection-observer?path=index.html&previewSize=0"
     title="lazy-intersection-observer on Glitch"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
@@ -158,7 +158,7 @@ scroll event handler code is removed.
 
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/lazy-loading-fallback?path=lazy.js&previewSize=100"
+    src="https://glitch.com/embed/#!/embed/lazy-loading-fallback?path=lazy.js&previewSize=0"
     title="lazy-loading-fallback on Glitch"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", function() {
 ```
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/lazy-background?path=index.html&previewSize=100"
+    src="https://glitch.com/embed/#!/embed/lazy-background?path=index.html&previewSize=0"
     title="lazy-background on Glitch"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
