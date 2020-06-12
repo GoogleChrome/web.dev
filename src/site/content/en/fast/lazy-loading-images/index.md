@@ -22,7 +22,7 @@ With inline images we have three options for lazy-loading,
 which may be used in combination for the best compatibility across browsers.
 
 - [Using native browser lazy-loading](#images-inline-native).
-- [Using intersection observer](#images-inline-intersection-observer).
+- [Using Intersection Observer](#images-inline-intersection-observer).
 - [Using scroll and resize event handlers](#images-inline-event-handlers).
 
 ### Using native browser lazy-loading {: #images-inline-native }
@@ -49,7 +49,7 @@ and save users loading images that they may not ever scroll to.
 If you have large numbers of images and want to be sure that users of browsers without support for native lazy-loading benefit
 you will need to combine this with one of the methods explained next.
 
-### Using intersection observer {: #images-inline-intersection-observer }
+### Using Intersection Observer {: #images-inline-intersection-observer }
 
 To polyfill lazy-loading of `<img>` elements, we use JavaScript to check if they're in the
 viewport. If they are, their `src` (and sometimes `srcset`) attributes are
@@ -59,12 +59,12 @@ If you've written lazy-loading code before, you may have accomplished your task
 by using event handlers such as `scroll` or `resize`. While this approach is the
 most compatible across browsers, modern browsers offer a more performant and
 efficient way to do the work of checking element visibility via [the
-intersection observer API](https://developers.google.com/web/updates/2016/04/intersectionobserver).
+Intersection Observer API](https://developers.google.com/web/updates/2016/04/intersectionobserver).
 
 {% Aside %}
-  Intersection Observer is not supported in all browsers.
+  Intersection Observer is not supported in all browsers, notably IE11 and below.
   If compatibility across browsers is crucial,
-  be sure to read [the next section](#using_event_handlers_the_most_compatible_way),
+  be sure to read [the next section](#images-inline-event-handlersy),
   which shows you how to lazy-load images using less performant (but more compatible!) scroll and resize event handlers.
 {% endAside %}
 
@@ -135,9 +135,9 @@ It is not available in Internet Explorer. If Internet Explorer support is critic
 
 ### Using event handlers for Internet Explorer support {: #images-inline-event-handlers }
 
-While you _should_ use intersection observer for lazy-loading, your application
+While you _should_ use Intersection Observer for lazy-loading, your application
 requirements may be such that browser compatibility is critical. [You _can_
-polyfill intersection observer
+polyfill Intersection Observer
 support](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) (and
 this would be easiest), but you could also fall back to code using
 [`scroll`](https://developer.mozilla.org/en-US/docs/Web/Events/scroll),
@@ -188,9 +188,9 @@ so we need to consider other methods if we have background images to lazy-load.
 Unlike `<img>` elements which load regardless
 of their visibility, image loading behavior in CSS is done with more
 speculation. When [the document and CSS object
-models](/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model)
+models](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model)
 and [render
-tree](/web/fundamentals/performance/critical-rendering-path/render-tree-construction)
+tree](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction)
 are built, the browser examines how CSS is applied to a document before
 requesting external resources. If the browser has determined a CSS rule
 involving an external resource doesn't apply to the document as it's currently
@@ -275,12 +275,12 @@ Observer (which you can polyfill), and can be extended with [a number of
 plugins](https://github.com/aFarkas/lazysizes#available-plugins-in-this-repo) to
 do things like lazy-load video. [Find out more about using lazysizes](/use-lazysizes-to-lazyload-images/).
 - [lozad.js](https://github.com/ApoorvSaxena/lozad.js) is a super lightweight
-option that uses intersection observer only. As such, it's highly performant,
+option that uses Intersection Observer only. As such, it's highly performant,
 but will need to be polyfilled before you can use it on older browsers.
 - [yall.js](https://github.com/malchata/yall.js) is a library I wrote that uses
-IntersectionObserver and falls back to event handlers. It's compatible with IE11
+Intersection Observer and falls back to event handlers. It's compatible with IE11
 and major browsers.
 - If you're seeking a React-specific lazy-loading library, you might consider
 [react-lazyload](https://github.com/jasonslyvia/react-lazyload). While it
-doesn't use intersection observer, it _does_ provide a familiar method of lazy
+doesn't use Intersection Observer, it _does_ provide a familiar method of lazy
 loading images for those accustomed to developing applications with React.

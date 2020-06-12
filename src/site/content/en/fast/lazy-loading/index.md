@@ -36,7 +36,7 @@ need. Where images are concerned, "non-critical" is often synonymous with
 "off-screen". If you've used Lighthouse and examined some opportunities for
 improvement, you may have seen some guidance in this realm in the form of the
 [Offscreen Images
-audit](/web/tools/lighthouse/audits/offscreen-images):
+audit](/offscreen-images/):
 
 <figure class="w-figure">
   <img src="./offscreen-audit.png" alt="A screenshot of the Offscreen Images

@@ -41,7 +41,7 @@ Additionally, you may not want to be so strict about the fold line as the
 threshold for triggering lazy-loading. It may be more ideal for your purposes to
 establish a buffer zone some distance below the fold so that images begin
 loading well before the user scrolls them into the viewport. For example, The
-intersection observer API allows you to specify a `rootMargin` property in an
+Intersection Observer API allows you to specify a `rootMargin` property in an
 options object when you create a new `IntersectionObserver` instance. This
 effectively gives elements a buffer, which triggers lazy-loading behavior before
 the element is in the viewport:
@@ -64,7 +64,7 @@ before the user actually sees it.
 
 To achieve this same effect using scroll event handling code, simply adjust your
 `getBoundingClientRect` check to include a buffer, and you'll get the same
-effect in browsers that don't support intersection observer.
+effect in browsers that don't support Intersection Observer.
 
 ## Layout shifting and placeholders {: #wrong-layout-shifting }
 

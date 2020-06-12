@@ -109,7 +109,7 @@ which lets you specify a placeholder to occupy the `<video>` element's space
 until the video is lazy-loaded. As with our [`<img>` lazy-loading examples](/lazy-loading-images/),
  we stash the video URL in the `data-src` attribute on each `<source>`
 element. From there, we'll use some JavaScript similar to the earlier
-intersection observer-based image lazy-loading examples:
+Intersection Observer-based image lazy-loading examples:
 
 ```javascript
 document.addEventListener("DOMContentLoaded", function() {
@@ -155,14 +155,14 @@ and you can lazy-load that content.
 The following libraries can help you to lazy-load video:
 
 - [lozad.js](https://github.com/ApoorvSaxena/lozad.js) is a super lightweight
-option that uses intersection observer only. As such, it's highly performant,
+option that uses Intersection Observer only. As such, it's highly performant,
 but will need to be polyfilled before you can use it on older browsers.
 - [yall.js](https://github.com/malchata/yall.js) is a library I wrote that uses
-IntersectionObserver and falls back to event handlers. It's compatible with IE11
+Intersection Observer and falls back to event handlers. It's compatible with IE11
 and major browsers.
 - If you're seeking a React-specific lazy-loading library, you might consider
 [react-lazyload](https://github.com/jasonslyvia/react-lazyload). While it
-doesn't use intersection observer, it _does_ provide a familiar method of lazy
+doesn't use Intersection Observer, it _does_ provide a familiar method of lazy
 loading images for those accustomed to developing applications with React.
 
 Each of these lazy-loading libraries is well documented, with plenty of markup
