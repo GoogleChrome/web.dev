@@ -379,22 +379,28 @@ Now the file is ready to be preserved for the eternity.
 ## The Web Share and Web Share Target APIs
 
 Apart from storing for the eternity, maybe I actually want to share my greeting card.
-This is something that the Web Share and Web Share Target APIs allow me to do.
+This is something that the [Web Share API](https://web.dev/web-share/) and
+[Web Share Target API](https://web.dev/web-share-target/) allow me to do.
 Mobile, and more recently also desktop operating systems have gained native sharing
 mechanisms.
-For example, here's Safari's share sheet on macOS Safari triggered from an article on
+For example, here's desktop Safari's share sheet on macOS triggered from an article on
 my [blog](https://blog.tomayac.com/).
-When you click the share button, you can share a link to the article with a friend, for
-example, via the native Messages app.
+When you click the Share Article button, you can share a link to the article with a friend, for
+example, via the native macOS Messages app.
 
 <figure class="w-figure">
   <img class="w-screenshot"
        src="1000020100000356000001C434F5DD5D64721768.png"
-       alt="">
+       alt="Desktop Safari's share sheet on macOS triggered from an article's Share button">
   <figcaption class="w-figcaption">
-    Web Share API on desktop Safari.
+    Web Share API on desktop Safari on macOS.
   </figcaption>
 </figure>
+
+The code to make this happen is pretty straightforward. I call `navigator.share()` and
+pass it an optional `title`, `text`, and `url`.
+But what if I want to attach an image? Level&nbsp;1 of the Web Share API doesn't support this yet.
+The good news is that Web Share Level&nbsp;2 has added file sharing capabilities.
 
 ```js
 try {
@@ -408,36 +414,15 @@ try {
 }
 ```
 
-The code to make this happen is pretty straightforward. I call `navigator.share()` and
-pass it an optional `title`, `text`, and `url`.
-But what if I want to attach an image? Level&nbsp;1 of the Web Share API doesn't support this yet.
-The good news is that Web Share Level&nbsp;2 has added file sharing capabilities.
-
-```js
-const share = async (title, text, blob) => {
-  const data = {
-    files: [
-      new File([blob], 'fugu-greeting.png', {
-        type: blob.type,
-      }),
-    ],
-    title: title,
-    text: text,
-  };
-  try {
-    if (!(await navigator.canShare(data))) {
-      throw new Error("Can't share data.", data);
-    }
-    await navigator.share(data);
-  } catch (err) {
-    console.error(err.name, err.message);
-  }
-};
-```
-
 Let me show you how to make this work with the Fugu Greeting card application.
 First, I need to prepare a `data` object with a `files` array consisting of one blob, and then
-a title and a text.
+a title and a text. Next, as a best practice, I make use of the new `navigator.canShare()` method that does
+what its name suggests:
+It tells me if the `data` object I'm trying to share can technically be shared by the browser.
+If `navigator.canShare()` tells me the data can be shared, I am in the final step ready to
+call `navigator.share()` as before.
+Again everything can fail, in the simplest way when the user cancels the sharing operation,
+So it's all wrapped in `try...catch` blocks.
 
 ```js
 const share = async (title, text, blob) => {
@@ -461,38 +446,11 @@ const share = async (title, text, blob) => {
 };
 ```
 
-Next, as a best practice, I make use of the new `navigator.canShare()` method that does
-what its name suggests:
-It tells me if the `data` object I'm trying to share can technically be shared by the
-browser.
-
-```js
-const share = async (title, text, blob) => {
-  const data = {
-    files: [
-      new File([blob], 'fugu-greeting.png', {
-        type: blob.type,
-      }),
-    ],
-    title: title,
-    text: text,
-  };
-  try {
-    if (!navigator.canShare(data)) {
-      throw new Error("Can't share data.", data);
-    }
-    await navigator.share(data);
-  } catch (err) {
-    console.error(err.name, err.message);
-  }
-};
-```
-
-If `navigator.canShare()` tells me the data can be shared, I am in the final step ready to
-call `navigator.share()` as before.
-Again everything can fail, in the simplest way when the user cancels the sharing
-operation,
-So it's all wrapped in `try...catch` blocks.
+As before, I use a progressive enhancement loading strategy.
+If both `'share'` and `'canShare'` exist on the `navigator` object, only then I go forward and
+load `share.mjs` via dynamic `import()`.
+On browsers like mobile Safari that only fulfill one of the two conditions, I don't load
+the functionality.
 
 ```js
 const loadShare = () => {
@@ -502,19 +460,15 @@ const loadShare = () => {
 };
 ```
 
-As before, I use a progressive enhancement loading strategy.
-If both `'share'` and `'canShare'` exist on the `navigator` object, only then I go forward and
-load `share.mjs` via dynamic import.
-On browsers like Mobile Safari that only fulfill one of the two conditions, I don't load
-the functionality.
-If I tap the share button on a supporting browser, the native share sheet opens.
+In Fugu Greetings, if I tap the share button on a supporting browser like Chrome on Android,
+the native share sheet opens.
 I can, for example, choose Gmail, and the email composer widget pops up with the
 image attached.
 
 <figure class="w-figure">
   <img class="w-screenshot"
-       src="10000201000003E400000800D873C982E6D44C89.png"
-       alt="">
+       src="10000201000003E4000008004D3AEA65DB2ABA6C.png"
+       alt="Native share sheet showing various apps to share the image to.">
   <figcaption class="w-figcaption">
     Choosing an app to share the file to.
   </figcaption>
@@ -522,8 +476,8 @@ image attached.
 
 <figure class="w-figure">
   <img class="w-screenshot"
-       src="10000201000003E4000008004D3AEA65DB2ABA6C.png"
-       alt="">
+       src="10000201000003E400000800D873C982E6D44C89.png"
+       alt="Gmail's email compose widget with the image attached.">
   <figcaption class="w-figcaption">
     The file gets attached to a new email in Gmail's composer.
   </figcaption>
@@ -805,7 +759,7 @@ Again this is truly a progressive enhancement, so the code is only loaded when t
 API is supported by the browser.
 This applies to both the client code and the service worker code.
 On non-supporting browsers, neither of them is loaded.
-Note how in the service worker, instead of a dynamic import, I use the classic
+Note how in the service worker, instead of a dynamic `import()`, I use the classic
 `importScripts()` function to the same effect.
 
 
