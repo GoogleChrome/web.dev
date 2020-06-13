@@ -17,6 +17,7 @@
 import {BaseModalElement} from '../BaseModalElement';
 import {html} from 'lit-element';
 import './_styles.scss';
+import {generateIdSalt} from '../../utils/generate-salt';
 
 /**
  * @fileoverview Modal element for session information.
@@ -29,7 +30,14 @@ class EventScheduleModal extends BaseModalElement {
       _sessionName: String,
       _authorsPart: Element,
       _abstractPart: Element,
+      _titleId: String,
     };
+  }
+
+  constructor() {
+    super();
+
+    this._titleId = generateIdSalt();
   }
 
   shouldUpdate(changedProperties) {
@@ -63,8 +71,8 @@ class EventScheduleModal extends BaseModalElement {
 
   render() {
     return html`
-      <div class="modal">
-        <h2>${this._sessionName || '?'}</h2>
+      <div class="modal" aria-modal="true" aria-labelledby="${this._titleId}">
+        <h2 id=${this._titleId}>${this._sessionName || '?'}</h2>
         ${this._authorsPart || ''}
         ${this._abstractPart || ''}
         <button

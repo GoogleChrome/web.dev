@@ -45,7 +45,11 @@ module.exports = (event, authorsCollection) => {
   const slugs = {};
   const slugForTitle = (title) => {
     // Find a slug for this title, but prevent duplicate IDs.
-    const base = slugify(title, {lower: true, strict: true, remove: /'/});
+    const base = slugify(title, {
+      lower: true,
+      strict: true,
+      remove: /[^-\w _]/, // remove anything not in: basic word chars, space, - and _
+    });
     let id = base;
     let suffix = 0;
     while (id in slugs) {
@@ -72,7 +76,9 @@ module.exports = (event, authorsCollection) => {
           ${AuthorsDate({authors}, authorsCollection)}
         </div>
         <div class="w-event-schedule__cell w-event-schedule__session">
-          <a class="w-event-schedule__open" href="#${id}">${title}</a>
+          <a class="w-event-schedule__open" href="#${id}">
+            <span>${title}</span>
+          </a>
           <div class="w-event-schedule__abstract" hidden>
             ${abstract.map((part) => html`<p>${part}</p>`)}
           </div>

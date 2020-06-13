@@ -183,7 +183,10 @@ web-tabs.w-event-tabs {
 }
 
 .w-event-schedule {
+  // Forces a stacking context.
+  position: relative;
   text-align: left;
+  z-index: 0;
 
   // Measures the width of the left-hand cell, containing speaker information.
   // Uses a mix of fixed size (for small devices, down to 320px) and percentage
@@ -200,6 +203,11 @@ web-tabs.w-event-tabs {
 
   .w-event-schedule__speaker {
     width: #{$WIDTH_SPEAKER};
+
+    a {
+      z-index: 10;
+      position: relative;
+    }
   }
 
   .w-event-schedule__session {
@@ -224,33 +232,32 @@ web-tabs.w-event-tabs {
   }
 
   .w-event-schedule__open {
-    display: block;
+    pointer-events: auto;
+    display: inline-block;
+    color: inherit;
+
+    span {
+      z-index: 1;
+      position: relative;
+    }
 
     // This creates a large clickable area around the link itself, but which
     // doesn't extend into the speakers area on the left.
-    &::after {
+    &::before {
       content: '';
       top: 0;
-      bottom: 0;
+      left: 0;
       right: 0;
-      width: calc(100% - #{$WIDTH_SPEAKER});
+      bottom: 0;
       display: block;
       position: absolute;
+      z-index: 0;
     }
 
     // When the link is hovered, highlight the whole row, even though the
     // speakers' area isn't clickable.
     &:hover::before {
-      content: '';
       background: rgba(0, 0, 0, .05);
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: -10;
-      display: block;
-      position: absolute;
-      pointer-events: none;
     }
   }
 }

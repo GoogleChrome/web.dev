@@ -58,6 +58,7 @@ export class BaseModalElement extends BaseElement {
     this.addEventListener('click', this.onClick);
     // Set tabindex to -1 so modal can be focused when it's opened.
     this.tabIndex = -1;
+    this.inert = !this.open;
   }
 
   disconnectedCallback() {
@@ -103,6 +104,7 @@ export class BaseModalElement extends BaseElement {
     this.addEventListener('animationend', this.onAnimationEnd, {
       once: true,
     });
+    this.inert = this.open; // starts the wrong way around, and flips onAnimationEnd
 
     this.requestUpdate('open', oldVal);
   }
