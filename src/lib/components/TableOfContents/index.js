@@ -34,8 +34,8 @@ class TableOfContents extends BaseStateElement {
 
   constructor() {
     super();
-    this.openedToFalse = this.openedToFalse.bind(this);
     this.scrollSpy = this.scrollSpy.bind(this);
+    this.openedToFalse = this.openedToFalse.bind(this);
   }
 
   connectedCallback() {
@@ -43,7 +43,10 @@ class TableOfContents extends BaseStateElement {
     this.tocHTML = this.innerHTML;
     this.divContent =
       document.querySelector('#content') || document.createElement('div');
-    this.headers = this.divContent.querySelectorAll('h1[id], h2[id], h3[id]');
+    this.headings = this.divContent.querySelectorAll('h1[id], h2[id], h3[id]');
+
+    this.observer = new IntersectionObserver(this.scrollSpy);
+    this.headings.forEach((heading) => this.observer.observe(heading));
   }
 
   render() {
@@ -69,62 +72,72 @@ class TableOfContents extends BaseStateElement {
   }
 
   updated(changedProperties) {
-    if (changedProperties.has('opened')) {
-      if (!changedProperties.get('opened')) {
-        this.open();
+    if (
+      changedProperties.has('opened') &&
+      changedProperties.get('opened') !== this.opened
+    ) {
+      if (this.opened) {
+        this.divContent.classList.add('w-toc-open');
       } else {
-        this.close();
+        this.divContent.classList.remove('w-toc-open');
       }
     }
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    this.close();
+    closeToC();
+    this.divContent.classList.remove('w-toc-open');
+    this.observer.disconnect();
   }
 
   onStateChanged({tocOpened}) {
     this.opened = tocOpened;
   }
 
-  scrollSpy() {
-    for (const header of this.headers) {
-      const rect = header.getBoundingClientRect();
-      if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-        this.setActive(header.id);
-      }
+  highlightActiveLink() {
+    const activeLink = 'w-toc__active--link';
+    const activeBorder = 'w-toc__active--border';
+    const firstVisibleLink = this.querySelector('.w-toc__visible--link');
+    const links = [...this.querySelectorAll('a')];
+
+    links.forEach((link) => {
+      link.classList.remove(activeLink, 'w-toc__visible--link');
+      link.parentElement.classList.remove(activeBorder);
+    });
+
+    if (firstVisibleLink) {
+      firstVisibleLink.classList.add(activeLink);
+      firstVisibleLink.parentElement.classList.add(activeBorder);
     }
-  }
 
-  close() {
-    this.divContent.classList.remove('w-toc-open');
-    document.removeEventListener('touchmove', this.scrollSpy);
-    document.removeEventListener('scroll', this.scrollSpy);
-  }
-
-  open() {
-    this.divContent.classList.add('w-toc-open');
-    this.scrollSpy();
-    document.addEventListener('touchmove', this.scrollSpy, {passive: true});
-    document.addEventListener('scroll', this.scrollSpy, {passive: true});
+    if (!firstVisibleLink && this.previouslyActiveHeading) {
+      const last = this.querySelector(
+        `a[href="#${this.previouslyActiveHeading}"]`,
+      );
+      last.classList.add(activeLink);
+      last.parentElement.classList.add(activeBorder);
+    }
   }
 
   openedToFalse() {
     closeToC();
   }
 
-  setActive(id) {
-    const activeLink = 'w-toc__active--link';
-    const activeBorder = 'w-toc__active--border';
-    this.querySelectorAll('a').forEach((e) => {
-      if (e.href.endsWith('/#' + id)) {
-        e.classList.add(activeLink);
-        e.parentElement.classList.add(activeBorder);
+  scrollSpy(headings) {
+    const links = [...this.querySelectorAll('a')];
+    for (const heading of headings) {
+      const href = `#${heading.target.getAttribute('id')}`;
+      const link = links.find((l) => l.getAttribute('href') === href);
+      if (heading.intersectionRatio > 0) {
+        link.classList.add('w-toc__visible--link');
+        this.previouslyActiveHeading = heading.target.getAttribute('id');
       } else {
-        e.classList.remove(activeLink);
-        e.parentElement.classList.remove(activeBorder);
+        link.classList.remove('w-toc__visible--link');
       }
-    });
+
+      this.highlightActiveLink();
+    }
   }
 }
 
