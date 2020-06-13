@@ -1,12 +1,15 @@
-import {firebaseConfig} from 'webdev_config';
+import {firebaseConfig, isProd} from 'webdev_config';
 import {store} from './store';
 import {clearSignedInState} from './actions';
 import loadFirebase from './utils/firebase-loader';
 import {trackError} from './analytics';
 
-const firebasePromise = loadFirebase('app', 'auth', 'performance').then(
-  () => window.firebase,
-);
+const firebasePromise = loadFirebase(
+  'app',
+  'auth',
+  'performance',
+  'remote-config',
+).then(() => window.firebase);
 firebasePromise.then(initialize).catch((err) => {
   console.error('failed to load Firebase', err);
   trackError(err, 'firebase load');
@@ -31,6 +34,7 @@ const firestorePromiseLoader = (() => {
 function initialize(firebase) {
   firebase.initializeApp(firebaseConfig);
   firebase.performance(); // initialize performance monitoring
+  getRemoteConfig();
 
   let firestoreUserUnsubscribe = () => {};
   let lastSavedUrl = null;
@@ -132,6 +136,36 @@ function initialize(firebase) {
       };
     })();
   });
+}
+
+async function getRemoteConfig() {
+  const remoteConfig = firebase.remoteConfig();
+  if (!isProd) {
+    // Remote Config has a 12-hour cache. We can set this to 0 for dev
+    // mode but we'll get rate limited if we leave this at 0 in prod.
+    console.warn('Firebase Remote Config is in dev mode.');
+    remoteConfig.settings = {
+      minimumFetchIntervalMillis: 0,
+    };
+  }
+  remoteConfig.defaultConfig = {};
+
+  try {
+    await remoteConfig.ensureInitialized();
+    // Fetch the initial config from the server and merge it into the store.
+    await remoteConfig.fetchAndActivate();
+    const values = remoteConfig.getAll();
+    // We just use a single top level JSON object called 'app' to hold all of
+    // our remote config.
+    // It's a lot easier to JSON parse this object, versus having to fiddle
+    // with the annoying .asString, asBoolean, etc. accessors of RemoteConfig
+    // Value objects.
+    const config = JSON.parse(values.app.asString());
+    store.setState({...config});
+  } catch (err) {
+    console.error(err);
+    trackError(err);
+  }
 }
 
 /**

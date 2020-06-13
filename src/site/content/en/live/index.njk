@@ -9,27 +9,10 @@ date: 2020-06-31
 
 <div class="w-live-landing-page">
 
-  <div>
-    <section style="display: flex; height: 670px; max-width: 1280px; margin: auto; border-left: 1px solid #dadce0; border-right: 1px solid #dadce0;">
-      <div style="flex-basis: 880px;">
-        <div class="w-youtube" style="height: 100%;">
-          <iframe
-            class="w-youtube__embed"
-            src="https://www.youtube.com/embed/ukVbZUPkxx0"
-            frameborder="0"
-            allowfullscreen
-            loading="lazy"
-          ></iframe>
-        </div>
-      </div>
-      <!-- IMPORANT: Change embed_domain to the real domain for launch -->
-      <iframe
-        style="flex-basis: 400px; border-left: 1px solid #dadce0;"
-        src="https://www.youtube.com/live_chat?v=ukVbZUPkxx0&amp;embed_domain=localhost"
-        frameBorder="0"
-      ></iframe>
-    </section>
-  </div>
+  <web-livestream-container>
+    <div class="web-livestream-container__skeleton-yt"></div>
+    <div class="web-livestream-container__skeleton-chat"></div>
+  </web-livestream-container>
 
   <hr />
 

@@ -1,0 +1,21 @@
+@import '../../../styles/settings/colors';
+
+web-livestream-container {
+  .web-livestream-container__col-yt {
+    flex-basis: 880px;
+  }
+
+  .web-livestream-container__col-chat {
+    flex-basis: 400px;
+    border-left: 1px solid $GREY_300;
+  }
+
+  .w-youtube {
+    height: 100%;
+  }
+
+  .w-youtube-chat {
+    height: 100%;
+    width: 100%;
+  }
+}
