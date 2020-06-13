@@ -55,11 +55,16 @@ module.exports = (event, authorsCollection) => {
     return id;
   };
 
-  const renderSession = ({speaker, title}) => {
+  const renderSession = ({speaker, title, abstract}) => {
     // Always pass an Array of author IDs.
     const authors = typeof speaker === 'string' ? [speaker] : speaker;
 
     const id = slugForTitle(title);
+
+    // Coerce to array or empty array.
+    abstract =
+      (abstract && (typeof abstract === 'string' ? [abstract] : abstract)) ||
+      [];
 
     return html`
       <div class="w-event-schedule__row" data-session-id=${id}>
@@ -68,6 +73,9 @@ module.exports = (event, authorsCollection) => {
         </div>
         <div class="w-event-schedule__cell w-event-schedule__session">
           <a class="w-event-schedule__open" href="#${id}">${title}</a>
+          <div class="w-event-schedule__abstract" hidden>
+            ${abstract.map((part) => html`<p>${part}</p>`)}
+          </div>
         </div>
       </div>
     `;

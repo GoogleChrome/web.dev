@@ -27,6 +27,8 @@ class EventScheduleModal extends BaseModalElement {
     return {
       sessionRow: Element,
       _sessionName: String,
+      _authorsPart: Element,
+      _abstractPart: Element,
     };
   }
 
@@ -35,15 +37,25 @@ class EventScheduleModal extends BaseModalElement {
       return false;
     }
 
+    this._authorsPart = null;
+    this._abstractPart = null;
     this._sessionName = '';
+
     if (!this.sessionRow) {
       return true;
     }
+    const row = this.sessionRow;
+
+    // Extract the authors' collection and abstract.
+    this._authorsPart = row.querySelector('.w-event-schedule__speaker');
+    this._abstractPart = row.querySelector('.w-event-schedule__abstract');
+    if (this._abstractPart) {
+      this._abstractPart.removeAttribute('hidden');
+    }
 
     // Remove the link that was used to open us.
-    const link = this.sessionRow.querySelector('.w-event-schedule__open');
+    const link = row.querySelector('.w-event-schedule__open');
     if (link) {
-      link.remove();
       this._sessionName = link.textContent;
     }
     return true;
@@ -51,11 +63,12 @@ class EventScheduleModal extends BaseModalElement {
 
   render() {
     return html`
-      <main>
-        <h1>${this._sessionName || '?'}</h1>
-        ${this.sessionRow}
+      <div class="modal">
+        <h2>${this._sessionName || '?'}</h2>
+        ${this._authorsPart || ''}
+        ${this._abstractPart || ''}
         <button
-          class="w-button w-button--secondary gc-analytics-event"
+          class="w-button close gc-analytics-event"
           data-category="web.dev"
           data-label="live, close session modal"
           data-action="click"

@@ -51,6 +51,9 @@ const eventData = [
       {
         speaker: ['nainar', 'sebabenz'],
         title: 'AMP at Your Service',
+        abstract: [
+          "The one where Naina and Sebastian discuss how AMP makes web development less painful and why it's time to move away from paired AMP.",
+        ],
       },
       {
         speaker: ['crystallambert', 'morss'],

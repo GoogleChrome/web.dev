@@ -326,10 +326,3 @@ web-tabs.w-event-tabs {
     object-fit: cover;
   }
 }
-
-.w-event-modal-position {
-  position: absolute;
-  margin-top: -100px;
-  padding-top: 100px;
-  z-index: 100; // creates stacking context for modal
-}
