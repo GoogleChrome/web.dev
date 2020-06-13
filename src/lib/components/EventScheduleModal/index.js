@@ -23,12 +23,46 @@ import './_styles.scss';
  */
 
 class EventScheduleModal extends BaseModalElement {
+  static get properties() {
+    return {
+      sessionRow: Element,
+      _sessionName: String,
+    };
+  }
+
+  shouldUpdate(changedProperties) {
+    if (!changedProperties.has('sessionRow')) {
+      return false;
+    }
+
+    this._sessionName = '';
+    if (!this.sessionRow) {
+      return true;
+    }
+
+    // Remove the link that was used to open us.
+    const link = this.sessionRow.querySelector('.w-event-schedule__open');
+    if (link) {
+      link.remove();
+      this._sessionName = link.textContent;
+    }
+    return true;
+  }
+
   render() {
-    // TODO(samthor): Doesn't show anything interesting right now.
     return html`
       <main>
-        <h2>Title of talk</h2>
-        <a href="#">Close</a>
+        <h1>${this._sessionName || '?'}</h1>
+        ${this.sessionRow}
+        <button
+          class="w-button w-button--secondary gc-analytics-event"
+          data-category="web.dev"
+          data-label="live, close session modal"
+          data-action="click"
+          @click=${() => (this.open = false)}
+        >
+          Close
+        </button>
       </main>
     `;
   }

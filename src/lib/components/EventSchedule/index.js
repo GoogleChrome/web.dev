@@ -27,9 +27,6 @@ class EventSchedule extends HTMLElement {
   constructor() {
     super();
 
-    this._positionElement = document.createElement('div');
-    this._positionElement.className = 'w-event-modal-position';
-
     this._modalElement = document.createElement('web-event-schedule-modal');
     this._modalElement.className = 'web-modal';
     this._modalElement.open = false;
@@ -38,20 +35,30 @@ class EventSchedule extends HTMLElement {
         return; // we closed ourselves, so got an event that can be ignored
       }
       const url = window.location.pathname + window.location.search;
-      window.history.pushState(null, null, url);
-      this._updateHash();
+      window.history.replaceState(null, null, url);
+      this.onHashChange();
     });
 
     this._currentSession = null;
-    this._updateHash = this._updateHash.bind(this);
-    this._updatePosition = this._updatePosition.bind(this);
+    this.onHashChange = this.onHashChange.bind(this);
+    this.onClick = this.onClick.bind(this);
   }
 
-  _updateHash() {
-    const id = this.isConnected ? window.location.hash.substr(1) : '';
-    const session =
-      (id && this.querySelector(`[data-session-id="${id}"]`)) || null;
+  _elementForHash(hash) {
+    const id = hash.substr(1);
+    return (id && this.querySelector(`[data-session-id="${id}"]`)) || null;
+  }
 
+  /**
+   * Controls the open/close of session modals, by matching the page's hash to any contained
+   * elements with a matching `data-session-id` attribute.
+   *
+   * If no hash is set, or no element is found, hides any modal.
+   */
+  onHashChange() {
+    const session = this.isConnected
+      ? this._elementForHash(window.location.hash)
+      : null;
     if (session === this._currentSession) {
       return;
     }
@@ -59,42 +66,68 @@ class EventSchedule extends HTMLElement {
     this._currentSession = session;
     if (!session) {
       this._modalElement.open = false;
-      this._positionElement.remove();
+      this._modalElement.remove();
       return;
     }
 
-    this._updatePosition();
-    this._positionElement.scrollIntoView();
+    // Clone the session node and pass it to our session. This is kinda gross but basically we use
+    // it as the canonical source of truth for the modal. We also have to remove all tabindex
+    // attributes as they may have been added by the inert polyfill.
+    const clone = session.cloneNode(true);
+    clone.querySelectorAll('[tabindex]').forEach((el) => {
+      el.removeAttribute('tabindex');
+    });
 
-    this._positionElement.append(this._modalElement);
+    this._modalElement.sessionRow = clone;
     this._modalElement.open = true;
-
-    // TODO(samthor): Update the modal with content based on the row we just
-    // created the modal in, e.g. with full talk description.
+    document.body.append(this._modalElement);
   }
 
-  _updatePosition() {
-    const bounds = this._currentSession.getBoundingClientRect();
-    this._positionElement.style.top = window.scrollY + bounds.top + 'px';
-    this._positionElement.style.left = window.scrollX + bounds.left + 'px';
-    this._positionElement.style.width = bounds.width + 'px';
+  /**
+   * Handles clicks within this schedule, searching for hashes which open a
+   * session.
+   *
+   * @param {!MouseEvent} ev
+   */
+  onClick(ev) {
+    if (!ev.target.href) {
+      return;
+    }
 
-    document.body.append(this._positionElement);
+    const check = new URL(ev.target.href);
+    const id = check.hash.substr(1);
+    check.hash = '';
 
-    // TODO(samthor): If we resize, we might have to scroll the modal into view
-    // again.
+    const page = new URL(window.location);
+    page.hash = '';
+
+    if (!(page.toString() === check.toString() && id)) {
+      return;
+    }
+
+    // We clicked on a link that's on the same page but has a hash, so intercept
+    // it if handled. We need this as otherwise a history stack event occurs.
+
+    const session = this._elementForHash(window.location.hash);
+    if (!session) {
+      return;
+    }
+
+    window.history.replaceState(null, null, ev.target.hash);
+    this.onHashChange();
+    ev.preventDefault();
   }
 
   connectedCallback() {
-    window.addEventListener('hashchange', this._updateHash);
-    window.addEventListener('resize', this._updatePosition);
-    this._updateHash();
+    window.addEventListener('hashchange', this.onHashChange);
+    this.addEventListener('click', this.onClick);
+    this.onHashChange();
   }
 
   disconnectedCallback() {
-    window.removeEventListener('hashchange', this._updateHash);
-    window.removeEventListener('resize', this._updatePosition);
-    this._updateHash();
+    window.removeEventListener('hashchange', this.onHashChange);
+    this.removeEventListener('click', this.onClick);
+    this.onHashChange();
   }
 }
 
