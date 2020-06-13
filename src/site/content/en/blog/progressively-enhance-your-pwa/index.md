@@ -22,8 +22,8 @@ tags:
 Back in March 2003, [Nick Finck](https://twitter.com/nickf) and
 [Steve Champeon](https://twitter.com/schampeo) stunned the web design world
 with the concept of
-[progressive enhancement](http://www.hesketh.com/publications/inclusive_web_design_for_the_future/).
-A strategy for web design that emphasizes core webpage content first,
+[progressive enhancement](http://www.hesketh.com/publications/inclusive_web_design_for_the_future/),
+a strategy for web design that emphasizes core webpage content first,
 and that then progressively adds more nuanced
 and technically rigorous layers of presentation and features on top of the content.
 While in 2003, progressive enhancement was about using—at the time—modern
