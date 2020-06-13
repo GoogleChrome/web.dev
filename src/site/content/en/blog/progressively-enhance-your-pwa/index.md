@@ -841,18 +841,16 @@ me when I want to be reminded to finish my greeting card.
 ## The Wake Lock API
 
 I also want to include the [Wake Lock API](https://web.dev/wakelock/).
-Sometimes you need to just stare long enough on the screen until the inspiration
+Sometimes you just need to stare long enough at the screen until the inspiration
 kisses you.
-The worst that can happen then is the screen to turn off.
+The worst that can happen then is for the screen to turn off.
 The Wake Lock API can prevent this from happening.
-In Fugu Greetings, there's an insomnia checkbox that, when checked, keeps your
-screen awake.
 
 In a first step I obtain a wake lock with the `navigator.wakelock.request method()`.
-I pass it the string `"screen"` to obtain a screen wake lock.
+I pass it the string `'screen'` to obtain a screen wake lock.
 I then add an event listener to be informed when the wake lock is released.
 This can happen, for example, when the tab visibility changes.
-If this happens, I can when the tab becomes visible again reobtain the wake lock.
+If this happens, I can, when the tab becomes visible again, re-obtain the wake lock.
 
 ```js
 let wakeLock = null;
@@ -882,11 +880,13 @@ if ('wakeLock' in navigator && 'request' in navigator.wakeLock) {
   import('./wake_lock.mjs');
 }
 ```
+In Fugu Greetings, there's an insomnia checkbox that, when checked, keeps the
+screen awake.
 
 <figure class="w-figure">
   <img class="w-screenshot"
        src="10000201000009C4000005DBCD9D10DD0A745315.png"
-       alt="">
+       alt="The insomnia checkbox, if checked, keeps the screen awake.">
   <figcaption class="w-figcaption">
     The insomnia checkbox keeps app awake.
   </figcaption>
@@ -896,10 +896,11 @@ if ('wakeLock' in navigator && 'request' in navigator.wakeLock) {
 
 At times, even if you stare at the screen for hours,
 it's just useless.
-The Idle Detection API allows the app to detect user idle time.
+The [Idle Detection API](https://web.dev/idle-detection/) allows the app to detect user idle time.
 If the user is detected to be idle for too long, the app resets to the initial state
 and clears the canvas.
-This API is currently gated behind the notifications permission,
+This API is currently gated behind the
+[notifications permission](https://developer.mozilla.org/en-US/docs/Web/API/Notification/requestPermission),
 since a lot of production use cases of idle detection are notifications-related,
 for example, to only send a notification to a device the user is currently actively using.
 
@@ -937,10 +938,12 @@ if ('IdleDetector' in window) {
 }
 ```
 
+In the Fugu Greetings app, when the Ephemeral checkbox is checked, the canvas clears when the user is idle for too long.
+
 <figure class="w-figure">
   <img class="w-screenshot"
        src="10000201000009C4000005DBB930B1D3F8F5D1DA.png"
-       alt="">
+       alt="Fugu Greetings app with a cleared canvas after the user has been idle for too long.">
   <figcaption class="w-figcaption">
     When the ephemeral checkbox is checked and the user has been idle for too long, the canvas is cleared.
   </figcaption>
@@ -959,7 +962,7 @@ although at times you might still want to consider a bundler for really large ap
 <figure class="w-figure">
   <img class="w-screenshot"
        src="10000201000009C4000006E8D776365D6B538C9A.png"
-       alt="">
+       alt="Chrome DevTools Network tab showing only requests for files with code that the current browser supports.">
   <figcaption class="w-figcaption">
     Chrome DevTools panel showing only the relevant requests are made.
   </figcaption>
@@ -971,18 +974,20 @@ go find and [fork it on GitHub](https://github.com/tomayac/fugu-greetings).
 <figure class="w-figure">
   <img class="w-screenshot"
        src="10000201000009C4000005FB1EF077CDF01B8588.png"
-       alt="">
+       alt="Fugu Greetings repo on GitHub.">
   <figcaption class="w-figcaption">
-    Fugu Greetings app on GitHub.
+    <a href="https://github.com/tomayac/fugu-greetings">Fugu Greetings</a> app on GitHub.
   </figcaption>
 </figure>
 
 We are working hard on making the grass greener when it comes to advanced Fugu APIs.
-By applying a progressive enhancement in the development of your app,
-you can make sure that everybody gets a good, solid baseline experience,
+By applying progressive enhancement in the development of my app,
+I make sure that everybody gets a good, solid baseline experience,
 but that people using browsers that support more Web platform APIs get an even better experience.
+I'm looking forward to seeing what you do with progressive enhancement in your apps.
 
 ## Acknowledgements
 
 I'm grateful to [Christian Liebel](https://christianliebel.com/) and
-[Hemanth HM](https://h3manth.com/) who have contributed to Fugu Greetings.
+[Hemanth HM](https://h3manth.com/) who both have contributed to Fugu Greetings.
+This article was reviewed by [Joe Medley](https://github.com/jpmedley).
