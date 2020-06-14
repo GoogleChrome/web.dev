@@ -124,6 +124,7 @@ The metric scores are not visible in the report, but are calculated under the ho
       </tr>
       <tr>
         <td><a href="/first-cpu-idle/">First CPU Idle</a></td>
+        <td>13%</td>
       </tr>
     </tbody>
   </table>
@@ -167,7 +168,7 @@ The metrics scores and the perf score are colored according to these ranges:
 ### What can developers do to improve their performance score?
 First, use the [Lighthouse scoring calculator](https://paulirish.github.io/lh-scorecalc/) to help understand what thresholds you should be aiming for achieving a certain Lighthouse performance score.
 
-In the Ligthhouse report, the **Opportunities** section has detailed suggestions and documentation on how to implement them. Additionally, the **Diagnostics** section lists additional guidance that developers can explore to further improve their performance.
+In the Lighthouse report, the **Opportunities** section has detailed suggestions and documentation on how to implement them. Additionally, the **Diagnostics** section lists additional guidance that developers can explore to further improve their performance.
 
 
 <!--
