@@ -364,7 +364,7 @@ can decide if a tap is to go forward or backward.
 
 Next we make a small object with some state relevant to our logic. In this
 case, we're only interested in the current story. In our HTML markup, we can
-access it by grabbing the 1st user and their 1st story. Add the highlighted code
+access it by grabbing the 1st friend and their most recent story. Add the highlighted code
 to your `app/js/index.js`:
 
 ```js/3-5
