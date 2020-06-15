@@ -1,10 +1,10 @@
 ---
 title: Milliseconds make millions
 subhead: >
-  A 0.1 second improvement in 4 metrics can improve progression rates across
+  A 0.1 second improvement in 4 speed metrics can improve progression rates across
   the full purchase funnel.
 description: >
-  A 0.1 second improvement in 4 metrics can improve progression rates across
+  A 0.1 second improvement in 4 speed metrics can improve progression rates across
   the full purchase funnel.
 authors:
   - olgademidova
