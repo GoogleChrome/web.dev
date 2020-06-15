@@ -325,7 +325,7 @@ If you've got a keen eye you probably noticed the `pointer-events: none`
 declaration and are scratching your head right now. I'd say this is the only
 downside of the solution so far. We need this because a `.seen.story` element
 will be on top and will receive taps, even though it's invisible. By setting the
-`pointer-events` to `none`, we turn the glass story into a window, and steal
+`pointer-events` to `none`, we turn the glass story into a window, and steal no
 more user interactions. Not too bad of a trade off, not too hard to manage here
 in our CSS right now. We're not juggling `z-index`. I'm feeling good about this
 still.
