@@ -226,13 +226,6 @@ try {
 }
 ```
 
-{% Aside 'caution' %}
-  The `buffered` flag does not currently work for Long Tasks (though
-  support is being added). In the meantime, you can track Long Tasks
-  by registering the `PerformanceObserver` in the `<head>` of your pages, before
-  loading any other scripts.
-{% endAside %}
-
 ### Element Timing API
 
 The [Largest Contentful Paint (LCP)](/largest-contentful-paint/) metric is
