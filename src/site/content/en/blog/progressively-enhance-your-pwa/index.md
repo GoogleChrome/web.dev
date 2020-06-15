@@ -36,14 +36,14 @@ progressive enhancement in 2020 and beyond is about using
        src="100002010000053C000003E8B978FE17E590BC9A.png"
        alt="Inclusive web design for the future with progressive enhancement. Title slide from the original presentation.">
   <figcaption class="w-figcaption">
-    Inclusive web design for the future with progressive enhancement.
+    Slide: Inclusive Web Design for the Future With Progressive Enhancement.
     (<a href="http://www.hesketh.com/publications/inclusive_web_design_for_the_future/">Source</a>)
   </figcaption>
 </figure>
 
 ## Modern JavaScript
 
-Talking of JavaScript, the browser support situation for the latest core JavaScript
+Talking of JavaScript, the browser support situation for the latest core ES&nbsp;2015 JavaScript
 features is great.
 Promises, modules, classes, template literals, arrow functions, `let` and `const`,
 default parameters, generators, the destructuring assignment, rest and spread, `Map`/`Set`,
@@ -59,8 +59,11 @@ default parameters, generators, the destructuring assignment, rest and spread, `
   </figcaption>
 </figure>
 
-Async functions, one of my favorite features, [can be used](https://caniuse.com/#feat=async-functions)
+Async functions, an ES&nbsp;2017 feature and one of my personal favorites,
+[can be used](https://caniuse.com/#feat=async-functions)
 across the board in all major browsers.
+The `async` and `await` keywords enable asynchronous, promise-based behavior
+to be written in a cleaner style, avoiding the need to explicitly configure promise chains.
 
 <figure class="w-figure">
   <img class="w-screenshot"
@@ -71,10 +74,12 @@ across the board in all major browsers.
   </figcaption>
 </figure>
 
-And even super recent language additions like
+And even super recent ES&nbsp;2020 language additions like
 [optional chaining](https://caniuse.com/#feat=mdn-javascript_operators_optional_chaining) and
 [nullish coalescing](https://caniuse.com/#feat=mdn-javascript_operators_nullish_coalescing)
 reach support really quickly—you can see a code sample below.
+When it comes to core JavaScript features, the grass couldn't be much greener than it
+is today.
 
 ```js
 const adventurer = {
@@ -88,9 +93,6 @@ console.log(adventurer.dog?.name);
 console.log(0 ?? 42);
 // Expected output: 0
 ```
-
-When it comes to core JavaScript features, the grass couldn't be much greener than it
-is today.
 
 <figure class="w-figure w-figure--fullbleed">
   <img src="1000020100000640000003E810E16D93C747B2D5.png"
@@ -264,9 +266,10 @@ You can see the network tabs of Firefox and Safari below.
   </figcaption>
 </figure>
 
-However, on Chrome, only the new scripts are loaded.
+However, on Chrome, a browser that supports the API, only the new scripts are loaded.
 This is made elegantly possible thanks to
-[dynamic `import()`](https://v8.dev/features/dynamic-import) that all modern browsers support.
+[dynamic `import()`](https://v8.dev/features/dynamic-import) that all modern browsers
+[support](https://caniuse.com/#feat=es6-module-dynamic-import).
 As I said earlier, the grass is pretty green these days.
 
 <figure class="w-figure">
@@ -342,10 +345,10 @@ const exportImage = async (blob) => {
 };
 ```
 
-Now with this progressive enhancement of using the Native File System API where it's supported,
+With this progressive enhancement of using the Native File System API where it's supported in place,
 I can open a file as before.
 The imported file is drawn right onto the canvas.
-I can make my edits, and finally save them: with a real save dialog
+I can make my edits and finally save them: with a real save dialog
 where I can choose the name and storage location of the file.
 Now the file is ready to be preserved for the eternity.
 
@@ -383,7 +386,7 @@ This is something that the [Web Share API](https://web.dev/web-share/) and
 [Web Share Target API](https://web.dev/web-share-target/) allow me to do.
 Mobile, and more recently also desktop operating systems have gained native sharing
 mechanisms.
-For example, here's desktop Safari's share sheet on macOS triggered from an article on
+For example, below is desktop Safari's share sheet on macOS triggered from an article on
 my [blog](https://blog.tomayac.com/).
 When you click the Share Article button, you can share a link to the article with a friend, for
 example, via the native macOS Messages app.
@@ -391,14 +394,15 @@ example, via the native macOS Messages app.
 <figure class="w-figure">
   <img class="w-screenshot"
        src="1000020100000356000001C434F5DD5D64721768.png"
-       alt="Desktop Safari's share sheet on macOS triggered from an article's Share button">
+       alt="Desktop Safari's share sheet on macOS triggered from an article's Share button"
+       width="600">
   <figcaption class="w-figcaption">
     Web Share API on desktop Safari on macOS.
   </figcaption>
 </figure>
 
 The code to make this happen is pretty straightforward. I call `navigator.share()` and
-pass it an optional `title`, `text`, and `url`.
+pass it an optional `title`, `text`, and `url` in an object.
 But what if I want to attach an image? Level&nbsp;1 of the Web Share API doesn't support this yet.
 The good news is that Web Share Level&nbsp;2 has added file sharing capabilities.
 
@@ -416,10 +420,10 @@ try {
 
 Let me show you how to make this work with the Fugu Greeting card application.
 First, I need to prepare a `data` object with a `files` array consisting of one blob, and then
-a title and a text. Next, as a best practice, I make use of the new `navigator.canShare()` method that does
+a `title` and a `text`. Next, as a best practice, I make use of the new `navigator.canShare()` method that does
 what its name suggests:
 It tells me if the `data` object I'm trying to share can technically be shared by the browser.
-If `navigator.canShare()` tells me the data can be shared, I am in the final step ready to
+If `navigator.canShare()` tells me the data can be shared, I'm in the final step ready to
 call `navigator.share()` as before.
 Again everything can fail, in the simplest way when the user cancels the sharing operation,
 So it's all wrapped in `try...catch` blocks.
@@ -436,7 +440,7 @@ const share = async (title, text, blob) => {
     text: text,
   };
   try {
-    if (!(await navigator.canShare(data))) {
+    if (!(navigator.canShare(data))) {
       throw new Error("Can't share data.", data);
     }
     await navigator.share(data);
@@ -465,23 +469,27 @@ the native share sheet opens.
 I can, for example, choose Gmail, and the email composer widget pops up with the
 image attached.
 
-<figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000201000003E4000008004D3AEA65DB2ABA6C.png"
-       alt="Native share sheet showing various apps to share the image to.">
-  <figcaption class="w-figcaption">
-    Choosing an app to share the file to.
-  </figcaption>
-</figure>
+<div class="w-columns">
+  <figure class="w-figure">
+    <img class="w-screenshot"
+        src="10000201000003E4000008004D3AEA65DB2ABA6C.png"
+        alt="Native share sheet showing various apps to share the image to."
+        width="300">
+    <figcaption class="w-figcaption">
+      Choosing an app to share the file to.
+    </figcaption>
+  </figure>
 
-<figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000201000003E400000800D873C982E6D44C89.png"
-       alt="Gmail's email compose widget with the image attached.">
-  <figcaption class="w-figcaption">
-    The file gets attached to a new email in Gmail's composer.
-  </figcaption>
-</figure>
+  <figure class="w-figure">
+    <img class="w-screenshot"
+        src="10000201000003E400000800D873C982E6D44C89.png"
+        alt="Gmail's email compose widget with the image attached."
+        width="300">
+    <figcaption class="w-figcaption">
+      The file gets attached to a new email in Gmail's composer.
+    </figcaption>
+  </figure>
+</div>
 
 ## The Contact Picker API
 
@@ -532,29 +540,33 @@ contacts picker is limited to only show their names,
 but not their email addresses, or other information like their phone numbers.
 Their names are then drawn onto my greeting card.
 
-<figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000201000003E400000800AD376E3B4B3386C6.png"
-       alt="Contacts picker showing the names of two contacts in the address book.">
-  <figcaption class="w-figcaption">
-    Selecting two names with the contact picker from the address book.
-  </figcaption>
-</figure>
+<div class="w-columns">
+  <figure class="w-figure">
+    <img class="w-screenshot"
+        src="10000201000003E400000800AD376E3B4B3386C6.png"
+        alt="Contacts picker showing the names of two contacts in the address book."
+        width="300">
+    <figcaption class="w-figcaption">
+      Selecting two names with the contact picker from the address book.
+    </figcaption>
+  </figure>
 
-<figure class="w-figure">
-  <img class="w-screenshot"
-       src="1000000000000438000008AC945569E52CE934FA.png"
-       alt="The names of the two previously picked contacts drawn on the greeting card.">
-  <figcaption class="w-figcaption">
-    The names get inserted in the greeting card.
-  </figcaption>
-</figure>
+  <figure class="w-figure">
+    <img class="w-screenshot"
+        src="1000000000000438000008AC945569E52CE934FA.png"
+        alt="The names of the two previously picked contacts drawn on the greeting card."
+        width="300">
+    <figcaption class="w-figcaption">
+      The two names then get drawn onto the greeting card.
+    </figcaption>
+  </figure>
+</div>
 
 ## The Asynchronous Clipboard API
 
 Up next is copying and pasting.
 One of our favorite operations as software developers is copy and paste.
-As greeting card authors, at times, I may want to do the same.
+As greeting card author, at times, I may want to do the same.
 Either paste an image into a greeting card I'm working on,
 or the other way round: copy my greeting card so I can continue editing it from
 somewhere else.
@@ -658,9 +670,8 @@ that users can place on the app dock or the home screen.
 Something fun to do with it in the context of Fugu Greetings is to (ab)use it as a pen
 strokes counter.
 With the Badging API, it is a straightforward task to do this.
-I have added an event listener that on pointer down increments the pen strokes
-counter
-and sets the icon.
+I have added an event listener that on the `pointerdown` event increments the pen strokes
+counter and sets the icon.
 Whenever the canvas gets cleared, the counter resets, and the badge is removed.
 
 ```js
@@ -700,7 +711,8 @@ The badge counter on the icon is now at seven.
 <figure class="w-figure">
   <img class="w-screenshot"
        src="10000201000002E6000001C0855AA2DF1E30228C.png"
-       alt="Badge icon on the Fugu Greetings app showing the number 7.">
+       alt="Badge icon on the Fugu Greetings app showing the number 7."
+       width="300">
   <figcaption class="w-figcaption">
     The pen strokes counter in form of the app icon badge reflects this.
   </figcaption>
@@ -817,19 +829,6 @@ if (targetDate) {
 }
 ```
 
-When a scheduled notification triggers in Fugu Greetings,
-it is shown just like any other notification, but as I wrote before,
-it didn't require a network connection.
-
-<figure class="w-figure">
-  <img class="w-screenshot"
-       src="10000201000009C4000005E0B042853D0E77C225.png"
-       alt="macOS Notification Center showing a triggered notification from Fugu Greetings.">
-  <figcaption class="w-figcaption">
-    The triggered notification appears in the macOS Notification Center.
-  </figcaption>
-</figure>
-
 As everything else I have shown so far, this is a progressive enhancement,
 so the code is only conditionally loaded.
 
@@ -848,6 +847,20 @@ me when I want to be reminded to finish my greeting card.
        alt="Fugu Greetings app with a prompt asking the user when they want to be reminded to finish their greeting card.">
   <figcaption class="w-figcaption">
     Scheduling a local notification to be reminded to finish a greeting card.
+  </figcaption>
+</figure>
+
+When a scheduled notification triggers in Fugu Greetings,
+it is shown just like any other notification, but as I wrote before,
+it didn't require a network connection.
+
+<figure class="w-figure">
+  <img class="w-screenshot"
+       src="10000201000009C4000005E0B042853D0E77C225.png"
+       alt="macOS Notification Center showing a triggered notification from Fugu Greetings."
+       width="300">
+  <figcaption class="w-figcaption">
+    The triggered notification appears in the macOS Notification Center.
   </figcaption>
 </figure>
 
@@ -978,6 +991,41 @@ although at times you might still want to consider a bundler for really large ap
        alt="Chrome DevTools Network tab showing only requests for files with code that the current browser supports.">
   <figcaption class="w-figcaption">
     Chrome DevTools panel showing only the relevant requests are made.
+  </figcaption>
+</figure>
+
+The app may look a little different on each browser since not all platforms support all features,
+but the core functionality is always there—progressively enhanced according to the particular browser's capabilities.
+Note that these capabilities may change even in one and the same browser,
+depending on whether the app is running as an installed app or in a browser tab.
+
+<figure class="w-figure">
+  <img class="w-screenshot"
+       src="android.png"
+       alt="Fugu Greetings running on Android Chrome, showing many available features."
+       width="500">
+  <figcaption class="w-figcaption">
+    <a href="https://github.com/tomayac/fugu-greetings">Fugu Greetings</a> running on Android Chrome.
+  </figcaption>
+</figure>
+
+<figure class="w-figure">
+  <img class="w-screenshot"
+       src="safari.png"
+       alt="Fugu Greetings running on desktop Safari, showing fewer available features."
+       width="500">
+  <figcaption class="w-figcaption">
+    <a href="https://github.com/tomayac/fugu-greetings">Fugu Greetings</a> running on desktop Safari.
+  </figcaption>
+</figure>
+
+<figure class="w-figure">
+  <img class="w-screenshot"
+       src="chrome.png"
+       alt="Fugu Greetings running on desktop Chrome, showing many available features."
+       width="500">
+  <figcaption class="w-figcaption">
+    <a href="https://github.com/tomayac/fugu-greetings">Fugu Greetings</a> running on desktop Chrome.
   </figcaption>
 </figure>
 
