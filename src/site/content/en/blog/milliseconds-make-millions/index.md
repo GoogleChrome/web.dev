@@ -105,7 +105,8 @@ to the Form Submission Page. A 7% increase in page views was also recorded.
 
 The study was commissioned by Google and conducted by 55 and Deloitte. The aim
 of the study was to determine whether mobile site speed has an impact on brand
-revenue. The research team studied 37 leading European and American brand sites.
+revenue. The research team studied 37 leading European and American brand sites,
+collecting data on over 30 million user sessions.
 The tracking and analytics setups of each site was rigorously audited. No UX
 redesigns occurred on any of the sites during the duration of the study. Mobile
 load times were monitored hour-by-hour for 30 days at the end of 2019. The
