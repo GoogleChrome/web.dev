@@ -7,7 +7,7 @@ description: |
   Learn how to defer non-critical CSS with the goal of optimizing the Critical
   Rendering Path, and improving FCP (First Contentful Paint).
 date: 2019-02-17
-updated: 2019-10-30
+updated: 2020-06-12
 tags:
   - performance
 ---
@@ -128,6 +128,13 @@ This is not the standard way of loading CSS. Here's how it works:
 * "nulling" the `onload` handler once it is used helps some browsers avoid re-calling the handler upon switching the rel attribute.
 * The reference to the stylesheet inside of a `noscript` element works as a fallback for browsers that don't execute JavaScript.
 
+{% Aside %}
+In this guide, you used vanilla code to implement this optimization. In a real
+production scenario, it's a good practice to use functions like
+[loadCSS](https://github.com/filamentgroup/loadCSS/blob/master/README.md), that
+can encapsulate this behavior and work well across browsers. 
+{% endAside %}
+
 The [resulting page](https://defer-css-optimized.glitch.me/) looks exactly like the previous version, even when most styles load asynchronously. Here's how the inlined styles and asynchronous request to the CSS file look like in the HTML file:
 
 <!-- Copy and Paste Me -->
@@ -174,11 +181,8 @@ The **Eliminate render-blocking resources** suggestion is no longer under
 
 ## Next steps & references
 
-In this guide, you used vanilla code to implement this optimization. In a real
-production scenario, it's a good practice to use functions like
-[loadCSS](https://github.com/filamentgroup/loadCSS/blob/master/README.md), that
-can encapsulate this behavior and work well across browsers. As a complement to
-this, the [extract critical CSS guide](/extract-critical-css/)
+In this  guide, you learned how to defer non-critical CSS by manually extracting the unused code in the page.
+As a complement to this, the [extract critical CSS guide](/extract-critical-css/)
 covers some of the most popular tools to extract critical CSS and includes
 [a codelab](/codelab-extract-and-inline-critical-css/) to see how
 they work in practice.
