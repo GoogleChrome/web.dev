@@ -7,8 +7,8 @@ authors:
 description: |
   Learn how to make your Progressive Web App feel like a "real" app by understanding
   how to implement native app patterns with web technologies.
-date: 2020-05-19
-updated: 2020-05-25
+date: 2020-06-15
+updated: 2020-06-15
 tags:
   - capabilities
   - progressive-web-apps
