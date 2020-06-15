@@ -1,4 +1,5 @@
 @import '../settings/colors';
+@import '../tools/breakpoints';
 
 // =============================================================================
 // LIVESTREAM CONTAINER OVERVIEW
@@ -22,6 +23,11 @@ web-livestream-container {
 }
 
 .web-livestream-container__skeleton-chat {
-  flex-basis: 400px;
   border-left: 1px solid $GREY_300;
+  display: none;
+  flex-basis: 400px;
+
+  @include bp(md) {
+    display: block;
+  }
 }
