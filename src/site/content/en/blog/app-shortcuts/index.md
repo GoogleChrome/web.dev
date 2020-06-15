@@ -240,7 +240,7 @@ Check out the [app shortcuts sample] and its [source].
 [scope]: /add-manifest/#scope
 [web app manifest]: /add-manifest
 [web app manifest icons]: /add-manifest/#icons
-[explainer]: https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/Shortcuts/explainer.md
+[explainer]: https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/Shortcuts/explainer.md
 [spec]: https://w3c.github.io/manifest/#shortcuts-member
 [app shortcuts sample]: https://app-shortcuts.glitch.me
 [source]: https://glitch.com/edit/#!/app-shortcuts
