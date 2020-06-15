@@ -206,7 +206,7 @@ The most common app actions, **Search** for new content and **Check for New Epis
   By specifying <a href="https://web.dev/app-shortcuts/">app icon shortcuts</a>
   in the PWA's web app manifest, you can register quick routes to common tasks that users can reach directly from the app icon.
   On operating systems like macOS, users can also right-click the app icon and set the app to launch at login time.
-  There is ongoing work on a proposal for <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/tree/master/RunOnLogin">run on login</a>.
+  There is ongoing work on a proposal for <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/RunOnLogin/Explainer.md">run on login</a>.
 {% endDetails %}
 
 ## Act as default app
@@ -223,7 +223,7 @@ Other native applications and even websites or emails can integrate with the Pod
   How to do this on the web
 {% endDetailsSummary %}
   Handling fully custom URL schemes is not yet possible, but there is ongoing work on a proposal for
-  <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/URLProtocolHandler/explainer.md">URL Protocol Handling</a>
+  <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/URLProtocolHandler/explainer.md">URL Protocol Handling</a>
   for PWAs. Currently, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/registerProtocolHandler"><code>registerProtocolHandler()</code></a> with a <code>web+</code> scheme prefix is the best alternative.
 {% endDetails %}
 
@@ -299,7 +299,7 @@ When you look at the Podcasts app window, you notice that it does not have a cla
 {% DetailsSummary %}
   How to do this on the web
 {% endDetailsSummary %}
-  While not currently possible, <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/TitleBarCustomization/explainer.md">title bar customization</a> is being worked on at the moment.
+  While not currently possible, <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/TitleBarCustomization/explainer.md">title bar customization</a> is being worked on at the moment.
   You can (and should), however, specify the <a href="https://web.dev/add-manifest/#display"><code>display</code></a> and the
   <a href="https://web.dev/add-manifest/#theme-color"><code>theme-color</code></a> properties of the web app manifest to
   determine the look and feel of your application window and to decide which default browser controls—potentially none of them—should be shown.
@@ -569,7 +569,7 @@ The table below shows a compact overview of all features and provides a list of 
           <ul>
             <li>
               <a
-                href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/URLProtocolHandler/explainer.md"
+                href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/URLProtocolHandler/explainer.md"
                 >URL protocol handling</a
               > (early stage)
             </li>
@@ -625,7 +625,7 @@ The table below shows a compact overview of all features and provides a list of 
           <ul>
             <li>
               <a
-                href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/TitleBarCustomization/explainer.md"
+                href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/TitleBarCustomization/explainer.md"
                 >Title bar customization</a
               > (early stage)
             </li>
