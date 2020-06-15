@@ -330,8 +330,6 @@ more user interactions. Not too bad of a trade off, not too hard to manage here
 in our CSS right now. We're not juggling `z-index`. I'm feeling good about this
 still.
 
-TODO(kayce): We need to rephrase the last paragraph. Turning the glass story into
-a window? Stealing more user interactions? 
 
 ## JavaScript
 
