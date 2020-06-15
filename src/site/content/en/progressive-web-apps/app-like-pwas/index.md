@@ -299,7 +299,7 @@ When you look at the Podcasts app window, you notice that it does not have a cla
 {% DetailsSummary %}
   How to do this on the web
 {% endDetailsSummary %}
-  While not currently possible, <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/TitleBarCustomization/explainer.md">title bar customization</a> is being worked on at the moment.
+  While not currently possible, <a href="https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/TitleBarCustomization/explainer.md">title bar customization</a> is being worked on at the moment.
   You can (and should), however, specify the <a href="https://web.dev/add-manifest/#display"><code>display</code></a> and the
   <a href="https://web.dev/add-manifest/#theme-color"><code>theme-color</code></a> properties of the web app manifest to
   determine the look and feel of your application window and to decide which default browser controls—potentially none of them—should be shown.
