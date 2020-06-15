@@ -155,6 +155,8 @@ subsequent frames, it will dispatch another
 [`PerformanceEntry`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry)
 any time the largest contentful element changes.
 
+For example, on a page with text and a hero image the browser may initially just render the text—at which point the browser would dispatch a `largest-contentful-paint` entry whose `element` property likely reference a `<p>` or `<h1>`. Later, once the hero image finishes loading, a second `largest-contentful-paint` entry would be dispatch and its `element` property would reference the `<img>`.
+
 It's important to note that an element can only be considered the largest
 contentful element once it has rendered and is visible to the user. Images that
 have not yet loaded are not considered "rendered". Neither are text nodes using
