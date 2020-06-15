@@ -24,7 +24,7 @@ on the web. We'll build the component as we go, starting with HTML, then CSS,
 then JavaScript.
 
 Check out my blog post [Building a Stories component on the web](/building-a-stories-component)
-to learn about the tradeoffs I had to make while building this component.
+to learn about the progressive enhancements made while building this component.
 
 {% YouTube '5_sfnQDr1-o' %}
 
