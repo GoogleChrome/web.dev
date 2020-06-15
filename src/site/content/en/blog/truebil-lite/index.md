@@ -16,8 +16,7 @@ description: |
   This case study explains how the Truebil team increased conversions and
   engagement by optimizing their web app for speed and reliability.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
-  - fast
+  - blog # blog is a required tag for the article to show up in the blog.
   - reliable
   - e-commerce
   - case-study

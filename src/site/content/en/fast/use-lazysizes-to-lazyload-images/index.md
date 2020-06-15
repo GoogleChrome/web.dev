@@ -11,6 +11,8 @@ date: 2018-11-05
 updated: 2019-04-10
 codelabs:
   - codelab-use-lazysizes-to-lazyload-images
+tags:
+  - performance
 ---
 
 {% Aside 'note' %}

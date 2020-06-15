@@ -48,4 +48,4 @@ It's just an opportunity to discover a useful API that can help you measure your
 
 - [Source code for **User Timing marks and measures** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/user-timings.js)
 - [User Timing API (MDN)](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API)
-- [User Timing API (HTML5 Rocks)](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API)
+- [User Timing API (HTML5 Rocks)](https://www.html5rocks.com/en/tutorials/webperformance/usertiming/)

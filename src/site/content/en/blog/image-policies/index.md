@@ -13,7 +13,7 @@ description: |
   majority of the downloaded bytes on a website. Use the new feature
   policies to identify oversized images.
 tags:
-  - post
+  - blog
   - images
   - origin-trials
 ---

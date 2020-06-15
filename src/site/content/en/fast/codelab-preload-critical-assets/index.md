@@ -8,6 +8,8 @@ description: |
   and prefetching resources.
 date: 2018-04-24
 glitch: preload-critical-assets
+tags:
+  - performance
 ---
 
 {% include 'content/devtools-headsup.njk' %}

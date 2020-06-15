@@ -9,6 +9,8 @@ description: |
   PNG images for faster download.
 glitch: imagemin-webpack
 related_post: use-imagemin-to-compress-images
+tags:
+  - performance
 ---
 
 ## Set up the Imagemin webpack plugin

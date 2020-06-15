@@ -4,7 +4,7 @@ subhead: Web apps should be able to do anything native apps can. Google wants to
 date: 2018-11-12
 updated: 2020-04-13
 tags:
-  - post
+  - blog
   - capabilities
   - fugu
 ---

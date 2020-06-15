@@ -1,7 +1,9 @@
 import {store} from './store';
 import {saveUserUrl} from './fb';
 import {runLighthouse, fetchReports} from './lighthouse-service';
+import lang from './utils/language';
 import {localStorage} from './utils/storage';
+import cookies from 'js-cookie';
 
 export const clearSignedInState = store.action(() => {
   const {isSignedIn} = store.getState();
@@ -180,5 +182,38 @@ export const setUserAcceptsCookies = store.action(() => {
     // snackbar to re-render and break the animation.
     // Instead, snackbarType is allowed to stick around and future updates can
     // overwrite it.
+  };
+});
+
+function getCanonicalPath(path) {
+  const parts = path.split('/');
+  if (parts[1] && lang.isValidLanguage(parts[1])) {
+    parts.splice(1, 1);
+  }
+  return parts.join('/');
+}
+
+export const checkUserPreferredLanguage = store.action(
+  ({userPreferredLanguage}) => {
+    if (!userPreferredLanguage) {
+      return {
+        userPreferredLanguage: cookies.get('preferred_lang'),
+      };
+    }
+    return {userPreferredLanguage};
+  },
+);
+
+export const setLanguage = store.action((state, preferredLanguage) => {
+  const options = {
+    expires: 10 * 365, // 10 years
+    samesite: 'strict',
+  };
+  cookies.set('preferred_lang', preferredLanguage, options);
+  if (preferredLanguage !== state.userPreferredLanguage) {
+    location.pathname = getCanonicalPath(location.pathname);
+  }
+  return {
+    userPreferredLanguage: preferredLanguage,
   };
 });

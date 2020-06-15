@@ -10,7 +10,7 @@ alt: Speedometer on a retro car
 description: |
   For Google I/O 2019, we introduced three new Web Performance initiatives that we hope will lead to better user experiences for everyone.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - performance
 ---
 

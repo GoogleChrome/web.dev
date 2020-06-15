@@ -10,7 +10,7 @@ description: |
 date: 2019-06-14
 updated: 2020-04-03
 tags:
-  - post
+  - blog
   - performance
 ---
 

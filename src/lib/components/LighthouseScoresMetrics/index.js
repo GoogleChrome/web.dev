@@ -22,10 +22,14 @@ class LighthouseScoresMetrics extends BaseElement {
 
   render() {
     let inner = '';
+    let hasVitals = false;
 
     if (this.lhr) {
       const metricToHtml = (metric) => {
         const audit = this.lhr.audits[metric.id];
+        if (!audit) {
+          return '';
+        }
 
         let label = null;
         if (audit.score >= 0.9) {
@@ -36,9 +40,12 @@ class LighthouseScoresMetrics extends BaseElement {
           label = 'fail';
         }
 
+        const vitalsClass = metric.vitals ? 'lh-vital' : '';
+        hasVitals = hasVitals || metric.vitals;
+
         return html`
           <div class="lh-metrics-table__metric">
-            <span>${metric.title}</span>
+            <span class="${vitalsClass}">${metric.title}</span>
             <span
               class="lh-metrics-table__score lh-score--${label}"
               aria-label="${label} score: ${audit.displayValue}"
@@ -54,7 +61,15 @@ class LighthouseScoresMetrics extends BaseElement {
     }
 
     return html`
-      <div class="lh-metrics-table">${inner}</div>
+      <div class="lh-metrics-container">
+        <div class="lh-metrics-table">${inner}</div>
+        <div class="lh-metrics-vitals" ?hidden=${!hasVitals}>
+          <span
+            >Core Web Vitals assessment. To learn more, see
+            <a href="/vitals">Web Vitals</a>.</span
+          >
+        </div>
+      </div>
     `;
   }
 }

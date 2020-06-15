@@ -13,7 +13,7 @@ description: |
   WebSocketStream integrates streams with the WebSocket API.
   This allows your app to apply backpressure to received messages.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - backpressure
   - websocket
   - websocketstream

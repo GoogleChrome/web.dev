@@ -12,7 +12,7 @@ alt: A screenshot of PROXX
 description: |
   Feature phones are making a resurgence and are popular, especially in emerging markets where 2G is the norm. Here are our learnings from making PROXX, a mobile Minesweeper clone, load fast on feature phones on 2G.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - performance
 ---
 
@@ -22,7 +22,7 @@ At Google I/O 2019 Mariko, Jake, and I shipped [PROXX], a modern Minesweeper-clo
 * Weak CPUs
 * Weak or non-existent GPUs
 * Small screens without touch input
-* Very limited amounts of memory 
+* Very limited amounts of memory
 
 But they run a modern browser and are very affordable. For this reason, feature phones are making a resurgence in emerging markets. Their price point allows a whole new audience, who previously couldn't afford it, to come online and make use of the modern web. **[For 2019 it is projected that around 400 million feature phones will be sold in India alone][400mil]**, so users on feature phones might become a significant portion of your audience. In addition to that, connection speeds akin to 2G are the norm in emerging markets. How did we manage to make PROXX work well under feature phone conditions?
 

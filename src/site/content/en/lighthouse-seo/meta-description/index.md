@@ -9,7 +9,7 @@ web_lighthouse:
   - meta-description
 ---
 
-The `<meta name=description>` element provides a summary of a page's content
+The `<meta name="description">` element provides a summary of a page's content
 that search engines include in search results. A high-quality, unique meta
 description makes your page appear more relevant and can increase your search
 traffic.
@@ -58,14 +58,16 @@ If appropriate, include clearly tagged facts in the descriptions. For example:
 
 Here are examples of good and bad descriptions:
 
+{% Compare 'worse' %}
 ```html
 <meta name="description" content="A donut recipe.">
 ```
-
-{% Compare 'worse' %}
+{% CompareCaption %}
 Too vague.
+{% endCompareCaption %}
 {% endCompare %}
 
+{% Compare 'better' %}
 ```html
 <meta
   name="description"           
@@ -73,9 +75,9 @@ Too vague.
            makes a sticky, sweet treat with just a hint
            of salt that you'll keep coming back for.">
 ```
-
-{% Compare 'better' %}
+{% CompareCaption %}
 Descriptive yet concise.
+{% endCompareCaption %}
 {% endCompare %}
 
 See Google's [Create good titles and snippets in Search Results](https://support.google.com/webmasters/answer/35624#1)

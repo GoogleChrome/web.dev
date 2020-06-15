@@ -8,6 +8,8 @@ description: |
   page's performance is and how to improve it. In this guide, learn how to use
   PSI to extract insights from CrUX and better understand the user experience.
 date: 2018-11-05
+tags:
+  - performance
 ---
 
 [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)

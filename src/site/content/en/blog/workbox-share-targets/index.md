@@ -12,7 +12,7 @@ date: 2019-12-19
 hero: hero.jpg
 alt: Two pairs of hands holding a cup of tomatoes.
 tags:
-  - post
+  - blog
   - capabilities
   - fugu
   - workbox

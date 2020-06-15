@@ -4,7 +4,7 @@ title: Provide a custom install experience
 authors:
   - petelepage
 date: 2020-02-14
-updated: 2020-02-24
+updated: 2020-05-26
 description: |
   Use the beforeinstallprompt event to provide a custom, seamless install
   experience for your users.
@@ -45,6 +45,15 @@ in-app install flow:
 3. Alert the user that your PWA is installable, and provide a button or other
    element to start the in-app installation flow.
 
+{% Aside %}
+  The `beforeinstallprompt` event, and the `appinstalled` event have been moved
+  from the Web App Manifest spec to their own
+  [incubator](https://github.com/WICG/beforeinstallprompt). The Chrome team
+  remains committed to supporting them, and has no plans to remove or deprecate
+  support. **web.dev continues to recommend using them to provide a customized
+  install experience.**
+{% endAside %}
+
 ### Listen for the `beforeinstallprompt` event {: #beforeinstallprompt }
 
 If your Progressive Web App meets the required [installation criteria](/install-criteria/),
@@ -52,7 +61,7 @@ the browser fires a `beforeinstallprompt` event. Save a reference to the
 event, and update your user interface to indicate that the user can install
 your PWA. This is highlighted below.
 
-```js/5-8
+```js
 let deferredPrompt;
 
 window.addEventListener('beforeinstallprompt', (e) => {
@@ -98,7 +107,7 @@ buttonInstall.addEventListener('click', (e) => {
     } else {
       console.log('User dismissed the install prompt');
     }
-  })
+  });
 });
 ```
 
@@ -123,7 +132,8 @@ your PWA.
 
 ```js
 window.addEventListener('appinstalled', (evt) => {
-  console.log('a2hs installed');
+  // Log install to analytics
+  console.log('INSTALL: Success');
 });
 ```
 
@@ -135,7 +145,46 @@ apply different styles depending on how the app was launched. For example,
 always hide the install button and provide a back button when launched as an
 installed PWA.
 
-### Update UI based on how the PWA was launched
+### Track how the PWA was launched
+
+To track how users launch your PWA, use `matchMedia()` to test the
+`display-mode` media query. Safari on iOS doesn't support
+this yet, so you must check `navigator.standalone`, it returns a boolean
+indicating whether the browser is running in standalone mode.
+
+```js
+window.addEventListener('DOMContentLoaded', () => {
+  let displayMode = 'browser tab';
+  if (navigator.standalone) {
+    displayMode = 'standalone-ios';
+  }
+  if (window.matchMedia('(display-mode: standalone)').matches) {
+    displayMode = 'standalone';
+  }
+  // Log launch display mode to analytics
+  console.log('DISPLAY_MODE_LAUNCH:', displayMode);
+});
+```
+
+### Track when the display mode changes
+
+To track if the user changes between `standalone`, and `browser tab`, listen for
+changes to the `display-mode` media query.
+
+```js
+window.addEventListener('DOMContentLoaded', () => {
+  window.matchMedia('(display-mode: standalone)').addListener((evt) => {
+    let displayMode = 'browser tab';
+    if (evt.matches) {
+      displayMode = 'standalone';
+    }
+    // Log display mode change to analytics
+    console.log('DISPLAY_MODE_CHANGED', displayMode);
+  });
+});
+```
+
+### Update UI based on the current display mode
 
 To apply a different background color for a PWA when launched as an installed
 PWA, use conditional CSS:
@@ -146,25 +195,6 @@ PWA, use conditional CSS:
     background-color: yellow;
   }
 }
-```
-
-### Track how the PWA was launched
-
-To track how users launch your PWA, use `matchMedia()` to test the
-`display-mode` media query. Unfortunately, Safari on iOS doesn't support
-this yet, so you must check `navigator.standalone`, it returns a boolean
-indicating whether the browser is running in standalone mode.
-
-```js
-window.addEventListener('load', () => {
-  if (navigator.standalone) {
-    console.log('Launched: Installed (iOS)');
-  } else if (matchMedia('(display-mode: standalone)').matches) {
-    console.log('Launched: Installed');
-  } else {
-    console.log('Launched: Browser Tab');
-  }
-});
 ```
 
 ## Updating your app's icon and name

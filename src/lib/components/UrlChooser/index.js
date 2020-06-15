@@ -37,6 +37,7 @@ class UrlChooser extends BaseElement {
             ?disabled=${this.disabled}
             type="url"
             class="lh-input"
+            name="url"
             placeholder="Enter a web page URL"
             pattern="https?://.*"
             minlength="7"
@@ -44,7 +45,10 @@ class UrlChooser extends BaseElement {
           />
           <button
             ?disabled=${this.disabled}
-            class="lh-enterurl__close"
+            class="lh-enterurl__close gc-analytics-event"
+            data-category="web.dev"
+            data-label="measure, remove url"
+            data-action="click"
             aria-label="Remove URL"
             @click=${this.onClearInput}
           ></button>
@@ -52,14 +56,20 @@ class UrlChooser extends BaseElement {
         <div class="lh-controls">
           <button
             ?disabled=${this.disabled}
-            class="w-button w-button--secondary"
+            class="w-button w-button--secondary gc-analytics-event"
+            data-category="web.dev"
+            data-label="measure, switch url"
+            data-action="click"
             @click=${this.onSwitchUrl}
           >
             Switch URL
           </button>
           <button
             ?disabled=${this.disabled}
-            class="w-button w-button--primary"
+            class="w-button w-button--primary gc-analytics-event"
+            data-category="web.dev"
+            data-label="measure, run audit"
+            data-action="click"
             id="run-lh-button"
             @click=${this.onRequestAudit}
           >
@@ -70,7 +80,7 @@ class UrlChooser extends BaseElement {
     `;
   }
 
-  firstUpdated(changedProperties) {
+  firstUpdated() {
     this._urlInput = this.renderRoot.querySelector('input[type="url"]');
     this._runLighthouseButton = this.renderRoot.querySelector('#run-lh-button');
   }
@@ -97,7 +107,7 @@ class UrlChooser extends BaseElement {
         // AND the user hasn't typed anything, reset element with URL
         input.value = url;
         this.switching = false;
-      } else if (url == null && !this.switching) {
+      } else if (url === null && !this.switching) {
         // if the user has signed out, clear the href and enter switching mode
         input.value = null;
         this.switching = true;
@@ -113,7 +123,8 @@ class UrlChooser extends BaseElement {
     // the <input /> inside this element.
     this.fixUpUrl();
     if (!this._urlInput.validity.valid) {
-      const detail = `Invalid URL. Please enter a full URL starting with https://.`;
+      const detail =
+        'Invalid URL. Please enter a full URL starting with https://.';
       const event = new CustomEvent('web-error', {bubbles: true, detail});
       this.dispatchEvent(event);
       return;

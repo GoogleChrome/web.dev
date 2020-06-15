@@ -10,7 +10,7 @@ alt: A pile of gears.
 description: |
   We introduced a new Googlebot at Google I/O and took the opportunity to discuss improvements and best practices for making JavaScript web apps work well with Google Search.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - seo
   - discoverability
   - javascript

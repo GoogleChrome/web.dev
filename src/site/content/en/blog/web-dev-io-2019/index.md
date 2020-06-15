@@ -9,7 +9,7 @@ description: |
   updates including a refreshed design, more Lighthouse docs, and a brand
   new blog.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
 ---
 
 With I/O right around the corner, we wanted to sneak out a quick update to let
