@@ -11,7 +11,7 @@ description: |
   contacts retrieval, periodic background sync, screen wake lock, web sharing features,
   and many more.
 date: 2020-06-12
-updated: 2020-06-12
+updated: 2020-06-15
 tags:
   - blog
   - capabilities
@@ -369,7 +369,7 @@ Now the file is ready to be preserved for the eternity.
 
 <figure class="w-figure">
   <img class="w-screenshot"
-       src="10000201000009C4000005DB01941257D7BE6A85.png"
+       src="10000201000009C4000005DBCBE1B58EC828BB29.png"
        alt="Fugu Greetings app with the modified image.">
   <figcaption class="w-figcaption">
     Saving the modified image to a new file.
@@ -839,7 +839,7 @@ if ('Notification' in window && 'showTrigger' in Notification.prototype) {
 }
 ```
 
-When I check the Reminder checkbox in Fugu Greetings, a prompt asks 
+When I check the Reminder checkbox in Fugu Greetings, a prompt asks
 me when I want to be reminded to finish my greeting card.
 
 <figure class="w-figure">
