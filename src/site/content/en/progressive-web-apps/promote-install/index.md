@@ -96,9 +96,9 @@ who aren't interested in installation.
 ### Simple install button {: #simple-button }
 
 The simplest possible UX is to include an 'Install' or 'Get app' button at an
-appropriate location in your web content. Ensure the button doesn’t block
+appropriate location in your web content. Ensure the button doesn't block
 other important functionality and is out of the way of the user's flow in
-the user’s journey for your application.
+the user's journey for your application.
 
 <figure class="w-figure">
   <img src="simple-button_desktop.png" alt="Custom install button">

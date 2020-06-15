@@ -28,8 +28,8 @@ it's possible to provide your own custom install flow, directly within your app.
   </figcaption>
 </figure>
 
-When considering whether to promote install, it’s best to think about how
-users typically use your PWA.  For example, if there’s a set of users who
+When considering whether to promote install, it's best to think about how
+users typically use your PWA.  For example, if there's a set of users who
 use your PWA multiple times in a week, these users might benefit from the
 added convenience of launching your app from a smartphone homescreen or
 from the Start menu in a desktop operating system.  Some productivity and
