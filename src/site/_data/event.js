@@ -194,7 +194,7 @@ const eventData = [
         speaker: 'nattestad',
         title: 'Zoom on Web: Getting Connected with Advanced Web Technology',
         abstract: [
-          'Now more than ever, having a dependable and performant video connection to your friends and family is critical. The Chrome team has been collaborating with Zoom over the past few months to enable the development of a truly modern web based.',
+          'Now more than ever, having a dependable and performant video chat connection to your friends and family is critical. The Chrome team has been collaborating with Zoom over the past few months to explore advanced new APIs that will allow for a dramatically improved web experience.',
         ],
       },
     ],
