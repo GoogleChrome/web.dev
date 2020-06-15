@@ -4,7 +4,7 @@ title: First Input Delay (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-05-27
+updated: 2020-06-15
 description: |
   This post introduces the First Input Delay (FID) metric and explains
   how to measure it
@@ -250,12 +250,15 @@ entries, calculates FID, and logs the value to the console:
 {% include 'content/metrics/first-hidden-time.njk' %}
 {% include 'content/metrics/send-to-analytics.njk' %}
 {% include 'content/metrics/performance-observer-try.njk' %}
-  function onFirstInputEntry(entry) {
+  function onFirstInputEntry(entry, po) {
     // Only report FID if the page wasn't hidden prior to
     // the entry being dispatched. This typically happens when a
     // page is loaded in a background tab.
     if (entry.startTime < firstHiddenTime) {
       const fid = entry.processingStart - entry.startTime;
+
+      // Disconnect the observer.
+      po.disconnect();
 
       // Report the FID value to an analytics endpoint.
       sendToAnalytics({fid});

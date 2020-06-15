@@ -4,7 +4,7 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-05-29
+updated: 2020-06-15
 description: |
   This post introduces the Largest Contentful Paint (LCP) metric and explains
   how to measure it
@@ -64,7 +64,8 @@ of a page is loaded is to look at when the largest element was rendered.
 ## What is LCP?
 
 The Largest Contentful Paint (LCP) metric reports the render time of the largest
-content element visible within the viewport.
+[image or text block](#what-elements-are-considered) visible within the
+viewport.
 
 <picture>
   <source srcset="../vitals/lcp_8x2.svg" media="(min-width: 640px)">
@@ -73,7 +74,6 @@ content element visible within the viewport.
       alt="Good LCP values are 2.5 seconds, poor values are greater than 4.0
             seconds and anything in between needs improvement">
 </picture>
-
 
 ### What is a good LCP score?
 
@@ -171,8 +171,16 @@ will also be reported.
 
 If a page removes an element from the DOM, that element will no longer be
 considered. Similarly, if an element's associated image resource changes (e.g.
-changing `img.src` via JavaScript), then that element will stop be considered
+changing `img.src` via JavaScript), then that element will stop being considered
 until the new image loads.
+
+{% Aside %}
+  In the future, elements removed from the DOM may still be considered as LCP
+  candidates. [Research is currently being
+  done](https://github.com/WICG/largest-contentful-paint/issues/41#issuecomment-583589387)
+  to assess the impact of this change. You can follow the metrics
+  [CHANGELOG](http://bit.ly/chrome-speed-metrics-changelog) to stay up-to-date.
+{% endAside %}
 
 The browser will stop reporting new entries as soon as the user interacts with
 the page (via a tap, scroll, or keypress), as user interaction often changes
@@ -325,8 +333,9 @@ the console:
     if (document.visibilityState === 'hidden') {
       removeEventListener('visibilitychange', fn, true);
 
-      // Force any pending records to be dispatched.
-      po.takeRecords().forEach(updateLCP);
+      // Force any pending records to be dispatched and disconnect the observer.
+      po.takeRecords().forEach((entry) => updateLCP(entry, po));
+      po.disconnect();
 
       // If LCP is set, report it to an analytics endpoint.
       if (lcp) {

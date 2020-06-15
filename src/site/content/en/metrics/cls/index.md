@@ -352,8 +352,9 @@ changes to hidden:
   // page's lifecycle state changes to hidden.
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'hidden') {
-      // Force any pending records to be dispatched.
-      po.takeRecords().forEach(onLayoutShiftEntry);
+      // Force any pending records to be dispatched and disconnect the observer.
+      po.takeRecords().forEach((entry) => onLayoutShiftEntry(entry, po));
+      po.disconnect();
 
       // Report the CLS value to an analytics endpoint.
       sendToAnalytics({cls});
