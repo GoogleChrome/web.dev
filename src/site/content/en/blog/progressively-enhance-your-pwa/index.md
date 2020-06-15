@@ -817,6 +817,19 @@ if (targetDate) {
 }
 ```
 
+When a scheduled notification triggers in Fugu Greetings,
+it is shown just like any other notification, but as I wrote before,
+it didn't require a network connection.
+
+<figure class="w-figure">
+  <img class="w-screenshot"
+       src="10000201000009C4000005E0B042853D0E77C225.png"
+       alt="macOS Notification Center showing a triggered notification from Fugu Greetings.">
+  <figcaption class="w-figcaption">
+    The triggered notification appears in the macOS Notification Center.
+  </figcaption>
+</figure>
+
 As everything else I have shown so far, this is a progressive enhancement,
 so the code is only conditionally loaded.
 
