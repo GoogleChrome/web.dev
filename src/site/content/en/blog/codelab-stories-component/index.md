@@ -318,7 +318,8 @@ from Material Design's [Easing](https://material.io/design/motion/speed.html#eas
 guide (see the *Accerlerated easing* section).
 
 {% Aside %}
-TODO(kayce): Explain the ampersand syntax
+  Check out [Nesting Selector: the `&` selector](https://drafts.csswg.org/css-nesting-1/#nest-selector)
+  for an explanation of `&.seen`.
 {% endAside %}
 
 If you've got a keen eye you probably noticed the `pointer-events: none`
