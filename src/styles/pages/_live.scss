@@ -176,6 +176,68 @@
   }
 }
 
+.w-event-carousel {
+  display: flex;
+  overflow-x: scroll;
+  // Firefox only
+  // sass-lint:disable no-misspelled-properties
+  scrollbar-color: $GREY_500;
+  scrollbar-width: thin;
+  // sass-lint:enable no-misspelled-properties
+
+  &::-webkit-scrollbar-track {
+    padding-top: 4px;
+  }
+
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $GREY_500;
+    border-radius: 8px;
+  }
+}
+
+.w-event-carousel__day {
+  color: $GREY_800;
+  font-family: $HEADLINE_FONT;
+  font-size: 14px;
+  font-weight: $FONT_WEIGHT_MEDIUM;
+  margin-right: 16px;
+  padding-bottom: 8px;
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    opacity: .9;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.w-event-carousel__thumbnail {
+  margin-bottom: 8px;
+  background-color: $GREY_200;
+  border-radius: 3px;
+  overflow: hidden;
+  width: 178px;
+  height: 110px;
+
+  > img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Need to put top margin on the tabs instead of bottom margin on the
+// carousel because bottom margin will affect the carousel's scroll bar.
+.w-event-carousel + .w-event-tabs {
+  margin-top: 34px;
+}
+
 web-tabs.w-event-tabs {
   --primary-color: #{$WEB_PRIMARY_COLOR};
   --hover-color: #{$GOOGLE_BLUE_50};
