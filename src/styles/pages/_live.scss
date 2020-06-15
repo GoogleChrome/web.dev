@@ -199,6 +199,11 @@ web-tabs.w-event-tabs {
     position: relative;
     display: flex;
     align-items: center;
+
+    &:hover,
+    &:focus-within {
+      background: rgba(0, 0, 0, .05);
+    }
   }
 
   .w-event-schedule__speaker {
@@ -236,6 +241,10 @@ web-tabs.w-event-tabs {
     display: inline-block;
     color: inherit;
 
+    &:hover {
+      text-decoration: none;
+    }
+
     span {
       z-index: 1;
       position: relative;
@@ -252,12 +261,6 @@ web-tabs.w-event-tabs {
       display: block;
       position: absolute;
       z-index: 0;
-    }
-
-    // When the link is hovered, highlight the whole row, even though the
-    // speakers' area isn't clickable.
-    &:hover::before {
-      background: rgba(0, 0, 0, .05);
     }
   }
 }
