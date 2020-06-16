@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Lazy-loading problems
+title: Lazy-loading best practices
 authors:
   - jeremywagner
   - rachelandrew
