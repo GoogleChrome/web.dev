@@ -27,5 +27,9 @@ module.exports = {
       title: 'How caching strategies work',
       pathItems: ['precache-with-workbox', 'runtime-caching-with-workbox'],
     },
+    {
+      title: 'Advanced Patterns',
+      pathItems: ['resilient-search-experiences'],
+    },
   ],
 };
