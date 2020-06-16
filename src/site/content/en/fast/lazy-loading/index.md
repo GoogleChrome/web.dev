@@ -83,7 +83,7 @@ of their money.
 resource is downloaded, the browser must decode it and render its content in the
 viewport.
 
-When we lazy-load images and video, we reduce initial page load time, initial
+Lazy-loading images and video reduces initial page load time, initial
 page weight, and system resource usage, all of which have positive impacts on
 performance.
 
