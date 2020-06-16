@@ -30,7 +30,7 @@ load time, but doesn't skimp on content.
 
 ## What is lazy-loading? {: #what }
 
-lazy-loading is a technique that defers loading of non-critical resources at page
+Lazy-loading is a technique that defers loading of non-critical resources at page
 load time. Instead, these non-critical resources are loaded at the moment of
 need. Where images are concerned, "non-critical" is often synonymous with
 "off-screen". If you've used Lighthouse and examined some opportunities for
