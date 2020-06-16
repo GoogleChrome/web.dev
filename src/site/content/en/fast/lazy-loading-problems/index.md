@@ -24,11 +24,10 @@ JavaScript, but you need to resist this temptation. Anything resting above the
 fold shouldn't be lazy-loaded. Such resources should be considered critical
 assets, and thus should be loaded normally.
 
-The primary argument for loading critical media resources the usual way in lieu
-of lazy-loading is that lazy-loading delays the loading of those resources until
-after the DOM is interactive when scripts have finished loading and begin
-execution. For images below the fold, this is fine, but it would be faster to
-load critical resources above the fold with a standard `<img>` element.
+Lazy-loading delays the loading of resources until after the DOM is interactive
+when scripts have finished loading and begin execution. For images below the
+fold, this is fine, but critical resources above the fold should be loaded with
+the standard `<img>` element so they're displayed as soon as possible.
 
 Of course, where the fold lies is not so clear these days when websites are
 viewed on so many screens of varying sizes. What lies above the fold on a laptop
