@@ -68,7 +68,7 @@ effect in browsers that don't support Intersection Observer.
 
 ## Layout shifting and placeholders {: #wrong-layout-shifting }
 
-lazy-loading media can cause shifting in the layout if placeholders aren't used.
+Lazy-loading media can cause [shifting in the layout](/cls) if placeholders aren't used.
 These changes can be disorienting for users and trigger expensive DOM layout
 operations that consume system resources and contribute to jank. At a minimum,
 consider using a solid color placeholder occupying the same dimensions as the
