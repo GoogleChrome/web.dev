@@ -42,8 +42,6 @@ export class BaseModalElement extends BaseElement {
 
     this.open_ = false;
     this.animatable = false;
-    // TODO(samthor): This sets properties/attributes on creation, and Chrome barfs.
-    // this.inert = true;
     this.overflow = false;
     this._triggerElement = null;
     this._parent = null;

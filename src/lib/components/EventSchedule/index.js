@@ -42,9 +42,15 @@ class EventSchedule extends HTMLElement {
     this._currentSession = null;
     this.onHashChange = this.onHashChange.bind(this);
     this.onClick = this.onClick.bind(this);
+
+    this.onModalAnimationEnd = this.onModalAnimationEnd.bind(this);
+    this._modalElement.addEventListener(
+      'animationend',
+      this.onModalAnimationEnd,
+    );
   }
 
-  _elementForHash(hash) {
+  _elementForHash(hash = window.location.hash) {
     const id = hash.substr(1);
     return (id && this.querySelector(`[data-session-id="${id}"]`)) || null;
   }
@@ -56,9 +62,7 @@ class EventSchedule extends HTMLElement {
    * If no hash is set, or no element is found, hides any modal.
    */
   onHashChange() {
-    const session = this.isConnected
-      ? this._elementForHash(window.location.hash)
-      : null;
+    const session = this.isConnected ? this._elementForHash() : null;
     if (session === this._currentSession) {
       return;
     }
@@ -66,7 +70,7 @@ class EventSchedule extends HTMLElement {
     this._currentSession = session;
     if (!session) {
       this._modalElement.open = false;
-      this._modalElement.remove();
+      // Our animationend handler, added above, clears the modal after its remove animation.
       return;
     }
 
@@ -81,6 +85,13 @@ class EventSchedule extends HTMLElement {
     this._modalElement.sessionRow = clone;
     this._modalElement.open = true;
     document.body.append(this._modalElement);
+  }
+
+  onModalAnimationEnd() {
+    // Don't remove the modal if it's been made open again.
+    if (!this._modalElement.open) {
+      this._modalElement.remove();
+    }
   }
 
   /**
@@ -108,7 +119,7 @@ class EventSchedule extends HTMLElement {
     // We clicked on a link that's on the same page but has a hash, so intercept
     // it if handled. We need this as otherwise a history stack event occurs.
 
-    const session = this._elementForHash(window.location.hash);
+    const session = this._elementForHash(ev.target.hash);
     if (!session) {
       return;
     }

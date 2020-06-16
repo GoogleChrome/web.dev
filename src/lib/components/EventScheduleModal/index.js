@@ -26,11 +26,11 @@ import {generateIdSalt} from '../../utils/generate-salt';
 class EventScheduleModal extends BaseModalElement {
   static get properties() {
     return {
-      sessionRow: Element,
-      _sessionName: String,
-      _authorsPart: Element,
-      _abstractPart: Element,
-      _titleId: String,
+      sessionRow: {type: Object},
+      _sessionName: {type: String},
+      _authorsPart: {type: Object},
+      _abstractPart: {type: Object},
+      _titleId: {type: String},
     };
   }
 
@@ -42,7 +42,7 @@ class EventScheduleModal extends BaseModalElement {
 
   shouldUpdate(changedProperties) {
     if (!changedProperties.has('sessionRow')) {
-      return false;
+      return super.shouldUpdate(changedProperties);
     }
 
     this._authorsPart = null;
@@ -72,6 +72,7 @@ class EventScheduleModal extends BaseModalElement {
   render() {
     return html`
       <div class="modal" aria-modal="true" aria-labelledby="${this._titleId}">
+        <h4>About this session</h4>
         <h2 id=${this._titleId}>${this._sessionName || '?'}</h2>
         ${this._authorsPart || ''}
         ${this._abstractPart || ''}
