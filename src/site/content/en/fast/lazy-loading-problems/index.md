@@ -7,7 +7,7 @@ authors:
 date: 2019-08-16
 updated: 2020-06-11
 description: |
-  This post details some of the potential pitfalls of lazy-loading.
+  This post details how to navigate the potential pitfalls of lazy-loading.
 tags:
   - performance
 ---
