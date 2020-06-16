@@ -158,7 +158,7 @@ but will need to be polyfilled before you can use it on older browsers.
 - [yall.js](https://github.com/malchata/yall.js) is a library I wrote that uses
 Intersection Observer and falls back to event handlers. It's compatible with IE11
 and major browsers.
-- If you're seeking a React-specific lazy-loading library, you might consider
+- If you need a React-specific lazy-loading library, you might consider
 [react-lazyload](https://github.com/jasonslyvia/react-lazyload). While it
 doesn't use Intersection Observer, it _does_ provide a familiar method of lazy
 loading images for those accustomed to developing applications with React.
