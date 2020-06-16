@@ -15,7 +15,7 @@ tags:
 While lazy-loading images and video have positive and measurable performance
 benefits, it's not a task to be taken lightly. If you get it wrong, there could
 be unintended consequences. As such, it's important to keep the following
-concerns in mind:
+concerns in mind.
 
 ## Mind the fold {: #wrong-fold }
 
