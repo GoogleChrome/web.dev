@@ -12,9 +12,6 @@ tags:
   - performance
 ---
 
-- [What is lazy-loading](#what)
-- [Why lazy-load images or video?](#why)
-- [Implementing lazy-loading](#implementing)
 
 The portion of
 [images](http://beta.httparchive.org/reports/state-of-images?start=earliest&end=latest)
