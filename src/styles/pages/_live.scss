@@ -182,17 +182,45 @@ web-tabs.w-event-tabs {
   --active-color: #{$GOOGLE_BLUE_100};
 }
 
-table.w-event-schedule {
-  // TODO(robdodson): The generic table has `min-width: 512px`, which extends over the side of
-  // small devices.
-  min-width: auto;
+.w-event-schedule {
+  // Forces a stacking context.
+  position: relative;
+  text-align: left;
+  z-index: 0;
 
-  .w-event-schedule__speaker {
-    min-width: 180px;
-    max-width: 50vw;
+  // Measures the width of the left-hand cell, containing speaker information.
+  // Uses a mix of fixed size (for small devices, down to 320px) and percentage
+  // (to give more space on larger screens).
+  $WIDTH_SPEAKER: calc(10% + 180px);
+
+  .w-event-schedule__row {
+    border-bottom: 1px solid #dadce0;
+    min-height: 48px;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &:hover,
+    &:focus-within {
+      background: rgba(0, 0, 0, .05);
+    }
   }
 
-  td {
+  .w-event-schedule__speaker {
+    width: #{$WIDTH_SPEAKER};
+
+    a {
+      z-index: 10;
+      position: relative;
+    }
+  }
+
+  .w-event-schedule__session {
+    flex-grow: 1;
+    width: 50%;
+  }
+
+  .w-event-schedule__cell {
     font-size: 14px;
     line-height: 20px;
     padding: 8px;
@@ -206,6 +234,34 @@ table.w-event-schedule {
     // TODO(samthor): This margin is unnessecary for our schedule, and
     // needlessly pads out each row.
     margin-bottom: 0;
+  }
+
+  .w-event-schedule__open {
+    pointer-events: auto;
+    display: inline-block;
+    color: inherit;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    span {
+      z-index: 1;
+      position: relative;
+    }
+
+    // This creates a large clickable area around the link itself, but which
+    // doesn't extend into the speakers area on the left.
+    &::before {
+      content: '';
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: block;
+      position: absolute;
+      z-index: 0;
+    }
   }
 }
 
