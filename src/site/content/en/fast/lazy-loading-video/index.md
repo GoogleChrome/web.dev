@@ -57,8 +57,8 @@ of video content. [_Fast Playback with Video
 Preload_](https://developers.google.com/web/fundamentals/media/fast-playback-with-video-preload) may give you
 some ideas and insight into working with video playback in JavaScript.
 
-Unfortunately, it doesn't prove useful when we want to use video in place of
-animated GIFs, which we'll cover next.
+Unfortunately, it doesn't prove useful when you want to use video in place of
+animated GIFs, which is covered next.
 
 ## For video acting as an animated GIF replacement {: #video-gif-replacement }
 
