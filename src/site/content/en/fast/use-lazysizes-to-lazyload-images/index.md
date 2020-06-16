@@ -21,7 +21,7 @@ tags:
   lazysizes as a fallback for browsers that do not yet support it.
 {% endAside %}
 
-**lazy-loading** is the strategy of loading resources as they are needed, rather
+**Lazy-loading** is the strategy of loading resources as they are needed, rather
 than in advance. This approach frees up resources during the initial page load
 and avoids loading assets that are never used.
 
