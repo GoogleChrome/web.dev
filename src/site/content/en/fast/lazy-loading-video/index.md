@@ -148,7 +148,7 @@ Using this method, you have a video solution that emulates animated GIF behavior
 but doesn't incur the same intensive data usage as animated GIFs do,
 and you can lazy-load that content.
 
-## lazy-loading libraries {: #libraries }
+## Lazy-loading libraries {: #libraries }
 
 The following libraries can help you to lazy-load video:
 
