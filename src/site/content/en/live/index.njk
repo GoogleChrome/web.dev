@@ -83,7 +83,10 @@ date: 2020-06-31
     </div>
 
     <div class="w-event-section__column-right w-event-section__column-right__schedule">
-      {% EventTable event, collections.authors %}
+      {% if event.isDuringEvent or event.isPostEvent %}
+        {# Include carousel #}
+      {% endif %}
+      {% EventTable event.days, collections.authors %}
     </div>
 
   </section>
@@ -128,3 +131,7 @@ date: 2020-06-31
   </section>
 
 </div>
+
+<code id="event-data" style="display: none;">
+  {{ event.days | dump | safe }}
+</code>
