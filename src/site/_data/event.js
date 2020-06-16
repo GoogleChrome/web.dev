@@ -28,7 +28,7 @@ const eventData = [
         speaker: 'dalmaer',
         title: 'Welcome to Day One',
         abstract: [
-          "On day 1, we'll welcome developers, especially from the Americas, and address some of the most pertinent events that have affected us as a community and society. We'll also cover some of the key updates made to the platform and tools with some guest speakers from the community.",
+          "On day 1, we kick things off by sharing why we are coming together as a community, including a guest speaker from CA.gov. We'll then cover some of the key updates made to the platform around performance, security and privacy, as well as a look at build tools and rich content.",
           'Special Guest: Aaron Hans, Tech lead, CA.Gov',
         ],
       },
@@ -106,7 +106,7 @@ const eventData = [
         speaker: 'dalmaer',
         title: 'Day Two Opening Note',
         abstract: [
-          "On day 2, we travel virtually to an EMEA friendly timezone and welcome all developers who can join us real time. We'll focus the second day opener on success stories from Europe, share more updates from our side and bring some very special guests from Firefox to share their own updates.",
+          "On day 2, we travel virtually to an EMEA friendly timezone and welcome all developers who can join us real time. We'll dive into the top pain points and how we are looking to address them, the state of CSS and layout, and the latest on developers tools that you use every day, including some very special guests from Mozilla to share their own updates.",
           'Special Guests: Kadir Topal & Victoria Wang, Firefox',
         ],
       },
@@ -208,7 +208,7 @@ const eventData = [
         speaker: 'dalmaer',
         title: 'Day Three Opening Note',
         abstract: [
-          'Day 3 will have us move to the Asia and Australia continents where we greet our developers with inspirational stories of the ecosystem stepping in times of crisis and using the platform for good, and continue our saga of updates and news with a special guest from the Vue.js world.',
+          'Day 3 will have us move to the Asia and Australia continents where we we will get insights from Evan You, the founder of Vue.js, share the latest on PWA and new capabilities that allow you to build rich web applications, and show how you can understand your applications deeply through the latest updates to Lighthouse.',
           'Special guest: Evan You, Vue.js',
         ],
       },
