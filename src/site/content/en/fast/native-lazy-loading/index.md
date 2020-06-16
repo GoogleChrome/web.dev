@@ -42,7 +42,7 @@ At the time of this update (April 2020) native lazy-loading is supported in Chro
 browsers and Firefox.
 
 See the `loading` field of MDN's
-[Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Browser_compatibility)
+[browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Browser_compatibility)
 table for updates.
 
 ## Why native lazy-loading?
