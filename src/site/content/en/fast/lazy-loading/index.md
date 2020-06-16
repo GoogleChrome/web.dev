@@ -101,7 +101,7 @@ There are also a number of existing libraries to help you to do this.
 See the guides on this site for full details of all of these approaches:
 
 - [Lazy-loading images](/lazy-loading-images/)
-- [Lazy-loading-video](/lazy-loading-video/)
+- [Lazy-loading video](/lazy-loading-video/)
 
 Also, we have compiled a list of [potential issues with lazy-loading](/lazy-loading-problems),
 and things to watch out for in your implementation.
