@@ -12,11 +12,10 @@ tags:
   - performance
 ---
 
-As with [image elements](/lazy-loading-images), you can also lazy-load video. When loading video in
-normal circumstances, we do so using the `<video>` element (although [an
+As with [image elements](/lazy-loading-images), you can also lazy-load video. Videos are commonly loaded with the `<video>` element (although [an
 alternate method using
 `<img>`](https://calendar.perfplanet.com/2017/animated-gif-without-the-gif/) has
-emerged with limited implementation). _How_ we lazy-load `<video>` depends on the
+emerged with limited implementation). _How_ to lazy-load `<video>` depends on the
 use case, though. Let's discuss a couple of scenarios that each require a
 different solution.
 
