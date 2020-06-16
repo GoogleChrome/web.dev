@@ -68,8 +68,7 @@ the range of several megabytes of data. Videos of similar visual quality tend to
 be far smaller.
 
 Using the `<video>` element as a replacement for animated GIF is not as
-straightforward as the `<img>` element. Inherent in animated GIFs are these
-three behaviors:
+straightforward as the `<img>` element. Animated GIFs have three characteristics:
 
 1. They play automatically when loaded.
 2. They loop continuously ([though that's not always the
