@@ -104,9 +104,9 @@ matters into your own hands. To start, modify your `<video>` markup accordingly:
 You'll notice the addition of the [`poster`
 attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attr-poster),
 which lets you specify a placeholder to occupy the `<video>` element's space
-until the video is lazy-loaded. As with our [`<img>` lazy-loading examples](/lazy-loading-images/),
- we stash the video URL in the `data-src` attribute on each `<source>`
-element. From there, we'll use some JavaScript similar to the earlier
+until the video is lazy-loaded. As with the [`<img>` lazy-loading examples](/lazy-loading-images/),
+ stash the video URL in the `data-src` attribute on each `<source>`
+element. From there, use JavaScript code similar to the
 Intersection Observer-based image lazy-loading examples:
 
 ```javascript
