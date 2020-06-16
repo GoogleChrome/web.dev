@@ -164,5 +164,4 @@ doesn't use Intersection Observer, it _does_ provide a familiar method of lazy
 loading images for those accustomed to developing applications with React.
 
 Each of these lazy-loading libraries is well documented, with plenty of markup
-patterns for your various lazy-loading endeavors. If you're not one to tinker,
-grab a library and go. It will take the least amount of effort.
+patterns for your various lazy-loading endeavors.
