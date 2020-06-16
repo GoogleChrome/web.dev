@@ -90,7 +90,7 @@ There are a number of ways to implement lazy-loading.
 Your choice of solution must take into account the browsers you support,
 and also what you are trying to lazy-load.
 
-Modern browsers implement native lazy-loading, which can be enabled using the `loading` attribute on images and iframes.
+Modern browsers implement [native lazy-loading](/native-lazy-loading/), which can be enabled using the `loading` attribute on images and iframes.
 To provide compatibility with older browsers
 or to perform lazy-loading on elements without native lazy-loading
 you can implement a solution with your own JavaScript.
