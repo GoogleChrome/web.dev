@@ -321,7 +321,7 @@ was called.
 
 The message must adhere to the following formatting:
 
-* The origin part of the URL of the website that invoked the API must be
+* The host part of the URL of the website that invoked the API must be
   preceded by `@`.
 * The URL must contain a pound sign ('`#`') followed by the OTP.
 * Optionally, the message may contain additional text for the user.

@@ -2,7 +2,7 @@
 layout: handbook
 title: Images and video
 date: 2019-06-26
-updated: 2020-05-15
+updated: 2020-06-11
 description: |
   Learn how to create the Markdown for images and video for web.dev.
 ---
@@ -251,7 +251,19 @@ To take a screenshot on Mac:
 
 ### Video hosted on YouTube
 
-To embed a YouTube video, use the web.dev `YouTube` [component](/handbook/web-dev-components).
+To embed a YouTube video, use the `YouTube` component.
+
+```text
+{% raw %}{% YouTube 'your-video-id', 'optional-start-time' %}{% endraw %}
+```
+
+{% YouTube 'QDljY2I1Pfw' %}
+
+{% Aside %}
+The `optional-start-time` argument should be a single number, e.g. '473'.
+You can get this number by clicking the **Share** button on YouTube and
+checking the **Start at** box.
+{% endAside %}
 
 ### Video hosted on web.dev
 
