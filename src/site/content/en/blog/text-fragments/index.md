@@ -7,8 +7,8 @@ subhead: |
   and/or bring it to the user's attention.
 authors:
   - thomassteiner
-date: 2020-06-09
-updated: 2020-06-09
+date: 2020-06-17
+updated: 2020-06-17
 hero: hero.jpg
 alt:
 description: |
@@ -278,14 +278,14 @@ especially when it comes to making sure they are unique.
 If you really want to, the specification has some tips and lists the exact
 [steps for generating Text Fragment URLs](https://wicg.github.io/ScrollToTextFragment/#generating-text-fragment-directives).
 We provide a browser extension called
-[Link to Text Fragment](https://chrome.google.com/webstore/detail/pbcodcjpfjdpcineamnnmbkkmkdpajjg/)
+[Link to Text Fragment](https://chrome.google.com/webstore/detail/link-to-text-fragment/pbcodcjpfjdpcineamnnmbkkmkdpajjg)
 that lets you link to any text by selecting it, and then clicking "Copy Link to Selected Text"
 in the context menu.
 
 <figure class="w-figure">
   <img src="extension.png" alt="" class="w-screenshot" width="100%">
   <figcaption class="w-figcaption">
-    <a href="https://chrome.google.com/webstore/detail/pbcodcjpfjdpcineamnnmbkkmkdpajjg/">
+    <a href="https://chrome.google.com/webstore/detail/link-to-text-fragment/pbcodcjpfjdpcineamnnmbkkmkdpajjg">
       Link to Text Fragment
     </a>
     browser extension.
@@ -459,7 +459,7 @@ I hope you start
 [using Text Fragment URLs](https://blog.chromium.org/2019/12/chrome-80-content-indexing-es-modules.html#:~:text=Text%20URL%20Fragments&text=text,-parameter&text=:~:text=On%20islands,%20birds%20can%20contribute%20as%20much%20as%2060%%20of%20a%20cat's%20diet)
 and find them as useful as I do.
 Be sure to install the
-[Link to Text Fragment](https://chrome.google.com/webstore/detail/pbcodcjpfjdpcineamnnmbkkmkdpajjg/)
+[Link to Text Fragment](https://chrome.google.com/webstore/detail/link-to-text-fragment/pbcodcjpfjdpcineamnnmbkkmkdpajjg)
 browser extension.
 
 ## Related links
