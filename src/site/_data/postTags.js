@@ -27,6 +27,8 @@ const tags = {
   },
   capabilities: {
     title: 'Capabilities',
+    description:
+      'Our latest news, updates, and stories about new web capabilities (aka Project Fugu).',
   },
   'case-study': {
     title: 'Case Study',
@@ -86,10 +88,6 @@ const tags = {
   },
   forms: {
     title: 'Forms',
-  },
-  fugu: {
-    title: 'Fugu',
-    description: 'Our latest news, updates, and stories about Fugu.',
   },
   games: {
     title: 'Games',
@@ -172,6 +170,8 @@ const tags = {
   },
   'progressive-web-apps': {
     title: 'Progressive Web Apps',
+    description:
+      'Our latest news, updates, and stories about Progressive Web Apps.',
   },
   puppeteer: {
     title: 'Puppeteer',

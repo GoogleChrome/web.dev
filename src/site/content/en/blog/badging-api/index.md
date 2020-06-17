@@ -9,11 +9,9 @@ updated: 2020-06-04
 tags:
   - blog
   - capabilities
-  - fugu
   - badging
   - progressive-web-apps
   - notifications
-  - origin-trial
 hero: hero.jpg
 alt: Phone showing several notification badges
 origin_trial:

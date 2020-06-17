@@ -16,8 +16,6 @@ origin_trial:
 tags:
   - blog
   - capabilities
-  - fugu
-  - behind-a-flag
   - wake-lock
 ---
 

@@ -9,7 +9,6 @@ updated: 2020-06-11
 tags:
   - blog
   - capabilities
-  - fugu
 hero: hero.jpg
 alt: mobile device with app panel open
 ---

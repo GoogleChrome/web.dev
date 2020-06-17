@@ -16,7 +16,6 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - identity
   - capabilities
-  - fugu
   - otp
 ---
 
