@@ -8,7 +8,8 @@ description: >
   the full purchase funnel.
 authors:
   - olgademidova
-date: 2020-06-11
+scheduled: true
+date: 2020-06-24
 hero: hero.png
 alt: An illustration of a person using a phone.
 tags:
