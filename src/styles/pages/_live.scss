@@ -215,11 +215,6 @@ web-tabs.w-event-tabs {
   text-align: left;
   z-index: 0;
 
-  // Measures the width of the left-hand cell, containing speaker information.
-  // Uses a mix of fixed size (for small devices, down to 320px) and percentage
-  // (to give more space on larger screens).
-  $WIDTH_SPEAKER: calc(10% + 180px);
-
   .w-event-schedule__row {
     border-bottom: 1px solid #dadce0;
     min-height: 48px;
@@ -240,7 +235,6 @@ web-tabs.w-event-tabs {
   }
 
   .w-event-schedule__speaker {
-    // width: #{$WIDTH_SPEAKER};
     font-size: 14px;
     margin-bottom: 8px;
 

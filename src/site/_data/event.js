@@ -196,9 +196,9 @@ const days = [
         speaker: 'demianrenzulli',
         title: 'Advanced PWA Patterns',
         blurb:
-          'Advanced PWA recipes, that combine several modern web APIs, and how companies are using them to create app-like experiences on their sites.',
+          'Learn advanced PWA recipes that combine several modern web APIs, and how companies are using them to create app-like experiences on their sites.',
         abstract: [
-          'Advanced PWA recipes, that combine several modern web APIs, and how companies are using them to create app-like experiences on their sites.',
+          'Learn advanced PWA recipes that combine several modern web APIs, and how companies are using them to create app-like experiences on their sites.',
         ],
       },
       {
@@ -260,7 +260,7 @@ const days = [
         speaker: 'kosamari',
         title: 'Building Better in the World of Build Tools',
         blurb:
-          "Come find out how we defined what's the best tool for a job and how we investigated and tested each one.",
+          "It's surprisingly difficult to choose and configure build tools in a way that produces consistent and good results. We're often forced to make tradeoff decisions in our tooling, which can stand in the way of delivering the best possible applications on the web. Come find out how we defined what's the best tool for a job and how we investigated and tested each one.",
         abstract: [
           "Build tools are an integral part of modern web development, making it possible to build great apps that are bandwidth-friendly and delivered as-needed. However, it's surprisingly difficult to choose and configure build tools in a way that produces consistent and good results. We're often forced to make tradeoff decisions in our tooling, which can stand in the way of delivering the best possible applications on the web.",
           "We developed a guide to help you choose tools which are best suited for your next project with example of how to set one up. Come find out how we defined what's the best tool for a job and how we investigated and tested each one.",
@@ -279,7 +279,7 @@ const days = [
         speaker: ['developit', 'jakearchibald'],
         title: 'Writing Build Plugins',
         blurb:
-          "In this session we'll develop the same plugin for both Rollup and webpack, showing the difference between the two systems.",
+          "Knowing how to write plugins gives you insight into how the build tool works, and makes it easier to debug the rest of your build. In this session we'll develop the same plugin for both Rollup and webpack, showing the difference between the two systems.",
         abstract: [
           "It's really common to use a build tool as part of development, but most folks don't think about writing their own plugins, which is totally understandable, as it can be pretty daunting. However, knowing how to write plugins gives you insight into how the build tool works, and makes it easier to debug the rest of your build.",
           "In this session we'll develop the same plugin for both Rollup and webpack, showing the difference between the two systems.",
