@@ -36,7 +36,7 @@ Service workers allow Google Search to provide a [meaningful offline experience]
 
 ## Implement resilient search experiences with Workbox
 
-While the functionality can be implemented by writing vanilla service worker code, the [Workbox library](https://developers.google.com/web/tools/workbox) makes it easier by providing a [Background Sync module](https://developers.google.com/web/tools/workbox/modules/workbox-background-sync), which takes care of many implementation details for us.
+While Google Search implements this functionality without using Workbox, the [Workbox library](https://developers.google.com/web/tools/workbox) makes it easier by providing a [Background Sync module](https://developers.google.com/web/tools/workbox/modules/workbox-background-sync), which takes care of many implementation details for us.
 
 ![A service worker and a cache object communicating wiith each other.](workbox-background-sync.png)
 
