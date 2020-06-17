@@ -37,7 +37,7 @@ self.addEventListener('install', (event) => {
     replacingPreviousServiceWorker = true;
   }
   const handler = async () => {
-    await updateTemplate();
+    await updateTemplate(true);
     await self.skipWaiting();
   };
   event.waitUntil(handler());
@@ -289,9 +289,10 @@ async function templateForPartial(partial) {
 }
 
 /**
+ * @param {boolean} isInstall is this happening initially as part of 'install'
  * @return {!Promise<string>}
  */
-async function updateTemplate() {
+async function updateTemplate(isInstall = false) {
   const networkResponse = await fetch(templateUrl);
   const raw = await networkResponse.json();
   const {manifest, template} = raw;
@@ -305,7 +306,15 @@ async function updateTemplate() {
 
   // TODO(samthor): Doesn't check revision. Just fetch and insert all again. How can we use Workbox
   // here since `updateTemplate()` can be called on "install" as well as in normal operation?
-  await cache.addAll(manifest.map(({url}) => url));
+  const p = cache.addAll(manifest.map(({url}) => url));
+
+  if (isInstall) {
+    await p;
+  } else {
+    // TODO(samthor): This is fire-and-forget because we shouldn't hold up the user loading the page
+    // when the template changes. They'll get the HTML and then fetch many of the same resources as
+    // we're precaching.
+  }
 
   return template;
 }
