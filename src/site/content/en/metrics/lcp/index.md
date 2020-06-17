@@ -4,7 +4,7 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-06-15
+updated: 2020-06-17
 description: |
   This post introduces the Largest Contentful Paint (LCP) metric and explains
   how to measure it
@@ -368,7 +368,7 @@ the article on [custom metrics](/custom-metrics/#element-timing-api).
 
 ## How to improve LCP
 
-LCP is primarily affected by three factors:
+LCP is primarily affected by four factors:
 
 * Slow server response times
 * Render-blocking JavaScript and CSS
