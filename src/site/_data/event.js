@@ -29,7 +29,7 @@ const days = [
         speaker: 'dalmaer',
         title: 'Welcome to Day One',
         blurb:
-          'On day 1, we kick things off by sharing why we are coming together as a community, including a guest speaker from CA.gov.',
+          "On day 1, we kick things off by sharing why we are coming together as a community, including a guest speaker from CA.gov. We'll then cover some of the key updates made to the platform around performance, security and privacy, as well as a look at build tools and rich content.",
         abstract: [
           "On day 1, we kick things off by sharing why we are coming together as a community, including a guest speaker from CA.gov. We'll then cover some of the key updates made to the platform around performance, security and privacy, as well as a look at build tools and rich content.",
           'Special Guest: <a href="https://twitter.com/nopatternaaron">Aaron Hans, Tech lead, CA.Gov</a>',
