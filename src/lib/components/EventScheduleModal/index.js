@@ -72,7 +72,7 @@ class EventScheduleModal extends BaseModalElement {
   render() {
     return html`
       <div class="modal" aria-modal="true" aria-labelledby="${this._titleId}">
-        <h4>About this session</h4>
+        <div class="w-event-schedule-modal__about">About this session</div>
         <h2 id=${this._titleId}>${this._sessionName || '?'}</h2>
         ${this._authorsPart || ''}
         ${this._abstractPart || ''}

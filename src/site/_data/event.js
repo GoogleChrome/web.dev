@@ -113,7 +113,7 @@ const days = [
         speaker: 'martinsplitt',
         title: 'Implementing Structured Data with JavaScript',
         blurb:
-          'In this session we walk through typical approaches to do this both in popular frameworks as well as vanilla JavaScript.',
+          'In this session we walk through typical approaches to add structured data to your pages, both in popular frameworks as well as vanilla JavaScript.',
         abstract: [
           'If you are building a great website with JavaScript, you want it to stand out in Google Search, too. To be eligible for rich results, you need to add structured data to your pages. In this session we walk through typical approaches to do this both in popular frameworks as well as vanilla JavaScript.',
         ],
@@ -176,9 +176,9 @@ const days = [
         speaker: 'demianrenzulli',
         title: 'How to Define your Install Strategy',
         blurb:
-          'Best practices for combining different installation offerings to increase installation rates and avoid platform competition and cannibalization.',
+          'Learn best practices for combining different installation offerings to increase installation rates and avoid platform competition and cannibalization.',
         abstract: [
-          'Best practices for combining different installation offerings to increase installation rates and avoid platform competition and cannibalization.',
+          'Learn best practices for combining different installation offerings to increase installation rates and avoid platform competition and cannibalization.',
         ],
       },
       {
