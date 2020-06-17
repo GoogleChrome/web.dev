@@ -11,12 +11,14 @@ date: 2019-10-14
 # updated: 2019-06-27
 glitch: codelab-notifications-service-worker
 # Specify which file the glitch should start on.
-glitchPath: public/index.js  
+glitchPath: public/index.js
 related_post: use-push-notifications-to-engage-users
 draft: true
+tags:
+  - notifications
 ---
 
-{# 
+{#
 [start](https://glitch.com/edit/#!/butter-jaborosa?path=README.md:1:0)
 [end](https://glitch.com/edit/#!/tricky-thunbergia?path=README.md:1:0)
 #}
@@ -49,9 +51,9 @@ Start by looking at the live app in the new Chrome tab:
 1. Make sure that the **Info** option is selected in the **Levels** dropdown
    next to the **Filter** box.
 
-1.  In the DevTools console for your live app, you should see a console message: 
+1.  In the DevTools console for your live app, you should see a console message:
 
-    `TODO: Implement getRegistration()`. 
+    `TODO: Implement getRegistration()`.
 
     This is a message from a function stub that you will implement in this codelab.
 
@@ -127,7 +129,7 @@ For the purposes of this codelab, you'll build an app that you can play with and
       // Get a reference to the service worker registration.
       let registration = await getRegistration();
       // Await the outcome of the unregistration attempt
-      // so that the UI update is not superceded by a 
+      // so that the UI update is not superceded by a
       // returning Promise.
       await registration.unregister();
       updateUI();

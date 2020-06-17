@@ -12,6 +12,8 @@ glitch: codelab-notifications-get-started
 glitchPath: public/index.js
 related_post: use-push-notifications-to-engage-users
 draft: true
+tags:
+  - notifications
 ---
 
 {#
@@ -25,7 +27,7 @@ In this codelab, you'll use basic features of the
 
 * Request permission to send notifications
 * Send notifications
-* Experiment with notification options 
+* Experiment with notification options
 
 ## Remix the sample app and view it in a new tab
 
@@ -110,7 +112,7 @@ Open `public/index.js` and take a look at some important parts of the existing c
 
 ## Request permission to send notifications
 
-In this step, you'll add functionality to request the user's permission to send notifications. 
+In this step, you'll add functionality to request the user's permission to send notifications.
 
 You will use the `Notification.requestPermission()` method to trigger a popup that asks the user to allow or block notifications from your site.
 
@@ -120,7 +122,7 @@ You will use the `Notification.requestPermission()` method to trigger a popup th
 
 ```js
 Notification.requestPermission().then((result) => {
-  /* do stuff */ 
+  /* do stuff */
 });
 ```
 
@@ -149,19 +151,19 @@ See the [`Promise` documentation on MDN](https://developer.mozilla.org/en-US/doc
 
 1.  On the live app interface, click **Request permission to send notifications**. A popup appears.
 
-The user can make one of three responses to the permission popup. 
+The user can make one of three responses to the permission popup.
 
 | **User response** | **Notification permission state** |
-|-----|-----| 
+|-----|-----|
 | User selects **Allow** | `granted` |
-| User selects **Block**  | `denied` | 
-| User dismisses popup without making a selection | `default` | 
+| User selects **Block**  | `denied` |
+| User dismisses popup without making a selection | `default` |
 
 **If the user clicks Allow:**
 
 *   `Notification.permission` is set to `granted`.
 
-*   The site will be able to display notifications. 
+*   The site will be able to display notifications.
 
 *   Subsequent calls to `Notification.requestPermission` will resolve to `granted` without a popup.
 
@@ -172,14 +174,14 @@ The user can make one of three responses to the permission popup.
 *   The site will _not_ be able to display notifications to the user.
 
 *   Subsequent calls to `Notification.requestPermission` will resolve to `denied` without a popup.
-  
+
 **If the user dismisses the popup:**
 
 *   `Notification.permission` remains `default`.
 
 *   The site will not be able to display notifications to the user.
 
-*   Subsequent calls to `Notification.requestPermission` will produce more popups. 
+*   Subsequent calls to `Notification.requestPermission` will produce more popups.
 
     However, if the user continues to dismiss the popups, the browser might block the site, setting `Notification.permission` to `denied`. Neither permission request popups nor notifications can then be displayed to the user.
 
@@ -201,7 +203,7 @@ If the permission state is `granted`, your notification will be displayed.
 1.  Replace the `sendNotification` function stub in index.js with the following code:
 
     ```js
-    // Use the Notification constructor to create and send a new Notification. 
+    // Use the Notification constructor to create and send a new Notification.
     function sendNotification() {
       let title = 'Test';
       let options = {
@@ -228,7 +230,7 @@ when you attempt to display a notification without the user's permission.
     define the new notification's `onerror` event handler:
 
 ```js/9-12/
-// Use the Notification constructor to create and send a new Notification. 
+// Use the Notification constructor to create and send a new Notification.
 function sendNotification() {
   let title = 'Test';
   let options = {
@@ -237,7 +239,7 @@ function sendNotification() {
   };
   console.log('Creating new notification');
   let notification = new Notification(title, options);
-  notification.onerror = (event) => { 
+  notification.onerror = (event) => {
     console.log('Could not send notification');
     console.log(event);
   };
@@ -273,15 +275,15 @@ so it's worth testing your notifications on different platforms to see how they 
 let options = {
   dir: 'auto',              // Text direction
   lang: 'en-US',            // A language tag
-  badge: '/orange-cat.png', // Display when insufficient room 
+  badge: '/orange-cat.png', // Display when insufficient room
   body: 'Hello World',      // Body text
   tag: 'mytag',             // Tag for categorization
-  icon: '/line-cat.png',    // To display in the notification 
+  icon: '/line-cat.png',    // To display in the notification
   image: '/orange-cat.png', // To display in the notification
   data: {                   // Arbitrary data; any data type
     cheese: 'I like cheese',
     pizza: 'Excellent cheese delivery mechanism',
-    arbitrary: { 
+    arbitrary: {
       faveNumber: 42,
       myBool: true
     }},
@@ -296,12 +298,12 @@ let options = {
       title: 'Shop!',
       icon: '/bags.png'
     },],
-  */ 
+  */
 }
 ```
 
 See [Peter Beverloo's Notification Generator](https://tests.peter.sh/notification-generator/) for some more ideas!
 
-If you got stuck, here's the completed code for this codelab: [glitch.com/edit/#!/codelab-notifications-get-started-completed](https://glitch.com/edit/#!/codelab-notifications-get-started-completed) 
+If you got stuck, here's the completed code for this codelab: [glitch.com/edit/#!/codelab-notifications-get-started-completed](https://glitch.com/edit/#!/codelab-notifications-get-started-completed)
 
 Take a look at the next codelab in this series, [Handle notifications with a service worker](codelab-notifications-service-worker), to explore further!

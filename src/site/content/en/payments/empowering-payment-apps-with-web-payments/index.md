@@ -7,6 +7,8 @@ authors:
 description: |
   Web Payments aims to provide frictionless payment experience on the web. Learn how it works, its benefits, and get ready to integrate your payment app with Web Payments.
 date: 2020-05-25
+tags:
+  - payments
 ---
 
 One of the key ecosystem drivers for the web are payments. With secure,
@@ -65,7 +67,7 @@ security.
 
 * **In-context payments:** Payments are made in
   [modals](https://material.io/components/sheets-bottom), in context of the
-  merchant website, without redirects or pop-up windows. 
+  merchant website, without redirects or pop-up windows.
 
 * **Faster checkout**: Customers can save their payment details securely in
   their browser or a payment app, ready to be used on any supporting merchant site.
@@ -302,10 +304,10 @@ status depends on the browser.
   </table>
 </div>
 
-{% Aside %} 
+{% Aside %}
 *Chrome team is considering making native payment apps available on
-iOS. 
+iOS.
 
-**Safari supports Apple Pay but no third party payment apps. 
+**Safari supports Apple Pay but no third party payment apps.
 
 {% endAside %}

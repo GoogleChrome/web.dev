@@ -4,5 +4,4 @@ module.exports = {
   layout: 'newsletter',
   description:
     'Get the latest news, techniques and updates straight to your inbox.',
-  tags: ['newsletter'],
 };
