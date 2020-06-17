@@ -1,4 +1,5 @@
 @import '../settings/colors';
+@import '../settings/type';
 @import '../tools/breakpoints';
 
 .w-live-landing-page {
@@ -198,7 +199,9 @@ web-tabs.w-event-tabs {
     min-height: 48px;
     position: relative;
     display: flex;
-    align-items: center;
+    // align-items: center;
+    flex-direction: column;
+    padding: 13px 24px 16px;
 
     &:hover,
     &:focus-within {
@@ -207,7 +210,9 @@ web-tabs.w-event-tabs {
   }
 
   .w-event-schedule__speaker {
-    width: #{$WIDTH_SPEAKER};
+    // width: #{$WIDTH_SPEAKER};
+    font-size: 14px;
+    margin-bottom: 8px;
 
     a {
       z-index: 10;
@@ -216,18 +221,7 @@ web-tabs.w-event-tabs {
   }
 
   .w-event-schedule__session {
-    flex-grow: 1;
-    width: 50%;
-  }
-
-  .w-event-schedule__cell {
     font-size: 14px;
-    line-height: 20px;
-    padding: 8px;
-
-    @include bp(sm) {
-      padding: 16px 8px;
-    }
   }
 
   .w-authors__card {
@@ -237,9 +231,13 @@ web-tabs.w-event-tabs {
   }
 
   .w-event-schedule__open {
-    pointer-events: auto;
-    display: inline-block;
     color: inherit;
+    display: inline-block;
+    font-family: $HEADLINE_FONT;
+    font-weight: $FONT_WEIGHT_MEDIUM;
+    pointer-events: auto;
+    margin-bottom: 4px;
+    font-size: 18px;
 
     &:hover {
       text-decoration: none;
