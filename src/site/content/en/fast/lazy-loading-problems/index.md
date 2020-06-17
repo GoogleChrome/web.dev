@@ -39,7 +39,7 @@ fashion.
 Additionally, you may not want to be so strict about the fold line as the
 threshold for triggering lazy-loading. It may be more ideal for your purposes to
 establish a buffer zone some distance below the fold so that images begin
-loading well before the user scrolls them into the viewport. For example, The
+loading well before the user scrolls them into the viewport. For example, the
 Intersection Observer API allows you to specify a `rootMargin` property in an
 options object when you create a new `IntersectionObserver` instance. This
 effectively gives elements a buffer, which triggers lazy-loading behavior before
