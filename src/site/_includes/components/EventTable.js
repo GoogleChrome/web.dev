@@ -59,7 +59,7 @@ module.exports = (days, authorsCollection) => {
     return id;
   };
 
-  const renderSession = ({speaker, title, abstract}) => {
+  const renderSession = ({speaker, title, blurb = '', abstract}) => {
     // Always pass an Array of author IDs.
     const authors = typeof speaker === 'string' ? [speaker] : speaker;
 
@@ -79,6 +79,9 @@ module.exports = (days, authorsCollection) => {
           <a class="w-event-schedule__open" href="#${id}">
             <span>${title}</span>
           </a>
+          <div class="w-event-schedule__blurb">
+            ${blurb}
+          </div>
           <div class="w-event-schedule__abstract" hidden>
             ${abstract.map((part) => html`<p>${part}</p>`)}
           </div>
