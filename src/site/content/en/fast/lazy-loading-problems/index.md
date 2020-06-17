@@ -54,9 +54,9 @@ let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
 ```
 
 If the value for `rootMargin` looks similar to values you'd specify for a CSS
-`margin` property, that's because it is! In this case, we're broadening the
-bottom margin of the observing element (the browser viewport by default, but
-this can be changed to a specific element using the `root` property) by 256
+`margin` property, that's because it is! In this case, the
+bottom margin of the observed element (the browser viewport by default, but
+this can be changed to a specific element using the `root` property) is broadened by 256
 pixels. That means the callback function will execute when an image element is
 within 256 pixels of the viewport and the image will begin to load
 before the user actually sees it.
