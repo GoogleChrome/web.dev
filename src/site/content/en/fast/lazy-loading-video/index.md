@@ -63,7 +63,7 @@ animated GIFs, which is covered next.
 ## For video acting as an animated GIF replacement {: #video-gif-replacement }
 
 While animated GIFs enjoy wide use, they're subpar to video equivalents in a
-number of ways, particularly in output file size. Animated GIFs can stretch into
+number of ways, particularly in file size. Animated GIFs can stretch into
 the range of several megabytes of data. Videos of similar visual quality tend to
 be far smaller.
 
