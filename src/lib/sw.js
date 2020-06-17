@@ -4,7 +4,6 @@
 
 import * as idb from 'idb-keyval';
 import manifest from 'cache-manifest';
-import layoutTemplate from 'layout-template';
 import {initialize as initializeGoogleAnalytics} from 'workbox-google-analytics';
 import * as workboxRouting from 'workbox-routing';
 import * as workboxStrategies from 'workbox-strategies';
@@ -181,6 +180,9 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
   // it to get the path of its respective partial.
   const partialPath = pathname.replace(/\.html$/, '.json');
 
+  // Request the template promise (early).
+  const templatePromise = partialTemplate();
+
   let response;
   try {
     // Use the same strategy for partials when hydrating a full request. Note
@@ -191,7 +193,7 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
     response = await partialStrategy.handle({request});
   } catch (e) {
     // Offline pages are served with the default 200 status.
-    response = await offlinePartial();
+    response = await offlinePartialResponse();
   }
 
   // If we can't get a real response (or the offline response), go to the
@@ -213,6 +215,7 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
       : 'web.dev feed';
   const rss = `<link rel="alternate" href="${rssHref}" type="application/atom+xml" data-title="${rssTitle}" />`;
 
+  const layoutTemplate = await templatePromise;
   const output = layoutTemplate
     .replace('<!-- %_HEAD_REPLACE_% -->', `${meta}\n${title}\n${rss}`)
     .replace('%_CONTENT_REPLACE_%', partial.raw);
@@ -224,7 +227,7 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
 workboxRouting.setCatchHandler(async ({url, request}) => {
   // If we failed to fetch a partial, use the offline partial.
   if (partialMatch({url})) {
-    return offlinePartial();
+    return offlinePartialResponse();
   }
 
   // Go to the network for 'normal' pages. This will only fire if there's an
@@ -234,7 +237,25 @@ workboxRouting.setCatchHandler(async ({url, request}) => {
   }
 });
 
-async function offlinePartial() {
+/**
+ * @return {!Promise<string>} partial template to use in hydration
+ */
+async function partialTemplate() {
+  const p = '/sw-partial-layout.partial';
+  let response = await matchPrecache(p);
+  if (!response) {
+    // This occurs in development when the partial template isn't precached.
+    // If Eleventy hasn't run, this too can fail: the catch handler above will
+    // trigger and the page'll just be requested as regular HTML.
+    response = await fetch(p);
+  }
+  return response.text();
+}
+
+/**
+ * @return {!Promise<Response>} response for the offline page's partial
+ */
+async function offlinePartialResponse() {
   const cachedResponse = await matchPrecache('/offline/index.json');
   if (!cachedResponse) {
     // This occurs in development when the offline partial isn't precached.

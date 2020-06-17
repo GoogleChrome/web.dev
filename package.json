@@ -2,7 +2,7 @@
   "name": "web.dev",
   "version": "2.0.0",
   "scripts": {
-    "build": "npm-run-all clean sass eleventy gulp rollup",
+    "build": "npm-run-all clean sass rollup eleventy gulp",
     "clean": "rm -rf dist",
     "coverage:integration": "c8 npm-run-all test:lib test:unit test:integration",
     "coverage:unit": "c8 npm run test:unit",
@@ -23,7 +23,7 @@
     "lint": "npm-run-all lint:md lint:scss lint:js",
     "percy": "PERCY=true npm-run-all build --parallel --race start snapshots",
     "precommit": "node ./tools/update-updated/index.js",
-    "rollup": "eleventy --input src/site/content/sw-partial-layout.njk; node build.js",
+    "rollup": "node build.js",
     "sass": "node ./compile-css.js src/styles/all.scss dist/app.css",
     "snapshots": "percy exec --config ./tools/percy/.percy.conf.yml -- node tools/percy/snapshots.js",
     "stage:personal": "ELEVENTY_ENV=dev npm run build && gcloud app deploy --project web-dev-staging --quiet --no-promote",

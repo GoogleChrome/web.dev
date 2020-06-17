@@ -87,8 +87,11 @@ async function buildCacheManifest() {
       // We don't include jpg files, as they're used for authors and hero
       // images, which are part of articles, and not the top-level site.
       'images/**/*.{png,svg}',
+
+      // If any of these fail to match, the warning will trigger a failure.
       '*.css',
       '*.js',
+      '*.partial',
     ],
     globIgnores: [
       // This removes large shared PNG files that are used only for articles.
@@ -241,11 +244,6 @@ async function build() {
   // We don't generate a manifest in dev, so Workbox doesn't do a default cache step.
   const manifest = isProd ? await buildCacheManifest() : [];
 
-  const layoutTemplate = await fs.readFile(
-    path.join('dist', 'sw-partial-layout.partial'),
-    'utf-8',
-  );
-
   const swBundle = await rollup.rollup({
     input: 'src/lib/sw.js',
     manualChunks: (id) => {
@@ -267,7 +265,6 @@ async function build() {
       rollupPluginVirtual(
         buildVirtualJSON({
           'cache-manifest': manifest,
-          'layout-template': layoutTemplate,
         }),
       ),
       ...buildDefaultPlugins(),
