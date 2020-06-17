@@ -9,7 +9,6 @@ updated: 2020-06-04
 tags:
   - blog
   - capabilities
-  - fugu
   - contacts
   - chrome80
 hero: hero.jpg

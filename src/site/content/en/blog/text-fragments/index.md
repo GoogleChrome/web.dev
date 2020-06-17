@@ -16,10 +16,9 @@ description: |
   When navigating to a URL with such a text fragment, the browser can emphasize
   and/or bring it to the user's attention.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog
   - text-fragments
   - capabilities
-  - fugu
 ---
 ## Fragment Identifiers
 

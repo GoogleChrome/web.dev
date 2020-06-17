@@ -9,10 +9,9 @@ updated: 2020-04-13
 tags:
   - blog
   - capabilities
-  - fugu
-  - origin-trial
+  - origin-trials
   - file
-  - filesystem
+  - file-system
   - native-file-system
 hero: hero.jpg
 alt: Image of hard disk platters
