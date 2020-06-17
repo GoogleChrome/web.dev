@@ -10,6 +10,7 @@ import {CacheableResponsePlugin} from 'workbox-cacheable-response';
 import {ExpirationPlugin} from 'workbox-expiration';
 import {cacheNames as workboxCacheNames} from 'workbox-core';
 import {matchSameOriginRegExp} from './utils/sw-match.js';
+import {matchPrecache, precache} from 'workbox-precaching';
 
 const idbKeys = Object.freeze({
   architecture: 'arch',
@@ -289,23 +290,34 @@ async function templateForPartial(partial) {
 }
 
 /**
- * @return {!Promise<!Response>}
+ * @return {!Promise<string>}
  */
 async function updateTemplate() {
   const networkResponse = await fetch(templateUrl);
+  const raw = await networkResponse.json();
+  const {manifest, template} = raw;
 
   const cache = await caches.open(cacheNames.webdevCore);
-  cache.put(new Request(templateUrl), networkResponse.clone());
 
-  return networkResponse;
+  // Insert a clone of the manifest that doesn't include the manifest (since we don't need it
+  // anymore).
+  delete raw.manifest;
+  cache.put(new Request(templateUrl), new Response(JSON.stringify(raw)));
+
+  // TODO(samthor): Doesn't check revision. Just fetch and insert all again. How can we use Workbox
+  // here since `updateTemplate()` can be called on "install" as well as in normal operation?
+  await cache.addAll(manifest.map(({url}) => url));
+
+  return template;
 }
 
 /**
  * @return {!Promise<Response>} response for the offline page's partial
  */
 async function offlinePartialResponse() {
-  // const cachedResponse = await matchPrecache('/offline/index.json');
-  const cachedResponse = null;
+  const cachedResponse = await caches.match('/offline/index.json', {
+    cacheName: cacheNames.webdevCore,
+  });
   if (!cachedResponse) {
     // This occurs in development when the offline partial isn't precached.
     return new Response(

@@ -29,7 +29,6 @@ const rollupPluginIstanbul = require('rollup-plugin-istanbul');
 const OMT = require('@surma/rollup-plugin-off-main-thread');
 const rollup = require('rollup');
 const terser = isProd ? require('terser') : null;
-const {getManifest} = require('workbox-build');
 const site = require('./src/site/_data/site');
 const buildVirtualJSON = require('./src/build/virtual-json');
 
@@ -70,52 +69,6 @@ function buildDefaultPlugins() {
     }),
     rollupPluginVirtual(buildVirtualJSON(virtualImports)),
   ];
-}
-
-/**
- * Builds the cache manifest for inclusion into the Service Worker.
- *
- * TODO(samthor): This relies on both the gulp and CSS tasks occuring
- * before the Rollup build script.
- */
-async function buildCacheManifest() {
-  const toplevelManifest = await getManifest({
-    // JS files that include hashes don't need their own revision fields.
-    dontCacheBustURLsMatching: /-[0-9a-f]{8}\.js/,
-    globDirectory: 'dist',
-    globPatterns: [
-      // We don't include jpg files, as they're used for authors and hero
-      // images, which are part of articles, and not the top-level site.
-      'images/**/*.{png,svg}',
-
-      // If any of these fail to match, the warning will trigger a failure.
-      '*.css',
-      '*.js',
-      '*.partial',
-    ],
-    globIgnores: [
-      // This removes large shared PNG files that are used only for articles.
-      'images/{shared}/**',
-    ],
-  });
-  if (toplevelManifest.warnings.length) {
-    throw new Error(`toplevel manifest: ${toplevelManifest.warnings}`);
-  }
-
-  // We need this manifest to be separate as we pretend it's rooted at the
-  // top-level, even though it comes from "dist/en".
-  const contentManifest = await getManifest({
-    globDirectory: 'dist/en',
-    globPatterns: ['offline/index.json'],
-  });
-  if (contentManifest.warnings.length) {
-    throw new Error(`content manifest: ${contentManifest.warnings}`);
-  }
-
-  const all = [];
-  all.push(...toplevelManifest.manifestEntries);
-  all.push(...contentManifest.manifestEntries);
-  return all;
 }
 
 /**
