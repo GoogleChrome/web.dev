@@ -115,7 +115,7 @@ lazy-loading large images and inserting them into the DOM.
 
 ## When stuff doesn't load {: #wrong-loading-failure }
 
-Sometimes media resources will fail to load for one reason or another and errors
+Sometimes media resources fail to load for one reason or another and errors
 occur. When might this happen? It depends, but here's one hypothetical scenario
 for you: You have an HTML caching policy for a short period of time (e.g., five
 minutes), and the user visits the site _or_ a user has a left a stale tab open for
