@@ -62,8 +62,7 @@ within 256 pixels of the viewport and the image will begin to load
 before the user actually sees it.
 
 To achieve this same effect in browsers that don't support Intersection Observe, use scroll event handling code and adjust your
-`getBoundingClientRect` check to include a buffer, and you'll get the same
-effect in browsers that don't support Intersection Observer.
+`getBoundingClientRect` check to include a buffer.
 
 ## Layout shifting and placeholders {: #wrong-layout-shifting }
 
