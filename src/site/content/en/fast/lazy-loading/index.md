@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Lazy-loading
+title: Use lazy-loading to improve loading speed
 authors:
   - jeremywagner
   - rachelandrew
@@ -100,7 +100,7 @@ See the guides on this site for full details of all of these approaches:
 - [Lazy-loading images](/lazy-loading-images/)
 - [Lazy-loading video](/lazy-loading-video/)
 
-Also, we have compiled a list of [potential issues with lazy-loading](/lazy-loading-problems),
+Also, we have compiled a list of [potential issues with lazy-loading](/lazy-loading-best-practices),
 and things to watch out for in your implementation.
 
 ## Conclusion
