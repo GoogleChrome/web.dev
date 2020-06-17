@@ -75,6 +75,8 @@ const jsVersion = hashFor('dist/bootstrap.js');
 // This represents a general version all our assets (excluding images), and is
 // used to work out if a partial was built for a different version.
 // In dev, it's blank, since we always want to fetch our latest partial.
+/* eslint-disable */
+// TODO(robdodson): eslint cannot decide what this should format as.
 const resourcesVersion = isProd
   ? hashFor(
     'dist/app.css',
@@ -82,6 +84,7 @@ const resourcesVersion = isProd
     'src/site/_includes/layout.njk',
   )
   : '';
+/* eslint-enable */
 
 module.exports = {
   cssVersion,

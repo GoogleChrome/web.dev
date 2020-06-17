@@ -10,7 +10,6 @@ import {CacheableResponsePlugin} from 'workbox-cacheable-response';
 import {ExpirationPlugin} from 'workbox-expiration';
 import {cacheNames as workboxCacheNames} from 'workbox-core';
 import {matchSameOriginRegExp} from './utils/sw-match.js';
-import {matchPrecache, precache} from 'workbox-precaching';
 
 const idbKeys = Object.freeze({
   architecture: 'arch',
