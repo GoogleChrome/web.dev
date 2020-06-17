@@ -33,9 +33,9 @@ on the `<video>` element may be desirable:
 </video>
 ```
 
-Here, we use a `preload` attribute with a value of `none` to prevent browsers
-from preloading _any_ video data. To occupy the space, we use the `poster`
-attribute to give the `<video>` element a placeholder. The reason for this is
+The example above uses a `preload` attribute with a value of `none` to prevent browsers
+from preloading _any_ video data. The `poster`
+attribute gives the `<video>` element a placeholder that will occupy the space while the video loads. The reason for this is
 that default behaviors for loading video can vary from browser to browser:
 
 - In Chrome, the default for `preload` used to be `auto`, but as of Chrome 64, it now
