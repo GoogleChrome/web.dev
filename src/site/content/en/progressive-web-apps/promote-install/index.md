@@ -3,8 +3,9 @@ layout: post
 title: Patterns for promoting PWA installation
 authors:
   - pjmclachlan
+  - mustafakurtuldu
 date: 2019-06-04
-updated: 2020-06-15
+updated: 2020-06-17
 description: |
   How to promote installation of Progressive Web Apps and best practices.
 ---
@@ -228,10 +229,10 @@ Make sure you:
 ### Temporary UI {: #temporary-ui }
 
 Temporary UI, such as the [Snackbar](https://material.io/components/snackbars/)
-design pattern from the material design spec notify the user, and allow them
-to easily complete an action. In this case, install the app. When used properly,
-these kinds of UI patterns don't interrupt the user flow, and are typically
-automatically dismissed if ignored by the user.
+design pattern, notifies the user, and allows them to easily complete an
+action. In this case, install the app. When used properly, these kinds of UI
+patterns don't interrupt the user flow, and are typically automatically
+dismissed if ignored by the user.
 
 <figure class="w-figure">
   <img src="temporary-ui_desktop.png" alt="Custom install banner as snackbar.">

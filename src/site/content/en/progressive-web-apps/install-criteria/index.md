@@ -4,7 +4,7 @@ title: What does it take to be installable?
 authors:
   - petelepage
 date: 2020-02-14
-updated: 2020-06-15
+updated: 2020-06-17
 description: |
   Progressive Web App installability criteria.
 ---

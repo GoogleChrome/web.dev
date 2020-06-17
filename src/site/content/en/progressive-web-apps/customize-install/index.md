@@ -4,7 +4,7 @@ title: How to provide your own in-app install experience
 authors:
   - petelepage
 date: 2020-02-14
-updated: 2020-06-15
+updated: 2020-06-17
 description: |
   Use the beforeinstallprompt event to provide a custom, seamless, in-app
   install experience for your users.
