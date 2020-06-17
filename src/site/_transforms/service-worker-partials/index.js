@@ -25,6 +25,15 @@ const fs = require('fs').promises;
 const path = require('path');
 const cheerio = require('cheerio');
 
+const computedData = require('../../_data/eleventyComputed');
+
+const revision = {
+  // Refers to the version of the site the partial was built at, and the build timestamp. We use
+  // this inside the Service Worker to determine whether any cached layout HTML is out-of-date.
+  resourcesVersion: computedData.resourcesVersion,
+  builtAt: computedData.builtAt,
+};
+
 const writePartial = async (to, raw) => {
   await fs.mkdir(path.dirname(to), {recursive: true});
   await fs.writeFile(to, JSON.stringify(raw));
@@ -38,13 +47,30 @@ const getPartial = (content) => {
     title: $('title').text(),
     rss: $('link[type="application/atom+xml"]').attr('href'),
     offline: Boolean($('meta[name="offline"]').attr('content')) || false,
+    ...revision,
   };
   return partial;
+};
+
+const writeTemplate = async (to, raw) => {
+  const o = {
+    template: raw,
+    ...revision,
+  };
+  await fs.writeFile(to, JSON.stringify(o));
 };
 
 const serviceWorkerPartials = async (content, outputPath) => {
   // Page has permalink set to false and will not be rendered.
   if (!outputPath) {
+    return content;
+  }
+
+  // Special-case the output partial. We need to include it as well as its revision information in
+  // a single JSON file.
+  if (outputPath === 'dist/sw-partial-layout.partial') {
+    // nb. This does not end with ".json" as we don't want it to be confused with an actual partial.
+    await writeTemplate('dist/template-json', content);
     return content;
   }
 

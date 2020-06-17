@@ -241,9 +241,6 @@ async function build() {
     await compressOutput(outputFiles);
   }
 
-  // We don't generate a manifest in dev, so Workbox doesn't do a default cache step.
-  const manifest = isProd ? await buildCacheManifest() : [];
-
   const swBundle = await rollup.rollup({
     input: 'src/lib/sw.js',
     manualChunks: (id) => {
@@ -262,11 +259,6 @@ async function build() {
       rollupPluginReplace({
         'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : ''),
       }),
-      rollupPluginVirtual(
-        buildVirtualJSON({
-          'cache-manifest': manifest,
-        }),
-      ),
       ...buildDefaultPlugins(),
       OMT(),
     ],

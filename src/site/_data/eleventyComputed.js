@@ -22,6 +22,8 @@
 const crypto = require('crypto');
 const fs = require('fs');
 
+// TODO(robdodson): This should really be "NOT anywhere we run `npm run dev`".
+const isProd = process.env.ELEVENTY_ENV === 'prod';
 const hashLength = 8;
 
 function randomHash() {
@@ -50,7 +52,7 @@ function hashFor(...files) {
       const contents = fs.readFileSync(f);
       c.update(contents);
     } catch (e) {
-      if (process.env.ELEVENTY_ENV === 'prod') {
+      if (isProd) {
         throw new Error(`could not hash: ${f}`);
       }
 
@@ -70,7 +72,20 @@ function hashFor(...files) {
 const cssVersion = hashFor('dist/app.css');
 const jsVersion = hashFor('dist/bootstrap.js');
 
+// This represents a general version all our assets (excluding images), and is
+// used to work out if a partial was built for a different version.
+// In dev, it's blank, since we always want to fetch our latest partial.
+const resourcesVersion = isProd
+  ? hashFor(
+    'dist/app.css',
+    'dist/bootstrap.js',
+    'src/site/_includes/layout.njk',
+  )
+  : '';
+
 module.exports = {
   cssVersion,
   jsVersion,
+  resourcesVersion,
+  builtAt: +new Date(),
 };

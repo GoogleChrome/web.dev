@@ -3,23 +3,25 @@
  */
 
 import * as idb from 'idb-keyval';
-import manifest from 'cache-manifest';
 import {initialize as initializeGoogleAnalytics} from 'workbox-google-analytics';
 import * as workboxRouting from 'workbox-routing';
 import * as workboxStrategies from 'workbox-strategies';
 import {CacheableResponsePlugin} from 'workbox-cacheable-response';
 import {ExpirationPlugin} from 'workbox-expiration';
-import {matchPrecache, precacheAndRoute} from 'workbox-precaching';
-import {cacheNames} from 'workbox-core';
+import {cacheNames as workboxCacheNames} from 'workbox-core';
 import {matchSameOriginRegExp} from './utils/sw-match.js';
 
-/**
- * Configure default cache for standard web.dev files: the offline page, various images, etc.
- *
- * This must occur first, as we cache images that are also matched by runtime handlers below. See
- * this workbox issue for updates: https://github.com/GoogleChrome/workbox/issues/2402
- */
-precacheAndRoute(manifest);
+const idbKeys = Object.freeze({
+  architecture: 'arch',
+  resourcesRevision: 'rev',
+});
+
+const cacheNames = {
+  webdevCore: 'webdev-core',
+  ...workboxCacheNames,
+};
+
+const templateUrl = '/template-json';
 
 // Architecture revision of the Service Worker. If the previously saved revision doesn't match,
 // then this will cause clients to be aggressively claimed and reloaded on install/activate.
@@ -34,7 +36,11 @@ self.addEventListener('install', (event) => {
   if (self.registration.active) {
     replacingPreviousServiceWorker = true;
   }
-  event.waitUntil(self.skipWaiting());
+  const handler = async () => {
+    await updateTemplate();
+    await self.skipWaiting();
+  };
+  event.waitUntil(handler());
 });
 
 self.addEventListener('activate', (event) => {
@@ -45,11 +51,11 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('activate', (event) => {
   const p = Promise.resolve().then(async () => {
-    const previousArchitecture = await idb.get('arch');
+    const previousArchitecture = await idb.get(idbKeys.architecture);
     if (previousArchitecture === serviceWorkerArchitecture) {
       return; // no arch change, don't force reload, upgrade will happen over time
     }
-    await idb.set('arch', serviceWorkerArchitecture);
+    await idb.set(idbKeys.architecture, serviceWorkerArchitecture);
 
     // If the architecture changed (including due to an initial install), claim our clients so they
     // get the 'controllerchange' event and take over their network requests.
@@ -180,9 +186,6 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
   // it to get the path of its respective partial.
   const partialPath = pathname.replace(/\.html$/, '.json');
 
-  // Request the template promise (early).
-  const templatePromise = partialTemplate();
-
   let response;
   try {
     // Use the same strategy for partials when hydrating a full request. Note
@@ -197,7 +200,7 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
   }
 
   // If we can't get a real response (or the offline response), go to the
-  // network proper. This includes for 404 pages, as we don't want to mask a
+  // network proper. This includes for 404 pages, as we don't want to mask
   // redirect handlers.
   if (!response.ok) {
     throw new Error(
@@ -205,6 +208,7 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
     );
   }
   const partial = await response.json();
+  const layoutTemplate = await templateForPartial(partial);
 
   const meta = partial.offline ? '<meta name="offline" value="true" />' : '';
   const title = `<title>${partial.title || 'web.dev'}</title>`;
@@ -215,7 +219,6 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
       : 'web.dev feed';
   const rss = `<link rel="alternate" href="${rssHref}" type="application/atom+xml" data-title="${rssTitle}" />`;
 
-  const layoutTemplate = await templatePromise;
   const output = layoutTemplate
     .replace('<!-- %_HEAD_REPLACE_% -->', `${meta}\n${title}\n${rss}`)
     .replace('%_CONTENT_REPLACE_%', partial.raw);
@@ -238,25 +241,71 @@ workboxRouting.setCatchHandler(async ({url, request}) => {
 });
 
 /**
+ * @param {?{builtAt: number, resourcesVersion: string}} partial that needs a template
  * @return {!Promise<string>} partial template to use in hydration
  */
-async function partialTemplate() {
-  const p = '/sw-partial-layout.partial';
-  let response = await matchPrecache(p);
-  if (!response) {
-    // This occurs in development when the partial template isn't precached.
-    // If Eleventy hasn't run, this too can fail: the catch handler above will
-    // trigger and the page'll just be requested as regular HTML.
-    response = await fetch(p);
+async function templateForPartial(partial) {
+  let fallbackTemplate;
+
+  const cachedResponse = await caches.match(new Request(templateUrl), {
+    cacheName: cacheNames.webdevCore,
+  });
+  if (cachedResponse) {
+    const {template, builtAt, resourcesVersion} = await cachedResponse.json();
+    fallbackTemplate = template;
+
+    // If the template was built for the same resources as the page we're showing, don't fetch it
+    // anew.
+    // If the version is different but the template is _newer_, then we're offline and are rendering
+    // an old cached partial in a newer template. We can't do anything here, so return anyway.
+    if (!resourcesVersion) {
+      // In dev, always fetch and update the cache.
+    } else if (
+      resourcesVersion === partial.resourcesVersion ||
+      builtAt > partial.builtAt
+    ) {
+      return template;
+    }
   }
-  return response.text();
+
+  // Otherwise, we need to update the template cache. We don't use any Workbox built-ins here
+  // because we're never actually serving this file and we completely manage its lifecycle in this
+  // method. Return the template immediately for use.
+  try {
+    const {template} = await updateTemplate();
+
+    // TODO(samthor): We should nuke the previous cache, and precache all the page's dependencies
+    // here. Alternatively this could be a runtime cache but then the first load wouldn't properly
+    // fill the cache.
+    // Don't inline the manifest, instead, depend on an external file.
+
+    return template;
+  } catch (e) {
+    if (fallbackTemplate) {
+      return fallbackTemplate;
+    }
+    throw e;
+  }
+}
+
+/**
+ * @return {!Promise<!Response>}
+ */
+async function updateTemplate() {
+  const networkResponse = await fetch(templateUrl);
+
+  const cache = await caches.open(cacheNames.webdevCore);
+  cache.put(new Request(templateUrl), networkResponse.clone());
+
+  return networkResponse;
 }
 
 /**
  * @return {!Promise<Response>} response for the offline page's partial
  */
 async function offlinePartialResponse() {
-  const cachedResponse = await matchPrecache('/offline/index.json');
+  // const cachedResponse = await matchPrecache('/offline/index.json');
+  const cachedResponse = null;
   if (!cachedResponse) {
     // This occurs in development when the offline partial isn't precached.
     return new Response(
