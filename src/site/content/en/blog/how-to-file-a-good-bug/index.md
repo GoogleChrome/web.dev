@@ -88,7 +88,7 @@ about it.
 Mozilla has a great article on
 [how to create a minimized test case][mdn-reduced-testcase]. To make a
 long story short, while a description of the problem is a great start, nothing
-beats providing a linked demo that in the bug that shows the
+beats providing a linked demo in the bug that shows the
 problem. To maximize the chance of fast progress the example should contain
 the minimum possible code needed to demonstrate the problem. A minimal code
 sample is the number one thing you can do to increase the odds of your
