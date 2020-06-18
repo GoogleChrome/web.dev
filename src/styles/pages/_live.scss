@@ -25,6 +25,30 @@
   }
 }
 
+.w-livestream-section {
+  @include bp(md) {
+    border-bottom: 1px solid $GREY_300;
+  }
+}
+
+.w-live-chat-notice {
+  align-items: center;
+  color: $GREY_700;
+  display: flex;
+  font-size: 12px;
+  padding: 19px 16px;
+
+  // Hide the notice if we're at small desktop size and the primary pointing
+  // device supports hover. This should exclude iPads but include Pixelbooks.
+  @media (min-width: #{$BREAKPOINT_VALUE_MEDIUM}) and (hover: hover) {
+    display: none;
+  }
+
+  > :first-child {
+    margin-right: 16px;
+  }
+}
+
 .w-live-top {
   // We need this as the live background extends outside the normal l/r of the
   // page. Contain it so it doesn't let users scroll.
@@ -91,7 +115,6 @@
     }
   }
 }
-
 
 .w-event-section {
   display: flex;

@@ -1,0 +1,27 @@
+@import '../../../styles/settings/colors';
+@import '../../../styles/tools/breakpoints';
+
+web-livestream-container {
+  .web-livestream-container__col-yt {
+    flex-basis: 880px;
+  }
+
+  .web-livestream-container__col-chat {
+    flex-basis: 400px;
+    border-left: 1px solid $GREY_300;
+    display: none;
+
+    @include bp(md) {
+      display: block;
+    }
+  }
+
+  .w-youtube {
+    height: 100%;
+  }
+
+  .w-youtube-chat {
+    height: 100%;
+    width: 100%;
+  }
+}
