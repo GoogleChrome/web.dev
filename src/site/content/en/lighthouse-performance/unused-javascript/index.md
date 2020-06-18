@@ -66,7 +66,7 @@ supports features that make it easier to avoid or remove unused code:
 * [Dead Code Elimination][eliminate]
 * [Dead Imported Code][import]
 * [Find Unused JavaScript And CSS Code With The Coverage Tab In Chrome DevTools][coveragetab]
-* [`Coverage`][coverageclass]
+* [class: `Coverage`][coverageclass]
 
 [crp]: https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript
 [coveragetab]: https://developers.google.com/web/tools/chrome-devtools/coverage
