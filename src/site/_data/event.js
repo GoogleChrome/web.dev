@@ -398,7 +398,7 @@ const communityEvents = {
     {
       place: 'Zurich',
       date: new Date(),
-      marker: '47.3774337,8.4666757,12',
+      marker: '47.3774337,8.4666757',
     },
   ],
 };
