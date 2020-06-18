@@ -40,9 +40,8 @@ odd one out. Try to test on the latest versions of Chrome, Firefox, Safari and
 Edge, possibly using a tool like [BrowserStack](https://www.browserstack.com/).
 
 If possible, check that the page isn't intentionally behaving differently due to
-user agent sniffing. Try setting the user agent string to another browser in
-Dev Tools > Menu > More Tools > Network conditions. Note: don't forget to set
-it back to Select automatically.
+user agent sniffing. In Chrome DevTools, try [setting the `User-Agent` string
+to another browser](https://developers.google.com/web/tools/chrome-devtools/device-mode/override-user-agent).
 
 ### Did it break in a recent release?
 
