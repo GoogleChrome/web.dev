@@ -1255,6 +1255,22 @@ const contributors = {
       en: 'Software Engineer on the web platform.',
     },
   },
+  robertnyman: {
+    name: {
+      given: 'Robert',
+      family: 'Nyman',
+    },
+    org: {
+      name: 'Google',
+    },
+    twitter: 'robertnyman',
+    github: 'robnyman',
+    country: 'SE',
+    homepage: 'https://robertnyman.com/',
+    description: {
+      en: 'Developer advocate on the web team at Google.',
+    },
+  },
   olgademidova: {
     name: {
       given: 'Olga',
