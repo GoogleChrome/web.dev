@@ -1,0 +1,30 @@
+@import '../../../styles/settings/colors';
+
+web-event-map {
+
+  code {
+    display: none;
+  }
+
+  ul {
+    margin-top: 24px;
+    list-style: none;
+    font: inherit;
+    white-space: nowrap;
+    line-height: 32px;
+
+
+    li > :first-child {
+      color: $LINK_COLOR;
+      min-width: 160px;
+      display: inline-block;
+    }
+  }
+
+  select {
+    width: 140px;
+    border: none;
+    height: auto;
+    margin-bottom: 32px;
+  }
+}

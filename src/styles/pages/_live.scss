@@ -174,7 +174,7 @@
     margin-top: 24px;
   }
 
-  .w-event-guidelines {
+  .w-event-link {
     font-size: 14px;
     margin-top: 20px;
   }
@@ -420,5 +420,23 @@ web-tabs.w-event-tabs {
     // nb. 128px is important as it matches the max-width of 512px
     min-height: 128px;
     object-fit: cover;
+  }
+}
+
+.w-event-icon {
+  @include font_material_icon();
+  align-items: center;
+  font-size: 20px;
+  vertical-align: middle;
+  margin-right: 16px;
+
+  &::before {
+    content: 'place';
+  }
+}
+
+.w-event-icon__map {
+  &::before {
+    content: 'place';
   }
 }
