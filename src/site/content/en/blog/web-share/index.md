@@ -15,7 +15,6 @@ description: |
 tags:
   - blog
   - capabilities
-  - fugu
 ---
 
 With the Web Share API, web apps are able to use the same system-provided share

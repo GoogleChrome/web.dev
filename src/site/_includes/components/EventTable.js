@@ -15,23 +15,24 @@
  */
 
 const {html} = require('common-tags');
+const slugify = require('slugify');
 
 const AuthorsDate = require('./AuthorsDate');
 
 /**
- * @param {!Array<{title: string, from: !Date, sessions: !Array<any>}>} event
+ * @param {!Array<{title: string, from: !Date, sessions: !Array<any>}>} days
  * @param {Object.<string, Author>} authorsCollection
  * @return {string}
  */
-module.exports = (event, authorsCollection) => {
+module.exports = (days, authorsCollection) => {
   // Find the default day to show, as a very basic non-JS fallback. Pick the
   // first day where the build time is before the end time of the sessions.
   // This isn't a very good fallback as our build happens at minimum of once per
   // day, but it's better than nothing.
   const now = new Date();
   let defaultScheduleDay = 0;
-  for (let i = 0; i < event.length; ++i) {
-    const {date, duration} = event[i];
+  for (let i = 0; i < days.length; ++i) {
+    const {date, duration} = days[i];
     const endTime = new Date(date);
     endTime.setHours(endTime.getHours() + duration);
 
@@ -41,17 +42,51 @@ module.exports = (event, authorsCollection) => {
     }
   }
 
-  const renderSession = ({speaker, title}) => {
+  const slugs = {};
+  const slugForTitle = (title) => {
+    // Find a slug for this title, but prevent duplicate IDs.
+    const base = slugify(title, {
+      lower: true,
+      strict: true,
+      remove: /[^-\w _]/, // remove anything not in: basic word chars, space, - and _
+    });
+    let id = base;
+    let suffix = 0;
+    while (id in slugs) {
+      id = base + ++suffix;
+    }
+    slugs[id] = title;
+    return id;
+  };
+
+  const renderSession = ({speaker, title, blurb = '', abstract}) => {
     // Always pass an Array of author IDs.
     const authors = typeof speaker === 'string' ? [speaker] : speaker;
 
+    const id = slugForTitle(title);
+
+    // Coerce to array or empty array.
+    abstract =
+      (abstract && (typeof abstract === 'string' ? [abstract] : abstract)) ||
+      [];
+
     return html`
-      <tr>
-        <td class="w-event-schedule__speaker">
+      <div class="w-event-schedule__row" data-session-id=${id}>
+        <div class="w-event-schedule__cell w-event-schedule__speaker">
           ${AuthorsDate({authors}, authorsCollection)}
-        </td>
-        <td class="w-event-schedule__session">${title}</td>
-      </tr>
+        </div>
+        <div class="w-event-schedule__cell w-event-schedule__session">
+          <a class="w-event-schedule__open" href="#${id}">
+            <span>${title}</span>
+          </a>
+          <div class="w-event-schedule__blurb">
+            ${blurb}
+          </div>
+          <div class="w-event-schedule__abstract" hidden>
+            ${abstract.map((part) => html`<p>${part}</p>`)}
+          </div>
+        </div>
+      </div>
     `;
   };
 
@@ -70,18 +105,18 @@ module.exports = (event, authorsCollection) => {
           ></web-event-time>
         </div>
 
-        <table class="w-event-schedule">
-          <tbody>
-            ${day.sessions.map(renderSession)}
-          </tbody>
-        </table>
+        <div class="w-event-schedule">
+          ${day.sessions.map(renderSession)}
+        </div>
       </div>
     `;
   };
 
   return html`
-    <web-tabs class="w-event-tabs unresolved" label="schedule">
-      ${event.map(renderDay)}
-    </web-tabs>
+    <web-event-schedule>
+      <web-tabs class="w-event-tabs unresolved" label="schedule">
+        ${days.map(renderDay)}
+      </web-tabs>
+    </web-event-schedule>
   `;
 };

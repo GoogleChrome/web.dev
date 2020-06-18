@@ -1271,6 +1271,20 @@ const contributors = {
       en: 'Developer advocate on the web team at Google.',
     },
   },
+  olgademidova: {
+    name: {
+      given: 'Olga',
+      family: 'Demidova',
+    },
+    org: {
+      name: 'Google',
+      unit: 'Ads Marketing EMEA',
+    },
+    description: {
+      en: 'Product Marketing Manager',
+    },
+    country: 'UK',
+  },
 };
 
 const processedContributors = {};
