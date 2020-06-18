@@ -9,7 +9,7 @@ date: 2020-06-17
 ---
 
 Unused JavaScript can slow down your page speed if the JavaScript is
-[render-blocking][crp]. When the browser encounters a render-blocking script,
+[render-blocking][crp]. When the browser encounters a render-blocking script
 it has to download, parse, compile, and evaluate the script before it
 can proceed with all of the other work that's needed for rendering the page.
 
