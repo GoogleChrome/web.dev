@@ -84,7 +84,24 @@ date: 2020-06-31
 
     <div class="w-event-section__column-right w-event-section__column-right__schedule">
       {% if event.isDuringEvent or event.isPostEvent %}
-        {# Include carousel #}
+        <div class="w-event-carousel">
+          <a href="#" class="w-event-carousel__day">
+            <div class="w-event-carousel__thumbnail">
+              <img src="" alt="" width="178" height="110">
+            </div>
+            <div>Day 1 — All sessions</div>
+          </a>
+          <div class="w-event-carousel__day">
+            <div class="w-event-carousel__thumbnail">
+            </div>
+            <div>Day 2 — Coming soon</div>
+          </div>
+          <div class="w-event-carousel__day">
+            <div class="w-event-carousel__thumbnail">
+            </div>
+            <div>Day 3 — Coming soon</div>
+          </div>
+        </div>
       {% endif %}
       {% EventTable event.days, collections.authors %}
     </div>
