@@ -270,7 +270,7 @@ Make sure you:
 ## After conversion
 
 Immediately after a user conversion event, for example after a purchase on
-an e-commerce site is an excellent opportunity to promote the installation of
+an e-commerce site, is an excellent opportunity to promote the installation of
 your PWA. The user is clearly engaged with your content, and a conversion
 often signals that the user will engage with your services again.
 
