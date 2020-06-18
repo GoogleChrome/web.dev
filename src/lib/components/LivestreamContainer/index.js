@@ -49,13 +49,12 @@ class LivestreamContainer extends BaseStateElement {
   /**
    * @param {!Object<string, *>} state
    */
-  onStateChanged({live}) {
-    if (!live) {
-      return;
-    }
-    const {videoId, isChatEnabled} = live;
-    this.videoId = videoId;
-    this.isChatEnabled = isChatEnabled;
+  onStateChanged() {
+    // Example implementation depending on what we end up putting in our
+    // state object:
+    // const {videoId, isChatEnabled} = state;
+    // this.videoId = videoId;
+    // this.isChatEnabled = isChatEnabled;
   }
 }
 

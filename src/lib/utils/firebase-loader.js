@@ -7,7 +7,7 @@
  */
 const libs = {};
 
-const firebasePrefix = '//www.gstatic.com/firebasejs/7.15.0';
+const firebasePrefix = '//www.gstatic.com/firebasejs/6.6.1';
 
 /**
  * Loads the specific Firebase library (or returns the previous cached load).

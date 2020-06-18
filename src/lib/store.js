@@ -51,8 +51,6 @@ const initialState = {
   snackbarType: null,
 
   userPrefferedLanguage: '',
-
-  livestream: {},
 };
 
 let store;
