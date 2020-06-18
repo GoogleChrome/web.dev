@@ -16,6 +16,8 @@
 
 import '../EventScheduleModal';
 
+import {store} from '../../store';
+
 /**
  * @fileoverview A schedule manager which opens and closes modals based on
  * the current href. Looks in children for content.
@@ -26,6 +28,10 @@ import '../EventScheduleModal';
 class EventSchedule extends HTMLElement {
   constructor() {
     super();
+    this.onStateChanged = this.onStateChanged.bind(this);
+
+    this._activeEventDay = null;
+    this._tabsElement = this.querySelector('web-tabs');
 
     this._modalElement = document.createElement('web-event-schedule-modal');
     this._modalElement.className = 'web-modal';
@@ -82,6 +88,13 @@ class EventSchedule extends HTMLElement {
       el.removeAttribute('tabindex');
     });
 
+    // If the user opens this page from externally on a specific session, make sure we're showing
+    // the correct day of tab.
+    const index = this._tabsElement.indexOfTabParent(session);
+    if (index !== -1) {
+      this._tabsElement.focusTab(index);
+    }
+
     this._modalElement.sessionRow = clone;
     this._modalElement.open = true;
     document.body.append(this._modalElement);
@@ -132,13 +145,39 @@ class EventSchedule extends HTMLElement {
   connectedCallback() {
     window.addEventListener('hashchange', this.onHashChange);
     this.addEventListener('click', this.onClick);
-    this.onHashChange();
+
+    // nb. Gross, but we need to wait for <web-tabs> to be ready.
+    window.requestAnimationFrame(() => {
+      if (!this.isConnected) {
+        return; // disconnected while we waited for rAF
+      }
+
+      store.subscribe(this.onStateChanged);
+      this.onStateChanged(store.getState());
+      this.onHashChange();
+    });
   }
 
   disconnectedCallback() {
+    store.unsubscribe(this.onStateChanged);
+
     window.removeEventListener('hashchange', this.onHashChange);
     this.removeEventListener('click', this.onClick);
     this.onHashChange();
+  }
+
+  onStateChanged({activeEventDay}) {
+    if (this._activeEventDay === activeEventDay) {
+      return;
+    }
+    this._activeEventDay = activeEventDay;
+
+    // This relies on the event data being in the same shape as the rendered
+    // tabs, which is pretty safe, since it comes from the same source.
+    // Don't change the tab for the user if a modal is already open.
+    if (!this._modalElement.open && activeEventDay) {
+      this._tabsElement.focusTab(activeEventDay.index);
+    }
   }
 }
 

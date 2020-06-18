@@ -29,10 +29,10 @@ const bufferHours = 1;
 class EventStore extends HTMLElement {
   constructor() {
     super();
-
     this.onStateChanged = this.onStateChanged.bind(this);
 
     this._timeOffset = 0;
+    this._activeDay = null;
     this._data = [];
   }
 
@@ -41,50 +41,68 @@ class EventStore extends HTMLElement {
    */
   _update(change = false) {
     const now = +new Date() + this._timeOffset;
-    let activeEventDay = null;
+
+    // If there was a previously active day (because the user has their tab open for a long time),
+    // then prefer it over showing the upcoming day (we store that in nextPendingDay).
+    let nextPendingDay = null;
 
     for (const day of this._data) {
-      const start = +new Date(day.when);
-      start.setHours(start.getHours() - bufferHours);
-
-      const end = new Date(start);
-      end.setHours(end.getHours() + day.duration + bufferHours);
-
-      const update = {
-        complete: now >= end,
-        active: now >= start && now < end,
+      const timeOffsetBy = (hours) => {
+        const d = new Date(day.when);
+        d.setHours(d.getHours() + hours);
+        return +d;
       };
 
-      if (!day.state) {
-        // ok
-      } else if (
-        day.state.complete === update.complete &&
-        day.state.active === update.active
-      ) {
-        continue;
-      }
-      change = true;
+      const bufferStart = timeOffsetBy(-bufferHours);
+      const bufferEnd = timeOffsetBy(day.duration + bufferHours);
 
-      // TODO(samthor): Should this be "active or next", so we prefill the video player?
-      if (update.active) {
-        activeEventDay = day;
+      // Are we past the completion of this day? This allows the YT link to show up.
+      const isComplete = now >= bufferEnd;
+      if (day.isComplete !== isComplete) {
+        day.isComplete = isComplete;
+        change = true;
       }
-      day.state = update;
+      if (!isComplete && nextPendingDay === null) {
+        nextPendingDay = day;
+      }
+
+      // Is this day actually active (within exact time range)?
+      const isActive = now >= bufferStart && now <= bufferEnd;
+      if (isActive && this._activeDay !== day) {
+        this._activeDay = day;
+        change = true;
+      }
+    }
+
+    // If there was no previously active day, then choose the upcoming day.
+    if (this._activeDay === null) {
+      this._activeDay = nextPendingDay;
+      change = true;
     }
 
     // Gate this with a boolean as to not trigger recursive updates.
     if (change) {
+      console.warn('active day', this._activeDay);
+
       store.setState({
         eventDays: this._data,
-        activeEventDay,
+        activeEventDay: this._activeDay,
       });
     }
   }
 
   connectedCallback() {
     store.subscribe(this.onStateChanged);
+    this.onStateChanged(store.getState());
 
     const raw = JSON.parse(this.textContent.trim());
+
+    for (let i = 0; i < raw.length; ++i) {
+      const d = raw[i];
+      d.index = i;
+      d.complete = false;
+    }
+
     this._data = raw || [];
     this._update(true);
   }
