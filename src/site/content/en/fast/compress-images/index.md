@@ -145,14 +145,14 @@ Using this information to your advantage the compressor can apply [delta encodin
 where instead of storing the individual values for each pixel,
 you can store the difference between nearby pixels:
 if the adjacent pixels are the same, then the delta is "zero" and you only need to store a single bit!
-But why stop there...
+But why stop there…
 
 The human eye has different level of sensitivity to different colors:
 you can optimize your color encoding to account for this by reducing or increasing the palette for those colors.
 "Nearby" pixels form a two dimensional grid. THis means that each pixel has multiple neighbors:
 you can use this fact to further improve delta encoding.
 Instead of looking at just the immediate neighbors for each pixel,
-you can look at larger blocks of nearby pixels and encode different blocks with different settings. And so on...
+you can look at larger blocks of nearby pixels and encode different blocks with different settings. And so on…
 
 As you can tell, image optimization gets complicated quickly (or fun, depending on your perspective),
 and is an active area of academic and commercial research.
