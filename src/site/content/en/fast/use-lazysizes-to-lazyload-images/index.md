@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Use lazysizes to lazyload images
+title: Use lazysizes to lazy-load images
 authors:
   - katiehempenius
 description: |
@@ -13,6 +13,7 @@ codelabs:
   - codelab-use-lazysizes-to-lazyload-images
 tags:
   - performance
+  - images
 ---
 
 {% Aside 'note' %}
