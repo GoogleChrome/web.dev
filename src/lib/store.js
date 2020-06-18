@@ -7,20 +7,21 @@ import {isProd} from 'webdev_config';
 const initialParams = new URLSearchParams(window.location.search);
 
 let timeOffset = 0;
-if (initialParams.has('_time')) {
+if (initialParams.has('_now')) {
   const overrides = {
     'wdl-day1': '2020-06-30T16:02Z',
-    'wdl-preday1': '2020-06-30T15:58Z',
+    'wdl-preday2': '2020-07-01T11:58Z',
+    'wdl-day2': '2020-07-01T12:02Z',
   };
 
-  let raw = initialParams.get('_time');
+  let raw = initialParams.get('_now');
   raw = overrides[raw] || raw;
 
   const d = new Date(raw);
   if (+d) {
     const now = new Date();
     timeOffset = d - now;
-    console.warn('debug time set', d, 'offset is', timeOffset);
+    console.warn('debug time start at', d);
   }
 }
 
@@ -77,6 +78,7 @@ const initialState = {
 
   // Data for the current web.dev/LIVE event.
   eventDays: [],
+  activeEventDay: null,
 };
 
 let store;
