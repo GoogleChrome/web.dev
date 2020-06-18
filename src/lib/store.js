@@ -10,8 +10,8 @@ let timeOffset = 0;
 if (initialParams.has('_now')) {
   const overrides = {
     'wdl-day1': '2020-06-30T16:02Z',
-    'wdl-preday2': '2020-07-01T11:58Z',
-    'wdl-day2': '2020-07-01T12:02Z',
+    'wdl-preday2': '2020-07-01T10:59Z', // before 1hr buffer
+    'wdl-day2': '2020-07-01T12:00Z',
   };
 
   let raw = initialParams.get('_now');

@@ -22,15 +22,27 @@ import {store} from '../../store';
 // reveal the player for a bit more time.
 const bufferHours = 1;
 
+// Run the timer every five minutes.
+const timerEvery = 60 * 1000 * 5;
+
 /**
- * @fileoverview Publishes event data to Unistore.
+ * @fileoverview Provides an element which publishes event data to Unistore, as well as finding
+ * the most relevant day to show information for (the active day).
+ *
+ * Notably:
+ *   - From one hour before the upcoming day, you'll see that day
+ *   - If you refresh the page one hour after that day, you'll see the next day
+ *   - But if you leave the tab open, it'll continue to show the previously chosen day until it's
+ *     one hour until the next day (so the user can leave their browser open on the previous day)
  */
 
 class EventStore extends HTMLElement {
   constructor() {
     super();
     this.onStateChanged = this.onStateChanged.bind(this);
+    this._update = this._update.bind(this);
 
+    this._timer = 0;
     this._timeOffset = 0;
     this._activeDay = null;
     this._data = [];
@@ -63,6 +75,8 @@ class EventStore extends HTMLElement {
         change = true;
       }
       if (!isComplete && nextPendingDay === null) {
+        // The first time we find an incomplete day (e.g., tomorrow's event day), mark it as the
+        // next pending day we use as the active fallback.
         nextPendingDay = day;
       }
 
@@ -80,10 +94,8 @@ class EventStore extends HTMLElement {
       change = true;
     }
 
-    // Gate this with a boolean as to not trigger recursive updates.
+    // We gate setting a change with a boolean as to not accidentally trigger recursive updates.
     if (change) {
-      console.warn('active day', this._activeDay);
-
       store.setState({
         eventDays: this._data,
         activeEventDay: this._activeDay,
@@ -97,14 +109,16 @@ class EventStore extends HTMLElement {
 
     const raw = JSON.parse(this.textContent.trim());
 
-    for (let i = 0; i < raw.length; ++i) {
-      const d = raw[i];
+    for (let i = 0; i < raw.days.length; ++i) {
+      const d = raw.days[i];
       d.index = i;
       d.complete = false;
     }
 
-    this._data = raw || [];
+    this._data = raw.days || [];
     this._update(true);
+
+    this._timer = window.setInterval(this._update, timerEvery);
   }
 
   disconnectedCallback() {
@@ -112,6 +126,8 @@ class EventStore extends HTMLElement {
 
     this._data = [];
     this._update(true);
+
+    window.clearInterval(this._timer);
   }
 
   onStateChanged({timeOffset}) {
