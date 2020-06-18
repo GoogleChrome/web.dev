@@ -10,10 +10,11 @@ description: |
   This post explains lazy-loading and the options available to you when lazy-loading images.
 tags:
   - performance
+  - images
 ---
 
 Images can appear on a webpage due to being inline in the HTML as `<img>` elements
-or as CSS background images. In this guide you will find out how to lazy-load both types of image.
+or as CSS background images. In this post you will find out how to lazy-load both types of image.
 
 ## Inline images {: #images-inline }
 

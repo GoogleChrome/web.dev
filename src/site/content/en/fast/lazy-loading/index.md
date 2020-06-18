@@ -10,6 +10,7 @@ description: |
   This post explains lazy-loading and why you might want to lazy-load elements on your site.
 tags:
   - performance
+  - images
 ---
 
 
@@ -32,12 +33,11 @@ load time. Instead, these non-critical resources are loaded at the moment of
 need. Where images are concerned, "non-critical" is often synonymous with
 "off-screen". If you've used Lighthouse and examined some opportunities for
 improvement, you may have seen some guidance in this realm in the form of the
-[Offscreen Images
-audit](/offscreen-images/):
+[Defer offscreen images audit](/offscreen-images/):
 
 <figure class="w-figure">
-  <img src="./offscreen-audit.png" alt="A screenshot of the Offscreen Images
-Audit in Lighthouse.">
+  <img src="./offscreen-audit.png" alt="A screenshot of the Defer offscreen images
+audit in Lighthouse.">
   <figcaption class="w-figcaption">One of Lighthouse's performance audits is to
 identify off screen images, which are candidates for lazy-loading.</figcaption>
 </figure>
@@ -95,7 +95,7 @@ To provide compatibility with older browsers
 or to perform lazy-loading on elements without native lazy-loading
 you can implement a solution with your own JavaScript.
 There are also a number of existing libraries to help you to do this.
-See the guides on this site for full details of all of these approaches:
+See the posts on this site for full details of all of these approaches:
 
 - [Lazy-loading images](/lazy-loading-images/)
 - [Lazy-loading video](/lazy-loading-video/)
