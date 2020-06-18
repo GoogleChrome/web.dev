@@ -1,33 +1,51 @@
 ---
 layout: post
-title: Choosing the right image format
+title: Choose the right image format
 authors:
   - ilyagrigorik
 description: |
-  As soon as you open any web page, the browser requests an HTML document from a
-  server, parses the contents of the HTML file, and submits separate requests
-  for any other external references. The critical request chain represents the
-  order of resources that are prioritized and fetched by the browser.
+  Selecting the right image format is the first step in delivering optimized images on your website. This guide helps you to make the right choice.
 date: 2018-08-30
-updated: 2020-05-27
+updated: 2020-06-18
 tags:
   - performance
 ---
 
-Selecting the correct image format is a critical choice when serving images on the web.
+The very first question you should ask yourself is whether an image is,
+in fact, required to achieve the effect you are after.
+Good design is simple and will also always yield the best performance.
+If you can eliminate an image resource,
+which often requires a large number of bytes relative to HTML, CSS, JavaScript and other assets on the page,
+then that is always the best optimization strategy.
+That said, a well-placed image can also communicate more information than a thousand words,
+so it is up to you to find that balance.
 
-<div class="attempt-left">
-  <figure>
-    <img src="images/vector-zoom.png" alt="Zoomed-in vector image">
-    <figcaption>Zoomed-in vector image</figcaption>
-  </figure>
-</div>
-<div class="attempt-right">
-  <figure>
-    <img src="images/raster-zoom.png" alt="Zoomed-in raster image">
-    <figcaption>Zoomed-in raster image</figcaption>
-  </figure>
-</div>
+Next, you should consider if there is an alternative technology that could deliver the desired results,
+but in a more efficient manner:
+
+* **CSS effects** (gradients, shadows, etc.) and CSS animations
+can be used to produce resolution-independent assets that always look sharp at every resolution and zoom level,
+often at a fraction of the bytes required by an image file.
+* **Web fonts** enable use of beautiful typefaces
+while preserving the ability to select, search,
+and resize text&mdash;a significant improvement in usability.
+
+If you ever find yourself encoding text in an image asset, stop and reconsider.
+Great typography is critical to good design, branding, and readability,
+but text-in-images delivers a poor user experience:
+the text is not selectable, not searchable, not zoomable,
+not accessible, and not friendly for high-DPI devices.
+The use of web fonts requires its [own set of optimizations](https://www.igvita.com/2014/01/31/optimizing-web-font-rendering-performance/),
+but it addresses all of these concerns and is always a better choice for displaying text.
+
+## Choose the right image format
+
+If you are sure an image is the correct option, you should carefully select the right kind of image for the job.
+
+<figure class="w-figure">
+  <img src="./vector-raster-zoom.png" alt="Zoomed-in vector and raster images">
+  <figcaption>Zoomed-in vector image (L) raster image (R)</figcaption>
+</figure>
 
 * [Vector graphics](https://en.wikipedia.org/wiki/Vector_graphics)
 use lines, points, and polygons to represent an image.
@@ -57,7 +75,10 @@ we need to distinguish between different kinds of pixels: CSS pixels and device 
 A single CSS pixel may correspond directly to a single device pixel, or may be backed by multiple device pixels.
 What's the point? Well, the more device pixels there are, the finer the detail of the displayed content on the screen.
 
-<img src="images/css-vs-device-pixels.png"  alt="CSS vs device pixels">
+<figure class="w-figure">
+  <img src="./css-vs-device-pixels.png" alt="Three images showing the difference between CSS pixels and device pixels.">
+  <figcaption class="w-figcaption">CSS vs device pixels.</figcaption>
+</figure>
 
 High DPI (HiDPI) screens produce beautiful results, but there is one obvious tradeoff:
 our image assets require more detail in order to take advantage of the higher device pixel counts.
@@ -104,14 +125,16 @@ Hence, a "2x" screen not just doubles, but quadruples the number of required pix
 
 So, what does this mean in practice?
 High resolution screens enable us to deliver beautiful images, which can be a great product feature.
-However, high resolution screens also require high-resolution images:
-prefer vector images whenever possible as they are resolution independent and always deliver sharp results,
-and if a raster image is required,
- deliver and optimize multiple variants of each image with the help of [`srcset` and `picture`](/web/fundamentals/design-and-ux/responsive/images#images-in-markup).
+However, high resolution screens also require high-resolution images, therefore:
+
+* prefer vector images whenever possible as they are resolution independent and always deliver sharp results,
+* if a raster image is required, serve [responsive images](/serve-responsive-images/).
 
 ## Features of different raster image formats
 
-In addition to different lossy and lossless compression algorithms, different image formats support different features such as animation and transparency (alpha) channels. As a result, the choice of the "right format" for a particular image is a combination of desired visual results and functional requirements.
+In addition to different lossy and lossless compression algorithms,
+different image formats support different features such as animation and transparency (alpha) channels.
+As a result, the choice of the "right format" for a particular image is a combination of desired visual results and functional requirements.
 
 <table>
 <thead>
@@ -154,8 +177,6 @@ There are three universally supported raster image formats: GIF, PNG, and JPEG.
 In addition to these formats, modern browsers support the newer format WebP,
 which offers better overall compression and more features. So, which format should you use?
 
-<img src="images/format-tree.png"  alt="Save for web">
-
 The WebP format will generally provide better compression than older formats,
 and should be used where possible.
 You can use WebP along with another image format as a fallback.
@@ -179,5 +200,5 @@ In terms of older image formats, consider the following:
 
 Finally, note that if you are using a Webview to render content in your native application,
 then you have full control of the client and can use WebP exclusively!
-Facebook, Google+ and many others use WebP to deliver all of their images within their applications&mdash;
+Facebook and many others use WebP to deliver all of their images within their applications&mdash;
 the savings are definitely worth it.
