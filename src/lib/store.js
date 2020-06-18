@@ -4,6 +4,26 @@ import getMeta from './utils/meta';
 import {localStorage} from './utils/storage';
 import {isProd} from 'webdev_config';
 
+const initialParams = new URLSearchParams(window.location.search);
+
+let timeOffset = 0;
+if (initialParams.has('_time')) {
+  const overrides = {
+    'wdl-day1': '2020-06-30T16:02Z',
+    'wdl-preday1': '2020-06-30T15:58Z',
+  };
+
+  let raw = initialParams.get('_time');
+  raw = overrides[raw] || raw;
+
+  const d = new Date(raw);
+  if (+d) {
+    const now = new Date();
+    timeOffset = d - now;
+    console.warn('debug time set', d, 'offset is', timeOffset);
+  }
+}
+
 const initialState = {
   // The first time the app boots we won't know whether the user is signed
   // in or out.
@@ -51,6 +71,12 @@ const initialState = {
   snackbarType: null,
 
   userPrefferedLanguage: '',
+
+  // Used to override the current time for parts of the site which care about time.
+  timeOffset,
+
+  // Data for the current web.dev/LIVE event.
+  eventDays: [],
 };
 
 let store;

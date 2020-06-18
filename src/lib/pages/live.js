@@ -3,6 +3,7 @@
  */
 
 import '../components/EventSchedule';
+import '../components/EventStore';
 import '../components/EventTime';
 import '../components/Subscribe';
 import '../components/ShareAction';
