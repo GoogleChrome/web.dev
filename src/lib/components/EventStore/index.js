@@ -23,18 +23,16 @@ import {store} from '../../store';
 const bufferMinutes = 60;
 const bufferChatMinutes = 10;
 
-// Run the timer every five minutes.
-const timerEveryMillisecond = 60 * 1000 * 5;
+// Run the timer every minute.
+const timerEveryMillisecond = 60 * 1000;
 
 /**
  * @fileoverview Provides an element which publishes event data to Unistore, as well as finding
  * the most relevant day to show information for (the active day).
  *
  * Notably:
- *   - From one hour before the upcoming day, you'll see that day
+ *   - From one hour after the current day, you'll see that day
  *   - If you refresh the page one hour after that day, you'll see the next day
- *   - But if you leave the tab open, it'll continue to show the previously chosen day until it's
- *     one hour until the next day (so the user can leave their browser open on the previous day)
  */
 
 class EventStore extends HTMLElement {
@@ -45,16 +43,17 @@ class EventStore extends HTMLElement {
 
     this._timer = 0;
     this._timeOffset = 0;
-    this._activeDay = null;
-    this._isChatActive = false;
     this._days = [];
   }
 
   /**
-   * @param {boolean=} change this should force a change
+   * Interval function to determine which day is currently active and whether
+   * or not chat should be enabled.
    */
-  _update(change = false) {
+  _update() {
     const now = +new Date() + this._timeOffset;
+
+    let activeDay = null;
 
     // If there was a previously active day (because the user has their tab open for a long time),
     // then prefer it over showing the upcoming day (we store that in nextPendingDay).
@@ -72,12 +71,24 @@ class EventStore extends HTMLElement {
       const chatStart = timeOffsetBy(-bufferChatMinutes);
       const chatEnd = timeOffsetBy(day.duration + bufferChatMinutes);
 
+      // DEBUG
+      // Suggest leaving this checked-in because it's very useful for debugging.
+      // console.log(
+      //   'day.when',
+      //   `${new Date(day.when)}\n`,
+      //   'activeStart:',
+      //   `${new Date(activeStart)}\n`,
+      //   'chatStart:',
+      //   `${new Date(chatStart)}\n`,
+      //   'activeEnd:',
+      //   `${new Date(activeEnd)}\n`,
+      //   'chatEnd:',
+      //   `${new Date(chatEnd)}\n`,
+      // );
+
       // Are we past the completion of this day? This allows the YT link to show up.
       const isComplete = now >= activeEnd;
-      if (day.isComplete !== isComplete) {
-        day.isComplete = isComplete;
-        change = true;
-      }
+      day.isComplete = isComplete;
       if (!isComplete && nextPendingDay === null) {
         // The first time we find an incomplete day (e.g., tomorrow's event day), mark it as the
         // next pending day we use as the active fallback.
@@ -86,33 +97,27 @@ class EventStore extends HTMLElement {
 
       // Is this day active (within the buffer time range)?
       const isActive = now >= activeStart && now < activeEnd;
-      if (isActive && this._activeDay !== day) {
-        this._activeDay = day;
-        change = true;
+      if (isActive) {
+        activeDay = day;
       }
 
       // Is this the active day for chat (within the actual time range)?
       const isChatActive = now >= chatStart && now < chatEnd;
-      if (this._isChatActive !== isChatActive) {
-        this._isChatActive = isChatActive;
-        change = true;
-      }
+      day.isChatActive = isChatActive;
     }
 
     // If there was no previously active day, then choose the upcoming day.
-    if (this._activeDay === null) {
-      this._activeDay = nextPendingDay;
-      change = true;
+    // If we've reached the end of the event then keep it on the last day.
+    if (activeDay === null) {
+      activeDay = nextPendingDay
+        ? nextPendingDay
+        : this._days[this._days.length - 1];
     }
 
-    // We gate setting a change with a boolean as to not accidentally trigger recursive updates.
-    if (change) {
-      store.setState({
-        eventDays: this._days,
-        activeEventDay: this._activeDay,
-        isChatActive: this._isChatActive,
-      });
-    }
+    store.setState({
+      eventDays: this._days,
+      activeEventDay: activeDay,
+    });
   }
 
   connectedCallback() {
@@ -125,11 +130,12 @@ class EventStore extends HTMLElement {
       const day = raw.days[i];
       day.index = i;
       day.isComplete = false;
+      day.isChatActive = false;
     }
 
     this._days = raw.days || [];
-    this._update(true);
 
+    this._update();
     this._timer = window.setInterval(this._update, timerEveryMillisecond);
   }
 
@@ -137,7 +143,7 @@ class EventStore extends HTMLElement {
     store.unsubscribe(this.onStateChanged);
 
     this._days = [];
-    this._update(true);
+    this._update();
 
     window.clearInterval(this._timer);
   }
