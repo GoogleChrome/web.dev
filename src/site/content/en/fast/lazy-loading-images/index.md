@@ -34,7 +34,7 @@ A value of `lazy` tells the browser to load the image immediately if it is in th
 and to fetch other images when the user scrolls near them.
 
 {% Aside %}
-  Please note `<iframe loading="lazy">` is currently non-standard.
+  Note `<iframe loading="lazy">` is currently non-standard.
   While implemented in Chromium, it does not yet have a specification and is subject to future change when this does happen.
   We suggest not to lazy-load iframes using the `loading` attribute until it becomes part of the specification.
 {% endAside %}
@@ -173,7 +173,7 @@ milliseconds on document scroll or window resize regardless of whether there's
 an image in the viewport or not. Plus, the tedious work of tracking how many
 elements are left to lazy-load and unbinding the scroll event handler are left
 to the developer. You can find out more about this technique in
- [this CSS Tricks article](https://css-tricks.com/the-complete-guide-to-lazy-loading-images/#method-1-trigger-the-image-load-using-javascript-events).
+ [The Complete Guide to Lazy Loading Images](https://css-tricks.com/the-complete-guide-to-lazy-loading-images/#method-1-trigger-the-image-load-using-javascript-events).
 
 Simply put: Use native lazy-loading with a fallback Intersection Observer implementation wherever possible, and only use event
 handlers if the widest possible compatibility is a critical application
