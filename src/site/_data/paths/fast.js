@@ -4,7 +4,7 @@ module.exports = {
   slug: 'fast',
   cover: '/images/collections/fast.svg',
   title: 'Fast load times',
-  updated: 'May 24, 2018',
+  updated: 'June 5, 2020',
   description: 'Guarantee your site loads quickly to avoid user drop off.',
   overview: `When you're building a modern web experience, it's important to
   measure, optimize, and monitor if you're to get fast and stay fast.
@@ -45,11 +45,21 @@ module.exports = {
       pathItems: [
         'use-imagemin-to-compress-images',
         'replace-gifs-with-videos',
-        'use-lazysizes-to-lazyload-images',
         'serve-responsive-images',
         'serve-images-with-correct-dimensions',
         'serve-images-webp',
         'image-cdns',
+      ],
+    },
+    {
+      title: 'Lazy-load images and video',
+      pathItems: [
+        'lazy-loading',
+        'lazy-loading-images',
+        'lazy-loading-video',
+        'native-lazy-loading',
+        'use-lazysizes-to-lazyload-images',
+        'lazy-loading-problems',
       ],
     },
     {
