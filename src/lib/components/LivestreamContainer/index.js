@@ -23,6 +23,7 @@ class LivestreamContainer extends BaseStateElement {
     }
 
     // prettier-ignore
+    /* eslint-disable indent */
     return html`
       <div class="web-livestream-container__col-yt">
         <div class="w-youtube">
@@ -37,11 +38,30 @@ class LivestreamContainer extends BaseStateElement {
       </div>
 
       <div class="web-livestream-container__col-chat">
-        <iframe
-          class="w-youtube-chat"
-          src="https://www.youtube.com/live_chat?v=${this.videoId}&amp;embed_domain=${location.hostname}"
-          frameborder="0"
-        ></iframe>
+        ${this.isChatEnabled ?
+          html`
+            <iframe
+              class="w-youtube-chat"
+              src="https://www.youtube.com/live_chat?v=${this.videoId}&amp;embed_domain=${location.hostname}"
+              frameborder="0"
+            ></iframe>
+          ` :
+          html`
+            <div class="w-youtube-disabled-chat">
+              <div class="w-youtube-disabled-chat__container">
+                <div>
+                  Live Chat is disabled as the Premiere has ended. Please head to
+                  YouTube and ask your questions in the comments on the video.
+                </div>
+                <div>
+                  <a href="https://www.youtube.com/watch?v=${this.videoId}">
+                    Go to YouTube
+                  </a>
+                </div>
+              </div>
+            </div>
+          `
+        }
       </div>
     `;
   }
@@ -49,12 +69,14 @@ class LivestreamContainer extends BaseStateElement {
   /**
    * @param {!Object<string, *>} state
    */
-  onStateChanged() {
-    // Example implementation depending on what we end up putting in our
-    // state object:
-    // const {videoId, isChatEnabled} = state;
-    // this.videoId = videoId;
-    // this.isChatEnabled = isChatEnabled;
+  onStateChanged({activeEventDay}) {
+    if (!activeEventDay) {
+      return;
+    }
+
+    const {videoId, isChatEnabled} = activeEventDay;
+    this.videoId = videoId;
+    this.isChatEnabled = isChatEnabled;
   }
 }
 

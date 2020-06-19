@@ -23,7 +23,7 @@ const days = [
     title: 'Day 1',
     when: '2020-06-30T16:00Z', // 9am PDT (-7)
     duration: 3,
-    videoId: null,
+    videoId: 'ukVbZUPkxx0',
     sessions: [
       {
         speaker: 'dalmaer',
@@ -124,7 +124,7 @@ const days = [
     title: 'Day 2',
     when: '2020-07-01T12:00Z', // 12pm GMT/UTC (+0), note UK time will be 1pm
     duration: 3,
-    videoId: null,
+    videoId: 'WEVctuQTeaI',
     sessions: [
       {
         speaker: 'dalmaer',
@@ -381,8 +381,8 @@ for (const day of days) {
 }
 
 module.exports = {
-  isPreEvent: true,
-  isDuringEvent: false,
+  isPreEvent: false,
+  isDuringEvent: true,
   isPostEvent: false,
   days,
 };

@@ -92,7 +92,7 @@ class EventSchedule extends HTMLElement {
     // the correct day of tab.
     const index = this._tabsElement.indexOfTabParent(session);
     if (index !== -1) {
-      this._tabsElement.focusTab(index);
+      // this._tabsElement.focusTab(index);
     }
 
     this._modalElement.sessionRow = clone;
