@@ -20,7 +20,8 @@ import {store} from '../../store';
 
 // Pretend the date is active within this buffer. This is useful so we can
 // reveal the player for a bit more time.
-const bufferHours = 1;
+const bufferMinutes = 60;
+const bufferChatMinutes = 10;
 
 // Run the timer every five minutes.
 const timerEvery = 60 * 1000 * 5;
@@ -45,7 +46,7 @@ class EventStore extends HTMLElement {
     this._timer = 0;
     this._timeOffset = 0;
     this._activeDay = null;
-    this._activeChatDay = null;
+    this._isChatActive = false;
     this._days = [];
   }
 
@@ -60,19 +61,19 @@ class EventStore extends HTMLElement {
     let nextPendingDay = null;
 
     for (const day of this._days) {
-      const timeOffsetBy = (hours) => {
+      const timeOffsetBy = (minutes) => {
         const d = new Date(day.when);
-        d.setHours(d.getHours() + hours);
+        d.setMinutes(d.getMinutes() + minutes);
         return +d;
       };
 
-      const actualStart = timeOffsetBy(0);
-      const actualEnd = timeOffsetBy(day.duration);
-      const bufferStart = timeOffsetBy(-bufferHours);
-      const bufferEnd = timeOffsetBy(day.duration + bufferHours);
+      const activeStart = timeOffsetBy(-bufferMinutes);
+      const activeEnd = timeOffsetBy(day.duration + bufferMinutes);
+      const chatStart = timeOffsetBy(-bufferChatMinutes);
+      const chatEnd = timeOffsetBy(day.duration + bufferChatMinutes);
 
       // Are we past the completion of this day? This allows the YT link to show up.
-      const isComplete = now >= bufferEnd;
+      const isComplete = now >= activeEnd;
       if (day.isComplete !== isComplete) {
         day.isComplete = isComplete;
         change = true;
@@ -84,16 +85,16 @@ class EventStore extends HTMLElement {
       }
 
       // Is this day active (within the buffer time range)?
-      const isActive = now >= bufferStart && now < bufferEnd;
+      const isActive = now >= activeStart && now < activeEnd;
       if (isActive && this._activeDay !== day) {
         this._activeDay = day;
         change = true;
       }
 
       // Is this the active day for chat (within the actual time range)?
-      const isActiveChat = now >= actualStart && now < actualEnd;
-      if (isActiveChat && this._activeChatDay !== day) {
-        this._activeChatDay = day;
+      const isChatActive = now >= chatStart && now < chatEnd;
+      if (this._isChatActive !== isChatActive) {
+        this._isChatActive = isChatActive;
         change = true;
       }
     }
@@ -109,7 +110,7 @@ class EventStore extends HTMLElement {
       store.setState({
         eventDays: this._days,
         activeEventDay: this._activeDay,
-        activeChatDay: this._activeChatDay,
+        isChatActive: this._isChatActive,
       });
     }
   }
