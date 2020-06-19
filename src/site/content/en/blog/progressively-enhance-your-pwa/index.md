@@ -410,7 +410,7 @@ The good news is that Web Share Level&nbsp;2 has added file sharing capabilities
 ```js
 try {
   await navigator.share({
-    title: '',
+    title: 'Check out this article:',
     text: `"${document.title}" by @tomayac:`,
     url: document.querySelector('link[rel=canonical]').href,
   });
