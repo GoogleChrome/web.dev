@@ -28,7 +28,7 @@ module.exports = {
       pathItems: ['precache-with-workbox', 'runtime-caching-with-workbox'],
     },
     {
-      title: 'Advanced Patterns',
+      title: 'Advanced patterns',
       pathItems: ['resilient-search-experiences'],
     },
   ],
