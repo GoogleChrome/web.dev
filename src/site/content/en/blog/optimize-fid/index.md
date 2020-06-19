@@ -136,7 +136,7 @@ thread blocking time and consequently improve FID.
 Consider using the following libraries to make it easier to use web workers on your site:
 
 +   [Comlink](https://github.com/GoogleChromeLabs/comlink): A helper library that abstracts
-    ``postMessage`` and makes it easier to use
+    `postMessage` and makes it easier to use
 +   [Workway](https://github.com/WebReflection/workway): A general purpose web worker exporter
 +   [Workerize](https://github.com/developit/workerize): Move a module into a web worker
 
@@ -153,38 +153,13 @@ begin to respond to any user interactions.
 
 To reduce the amount of JavaScript executed on your page:
 
-+   Minify and compress JavaScript files
 +   Defer unused JavaScript
 +   Minimize unused polyfills
 
 In addition to minimizing JavaScript, [breaking up long-running code into smaller tasks](#long-tasks) can allow the
 browser to run input handlers sooner, which can improve FID.
 
-### Minify and compress JavaScript files
-
-JavaScript can contain characters that are unnecessary for browsers but makes things easier to read
-during development. This includes spacing, indentation, comments, and long variable names.
-
-[Terser](https://github.com/terser/terser) supports ES6+ syntax, and can be used to minify modern
-JavaScript files without the need to transpile them. If you use a module bundler and want to include
-Terser in your toolchain:
-
-+   webpack and Parcel already minify using Terser by default in `production` mode
-+   If you use Rollup, include
-    [rollup-plugin-terser](https://www.npmjs.com/package/rollup-plugin-terser) as an output plugin
-
-In addition to minification, compress your JavaScript resources to minimize their delivery size. If
-possible, use
-[Brotli](https://opensource.googleblog.com/2015/09/introducing-brotli-new-compression.html) which
-provides better compression results than
-[Gzip](https://www.youtube.com/watch?v=whGwm0Lky2s&feature=youtu.be&t=14m11s) and [can be used in
-almost all newer browsers](https://caniuse.com/#feat=brotli).
-
-{% Aside %}
-For more details, refer to the [Minify and compress network payloads](/reduce-network-payloads-using-text-compression/) guide.
-{% endAside %}
-
-### Defer unused JavaScript
+#### Defer unused JavaScript
 
 By default all JavaScript is render-blocking. When the browser encounters a script tag that links to
 an external JavaScript file, it must pause what it's doing and download, parse, compile, and execute
@@ -247,7 +222,7 @@ critical-path or above-the-fold content.
 Unless there is a specific reason not to, all third-party scripts should be loaded with either `defer`	
 or `async` by default.
 
-### Minimize unused polyfills	
+#### Minimize unused polyfills	
 
 If you author your code using modern JavaScript syntax and reference modern browsers APIs, you will	
 need to transpile it and include polyfills in order for it to work in older browsers.	
