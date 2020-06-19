@@ -84,7 +84,9 @@ browser.
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
 <!-- Use it like any other HTML element -->
-<model-viewer id="mv-demo" shadow-intensity="1" src="./spacesuit.glb" alt="A 3D model of an astronaut" auto-rotate camera-controls poster="./spacesuit.jpg"></model-viewer>
+<model-viewer id="mv-demo" shadow-intensity="1" src="./spacesuit.glb"
+alt="A 3D model of an astronaut" auto-rotate camera-controls
+poster="./spacesuit.jpg"></model-viewer>
 ```
 
 That code renders like this:
