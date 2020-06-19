@@ -11,7 +11,6 @@ description: |
 ---
 
 Even in locations with fast networks a user might lose connection or connect to a flaky network, at some moments of the day.
-
 For example: a user is on the subway searching on the phone for a product on an e-commerce website. She types the product name, clicks the "search" button, and while waiting for the results, the connection is lost, leading to the standard browser offline page.
 
 As a result, unless the user decides to come back to the site later, and repeat the same task, the site might lose a potential transaction and customer.
@@ -21,12 +20,13 @@ To provide a more resilient search experience in these cases you can use the [Ba
 ## Production case
 
 For concrete application of this technique let's take a look at Google Search for Chrome in Android. 
-
-When visiting the Google Search webapp and going offline, instead of showing the standard network error page, the site serves a custom offline response, but allows users to enter their search query immediately.
-
+When visiting the Google Search web app and going offline, instead of showing the standard network error page, the site serves a custom offline response, but allows users to enter their search query immediately.
 The page also prompts the user to opt-in for notifications, to receive a link to the search results page once the connection is recovered.
 
-![A screenshot of the background retry interface in Google Search.](search-offline-screen.png)
+<figure class="w-figure">
+  <img src="search-offline-screen.png" 
+       alt="A screenshot of the background retry interface in Google Search.">
+</figure>
 
 When the user performs a search, the service worker allows the query to be deferred and sent to Google's servers as soon as the device goes back online by using the [Background Sync API](https://developers.google.com/web/updates/2015/12/background-sync), and to inform the user of the result by using the [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API).
 
@@ -59,7 +59,7 @@ const bgSyncPlugin = new workbox.backgroundSync.Plugin('offlineQueryQueue', {
       try {
         const response = await fetch(entry.request);
         const cache = await caches.open('offline-search-responses');
-        const offlineUrl = entry.request.url + '&notification=true';
+        const offlineUrl = `${entry.request.url}&notification=true`;
         cache.put(offlineUrl, response);
         showNotification(offlineUrl);
       } catch (error) {
