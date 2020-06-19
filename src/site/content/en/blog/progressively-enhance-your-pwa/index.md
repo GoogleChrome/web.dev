@@ -107,7 +107,8 @@ console.log(0 ?? 42);
 ## The sample app: Fugu Greetings
 
 For this article, I work with a simple PWA, called
-[Fugu Greetings](https://tomayac.github.io/fugu-greetings/public/).
+[Fugu Greetings](https://tomayac.github.io/fugu-greetings/public/)
+([GitHub](https://github.com/tomayac/fugu-greetings)).
 The name of this app is a tip of the hat to Project Fugu 🐡, an effort to give the web all
 the powers of native applications.
 You can read more about the project on its
