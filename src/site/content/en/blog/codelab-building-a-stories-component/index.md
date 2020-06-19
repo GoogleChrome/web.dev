@@ -7,9 +7,10 @@ description: |
   Learn how to build an experience similar to Instagram Stories on the web.
 date: 2020-06-19
 hero: hero.jpg
-glitch: gui-challenges-stories
+glitch: bevel-pool-fig
+#glitch: gui-challenges-stories
 glitch_path: app/index.html
-related_post: stories-component
+related_post: building-a-stories-component
 tags:
   - css
   - dom
@@ -23,7 +24,7 @@ This codelab teaches you how to build an experience like Instagram Stories
 on the web. We'll build the component as we go, starting with HTML, then CSS,
 then JavaScript.
 
-Check out my blog post [Building a Stories component on the web](/building-a-stories-component)
+Check out my blog post [Building a Stories component](/building-a-stories-component)
 to learn about the progressive enhancements made while building this component.
 
 {% YouTube '5_sfnQDr1-o' %}
@@ -112,14 +113,7 @@ layer with the loading placeholder.
 ## CSS
 
 Our content is ready for style. Let's turn those bones into something folks will
-want to interact with. We'll be working mobile first today.
-
-{% Aside %}
-Feel free to stop and study the `body` styles if you like!
-They're handling the responsive nature of our Stories component.
-You can also collapse the `body` styles by clicking the **&or;**
-symbol next to `body` on line 1.
-{% endAside %}
+want to interact with. We'll be working mobile-first today.
 
 ### `.stories`
 
@@ -130,14 +124,16 @@ We can achieve this by:
 * Setting each child to fill the row track
 * Making the width of each child the width of a mobile device viewport
 
-Grid will continue placing new `100vw` wide columns to the right of the previous
+Grid will continue placing new `100vw`-wide columns to the right of the previous
 one, until it's placed all the HTML elements in your markup. 
 
 <!-- TODO(kayce): Resize this screenshot so there's less whitespace -->
 
 <figure class="w-figure">
   <img src="./horizontal-scroll-with-grid.png" alt="Chrome and DevTools open with a grid visual showing the full width layout">
-  <figcaption class="w-figcaption">Chrome DevTools showing grid column overflow, making a horizontal scroller</figcaption>
+  <figcaption class="w-figcaption">
+    Chrome DevTools showing grid column overflow, making a horizontal scroller.
+  </figcaption>
 </figure>
 
 Add the following CSS to the bottom of `app/css/index.css`:
@@ -149,6 +145,13 @@ Add the following CSS to the bottom of `app/css/index.css`:
   gap: 1ch;
 }
 ```
+
+{% Aside %}
+Feel free to stop and study the `body` styles if you like!
+They're handling the responsive nature of our Stories component.
+You can also collapse the `body` styles by clicking the **&or;**
+symbol next to `body` on line 1.
+{% endAside %}
 
 Now that we have content extending beyond the viewport, it's time to tell that
 container how to handle it. Add the highlighted lines of code to your `.stories` ruleset:
@@ -166,10 +169,10 @@ container how to handle it. Add the highlighted lines of code to your `.stories`
 
 We want horizontal scrolling, so we'll set `overflow-x` to
 `auto`. When the user scrolls we want the component to gently rest on the next story,
-so we'll use `scroll-snap-type: x mandatory`.
-You can learn more about that in [CSS Scroll Snap Points](/building-a-stories-component/#scroll-snap-points).
-And check out [overscroll-behavior](building-a-stories-component/#overscroll-behavior)
-to learn about the browser compatibility issue that `overscroll-behavior-x: contain` fixes.
+so we'll use `scroll-snap-type: x mandatory`. Read more about this
+CSS in the [CSS Scroll Snap Points](/building-a-stories-component/#scroll-snap-points)
+and [overscroll-behavior](/building-a-stories-component/#overscroll-behavior)
+sections of my blog post.
 
 It takes both the parent container and the children to agree to scroll snapping, so
 let's handle that now. Add the following code to the bottom of `app/css/index.css`:
@@ -181,7 +184,10 @@ let's handle that now. Add the following code to the bottom of `app/css/index.cs
 }
 ```
 
-<!-- TODO(kayce): Is my component supposed to look like the video below at this point? -->
+Your app doesn't work yet, but the video below shows what happens when
+`scroll-snap-type` is enabled and disabled. When enabled, each horizontal
+scroll snaps to the next story. When disabled, the browser uses its
+default scrolling behavior.
 
 <figure class="w-figure">
   <video playsinline controls autoplay loop muted class="w-screenshot">
@@ -198,7 +204,7 @@ with the stories to solve.
 Let's create a layout in the `.user` section that wrangles those child story
 elements into place. We're going to use a handy stacking trick to solve this.
 We're essentially creating a 1x1 grid where the row and column have the same Grid
-alias of `story`, and each story grid item is going to try and claim that space,
+alias of `[story]`, and each story grid item is going to try and claim that space,
 resulting in a stack.
 
 Add the highlighted code to your `.user` ruleset:
@@ -222,8 +228,7 @@ Add the following ruleset to the bottom of `app/css/index.css`:
 
 Now, without absolute positioning, floats, or other layout directives that take
 an element out of flow, we're still in flow. Plus, it's like barely any code,
-look at that! This gets broken down in the video and the blog post better,
-in case you'd like additional explanation. 
+look at that! This gets broken down in the video and the blog post in more detail.
 
 ### `.story`
 
@@ -315,7 +320,7 @@ highlighted code to your `.story` ruleset:
 The `.seen` class will be added to a story that needs an exit.
 I got the custom easing function (`cubic-bezier(0.4, 0.0, 1,1)`)
 from Material Design's [Easing](https://material.io/design/motion/speed.html#easing)
-guide (see the *Accerlerated easing* section).
+guide (scroll to the *Accerlerated easing* section).
 
 {% Aside %}
   Check out [Nesting Selector: the `&` selector](https://drafts.csswg.org/css-nesting-1/#nest-selector)
@@ -334,7 +339,7 @@ still.
 
 ## JavaScript
 
-The interactions of a stories component are quite simple to the user: tap on the
+The interactions of a Stories component are quite simple to the user: tap on the
 right to go forward, tap on the left to go back. Simple things for users tends
 to be hard work for developers. We'll take care of lots of it, though.
 
@@ -457,7 +462,7 @@ friend or show/hide a story. Since the HTML is where we're working, we'll be
 querying it for presence of friends (users) or stories (story). 
 
 These variables will help us answer questions like, "given story x, does "next"
-mean move to another story or to a user?" I did it by using the tree
+mean move to another story from this same friend or to a different friend?" I did it by using the tree
 structure we built, reaching into parents and their children.
 
 Add the following code to the bottom of `app/js/index.js`:
@@ -528,6 +533,4 @@ const navigateStories = direction => {
 ## Conclusion
 
 That's a wrap up for the needs I had with the component. Feel free to build upon
-it, drive it with data, etc.! 
-
-TODO(kayce): Encourage them to share and mention we'll update the list
+it, drive it with data, and in general make it yours! 
