@@ -54,7 +54,7 @@ To learn more about how to integrate Workbox with build tools, check out the [we
 
 Next, add code to use the offline page as a fallback response:
 
-{% Instruction 'preview' %}
+{% Instruction 'source', 'ol' %}
 1. Add the following code to the bottom of `public/sw.js`:
 
 ```javascript
