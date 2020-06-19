@@ -1,6 +1,6 @@
 ---
 layout: codelab
-title: Building a resilient search experience with Workbox
+title: Building resilient search experiences with Workbox
 authors:
   - demianrenzulli
   - jeffposnick
