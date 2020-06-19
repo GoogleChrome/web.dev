@@ -7,8 +7,7 @@ description: |
   Learn how to build an experience similar to Instagram Stories on the web.
 date: 2020-06-19
 hero: hero.jpg
-glitch: bevel-pool-fig
-#glitch: gui-challenges-stories
+glitch: gui-challenges-stories
 glitch_path: app/index.html
 related_post: building-a-stories-component
 tags:
