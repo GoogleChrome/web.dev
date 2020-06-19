@@ -1298,6 +1298,7 @@ const contributors = {
       given: 'Anton',
       family: 'Karlovskiy',
     },
+    twitter: 'antonkarlovskiy',
     github: 'anton-karlovskiy',
     glitch: 'anton-karlovskiy',
   },
