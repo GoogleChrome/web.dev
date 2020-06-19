@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Building a Stories component on the web
+title: Building a Stories component
 # TODO(kayce): Rename URL to match the title
-subhead: An overview of how Adam Argyle built an experience similar to Instagram Stories on the web.
+subhead: An overview of how to build an experience similar to Instagram Stories on the web.
 authors:
   - adamargyle
-description: An overview of how Adam Argyle built an Instagram Stories experience on the web.
-date: 2020-06-08
+description: An overview of how to build an experience similar to Instagram Stories on the web.
+date: 2020-06-19
 hero: hero.jpg
 thumbnail: thumb.jpg
 codelabs: codelab-stories-component
