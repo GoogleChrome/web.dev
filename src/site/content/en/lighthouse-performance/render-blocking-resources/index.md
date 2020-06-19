@@ -109,6 +109,8 @@ general rule, `async` should be used with HTML imports as much as possible.
 <link rel="import" href="myfile.html" async>
 ```
 
+Warning: [HTML Imports](https://www.chromestatus.com/feature/5144752345317376) was an experimental and deprecated technology, superseded by [ES modules](https://v8.dev/features/modules).
+
 ## Resources
 
 - [Source code for **Eliminate render-blocking resources** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/render-blocking-resources.js)
