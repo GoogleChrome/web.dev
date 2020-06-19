@@ -4,6 +4,7 @@ title: Prefetching in create-react-app with Quicklink
 authors:
   - addyosmani
   - demianrenzulli
+  - antonkarlovskiy
 description: |
   Implement the Quicklink library in a React SPA demo to demonstrate how prefetching speeds up subsequent navigations.
 date: 2020-06-08
