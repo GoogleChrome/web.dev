@@ -277,7 +277,7 @@ As I said earlier, the grass is pretty green these days.
 <figure class="w-figure">
   <img class="w-screenshot"
        src="10000201000006FC0000021AD16A28BA8F5CBF1A.png"
-       alt="">
+       alt="Chrome DevTools showing the modern files getting loaded.">
   <figcaption class="w-figcaption">
     Chrome DevTools network tab.
   </figcaption>
