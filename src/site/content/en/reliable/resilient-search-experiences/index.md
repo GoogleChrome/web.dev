@@ -4,7 +4,7 @@ title: Resilient search experiences
 authors:
   - demianrenzulli
   - jeffposnick
-date: 2020-07-19
+date: 2020-06-19
 description: |
   Even in locations with fast networks a user might lose connection or connect to a flaky network, at some moments of the day.
   Use the  Background Sync API and Web Push Notifications to provide a resilient search experience in these cases.
