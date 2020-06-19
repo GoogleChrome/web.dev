@@ -267,4 +267,4 @@ A number of tools are available to measure and debug FID:
 +   [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
     provides real-world FID values aggregated at the origin-level
 
-_With thanks to Philip Walton, Kayce Basques, and Ilya Grigorik for their reviews._
+_With thanks to Philip Walton, Kayce Basques, Ilya Grigorik, and Annie Sullivan for their reviews._
