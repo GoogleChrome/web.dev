@@ -291,8 +291,9 @@ exposes a number of timestamps in the event lifecycle, including:
   time when the browser finishing executing all synchronous code initiated from
   event handlers for this event.
 - [`duration`](https://wicg.github.io/event-timing/#dom-performanceeventtiming-processingstart):
-  the time between when the browser receives the event until it's able to paint
-  the next frame (rounded to 8ms for security reasons).
+  the time (rounded to 8ms for security reasons) between when the browser
+  receives the event until it's able to paint the next frame after finishing
+  executing all synchronous code initiated from the event handlers.
 
 The following example shows how to use these these values to create custom
 measurements:
@@ -313,7 +314,8 @@ try {
     const firstInputProcessingTime = firstInput.processingEnd - firstInput.processingStart;
 
     // Measure the entire duration of the event, from when input is received by
-    // the browser until the next frame can be painted.
+    // the browser until the next frame can be painted after processing all
+    // event handlers.
     // Note: similar to above, this value does not include work scheduled
     // asynchronously using `requestAnimationFrame()` or `setTimeout()`.
     // And for security reasons, this value is rounded to the nearest 8ms.

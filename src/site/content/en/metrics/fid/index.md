@@ -4,7 +4,7 @@ title: First Input Delay (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-06-15
+updated: 2020-06-19
 description: |
   This post introduces the First Input Delay (FID) metric and explains
   how to measure it
@@ -213,12 +213,13 @@ As mentioned above, FID only measures the "delay" in event processing. It does
 not measure the event processing time itself nor the time it takes the browser
 to update the UI after running event handlers.
 
-Even though this time is important to the user and does affect the experience,
-it's not included in this metric because it would be easy for developers to
-cheat—that is, they could wrap their event handler logic in an asynchronous
-callback (via `setTimeout()` or `requestAnimationFrame()`) in order to separate
-it from the task associated with the event. The result would be an improvement
-in the metric score without a corresponding improvement in the user experience.
+Even though this time is important to the user and _does_ affect the experience,
+it's not included in this metric because doing so could incentivize developers
+to add workarounds that actually make the experience worse—that is, they could
+wrap their event handler logic in an asynchronous callback (via `setTimeout()`
+or `requestAnimationFrame()`) in order to separate it from the task associated
+with the event. The result would be an improvement in the metric score but a
+slower response as perceived by the user.
 
 However, while FID only measure the "delay" portion of event latency, developers
 who want to track more of the event lifecycle can do so using the [Event Timing
