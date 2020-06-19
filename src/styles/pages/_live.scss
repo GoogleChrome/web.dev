@@ -424,15 +424,8 @@ web-tabs.w-event-tabs {
 }
 
 .w-event-icon {
-  @include font_material_icon();
   align-items: center;
-  font-size: 20px;
   vertical-align: middle;
   margin-right: 16px;
 }
 
-.w-event-icon__map {
-  &::before {
-    content: 'place';
-  }
-}
