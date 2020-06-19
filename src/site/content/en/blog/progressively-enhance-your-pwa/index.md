@@ -773,7 +773,9 @@ API is supported by the browser.
 This applies to both the client code and the service worker code.
 On non-supporting browsers, neither of them is loaded.
 Note how in the service worker, instead of a dynamic `import()`
-(that isn't supported in a service worker context yet), I use the classic
+(that isn't supported in a service worker context
+[yet](https://github.com/w3c/ServiceWorker/issues/1356#issuecomment-433411852)),
+I use the classic
 [`importScripts()`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts).
 
 ```js
@@ -1051,4 +1053,7 @@ I'm looking forward to seeing what you do with progressive enhancement in your a
 
 I'm grateful to [Christian Liebel](https://christianliebel.com/) and
 [Hemanth HM](https://h3manth.com/) who both have contributed to Fugu Greetings.
-This article was reviewed by [Joe Medley](https://github.com/jpmedley).
+This article was reviewed by [Joe Medley](https://github.com/jpmedley) and
+[Kayce Basques](https://github.com/kaycebasques).
+[Jake Archibald](https://github.com/jakearchibald/) helped me find out the situation
+with dynamic `import()` in a service worker context.
