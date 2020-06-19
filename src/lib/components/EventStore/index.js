@@ -24,7 +24,7 @@ const bufferMinutes = 60;
 const bufferChatMinutes = 10;
 
 // Run the timer every five minutes.
-const timerEvery = 60 * 1000 * 5;
+const timerEveryMillisecond = 60 * 1000 * 5;
 
 /**
  * @fileoverview Provides an element which publishes event data to Unistore, as well as finding
@@ -130,7 +130,7 @@ class EventStore extends HTMLElement {
     this._days = raw.days || [];
     this._update(true);
 
-    this._timer = window.setInterval(this._update, timerEvery);
+    this._timer = window.setInterval(this._update, timerEveryMillisecond);
   }
 
   disconnectedCallback() {
