@@ -8,6 +8,7 @@ date: 2020-06-17
 description: |
   How to implement a resilient search experience with Workbox, using  Background Sync and the Push API.
 glitch: resilient-search-codelab
+related_post: resilient-search-experiences
 ---
 
 This codelab shows you how to implement a resilient search experience with Workbox. The demo app it uses contains a search box that calls a server endpoint, and redirects the user to a basic HTML page.
