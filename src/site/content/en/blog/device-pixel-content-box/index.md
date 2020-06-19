@@ -102,9 +102,7 @@ The `box` property in the options object for `observer.observe()` lets you defin
 
 **Note:** All of the box metrics are arrays to allow `ResizeObserver` to handle text fragments in the future. At the time of writing, the array is always of length 1.
 
-With this new property, we can even animate our canvas' size and position (effectively guaranteeing fractional pixel values), and not see any Moiré effects on the rendering. If you would like to see the Moiré effect on the approach using `getBoundingClientRect()`, and how the new `ResizeObserver` property allows you to avoid, take a look at the demo!
-
-<h1>TODO: ADD DEMO ONCE GLITCH RECOVERS</h1>
+With this new property, we can even animate our canvas' size and position (effectively guaranteeing fractional pixel values), and not see any Moiré effects on the rendering. If you would like to see the Moiré effect on the approach using `getBoundingClientRect()`, and how the new `ResizeObserver` property allows you to avoid, take a look at the <a href="https://device-pixel-content-box.glitch.me/" target="_blank">demo</a>!
 
 ### Feature detection
 
