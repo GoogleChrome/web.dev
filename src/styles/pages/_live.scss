@@ -429,10 +429,6 @@ web-tabs.w-event-tabs {
   font-size: 20px;
   vertical-align: middle;
   margin-right: 16px;
-
-  &::before {
-    content: 'place';
-  }
 }
 
 .w-event-icon__map {

@@ -111,31 +111,31 @@ date: 2020-06-31
   <hr />
 
   {% if event.isPostEvent %}
-  <section id="map" class="w-event-section">
+    <section id="map" class="w-event-section">
 
-    <div class="w-event-section__column-left">
-      <h3 class="w-mt--non">
-        <span class="w-event-icon w-event-icon__map"></span>
-        Regional events
-      </h3>
-      <p>
-        Missed web.dev LIVE? We’ve got you covered. Thanks to our Google Developer Group communities, we have a ton of live events.
-      </p>
-      <a href="/live#content" class="w-event-link">Back to top</a>
-    </div>
+      <div class="w-event-section__column-left">
+        <h3 class="w-mt--non">
+          <span class="w-event-icon w-event-icon__map"></span>
+          Regional events
+        </h3>
+        <p>
+          Missed web.dev LIVE? We’ve got you covered. Thanks to our Google Developer Group communities, we have a ton of live events.
+        </p>
+        <a href="/live#content" class="w-event-link">Back to top</a>
+      </div>
 
-    <div class="w-event-section__column-right">
-      <web-event-map
-        events={{event.communityEvents | dump}}
-        key={{site.maps.apiKey}}
-      >
-        <code style="display: none;">
-          {# This data is passed as innerText because dump does not work well with html attributes #}
-          {{event.communityEvents | dump}}
-        </code>
-      </web-event-map>
-    </div>
-  </section>
+      <div class="w-event-section__column-right">
+        <web-event-map
+          events={{event.communityEvents | dump}}
+          key={{site.maps.apiKey}}
+        >
+          <code style="display: none;">
+            {# This data is passed as innerText because dump does not work well with html attributes #}
+            {{event.communityEvents | dump}}
+          </code>
+        </web-event-map>
+      </div>
+    </section>
   {% endif %}
 
   <hr />
