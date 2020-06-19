@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Native lazy-loading for the web
 subhead: Browser-level native lazy-loading is finally here!
 authors:
@@ -26,8 +27,8 @@ a [demo](https://mathiasbynens.be/demo/img-loading-lazy) of the feature:
 
 <figure class="w-figure w-figure--fullbleed">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="./lazyload.webm" type="video/webm">
-    <source src="./lazyload.mp4" type="video/mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/native-lazy-loading/lazyload.webm" type="video/webm">
+    <source src="https://storage.googleapis.com/web-dev-assets/native-lazy-loading/lazyload.mp4" type="video/mp4">
   </video>
 </figure>
 
@@ -37,11 +38,11 @@ into the details.
 
 ## Browser compatibility
 
-At the time of this update (April 2020) native lazy loading is supported in Chromium-based
+At the time of this update (April 2020) native lazy-loading is supported in Chromium-based
 browsers and Firefox.
 
-See the `loading` field of MDN's 
-[Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Browser_compatibility)
+See the `loading` field of MDN's
+[browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Browser_compatibility)
 table for updates.
 
 ## Why native lazy-loading?

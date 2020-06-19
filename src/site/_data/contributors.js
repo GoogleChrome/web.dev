@@ -511,6 +511,14 @@ const contributors = {
     github: 'mdiblasio',
     glitch: 'mdiblasio',
   },
+  jeremywagner: {
+    name: {
+      given: 'Jeremy',
+      family: 'Wagner',
+    },
+    github: 'malchata',
+    twitter: 'malchata',
+  },
   gmimani: {
     name: {
       given: 'Garima',
