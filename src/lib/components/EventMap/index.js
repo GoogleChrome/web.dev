@@ -79,7 +79,7 @@ class EventMap extends BaseElement {
 
     // prettier-ignore
     return html`
-      <select class="w-live-select" @change="${this.onChange}">
+      <select class="w-select--borderless" @change="${this.onChange}">
         ${this.eventRegions.map((region) => {
     return html`<option value=${region}>${region}</option>`;
   })}
