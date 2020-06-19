@@ -389,7 +389,7 @@ Mobile, and more recently desktop operating systems have gained native sharing
 mechanisms.
 For example, below is desktop Safari's share sheet on macOS triggered from an article on
 my [blog](https://blog.tomayac.com/).
-When you click the Share Article button, you can share a link to the article with a friend, for
+When you click the **Share Article** button, you can share a link to the article with a friend, for
 example, via the native macOS Messages app.
 
 <figure class="w-figure">
@@ -464,7 +464,7 @@ const loadShare = () => {
 };
 ```
 
-In Fugu Greetings, if I tap the Share button on a supporting browser like Chrome on Android,
+In Fugu Greetings, if I tap the **Share** button on a supporting browser like Chrome on Android,
 the native share sheet opens.
 I can, for example, choose Gmail, and the email composer widget pops up with the
 image attached.
@@ -533,7 +533,7 @@ if ('contacts' in navigator) {
 }
 ```
 
-In Fugu Greeting, when I tap the Contacts button and select my two best pals,
+In Fugu Greeting, when I tap the **Contacts** button and select my two best pals,
 [Сергей Михайлович Брин](https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%B8%D0%BD,_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B8%D1%87) and [劳伦斯·爱德华·"拉里"·佩奇](https://zh.wikipedia.org/wiki/%E6%8B%89%E9%87%8C%C2%B7%E4%BD%A9%E5%A5%87),
 you can see how the
 contacts picker is limited to only show their names,
@@ -634,7 +634,7 @@ if ('clipboard' in navigator && 'write' in navigator.clipboard) {
 
 So how does this work in practice? I have an image open in the macOS Preview app and
 copy it to the clipboard.
-When I click Paste, the Fugu Greetings app then asks me
+When I click **Paste**, the Fugu Greetings app then asks me
 whether I want to allow the app to see text and images on the clipboard.
 
 <figure class="w-figure">
@@ -649,7 +649,7 @@ whether I want to allow the app to see text and images on the clipboard.
 Finally, after accepting the permission, the image is then pasted into the application.
 The other way round works, too.
 Let me copy a greeting card to the clipboard.
-When I then open Preview and click "File" and then "New from Clipboard",
+When I then open Preview and click **File** and then **New from Clipboard**,
 the greeting card gets pasted into a new untitled image.
 
 <figure class="w-figure">
@@ -793,7 +793,7 @@ if ('periodicSync' in self.registration) {
 }
 ```
 
-In Fugu Greetings, pressing the Wallpaper button reveals the greeting card image of the day
+In Fugu Greetings, pressing the **Wallpaper** button reveals the greeting card image of the day
 that is updated every day via the Periodic Background Sync API.
 
 <figure class="w-figure">
@@ -801,7 +801,7 @@ that is updated every day via the Periodic Background Sync API.
        src="10000201000009C4000005E0B042853D0E77C224.png"
        alt="Fugu Greetings app with a new greeting card image of the day.">
   <figcaption class="w-figcaption">
-    Pressing the Wallpaper button displays the image of the day.
+    Pressing the <strong>Wallpaper</strong> button displays the image of the day.
   </figcaption>
 </figure>
 
@@ -907,7 +907,7 @@ if ('wakeLock' in navigator && 'request' in navigator.wakeLock) {
   import('./wake_lock.mjs');
 }
 ```
-In Fugu Greetings, there's an insomnia checkbox that, when checked, keeps the
+In Fugu Greetings, there's an **Insomnia** checkbox that, when checked, keeps the
 screen awake.
 
 <figure class="w-figure">
@@ -915,7 +915,7 @@ screen awake.
        src="10000201000009C4000005DBCD9D10DD0A745315.png"
        alt="The insomnia checkbox, if checked, keeps the screen awake.">
   <figcaption class="w-figcaption">
-    The insomnia checkbox keeps app awake.
+    The <strong>Insomnia</strong> checkbox keeps app awake.
   </figcaption>
 </figure>
 
@@ -965,7 +965,7 @@ if ('IdleDetector' in window) {
 }
 ```
 
-In the Fugu Greetings app, the canvas clears when the Ephemeral checkbox is
+In the Fugu Greetings app, the canvas clears when the **Ephemeral** checkbox is
 checked and the user is idle for for too long.
 
 <figure class="w-figure">
@@ -973,7 +973,7 @@ checked and the user is idle for for too long.
        src="10000201000009C4000005DBB930B1D3F8F5D1DA.png"
        alt="Fugu Greetings app with a cleared canvas after the user has been idle for too long.">
   <figcaption class="w-figcaption">
-    When the ephemeral checkbox is checked and the user has been idle for too long, the canvas is cleared.
+    When the <strong>Ephemeral</strong> checkbox is checked and the user has been idle for too long, the canvas is cleared.
   </figcaption>
 </figure>
 
