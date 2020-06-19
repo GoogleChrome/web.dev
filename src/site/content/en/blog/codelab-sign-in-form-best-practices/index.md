@@ -1,10 +1,9 @@
 ---
 layout: codelab
-title: Login form best practices codelab
+title: Sign-in form best practices codelab
 authors:
   - samdutton
-date: 2020-04-24
-updated: 2020-05-29
+date: 2020-06-19
 description: Use cross-platform browser features to build a simple email/password login form that's secure, accessible and easy to use.
 tags:
   - identity

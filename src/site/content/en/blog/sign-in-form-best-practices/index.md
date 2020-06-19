@@ -5,6 +5,7 @@ authors:
   - samdutton
 date: 2020-06-19
 description: Use cross-platform browser features to build sign-in forms that are secure, accessible and easy to use.
+# TODO(kayce): Hero image should be 3200px by 920px
 hero: hero.jpg
 alt: Closeup photo of a man holding a phone showing a sign-in page
 thumbnail: thumbnail.jpg
@@ -17,7 +18,7 @@ tags:
   - security
   - ux
 codelabs:
-  - codelab-signin-form
+  - codelab-sign-in-form-best-practices
 ---
 
 
