@@ -95,6 +95,6 @@ As a result, when the user goes offline while searching, the query is automatica
 ## Conclusion
 
 In this article you learned how to implement a search experience capable of responding gracefully to offline scenarios, by combining the [Background Sync API](https://developers.google.com/web/updates/2015/12/background-sync) and the [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API).
-We used Workbox to show how to implement this feature, because it's our recommended way of building web apps that use service workers, but the same can be achieved by writing vanilla service worker code.
+We used Workbox to show how to implement this feature, as it simplifies the process, but the same can be achieved by writing vanilla service worker code.
 
 In the code samples we focused on the core part of the feature: how requests are intercepted and managed by the service worker. For a step-by-step guide on how to implement this functionality, including the offline page and the notification logic, check out the codelab at the end of this article.
