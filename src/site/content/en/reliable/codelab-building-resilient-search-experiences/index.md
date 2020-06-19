@@ -212,7 +212,6 @@ self.addEventListener('notificationclick', function(event) {
 1. Go back to the other tab that is running your app.
 1. Set the **Throttling** drop-down list back to **Online**.
 1. Press Chrome's **Back** button to navigate back to the search page.
-1. Make sure that the **Disable cache** checkbox in DevTools is disabled.
 1. Long-press Chrome's **Reload** button and select
    [**Empty cache and hard reload**](https://stackoverflow.com/q/14969315/1669860)
    to ensure that your service worker is updated.
