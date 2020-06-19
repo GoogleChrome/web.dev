@@ -10,6 +10,7 @@ description: |
   you want to use new JavaScript language features, you need to transpile these
   features to backwards-compatible formats.  
 date: 2018-11-05
+updated: 2020-06-19
 codelabs:
   - codelab-serve-modern-code
 tags:
@@ -78,15 +79,6 @@ configurations file, `.babelrc`:
 }
 ```
 
-Use the `targets` field to specify which browser versions you want to include,
-by adding an appropriate value (or query) to the `browsers` field.
-`@babel/preset-env` integrates with browserslist, an open-source configuration
-shared between different tools for targeting browsers. A full list of compatible
-queries is in the [browserslist
-documentation](https://github.com/browserslist/browserslist#full-list). Another
-option is to use a `.browserslistrc` file to list the environments you wish to
-target.
-
 Use the `targets` field to specify which browser versions you want to include
 by adding an appropriate query to the `browsers` field. `@babel/preset-env`
 integrates with browserslist, an open-source configuration shared between different
@@ -115,6 +107,35 @@ browsers to be used to access your application.
 
 Ultimately, you should select the appropriate combination of queries to only
 target browsers that fit your needs.
+
+### @babel/preset-modules
+
+`@babel/preset-env` groups multiple JavaScript syntax features into collections and enables/disables
+them based on the target browsers specified. Although this works well, an entire collection of
+syntax features is transformed when a targeted browser contains a bug with just a single feature.
+This results in more transformed code than is necessary.
+
+A separate preset, [`@babel/preset-modules`](https://github.com/babel/preset-modules) solves this
+problem by converting broken syntax to the closest non-broken, but still modern, syntax that would
+work for the targeted browsers. Instead of needing to install this preset separately, enable the
+[`bugfixes`](https://babeljs.io/docs/en/babel-preset-env#bugfixes) property to add these
+optimizations directly to `@babel/preset-env`.
+
+```json
+{
+ "presets": [
+   [
+     "@babel/preset-env",
+     {
+       "bugfixes": true
+     }
+   ]
+ ]
+}
+```
+
+This feature is only supported in `@babel/preset-env` version 7.10 or later. Babel 8 will also
+include these optimizations by default.
 
 ## Use &lt;script type=&quot;module&quot;&gt;
 
