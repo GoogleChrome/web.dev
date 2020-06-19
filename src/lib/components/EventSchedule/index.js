@@ -15,6 +15,9 @@
  */
 
 import '../EventScheduleModal';
+import '../Tabs';
+
+import {store} from '../../store';
 
 /**
  * @fileoverview A schedule manager which opens and closes modals based on
@@ -26,28 +29,36 @@ import '../EventScheduleModal';
 class EventSchedule extends HTMLElement {
   constructor() {
     super();
+    this.onStateChanged = this.onStateChanged.bind(this);
+    this.onCloseModal = this.onCloseModal.bind(this);
+    this.onHashChange = this.onHashChange.bind(this);
+    this.onClick = this.onClick.bind(this);
+    this.onModalAnimationEnd = this.onModalAnimationEnd.bind(this);
 
+    this._activeEventDay = null;
+    this._currentSession = null;
+    this._tabsElement = null;
+
+    // This just creates an element, we're not yet making it part of the DOM, so it's allowed here
+    // in the constructor.
     this._modalElement = document.createElement('web-event-schedule-modal');
     this._modalElement.className = 'web-modal';
     this._modalElement.open = false;
-    this._modalElement.addEventListener('close-modal', () => {
-      if (!window.location.hash.substr(1)) {
-        return; // we closed ourselves, so got an event that can be ignored
-      }
-      const url = window.location.pathname + window.location.search;
-      window.history.replaceState(null, null, url);
-      this.onHashChange();
-    });
+    this._modalElement.addEventListener('close-modal', this.onCloseModal);
 
-    this._currentSession = null;
-    this.onHashChange = this.onHashChange.bind(this);
-    this.onClick = this.onClick.bind(this);
-
-    this.onModalAnimationEnd = this.onModalAnimationEnd.bind(this);
     this._modalElement.addEventListener(
       'animationend',
       this.onModalAnimationEnd,
     );
+  }
+
+  onCloseModal() {
+    if (!window.location.hash.substr(1)) {
+      return; // we closed ourselves, so got an event that can be ignored
+    }
+    const url = window.location.pathname + window.location.search;
+    window.history.replaceState(null, null, url);
+    this.onHashChange();
   }
 
   _elementForHash(hash = window.location.hash) {
@@ -81,6 +92,13 @@ class EventSchedule extends HTMLElement {
     clone.querySelectorAll('[tabindex]').forEach((el) => {
       el.removeAttribute('tabindex');
     });
+
+    // If the user opens this page from externally on a specific session, make sure we're showing
+    // the correct day of tab.
+    const index = this._tabsElement.indexOfTabByChild(session);
+    if (index !== -1) {
+      this._tabsElement.activeTab = index;
+    }
 
     this._modalElement.sessionRow = clone;
     this._modalElement.open = true;
@@ -130,15 +148,47 @@ class EventSchedule extends HTMLElement {
   }
 
   connectedCallback() {
+    this._tabsElement = this.querySelector('web-tabs');
+    if (!this._tabsElement) {
+      throw new Error(`web-event-schedule expects web-tabs child element`);
+    }
+
     window.addEventListener('hashchange', this.onHashChange);
     this.addEventListener('click', this.onClick);
-    this.onHashChange();
+
+    customElements.whenDefined('web-tabs').then(() => {
+      if (!this.isConnected) {
+        return; // disconnected while we waited for web-tabs
+      }
+
+      store.subscribe(this.onStateChanged);
+      this.onStateChanged(store.getState()); // subscribe doesn't trigger listener
+      this.onHashChange();
+    });
   }
 
   disconnectedCallback() {
+    store.unsubscribe(this.onStateChanged);
+
     window.removeEventListener('hashchange', this.onHashChange);
     this.removeEventListener('click', this.onClick);
     this.onHashChange();
+
+    this._tabsElement = null;
+  }
+
+  onStateChanged({activeEventDay}) {
+    if (this._activeEventDay === activeEventDay) {
+      return;
+    }
+    this._activeEventDay = activeEventDay;
+
+    // This relies on the event data being in the same shape as the rendered
+    // tabs, which is pretty safe, since it comes from the same source.
+    // Don't change the tab for the user if a modal is already open.
+    if (!this._modalElement.open && activeEventDay) {
+      this._tabsElement.activeTab = activeEventDay.index;
+    }
   }
 }
 
