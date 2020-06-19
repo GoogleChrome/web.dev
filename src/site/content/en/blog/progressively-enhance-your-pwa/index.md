@@ -839,7 +839,7 @@ if ('Notification' in window && 'showTrigger' in Notification.prototype) {
 }
 ```
 
-When I check the Reminder checkbox in Fugu Greetings, a prompt asks
+When I check the **Reminder** checkbox in Fugu Greetings, a prompt asks
 me when I want to be reminded to finish my greeting card.
 
 <figure class="w-figure">
