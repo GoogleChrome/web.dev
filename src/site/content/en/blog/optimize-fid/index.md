@@ -148,16 +148,13 @@ to run JavaScript off the browser's main thread](/off-main-thread/).
 ### Reduce JavaScript execution time {: #reduce-javascript-execution }
 
 Limiting the amount of JavaScript on your page reduces the amount of time that the browser needs to
-spend parsing, compiling, and executing JavaScript code. This speeds up how fast the browser can
-begin to respond to any user interactions.
+spend executing JavaScript code. This speeds up how fast the browser can begin to respond to any
+user interactions.
 
 To reduce the amount of JavaScript executed on your page:
 
 +   Defer unused JavaScript
 +   Minimize unused polyfills
-
-In addition to minimizing JavaScript, [breaking up long-running code into smaller tasks](#long-tasks) can allow the
-browser to run input handlers sooner, which can improve FID.
 
 #### Defer unused JavaScript
 
