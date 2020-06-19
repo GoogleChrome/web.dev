@@ -5,7 +5,7 @@ authors:
   - samdutton
 date: 2020-06-19
 description: Use cross-platform browser features to build sign-in forms that are secure, accessible and easy to use.
-# TODO(kayce): Hero image should be 3200px by 920px
+# TODO(kaycebasques): Hero image should be 3200px by 920px.
 hero: hero.jpg
 alt: Closeup photo of a man holding a phone showing a sign-in page
 thumbnail: thumbnail.jpg
@@ -28,14 +28,22 @@ a hurry, or under stress. Poorly designed sign-in forms get high bounce rates.
 Each bounce could mean a lost and disgruntled user—not just a missed sign-in
 opportunity.
 
-<!-- Stats for sign-up/sign-in bounce rates. -->
+<!-- TODO(samdutton): Stats for sign-up/sign-in bounce rates. -->
 
-If you would prefer to learn these best practices with a hands-on tutorial,
-check out the Sign-in best practices codelab.
+{% Aside 'codelab' %}
+  If you would prefer to learn these best practices with a hands-on tutorial,
+  check out the [Sign-in form best practices codelab](/codelab-sign-in-form-best-practices/).
+{% endAside %}
 
 Here is an example of a sign-in form that demonstrates all of the best practices:
 
-<!-- Add Glitch. -->
+<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
+  <iframe
+    src="https://glitch.com/edit/#!/signin-form-codelab-5?path=index.html"
+    alt="A demonstration of all the sign-in form best practices."
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
 
 ## Checklist
 
@@ -46,36 +54,38 @@ Here is an example of a sign-in form that demonstrates all of the best practices
   features](#element-attributes): `type`, `name`, `autocomplete`, `required`,
   `autofocus`.
 * [Use `name="new-password"`](#new-password) for a sign-up password input and
-  for the new password in a "Change password" form.
+  for the new password in a **Change password** form.
 * [Use `autocomplete="current-password"`](#current-password) for a sign-in
   password input.
 * [Don't use autocomplete for a new password](#no-new-password-autocomplete).
 * [Provide **Show password** functionality](#show-password).
-* [Use **aria-label** and **aria-describedby**](#accessible-password-inputs) for
+* [Use `aria-label` and `aria-describedby`](#accessible-password-inputs) for
   password inputs.
-* [Don't double up inputs](#no-double-inputs).
+* [Don't double-up inputs](#no-double-inputs).
 * Design forms so the [mobile keyboard doesn't obscure inputs or
   buttons](#keyboard-obscures-form).
-* Ensure forms are usable on mobile: [legible text](#size-text-correctly),
-  inputs and buttons [large enough to work as touch targets](#size-correctly).
-* [Display links to your Terms of Service and privacy policy
+* Ensure forms are usable on mobile: use [legible text](#size-text-correctly),
+  and make sure inputs and buttons are [large enough to work as touch targets](#size-correctly).
+<!--
+* [Display links to your terms of service and privacy policy
   documents](#tos-privacy-policy).
 * [Maintain site style and include branding](#branding) (logo and name) on your
-  sign-up and sign-in form pages. 
+  sign-up and sign-in form pages.
+-->
 * [Test in the field as well as the lab](#analytics-rum): build page analytics,
-  interaction analytics and user-centric performance measurement into your
+  interaction analytics, and user-centric performance measurement into your
   sign-up and sign-in flow.
 * [Test across browsers and devices](#range-of-devices): form behaviour varies
   significantly across platforms.
 
 {% Aside %}
 This article is about frontend best practices. It does not explain how to build
-backend services to authenticate users, store their credentials or manage their
+backend services to authenticate users, store their credentials, or manage their
 accounts. [12 best practices for user account, authorization and password
 management](https://cloud.google.com/blog/products/gcp/12-best-practices-for-user-account)
 outlines core principles for running your own backend. If you have users in
 different parts of the world, you need to consider localizing your site's use of
-third party identity services as well as its content.
+third-party identity services as well as its content.
 {% endAside %}
 
 ## Use meaningful HTML {: #meaningful-html }
@@ -88,14 +98,15 @@ markup.
 
 You might be tempted to wrap inputs in a `<div>` and handle input data
 submission purely with JavaScript. It's generally better to use a plain old
-`<form>`. This makes your site accessible to screenreaders and other assistive
-devices, enables a range of built-in browser features, makes it simpler to
-build basic functional sign-in for older browsers, and will still work
-even if JavaScript fails.
+[`<form>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
+element. This makes your site accessible to screenreaders and other assistive
+devices, enables a range of built-in browser features, makes it simpler to build
+basic functional sign-in for older browsers, and will still work even if
+JavaScript fails.
 
 ### Use `<label>` {: #label }
 
-To label an input, use a `<label>`!
+To label an input, use a [`<label>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label)!
 
 ```html
 <label for="email">Email</label>
@@ -110,9 +121,9 @@ Two reasons:
 
 Don't use placeholders as input labels. People are liable to forget what the
 input was for once they've started entering text, especially if they get
-distracted. (Was I entering an email address, a phone number, or an account ID?)
-There are lots of other potential problems with placeholders: see [Don't Use The
-Placeholder
+distracted ("Was I entering an email address, a phone number, or an account
+ID?"). There are lots of other potential problems with placeholders: see [Don't
+Use The Placeholder
 Attribute](https://www.smashingmagazine.com/2018/06/placeholder-attribute/) and
 [Placeholders in Form Fields Are
 Harmful](https://www.nngroup.com/articles/form-design-placeholders/) if you're
@@ -124,22 +135,22 @@ research](https://ai.googleblog.com/2014/07/simple-is-better-making-your-web-for
 enables quicker scanning by users. You get full width labels and inputs, and you
 don't need to adjust label and input width to fit the label text.
 
-{% Aside  %}
-Try out the [Label position example](https://glitch.com/edit/#!/label-position) on mobile.
-{% endAside %}
-
 <figure class="w-figure">
   <img src="./label-position.png" alt="Screenshot showing form input label position on mobile: next to input and above input." width="500">
   <figcaption class="w-figcaption">Label and input width is limited when both are on the same line.</figcaption>
 </figure>
 
+Open the [label-position](https://label-position.glitch.me) Glitch on a
+mobile device to see for yourself.
+
 ### Use `<button>` {: #button }
 
-Use `<button>` for buttons! Button elements provide accessible behaviour and
-built-in form submission functionality, and they can easily be styled. There's
-no point in using a `<div>` or some other element pretending to be a button. 
+Use [`<button>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
+for buttons! Button elements provide accessible behaviour and built-in form
+submission functionality, and they can easily be styled. There's no point in
+using a `<div>` or some other element pretending to be a button. 
 
-Give the submit button in a sign-up or sign-in form a value that says what it
+Give the submit button in a sign-up or sign-in form text content that says what it
 does, such as **Create account** or **Sign in**, not **Submit** or **Start**.
 
 Consider disabling the **Sign in** button once the user has tapped or clicked
@@ -147,9 +158,9 @@ it. [Many users click buttons multiple
 times](https://baymard.com/blog/users-double-click-online) even on sites that
 are fast and responsive. That slows down interactions and adds to server load.
 
-Conversely, don't disable form submission awaiting user input. (For example,
+Conversely, don't disable form submission awaiting user input. For example,
 don't disable the **Sign in** button if users haven't entered their customer
-PIN.)  Users may miss out something in the form, then try repeatedly tapping the
+PIN. Users may miss out something in the form, then try repeatedly tapping the
 (disabled) **Sign in** button and think it's not working. At the very least, if
 you must disable form submission, explain to the user what's missing when they
 click on the disabled button.
@@ -185,7 +196,7 @@ it clear where to start and, on desktop at least, means users don't have to
 select the input to start typing.
 
 <figure class="w-figure">
-  <img src="./autofocus.png" alt="Screenshot showing form input with autofocus." width="500">
+  <img class="w-screenshot-filled" src="./autofocus.png" alt="Screenshot showing form input with autofocus." width="500">
   <figcaption class="w-figcaption">Autofocus provides clear visual focus on desktop.</figcaption>
 </figure>
 
@@ -199,7 +210,7 @@ to save your password when a form is submitted (along with using the `name` and
 
 However, you should add a **Show password** icon or button to enable users to
 check the text they've entered—and don't forget to add a **Forgot password**
-link. (See [Enable password display](#enable-password-display).)
+link. See [Enable password display](#enable-password-display).
 
 <figure class="w-figure">
   <img src="./show-password-google.png" alt="Google sign-in form showing Show password icon." width="300">
@@ -224,7 +235,7 @@ has more detail.
 numbers that aren't meant to be incremented, such as IDs and account numbers.
 {% endAside %}
 
-### Prevent mobile keyboard from obstructing the "Sign in" button {: #keyboard-obstruction }
+### Prevent mobile keyboard from obstructing the **Sign in** button {: #keyboard-obstruction }
 
 Unfortunately, if you're not careful, mobile keyboards may cover your form or,
 worse, partially obstruct the **Sign in** button. Users may give up before
@@ -249,9 +260,11 @@ accordingly. BrowserStack enables [free testing for open source
 projects](https://www.browserstack.com/open-source) on a range of real devices
 and browsers.
 
+<!-- TODO(kaycebasques): Can we get a screenshot without a funky grey background? -->
+
 <figure class="w-figure">
-  <img src="./iphone-keyboard.png" alt="Screenshots of a sign-in form on iPhone 7, 8 and 11. On iPhone 7 and 8 the Sign in button is obscured by the phone keyboard, but not on iPhone 11">
-  <figcaption class="w-figcaption">The "Sign in" button: obscured on iPhone 7 and 8, but not on iPhone 11.</figcaption>
+  <img class="w-screenshot" src="./iphone-keyboard.png" alt="Screenshots of a sign-in form on iPhone 7, 8 and 11. On iPhone 7 and 8 the Sign in button is obscured by the phone keyboard, but not on iPhone 11">
+  <figcaption class="w-figcaption">The <b>Sign in</b> button: obscured on iPhone 7 and 8, but not on iPhone 11.</figcaption>
 </figure>
 
 #### Use two pages {: #two-pages }
@@ -272,7 +285,7 @@ You can help browsers help users by autofilling inputs. This is particularly
 important for email inputs, which get [high abandonment
 rates](https://www.formisimo.com/blog/conversion-rate-increases-57-with-form-analytics-case-study/).
 
-[Add something to refute warnings **against** autocomplete?]
+<!-- TODO(samdutton): Add something to refute warnings **against** autocomplete? -->
 
 There are two parts to this:
 1. The input `name` attribute helps browsers store data for email and other
@@ -294,18 +307,18 @@ wants to create a new account.
 
 Use the appropriate password input name to help the browser differentiate between new and current passwords:
 
-* `name="new-password"` for the password input in a sign-up form, or the new
+* Use `name="new-password"` for the password input in a sign-up form, or the new
   password in a change-password form. This tells the browser that you want it to
   store a new password for the site.
 
 ### Use `name="current-password"` when the user enters an existing password {: #current-password }
 
-* `name="current-password"` for the password input in a sign-in form, or the
+* Use `name="current-password"` for the password input in a sign-in form, or the
   input for the user's old password in a change-password form. This tells the
   browser that you want it to use the current password that it has stored for
   the site. 
 
-For a sign-up form, code should look like this:
+For a sign-up form:
 
 ```html
 <input name="new-password" type="password" …>
@@ -334,7 +347,7 @@ the password manager, then autofills the password.
 
 <figure class="w-figure">
   <img src="./chrome-signin-desktop.png" alt="Screenshots of four stages of sign-in process in Chrome on desktop: email completion, email suggestion, password manager, autofill on selection.">
-  <figcaption class="w-figcaption">Autocomplete sign-in flow in Chrome. (These screenshots show Chrome 83.)</figcaption>
+  <figcaption class="w-figcaption">Autocomplete sign-in flow in Chrome 83.</figcaption>
 </figure>
 
 {% Aside 'caution' %}
@@ -344,7 +357,7 @@ platform to platform. For example, as pointed out by [Hidde de
 Vries](https://hiddedevries.nl/en/blog/2018-01-13-making-password-managers-play-ball-with-your-login-form):
 "Firefox's password manager complements [its
 heuristics](https://dxr.mozilla.org/firefox/source/toolkit/components/passwordmgr/src/nsLoginManager.js#626)
-with a [recipe system](https://bugzilla.mozilla.org/show_bug.cgi?id=1119454).
+with a [recipe system](https://bugzilla.mozilla.org/show_bug.cgi?id=1119454)."
 {% endAside %}
 
 [Autofill: What web devs should know, but
@@ -363,11 +376,13 @@ Here's how Safari does it on desktop.
 
 <figure class="w-figure">
   <img src="./safari-password-suggestion.png" alt="Screenshot of Firefox password manager on desktop.">
-  <figcaption class="w-figcaption">Password suggestion flow in Safari. (Strong unique password suggestion has been available in Safari since version 12.0.)</figcaption>
+  <figcaption class="w-figcaption">Password suggestion flow in Safari.</figcaption>
 </figure>
 
-Using built in browser password generators means users and developers don't need
-to work out what a 'strong password' is. Since browsers can securely store
+Strong unique password suggestion has been available in Safari since version 12.0.
+
+Using built-in browser password generators means users and developers don't need
+to work out what a "strong password" is. Since browsers can securely store
 passwords and autofill them as necessary, there's no need for users to remember
 or enter passwords.
 
@@ -377,7 +392,7 @@ The downside with this approach is that there's no way to share passwords across
 platforms. For example, a user may use Safari on their iPhone and Chrome on
 their Windows laptop.
 
-[So what's our advice?]
+<!-- TODO(samdutton): [So what's our advice?] -->
 {% endAside %}
 
 ### Help save users from accidentally missing input fields {: #required-fields }
@@ -388,18 +403,20 @@ No JavaScript required!
 
 <figure class="w-figure">
   <img src="./missing-field-firefox-android.png" alt="Screenshot of desktop Firefox and Chrome for Android showing 'Please fill out this field' prompt for missing data." width="600">
-  <figcaption class="w-figcaption">Prompt and focus for missing data, desktop Firefox and Chrome for Android. (The screenshots show Firefox 76 and Chrome 83.)</figcaption>
+  <figcaption class="w-figcaption">
+    Prompt and focus for missing data on Firefox for desktop (version 76) 
+    and Chrome for Android (version 83).
+  </figcaption>
 </figure>
 
 
 ## Design for fingers and thumbs {: #mobile-design }
 
-[Do we have any stats for form filling on mobile versus desktop?]
+<!-- TODO(samdutton): [Do we have any stats for form filling on mobile versus desktop?] -->
 
 The default browser size for just about everything relating to input elements
 and buttons is too small, especially on mobile. This may seem obvious, but it's
 a common problem with sign-in forms on many sites.
-
 
 ### Make sure inputs and buttons are large enough {: #tap-targets }
 
@@ -407,8 +424,8 @@ The default size and padding for inputs and buttons is too small on desktop and
 even worse on mobile.
 
 <figure class="w-figure">
-  <img src="./unstyled-form.png" alt="Screenshot of unstyled form in Chrome on desktop and on Android.">
-  <figcaption class="w-figcaption">Default styling on desktop and mobile: inputs and buttons are too small.</figcaption>
+  <img src="./unstyled-form.png" 
+       alt="Screenshot of unstyled form in Chrome for desktop and Chrome for Android.">
 </figure>
 
 
@@ -428,13 +445,11 @@ that are too small.
 
 #### Design for thumbs {: #design-for-thumbs }
 
-{% Aside 'gotchas' %}
-Design for thumbs.
 Search for [touch target](https://www.google.com/search?q=touch+target) and
 you'll see lots of pictures of forefingers. However, in the real world, many
 people use their thumbs to interact with phones. Thumbs are bigger than
 forefingers, and control is less precise. All the more reason for adequately
-sized touch targets. {% endAside %}
+sized touch targets.
 
 ### Make text big enough {: #size-text-correctly }
 
@@ -451,13 +466,13 @@ specify a particular font size that works well everywhere. A quick survey of
 popular websites shows sizes of 13–16 pixels on desktop: matching that physical size
 is a good minimum for text on mobile.
 
-This means you need to use a larger pixel size on mobile: `16px` on Chrome on
+This means you need to use a larger pixel size on mobile: `16px` on Chrome for
 desktop is quite legible, but even with good vision it's difficult to read `16px`
-text on Chrome on Android. You can set different font pixel sizes for different
+text on Chrome for Android. You can set different font pixel sizes for different
 viewport sizes using [media
 queries](https://developers.google.com/web/fundamentals/design-and-ux/responsive#apply_media_queries_based_on_viewport_size).
 `20px` is about right on mobile—but you should test this out with friends or
-colleagues who don't have 20/20 vision.
+colleagues who have low vision.
 
 The [Document doesn't use legible font sizes](https://web.dev/font-size/)
 Lighthouse audit can help you automate the process of detecting text that's too
@@ -465,9 +480,8 @@ small.
 
 {% Aside 'caution' %}
 Unfortunately, autofill text (on Chrome for Android, at least) is small, and
-can't be sized with CSS. There's a bug for this at
-[crbug.com/953689](https://crbug.com/953689). If you think this is important,
-star it!
+can't be sized with CSS. [Chromium Issue #953689](https://crbug.com/953689) is tracking
+the problem. If you think this is important, star the issue!
 {% endAside %}
 
 
@@ -498,7 +512,7 @@ Browsers have built-in features to do basic form validation for inputs with a
 and set focus on the problematic input.
 
 <figure class="w-figure">
-  <img src="./invalid-email.png" alt="Screenshot of a sign-in form in Chrome on desktop showing browser prompt and focus for an invalid email value." width="300">
+  <img class="w-screenshot-filled" src="./invalid-email.png" alt="Screenshot of a sign-in form in Chrome on desktop showing browser prompt and focus for an invalid email value." width="300">
   <figcaption class="w-figcaption">Basic built-in validation by the browser.</figcaption>
 </figure>
 
@@ -524,21 +538,24 @@ can't see the text they've entered. Currently there's no built-in way to do
 this, though [there are plans for
 implementation](https://twitter.com/sw12/status/1251191795377156099). You'll
 need to use JavaScript instead: you can see this in action in [step
-4](https://glitch.com/edit/#!/signin-form-codelab-4) of the codelab for this
+4](https://glitch.com/edit/#!/signin-form-codelab-4) of the codelab related to this
 article.
 
 <figure class="w-figure">
-  <img src="./show-password-google.png" alt="Google sign-in form showing Show password icon." width="350" style="border: 1px solid #eee; padding: 20px;">
+  <img class="w-screenshot" src="./show-password-google.png" alt="Google sign-in form showing Show password icon." width="350">
   <figcaption class="w-figcaption">Google sign-in form: with <strong>Show password</strong> icon and <strong>Forgot password</strong> link.</figcaption>
 </figure>
 
 The following code to add **Show password** functionality uses text, not an icon:
 
 HTML:
-```html/2
+```html/2-5
 <section>
   <label for="password">Password</label>
-  <button id="toggle-password" type="button" aria-label="Show password as plain text. Warning: this will display your password on the screen.">Show password</button>
+  <button id="toggle-password" type="button" 
+          aria-label="Show password as plain text. Warning: this will display your password on the screen.">
+    Show password
+  </button>
   <input id="password" name="password" type="password" autocomplete="current-password" required>
 </section>
 ```
@@ -563,7 +580,7 @@ button#toggle-password {
 
 And the JavaScript for showing the password:
 
-```javascript
+```js
 const passwordInput = document.getElementById('password');
 const togglePasswordButton = document.getElementById('toggle-password');
 
@@ -588,7 +605,7 @@ function togglePassword() {
 Here's the end result:
 
 <figure class="w-figure">
-  <img src="./show-password.png" alt="Screenshots of sign-in form with Show password text 'button', in Safari on Mac and on iPhone 7." width="800" style="border: 1px solid #999;">
+  <img src="./show-password.png" alt="Screenshots of sign-in form with Show password text 'button', in Safari on Mac and on iPhone 7." width="800" class="w-screenshot-filled">
   <figcaption class="w-figcaption">Sign-in form with <strong>Show password</strong> text 'button', in Safari on Mac and iPhone 7.</figcaption>
 </figure>
 
@@ -608,16 +625,25 @@ When you add **Show password** functionality, make sure to include
 an`aria-label` to warn that the password will be displayed. Otherwise users may
 inadvertently reveal passwords.
 
-```html
-<button id="toggle-password" aria-label="Show password as plain text.
-Warning: this will display your password on the screen.">Show password</button>
+```html/1-2
+<button id="toggle-password" 
+        aria-label="Show password as plain text. 
+                    Warning: this will display your password on the screen.">
+  Show password
+</button>
 ```
 
-You can see both these `aria` features in action at
-[glitch.com/#!/signin-form](https://glitch.com/edit/#!/signin-form).
+You can see both ARIA features in action in the following Glitch:
+
+<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
+  <iframe
+    src="https://glitch.com/edit/#!/signin-form?attributionHidden=true"
+    alt="tabindex-zero on Glitch"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
 
 [Creating Accessible Forms](https://webaim.org/techniques/forms/) has more tips to help make forms accessible.
-
 
 ### Validate in realtime and before submission {: #validation }
 
@@ -651,30 +677,28 @@ testing](https://www.nngroup.com/articles/discount-usability-20-years/) can be
 helpful for trying out changes, but you'll need real-world data to really
 understand how your users experience your sign-up and sign-in forms:
 
-* **Page analytics**: including sign-up and sign-in page views, bounce rates,
+* **Page analytics**: sign-up and sign-in pageviews, bounce rates,
   and exits.
-* **Interaction analytics**: such as [goal
+* **Interaction analytics**: [goal
   funnels](https://support.google.com/analytics/answer/6180923?hl=en) (where do
   users abandon your sign-in or sign-in flow?) and
   [events](https://developers.google.com/analytics/devguides/collection/gtagjs/events)
   (what actions do users take when interacting with your forms?)
 * **Website performance**: [user-centric
-  metrics](/user-centric-performance-metrics) to understand the real experience
-  of your users (are your sign-up and sign-in forms slow for some reason and, if
-  so, what is the cause?).
+  metrics](/user-centric-performance-metrics) (are your sign-up and sign-in
+  forms slow for some reason and, if so, what is the cause?).
 
 You may also want to consider implementing A/B testing in order to try out
 different approaches to sign-up and sign-in, and staged rollouts to validate the
 changes on a subset of users before releasing changes to all users.
 
-
 ## General guidelines {: #general-guidelines }
 
-Some general guidelines to help reduce sign-in form abandonment:
+Here are some general guidelines to help reduce sign-in form abandonment:
 
 * Don't make users hunt for sign-in! Put a link to the sign-in form at the top
-  of the page, using well-understood wording such as "Sign In", "Create Account"
-  or "Register".
+  of the page, using well-understood wording such as **Sign In**, **Create Account**
+  or **Register**.
 * Keep it focused! Sign-up forms are not the place to distract people with
   offers and other site features.
 * Minimize sign-up complexity. Collect other user data (such as addresses or
@@ -688,13 +712,13 @@ Some general guidelines to help reduce sign-in form abandonment:
 * Make it easy for users to reset their password, and make the **Forgot your
   password?** link obvious.
 * Link to your terms of service and privacy policy documents: make it clear to
-  users from the start how you safeguard their data. {​: #tos-privacy-policy }
+  users from the start how you safeguard their data.
 * Include the logo and name of your company or organization on your signup and
   sign-in pages, and make sure that language, fonts and styles match the rest of
   your site. Some forms don't feel like they belong to the same site as other
-  content, especially if they have a significantly different URL. {​: #branding }
+  content, especially if they have a significantly different URL.
 
-[Something about (re)CAPTCHA?]
+<!-- TODO(samdutton): [Something about (re)CAPTCHA?] -->
 
 ## Find out more {: #resources }
 
