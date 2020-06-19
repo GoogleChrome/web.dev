@@ -271,9 +271,9 @@ class Tabs extends BaseElement {
 
   /**
    * @param {!Node} node to check
-   * @return {number} the index of the tab containing this node
+   * @return {number} the index of the tab containing this node, or -1 for none
    */
-  indexOfTabParent(node) {
+  indexOfTabByChild(node) {
     const panel = node.closest('[class="web-tabs__panel"]');
     if (!this.contains(panel)) {
       return -1;

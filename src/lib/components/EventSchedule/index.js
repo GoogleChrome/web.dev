@@ -95,9 +95,9 @@ class EventSchedule extends HTMLElement {
 
     // If the user opens this page from externally on a specific session, make sure we're showing
     // the correct day of tab.
-    const index = this._tabsElement.indexOfTabParent(session);
+    const index = this._tabsElement.indexOfTabByChild(session);
     if (index !== -1) {
-      this._tabsElement.focusTab(index);
+      this._tabsElement.activeTab = index;
     }
 
     this._modalElement.sessionRow = clone;
@@ -187,7 +187,7 @@ class EventSchedule extends HTMLElement {
     // tabs, which is pretty safe, since it comes from the same source.
     // Don't change the tab for the user if a modal is already open.
     if (!this._modalElement.open && activeEventDay) {
-      this._tabsElement.focusTab(activeEventDay.index);
+      this._tabsElement.activeTab = activeEventDay.index;
     }
   }
 }
