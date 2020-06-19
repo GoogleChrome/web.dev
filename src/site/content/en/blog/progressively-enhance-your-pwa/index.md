@@ -139,27 +139,31 @@ the concept as follows:
 
 <blockquote>
   <p>
-    Progressive enhancement is a design philosophy that centers around providing a baseline of
-    essential content and functionality to as many users as possible, while at the same time going
-    further and delivering the best possible experience only to users of the most modern browsers
-    that can run all the required code.
+    Progressive enhancement is a design philosophy that povides a baseline
+    of essential content and functionality to as many users as possible,
+    while delivering the best possible experience only to users
+    of the most modern browsers that can run all the required code.
   </p>
   <p>
-    Feature detection is generally used to determine whether browsers can handle the high level
-    content or not, with polyfills often being used to build in missing features with JavaScript.
+    [Feature detection](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection)
+    is generally used to determine whether browsers can handle more modern functionality,
+    while [polyfills](https://developer.mozilla.org/en-US/docs/Glossary/Polyfill)
+    are often used to add missing features with JavaScript.
   </p>
   <p>[…]</p>
-  <p>
-    It is a useful technique that allows Web developers to focus on developing the best possible
-    websites while balancing the issues in those websites being accessed by multiple unknown
-    user-agents. Graceful degradation is related but different—often seen as going in the opposite
-    direction to progressive enhancement. In reality both approaches are valid and can often
-    complement one another.
+  <p>  
+    Progressive enhancement is a useful technique that allows web developers to focus
+    on developing the best possible websites while making those websites work
+    on multiple unknown user agents.
+    [Graceful degradation](https://developer.mozilla.org/en-US/docs/Glossary/Graceful_degradation)
+    is related, but is not the same thing and is often seen as going in the opposite direction
+    to progressive enhancement.
+    In reality, both approaches are valid and can often complement one another.
   </p>
 </blockquote>
 
 {%Aside 'note' %}
-  This is not an article on progressive enhancement, but assumes you are familiar
+  This is not an introductory article on progressive enhancement, but assumes you are familiar
   with the concept.
   For a solid foundation, I recommend Steve Champeon's article
   [Progressive Enhancement and the Future of Web Design](http://www.hesketh.com/progressive_enhancement_and_the_future_of_web_design.html).
@@ -170,7 +174,7 @@ So why not have a feature that allows users to import an image, and start from t
 With a traditional approach, you'd have used an
 [`<input type=file>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file)
 element to make this happen.
-First, you'd create the element, set its `type` and the to-be-`accept`ed MIME types,
+First, you'd create the element, set its `type` to `'file'` and add MIME types to the `accept` property,
 and then programmatically "click" it and listen for changes.
 When you select an image, it is imported straight onto the canvas.
 
@@ -221,11 +225,9 @@ Turns out there is. The [Native File System API](https://web.dev/native-file-sys
 allows you to open and create files and
 directories, as well as modify and save them .
 
-So how do I feature-detect an API.
+So how do I feature-detect an API?
 The Native File System API exposes a new method `window.chooseFileSystemEntries()`.
-I can use this fact to conditionally load `import_image.mjs` and `export_image.mjs` if the API exists,
-and if it isn't available, load the files `import_image_legacy.mjs` and `export_image_legacy.mjs`
-with the legacy approaches from above.
+Consequently, I need to conditionally load different import and export modules depending on whether this method is available. I've shown how to do this below.
 
 ```js
 const loadImportAndExport = () => {
@@ -287,8 +289,7 @@ So now that I have addressed this, it's time to look at the actual implementatio
 For importing an image, I call `window.chooseFileSystemEntries()`
 and pass it an `accepts` property where I say I want image files.
 Both file extensions as well as MIME types are supported.
-This results in a file handle. From the file handle, I can obtain the actual file by calling
-its `getFile()` method.
+This results in a file handle, from which I can get the actual file by calling `getFile()`.
 
 ```js
 const importImage = async () => {
@@ -345,12 +346,12 @@ const exportImage = async (blob) => {
 };
 ```
 
-With this progressive enhancement of using the Native File System API where it's supported in place,
+Using progressive enhancement with the Native File System API,
 I can open a file as before.
 The imported file is drawn right onto the canvas.
 I can make my edits and finally save them with a real save dialog box
 where I can choose the name and storage location of the file.
-Now the file is ready to be preserved for the eternity.
+Now the file is ready to be preserved for eternity.
 
 <figure class="w-figure">
   <img class="w-screenshot"
@@ -496,7 +497,7 @@ Next, I want to talk about contacts, meaning a device's address book
 or contacts manager app.
 When you write a greeting card, it may not always be easy to correctly write
 someone's name.
-For example, I have a friend who prefers their name to be spelled in Cyrillic letters. I'm
+For example, I have a friend Sergey who prefers his name to be spelled in Cyrillic letters. I'm
 using a German QWERTZ keyboard and have no idea how to type their name.
 This is a problem that the [Contact Picker API](https://web.dev/contact-picker/) can solve.
 Since I have my friend stored in my phone's contacts app,
@@ -667,9 +668,9 @@ Another useful API is the [Badging API](https://web.dev/badging-api/).
 As an installable PWA, Fugu Greetings of course does have an app icon
 that users can place on the app dock or the home screen.
 A fun and easy way to demonstrate the API is to (ab)use it in Fugu Greetings
-is to use it as a pen strokes counter.
-I have added an event listener that on the `pointerdown` event increments the pen strokes
-counter and sets the icon.
+as a pen strokes counter.
+I have added an event listener that increments the pen strokes counter whenever the `pointerdown` event occurs
+and then sets the updated icon badge.
 Whenever the canvas gets cleared, the counter resets, and the badge is removed.
 
 ```js
@@ -771,7 +772,8 @@ Again this is truly a progressive enhancement, so the code is only loaded when t
 API is supported by the browser.
 This applies to both the client code and the service worker code.
 On non-supporting browsers, neither of them is loaded.
-Note how in the service worker, instead of a dynamic `import()`, I use the classic
+Note how in the service worker, instead of a dynamic `import()`
+(that isn't supported in a service worker context yet), I use the classic
 [`importScripts()`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts).
 
 ```js
@@ -918,7 +920,7 @@ screen awake.
 ## The Idle Detection API
 
 At times, even if you stare at the screen for hours,
-it's just useless.
+it's just useless and you can't come up with the slightest idea what to do with your greeting card.
 The [Idle Detection API](https://web.dev/idle-detection/) allows the app to detect user idle time.
 If the user is idle for too long, the app resets to the initial state
 and clears the canvas.
@@ -986,7 +988,7 @@ although you might want to consider a bundler for really large apps.
 <figure class="w-figure">
   <img class="w-screenshot"
        src="10000201000009C4000006E8D776365D6B538C9A.png"
-       alt="Chrome DevTools Network tab showing only requests for files with code that the current browser supports.">
+       alt="Chrome DevTools Network panel showing only requests for files with code that the current browser supports.">
   <figcaption class="w-figcaption">
     Chrome DevTools Network tab showing only requests for files with code that the current browser supports.
   </figcaption>
@@ -1039,7 +1041,7 @@ go find and [fork it on GitHub](https://github.com/tomayac/fugu-greetings).
   </figcaption>
 </figure>
 
-We are working hard on making the grass greener when it comes to advanced Fugu APIs.
+The Chromium team is working hard on making the grass greener when it comes to advanced Fugu APIs.
 By applying progressive enhancement in the development of my app,
 I make sure that everybody gets a good, solid baseline experience,
 but that people using browsers that support more Web platform APIs get an even better experience.
