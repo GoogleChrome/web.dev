@@ -162,7 +162,7 @@ class EventSchedule extends HTMLElement {
       }
 
       store.subscribe(this.onStateChanged);
-      this.onStateChanged(store.getState());
+      this.onStateChanged(store.getState()); // subscribe doesn't trigger listener
       this.onHashChange();
     });
   }

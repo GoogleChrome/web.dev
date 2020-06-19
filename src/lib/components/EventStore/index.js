@@ -45,7 +45,8 @@ class EventStore extends HTMLElement {
     this._timer = 0;
     this._timeOffset = 0;
     this._activeDay = null;
-    this._data = [];
+    this._activeChatDay = null;
+    this._days = [];
   }
 
   /**
@@ -58,13 +59,15 @@ class EventStore extends HTMLElement {
     // then prefer it over showing the upcoming day (we store that in nextPendingDay).
     let nextPendingDay = null;
 
-    for (const day of this._data) {
+    for (const day of this._days) {
       const timeOffsetBy = (hours) => {
         const d = new Date(day.when);
         d.setHours(d.getHours() + hours);
         return +d;
       };
 
+      const actualStart = timeOffsetBy(0);
+      const actualEnd = timeOffsetBy(day.duration);
       const bufferStart = timeOffsetBy(-bufferHours);
       const bufferEnd = timeOffsetBy(day.duration + bufferHours);
 
@@ -80,10 +83,17 @@ class EventStore extends HTMLElement {
         nextPendingDay = day;
       }
 
-      // Is this day actually active (within exact time range)?
-      const isActive = now >= bufferStart && now <= bufferEnd;
+      // Is this day active (within the buffer time range)?
+      const isActive = now >= bufferStart && now < bufferEnd;
       if (isActive && this._activeDay !== day) {
         this._activeDay = day;
+        change = true;
+      }
+
+      // Is this the active day for chat (within the actual time range)?
+      const isActiveChat = now >= actualStart && now < actualEnd;
+      if (isActiveChat && this._activeChatDay !== day) {
+        this._activeChatDay = day;
         change = true;
       }
     }
@@ -97,8 +107,9 @@ class EventStore extends HTMLElement {
     // We gate setting a change with a boolean as to not accidentally trigger recursive updates.
     if (change) {
       store.setState({
-        eventDays: this._data,
+        eventDays: this._days,
         activeEventDay: this._activeDay,
+        activeChatDay: this._activeChatDay,
       });
     }
   }
@@ -110,12 +121,12 @@ class EventStore extends HTMLElement {
     const raw = JSON.parse(this.textContent.trim());
 
     for (let i = 0; i < raw.days.length; ++i) {
-      const d = raw.days[i];
-      d.index = i;
-      d.complete = false;
+      const day = raw.days[i];
+      day.index = i;
+      day.isComplete = false;
     }
 
-    this._data = raw.days || [];
+    this._days = raw.days || [];
     this._update(true);
 
     this._timer = window.setInterval(this._update, timerEvery);
@@ -124,7 +135,7 @@ class EventStore extends HTMLElement {
   disconnectedCallback() {
     store.unsubscribe(this.onStateChanged);
 
-    this._data = [];
+    this._days = [];
     this._update(true);
 
     window.clearInterval(this._timer);

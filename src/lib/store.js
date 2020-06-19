@@ -1,29 +1,12 @@
 import createStore from 'unistore';
 import devtools from 'unistore/devtools';
 import getMeta from './utils/meta';
+import {getTimeOffset} from './utils/time-offset';
 import {localStorage} from './utils/storage';
 import {isProd} from 'webdev_config';
 
 const initialParams = new URLSearchParams(window.location.search);
-
-let timeOffset = 0;
-if (initialParams.has('_now')) {
-  const overrides = {
-    'wdl-day1': '2020-06-30T16:02Z',
-    'wdl-preday2': '2020-07-01T10:59Z', // before 1hr buffer
-    'wdl-day2': '2020-07-01T12:00Z',
-  };
-
-  let raw = initialParams.get('_now');
-  raw = overrides[raw] || raw;
-
-  const d = new Date(raw);
-  if (+d) {
-    const now = new Date();
-    timeOffset = d - now;
-    console.warn('debug time start at', d);
-  }
-}
+const timeOffset = getTimeOffset(initialParams.get('_now'));
 
 const initialState = {
   // The first time the app boots we won't know whether the user is signed
@@ -73,12 +56,13 @@ const initialState = {
 
   userPrefferedLanguage: '',
 
-  // Used to override the current time for parts of the site which care about time.
+  // Used to override the current time for web.dev/LIVE testing.
   timeOffset,
 
   // Data for the current web.dev/LIVE event.
   eventDays: [],
-  activeEventDay: null,
+  activeEventDay: null, // livestream shown for this day
+  activeChatDay: null, // chat shown for this day
 };
 
 let store;
