@@ -9,7 +9,7 @@ description: An overview of how to build an experience similar to Instagram Stor
 date: 2020-06-19
 hero: hero.jpg
 thumbnail: thumb.jpg
-codelabs: codelab-stories-component
+codelabs: codelab-building-a-stories-component
 tags:
   - blog
   - css
@@ -47,7 +47,7 @@ and go through the pictures in it. They generally do this many friends at a
 time. By tapping on the right side of the device, a user skips ahead to that friend's
 next story. By swiping right, a user skips ahead to a different friend.
 A Story component is fairly similar to a carousel, but allows navigating a
-multidimensional array as opposed to an array. It's as if there's a carousel inside
+multi-dimensional array as opposed to a single-dimensional array. It's as if there's a carousel inside
 each carousel. 🤯 
 
 <figure class="w-figure">
@@ -70,9 +70,9 @@ critical web platform features. Let's cover them!
 Our layout turned out to be no tall order for CSS Grid as it's equipped with some
 powerful ways to wrangle content.
 
-#### Friends Layout
+#### Friends layout
 
-Our primary `.stories` component wrapper is a mobile first horizontal scrollview :
+Our primary `.stories` component wrapper is a mobile-first horizontal scrollview:
 
 ```css/4-6
 .stories {
@@ -101,7 +101,9 @@ Our primary `.stories` component wrapper is a mobile first horizontal scrollview
     <source src="https://storage.googleapis.com/web-dev-assets/gui-challenges/stories-overflow-columns.mp4">
   </video>
   <figcaption class="w-figcaption">
-    Stories in desktop mode showing Devtools toggling <code>overflow</code> and highlighting the columns created by CSS grid
+    Using Chrome DevTools' 
+    <a href="https://developers.google.com/web/tools/chrome-devtools/device-mode">Device Mode</a>
+    to highlight the columns created by Grid
   </figcaption>
 </figure>
 
@@ -109,7 +111,7 @@ Let's breakdown that `grid` layout:
 
 * We explicitly fill the viewport on mobile with `100vh` and `100vw` and constrain the size on desktop 
 * `/` separates our row and column templates
-* `auto-flow` after the `/` translates to [`grid-auto-flow: column`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow)
+* `auto-flow` translates to [`grid-auto-flow: column`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow)
 * The autoflow template is `100%`, which in this case is whatever the scroll window width is
 
 {% Aside %}
@@ -117,21 +119,22 @@ Let's breakdown that `grid` layout:
   If `auto-flow` came before `/` it would be shorthand for `grid-auto-flow: row`.
 {% endAside %}
 
-On a mobile phone, think of this like the row size being the viewport height
-and each column being the viewport width. Continuing with the Snapchat Stories
-and Instagram Stories example, each column will be a friend's story. We want
-friends stories to continue outside of the viewport so
-we have somewhere to scroll to. Grid will make however many columns it needs to
-layout your HTML for each friend story, creating a dynamic and responsive scrolling container for us. Grid enabled us to centralized the whole effect. 
+On a mobile phone, think of this like the row size being the viewport height and
+each column being the viewport width. Continuing with the Snapchat Stories and
+Instagram Stories example, each column will be a friend's story. We want friends
+stories to continue outside of the viewport so we have somewhere to scroll to.
+Grid will make however many columns it needs to layout your HTML for each friend
+story, creating a dynamic and responsive scrolling container for us. Grid
+enabled us to centralize the whole effect. 
 
 #### Stacking
 
-For each friend we needed their stories in a pagination-ready state.
+For each friend we need their stories in a pagination-ready state.
 In preparation for animation and other fun patterns, I chose a stack. 
 When I say stack, I mean like you're looking down on a
 sandwich, not like you're looking from the side.
 
-With CSS grid, we can define a single cell grid (i.e. a square), where the rows
+With CSS grid, we can define a single-cell grid (i.e. a square), where the rows
 and columns share an alias (`[story]`), and then each child gets assigned to that
 aliased single-cell space: 
 
@@ -173,7 +176,8 @@ by Sarah Drasner for a great breakdown of how to use them.
     <source src="https://storage.googleapis.com/web-dev-assets/gui-challenges/scroll-snap-example.mp4">
   </video>
   <figcaption class="w-figcaption">
-    Shows horizontal scrolling without and with `scroll-snap-points` styles. Without it, users can free scroll as normal. With it, the browser rests gently on each item.
+    Horizontal scrolling without and with <code>scroll-snap-points</code> styles.
+    Without it, users can free scroll as normal. With it, the browser rests gently on each item.
   </figcaption>
 </figure>
 
@@ -190,8 +194,9 @@ by Sarah Drasner for a great breakdown of how to use them.
 }
 ```
 
-{% CompareCaption %} Parent with overscroll defines snap behavior {%
-endCompareCaption %}
+{% CompareCaption %}
+  Parent with overscroll defines snap behavior.
+{% endCompareCaption %}
 
 {% endCompare %}
 
@@ -205,8 +210,9 @@ endCompareCaption %}
 }
 ```
 
-{% CompareCaption %} Children opt into being a snap target {% endCompareCaption
-%}
+{% CompareCaption %}
+  Children opt into being a snap target.
+{% endCompareCaption %}
 
 {% endCompare %}
 </div>
@@ -221,7 +227,7 @@ I chose Scroll Snap Points for a few reasons:
   here on out.
 * **Ease of implementation**. Scroll Snap Points are practically built for the
   touch-centric horizontal-pagination use case.
-* **Free native inertia**. Every platform will scroll and rest in it's style, as opposed to 
+* **Free native inertia**. Every platform will scroll and rest in its style, as opposed to 
   normalized inertia which can have an uncanny scrolling and resting style.
 
 ## Cross-browser compatibility {: #compatibility }
@@ -242,9 +248,9 @@ that they'll eventually reach other browsers and platforms.
 ### `scroll-snap-stop`
 
 Carousels were one of the major UX use cases that prompted the creation of the
-CSS Scroll Snap Points spec. Unlike Stories, A Carousel doesn't always need to stop
+CSS Scroll Snap Points spec. Unlike Stories, a carousel doesn't always need to stop
 on each image after a user interacts with it. It might be fine or encouraged to
-quickly cycle through the Carousel. Stories, on the other hand, are best navigated one-by-one,
+quickly cycle through the carousel. Stories, on the other hand, are best navigated one-by-one,
 and that's exactly what `scroll-snap-stop` provides.
 
 ```css/2
@@ -255,9 +261,9 @@ and that's exactly what `scroll-snap-stop` provides.
 ```
 
 At the time of writing this post, `scroll-snap-stop` is only supported on Chromium-based
-browsers. You should check out
+browsers. Check out
 [Browser compatibility](https://developer.mozilla.org/docs/Web/CSS/scroll-snap-stop#Browser_compatibility)
-for updates, though. It's not a blocker, though. It just means that on unsupported browsers
+for updates. It's not a blocker, though. It just means that on unsupported browsers
 users can accidentally skip a friend. So users will just have to be more careful, or
 we'll need to write JavaScript to ensure that a skipped friend isn't marked as viewed.
 
@@ -284,12 +290,12 @@ component.
 }
 ```
 
-Safari and Opera were the 2 browser's that didn't
+Safari and Opera were the 2 browsers that didn't
 [support](https://caniuse.com/#search=overscroll-behavior) this, and that's
 totally OK. Those users will get an overscroll experience like they're used to
 and may never notice this enhancement. I'm personally a big fan and like
 including it as part of nearly every overscroll feature I implement. It's a
-harmless addition that can only lead to an improvement.
+harmless addition that can only lead to improved UX.
 
 <!-- TODO(kayce): Describe what Safari and Opera users will see. -->
 
@@ -299,9 +305,8 @@ When a user taps or clicks and has reached the end of a friend's set of stories,
 it's time to move to the next friend in the scroll snap point set. With
 JavaScript, we were able to reference the next friend and request for it to be
 scrolled into view. The support for the basics of this are great; every browser
-scrolled it into view. But, not every browser did it `smooth`. This just means
-it's scrolled into view instead of snapped, which makes for a more seamless
-transition.
+scrolled it into view. But, not every browser did it `'smooth'`. This just means
+it's scrolled into view instead of snapped.
 
 ```js
 element.scrollIntoView({
@@ -309,16 +314,15 @@ element.scrollIntoView({
 })
 ```
 
-Safari was the only one not to support `behavior: 'smooth'` here.
-Check out
+Safari was the only browser not to support `behavior: 'smooth'` here. Check out
 [Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView#Browser_compatibility)
 for updates.
 
-## Hands-On
+## Hands-on
 
 Now that you know how I did it, how would you?! Let's diversify our 
 approaches and learn all the ways to build on the web. Remix the Glitch, 
-[tweet me](https://twitter.com/argyleink) your version and I'll add it 
+[tweet me](https://twitter.com/argyleink) your version, and I'll add it 
 the [Community remixes](#community-remixes) section below.
 
 <div class="glitch-embed-wrap" style="height: 720px; width: 100%;">
@@ -329,7 +333,7 @@ the [Community remixes](#community-remixes) section below.
   </iframe>
 </div>
 
-## Community remixes {: #community-remixes }
+## Community remixes {: #remixes }
 
 <!-- TODO(kayce): Add a warning that this is community content that may change over time. -->
 
