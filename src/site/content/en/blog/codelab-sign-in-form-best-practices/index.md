@@ -6,12 +6,12 @@ authors:
 date: 2020-06-19
 description: Use cross-platform browser features to build a simple email/password login form that's secure, accessible and easy to use.
 tags:
+  - forms
   - identity
-  - login
-  - privacy
+  - layout
+  - mobile
   - security
-  - login
-  - trust and safety
+  - ux
 glitch: login-form-best-practices-codelab-step-0
 related_post: sign-in-form-best-practices
 ---
