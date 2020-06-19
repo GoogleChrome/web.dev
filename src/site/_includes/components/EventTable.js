@@ -34,7 +34,7 @@ module.exports = (days, authorsCollection) => {
   for (let i = 0; i < days.length; ++i) {
     const {date, duration} = days[i];
     const endTime = new Date(date);
-    endTime.setHours(endTime.getHours() + duration);
+    endTime.setMinutes(endTime.setMinutes() + duration);
 
     if (now < endTime) {
       defaultScheduleDay = i;

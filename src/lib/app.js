@@ -68,7 +68,11 @@ if (serviceWorkerIsSupported(window.location.hostname)) {
 
 function serviceWorkerIsSupported(hostname) {
   // Allow local/prod as well as .netlify staging deploy target.
-  const allowedHostnames = ['web.dev', 'localhost'];
+  const allowedHostnames = [
+    'web.dev',
+    'web-dev-staging.appspot.com',
+    'localhost',
+  ];
   return (
     'serviceWorker' in navigator &&
     (allowedHostnames.includes(hostname) || hostname.endsWith('.netlify.com'))

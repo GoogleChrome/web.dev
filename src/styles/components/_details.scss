@@ -6,8 +6,6 @@ $CHEVRON_MARGIN: 12px;
 .w-details {
   border: 1px solid $BORDER_COLOR;
   border-width: 1px 0;
-  display: flex;
-  flex-wrap: wrap;
   margin: 36px 0;
   padding: 18px 0;
   position: relative;
@@ -21,7 +19,6 @@ $CHEVRON_MARGIN: 12px;
 .w-details__summary {
   -webkit-tap-highlight-color: transparent;
   cursor: pointer;
-  flex-grow: 1;
   font: inherit;
   list-style: none;
 

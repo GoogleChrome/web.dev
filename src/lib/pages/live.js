@@ -3,7 +3,9 @@
  */
 
 import '../components/EventSchedule';
+import '../components/EventStore';
 import '../components/EventTime';
+import '../components/LivestreamContainer';
 import '../components/Subscribe';
 import '../components/ShareAction';
 import '../components/Tabs';

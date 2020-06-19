@@ -15,8 +15,7 @@ hero_position: center
 tags:
   - blog
   - capabilities
-  - fugu
-  - origin-trial
+  - origin-trials
   - notification-triggers
 ---
 
