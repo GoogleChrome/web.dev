@@ -22,7 +22,7 @@
  * @param {?string} raw a date-like string
  * @return {number} the number of milliseconds we're pretending to be offset by
  */
-export default function getTimeOffset(raw) {
+export function getTimeOffset(raw) {
   if (!raw) {
     return 0;
   }
