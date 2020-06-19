@@ -104,6 +104,8 @@ The `box` property in the options object for `observer.observe()` lets you defin
 
 With this new property, we can even animate our canvas' size and position (effectively guaranteeing fractional pixel values), and not see any Moiré effects on the rendering. If you would like to see the Moiré effect on the approach using `getBoundingClientRect()`, and how the new `ResizeObserver` property allows you to avoid, take a look at the demo!
 
+<h1>TODO: ADD DEMO ONCE GLITCH RECOVERS</h1>
+
 ### Feature detection
 
 To check if a user's browser has support for `devicePixelContentBox`, we can observe any element, and check if the property is present on the ResizeObserverEntry:
@@ -129,7 +131,7 @@ if (!(await hasDevicePixelContentBox())) {
 
 ## Conclusion
 
-TBD
+Pixels are a surprisingly complex topic on the web and up until now there was no way for you to know the exact number of physical pixels an element occupies on the user's screen. The new `devicePixelContentBox` property on a `ResizeObserverEntry` gives you that piece of information and allows you to do pixel-perfect renderings with `<canvas>`. `devicePixelContentBox` is supported in Chrome 84+.
 
 [resizeobserver]: https://web.dev/resize-observer/
 [subpixel rendering]: https://en.wikipedia.org/wiki/Subpixel_rendering
