@@ -36,7 +36,7 @@ improvement, you may have seen some guidance in this realm in the form of the
 [Defer offscreen images audit](/offscreen-images/):
 
 <figure class="w-figure">
-  <img src="./offscreen-audit.png" alt="A screenshot of the Defer offscreen images
+  <img class="w-screenshot" src="./offscreen-audit.png" alt="A screenshot of the Defer offscreen images
 audit in Lighthouse.">
   <figcaption class="w-figcaption">One of Lighthouse's performance audits is to
 identify off screen images, which are candidates for lazy-loading.</figcaption>
