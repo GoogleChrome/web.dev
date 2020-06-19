@@ -1,10 +1,10 @@
 ---
 title: Chromium lands Flexbox `gap`
-subhead: The CSS `gap` property is coming to Chromium's CSS Flexbox and Multi-Column layout engines. 
+subhead: The CSS `gap` property is here for Chromium's CSS Flexbox and Multi-Column layout engines. 
 authors:
   - adamargyle
   - dgrogan
-description: The CSS `gap` property is coming to Chromium's CSS Flexbox and Multi-Column layout engines. 
+description: The CSS `gap` property is here for Chromium's CSS Flexbox and Multi-Column layout engines. 
 date: 2020-05-07
 updated: 2020-06-19
 hero: hero.jpg
