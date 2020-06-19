@@ -3,19 +3,19 @@ title: Sign-in form best practices
 subhead: Use cross-platform browser features to build sign-in forms that are secure, accessible and easy to use.
 authors:
   - samdutton
-date: 2020-04-24
-updated: 2020-06-08
+date: 2020-06-19
 description: Use cross-platform browser features to build sign-in forms that are secure, accessible and easy to use.
 hero: hero.jpg
-alt: Closeup photo of a man holding a phone showing a login page
+alt: Closeup photo of a man holding a phone showing a sign-in page
 thumbnail: thumbnail.jpg
 tags:
-  - post
+  - blog
+  - forms
   - identity
-  - login
-  - privacy
+  - layout
+  - mobile
   - security
-  - trust and safety
+  - ux
 codelabs:
   - codelab-signin-form
 ---
@@ -179,7 +179,7 @@ Browsers have multiple helpful built-in features that use input element attribut
 
 ### Help users start faster {: #autofocus }
 
-Add an `autofocus` attribute to the first input in your login form. That makes
+Add an `autofocus` attribute to the first input in your sign-in form. That makes
 it clear where to start and, on desktop at least, means users don't have to
 select the input to start typing.
 
