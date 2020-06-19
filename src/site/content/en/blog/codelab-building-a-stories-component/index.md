@@ -1,11 +1,11 @@
 ---
 layout: codelab
-title: Stories component codelab
+title: "Codelab: Building a Stories component"
 authors:
   - adamargyle
 description: |
   Learn how to build an experience similar to Instagram Stories on the web.
-date: 2020-06-08
+date: 2020-06-19
 hero: hero.jpg
 glitch: gui-challenges-stories
 glitch_path: app/index.html
