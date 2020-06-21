@@ -33,7 +33,7 @@ As is the case with many publishers, Terra serves [AMP](https://amp.dev/) versio
 
 Taking that into consideration, Terra decided to start serving AMP versions of their pages not only to users coming from search engines, but also to those navigating their site in 3G connections or slower.
 
-To achieve that, they use the [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API) in the service worker to detect if the request comes from 3G or slower. If that’s the case, they change the URL of the page to request the AMP version of the page instead.
+To achieve that, they use the [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API) in the service worker to detect if the request comes from 3G or slower. If that's the case, they change the URL of the page to request the AMP version of the page instead.
 
 <figure class="w-figure">
   <img src="terra-adaptive-amp.png" 
@@ -44,7 +44,7 @@ Thanks to this technique, they send **70% less bytes** to users on slower connec
 
 ## Implement adaptive loading with Workbox
 
-In this section we’ll explore how [Workbox](https://web.dev/workbox/) can be used to implement adaptive loading strategies.
+In this section we'll explore how [Workbox](https://web.dev/workbox/) can be used to implement adaptive loading strategies.
 
 Workbox provides several [runtime caching strategies](https://web.dev/runtime-caching-with-workbox/) out of the box. They are used to indicate how the service worker generates a response after receiving a `fetch` event.
 
@@ -117,7 +117,7 @@ workbox.routing.registerRoute(
 );
 ```
 
-As a result, when requests for images are intercepted, the runtime caching strategy will try to fulfill the request from the cache. If it’s not available, it will run the logic in the plugin, to decide which image quality to fetch from the network.
+As a result, when requests for images are intercepted, the runtime caching strategy will try to fulfill the request from the cache. If it's not available, it will run the logic in the plugin, to decide which image quality to fetch from the network.
 
 Finally the response will be persisted in the cache, and sent back to the page.
 
