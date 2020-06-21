@@ -62,7 +62,6 @@ const initialState = {
   // Data for the current web.dev/LIVE event.
   eventDays: [],
   activeEventDay: null, // livestream shown for this day
-  isChatActive: false, // chat active for this day
 };
 
 let store;
