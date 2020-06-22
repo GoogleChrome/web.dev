@@ -91,7 +91,7 @@ module.exports = (collections) => {
           // Don't crash if there's no posts at all, or we're running in test mode, as the list of
           // posts won't be complete. This also happens when we run Eleventy with generate partials.
           if (!process.env.PERCY && posts.length) {
-            throw new Error(
+            console.warn(
               `author ${
                 author.title
               } has no posts and no social: ${JSON.stringify(author)}`,
