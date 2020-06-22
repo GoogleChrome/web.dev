@@ -1,10 +1,10 @@
 ---
-title: Avoid flickering with devicePixelContentBox
+title: Pixel-perfect rendering with devicePixelContentBox
 subhead: How many pixels are there _really_ in a canvas?
 authors:
   - surma
 date: 2020-06-19
-updated: 2020-06-19
+updated: 2020-06-22
 hero: hero.jpg
 alt:
 description: Since Chrome 84, [ResizeObserver] supports a new box measurement called `device-pixel-content-box`, that measures the element's dimension in _physical_ pixels. This is crucial for rendering pixel-perfect graphics, especially in the context of high-density screens.
@@ -18,7 +18,7 @@ tags:
 
 ## TL;DR
 
-Since Chrome 84, [ResizeObserver] supports a new box measurement called `device-pixel-content-box`, that measures the element's dimension in _physical_ pixels. This is crucial for rendering pixel-perfect graphics, especially in the context of high-density screens.
+Since Chrome 84, [ResizeObserver] supports a new box measurement called `device-pixel-content-box`, that measures the element's dimension in _physical_ pixels. This enables rendering pixel-perfect graphics, especially in the context of high-density screens.
 
 ## CSS pixels, canvas pixels & physical pixels
 
@@ -26,7 +26,7 @@ While we often work with abstract units of length like `em`, `%` or `vh`, it all
 
 For a long time, it was fairly reasonable to estimate anyone's screen pixel density with 96DPI ("dots per inch"), meaning any given monitor would have roughly 38 pixels per cm. Over time, monitors grew and/or shrunk or started to have more pixels on the same surface area ("retina displays"). Combine that with the fact that lots of content on the web define their dimensions, including font sizes, in `px`, we end up illegible text on these high-density ("HiDPI") screens. As a counter-measure, browsers hide the monitor's actual pixel density and instead pretend that the user has a 96 DPI display. The `px` unit in CSS represents the size of one pixel on this _virtual_ 96 DPI display, hence the name "CSS Pixel". This unit is only used for measurement and positioning. Before any actual rendering happens, a conversion to physical pixels happens.
 
-How do we go from this virtual display to the user's real display? Enter `devicePixelRatio`. This global value tells you how many _physical_ pixels you need to form a single CSS pixel. If `devicePixelRatio` (dPR) is `1`, you are working on a monitor with roughly 96DPI. If you have a retina screen, your dPR is probably `2`. On phones it is not uncommon to encounter higher (and weirder) dPR values like `3` or even `3.5`. It is essential to note that this value is _exact_ but not _realistic_. A dPR of `2` means that 1 CSS pixel will map to _exactly_ 2 physical pixels.
+How do we go from this virtual display to the user's real display? Enter `devicePixelRatio`. This global value tells you how many _physical_ pixels you need to form a single CSS pixel. If `devicePixelRatio` (dPR) is `1`, you are working on a monitor with roughly 96DPI. If you have a retina screen, your dPR is probably `2`. On phones it is not uncommon to encounter higher (and weirder) dPR values like `3` or even `3.5`. It is essential to note that this value is _exact_, but doesn't let you derive the monitor's _actual_ DPI value. A dPR of `2` means that 1 CSS pixel will map to _exactly_ 2 physical pixels.
 
 **Example:** My monitor has a dPR of `1` according to Chrome. It has 3440 pixels in width and the display area is 79cm wide. That leads to a resolution of 110 DPI. Close to 96, but not quite. That is also the reason why a `<div style="width: 1cm; height: 1cm">` will not exactly measure 1cm in size on most displays.
 
@@ -100,7 +100,7 @@ observer.observe(canvas, {box: ['device-pixel-content-box']});
 
 The `box` property in the options object for `observer.observe()` lets you define which sizes you wish to _observe_. So while each `ResizeObserverEntry` will always provide `borderBoxSize`, `contentBoxSize` and `devicePixelContentBoxSize` (provided the browser supports it), the callback will only be invoked if any of the _observed_ box metrics change.
 
-**Note:** All of the box metrics are arrays to allow `ResizeObserver` to handle text fragments in the future. At the time of writing, the array is always of length 1.
+**Note:** All of the box metrics are arrays to allow `ResizeObserver` to handle fragmentation in the future. At the time of writing, the array is always of length 1.
 
 With this new property, we can even animate our canvas' size and position (effectively guaranteeing fractional pixel values), and not see any Moiré effects on the rendering. If you would like to see the Moiré effect on the approach using `getBoundingClientRect()`, and how the new `ResizeObserver` property allows you to avoid, take a look at the <a href="https://device-pixel-content-box.glitch.me/" target="_blank">demo</a>!
 
