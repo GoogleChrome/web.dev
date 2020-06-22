@@ -226,13 +226,13 @@ following API:
  
 ```js
 fetch('<url>', {
-  …
+  ...
   trustToken: {
     type: 'send-srr',
     issuer: <issuer>,
   }
-  …
-}).then(…);
+  ...
+}).then(...);
 ```
 
 The publisher should include the SRR in requests that will require a trust
