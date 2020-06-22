@@ -4,7 +4,7 @@ subhead: The Privacy Sandbox is a series of proposals to satisfy third-party use
 authors:
   - samdutton
 date: 2020-04-08
-updated: 2020-06-19
+updated: 2020-06-22
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: A black-on-white printed sign saying Private, on a wooden wall.
@@ -74,7 +74,7 @@ Provide privacy preserving mechanisms to support a variety of use cases such as 
 +   [Click Through Conversion Measurement Event-Level](https://github.com/csharrison/conversion-measurement-api)<br>
 Provide privacy preserving [click-through-conversion](#glossary-ctc) measurement.
 +   [Federated Learning of Cohorts](https://github.com/jkarlin/floc)<br>
-The browser groups together many users with similar browsing histories into a group (or "flock"). Advertisers can target ads at this large group based on mass observations, but cannot recognize individual people in it.
+The browser groups together many users with similar browsing histories into a group (or "flock"). Advertisers can select ads for this large group based on mass observations, but cannot recognize individual people in it.
 +   [TURTLEDOVE](https://github.com/michaelkleber/turtledove)<br>
 Enable some form of on-device 'auction' to choose the most relevant ads which would include ads that remarket an advertiser based on a prior expression of interest by the user.
 
@@ -94,26 +94,26 @@ There are two proposals for APIs that allow the user's browser, rather than a th
 
 Other companies have been investigating similar ideas, such as Facebook's [Cross-Browser Anonymous Conversion Reporting](https://github.com/w3c/web-advertising/blob/master/cross-browser-anonymous-conversion-reporting.md), Apple's [Ad Click Attribution API](https://webkit.org/blog/8943/privacy-preserving-ad-click-attribution-for-the-web/) and Brave's [ad conversion attribution](https://github.com/brave/brave-browser/issues/6536).
 
-### Target ads
+### Select ads
 
 **Goal:** Enable advertisers to display ads relevant to users.
 
-Relevant ads are [less annoying to users and more profitable for publishers](https://services.google.com/fh/files/misc/disabling_third-party_cookies_publisher_revenue.pdf) (the people running ad-supported websites). Third party ad selection tools make ad space more valuable to advertisers (the people who purchase ad space on websites) which in turn increases revenue for ad-supported websites and enables content to get created and published.
+Relevant ads are [more favorable to users and more profitable for publishers](https://services.google.com/fh/files/misc/disabling_third-party_cookies_publisher_revenue.pdf) (the people running ad-supported websites). Third party ad selection tools make ad space more valuable to advertisers (the people who purchase ad space on websites) which in turn increases revenue for ad-supported websites and enables content to get created and published.
 
 There are many ways to make ads relevant to the user, including the following:
 
-+   **First-party-data targeting**: Show ads relevant to topics a person has told a website they have an interest in, or content a person has looked at previously on this web site.
-+   **Contextual targeting**: Choose where to display ads based on site content. For example, 'Put this ad next to articles about knitting.'
++   **First-party-data**: Show ads relevant to topics a person has told a website they have an interest in, or content a person has looked at previously on this web site.
++   **Contextual**: Choose where to display ads based on site content. For example, 'Put this ad next to articles about knitting.'
 +   **Remarketing**: Advertise to people who've already visited your site, while they are not on your site. For example,  'Show this ad for discount wool to people who visited your store and left knitting items in their shopping cart—while they're visiting craft sites.'
-+   **Interest-based targeting**: Select ads based on a user's browsing history. For example, 'Show this ad to users whose browsing behaviour indicates they might be interested in knitting'.
++   **Interest-based**: Select ads based on a user's browsing history. For example, 'Show this ad to users whose browsing behaviour indicates they might be interested in knitting'.
 
-First-party-data and contextual targeting can be achieved without knowing anything about the user other than their activity within a site. These techniques don't require cross-site tracking. Remarketing is usually done by using cookies or some other way to recognize people across web sites: adding users to lists and then targeting them with specific ads.
+First-party-data and contextual ad selection can be achieved without knowing anything about the user other than their activity within a site. These techniques don't require cross-site tracking. Remarketing is usually done by using cookies or some other way to recognize people across web sites: adding users to lists and then selecting specific ads to show them.
 
-Interest-based targeting currently uses cookies or device fingerprinting to track user behaviour across as many sites as possible. Many people are concerned about the privacy implications of ad selection. The Privacy Sandbox includes two alternatives, for remarketing and interest-based ad selection:
+Interest-based ad selection currently uses cookies or device fingerprinting to track user behaviour across as many sites as possible. Many people are concerned about the privacy implications of ad selection. The Privacy Sandbox includes two alternatives, for remarketing and interest-based ad selection:
 
 * [TURTLEDOVE](https://github.com/michaelkleber/turtledove): for [remarketing](#remarketing). The API enables the final ad "auction" to choose the most relevant ads to be moved to the browser. The API leverages information which is only stored in the user's browser itself, about advertisers the user had previously expressed an interest in, along with information about the current page. Two requests are sent for ads: one to retrieve an ad based on contextual data, and one to retrieve an ad based on an advertiser-defined interest. The browser has the responsibility of ensuring these requests are independent and *uncorrelated* so they can't be linked together to let an ad network know that the requests are from the same person. An "auction" is then conducted by the browser to choose the most relevant ad, using JavaScript code provided by the advertiser. This code *can only be used to choose between ads*: it cannot make network requests, or access the DOM or external state.
 
-* [FLoC](https://github.com/jkarlin/floc): for interest-based audience. This generates clusters of similar people, known as cohorts or "flocks". Data is generated locally on the user's browser, not by a third party. The browser shares the generated flock data, but this cannot be used to identify or track individual users. This enables companies to target ads based on the behavior of people with similar browsing behaviour, while preserving privacy.
+* [FLoC](https://github.com/jkarlin/floc): for interest-based audience. This generates clusters of similar people, known as cohorts or "flocks". Data is generated locally on the user's browser, not by a third party. The browser shares the generated flock data, but this cannot be used to identify or track individual users. This enables companies to select ads based on the behavior of people with similar browsing behaviour, while preserving privacy.
 
 
 ### Combat fingerprinting
@@ -155,9 +155,9 @@ Many organizations own sites across multiple domains. For example, google.com, g
 
 ## Find out more
 
-### Explainers
+### Privacy Sandbox proposal explainers
 
-The Privacy Sandbox authors need your support. The [explainers](https://blog.chromium.org/2019/08/potential-uses-for-privacy-sandbox.html) need feedback—in particular to suggest missing use cases and more-private ways to accomplish their goals.
+The Privacy Sandbox authors need your support. The proposal [explainers](https://blog.chromium.org/2019/08/potential-uses-for-privacy-sandbox.html) need feedback—in particular to suggest missing use cases and more-private ways to accomplish their goals.
 
 +   [Privacy Model for the Web](https://github.com/michaelkleber/privacy-model)
 +   [Privacy Budget](https://github.com/bslassey/privacy-budget)
