@@ -7,7 +7,7 @@ date: 2020-06-22
 updated: 2020-06-22
 hero: hero.jpg
 thumbnail: thumbnail.jpg
-alt: Pipette with purple liquid, Bristol Robotics Laboratory, Stoke Gifford, United Kingdom
+alt: Pipette with purple liquid
 tags:
   - blog
   - chrome
