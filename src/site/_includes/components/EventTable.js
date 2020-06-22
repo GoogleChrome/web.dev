@@ -114,23 +114,28 @@ module.exports = (days, authorsCollection, showCarousel) => {
   };
 
   const renderCarouselDay = ({title, videoId}, index) => {
-    const previewImage = videoId ? html`<img src="https://img.youtube.com/vi/${videoId}/maxresdefault.jpg"` : '';
+    const previewImage = videoId
+      ? html`<img
+          src="https://img.youtube.com/vi/${videoId}/maxresdefault.jpg"
+        />`
+      : '';
     return html`
-<a data-index=${index} class="w-event-carousel__day">
-  <div class="w-event-carousel__thumbnail">${previewImage}</div>
-  <div class="w-event-carousel__description">${title}</div>
-</a>
+      <a data-index="${index}" class="w-event-carousel__day">
+        <div class="w-event-carousel__thumbnail">${previewImage}</div>
+        <div class="w-event-carousel__description">${title}</div>
+      </a>
     `;
   };
 
-  const carousel = showCarousel ? html`
-    <div class="w-event-carousel">
-      ${days.map(renderCarouselDay)}
-    </div>` : '';
+  const carousel = showCarousel
+    ? html` <div class="w-event-carousel">
+        ${days.map(renderCarouselDay)}
+      </div>`
+    : '';
 
   return html`
     <web-event-schedule>
-      ${carousel} 
+      ${carousel}
       <web-tabs class="w-event-tabs unresolved" label="schedule">
         ${days.map(renderDay)}
       </web-tabs>
