@@ -22,6 +22,7 @@ const path = require('path');
 const log = require('fancy-log');
 
 const sassEngine = (function () {
+  /* eslint-disable node/no-missing-require */
   try {
     // node-sass is faster, but regularly fails to install correctly (native bindings)
     return require('node-sass');
@@ -29,6 +30,7 @@ const sassEngine = (function () {
     // fallback to the official transpiled version
     return require('sass');
   }
+  /* eslint-enable node/no-missing-require */
 })();
 
 /**
