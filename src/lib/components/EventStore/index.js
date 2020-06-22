@@ -116,7 +116,6 @@ class EventStore extends HTMLElement {
 
     store.setState({
       eventDays: this._days,
-      communityEvents: this._communityEvents,
       activeEventDay: activeDay,
     });
   }
@@ -135,7 +134,7 @@ class EventStore extends HTMLElement {
     }
 
     this._days = raw.days || [];
-    this._communityEvents = raw.communityEvents;
+    store.setState({communityEvents: raw.communityEvents });
 
     this._update();
     this._timer = window.setInterval(this._update, timerEveryMillisecond);
@@ -145,7 +144,6 @@ class EventStore extends HTMLElement {
     store.unsubscribe(this.onStateChanged);
 
     this._days = [];
-    this._communityEvents = null;
     this._update();
 
     window.clearInterval(this._timer);
