@@ -138,15 +138,7 @@ date: 2020-06-31
       </div>
 
       <div class="w-event-section__column-right">
-        <web-event-map
-          events={{event.communityEvents | dump}}
-          key={{site.maps.apiKey}}
-        >
-          <code style="display: none;">
-            {# This data is passed as innerText because dump does not work well with html attributes #}
-            {{event.communityEvents | dump}}
-          </code>
-        </web-event-map>
+        <web-event-map key={{site.maps.apiKey}}></web-event-map>
       </div>
     </section>
   {% endif %}

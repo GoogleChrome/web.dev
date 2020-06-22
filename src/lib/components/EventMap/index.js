@@ -52,7 +52,7 @@ class EventMap extends BaseStateElement {
     this.center = '';
     this.zoom = 4;
     this.size = '600x300';
-    this.events = [];
+    this.events = null;
   }
 
   onStateChanged({communityEvents}) {
@@ -68,6 +68,10 @@ class EventMap extends BaseStateElement {
   }
 
   render() {
+    if (!this.events) {
+      return '';
+    }
+
     const params = [
       `center=${this.center}`,
       `zoom=${this.zoom}`,
@@ -79,12 +83,13 @@ class EventMap extends BaseStateElement {
     const url = `https://maps.googleapis.com/maps/api/staticmap?${params}`;
 
     // prettier-ignore
+    /* eslint-disable indent */
     return html`
       <select class="w-select--borderless" @change="${this.onChange}">
         ${this.eventRegions.map((region) => {
-    return html`<option value=${region}>${region}</option>`;
-  })}
-  </select>
+          return html`<option value=${region}>${region}</option>`;
+        })}
+      </select>
       <img
         width="600"
         height="300"
@@ -93,8 +98,8 @@ class EventMap extends BaseStateElement {
       />
       <ul class="w-event-list__community-events">
         ${this.localEvents.map((entry) => {
-    const date = new Date(entry.date);
-    return html`
+          const date = new Date(entry.date);
+          return html`
             <li>
               <a href="#">${entry.place}</a>
               <time datetime=${date.toISOString()}>
@@ -102,7 +107,7 @@ class EventMap extends BaseStateElement {
               </time>
             </li>
           `;
-  })}
+        })}
       </ul>
     `;
   }
