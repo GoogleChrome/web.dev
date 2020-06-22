@@ -59,7 +59,7 @@ class EventStore extends HTMLElement {
     // then prefer it over showing the upcoming day (we store that in nextPendingDay).
     let nextPendingDay = null;
 
-    for (const day of this._days) {
+    for (const day of this._days || []) {
       const timeOffsetBy = (minutes) => {
         const d = new Date(day.when);
         d.setMinutes(d.getMinutes() + minutes);
@@ -121,9 +121,6 @@ class EventStore extends HTMLElement {
   }
 
   connectedCallback() {
-    store.subscribe(this.onStateChanged);
-    this.onStateChanged(store.getState());
-
     const raw = JSON.parse(this.textContent.trim());
 
     for (let i = 0; i < raw.days.length; ++i) {
@@ -137,6 +134,9 @@ class EventStore extends HTMLElement {
 
     this._update();
     this._timer = window.setInterval(this._update, timerEveryMillisecond);
+
+    store.subscribe(this.onStateChanged);
+    this.onStateChanged(store.getState());
   }
 
   disconnectedCallback() {
