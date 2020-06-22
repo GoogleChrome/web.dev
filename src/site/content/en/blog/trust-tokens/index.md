@@ -95,7 +95,9 @@ websites from tracking users through them.</p>
 The following is adapted from
 [sample code in the API explainer](https://github.com/WICG/trust-token-api#sample-api-usage).  
   
-Imagine that a user visits a news website (`publisher.example`) which embeds advertising from a third party ad network (`foo.example`). The user has previously used an online store that issues trust tokens (`issuer.example`).
+Imagine that a user visits a news website (`publisher.example`) which embeds 
+advertising from a third party ad network (`foo.example`). The user has 
+previously used a social media site that issues trust tokens (`issuer.example`).
 
 The sequence below shows how trust tokens work.
 
