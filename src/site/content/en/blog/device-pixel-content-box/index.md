@@ -5,8 +5,8 @@ authors:
   - surma
 date: 2020-06-19
 updated: 2020-06-22
-hero: hero.jpg
-alt:
+hero: pixels.jpg
+alt: Lots of pixels
 description: Since Chrome 84, [ResizeObserver] supports a new box measurement called `device-pixel-content-box`, that measures the element's dimension in _physical_ pixels. This is crucial for rendering pixel-perfect graphics, especially in the context of high-density screens.
 tags:
   - blog
