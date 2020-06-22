@@ -13,12 +13,19 @@ tags:
   - css
 ---
 
+-- video embed --
 
 This post will highlight a few powerful lines of CSS that do some serious heavy lifting and help you build robust modern layouts.
 
--- video embed --
+<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/1linelayouts?path=README.md&previewSize=100"
+    alt="1 Line Layouts"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
 
-I made this handy little site called 1 line layouts, at [1linelayouts.glitch.me](1linelayouts.glitch.me) so that you can follow along, or play on your own and have a reference for the power that CSS can bring to your layouts.
+To follow along or play with these demos on your own, check out the Glitch embed above, or visit [1linelayouts.glitch.me](1linelayouts.glitch.me).
 
 ## 01. Super Centered: `place-items: center`
 
@@ -55,7 +62,7 @@ By using flexbox for this effect, you won't need media queries to adjust the pla
 
 The [flex](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) shorthand stands for: `flex: <flex-grow> <flex-shrink> <flex-basis>`.
 
-Because of this, if you want your boxes to fill out to their flex-basis size, shrink on smaller sizes, but not *stretch* to fill any additional space, write: `flex: 0 1 <flex-basis>`, setting the flex-grow to 0. In this case, your flex-basis is `'150px'` so it looks like:
+Because of this, if you want your boxes to fill out to their flex-basis size, shrink on smaller sizes, but not *stretch* to fill any additional space, write: `flex: 0 1 <flex-basis>`, setting the `<flex-grow>` to 0. In this case, your `<flex-basis`> is `'150px'` so it looks like:
 
 ```css/5
 .parent {
