@@ -71,26 +71,25 @@ class LivestreamContainer extends BaseStateElement {
    * @param {!Object<string, *>} state
    */
   onStateChanged({activeEventDay, isSignedIn}) {
-    if (!activeEventDay) {
-      return;
-    }
+    const {videoId, isChatActive} = activeEventDay || {videoId: null, isChatActive: false};
 
-    const {videoId, isChatActive} = activeEventDay;
+    const updateFrame = (this.videoId !== videoId);
     this.videoId = videoId;
     this.isChatActive = isChatActive;
 
-    // If there was a signed-in state change, reload all our frames as YouTube won't otherwise
-    // reconfigure them automatically.
+    // If there was a signed-in state change, and we're not already changing the URL through a
+    // videoId change, reload all our frames as YouTube won't otherwise reconfigure them
+    // automatically.
     // Note that signed-in state might change for one of two reasons:
     //  1) the user is signed into Google but signs in/out of web.dev (and reload is needless)
     //  2) the user signs in or out of Google as part of web.dev (reload is required)
-    if (this._isSignedIn !== isSignedIn) {
+    if (!updateFrame && this._isSignedIn !== isSignedIn) {
       const frames = this.renderRoot.querySelectorAll('iframe');
       frames.forEach((frame) => {
         frame.src = '' + frame.src;
       });
-      this._isSignedIn = isSignedIn;
     }
+    this._isSignedIn = isSignedIn;
   }
 }
 
