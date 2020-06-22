@@ -92,11 +92,18 @@ module.exports = (collections) => {
           if (process.env.PERCY) {
             return;
           }
-          console.warn(
-            `author ${
-              author.title
-            } has no posts and no social: ${JSON.stringify(author)}\n\n`,
-          );
+
+          // posts.length might be empty if we're generating partials so only
+          // log a warning if it has a value and we're doing a regular build.
+          // Note this is checking for _all_ posts and not just the posts
+          // by this specific author.
+          if (posts.length) {
+            console.warn(
+              `author ${
+                author.title
+              } has no posts and no social: ${JSON.stringify(author)}\n`,
+            );
+          }
         } else {
           author.href = `https://twitter.com/${author.twitter}`;
         }
