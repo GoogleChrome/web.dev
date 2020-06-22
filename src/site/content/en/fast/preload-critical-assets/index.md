@@ -10,10 +10,12 @@ description: |
   for any other external references. The critical request chain represents the
   order of resources that are prioritized and fetched by the browser.
 date: 2018-11-05
-updated: 2020-05-28
+updated: 2020-06-22
 codelabs:
   - codelab-preload-critical-assets
   - codelab-preload-web-fonts
+tags:
+  - performance
 ---
 
 When you open a web page, the browser requests the HTML document from a server, parses its contents, and submits separate requests for any referenced resources. As a developer, you already know about all the resources your page needs and which of them are the most important. You can use that knowledge to request the critical resources ahead of time and speed up the loading process. This post explains how to achieve that with `<link rel="preload">`.
@@ -61,6 +63,13 @@ Unused preloads trigger a Console warning in Chrome, approximately 3 seconds aft
 {% endAside %}
 
 ## Use cases
+
+{% Aside 'caution' %}
+At the time of writing, Chrome has an open
+[bug](https://bugs.chromium.org/p/chromium/issues/detail?id=788757) for preloaded requests that are
+fetched sooner than other higher priority resources. Until this is resolved, be wary of how
+preloaded resources can "jump the queue" and be requested sooner than they should.
+{% endAside %}
 
 ### Preloading resources defined in CSS
 
