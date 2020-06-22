@@ -29,14 +29,14 @@ identifying the user or linking the two identities.
 
 {% Aside %}
 The Privacy Sandbox is a series of proposals to satisfy third-party use cases
-without third-party cookies or other tracking mechanisms. **See
+without third-party cookies or other tracking mechanisms. See
 [Digging into the Privacy Sandbox](http://web.dev/digging-into-the-privacy-sandbox)
-for an overview of all the proposals.**
-{% endAside %}
+for an overview of all the proposals.
 
-**This proposal needs your feedback! If you have comments, please [create an
+**This proposal needs your feedback!** If you have comments, please [create an
 issue](https://github.com/WICG/trust-token-api/issues/new) on the [Trust Token
-explainer](https://github.com/WICG/trust-token-api) repository.**
+explainer](https://github.com/WICG/trust-token-api) repository.
+{% endAside %}
 
 ## Why do we need Trust Tokens?
 
@@ -71,26 +71,24 @@ sites without individual user tracking.
 
 The web relies on building trust signals to detect fraud and spamming. One way
 to do this is by tracking browsing with global, cross-site per-user identifiers.
-For a privacy-preserving API, that's not acceptable. 
+For a privacy-preserving API, that's not acceptable.  
 
 From the proposal
-[**explainer**](https://github.com/WICG/trust-token-api#overview):  
+[**explainer**](https://github.com/WICG/trust-token-api#overview): 
   
-{% Blockquote %}  
-This API proposes a new per-origin storage area for "Privacy Pass" style
+<blockquote>  
+<p>This API proposes a new per-origin storage area for "Privacy Pass" style
 cryptographic tokens, which are accessible in third party contexts. These
 tokens are non-personalized and cannot be used to track users, but are
-cryptographically signed so they cannot be forged.
-
-> When an origin is in a context where they trust the user, they can issue
+cryptographically signed so they cannot be forged.</p>
+<p>When an origin is in a context where they trust the user, they can issue
 the browser a batch of tokens, which can be "spent" at a later time in a
 context where the user would otherwise be unknown or less trusted.
 Crucially, the tokens are indistinguishable from one another, preventing
-websites from tracking users through them.
-
-> We further propose an extension mechanism for the browser to sign outgoing
-requests with keys bound to a particular token redemption.  
-{% endBlockquote %}
+websites from tracking users through them.</p>
+<p>We further propose an extension mechanism for the browser to sign outgoing
+  requests with keys bound to a particular token redemption.</p>  
+</blockquote>
 
 
 ## Sample API usage
@@ -98,29 +96,29 @@ requests with keys bound to a particular token redemption.
 The following is adapted from
 [sample code in the API explainer](https://github.com/WICG/trust-token-api#sample-api-usage).  
   
-Imagine that a user visits a news website (`_publisher.example_`) which embeds advertising from a third party ad network (`_foo.example_`). The user has previously used an online store that issues trust tokens (issuer.example).
+Imagine that a user visits a news website (`publisher.example`) which embeds advertising from a third party ad network (`foo.example`). The user has previously used an online store that issues trust tokens (`issuer.example`).
 
 The sequence below shows how trust tokens work.
 
-1. User visits `_issuer.example_`.
-1. `_issuer.example_` verifies the user is a human, and runs the following
-JavaScript:  
-  
-`fetch('https://issuer.example/issue', {  
-     trustToken: {  
-    type: 'token-request'  
-  }`
+1.&nbsp;The user visits `issuer.example`.
 
-```
+2.&nbsp;`issuer.example` verifies the user is a human, and runs the following
+JavaScript:  
+
+```js
+fetch('https://issuer.example/issue', {  
+  trustToken: {  
+    type: 'token-request'  
+  }
 });
 ```
 
-   1. The user's browser stores the trust tokens associated with
-      `_issuer.example_`.
+3.&nbsp;The user's browser stores the trust tokens associated with `issuer.example`.
 
-1. Some time later, the user visits `_publisher.example_`.
-1. `_publisher.example_` wants to know if the user is a human, so they ask
-`_issuer.example_` by running the following JavaScript:  
+4.&nbsp;Some time later, the user visits `publisher.example`.
+
+5.&nbsp;`publisher.example` wants to know if the user is a human, so they ask 
+`issuer.example` by running the following JavaScript:  
   
  ```js
     fetch('https://issuer.example/redeem', {
@@ -129,14 +127,18 @@ JavaScript:
    	  }  
     });    
 ```
-   1. The browser requests a redemption.
-   1. The issuer returns a Signed Redemption Record (SRR) which indicates
-      that at some point they issued a valid token to this browser.
-   1. When the promise returned resolves, the SRR can be used in
-      subsequent resource requests.
 
-1. `_publisher.example_` can then run the following JavaScript in a top-level
+With this code:
+
+ 1. The browser requests a redemption.
+ 1. The issuer returns a Signed Redemption Record (SRR) which indicates
+    that at some point they issued a valid token to this browser.
+ 1. When the promise returned resolves, the SRR can be used in
+    subsequent resource requests.
+
+6.&nbsp;`publisher.example` can then run the following JavaScript in a top-level
 document:  
+
 ```js  
 fetch('foo.example/get-content', {  
   trustToken: {  
@@ -145,9 +147,12 @@ fetch('foo.example/get-content', {
   }  
 });  
 ```
-   1. `_foo.example_`  receives the SRR, and now has some indication that
-      `_issuer.example_` thought this user was a human.
-   1. `_foo.example_` responds accordingly.
+
+With this code:
+
+1. `foo.example`  receives the SRR, and now has some indication that
+  `issuer.example` thought this user was a human.
+1. `foo.example` responds accordingly.
 
 {% Details %}
 {% DetailsSummary %}  
@@ -163,7 +168,7 @@ you're a real human.
 ### Trust token issuance
 
 If the user is deemed to be trustworthy by a trust token issuer such as
-`_issuer.example_`, the issuer can fetch trust tokens for the user by making a
+`issuer.example`, the issuer can fetch trust tokens for the user by making a
 `fetch()` request with a new `trustToken` parameter:
 
 
@@ -193,7 +198,7 @@ as trust tokens.
 
 ### Trust token redemption
 
-A publisher site (such as `_publisher.example_` in the example above) can check if
+A publisher site (such as `publisher.example` in the example above) can check if
 there are trust tokens available for the user:
 
 
