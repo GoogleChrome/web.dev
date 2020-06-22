@@ -15,13 +15,13 @@ tags:
   - trust and safety
 ---
 
-{% YouTube 'WnCKlNE52tc' %}
+{% YouTube ′WnCKlNE52tc′ %}
 
 ## Summary
 
 Trust tokens enable an origin to issue cryptographic tokens to a user it trusts.
-The tokens are stored by the user's browser. The browser uses the tokens in
-other contexts to evaluate the user's authenticity.   
+The tokens are stored by the user′s browser. The browser uses the tokens in
+other contexts to evaluate the user′s authenticity.   
 
 The Trust Token API allows trust of a user in one context (such as gmail.com) to
 be conveyed to another context (such as an ad running on nytimes.com) without
@@ -50,15 +50,14 @@ trustworthiness—to work out if an interaction with a site is from a real human
 or a bot, for example—take advantage of techniques that can also be used for
 fingerprinting.
 
-{% Aside 'key-term' %}  
+{% Aside ′key-term′ %}  
 **Fingerprinting** enables sites to identify and track individual users by
 getting data about their device, operating system, and browser setup (such as
 language preferences,
-[user agent](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/userAgent),
-and available fonts) or changes in device state. This may be done on the server
+[user agent](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/userAgent), and available fonts) or changes in device state. This may be done on the server
 by checking request headers or on the client with JavaScript.
 
-Fingerprinting uses mechanisms that users aren't aware of and can't control.
+Fingerprinting uses mechanisms that users aren′t aware of and can′t control.
 Sites such as [Panopticlick](https://panopticlick.eff.org/) and
 [amiunique.org](https://amiunique.org/) show how fingerprint data can be
 combined to identify you as an individual.  
@@ -67,11 +66,11 @@ combined to identify you as an individual.
 The API must preserve privacy while also enabling trust to be propagated across
 sites without individual user tracking.
 
-## What's in the Trust Tokens proposal?
+## What′s in the Trust Tokens proposal?
 
 The web relies on building trust signals to detect fraud and spamming. One way
 to do this is by tracking browsing with global, cross-site per-user identifiers.
-For a privacy-preserving API, that's not acceptable.  
+For a privacy-preserving API, that′s not acceptable.  
 
 From the proposal
 [**explainer**](https://github.com/WICG/trust-token-api#overview): 
@@ -106,14 +105,14 @@ The sequence below shows how trust tokens work.
 JavaScript:  
 
 ```js
-fetch('https://issuer.example/issue', {  
+fetch(′https://issuer.example/issue′, {  
   trustToken: {  
-    type: 'token-request'  
+    type: ′token-request′  
   }
 });
 ```
 
-3.&nbsp;The user's browser stores the trust tokens associated with `issuer.example`.
+3.&nbsp;The user′s browser stores the trust tokens associated with `issuer.example`.
 
 4.&nbsp;Some time later, the user visits `publisher.example`.
 
@@ -121,9 +120,9 @@ fetch('https://issuer.example/issue', {
 `issuer.example` by running the following JavaScript:  
   
  ```js
-    fetch('https://issuer.example/redeem', {
+    fetch(′https://issuer.example/redeem′, {
    	  trustToken: {
-   	    type: 'srr-token-redemption'
+   	    type: ′srr-token-redemption′
    	  }  
     });    
 ```
@@ -140,10 +139,10 @@ With this code:
 document:  
 
 ```js  
-fetch('foo.example/get-content', {  
+fetch(′foo.example/get-content′, {  
   trustToken: {  
-    type: 'send-srr',   
-       issuer: 'https://issuer.example'  
+    type: ′send-srr′,   
+       issuer: ′https://issuer.example′  
   }  
 });  
 ```
@@ -160,9 +159,9 @@ How can a website work out whether to trust you?
 {% endDetailsSummary %}  
 You might have shopping history with an ecommerce site, checkins on a location
 platform, or account history at a bank. Issuers might also look at other factors
-such as how long you've had an account, or other interactions (such as CAPTCHAs
-or form submission) that increase the issuer's trust in the likelihood that
-you're a real human.  
+such as how long you′ve had an account, or other interactions (such as CAPTCHAs
+or form submission) that increase the issuer′s trust in the likelihood that
+you′re a real human.  
 {% endDetails %}
 
 ### Trust token issuance
@@ -173,9 +172,9 @@ If the user is deemed to be trustworthy by a trust token issuer such as
 
 
 ```js
-fetch('issuer.example/.well-known/trust-token', {
+fetch(′issuer.example/.well-known/trust-token′, {
   trustToken: {
-    type: 'token-request',
+    type: ′token-request′,
     issuer: <issuer>
   }
 }).then(...)
@@ -187,7 +186,7 @@ protocol:
 
 1. Generate a set of pseudo-random numbers known as _nonces_.
 1. [Blind](https://www.cs.bham.ac.uk/~mdr/teaching/modules06/netsec/lectures/blind_sigs.html)
-   the nonces (encode them so the issuer can't view their contents) and attach
+   the nonces (encode them so the issuer can′t view their contents) and attach
    them to the request in a `Sec-Trust-Token` header.
 1. Send a POST request to the endpoint provided.
 
@@ -210,12 +209,12 @@ If there are tokens available, the publisher site can redeem them to get a
 signed redemption record:
 
 ```js
-fetch('issuer.example/.well-known/trust-token', {
+fetch(′issuer.example/.well-known/trust-token′, {
   ...
   trustToken: {
-    type: 'srr-token-redemption',
-    issuer: 'issuer.example',
-    refreshPolicy: 'none'
+    type: ′srr-token-redemption′,
+    issuer: ′issuer.example′,
+    refreshPolicy: ′none′
   }
   ...
 }).then(...)
@@ -225,10 +224,10 @@ Then the publisher site can send the SRR to requests it makes using the
 following API:
  
 ```js
-fetch('<url>', {
+fetch(′<url>′, {
   ...
   trustToken: {
-    type: 'send-srr',
+    type: ′send-srr′,
     issuer: <issuer>,
   }
   ...
@@ -245,25 +244,25 @@ Trust tokens are only accessible through options to Fetch, XHR, and the HTML
 
 ### Privacy considerations
 
-Tokens are designed to be 'unlinkable'. An issuer can learn aggregate
-information about which sites its users visit, but can't link issuance with
-redemption: when a user redeems a token, the issuer can't tell the token apart
+Tokens are designed to be ′unlinkable′. An issuer can learn aggregate
+information about which sites its users visit, but can′t link issuance with
+redemption: when a user redeems a token, the issuer can′t tell the token apart
 from other tokens it has created. However, trust tokens currently do not exist
 in a vacuum: there are other ways an issuer could currently—in theory—join a
-user's identity across sites, such as third-party cookies and covert tracking
+user′s identity across sites, such as third-party cookies and covert tracking
 techniques. It is important for sites to understand this ecosystem transition as
 they plan their support. This is a general aspect of the transition for many
 Privacy Sandbox APIs, so not discussed further here.
 
 ### Security considerations
 
-**Trust token exhaustion:** a malicious site could deliberately deplete a user's
+**Trust token exhaustion:** a malicious site could deliberately deplete a user′s
 supply of tokens from a particular issuer. There are several mitigations against
 this kind of attack, such as enabling issuers to provide many tokens at once, so
 users have an adequate supply of ensuring browsers only ever redeem one token
 per top-level page view.  
   
-**Double-spend prevention:** malware might attempt to access all of a user's
+**Double-spend prevention:** malware might attempt to access all of a user′s
 trust tokens. However, tokens will run out over time, since every redemption is
 sent to the same token issuer, which can verify that each token is used only
 once. To mitigate risk, issuers could also sign fewer tokens.
