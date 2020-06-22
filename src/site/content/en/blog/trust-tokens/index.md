@@ -63,6 +63,106 @@ Sites such as [Panopticlick](https://panopticlick.eff.org/) and
 combined to identify you as an individual.  
 {% endAside %} 
 
+The API must preserve privacy while also enabling trust to be propagated across
+sites without individual user tracking.
+
+## What's in the Trust Tokens proposal?
+
+The web relies on building trust signals to detect fraud and spamming. One way
+to do this is by tracking browsing with global, cross-site per-user identifiers.
+For a privacy-preserving API, that's not acceptable.  
+
+From the proposal
+[**explainer**](https://github.com/WICG/trust-token-api#overview): 
+  
+<blockquote>  
+<p>This API proposes a new per-origin storage area for "Privacy Pass" style
+cryptographic tokens, which are accessible in third party contexts. These
+tokens are non-personalized and cannot be used to track users, but are
+cryptographically signed so they cannot be forged.</p>
+<p>When an origin is in a context where they trust the user, they can issue
+the browser a batch of tokens, which can be "spent" at a later time in a
+context where the user would otherwise be unknown or less trusted.
+Crucially, the tokens are indistinguishable from one another, preventing
+websites from tracking users through them.</p>
+<p>We further propose an extension mechanism for the browser to sign outgoing
+  requests with keys bound to a particular token redemption.</p>  
+</blockquote>
+
+
+## Sample API usage
+
+The following is adapted from
+[sample code in the API explainer](https://github.com/WICG/trust-token-api#sample-api-usage).  
+  
+Imagine that a user visits a news website (`publisher.example`) which embeds advertising from a third party ad network (`foo.example`). The user has previously used an online store that issues trust tokens (`issuer.example`).
+
+The sequence below shows how trust tokens work.
+
+1.&nbsp;The user visits `issuer.example`.
+
+2.&nbsp;`issuer.example` verifies the user is a human, and runs the following
+JavaScript:  
+
+```js
+fetch('https://issuer.example/issue', {  
+  trustToken: {  
+    type: 'token-request'  
+  }
+});
+```
+
+3.&nbsp;The user's browser stores the trust tokens associated with `issuer.example`.
+
+4.&nbsp;Some time later, the user visits `publisher.example`.
+
+5.&nbsp;`publisher.example` wants to know if the user is a human, so they ask 
+`issuer.example` by running the following JavaScript:  
+  
+ ```js
+    fetch('https://issuer.example/redeem', {
+   	  trustToken: {
+   	    type: 'srr-token-redemption'
+   	  }  
+    });    
+```
+
+With this code:
+
+ 1. The browser requests a redemption.
+ 1. The issuer returns a Signed Redemption Record (SRR) which indicates
+    that at some point they issued a valid token to this browser.
+ 1. When the promise returned resolves, the SRR can be used in
+    subsequent resource requests.
+
+6.&nbsp;`publisher.example` can then run the following JavaScript in a top-level
+document:  
+
+```js  
+fetch('foo.example/get-content', {  
+  trustToken: {  
+    type: 'send-srr',   
+       issuer: 'https://issuer.example'  
+  }  
+});  
+```
+
+With this code:
+
+1. `foo.example`  receives the SRR, and now has some indication that
+  `issuer.example` thought this user was a human.
+1. `foo.example` responds accordingly.
+
+{% Details %}
+{% DetailsSummary %}  
+How can a website work out whether to trust you?  
+{% endDetailsSummary %}  
+You might have shopping history with an ecommerce site, checkins on a location
+platform, or account history at a bank. Issuers might also look at other factors
+such as how long you've had an account, or other interactions (such as CAPTCHAs
+or form submission) that increase the issuer's trust in the likelihood that
+you're a real human.  
+{% endDetails %}
 
 ### Trust token issuance
 
