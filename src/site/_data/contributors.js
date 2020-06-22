@@ -122,6 +122,21 @@ const contributors = {
       en: 'Arthur is a Tech Writer',
     },
   },
+  exterkamp: {
+    name: {
+      given: 'Shane',
+      family: 'Exterkamp',
+    },
+    org: {
+      name: 'Google',
+      unit: 'Chrome',
+    },
+    country: 'US',
+    github: 'exterkamp',
+    description: {
+      en: 'Shane is a SWE on Lighthouse',
+    },
+  },
   sfourault: {
     name: {
       given: 'Sébastien',
