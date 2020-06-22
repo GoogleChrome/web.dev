@@ -1309,7 +1309,7 @@ const contributors = {
     },
     twitter: 'rkochman',
     github: 'rkochman',
-    glitch: 'tbd',
+    glitch: 'rkochman',
     country: 'US',
     org: {
       name: 'Google',
