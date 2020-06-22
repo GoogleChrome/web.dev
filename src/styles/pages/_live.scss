@@ -197,7 +197,7 @@
     margin-top: 24px;
   }
 
-  .w-event-guidelines {
+  .w-event-link {
     font-size: 14px;
     margin-top: 20px;
   }
@@ -449,3 +449,10 @@ web-tabs.w-event-tabs {
     object-fit: cover;
   }
 }
+
+.w-event-icon {
+  align-items: center;
+  vertical-align: middle;
+  margin-right: 16px;
+}
+

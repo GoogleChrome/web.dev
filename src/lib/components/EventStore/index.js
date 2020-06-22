@@ -131,6 +131,7 @@ class EventStore extends HTMLElement {
     }
 
     this._days = raw.days || [];
+    store.setState({communityEvents: raw.communityEvents});
 
     this._update();
     this._timer = window.setInterval(this._update, timerEveryMillisecond);

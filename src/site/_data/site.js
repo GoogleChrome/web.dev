@@ -72,4 +72,7 @@ module.exports = {
       appId: '1:950800540990:web:5bfeb5de58f8ce7ceef86f',
     },
   },
+  maps: {
+    apiKey: 'AIzaSyCc27LkiT_ZvmEszthj__edZEzB7B7976s',
+  },
 };
