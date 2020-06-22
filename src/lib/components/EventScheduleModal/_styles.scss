@@ -29,9 +29,10 @@ web-event-schedule-modal {
 
   // Modify the default button to match the mocks.
   button.w-button.close {
-    letter-spacing: 0;
-    text-transform: none;
     float: right;
+    letter-spacing: 0;
+    margin: auto -8px -8px auto;
+    text-transform: none;
   }
 
   p {
