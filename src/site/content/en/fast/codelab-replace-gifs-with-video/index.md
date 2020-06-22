@@ -10,6 +10,8 @@ description: |
   with a video.
 glitch: gif-to-video
 related_post: replace-gifs-with-videos
+tags:
+  - performance
 ---
 
 {% include 'content/devtools-headsup.njk' %}

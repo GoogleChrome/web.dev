@@ -1,0 +1,10 @@
+<div class="w-layout-container--narrow">
+  <h1 class="w-headline--two w-font-weight--medium w-mt--non">{{ title | md | safe }}</h1>
+  {% if subhead %}
+    <p class="w-article-header__subhead w-mb--non">
+      {{ subhead | md | safe }}
+    </p>
+  {% endif %}
+
+  {{ content | safe }}
+</div>

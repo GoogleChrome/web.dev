@@ -6,10 +6,8 @@
  * @return {string} Id salt.
  */
 export const generateIdSalt = (idPrefix) => {
-  const salt = Math.random()
-    .toString(36)
-    .substr(2, 9);
+  const salt = Math.random().toString(36).substr(2, 9);
   return document.getElementById(idPrefix + salt)
-    ? BaseElement.generateIdSalt(idPrefix)
+    ? generateIdSalt(idPrefix)
     : salt;
 };

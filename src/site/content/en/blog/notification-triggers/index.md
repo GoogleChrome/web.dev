@@ -13,10 +13,9 @@ updated: 2020-03-12
 hero: hero.jpg
 hero_position: center
 tags:
-  - post
+  - blog
   - capabilities
-  - fugu
-  - origin-trial
+  - origin-trials
   - notification-triggers
 ---
 

@@ -9,7 +9,7 @@ authors:
 description: |
   Code splitting allows you to speed up your applications, but it may slow down subsequent navigation. Predictive prefetching is an efficient way to use data analytics to smartly prefetch what the user is likely to use next, optimizing network utilization.
 tags:
-  - post
+  - blog
   - performance
 ---
 

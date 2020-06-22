@@ -9,7 +9,7 @@ description: The prefers-reduced-motion media query detects whether the user has
 date: 2019-03-11
 updated: 2019-12-10
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - media-queries
   - css
 hero: hero.jpg
@@ -68,7 +68,7 @@ a *medical necessity*.
 
 ## Motion-triggered vestibular spectrum disorder
 
-Some users experience [distraction or nausea from animated content](https://www.w3.org/WAI/WCAG21/Understanding/animation-from-interactions.html). 
+Some users experience [distraction or nausea from animated content](https://www.w3.org/WAI/WCAG21/Understanding/animation-from-interactions.html).
 For example, scrolling animations can cause vestibular disorders when elements other than the main element associated with the
 scrolling move around a lot. For example, parallax scrolling animations can cause vestibular
 disorders because background elements move at a different rate than foreground elements.
@@ -77,20 +77,20 @@ sometimes require bed rest to recover.
 
 ## Remove motion on operating systems
 
-Many operating systems have had accessibility settings for specifying a preference for reduced 
+Many operating systems have had accessibility settings for specifying a preference for reduced
 motion for a long time. The screenshots below show macOS Mojave's **Reduce motion** preference and
 Android Pie's **Remove animations** preference. When checked,
-these preferences cause the operating system to not use decorative effects like app launching 
-animations. Applications themselves can and should honor this setting, too, and remove all 
+these preferences cause the operating system to not use decorative effects like app launching
+animations. Applications themselves can and should honor this setting, too, and remove all
 unnecessary animations.
 
 <div class="w-columns">
   <figure>
-    <img src="macos-reduce-motion.png" width="398" height="300" 
+    <img src="macos-reduce-motion.png" width="398" height="300"
          alt="A screenshot of the macOS settings screen with the 'Reduce motion' checkbox checked.">
   </figure>
   <figure>
-    <img src="android-remove-animations.png" width="287" height="300" 
+    <img src="android-remove-animations.png" width="287" height="300"
          alt="A screenshot of the Android settings screen with the 'Remove animations' checkbox checked.">
   </figure>
 </div>
@@ -155,7 +155,7 @@ downloading it by outsourcing all animation-related CSS into a separate styleshe
 load conditionally via the `media` attribute on the `link` element&nbsp;😎:
 
 ```html
-<link rel="stylesheet" href="animations.css" 
+<link rel="stylesheet" href="animations.css"
       media="(prefers-reduced-motion: no-preference)">
 ```
 {% endAside %}
@@ -247,7 +247,7 @@ out there (use at your own risk!) that allow for this.
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
     animation-delay: -1ms !important;
-    animation-duration: 1ms !important;    
+    animation-duration: 1ms !important;
     animation-iteration-count: 1 !important;
     background-attachment: initial !important;
     scroll-behavior: auto !important;

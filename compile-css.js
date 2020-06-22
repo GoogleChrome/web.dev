@@ -21,7 +21,8 @@ const fs = require('fs');
 const path = require('path');
 const log = require('fancy-log');
 
-const sassEngine = (function() {
+const sassEngine = (function () {
+  /* eslint-disable node/no-missing-require */
   try {
     // node-sass is faster, but regularly fails to install correctly (native bindings)
     return require('node-sass');
@@ -29,6 +30,7 @@ const sassEngine = (function() {
     // fallback to the official transpiled version
     return require('sass');
   }
+  /* eslint-enable node/no-missing-require */
 })();
 
 /**
@@ -37,8 +39,6 @@ const sassEngine = (function() {
  * @return {{css: !Buffer, map: !Buffer}}
  */
 function compileCSS(input, output) {
-  fs.mkdirSync(path.dirname(output), {recursive: true});
-
   // #1: Compile CSS with either engine.
   const compiledOptions = {
     file: input,
@@ -78,12 +78,18 @@ function compileCSS(input, output) {
     console.warn(warn.toString());
   });
 
-  return postcssResult;
+  const {css, map: candidateMap} = postcssResult;
+
+  // nb. With the transpiled "sass", this is returned as a SourceMapGenerator, so convert it to
+  // a real string. This is a no-op for the native version.
+  const map = candidateMap.toString();
+  return {map, css};
 }
 
 const target = process.argv[3] || 'out.css';
 const out = compileCSS(process.argv[2], target);
 
+fs.mkdirSync(path.dirname(target), {recursive: true});
 fs.writeFileSync(target, out.css);
 fs.writeFileSync(target + '.map', out.map);
 log('Finished CSS!');

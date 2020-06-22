@@ -20,7 +20,7 @@ const compression = require('compression');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const localeHandler = require('./locale-handler.js');
-const buildRedirectHandler = require('./redirect-handler.js');
+const {build: buildRedirectHandler} = require('./redirect-handler.js');
 
 // If true, we'll aggressively nuke the prod Service Worker. For emergencies.
 const serviceWorkerKill = false;
@@ -29,8 +29,8 @@ const redirectHandler = (() => {
   // In development, Eleventy isn't guaranteed to have run, so read the actual
   // source file.
   const redirectsPath = isProd
-    ? 'dist/en/_redirects.yaml'
-    : 'src/site/content/en/_redirects.yaml';
+    ? 'dist/_redirects.yaml'
+    : 'src/site/content/_redirects.yaml';
 
   // Don't block loading the server if the redirect handler couldn't build.
   try {
@@ -54,7 +54,7 @@ const notFoundHandler = (req, res, next) => {
   }
 
   const options = {root: 'dist/en'};
-  res.sendFile(`404/index.html`, options, (err) => err && next(err));
+  res.sendFile('404/index.html', options, (err) => err && next(err));
 };
 
 // Implement safety mechanics.

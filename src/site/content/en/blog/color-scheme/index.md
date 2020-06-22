@@ -6,6 +6,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2020-04-08
+updated: 2020-06-16
 hero: hero.jpg
 alt: Pigeons on a wall with a sharp black and white contrast in the background.
 description: |
@@ -14,7 +15,7 @@ description: |
   such as, for example, form controls, scroll bars, as well as CSS system colors.
   At the same time, this feature prevents browsers from applying any transformations on their own.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - css
   - dark-mode
   - dark-theme
@@ -147,8 +148,8 @@ with light background colors and dark foreground colors,
 whereas `dark` represents the opposite, with dark background colors and light foreground colors.
 
 {% Aside 'warning' %}
-  Per the specification, the allowed additional value `light only` indicates that the element
-  must be rendered with a light color scheme if possible,
+  Previously, the specification allowed an additional value `light only`
+  that indicated that the element had to be rendered with a light color scheme if possible,
   even if the user's preference is for a different color scheme.
   Authors *should not* use this value, and should instead ensure their page renders well
   with whatever color scheme the user prefers.

@@ -10,9 +10,8 @@ authors:
 description: |
     Learn about rel=preconnect and rel=dns-prefetch resource hints and how to use them.
 tags:
-  - post
+  - blog
   - performance
-  - fast
 ---
 
 Before the browser can request a resource from a server, it must establish a connection. Establishing a secure connection involves three steps:

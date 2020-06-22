@@ -88,6 +88,8 @@ uses that would be difficult or impossible with just the HTTP cache include:
     anything's changed, and enable the user to update content (with a button,
     for example)  when data has actually been updated.
 
+Check out [The Cache API: A quick guide](/cache-api-quick-guide/) to learn more.
+
 ### API nuts and bolts
 
 There are some things to keep in mind about the API's design:
@@ -133,6 +135,5 @@ to build a production-ready service worker. The next guide covers one such tool:
 [Workbox](https://developers.google.com/web/tools/workbox/).
 
 {% Aside 'success' %}
-Learn while having fun. Check out the new Service Workies game:
-[Release Preview out now](https://serviceworkies.mastery.games/).
+Learn while having fun. Check out the new [Service Workies game!](https://serviceworkies.com/).
 {% endAside %}

@@ -2,6 +2,7 @@
 layout: layout
 ---
 
+{% set path = paths[pathName] %}
 {% set topics = path.topics | removeDrafts(lang) %}
 
 {# *-landing-page classes are a holdover from devsite. #}

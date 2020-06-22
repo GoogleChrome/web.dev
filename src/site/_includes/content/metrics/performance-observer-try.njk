@@ -1,0 +1,4 @@
+// Use a try/catch instead of feature detecting `{{ entryType }}`
+// support, since some browsers throw when using the new `type` option.
+// https://bugs.webkit.org/show_bug.cgi?id=209216
+try {

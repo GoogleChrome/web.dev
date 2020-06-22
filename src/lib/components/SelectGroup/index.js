@@ -1,6 +1,7 @@
 import {html} from 'lit-element';
 import {BaseElement} from '../BaseElement';
 import {generateIdSalt} from '../../utils/generate-salt';
+import 'focus-visible';
 import './_styles.scss';
 
 /**

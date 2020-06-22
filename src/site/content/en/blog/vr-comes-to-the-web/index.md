@@ -15,7 +15,7 @@ description:
   Device API, including Firefox Reality, Oculus Browser, Edge and Magic Leap's
   Helio browser, among others.
 tags:
-  - post
+  - blog
   - augmented-reality
   - virtual-reality
   - webxr

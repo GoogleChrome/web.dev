@@ -9,7 +9,7 @@ alt: An hourglass with sand pouring through it
 description: |
   Long Tasks can keep the main thread busy, delaying user interaction. Chrome DevTools can now visualize Long Tasks, making it easier to see tasks to optimize.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - performance
 ---
 

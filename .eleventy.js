@@ -37,6 +37,7 @@ const Compare = require(`./${componentsDir}/Compare`);
 const CompareCaption = require(`./${componentsDir}/CompareCaption`);
 const Details = require(`./${componentsDir}/Details`);
 const DetailsSummary = require(`./${componentsDir}/DetailsSummary`);
+const EventTable = require(`./${componentsDir}/EventTable`);
 const Hero = require(`./${componentsDir}/Hero`);
 const Instruction = require(`./${componentsDir}/Instruction`);
 const Label = require(`./${componentsDir}/Label`);
@@ -49,15 +50,12 @@ const YouTube = require(`./${componentsDir}/YouTube`);
 
 const collectionsDir = 'src/site/_collections';
 const authors = require(`./${collectionsDir}/authors`);
-const paginatedAuthors = require(`./${collectionsDir}/paginated-authors`);
-const paginatedBlogPosts = require(`./${collectionsDir}/paginated-blog-posts`);
-const paginatedPostsByAuthor = require(`./${collectionsDir}/paginated-posts-by-author`);
-const paginatedPostsByTag = require(`./${collectionsDir}/paginated-posts-by-tag`);
-const paginatedTags = require(`./${collectionsDir}/paginated-tags`);
-const postDescending = require(`./${collectionsDir}/post-descending`);
-const postToCollections = require(`./${collectionsDir}/post-to-collections`);
-const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
-const recentPosts = require(`./${collectionsDir}/recent-posts`);
+const blogPostsDescending = require(`./${collectionsDir}/blog-posts-descending`);
+const newsletters = require(`./${collectionsDir}/newsletters`);
+const {
+  postsWithLighthouse,
+} = require(`./${collectionsDir}/posts-with-lighthouse`);
+const recentBlogPosts = require(`./${collectionsDir}/recent-blog-posts`);
 const tags = require(`./${collectionsDir}/tags`);
 // nb. algoliaPosts is only require'd if needed, below
 
@@ -79,6 +77,7 @@ const removeDrafts = require(`./${filtersDir}/remove-drafts`);
 const strip = require(`./${filtersDir}/strip`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
 const stripLanguage = require(`./${filtersDir}/strip-language`);
+const getPaths = require(`./${filtersDir}/get-paths`);
 
 const transformsDir = 'src/site/_transforms';
 const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
@@ -87,7 +86,7 @@ const {
   serviceWorkerPartials,
 } = require(`./${transformsDir}/service-worker-partials`);
 
-module.exports = function(config) {
+module.exports = function (config) {
   // ----------------------------------------------------------------------------
   // PLUGINS
   // ----------------------------------------------------------------------------
@@ -107,7 +106,7 @@ module.exports = function(config) {
     permalink: true,
     permalinkClass: 'w-headline-link',
     permalinkSymbol: '#',
-    slugify: function(str) {
+    slugify: function (str) {
       return slugify(str, {
         replacement: '-',
         lower: true,
@@ -117,7 +116,7 @@ module.exports = function(config) {
   const markdownItAttrsOpts = {
     leftDelimiter: '{:',
     rightDelimiter: '}',
-    allowedAttributes: ['id', 'class', /^data\-.*$/],
+    allowedAttributes: ['id', 'class', /^data-.*$/],
   };
 
   const mdLib = markdownIt(markdownItOptions)
@@ -150,22 +149,17 @@ module.exports = function(config) {
   // COLLECTIONS
   // ----------------------------------------------------------------------------
   config.addCollection('authors', authors);
-  config.addCollection('posts', postDescending);
+  config.addCollection('blogPosts', blogPostsDescending);
+  config.addCollection('newsletters', newsletters);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
-  config.addCollection('recentPosts', recentPosts);
-  config.addCollection('paginatedAuthors', paginatedAuthors);
-  config.addCollection('paginatedBlogPosts', paginatedBlogPosts);
-  config.addCollection('paginatedPostsByAuthor', paginatedPostsByAuthor);
-  config.addCollection('paginatedPostsByTag', paginatedPostsByTag);
-  config.addCollection('paginatedTags', paginatedTags);
-  config.addCollection('postToCollections', postToCollections);
+  config.addCollection('recentBlogPosts', recentBlogPosts);
   config.addCollection('tags', tags);
   // Turn collection.all into a lookup table so we can use findBySlug
   // to quickly find collection items without looping.
-  config.addCollection('memoized', function(collection) {
+  config.addCollection('memoized', (collection) => {
     return memoize(collection.getAll());
   });
-  config.addCollection('algolia', function(collection) {
+  config.addCollection('algolia', (collection) => {
     if (process.env.ELEVENTY_ENV === 'prod') {
       const algoliaPosts = require(`./${collectionsDir}/algolia-posts`);
       return algoliaPosts(collection);
@@ -192,6 +186,7 @@ module.exports = function(config) {
   config.addFilter('removeDrafts', removeDrafts);
   config.addFilter('stripBlog', stripBlog);
   config.addFilter('stripLanguage', stripLanguage);
+  config.addFilter('getPaths', getPaths);
   config.addFilter('strip', strip);
 
   // ----------------------------------------------------------------------------
@@ -220,6 +215,10 @@ module.exports = function(config) {
   config.addShortcode('SignPosts', SignPosts);
   config.addShortcode('Tooltip', Tooltip);
   config.addShortcode('YouTube', YouTube);
+
+  // This table is used for the web.dev/LIVE event, and should be taken down
+  // when the event is over or we no longer use it.
+  config.addShortcode('EventTable', EventTable);
 
   // ----------------------------------------------------------------------------
   // TRANSFORMS

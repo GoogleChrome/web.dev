@@ -29,6 +29,7 @@ Here's how to spell, punctuate, and capitalize words and phrases commonly used o
 * round trip (noun)
 * round-trip (adj)
 * web
+* web app manifest
 * web page
 * web.dev
 * webpack

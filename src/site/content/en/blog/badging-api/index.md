@@ -5,15 +5,13 @@ authors:
   - petelepage
 description: The Badging API allows installed web apps to set an application-wide badge, shown in an operating-system-specific place associated with the application, such as the shelf or home screen. Badging makes it easy to subtly notify the user that there is some new activity that might require their attention, or it can be used to indicate a small amount of information, such as an unread count.
 date: 2018-12-11
-updated: 2020-03-27
+updated: 2020-06-04
 tags:
-  - post
+  - blog
   - capabilities
-  - fugu
   - badging
   - progressive-web-apps
   - notifications
-  - origin-trial
 hero: hero.jpg
 alt: Phone showing several notification badges
 origin_trial:
@@ -236,7 +234,7 @@ it is to support them.
 [spec]: https://wicg.github.io/badging/
 [issues]: https://github.com/WICG/badging/issues
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=719176
-[cr-status]: https://www.chromestatus.com/features/6068482055602176
+[cr-status]: https://www.chromestatus.com/feature/6068482055602176
 [demo]: https://badging-api.glitch.me/
 [demo-source]: https://glitch.com/edit/#!/badging-api?path=demo.js
 [explainer]: https://github.com/WICG/badging/blob/master/explainer.md

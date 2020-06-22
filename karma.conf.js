@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-module.exports = function(config) {
+module.exports = function (config) {
   // Test modes:
   // quick: single run tests in headless browser.
   // dev:   watch tests in headless browser.
@@ -26,15 +26,8 @@ module.exports = function(config) {
     browsers: ['ChromeHeadless'],
     files: ['dist/test/index.js'],
     frameworks: ['mocha'], // use the mocha test frameworkl
-    plugins: ['karma-chrome-launcher', 'karma-mocha', 'karma-sourcemap-loader'],
-    reporters: ['dots'], // report results in these formats.
+    reporters: ['spec'], // report results in these formats.
     singleRun: true, // set this to false to leave the browser open.
-
-    client: {
-      mocha: {
-        ui: 'tdd',
-      },
-    },
   };
 
   if (mode === 'dev') {

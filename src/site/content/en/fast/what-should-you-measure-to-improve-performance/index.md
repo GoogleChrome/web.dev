@@ -10,7 +10,7 @@ alt: A row of shopping carts.
 description: |
   Learn what impact website performance has on different parts of the e-commerce funnel
 tags:
-  - post
+  - blog
   - performance
   - ecommerce
 ---

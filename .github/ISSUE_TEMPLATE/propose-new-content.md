@@ -7,14 +7,14 @@ assignees: 'kaycebasques'
 ---
 
 * Use this template to propose new content.
-* Delete any fields that aren't relevant to your issue. 
+* Delete any fields that aren't relevant to your issue.
 * Update the title of this issue with a brief summary of the work to be done.
 
 ### Workflow for Googlers
 
-Fill out the web.dev content proposal form: https://docs.google.com/forms/d/e/1FAIpQLSdYePZbDZ9Idi4MKL0cbqTuUHfPU7ZZJNnV9hDzjc0e1c2UXw/viewform?fbzx=7994504531518856644
+Fill out the web.dev content proposal form: https://docs.google.com/forms/d/e/1FAIpQLSdYePZbDZ9Idi4MKL0cbqTuUHfPU7ZZJNnV9hDzjc0e1c2UXw/viewform
 
-Don't create an issue here on GitHub! Your GitHub issue will be closed 
+Don't create an issue here on GitHub! Your GitHub issue will be closed
 immediately and you'll be asked to fill out the form instead.
 
 ### Content proposal form for contributors who don't have access to Googlers

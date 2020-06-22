@@ -9,8 +9,8 @@ alt: A pile of photos.
 description: |
   Instructions on how to install Thumbor. Thumbor is an open-source image CDN and can be used for free to resize, compress, and transform images.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
-  - fast
+  - blog # blog is a required tag for the article to show up in the blog.
+  - performance
   - images
 ---
 

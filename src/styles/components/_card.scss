@@ -1,3 +1,4 @@
+@import '../settings/colors';
 @import '../settings/global';
 @import '../tools/breakpoints';
 @import '../tools/mixins';
@@ -80,6 +81,20 @@
   box-shadow:
     0 1px 2px 0 rgba(60, 64, 67, .3),
     0 1px 3px 1px rgba(60, 64, 67, .15);
+}
+
+.w-card--draft::before {
+  background: $RED_800;
+  border-radius: 8px;
+  color: $WHITE;
+  content: 'DRAFT';
+  font-size: 11px;
+  font-weight: bold;
+  left: calc(50% - 25px);
+  padding: 2px;
+  position: absolute;
+  text-align: center;
+  width: 50px;
 }
 
 .w-card__chips {

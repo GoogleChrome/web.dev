@@ -6,8 +6,6 @@ $CHEVRON_MARGIN: 12px;
 .w-details {
   border: 1px solid $BORDER_COLOR;
   border-width: 1px 0;
-  display: flex;
-  flex-wrap: wrap;
   margin: 36px 0;
   padding: 18px 0;
   position: relative;
@@ -21,7 +19,6 @@ $CHEVRON_MARGIN: 12px;
 .w-details__summary {
   -webkit-tap-highlight-color: transparent;
   cursor: pointer;
-  flex-grow: 1;
   font: inherit;
   list-style: none;
 
@@ -40,7 +37,7 @@ $CHEVRON_MARGIN: 12px;
   @include hover() {
     &:hover .w-details__header::after,
     &:focus .w-details__header::after {
-      background: $LIGHT_BLUE_50;
+      background: $WEB_PRIMARY_COLOR_50;
     }
   }
 
@@ -53,14 +50,14 @@ $CHEVRON_MARGIN: 12px;
   }
 
   &:active .w-details__header::after {
-    background: $LIGHT_BLUE_100;
+    background: $WEB_PRIMARY_COLOR_100;
   }
 }
 
 // The details header class overrides the margins of the base element and
 // adds padding so that the tap target is sufficiently tall.
 .w-details__header {
-  color: $LIGHT_BLUE_600;
+  color: $WEB_PRIMARY_COLOR_600;
   margin: 0;
   padding: .75rem #{$CHEVRON_SIZE + $CHEVRON_MARGIN + 4px} .75rem 0;
   position: relative;
@@ -126,7 +123,7 @@ h2.w-details__header:only-child {
   margin: 0 0 1rem;
 
   &::after {
-    color: #5f6368;
+    color: $GREY_700;
     content: 'Read more';
     display: block;
     font-size: .7222em;

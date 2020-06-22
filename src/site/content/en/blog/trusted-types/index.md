@@ -16,7 +16,7 @@ description: |
   Introducing Trusted Types: a browser API to prevent DOM-based cross-site
   scripting in modern web applications.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - security
   - trusted-types
 ---

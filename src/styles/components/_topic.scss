@@ -18,9 +18,7 @@ $TOPIC_SPACING_SIZE_SMALL: 32px;
 }
 
 .w-topic__header {
-  align-items: center;
   color: $WEB_PRIMARY_COLOR;
-  display: flex;
   margin-left: $TOPIC_SPACING_SIZE_SMALL;
   overflow: visible;
 
@@ -37,9 +35,7 @@ $TOPIC_SPACING_SIZE_SMALL: 32px;
 }
 
 .w-topic > .w-topic__subtopic-header {
-  align-items: center;
   color: $PRIMARY_TEXT_COLOR;
-  display: flex;
   margin-left: $TOPIC_SPACING_SIZE_SMALL;
   overflow: visible;
 

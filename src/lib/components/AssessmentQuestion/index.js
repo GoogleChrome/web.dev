@@ -109,7 +109,7 @@ class AssessmentQuestion extends BaseElement {
     }
   }
 
-  onSubmit(e) {
+  onSubmit() {
     switch (this.state) {
       case 'answeredCorrectly':
         this.updateResponseComponents();

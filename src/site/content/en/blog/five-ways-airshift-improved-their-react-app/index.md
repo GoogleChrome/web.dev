@@ -15,8 +15,7 @@ description: |
   How the AirSHIFT team used table virtualization, RUM data, lazy loading, web workers,
   performance budgets, and hackathons to optimize their React app's runtime performance.
 tags:
-  - post
-  - fast
+  - blog
   - case-study
   - performance
 ---

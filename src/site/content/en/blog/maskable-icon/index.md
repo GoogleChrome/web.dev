@@ -11,9 +11,8 @@ date: 2019-12-19
 hero: hero.png
 alt: Icons contained inside white circles compared to icons covering its entire circle
 tags:
-  - post
+  - blog
   - capabilities
-  - fugu
   - progressive-web-apps
 ---
 

@@ -10,7 +10,7 @@ date: 2019-06-10
 hero: hero.jpg
 hero_position: top
 tags:
-  - post
+  - blog
   - layout
   - css
 ---

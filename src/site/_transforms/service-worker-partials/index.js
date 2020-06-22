@@ -36,6 +36,7 @@ const getPartial = (content) => {
     raw: $('#content').html(),
     lang: $('html').attr('lang'),
     title: $('title').text(),
+    rss: $('link[type="application/atom+xml"]').attr('href'),
     offline: Boolean($('meta[name="offline"]').attr('content')) || false,
   };
   return partial;

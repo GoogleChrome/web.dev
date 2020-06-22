@@ -21,6 +21,8 @@ proposal.
 
 ## Building the site 🏗
 
+You'll need a recent version of Node: v12.10 or higher.
+
 ### Clone the repo
 
 ```bash

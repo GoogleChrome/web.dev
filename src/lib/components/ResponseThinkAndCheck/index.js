@@ -33,9 +33,7 @@ class ResponseThinkAndCheck extends BaseResponseElement {
       }
     }
 
-    return html`
-      ${this.prerenderedChildren} ${this.option}
-    `;
+    return html`${this.prerenderedChildren} ${this.option}`;
   }
 
   connectedCallback() {

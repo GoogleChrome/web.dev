@@ -9,6 +9,8 @@ description: |
   fit together but still can be used independently to achieve performance
   results.
 date: 2018-11-05
+tags:
+  - performance
 ---
 
 PRPL is an acronym that describes a pattern used to make web pages load and

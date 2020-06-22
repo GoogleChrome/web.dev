@@ -1,0 +1,8 @@
+// Keep track of whether (and when) the page was first hidden, see:
+// https://github.com/w3c/page-visibility/issues/29
+// NOTE: ideally this check would be performed in the document <head>
+// to avoid cases where the visibility state changes before this code runs.
+let firstHiddenTime = document.visibilityState === 'hidden' ? 0 : Infinity;
+document.addEventListener('visibilitychange', (event) => {
+  firstHiddenTime = Math.min(firstHiddenTime, event.timeStamp);
+}, {once: true});

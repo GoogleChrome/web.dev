@@ -9,6 +9,8 @@ description: |
 date: 2018-11-05
 glitch: responsive-images-art-direction
 related_post: serve-responsive-images
+tags:
+  - performance
 ---
 
 ## Try out this demo
