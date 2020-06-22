@@ -71,9 +71,12 @@ class LivestreamContainer extends BaseStateElement {
    * @param {!Object<string, *>} state
    */
   onStateChanged({activeEventDay, isSignedIn}) {
-    const {videoId, isChatActive} = activeEventDay || {videoId: null, isChatActive: false};
+    const {videoId, isChatActive} = activeEventDay || {
+      videoId: null,
+      isChatActive: false,
+    };
 
-    const updateFrame = (this.videoId !== videoId);
+    const updateFrame = this.videoId !== videoId;
     this.videoId = videoId;
     this.isChatActive = isChatActive;
 
