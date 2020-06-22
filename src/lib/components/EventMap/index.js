@@ -3,7 +3,7 @@
  */
 
 import {html} from 'lit-element';
-import {BaseElement} from '../BaseElement';
+import {BaseStateElement} from '../BaseStateElement';
 import './_styles.scss';
 
 const encodeMarkers = function (markers) {
@@ -33,7 +33,7 @@ const formatDate = function (date) {
  * @extends {BaseElement}
  * @final
  */
-class EventMap extends BaseElement {
+class EventMap extends BaseStateElement {
   static get properties() {
     return {
       title: {type: String},
@@ -55,11 +55,12 @@ class EventMap extends BaseElement {
     this.events = [];
   }
 
-  connectedCallback() {
-    super.connectedCallback();
-    this.events = JSON.parse(this.querySelector('code').innerText.trim());
-    this.eventRegions = Object.keys(this.events);
-    this.localEvents = this.events[this.eventRegions[0]];
+  onStateChanged({communityEvents}) {
+    if (communityEvents && this.events !== communityEvents) {
+      this.events = communityEvents;
+      this.eventRegions = Object.keys(this.events);
+      this.localEvents = this.events[this.eventRegions[0]];
+    }
   }
 
   onChange(e) {

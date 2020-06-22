@@ -12,7 +12,7 @@ select {
   width: 100%;
 
   &.w-select--borderless {
-    border: none;
+    border: 0;
 
     &:focus {
       border: 1px solid $WEB_PRIMARY_COLOR;
