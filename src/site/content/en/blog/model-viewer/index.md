@@ -6,6 +6,7 @@ authors:
 date: 2019-02-06
 updated: 2020-06-25
 hero: hero.jpg
+alt: A 3D model of a space suit.
 description: |
   Adding 3D models to a website is tricky for a variety of reasons including
   the hosting issues and the high bar of 3D programming. That's why we're
