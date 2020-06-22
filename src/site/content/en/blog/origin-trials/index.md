@@ -26,7 +26,7 @@ Origin trials are public and open to all developers, and limited in duration and
 usage. Additionally, origin trials are a self-managed process with limited
 documentation and support. Participants should be willing and able to work
 relatively independently using the documentation available, which, at this stage,
-will likely be limited to specs and explainers. Though, web.dev tries to provide
+will likely be limited to specs and explainers, though, web.dev tries to provide
 articles on origin trials whenver we can.
 
 If you register for a trial, the Chrome team will periodically ask you for
