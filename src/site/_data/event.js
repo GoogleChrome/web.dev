@@ -404,9 +404,9 @@ const communityEvents = {
 };
 
 module.exports = {
-  isPreEvent: false,
+  isPreEvent: true,
   isDuringEvent: false,
-  isPostEvent: true,
+  isPostEvent: false,
   days,
   communityEvents,
 };
