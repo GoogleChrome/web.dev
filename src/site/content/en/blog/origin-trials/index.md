@@ -10,7 +10,6 @@ thumbnail: thumbnail.jpg
 alt: Pipette with purple liquid
 tags:
   - blog
-  - chrome
   - origin trials
 ---
 
