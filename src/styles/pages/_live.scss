@@ -208,8 +208,12 @@
 }
 
 .w-event-section__column-right {
-  max-width: 512px;
+  max-width: 100%;
   padding: 0 8px;
+
+  @media (min-width: 512px) {
+    max-width: 512px;
+  }
 
   &.w-event-section__column-right__schedule {
     margin-top: 58px;
