@@ -37,7 +37,7 @@ To follow along or play with these demos on your own, check out the Glitch embed
 
 For the  first 'single-line' layout, let's solve the biggest mystery in all of the CSS land: centering things. I want you to know that it's easier than you think with [`place-items: center`](https://developer.mozilla.org/en-US/docs/Web/CSS/place-items).
 
-First specify 'grid' as the display method, and then write `place-items: center` on the same element that you set  display to grid. `'Place-items'` is a shorthand to set the two both `'align-items'` and `'justify-items'` at once. By setting it to `'center'`, both `'align-items'` and `'justify-items'` are set to  `'center'`.
+First specify `grid` as the `display` method, and then write `place-items: center` on the same element. `place-items` is a shorthand to set both `align-items` and `justify-items` at once. By setting it to `center`, both `align-items` and `justify-items` are set to  `center`.
 
 ```css/2
 .parent {
@@ -58,11 +58,11 @@ This enables the content to be perfectly centered within the parent, regardless 
 
 Next we have the deconstructed pancake! This is a common layout for marketing sites, for example, which may have a row of 3 items, usually with an image, title, and then some text, describing some features of a product. On mobile, we'll want those to stack nicely, and expand as we increase the screen size. 
 
-By using flexbox for this effect, you won't need media queries to adjust the placement of these elements when the screen resizes.
+By using Flexbox for this effect, you won't need media queries to adjust the placement of these elements when the screen resizes.
 
-The [flex](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) shorthand stands for: `flex: <flex-grow> <flex-shrink> <flex-basis>`.
+The [`flex`](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) shorthand stands for: `flex: <flex-grow> <flex-shrink> <flex-basis>`.
 
-Because of this, if you want your boxes to fill out to their flex-basis size, shrink on smaller sizes, but not *stretch* to fill any additional space, write: `flex: 0 1 <flex-basis>`, setting the `<flex-grow>` to 0. In this case, your `<flex-basis`> is `'150px'` so it looks like:
+Because of this, if you want your boxes to fill out to their `<flex-basis>` size, shrink on smaller sizes, but not *stretch* to fill any additional space, write: `flex: 0 1 <flex-basis>`, setting the `<flex-grow>` to 0. In this case, your `<flex-basis`> is `'150px'` so it looks like:
 
 ```css/5
 .parent {
@@ -315,4 +315,3 @@ Thank you for following this journey through 10 powerful lines of CSS. To watch 
 
 
 -- video embed --
-
