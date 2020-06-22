@@ -1293,6 +1293,15 @@ const contributors = {
     },
     country: 'UK',
   },
+  antonkarlovskiy: {
+    name: {
+      given: 'Anton',
+      family: 'Karlovskiy',
+    },
+    twitter: 'antonkarlovskiy',
+    github: 'anton-karlovskiy',
+    glitch: 'anton-karlovskiy',
+  },
 };
 
 const processedContributors = {};
