@@ -1,10 +1,7 @@
 ---
 title: Getting started with Chrome's origin trials
-subhead: Origin trials are a way to test a new or experimental web platform 
-feature, and give feedback to the web standards community on the feature's 
-usability, practicality, and effectiveness, before the feature is made available 
-to all users. 
-authors:
+subhead: Origin trials are a way to test a new or experimental web platform feature, and give feedback to the web standards community on the feature's usability, practicality, and effectiveness, before the feature is made available to all users. 
+authors: 
   - samdutton
 date: 2020-06-22
 updated: 2020-06-22
@@ -52,7 +49,7 @@ If you register for a trial, the Chrome team will periodically ask you for speci
    This typically points to the the feature on GitHub or some other public
    channel.  
 
-# Find out more
+## Find out more
 
 -  [Origin trials guide for web developers](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md)
 -  [Origin trial explainer](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/explainer.md)
