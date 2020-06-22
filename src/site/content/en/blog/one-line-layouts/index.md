@@ -15,7 +15,7 @@ tags:
 
 -- video embed --
 
-This post will highlight a few powerful lines of CSS that do some serious heavy lifting and help you build robust modern layouts.
+The evolution of CSS layouts enable developers to write really meaningful and robust styling rules with just a few keystrokes. The talk above and this subsequent post examine 10 powerful lines of CSS that do some serious heavy lifting.
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
@@ -260,7 +260,7 @@ This places the title, description, and image block in a vertical column inside 
   </video>
 </figure>
 
-Here's where we get into some techniques with less current browser support, but have some really exciting implications for layouts and responsive UI design. In this demo, you are setting the width using clamp like so: `width: clamp(<min>, <actual>, <max>)`.
+Here's where we get into some techniques with [less current browser support](https://caniuse.com/#feat=css-math-functions), but have some really exciting implications for layouts and responsive UI design. In this demo, you are setting the width using clamp like so: `width: clamp(<min>, <actual>, <max>)`.
 
 This sets an absolute min and max size, and an actual size. With values, that can look like:
 
