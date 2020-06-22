@@ -9,6 +9,7 @@ description: |
   experience that are unique to your site.
 tags:
   - performance
+  - metrics
 ---
 
 There's a lot of value in having [user-centric metrics](/user-centric-performance-metrics/)

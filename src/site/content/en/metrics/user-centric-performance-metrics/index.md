@@ -10,6 +10,7 @@ description: |
   users.
 tags:
   - performance
+  - metrics
 ---
 
 We've all heard how important performance is. But when we talk about

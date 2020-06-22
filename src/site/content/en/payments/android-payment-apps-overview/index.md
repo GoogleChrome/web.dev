@@ -9,12 +9,14 @@ authors:
 date: 2020-05-25
 description: |
   Learn how to adapt your Android payment app to work with Web Payments and provide a better user experience for customers.
+tags:
+  - payments
 ---
 
 The [Payment Request API](https://www.w3.org/TR/payment-request/) brings to the
 web a native browser-based interface that allows users to enter required payment
 information easier than ever before. The API can also invoke native payment
-apps. 
+apps.
 
 <figure class="w-figure" style="width:300px; margin:auto;">
   <video controls autoplay loop muted class="w-screenshot">
@@ -389,7 +391,7 @@ Here's an example content of the string:
 {"currency":"USD","value":"25.00"}
 ```
 
-#### `modifiers` 
+#### `modifiers`
 
 The output of `JSON.stringify(details.modifiers)`, where `details.modifiers`
 contain only `supportedMethods` and `total`.
@@ -480,7 +482,7 @@ val verified = packageManager.hasSigningCertificate(
 `PackageManager.hasSigningCertificate()` is preferred for single certificate
 browsers, because it correctly handles certificate rotation. (Chrome has a
 single signing certificate.) Apps that have multiple signing certificates cannot
-rotate them. 
+rotate them.
 
 If you need to support older API levels 27 and below, or if you need to handle
 browsers with multiple signing certificates, you can use

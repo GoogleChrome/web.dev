@@ -9,6 +9,8 @@ description: |
   "same-site" and "same-origin" are frequently cited but often misunderstood
   terms. This article helps you understand what they are and how they are
   different.
+tags:
+  - security
 ---
 
 "same-site" and "same-origin" are frequently cited but often misunderstood

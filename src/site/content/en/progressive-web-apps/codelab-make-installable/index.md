@@ -10,6 +10,8 @@ description: |
   beforeinstallprompt event.
 glitch: make-it-installable
 related_post: customize-install
+tags:
+  - progressive-web-apps
 ---
 
 This glitch already contains the critical components required to make a

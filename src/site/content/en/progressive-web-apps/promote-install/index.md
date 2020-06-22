@@ -8,6 +8,8 @@ date: 2019-06-04
 updated: 2020-06-17
 description: |
   How to promote installation of Progressive Web Apps and best practices.
+tags:
+  - progressive-web-apps
 ---
 
 Installing your Progressive Web App (PWA) can make it easier for users to
