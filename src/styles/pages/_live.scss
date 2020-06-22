@@ -471,11 +471,11 @@ web-tabs.w-event-tabs {
 }
 
 // Added by jiwoong@
-web-event-time .w-time {
+web-event-time .w-time {  // Meant to be 'web-event-time time'
   min-height: 120px;
 }
 
-web-event-time .w-date {
+web-event-time .w-date {  // Meant to be 'web-event-time .date'
   margin-right: 32px;
 }
 
@@ -483,6 +483,6 @@ web-event-schedule-modal .w-author__image {
   border: 2px solid white;
 }
 
-web-event-schedule-modal button.w-button.close {
+web-event-schedule-modal button.w-button.w-close {  // Meant to be 'web-event-schedule-modal button.w-button.close'
   margin: auto -8px -8px auto;
 }
