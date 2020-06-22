@@ -8,6 +8,8 @@
   p {
     font-size: 14px;
     line-height: 1.5;
+    margin: 16px 0;
+
     @include bp(sm) {
       font-size: 16px;
     }
@@ -25,21 +27,8 @@
     color: inherit;
   }
 
-  // Added by jiwoong@
-  web-event-time time {
-    min-height: 120px;
-  }
-  
-  web-event-time .date {
-    margin-right: 32px;
-  }
-  
   .w-author__image {
     border: 2px solid white;
-  }
-
-  p {
-    margin: 16px 0;
   }
 }
 
@@ -159,7 +148,7 @@
   &#schedule .w-event-section__column-left {
     margin-bottom: 64px;
   }
-  
+
   .w-event-schedule__blurb {
     color: $GREY_700;
   }
@@ -482,6 +471,14 @@ web-tabs.w-event-tabs {
 }
 
 // Added by jiwoong@
+web-event-time time {
+  min-height: 120px;
+}
+
+web-event-time .date {
+  margin-right: 32px;
+}
+
 web-event-schedule-modal .w-author__image {
   border: 2px solid white;
 }
