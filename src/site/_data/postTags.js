@@ -173,6 +173,9 @@ const tags = {
     description:
       'Our latest news, updates, and stories about Progressive Web Apps.',
   },
+  privacy: {
+    title: 'Privacy',
+  },
   puppeteer: {
     title: 'Puppeteer',
     description: 'Our latest news, updates, and stories about Puppeteer.',
