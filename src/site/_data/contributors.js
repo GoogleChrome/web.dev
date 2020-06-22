@@ -1308,7 +1308,7 @@ const contributors = {
       family: 'Kochman',
     },
     twitter: 'tbd',
-    github: 'tbd',
+    github: 'rkochman',
     glitch: 'tbd',
     country: 'US',
     org: {
