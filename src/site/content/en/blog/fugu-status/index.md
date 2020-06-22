@@ -6,7 +6,6 @@ updated: 2020-04-13
 tags:
   - blog
   - capabilities
-  - fugu
 ---
 
 {% Aside %}

@@ -19,7 +19,6 @@ tags:
   - case-study
   - wake-lock
   - capabilities
-  - fugu
 ---
 For nearly a century, Betty Crocker has been America's source for modern cooking instruction
 and trusted recipe development.

@@ -14,7 +14,6 @@ description: |
 tags:
   - blog
   - capabilities
-  - fugu
 ---
 
 On a mobile device, sharing should be as simple as clicking the **Share** button,

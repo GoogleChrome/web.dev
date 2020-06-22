@@ -9,8 +9,7 @@ updated: 2020-06-04
 tags:
   - blog
   - capabilities
-  - fugu
-  - origin-trial
+  - origin-trials
   - shape-detection
   - progressive-web-apps
   - webapp

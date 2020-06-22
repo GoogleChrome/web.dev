@@ -25,6 +25,30 @@
   }
 }
 
+.w-livestream-section {
+  @include bp(md) {
+    border-bottom: 1px solid $GREY_300;
+  }
+}
+
+.w-live-chat-notice {
+  align-items: center;
+  color: $GREY_700;
+  display: flex;
+  font-size: 12px;
+  padding: 19px 16px;
+
+  // Hide the notice if we're at small desktop size and the primary pointing
+  // device supports hover. This should exclude iPads but include Pixelbooks.
+  @media (min-width: #{$BREAKPOINT_VALUE_MEDIUM}) and (hover: hover) {
+    display: none;
+  }
+
+  > :first-child {
+    margin-right: 16px;
+  }
+}
+
 .w-live-top {
   // We need this as the live background extends outside the normal l/r of the
   // page. Contain it so it doesn't let users scroll.
@@ -91,7 +115,6 @@
     }
   }
 }
-
 
 .w-event-section {
   display: flex;
@@ -201,6 +224,68 @@
     // ...__schedule, above).
     padding: 0 16px !important;
   }
+}
+
+.w-event-carousel {
+  display: flex;
+  overflow-x: scroll;
+  // Firefox only
+  // sass-lint:disable no-misspelled-properties
+  scrollbar-color: $GREY_500;
+  scrollbar-width: thin;
+  // sass-lint:enable no-misspelled-properties
+
+  &::-webkit-scrollbar-track {
+    padding-top: 4px;
+  }
+
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $GREY_500;
+    border-radius: 8px;
+  }
+}
+
+.w-event-carousel__day {
+  color: $GREY_800;
+  font-family: $HEADLINE_FONT;
+  font-size: 14px;
+  font-weight: $FONT_WEIGHT_MEDIUM;
+  margin-right: 16px;
+  padding-bottom: 8px;
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    opacity: .9;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.w-event-carousel__thumbnail {
+  margin-bottom: 8px;
+  background-color: $GREY_200;
+  border-radius: 3px;
+  overflow: hidden;
+  width: 178px;
+  height: 110px;
+
+  > img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Need to put top margin on the tabs instead of bottom margin on the
+// carousel because bottom margin will affect the carousel's scroll bar.
+.w-event-carousel + .w-event-tabs {
+  margin-top: 34px;
 }
 
 web-tabs.w-event-tabs {

@@ -140,7 +140,7 @@ img {
 
 **What about responsive images?**
 
-When working with [responsive images](/serve-responsive-), `srcset` defines the images you allow the browser to select between and what size each image is. To ensure `<img>` width and height attributes can be set, each image should use the same aspect ratio.
+When working with [responsive images](/serve-responsive-images), `srcset` defines the images you allow the browser to select between and what size each image is. To ensure `<img>` width and height attributes can be set, each image should use the same aspect ratio.
 
 ```html
 <img width="1000" height="1000"
