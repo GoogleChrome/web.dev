@@ -10,7 +10,7 @@ thumbnail: thumbnail.jpg
 alt: Pipette with purple liquid
 tags:
   - blog
-  - origin trials
+  - origin-trials
 ---
 
 Origin trials enable you to build functionality your users can try for the
