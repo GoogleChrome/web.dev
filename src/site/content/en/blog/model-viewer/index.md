@@ -71,7 +71,7 @@ I'll show you a few current capabilities of `<model-viewer>`. You'll get a great
 experience today, and `<model-viewer>` will get better over time as the team adds
 new features and improves rendering quality. The examples I'm provided are just
 to give you a sense of what it does. If you want to try them there are
-installation and usage instructions on
+installation and usage instructions [on
 modelviewer.dev](https://modelviewer.dev/).
 
 ### Basic 3D models
@@ -100,7 +100,7 @@ That code renders like this:
 
 The `auto-rotate` and `camera-controls` attributes provide motion and user
 control. Those aren't the only possible attributes. See the documentation for [a
-complete list of](https://modelviewer.dev/).
+complete list of attributes](https://modelviewer.dev/).
 
 ```html
 <model-viewer src="assets/Astronaut.glb" auto-rotate camera-controls>
@@ -148,8 +148,8 @@ to conserve battery power and GPU cycles when a model isn't visible.
 
 ## Looking Forward
 
-[Install `<model-viewer>` and give it a try](https://modelviewer.dev/) The
+[Install `<model-viewer>` and give it a try](https://modelviewer.dev/). The
 project team wants `<model-viewer>` to be useful to you, and wants your input on
-its future. That's not to say they don't have ideas. So give it a try and let us
+its future. So give it a try and let us
 know what you think by [filing an issue in
 GitHub](https://github.com/google/model-viewer/issues).
