@@ -177,11 +177,21 @@ class EventSchedule extends HTMLElement {
     this._tabsElement = null;
   }
 
-  onStateChanged({activeEventDay}) {
-    if (this._activeEventDay === activeEventDay) {
-      return;
-    }
+  onStateChanged({eventDays, activeEventDay}) {
     this._activeEventDay = activeEventDay;
+
+    eventDays.forEach(({isComplete, videoId}, index) => {
+      const el = this.querySelector(`[data-index="${index}"]`);
+      if (!el) {
+        return;
+      }
+      // TODO(samthor): Update description ("Coming soon" vs "All sessions")
+      if (isComplete) {
+        el.setAttribute('href', 'https://youtu.be/' + videoId);
+      } else {
+        el.removeAttribute('href');
+      }
+    });
 
     // This relies on the event data being in the same shape as the rendered
     // tabs, which is pretty safe, since it comes from the same source.
