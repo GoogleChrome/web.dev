@@ -15,11 +15,12 @@ class LivestreamContainer extends BaseStateElement {
     super();
     this.videoId = null;
     this.isChatActive = true;
+    this._isSignedIn = undefined;
   }
 
   render() {
     if (!this.videoId) {
-      return;
+      return html``;
     }
 
     // prettier-ignore
@@ -69,7 +70,7 @@ class LivestreamContainer extends BaseStateElement {
   /**
    * @param {!Object<string, *>} state
    */
-  onStateChanged({activeEventDay}) {
+  onStateChanged({activeEventDay, isSignedIn}) {
     if (!activeEventDay) {
       return;
     }
@@ -77,6 +78,19 @@ class LivestreamContainer extends BaseStateElement {
     const {videoId, isChatActive} = activeEventDay;
     this.videoId = videoId;
     this.isChatActive = isChatActive;
+
+    // If there was a signed-in state change, reload all our frames as YouTube won't otherwise
+    // reconfigure them automatically.
+    // Note that signed-in state might change for one of two reasons:
+    //  1) the user is signed into Google but signs in/out of web.dev (and reload is needless)
+    //  2) the user signs in or out of Google as part of web.dev (reload is required)
+    if (this._isSignedIn !== isSignedIn) {
+      const frames = this.renderRoot.querySelectorAll('iframe');
+      frames.forEach((frame) => {
+        frame.src = '' + frame.src;
+      });
+      this._isSignedIn = isSignedIn;
+    }
   }
 }
 
