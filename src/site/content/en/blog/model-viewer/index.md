@@ -71,8 +71,8 @@ I'll show you a few current capabilities of `<model-viewer>`. You'll get a great
 experience today, and `<model-viewer>` will get better over time as the team adds
 new features and improves rendering quality. The examples I'm provided are just
 to give you a sense of what it does. If you want to try them there are
-installation and usage instructions in [its GitHub
-repo](https://modelviewer.dev/).
+installation and usage instructions on
+modelviewer.dev](https://modelviewer.dev/).
 
 ### Basic 3D models
 
