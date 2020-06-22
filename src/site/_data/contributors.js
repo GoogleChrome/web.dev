@@ -1293,6 +1293,17 @@ const contributors = {
     },
     country: 'UK',
   },
+  gilbertococchi: {
+    name: {
+      given: 'Gilberto',
+      family: 'Cocchi',
+    },
+    org: {
+      name: 'Google',
+    },
+    twitter: 'gilberto_cocchi',
+    github: 'gilbertococchi',
+  },
 };
 
 const processedContributors = {};

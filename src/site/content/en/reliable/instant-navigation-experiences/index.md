@@ -4,6 +4,7 @@ title: Instant navigation experiences
 authors:
   - demianrenzulli
   - jeffposnick
+  - gilbertococchi
 date: 2020-07-20
 description: |
   Different ways in which service workers can be used as a complement of traditional prefetching techniques.
