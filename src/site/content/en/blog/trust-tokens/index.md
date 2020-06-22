@@ -209,7 +209,17 @@ const userHasTokens = await document.hasTrustToken(<issuer>);
 If there are tokens available, the publisher site can redeem them to get a
 signed redemption record:
 
-
+```js
+fetch('issuer.example/.well-known/trust-token', {
+  ...
+  trustToken: {
+    type: 'srr-token-redemption',
+    issuer: 'issuer.example',
+    refreshPolicy: 'none'
+  }
+  ...
+}).then(...)
+```
 
 Then the publisher site can send the SRR to requests it makes using the
 following API:
