@@ -1307,7 +1307,7 @@ const contributors = {
       given: 'Rob',
       family: 'Kochman',
     },
-    twitter: 'tbd',
+    twitter: 'rkochman',
     github: 'rkochman',
     glitch: 'tbd',
     country: 'US',
