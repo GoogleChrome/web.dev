@@ -50,19 +50,6 @@ trustworthiness—to work out if an interaction with a site is from a real human
 or a bot, for example—take advantage of techniques that can also be used for
 fingerprinting.
 
-{% Aside ′key-term′ %}  
-**Fingerprinting** enables sites to identify and track individual users by
-getting data about their device, operating system, and browser setup (such as
-language preferences,
-[user agent](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/userAgent), and available fonts) or changes in device state. This may be done on the server
-by checking request headers or on the client with JavaScript.
-
-Fingerprinting uses mechanisms that users aren′t aware of and can′t control.
-Sites such as [Panopticlick](https://panopticlick.eff.org/) and
-[amiunique.org](https://amiunique.org/) show how fingerprint data can be
-combined to identify you as an individual.  
-{% endAside %} 
-
 The API must preserve privacy while also enabling trust to be propagated across
 sites without individual user tracking.
 
