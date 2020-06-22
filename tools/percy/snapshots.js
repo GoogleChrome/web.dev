@@ -57,6 +57,10 @@ const pagesToTest = [
     url: '/newsletter/',
     title: 'Newsletter page',
   },
+  {
+    url: '/live/',
+    title: 'Live page',
+  },
 ];
 
 // A script to navigate our app and take snapshots with Percy.
