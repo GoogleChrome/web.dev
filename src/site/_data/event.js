@@ -389,7 +389,7 @@ const communityEvents = {
       marker: '30.3074624,-99.9946506',
     },
     {
-      place: 'SanFrancisco',
+      place: 'San Francisco',
       date: new Date(),
       marker: '40.718217,-73.998284',
     },

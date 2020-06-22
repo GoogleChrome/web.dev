@@ -96,7 +96,7 @@ class EventMap extends BaseStateElement {
     const date = new Date(entry.date);
     return html`
             <li>
-              <span>${entry.place}</span>
+              <a href="#">${entry.place}</a>
               <time datetime=${date.toISOString()}>
                 ${formatDate(date)}
               </time>
