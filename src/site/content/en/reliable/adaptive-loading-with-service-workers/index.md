@@ -4,7 +4,7 @@ title: Adaptive loading with service workers
 authors:
   - demianrenzulli
   - jeffposnick
-date: 2020-07-20
+date: 2020-06-23
 description: |
    Learn to use service workers and the Network Information API to achieve an adaptive loading strategy.
 ---
