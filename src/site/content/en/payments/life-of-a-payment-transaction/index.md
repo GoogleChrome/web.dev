@@ -10,6 +10,8 @@ date: 2020-05-25
 description: |
   Learn how merchants integrate payment apps, how payment transactions work with
   the Payment Request API, and what's possible in Web Payments.
+tags:
+  - payments
 ---
 
 Web Payments APIs are dedicated payment features built into the browser natively
@@ -58,9 +60,9 @@ transaction by constructing a
 object. This object includes important information about the transaction:
 
 * Acceptable payment methods and their data to process the transaction.
-* Details, such as the total price (required) and information about the items. 
+* Details, such as the total price (required) and information about the items.
 * Options in which merchants can define any additional information required from
-  the customer including the payer's name, email, and phone number. 
+  the customer including the payer's name, email, and phone number.
 * Merchants can also include optional [shipping
   type](https://developers.google.com/web/fundamentals/payments/merchant-guide/deep-dive-into-payment-request#changing_the_shipping_type)
   (`shipping`, `delivery`, or `pickup`) in the `PaymentRequest`. The payment app
@@ -91,7 +93,7 @@ const request = new PaymentRequest([{
 });
 ```
 
-{% Details %} 
+{% Details %}
 
 {% DetailsSummary %}
 Including a transaction ID
@@ -173,7 +175,7 @@ shipping address is ready to be provided by the payment app.
 
 When the customer presses the payment button, the merchant calls the `show()`
 method of the `PaymentRequest` instance which immediately triggers the launch of
-the payment UI. 
+the payment UI.
 
 In case the final total price is set dynamically (for example, retrieved from a
 server), the merchant can defer the launch of the payment UI until the total is
@@ -183,7 +185,7 @@ known.
 
 Check out a demo of [deferring the payment
 UI](https://rsolomakhin.github.io/pr/wait/) until the final total price is
-determined. 
+determined.
 
 To defer the payment UI, the merchant passes a promise to the `show()` method.
 The browser will show a loading indicator until the promise resolves and the
@@ -311,7 +313,7 @@ request.addEventListener('paymentmethodchange', e => {
 A payment app can optionally provide the customer's shipping address. This is
 convenient for customers because they don't have to manually enter any details
 into a form and they can store their shipping address in their prefered payment
-apps, rather than on multiple different merchant websites. 
+apps, rather than on multiple different merchant websites.
 
 If a customer updates their shipping address in a payment app after the
 transaction has been initiated, a shipping address change event will be emitted
@@ -449,7 +451,7 @@ doPaymentRequest();
 
 * Learn how to declare a payment method identifier in detail in [Setting up a
   payment method](/setting-up-a-payment-method).
-* Learn how to build a native payment app in 
+* Learn how to build a native payment app in
   [Android payment apps developer's guide](/android-payment-apps-overview).
 * Learn how to build a web-based payment app in *Web-based payment apps developer's
   guide* (coming soon).

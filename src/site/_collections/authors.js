@@ -88,13 +88,20 @@ module.exports = (collections) => {
       // If the author doesn't have any posts, use their Twitter profile.
       if (author.elements.length === 0) {
         if (!author.twitter) {
-          // Don't crash if there's no posts at all, or we're running in test mode, as the list of
-          // posts won't be complete. This also happens when we run Eleventy with generate partials.
-          if (process.env.PERCY && posts.length) {
-            throw new Error(
+          // If we're screenshot testing just ignore it.
+          if (process.env.PERCY) {
+            return;
+          }
+
+          // posts.length might be empty if we're generating partials so only
+          // log a warning if it has a value and we're doing a regular build.
+          // Note this is checking for _all_ posts and not just the posts
+          // by this specific author.
+          if (posts.length) {
+            console.warn(
               `author ${
                 author.title
-              } has no posts and no social: ${JSON.stringify(author)}`,
+              } has no posts and no social: ${JSON.stringify(author)}\n`,
             );
           }
         } else {

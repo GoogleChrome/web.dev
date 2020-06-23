@@ -8,6 +8,8 @@
   p {
     font-size: 14px;
     line-height: 1.5;
+    margin: 16px 0;
+
     @include bp(sm) {
       font-size: 16px;
     }
@@ -15,6 +17,7 @@
 
   h2 {
     color: $GREY_900;
+    margin-bottom: 24px;
   }
 
   h3,
@@ -25,16 +28,45 @@
   }
 }
 
+.w-livestream-section {
+  @include bp(md) {
+    border-bottom: 1px solid $GREY_300;
+  }
+}
+
+.w-live-chat-notice {
+  align-items: center;
+  color: $GREY_700;
+  display: flex;
+  font-size: 12px;
+  padding: 19px 16px;
+
+  // Hide the notice if we're at small desktop size and the primary pointing
+  // device supports hover. This should exclude iPads but include Pixelbooks.
+  @media (min-width: #{$BREAKPOINT_VALUE_MEDIUM}) and (hover: hover) {
+    display: none;
+  }
+
+  > :first-child {
+    margin-right: 16px;
+  }
+}
+
 .w-live-top {
   // We need this as the live background extends outside the normal l/r of the
   // page. Contain it so it doesn't let users scroll.
   overflow-x: hidden;
+
+  // jiwoong@
+  .w-event-section__column-right {
+    padding: 0 24px;
+  }
 }
 
 .w-event-buttons {
   display: inline-flex;
   flex-flow: column wrap;
-  margin-bottom: 8px;
+  margin: 24px 0 0; // jiwoong@
 
   .w-button--primary {
     margin: 0 0 16px;
@@ -92,7 +124,6 @@
   }
 }
 
-
 .w-event-section {
   display: flex;
   flex-flow: row wrap;
@@ -108,6 +139,14 @@
 
   @include bp(md) {
     text-align: inherit;
+  }
+
+  &#schedule .w-event-section__column-left {
+    margin-bottom: 64px;
+  }
+
+  .w-event-schedule__blurb {
+    color: $GREY_700;
   }
 }
 
@@ -174,7 +213,7 @@
     margin-top: 24px;
   }
 
-  .w-event-guidelines {
+  .w-event-link {
     font-size: 14px;
     margin-top: 20px;
   }
@@ -185,14 +224,22 @@
 }
 
 .w-event-section__column-right {
-  max-width: 512px;
+  max-width: 100%;
   padding: 0 8px;
 
+  @media (min-width: 512px) {
+    max-width: 512px;
+  }
+
   &.w-event-section__column-right__schedule {
-    margin-top: 58px;
+    margin-top: -16px;
 
     @include bp(md) {
       padding: 0px;
+    }
+
+    @include bp(sm) {
+      padding: 0px !important;
     }
   }
 
@@ -201,6 +248,68 @@
     // ...__schedule, above).
     padding: 0 16px !important;
   }
+}
+
+.w-event-carousel {
+  display: flex;
+  overflow-x: scroll;
+  // Firefox only
+  // sass-lint:disable no-misspelled-properties
+  scrollbar-color: $GREY_500;
+  scrollbar-width: thin;
+  // sass-lint:enable no-misspelled-properties
+
+  &::-webkit-scrollbar-track {
+    padding-top: 4px;
+  }
+
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $GREY_500;
+    border-radius: 8px;
+  }
+}
+
+.w-event-carousel__day {
+  color: $GREY_800;
+  font-family: $HEADLINE_FONT;
+  font-size: 14px;
+  font-weight: $FONT_WEIGHT_MEDIUM;
+  margin-right: 16px;
+  padding-bottom: 8px;
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    opacity: .9;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.w-event-carousel__thumbnail {
+  margin-bottom: 8px;
+  background-color: $GREY_200;
+  border-radius: 3px;
+  overflow: hidden;
+  width: 178px;
+  height: 110px;
+
+  > img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Need to put top margin on the tabs instead of bottom margin on the
+// carousel because bottom margin will affect the carousel's scroll bar.
+.w-event-carousel + .w-event-tabs {
+  margin-top: 34px;
 }
 
 web-tabs.w-event-tabs {
@@ -220,9 +329,8 @@ web-tabs.w-event-tabs {
     min-height: 48px;
     position: relative;
     display: flex;
-    // align-items: center;
     flex-direction: column;
-    padding: 13px 24px 16px;
+    padding: 24px 16px;
 
     &:last-of-type {
       border-bottom: 0;
@@ -236,7 +344,7 @@ web-tabs.w-event-tabs {
 
   .w-event-schedule__speaker {
     font-size: 14px;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
 
     a {
       z-index: 10;
@@ -258,7 +366,6 @@ web-tabs.w-event-tabs {
     color: inherit;
     display: inline-block;
     font-family: $HEADLINE_FONT;
-    font-weight: $FONT_WEIGHT_MEDIUM;
     pointer-events: auto;
     margin-bottom: 4px;
     font-size: 18px;
@@ -307,6 +414,7 @@ web-tabs.w-event-tabs {
   align-items: center;
   font-size: 14px;
   font-weight: 400;
+  margin-right: 8px;
 
   &::before {
     content: '';
@@ -360,3 +468,10 @@ web-tabs.w-event-tabs {
     object-fit: cover;
   }
 }
+
+.w-event-icon {
+  align-items: center;
+  vertical-align: middle;
+  margin-right: 16px;
+}
+

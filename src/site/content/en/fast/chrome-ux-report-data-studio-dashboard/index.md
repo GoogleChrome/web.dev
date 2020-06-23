@@ -9,9 +9,10 @@ description: |
   dashboards on top of big data sources, like the Chrome UX Report. In this
   guide, learn how to create your own custom CrUX Dashboard to track an origin's
   user experience.
-date: 2020-06-12
+date: 2020-06-22
 tags:
   - performance
+  - blog
 ---
 
 [Data Studio](https://marketingplatform.google.com/about/data-studio/) is a

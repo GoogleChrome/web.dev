@@ -103,8 +103,10 @@ class Tabs extends BaseElement {
   }
 
   panelTemplate(i, child) {
+    const index = i - 1; // i is 1-indexed
     return html`
       <div
+        data-index=${index}
         id="web-tab-${this.idSalt}-${i}-panel"
         class="web-tabs__panel"
         role="tabpanel"
@@ -232,10 +234,9 @@ class Tabs extends BaseElement {
   focusTab(index) {
     const tabs = this.querySelectorAll('.web-tabs__tab');
 
-    if (!tabs[index]) {
-      throw new RangeError('There is no tab at the specified index.');
+    if (tabs[index]) {
+      tabs[index].focus();
     }
-    tabs[index].focus();
   }
 
   // If previous tab exists, make it active. If not, make last tab active.
@@ -266,6 +267,19 @@ class Tabs extends BaseElement {
     const tabs = this.querySelectorAll('.web-tabs__tab');
 
     this.activeTab = tabs.length - 1;
+  }
+
+  /**
+   * @param {!Node} node to check
+   * @return {number} the index of the tab containing this node, or -1 for none
+   */
+  indexOfTabByChild(node) {
+    const panel = node.closest('[class="web-tabs__panel"]');
+    if (!this.contains(panel)) {
+      return -1;
+    }
+    const index = parseInt(panel.getAttribute('data-index'));
+    return isNaN(index) ? -1 : index;
   }
 }
 

@@ -10,6 +10,7 @@ description: |
 authors:
   - addyosmani
   - demianrenzulli
+  - antonkarlovskiy
 codelabs:
   - codelab-quicklink
 ---

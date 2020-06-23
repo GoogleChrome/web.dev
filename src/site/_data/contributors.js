@@ -122,6 +122,21 @@ const contributors = {
       en: 'Arthur is a Tech Writer',
     },
   },
+  exterkamp: {
+    name: {
+      given: 'Shane',
+      family: 'Exterkamp',
+    },
+    org: {
+      name: 'Google',
+      unit: 'Chrome',
+    },
+    country: 'US',
+    github: 'exterkamp',
+    description: {
+      en: 'Shane is a SWE on Lighthouse',
+    },
+  },
   sfourault: {
     name: {
       given: 'Sébastien',
@@ -510,6 +525,14 @@ const contributors = {
     },
     github: 'mdiblasio',
     glitch: 'mdiblasio',
+  },
+  jeremywagner: {
+    name: {
+      given: 'Jeremy',
+      family: 'Wagner',
+    },
+    github: 'malchata',
+    twitter: 'malchata',
   },
   gmimani: {
     name: {
@@ -1254,6 +1277,45 @@ const contributors = {
     description: {
       en: 'Software Engineer on the web platform.',
     },
+  },
+  robertnyman: {
+    name: {
+      given: 'Robert',
+      family: 'Nyman',
+    },
+    org: {
+      name: 'Google',
+    },
+    twitter: 'robertnyman',
+    github: 'robnyman',
+    country: 'SE',
+    homepage: 'https://robertnyman.com/',
+    description: {
+      en: 'Developer advocate on the web team at Google.',
+    },
+  },
+  olgademidova: {
+    name: {
+      given: 'Olga',
+      family: 'Demidova',
+    },
+    org: {
+      name: 'Google',
+      unit: 'Ads Marketing EMEA',
+    },
+    description: {
+      en: 'Product Marketing Manager',
+    },
+    country: 'UK',
+  },
+  antonkarlovskiy: {
+    name: {
+      given: 'Anton',
+      family: 'Karlovskiy',
+    },
+    twitter: 'antonkarlovskiy',
+    github: 'anton-karlovskiy',
+    glitch: 'anton-karlovskiy',
   },
 };
 

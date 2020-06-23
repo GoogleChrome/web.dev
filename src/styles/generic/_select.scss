@@ -1,0 +1,27 @@
+@import '../settings/colors';
+
+select {
+  background-color: $WHITE;
+  border: 1px solid $GREY_300;
+  font: inherit;
+  height: 52px;
+  // The native select has a built-in 4px left margin in its shadow dom.
+  // Add 4px of padding to make values left align with our other form fields.
+  // Annoyingly the little down arrow on the right is not styleable.
+  padding-left: 4px;
+  width: 100%;
+
+  &.w-select--borderless {
+    border-color:  transparent;
+
+    &:focus {
+      border: 1px solid $WEB_PRIMARY_COLOR;
+    }
+  }
+
+  &:focus {
+    border-color: $WEB_PRIMARY_COLOR;
+    outline: none;
+  }
+}
+
