@@ -188,7 +188,7 @@ See [Use WebP images](/serve-images-webp/) for more details.
 
 In terms of older image formats, consider the following:
 
-1. **Do you need animation? Use GIF**
+1. **Do you need animation? Use GIF.**
     * GIF limits the color palette to at most 256 colors, which makes it a poor choice for most images.
     Further, PNG-8 delivers better compression for images with a small palette.
     As a result, GIF is the right answer only when animation is required.
