@@ -180,8 +180,8 @@ for example, our eyes have different sensitivity to different colors,
 which means that we can use fewer bits to encode some colors.
 As a result, a typical image optimization pipeline consists of two high level steps:
 
-1. Image is processed with a [lossy](https://en.wikipedia.org/wiki/Lossy_compression) filter that eliminates some pixel data
-1. Image is processed with a [lossless](https://en.wikipedia.org/wiki/Lossless_compression) filter that compresses the pixel data
+1. Image is processed with a [lossy](https://en.wikipedia.org/wiki/Lossy_compression) filter that eliminates some pixel data.
+1. Image is processed with a [lossless](https://en.wikipedia.org/wiki/Lossless_compression) filter that compresses the pixel data.
 
 The first step is optional,
 and the exact algorithm will depend on the particular image format,
