@@ -7,7 +7,7 @@ description: |
 ---
 
 ## Add yourself to the contributors list
-1. Add a new object to [`contributors.json`](https://github.com/GoogleChrome/web.dev/blob/master/src/site/_data/contributors.js) with the following structure. Make sure to choose a unique contributor slug.
+1. Add a new object to [`contributors.json`](https://github.com/GoogleChrome/web.dev/blob/master/src/site/_data/contributors.json) with the following structure. Make sure to choose a unique contributor slug.
 
     ```json
     "contributorslug": {
