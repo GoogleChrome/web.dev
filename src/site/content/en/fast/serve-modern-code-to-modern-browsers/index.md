@@ -136,8 +136,8 @@ optimization, make sure you have `@babel/preset-env` 7.10 or later installed, th
 }
 ```
 
-This feature is only supported in `@babel/preset-env` version 7.10 or later. Babel 8 will also
-include these optimizations by default.
+This feature was introduced in `@babel/preset-env` version 7.10. In Babel 8, the
+`bugfixes` option will be enabled by default.
 
 ## Use &lt;script type=&quot;module&quot;&gt;
 
