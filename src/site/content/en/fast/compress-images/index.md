@@ -135,7 +135,7 @@ Then you would only need 8 bits in total for the RGB channels and immediately sa
   <figcaption>Left to right (PNG): 32-bit (16M colors), 7-bit (128 colors), 5-bit (32 colors).</figcaption>
 </figure>
 
-Complex scenes with gradual color transitions (gradients, sky, etc.)
+Complex scenes with gradual color transitions (for example, gradients or sky)
 require larger color palettes to avoid visual artifacts such as the pixelated sky in the 5-bit asset.
 On the other hand, if the image only uses a few colors,
 then a large palette is simply wasting precious bits!
