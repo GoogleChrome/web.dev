@@ -138,6 +138,7 @@ In addition to different lossy and lossless compression algorithms,
 different image formats support different features such as animation and transparency (alpha) channels.
 As a result, the choice of the "right format" for a particular image is a combination of desired visual results and functional requirements.
 
+<div class="w-table-wrapper">
 <table>
 <thead>
   <tr>
