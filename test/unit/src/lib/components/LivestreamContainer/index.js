@@ -55,6 +55,11 @@ describe('LivestreamContainer', function () {
     const iframes = container.renderRoot.querySelectorAll('iframe');
     assert(iframes.length === 1, 'should be single iframe');
 
+    assert(
+      ytIframe.src === 'https://www.youtube.com/embed/HtTyRajRuyY',
+      'yt iframe src should be as expected',
+    );
+
     container.onStateChanged({
       activeEventDay: {
         videoId: 'HtTyRajRuyY',
@@ -97,9 +102,7 @@ describe('LivestreamContainer', function () {
     });
     await container.updateComplete;
 
-    const timeout = new Promise((r) => setTimeout(r, 2000)).then(() => {
-      throw new Error("unload event didn't arrive for forced reload");
-    });
-    await Promise.race([p, timeout]);
+    // Mocha has a built-in timeout so this not resolving will fail.
+    await p;
   });
 });
