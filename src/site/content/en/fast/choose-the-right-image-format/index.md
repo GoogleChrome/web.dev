@@ -9,6 +9,7 @@ date: 2018-08-30
 updated: 2020-06-18
 tags:
   - performance
+  - images
 ---
 
 The very first question you should ask yourself is whether an image is,
