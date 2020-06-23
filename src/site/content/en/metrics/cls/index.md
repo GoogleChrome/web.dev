@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2020-06-15
+updated: 2020-06-23
 description: |
   This post introduces the Cumulative Layout Shift (CLS) metric and explains
   how to measure it
@@ -362,14 +362,6 @@ changes to hidden:
   });
 {% include 'content/metrics/performance-observer-catch.njk' %}
 ```
-
-{% Aside %}
-  Note: The [Chrome User Experience Report
-  (CrUX)](https://developers.google.com/web/tools/chrome-user-experience-report)
-  currently buckets CLS values as percentages with 5% granularity. This means a
-  score of `0.01` when using the code example above would appear in the 0–5
-  bucket in CrUX, and a score of `0.07` would appear in the 5–10 bucket in CrUX.
-{% endAside %}
 
 ## How to improve CLS
 
