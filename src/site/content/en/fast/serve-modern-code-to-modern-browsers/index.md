@@ -10,7 +10,7 @@ description: |
   you want to use new JavaScript language features, you need to transpile these
   features to backwards-compatible formats.  
 date: 2018-11-05
-updated: 2020-06-19
+updated: 2020-06-23
 codelabs:
   - codelab-serve-modern-code
 tags:
@@ -136,8 +136,7 @@ optimization, make sure you have `@babel/preset-env` 7.10 or later installed, th
 }
 ```
 
-This feature was introduced in `@babel/preset-env` version 7.10. In Babel 8, the
-`bugfixes` option will be enabled by default.
+In Babel 8, the `bugfixes` option will be enabled by default.
 
 ## Use &lt;script type=&quot;module&quot;&gt;
 
