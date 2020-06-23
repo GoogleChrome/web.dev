@@ -80,6 +80,7 @@ each pixel always occupies 4 bytes of memory.
 This can be an important constraint for large images and devices which do not have a lot of available memory
 &mdash;for example, low-end mobile devices.
 
+<div class="w-table-wrapper">
 <table>
 <thead>
   <tr>
@@ -116,6 +117,7 @@ This can be an important constraint for large images and devices which do not ha
 </tr>
 </tbody>
 </table>
+</div>
 
 39KB for a 100x100 pixel image may not seem like a big deal,
 but the filesize quickly explodes for larger images and makes image assets both slow and expensive to download.
