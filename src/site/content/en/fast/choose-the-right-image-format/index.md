@@ -71,8 +71,7 @@ to deliver the optimal experience to your users.
 
 ## Implications of high-resolution screens
 
-When we talk about image pixels,
-we need to distinguish between different kinds of pixels: CSS pixels and device pixels.
+There are two different kinds of pixels: CSS pixels and device pixels.
 A single CSS pixel may correspond directly to a single device pixel, or may be backed by multiple device pixels.
 What's the point? Well, the more device pixels there are, the finer the detail of the displayed content on the screen.
 
