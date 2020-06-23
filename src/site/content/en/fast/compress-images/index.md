@@ -191,9 +191,9 @@ is in the combination of the specific algorithms they use (or omit) when applyin
 
 So, what is the "optimal" configuration of lossy and lossless optimization?
 The answer depends on the image contents and your own criteria such as the tradeoff between filesize and artifacts introduced by lossy compression:
-in some cases you may want to skip lossy optimization to communicate intricate detail in its full fidelity,
-and in others you may be able to apply aggressive lossy optimization to reduce the filesize of the image asset.
-This is where your own judgment and context need to come into play - there is no one universal setting.
+In some cases, you may want to skip lossy optimization to communicate intricate detail in its full fidelity.
+In other cases, you may be able to apply aggressive lossy optimization to reduce the filesize of the image asset.
+This is where your own judgment and context need to come into play&mdash;there is no one universal setting.
 
 As a hands-on example, when using a lossy format such as JPEG,
 the compressor will typically expose a customizable "quality" setting
