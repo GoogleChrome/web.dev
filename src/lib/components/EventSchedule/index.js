@@ -178,9 +178,6 @@ class EventSchedule extends HTMLElement {
   }
 
   onStateChanged({activeEventDay}) {
-    if (this._activeEventDay === activeEventDay) {
-      return;
-    }
     this._activeEventDay = activeEventDay;
 
     // This relies on the event data being in the same shape as the rendered

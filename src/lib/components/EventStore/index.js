@@ -53,6 +53,7 @@ class EventStore extends HTMLElement {
   _update() {
     const now = +new Date() + this._timeOffset;
 
+    let daysPropertiesChange = false;
     let activeDay = null;
 
     // If there was a previously active day (because the user has their tab open for a long time),
@@ -88,7 +89,10 @@ class EventStore extends HTMLElement {
 
       // Are we past the completion of this day? This allows the YT link to show up.
       const isComplete = now >= activeEnd;
-      day.isComplete = isComplete;
+      if (day.isComplete !== isComplete) {
+        day.isComplete = isComplete;
+        daysPropertiesChange = true;
+      }
       if (!isComplete && nextPendingDay === null) {
         // The first time we find an incomplete day (e.g., tomorrow's event day), mark it as the
         // next pending day we use as the active fallback.
@@ -103,7 +107,10 @@ class EventStore extends HTMLElement {
 
       // Is this the active day for chat (within the actual time range)?
       const isChatActive = now >= chatStart && now < chatEnd;
-      day.isChatActive = isChatActive;
+      if (day.isChatActive !== isChatActive) {
+        day.isChatActive = isChatActive;
+        daysPropertiesChange = true;
+      }
     }
 
     // If there was no previously active day, then choose the upcoming day.
@@ -112,6 +119,12 @@ class EventStore extends HTMLElement {
       activeDay = nextPendingDay
         ? nextPendingDay
         : this._days[this._days.length - 1];
+    }
+
+    // If there was a property change on any particular day, change the Array
+    // reference so listeners can use simple comparisons to force a refresh.
+    if (daysPropertiesChange) {
+      this._days = this._days.slice();
     }
 
     store.setState({

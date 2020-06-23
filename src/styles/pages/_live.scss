@@ -253,6 +253,7 @@
 .w-event-carousel {
   display: flex;
   overflow-x: scroll;
+  margin-bottom: 12px;
   // Firefox only
   // sass-lint:disable no-misspelled-properties
   scrollbar-color: $GREY_500;
@@ -285,6 +286,13 @@
   &:focus {
     outline: 0;
     opacity: .9;
+    text-decoration: none;
+  }
+
+  &:focus {
+    .w-event-carousel__description {
+      box-shadow: inset 0 0 0 1px $FOCUS_COLOR;
+    }
   }
 
   &:last-child {
@@ -474,4 +482,3 @@ web-tabs.w-event-tabs {
   vertical-align: middle;
   margin-right: 16px;
 }
-
