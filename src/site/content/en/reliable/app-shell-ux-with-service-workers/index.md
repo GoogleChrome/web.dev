@@ -24,6 +24,12 @@ In this article we'll analyze how you can achieve an SPA-like architecture in mu
 
 [DEV](https://dev.to/) is a community where software developers write articles, take part in discussions, and build their professional profiles.
 
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" 
+       src="homepage.jpg" 
+       alt="A screenshot of https://dev.to">
+</figure>
+
 Their architecture is a multi-page app based on traditional backend templating through Ruby on Rails. Their team was interested in some of the benefits of an app shell model, but didn't want to undertake a major architectural change or move away from their original tech stack. 
 
 Here's how their solution works:
