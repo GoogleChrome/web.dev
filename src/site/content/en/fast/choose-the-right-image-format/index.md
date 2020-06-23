@@ -54,8 +54,8 @@ use lines, points, and polygons to represent an image.
 represent an image by encoding the individual values of each pixel within a rectangular grid.
 
 Each format has its own set of pros and cons.
-Vector formats are ideally suited for images that consist of simple geometric shapes (for example, logos, text, icons, and so on),
-and deliver sharp results at every resolution and zoom setting,
+Vector formats are ideally suited for images that consist of simple geometric shapes such as logos, text, or icons.
+They deliver sharp results at every resolution and zoom setting,
 which makes them an ideal format for high-resolution screens and assets that need to be displayed at varying sizes.
 
 However, vector formats fall short when the scene is complicated (for example, a photo):
