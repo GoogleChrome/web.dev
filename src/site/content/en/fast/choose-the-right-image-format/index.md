@@ -127,7 +127,7 @@ Hence, a "2x" screen not just doubles, but quadruples the number of required pix
 
 So, what does this mean in practice?
 High-resolution screens enable you to deliver beautiful images, which can be a great product feature.
-However, high resolution screens also require high-resolution images, therefore:
+However, high-resolution screens also require high-resolution images, therefore:
 
 * prefer vector images whenever possible as they are resolution independent and always deliver sharp results,
 * if a raster image is required, serve [responsive images](/serve-responsive-images/).
