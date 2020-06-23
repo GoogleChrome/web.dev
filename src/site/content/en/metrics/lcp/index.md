@@ -357,7 +357,7 @@ the article on [custom metrics](/custom-metrics/#element-timing-api).
 
 ## How to improve LCP
 
-LCP is primarily affected by four factors:
+LCP is primarily affected by the following factors:
 
 * Slow server response times
 * Render-blocking JavaScript and CSS
