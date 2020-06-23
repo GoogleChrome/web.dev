@@ -8,6 +8,8 @@
   p {
     font-size: 14px;
     line-height: 1.5;
+    margin: 16px 0;
+
     @include bp(sm) {
       font-size: 16px;
     }
@@ -15,6 +17,7 @@
 
   h2 {
     color: $GREY_900;
+    margin-bottom: 24px;
   }
 
   h3,
@@ -53,12 +56,17 @@
   // We need this as the live background extends outside the normal l/r of the
   // page. Contain it so it doesn't let users scroll.
   overflow-x: hidden;
+
+  // jiwoong@
+  .w-event-section__column-right {
+    padding: 0 24px;
+  }
 }
 
 .w-event-buttons {
   display: inline-flex;
   flex-flow: column wrap;
-  margin-bottom: 8px;
+  margin: 24px 0 0; // jiwoong@
 
   .w-button--primary {
     margin: 0 0 16px;
@@ -131,6 +139,14 @@
 
   @include bp(md) {
     text-align: inherit;
+  }
+
+  &#schedule .w-event-section__column-left {
+    margin-bottom: 64px;
+  }
+
+  .w-event-schedule__blurb {
+    color: $GREY_700;
   }
 }
 
@@ -216,10 +232,14 @@
   }
 
   &.w-event-section__column-right__schedule {
-    margin-top: 58px;
+    margin-top: -16px;
 
     @include bp(md) {
       padding: 0px;
+    }
+
+    @include bp(sm) {
+      padding: 0px !important;
     }
   }
 
@@ -309,9 +329,8 @@ web-tabs.w-event-tabs {
     min-height: 48px;
     position: relative;
     display: flex;
-    // align-items: center;
     flex-direction: column;
-    padding: 13px 24px 16px;
+    padding: 24px 16px;
 
     &:last-of-type {
       border-bottom: 0;
@@ -325,7 +344,7 @@ web-tabs.w-event-tabs {
 
   .w-event-schedule__speaker {
     font-size: 14px;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
 
     a {
       z-index: 10;
@@ -347,7 +366,6 @@ web-tabs.w-event-tabs {
     color: inherit;
     display: inline-block;
     font-family: $HEADLINE_FONT;
-    font-weight: $FONT_WEIGHT_MEDIUM;
     pointer-events: auto;
     margin-bottom: 4px;
     font-size: 18px;
@@ -396,6 +414,7 @@ web-tabs.w-event-tabs {
   align-items: center;
   font-size: 14px;
   font-weight: 400;
+  margin-right: 8px;
 
   &::before {
     content: '';
