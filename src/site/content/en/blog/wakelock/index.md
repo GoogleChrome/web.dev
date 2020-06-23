@@ -72,8 +72,8 @@ Of course, there are plenty of other use cases:
 | 1. Create explainer                        | N/A                          |
 | 2. Create initial draft of specification   | [Complete][spec-ed]          |
 | 3. Gather feedback and iterate design      | [Complete](#feedback)        |
-| 4. Origin trial                            | [Complete][ot]               |
-| 5. Launch                                  | **Complete**                 |
+| 4. Origin trial                            | Complete                     |
+| **5. Launch**                              | **Complete**                 |
 
 </div>
 
@@ -207,8 +207,8 @@ be solved with one of the following alternative solutions:
 ### Demo
 
 Check out the [Screen Wake Lock demo][demo] and [demo source][demo-source].
-Notice how the screen wake lock gets automatically released when you switch tabs
-or switch to a different app.
+Notice how the screen wake lock is automatically released when you switch tabs
+or apps.
 
 ## Feedback {: #feedback }
 
