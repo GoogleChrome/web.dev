@@ -119,10 +119,10 @@ This can be an important constraint for large images and devices which do not ha
 </table>
 </div>
 
-39KB for a 100x100 pixel image may not seem like a big deal,
+39&nbsp;KB for a 100x100 pixel image may not seem like a big deal,
 but the filesize quickly explodes for larger images and makes image assets both slow and expensive to download.
-Thankfully, what we've described so far is the "uncompressed" image format.
-What could we do to reduce the image file size?
+This post has so far only focused on the "uncompressed" image format.
+Thankfully, a lot can be done to reduce the image file size.
 
 One simple strategy is to reduce the "bit-depth" of the image from 8 bits per channel to a smaller color palette:
 8 bits per channel gives us 256 values per channel and 16,777,216 (256 ^ 3) colors in total.
