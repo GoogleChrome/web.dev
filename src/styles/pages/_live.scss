@@ -253,7 +253,7 @@
 .w-event-carousel {
   display: flex;
   overflow-x: scroll;
-  padding-bottom: 12px;
+  margin-bottom: 12px;
   // Firefox only
   // sass-lint:disable no-misspelled-properties
   scrollbar-color: $GREY_500;
