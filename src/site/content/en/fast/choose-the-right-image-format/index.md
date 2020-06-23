@@ -202,7 +202,7 @@ In terms of older image formats, consider the following:
 1. **Are you optimizing a photo, screenshot, or a similar image asset? Use JPEG.**
     * JPEG uses a combination of lossy and lossless optimization to reduce filesize of the image asset. Try several JPEG quality levels to find the best quality vs. filesize tradeoff for your asset.
 
-Finally, note that if you are using a Webview to render content in your native application,
+Finally, note that if you are using a WebView to render content in your native application,
 then you have full control of the client and can use WebP exclusively!
 Facebook and many others use WebP to deliver all of their images within their applications&mdash;
 the savings are definitely worth it.
