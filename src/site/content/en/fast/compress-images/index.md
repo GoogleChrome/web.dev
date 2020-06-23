@@ -9,6 +9,7 @@ date: 2018-08-30
 updated: 2020-06-18
 tags:
   - performance
+  - images
 ---
 
 Images often account for most of the downloaded bytes on a web page
