@@ -22,10 +22,9 @@ const AuthorsDate = require('./AuthorsDate');
 /**
  * @param {!Array<{title: string, from: !Date, sessions: !Array<any>}>} days
  * @param {Object.<string, Author>} authorsCollection
- * @param {boolean} showCarousel
  * @return {string}
  */
-module.exports = (days, authorsCollection, showCarousel) => {
+module.exports = (days, authorsCollection) => {
   // Find the default day to show, as a very basic non-JS fallback. Pick the
   // first day where the build time is before the end time of the sessions.
   // This isn't a very good fallback as our build happens at minimum of once per
@@ -113,25 +112,7 @@ module.exports = (days, authorsCollection, showCarousel) => {
     `;
   };
 
-  const renderCarouselDay = ({title}) => {
-    return html`
-      <a class="w-event-carousel__day">
-        <div class="w-event-carousel__thumbnail"></div>
-        <div class="w-event-carousel__description">${title}</div>
-      </a>
-    `;
-  };
-
-  // If we're showing the carousel, then include a set of dummy elements with the same number of
-  // days. These are then updated by the web-event-carousel element.
-  const carousel = showCarousel
-    ? html` <web-event-carousel class="w-event-carousel">
-        ${days.map(renderCarouselDay)}
-      </web-event-carousel>`
-    : '';
-
   return html`
-    ${carousel}
     <web-event-schedule>
       <web-tabs class="w-event-tabs unresolved" label="schedule">
         ${days.map(renderDay)}

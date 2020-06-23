@@ -97,8 +97,24 @@ date: 2020-06-31
 
     <div class="w-event-section__column-right w-event-section__column-right__schedule">
       {% if event.isDuringEvent or event.isPostEvent %}
+        <web-event-carousel class="w-event-carousel">
+          {# These just exist as dummy HTML elements for the first render. They're replaced by the
+             web-event-carousel CE when it loads. #}
+          <div class="w-event-carousel__day">
+            <div class="w-event-carousel__thumbnail"></div>
+            <div class="w-event-carousel__description">Day 1</div>
+          </div>
+          <div class="w-event-carousel__day">
+            <div class="w-event-carousel__thumbnail"></div>
+            <div class="w-event-carousel__description">Day 2</div>
+          </div>
+          <div class="w-event-carousel__day">
+            <div class="w-event-carousel__thumbnail"></div>
+            <div class="w-event-carousel__description">Day 3</div>
+          </div>
+        </web-event-carousel>
       {% endif %}
-      {% EventTable event.days, collections.authors, event.isDuringEvent or event.isPostEvent %}
+      {% EventTable event.days, collections.authors %}
     </div>
 
   </section>
