@@ -1,6 +1,6 @@
 ---
 title: Getting started with Trust Tokens
-subhead: A new API proposal that provides an alternative to passive tracking to combat fraud and distinguish bots from real humans.
+subhead: Trust Tokens is a new API to help combat fraud and distinguish bots from real humans, without passive tracking.
 authors:
   - samdutton
 date: 2020-06-22
@@ -19,8 +19,8 @@ tags:
 ## Summary
 
 Trust tokens enable an origin to issue cryptographic tokens to a user it trusts.
-The tokens are stored by the user's browser. The browser uses the tokens in
-other contexts to evaluate the user's authenticity.   
+The tokens are stored by the user's browser. The browser can then uses the tokens 
+in other contexts to evaluate the user's authenticity.   
 
 The Trust Token API allows trust of a user in one context (such as gmail.com) to
 be conveyed to another context (such as an ad running on nytimes.com) without
@@ -45,8 +45,8 @@ defrauding a real person or service. Fraud protection is particularly important
 for advertisers, ad providers, and CDNs.   
   
 Unfortunately, many existing mechanisms to gauge and propagate
-trustworthiness—to work out if an interaction with a site is from a real human
-or a bot, for example—take advantage of techniques that can also be used for
+trustworthiness—to work out if an interaction with a site is from a real human, 
+for example—take advantage of techniques that can also be used for
 fingerprinting.
 
 {% Aside 'key-term' %}  
@@ -62,8 +62,8 @@ Sites such as [Panopticlick](https://panopticlick.eff.org/) and
 combined to identify you as an individual.  
 {% endAside %} 
 
-The API must preserve privacy while also enabling trust to be propagated across
-sites without individual user tracking.
+The API must preserve privacy, enabling trust to be propagated across sites 
+without individual user tracking.
 
 ## What's in the Trust Tokens proposal?
 
