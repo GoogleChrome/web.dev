@@ -4,7 +4,7 @@ subhead: How many pixels are there _really_ in a canvas?
 authors:
   - surma
 date: 2020-06-19
-updated: 2020-06-22
+updated: 2020-06-23
 hero: pixels.jpg
 alt: Lots of pixels
 description: Since Chrome 84, [ResizeObserver] supports a new box measurement called `device-pixel-content-box`, that measures the element's dimension in _physical_ pixels. This is crucial for rendering pixel-perfect graphics, especially in the context of high-density screens.
@@ -24,9 +24,9 @@ Since Chrome 84, [ResizeObserver] supports a new box measurement called `device-
 
 While we often work with abstract units of length like `em`, `%` or `vh`, it all boils down to pixels. Whenever we specify the size or position of an element in CSS, the browser's layout engine will eventually convert that value to pixels (`px`). These are "CSS Pixels", which have a lot of history and only have a loose relationship with the pixels you have on your screen.
 
-For a long time, it was fairly reasonable to estimate anyone's screen pixel density with 96DPI ("dots per inch"), meaning any given monitor would have roughly 38 pixels per cm. Over time, monitors grew and/or shrunk or started to have more pixels on the same surface area ("retina displays"). Combine that with the fact that lots of content on the web define their dimensions, including font sizes, in `px`, we end up illegible text on these high-density ("HiDPI") screens. As a counter-measure, browsers hide the monitor's actual pixel density and instead pretend that the user has a 96 DPI display. The `px` unit in CSS represents the size of one pixel on this _virtual_ 96 DPI display, hence the name "CSS Pixel". This unit is only used for measurement and positioning. Before any actual rendering happens, a conversion to physical pixels happens.
+For a long time, it was fairly reasonable to estimate anyone's screen pixel density with 96DPI ("dots per inch"), meaning any given monitor would have roughly 38 pixels per cm. Over time, monitors grew and/or shrunk or started to have more pixels on the same surface area. Combine that with the fact that lots of content on the web define their dimensions, including font sizes, in `px`, we end up illegible text on these high-density ("HiDPI") screens. As a counter-measure, browsers hide the monitor's actual pixel density and instead pretend that the user has a 96 DPI display. The `px` unit in CSS represents the size of one pixel on this _virtual_ 96 DPI display, hence the name "CSS Pixel". This unit is only used for measurement and positioning. Before any actual rendering happens, a conversion to physical pixels happens.
 
-How do we go from this virtual display to the user's real display? Enter `devicePixelRatio`. This global value tells you how many _physical_ pixels you need to form a single CSS pixel. If `devicePixelRatio` (dPR) is `1`, you are working on a monitor with roughly 96DPI. If you have a retina screen, your dPR is probably `2`. On phones it is not uncommon to encounter higher (and weirder) dPR values like `3` or even `3.5`. It is essential to note that this value is _exact_, but doesn't let you derive the monitor's _actual_ DPI value. A dPR of `2` means that 1 CSS pixel will map to _exactly_ 2 physical pixels.
+How do we go from this virtual display to the user's real display? Enter `devicePixelRatio`. This global value tells you how many _physical_ pixels you need to form a single CSS pixel. If `devicePixelRatio` (dPR) is `1`, you are working on a monitor with roughly 96DPI. If you have a retina screen, your dPR is probably `2`. On phones it is not uncommon to encounter higher (and weirder) dPR values like `2`, `3` or even `2.65`. It is essential to note that this value is _exact_, but doesn't let you derive the monitor's _actual_ DPI value. A dPR of `2` means that 1 CSS pixel will map to _exactly_ 2 physical pixels.
 
 **Example:** My monitor has a dPR of `1` according to Chrome. It has 3440 pixels in width and the display area is 79cm wide. That leads to a resolution of 110 DPI. Close to 96, but not quite. That is also the reason why a `<div style="width: 1cm; height: 1cm">` will not exactly measure 1cm in size on most displays.
 
@@ -111,15 +111,12 @@ To check if a user's browser has support for `devicePixelContentBox`, we can obs
 ```js
 function hasDevicePixelContentBox() {
   return new Promise((resolve) => {
-    if (!('ResizeObserver' in self)) {
-      return resolve(false);
-    }
     const ro = new ResizeObserver((entries) => {
       resolve(entries.every((entry) => 'devicePixelContentBoxSize' in entry));
       ro.disconnect();
     });
     ro.observe(document.body, {box: ['device-pixel-content-box']});
-  });
+  }).catch(() => false);
 }
 
 if (!(await hasDevicePixelContentBox())) {
