@@ -24,7 +24,7 @@ so it is up to you to find that balance.
 Next, you should consider if there is an alternative technology that could deliver the desired results,
 but in a more efficient manner:
 
-* **CSS effects** (gradients, shadows, etc.) and CSS animations
+* **CSS effects** (such as shadows or gradients) and CSS animations
 can be used to produce resolution-independent assets that always look sharp at every resolution and zoom level,
 often at a fraction of the bytes required by an image file.
 * **Web fonts** enable use of beautiful typefaces
