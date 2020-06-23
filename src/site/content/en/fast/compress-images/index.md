@@ -33,8 +33,8 @@ All modern browsers support Scalable Vector Graphics (SVG),
 which is an XML-based image format for two-dimensional graphics.
 You can embed the SVG markup directly on the page
 or as an external resource.
-In turn, an SVG file can be created by most vector-based drawing software,
-or by hand and directly in your favorite text editor.
+Most vector-based drawing software can create SVG files or you can 
+write them by hand directly in your favorite text editor.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
