@@ -81,7 +81,7 @@ What's the point? Well, the more device pixels there are, the finer the detail o
 </figure>
 
 High DPI (HiDPI) screens produce beautiful results, but there is one obvious tradeoff:
-our image assets require more detail in order to take advantage of the higher device pixel counts.
+image assets require more detail in order to take advantage of the higher device pixel counts.
 The good news is, vector images are ideally suited for this task,
 as they can be rendered at any resolution with sharp results&mdash;
 you might incur a higher processing cost to render the finer detail,
