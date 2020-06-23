@@ -48,7 +48,7 @@ In this section we'll explore how [Workbox](https://web.dev/workbox/) can be use
 
 Workbox provides several [runtime caching strategies](https://web.dev/runtime-caching-with-workbox/) out of the box. They are used to indicate how the service worker generates a response after receiving a `fetch` event.
 
-For example, in a [Cache First](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network) strategy the [Request](https://developer.mozilla.org/en-US/docs/Web/API/Request) will be fulfilled using the cached response (if available). If there isn't a cached response, the Request will be fulfilled by a network request and the response will be cached.
+For example, in a [Cache First](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#cache_first_cache_falling_back_to_network) strategy the [`Request`](https://developer.mozilla.org/en-US/docs/Web/API/Request) will be fulfilled using the cached response (if available). If there isn't a cached response, the `Request` will be fulfilled by a network request and the response will be cached.
 
 ```javascript
 import {registerRoute} from 'workbox-routing';
@@ -95,11 +95,11 @@ const adaptiveLoadingPlugin = {
 
 The previous code does the following:
 
-- Implements a `requestWillFetch()` callback: This is called whenever a network request is about to be made, so you can alter the [Request](https://developer.mozilla.org/en-US/docs/Web/API/Request).
+- Implements a `requestWillFetch()` callback: This is called whenever a network request is about to be made, so you can alter the `Request`.
 - Checks the connection type, by using the [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorConcurrentHardware/hardwareConcurrency). Based on the status of the network, it creates a new URL part, indicating the quality of the image to fetch (e.g. `q_30` for 3G users).
-- Creates a new URL based on the dynamic newPart value, and returns the new [Request](https://developer.mozilla.org/en-US/docs/Web/API/Request) to be made, based on that URL.
+- Creates a new URL based on the dynamic `newPart` value, and returns the new `Request` to be made, based on that URL.
 
-Next, pass the plugin to a cacheFirst strategy containing a regular expression to match image URLs (e.g. `/img/`):
+Next, pass the plugin to a `cacheFirst` strategy containing a regular expression to match image URLs (e.g. `/img/`):
 
 ```javascript/5
 workbox.routing.registerRoute(
@@ -123,14 +123,14 @@ Finally the response will be persisted in the cache, and sent back to the page.
 
 ## Cloudinary Workbox Plugin
 
-Cloudinary, one of the leading video and image hosting services, has a [Cloudinary Workbox.js Plugin](https://www.npmjs.com/package/cloudinary-workbox-plugin) that encapsulates the functionality explained in the previous section, making it even easier to implement.
+Cloudinary, a video and image hosting service, has a [Workbox Plugin](https://www.npmjs.com/package/cloudinary-workbox-plugin) that encapsulates the functionality explained in the previous section, making it even easier to implement.
 
 <figure class="w-figure">
   <img src="cloudinary-workbox.png" 
        alt="Cloudinary and Workbox logos.">
 </figure>
 
-The plugin is designed to work with the [Workbox webpack plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin). To implement it, use the [GenerateSW()](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-webpack-plugin.GenerateSW) class:
+The plugin is designed to work with the [Workbox webpack plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin). To implement it, use the [`GenerateSW()`](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-webpack-plugin.GenerateSW) class:
 
 ```javascript
 new workboxPlugin.GenerateSW({
