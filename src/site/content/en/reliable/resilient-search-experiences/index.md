@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Resilient search experiences
+subhead: >
+  Using a service worker to save a search query when a user goes offline
+  and then automatically retry the query once a connection is re-established.
 authors:
   - demianrenzulli
   - jeffposnick

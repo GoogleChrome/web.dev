@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Instant navigation experiences
+subhead: Complementing traditional prefetching techniques with service workers.
 authors:
   - demianrenzulli
   - jeffposnick

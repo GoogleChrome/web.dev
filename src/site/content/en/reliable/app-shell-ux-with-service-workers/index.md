@@ -1,12 +1,16 @@
 ---
 layout: post
 title: App shell UX with service workers and streams
+subhead: >
+  Achieving a SPA-like architecture in multi-page apps by combining
+  partials, service workers, and streams.
 authors:
   - demianrenzulli
   - jeffposnick
 date: 2020-06-23
-description: |
-  How to achieve an SPA-like architecture in multi-page apps by combining partials, service workers, and streams.
+description: >
+  How to achieve an SPA-like architecture in multi-page apps by combining
+  partials, service workers, and streams.
 tags:
   - blog
   - case-study
