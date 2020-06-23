@@ -4,9 +4,14 @@ title: App shell UX with service workers and streams
 authors:
   - demianrenzulli
   - jeffposnick
-date: 2020-07-20
+date: 2020-06-23
 description: |
   How to achieve an SPA-like architecture in multi-page apps by combining partials, service workers, and streams.
+tags:
+  - blog
+  - case-study
+  - network
+  - service-worker
 ---
 
 [Single-page app (SPA)](https://en.wikipedia.org/wiki/Single-page_application) is an architectural pattern in which the browser runs JavaScript code to update the existing page when the user visits a different section of the site, as opposed to loading an entire new page.

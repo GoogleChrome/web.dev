@@ -4,7 +4,7 @@ title: Building resilient search experiences with Workbox
 authors:
   - demianrenzulli
   - jeffposnick
-date: 2020-06-17
+date: 2020-06-23
 description: |
   How to implement a resilient search experience with Workbox, using  Background Sync and the Push API.
 glitch: resilient-search-codelab

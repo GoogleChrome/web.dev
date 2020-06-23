@@ -7,6 +7,12 @@ authors:
 date: 2020-06-23
 description: |
    Learn to use service workers and the Network Information API to achieve an adaptive loading strategy.
+tags:
+  - blog
+  - case-study
+  - network
+  - service-worker
+  - amp
 ---
 
 Users access websites through a wide variety of devices and network connections. Even in major cities, where mobile networks are fast and reliable, one can end up experiencing slower load times, for example, when commuting in the subway, in a car, or just when moving around.
