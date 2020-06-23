@@ -14,7 +14,7 @@ alt: A brick wall with gaps.
 ### Browser compatibility
 
 At the time of writing `gap` is supported in desktop Firefox 63, Firefox for Android 63, 
-and for Chromium-based browsers as of 85. See 
+and Chromium 85 (desktop and Android). See
 [Browser compatibility](https://developer.mozilla.org/docs/Web/CSS/gap#Browser_compatibility) 
 for updates.
 
@@ -179,17 +179,18 @@ In the first 2 examples (without Flexbox `gap`), the children are targeted and
 assigned spacing from other elements. In the antidote gap example, the container 
 owns the spacing. Each child can relieve itself of the burden, while also 
 centralizing the spacing ownership. Simplifying consistency. Reorder, 
-change viewports, remove elements, append new elements, etc and spacing remains 
+change viewports, remove elements, append new elements, etc. and spacing remains 
 consistent. No new selectors, no new media queries, just space.
 
-## Chromium DevTools Updates
+## Chromium DevTools updates
+
 With these updates come changes to Chromium DevTools, notice how the **Styles** 
 pane handles `grid-gap` and `gap` now 👍
 
 <figure class="w-figure">
   <img src="./devtools-gap.png" alt="An office with two people working at a table." style="border-radius: 10px;" width="400">
-  <figcaption class="w-figcaption">Devtools shows the both grid-gap and gap, with 
-  gap shown used below grid-gap as to let the cascade use the latest syntax.</figcaption>
+  <figcaption class="w-figcaption">Devtools shows the both <code>grid-gap</code> and <code>gap</code>, with 
+  <code>gap</code> shown used below <code>grid-gap</code> as to let the cascade use the latest syntax.</figcaption>
 </figure>
 
 DevTools supports both `grid-gap` and `gap`, this is because `gap` is essentially 
@@ -198,7 +199,7 @@ an alias to the previous syntaxes.
 
 ## New layout potential
 
-With Flexbox `gap`, we unlock more than convenience, we unlock powerful, perfectly 
+With Flexbox `gap`, we unlock more than convenience. We unlock powerful, perfectly 
 spaced, intrinsic layouts. In the video and following code sample below, Grid 
 cannot achieve the layout that Flexbox can. Grid must have equal rows and columns, 
 even if they're intrinsically assigned. 
