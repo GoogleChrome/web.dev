@@ -47,6 +47,8 @@ class EventCarousel extends BaseStateElement {
         `;
       }
 
+      // We use "maxresdefault" as the other images have black bars as they try
+      // to fit 4:3 rendering.
       return html`
         <a
           class="w-event-carousel__day"
@@ -56,7 +58,7 @@ class EventCarousel extends BaseStateElement {
           <div class="w-event-carousel__thumbnail">
             <img
               alt="${title}"
-              src="https://img.youtube.com/vi/${videoId}/default.jpg"
+              src="https://img.youtube.com/vi/${videoId}/maxresdefault.jpg"
               width="178"
               height="110"
             />
