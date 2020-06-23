@@ -423,7 +423,7 @@ const qAndAs = [
 
 module.exports = {
   isDuringEvent: false,
-  isPostEvent: false,
+  isPostEvent: true,
   days,
   communityEvents,
   qAndAs,
