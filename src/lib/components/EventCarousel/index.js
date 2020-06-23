@@ -63,7 +63,9 @@ class EventCarousel extends BaseStateElement {
               height="110"
             />
           </div>
-          <div class="w-event-carousel__description">${title} &mdash; All sessions</div>
+          <div class="w-event-carousel__description">
+            ${title} &mdash; All sessions
+          </div>
         </a>
       `;
     };

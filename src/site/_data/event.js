@@ -124,7 +124,7 @@ const days = [
     title: 'Day 2',
     when: '2020-07-01T12:00Z', // 12pm GMT/UTC (+0), note UK time will be 1pm
     duration: 3 * 60, // minutes
-    videoId: 'ukVbZUPkxx0',
+    videoId: null,
     sessions: [
       {
         speaker: 'dalmaer',
@@ -404,7 +404,7 @@ const communityEvents = {
 };
 
 module.exports = {
-  isDuringEvent: true,
+  isDuringEvent: false,
   isPostEvent: false,
   days,
   communityEvents,
