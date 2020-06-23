@@ -380,9 +380,33 @@ for (const day of days) {
   day.date = new Date(day.when);
 }
 
+// TODO: Dummy data for testing, replace with real data once available.
+const communityEvents = {
+  'North America': [
+    {
+      place: 'Austin',
+      date: new Date(),
+      marker: '30.3074624,-99.9946506',
+    },
+    {
+      place: 'San Francisco',
+      date: new Date(),
+      marker: '40.718217,-73.998284',
+    },
+  ],
+  Europe: [
+    {
+      place: 'Zurich',
+      date: new Date(),
+      marker: '47.3774337,8.4666757',
+    },
+  ],
+};
+
 module.exports = {
   isPreEvent: true,
   isDuringEvent: false,
   isPostEvent: false,
   days,
+  communityEvents,
 };

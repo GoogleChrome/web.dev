@@ -7,6 +7,8 @@ date: 2020-03-19
 updated: 2020-04-30
 description: |
   How to open a Progressive Web App in an Android app.
+tags:
+  - progressive-web-apps
 ---
 
 ## Start a PWA in an Android app
@@ -38,7 +40,7 @@ access to modern web platform features such as [contact picker][6], or [filesyst
 
 Cordova was designed to augment the shortcomings of WebView, but the APIs are then limited to the
 Cordova environment.  That means you need to maintain an additional codebase for using Cordova APIs
-for your Android app, separate from your PWA on the open web.   
+for your Android app, separate from your PWA on the open web.
 
 In addition, feature discoverability often doesn't always work as expected and compatibility issues
 between Android versions and OEMs can also be a problem. When using one of those solutions,
@@ -51,7 +53,7 @@ Developers can now use a [Trusted Web Activity][8] as a container to include a P
 activity for an Android app. The technology leverages the browser to render the PWA in full screen,
 ensuring the Trusted Web Activity has the same compatibility with the Web Platform features and
 APIs that the underlying browser does. There are also open source utilities to make implementing
-an Android app using a Trusted Web Activity even easier.  
+an Android app using a Trusted Web Activity even easier.
 
 Another advantage not available in other solutions is that the container shares storage with the
 browser. Login states and users preferences are shared seamlessly across experiences.
@@ -81,7 +83,7 @@ criteria and additional Android-specific criteria such as [policy compliance][9]
   </figcaption>
 </figure>
 
-## Tooling 
+## Tooling
 
 Web developers who want to take advantage of Trusted Web Activity don't need to learn new
 technologies or APIs to transform their PWA into an Android Application. Together, Bubblewrap and
@@ -117,7 +119,7 @@ integrates with Bubblewrap to provide a GUI interface to wrap those PWAs into an
 The PWABuilder team has put together a [great blog post][13] on how to generate an Android application
 using the tool.
 
-## Verifying ownership of the PWA in the Android app 
+## Verifying ownership of the PWA in the Android app
 
 A developer building a great Progressive Web App wouldn't want another developer to build an
 Android app with it without their permission. To ensure this doesn't happen, the Android
@@ -131,7 +133,7 @@ To generate this file, developers need the SHA-256 signature of the key used to 
 is being downloaded by the users.
 
 The key can be generated in multiple ways, and the easiest way to find which key that signed the
-APK being served to end users is to download it from the Play Store itself. 
+APK being served to end users is to download it from the Play Store itself.
 
 To avoid showing a broken application to users, deploy the application to a
 [closed test channel][11], install it into a test device then use [Peter's Asset Link Tool][15] to

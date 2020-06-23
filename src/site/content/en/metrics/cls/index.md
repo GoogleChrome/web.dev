@@ -11,6 +11,7 @@ description: |
   how to measure it
 tags:
   - performance
+  - metrics
 ---
 
 {% Aside %}

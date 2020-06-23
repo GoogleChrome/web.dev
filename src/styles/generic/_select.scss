@@ -11,6 +11,14 @@ select {
   padding-left: 4px;
   width: 100%;
 
+  &.w-select--borderless {
+    border-color:  transparent;
+
+    &:focus {
+      border: 1px solid $WEB_PRIMARY_COLOR;
+    }
+  }
+
   &:focus {
     border-color: $WEB_PRIMARY_COLOR;
     outline: none;

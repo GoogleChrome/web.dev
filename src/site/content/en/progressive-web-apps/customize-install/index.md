@@ -8,6 +8,8 @@ updated: 2020-06-17
 description: |
   Use the beforeinstallprompt event to provide a custom, seamless, in-app
   install experience for your users.
+tags:
+  - progressive-web-apps
 ---
 
 Many browsers make it possible for you to enable and promote the installation

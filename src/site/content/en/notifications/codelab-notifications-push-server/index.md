@@ -9,9 +9,11 @@ glitch: codelab-notifications-push-server
 glitchPath: server.js
 related_post: use-push-notifications-to-engage-users
 draft: true
+tags:
+  - notifications
 ---
 
-In this codelab, you'll build a push notifications server. The server will manage a list of push subscriptions and send notifications to them. 
+In this codelab, you'll build a push notifications server. The server will manage a list of push subscriptions and send notifications to them.
 
 The client code is already complete–in this codelab, you'll work on the server-side functionality.
 
@@ -40,15 +42,15 @@ Start by taking a look at the app's client UI.
 
     * **Subscribe to push** creates a push subscription. It is only available when a service worker has been registered and a `VAPID_PUBLIC_KEY` constant is present in the client code (more about this later), so you can't click it just yet.
 
-    * When you have an active push subscription, **Notify current subscription** requests that the server send a notification to its endpoint. 
+    * When you have an active push subscription, **Notify current subscription** requests that the server send a notification to its endpoint.
 
     * **Notify all subscriptions** tells the server to send a notification to all of the subscription endpoints in its database.
-    
+
       Note that some of these endpoints might be inactive. It's always possible that a subscription will disappear by the time the server sends a notification to it.
 
 Let's look at what's going on server-side. To see messages from the server code, look at the Node.js log within the Glitch interface.
 
-* In the Glitch app, click **Tools -> Logs**. 
+* In the Glitch app, click **Tools -> Logs**.
 
   You'll probably see a message like `Listening on port 3000`.
 
@@ -57,13 +59,13 @@ Let's look at what's going on server-side. To see messages from the server code,
   ```bash
   TODO: Implement sendNotifications()
   Endpoints to send to:  []
-  ``` 
+  ```
 
 Now let's look at some code.
 
-* `public/index.js` contains the completed client code. It performs feature detection, registers and unregisters the service worker, and controls the user's subscription to push notifications. It also sends information about new and deleted subscriptions to the server. 
-    
-  Since you're only going to be working on the server functionality, you won't be editing this file (apart from populating the `VAPID_PUBLIC_KEY` constant). 
+* `public/index.js` contains the completed client code. It performs feature detection, registers and unregisters the service worker, and controls the user's subscription to push notifications. It also sends information about new and deleted subscriptions to the server.
+
+  Since you're only going to be working on the server functionality, you won't be editing this file (apart from populating the `VAPID_PUBLIC_KEY` constant).
 
 * `public/service-worker.js` is a simple service worker that captures push events and displays notifications.
 
@@ -87,28 +89,28 @@ Now let's look at some code.
 
 ## Generate and load VAPID details
 
-Your first TODO item is to generate VAPID details, add them to the Node.js environment variables, and update the client and server code with the new values. 
+Your first TODO item is to generate VAPID details, add them to the Node.js environment variables, and update the client and server code with the new values.
 
 ### Background
 
 When users subscribe to notifications, they need to trust the identity of the app and its server. Users also need to be confident that, when they receive a notification, it's from the same app that set up the subscription. They also need to trust that nobody else can read the notification content.
 
-The protocol that makes push notifications secure and private is called Voluntary Application Server Identification for Web Push (VAPID). VAPID uses public key cryptography to verify the identity of apps, servers, and subscription endpoints, and to encrypt notification content. 
+The protocol that makes push notifications secure and private is called Voluntary Application Server Identification for Web Push (VAPID). VAPID uses public key cryptography to verify the identity of apps, servers, and subscription endpoints, and to encrypt notification content.
 
-In this app, you'll use the [web-push npm package](https://www.npmjs.com/package/web-push) to generate VAPID keys, and to encrypt and send notifications. 
+In this app, you'll use the [web-push npm package](https://www.npmjs.com/package/web-push) to generate VAPID keys, and to encrypt and send notifications.
 
-### Implementation 
+### Implementation
 
-In this step, generate a pair of VAPID keys for your app and add them to the environment variables. Load the environment variables in the server and add the public key as a constant in the client code. 
+In this step, generate a pair of VAPID keys for your app and add them to the environment variables. Load the environment variables in the server and add the public key as a constant in the client code.
 
-1.  Use the `generateVAPIDKeys` function of the `web-push` library to create a pair of VAPID keys. 
+1.  Use the `generateVAPIDKeys` function of the `web-push` library to create a pair of VAPID keys.
 
     In **server.js**, remove the comments from around the following lines of code:
 
     _`server.js`_
 
     ```js/5-6/
-    // Generate VAPID keys (only do this once). 
+    // Generate VAPID keys (only do this once).
     /*
      * const vapidKeys = webpush.generateVAPIDKeys();
      * console.log(vapidKeys);
@@ -117,15 +119,15 @@ In this step, generate a pair of VAPID keys for your app and add them to the env
     console.log(vapidKeys);
     ```
 
-1.  After Glitch restarts your app, it outputs the generated keys to the Node.js log within the Glitch interface (**not** to the Chrome console). To see the VAPID keys, select **Tools -> Logs** in the Glitch interface. 
+1.  After Glitch restarts your app, it outputs the generated keys to the Node.js log within the Glitch interface (**not** to the Chrome console). To see the VAPID keys, select **Tools -> Logs** in the Glitch interface.
 
-    Make sure that you copy your public and private keys from the same key pair! 
+    Make sure that you copy your public and private keys from the same key pair!
 
     Glitch restarts your app every time you edit your code, so the first pair of keys you generate might scroll out of view as more output follows.
 
-1.  In **.env**, copy and paste the VAPID keys. Enclose the keys in double quotes (`"..."`).  
+1.  In **.env**, copy and paste the VAPID keys. Enclose the keys in double quotes (`"..."`).
 
-    For `VAPID_SUBJECT`, you can enter `"mailto:test@test.test"`. 
+    For `VAPID_SUBJECT`, you can enter `"mailto:test@test.test"`.
 
     _`.env`_
 
@@ -139,13 +141,13 @@ In this step, generate a pair of VAPID keys for your app and add them to the env
     VAPID_SUBJECT="mailto:test@test.test"
     ```
 
-1.  In **server.js**, comment out those two lines of code again, since you only need to generate VAPID keys once. 
+1.  In **server.js**, comment out those two lines of code again, since you only need to generate VAPID keys once.
 
     _`server.js`_
 
     ```js//5-6
-    // Generate VAPID keys (only do this once). 
-    /* 
+    // Generate VAPID keys (only do this once).
+    /*
     const vapidKeys = webpush.generateVAPIDKeys();
     console.log(vapidKeys);
     */
@@ -180,7 +182,7 @@ In this step, generate a pair of VAPID keys for your app and add them to the env
 
 {% Aside %}
 
-The values for the environment variables in **.env** are unique to a single Glitch project. If you remix your code, you'll need to repeat the steps above in your new Glitch project. 
+The values for the environment variables in **.env** are unique to a single Glitch project. If you remix your code, you'll need to repeat the steps above in your new Glitch project.
 
 {% endAside %}
 
@@ -188,28 +190,28 @@ The values for the environment variables in **.env** are unique to a single Glit
 
 ### Background
 
-In this app, you'll use the [web-push npm package](https://www.npmjs.com/package/web-push) to send notifications. 
+In this app, you'll use the [web-push npm package](https://www.npmjs.com/package/web-push) to send notifications.
 
 This package automatically encrypts notifications when     `webpush.sendNotification()` is called, so you don't need to worry about that.
 
-web-push accepts multiple options for notifications–for example, you can attach headers to the message, and specify content encoding. 
+web-push accepts multiple options for notifications–for example, you can attach headers to the message, and specify content encoding.
 
 In this codelab, you'll only use two options, defined with the following lines of code:
 
 ```js
-let options = { 
+let options = {
   TTL: 10000; // Time-to-live. Notifications expire after this.
-  vapidDetails: vapidDetails; // VAPID keys from .env 
+  vapidDetails: vapidDetails; // VAPID keys from .env
 };
 ```
 
-The `TTL` (time-to-live) option sets an expiry timeout on a notification. This is a way for the server to avoid sending a notification to a user after it is no longer relevant. 
+The `TTL` (time-to-live) option sets an expiry timeout on a notification. This is a way for the server to avoid sending a notification to a user after it is no longer relevant.
 
 The `vapidDetails` option contains the VAPID keys you loaded from the environment variables.
 
 ### Implementation
 
-In **server.js**, modify the `sendNotifications` function as follows: 
+In **server.js**, modify the `sendNotifications` function as follows:
 
 _`server.js`_
 
@@ -219,9 +221,9 @@ function sendNotifications(database, endpoints) {
   console.log('TODO: Implement sendNotifications()');
   console.log('Endpoints to send to: ', endpoints);
   let notification = JSON.stringify(createNotification());
-  let options = { 
+  let options = {
     TTL: 10000, // Time-to-live. Notifications expire after this.
-    vapidDetails: vapidDetails // VAPID keys from .env 
+    vapidDetails: vapidDetails // VAPID keys from .env
   };
   endpoints.map(endpoint => {
     let subscription = database[endpoint];
@@ -239,9 +241,9 @@ _`server.js`_
 ```js/9-18/8
 function sendNotifications(database, endpoints) {
   let notification = JSON.stringify(createNotification());
-  let options = { 
+  let options = {
     TTL: 10000; // Time-to-live. Notifications expire after this.
-    vapidDetails: vapidDetails; // VAPID keys from .env 
+    vapidDetails: vapidDetails; // VAPID keys from .env
   };
   endpoints.map(endpoint => {
     let subscription = database[endpoint];
@@ -255,7 +257,7 @@ function sendNotifications(database, endpoints) {
     .catch(error => {
       console.log(`Endpoint ID: ${id}`);
       console.log(`Error: ${error.body} `);
-    });  
+    });
   });
 }
 ```
@@ -266,7 +268,7 @@ function sendNotifications(database, endpoints) {
 
 Here's what happens when the user subscribes to push notifications:
 
-1.  User clicks **Subscribe to push**. 
+1.  User clicks **Subscribe to push**.
 
 1.  Client uses the `VAPID_PUBLIC_KEY` constant (the server's public VAPID key) to generate a unique, server-specific `subscription` object. The `subscription` object looks like this:
 
@@ -274,17 +276,17 @@ Here's what happens when the user subscribes to push notifications:
     {
       "endpoint": "https://fcm.googleapis.com/fcm/send/cpqAgzGzkzQ:APA9...",
       "expirationTime": null,
-      "keys": 
-      { 
+      "keys":
+      {
         "p256dh": "BNYDjQL9d5PSoeBurHy2e4d4GY0sGJXBN...",
-        "auth": "0IyyvUGNJ9RxJc83poo3bA" 
-      } 
+        "auth": "0IyyvUGNJ9RxJc83poo3bA"
+      }
     }
     ```
 
 1.  Client sends a `POST` request to the `/add-subscription` URL, including the subscription as stringified JSON in the body.
 
-1.  Server retrieves the stringified `subscription` from the body of the POST request, parses it back to JSON, and adds it to the subscriptions database. 
+1.  Server retrieves the stringified `subscription` from the body of the POST request, parses it back to JSON, and adds it to the subscriptions database.
 
     The database stores subscriptions using their own endpoints as a key:
 
@@ -310,7 +312,7 @@ Here's what happens when the user subscribes to push notifications:
 
 Now, the new subscription is available to the server for sending notifications.
 
-### Implementation 
+### Implementation
 
 Requests for new subscriptions come to the `/add-subscription` route, which is a POST URL. You'll see a stub route handler in **server.js**:
 
@@ -333,13 +335,13 @@ In your implementation, this handler must:
 
 {% Aside %}
 
-In this example, we use the `express-session` npm package to store a list of active subscriptions in a session variable. 
+In this example, we use the `express-session` npm package to store a list of active subscriptions in a session variable.
 
 This works for a demonstration, but it's not suitable for production. For compatible production packages, see the [express-session documentation](https://www.npmjs.com/package/express-session).
 
 {% endAside %}
 
-**To handle new subscriptions:** 
+**To handle new subscriptions:**
 
 *   In **server.js**, modify the route handler for `/add-subscription` as follows:
 
@@ -350,7 +352,7 @@ This works for a demonstration, but it's not suitable for production. For compat
       // TODO: implement handler for /add-subscription
       console.log('TODO: Implement handler for /add-subscription');
       console.log('Request body: ', request.body);
-      let subscriptions = Object.assign({}, request.session.subscriptions);  
+      let subscriptions = Object.assign({}, request.session.subscriptions);
       subscriptions[request.body.endpoint] = request.body;
       request.session.subscriptions = subscriptions;
       response.sendStatus(200);
@@ -367,9 +369,9 @@ The server can, however, find out about subscriptions that are cancelled through
 
 This way, the server avoids sending out a bunch of notifications to non-existent endpoints. Obviously this doesn't really matter with a simple test app, but it becomes important at a larger scale.
 
-### Implementation 
+### Implementation
 
-Requests to cancel subscriptions come to the  `/remove-subscription` POST URL. 
+Requests to cancel subscriptions come to the  `/remove-subscription` POST URL.
 
 The stub route handler in **server.js** looks like this:
 
@@ -390,11 +392,11 @@ In your implementation, this handler must:
 * Access the database of active subscriptions.
 * Remove the cancelled subscription from the list of active subscriptions.
 
-The body of the POST request from the client contains the endpoint that yoou need to remove: 
+The body of the POST request from the client contains the endpoint that yoou need to remove:
 
 ```json
-{ 
-  "endpoint": "https://fcm.googleapis.com/fcm/send/cpqAgzGzkzQ:APA9..." 
+{
+  "endpoint": "https://fcm.googleapis.com/fcm/send/cpqAgzGzkzQ:APA9..."
 }
 ```
 
@@ -402,7 +404,7 @@ The body of the POST request from the client contains the endpoint that yoou nee
 
 * In **server.js**, modify the route handler for `/remove-subscription` as follows:
 
-  _`server.js`_ 
+  _`server.js`_
 
   ```js/4-6/1-3
   app.post('/remove-subscription', (request, response) => {

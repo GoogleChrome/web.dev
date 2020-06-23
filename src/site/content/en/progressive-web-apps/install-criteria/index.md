@@ -7,6 +7,8 @@ date: 2020-02-14
 updated: 2020-06-17
 description: |
   Progressive Web App installability criteria.
+tags:
+  - progressive-web-apps
 ---
 
 Progressive Web Apps (PWAs) are modern, high quality applications built
