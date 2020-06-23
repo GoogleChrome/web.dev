@@ -113,29 +113,26 @@ module.exports = (days, authorsCollection, showCarousel) => {
     `;
   };
 
-  const renderCarouselDay = ({title, videoId}, index) => {
-    const previewImage = videoId
-      ? html`<img
-          src="https://img.youtube.com/vi/${videoId}/maxresdefault.jpg"
-        />`
-      : '';
+  const renderCarouselDay = ({title}) => {
     return html`
-      <a data-index="${index}" class="w-event-carousel__day">
-        <div class="w-event-carousel__thumbnail">${previewImage}</div>
+      <a class="w-event-carousel__day">
+        <div class="w-event-carousel__thumbnail"></div>
         <div class="w-event-carousel__description">${title}</div>
       </a>
     `;
   };
 
+  // If we're showing the carousel, then include a set of dummy elements with the same number of
+  // days. These are then updated by the web-event-carousel element.
   const carousel = showCarousel
-    ? html` <div class="w-event-carousel">
+    ? html` <web-event-carousel class="w-event-carousel">
         ${days.map(renderCarouselDay)}
-      </div>`
+      </web-event-carousel>`
     : '';
 
   return html`
+    ${carousel}
     <web-event-schedule>
-      ${carousel}
       <web-tabs class="w-event-tabs unresolved" label="schedule">
         ${days.map(renderDay)}
       </web-tabs>

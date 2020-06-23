@@ -285,6 +285,13 @@
   &:focus {
     outline: 0;
     opacity: .9;
+    text-decoration: none;
+  }
+
+  &:focus {
+    .w-event-carousel__description {
+      outline: 1px solid $FOCUS_COLOR;
+    }
   }
 
   &:last-child {

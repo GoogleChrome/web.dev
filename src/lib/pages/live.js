@@ -2,6 +2,7 @@
  * @fileoveriew Entrypoint for web.dev LIVE page.
  */
 
+import '../components/EventCarousel';
 import '../components/EventMap';
 import '../components/EventSchedule';
 import '../components/EventStore';
