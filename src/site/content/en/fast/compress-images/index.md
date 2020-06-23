@@ -151,7 +151,7 @@ But why stop there…
 
 The human eye has different level of sensitivity to different colors:
 you can optimize your color encoding to account for this by reducing or increasing the palette for those colors.
-"Nearby" pixels form a two dimensional grid. THis means that each pixel has multiple neighbors:
+"Nearby" pixels form a two-dimensional grid. This means that each pixel has multiple neighbors:
 you can use this fact to further improve delta encoding.
 Instead of looking at just the immediate neighbors for each pixel,
 you can look at larger blocks of nearby pixels and encode different blocks with different settings. And so on…
