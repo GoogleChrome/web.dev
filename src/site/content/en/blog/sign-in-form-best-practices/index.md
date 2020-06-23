@@ -17,8 +17,8 @@ tags:
   - mobile
   - security
   - ux
-codelabs:
-  - codelab-sign-in-form-best-practices
+#codelabs:
+#  - codelab-sign-in-form-best-practices
 ---
 
 
@@ -30,10 +30,12 @@ opportunity.
 
 <!-- TODO(samdutton): Stats for sign-up/sign-in bounce rates. -->
 
+<!--
 {% Aside 'codelab' %}
   If you would prefer to learn these best practices with a hands-on tutorial,
   check out the [Sign-in form best practices codelab](/codelab-sign-in-form-best-practices/).
 {% endAside %}
+-->
 
 Here is an example of a sign-in form that demonstrates all of the best practices:
 
@@ -537,9 +539,10 @@ suffers](https://www.nngroup.com/articles/stop-password-masking/) when users
 can't see the text they've entered. Currently there's no built-in way to do
 this, though [there are plans for
 implementation](https://twitter.com/sw12/status/1251191795377156099). You'll
-need to use JavaScript instead: you can see this in action in [step
+need to use JavaScript instead.
+<!--: you can see this in action in [step
 4](https://glitch.com/edit/#!/signin-form-codelab-4) of the codelab related to this
-article.
+article.-->
 
 <figure class="w-figure">
   <img class="w-screenshot" src="./show-password-google.png" alt="Google sign-in form showing Show password icon." width="350">
@@ -656,11 +659,17 @@ Client-side validation helps users enter data and can avoid unnecessary server
 load, but you must always validate and sanitize data on your backend.
 {% endAside %}
 
+The [Constraint Validation API](https://html.spec.whatwg.org/multipage/forms.html#constraints)
+(which is [widely supported](https://caniuse.com/#feat=constraint-validation)) can help you add
+custom validation using built-in browser UI to set focus and display prompts.
+
+<!--
 [Step 5](https://glitch.com/edit/#!/signin-form-codelab-5) of the sign-in form
 codelab uses the [Constraint Validation
 API](https://html.spec.whatwg.org/multipage/forms.html#constraints) (which is
 [widely supported](https://caniuse.com/#feat=constraint-validation)) to add
 custom validation using built-in browser UI to set focus and display prompts.
+-->
 
 Find out more: [Use JavaScript for more complex real-time
 validation](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_javascript_for_more_complex_real-time_validation).
