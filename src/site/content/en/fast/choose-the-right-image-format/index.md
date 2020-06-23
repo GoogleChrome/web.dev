@@ -175,6 +175,7 @@ As a result, the choice of the "right format" for a particular image is a combin
 </tr>
 </tbody>
 </table>
+</div>
 
 There are three universally supported raster image formats: GIF, PNG, and JPEG.
 In addition to these formats, modern browsers support the newer format WebP,
