@@ -18,7 +18,7 @@ The [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-exper
 
 This API has been built from the ground up with the goals of providing developers with simple, fast, and comprehensive access to CrUX data. The CrUX API only reports _field-based_ user experience data, unlike the existing [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started), which also runs _lab-based_ Lighthouse performance audits. The CrUX API is streamlined and can quickly serve user experience data, making it ideally suited for real-time auditing applications.
 
-To ensure that developers have access to all of the metrics that matter most — [Largest Contentful Paint](https://web.dev/lcp/) (LCP), [First Input Delay](https://web.dev/fid/) (FID), and [Cumulative Layout Shift](https://web.dev/cls/) (CLS) — the CrUX API audits and monitors these [Core Web Vitals](https://web.dev/vitals/#core-web-vitals) at both the origin and URL level.
+To ensure that developers have access to all of the metrics that matter most—[Largest Contentful Paint](https://web.dev/lcp/) (LCP), [First Input Delay](https://web.dev/fid/) (FID), and [Cumulative Layout Shift](https://web.dev/cls/) (CLS)—the CrUX API audits and monitors these [Core Web Vitals](https://web.dev/vitals/#core-web-vitals) at both the origin and URL level.
 
 So let's dive in and see how to use it!
 
@@ -357,7 +357,7 @@ The API may only be called with one origin or URL at a time. To assess multiple 
 
 The results show that this page passes the Core Web Vitals assessments for all three metrics.
 
-```
+```text
 The 75th percentile (1973) of largest_contentful_paint passes the Core Web Vitals "good" threshold (2500).
 The 75th percentile (20) of first_input_delay passes the Core Web Vitals "good" threshold (100).
 The 75th percentile (0.05) of cumulative_layout_shift passes the Core Web Vitals "good" threshold (0.10).
