@@ -3,6 +3,8 @@
 @import '../../../styles/tools/breakpoints';
 
 web-livestream-container {
+  background-color: $WHITE;
+  
   .web-livestream-container__col-yt {
     flex-basis: 880px;
   }
@@ -14,6 +16,10 @@ web-livestream-container {
 
     @include bp(md) {
       display: block;
+    }
+
+    @media (hover: none) {
+      display: none;
     }
   }
 

@@ -10,12 +10,16 @@
 // =============================================================================
 
 web-livestream-container {
+  background-color: $WHITE;
   border-left: 1px solid $GREY_300;
   border-right: 1px solid $GREY_300;
   display: flex;
-  height: 670px;
   margin: auto;
   max-width: 1280px;
+
+  @include bp(md) {
+    height: 670px;
+  }
 }
 
 .web-livestream-container__skeleton-yt {
@@ -29,5 +33,9 @@ web-livestream-container {
 
   @include bp(md) {
     display: block;
+  }
+
+  @media (hover: none) {
+    display: none;
   }
 }

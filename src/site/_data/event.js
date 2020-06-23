@@ -23,7 +23,7 @@ const days = [
     title: 'Day 1',
     when: '2020-06-30T16:00Z', // 9am PDT (-7)
     duration: 3 * 60, // minutes
-    videoId: 'ukVbZUPkxx0',
+    videoId: null,
     sessions: [
       {
         speaker: 'dalmaer',
@@ -404,6 +404,7 @@ const communityEvents = {
 };
 
 module.exports = {
+  isPreEvent: true,
   isDuringEvent: false,
   isPostEvent: false,
   days,
