@@ -166,7 +166,7 @@ how does it help you to optimize images on your site?
 Well, it's important to understand the shape of the problem: RGBA pixels, bit-depth, and various optimization techniques.
 All of these concepts are critical to understand and keep in mind before you dive into the discussions of various raster image formats.
 
-## Lossless vs lossy image compression
+## Lossless versus lossy image compression
 
 For certain types of data, such as source code for a page, or an executable file,
 it is critical that a compressor does not alter or lose any of the original information:
