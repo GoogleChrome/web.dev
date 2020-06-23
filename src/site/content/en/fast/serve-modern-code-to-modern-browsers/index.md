@@ -108,18 +108,20 @@ browsers to be used to access your application.
 Ultimately, you should select the appropriate combination of queries to only
 target browsers that fit your needs.
 
-### @babel/preset-modules
+### Enable Modern Bugfixes
 
 `@babel/preset-env` groups multiple JavaScript syntax features into collections and enables/disables
 them based on the target browsers specified. Although this works well, an entire collection of
 syntax features is transformed when a targeted browser contains a bug with just a single feature.
-This results in more transformed code than is necessary.
+This often results in more transformed code than is necessary.
 
-A separate preset, [`@babel/preset-modules`](https://github.com/babel/preset-modules) solves this
-problem by converting broken syntax to the closest non-broken, but still modern, syntax that would
-work for the targeted browsers. Instead of needing to install this preset separately, enable the
-[`bugfixes`](https://babeljs.io/docs/en/babel-preset-env#bugfixes) property to add these
-optimizations directly to `@babel/preset-env`.
+Originally developed as a [separate preset](https://github.com/babel/preset-modules), the 
+[bugfixes option](https://babeljs.io/docs/en/babel-preset-env#bugfixes) in `@babel/preset-env`
+solves this problem by converting modern syntax that is broken in some browsers to the closest
+equivalent syntax that is not broken in those browsers. The result is nearly identical modern code
+with a few small syntax tweaks that guarantee compatibility in all target browsers. To use this
+optimization, make sure you have `@babel/preset-env` 7.10 or later installed, then set the
+[`bugfixes`](https://babeljs.io/docs/en/babel-preset-env#bugfixes) property to `true`:
 
 ```json
 {
