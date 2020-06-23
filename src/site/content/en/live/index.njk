@@ -122,8 +122,33 @@ date: 2020-06-31
   <hr />
 
   {% if event.isPostEvent %}
-    <section id="map" class="w-event-section">
+    <section id="q-and-a" class="w-event-section">
+      <div class="w-event-section__column-left">
+        <h3 class="w-mt--non">
+          <svg class="w-event-icon" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M14 11C14.55 11 15 10.55 15 10V1C15 0.45 14.55 0 14 0H1C0.45 0 0 0.45 0 1V15L4 11H14ZM13 2V9H2V2H13ZM17 4H19C19.55 4 20 4.45 20 5V20L16 16H5C4.45 16 4 15.55 4 15V13H17V4Z" fill="#5F6368"/></svg>
+          Q & A
+        </h3>
+        <p>
+          During web.dev LIVE, we were happy to address some very insightful and interesting questions from the community across the globe. Here are some of the top questions asked.
+        </p>
+        <a href="/live#content" class="w-event-link">Back to top</a>
+      </div>
 
+      <div class="w-event-section__column-right">
+        <web-event-q-and-a>
+        {%- for entry in event.qAndAs  %}
+          <details class="w-event-question-element" data-category="{{entry.category}}">
+            <summary><span>Q.</span>{{entry.question}}</summary>
+            <p><span>A.</span>{{entry.answer}}</p>
+          </details>
+        {%- endfor %}
+        </web-event-q-and-a>
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="map" class="w-event-section">
       <div class="w-event-section__column-left">
         <h3 class="w-mt--non">
           <svg class="w-event-icon" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-.61.08-1.21.21-1.78L8.99 15v1c0 1.1.9 2 2 2v1.93C7.06 19.43 4 16.07 4 12zm11.99 4c.9 0 1.64.59 1.9 1.4A7.991 7.991 0 0020 12c0-3.35-2.08-6.23-5.01-7.41V5c0 1.1-.9 2-2 2h-2v2c0 .55-.45 1-1 1h-2v2h6c.55 0 1 .45 1 1v3h1z" fill="#5F6368"/></svg>
@@ -139,9 +164,9 @@ date: 2020-06-31
         <web-event-map key={{site.maps.apiKey}}></web-event-map>
       </div>
     </section>
-  {% endif %}
 
-  <hr />
+    <hr />
+  {% endif %}
 
   <section id="subscribe" class="w-event-section w-event-section--subscribe">
     {% set subscribeTitle = "Sign up for web.dev updates" %}
