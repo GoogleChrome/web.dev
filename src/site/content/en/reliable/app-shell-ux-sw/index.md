@@ -1,6 +1,6 @@
 ---
 layout: post
-title: App Shell UX with service workers and streams
+title: App shell UX with service workers and streams
 authors:
   - demianrenzulli
   - jeffposnick
