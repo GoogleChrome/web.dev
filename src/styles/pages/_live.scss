@@ -124,6 +124,22 @@
   }
 }
 
+.w-event-heading--smaller {
+  .w-event-heading__logo {
+    font-size: 33px;
+
+    @include bp(md) {
+      font-size: 33px;
+    }
+  }
+
+  .w-event-heading__subhead {
+    @include bp(md) {
+      font-size: 16px;
+    }
+  }
+}
+
 .w-event-section {
   display: flex;
   flex-flow: row wrap;
@@ -191,6 +207,10 @@
 
 .w-event-section__column-head {
   width: 100%;
+
+  @include bp(md) {
+    order: -1;
+  }
 }
 
 .w-event-section__column-left {
@@ -202,24 +222,48 @@
   text-align: center;
   width: 100%;
 
+  @include bp(md) {
+    align-items: flex-start;
+    flex-grow: 0;
+    padding-left: 16px;
+    text-align: inherit;
+    width: 37.5%;
+  }
+
+  .w-event-carousel {
+    display: flex;
+
+    @include bp(md) {
+      display: none;
+    }
+  }
+
   h3 {
     font-size: 16px;
     margin: 0;
   }
 
   p {
-    max-width: 288px;
     margin: 0;
     margin-top: 24px;
+    max-width: 512px;
+    
+    @include bp(md) {
+      max-width: 288px;
+    }
   }
 
   .w-event-link {
     font-size: 14px;
-    margin-top: 20px;
+    margin-top: 24px;
   }
 
   .w-event-buttons {
     margin: 16px 0;
+  }
+
+  .w-feedback-button {
+    margin-top: 49px;
   }
 }
 
@@ -227,8 +271,20 @@
   max-width: 100%;
   padding: 0 8px;
 
+  @include bp(md) {
+    max-width: none;
+    padding: 0 16px;
+    width: 62.5%;
+  }
+
   @media (min-width: 512px) {
     max-width: 512px;
+  }
+
+  @include bp(sm) {
+    // On larger devices, force padding even on the schedule (this wins over
+    // ...__schedule, above).
+    padding: 0 16px !important;
   }
 
   &.w-event-section__column-right__schedule {
@@ -243,11 +299,14 @@
     }
   }
 
-  @include bp(sm) {
-    // On larger devices, force padding even on the schedule (this wins over
-    // ...__schedule, above).
-    padding: 0 16px !important;
+  .w-event-carousel {
+    display: none;
+
+    @include bp(md) {
+      display: flex;
+    }
   }
+
 }
 
 .w-event-carousel {
@@ -444,26 +503,6 @@ web-tabs.w-event-tabs {
       opacity: initial;
       position: initial;
     }
-  }
-}
-
-@include bp(md) {
-  .w-event-section__column-head {
-    order: -1;
-  }
-
-  .w-event-section__column-left {
-    align-items: flex-start;
-    flex-grow: 0;
-    padding-left: 16px;
-    text-align: inherit;
-    width: 37.5%;
-  }
-
-  .w-event-section__column-right {
-    max-width: none;
-    padding: 0 16px;
-    width: 62.5%;
   }
 }
 

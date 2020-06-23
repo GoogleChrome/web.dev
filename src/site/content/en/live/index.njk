@@ -22,78 +22,129 @@ date: 2020-06-31
     </section>
   {% endif %}
 
-  <div class="w-live-top">
-    <section class="w-event-section">
+  {% if event.isPreEvent or event.isPostEvent %}
+    <div class="w-live-top">
+      <section class="w-event-section">
 
-      <div class="w-event-section__column-left w-event-heading">
-        <h1 class="w-event-heading__logo">web.dev<span>/LIVE</span>
-          <video width="156" height="72" autoplay muted loop playsinline>
-            <source src="live.mp4" type="video/mp4" />
-            <img src="live.png" alt="live" />
-          </video>
-        </h1>
-        <p class="w-event-heading__subhead">June 30 &mdash; July 2, 2020</p>
-      </div>
-
-      <div class="w-event-section__column-head w-event-hero">
-        <img src="hero.png" alt="" />
-      </div>
-
-      <div class="w-event-section__column-right">
-        <h2 class="w-mt--non">
-          Bringing web developers together, from home
-        </h2>
-        <p>
-          These are unprecedented times, with people worldwide looking to stay connected and informed.
-          The Web plays a special role here, and we're proud to see how the community has stepped up.
-        </p>
-        <p>
-          Join Google's Web Platform team, from the comfort of your homes, to celebrate our community's actions, learn modern web techniques and connect with each other.
-        </p>
-
-        <div class="w-event-buttons">
-          <a class="w-button w-button--primary gc-analytics-event" data-category="web.dev" data-label="scroll-to-subscribe" data-action="click" href="#subscribe">
-            Get notified
-          </a>
-          <div class="w-event-calendar">
-            <div class="w-event-calendar__note">
-              <span>Add to calendar</span>
-            </div>
-            <a class="w-button w-button--secondary w-button--small gc-analytics-event" data-category="web.dev" data-label="live, add to Google Calendar" data-action="click" target="_blank"
-              href="https://calendar.google.com/calendar/r?cid=webcal://calendar.google.com/calendar/ical/c_ta9vmmo7jqm7j2bqgg3bsn47oc%40group.calendar.google.com/public/basic.ics"
-              rel="noopener">
-              Google
-            </a>
-            <a class="w-button w-button--secondary w-button--small gc-analytics-event" data-category="web.dev" data-label="live, add to iCal" data-action="click" target="_blank"
-              href="webcal://calendar.google.com/calendar/ical/c_ta9vmmo7jqm7j2bqgg3bsn47oc%40group.calendar.google.com/public/basic.ics"
-              rel="noopener">
-              iCal
-            </a>
-            <a class="w-button w-button--secondary w-button--small gc-analytics-event" data-category="web.dev" data-label="live, add to Outlook" data-action="click" target="_blank"
-              href="webcal://calendar.google.com/calendar/ical/c_ta9vmmo7jqm7j2bqgg3bsn47oc%40group.calendar.google.com/public/basic.ics"
-              rel="noopener">
-              Outlook
-            </a>
-          </div>
+        <div class="w-event-section__column-left w-event-heading">
+          <h1 class="w-event-heading__logo">web.dev<span>/LIVE</span>
+            <video width="156" height="72" autoplay muted loop playsinline>
+              <source src="live.mp4" type="video/mp4" />
+              <img src="live.png" alt="live" />
+            </video>
+          </h1>
+          <p class="w-event-heading__subhead">June 30 &mdash; July 2, 2020</p>
         </div>
 
-      </div>
+        <div class="w-event-section__column-head w-event-hero">
+          <img src="hero.png" alt="" />
+        </div>
 
-    </section>
-  </div>
+        <div class="w-event-section__column-right">
+          <h2 class="w-mt--non">
+            Bringing web developers together, from home
+          </h2>
+          <p>
+            These are unprecedented times, with people worldwide looking to stay connected and informed.
+            The Web plays a special role here, and we're proud to see how the community has stepped up.
+          </p>
+          <p>
+            Join Google's Web Platform team, from the comfort of your homes, to celebrate our community's actions, learn modern web techniques and connect with each other.
+          </p>
 
-  <hr />
+          <div class="w-event-buttons">
+            <a class="w-button w-button--primary gc-analytics-event" data-category="web.dev" data-label="scroll-to-subscribe" data-action="click" href="#subscribe">
+              Get notified
+            </a>
+            <div class="w-event-calendar">
+              <div class="w-event-calendar__note">
+                <span>Add to calendar</span>
+              </div>
+              <a class="w-button w-button--secondary w-button--small gc-analytics-event" data-category="web.dev" data-label="live, add to Google Calendar" data-action="click" target="_blank"
+                href="https://calendar.google.com/calendar/r?cid=webcal://calendar.google.com/calendar/ical/c_ta9vmmo7jqm7j2bqgg3bsn47oc%40group.calendar.google.com/public/basic.ics"
+                rel="noopener">
+                Google
+              </a>
+              <a class="w-button w-button--secondary w-button--small gc-analytics-event" data-category="web.dev" data-label="live, add to iCal" data-action="click" target="_blank"
+                href="webcal://calendar.google.com/calendar/ical/c_ta9vmmo7jqm7j2bqgg3bsn47oc%40group.calendar.google.com/public/basic.ics"
+                rel="noopener">
+                iCal
+              </a>
+              <a class="w-button w-button--secondary w-button--small gc-analytics-event" data-category="web.dev" data-label="live, add to Outlook" data-action="click" target="_blank"
+                href="webcal://calendar.google.com/calendar/ical/c_ta9vmmo7jqm7j2bqgg3bsn47oc%40group.calendar.google.com/public/basic.ics"
+                rel="noopener">
+                Outlook
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+    </div>
+    <hr />
+  {% endif %}
 
   <section id="schedule" class="w-event-section">
 
-    <div class="w-event-section__column-left">
-      <h3 class="w-mt--non">What to expect</h3>
-      <p>
-        Over three days, we'll share quick tips on aspects of modern web development.
-        Each day, <strong>we'll "travel" to a new timezone</strong> to cover a couple of topics and answer your questions.
-      </p>
-      <a href="/community-guidelines/" class="w-event-link">Community guidelines</a>
-    </div>
+    {% if event.isPreEvent %}
+      <div class="w-event-section__column-left">
+        <h3 class="w-mt--non">What to expect</h3>
+        <p>
+          Over three days, we'll share quick tips on aspects of modern web development.
+          Each day, <strong>we'll "travel" to a new timezone</strong> to cover a couple of topics and answer your questions.
+        </p>
+        <a href="/community-guidelines/" class="w-event-link">Community guidelines</a>
+      </div>
+    {% endif %}
+
+    {% if event.isDuringEvent %}
+      <div class="w-event-section__column-left">
+
+        {# TODO: Update with Sam's carousel when it lands #}
+        <div class="w-event-carousel">
+          <a href="#" class="w-event-carousel__day">
+            <div class="w-event-carousel__thumbnail">
+              <img src="" alt="" width="178" height="110">
+            </div>
+            <div>Day 1 — All sessions</div>
+          </a>
+          <div class="w-event-carousel__day">
+            <div class="w-event-carousel__thumbnail">
+            </div>
+            <div>Day 2 — Coming soon</div>
+          </div>
+          <div class="w-event-carousel__day">
+            <div class="w-event-carousel__thumbnail">
+            </div>
+            <div>Day 3 — Coming soon</div>
+          </div>
+        </div>
+
+        <div class="w-event-heading w-event-heading--smaller">
+          <h1 class="w-event-heading__logo">web.dev<span>/LIVE</span>
+            <video width="156" height="72" autoplay muted loop playsinline>
+              <source src="live.mp4" type="video/mp4" />
+              <img src="live.png" alt="live" />
+            </video>
+          </h1>
+          <p class="w-event-heading__subhead">June 30 &mdash; July 2, 2020</p>
+        </div>
+        <p>
+          Thank you for joining us for web.dev LIVE! Over the three days, we'll
+          bring unique content to three different time zones and answer your
+          questions real-time, in your active hours. We encourage you to join us
+          on all three days but if that's not possible, you can watch the videos
+          on demand and leave your questions in the Comments section on YouTube
+          and we'll try our best to respond over the three days of the event.
+        </p>
+        <button class="w-feedback-button w-button w-button--primary">Share Feedback</button>
+        <a href="/community-guidelines/" class="w-event-link">Community guidelines</a>
+      </div>
+    {% endif %}
+
+    {% if event.isPostEvent %}
+    {% endif %}
 
     <div class="w-event-section__column-right w-event-section__column-right__schedule">
       {% if event.isDuringEvent or event.isPostEvent %}
