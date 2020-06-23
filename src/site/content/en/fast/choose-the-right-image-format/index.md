@@ -4,7 +4,7 @@ title: Choose the right image format
 authors:
   - ilyagrigorik
 description: |
-  Selecting the right image format is the first step in delivering optimized images on your website. This guide helps you to make the right choice.
+  Selecting the right image format is the first step in delivering optimized images on your website. This post helps you to make the right choice.
 date: 2018-08-30
 updated: 2020-06-18
 tags:
