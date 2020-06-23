@@ -129,5 +129,13 @@ module.exports = (collections) => {
     authors[key] = author;
   });
 
+  // Only complain that authors are invalid if we've got any posts *at all*
+  // (we can do weird Eleventy builds with no posts, don't complain here).
+  const isRegularBuild = Boolean(allPosts.length);
+  if (isRegularBuild && invalidAuthors.length) {
+    const s = invalidAuthors.join(',');
+    throw new Error(`authors [${s}] have no posts and/or Twitter information`);
+  }
+
   return authors;
 };
