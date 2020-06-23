@@ -92,7 +92,7 @@ As a result, if we know the dimensions of the grid we can easily calculate the f
 * 40,000 bytes / 1024 = 39 KB
 
 {% Aside %}
-Note: As an aside, regardless of the image format used to transfer the data from the server to the client,
+As an aside, regardless of the image format used to transfer the data from the server to the client,
 when the image is decoded by the browser,
 each pixel always occupies 4 bytes of memory.
 This can be an important constraint for large images and devices which do not have a lot of available memory
@@ -224,7 +224,7 @@ For best results, experiment with various quality settings for your images,
 and don't be afraid to dial down the quality&mdash;the visual results are often very good and the filesize savings can be quite large.
 
 {% Aside %}
-Note: Note that quality levels for different image formats are not directly comparable due to differences in algorithms used to encode the image:
+Note that quality levels for different image formats are not directly comparable due to differences in algorithms used to encode the image:
 quality 90 JPEG will produce a very different result than a quality 90 WebP.
 In fact, even quality levels for the same image format may produce visibly different output based on implementation of the compressor!
 {% endAside %}
@@ -245,6 +245,6 @@ the results are often very good and byte savings are significant.
 * **Remove unnecessary image metadata:** many raster images contain unnecessary metadata about the asset:
 geo information, camera information, and so on.
 Use appropriate tools to strip this data.
-* **Serve scaled images:** [resize images](http://localhost:8080/serve-images-with-correct-dimensions/) and ensure that the "display" size is as close as possible to the "natural" size of the image.
+* **Serve scaled images:** [resize images](/serve-images-with-correct-dimensions/) and ensure that the "display" size is as close as possible to the "natural" size of the image.
 Pay close attention to large images in particular, as they account for largest overhead when resized!
 * **Automate, automate, automate:** invest into automated tools and infrastructure that will ensure that all of your image assets are always optimized.

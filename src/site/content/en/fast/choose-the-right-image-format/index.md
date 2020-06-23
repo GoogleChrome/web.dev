@@ -200,7 +200,7 @@ In terms of older image formats, consider the following:
     * If the image asset contains text, stop and reconsider. Text in images is not selectable, searchable, or "zoomable".
     If you need to convey a custom look (for branding or other reasons), use a web font instead.
 1. **Are you optimizing a photo, screenshot, or a similar image asset? Use JPEG.**
-    * JPEG uses a combination of lossy and lossless optimization to reduce filesize of the image asset. Try several JPEG quality levels to find the best quality vs. filesize tradeoff for your asset.
+    * JPEG uses a combination of lossy and lossless optimization to reduce filesize of the image asset. Try several JPEG quality levels to find the best quality versus filesize tradeoff for your asset.
 
 Finally, note that if you are using a WebView to render content in your native application,
 then you have full control of the client and can use WebP exclusively!
