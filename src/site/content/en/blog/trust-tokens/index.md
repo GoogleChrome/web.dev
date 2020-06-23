@@ -4,7 +4,7 @@ subhead: A new API proposal that provides an alternative to passive tracking to 
 authors:
   - samdutton
 date: 2020-06-22
-updated: 2020-06-22
+updated: 2020-06-23
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: Black and white photograph of hand holding token
@@ -181,20 +181,17 @@ fetch('issuer.example/.well-known/trust-token', {
 }).then(...)
 ```
 
-  
-This invokes the [Privacy Pass](https://privacypass.github.io/) issuance
-protocol:  
+This invokes an extension of the [Privacy Pass](https://privacypass.github.io/) issuance
+protocol using a [new cryptographic primitive](https://eprint.iacr.org/2020/072.pdf):
 
 1. Generate a set of pseudo-random numbers known as _nonces_.
-1. [Blind](https://www.cs.bham.ac.uk/~mdr/teaching/modules06/netsec/lectures/blind_sigs.html)
-   the nonces (encode them so the issuer can't view their contents) and attach
-   them to the request in a `Sec-Trust-Token` header.
+ 
+1. Blind the nonces (encode them so the issuer can't view their contents) and attach them to the request in a `Sec-Trust-Token` header.
+ 
 1. Send a POST request to the endpoint provided.
+ 
+The endpoint responds with blinded tokens (signatures on the blind nonces), then the tokens are unblinded and stored internally together with the associated nonces by the browser as trust tokens.
 
-The endpoint responds with
-[blind signatures](http://cs.bham.ac.uk/~mdr/teaching/modules06/netsec/lectures/blind_sigs.html),
-then the signatures and associated nonces are stored internally by the browser
-as trust tokens.
 
 ### Trust token redemption
 
@@ -286,9 +283,10 @@ Trust Token [explainer repository](https://github.com/WICG/trust-token-api).
 -  [Chromium Projects: Trust Token API](https://sites.google.com/a/chromium.org/dev/updates/trust-token)
 -  [Intent to Implement: Trust Token API](https://groups.google.com/a/chromium.org/g/blink-dev/c/X9sF2uLe9rA/m/1xV5KEn2DgAJ)
 -  [Privacy Pass](https://privacypass.github.io/)
+-  [Extensions of Privacy Pass](https://eprint.iacr.org/2020/072.pdf)
 
 ---
 
-Thanks to Kayce Basques, David Van Cleve, Steven Valdez, and Marshall Vale for their help in writing this post.
+Thanks to Kayce Basques, David Van Cleve, Steven Valdez, Tancrède Lepoint and Marshall Vale for their help with writing and reviewing this post.
 
 Photo by [ZSun Fu](https://unsplash.com/photos/b4D7FKAghoE) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
