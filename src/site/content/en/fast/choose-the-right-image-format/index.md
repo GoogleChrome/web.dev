@@ -91,6 +91,7 @@ On the other hand, raster images pose a much larger challenge because they encod
 Hence, the larger the number of pixels, the larger the filesize of a raster image.
 As an example, let's consider the difference between a photo asset displayed at 100x100 (CSS) pixels:
 
+<div class="w-table-wrapper">
 <table>
 <thead>
   <tr>
@@ -117,6 +118,7 @@ As an example, let's consider the difference between a photo asset displayed at 
 </tr>
 </tbody>
 </table>
+</div>
 
 When we double the resolution of the physical screen,
 the total number of pixels increases by a factor of four:
