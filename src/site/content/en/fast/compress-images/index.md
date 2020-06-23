@@ -219,7 +219,7 @@ Some tips and techniques to keep in mind as you work on optimizing your images:
 which makes them a perfect fit for the multi-device and high-resolution world.
 * **Minify and compress SVG assets:** XML markup produced by most drawing applications
 often contains unnecessary metadata which can be removed;
-ensure that your servers are configured to apply GZIP compression for SVG assets.
+Ensure that your servers are configured to apply GZIP compression for SVG assets.
 * **Prefer WebP over older raster formats**: [WebP images](/serve-images-webp/) will usually be far smaller than older images.
 * **Pick best raster image format:** determine your functional requirements and [select the one that suits each particular asset](/choose-the-right-image-format/).
 * **Experiment with optimal quality settings for raster formats:** don't be afraid to dial down the "quality" settings,
