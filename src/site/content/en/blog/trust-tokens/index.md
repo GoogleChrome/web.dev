@@ -19,7 +19,7 @@ tags:
 ## Summary
 
 Trust tokens enable an origin to issue cryptographic tokens to a user it trusts.
-The tokens are stored by the user's browser. The browser can then uses the tokens 
+The tokens are stored by the user's browser. The browser can then use the tokens 
 in other contexts to evaluate the user's authenticity.   
 
 The Trust Token API allows trust of a user in one context (such as gmail.com) to
