@@ -69,7 +69,7 @@ which translates to 8 bits per channel (2 ^ 8 = 256),
 and 4 bytes per pixel (4 channels x 8 bits = 32 bits = 4 bytes).
 As a result, if we know the dimensions of the grid we can easily calculate the filesize:
 
-* 100 x 100px image is composed of 10,000 pixels
+* 100x100 pixel image is composed of 10,000 pixels
 * 10,000 pixels x 4 bytes = 40,000 bytes
 * 40,000 bytes / 1024 = 39 KB
 
