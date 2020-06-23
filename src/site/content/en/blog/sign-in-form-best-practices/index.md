@@ -41,7 +41,7 @@ Here is an example of a sign-in form that demonstrates all of the best practices
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
-    src="https://glitch.com/edit/#!/signin-form-codelab-5?path=index.html"
+    src="https://glitch.com/embed/#!/signin-form-codelab-5?path=index.html&previewSize=100"
     alt="A demonstration of all the sign-in form best practices."
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
@@ -49,9 +49,9 @@ Here is an example of a sign-in form that demonstrates all of the best practices
 
 ## Checklist
 
-* [Use meaningful HTML elements](#use-meaningful-html): `<form>`, `<input>`,
+* [Use meaningful HTML elements](#meaningful-html): `<form>`, `<input>`,
   `<label>`, and `<button>`.
-* [Label every input with a `<label>`](#use-label).
+* [Label every input with a `<label>`](#label).
 * Use element attributes to [access built-in browser
   features](#element-attributes): `type`, `name`, `autocomplete`, `required`,
   `autofocus`.
@@ -59,25 +59,25 @@ Here is an example of a sign-in form that demonstrates all of the best practices
   for the new password in a **Change password** form.
 * [Use `autocomplete="current-password"`](#current-password) for a sign-in
   password input.
-* [Don't use autocomplete for a new password](#no-new-password-autocomplete).
+* [Don't use autocomplete for a new password](#autofill-passwords).
 * [Provide **Show password** functionality](#show-password).
 * [Use `aria-label` and `aria-describedby`](#accessible-password-inputs) for
   password inputs.
 * [Don't double-up inputs](#no-double-inputs).
 * Design forms so the [mobile keyboard doesn't obscure inputs or
-  buttons](#keyboard-obscures-form).
+  buttons](#keyboard-obstruction).
 * Ensure forms are usable on mobile: use [legible text](#size-text-correctly),
-  and make sure inputs and buttons are [large enough to work as touch targets](#size-correctly).
+  and make sure inputs and buttons are [large enough to work as touch targets](#tap-targets).
 <!--
 * [Display links to your terms of service and privacy policy
   documents](#tos-privacy-policy).
 * [Maintain site style and include branding](#branding) (logo and name) on your
   sign-up and sign-in form pages.
 -->
-* [Test in the field as well as the lab](#analytics-rum): build page analytics,
+* [Test in the field as well as the lab](#analytics): build page analytics,
   interaction analytics, and user-centric performance measurement into your
   sign-up and sign-in flow.
-* [Test across browsers and devices](#range-of-devices): form behaviour varies
+* [Test across browsers and devices](#devices): form behaviour varies
   significantly across platforms.
 
 {% Aside %}
@@ -174,7 +174,7 @@ Otherwise clicking or tapping on it will submit the form.
 {% endAside %}
 
 
-### Don't double up inputs {: #double-inputs }
+### Don't double up inputs {: #no-double-inputs }
 
 Some sites force users to enter emails or passwords twice. That might reduce
 errors for a few users, but causes extra work for *all* users, and [increases
@@ -183,8 +183,7 @@ rates](https://uxmovement.com/forms/why-the-confirm-password-field-must-die/).
 It's better to enable users to confirm their email address (you'll need to do that
 anyway) and make it easy for them to reset their password.
 
-[Do we stats for this?]
-
+<!-- [Do we stats for this?] -->
 
 ## Make the most of element attributes {: #element-attributes }
 
@@ -212,7 +211,7 @@ to save your password when a form is submitted (along with using the `name` and
 
 However, you should add a **Show password** icon or button to enable users to
 check the text they've entered—and don't forget to add a **Forgot password**
-link. See [Enable password display](#enable-password-display).
+link. See [Enable password display](#password-display).
 
 <figure class="w-figure">
   <img src="./show-password-google.png" alt="Google sign-in form showing Show password icon." width="300">
@@ -394,8 +393,9 @@ The downside with this approach is that there's no way to share passwords across
 platforms. For example, a user may use Safari on their iPhone and Chrome on
 their Windows laptop.
 
-<!-- TODO(samdutton): [So what's our advice?] -->
 {% endAside %}
+
+<!-- TODO(samdutton): [So what's our advice for the aside above?] -->
 
 ### Help save users from accidentally missing input fields {: #required-fields }
 
@@ -613,7 +613,7 @@ Here's the end result:
 </figure>
 
 
-### Make password inputs accessible {: #accesible-password-inputs }
+### Make password inputs accessible {: #accessible-password-inputs }
 
 Use `aria-describedby` to explain password constraints, using the element that
 describes the constraints for your password input. Screenreaders read the label
@@ -625,7 +625,7 @@ text, the input type (password), and then the description.
 ```
 
 When you add **Show password** functionality, make sure to include
-an`aria-label` to warn that the password will be displayed. Otherwise users may
+an `aria-label` to warn that the password will be displayed. Otherwise users may
 inadvertently reveal passwords.
 
 ```html/1-2
@@ -640,8 +640,8 @@ You can see both ARIA features in action in the following Glitch:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
-    src="https://glitch.com/edit/#!/signin-form?attributionHidden=true"
-    alt="tabindex-zero on Glitch"
+    src="https://glitch.com/embed/#!/signin-form?path=index.html&previewSize=100"
+    alt="signin-form on Glitch"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -729,7 +729,7 @@ Here are some general guidelines to help reduce sign-in form abandonment:
 
 <!-- TODO(samdutton): [Something about (re)CAPTCHA?] -->
 
-## Find out more {: #resources }
+## Keep learning {: #resources }
 
 * [Create Amazing Forms](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
 * [Best Practices For Mobile Form Design](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
