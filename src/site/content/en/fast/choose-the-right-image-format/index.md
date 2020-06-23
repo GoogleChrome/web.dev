@@ -77,7 +77,7 @@ What's the point? Well, the more device pixels there are, the finer the detail o
 
 <figure class="w-figure">
   <img src="./css-vs-device-pixels.png" alt="Three images showing the difference between CSS pixels and device pixels.">
-  <figcaption class="w-figcaption">CSS vs device pixels.</figcaption>
+  <figcaption class="w-figcaption">The difference between CSS pixels and device pixels.</figcaption>
 </figure>
 
 High DPI (HiDPI) screens produce beautiful results, but there is one obvious tradeoff:
