@@ -30,8 +30,8 @@ format capabilities, content of encoded data, quality, pixel dimensions, and mor
 ## Optimizing vector images
 
 All modern browsers support Scalable Vector Graphics (SVG),
-which is an XML-based image format for two-dimensional graphics:
-we can embed the SVG markup directly on the page,
+which is an XML-based image format for two-dimensional graphics.
+You can embed the SVG markup directly on the page
 or as an external resource.
 In turn, an SVG file can be created by most vector-based drawing software,
 or by hand and directly in your favorite text editor.
