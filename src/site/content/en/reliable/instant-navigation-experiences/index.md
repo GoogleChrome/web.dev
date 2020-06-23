@@ -28,7 +28,7 @@ In this guide we'll explore different ways in which [service workers](https://de
        alt="Screenshot of MercadoLibre's listing pages onea and two and a Link Prefetch tag connecting both.">
 </figure>
 
-Prefetched files are requested at the "Lowest" priority and stored in the [HTTP cache](https://web.dev/http-cache/) or the [memory cache](https://calendar.perfplanet.com/2016/a-tale-of-four-caches/) (depending on whether the resource is cacheable or not), for an amount of time that varies by browsers. For example, as of Chrome 56, this value is 5 minutes. Resources are kept around for five minutes, after which the normal `Cache-Control` rules for the resource apply.
+Prefetched files are requested at the "Lowest" priority and stored in the [HTTP cache](https://web.dev/http-cache/) or the [memory cache](https://calendar.perfplanet.com/2016/a-tale-of-four-caches/) (depending on whether the resource is cacheable or not), for an amount of time that varies by browsers. For example, as of Chrome 85, this value is 5 minutes. Resources are kept around for five minutes, after which the normal `Cache-Control` rules for the resource apply.
 
 Using service worker caching can help you extend the lifetime of prefetch resources beyond the five-minute window.
 
@@ -61,7 +61,7 @@ In the following section we'll use [Workbox](https://web.dev/workbox/) to show h
 Precaching sounds similar to prefetching, but it's a different technique. In the first one, the service worker fetches and stores resources (typically static files) while it's installing and keeps them in the cache until a new version of the file is available. In the second, resources are requested ahead of time to have it in the cache for brief periods of time in order to speed up subsequent navigations. 
 {% endAside %}
 
-In the following cases precaching is used to achieve similar goal than prefetching: making navigations faster.
+In the following cases precaching is used to achieve a similar goal as prefetching: making navigations faster.
 
 #### Precaching static pages
 
@@ -99,7 +99,7 @@ workbox.precaching.precacheAndRoute([
 
 ### 2. Extend the lifetime of prefetch resources
 
-As mentioned earlier, `<link rel="prefetch">` fetches and keeps resources in the HTTP cache for a limited amount of time, after which point the `Cache-Control` rules for a resource apply. As of Chrome 56, this value is 5 minutes.
+As mentioned earlier, `<link rel="prefetch">` fetches and keeps resources in the HTTP cache for a limited amount of time, after which point the `Cache-Control` rules for a resource apply. As of Chrome 85, this value is 5 minutes.
 
 Service workers allow you to extend the lifetime of the prefetch pages, while providing the added benefit of making those resources available for offline usage.
 
