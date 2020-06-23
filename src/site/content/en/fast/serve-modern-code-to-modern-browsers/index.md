@@ -201,3 +201,5 @@ separate versions of your application:
   Loading](https://jasonformat.com/modern-script-loading/) explains this in more detail and covers a
   few options that can be used to circumvent this.
 {% endAside %}
+
+_With thanks to Connor Clark and Jason Miller for their reviews._
