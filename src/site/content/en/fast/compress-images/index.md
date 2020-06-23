@@ -60,7 +60,7 @@ taking it from 470 to 199 bytes.
 Because SVG is an XML-based format,
 you can also apply GZIP compression to reduce its transfer size&mdash;make sure your server is configured to compress SVG assets!
 
-A raster image is simply a 2-dimensional grid of individual "pixels"&mdash;for example,
+A raster image is simply a two-dimensional grid of individual "pixels"&mdash;for example,
 a 100x100 pixel image is a sequence of 10,000 pixels.
 In turn, each pixel stores the "[RGBA](https://en.wikipedia.org/wiki/RGBA_color_space)" values:
 (R) red channel, (G) green channel, (B) blue channel, and (A) alpha (transparency) channel.
