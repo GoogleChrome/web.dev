@@ -126,9 +126,8 @@ Thankfully, a lot can be done to reduce the image file size.
 
 One simple strategy is to reduce the "bit-depth" of the image from 8 bits per channel to a smaller color palette:
 8 bits per channel gives us 256 values per channel and 16,777,216 (256 ^ 3) colors in total.
-What if we reduced the palette to 256 colors?
-Then we would only need 8 bits in total for the RGB channels and immediately save two bytes per pixel
-&mdash;that's 50% compression savings over our original 4 bytes per pixel format!
+What if you reduce the palette to 256 colors?
+Then you would only need 8 bits in total for the RGB channels and immediately save two bytes per pixel&mdash;that's 50% compression savings over the original 4 bytes per pixel format!
 
 
 <figure class="w-figure">
