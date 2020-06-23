@@ -126,7 +126,7 @@ double the number of horizontal pixels, times double the number of vertical pixe
 Hence, a "2x" screen not just doubles, but quadruples the number of required pixels!
 
 So, what does this mean in practice?
-High resolution screens enable us to deliver beautiful images, which can be a great product feature.
+High-resolution screens enable you to deliver beautiful images, which can be a great product feature.
 However, high resolution screens also require high-resolution images, therefore:
 
 * prefer vector images whenever possible as they are resolution independent and always deliver sharp results,
