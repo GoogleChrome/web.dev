@@ -4,7 +4,7 @@ title: Choose the correct level of compression
 authors:
   - ilyagrigorik
 description: |
-  Many images can be heavily compressed, giving excellent performance improvements. This guide helps you to choose the right level of compression to maintain the look of images while getting the best performance.
+  Many images can be heavily compressed, giving excellent performance improvements. This post helps you to choose the right level of compression to maintain the look of images while getting the best performance.
 date: 2018-08-30
 updated: 2020-06-18
 tags:
