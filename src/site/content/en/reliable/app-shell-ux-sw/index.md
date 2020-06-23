@@ -17,12 +17,12 @@ Using this type of architecture can provide an [app shell UX](https://developers
 
 In multi-page apps (MPAs) each time a user navigates to a new URL, the browser progressively renders HTML specific to that page. This means a full page refresh every time you visit a new page.
 
-While both are equally valid models to use, you might want to bring some of the benefits of the app-shell UX of SPAs to your existing MPA site.
+While both are equally valid models to use, you might want to bring some of the benefits of the app shell UX of SPAs to your existing MPA site.
 In this article we'll analyze how you can achieve an SPA-like architecture in multi-page apps by combining partials, service workers, and streams.
 
 ## Production case
 
-[DEV](https://dev.to/) is a platform where software developers write articles, take part in discussions, and build their professional profiles.
+[DEV](https://dev.to/) is a community where software developers write articles, take part in discussions, and build their professional profiles.
 
 Their architecture is a multi-page app based on traditional backend templating through Ruby on Rails. Their team was interested in some of the benefits of an app shell model, but didn't want to undertake a major architectural change or move away from their original tech stack. 
 
@@ -42,7 +42,7 @@ This way, the header of the page can be rendered as soon as it's picked from the
 The resulting UX is similar to the app shell UX pattern of SPAs, implemented on a MPA site.
 
 {% Aside %} 
-The previous section contains a quick summary of dev.to's solution. For a more detailed explanation check out their [blog post](https://dev.to/devteam/instant-webpages-and-terabytes-of-data-savings-through-the-magic-of-service-workers-1mkc) on this topic.
+The previous section contains a quick summary of DEV's solution. For a more detailed explanation check out their [blog post](https://dev.to/devteam/instant-webpages-and-terabytes-of-data-savings-through-the-magic-of-service-workers-1mkc) on this topic.
 {% endAside %}
 
 ## Implement an app shell UX architecture in MPAs with Workbox
