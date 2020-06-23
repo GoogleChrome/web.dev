@@ -15,11 +15,12 @@ class LivestreamContainer extends BaseStateElement {
     super();
     this.videoId = null;
     this.isChatActive = true;
+    this.isSignedIn = undefined;
   }
 
   render() {
     if (!this.videoId) {
-      return;
+      return html``;
     }
 
     // prettier-ignore
@@ -69,14 +70,27 @@ class LivestreamContainer extends BaseStateElement {
   /**
    * @param {!Object<string, *>} state
    */
-  onStateChanged({activeEventDay}) {
-    if (!activeEventDay) {
-      return;
-    }
-
-    const {videoId, isChatActive} = activeEventDay;
+  onStateChanged({activeEventDay, isSignedIn}) {
+    const {videoId, isChatActive} = activeEventDay || {
+      videoId: null,
+      isChatActive: false,
+    };
     this.videoId = videoId;
     this.isChatActive = isChatActive;
+
+    // If there was a signed-in state change, reload all our frames as YouTube won't otherwise
+    // reconfigure them automatically. This can technically force a double-reload, if videoId also
+    // changes in the same update, but in practice they're updated separately.
+    // Note that signed-in state might change for one of two reasons:
+    //  1) the user is signed into Google but signs in/out of web.dev (and reload is needless)
+    //  2) the user signs in or out of Google as part of web.dev (reload is required)
+    if (this.isSignedIn !== isSignedIn) {
+      const frames = this.renderRoot.querySelectorAll('iframe');
+      frames.forEach((frame) => {
+        frame.src = '' + frame.src;
+      });
+      this.isSignedIn = isSignedIn;
+    }
   }
 }
 
