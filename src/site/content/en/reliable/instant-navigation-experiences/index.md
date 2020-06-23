@@ -1,13 +1,19 @@
 ---
 layout: post
 title: Instant navigation experiences
+subhead: Complementing traditional prefetching techniques with service workers.
 authors:
   - demianrenzulli
   - jeffposnick
   - gilbertococchi
-date: 2020-07-20
+date: 2020-06-23
 description: |
   Different ways in which service workers can be used as a complement of traditional prefetching techniques.
+tags:
+  - blog
+  - case-study
+  - network
+  - service-worker
 ---
 
 Performing a task on a site commonly involves several steps. For example, purchasing a product in an e-commerce website might involve searching for a product, picking an item from the list of results, adding the item to the cart, and completing the operation by checking out.
