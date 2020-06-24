@@ -11,7 +11,7 @@ description: |
   contacts retrieval, periodic background sync, screen wake lock, web sharing features,
   and many more.
 scheduled: true
-date: 2020-07-01
+date: 2020-06-29
 # updated: 2020-06-15
 tags:
   - blog
