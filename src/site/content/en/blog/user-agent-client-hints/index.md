@@ -128,7 +128,7 @@ Width: 230
 The server can choose to vary its responses, for example by serving images at an
 appropriate resolution.
 
-{% Aside 'objective' %}
+{% Aside %}
   There are ongoing discussions on enabling Client Hints on an initial request,
   but you should be considering responsive design or progressive enhancement
   before going down this route.
