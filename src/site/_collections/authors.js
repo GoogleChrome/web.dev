@@ -79,6 +79,7 @@ module.exports = (collections) => {
       author.data = {
         title: author.title,
         subhead: author.description,
+        canonicalUrl: author.href,
       };
 
       author.elements = authorsPosts.has(author.key)
