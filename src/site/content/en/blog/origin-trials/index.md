@@ -18,7 +18,7 @@ functionality your users can try out for a limited time before the feature
 is made available to everyone. 
 
 When Chrome offers an origin trial for a feature, you can register for the trial to enable 
-the feature for all users on your [origin](https://web.dev/same-site-same-origin/#origin), 
+the feature for all users on your [origin](/same-site-same-origin/#origin), 
 without requiring them to toggle any flags or switch to an alternative build 
 of Chrome (though they may need to upgrade). Origin trials enable developers 
 to build demos and prototypes using new features. The trials also help Chrome engineers 
