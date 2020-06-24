@@ -1,0 +1,7 @@
+version: 1
+snapshot:
+  widths: [375, 865, 1280]
+  percy-css: |
+    iframe {
+      display: none !important;
+    }

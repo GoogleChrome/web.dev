@@ -11,10 +11,12 @@ glitch: explore-devtools
 related_post: identify-resources-via-network-panel
 ---
 
+{% include 'content/devtools-headsup.njk' %}
+
 This codelab walks you through the process of interpreting all of the network
-traffic for a more complex sample application. At the end of the exercise,
-you'll have the skills you need to figure out _what_ your own web application's
-loading, and _when_ each of the requests are being made.
+traffic for a somewhat complex sample application. At the end of the exercise,
+you'll have the skills you need to figure out _what_ your own web application is
+loading and _when_ it's making each request.
 
 {% Aside %}
 The screenshots and instructions in this codelab assume that you're using
@@ -27,25 +29,20 @@ you see in this codelab.
 Navigate to the Network panel to see the network traffic for the demo
 application.
 
-- To preview the site, mouse over the editor, press the **App** button, then the
-  **Show** button.
+{% Instruction 'preview', 'ol' %}
 
-1. Open DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
-1. Select the **Network** tab.
+{% Instruction 'devtools-network', 'ol' %}
 1. Reload the page to see the network traffic.
 
-You should see the DevTools interface open up, in either a new window or as a
-sidebar in your existing window. In the DevTools, select the Network
-tab to open the Network panel.
-The Network panel shows all the assets loaded as a result of your initial
+The Network panel shows all the assets loaded because of your initial
 navigation:
 
 <img class="screenshot" src="./initial-navigation.png" alt="Chrome DevTools' network panel.">
 
 {% Aside %}
 The actual columns you see in the Network panel may be different; the
-screenshot shows a simplified view with everything but the Name, Type, and
-Waterfall columns hidden.
+screenshot shows a simplified view with everything but the **Name**, **Type**, and
+**Waterfall** columns hidden.
 {% endAside %}
 
 ## How to interpret the entries
@@ -54,7 +51,7 @@ Each row of recorded network traffic represents a single request and response
 pair.
 
 The first row, with type `document`, is the initial navigation request for the
-web app's HTML. This is the "source" for the waterfall; each of the subsequent
+web app's HTML. This is the source for the waterfall; each of the subsequent
 requests for additional assets (known as subresources of the main document) flow
 from this original source.
 
@@ -65,28 +62,29 @@ Looking at _when_ those requests are made, the waterfall diagram shows that
 they're not started until very late in the process of responding to the
 navigation request.
 
-Taken together, the requests for the HTML document along with some CSS and
-JavaScript are the set of requests needed to display the full page during the
+Taken together, the requests for the HTML document, CSS, and
+JavaScript are needed to display the full page during the
 initial navigation.
 
 ## Create some additional runtime requests
 
-With the Network panel still open and recording, it's time to simulate something
+With the **Network** panel still open and recording, it's time to simulate something
 common for a lot of web apps: additional API requests used to add more data to
 the page after the initial navigation is complete.
 
-Trigger these additional requests by clicking the **Find Me** button, and then
-**Allow**ing the site to access your current location:
+Trigger these additional requests by clicking **Find Me** in the app and then
+**Allow** in the popup that appears.
+This will allow the site to access your current location:
 
 <img src="./allow-location.png" alt="The allow location permission prompt.">
 
 {% Aside %}
-You could also deny Geolocation permission, in which case the web app
+You could also deny geolocation permission, in which case the web app
 will fall back to a default location.
 {% endAside %}
 
-Once the web app has a location to work with, clicking on the **Find Nearby
-Wikipedia Entries** button results in several additional Network requests. You
+Once the web app has a location to work with, clicking **Find Nearby
+Wikipedia Entries** results in several additional network requests. You
 should see something like this:
 
 ![image](./network-requests.png)

@@ -4,18 +4,21 @@ title: Use WebP images
 authors:
   - katiehempenius
 description: |
-  WebP images are smaller than their JPEG and PNG counterparts - usually on the
-  magnitude of a 25-35% reduction in filesize. This decreases page sizes and
+  WebP images are smaller than their JPEG and PNG counterparts—usually on the
+  magnitude of a 25–35% reduction in filesize. This decreases page sizes and
   improves performance.
 date: 2018-11-05
+updated: 2020-06-24
 codelabs:
   - codelab-serve-images-webp
+tags:
+  - performance
 ---
 
 ## Why should you care?
 
-WebP images are smaller than their JPEG and PNG counterparts - usually on the
-magnitude of a 25-35% reduction in filesize. This decreases page sizes and
+WebP images are smaller than their JPEG and PNG counterparts—usually on the
+magnitude of a 25–35% reduction in filesize. This decreases page sizes and
 improves performance.
 
 -  YouTube found that switching to WebP thumbnails resulted in [10%
@@ -86,8 +89,9 @@ save them in the `compressed_images` directory.
 const imagemin = require('imagemin');
 const imageminWebp = require('imagemin-webp');
 
-imagemin(['images/*'], 'compressed_images', {
-  use: [imageminWebp({quality: 50})]
+imagemin(['images/*'], {
+  destination: 'compressed_images',
+  plugins: [imageminWebp({quality: 50})]
 }).then(() => {
   console.log('Done!');
 });

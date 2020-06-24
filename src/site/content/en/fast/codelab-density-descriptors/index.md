@@ -9,12 +9,13 @@ description: |
 glitch: responsive-images-density-descriptors
 date: 2018-11-05
 related_post: serve-responsive-images
+tags:
+  - performance
 ---
 
 ## Explore This Demo
 
-- To preview the site, mouse over the editor, press the **App** button, then the
-  **Show** button.
+{% Instruction 'preview' %}
 - Reload the page using different devices to see the browser load different
   images.
 

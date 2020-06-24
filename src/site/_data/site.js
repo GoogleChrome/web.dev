@@ -14,11 +14,65 @@
  * limitations under the License.
  */
 
+const locale = require('../../../shared/locale');
+
 module.exports = {
   env: process.env.ELEVENTY_ENV || 'dev',
+  percy: process.env.PERCY || false,
   title: 'web.dev',
   titleVariation: 'Home',
+  defaultLocale: locale.defaultLocale,
   url: 'https://web.dev',
   repo: 'https://github.com/GoogleChrome/web.dev',
-  subscribe: 'https://web.dev/subscribe',
+  subscribe: 'https://web.dev/newsletter',
+  subscribeForm:
+    'https://services.google.com/fb/submissions/591768a1-61a6-4f16-8e3c-adf1661539da/',
+  thumbnail: '/images/social.png',
+  isBannerEnabled: true,
+  banner:
+    'Join us for web.dev LIVE, a digital event from June 30th to July 2nd to learn modern web techniques. More at [web.dev/live](/live/).',
+  // Note that the imageCdn value is only used when we do a production build
+  // of the site. Otherwise all image paths are local. This means you can
+  // develop locally without having to mess with the CDN at all.
+  imageCdn: 'https://webdev.imgix.net',
+  gitlocalize: 'https://gitlocalize.com/repo/3847/',
+  analytics: {
+    ids: {
+      prod: 'UA-126406676-2',
+      // TODO (robdodson): These properties exist in GA but we don't use them.
+      // Adding a note to inject these into pages when we create a fancier
+      // staging environment.
+      staging: 'UA-126406676-3',
+      notFound: 'UA-126406676-4',
+    },
+    dimensions: {
+      SIGNED_IN: 'dimension1',
+      TRACKING_VERSION: 'dimension5',
+    },
+    version: 3,
+  },
+  firebase: {
+    prod: {
+      apiKey: 'AIzaSyCyThSjI_ZUT1NwV9aQLtqklVcNj72gvo8',
+      authDomain: 'auth.web.dev',
+      databaseURL: 'https://web-dev-production-1.firebaseio.com',
+      projectId: 'web-dev-production-1',
+      storageBucket: 'web-dev-production-1.appspot.com',
+      messagingSenderId: '1051961234704',
+      appId: '1:1051961234704:web:d706ff04eb3dc39d128195',
+      measurementId: 'G-RY6ENK9E06',
+    },
+    staging: {
+      apiKey: 'AIzaSyCc27LkiT_ZvmEszthj__edZEzB7B7976s',
+      authDomain: 'web-dev-staging.firebaseapp.com',
+      databaseURL: 'https://web-dev-staging.firebaseio.com',
+      projectId: 'web-dev-staging',
+      storageBucket: 'web-dev-staging.appspot.com',
+      messagingSenderId: '950800540990',
+      appId: '1:950800540990:web:5bfeb5de58f8ce7ceef86f',
+    },
+  },
+  maps: {
+    apiKey: 'AIzaSyCc27LkiT_ZvmEszthj__edZEzB7B7976s',
+  },
 };

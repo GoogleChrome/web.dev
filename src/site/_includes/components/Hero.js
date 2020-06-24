@@ -15,14 +15,22 @@
  */
 
 const {html} = require('common-tags');
-const path = require('path');
-const stripLanguage = require('../../_filters/strip-language');
+const getSrcsetRange = require('../../_utils/get-srcset-range');
 
-module.exports = ({page, hero, alt, heroPosition}) => {
+module.exports = ({hero, alt, heroPosition, heroFit = 'cover'}) => {
+  const srcsetRange = getSrcsetRange();
+
+  // prettier-ignore
   return html`
     <img
-      class="w-hero ${heroPosition ? `w-hero--${heroPosition}` : ''}"
-      src="${stripLanguage(path.join(page.url, hero))}"
+      class="w-hero w-hero--${heroFit} ${heroPosition ? `w-hero--${heroPosition}` : ''}"
+      width="1600"
+      height="480"
+      sizes="100vw"
+      srcset="${srcsetRange.map((width) => html`
+        ${hero}?auto=format&fit=max&w=${width} ${width}w,
+      `)}"
+      src="${hero}"
       alt="${alt}"
     />
   `;

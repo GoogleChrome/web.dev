@@ -4,6 +4,7 @@ title: Use Imagemin to compress images
 authors:
   - katiehempenius
 date: 2018-11-05
+updated: 2020-06-24
 description: |
   Uncompressed images bloat your pages with unnecessary bytes. Run Lighthouse to
   check for opportunities to improve page load by compressing images.
@@ -11,6 +12,8 @@ codelabs:
   - codelab-imagemin-webpack
   - codelab-imagemin-gulp
   - codelab-imagemin-grunt
+tags:
+  - performance
 ---
 
 ## Why should you care?
@@ -167,7 +170,7 @@ or [grunt](/codelab-imagemin-grunt).
 
 You can also use Imagemin by itself as a Node script.
 This code uses the "imagemin-mozjpeg" plugin to compress JPEG files to a quality
-of 50 (‘0' being the worst; ‘100' being the best):
+of 50 ('0' being the worst; '100' being the best):
 
 ```js
 const imagemin = require('imagemin');
@@ -176,10 +179,11 @@ const imageminMozjpeg = require('imagemin-mozjpeg');
 (async() => {
   const files = await imagemin(
       ['source_dir/*.jpg', 'another_dir/*.jpg'],
-      'destination_dir',
-      {plugins: [imageminMozjpeg({quality: 50})]}
+      {
+        destination: 'destination_dir',
+        plugins: [imageminMozjpeg({quality: 50})]
+      }
   );
   console.log(files);
 })();
 ```
-

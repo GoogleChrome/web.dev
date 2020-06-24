@@ -21,9 +21,9 @@ module.exports = (inputPath) => {
   if (!inputPath) {
     /* eslint-disable-next-line */
     console.warn(
-      'inputPath passed to githubLink filter was undefined or null.'
+      'inputPath passed to githubLink filter was undefined or null.',
     );
   }
-  const branch = `master`;
+  const branch = 'master';
   return `${repo}/${path.join('blob', branch, inputPath)}`;
 };

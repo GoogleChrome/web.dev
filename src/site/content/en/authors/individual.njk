@@ -1,0 +1,57 @@
+---
+layout: layout
+title: Authors
+permalink: /en/{{ paged.href }}{% if paged.index > 0 %}{{ paged.index + 1 }}/{% endif %}index.html
+description: Our latest news, updates, and stories for developers
+renderData:
+  title: "{{ paged.title or title }}"
+  description: "{{ paged.description or description }}"
+  rss: "{{ paged.href }}feed.xml"
+pagination:
+  data: collections.authors
+  size: 1
+  alias: paged
+  resolve: values
+---
+{# *-landing-page classes are a holdover from devsite. #}
+{# It would be great to remove them as part of the v1 migration. #}
+<div class="authors-landing-page">
+  {# Make sure Actions are first in the tab order. #}
+  <div class="w-actions">
+    {% include 'partials/subscribe-action.njk' %}
+  </div>
+
+  <div class="w-layout-container w-pb--non">
+    <header class="w-page-header w-author-page-header">
+      <img src="{{paged.data.hero}}" alt="{{paged.data.alt}}" class="w-author-page__image">
+      <h1 class="w-page-header__headline w-author-page-header__headline">{{ renderData.title }}</h1>
+      <p class="w-page-header__copy">{{ renderData.description | safe }}</p>
+      <div class="w-author-page__links">
+        {% if paged.homepage %}
+          <a href="{{ paged.homepage }}" target="_blank" class="w-author-page__link">
+            <img src="/images/icons/language.svg" alt="Homepage" class="w-author-page__icon">
+          </a>
+        {% endif %}
+        {% if paged.twitter %}
+          <a href="https://twitter.com/{{ paged.twitter }}" target="_blank" class="w-author-page__link">
+            <img src="/images/icons/twitter.svg" alt="Twitter" class="w-author-page__icon">
+          </a>
+        {% endif %}
+        {% if paged.github %}
+          <a href="https://github.com/{{ paged.github }}" target="_blank" class="w-author-page__link">
+            <img src="/images/icons/github.svg" alt="GitHub" class="w-author-page__icon">
+          </a>
+        {% endif %}
+        {% if paged.glitch %}
+          <a href="https://glitch.com/@{{ paged.glitch }}" target="_blank" class="w-author-page__link">
+            <img src="/images/icons/glitch.svg" alt="Glitch" class="w-author-page__icon">
+          </a>
+        {% endif %}
+        <a href="{{ renderData.rss }}" target="_blank" class="w-author-page__link">
+          <img src="/images/icons/rss.svg" alt="RSS Feed" class="w-author-page__icon">
+        </a>
+      </div>
+    </header>
+  </div>
+  {% include 'partials/paged.njk' %}
+</div>

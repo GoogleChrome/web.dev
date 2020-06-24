@@ -12,6 +12,8 @@ description: |
 date: 2018-11-05
 codelabs:
   - codelab-serve-modern-code
+tags:
+  - performance
 ---
 
 Building websites that work well on all major browsers is a core tenet of an
@@ -124,7 +126,7 @@ them.
 
 
 Instead of querying for specific browser versions or market share, consider 
-specifying `“esmodules” : true` inside your `.babelrc` file's `targets` field.
+specifying `"esmodules" : true` inside your `.babelrc` file's `targets` field.
 
 ```json
 {
@@ -154,14 +156,26 @@ Ideally, the two version scripts of an application are included like this:
 
 ```html
   <script type="module" src="main.mjs"></script>
-  <script nomodule src="compiled.js"></script>
+  <script nomodule src="compiled.js" defer></script>
 ```
 
 Browsers that support modules fetch and execute `main.mjs` and ignore `compiled.js`.
 The browsers that do not support modules do the opposite.
+
+{% Aside %}
+  Module scripts are deferred by default. The `defer` attribute is added to the
+  `nomodule` script for the same behavior.
+{% endAside %}
 
 If you use webpack, you can set different targets in your configurations for two
 separate versions of your application:
 
 * A version only for browsers that support modules.
 * A version that includes a compiled script which works in any legacy browser. This has a larger file size, since transpilation needs to support a wider range of browsers.
+
+{% Aside %}
+  Although this HTML approach can provide performance benefits, certain browsers have been found to
+  double-fetch when specifying both module and nomodule scripts. Jason Miller's [Modern Script
+  Loading](https://jasonformat.com/modern-script-loading/) explains this in more detail and covers a
+  few options that can be used to circumvent this.
+{% endAside %}

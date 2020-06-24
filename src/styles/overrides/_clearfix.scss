@@ -1,0 +1,11 @@
+.w-clearfix::before {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+.w-clearfix::after {
+  clear: both;
+  content: '';
+  display: block;
+}

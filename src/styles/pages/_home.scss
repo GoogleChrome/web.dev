@@ -1,0 +1,62 @@
+@import '../tools/breakpoints';
+@import '../tools/mixins';
+
+.w-home-promo {
+  margin: 0 auto;
+  max-width: 512px;
+  padding: 72px 24px 0;
+
+  @include bp(md) {
+    max-width: 960px;
+    padding: 96px 32px 0;
+  }
+}
+
+.w-home-promo__grid {
+  align-items: center;
+  display: grid;
+  // sass-lint:disable-all
+  // scss-lint:disable all
+  gap: 2rem;
+  // scss-lint:enable all
+  // sass-lint:enable-all
+  grid-template-columns: 1fr;
+
+  @include bp(md) {
+    // sass-lint:disable-all
+    // scss-lint:disable all
+    gap: 3rem;
+    // scss-lint:enable all
+    // sass-lint:enable-all
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.w-home-promo__box {
+  box-shadow: 0 2px 3px 0 rgba($GREY_800, .3), 0 6px 10px 4px rgba($GREY_800, .15);
+  height: 100%;
+
+  > img {
+    border: 0;
+    display: inline-block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.w-home-promo p {
+  text-align: center;
+
+  @include bp(md) {
+    text-align: left;
+  }
+}
+
+.w-home-promo p:first-of-type {
+  margin-top: 0;
+}
+
+.w-home-promo p:last-of-type {
+  margin-bottom: 0;
+}

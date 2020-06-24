@@ -1,0 +1,17 @@
+{% set gitlocalizeUrl =  page.inputPath | gitlocalizeLink(lang) %}
+{% if translation %}
+{% Banner 'neutral' %}
+    {% if translation === 'none' %}
+    This page is not translated yet.
+    {% elif translation === 'machine' %}
+    This page is automatically translated using the Google Translation
+    API.
+    {% elif translation === 'manual' %}
+    This article was translated from
+    [the original post](/en{{ page.url | stripLanguage}}).
+    {% endif %}
+    {% if gitlocalizeUrl %}
+    Consider improving it by [contributing your translation]({{ gitlocalizeUrl }}).
+    {% endif %}
+{% endBanner %}
+{% endif %}

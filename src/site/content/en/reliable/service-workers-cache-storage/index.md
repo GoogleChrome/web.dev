@@ -4,6 +4,7 @@ title: Service workers and the Cache Storage API
 authors:
   - jeffposnick
 date: 2018-11-05
+updated: 2020-06-24
 description: |
   The browser's HTTP cache is your first line of defense. It's not necessarily
   the most powerful or flexible approach, and you have limited control over the
@@ -30,10 +31,10 @@ A service worker is built into the browser and controlled by a bit of extra
 JavaScript code that you are responsible for creating. You deploy this alongside
 the other files that make up your actual web application.
 
-A service worker has some special powers—among other duties, it patiently waits
+A service worker has some special powers. Among other duties, it patiently waits
 for your web app to make an outgoing request, and then springs into action by
 intercepting it. What the service worker does with this intercepted request is
-up to you!
+up to you.
 
 For some requests, the best course of action might be just to allow the request
 to continue on to the network, just like what would happen if there were no
@@ -51,7 +52,7 @@ developers complete control over the contents of the cache. Instead of relying
 on a combination of HTTP headers and the browser's built-in [heuristics](https://httpwg.org/specs/rfc7234.html#heuristic.freshness),
 the Cache
 Storage API exposes a code-driven approach to caching. The Cache Storage API
-proves very useful when called from your service worker's JavaScript code.
+is particularly useful when called from your service worker's JavaScript.
 
 ### Wait… there's another cache to think about now?
 
@@ -63,7 +64,7 @@ It's still recommended that you configure the `Cache-Control` headers on your we
 server, even when you know that you're using the Cache Storage API. You can
 usually get away with setting `Cache-Control: no-cache` for unversioned URLs,
 and/or `Cache-Control: max-age=31536000` for URLs that contain versioning
-information, like hashes. 
+information, like hashes.
 
 When populating the Cache Storage API cache, the browser
 [defaults to checking for existing entries](https://jakearchibald.com/2016/caching-best-practices/#the-service-worker-the-http-cache-play-well-together-dont-make-them-fight)
@@ -87,6 +88,8 @@ uses that would be difficult or impossible with just the HTTP cache include:
     anything's changed, and enable the user to update content (with a button,
     for example)  when data has actually been updated.
 
+Check out [The Cache API: A quick guide](/cache-api-quick-guide/) to learn more.
+
 ### API nuts and bolts
 
 There are some things to keep in mind about the API's design:
@@ -102,7 +105,7 @@ There are some things to keep in mind about the API's design:
     when caching data. There are no automatic, built-in expiration or freshness
     checks, and once you store an item in the cache, it will persist until your
     code explicitly removes it. (There are libraries to simplify cache
-    maintenance on your behalf—they'll be covered later on in this series.)
+    maintenance on your behalf. They'll be covered later on in this series.)
 +  Unlike with older, synchronous APIs such as
     [`LocalStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage),
     all Cache Storage API operations are asynchronous.
@@ -119,7 +122,7 @@ and the related
 syntax, before diving in.
 
 {% Aside 'codelab' %}
-[Make an application network resilient by registering a service worker](/codelab-service-workers).
+[Make an application reliable by registering a service worker](/codelab-service-workers).
 {% endAside %}
 
 ## Don't deploy that code… yet
@@ -132,6 +135,5 @@ to build a production-ready service worker. The next guide covers one such tool:
 [Workbox](https://developers.google.com/web/tools/workbox/).
 
 {% Aside 'success' %}
-Learn while having fun. Check out the new Service Workies game:
-[Release Preview out now](https://serviceworkies.mastery.games/).
+Learn while having fun. Check out the new [Service Workies game!](https://serviceworkies.com/).
 {% endAside %}

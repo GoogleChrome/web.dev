@@ -14,137 +14,107 @@
  * limitations under the License.
  */
 
-const path = require('path');
 const gulp = require('gulp');
-const eslint = require('gulp-eslint');
-const sass = require('gulp-sass');
-sass.compiler = require('node-sass');
-const sourcemaps = require('gulp-sourcemaps');
-const sasslint = require('gulp-sass-lint');
 const mozjpeg = require('imagemin-mozjpeg');
 const pngquant = require('imagemin-pngquant');
 const imagemin = require('gulp-imagemin');
 const rename = require('gulp-rename');
-const gulpif = require('gulp-if');
-const removeCode = require('gulp-remove-code');
+const through2 = require('through2');
 
 /* eslint-disable max-len */
-const assetTypes = `jpg,jpeg,png,svg,gif,webp,webm,mp4,mov,ogg,wav,mp3,txt,yaml`;
+const assetTypes =
+  'jpg,jpeg,png,svg,gif,webp,webm,mp4,mov,ogg,wav,mp3,txt,yaml';
 /* eslint-enable max-len */
 
 const isProd = process.env.ELEVENTY_ENV === 'prod';
 
-gulp.task('lint-js', () => {
-  return (
-    gulp
-      .src(['.eleventy.js', './src/**/*.js'])
-      // eslint() attaches the lint output to the 'eslint' property
-      // of the file object so it can be used by other modules.
-      .pipe(eslint())
-      // eslint.format() outputs the lint results to the console.
-      // Alternatively use eslint.formatEach().
-      .pipe(eslint.format())
-      // To have the process exit with an error code (1) on
-      // lint error, return the stream and pipe to failAfterError last.
-      .pipe(eslint.failAfterError())
-  );
-});
+const compressImagesTransform = (pngQuality, jpegQuality) => {
+  if (!isProd) {
+    // This is the identity transform, which does nothing and just passes
+    // the images through directly.
+    return through2.obj();
+  }
+  return imagemin([
+    pngquant({quality: [pngQuality, pngQuality]}),
+    mozjpeg({quality: jpegQuality * 100}),
+  ]);
+};
 
-gulp.task('lint-scss', () => {
+// These are global images used in CSS and base HTML, such as author profiles.
+// We don't compress the PNGs here as they are trivially small (site icons).
+gulp.task('copy-global-images', () => {
   return gulp
-    .src('src/styles/**/*.scss')
-    .pipe(sasslint())
-    .pipe(sasslint.format())
-    .pipe(sasslint.failOnError());
+    .src(['./src/images/**/*'])
+    .pipe(compressImagesTransform(1.0, 0.8))
+    .pipe(gulp.dest('./dist/images'));
 });
 
-gulp.task('scss', () => {
-  return (
-    gulp
-      .src('./src/styles/all.scss')
-      .pipe(sourcemaps.init())
-      .pipe(sass().on('error', sass.logError))
-      // Sourcemaps directory is relative to the output directory.
-      // If output dir is './dist' this will place them in './dist/maps'.
-      .pipe(sourcemaps.write('./maps'))
-      .pipe(gulp.dest('./dist'))
-  );
-});
-
-gulp.task('copy-scss', () => {
-  return gulp
-    .src('./src/styles/**/*.scss')
-    .pipe(removeCode({production: true, commentStart: '//'}))
-    .pipe(gulp.dest('./dist/styles'));
-});
-
-// These are images that our CSS refers to and must be checked in to DevSite.
-gulp.task('copy-global-assets', () => {
-  return gulp.src(['./src/images/**/*']).pipe(gulp.dest('./dist/images'));
+// These are misc top-level assets.
+gulp.task('copy-misc', () => {
+  return gulp.src(['./src/misc/**/*']).pipe(gulp.dest('./dist'));
 });
 
 // Images and any other assets in the content directory that should be copied
 // over along with the posts themselves.
-// Because we use permalinks to strip the parent directories form our posts
+// Because we use permalinks to strip the parent directories from our posts
 // we need to also strip them from the content paths.
 gulp.task('copy-content-assets', () => {
-  return gulp
-    .src([
-      `./src/site/content/en/**/*.{${assetTypes}}`,
-    ])
-    .pipe(gulpif(isProd, imagemin([
-      pngquant({quality: [0.5, 0.5]}),
-      mozjpeg({quality: 50}),
-    ])))
-    // This makes the images show up in the same spot as the permalinked posts
-    // they belong to.
-    .pipe(
-      rename(function(assetPath) {
-        const parts = assetPath.dirname.split('/');
-        // Let the en/images directory pass through.
-        if (parts[0] === 'images') {
-          return;
-        }
-        return assetPath.dirname = path.basename(assetPath.dirname);
-      })
-    )
-    .pipe(gulp.dest('./dist/en'));
+  return (
+    gulp
+      .src([`./src/site/content/**/*.{${assetTypes}}`])
+      .pipe(compressImagesTransform(0.8, 0.8))
+      // This makes the images show up in the same spot as the permalinked posts
+      // they belong to.
+      .pipe(
+        rename((assetPath) => {
+          const parts = assetPath.dirname.split('/');
+          // Landing pages should keep their assets.
+          // e.g. en/vitals, en/about
+          if (parts.length <= 2) {
+            return;
+          }
+
+          // Let images pass through if they're special, i.e. part of the
+          // handbook or newsletter. We don't treat these URLs like the
+          // rest of the site and they're allowed to nest.
+          const subdir = parts[1];
+          const imagePassThroughs = ['handbook', 'newsletter'];
+          if (imagePassThroughs.includes(subdir)) {
+            return;
+          }
+
+          // Some assets are nested under directories which aren't part of
+          // their url. For example, we have /en/blog/some-post/foo.jpg.
+          // For these assets we need to remove the /blog/ directory so they
+          // can live at /en/some-post/foo.jpg since that's what we'll actually
+          // serve in production.
+          // e.g. en/blog/foo/bar.jpg -> en/foo/bar.jpg
+          parts.splice(1, 1);
+          assetPath.dirname = parts.join('/');
+        }),
+      )
+      .pipe(gulp.dest('./dist/'))
+  );
 });
 
-// Because eleventy's passthroughFileCopy does not work with permalinks
-// we need to manually copy over blog images ourselves.
-// Note that we only copy over the images in the en/ directory.
-// On the server we'll redirect localized docs to request images from en/.
-// gulp.task('copy-blog-assets', () => {
-//   return gulp
-//     .src([`./src/site/content/en/blog/**/*.{${assetTypes}}`])
-//     .pipe(gulp.dest('./dist/en'));
-// });
+gulp.task('copy-node_modules-assets', () => {
+  return gulp
+    .src(['./node_modules/@webcomponents/webcomponentsjs/bundles/*.js'])
+    .pipe(gulp.dest('./dist/lib/webcomponents/bundles/'));
+});
 
-let buildTask;
-if (isProd) {
-  buildTask = gulp.parallel(
-    'copy-scss',
+gulp.task(
+  'build',
+  gulp.parallel(
+    'copy-global-images',
+    'copy-misc',
     'copy-content-assets',
-  );
-} else {
-  buildTask = gulp.parallel(
-    'scss',
-    'copy-global-assets',
-    'copy-content-assets',
-  );
-}
-gulp.task('build', buildTask);
+    'copy-node_modules-assets',
+  ),
+);
 
 gulp.task('watch', () => {
-  gulp.watch('./src/styles/**/*.scss', gulp.series('scss'));
-  gulp.watch('./src/images/**/*', gulp.series('copy-global-assets'));
-  gulp.watch(
-    './src/site/content/**/*',
-    gulp.series('copy-content-assets')
-  );
-  // gulp.watch(
-  //   `./src/site/content/en/blog/**/*.{${assetTypes}}`,
-  //   gulp.series('copy-blog-assets')
-  // );
+  gulp.watch('./src/images/**/*', gulp.series('copy-global-images'));
+  gulp.watch('./src/misc/**/*', gulp.series('copy-misc'));
+  gulp.watch('./src/site/content/**/*', gulp.series('copy-content-assets'));
 });

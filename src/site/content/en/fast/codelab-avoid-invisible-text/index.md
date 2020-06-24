@@ -1,7 +1,7 @@
 ---
 layout: codelab
 title: Avoid flash of invisible text
-authors: 
+authors:
   - katiehempenius
 description: |
   In this codelab, learn how to display text immediately using Font Face
@@ -9,6 +9,8 @@ description: |
 date: 2018-11-05
 glitch: font-observer
 related_post: avoid-invisible-text
+tags:
+  - performance
 ---
 
 This code lab shows you how to display text immediately using [Font Face
@@ -22,7 +24,7 @@ that detects when a font loads. The
 file has already been saved to the project directory, so you don't need to add it
 separately. However, you do need to add a script tag for it.
 
-- Click the **Remix to Edit** button to make the project editable.
+{% Instruction 'remix' %}
 - Add a script tag for `fontfaceobserver.js` to `index.html`:
 
 ```html/1
@@ -60,7 +62,7 @@ For example, if your CSS was:
 font-family: "Times New Roman", Times, serif;
 ```
 
-you would add `FontFaceObserver(‘Times New Roman')`. Times and serif are
+you would add `FontFaceObserver('Times New Roman')`. Times and serif are
 fallback fonts, so you would not need to declare FontFaceObservers for them.
 
 ### Detect font load
@@ -158,8 +160,7 @@ html.fonts-loaded .text {
 
 ## Verify
 
-- To preview the site, mouse over the editor, press the **App** button, then the
-  **Show** button.
+{% Instruction 'preview' %}
 
 If the page looks like this, then you've successfully implemented Font Face
 Observer and gotten rid of the "Flash of Invisible Text."

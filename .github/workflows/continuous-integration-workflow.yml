@@ -1,0 +1,66 @@
+name: Continuous integration
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    # At 15:00 UTC / 7:00 PST on every day-of-week from Monday through Thursday.
+    - cron: '0 15 * * 1-4'
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm run test
+
+      - name: Build
+        env:
+          ELEVENTY_ENV: prod
+        run: npm run build
+      
+      - name: Index algolia
+        env:
+          ALGOLIA_APP: ${{ secrets.ALGOLIA_APP }}
+          ALGOLIA_KEY: ${{ secrets.ALGOLIA_KEY }}
+        run: node index-algolia.js
+
+      - name: Setup gcloud
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@0.1.1
+        with:
+          version: '270.0.0'
+          service_account_email: ${{ secrets.GCLOUD_EMAIL }}
+          service_account_key: ${{ secrets.GCLOUD_KEY }}
+
+      - name: Stage
+        run: gcloud app deploy --project web-dev-staging --version ${{ github.sha }} --no-promote --quiet
+      
+      - name: Verify staging is live
+        uses: srt32/uptime@v0.1
+        with:
+          url-to-hit: https://${{ github.sha }}-dot-web-dev-staging.appspot.com
+      
+      - name: Deploy to production
+        run: gcloud app deploy --project web-dev-production-1

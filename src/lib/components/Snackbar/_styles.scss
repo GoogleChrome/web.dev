@@ -1,0 +1,112 @@
+@import '../../../styles/settings/colors';
+@import '../../../styles/settings/global';
+@import '../../../styles/tools/breakpoints';
+
+web-snackbar {
+  align-items: center;
+  display: flex;
+  visibility: hidden;
+
+  .web-snackbar__surface {
+    align-items: center;
+    background-color: $GREY_900;
+    display: flex;
+    justify-content: flex-start;
+    opacity: 0;
+    transform: scale(.8);
+    width: 100vw;
+
+    @include bp(sm) {
+      border-radius: $GLOBAL_RADIUS;
+      box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2),
+                  0 6px 10px 0 rgba(0, 0, 0, .14),
+                  0 1px 18px 0 rgba(0, 0, 0, .12);
+      min-width: 344px;
+    }
+
+    @include bp(md) {
+      max-width: 400px;
+    }
+  }
+
+  .web-snackbar__label {
+    color: rgba($WHITE, .87);
+    font-size: .875rem;
+    padding: 14px 16px;
+  }
+
+  .web-snackbar__actions {
+    margin-left: 0;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+  }
+
+  .web-snackbar__action {
+    font-size: .875rem;
+    color: $WEB_SECONDARY_COLOR;
+    height: auto;
+  }
+
+  .web-snackbar__action:hover,
+  .web-snackbar__action:focus,
+  .web-snackbar__action:active {
+    box-shadow: none;
+  }
+
+  .web-snackbar__action:hover {
+    background: rgba($WEB_SECONDARY_COLOR, .08);
+  }
+
+  .web-snackbar__action:focus {
+    background: rgba($WEB_SECONDARY_COLOR, .12);
+  }
+
+  .web-snackbar__action:active {
+    background: rgba($WEB_SECONDARY_COLOR, .16);
+  }
+
+  .web-snackbar__action + .web-snackbar__action {
+    margin-left: 8px;
+  }
+}
+
+web-snackbar[open] {
+  visibility: visible;
+
+  .web-snackbar__surface {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+// Opening animation
+web-snackbar[open][animatable] {
+  .web-snackbar__surface {
+    transition: opacity 150ms cubic-bezier(0, 0, .2, 1),
+                transform 150ms cubic-bezier(0, 0, .2, 1);
+  }
+}
+
+// Closing animation
+web-snackbar[animatable] {
+  visibility: visible;
+
+  .web-snackbar__surface {
+    transition: opacity 75ms cubic-bezier(.4, 0, 1, 1),
+                transform 75ms cubic-bezier(0, 0, .2, 1);
+  }
+}
+
+web-snackbar[stacked] {
+  .web-snackbar__surface {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .web-snackbar__actions {
+    align-self: flex-end;
+    margin-bottom: 8px;
+  }
+}

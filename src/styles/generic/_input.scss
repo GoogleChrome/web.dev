@@ -1,0 +1,37 @@
+@import '../settings/colors';
+
+input[type='email'],
+input[type='password'],
+input[type='text'] {
+  border: 1px solid $GREY_300;
+  font: inherit;
+  font-size: inherit;
+  padding: 14px 8px;
+  width: 100%;
+
+  &:focus {
+    border-color: $WEB_PRIMARY_COLOR;
+    outline: none;
+  }
+}
+
+
+input[type='radio'] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 2px solid $GREY_300;
+  border-radius: 50%;
+  cursor: pointer;
+  flex-shrink: 0;
+  height: 24px;
+  margin: 2px;
+  width: 24px;
+
+  &:checked {
+    background-clip: content-box;
+    background-color: $WEB_PRIMARY_COLOR;
+    border: 2px solid $WEB_PRIMARY_COLOR;
+    padding: 4px;
+  }
+}

@@ -14,66 +14,14 @@
  * limitations under the License.
  */
 
-const {html} = require('common-tags');
-const stripLanguage = require('../../_filters/strip-language');
-
-/* eslint-disable require-jsdoc,indent */
+const BaseCard = require('./BaseCard');
 
 /**
  * PostCard used to preview posts.
- * @param {Object} post An eleventy collection item with post data.
+ * @param {Object} collectionItem An eleventy collection item with post data.
+ * @param {boolean} featured If post is a featured post.
  * @return {string}
  */
-module.exports = ({post}) => {
-  const url = stripLanguage(post.url);
-  const data = post.data;
-  const hero = data && data.hero;
-
-  function renderHero(post, url) {
-    return html`
-      <figure class="w-post-card__figure">
-        <img class="w-post-card__image" src="${url + hero}" alt="${data.alt}" />
-      </figure>
-    `;
-  }
-
-  // function renderAuthors(authors) {
-  //   return html`
-  //     <div class="w-authors">
-  //       ${authors.map((author) => {
-  //         return `${Author({
-  //           post,
-  //           author: contributors[author],
-  //           avatar: author,
-  //           small: true,
-  //         })}`;
-  //       })}
-  //     </div>
-  //   `;
-  // }
-
-  return html`
-    <a href="${url}" class="w-card">
-      <article class="w-post-card">
-        <div
-          class="w-post-card__cover ${hero && `w-post-card__cover--with-image`}"
-        >
-          ${hero && renderHero(post, url)}
-          <h2
-            class="${hero
-              ? `w-post-card__headline--with-image`
-              : `w-post-card__headline`}"
-          >
-            ${data.title}
-          </h2>
-          
-        </div>
-        <div class="w-post-card__desc">
-          <p class="w-post-card__subhead">
-            ${data.subhead}
-          </p>
-        </div>
-      </article>
-    </a>
-  `;
+module.exports = (collectionItem, featured = false) => {
+  return new BaseCard(collectionItem, null, featured).render();
 };

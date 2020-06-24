@@ -1,6 +1,7 @@
 ---
 layout: codelab
 title: Adapt video to image serving based on network quality
+date: 2019-07-08
 authors:
   - mihajlija
 description: |
@@ -8,9 +9,13 @@ description: |
   your content based on the network quality.
 glitch: adaptive-serving-netinfo-starter
 related_post: adaptive-serving-based-on-network-quality
+tags:
+  - performance
 ---
 
-In this codelab, you’ll learn how to adapt your content based on the network
+{% include 'content/devtools-headsup.njk' %}
+
+In this codelab, you'll learn how to adapt your content based on the network
 quality. This page's background video will load only when users are on a fast
 network. On slower networks, an image will load instead.
 
@@ -27,7 +32,7 @@ The `index.html` file contains a `<video>` tag to display the background video (
 To load the video conditionally, first check if the Network Information API is available; if it is, check the connection type.
 
 1. In `script.js`, add an `if` statement that tests whether the `navigator.connection` object exists and whether it has the `effectiveType` property.
-2. Add an `if` statement to check the `effectiveType` of the network. 
+2. Add an `if` statement to check the `effectiveType` of the network.
 
 ```js
 if (navigator.connection && !!navigator.connection.effectiveType) {
@@ -40,7 +45,7 @@ if (navigator.connection && !!navigator.connection.effectiveType) {
 ```
 
 Wrap the existing video loading code in an `else` statement, so that video will
-still load in browsers that don’t support the Network Information API.
+still load in browsers that don't support the Network Information API.
 
 ```js
 if (navigator.connection && !!navigator.connection.effectiveType) {
@@ -74,7 +79,7 @@ if (navigator.connection.effectiveType === '4g') {
 }
 ```
 
-Here’s how the video loading code works: the `<video>` tag doesn't download or display anything at first because its `src` attribute is not set. The video URL to load is specified using the `data-src` attribute.
+Here's how the video loading code works: the `<video>` tag doesn't download or display anything at first because its `src` attribute is not set. The video URL to load is specified using the `data-src` attribute.
 
 ```html
 <video id="coverVideo" autoplay loop muted data-src="https://cdn.glitch.com/b6491350-b058-4eb6-aa6c-55c93122073e%2FMatrix%2C%20Console%2C%20Hacking%2C%20Code.mp4?1551464245607"></video>
@@ -120,7 +125,7 @@ the `data-src` attribute instead of the `src` attribute.
 <img id="coverImage" data-src="https://cdn.glitch.com/36529535-5976-40f8-979b-40c898b86bd0%2F36529535-5976-40f8-979b-40c898b86bd0_1_Sn80dgiwpMjBVrqjfiDbnA.jpg?1553003835358" />
 ```
 
-In `script.js`, add code to set the image’s `src` attribute depending on the
+In `script.js`, add code to set the image's `src` attribute depending on the
 `effectiveType` of the network.
 
 ```js
@@ -143,10 +148,9 @@ if (navigator.connection.effectiveType === '4g') {
 
 To test it yourself:
 
-1. Mouse over the editor, click **App** button, then click **Show** to preview the app.
-2. Press `CTRL + SHIFT + J` or `CMD + OPTION + J` (Mac), to open DevTools.
-3. Click the **Network** tab.
-4. Click the **Throttling** dropdown, which is set to **No throttling** by default. Select **Fast 3G**.
+{% Instruction 'preview', 'ol' %}
+{% Instruction 'devtools-network', 'ol' %}
+1. Click the **Throttling** drop-down, which is set to **No throttling** by default. Select **Fast 3G**.
 
 <img class="w-screenshot" src="./devtools_network_throttling.png" alt='DevTools Network tab with Fast 3G throttling option highlighted'>
 
@@ -160,7 +164,7 @@ Remember how this API has an `onchange`
 [event listener](/adaptive-serving-based-on-network-quality#how-it-works)?
 You can use it for many things: dynamically adapting content such as video quality; restarting deferred data transfers when a change to a high-bandwidth network type is detected; or notifying users when the network quality changes.
 
-Here’s a simple example of how to use this listener. Add it to `script.js`. This
+Here's a simple example of how to use this listener. Add it to `script.js`. This
 code will call the `displayNetworkInfo` function whenever the network
 information changes.
 
@@ -168,7 +172,7 @@ information changes.
 navigator.connection.addEventListener('change', displayNetworkInfo);
 ```
 
-There’s already an empty `<h2>` element on the `index.html` page. Now define the
+There's already an empty `<h2>` element on the `index.html` page. Now define the
 `displayNetworkInfo` function so that it displays the network information in the
 `<h2>` element and invoke the function.
 
@@ -180,17 +184,16 @@ function displayNetworkInfo() {
 displayNetworkInfo();
 ```
 
-Here’s the final state of the [app on Glitch](https://glitch.com/~adaptive-serving-netinfo).
+Here's the final state of the [app on Glitch](https://glitch.com/~adaptive-serving-netinfo).
 
 <img class="w-screenshot" src="./netinfo_app_video_background.png" alt='Matrix-like video background with "NETWORK INFORMATION 4g" text overlay'>
 
 To test it again:
 
-1. Mouse over the editor, click **App** button, then click **Show** to preview the app.
-2. Press `CTRL + SHIFT + J` or `CMD + OPTION + J` (Mac), to open DevTools.
-3. Click the **Network** tab.
-4. Click the **Throttling** dropdown, which is set to **No throttling** by default. Select **Fast 3G**.
-5. Reload the page.
+{% Instruction 'preview', 'ol' %}
+{% Instruction 'devtools-network', 'ol' %}
+1. Click the **Throttling** drop-down, which is set to **No throttling** by default. Select **Fast 3G**.
+{% Instruction 'reload-app', 'ol' %}
 
 The app will update the network information to **3g**:
 

@@ -1,0 +1,113 @@
+@import '../../../styles/settings/colors';
+@import '../../../styles/settings/dimensions';
+@import '../../../styles/settings/type';
+@import '../../../styles/tools/mixins';
+
+// =============================================================================
+// LIGHTHOUSE SCORES METRICS
+//
+// Shows key metrics for a Lighthouse run.
+//
+// =============================================================================
+
+web-lighthouse-scores-metrics {
+  $PADDING: 16px;
+  $CARDS_HEIGHT: 219px;
+
+  .lh-metrics-container {
+    @include elevation(2);
+    border-radius: inherit;
+    background-color: $WHITE;
+    margin-top: $PADDING;
+    padding: $PADDING * 2;
+    min-height: ($PADDING * 4);
+  }
+
+  .lh-metrics-table {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .lh-metrics-vitals {
+    display: flex;
+    font-size: 14px;
+    justify-content: center;
+    padding-top: $PADDING;
+
+    &::before {
+      @include font_material_icon();
+      color: $WEB_VITALS_COLOR;
+      content: 'bookmark';
+      margin-right: 5px;
+      font-size: 20px;
+    }
+  }
+
+  .lh-metrics-table {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .lh-metrics-table__metric {
+    $MARGIN: 15px;
+
+    flex: 1;
+    width: calc(50% - #{$MARGIN});
+    min-width: 260px;
+    max-width: 300px;
+    flex-basis: auto;
+    margin: 0 $MARGIN;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    border-bottom: 1px solid $GREY_200;
+
+    span {
+      display: flex;
+    }
+  }
+
+  .lh-metrics-table__icon {
+    @include font_material_icon();
+    align-items: center;
+    font-size: 16px;
+    margin-left: 5px;
+  }
+
+  .lh-vital {
+    &::after {
+      @include font_material_icon();
+      color: $WEB_VITALS_COLOR;
+      content: 'bookmark';
+      margin-left: 5px;
+    }
+  }
+
+  .lh-metrics-table__score {
+    &.lh-score--fail {
+      color: $FAIL_COLOR;
+
+      .lh-metrics-table__icon::before {
+        content: 'warning';
+      }
+    }
+
+    &.lh-score--average {
+      color: $AVERAGE_COLOR;
+
+      .lh-metrics-table__icon::before {
+        content: 'info';
+      }
+    }
+
+    &.lh-score--pass {
+      color: $PASS_COLOR;
+
+      .lh-metrics-table__icon::before {
+        content: 'check_circle';
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@import '../../../styles/settings/colors';
+
+// animate transforms instead of left/right
+@keyframes indeterminate {
+  0% { left: -35%; right: 100%; }
+  60% { left: 100%; right: -90%; }
+  100% { left: 100%; right: -90%; }
+}
+
+web-progress-bar {
+  display: block;
+}
+
+.web-progress-bar-wrapper {
+  position: relative;
+  height: 4px;
+  display: block;
+  width: 100%;
+  background-color: transparentize($WEB_EXTENDED_TERTIARY_COLOR, .8);
+  border-radius: 2px;
+  overflow: hidden;
+  contain: strict;
+}
+
+.web-progress-bar-indeterminate {
+  background-color: $WEB_EXTENDED_TERTIARY_COLOR;
+}
+
+.web-progress-bar-indeterminate::before {
+  content: '';
+  position: absolute;
+  background-color: inherit;
+  top: 0;
+  left: 3px;
+  bottom: 0;
+  will-change: left, right;
+  animation: indeterminate 2.1s cubic-bezier(.65, .815, .735, .395) infinite;
+}
+
+.web-progress-bar-indeterminate::after {
+  content: '';
+  position: absolute;
+  background-color: inherit;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  will-change: left, right;
+  animation: indeterminate-short 2.1s cubic-bezier(.165, .84, .44, 1) infinite;
+  animation-delay: 1.15s;
+}

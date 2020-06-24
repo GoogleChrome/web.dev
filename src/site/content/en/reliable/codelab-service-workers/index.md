@@ -5,11 +5,13 @@ authors:
   - jeffposnick
 date: 2018-11-05
 description: |
-  In this codelab, learn how to make an application network resilient by
+  In this codelab, learn how to make an application reliable by
   registering a service worker.
 glitch: working-with-sw
 related_post: service-workers-cache-storage
 ---
+
+{% include 'content/devtools-headsup.njk' %}
 
 This codelab shows you how to register a service worker from within your web
 application, and use the Chrome DevTools to observe its behavior. It also
@@ -94,7 +96,7 @@ the
 and knowledge about your web app's network traffic to create a perfectly crafted
 service worker, ready to handle all of your web app's requests.
 
-But... that's all for learning later. At this stage, the focus is on observing
+But… that's all for learning later. At this stage, the focus is on observing
 various service worker events, and getting comfortable using Chrome's DevTools
 to debug the state of your service worker.
 
@@ -122,10 +124,9 @@ Now that you've got the code added to `register-sw.js` and `service-worker.js`
 files, it's time to visit the Live version of your sample project, and observe
 the service worker in action.
 
-- To preview the site, mouse over the editor, press the **App** button, then the
-  **Show** button.
--  Open the DevTools by pressing `CMD + OPTION + i` / `CTRL + SHIFT + i`.
--  Click on the **Console** tab.
+{% Instruction 'preview' %}
+{% Instruction 'devtools' %}
+{% Instruction 'devtools-console', 'ul' %}
 
 You should see something like the following log messages,
 showing that the service worker has been installed and activated:

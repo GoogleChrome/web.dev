@@ -1,0 +1,49 @@
+@import '../../../styles/settings/colors';
+@import '../../../styles/settings/dimensions';
+@import '../../../styles/tools/breakpoints';
+
+web-codelab {
+  // This is `display: flex` inside styles/pages/_codelab.scss.
+
+  .w-sizer {
+    &.w-test {
+      @include bp(md) {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+
+        &::after {
+          content: '';
+          background: $WARNING_COLOR;
+          height: 2px;
+        }
+      }
+    }
+
+    .w-aside {
+      margin: 16px;
+    }
+
+    @include bp(md) {
+      position: sticky;
+      top: $WEB_HEADER_HEIGHT + 16px;
+      height: calc(100vh - #{$WEB_HEADER_HEIGHT + 32px});
+    }
+  }
+
+  .web-codelab__headline {
+    padding-top: 0;
+  }
+
+  .web-codelab__glitch {
+    flex: 1;
+
+    // on small screens, we repurpose this element for the warning notice: put
+    // the notice at the top
+    order: -1;
+    @include bp(md) {
+      order: initial;
+    }
+  }
+}
+

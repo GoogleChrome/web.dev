@@ -1,4 +1,5 @@
 @import '../settings/colors';
+@import '../settings/dimensions';
 
 // =============================================================================
 // SHARED OVERVIEW
@@ -17,7 +18,18 @@
 }
 
 *:focus {
-  outline: 1px solid $WEB_SECONDARY_COLOR;
+  outline: 1px solid $FOCUS_COLOR;
+}
+
+// Used when forcing focus cursor at a particular location on the page.
+.w-force-focus {
+  outline: none !important;
+}
+
+// This will hide the focus indicator if the element receives focus via the
+// mouse, but it will still show up on keyboard focus.
+.js-focus-visible :focus:not(.focus-visible) { // sass-lint:disable-line class-name-format
+  outline: none;
 }
 
 div,
@@ -49,4 +61,13 @@ var {
   -moz-hyphens: none;
   -webkit-hyphens: none;
   hyphens: none;
+}
+
+*:not([href])[id]::before {
+  content: ' ';
+  display: block;
+  height: calc(#{$WEB_HEADER_HEIGHT} + 1.5rem);
+  margin-top: calc(-#{$WEB_HEADER_HEIGHT} - 1.5rem);
+  pointer-events: none;
+  visibility: hidden;
 }

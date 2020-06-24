@@ -9,14 +9,15 @@ description: |
 glitch: responsive-images-multiple-sizes
 date: 2018-11-05
 related_post: serve-responsive-images
+tags:
+  - performance
 ---
 
 ## Try out this demo
 
-- To preview the site, mouse over the editor, press the **App** button, then the
-  **Show** button.
+{% Instruction 'preview' %}
 
-- Reload the app in different sized browser windows to see the browser load
+- Reload the app in differently sized browser windows to see the browser load
 different images and use different layouts at different browser sizes.
 
 ## View the code

@@ -9,7 +9,7 @@ description: |
   updates including a refreshed design, more Lighthouse docs, and a brand
   new blog.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
 ---
 
 With I/O right around the corner, we wanted to sneak out a quick update to let
@@ -31,7 +31,7 @@ plan to ship in the coming months, but we hope you like this new visual style ðŸ
 </figure>
 
 In the Learn section, we've rolled out
-[new Lighthouse audit docs](https://web.dev/learn#lighthouse) with updated
+[new Lighthouse audit docs](/learn#lighthouse) with updated
 images, scoring explainers, and links to guides which dive deeper into specific
 topics.
 

@@ -15,16 +15,38 @@
  */
 
 const {html} = require('common-tags');
+const removeDrafts = require('../../_filters/remove-drafts');
 
 /* eslint-disable max-len */
 
 /**
  * Count the number of posts in a learning path.
  * @param {*} learningPath A learning path data object.
+ * @param {string} lang Language of the page.
  * @return {number}
  */
-function getPostCount(learningPath) {
-  const count = learningPath.topics.reduce((pathItemsCount, topic) => {
+function getPostCount(learningPath, lang) {
+  // TODO (robdodson): It's annoying to have to removeDrafts both here and
+  // in path.njk. Ideally we should do this in the learningPath .11ty.js files
+  // but eleventy hasn't parsed all of the collections when those files get
+  // initialized so we can't look up posts by slug.
+
+  // Merge subtopic pathItems
+  const flattenedTopics = learningPath.topics.map((topic) => {
+    const subPathItems = (topic.subtopics || []).reduce(
+      (accumulator, subtopic) => {
+        return [...accumulator, ...subtopic.pathItems];
+      },
+      [],
+    );
+    return {
+      ...topic,
+      pathItems: [...(topic.pathItems || []), ...subPathItems],
+    };
+  });
+
+  const topics = removeDrafts(flattenedTopics, lang);
+  const count = topics.reduce((pathItemsCount, topic) => {
     return pathItemsCount + topic.pathItems.length;
   }, 0);
   const label = count > 1 ? 'resources' : 'resource';
@@ -34,9 +56,10 @@ function getPostCount(learningPath) {
 /**
  * PathCard used to preview learning paths.
  * @param {Object} path A learning path data object.
+ * @param {string} lang Language of the page.
  * @return {string}
  */
-module.exports = (path) => {
+module.exports = (path, lang) => {
   return html`
     <a href="/${path.slug}" class="w-card" role="listitem">
       <div class="w-path-card">
@@ -50,7 +73,7 @@ module.exports = (path) => {
             <li
               class="w-path-card__info-listitem w-path-card__info-listitem--more-info"
             >
-              ${getPostCount(path)}
+              ${getPostCount(path, lang)}
             </li>
             <li
               class="w-path-card__info-listitem w-path-card__info-listitem--updated"
@@ -60,7 +83,14 @@ module.exports = (path) => {
           </ul>
         </div>
         <div class="w-path-card__cover">
-          <img class="w-path-card__cover-image" src="${path.cover}" alt="" />
+          <img
+            class="w-path-card__cover-image"
+            src="${path.cover}"
+            alt=""
+            loading="lazy"
+            width="100%"
+            height="240"
+          />
         </div>
         <div class="w-path-card__desc">
           <h2 class="w-path-card__headline">${path.title}</h2>

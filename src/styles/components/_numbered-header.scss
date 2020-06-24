@@ -28,7 +28,7 @@ $NUMBERED_COUNTER_SIZE_SMALL: 32px;
 }
 
 .w-numbered-header::before {
-  border-radius: 50%;
+  border-radius: $GLOBAL_ROUNDED;
   box-shadow: 0 2px 4px $DISC_SHADOW;
   content: counter(numbered-headers);
   counter-increment: numbered-headers;

@@ -10,7 +10,7 @@ date: 2019-06-10
 hero: hero.jpg
 hero_position: top
 tags:
-  - post
+  - blog
   - layout
   - css
 ---
@@ -45,8 +45,8 @@ It also means accommodating those needs if they change. To do this we need to
 leverage every part of the CSS toolbox and choose the right tool for the job. As
 Jen explains:
 
-<blockquote class="w-blockquote">
-  <p class="w-blockquote__text">
+<blockquote>
+  <p>
     It includes CSS Grid, but it’s not just about CSS Grid. It’s also about using
     Flexbox, and kind of rediscovering what Flexbox is actually intended to be for.
     Plus, it’s about using some floats sometimes, using things like CSS shapes or
@@ -55,7 +55,7 @@ Jen explains:
     whole system of layout, and how all these pieces fit together in a brand new
     way.
   </p>
-  <cite class="w-blockquote__cite">
+  <cite>
     <a href="http://www.zeldman.com/2018/05/02/transcript-intrinsic-web-design-with-jen-simmons-the-big-web-show/">Intrinsic web design with Jen Simmons</a>
   </cite>
 </blockquote>
@@ -101,7 +101,7 @@ The example below demonstrates the flexibility your site gains when it uses an
 intrinsic layout. While the content might change—sometimes dramatically—the layout
 is able to accommodate these changes in a way that preserves the site's design.
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <video class="w-screenshot" autoplay loop muted playsinline aria-label="Large amounts of text are added to a three column layout. The layout flows the text correctly so it preserves its three column appearance.">
     <source src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-overview/intrinsic-layout-overview_intrinsic-chaos-overview.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-overview/intrinsic-layout-overview_intrinsic-chaos-overview.mp4" type="video/mp4; codecs=h264">
@@ -126,7 +126,7 @@ intrinsic layout.**
     <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-overview/home.jpg" alt="TenHundred store home page" class="screenshot">
   </picture>
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    <a href="https://intrinsic-layout-guide.glitch.me" target="_blank">Preview the final layout demo page</a>
+    <a href="https://intrinsic-layout-guide.glitch.me" target="_blank" rel="noopener noreferrer">Preview the final layout demo page</a>
   </figcaption>
 </figure>
 
@@ -146,7 +146,7 @@ By the end of this series you should have:
 
 ## Better Together 🍻
 We'll acquire some bruises along the way as we bump our heads, shoulders, knees,
-and toes... but I believe it's crucial for when you run into similar issues,
+and toes… but I believe it's crucial for when you run into similar issues,
 that we've gone through a gauntlet together. That means this series includes
 refactor reasoning and results. There's a lot of "play" that needs to happen
 with intrinsic layouts, **I want you to see how I play and reach resilient
@@ -156,7 +156,7 @@ If you don't have the basics of grid or flexbox down, have no fear! **You'll
 pick up the basics along the way** and I'll do my best to provide links that
 explain certain topics in-depth. 👍
 
-<figure class="w-figure w-figure--center">
+<figure class="w-figure">
   <video autoplay loop muted playsinline aria-label="A man and a woman quickly running in place.">
     <source src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-overview/intrinsic-layout-overview_get-started.webm" type="video/webm; codecs=vp8">
     <source src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-overview/intrinsic-layout-overview_get-started.mp4" type="video/mp4; codecs=h264">

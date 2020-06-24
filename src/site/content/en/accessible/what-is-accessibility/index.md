@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What is accessibility
+title: What is accessibility?
 authors:
   - robdodson
 date: 2018-11-18
@@ -26,12 +26,7 @@ diverse range of users in the world and the kinds of accessibility topics that
 affect them. To explain further, here's an informative video from Victor Tsaran,
 a Technical Program Manager at Google.
 
-<div class="video-wrapper-full-width">
-  <iframe class="devsite-embedded-youtube-video" data-video-id="RHIVx4m8V4M"
-          data-autohide="1" data-showinfo="0" data-rel="0"
-          frameborder="0" allowfullscreen>
-  </iframe>
-</div>
+{% YouTube 'RHIVx4m8V4M' %}
 
 Generally speaking, accessibility concerns can be split into four broad
 categories:
@@ -43,7 +38,7 @@ categories:
 
 Planning for accessibility means thinking about users who are experiencing some
 type of impairment or disability in one or more of these categories. Bear
-in mind that that experience might be non-physical or temporary — for instance,
+in mind that that experience might be non-physical or temporary—for instance,
 trying to read a screen outside during a bright, sunny day or operating a
 device one-handed while carrying a cup of coffee.
 
@@ -63,7 +58,7 @@ descriptions of content and controls.
 
 Motor and dexterity impairments may affect a user's ability to use a mouse,
 touchscreen, or other pointing device. Some users may rely on alternative input
-devices to access content. These devices might include a keyboard, head- or 
+devices to access content. These devices might include a keyboard, head- or
 eye-tracking software, switch devices, sip-and-puff devices, or voice access.
 
 ### Auditory

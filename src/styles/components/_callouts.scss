@@ -1,0 +1,101 @@
+@import '../tools/mixins';
+
+.w-callout {
+  margin: 2.25em 0;
+
+  @include bp(sm) {
+    // sass-lint:disable-block indentation
+    border-radius: $GLOBAL_RADIUS_MEDIUM;
+    box-shadow:
+    0 2px 4px -1px rgba(0, 0, 0, .2),
+    0 4px 5px 0 rgba(0, 0, 0, .14),
+    0 1px 10px 0 rgba(0, 0, 0, .12);
+    grid-template-columns: 1fr 1fr;
+    padding: 1.5rem;
+  }
+}
+
+.w-callout--2col {
+  @include bp(sm) {
+    display: grid;
+    font-size: .889em;
+    // sass-lint:disable-all
+    // scss-lint:disable all
+    gap: 1rem;
+    // sass-lint:enable-all
+    // scss-lint:enable all
+  }
+}
+
+.w-callout__header {
+  padding-bottom: 1rem;
+}
+
+.w-callout__lockup {
+  @include w-headline--three();
+  display: inline-flex;
+  // Ugh. Bad idea including margins in the heading styles.
+  // They get reset at every breakpoint.
+  margin: 0 0 .75rem !important;
+}
+
+.w-callout__lockup--codelab {
+  color: $WEB_EXTENDED_SECONDARY_COLOR;
+}
+
+.w-callout__lockup::before {
+  @include font-material-icon();
+  display: inline-block;
+  font-size: 20px;
+  margin: 0 8px 0 0;
+}
+
+.w-callout__lockup--codelab::before {
+  content: 'code';
+}
+
+.w-callout__headline {
+  @include w-headline--two-small;
+  margin: 0 0 .25rem !important;
+}
+
+.w-callout__blurb {
+  margin: 0;
+}
+
+.w-callout__list {
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.w-callout__listitem {
+  width: 100%;
+}
+
+.w-callout__listitem:not(:last-of-type) {
+  border-bottom: 1px solid $BORDER_COLOR;
+}
+
+.w-callout__link {
+  align-items: center;
+  box-sizing: content-box;
+  display: flex;
+  min-height: 2.5rem;
+  padding: .5rem 26px .5rem 0;
+  position: relative;
+}
+
+.w-callout__link--codelab {
+  color: $WEB_EXTENDED_SECONDARY_COLOR;
+}
+
+.w-callout__link::after {
+  @include font-material-icon();
+  content: 'chevron_right';
+  font-size: 20px;
+  margin-top: -10px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+}

@@ -2,7 +2,9 @@
 layout: post
 title: Enable text compression
 description: |
-  Learn about the uses-text-compression audit.
+  Learn about how enabling text compression can improve your webpage load performance.
+date: 2019-05-02
+updated: 2020-06-24
 web_lighthouse:
   - uses-text-compression
 ---
@@ -13,10 +15,7 @@ The Opportunities section of your Lighthouse report lists all text-based resourc
 that aren't compressed:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="uses-text-compression.png" alt="Enable text compression">
-  <figcaption class="w-figcaption">
-    Fig. 1 — Enable text compression
-  </figcaption>
+  <img class="w-screenshot" src="uses-text-compression.png" alt="A screenshot of the Lighthouse Enable text compression audit">
 </figure>
 
 ## How Lighthouse handles text compression
@@ -31,7 +30,7 @@ Lighthouse then compresses each of these with
 [GZIP](https://www.gnu.org/software/gzip/) to compute the potential
 savings.
 
-If the original size of a response is less than 1.4KB, or if the 
+If the original size of a response is less than 1.4KiB, or if the
 potential compression savings is less than 10% of the original size, then
 Lighthouse does not flag that response in the results.
 
@@ -46,40 +45,53 @@ If Brotli is used, even more savings are possible.
 Enable text compression on the server(s) that served these responses in order to
 pass this audit.
 
-Configure your server to compress the response with [Brotli](https://opensource.googleblog.com/2015/09/introducing-brotli-new-compression.html),
-if the browser
-supports it.
-Brotli is a newer compression format, but it's not universally
-supported in browsers.
-Do a search for "how to enable Brotli compression in
-`<server>`" to learn how to implement it, where `<server>` is the name of
-your server.
+When a browser requests a resource, it will use the
+[`Accept-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding)
+HTTP request header to indicate what compression algorithms it supports.
 
-Use GZIP as a fallback to Brotli.
-GZIP is universally supported in all
-modern browsers, but is less efficient than Brotli.
-See [Server Configs](https://github.com/h5bp/server-configs)
+```text
+Accept-Encoding: gzip, compress, br
+```
+
+If the browser supports [Brotli](https://opensource.googleblog.com/2015/09/introducing-brotli-new-compression.html)
+(`br`) you should use Brotli because it can reduce the file size of the resources more than the
+other compression algorithms. Search for `how to enable Brotli compression in <X>`, where
+`<X>` is the name of your server. As of June 2020 Brotli is supported in all major browsers except
+Internet Explorer, desktop Safari, and Safari on iOS. See
+[Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding#Browser_compatibility)
+for updates.
+
+Use GZIP as a fallback to Brotli. GZIP is supported in all major browsers,
+but is less efficient than Brotli. See [Server Configs](https://github.com/h5bp/server-configs)
 for examples.
+
+Your server should return the
+[`Content-Encoding`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding)
+HTTP response header to indicate what compression algorithm it used.
+
+```text
+Content-Encoding: br
+```
 
 ## Check if a response was compressed in Chrome DevTools
 
 To check if a server compressed a response:
 
-1. Go to the **Network** panel in DevTools.
+{% Instruction 'devtools-network', 'ol' %}
 1. Click the request that caused the response you're interested in.
 1. Click the **Headers** tab.
-1. Check the `content-heading` header in the **Response Headers** section.
+1. Check the `content-encoding` header in the **Response Headers** section.
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" src="content-encoding.svg" alt="The content-encoding response header">
   <figcaption class="w-figcaption">
-    Fig. 1 — The <code>content-encoding</code> response header
+    The <code>content-encoding</code> response header.
   </figcaption>
 </figure>
 
 To compare the compressed and de-compressed sizes of a response:
 
-1. Go to the **Network** panel.
+{% Instruction 'devtools-network', 'ol' %}
 1. Enable large request rows.
 See [Use large request rows](https://developers.google.com/web/tools/chrome-devtools/network/reference#request-rows).
 1. Look at the **Size** column for the response you're interested in. The
@@ -88,7 +100,6 @@ See [Use large request rows](https://developers.google.com/web/tools/chrome-devt
 
 See also [Minify and compress network payloads](/reduce-network-payloads-using-text-compression).
 
+## Resources
 
-## More information
-
-- [Enable text compression audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-text-compression.js)
+- [Source code for **Enable text compression** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-text-compression.js)

@@ -1,4 +1,12 @@
-# Contributing: submitting patches and tutorials
+# Contributing 💪
+
+## Authoring written content on the site
+
+If you plan to write a blog post or a guide for a collection take a moment to
+look over the [web.dev handbook](https://web.dev/handbook) and familiarize
+yourself with the process. When you're ready, follow the steps in the
+[Quickstart](https://web.dev/handbook/quick-start/) to create your content
+proposal.
 
 ## Submitting a pull request
 
@@ -20,7 +28,7 @@ instructions for how to sign and return it.
 
 1. Sign the contributors license agreement above.
 2. Decide which code you want to submit. A submission should be a set of changes
-that addresses one issue in the [issue tracker](https://github.com/Google/WebFundamentals/issues).
+that addresses one issue in the [issue tracker](https://github.com/GoogleChrome/web.dev/issues).
 Please don't mix more than one logical change per submission, because it makes
 the history hard to follow. If you want to make a change
 (e.g. add a sample or feature) that doesn't have a corresponding issue in the
@@ -29,12 +37,12 @@ issue tracker, please create one.
 sure to include the issue number you've fixed and the name you used to sign
 the CLA.
 
-## Writing Code ##
+## Writing Code
 
 If your contribution contains code, please make sure that it follows 
 [the style guide](https://google.github.io/styleguide/jsguide.html).
 Otherwise, we will have to ask you to make changes, and that's no fun for anyone.
 
-## Formatting HTML ##
+## Formatting HTML
 
 To simplify PR reviews, please word-wrap HTML files at 80 characters or fewer.

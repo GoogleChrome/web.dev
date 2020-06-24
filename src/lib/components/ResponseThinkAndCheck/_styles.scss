@@ -1,0 +1,11 @@
+@import '../../../styles/tools/mixins';
+
+[state=completed] .web-response-tac__option-rationale {
+  @include w-body-text();
+  background: rgba($SUCCESS_COLOR, .08);
+  border-radius: $GLOBAL_RADIUS;
+  color: $PRIMARY_TEXT_COLOR;
+  display: block;
+  line-height: 1.778 !important; // Override w-body-text mixin
+  padding: 1.125rem;
+}

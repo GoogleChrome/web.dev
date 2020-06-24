@@ -12,9 +12,11 @@
 
 .w-article-header {
   margin: 0 0 48px;
+  padding-top: 40px;
 
   @include bp(md) {
     margin: 0 0 64px;
+    padding-top: 56px;
   }
 }
 

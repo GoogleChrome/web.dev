@@ -8,6 +8,8 @@ description: |
 date: 2018-11-05
 glitch: webp-cli
 related_post: serve-images-webp
+tags:
+  - performance
 ---
 
 The webp
@@ -17,10 +19,9 @@ converts JPG, PNG, and TIFF images to WebP.
 
 ## Convert images to WebP
 
-- Click the **Remix to Edit** button to make the project editable.
-- Click the **Tools** button.
-- Click the **Console** button.
-- Type the following command:
+{% Instruction 'remix', 'ol' %}
+{% Instruction 'console', 'ol' %}
+1. Type the following command:
 
 ```bash
 cwebp -q 50 images/flower1.jpg -o images/flower1.webp
@@ -135,14 +136,10 @@ site.
 Lighthouse's **Serve images in next-gen formats** performance audit can let you
 know if all the images on your site are using next-gen formats like WebP.
 
-- To preview the site, mouse over the editor, press the **App** button, then the
-  **Show** button.
+{% Instruction 'preview', 'ol' %}
+{% Instruction 'audit-performance', 'ol' %}
+1. Verify the **Serve images in next-gen formats** audit is passed.
 
-- Run the Lighthouse performance audit (**Lighthouse > Options > Performance**)
-  on the live version of your app and verify that the **Serve images in next-gen
-  formats** audit is passed.
-
-<img class="w-screenshot" src="./lighthouse_passing.png" alt="Passing 'Serve
-images in next-gen formats' audit in Lighthouse">
+<img class="w-screenshot" src="./lighthouse_passing.png" alt="Passing 'Serve images in next-gen formats' audit in Lighthouse">
 
 Success! You are now serving WebP images on your site.

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Workbox your high-level service worker toolkit
+title: "Workbox: your high-level service worker toolkit"
 authors:
   - jeffposnick
 date: 2018-11-05
@@ -116,7 +116,6 @@ Workbox integration found in many popular starter kits and add-on plugins:
 +  [preact-cli](https://github.com/prateekbh/preact-cli-workbox-plugin/blob/master/README.md)
 +  [Gatsby](https://www.gatsbyjs.org/packages/gatsby-plugin-offline/)
 +  [Next.js](https://github.com/hanford/next-offline/blob/master/readme.md)
-+  [PWA Starter Kit](https://polymer.github.io/pwa-starter-kit/what's-in-the-box/)
 
 ### Add Workbox to your existing build process
 
@@ -133,7 +132,7 @@ running, featuring a `wizard` mode that will check your local development
 environment and suggest a reasonable default configuration that you could use
 moving forward:
 
-```
+```bash
 workbox wizard
 ? What is the root of your web app (i.e. which directory do you deploy)? src/
 ? Which file types would you like to precache? css, js, html

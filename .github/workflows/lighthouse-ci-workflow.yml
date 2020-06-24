@@ -1,0 +1,47 @@
+name: Lighthouse CI
+
+# By default, runs when a pull_request's activity type is opened, synchronize,
+# or reopened and on master so comparisons to ancestors can be made.
+on:
+  push:
+    branches: 
+      - master
+  pull_request:
+    paths:
+      - '**.js'
+      - '!src/site/_data/contributors.js'
+      - '!src/site/_data/countries.js'
+      - '!src/site/_data/postTags.js'
+      - 'package.json'
+      - '**.njk'
+      - '**.scss'
+
+jobs:
+  lhci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1.0.0
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Cache node_modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Build
+        env:
+          ELEVENTY_ENV: prod
+        run: npm ci && npm run build
+      - name: Install Canary Lighthouse CI
+        run: npm install @lhci/cli@next
+      - name: Lighthouse CI
+        run: |
+          npx lhci autorun \
+          --config=./tools/lhci/lighthouserc.json \
+          --upload.serverBaseUrl=${{ secrets.LHCI_SERVER }} \
+          --upload.token=${{ secrets.LHCI_TOKEN }}

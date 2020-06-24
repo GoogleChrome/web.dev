@@ -1,103 +1,177 @@
-{% if site.env === 'prod' %}
-  <html devsite>
-    <head>
-      <title>{{title if title else path.title}}</title>
-      <meta name="description" content="{{description if description else path.description}}" />
-      <meta name="project_path" value="/_project.yaml" />
-      <meta name="book_path" value="/_book.yaml" />
-      <meta name="full_width" value="true" />
-    </head>
-    <body>
-      {% include 'styles.njk' %}
-      {{ content | safe }}
-      <link rel="alternate" href="/feed.xml" title="web.dev feed" type="application/atom+xml">
-      <devsite-content-footer
-        class="w-layout-container nocontent"
-      >
-        <p>
-          Except as otherwise noted, the content of this page is licensed
-          under the
-          <a href="https://creativecommons.org/licenses/by/4.0/"
-            >Creative Commons Attribution 4.0 License</a
-          >, and code samples are licensed under the
-          <a href="https://www.apache.org/licenses/LICENSE-2.0"
-            >Apache 2.0 License</a
-          >. For details, see the
-          <a href="https://developers.google.com/site-policies"
-            >Google Developers Site Policies</a
-          >. Java is a registered trademark of Oracle and/or its
-          affiliates.
-        </p>
-      </devsite-content-footer>
-    </body>
-  </html>
-{% else %}
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <title>{{title if title else path.title}}</title>
-      <meta name="description" content="{{description if description else path.description}}" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      {# Don't index our staging site. #}
+---
+show_banner: true
+tags: []
+---
+
+<!DOCTYPE html>
+{% set lang = "en" %}
+{% set locale="en_US" %}
+<html lang="{{lang}}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff"/>
+    {% if noindex or draft -%}
       <meta name="robots" content="noindex">
-      <meta charset="utf-8" />
-      <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
-      <meta name="full_width" value="true" />
-      <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
-      <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
-      <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
-      <link
-        rel="stylesheet"
-        href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
-      />
-      <link
-        rel="stylesheet"
-        href="/all.css"
-      />
-    </head>
-    <body
-      type="article"
-      theme="web-theme"
-      class="devsite-full-width-page">
-      <devsite-progress id="app-progress" ds-is="progress"></devsite-progress>
-      <div class="devsite-wrapper">
-        <web-prefs></web-prefs>
-        {% include 'devsite/devsite-header.njk' %}
-        <div id="gc-wrapper">
-          <div class="devsite-main-content">
-            <devsite-content ds-is="content">
-              <article class="devsite-article">
-                <article class="devsite-article-inner">
-                  <div class="devsite-article-body clearfix">
-                    {% include 'styles.njk' %}
-                    {{ content | safe }}
-                  </div>
-                </article>
-              </article>
-              <devsite-content-footer
-                ds-is="content-footer"
-                class="w-layout-container nocontent"
-              >
-                <p>
-                  Except as otherwise noted, the content of this page is licensed
-                  under the
-                  <a href="https://creativecommons.org/licenses/by/3.0/"
-                    >Creative Commons Attribution 3.0 License</a
-                  >, and code samples are licensed under the
-                  <a href="https://www.apache.org/licenses/LICENSE-2.0"
-                    >Apache 2.0 License</a
-                  >. For details, see the
-                  <a href="https://developers.google.com/site-policies"
-                    >Google Developers Site Policies</a
-                  >. Java is a registered trademark of Oracle and/or its
-                  affiliates.
-                </p>
-              </devsite-content-footer>
-            </devsite-content>
-          </div>
-          {% include 'devsite/devsite-footer.njk' %}
+    {%- endif %}
+    {% if offline %}
+      <meta name="offline" content="true" />
+    {%- endif %}
+
+    {% if nometa %}
+      {# Area on page that service worker will load title, rss url and if offline #}
+      <!-- %_HEAD_REPLACE_% -->
+    {% else %}
+      {% Meta locale, page, collections, renderData %}
+    {%- endif %}
+
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin="" />
+    <link rel="preconnect" href="//firebaseremoteconfig.googleapis.com" crossorigin="" />
+    <link rel="preconnect" href="//firebaseinstallations.googleapis.com" crossorigin="" />
+    <link rel="preconnect" href="//webdev.imgix.net" crossorigin="" />
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
+    />
+    <link rel="stylesheet" href="/app.css?v=8868799e608cd" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    {# Include default icon even though we have a manifest #}
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="mask-icon" color="#0054ff" href="/images/safari-pinned-tab.svg">
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    <script defer src="/bootstrap.js"></script>
+  </head>
+  <body class="unresolved">
+    {#
+      Make the snackbar the first item in the DOM so we don't have to steal the
+      user's focus on initial visit to show them a cookie banner. Instead, the
+      snackbar will be the first stop for the screen reader / focus.
+    #}
+    <web-snackbar-container></web-snackbar-container>
+    <div class="w-loading-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" hidden></div>
+    <web-header role="navigation">
+      <button class="w-button--icon w-button--round web-header__hamburger-btn unresolved" aria-label="Open menu">
+        <span class="w-tooltip w-tooltip--left">Open menu</span>
+      </button>
+
+      <a
+        href="/"
+        class="web-header__logo-link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="Site logo"
+      >
+        <img class="web-header__logo" src="/images/lockup.svg" alt="web.dev" />
+      </a>
+
+      <div class="web-header__middle">
+        <div class="web-header__links">
+          <a
+            href="/learn/"
+            class="web-header__link gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Tab: Learn"
+          >
+            Learn
+          </a>
+
+          <a
+            href="/measure/"
+            class="web-header__link gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Tab: Measure"
+          >
+            Measure
+          </a>
+
+          <a
+            href="/blog/"
+            class="web-header__link gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Tab: Blog"
+          >
+            Blog
+          </a>
+
+          <a
+            href="/live/"
+            class="web-header__link gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Tab: Live"
+          >
+            Live
+          </a>
+
+          <a
+            href="/about/"
+            class="web-header__link gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Tab: About"
+          >
+            About
+          </a>
         </div>
+        <web-search></web-search>
       </div>
-    </body>
-  </html>
-{% endif%}
+
+      <web-profile-switcher-container></web-profile-switcher-container>
+    </web-header>
+
+    <web-side-nav class="unresolved">
+      <a
+        href="/learn/"
+        class="web-side-nav__link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="SideNav: Learn"
+      >
+        Learn
+      </a>
+      <a
+        href="/measure/"
+        class="web-side-nav__link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="SideNav: Measure"
+      >
+        Measure
+      </a>
+      <a
+        href="/blog/"
+        class="web-side-nav__link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="SideNav: Blog"
+      >
+        Blog
+      </a>
+      <a
+        href="/live/"
+        class="web-side-nav__link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="SideNav: Live"
+      >
+        Live
+      </a>
+      <a
+        href="/about/"
+        class="web-side-nav__link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="SideNav: About"
+      >
+        About
+      </a>
+    </web-side-nav>
+    <main>
+      <div id="content">
+        {% if show_banner %}
+          {% include 'partials/banner.njk' %}
+        {% endif %}
+        {{ content | safe }}
+      </div>
+    </main>
+    {% include 'partials/footer.njk' %}
+  </body>
+</html>

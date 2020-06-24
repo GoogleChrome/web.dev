@@ -11,6 +11,8 @@ description: |
 date: 2018-11-05
 codelabs:
   - codelab-avoid-invisible-text
+tags:
+  - performance
 ---
 
 ## Why should you care?
@@ -133,9 +135,6 @@ Here are the changes you can expect to make in order to implement this:
 Run Lighthouse to verify the site is using `font-display: swap` to display
 text:
 
-1. Navigate to the **Audits** panel in DevTools.
-1. Select the **Performance** checkbox.
-1. Click **Run Audits** to generate a report.
+{% Instruction 'audit-performance', 'ol' %}
 
-Confirm this audit is passing: **Ensure text remains visible during webfont
-load**.
+Confirm that the **Ensure text remains visible during webfont load** audit is passing.

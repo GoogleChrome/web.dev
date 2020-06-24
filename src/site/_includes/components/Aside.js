@@ -18,7 +18,7 @@ const md = require('markdown-it')();
 const capitalize = require('../../_filters/capitalize');
 const titleCase = require('../../_filters/title-case');
 
-module.exports = (content, type='note') => {
+module.exports = (content, type = 'note') => {
   let prefix;
   switch (type) {
     case 'note':

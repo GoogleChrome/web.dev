@@ -9,14 +9,7 @@ description: |
   improve the navigation experience for users of assitive technology.
 ---
 
-Screen readers have commands to quickly jump between headings or to specific
-landmark regions. In fact, [a recent survey of screen reader
-users](http://www.heydonworks.com/article/responses-to-the-screen-reader-strategy-survey)
-found that they most often navigate an unfamiliar page by exploring the
-headings.
-
-By using the correct heading and landmark elements, you can dramatically
-improve the navigation experience on your site for users of assitive technology.
+{% include 'content/lighthouse-accessibility/why-headings.njk' %}
 
 ## Use headings to outline the page
 

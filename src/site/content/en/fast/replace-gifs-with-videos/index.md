@@ -9,8 +9,11 @@ description: |
   There's a good reason for that. Animated GIFs can be downright huge! By
   converting large GIFs to videos, you can save big on users' bandwidth.
 date: 2018-11-05
+updated: 2020-06-24
 codelabs:
   - codelab-replace-gifs-with-video
+tags:
+  - performance
 ---
 
 Have you ever seen an animated GIF on a service like Imgur or Gfycat, inspected
@@ -43,7 +46,7 @@ To use FFmpeg to convert the GIF, `my-animation.gif` to an MP4 video, run the
 following command in your console:
 
 ```bash
-ffmpeg -i my-animation.gif my-animation.mp4
+ffmpeg -i my-animation.gif -b:v 0 -crf 25 -f mp4 -vcodec libx264 -pix_fmt yuv420p my-animation.mp4
 ```
 
 This tells FFmpeg to take `my-animation.gif` as the **input**, signified by the

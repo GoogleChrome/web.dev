@@ -1,0 +1,118 @@
+@import '../../../styles/settings/colors';
+@import '../../../styles/tools/breakpoints';
+
+.web-assessment__launcher {
+  display: flex;
+  flex-direction: column;
+  margin: 3em 0;
+}
+
+// Allows buttons to resize with root font-size, maximizing space for questions
+.web-assessment__button {
+  height: 3rem;
+}
+
+web-assessment {
+  display: none;
+  flex-direction: column;
+
+  &[animatable] {
+    animation: .25s ease reverse modal-slideup;
+  }
+
+  &[animatable][open] {
+    animation: .25s ease modal-slideup;
+  }
+
+  // Prevent FOUC by hiding children until after firstUpdated().
+  // This isn't ":not(:defined)" because firstUpdated occurs after a frame.
+  &.unresolved * {
+    display: none !important;
+  }
+
+  @include bp(sm) {
+    display: flex;
+    margin: 5em 0 !important; // Override .w-callout
+    padding: 0 !important; // Override .w-callout
+  }
+}
+
+@keyframes modal-slideup {
+  0% {
+    transform: translateY(40%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+// Overrides .w-button--primary so button matches self-assessment color
+// (All states needed because they're specified for .w-button--primary.)
+.web-assessment__open,
+.web-assessment__open:hover,
+.web-assessment__open:active,
+.web-assessment__open:focus {
+  background: $SELF_ASSESSMENT_PRIMARY_COLOR;
+}
+
+.web-assessment__close {
+  position: absolute;
+  right: .5rem;
+  top: .75rem;
+}
+
+.web-assessment__lockup {
+  color: $SELF_ASSESSMENT_PRIMARY_COLOR;
+}
+
+.web-assessment__lockup::before {
+  content: 'school';
+}
+
+.web-assessment--singleton .web-assessment__header {
+  border-bottom: 1px solid $BORDER_COLOR;
+}
+
+.web-assessment__content {
+  display: flex;
+  flex: 1;
+}
+
+web-assessment[open],
+web-assessment[animatable] {
+  background: $WHITE;
+  bottom: 0;
+  display: flex;
+  left: 0;
+  margin: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 250; // Between Header and SideNav
+
+  .web-assessment__header {
+    padding: 1.5rem 3.5rem 1rem 1.5rem;
+  }
+
+  // Adjust visisbility of set leader when in modal view on mobile.
+  .web-assessment__set-leader {
+    display: none;
+  }
+}
+
+@include bp(sm) {
+  .web-assessment__launcher {
+    display: none;
+  }
+
+  .web-assessment__close {
+    display: none;
+  }
+
+  .web-assessment__header {
+    padding: 1.5rem 1.5rem 1rem;
+  }
+}

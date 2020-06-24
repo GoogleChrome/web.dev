@@ -14,14 +14,37 @@
  * limitations under the License.
  */
 
-// Return posts that reference a Lighthouse audit.
-// These posts will be displayed in the user's TODO list on the /measure page.
-module.exports = (collection) => {
-  return collection.getFilteredByTag('pathItem').filter((post) => {
-    const audits = post.data.web_lighthouse;
-    if (typeof audits === 'string' && audits !== 'N/A') {
-      return true;
-    }
-    return audits instanceof Array && audits.length;
-  });
-};
+/**
+ * @fileoverview
+ * Return posts that reference a Lighthouse audit.
+ * These posts will be displayed in the user's TODO list on the /measure page.
+ */
+
+const {livePosts} = require('../_filters/live-posts');
+
+/**
+ * Filter out posts that aren't related to LH audits.
+ * @param {{data: Object}} post An eleventy post object.
+ * @return {boolean}
+ */
+function hasLighthouseAudit(post) {
+  const audits = post.data.web_lighthouse;
+  if (typeof audits === 'string' && audits !== 'N/A') {
+    return true;
+  }
+  return audits instanceof Array && audits.length !== 0;
+}
+
+/**
+ * Filter all eleventy posts down to a set that are used as LH audit references.
+ * @param {Object} collection An eleventy collection object
+ * @return {Object[]}
+ */
+function postsWithLighthouse(collection) {
+  return collection
+    .getFilteredByTag('post')
+    .filter(livePosts)
+    .filter(hasLighthouseAudit);
+}
+
+module.exports = {postsWithLighthouse, hasLighthouseAudit};

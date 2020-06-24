@@ -21,7 +21,7 @@ times in your application.
 Here's a comparison of the same application with and without pre-rendering
 loaded on a simulated 3G connection and mobile device:
 
-<figure class="w-figure  w-figure--center">
+<figure class="w-figure">
   <img class="w-screenshot" src="./compare.gif" alt="A side by side loading comparsion. The version using pre-rendering loads 4.2 seconds faster.">
 </figure>
 
@@ -58,7 +58,7 @@ application.
 create pre-rendered HTML files of different routes in your application. To
 begin, install it as a development dependency:
 
-```
+```bash
 npm install --save-dev react-snap
 ```
 
@@ -158,7 +158,7 @@ If you are not server-side rendering routes in your application, use
    settings.
 2. Use the experimental `inlineCss` option to inline critical CSS if it works
    for your site.
-3. If you are code-splitting on a component level within any routes, be careful
-   to not pre-render a loading state to your users. The
+3. If you are using code splitting on a component level within any routes, be
+   careful not to pre-render a loading state to your users. The
    [`react-snap` README](https://github.com/stereobooster/react-snap#async-components)
    covers this in more detail.

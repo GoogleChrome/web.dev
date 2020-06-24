@@ -9,13 +9,17 @@ description: |
 date: 2019-05-05
 glitch: fav-kitties-compress-starter
 related_post: reduce-network-payloads-using-text-compression
+tags:
+  - performance
 ---
+
+{% include 'content/devtools-headsup.njk' %}
 
 This codelab is an extension of the [Minify and compress network payloads
 codelab](/codelab-text-compression)
 and assumes you are familiar with the basics concepts of compression. As
 compared to other compression algorithms like `gzip`, this codelab explores how
-Brotli compression can further reduce compression ratios and your app’s overall
+Brotli compression can further reduce compression ratios and your app's overall
 size.
 
 ![App screenshot](./app-screenshot.png)
@@ -32,9 +36,8 @@ application.
 Before diving in to add optimizations, it's always a good idea to first analyze
 the current state of the application.
 
-1. Click the **Remix to Edit** button to make the project editable.
-1. To preview the site, mouse over the editor, press the **App** button, then
-   the **Show** button.
+{% Instruction 'remix', 'ol' %}
+{% Instruction 'preview', 'ol' %}
 
 In the previous [Minify and compress network payloads
 codelab](/codelab-text-compression),
@@ -166,12 +169,12 @@ passing in an `options` parameters to
 The idea behind static compression is to have assets compressed and saved ahead
 of time.
 
-#### Pros:
+#### Pros
 +  Latency due to high compression levels is not a concern anymore. Nothing
    needs to happen on-the-fly to compress files as they can now be fetched
    directly.
 
-#### Cons:
+#### Cons
 +  Assets need to compressed with every build. Build times can increase
    significantly if high compression levels are used.
 
@@ -193,21 +196,20 @@ Begin by adding it as a `devDependency` in `package.json`:
 Like any other webpack plugin, import it in the configurations file,
 `webpack.config.js`:
 
-```js/4
+```js/3
 var path = require("path");
 
 //...
 var BrotliPlugin = require('brotli-webpack-plugin');
-},
 ```
 
 And include it within the plugins array:
 
 <pre>
 module.exports = {
-  // ... 
+  // ...
   plugins: [
-    // ... 
+    // ...
     <strong>new BrotliPlugin({
       asset: '[file].br',
       test: /\.(js)$/
@@ -217,7 +219,7 @@ module.exports = {
 </pre>
 
 The following arguments are used in the plugin array:
-+  `asset`: The target asset name. 
++  `asset`: The target asset name.
 +  `[file]` is replaced with the original asset file name
 +  `test`: All assets that match this RegExp (i.e. javascript assets ending in
    `.js`) are processed
@@ -256,6 +258,7 @@ var app = express();
 <strong>app.get('*.js', (req, res, next) => {
   req.url = req.url + '.br';
   res.set('Content-Encoding', 'br');
+  res.set('Content-Type', 'application/javascript; charset=UTF-8');
   next();
 });</strong>
 
@@ -269,6 +272,8 @@ request. The route works like this:
   endpoint that is fired to fetch a JS file.
 + Within the callback, `.br` is attached to the URL of the request and the
   `Content-Encoding` response header is set to `br`.
++ The `Content-Type` header is set to `application/javascript; charset=UTF-8` to
+  specify the MIME type.
 + Finally, `next()` ensures that the sequence continues to any callback that may
   be next.
 
@@ -276,40 +281,41 @@ Because some browsers may not support brotli compression, confirm brotli is
 supported before returning the brotli-compressed file by checking the
 `Accept-Encoding` request header includes `br`:
 
-<pre>
+```js/5,10
 var express = require('express');
 
 var app = express();
 
 app.get('*.js', (req, res, next) => {
-  <strong>if (req.header('Accept-Encoding').includes('br')) {</strong>
+  if (req.header('Accept-Encoding').includes('br')) {
     req.url = req.url + '.br';
     console.log(req.header('Accept-Encoding'));
     res.set('Content-Encoding', 'br');
-  <strong>}</strong>
+    res.set('Content-Type', 'application/javascript; charset=UTF-8');
+  }
   next();
 });
 
 app.use(express.static('public'));
-</pre>
+```
 
 
 Once the app reloads, take a look at the Network panel once more.
 
 <img class="w-screenshot" src="./network-static-compression-brotli.png"  alt="Bundle size of 53.1 KB (from 225KB)">
-  
+
 Success! You have used Brotli compression to further compress your assets!
 
 ## Conclusion
 
-This codelab illustrated how `brotli` can further reduce your app’s overall
+This codelab illustrated how `brotli` can further reduce your app's overall
 size. Where supported, `brotli` is a more powerful compression algorithm than
-`gzip`. 
+`gzip`.
 
 {% Aside 'warning' %}
 Remember to check if your CDN supports `brotli` before manually
 implementing. If you need to implement `brotli` manually (as
 described in this codelab) but have CDN support for other compression algorithms
 such as `gzip`, it is a good idea to weigh the benefits of
-`brotli` against the effort required to implement. 
+`brotli` against the effort required to implement.
 {% endAside %}

@@ -1,0 +1,102 @@
+@import '../../../styles/settings/colors';
+
+@keyframes sparkline-dash-animation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+web-sparkline-chart {
+  display: block;
+  height: 100px;
+
+  &:focus {
+    // Note: Focus style should be applied to the parent element using
+    // :focus-within.
+    outline: none;
+  }
+
+  .sl-outer {
+    position: absolute;  // w/h is set explicitly, need this otherwise we hold it
+  }
+
+  .path.dashed {
+    stroke-linecap: round;
+    stroke-width: 1;
+    stroke-dasharray: 4;
+    stroke-dashoffset: 0;
+    stop-color: $GREY_500;
+    stroke: $GREY_500;
+  }
+
+  .result--fail {
+    stroke: $FAIL_COLOR;
+    stop-color: $FAIL_COLOR;
+    fill: $FAIL_COLOR;
+    stroke-width: 2;
+  }
+
+  .result--average {
+    stroke: $AVERAGE_COLOR;
+    stop-color: $AVERAGE_COLOR;
+    fill: $AVERAGE_COLOR;
+    stroke-width: 2;
+  }
+
+  .result--pass {
+    stroke: $PASS_COLOR;
+    stop-color: $PASS_COLOR;
+    fill: $PASS_COLOR;
+    stroke-width: 2;
+  }
+
+  .sl-caption {
+    z-index: 100;
+    position: relative;
+
+    rect {
+      stroke-width: 0;
+    }
+  }
+
+  .sl-caption--value {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .sl-caption--date {
+    font-size: 12px;
+    stroke-width: 0 !important;
+    fill: $GREY_500;
+  }
+
+  svg {
+    pointer-events: none;  // otherwise mouseout generates events for every part of SVG
+    display: block;
+  }
+
+  .sl-cursor {
+    stroke-linecap: round;
+  }
+
+  .path {
+    stroke-linecap: round;
+  }
+
+  .gradient {
+    transition: opacity 600ms ease-in-out;
+    opacity: 0;
+  }
+
+  .gradient.fadein {
+    opacity: 1;
+  }
+
+  .sr-announcer {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+  }
+}

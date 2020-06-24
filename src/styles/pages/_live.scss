@@ -1,0 +1,484 @@
+@import '../settings/colors';
+@import '../settings/type';
+@import '../tools/breakpoints';
+
+.w-live-landing-page {
+  color: $GREY_800;
+
+  p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 16px 0;
+
+    @include bp(sm) {
+      font-size: 16px;
+    }
+  }
+
+  h2 {
+    color: $GREY_900;
+    margin-bottom: 24px;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: inherit;
+  }
+}
+
+.w-livestream-section {
+  @include bp(md) {
+    border-bottom: 1px solid $GREY_300;
+  }
+}
+
+.w-live-chat-notice {
+  align-items: center;
+  color: $GREY_700;
+  display: flex;
+  font-size: 12px;
+  padding: 19px 16px;
+
+  // Hide the notice if we're at small desktop size and the primary pointing
+  // device supports hover. This should exclude iPads but include Pixelbooks.
+  @media (min-width: #{$BREAKPOINT_VALUE_MEDIUM}) and (hover: hover) {
+    display: none;
+  }
+
+  > :first-child {
+    margin-right: 16px;
+  }
+}
+
+.w-live-top {
+  // We need this as the live background extends outside the normal l/r of the
+  // page. Contain it so it doesn't let users scroll.
+  overflow-x: hidden;
+
+  // jiwoong@
+  .w-event-section__column-right {
+    padding: 0 24px;
+  }
+}
+
+.w-event-buttons {
+  display: inline-flex;
+  flex-flow: column wrap;
+  margin: 24px 0 0; // jiwoong@
+
+  .w-button--primary {
+    margin: 0 0 16px;
+  }
+
+  .w-button:not(.w-button--primary) {
+    color: inherit;
+  }
+
+  @include bp(sm) {
+    flex-direction: row;
+
+    .w-button--primary {
+      margin: 0 16px 0 0;
+    }
+  }
+}
+
+.w-event-heading {
+  .w-event-heading__logo {
+    align-items: center;
+    color: #606369;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    font-size: 35px;
+
+    @include bp(md) {
+      font-size: 41px;
+    }
+
+    span {
+      opacity: 0;
+      position: absolute;
+      text-indent: -99999px;
+    }
+
+    video {
+      height: 1em;
+      margin-left: .25ch;
+      pointer-events: none;
+      width: auto;
+    }
+  }
+
+  .w-event-heading__subhead {
+    font-family: $HEADLINE_FONT;
+    font-size: 16px;
+    margin-top: 8px;
+
+    @include bp(md) {
+      font-size: 18px;
+      margin-top: 12px;
+    }
+  }
+}
+
+.w-event-section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: (64px - $WEB_HEADER_HEIGHT - 48px) auto 64px;
+  max-width: 960px;
+  padding-top: ($WEB_HEADER_HEIGHT + 48px);
+  text-align: center;  // for mobile
+
+  &::before {
+    display: none !important;
+  }
+
+  @include bp(md) {
+    text-align: inherit;
+  }
+
+  &#schedule .w-event-section__column-left {
+    margin-bottom: 64px;
+  }
+
+  .w-event-schedule__blurb {
+    color: $GREY_700;
+  }
+}
+
+.w-event-section--subscribe {
+  padding-left: 32px;
+  padding-right: 32px;
+
+  // Make the subscribe area less huge as it has its own padding.
+  web-subscribe {
+    margin-top: -32px;
+  }
+}
+
+
+.w-event-hero {
+  align-items: center;
+  box-sizing: content-box;
+  display: flex;
+  height: 192px;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 0 64px;
+  position: relative;
+
+  &::before {
+    background-image: url('../live/hero-bg.png');
+    background-position: 50% 30%;
+    background-repeat: no-repeat;
+    background-size: auto 75%;
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 1600px;
+    z-index: -1;
+  }
+
+  img {
+    max-height: 100%;
+    min-width: 560px;
+  }
+}
+
+.w-event-section__column-head {
+  width: 100%;
+}
+
+.w-event-section__column-left {
+  align-items: center;
+  display: flex;
+  flex-flow: column wrap;
+  flex-grow: 1;
+  padding: 0 32px;
+  text-align: center;
+  width: 100%;
+
+  h3 {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  p {
+    max-width: 288px;
+    margin: 0;
+    margin-top: 24px;
+  }
+
+  .w-event-link {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  .w-event-buttons {
+    margin: 16px 0;
+  }
+}
+
+.w-event-section__column-right {
+  max-width: 100%;
+  padding: 0 8px;
+
+  @media (min-width: 512px) {
+    max-width: 512px;
+  }
+
+  &.w-event-section__column-right__schedule {
+    margin-top: -16px;
+
+    @include bp(md) {
+      padding: 0px;
+    }
+
+    @include bp(sm) {
+      padding: 0px !important;
+    }
+  }
+
+  @include bp(sm) {
+    // On larger devices, force padding even on the schedule (this wins over
+    // ...__schedule, above).
+    padding: 0 16px !important;
+  }
+}
+
+.w-event-carousel {
+  display: flex;
+  overflow-x: scroll;
+  margin-bottom: 12px;
+  // Firefox only
+  // sass-lint:disable no-misspelled-properties
+  scrollbar-color: $GREY_500;
+  scrollbar-width: thin;
+  // sass-lint:enable no-misspelled-properties
+
+  &::-webkit-scrollbar-track {
+    padding-top: 4px;
+  }
+
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $GREY_500;
+    border-radius: 8px;
+  }
+}
+
+.w-event-carousel__day {
+  color: $GREY_800;
+  font-family: $HEADLINE_FONT;
+  font-size: 14px;
+  font-weight: $FONT_WEIGHT_MEDIUM;
+  margin-right: 16px;
+  padding-bottom: 8px;
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    opacity: .9;
+    text-decoration: none;
+  }
+
+  &:focus {
+    .w-event-carousel__description {
+      box-shadow: inset 0 0 0 1px $FOCUS_COLOR;
+    }
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.w-event-carousel__thumbnail {
+  margin-bottom: 8px;
+  background-color: $GREY_200;
+  border-radius: 3px;
+  overflow: hidden;
+  width: 178px;
+  height: 110px;
+
+  > img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Need to put top margin on the tabs instead of bottom margin on the
+// carousel because bottom margin will affect the carousel's scroll bar.
+.w-event-carousel + .w-event-tabs {
+  margin-top: 34px;
+}
+
+web-tabs.w-event-tabs {
+  --primary-color: #{$WEB_PRIMARY_COLOR};
+  --hover-color: #{$GOOGLE_BLUE_50};
+  --active-color: #{$GOOGLE_BLUE_100};
+}
+
+.w-event-schedule {
+  // Forces a stacking context.
+  position: relative;
+  text-align: left;
+  z-index: 0;
+
+  .w-event-schedule__row {
+    border-bottom: 1px solid #dadce0;
+    min-height: 48px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
+
+    &:hover,
+    &:focus-within {
+      background: rgba(0, 0, 0, .05);
+    }
+  }
+
+  .w-event-schedule__speaker {
+    font-size: 14px;
+    margin-bottom: 16px;
+
+    a {
+      z-index: 10;
+      position: relative;
+    }
+  }
+
+  .w-event-schedule__session {
+    font-size: 14px;
+  }
+
+  .w-authors__card {
+    // TODO(samthor): This margin is unnessecary for our schedule, and
+    // needlessly pads out each row.
+    margin-bottom: 0;
+  }
+
+  .w-event-schedule__open {
+    color: inherit;
+    display: inline-block;
+    font-family: $HEADLINE_FONT;
+    pointer-events: auto;
+    margin-bottom: 4px;
+    font-size: 18px;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+
+      @media (hover: none) {
+        -webkit-tap-highlight-color: transparent;
+        outline: none;
+      }
+    }
+
+    span {
+      z-index: 1;
+      position: relative;
+    }
+
+    // This creates a large clickable area around the link itself, but which
+    // doesn't extend into the speakers area on the left.
+    &::before {
+      content: '';
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: block;
+      position: absolute;
+      z-index: 0;
+    }
+  }
+}
+
+.w-event-calendar {
+  display: flex;
+  align-items: center;
+
+  a.w-button {
+    margin-left: 8px;
+  }
+}
+
+.w-event-calendar__note {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  margin-right: 8px;
+
+  &::before {
+    content: '';
+    background: url(/images/icons/calendar.svg) center / contain no-repeat;
+    width: 24px;
+    height: 24px;
+  }
+
+  span {
+    text-indent: -99999px;
+    opacity: 0;
+    position: absolute;
+  }
+
+  @include bp(md) {
+    span {
+      margin-left: 6px;
+      text-indent: 0;
+      opacity: initial;
+      position: initial;
+    }
+  }
+}
+
+@include bp(md) {
+  .w-event-section__column-head {
+    order: -1;
+  }
+
+  .w-event-section__column-left {
+    align-items: flex-start;
+    flex-grow: 0;
+    padding-left: 16px;
+    text-align: inherit;
+    width: 37.5%;
+  }
+
+  .w-event-section__column-right {
+    max-width: none;
+    padding: 0 16px;
+    width: 62.5%;
+  }
+}
+
+.w-event-antihero {
+  padding: 0 !important;
+
+  img {
+    // nb. 128px is important as it matches the max-width of 512px
+    min-height: 128px;
+    object-fit: cover;
+  }
+}
+
+.w-event-icon {
+  align-items: center;
+  vertical-align: middle;
+  margin-right: 16px;
+}

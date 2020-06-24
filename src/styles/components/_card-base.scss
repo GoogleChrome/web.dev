@@ -1,0 +1,199 @@
+@import '../settings/type';
+@import '../tools/mixins';
+
+// =============================================================================
+// CARD BASE OVERVIEW
+//
+// A base card is a preview for posts, authors, and more. It lives inside of a
+// card and can be displayed in a grid on the blog landing page, or at the end
+// of a post to point users at related content.
+//
+// =============================================================================
+
+.w-card-base {
+  @include w-body-text();
+  height: 100%;
+  padding: 24px;
+  position: relative;
+
+  @include bp(sm) {
+    padding: 32px;
+  }
+}
+
+.w-card-base__cover {
+  display: block;
+  margin: 32px 0 12px;
+}
+
+.w-card-base__cover--with-image {
+  margin: 32px 0 12px;
+
+  @include bp(md) {
+    margin-top: -1px;
+  }
+}
+
+.w-card-base__figure {
+  align-items: center;
+  background-color: $GREY_100;
+  display: flex;
+  justify-content: center;
+  margin: 0 0 16px;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+
+.w-card-base__image {
+  height: 240px;
+  max-width: 100%;
+  min-width: 100%;
+  object-fit: cover;
+}
+
+.w-card-base__headline {
+  @include w-headline--two();
+}
+
+.w-card-base__headline--with-image {
+  @include w-headline--two-small();
+}
+
+.w-card-base__headline,
+.w-card-base__headline--with-image {
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+.w-card-base__desc {
+  display: block;
+}
+
+.w-card-base__desc::before {
+  background-color: $WEB_PRIMARY_COLOR;
+  content: '';
+  display: block;
+  height: 2px;
+  position: absolute;
+  top: 24px;
+  width: 64px;
+  z-index: -1;
+
+  @include bp(sm) {
+    top: 32px;
+  }
+}
+
+.w-card-base__info-list {
+  height: 36px;
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 12px 0 0;
+  position: absolute;
+  top: 24px;
+
+  @include bp(sm) {
+    top: 32px;
+  }
+
+  @include bp(md) {
+    position: static;
+  }
+}
+
+.w-card-base__info-listitem {
+  color: $GREY_700;
+  display: block;
+  float: left;
+  font-family: 'Google Sans', san-sans-serif;
+  font-size: 12px;
+
+  @include bp(xsm) {
+    font-size: 14px;
+  }
+}
+
+.w-card-base__info-listitem::after {
+  content: '·';
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.w-card-base__info-listitem--category {
+  color: $WEB_PRIMARY_COLOR;
+  font-weight: 500;
+}
+
+.w-card-base__info-listitem:last-of-type::after {
+  content: '';
+  margin: 0;
+}
+
+.w-card-base__info-listitem--published::after {
+  content: '';
+
+  @include bp(sm) {
+    content: '·';
+  }
+}
+
+.w-card-base__info-listitem--updated {
+  display: none;
+
+  @include bp(sm) {
+    display: inline-block;
+  }
+}
+
+.w-card-base__link:focus {
+  outline: none;
+}
+
+.w-card-base__link:hover {
+  text-decoration: none;
+}
+
+.w-card-base__subhead {
+  color: $GREY_700;
+  font: inherit;
+  margin: 0;
+}
+
+// This is a special variation of the PostCard component that's only used on
+// the homepage.
+// The card needs to have a different layout only when it's between breakpoints
+// otherwise it acts just like any other card.
+// Because it would be onerous to extend the block and all of its elements, we
+// just use a descendant selector.
+@media (min-width: #{$BREAKPOINT_VALUE_MEDIUM}) and (max-width: #{$BREAKPOINT_VALUE_LARGE}) {
+  .w-card-base--featured {
+    // 32px * 2 of padding to match the columns below + 8px gap.
+    column-gap: 72px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .w-card-base__cover,
+    .w-card-base__figure {
+      margin: 0;
+    }
+
+    .w-card-base__cover,
+    .w-card-base__blurb {
+      grid-area: auto;
+    }
+
+    .w-card-base__blurb {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    // Normally this little symbol is obscured by the hero thumbnail image
+    // but we need to hide it for the side-by-side featured layout.
+    .w-card-base__desc::before {
+      display: none;
+    }
+  }
+}

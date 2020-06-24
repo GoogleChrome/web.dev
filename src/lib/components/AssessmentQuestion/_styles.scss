@@ -1,0 +1,67 @@
+@import '../../../styles/tools/mixins';
+
+web-question {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%; // Constrains child white-space:pre elements
+}
+
+.web-question__content {
+  display: block;
+  flex: 1 1 0;
+  height: 0; // Lets content match viewport height minus assessment header/footer
+  padding: 0 1.5rem 1.5rem;
+  overflow-y: auto;
+
+  @include bp(sm) {
+    flex: 1 1 auto;
+    height: 25rem; // Default height; can be overridden by content author
+  }
+}
+
+.web-question__footer {
+  border-top: 1px solid $BORDER_COLOR;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: .625rem;
+
+  @include bp(sm) {
+    padding: 1rem;
+  }
+}
+
+.web-question__cta {
+  overflow: visible;
+}
+
+$SUCCCESS_FLAG_SIZE: 24px;
+
+.web-question__cta::before {
+  @include font-material-icon();
+  align-items: center;
+  background: $SUCCESS_COLOR;
+  border-radius: $GLOBAL_ROUNDED;
+  color: $WHITE;
+  content: 'check';
+  display: flex;
+  font-size: $SUCCCESS_FLAG_SIZE * .75;
+  height: $SUCCCESS_FLAG_SIZE;
+  justify-content: center;
+  left: calc(-#{$SUCCCESS_FLAG_SIZE} - .5rem);
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: calc(50% - #{$SUCCCESS_FLAG_SIZE / 2});
+  transform: scale(0);
+  transition:
+    opacity $TRANSITION_SPEED * 2 ease,
+    transform $TRANSITION_SPEED ease;
+  width: $SUCCCESS_FLAG_SIZE;
+}
+
+[state=completed] .web-question__cta::before {
+  opacity: 1;
+  transform: scale(1);
+}

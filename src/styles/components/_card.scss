@@ -1,3 +1,4 @@
+@import '../settings/colors';
 @import '../settings/global';
 @import '../tools/breakpoints';
 @import '../tools/mixins';
@@ -11,16 +12,21 @@
 // =============================================================================
 
 .w-card {
-  border-radius: 8px;
+  border-radius: $GLOBAL_RADIUS_MEDIUM;
   display: block;
+  min-height: 506px;
   overflow: hidden;
   position: relative;
   transition: box-shadow $TRANSITION_SPEED;
+
+  @include bp(md) {
+    min-height: auto;
+  }
 }
 
 .w-card:hover,
 .w-card:focus,
-.w-card:active {
+.w-card:focus-within {
   background-color: transparent;
   outline: none;
   text-decoration: none;
@@ -42,7 +48,8 @@
   background-color: rgba(32, 33, 36, .0);
 }
 
-.w-card:focus {
+.w-card:focus,
+.w-card:focus-within {
   // sass-lint:disable-block indentation
   box-shadow:
     0 2px 4px -1px rgba(0, 0, 0, .2),
@@ -51,7 +58,8 @@
   outline: none;
 }
 
-.w-card:focus::after {
+.w-card:focus::after,
+.w-card:focus-within::after {
   background-color: rgba(32, 33, 36, .04);
 }
 
@@ -73,4 +81,22 @@
   box-shadow:
     0 1px 2px 0 rgba(60, 64, 67, .3),
     0 1px 3px 1px rgba(60, 64, 67, .15);
+}
+
+.w-card--draft::before {
+  background: $RED_800;
+  border-radius: 8px;
+  color: $WHITE;
+  content: 'DRAFT';
+  font-size: 11px;
+  font-weight: bold;
+  left: calc(50% - 25px);
+  padding: 2px;
+  position: absolute;
+  text-align: center;
+  width: 50px;
+}
+
+.w-card__chips {
+  margin-top: 12px;
 }

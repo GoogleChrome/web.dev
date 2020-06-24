@@ -1,0 +1,74 @@
+@import '../../../styles/settings/colors';
+@import '../../../styles/settings/dimensions';
+@import '../../../styles/tools/breakpoints';
+@import '../../../styles/tools/mixins';
+
+
+web-lighthouse-scores-meta {
+  .lh-report-meta {
+    margin-top: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+
+  .lh-report-meta__links {
+    display: flex;
+    flex-direction: column;
+
+    @include bp(sm) {
+      justify-content: space-between;
+      flex-direction: row;
+    }
+
+    @include bp(md) {
+      display: block;
+    }
+  }
+
+  .lh-report-meta__lastaudit {
+    margin-left: 8px;
+
+    @include bp(sm) {
+      margin-left: 8px;
+    }
+
+    @include bp(md) {
+      min-width: 180px;
+      margin-right: 16px;
+      display: inline-block;
+    }
+  }
+
+  .lh-report-invisible {
+    visibility: hidden;
+  }
+
+  .lh-report-link {
+    margin: 0 8px;
+    text-decoration: underline;
+    white-space: nowrap;
+  }
+
+  .lh-error-msg {
+    color: $RED_600;
+    max-width: 100%;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+
+    &:empty {
+      display: none;
+    }
+
+    &::before {
+      @include font-material-icon();
+      content: 'info';
+      margin-right: 8px;
+      font-size: 20px;
+
+      // Disabled as `alt` is a new property only supported in Safari.
+      // scss-lint:disable PropertySpelling
+      alt: '';
+    }
+  }
+}

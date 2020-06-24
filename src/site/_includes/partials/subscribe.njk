@@ -1,0 +1,80 @@
+<web-subscribe class="w-pt--l w-pb--l">
+  <div class="w-subscribe">
+    <div class="w-display--flex w-justify-content--center">
+      <h1 class="w-text--center">{{ subscribeTitle | default('Developer Newsletter', false) }}</h1>
+    </div>
+    <div class="w-display--flex w-justify-content--center">
+      <div class="w-subscribe--padded">
+        <p class="w-text--center w-mt--non w-subscribe__message">{{ subscribeNotes | default('Get the latest news, techniques and updates straight to your inbox.', false) }}</p>
+      </div>
+    </div>
+    <form class="w-subscribe__form" action="{{ site.subscribeForm }}" method="post">
+      <div class="w-subscribe__fields">
+        <div class="w-subscribe__field">
+          <label class="w-visually-hidden" for="sub-firstname">First name</label>
+          <input id="sub-firstname" name="FirstName" placeholder="First Name" required
+            type="text" />
+        </div>
+        <div class="w-subscribe__field">
+          <label class="w-visually-hidden" for="sub-lastname">Last name</label>
+          <input id="sub-lastname" name="LastName" placeholder="Last Name" required
+            type="text" />
+        </div>
+      </div>
+      <div class="w-subscribe__field w-display--flex">
+        <label class="w-visually-hidden" for="sub-email">Your Email</label>
+        <input id="sub-email" name="EmailAddress" placeholder="Your Email" required
+          type="email" />
+      </div>
+      <div class="w-subscribe__field w-display--flex">
+        <label class="w-visually-hidden" for="sub-country">Country</label>
+        <select id="sub-country" name="Country" required>
+          {% for country in countries %}
+            {% if country[1] === "United States" %}
+              <option selected value="{{country[0]}}">{{country[1]}}</option>
+            {% else %}
+              <option value="{{country[0]}}">{{country[1]}}</option>
+            {% endif %}
+          {% endfor %}
+        </select>
+      </div>
+      <div class="w-subscribe__field w-text--center w-display--flex">
+        <span class="w-subscribe__notice">Don't worry, no spam here! Your information will only be used for web.dev and Chrome related updates and our emails are typically no more than 1-2 times a month. You can unsubscribe anytime.</span>
+      </div>
+      <div class="w-display--flex w-justify-content--center">
+        <div class="w-subscribe__field w-subscribe--padded">
+          <div class="w-display--inline-flex">
+            <input id="sub-newsletter" name="WebDevNewsletter" required value="Unconfirmed" class="w-checkbox" type="checkbox" />
+            <label for="sub-newsletter" class="w-ml--l w-text--left">Add me to the web.dev mailing list.</label>
+          </div>
+        </div>
+      </div>
+      <div class="w-display--flex w-justify-content--center">
+        <div class="w-subscribe__field w-subscribe--padded">
+          <div class="w-display--inline-flex">
+            <input id="sub-pii-spii" name="collects-pii-spii-checkbox" required value="Unconfirmed" class="w-checkbox" type="checkbox" />
+            <label for="sub-pii-spii" class="w-ml--l w-text--left">
+              I accept Google's <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms and Conditions</a> and acknowledge that my information will be used in accordance with Google's <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>.
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="w-visually-hidden">
+        <label for="sub-is-it-just-me-or-was-this-form-filled-out-by-a-robot">Congrats on finding this field, I'd recommend you not filling it out though...</label>
+        <input type="text" id="sub-is-it-just-me-or-was-this-form-filled-out-by-a-robot" name="is-it-just-me-or-was-this-form-filled-out-by-a-robot" tabindex="-1" />
+        <label for="sub-language">Language</label>
+        <select id="sub-language" name="LanguagePreference" required tabindex="-1">
+          <option selected value="en-US">en-US</option>
+        </select>
+      </div>
+      <div class="w-subscribe__field w-text--center">
+        <button class="w-subscribe__button w-button w-button--primary" type="submit">
+          Subscribe
+        </button>
+      </div>
+    </form>
+    <div class="w-subscribe__error w-text--center w-mt--sm">
+      <noscript>It seems like you have JavaScript disabled or it failed to load. After you submit the form, press the back button to return to the site.</noscript>
+    </div>
+  </div>
+</web-subscribe>

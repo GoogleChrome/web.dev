@@ -1,0 +1,5 @@
+// sass-lint:disable class-name-format
+*.hidden,
+*[hidden] {
+  display: none !important;
+}

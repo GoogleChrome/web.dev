@@ -1,0 +1,49 @@
+@import '../../../styles/settings/colors';
+@import '../../../styles/settings/type';
+@import '../../../styles/tools/breakpoints';
+
+web-livestream-container {
+  .web-livestream-container__col-yt {
+    flex-basis: 880px;
+  }
+
+  .web-livestream-container__col-chat {
+    flex-basis: 400px;
+    border-left: 1px solid $GREY_300;
+    display: none;
+
+    @include bp(md) {
+      display: block;
+    }
+  }
+
+  .w-youtube {
+    height: 100%;
+  }
+
+  .w-youtube-chat {
+    height: 100%;
+    width: 100%;
+  }
+
+  .w-youtube-disabled-chat {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .w-youtube-disabled-chat__container {
+    max-width: 250px;
+    color: $GREY_700;
+  }
+
+  .w-youtube-disabled-chat__link {
+    display: block;
+    font-family: $HEADLINE_FONT;
+    font-weight: $FONT_WEIGHT_MEDIUM;
+    font-size: 14px;
+    margin-top: 16px;
+  }
+}

@@ -1,0 +1,65 @@
+@import '../../../styles/settings/colors';
+
+web-lighthouse-gauge {
+  color: $GREY_400;
+  display: block;
+  position: relative;
+
+  .gauge__pass {
+    color: $PASS_COLOR;
+  }
+
+  .gauge__average {
+    color: $AVERAGE_COLOR;
+  }
+
+  .gauge__fail {
+    color: $FAIL_COLOR;
+  }
+
+  .gauge {
+    stroke-linecap: round;
+  }
+
+  .gauge-base {
+    stroke: $GREY_200;
+    stroke-width: 9;
+  }
+
+  .gauge__pass .gauge-base {
+    stroke: $PASS_COLOR_LIGHT;
+  }
+
+  .gauge__average .gauge-base {
+    stroke: $AVERAGE_COLOR_LIGHT;
+  }
+
+  .gauge__fail .gauge-base {
+    stroke: $FAIL_COLOR_LIGHT;
+  }
+
+  .gauge-arc {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 9;
+    transition: stroke-dasharray 1.2s;
+  }
+
+  .bootstrap {
+    // held for first rAF so this animates in
+    stroke-dasharray: 0 359 !important;
+  }
+
+  .gauge-percent {
+    align-items: center;
+    bottom: 0;
+    color: currentColor;
+    display: flex;
+    font: inherit;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}

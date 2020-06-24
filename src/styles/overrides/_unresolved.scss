@@ -1,0 +1,30 @@
+// =============================================================================
+// UNRESOLVED
+//
+// Specifies behavior for unresolved elements. This uses the "unresolved"
+// class as lit doesn't render for a frame after :defined is removed.
+//
+// =============================================================================
+// sass-lint:disable class-name-format
+
+// Elements marked with the unresolved class are hidden until the JS is first
+// loaded. Disable linter as it expects classes to only be ".w-...".
+*:not(body).unresolved {
+  display: none;
+}
+
+web-tabs.unresolved {
+  padding-top: 50px;
+  display: block;
+
+  > *:not(.w-tabs-default) {
+    display: none;
+  }
+}
+
+web-event-time.unresolved {
+  min-height: 120px;
+  display: block;
+}
+
+// sass-lint:enable class-name-format

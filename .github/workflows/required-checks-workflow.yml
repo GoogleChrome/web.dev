@@ -1,0 +1,15 @@
+name: Required checks
+
+# Run this check any time a PR is opened, synchronized, reopened,
+# labeled or unlabeled.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+
+jobs:
+  do_not_merge:
+    name: Do not merge
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "::error ::PR can't be merged with the DO NOT MERGE label."; exit 1
+        if: contains(github.event.pull_request.labels.*.name, 'DO NOT MERGE')

@@ -3,6 +3,8 @@ layout: post
 title: Preload key requests
 description: |
   Learn about the uses-rel-preload audit.
+date: 2019-05-02
+updated: 2020-06-24
 web_lighthouse:
   - uses-rel-preload
 ---
@@ -11,10 +13,7 @@ The Opportunities section of your Lighthouse report
 flags the third level of requests in your critical request chain as preload candidates:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="uses-rel-preload.png" alt="Preload key requests">
-  <figcaption class="w-figcaption">
-    Fig. 1 — Preload key requests
-  </figcaption>
+  <img class="w-screenshot" src="uses-rel-preload.png" alt="A screenshot of the Lighthouse Preload key requests audit">
 </figure>
 
 ## How Lighthouse flags determines preload candidates
@@ -46,7 +45,7 @@ Preloading requests can make your pages load faster.
        alt="Without preload links, styles.css and ui.js are requested only after
             app.js has been downloaded, parsed, and executed."/>
   <figcaption>
-    <b>Figure 1</b>. Without preload links, <code>styles.css</code> and
+    Without preload links, <code>styles.css</code> and
     <code>ui.js</code> are requested only after <code>app.js</code> has been downloaded,
     parsed, and executed.
   </figcaption>
@@ -76,16 +75,25 @@ as soon as possible.
        alt="With preload links, styles.css and ui.js are requested at the same time
             as app.js."/>
   <figcaption>
-    <b>Figure 2</b>. With preload links, <code>styles.css</code> and
+    With preload links, <code>styles.css</code> and
     <code>ui.js</code> are requested at the same time as <code>app.js</code>.
   </figcaption>
 </figure>
 
-See [Can I Use link-rel-preload?](http://caniuse.com/#feat=link-rel-preload)
-to see browser support for preload links.
-
 See also [Preload critical assets to improve loading speed](/preload-critical-assets)
+for more guidance.
 
-## More information
+### Browser compatibility
 
-- [Preload key requests audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/uses-rel-preload.js)
+As of June 2020 preloading is supported in Chromium-based browsers. See
+[Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#Browser_compatibility)
+for updates.
+
+### Build tool support for preloading {: #tools }
+
+See [Tooling.Report's Preloading Assets](https://bundlers.tooling.report/non-js-resources/html/preload-assets/?utm_source=web.dev&utm_campaign=lighthouse&utm_medium=uses-rel-preload)
+page.
+
+## Resources
+
+- [Source code for **Preload key requests** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/uses-rel-preload.js)

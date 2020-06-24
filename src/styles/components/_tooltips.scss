@@ -1,0 +1,79 @@
+@mixin tooltip-visible() {
+  opacity: .77;
+  transform: scale(1) translateX(-50%);
+  transition: opacity .15s .3s, transform .15s .3s, visibility 0s;
+  visibility: visible;
+}
+
+.w-tooltip {
+  background: $BLACK;
+  border-radius: $GLOBAL_RADIUS;
+  color: $WHITE;
+  font: 500 12px / 1 $PRIMARY_FONT;
+  left: 50%;
+  letter-spacing: .3px;
+  opacity: 0;
+  padding: 6px 8px;
+  pointer-events: none;
+  position: absolute;
+  text-transform: none;
+  top: calc(100% + 3px);
+  transform: scale(.85) translateX(-50%);
+  transform-origin: top left;
+  transition: opacity 75ms, transform 0s 75ms, visibility 0s 75ms;
+  visibility: hidden;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.w-tooltip--left {
+  left: 0;
+  transform: scale(.85);
+}
+
+.w-tooltip--right {
+  left: 100%;
+  transform: translateX(-100%) scale(.85);
+  transform-origin: top right;
+}
+
+// Prevent tooltip from sticking after press on touch devices
+@include hover() {
+  :hover > .w-tooltip {
+    @include tooltip-visible();
+  }
+
+  :hover > .w-tooltip--left {
+    transform: scale(1);
+  }
+
+  :hover > .w-tooltip--right {
+    transform: translateX(-100%) scale(1);
+  }
+}
+
+:active > .w-tooltip,
+:focus .w-tooltip { // Need descendent combinator for focus to accommodate details widget
+  @include tooltip-visible();
+}
+
+// Longer delay for :active to show tooltip on long press for touch devices
+:active > .w-tooltip {
+  transition: opacity .15s .5s, transform .15s .5s, visibility 0s;
+}
+
+:active > .w-tooltip--left,
+:focus .w-tooltip--left {
+  transform: scale(1);
+}
+
+:active > .w-tooltip--right,
+:focus .w-tooltip--right {
+  transform: translateX(-100%) scale(1);
+}
+
+// sass-lint:disable-block class-name-format
+.js-focus-visible :focus:not(.focus-visible) .w-tooltip {
+  opacity: 0;
+  visibility: hidden;
+}

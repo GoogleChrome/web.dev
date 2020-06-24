@@ -3,19 +3,18 @@ layout: post
 title: Efficiently encode images
 description: |
   Learn about the uses-optimized-images audit.
+date: 2019-05-02
+updated: 2020-06-24
 web_lighthouse:
   - uses-optimized-images
 ---
 
 The Opportunities section of your Lighthouse report lists
-all unoptimized images, with potential savings in killobytes.
+all unoptimized images, with potential savings in [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte).
 Optimize these images so that the page loads faster and consumes less data:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="uses-optimized-images.png" alt="Efficiently encode images">
-  <figcaption class="w-figcaption">
-    Fig. 1 — Efficiently encode images
-  </figcaption>
+  <img class="w-screenshot" src="uses-optimized-images.png" alt="A screenshot of the Lighthouse Efficiently encode images audit">
 </figure>
 
 
@@ -24,18 +23,19 @@ Optimize these images so that the page loads faster and consumes less data:
 Lighthouse collects all the JPEG or BMP images on the page,
 sets each image's compression level to 85,
 and then compares the original version with the compressed version.
-If the potential savings are 4KB or greater, Lighthouse flags the image as optimizable.
+If the potential savings are 4KiB or greater, Lighthouse flags the image as optimizable.
 
 ## How to optimize images
 
 There are many steps you can take to optimize your images, including:
 
-- [Compressing images](/use-imagemin-to-compress-images).
-- [Replacing animated GIFs with video](/replace-gifs-with-videos).
-- [Lazyloading images](/use-lazysizes-to-lazyload-images).
-- [Serving responsive images](/serve-responsive-images).
-- [Serving images with correct dimensions](/serve-images-with-correct-dimensions).
-- [Using WebP images](/serve-images-webp).
+- [Using image CDNs](/image-cdns/)
+- [Compressing images](/use-imagemin-to-compress-images)
+- [Replacing animated GIFs with video](/replace-gifs-with-videos)
+- [Lazy loading images](/use-lazysizes-to-lazyload-images)
+- [Serving responsive images](/serve-responsive-images)
+- [Serving images with correct dimensions](/serve-images-with-correct-dimensions)
+- [Using WebP images](/serve-images-webp)
 
 ## Optimize images using GUI tools
 
@@ -50,6 +50,6 @@ this option is probably good enough.
 [Squoosh](https://squoosh.app/) is another option.
 Squoosh is maintained by the Google Web DevRel team.
 
-## More information
+## Resources
 
-- [Efficiently encode images audit source](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-optimized-images.js)
+- [Source code for **Efficiently encode images** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-optimized-images.js)
