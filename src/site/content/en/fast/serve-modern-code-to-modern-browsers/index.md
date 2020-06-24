@@ -108,7 +108,7 @@ browsers to be used to access your application.
 Ultimately, you should select the appropriate combination of queries to only
 target browsers that fit your needs.
 
-### Enable Modern Bugfixes
+### Enable modern bugfixes
 
 `@babel/preset-env` groups multiple JavaScript syntax features into collections and enables/disables
 them based on the target browsers specified. Although this works well, an entire collection of
@@ -138,7 +138,7 @@ optimization, make sure you have `@babel/preset-env` 7.10 or later installed, th
 
 In Babel 8, the `bugfixes` option will be enabled by default.
 
-## Use &lt;script type=&quot;module&quot;&gt;
+## Use `<script type="module">`
 
 JavaScript modules, or ES modules, are a relatively new feature supported in
 [all major browsers](https://caniuse.com/#feat=es6-module). You can use modules
