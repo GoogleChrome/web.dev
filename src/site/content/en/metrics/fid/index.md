@@ -4,7 +4,7 @@ title: First Input Delay (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-05-27
+updated: 2020-06-19
 description: |
   This post introduces the First Input Delay (FID) metric and explains
   how to measure it
@@ -49,7 +49,8 @@ your site's interactivity and responsiveness.
 
 FID measures the time from when a user first interacts with a page (i.e. when
 they click a link, tap on a button, or use a custom, JavaScript-powered control)
-to the time when the browser is actually able to respond to that interaction.
+to the time when the browser is actually able to begin processing event handlers
+in response to that interaction.
 
 <picture>
   <source srcset="../vitals/fid_8x2.svg" media="(min-width: 640px)">
@@ -86,6 +87,16 @@ One common reason this might happen is the browser is busy parsing and executing
 a large JavaScript file loaded by your app. While it's doing that, it can't run
 any event listeners because the JavaScript it's loading might tell it to do
 something else.
+
+{% Aside 'gotchas' %}
+  FID only measures the "delay" in event processing. It does not measure the
+  event processing time itself nor the time it takes the browser to update the
+  UI after running event handlers. While this time does affect the user
+  experience, including it as part of FID would incentivize developers to
+  respond to events asynchronously—which would improve the metric but likely
+  make the experience worse. See [why only consider the input
+  delay](#why-only-consider-the-input-delay) below for more details.
+{% endAside %}
 
 Consider the following timeline of a typical web page load:
 
@@ -197,6 +208,25 @@ How you track, report on, and analyze FID will probably be quite a bit different
 from other metrics you may be used to. The next section explains how best to do
 this.
 
+### Why only consider the input delay?
+
+As mentioned above, FID only measures the "delay" in event processing. It does
+not measure the event processing time itself nor the time it takes the browser
+to update the UI after running event handlers.
+
+Even though this time is important to the user and _does_ affect the experience,
+it's not included in this metric because doing so could incentivize developers
+to add workarounds that actually make the experience worse—that is, they could
+wrap their event handler logic in an asynchronous callback (via `setTimeout()`
+or `requestAnimationFrame()`) in order to separate it from the task associated
+with the event. The result would be an improvement in the metric score but a
+slower response as perceived by the user.
+
+However, while FID only measure the "delay" portion of event latency, developers
+who want to track more of the event lifecycle can do so using the [Event Timing
+API](https://wicg.github.io/event-timing/). See the guide on [custom
+metrics](/custom-metrics/#event-timing-api) for more details.
+
 ## How to measure FID
 
 FID is a metric that can only be measured [in the
@@ -251,12 +281,15 @@ entries, calculates FID, and logs the value to the console:
 {% include 'content/metrics/first-hidden-time.njk' %}
 {% include 'content/metrics/send-to-analytics.njk' %}
 {% include 'content/metrics/performance-observer-try.njk' %}
-  function onFirstInputEntry(entry) {
+  function onFirstInputEntry(entry, po) {
     // Only report FID if the page wasn't hidden prior to
     // the entry being dispatched. This typically happens when a
     // page is loaded in a background tab.
     if (entry.startTime < firstHiddenTime) {
       const fid = entry.processingStart - entry.startTime;
+
+      // Disconnect the observer.
+      po.disconnect();
 
       // Report the FID value to an analytics endpoint.
       sendToAnalytics({fid});
