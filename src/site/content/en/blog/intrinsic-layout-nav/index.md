@@ -1,9 +1,10 @@
 ---
 title: Intrinsic Navbar Layout
-subhead: A resilient and flexible navigation component
+subhead: An accessible, resilient and flexible navigation component
 authors:
   - adamargyle
-description: Grid, minmax(), min-content, and fr units make this intrinsic task straight forward
+description: >
+  From a picture of a navbar, to having a navbar
 web_lighthouse: N/A
 date: 2019-06-14
 hero: hero.jpeg
@@ -13,9 +14,7 @@ tags:
   - css
 ---
 
-{% Aside 'objective' %}
-  Build this component's layout to respond to large (1600px+) and tiny (240px) sized viewports.
-{% endAside %}
+Design gave us this.
 
 <figure class="w-figure">
   <picture>
@@ -24,33 +23,11 @@ tags:
   </picture>
 </figure>
 
-In order to be content centric, we need content to work with! That means we start by writing HTML. Flat and semantic HTML as a starting point is healthy, so let's author that and start there.
+{% Aside 'objective' %}
+  Our goal is to translate that vision into a tangible, inclusive and responsive component.
+{% endAside %}
 
-**HTML**
-```html
-<nav>
-  <picture>...</picture>
-  <brand>ten hundred</brand>
-  <search>
-    <input type="search" placeholder="Search" autofocus>
-    <svg>...</svg>
-  </search>
-  <icon-button-list>
-    <button small-icon search>
-      <svg>...</svg>
-    </button>
-    <button small-icon watch>
-      <svg>...</svg>
-    </button>
-    <button small-icon cart>
-      <svg>...</svg>
-    </button>
-  </icon-button-list>
-  <button large-icon profile>
-    <svg>...</svg>
-  </button>
-</nav>
-```
+Good layout and components start with supporting HTML. From our design image we see icons, images, brand names, and search bars. Let's try to include as many of those nouns as possible in our HTML.
 
 **HTML Macro View**
 ```html
@@ -63,33 +40,81 @@ In order to be content centric, we need content to work with! That means we star
 </nav>
 ```
 
-Now we have children with intrinsic value to work with. Our layout algorithm is ready to create healthy constraints for these members. Let's dive straight into some layout code and then break each part down.
+{% Details %}
 
-**CSS**
+{% DetailsSummary %}
+See full HTML
+{% endDetailsSummary %}
+
+```html
+<nav>
+  <picture>
+    <source type="image/webp" srcset="img/brand/10hun@2x.webp 2x, img/brand/10hun.webp 1x"/> 
+    <source type="image/png" srcset="img/brand/10hun@2x.png 2x, img/brand/10hun.png 1x"/>
+    <img width="35" height="35" src="img/brand/10hun.png" alt="10hun logo" loading="lazy" intrinsicsize>
+  </picture>
+  <brand>ten hundred</brand>
+  <search>
+    <input type="search" placeholder="Search" autofocus>
+    <svg viewbox="0 0 24 24">
+      <path class="primary" d="M15.5 14l4.99 5L19 20.49l-5-4.99v-.79l-.27-.28A6.471 6.471 0 0 1 9.5 16 6.5 6.5 0 1 1 16 9.5c0 1.61-.59 3.09-1.57 4.23l.28.27h.79zm-6 0c2.49 0 4.5-2.01 4.5-4.5S11.99 5 9.5 5 5 7.01 5 9.5 7.01 14 9.5 14z"></path>
+    </svg>
+  </search>
+  <icon-button-list>
+    <button small-icon search>
+      <svg viewbox="0 0 24 24">
+        <path class="primary" d="M15.5 14l4.99 5L19 20.49l-5-4.99v-.79l-.27-.28A6.471 6.471 0 0 1 9.5 16 6.5 6.5 0 1 1 16 9.5c0 1.61-.59 3.09-1.57 4.23l.28.27h.79zm-6 0c2.49 0 4.5-2.01 4.5-4.5S11.99 5 9.5 5 5 7.01 5 9.5 7.01 14 9.5 14z"></path>
+      </svg>
+    </button>
+    <button small-icon watch>
+      <svg viewbox="0 0 24 24" class="icon-videocam">
+        <path class="secondary" d="M13.59 12l6.7-6.7A1 1 0 0 1 22 6v12a1 1 0 0 1-1.7.7L13.58 12z"/>
+        <rect width="14" height="14" x="2" y="5" class="primary" rx="2"/>
+      </svg>
+    </button>
+    <button small-icon cart>
+      <svg viewbox="0 0 24 24" class="icon-shopping-cart">
+        <path class="secondary" d="M7 4h14a1 1 0 0 1 .9 1.45l-4 8a1 1 0 0 1-.9.55H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/>
+        <path class="primary" d="M17.73 19a2 2 0 1 1-3.46 0H8.73a2 2 0 1 1-3.42-.08A3 3 0 0 1 5 13.17V4H3a1 1 0 1 1 0-2h3a1 1 0 0 1 1 1v10h11a1 1 0 0 1 0 2H6a1 1 0 0 0 0 2h12a1 1 0 0 1 0 2h-.27z"/>
+      </svg>
+    </button>
+  </icon-button-list>
+  <button large-icon>
+    <svg viewbox="0 0 24 24" class="icon-user-circle">
+      <circle cx="12" cy="12" r="10" class="secondary"/>
+      <path class="primary" d="M3.66 17.52A5 5 0 0 1 8 15h8a5 5 0 0 1 4.34 2.52 10 10 0 0 1-16.68 0zM12 13a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>
+    </svg>
+  </button>
+</nav>
+```
+
+{% endDetails %}
+
+Let's use CSS to create healthy constraints for these elements. Let's dive straight into some layout code and then break each part down.
+
 ```css
+:root {
+  --body-rails: 4rem;
+  --sidebar-width: 12rem;
+  --search-width: 24rem;
+}
+
 nav {
-  height: var(--body-rails);
+  min-block-size: var(--body-rails);
   display: grid;
-  grid-auto-flow: column;
   align-items: center;
   grid-template-columns:
-    var(--body-rails)
-    minmax(min-content, var(--sidebar-width))
-    minmax(min-content, var(--search-width))
-    1fr
-    var(--body-rails);
+    [logo] var(--body-rails)
+    [brand] minmax(min-content, var(--sidebar-width))
+    [search] minmax(min-content, var(--search-width))
+    [buttons] 1fr
+    [profile] var(--body-rails);
 
-  & > :matches(:first-child, :last-child) {
+  & > :is(:first-child, :last-child) {
     justify-self: center;
   }
 }
 ```
-
-{% Aside 'key-term' %}
-  [Media Query Ranges](https://preset-env.cssdb.org/features#media-query-ranges), [:matches()](https://preset-env.cssdb.org/features#matches-pseudo-class) & [nesting](https://preset-env.cssdb.org/features#nesting-rules) shown in the CSS above 👍
-{% endAside %}
-
-Visually, I see that grid definition existing like this in my mind:
 
 <figure class="w-figure w-figure--fullbleed">
   <picture>
@@ -98,19 +123,15 @@ Visually, I see that grid definition existing like this in my mind:
   </picture>
 </figure>
 
-Let's flex this in devtools and see how far we got without media queries. Our [minmax()](https://developer.mozilla.org/en-US/docs/Web/CSS/minmax) and ([fr](https://css-tricks.com/introduction-fr-css-unit/)) column definitions ensure we don't squish the elements beyond their minimal comfort level and don't extend beyond a size design decided on. We don't need to fix anything in a large screen scenario, but we do see [min-content](https://developer.mozilla.org/en-US/docs/Web/CSS/width) causing our navbar to go outside the viewport.
-
 <figure class="w-figure">
   <picture>
     <img loading="lazy" src="https://storage.googleapis.com/web-dev-assets/intrinsic-layout-nav/intrinsic-nav-before-responsive.gif" alt="demo gif showing navbar expanding and collapsing, some elements mash together and then go off screen" class="screenshot">
   </picture>
 </figure>
 
-I like to think about this moment with `min-content` like your body again. Your body can move and adjust to fit spaces pretty well, but there are certain elements, like your bones, that can't squish. The brand text in our navbar, if you watch it closely as it get's crunched, it **won't squeeze any smaller than it's longest word**. Words are like bones to min-content (unless you explicitly say they can be broken). Which is reasonable! Same with the search bar, it can't be smaller than a standard hit area so the input is still interactive.
+<!-- Watching this closely, the brand text as it get's crunched, it **won't squeeze any smaller than it's longest word**. Same with the search bar, it can't be smaller than input padding box. This is a value proposition of `min-content`, like a "safe minimum".  -->
 
-{% Aside %}
-  We made it all the way down to `400px` so far though, which is pretty small! One layout definition that's **getting us almost all the way to our tiniest target size**. That's niiiiice.
-{% endAside %}
+There's a few issues to resolve but we made it all the way down to `400px` so far, which is pretty small! There's 2 search icons instead of 1 and we're overflowing the viewport at small widths. Let's break down the layout we have and then finish our mobile styles. 
 
 ### 1<sup>st</sup> Column › Brand Logo
 
