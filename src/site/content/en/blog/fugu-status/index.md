@@ -2,7 +2,7 @@
 title: New capabilities status
 subhead: Web apps should be able to do anything native apps can. Google wants to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2020-04-13
+updated: 2020-06-24
 tags:
   - blog
   - capabilities
@@ -139,21 +139,6 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
       </tr>
       <tr>
         <td>
-          <a href="/wakelock/">Wake Lock API</a>
-        </td>
-        <td>
-          To avoid draining the battery, most devices will quickly fall asleep
-          when left idle. While this is fine most of the time, there are
-          some applications that need to keep the screen or the device awake in
-          order to complete some work. The Wake Lock API provides a way to
-          prevent the device from dimming or locking the screen or prevent
-          the device from going to sleep when an application needs to keep
-          running.<br>
-          <em>Updated February 21, 2020</em>
-        </td>
-      </tr>
-      <tr>
-        <td>
           <a href="/nfc/">Web NFC</a>
         </td>
         <td>
@@ -185,6 +170,21 @@ latest version of Chrome, and in many cases other Chromium based browsers.
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td>
+          <a href="/wakelock/">Wake Lock API</a>
+        </td>
+        <td>
+          To avoid draining the battery, most devices will quickly fall asleep
+          when left idle. While this is fine most of the time, there are
+          some applications that need to keep the screen or the device awake in
+          order to complete some work. The Wake Lock API provides a way to
+          prevent the device from dimming or locking the screen or prevent
+          the device from going to sleep when an application needs to keep
+          running.<br>
+          <em>Updated June 24, 2020</em>
+        </td>
+      </tr>     
       <tr>
         <td>
           <a href="/badging-api/">Badging API</a>
