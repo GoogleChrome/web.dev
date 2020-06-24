@@ -182,7 +182,7 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           prevent the device from dimming or locking the screen or prevent
           the device from going to sleep when an application needs to keep
           running.<br>
-          <em>Updated June 4, 2020</em>
+          <em>Updated June 24, 2020</em>
         </td>
       </tr>     
       <tr>
