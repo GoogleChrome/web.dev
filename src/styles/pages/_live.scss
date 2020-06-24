@@ -487,6 +487,9 @@ web-tabs.w-event-tabs {
 }
 
 details.w-event-question-element {
+  cursor: pointer;
+  font-family: $HEADLINE_FONT;
+  font-size: 18px;
   padding: 16px 8px;
 
   &[open] {
