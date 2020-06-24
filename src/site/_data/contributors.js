@@ -1328,6 +1328,30 @@ const contributors = {
     github: 'anton-karlovskiy',
     glitch: 'anton-karlovskiy',
   },
+  msdikla: {
+    name: {
+      given: 'Dikla',
+      family: 'Cohen',
+    },
+    org: {
+      name: 'Google'
+    },
+    country: 'UK',
+    twitter: 'diklla',
+    github: 'diklla',
+  },
+  bpj: {
+    name: {
+      given: 'Bart',
+      family: 'Jarochowski',
+    },
+    org: {
+      name: 'Google'
+    },
+    country: 'KR',
+    twitter: 'maranag',
+    github: 'maranag',
+  },
 };
 
 const processedContributors = {};
