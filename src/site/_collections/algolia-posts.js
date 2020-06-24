@@ -40,7 +40,7 @@ function limitText(fulltext, limit = 7500) {
 }
 
 module.exports = (collection) => {
-  const validTags = ['post', 'pathItem'];
+  const validTags = ['post'];
   const eleventyPosts = collection
     .getFilteredByGlob('**/*.md')
     .filter((item) => {

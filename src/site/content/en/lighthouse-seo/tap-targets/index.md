@@ -4,7 +4,7 @@ title: Tap targets are not sized appropriately
 description: |
   Learn about the "Tap targets are not sized appropriately" Lighthouse audit.
 date: 2019-05-02
-updated: 2019-08-21
+updated: 2020-06-24
 web_lighthouse:
   - tap-targets
 ---
@@ -70,4 +70,5 @@ tap targets.
 
 ## Resources
 
-[Source code for **Tap targets are not sized appropriately** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/tap-targets.js)
+- [Accessible tap targets](/accessible-tap-targets): more information on how to ensure your tap targets are accessible by all users.
+- [Source code for **Tap targets are not sized appropriately** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/seo/tap-targets.js)

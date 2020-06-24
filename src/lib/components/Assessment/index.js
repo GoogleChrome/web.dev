@@ -35,7 +35,7 @@ class Assessment extends BaseModalElement {
     super();
     this.modal = false;
     this._placeholder = null;
-    this.breakpoint_ = matchMedia(`(min-width: 481px)`);
+    this.breakpoint_ = matchMedia('(min-width: 481px)');
 
     this.onAssessmentAnimationEnd = this.onAssessmentAnimationEnd.bind(this);
     this.onAssessmentResize = this.onAssessmentResize.bind(this);

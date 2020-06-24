@@ -15,8 +15,9 @@
  */
 
 const rule = require('unified-lint-rule');
-const url = require('url');
+const {URL} = require('url');
 const visit = require('unist-util-visit');
+const siteData = require('../../src/site/_data/site');
 
 module.exports = rule('remark-lint:bad-urls', checkURL);
 
@@ -34,11 +35,11 @@ function checkURL(tree, file) {
     if (!nodeUrl) {
       return;
     }
-    const parsed = url.parse(nodeUrl);
+    const parsed = new URL(nodeUrl, siteData.url);
 
     // If URL hostname is "wiki.developer.mozilla.org", warn to change to
     // "developer.mozilla.org".
-    if (parsed.hostname == 'wiki.developer.mozilla.org') {
+    if (parsed.hostname === 'wiki.developer.mozilla.org') {
       const reason = 'Change URL hostname to "developer.mozilla.org".';
       file.message(reason, node);
     }

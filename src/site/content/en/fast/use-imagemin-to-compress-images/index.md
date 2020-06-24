@@ -4,7 +4,7 @@ title: Use Imagemin to compress images
 authors:
   - katiehempenius
 date: 2018-11-05
-updated: 2020-04-06
+updated: 2020-06-24
 description: |
   Uncompressed images bloat your pages with unnecessary bytes. Run Lighthouse to
   check for opportunities to improve page load by compressing images.
@@ -12,6 +12,8 @@ codelabs:
   - codelab-imagemin-webpack
   - codelab-imagemin-gulp
   - codelab-imagemin-grunt
+tags:
+  - performance
 ---
 
 ## Why should you care?

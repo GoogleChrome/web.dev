@@ -8,9 +8,11 @@ description: |
   than in advance. This approach frees up resources during the initial page load
   and avoids loading assets that are never used.
 date: 2018-11-05
-updated: 2019-04-10
+updated: 2020-06-24
 codelabs:
   - codelab-use-lazysizes-to-lazyload-images
+tags:
+  - performance
 ---
 
 {% Aside 'note' %}

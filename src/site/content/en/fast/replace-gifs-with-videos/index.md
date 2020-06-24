@@ -9,9 +9,11 @@ description: |
   There's a good reason for that. Animated GIFs can be downright huge! By
   converting large GIFs to videos, you can save big on users' bandwidth.
 date: 2018-11-05
-updated: 2019-08-29
+updated: 2020-06-24
 codelabs:
   - codelab-replace-gifs-with-video
+tags:
+  - performance
 ---
 
 Have you ever seen an animated GIF on a service like Imgur or Gfycat, inspected

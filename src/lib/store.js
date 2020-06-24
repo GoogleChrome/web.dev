@@ -49,6 +49,8 @@ const initialState = {
   // Handle hiding/showing the snackbar.
   showingSnackbar: false,
   snackbarType: null,
+
+  userPrefferedLanguage: '',
 };
 
 let store;

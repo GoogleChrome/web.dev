@@ -109,8 +109,9 @@ const renderAuthorsDate = (
 
     if (!info.title) {
       throw new Error(
-        `Can't create Author with missing 'title'. author object: ` +
-          JSON.stringify(author),
+        `Can't create Author with missing 'title'. author object: ${JSON.stringify(
+          info,
+        )}`,
       );
     }
 

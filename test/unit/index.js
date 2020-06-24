@@ -1,3 +1,4 @@
-describe('Unit tests', function() {
+describe('Unit tests', function () {
   require('./src');
+  require('./redirect-handler');
 });

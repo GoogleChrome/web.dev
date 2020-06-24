@@ -86,7 +86,7 @@ function forceFocus(el) {
 
     el.addEventListener(
       'blur',
-      (e) => {
+      () => {
         el.removeAttribute('tabindex');
         el.classList.remove('w-force-focus');
       },

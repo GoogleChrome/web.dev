@@ -9,6 +9,8 @@ description: |
 date: 2018-11-05
 glitch: lazysizes
 related_post: use-lazysizes-to-lazyload-images
+tags:
+  - performance
 ---
 
 Lazy loading is the approach of waiting to load resources until they are needed,

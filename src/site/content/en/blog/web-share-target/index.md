@@ -254,7 +254,7 @@ the `text` field, or occasionally in the `title` field.
 [demo]: https://web-share.glitch.me/
 [demo-source]: https://glitch.com/edit/#!/web-share?path=index.html
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=668389
-[cr-status]: https://www.chromestatus.com/features/5662315307335680
+[cr-status]: https://www.chromestatus.com/feature/5662315307335680
 [explainer]: https://github.com/WICG/web-share-target/blob/master/docs/explainer.md
 [issues]: https://github.com/WICG/web-share-target/issues
 [wicg-discourse]: https://discourse.wicg.io/t/web-share-target-api-for-websites-to-receive-shared-content/1854

@@ -25,10 +25,7 @@ const raw = fs.readFileSync('dist/en/algolia.json', 'utf-8');
 const indexed = JSON.parse(raw);
 
 // Revision will look like "YYYYMMDDHHMM".
-const revision = new Date()
-  .toISOString()
-  .substring(0, 16)
-  .replace(/\D/g, '');
+const revision = new Date().toISOString().substring(0, 16).replace(/\D/g, '');
 const primaryIndexName = 'webdev';
 const deployIndexName = `webdev_deploy_${revision}`;
 
@@ -59,10 +56,10 @@ async function index() {
 
   // Move our temporary deploy index on-top of the primary index, atomically.
   await client.moveIndex(deployIndex.indexName, primaryIndex.indexName);
-  log(`Done!`);
+  log('Done!');
 }
 
 index().catch((err) => {
   log.error(err);
-  process.exit(1);
+  throw err;
 });

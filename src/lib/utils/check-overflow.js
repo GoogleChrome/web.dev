@@ -9,7 +9,7 @@ export const checkOverflow = (scroller, dimension) => {
   }
 
   if (!scroller) {
-    throw new TypeError("Can't check overflow on an undefined element.");
+    throw new TypeError(`Can't check overflow on an undefined element.`);
   }
 
   const clientDimension =

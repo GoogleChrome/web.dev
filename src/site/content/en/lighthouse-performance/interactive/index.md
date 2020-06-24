@@ -5,7 +5,7 @@ description: |
   Learn about Lighthouse's Time to Interactive metric and
   how to measure and optimize it.
 date: 2019-05-02
-updated: 2019-10-10
+updated: 2020-06-24
 web_lighthouse:
   - interactive
 ---
@@ -62,24 +62,20 @@ This table shows how to interpret your TTI score:
       <tr>
         <th>TTI metric<br>(in seconds)</th>
         <th>Color-coding</th>
-        <th>TTI score<br>(HTTP Archive percentile)</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>0–5.2</td>
+        <td>0–3.8</td>
         <td>Green (fast)</td>
-        <td>75–100</td>
       </tr>
       <tr>
-        <td>5.3–7.3</td>
+        <td>3.9–7.3</td>
         <td>Orange (moderate)</td>
-        <td>50–74</td>
       </tr>
       <tr>
         <td>Over 7.3</td>
         <td>Red (slow)</td>
-        <td>0–49</td>
       </tr>
     </tbody>
   </table>

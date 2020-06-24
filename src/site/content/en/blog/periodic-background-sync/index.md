@@ -6,7 +6,7 @@ authors:
   - jeffposnick
   - joemedley
 date: 2019-11-10
-updated: 2020-03-13
+updated: 2020-06-24
 hero: hero.jpg
 alt: Colorful airplanes flying in sync
 origin_trial:
@@ -75,7 +75,7 @@ Status
 2. Create initial draft of specification
 </td>
 <td markdown="block">
-<a href="https://github.com/WICG/BackgroundSync/blob/master/explainers/periodicsync-explainer.md" rel="noopener">In Progress</a>
+<a href="https://wicg.github.io/periodic-background-sync/" rel="noopener">Complete</a>
 </td>
 </tr>
 <tr>

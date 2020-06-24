@@ -30,8 +30,9 @@ module.exports = ({id, showSocialMedia = false, small = false}) => {
 
   if (!author.name) {
     throw new Error(
-      `Can't create Author with missing author.name. author object: ` +
-        JSON.stringify(author),
+      `Can't create Author with missing author.name. author object: ${JSON.stringify(
+        author,
+      )}`,
     );
   }
 
@@ -39,7 +40,7 @@ module.exports = ({id, showSocialMedia = false, small = false}) => {
     <div class="w-author">
       <a href="/authors/${id}">
         <img
-          class="w-author__image ${small && `w-author__image--small`}"
+          class="w-author__image ${small && 'w-author__image--small'}"
           src="/images/authors/${id}.jpg"
           alt="${author.title}"
         />

@@ -293,6 +293,6 @@ A number of tools are available to measure and debug FID:
     <img class="w-screenshot" src="lighthouse.jpg" alt="Lighthouse 6.0.">
 
 +   [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
-    provides real-world LCP values aggregated at the origin-level
+    provides real-world FID values aggregated at the origin-level
 
 _With thanks to Philip Walton, Kayce Basques, and Ilya Grigorik for their reviews._

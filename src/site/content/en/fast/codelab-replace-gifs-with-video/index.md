@@ -4,12 +4,14 @@ title: Replace GIFs with video
 authors:
   - robdodson
 date: 2018-11-05
-updated: 2019-08-29
+updated: 2020-06-24
 description: |
   In this codelab, learn how to improve performance by replacing an animated GIF
   with a video.
 glitch: gif-to-video
 related_post: replace-gifs-with-videos
+tags:
+  - performance
 ---
 
 {% include 'content/devtools-headsup.njk' %}

@@ -37,7 +37,7 @@ class LighthouseScoresMeta extends BaseElement {
           this.auditedOn,
         );
       } catch (err) {
-        auditedOnText = auditedOn.toLocaleString();
+        auditedOnText = this.auditedOn.toLocaleString();
       }
     }
 
