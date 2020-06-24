@@ -288,7 +288,7 @@ exposes a number of timestamps in the event lifecycle, including:
   the time when the browser is able to begin processing event handlers for
   the event.
 - [`processingEnd`](https://wicg.github.io/event-timing/#dom-performanceeventtiming-processingend):
-  time when the browser finishing executing all synchronous code initiated from
+  time when the browser finishes executing all synchronous code initiated from
   event handlers for this event.
 - [`duration`](https://wicg.github.io/event-timing/#dom-performanceeventtiming-processingstart):
   the time (rounded to 8ms for security reasons) between when the browser
