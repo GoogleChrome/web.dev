@@ -237,8 +237,10 @@ information can be accessed via the `brands` and `mobile` properties,
 respectively:
 
 ```js
+// Log the brand data
 console.log(navigator.userAgentData.brands);
 
+// output
 [
   {
     brand: 'Chromium',
@@ -250,8 +252,10 @@ console.log(navigator.userAgentData.brands);
   },
 ];
 
+// Log the mobile indicator
 console.log(navigator.userAgentData.mobile);
 
+// output
 false;
 ```
 
@@ -263,12 +267,14 @@ browser. As with requesting the additional headers, it's down to the browser
 what values, if any, are returned.
 
 ```js
+// Log the full user-agent data
 navigator
   .userAgentData.getHighEntropyValues(
     ["architecture", "model", "platform", "platformVersion",
      "uaFullVersion"])
   .then(ua => { console.log(ua) });
 
+// output
 {
   "architecture": "x86",
   "model": "",
@@ -283,7 +289,7 @@ navigator
 You can try out both the headers and the JavaScript API on your own device at
 [user-agent-client-hints.glitch.me](https://user-agent-client-hints.glitch.me).
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+<div class="glitch-embed-wrap" style="height: 600px; width: 100%;">
   <iframe
     src="https://glitch.com/embed/#!/embed/user-agent-client-hints?path=README.md&previewSize=100"
     title="user-agent-client-hints on Glitch"
