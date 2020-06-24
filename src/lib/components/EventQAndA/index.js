@@ -21,7 +21,7 @@ class EventQAndA extends BaseElement {
   connectedCallback() {
     super.connectedCallback();
 
-    this.childElements = Array.from(this.querySelectorAll('[data-category]'));
+    this.childElements = Array.from(this.children);
 
     const categories = new Set();
     this.childElements.forEach((element) =>
@@ -47,7 +47,9 @@ class EventQAndA extends BaseElement {
   }
 
   closeDetail($event) {
-    const category = $event.target.closest('[data-category]');
+    const category = $event.target.hasAttribute('[data-category]')
+      ? $event.target
+      : $event.target.closest('[data-category]');
     if (!category) {
       return;
     }

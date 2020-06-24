@@ -125,7 +125,7 @@ date: 2020-06-31
     <section id="q-and-a" class="w-event-section">
       <div class="w-event-section__column-left">
         <h3 class="w-mt--non">
-          <svg class="w-event-icon" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M14 11C14.55 11 15 10.55 15 10V1C15 0.45 14.55 0 14 0H1C0.45 0 0 0.45 0 1V15L4 11H14ZM13 2V9H2V2H13ZM17 4H19C19.55 4 20 4.45 20 5V20L16 16H5C4.45 16 4 15.55 4 15V13H17V4Z" fill="#5F6368"/></svg>
+          <svg class="w-event-icon" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M14 11c.55 0 1-.45 1-1V1c0-.55-.45-1-1-1H1C.45 0 0 .45 0 1v14l4-4h10zm-1-9v7H2V2h11zm4 2h2c.55 0 1 .45 1 1v15l-4-4H5c-.55 0-1-.45-1-1v-2h13V4z" fill="#5F6368"/></svg>
           Q & A
         </h3>
         <p>
@@ -137,7 +137,7 @@ date: 2020-06-31
       <div class="w-event-section__column-right">
         <web-event-q-and-a>
         {%- for entry in event.qAndAs  %}
-          <details class="w-event-question-element" data-category="{{entry.category}}">
+          <details class="web-event-q-and-a__details" data-category="{{entry.category}}">
             <summary><span>Q.</span>{{entry.question}}</summary>
             <p><span>A.</span>{{entry.answer}}</p>
           </details>
