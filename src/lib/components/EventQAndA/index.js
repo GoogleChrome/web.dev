@@ -32,7 +32,10 @@ class EventQAndA extends BaseElement {
 
   render() {
     return html`
-      <select class="w-select--borderless" @change="${this.selectCategory}">
+      <select
+        class="w-select--borderless w-mb--sm"
+        @change="${this.selectCategory}"
+      >
         <option value>All categories</option>
         ${this.categories.map((c) => html`<option value="${c}">${c}</option>`)}
       </select>

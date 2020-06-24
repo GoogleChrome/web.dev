@@ -491,8 +491,10 @@ web-tabs.w-event-tabs {
   padding: 16px 8px;
 
   &[open] {
-    border-top: 1px solid $GREY_800;
+    border-bottom: 1px solid $GREY_600;
+    box-shadow: 0 8px 8px -8px rgba(0, 0, 0, .2), 0 -8px 8px -8px rgba(0, 0, 0, .2);
     color: $GREY_800;
+    margin-bottom: -1px;
   }
 
   p {
@@ -506,7 +508,6 @@ web-tabs.w-event-tabs {
   }
 
   summary {
-
     &::-webkit-details-marker {
       display: none;
     }
