@@ -12,11 +12,12 @@ class EventQAndA extends BaseElement {
     super();
     this.selectCategory = this.selectCategory.bind(this);
 
-    this.catageories = new Set();
+    this.categories = new Set();
     this.categorySelectElement = document.createElement('select');
     this.categorySelectElement.classList.add('w-select--borderless');
     this.categorySelectElement.addEventListener('change', this.selectCategory);
   }
+
   connectedCallback() {
     super.connectedCallback();
     this.addDropDown();
@@ -27,11 +28,6 @@ class EventQAndA extends BaseElement {
   }
 
   disconnectedCallback() {
-    this.categorySelectElement.removeEventListener(
-      'change',
-      this.selectCategory,
-    );
-
     this.querySelectorAll('[data-category]').forEach((element) => {
       element.removeEventListener('click', this.closeDetail);
     });
@@ -40,7 +36,7 @@ class EventQAndA extends BaseElement {
 
   addDropDown() {
     this.querySelectorAll('[data-category]').forEach((element) =>
-      this.catageories.add(element.getAttribute('data-category')),
+      this.categories.add(element.getAttribute('data-category')),
     );
 
     const divContainer = document.createElement('div');
@@ -48,13 +44,13 @@ class EventQAndA extends BaseElement {
     divContainer.append(this.categorySelectElement);
     const allOption = document.createElement('option');
     allOption.setAttribute('value', '');
-    allOption.innerText = 'All categories';
+    allOption.textContent = 'All categories';
     this.categorySelectElement.append(allOption);
 
-    this.catageories.forEach((category) => {
+    this.categories.forEach((category) => {
       const option = document.createElement('option');
       option.setAttribute('value', category);
-      option.innerText = category;
+      option.textContent = category;
       this.categorySelectElement.append(option);
     });
 
@@ -73,14 +69,10 @@ class EventQAndA extends BaseElement {
 
   selectCategory($event) {
     this.querySelectorAll('[data-category]').forEach((element) => {
-      if (
+      const show =
         !$event.target.value ||
-        element.getAttribute('data-category') === $event.target.value
-      ) {
-        element.classList.remove('hidden');
-      } else {
-        element.classList.add('hidden');
-      }
+        element.getAttribute('data-category') === $event.target.value;
+      element.classList.toggle('hidden', !show);
     });
   }
 }
