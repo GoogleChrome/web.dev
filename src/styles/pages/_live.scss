@@ -131,7 +131,7 @@
   margin: (64px - $WEB_HEADER_HEIGHT - 48px) auto 64px;
   max-width: 960px;
   padding-top: ($WEB_HEADER_HEIGHT + 48px);
-  text-align: center;  // for mobile
+  text-align: center; // for mobile
 
   &::before {
     display: none !important;
@@ -159,7 +159,6 @@
     margin-top: -32px;
   }
 }
-
 
 .w-event-hero {
   align-items: center;
@@ -481,4 +480,42 @@ web-tabs.w-event-tabs {
   align-items: center;
   vertical-align: middle;
   margin-right: 16px;
+}
+
+.w-event-question-element {
+  border-bottom: 1px solid $GREY_600;
+}
+
+details.w-event-question-element {
+  padding: 16px 8px;
+
+  &[open] {
+    border-bottom: 1px solid $GREY_800;
+
+    > * {
+      color: $GREY_800;
+    }
+  }
+
+  p {
+    margin-bottom: 0 !important;
+  }
+
+  span {
+    font-family: $HEADLINE_FONT;
+    font-size: 18px;
+    margin-right: 13px;
+  }
+
+  summary {
+    color: $GREY_600;
+    font-family: $HEADLINE_FONT;
+    font-size: 18px;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      cursor: pointer;
+      display: none;
+    }
+  }
 }

@@ -1,52 +1,12 @@
 @import '../../../styles/settings/colors';
 @import '../../../styles/settings/type';
 
-$DETAILS_TB_PADDING: 16px;
-$DETAILS_LR_PADDING: 8px;
-
 web-event-q-and-a {
   display: block;
 
   select {
     color: $GREY_700;
-    font-family: Google Sans;
+    font-family: $HEADLINE_FONT;
     width: auto;
-  }
-
-  details {
-    padding: $DETAILS_TB_PADDING $DETAILS_LR_PADDING;
-
-    &[open] {
-      border-bottom: 1px solid $GREY_800;
-      > * {
-        color: $GREY_800;
-      }
-    }
-
-    p {
-      margin-bottom: 0 !important;
-    }
-
-    span {
-      font-family: Google Sans;
-      font-size: 18px;
-      margin-right: 13px;
-    }
-
-    summary {
-      color: $GREY_600;
-      font-family: Google Sans;
-      font-size: 18px;
-      list-style: none;
-
-      &::-webkit-details-marker {
-        cursor: pointer;
-        display: none;
-      }
-    }
-  }
-
-  .w-event-question-element {
-    border-bottom: 1px solid $GREY_600;
   }
 }
