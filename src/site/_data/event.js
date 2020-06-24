@@ -243,7 +243,7 @@ const days = [
   {
     title: 'Day 3',
     when: '2020-07-02T07:30Z', // 1pm IST (+5:30)
-    duration: 3 * 60, // minutes
+    duration: 4 * 60, // minutes
     videoId: null,
     sessions: [
       {
