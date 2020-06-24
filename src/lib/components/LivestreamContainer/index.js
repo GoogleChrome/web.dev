@@ -49,7 +49,7 @@ class LivestreamContainer extends BaseStateElement {
           ` :
           html`
             <div class="w-youtube-disabled-chat">
-              <div class="w-youtube-disabled-chat__container">
+              <div class="w-youtube-disabled-chat__text">
                 <div>
                   Live Chat is currently disabled. Please head to YouTube and
                   ask your questions in the comments on the video.
