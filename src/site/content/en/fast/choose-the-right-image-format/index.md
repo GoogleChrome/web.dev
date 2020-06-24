@@ -171,7 +171,7 @@ As a result, the choice of the "right format" for a particular image is a combin
   <td data-th="format"><a href="http://en.wikipedia.org/wiki/WebP">WebP</a></td>
   <td data-th="transparency">Yes</td>
   <td data-th="animation">Yes</td>
-  <td data-th="browser">Chrome, Opera, Android</td>
+  <td data-th="browser">Chrome, Opera, Android, Safari (from version 14)</td>
 </tr>
 </tbody>
 </table>
