@@ -1334,7 +1334,7 @@ const contributors = {
       family: 'Cohen',
     },
     org: {
-      name: 'Google'
+      name: 'Google',
     },
     country: 'UK',
     twitter: 'diklla',
@@ -1346,7 +1346,7 @@ const contributors = {
       family: 'Jarochowski',
     },
     org: {
-      name: 'Google'
+      name: 'Google',
     },
     country: 'KR',
     twitter: 'maranag',
