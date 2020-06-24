@@ -3,8 +3,8 @@ title: Pixel-perfect rendering with devicePixelContentBox
 subhead: How many pixels are there _really_ in a canvas?
 authors:
   - surma
-date: 2020-06-19
-updated: 2020-06-23
+date: 2020-06-24
+updated: 2020-06-24
 hero: pixels.jpg
 alt: Lots of pixels
 description: Since Chrome 84, [ResizeObserver] supports a new box measurement called `device-pixel-content-box`, that measures the element's dimension in _physical_ pixels. This is crucial for rendering pixel-perfect graphics, especially in the context of high-density screens.
@@ -102,7 +102,7 @@ The `box` property in the options object for `observer.observe()` lets you defin
 
 **Note:** All of the box metrics are arrays to allow `ResizeObserver` to handle fragmentation in the future. At the time of writing, the array is always of length 1.
 
-With this new property, we can even animate our canvas' size and position (effectively guaranteeing fractional pixel values), and not see any Moiré effects on the rendering. If you would like to see the Moiré effect on the approach using `getBoundingClientRect()`, and how the new `ResizeObserver` property allows you to avoid, take a look at the <a href="https://device-pixel-content-box.glitch.me/" target="_blank">demo</a>!
+With this new property, we can even animate our canvas' size and position (effectively guaranteeing fractional pixel values), and not see any Moiré effects on the rendering. If you would like to see the Moiré effect on the approach using `getBoundingClientRect()`, and how the new `ResizeObserver` property allows you to avoid, take a look at the [demo] in Chrome Canary!
 
 ### Feature detection
 
@@ -132,3 +132,4 @@ Pixels are a surprisingly complex topic on the web and up until now there was no
 [subpixel rendering]: https://en.wikipedia.org/wiki/Subpixel_rendering
 [moiré effect]: https://en.wikipedia.org/wiki/Moir%C3%A9_pattern
 [ro support]: https://caniuse.com/#feat=resizeobserver
+[demo]: https://device-pixel-content-box.glitch.me/
