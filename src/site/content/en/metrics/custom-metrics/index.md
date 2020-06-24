@@ -285,7 +285,7 @@ exposes a number of timestamps in the event lifecycle, including:
 - [`startTime`](https://w3c.github.io/performance-timeline/#dom-performanceentry-starttime):
   the time when the browser receives the event.
 - [`processingStart`](https://wicg.github.io/event-timing/#dom-performanceeventtiming-processingstart):
-  the time when the browser is able to beginning processing event handlers for
+  the time when the browser is able to begin processing event handlers for
   the event.
 - [`processingEnd`](https://wicg.github.io/event-timing/#dom-performanceeventtiming-processingend):
   time when the browser finishing executing all synchronous code initiated from
