@@ -32,9 +32,10 @@ pagination:
   <logo>{{ renderData.metadata.logo }}</logo>
   <subtitle>{{ renderData.metadata.subtitle }}</subtitle>
   {% for post in paged.elements -%}
-  {% set absolutePostUrl -%}{{ post.canonicalUrl | url | absoluteUrl(renderData.metadata.url) }}{%- endset %}
+  {#  absoluteUrl comes from 11ty RSS Plugin (@see https://www.11ty.dev/docs/plugins/rss/) #}
+  {% set absolutePostUrl -%}{{ post.data.canonicalUrl | url | absoluteUrl(renderData.metadata.url) }}{%- endset %}
   <entry>
-    <title>xxx{{ post.data.title }}</title>
+    <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
     <updated>{{ post.date | rssDate }}</updated>
     <id>{{ absolutePostUrl }}</id>
