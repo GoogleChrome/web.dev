@@ -69,8 +69,8 @@ covertly track you.
 The User-Agent string enables many legitimate [use
 cases](https://github.com/WICG/ua-client-hints/blob/master/README.md#use-cases),
 and serves an important purpose for developers and site owners. However, it is
-also critical that users' privacy is protected against any covert tracking
-methods, and sending UA information by default goes against that goal.
+also critical that users' privacy is protected against covert tracking methods,
+and sending UA information by default goes against that goal.
 
 There's also a need to improve web compatibility when it comes to the User-Agent
 string. It is unstructured, so parsing it results in unnecessary complexity,
