@@ -4,6 +4,11 @@
 
 .w-live-landing-page {
   color: $GREY_800;
+  --flow-space: 48px;
+
+  @include bp(md) {
+    --flow-space: 80px;
+  }
 
   p {
     font-size: 14px;
@@ -26,41 +31,61 @@
   h6 {
     color: inherit;
   }
+
+  .w-display--mobile-only {
+    @include bp(md) {
+      display: none;
+    }
+  }
+
+  .w-display--desktop-only {
+    @media (max-width: #{$BREAKPOINT_VALUE_MEDIUM - 1px}) {
+      display: none;
+    }
+  }
+}
+
+// A utility for creating consistent vertical rhythm between sections.
+.w-live-flow + .w-live-flow {
+  margin-top: var(--flow-space);
 }
 
 .w-livestream-section {
+  background-color: $GREY_50;
+
   @include bp(md) {
     border-bottom: 1px solid $GREY_300;
   }
+
+  .w-live-chat-notice {
+    align-items: center;
+    background-color: $WHITE;
+    color: $GREY_700;
+    display: flex;
+    font-size: 12px;
+    padding: 19px 16px;
+
+    > :first-child {
+      margin-right: 16px;
+    }
+
+    // Only display the notice if the device's primary pointing device does not
+    // support hover. This lets us filter out phones and tablets.
+    @media (hover: hover) {
+      display: none;
+    }
+
+  }
 }
 
-.w-live-chat-notice {
-  align-items: center;
-  color: $GREY_700;
-  display: flex;
-  font-size: 12px;
-  padding: 19px 16px;
-
-  // Hide the notice if we're at small desktop size and the primary pointing
-  // device supports hover. This should exclude iPads but include Pixelbooks.
-  @media (min-width: #{$BREAKPOINT_VALUE_MEDIUM}) and (hover: hover) {
-    display: none;
-  }
-
-  > :first-child {
-    margin-right: 16px;
-  }
-}
-
-.w-live-top {
-  // We need this as the live background extends outside the normal l/r of the
+.w-hero-overflow {
+  // We need this as the hero image extends outside the normal l/r of the
   // page. Contain it so it doesn't let users scroll.
   overflow-x: hidden;
+}
 
-  // jiwoong@
-  .w-event-section__column-right {
-    padding: 0 24px;
-  }
+.w-hero-section {
+  margin-top: 50px;
 }
 
 .w-event-buttons {
@@ -124,14 +149,30 @@
   }
 }
 
+.w-event-heading--smaller {
+  .w-event-heading__logo {
+    font-size: 33px;
+
+    @include bp(md) {
+      font-size: 33px;
+    }
+  }
+
+  .w-event-heading__subhead {
+    @include bp(md) {
+      font-size: 16px;
+    }
+  }
+}
+
 .w-event-section {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  margin: (64px - $WEB_HEADER_HEIGHT - 48px) auto 64px;
   max-width: 960px;
-  padding-top: ($WEB_HEADER_HEIGHT + 48px);
   text-align: center;  // for mobile
+  margin-left: auto;
+  margin-right: auto;
 
   &::before {
     display: none !important;
@@ -140,14 +181,6 @@
   @include bp(md) {
     text-align: inherit;
   }
-
-  &#schedule .w-event-section__column-left {
-    margin-bottom: 64px;
-  }
-
-  .w-event-schedule__blurb {
-    color: $GREY_700;
-  }
 }
 
 .w-event-section--subscribe {
@@ -155,11 +188,13 @@
   padding-right: 32px;
 
   // Make the subscribe area less huge as it has its own padding.
+  // TODO(michaelsolati): Remove the padding overrides in the subscribe include.
+  // The spacing for this element should be defined by the containing page.
   web-subscribe {
     margin-top: -32px;
+    margin-bottom: -32px;
   }
 }
-
 
 .w-event-hero {
   align-items: center;
@@ -168,8 +203,12 @@
   height: 192px;
   justify-content: center;
   margin: 0 auto;
-  padding: 0 0 64px;
+  padding: 0 0 50px;
   position: relative;
+
+  @include bp(md) {
+    padding: 0 0 64px;
+  }
 
   &::before {
     background-image: url('../live/hero-bg.png');
@@ -191,6 +230,10 @@
 
 .w-event-section__column-head {
   width: 100%;
+
+  @include bp(md) {
+    order: -1;
+  }
 }
 
 .w-event-section__column-left {
@@ -198,9 +241,18 @@
   display: flex;
   flex-flow: column wrap;
   flex-grow: 1;
+  max-width: 512px;
   padding: 0 32px;
   text-align: center;
   width: 100%;
+
+  @include bp(md) {
+    align-items: flex-start;
+    flex-grow: 0;
+    padding-left: 16px;
+    text-align: inherit;
+    width: 37.5%;
+  }
 
   h3 {
     font-size: 16px;
@@ -208,52 +260,96 @@
   }
 
   p {
-    max-width: 288px;
     margin: 0;
     margin-top: 24px;
-  }
+    max-width: 512px;
 
-  .w-event-link {
-    font-size: 14px;
-    margin-top: 20px;
+    @include bp(md) {
+      max-width: 288px;
+    }
   }
 
   .w-event-buttons {
     margin: 16px 0;
   }
+
+  .w-feedback-button {
+    margin-top: 49px;
+
+    svg:first-child {
+      margin-right: 8px;
+    }
+  }
 }
 
 .w-event-section__column-right {
-  max-width: 100%;
+  max-width: 512px;
   padding: 0 8px;
 
-  @media (min-width: 512px) {
-    max-width: 512px;
+  @include bp(md) {
+    padding: 0 16px;
+    width: 62.5%;
+    max-width: 62.5%;
   }
 
-  &.w-event-section__column-right__schedule {
-    margin-top: -16px;
+  .w-event-carousel {
+    display: none;
 
     @include bp(md) {
-      padding: 0px;
+      display: flex;
     }
+  }
+}
 
-    @include bp(sm) {
-      padding: 0px !important;
+.w-event-section__column-right--extra-padding {
+  padding: 0 24px;
+}
+
+.w-event-section__internal-links {
+  margin-top: 32px;
+  display: flex;
+
+  @include bp(md) {
+    display: block;
+  }
+
+  a {
+    align-items: center;
+    color: $GREY_800;
+    display: flex;
+    flex-direction: column;
+    font-family: $HEADLINE_FONT;
+    font-weight: $FONT_WEIGHT_MEDIUM;
+    justify-content: center;
+    padding: 0 16px;
+    width: 132px;
+
+    @include bp(md) {
+      display: block;
+      padding: 0;
+      width: auto;
     }
   }
 
-  @include bp(sm) {
-    // On larger devices, force padding even on the schedule (this wins over
-    // ...__schedule, above).
-    padding: 0 16px !important;
+  > * + * {
+    border-left: 1px solid $GREY_300;
+
+    @include bp(md) {
+      border: 0;
+      margin-top: 24px;
+    }
   }
+}
+
+.w-event-link {
+  font-size: 14px;
+  margin-top: 24px;
 }
 
 .w-event-carousel {
   display: flex;
   overflow-x: scroll;
-  margin-bottom: 12px;
+  padding-bottom: 8px;
   // Firefox only
   // sass-lint:disable no-misspelled-properties
   scrollbar-color: $GREY_500;
@@ -280,7 +376,6 @@
   font-size: 14px;
   font-weight: $FONT_WEIGHT_MEDIUM;
   margin-right: 16px;
-  padding-bottom: 8px;
 
   &:hover,
   &:focus {
@@ -314,19 +409,60 @@
   }
 }
 
-// Need to put top margin on the tabs instead of bottom margin on the
-// carousel because bottom margin will affect the carousel's scroll bar.
-.w-event-carousel + .w-event-tabs {
-  margin-top: 34px;
+.w-schedule-section {
+  .w-event-heading {
+    margin-top: 56px;
+
+    @include bp(md) {
+      margin-top: 0;
+    }
+  }
+
+  .w-event-heading + p {
+    margin-top: 32px;
+
+    @include bp(md) {
+      margin-top: 24px;
+    }
+  }
+}
+
+.w-livestream-section + .w-schedule-section {
+  // If we're displaying the live chat is disabled banner (which we only do on
+  // touch devices) then we want to remove the normal 48px margin to move the
+  // schedule closer to the video.
+  @media (hover: none) {
+    --flow-space: 8px;
+  }
+
+  // Restore the usual flow-space value.
+  @include bp(md) {
+    --flow-space: 80px;
+  }
+}
+
+web-event-schedule {
+  display: block;
+}
+
+.w-event-carousel + web-event-schedule {
+  margin-top: 12px;
 }
 
 web-tabs.w-event-tabs {
   --primary-color: #{$WEB_PRIMARY_COLOR};
   --hover-color: #{$GOOGLE_BLUE_50};
   --active-color: #{$GOOGLE_BLUE_100};
+
+  margin-top: 48px;
+
+  @include bp(md) {
+    margin-top: 0;
+  }
 }
 
 .w-event-schedule {
+  display: block;
   // Forces a stacking context.
   position: relative;
   text-align: left;
@@ -406,6 +542,10 @@ web-tabs.w-event-tabs {
       z-index: 0;
     }
   }
+
+  .w-event-schedule__blurb {
+    color: $GREY_700;
+  }
 }
 
 .w-event-calendar {
@@ -447,26 +587,6 @@ web-tabs.w-event-tabs {
   }
 }
 
-@include bp(md) {
-  .w-event-section__column-head {
-    order: -1;
-  }
-
-  .w-event-section__column-left {
-    align-items: flex-start;
-    flex-grow: 0;
-    padding-left: 16px;
-    text-align: inherit;
-    width: 37.5%;
-  }
-
-  .w-event-section__column-right {
-    max-width: none;
-    padding: 0 16px;
-    width: 62.5%;
-  }
-}
-
 .w-event-antihero {
   padding: 0 !important;
 
@@ -478,7 +598,9 @@ web-tabs.w-event-tabs {
 }
 
 .w-event-icon {
-  align-items: center;
   vertical-align: middle;
-  margin-right: 16px;
+  margin: 0 0 8px;
+  @include bp(md) {
+    margin: 0 16px 0 0;
+  }
 }
