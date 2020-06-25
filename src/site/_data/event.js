@@ -242,9 +242,9 @@ const days = [
   },
   {
     title: 'Day 3',
-    when: '2020-06-25T07:30Z', // 1pm IST (+5:30)
+    when: '2020-06-24T07:30Z', // 1pm IST (+5:30)
     duration: 3 * 60, // minutes
-    videoId: 'sNhhvQGsMEc',
+    videoId: 'Da-2h2B4faU',
     sessions: [
       {
         speaker: 'dalmaer',

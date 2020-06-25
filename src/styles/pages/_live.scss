@@ -37,6 +37,12 @@
       display: none;
     }
   }
+
+  .w-display--desktop-only {
+    @media (max-width: #{$BREAKPOINT_VALUE_MEDIUM - 1px}) {
+      display: none;
+    }
+  }
 }
 
 // A utility for creating consistent vertical rhythm between sections.
@@ -301,16 +307,37 @@
 
 .w-event-section__internal-links {
   margin-top: 32px;
+  display: flex;
+
+  @include bp(md) {
+    display: block;
+  }
 
   a {
+    align-items: center;
     color: $GREY_800;
+    display: flex;
+    flex-direction: column;
     font-family: $HEADLINE_FONT;
     font-weight: $FONT_WEIGHT_MEDIUM;
+    justify-content: center;
+    padding: 0 16px;
+    width: 132px;
+
+    @include bp(md) {
+      display: block;
+      padding: 0;
+      width: auto;
+    }
   }
 
   > * + * {
-    display: block;
-    margin-top: 24px;
+    border-left: 1px solid $GREY_300;
+
+    @include bp(md) {
+      border: 0;
+      margin-top: 24px;
+    }
   }
 }
 
@@ -383,18 +410,6 @@
 }
 
 .w-schedule-section {
-  // If we're displaying the live chat is disabled banner (which we only do on
-  // touch devices) then we want to remove the normal 48px margin to move the
-  // schedule closer to the video.
-  @media (hover: none) {
-    --flow-space: 8px;
-  }
-
-  // Restore the usual flow-space value.
-  @include bp(md) {
-    --flow-space: 80px;
-  }
-
   .w-event-heading {
     margin-top: 56px;
 
@@ -409,6 +424,20 @@
     @include bp(md) {
       margin-top: 24px;
     }
+  }
+}
+
+.w-livestream-section + .w-schedule-section {
+  // If we're displaying the live chat is disabled banner (which we only do on
+  // touch devices) then we want to remove the normal 48px margin to move the
+  // schedule closer to the video.
+  @media (hover: none) {
+    --flow-space: 8px;
+  }
+
+  // Restore the usual flow-space value.
+  @include bp(md) {
+    --flow-space: 80px;
   }
 }
 
@@ -569,7 +598,9 @@ web-tabs.w-event-tabs {
 }
 
 .w-event-icon {
-  align-items: center;
   vertical-align: middle;
-  margin-right: 16px;
+  margin: 0 0 8px;
+  @include bp(md) {
+    margin: 0 16px 0 0;
+  }
 }
