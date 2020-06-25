@@ -67,7 +67,7 @@ Of course, there are plenty of other use cases:
   After implementing the Screen Wake Lock API,
   *Betty Crocker*, a major cooking site in the US,
   saw a 300% increase in purchase intent indicators for their users.
-  Read more about their success in the [Betty Crocker case study](/betty-crocker/).
+  Read more about their impressive success in the [🍰&nbsp;Betty Crocker case study](/betty-crocker/).
 {% endAside %}
 
 ## Current status {: #status }
