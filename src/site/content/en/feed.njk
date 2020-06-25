@@ -29,8 +29,7 @@ permalink: "/{{lang}}/feed.xml"
   <icon>{{ metadata.icon }}</icon>
   <logo>{{ metadata.logo }}</logo>
   {% for post in collections.blogPosts -%}
-  {% set postUrl = '/' + post.fileSlug + '/' %}
-  {% set absolutePostUrl -%}{{ postUrl | url | absoluteUrl(metadata.url) }}{%- endset %}
+  {% set absolutePostUrl -%}{{ post.canonicalUrl | url | absoluteUrl(metadata.url) }}{%- endset %}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>

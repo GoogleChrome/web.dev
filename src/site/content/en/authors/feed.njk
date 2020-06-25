@@ -30,8 +30,7 @@ pagination:
   <logo>{{ renderData.metadata.logo }}</logo>
   <subtitle>{{ renderData.metadata.subtitle }}</subtitle>
   {% for post in paged.elements -%}
-  {% set postUrl = '/' + post.fileSlug + '/' %}
-  {% set absolutePostUrl -%}{{ postUrl | url | absoluteUrl(renderData.metadata.url) }}{%- endset %}
+  {% set absolutePostUrl -%}{{ post.canonicalUrl | url | absoluteUrl(renderData.metadata.url) }}{%- endset %}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
