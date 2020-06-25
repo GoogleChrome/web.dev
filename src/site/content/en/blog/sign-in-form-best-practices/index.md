@@ -28,14 +28,10 @@ a hurry, or under stress. Poorly designed sign-in forms get high bounce rates.
 Each bounce could mean a lost and disgruntled user—not just a missed sign-in
 opportunity.
 
-<!-- TODO(samdutton): Stats for sign-up/sign-in bounce rates. -->
-
-<!--
 {% Aside 'codelab' %}
   If you would prefer to learn these best practices with a hands-on tutorial,
   check out the [Sign-in form best practices codelab](/codelab-sign-in-form-best-practices/).
 {% endAside %}
--->
 
 Here is an example of a simple sign-in form that demonstrates all of the best practices:
 
@@ -83,6 +79,14 @@ management](https://cloud.google.com/blog/products/gcp/12-best-practices-for-use
 outlines core principles for running your own backend. If you have users in
 different parts of the world, you need to consider localizing your site's use of
 third-party identity services as well as its content.
+
+There are also two relatively new APIs not covered in this article which can 
+help you build a better sign-in experience: 
+*  [**Web OTP**](https://web.dev/web-otp/): to deliver one-time passcodes or 
+PIN numbers via SMS to mobile phones. This can allow users to select a phone 
+number as an identifier (no need to enter an email address!) and also enables 
+two-step verification for sign-in and one-time codes for payment confirmation.
+* [**Credential Management**](https://developers.google.com/web/updates/2016/04/credential-management-api): to enable developers to store and retrieve password credentials and federated credentials programatically.
 {% endAside %}
 
 ## Use meaningful HTML {: #meaningful-html }
@@ -694,7 +698,7 @@ changes on a subset of users before releasing changes to all users.
 
 ## General guidelines {: #general-guidelines }
 
-Here are some general guidelines to help reduce sign-in form abandonment:
+Well designed UI and UX can reduce sign-in form abandonment:
 
 * Don't make users hunt for sign-in! Put a link to the sign-in form at the top
   of the page, using well-understood wording such as **Sign In**, **Create Account**
@@ -724,5 +728,7 @@ Here are some general guidelines to help reduce sign-in form abandonment:
 * [Best Practices For Mobile Form Design](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 * [More capable form controls](/more-capable-form-controls)
 * [Creating Accessible Forms](https://webaim.org/techniques/forms/)
+* [Streamlining the Sign-in Flow Using Credential Management API](https://developers.google.com/web/updates/2016/04/credential-management-api)
+* [Verify phone numbers on the web with the Web OTP API](https://web.dev/web-otp/)
 
 Photo by [Katka Pavlickova](https://unsplash.com/@katerinapavlickova) on [Unsplash](https://unsplash.com).
