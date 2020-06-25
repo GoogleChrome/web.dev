@@ -100,6 +100,11 @@ fs.mkdirSync(path.dirname(fileName), {recursive: true});
 fs.writeFileSync(fileName, out.css);
 fs.writeFileSync(fileName + '.map', out.map);
 
+// Also write to the name of the old CSS file, to work around #3363. Eventually, we can remove this,
+// but clients that installed before 2020-06-16 will see a flash of unstyled... page.
+// TODO(samthor): Remove this when we're confident.
+fs.writeFileSync('dist/app.css', out.css);
+
 // Write the CSS entrypoint to a known file for Eleventy to read.
 fs.writeFileSync(
   'src/site/_data/resourceCSS.json',
