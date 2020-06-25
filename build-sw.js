@@ -41,8 +41,8 @@ const {buildDefaultPlugins, disallowExternal} = require('./src/build/common');
  */
 async function buildCacheManifest() {
   const toplevelManifest = await getManifest({
-    // JS files that include hashes don't need their own revision fields.
-    dontCacheBustURLsMatching: /-[0-9a-f]{8}\.js/,
+    // JS or CSS files that include hashes don't need their own revision fields.
+    dontCacheBustURLsMatching: /-[0-9a-f]{8}\.(css|js)/,
     globDirectory: 'dist',
     globPatterns: [
       // We don't include jpg files, as they're used for authors and hero
