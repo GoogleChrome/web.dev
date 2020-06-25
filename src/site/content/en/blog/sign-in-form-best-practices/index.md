@@ -37,7 +37,7 @@ opportunity.
 {% endAside %}
 -->
 
-Here is an example of a sign-in form that demonstrates all of the best practices:
+Here is an example of a simple sign-in form that demonstrates all of the best practices:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
@@ -175,9 +175,10 @@ Some sites force users to enter emails or passwords twice. That might reduce
 errors for a few users, but causes extra work for *all* users, and [increases
 abandonment
 rates](https://uxmovement.com/forms/why-the-confirm-password-field-must-die/). 
-It also makes no sense where browsers autofill email addresses or suggest strong 
-passwords. It's better to enable users to confirm their email address (you'll 
-need to do that anyway) and make it easy for them to reset their password if they .
+Asking twice also makes no sense where browsers autofill email addresses or 
+suggest strong passwords. It's better to enable users to confirm their email 
+address (you'll need to do that anyway) and make it easy for them to reset their 
+password if they .
 
 ## Make the most of element attributes {: #element-attributes }
 
@@ -522,6 +523,7 @@ input[type=email]:not(:placeholder-shown):invalid {
 }
 ```
 
+Try out different ways of highlighting inputs with invalid values.
 
 ## Use JavaScript where necessary {: #javascript }
 
@@ -534,25 +536,20 @@ can't see the text they've entered. Currently there's no built-in way to do
 this, though [there are plans for
 implementation](https://twitter.com/sw12/status/1251191795377156099). You'll
 need to use JavaScript instead.
-<!--: you can see this in action in [step
-4](https://glitch.com/edit/#!/signin-form-codelab-4) of the codelab related to this
-article.-->
 
 <figure class="w-figure">
   <img class="w-screenshot" src="./show-password-google.png" alt="Google sign-in form showing Show password icon." width="350">
   <figcaption class="w-figcaption">Google sign-in form: with <strong>Show password</strong> icon and <strong>Forgot password</strong> link.</figcaption>
 </figure>
 
-The following code to add **Show password** functionality uses text, not an icon.
+The following code uses a text button to add **Show password** functionality.
 
 HTML:
-```html/2-5
+
+```html/2
 <section>
   <label for="password">Password</label>
-  <button id="toggle-password" type="button" 
-          aria-label="Show password as plain text. Warning: this will display your password on the screen.">
-    Show password
-  </button>
+  <button id="toggle-password" type="button" aria-label="Show password as plain text. Warning: this will display your password on the screen.">Show password</button>
   <input id="password" name="password" type="password" autocomplete="current-password" required>
 </section>
 ```
@@ -602,7 +599,7 @@ function togglePassword() {
 Here's the end result:
 
 <figure class="w-figure">
-  <img src="./show-password.png" alt="Screenshots of sign-in form with Show password text 'button', in Safari on Mac and on iPhone 7." width="800" class="w-screenshot-filled">
+  <img class="w-screenshot" src="./show-password.png" alt="Screenshots of sign-in form with Show password text 'button', in Safari on Mac and on iPhone 7." width="800" class="w-screenshot-filled">
   <figcaption class="w-figcaption">Sign-in form with <strong>Show password</strong> text 'button', in Safari on Mac and iPhone 7.</figcaption>
 </figure>
 

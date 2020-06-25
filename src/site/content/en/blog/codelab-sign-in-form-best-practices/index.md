@@ -66,7 +66,8 @@ Click **View Source** to return to your source code.
 
 ## Step 2: Design for fingers and thumbs
 
-Add padding and margins to ensure your inputs work as touch targets on mobile. 
+Ensure your inputs work well on mobile by adjusting padding, margins and 
+font sizes. 
 
 Copy and paste the following CSS into your own `style.css` file:
 
@@ -121,7 +122,7 @@ Add attributes to your form HTML so it looks like this:
 ```
 
 Click the label that says **Email**. Notice how focus moves to the email input.
-This is because the label is associated to the input via the `for="email"` attribute.
+This is because the label is associated with the input via the `for="email"` attribute.
 Screenreaders also announce the label text when the label or the label's associated
 input gets focus.
 
@@ -151,11 +152,12 @@ allows you to select from those stored emails. This happens because the
 stored values to autofill the inputs.
 
 Different browsers use [different techniques](http://localhost:8080/sign-in-form-best-practices/#password-managers:~:text=Browser%20password%20and%20autofill%20systems%20are%20not%20simple) 
-to work out the meaning of form inputs and provide autofill on a range on 
+to work out the meaning of form inputs and provide autofill for a range of 
 different websites. For example, recent versions of Chrome provide email 
 suggestions if you add `id="email"` to an input, and give access to the autofill 
-manager if you add `autocomplete="email"`. Try this out for yourself by adding 
-and removing attributes.
+manager if you add `autocomplete="email"`. 
+
+Try this out for yourself by adding and removing attributes.
 
 It's extremely important to test behaviour across platforms. Try entering values 
 and submitting the form in different browsers on different devices. It's easy to 
@@ -174,7 +176,7 @@ Here's how your `index.html` should look at this point:
 
 ## Step 4: Add UI to toggle password display
 
-Provide a link, a button or an icon to enable users to show or hide a password.
+Enable users to see the password they entered.
 
 Usability experts [strongly recommend](https://www.nngroup.com/articles/stop-password-masking/) adding a **Show password** icon or button to enable users to check the text they've entered. There's currently [no built-in way to do this](https://twitter.com/sw12/status/1251191795377156099), so you'll need to implement it yourself with JavaScript.  
 
@@ -233,8 +235,9 @@ function togglePassword() {
 
 Once again, make sure to test your work on different browsers on different platforms.
 
-Try it out! Will users notice the **Show password** button and understand it? Is 
-there a better way to provide this functionality?
+Try it out! Think about UX design: will users notice the **Show password** 
+button and understand it? Is there a better way to provide this functionality? 
+This is a good moment to try out [Discount Usability Testing](https://www.nngroup.com/articles/discount-usability-20-years/) with a small group of friends or colleagues.
 
 To understand how this site works for screenreaders, install the [ChromeVox extension](https://chrome.google.com/webstore/detail/chromevox-classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en) and navigate through the form. Do the 
 `aria-label` values work as intended?
@@ -344,9 +347,8 @@ you missed a required value and sets focus on the password input.
 * Enter an invalid password and press **Sign in**. Now you'll see different 
 messages, depending on what's wrong. 
 
-**For bonus points:** try out different ways to help users. [Better password 
-form fields](https://aerotwist.com/blog/better-password-form-fields/) has some 
-clever suggestions.
+**For bonus points:** try out different ways to help users enter email addresses 
+and passwords. [Better password form fields](https://aerotwist.com/blog/better-password-form-fields/) has some clever suggestions.
 
 {% Aside 'codelab' %}
 [View complete code for Step 5](https://glitch.com/edit/#!/sign-in-form-codelab-5).
@@ -355,14 +357,15 @@ clever suggestions.
 
 ## And finally…
 
-We won't show them here, but three crucial sign-in form features are still missing:
+We won't show them here, but four crucial sign-in form features are still missing:
 
-* **Forgot your password?** link: make it easy for users to reset their password.
+* Add a **Forgot your password?** link: make it easy for users to reset their password.
 
-* Links to your Terms of Service and privacy policy documents: make it clear to 
+* Link to your Terms of Service and privacy policy documents: make it clear to 
 users from the start how you safeguard their data.
 
-* The logo and name of your company or organization: include these and make sure 
-that visual styles and tone of voice in the text match the rest of your site. 
-Many sites present users with forms that don't feel like they belong to the same 
-site, particularly if the URL is significantly different.
+* Consider style and branding: make sure these match the rest of your site. 
+
+* Add [Analytics and RUM](/sign-in-form-best-practices#analytics): enable the 
+performance and usability of your form design to be tested and monitored for 
+real users. 
