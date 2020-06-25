@@ -47,7 +47,7 @@ eleventyComputed:
     <script async src="//www.google-analytics.com/analytics.js"></script>
     <script defer src="{{ resourceJS.path | stripQueryParamsDev }}"></script>
   </head>
-  <body class="unresolved">
+  <body class="unresolved" data-resources-version="{{resourcesVersion}}">
     {#
       Make the snackbar the first item in the DOM so we don't have to steal the
       user's focus on initial visit to show them a cookie banner. Instead, the
