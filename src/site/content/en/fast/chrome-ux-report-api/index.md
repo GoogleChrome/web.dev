@@ -162,7 +162,7 @@ If the requested origin _is_ the navigable version, this error may also occur if
 
 ## Querying URL data
 
-We've seen how to query the CrUX API for the overall user experience on an origin. Now let's see how to restrict the results to a particular page. To do that, we use the `url` request parameter.
+You've seen how to query the CrUX API for the overall user experience on an origin. To restrict the results to a particular page, use the `url` request parameter.
 
 ```bash/0,3
 API_KEY="[YOUR_API_KEY]"
