@@ -22,6 +22,7 @@ const markdownItAnchor = require('markdown-it-anchor');
 const markdownItAttrs = require('markdown-it-attrs');
 const slugify = require('slugify');
 const fs = require('fs');
+const path = require('path');
 
 const componentsDir = 'src/site/_includes/components';
 const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
@@ -253,9 +254,9 @@ module.exports = function (config) {
       try {
         const raw = JSON.parse(fs.readFileSync(f), 'utf-8');
         if (!raw['path']) {
-          throw new Error('could not find path');
+          throw new Error(`could not find 'path' key in: ${f}`);
         }
-        const check = 'dist' + raw['path'];
+        const check = path.join('dist', raw['path']);
         if (!fs.existsSync(check)) {
           throw new Error(`path did not exist: ${check}`);
         }
