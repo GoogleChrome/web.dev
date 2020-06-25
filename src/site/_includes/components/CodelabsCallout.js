@@ -36,7 +36,7 @@ module.exports = (slugs, lang) => {
       <li class="w-callout__listitem">
         <a
           class="w-callout__link w-callout__link--codelab"
-          href="/${codelab.fileSlug}/"
+          href="${codelab.data.canonicalUrl}"
         >
           ${md(codelab.data.title)}
         </a>

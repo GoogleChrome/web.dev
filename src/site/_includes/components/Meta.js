@@ -25,7 +25,7 @@ module.exports = (locale, page, collections, renderData = {}) => {
     ...collections.all.find((item) => item.fileSlug === page.fileSlug).data,
     ...renderData,
   };
-  const pageUrl = `/${page.fileSlug}/`;
+  const pageUrl = pageData.canonicalUrl;
 
   /**
    * Find post meta data associated with a social media platform.

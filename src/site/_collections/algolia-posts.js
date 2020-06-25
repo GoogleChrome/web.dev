@@ -71,7 +71,7 @@ module.exports = (collection) => {
       objectID: data.page.url + '#' + lang,
       lang,
       title: data.title,
-      url: `/${data.page.fileSlug}/`,
+      url: data.canonicalUrl,
       description: data.description,
       fulltext: limited,
       _tags: data.tags,
