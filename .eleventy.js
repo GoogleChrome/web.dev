@@ -255,9 +255,12 @@ module.exports = function (config) {
           throw new Error();
         }
       } catch (e) {
-        throw new Error(
-          `could not find JSON path inside src/site/_data/: ${name}`,
-        );
+        if (isProd) {
+          throw new Error(
+            `could not find JSON path inside src/site/_data/: ${name}`,
+          );
+        }
+        console.warn('web.dev could not find the resource to include:', name);
       }
     };
     checkJSONDataPath('resourceCSS');
