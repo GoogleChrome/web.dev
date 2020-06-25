@@ -1302,7 +1302,7 @@ const contributors = {
     github: 'anton-karlovskiy',
     glitch: 'anton-karlovskiy',
   },
-  robko: {
+  rkochman: {
     name: {
       given: 'Rob',
       family: 'Kochman',
