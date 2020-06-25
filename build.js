@@ -28,10 +28,10 @@ const rollupPluginReplace = require('rollup-plugin-replace');
 const rollupPluginIstanbul = require('rollup-plugin-istanbul');
 const OMT = require('@surma/rollup-plugin-off-main-thread');
 const rollup = require('rollup');
-const terser = isProd ? require('terser') : null;
 const {getManifest} = require('workbox-build');
 const site = require('./src/site/_data/site');
 const buildVirtualJSON = require('./src/build/virtual-json');
+const minifySource = require('./src/build/minify-js');
 
 process.on('unhandledRejection', (reason, p) => {
   log.error('Build had unhandled rejection', reason, p);
@@ -235,7 +235,8 @@ async function build() {
   // Compress the generated source here, as we need the final files and hashes for the Service
   // Worker manifest.
   if (isProd) {
-    await compressOutput(outputFiles);
+    const ratio = await minifySource(outputFiles);
+    log(`Minified site code is ${(ratio * 100).toFixed(2)}% of source`);
   }
 
   // We don't generate a manifest in dev, so Workbox doesn't do a default cache step.
@@ -283,7 +284,8 @@ async function build() {
 
   const swOutputFiles = swGenerated.output.map(({fileName}) => fileName);
   if (isProd) {
-    await compressOutput(swOutputFiles);
+    const ratio = await minifySource(swOutputFiles);
+    log(`Minified service worker is ${(ratio * 100).toFixed(2)}% of source`);
   }
   outputFiles.push(...swOutputFiles);
 
@@ -309,41 +311,6 @@ async function buildTest() {
     format: 'iife',
     name: 'test',
   });
-}
-
-/**
- * Minify the passed on-disk script files. Assumes they have an adjacent ".map" source map.
- *
- * @param {!Array<string>} generated paths to generated script files
- */
-async function compressOutput(generated) {
-  let inputSize = 0;
-  let outputSize = 0;
-
-  for (const fileName of generated) {
-    const target = path.join('dist', fileName);
-
-    const raw = await fs.readFile(target, 'utf8');
-    inputSize += raw.length;
-
-    const result = terser.minify(raw, {
-      sourceMap: {
-        content: await fs.readFile(target + '.map', 'utf8'),
-        url: fileName + '.map',
-      },
-    });
-
-    if (result.error) {
-      throw new Error(`could not minify ${fileName}: ${result.error}`);
-    }
-
-    outputSize += result.code.length;
-    await fs.writeFile(target, result.code, 'utf8');
-    await fs.writeFile(target + '.map', result.map, 'utf8');
-  }
-
-  const ratio = outputSize / inputSize;
-  log(`Terser JS output is ${(ratio * 100).toFixed(2)}% of source`);
 }
 
 (async function () {
