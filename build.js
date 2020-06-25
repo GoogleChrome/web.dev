@@ -221,6 +221,7 @@ async function build() {
     },
   });
   const bootstrapGenerated = await bootstrapBundle.write({
+    entryFileNames: '[name]-[hash].js',
     sourcemap: true,
     dir: 'dist',
     format: 'iife',
@@ -230,7 +231,14 @@ async function build() {
       `bootstrap generated more than one file: ${bootstrapGenerated.output.length}`,
     );
   }
-  outputFiles.push(bootstrapGenerated.output[0].fileName);
+  const bootstrapPath = bootstrapGenerated.output[0].fileName;
+  outputFiles.push(bootstrapPath);
+
+  // Write the bundle entrypoint to a known file for Eleventy to read.
+  await fs.writeFile(
+    'dist/_resourceJS.json',
+    JSON.stringify({path: bootstrapPath}),
+  );
 
   // Compress the generated source here, as we need the final files and hashes for the Service
   // Worker manifest.
