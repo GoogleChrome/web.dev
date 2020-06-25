@@ -103,7 +103,7 @@ Now, as you increase or decrease the screen size,  these flex items both shrink 
 This demo takes advantage of the [minmax](https://developer.mozilla.org/en-US/docs/Web/CSS/minmax) function for grid layouts. What we're doing here is setting the minimum sidebar size to be `150px`, but on larger screens, letting that stretch out to `25%`. The sidebar will always take up `25%` of its parent's horizontal space until that `25%` becomes smaller than `150px`.
 
 Add this as a value of grid-template-columns with the following value:
-`minmax(150px, 25%) 1fr`. The item in the first column (the sidebar in this case) gets a `'minmax'` of `'150px'` at `'25%'`, and the second item (the `'main'` section here) takes up the rest of the space as a single `1fr` track.
+`minmax(150px, 25%) 1fr`. The item in the first column (the sidebar in this case) gets a `minmax` of `150px` at `25%`, and the second item (the `main` section here) takes up the rest of the space as a single `1fr` track.
 
 ```css/2
 .parent {
@@ -122,7 +122,7 @@ Add this as a value of grid-template-columns with the following value:
 
 Unlike the Deconstructed Pancake, this example does not wrap its children when the screen size changes. Commonly referred to as a [sticky footer](https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Sticky_footers), this layout is often used for both websites and apps, across mobile applications (the footer is commonly a toolbar), and websites (single page applications often use this global layout).
 
-Adding `'display: grid'` to the component will give you a single column grid, however the main area will only be as tall as the content with the footer below it.
+Adding `display: grid` to the component will give you a single column grid, however the main area will only be as tall as the content with the footer below it.
 
 To make the footer stick to the bottom,  add: 
 
@@ -133,7 +133,7 @@ To make the footer stick to the bottom,  add:
 }
 ```
 
-This sets the header and footer content to automatically take the size of its children, and applies the remaining space (`'1fr'`) to the main area, while the `'auto`' sized row will take the size of the minimum content of its children, so as that content increases in size, the row itself will grow to adjust.
+This sets the header and footer content to automatically take the size of its children, and applies the remaining space (`1fr`) to the main area, while the `auto` sized row will take the size of the minimum content of its children, so as that content increases in size, the row itself will grow to adjust.
 
 ## 05. Classic Holy Grail Layout: `grid-template: auto 1fr auto / auto 1fr auto`
 
@@ -145,7 +145,7 @@ This sets the header and footer content to automatically take the size of its ch
 
 For this classic holy grail layout, there is a header, footer, left sidebar, right sidebar, and main content. It's similar to the previous layout, but now with sidebars!
 
-To write this entire grid using a single line of code, use the `'grid-template'` property. This enables you to set both the rows and columns at the same time.
+To write this entire grid using a single line of code, use the `grid-template` property. This enables you to set both the rows and columns at the same time.
 
 The property and value pair is: `grid-template: auto 1fr auto / auto 1fr auto`. The slash in between the first and second space-separated lists is the break between rows and columns.
 
@@ -187,7 +187,7 @@ Now you have a 12 column track grid, we can place our children on the grid. One 
   </video>
 </figure>
 
-Another way to write this is by using the `'span'` keyword. With `'span'`, you set the starting line and then how many columns to span into from that starting point. In this case, `grid-column: 1 / span 12` would be equivalent to `grid-column: 1 / 13`, and `grid-column: 2 / span 6` would be equivalent to `grid-column: 2 / 8`.
+Another way to write this is by using the `span` keyword. With `span`, you set the starting line and then how many columns to span into from that starting point. In this case, `grid-column: 1 / span 12` would be equivalent to `grid-column: 1 / 13`, and `grid-column: 2 / span 6` would be equivalent to `grid-column: 2 / 8`.
 
 ```css/1
 .child-span-12 {
@@ -203,7 +203,7 @@ Another way to write this is by using the `'span'` keyword. With `'span'`, you s
   </video>
 </figure>
 
-For this seventh example, combine some of the concepts you've already learned about to create a responsive layout with automatically-placed and flexible children. Pretty neat. The key terms to remember here are `'repeat'`, `'auto-(fit|fill)'`, and `'minmax()'`, which you can 'RAM' as an acronym to remember it by.
+For this seventh example, combine some of the concepts you've already learned about to create a responsive layout with automatically-placed and flexible children. Pretty neat. The key terms to remember here are `repeat`, `auto-(fit|fill)`, and `minmax()'`, which you can 'RAM' as an acronym to remember it by.
 
 All together, it looks like:
 
@@ -214,7 +214,7 @@ All together, it looks like:
 }
 ```
 
-You are using repeat again, but this time, using the `'auto-fit'` keyword instead of an explicit numeric value. This enables auto-placement of these child elements. These children also have a base minimum value of `150px` with a maximum value `1fr`, meaning on smaller screens, they will take up the full `1fr` width, and as they reach `150px` wide each, they will start to flow onto the same line.
+You are using repeat again, but this time, using the `auto-fit` keyword instead of an explicit numeric value. This enables auto-placement of these child elements. These children also have a base minimum value of `150px` with a maximum value `1fr`, meaning on smaller screens, they will take up the full `1fr` width, and as they reach `150px` wide each, they will start to flow onto the same line.
 
 With `auto-fit`, the boxes will stretch as their horizontal size exceeds 150px to fill the entire remaining space. However, if you change this to `auto-fill`, they will not stretch when their base size in the minmax function is exceeded:
 
@@ -271,7 +271,7 @@ This sets an absolute min and max size, and an actual size. With values, that ca
 
 The minimum size here is `23ch` or 23 character units, and the maximum size is `46ch`, 46 characters. [Character width units](https://meyerweb.com/eric/thoughts/2018/06/28/what-is-the-css-ch-unit/) are based on the font size of the element (specifically the with of the '0' glyph). The 'actual' size is 50%, which represents 50% of this element's parent width.
 
-What the `'clamp()'` function is doing here is enabling this element to retain a 50% width *until* 50% is either greater than `46ch` (on wider viewports), or smaller than `23ch` (on smaller viewports). You can see that as I stretch and shrink the parent size, the width of this card increases to its clamped maximum point and decreases to its clamped minimum. It then stays centered in the parent since we've applied additional properties to center it. This enables more legible layouts, as the text won't be too wide (above `46ch`) or too squished and narrow (less than `23ch`).
+What the `clamp()` function is doing here is enabling this element to retain a 50% width *until* 50% is either greater than `46ch` (on wider viewports), or smaller than `23ch` (on smaller viewports). You can see that as I stretch and shrink the parent size, the width of this card increases to its clamped maximum point and decreases to its clamped minimum. It then stays centered in the parent since we've applied additional properties to center it. This enables more legible layouts, as the text won't be too wide (above `46ch`) or too squished and narrow (less than `23ch`).
 
 This is also a great way to implement responsive typography. For example, you could write: `font-size: clamp(1.5rem, 20vw, 3rem)`. In this case, the font-size of a headline would always stay clamped between 1.5rem and 3rem but would grow and shrink based on the `20vw` actual value to fit the width of of the viewport.
 
@@ -310,7 +310,4 @@ While this feature is still up and coming, it it a good one to know about as it 
 
 ## Conclusion
 
-Thank you for following this journey through 10 powerful lines of CSS. To watch the full video, see the link below, and if you are looking for these demos to play with them yourself, check out 1linelayouts.glitch.me
-
-
--- video embed --
+Thank you for following this journey through 10 powerful lines of CSS. To watch the full video, see the link below, and if you are looking for these demos to play with them yourself, check out [1linelayouts.glitch.me](https://1linelayouts.glitch.me).
