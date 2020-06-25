@@ -4,18 +4,19 @@
 
 import * as idb from 'idb-keyval';
 import manifest from 'cache-manifest';
-import layoutTemplate from 'layout-template';
 import {initialize as initializeGoogleAnalytics} from 'workbox-google-analytics';
 import * as workboxRouting from 'workbox-routing';
 import * as workboxStrategies from 'workbox-strategies';
 import {CacheableResponsePlugin} from 'workbox-cacheable-response';
 import {ExpirationPlugin} from 'workbox-expiration';
 import {matchPrecache, precacheAndRoute} from 'workbox-precaching';
-import {cacheNames} from 'workbox-core';
+import {cacheNames as workboxCacheNames} from 'workbox-core';
 import {matchSameOriginRegExp} from './utils/sw-match.js';
 
+const cacheNames = {webdevCore: 'webdev-core', ...workboxCacheNames};
+
 /**
- * Configure default cache for standard web.dev files: the offline page, various images, etc.
+ * Configure default cache for some common web.dev assets: images, CSS, JS, etc.
  *
  * This must occur first, as we cache images that are also matched by runtime handlers below. See
  * this workbox issue for updates: https://github.com/GoogleChrome/workbox/issues/2402
@@ -191,7 +192,7 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
     response = await partialStrategy.handle({request});
   } catch (e) {
     // Offline pages are served with the default 200 status.
-    response = await offlinePartial();
+    response = await offlinePartialResponse();
   }
 
   // If we can't get a real response (or the offline response), go to the
@@ -213,6 +214,7 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
       : 'web.dev feed';
   const rss = `<link rel="alternate" href="${rssHref}" type="application/atom+xml" data-title="${rssTitle}" />`;
 
+  const layoutTemplate = await templateForPartial(partial);
   const output = layoutTemplate
     .replace('<!-- %_HEAD_REPLACE_% -->', `${meta}\n${title}\n${rss}`)
     .replace('%_CONTENT_REPLACE_%', partial.raw);
@@ -221,20 +223,35 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
   return new Response(output, {headers, status: response.status});
 });
 
-workboxRouting.setCatchHandler(async ({url, request}) => {
-  // If we failed to fetch a partial, use the offline partial.
-  if (partialMatch({url})) {
-    return offlinePartial();
+/**
+ * @param {?Object} partial that needs a template, null for install
+ * @return {!Promise<string>} partial template to use in hydration
+ */
+async function templateForPartial(partial) {
+  // TODO(samthor): In the future, the partial will includes its built-at resources version.
+  const partialUrl = '/sw-partial-layout.partial';
+  const requestKey = new Request(partialUrl);
+  const cache = await caches.open(cacheNames.webdevCore);
+
+  // If this is a real request, try to match the cache.
+  if (partial !== null) {
+    const cachedResponse = await cache.match(requestKey);
+    if (cachedResponse) {
+      return cachedResponse.text();
+    }
   }
 
-  // Go to the network for 'normal' pages. This will only fire if there's an
-  // internal error with the normalMatch route handler, above.
-  if (normalMatch({url})) {
-    return fetch(request);
-  }
-});
+  // If this is an install event, then always fill the cache with a response, as we don't actually
+  // know this file's hash. We just know the SW has changed, so force a real network reload.
+  const networkResponse = await fetch(partialUrl);
+  cache.put(requestKey, networkResponse.clone());
+  return networkResponse.text();
+}
 
-async function offlinePartial() {
+/**
+ * @return {!Promise<Response>} response for the offline page's partial
+ */
+async function offlinePartialResponse() {
   const cachedResponse = await matchPrecache('/offline/index.json');
   if (!cachedResponse) {
     // This occurs in development when the offline partial isn't precached.
@@ -244,3 +261,16 @@ async function offlinePartial() {
   }
   return cachedResponse;
 }
+
+workboxRouting.setCatchHandler(async ({url, request}) => {
+  // If we failed to fetch a partial, use the offline partial.
+  if (partialMatch({url})) {
+    return offlinePartialResponse();
+  }
+
+  // Go to the network for 'normal' pages. This will only fire if there's an
+  // internal error with the normalMatch route handler, above.
+  if (normalMatch({url})) {
+    return fetch(request);
+  }
+});

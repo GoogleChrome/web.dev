@@ -242,11 +242,6 @@ async function build() {
   // We don't generate a manifest in dev, so Workbox doesn't do a default cache step.
   const manifest = isProd ? await buildCacheManifest() : [];
 
-  const layoutTemplate = await fs.readFile(
-    path.join('dist', 'sw-partial-layout.partial'),
-    'utf-8',
-  );
-
   const swBundle = await rollup.rollup({
     input: 'src/lib/sw.js',
     manualChunks: (id) => {
@@ -268,7 +263,6 @@ async function build() {
       rollupPluginVirtual(
         buildVirtualJSON({
           'cache-manifest': manifest,
-          'layout-template': layoutTemplate,
         }),
       ),
       ...buildDefaultPlugins(),
