@@ -5,7 +5,7 @@ description: |
   Select and configure build tools based on best practices.
 scheduled: true
 date: 2020-06-29
-hero: hero.png
+hero: hero.jpg
 thumbnail: thumbnail.png 
 alt: tooling.report logo with blue open notebook icon.
 tags:
