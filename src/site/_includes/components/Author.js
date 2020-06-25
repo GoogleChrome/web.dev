@@ -16,10 +16,8 @@
 
 const {html} = require('common-tags');
 const AuthorInfo = require('./AuthorInfo');
-const contributors = require('../../_data/contributors');
 
-module.exports = ({id, showSocialMedia = false, small = false}) => {
-  const author = contributors[id];
+module.exports = ({id, author, showSocialMedia = false, small = false}) => {
   if (!author) {
     throw new Error(
       `Can't create Author component for "${id}" without contributor ` +
