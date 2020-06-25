@@ -5,7 +5,8 @@ description: |
   Select and configure build tools based on best practices.
 scheduled: true
 date: 2020-06-29
-hero: hero.jpg
+hero: hero.png
+thumbnail: thumbnail.png 
 alt: A description of the hero image for screen reader users.
 tags:
   - blog
