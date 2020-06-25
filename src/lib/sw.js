@@ -16,7 +16,7 @@ import {matchSameOriginRegExp} from './utils/sw-match.js';
 const cacheNames = {webdevCore: 'webdev-core', ...workboxCacheNames};
 
 /**
- * Configure default cache for some common web.dev assets: images, CSS, JS, etc.
+ * Configure default cache for some common web.dev assets: images, CSS, JS, partial template.
  *
  * This must occur first, as we cache images that are also matched by runtime handlers below. See
  * this workbox issue for updates: https://github.com/GoogleChrome/workbox/issues/2402
@@ -214,7 +214,7 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
       : 'web.dev feed';
   const rss = `<link rel="alternate" href="${rssHref}" type="application/atom+xml" data-title="${rssTitle}" />`;
 
-  const layoutTemplate = await templateForPartial(partial);
+  const layoutTemplate = await templateForPartial();
   const output = layoutTemplate
     .replace('<!-- %_HEAD_REPLACE_% -->', `${meta}\n${title}\n${rss}`)
     .replace('%_CONTENT_REPLACE_%', partial.raw);
@@ -224,28 +224,28 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
 });
 
 /**
- * @param {?Object} partial that needs a template, null for install
  * @return {!Promise<string>} partial template to use in hydration
  */
-async function templateForPartial(partial) {
-  // TODO(samthor): In the future, the partial will includes its built-at resources version.
-  const partialUrl = '/sw-partial-layout.partial';
-  const requestKey = new Request(partialUrl);
-  const cache = await caches.open(cacheNames.webdevCore);
-
-  // If this is a real request, try to match the cache.
-  if (partial !== null) {
-    const cachedResponse = await cache.match(requestKey);
-    if (cachedResponse) {
-      return cachedResponse.text();
+async function templateForPartial() {
+  const cachedResponse = await matchPrecache('/sw-partial-layout.partial');
+  if (!cachedResponse) {
+    // This occurs in development when the partial template isn't precached.
+    try {
+      return await fetch('/sw-partial-layout.partial');
+    } catch (e) {
+      console.warn('could not go to network for partial in dev', e);
     }
+    return `<!DOCTYPE html>
+<head>
+<!-- %_HEAD_REPLACE_% -->
+</head>
+<body>
+<h1>web.dev dev partial</h1>
+%_CONTENT_REPLACE_%
+</body>
+</html>`;
   }
-
-  // If this is an install event, then always fill the cache with a response, as we don't actually
-  // know this file's hash. We just know the SW has changed, so force a real network reload.
-  const networkResponse = await fetch(partialUrl);
-  cache.put(requestKey, networkResponse.clone());
-  return networkResponse.text();
+  return cachedResponse.text();
 }
 
 /**

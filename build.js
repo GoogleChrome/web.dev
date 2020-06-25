@@ -24,12 +24,8 @@ const rollupPluginNodeResolve = require('rollup-plugin-node-resolve');
 const rollupPluginCJS = require('rollup-plugin-commonjs');
 const rollupPluginPostCSS = require('rollup-plugin-postcss');
 const rollupPluginVirtual = require('rollup-plugin-virtual');
-const rollupPluginReplace = require('rollup-plugin-replace');
 const rollupPluginIstanbul = require('rollup-plugin-istanbul');
-const OMT = require('@surma/rollup-plugin-off-main-thread');
 const rollup = require('rollup');
-const {getManifest} = require('workbox-build');
-const site = require('./src/site/_data/site');
 const buildVirtualJSON = require('./src/build/virtual-json');
 const minifySource = require('./src/build/minify-js');
 
@@ -38,101 +34,11 @@ process.on('unhandledRejection', (reason, p) => {
   throw new Error(`Build had unhandled rejection ${reason}`);
 });
 
-/**
- * Virtual imports made available to all bundles. Used for site config and globals.
- */
-const virtualImports = {
-  webdev_analytics: {
-    id: isProd ? site.analytics.ids.prod : site.analytics.ids.staging,
-    dimensions: site.analytics.dimensions,
-    version: site.analytics.version,
-  },
-  webdev_config: {
-    isProd,
-    env: process.env.ELEVENTY_ENV || 'dev',
-    version: 'v' + new Date().toISOString().replace(/[\D]/g, '').slice(0, 12),
-    firebaseConfig: isProd ? site.firebase.prod : site.firebase.staging,
-  },
-  webdev_entrypoint: null,
-};
-
-/**
- * Builds the default set of Rollup functions. Snapshots virtual imports on
- * call, so should be used anew every run.
- *
- * @return {!Array<*>}
- */
-function buildDefaultPlugins() {
-  return [
-    rollupPluginNodeResolve(),
-    rollupPluginCJS({
-      include: 'node_modules/**',
-    }),
-    rollupPluginVirtual(buildVirtualJSON(virtualImports)),
-  ];
-}
-
-/**
- * Builds the cache manifest for inclusion into the Service Worker.
- *
- * TODO(samthor): This relies on both the gulp and CSS tasks occuring
- * before the Rollup build script.
- */
-async function buildCacheManifest() {
-  const toplevelManifest = await getManifest({
-    // JS files that include hashes don't need their own revision fields.
-    dontCacheBustURLsMatching: /-[0-9a-f]{8}\.js/,
-    globDirectory: 'dist',
-    globPatterns: [
-      // We don't include jpg files, as they're used for authors and hero
-      // images, which are part of articles, and not the top-level site.
-      'images/**/*.{png,svg}',
-      '*.css',
-      '*.js',
-    ],
-    globIgnores: [
-      // This removes large shared PNG files that are used only for articles.
-      'images/{shared}/**',
-    ],
-  });
-  if (toplevelManifest.warnings.length) {
-    throw new Error(`toplevel manifest: ${toplevelManifest.warnings}`);
-  }
-
-  // We need this manifest to be separate as we pretend it's rooted at the
-  // top-level, even though it comes from "dist/en".
-  const contentManifest = await getManifest({
-    globDirectory: 'dist/en',
-    globPatterns: ['offline/index.json'],
-  });
-  if (contentManifest.warnings.length) {
-    throw new Error(`content manifest: ${contentManifest.warnings}`);
-  }
-
-  const all = [];
-  all.push(...toplevelManifest.manifestEntries);
-  all.push(...contentManifest.manifestEntries);
-  return all;
-}
-
-/**
- * Passed to Rollup's config to disallow external imports. By default, Rollup
- * leaves unresolved imports in the output.
- *
- * @param {string} source
- * @param {string} importer
- * @param {boolean} isResolved
- */
-function disallowExternal(source, importer, isResolved) {
-  // We don't support any external imports. This most likely happens if you mistype a
-  // node_modules import or the package.json has changed.
-  if (isResolved && !source.match(/^\.{0,2}\//)) {
-    throw new Error(
-      `Unresolved external import: "${source}" (imported ` +
-        `by: ${importer}), did you forget to npm install?`,
-    );
-  }
-}
+const {
+  virtualImports,
+  buildDefaultPlugins,
+  disallowExternal,
+} = require('./src/build/common');
 
 /**
  * Performs main site compilation via Rollup: first on site code, and second
@@ -246,50 +152,6 @@ async function build() {
     const ratio = await minifySource(outputFiles);
     log(`Minified site code is ${(ratio * 100).toFixed(2)}% of source`);
   }
-
-  // We don't generate a manifest in dev, so Workbox doesn't do a default cache step.
-  const manifest = isProd ? await buildCacheManifest() : [];
-
-  const swBundle = await rollup.rollup({
-    input: 'src/lib/sw.js',
-    manualChunks: (id) => {
-      const chunkNames = ['idb-keyval', 'virtual', 'workbox'];
-      for (const chunkName of chunkNames) {
-        if (id.includes(`/node_modules/${chunkName}/`)) {
-          return 'sw-' + chunkName;
-        }
-      }
-    },
-    plugins: [
-      // This variable is defined by Webpack (and some other tooling), but not by Rollup. Set it to
-      // "production" if we're in prod, which will hide all of Workbox's log messages.
-      // Note that Terser below will actually remove the conditionals (this replace will generate
-      // lots of `if ("production" !== "production")` statements).
-      rollupPluginReplace({
-        'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : ''),
-      }),
-      rollupPluginVirtual(
-        buildVirtualJSON({
-          'cache-manifest': manifest,
-        }),
-      ),
-      ...buildDefaultPlugins(),
-      OMT(),
-    ],
-  });
-
-  const swGenerated = await swBundle.write({
-    sourcemap: true,
-    dir: 'dist',
-    format: 'amd',
-  });
-
-  const swOutputFiles = swGenerated.output.map(({fileName}) => fileName);
-  if (isProd) {
-    const ratio = await minifySource(swOutputFiles);
-    log(`Minified service worker is ${(ratio * 100).toFixed(2)}% of source`);
-  }
-  outputFiles.push(...swOutputFiles);
 
   return outputFiles.length;
 }
