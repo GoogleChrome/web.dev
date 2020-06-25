@@ -253,15 +253,23 @@ module.exports = function (config) {
       try {
         const raw = JSON.parse(fs.readFileSync(f), 'utf-8');
         if (!raw['path']) {
-          throw new Error();
+          throw new Error('could not find path');
+        }
+        const check = 'dist' + raw['path'];
+        if (!fs.existsSync(check)) {
+          throw new Error(`path did not exist: ${check}`);
         }
       } catch (e) {
         if (isProd) {
           throw new Error(
-            `could not find JSON path inside src/site/_data/: ${name}`,
+            `could not find valid JSON path inside src/site/_data/: ${name}`,
           );
         }
-        console.warn('web.dev could not find the resource to include:', name);
+        console.warn(
+          'web.dev could not find the resource to include:',
+          name,
+          e,
+        );
       }
     };
     checkJSONDataPath('resourceCSS');

@@ -143,7 +143,7 @@ async function build() {
   // Write the bundle entrypoint to a known file for Eleventy to read.
   await fs.writeFile(
     'src/site/_data/resourceJS.json',
-    JSON.stringify({path: bootstrapPath}),
+    JSON.stringify({path: '/' + bootstrapPath}),
   );
 
   // Compress the generated source here, as we need the final files and hashes for the Service

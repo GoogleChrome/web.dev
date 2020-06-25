@@ -93,7 +93,8 @@ function compileCSS(input) {
 const out = compileCSS('src/styles/all.scss');
 
 const hash = hashForContent(out.css);
-const fileName = `dist/app-${hash}.css`;
+const base = `app-${hash}.css`;
+const fileName = `dist/${base}`;
 
 fs.mkdirSync(path.dirname(fileName), {recursive: true});
 fs.writeFileSync(fileName, out.css);
@@ -102,7 +103,7 @@ fs.writeFileSync(fileName + '.map', out.map);
 // Write the CSS entrypoint to a known file for Eleventy to read.
 fs.writeFileSync(
   'src/site/_data/resourceCSS.json',
-  JSON.stringify({path: path.basename(fileName)}),
+  JSON.stringify({path: '/' + base}),
 );
 
-log(`Finished CSS! (${path.basename(fileName)})`);
+log(`Finished CSS! (${base})`);
