@@ -5,9 +5,8 @@ authors:
   - samdutton
 date: 2020-06-19
 description: Use cross-platform browser features to build sign-in forms that are secure, accessible and easy to use.
-# TODO(kaycebasques): Hero image should be 3200px by 920px.
 hero: hero.jpg
-alt: Closeup photo of a man holding a phone showing a sign-in page
+alt: Close-up photo of a man's hands, using an iPhone.
 thumbnail: thumbnail.jpg
 tags:
   - blog
@@ -17,8 +16,8 @@ tags:
   - mobile
   - security
   - ux
-#codelabs:
-#  - codelab-sign-in-form-best-practices
+codelabs:
+  - codelab-sign-in-form-best-practices
 ---
 
 
@@ -41,7 +40,7 @@ Here is an example of a sign-in form that demonstrates all of the best practices
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/signin-form-codelab-5?path=index.html&previewSize=100"
+    src="https://glitch.com/embed/#!/sign-in-form?path=index.html&previewSize=100"
     alt="A demonstration of all the sign-in form best practices."
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
@@ -55,9 +54,9 @@ Here is an example of a sign-in form that demonstrates all of the best practices
 * Use element attributes to [access built-in browser
   features](#element-attributes): `type`, `name`, `autocomplete`, `required`,
   `autofocus`.
-* [Use `name="new-password"`](#new-password) for a sign-up password input and
+* Use [`name="new-password"`](#new-password) for a sign-up password input and
   for the new password in a **Change password** form.
-* [Use `autocomplete="current-password"`](#current-password) for a sign-in
+* Use [`autocomplete="current-password"`](#current-password) for a sign-in
   password input.
 * [Don't use autocomplete for a new password](#autofill-passwords).
 * [Provide **Show password** functionality](#show-password).
@@ -68,12 +67,7 @@ Here is an example of a sign-in form that demonstrates all of the best practices
   buttons](#keyboard-obstruction).
 * Ensure forms are usable on mobile: use [legible text](#size-text-correctly),
   and make sure inputs and buttons are [large enough to work as touch targets](#tap-targets).
-<!--
-* [Display links to your terms of service and privacy policy
-  documents](#tos-privacy-policy).
-* [Maintain site style and include branding](#branding) (logo and name) on your
-  sign-up and sign-in form pages.
--->
+* [Maintain branding and style](#branding) on your sign-up and sign-in pages.
 * [Test in the field as well as the lab](#analytics): build page analytics,
   interaction analytics, and user-centric performance measurement into your
   sign-up and sign-in flow.
@@ -179,11 +173,10 @@ Otherwise clicking or tapping on it will submit the form.
 Some sites force users to enter emails or passwords twice. That might reduce
 errors for a few users, but causes extra work for *all* users, and [increases
 abandonment
-rates](https://uxmovement.com/forms/why-the-confirm-password-field-must-die/).
-It's better to enable users to confirm their email address (you'll need to do that
-anyway) and make it easy for them to reset their password.
-
-<!-- [Do we stats for this?] -->
+rates](https://uxmovement.com/forms/why-the-confirm-password-field-must-die/). 
+It also makes no sense where browsers autofill email addresses or suggest strong 
+passwords. It's better to enable users to confirm their email address (you'll 
+need to do that anyway) and make it easy for them to reset their password if they .
 
 ## Make the most of element attributes {: #element-attributes }
 
@@ -549,7 +542,7 @@ article.-->
   <figcaption class="w-figcaption">Google sign-in form: with <strong>Show password</strong> icon and <strong>Forgot password</strong> link.</figcaption>
 </figure>
 
-The following code to add **Show password** functionality uses text, not an icon:
+The following code to add **Show password** functionality uses text, not an icon.
 
 HTML:
 ```html/2-5
@@ -615,9 +608,9 @@ Here's the end result:
 
 ### Make password inputs accessible {: #accessible-password-inputs }
 
-Use `aria-describedby` to explain password constraints, using the element that
-describes the constraints for your password input. Screenreaders read the label
-text, the input type (password), and then the description. 
+Use `aria-describedby` to outline password rules by giving it the ID of the 
+element that describes the constraints. Screenreaders provide the label text, the 
+input type (password), and then the description. 
 
 ```html
 <input type="password" aria-describedby="password-constraints" …>
@@ -726,8 +719,6 @@ Here are some general guidelines to help reduce sign-in form abandonment:
   sign-in pages, and make sure that language, fonts and styles match the rest of
   your site. Some forms don't feel like they belong to the same site as other
   content, especially if they have a significantly different URL.
-
-<!-- TODO(samdutton): [Something about (re)CAPTCHA?] -->
 
 ## Keep learning {: #resources }
 

@@ -4,7 +4,7 @@ title: Sign-in form best practices codelab
 authors:
   - samdutton
 date: 2020-06-19
-description: Use cross-platform browser features to build a simple email/password login form that's secure, accessible and easy to use.
+description: Use cross-platform browser features to build a simple email/password sign-in form that's secure, accessible and easy to use.
 tags:
   - forms
   - identity
@@ -12,12 +12,12 @@ tags:
   - mobile
   - security
   - ux
-glitch: login-form-best-practices-codelab-step-0
+glitch: sign-in-form-codelab-0
 related_post: sign-in-form-best-practices
 draft: true
 ---
 
-This codelab shows you how to build a login form that is secure, accessible, and easy to use.
+This codelab shows you how to build a sign-in form that is secure, accessible, and easy to use.
 
 ## Step 1: Use meaningful HTML
 
@@ -27,12 +27,13 @@ Use elements built for the job:
 * `<label>`
 * `<button>`
 
-As you'll see, these elements enable built-in browser functionality, improve accessibility, and add meaning to your markup.
+As you'll see, these elements enable built-in browser functionality, improve 
+accessibility, and add meaning to your markup.
 
 Add the following code inside the `<body>` element:
 
 ```html
-<form id="login" action="#" method="post">
+<form action="#" method="post">
   <h1>Sign in</h1>
   <section>
     <label>Email</label>
@@ -50,13 +51,13 @@ Here's how your `index.html` should look at this point:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/login-form-best-practices-codelab-step-1?path=index.html&attributionHidden=true&sidebarCollapsed=true"
+    src="https://glitch.com/embed/#!/embed/sign-in-form-codelab-1?path=index.html&attributionHidden=true&sidebarCollapsed=true"
     alt="How the Glitch should look after completing step 1."
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
 
-Click **View App** to preview your login form. 
+Click **View App** to preview your sign-in form. 
 The HTML you just added is valid and correct, but the default browser styling
 means it looks terrible and it's hard to use, especially on mobile.
 
@@ -64,19 +65,19 @@ Click **View Source** to return to your source code.
 
 ## Step 2: Design for fingers and thumbs
 
-TODO(kayce): One-sentence description of the goal here. 
+Add padding and margins to ensure your inputs work as touch targets on mobile. 
 
-Copy and paste the following CSS into your `style.css`:
+Copy and paste the following CSS into your own `style.css` file:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/login-form-best-practices-codelab-step-2?path=style.css&attributionHidden=true&sidebarCollapsed=true"
+    src="https://glitch.com/embed/#!/embed/sign-in-form-codelab-2?path=style.css&attributionHidden=true&sidebarCollapsed=true"
     alt="The CSS to copy-paste."
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
 
-Click **View App** to check out your freshly styled login form, and then
+Click **View App** to check out your freshly styled sign-in form. Then
 click **View Source** to return to `style.css`.
 
 That's quite a lot of code! The main things to be aware of are the changes to sizes:
@@ -98,14 +99,13 @@ It's very important at this point to test your code on real devices on desktop a
 
 ## Step 3: Add input attributes to enable built-in browser features
 
+Enable the browser to store and autofill input values, and provide access to 
+built-in password management features.
+
 Add attributes to your form HTML so it looks like this:
 
-TODO(kayce): Is the placeholder value intentional?
-
-TODO(kayce): Clicking on the password label doesn't focus the password input.
-
 ```html/3,4,7,8,10
-<form id="login" action="#" method="post">
+<form action="#" method="post">
   <h1>Sign in</h1>
   <section>        
     <label for="email">Email</label>
@@ -127,35 +127,45 @@ input gets focus.
 Try focusing the email input on a mobile device. Notice how the keyboard is optimized
 for typing an email address. For example, the `@` and `.` characters might be shown on
 the primary keyboard, and the operating system might show stored emails above the keyboard.
-All of this happened because the `type="email"` attribute is applied to an `<input>` element.
+All of this happens because the `type="email"` attribute is applied to an `<input>` element.
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" 
-       src="email-keyboard.jpg" 
+       src="email-keyboard.png" 
        alt="The default email keyboard on iOS.">
 </figure>
 
 Try typing some text into the password input. The text is hidden by default because the
 `type="password"` attribute has been applied to the element.
 
-TODO(kayce): There doesn't seem to be any user-facing change because of the name attributes?
+* `name="email"` and `name="current-password"` help browsers store named values 
+which can later be used for `autocomplete`.
 
-* `name="email"` and `name="current-password"`: help browsers store named values.
+Try focusing the email input on a desktop device and start typing. If you've 
+stored any email addresses in your browser, you'll probably see a popup that 
+allows you to select from those stored emails. This happens because the 
+`autocomplete="email"` attribute was applied to the email input.
 
-Try focusing the email input on a desktop device. If you've stored any email addresses
-in your browser, you'll probably see a popup that allows you to select from those
-stored emails. This happened because the `autocomplete="email"` attribute was applied
-to the email input.
+* `autocomplete="email"` and `autocomplete="current-password"` help browsers use 
+stored values to autofill the inputs.
 
-* `autocomplete="email"` and `autocomplete="current-password"`: help browsers use stored values to autofill the inputs.
+Different browsers use [different techniques](http://localhost:8080/sign-in-form-best-practices/#password-managers:~:text=Browser%20password%20and%20autofill%20systems%20are%20not%20simple) 
+to work out the meaning of form inputs and provide autofill on a range on 
+different websites. For example, recent versions of Chrome provide email 
+suggestions if you add `id="email"` to an input, and give access to the autofill 
+manager if you add `autocomplete="email"`. Try this out for yourself by adding 
+and removing attributes.
 
-Once again, it's extremely important to test behaviour across platforms. Try entering values and submitting the form in different browsers on different devices.
+It's extremely important to test behaviour across platforms. Try entering values 
+and submitting the form in different browsers on different devices. It's easy to 
+test on a range of platforms using BrowserStack, which is [free for open source 
+projects](https://www.browserstack.com/open-source). Try it out!
 
 Here's how your `index.html` should look at this point:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/login-form-best-practices-codelab-step-3?path=index.html&attributionHidden=true&sidebarCollapsed=true"
+    src="https://glitch.com/embed/#!/embed/sign-in-form-codelab-3?path=index.html&attributionHidden=true&sidebarCollapsed=true"
     alt="How index.html should look after step 3."
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
@@ -163,11 +173,13 @@ Here's how your `index.html` should look at this point:
 
 ## Step 4: Add UI to toggle password display
 
-Usability experts [strongly recommend](https://www.nngroup.com/articles/stop-password-masking/) adding a **Show password** icon or button to enable users to check the text they've entered. There's currently [no built-in way to do this](https://twitter.com/sw12/status/1251191795377156099), so you'll have to do it yourself with JavaScript.  
+Provide a link, a button or an icon to enable users to show or hide a password.
+
+Usability experts [strongly recommend](https://www.nngroup.com/articles/stop-password-masking/) adding a **Show password** icon or button to enable users to check the text they've entered. There's currently [no built-in way to do this](https://twitter.com/sw12/status/1251191795377156099), so you'll need to implement it yourself with JavaScript.  
 
 Code to add **Show password** functionality is straightforward—this example uses text, not an icon.
 
-Update [index.html](https://glitch.com/edit/#!/signin-form-codelab-4?path=index.html:22:2), [style.css](https://glitch.com/edit/#!/signin-form-codelab-4?path=style.css:34:0) and [script.js](https://glitch.com/edit/#!/signin-form-codelab-4?path=script.js) as follows.
+Update [index.html](https://glitch.com/edit/#!/sign-in-form-codelab-4?path=index.html:22:2), [style.css](https://glitch.com/edit/#!/sign-in-form-codelab-4?path=style.css:34:0) and [script.js](https://glitch.com/edit/#!/sign-in-form-codelab-4?path=script.js) as follows.
 
 Add the toggle button to the password section in the HTML:
 
@@ -220,22 +232,39 @@ function togglePassword() {
 
 Once again, make sure to test your work on different browsers on different platforms.
 
-**Bonus points**: Sites such as [Gmail](https://mail.google.com) use icons, not text, to toggle password display. Try implementing this using SVG images. 
+Try it out! Will users notice the **Show password** button and understand it? Is 
+there a better way to provide this functionality?
+
+To understand how this site works for screenreaders, install the [ChromeVox extension](https://chrome.google.com/webstore/detail/chromevox-classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en) and navigate through the form. Do the 
+`aria-label` values work as intended?
+
+**Bonus points**: Sites such as [Gmail](https://mail.google.com) use icons, not 
+text, to toggle password display. Try implementing this using SVG images: 
+the [Material Design site](https://material.io/resources/icons/?icon=visibility)
+has high quality free icons available for download. 
 
 {% Aside 'codelab' %}
-[View complete code for Step 4](https://glitch.com/edit/#!/signin-form-codelab-4).
+[View complete code for Step 4](https://glitch.com/edit/#!/sign-in-form-codelab-4).
 {% endAside %}
 
 
 ## Step 5: Add form validation
 
-HTML form elements and attributes have built-in features for basic validation, but you should also use JavaScript to do more robust validation while users are entering data and when they attempt to submit the form.
+Help users enter data correctly: validate data before form submission, and show 
+users what they need to change.
+
+HTML form elements and attributes have built-in features for basic validation, 
+but you should also use JavaScript to do more robust validation while users are 
+entering data and when they attempt to submit the form.
 
 {% Aside 'caution' %}
-Client-side validation helps users enter data and can avoid unnecessary server load, but you must always validate and sanitize data on your back-end.
+Client-side validation helps users enter data and can avoid unnecessary server load, 
+but you must always validate and sanitize data on your back-end.
 {% endAside %}
 
-This step uses the [Constraint Validation API](https://html.spec.whatwg.org/multipage/forms.html#constraints) (which is [widely supported](https://caniuse.com/#search=constraint%20validation)) to add custom validation, using built-in browser UI to set focus and display prompts. 
+This step uses the [Constraint Validation API](https://html.spec.whatwg.org/multipage/forms.html#constraints) 
+(which is [widely supported](https://caniuse.com/#search=constraint%20validation)) 
+to add custom validation, using built-in browser UI to set focus and display prompts. 
 
 Tell users the constraints for passwords and any other inputs. Don't make them guess!
 
@@ -287,7 +316,7 @@ function validatePassword() {
 }
 
 const form = document.querySelector('form');
-const loginButton = document.querySelector('button#login');
+const sign-inButton = document.querySelector('button#sign-in');
 
 form.addEventListener('submit', handleFormSubmission);                       
 
@@ -299,22 +328,40 @@ function handleFormSubmission(event) {
   } else {
     // On a production site do form submission.
     alert('Logging in!')
-    loginButton.disabled = 'true';
+    sign-inButton.disabled = 'true';
   }
 }
 ```
 
+Try it out! All recent browsers have built-in features for form validation and 
+support validation with JavaScript.
+
+* Enter an invalid email address and press **Sign in**. The browser will 
+display a warning—no JavaScript required!
+* Press **Sign in** without entering a password value. The browser warns that 
+you missed a required value and sets focus on the password input.
+* Enter an invalid password and press **Sign in**. Now you'll see different 
+messages, depending on what's wrong. 
+
+**For bonus points:** try out different ways to help users. [Better password 
+form fields](https://aerotwist.com/blog/better-password-form-fields/) has some 
+clever suggestions.
+
 {% Aside 'codelab' %}
-[View complete code for Step 5](https://glitch.com/edit/#!/signin-form-codelab-5).
+[View complete code for Step 5](https://glitch.com/edit/#!/sign-in-form-codelab-5).
 {% endAside %}
 
 
 ## And finally…
 
-We won't show them here, but three crucial signin form features are still missing:
+We won't show them here, but three crucial sign-in form features are still missing:
 
 * **Forgot your password?** link: make it easy for users to reset their password.
 
-* Links to your Terms of Service and privacy policy documents: make it clear to users from the start how you safeguard their data.
+* Links to your Terms of Service and privacy policy documents: make it clear to 
+users from the start how you safeguard their data.
 
-* The logo and name of your company or organization: include these and make sure that visual styles match the rest of your site. This may sound obvious, but many sites present users with forms that don't feel like they belong to the same site.
+* The logo and name of your company or organization: include these and make sure 
+that visual styles and tone of voice in the text match the rest of your site. 
+Many sites present users with forms that don't feel like they belong to the same 
+site, particularly if the URL is significantly different.
