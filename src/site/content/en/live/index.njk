@@ -22,7 +22,7 @@ date: 2020-06-31
     </section>
   {% endif %}
 
-  {% if event.isPreEvent or event.isPostEvent %}
+  {% if event.isPreEvent%}
     <div class="w-hero-overflow w-live-flow">
       <section class="w-event-section w-hero-section">
         <div class="w-event-section__column-left">
@@ -81,6 +81,27 @@ date: 2020-06-31
     <hr class="w-live-flow">
   {% endif %}
 
+  {% if event.isPostEvent %}
+    <div class="w-hero-overflow w-live-flow">
+      <section class="w-event-section w-hero-section">
+        <div class="w-event-section__column-left">
+          <div class="w-event-heading w-event-heading--smaller w-display--mobile-only">
+            <h1 class="w-event-heading__logo">web.dev<span>/LIVE</span>
+              <video width="156" height="72" autoplay muted loop playsinline>
+                <source src="live.mp4" type="video/mp4" />
+                <img src="live.png" alt="live" />
+              </video>
+            </h1>
+            <p class="w-event-heading__subhead">June 30 &mdash; July 2, 2020</p>
+          </div>
+        </div>
+        <div class="w-event-section__column-head w-event-hero w-pb--non">
+          <img src="hero.png" alt="" />
+        </div>
+      </section>
+    </div>
+  {% endif %}
+
   <section id="schedule" class="w-event-section w-schedule-section w-live-flow">
     {% if event.isPreEvent %}
       <div class="w-event-section__column-left">
@@ -94,7 +115,7 @@ date: 2020-06-31
     {% endif %}
 
     {% if event.isDuringEvent or event.isPostEvent %}
-      <web-event-carousel class="w-event-carousel w-event-carousel--mobile-only">
+      <web-event-carousel class="w-event-carousel w-display--mobile-only">
         {# These just exist as dummy HTML elements for the first render. They're replaced by the
             web-event-carousel CE when it loads. #}
         <div class="w-event-carousel__day">
@@ -131,7 +152,7 @@ date: 2020-06-31
           on demand and leave your questions in the Comments section on YouTube
           and we'll try our best to respond over the three days of the event.
         </p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdkWh94xheuR3Y_p0z6GML0AkdWLCa767KhFXBUPM3VI9-jCA/viewform" class="w-feedback-button w-button w-button--primary">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdkWh94xheuR3Y_p0z6GML0AkdWLCa767KhFXBUPM3VI9-jCA/viewform" target="_blank" class="w-feedback-button w-button w-button--primary">
           <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M4 2h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H6l-4 4 .01-18c0-1.1.89-2 1.99-2zm0 14h16V4H4v12zm6.5-2H18v-2h-5.5l-2 2zm3.86-6.58c.2.2.2.51 0 .71L8.47 14H6v-2.47l5.88-5.88c.2-.2.51-.2.71 0l1.77 1.77z" fill="#fff"/>
           </svg>

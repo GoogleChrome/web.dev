@@ -31,6 +31,12 @@
   h6 {
     color: inherit;
   }
+
+  .w-display--mobile-only {
+    @include bp(md) {
+      display: none;
+    }
+  }
 }
 
 // A utility for creating consistent vertical rhythm between sections.
@@ -319,12 +325,6 @@
   &::-webkit-scrollbar-thumb {
     background-color: $GREY_500;
     border-radius: 8px;
-  }
-}
-
-.w-event-carousel--mobile-only {
-  @include bp(md) {
-    display: none;
   }
 }
 
