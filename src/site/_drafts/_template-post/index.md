@@ -39,7 +39,7 @@ hero: hero.jpg
 alt: A description of the hero image for screen reader users.
 
 # You can provide a custom thumbnail and description for social media cards.
-# Thumbnail images should be 1200 x 630.
+# Thumbnail images should be 896 x 480.
 # If no social thumbnail is provided then the post will attempt to fallback to
 # the post's thumbnail or hero from above. It will also reuse the alt.
 # social:
