@@ -1,7 +1,7 @@
 ---
 title: Improving user privacy and developer experience with User-Agent Client Hints
 subhead:
-  User-Agent Client Hints is a new expansion to the Client Hints API, that
+  User-Agent Client Hints are a new expansion to the Client Hints API, that
   enables developers to access information about a user's browser in a
   privacy-preserving and ergonomic way.
 authors:
@@ -18,9 +18,7 @@ tags:
   - security
 ---
 
-User-Agent Client Hints is a new expansion to the Client Hints API, that enables
-developers to access information about a user's browser in a privacy-preserving
-and ergonomic way. Client Hints enable developers to actively request
+Client Hints enable developers to actively request
 information about the user's device or conditions, rather than needing to parse
 it out of the User-Agent (UA) string. Providing this alternative route is the
 first step to eventually reducing User-Agent string granularity.
@@ -130,8 +128,9 @@ appropriate resolution.
 
 {% Aside %}
   There are ongoing discussions on enabling Client Hints on an initial request,
-  but you should be considering [responsive design](/responsive-web-design-basics) or progressive enhancement
-  before going down this route.
+  but you should be considering [responsive
+  design](/responsive-web-design-basics) or progressive enhancement before going
+  down this route.
 {% endAside %}
 
 User-Agent Client Hints expand the range of properties that can be specified via
@@ -140,10 +139,23 @@ will use the `Sec-CH-UA` prefix. For all the details, start with [the
 explainer](https://github.com/WICG/ua-client-hints/blob/master/README.md) and
 then dive into the [full proposal](https://wicg.github.io/ua-client-hints/).
 
-The new set of hints is available from Chromium 84 Beta, so let's explore how it
+{% Aside %}
+  Client Hints are **only sent over secure connections**, so make sure you have
+  [migrated your site to HTTPS](https://web.dev/why-https-matters/).
+{% endAside %}
+
+The new set of hints is available from Chromium 84, so let's explore how it
 all works.
 
 ## User-Agent Client Hints in Chromium 84
+
+{% Aside %}
+  Ensure you use the Chrome Beta channel for testing. As with many new features,
+  User-Agent Client Hints will only be enabled gradually on Chrome Stable as
+  [compatibility
+  concerns](https://bugs.chromium.org/p/chromium/issues/detail?id=1091285)
+  are resolved.
+{% endAside %}
 
 By default, the browser returns the browser brand, significant / major version,
 and an indicator if the client is a mobile device:
@@ -299,7 +311,8 @@ You can try out both the headers and the JavaScript API on your own device at
 </div>
 
 {% Aside %}
-  The demo assumes that you're running a browser based on Chromium 84 or above.
+  Ensure you're using Chrome 84 Beta or equivalent to ensure User-Agent Client
+  Hints are enabled.
 {% endAside %}
 
 ### Hint life-time and resetting
