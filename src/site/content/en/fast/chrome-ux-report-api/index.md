@@ -138,7 +138,7 @@ When the CrUX API doesn't have any data for a given origin, it responds with a J
 }
 ```
 
-To debug this error, first check that the requested origin is publicly navigable. You can test this by entering the origin into your browser's URL bar and comparing it against the final URL after any redirects. Common problems may be unnecessarily adding or omitting the subdomain or using the wrong HTTP protocol.
+To debug this error, first check that the requested origin is publicly navigable. You can test this by entering the origin into your browser's URL bar and comparing it against the final URL after any redirects. Common problems include unnecessarily adding or omitting the subdomain and using the wrong HTTP protocol.
 
 {% Compare 'worse', 'Error' %}
 ```json
