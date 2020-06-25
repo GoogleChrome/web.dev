@@ -24,7 +24,7 @@
     "percy": "PERCY=true npm-run-all build --parallel --race start snapshots",
     "precommit": "node ./tools/update-updated/index.js",
     "rollup": "node build.js",
-    "sass": "node ./compile-css.js src/styles/all.scss",
+    "sass": "node ./compile-css.js",
     "snapshots": "percy exec --config ./tools/percy/.percy.conf.yml -- node tools/percy/snapshots.js",
     "stage:personal": "ELEVENTY_ENV=dev npm run build && gcloud app deploy --project web-dev-staging --quiet --no-promote",
     "stage": "ELEVENTY_ENV=dev npm run build && gcloud app deploy --project web-dev-staging --quiet",
