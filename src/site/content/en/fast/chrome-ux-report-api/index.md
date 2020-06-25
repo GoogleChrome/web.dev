@@ -122,7 +122,7 @@ If data exists for this origin, the API response is a JSON-encoded object contai
 }
 ```
 
-The `start` and `end` properties of the `histogram` object represent the range of values users experience for the given metric. The `density` property represents the proportion of user experiences within that range. In this example, 79% of LCP user experiences across all web.dev pages are under 2,500 milliseconds, which is the "[good](https://web.dev/lcp/#what-is-lcp)" LCP threshold. The `percentiles.p75` value means that 75% of user experiences in this distribution are less than 2,216 milliseconds. Learn more about the response structure in the [response body](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference/rest/v1/records/queryRecord#response-body) documentation.
+The `start` and `end` properties of the `histogram` object represent the range of values users experience for the given metric. The `density` property represents the proportion of user experiences within that range. In this example, 79% of LCP user experiences across all web.dev pages are under 2,500 milliseconds, which is the "[good](/lcp/#what-is-lcp)" LCP threshold. The `percentiles.p75` value means that 75% of user experiences in this distribution are less than 2,216 milliseconds. Learn more about the response structure in the [response body](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference/rest/v1/records/queryRecord#response-body) documentation.
 
 ### Errors
 
