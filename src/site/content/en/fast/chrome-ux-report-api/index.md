@@ -24,7 +24,7 @@ The [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-exper
 
 This API has been built with the goal of providing developers with simple, fast, and comprehensive access to CrUX data. The CrUX API only reports [_field_](/how-to-measure-speed/#lab-data-vs-field-data) user experience data, unlike the existing [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started), which also reports _lab_ data from the Lighthouse performance audits. The CrUX API is streamlined and can quickly serve user experience data, making it ideally suited for real-time auditing applications.
 
-To ensure that developers have access to all of the metrics that matter most—[Largest Contentful Paint](https://web.dev/lcp/) (LCP), [First Input Delay](https://web.dev/fid/) (FID), and [Cumulative Layout Shift](https://web.dev/cls/) (CLS)—the CrUX API audits and monitors these [Core Web Vitals](https://web.dev/vitals/#core-web-vitals) at both the origin and URL level.
+To ensure that developers have access to all of the metrics that matter the most—the [Core Web Vitals](/vitals/#core-web-vitals)—the CrUX API audits and monitors [Largest Contentful Paint](/lcp/) (LCP), [First Input Delay](/fid/) (FID), and [Cumulative Layout Shift](/cls/) (CLS) at both the origin and URL level.
 
 So let's dive in and see how to use it!
 
