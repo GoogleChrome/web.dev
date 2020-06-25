@@ -299,6 +299,21 @@
   padding: 0 24px;
 }
 
+.w-event-section__internal-links {
+  margin-top: 32px;
+
+  a {
+    color: $GREY_800;
+    font-family: $HEADLINE_FONT;
+    font-weight: $FONT_WEIGHT_MEDIUM;
+  }
+
+  > * + * {
+    display: block;
+    margin-top: 24px;
+  }
+}
+
 .w-event-link {
   font-size: 14px;
   margin-top: 24px;
