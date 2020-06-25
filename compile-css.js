@@ -101,7 +101,7 @@ fs.writeFileSync(fileName + '.map', out.map);
 
 // Write the CSS entrypoint to a known file for Eleventy to read.
 fs.writeFileSync(
-  'dist/_resourceCSS.json',
+  'src/site/_data/resourceCSS.json',
   JSON.stringify({path: path.basename(fileName)}),
 );
 
