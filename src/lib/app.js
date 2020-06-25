@@ -113,7 +113,7 @@ function ensureServiceWorker() {
     // reliably force a reload via the Client interface as it's unsupported in Safari.
     navigator.serviceWorker.addEventListener('controllerchange', () => {
       console.warn('TODO: previous controllerchange');
-//      window.location.reload();
+      //      window.location.reload();
     });
   }
   navigator.serviceWorker.register('/sw.js');

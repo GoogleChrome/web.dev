@@ -54,7 +54,6 @@ self.addEventListener('activate', (event) => {
     // If this is not a new install, and the architecture has changed, force an immediate reload.
     // Installs from March 2020 will do this in the client scope (but we need this for safety).
     if (replacingPreviousServiceWorker) {
-      debugger;
       const windowClients = await self.clients.matchAll({
         includeUncontrolled: true,
         type: 'window',
