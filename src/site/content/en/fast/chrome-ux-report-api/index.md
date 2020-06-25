@@ -373,7 +373,7 @@ Combined with an automated way to monitor API results, data from CrUX can be use
 
 ## What's next?
 
-The features included in this inaugural version of the CrUX API only scratch the surface of the kinds of insights that are possible with CrUX. Users of the [CrUX dataset on BigQuery](https://web.dev/chrome-ux-report-bigquery/) may be familiar with some of the more advanced features including:
+The features included in the initial version of the CrUX API only scratch the surface of the kinds of insights that are possible with CrUX. Users of the [CrUX dataset on BigQuery](/chrome-ux-report-bigquery/) may be familiar with some of the more advanced features including:
 
 - Additional metrics
   - `first_paint`
