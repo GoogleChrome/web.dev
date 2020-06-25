@@ -106,7 +106,6 @@ module.exports = {
         'chrome-ux-report-data-studio-dashboard',
         'chrome-ux-report-pagespeed-insights',
         'chrome-ux-report-bigquery',
-        'chrome-ux-report-api',
       ],
     },
     {
