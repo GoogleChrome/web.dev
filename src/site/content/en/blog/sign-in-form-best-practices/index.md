@@ -3,7 +3,8 @@ title: Sign-in form best practices
 subhead: Use cross-platform browser features to build sign-in forms that are secure, accessible and easy to use.
 authors:
   - samdutton
-date: 2020-06-19
+date: 2020-06-25
+updated: 2020-06-25
 description: Use cross-platform browser features to build sign-in forms that are secure, accessible and easy to use.
 hero: hero.jpg
 alt: Close-up photo of a man's hands, using an iPhone.
