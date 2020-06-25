@@ -4,6 +4,11 @@
 
 .w-live-landing-page {
   color: $GREY_800;
+  --flow-space: 48px;
+
+  @include bp(md) {
+    --flow-space: 80px;
+  }
 
   p {
     font-size: 14px;
@@ -30,11 +35,7 @@
 
 // A utility for creating consistent vertical rhythm between sections.
 .w-live-flow + .w-live-flow {
-  margin-top: 48px;
-
-  @include bp(md) {
-    margin-top: 80px;
-  }
+  margin-top: var(--flow-space);
 }
 
 .w-livestream-section {
@@ -300,6 +301,7 @@
 .w-event-carousel {
   display: flex;
   overflow-x: scroll;
+  padding-bottom: 8px;
   // Firefox only
   // sass-lint:disable no-misspelled-properties
   scrollbar-color: $GREY_500;
@@ -332,7 +334,6 @@
   font-size: 14px;
   font-weight: $FONT_WEIGHT_MEDIUM;
   margin-right: 16px;
-  padding-bottom: 8px;
 
   &:hover,
   &:focus {
@@ -363,6 +364,36 @@
   > img {
     height: 100%;
     object-fit: cover;
+  }
+}
+
+.w-schedule-section {
+  // If we're displaying the live chat is disabled banner (which we only do on
+  // touch devices) then we want to remove the normal 48px margin to move the
+  // schedule closer to the video.
+  @media (hover: none) {
+    --flow-space: 8px;
+  }
+
+  // Restore the usual flow-space value.
+  @include bp(md) {
+    --flow-space: 80px;
+  }
+
+  .w-event-heading {
+    margin-top: 56px;
+
+    @include bp(md) {
+      margin-top: 0;
+    }
+  }
+
+  .w-event-heading + p {
+    margin-top: 32px;
+
+    @include bp(md) {
+      margin-top: 24px;
+    }
   }
 }
 
