@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Using the Chrome UX Report API
+subhead: >
+  Learn how to use the Chrome UX Report API to get easy, RESTful access to 
+  real-user experience data across millions of websites.
 authors:
   - rviscomi
   - exterkamp
@@ -8,13 +11,16 @@ hero: hero.png
 description: |
   Learn how to use the Chrome UX Report API to get easy, RESTful access to 
   real-user experience data across millions of websites.
-date: 2020-06-23
+date: 2020-06-25
 tags:
-  - performance
   - blog
+  - chrome-ux-report
+  - web-vitals
+  - performance
+  - metrics
 ---
 
-The [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) (CrUX) dataset represents how real-world Chrome users experience popular destinations on the web. Since 2017, when the queryable dataset was first released on [BigQuery](https://web.dev/chrome-ux-report-bigquery/), field data from CrUX has been integrated into developer tools like [PageSpeed Insights](/chrome-ux-report-pagespeed-insights/), the [CrUX Dashboard](https://web.dev/chrome-ux-report-data-studio-dashboard/), and Search Console's [Core Web Vitals report](https://support.google.com/webmasters/answer/9205520), enabling developers to easily measure and monitor real-user experiences. The piece that has been missing all this time has been a tool that provides free and RESTful access to CrUX data programmatically. To help bridge that gap, we're excited to announce the release of the all new [Chrome UX Report API](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference)!
+The [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report) (CrUX) dataset represents how real-world Chrome users experience popular destinations on the web. Since 2017, when the queryable dataset was first released on [BigQuery](/chrome-ux-report-bigquery/), field data from CrUX has been integrated into developer tools like [PageSpeed Insights](/chrome-ux-report-pagespeed-insights/), the [CrUX Dashboard](/chrome-ux-report-data-studio-dashboard/), and Search Console's [Core Web Vitals report](https://support.google.com/webmasters/answer/9205520), enabling developers to easily measure and monitor real-user experiences. The piece that has been missing all this time has been a tool that provides free and RESTful access to CrUX data programmatically. To help bridge that gap, we're excited to announce the release of the all new [Chrome UX Report API](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference)!
 
 This API has been built from the ground up with the goals of providing developers with simple, fast, and comprehensive access to CrUX data. The CrUX API only reports _field-based_ user experience data, unlike the existing [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started), which also runs _lab-based_ Lighthouse performance audits. The CrUX API is streamlined and can quickly serve user experience data, making it ideally suited for real-time auditing applications.
 
@@ -53,7 +59,7 @@ const CrUXApiUtil = {};
 CrUXApiUtil.API_KEY = '[YOUR_API_KEY]';
 CrUXApiUtil.API_ENDPOINT = `https://chromeuxreport.googleapis.com/v1/records:queryRecord?key=${CrUXApiUtil.API_KEY}`;
 CrUXApiUtil.query = function (requestBody) {
-  if (CrUXApiUtil.API_KEY == 'YOUR_API_KEY') {
+  if (CrUXApiUtil.API_KEY == '[YOUR_API_KEY]') {
     throw 'Replace "YOUR_API_KEY" with your private CrUX API key. Get a key at https://goo.gle/crux-api-key.';
   }
   return fetch(CrUXApiUtil.API_ENDPOINT, {
@@ -215,7 +221,7 @@ If data for this URL exists in the CrUX dataset, the API will return a JSON-enco
 }
 ```
 
-True to form, the results show that the web.dev page about web performance has 85% "good" LCP experiences and a 75th percentile of 1,947 milliseconds, which is slightly better than the origin-wide distribution.
+True to form, the results show that `https://web.dev/fast/` has 85% "good" LCP experiences and a 75th percentile of 1,947 milliseconds, which is slightly better than the origin-wide distribution.
 
 ### URL normalization
 
@@ -315,7 +321,7 @@ Recall from the previous section that 85% of user experiences on this page had "
 
 ## Assessing Core Web Vitals performance
 
-The [Core Web Vitals](https://web.dev/vitals/#core-web-vitals) program defines targets that help to determine whether a user experience or a distribution of experiences can be considered "good". In the following example, we use the CrUX API and the [`CrUXApiUtil.query`](#crux-api-util) function to assess whether a web page's distribution of Core Web Vitals metrics (LCP, FID, CLS) are "good".
+The [Core Web Vitals](https://web.dev/vitals/#core-web-vitals) program defines targets that help determine whether a user experience or a distribution of experiences can be considered "good". In the following example, we use the CrUX API and the [`CrUXApiUtil.query`](#crux-api-util) function to assess whether a web page's distribution of Core Web Vitals metrics (LCP, FID, CLS) are "good".
 
 ```js/1
 CrUXApiUtil.query({
@@ -363,18 +369,18 @@ The 75th percentile (20) of first_input_delay passes the Core Web Vitals "good" 
 The 75th percentile (0.05) of cumulative_layout_shift passes the Core Web Vitals "good" threshold (0.10).
 ```
 
-Combined with an automated way to monitor API results, data from CrUX can be used to ensure that real-user experiences **get fast** and **stay fast**. For more information about Core Web Vitals and how to measure them, please visit [web.dev/vitals](https://web.dev/vitals) and [web.dev/vitals-tools](https://web.dev/vitals-tools).
+Combined with an automated way to monitor API results, data from CrUX can be used to ensure that real-user experiences **get fast** and **stay fast**. For more information about Core Web Vitals and how to measure them, check out [Web Vitals](/vitals) and [Tools to measure Core Web Vitals](https://web.dev/vitals-tools).
 
 ## What's next?
 
 The features included in this inaugural version of the CrUX API only scratch the surface of the kinds of insights that are possible with CrUX. Users of the [CrUX dataset on BigQuery](https://web.dev/chrome-ux-report-bigquery/) may be familiar with some of the more advanced features including:
 
 - Additional metrics
-  - first_paint
-  - dom_content_loaded
-  - onload
-  - time_to_first_byte
-  - notification_permissions
+  - `first_paint`
+  - `dom_content_loaded`
+  - `onload`
+  - `time_to_first_byte`
+  - `notification_permissions`
 - Additional dimensions
   - month
   - country
