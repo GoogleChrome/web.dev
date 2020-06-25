@@ -14,7 +14,7 @@ tags:
 
 -- video embed --
 
-The evolution of CSS layouts enable developers to write really meaningful and robust styling rules with just a few keystrokes. The talk above and this subsequent post examine 10 powerful lines of CSS that do some serious heavy lifting.
+Modern CSS layouts enable developers to write really meaningful and robust styling rules with just a few keystrokes. The talk above and this subsequent post examine 10 powerful lines of CSS that do some serious heavy lifting.
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
   <iframe
@@ -61,7 +61,7 @@ By using Flexbox for this effect, you won't need media queries to adjust the pla
 
 The [`flex`](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) shorthand stands for: `flex: <flex-grow> <flex-shrink> <flex-basis>`.
 
-Because of this, if you want your boxes to fill out to their `<flex-basis>` size, shrink on smaller sizes, but not *stretch* to fill any additional space, write: `flex: 0 1 <flex-basis>`, setting the `<flex-grow>` to 0. In this case, your `<flex-basis`> is `'150px'` so it looks like:
+Because of this, if you want your boxes to fill out to their `<flex-basis>` size, shrink on smaller sizes, but not *stretch* to fill any additional space, write: `flex: 0 1 <flex-basis>`. In this case, your `<flex-basis`> is `150px` so it looks like:
 
 ```css/5
 .parent {
@@ -73,7 +73,7 @@ Because of this, if you want your boxes to fill out to their `<flex-basis>` size
 }
 ```
 
-If you *do* want the boxes to stretch and fill the space as they wrap to the next line, set the `'flex-grow'` to `'1'`, so it would look like:
+If you *do* want the boxes to stretch and fill the space as they wrap to the next line, set the `<flex-grow>` to `1`, so it would look like:
 
 ```css/5
 .parent {
@@ -92,7 +92,7 @@ If you *do* want the boxes to stretch and fill the space as they wrap to the nex
 
 Now, as you increase or decrease the screen size,  these flex items both shrink and grow.
 
-## 03. Sidebar Says: `grid-template-columns: minmax(<min>, <max>) ...)`
+## 03. Sidebar Says: `grid-template-columns: minmax(<min>, <max>) …)`
 
 <figure class='w-figure'>
 <video controls autoplay loop muted class='w-screenshot'>
@@ -100,10 +100,10 @@ Now, as you increase or decrease the screen size,  these flex items both shrink 
   </video>
 </figure>
 
-This demo takes advantage of the [minmax](https://developer.mozilla.org/en-US/docs/Web/CSS/minmax) function for grid layouts. What we're doing here is setting the minimum sidebar size to be `'150px`', but on larger screens, letting that stretch out to `'25%'`. The sidebar will always take up `'25%'` of its parent's horizontal space until that `'25%'` becomes smaller than `'150px'`.
+This demo takes advantage of the [minmax](https://developer.mozilla.org/en-US/docs/Web/CSS/minmax) function for grid layouts. What we're doing here is setting the minimum sidebar size to be `150px`, but on larger screens, letting that stretch out to `25%`. The sidebar will always take up `25%` of its parent's horizontal space until that `25%` becomes smaller than `150px`.
 
 Add this as a value of grid-template-columns with the following value:
-`grid-template-columns: minmax(150px, 25%) 1fr`. The item in the first column (the sidebar in this case) gets a `'minmax'` of `'150px'` at `'25%'`, and the second item (the `'main'` section here) takes up the rest of the space as a single 1fr track.
+`minmax(150px, 25%) 1fr`. The item in the first column (the sidebar in this case) gets a `'minmax'` of `'150px'` at `'25%'`, and the second item (the `'main'` section here) takes up the rest of the space as a single `1fr` track.
 
 ```css/2
 .parent {
