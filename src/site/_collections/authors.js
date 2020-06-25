@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const fs = require('fs');
 const path = require('path');
 const contributors = require('../_data/contributors');
 const {livePosts} = require('../_filters/live-posts');
@@ -36,21 +35,6 @@ const findAuthorsPosts = (posts) => {
     });
   });
   return authorsMap;
-};
-
-/**
- * Finds image of author, returns path.
- *
- * @param {string} key
- * @return {string | void} Path for image.
- */
-const findAuthorsImage = (key) => {
-  for (const size of ['@3x', '@2x', '']) {
-    const jpegPath = path.join('src/images/authors', `${key}${size}.jpg`);
-    if (fs.existsSync(jpegPath)) {
-      return path.join('/images/authors', `${key}${size}.jpg`);
-    }
-  }
 };
 
 /**
@@ -121,11 +105,9 @@ module.exports = (collections) => {
       }
     }
 
-    const authorsImage = findAuthorsImage(key);
-    if (authorsImage) {
-      author.data.hero = authorsImage;
-      author.data.alt = author.title;
-    }
+    const authorsImage = path.join('/images', 'authors', `${key}@2x.jpg`);
+    author.data.hero = authorsImage;
+    author.data.alt = author.title;
 
     if (process.env.PERCY) {
       author.elements = author.elements.slice(-6);
