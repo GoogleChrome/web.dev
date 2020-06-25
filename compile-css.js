@@ -20,6 +20,11 @@ const isProd = process.env.ELEVENTY_ENV === 'prod';
 const fs = require('fs');
 const path = require('path');
 const log = require('fancy-log');
+const {hashForContent} = require('./src/build/hash');
+
+// CSS tools expect a target filename, but we don't use it and it doesn't appear
+// anywhere in our output.
+const ignoredCSSName = '__ignored__.css';
 
 const sassEngine = (function () {
   /* eslint-disable node/no-missing-require */
@@ -35,14 +40,13 @@ const sassEngine = (function () {
 
 /**
  * @param {string} input filename to read for input
- * @param {string} output filename to use for output (but does not write)
  * @return {{css: !Buffer, map: !Buffer}}
  */
-function compileCSS(input, output) {
+function compileCSS(input) {
   // #1: Compile CSS with either engine.
   const compiledOptions = {
     file: input,
-    outFile: output,
+    outFile: ignoredCSSName,
     sourceMap: true,
     omitSourceMapUrl: true, // since we just read it from the result object
   };
@@ -62,8 +66,8 @@ function compileCSS(input, output) {
 
   // #2: Run postcss for autoprefixer.
   const postcssOptions = {
-    from: output,
-    to: output,
+    from: ignoredCSSName,
+    to: ignoredCSSName,
     map: {
       prev: JSON.parse(compiledResult.map.toString()),
       annotation: true,
@@ -86,10 +90,20 @@ function compileCSS(input, output) {
   return {map, css};
 }
 
-const target = process.argv[3] || 'out.css';
-const out = compileCSS(process.argv[2], target);
+const out = compileCSS('src/styles/all.scss');
 
-fs.mkdirSync(path.dirname(target), {recursive: true});
-fs.writeFileSync(target, out.css);
-fs.writeFileSync(target + '.map', out.map);
-log('Finished CSS!');
+const hash = hashForContent(out.css);
+const base = `app-${hash}.css`;
+const fileName = `dist/${base}`;
+
+fs.mkdirSync(path.dirname(fileName), {recursive: true});
+fs.writeFileSync(fileName, out.css);
+fs.writeFileSync(fileName + '.map', out.map);
+
+// Write the CSS entrypoint to a known file for Eleventy to read.
+fs.writeFileSync(
+  'src/site/_data/resourceCSS.json',
+  JSON.stringify({path: '/' + base}),
+);
+
+log(`Finished CSS! (${base})`);

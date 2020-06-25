@@ -21,6 +21,8 @@ const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItAttrs = require('markdown-it-attrs');
 const slugify = require('slugify');
+const fs = require('fs');
+const path = require('path');
 
 const componentsDir = 'src/site/_includes/components';
 const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
@@ -87,6 +89,9 @@ const {
 } = require(`./${transformsDir}/service-worker-partials`);
 
 module.exports = function (config) {
+  const isProd = process.env.ELEVENTY_ENV === 'prod';
+  const isWatch = process.argv.includes('--watch');
+
   // ----------------------------------------------------------------------------
   // PLUGINS
   // ----------------------------------------------------------------------------
@@ -160,7 +165,7 @@ module.exports = function (config) {
     return memoize(collection.getAll());
   });
   config.addCollection('algolia', (collection) => {
-    if (process.env.ELEVENTY_ENV === 'prod') {
+    if (isProd) {
       const algoliaPosts = require(`./${collectionsDir}/algolia-posts`);
       return algoliaPosts(collection);
     }
@@ -227,7 +232,7 @@ module.exports = function (config) {
     config.addTransform('disable-lazy-load', disableLazyLoad);
   }
 
-  if (process.env.ELEVENTY_ENV === 'prod') {
+  if (isProd) {
     config.addTransform('responsive-images', responsiveImages);
   }
 
@@ -236,6 +241,41 @@ module.exports = function (config) {
   // It takes the final html and turns it into partials that the
   // service worker can load.
   config.addTransform('service-worker-partials', serviceWorkerPartials);
+
+  // ----------------------------------------------------------------------------
+  // CHECKS
+  // ----------------------------------------------------------------------------
+  if (isProd || !isWatch) {
+    // We generate the paths to our JS and CSS entrypoints as a side-effect
+    // of their build scripts, so make sure they exist in prod. In watch mode,
+    // we skip this check as builds will occur at all sorts of random times.
+    const checkJSONDataPath = (name) => {
+      const f = `src/site/_data/${name}.json`;
+      try {
+        const raw = JSON.parse(fs.readFileSync(f), 'utf-8');
+        if (!raw['path']) {
+          throw new Error(`could not find 'path' key in: ${f}`);
+        }
+        const check = path.join('dist', raw['path']);
+        if (!fs.existsSync(check)) {
+          throw new Error(`path did not exist: ${check}`);
+        }
+      } catch (e) {
+        if (isProd) {
+          throw new Error(
+            `could not find valid JSON path inside src/site/_data/: ${name}`,
+          );
+        }
+        console.warn(
+          'web.dev could not find the resource to include:',
+          name,
+          e,
+        );
+      }
+    };
+    checkJSONDataPath('resourceCSS');
+    checkJSONDataPath('resourceJS');
+  }
 
   // ----------------------------------------------------------------------------
   // ELEVENTY OPTIONS
