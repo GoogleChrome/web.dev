@@ -36,7 +36,7 @@ curl "https://chromeuxreport.googleapis.com/v1/records:queryRecord?key=$API_KEY"
 Run this query interactively in the [CrUX API explorer](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference/rest/v1/records/queryRecord?apix=true&apix_params=%7B%22resource%22%3A%7B%22origin%22%3A%22https%3A%2F%2Fwww.google.com%22%7D%7D).
 
 {% Aside %}
-Note that all API requests must provide a value for the `key` parameter, the placeholder for which is left as `YOUR_API_KEY`. Get your own private CrUX API key at the click of a button in the official [CrUX API documentation](https://developers.google.com/web/tools/chrome-user-experience-report/api/guides/getting-started#APIKey). For convenience, the interactive [CrUX API explorer](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference/rest/v1/records/queryRecord?apix=true) does not require an API key.
+All API requests must provide a value for the `key` parameter—`[YOUR_API_KEY]` in the example above is left as a placeholder. Get your own private CrUX API key at the click of a button in the official [CrUX API documentation](https://goo.gle/crux-api-key). For convenience, the interactive [CrUX API explorer](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference/rest/v1/records/queryRecord?apix=true) does not require an API key.
 {% endAside %}
 
 The `curl` command is made up of three parts:
