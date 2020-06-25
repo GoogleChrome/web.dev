@@ -369,7 +369,7 @@ The 75th percentile (20) of first_input_delay passes the Core Web Vitals "good" 
 The 75th percentile (0.05) of cumulative_layout_shift passes the Core Web Vitals "good" threshold (0.10).
 ```
 
-Combined with an automated way to monitor API results, data from CrUX can be used to ensure that real-user experiences **get fast** and **stay fast**. For more information about Core Web Vitals and how to measure them, check out [Web Vitals](/vitals) and [Tools to measure Core Web Vitals](https://web.dev/vitals-tools).
+Combined with an automated way to monitor API results, data from CrUX can be used to ensure that real-user experiences **get fast** and **stay fast**. For more information about Core Web Vitals and how to measure them, check out [Web Vitals](/vitals) and [Tools to measure Core Web Vitals](/vitals-tools).
 
 ## What's next?
 
