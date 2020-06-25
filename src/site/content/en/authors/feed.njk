@@ -40,7 +40,7 @@ pagination:
     {% for entry in post.data.authors %}
     {%- set author =  contributors[entry] -%}
     <author>
-      <name>{{ author.name.title }}</name>
+      <name>{{ author.title }}</name>
     </author>
     {%- endfor %}
   </entry>
