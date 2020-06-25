@@ -115,6 +115,9 @@ date: 2020-06-31
     {% endif %}
 
     {% if event.isDuringEvent or event.isPostEvent %}
+      {# Note that we have more than one web-event-carousel.
+          We display one on mobile and a different one on desktop.
+          Their positions are pretty different so using two elements is the easiest approach. #}
       <web-event-carousel class="w-event-carousel w-display--mobile-only">
         {# These just exist as dummy HTML elements for the first render. They're replaced by the
             web-event-carousel CE when it loads. #}
@@ -194,6 +197,9 @@ date: 2020-06-31
 
     <div class="w-event-section__column-right w-event-section__column-right__schedule">
       {% if event.isDuringEvent or event.isPostEvent %}
+      {# Note that we have more than one web-event-carousel.
+          We display one on mobile and a different one on desktop.
+          Their positions are pretty different so using two elements is the easiest approach. #}
         <web-event-carousel class="w-event-carousel">
           {# These just exist as dummy HTML elements for the first render. They're replaced by the
              web-event-carousel CE when it loads. #}
