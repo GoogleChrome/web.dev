@@ -8,6 +8,14 @@ const {
   writePartial,
 } = require('../../../../../../src/site/_transforms/service-worker-partials');
 
+const sanitizeActual = (raw) => {
+  // These are computed and not relevant to most tests.
+  const update = JSON.parse(JSON.stringify(raw)); // clone
+  delete update.builtAt;
+  delete update.resourcesVersion;
+  return update;
+};
+
 describe('service-worker-partials', function () {
   let $;
 
@@ -38,7 +46,10 @@ describe('service-worker-partials', function () {
       const actual = JSON.parse(
         await fs.readFile(outputPath.replace('.html', '.json'), 'utf-8'),
       );
-      assert.deepStrictEqual(actual, expected);
+      assert.deepStrictEqual(sanitizeActual(actual), expected);
+
+      assert(typeof actual.builtAt === 'number');
+      assert(typeof actual.resourcesVersion === 'string');
     });
 
     it('is a noop if outputPath does not end in index.html', async function () {
@@ -62,7 +73,7 @@ describe('service-worker-partials', function () {
         rss: $('link[type="application/atom+xml"]').attr('href'),
         offline: false,
       };
-      assert.deepStrictEqual(actual, expected);
+      assert.deepStrictEqual(sanitizeActual(actual), expected);
     });
 
     it('sets offline to true when processing the offline page', function () {
@@ -75,7 +86,7 @@ describe('service-worker-partials', function () {
         rss: $('link[type="application/atom+xml"]').attr('href'),
         offline: true,
       };
-      assert.deepStrictEqual(actual, expected);
+      assert.deepStrictEqual(sanitizeActual(actual), expected);
     });
   });
 
@@ -93,7 +104,7 @@ describe('service-worker-partials', function () {
       const outputPath = path.join('.', '.tmp', hash, 'index.json');
       await writePartial(outputPath, expected);
       const actual = JSON.parse(await fs.readFile(outputPath, 'utf-8'));
-      assert.deepStrictEqual(actual, expected);
+      assert.deepStrictEqual(sanitizeActual(actual), expected);
     });
   });
 });
