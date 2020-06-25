@@ -7,7 +7,7 @@ scheduled: true
 date: 2020-06-29
 hero: hero.png
 thumbnail: thumbnail.png 
-alt: A description of the hero image for screen reader users.
+alt: tooling.report logo with blue open notebook icon.
 tags:
   - blog
   - javascript
