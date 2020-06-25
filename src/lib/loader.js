@@ -9,7 +9,9 @@ import {store} from './store';
 import {normalizeUrl, getCanonicalPath} from './urls';
 import './utils/underscore-import-polyfill';
 
-const pageResourcesVersion = document.body.getAttribute('data-resources-version');
+const pageResourcesVersion = document.body.getAttribute(
+  'data-resources-version',
+);
 
 /**
  * Dynamically loads code required for the passed URL entrypoint.
