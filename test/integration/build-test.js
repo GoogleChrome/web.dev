@@ -24,6 +24,7 @@ describe('Build test', function () {
       path.join('en', 'feed.xml'),
       path.join('en', 'index.html'),
       path.join('en', 'index.json'),
+      path.join('en', 'offline', 'index.json'),
       path.join('en', 'authors', 'addyosmani', 'feed.xml'),
       path.join('en', 'tags', 'progressive-web-apps', 'feed.xml'),
       path.join('images', 'favicon.ico'),
@@ -61,6 +62,17 @@ describe('Build test', function () {
     assert(
       contents.find((file) => re.test(file)),
       `Could not find Sass output: app`,
+    );
+
+    // Check that there's NOT a web.dev/LIVE partial. We confirm that partials
+    // are generally created above, in the list of common checks.
+    assert(
+      !fs.existsSync(path.join(dist, 'en/live/index.json')),
+      'web.dev/LIVE partial should not exist',
+    );
+    assert(
+      fs.existsSync(path.join(dist, 'en/live/index.html')),
+      'web.dev/LIVE page should exist',
     );
   });
 });
