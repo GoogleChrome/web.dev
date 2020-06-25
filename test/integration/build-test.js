@@ -70,5 +70,9 @@ describe('Build test', function () {
       !fs.existsSync(path.join(dist, 'en/live/index.json')),
       'web.dev/LIVE partial should not exist',
     );
+    assert(
+      fs.existsSync(path.join(dist, 'en/live/index.html')),
+      'web.dev/LIVE page should exist',
+    );
   });
 });
