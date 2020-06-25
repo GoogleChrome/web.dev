@@ -87,6 +87,9 @@ const {
 } = require(`./${transformsDir}/service-worker-partials`);
 
 module.exports = function (config) {
+  const isProd = process.env.ELEVENTY_ENV === 'prod';
+  const isWatch = process.argv.includes('--watch');
+
   // ----------------------------------------------------------------------------
   // PLUGINS
   // ----------------------------------------------------------------------------
@@ -160,7 +163,7 @@ module.exports = function (config) {
     return memoize(collection.getAll());
   });
   config.addCollection('algolia', (collection) => {
-    if (process.env.ELEVENTY_ENV === 'prod') {
+    if (isProd) {
       const algoliaPosts = require(`./${collectionsDir}/algolia-posts`);
       return algoliaPosts(collection);
     }
@@ -227,7 +230,7 @@ module.exports = function (config) {
     config.addTransform('disable-lazy-load', disableLazyLoad);
   }
 
-  if (process.env.ELEVENTY_ENV === 'prod') {
+  if (isProd) {
     config.addTransform('responsive-images', responsiveImages);
   }
 
@@ -236,6 +239,30 @@ module.exports = function (config) {
   // It takes the final html and turns it into partials that the
   // service worker can load.
   config.addTransform('service-worker-partials', serviceWorkerPartials);
+
+  // ----------------------------------------------------------------------------
+  // CHECKS
+  // ----------------------------------------------------------------------------
+  if (isProd || !isWatch) {
+    // We generate the paths to our JS and CSS entrypoints as a side-effect
+    // of their build scripts, so make sure they exist in prod. In watch mode,
+    // we skip this check as builds will occur at all sorts of random times.
+    const checkJSONDataPath = (name) => {
+      const f = `src/site/_data/${name}.json`;
+      try {
+        const raw = JSON.parse(fs.readFileSync(f), 'utf-8');
+        if (!raw['path']) {
+          throw new Error();
+        }
+      } catch (e) {
+        throw new Error(
+          `could not find JSON path inside src/site/_data/: ${name}`,
+        );
+      }
+    };
+    checkJSONDataPath('resourceCSS');
+    checkJSONDataPath('resourceJS');
+  }
 
   // ----------------------------------------------------------------------------
   // ELEVENTY OPTIONS
