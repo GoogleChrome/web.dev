@@ -27,7 +27,7 @@ const addPagination = require('../../_utils/add-pagination');
 const feed = (items) => {
   const filteredFeed = [];
 
-  if (process.env.ELEVENTY_ENV === 'dev') {
+  if (process.env.ELEVENTY_ENV !== 'prod') {
     return filteredFeed;
   }
 

@@ -44,6 +44,12 @@ npm run dev
 Open `http://localhost:8080/` to see the site locally. Changes to assets will
 rebuild the site. Refresh to see your changes.
 
+## Environments 🌳
+
+Set `ELEVENTY_ENV=prod` to force production builds. This is the default when
+running "stage" or "deploy". No other options for `ELEVENTY_ENV` are supported,
+although our Eleventy site config will default to 'dev' if unspecified.
+
 ## Staging 🕺
 
 When you send in a pull request it will be automatically staged for you. Keep an

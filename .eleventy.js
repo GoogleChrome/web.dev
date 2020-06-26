@@ -90,7 +90,6 @@ const {
 
 module.exports = function (config) {
   const isProd = process.env.ELEVENTY_ENV === 'prod';
-  const isWatch = process.argv.includes('--watch');
 
   // ----------------------------------------------------------------------------
   // PLUGINS
@@ -245,10 +244,9 @@ module.exports = function (config) {
   // ----------------------------------------------------------------------------
   // CHECKS
   // ----------------------------------------------------------------------------
-  if (isProd || !isWatch) {
+  if (isProd) {
     // We generate the paths to our JS and CSS entrypoints as a side-effect
-    // of their build scripts, so make sure they exist in prod. In watch mode,
-    // we skip this check as builds will occur at all sorts of random times.
+    // of their build scripts, so make sure they exist in prod builds.
     const checkJSONDataPath = (name) => {
       const f = `src/site/_data/${name}.json`;
       try {
@@ -261,15 +259,8 @@ module.exports = function (config) {
           throw new Error(`path did not exist: ${check}`);
         }
       } catch (e) {
-        if (isProd) {
-          throw new Error(
-            `could not find valid JSON path inside src/site/_data/: ${name}`,
-          );
-        }
-        console.warn(
-          'web.dev could not find the resource to include:',
-          name,
-          e,
+        throw new Error(
+          `could not find valid JSON path inside src/site/_data/: ${name} (${e})`,
         );
       }
     };
