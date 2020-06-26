@@ -223,16 +223,43 @@ date: 2020-06-31
   <hr class="w-live-flow">
 
   {% if event.isPostEvent %}
+    <section id="q-and-a" class="w-event-section w-q-and-a-section w-live-flow">
+      <div class="w-event-section__column-left">
+        <h3 class="w-event-icon-heading w-mt--non">
+          <svg class="w-event-icon" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M14 11c.55 0 1-.45 1-1V1c0-.55-.45-1-1-1H1C.45 0 0 .45 0 1v14l4-4h10zm-1-9v7H2V2h11zm4 2h2c.55 0 1 .45 1 1v15l-4-4H5c-.55 0-1-.45-1-1v-2h13V4z" fill="#5F6368"/></svg>
+          <span>Q &amp; A</span>
+        </h3>
+        <p>
+          During web.dev LIVE, we were happy to address some very insightful and interesting questions from the community across the globe. Here are some of the top questions asked.
+        </p>
+        <a href="/live#content" class="w-back-to-top-link">Back to top</a>
+      </div>
+
+
+      <div class="w-event-section__column-right">
+        <web-event-q-and-a>
+        {%- for entry in event.qAndAs  %}
+          <details class="web-event-q-and-a__details" data-category="{{entry.category}}">
+            <summary><span>Q.</span>{{entry.question}}</summary>
+            <p><span>A.</span>{{entry.answer}}</p>
+          </details>
+        {%- endfor %}
+        </web-event-q-and-a>
+      </div>
+    </section>
+
+    <hr class="w-live-flow">
+
     <section id="map" class="w-event-section w-live-flow">
       <div class="w-event-section__column-left">
-        <h3 class="w-mt--non">
+        <h3 class="w-event-icon-heading w-mt--non">
           <svg class="w-event-icon" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-.61.08-1.21.21-1.78L8.99 15v1c0 1.1.9 2 2 2v1.93C7.06 19.43 4 16.07 4 12zm11.99 4c.9 0 1.64.59 1.9 1.4A7.991 7.991 0 0020 12c0-3.35-2.08-6.23-5.01-7.41V5c0 1.1-.9 2-2 2h-2v2c0 .55-.45 1-1 1h-2v2h6c.55 0 1 .45 1 1v3h1z" fill="#5F6368"/></svg>
-          Regional events
+          <span>Regional events</span>
         </h3>
         <p>
           Missed web.dev LIVE? We’ve got you covered. Thanks to our Google Developer Group communities, we have a ton of live events.
         </p>
-        <a href="/live#content" class="w-event-link">Back to top</a>
+        <a href="/live#content" class="w-back-to-top-link">Back to top</a>
       </div>
 
       <div class="w-event-section__column-right">

@@ -403,10 +403,19 @@ const communityEvents = {
   ],
 };
 
+const qAndAs = [
+  {
+    category: '',
+    question: '',
+    answer: '',
+  },
+];
+
 module.exports = {
   isPreEvent: true,
   isDuringEvent: false,
   isPostEvent: false,
   days,
   communityEvents,
+  qAndAs,
 };

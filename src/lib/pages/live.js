@@ -7,6 +7,7 @@ import '../components/EventMap';
 import '../components/EventSchedule';
 import '../components/EventStore';
 import '../components/EventTime';
+import '../components/EventQandA';
 import '../components/LivestreamContainer';
 import '../components/Subscribe';
 import '../components/ShareAction';
