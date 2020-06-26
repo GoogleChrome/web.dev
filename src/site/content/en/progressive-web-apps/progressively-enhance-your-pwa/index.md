@@ -4,17 +4,17 @@ title: Progressively enhance your Progressive Web App
 subhead: Building for modern browsers and progressively enhancing like it's 2003
 authors:
   - thomassteiner
+hero: hero.jpg
 description: |
   Learn how to progressively enhance your Progressive Web App so that it remains useful
   on all modern browsers, but delivers an advanced experience on browsers that support
   new web capabilities like native file system access, system clipboard access,
   contacts retrieval, periodic background sync, screen wake lock, web sharing features,
   and many more.
-scheduled: true
+#scheduled: true
 date: 2020-06-29
 # updated: 2020-06-15
 tags:
-  - blog
   - capabilities
   - fugu
   - progressive-web-apps
@@ -152,7 +152,7 @@ the concept as follows:
     are often used to add missing features with JavaScript.
   </p>
   <p>[…]</p>
-  <p>  
+  <p>
     Progressive enhancement is a useful technique that allows web developers to focus
     on developing the best possible websites while making those websites work
     on multiple unknown user agents.

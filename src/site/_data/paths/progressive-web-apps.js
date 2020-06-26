@@ -4,7 +4,7 @@ module.exports = {
   slug: 'progressive-web-apps',
   cover: '/images/collections/pwa.svg',
   title: 'Progressive Web Apps',
-  updated: 'February 24, 2019',
+  updated: 'June 26, 2020',
   description: `Websites that took all the right vitamins`,
   overview: `In this collection, you'll learn what makes a Progressive Web
   App special, how they can affect your business, and how to build them.`,
@@ -20,7 +20,7 @@ module.exports = {
     },
     {
       title: 'Capable',
-      pathItems: ['app-like-pwas'],
+      pathItems: ['app-like-pwas', 'progressively-enhance-your-pwa'],
     },
     {
       title: 'Reliable',
