@@ -29,6 +29,7 @@ class LivestreamContainer extends BaseStateElement {
       <div class="web-livestream-container__col-yt">
         <div class="w-youtube">
           <iframe
+            title="web.dev YouTube livestream"
             class="w-youtube__embed"
             src="https://www.youtube.com/embed/${this.videoId}"
             frameborder="0"
@@ -42,6 +43,7 @@ class LivestreamContainer extends BaseStateElement {
         ${this.isChatActive ?
           html`
             <iframe
+              title="web.dev YouTube live chat"
               class="w-youtube-chat"
               src="https://www.youtube.com/live_chat?v=${this.videoId}&amp;embed_domain=${location.hostname}"
               frameborder="0"
