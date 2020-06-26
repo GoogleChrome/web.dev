@@ -405,26 +405,16 @@ const communityEvents = {
 
 const qAndAs = [
   {
-    category: 'Lighthouse',
-    question: 'What is Lighthouse?',
-    answer: 'Lighthouse is Lighthouse.',
-  },
-  {
-    category: 'Puppeteer',
-    question: 'What is Puppeteer?',
-    answer: 'Puppeteer is Puppeteer.',
-  },
-  {
-    category: 'PWA',
-    question: 'What is a PWA?',
-    answer: 'A PWA is a PWA.',
+    category: '',
+    question: '',
+    answer: '',
   },
 ];
 
 module.exports = {
-  isPreEvent: false,
+  isPreEvent: true,
   isDuringEvent: false,
-  isPostEvent: true,
+  isPostEvent: false,
   days,
   communityEvents,
   qAndAs,
