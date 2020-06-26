@@ -46,7 +46,7 @@ const days = [
       },
       {
         speaker: 'addyosmani',
-        title: 'How to Optimize for Web Vitals',
+        title: 'Optimize for Core Web Vitals',
         blurb:
           "In this hands-on talk, we'll cover tips & tricks for optimizing your user-experience to meet the Core Web Vitals. We'll use tools like Lighthouse & DevTools, show you code snippets for fixes and highlight how you too can get fast and stay fast.",
         abstract: [
