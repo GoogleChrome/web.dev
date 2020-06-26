@@ -11,7 +11,7 @@ description: |
   new web capabilities like native file system access, system clipboard access,
   contacts retrieval, periodic background sync, screen wake lock, web sharing features,
   and many more.
-#scheduled: true
+scheduled: true
 date: 2020-06-29
 # updated: 2020-06-15
 tags:
