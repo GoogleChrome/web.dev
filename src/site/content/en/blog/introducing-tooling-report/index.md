@@ -10,6 +10,7 @@ thumbnail: thumbnail.png
 alt: a grid of cards showing test names and test results from across tooling.report
 tags:
   - blog
+  - tools
   - javascript
   - css
   - html
