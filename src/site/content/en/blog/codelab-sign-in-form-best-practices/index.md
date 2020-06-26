@@ -3,8 +3,8 @@ layout: codelab
 title: Sign-in form best practices codelab
 authors:
   - samdutton
-date: 2020-06-25
-updated: 2020-06-25
+scheduled: true
+date: 2020-06-29
 description: Use cross-platform browser features to build a simple email/password sign-in form that's secure, accessible and easy to use.
 tags:
   - forms
@@ -14,8 +14,8 @@ tags:
   - security
   - ux
 glitch: sign-in-form-codelab-0
+glitch_path: index.html
 related_post: sign-in-form-best-practices
-draft: true
 ---
 
 This codelab shows you how to build a sign-in form that is secure, accessible, and easy to use.
@@ -31,7 +31,8 @@ Use elements built for the job:
 As you'll see, these elements enable built-in browser functionality, improve 
 accessibility, and add meaning to your markup.
 
-Add the following code inside the `<body>` element:
+{% Instruction 'remix' %}
+* Add the following code inside the `<body>` element:
 
 ```html
 <form action="#" method="post">
@@ -66,7 +67,7 @@ Click **View Source** to return to your source code.
 
 ## Step 2: Design for fingers and thumbs
 
-Ensure your inputs work well on mobile by adjusting padding, margins and 
+Ensure your inputs work well on mobile by adjusting padding, margins, and 
 font sizes. 
 
 Copy and paste the following CSS into your own `style.css` file:
@@ -88,16 +89,18 @@ That's quite a lot of code! The main things to be aware of are the changes to si
 * `font-size` is different for mobile and desktop.
 
 The `:invalid` selector is used to indicate when an input has an invalid value.
+This doesn't work yet.
 
 The CSS layout is mobile-first:
 
 * The default CSS is for viewports less than `450px` wide.
 * The media query section sets overrides for viewports that are at least `450px` wide.
 
-It's very important at this point to test your code on real devices on desktop and mobile:
+When building your own form like this, it's very important at this point to
+test your code on real devices on desktop and mobile:
 
 * Is label and input text readable, especially for people with low vision?
-* Are the inputs and **Log in** button large enough to use as touch targets for thumbs?
+* Are the inputs and **Sign in** button large enough to use as touch targets for thumbs?
 
 ## Step 3: Add input attributes to enable built-in browser features
 
@@ -121,7 +124,8 @@ Add attributes to your form HTML so it looks like this:
 </form>
 ```
 
-Click the label that says **Email**. Notice how focus moves to the email input.
+View your app again and then click the label that says **Email**.
+Notice how focus moves to the email input.
 This is because the label is associated with the input via the `for="email"` attribute.
 Screenreaders also announce the label text when the label or the label's associated
 input gets focus.
@@ -143,8 +147,10 @@ Try typing some text into the password input. The text is hidden by default beca
 * `name="email"` and `name="current-password"` help browsers store named values 
 which can later be used for `autocomplete`.
 
-Try focusing the email input on a desktop device and start typing. If you've 
-stored any email addresses in your browser, you'll probably see a popup that 
+Try focusing the email input on a desktop device and start typing.
+You can find the URL of your app by clicking **Fullscreen**
+![The Fullscreen icon](/images/glitch/fullscreen.svg). 
+If you've stored any email addresses in your browser, you'll probably see a popup that 
 allows you to select from those stored emails. This happens because the 
 `autocomplete="email"` attribute was applied to the email input.
 
@@ -194,7 +200,9 @@ Add the toggle button to the password section in the HTML:
 </section>
 ```
 
-Add the following CSS, so the **Show password** 'button' actually looks like plain text, displayed at the top right of the password section:
+Add the following CSS to the bottom of `style.css`.
+This makes the **Show password** button actually
+looks like plain text, and displays it at the top right of the password section:
 
 ```css
 button#toggle-password {
@@ -209,7 +217,7 @@ button#toggle-password {
 }
 ```
 
-Add JavaScript to toggle password display and set the appropriate `aria-label`:
+Add the following JavaScript to `script.js` to toggle password display and set the appropriate `aria-label`:
 
 ```javascript
 const passwordInput = document.getElementById('password');
@@ -233,7 +241,9 @@ function togglePassword() {
 }
 ```
 
-Once again, make sure to test your work on different browsers on different platforms.
+Try out the show password logic now. View your app, enter some text into the
+password field, and then click the **Show password** button.
+Try out your new feature on multiple browsers on different operating systems.
 
 Try it out! Think about UX design: will users notice the **Show password** 
 button and understand it? Is there a better way to provide this functionality? 
@@ -243,13 +253,19 @@ To understand how this site works for screenreaders, install the [ChromeVox exte
 `aria-label` values work as intended?
 
 **Bonus points**: Sites such as [Gmail](https://mail.google.com) use icons, not 
-text, to toggle password display. Try implementing this using SVG images: 
+text, to toggle password display. When you're done with this codelab, try implementing this using SVG images: 
 the [Material Design site](https://material.io/resources/icons/?icon=visibility)
 has high quality free icons available for download. 
 
-{% Aside 'codelab' %}
-[View complete code for Step 4](https://glitch.com/edit/#!/sign-in-form-codelab-4).
-{% endAside %}
+Here's how your code should look at this point:
+
+<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/sign-in-form-codelab-4?path=style.css&attributionHidden=true&sidebarCollapsed=true"
+    alt="How your code should look at this point."
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
 
 
 ## Step 5: Add form validation
@@ -261,7 +277,7 @@ HTML form elements and attributes have built-in features for basic validation,
 but you should also use JavaScript to do more robust validation while users are 
 entering data and when they attempt to submit the form.
 
-{% Aside 'caution' %}
+{% Aside 'warning' %}
 Client-side validation helps users enter data and can avoid unnecessary server load, 
 but you must always validate and sanitize data on your back-end.
 {% endAside %}
@@ -272,7 +288,7 @@ to add custom validation, using built-in browser UI to set focus and display pro
 
 Tell users the constraints for passwords and any other inputs. Don't make them guess!
 
-Update the HTML for the password section:
+Update the password section of `index.html`:
 
 ```html
 <section>
@@ -287,7 +303,7 @@ This adds two new features:
 * Information about password constraints.
 * An `aria-describedby` attribute for the password input. Screenreaders read the label text, the input type (password), and then the description. 
 
-Add CSS: 
+Add the following CSS to the bottom of `style.css`:
 
 ```css
 div#password-constraints {
@@ -296,7 +312,7 @@ div#password-constraints {
 }
 ```
 
-Add the following JavaScript:
+Add the following JavaScript to `script.js`:
 
 ```javascript
 passwordInput.addEventListener('input', resetCustomValidity); 
@@ -320,7 +336,7 @@ function validatePassword() {
 }
 
 const form = document.querySelector('form');
-const sign-inButton = document.querySelector('button#sign-in');
+const signinButton = document.querySelector('button#sign-in');
 
 form.addEventListener('submit', handleFormSubmission);                       
 
@@ -332,7 +348,7 @@ function handleFormSubmission(event) {
   } else {
     // On a production site do form submission.
     alert('Logging in!')
-    sign-inButton.disabled = 'true';
+    signinButton.disabled = 'true';
   }
 }
 ```
@@ -342,18 +358,24 @@ support validation with JavaScript.
 
 * Enter an invalid email address and press **Sign in**. The browser will 
 display a warning—no JavaScript required!
-* Press **Sign in** without entering a password value. The browser warns that 
+
+* Enter a valid email but then press **Sign in** without entering a password value. The browser warns that 
 you missed a required value and sets focus on the password input.
+
 * Enter an invalid password and press **Sign in**. Now you'll see different 
 messages, depending on what's wrong. 
 
 **For bonus points:** try out different ways to help users enter email addresses 
 and passwords. [Better password form fields](https://aerotwist.com/blog/better-password-form-fields/) has some clever suggestions.
 
-{% Aside 'codelab' %}
-[View complete code for Step 5](https://glitch.com/edit/#!/sign-in-form-codelab-5).
-{% endAside %}
-
+Here's how your code should look at this point:
+<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/sign-in-form-codelab-5?path=style.css&attributionHidden=true&sidebarCollapsed=true"
+    alt="How your code should look at this point."
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
 
 ## Going further
 

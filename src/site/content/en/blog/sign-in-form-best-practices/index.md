@@ -3,8 +3,8 @@ title: Sign-in form best practices
 subhead: Use cross-platform browser features to build sign-in forms that are secure, accessible and easy to use.
 authors:
   - samdutton
-date: 2020-06-25
-updated: 2020-06-25
+scheduled: true
+date: 2020-06-29
 description: Use cross-platform browser features to build sign-in forms that are secure, accessible and easy to use.
 hero: hero.jpg
 alt: Close-up photo of a man's hands, using an iPhone.
@@ -260,7 +260,6 @@ accordingly. BrowserStack enables [free testing for open source
 projects](https://www.browserstack.com/open-source) on a range of real devices
 and browsers.
 
-<!-- TODO(kaycebasques): Can we get a screenshot without a funky grey background? -->
 
 <figure class="w-figure">
   <img class="w-screenshot" src="./iphone-keyboard.png" alt="Screenshots of a sign-in form on iPhone 7, 8 and 11. On iPhone 7 and 8 the Sign in button is obscured by the phone keyboard, but not on iPhone 11">
@@ -285,7 +284,6 @@ You can help browsers help users by autofilling inputs. This is particularly
 important for email inputs, which get [high abandonment
 rates](https://www.formisimo.com/blog/conversion-rate-increases-57-with-form-analytics-case-study/).
 
-<!-- TODO(samdutton): Add something to refute warnings **against** autocomplete? -->
 
 There are two parts to this:
 1. The input `name` attribute helps browsers store data for email and other
@@ -394,7 +392,6 @@ their Windows laptop.
 
 {% endAside %}
 
-<!-- TODO(samdutton): [So what's our advice for the aside above?] -->
 
 ### Help save users from accidentally missing input fields {: #required-fields }
 
@@ -413,7 +410,6 @@ No JavaScript required!
 
 ## Design for fingers and thumbs {: #mobile-design }
 
-<!-- TODO(samdutton): [Do we have any stats for form filling on mobile versus desktop?] -->
 
 The default browser size for just about everything relating to input elements
 and buttons is too small, especially on mobile. This may seem obvious, but it's
@@ -654,17 +650,11 @@ Client-side validation helps users enter data and can avoid unnecessary server
 load, but you must always validate and sanitize data on your backend.
 {% endAside %}
 
-The [Constraint Validation API](https://html.spec.whatwg.org/multipage/forms.html#constraints)
-(which is [widely supported](https://caniuse.com/#feat=constraint-validation)) can help you add
-custom validation using built-in browser UI to set focus and display prompts.
-
-<!--
 [Step 5](https://glitch.com/edit/#!/signin-form-codelab-5) of the sign-in form
 codelab uses the [Constraint Validation
 API](https://html.spec.whatwg.org/multipage/forms.html#constraints) (which is
 [widely supported](https://caniuse.com/#feat=constraint-validation)) to add
 custom validation using built-in browser UI to set focus and display prompts.
--->
 
 Find out more: [Use JavaScript for more complex real-time
 validation](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_javascript_for_more_complex_real-time_validation).
