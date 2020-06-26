@@ -6,7 +6,6 @@ description: |
 scheduled: true
 date: 2020-06-29
 hero: hero.jpg
-thumbnail: thumbnail.png 
 alt: A grid of cards showing test names and test results from across tooling.report.
 tags:
   - blog
