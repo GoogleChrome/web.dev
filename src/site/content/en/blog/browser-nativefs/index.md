@@ -10,7 +10,9 @@ description: |
   This post introduces a support library called browser-nativefs
   that acts as an abstraction layer on top of the Native File System API
   and that transparently falls back to legacy approaches for dealing with files.
-date: 2020-06-25
+scheduled: true
+date: 2020-06-30
+# updated: 2020-06-30
 hero: hero.jpg
 tags:
   - blog
