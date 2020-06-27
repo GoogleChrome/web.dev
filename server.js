@@ -16,6 +16,7 @@
 
 const isProd = Boolean(process.env.GAE_APPLICATION);
 
+const fs = require('fs');
 const compression = require('compression');
 const express = require('express');
 const cookieParser = require('cookie-parser');
@@ -57,6 +58,61 @@ const notFoundHandler = (req, res, next) => {
   res.sendFile('404/index.html', options, (err) => err && next(err));
 };
 
+// Builds a safety asset handler which matches all requests to e.g. "app-...css", and instead
+// returns the current live asset. This applies to both "app.css" and "bootstrap.js".
+function buildSafetyAssetHandler() {
+  const hashedAssetMatch = /^(\w+)(?:|-\w+)\.(\w+)(?:\?.*|)$/;
+  const runHashedAssetMatch = (cand) => {
+    if (cand.startsWith('/')) {
+      cand = cand.substr(1);
+    }
+    const m = hashedAssetMatch.exec(cand);
+    console.warn('got match', m, 'for', cand);
+    if (!m) {
+      return {base: null, ext: null};
+    }
+    const [base, ext] = m.slice(1, 3);
+    return {base, ext};
+  };
+
+  // On build, find the relevant bootstrap/app assets. We presume that in prod, only the correct
+  // files will exist. In dev, it's trivially possible for lots of files to be in /dist/, including
+  // older assets.
+  // TODO(samthor): does gcloud upload the files "src/site/_data/resourceCSS.json"? If so, we could
+  // just pull direct from there, or some other generated Eleventy file.
+  const files = fs.readdirSync('dist/');
+  const findHashedAsset = (base, ext) => {
+    for (const f of files) {
+      const {base: checkBase, ext: checkExt} = runHashedAssetMatch(f);
+      if (base === checkBase && ext === checkExt) {
+        return f;
+      }
+    }
+    return null;
+  };
+  const bootstrapJSAsset = findHashedAsset('bootstrap', 'js');
+  const appCSSAsset = findHashedAsset('app', 'css');
+  console.info(
+    `Server found bootstrap.js=${bootstrapJSAsset} app.css=${appCSSAsset}`,
+  );
+
+  // Matches requests like "/foo-hash.css" or "/blah.ext". Just returns two groups: "foo" and "ext".
+  return (req, res, next) => {
+    const {base, ext} = runHashedAssetMatch(req.url);
+    if (!base) {
+      return next();
+    }
+
+    if (bootstrapJSAsset && base === 'bootstrap' && ext === 'js') {
+      req.url = '/' + bootstrapJSAsset;
+    } else if (appCSSAsset && base === 'app' && ext === 'css') {
+      req.url = '/' + appCSSAsset;
+    }
+
+    return next();
+  };
+}
+
 // Implement safety mechanics.
 //   * Disallow invalid hostnames (and remove any lasting Service Workers
 //     otherwise users could be stuck forever)
@@ -85,6 +141,7 @@ const safetyHandler = (req, res, next) => {
 
 const handlers = [
   safetyHandler,
+  buildSafetyAssetHandler(),
   localeHandler,
   express.static('dist'),
   express.static('dist/en'),
