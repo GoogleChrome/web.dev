@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const isProd = Boolean(process.env.GAE_APPLICATION);
+const isGAEProd = Boolean(process.env.GAE_APPLICATION);
 
 const fs = require('fs');
 const compression = require('compression');
@@ -29,7 +29,7 @@ const serviceWorkerKill = false;
 const redirectHandler = (() => {
   // In development, Eleventy isn't guaranteed to have run, so read the actual
   // source file.
-  const redirectsPath = isProd
+  const redirectsPath = isGAEProd
     ? 'dist/_redirects.yaml'
     : 'src/site/content/_redirects.yaml';
 
@@ -149,14 +149,19 @@ const handlers = [
   notFoundHandler,
 ];
 
-// For dev we'll do our own compression. This ensures things like Lighthouse CI
-// get a fairly accurate picture of our site.
-// For prod we'll rely on App Engine to compress for us.
-if (!isProd) {
+const app = express();
+
+if (!isGAEProd) {
+  // For dev we'll do our own compression. This ensures things like Lighthouse CI
+  // get a fairly accurate picture of our site.
+  // For prod we'll rely on App Engine to compress for us.
   handlers.unshift(compression());
+
+  // In dev, serve our source files so that Source Maps can correctly load their
+  // original files.
+  app.use('/src', express.static('src'));
 }
 
-const app = express();
 app.use(cookieParser());
 app.use(...handlers);
 

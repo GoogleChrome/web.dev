@@ -13,7 +13,7 @@ describe('Build test', function () {
 
     console.log('Running npm run build...');
     try {
-      await exec('npm run build');
+      await exec('ELEVENTY_ENV=prod npm run build');
     } catch (err) {
       assert.fail(err);
     }

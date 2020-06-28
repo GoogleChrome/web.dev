@@ -22,10 +22,6 @@ const path = require('path');
 const log = require('fancy-log');
 const {hashForContent} = require('./src/build/hash');
 
-// CSS tools expect a target filename, but we don't use it and it doesn't appear
-// anywhere in our output.
-const ignoredCSSName = '__ignored__.css';
-
 const sassEngine = (function () {
   /* eslint-disable node/no-missing-require */
   try {
@@ -40,13 +36,13 @@ const sassEngine = (function () {
 
 /**
  * @param {string} input filename to read for input
- * @return {{css: !Buffer, map: !Buffer}}
+ * @return {{css: !Buffer, map: !SourceMap}}
  */
 function compileCSS(input) {
   // #1: Compile CSS with either engine.
   const compiledOptions = {
     file: input,
-    outFile: ignoredCSSName,
+    outFile: 'app.css',
     sourceMap: true,
     omitSourceMapUrl: true, // since we just read it from the result object
   };
@@ -55,9 +51,22 @@ function compileCSS(input) {
   }
   log('Compiling', input);
   const compiledResult = sassEngine.renderSync(compiledOptions);
+  const compiledMap = JSON.parse(compiledResult.map.toString('utf-8'));
+
+  // nb. We get back absolute source paths here that look like
+  // "file:///Users/blah/Desktop/web.dev/src/...", so make them relative to here.
+  compiledMap['sources'] = compiledMap['sources'].map((source) => {
+    if (source.startsWith('file://')) {
+      source = source.substr('file://'.length);
+    }
+    if (path.isAbsolute(source)) {
+      source = path.relative(__dirname, source);
+    }
+    return source;
+  });
 
   if (!isProd) {
-    return compiledResult;
+    return {map: compiledMap, css: compiledResult.css};
   }
 
   // nb. Only require() dependencies for autoprefixer when used.
@@ -66,10 +75,10 @@ function compileCSS(input) {
 
   // #2: Run postcss for autoprefixer.
   const postcssOptions = {
-    from: ignoredCSSName,
-    to: ignoredCSSName,
+    from: 'app.css',
+    to: 'app.css',
     map: {
-      prev: JSON.parse(compiledResult.map.toString()),
+      prev: compiledMap,
       annotation: true,
     },
   };
@@ -85,30 +94,44 @@ function compileCSS(input) {
   const {css, map: candidateMap} = postcssResult;
 
   // nb. With the transpiled "sass", this is returned as a SourceMapGenerator, so convert it to
-  // a real string. This is a no-op for the native version.
-  const map = candidateMap.toString();
+  // a real string and then back to JSON.
+  const map = JSON.parse(candidateMap.toString('utf-8'));
   return {map, css};
 }
 
+/**
+ * @param {{css: !Buffer, map: !SourceMap}} result to render
+ * @param {string} fileName to render to, with optional map in dev
+ */
+function renderTo(result, fileName) {
+  fs.mkdirSync(path.dirname(fileName), {recursive: true});
+  const base = path.basename(fileName);
+
+  let out = result.css.toString('utf-8');
+  if (!isProd) {
+    result.map['file'] = base;
+
+    out += `\n/*# sourceMappingURL=${base}.map */`;
+    fs.writeFileSync(fileName + '.map', JSON.stringify(result.map));
+  }
+
+  fs.writeFileSync(fileName, out);
+}
+
 const out = compileCSS('src/styles/all.scss');
-
 const hash = hashForContent(out.css);
-const base = `app-${hash}.css`;
-const fileName = `dist/${base}`;
 
-fs.mkdirSync(path.dirname(fileName), {recursive: true});
-fs.writeFileSync(fileName, out.css);
-fs.writeFileSync(fileName + '.map', out.map);
+// We write an unhashed CSS file (as well as the hashed one) for two reasons:
+//  - to not force an Eleventy rebuild during dev
+//  - to work around #3363 (prod clients loaded before 2020-06-16 will see an unstyled page flash)
+renderTo(out, `dist/app.css`);
+renderTo(out, `dist/app-${hash}.css`);
 
-// Also write to the name of the old CSS file, to work around #3363. Eventually, we can remove this,
-// but clients that installed before 2020-06-16 will see a flash of unstyled... page.
-// TODO(samthor): Remove this when we're confident.
-fs.writeFileSync('dist/app.css', out.css);
-
-// Write the CSS entrypoint to a known file for Eleventy to read.
+// Write the CSS entrypoint to a known file for Eleventy to read. In dev, use the unhashed version.
+const resourcePath = isProd ? `/app-${hash}.css` : '/app.css';
 fs.writeFileSync(
   'src/site/_data/resourceCSS.json',
-  JSON.stringify({path: '/' + base}),
+  JSON.stringify({path: resourcePath}),
 );
 
-log(`Finished CSS! (${base})`);
+log(`Finished CSS! (app-${hash}.css)`);
