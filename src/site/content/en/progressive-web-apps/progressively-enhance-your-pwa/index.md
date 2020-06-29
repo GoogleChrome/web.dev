@@ -15,6 +15,7 @@ scheduled: true
 date: 2020-06-29
 # updated: 2020-06-15
 tags:
+  - blog
   - capabilities
   - fugu
   - progressive-web-apps
