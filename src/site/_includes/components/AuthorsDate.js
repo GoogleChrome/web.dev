@@ -103,7 +103,6 @@ const renderAuthorsDate = (
   const pairs = (authors || []).map((id) => {
     const info = authorsCollection[id];
     if (!info) {
-      console.log(authorsCollection);
       throw new Error(
         `Can't create Author component for "${id}" without contributor ` +
           `information. Please check '_data/contributors.json' and make sure the ` +
