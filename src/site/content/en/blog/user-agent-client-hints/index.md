@@ -445,7 +445,6 @@ specifics. For example, something like:
 Mozilla/5.0 (Linux; Android 9; Unspecified Device) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.0.0 Mobile Safari/537.36
 ```
 
-_Photo by [Jason
-Leung](https://unsplash.com/@ninjason?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+_Photo by [Sergey Zolkin](https://unsplash.com/@szolkin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 on
-[Unsplash](https://unsplash.com/s/photos/footprint?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
+[Unsplash](https://unsplash.com/photos/m9qMoh-scfE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
