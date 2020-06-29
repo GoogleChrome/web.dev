@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 const path = require('path');
-const contributors = require('../_data/contributors');
+const authorsData = require('../_data/authorsData');
 const {livePosts} = require('../_filters/live-posts');
 const setdefault = require('../_utils/setdefault');
 
@@ -40,7 +40,7 @@ const findAuthorsPosts = (posts) => {
 /**
  * Returns all authors with their posts.
  *
- * @param {any?} collections Eleventy collection object
+ * @param {any} [collections] Eleventy collection object
  * @return {Object.<string, Author>}
  */
 module.exports = (collections) => {
@@ -59,11 +59,11 @@ module.exports = (collections) => {
   /** @constant @type {Object.<string, Author>} @default */
   const authors = {};
 
-  Object.keys(contributors).forEach((key) => {
-    const author = contributors[key];
+  Object.keys(authorsData).forEach((key) => {
+    const author = authorsData[key];
     author.key = key;
 
-    // Generate the contributor's name out of valid given/family parts. This
+    // Generate the author's name out of valid given/family parts. This
     // allows our authors to just have a single name.
     const parts = [author.name.given, author.name.family].filter(
       (s) => s && s.length,
@@ -75,8 +75,6 @@ module.exports = (collections) => {
       author.description && author.description.en
         ? author.description.en
         : `Our latest news, updates, and stories by ${author.title}.`;
-
-    // This updates the shared contributors object with meta information and is safe to be called multiple times.
     author.url = path.join('/en', author.href);
     author.data = {
       title: author.title,

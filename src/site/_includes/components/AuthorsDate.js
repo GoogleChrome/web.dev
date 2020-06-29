@@ -104,8 +104,8 @@ const renderAuthorsDate = (
     const info = authorsCollection[id];
     if (!info) {
       throw new Error(
-        `Can't create Author component for "${id}" without contributor ` +
-          `information. Please check '_data/contributors.json' and make sure the ` +
+        `Can't create Author component for "${id}" without author ` +
+          `information. Please check '_data/authorsData.json' and make sure the ` +
           `author you provide is a key in this object.`,
       );
     }
