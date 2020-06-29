@@ -89,11 +89,11 @@ async function build() {
     input: 'src/lib/sw.js',
     external: disallowExternal,
     manualChunks: (id) => {
-      const chunkNames = ['idb-keyval', 'virtual', 'workbox'];
-      for (const chunkName of chunkNames) {
-        if (id.includes(`/node_modules/${chunkName}/`)) {
-          return 'sw-' + chunkName;
-        }
+      if (id.includes('/node_modules/idb-keyval')) {
+        return 'sw-idb-keyval';
+      }
+      if (/\/node_modules\/workbox-.*\//.exec(id)) {
+        return 'sw-workbox';
       }
     },
     plugins: [
