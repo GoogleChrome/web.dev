@@ -8,6 +8,7 @@ class LivestreamContainer extends BaseStateElement {
     return {
       videoId: {type: String},
       isChatActive: {type: Boolean},
+      chatClosed: {type: Boolean, reflect: true, attribute: 'chat-closed'},
     };
   }
 
@@ -15,6 +16,7 @@ class LivestreamContainer extends BaseStateElement {
     super();
     this.videoId = null;
     this.isChatActive = true;
+    this.chatClosed = false;
     this.isSignedIn = undefined;
   }
 
@@ -66,6 +68,12 @@ class LivestreamContainer extends BaseStateElement {
           `
         }
       </div>
+      <button class="web-livestream-container__chat-toggle" @click="${() => {this.chatClosed = !this.chatClosed}}">
+        ${this.chatClosed ?
+          html`<i class="material-icons">chevron_left</i> <span>Open live chat</span>` :
+          html`<i class="material-icons">chevron_right</i> <span>Close live chat</span>`
+        }
+      </button>
     `;
   }
 
