@@ -1328,6 +1328,19 @@ const contributors = {
     github: 'anton-karlovskiy',
     glitch: 'anton-karlovskiy',
   },
+  rkochman: {
+    name: {
+      given: 'Rob',
+      family: 'Kochman',
+    },
+    twitter: 'rkochman',
+    github: 'rkochman',
+    glitch: 'rkochman',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
 };
 
 const processedContributors = {};
