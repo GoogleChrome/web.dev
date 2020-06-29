@@ -5,6 +5,7 @@ authors:
   - samdutton
 scheduled: true
 date: 2020-06-29
+updated: 2020-06-29
 description: Use cross-platform browser features to build sign-in forms that are secure, accessible and easy to use.
 hero: hero.jpg
 alt: A person holding a phone.
@@ -720,4 +721,4 @@ Well designed UI and UX can reduce sign-in form abandonment:
 * [Streamlining the Sign-in Flow Using Credential Management API](https://developers.google.com/web/updates/2016/04/credential-management-api)
 * [Verify phone numbers on the web with the Web OTP API](https://web.dev/web-otp/)
 
-Photo by [Katka Pavlickova](https://unsplash.com/@katerinapavlickova) on [Unsplash](https://unsplash.com).
+Photo by [Meghan Schiereck](https://unsplash.com/photos/_XFObcM_7KU) on [Unsplash](https://unsplash.com).
