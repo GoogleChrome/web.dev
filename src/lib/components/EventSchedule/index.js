@@ -182,18 +182,16 @@ class EventSchedule extends HTMLElement {
     this._activeEventDay = activeEventDay;
 
     // If the user has clicked to a different day, opened and closed a modal
-    // then don't do anything.
-    // If this is not the case then it means that either we're loading the
-    // page for the first time, or the user has left the tab open and we're
-    // transitioning to the next day. In that case, update the tabs element
-    // to reflect the current day.
-    if (!this._wasModalOpen) {
-      // This relies on the event data being in the same shape as the rendered
-      // tabs, which is pretty safe, since it comes from the same source.
-      // Don't change the tab for the user if a modal is already open.
-      if (!this._modalElement.open && activeEventDay) {
-        this._tabsElement.activeTab = activeEventDay.index;
-      }
+    // then don't do anything. Similarly, if the modal is currently open, don't
+    // do anything.
+    // If this is not the case then it means either we're loading the page for
+    // the first time, or the user has left the tab open and we're transitioning
+    // to the next day. In that case, update the tabs element to reflect the
+    // current day.
+    // This relies on the event data being in the same shape as the rendered
+    // tabs, which is pretty safe, since it comes from the same source.
+    if (!this._wasModalOpen && !this._modalElement.open && activeEventDay) {
+      this._tabsElement.activeTab = activeEventDay.index;
     }
 
     this._wasModalOpen = isModalOpen;
