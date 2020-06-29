@@ -3,7 +3,7 @@ title: 'Hands-on with Portals: seamless navigation on the Web'
 subhead: |
   Learn how the proposed Portals API can improve your navigation UX.
 date: 2019-05-06
-updated: 2020-05-13
+updated: 2020-06-25
 authors:
   - uskay
 hero: hero.png
@@ -12,6 +12,8 @@ description: |
   The newly proposed Portals API helps keep your front-end simple while allowing seamless navigations
   with custom transitions. In this article, get hands-on experience using
   Portals to improve user experience across your site.
+origin_trial:
+  url: https://developers.chrome.com/origintrials/#/view_trial/-7680889164480380927
 tags:
   - blog
   - portals
@@ -26,7 +28,8 @@ A new web platform API proposal called [Portals](https://github.com/WICG/portals
 help with this by streamlining the experience as users navigate _across_ your
 site.
 
-Portals are currently experimental, but you can use them on your site today by taking part in the [origin trial](https://www.chromium.org/blink/origin-trials/portals).
+Portals are currently experimental, but you can use them on your site today by
+taking part in the [origin trial](ot).
 
 See Portals in action:
 
@@ -67,9 +70,22 @@ while the `<portal>` pre-renders content and creates a seamless navigation exper
 
 Before Portals, we could have rendered another page using an `<iframe>`. We could also have added animations to move the frame around the page. But an `<iframe>` won't let you navigate into its content. Portals close this gap, enabling interesting use cases.
 
-## Try out Portals in Chrome Canary
+## Try out Portals
 
-Try out Portals in Chrome Canary by flipping an experimental flag:
+### Enabling support during the origin trial phase
+
+Portals will be available an origin trial in Chrome 85. The origin trial is
+expected to end in Chrome 86.
+
+{% include 'content/origin-trials.njk' %}
+
+### Register for the origin trial {: #register-for-ot }
+
+{% include 'content/origin-trial-register.njk' %}
+
+### Enabling via chrome://flags {: #enable-flags }
+
+Try out Portals in Chrome 85 or 86 by flipping an experimental flag:
 `chrome://flags/#enable-portals`.
 During this early phase of the Portals experiment,
 we also recommend using a completely separate user data directory for your tests
@@ -80,7 +96,9 @@ Once Portals are enabled, confirm in DevTools that you have the new shiny `HTMLP
 
 <img class="w-screenshot" src="HTMLPortalElement.png" alt="A screenshot of the DevTools console showing the HTMLPortalElement">
 
-Let's walk through a basic example.
+## Implement Portals
+
+Let's walk through a basic implementation example.
 
 ```javascript
 // Create a portal with the wikipedia page, and embed it
@@ -170,7 +188,7 @@ if ('HTMLPortalElement' in window) {
 
 If you want to quickly experience what Portals feel like, try using
 [uskay-portals-demo.glitch.me](https://uskay-portals-demo.glitch.me).
-Be sure you access it with Chrome Canary and turn on the experimental flag!
+Be sure you access it with Chrome 85 or 86 and turn on the [experimental flag](#enable-flags)!
 
 1. Enter a URL you want to preview.
 1. The page will then be embedded as a `<portal>` element.
@@ -178,10 +196,6 @@ Be sure you access it with Chrome Canary and turn on the experimental flag!
 1. The preview will be activated after an animation.
 
 <img class="w-screenshot" src="glitch.gif" alt="A gif of using the glitch demo of using Portals">
-
-## Try out Portals on your site today
-
-Although Portals are experimental, and being actively developed, you can use them on your site today as part of an [origin trial](https://www.chromium.org/blink/origin-trials/portals). Your experience and feedback will help shape this proposal.
 
 ## Check out the spec
 
@@ -286,4 +300,4 @@ Another important thing to know is that Portals can be used in cross-origin navi
 
 ## Feedback welcome
 
-Portals are ready for experimentation in Chrome Canary and via the [origin trial](https://www.chromium.org/blink/origin-trials/portals). Feedback from the community is crucial to the design of new APIs, so please try it out and tell us what you think! If you have any feature requests or feedback, please head over to the [WICG GitHub repo](https://github.com/WICG/portals/issues).
+Portals are ready for experimentation in Chrome 85 and 86 and via the [origin trial](ot). Feedback from the community is crucial to the design of new APIs, so please try it out and tell us what you think! If you have any feature requests or feedback, please head over to the [WICG GitHub repo](https://github.com/WICG/portals/issues).
