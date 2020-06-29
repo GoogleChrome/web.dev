@@ -3,12 +3,10 @@
 @import '../../../styles/tools/breakpoints';
 
 web-livestream-container {
-  background-color: $WHITE;
-  border-left: 1px solid $GREY_300;
-  border-right: 1px solid $GREY_300;
   display: flex;
   margin: auto;
   max-width: 1600px;
+  position: relative;
   
   .web-livestream-container__col-yt {
     max-width: 100%;
@@ -19,13 +17,13 @@ web-livestream-container {
   }
 
   .web-livestream-container__col-chat {
-    border-left: 1px solid $GREY_300;
     display: none;
-    min-height: 600px;
-    width: 400px;
-
+    
     @include bp(md) {
+      border-left: 1px solid $GREY_300;
       display: block;
+      min-height: 600px;
+      width: 400px;
     }
 
     @media (hover: none) {
@@ -57,5 +55,42 @@ web-livestream-container {
     font-weight: $FONT_WEIGHT_MEDIUM;
     font-size: 14px;
     margin-top: 16px;
+  }
+
+  .web-livestream-container__chat-toggle {
+    display: none;
+
+    @include bp(md) {
+      align-items: center;
+      appearance: none;
+      background: none;
+      border-radius: 1px;
+      border: none;
+      bottom: -48px;
+      color: $GREY_700;
+      cursor: pointer;
+      display: flex;
+      font-size: 12px;
+      height: 40px;
+      line-height: 20px;
+      padding: 8px;
+      position: absolute;
+      right: 0;
+      text-align: center;
+  
+      &:hover {
+        background-color: $GREY_300;
+      }
+    }
+
+    @media (hover: none) {
+      display: none;
+    }
+  }
+}
+
+web-livestream-container[chat-closed] {
+  .web-livestream-container__col-chat {
+    display: none;
   }
 }
