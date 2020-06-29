@@ -36,7 +36,7 @@ tags: []
       rel="stylesheet"
       href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
     />
-    <link rel="stylesheet" href="{{resourceCSS.path}}" />
+    <link rel="stylesheet" href="{{ resourceCSS.path | stripQueryParamsDev }}" />
     <link rel="manifest" href="/manifest.webmanifest" />
     {# Include default icon even though we have a manifest #}
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -45,7 +45,7 @@ tags: []
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="mask-icon" color="#0054ff" href="/images/safari-pinned-tab.svg">
     <script async src="//www.google-analytics.com/analytics.js"></script>
-    <script defer src="{{resourceJS.path}}"></script>
+    <script defer src="{{ resourceJS.path | stripQueryParamsDev }}"></script>
   </head>
   <body class="unresolved">
     {#
