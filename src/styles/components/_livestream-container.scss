@@ -26,26 +26,26 @@ web-livestream-container {
     background-color: $GREY_50;
     flex: 1;
     min-height: calc((9/16) * 100vw);
-  
+
     @include bp(md) {
       min-height: calc((9/16) * (100vw - #{$CHAT_WIDTH}  - 1px));
     }
-  
+
     @media (min-width: 1600px) {
       min-height: calc((9/16) * (1600px - #{$CHAT_WIDTH} - 1px));
     }
   }
-  
+
   .web-livestream-container__skeleton-chat {
     display: none;
-  
+
     @include bp(md) {
       border-left: 1px solid $GREY_300;
       display: block;
       min-height: 600px;
       width: $CHAT_WIDTH;
     }
-  
+
     @media (hover: none) {
       display: none;
     }
