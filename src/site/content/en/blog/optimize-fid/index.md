@@ -83,7 +83,7 @@ improving both Time To Interactive (TTI) and FID.
 
 {% Aside %}
 For more information, take a look at [Are long JavaScript tasks delaying your Time to
-Interactive?](/long-tasks-devtools/) guide goes into more detail about this topic.
+Interactive?](/long-tasks-devtools/).
 {% endAside %}
 
 ## Optimize your page for interaction readiness 
@@ -93,11 +93,11 @@ JavaScript:
 
 ### First-party script execution can delay interaction readiness
 
-+   JS size bloat, heavy execution times and inefficient chunking can slow down how soon a
-    page can respond to user input and impact FID, TBT and TTI. Progressive loading of code and
++   JavaScript size bloat, heavy execution times and inefficient chunking can slow down how soon a
+    page can respond to user input and impact FID, TBT, and TTI. Progressive loading of code and
     features can help spread this work out and improve interaction readiness.
 +   Server-side rendered apps may look like they're getting pixels painted on the screen
-    quickly, but beware of user interactions being blocked by large script executions (e.g
+    quickly, but beware of user interactions being blocked by large script executions (e.g.
     re-hydration to wire up event listeners). This can take several hundred milliseconds, sometimes
     even seconds, if route-based code splitting is being used. Consider shifting more logic
     server-side or generating more content statically during build time.
@@ -111,7 +111,7 @@ critical path, users were able to interact with the page much sooner.
 
 ### Data-fetching can impact many aspects of interaction readiness
 
-+   Waiting on a waterfall of cascading fetches (e.g. JS and data fetches for components) can
++   Waiting on a waterfall of cascading fetches (e.g. JavaScript and data fetches for components) can
     impact interaction latency. Aim to minimize a reliance on cascading data fetches.
 +   Large inline datastores can push out HTML parsing time and impact both paint and interaction
     metrics. Aim to minimize how much data needs to be post-processed on the client-side.
