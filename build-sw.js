@@ -17,6 +17,7 @@
 require('dotenv').config();
 const isProd = process.env.ELEVENTY_ENV === 'prod';
 
+const fs = require('fs');
 const log = require('fancy-log');
 const rollupPluginVirtual = require('rollup-plugin-virtual');
 const rollupPluginReplace = require('rollup-plugin-replace');
@@ -40,7 +41,21 @@ const {buildDefaultPlugins, disallowExternal} = require('./src/build/common');
  * before the Rollup build script.
  */
 async function buildCacheManifest() {
-  const toplevelManifest = await getManifest({
+  const resourcePath = (named) => {
+    const raw = JSON.parse(
+      fs.readFileSync(`src/site/_data/${named}.json`, 'utf-8'),
+    );
+    if (!raw['path']) {
+      throw new Error(`could not find path/hash of resource: ${named}`);
+    }
+    let p = raw['path'];
+    if (p.startsWith('/')) {
+      p = p.substr(1);
+    }
+    return p;
+  };
+
+  const config = {
     // JS or CSS files that include hashes don't need their own revision fields.
     dontCacheBustURLsMatching: /-[0-9a-f]{8}\.(css|js)/,
     globDirectory: 'dist',
@@ -48,15 +63,25 @@ async function buildCacheManifest() {
       // We don't include jpg files, as they're used for authors and hero
       // images, which are part of articles, and not the top-level site.
       'images/**/*.{png,svg}',
-      '*.css',
-      '*.js',
+      '*-*.js',
       'sw-partial-layout.partial',
     ],
     globIgnores: [
       // This removes large shared PNG files that are used only for articles.
       'images/{shared}/**',
     ],
-  });
+  };
+  if (isProd) {
+    config.additionalManifestEntries = [
+      {url: resourcePath('resourceJS'), revision: null},
+      {url: resourcePath('resourceCSS'), revision: null},
+    ];
+  } else {
+    // Don't use hash revisions in dev.
+    config.globPatterns.push('bootstrap.js', 'app.css');
+  }
+
+  const toplevelManifest = await getManifest(config);
   if (toplevelManifest.warnings.length) {
     throw new Error(`toplevel manifest: ${toplevelManifest.warnings}`);
   }
