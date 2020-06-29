@@ -40,15 +40,19 @@ const findAuthorsPosts = (posts) => {
 /**
  * Returns all authors with their posts.
  *
- * @param {any} collections Eleventy collection object
+ * @param {any?} collections Eleventy collection object
  * @return {Object.<string, Author>}
  */
 module.exports = (collections) => {
   // Get all posts and sort them
-  const posts = collections
-    .getFilteredByGlob('**/*.md')
-    .filter(livePosts)
-    .sort((a, b) => b.date - a.date);
+  let posts = [];
+
+  if (collections) {
+    posts = collections
+      .getFilteredByGlob('**/*.md')
+      .filter(livePosts)
+      .sort((a, b) => b.date - a.date);
+  }
 
   const authorsPosts = findAuthorsPosts(posts);
 
@@ -83,7 +87,7 @@ module.exports = (collections) => {
 
     // If the author doesn't have any posts, use their Twitter profile.
     if (author.elements.length === 0) {
-      if (!author.twitter) {
+      if (posts.length && !author.twitter) {
         // If we're screenshot testing just ignore it.
         if (process.env.PERCY) {
           return;
@@ -93,14 +97,12 @@ module.exports = (collections) => {
         // log a warning if it has a value and we're doing a regular build.
         // Note this is checking for _all_ posts and not just the posts
         // by this specific author.
-        if (posts.length) {
-          console.warn(
-            `author ${
-              author.title
-            } has no posts and no social: ${JSON.stringify(author)}\n`,
-          );
-        }
-      } else {
+        console.warn(
+          `author ${author.title} has no posts and no social: ${JSON.stringify(
+            author,
+          )}\n`,
+        );
+      } else if (posts.length) {
         author.href = `https://twitter.com/${author.twitter}`;
       }
     }
