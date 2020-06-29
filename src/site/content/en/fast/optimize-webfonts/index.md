@@ -547,7 +547,7 @@ any element attempting to use it must instead render with a fallback font face.
 If the font face successfully loads during the swap period, the font face is then used normally.
 3. The **font failure period** occurs immediately after the font swap period.
 If the font face is not yet loaded when this period starts,
-it’s marked as a failed load, causing normal font fallback.
+it's marked as a failed load, causing normal font fallback.
 Otherwise, the font face is used normally.
 
 Understanding these periods means you can use `font-display` to decide how your
