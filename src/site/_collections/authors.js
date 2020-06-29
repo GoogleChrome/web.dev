@@ -60,7 +60,7 @@ module.exports = (collections) => {
   const authors = {};
 
   Object.keys(authorsData).forEach((key) => {
-    const author = authorsData[key];
+    const author = {...authorsData[key]};
     author.key = key;
 
     // Generate the author's name out of valid given/family parts. This
@@ -70,7 +70,6 @@ module.exports = (collections) => {
     );
     author.title = parts.join(' ');
     author.href = `/authors/${key}/`;
-
     author.description =
       author.description && author.description.en
         ? author.description.en
