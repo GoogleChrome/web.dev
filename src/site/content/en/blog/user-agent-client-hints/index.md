@@ -8,7 +8,7 @@ authors:
   - rowan_m
   - yoavweiss
 date: 2020-06-25
-updated: 2020-06-25
+updated: 2020-06-29
 hero: uach-hero.jpg
 thumbnail: uach-thumbnail.jpg
 alt: A variety of different footprints in the snow. A hint at who's been there.
@@ -149,13 +149,13 @@ all works.
 
 ## User-Agent Client Hints in Chromium 84
 
-{% Aside %}
-  Ensure you use the Chrome Beta channel for testing. As with many new features,
-  User-Agent Client Hints will only be enabled gradually on Chrome Stable as
-  [compatibility
-  concerns](https://bugs.chromium.org/p/chromium/issues/detail?id=1091285)
-  are resolved.
-{% endAside %}
+User-Agent Client Hints will only be enabled gradually on Chrome Stable as
+[compatibility
+concerns](https://bugs.chromium.org/p/chromium/issues/detail?id=1091285) are
+resolved. To force the functionality on for testing, ensure you:
+
+  * are on Chome 84 **beta** or equivalent
+  * enable the `chrome://flags/#enable-experimental-web-platform-features` flag
 
 By default, the browser returns the browser brand, significant / major version,
 and an indicator if the client is a mobile device:
@@ -177,7 +177,7 @@ Sec-CH-UA-Mobile: ?0
 
 <style>
 .w-table-wrapper th:nth-of-type(4) {
-    width: 30ch;
+    width: 28ch;
 }
 
 .w-table-wrapper td {
@@ -223,8 +223,6 @@ asks for the full browser version and the platform.
 ```text
 HTTP/1.1 200 OK
 Accept-CH: UA-Full-Version, UA-Platform
-
-<html>…
 ```
 
 ⬆️ _Subsequent requests_<br> The browser grants the server access to the
@@ -311,8 +309,8 @@ You can try out both the headers and the JavaScript API on your own device at
 </div>
 
 {% Aside %}
-  Ensure you're using Chrome 84 Beta or equivalent to ensure User-Agent Client
-  Hints are enabled.
+  Ensure you're using Chrome 84 Beta or equivalent with
+  `chrome://flags/#enable-experimental-web-platform-features` enabled.
 {% endAside %}
 
 ### Hint life-time and resetting
