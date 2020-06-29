@@ -154,7 +154,7 @@ User-Agent Client Hints will only be enabled gradually on Chrome Stable as
 concerns](https://bugs.chromium.org/p/chromium/issues/detail?id=1091285) are
 resolved. To force the functionality on for testing, ensure you:
 
-  * are on Chome 84 **beta** or equivalent
+  * are on Chrome 84 **beta** or equivalent
   * enable the `chrome://flags/#enable-experimental-web-platform-features` flag
 
 By default, the browser returns the browser brand, significant / major version,
