@@ -36,10 +36,25 @@ class EventCarousel extends BaseStateElement {
       const {isComplete, videoId, title} = day;
       const show = isComplete && videoId;
 
+      // The thumbnail is shown as long as we have a videoId, regardless of
+      // whether the day is complete or not.
+      // nb. We use "maxresdefault" as the other images have black bars as they
+      // try to fit 4:3 rendering.
+      const thumbnailPart = videoId
+        ? html`<div class="w-event-carousel__thumbnail">
+            <img
+              alt="${title}"
+              src="https://img.youtube.com/vi/${videoId}/maxresdefault.jpg"
+              width="178"
+              height="110"
+            />
+          </div>`
+        : '';
+
       if (!show) {
         return html`
           <div class="w-event-carousel__day">
-            <div class="w-event-carousel__thumbnail"></div>
+            ${thumbnailPart}
             <div class="w-event-carousel__description">
               ${title} &mdash; Coming soon
             </div>
@@ -47,22 +62,13 @@ class EventCarousel extends BaseStateElement {
         `;
       }
 
-      // We use "maxresdefault" as the other images have black bars as they try
-      // to fit 4:3 rendering.
       return html`
         <a
           class="w-event-carousel__day"
           href="https://youtu.be/${videoId}"
           target="_blank"
         >
-          <div class="w-event-carousel__thumbnail">
-            <img
-              alt="${title}"
-              src="https://img.youtube.com/vi/${videoId}/maxresdefault.jpg"
-              width="178"
-              height="110"
-            />
-          </div>
+          ${thumbnailPart}
           <div class="w-event-carousel__description">
             ${title} &mdash; All sessions
           </div>
