@@ -30,6 +30,8 @@ describe('Build test', function () {
       path.join('images', 'favicon.ico'),
       path.join('images', 'lockup.svg'),
       '_redirects.yaml',
+      'app.css',
+      'bootstrap.js',
       'manifest.webmanifest',
       'nuke-sw.js',
       'robots.txt',
@@ -47,22 +49,13 @@ describe('Build test', function () {
 
     // Check that there's a Rollup-generated file with the given name that looks
     // like `[name]-[hash].js`.
-    ['bootstrap', 'app', 'measure', 'newsletter', 'default'].forEach(
-      (chunked) => {
-        const re = new RegExp(`^${chunked}-\\w+\\.js$`);
-        assert(
-          contents.find((file) => re.test(file)),
-          `Could not find Rollup output: ${chunked}`,
-        );
-      },
-    );
-
-    // Check that there's an "app-[hash].css" file.
-    const re = new RegExp(`^app-\\w+\\.css$`);
-    assert(
-      contents.find((file) => re.test(file)),
-      `Could not find Sass output: app`,
-    );
+    ['app', 'measure', 'newsletter', 'default'].forEach((chunked) => {
+      const re = new RegExp(`^${chunked}-\\w+\\.js$`);
+      assert(
+        contents.find((file) => re.test(file)),
+        `Could not find Rollup output: ${chunked}`,
+      );
+    });
 
     // Check that there's NOT a web.dev/LIVE partial. We confirm that partials
     // are generally created above, in the list of common checks.

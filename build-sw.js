@@ -24,6 +24,7 @@ const rollupPluginReplace = require('rollup-plugin-replace');
 const OMT = require('@surma/rollup-plugin-off-main-thread');
 const rollup = require('rollup');
 const {getManifest} = require('workbox-build');
+const resourcePath = require('./src/build/resource-path');
 const buildVirtualJSON = require('./src/build/virtual-json');
 const minifySource = require('./src/build/minify-js');
 
@@ -41,20 +42,6 @@ const {buildDefaultPlugins, disallowExternal} = require('./src/build/common');
  * before the Rollup build script.
  */
 async function buildCacheManifest() {
-  const resourcePath = (named) => {
-    const raw = JSON.parse(
-      fs.readFileSync(`src/site/_data/${named}.json`, 'utf-8'),
-    );
-    if (!raw['path']) {
-      throw new Error(`could not find path/hash of resource: ${named}`);
-    }
-    let p = raw['path'];
-    if (p.startsWith('/')) {
-      p = p.substr(1);
-    }
-    return p;
-  };
-
   const config = {
     // JS or CSS files that include hashes don't need their own revision fields.
     dontCacheBustURLsMatching: /-[0-9a-f]{8}\.(css|js)/,
@@ -73,11 +60,11 @@ async function buildCacheManifest() {
   };
   if (isProd) {
     config.additionalManifestEntries = [
-      {url: resourcePath('resourceJS'), revision: null},
-      {url: resourcePath('resourceCSS'), revision: null},
+      {url: resourcePath('js'), revision: null},
+      {url: resourcePath('css'), revision: null},
     ];
   } else {
-    // Don't use hash revisions in dev.
+    // Don't use hash revisions in dev, or even check that the files exist.
     config.globPatterns.push('bootstrap.js', 'app.css');
   }
 
