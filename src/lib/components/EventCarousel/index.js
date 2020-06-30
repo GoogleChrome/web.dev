@@ -28,15 +28,18 @@ class EventCarousel extends BaseStateElement {
   static get properties() {
     return {
       eventDays: Object,
-      activeEventDay: Object,
     };
   }
 
   render() {
+    // Note that we use `isChatActive` to determine whether the current day
+    // shows as "Broadcasting". We backed ourselves into a corner with the
+    // `activeEventDay` property as it actually reflects the upcoming day, even
+    // hours before the event starts (which is useful for the YT _preview_).
+
     const renderDay = (day) => {
-      const {isComplete, videoId, title} = day;
-      const isClickable =
-        (isComplete || this.activeEventDay === day) && videoId;
+      const {isComplete, isChatActive, videoId, title} = day;
+      const isClickable = Boolean((isComplete || isChatActive) && videoId);
 
       // The thumbnail is shown as long as we have a videoId, regardless of
       // whether the day is complete or not.
@@ -54,7 +57,7 @@ class EventCarousel extends BaseStateElement {
         : '';
 
       let message = 'Coming soon';
-      if (this.activeEventDay === day) {
+      if (isChatActive) {
         message = 'Broadcasting';
       } else if (isClickable) {
         message = 'All sessions';
@@ -88,9 +91,8 @@ class EventCarousel extends BaseStateElement {
     return html`${this.eventDays.map(renderDay)}`;
   }
 
-  onStateChanged({eventDays, activeEventDay}) {
+  onStateChanged({eventDays}) {
     this.eventDays = eventDays;
-    this.activeEventDay = activeEventDay;
   }
 }
 
