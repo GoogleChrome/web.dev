@@ -381,6 +381,7 @@ for (const day of days) {
 }
 
 // TODO: Dummy data for testing, replace with real data once available.
+// prettier-ignore
 const communityEvents = {
   'North America': [
     {
