@@ -28,13 +28,15 @@ class EventCarousel extends BaseStateElement {
   static get properties() {
     return {
       eventDays: Object,
+      activeEventDay: Object,
     };
   }
 
   render() {
     const renderDay = (day) => {
       const {isComplete, videoId, title} = day;
-      const show = isComplete && videoId;
+      const isClickable =
+        (isComplete || this.activeEventDay === day) && videoId;
 
       // The thumbnail is shown as long as we have a videoId, regardless of
       // whether the day is complete or not.
@@ -51,36 +53,44 @@ class EventCarousel extends BaseStateElement {
           </div>`
         : '';
 
-      if (!show) {
-        return html`
-          <div class="w-event-carousel__day w-event-carousel__pending">
-            ${thumbnailPart}
-            <div class="w-event-carousel__description">
-              ${title} &mdash; Coming soon
-            </div>
-          </div>
-        `;
+      let message = 'Coming soon';
+      if (this.activeEventDay === day) {
+        message = 'Broadcasting';
+      } else if (isClickable) {
+        message = 'All sessions';
       }
 
+      const descriptionPart = html` <div class="w-event-carousel__description">
+        ${title} &mdash; ${message}
+      </div>`;
+
+      if (isClickable) {
+        return html`
+          <a
+            class="w-event-carousel__day gc-analytics-event"
+            data-category="web.dev"
+            data-label="live, open ${title} on YouTube"
+            data-action="click"
+            href="https://youtu.be/${videoId}"
+            target="_blank"
+          >
+            ${thumbnailPart} ${descriptionPart}
+          </a>
+        `;
+      }
       return html`
-        <a
-          class="w-event-carousel__day"
-          href="https://youtu.be/${videoId}"
-          target="_blank"
-        >
-          ${thumbnailPart}
-          <div class="w-event-carousel__description">
-            ${title} &mdash; All sessions
-          </div>
-        </a>
+        <div class="w-event-carousel__day w-event-carousel__pending">
+          ${thumbnailPart} ${descriptionPart}
+        </div>
       `;
     };
 
     return html`${this.eventDays.map(renderDay)}`;
   }
 
-  onStateChanged({eventDays}) {
+  onStateChanged({eventDays, activeEventDay}) {
     this.eventDays = eventDays;
+    this.activeEventDay = activeEventDay;
   }
 }
 
