@@ -20,8 +20,6 @@ const formatDate = function (date) {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
   };
   return new Intl.DateTimeFormat('en-US', options).format(date);
 };
@@ -50,7 +48,6 @@ class EventMap extends BaseStateElement {
     super();
     this.title = '';
     this.center = '';
-    this.zoom = 4;
     this.size = '600x300';
     this.events = null;
   }
@@ -72,9 +69,11 @@ class EventMap extends BaseStateElement {
       return '';
     }
 
+    // Set the minimal zoom to 4, if only 1 marker present.
+    const zoom = this.zoom || this.localEvents.length < 2 ? 4 : '';
     const params = [
       `center=${this.center}`,
-      `zoom=${this.zoom}`,
+      `zoom=${zoom}`,
       `size=${this.size}`,
       `maptype=roadmap`,
       encodeMarkers(this.localEvents),
@@ -101,7 +100,7 @@ class EventMap extends BaseStateElement {
           const date = new Date(entry.date);
           return html`
             <li>
-              <a href="#">${entry.place}</a>
+              <a href="${entry.link}" target="_blank">${entry.place}</a>
               <time datetime=${date.toISOString()}>
                 ${formatDate(date)}
               </time>
