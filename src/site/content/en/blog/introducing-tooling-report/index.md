@@ -90,5 +90,5 @@ these outcomes are welcome.
   
 If you want to write tests for tools we did not include in the initial set, we welcome that too!
 Please see
-[CONTRIUBTING.md](https://github.com/GoogleChromeLabs/tooling.report/blob/dev/CONTRIBUTING.md) for
+[CONTRIBUTING.md](https://github.com/GoogleChromeLabs/tooling.report/blob/dev/CONTRIBUTING.md) for
 more information. 
