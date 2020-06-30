@@ -53,7 +53,7 @@ class EventCarousel extends BaseStateElement {
 
       if (!show) {
         return html`
-          <div class="w-event-carousel__day">
+          <div class="w-event-carousel__day w-event-carousel__pending">
             ${thumbnailPart}
             <div class="w-event-carousel__description">
               ${title} &mdash; Coming soon

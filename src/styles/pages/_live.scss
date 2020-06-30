@@ -390,14 +390,14 @@
   font-weight: $FONT_WEIGHT_MEDIUM;
   margin-right: 16px;
 
-  &:hover,
-  &:focus {
+  &a:hover,
+  &a:focus {
     outline: 0;
     opacity: .9;
     text-decoration: none;
   }
 
-  &:focus {
+  &a:focus {
     .w-event-carousel__description {
       box-shadow: inset 0 0 0 1px $FOCUS_COLOR;
     }
@@ -405,6 +405,10 @@
 
   &:last-child {
     margin-right: 0;
+  }
+
+  &.w-event-carousel__pending {
+    opacity: .6;
   }
 }
 
