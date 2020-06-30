@@ -17,7 +17,6 @@
 require('dotenv').config();
 const isProd = process.env.ELEVENTY_ENV === 'prod';
 
-const fs = require('fs');
 const log = require('fancy-log');
 const rollupPluginVirtual = require('rollup-plugin-virtual');
 const rollupPluginReplace = require('rollup-plugin-replace');
