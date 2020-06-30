@@ -138,30 +138,27 @@ With this out of the way, it's time to talk about *progressive enhancement*.
 The MDN Web Docs Glossary [defines](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement)
 the concept as follows:
 
-<blockquote>
-  <p>
-    Progressive enhancement is a design philosophy that povides a baseline
-    of essential content and functionality to as many users as possible,
-    while delivering the best possible experience only to users
-    of the most modern browsers that can run all the required code.
-  </p>
-  <p>
-    [Feature detection](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection)
-    is generally used to determine whether browsers can handle more modern functionality,
-    while [polyfills](https://developer.mozilla.org/en-US/docs/Glossary/Polyfill)
-    are often used to add missing features with JavaScript.
-  </p>
-  <p>[…]</p>
-  <p>  
-    Progressive enhancement is a useful technique that allows web developers to focus
-    on developing the best possible websites while making those websites work
-    on multiple unknown user agents.
-    [Graceful degradation](https://developer.mozilla.org/en-US/docs/Glossary/Graceful_degradation)
-    is related, but is not the same thing and is often seen as going in the opposite direction
-    to progressive enhancement.
-    In reality, both approaches are valid and can often complement one another.
-  </p>
-</blockquote>
+{% Blockquote 'MDN contributors' %}
+Progressive enhancement is a design philosophy that povides a baseline of
+essential content and functionality to as many users as possible, while
+delivering the best possible experience only to users of the most modern
+browsers that can run all the required code.
+
+[Feature detection](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Feature_detection)
+is generally used to determine whether browsers can handle more modern functionality,
+while [polyfills](https://developer.mozilla.org/en-US/docs/Glossary/Polyfill)
+are often used to add missing features with JavaScript.
+
+[…]
+
+Progressive enhancement is a useful technique that allows web developers to focus
+on developing the best possible websites while making those websites work
+on multiple unknown user agents.
+[Graceful degradation](https://developer.mozilla.org/en-US/docs/Glossary/Graceful_degradation)
+is related, but is not the same thing and is often seen as going in the opposite direction
+to progressive enhancement.
+In reality, both approaches are valid and can often complement one another.
+{% endBlockquote %}
 
 {%Aside 'note' %}
   This is not an introductory article on progressive enhancement, but assumes you are familiar
