@@ -12,7 +12,19 @@ date: 2018-11-05
 {# It would be great to remove them as part of the v1 migration. #}
 
 <div class="home-landing-page">
-  <header class="w-masthead-home">
+
+  {#
+    TODO: Convert w-masthead-home back to a <header> when this campaign ends.
+    For a11y you're supposed to only use one <header> element per page.
+  #}
+  <header class="w-hero-banner">
+    <div class="w-hero-banner__inner">
+      Google is committed to advancing racial equity for Black communities.
+      <a href="https://google.com/racialequity" target="_blank" rel="noopener">See how</a>.
+    </div>
+  </header>
+
+  <div class="w-masthead-home">
     <div class="w-masthead-home__container">
       <div class="w-masthead-home__left">
         <h1 class="w-headline--two w-font-weight--medium">
@@ -44,7 +56,7 @@ date: 2018-11-05
         </div>
       </div>
     </div>
-  </header>
+  </div>
 
   {# <section class="w-layout-container w-text--center">
     <p class="w-headline--two-small">

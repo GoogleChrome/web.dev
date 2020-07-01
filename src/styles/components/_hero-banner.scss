@@ -1,0 +1,37 @@
+// =============================================================================
+// HERO BANNER OVERVIEW
+//
+// A banner used during a special occasion.
+// This is a one-off design and this file can probably be deleted when the
+// campaign is over.
+//
+// =============================================================================
+
+@import '../settings/colors';
+@import '../settings/type';
+
+.w-hero-banner {
+  color: $WHITE;
+}
+
+.w-hero-banner__inner {
+  background-color: $BLACK;
+  font-family: $PRIMARY_FONT;
+  font-size: 14px;
+  font-weight: $FONT_WEIGHT_MEDIUM;
+  padding: 16px;
+  text-align: center;
+
+  a {
+    color: $WHITE;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  @include bp(md) {
+    padding: 20px 24px;
+  }
+}
