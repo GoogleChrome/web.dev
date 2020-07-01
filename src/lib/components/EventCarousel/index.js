@@ -38,8 +38,10 @@ class EventCarousel extends BaseStateElement {
     // hours before the event starts (which is useful for the YT _preview_).
 
     const renderDay = (day) => {
-      const {isComplete, isChatActive, videoId, title} = day;
-      const isClickable = Boolean((isComplete || isChatActive) && videoId);
+      const {isComplete, isChatActive, videoId, playlistId, title} = day;
+      const isClickable = Boolean(
+        (isComplete || isChatActive) && (videoId || playlistId),
+      );
 
       // The thumbnail is shown as long as we have a videoId, regardless of
       // whether the day is complete or not.
@@ -68,13 +70,17 @@ class EventCarousel extends BaseStateElement {
       </div>`;
 
       if (isClickable) {
+        // Prefer the playlistId over the videoId, if available.
+        const href = playlistId
+          ? `https://www.youtube.com/playlist?list=${playlistId}`
+          : `https://youtu.be/${videoId}`;
         return html`
           <a
             class="w-event-carousel__day gc-analytics-event"
             data-category="web.dev"
             data-label="live, open ${title} on YouTube"
             data-action="click"
-            href="https://youtu.be/${videoId}"
+            href="${href}"
             target="_blank"
           >
             ${thumbnailPart} ${descriptionPart}

@@ -24,6 +24,7 @@ const days = [
     when: '2020-06-30T16:00Z', // 9am PDT (-7)
     duration: 3 * 60, // minutes
     videoId: 'H89hKw06iWs',
+    playlistId: 'PLNYkxOF6rcIDC0-BiwSL52yQ0n9rNozaF',
     sessions: [
       {
         speaker: 'dalmaer',
@@ -125,6 +126,7 @@ const days = [
     when: '2020-07-01T12:00Z', // 12pm GMT/UTC (+0), note UK time will be 1pm
     duration: 3 * 60, // minutes
     videoId: 'r3QPKK0JPtI',
+    playlistId: null,
     sessions: [
       {
         speaker: 'dalmaer',
@@ -245,6 +247,7 @@ const days = [
     when: '2020-07-02T07:30Z', // 1pm IST (+5:30)
     duration: 4 * 60, // minutes
     videoId: 'klnvttPfOUM',
+    playlistId: null,
     sessions: [
       {
         speaker: 'dalmaer',
