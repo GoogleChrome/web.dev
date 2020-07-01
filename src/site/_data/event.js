@@ -247,7 +247,7 @@ const days = [
     when: '2020-07-02T07:30Z', // 1pm IST (+5:30)
     duration: 4 * 60, // minutes
     videoId: 'klnvttPfOUM',
-    playlistId: 'PLNYkxOF6rcIDJHOcBzho38p6WTn3vESvQ',
+    playlistId: null,
     sessions: [
       {
         speaker: 'dalmaer',
