@@ -126,7 +126,7 @@ const days = [
     when: '2020-07-01T12:00Z', // 12pm GMT/UTC (+0), note UK time will be 1pm
     duration: 3 * 60, // minutes
     videoId: 'r3QPKK0JPtI',
-    playlistId: null,
+    playlistId: 'PLNYkxOF6rcIBhuGsbO6t8-OBE5-fVPe7K',
     sessions: [
       {
         speaker: 'dalmaer',

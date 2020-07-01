@@ -71,9 +71,10 @@ class EventCarousel extends BaseStateElement {
 
       if (isClickable) {
         // Prefer the playlistId over the videoId, if available.
-        const href = playlistId
-          ? `https://www.youtube.com/playlist?list=${playlistId}`
-          : `https://youtu.be/${videoId}`;
+        const href =
+          !isChatActive && playlistId
+            ? `https://www.youtube.com/playlist?list=${playlistId}`
+            : `https://youtu.be/${videoId}`;
         return html`
           <a
             class="w-event-carousel__day gc-analytics-event"
