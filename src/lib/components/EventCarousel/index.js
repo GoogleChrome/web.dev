@@ -40,6 +40,7 @@ class EventCarousel extends BaseStateElement {
     const renderDay = (day) => {
       const {isComplete, isChatActive, videoId, playlistId, title} = day;
       const isClickable = Boolean(
+        // Allows to click if playlist is available, otherwise depends on event status.
         (playlistId || isComplete || isChatActive) && (videoId || playlistId),
       );
 
