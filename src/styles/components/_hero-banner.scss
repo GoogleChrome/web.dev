@@ -14,7 +14,7 @@
   color: $WHITE;
 }
 
-.w-hero-banner__top {
+.w-hero-banner__inner {
   background-color: $BLACK;
   font-family: $PRIMARY_FONT;
   font-size: 14px;
@@ -33,39 +33,5 @@
 
   @include bp(md) {
     padding: 20px 24px;
-  }
-}
-
-.w-hero-banner__main {
-  background-color: $GOOGLE_BLUE_600;
-
-  // Create consistent vertical rhythm for all children.
-  * + * {
-    margin-bottom: 0;
-    margin-top: 1rem;
-  }
-
-  // Reduce the built-in padding for the layout-container component
-  .w-layout-container {
-    padding: 24px 16px;
-
-    @include bp(md) {
-      padding: 40px 24px;
-    }
-  }
-
-  .w-hero-banner__headline {
-    color: $WHITE;
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    margin-top: 0;
-
-    @include bp(md) {
-      font-size: 2rem;
-    }
-  }
-
-  p {
-    font-size: 1rem;
   }
 }
