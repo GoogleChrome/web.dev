@@ -384,24 +384,80 @@ for (const day of days) {
 }
 
 // TODO: Dummy data for testing, replace with real data once available.
+// prettier-ignore
 const communityEvents = {
   'North America': [
     {
-      place: 'Austin',
-      date: new Date(),
-      marker: '30.3074624,-99.9946506',
+      place: 'Indianapolis',
+      date: new Date('2020-07-23'),
+      marker: '39.7794493,-86.4122414',
+      link: 'https://www.meetup.com/gdg-indy/events/271345952/',
     },
     {
-      place: 'San Francisco',
-      date: new Date(),
-      marker: '40.718217,-73.998284',
+      place: 'Fredericton',
+      date: new Date('2020-08-01'),
+      marker: '45.9451213,-66.9457401',
+      link: 'https://www.meetup.com/GDG-Fredericton-NB/events/271396869/',
+    },
+    {
+      place: 'New York',
+      date: new Date('2020-07-15'),
+      marker: '40.6961398,-74.5387144',
+      link: 'https://www.meetup.com/gdgnyc/events/271424273/',
+    },
+  ],
+  'South America': [
+    {
+      place: 'Cali',
+      date: new Date('2020-07-11'),
+      marker: '3.3950543,-76.6654052',
+      link: 'https://www.meetup.com/GDGCali/events/271357490/',
+    },
+  ],
+  Asia: [
+    {
+      place: 'Bhubaneswar',
+      date: new Date('2020-07-09'),
+      marker: '20.3008287,85.6807125',
+      link: 'https://webdevlivein.web.app',
+    },
+    {
+      place: 'Bursa',
+      date: new Date('2020-07-18'),
+      marker: '40.2213419,28.7527983',
+      link: 'https://www.meetup.com/tr-TR/GDGBursa/events/271394720/',
+    },
+    {
+      place: 'Cebu City',
+      date: new Date('2020-08-01'),
+      marker: '10.3787343,123.7065536',
+      link: 'https://www.meetup.com/GDGCebu/events/271473987/',
+    },
+    {
+      place: 'Colombo',
+      date: new Date('2020-07-16'),
+      marker: '6.9218336,79.7863371',
+      link: '#',
     },
   ],
   Europe: [
     {
-      place: 'Zurich',
-      date: new Date(),
-      marker: '47.3774337,8.4666757',
+      place: 'Nantes',
+      date: new Date('2020-08-24'),
+      marker: '47.2382006,-1.6302672',
+      link: 'https://ask-the-expert-live.web.app',
+    },
+    {
+      place: 'London',
+      date: new Date('2020-07-18'),
+      marker: '51.5273134,-0.660608',
+      link: 'https://www.eventbrite.co.uk/e/devparty-webdev-live-with-gdg-uk-ireland-tickets-111092001166',
+    },
+    {
+      place: 'Moscow',
+      date: new Date('2020-07-11'),
+      marker: '55.5769386,36.2674211',
+      link: 'https://www.meetup.com/GDG-Moscow/events/271352597/',
     },
   ],
 };
