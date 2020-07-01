@@ -40,7 +40,7 @@ class EventCarousel extends BaseStateElement {
     const renderDay = (day) => {
       const {isComplete, isChatActive, videoId, playlistId, title} = day;
       const isClickable = Boolean(
-        (isComplete || isChatActive) && (videoId || playlistId),
+        (playlistId || isComplete || isChatActive) && (videoId || playlistId),
       );
 
       // The thumbnail is shown as long as we have a videoId, regardless of
