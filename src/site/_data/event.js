@@ -486,6 +486,7 @@ const communityEvents = {
   ],
 };
 
+// prettier-ignore
 const qAndAs = [
   {
     category: 'Web Vitals',
