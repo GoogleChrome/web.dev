@@ -247,7 +247,7 @@ const days = [
     when: '2020-07-02T07:30Z', // 1pm IST (+5:30)
     duration: 4 * 60, // minutes
     videoId: 'klnvttPfOUM',
-    playlistId: null,
+    playlistId: 'PLNYkxOF6rcIDJHOcBzho38p6WTn3vESvQ',
     sessions: [
       {
         speaker: 'dalmaer',
@@ -413,6 +413,12 @@ const communityEvents = {
       marker: '3.3950543,-76.6654052',
       link: 'https://www.meetup.com/GDGCali/events/271357490/',
     },
+    {
+      place: 'Campinas',
+      date: new Date('2020-07-14'),
+      marker: '-22.8949777,-47.310532',
+      link: 'https://www.meetup.com/pt-BR/gdgcampinas/',
+    },
   ],
   Asia: [
     {
@@ -439,6 +445,24 @@ const communityEvents = {
       marker: '6.9218336,79.7863371',
       link: '#',
     },
+    {
+      place: 'Bandung',
+      date: new Date('2020-07-11'),
+      marker: '-6.9034291,107.5034163',
+      link: 'https://web.gdgbandung.dev',
+    },
+    {
+      place: 'Kuala Lumpur',
+      date: new Date('2020-07-18'),
+      marker: '3.1384966,101.5472482',
+      link: 'https://gdgkl-webdev-live.peatix.com',
+    },
+    {
+      place: 'Islamabad',
+      date: new Date('2020-07-18'),
+      marker: '33.6148588,72.5270609',
+      link: '#',
+    },
   ],
   Europe: [
     {
@@ -449,7 +473,7 @@ const communityEvents = {
     },
     {
       place: 'London',
-      date: new Date('2020-07-18'),
+      date: new Date('2020-08-01'),
       marker: '51.5273134,-0.660608',
       link: 'https://www.eventbrite.co.uk/e/devparty-webdev-live-with-gdg-uk-ireland-tickets-111092001166',
     },
