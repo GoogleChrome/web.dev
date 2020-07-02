@@ -241,7 +241,7 @@ date: 2020-06-31
         {%- for entry in event.qAndAs  %}
           <details class="web-event-q-and-a__details" data-category="{{entry.category}}">
             <summary><span>Q.</span>{{entry.question}}</summary>
-            <p><span>A.</span>{{entry.answer}}</p>
+            <p><span>A.</span>{{entry.answer | safe}}</p>
           </details>
         {%- endfor %}
         </web-event-q-and-a>

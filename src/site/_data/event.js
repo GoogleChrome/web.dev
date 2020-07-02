@@ -443,7 +443,7 @@ const communityEvents = {
       place: 'Colombo',
       date: new Date('2020-07-16'),
       marker: '6.9218336,79.7863371',
-      link: '#',
+      link: 'https://www.meetup.com/GDG-LK/events/271601256/',
     },
     {
       place: 'Bandung',
@@ -486,11 +486,97 @@ const communityEvents = {
   ],
 };
 
+// prettier-ignore
 const qAndAs = [
   {
-    category: '',
-    question: '',
-    answer: '',
+    category: 'Web Vitals',
+    question: 'Is there a tool to help us quantify LCP, FID, CLS (not in percentiles)?',
+    answer: 'To get your raw LCP, FID and CLS scores, you can look at the Chrome UX Report in BigQuery (for field data) and at Lighthouse (for lab data). You can also use the <a href="https://github.com/GoogleChrome/web-vitals">web-vitals.js library</a> and <a href="https://chrome.google.com/webstore/detail/web-vitals/ahfhijdlegdabablpippeagghigmibma?hl=en">Web Vitals extension</a> to see individual Core web Vitals in the wild.',
+  },
+  {
+    category: 'Web Vitals',
+    question: 'Why have we moved to 75th percentile?',
+    answer: 'You can see rationale at <a href="https://web.dev/defining-core-web-vitals-thresholds/">https://web.dev/defining-core-web-vitals-thresholds/</a>.',
+  },
+  {
+    category: 'Web Vitals',
+    question: 'Is it possible to configure the Core Web Vitals metrics thresholds during build time? or as part of your CI process?',
+    answer: 'Core Web Vitals prescribe a specific set of metrics thresholds and percentiles we believe correspond well to user expectations across a range of devices. We encourage using our official thresholds as much as possible. If however, you would like to set custom targets for thresholds (e.g an LCP performance budget of < 3s), this is possible using Lighthouse CI and LightWallet. You can find a more detailed answer on <a href="https://stackoverflow.com/questions/62682873/are-the-core-web-vitals-metrics-configurable-at-build-time/62682874">Stackoverflow.</a>',
+  },
+  {
+    category: 'Web Vitals',
+    question: 'Do Web Vitals metrics get tested against low bandwidth connections too?',
+    answer: 'Chrome UX report, the source for these metrics, reports real user metrics so yes, bandwidth connections are taken into account.',
+  },
+  {
+    category: 'Web Vitals',
+    question: '#webdevLIVE how do you get field values and how do you get lab values for core web vitals?',
+    answer: 'For field data you can look at <a href="https://developers.google.com/web/tools/chrome-user-experience-report">Chrome UX Report</a> data, available in tools like <a href="https://developers.google.com/speed/pagespeed/insights/">PageSpeed Insights</a>, <a href="https://web.dev/chrome-ux-report-data-studio-dashboard/">DataStudio</a>  and the <a href="https://developers.google.com/web/tools/chrome-user-experience-report/api/reference">CrUX API</a>. For lab data, you can use Lighthouse (either in the <a href="https://developers.google.com/web/tools/lighthouse#devtools">Lighthouse panel in DevTools</a>, via the <a href="https://developers.google.com/web/tools/lighthouse#cli">CLI</a>, or in <a href="https://developers.google.com/speed/pagespeed/insights/">PageSpeed Insights</a>).',
+  },
+  {
+    category: 'Web Vitals',
+    question: 'Does on-scroll animation give a bad CLS score?',
+    answer: 'The CLS metric excludes layout shifts if there was user input within 500ms of the shift. However, scrolling is not considered "user input" for the purposes of calculating CLS, so scroll-driven animations could give a bad CLS if not implemented properly (e.g. animating/transitioning the `transform` property, which does not cause layout shifts). As always, the best way to know for sure is to test your page and see if your scroll-driven animations are causing an increase in CLS.',
+  },
+  {
+    category: 'Performance',
+    question: 'What’s the best way to measure responsiveness of an interaction (not just page load)?',
+    answer: 'FID is the best way to measure the responsiveness of the first interaction with a page. For other interactions, Chrome is shipping the Event Timing API in M85 (currently in Chrome Canary), which I\'d recommend taking a look at <a href="https://www.chromestatus.com/feature/5167290693713920">https://www.chromestatus.com/feature/5167290693713920</a>',
+  },
+  {
+    category: 'Performance',
+    question: 'How long does it take to see changes in field data? I get good lab scores but field data seems the same even though I made major changes.',
+    answer: 'Media field data in these tools is based on the previous 28-day period, so it could take a while changes to show up',
+  },
+  {
+    category: 'Performance',
+    question: 'Can we also access specific urls rather than only domains with the crux dashboard?',
+    answer: 'The CrUX Dashboard currently only supports origin-level data from the BigQuery dataset.',
+  },
+  {
+    category: 'Performance',
+    question: 'Does this CrUX tool rely on embedding javascript to collect metrics for analysis?',
+    answer: 'All of the data included in the CrUX dataset is measured directly by Chrome, without any instrumentation on the websites themselves.',
+  },
+  {
+    category: 'Performance',
+    question: 'How do you implement image width and height for responsive?',
+    answer: 'Two answers here. Ideally, your different sources have the same aspect ratio. For art direction with &lt;picture&gt;, there is work being explored to add width/height to &lt;source&gt; elements.',
+  },
+  {
+    category: 'Performance',
+    question: '#webdevLIVE if Search Console shows your CLS as high, but using Page Speed Insights & Lighthouse look great for the example Url, what could be going on?',
+    answer: 'There is some nuance to how PageSpeed Insights (PSI) and Search Console report on Cumulative Layout Shift. The lab portion (Lighthouse) of PSI measures CLS until Lighthouse considers a page fully loaded. Search Console and the field portion of the PSI uses Chrome UX Report data and measures CLS until unload, stopping reporting after pagehidden. What this means is that the reporting you see in different tools can vary based on the window of time we are able to look at. Lab tools like Lighthouse have to define a shorter window because they are focused on the experience during page load and optimize for delivering information about the experience quickly. Field data is able to take a more holistic view of the user-experience, which could include shifts caused after a page has loaded and the user has scrolled down to other interactions contributing to CLS. See the detailed answer <a href="https://stackoverflow.com/questions/62682709/why-does-cumulative-layout-shift-differ-between-pagespeed-insights-and-search-co/62682710#62682710">here</a>.',
+  },
+  {
+    category: 'Performance',
+    question: 'Does "reduce initial server response time" audit take into account all API times up until LCP or is it just for the initial navigation?',
+    answer: '"Server response time" is just for the initial navigation of the HTML page.',
+  },
+  {
+    category: 'Performance',
+    question: 'Any insights on how to optimize page transitions in SPA websites and how to feed crux with page transitions?',
+    answer: 'Measuring SPA navigation performance is something the Chrome metrics team and other teams are actively working on 🙂',
+  },
+  {
+    category: 'Performance',
+    question: 'What can we do if we see long tasks from Google Analytics OR Doubleclick scripts ? I am sure the respective team knows about this but it hasn\'t been addressed so far?',
+    answer: 'Yes, sometimes third party scripts (including Google\'s) will contain long tasks, and we\'re working with those teams to help them reduce those.',
+  },
+  {
+    category: 'Performance',
+    question: 'How do you do a fallback for webp in amp-img for Wordpress #webdevLive?',
+    answer: 'The AMP cache does that for you.',
+  },
+  {
+    category: 'Performance',
+    question: 'You mentioned that web vitals will impact seo rankings. Can you send a link to the announcement?',
+    answer: '<a href="https://developers.google.com/search/docs/guides/page-experience">https://developers.google.com/search/docs/guides/page-experience</a>.',
+  },
+  {
+    category: 'Performance',
+    question: 'Can a worker handle input events?',
+    answer: 'You can handle input events on the main thread and then marshall the data to your worker for processing. Workers can\'t receive input directly.',
   },
 ];
 
