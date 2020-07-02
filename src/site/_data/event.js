@@ -443,7 +443,7 @@ const communityEvents = {
       place: 'Colombo',
       date: new Date('2020-07-16'),
       marker: '6.9218336,79.7863371',
-      link: '#',
+      link: 'https://www.meetup.com/GDG-LK/events/271601256/',
     },
     {
       place: 'Bandung',
