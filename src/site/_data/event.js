@@ -463,24 +463,6 @@ const communityEvents = {
       marker: '33.6148588,72.5270609',
       link: '#',
     },
-    {
-      place: 'Bandung',
-      date: new Date('2020-07-11'),
-      marker: '-6.9034291,107.5034163',
-      link: 'https://web.gdgbandung.dev',
-    },
-    {
-      place: 'Kuala Lumpur',
-      date: new Date('2020-07-18'),
-      marker: '3.1384966,101.5472482',
-      link: 'https://gdgkl-webdev-live.peatix.com',
-    },
-    {
-      place: 'Islamabad',
-      date: new Date('2020-07-18'),
-      marker: '33.6148588,72.5270609',
-      link: '#',
-    },
   ],
   Europe: [
     {
