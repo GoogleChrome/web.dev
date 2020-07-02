@@ -12,7 +12,13 @@ tags:
   - css
 ---
 
--- video embed --
+<div style="width:100%; padding-top: 56.25%; position: relative;">
+<iframe style="width:100%; height: 100%;position: absolute; top: 50%; left:
+50%; transform: translate(-50%,-50%);"
+src="https://www.youtube.com/embed/qm0IfG1GyZU" frameborder="0"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen></iframe>
+</div>
 
 Modern CSS layouts enable developers to write really meaningful and robust styling rules with just a few keystrokes. The talk above and this subsequent post examine 10 powerful lines of CSS that do some serious heavy lifting.
 
@@ -310,4 +316,4 @@ While this feature is still up and coming, it it a good one to know about as it 
 
 ## Conclusion
 
-Thank you for following this journey through 10 powerful lines of CSS. To watch the full video, see the link below, and if you are looking for these demos to play with them yourself, check out [1linelayouts.glitch.me](https://1linelayouts.glitch.me).
+Thank you for following this journey through 10 powerful lines of CSS. To watch the full video, check out this [link](https://www.youtube.com/watch?v=qm0IfG1GyZU&feature=youtu.be) or the embed at the top of this post, and if you are looking for these demos to play with them yourself, check out [1linelayouts.glitch.me](https://1linelayouts.glitch.me).
