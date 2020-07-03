@@ -13,7 +13,7 @@ description: |
   and many more.
 scheduled: true
 date: 2020-06-29
-# updated: 2020-06-15
+updated: 2020-07-03
 tags:
   - blog
   - capabilities
@@ -32,6 +32,8 @@ While in 2003, progressive enhancement was about using—at the time—modern
 CSS features, unobtrusive JavaScript, and even just Scalable Vector Graphics.
 Progressive enhancement in 2020 and beyond is about using
 [modern browser capabilities](https://web.dev/fugu-status/).
+
+{% YouTube 'NXCT3htg9nk' %}
 
 <figure class="w-figure">
   <img class="w-screenshot"
