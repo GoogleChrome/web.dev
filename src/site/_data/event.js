@@ -389,18 +389,21 @@ const communityEvents = {
   'North America': [
     {
       place: 'Indianapolis',
+      country: 'USA',
       date: new Date('2020-07-23'),
       marker: '39.7794493,-86.4122414',
       link: 'https://www.meetup.com/gdg-indy/events/271345952/',
     },
     {
       place: 'Fredericton',
+      country: 'Canada',
       date: new Date('2020-08-01'),
       marker: '45.9451213,-66.9457401',
       link: 'https://www.meetup.com/GDG-Fredericton-NB/events/271396869/',
     },
     {
       place: 'New York',
+      country: 'USA',
       date: new Date('2020-07-15'),
       marker: '40.6961398,-74.5387144',
       link: 'https://www.meetup.com/gdgnyc/events/271424273/',
@@ -409,12 +412,14 @@ const communityEvents = {
   'South America': [
     {
       place: 'Cali',
+      country: 'Colombia',
       date: new Date('2020-07-11'),
       marker: '3.3950543,-76.6654052',
       link: 'https://www.meetup.com/GDGCali/events/271357490/',
     },
     {
       place: 'Campinas',
+      country: 'Brazil',
       date: new Date('2020-07-14'),
       marker: '-22.8949777,-47.310532',
       link: 'https://www.meetup.com/pt-BR/gdgcampinas/',
@@ -423,42 +428,49 @@ const communityEvents = {
   Asia: [
     {
       place: 'Bhubaneswar',
+      country: 'India',
       date: new Date('2020-07-09'),
       marker: '20.3008287,85.6807125',
       link: 'https://webdevlivein.web.app',
     },
     {
       place: 'Bursa',
+      country: 'Turkey',
       date: new Date('2020-07-18'),
       marker: '40.2213419,28.7527983',
       link: 'https://www.meetup.com/tr-TR/GDGBursa/events/271394720/',
     },
     {
       place: 'Cebu City',
+      country: 'Philippines',
       date: new Date('2020-08-01'),
       marker: '10.3787343,123.7065536',
       link: 'https://www.meetup.com/GDGCebu/events/271473987/',
     },
     {
       place: 'Colombo',
+      country: 'Sri Lanka',
       date: new Date('2020-07-16'),
       marker: '6.9218336,79.7863371',
       link: 'https://www.meetup.com/GDG-LK/events/271601256/',
     },
     {
       place: 'Bandung',
+      country: 'Indonesia',
       date: new Date('2020-07-11'),
       marker: '-6.9034291,107.5034163',
       link: 'https://web.gdgbandung.dev',
     },
     {
       place: 'Kuala Lumpur',
+      country: 'Malaysia',
       date: new Date('2020-07-18'),
       marker: '3.1384966,101.5472482',
       link: 'https://gdgkl-webdev-live.peatix.com',
     },
     {
       place: 'Islamabad',
+      country: 'Pakistan',
       date: new Date('2020-07-18'),
       marker: '33.6148588,72.5270609',
       link: '#',
@@ -467,18 +479,21 @@ const communityEvents = {
   Europe: [
     {
       place: 'Nantes',
+      country: 'France',
       date: new Date('2020-08-24'),
       marker: '47.2382006,-1.6302672',
       link: 'https://ask-the-expert-live.web.app',
     },
     {
       place: 'London',
+      country: 'UK',
       date: new Date('2020-08-01'),
       marker: '51.5273134,-0.660608',
       link: 'https://www.eventbrite.co.uk/e/devparty-webdev-live-with-gdg-uk-ireland-tickets-111092001166',
     },
     {
       place: 'Moscow',
+      country: 'Russia',
       date: new Date('2020-07-11'),
       marker: '55.5769386,36.2674211',
       link: 'https://www.meetup.com/GDG-Moscow/events/271352597/',
