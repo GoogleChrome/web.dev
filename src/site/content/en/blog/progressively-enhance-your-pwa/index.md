@@ -32,6 +32,8 @@ CSS features, unobtrusive JavaScript, and even just Scalable Vector Graphics.
 Progressive enhancement in 2020 and beyond is about using
 [modern browser capabilities](https://web.dev/fugu-status/).
 
+{% YouTube 'NXCT3htg9nk' %}
+
 <figure class="w-figure">
   <img class="w-screenshot"
        src="100002010000053C000003E8B978FE17E590BC9A.png"
