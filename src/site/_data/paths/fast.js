@@ -96,7 +96,7 @@ module.exports = {
       pathItems: [
         'avoid-invisible-text',
         'optimize-webfontloading',
-        'reduce-webfont-size'
+        'reduce-webfont-size',
       ],
     },
     {
