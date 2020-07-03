@@ -374,7 +374,7 @@ a few significant differences compared to the SMS Receiver API.
 
 Chromium and WebKit agreed on the SMS text message format. Find WebKit's
 documentation here:
-[Delivering origin-bound one-time codes over SMS](https://github.com/WebKit/explainers/tree/master/sms-one-time-code-format)
+[Delivering origin-bound one-time codes over SMS](https://github.com/wicg/sms-one-time-codes)
 
 
 ### Is it safe to use SMS as a way to authenticate?
