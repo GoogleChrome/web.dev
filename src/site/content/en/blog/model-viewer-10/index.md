@@ -72,7 +72,7 @@ See the [annotations documentation page](https://modelviewer.dev/examples/annota
 
 ### Tester ###
 
-We also created and host a `<model-viewer>` [“tester” tool](https://modelviewer.dev/examples/tester.html), which enables you to quickly preview your model, try out different `<model-viewer>` configurations (e.g. exposure and shadow softness), generate a poster image, and interactively get coordinates for annotations. 
+The new version introduces and hosts a `<model-viewer>` [“tester” tool](https://modelviewer.dev/examples/tester.html), which enables you to quickly preview your model, try out different `<model-viewer>` configurations (e.g. exposure and shadow softness), generate a poster image, and interactively get coordinates for annotations. 
 
 ### Rendering and performance improvements ###
 
