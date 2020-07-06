@@ -37,7 +37,7 @@ The above example shows the minimum required to use AR. The `<model-viewer>` com
 
 ### Annotations
 
-You can also annotate your models using HTML and CSS. This capability is often used to "attach" labels to parts of the model in a way that moves with the model as it’s manipulated. The annotations are customizable, including their appearance and the extent to which they’re hidden when they’re positioned behind the model. Annotations also work in AR.
+You can also annotate your models using HTML and CSS. This capability is often used to "attach" labels to parts of the model in a way that moves with the model as it's manipulated. The annotations are customizable, including their appearance and the extent to which they're hidden when they're positioned behind the model. Annotations also work in AR.
 
 ```html
 <style>
