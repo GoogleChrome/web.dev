@@ -17,7 +17,7 @@ tags:
 
 ## What’s new since last year?
 
-Version 1.0 includes the most-requested features, improvements to speed and fidelity, and built-in support for augmented reality (AR) on the web.
+Version 1.0 includes built-in support for augmented reality (AR) on the web, improvements to speed and fidelity, and other frequently-requested features.
 
 ### Augmented reality ###
 
