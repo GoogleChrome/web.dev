@@ -19,7 +19,7 @@ tags:
 
 Version 1.0 includes built-in support for augmented reality (AR) on the web, improvements to speed and fidelity, and other frequently-requested features.
 
-### Augmented reality ###
+### Augmented reality
 
 Viewing a 3D model on a blank canvas is great, but being able to view it in your space is even better. Now `<model-viewer>` supports WebXR augmented reality, for an entirely-within-the-browser 3D and AR experience on Chrome Android. 
 
@@ -31,11 +31,11 @@ Viewing a 3D model on a blank canvas is great, but being able to view it in your
 
 The above example shows the minimum required to use AR. The `<model-viewer>` component also allows you use HTML to customize the WebXR AR experience, as shown in [this example on the modelviewer.dev site](https://modelviewer.dev/examples/webxr.html).
 
-### Camera controls ###
+### Camera controls
 
 `<model-viewer>` now gives full control over the view's virtual camera (the perspective of the viewer). This includes the camera target, orbit (position relative to the model), and field of view. You can also enable auto-rotation and set limits on user interaction (e.g. maximum and minimum fields of view). 
 
-### Annotations ###
+### Annotations
 
 You can also annotate your models using HTML and CSS. This capability is often used to “attach” labels to parts of the model in a way that moves with the model as it’s manipulated. The annotations are customizable, including their appearance and the extent to which they’re hidden when they’re positioned behind the model. Annotations also work in AR.
 
@@ -70,11 +70,11 @@ You can also annotate your models using HTML and CSS. This capability is often u
 
 See the [annotations documentation page](https://modelviewer.dev/examples/annotations.html) for more information.
 
-### Tester ###
+### Tester
 
 The new version introduces and hosts a `<model-viewer>` [“tester” tool](https://modelviewer.dev/examples/tester.html), which enables you to quickly preview your model, try out different `<model-viewer>` configurations (e.g. exposure and shadow softness), generate a poster image, and interactively get coordinates for annotations. 
 
-### Rendering and performance improvements ###
+### Rendering and performance improvements
 
 Rendering fidelity has been greatly improved, especially for high dynamic range (HDR) environments. `<model-viewer>` now also uses a direct render path when only one `<model-viewer>` element is in the viewport, which increases performance (especially on Firefox). Lastly, dynamically scaling the render resolution improved frame rate dramatically. The example below shows off some of these recent improvements. 
 
@@ -84,11 +84,11 @@ Rendering fidelity has been greatly improved, especially for high dynamic range 
 
 <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://modelviewer.dev/webdotdev/rendering.html" frameborder="0" allowfullscreen></iframe>
 
-### Stability ###
+### Stability
 
-With `<model-viewer>` reaching its first major version, we’re prioritizing API stability and will avoid making any breaking changes until version 2.0 is released. 
+With `<model-viewer>` reaching its first major version, API stability is a priority, so breaking changes will be avoided until version 2.0 is released. 
 
 ## What’s next?
 
-`<model-viewer>` version 1.0 includes the most-requested capabilities, but we’re not done yet. 
-We’re continuing to add features, as well as focusing on performance, stability, documentation, and tooling. If you have suggestions, file an [issue in Github](https://github.com/google/model-viewer/issues); also, PRs are always welcome. You can also stay connected by following [`<model-viewer>` on Twitter](https://twitter.com/modelviewer) and checking out our [community chat on Spectrum](https://spectrum.chat/model-viewer?tab=posts).
+`<model-viewer>` version 1.0 includes the most-requested capabilities, but the team is not done yet. 
+More features will be added, as will improvements in performance, stability, documentation, and tooling. If you have suggestions, file an [issue in Github](https://github.com/google/model-viewer/issues); also, PRs are always welcome. You can also stay connected by following [`<model-viewer>` on Twitter](https://twitter.com/modelviewer) and checking out the [community chat on Spectrum](https://spectrum.chat/model-viewer?tab=posts).
