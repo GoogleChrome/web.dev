@@ -65,7 +65,7 @@ iterated on the design.
 | 2. Create initial draft of specification     | [Complete][spec]             |
 | 3. Gather feedback and iterate on design     | Complete                     |
 | 4. Origin trial                              | Complete                     |
-| 5. **Launch**                                | **Android: Chrome 80<br/>Edge for Windows: Chrome 85** |
+| 5. **Launch**                                | **Android: Chrome 80<br/>Edge for Windows: 85** |
 
 </div>
 
@@ -233,7 +233,7 @@ relatedApps.forEach((app) => {
 `getInstalledRelatedApps()` is currently supported on the following platforms:
 
 * Android: Chrome 80 and later
-* Windows: Edge Chrome 85 and later; Chrome (coming soon)
+* Windows: Edge 85 and later; Chrome is coming soon
 {% endAside %}
 
 To prevent sites from testing an overly broad set of their own apps,
