@@ -13,7 +13,7 @@ tags:
   - model-viewer
 ---
 
-3D models are more relevant than ever. Retailers are using 3D models to bring the in-store shopping experience to customers at home. Museums are making 3D models of their artifacts available to everyone on the web. Unfortunately, it can be difficult to add a 3D model to a website in a way that provides a great user experience, without a deep knowledge of 3D technologies or resorting to hosting 3D content on a third-party site. To address this issue, [early last year we introduced](https://developers.google.com/web/updates/2019/02/model-viewer) `<model-viewer>`, which seeks to make putting 3D models on the web as easy as writing a few lines of HTML. Since then, we’ve been working to address feedback and requests from the community. The culmination of that work is `<model-viewer>` version 1.0. 
+3D models are more relevant than ever. Retailers are using 3D models to bring the in-store shopping experience to customers at home. Museums are making 3D models of their artifacts available to everyone on the web. Unfortunately, it can be difficult to add a 3D model to a website in a way that provides a great user experience, without a deep knowledge of 3D technologies or resorting to hosting 3D content on a third-party site. `<model-viewer>`, [introduced in early 2019](https://developers.google.com/web/updates/2019/02/model-viewer), seeks to make putting 3D models on the web as easy as writing a few lines of HTML. Since then, the team has been working to address feedback and requests from the community. The culmination of that work is `<model-viewer>` version 1.0. 
 
 ## What’s new since last year?
 
@@ -72,11 +72,11 @@ See the [annotations documentation page](https://modelviewer.dev/examples/annota
 
 ### Tester ###
 
-We also created and host a `<model-viewer>` [“tester” tool](https://modelviewer.dev/examples/tester.html), which enables you to quickly preview your model, try out different `<model-viewer>` configurations (e.g. exposure and shadow softness), generate a poster image, and interactively get coordinates for annotations. 
+The new version introduces and hosts a `<model-viewer>` [“tester” tool](https://modelviewer.dev/examples/tester.html), which enables you to quickly preview your model, try out different `<model-viewer>` configurations (e.g. exposure and shadow softness), generate a poster image, and interactively get coordinates for annotations. 
 
 ### Rendering and performance improvements ###
 
-We’ve greatly improved rendering fidelity, especially for high dynamic range (HDR) environments. We also now use a direct render path when only one `<model-viewer>` element is in the viewport, which increases performance (especially on Firefox). Lastly, dynamically scaling the render resolution improved frame rate dramatically. The example below shows off some of these recent improvements. 
+Rendering fidelity has been greatly improved, especially for high dynamic range (HDR) environments. `<model-viewer>` now also uses a direct render path when only one `<model-viewer>` element is in the viewport, which increases performance (especially on Firefox). Lastly, dynamically scaling the render resolution improved frame rate dramatically. The example below shows off some of these recent improvements. 
 
 ```html
 <model-viewer camera-controls skybox-image="spruit_sunrise_1k_HDR.hdr" alt="A 3D model of a damaged helmet" src="DamagedHelmet.glb"></model-viewer>
