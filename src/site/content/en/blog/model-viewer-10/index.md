@@ -15,7 +15,7 @@ tags:
 
 3D models are more relevant than ever. Retailers are using 3D models to bring the in-store shopping experience to customers at home. Museums are making 3D models of their artifacts available to everyone on the web. Unfortunately, it can be difficult to add a 3D model to a website in a way that provides a great user experience, without a deep knowledge of 3D technologies or resorting to hosting 3D content on a third-party site. `<model-viewer>`, [introduced in early 2019](https://developers.google.com/web/updates/2019/02/model-viewer), seeks to make putting 3D models on the web as easy as writing a few lines of HTML. Since then, the team has been working to address feedback and requests from the community. The culmination of that work is `<model-viewer>` version 1.0. 
 
-## What’s new since last year?
+## What's new since last year?
 
 Version 1.0 includes built-in support for augmented reality (AR) on the web, improvements to speed and fidelity, and other frequently-requested features.
 
@@ -37,7 +37,7 @@ The above example shows the minimum required to use AR. The `<model-viewer>` com
 
 ### Annotations
 
-You can also annotate your models using HTML and CSS. This capability is often used to “attach” labels to parts of the model in a way that moves with the model as it’s manipulated. The annotations are customizable, including their appearance and the extent to which they’re hidden when they’re positioned behind the model. Annotations also work in AR.
+You can also annotate your models using HTML and CSS. This capability is often used to "attach" labels to parts of the model in a way that moves with the model as it’s manipulated. The annotations are customizable, including their appearance and the extent to which they’re hidden when they’re positioned behind the model. Annotations also work in AR.
 
 ```html
 <style>
@@ -72,7 +72,7 @@ See the [annotations documentation page](https://modelviewer.dev/examples/annota
 
 ### Tester
 
-The new version introduces and hosts a `<model-viewer>` [“tester” tool](https://modelviewer.dev/examples/tester.html), which enables you to quickly preview your model, try out different `<model-viewer>` configurations (e.g. exposure and shadow softness), generate a poster image, and interactively get coordinates for annotations. 
+The new version introduces and hosts a `<model-viewer>` ["tester" tool](https://modelviewer.dev/examples/tester.html), which enables you to quickly preview your model, try out different `<model-viewer>` configurations (e.g. exposure and shadow softness), generate a poster image, and interactively get coordinates for annotations. 
 
 ### Rendering and performance improvements
 
@@ -88,7 +88,7 @@ Rendering fidelity has been greatly improved, especially for high dynamic range 
 
 With `<model-viewer>` reaching its first major version, API stability is a priority, so breaking changes will be avoided until version 2.0 is released. 
 
-## What’s next?
+## What's next?
 
 `<model-viewer>` version 1.0 includes the most-requested capabilities, but the team is not done yet. 
 More features will be added, as will improvements in performance, stability, documentation, and tooling. If you have suggestions, file an [issue in Github](https://github.com/google/model-viewer/issues); also, PRs are always welcome. You can also stay connected by following [`<model-viewer>` on Twitter](https://twitter.com/modelviewer) and checking out the [community chat on Spectrum](https://spectrum.chat/model-viewer?tab=posts).
