@@ -1,13 +1,13 @@
 ---
 title: '@property: Giving Superpowers to CSS Variables'
-subhead: TBD
+subhead: The Houdini Properties and Values API is coming to your CSS file in Chrome 85.
 authors:
   - una
 date: 2020-07-22
 updated: 2020-07-22
 hero: demo.gif
 alt: A virtual object in a real-world view.
-description: TBD
+description: Learn how to implement CSS custom properties with semantic typing, a fallback value, and more, directly in your CSS file.
 tags:
   - blog
   - css
@@ -97,7 +97,7 @@ However, if you declare syntax type when writing custom properties, and then use
   @property --gradPoint {
     syntax: '<percentage>';
     inherits: false;
-    initialValue: '40%';
+    initial-value: 40%;
   }
 }
 ```
@@ -124,7 +124,7 @@ This will now enable that smooth gradient transition.
 
 ## Conclusion 
 
-The @property syntax makes an exciting technology even more accessible by allowing us to write semantically meaningful CSS within CSS itself. To learn more about CSS Houdini and the Properties and Values API, check out these resources:
+The `@property` syntax makes an exciting technology even more accessible by allowing us to write semantically meaningful CSS within CSS itself. To learn more about CSS Houdini and the Properties and Values API, check out these resources:
 
 - [Is Houdini Ready Yet?](http://ishoudinireadyyet.com/)
 - [Smarter custom properties with Houdini's new API](https://web.dev/css-props-and-vals/)
