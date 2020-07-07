@@ -27,15 +27,15 @@ For a long time, it was fairly reasonable to estimate anyone's screen pixel dens
 How do we go from this virtual display to the user's real display? Enter `devicePixelRatio`. This global value tells you how many _physical_ pixels you need to form a single CSS pixel. If `devicePixelRatio` (dPR) is `1`, you are working on a monitor with roughly 96DPI. If you have a retina screen, your dPR is probably `2`. On phones it is not uncommon to encounter higher (and weirder) dPR values like `2`, `3` or even `2.65`. It is essential to note that this value is _exact_, but doesn't let you derive the monitor's _actual_ DPI value. A dPR of `2` means that 1 CSS pixel will map to _exactly_ 2 physical pixels.
 
 {% Details %}
-  {% DetailsSummary %}
-  Example
+{% DetailsSummary %}
+Example
 
-  My monitor has a dPR of `1` according to Chrome…
-  {% endDetailsSummary %}
-  It has 3440 pixels in width and the display area is 79cm wide.
-  That leads to a resolution of 110 DPI. Close to 96, but not quite.
-  That is also the reason why a `<div style="width: 1cm; height: 1cm">`
-  will not exactly measure 1cm in size on most displays.
+My monitor has a dPR of `1` according to Chrome…
+{% endDetailsSummary %}
+It has 3440 pixels in width and the display area is 79cm wide.
+That leads to a resolution of 110 DPI. Close to 96, but not quite.
+That is also the reason why a `<div style="width: 1cm; height: 1cm">`
+will not exactly measure 1cm in size on most displays.
 {% endDetails %}
 
 Finally, dPR can also be affected by your browser's zoom feature. If you zoom in, the browser increases the reported dPR, causing everything to render bigger. If you check `devicePixelRatio` in a DevTools Console while zooming, you can see fractional values appear.
