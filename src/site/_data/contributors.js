@@ -1341,6 +1341,17 @@ const contributors = {
       name: 'Google',
     },
   },
+  mattreynolds: {
+    name: {
+      given: 'Matt',
+      family: 'Reynolds',
+    },
+    github: 'nondebug',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
 };
 
 const processedContributors = {};
