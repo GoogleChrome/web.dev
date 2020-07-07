@@ -5,36 +5,35 @@ description: |
   Learn how to pass Lighthouse's "Remove unused JavaScript" audit.
 web_lighthouse:
   - unused-javascript
-date: 2020-06-17
+date: 2020-07-07
 ---
 
-Unused JavaScript can slow down your page speed if the JavaScript is
-[render-blocking][crp]. When the browser encounters a render-blocking script
-it has to download, parse, compile, and evaluate the script before it
-can proceed with all of the other work that's needed for rendering the page.
+Unused JavaScript can slow down your page load speed:
 
-{% Aside %}
-  Since the JavaScript code that Lighthouse flags in this audit is unused,
-  there is no evaluation cost. However, there are download, parse, and compilation
-  costs.
-{% endAside %}
+* If the JavaScript is [render-blocking][crp], the browser must
+  download, parse, compile, and evaluate the script before it can proceed
+  with all of the other work that's needed for rendering the page.
+* Even if the JavaScript is asynchronous (i.e. not render-blocking), the
+  code competes for bandwidth with other resources while it's downloading,
+  which has significant performance implications. Sending unused code over
+  the network is also wasteful for mobile users who don't have unlimited
+  data plans.
 
-Even if the unused JavaScript is not render-blocking, sending unused code over
-the network is always a waste of bandwidth, which is especially important
-for mobile users that don't have unlimited data plans.
 
 ## How the unused JavaScript audit fails
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
-flags every JavaScript file with more than 20 kilobytes of unused code:
+flags every JavaScript file with more than 20 kibibytes of unused code:
 
 <figure class="w-figure">
   <img class="w-screenshot" src="remove-unused-javascript.jpg"
        alt="A screenshot of the audit.">
+  <figcaption class="w-figcaption">
+    Click a value in the <b>URL</b> column to open the script's
+    source code in a new tab.
+  </figcaption>
 </figure>
 
-Click a value in the **URL** column to open the script's source code
-in a new tab.
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
 
@@ -54,14 +53,14 @@ Check out the following [Tooling.Report][tr] tests to find out if your bundler
 supports features that make it easier to avoid or remove unused code:
 
 * [Code Splitting][split]
-* [Dead Code Elimination][eliminate]
-* [Dead Imported Code][import]
+* [Unused Code Elimination][eliminate]
+* [Unused Imported Code][import]
 
 ## Resources
 
 * [Source code for the **Remove unused code** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/unused-javascript.js)
-* [Adding interactivity with JavaScript][crp]
 * [Remove unused code](/remove-unused-code/)
+* [Adding interactivity with JavaScript][crp]
 * [Code Splitting][split]
 * [Dead Code Elimination][eliminate]
 * [Dead Imported Code][import]
