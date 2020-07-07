@@ -31,10 +31,10 @@ a different regional timezone, and Googlers shared a round of updates, news, and
 of helping developers with tools and guidance to keep the web stable, powerful, and accessible.
 
 If you missed some of the live stream, all of the
-[sessions are recorded](/live) and available for you to watch at your leisure.
-And check out our upcoming [regional events](/live/#regional-events) all around
-the world. These events are organized by Google Developer Groups and will provide
-deep-dive sessions on the topics that were covered during web.dev LIVE.
+[sessions are recorded](/live) and available for you to watch on YouTube.
+We've also got upcoming [regional events](/live/#regional-events) all around
+the world which are organized by Google Developer Groups and will provide
+deep-dive sessions on topics related to what we covered during web.dev LIVE.
 
 Let's dive into some of the news and updates that were shared over the three days.
 
