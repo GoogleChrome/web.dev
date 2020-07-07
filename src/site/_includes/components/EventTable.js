@@ -25,22 +25,7 @@ const AuthorsDate = require('./AuthorsDate');
  * @return {string}
  */
 module.exports = (days, authorsCollection) => {
-  // Find the default day to show, as a very basic non-JS fallback. Pick the
-  // first day where the build time is before the end time of the sessions.
-  // This isn't a very good fallback as our build happens at minimum of once per
-  // day, but it's better than nothing.
-  const now = new Date();
-  let defaultScheduleDay = 0;
-  for (let i = 0; i < days.length; ++i) {
-    const {date, duration} = days[i];
-    const endTime = new Date(date);
-    endTime.setMinutes(endTime.setMinutes() + duration);
-
-    if (now < endTime) {
-      defaultScheduleDay = i;
-      break;
-    }
-  }
+  const defaultScheduleDay = 0; // we're post-event, use the first day as default
 
   const slugs = {};
   const slugForTitle = (title) => {
