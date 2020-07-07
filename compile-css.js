@@ -121,17 +121,15 @@ function renderTo(result, fileName) {
 const out = compileCSS('src/styles/all.scss');
 const hash = hashForContent(out.css);
 
-// We write an unhashed CSS file (as well as the hashed one) for two reasons:
-//  - to not force an Eleventy rebuild during dev
-//  - to work around #3363 (prod clients loaded before 2020-06-16 will see an unstyled page flash)
+// We write an unhashed CSS file due to unfortunate real-world caching problems with a hash inside
+// the CSS name (we see our old HTML cached longer than the assets are available).
 renderTo(out, `dist/app.css`);
-renderTo(out, `dist/app-${hash}.css`);
 
-// Write the CSS entrypoint to a known file for Eleventy to read. In dev, use the unhashed version.
-const resourcePath = isProd ? `/app-${hash}.css` : '/app.css';
+// Write the CSS entrypoint to a known file, with a query hash, for Eleventy to read.
+const resourceName = `app.css?v=${hash}`;
 fs.writeFileSync(
   'src/site/_data/resourceCSS.json',
-  JSON.stringify({path: resourcePath}),
+  JSON.stringify({path: `/${resourceName}`}),
 );
 
-log(`Finished CSS! (app-${hash}.css)`);
+log(`Finished CSS! (${resourceName})`);

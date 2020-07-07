@@ -28,6 +28,7 @@ const rollupPluginIstanbul = require('rollup-plugin-istanbul');
 const rollup = require('rollup');
 const buildVirtualJSON = require('./src/build/virtual-json');
 const minifySource = require('./src/build/minify-js');
+const {hashForFiles} = require('./src/build/hash');
 
 process.on('unhandledRejection', (reason, p) => {
   log.error('Build had unhandled rejection', reason, p);
@@ -127,7 +128,7 @@ async function build() {
     },
   });
   const bootstrapGenerated = await bootstrapBundle.write({
-    entryFileNames: '[name]-[hash].js',
+    entryFileNames: '[name].js',
     sourcemap: true,
     dir: 'dist',
     format: 'iife',
@@ -140,10 +141,13 @@ async function build() {
   const bootstrapPath = bootstrapGenerated.output[0].fileName;
   outputFiles.push(bootstrapPath);
 
+  const hash = hashForFiles(path.join('dist', bootstrapPath));
+  const resourceName = `${bootstrapPath}?v=${hash}`;
+
   // Write the bundle entrypoint to a known file for Eleventy to read.
   await fs.writeFile(
     'src/site/_data/resourceJS.json',
-    JSON.stringify({path: '/' + bootstrapPath}),
+    JSON.stringify({path: `/${resourceName}`}),
   );
 
   // Compress the generated source here, as we need the final files and hashes for the Service
@@ -152,6 +156,7 @@ async function build() {
     const ratio = await minifySource(outputFiles);
     log(`Minified site code is ${(ratio * 100).toFixed(2)}% of source`);
   }
+  log(`Finished JS! (${resourceName})`);
 
   return outputFiles.length;
 }

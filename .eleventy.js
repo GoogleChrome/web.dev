@@ -17,12 +17,11 @@
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
+const resourcePath = require('./src/build/resource-path');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItAttrs = require('markdown-it-attrs');
 const slugify = require('slugify');
-const fs = require('fs');
-const path = require('path');
 
 const componentsDir = 'src/site/_includes/components';
 const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
@@ -79,6 +78,7 @@ const removeDrafts = require(`./${filtersDir}/remove-drafts`);
 const strip = require(`./${filtersDir}/strip`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
 const stripLanguage = require(`./${filtersDir}/strip-language`);
+const stripQueryParamsDev = require(`./${filtersDir}/strip-query-params-dev`);
 const getPaths = require(`./${filtersDir}/get-paths`);
 
 const transformsDir = 'src/site/_transforms';
@@ -190,6 +190,7 @@ module.exports = function (config) {
   config.addFilter('removeDrafts', removeDrafts);
   config.addFilter('stripBlog', stripBlog);
   config.addFilter('stripLanguage', stripLanguage);
+  config.addFilter('stripQueryParamsDev', stripQueryParamsDev);
   config.addFilter('getPaths', getPaths);
   config.addFilter('strip', strip);
 
@@ -247,25 +248,15 @@ module.exports = function (config) {
   if (isProd) {
     // We generate the paths to our JS and CSS entrypoints as a side-effect
     // of their build scripts, so make sure they exist in prod builds.
-    const checkJSONDataPath = (name) => {
-      const f = `src/site/_data/${name}.json`;
+    ['css', 'js'].forEach((name) => {
       try {
-        const raw = JSON.parse(fs.readFileSync(f), 'utf-8');
-        if (!raw['path']) {
-          throw new Error(`could not find 'path' key in: ${f}`);
-        }
-        const check = path.join('dist', raw['path']);
-        if (!fs.existsSync(check)) {
-          throw new Error(`path did not exist: ${check}`);
-        }
+        resourcePath(name);
       } catch (e) {
         throw new Error(
           `could not find valid JSON path inside src/site/_data/: ${name} (${e})`,
         );
       }
-    };
-    checkJSONDataPath('resourceCSS');
-    checkJSONDataPath('resourceJS');
+    });
   }
 
   // ----------------------------------------------------------------------------
