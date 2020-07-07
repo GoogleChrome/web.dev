@@ -35,6 +35,7 @@ const days = [
           "On day 1, we kick things off by sharing why we are coming together as a community, including a guest speaker from CA.gov. We'll then cover some of the key updates made to the platform around performance, security and privacy, as well as a look at build tools and rich content.",
           'Special Guest: <a href="https://twitter.com/nopatternaaron">Aaron Hans, Tech lead, CA.Gov</a>',
         ],
+        videoId: 'Wy1bTEFQyCc',
       },
       {
         speaker: 'egsweeny',
@@ -44,6 +45,7 @@ const days = [
         abstract: [
           "Our understanding of how to effectively measure and optimize a users' experience is continually evolving, and we keep our metrics and tooling updated to reflect the latest in our learnings. This talk will cover where to measure your Core Web Vitals in the lab and in the field, as well as how to leverage the newest features and products to build and maintain exceptionally fast experiences for all of your users.",
         ],
+        videoId: 'yDHfrhCGFQw',
       },
       {
         speaker: 'addyosmani',
@@ -54,6 +56,7 @@ const days = [
           "In this hands-on talk, we'll cover tips & tricks for optimizing your user-experience to meet the Core Web Vitals. We'll use tools like Lighthouse & DevTools, show you code snippets for fixes and highlight how you too can get fast and stay fast.",
           "Optimizing for quality of user experience is key to the long-term success of any site on the web. Whether you're a business owner, marketer, or developer, Core Web Vitals can help you quantify the experience of your site and identify opportunities to improve.",
         ],
+        videoId: 'AQqFZ5t8uNc',
       },
       {
         speaker: 'rviscomi',
@@ -63,6 +66,7 @@ const days = [
         abstract: [
           "There is so much information in the Chrome UX Report dataset on BigQuery, it could feel overwhelming at first. We've been hard at work making sure that the treasure trove of web transparency data is accessible to every developer. Learn how to query the Chrome UX Report using our new summary datasets and shortcut functions, so you can extract insights quickly and cheaply like a pro.",
         ],
+        videoId: 'YGcA-h4YM6w',
       },
       {
         speaker: 'houssein',
@@ -72,6 +76,7 @@ const days = [
         abstract: [
           'Learn how to analyze your bundled JavaScript code and to spot common issues that can easily bloat up your application size.',
         ],
+        videoId: 'MxBCPc7bQvM',
       },
       {
         speaker: ['paullewis', 'philipwalton'],
@@ -82,6 +87,7 @@ const days = [
           "The Core Web Vitals are a great way to assess the UX impact of page load performance. In this talk we'll cover what the vitals are, where they came from, and how you can use Chrome's DevTools to explore your site or app's vitals values.",
           'For more on Core Web Vitals check out <a href="https://web.dev/vitals/">https://web.dev/vitals/</a>',
         ],
+        videoId: 't8YBZLjL-KU',
       },
       {
         speaker: ['nainar', 'sebabenz'],
@@ -91,15 +97,7 @@ const days = [
         abstract: [
           "The one where Naina and Sebastian discuss how AMP makes web development less painful and why it's time to move away from paired AMP.",
         ],
-      },
-      {
-        speaker: ['crystallambert', 'morss'],
-        title: 'Workerized JavaScript Made Easy',
-        blurb:
-          'In this talk we chat about how to use &lt;amp-script&gt; to create your very own Workerized JS browser interactions!',
-        abstract: [
-          "When JavaScript lives in a Worker, it runs in a separate thread. Thus, it can't block the browser from creating smooth user experiences! Unfortunately, since Workers can't access the DOM directly, you can't just stick your JavaScript into a Worker. Fortunately, last year, AMP introduced &lt;amp-script&gt;, a component that makes this straightforward. In this talk we chat about how to use &lt;amp-script&gt; to create your very own Workerized JS browser interactions!",
-        ],
+        videoId: '2QWO78U43FU',
       },
       {
         speaker: 'martinsplitt',
@@ -109,6 +107,17 @@ const days = [
         abstract: [
           'Diagnosing common JavaScript SEO issues and helpful steps to debug them!',
         ],
+        videoId: 'himvKu12YCY',
+      },
+      {
+        speaker: ['crystallambert', 'morss'],
+        title: 'Workerized JavaScript Made Easy',
+        blurb:
+          'In this talk we chat about how to use &lt;amp-script&gt; to create your very own Workerized JS browser interactions!',
+        abstract: [
+          "When JavaScript lives in a Worker, it runs in a separate thread. Thus, it can't block the browser from creating smooth user experiences! Unfortunately, since Workers can't access the DOM directly, you can't just stick your JavaScript into a Worker. Fortunately, last year, AMP introduced &lt;amp-script&gt;, a component that makes this straightforward. In this talk we chat about how to use &lt;amp-script&gt; to create your very own Workerized JS browser interactions!",
+        ],
+        videoId: 'nOEXIcMdr_g',
       },
       {
         speaker: 'martinsplitt',
@@ -118,6 +127,7 @@ const days = [
         abstract: [
           'If you are building a great website with JavaScript, you want it to stand out in Google Search, too. To be eligible for rich results, you need to add structured data to your pages. In this session we walk through typical approaches to do this both in popular frameworks as well as vanilla JavaScript.',
         ],
+        videoId: 'hBKZnaIMm4M',
       },
     ],
   },

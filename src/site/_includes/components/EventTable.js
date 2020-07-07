@@ -44,7 +44,10 @@ module.exports = (days, authorsCollection) => {
     return id;
   };
 
-  const renderSession = ({speaker, title, blurb = '', abstract}) => {
+  const renderSession = (
+    playlistId,
+    {speaker, title, blurb = '', abstract, videoId},
+  ) => {
     // Always pass an Array of author IDs.
     const authors = typeof speaker === 'string' ? [speaker] : speaker;
 
@@ -55,6 +58,25 @@ module.exports = (days, authorsCollection) => {
       (abstract && (typeof abstract === 'string' ? [abstract] : abstract)) ||
       [];
 
+    let showVideoLink = false;
+    const u = new URL('https://www.youtube.com/watch');
+    if (videoId) {
+      showVideoLink = true;
+      u.searchParams.set('v', videoId);
+    }
+    if (playlistId) {
+      u.searchParams.set('list', playlistId);
+    }
+
+    const videoLink = showVideoLink
+      ? html`<a
+          href="${u.toString()}"
+          target="_blank"
+          class="w-event-schedule__video"
+          >Watch on YouTube</a
+        >`
+      : '';
+
     return html`
       <div class="w-event-schedule__row" data-session-id=${id}>
         <div class="w-event-schedule__cell w-event-schedule__speaker">
@@ -64,6 +86,7 @@ module.exports = (days, authorsCollection) => {
           <a class="w-event-schedule__open" href="#${id}">
             <span>${title}</span>
           </a>
+          ${videoLink}
           <div class="w-event-schedule__blurb">
             ${blurb}
           </div>
@@ -91,7 +114,7 @@ module.exports = (days, authorsCollection) => {
         </div>
 
         <div class="w-event-schedule">
-          ${day.sessions.map(renderSession)}
+          ${day.sessions.map(renderSession.bind(null, day.playlistId))}
         </div>
       </div>
     `;
