@@ -23,7 +23,6 @@ const rollupPluginReplace = require('rollup-plugin-replace');
 const OMT = require('@surma/rollup-plugin-off-main-thread');
 const rollup = require('rollup');
 const {getManifest} = require('workbox-build');
-const resourcePath = require('./src/build/resource-path');
 const minifySource = require('./src/build/minify-js');
 
 process.on('unhandledRejection', (reason, p) => {
@@ -47,26 +46,17 @@ async function buildCacheManifest() {
       // We don't include jpg files, as they're used for authors and hero
       // images, which are part of articles, and not the top-level site.
       'images/**/*.{png,svg}',
-      '*.css',
       '*.js',
+      '*.css',
     ],
     globIgnores: [
       // This removes large shared PNG files that are used only for articles.
       'images/{shared}/**',
     ],
   };
-  if (isProd) {
-    config.additionalManifestEntries = [
-      {url: resourcePath('js'), revision: null},
-      {url: resourcePath('css'), revision: null},
-    ];
-  } else {
-    // Don't use hash revisions in dev, or even check that the files exist.
-    config.globPatterns.push('bootstrap.js', 'app.css');
-  }
 
   const toplevelManifest = await getManifest(config);
-  if (toplevelManifest.warnings.length) {
+  if (isProd && toplevelManifest.warnings.length) {
     throw new Error(`toplevel manifest: ${toplevelManifest.warnings}`);
   }
 
@@ -163,6 +153,10 @@ async function generateManifest() {
       throw e;
     }
     log('Failed to generate Service Worker in dev', e);
-    await fs.unlink('dist/sw-manifest');
+    try {
+      await fs.unlink('dist/sw-manifest');
+    } catch {
+      // ignore, just sanity cleanup
+    }
   }
 })();
