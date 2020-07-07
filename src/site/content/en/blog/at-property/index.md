@@ -1,6 +1,6 @@
 ---
 title: '@property: Giving Superpowers to CSS Variables'
-subhead: The Houdini Properties and Values API is coming to your CSS file in Chrome 85.
+subhead: The Houdini Properties and Values API is coming to your CSS file in Chromium 85.
 authors:
   - una
 date: 2020-07-22
@@ -20,10 +20,10 @@ One of the most exciting additions to CSS within the Houdini umbrella is the [Pr
 
 ## Writing Houdini Custom Properties
 
-Here's an example of setting a custom property (think: CSS variable), but now with a syntax (type), initial value (fallback), and inheritance statement (does it inherit the value from it's parent or not?). The current way to do this is through `CSS.RegisterProperty` in JavaScript, but in Chrome 85+, the `@property` syntax will be supported in your CSS files:
+Here's an example of setting a custom property (think: CSS variable), but now with a syntax (type), initial value (fallback), and inheritance statement (does it inherit the value from it's parent or not?). The current way to do this is through `CSS.RegisterProperty` in JavaScript, but in Chromium 85+, the `@property` syntax will be supported in your CSS files:
 
 <div class="w-columns">
-{% Compare 'worse', 'Separate JavaScript file (Chrome 78+)' %}
+{% Compare 'worse', 'Separate JavaScript file (Chromium 78+)' %}
 ```js
 CSS.registerProperty({
   name: '--colorPrimary',
@@ -34,7 +34,7 @@ CSS.registerProperty({
 ```
 {% endCompare %}
 
-{% Compare 'better', 'Included in CSS file (Chrome 85+)' %}
+{% Compare 'better', 'Included in CSS file (Chromium 85+)' %}
 ```css
 @property --colorPrimary {
   syntax: '<color>';
