@@ -20,17 +20,36 @@ One of the most exciting additions to CSS within the Houdini umbrella is the [Pr
 
 ## Writing Houdini Custom Properties
 
-Here's an example of setting a custom property (think: CSS variable), but now with a syntax (type), initial value (fallback), and inheritance statement (does it inherit the value from it's parent or not?):
+Here's an example of setting a custom property (think: CSS variable), but now with a syntax (type), initial value (fallback), and inheritance statement (does it inherit the value from it's parent or not?). The current way to do this is through `CSS.RegisterProperty` in JavaScript, but in Chrome 85+, the `@property` syntax will be supported in your CSS files:
 
+<div class="w-columns">
+{% Compare 'worse', 'Separate JavaScript file (Chrome 78+)' %}
+```js
+CSS.registerProperty({
+  name: '--colorPrimary',
+  syntax: '<color>',
+  initialValue: 'magenta',
+  inherits: false
+});
+```
+{% endCompare %}
+
+{% Compare 'better', 'Included in CSS file (Chrome 85+)' %}
 ```css
 @property --colorPrimary {
-  syntax: "<color>";
+  syntax: '<color>';
   initial-value: magenta;
   inherits: false;
 }
 ```
+{% endCompare %}
+</div>
 
-Now you can access `--colorPrimary` like any other CSS custom property, via `var(--colorPrimary)`. However, the difference here is that `colorPrimary` isn't just read as a string. It has data! 
+Now you can access `--colorPrimary` like any other CSS custom property, via `var(--colorPrimary)`. However, the difference here is that `colorPrimary` isn't just read as a string. It has data!
+
+{% Aside 'gotchas' %}
+  When writing a registered custom property with a specified `syntax`, you *must* also include an `initial-value`.
+{% endAside %}
 
 ## Fallback Values
 
