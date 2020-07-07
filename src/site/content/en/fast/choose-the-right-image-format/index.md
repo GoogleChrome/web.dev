@@ -62,7 +62,7 @@ However, vector formats fall short when the scene is complicated (for example, a
 the amount of SVG markup to describe all the shapes can be prohibitively high
 and the output may still not look "photorealistic".
 When that's the case, that's when you should be using a raster image format
-such as GIF, PNG, JPEG, or WebP.
+such as PNG, JPEG, or WebP.
 
 Raster images do not have the same nice properties of being resolution or zoom independent
 &mdash;when you scale up a raster image you'll see jagged and blurry graphics.
@@ -150,12 +150,6 @@ As a result, the choice of the "right format" for a particular image is a combin
 </thead>
 <tbody>
 <tr>
-  <td data-th="format"><a href="http://en.wikipedia.org/wiki/Graphics_Interchange_Format">GIF</a></td>
-  <td data-th="transparency">Yes</td>
-  <td data-th="animation">Yes</td>
-  <td data-th="browser">All</td>
-</tr>
-<tr>
   <td data-th="format"><a href="http://en.wikipedia.org/wiki/Portable_Network_Graphics">PNG</a></td>
   <td data-th="transparency">Yes</td>
   <td data-th="animation">No</td>
@@ -177,7 +171,7 @@ As a result, the choice of the "right format" for a particular image is a combin
 </table>
 </div>
 
-There are three universally supported raster image formats: GIF, PNG, and JPEG.
+There are two universally supported raster image formats: PNG and JPEG.
 In addition to these formats, modern browsers support the newer format WebP,
 which offers better overall compression and more features. So, which format should you use?
 
@@ -188,10 +182,10 @@ See [Use WebP images](/serve-images-webp/) for more details.
 
 In terms of older image formats, consider the following:
 
-1. **Do you need animation? Use GIF.**
-    * GIF limits the color palette to at most 256 colors, which makes it a poor choice for most images.
-    Further, PNG-8 delivers better compression for images with a small palette.
-    As a result, GIF is the right answer only when animation is required.
+1. **Do you need animation? Use `<video>` elements.**
+    * What about GIF? GIF limits the color palette to at most 256 colors,
+      and creates significantly larger file sizes than `<video>` elements. See
+      [Replace animated GIFs with video](/replace-gifs-with-videos/).
 1. **Do you need to preserve fine detail with highest resolution? Use PNG.**
     * PNG does not apply any lossy compression algorithms beyond the choice of the size of the color palette.
     As a result, it will produce the highest quality image,
