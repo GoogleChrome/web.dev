@@ -30,7 +30,7 @@ module.exports = {
   thumbnail: '/images/social.png',
   isBannerEnabled: true,
   banner:
-    'web.dev LIVE has kicked off! Join us now for our digital event from June 30th to July 2nd at [web.dev/live](/live/).',
+    'web.dev LIVE is now over! Head to [web.dev/live](/live/) to watch all the sessions, top Q&A and more.',
   // Note that the imageCdn value is only used when we do a production build
   // of the site. Otherwise all image paths are local. This means you can
   // develop locally without having to mess with the CDN at all.
