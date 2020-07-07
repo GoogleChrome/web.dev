@@ -10,15 +10,11 @@ alt: Holy grail layout.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - css
+  - layout
+  - mobile
 ---
 
-<div style="width:100%; padding-top: 56.25%; position: relative;">
-<iframe style="width:100%; height: 100%;position: absolute; top: 50%; left:
-50%; transform: translate(-50%,-50%);"
-src="https://www.youtube.com/embed/qm0IfG1GyZU" frameborder="0"
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
-</div>
+{% YouTube 'qm0IfG1GyZU' %}
 
 Modern CSS layouts enable developers to write really meaningful and robust styling rules with just a few keystrokes. The talk above and this subsequent post examine 10 powerful lines of CSS that do some serious heavy lifting.
 
@@ -67,7 +63,7 @@ By using Flexbox for this effect, you won't need media queries to adjust the pla
 
 The [`flex`](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) shorthand stands for: `flex: <flex-grow> <flex-shrink> <flex-basis>`.
 
-Because of this, if you want your boxes to fill out to their `<flex-basis>` size, shrink on smaller sizes, but not *stretch* to fill any additional space, write: `flex: 0 1 <flex-basis>`. In this case, your `<flex-basis`> is `150px` so it looks like:
+Because of this, if you want your boxes to fill out to their `<flex-basis>` size, shrink on smaller sizes, but not *stretch* to fill any additional space, write: `flex: 0 1 <flex-basis>`. In this case, your `<flex-basis>` is `150px` so it looks like:
 
 ```css/5
 .parent {
@@ -172,7 +168,7 @@ As in the last example, where the header and footer had auto-sized content, here
   </video>
 </figure>
 
-Next we have another classic: the 12-span grid. You can quickly write grids in CSS with the `repeat()` function. Using: `repeat(12, 1fr);` for the grid template columns gives you 12 columns each of 1fr.
+Next we have another classic: the 12-span grid. You can quickly write grids in CSS with the `repeat()` function. Using: `repeat(12, 1fr);` for the grid template columns gives you 12 columns each of `1fr`.
 
 ```css/2,6
 .parent {
@@ -209,7 +205,7 @@ Another way to write this is by using the `span` keyword. With `span`, you set t
   </video>
 </figure>
 
-For this seventh example, combine some of the concepts you've already learned about to create a responsive layout with automatically-placed and flexible children. Pretty neat. The key terms to remember here are `repeat`, `auto-(fit|fill)`, and `minmax()'`, which you can 'RAM' as an acronym to remember it by.
+For this seventh example, combine some of the concepts you've already learned about to create a responsive layout with automatically-placed and flexible children. Pretty neat. The key terms to remember here are `repeat`, `auto-(fit|fill)`, and `minmax()'`, which you remember by the acronym RAM.
 
 All together, it looks like:
 
@@ -245,7 +241,7 @@ With `auto-fit`, the boxes will stretch as their horizontal size exceeds 150px t
   </video>
 </figure>
 
-For the next layout, the main point to demonstrate here is `justify-content: space-between`, which places the first and last child elements at the edges of their bounding box, with the remaining space evenly distributed between the elements. For these cards, they are placed in a flexbox display mode, with the direction being set to column using `flex-direction: column`.
+For the next layout, the main point to demonstrate here is `justify-content: space-between`, which places the first and last child elements at the edges of their bounding box, with the remaining space evenly distributed between the elements. For these cards, they are placed in a Flexbox display mode, with the direction being set to column using `flex-direction: column`.
 
 This places the title, description, and image block in a vertical column inside of the parent card. Then, applying `justify-content: space-between` anchors the first (title) and last (image block) elements to the edges of the flexbox, and the descriptive text in between those gets placed with equal spacing to each endpoint.
 
@@ -265,7 +261,7 @@ This places the title, description, and image block in a vertical column inside 
   </video>
 </figure>
 
-Here's where we get into some techniques with [less current browser support](https://caniuse.com/#feat=css-math-functions), but have some really exciting implications for layouts and responsive UI design. In this demo, you are setting the width using clamp like so: `width: clamp(<min>, <actual>, <max>)`.
+Here's where we get into some techniques with [less browser support](https://caniuse.com/#feat=css-math-functions), but have some really exciting implications for layouts and responsive UI design. In this demo, you are setting the width using clamp like so: `width: clamp(<min>, <actual>, <max>)`.
 
 This sets an absolute min and max size, and an actual size. With values, that can look like:
 
@@ -275,11 +271,11 @@ This sets an absolute min and max size, and an actual size. With values, that ca
 }
 ```
 
-The minimum size here is `23ch` or 23 character units, and the maximum size is `46ch`, 46 characters. [Character width units](https://meyerweb.com/eric/thoughts/2018/06/28/what-is-the-css-ch-unit/) are based on the font size of the element (specifically the with of the '0' glyph). The 'actual' size is 50%, which represents 50% of this element's parent width.
+The minimum size here is `23ch` or 23 character units, and the maximum size is `46ch`, 46 characters. [Character width units](https://meyerweb.com/eric/thoughts/2018/06/28/what-is-the-css-ch-unit/) are based on the font size of the element (specifically the width of the `0` glyph). The 'actual' size is 50%, which represents 50% of this element's parent width.
 
 What the `clamp()` function is doing here is enabling this element to retain a 50% width *until* 50% is either greater than `46ch` (on wider viewports), or smaller than `23ch` (on smaller viewports). You can see that as I stretch and shrink the parent size, the width of this card increases to its clamped maximum point and decreases to its clamped minimum. It then stays centered in the parent since we've applied additional properties to center it. This enables more legible layouts, as the text won't be too wide (above `46ch`) or too squished and narrow (less than `23ch`).
 
-This is also a great way to implement responsive typography. For example, you could write: `font-size: clamp(1.5rem, 20vw, 3rem)`. In this case, the font-size of a headline would always stay clamped between 1.5rem and 3rem but would grow and shrink based on the `20vw` actual value to fit the width of of the viewport.
+This is also a great way to implement responsive typography. For example, you could write: `font-size: clamp(1.5rem, 20vw, 3rem)`. In this case, the font-size of a headline would always stay clamped between `1.5rem` and `3rem` but would grow and shrink based on the `20vw` actual value to fit the width of of the viewport.
 
 This is a great technique to ensure legibility with a minimum and maximum size value, but remember it is not supported in all modern browsers so make sure you have fallbacks and do your testing.
 
@@ -291,11 +287,11 @@ This is a great technique to ensure legibility with a minimum and maximum size v
   </video>
 </figure>
 
-And finally, this last layout tool is the most experimental of the bunch. It was recently introduced to Chrome Canary in Chromium 84+, and there is active effort from Firefox in getting this implemented, but it is not currently in any stable browser editions.
+And finally, this last layout tool is the most experimental of the bunch. It was recently introduced to Chrome Canary in Chromium 84, and there is active effort from Firefox in getting this implemented, but it is not currently in any stable browser editions.
 
 I do want to mention this, though, because it is such a frequently met problem. And that is just simply maintaining the aspect ratio of an image. 
 
-With the aspect-ratio property, as I resize the card, the green visual block maintains this 16 x 9 aspect ratio. We are Respecting the Aspect Ratio with `aspect-ratio: 16 / 9`. 
+With the `aspect-ratio` property, as I resize the card, the green visual block maintains this 16 x 9 aspect ratio. We are Respecting the Aspect Ratio with `aspect-ratio: 16 / 9`. 
 
 ```css/1
 .video {
@@ -303,7 +299,7 @@ With the aspect-ratio property, as I resize the card, the green visual block mai
 }
 ```
 
-To maintain a 16 x 9 aspect ratio without this property, you'd need to use a [padding-top hack](https://css-tricks.com/aspect-ratio-boxes/) and give it a padding of `56.25%` to set a top-to-width ratio. We will soon have a property for this to avoid the hack and the need to calculate the percentage. You can make a square with `1 / 1` ratio, a 2 to 1 ratio with `2 / 1`, and really just anything you need for this image to scale with a set size ratio.
+To maintain a 16 x 9 aspect ratio without this property, you'd need to use a [`padding-top` hack](https://css-tricks.com/aspect-ratio-boxes/) and give it a padding of `56.25%` to set a top-to-width ratio. We will soon have a property for this to avoid the hack and the need to calculate the percentage. You can make a square with `1 / 1` ratio, a 2 to 1 ratio with `2 / 1`, and really just anything you need for this image to scale with a set size ratio.
 
 
 ```css/1
@@ -316,4 +312,4 @@ While this feature is still up and coming, it it a good one to know about as it 
 
 ## Conclusion
 
-Thank you for following this journey through 10 powerful lines of CSS. To watch the full video, check out this [link](https://www.youtube.com/watch?v=qm0IfG1GyZU&feature=youtu.be) or the embed at the top of this post, and if you are looking for these demos to play with them yourself, check out [1linelayouts.glitch.me](https://1linelayouts.glitch.me).
+Thank you for following this journey through 10 powerful lines of CSS. To learn more, watch [the full video](https://youtu.be/qm0IfG1GyZU), and try out [the demos](https://1linelayouts.glitch.me) yourself.
