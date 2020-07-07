@@ -34,7 +34,7 @@ My monitor has a dPR of `1` according to Chrome…
 {% endDetailsSummary %}
 It has 3440 pixels in width and the display area is 79cm wide.
 That leads to a resolution of 110 DPI. Close to 96, but not quite.
-That is also the reason why a `&lt;div style="width: 1cm; height: 1cm"&gt;`
+That is also the reason why a <code>&lt;div style="width: 1cm; height: 1cm"&gt;</code>
 will not exactly measure 1cm in size on most displays.
 {% endDetails %}
 
