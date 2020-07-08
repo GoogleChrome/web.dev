@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: To avoid draining the battery, most devices will quickly fall asleep when left idle. While this is fine most of the time, there are some applications that need to keep the screen awake in order to complete some work. The Screen Wake Lock API provides a way to prevent the device from dimming or locking the screen when an application needs to keep running.
 date: 2018-12-18
-updated: 2020-06-25
+updated: 2020-07-02
 hero: hero.jpg
 hero_position: center
 alt: |
@@ -170,14 +170,13 @@ window.setTimeout(() => {
 ### The screen wake lock lifecycle {: #wake-lock-lifecycle }
 
 When you play with the [screen wake lock demo][demo], you'll notice that screen wake locks
-are sensitive to [page visibility][page-visibility-api] and
-[full-screen mode][full-screen-api]. This means that the screen wake lock
-will automatically be released when you enter full-screen mode, minimize a
+are sensitive to [page visibility][page-visibility-api].
+This means that the screen wake lock
+will automatically be released when you minimize a
 tab or window, or switch away from a tab or window where a screen wake lock is active.
 
 To reacquire the screen wake lock,
-listen for the [`visibilitychange`][visibility-change] event and
-the [`fullscreenchange`][fullscreen-change] event
+listen for the [`visibilitychange`][visibility-change] event
 and request a new screen wake lock when they occur:
 
 ```js
@@ -188,7 +187,6 @@ const handleVisibilityChange = () => {
 };
 
 document.addEventListener('visibilitychange', handleVisibilityChange);
-document.addEventListener('fullscreenchange', handleVisibilityChange);
 ```
 
 ## Minimize your impact on system resources {: #best-practices }
@@ -275,9 +273,7 @@ critical it is to support them.
 [issues]: https://github.com/w3c/wake-lock/issues
 [wicg-discourse]: https://discourse.wicg.io/t/wake-lock-api-suppressing-power-management-screensavers/769
 [page-visibility-api]: https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API
-[full-screen-api]: https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API
 [visibility-change]: https://developer.mozilla.org/en-US/docs/Web/API/Document/visibilitychange_event
-[fullscreen-change]: https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API#Event_handlers
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EWakeLock
 [cr-dev-twitter]: https://twitter.com/chromiumdev
 [ot]: https://developers.chrome.com/origintrials/#/view_trial/902971725287784449
