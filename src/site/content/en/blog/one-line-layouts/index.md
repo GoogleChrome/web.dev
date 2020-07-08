@@ -26,7 +26,7 @@ Modern CSS layouts enable developers to write really meaningful and robust styli
   </iframe>
 </div>
 
-To follow along or play with these demos on your own, check out the Glitch embed above, or visit [1linelayouts.glitch.me](1linelayouts.glitch.me).
+To follow along or play with these demos on your own, check out the Glitch embed above, or visit [1linelayouts.glitch.me](https://1linelayouts.glitch.me).
 
 ## 01. Super Centered: `place-items: center`
 
