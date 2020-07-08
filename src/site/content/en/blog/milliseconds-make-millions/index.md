@@ -54,13 +54,7 @@ Paint](/lcp/) instead.
 
 ### Retail
 
-With a 0.1s improvement in site speed across the measured metrics,
-study participants observed an increase in progression rates (percentage of
-users moving from a webpage through to the next step of a conversion funnel) on
-almost every step of the mobile journey. In particular, there was an increase of
-3.2% from Product Listing Page to Product Detail Page, and a 9.1% increase from
-Product Details Page to Add To Basket Page. Retail consumers also spent 9.2%
-more, a dramatic uplift.
+With a 0.1s improvement site speed across the measured metrics, study participants observed an in progression rates (percentage of users moving from a webpage through to the next step of a conversion funnel) on almost every step of the mobile journey. In particular, there an increase of 3.2% from Product Listing Page to Product Detail Page, and a 9.1% increase from Product Details Page to Add To Basket Page. Retail consumers also spent 9.2% more, dramatic uplift.
 
 <img src="retail.jpg"
      alt="Detailed description of how progression rates were affected for retail sites.
