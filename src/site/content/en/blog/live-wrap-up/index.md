@@ -71,10 +71,10 @@ talks that you can find at [web.dev/live](/live) in the Day 1 schedule.
 
 Developing for a platform as broad as the web can be challenging. Build tools are often at the heart
 of your web development project, taking on a key role in handling your developer and product
-lifecycle. 
+lifecycle.
 
 We have all seen unwieldy build config files, so to help web developers _and_ tooling authors
-conquer the complexity of the web, we built [tooling.report](http://tooling.report). It's a website
+conquer the complexity of the web, we built [tooling.report](https://web.dev/introducing-tooling-report). It's a website
 that helps you choose the right build tool for your next project, decide if migrating from one tool
 to another is worth it, or figure out how to incorporate best practices into your tooling
 configuration and code base.
@@ -213,7 +213,7 @@ DevTools](https://youtu.be/6yrJZHqJe2k) session.
 [Lighthouse](https://developers.google.com/web/tools/lighthouse) is an open-source automated tool
 that helps developers improve their site's performance. In its latest version, the Lighthouse team
 focused on providing insights based on metrics that give you a balanced view of the quality of your
-user experience against critical dimensions. 
+user experience against critical dimensions.
 
 To ensure consistency, Lighthouse added support for the Core Web Vitals:
 [LCP](/lcp/), [TBT](/tbt/) (a proxy for
@@ -238,7 +238,7 @@ audits](/lighthouse-whats-new-6.0/#new-audits), with a focus on JavaScript analy
 and accessibility.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="audits.png" 
+  <img class="w-screenshot" src="audits.png"
        alt="A list of the new audits.">
 </figure>
 
