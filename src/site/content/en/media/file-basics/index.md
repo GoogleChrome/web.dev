@@ -8,7 +8,7 @@ description: |
   is. Preparing a video for serving from your own site is a bit more
   complicated.
 date: 2020-06-19
-updated: 2020-06-19
+updated: 2020-08-20
 tags:
   - FFmpeg
   - files

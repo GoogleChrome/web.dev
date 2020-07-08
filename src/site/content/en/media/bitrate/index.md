@@ -7,7 +7,7 @@ description: |
   Bitrate is the maximum number of bits used to encode one second of a stream.
   The more bits used to encode a second of stream, the higher the fidelity.
 date: 2017-06-30
-updated: 2020-06-19
+updated: 2020-08-20
 ---
 
 In the [previous section](../containers-and-codecs), I showed you how to change a

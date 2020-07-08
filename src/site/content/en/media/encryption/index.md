@@ -6,7 +6,7 @@ authors:
 description: |
   If you plan to enforce copyright on your media, you'll want to encrypt them.
 date: 2017-06-30
-updated: 2020-06-19
+updated: 2020-08-20
 ---
 
 You're nearly to the end of the process for converting a raw file for use on the

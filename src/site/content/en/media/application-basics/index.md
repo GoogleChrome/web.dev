@@ -7,7 +7,7 @@ description: |
   Much media work requires changing characteristics of media files. In this
   section, I provide an onramp into that world.
 date: 2017-06-09
-updated: 2020-06-19
+updated: 2020-08-20
 tags:
   - FFmpeg
   - files
