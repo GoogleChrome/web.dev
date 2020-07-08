@@ -214,5 +214,5 @@ Access-Control-Allow-Methods: GET, DELETE, HEAD, OPTIONS
 ```
 
 The server response can also include an `Access-Control-Max-Age` header to
-specify the duration to cache preflight results so the client does not need to
+specify the duration (in seconds) to cache preflight results so the client does not need to
 make a preflight request every time it sends a complex request.
