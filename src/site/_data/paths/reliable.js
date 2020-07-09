@@ -4,7 +4,7 @@ module.exports = {
   slug: 'reliable',
   cover: '/images/collections/reliable.svg',
   title: 'Network reliability',
-  updated: 'May 24, 2018',
+  updated: 'July 9, 2020',
   description: `See consistent, reliable performance regardless of network
   quality.`,
   overview: `The modern web gives you access to a diverse global audience
@@ -25,7 +25,11 @@ module.exports = {
     },
     {
       title: 'How caching strategies work',
-      pathItems: ['precache-with-workbox', 'runtime-caching-with-workbox'],
+      pathItems: [
+        'precache-with-workbox',
+        'runtime-caching-with-workbox',
+        'handling-navigation-requests',
+      ],
     },
     {
       title: 'Advanced patterns',
