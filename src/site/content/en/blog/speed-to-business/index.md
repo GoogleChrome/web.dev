@@ -123,7 +123,7 @@ Here is an example of a client side testing setup, using the prior page (the hom
 
 ![Client side testing diagram](test-client-side.jpg)
 
-The testing JavaScript manipulates the outgoing link to give the two test groups of users links to the two versions of the PDP in question. This is easy to setup and maintain through common AB testing tools like Optimizely or Optimize and does not influence the performance test because the testing JavaScript runs on a different page.
+The testing JavaScript manipulates the outgoing link to give the two test groups of users links to the two versions of the PDP in question. This is easy to setup and maintain through common A/B testing tools like Optimizely or Optimize and does not influence the performance test because the testing JavaScript runs on a different page.
 
 {% endDetails %}
 
