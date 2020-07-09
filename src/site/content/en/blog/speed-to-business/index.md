@@ -84,7 +84,7 @@ Creating performance variants can be done in different ways. For the purpose of 
 *   [Use DevTools code coverage](https://developers.google.com/web/tools/chrome-devtools/coverage) to manually eliminate unused JavaScript or CSS just for that one page
 *   [Efficiently load third-party scripts](/efficiently-load-third-party-javascript/)
 *   Use a tool like [Critical](https://github.com/addyosmani/critical) to break out and inline critical CSS
-*   Remove non-critical JavaScript code that does not impact the user experience and which you can do without for the purpose of the test (for example, certain third party libraries)
+*   Remove non-critical JavaScript code that does not impact the user experience and which you can do without for the purpose of the test (for example, certain third-party libraries)
 *   Implement [native lazy loading](/native-lazy-loading/) which isn't supported by all browsers but may still improve performance significantly where supported
 *   Remove non-critical analytics tags or load them asynchronously
 
