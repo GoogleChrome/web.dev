@@ -30,6 +30,7 @@ class EventScheduleModal extends BaseModalElement {
       _sessionName: {type: String},
       _authorsPart: {type: Object},
       _abstractPart: {type: Object},
+      _youtubeLinkPart: {type: Object},
       _titleId: {type: String},
     };
   }
@@ -61,7 +62,10 @@ class EventScheduleModal extends BaseModalElement {
       this._abstractPart.removeAttribute('hidden');
     }
 
-    // Remove the link that was used to open us.
+    // Extract the optional YouTube link.
+    this._youtubeLinkPart = row.querySelector('.w-event-schedule__video');
+
+    // Extract the title from the link that was used to open us.
     const link = row.querySelector('.w-event-schedule__open');
     if (link) {
       this._sessionName = link.textContent;
@@ -75,6 +79,7 @@ class EventScheduleModal extends BaseModalElement {
         <div class="w-event-schedule-modal__about">About this session</div>
         <h2 id=${this._titleId}>${this._sessionName || '?'}</h2>
         ${this._authorsPart || ''}
+        ${this._youtubeLinkPart || ''}
         ${this._abstractPart || ''}
         <button
           class="w-button close gc-analytics-event"

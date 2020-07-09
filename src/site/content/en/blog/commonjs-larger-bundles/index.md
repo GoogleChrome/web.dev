@@ -25,7 +25,7 @@ Summary: **To ensure the bundler can successfully optimize your application, avo
 
 ## What's CommonJS?
 
-CommonJS is a standard from 2009 that established conventions forJavaScript modules. It was initially intended for use outside of the web browser, primarily for server-side applications.
+CommonJS is a standard from 2009 that established conventions for JavaScript modules. It was initially intended for use outside of the web browser, primarily for server-side applications.
 
 With CommonJS you can define modules, export functionality from them, and import them in other modules. For example, the snippet below defines a module which exports five functions: `add`, `subtract`, `multiply`, `divide`, and `max`:
 

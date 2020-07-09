@@ -5,7 +5,7 @@ authors:
   - beaufortfrancois
   - jungkees
 date: 2020-05-20
-updated: 2020-06-05
+updated: 2020-06-26
 hero: hero.jpg
 alt: A photo of an Android phone showing an app shortcuts menu
 description: App shortcuts give quick access to a handful of common actions that users need frequently.
@@ -162,8 +162,9 @@ shortcut icons, if provided, are loading properly.
 DevTools support for app shortcuts is available in Chrome 84 and Edge 84 and later.
 {% endAside %}
 
-App shortcuts may not be available right away to all users because PWA updates
-are capped to once a day.  You can find more details in this [article].
+App shortcuts may not be available right away to all users because Progressive
+Web App updates are capped to once a day.  You can find more details in this
+[article].
 
 ## Best practises
 
@@ -201,6 +202,9 @@ Activity], reads app shortcuts from the web app manifest and automatically
 generates the corresponding configuration for the Android app. Note that icons
 for app shortcuts are [required] and must be at least 96 by 96 pixels in
 Bubblewrap.
+
+[PWABuilder], a great tool to easily turn a Progressive Web App into a Trusted
+Web Activity, supports app shortcuts with some [caveats].
 
 For developers integrating Trusted Web Activity manually into their Android
 application, [Android app shortcuts] can be used to implement the same
@@ -249,6 +253,8 @@ Check out the [app shortcuts sample] and its [source].
 [bubblewrap]: https://github.com/GoogleChromeLabs/bubblewrap
 [required]: https://github.com/GoogleChromeLabs/bubblewrap/issues/116
 [Trusted Web Activity]: /using-a-pwa-in-your-android-app/
+[PWABuilder]: https://www.pwabuilder.com/
+[caveats]: https://github.com/pwa-builder/CloudAPK/issues/25
 [Android app shortcuts]: https://developer.android.com/guide/topics/ui/shortcuts
 [xxhdpi screen]: https://developer.android.com/training/multiscreen/screendensities#TaskProvideAltBmp
 [formula for converting]: https://developer.android.com/training/multiscreen/screendensities#dips-pels

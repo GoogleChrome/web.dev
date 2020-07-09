@@ -5,7 +5,7 @@ const runEleventy = require('./runEleventy');
 describe('_collections', function () {
   describe('in DEV env', function () {
     before(async function () {
-      await runEleventy('dev');
+      await runEleventy(''); // falsey implies 'dev'
       console.log('Eleventy build finished. Starting tests...');
     });
 

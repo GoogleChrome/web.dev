@@ -1,0 +1,23 @@
+name: Cleanup old versions
+on:
+  schedule:
+    # At 18:00 UTC / 7:00 PST every day.
+    - cron: '0 18 * * *'
+
+jobs:
+  ci:
+    name: Run gcloud to snapshot
+    runs-on: ubuntu-latest
+    steps:
+      - name: Snapshot
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@0.1.1
+        with:
+          version: '270.0.0'
+          service_account_email: ${{ secrets.GCLOUD_EMAIL }}
+          service_account_key: ${{ secrets.GCLOUD_KEY }}
+
+      # Cleanup web-dev-staging
+      - run: node ./tools/cleanup-versions/index.js web-dev-staging
+
+      # Cleanup web-dev-production-1
+      - run: node ./tools/cleanup-versions/index.js web-dev-production-1

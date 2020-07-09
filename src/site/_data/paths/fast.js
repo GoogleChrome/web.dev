@@ -43,6 +43,8 @@ module.exports = {
     {
       title: 'Optimize your images',
       pathItems: [
+        'choose-the-right-image-format',
+        'compress-images',
         'use-imagemin-to-compress-images',
         'replace-gifs-with-videos',
         'serve-responsive-images',
@@ -106,6 +108,7 @@ module.exports = {
         'chrome-ux-report-data-studio-dashboard',
         'chrome-ux-report-pagespeed-insights',
         'chrome-ux-report-bigquery',
+        'chrome-ux-report-api',
       ],
     },
     {

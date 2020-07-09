@@ -31,6 +31,7 @@ export function getTimeOffset(raw) {
     'wdl-day1': '2020-06-30T16:02Z',
     'wdl-preday2': '2020-07-01T10:59Z', // before 1hr buffer
     'wdl-day2': '2020-07-01T12:00Z',
+    'wdl-day3': '2020-07-02T07:30Z',
   };
 
   raw = overrides[raw] || raw;

@@ -1,10 +1,10 @@
 ---
 title: Getting started with Trust Tokens
-subhead: A new API proposal that provides an alternative to passive tracking to combat fraud and distinguish bots from real humans.
+subhead: Trust Tokens is a new API to help combat fraud and distinguish bots from real humans, without passive tracking.
 authors:
   - samdutton
 date: 2020-06-22
-updated: 2020-06-22
+updated: 2020-06-23
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: Black and white photograph of hand holding token
@@ -19,8 +19,8 @@ tags:
 ## Summary
 
 Trust tokens enable an origin to issue cryptographic tokens to a user it trusts.
-The tokens are stored by the user's browser. The browser uses the tokens in
-other contexts to evaluate the user's authenticity.   
+The tokens are stored by the user's browser. The browser can then use the tokens 
+in other contexts to evaluate the user's authenticity.   
 
 The Trust Token API allows trust of a user in one context (such as gmail.com) to
 be conveyed to another context (such as an ad running on nytimes.com) without
@@ -45,8 +45,8 @@ defrauding a real person or service. Fraud protection is particularly important
 for advertisers, ad providers, and CDNs.   
   
 Unfortunately, many existing mechanisms to gauge and propagate
-trustworthiness—to work out if an interaction with a site is from a real human
-or a bot, for example—take advantage of techniques that can also be used for
+trustworthiness—to work out if an interaction with a site is from a real human, 
+for example—take advantage of techniques that can also be used for
 fingerprinting.
 
 {% Aside 'key-term' %}  
@@ -62,8 +62,8 @@ Sites such as [Panopticlick](https://panopticlick.eff.org/) and
 combined to identify you as an individual.  
 {% endAside %} 
 
-The API must preserve privacy while also enabling trust to be propagated across
-sites without individual user tracking.
+The API must preserve privacy, enabling trust to be propagated across sites 
+without individual user tracking.
 
 ## What's in the Trust Tokens proposal?
 
@@ -181,20 +181,17 @@ fetch('issuer.example/.well-known/trust-token', {
 }).then(...)
 ```
 
-  
-This invokes the [Privacy Pass](https://privacypass.github.io/) issuance
-protocol:  
+This invokes an extension of the [Privacy Pass](https://privacypass.github.io/) issuance
+protocol using a [new cryptographic primitive](https://eprint.iacr.org/2020/072.pdf):
 
 1. Generate a set of pseudo-random numbers known as _nonces_.
-1. [Blind](https://www.cs.bham.ac.uk/~mdr/teaching/modules06/netsec/lectures/blind_sigs.html)
-   the nonces (encode them so the issuer can't view their contents) and attach
-   them to the request in a `Sec-Trust-Token` header.
+ 
+1. Blind the nonces (encode them so the issuer can't view their contents) and attach them to the request in a `Sec-Trust-Token` header.
+ 
 1. Send a POST request to the endpoint provided.
+ 
+The endpoint responds with blinded tokens (signatures on the blind nonces), then the tokens are unblinded and stored internally together with the associated nonces by the browser as trust tokens.
 
-The endpoint responds with
-[blind signatures](http://cs.bham.ac.uk/~mdr/teaching/modules06/netsec/lectures/blind_sigs.html),
-then the signatures and associated nonces are stored internally by the browser
-as trust tokens.
 
 ### Trust token redemption
 
@@ -286,9 +283,10 @@ Trust Token [explainer repository](https://github.com/WICG/trust-token-api).
 -  [Chromium Projects: Trust Token API](https://sites.google.com/a/chromium.org/dev/updates/trust-token)
 -  [Intent to Implement: Trust Token API](https://groups.google.com/a/chromium.org/g/blink-dev/c/X9sF2uLe9rA/m/1xV5KEn2DgAJ)
 -  [Privacy Pass](https://privacypass.github.io/)
+-  [Extensions of Privacy Pass](https://eprint.iacr.org/2020/072.pdf)
 
 ---
 
-Thanks to Kayce Basques, David Van Cleve, Steven Valdez, and Marshall Vale for their help in writing this post.
+Thanks to Kayce Basques, David Van Cleve, Steven Valdez, Tancrède Lepoint and Marshall Vale for their help with writing and reviewing this post.
 
 Photo by [ZSun Fu](https://unsplash.com/photos/b4D7FKAghoE) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).

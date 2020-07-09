@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2020-05-27
+updated: 2020-06-23
 description: |
   This post introduces the Cumulative Layout Shift (CLS) metric and explains
   how to measure it
@@ -72,8 +72,8 @@ CLS measures the sum total of all individual _layout shift scores_ for every
 _unexpected layout shift_ that occurs during the entire lifespan of the page.
 
 A _layout shift_ occurs any time a visible element changes its position from one
-frame to the next. (See below for details on how individual [layout shift
-scores](#layout-shift-score) are calculated.)
+rendered frame to the next. (See below for details on how individual [layout
+shift scores](#layout-shift-score) are calculated.)
 
 <picture>
   <source srcset="../vitals/cls_8x2.svg" media="(min-width: 640px)">
@@ -100,8 +100,8 @@ across mobile and desktop devices.
 
 Layout shifts are defined by the [Layout Instability
 API](https://github.com/WICG/layout-instability), which reports `layout-shift`
-entries any time an element that is visible with the viewport changes its start
-position (for example, its top and left position in the default [writing
+entries any time an element that is visible within the viewport changes its
+start position (for example, its top and left position in the default [writing
 mode](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode)) between
 two frames. Such elements are considered _unstable elements_.
 
@@ -113,7 +113,7 @@ cause other visible elements to change their start position.
 ### Layout shift score
 
 To calculate the _layout shift score_, the browser looks at the viewport size
-and the movement of unstable elements in the viewport between two rendered
+and the movement of _unstable elements_ in the viewport between two rendered
 frames. The layout shift score is a product of two measures of that movement:
 the _impact fraction_ and the _distance fraction_ (both defined below).
 
@@ -125,14 +125,14 @@ layout shift score = impact fraction * distance fraction
 
 The [impact
 fraction](https://github.com/WICG/layout-instability#Impact-Fraction) measures
-how unstable elements impact the viewport area between two frames.
+how _unstable elements_ impact the viewport area between two frames.
 
-The union of the visible areas of all unstable elements for the previous frame
+The union of the visible areas of all _unstable elements_ for the previous frame
 _and_ the current frame&mdash;as a fraction of the total area of the
 viewport&mdash;is the _impact fraction_ for the current frame.
 
-[![Impact fraction example with one unstable
-element](layout-shift-1.png)](layout-shift-1.png)
+[![Impact fraction example with one _unstable
+element_](layout-shift-1.png)](layout-shift-1.png)
 
 In the image above there's an element that takes up half of the viewport in one
 frame. Then, in the next frame, the element shifts down by 25% of the viewport
@@ -144,12 +144,12 @@ _impact fraction_ is `0.75`.
 
 The other part of the layout shift score equation measures the distance that
 unstable elements have moved, relative to the viewport. The _distance fraction_
-is the greatest distance any unstable element has moved in the frame (either
+is the greatest distance any _unstable element_ has moved in the frame (either
 horizontally or vertically) divided by the viewport's largest dimension (width
 or height, whichever is greater).
 
-[![Distance fraction example with one unstable
-element](layout-shift-2.png)](layout-shift-2.png)
+[![Distance fraction example with one _unstable
+element_](layout-shift-2.png)](layout-shift-2.png)
 
 In the example above, the largest viewport dimension is the height, and the
 unstable element has moved by 25% of the viewport height, which makes the
@@ -167,7 +167,7 @@ is `0.25`, so the _layout shift score_ is `0.75 * 0.25 = 0.1875`.
 The next example illustrates how adding content to an existing element affects
 the layout shift score:
 
-[![Layout shift example with stable and unstable elements and viewport
+[![Layout shift example with stable and _unstable elements_ and viewport
 clipping](layout-shift-3.png)](layout-shift-3.png)
 
 The "Click Me!" button is appended to the bottom of the gray box with black
@@ -175,7 +175,7 @@ text, which pushes the green box with white text down (and partially out of the
 viewport).
 
 In this example, the gray box changes size, but its start position does not
-change so it's not an unstable element.
+change so it's not an _unstable element_.
 
 The "Click Me!" button was not previously in the DOM, so its start position
 doesn't change either.
@@ -192,10 +192,10 @@ moved down by about 14% of the viewport so the _distance fraction_ is `0.14`.
 
 The layout shift score is `0.5 x 0.14 = 0.07`.
 
-This last example illustrates multiple unstable elements:
+This last example illustrates multiple _unstable elements_:
 
-[![Layout shift example with multiple stable and unstable
-elements](layout-shift-4.png)](layout-shift-4.png)
+[![Layout shift example with multiple stable and _unstable
+elements_](layout-shift-4.png)](layout-shift-4.png)
 
 In the first frame above there are four results of an API request for animals,
 sorted in alphabetical order. In the second frame, more results are added to the
@@ -205,16 +205,16 @@ The first item in the list ("Cat") does not change its start position between
 frames, so it's stable. Similarly, the new items added to the list were not
 previously in the DOM, so their start positions don't change either. But the
 items labelled "Dog", "Horse", and "Zebra" all shift their start positions,
-making them unstable elements.
+making them _unstable elements_.
 
-Again, the red, dotted rectangles represent the union of these three unstable
-elements' before and after areas, which in this case is around 38% of the
+Again, the red, dotted rectangles represent the union of these three _unstable
+elements_' before and after areas, which in this case is around 38% of the
 viewport's area (_impact fraction_ of `0.38`).
 
-The arrows represent the distances that unstable elements have moved from their
-starting positions. The "Zebra" element, represented by the blue arrow, has
-moved the most, by about 30% of the viewport height. That makes the _distance
-fraction_ in this example `0.3`.
+The arrows represent the distances that _unstable elements_ have moved from
+their starting positions. The "Zebra" element, represented by the blue arrow,
+has moved the most, by about 30% of the viewport height. That makes the
+_distance fraction_ in this example `0.3`.
 
 The layout shift score is `0.38 x 0.3 = 0.1172`.
 
@@ -353,8 +353,9 @@ changes to hidden:
   // page's lifecycle state changes to hidden.
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'hidden') {
-      // Force any pending records to be dispatched.
-      po.takeRecords().forEach(onLayoutShiftEntry);
+      // Force any pending records to be dispatched and disconnect the observer.
+      po.takeRecords().forEach((entry) => onLayoutShiftEntry(entry, po));
+      po.disconnect();
 
       // Report the CLS value to an analytics endpoint.
       sendToAnalytics({cls});
@@ -362,12 +363,6 @@ changes to hidden:
   });
 {% include 'content/metrics/performance-observer-catch.njk' %}
 ```
-
-{% Aside %}
-  Note: CrUX buckets CLS values as percentages with 5% granularity. This means a
-  score of `0.01` when using the code example above would appear in the 0–5
-  bucket in CrUX, and a score of `0.07` would appear in the 5–10 bucket in CrUX.
-{% endAside %}
 
 ## How to improve CLS
 
@@ -393,8 +388,9 @@ CLS](https://web.dev/optimize-cls/).
 
 ## Additional resources
 
-- [Understanding Cumulative Layout Shift](https://youtu.be/zIJuY-JCjqw) by [Annie
-  Sullivan](https://anniesullie.com/) at
-  [#PerfMatters](https://perfmattersconf.com/) (2020)
+- [Understanding Cumulative Layout Shift](https://youtu.be/zIJuY-JCjqw) by
+  [Annie Sullivan](https://anniesullie.com/) and [Steve
+  Kobes](https://kobes.ca/) at [#PerfMatters](https://perfmattersconf.com/)
+  (2020)
 
 {% include 'content/metrics/metrics-changelog.njk' %}

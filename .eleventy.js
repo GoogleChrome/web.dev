@@ -17,6 +17,7 @@
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
+const resourcePath = require('./src/build/resource-path');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItAttrs = require('markdown-it-attrs');
@@ -76,6 +77,7 @@ const prettyDate = require(`./${filtersDir}/pretty-date`);
 const removeDrafts = require(`./${filtersDir}/remove-drafts`);
 const strip = require(`./${filtersDir}/strip`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
+const stripQueryParamsDev = require(`./${filtersDir}/strip-query-params-dev`);
 const getPaths = require(`./${filtersDir}/get-paths`);
 
 const transformsDir = 'src/site/_transforms';
@@ -86,6 +88,8 @@ const {
 } = require(`./${transformsDir}/service-worker-partials`);
 
 module.exports = function (config) {
+  const isProd = process.env.ELEVENTY_ENV === 'prod';
+
   // ----------------------------------------------------------------------------
   // PLUGINS
   // ----------------------------------------------------------------------------
@@ -159,7 +163,7 @@ module.exports = function (config) {
     return memoize(collection.getAll());
   });
   config.addCollection('algolia', (collection) => {
-    if (process.env.ELEVENTY_ENV === 'prod') {
+    if (isProd) {
       const algoliaPosts = require(`./${collectionsDir}/algolia-posts`);
       return algoliaPosts(collection);
     }
@@ -184,6 +188,7 @@ module.exports = function (config) {
   config.addFilter('prettyDate', prettyDate);
   config.addFilter('removeDrafts', removeDrafts);
   config.addFilter('stripBlog', stripBlog);
+  config.addFilter('stripQueryParamsDev', stripQueryParamsDev);
   config.addFilter('getPaths', getPaths);
   config.addFilter('strip', strip);
 
@@ -225,7 +230,7 @@ module.exports = function (config) {
     config.addTransform('disable-lazy-load', disableLazyLoad);
   }
 
-  if (process.env.ELEVENTY_ENV === 'prod') {
+  if (isProd) {
     config.addTransform('responsive-images', responsiveImages);
   }
 
@@ -234,6 +239,23 @@ module.exports = function (config) {
   // It takes the final html and turns it into partials that the
   // service worker can load.
   config.addTransform('service-worker-partials', serviceWorkerPartials);
+
+  // ----------------------------------------------------------------------------
+  // CHECKS
+  // ----------------------------------------------------------------------------
+  if (isProd) {
+    // We generate the paths to our JS and CSS entrypoints as a side-effect
+    // of their build scripts, so make sure they exist in prod builds.
+    ['css', 'js'].forEach((name) => {
+      try {
+        resourcePath(name);
+      } catch (e) {
+        throw new Error(
+          `could not find valid JSON path inside src/site/_data/: ${name} (${e})`,
+        );
+      }
+    });
+  }
 
   // ----------------------------------------------------------------------------
   // ELEVENTY OPTIONS

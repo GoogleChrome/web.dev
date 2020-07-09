@@ -1308,6 +1308,17 @@ const contributors = {
     },
     country: 'UK',
   },
+  gilbertococchi: {
+    name: {
+      given: 'Gilberto',
+      family: 'Cocchi',
+    },
+    org: {
+      name: 'Google',
+    },
+    twitter: 'gilberto_cocchi',
+    github: 'gilbertococchi',
+  },
   antonkarlovskiy: {
     name: {
       given: 'Anton',
@@ -1316,6 +1327,19 @@ const contributors = {
     twitter: 'antonkarlovskiy',
     github: 'anton-karlovskiy',
     glitch: 'anton-karlovskiy',
+  },
+  rkochman: {
+    name: {
+      given: 'Rob',
+      family: 'Kochman',
+    },
+    twitter: 'rkochman',
+    github: 'rkochman',
+    glitch: 'rkochman',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
   },
 };
 

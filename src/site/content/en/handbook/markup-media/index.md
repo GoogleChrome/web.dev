@@ -249,7 +249,7 @@ To take a screenshot on Mac:
 
 ## Video
 
-### Video hosted on YouTube
+### Video hosted on YouTube {: #youtube }
 
 To embed a YouTube video, use the `YouTube` component.
 

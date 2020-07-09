@@ -19,7 +19,11 @@ module.exports = {
   topics: [
     {
       title: 'How search works and how to measure discoverability',
-      pathItems: ['how-search-works', 'pass-lighthouse-seo-audit'],
+      pathItems: [
+        'how-search-works',
+        'pass-lighthouse-seo-audit',
+        'google-search-tools',
+      ],
     },
   ],
 };

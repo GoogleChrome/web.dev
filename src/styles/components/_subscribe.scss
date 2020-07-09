@@ -33,8 +33,12 @@ web-subscribe:not(:defined) {
   width: 100%;
 }
 
+.w-subscribe__select {
+  padding: 14px 8px;
+}
+
 .w-subscribe__notice {
-  color: $GREY_600;
+  color: $GREY_700;
   font: inherit;
   font-size: 14px;
   margin-bottom: 56px;

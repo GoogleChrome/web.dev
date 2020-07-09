@@ -21,6 +21,7 @@ date: 2019-10-31
 
 # !!! IMPORTANT: If your post does not contain a hero image it will not appear
 # on the homepage.
+# Hero images should be 3200 x 920.
 hero: hero.jpg
 # You can adjust the fit of your hero image with this property.
 # Values: contain | cover (default)
@@ -38,7 +39,7 @@ hero: hero.jpg
 alt: A description of the hero image for screen reader users.
 
 # You can provide a custom thumbnail and description for social media cards.
-# Images should be 1200 x 630.
+# Thumbnail images should be 896 x 480.
 # If no social thumbnail is provided then the post will attempt to fallback to
 # the post's thumbnail or hero from above. It will also reuse the alt.
 # social:
