@@ -114,11 +114,9 @@ class EventStore extends HTMLElement {
     }
 
     // If there was no previously active day, then choose the upcoming day.
-    // If we've reached the end of the event then keep it on the last day.
+    // If we've reached the end of the event then revert to the first day.
     if (activeDay === null) {
-      activeDay = nextPendingDay
-        ? nextPendingDay
-        : this._days[this._days.length - 1];
+      activeDay = nextPendingDay ? nextPendingDay : this._days[0];
     }
 
     // If there was a property change on any particular day, change the Array

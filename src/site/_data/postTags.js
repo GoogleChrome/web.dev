@@ -99,6 +99,9 @@ const tags = {
     title: 'Houdini',
     description: 'Our latest news, updates, and stories about Houdini.',
   },
+  html: {
+    title: 'HTML',
+  },
   identity: {
     title: 'Identity',
   },
@@ -202,6 +205,9 @@ const tags = {
   },
   testing: {
     title: 'Testing',
+  },
+  tools: {
+    title: 'Tools',
   },
   ux: {
     title: 'UX',

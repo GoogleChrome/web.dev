@@ -8,6 +8,7 @@ class LivestreamContainer extends BaseStateElement {
     return {
       videoId: {type: String},
       isChatActive: {type: Boolean},
+      chatClosed: {type: Boolean, reflect: true, attribute: 'chat-closed'},
     };
   }
 
@@ -15,6 +16,7 @@ class LivestreamContainer extends BaseStateElement {
     super();
     this.videoId = null;
     this.isChatActive = true;
+    this.chatClosed = false;
     this.isSignedIn = undefined;
   }
 
@@ -29,6 +31,7 @@ class LivestreamContainer extends BaseStateElement {
       <div class="web-livestream-container__col-yt">
         <div class="w-youtube">
           <iframe
+            title="web.dev YouTube livestream"
             class="w-youtube__embed"
             src="https://www.youtube.com/embed/${this.videoId}"
             frameborder="0"
@@ -42,6 +45,7 @@ class LivestreamContainer extends BaseStateElement {
         ${this.isChatActive ?
           html`
             <iframe
+              title="web.dev YouTube live chat"
               class="w-youtube-chat"
               src="https://www.youtube.com/live_chat?v=${this.videoId}&amp;embed_domain=${location.hostname}"
               frameborder="0"
@@ -49,7 +53,7 @@ class LivestreamContainer extends BaseStateElement {
           ` :
           html`
             <div class="w-youtube-disabled-chat">
-              <div class="w-youtube-disabled-chat__container">
+              <div class="w-youtube-disabled-chat__text">
                 <div>
                   Live Chat is currently disabled. Please head to YouTube and
                   ask your questions in the comments on the video.
@@ -64,6 +68,12 @@ class LivestreamContainer extends BaseStateElement {
           `
         }
       </div>
+      <button class="web-livestream-container__chat-toggle" @click="${() => {this.chatClosed = !this.chatClosed}}">
+        ${this.chatClosed ?
+          html`<i class="material-icons">chevron_left</i> <span>Open live chat</span>` :
+          html`<i class="material-icons">chevron_right</i> <span>Close live chat</span>`
+        }
+      </button>
     `;
   }
 

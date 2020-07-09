@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: To avoid draining the battery, most devices will quickly fall asleep when left idle. While this is fine most of the time, there are some applications that need to keep the screen awake in order to complete some work. The Screen Wake Lock API provides a way to prevent the device from dimming or locking the screen when an application needs to keep running.
 date: 2018-12-18
-updated: 2020-06-04
+updated: 2020-07-02
 hero: hero.jpg
 hero_position: center
 alt: |
@@ -19,11 +19,10 @@ tags:
   - wake-lock
 ---
 
-{% Aside %}
+{% Aside 'success' %}
   The Screen Wake Lock API, part of Google's
   [capabilities project](https://developers.google.com/web/updates/capabilities),
-  is currently in development. This post will be updated as the
-  implementation progresses.
+  launched in Chrome 84.
 {% endAside %}
 
 ## What is the Screen Wake Lock API? {: #what }
@@ -64,6 +63,13 @@ Of course, there are plenty of other use cases:
 * A web-based presentation app that keeps the screen
   on during a presentation
 
+{% Aside 'success' %}
+  After implementing the Screen Wake Lock API,
+  *Betty Crocker*, a major cooking site in the US,
+  saw a 300% increase in purchase intent indicators for their users.
+  Read more in the 🍰&nbsp;[Betty Crocker case study](/betty-crocker/).
+{% endAside %}
+
 ## Current status {: #status }
 
 <div class="w-table-wrapper">
@@ -72,9 +78,9 @@ Of course, there are plenty of other use cases:
 | ------------------------------------------ | ---------------------------- |
 | 1. Create explainer                        | N/A                          |
 | 2. Create initial draft of specification   | [Complete][spec-ed]          |
-| **3. Gather feedback and iterate design**  | [**In Progress**](#feedback) |
-| **4. Origin trial**                        | [**In Progress**][ot]        |
-| 5. Launch                                  | Not Started                  |
+| 3. Gather feedback and iterate design      | [Complete](#feedback)        |
+| 4. Origin trial                            | Complete                     |
+| **5. Launch**                              | **Complete**                 |
 
 </div>
 
@@ -86,27 +92,6 @@ Of course, there are plenty of other use cases:
 {% endAside %}
 
 ## Using the Screen Wake Lock API {: #use }
-
-### Enabling support during the origin trial phase
-The Screen Wake Lock API is available as an origin trial in Chrome 79.
-The origin trial is expected to end in Chrome 83
-and the feature to launch in Chrome 84.
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
-
-### Enabling via chrome://flags
-To experiment with the Screen Wake Lock API locally, without an origin trial token,
-enable the `#experimental-web-platform-features` flag in `chrome://flags`.
-
-### Demo
-
-Check out the [Screen Wake Lock demo][demo] and [demo source][demo-source].
-Notice how the screen wake lock gets automatically released when you switch tabs
-or switch to a different app.
 
 ### Wake lock types {: #wake-lock-types }
 
@@ -185,14 +170,13 @@ window.setTimeout(() => {
 ### The screen wake lock lifecycle {: #wake-lock-lifecycle }
 
 When you play with the [screen wake lock demo][demo], you'll notice that screen wake locks
-are sensitive to [page visibility][page-visibility-api] and
-[full-screen mode][full-screen-api]. This means that the screen wake lock
-will automatically be released when you enter full-screen mode, minimize a
+are sensitive to [page visibility][page-visibility-api].
+This means that the screen wake lock
+will automatically be released when you minimize a
 tab or window, or switch away from a tab or window where a screen wake lock is active.
 
 To reacquire the screen wake lock,
-listen for the [`visibilitychange`][visibility-change] event and
-the [`fullscreenchange`][fullscreen-change] event
+listen for the [`visibilitychange`][visibility-change] event
 and request a new screen wake lock when they occur:
 
 ```js
@@ -203,7 +187,6 @@ const handleVisibilityChange = () => {
 };
 
 document.addEventListener('visibilitychange', handleVisibilityChange);
-document.addEventListener('fullscreenchange', handleVisibilityChange);
 ```
 
 ## Minimize your impact on system resources {: #best-practices }
@@ -225,6 +208,12 @@ be solved with one of the following alternative solutions:
   Like most other powerful web APIs, the Screen Wake Lock API is only available
   when served over **HTTPS**.
 {% endAside %}
+
+### Demo
+
+Check out the [Screen Wake Lock demo][demo] and [demo source][demo-source].
+Notice how the screen wake lock is automatically released when you switch tabs
+or apps.
 
 ## Feedback {: #feedback }
 
@@ -284,9 +273,7 @@ critical it is to support them.
 [issues]: https://github.com/w3c/wake-lock/issues
 [wicg-discourse]: https://discourse.wicg.io/t/wake-lock-api-suppressing-power-management-screensavers/769
 [page-visibility-api]: https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API
-[full-screen-api]: https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API
 [visibility-change]: https://developer.mozilla.org/en-US/docs/Web/API/Document/visibilitychange_event
-[fullscreen-change]: https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API#Event_handlers
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EWakeLock
 [cr-dev-twitter]: https://twitter.com/chromiumdev
 [ot]: https://developers.chrome.com/origintrials/#/view_trial/902971725287784449

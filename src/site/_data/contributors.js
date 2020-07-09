@@ -1352,6 +1352,19 @@ const contributors = {
     twitter: 'maranag',
     github: 'maranag',
   },
+  rkochman: {
+    name: {
+      given: 'Rob',
+      family: 'Kochman',
+    },
+    twitter: 'rkochman',
+    github: 'rkochman',
+    glitch: 'rkochman',
+    country: 'US',
+    org: {
+      name: 'Google',
+    },
+  },
 };
 
 const processedContributors = {};
