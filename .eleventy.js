@@ -77,7 +77,6 @@ const prettyDate = require(`./${filtersDir}/pretty-date`);
 const removeDrafts = require(`./${filtersDir}/remove-drafts`);
 const strip = require(`./${filtersDir}/strip`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
-const stripLanguage = require(`./${filtersDir}/strip-language`);
 const stripQueryParamsDev = require(`./${filtersDir}/strip-query-params-dev`);
 const getPaths = require(`./${filtersDir}/get-paths`);
 
@@ -189,7 +188,6 @@ module.exports = function (config) {
   config.addFilter('prettyDate', prettyDate);
   config.addFilter('removeDrafts', removeDrafts);
   config.addFilter('stripBlog', stripBlog);
-  config.addFilter('stripLanguage', stripLanguage);
   config.addFilter('stripQueryParamsDev', stripQueryParamsDev);
   config.addFilter('getPaths', getPaths);
   config.addFilter('strip', strip);

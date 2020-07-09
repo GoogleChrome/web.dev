@@ -16,7 +16,6 @@
 
 const path = require('path');
 const site = require('../../_data/site');
-const stripLanguage = require('../../_filters/strip-language');
 const strip = require('../../_filters/strip');
 const {html} = require('common-tags');
 
@@ -26,7 +25,7 @@ module.exports = (locale, page, collections, renderData = {}) => {
     ...collections.all.find((item) => item.fileSlug === page.fileSlug).data,
     ...renderData,
   };
-  const pageUrl = stripLanguage(page.url);
+  const pageUrl = pageData.canonicalUrl;
 
   /**
    * Find post meta data associated with a social media platform.

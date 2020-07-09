@@ -16,7 +16,6 @@
 
 const {html} = require('common-tags');
 const {findByUrl} = require('../../_filters/find-by-url');
-const stripLanguage = require('../../_filters/strip-language');
 const md = require('../../_filters/md');
 
 /* eslint-disable require-jsdoc */
@@ -37,7 +36,7 @@ module.exports = (slugs, lang) => {
       <li class="w-callout__listitem">
         <a
           class="w-callout__link w-callout__link--codelab"
-          href="${stripLanguage(codelab.url)}"
+          href="${codelab.data.canonicalUrl}"
         >
           ${md(codelab.data.title)}
         </a>
