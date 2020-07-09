@@ -10,6 +10,7 @@ description: |
 authors:
   - joemedley
 date: 2019-12-18
+updated: 2020-07-17
 hero: hero.jpg
 alt: Roadblock barricades
 tags:
@@ -41,8 +42,8 @@ temporary opt-out options are available. For sites on the internet, [an origin
 trial is
 available](https://developers.chrome.com/origintrials/#/view_trial/4391009636686233601).
 With this, you add an origin-specific token to your page headers that enables
-synchronous `XMLHttpRequest()` calls. This option ends shortly before Chrome 86
-ships, sometime in late October of 2020. Enterprise Chrome customers can also
+synchronous `XMLHttpRequest()` calls. This option ends shortly before Chrome 89
+ships, sometime in March 2021. Enterprise Chrome customers can also
 use the  `AllowSyncXHRInPageDismissal` policy flag, which ends at the same time.
 
 ## Alternatives
