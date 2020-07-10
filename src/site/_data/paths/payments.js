@@ -25,7 +25,7 @@ module.exports = {
         },
         {
           title: 'Build a web-based payment app',
-          pathItems: [],
+          pathItems: ['web-based-payment-apps-overview'],
         },
       ],
     },

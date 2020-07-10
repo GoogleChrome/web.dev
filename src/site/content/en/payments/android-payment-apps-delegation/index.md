@@ -2,7 +2,7 @@
 layout: post
 title: Providing shipping and contact information from Android payment app
 subhead: |
-  How to update your Android payment app to provide shipping address and payer’s contact information with Web Payments APIs.
+  How to update your Android payment app to provide shipping address and payer's contact information with Web Payments APIs.
 authors:
   - agektmr
 date: 2020-07-17
@@ -29,9 +29,9 @@ available through the browser's native UI. This functionality can also be
 deferred to a payment app to offer a more unified payment experience. This is
 called "delegation".
 
-Whenever possible, Chrome delegates the collection of customer’s shipping
+Whenever possible, Chrome delegates the collection of customer's shipping
 address and contact information to the invoked Android payment app. The
-delegation reduces the friction during checkout because user’s installed payment
+delegation reduces the friction during checkout because user's installed payment
 apps usually have more accurate information about their shipping address and
 contact details.
 
@@ -49,13 +49,13 @@ implement the following four steps:
     1.  Notify the merchant about changes in the user selected payment method,
         shipping address, or shipping option.
     2.  Receive updated payment details from the merchant (for example, the
-        adjusted total amount based on the selected shipping option’s cost).
+        adjusted total amount based on the selected shipping option's cost).
 
 ## Declare supported delegations
 
 The browser needs to know the list of additional information that your payment
 app can provide so it can delegate the collection of that information to your
-app. Declare the supported delegations as a `<meta-data>` in your app’s
+app. Declare the supported delegations as a `<meta-data>` in your app's
 [AndroidManifest.xml](/android-payment-apps-overview/#androidmanifest.xml-2).
 
 ```xml
@@ -74,7 +74,7 @@ The `resource` must be a list of strings chosen from the following valid values:
 [ "payerName", "payerEmail", "payerPhone", "shippingAddress" ]
 ```
 
-The following example can only provide a shipping address and the payer’s email
+The following example can only provide a shipping address and the payer's email
 address.
 
 ```xml
@@ -111,17 +111,17 @@ val shippingType: String? = paymentOptions.getString("shippingType")
 
 It can include the following parameters:
 
-* `requestPayerName` - The boolean indicating whether or not the payer’s name
+* `requestPayerName` - The boolean indicating whether or not the payer's name
   is required.
-* `requestPayerPhone` - The boolean indicating whether or not the payer’s phone
+* `requestPayerPhone` - The boolean indicating whether or not the payer's phone
   is required.
-* `requestPayerEmail` - The boolean indicating whether or not the payer’s email
+* `requestPayerEmail` - The boolean indicating whether or not the payer's email
   is required.
 * `requestShipping` - The boolean indicating whether or not shipping information
   is required.
 * `shippingType` - The string showing the type of shipping. Shipping type can be
   `"shipping"`, `"delivery"`, or `"pickup"`. Your app can use this hint in its
-  UI when asking for the user’s address or choice of shipping options.
+  UI when asking for the user's address or choice of shipping options.
 
 ### `shippingOptions` {: #shipping-options }
 
@@ -166,11 +166,11 @@ the `PAY`  activity.
 
 To do so the following parameters must be specified as Intent extras:
 
-* `payerName`: The payer’s full name. This should be a non-empty string when
+* `payerName`: The payer's full name. This should be a non-empty string when
   `paymentOptions.requestPayerName` is true.
-* `payerPhone`: The payer’s phone number. This should be a non-empty string when
+* `payerPhone`: The payer's phone number. This should be a non-empty string when
   `paymentOptions.requestPayerPhone` is true.
-* `payerEmail`: The payer’s email address. This should be a non-empty string
+* `payerEmail`: The payer's email address. This should be a non-empty string
   when `paymentOptions.requestPayerEmail` is true.
 * `shippingAddress`: The user provided shipping address. This should be a
   non-empty bundle when `paymentOptions.requestShipping` is true. The bundle
@@ -249,7 +249,7 @@ show the user the updated payment details (provided by the merchant).
 ### AIDL
 
 To notify the merchant about new changes use the `PaymentDetailsUpdateService`
-service declared in Chrome’s AndroidManifest.xml. To use this service create two
+service declared in Chrome's AndroidManifest.xml. To use this service create two
 AIDL files with the following content:
 
 {% Label %}app/src/main/aidl/org/chromium/components/payments/IPaymentDetailsUpdateService{% endLabel %}
@@ -357,7 +357,7 @@ it will call `callback.updateWith` with a redacted `updatePaymentDetails`
 bundle. The bundle will only contain the `error` key with `"Invalid state"`.
 Examples of an invalid state are:
 
-* When Chrome is still waiting for the merchant’s response to a previous change
+* When Chrome is still waiting for the merchant's response to a previous change
   (such as an ongoing change event).
 * The payment app provided shipping option identifier does not belong to any of
   the merchant specified shipping options.
