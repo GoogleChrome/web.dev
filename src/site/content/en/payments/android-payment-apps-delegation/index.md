@@ -4,7 +4,7 @@ title: Providing shipping and contact information from Android payment app
 subhead: |
   How to update your Android payment app to provide shipping address and payer's contact information with Web Payments APIs.
 authors:
-  - agektmr
+  - sahel
 date: 2020-07-17
 description: |
   Learn how to modify your Android payment app to provide the user's selected shipping address as well as contact information when the merchant has requested them via the Payment Request API.
