@@ -1,28 +1,24 @@
 ---
 layout: post
-title: Native lazy-loading for the web
+title: Native image lazy-loading for the web
 subhead: Browser-level native lazy-loading is finally here!
 authors:
   - houssein
   - addyosmani
   - mathiasbynens
 date: 2019-08-06
-updated: 2020-04-29
+updated: 2020-07-10
 hero: hero.png
 alt: Phone outline with loading image and assets
 description: |
   This post covers the loading attribute and how it can be used
-  to control the loading of images and iframes.
+  to control the loading of images.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - performance
 ---
 
-{% Aside %}
-  Please note `<iframe loading=lazy>` is currently non-standard. While implemented in Chromium, it does not yet have a specification and is subject to future change when this does happen. We suggest not to lazy-load iframes using the loading attribute until it becomes part of the specification.
-{% endAside %}
-
-Support for natively lazy-loading images and iframes is coming to the web! This video shows
+Support for natively lazy-loading images is now supported on the web! This video shows
 a [demo](https://mathiasbynens.be/demo/img-loading-lazy) of the feature:
 
 <figure class="w-figure w-figure--fullbleed">
@@ -33,12 +29,11 @@ a [demo](https://mathiasbynens.be/demo/img-loading-lazy) of the feature:
 </figure>
 
 Starting with Chrome 76, you'll be able to use the new `loading` attribute to lazy-load resources
-without the need to write custom lazy-loading code or use a separate JavaScript library. Let's dive
-into the details.
+without the need to write custom lazy-loading code or use a separate JavaScript library. Let's dive into the details.
 
 ## Browser compatibility
 
-At the time of this update (April 2020) native lazy-loading is supported in Chromium-based
+At the time of this update, native lazy-loading is supported in Chromium-based
 browsers and Firefox.
 
 See the `loading` field of MDN's
@@ -52,11 +47,7 @@ requested asset type for most websites and usually take up more bandwidth than a
 resource. At the 90th percentile, sites send about 4.7 MB of images on desktop and mobile. That's a
 lot of [cat pictures](https://en.wikipedia.org/wiki/Cats_and_the_Internet).
 
-Embedded iframes also use a lot of data and can harm page performance. Only loading
-non-critical, below-the-fold images and iframes when the user is likely to see them improves
-page load times, minimizes user bandwidth, and reduces memory usage.
-
-Currently, there are two ways to defer the loading of off-screen images and iframes:
+Currently, there are two ways to defer the loading of off-screen images:
 
 - Using the [Intersection Observer
   API](https://developers.google.com/web/updates/2016/04/intersectionobserver)
@@ -66,7 +57,7 @@ Currently, there are two ways to defer the loading of off-screen images and ifra
 Either option can let developers include lazy-loading functionality, and many developers have built
 third-party libraries to provide abstractions that are even easier to use. With lazy-loading
 supported directly by the browser, however, there's no need for an external library. Native lazy
-loading also ensures that deferred loading of images and iframes still works even if JavaScript is
+loading also ensures that deferred loading of images still works even if JavaScript is
 disabled on the client.
 
 ## The `loading` attribute
@@ -75,12 +66,10 @@ Today, Chrome already loads images at different priorities depending on where th
 respect to the device viewport. Images below the viewport are loaded with a lower priority, but they're
 still fetched as soon as possible.
 
-In Chrome 76, you can use the `loading` attribute to completely defer the loading of offscreen images
-and iframes that can be reached by scrolling:
+In Chrome 76, you can use the `loading` attribute to completely defer the loading of offscreen images that can be reached by scrolling:
 
 ```html
 <img src="image.png" loading="lazy" alt="…" width="200" height="200">
-<iframe src="https://example.com" loading="lazy"></iframe>
 ```
 
 Here are the supported values for the `loading` attribute:
@@ -96,13 +85,13 @@ Here are the supported values for the `loading` attribute:
 
 ### Load-in distance threshold
 
-All images and iframes that are above the fold—that is, immediately viewable without scrolling—load
+All images that are above the fold—that is, immediately viewable without scrolling—load
 normally. Those that are far below the device viewport are only fetched when the user scrolls near
 them.
 
 The distance threshold is not fixed and varies depending on several factors:
 
-- The type of resource being fetched (image or iframe)
+- The type of image resource being fetched 
 - Whether [Lite mode](https://blog.chromium.org/2019/04/data-saver-is-now-lite-mode.html) is enabled
   on Chrome for Android
 - The [effective connection type](https://googlechrome.github.io/samples/network-information/)
@@ -151,30 +140,17 @@ Images that are defined using the `<picture>` element can also be lazy-loaded:
 Although a browser will decide which image to load from any of the `<source>` elements, the `loading`
 attribute only needs to be included to the fallback `<img>` element.
 
-### iframe loading
-
-The `loading` attribute affects iframes differently than images, depending on whether the iframe is
-hidden. (Hidden iframes are often used for analytics or communication purposes.) Chrome uses the
-following criteria to determine whether an iframe is hidden:
-
-- The iframe's width and height are 4 px or smaller.
-- `display: none` or `visibility: hidden` is applied.
-- The iframe is placed off-screen using negative X or Y positioning.
-
-If an iframe meets any of these conditions, Chrome considers it hidden and won't lazy-load it in
-most cases. Iframes that _aren't_ hidden will only load when they're within the [load-in distance threshold](#load-in-distance-threshold).
-A placeholder shows for lazy-loaded iframes that are still being fetched.
 
 ## FAQ
 
 ### Are there plans to expand this feature?
 
 There are plans to change the default lazy-loading behavior of the browser to automatically
-lazy-load any images or iframes that are well suited to being deferred if [Lite
+lazy-load any images that are well suited to being deferred if [Lite
 mode](https://blog.chromium.org/2019/04/data-saver-is-now-lite-mode.html) is enabled on Chrome for
 Android.
 
-### Can I change how close an image or iframe needs to be before a load is triggered?
+### Can I change how close an image needs to be before a load is triggered?
 
 These values are hardcoded and can't be changed through the API. However, they may change in the
 future as the Chrome team experiments with different threshold distances and variables.
@@ -183,7 +159,7 @@ future as the Chrome team experiments with different threshold distances and var
 
 No, it can currently only be used with `<img>` tags.
 
-### Is there a downside to lazy-loading images or iframes that are within the device viewport?
+### Is there a downside to lazy-loading images that are within the device viewport?
 
 Intersection observers for elements that are above the device fold may not fire before the window
 load event, and the lazy-loading functionality in Chrome relies on `IntersectionObserver`. There is
@@ -199,7 +175,7 @@ Only images that are below the device viewport by the [calculated
 distance](#load-in-distance-threshold) load lazily. All images above the viewport, regardless of
 whether they're immediately visible, load normally.
 
-### What if I'm already using a third-party library or a script to lazy-load images or iframes?
+### What if I'm already using a third-party library or a script to lazy-load images?
 
 The `loading` attribute should not affect code that currently lazy-loads your assets in any way, but
 there are a few important things to consider:
@@ -207,8 +183,7 @@ there are a few important things to consider:
 1. If your custom lazy-loader attempts to load images or frames sooner than when Chrome loads them
    normally—that is, at a distance greater than the [load-in distance threshold](#load-in-distance-threshold)—
    they are still deferred and load based on normal browser behavior.
-2. If your custom lazy-loader uses a shorter distance to determine when to load a particular image
-   or iframe than the browser, then the behavior would conform to your custom settings.
+2. If your custom lazy-loader uses a shorter distance to determine when to load a particular image than the browser, then the behavior would conform to your custom settings.
 
 One of the important reasons to continue to use a third-party library along with `loading="lazy"` is
 to provide a polyfill for browsers that do not yet support the attribute.
@@ -216,7 +191,7 @@ to provide a polyfill for browsers that do not yet support the attribute.
 ### Do other browsers support native lazy-loading?
 
 The `loading` attribute can be treated as a progressive enhancement. Browsers that support it can
-lazy-load images and iframes. Those that don't yet can load images just like they would today. In
+lazy-load images. Those that don't yet can load images just like they would today. In
 terms of cross-browser support, currently `loading` is supported in Chrome 76, Mozilla Firefox 75 and in and any Chromium 76-based browsers.
 
 A [similar API](https://w3c.github.io/web-performance/specs/ResourcePriorities/Overview.html) was
@@ -279,6 +254,22 @@ it out in a browser like Firefox or Safari to see the fallback in action.
   that uses native lazy-loading when available but falls back to the library's custom functionality when needed.
 {% endAside %}
 
+### Is lazy-loading for iframes also supported in Chrome?
+
+`<iframe loading=lazy>` was recently standardized and is already implemented in Chromium. This allows you to lazy-load iframes using the `loading` attribute. A dedicated article about iframe lazy-loading will be published on web.dev shortly.
+
+The `loading` attribute affects iframes differently than images, depending on whether the iframe is
+hidden. (Hidden iframes are often used for analytics or communication purposes.) Chrome uses the
+following criteria to determine whether an iframe is hidden:
+
+- The iframe's width and height are 4 px or smaller.
+- `display: none` or `visibility: hidden` is applied.
+- The iframe is placed off-screen using negative X or Y positioning.
+
+If an iframe meets any of these conditions, Chrome considers it hidden and won't lazy-load it in
+most cases. Iframes that _aren't_ hidden will only load when they're within the [load-in distance threshold](#load-in-distance-threshold).
+A placeholder shows for lazy-loaded iframes that are still being fetched.
+
 ### How does native lazy-loading affect advertisements on a web page?
 
 All ads displayed to the user in the form of an image or iframe lazy-load just
@@ -290,9 +281,10 @@ Although the functionality isn't in Chrome 76, there's an [open
 issue](https://bugs.chromium.org/p/chromium/issues/detail?id=875403) to ensure that all images and
 iframes are immediately loaded if a page is printed.
 
+
 ## Conclusion
 
-Baking in native support for lazy-loading images and iframes can make it significantly easier for
+Baking in native support for lazy-loading images can make it significantly easier for
 you to improve the performance of your web pages.
 
 Are you noticing any unusual behavior with this feature enabled in Chrome? [File a
