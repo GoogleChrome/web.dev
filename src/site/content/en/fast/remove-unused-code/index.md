@@ -111,5 +111,3 @@ a custom solution or leveraging a lighter alternative should always be options
 worth considering. However, it is important to weigh the complexity and effort
 required for either of these efforts before removing a library entirely from an
 application.
-
-
