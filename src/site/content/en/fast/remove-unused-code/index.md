@@ -96,6 +96,9 @@ using it. Try to find a way to only import the components that you need from it.
 If you aren't using a library, remove it.  If the library isn't required for the
 initial page load, consider if it can be [lazy loaded](/reduce-javascript-payloads-with-code-splitting).
 
+And in case you're using webpack, check out [the list of plugins
+that automatically remove unused code from popular libraries](https://github.com/GoogleChromeLabs/webpack-libs-optimizations).
+
 {% Aside 'codelab' %}
 [Remove unused code.](/codelab-remove-unused-code)
 {% endAside %}
@@ -108,3 +111,5 @@ a custom solution or leveraging a lighter alternative should always be options
 worth considering. However, it is important to weigh the complexity and effort
 required for either of these efforts before removing a library entirely from an
 application.
+
+
