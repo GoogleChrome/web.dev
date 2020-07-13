@@ -94,7 +94,7 @@ Otherwise, the font face is used normally.
 Understanding these periods means you can use `font-display` to decide how your
 font should render depending on whether or when it was downloaded.
 
-To work with the `font-display` property, add it your `@font-face` rules:
+To work with the `font-display` property, add it to your `@font-face` rules:
 
 ```css
 @font-face {
@@ -210,4 +210,3 @@ The following audits can help you make sure that your pages are continuing to fo
 * [Preload key requests](https://web.dev/uses-rel-preload/)
 * [Uses inefficient cache policy on static assets](https://web.dev/uses-long-cache-ttl/)
 * [All text remains visible during WebFont loads](https://web.dev/font-display/)
-
