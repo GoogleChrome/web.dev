@@ -1,14 +1,59 @@
 ---
 layout: handbook
 title: Content review guidelines
-date: 2020-05-26
+date: 2020-07-13
 description: >
   TODO
 ---
 
-This guide is intended for web.dev authors. The purpose of this guide is to optimize
-the review process so that your content is published with as little churn, delay, or duplicated
-effort as possible.
+This guide is intended for web.dev content authors and reviewers. The purpose of this guide
+is to help authors and reviewers align their expectations about what's in-scope and out-of-scope
+for any given review.
+
+## Usability reviews {: #usability }
+
+{% Aside 'objective' %}
+  The purpose of a usability review is to gain confidence that users can actually
+  accomplish tasks based on the guidance that we've provided.
+{% endAside %}
+
+**What kinds of content should get usability reviews?** Any content that contains
+takes you from point A to point B should get a usability review. Examples:
+
+* Codelabs like [Configure HTTP caching behavior](/codelab-http-cache/)
+* Tooling guides like [Replace animated GIFs with video](/replace-gifs-with-videos/)
+* API guides like [Getting started with Trust Tokens](/trust-tokens/)
+
+**Who can conduct usability reviews?** In general, anyone who approximately matches
+the skill level of your target audience is a good candidate for a usability reviewer.
+For example, if your guide assumes basic knowledge of service workers, a good usability
+reviewer would be someone who has implemented a basic service worker in the past.
+Someone significantly below your target skill level may not be able to follow along
+with the guidance. Someone significantly above your target skill level may miss problems
+that your target audience is going to get stuck on due to the 
+[curse of knowledge](https://en.wikipedia.org/wiki/Curse_of_knowledge). However, if
+you can't find someone representative of your target audience, getting a usability review
+from an expert is always better than not getting any usability reviews at all.
+
+**What should the usability reviewer focus on?** The reviewer should do a hands-on
+verification of the guidance. In other words, they should make sure that they can actually
+complete the task with the guidance that has been provided. Continuing with the examples from
+earlier:
+
+* For the [Configure HTTP caching behavior](/codelab-http-cache/) codelab, the usability reviewer
+  should use the incomplete website that's provided and verify that they can use the instructions
+  to create a complete website that exactly matches the end state of the codelab
+* For the [Replace animated GIFs with video](/replace-gifs-with-videos/) tooling guide,
+  the usability reviewer should use the tool in one of their own projects and verify that
+  the tool actually provides benefit (in this case, the video files that are produced 
+  should be smaller than the animated GIF files)
+* For the [Getting started with Trust Tokens](/trust-tokens/) API guide, the usability reviewer
+  should use the guidance to implement the API in one of their own projects
+
+**The most valuable feedback that the usability reviewer can provide is detailed descriptions
+of where they got stuck and what was confusing.**
+
+<!--
 
 TODO(kayce): Mention that if you're having a hard time, just talk to a writer
 
@@ -17,7 +62,6 @@ Examples of typical review processes?
 ## Best practices
 
 ### List stakeholders
-
 
 ### Think about the order of stakeholder reviews
 
@@ -43,8 +87,6 @@ they will probably point you to this section and ask you to clarify what kind of
 need. 
 
 Does calling out order make sense? It may be too variable. 
-
-
 
 ### Technical review {: #technical }
 
@@ -90,8 +132,6 @@ Usually you want everything totally nailed down before doing a legal review
 
 ### Copyedit reviews
 
-<!--
-
 Ideal location of review: Google Doc
 
 What to check for:
@@ -100,13 +140,9 @@ What to check for:
 * Mechanics
 * Usage
 
--->
-
 ### Proofread reviews
 
 ### Documentation source code review
-
-<!--
 
 Ideal location of review: GitHub PR
 
