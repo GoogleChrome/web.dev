@@ -99,7 +99,7 @@ Zopfli is a zlib compatible compressor that delivers ~5% file-size reduction ove
 
 The `@font-face` CSS at-rule allows you to define the location of a particular font resource, its
 style characteristics, and the Unicode codepoints for which it should be used. A combination of such
-`@font-face declarations can be used to construct a "font family," which the browser will use to
+`@font-face` declarations can be used to construct a "font family," which the browser will use to
 evaluate which font resources need to be downloaded and applied to the current page.
 
 ### Consider a variable font
