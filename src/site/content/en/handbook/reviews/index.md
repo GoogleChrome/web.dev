@@ -3,12 +3,13 @@ layout: handbook
 title: Content review guidelines
 date: 2020-07-13
 description: >
-  TODO
+  Guidelines that help web.dev content authors and reviewers align their expectations
+  about what's in-scope and out-of-scope for any given content review.
 ---
 
 This guide is intended for web.dev content authors and reviewers. The purpose of this guide
 is to help authors and reviewers align their expectations about what's in-scope and out-of-scope
-for any given review.
+for any given content review.
 
 ## Usability reviews {: #usability }
 
@@ -17,7 +18,7 @@ for any given review.
   accomplish tasks based on the guidance that we've provided.
 {% endAside %}
 
-**What kinds of content should get usability reviews?** Any content that contains
+**What kinds of content should get usability reviews?** Any content that
 takes you from point A to point B should get a usability review. Examples:
 
 * Codelabs like [Configure HTTP caching behavior](/codelab-http-cache/)
