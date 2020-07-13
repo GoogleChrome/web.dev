@@ -1,14 +1,24 @@
 ---
 layout: post
 title: Handling navigation requests
+subhead: |
+  Respond to navigation requests without waiting on the network by using
+  a service worker.
 authors:
   - jeffposnick
-date: 2020-07-09
+date: 2020-07-13
+hero: hero.jpg
+alt: Picture of a compass.
 description: |
   Navigation requests are requests for HTML made whenever you enter a new URL in the navigation bar,
   or follow a link on a page. This is where service workers make their biggest impact on
   performance: by using a service worker to respond without waiting for the network, you can ensure
   that navigations are reliably fast and resilient.
+tags:
+  - blog
+  - network
+  - service-worker
+  - offline
 ---
 
 Navigation requests are requests for HTML documents made by your browser whenever you enter a new
@@ -129,3 +139,5 @@ Workbox [provides a helper
 library](https://developers.google.com/web/tools/workbox/modules/workbox-navigation-preload) that
 feature-detects whether navigation preload is supported, and if so, simplifies the process of
 telling your service worker to use the network response.
+
+_<span>Photo by <a href="https://unsplash.com/@aaronburden?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Aaron Burden</a> on <a href="https://unsplash.com/s/photos/navigate?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>,_
