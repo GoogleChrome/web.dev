@@ -78,7 +78,7 @@ Here are the supported values for the `loading` attribute:
   Although available in Chromium, the `auto` value is not mentioned in the [specification](https://html.spec.whatwg.org/multipage/urls-and-fetching.html#lazy-loading-attributes). Since it may be subject to change, we recommend not to use it until it gets included.
 {% endAside %}
 
-### Load-in distance thresholds 
+### Distance-from-viewport thresholds
 
 All images that are above the fold—that is, immediately viewable without scrolling—load
 normally. Those that are far below the device viewport are only fetched when the user scrolls near them.
@@ -111,6 +111,27 @@ the meantime, you will need to override the effective connection type of the bro
 `chrome://flags/#force-effective-connection-type` flag.
 {% endAside %}
 
+## Chrome 86+ improvements to distance-from-viewport thresholds
+
+As of Chrome 86, a significant improvement has been made to align the native image lazy-loading distance-from-viewport thresholds to better meet developer expectations. 
+
+On fast connections (e.g 4G), we have reduced Chrome's distance-from-viewport thresholds from `3000px` to `1250px` and on slower connections (e.g 3G), changed the threshold from `4000px` to `2500px`. This change achieves two things:
+
+* `<img loading=lazy>` behaves closer to the experience offered by JavaScript lazy-loading libraries
+* The new distance-from-viewport thresholds still allow us to guarantee images have probably loaded by the time a user has scrolled to them.
+
+You can find a comparison between the old vs. new distance-from-viewport thresholds for one of our demos below:
+
+Chrome 85 and below vs. Chrome 86 onwards:
+
+<figure class="w-figure">
+  <img src="./better-thresholds.png" alt="Chrome 86 has improved thresholds for native image lazy-loading, reducing the distance-from-viewport thresholds for fast connections from 3000px down to 1250px">
+</figure>
+
+
+and Chrome 86 vs. LazySizes (a popular JS lazy-loading library):
+
+We are committed to working with the web standards community to explore better alignment in how distance-from-viewport thresholds are approached across different browsers.
 
 ### Images should include dimension attributes
 
@@ -147,6 +168,7 @@ Images that are defined using the `<picture>` element can also be lazy-loaded:
 
 Although a browser will decide which image to load from any of the `<source>` elements, the `loading`
 attribute only needs to be included to the fallback `<img>` element.
+
  
 ## Avoid lazy-loading images that are in the first visible viewport 
 
