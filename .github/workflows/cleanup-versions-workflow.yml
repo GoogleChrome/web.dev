@@ -8,7 +8,7 @@ jobs:
   cleanup:
     runs-on: ubuntu-latest
     steps:
-      - name: Snapshot
+      - name: Setup gcloud
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@0.1.1
         with:
           version: '270.0.0'
@@ -35,7 +35,9 @@ jobs:
         run: npm ci
 
       # Cleanup web-dev-staging
-      - run: npm run stage:cleanup
+      - name: Cleanup staging
+        run: npm run stage:cleanup
 
       # Cleanup web-dev-production-1
-      - run: npm run deploy:cleanup
+      - name: Cleanup prod
+        run: npm run deploy:cleanup

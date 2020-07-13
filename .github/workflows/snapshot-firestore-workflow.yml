@@ -9,7 +9,7 @@ jobs:
     name: Run gcloud to snapshot
     runs-on: ubuntu-latest
     steps:
-      - name: Snapshot
+      - name: Setup gcloud
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@0.1.1
         with:
           version: '270.0.0'
@@ -20,4 +20,5 @@ jobs:
       # can't naïvely target a subfolder (it will fail with "Path already exists").
       # This is a secondary bucket, not the default Firebase project. Its lifecycle config is set
       # to delete objects that are >=90 days old.
-      - run: gcloud --project web-dev-production-1 firestore export gs://web-dev-production-firestore-archive
+      - name: Export Firestore
+        run: gcloud --project web-dev-production-1 firestore export gs://web-dev-production-firestore-archive
