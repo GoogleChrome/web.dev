@@ -130,7 +130,7 @@ For more information on preloading fonts, and the `font-display` property, see t
 Used together, `<link rel="preload">` and the CSS `font-display` give you a great deal of control over font loading and rendering,
 without adding in much overhead.
 But if you need additional customizations,
-and are willing to incur with the overhead introduced by running JavaScript, there is another option.
+and are willing to incur the overhead introduced by running JavaScript, there is another option.
 
 The [Font Loading API](https://www.w3.org/TR/css-font-loading/) provides a scripting interface to define and manipulate CSS font faces,
 track their download progress, and override their default lazyload behavior.
