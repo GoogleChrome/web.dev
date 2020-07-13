@@ -159,7 +159,7 @@ font.load().then(function() {
 ```
 
 Further, because you can check the font status
-(via the [check()](https://www.w3.org/TR/css-font-loading/#font-face-set-check)) method
+(via the [`check()`](https://www.w3.org/TR/css-font-loading/#font-face-set-check)) method
 and track its download progress,
 you can also define a custom strategy for rendering text on your pages:
 
