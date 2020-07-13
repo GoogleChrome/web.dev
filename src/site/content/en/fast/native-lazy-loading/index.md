@@ -130,7 +130,7 @@ The best practice of setting dimensions applies to `<img>` tags regardless of wh
 
 Images will still lazy-load if dimensions are not included, but [specifying them decreases the chance of layout shift](https://www.youtube.com/watch?v=4-d_SoCHeWE). If you are unable to include dimensions for your images, lazy-loading them can be a trade-off between saving network resources and potentially being more at risk of layout shift. 
 
-While native lazy-loading in Chromium is implemented in a way such that images are likely to be loaded once they are visible, it should be kept in mind, there is a slightly greater chance of them not being loaded yet. In this case, missing `width` and `height` attributes on such images increase their impact on Cumulative Layout Shift.
+While native lazy-loading in Chromium is implemented in a way such that images are likely to be loaded once they are visible, there is still a small chance that they might not be loaded yet. In this case, missing `width` and `height` attributes on such images increase their impact on Cumulative Layout Shift.
 
 {% Aside %}
   Take a look at this [demo](https://mathiasbynens.be/demo/img-loading-lazy) to see how the `loading` attribute works with 100 pictures.
