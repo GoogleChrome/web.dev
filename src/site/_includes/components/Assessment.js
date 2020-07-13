@@ -205,7 +205,11 @@ module.exports = (page, targetAssessment) => {
     `);
   }
   const filePath = page.filePathStem.replace(/index$/, '');
-  const source = path.join(site.contentDir, filePath, targetAssessment + '.assess.yml');
+  const source = path.join(
+    site.contentDir,
+    filePath,
+    targetAssessment + '.assess.yml',
+  );
   const data = fs.readFileSync(source, 'utf8');
   const assessment = yaml.safeLoad(data);
 

@@ -263,23 +263,15 @@ module.exports = function (config) {
   // https://www.11ty.io/docs/config/#data-deep-merge
   config.setDataDeepMerge(true);
 
-
-
   // https://www.11ty.io/docs/config/#configuration-options
-  const dirOptions = process.env.ELEVENTY_LANG ? {
-    input: 'src/site/content/' + process.env.ELEVENTY_LANG,
-    output: 'dist',
-    data: '../../_data',
-    includes: '../../_includes',
-  } : {
-    input: 'src/site/content',
-    output: 'dist',
-    data: '../_data',
-    includes: '../_includes',
-  }
-
+  const targetLang = process.env.ELEVENTY_LANG || '';
   return {
-    dir: dirOptions,
+    dir: {
+      input: 'src/site/content/' + targetLang,
+      output: 'dist',
+      data: targetLang ? '../../_data' : '../_data',
+      includes: targetLang ? '../../_includes' : '../_includes',
+    },
     templateFormats: ['njk', 'md'],
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
