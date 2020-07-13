@@ -7,7 +7,7 @@ authors:
   - addyosmani
   - mathiasbynens
 date: 2019-08-06
-updated: 2020-07-10
+updated: 2020-07-13
 hero: hero.png
 alt: Phone outline with loading image and assets
 description: |
@@ -28,14 +28,12 @@ a [demo](https://mathiasbynens.be/demo/img-loading-lazy) of the feature:
   </video>
 </figure>
 
-Starting with Chrome 76, you'll be able to use the new `loading` attribute to lazy-load images
+In Chrome 76 onwards, you can use the `loading` attribute to lazy-load images
 without the need to write custom lazy-loading code or use a separate JavaScript library. Let's dive into the details.
 
 ## Browser compatibility
 
-`<img loading=lazy>` is supported by most popular Chromium-powered browsers (Chrome, Edge, Opera), [Firefox](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/75#HTML) and the implementation for WebKit (Safari) [is in progress](https://bugs.webkit.org/show_bug.cgi?id=200764). 
-
-[caniuse.com](https://caniuse.com/#feat=loading-lazy-attr) has detailed information on cross-browser support. Browsers that do not support the `loading` attribute simply ignore it without side-effects.
+`<img loading=lazy>` is supported by most popular Chromium-powered browsers (Chrome, Edge, Opera), [Firefox](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/75#HTML) and the implementation for WebKit (Safari) [is in progress](https://bugs.webkit.org/show_bug.cgi?id=200764). [caniuse.com](https://caniuse.com/#feat=loading-lazy-attr) has detailed information on cross-browser support. Browsers that do not support the `loading` attribute simply ignore it without side-effects.
 
 ## Why native lazy-loading?
 
@@ -132,7 +130,7 @@ The best practice of setting dimensions applies to `<img>` tags regardless of wh
 
 Images will still lazy-load if dimensions are not included, but [specifying them decreases the chance of layout shift](https://www.youtube.com/watch?v=4-d_SoCHeWE). If you are unable to include dimensions for your images, lazy-loading them can be a trade-off between saving network resources and potentially being more at risk of layout shift. 
 
-While native lazy-loading in Chromium is implemented in a way such that images are likely to be loaded once they are visible, it should be kept in mind, there is a slightly greater chance of them not being loaded yet. In this case, case missing `width` and `height` attributes on such images increase their impact on Cumulative Layout Shift.
+While native lazy-loading in Chromium is implemented in a way such that images are likely to be loaded once they are visible, it should be kept in mind, there is a slightly greater chance of them not being loaded yet. In this case, missing `width` and `height` attributes on such images increase their impact on Cumulative Layout Shift.
 
 {% Aside %}
   Take a look at this [demo](https://mathiasbynens.be/demo/img-loading-lazy) to see how the `loading` attribute works with 100 pictures.
@@ -183,7 +181,7 @@ Browsers that do not yet support the `loading` attribute will ignore its presenc
 ### Are there plans to automatically lazy-load images in Chrome?
 
 Chromium already automatically
-lazy-load any images that are well suited to being deferred if [Lite
+lazy-loads any images that are well suited to being deferred if [Lite
 mode](https://blog.chromium.org/2019/04/data-saver-is-now-lite-mode.html) is enabled on Chrome for Android. This is primarily aimed at users who are conscious about data-savings.
 
 ### Can I change how close an image needs to be before a load is triggered?
