@@ -3,7 +3,7 @@ title: 'Hands-on with Portals: seamless navigation on the Web'
 subhead: |
   Learn how the proposed Portals API can improve your navigation UX.
 date: 2019-05-06
-updated: 2020-06-25
+updated: 2020-07-13
 authors:
   - uskay
 hero: hero.png
@@ -29,7 +29,7 @@ help with this by streamlining the experience as users navigate _across_ your
 site.
 
 Portals are currently experimental, but you can use them on your site today by
-taking part in the [origin trial](ot).
+taking part in the [origin trial]({{origin_trial.url}}).
 
 See Portals in action:
 
@@ -300,4 +300,4 @@ Another important thing to know is that Portals can be used in cross-origin navi
 
 ## Feedback welcome
 
-Portals are ready for experimentation in Chrome 85 and 86 and via the [origin trial](ot). Feedback from the community is crucial to the design of new APIs, so please try it out and tell us what you think! If you have any feature requests or feedback, please head over to the [WICG GitHub repo](https://github.com/WICG/portals/issues).
+Portals are ready for experimentation in Chrome 85 and 86 and via the [origin trial]({{origin_trial.url}}). Feedback from the community is crucial to the design of new APIs, so please try it out and tell us what you think! If you have any feature requests or feedback, please head over to the [WICG GitHub repo](https://github.com/WICG/portals/issues).
