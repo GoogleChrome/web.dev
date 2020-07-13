@@ -10,7 +10,7 @@ permalink: "/sitemap.xml"
   {# the service worker partial. #}
   {# But use the page's fileSlug so we can strip out the language directory. #}
   {%- if page.url %}
-  {% set absoluteUrl %}{{ page.fileSlug | absoluteUrl(site.url) }}{% endset %}
+  {% set absoluteUrl %}{{ page.data.canonicalUrl }}{% endset %}
   <url>
     <loc>{{ absoluteUrl }}</loc>
     {%- if page.data.updated %}
