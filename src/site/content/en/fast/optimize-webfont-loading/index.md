@@ -112,7 +112,12 @@ To work with the `font-display` property, add it to your `@font-face` rules:
 ```
 
 `font-display` currently supports the following range of values:
-`auto | block | swap | fallback | optional`.
+
+* `auto`
+* `block`
+* `swap`
+* `fallback`
+* `optional`
 
 For more information on preloading fonts, and the `font-display` property, see the following posts:
 
