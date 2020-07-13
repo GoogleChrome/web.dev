@@ -4,7 +4,7 @@ subhead: Help users with OTPs received through SMS
 authors:
   - agektmr
 date: 2019-10-07
-updated: 2020-06-11
+updated: 2020-07-13
 hero: hero.png
 alt: A drawing of a woman using OTP to log in to a web app.
 
@@ -374,7 +374,7 @@ a few significant differences compared to the SMS Receiver API.
 
 Chromium and WebKit agreed on the SMS text message format. Find WebKit's
 documentation here:
-[Delivering origin-bound one-time codes over SMS](https://github.com/WebKit/explainers/tree/master/sms-one-time-code-format)
+[Delivering origin-bound one-time codes over SMS](https://github.com/wicg/sms-one-time-codes)
 
 
 ### Is it safe to use SMS as a way to authenticate?

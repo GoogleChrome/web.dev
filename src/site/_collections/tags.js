@@ -33,6 +33,7 @@ module.exports = (collections) => {
     tag.data = {
       title: tag.title,
       subhead: tag.description,
+      canonicalUrl: tag.href,
     };
 
     tag.elements = collections

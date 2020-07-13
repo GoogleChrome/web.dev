@@ -16,12 +16,16 @@ import {matchSameOriginRegExp} from './utils/sw-match.js';
 const cacheNames = {webdevCore: 'webdev-core', ...workboxCacheNames};
 
 /**
- * Configure default cache for some common web.dev assets: images, CSS, JS, partial template.
+ * Configure default cache for some common web.dev assets: images, CSS, JS, partial template. This
+ * doesn't match general HTML or other files, so we disable directoryIndex and cleanURLs.
  *
  * This must occur first, as we cache images that are also matched by runtime handlers below. See
  * this workbox issue for updates: https://github.com/GoogleChrome/workbox/issues/2402
  */
-precacheAndRoute(manifest);
+precacheAndRoute(manifest, {
+  cleanURLs: false,
+  directoryIndex: '',
+});
 
 // Architecture revision of the Service Worker. If the previously saved revision doesn't match,
 // then this will cause clients to be aggressively claimed and reloaded on install/activate.

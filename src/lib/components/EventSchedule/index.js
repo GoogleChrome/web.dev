@@ -178,13 +178,18 @@ class EventSchedule extends HTMLElement {
   }
 
   onStateChanged({activeEventDay}) {
-    this._activeEventDay = activeEventDay;
-
-    // This relies on the event data being in the same shape as the rendered
-    // tabs, which is pretty safe, since it comes from the same source.
-    // Don't change the tab for the user if a modal is already open.
-    if (!this._modalElement.open && activeEventDay) {
+    // Update the activeEventDay which in turn sets the current active tab.
+    // This happens initially when the component first boots and again if the
+    // user leaves the tab open and we transition to a new day.
+    // This does not attempt to set the tabsElement on every tick because we
+    // assume the user will be changing tabs on their own.
+    if (
+      activeEventDay &&
+      activeEventDay !== this._activeEventDay &&
+      !this._modalElement.open
+    ) {
       this._tabsElement.activeTab = activeEventDay.index;
+      this._activeEventDay = activeEventDay;
     }
   }
 }

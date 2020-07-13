@@ -32,41 +32,67 @@ class EventCarousel extends BaseStateElement {
   }
 
   render() {
+    // Note that we use `isChatActive` to determine whether the current day
+    // shows as "Broadcasting". We backed ourselves into a corner with the
+    // `activeEventDay` property as it actually reflects the upcoming day, even
+    // hours before the event starts (which is useful for the YT _preview_).
+
     const renderDay = (day) => {
-      const {isComplete, videoId, title} = day;
-      const show = isComplete && videoId;
+      const {isComplete, isChatActive, videoId, playlistId, title} = day;
+      const isClickable = Boolean(
+        // Allows to click if playlist is available, otherwise depends on event status.
+        (playlistId || isComplete || isChatActive) && (videoId || playlistId),
+      );
 
-      if (!show) {
-        return html`
-          <div class="w-event-carousel__day">
-            <div class="w-event-carousel__thumbnail"></div>
-            <div class="w-event-carousel__description">
-              ${title} &mdash; Coming soon
-            </div>
-          </div>
-        `;
-      }
-
-      // We use "maxresdefault" as the other images have black bars as they try
-      // to fit 4:3 rendering.
-      return html`
-        <a
-          class="w-event-carousel__day"
-          href="https://youtu.be/${videoId}"
-          target="_blank"
-        >
-          <div class="w-event-carousel__thumbnail">
+      // The thumbnail is shown as long as we have a videoId, regardless of
+      // whether the day is complete or not.
+      // nb. We use "maxresdefault" as the other images have black bars as they
+      // try to fit 4:3 rendering.
+      const thumbnailPart = videoId
+        ? html`<div class="w-event-carousel__thumbnail">
             <img
               alt="${title}"
               src="https://img.youtube.com/vi/${videoId}/maxresdefault.jpg"
               width="178"
               height="110"
             />
-          </div>
-          <div class="w-event-carousel__description">
-            ${title} &mdash; All sessions
-          </div>
-        </a>
+          </div>`
+        : '';
+
+      let message = 'Coming soon';
+      if (isChatActive) {
+        message = 'Broadcasting';
+      } else if (isClickable) {
+        message = 'All sessions';
+      }
+
+      const descriptionPart = html` <div class="w-event-carousel__description">
+        ${title} &mdash; ${message}
+      </div>`;
+
+      if (isClickable) {
+        // Prefer the playlistId over the videoId, if available.
+        const href =
+          !isChatActive && playlistId
+            ? `https://www.youtube.com/playlist?list=${playlistId}`
+            : `https://youtu.be/${videoId}`;
+        return html`
+          <a
+            class="w-event-carousel__day gc-analytics-event"
+            data-category="web.dev"
+            data-label="live, open ${title} on YouTube"
+            data-action="click"
+            href="${href}"
+            target="_blank"
+          >
+            ${thumbnailPart} ${descriptionPart}
+          </a>
+        `;
+      }
+      return html`
+        <div class="w-event-carousel__day w-event-carousel__pending">
+          ${thumbnailPart} ${descriptionPart}
+        </div>
       `;
     };
 

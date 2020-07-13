@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-// Strip the language prefix from urls.
-// e.g. /en/foo becomes /foo.
-module.exports = (url) => {
-  const urlParts = url.split('/');
-  urlParts.splice(1, 1);
-  return urlParts.join('/');
-};
+const isProd = process.env.ELEVENTY_ENV === 'prod';
+const noop = (url) => url;
+const strip = (url) => url.split('?')[0];
+
+// Strip query params from URLs in dev only. Used for lazy cache-busting
+// e.g. in non-prod, app.css?blah => app.css
+module.exports = isProd ? noop : strip;

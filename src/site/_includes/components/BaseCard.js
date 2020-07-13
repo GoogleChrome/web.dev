@@ -16,7 +16,6 @@
 
 const path = require('path');
 const {html} = require('common-tags');
-const stripLanguage = require('../../_filters/strip-language');
 const md = require('../../_filters/md');
 const constants = require('../../_utils/constants');
 const getSrcsetRange = require('../../_utils/get-srcset-range');
@@ -39,7 +38,7 @@ class BaseCard {
     this.collectionItem.data = this.collectionItem.data || {};
     this.featured = featured;
     this.className = className;
-    this.url = stripLanguage(this.collectionItem.url);
+    this.url = this.collectionItem.data.canonicalUrl;
     this.data = this.collectionItem.data;
     this.displayedTags = [];
 

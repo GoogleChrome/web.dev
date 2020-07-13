@@ -16,7 +16,6 @@
 
 const {livePosts} = require('../_filters/live-posts');
 const removeMarkdown = require('remove-markdown');
-const stripLanguage = require('../_filters/strip-language');
 
 /**
  * Shrink the size of the given fulltext to fit within a certain limit, at the
@@ -72,7 +71,7 @@ module.exports = (collection) => {
       objectID: data.page.url + '#' + lang,
       lang,
       title: data.title,
-      url: stripLanguage(data.page.url),
+      url: data.canonicalUrl,
       description: data.description,
       fulltext: limited,
       _tags: data.tags,
