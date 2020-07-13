@@ -32,6 +32,7 @@ Here's how to spell, punctuate, and capitalize words and phrases commonly used o
 * web app manifest
 * web page
 * web.dev
+* WebFont
 * webpack
 * website
 * Wi-Fi
