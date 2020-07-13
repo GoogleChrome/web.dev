@@ -14,11 +14,13 @@
  * limitations under the License.
  */
 
+const path = require('path');
 const locale = require('../../../shared/locale');
 
 module.exports = {
   env: process.env.ELEVENTY_ENV || 'dev',
   percy: process.env.PERCY || false,
+  contentDir: path.join('src/site/content/', process.env.ELEVENTY_LANG || ''),
   title: 'web.dev',
   titleVariation: 'Home',
   defaultLocale: locale.defaultLocale,
