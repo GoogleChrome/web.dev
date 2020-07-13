@@ -95,7 +95,7 @@ module.exports = {
       title: 'Optimize WebFonts',
       pathItems: [
         'avoid-invisible-text',
-        'optimize-webfontloading',
+        'optimize-webfont-loading',
         'reduce-webfont-size',
       ],
     },
