@@ -2,11 +2,16 @@
 layout: handbook
 title: Word list
 date: 2019-06-26
+updated: 2020-07-14
 description: |
   Spelling, punctuation, and capitalization for words and phrases commonly used on web.dev.
 ---
 
-Here's how to spell, punctuate, and capitalize words and phrases commonly used on web.dev.
+This word list tells you how to spell, punctuate, and capitalize common words in web.dev content.
+This word list supplements the [Google Developer Documentation Style Guide Word List][list] (GDDSGWL).
+If a word is listed in the GDDSGWL but not here, use that spelling. If a word is listed both here and the
+GDDSGWL, use the spelling that you see here.
+
 * code splitting (noun)
 * code-splitting (adj)
 * ~~code-split (verb)~~ (use _split_ instead)
