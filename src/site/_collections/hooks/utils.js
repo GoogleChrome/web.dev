@@ -56,6 +56,8 @@ const index = (items, href, testItems) => {
     itemsWithPosts = items.filter((item) => item.elements.length > 0);
   }
 
+  itemsWithPosts.sort((a, b) => a.title.localeCompare(b.title));
+
   return addPagination(itemsWithPosts, {href});
 };
 
