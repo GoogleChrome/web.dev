@@ -1377,5 +1377,16 @@
     "country": "KR",
     "twitter": "maranag",
     "github": "maranag"
+  },
+  "sahel": {
+    "name": {
+      "given": "Sahel",
+      "family": "Sharify"
+    },
+    "github": "sahel-sh",
+    "country": "CA",
+    "org": {
+      "name": "Google"
+    }
   }
 }
