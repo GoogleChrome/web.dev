@@ -26,7 +26,7 @@ Preloading is best suited for resources typically discovered late by the browser
 
 <figure class="w-figure">
 <img src="./network-waterfall-before.png" alt="Screenshot of Chrome DevTools Network panel.">
-<figcaption class="w-figcaption">In this example, Pacifico font is defined in the stylesheet with a <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face)"><code>@font-face</code></a> rule. The browser loads the font file only after it has finished downloading and parsing the stylesheet.</figcaption>
+<figcaption class="w-figcaption">In this example, Pacifico font is defined in the stylesheet with a <a href="/reduce-webfont-size/#defining-a-font-family-with-@font-face)"><code>@font-face</code></a> rule. The browser loads the font file only after it has finished downloading and parsing the stylesheet.</figcaption>
 </figure>
 
 By preloading a certain resource, you are telling the browser that you would like to fetch it sooner than the browser would otherwise discover it because you are certain that it is important for the current page.
@@ -73,7 +73,7 @@ preloaded resources can "jump the queue" and be requested sooner than they shoul
 
 ### Preloading resources defined in CSS
 
-Fonts defined with [`@font-face`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face) rules or background images defined in CSS files aren't discovered until the browser downloads and parses those CSS files. Preloading these resources ensures they are fetched before the CSS files have downloaded.
+Fonts defined with [`@font-face`](/reduce-webfont-size/#defining-a-font-family-with-@font-face) rules or background images defined in CSS files aren't discovered until the browser downloads and parses those CSS files. Preloading these resources ensures they are fetched before the CSS files have downloaded.
 
 ### Preloading CSS files
 

@@ -94,8 +94,12 @@ module.exports = {
       ],
     },
     {
-      title: 'Optimize web fonts',
-      pathItems: ['avoid-invisible-text'],
+      title: 'Optimize WebFonts',
+      pathItems: [
+        'avoid-invisible-text',
+        'optimize-webfont-loading',
+        'reduce-webfont-size',
+      ],
     },
     {
       title: 'Optimize for network quality',
