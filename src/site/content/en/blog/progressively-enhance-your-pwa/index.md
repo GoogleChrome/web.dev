@@ -12,12 +12,15 @@ description: |
   and many more.
 scheduled: true
 date: 2020-06-29
-# updated: 2020-06-15
+updated: 2020-07-10
 tags:
   - blog
   - capabilities
   - fugu
   - progressive-web-apps
+hero: hero.jpg
+alt: An image of a fish.
+thumbnail: thumbnail.jpg
 ---
 
 Back in March 2003, [Nick Finck](https://twitter.com/nickf) and

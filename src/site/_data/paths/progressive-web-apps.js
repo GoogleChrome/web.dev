@@ -20,7 +20,7 @@ module.exports = {
     },
     {
       title: 'Capable',
-      pathItems: ['app-like-pwas'],
+      pathItems: ['app-like-pwas', 'progressively-enhance-your-pwa'],
     },
     {
       title: 'Reliable',
