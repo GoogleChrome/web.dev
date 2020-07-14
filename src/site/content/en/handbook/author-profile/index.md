@@ -1,16 +1,16 @@
 ---
 layout: handbook
-title: Contributor profile
+title: Authors profile
 date: 2019-06-26
 description: |
-  Learn how to create a contributor profile for web.dev.
+  Learn how to create an author profile for web.dev.
 ---
 
-## Add yourself to the contributors list
-1. Add a new object to [`contributors.json`](https://github.com/GoogleChrome/web.dev/blob/master/src/site/_data/contributors.js) with the following structure. Make sure to choose a unique contributor slug.
+## Add yourself to the authors list
+1. Add a new object to [`authorsData.json`](https://github.com/GoogleChrome/web.dev/blob/master/src/site/_data/authorsData.json) with the following structure. Make sure to choose a unique author slug.
 
     ```json
-    "contributorslug": {
+    "authorslug": {
       "name": {
         "given": "Jaimie",
         "family": "Smith"
@@ -18,7 +18,7 @@ description: |
     },
     ```
 
-1. If you want links to your online accounts to appear in your contributor lockup, add any of these members to your contributor object.
+1. If you want links to your online accounts to appear in your author lockup, add any of these members to your author object.
 
     ```json/5-7
     "jaimiesmith": {
@@ -28,12 +28,16 @@ description: |
       },
       "twitter": "jaimiesmith",
       "github": "jaimiesmith",
-      "glitch": "jaimiesmith"
+      "glitch": "jaimiesmith",
+      "homepage": "https://jaimiesmithis.cool/",
+      "description": {
+        "en": "Jaimie is more than meets the eye"
+      },
     },
     ```
 
     <figure class="w-figure">
-      <img class="w-screenshot" src="./lockup.png" alt="Screenshot of a contributor lockup">
+      <img class="w-screenshot" src="./lockup.png" alt="Screenshot of an author lockup">
     </figure>
 
 1. You can also add supplemental info, but it's not currently displayed on web.dev.
@@ -47,15 +51,15 @@ description: |
       "twitter": "jaimiesmith",
       "github": "jaimiesmith",
       "glitch": "jaimiesmith",
+      "homepage": "https://jaimiesmithis.cool/",
+      "description": {
+        "en": "Jaimie is more than meets the eye"
+      },
       "org": {
         "name": "Google",
         "unit": "Developer Relations"
       },
       "country": "US",
-      "homepage": "https://jaimiesmithis.cool/",
-      "description": {
-        "en": "Jaimie is more than meets the eye"
-      }
     },
     ```
 

@@ -16,7 +16,6 @@
 
 const isGAEProd = Boolean(process.env.GAE_APPLICATION);
 
-const fs = require('fs');
 const compression = require('compression');
 const express = require('express');
 const cookieParser = require('cookie-parser');
@@ -62,12 +61,14 @@ const notFoundHandler = (req, res, next) => {
 // returns the current live asset. This applies to both "app.css" and "bootstrap.js".
 function buildSafetyAssetHandler() {
   const hashedAssetMatch = /^(\w+)(?:|-\w+)\.(\w+)(?:\?.*|)$/;
+
+  // Matches URLs like "/foo-hash.css" or "/blah.suffix", including an optional query param suffix.
+  // Just returns two groups: "foo" and "suffix".
   const runHashedAssetMatch = (cand) => {
     if (cand.startsWith('/')) {
       cand = cand.substr(1);
     }
     const m = hashedAssetMatch.exec(cand);
-    console.warn('got match', m, 'for', cand);
     if (!m) {
       return {base: null, ext: null};
     }
@@ -75,38 +76,17 @@ function buildSafetyAssetHandler() {
     return {base, ext};
   };
 
-  // On build, find the relevant bootstrap/app assets. We presume that in prod, only the correct
-  // files will exist. In dev, it's trivially possible for lots of files to be in /dist/, including
-  // older assets.
-  // TODO(samthor): does gcloud upload the files "src/site/_data/resourceCSS.json"? If so, we could
-  // just pull direct from there, or some other generated Eleventy file.
-  const files = fs.readdirSync('dist/');
-  const findHashedAsset = (base, ext) => {
-    for (const f of files) {
-      const {base: checkBase, ext: checkExt} = runHashedAssetMatch(f);
-      if (base === checkBase && ext === checkExt) {
-        return f;
-      }
-    }
-    return null;
-  };
-  const bootstrapJSAsset = findHashedAsset('bootstrap', 'js');
-  const appCSSAsset = findHashedAsset('app', 'css');
-  console.info(
-    `Server found bootstrap.js=${bootstrapJSAsset} app.css=${appCSSAsset}`,
-  );
-
-  // Matches requests like "/foo-hash.css" or "/blah.ext". Just returns two groups: "foo" and "ext".
   return (req, res, next) => {
     const {base, ext} = runHashedAssetMatch(req.url);
     if (!base) {
       return next();
     }
 
-    if (bootstrapJSAsset && base === 'bootstrap' && ext === 'js') {
-      req.url = '/' + bootstrapJSAsset;
-    } else if (appCSSAsset && base === 'app' && ext === 'css') {
-      req.url = '/' + appCSSAsset;
+    // We don't hash these assets in the upload, so just use them directly.
+    if (base === 'bootstrap' && ext === 'js') {
+      req.url = '/bootstrap.js';
+    } else if (base === 'app' && ext === 'css') {
+      req.url = '/app.css';
     }
 
     return next();

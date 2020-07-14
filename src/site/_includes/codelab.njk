@@ -20,7 +20,9 @@ show_banner: false
           {% for author in authors %}
             {% Author {
               id: author,
-              showSocialMedia: true}
+              author: collections.authors[author],
+              showSocialMedia: true
+              }
             %}
           {% endfor %}
         </div>

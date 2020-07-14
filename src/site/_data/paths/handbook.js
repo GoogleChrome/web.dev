@@ -37,7 +37,7 @@ module.exports = {
     {
       title: 'web.dev markup',
       pathItems: [
-        'handbook/contributor-profile',
+        'handbook/author-profile',
         'handbook/markup-post-codelab',
         'handbook/web-dev-components',
         'handbook/markup-media',

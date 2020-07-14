@@ -23,6 +23,7 @@ const rollupPluginReplace = require('rollup-plugin-replace');
 const OMT = require('@surma/rollup-plugin-off-main-thread');
 const rollup = require('rollup');
 const {getManifest} = require('workbox-build');
+const resourcePath = require('./src/build/resource-path');
 const buildVirtualJSON = require('./src/build/virtual-json');
 const minifySource = require('./src/build/minify-js');
 
@@ -40,7 +41,7 @@ const {buildDefaultPlugins, disallowExternal} = require('./src/build/common');
  * before the Rollup build script.
  */
 async function buildCacheManifest() {
-  const toplevelManifest = await getManifest({
+  const config = {
     // JS or CSS files that include hashes don't need their own revision fields.
     dontCacheBustURLsMatching: /-[0-9a-f]{8}\.(css|js)/,
     globDirectory: 'dist',
@@ -48,15 +49,25 @@ async function buildCacheManifest() {
       // We don't include jpg files, as they're used for authors and hero
       // images, which are part of articles, and not the top-level site.
       'images/**/*.{png,svg}',
-      '*.css',
-      '*.js',
+      '*-*.js',
       'sw-partial-layout.partial',
     ],
     globIgnores: [
       // This removes large shared PNG files that are used only for articles.
       'images/{shared}/**',
     ],
-  });
+  };
+  if (isProd) {
+    config.additionalManifestEntries = [
+      {url: resourcePath('js'), revision: null},
+      {url: resourcePath('css'), revision: null},
+    ];
+  } else {
+    // Don't use hash revisions in dev, or even check that the files exist.
+    config.globPatterns.push('bootstrap.js', 'app.css');
+  }
+
+  const toplevelManifest = await getManifest(config);
   if (toplevelManifest.warnings.length) {
     throw new Error(`toplevel manifest: ${toplevelManifest.warnings}`);
   }

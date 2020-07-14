@@ -390,14 +390,14 @@
   font-weight: $FONT_WEIGHT_MEDIUM;
   margin-right: 16px;
 
-  &:hover,
-  &:focus {
+  &a:hover,
+  &a:focus {
     outline: 0;
     opacity: .9;
     text-decoration: none;
   }
 
-  &:focus {
+  &a:focus {
     .w-event-carousel__description {
       box-shadow: inset 0 0 0 1px $FOCUS_COLOR;
     }
@@ -405,6 +405,10 @@
 
   &:last-child {
     margin-right: 0;
+  }
+
+  &.w-event-carousel__pending {
+    opacity: .6;
   }
 }
 
@@ -511,6 +515,8 @@ web-tabs.w-event-tabs {
 
   .w-event-schedule__session {
     font-size: 14px;
+    display: flex;
+    flex-flow: row wrap;
   }
 
   .w-authors__card {
@@ -524,8 +530,9 @@ web-tabs.w-event-tabs {
     display: inline-block;
     font-family: $HEADLINE_FONT;
     pointer-events: auto;
-    margin-bottom: 4px;
     font-size: 18px;
+    margin-right: 1em;
+    flex-grow: 1;
 
     &:hover,
     &:focus {
@@ -542,8 +549,7 @@ web-tabs.w-event-tabs {
       position: relative;
     }
 
-    // This creates a large clickable area around the link itself, but which
-    // doesn't extend into the speakers area on the left.
+    // This creates a large clickable area around the link itself.
     &::before {
       content: '';
       top: 0;
@@ -557,8 +563,15 @@ web-tabs.w-event-tabs {
   }
 
   .w-event-schedule__blurb {
+    margin-top: 4px;
     color: $GREY_700;
   }
+}
+
+.w-event-schedule__video {
+  align-self: center;
+  font-weight: 500;
+  z-index: 1; // bring to front
 }
 
 .w-event-calendar {

@@ -2,7 +2,7 @@
 layout: handbook
 title: Images and video
 date: 2019-06-26
-updated: 2020-06-11
+updated: 2020-07-13
 description: |
   Learn how to create the Markdown for images and video for web.dev.
 ---
@@ -249,7 +249,7 @@ To take a screenshot on Mac:
 
 ## Video
 
-### Video hosted on YouTube
+### Video hosted on YouTube {: #youtube }
 
 To embed a YouTube video, use the `YouTube` component.
 
