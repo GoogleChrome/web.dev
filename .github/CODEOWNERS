@@ -25,7 +25,7 @@ content/en/angular/ @mgechev @kaycebasques
 *.sh @robdodson @samthor
 
 # Exceptions
-src/site/_data/contributors.js @kaycebasques @robdodson
+src/site/_data/authorsData.json @kaycebasques @robdodson @jpmedley
 src/site/_data/postTags.js @kaycebasques @robdodson
 src/site/_data/paths/progressive-web-apps.js @petele @kaycebasques
 src/site/content/en/progressive-web-apps/progressive-web-apps.11tydata.js @petele @kaycebasques
