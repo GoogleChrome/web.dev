@@ -1,5 +1,5 @@
 ---
-title: '@property: Giving Superpowers to CSS Variables'
+title: '@property: giving superpowers to CSS variables'
 subhead: The Houdini Properties and Values API is coming to your CSS file in Chromium 85.
 authors:
   - una
@@ -25,19 +25,19 @@ One of the most exciting additions to CSS within the Houdini umbrella is the
 [Properties and Values
 API](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Properties_and_Values_API).
 This API supercharges your CSS custom properties (also commonly referred to as
-CSS variables) by giving them semantic meaning (tied to a syntax) and even
+CSS variables) by giving them semantic meaning (defined by a syntax) and even
 fallback values, enabling CSS testing.
 
 ## Writing Houdini custom properties
 
 Here's an example of setting a custom property (think: CSS variable), but now
-with a syntax (type), initial value (fallback), and inheritance statement (does
+with a syntax (type), initial value (fallback), and inheritance boolean (does
 it inherit the value from it's parent or not?). The current way to do this is
 through `CSS.registerProperty()` in JavaScript, but in Chromium 85 and later, the
 `@property` syntax will be supported in your CSS files:
 
 <div class="w-columns">
-{% Compare 'worse', 'Separate JavaScript file (Chromium 78+)' %}
+{% Compare 'worse', 'Separate JavaScript file (Chromium 78)' %}
 ```js
 CSS.registerProperty({
   name: '--colorPrimary',
@@ -48,7 +48,7 @@ CSS.registerProperty({
 ```
 {% endCompare %}
 
-{% Compare 'better', 'Included in CSS file (Chromium 85+)' %}
+{% Compare 'better', 'Included in CSS file (Chromium 85)' %}
 ```css
 @property --colorPrimary {
   syntax: '<color>';
@@ -67,12 +67,18 @@ just read as a string. It has data!
   When writing a registered custom property with a specified `syntax`, you *must* also include an `initial-value`.
 {% endAside %}
 
-## Fallback Values
+## Fallback values
 
 As with any other custom property, you can get (using var) or set
 (write/rewrite) values, but with Houdini custom properties, if you set a falsey
 value when overriding it, the CSS rendering engine will send the initial value
 (its fallback value) instead of ignoring the line.
+
+Consider the example below. The `--colorPrimary` variable has an
+`initial-value` of `magenta`. But the developer has given it the invalid
+value "23". Without `@property`, the CSS parser would ignore the
+invalid code. Now, the parser falls back to `megenta`. This allows for
+true fallbacks and testing within CSS. Neat!
 
 ```css
 .card {
@@ -89,12 +95,6 @@ value when overriding it, the CSS rendering engine will send the initial value
   background-color: var(--colorPrimary); /* magenta */
 }
 ```
-
-Consider the example above. The `--colorPrimary` variable has an
-`initial-value` of `magenta`. But the developer has given it the invalid
-value "23". Without `@property`, the CSS parser would ignore the
-invalid code. Now, the parser falls back to `megenta`. This allows for
-true fallbacks and testing within CSS. Neat!
 
 ## Syntax
 
@@ -125,7 +125,7 @@ there is no way to smoothly animate (or interpolate) between gradient values, as
 each gradient declaration is parsed as a string. 
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="support1.gif" alt="">
+  <img src="support1.gif" alt="Two browser screen captures showing a non-animated change on non-supported browsers.">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     Using a custom property with a "number" syntax, the gradient on the left shows a smooth transition between stop values. The gradient on the right uses a default custom property (no syntax defined) and shows an abrupt transition.
   </figcaption>
@@ -170,7 +170,7 @@ And then when it comes time to animate it, you can update the value from the ini
 This will now enable that smooth gradient transition.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="demo.gif" alt="">
+  <img src="demo.gif" alt="Gradient borders on cards moving from a stop of 50% to 100%">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     Smoothly transitioning gradient borders. <a href="https://glitch.com/~houdini-gradient-borders">See Demo on Glitch</a>
   </figcaption>
@@ -184,5 +184,6 @@ more about CSS Houdini and the Properties and Values API, check out these
 resources:
 
 - [Is Houdini Ready Yet?](http://ishoudinireadyyet.com/)
+- [MDN Houdini Reference](https://developer.mozilla.org/en-US/docs/Web/Houdini)
 - [Smarter custom properties with Houdini's new API](https://web.dev/css-props-and-vals/)
 - [Houdini CSSWG Issue Queue](https://github.com/w3c/css-houdini-drafts/issues)
