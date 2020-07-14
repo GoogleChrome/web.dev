@@ -5,7 +5,7 @@ authors:
   - una
 date: 2020-07-22
 updated: 2020-07-22
-hero: demo.gif
+hero: hero.jpg
 alt: A virtual object in a real-world view.
 description: Learn how to implement CSS custom properties with semantic typing, a fallback value, and more, directly in your CSS file.
 tags:
@@ -187,3 +187,5 @@ resources:
 - [MDN Houdini Reference](https://developer.mozilla.org/en-US/docs/Web/Houdini)
 - [Smarter custom properties with Houdini's new API](https://web.dev/css-props-and-vals/)
 - [Houdini CSSWG Issue Queue](https://github.com/w3c/css-houdini-drafts/issues)
+
+Photo by [Cristian Escobar](https://unsplash.com/@cristian1) on Unsplash.
