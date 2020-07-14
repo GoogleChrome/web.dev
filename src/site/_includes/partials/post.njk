@@ -18,7 +18,7 @@
 
   {# Make sure Actions are first in the tab order. #}
   <div class="w-actions">
-    <share-action authors="{{ authors | expandContributors | join('|') }}"
+    <share-action authors="{{ authors | expandAuthors(collections.authors) }}"
       class="gc-analytics-event w-actions__fab w-actions__fab--share"
       data-category="web.dev"
       data-label="share"
@@ -62,6 +62,7 @@
           {% for author in authors %}
             {% Author {
               id: author,
+              author: collections.authors[author],
               showSocialMedia: true}
             %}
           {% endfor %}
@@ -100,11 +101,11 @@
       <a href="#">Suggest translation</a> #}
     </div>
 
-    <web-feedback></web-feedback>
-
     {% if codelabs %}
       {% CodelabsCallout codelabs, lang %}
     {% endif %}
+
+    <web-feedback></web-feedback>
   </div>
 
   {% if 'blog' in tags %}

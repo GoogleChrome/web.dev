@@ -32,12 +32,13 @@ module.exports = {
         'handbook/use-media',
         'handbook/word-list',
         'handbook/tooling-and-libraries',
+        'handbook/reviews',
       ],
     },
     {
       title: 'web.dev markup',
       pathItems: [
-        'handbook/contributor-profile',
+        'handbook/author-profile',
         'handbook/markup-post-codelab',
         'handbook/web-dev-components',
         'handbook/markup-media',
