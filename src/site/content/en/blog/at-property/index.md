@@ -15,8 +15,8 @@ tags:
 ---
 
 [CSS Houdini](https://ishoudinireadyyet.com) is an umbrella term that covers a
-set of low-level APIs which expose parts of the CSS rendering engine, and give
-developers much more available access to the CSS Object Model. This is a huge
+set of low-level APIs that expose parts of the CSS rendering engine, and give
+developers access to the CSS Object Model. This is a huge
 change for the CSS ecosystem, as it enables developers to tell the browser how
 to read and parse custom CSS without waiting for browser vendors to natively
 implement these features. So exciting!
@@ -28,12 +28,12 @@ This API supercharges your CSS custom properties (also commonly referred to as
 CSS variables) by giving them semantic meaning (tied to a syntax) and even
 fallback values, enabling CSS testing.
 
-## Writing Houdini Custom Properties
+## Writing Houdini custom properties
 
 Here's an example of setting a custom property (think: CSS variable), but now
 with a syntax (type), initial value (fallback), and inheritance statement (does
 it inherit the value from it's parent or not?). The current way to do this is
-through `CSS.RegisterProperty` in JavaScript, but in Chromium 85+, the
+through `CSS.registerProperty()` in JavaScript, but in Chromium 85 and later, the
 `@property` syntax will be supported in your CSS files:
 
 <div class="w-columns">
@@ -60,7 +60,7 @@ CSS.registerProperty({
 </div>
 
 Now you can access `--colorPrimary` like any other CSS custom property, via
-`var(--colorPrimary)`. However, the difference here is that `colorPrimary` isn't
+`var(--colorPrimary)`. However, the difference here is that `--colorPrimary` isn't
 just read as a string. It has data!
 
 {% Aside 'gotchas' %}
@@ -72,7 +72,7 @@ just read as a string. It has data!
 As with any other custom property, you can get (using var) or set
 (write/rewrite) values, but with Houdini custom properties, if you set a falsey
 value when overriding it, the CSS rendering engine will send the initial value
-(it's fallback value) instead of ignoring the line.
+(its fallback value) instead of ignoring the line.
 
 ```css
 .card {
@@ -90,15 +90,16 @@ value when overriding it, the CSS rendering engine will send the initial value
 }
 ```
 
-For example, if a developer enters an invalid value (i.e. "23")  for a custom
-property that has a set syntax (i.e. "color"), the predefined fallback still
-returns instead of the CSS parser ignoring the invalid code. This allows for
-some true fallbacks and testing within CSS. Neat!
+Consider the example above. The `--colorPrimary` variable has an
+`initial-value` of `magenta`. But the developer has given it the invalid
+value "23". Without `@property`, the CSS parser would ignore the
+invalid code. Now, the parser falls back to `megenta`. This allows for
+true fallbacks and testing within CSS. Neat!
 
 ## Syntax
 
-With the syntax feature, you can now write semantic CSS (CSS which has a "type"
-attached to it). The current types that are allowed include:
+With the syntax feature, you can now write semantic CSS by specifying
+a type. The current types that are allowed include:
 
 - `length`
 - `number`
@@ -116,11 +117,10 @@ attached to it). The current types that are allowed include:
 - `custom-ident` (a custom identifier string)
 
 
-Setting a syntax allows for the custom properties we initialize to be
-interpreted as more than just strings by the browser, enabling them to be parsed
-as typed values. This has a lot of great benefits.
+Setting a syntax enables the browser to type-check custom properties.
+This has many benefits.
 
-Let's take a look at animating a gradient to illustrate this point. Currently,
+To illustrate this point, I'll show you how to animate a gradient. Currently,
 there is no way to smoothly animate (or interpolate) between gradient values, as
 each gradient declaration is parsed as a string. 
 
@@ -132,11 +132,11 @@ each gradient declaration is parsed as a string.
 </figure>
 
 In this example, the gradient stop percentage is being animated from a starting
-value of 40% to an ending value of 100% via a hover interaction. We expect a
+value of 40% to an ending value of 100% via a hover interaction. You should see a
 smooth transition of that top gradient color downward.
 
 The browser on the right supports the Houdini Properties and Values API,
-enabling a smooth gradient stop transition, and the on the right does not. The
+enabling a smooth gradient stop transition. The browser on the right does not. The
 non-supporting browser is only able to understand this change as a string going
 from point A to point B. There is no opportunity to interpolate the values, and
 thus you don't see that smooth transition.
@@ -178,8 +178,8 @@ This will now enable that smooth gradient transition.
 
 ## Conclusion 
 
-The `@property` syntax makes an exciting technology even more accessible by
-allowing us to write semantically meaningful CSS within CSS itself. To learn
+The `@property` makes an exciting technology even more accessible by
+allowing you to write semantically meaningful CSS within CSS itself. To learn
 more about CSS Houdini and the Properties and Values API, check out these
 resources:
 
