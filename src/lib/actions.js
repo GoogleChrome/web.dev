@@ -195,10 +195,15 @@ function getCanonicalPath(path) {
 
 export const checkUserPreferredLanguage = store.action(
   ({userPreferredLanguage}) => {
-    if (!userPreferredLanguage) {
-      return {
-        userPreferredLanguage: cookies.get('preferred_lang'),
-      };
+    userPreferredLanguage = userPreferredLanguage // Use currently set language.
+      // Or check in the url.
+      || lang.getLanguageFromPath(location.pathname)
+      // Or check in a cookie.
+      || cookies.get('preferred_lang')
+      // Or check in the browser setting.
+      || navigator.language.split('-')[0];
+    if (!lang.isValidLanguage(userPreferredLanguage)) {
+      userPreferredLanguage = '';
     }
     return {userPreferredLanguage};
   },
