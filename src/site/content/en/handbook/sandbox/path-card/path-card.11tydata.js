@@ -1,6 +1,6 @@
-const fast = require('../../../../../_data/paths/fast.js');
-const accessible = require('../../../../../_data/paths/accessible.js');
-const reliable = require('../../../../../_data/paths/reliable.js');
+const fast = require('../../../../../_data/paths/fast.json');
+const accessible = require('../../../../../_data/paths/accessible.json');
+const reliable = require('../../../../../_data/paths/reliable.json');
 
 // =============================================================================
 // LEARN OVERVIEW
