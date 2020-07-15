@@ -28,7 +28,8 @@
         "handbook/use-media",
         "handbook/word-list",
         "handbook/tooling-and-libraries",
-        "handbook/reviews"
+        "handbook/reviews",
+        "handbook/pull-requests"
       ]
     },
     {
@@ -45,7 +46,10 @@
     },
     {
       "title": "Content infrastructure",
-      "pathItems": ["handbook/resolving-glitch-issues","handbook/redirects"]
+      "pathItems": [
+        "handbook/resolving-glitch-issues",
+        "handbook/redirects"
+      ]
     }
   ]
 }
