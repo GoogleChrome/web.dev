@@ -1,20 +1,20 @@
-const accessible = require('./accessible.js');
-const angular = require('./angular.js');
-const discoverable = require('./discoverable.js');
-const fast = require('./fast.js');
-const lighthouseAccessibility = require('./lighthouse-accessibility.js');
-const lighthouseBestPractices = require('./lighthouse-best-practices.js');
-const lighthousePerformance = require('./lighthouse-performance.js');
-const lighthousePwa = require('./lighthouse-pwa.js');
-const lighthouseSeo = require('./lighthouse-seo.js');
-const metrics = require('./metrics.js');
-const notifications = require('./notifications.js');
-const payments = require('./payments.js');
-const progressiveWebApps = require('./progressive-web-apps.js');
-const react = require('./react.js');
-const reliable = require('./reliable.js');
-const secure = require('./secure.js');
-const vitals = require('./vitals.js');
+const accessible = require('./accessible.json');
+const angular = require('./angular.json');
+const discoverable = require('./discoverable.json');
+const fast = require('./fast.json');
+const lighthouseAccessibility = require('./lighthouse-accessibility.json');
+const lighthouseBestPractices = require('./lighthouse-best-practices.json');
+const lighthousePerformance = require('./lighthouse-performance.json');
+const lighthousePwa = require('./lighthouse-pwa.json');
+const lighthouseSeo = require('./lighthouse-seo.json');
+const metrics = require('./metrics.json');
+const notifications = require('./notifications.json');
+const payments = require('./payments.json');
+const progressiveWebApps = require('./progressive-web-apps.json');
+const react = require('./react.json');
+const reliable = require('./reliable.json');
+const secure = require('./secure.json');
+const vitals = require('./vitals.json');
 
 module.exports = {
   accessible,
