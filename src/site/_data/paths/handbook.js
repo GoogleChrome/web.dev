@@ -33,6 +33,7 @@ module.exports = {
         'handbook/word-list',
         'handbook/tooling-and-libraries',
         'handbook/reviews',
+        'handbook/pull-requests',
       ],
     },
     {
