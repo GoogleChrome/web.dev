@@ -134,6 +134,11 @@ and the new thresholds vs. LazySizes (a popular JS lazy-loading library):
   <img src="./lazysizes-threshold.png" alt="The new  distance-from-viewport thresholds in Chrome loading 90KB of images compared to LazySizes loading in 70KB under the same network conditions">
 </figure>
 
+
+{% Aside %}
+  To ensure Chrome users on recent versions also benefit from the new thresholds, we have backported these changes so that Chrome 79 - 85 inclusive also uses them. Please keep this in mind if attempting to compare data-savings from older versions of Chrome to newer ones.
+{% endAside %}
+
 We are committed to working with the web standards community to explore better alignment in how distance-from-viewport thresholds are approached across different browsers.
 
 ### Images should include dimension attributes
