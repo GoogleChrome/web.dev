@@ -3,6 +3,7 @@ import {saveUserUrl} from './fb';
 import {runLighthouse, fetchReports} from './lighthouse-service';
 import lang from './utils/language';
 import {localStorage} from './utils/storage';
+import {getCanonicalPath} from './urls';
 import cookies from 'js-cookie';
 
 export const clearSignedInState = store.action(() => {
@@ -184,14 +185,6 @@ export const setUserAcceptsCookies = store.action(() => {
     // overwrite it.
   };
 });
-
-function getCanonicalPath(path) {
-  const parts = path.split('/');
-  if (parts[1] && lang.isValidLanguage(parts[1])) {
-    parts.splice(1, 1);
-  }
-  return parts.join('/');
-}
 
 export const checkUserPreferredLanguage = store.action(
   ({userPreferredLanguage}) => {
