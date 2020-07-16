@@ -245,7 +245,7 @@ Web-based payment apps can declare their support for delegation using the web
 app manifest's `payment.supported_delegations` field or through JavaScript.
 
 To let the browser know that the payment app accepts a delegation, use
-[`.enableDelegations()`](https://w3c.github.io/payment-handler/#enabledelegations-method).
+[`PaymentManager.enableDelegations()`](https://w3c.github.io/payment-handler/#enabledelegations-method).
 
 {% Label %}[payment handler] payment app's landing page{% endLabel %}
 
