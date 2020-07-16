@@ -303,8 +303,8 @@ Devices](https://developers.google.com/web/tools/chrome-devtools/remote-debuggin
 ### Payment Handler event logging
 
 DevTools can display Payment Handler API events for easier local development.
-Open DevTools on the merchant context and go to the "Payment Handler" section
-under the "Application" pane.
+Open DevTools on the merchant context and go to the **Payment Handler** section
+under the **Application** pane.
 
 ![Payment Handler event logging](debug-payment-handler.png)
 
