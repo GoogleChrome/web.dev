@@ -1,5 +1,6 @@
 const livePaths = require('../../_filters/live-paths');
 const allPaths = require('../../_data/paths');
+const lang = require('./lang.11tydata');
 
 // =============================================================================
 // HOME OVERVIEW
@@ -19,12 +20,9 @@ module.exports = function () {
     allPaths['secure'],
   ].filter(livePaths);
 
-  const lang = 'en';
-  const locale = 'en_US';
-
   return {
-    lang,
-    locale,
+    lang: lang.lang,
+    locale: lang.locale,
     home: {
       paths,
     },
