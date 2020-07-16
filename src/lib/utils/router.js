@@ -110,7 +110,7 @@ export function listen(handler) {
       url = getUrl();
       hash = window.location.hash;
     } else {
-      // If user has a preferred language, show it in the url.
+      // If user has a preferred language, use it in the request.
       const lang = store.getState().userPreferredLanguage;
       if (lang !== language.defaultLanguage) {
         url = '/' + lang + url;
