@@ -360,7 +360,7 @@ Examples of an invalid state are:
 * When Chrome is still waiting for the merchant's response to a previous change
   (such as an ongoing change event).
 * The payment app provided shipping option identifier does not belong to any of
-  the merchant specified shipping options.
+  the merchant-specified shipping options.
 
 ### Receive updated payment details from the merchant
 
