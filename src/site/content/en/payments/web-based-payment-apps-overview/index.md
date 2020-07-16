@@ -49,7 +49,7 @@ worker](https://developers.google.com/web/fundamentals/primers/service-workers)
 is an event-driven script that runs in the background even if the registering
 website is not open in the browser. Service workers enable websites to work
 offline and send push notifications, because they can respond to requests with
-cache that is stored locally in advance.
+a cache that is stored locally in advance.
 
 In a web-based payment app, a service worker can respond to payment requests:
 
