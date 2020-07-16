@@ -403,6 +403,4 @@ following optional keys:
   address](#shipping-address) and string values. Each key represents a
   validation error related to its corresponding part of the shipping address.
 
-{% Aside %}
 An absent key means its value has not changed.
-{% endAside %}
