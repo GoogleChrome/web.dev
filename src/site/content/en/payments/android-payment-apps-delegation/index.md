@@ -362,7 +362,7 @@ Examples of an invalid state are:
 * The payment app provided shipping option identifier does not belong to any of
   the merchant specified shipping options.
 
-### Receive for the updated payment details from the merchant
+### Receive updated payment details from the merchant
 
 ```kotlin
 private fun unbind() {
