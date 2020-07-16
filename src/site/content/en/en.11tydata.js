@@ -20,9 +20,11 @@ module.exports = function () {
   ].filter(livePaths);
 
   const lang = 'en';
+  const locale = 'en_US';
 
   return {
     lang,
+    locale,
     home: {
       paths,
     },

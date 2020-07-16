@@ -36,6 +36,7 @@ const initialState = {
   lighthouseError: null,
 
   currentUrl: window.location.pathname,
+  currentLanguage: document.documentElement.getAttribute('lang'),
   isOffline: Boolean(getMeta('offline')),
   isSideNavExpanded: false,
   isModalOpen: false,
@@ -54,7 +55,7 @@ const initialState = {
   showingSnackbar: false,
   snackbarType: null,
 
-  userPrefferedLanguage: '',
+  userPreferredLanguage: '',
 
   // Used to override the current time for web.dev/LIVE testing.
   timeOffset,
