@@ -18,6 +18,8 @@ required payment information easier than ever before. The APIs can invoke
 web-based payment apps, as well as [native payment
 apps](/android-payment-apps-overview/).
 
+{% include 'content/payments/browser-compatibility.njk' %}
+
 ## Benefits of web-based payment apps
 
 <figure class="w-figure" style="width:300px; margin:auto;">

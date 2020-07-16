@@ -6,6 +6,7 @@ subhead: |
 authors:
   - agektmr
 date: 2020-07-17
+updated: 2020-07-16
 description: |
   Learn how to register a web-based payment app to a customers' browser. You'll also learn how to debug them.
 tags:
@@ -23,6 +24,8 @@ To configure a web-based payment app, you need to register available payment
 methods, delegation options, and a service worker. You can configure your
 web-based payment app declaratively with a web app manifest or imperatively with
 JavaScript.
+
+{% include 'content/payments/browser-compatibility.njk' %}
 
 ## Configuring a payment app with a web app manifest
 

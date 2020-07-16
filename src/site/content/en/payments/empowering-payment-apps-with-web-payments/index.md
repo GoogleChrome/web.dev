@@ -7,6 +7,7 @@ authors:
 description: |
   Web Payments aims to provide frictionless payment experience on the web. Learn how it works, its benefits, and get ready to integrate your payment app with Web Payments.
 date: 2020-05-25
+updated: 2020-07-16
 tags:
   - payments
 ---
@@ -56,6 +57,8 @@ payment app:
    details.
 
 4. The merchant verifies the payment and the purchase is approved.
+
+{% include 'content/payments/browser-compatibility.njk' %}
 
 ## The benefits of integrating Web Payments in a payment app
 
