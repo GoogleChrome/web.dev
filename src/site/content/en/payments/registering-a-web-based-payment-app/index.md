@@ -46,10 +46,12 @@ properly.
 
 ### Registering a service worker just-in-time (JIT)
 
+{% Aside 'key-term' %}
 Service workers are usually registered using JavaScript, but they can also be
 automatically registered by the browser when the user chooses to pay with a
-web-based payment app on a merchant website. This is called "just-in-time (JIT)
-registration".
+web-based payment app on a merchant website. This is called *just-in-time (JIT)
+registration*.
+{% endAside %}
 
 The JIT registration requires only serving [the web app
 manifest](/setting-up-a-payment-method/#step-3:-serve-a-web-app-manifest)
