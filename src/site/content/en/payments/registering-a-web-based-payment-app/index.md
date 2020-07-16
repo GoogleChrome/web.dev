@@ -61,7 +61,7 @@ rest.
 
 {% Aside 'caution' %}
 While a single payment method identifier can support multiple payment apps,
-JIT-registration happens only when the payment method manifest points to a
+JIT registration happens only when the payment method manifest points to a
 single payment app.
 {% endAside %}
 
