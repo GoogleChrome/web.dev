@@ -114,7 +114,7 @@ You can check out the list of known issues and features planned to be added to
 the payment handler window in the [Chromium bug
 tracker](https://bugs.chromium.org/u/maxlg@chromium.org/hotlists/Expandable-payment-handler).
 
-## Next Steps
+## Next steps
 To start building a web-based payment app, you have three distinct parts to implement:
 
 * [Registering a web-based payment app](/registering-a-web-based-payment-app)
