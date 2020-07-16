@@ -229,7 +229,7 @@ address and contact information. This provides multiple benefits:
 * Submitting an incorrect address is less likely.
 
 Payment apps can integrate this functionality to offer a more unified payment
-experience and this is called "delegation".
+experience. This is called *delegation*.
 
 <figure class="w-figure" style="width:300px; margin:auto;">
   <video controls autoplay loop muted class="w-screenshot">
