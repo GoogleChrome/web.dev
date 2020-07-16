@@ -12,11 +12,10 @@ tags:
   - payments
 ---
 
-[Web
-Payments](/empowering-payment-apps-with-web-payments/#what-is-web-payments)
-brings to the web a browser native interface that allows users to enter required
-payment information easier than ever before. The APIs can invoke web-based
-payment apps, as well as [native payment
+[Web Payments](/empowering-payment-apps-with-web-payments/#what-is-web-payments)
+brings to the web a browser's built-in interface that allows users to enter
+required payment information easier than ever before. The APIs can invoke
+web-based payment apps, as well as [native payment
 apps](/android-payment-apps-overview/).
 
 ## Benefits of web-based payment apps
@@ -44,12 +43,14 @@ apps](/android-payment-apps-overview/).
 Web-based payment apps are built using the standard web technologies. Every
 web-based payment app must include a service worker.
 
+{% Aside %}
 [Service
 worker](https://developers.google.com/web/fundamentals/primers/service-workers)
 is an event-driven script that runs in the background even if the registering
-website is not open in the browser. Service workers enable websites to work
+website is not opened in the browser. Service workers enable websites to work
 offline and send push notifications, because they can respond to requests with
-a cache that is stored locally in advance.
+cache that is stored locally in advance.
+{% endAside %}
 
 In a web-based payment app, a service worker can respond to payment requests:
 

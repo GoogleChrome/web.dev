@@ -134,7 +134,7 @@ contains details about the instrument.
 
   await registration.paymentManager.instruments.set(
     // Payment instrument key
-    "bobpay_card_1",
+    'bobpay_card_1',
     // Payment instrument details
     {
       // This parameter will be ignored in Chrome
