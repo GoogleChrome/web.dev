@@ -47,6 +47,7 @@ class Search extends BaseElement {
     this.cursor = -1;
     this.query = '';
     this.timeout = 0;
+    this.expanded = false;
 
     // On smaller screens we don't do an animation so it's ok for us to fire off
     // actions immediately. On larger screens we need to wait for the searchbox
@@ -85,6 +86,17 @@ class Search extends BaseElement {
         aria-owns="web-search-popout__list"
         aria-haspopup="listbox"
       >
+        <svg
+          class="web-search__search-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          height="24"
+          width="24"
+        >
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+          />
+        </svg>
         <input
           class="web-search__input"
           type="text"
@@ -92,9 +104,9 @@ class Search extends BaseElement {
           autocomplete="off"
           aria-autocomplete="list"
           aria-controls="web-search-popout__list"
-          aria-label="Search"
+          aria-label="All articles"
           placeholder="Search"
-          @keyup="${this.onKeyUp}"
+          @keydown="${this.onKeyDown}"
           @input="${this.onInput}"
           @focusin="${this.onFocusIn}"
           @focusout="${this.onFocusOut}"
@@ -228,7 +240,7 @@ class Search extends BaseElement {
     this.animationTime = parseInt(value, 10);
   }
 
-  onKeyUp(e) {
+  onKeyDown(e) {
     // Check if the user is navigating within the search popout.
     switch (e.key) {
       case 'Home':
@@ -241,11 +253,13 @@ class Search extends BaseElement {
 
       case 'Up': // IE/Edge specific value
       case 'ArrowUp':
+        e.preventDefault();
         this.prevHit();
         return;
 
       case 'Down': // IE/Edge specific value
       case 'ArrowDown':
+        e.preventDefault();
         this.nextHit();
         return;
 
@@ -378,6 +392,7 @@ class Search extends BaseElement {
    * Animate the search box open.
    */
   onFocusIn() {
+    console.log('onFocusIn');
     this.expanded = true;
 
     // Collapse the search box if the user scrolls while the seach box is
@@ -394,7 +409,9 @@ class Search extends BaseElement {
     // links and allowing overflow content.
     // Keep a reference to the timeout in case the user tabs out quickly.
     // In that scenario, we'll use onFocusOut to kill the timeout.
+    console.log('this.animationTime', this.animationTime);
     this.timeout = setTimeout(() => {
+      console.log('isSearchExpanded: true');
       store.setState({isSearchExpanded: true});
       this.showHits = true;
     }, this.animationTime);
@@ -406,6 +423,7 @@ class Search extends BaseElement {
    * @param {FocusEvent} e focusout event object.
    */
   onFocusOut(e) {
+    console.log('onFocusOut');
     // Check if the user's focus is moving to something that they just clicked
     // on. If so, programatically click it before closing the popout.
     // Because focusout fires before click, if we try to wait for the click

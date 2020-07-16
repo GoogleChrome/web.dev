@@ -91,12 +91,10 @@ web-search {
     }
   }
 
-  .web-search__input-wrapper::before {
-    @include font-material-icon();
-    content: 'search';
+  .web-search__search-icon {
+    left: 8px;
     position: absolute;
-    pointer-events: none;
-    padding: 8px;
+    fill: $GREY_600;
   }
 
   .web-search__input {
@@ -114,11 +112,6 @@ web-search {
       outline: none;
       box-shadow: 0 2px 0 0 $WEB_SECONDARY_COLOR;
     }
-  }
-
-  .web-search__input:focus {
-    border: none;
-    padding: 8px 8px 8px 40px; // devsite override
   }
 
   .web_search__icon {
