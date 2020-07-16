@@ -396,7 +396,7 @@ following optional keys:
 * `shippingOptions` - The parcelable array of [shipping
   options](#shipping-options)
 * `error` - A string containing a generic error message (e.g. when
-  changeShippingOption does not provide a valid shipping option identifier)
+  `changeShippingOption` does not provide a valid shipping option identifier)
 * `stringifiedPaymentMethodErrors` - A JSON string representing validation
   errors for the payment method
 * `addressErrors` - A bundle with optional keys identical to [shipping
