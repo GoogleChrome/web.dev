@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Providing shipping and contact information from Android payment app
+title: Providing shipping and contact information from an Android payment app
 subhead: |
   How to update your Android payment app to provide shipping address and payer's contact information with Web Payments APIs.
 authors:
@@ -25,22 +25,23 @@ address and contact information. This provides multiple benefits:
 * Submitting an incorrect address is less likely.
 
 Some browsers can provide address data form their autofill storage and make it
-available through the browser's native UI. This functionality can also be
+available through the browser's built-in UI. This functionality can also be
 deferred to a payment app to offer a more unified payment experience. This is
-called "delegation".
+called *delegation*.
 
-Whenever possible, Chrome delegates the collection of customer's shipping
+Whenever possible, Chrome delegates the collection of a customer's shipping
 address and contact information to the invoked Android payment app. The
-delegation reduces the friction during checkout because user's installed payment
-apps usually have more accurate information about their shipping address and
-contact details.
+delegation reduces the friction during checkout because the user's installed
+payment apps usually have more accurate information about their shipping address
+and contact details.
 
 {% Aside %}
-Learn how to implement an Android native payment app in advance.
+Learn how to implement an [Android native payment
+app](https://web.dev/android-payment-apps-overview/) in advance.
 {% endAside %}
 
 To add delegation support to an already existing Android native payment app,
-implement the following four steps:
+implement the following steps:
 
 1.  Declare supported delegations.
 2.  Parse `PAY` intent extras for required payment options.
@@ -68,7 +69,7 @@ app. Declare the supported delegations as a `<meta-data>` in your app's
 </activity>
 ```
 
-The `resource` must be a list of strings chosen from the following valid values: 
+`<resource>` must be a list of strings chosen from the following valid values: 
 
 ```json
 [ "payerName", "payerEmail", "payerPhone", "shippingAddress" ]
@@ -97,8 +98,8 @@ extras](/android-payment-apps-overview/#parameters-2).
 
 ### `paymentOptions`
 
-The subset of merchant specified payment options for which your app has declared
-delegation support.
+`paymentOptions` is the subset of merchant specified payment options for which
+your app has declared delegation support.
 
 ```kotlin
 val paymentOptions: Bundle? = extras.getBundle("paymentOptions")
@@ -125,8 +126,9 @@ It can include the following parameters:
 
 ### `shippingOptions` {: #shipping-options }
 
-The parcelable array of merchant specified shipping options. This parameter will
-only exist when `paymentOptions.requestShipping == true`.
+`shippingOptions` is the parcelable array of merchant specified shipping
+options. This parameter will only exist when `paymentOptions.requestShipping ==
+true`.
 
 ```kotlin
 val shippingOptions: List<ShippingOption>? =
@@ -137,16 +139,16 @@ val shippingOptions: List<ShippingOption>? =
 
 Each shipping option is a `Bundle` with the following keys.
 
-* `id`: The shipping option identifier.
-* `label`: The shipping option label shown to the user.
-* `amount`: The shipping cost bundle containing `currency` and `value` keys with
+* `id` - The shipping option identifier.
+* `label` - The shipping option label shown to the user.
+* `amount` - The shipping cost bundle containing `currency` and `value` keys with
   string values.
     * `currency` shows the currency of the shipping cost, as an
       [ISO4217](https://www.iso.org/iso-4217-currency-codes.html) well-formed
       3-letter alphabet code
     * `value` shows the value of the shipping cost, as a [valid decimal monetary
       value](https://w3c.github.io/payment-request/#dfn-valid-decimal-monetary-value)
-* `selected`: Whether or not the shipping option should be selected when the
+* `selected` - Whether or not the shipping option should be selected when the
   payment app displays the shipping options.
 
 All keys other than the `selected` have string values. `selected` has a boolean
@@ -159,20 +161,20 @@ val amount: Bundle = bundle.getBundle("amount")
 val selected: Boolean = bundle.getBoolean("selected", false)
 ```
 
-## Provide required information in payment response
+## Provide required information in a payment response
 
 Your app should include the required additional information in its response to
 the `PAY`  activity.
 
 To do so the following parameters must be specified as Intent extras:
 
-* `payerName`: The payer's full name. This should be a non-empty string when
+* `payerName` - The payer's full name. This should be a non-empty string when
   `paymentOptions.requestPayerName` is true.
-* `payerPhone`: The payer's phone number. This should be a non-empty string when
+* `payerPhone` - The payer's phone number. This should be a non-empty string when
   `paymentOptions.requestPayerPhone` is true.
-* `payerEmail`: The payer's email address. This should be a non-empty string
+* `payerEmail` - The payer's email address. This should be a non-empty string
   when `paymentOptions.requestPayerEmail` is true.
-* `shippingAddress`: The user provided shipping address. This should be a
+* `shippingAddress` - The user-provided shipping address. This should be a
   non-empty bundle when `paymentOptions.requestShipping` is true. The bundle
   should have the following keys which represent different parts in a [physical
   address](https://www.w3.org/TR/payment-request/#physical-addresses). {: #shipping-address}
@@ -187,7 +189,7 @@ To do so the following parameters must be specified as Intent extras:
     * `sortingCode`
     All keys other than the `addressLine` have string values.
       The `addressLine` is an array of strings.
-* `shippingOptionId`: The identifier of the user selected shipping option. This
+* `shippingOptionId` - The identifier of the user-selected shipping option. This
   should be a non-empty string when `paymentOptions.requestShipping` is true.
 
 ###  Payment response validation
@@ -195,7 +197,7 @@ To do so the following parameters must be specified as Intent extras:
 If the activity result of a payment response received from the invoked payment
 app is set to `RESULT_OK`, then Chrome will check for required additional
 information in its extras. If the validation fails Chrome will return a rejected
-promise from `request.show()` with one of the following developer facing error
+promise from `request.show()` with one of the following developer-facing error
 messages:
 
 ```json
@@ -239,12 +241,13 @@ fun Intent.populateRequestedPaymentOptions() {
 
 ## Optional: Support dynamic flow
 
-Sometimes the total cost of a transaction increases when the user chooses the
-express shipping option; or when the list of available shipping options or their
-prices changes when the user chooses an international shipping address. When
-your app provides the user selected shipping address or option, it should be
-able to notify the merchant about any shipping address or option changes and
-show the user the updated payment details (provided by the merchant).
+Sometimes the total cost of a transaction increases, such as when the user
+chooses the express shipping option; or when the list of available shipping
+options or their prices changes when the user chooses an international shipping
+address. When your app provides the user-selected shipping address or option, it
+should be able to notify the merchant about any shipping address or option
+changes and show the user the updated payment details (provided by the
+merchant).
 
 ### AIDL
 
@@ -316,7 +319,7 @@ private val mConnection = object : ServiceConnection {
 
 #### `changePaymentMethod`
 
-Notifies the merchant about changes in user selected payment method. The
+Notifies the merchant about changes in the user-selected payment method. The
 `paymentHandlerMethodData` bundle contains `methodName` and optional `details`
 keys both with string values. Chrome will check for a non-empty bundle with a
 non-empty `methodName` and send an `updatePaymentDetails` with one of the
@@ -329,8 +332,8 @@ following error messages via `callback.updateWith` if the validation fails.
 
 #### `changeShippingOption`
 
-Notifies the merchant about changes in user selected shipping option.
-`shippingOptionId` should be the identifier of one of the merchant specified
+Notifies the merchant about changes in the user-selected shipping option.
+`shippingOptionId` should be the identifier of one of the merchant-specified
 shipping options. Chrome will check for a non-empty `shippingOptionId` and send
 an `updatePaymentDetails` with the following error message via
 `callback.updateWith` if the validation fails.
@@ -341,7 +344,7 @@ an `updatePaymentDetails` with the following error message via
 
 #### `changeShippingAddress`
 
-Notifies the merchant about changes in user provided shipping address. Chrome
+Notifies the merchant about changes in the user-provided shipping address. Chrome
 will check for a non-empty `shippingAddress` bundle with a valid `countryCode`
 and send an `updatePaymentDetails` with the following error message via
 `callback.updateWith` if the validation fails.
@@ -359,7 +362,7 @@ Examples of an invalid state are:
 
 * When Chrome is still waiting for the merchant's response to a previous change
   (such as an ongoing change event).
-* The payment app provided shipping option identifier does not belong to any of
+* The payment-app-provided shipping option identifier does not belong to any of
   the merchant-specified shipping options.
 
 ### Receive updated payment details from the merchant
