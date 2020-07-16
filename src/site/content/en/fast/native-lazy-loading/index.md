@@ -111,28 +111,27 @@ the meantime, you will need to override the effective connection type of the bro
 `chrome://flags/#force-effective-connection-type` flag.
 {% endAside %}
 
-## Chrome 86+ improvements to distance-from-viewport thresholds
+## Improved data-savings and distance-from-viewport thresholds
 
-As of Chrome 86, a significant improvement has been made to align the native image lazy-loading distance-from-viewport thresholds to better meet developer expectations. 
+As of July 2020, Chrome has made significant improvements to align the native image lazy-loading distance-from-viewport thresholds to better meet developer expectations. 
 
-On fast connections (e.g 4G), we have reduced Chrome's distance-from-viewport thresholds from `3000px` to `1250px` and on slower connections (e.g 3G), changed the threshold from `4000px` to `2500px`. This change achieves two things:
+On fast connections (e.g 4G), we reduced Chrome's distance-from-viewport thresholds from `3000px` to `1250px` and on slower connections (e.g 3G), changed the threshold from `4000px` to `2500px`. This change achieves two things:
 
 * `<img loading=lazy>` behaves closer to the experience offered by JavaScript lazy-loading libraries.
 * The new distance-from-viewport thresholds still allow us to guarantee images have probably loaded by the time a user has scrolled to them.
 
 You can find a comparison between the old vs. new distance-from-viewport thresholds for one of our demos on a fast connection (4G) below:
 
-Chrome 85 and below vs. Chrome 86 onwards:
+Old thresholds. vs new thresholds:
 
 <figure class="w-figure">
-  <img src="./better-thresholds.png" alt="Chrome 86 has improved thresholds for native image lazy-loading, reducing the distance-from-viewport thresholds for fast connections from 3000px down to 1250px">
+  <img src="./better-thresholds.png" alt="The new and improved thresholds for native image lazy-loading, reducing the distance-from-viewport thresholds for fast connections from 3000px down to 1250px">
 </figure>
 
-
-and Chrome 86+ vs. LazySizes (a popular JS lazy-loading library):
+and the new thresholds vs. LazySizes (a popular JS lazy-loading library):
 
 <figure class="w-figure">
-  <img src="./lazysizes-threshold.png" alt="Chrome 86 distance-from-viewport thresholds loading 90KB of images compared to LazySizes loading in 70KB under the same network conditions">
+  <img src="./lazysizes-threshold.png" alt="The new  distance-from-viewport thresholds in Chrome loading 90KB of images compared to LazySizes loading in 70KB under the same network conditions">
 </figure>
 
 We are committed to working with the web standards community to explore better alignment in how distance-from-viewport thresholds are approached across different browsers.
