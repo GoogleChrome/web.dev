@@ -102,11 +102,13 @@ if ('serviceWorker' in navigator) {
   // One simple method to activate a service worker is through
   // a `ready` promise.
   const registration = await navigator.serviceWorker.ready;
-...
+…
 ```
 
+{% include 'content/reliable/workbox.njk' %}
+
 {% Aside %}
-Learn more about service worker registration in [Service Workers: an
+If you are new to the service worker, learn more at [Service Workers: an
 Introduction](https://developers.google.com/web/fundamentals/primers/service-workers).
 {% endAside %}
 
@@ -130,7 +132,7 @@ contains details about the instrument.
 {% Label %}[payment handler] payment app's landing pages{% endLabel %}
 
 ```js
-...
+…
   // Feature detection
   if (!registration.paymentManager) return;
 

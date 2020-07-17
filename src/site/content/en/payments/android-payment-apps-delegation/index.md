@@ -37,7 +37,7 @@ and contact details.
 
 {% Aside %}
 Learn how to implement an [Android native payment
-app](https://web.dev/android-payment-apps-overview/) in advance.
+app](https://web.dev/android-payment-apps-developers-guide/) in advance.
 {% endAside %}
 
 To add delegation support to an already existing Android native payment app,
@@ -57,12 +57,12 @@ implement the following steps:
 The browser needs to know the list of additional information that your payment
 app can provide so it can delegate the collection of that information to your
 app. Declare the supported delegations as a `<meta-data>` in your app's
-[AndroidManifest.xml](/android-payment-apps-overview/#androidmanifest.xml-2).
+[AndroidManifest.xml](/android-payment-apps-developers-guide/#androidmanifest.xml-2).
 
 ```xml
 <activity
   android:name=".PaymentActivity"
-  ...
+  …
   <meta-data
     android:name="org.chromium.payment_supported_delegations"
     android:resource="@array/supported_delegations" />
@@ -94,7 +94,7 @@ The merchant can specify additional required information using the
 [`paymentOptions`](https://www.w3.org/TR/payment-request/#paymentoptions-dictionary)
 dictionary. Chrome will provide the list of required options that your app can
 provide by passing the following parameters to the `PAY` activity as [Intent
-extras](/android-payment-apps-overview/#parameters-2).
+extras](/android-payment-apps-developers-guide/#parameters-2).
 
 ### `paymentOptions`
 
@@ -242,7 +242,7 @@ fun Intent.populateRequestedPaymentOptions() {
 ## Optional: Support dynamic flow
 
 Sometimes the total cost of a transaction increases, such as when the user
-chooses the express shipping option; or when the list of available shipping
+chooses the express shipping option, or when the list of available shipping
 options or their prices changes when the user chooses an international shipping
 address. When your app provides the user-selected shipping address or option, it
 should be able to notify the merchant about any shipping address or option
@@ -391,8 +391,8 @@ private val mCallback: IPaymentDetailsUpdateServiceCallback =
 
 `updatePaymentDetails` is the bundle equivalent to the
 [`PaymentRequestDetailsUpdate`](https://w3c.github.io/payment-handler/#the-paymentrequestdetailsupdate)
-WebIDL dictionary (after redacting the `modifiers` field) and contains the
-following optional keys:
+[WebIDL](https://www.w3.org/TR/WebIDL-1/) dictionary (after redacting the
+`modifiers` field) and contains the following optional keys:
 
 * `total` - A bundle containing `currency`  and `value` keys, both keys have
   string values

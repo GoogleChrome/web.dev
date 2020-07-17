@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Web-based payment apps developers guide
+title: Web-based payment apps overview
 subhead: |
   How to integrate your web-based payment app with Web Payments and provide a better user experience for customers.
 authors:
@@ -16,7 +16,7 @@ tags:
 brings to the web a browser's built-in interface that allows users to enter
 required payment information easier than ever before. The APIs can invoke
 web-based payment apps, as well as [native payment
-apps](/android-payment-apps-overview/).
+apps](/android-payment-apps-developers-guide/).
 
 {% include 'content/payments/browser-compatibility.njk' %}
 
@@ -46,13 +46,11 @@ Web-based payment apps are built using the standard web technologies. Every
 web-based payment app must include a service worker.
 
 {% Aside %}
-{% Aside %}
 A [Service worker](https://developers.google.com/web/fundamentals/primers/service-workers)
 is an event-driven script that runs in the background even if the registering
 website is not open in the browser. Service workers enable websites to work
 offline and send push notifications, because they can respond to requests with
 a cache that is stored locally in advance.
-{% endAside %}
 {% endAside %}
 
 In a web-based payment app, a service worker can act as a mediator for payment
@@ -83,12 +81,19 @@ payment method](/setting-up-a-payment-method/).
 
 ## APIs you can use inside the payment handler window
 
-A "payment handler window" is a window in which payment apps are launched. Since
-it's a regular Chrome browser window, most web APIs should work as if used in a
-top-level document, with only a few exceptions:
+A "payment handler window" is a window in which payment apps are launched. In
+Chrome, since it's a regular Chrome browser window, most web APIs should work as
+if used in a top-level document, with only a few exceptions:
 
 * Resizing the viewport is disabled.
 * `window.open()` is disabled.
+
+{% Aside 'caution' %}
+Payment Handler API is only supported in Chrome as of July 2020. However, since
+Chromium based browsers already have the implementation, some of them may expose
+the API in the future. Also, [Mozilla recently announced it's implementing the
+API](https://groups.google.com/g/mozilla.dev.platform/c/gBQp1URD1lE/m/Fswh-5-ZBgAJ).
+{% endAside %}
 
 ### WebAuthn support
 

@@ -8,7 +8,7 @@ authors:
   - agektmr
   - mihajlija
 date: 2020-05-25
-updated: 2020-07-15
+updated: 2020-07-17
 description: |
   Learn how merchants integrate payment apps, how payment transactions work with
   the Payment Request API, and what's possible in Web Payments.
@@ -386,6 +386,6 @@ doPaymentRequest();
 * Learn how to declare a payment method identifier in detail in [Setting up a
   payment method](/setting-up-a-payment-method).
 * Learn how to build a native payment app in
-  [Android payment apps developer's guide](/android-payment-apps-overview).
+  [Android payment apps developer's guide](/android-payment-apps-developers-guide).
 * Learn how to build a web-based payment app in *Web-based payment apps developer's
   guide* (coming soon).
