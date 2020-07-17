@@ -7,7 +7,7 @@ authors:
   - addyosmani
   - mathiasbynens
 date: 2019-08-06
-updated: 2020-07-13
+updated: 2020-07-16
 hero: hero.png
 alt: Phone outline with loading image and assets
 description: |
@@ -61,7 +61,7 @@ Today, Chrome already loads images at different priorities depending on where th
 respect to the device viewport. Images below the viewport are loaded with a lower priority, but they're
 still fetched as soon as possible.
 
-In Chrome 76, you can use the `loading` attribute to completely defer the loading of offscreen images that can be reached by scrolling:
+In Chrome 76+, you can use the `loading` attribute to completely defer the loading of offscreen images that can be reached by scrolling:
 
 ```html
 <img src="image.png" loading="lazy" alt="…" width="200" height="200">
@@ -78,7 +78,7 @@ Here are the supported values for the `loading` attribute:
   Although available in Chromium, the `auto` value is not mentioned in the [specification](https://html.spec.whatwg.org/multipage/urls-and-fetching.html#lazy-loading-attributes). Since it may be subject to change, we recommend not to use it until it gets included.
 {% endAside %}
 
-### Load-in distance thresholds 
+### Distance-from-viewport thresholds
 
 All images that are above the fold—that is, immediately viewable without scrolling—load
 normally. Those that are far below the device viewport are only fetched when the user scrolls near them.
@@ -105,12 +105,41 @@ reached, may change in the near future as the Chrome team improves heuristics to
 begin loading.
 
 {% Aside %}
-In Chrome 77, you can experiment with these different thresholds by [throttling the
+In Chrome 77+, you can experiment with these different thresholds by [throttling the
 network](https://developers.google.com/web/tools/chrome-devtools/network/#throttle) in DevTools. In
 the meantime, you will need to override the effective connection type of the browser using the
 `chrome://flags/#force-effective-connection-type` flag.
 {% endAside %}
 
+## Improved data-savings and distance-from-viewport thresholds
+
+As of July 2020, Chrome has made significant improvements to align the native image lazy-loading distance-from-viewport thresholds to better meet developer expectations. 
+
+On fast connections (e.g 4G), we reduced Chrome's distance-from-viewport thresholds from `3000px` to `1250px` and on slower connections (e.g 3G), changed the threshold from `4000px` to `2500px`. This change achieves two things:
+
+* `<img loading=lazy>` behaves closer to the experience offered by JavaScript lazy-loading libraries.
+* The new distance-from-viewport thresholds still allow us to guarantee images have probably loaded by the time a user has scrolled to them.
+
+You can find a comparison between the old vs. new distance-from-viewport thresholds for one of our demos on a fast connection (4G) below:
+
+Old thresholds. vs new thresholds:
+
+<figure class="w-figure">
+  <img src="./better-thresholds.png" alt="The new and improved thresholds for native image lazy-loading, reducing the distance-from-viewport thresholds for fast connections from 3000px down to 1250px">
+</figure>
+
+and the new thresholds vs. LazySizes (a popular JS lazy-loading library):
+
+<figure class="w-figure">
+  <img src="./lazysizes-threshold.png" alt="The new  distance-from-viewport thresholds in Chrome loading 90KB of images compared to LazySizes loading in 70KB under the same network conditions">
+</figure>
+
+
+{% Aside %}
+  To ensure Chrome users on recent versions also benefit from the new thresholds, we have backported these changes so that Chrome 79 - 85 inclusive also uses them. Please keep this in mind if attempting to compare data-savings from older versions of Chrome to newer ones.
+{% endAside %}
+
+We are committed to working with the web standards community to explore better alignment in how distance-from-viewport thresholds are approached across different browsers.
 
 ### Images should include dimension attributes
 
@@ -147,6 +176,7 @@ Images that are defined using the `<picture>` element can also be lazy-loaded:
 
 Although a browser will decide which image to load from any of the `<source>` elements, the `loading`
 attribute only needs to be included to the fallback `<img>` element.
+
  
 ## Avoid lazy-loading images that are in the first visible viewport 
 
@@ -195,13 +225,7 @@ No, it can currently only be used with `<img>` tags.
 
 ### Is there a downside to lazy-loading images that are within the device viewport?
 
-Intersection observers for elements that are above the device fold may not fire before the window
-load event, and the lazy-loading functionality in Chrome relies on `IntersectionObserver`. There is
-an [open issue](https://bugs.chromium.org/p/chromium/issues/detail?id=992526) to modify this
-behavior so that intersection observers are fired _before_ the window load event.
-
-In the meantime, it is safer to only use the `loading` attribute for elements that are outside of
-the device viewport to prevent late fetches of on-screen elements.
+It is safer to avoid putting `loading=lazy` on above-the-fold images, as Chrome won't preload `loading=lazy` images in the preload scanner.
 
 ### How does the `loading` attribute work with images that are in the viewport but not immediately visible (for example: behind a carousel, or hidden by CSS for certain screen sizes)?
 
@@ -301,7 +325,7 @@ like any other image or iframe.
 
 ### How are images handled when a web page is printed?
 
-Although the functionality isn't in Chrome 76, there's an [open
+Although the functionality isn't in Chrome currently, there's an [open
 issue](https://bugs.chromium.org/p/chromium/issues/detail?id=875403) to ensure that all images and
 iframes are immediately loaded if a page is printed.
 
