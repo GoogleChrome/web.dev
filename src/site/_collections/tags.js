@@ -29,7 +29,6 @@ module.exports = (collections) => {
 
   Object.values(postTags).forEach((tag) => {
     // This updates the shared postTags object with meta information and is safe to be called multiple times.
-    tag.url = path.join('/en', tag.href);
     tag.data = {
       title: tag.title,
       subhead: tag.description,
