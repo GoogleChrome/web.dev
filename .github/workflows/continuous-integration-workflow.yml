@@ -4,8 +4,8 @@ on:
     branches:
       - master
   schedule:
-    # At 15:00 UTC / 7:00 PST on every day-of-week from Monday through Thursday.
-    - cron: '0 15 * * 1-4'
+    # At 15:00 UTC / 7:00 PST on every day-of-week from Monday through Friday.
+    - cron: '0 15 * * 1-5'
 
 jobs:
   ci:
