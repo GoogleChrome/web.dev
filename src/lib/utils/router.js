@@ -112,7 +112,7 @@ export function listen(handler) {
     } else {
       // If user has a preferred language, use it in the request.
       const lang = store.getState().userPreferredLanguage;
-      if (lang !== language.defaultLanguage) {
+      if (lang && lang !== language.defaultLanguage) {
         url = '/' + lang + url;
       }
     }
