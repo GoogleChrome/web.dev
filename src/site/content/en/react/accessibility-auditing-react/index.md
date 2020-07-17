@@ -5,6 +5,7 @@ hero: hero-accessibility-auditing-react.jpg
 subhead: |
   Your React site is not progressive if it's not accessible. Auditing during development can help you spot any issues.
 date: 2019-04-29
+updated: 2020-07-16
 description: |
   react-axe is a library that audits a React application and logs any
   accessibility issues to the Chrome DevTools console. eslint-plugin-jsx-a11y
@@ -121,7 +122,7 @@ You now only need to initialize the module in `index.js`:
 ```js
 if (process.env.NODE_ENV !== 'production') {
   import('react-axe').then(axe => {
-    axe(React, ReactDOM, 1000);
+    axe.default(React, ReactDOM, 1000);
     ReactDOM.render(<App />, document.getElementById('root'));
   });
 } else {

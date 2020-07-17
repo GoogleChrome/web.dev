@@ -3,7 +3,6 @@ import {saveUserUrl} from './fb';
 import {runLighthouse, fetchReports} from './lighthouse-service';
 import lang from './utils/language';
 import {localStorage} from './utils/storage';
-import {getCanonicalPath} from './urls';
 import cookies from 'js-cookie';
 
 export const clearSignedInState = store.action(() => {
@@ -186,19 +185,20 @@ export const setUserAcceptsCookies = store.action(() => {
   };
 });
 
+function getCanonicalPath(path) {
+  const parts = path.split('/');
+  if (parts[1] && lang.isValidLanguage(parts[1])) {
+    parts.splice(1, 1);
+  }
+  return parts.join('/');
+}
+
 export const checkUserPreferredLanguage = store.action(
   ({userPreferredLanguage}) => {
-    userPreferredLanguage =
-      // Use currently set language.
-      userPreferredLanguage ||
-      // Or check in the url.
-      lang.getLanguageFromPath(location.pathname) ||
-      // Or check in a cookie.
-      cookies.get('preferred_lang') ||
-      // Or check in the browser setting.
-      navigator.language.split('-')[0];
-    if (!lang.isValidLanguage(userPreferredLanguage)) {
-      userPreferredLanguage = '';
+    if (!userPreferredLanguage) {
+      return {
+        userPreferredLanguage: cookies.get('preferred_lang'),
+      };
     }
     return {userPreferredLanguage};
   },

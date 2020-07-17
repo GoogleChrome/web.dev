@@ -9,7 +9,7 @@
       "unit": "Developer Relations"
     },
     "country": "UK",
-    "homepage": "https: //jakearchibald.com/",
+    "homepage": "https://jakearchibald.com/",
     "twitter": "jaffathecake",
     "description": {
       "en": "Human boy working on web standards at Google"
@@ -57,7 +57,7 @@
       "unit": "V8"
     },
     "country": "DE",
-    "homepage": "https: //mathiasbynens.be/",
+    "homepage": "https://mathiasbynens.be/",
     "twitter": "mathias",
     "github": "mathiasbynens",
     "description": {
@@ -75,7 +75,7 @@
     },
     "twitter": "hochsays",
     "github": "hoch",
-    "homepage": "https: //hoch.io/",
+    "homepage": "https://hoch.io/",
     "description": {
       "en": "Software Engineer working on Chromium"
     }
@@ -90,7 +90,7 @@
       "unit": "Developer Relations"
     },
     "country": "US",
-    "homepage": "https: //robdodson.me",
+    "homepage": "https://robdodson.me",
     "twitter": "rob_dodson",
     "github": "robdodson",
     "glitch": "robdodson"
@@ -149,7 +149,7 @@
     },
     "twitter": "SebFourault",
     "github": "krustydaclown",
-    "homepage": "https: //medium.com/@sebFourault",
+    "homepage": "https://medium.com/@sebFourault",
     "country": "FR"
   },
   "tomgreenaway": {
@@ -218,7 +218,7 @@
       "unit": "Developer Relations"
     },
     "country": "USA",
-    "homepage": "https: //katiehempenius.com/",
+    "homepage": "https://katiehempenius.com/",
     "twitter": "katiehempenius",
     "github": "khempenius",
     "glitch": "khempenius"
@@ -228,7 +228,7 @@
       "given": "Milica",
       "family": "Mihajlija"
     },
-    "homepage": "https: //mihajlija.github.io/",
+    "homepage": "https://mihajlija.github.io/",
     "twitter": "bibydigital",
     "github": "mihajlija"
   },
@@ -237,7 +237,7 @@
       "given": "Mustafa",
       "family": "Kurtuldu"
     },
-    "homepage": "https: //www.designtoday.info/",
+    "homepage": "https://www.designtoday.info/",
     "twitter": "mustafa_x",
     "github": "mustafa-x"
   },
@@ -251,7 +251,7 @@
       "unit": "Developer Relations"
     },
     "country": "JP",
-    "homepage": "https: //blog.agektmr.com",
+    "homepage": "https://blog.agektmr.com",
     "twitter": "agektmr",
     "github": "agektmr",
     "description": {
@@ -268,7 +268,7 @@
       "unit": "Developer Relations"
     },
     "country": "US",
-    "homepage": "https: //kosamari.com/",
+    "homepage": "https://kosamari.com/",
     "twitter": "kosamari",
     "github": "kosamari",
     "glitch": "kosamari",
@@ -286,7 +286,7 @@
       "unit": "Developer Relations"
     },
     "country": "US",
-    "homepage": "https: //petelepage.com",
+    "homepage": "https://petelepage.com",
     "twitter": "petele",
     "github": "petele",
     "glitch": "petele",
@@ -319,7 +319,7 @@
       "unit": "Developer Relations"
     },
     "country": "US",
-    "homepage": "https: //jasonformat.com",
+    "homepage": "https://jasonformat.com",
     "twitter": "_developit",
     "github": "developit",
     "description": {
@@ -352,7 +352,7 @@
       "unit": "Developer Relations"
     },
     "country": "US",
-    "homepage": "https: //twitter.com/jeffposnick",
+    "homepage": "https://twitter.com/jeffposnick",
     "twitter": "jeffposnick",
     "github": "jeffposnick",
     "glitch": "jeffposnick",
@@ -386,7 +386,7 @@
       "given": "Thomas",
       "family": "Steiner"
     },
-    "homepage": "https: //blog.tomayac.com/",
+    "homepage": "https://blog.tomayac.com/",
     "twitter": "tomayac",
     "github": "tomayac",
     "glitch": "tomayac",
@@ -421,7 +421,7 @@
       "unit": "Developer Relations"
     },
     "country": "AU",
-    "homepage": "https: //whistlr.info/",
+    "homepage": "https://whistlr.info/",
     "twitter": "samthor",
     "github": "samthor",
     "glitch": "samthor",
@@ -435,7 +435,7 @@
       "family": "Andrew"
     },
     "country": "GB",
-    "homepage": "https: //rachelandrew.co.uk/",
+    "homepage": "https://rachelandrew.co.uk/",
     "twitter": "rachelandrew",
     "github": "rachelandrew",
     "glitch": "rachelandrew"
@@ -464,7 +464,7 @@
       "unit": "Developer Relations"
     },
     "country": "USA",
-    "homepage": "https: //philipwalton.com",
+    "homepage": "https://philipwalton.com",
     "twitter": "philwalton",
     "github": "philipwalton",
     "description": {
@@ -492,7 +492,7 @@
       "given": "Houssein",
       "family": "Djirdeh"
     },
-    "homepage": "https: //houssein.me/",
+    "homepage": "https://houssein.me/",
     "twitter": "hdjirdeh",
     "github": "housseindjirdeh",
     "glitch": "housseindjirdeh"
@@ -559,7 +559,7 @@
       "unit": "Mobile Solutions Consultant"
     },
     "country": "JP",
-    "homepage": "https: //blog.uskay.io/",
+    "homepage": "https://blog.uskay.io/",
     "twitter": "uskay",
     "description": {
       "en": "Tech consultant for Web, Chrome & AMP"
@@ -575,7 +575,7 @@
       "unit": "Earth"
     },
     "country": "USA",
-    "homepage": "https: //www.finefrog.com/",
+    "homepage": "https://www.finefrog.com/",
     "description": {
       "en": "Jordon is a Tech Lead Manager working on Google Earth."
     }
@@ -650,7 +650,7 @@
     "description": {
       "en": "Developer Advocate for Chrome"
     },
-    "homepage": "https: //nerdy.dev",
+    "homepage": "https://nerdy.dev",
     "github": "argyleink",
     "twitter": "argyleink",
     "glitch": "argyleink"
@@ -678,7 +678,7 @@
     "description": {
       "en": "Founder at Mastery Games"
     },
-    "homepage": "https: //gedd.ski/",
+    "homepage": "https://gedd.ski/",
     "country": "US",
     "twitter": "geddski",
     "github": "geddski"
@@ -704,7 +704,7 @@
       "unit": "Platform Sales"
     },
     "country": "Sweden",
-    "homepage": "https: //digies.se",
+    "homepage": "https://digies.se",
     "twitter": "LinaCHansson",
     "description": {
       "en": "Lina is a Conversion Specialist at Google, focused on mobile CRO and site speed."
@@ -759,7 +759,7 @@
       "unit": "Developer Programs Engineer for Angular"
     },
     "country": "US",
-    "homepage": "https: //blog.mgechev.com/",
+    "homepage": "https://blog.mgechev.com/",
     "twitter": "mgechev",
     "github": "mgechev",
     "glitch": "mgechev"
@@ -787,7 +787,7 @@
       "unit": "Software Engineering"
     },
     "country": "USA",
-    "homepage": "https: //blog.mgechev.com/",
+    "homepage": "https://blog.mgechev.com/",
     "twitter": "mohamedzamakhan",
     "github": "mohammedzamakhan"
   },
@@ -799,7 +799,7 @@
     "github": "Dougsillars",
     "twitter": "dougsillars",
     "country": "US",
-    "homepage": "https: //dougsillars.com"
+    "homepage": "https://dougsillars.com"
   },
   "samrichard": {
     "name": {
@@ -813,7 +813,7 @@
       "name": "Chrome OS",
       "unit": "Developer Relations"
     },
-    "homepage": "https: //snugug.com"
+    "homepage": "https://snugug.com"
   },
   "yoavweiss": {
     "name": {
@@ -945,7 +945,7 @@
     "description": {
       "en": "Developer Advocate for Material Design"
     },
-    "homepage": "https: //una.im/",
+    "homepage": "https://una.im/",
     "github": "una",
     "twitter": "una"
   },
@@ -954,7 +954,7 @@
       "given": "Phillip",
       "family": "Kriegel"
     },
-    "homepage": "https: //www.philkrie.me/",
+    "homepage": "https://www.philkrie.me/",
     "github": "philkrie",
     "description": {
       "en": "Phillip is a Specialist Engineer"
@@ -975,7 +975,7 @@
       "unit": "Student Worker"
     },
     "country": "CA",
-    "homepage": "https: //tigeroakes.com/",
+    "homepage": "https://tigeroakes.com/",
     "twitter": "Not_Woods",
     "github": "NotWoods",
     "description": {
@@ -1005,7 +1005,7 @@
       "unit": "Developer Relations"
     },
     "country": "UK",
-    "homepage": "https: //bandarra.me/",
+    "homepage": "https://bandarra.me/",
     "twitter": "andreban",
     "github": "andreban",
     "description": {
@@ -1037,7 +1037,7 @@
     "country": "CH",
     "twitter": "we1x",
     "github": "lweichselbaum",
-    "homepage": "https: //webappsec.dev"
+    "homepage": "https://webappsec.dev"
   },
   "dgrogan": {
     "name": {
@@ -1286,7 +1286,7 @@
     "twitter": "robertnyman",
     "github": "robnyman",
     "country": "SE",
-    "homepage": "https: //robertnyman.com/",
+    "homepage": "https://robertnyman.com/",
     "description": {
       "en": "Developer advocate on the web team at Google."
     }

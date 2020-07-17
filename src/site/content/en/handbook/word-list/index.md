@@ -2,7 +2,7 @@
 layout: handbook
 title: Word list
 date: 2019-06-26
-updated: 2020-07-14
+updated: 2020-07-15
 description: |
   Spelling, punctuation, and capitalization for words and phrases commonly used on web.dev.
 ---
@@ -29,6 +29,7 @@ GDDSGWL, use the spelling that you see here.
 * one-way trip (noun)
 * one-way-trip (adj; avoid if possible)
 * origin trial
+* PageSpeed Insights
 * preconnect
 * referer (so spelled when referring to [the HTTP header](https://tools.ietf.org/html/rfc7231#section-5.5.2))
 * round trip (noun)
