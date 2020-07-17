@@ -648,6 +648,8 @@ at.
 
 ## Glitches {: #glitches }
 
+### Create a Glitch
+
 * Remix the [web-dev-hello-webpage](https://glitch.com/~web-dev-hello-webpage) or
   [web-dev-hello-express](https://glitch.com/~web-dev-hello-express) template.
 * Click **Project options** and update the description of the Glitch.
@@ -655,6 +657,8 @@ at.
 * Update `package.json` (if it exists).
 * Add the project to [the web.dev team on Glitch](https://glitch.com/@webdev).
 * Set the avatar of the project to the [web.dev logo](https://cdn.glitch.com/9b775a52-d700-4208-84e9-18578ee75266%2Ficon.jpeg?v=1585082912878).
+
+### Embed a Glitch
 
 ```html
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
@@ -666,8 +670,16 @@ at.
 </div>
 ```
 
-See [More flexible embeds](https://support.glitch.com/t/more-flexible-embeds/2925)
-for a list of query parameters that modify how the Glitch is presented.
+It's OK to adjust the `height` on the `<div class="glitch-embed-wrap">`
+element if you need more or less space.
+
+Query parameters for modifying how the embed is presented:
+
+* `previewSize=100` displays the app, rather than the source code.
+* `path=index.html` lets you specify which source code file to show.
+* `sidebarCollapsed=true` collapses the file navigator sidebar.
+
+<!-- https://support.glitch.com/t/more-flexible-embeds/2925 -->
 
 <!-- Don't attempt to load Glitch if we're screenshot testing. -->
 {% if site.percy %}
