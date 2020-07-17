@@ -6,7 +6,7 @@
  */
 
 import {store} from './store';
-import {normalizeUrl, getCanonicalPath} from './urls';
+import {normalizeUrl} from './urls';
 import './utils/underscore-import-polyfill';
 
 /**
@@ -16,7 +16,6 @@ import './utils/underscore-import-polyfill';
  * @return {!Promise<?>}
  */
 async function loadEntrypoint(url) {
-  url = getCanonicalPath(url);
   const prefixTo = url.indexOf('/', 1);
   const prefix = url.substring(1, prefixTo === -1 ? url.length : prefixTo);
 

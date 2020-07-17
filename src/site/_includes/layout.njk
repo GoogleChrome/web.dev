@@ -6,6 +6,8 @@ eleventyComputed:
 ---
 
 <!DOCTYPE html>
+{% set lang = "en" %}
+{% set locale="en_US" %}
 <html lang="{{lang}}">
   <head>
     <meta charset="utf-8" />
@@ -169,7 +171,6 @@ eleventyComputed:
         {% if show_banner %}
           {% include 'partials/banner.njk' %}
         {% endif %}
-        {% include 'partials/translation-disclaimer.njk' %}
         {{ content | safe }}
       </div>
     </main>

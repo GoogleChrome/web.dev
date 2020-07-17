@@ -9,11 +9,9 @@
 module.exports = function () {
   const lang = 'pl';
   const translation = 'none'; // Default translation status.
-  const locale = 'pl_PL';
 
   return {
     lang,
-    locale,
     translation,
   };
 };
