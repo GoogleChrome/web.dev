@@ -61,7 +61,7 @@ Today, Chrome already loads images at different priorities depending on where th
 respect to the device viewport. Images below the viewport are loaded with a lower priority, but they're
 still fetched as soon as possible.
 
-In Chrome 76, you can use the `loading` attribute to completely defer the loading of offscreen images that can be reached by scrolling:
+In Chrome 76+, you can use the `loading` attribute to completely defer the loading of offscreen images that can be reached by scrolling:
 
 ```html
 <img src="image.png" loading="lazy" alt="…" width="200" height="200">
@@ -105,7 +105,7 @@ reached, may change in the near future as the Chrome team improves heuristics to
 begin loading.
 
 {% Aside %}
-In Chrome 77, you can experiment with these different thresholds by [throttling the
+In Chrome 77+, you can experiment with these different thresholds by [throttling the
 network](https://developers.google.com/web/tools/chrome-devtools/network/#throttle) in DevTools. In
 the meantime, you will need to override the effective connection type of the browser using the
 `chrome://flags/#force-effective-connection-type` flag.
@@ -325,7 +325,7 @@ like any other image or iframe.
 
 ### How are images handled when a web page is printed?
 
-Although the functionality isn't in Chrome 76, there's an [open
+Although the functionality isn't in Chrome currently, there's an [open
 issue](https://bugs.chromium.org/p/chromium/issues/detail?id=875403) to ensure that all images and
 iframes are immediately loaded if a page is printed.
 
