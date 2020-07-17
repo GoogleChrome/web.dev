@@ -2,7 +2,7 @@
 layout: post
 title: Registering a web-based payment app
 subhead: |
-  Learn how to configure a web-based payment app on registration.
+  Learn how to configure a web-based payment app during registration.
 authors:
   - agektmr
 date: 2020-07-17
@@ -253,11 +253,11 @@ To let the browser know that the payment app accepts a delegation, use
 {% Label %}[payment handler] payment app's landing page{% endLabel %}
 
 ```js
-...
+…
  await registration.paymentManager.enableDelegations([
   'shippingAddress', 'payerName'
 ]);
-...
+…
 ```
 
 You can declare supported delegation options as an array of strings:

@@ -9,7 +9,7 @@ module.exports = {
   overview: `Web Payments aims to provide frictionless payment experience on the web. Learn how it works, its benefits, and get ready to integrate your payment app with Web Payments.`,
   topics: [
     {
-      title: 'How payment apps integrate with Web Payments',
+      title: 'Integrate Web Payments into your payment app',
       pathItems: [
         'empowering-payment-apps-with-web-payments',
         'life-of-a-payment-transaction',
