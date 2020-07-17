@@ -9,7 +9,6 @@ authors:
   - bpj 
 date: 2020-07-17
 # updated: 2020-07-17
-hero: hero.jpg
 tags:
   - blog
   - performance
