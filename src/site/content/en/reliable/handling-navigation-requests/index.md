@@ -48,7 +48,7 @@ new page unfortunately means that each navigation <em>might</em> be slow. At the
 means that it won't be <em>reliably</em> fast.
 
 {% Aside %}
-`Cache-Conrtol: no-cache` means the browser must check (or "revalidate") with the server before
+`Cache-Control: no-cache` means the browser must check (or "revalidate") with the server before
 using a previously cached resource. This requires a round-trip network communication to complete
 before the resource can be used.
 {% endAside %}
