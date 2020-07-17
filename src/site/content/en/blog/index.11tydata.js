@@ -15,7 +15,7 @@
  */
 
 const {index} = require('../../../_collections/hooks/blog');
-const lang = require('../lang.11tydata');
+const lang = require('../lang');
 
 module.exports = {
   pagination: {
