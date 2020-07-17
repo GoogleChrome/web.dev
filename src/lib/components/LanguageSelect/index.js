@@ -20,18 +20,23 @@
 
 import {html} from 'lit-element';
 import {BaseStateElement} from '../BaseStateElement';
-import {setLanguage} from '../../actions';
+import {setLanguage, checkUserPreferredLanguage} from '../../actions';
 import lang from '../../utils/language';
 
 class LanguageSelect extends BaseStateElement {
   static get properties() {
     return {
-      currentLanguage: {type: String},
+      userPreferredLanguage: {type: String},
     };
   }
 
-  onStateChanged({currentLanguage}) {
-    this.currentLanguage = currentLanguage;
+  connectedCallback() {
+    super.connectedCallback();
+    checkUserPreferredLanguage();
+  }
+
+  onStateChanged({userPreferredLanguage}) {
+    this.userPreferredLanguage = userPreferredLanguage;
   }
 
   onChange(e) {
@@ -44,7 +49,7 @@ class LanguageSelect extends BaseStateElement {
       return '';
     }
     languageName = languageName.toUpperCase();
-    return this.currentLanguage === language
+    return this.userPreferredLanguage === language
       ? html`
           <option value="${language}" selected>
             ${languageName} (${language})
