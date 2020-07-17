@@ -1337,5 +1337,21 @@
     "org": {
       "name": "Google"
     }
+  },
+  "jonchen": {
+    "name": {
+      "given": "Jon",
+      "family": "Chen"
+    },
+    "twitter": "jonchenn",
+    "github": "jonchenn",
+    "glitch": "jonchenn",
+    "country": "US",
+    "org": {
+      "name": "Google"
+    },
+    "description": {
+      "en": "Web Ecosystem Consultant"
+    }
   }
 }
