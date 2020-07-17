@@ -55,12 +55,13 @@ a cache that is stored locally in advance.
 {% endAside %}
 {% endAside %}
 
-In a web-based payment app, a service worker can respond to payment requests:
+In a web-based payment app, a service worker can act as a mediator for payment
+requests by:
 
-* Open a modal window and display the payment app's interface.
-* Bridge the communication between the payment app and the merchant.
-* Get an authorization from the customer and pass the payment credential to the
-  merchant.
+* Opening a modal window and displaying the payment app's interface.
+* Bridging the communication between the payment app and the merchant.
+* Getting an authorization from the customer and passing the payment credential
+  to the merchant.
 
 Learn how a payment app works on a merchant in [Life of a payment
 transaction](/life-of-a-payment-transaction/).
@@ -94,8 +95,8 @@ top-level document, with only a few exceptions:
 [WebAuthn](https://developers.google.com/web/updates/2018/05/webauthn) is an
 authentication mechanism based on the public key cryptography. You can let users
 sign-in through a biometric verification. WebAuthn is already supported in the
-payment handler window on Chrome, but we are seeking to bring a tighter
-integration.
+payment handler window on Chrome, and the standard body is looking into creating
+an even-tighter connection between Web Payments and WebAuthn.
 
 ### Credential Management API support
 
@@ -122,3 +123,5 @@ tracker](https://bugs.chromium.org/u/maxlg@chromium.org/hotlists/Expandable-paym
 To start building a web-based payment app, you have three distinct parts to implement:
 
 * [Registering a web-based payment app](/registering-a-web-based-payment-app)
+* Orchestrating a payment transaction on the service worker
+* Handling optional payment information on the service worker
