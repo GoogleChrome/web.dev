@@ -225,13 +225,7 @@ No, it can currently only be used with `<img>` tags.
 
 ### Is there a downside to lazy-loading images that are within the device viewport?
 
-Intersection observers for elements that are above the device fold may not fire before the window
-load event, and the lazy-loading functionality in Chrome relies on `IntersectionObserver`. There is
-an [open issue](https://bugs.chromium.org/p/chromium/issues/detail?id=992526) to modify this
-behavior so that intersection observers are fired _before_ the window load event.
-
-In the meantime, it is safer to only use the `loading` attribute for elements that are outside of
-the device viewport to prevent late fetches of on-screen elements.
+It is safer to avoid putting `loading=lazy` on above-the-fold images, as Chrome won't preload `loading=lazy` images in the preload scanner.
 
 ### How does the `loading` attribute work with images that are in the viewport but not immediately visible (for example: behind a carousel, or hidden by CSS for certain screen sizes)?
 
