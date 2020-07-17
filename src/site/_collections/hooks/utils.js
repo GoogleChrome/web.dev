@@ -73,7 +73,8 @@ const individual = (items, lang) => {
   for (const item of items) {
     if (item.elements.length > 0) {
       paginated = paginated.concat(
-        addPagination(filterByLang(item.elements, lang), item));
+        addPagination(filterByLang(item.elements, lang), item),
+      );
     }
   }
 
