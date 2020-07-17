@@ -2,6 +2,7 @@
 layout: handbook
 title: web.dev components
 date: 2019-06-26
+updated: 2020-07-17
 description: |
   Learn how to use web.dev's UI and content components.
 ---
@@ -664,6 +665,9 @@ at.
   </iframe>
 </div>
 ```
+
+See [More flexible embeds](https://support.glitch.com/t/more-flexible-embeds/2925)
+for a list of query parameters that modify how the Glitch is presented.
 
 <!-- Don't attempt to load Glitch if we're screenshot testing. -->
 {% if site.percy %}
