@@ -12,6 +12,10 @@ date: 2020-07-22
 updated: 2020-07-22
 hero: hero.jpg
 alt: A conoe pointed up stream.
+tags:
+  - blog
+  - network
+  - service-worker
 ---
 
 Chrome 85 has an experimental implementation of request streams, meaning you can
@@ -25,7 +29,7 @@ You could use this to:
 - Gradually send data generated on the client, such as audio, video, or input data.
 - Recreate web sockets over HTTP.
 
-But since this is a low-level web platform feature, don't be limited by _my_ ideas. 
+But since this is a low-level web platform feature, don't be limited by _my_ ideas.
 Maybe you can think of a much more exciting use-case for request streaming.
 
 ## Try out request streams
