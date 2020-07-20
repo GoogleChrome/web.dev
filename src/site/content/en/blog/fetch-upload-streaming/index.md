@@ -157,9 +157,7 @@ The chunks of a request body need to be `Uint8Array`s of bytes, so I'm using
 
 ### Writable streams
 
-Sometimes it's easier to work with streams when you have a `WritableStream`. You
-can do this using an identity `TransformStream`, which takes anything that's
-passed to its writable end, and pipes it to the readable end:
+Sometimes it's easier to work with streams when you have a `WritableStream`. You can do this using an 'identity' stream, which is a readable/writable pair that takes anything that's passed to its writable end, and sends it to the readable end. You can create one of these by creating a `TransformStream` without any arguments:
 
 ```js
 const { readable, writable } = new TransformStream();
