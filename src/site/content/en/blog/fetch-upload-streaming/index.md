@@ -26,13 +26,13 @@ You could use this to:
 - Recreate web sockets over HTTP.
 
 But, like all low-level web platform features, I'm more excited about the
-ideas I haven't thought of ourselves!
+ideas I haven't thought of myself!
 
 ## Try out request streams
 
 ### Enabling support during the origin trial phase
 
-Fetch request streams will be available as an origin trial in Chrome 85. The
+Fetch request streams are available in an origin trial as of Chrome 85. The
 origin trial is expected to end in Chrome 87.
 
 {% include 'content/origin-trials.njk' %}
@@ -59,7 +59,7 @@ Try out request streams in Chrome 85 by flipping an experimental flag:
 This shows how you can stream data from the user to the server, and send data
 back that can be processed in real time.
 
-Yeah ok it isn't the most imaginative example, I just wanted to keep it simple
+Yeah ok it isn't the most imaginative example, I just wanted to keep it simple,
 okay?
 
 Anyway, how does this work?
@@ -84,8 +84,8 @@ console.log('Response fully received');
 
 Each `value` is a `Uint8Array` of bytes. The number of arrays you get and the
 size of the arrays depends on the speed of the network. If you're on a fast
-connection, you'll get fewer larger 'chunks' of data. If you're on a slow
-connection, you'll get more smaller chunks.
+connection, you'll get fewer, larger 'chunks' of data. If you're on a slow
+connection, you'll get more, smaller chunks.
 
 If you want to convert the bytes into text, you can use
 [`TextDecoder`](https://developer.mozilla.org/en-US/docs/Web/API/TextDecoder/decode),
@@ -154,7 +154,7 @@ fetch(url, {
 The above will send "This is a slow request" to the server, one word at a time,
 with a one second pause between each word.
 
-The chunks of a request body need to be `Uint8Array`s of bytes, so I'm using
+Each chunk of a request body needs to be a `Uint8Array` of bytes, so I'm using
 `pipeThrough(new TextEncoderStream())` to do the conversion for me.
 
 ### Writable streams
@@ -266,12 +266,12 @@ encoding](https://en.wikipedia.org/wiki/Chunked_transfer_encoding). With chunked
 encoding, the body is split into parts, each with their own content length.
 
 Chunked encoding is pretty common when it comes to HTTP/1.1 _responses_, but
-very rare when it comes to _requests_. Because of this, Chrome a little worried
+very rare when it comes to _requests_. Because of this, Chrome is a little worried
 about compatibility, so it's opt-in for now.
 
 {% Aside %}
 This isn't an issue for HTTP/2, as HTTP/2 data is always 'chunked', although it
-calls them
+calls the chunks
 [frames](https://developers.google.com/web/fundamentals/performance/http2#streams_messages_and_frames).
 Chunked encoding wasn't introduced until HTTP/1.1, so requests with streaming
 bodies will always fail on HTTP/1 connections.
