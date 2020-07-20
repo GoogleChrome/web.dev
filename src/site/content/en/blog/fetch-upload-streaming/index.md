@@ -25,8 +25,8 @@ You could use this to:
 - Gradually send data generated on the client, such as audio, video, or input data.
 - Recreate web sockets over HTTP.
 
-But, like all low-level web platform features, I'm more excited about the
-ideas I haven't thought of myself!
+But since this is a low-level web platform feature, don't be limited by _my_ ideas. 
+Maybe you can think of a much more exciting use-case for request streaming.
 
 ## Try out request streams
 
