@@ -24,16 +24,28 @@ address and contact information. This provides multiple benefits:
   format](https://w3c.github.io/payment-request/#paymentaddress-interface).    
 * Submitting an incorrect address is less likely.
 
-Some browsers can provide address data form their autofill storage and make it
-available through the browser's built-in UI. This functionality can also be
-deferred to a payment app to offer a more unified payment experience. This is
-called *delegation*.
+This functionality can be deferred to a payment app to offer a unified payment
+experience and it's called *delegation*.
 
 Whenever possible, Chrome delegates the collection of a customer's shipping
 address and contact information to the invoked Android payment app. The
 delegation reduces the friction during checkout because the user's installed
 payment apps usually have more accurate information about their shipping address
 and contact details.
+
+The merchant website can dynamically update the shipping options and total price
+depending on the customer's choice of the shipping address and the shipping
+option.
+
+<figure class="w-figure" style="width:300px; margin:auto;">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/payments/android-payment-app-delegation.webm" type="video/webm">
+    <source src="https://storage.googleapis.com/web-dev-assets/payments/android-payment-app-delegation.mp4" type="video/mp4">
+  </video>
+  <figcaption class="w-figcaption">
+    Shipping option and shipping address change in action. See how it affects shipping options and total price dynamically.
+  </figcaption>
+</figure>
 
 {% Aside %}
 Learn how to implement an [Android native payment
@@ -293,7 +305,7 @@ interface IPaymentDetailsUpdateService {
 private fun bind() {
     val intent = Intent()
     intent.setClassName(
-        "org.chromium.chrome",
+        callingPackageName,
         "org.chromium.components.payments.PaymentDetailsUpdateService")
     intent.action = IPaymentDetailsUpdateService::class.java.name
     isBound = bindService(intent, mConnection, Context.BIND_AUTO_CREATE)
@@ -316,6 +328,58 @@ private val mConnection = object : ServiceConnection {
     }
 }
 ```
+The `callingPackageName` used for the service's start intent can have one of the
+following values depending on the browser that has initiated the payment
+request.
+
+<div class="w-table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Chrome Channel</th>
+        <th>Package Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Stable</td>
+        <td>
+          <code>"com.android.chrome"</code>
+        </td>
+      </tr>
+      <tr>
+        <td>Beta</td>
+        <td>
+          <code>"com.chrome.beta"</code>
+        </td>
+      </tr>
+      <tr>
+        <td>Dev</td>
+        <td>
+          <code>"com.chrome.dev"</code>
+        </td>
+      </tr>
+      <tr>
+        <td>Canary</td>
+        <td>
+          <code>"com.chrome.canary"</code>
+        </td>
+      </tr>
+      <tr>
+        <td>Chromium</td>
+        <td>
+          <code>"org.chromium.chrome"</code>
+        </td>
+      </tr>
+      <tr>
+        <td>Stable</td>
+        <td>
+          <code>"com.android.chrome"</code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 #### `changePaymentMethod`
 
