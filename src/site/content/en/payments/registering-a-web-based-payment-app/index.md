@@ -6,7 +6,7 @@ subhead: |
 authors:
   - agektmr
 date: 2020-07-17
-updated: 2020-07-17
+updated: 2020-07-20
 description: |
   Learn how to register a web-based payment app to a customers' browser. You'll also learn how to debug them.
 tags:
@@ -291,6 +291,21 @@ requirement from `http://*.corp.company.com`, use the following flags:
 
 * [`--ignore-certificate-errors`](https://chromiumdash.appspot.com/commit/988b56b519836f3d3d94f145ba3554a0c0a7d0a8)
 * [`--unsafely-treat-insecure-origin-as-secure=http://*.corp.company.com`](https://chromiumdash.appspot.com/commit/77a7e1a65d14072149ec4420a0ab523586011d8a)
+
+**macOS**
+
+```shell
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --ignore-certificate-errors --unsafely-treat-insecure-origin-as-secure=http://*.corp.company.com
+```
+
+**Windows**
+
+```shell
+chrome.exe --ignore-certificate-errors --unsafely-treat-insecure-origin-as-secure=http://*.corp.company.com
+```
+
+Learn more about running Chrome with a runtime flag at [Run Chromium with
+flags](https://www.chromium.org/developers/how-tos/run-chromium-with-flags).
 
 ### Port forwarding a local server
 
