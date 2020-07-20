@@ -119,7 +119,7 @@ val requestPayerName: Boolean? = paymentOptions?.getBoolean("requestPayerName")
 val requestPayerPhone: Boolean? = paymentOptions?.getBoolean("requestPayerPhone")
 val requestPayerEmail: Boolean? = paymentOptions?.getBoolean("requestPayerEmail")
 val requestShipping: Boolean? = paymentOptions?.getBoolean("requestShipping")
-val shippingType: String? = paymentOptions.getString("shippingType")
+val shippingType: String? = paymentOptions?.getString("shippingType")
 ```
 
 It can include the following parameters:
@@ -189,7 +189,7 @@ To do so the following parameters must be specified as Intent extras:
 * `shippingAddress` - The user-provided shipping address. This should be a
   non-empty bundle when `paymentOptions.requestShipping` is true. The bundle
   should have the following keys which represent different parts in a [physical
-  address](https://www.w3.org/TR/payment-request/#physical-addresses). {: #shipping-address}
+  address](https://www.w3.org/TR/payment-request/#physical-addresses).
     * `city`
     * `countryCode`
     * `dependentLocality`
@@ -199,8 +199,9 @@ To do so the following parameters must be specified as Intent extras:
     * `recipient`
     * `region`
     * `sortingCode`
-    All keys other than the `addressLine` have string values.
-      The `addressLine` is an array of strings.
+    * `addressLine`  
+  All keys other than the `addressLine` have string values. The `addressLine`
+  is an array of strings.
 * `shippingOptionId` - The identifier of the user-selected shipping option. This
   should be a non-empty string when `paymentOptions.requestShipping` is true.
 
@@ -308,19 +309,19 @@ private fun bind() {
         callingPackageName,
         "org.chromium.components.payments.PaymentDetailsUpdateService")
     intent.action = IPaymentDetailsUpdateService::class.java.name
-    isBound = bindService(intent, mConnection, Context.BIND_AUTO_CREATE)
+    isBound = bindService(intent, connection, Context.BIND_AUTO_CREATE)
 }
 
-private val mConnection = object : ServiceConnection {
+private val connection = object : ServiceConnection {
     override fun onServiceConnected(className: ComponentName, service: IBinder) {
         val service = IPaymentDetailsUpdateService.Stub.asInterface(service)
         try {
             if (isOptionChange) {
-                service?.changeShippingOption(mSelectedOptionId, mCallback)
+                service?.changeShippingOption(selectedOptionId, callback)
             } else (isAddressChange) {
-                service?.changeShippingAddress(mSelectedAddress, mCallback)
+                service?.changeShippingAddress(selectedAddress, callback)
             } else {
-                service?.changePaymentMethod(mMethodData, mCallback)
+                service?.changePaymentMethod(methodData, callback)
             }
         } catch (e: RemoteException) {
             // Handle the remote exception
@@ -369,12 +370,6 @@ request.
         <td>Chromium</td>
         <td>
           <code>"org.chromium.chrome"</code>
-        </td>
-      </tr>
-      <tr>
-        <td>Stable</td>
-        <td>
-          <code>"com.android.chrome"</code>
         </td>
       </tr>
     </tbody>
@@ -434,12 +429,12 @@ Examples of an invalid state are:
 ```kotlin
 private fun unbind() {
     if (isBound) {
-        unbindService(mConnection)
+        unbindService(connection)
         isBound = false
     }
 }
 
-private val mCallback: IPaymentDetailsUpdateServiceCallback =
+private val callback: IPaymentDetailsUpdateServiceCallback =
     object : IPaymentDetailsUpdateServiceCallback.Stub() {
         override fun paymentDetailsNotUpdated() {
             // Payment request details have not changed.
@@ -447,7 +442,7 @@ private val mCallback: IPaymentDetailsUpdateServiceCallback =
         }
 
         override fun updateWith(updatedPaymentDetails: Bundle) {
-            mUpdatedPaymentDetails = updatedPaymentDetails
+            newPaymentDetails = updatedPaymentDetails
             unbind()
         }
     }
@@ -467,7 +462,8 @@ private val mCallback: IPaymentDetailsUpdateServiceCallback =
 * `stringifiedPaymentMethodErrors` - A JSON string representing validation
   errors for the payment method
 * `addressErrors` - A bundle with optional keys identical to [shipping
-  address](#shipping-address) and string values. Each key represents a
-  validation error related to its corresponding part of the shipping address.
+  address](#provide-required-information-in-a-payment-response) and string
+  values. Each key represents a validation error related to its corresponding
+  part of the shipping address.
 
 An absent key means its value has not changed.
