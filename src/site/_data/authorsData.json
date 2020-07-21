@@ -1383,8 +1383,11 @@
       "given": "Matt",
       "family": "Reynolds"
     },
+    "org": {
+      "name": "Google"
+    },
     "description": {
       "en": "Matt is a software developer"
-    },
-  },
+    }
+  }
 }
