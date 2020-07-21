@@ -4,7 +4,7 @@ title: Reading and writing files and directories with the browser-nativefs libra
 authors:
   - thomassteiner
 description: |
-  All modern browsers can get read access to native files and directories, however,
+  All modern browsers can read native files and directories; however,
   true write access, that is, more than just downloading files,
   is limited to browsers that implement the Native File System API.
   This post introduces a support library called browser-nativefs
@@ -20,9 +20,9 @@ tags:
   - capabilities
 ---
 
-Browsers could deal with files and directories for a long time.
+Browsers have been able to deal with files and directories for a long time.
 The [File API](https://w3c.github.io/FileAPI/)
-provides an API for representing file objects in web applications,
+provides features for representing file objects in web applications,
 as well as programmatically selecting them and accessing their data.
 The moment you look closer, though, all that glitters is not gold.
 
@@ -33,8 +33,8 @@ The moment you look closer, though, all that glitters is not gold.
 As a developer, you can open and read files via the
 [`<input type="file">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file)
 element.
-In its simplest form, opening a file can look something like in the code sample below.
-You get back a [`FileList`](https://developer.mozilla.org/en-US/docs/Web/API/FileList),
+In its simplest form, opening a file can look something like the code sample below.
+The `input` object gives you a [`FileList`](https://developer.mozilla.org/en-US/docs/Web/API/FileList),
 which in the case below consists of just one
 [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File).
 A `File` is a specific kind of [`Blob`](https://developer.mozilla.org/en-US/docs/Web/API/Blob),
@@ -59,10 +59,8 @@ For opening folders (or directories), you can set the
 [`<input webkitdirectory>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-webkitdirectory)
 attribute.
 Apart from that, everything else works the same as above.
-Despite its vendor-prefixed name that suggests it is implemented only for WebKit-based browsers
-(inherited by Blink-based browsers like Chrome or the new Edge),
-`webkitdirectory` is also usable in the legacy EdgeHTML-based Edge as well as in Firefox.
-Yeah, I know… 🙄
+Despite its vendor-prefixed name,
+`webkitdirectory` is not only usable in Chromium and WebKit browsers, but also in the legacy EdgeHTML-based Edge as well as in Firefox.
 
 ### Saving (rather: downloading) files
 
@@ -73,7 +71,9 @@ attribute.
 Given a Blob, you can set the anchor's `href` attribute to a `blob:` URL that you can get from the
 [`URL.createObjectURL()`](https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL)
 method.
-To prevent memory leaks, do not forget to revoke the URL after the download.
+{% Aside 'caution' %}
+To prevent memory leaks, always revoke the URL after the download.
+{% endAside %}
 
 ```js
 const saveFile = async (blob) => {
@@ -90,7 +90,7 @@ const saveFile = async (blob) => {
 ### The problem
 
 A massive downside of the *download* approach is that there is no way to make a classic
-open→edit→save flow happen, that is, there is no way to *over-save* the original file.
+open→edit→save flow happen, that is, there is no way to *overwrite* the original file.
 Instead, you end up with a new *copy* of the original file
 in the operating system's default Downloads folder whenever you "save".
 
@@ -98,11 +98,11 @@ in the operating system's default Downloads folder whenever you "save".
 
 The Native File System API makes both operations, opening and saving, a lot simpler.
 It also enables *true saving*, that is, you can not only choose where to save a file,
-but also over-save an existing file.
+but also overwrite an existing file.
 
 {% Aside %}
   For a more thorough introduction to the Native File System API, see the article
-  [The Native File System API: Simplifying access to local files](https://web.dev/native-file-system/).
+  [The Native File System API: simplifying access to local files](https://web.dev/native-file-system/).
 {% endAside %}
 
 ### Opening files
@@ -124,15 +124,15 @@ const openFile = async () => {
 
 ### Opening directories
 
-Directories can be opened by passing an options object like `{type: 'open-directory'}` to
-`chooseFileSystemEntries()` that results in directories to be selectable in the file dialog.
+Open a directory by passing an options object like `{type: 'open-directory'}` to
+`chooseFileSystemEntries()` that makes directories selectable in the file dialog box.
 
 ### Saving files
 
-Saving files is a similarly straight-forward operation.
+Saving files is similarly straightforward.
 From a file handle, you create a writable stream via `createWritable()`,
 then you write the Blob data by calling the stream's `write()` method,
-and finally you need to close the stream by calling its `close()` method.
+and finally you close the stream by calling its `close()` method.
 
 ```js
 const saveFile = async (blob) => {
@@ -143,6 +143,7 @@ const saveFile = async (blob) => {
     const writable = await handle.createWritable();
     await writable.write(blob);
     await writable.close();
+    return handle;
   } catch (err) {
     console.error(err.name, err.message);
   }
@@ -151,9 +152,8 @@ const saveFile = async (blob) => {
 
 ## Introducing browser-nativefs
 
-As perfectly fine as the Native File System API works when it is available,
-the browser support situation [currently is not great](https://caniuse.com/#feat=native-filesystem-api),
-since the API is pretty new.
+As perfectly fine as the Native File System API is,
+it's [not yet  widely available](https://caniuse.com/#feat=native-filesystem-api).
 
 <figure class="w-figure">
   <img class="w-screenshot" src="caniuse.png"
@@ -168,28 +168,28 @@ This is why I see the Native File System API as a [progressive enhancement](/pro
 As such, I want to use it when the browser supports it,
 and use the traditional approach if not;
 all while never punishing the user with unnecessary downloads of unsupported JavaScript code.
-The 💾&nbsp;[browser-nativefs](https://github.com/GoogleChromeLabs/browser-nativefs)
+The [browser-nativefs](https://github.com/GoogleChromeLabs/browser-nativefs)
 library is my answer to this challenge.
 
 ### Design philosophy
 
 Since the Native File System API is still likely to change in the future,
-the browser-nativefs API is not modeled after the Native File System API,
-that is, the library is not a [polyfill](https://developer.mozilla.org/en-US/docs/Glossary/Polyfill),
-but rather a 🐴&nbsp;[ponyfill](https://github.com/sindresorhus/ponyfill).
+the browser-nativefs API is not modeled after it.
+That is, the library is not a [polyfill](https://developer.mozilla.org/en-US/docs/Glossary/Polyfill),
+but rather a [ponyfill](https://github.com/sindresorhus/ponyfill).
 You can (statically or dynamically) exclusively import whatever functionality you need to keep your app as small as possible.
 The available methods are the aptly named
 [`fileOpen()`](https://github.com/GoogleChromeLabs/browser-nativefs#opening-files),
 [`directoryOpen()`](https://github.com/GoogleChromeLabs/browser-nativefs#opening-directories), and
 [`fileSave()`](https://github.com/GoogleChromeLabs/browser-nativefs#saving-files).
-Internally, the library feature-detects if the Native File System API is supported or not,
+Internally, the library feature-detects if the Native File System API is supported,
 and then imports the corresponding code path.
 
 ### Using the browser-nativefs library
 
 The three methods are intuitive to use.
-You can specify the to-be-accepted `mimeTypes` or file `extensions`, and set a `multiple` flag
-to allow or disallow multiple files or directories to be selected.
+You can specify your app's accepted `mimeTypes` or file `extensions`, and set a `multiple` flag
+to allow or disallow selection of multiple files or directories.
 For full details, see the
 [browser-nativefs API documentation](https://github.com/GoogleChromeLabs/browser-nativefs#api-documentation).
 The code sample below shows how you can open and save image files.
@@ -230,7 +230,7 @@ import {
 
 ### Demo
 
-You can see the above code in action in a 💾&nbsp;[demo](https://browser-nativefs.glitch.me/) on Glitch.
+You can see the above code in action in a [demo](https://browser-nativefs.glitch.me/) on Glitch.
 Its [source code](https://glitch.com/edit/#!/browser-nativefs) is likewise available there.
 Since for security reasons cross origin sub frames are not allowed to show a file picker,
 the demo cannot be embedded in this article.
@@ -241,15 +241,15 @@ In my free time, I contribute a tiny bit to an
 [installable PWA](https://web.dev/progressive-web-apps/#installable)
 called [Excalidraw](https://excalidraw.com/),
 a whiteboard tool that lets you easily sketch diagrams with a hand-drawn feel.
-It is fully responsive and works well from small mobile phones to big screen computers.
+It is fully responsive and works well on a range of devices from small mobile phones to computers with large screens.
 This means it needs to deal with files on all the various platforms
-that may or, more likely, may not support the Native File System API,
-which makes it a great candidate for the browser-nativefs library.
+whether or not they support the Native File System API.
+This makes it a great candidate for the browser-nativefs library.
 
 I can, for example, start a drawing on my iPhone,
 save it (technically: download it, since Safari does not support the Native File System API)
 to my iPhone Downloads folder, open the file on my desktop (after transferring it from my phone),
-modify the file, and over-save it with my changes, or even save it as a new file.
+modify the file, and overwrite it with my changes, or even save it as a new file.
 
 <figure class="w-figure">
   <img class="w-screenshot" src="iphone-original.png" width="300" alt="An Excalidraw drawing on an iPhone.">
@@ -268,9 +268,9 @@ modify the file, and over-save it with my changes, or even save it as a new file
 </figure>
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="chrome-oversave.png" alt="Over-saving the original file with the modifications.">
+  <img class="w-screenshot" src="chrome-oversave.png" alt="Overwriting the original file with the modifications.">
   <figcaption class="w-figcaption">
-    Over-saving the original file with the modifications to the original Excalidraw drawing file.
+    Overwriting the original file with the modifications to the original Excalidraw drawing file.
     The browser shows a dialog asking me whether this is fine.
   </figcaption>
 </figure>
@@ -285,10 +285,10 @@ modify the file, and over-save it with my changes, or even save it as a new file
 ### Real life code sample
 
 Below, you can see an actual example of browser-nativefs as it is used in Excalidraw.
-The visible excerpt stems from the file
+This excerpt is taken from
 [`/src/data/json.ts`](https://github.com/excalidraw/excalidraw/blob/cd87bd6901b47430a692a06a8928b0f732d77097/src/data/jsonts#L24-L52).
 Of special interest is how the `saveAsJSON()` method passes either a file handle or `null` to browser-nativefs'
-`fileSave()` method, which causes it to over-save when a handle is given,
+`fileSave()` method, which causes it to overwrite when a handle is given,
 or to save to a new file if not.
 
 ```js
@@ -325,11 +325,11 @@ export const loadFromJSON = async () => {
 
 ### UI considerations
 
-In the case of Excalidraw (or your app of course),
-you need to make sure the UI adopts accordingly to the browser's support situation.
-If the Native File System API is supported (`if ('chooseFileSystemEntries in window) {}`)
-you can show a **Save As** button apart from a **Save** button.
-The screenshots below show the difference of Excalidraw's responsive main app toolbar on iPhone and on Chrome desktop.
+Whether in Excalidraw or your app,
+the UI should adapt to the browser's support situation.
+If the Native File System API is supported (`if ('chooseFileSystemEntries' in window) {}`)
+you can show a **Save As** button in addition to a **Save** button.
+The screenshots below show the difference between Excalidraw's responsive main app toolbar on iPhone and on Chrome desktop.
 Note how on iPhone the **Save As** button is missing.
 
 <figure class="w-figure">
@@ -351,9 +351,9 @@ Note how on iPhone the **Save As** button is missing.
 Working with native files technically works on all modern browsers.
 On browsers that support the Native File System API, you can make the experience better by allowing
 for true saving and over-saving (not just downloading) of files and
-by letting your users create new files wherever they want;
-all while still remaining functional on browsers that do not support the Native File System API.
-The 💾&nbsp;[browser-nativefs](https://github.com/GoogleChromeLabs/browser-nativefs) makes your life easier
+by letting your users create new files wherever they want,
+all while remaining functional on browsers that do not support the Native File System API.
+The [browser-nativefs](https://github.com/GoogleChromeLabs/browser-nativefs) makes your life easier
 by dealing with the subtleties of progressive enhancement and making your code as simple as possible.
 
 ## Acknowledgements
