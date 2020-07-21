@@ -5,7 +5,7 @@ subhead: Browser-level native lazy-loading for iframes is here
 authors:
   - addyosmani
 date: 2020-07-19
-updated: 2020-07-19
+updated: 2020-07-20
 hero: hero.png
 alt: Phone outline with loading image and assets
 description: |
@@ -33,7 +33,7 @@ tags:
 
 ### Why should we lazy-load iframes?
 
-Third-party embeds cover a wide range of use cases, from video players, to social media posts, to ads. Often this content is not immediately visible in the users viewport. Rather, it's only seen once they scroll further down the page. Despite this, users pay the cost of downloading data and costly JavaScript for each frame, even if they don’t scroll to it.
+Third-party embeds cover a wide range of use cases, from video players, to social media posts, to ads. Often this content is not immediately visible in the users viewport. Rather, it's only seen once they scroll further down the page. Despite this, users pay the cost of downloading data and costly JavaScript for each frame, even if they don't scroll to it.
 
 Based off Chrome's research into [automatically lazy-loading offscreen iframes for Data Saver users](https://blog.chromium.org/2019/10/automatically-lazy-loading-offscreen.html), lazy-loading iframes could lead to 2-3% median data savings, 1-2% [First Contentful Paint](/fcp/) reductions at the median, and 2% [First Input Delay](/fid/) (FID) improvements at the 95th percentile.
 
@@ -73,7 +73,7 @@ lazy-loading in Lite Mode -->
 
 Not specifying the attribute at all will have the same impact as explicitly eagerly loading the resource, except for [Lite Mode](https://blog.chromium.org/2019/04/data-saver-is-now-lite-mode.html) users, where Chrome will use the `auto` value to decide whether it should be lazy-loaded.
 
-If you need to_ dynamically_ create iframes via JavaScript, setting `iframe.loading = 'lazy'` on the element is also [supported](https://bugs.chromium.org/p/chromium/issues/detail?id=993273):
+If you need to _dynamically_ create iframes via JavaScript, setting `iframe.loading = 'lazy'` on the element is also [supported](https://bugs.chromium.org/p/chromium/issues/detail?id=993273):
 
 ```html/2
 var iframe = document.createElement('iframe');
@@ -136,11 +136,11 @@ Instagram embeds provide a block of markup and a script, which injects an iframe
         allow="encrypted-media"></iframe>
 ```
 
-Although the above embeds illustrate the potential benefits to lazy-loading iframes for media content, there’s the potential to also see these benefits for ads.  
+Although the above embeds illustrate the potential benefits to lazy-loading iframes for media content, there's the potential to also see these benefits for ads.  
 
 ### Case study: Natively lazy-loading the Facebook Like button
 
-Facebook's _social plugins_ allow developers to embed Facebook content in their web pages. There's a number of these plugins offered, such as embedded posts, photos, videos, comments... The most popular is the [Like plugin](https://developers.facebook.com/docs/plugins/like-button/) - a button that shows a count of who has "liked" the page. By default, embedding the Like plugin in a webpage (using the FB JSSDK) pulls in ~215KB of resources, 197KB of which is JavaScript. In many cases, the plugin may appear at the end of an article or near the end of a page, so loading it eagerly when it's offscreen may be suboptimal.
+Facebook's _social plugins_ allow developers to embed Facebook content in their web pages. There's a number of these plugins offered, such as embedded posts, photos, videos, comments… The most popular is the [Like plugin](https://developers.facebook.com/docs/plugins/like-button/) - a button that shows a count of who has "liked" the page. By default, embedding the Like plugin in a webpage (using the FB JSSDK) pulls in ~215KB of resources, 197KB of which is JavaScript. In many cases, the plugin may appear at the end of an article or near the end of a page, so loading it eagerly when it's offscreen may be suboptimal.
 
 <figure class="w-figure">
   <img src="./fblike.png" alt="Facebook Like Button">
@@ -156,7 +156,7 @@ Lite Mode users are commonly in regions of the world where network connection qu
 
 Origins can detect what percentage of their traffic is coming from Lite Mode users by checking the `navigator.connection.saveData` JavaScript API.
 
-### Can I lazy-load iframes cross-browser? Yes.
+### Can I lazy-load iframes cross-browser? Yes
 
 It is also possible to lazy-load offscreen iframes using the [lazysizes](/use-lazysizes-to-lazyload-images/) library. 
 
