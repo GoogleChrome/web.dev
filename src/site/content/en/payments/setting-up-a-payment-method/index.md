@@ -12,6 +12,7 @@ description: |
   payment app. Learn how to set up a payment method and get your payment app
   ready for merchants and customers to make payments.
 date: 2020-05-25
+updated: 2020-07-17
 tags:
   - payments
 ---
@@ -27,6 +28,8 @@ through payment apps, read the following articles first:
 
 - [Empowering payment apps with Web Payments](/empowering-payment-apps-with-web-payments)
 - [Life of a payment transaction](/life-of-a-payment-transaction)
+
+{% include 'content/payments/browser-compatibility.njk' %}
 
 ## How a browser discovers a payment app
 
@@ -478,5 +481,5 @@ single payment app.
 Now that you have your payment app discoverable, learn how to develop a native
 payment app and a web-based payment app.
 
-- [Android payment apps: developer's guide](/android-payment-apps-overview)
+- [Android payment apps: developer's guide](/android-payment-apps-developers-guide)
 - Web based payment apps developer guide (Coming soon)
