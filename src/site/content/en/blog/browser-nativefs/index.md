@@ -350,7 +350,7 @@ Note how on iPhone the **Save As** button is missing.
 
 Working with native files technically works on all modern browsers.
 On browsers that support the Native File System API, you can make the experience better by allowing
-for true saving and over-saving (not just downloading) of files and
+for true saving and overwriting (not just downloading) of files and
 by letting your users create new files wherever they want,
 all while remaining functional on browsers that do not support the Native File System API.
 The [browser-nativefs](https://github.com/GoogleChromeLabs/browser-nativefs) makes your life easier
