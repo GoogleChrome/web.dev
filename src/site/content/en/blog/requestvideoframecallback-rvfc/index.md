@@ -1,6 +1,6 @@
 ---
 title: |
-  The requestVideoFrameCallback (rVFC) API
+  The `requestVideoFrameCallback()` method
 subhead: |
   Perform efficient per-video-frame operations on video.
 authors:
@@ -10,28 +10,28 @@ updated: 2020-06-29
 hero: hero.jpg
 alt: Film roll.
 description: |
-  The requestVideoFrameCallback method allows web authors to register a callback,
-  which runs in the rendering steps when a new video frame is sent to the compositor.
+  The requestVideoFrameCallback() method allows web authors to register a callback
+  that runs in the rendering steps when a new video frame is sent to the compositor.
 tags:
   - blog
   - media
   - capabilities
 ---
 There's a new Web API on the block, defined in the
-[HTMLVideoElement.requestVideoFrameCallback()](https://wicg.github.io/video-rvfc/)
+[`HTMLVideoElement.requestVideoFrameCallback()`](https://wicg.github.io/video-rvfc/)
 specification.
-The `requestVideoFrameCallback()` method (rVFC) allows web authors to register a callback,
-which runs in the rendering steps when a new video frame 🎞 is sent to the compositor.
+The `requestVideoFrameCallback()` method allows web authors to register a callback
+that runs in the rendering steps when a new video frame is sent to the compositor.
 This is intended to allow developers to perform efficient per-video-frame operations on video,
 such as video processing and painting to a canvas, video analysis,
 or synchronization with external audio sources.
 
-## Difference to requestAnimationFrame (rAF)
+## Difference with requestAnimationFrame()
 
 Operations like drawing a video frame to a canvas via
 [`drawImage()`](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage)
 made through this API will be synchronized as a best effort
-with the video playing on screen.
+with the frame rate of the video playing on screen.
 Different from
 [`window.requestAnimationFrame()`](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame),
 which usually fires about 60 times per second,
@@ -44,18 +44,18 @@ which usually fires about 60 times per second,
   would fire callbacks at 25Hz.
   A 120fps video in that same 60Hz browser would fire callbacks at 60Hz.
 
-## What's in a name
+## What's in a name?
 
-Due to its similarity with `window.requestAnimationFrame()`, the API initially
+Due to its similarity with `window.requestAnimationFrame()`, the method initially
 was [proposed as `video.requestAnimationFrame()`](https://discourse.wicg.io/t/proposal-video-requestanimationframe/3691),
-but I'm happy the new name
-`requestVideoFrameCallback()` was agreed on
+but I'm happy with the new name,
+`requestVideoFrameCallback()`, which was agreed on
 after a [lengthy discussion](https://github.com/WICG/video-rvfc/issues/44).
-Yay, [bikeshedding](https://css-tricks.com/what-is-bikeshedding/) for the win 🙌!
+Yay, [bikeshedding](https://css-tricks.com/what-is-bikeshedding/) for the win!
 
 ## Browser support and feature detection
 
-The API is
+The method is
 [implemented in Chromium](https://chromestatus.com/feature/6335927192387584)
 already, and
 [Mozilla folks like it](https://mozilla.github.io/standards-positions/#requestVideoFrameCallback).
@@ -65,7 +65,7 @@ Feature detection of the API works like this:
 
 ```js
 if ('requestVideoFrameCallback' in HTMLVideoElement.prototype) {
-  // The API is supported! 🎉
+  // The API is supported! 
 }
 ```
 
@@ -85,7 +85,7 @@ const doSomethingWithTheFrame = (now, metadata) => {
 video.requestVideoFrameCallback(doSomethingWithTheFrame);
 ```
 
-In the callback, `now` is a [`DOMHighResTimeStamp`](https://www.w3.org/TR/hr-time-2/#dom-domhighrestimestamp)
+In the callback, `now` is a [`DOMHighResTimeStamp`](https://developer.mozilla.org/en-US/docs/Web/API/DOMHighResTimeStamp)
 and `metadata` is a [`VideoFrameMetadata`](https://wicg.github.io/video-rvfc/#dictdef-videoframemetadata)
 dictionary with the following properties:
 
@@ -100,11 +100,11 @@ dictionary with the following properties:
 - `mediaTime`, of type `double`:
   The media presentation timestamp (PTS) in seconds of the frame presented (e.g., its timestamp on the `video.currentTime` timeline).
 - `presentedFrames`, of type `unsigned long`:
-  A count of the number of frames submitted for composition. Allows clients to determine if frames were missed between `VideoFrameRequestCallback`s.
+  A count of the number of frames submitted for composition. Allows clients to determine if frames were missed between instances of `VideoFrameRequestCallback`.
 - `processingDuration`, of type `double`:
   The elapsed duration in seconds from submission of the encoded packet with the same presentation timestamp (PTS) as this frame (e.g., same as the `mediaTime`) to the decoder until the decoded frame was ready for presentation.
 
-For WebRTC applications, additional properties can appear:
+For WebRTC applications, additional properties may appear:
 
 - `captureTime`, of type `DOMHighResTimeStamp`:
   For video frames coming from either a local or remote source, this is the time at which the frame was captured by the camera.
@@ -121,34 +121,34 @@ For WebRTC applications, additional properties can appear:
   (e.g., an anamorphic video might have rectangular pixels).
 {% endAside %}
 
-Of special interest in this list is ⏱ `mediaTime`.
+Of special interest in this list is `mediaTime`.
 In Chromium's implementation, we use the audio clock as the time source that backs `video.currentTime`,
 whereas the `mediaTime` is directly populated by the `presentationTimestamp` of the frame.
 The `mediaTime` is what you should use if you want to exactly identify frames in a reproducible way,
 including to identify exactly which frames you missed.
 
-{%Aside 'warning' %}
-  Unfortunately, the video element does not offer any guarantees in terms of frame accurate *seeking*.
+{% Aside %}
+  Unfortunately, the video element does not guarantee frame-accurate *seeking*.
   This has been an ongoing [subject of discussion](https://github.com/w3c/media-and-entertainment/issues/4).
   [WebCodecs](https://github.com/WICG/web-codecs) will eventually allow for frame accurate applications.
 {% endAside %}
 
-### If things seem one frame off
+### If things seem one frame off…
 
-Vertical sync (or just vsync), is a graphics technology that synchronizes the frame rate of a video and the refresh rate of a monitor.
-Since the rVFC API runs on the main thread, but, under the hood, video compositing happens on the compositor thread,
+Vertical synchronization (or just vsync), is a graphics technology that synchronizes the frame rate of a video and the refresh rate of a monitor.
+Since `requestVideoFrameCallback()` runs on the main thread, but, under the hood, video compositing happens on the compositor thread,
 everything from this API is a best effort, and we do not offer any strict guarantees.
 What may be happening is that the API can be one vsync late relative to when a video frame is rendered.
-It takes one vsync for changes made to the web page through the API to appear on screen (same as `window.requestAnimationFrame()`),
-so if you keep updating the `mediaTime` or frame number on your web page and compare that
+It takes one vsync for changes made to the web page through the API to appear on screen (same as `window.requestAnimationFrame()`).
+So if you keep updating the `mediaTime` or frame number on your web page and compare that
 against the numbered video frames, eventually the video will look like it is one frame ahead.
 
 What is really happening is that the frame is ready at vsync&nbsp;x, the callback is fired and the frame is rendered at vsync&nbsp;x+1,
 and changes made in the callback are rendered at vsync&nbsp;x+2.
 You can check whether the callback is a vsync late (and the frame is already rendered on screen)
 by checking whether the `metadata.expectedDisplayTime` is roughly `now` or one vsync in the future.
-If it is within about 5–10 microseconds of `now`, the frame is already rendered;
-if the `expectedDisplayTime` is ~16 milliseconds in the future (assuming your browser/screen is refreshing at 60Hz),
+If it is within about five to ten microseconds of `now`, the frame is already rendered;
+if the `expectedDisplayTime` is approximately sixteen milliseconds in the future (assuming your browser/screen is refreshing at 60Hz),
 then you are in sync with the frame.
 
 ## Demo
