@@ -19,7 +19,7 @@ const {html} = require('common-tags');
 const md = require('../../_filters/md');
 const constants = require('../../_utils/constants');
 const getSrcsetRange = require('../../_utils/get-srcset-range');
-const postTags = require('../../_data/postTags');
+const tagsCollection = require('../../_collections/tags')();
 
 const AuthorsDate = require('./AuthorsDate');
 
@@ -43,7 +43,7 @@ class BaseCard {
     this.displayedTags = [];
 
     for (const tag of this.data.tags || []) {
-      const foundTag = postTags[tag.toLowerCase()];
+      const foundTag = tagsCollection[tag.toLowerCase()];
       if (foundTag) {
         this.displayedTags.push(foundTag);
       }
