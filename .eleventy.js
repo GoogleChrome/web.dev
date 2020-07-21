@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+const path = require('path');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
@@ -267,7 +268,7 @@ module.exports = function (config) {
   const targetLang = process.env.ELEVENTY_LANG || '';
   return {
     dir: {
-      input: 'src/site/content/' + targetLang,
+      input: path.join('src/site/content/', targetLang),
       output: 'dist',
       data: targetLang ? '../../_data' : '../_data',
       includes: targetLang ? '../../_includes' : '../_includes',
