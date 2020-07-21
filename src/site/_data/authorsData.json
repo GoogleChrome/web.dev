@@ -1377,5 +1377,14 @@
     "country": "KR",
     "twitter": "maranag",
     "github": "maranag"
-  }
+  },
+  "mattreynolds": {
+    "name": {
+      "given": "Matt",
+      "family": "Reynolds"
+    },
+    "description": {
+      "en": "Matt is a software developer"
+    },
+  },
 }
