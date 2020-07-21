@@ -28,6 +28,11 @@ The moment you look closer, though, all that glitters is not gold.
 
 ## The traditional way of dealing with files
 
+{% Aside %}
+  If you know how it used to work the old way, you can
+  [jump down straight to the new way](#the-native-file-system-api).
+{% endAside %}
+
 ### Opening files
 
 As a developer, you can open and read files via the
