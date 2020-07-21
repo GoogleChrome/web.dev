@@ -69,9 +69,9 @@ if ('requestVideoFrameCallback' in HTMLVideoElement.prototype) {
 }
 ```
 
-## Using the rVFC API
+## Using the requestVideoFrameCallback() method
 
-If you have ever used the rAF API, you will immediately feel at home with the rFVC API.
+If you have ever used the `requestAnimationFrame()` method, you will immediately feel at home with the `requestVideoFrameCallback()` method.
 You register an initial callback once, and then re-register whenever the callback fires.
 
 ```js
