@@ -1,5 +1,5 @@
 ---
-title: 'Hands-on with Portals: seamless navigation on the Web'
+title: 'Hands-on with Portals: seamless navigation on the web'
 subhead: |
   Learn how the proposed Portals API can improve your navigation UX.
 date: 2019-05-06

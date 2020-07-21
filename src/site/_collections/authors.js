@@ -99,7 +99,6 @@ module.exports = (collections) => {
       author.description && author.description.en
         ? author.description.en
         : `Our latest news, updates, and stories by ${author.title}.`;
-    author.url = path.join('/en', author.href);
     author.data = {
       title: author.title,
       subhead: author.description,

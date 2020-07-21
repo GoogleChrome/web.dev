@@ -42,9 +42,10 @@ const tagsIndex = (tags) => {
 
 /**
  * @param {any[]} tags
+ * @param {string} lang
  * @return {Paginated[]}
  */
-const tagsIndividual = (tags) => individual(tags);
+const tagsIndividual = (tags, lang) => individual(tags, lang);
 
 module.exports = {
   feed: tagsFeed,

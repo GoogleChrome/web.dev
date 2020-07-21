@@ -88,6 +88,11 @@ ol:not([class]) > li > p:last-child {
   margin-bottom: 0;
 }
 
+li > ul:not([class]),
+li > ol:not([class]) {
+  margin: 8px 0;
+}
+
 .w-unstyled-list {
   list-style: none;
 }
