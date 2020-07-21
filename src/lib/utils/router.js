@@ -1,7 +1,6 @@
 import './abort-controller-polyfill';
 import {store} from '../store';
 import language from './language';
-import path from 'path-browserify';
 
 let globalHandler;
 let recentActiveUrl; // current URL not including hash
@@ -114,7 +113,7 @@ export function listen(handler) {
       // If user has a preferred language, use it in the request.
       const lang = store.getState().userPreferredLanguage;
       if (lang && lang !== language.defaultLanguage) {
-        url = path.join('/', lang, url);
+        url = '/' + lang + url;
       }
     }
 
