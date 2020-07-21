@@ -15,9 +15,10 @@
  */
 
 const {index} = require('../../../_collections/hooks/blog');
+const lang = require('../lang');
 
 module.exports = {
   pagination: {
-    before: (blogPosts) => index(blogPosts),
+    before: (blogPosts) => index(blogPosts, lang.lang),
   },
 };

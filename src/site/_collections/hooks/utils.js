@@ -19,6 +19,7 @@
  */
 
 const addPagination = require('../../_utils/add-pagination');
+const filterByLang = require('../../_filters/filter-by-lang');
 
 /**
  * @param {any[]} items
@@ -63,14 +64,17 @@ const index = (items, href, testItems) => {
 
 /**
  * @param {any[]} items
+ * @param {string} lang
  * @return {Paginated[]}
  */
-const individual = (items) => {
+const individual = (items, lang) => {
   let paginated = [];
 
   for (const item of items) {
     if (item.elements.length > 0) {
-      paginated = paginated.concat(addPagination(item.elements, item));
+      paginated = paginated.concat(
+        addPagination(filterByLang(item.elements, lang), item),
+      );
     }
   }
 
