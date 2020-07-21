@@ -103,6 +103,10 @@ gulp.task('copy-node_modules-assets', () => {
     .pipe(gulp.dest('./dist/lib/webcomponents/bundles/'));
 });
 
+gulp.task('copy-fonts', () => {
+  return gulp.src('src/fonts/**/*').pipe(gulp.dest('dist/fonts/'));
+});
+
 gulp.task(
   'build',
   gulp.parallel(
@@ -110,6 +114,7 @@ gulp.task(
     'copy-misc',
     'copy-content-assets',
     'copy-node_modules-assets',
+    'copy-fonts',
   ),
 );
 
