@@ -1,4 +1,6 @@
 import './abort-controller-polyfill';
+import {store} from '../store';
+import language from './language';
 
 let globalHandler;
 let recentActiveUrl; // current URL not including hash
@@ -107,6 +109,12 @@ export function listen(handler) {
     if (!isNavigation) {
       url = getUrl();
       hash = window.location.hash;
+    } else {
+      // If user has a preferred language, use it in the request.
+      const lang = store.getState().userPreferredLanguage;
+      if (lang && lang !== language.defaultLanguage) {
+        url = '/' + lang + url;
+      }
     }
 
     const firstRun = previousController === null;
