@@ -75,7 +75,7 @@ Not specifying the attribute at all will have the same impact as explicitly eage
 
 If you need to _dynamically_ create iframes via JavaScript, setting `iframe.loading = 'lazy'` on the element is also [supported](https://bugs.chromium.org/p/chromium/issues/detail?id=993273):
 
-```html/2
+```js/2
 var iframe = document.createElement('iframe');
 iframe.src = 'https://example.com';
 iframe.loading = 'lazy';
