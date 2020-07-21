@@ -4,9 +4,9 @@ subhead: The Houdini Properties and Values API is coming to your CSS file in Chr
 authors:
   - una
 date: 2020-07-22
-updated: 2020-07-22
+# updated: 2020-07-22
 hero: hero.jpg
-alt: A virtual object in a real-world view.
+alt: A sparkler.
 description: Learn how to implement CSS custom properties with semantic typing, a fallback value, and more, directly in your CSS file.
 tags:
   - blog
@@ -122,11 +122,13 @@ This has many benefits.
 
 To illustrate this point, I'll show you how to animate a gradient. Currently,
 there is no way to smoothly animate (or interpolate) between gradient values, as
-each gradient declaration is parsed as a string. 
+each gradient declaration is parsed as a string.
 
-<figure class="w-figure w-figure--fullbleed">
-  <img src="support1.gif" alt="Two browser screen captures showing a non-animated change on non-supported browsers.">
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+<figure class="w-figure">
+  <video controls autoplay loop muted playsinline class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/at-property/support1.mp4" type="video/mp4">
+  </video>
+  <figcaption class="w-figcaption">
     Using a custom property with a "number" syntax, the gradient on the left shows a smooth transition between stop values. The gradient on the right uses a default custom property (no syntax defined) and shows an abrupt transition.
   </figcaption>
 </figure>
@@ -169,9 +171,11 @@ And then when it comes time to animate it, you can update the value from the ini
 
 This will now enable that smooth gradient transition.
 
-<figure class="w-figure w-figure--fullbleed">
-  <img src="demo.gif" alt="Gradient borders on cards moving from a stop of 50% to 100%">
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+<figure class="w-figure">
+  <video controls autoplay loop muted playsinline class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/at-property/demo.mp4" type="video/mp4">
+  </video>
+  <figcaption class="w-figcaption">
     Smoothly transitioning gradient borders. <a href="https://glitch.com/~houdini-gradient-borders">See Demo on Glitch</a>
   </figcaption>
 </figure>
