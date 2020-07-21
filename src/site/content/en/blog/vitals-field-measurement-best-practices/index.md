@@ -5,7 +5,7 @@ authors:
   - philipwalton
 description: How to measure Web Vitals with your current analytics tool
 date: 2020-05-27
-updated: 2020-05-27
+updated: 2020-07-21
 hero: /vitals/web-vitals-hero.png
 alt: How to measure Web Vitals with your current analytics tool
 tags:
@@ -27,7 +27,7 @@ already support the [Core Web Vitals](/vitals/#core-web-vitals) metrics in their
 tools (as well as many [other Web Vitals](/vitals/#other-web-vitals)). If you're
 currently using one of these RUM analytics tools, you're in great shape to
 assess how well the pages on your site meet the [recommended Core Web Vitals
-thresholds](https://github.com/vitals/#core-web-vitals) and prevent regressions
+thresholds](/vitals/#core-web-vitals) and prevent regressions
 in the future.
 
 While we do recommend using an analytics tool that supports the Core Web Vitals
