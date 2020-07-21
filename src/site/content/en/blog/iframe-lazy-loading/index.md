@@ -19,7 +19,7 @@ tags:
 [Native lazy-loading for images](/native-lazy-loading) landed in Chrome 76 via
 the `loading` attribute and later came to Firefox. We are happy to share that
 **native lazy-loading for iframes** is now
-[standardized](https://github.com/whatwg/html/pull/5579) and is also already
+[standardized](https://github.com/whatwg/html/pull/5579) and is also 
 supported in Chrome. 
 
 ```html/1
@@ -33,12 +33,16 @@ supported in Chrome.
 until the user scrolls near them. This saves data, speeds up the loading of
 other parts of the page, and reduces memory usage.**
 
-<figure class="w-figure">
-<img src="./iframe-lazyloading.png" alt="Data-savings from using iframe
-lazy-loading for an iframe. Eager loading pulls in 3MB in this example, while
-lazy-loading does not pull in this code until the user scrolls closer to the
-iframe.">
+This video shows
+a [demo](https://lazy-load.netlify.app/iframes/) of `<iframe loading=lazy>` to lazy-load video embeds:
+
+<figure class="w-figure w-figure--fullbleed">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/iframe-lazy-loading/lazyload-iframes-compressed.webm" type="video/webm">
+    <source src="https://storage.googleapis.com/web-dev-assets/iframe-lazy-loading/lazyload-iframes-compressed.mp4" type="video/mp4">
+  </video>
 </figure>
+
 
 ### Why should we lazy-load iframes?
 
@@ -47,6 +51,13 @@ social media posts, to ads. Often this content is not immediately visible in
 the users viewport. Rather, it's only seen once they scroll further down the
 page. Despite this, users pay the cost of downloading data and costly
 JavaScript for each frame, even if they don't scroll to it.
+
+<figure class="w-figure">
+<img src="./iframe-lazyloading.png" alt="Data-savings from using iframe
+lazy-loading for an iframe. Eager loading pulls in 3MB in this example, while
+lazy-loading does not pull in this code until the user scrolls closer to the
+iframe.">
+</figure>
 
 Based off Chrome's research into [automatically lazy-loading offscreen iframes
 for Data Saver
