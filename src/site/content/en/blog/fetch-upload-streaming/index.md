@@ -11,7 +11,7 @@ origin_trial:
 date: 2020-07-22
 updated: 2020-07-22
 hero: hero.jpg
-alt: A conoe pointed up stream.
+alt: A canoe pointed up stream.
 tags:
   - blog
   - network
