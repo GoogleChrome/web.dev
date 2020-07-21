@@ -244,10 +244,12 @@ class Search extends BaseElement {
     // Check if the user is navigating within the search popout.
     switch (e.key) {
       case 'Home':
+        e.preventDefault();
         this.firstHit();
         return;
 
       case 'End':
+        e.preventDefault();
         this.lastHit();
         return;
 
@@ -392,7 +394,6 @@ class Search extends BaseElement {
    * Animate the search box open.
    */
   onFocusIn() {
-    console.log('onFocusIn');
     this.expanded = true;
 
     // Collapse the search box if the user scrolls while the seach box is
@@ -409,9 +410,7 @@ class Search extends BaseElement {
     // links and allowing overflow content.
     // Keep a reference to the timeout in case the user tabs out quickly.
     // In that scenario, we'll use onFocusOut to kill the timeout.
-    console.log('this.animationTime', this.animationTime);
     this.timeout = setTimeout(() => {
-      console.log('isSearchExpanded: true');
       store.setState({isSearchExpanded: true});
       this.showHits = true;
     }, this.animationTime);
@@ -423,7 +422,6 @@ class Search extends BaseElement {
    * @param {FocusEvent} e focusout event object.
    */
   onFocusOut(e) {
-    console.log('onFocusOut');
     // Check if the user's focus is moving to something that they just clicked
     // on. If so, programatically click it before closing the popout.
     // Because focusout fires before click, if we try to wait for the click
