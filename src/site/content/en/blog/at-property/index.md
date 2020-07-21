@@ -3,7 +3,7 @@ title: '@property: giving superpowers to CSS variables'
 subhead: The Houdini Properties and Values API is coming to your CSS file in Chromium 85.
 authors:
   - una
-date: 2020-07-22
+date: 2020-07-21
 # updated: 2020-07-22
 hero: hero.jpg
 alt: A sparkler.
