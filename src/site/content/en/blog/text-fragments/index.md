@@ -8,7 +8,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2020-06-17
-updated: 2020-06-17
+updated: 2020-07-22
 hero: hero.jpg
 alt:
 description: |
@@ -94,7 +94,7 @@ What if I want to link to something without an `id`?
 Say I want to link to the *ECMAScript Modules in Web Workers* heading.
 As you can see in the screenshot below, the `<h1>` in question does not have an `id` attribute,
 meaning there is no way I can link to this heading.
-This is the problem that Text Fragments solve 🎉.
+This is the problem that Text Fragments solve.
 
 <figure class="w-figure">
   <img src="id-missing.png" alt="" class="w-screenshot" width="600">
@@ -423,7 +423,7 @@ Since Document Policy is not yet shipped, we are running an
 [origin trial](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md)
 to apply this policy as an intermediate solution.
 The [ForceLoadAtTop](https://developers.chrome.com/origintrials/#/view_trial/3253850730775183361)
-origin trial is running from Chrome version 83 to 84.
+origin trial is running from Chrome version 83 to 85.
 
 ```bash
 Document-Policy: force-load-at-top
