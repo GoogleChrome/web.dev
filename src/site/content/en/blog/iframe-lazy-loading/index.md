@@ -240,14 +240,14 @@ which is part of the [`NetworkInformation` API](https://developer.mozilla.org/en
 
 ### Can I lazy-load iframes cross-browser? Yes
 
-It is also possible to lazy-load offscreen iframes using the
-[lazysizes](/use-lazysizes-to-lazyload-images/) library. 
+Native iframe lazy-loading can be applied as a progressive enhancement. Browsers which support `loading=lazy` on iframes will lazy-load the iframe, while the `loading` attribute will be safely ignored in browsers which do not support it yet.
 
-This may be desirable if you:
+It is also possible to lazy-load offscreen iframes using the
+[lazysizes](/use-lazysizes-to-lazyload-images/) JavaScript library. This may be desirable if you:
 
 *   require more custom lazy-loading thresholds than what native lazy-loading
 currently offers
-*   are implementing lazy-loading cross-browser
+*   wish to offer users a consistent iframe lazy-loading experience across browsers
 
 ```html/3
 <script src="lazysizes.min.js" async></script>
