@@ -293,7 +293,7 @@ should work:
 
 ### Conclusion
 
-Baking in native support for lazy-loading iframes can make it significantly
+Baking in native support for lazy-loading iframes makes it significantly
 easier for you to improve the performance of your web pages. If you have any
 feedback on native iframe lazy-loading, please feel free to submit an issue to
 the [Chromium Bug
