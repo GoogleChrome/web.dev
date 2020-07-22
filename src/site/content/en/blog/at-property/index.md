@@ -77,7 +77,7 @@ value when overriding it, the CSS rendering engine will send the initial value
 Consider the example below. The `--colorPrimary` variable has an
 `initial-value` of `magenta`. But the developer has given it the invalid
 value "23". Without `@property`, the CSS parser would ignore the
-invalid code. Now, the parser falls back to `megenta`. This allows for
+invalid code. Now, the parser falls back to `magenta`. This allows for
 true fallbacks and testing within CSS. Neat!
 
 ```css
@@ -182,7 +182,7 @@ This will now enable that smooth gradient transition.
 
 ## Conclusion 
 
-The `@property` makes an exciting technology even more accessible by
+The `@property` rule makes an exciting technology even more accessible by
 allowing you to write semantically meaningful CSS within CSS itself. To learn
 more about CSS Houdini and the Properties and Values API, check out these
 resources:
