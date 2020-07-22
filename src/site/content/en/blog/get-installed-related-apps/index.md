@@ -1,11 +1,17 @@
 ---
 title: "Is your app installed? getInstalledRelatedApps() will tell you!"
-subhead: "The `getInstalledRelatedApps()` method allows your web app to check whether your native app or PWA is installed on a user's device."
+subhead: |
+  "The `getInstalledRelatedApps()` method allows your web app to check whether
+  your native app or PWA is installed on a user's device."
 authors:
   - petelepage
-description: The getInstalledRelatedApps() API is a new web platform API that allows your web app to check whether your native app or PWA is installed on the user's device.
+description: |
+  The getInstalledRelatedApps() API is a new web platform API that allows your
+  web app to check whether your native app or PWA is installed on the user's
+  device.
 date: 2018-12-20
-updated: 2020-06-11
+updated: 2020-07-22
+scheduled: true
 tags:
   - blog
   - capabilities
@@ -36,7 +42,7 @@ installed. For example, if the PWA is already installed:
   native app is already installed.
 
 If `getInstalledRelatedApps()` looks familiar, it is. The Chrome team originally
-announced this feature in April 2017, when it first went through its first
+announced this feature in April 2017, when it went through its first
 origin trial. After the origin trial ended, they took stock of the feedback and
 iterated on the design.
 
@@ -46,7 +52,7 @@ iterated on the design.
 
 * Checking for the native version of an app and switching to it
 * Disabling notifications in the web app when the native app is installed
-* Measure how often users visit your website instead of your installed app
+* Measuring how often users visit your website instead of your installed app
 * Not prompting users to install the web app if the native app is installed
 
 ## Current status {: #status }
@@ -59,13 +65,14 @@ iterated on the design.
 | 2. Create initial draft of specification     | [Complete][spec]             |
 | 3. Gather feedback and iterate on design     | Complete                     |
 | 4. Origin trial                              | Complete                     |
-| 5. **Launch**                                | Chrome 80, and beyond        |
+| 5. **Launch**                                | **Android: Chrome 80<br/>Edge for Windows: 85** |
 
 </div>
 
 ## See it in action
 
-1. Using Chrome 80 or later on Android, open the [`getInstalledRelatedApps()` demo][demo].
+1. Using a supporting browser (see the table, above), open the
+   [`getInstalledRelatedApps()` demo][demo].
 2. Install the demo app from the Play store and refresh the [demo][demo] page.
    You should now see the app listed.
 
@@ -157,8 +164,6 @@ Finally, publish your updated Android app to the Play store.
 **Coming Soon!**
 Starting in Chrome 84, in addition to checking if its native app is already
 installed, a PWA can check if it (the PWA) is already installed.
-Microsoft is actively working on enabling this API for Edge for Windows and we
-hope to see it land in Q3 2020.
 {% endAside %}
 
 To define the relationship to an installed PWA, add a `related_applications`
@@ -181,8 +186,7 @@ the full path to the PWAs web app manifest in the `url` property.
 {% Aside %}
 **Coming Soon!**
 Starting in Chrome 84, a page can check if its PWA is installed, even if it
-is outside the scope of the PWA. Microsoft is actively working on enabling
-this API for Edge on Windows and we hope to see it land in Q3 2020.
+is outside the scope of the PWA.
 {% endAside %}
 
 A page can check if its PWA is installed, even if it is outside the
@@ -228,8 +232,8 @@ relatedApps.forEach((app) => {
 {% Aside %}
 `getInstalledRelatedApps()` is currently supported on the following platforms:
 
-* Android: Chrome 80+
-* Windows: Edge (coming soon), Chrome (coming soon)
+* Android: Chrome 80 and later
+* Windows: Edge 85 and later; Chrome is coming soon
 {% endAside %}
 
 To prevent sites from testing an overly broad set of their own apps,

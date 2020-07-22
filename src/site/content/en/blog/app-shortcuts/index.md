@@ -5,7 +5,7 @@ authors:
   - beaufortfrancois
   - jungkees
 date: 2020-05-20
-updated: 2020-06-26
+updated: 2020-07-22
 hero: hero.jpg
 alt: A photo of an Android phone showing an app shortcuts menu
 description: App shortcuts give quick access to a handful of common actions that users need frequently.
@@ -20,9 +20,8 @@ web platform now supports app shortcuts. They allow web developers to provide
 quick access to a handful of common actions that users need frequently.
 
 {% Aside %}
-At the time of writing, app shortcuts are available in Chrome 84 for Android. On
-Windows, you can experiment with them on both Chrome 84 and Edge 84 by enabling
-the flag `about://flags/#enable-desktop-pwas-app-icon-shortcuts-menu`.
+At the time of writing, app shortcuts are available on Android (Chrome 84) and
+Windows (Chrome 85 and Edge 85).
 {% endAside %}
 
 This article will teach you how to define those app shortcuts. Additionally,
@@ -190,10 +189,8 @@ You should annotate app shortcuts `url` entries like you would do with
 
 ## Browser support
 
-App shortcuts are available in Chrome 84 on Android. On Windows, you can
-experiment with them on both Chrome 84 and Edge 84 by enabling the flag
-`about://flags/#enable-desktop-pwas-app-icon-shortcuts-menu`. More desktop
-platform support will follow.
+App shortcuts are available on Android (Chrome 84) and Windows (Chrome 85 and
+Edge 85). More desktop platform support will follow.
 
 ## Trusted Web Activity support
 

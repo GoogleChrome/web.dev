@@ -1390,5 +1390,16 @@
     "description": {
       "en": "Matt is a software developer"
     }
+  },
+  "sahel": {
+    "name": {
+      "given": "Sahel",
+      "family": "Sharify"
+    },
+    "github": "sahel-sh",
+    "country": "CA",
+    "org": {
+      "name": "Google"
+    }
   }
 }

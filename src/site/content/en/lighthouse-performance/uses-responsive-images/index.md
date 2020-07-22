@@ -24,7 +24,7 @@ Resize these images to save data and improve page load time:
 For each image on the page,
 Lighthouse compares the size of the rendered image against the size of the actual image.
 The rendered size also accounts for device pixel ratio.
-If the rendered size is at least 25KiB smaller than the actual size,
+If the rendered size is at least 4KiB smaller than the actual size,
 then the image fails the audit.
 
 ## Strategies for properly sizing images

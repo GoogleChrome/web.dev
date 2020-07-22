@@ -1,3 +1,5 @@
+import lang from './utils/language';
+
 /**
  * @param {string} url containing pathname and search only
  * @return {string} normalized URL
@@ -17,4 +19,12 @@ export function normalizeUrl(url) {
   }
 
   return pathname + u.search;
+}
+
+export function getCanonicalPath(path) {
+  const parts = path.split('/');
+  if (parts[1] && lang.isValidLanguage(parts[1])) {
+    parts.splice(1, 1);
+  }
+  return parts.join('/');
 }

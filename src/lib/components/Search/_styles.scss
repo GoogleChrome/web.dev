@@ -62,16 +62,6 @@ web-search {
     outline: none;
   }
 
-  .web-search__open-btn::before {
-    @include font-material-icon();
-    content: 'search';
-  }
-
-  .web-search__close-btn::before {
-    @include font-material-icon();
-    content: 'cancel';
-  }
-
   .web-search__input-wrapper {
     align-items: center;
     background: $WHITE;  // This visually hides the top nav links when open
@@ -89,14 +79,16 @@ web-search {
       transition: var(--web-search-animation-time) transform;
       width: calc(200% - #{$WEB_SEARCH_MARGIN} * 2);
     }
+
+    .web-search__search-icon {
+      left: 8px;
+      position: absolute;
+    }
   }
 
-  .web-search__input-wrapper::before {
-    @include font-material-icon();
-    content: 'search';
-    position: absolute;
-    pointer-events: none;
-    padding: 8px;
+  .web-search__search-icon,
+  .web-search__close-icon {
+    fill: $GREY_600;
   }
 
   .web-search__input {
@@ -114,20 +106,6 @@ web-search {
       outline: none;
       box-shadow: 0 2px 0 0 $WEB_SECONDARY_COLOR;
     }
-  }
-
-  .web-search__input:focus {
-    border: none;
-    padding: 8px 8px 8px 40px; // devsite override
-  }
-
-  .web_search__icon {
-    position: absolute;
-  }
-
-  .web-search__icon::before {
-    @include font-material-icon();
-    content: 'search';
   }
 
   .web-search-popout {

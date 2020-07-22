@@ -198,8 +198,8 @@ redirects:
 
 # Redirect /payments content
 
-- from: /android-payment-app-developers-guide
-  to: /android-payment-apps-overview
+- from: /android-payment-apps-overview
+  to: /android-payment-app-developers-guide
 
 # Redirect for misconfigured Lighthouse report
 

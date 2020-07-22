@@ -6,7 +6,7 @@ description: Essential metrics for a healthy site
 authors:
   - philipwalton
 date: 2020-04-30
-updated: 2020-06-05
+updated: 2020-07-21
 masthead: web-vitals.svg
 tags:
   - metrics
@@ -71,6 +71,10 @@ following metrics (and their respective thresholds):
 For each of the above metrics, to ensure you're hitting the recommended target
 for most of your users, a good threshold to measure is the **75th percentile**
 of page loads, segmented across mobile and desktop devices.
+
+Tools that assess Core Web Vitals compliance should consider a page passing if
+it meets the recommended targets at the 75th percentile for all of the above
+three metrics.
 
 {% Aside %}
   To learn more about the research and methodology behind these recommendations,

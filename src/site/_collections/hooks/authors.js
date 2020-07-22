@@ -42,9 +42,10 @@ const authorsIndex = (authors) => {
 
 /**
  * @param {Author[]} authors
+ * @param {string} lang
  * @return {Paginated[]}
  */
-const authorsIndividual = (authors) => individual(authors);
+const authorsIndividual = (authors, lang) => individual(authors, lang);
 
 module.exports = {
   feed: authorsFeed,

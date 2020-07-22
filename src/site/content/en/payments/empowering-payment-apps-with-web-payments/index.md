@@ -7,6 +7,7 @@ authors:
 description: |
   Web Payments aims to provide frictionless payment experience on the web. Learn how it works, its benefits, and get ready to integrate your payment app with Web Payments.
 date: 2020-05-25
+updated: 2020-07-16
 tags:
   - payments
 ---
@@ -56,6 +57,8 @@ payment app:
    details.
 
 4. The merchant verifies the payment and the purchase is approved.
+
+{% include 'content/payments/browser-compatibility.njk' %}
 
 ## The benefits of integrating Web Payments in a payment app
 
@@ -248,66 +251,3 @@ outreach as well.
 Web Payments is all about standard technology in the browser. Payment apps
 adopting it nor activating it on the browser won't charge them any fees by
 itself.
-
-##  Browser support
-
-Web Payments consists of a few different pieces of technologies and the support
-status depends on the browser.
-
-<div class="w-table-wrapper">
-  <table>
-    <tr>
-      <td></td>
-      <td>Chrome (Chromium)</td>
-      <td></td>
-      <td></td>
-      <td>Safari</td>
-      <td></td>
-      <td>Firefox</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>Desktop</td>
-      <td>Android</td>
-      <td>iOS</td>
-      <td>Desktop</td>
-      <td>Mobile</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Payment Request API</td>
-      <td>✔</td>
-      <td>✔</td>
-      <td></td>
-      <td>✔</td>
-      <td>✔</td>
-      <td>Under active development</td>
-    </tr>
-    <tr>
-      <td>Payment Handler API</td>
-      <td>✔</td>
-      <td>✔</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Under active development</td>
-    </tr>
-    <tr>
-      <td>Native payment app</td>
-      <td>✔</td>
-      <td>✔</td>
-      <td>*</td>
-      <td>✔**</td>
-      <td>✔**</td>
-      <td></td>
-    </tr>
-  </table>
-</div>
-
-{% Aside %}
-*Chrome team is considering making native payment apps available on
-iOS.
-
-**Safari supports Apple Pay but no third party payment apps.
-
-{% endAside %}

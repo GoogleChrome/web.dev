@@ -23,7 +23,7 @@
     "lint:scss": "sass-lint -v -q",
     "lint": "npm-run-all lint:md lint:scss lint:js",
     "percy": "PERCY=true npm-run-all build --parallel --race start snapshots",
-    "precommit": "node ./tools/update-updated/index.js",
+    "updated": "node ./tools/update-updated/index.js",
     "rollup": "node build.js",
     "rollup-sw": "node build-sw.js",
     "sass": "node ./compile-css.js",
