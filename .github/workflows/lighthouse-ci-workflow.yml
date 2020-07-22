@@ -4,14 +4,13 @@ name: Lighthouse CI
 # or reopened and on master so comparisons to ancestors can be made.
 on:
   push:
-    branches: 
+    branches:
       - master
   pull_request:
     paths:
       - '**.js'
       - '!src/site/_data/contributors.js'
       - '!src/site/_data/countries.js'
-      - '!src/site/_data/postTags.js'
       - 'package.json'
       - '**.njk'
       - '**.scss'

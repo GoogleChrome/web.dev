@@ -32,6 +32,6 @@ content/en/vitals/ @philipwalton @GoogleChrome/web-dev-content
 
 # Exceptions
 src/site/_data/authorsData.json @GoogleChrome/web-dev-content
-src/site/_data/postTags.js @kaycebasques @GoogleChrome/web-dev-eng
+src/site/_data/tagsData.json @GoogleChrome/web-dev-content
 src/site/_data/paths/*.json @GoogleChrome/web-dev-content
 src/site/_data/paths/progressive-web-apps.json @petele @GoogleChrome/web-dev-content
