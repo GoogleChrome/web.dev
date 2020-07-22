@@ -1378,6 +1378,19 @@
     "twitter": "maranag",
     "github": "maranag"
   },
+  "mattreynolds": {
+    "name": {
+      "given": "Matt",
+      "family": "Reynolds"
+    },
+    "org": {
+      "name": "Google"
+    },
+    "country": "US",
+    "description": {
+      "en": "Matt is a software developer"
+    }
+  },
   "sahel": {
     "name": {
       "given": "Sahel",
