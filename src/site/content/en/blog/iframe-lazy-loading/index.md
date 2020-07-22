@@ -4,7 +4,7 @@ title: It's time to lazy-load offscreen iframes!
 subhead: Browser-level native lazy-loading for iframes is here
 authors:
   - addyosmani
-date: 2020-07-22
+date: 2020-07-24
 #updated: 2020-07-21
 hero: hero.png
 alt: Phone outline with loading image and assets
