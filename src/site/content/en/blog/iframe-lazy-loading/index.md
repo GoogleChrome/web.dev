@@ -209,7 +209,7 @@ article or near the end of a page, so loading it eagerly when it's offscreen
 may be suboptimal.
 
 <figure class="w-figure">
-<img src="./fblike.png" alt="Facebook Like Button">
+  <img class="w-screenshot" src="./fblike.png" alt="Facebook Like Button">
 </figure>
 
 Thanks to engineer Stoyan Stefanov, [all of Facebook's social plugins now
