@@ -3,6 +3,7 @@ title: Human interface devices on the web&#58; a few quick examples
 subhead: Connecting to uncommon devices from your app.
 authors:
   - joemedley
+  - mattreynolds
 description: |
   There is a long tale of human interface devices (HID) that are too new, too
   old, or too uncommon to be accessible by systems' device drivers. The WebHID
