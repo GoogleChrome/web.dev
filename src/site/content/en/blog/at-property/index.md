@@ -77,7 +77,7 @@ value when overriding it, the CSS rendering engine will send the initial value
 Consider the example below. The `--colorPrimary` variable has an
 `initial-value` of `magenta`. But the developer has given it the invalid
 value "23". Without `@property`, the CSS parser would ignore the
-invalid code. Now, the parser falls back to `megenta`. This allows for
+invalid code. Now, the parser falls back to `magenta`. This allows for
 true fallbacks and testing within CSS. Neat!
 
 ```css
