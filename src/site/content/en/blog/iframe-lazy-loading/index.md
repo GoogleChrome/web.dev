@@ -33,8 +33,8 @@ supported in Chrome.
 until the user scrolls near them. This saves data, speeds up the loading of
 other parts of the page, and reduces memory usage.**
 
-This video shows
-a [demo](https://lazy-load.netlify.app/iframes/) of `<iframe loading=lazy>` to lazy-load video embeds:
+This [demo](https://lazy-load.netlify.app/iframes/) of `<iframe loading=lazy>
+shows lazy-loading video embeds:
 
 <figure class="w-figure w-figure--fullbleed">
   <video controls autoplay loop muted class="w-screenshot">
