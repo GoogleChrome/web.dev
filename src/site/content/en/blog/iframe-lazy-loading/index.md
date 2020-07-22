@@ -48,7 +48,7 @@ a [demo](https://lazy-load.netlify.app/iframes/) of `<iframe loading=lazy>` to l
 
 Third-party embeds cover a wide range of use cases, from video players, to
 social media posts, to ads. Often this content is not immediately visible in
-the users viewport. Rather, it's only seen once they scroll further down the
+the user's viewport. Rather, it's only seen once they scroll further down the
 page. Despite this, users pay the cost of downloading data and costly
 JavaScript for each frame, even if they don't scroll to it.
 
