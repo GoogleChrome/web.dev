@@ -27,6 +27,12 @@ import './_styles.scss';
  * @final
  */
 class EventQAndA extends BaseElement {
+  static get properties() {
+    return {
+      selected: {type: String},
+    };
+  }
+
   constructor() {
     super();
     this.closeDetail = this.closeDetail.bind(this);
@@ -45,8 +51,10 @@ class EventQAndA extends BaseElement {
     this.childElements.forEach((element) =>
       categories.add(element.getAttribute('data-category')),
     );
-    this.categories = Array.from(categories);
+    this.categories = Array.from(categories).map((c) => ({name: c, value: c}));
+    this.categories.push({name: 'All categories', value: null});
 
+    this.selected = this.categories[0].value;
     this.addEventListener('click', this.closeDetail);
   }
 
@@ -55,16 +63,25 @@ class EventQAndA extends BaseElement {
   }
 
   render() {
+    this.filterCategories();
+
     return html`
       <select
         class="w-select--borderless w-mb--sm"
         @change="${this.selectCategory}"
       >
-        <option value>All categories</option>
-        ${this.categories.map((c) => html`<option value="${c}">${c}</option>`)}
+        ${this.renderOptions()}
       </select>
       ${this.childElements}
     `;
+  }
+
+  renderOptions() {
+    return this.categories.map((c) =>
+      c.value
+        ? html`<option value="${c.value}">${c.name}</option>`
+        : html`<option value>${c.name}</option>`,
+    );
   }
 
   closeDetail($event) {
@@ -80,10 +97,14 @@ class EventQAndA extends BaseElement {
   }
 
   selectCategory($event) {
+    this.selected = $event.target.value;
+  }
+
+  filterCategories() {
     this.childElements.forEach((element) => {
       const show =
-        !$event.target.value ||
-        element.getAttribute('data-category') === $event.target.value;
+        !this.selected ||
+        element.getAttribute('data-category') === this.selected;
       element.classList.toggle('hidden', !show);
     });
   }

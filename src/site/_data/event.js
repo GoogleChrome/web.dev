@@ -628,6 +628,141 @@ const qAndAs = [
     question: 'Can a worker handle input events?',
     answer: 'You can handle input events on the main thread and then marshall the data to your worker for processing. Workers can\'t receive input directly.',
   },
+  {
+    category: 'Tools',
+    question: 'Is there anything on HTTP Status code w.r.t DevTools that can help us easily to identify  in an eye catching way...',
+    answer: 'The Network tab highlights responses with an HTTP status code that indicates an error. The text of affected rows is red. However, you\'re right: this is not very accessible -- we shouldn\'t just rely on color to communicate the failure. I\'ve filed <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1101323">https://bugs.chromium.org/p/chromium/issues/detail?id=1101323</a> to improve the situation.',
+  },
+  {
+    category: 'PWA',
+    question: 'Can we call native functionality from PWAs?',
+    answer: 'No, developers only have access to the capabilities of the browser, but we’re working to add new capabilities with our  capabilities project.',
+  },
+  {
+    category: 'PWA',
+    question: 'What was the philosophy behind the Fugu name?',
+    answer: 'Fugu reminds us to respect and protect the user. The fugu fish is a wonderful delicacy, it tastes wonderful. But, if it’s handled improperly it can be deadly. We feel the same way with Fugu features, they open up new scenarios on the web. But if implemented poorly, they could potentially be dangerous.',
+  },
+  {
+    category: 'PWA',
+    question: 'Is it okay to make the pathname `.well-known/assetlinks.json.` be accsessible publicly?',
+    answer: 'Yes, it needs to be publicly accessible so an Android app can verify it as necessary.',
+  },
+  {
+    category: 'PWA',
+    question: 'When will we get multi window support?',
+    answer: 'Multi-window support is something we\'re working on, mostly being led by the team at Microsoft.',
+  },
+  {
+    category: 'PWA',
+    question: 'Can you give me an API that makes it easier to sync storage.',
+    answer: 'Take a look at <a href="https://firebase.google.com/products/firestore">Cloud Firestore</a>, it’s an API that provides a sync datastore in the cloud.',
+  },
+  {
+    category: 'Performance',
+    question: 'How do we drill down long tasks to understand exactly what JS function generated it?',
+    answer: 'You should see JS stacks if you record performance profiles, those should help you drill down.',
+  },
+  {
+    category: 'Tools',
+    question: 'Can you share an info link for the color vision deficiency emulation in Chrome DevTools?',
+    answer: 'You can find more details at <a href="https://developers.google.com/web/updates/2020/03/devtools">https://developers.google.com/web/updates/2020/03/devtools</a>.',
+  },
+  {
+    category: 'PWA',
+    question: 'Do we have top level await support on the web yet?',
+    answer: 'Sadly not yet, keep an eye on <a href="https://chromestatus.com/features/5767881411264512">https://chromestatus.com/features/5767881411264512</a> for details as it progresses.',
+  },
+  {
+    category: 'PWA',
+    question: 'What are the best features of service workers?',
+    answer: 'Service Workers let developers intercept their web app\'s outgoing requests. You can generate responses from caches or other sources, which can be more reliable & faster than going against the network. Read <a href="https://web.dev/service-workers-cache-storage/">this</a> and many other articles on web.dev to understand their use cases.',
+  },
+  {
+    category: 'UX',
+    question: 'How do you add dark mode on your website?',
+    answer: 'Refer <a href="https://web.dev/prefers-color-scheme/">https://web.dev/prefers-color-scheme/</a>.',
+  },
+  {
+    category: 'UX',
+    question: 'My website sign in page has lots of fields. What is the best way to present them all?',
+    answer: 'Check out <a href="https://web.dev/sign-in-form-best-practices/">https://web.dev/sign-in-form-best-practices/</a>.',
+  },
+  {
+    category: 'Tools',
+    question: 'Can you make selected context only persist in Chrome Devtools?',
+    answer: 'This behavior has recently been fixed in Chrome DevTools and will be available for developers to use in <a href="https://developers.google.com/web/updates/2020/06/devtools#selected-context">Chrome M85</a> (July’20).',
+  },
+  {
+    category: 'Tools',
+    question: 'Can you export HAR through Puppeteer?',
+    answer: 'No, but there\'s a userland puppeteer-har implementation that handles this.',
+  },
+  {
+    category: 'PWA',
+    question: 'Will permission request be improved (customisation and specifying the source of the request)?',
+    answer: 'We don\'t allow customization of the prompt at the moment. We do recommend, though, to prompt contextually, so the user knows why the prompt shows up.',
+  },
+  {
+    category: 'PWA',
+    question: 'Any updates on the A2HS button? (Google promised to change it to Install button)',
+    answer: 'On desktop it says install, but on mobile, it is still Add to Home Screen. We want to get this right, and are still investigating what works best for users.',
+  },
+  {
+    category: 'Tools',
+    question: 'Do you recommend using Workbox instead of coding the SW directly?',
+    answer: 'When first getting started, absolutely. Service Workers are really powerful, and as a result can be very complex. Once you’ve got a handle on some of the complexities, it’s OK to start down your own path.',
+  },
+  {
+    category: 'PWA',
+    question: 'Are installed PWA\'s still crawl-able by Googlebot?',
+    answer: 'As long as they are reachable with a public URL, they should be indexable. See Martin Splitt\'s talks from web.dev LIVE day 1 (<a href="https://www.youtube.com/watch?v=himvKu12YCY&list=PLNYkxOF6rcIDC0-BiwSL52yQ0n9rNozaF">Debugging JS SEO issues</a> & <a href="https://www.youtube.com/watch?v=hBKZnaIMm4M&list=PLNYkxOF6rcIDC0-BiwSL52yQ0n9rNozaF">Implementing Structured Data with JS</a>) to learn more.',
+  },
+  {
+    category: 'PWA',
+    question: 'Does AppCache still exist?',
+    answer: 'Yes, but it’s going away very soon! See <a href="https://web.dev/appcache-removal/">https://web.dev/appcache-removal/</a>.',
+  },
+  {
+    category: 'UX',
+    question: 'Is the Portal tag available now?',
+    answer: 'It\'s going to origin trial very soon! Check out <a href="https://web.dev/hands-on-portals/">https://web.dev/hands-on-portals/</a> for the latest.',
+  },
+  {
+    category: 'PWA',
+    question: 'Can you please mention what can be used in place of localstorage and Appcache?',
+    answer: 'We recommend <a href="https://web.dev/storage-for-the-web/#recommendation">Service Workers and IndexedDB</a>.',
+  },
+  {
+    category: 'PWA',
+    question: 'Do Opaque Responses still have the 7MB padding applied? The Storage Quota becomes really tricky to manage on a large site with lots of third-party requests.',
+    answer: 'Yes, the padding still applies to opaque responses (context: <a href="https://stackoverflow.com/questions/39109789/what-limitations-apply-to-opaque-responses/39109790#39109790">https://stackoverflow.com/questions/39109789/what-limitations-apply-to-opaque-responses/39109790#39109790</a>).',
+  },
+  {
+    category: 'PWA',
+    question: 'What about storage from PWAs? If say someone wrote important information in a note writing app for long term storage and didn\'t visit for a long time, does this mean that chrome could evict that?',
+    answer: 'Yes, for that you should request <a href="https://web.dev/persistent-storage/">persistent storage</a>.',
+  },
+  {
+    category: 'PWA',
+    question: 'Do you need service workers to use the Cache API?',
+    answer: 'Typically yes, but you can also use the cache API from a page.',
+  },
+  {
+    category: 'Tools',
+    question: 'Wouldn\'t it be more handy if we could emulate a disk limit via DevTools?',
+    answer: 'Yes, absolutely, and it’s coming. Just hasn’t landed yet.',
+  },
+  {
+    category: 'PWA',
+    question: 'How does Indexed DB work and what are its features?',
+    answer: 'See documentation for <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">IndexedDB on MDN</a> for more.',
+  },
+  {
+    category: 'PWA',
+    question: '\'Cookies have some uses\' - so when should you use cookies, and when indexedDB?',
+    answer: 'We\'ve got specific details at <a href="https://web.dev/storage-for-the-web/">https://web.dev/storage-for-the-web/</a>.',
+  },
 ];
 
 module.exports = {
