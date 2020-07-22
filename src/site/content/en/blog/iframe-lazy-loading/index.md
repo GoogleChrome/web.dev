@@ -259,9 +259,8 @@ currently offers
 </iframe>
 ```
 
-If you would like to conditionally use native lazy-loading if a browser
-supports it or fetch and use lazysizes if it isn't, the following pattern
-should work:
+Use the following pattern to feature detect lazy-loading and fetch
+lazysizes when it's not available:
 
 
 ```html/2
