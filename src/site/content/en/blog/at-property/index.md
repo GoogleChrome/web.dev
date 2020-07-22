@@ -125,13 +125,25 @@ there is no way to smoothly animate (or interpolate) between gradient values, as
 each gradient declaration is parsed as a string.
 
 <figure class="w-figure">
+  <img class="w-screenshot" src="https://storage.googleapis.com/web-dev-assets/at-property/support1.gif">
+  <figcaption class="w-figcaption">
+    Using a custom property with a "number" syntax, the gradient on the left shows a smooth 
+    transition between stop values. The gradient on the right uses a default custom property 
+    (no syntax defined) and shows an abrupt transition.
+  </figcaption>
+</figure>
+
+<!-- <figure class="w-figure">
   <video controls autoplay loop muted playsinline class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/at-property/support1.mp4" type="video/mp4">
   </video>
   <figcaption class="w-figcaption">
-    Using a custom property with a "number" syntax, the gradient on the left shows a smooth transition between stop values. The gradient on the right uses a default custom property (no syntax defined) and shows an abrupt transition.
+    Using a custom property with a "number" syntax, the gradient on the left shows a smooth 
+    transition between stop values. The gradient on the right uses a default custom property 
+    (no syntax defined) and shows an abrupt transition.
   </figcaption>
 </figure>
+-->
 
 In this example, the gradient stop percentage is being animated from a starting
 value of 40% to an ending value of 100% via a hover interaction. You should see a
@@ -172,6 +184,14 @@ And then when it comes time to animate it, you can update the value from the ini
 This will now enable that smooth gradient transition.
 
 <figure class="w-figure">
+  <img class="w-screenshot" src="https://storage.googleapis.com/web-dev-assets/at-property/demo.gif">
+  <figcaption class="w-figcaption">
+    Smoothly transitioning gradient borders. <a href="https://glitch.com/~houdini-gradient-borders">See Demo on Glitch</a>
+  </figcaption>
+</figure>
+
+<!--
+<figure class="w-figure">
   <video controls autoplay loop muted playsinline class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/at-property/demo.mp4" type="video/mp4">
   </video>
@@ -179,6 +199,7 @@ This will now enable that smooth gradient transition.
     Smoothly transitioning gradient borders. <a href="https://glitch.com/~houdini-gradient-borders">See Demo on Glitch</a>
   </figcaption>
 </figure>
+-->
 
 ## Conclusion 
 
