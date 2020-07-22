@@ -62,6 +62,7 @@ browser to depend on quirks present in the behavior of specific devices.
 | 5. Launch                                  | Not started                  |
 
 </div>
+
 ## Demos, demos, demos {: #demos }
 
 One of my team members is currently working on a how-to article. Since WebHID is
