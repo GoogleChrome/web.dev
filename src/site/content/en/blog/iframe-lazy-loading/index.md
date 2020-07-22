@@ -196,7 +196,7 @@ Although the above embeds illustrate the potential benefits to lazy-loading
 iframes for media content, there's the potential to also see these benefits for
 ads.  
 
-### Case study: Natively lazy-loading the Facebook Like button
+### Case study: Natively lazy-loading the Facebook's social plugins
 
 Facebook's _social plugins_ allow developers to embed Facebook content in their
 web pages. There's a number of these plugins offered, such as embedded posts,
