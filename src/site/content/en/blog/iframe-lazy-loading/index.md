@@ -229,8 +229,8 @@ natively lazy-loading offscreen images and iframes when a user has opted into
 [Lite Mode](https://blog.chromium.org/2019/04/data-saver-is-now-lite-mode.html)
 (Data Saver mode) in Chrome for Android. 
 
-Lite Mode users are commonly in regions of the world where network connection
-quality and data savings plans are not the greatest. Every byte matters and so
+Lite Mode is commonly used in regions of the world where network connection
+quality and data plans are not the greatest. Every byte matters and so
 lazy-loading iframes has the potential to make a meaningful difference for
 these users.
 
