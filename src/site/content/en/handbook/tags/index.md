@@ -17,7 +17,7 @@ the [Web Vitals tags page](/tags/web-vitals/):
 </figure>
 
 Tags show up in a few places across the site.
-The first 3 tags of a page are shown on the [blog homepage](/blog):
+The first three tags of a page are shown on the [blog homepage](/blog):
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" 
@@ -62,4 +62,5 @@ tags:
 
 ## Supported keywords {: #supported-keywords }
 
-See [`tagsData.json`](https://github.com/GoogleChrome/web.dev/blob/master/src/site/_data/tagsData.json).
+Make sure tags added to the page are listed in 
+[`tagsData.json`](https://github.com/GoogleChrome/web.dev/blob/master/src/site/_data/tagsData.json).
