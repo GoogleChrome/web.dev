@@ -41,7 +41,8 @@
         "handbook/markup-media",
         "handbook/markup-code",
         "handbook/markup-sample-app",
-        "handbook/self-assessment-components"
+        "handbook/self-assessment-components",
+        "handbook/tags"
       ]
     },
     {
