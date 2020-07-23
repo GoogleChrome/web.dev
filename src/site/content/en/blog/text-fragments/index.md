@@ -429,6 +429,23 @@ origin trial is running from Chrome version 83 to 85.
 Document-Policy: force-load-at-top
 ```
 
+## Disabling text fragments
+
+In case you really dislike the feature, you can opt out by leveraging the enterprise setting
+[`ScrollToTextFragmentEnabled`](https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ScrollToTextFragmentEnabled).
+Therefore, on macOS, paste the command below in the terminal.
+
+```bash
+defaults write com.google.Chrome ScrollToTextFragmentEnabled -bool false
+```
+
+On Windows, follow the documentation on the 
+[Google Chrome Enterprise Help](https://support.google.com/chrome/a/answer/9131254?hl=en).
+
+{% Aside 'warning' %}
+  Please only try this when you know what you are doing.
+{% endAside %}
+
 ## Text fragments in web search
 
 For some searches, the search engine Google provides a quick answer or summary
