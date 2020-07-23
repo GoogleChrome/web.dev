@@ -137,7 +137,7 @@ In this example, the gradient stop percentage is being animated from a starting
 value of 40% to an ending value of 100% via a hover interaction. You should see a
 smooth transition of that top gradient color downward.
 
-The browser on the right supports the Houdini Properties and Values API,
+The browser on the left supports the Houdini Properties and Values API,
 enabling a smooth gradient stop transition. The browser on the right does not. The
 non-supporting browser is only able to understand this change as a string going
 from point A to point B. There is no opportunity to interpolate the values, and
