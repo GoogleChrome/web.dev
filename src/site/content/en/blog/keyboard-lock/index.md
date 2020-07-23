@@ -10,6 +10,7 @@ description: >
   The Keyboard Lock API allows websites to capture keys that are normally reserved by the underlying host operating system. It is intended to be used by web applications that provide a full screen immersive experience (like games or remote access apps).
 date: 2020-07-23
 # updated:
+hero: hero.jpg
 ---
 With more and more users spending most of their time in the browser, richly interactive websites, games, and remote desktop or application streaming experiences want to provide an immersive, full screen experience. To accomplish this, sites need access to special keys and keyboard shortcuts while they are in full screen mode, so that they can be used for navigation, menus or gaming functionality. Some examples of the keys that may be required are <kbd>Esc</kbd>, <kbd>Alt</kbd>&nbsp;+&nbsp;<kbd>Tab</kbd>, <kbd>Cmd</kbd>&nbsp;+&nbsp;<kbd>`</kbd>, and <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>N</kbd>.
 
