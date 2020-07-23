@@ -33,7 +33,7 @@ Native lazy-loading of iframes defers offscreen iframes from being loaded
 until the user scrolls near them. This saves data, speeds up the loading of
 other parts of the page, and reduces memory usage.
 
-This [demo](https://lazy-load.netlify.app/iframes/) of `<iframe loading=lazy>
+This [demo](https://lazy-load.netlify.app/iframes/) of `<iframe loading=lazy>`
 shows lazy-loading video embeds:
 
 <figure class="w-figure w-figure--fullbleed">
