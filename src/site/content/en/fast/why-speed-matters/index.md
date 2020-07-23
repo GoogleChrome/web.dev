@@ -20,8 +20,8 @@ Consumers increasingly rely on mobile to access digital content and services,
 and if you look at your site analytics,
 you'll probably see this story playing out in your own data.
 Consumers are also more demanding than they've ever been,
-and when they weigh up the experience on your site, they aren't just comparing you with your competitors,
-they're rating you against the best in class services they use every day.
+and when they weigh the experience on your site, they aren't just comparing you with your competitors,
+they're rating you against the best-in-class services they use every day.
 
 This post rounds up some of the research that has been done on the relationship between performance and busines success.
 
@@ -38,8 +38,8 @@ This post rounds up some of the research that has been done on the relationship 
   </blockquote>
 </figure>
 
-Performance plays a major role in the success of any online venture
-and high-performing sites engage and retain users better than low-performing ones.
+Performance plays a major role in the success of any online venture.
+High-performing sites engage and retain users better than low-performing ones.
 
 Pinterest reduced perceived wait times by 40%
 and this [increased search engine traffic and sign-ups by 15%](https://medium.com/@Pinterest_Engineering/driving-user-growth-with-performance-improvements-cfc50dafadd7).
@@ -104,7 +104,7 @@ people who use them.
 [As mobile users continue to make up a larger portion of internet users
 worldwide](http://gs.statcounter.com/platform-market-share/desktop-mobile-tablet),
 it's important to bear in mind that many of these users access the web through
-mobile LTE, 4G, 3G and even 2G networks.
+mobile LTE, 4G, 3G, and even 2G networks.
 As Ben Schwarz of Calibre points out in
 [this study of real world performance](https://building.calibreapp.com/beyond-the-bubble-real-world-performance-9c991dcd5342),
 the cost of prepaid data plans is decreasing,
@@ -125,9 +125,26 @@ and crisis centers have online resources that give users important and specific 
 the importance of delivering this information fast can't be understated.
 It's part of our job.
 
-## Test and improve your site
+## Get started with improving your website speed {: #get-started }
 
-The [Test My Site](https://www.thinkwithgoogle.com/feature/testmysite/)
-tool measure your site performance and gives recommendations for improvements.
+Read up on the [Core Web Vitals](/vitals/#core-web-vitals) to learn about the metrics
+that Google believes all websites should focus on.
 
-The [Fast load times](/fast/) section of this site gives technical tips to help you achieve your best performance.
+<blockquote>
+  <p>
+	  Today, we’re building on this work and providing an early
+	  look at an upcoming Search ranking change that incorporates
+	  these page experience metrics. We will introduce a new signal
+	  that combines Core Web Vitals with our existing signals for page
+	  experience to provide a holistic picture of the quality of a user’s
+	  experience on a web page.
+  </p>
+  <cite>
+    <a href="https://webmasters.googleblog.com/2020/05/evaluating-page-experience.html">
+      Evaluating page experience for a better web
+    </a>, Official Google Webmaster Central Blog
+  </cite>
+</blockquote>
+
+Then check out [Fast load times](/fast/) for lots of tips and tricks
+related to getting fast and staying fast.
