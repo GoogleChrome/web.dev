@@ -129,6 +129,7 @@ whether an iframe is hidden:
 *   The iframe's width and height are `4px` or smaller.
 *   `display: none` or `visibility: hidden` is applied.
 *   The iframe is placed off-screen using negative X or Y positioning.
+*   This criteria applies to both `loading=lazy` and `loading=auto`.
 
 If an iframe meets any of these conditions, Chrome considers it hidden and
 won't lazy-load it in most cases. iframes that aren't hidden will only load
