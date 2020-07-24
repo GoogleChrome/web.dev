@@ -74,7 +74,7 @@ alarms for telephone conferences or video calls.
 | 5. Launch                                    | Not started                  |
 
 {% Aside %}
-  An origin trial for the feature that gave developers a chance to try out the proposed API
+  An origin trial for the feature, which gave developers a chance to try out the proposed API,
   ran from Chrome 80 to 83 and ended on July 29, 2020. Unfortunately, we did not receive
   many sign-ups, and the feedback we received was not robust. For now, we have decided to
   put the API on pause until further notice and to not extend the origin trial. The feature
