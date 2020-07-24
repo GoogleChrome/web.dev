@@ -25,8 +25,8 @@ supported in Chrome and Chromium-based browsers.
 ```html/1
 <iframe src="https://example.com"
         loading="lazy"
-        width=600
-        height=400></iframe>
+        width="600"
+        height="400"></iframe>
 ```
 
 Native lazy-loading of iframes defers offscreen iframes from being loaded
@@ -256,6 +256,8 @@ currently offers
 <iframe frameborder="0"
 	  class="lazyload"
     allowfullscreen=""
+    width="600"
+    height="400"
     data-src="//www.youtube.com/embed/ZfV-aYdU4uE">
 </iframe>
 ```
@@ -269,6 +271,8 @@ lazysizes when it's not available:
 	  class="lazyload"
     loading="lazy"
     allowfullscreen=""
+    width="600"
+    height="400"
     data-src="//www.youtube.com/embed/ZfV-aYdU4uE">
 </iframe>
 
