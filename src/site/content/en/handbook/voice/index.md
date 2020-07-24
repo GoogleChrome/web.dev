@@ -2,7 +2,7 @@
 layout: handbook
 title: Voice
 date: 2019-06-26
-updated: 2020-07-23
+updated: 2020-07-24
 description: |
   A description of the primary voice for web.dev writing.
 ---
@@ -42,3 +42,5 @@ Here's our rationale for allowing emojis:
 * Some of our contributors feel that using emojis is an important part of their self-expression.
 * The [Style and authorial tone](https://developers.google.com/style/tone) page of the
   Google Developer Documentation Style Guide has no opinion about the use of emojis.
+* Part of [Google's philosophy](https://www.google.com/about/philosophy.html) is
+  "you can be serious without a tie."
