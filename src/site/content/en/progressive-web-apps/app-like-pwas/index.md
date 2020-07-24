@@ -167,7 +167,7 @@ There is no need to switch to the app just to skip forward or backward.
   Media keys are supported by the <a href="https://web.dev/media-session/">Media Session API</a>.
   Like that, users can make use of the hardware media keys on their physical keyboards, headphones, or even control the web app
   from the software media keys on their smartwatches.
-  An additional idea to smoothen seeking operations is to send a
+  An additional idea to smooth seeking operations is to send a
   <a href="https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API">vibration pattern</a>
   when the user seeks over a significant part of the content, for example, passes the opening credits or a chapter boundary.
 {% endDetails %}
