@@ -1401,5 +1401,27 @@
     "org": {
       "name": "Google"
     }
+  },
+  "joelriley": {
+    "name": {
+      "given": "Joel",
+      "family": "Riley"
+    },
+    "github": "TODO",
+    "country": "US",
+    "org": {
+      "name": "Google"
+    }
+  },
+  "douglasparker": {
+    "name": {
+      "given": "Douglas",
+      "family": "Parker"
+    },
+    "github": "TODO",
+    "country": "US",
+    "org": {
+      "name": "Google"
+    }
   }
 }
