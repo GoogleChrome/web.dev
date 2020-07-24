@@ -76,42 +76,41 @@ easiest way to make sure that your `lighthouserc.js` is configured correctly.
 
 1.  Install the Lighthouse CI CLI.
 
-```shell
-npm install -g @lhci/cli
-```
+    ```shell
+    npm install -g @lhci/cli
+    ```
 
-Lighthouse CI is configured by placing a `lighthouserc.js` file in the root of
-your project's repo. This file is mandatory and will contain Lighthouse CI
-related configuration information. Although Lighthouse CI can be [configured to
-be used without a git
-repo](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/configuration.md#build-context),
-the instructions in this article assume that your project repo is configured to
-use git.
+    Lighthouse CI is configured by placing a `lighthouserc.js` file in the root of
+    your project's repo. This file is mandatory and will contain Lighthouse CI
+    related configuration information. Although Lighthouse CI can be [configured to
+    be used without a git
+    repo](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/configuration.md#build-context),
+    the instructions in this article assume that your project repo is configured to
+    use git.
 
 2.  In the root of your repository, create a `lighthouserc.js` [configuration
     file](https://github.com/GoogleChrome/lighthouse-ci/blob/v0.4.1/docs/configuration.md#configuration-file).
-    
 
-```shell
-touch lighthouserc.js
-```
+    ```shell
+    touch lighthouserc.js
+    ```
 
 3.  Add the following code to `lighthouserc.js`. This code is an empty
     Lighthouse CI configuration. You will be adding to this configuration in
     later steps.
 
-```js
-module.exports = {
-  ci: {
-    collect: {
-      /* Add configuration here */
-    },
-    upload: {
-      /* Add configuration here */
-    },
-  },
-};
-```
+    ```js
+    module.exports = {
+      ci: {
+        collect: {
+          /* Add configuration here */
+        },
+        upload: {
+          /* Add configuration here */
+        },
+      },
+    };
+    ```
 
 4.  Every time that Lighthouse CI runs, it starts a server to serve your site.
     This server is what enables Lighthouse to load your site even when no other
@@ -131,19 +130,19 @@ module.exports = {
     Lighthouse CI will start a new server process during testing and shut it
     down after.
 
-```js
-// Static site example
-collect: {
-  staticDistDir: './public',
-}
-```
+    ```js
+    // Static site example
+    collect: {
+      staticDistDir: './public',
+    }
+    ```
 
-```js
-// Dynamic site example
-collect: {
-  startServerCommand: 'npm run start',
-}
-```
+    ```js
+    // Dynamic site example
+    collect: {
+      startServerCommand: 'npm run start',
+    }
+    ```
 
 5.  Add the
     [`url`](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/configuration.md#url)
@@ -152,16 +151,16 @@ collect: {
     provided as an array of URLs; this array can contain one or more URLs. By
     default, Lighthouse CI will run Lighthouse three times against each URL.
 
-```js
-collect: {
-  // ...
-  url: ['http://localhost:8080']
-}
-```
+    ```js
+    collect: {
+      // ...
+      url: ['http://localhost:8080']
+    }
+    ```
 
-Note: These URLs should be serveable by the server you configured in the
-previous step. Thus, if you're running Lighthouse CI locally, these URLs should
-probably include `localhost` rather than your production host.
+    Note: These URLs should be serveable by the server you configured in the
+    previous step. Thus, if you're running Lighthouse CI locally, these URLs should
+    probably include `localhost` rather than your production host.
 
 6.  Add the
     [`target`](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/configuration.md#target)
@@ -174,115 +173,116 @@ probably include `localhost` rather than your production host.
     to the
     [documentation](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/configuration.md#target).
 
-```js
-upload: {
-  target: 'temporary-public-storage',
-}
-```
+    ```js
+    upload: {
+      target: 'temporary-public-storage',
+    }
+    ```
 
-The storage location of the report will be similar to this: 
+    The storage location of the report will be similar to this: 
 
-```text
-https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1580152437799-46441.report.html
-```
+    ```text
+    https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1580152437799-46441.report.html
+    ```
 
-(This URL won't work because the report has already been deleted.)
+    (This URL won't work because the report has already been deleted.)
+
 7.  Run the Lighthouse CI CLI from the terminal using the `autorun` command.
     This will run Lighthouse three times and upload the median Lighthouse
     report.
 
-```shell
-lhci autorun
-```
+    ```shell
+    lhci autorun
+    ```
 
-If you've correctly configured Lighthouse CI, running this command should
-produce output similar to this:
+    If you've correctly configured Lighthouse CI, running this command should
+    produce output similar to this:
 
-```shell
-✅  .lighthouseci/ directory writable
-✅  Configuration file found
-✅  Chrome installation found
-⚠️   GitHub token not set
-Healthcheck passed!
+    ```shell
+    ✅  .lighthouseci/ directory writable
+    ✅  Configuration file found
+    ✅  Chrome installation found
+    ⚠️   GitHub token not set
+    Healthcheck passed!
 
-Started a web server on port 65324...
-Running Lighthouse 3 time(s) on http://localhost:65324/index.html
-Run #1...done.
-Run #2...done.
-Run #3...done.
-Done running Lighthouse!
+    Started a web server on port 65324...
+    Running Lighthouse 3 time(s) on http://localhost:65324/index.html
+    Run #1...done.
+    Run #2...done.
+    Run #3...done.
+    Done running Lighthouse!
 
-Uploading median LHR of http://localhost:65324/index.html...success!
-Open the report at https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1591720514021-82403.report.html
-No GitHub token set, skipping GitHub status check.
+    Uploading median LHR of http://localhost:65324/index.html...success!
+    Open the report at https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1591720514021-82403.report.html
+    No GitHub token set, skipping GitHub status check.
 
-Done running autorun.
-```
+    Done running autorun.
+    ```
 
-You can ignore the `GitHub token not set` message in the console output. A
-GitHub token is only necessary if you want to use Lighthouse CI with a GitHub
-Action. How to setup a GitHub Action is explained later in this article. 
+    You can ignore the `GitHub token not set` message in the console output. A
+    GitHub token is only necessary if you want to use Lighthouse CI with a GitHub
+    Action. How to setup a GitHub Action is explained later in this article. 
 
-Clicking on the link in the output that begins with
-`https://storage.googleapis.com...` will take you to the Lighthouse report
-corresponding to the median Lighthouse run.
+    Clicking on the link in the output that begins with
+    `https://storage.googleapis.com...` will take you to the Lighthouse report
+    corresponding to the median Lighthouse run.
 
-The defaults used by `autorun` can be overridden via the command line or
-`lighthouserc.js`. For example, the `lighthouserc.js` configuration below
-indicates that five Lighthouse runs should be collected every time `autorun`
-executes.
+    The defaults used by `autorun` can be overridden via the command line or
+    `lighthouserc.js`. For example, the `lighthouserc.js` configuration below
+    indicates that five Lighthouse runs should be collected every time `autorun`
+    executes.
 
 8.  Update `lighthouserc.js` to use the `numberOfRuns` property:
-
-```js
-module.exports = {
-    // ...
-    collect: {
-      numberOfRuns: 5
-    },
-   // ...
-  },
-};
-```
-
+  
+    ```js
+    module.exports = {
+        // ...
+        collect: {
+          numberOfRuns: 5
+        },
+      // ...
+      },
+    };
+    ```
+    
 9.  Re-run the `autorun` command:
 
-```shell
-lhci autorun
-```
+    ```shell
+    lhci autorun
+    ```
 
-The terminal output should show that Lighthouse has been run five times rather
-than the default three:
+    The terminal output should show that Lighthouse has been run five times rather
+    than the default three:
 
-```shell
-✅  .lighthouseci/ directory writable
-✅  Configuration file found
-✅  Chrome installation found
-⚠️   GitHub token not set
-Healthcheck passed!
+    ```shell
+    ✅  .lighthouseci/ directory writable
+    ✅  Configuration file found
+    ✅  Chrome installation found
+    ⚠️   GitHub token not set
+    Healthcheck passed!
 
-Automatically determined ./dist as `staticDistDir`.
-Set it explicitly in lighthouserc.json if incorrect.
+    Automatically determined ./dist as `staticDistDir`.
+    Set it explicitly in lighthouserc.json if incorrect.
 
-Started a web server on port 64444...
-Running Lighthouse 5 time(s) on http://localhost:64444/index.html
-Run #1...done.
-Run #2...done.
-Run #3...done.
-Run #4...done.
-Run #5...done.
-Done running Lighthouse!
+    Started a web server on port 64444...
+    Running Lighthouse 5 time(s) on http://localhost:64444/index.html
+    Run #1...done.
+    Run #2...done.
+    Run #3...done.
+    Run #4...done.
+    Run #5...done.
+    Done running Lighthouse!
 
-Uploading median LHR of http://localhost:64444/index.html...success!
-Open the report at https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1591716944028-6048.report.html
-No GitHub token set, skipping GitHub status check.
+    Uploading median LHR of http://localhost:64444/index.html...success!
+    Open the report at https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1591716944028-6048.report.html
+    No GitHub token set, skipping GitHub status check.
 
-Done running autorun.
-```
+    Done running autorun.
+    ```
 
-To learn about other configuration options, refer to the Lighthouse CI
-[configuration
-documentation](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/configuration.md).
+    To learn about other configuration options, refer to the Lighthouse CI
+    [configuration
+    documentation](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/configuration.md).
 
 ## Setup your CI process to run Lighthouse CI {: #ci-setup }
 
@@ -364,49 +364,49 @@ to display these results on each pull request.
     runs at a predetermined time (for example, when code is pushed) and is
     composed of one or more actions.
 
-```shell
-mkdir .github
-mkdir .github/workflows
-```
+    ```shell
+    mkdir .github
+    mkdir .github/workflows
+    ```
 
 2.  In `.github/workflows` create a file named `lighthouse-ci.yaml`. This file
     will hold the configuration for a new workflow. 
 
-```shell
-touch lighthouse-ci.yaml
-```
+    ```shell
+    touch lighthouse-ci.yaml
+    ```
 
 3.  Add the following text to `lighthouse-ci.yaml`. 
 
-```yaml
-name: Build project and run Lighthouse CI
-on: [push]
-jobs:
-  lhci:
-    name: Lighthouse CI
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js 10.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 10.x
-      - name: npm install
-        run: |
-          npm install
-      - name: run Lighthouse CI
-        run: |
-          npm install -g @lhci/cli@0.3.x
-          lhci autorun --upload.target=temporary-public-storage || echo "LHCI failed!"
-```
+    ```yaml
+    name: Build project and run Lighthouse CI
+    on: [push]
+    jobs:
+      lhci:
+        name: Lighthouse CI
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v1
+          - name: Use Node.js 10.x
+            uses: actions/setup-node@v1
+            with:
+              node-version: 10.x
+          - name: npm install
+            run: |
+              npm install
+          - name: run Lighthouse CI
+            run: |
+              npm install -g @lhci/cli@0.3.x
+              lhci autorun --upload.target=temporary-public-storage || echo "LHCI failed!"
+    ```
 
-This configuration sets up a workflow consisting of a single job that will run
-whenever new code is pushed to the repository. This job has four steps:
+    This configuration sets up a workflow consisting of a single job that will run
+    whenever new code is pushed to the repository. This job has four steps:
 
-*   Check out the repository that Lighthouse CI will be run against
-*   Install and configure Node
-*   Install required npm packages
-*   Run Lighthouse CI and upload the results to temporary public storage.
+    *   Check out the repository that Lighthouse CI will be run against
+    *   Install and configure Node
+    *   Install required npm packages
+    *   Run Lighthouse CI and upload the results to temporary public storage.
 
 4.  Commit these changes and push them to GitHub. If you've correctly followed
     the steps above, pushing code to GitHub will trigger running the workflow
@@ -417,23 +417,21 @@ whenever new code is pushed to the repository. This job has four steps:
     **Build project and Run Lighthouse CI** workflow listed under your most
     recent commit.
 
-<figure class="w-figure">
-  <img src="./github-action2.png" alt="Screenshot of the Github 'Settings' tab" class="w-screenshot">
-</figure>
+    <figure class="w-figure">
+      <img src="./github-action2.png" alt="Screenshot of the Github 'Settings' tab" class="w-screenshot">
+    </figure>
 
-You can navigate to the Lighthouse report corresponding to a particular commit
-from the **Actions** tab. Click on the commit, click on the **Lighthouse CI**
-workflow step, then expand the results of the **run Lighthouse CI** step.
+    You can navigate to the Lighthouse report corresponding to a particular commit
+    from the **Actions** tab. Click on the commit, click on the **Lighthouse CI**
+    workflow step, then expand the results of the **run Lighthouse CI** step.
 
-<figure class="w-figure">
-  <img src="./github-action3.png" alt="Screenshot of the Github 'Settings' tab" class="w-screenshot">
-</figure>
+    <figure class="w-figure">
+      <img src="./github-action3.png" alt="Screenshot of the Github 'Settings' tab" class="w-screenshot">
+    </figure>
 
-
-You've just set up a GitHub Action to run Lighthouse CI. This will be most
-useful when used in conjunction with a GitHub [status
-check](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-status-checks).
-
+    You've just set up a GitHub Action to run Lighthouse CI. This will be most
+    useful when used in conjunction with a GitHub [status
+    check](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-status-checks).
 
 ### Set up a GitHub status check {: #github-status-checks }
 
@@ -449,25 +447,29 @@ The steps below explain how to set up a status check for Lighthouse CI.
 
 1.  Go to the [Lighthouse CI GitHub App
     page](https://github.com/apps/lighthouse-ci) and click **Configure**.
+
 2.  (Optional) If you're part of multiple organizations on GitHub, choose the
     organization that owns the repository for which you want to use Lighthouse
     CI.
+
 3.  Select **All repositories** if you want to enable Lighthouse CI in all
     repositories or select **Only select repositories** if you only want to use
     it in specific repositories, and then select the repositories. Then click
     **Install & Authorize**.
+
 4.  Copy the token that is displayed. You'll use it in the next step.
+
 5.  To add the token, navigate to the **Settings** page of your GitHub
     repository, click **Secrets**, then click **Add a new secret**. 
 
-<figure class="w-figure">
-  <img src="./github-action4.png" alt="Screenshot of the Github 'Settings' tab" class="w-screenshot">
-</figure>
-
+    <figure class="w-figure">
+      <img src="./github-action4.png" alt="Screenshot of the Github 'Settings' tab" class="w-screenshot">
+    </figure>
 
 6.  Set the **Name** field to `LHCI_GITHUB_APP_TOKEN` and set the **Value**
     field to the token that you copied in the last step and then click the **Add
     secret** button.
+
 7.  The status check is ready for use. To test it, [create a new pull
     request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request)
     or push a commit to an existing pull request.
