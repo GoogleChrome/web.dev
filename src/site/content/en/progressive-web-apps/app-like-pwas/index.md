@@ -169,7 +169,7 @@ There is no need to switch to the app just to skip forward or backward.
   from the software media keys on their smartwatches.
   An additional idea to smooth seeking operations is to send a
   <a href="https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API">vibration pattern</a>
-  when the user seeks over a significant part of the content, for example, passes the opening credits or a chapter boundary.
+  when the user seeks over a significant part of the content, for example, passing the opening credits or a chapter boundary.
 {% endDetails %}
 
 ## Multitasking and app shortcut
