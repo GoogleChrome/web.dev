@@ -63,7 +63,7 @@ Additionally, a 100ms decrease in checkout page load speed amounted to a 1.55% i
 which in turn yielded an average annual revenue increase of nearly $530,000.
 
 When [AutoAnything reduced page load time by half](https://www.digitalcommerce360.com/2010/08/19/web-accelerator-revs-conversion-and-sales-autoanything/),
-they saw a boost of 12-13% in sales.
+they saw a boost of 12% to 13% in sales.
 
 Retailer [Furniture Village](https://www.thinkwithgoogle.com/intl/en-gb/success-stories/uk-success-stories/furniture-village-and-greenlight-slash-page-load-times-boosting-user-experience/) audited their site speed and developed a plan to address the problems they found,
 leading to a 20% reduction in page load time and a 10% increase in conversion rate.
