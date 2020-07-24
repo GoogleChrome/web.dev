@@ -440,7 +440,7 @@ defaults write com.google.Chrome ScrollToTextFragmentEnabled -bool false
 ```
 
 On Windows, follow the documentation on the 
-[Google Chrome Enterprise Help](https://support.google.com/chrome/a/answer/9131254?hl=en).
+[Google Chrome Enterprise Help](https://support.google.com/chrome/a/answer/9131254?hl=en) support site.
 
 {% Aside 'warning' %}
   Please only try this when you know what you are doing.
