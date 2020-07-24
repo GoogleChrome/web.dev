@@ -431,7 +431,7 @@ Document-Policy: force-load-at-top
 
 ## Disabling text fragments
 
-In case you really dislike the feature, you can opt out by leveraging the enterprise setting
+If you really dislike the feature, you can opt out using the enterprise setting
 [`ScrollToTextFragmentEnabled`](https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ScrollToTextFragmentEnabled).
 Therefore, on macOS, paste the command below in the terminal.
 
