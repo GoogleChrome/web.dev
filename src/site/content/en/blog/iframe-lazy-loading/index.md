@@ -302,5 +302,5 @@ Tracker](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3ELo
 And, in case you missed it, check out web.dev's [image and video lazy-loading
 collection](/fast/#lazy-load-images-and-video) for more lazy-loading ideas.
 
-_With thanks to Dom Farolino, Scott Little, Houssein Djirdeh and Stoyan
+_With thanks to Dom Farolino, Scott Little, Houssein Djirdeh, Simon Pieters, Kayce Basques and Stoyan
 Stefanov for their reviews._ 
