@@ -322,7 +322,7 @@ for updates.
 
 Now that you know how I did it, how would you?! Let's diversify our 
 approaches and learn all the ways to build on the web. Create a [Glitch](https://glitch.com), 
-[tweet me](https://twitter.com/argyleink) your version, and I'll add it 
+[tweet me](https://twitter.com/argyleink) your version, and I'll add it to 
 the [Community remixes](#community-remixes) section below.
 
 ## Community remixes {: #remixes }
