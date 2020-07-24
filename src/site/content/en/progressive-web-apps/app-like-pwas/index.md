@@ -8,7 +8,7 @@ description: |
   Learn how to make your Progressive Web App feel like a "real" app by understanding
   how to implement native app patterns with web technologies.
 date: 2020-06-15
-updated: 2020-06-15
+updated: 2020-07-23
 tags:
   - capabilities
 ---
@@ -167,6 +167,9 @@ There is no need to switch to the app just to skip forward or backward.
   Media keys are supported by the <a href="https://web.dev/media-session/">Media Session API</a>.
   Like that, users can make use of the hardware media keys on their physical keyboards, headphones, or even control the web app
   from the software media keys on their smartwatches.
+  An additional idea to smooth seeking operations is to send a
+  <a href="https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API">vibration pattern</a>
+  when the user seeks over a significant part of the content, for example, passing the opening credits or a chapter boundary.
 {% endDetails %}
 
 ## Multitasking and app shortcut
@@ -276,7 +279,7 @@ There is a more subtle thing that is self-evident for a native application like 
   to override it.
   Another thing to decide on might be what the browser should do when reaching
   the boundary of a scrolling area, for example, to implement custom <em>pull to refresh</em>.
-  This is possible with the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior"><code>overscroll-behavior</code></a> CSS property.
+  This is possible with the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior"><code>overscroll-behavior</code></a> CSS property.  
 {% endDetails %}
 
 ## Customized title bar
