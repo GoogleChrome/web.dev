@@ -20,7 +20,7 @@ tags:
 the `loading` attribute and later came to Firefox. We are happy to share that
 **native lazy-loading for iframes** is now
 [standardized](https://github.com/whatwg/html/pull/5579) and is also 
-supported in Chrome. 
+supported in Chrome and Chromium-based browsers.
 
 ```html/1
 <iframe src="https://example.com"
@@ -302,5 +302,5 @@ Tracker](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3ELo
 And, in case you missed it, check out web.dev's [image and video lazy-loading
 collection](/fast/#lazy-load-images-and-video) for more lazy-loading ideas.
 
-_With thanks to Dom Farolino, Scott Little, Houssein Djirdeh, Simon Pieters, Kayce Basques and Stoyan
+_With thanks to Dom Farolino, Scott Little, Houssein Djirdeh, Simon Pieters, Kayce Basques, Joe Medley and Stoyan
 Stefanov for their reviews._ 
