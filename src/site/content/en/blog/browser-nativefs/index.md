@@ -113,13 +113,14 @@ but also overwrite an existing file.
 ### Opening files
 
 With the [Native File System API](https://wicg.github.io/native-file-system/),
-opening a file is a matter of one call to the `window.chooseFileSystemEntries()` method.
+opening a file is a matter of one call to the `window.showOpenFilePicker()` method.
 This call returns a file handle, from which you can get the actual `File` via the `getFile()` method.
 
 ```js
 const openFile = async () => {
   try {
-    const handle = await window.chooseFileSystemEntries();
+    // Always returns an array.
+    const [handle] = await window. showOpenFilePicker();
     return handle.getFile();
   } catch (err) {
     console.error(err.name, err.message);
@@ -129,8 +130,8 @@ const openFile = async () => {
 
 ### Opening directories
 
-Open a directory by passing an options object like `{type: 'open-directory'}` to
-`chooseFileSystemEntries()` that makes directories selectable in the file dialog box.
+Open a directory by calling
+`window.showDirectoryPicker()` that makes directories selectable in the file dialog box.
 
 ### Saving files
 
@@ -142,8 +143,12 @@ and finally you close the stream by calling its `close()` method.
 ```js
 const saveFile = async (blob) => {
   try {
-    const handle = await window.chooseFileSystemEntries({
-      type: 'save-file',
+    const handle = await window.showSaveFilePicker({
+      types: [{
+        accept: {
+          // Omitted
+        },
+      }],
     });
     const writable = await handle.createWritable();
     await writable.write(blob);
