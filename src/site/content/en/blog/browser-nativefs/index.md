@@ -337,7 +337,7 @@ export const loadFromJSON = async () => {
 
 Whether in Excalidraw or your app,
 the UI should adapt to the browser's support situation.
-If the Native File System API is supported (`if ('chooseFileSystemEntries' in window) {}`)
+If the Native File System API is supported (`if ('showOpenFilePicker' in window) {}`)
 you can show a **Save As** button in addition to a **Save** button.
 The screenshots below show the difference between Excalidraw's responsive main app toolbar on iPhone and on Chrome desktop.
 Note how on iPhone the **Save As** button is missing.
