@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Get things done quickly with app shortcuts
 subhead: App shortcuts give quick access to a handful of common actions that users need frequently.
 authors:
@@ -10,7 +11,6 @@ hero: hero.jpg
 alt: A photo of an Android phone showing an app shortcuts menu
 description: App shortcuts give quick access to a handful of common actions that users need frequently.
 tags:
-  - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
   - progressive-web-apps
 ---

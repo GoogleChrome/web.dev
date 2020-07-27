@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Badging for app icons
 subhead: The Badging API allows installed web apps to set an application-wide badge on the app icon.
 authors:
@@ -7,11 +8,8 @@ description: The Badging API allows installed web apps to set an application-wid
 date: 2018-12-11
 updated: 2020-06-04
 tags:
-  - blog
   - capabilities
-  - badging
   - progressive-web-apps
-  - notifications
 hero: hero.jpg
 alt: Phone showing several notification badges
 origin_trial:

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Receiving shared data with the Web Share Target API
 subhead: Sharing on mobile made simple with the Web Share Target API
 authors:
@@ -12,7 +13,7 @@ description: |
   choosing an app, then choosing who to share with. The Web Share Target API
   allows installed web apps to register with the underlying operating system to receive shared content.
 tags:
-  - blog
+  - progressive-web-apps
   - capabilities
 ---
 
