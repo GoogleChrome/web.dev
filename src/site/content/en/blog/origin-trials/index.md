@@ -56,8 +56,8 @@ trials, as learnings are incorporated and adjustments are made.
    
 {% Aside 'warning' %}
   Please note that even if an API eventually lands unchanged after a successful origin trial,
-  there is an expected short period of time between the end date of the origin trial and the
-  date where the implementation ships in the browser where the API will not be available.
+  there is a short period of time, between the end of the origin trial and the date the implementation ships
+  in the browser, when the API will not be available.
   This is by design.
 {% endAside %}
 
