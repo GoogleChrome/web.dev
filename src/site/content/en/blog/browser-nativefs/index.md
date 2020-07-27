@@ -11,7 +11,7 @@ description: |
   that acts as an abstraction layer on top of the Native File System API
   and that transparently falls back to legacy approaches for dealing with files.
 scheduled: true
-date: 2020-07-25
+date: 2020-07-27
 # updated: 2020-06-30
 hero: hero.jpg
 tags:
