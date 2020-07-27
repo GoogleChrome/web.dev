@@ -1,8 +1,9 @@
 ---
-title: "Performance Monitoring with Lighthouse CI"
+title: Performance monitoring with Lighthouse CI
+subhead: How to add Lighthouse to a continuous integration system, such as GitHub Actions.
 authors:
   - katiehempenius
-date: 2020-07-22
+date: 2020-07-27
 description: |
   Learn how to setup Lighthouse CI and integrate it into developer workflows.
 hero: hero.png
