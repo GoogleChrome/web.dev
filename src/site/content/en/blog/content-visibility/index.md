@@ -28,7 +28,7 @@ Basically a developer can tell a browser what parts of the page are encapsulated
 There are four types of [CSS containment](https://developers.google.com/web/updates/2016/06/css-containment), each a potential value for the `contain` CSS property. You can also combine them individually or together in a space-separated list of values:
 
 - `size`: Size containment ensures that the containing box can be laid out without needing to examine its children. The parent sets the geometric size independent of its contents.
-- `layout`: Layout containment means that the subtree does not affect the external layout of other boxes on the page, and nothing external affects its internal layout. 
+- `layout`: Layout containment means that the subtree does not affect the external layout of other boxes on the page.
 - `style`: Style containment ensures that properties which can have effects on more than just its descendants don't escape the element (e.g. counters).
 - `paint`: Paint containment ensures that the descendants of the containing box don't display outside its bounds. Nothing can visibly overflow the element, and if an element is off-screen or otherwise not visible, its descendants will also not be visible.
 
