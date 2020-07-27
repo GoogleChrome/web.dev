@@ -24,7 +24,8 @@
         "incorporate-performance-budgets-into-your-build-tools",
         "use-lighthouse-for-performance-budgets",
         "using-bundlesize-with-travis-ci",
-        "using-lighthouse-bot-to-set-a-performance-budget"
+        "using-lighthouse-bot-to-set-a-performance-budget",
+        "lighthouse-ci"
       ]
     },
     {
