@@ -1,6 +1,6 @@
 ---
 title: Custom Bullets with CSS ::marker
-subhead: TODO 
+subhead: It is now trivial to customize the color, size or type of number or bullet when using a <ul> or <ol>. 
 authors:
   - adamargyle
   - loirooriol
