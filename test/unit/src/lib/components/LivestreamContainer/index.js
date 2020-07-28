@@ -74,7 +74,7 @@ describe('LivestreamContainer', function () {
     assert(iframesWithChat[0] === ytIframe, 'YouTube iframe should not change');
   });
 
-  it('should reload on signed-in state change', async function () {
+  it.skip('should reload on signed-in state change', async function () {
     container.onStateChanged({
       activeEventDay: {
         videoId: 'HtTyRajRuyY',
