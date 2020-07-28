@@ -1,5 +1,5 @@
 ---
-title: Human interface devices on the web—a few quick examples
+title: 'Human interface devices on the web: a few quick examples'
 subhead: Connecting to uncommon devices from your app.
 authors:
   - joemedley
