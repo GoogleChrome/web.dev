@@ -58,7 +58,7 @@ const serviceWorkerPartials = async (content, outputPath) => {
     return content;
   }
 
-  const partial = getPartial(content, outputPath);
+  const partial = getPartial(content);
   const suffixLength = 'index.html'.length;
   const partialOutputPath =
     outputPath.substr(0, outputPath.length - suffixLength) + 'index.json';

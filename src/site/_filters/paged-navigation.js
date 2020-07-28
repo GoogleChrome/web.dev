@@ -17,7 +17,7 @@
 /**
  * Takes an object and determines how many links to other pages in the same paginated collection to display.
  * @param {{index: number, pages: number, href: string}} paged Page details including the `index` in the pagination, how many `pages` there are, and the `href` of the page.
- * @return {Array<{showEllipses: boolean, index: number, href: string}>} An array of up to 8 items to display, including href and index.
+ * @return {Array<{showEllipses?: boolean, index: number, href: string}>} An array of up to 8 items to display, including href and index.
  */
 module.exports = function pagedNavigation(paged) {
   const halfTargetSize = 4;

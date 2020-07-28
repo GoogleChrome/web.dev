@@ -15,10 +15,12 @@
  */
 const fs = require('fs');
 const path = require('path');
-const authorsData = require('../_data/authorsData');
+/** @type AuthorsData */
+const authorsData = require('../_data/authorsData.json');
 const {livePosts} = require('../_filters/live-posts');
 const setdefault = require('../_utils/setdefault');
 
+/** @type Authors */
 let processedCollection;
 
 /**
@@ -41,8 +43,8 @@ const findAuthorsPosts = (posts) => {
 };
 
 /**
- * @param {!Author} author to update
- * @param {!Array<*>} allAuthorPosts posts including drafts
+ * @param {AuthorsItem} author to update
+ * @param {any[]} allAuthorPosts posts including drafts
  * @return {boolean} whether this author is allowed here
  */
 const maybeUpdateAuthorHref = (author, allAuthorPosts) => {
@@ -67,7 +69,7 @@ const maybeUpdateAuthorHref = (author, allAuthorPosts) => {
  * Returns all authors with their posts.
  *
  * @param {any} [collections] Eleventy collection object
- * @return {Object.<string, Author>}
+ * @return {Authors}
  */
 module.exports = (collections) => {
   if (processedCollection) {
@@ -85,36 +87,41 @@ module.exports = (collections) => {
 
   const authorsPosts = findAuthorsPosts(allPosts);
 
-  /** @constant @type {Object.<string, Author>} @default */
+  /** @type Authors */
   const authors = {};
 
   /** @type {!Array<string>} */
   const invalidAuthors = [];
 
   Object.keys(authorsData).forEach((key) => {
-    const author = {...authorsData[key]};
-    author.key = key;
-
-    // Generate the author's name out of valid given/family parts. This
-    // allows our authors to just have a single name.
-    const parts = [author.name.given, author.name.family].filter(
-      (s) => s && s.length,
-    );
-    author.title = parts.join(' ');
-    author.href = `/authors/${key}/`;
-    author.description =
-      author.description && author.description.en
-        ? author.description.en
-        : `Our latest news, updates, and stories by ${author.title}.`;
-    author.data = {
-      title: author.title,
-      subhead: author.description,
-      canonicalUrl: author.href,
-    };
-
+    const authorData = authorsData[key];
     // Get all authors but filter later.
     const allAuthorPosts = authorsPosts.get(key) || [];
-    author.elements = allAuthorPosts.filter(livePosts);
+    const href = `/authors/${key}/`;
+    // Generate the author's name out of valid given/family parts. This
+    // allows our authors to just have a single name.
+    const title = [authorData.name.given, authorData.name.family]
+      .filter((s) => s && s.length)
+      .join(' ');
+    const description =
+      authorData.description && authorData.description.en
+        ? authorData.description.en
+        : `Our latest news, updates, and stories by ${title}.`;
+
+    /** @types AuthorsItem */
+    const author = {
+      ...authorData,
+      data: {
+        canonicalUrl: href,
+        subhead: description,
+        title,
+      },
+      description,
+      elements: allAuthorPosts.filter(livePosts),
+      href,
+      key,
+      title,
+    };
 
     // Update the author's href to be their Twitter profile, if they have no
     // live posts on the site.
