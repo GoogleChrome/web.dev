@@ -88,7 +88,7 @@ them to your analytics service using a custom metric or event, the next step is
 to build a report or dashboard displaying the values that have been collected.
 
 To ensure you're meeting the [recommended Core Web Vitals
-thresholds](https://github.com/vitals/#core-web-vitals), you'll need your report
+thresholds](/vitals/#core-web-vitals), you'll need your report
 to display the value of each metric at the 75th percentile.
 
 If your analytics tool does not offer quantile reporting as a built-in feature,
