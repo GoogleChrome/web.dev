@@ -1,39 +1,39 @@
 ---
 layout: post
-title: The Keyboard Lock API
-subhead: Provide an immersive, full screen experience for interactive websites, games, and remote desktop or application streaming use cases.
+title: Capture Keys with the Keyboard Lock API
+subhead: Provide an immersive, full screen experience for a variety of use cases including interactive websites, games, and remote desktop or application streaming.
 tags:
   - blog
 authors:
   - thomassteiner
 description: >
-  The Keyboard Lock API allows websites to capture keys that are normally reserved by the underlying host operating system. It is intended to be used by web applications that provide a full screen immersive experience (like games or remote access apps).
+  The Keyboard Lock API allows websites to capture keys that are normally reserved by the underlying operating system. It is intended for web applications that provide a full screen immersive experience (like games or remote access apps).
 date: 2020-07-23
 # updated:
-hero: hero.jpg
+hero:
 ---
-With more and more users spending most of their time in the browser, richly interactive websites, games, and remote desktop or application streaming experiences want to provide an immersive, full screen experience. To accomplish this, sites need access to special keys and keyboard shortcuts while they are in full screen mode, so that they can be used for navigation, menus or gaming functionality. Some examples of the keys that may be required are <kbd>Esc</kbd>, <kbd>Alt</kbd>&nbsp;+&nbsp;<kbd>Tab</kbd>, <kbd>Cmd</kbd>&nbsp;+&nbsp;<kbd>`</kbd>, and <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>N</kbd>.
+With more and more users spending most of their time in the browser, richly interactive websites, games, and remote desktop or application streaming experiences strive to provide an immersive, full screen experience. To accomplish this, sites need access to special keys and keyboard shortcuts while they are in full screen mode, so that they can be used for navigation, menus, or gaming functionality. Some examples of the keys that may be required are <kbd>Esc</kbd>, <kbd>Alt</kbd>&nbsp;+&nbsp;<kbd>Tab</kbd>, <kbd>Cmd</kbd>&nbsp;+&nbsp;<kbd>`</kbd>, and <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>N</kbd>.
 
-By default, these keys are not available to the web application because they are captured by the browser or the underlying operating system. The Keyboard Lock API enables websites to capture and use all available keys allowed by the OS.
+By default, these keys are not available to the web application because they are captured by the browser or the underlying operating system. The Keyboard Lock API enables websites to use all available keys allowed by the host OS (see [Browser compatibility](#browser-compatibility)).
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled"
        src="chrome-remote-desktop.png"
        alt="Ubuntu Linux streamed to a browser tab in macOS Chrome (not running in full screen mode yet).">
   <figcaption>
-    A streamed Ubuntu Linux remote desktop <em>not</em> running in full screen mode and <em>without</em> active keyboard lock,
+    The problem: a streamed Ubuntu Linux remote desktop <em>not</em> running in full screen mode and <em>without</em> active keyboard lock,
     so system keys are still captured by the macOS host operating system and the experience is <em>not</em> immersive yet.
   </figcaption>
 </figure>
 
 ## Using the Keyboard Lock API
 
-The [`Keyboard` interface](https://developer.mozilla.org/en-US/docs/Web/API/Keyboard) of the the [Keyboard API](https://developer.mozilla.org/en-US/docs/Web/API/Keyboard_API) provides functions that toggle capturing of key presses from the physical keyboard as well as getting information about the used [keyboard layout](https://developer.mozilla.org/en-US/docs/Web/API/Keyboard/getLayoutMap).
+The [`Keyboard` interface](https://developer.mozilla.org/en-US/docs/Web/API/Keyboard) of the the Keyboard API provides functions that toggle capturing of key presses from the physical keyboard as well as getting information about the used [keyboard layout](https://developer.mozilla.org/en-US/docs/Web/API/Keyboard/getLayoutMap).
 
 ### Prerequisite
 
-There are two different types of full screen available in modern browsers: JavaScript-initiated full screen (via the [Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API)) and user-initiated full screen (when the user enters full screen using a keyboard shortcut). The Keyboard Lock API is only valid when [JavaScript-initiated full screen](https://developer.mozilla.org/en-US/docs/Web/API/Element/requestFullscreen) is active.
-An example of JavaScript-initiated full screen is given in the code snippet below.
+There are two different types of full screen available in modern browsers: JavaScript-initiated via the [Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API) and user-initiated via a keyboard shortcut. The Keyboard Lock API is only available when [JavaScript-initiated full screen](https://developer.mozilla.org/en-US/docs/Web/API/Element/requestFullscreen) is active.
+Here's an example of JavaScript-initiated full screen:
 
 ```js
 await document.documentElement.requestFullscreen();
@@ -41,7 +41,7 @@ await document.documentElement.requestFullscreen();
 
 ### Browser compatibility
 
-You can see browser compatibility on [Can I use](https://caniuse.com/#feat=mdn-api_keyboard_lock). Also note that not all system keys can be locked. This varies from operating system to operating system. For example, follow [crbug.com/855738](https://crbug.com/855738) for progress updates on system keyboard lock for macOS.
+You can see browser compatibility on [Can I use](https://caniuse.com/#feat=mdn-api_keyboard_lock). Note that not all system keys can be locked. This varies from operating system to operating system. For example, follow [crbug.com/855738](https://crbug.com/855738) for progress updates on system keyboard lock for macOS.
 
 ### Locking the keyboard
 
@@ -57,7 +57,7 @@ navigator.keyboard.lock();
 
 #### Capturing specific keys
 
-The following example captures the <kbd>W</kbd>, <kbd>A</kbd>, <kbd>S</kbd>, and <kbd>D</kbd> keys. It captures these keys regardless of which modifiers are used with the key press. Assuming a standard US QWERTY layout, registering `"KeyW"` ensures that <kbd>W</kbd>, <kbd>Shift</kbd>&nbsp;+&nbsp;<kbd>W</kbd>, <kbd>Control</kbd>&nbsp;+&nbsp;<kbd>W</kbd>, <kbd>Control</kbd>&nbsp;+&nbsp;<kbd>Shift</kbd>&nbsp;+&nbsp;<kbd>W</kbd>, and all other key modifier combinations with <kbd>W</kbd> are sent to the app. The same applies to `"KeyA"`, `"KeyS"`, and `"KeyD"`.
+The following example captures the <kbd>W</kbd>, <kbd>A</kbd>, <kbd>S</kbd>, and <kbd>D</kbd> keys. It captures these keys regardless of which modifiers are used with the key press. Assuming a US QWERTY layout, registering `"KeyW"` ensures that <kbd>W</kbd>, <kbd>Shift</kbd>&nbsp;+&nbsp;<kbd>W</kbd>, <kbd>Control</kbd>&nbsp;+&nbsp;<kbd>W</kbd>, <kbd>Control</kbd>&nbsp;+&nbsp;<kbd>Shift</kbd>&nbsp;+&nbsp;<kbd>W</kbd>, and all other key modifier combinations with <kbd>W</kbd> are sent to the app. The same applies to `"KeyA"`, `"KeyS"`, and `"KeyD"`.
 
 ```js
 await navigator.keyboard.lock([
@@ -68,11 +68,11 @@ await navigator.keyboard.lock([
 ]);
 ```
 
-If `lock()` is called multiple times without an intervening call to `unlock()` (see [below](#unlocking-the-keyboard)), then only the key codes specified in the last request call will be in effect. If a second call to `lock()` is made before the first one has finished, then the first one will be rejected with an `AbortError`.
+If `lock()` is called multiple times without an intervening call to `unlock()` (see [below](#unlocking-the-keyboard)), then only the key codes specified in the last call will be in effect. If a second call to `lock()` is made before the first one has finished, then the first one will be rejected with an `AbortError`.
 
 ### Unlocking the keyboard
 
-The [`unlock()`](https://developer.mozilla.org/en-US/docs/Web/API/Keyboard/unlock) method of the `Keyboard` interface unlocks all keys captured by the `lock()` method and returns synchronously.
+The [`unlock()`](https://developer.mozilla.org/en-US/docs/Web/API/Keyboard/unlock) method unlocks all keys captured by the `lock()` method and returns synchronously.
 
 ```js
 navigator.keyboard.unlock();
@@ -84,7 +84,6 @@ When a document is closed, the browser always implicitly calls `unlock()`.
 
 You can test the Keyboard Lock API by running the [demo](https://keyboard-lock.glitch.me/) on Glitch. Be sure to [check out the source code](https://glitch.com/edit/#!/keyboard-lock). Clicking the Enter full screen button below launches the demo in a new window so it can enter full screen mode.
 
-<!-- Copy and Paste Me -->
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
   <iframe
     src="https://glitch.com/embed/#!/embed/keyboard-lock?path=script.js&previewSize=100"
@@ -97,11 +96,11 @@ You can test the Keyboard Lock API by running the [demo](https://keyboard-lock.g
 
 ## Security Considerations
 
-One concern with this API is that it could be used to grab all of the keys and (in conjunction with the [Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API) and the [PointerLock API](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API)) prevent the user from exiting the web page. To prevent this, the browser must provide a way for the user to exit from keyboard lock even if all of the keys are requested by the API. In Chrome, this escape hatch is a long (2 second) <kbd>Esc</kbd> key press to trigger an exit from Keyboard Lock.
+One concern with this API is that it could be used to grab all of the keys and (in conjunction with the [Fullscreen API](https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API) and the [PointerLock API](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API)) prevent the user from exiting the web page. To prevent this, the spec requires the browser to provide a way for the user to exit from keyboard lock even if all of the keys are requested by the API. In Chrome, this escape hatch is a long (two second) <kbd>Esc</kbd> key press to trigger an exit from Keyboard Lock.
 
 ## Helpful links
 
-- [Specification draft](https://wicg.github.io/keyboard-lock/#h-keyboard-lock)
+- [Specification draft](https://wicg.github.io/keyboard-lock/)
 - [GitHub repository](https://github.com/WICG/keyboard-lock)
 - [ChromeStatus entry](https://chromestatus.com/features/5642959835889664)
 - [Chrome tracking bug](https://crbug.com/677559)
