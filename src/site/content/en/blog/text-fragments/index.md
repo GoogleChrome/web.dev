@@ -8,7 +8,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2020-06-17
-updated: 2020-07-22
+updated: 2020-07-28
 hero: hero.jpg
 alt:
 description: |
@@ -362,7 +362,7 @@ to browsers that do not support them.
 ### Polyfillability
 
 The Text Fragments feature can be polyfilled to some extent.
-There is early [work in progress](https://github.com/tomayac/text-fragments-polyfill/)
+There is early [work in progress](https://github.com/GoogleChromeLabs/text-fragments-polyfill)
 to create an extension for browsers that do not support Text Fragments natively
 where the functionality is implemented in JavaScript.
 
