@@ -2,16 +2,16 @@
 title: |
   Building a PWA at Google, part 1
 subhead: |
-  Service worker lessons learned
-date: 2020-07-27
+  What the Bulletin team learned about service workers while developing a PWA.
+date: 2020-07-29
 authors:
   - joelriley
   - douglasparker
   - msdikla
-#hero: hero.jpg
-#alt: Betty Crocker Cake Mix—Coffee Cinnamon.
+hero: hero.jpg
+alt: A group of people working on their computers at a table.
 description: |
-  TODO
+  What the Bulletin team learned about service workers while developing a PWA.
 tags:
   - blog
   - progressive-web-apps
@@ -34,11 +34,11 @@ Bulletin was shut down in 2019 due to lack of product/market fit. We still learn
 along the way!  
 {% endAside %}
 
-## Background
+## Background {: #background }
 
-TODO(kaycebasques): We should mention when Bulletin was developed.
+Bulletin was in active development from mid-2017 to mid-2019.
 
-### Why we chose to build a PWA
+### Why we chose to build a PWA {: #why-pwa }
 
 Before we delve into the development process, let's examine why building a PWA was an attractive
 option for this project:
@@ -55,12 +55,12 @@ option for this project:
   for the app. With a PWA it often meant simply opening a URL.
 * **Removed the friction of installing an app.**
 
-### Our framework
+### Our framework {: #framework }
 
 For Bulletin, we used [Polymer](https://www.polymer-project.org/), but any modern, well-supported
 framework will work.
 
-## What we learned about service workers
+## What we learned about service workers {: #lessons-learned }
 
 You can't have a PWA without a [service
 worker](https://developers.google.com/web/fundamentals/primers/service-workers/). Service workers
@@ -68,7 +68,7 @@ give you a lot of power, such as advanced caching strategies, offline capabiliti
 etc. While service workers do add some complexity, we found that their benefits outweighed the added
 complexity. 
 
-### Generate it if you can
+### Generate it if you can {: #generate }
 
 Avoid writing a service worker script by hand. Writing service workers by hand requires manually
 managing cached resources and rewriting logic that is common to most service workers libraries, such
@@ -78,7 +78,7 @@ Having said that, due to our internal tech stack we could not use a library to g
 our service worker. Our learnings below will at times reflect that. Go to [Pitfalls for
 non-generated service workers](#pitfalls) to read more.
 
-### Not all libraries are service-worker-compatible
+### Not all libraries are service-worker-compatible {: #libraries }
 
 Some JS libraries make assumptions that don't work as expected when run by a service worker. For
 instance, assuming `window` or `document` are available, or using an API not available to service
@@ -90,7 +90,7 @@ unnecessary assumptions about the JavaScript context where possible to support s
 cases, such as by avoiding service worker-incompatible APIs and [avoiding global
 state](#global-state).
 
-### Avoid accessing IndexedDB during initialization
+### Avoid accessing IndexedDB during initialization {: #idb }
 
 Don't read [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) when
 initializing your service worker script, or else you can get into this undesired situation:
@@ -107,7 +107,7 @@ initializing your service worker script, or else you can get into this undesired
 In our case, the cache was invalidated on service worker install, so if the service worker never
 installed, users never received the updated app.
 
-### Make it resilient
+### Make it resilient {: #resilient }
 
 Though service worker scripts run in the background, they can also be terminated at any time, even
 when in the middle of I/O operations (network, IDB, etc). Any long-running process should be
@@ -130,7 +130,7 @@ to refer to the global object in a manner which will work across all contexts. A
 in global variables sparingly, as there is no guarantee as to when the script will be terminated and
 the state evicted.
 
-### Local development
+### Local development {: #local-development }
 
 A major component of service workers is caching resources locally. However, during development this
 is the exact _opposite_ of what you want, particularly when updates are done lazily. You still want
@@ -144,7 +144,7 @@ builds. This ensures that devs always get their most recent changes without any 
 important to include the `Cache-Control: no-cache` header as well to [prevent the browser from
 caching any assets](https://web.dev/http-cache/#unversioned-urls).
 
-### Lighthouse
+### Lighthouse {: #lighthouse }
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) provides a number of debugging
 tools useful for PWAs. It scans a site and generates reports covering PWAs, performance,
@@ -155,7 +155,7 @@ criteria to be a PWA. This actually happened to us once, where the service worke
 and we didn't realize it before a production push. Having Lighthouse as part of our CI would have
 prevented that.
 
-### Embrace continuous delivery
+### Embrace continuous delivery {: #continuous-delivery }
 
 Because service workers can automatically update, users lack the ability to limit upgrades. This
 significantly reduces the amount of out-of-date clients in the wild. When the user opened our app,
@@ -175,7 +175,7 @@ stale, or manually expiring the content after a few weeks. In practice, we never
 problems from stale clients. How strict a given team wants to be here is up to their specific use
 case, but PWAs provide significantly more flexibility than native apps.
 
-### Getting cookie values in a service worker
+### Getting cookie values in a service worker {: #cookies }
 
 Sometimes it is necessary to access cookie values in a service worker context. In our case, we
 needed to access cookie values to generate a token to authenticate first-party API requests. In a
@@ -193,7 +193,7 @@ asynchronous access to browser cookies and can be used directly by the service w
 
 ## Pitfalls for non-generated service workers {: #pitfalls }
 
-### Ensure service worker script changes if any static cached file changes
+### Ensure service worker script changes if any static cached file changes {: #regeneration }
 
 A common PWA pattern is for a service worker to install all static application files during its
 `install` phase, which enables clients to hit the Cache Storage API cache directly for all
@@ -204,7 +204,7 @@ static resource fileset within our service worker script, so every release produ
 service worker JavaScript file. Service worker libraries like
 [Workbox](https://developers.google.com/web/tools/workbox/) automate this process for you.
 
-### Unit testing
+### Unit testing {: #unit-testing }
 
 Service worker APIs function by adding event listeners to the global object. For example:
 
@@ -227,9 +227,12 @@ script as bare-bones as possible, splitting most of the implementation into othe
 those files were just standard JS modules, they could be more easily unit tested with standard test
 libraries.
 
-## Stay tuned
+## Stay tuned for parts 2 and 3 {: #stay-tuned }
 
 In parts 2 and 3 of this series we'll talk about media management and iOS-specific issues. If you
-want to ask us more about building a PWA at Google, contact us at the links below:
+want to ask us more about building a PWA at Google, visit our author profiles to find out
+how to contact us:
 
--  TODO
+- [Joel](/authors/joelriley)
+- [Douglas](/authors/douglasparker)
+- [Dikla](/authors/msdikla)
