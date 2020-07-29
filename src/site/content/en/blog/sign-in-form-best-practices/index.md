@@ -161,7 +161,7 @@ for buttons! Button elements provide accessible behaviour and built-in form
 submission functionality, and they can easily be styled. There's no point in
 using a `<div>` or some other element pretending to be a button. 
 
-Ensure that the submit button says what it does, such as **Create account** or 
+Ensure that the submit button says what it does. Examples include **Create account** or 
 **Sign in**, not **Submit** or **Start**.
 
 ### Ensure successful form submission {: #submission }
