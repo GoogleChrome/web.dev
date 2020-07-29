@@ -392,7 +392,7 @@ lists all 59 possible values.
 
 ### Enable the browser to suggest a strong password {: #password-suggestions }
 
-Modern browsers use heuristics to decide when to show password manager UI and 
+Modern browsers use heuristics to decide when to show the password manager UI and 
 suggest a strong password.
 
 Here's how Safari does it on desktop.
