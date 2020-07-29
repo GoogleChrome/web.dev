@@ -44,6 +44,16 @@ await document.documentElement.requestFullscreen();
 
 You can see browser compatibility on [Can I use](https://caniuse.com/#feat=mdn-api_keyboard_lock). Note that not all system keys can be locked. This varies from operating system to operating system. For example, follow [crbug.com/855738](https://crbug.com/855738) for progress updates on system keyboard lock for macOS.
 
+### Feature detection
+
+You can use the following pattern to check if the Keyboard Lock API is supported:
+
+```js
+if ('keyboard' in navigator && 'lock' in navigator.keyboard) {
+  // Supported!
+}
+```
+
 ### Locking the keyboard
 
 The [`lock()`](https://developer.mozilla.org/en-US/docs/Web/API/Keyboard/lock) method of the `Keyboard` interface returns a promise after enabling the capture of key presses for any or all of the keys on the physical keyboard. This method can only capture keys that are granted access by the underlying operating system. The `lock()` method takes an array of one or more key codes to lock. If no key codes are provided, all keys will be locked. A list of valid key code values is available in the [UI Events KeyboardEvent code Values](https://www.w3.org/TR/uievents-code/#keyboard-key-codes) spec.
@@ -79,6 +89,7 @@ document.addEventListener('keydown', (e) => {
     // when not in combination with the command or control key.
   }
 });
+```
 
 ### Unlocking the keyboard
 
