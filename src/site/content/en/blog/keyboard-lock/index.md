@@ -69,7 +69,8 @@ await navigator.keyboard.lock([
 ]);
 ```
 
-You can react on captured key presses for example in the `onkeydown` event:
+You can respond to captured key presses using keyboard events. 
+For example this code uses the `onkeydown` event:
 
 ```js
 document.addEventListener('keydown', (e) => {
