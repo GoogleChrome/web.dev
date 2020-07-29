@@ -409,8 +409,8 @@ to work out what a "strong password" is. Since browsers can securely store
 passwords and autofill them as necessary, there's no need for users to remember
 or enter passwords. Encouraging users to take advantage of built-in browser 
 password generators also means they're more likely to use a unique, strong 
-password on your site, and less likely to reuse a password that may end up 
-being compromised elsewhere.
+password on your site, and less likely to reuse a password that could be
+compromised elsewhere.
 
 {% Aside %}
 The downside with this approach is that there's no way to share passwords across
