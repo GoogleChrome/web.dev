@@ -145,7 +145,7 @@ All of this happens because the `type="email"` attribute is applied to an `<inpu
 Try typing some text into the password input. The text is hidden by default because the
 `type="password"` attribute has been applied to the element.
 
-* The `autocomplete`, `name`, `id` and `type` attributes help browsers understand 
+* The `autocomplete`, `name`, `id`, and `type` attributes help browsers understand 
 the role of inputs in order to store data that can later be used for autofill. 
 
 Try focusing the email input on a desktop device and start typing.
