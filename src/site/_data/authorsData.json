@@ -1401,5 +1401,21 @@
     "org": {
       "name": "Google"
     }
+  },
+  "jasonmiller": {
+    "name": {
+      "given": "Jason",
+      "family": "Miller"
+    },
+    "github": "https://github.com/developit",
+    "country": "US",
+    "homepage": "https://jasonformat.com/",
+    "twitter": ""twitter":",
+    "org": {
+      "name": "Google"
+    },
+    "description": {
+      "en": "Jason is a Web DevRel"
+    }
   }
 }

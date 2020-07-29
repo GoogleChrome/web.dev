@@ -205,3 +205,8 @@ redirects:
 
 - from: /image-size-responsive
   to: /image-aspect-ratio
+
+# Redirect to unified clipobard article
+
+- from: /image-support-for-async-clipboard
+  to: /async-clipboard
