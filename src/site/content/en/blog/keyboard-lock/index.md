@@ -69,7 +69,15 @@ await navigator.keyboard.lock([
 ]);
 ```
 
-If `lock()` is called multiple times without an intervening call to `unlock()` (see [below](#unlocking-the-keyboard)), then only the key codes specified in the last call will be in effect. If a second call to `lock()` is made before the first one has finished, then the first one will be rejected with an `AbortError`.
+You can react on captured key presses for example in the `onkeydown` event:
+
+```js
+document.addEventListener('keydown', (e) => {
+  if ((e.code === 'KeyA') && !(event.ctrlKey || event.metaKey)) {
+    // Do something when the 'A' key was pressed, but only
+    // when not in combination with the command or control key.
+  }
+});
 
 ### Unlocking the keyboard
 
