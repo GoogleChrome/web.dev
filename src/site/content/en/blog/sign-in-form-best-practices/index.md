@@ -5,7 +5,7 @@ authors:
   - samdutton
 scheduled: true
 date: 2020-06-29
-updated: 2020-07-27
+updated: 2020-07-29
 description: Use cross-platform browser features to build sign-in forms that are secure, accessible and easy to use.
 hero: hero.jpg
 alt: A person holding a phone.
@@ -173,7 +173,7 @@ ways to do that:
 * Emulate navigation with `History.pushState()` or `History.replaceState()`, 
 and remove the password form.
 
-If you use `XMLHttpRequest` or fetch, make sure that sign-in success or failure 
+If you use `XMLHttpRequest` or `fetch`, make sure that sign-in success or failure 
 is reported in the response.
 
 Consider disabling the **Sign in** button once the user has tapped or clicked
