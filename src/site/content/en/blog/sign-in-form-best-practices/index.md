@@ -314,7 +314,7 @@ on mobile, and crucial for email inputs, which get [high abandonment rates](http
 
 There are two parts to this:
 
-1. The `autocomplete`, `name`, `id` and `type` attributes help browsers understand 
+1. The `autocomplete`, `name`, `id`, and `type` attributes help browsers understand 
 the role of inputs in order to store data that can later be used for autofill. 
 To allow data to be stored for autofill, modern browsers also require inputs to 
 have a stable `name` or `id` value (not randomly generated on each page load), 
