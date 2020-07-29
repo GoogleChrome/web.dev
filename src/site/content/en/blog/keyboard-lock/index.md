@@ -13,7 +13,7 @@ date: 2020-07-28
 # updated:
 hero: hero.jpg
 ---
-With more and more users spending most of their time in the browser, richly interactive websites, games, and remote desktop or application streaming experiences strive to provide an immersive, full screen experience. To accomplish this, sites need access to special keys and keyboard shortcuts while they are in full screen mode, so that they can be used for navigation, menus, or gaming functionality. Some examples of the keys that may be required are <kbd>Esc</kbd>, <kbd>Alt</kbd>&nbsp;+&nbsp;<kbd>Tab</kbd>, <kbd>Cmd</kbd>&nbsp;+&nbsp;<kbd>`</kbd>, and <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>N</kbd>.
+With more and more users spending most of their time in the browser, richly interactive websites, games, remote desktop streaming, and application streaming strive to provide an immersive, full screen experience. To accomplish this, sites need access to special keys and keyboard shortcuts while they are in full screen mode, so that they can be used for navigation, menus, or gaming functionality. Some examples of the keys that may be required are <kbd>Esc</kbd>, <kbd>Alt</kbd>&nbsp;+&nbsp;<kbd>Tab</kbd>, <kbd>Cmd</kbd>&nbsp;+&nbsp;<kbd>`</kbd>, and <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>N</kbd>.
 
 By default, these keys are not available to the web application because they are captured by the browser or the underlying operating system. The Keyboard Lock API enables websites to use all available keys allowed by the host OS (see [Browser compatibility](#browser-compatibility)).
 
