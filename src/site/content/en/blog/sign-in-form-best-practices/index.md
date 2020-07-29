@@ -309,7 +309,7 @@ provides a code example.
 ### Help users to avoid re-entering data {: #autofill }
 
 You can help browsers store data correctly and autofill inputs, so users don't 
-have to remember and enter email and password values. This is particularly important 
+have to remember to enter email and password values. This is particularly important 
 on mobile, and crucial for email inputs, which get [high abandonment rates](https://www.formisimo.com/blog/conversion-rate-increases-57-with-form-analytics-case-study/).
 
 There are two parts to this:
