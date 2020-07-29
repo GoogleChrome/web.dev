@@ -366,7 +366,7 @@ authentication (fingerprint or facial recognition) is used if available.
   <figcaption class="w-figcaption">Sign-in with autocomplete—no text entry required!</figcaption>
 </figure>
 
-Chrome on desktop displays email suggestions, shows the password manager and autofills the password.
+Chrome on desktop displays email suggestions, shows the password manager, and autofills the password.
 
 <figure class="w-figure">
   <img class="w-screenshot" src="./chrome-signin-desktop.png" alt="Screenshots of four stages of sign-in process in Chrome on desktop: email completion, email suggestion, password manager, autofill on selection.">
