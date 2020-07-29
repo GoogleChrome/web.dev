@@ -3,7 +3,7 @@ title: Using the HTML5 Drag and Drop API
 authors:
   - ericbidelman
   - rachelandrew
-date: 2019-09-19
+date: 2010-09-30
 updated: 2020-07-29
 description:
   The HTML5 Drag and Drop (DnD) API means that we can make almost any element on our page draggable. In this post I’ll explain the basics of Drag and Drop.
@@ -12,11 +12,11 @@ tags:
 ---
 
 The HTML5 Drag and Drop (DnD) API means that we can make almost any element on our page draggable.
-In this post I’ll explain the basics of Drag and Drop.
+In this post I'll explain the basics of Drag and Drop.
 
 ## Creating draggable content
 
-It’s worth noting that in most browsers, text selections, img elements, and anchor elements are draggable by default.
+It's worth noting that in most browsers, text selections, img elements, and anchor elements are draggable by default.
 If you drag the logo on google.com you will see the ghost image,
 the image can then be dropped in the address bar, an `<input type="file" />` element, or even the desktop.
 To make other types of content draggable you need to use the HTML5 DnD APIs.
@@ -245,7 +245,7 @@ function handleDragStart(e) {
 ```
 
 In the `drop` event you process the column drop,
-setting the source column’s HTML to the HTML of the target column that you dropped on,
+setting the source column's HTML to the HTML of the target column that you dropped on,
 first checking that the user is not dropping back onto the same column they dragged from.
 
 ```js/5-8
