@@ -5,26 +5,30 @@ authors:
   - rachelandrew
 date: 2010-09-30
 updated: 2020-07-29
-description:
-  The HTML5 Drag and Drop (DnD) API means that we can make almost any element on our page draggable. In this post I’ll explain the basics of Drag and Drop.
+description: >
+  The HTML5 Drag and Drop (DnD) API means that we can make
+  almost any element on our page draggable. In this post we’ll explain
+  the basics of Drag and Drop.
 tags:
+  - blog
   - html
+  - javascript
 ---
 
 The HTML5 Drag and Drop (DnD) API means that we can make almost any element on our page draggable.
-In this post I'll explain the basics of Drag and Drop.
+In this post we'll explain the basics of Drag and Drop.
 
 ## Creating draggable content
 
-It's worth noting that in most browsers, text selections, img elements, and anchor elements are draggable by default.
-If you drag the logo on google.com you will see the ghost image,
-the image can then be dropped in the address bar, an `<input type="file" />` element, or even the desktop.
+It's worth noting that in most browsers, text selections, images, and links are draggable by default.
+For example, if you drag the Google logo on [Google Search](https://google.com) you will see the ghost image.
+The image can then be dropped in the address bar, an `<input type="file" />` element, or even the desktop.
 To make other types of content draggable you need to use the HTML5 DnD APIs.
 
 To make an object draggable set `draggable=true` on that element.
 Just about anything can be drag-enabled, images, files, links, files, or any markup on your page.
 
-In my example I am creating an interface to rearrange some columns,
+In our example we're creating an interface to rearrange some columns,
 which have been laid out with CSS Grid.
 The basic markup for my columns looks like this,
 with each column having the `draggable` attribute set to `true`.
@@ -231,7 +235,11 @@ Calling `e.dataTransfer.setData(mimeType, dataPayload)` lets you set the object'
 In this example, we're going to allow users to rearrange the order of the columns.
 To do that, first you need to store the source element's HTML when the drag starts:
 
-TO DO add video here.
+  <figure class="w-figure">
+    <video controls autoplay loop muted class="w-screenshot">
+      <source src="https://storage.googleapis.com/web-dev-assets/drag-and-drop/webdev-dnd.mp4" type="video/mp4">
+    </video>
+  </figure>
 
 ```js/3-6
 function handleDragStart(e) {
