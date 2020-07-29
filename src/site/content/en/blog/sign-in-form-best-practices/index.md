@@ -226,7 +226,7 @@ select the input to start typing.
 
 Passwords inputs should have `type="password"` to hide password text and help the 
 browser understand that the input is for passwords. (Note that browsers use 
-[a variety of techniques](#autofill) in order to understand input roles and decide 
+[a variety of techniques](#autofill) to understand input roles and decide 
 whether or not to offer to save passwords.)
 
 You should add a **Show password** icon or button to enable users to check the 
