@@ -13,6 +13,7 @@ tags:
   - blog
   - html
   - javascript
+  - file-system
 ---
 
 The HTML5 Drag and Drop (DnD) API means that we can make almost any element on our page draggable.
