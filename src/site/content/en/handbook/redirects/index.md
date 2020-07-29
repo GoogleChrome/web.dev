@@ -10,7 +10,7 @@ This guide explains how to redirect content.
 
 ## Redirect a single page
 
-1. Open [`src/site/content/en/_redirects.yaml`][source].
+1. Open [`src/site/content/_redirects.yaml`][source].
 1. Add an entry similar to the following:
 
    ```yaml
@@ -23,7 +23,7 @@ This guide explains how to redirect content.
 It's possible to redirect a subdirectory of content, but this feature
 is probably no longer useful because web.dev now uses a [flat URL structure][flat].
 
-1. Open [`src/site/content/en/_redirects.yaml`][source].
+1. Open [`src/site/content/_redirects.yaml`][source].
 1. Add an entry similar to the following:
 
    ```yaml
@@ -31,5 +31,5 @@ is probably no longer useful because web.dev now uses a [flat URL structure][fla
    to: /path/to/new/subdirectory/...
    ```
 
-[source]: https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/_redirects.yaml
+[source]: https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/_redirects.yaml
 [flat]: https://joeyhoer.com/flat-vs-hierarchical-url-structure-420f178c

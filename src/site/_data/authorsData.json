@@ -1408,5 +1408,29 @@
       "family": "Brufau"
     },
     "github": "Loirooriol"
+  },
+  "joelriley": {
+    "name": {
+      "given": "Joel",
+      "family": "Riley"
+    },
+    "github": "j0000el",
+    "twitter": "j0000el",
+    "country": "US",
+    "org": {
+      "name": "Google"
+    }
+  },
+  "douglasparker": {
+    "name": {
+      "given": "Douglas",
+      "family": "Parker"
+    },
+    "github": "dgp1130",
+    "twitter": "develwoutacause",
+    "country": "US",
+    "org": {
+      "name": "Google"
+    }
   }
 }
