@@ -2,7 +2,7 @@
 title: Referer and Referrer-Policy best practices
 subhead: Best practices to set your Referrer-Policy and use the referrer in incoming requests.
 authors:
-  - maudnalpas
+  - maudn
 date: 2020-07-30
 updated: 2020-07-30
 hero: hero.jpg
