@@ -3,8 +3,8 @@ title: Introducing the &lt;model-viewer&gt; web component
 subhead: Adding 3D models to a website can be tricky; &lt;model-viewer&gt; is as easy as writing HTML.
 authors:
   - joemedley
-date: 2020-08-03
-updated: 2020-08-03
+date: 2020-07-29
+updated: 2020-07-29
 hero: hero.jpg
 description: |
   Adding 3D models to a website is tricky for a variety of reasons including
@@ -91,9 +91,15 @@ poster="./spacesuit.jpg"></model-viewer>
 
 That code renders like this:
 
-<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
-<model-viewer id="mv-demo" shadow-intensity="1" src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" alt="A 3D model of an astronaut" auto-rotate camera-controls poster="./spacesuit.jpg" ></model-viewer>
+<div class="glitch-embed-wrap" style="height: 500px; width: 100%;">
+  <iframe
+    src="https://model-viewer-example.glitch.me/?previewSize=100"
+    title="<model-viewer> on Glitch"
+    allow="geolocation; microphone; camera; midi; vr; encrypted-media;
+clipboard; clipboard-read; clipboard-write"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
 
 ### Adding motion and interactivity
 
