@@ -51,8 +51,7 @@ in Chrome 85.
 {% Aside %}
 The Async Clipboard API is limited to handling text and images. Chrome 84
 introduces an experimental feature that allows the clipboard to handle any
-arbitrary data type. For more information, see Cut and paste non-standard data
-formats.
+arbitrary data type. 
 {% endAside %}
 
 ## Copy: writing data to the clipboard
