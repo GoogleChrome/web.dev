@@ -642,6 +642,22 @@
     "github": "rowan-m",
     "glitch": "rowan-m"
   },
+  "maudnalpas": {
+    "name": {
+      "given": "Maud",
+      "family": "Nalpas"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Developer Relations"
+    },
+    "description": {
+      "en": "Developer Advocate for Chrome and web"
+    },
+    "country": "DE",
+    "twitter": "maudnals",
+    "github": "maudnals"
+  },
   "adamargyle": {
     "name": {
       "given": "Adam",
