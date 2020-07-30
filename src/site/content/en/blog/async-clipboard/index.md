@@ -38,7 +38,7 @@ addresses these issues, providing a well-defined permissions model that doesn't
 block the page. Safari recently announced  [support for it in version
 13.1](https://webkit.org/blog/10855/). With that, major browsers have a basic
 level of support in place. As of this writing, Firefox only supports text and
-image support is limited to pngs in some browsers. If you're interested in using
+image support is limited to PNGs in some browsers. If you're interested in using
 the API,
 [consult a browser support table](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard#Browser_compatibility)
 before proceeding.
