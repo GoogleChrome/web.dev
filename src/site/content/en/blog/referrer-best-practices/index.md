@@ -28,7 +28,7 @@ tags:
 {% Aside %} Before we start:
 
 - If you're unsure of the difference between "site" and "origin", check out [Understanding
-  "same-site" and "same-origin"](https://web.dev/same-site-same-origin/).
+  "same-site" and "same-origin"](/same-site-same-origin/).
 - The `Referer` header is missing an R, due to an original misspelling in the spec. The
   `Referrer-Policy` header and `referrer` in JavaScript and the DOM are spelled correctly. {%
   endAside %}
@@ -84,7 +84,7 @@ You can select one of eight policies. Depending on the policy, the data availabl
 header (and `document.referrer`) can be:
 
 - No data (no `Referer` header is present)
-- Only the [origin](https://web.dev/same-site-same-origin/#origin)
+- Only the [origin](/same-site-same-origin/#origin)
 - The full URL: origin, path, and query string
 
 <figure class="w-figure">
@@ -103,7 +103,7 @@ header and `document.referrer`:
   <img src="./referrer-policies.jpg" alt="Different referrer policies and their behaviour, depending on the security and cross-origin context.">
 </figure>
 
-MDN provides a [full list of policies and behaviour
+MDN provides a [full list of policies and behavior
 examples](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy#Directives).
 
 Things to note:
@@ -129,7 +129,7 @@ _As of July 2020_
     <thead>
       <tr>
         <th>Browser</th>
-        <th>Default `Referrer-Policy` / Behaviour</th>
+        <th>Default <code>Referrer-Policy</code> / Behavior</th>
       </tr>
     </thead>
     <tbody>
@@ -168,7 +168,6 @@ _As of July 2020_
         </td>
       </tr>
     </tbody>
-    <caption>Default referrer policies in browsers.</caption>
   </table>
 </div>
 
@@ -225,7 +224,7 @@ When inspecting an HTTP request:
 <figure class="w-figure">
   <img src="./referrer-devtools.jpg" alt="A screenshot of the Network panel of Chrome DevTools, showing Referer and Referrer-Policy.">
   <figcaption class="w-figcaption">
-    Chrome DevTools, Network panel with a request selected.
+    Chrome DevTools, <b>Network</b> panel with a request selected.
   </figcaption>
 </figure>
 
@@ -253,7 +252,7 @@ You need a policy that is secure, privacy-enhancing, and useful—what "useful" 
 you want from the referrer:
 
 - **Secure**: if your website uses HTTPS ([if not, make it a
-  priority](https://web.dev/why-https-matters/)), you don't want your website's URLs to leak in
+  priority](/why-https-matters/)), you don't want your website's URLs to leak in
   non-HTTPS requests. Since anyone on the network can see these, this would expose your users to
   man-in-the-middle-attacks. The policies `no-referrer-when-downgrade`,
   `strict-origin-when-cross-origin`, `no-referrer` and `strict-origin` solve this problem.
@@ -304,7 +303,7 @@ fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
 ```
 
 {% Aside 'gotchas' %} A per-element policy is [not supported in all
-browsers](https://caniuse.com/#search=referrerpolicy). But browsers that don't support this tend to
+browsers](https://caniuse.com/#feat=mdn-api_request_referrerpolicy). But browsers that don't support this tend to
 take a strict approach anyway (for example, all cross-origin requests will set `Referer`to the
 origin). {% endAside %}
 
@@ -352,10 +351,10 @@ And instead of `Referer`, consider using other headers that might address your u
 A protective referrer policy is a great way to give your users more privacy.
 
 To learn more about different techniques to protect your users, check out
-[web.dev/secure](https://web.dev/secure/)!
+web.dev's [Safe and secure](/secure/) collection!
 
 _With many thanks for contributions and feedback to all reviewers - especially Kaustubha Govind,
-David Van Cleve, Mike West, Sam Dutton, Rowan Merewood, Jxck and Kayce Basque._
+David Van Cleve, Mike West, Sam Dutton, Rowan Merewood, Jxck and Kayce Basques._
 
 ## Resources
 
