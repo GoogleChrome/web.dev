@@ -254,7 +254,7 @@ you want from the referrer:
 - **Secure**: if your website uses HTTPS ([if not, make it a
   priority](/why-https-matters/)), you don't want your website's URLs to leak in
   non-HTTPS requests. Since anyone on the network can see these, this would expose your users to
-  man-in-the-middle-attacks. The policies `no-referrer-when-downgrade`,
+  person-in-the-middle-attacks. The policies `no-referrer-when-downgrade`,
   `strict-origin-when-cross-origin`, `no-referrer` and `strict-origin` solve this problem.
 - **Privacy-enhancing**: for a cross-origin request, `no-referrer-when-downgrade` shares the full
   URL—this is not privacy-enhancing. `strict-origin-when-cross-origin` and `strict-origin` only
