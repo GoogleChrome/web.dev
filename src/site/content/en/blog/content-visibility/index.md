@@ -13,13 +13,13 @@ tags:
   - css
 ---
 
-The [`content-visibility`](https://drafts.csswg.org/css-contain/#propdef-content-visibility) property might be one of the most impactful new CSS properties for improving page load performance. `content-visibility` enables the user agent to skip an element's rendering work, including layout and painting, until it is needed. If a large portion of your content is off-screen, leveraging the `content-visibility` property allows the browser to skip the rendering working for this content, making the initial user load much faster. Additionally, it allows for faster interactions with the on-screen content. Pretty neat.
+The [`content-visibility`](https://drafts.csswg.org/css-contain/#propdef-content-visibility) property might be one of the most impactful new CSS properties for improving page load performance. `content-visibility` enables the user agent to skip an element's rendering work, including layout and painting, until it is needed. Because rendering is skipped, if a large portion of your content is off-screen, leveraging the `content-visibility` property makes the initial user load much faster. It also allows for faster interactions with the on-screen content. Pretty neat.
 
-`content-visibility` relies on primitives within the [the CSS Containment Spec](http://drafts.csswg.org/css-contain/). So, what exactly is this spec? Let's dive in.
+## Browser Support {: #support }
+
+`content-visibility` relies on primitives within the [the CSS Containment Spec](http://drafts.csswg.org/css-contain/). While `content-visibility` is only supported in Chromium 85 for now (and deemed ["worth prototyping"](https://github.com/mozilla/standards-positions/issues/135) for Firefox), the Containment Spec is supported in [most modern browsers](https://caniuse.com/#feat=css-containment).
 
 ## CSS Containment {: #containment }
-
- -- Caniuse Image Here: caniuse.com/#feat=css-containment --
 
 The key and overarching goal of CSS containment is to enable rendering performance improvements of web content by providing *predictable isolation of a DOM subtree* from the rest of the page.
 
@@ -34,7 +34,7 @@ There are four types of [CSS containment](https://developers.google.com/web/upda
 
 ## `content-visibility`
 
-It may be hard to figure out which containment values to use, since browser optimizations may only kick in when an appropriate set is specified. You can play around with the values to see [what works best](https://developers.google.com/web/updates/2016/06/css-containment), or you can use another CSS property called `content-visibility` to apply the needed containment automatically. `content-visibility` was created to ensure that you get the largest performance gains the browser can provide with least effort. 
+It may be hard to figure out which containment values to use, since browser optimizations may only kick in when an appropriate set is specified. You can play around with the values to see [what works best](https://developers.google.com/web/updates/2016/06/css-containment), or you can use another CSS property called `content-visibility` to apply the needed containment automatically. `content-visibility` ensures that you get the largest performance gains the browser can provide with less effort from you as a developer. 
 
 ### `content-visibility: auto` {: #auto }
 
@@ -116,4 +116,5 @@ Some great use cases for `content-visibility: hidden` are when implementing adva
 `content-visibility` and the CSS containment spec mean some exciting performance boosts are coming right to your CSS file. For more information on these properties, check out:
 
 - [The CSS Containment Spec](http://drafts.csswg.org/css-contain/)
+- [MDN Docs on CSS Containment](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Containment)
 - [CSSWG Drafts](https://github.com/w3c/csswg-drafts)
