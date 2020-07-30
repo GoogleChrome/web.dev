@@ -90,7 +90,7 @@ Things to note:
 
 _As of July 2020_
 
-**If no referrer policy is set, the browser’s default policy will be used.**
+**If no referrer policy is set, the browser's default policy will be used.**
 
 <div class="w-table-wrapper">
   <table>
@@ -154,7 +154,7 @@ There are different ways to set referrer policies for your site:
 
 You can set different policies for different pages, requests or elements.
 
-The HTTP header and the meta element are both page-level. The precedence order when determining an element’s effective policy is:
+The HTTP header and the meta element are both page-level. The precedence order when determining an element's effective policy is:
 
 1. Element-level policy
 1. Page-level policy
@@ -200,7 +200,7 @@ Summary: Explicitly set a privacy-enhancing policy such as `strict-origin-when-c
 
 ### Why "explicitly"?
 
-If no referrer policy is set, the browser’s default policy will be used—in fact, websites often defer to the browser’s default. But this is not ideal, because:
+If no referrer policy is set, the browser's default policy will be used—in fact, websites often defer to the browser's default. But this is not ideal, because:
 
 - Browser default policies are either `no-referrer-when-downgrade`, `strict-origin-when-cross-origin`, or stricter—depending on the browser and mode (private/incognito). So your website won't behave predictably across browsers.
 - Browsers are adopting stricter defaults such as `strict-origin-when-cross-origin` and mechanisms such as [referrer trimming](https://github.com/privacycg/proposals/issues/13) for cross-origin requests. Explicitly opting into a privacy-enhancing policy before browser defaults change gives you control and helps you run tests as you see fit.
