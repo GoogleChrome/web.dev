@@ -37,19 +37,19 @@ The
 addresses these issues, providing a well-defined permissions model that doesn't
 block the page. Safari recently announced  [support for it in version
 13.1](https://webkit.org/blog/10855/). With that, major browsers have a basic
-level of support in place. As of this writing, Firefox only supports text and
+level of support in place. As of this writing, Firefox only supports text; and
 image support is limited to PNGs in some browsers. If you're interested in using
 the API,
 [consult a browser support table](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard#Browser_compatibility)
 before proceeding.
 
-This article explains how to write both text and images to and read them from
+This article explains how to write both text and images to, and read them from
 the clipboard. This article does not cover [Feature Policy for the
 clipboard](https://www.chromestatus.com/features/5767075295395840) which landed
-in Chrome 85.
+in Chrome&nbsp;85.
 
 {% Aside %}
-The Async Clipboard API is limited to handling text and images. Chrome 84
+The Async Clipboard API is limited to handling text and images. Chrome&nbsp;84
 introduces an experimental feature that allows the clipboard to handle any
 arbitrary data type. 
 {% endAside %}
@@ -95,7 +95,7 @@ Next, pass an array of `ClipboardItem` objects as a parameter to the `write()`
 method. Currently you can only pass one image at a time, but we hope to add
 support for multiple images in the future. `ClipboardItem` takes an object with
 the MIME type of the image as the key and the blob as the value. For Blob
-objects obtained from fetch() or canvas.toBlob(), the `blob.type` property
+objects obtained from `fetch()` or `canvas.toBlob()`, the `blob.type` property
 automatically contains the correct MIME type for an image.
 
 ```js
@@ -109,7 +109,7 @@ try {
     })
   ]);
   console.log('Image copied.');
-} catch(err) {
+} catch (err) {
   console.error(err.name, err.message);
 }
 ```
@@ -117,14 +117,14 @@ try {
 ### The copy event
 
 In the case where a user initiates a clipboard copy, non-textual data is
-provided as a blob for you. The
+provided as a Blob for you. The
 [`copy` event](https://developer.mozilla.org/en-US/docs/Web/API/Document/copy_event)
 includes a `clipboardData` property with the items already in the right format,
-eliminating the need to manually create a blob. Call `preventDefault()` to
+eliminating the need to manually create a Blob. Call `preventDefault()` to
 prevent the default behavior in favor of your own logic, then copy contents to
 the clipboard. What's not covered in this example is how to fall back to earlier
-APIs when the Clipboard API isn't supported. I'll cover that under Feature
-detection, later in this article.
+APIs when the Clipboard API isn't supported. I'll cover that under
+[Feature detection](#feature-detection), later in this article.
 
 ```js
 document.addEventListener('copy', async (e) => {
@@ -132,13 +132,13 @@ document.addEventListener('copy', async (e) => {
   try {
     let clipboardItems = [];
     for (const item of e.clipboardData.items) {
-      if (!blog.type.startsWith('image/)') { continue; }
+      if (!blob.type.startsWith('image/') { continue; }
       clipboardItems.push(new ClipboardItem({
-        [blog.type]: blob
+        [blob.type]: blob
       }));
     await navigator.clipboard.write(clipboardItems);
     console.log('Image copied.');
-  } catch(err) {
+  } catch (err) {
     console.error(err.name, err.message);
   }
 });
@@ -172,7 +172,7 @@ objects, then iterate over them.
 Each `ClipboardItem` can hold its contents in different types, so you'll need to
 iterate over the list of types, again using a `for...of` loop. For each type,
 call the `getType()` method with the current type as an argument to obtain the
-corresponding image Blob. As before, this code is not tied to images, and will
+corresponding Blob. As before, this code is not tied to images, and will
 work with other future file types.
 
 ```js
@@ -193,13 +193,13 @@ async function getClipboardContents() {
 
 ### The paste event
 
-As I said, there are plans to introduce events to work with the Clipboard API,
+As noted before, there are plans to introduce events to work with the Clipboard API,
 but for now you can use the existing `paste` event. It works nicely with the new
-asynchronous methods for reading clipboard text. As with the copy event, don't
+asynchronous methods for reading clipboard text. As with the `copy` event, don't
 forget to call `preventDefault()`.
 
 ```js
-document.addEventListener('paste', async e => {
+document.addEventListener('paste', async (e) => {
   e.preventDefault();
   const text = await navigator.clipboard.readText();
   console.log('Pasted text: ', text);
@@ -207,26 +207,26 @@ document.addEventListener('paste', async e => {
 ```
 
 As with the `copy` event, falling back to earlier APIs when the Clipboard API
-isn't supported will be covered under Feature detection.
+isn't supported will be covered under [Feature detection](#feature-detection).
 
 ## Handling multiple file types
 
 Most implementations put multiple data formats on the clipboard for a single cut
 or copy operation. There are two reasons for this: as an app developer, you have
-no way of knowing the capabilities of the app that a user wants to copy text to,
+no way of knowing the capabilities of the app that a user wants to copy text or images to,
 and many applications support pasting structured data as plain text. This is
 presented to users with an **Edit** menu item with a name such as **Paste and
 match style** or **Paste without formatting**.
 
-The following example shows how to do this. This example uses fetch() to obtain
+The following example shows how to do this. This example uses `fetch()` to obtain
 image data, but it could also come from a
 `[<canvas>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas)`
 or the [Native File System API](https://web.dev/native-file-system/).
 
 ```js
 function copy() {
-  const image = await fetch('myImage.png');
-  const text = new Blob(['this is an image'], {type: 'text/plain'});
+  const image = await fetch('kitten.png');
+  const text = new Blob(['Cute sleeping kitten'], {type: 'text/plain'});
   const item = new ClipboardItem({
     'text/plain': text,
     'image/png': image
@@ -251,7 +251,7 @@ troublesome. Users routinely copy sensitive information like passwords and
 personal details to the clipboard, which could then be read by any page without
 the user's knowledge.
 
-As with many new APIs, the clipboard API is only supported for pages served over
+As with many new APIs, the Clipboard API is only supported for pages served over
 HTTPS. To help prevent abuse, clipboard access is only allowed when a page is
 the active tab. Pages in active tabs can write to the clipboard without
 requesting permission, but reading from the clipboard always requires
@@ -305,11 +305,11 @@ To use the Async Clipboard API while supporting all browsers, test for
 you might implement pasting to include other browsers.
 
 ```js
-document.addEventListener('paste', async e => {
+document.addEventListener('paste', async (e) => {
   e.preventDefault();
   let text;
   if (navigator.clipboard) {
-    text = await navigator.clipboard.readText()
+    text = await navigator.clipboard.readText();
   }
   else {
     text = e.clipboardData.getData('text/plain');
@@ -321,12 +321,12 @@ document.addEventListener('paste', async e => {
 That's not the whole story. Before the Async Clipboard API, there were a mix of
 different copy and paste implementations across web browsers. In most browsers,
 the browser's own copy and paste can be triggered using
-d`ocument.execCommand('copy')` and `document.execCommand('paste')`. If the text
+`document.execCommand('copy')` and `document.execCommand('paste')`. If the text
 to be copied is a string not present in the DOM, it must be injected into the
 DOM and selected:
 
 ```js
-button.addEventListener('click', e => {
+button.addEventListener('click', (e) => {
   const input = document.createElement('input');
   document.body.appendChild(input);
   input.value = text;
@@ -339,16 +339,16 @@ button.addEventListener('click', e => {
 });
 ```
 
-In Internet Explorer, I can also access the clipboard through
+In Internet Explorer, you can also access the clipboard through
 `window.clipboardData`. If accessed within a user gesture such as a click
 event—part of asking permission responsibly—no permissions prompt is shown.
 
 ## Demos
 
 You can play with the Async Clipboard API in the demos below. You might get a
-`NotAllowedError` if running in an iframe, that is caused the newly implemented
-[clipboard Feature
-Policy](https://www.chromestatus.com/feature/5767075295395840). In this case
+`NotAllowedError` if running in an iframe, that is caused by the newly implemented
+[`clipboard` Feature Policy](https://www.chromestatus.com/feature/5767075295395840).
+In this case
 just run the demo [directly on Glitch](https://async-clipboard-api.glitch.me/).
 
 The first example demonstrates moving text on and off the clipboard.
@@ -363,7 +363,7 @@ clipboard; clipboard-read; clipboard-write"
   </iframe>
 </div>
 
-To try the API with images use this demo. Recall that only pngs are supported
+To try the API with images use this demo. Recall that only PNGs are supported
 and only in [a few
 browsers]([https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API).
 
@@ -384,7 +384,7 @@ simplified events aligned with the
 [Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API).
 Because of potential risks Chrome is
 treading carefully. To stay up to date on Chrome's progress, watch this article
-and [https://web.dev/blog/](https://web.dev/blog/) for updates.
+and our [blog](https://web.dev/blog/) for updates.
 
 For now, support for the Clipboard API is available in
 [a number of browsers](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard#Browser_compatibility).
@@ -409,4 +409,4 @@ reviewing parts of this article.
 Photo by [Markus
 Winkler](https://unsplash.com/@markuswinkler?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
 on
-[Upsplash](https://unsplash.com/s/photos/clipboard?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText).
+[Unsplash](https://unsplash.com/photos/7iSEHWsxPLw).
