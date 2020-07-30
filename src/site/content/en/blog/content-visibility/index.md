@@ -1,5 +1,5 @@
 ---
-title: 'CSS Content Visibility: the most impactful performance boost CSS can give you'
+title: '`content-visibility`: the new CSS property that boosts your rendering performance'
 subhead: TBD
 authors:
   - vladimirlevin
@@ -15,6 +15,13 @@ tags:
 ---
 
 The [`content-visibility`](https://drafts.csswg.org/css-contain/#propdef-content-visibility) property might be one of the most impactful new CSS properties for improving page load performance. `content-visibility` enables the user agent to skip an element's rendering work, including layout and painting, until it is needed. Because rendering is skipped, if a large portion of your content is off-screen, leveraging the `content-visibility` property makes the initial user load much faster. It also allows for faster interactions with the on-screen content. Pretty neat.
+
+<figure class="w-figure">
+  <img src="demo.jpg" alt="demo with figures representing network results">
+  <figcaption class="w-figcaption">
+    In our article demo, applying <code>content-visibility: auto</code> to chunked content areas gives a <b>7x</b> rendering performance boost on initial load. Read on to learn more.</a>
+  </figcaption>
+</figure>
 
 ## Browser Support {: #support }
 
@@ -43,13 +50,16 @@ The content-visibility property accepts several values, but `auto` is the one th
 
 What does this mean? In short, if the element is off-screen it is not rendered. The browser determines the size of the element without considering any of its contents, and it stops there. Most of the rendering, such as styling and layout of the element's subtree are skipped.
 
-
-
 As the element approaches the viewport, the browser no longer adds the `size` containment and starts painting and hit-testing the element's content. This enables the rendering work to be done just in time to be seen by the user.
 
 #### Example: a travel blog {: #example }
 
---- diagram / screenshot of a mock travel blog ---
+<figure class='w-figure'>
+  <video controls autoplay loop muted playsinline class='w-screenshot'>
+    <source src='https://storage.googleapis.com/web-dev-assets/content-visibility/travel_blog.mp4'>
+  </video>
+  <figcaption>In this example, we baseline our travel blog on the right, and apply <code>content-visibility: auto</code> to chunked areas on the left. The results show rendering times going from <b>232ms</b> to <b>30ms</b> on initial page load.</figcaption>
+</figure>
 
 A travel blog typically contains a set of stories. Each story has a few pictures, and some descriptive text. Here is what happens in a typical browser when it navigates to a travel blog:
 A part of the page is downloaded from the network, along with any needed resources.
@@ -58,15 +68,25 @@ The browser goes back to step 1 until all of the page and resources are download
 
 In step 2, the browser processes all of the contents looking for things that may have changed. It updates the style and layout of any new elements, along with the elements that may have shifted as a result of new updates. This is rendering work. This takes time.
 
---- diagram ---
+<figure class="w-figure">
+  <img src="travelblog.jpg" alt="">
+  <figcaption class="w-figcaption">
+    An example of a travel blog. See <a href="https://codepen.io/una/pen/rNxEWLo">Demo on Codepen</a>
+  </figcaption>
+</figure>
 
 Now consider what happens if you put `content-visibility: auto` on each of the individual stories in the blog. The general loop is the same: the browser downloads and renders chunks of the page. However, the difference is in the amount of work that it does in step 2.
 
 With content-visibility, it will style and layout all of the contents that are currently visible to the user (they are on-screen). However, when processing the story that is fully off-screen, the browser will skip the rendering work and only style and layout the element box itself.
 
---- diagram ---
+<figure class="w-figure">
+  <img src="travelblog-chunked.jpg" alt="">
+  <figcaption class="w-figcaption">
+    Example of chunking content into sections with `content-visibility: auto` applied. See <a href="https://codepen.io/vmpstr/pen/xxZoyMb">Demo on Codepen</a>
+  </figcaption>
+</figure>
 
-The performance of loading this page would be as if it contained full on-screen stories and empty boxes for each of the off-screen stories. This performs much better, with *expected reduction of 50% or more* from the rendering cost of loading.
+The performance of loading this page would be as if it contained full on-screen stories and empty boxes for each of the off-screen stories. This performs much better, with *expected reduction of 50% or more* from the rendering cost of loading. In our example, we see a boost from a **232ms** rendering time to a **30ms** rendering time. That's a **7x** performance boost.
 
 What is the work that you need to do in order to reap these benefits? The addition of the following style rule:
 
