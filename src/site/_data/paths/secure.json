@@ -22,6 +22,12 @@
         "same-origin-policy",
         "cross-origin-resource-sharing"
       ]
+    },
+    {
+      "title": "Protect users from tracking",
+      "pathItems": [
+        "referrer-best-practices"
+      ]
     }
   ]
 }
