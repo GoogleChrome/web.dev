@@ -11,6 +11,7 @@ description: TBD
 tags:
   - blog
   - css
+  - layout
 ---
 
 The [`content-visibility`](https://drafts.csswg.org/css-contain/#propdef-content-visibility) property might be one of the most impactful new CSS properties for improving page load performance. `content-visibility` enables the user agent to skip an element's rendering work, including layout and painting, until it is needed. Because rendering is skipped, if a large portion of your content is off-screen, leveraging the `content-visibility` property makes the initial user load much faster. It also allows for faster interactions with the on-screen content. Pretty neat.
@@ -21,7 +22,7 @@ The [`content-visibility`](https://drafts.csswg.org/css-contain/#propdef-content
 
 ## CSS Containment {: #containment }
 
-The key and overarching goal of CSS containment is to enable rendering performance improvements of web content by providing *predictable isolation of a DOM subtree* from the rest of the page.
+The key and overarching goal of CSS containment is to enable rendering performance improvements of web content by providing **predictable isolation of a DOM subtree** from the rest of the page.
 
 Basically a developer can tell a browser what parts of the page are encapsulated as a set of content, allowing the browsers to reason about the content without needing to consider state outside of the subtree. Knowing which bits of content (subtrees) contain isolated content means the browser can make optimization decisions for page rendering.
 
@@ -32,11 +33,11 @@ There are four types of [CSS containment](https://developers.google.com/web/upda
 - `style`: Style containment ensures that properties which can have effects on more than just its descendants don't escape the element (e.g. counters).
 - `paint`: Paint containment ensures that the descendants of the containing box don't display outside its bounds. Nothing can visibly overflow the element, and if an element is off-screen or otherwise not visible, its descendants will also not be visible.
 
-## `content-visibility`
+## Skipping rendering work with `content-visibility`
 
 It may be hard to figure out which containment values to use, since browser optimizations may only kick in when an appropriate set is specified. You can play around with the values to see [what works best](https://developers.google.com/web/updates/2016/06/css-containment), or you can use another CSS property called `content-visibility` to apply the needed containment automatically. `content-visibility` ensures that you get the largest performance gains the browser can provide with less effort from you as a developer. 
 
-### `content-visibility: auto` {: #auto }
+### Automatic performance improvements with `content-visibility: auto` {: #auto }
 
 The content-visibility property accepts several values, but `auto` is the one that provides immediate performance improvements. An element that has `content-visibility: auto` gains `layout`, `style` and `paint` containment. If the element is off-screen (and not otherwise relevant to the user—relevant elements would be the ones that have focus or selection in their subtree), it also gains `size` containment (it stops [painting](https://developers.google.com/web/updates/2018/09/inside-browser-part3#paint) and [hit-testing](https://developers.google.com/web/updates/2018/09/inside-browser-part4#finding_the_event_target) its contents).
 
@@ -80,7 +81,7 @@ What is the work that you need to do in order to reap these benefits? The additi
 Note that as content moves in and out of visibility, it will start and stop being rendered as needed. However, this does not mean that the browser will have to render and re-render the same content over and over again.
 {% endAside %}
 
-##### `contain-intrinsic-size`
+##### Specifying the natural size of an element with `contain-intrinsic-size`
 
 In order to realize the potential benefits of `content-visibility`, the browser needs to apply size containment to ensure that the rendering results of contents do not affect the size of the element in any way.
 
@@ -94,7 +95,7 @@ This means it will lay out as if it had a single child of "intrinsic-size" dimen
 
 
 
-### `content-visibility: hidden`
+### Hiding content with `content-visibility: hidden`
 
 What if you want to keep the content unrendered regardless of whether or not it is on-screen, while leveraging the benefits of cached rendering state? Enter:  `content-visibility: hidden`.
 
