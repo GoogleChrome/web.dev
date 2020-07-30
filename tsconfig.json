@@ -28,7 +28,7 @@
   },
   "include": [
     "src/**/*",
-    "typings/**/*.d.ts"
+    "types/**/*.d.ts"
   ],
   "exclude": [
     ".github",
