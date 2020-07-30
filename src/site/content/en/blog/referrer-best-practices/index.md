@@ -302,9 +302,13 @@ policy for specific requests or elements.
 fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
 ```
 
-{% Aside 'gotchas' %} A per-element policy is [not supported in all
-browsers](https://caniuse.com/#feat=mdn-api_request_referrerpolicy). But browsers that don't support this tend to
-take a strict approach anyway (for example, all cross-origin requests will set `Referer`to the
+{% Aside 'gotchas' %} A per-element policy is not supported in all
+browsers browsers (Examples: `referrerpolicy` for [`a`
+elements](https://caniuse.com/#feat=mdn-html_elements_a_referrerpolicy),
+for [`img` elements](https://caniuse.com/#feat=mdn-html_elements_img_referrerpolicy),
+and for [`link` elements](https://caniuse.com/#feat=mdn-html_elements_link_referrerpolicy)).
+But browsers that don't support this tend to take a strict approach anyway
+(for example, all cross-origin requests will set `Referer` to the
 origin). {% endAside %}
 
 ### What else should you consider?
