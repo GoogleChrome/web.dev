@@ -169,7 +169,7 @@ We were able to push out breaking backend changes with a very short amount of mi
 clients. Typically, we would give a month for users to update to newer clients before making
 breaking changes. Since the app would serve while stale, it was actually possible for older clients
 to exist in the wild if the user had not opened the app for a long time. On iOS, service workers are
-[evicted after a couple weeks](https://medium.com/@firt/pwas-are-coming-to-ios-11-3-cupertino-we-have-a-problem-2ff49fd7d6ea)
+[evicted after a couple weeks](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/#post-10218:~:text=7%2DDay%20Cap%20on%20All%20Script%2DWriteable%20Storage)
 so this case does not happen. For Android, this problem could be mitigated by not serving while
 stale, or manually expiring the content after a few weeks. In practice, we never encountered
 problems from stale clients. How strict a given team wants to be here is up to their specific use
