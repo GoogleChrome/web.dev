@@ -94,7 +94,7 @@ Using the `loading` attribute on iframes works as follows:
         width="600" 
         height="400"></iframe>
 
-<!-- or use loading="eager" to out of automatic 
+<!-- or use loading="eager" to opt out of automatic 
 lazy-loading in Lite Mode -->
 <iframe src="https://example.com" 
         loading="eager" 
