@@ -1143,11 +1143,16 @@
       "given": "Maud",
       "family": "Nalpas"
     },
-    "twitter": "maudnals",
-    "country": "DE",
     "org": {
-      "name": "Google"
-    }
+      "name": "Google",
+      "unit": "Developer Relations"
+    },
+    "description": {
+      "en": "Developer Advocate for Chrome and web"
+    },
+    "country": "DE",
+    "twitter": "maudnals",
+    "github": "maudnals"
   },
   "morss": {
     "name": {
