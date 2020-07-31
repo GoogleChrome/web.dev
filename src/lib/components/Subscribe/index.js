@@ -33,16 +33,17 @@ class Subscribe extends BaseElement {
 
   connectedCallback() {
     super.connectedCallback();
+    /** @type {HTMLFormElement} */
     this.form = this.querySelector('.w-subscribe__form');
+    /** @type HTMLElement */
     this.subscribeError = this.querySelector('.w-subscribe__error');
     this.subscribeMessage = this.querySelector('.w-subscribe__message');
-    this.submissionUrl = this.form.action;
-    this.form.addEventListener('submit', this.onSubmit);
+    this.submissionUrl = this.form?.action;
+    this.form?.addEventListener('submit', this.onSubmit);
   }
 
   detachedCallback() {
-    super.detachedCallback();
-    this.form.removeEventListener('submit', this.onSubmit);
+    this.form?.removeEventListener('submit', this.onSubmit);
   }
 
   /**
@@ -50,7 +51,9 @@ class Subscribe extends BaseElement {
    * @return {FormData}
    */
   cleanForm(form) {
-    const doubleOptIn = this.needsDoubleOptIn.includes(form.get('Country'));
+    const doubleOptIn = this.needsDoubleOptIn.includes(
+      String(form.get('Country')),
+    );
     this.checkboxes.forEach((checkbox) =>
       form.set(checkbox, doubleOptIn ? 'Unconfirmed' : 'True'),
     );
@@ -59,7 +62,7 @@ class Subscribe extends BaseElement {
   }
 
   postForm(body) {
-    return fetch(this.submissionUrl, {
+    return fetch(this.submissionUrl || '', {
       method: 'POST',
       body,
     }).then((r) => r.json());
@@ -67,10 +70,14 @@ class Subscribe extends BaseElement {
 
   /**
    *
-   * @param {Error} [error]
-   * @param {boolean} [useDefault=false]
+   * @param {Error} error
+   * @param {boolean} useDefault
    */
   onError(error, useDefault = false) {
+    if (!this.subscribeError) {
+      return;
+    }
+
     const pTag = document.createElement('p');
     const defaultError = new Error('Could not submit, please try again.');
     this.subscribeError.textContent = '';
@@ -91,7 +98,7 @@ class Subscribe extends BaseElement {
     }
     this.processing = true;
     const form = new FormData(e.target);
-    const formIsRobot = form.get(this.robotName).length !== 0;
+    const formIsRobot = String(form.get(this.robotName)).length !== 0;
 
     if (formIsRobot) {
       this.onSuccess(true);

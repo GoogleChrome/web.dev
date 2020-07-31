@@ -28,7 +28,7 @@ const formatDate = function (date) {
  * Renders a map and a list of local events. It takes input from a <code>
  * element embedded as a child of this element.
  *
- * @extends {BaseElement}
+ * @extends {BaseStateElement}
  * @final
  */
 class EventMap extends BaseStateElement {
@@ -50,6 +50,8 @@ class EventMap extends BaseStateElement {
     this.center = '';
     this.size = '600x300';
     this.events = null;
+    this.zoom = 0;
+    this.key = '';
   }
 
   onStateChanged({communityEvents}) {
@@ -66,7 +68,7 @@ class EventMap extends BaseStateElement {
 
   render() {
     if (!this.events) {
-      return '';
+      return html``;
     }
 
     // Set the minimal zoom to 4, if only 1 marker present.

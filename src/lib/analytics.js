@@ -26,7 +26,7 @@ function getAnalyticsDataFromElement(elem, defaultAction = 'click') {
 }
 
 /**
- * @param {{ category: string, action: string, label: string, value: number }} param
+ * @param {{ category?: string, action?: string, label?: string, value?: number }} param
  */
 export function trackEvent({category, action, label, value}) {
   ga('send', 'event', {

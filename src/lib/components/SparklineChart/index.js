@@ -60,6 +60,7 @@ class SparklineChart extends BaseElement {
   constructor() {
     super();
 
+    this.fill = false;
     this.topPadding = 20;
     this.circleRadius = 3;
     this.strokeWidth = 2;
@@ -72,6 +73,7 @@ class SparklineChart extends BaseElement {
     this.point_ = null;
 
     // elements stolen from renderRoot
+    /** @type SVGLineElement */
     this.cursorElement_ = null;
     this.scoreElement_ = null;
     this.announcerElement_ = null;
@@ -119,8 +121,8 @@ class SparklineChart extends BaseElement {
 
     // Clear the point if it was drawn on the screen.
     if (!this.point_) {
-      this.cursorElement_.setAttribute('x1', -10000);
-      this.cursorElement_.setAttribute('x2', -10000);
+      this.cursorElement_.setAttribute('x1', '-10000');
+      this.cursorElement_.setAttribute('x2', '-10000');
       this.scoreElement_.setAttribute('transform', 'translate(-10000,-10000)');
       return;
     }
@@ -129,7 +131,7 @@ class SparklineChart extends BaseElement {
     this.cursorElement_.setAttribute('x1', this.point_.x);
     this.cursorElement_.setAttribute('x2', this.point_.x);
     this.cursorElement_.setAttribute('y1', this.point_.y);
-    this.cursorElement_.setAttribute('y2', this.height_);
+    this.cursorElement_.setAttribute('y2', String(this.height_));
     const colorClass = this.computeColorClass_(this.point_.score);
     this.cursorElement_.style.stroke = colorClass;
     this.cursorElement_.classList.value = `sl-cursor result--${colorClass}`;
@@ -174,11 +176,11 @@ class SparklineChart extends BaseElement {
     const dateTextWidth = this.scoreDateText_.getBoundingClientRect().width;
     this.scoreDateText_.setAttribute(
       'x',
-      scoreHoverRectWidth / 2 - dateTextWidth / 2,
+      String(scoreHoverRectWidth / 2 - dateTextWidth / 2),
     );
     this.scoreValueText_.setAttribute(
       'x',
-      scoreHoverRectWidth / 2 - scoreTextWidth / 2,
+      String(scoreHoverRectWidth / 2 - scoreTextWidth / 2),
     );
     this.scoreElement_.setAttribute('transform', `translate(${x},${y})`);
     this.scoreElement_.classList.value = `sl-caption result--${colorClass}`;
@@ -204,8 +206,8 @@ class SparklineChart extends BaseElement {
   connectedCallback() {
     super.connectedCallback();
 
-    this.setAttribute('aria-valuemin', 0);
-    this.setAttribute('aria-valuemax', 100);
+    this.setAttribute('aria-valuemin', '0');
+    this.setAttribute('aria-valuemax', '100');
 
     this.setAttribute('role', 'group');
     this.setAttribute(
@@ -229,7 +231,7 @@ class SparklineChart extends BaseElement {
   /**
    * As a mouse moves over this element, find and highlight the nearest point in the chart.
    *
-   * @param {!Event} e
+   * @param {TODO|Event} e
    */
   onMouseMove(e) {
     // TODO(b/117590606): Make this work with touch events.
@@ -260,7 +262,7 @@ class SparklineChart extends BaseElement {
   /**
    * Allow keyboard navigation through points.
    *
-   * @param {!Event} e
+   * @param {TODO|Event} e
    */
   onKeyDown(e) {
     switch (e.key) {
@@ -345,8 +347,8 @@ class SparklineChart extends BaseElement {
 
   /**
    * Generates the line path from values.
-   * @param {?Array<!LighthouseScore>} values Values to generate a path from.
-   * @return {{datapoints: !Array<Object>, path: !Array<!PathPart>}}
+   * @param {Array<TODO>?} values Values to generate a path from.
+   * @return {{datapoints: Array<Object>, paths: Array<PathPart>}}
    * @private
    */
   processValues(values) {
@@ -422,7 +424,7 @@ class SparklineChart extends BaseElement {
     super.updated(changedProperties);
 
     if (changedProperties.has('fill') || changedProperties.has('values')) {
-      const gradients = this.renderRoot.getElementsByClassName('gradient');
+      const gradients = this.renderRoot.querySelectorAll('.gradient');
       for (const gradient of gradients) {
         if (this.fill) {
           gradient.classList.add('fadein');
@@ -466,7 +468,7 @@ class SparklineChart extends BaseElement {
     const lastDataPoint = paths[paths.length - 1] || null;
 
     // Only render medians if there's actually a value contained here.
-    let medianPaths = '';
+    let medianPaths;
     if (this.medians && this.medians.length) {
       const {paths} = this.processValues(this.medians);
       medianPaths = paths.map(({points}) => {

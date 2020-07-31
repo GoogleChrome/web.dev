@@ -18,6 +18,14 @@ class LighthouseScoresStats extends BaseElement {
     };
   }
 
+  constructor() {
+    super();
+
+    this.lhrRuns = [];
+    this.disabled = false;
+    this.medians = [];
+  }
+
   firstUpdated() {
     this.setAttribute('role', 'table');
     this.setAttribute('aria-label', 'Lighthouse performance over time');
@@ -43,7 +51,7 @@ class LighthouseScoresStats extends BaseElement {
 
   /**
    * @param {string} catId
-   * @return {!Array<!LighthouseScore>}
+   * @return {!Array<TODO>}
    * @export
    */
   getScoresForCategory(catId) {
@@ -64,13 +72,13 @@ class LighthouseScoresStats extends BaseElement {
   }
 
   /**
-   * @return {!Array<!TemplateResult>}
+   * @return {!Array<!TODO>}
    */
   generateCards() {
     /**
      * @param {string} id
-     * @param {!Array<!LighthouseScore>} scores
-     * @return {!TemplateResult}
+     * @param {!Array<TODO>} scores
+     * @return {!TODO}
      */
     const generateGraphs = (id, scores) => {
       if (!scores.length) {

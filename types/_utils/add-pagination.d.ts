@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,21 +14,23 @@
  * limitations under the License.
  */
 
-const {DateTime} = require('luxon');
-
-/**
- * Convert a JavaScript Date object into a human readable string.
- * @param {Date} date The date to convert.
- * @return {string|undefined} A human readable date string.
- */
-module.exports = (date) => {
-  if (!date) {
-    /* eslint-disable-next-line */
-    console.warn('Date passed to prettyDate filter was undefined or null.');
-    return undefined;
+declare global {
+  export interface AdditionalData {
+    href?: string;
+    description?: string;
+    tag?: string;
+    title?: string;
   }
+  export interface Paginated {
+    title?: string;
+    href?: string;
+    description?: string;
+    tag?: string;
+    elements: Array<Object>;
+    index: number;
+    pages: number;
+  }
+}
 
-  return DateTime.fromISO(date.toISOString(), {zone: 'utc'}).toLocaleString(
-    DateTime.DATE_MED,
-  );
-};
+// empty export to keep file a module
+export {};

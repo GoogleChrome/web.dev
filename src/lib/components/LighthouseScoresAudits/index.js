@@ -20,7 +20,7 @@ const NUM_AUDITS_TO_SHOW = 10;
  *
  * @param {!LighthouseLastRunDetail} lhr The lighthouse report to render a table for.
  * @param {!CombinedAuditAndAuditRef} category
- * @return {!TemplateResult}
+ * @return {!TODO}
  */
 function createRowForAuditCategory(lhr, category) {
   let relevantGuides = ['Guide coming soon'];

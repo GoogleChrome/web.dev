@@ -21,7 +21,7 @@ const AuthorsDate = require('./AuthorsDate');
 
 /**
  * @param {!Array<{title: string, from: !Date, sessions: !Array<any>}>} days
- * @param {Object.<string, Author>} authorsCollection
+ * @param {Authors} authorsCollection
  * @return {string}
  */
 module.exports = (days, authorsCollection) => {

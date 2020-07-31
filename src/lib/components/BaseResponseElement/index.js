@@ -33,6 +33,7 @@ export class BaseResponseElement extends BaseElement {
   constructor() {
     super();
     this.state = 'unanswered';
+    this.correctAnswer = '';
 
     this.enforceCardinality = this.enforceCardinality.bind(this);
     this.submitResponse = this.submitResponse.bind(this);
@@ -59,8 +60,8 @@ export class BaseResponseElement extends BaseElement {
       min = parseInt(cardinality);
       max = 0;
     } else if (/^\d-\d+$/.test(cardinality)) {
-      [min, max] = cardinality.split('-');
-      [min, max] = [parseInt(min), parseInt(max)];
+      const [minString, maxString] = cardinality.split('-');
+      [min, max] = [parseInt(minString), parseInt(maxString)];
     }
     // Input errors handled in src/site/_includes/components/Assessment.js
 

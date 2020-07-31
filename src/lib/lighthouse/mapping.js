@@ -27,7 +27,7 @@ export function getAuditGuideMapping() {
 
   let guideToAudit;
   try {
-    guideToAudit = JSON.parse(codeElement.textContent);
+    guideToAudit = JSON.parse(codeElement.textContent || '');
   } catch (err) {
     console.warn('LH id -> guide JSON was malformed. Check', codeElement);
     throw err;

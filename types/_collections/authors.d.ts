@@ -21,9 +21,6 @@ declare global {
      */
     // Extends isn't working so I'm just copying over the data for now
     country?: string;
-    description?: {
-      [lng: string]: string;
-    };
     github?: string;
     glitch?: string;
     homepage?: string;
@@ -38,6 +35,8 @@ declare global {
     twitter?: string;
     // End extends
     data: {
+      alt?: string;
+      hero?: string;
       canonicalUrl: string;
       subhead: string;
       title: string;
