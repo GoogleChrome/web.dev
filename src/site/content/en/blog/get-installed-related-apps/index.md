@@ -10,7 +10,7 @@ description: |
   web app to check whether your app or PWA is installed on the user's
   device.
 date: 2018-12-20
-updated: 2020-07-22
+updated: 2020-07-30
 scheduled: true
 tags:
   - blog
