@@ -2,7 +2,7 @@
 title: Unblocking clipboard access
 subhead: Safer, unblocked clipboard access for text and images
 authors:
-  - jasonmiller
+  - developit
   - thomassteiner
 description: Async Clipboard API simplifies permissions-friendly copy and paste.
 date: 2020-07-31
