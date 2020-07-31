@@ -15,12 +15,10 @@
  */
 
 declare global {
-  export type TODO = any;
-  export type CombinedAuditAndAuditRef = TODO;
-  export type LighthouseLastRunDetail = TODO;
-  export type LighthouseScore = TODO;
-  export type TemplateResult = TODO;
+  export interface WMouseEvent<T extends HTMLElement> extends MouseEvent {
+    target: T;
+  }
 }
 
 // empty export to keep file a module
-export {}
+export {};

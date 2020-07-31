@@ -231,7 +231,7 @@ class SparklineChart extends BaseElement {
   /**
    * As a mouse moves over this element, find and highlight the nearest point in the chart.
    *
-   * @param {TODO|Event} e
+   * @param {WMouseEvent} e
    */
   onMouseMove(e) {
     // TODO(b/117590606): Make this work with touch events.
@@ -262,7 +262,7 @@ class SparklineChart extends BaseElement {
   /**
    * Allow keyboard navigation through points.
    *
-   * @param {TODO|Event} e
+   * @param {KeyboardEvent} e
    */
   onKeyDown(e) {
     switch (e.key) {
@@ -347,7 +347,7 @@ class SparklineChart extends BaseElement {
 
   /**
    * Generates the line path from values.
-   * @param {Array<TODO>?} values Values to generate a path from.
+   * @param {Array<!LighthouseScore>?} values Values to generate a path from.
    * @return {{datapoints: Array<Object>, paths: Array<PathPart>}}
    * @private
    */

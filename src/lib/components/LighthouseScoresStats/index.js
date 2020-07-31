@@ -32,7 +32,7 @@ class LighthouseScoresStats extends BaseElement {
   }
 
   /**
-   * @param {!Event} e
+   * @param {WMouseEvent<HTMLInputElement>} e
    * @private
    */
   onCardClick(e) {
@@ -51,7 +51,7 @@ class LighthouseScoresStats extends BaseElement {
 
   /**
    * @param {string} catId
-   * @return {!Array<TODO>}
+   * @return {!Array<!LighthouseScore>}
    * @export
    */
   getScoresForCategory(catId) {
@@ -72,13 +72,13 @@ class LighthouseScoresStats extends BaseElement {
   }
 
   /**
-   * @return {!Array<!TODO>}
+   * @return {!Array<!TemplateResult>}
    */
   generateCards() {
     /**
      * @param {string} id
-     * @param {!Array<TODO>} scores
-     * @return {!TODO}
+     * @param {!Array<!LighthouseScore>} scores
+     * @return {!TemplateResult}
      */
     const generateGraphs = (id, scores) => {
       if (!scores.length) {
