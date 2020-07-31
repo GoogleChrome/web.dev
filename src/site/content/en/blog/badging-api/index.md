@@ -1,11 +1,11 @@
 ---
 title: Badging for app icons
-subhead: The Badging API allows installed web apps to set an application-wide badge on the app icon.
+subhead: The App Badging API allows installed web apps to set an application-wide badge on the app icon.
 authors:
   - petelepage
-description: The Badging API allows installed web apps to set an application-wide badge, shown in an operating-system-specific place associated with the application, such as the shelf or home screen. Badging makes it easy to subtly notify the user that there is some new activity that might require their attention, or it can be used to indicate a small amount of information, such as an unread count.
+description: The App Badging API allows installed web apps to set an application-wide badge, shown in an operating-system-specific place associated with the application, such as the shelf or home screen. Badging makes it easy to subtly notify the user that there is some new activity that might require their attention, or it can be used to indicate a small amount of information, such as an unread count.
 date: 2018-12-11
-updated: 2020-06-04
+updated: 2020-07-30
 tags:
   - blog
   - capabilities
@@ -14,17 +14,9 @@ tags:
   - notifications
 hero: hero.jpg
 alt: Phone showing several notification badges
-origin_trial:
-  url: https://developers.chrome.com/origintrials/#/view_trial/-5354779956943519743
 ---
 
-{% Aside 'success' %}
-  This API is part of the new
-  [capabilities project](/fugu-status/),
-  and it is available in Chrome by default starting in Chrome 81, though for Chrome 79 and Chrome 80, origin trial tokens are still available.
-{% endAside %}
-
-## What is the Badging API? {: #what }
+## What is the App Badging API? {: #what }
 
 <figure class="w-figure">
   <img  src="badges-on-windows.jpg" class="w-screenshot"
@@ -35,7 +27,7 @@ origin_trial:
   </figcaption>
 </figure>
 
-The Badging API allows installed web apps to set an application-wide badge,
+The App Badging API allows installed web apps to set an application-wide badge,
 shown in an operating-system-specific place associated with the application
 (such as the shelf or home screen).
 
@@ -67,51 +59,35 @@ Examples of sites that may use this API include:
 | 1. Create explainer                        | [Complete][explainer]        |
 | 2. Create initial draft of specification   | [Complete][spec]             |
 | 3. Gather feedback & iterate on design     | Complete                     |
-| **4. Origin trial**                        | Chrome 79-80 [In progress](#ot) |
-| **5. Launch**                              | Chrome 81                    |
+| 4. Origin trial                            | Complete                     |
+| **5. Launch**                              | **Complete**                 |
 
 </div>
 
+The App Badging API works on Windows, and macOS, in Chrome 81 and later.
+Support for Chrome OS is in development and will be available in a future
+release of Chrome. On Android, the Badging API is not supported. Instead,
+Android automatically shows a badge on app icon for the installed web app
+when there is an unread notification, just as for native apps.
+
 ## Try it
 
-1. Using Chrome 81 or later on Windows or Mac (or Chrome 79 or 80, if you're
-   still participating in the origin trial), open the [Badging API demo][demo].
+1. Using Chrome 81 or later on Windows or Mac, open the
+   [App Badging API demo][demo].
 2. When prompted, click **Install** to install the app, or use the Chrome
    menu to install it.
-3. Open it as an installed PWA. Note, it must be running as an installed PWA (in
-   your task bar or dock).
+3. Open it as an installed PWA. Note, it must be running as an installed PWA
+   (in your task bar or dock).
 4. Click the **Set** or **Clear** button to set or clear the badge from the app
    icon. You can also provide a number for the *Badge value*.
 
-## How to use the Badging API {: #use }
+## How to use the App Badging API {: #use }
 
-The Badging API works on Windows, and macOS. Support for Chrome OS is in
-development and will be available in a future release of Chrome.
-On Android, the Badging API is not supported. Instead, Android automatically
-shows a badge on a web app when there is an unread notification, just as
-for native apps.
-
-### Register for the origin trial {: #ot }
-
-The origin trial is supported in both Chrome 79 and Chrome 80 and runs through
-September 2020.
-
-{% include 'content/origin-trials.njk' %}
-
-{% include 'content/origin-trial-register.njk' %}
-
-### Alternatives to the origin trial
-
-If you want to experiment with the Badging API locally, without an origin trial,
-enable the `#enable-experimental-web-platform-features` flag in `chrome://flags`.
-
-### Setting and clearing a badge
-
-To use the Badging API, your web app needs to meet
-[Chrome's installability criteria](https://developers.google.com/web/fundamentals/app-install-banners/#criteria),
+To use the App Badging API, your web app needs to meet
+[Chrome's installability criteria](/install-criteria/#criteria),
 and users must add it to their home screens.
 
-The Badge API consists of the following methods on `navigator`:
+The Badge API consists of two methods on `navigator`:
 
 * `setAppBadge(`*`number`*`)`: Sets the app's badge. If a value is provided, set the
   badge to the provided value otherwise, display a plain white dot (or other
@@ -121,14 +97,9 @@ The Badge API consists of the following methods on `navigator`:
 
 Both return empty promises you can use for error handling.
 
-{% Aside %}
-These functions had different names for the origin trial than they do in the
-current implementation. If you're still participating in the origin trial, you'll need to
-support both versions of the API. See [Supporting both the origin trial and the
-stable API](#supporting) for details.
-{% endAside %}
-
-For example:
+The badge can either be set from the current page, or from the registered
+service worker. To set or clear the badge (in either the foreground page or
+the service worker), call:
 
 ```js
 // Set the badge
@@ -143,10 +114,6 @@ navigator.clearAppBadge().catch((error) => {
 });
 ```
 
-You can only call `setAppBadge()` and `clearAppBadge()`
-from a foreground page. In the future, you may be able to call it from a service worker. In
-either case, it affects the whole app, not just the current page.
-
 In some cases, the OS may not allow the exact representation of the badge.
 In such cases, the browser will attempt to provide the best representation for
 that device. For example, because the Badging API isn't supported on Android,
@@ -159,41 +126,61 @@ then the "+" won't appear. No matter the actual number, just call
 `setAppBadge(unreadCount)` and let the user agent deal with
 displaying it accordingly.
 
-While the Badging API *in Chrome* requires an installed app, you shouldn't
+While the App Badging API *in Chrome* requires an installed app, you shouldn't
 make calls to the Badging API dependent on the install state. Just call the
 API when it exists, as other browsers may show the badge in other places.
 If it works, it works. If not, it simply doesn't.
 
-## Supporting both the origin trial and the stable API {: #supporting }
+## Setting and clearing the badge in the background from a service worker
 
-In the Chrome 79 and Chrome 80 [origin trial]({{origin_trial.url}}) the members
-of the badging API have different names than those in the current implementation. If
-you're participating in that origin trial, you'll need to support both the
-origin trail and the standard names. You can wrap the calls in the following
-functions. Once the origin trial is over or all your users have migrated to
-Chrome 81 or later, you can remove these functions from your code.
+You can also set the app badge in the background using the service worker,
+allowing them to be updated even when the app isn't open. Do this either
+through the Push API, periodic background sync, or a combination of both.
 
-```js
-function setBadge(...args) {
-  if (navigator.setExperimentalAppBadge) {
-    navigator.setExperimentalAppBadge(...args);
-  } else {
-    navigator.setAppBadge(...args);
-  }
-}
+### Periodic background sync
 
-function clearBadge() {
-  if (navigator.clearExperimentalAppBadge) {
-    navigator.clearExperimentalAppBadge();
-  } else {
-    navigator.clearAppBadge(...args);
-  }
-}
-```
+[Periodic background sync](/periodic-background-sync/) allows a service worker
+to periodically poll the server, which could be used to get an updated status,
+and call `navigator.setAppBadge()`.
+
+However, the frequency at which the sync is called isn't perfectly reliable,
+and is called the at discretion of the browser.
+
+### Web Push API
+
+The [Push API][push-api] allows servers to send messages to service workers,
+which can run JavaScript code even when no foreground page is running. Thus,
+a server push could update the badge by calling `navigator.setAppBadge()`.
+
+However, most browsers, Chrome included, require a notification to be
+displayed whenever a push message is received. This is fine for some use
+cases (for example showing a notification when updating
+the badge) but makes it impossible to subtly update the badge without
+displaying a notification.
+
+In addition, users must grant your site notification permission in order to
+receive push messages.
+
+### A combination of both
+
+While not perfect, using Push API and periodic background sync together
+provide a good solution. High priority information is delivered via the Push
+API, showing a notification and updating the badge. And lower priority
+information is delivered by updating the badge, either when the page is open,
+or via periodic background sync.
+
+### The future
+
+The Chrome team is investigating ways to more reliably [update the app badge in
+the background](https://github.com/w3c/badging/blob/master/explainer.md#background-updates),
+and wants to hear from you. Let them know what works best for your
+use case by commenting on the
+[Notification Background Updates](https://github.com/w3c/badging/issues/28)
+issue.
 
 ## Feedback {: #feedback }
 
-The Chrome team wants to hear about your experiences with the Badging API.
+The Chrome team wants to hear about your experiences with the App Badging API.
 
 ### Tell us about the API design
 
@@ -216,7 +203,7 @@ different from the spec?
 
 ### Show support for the API
 
-Planning to use the Badging API on your site? Your public support helps the
+Planning to use the App Badging API on your site? Your public support helps the
 Chrome team to prioritize features, and shows other browser vendors how critical
 it is to support them.
 
