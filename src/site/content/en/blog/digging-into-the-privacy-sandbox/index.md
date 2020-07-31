@@ -26,7 +26,7 @@ tags:
 
 ---
 
-## The current state of privacy on the web
+## The current state of privacy on the web {: #background }
 
 Websites use services from other companies to provide analytics, serve video and do lots of other useful stuff. Composability is one of the web's [superpowers](https://youtu.be/WnCKlNE52tc?t=930). Most notably, ads are included in web pages via third-party JavaScript and iframes. Ad views, clicks and conversions are tracked via third-party cookies and scripts. 
 
@@ -38,16 +38,16 @@ This is a dilemma for the web. How can legitimate third-party use cases be suppo
 
 In particular, how can websites fund content by enabling third parties to show ads and measure ad performance—but not allow individual users to be profiled? How can advertisers and site owners evaluate a user's authenticity without resorting to dark patterns such as device fingerprinting?
 
-The way things work at the moment can be problematic for the entire web ecosystem, not just users. For publishers and advertisers, tracking identity and using a variety of non-standard third-party solutions can add to technical debt, code complexity and data risk. Users, developers, publishers, and advertisers should be confident that the web is protecting user privacy choices. 
+The way things work at the moment can be problematic for the entire web ecosystem, not just users. For publishers and advertisers, tracking identity and using a variety of non-standard third-party solutions can add to technical debt, code complexity, and data risk. Users, developers, publishers, and advertisers should be confident that the web is protecting user privacy choices. 
 
 Advertising is a core web business model for the internet, but advertising has to work for everyone. Which brings us to the Privacy Sandbox's mission: to create a thriving web ecosystem that is respectful of users and private by default.
 
 
-## Introducing the Privacy Sandbox
+## Introducing the Privacy Sandbox {: #introduction }
 
 The [Privacy Sandbox](https://www.blog.google/products/chrome/building-a-more-private-web/) introduces a set of privacy-preserving APIs to support business models that fund the open web in the absence of tracking mechanisms like third-party cookies. 
 
-The Privacy Sandbox APIs require web browsers to take on a new role. Rather than working with limited tools and protections, the APIs enable the user's browser to act on the user's behalf—locally, on their device—to protect the user's identifying information as they navigate the web. The APIs enable use cases such as ad selection and conversion measurement, without revealing individual private and personal information. In engineering terms a [sandbox](https://web.dev/browser-sandbox) is a protected environment; a key principle of the Privacy Sandbox is that a user's personal information should be protected and not shared in a way that lets the user be identified across sites.
+The Privacy Sandbox APIs require web browsers to take on a new role. Rather than working with limited tools and protections, the APIs enable the user's browser to act on the user's behalf—locally, on their device—to protect the user's identifying information as they navigate the web. The APIs enable use cases such as ad selection and conversion measurement, without revealing individual private and personal information. In engineering terms a [sandbox](/browser-sandbox) is a protected environment; a key principle of the Privacy Sandbox is that a user's personal information should be protected and not shared in a way that lets the user be identified across sites.
 
 This is a shift in direction for browsers. The Privacy Sandbox's vision of the future has browsers providing specific tools to satisfy specific use cases, while preserving user privacy. [A Potential Privacy Model for the Web](https://github.com/michaelkleber/privacy-model) sets out core principles behind the APIs:
 
@@ -89,7 +89,7 @@ You can dive into the API proposal explainers right away, and over the coming mo
 
 **Goal:** Enable advertisers to measure ad performance.
 
-There are two proposals for APIs where information about ad impressions and conversions stays inside the browser, and which only offer carefully controlled, privacy-safe ways for that information to get back to advertisers. This controlled, privacy safe reporting is done in a way that does not enable linking of identities across sites or collection of user browsing history:
+There are two proposals for APIs where information about ad impressions and conversions stays inside the browser, and which only offer carefully controlled, privacy-safe ways for that information to get back to advertisers. This controlled, privacy-safe reporting is done in a way that does not enable linking of identities across sites or collection of user browsing history:
 
 * [Click Through Conversion Measurement Event-Level](https://github.com/csharrison/conversion-measurement-api) allows advertisers to determine which ad clicks later turned into conversions. (API name suggestions welcome!)
 * [Aggregated Reporting](https://github.com/csharrison/aggregate-reporting-api) aggregates browsing data for multiple sites and multiple users in a single report, while preserving privacy by only allowing aggregate reporting on things that a lot of different people did.
@@ -142,7 +142,7 @@ A user's IP address is the public 'address' of their computer on the internet, w
 
 **Goal:** Verify user authenticity without fingerprinting.
 
-Anti-fraud protection is crucial for keeping users safe, and to ensure that advertisers and site owners can get accurate ad performance measurements. Advertisers and site owners must be able to distinguish between malicious bots and authentic users. If advertisers can't reliably tell which ad clicks are from real humans, they spend less, so site publishers get less revenue. Many third party services currently use techniques such as [device fingerprinting](./#fingerprinting) to combat fraud. 
+Anti-fraud protection is crucial for keeping users safe, and to ensure that advertisers and site owners can get accurate ad performance measurements. Advertisers and site owners must be able to distinguish between malicious bots and authentic users. If advertisers can't reliably tell which ad clicks are from real humans, they spend less, so site publishers get less revenue. Many third party services currently use techniques such as [device fingerprinting](#fingerprinting) to combat fraud. 
 
 Unfortunately, the techniques used to identify legitimate users and block spammers, fraudsters, and bots work in ways similar to [fingerprinting](#glossary-fingerprinting) techniques that damage privacy.
 
@@ -159,7 +159,7 @@ Many organizations own sites across multiple domains. This can become a problem 
 
 ## Find out more
 
-### Privacy Sandbox proposal explainers
+### Privacy Sandbox proposal explainers {: #explainers }
 
 The Privacy Sandbox initiative needs your support. The API proposal [explainers](https://blog.chromium.org/2019/08/potential-uses-for-privacy-sandbox.html) need feedback, in particular to suggest missing use cases and more-private ways to accomplish their goals.
 
