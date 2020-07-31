@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: To avoid draining the battery, most devices will quickly fall asleep when left idle. While this is fine most of the time, there are some applications that need to keep the screen awake in order to complete some work. The Screen Wake Lock API provides a way to prevent the device from dimming or locking the screen when an application needs to keep running.
 date: 2018-12-18
-updated: 2020-07-02
+updated: 2020-07-31
 hero: hero.jpg
 hero_position: center
 alt: |
@@ -79,7 +79,7 @@ Of course, there are plenty of other use cases:
 | 1. Create explainer                        | N/A                          |
 | 2. Create initial draft of specification   | [Complete][spec-ed]          |
 | 3. Gather feedback and iterate design      | [Complete](#feedback)        |
-| 4. Origin trial                            | Complete                     |
+| 4. Origin trial                            | [Complete][ot]               |
 | **5. Launch**                              | **Complete**                 |
 
 </div>
