@@ -1,12 +1,15 @@
 ---
-title: Custom Bullets with CSS ::marker
+title: Custom bullets with CSS ::marker
 subhead: It is now trivial to customize the color, size or type of number or bullet when using a <ul> or <ol>. 
 authors:
   - adamargyle
   - loirooriol
 description: It is now trivial to customize the color, size or type of number or bullet when using a <ul> or <ol>.
+tags:
+  - blog
+  - css
 date: 2020-07-27
-updated: 2020-07-27
+#updated: 2020-07-27
 hero: hero.jpg
 alt: TODO
 --- 
@@ -20,7 +23,11 @@ Thanks to Igalia, sponsored by Bloomberg, we can finally put our hacks away for 
   </figcaption>
 </figure>
 
-Thanks to [CSS `::marker`](https://www.w3.org/TR/css-lists-3/#marker-pseudo) we can change the content and some of the styles of bullets and numbers. At the time of writing `::marker` is [supported](https://caniuse.com/#search=%3A%3Amarker) in Firefox 68 for desktop and Android, Safari 11.1 and iOS Safari 11.3, and Chromium 86 (desktop and Android).
+Thanks to [CSS `::marker`](https://www.w3.org/TR/css-lists-3/#marker-pseudo) we can change the content and some of the styles of bullets and numbers. 
+
+## Browser compatibilty
+
+At the time of writing `::marker` is supported in Firefox for desktop and Android, desktop Safari and iOS Safari, and Chromium-based desktop and Android browsers. See MDN's [Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/CSS/::marker#Browser_compatibility) table for updates.
 
 ## Pseudo-elements
 Consider the following essential HTML unordered list:
@@ -47,7 +54,7 @@ Which results in the following unsurprising rendering:
 
 The dot at the beginning of each `<li>` item is free! The browser is drawing and creating a generated marker box for you. 
 
-Today we're excited to talk about the `::marker` pseudo element, which gives the ability to style the bullet element that browsers create for you.
+Today we're excited to talk about the `::marker` pseudo-element, which gives the ability to style the bullet element that browsers create for you.
 
 {% Aside 'key-term' %}
 A pseudo-element represents an element in the document other than those which exist in the document tree. For example, you can select the first line of a paragraph using the pseudo-element `p::first-line`, even though there is no HTML element wrapping that line of text.
@@ -88,7 +95,7 @@ Typically, list items are `<li>` HTML elements, but other elements can also beco
 </dl>
 ```
 
-```css
+```css/1
 dd {
   display: list-item;
   list-style-type: "🤯";
@@ -105,7 +112,7 @@ dd {
 </div>
 
 ### Styling a marker
-Until `::marker`, lists could be styled using `list-style-type` and `list-style-image` to contextually change the list item symbol with 1 line of CSS:
+Until `::marker`, lists could be styled using `list-style-type` and `list-style-image` to change the list item symbol with 1 line of CSS:
 
 ```css
 li {
@@ -124,7 +131,7 @@ li {
   </iframe>
 </div>
 
-That's handy but we need more. What about changing the color, size, spacing, etc!? That's where `::marker` comes to the rescue. It allows individual and global targeting of these pseudo elements from CSS:
+That's handy but we need more. What about changing the color, size, spacing, etc!? That's where `::marker` comes to the rescue. It allows individual and global targeting of these pseudo-elements from CSS:
 
 ```css
 li::marker {
@@ -146,7 +153,7 @@ li:first-child::marker {
 
 The `list-style-type` property gives very limited styling possibilities. The `::marker` pseudo-element means that you can target the marker itself and apply styles directly to it. This allows for far more control.
 
-That said, you can't use every CSS property on a `::marker`. The list of which properties are allowed and not allowed are clearly indicated in the spec. If you try something interesting with this pseudo element and it doesn't work, the list below is your guide into what can and can't be done with CSS:
+That said, you can't use every CSS property on a `::marker`. The list of which properties are allowed and not allowed are clearly indicated in the spec. If you try something interesting with this pseudo-element and it doesn't work, the list below is your guide into what can and can't be done with CSS:
 
 #### Allowed CSS `::marker` Properties
 - `animation-*`
@@ -212,7 +219,7 @@ In Chromium, `white-space` only works for inside positioned markers. For outside
 
 
 #### Changing the content of a marker
-This CSS property can be used in a few ways and we felt it was important to cover a few. 
+Here are some of the ways you could style your markers.
 
 **Changing all list items**
 ```css
@@ -235,7 +242,7 @@ li::marker {
   </iframe>
 </div>
 
-**Changing just 1 list item**
+**Changing just one list item**
 ```css
 li:last-child::marker {
   content: "😍";
@@ -268,7 +275,7 @@ li::marker {
 </div>
 
 **Changing numbered lists**  
-What about an `<ol>` though right? Each of those `::markers` aren't the simple bullet, they're numbers. In CSS these are called [Counters](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters), and they're quite powerful. They even have properties to set and reset where the number starts and ends, or switching them to roman numerals. Can we style that? Yep, and we can even use the marker content value to build our own numbering presentation.
+What about an `<ol>` though? The marker on an ordered list item is a number and not a bullet by default. In CSS these are called [Counters](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters), and they're quite powerful. They even have properties to set and reset where the number starts and ends, or switching them to roman numerals. Can we style that? Yep, and we can even use the marker content value to build our own numbering presentation.
 
 ```css
 li::marker {
@@ -286,13 +293,13 @@ li::marker {
 </div>
 
 ### Debugging
-Chromium devtools is ready to help you inspect, debug and modify the styles applying to `::marker` pseudo elements.
+Chrome DevTools is ready to help you inspect, debug and modify the styles applying to `::marker` pseudo elements.
 
 <figure class="w-figure">
   <img class="w-screenshot" style="max-inline-size: 480px" src='./devtools.png' alt="DevTools open and showing styles from the user agent and the user styles">
 </figure>
 
-### Future Pseudo Element Styling
+### Future Pseudo-element styling
 You can find out more about ::marker from:
 
 - [CSS Lists, Markers and Counters](https://www.smashingmagazine.com/2019/07/css-lists-markers-counters/) from [Smashing Magazine](https://www.smashingmagazine.com/)
