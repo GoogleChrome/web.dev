@@ -5,7 +5,7 @@ authors:
   - thomassteiner
 description: The Shape Detection API detects faces, barcodes, and text in images.
 date: 2019-01-07
-updated: 2020-06-04
+updated: 2020-07-31
 tags:
   - blog
   - capabilities
