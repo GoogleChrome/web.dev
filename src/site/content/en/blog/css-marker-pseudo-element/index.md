@@ -151,6 +151,10 @@ li:first-child::marker {
   </iframe>
 </div>
 
+{% Aside 'caution' %}
+If the above list does not have pink bullets, then `::marker` is not supported in your browser.
+{% endAside %}
+
 The `list-style-type` property gives very limited styling possibilities. The `::marker` pseudo-element means that you can target the marker itself and apply styles directly to it. This allows for far more control.
 
 That said, you can't use every CSS property on a `::marker`. The list of which properties are allowed and not allowed are clearly indicated in the spec. If you try something interesting with this pseudo-element and it doesn't work, the list below is your guide into what can and can't be done with CSS:
