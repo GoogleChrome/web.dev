@@ -136,7 +136,7 @@ _As of July 2020_
       <tr>
         <td>Chrome</td>
         <td>
-          Switching to <code>strict-origin-when-cross-origin</code> in <a href="https://blog.chromium.org/2020/07/chrome-85-upload-streaming-human.html">85</a> (previously <code>no-referrer-when-downgrade</code>) 
+          Planning to switch to <code>strict-origin-when-cross-origin</code> in <a href="https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default">version 85</a> (previously <code>no-referrer-when-downgrade</code>) 
         </td>
       </tr>
       <tr>
