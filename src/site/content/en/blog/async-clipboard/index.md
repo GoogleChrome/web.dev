@@ -17,7 +17,7 @@ alt: Clipboard with shopping list
 ---
 
 Over the past few years, browsers have used
-`[document.execCommand()](https://developers.google.com/web/updates/2015/04/cut-and-copy-commands)`
+[`document.execCommand()`](https://developers.google.com/web/updates/2015/04/cut-and-copy-commands)
 for clipboard interactions. Though widely supported, this method of cutting and
 pasting came at a cost: clipboard access was synchronous, and could only read
 and write to the DOM.
