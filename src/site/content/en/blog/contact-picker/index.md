@@ -119,7 +119,7 @@ try {
 ```
 
 {% Aside 'caution' %}
-  Support for `'address'` and `'icon'` requires Chrome 84 and later.
+  Support for `'address'` and `'icon'` requires Chrome 84 or later.
 {% endAside %}
 
 The Contacts Picker API can only be called from a [secure][secure-contexts],
@@ -131,11 +131,11 @@ user gesture.
 To detect which properties are available, call `navigator.contacts.getProperties()`.
 It returns a promise that resolves with an array of strings indicating which
 properties are available. For example: `['name', 'email', 'tel', 'address']`.
-You can use these values to pass to `select()`.
+You can pass these values to `select()`.
 
-Remember, not all properties are always available, and new properties may be
-added. In the future, other platforms, and contact sources may be more
-restrictive about which properties are be shared.
+Remember, properties are not always available, and new properties may be
+added. In the future, other platforms and contact sources may restrict 
+which properties are be shared.
 
 ### Handling the results
 
