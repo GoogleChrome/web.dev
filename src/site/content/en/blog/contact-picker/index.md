@@ -39,7 +39,7 @@ Access to the user's contacts on a mobile device has been a feature of native ap
 I hear from web developers, and is often the key reason they build a native
 app.
 
-Available by default in Chrome 80, the [Contact Picker API][spec] is an
+Available in Chrome 80 on Android, the [Contact Picker API][spec] is an
 on-demand API that allows users to select entries from their contact list and
 share limited details of the selected entries with a website. It allows users to
 share only what they want, when they want, and makes it easier for users to
