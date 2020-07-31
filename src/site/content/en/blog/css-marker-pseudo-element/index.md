@@ -61,7 +61,7 @@ The `::marker` pseudo-element marker box is automatically generated inside every
 li::before {
   content: "::before";
   background: lightgray;
-  border-radius: 1rem;
+  border-radius: 1ch;
   padding-inline: 1ch;
   margin-inline-end: 1ch;
 }
