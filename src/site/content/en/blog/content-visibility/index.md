@@ -1,17 +1,18 @@
 ---
 title: '`content-visibility`: the new CSS property that boosts your rendering performance'
-subhead: TBD
+subhead: Improve initial load time by skipping the rendering of offscreen content.
 authors:
-  - vladimirlevin
   - una
+  - vladimirlevin
 date: 2020-08-05
 hero: hero.jpg
 alt: Stylized photo of a half-hidden person.
-description: TBD
+description: The CSS content-visibility property enables web content rendering performance benefits by skipping rendering of off-screen content. This article shows you how to leverage this new CSS property for faster initial load times, using the auto keyword. You will also learn about the CSS Containment Spec and other values for content-visibility that give you more control over how your content renders in the browser.
 tags:
   - blog
   - css
   - layout
+  - performance
 ---
 
 The [`content-visibility`](https://drafts.csswg.org/css-contain/#propdef-content-visibility) property might be one of the most impactful new CSS properties for improving page load performance. `content-visibility` enables the user agent to skip an element's rendering work, including layout and painting, until it is needed. Because rendering is skipped, if a large portion of your content is off-screen, leveraging the `content-visibility` property makes the initial user load much faster. It also allows for faster interactions with the on-screen content. Pretty neat.
