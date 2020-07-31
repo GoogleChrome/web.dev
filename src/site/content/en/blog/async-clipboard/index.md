@@ -244,7 +244,13 @@ Imagine a web page that silently copies `rm -rf /` or a
 [decompression bomb image](http://www.aerasec.de/security/advisories/decompression-bomb-vulnerability.html)
 to your clipboard.
 
-![image](prompt.png)
+<figure class="w-figure">
+  <img class="w-screenshot" src="./prompt.png" 
+       alt="Browser prompt asking the user for the clipboard permission.">
+  <figcaption class="w-figcaption">
+    The permission prompt for the Clipboard API.
+  </figcaption>
+</figure>
 
 Giving web pages unfettered read access to the clipboard is even more
 troublesome. Users routinely copy sensitive information like passwords and
