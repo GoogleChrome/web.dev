@@ -33,7 +33,7 @@ The key and overarching goal of CSS containment is to enable rendering performan
 
 Basically a developer can tell a browser what parts of the page are encapsulated as a set of content, allowing the browsers to reason about the content without needing to consider state outside of the subtree. Knowing which bits of content (subtrees) contain isolated content means the browser can make optimization decisions for page rendering.
 
-There are four types of [CSS containment](https://developers.google.com/web/updates/2016/06/css-containment), each a potential value for the `contain` CSS property. You can also combine them individually or together in a space-separated list of values:
+There are four types of [CSS containment](https://developers.google.com/web/updates/2016/06/css-containment), each a potential value for the `contain` CSS property, which can be combined together in a space-separated list of values:
 
 - `size`: Size containment ensures that the containing box can be laid out without needing to examine its children. The parent sets the geometric size independent of its contents.
 - `layout`: Layout containment means that the subtree does not affect the external layout of other boxes on the page.
@@ -44,7 +44,6 @@ There are four types of [CSS containment](https://developers.google.com/web/upda
 
 It may be hard to figure out which containment values to use, since browser optimizations may only kick in when an appropriate set is specified. You can play around with the values to see [what works best](https://developers.google.com/web/updates/2016/06/css-containment), or you can use another CSS property called `content-visibility` to apply the needed containment automatically. `content-visibility` ensures that you get the largest performance gains the browser can provide with less effort from you as a developer. 
 
-### Automatic performance improvements with `content-visibility: auto` {: #auto }
 
 The content-visibility property accepts several values, but `auto` is the one that provides immediate performance improvements. An element that has `content-visibility: auto` gains `layout`, `style` and `paint` containment. If the element is off-screen (and not otherwise relevant to the user—relevant elements would be the ones that have focus or selection in their subtree), it also gains `size` containment (it stops [painting](https://developers.google.com/web/updates/2018/09/inside-browser-part3#paint) and [hit-testing](https://developers.google.com/web/updates/2018/09/inside-browser-part4#finding_the_event_target) its contents).
 
@@ -61,10 +60,11 @@ As the element approaches the viewport, the browser no longer adds the `size` co
   <figcaption>In this example, we baseline our travel blog on the right, and apply <code>content-visibility: auto</code> to chunked areas on the left. The results show rendering times going from <b>232ms</b> to <b>30ms</b> on initial page load.</figcaption>
 </figure>
 
-A travel blog typically contains a set of stories. Each story has a few pictures, and some descriptive text. Here is what happens in a typical browser when it navigates to a travel blog:
-A part of the page is downloaded from the network, along with any needed resources.
-The browser styles and lays out all of the contents of the page, without considering if the content is visible to the user.
-The browser goes back to step 1 until all of the page and resources are downloaded.
+A travel blog typically contains a set of stories with a few pictures, and some descriptive text. Here is what happens in a typical browser when it navigates to a travel blog:
+
+1. A part of the page is downloaded from the network, along with any needed resources.
+2. The browser styles and lays out all of the contents of the page, without considering if the content is visible to the user.
+3. The browser goes back to step 1 until all of the page and resources are downloaded.
 
 In step 2, the browser processes all of the contents looking for things that may have changed. It updates the style and layout of any new elements, along with the elements that may have shifted as a result of new updates. This is rendering work. This takes time.
 
@@ -79,40 +79,39 @@ Now consider what happens if you put `content-visibility: auto` on each of the i
 
 With content-visibility, it will style and layout all of the contents that are currently visible to the user (they are on-screen). However, when processing the story that is fully off-screen, the browser will skip the rendering work and only style and layout the element box itself.
 
+The performance of loading this page would be as if it contained full on-screen stories and empty boxes for each of the off-screen stories. This performs much better, with *expected reduction of 50% or more* from the rendering cost of loading. In our example, we see a boost from a **232ms** rendering time to a **30ms** rendering time. That's a **7x** performance boost.
+
+What is the work that you need to do in order to reap these benefits? First, we chunk the content into sections:
+
 <figure class="w-figure">
   <img src="travelblog-chunked.jpg" alt="">
   <figcaption class="w-figcaption">
-    Example of chunking content into sections with `content-visibility: auto` applied. See <a href="https://codepen.io/vmpstr/pen/xxZoyMb">Demo on Codepen</a>
+    Example of chunking content into sections with the <code>story</code> class applied, to receive <code>content-visibility: auto</code>. See <a href="https://codepen.io/vmpstr/pen/xxZoyMb">Demo on Codepen</a>
   </figcaption>
 </figure>
 
-The performance of loading this page would be as if it contained full on-screen stories and empty boxes for each of the off-screen stories. This performs much better, with *expected reduction of 50% or more* from the rendering cost of loading. In our example, we see a boost from a **232ms** rendering time to a **30ms** rendering time. That's a **7x** performance boost.
-
-What is the work that you need to do in order to reap these benefits? The addition of the following style rule:
+Then, we apply the following style rule to the sections:
 
 ```css
 .story {
   content-visibility: auto;
-  contain-intrinsic-size: 100px 500px; /* Explained in the next section. */
+  contain-intrinsic-size: 1000px; /* Explained in the next section. */
 }
 ```
 
 {% Aside %}
-Note that as content moves in and out of visibility, it will start and stop being rendered as needed. However, this does not mean that the browser will have to render and re-render the same content over and over again.
+Note that as content moves in and out of visibility, it will start and stop being rendered as needed. However, this does not mean that the browser will have to render and re-render the same content over and over again, since the rendering work is saved when possible.
 {% endAside %}
 
 ##### Specifying the natural size of an element with `contain-intrinsic-size`
 
-In order to realize the potential benefits of `content-visibility`, the browser needs to apply size containment to ensure that the rendering results of contents do not affect the size of the element in any way.
-
-This means that the element will lay out as if it was empty. If the element does not have a height specified in a regular block layout, then it will be of 0 height. 
+In order to realize the potential benefits of `content-visibility`, the browser needs to apply size containment to ensure that the rendering results of contents do not affect the size of the element in any way. This means that the element will lay out as if it was empty. If the element does not have a height specified in a regular block layout, then it will be of 0 height. 
 
 This might not be ideal, since the size of the scrollbar will shift, being reliant on each story having a non-zero height.
 
-Thankfully, CSS provides another property, `contain-intrinsic-size`, which effectively specifies the natural size of the element *if the element is affected by size containment*.
+Thankfully, CSS provides another property, `contain-intrinsic-size`, which effectively specifies the natural size of the element *if the element is affected by size containment*. In our example, we are setting it to `1000px` as an estimate for the height and width of the sections.
 
 This means it will lay out as if it had a single child of "intrinsic-size" dimensions, ensuring that your unsized divs still occupy space. `contain-intrinsic-size` acts as a placeholder size in lieu of rendered content.
-
 
 
 ### Hiding content with `content-visibility: hidden`
@@ -134,7 +133,7 @@ Some great use cases for `content-visibility: hidden` are when implementing adva
 
 ## Conclusion
 
-`content-visibility` and the CSS containment spec mean some exciting performance boosts are coming right to your CSS file. For more information on these properties, check out:
+`content-visibility` and the CSS Containment Spec mean some exciting performance boosts are coming right to your CSS file. For more information on these properties, check out:
 
 - [The CSS Containment Spec](http://drafts.csswg.org/css-contain/)
 - [MDN Docs on CSS Containment](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Containment)
