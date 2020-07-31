@@ -10,8 +10,8 @@ tags:
   - css
 date: 2020-07-27
 #updated: 2020-07-27
-hero: hero.jpg
-alt: TODO
+hero: hero.png
+alt: Showing the anatomy of a single list item by putting separate boxes around the bullet and the text
 --- 
 
 Thanks to Igalia, sponsored by Bloomberg, we can finally put our hacks away for styling lists. See!
