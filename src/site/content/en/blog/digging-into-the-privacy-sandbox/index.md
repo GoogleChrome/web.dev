@@ -2,7 +2,7 @@
 title: Digging into the Privacy Sandbox
 subhead: The Privacy Sandbox is a series of proposals to satisfy third-party use cases without third-party cookies or other tracking mechanisms.
 authors:
-- samdutton
+  - samdutton
 date: 2020-04-08
 updated: 2020-07-30
 hero: hero.jpg
