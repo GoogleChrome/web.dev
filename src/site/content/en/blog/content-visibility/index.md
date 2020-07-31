@@ -52,7 +52,7 @@ What does this mean? In short, if the element is off-screen it is not rendered. 
 
 As the element approaches the viewport, the browser no longer adds the `size` containment and starts painting and hit-testing the element's content. This enables the rendering work to be done just in time to be seen by the user.
 
-#### Example: a travel blog {: #example }
+## Example: a travel blog {: #example }
 
 <figure class='w-figure'>
   <video controls autoplay loop muted playsinline class='w-screenshot'>
@@ -104,7 +104,7 @@ Then, we apply the following style rule to the sections:
 Note that as content moves in and out of visibility, it will start and stop being rendered as needed. However, this does not mean that the browser will have to render and re-render the same content over and over again, since the rendering work is saved when possible.
 {% endAside %}
 
-##### Specifying the natural size of an element with `contain-intrinsic-size`
+### Specifying the natural size of an element with `contain-intrinsic-size`
 
 In order to realize the potential benefits of `content-visibility`, the browser needs to apply size containment to ensure that the rendering results of contents do not affect the size of the element in any way. This means that the element will lay out as if it was empty. If the element does not have a height specified in a regular block layout, then it will be of 0 height. 
 
@@ -115,7 +115,7 @@ Thankfully, CSS provides another property, `contain-intrinsic-size`, which effec
 This means it will lay out as if it had a single child of "intrinsic-size" dimensions, ensuring that your unsized divs still occupy space. `contain-intrinsic-size` acts as a placeholder size in lieu of rendered content.
 
 
-### Hiding content with `content-visibility: hidden`
+## Hiding content with `content-visibility: hidden`
 
 What if you want to keep the content unrendered regardless of whether or not it is on-screen, while leveraging the benefits of cached rendering state? Enter:  `content-visibility: hidden`.
 
