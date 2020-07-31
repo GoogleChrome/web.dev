@@ -2,12 +2,12 @@
 title: "Is your app installed? getInstalledRelatedApps() will tell you!"
 subhead: |
   "The `getInstalledRelatedApps()` method allows your web app to check whether
-  your native app or PWA is installed on a user's device."
+  your app or PWA is installed on a user's device."
 authors:
   - petelepage
 description: |
   The getInstalledRelatedApps() API is a new web platform API that allows your
-  web app to check whether your native app or PWA is installed on the user's
+  web app to check whether your app or PWA is installed on the user's
   device.
 date: 2018-12-20
 updated: 2020-07-22
@@ -25,12 +25,12 @@ alt: mobile device with app panel open
   <img src="getinstalled-cropped.jpg" class="w-screenshot" width="550">
   <figcaption class="w-figcaption">
     A web app using <code>getInstalledRelatedApps()</code> to determine if its
-    related native app is already installed.
+    related Android app is already installed.
   </figcaption>
 </figure>
 
 The [`getInstalledRelatedApps()`][spec] makes it possible for a page to check if
-your native app, or Progressive Web App (PWA) is installed on a user's device.
+your app, or Progressive Web App (PWA) is installed on a user's device.
 
 It allows you to customize the user experience if your app is already
 installed. For example, if the PWA is already installed:
@@ -65,16 +65,19 @@ iterated on the design.
 | 2. Create initial draft of specification     | [Complete][spec]             |
 | 3. Gather feedback and iterate on design     | Complete                     |
 | 4. Origin trial                              | Complete                     |
-| 5. **Launch**                                | **Android: Chrome 80<br/>Edge for Windows: 85** |
+| 5. Launch                                    | Complete                     |
 
 </div>
 
-## See it in action
+`getInstalledRelatedApps()` is supported on the following platforms:
 
-1. Using a supporting browser (see the table, above), open the
-   [`getInstalledRelatedApps()` demo][demo].
-2. Install the demo app from the Play store and refresh the [demo][demo] page.
-   You should now see the app listed.
+* **Check if your Android app is installed**
+  * Android: Chrome 80 or later
+* **Check if you PWA is installed**
+  * Android: Chrome 84 or later
+  * Windows: Edge 85 or later
+
+Additional support is under development.
 
 ## Define the relationship to your other apps {: #define-relationship }
 
@@ -91,30 +94,12 @@ for each app that you want to detect. Each app object includes:
 * `id` The unique identifier for your app on that platform
 * `url` The URL where your app is hosted
 
-For example:
+### Define the relationship to an Android app {: #relationship-native }
 
-```json
-{
-  …
-  "related_applications": [{
-    "platform": "<platform>",
-    "id": "<package-name>",
-    "url": "https://example.com",
-  }],
-  …
-}
-```
-
-### Define the relationship to a native app {: #relationship-native }
-
-To define the relationship to a native app installed from the Play store,
-add a `related_applications` entry in the web app manifest, and update the
-Android app to include a digial asset link that proves the relationship
-between your site and the app.
-
-In the `related_applications` entry, the `platform` value must be `play`,
-and the `id` is the Google Play application ID for your app. The `url`
-property is optional and can be excluded.
+Add a `related_applications` entry to the web app manifest of your page,
+the `platform` value must be `play`, and the `id` is the Google Play
+application ID for your app. The `url` property is optional and can be
+excluded.
 
 ```json
 {
@@ -127,7 +112,7 @@ property is optional and can be excluded.
 }
 ```
 
-In `AndroidManifest.xml` of your native app, use the
+Next, in `AndroidManifest.xml` of your Android app, use the
 [Digital Asset Links system][dig-asset-links] to define the relationship
 between your website and Android application:
 
@@ -156,15 +141,19 @@ your domain. Be sure to include the escaping characters.
 </string>
 ```
 
-Finally, publish your updated Android app to the Play store.
+Once completed, publish your updated Android app to the Play store.
 
-### Define the relationship to an installed PWA {: #relationship-web }
+Finally, you can [use the `getInstalledRelatedApps()`](#use) API to check
+if your Android app is installed.
 
-{% Aside %}
-**Coming Soon!**
-Starting in Chrome 84, in addition to checking if its native app is already
-installed, a PWA can check if it (the PWA) is already installed.
-{% endAside %}
+#### See it in action
+
+1. Using a supporting browser (see the table, above), open the
+   [`getInstalledRelatedApps()` demo][demo].
+2. Install the demo app from the Play store and refresh the [demo][demo] page.
+   You should now see the app listed.
+
+### Define the relationship to an installed PWA (same domain) {: #relationship-web }
 
 To define the relationship to an installed PWA, add a `related_applications`
 entry in the web app manifest, set `"platform": "webapp"` and provide
@@ -181,13 +170,19 @@ the full path to the PWAs web app manifest in the `url` property.
 }
 ```
 
-#### PWA served from a different location
+Now, you can [use the `getInstalledRelatedApps()`](#use) API to check
+if your PWA is already installed.
 
-{% Aside %}
-**Coming Soon!**
-Starting in Chrome 84, a page can check if its PWA is installed, even if it
-is outside the scope of the PWA.
-{% endAside %}
+#### See it in action
+
+1. Using a supporting browser (see the table, above), open the
+   [Basic PWA demo](https://basic-pwa.glitch.me/) and verify the value of
+   "Already installed".
+2. Install the PWA using the browser install flow, or the install button.
+3. Open a new browser tab to the [Basic PWA demo](https://basic-pwa.glitch.me/),
+   check the value of "Already installed", it should have changed to yes.
+
+### Define the relationship to an installed PWA (different domain) {: #relationship-web-different }
 
 A page can check if its PWA is installed, even if it is outside the
 [scope][scope] of the PWA. For instance, `www.example.com` wants to check if
@@ -215,10 +210,13 @@ performing the check.
 }
 ```
 
-## Test for the presence of your installed app {: #use }
+Now, you can [use the `getInstalledRelatedApps()`](#use) API to check
+if your PWA is already installed.
+
+## Check if your app is installed {: #use }
 
 Once you've [defined the relationship](define-relationship) to your other apps,
-you can check for their presence within your web site. Calling
+you can check they're already installed within your web site. Calling
 `navigator.getInstalledRelatedApps()` returns a promise that resolves with an
 array of your apps that are installed on the user's device.
 
@@ -228,13 +226,6 @@ relatedApps.forEach((app) => {
   console.log(app.id, app.platform, app.url);
 });
 ```
-
-{% Aside %}
-`getInstalledRelatedApps()` is currently supported on the following platforms:
-
-* Android: Chrome 80 and later
-* Windows: Edge 85 and later; Chrome is coming soon
-{% endAside %}
 
 To prevent sites from testing an overly broad set of their own apps,
 only the first three apps declared in the web app manifest will be
