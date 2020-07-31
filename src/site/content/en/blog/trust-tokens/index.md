@@ -121,11 +121,11 @@ fetch('https://issuer.example/issue', {
 `issuer.example` by running the following JavaScript:  
   
  ```js
-    fetch('https://issuer.example/redeem', {
-   	  trustToken: {
-   	    type: 'srr-token-redemption'
-   	  }  
-    });    
+ fetch('https://issuer.example/redeem', {
+   trustToken: {
+     type: 'srr-token-redemption'
+   }  
+ });    
 ```
 
 With this code:
@@ -143,7 +143,7 @@ document:
 fetch('foo.example/get-content', {  
   trustToken: {  
     type: 'send-srr',   
-       issuer: 'https://issuer.example'  
+    issuer: 'https://issuer.example'  
   }  
 });  
 ```
