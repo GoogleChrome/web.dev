@@ -133,10 +133,9 @@ If it works, it works. If not, it simply doesn't.
 
 ## Setting and clearing the badge in the background from a service worker
 
-In addition to setting the app badge while the page is open, it can also be
-set in the background by the service worker for the page, allowing it to be
-updated, even when the app isn't open. This can be done either through the
-Push API, periodic background sync, or a combination of both.
+You can also set the app badge in the background using the service worker,
+allowing them to be updated even when the app isn't open. Do this either
+through the Push API, periodic background sync, or a combination of both.
 
 ### Periodic background sync
 
