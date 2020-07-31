@@ -11,15 +11,7 @@
       "pathItems": [
         "what-are-pwas",
         "drive-business-success",
-        "define-install-strategy",
         "pwa-checklist"
-      ]
-    },
-    {
-      "title": "Capable",
-      "pathItems": [
-        "app-like-pwas",
-        "progressively-enhance-your-pwa"
       ]
     },
     {
@@ -29,6 +21,7 @@
     {
       "title": "Installable",
       "pathItems": [
+        "define-install-strategy",
         "install-criteria"
       ],
       "subtopics": [
@@ -47,6 +40,29 @@
             "codelab-make-installable"
           ]
         }
+      ]
+    },
+    {
+      "title": "Capable",
+      "pathItems": [
+        "app-like-pwas",
+        "progressively-enhance-your-pwa"
+      ],
+      "subtopics": [
+        {
+          "title": "Improve your experience with PWA-exclusive features",
+          "pathItems": [
+            "app-shortcuts",
+            "badging-api",
+            "web-share-target"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Advanced topics",
+      "pathItems": [
+        "multi-origin-pwas"
       ]
     }
   ]

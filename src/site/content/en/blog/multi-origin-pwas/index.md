@@ -13,9 +13,7 @@ alt: Multiple Shifting Gears.
 description: Multi-origin architectures presents many challenges when building PWAs. Explore the good and bad uses of multiple origins, and some workarounds to build PWAs in multi-origin sites.
 tags:
   - blog
-  - PWA
-  - caching
-  - a2hs
+  - progressive-web-apps
   - service-worker
 ---
 

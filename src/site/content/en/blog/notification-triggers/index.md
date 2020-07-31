@@ -9,7 +9,7 @@ description:
   The Notification Triggers API allows developers to schedule local notifications that don't require
   a network connection, which makes them ideal for use cases like calendar apps.
 date: 2019-10-24
-updated: 2020-07-24
+updated: 2020-07-31
 hero: hero.jpg
 hero_position: center
 tags:
@@ -70,7 +70,7 @@ alarms for telephone conferences or video calls.
 | 1. Create explainer                          | [Complete][explainer]        |
 | 2. Create initial draft of specification     | Not started                  |
 | **3. Gather feedback and iterate on design** | **[In progress](#feedback)** |
-| 4. Origin trial                              | Complete                     |
+| 4. Origin trial                              | [Complete][ot]               |
 | 5. Launch                                    | Not started                  |
 
 {% Aside %}
@@ -257,5 +257,5 @@ Richard and Peter. [Hero image](https://unsplash.com/photos/UAvYasdkzq8) by
 [cr-status]: https://www.chromestatus.com/feature/5133150283890688
 [explainer]: https://github.com/beverloo/notification-triggers/blob/master/README.md
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
-[ot]: https://developers.chrome.com/origintrials/
+[ot]: https://developers.chrome.com/origintrials/#/view_trial/6883752030435803137
 [devtools]: https://developers.google.com/web/updates/2019/07/devtools#backgroundservices

@@ -8,7 +8,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2020-06-17
-updated: 2020-07-22
+updated: 2020-07-31
 hero: hero.jpg
 alt:
 description: |
@@ -117,6 +117,7 @@ the feature. See [Related links](#related-links) for pointers to the Safari and 
 Note that these links currently do not work when served across
 [client-side redirects](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections#Alternative_way_of_specifying_redirections)
 that some common services like Twitter use.
+You can follow [crbug.com/1055455](https://crbug.com/1055455) for progress on this issue.
 Regular [HTTP redirects](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections#Principle)
 work fine.
 
@@ -362,7 +363,7 @@ to browsers that do not support them.
 ### Polyfillability
 
 The Text Fragments feature can be polyfilled to some extent.
-There is early [work in progress](https://github.com/tomayac/text-fragments-polyfill/)
+There is early [work in progress](https://github.com/GoogleChromeLabs/text-fragments-polyfill)
 to create an extension for browsers that do not support Text Fragments natively
 where the functionality is implemented in JavaScript.
 
