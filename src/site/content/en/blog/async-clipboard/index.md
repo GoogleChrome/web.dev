@@ -82,13 +82,13 @@ is asynchronous and returns a Promise.
 To write an image to the clipboard, you need the image as a
 [`blob`](https://developer.mozilla.org/en-US/docs/Web/API/blob). One way to do
 this is by requesting the image from a server using `fetch()`, then calling
-`[blob()](https://developer.mozilla.org/en-US/docs/Web/API/Body/blob)` on the
+[`blob()`](https://developer.mozilla.org/en-US/docs/Web/API/Body/blob) on the
 response.
 
 Requesting an image from the server may not be desirable or possible for a
 variety of reasons. Fortunately, you can also draw the image to a canvas and
 call the canvas'
-`[toBlob()](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob)`
+[`toBlob()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob)
 method.
 
 Next, pass an array of `ClipboardItem` objects as a parameter to the `write()`
@@ -166,7 +166,7 @@ for the returned Promise to resolve:
 
 The `navigator.clipboard.read()` method is also asynchronous and returns a
 Promise. To read an image from the clipboard, obtain a list of
-`[ClipboardItem](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem)`
+[`ClipboardItem`](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem)
 objects, then iterate over them.
 
 Each `ClipboardItem` can hold its contents in different types, so you'll need to
@@ -220,7 +220,7 @@ match style** or **Paste without formatting**.
 
 The following example shows how to do this. This example uses `fetch()` to obtain
 image data, but it could also come from a
-`[<canvas>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas)`
+[`<canvas>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas)
 or the [Native File System API](https://web.dev/native-file-system/).
 
 ```js
@@ -364,8 +364,8 @@ clipboard; clipboard-read; clipboard-write"
 </div>
 
 To try the API with images use this demo. Recall that only PNGs are supported
-and only in [a few
-browsers]([https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API).
+and only in
+[a few browsers]([https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API).
 
 <div class="glitch-embed-wrap" style="height: 500px; width: 100%;">
   <iframe
@@ -393,10 +393,8 @@ Happy copying and pasting!
 
 ## Related links
 
-*
-[MDN]([https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API))
-* [Raw Clipboard Access Design
-Doc](https://docs.google.com/document/d/1XDOtTv8DtwTi4GaszwRFIJCOuzAEA4g9Tk0HrasQAdE/edit?usp=sharing)
+* [MDN]([https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API))
+* [Raw Clipboard Access Design Doc](https://docs.google.com/document/d/1XDOtTv8DtwTi4GaszwRFIJCOuzAEA4g9Tk0HrasQAdE/edit?usp=sharing)
 
 ## Acknowledgements
 
