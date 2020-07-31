@@ -80,7 +80,7 @@ method, which also lets you copy images to the clipboard. Like `writeText()`, it
 is asynchronous and returns a Promise.
 
 To write an image to the clipboard, you need the image as a
-`[blob](https://developer.mozilla.org/en-US/docs/Web/API/blob)`. One way to do
+[`blob`](https://developer.mozilla.org/en-US/docs/Web/API/blob). One way to do
 this is by requesting the image from a server using `fetch()`, then calling
 `[blob()](https://developer.mozilla.org/en-US/docs/Web/API/Body/blob)` on the
 response.
