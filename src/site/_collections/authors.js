@@ -104,8 +104,9 @@ module.exports = (collections) => {
       .filter((s) => s && s.length)
       .join(' ');
     const description =
-      authorData.description?.en ||
-      `Our latest news, updates, and stories by ${title}.`;
+      authorData.descriptions && authorData.descriptions.en
+        ? authorData.descriptions.en
+        : `Our latest news, updates, and stories by ${title}.`;
     /** @type AuthorsItem */
     const author = {
       ...authorData,

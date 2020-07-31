@@ -15,25 +15,7 @@
  */
 
 declare global {
-  export interface AuthorsItem {
-    /**
-     * @TODO eventually remove, can't extend currently so I'm just copying
-     */
-    // Extends isn't working so I'm just copying over the data for now
-    country?: string;
-    github?: string;
-    glitch?: string;
-    homepage?: string;
-    name: {
-      given: string;
-      family: string;
-    };
-    org?: {
-      name?: string;
-      unit?: string;
-    };
-    twitter?: string;
-    // End extends
+  export interface AuthorsItem extends AuthorsDataItem {
     data: {
       alt?: string;
       hero?: string;

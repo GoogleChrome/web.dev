@@ -17,7 +17,7 @@
 declare global {
   export interface AuthorsDataItem {
     country?: string;
-    description?: {
+    descriptions?: {
       [lng: string]: string;
     };
     github?: string;
