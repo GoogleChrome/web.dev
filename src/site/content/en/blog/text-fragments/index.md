@@ -8,7 +8,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2020-06-17
-updated: 2020-07-28
+updated: 2020-07-31
 hero: hero.jpg
 alt:
 description: |
@@ -117,6 +117,7 @@ the feature. See [Related links](#related-links) for pointers to the Safari and 
 Note that these links currently do not work when served across
 [client-side redirects](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections#Alternative_way_of_specifying_redirections)
 that some common services like Twitter use.
+You can follow [crbug.com/1055455](https://crbug.com/1055455) for progress on this issue.
 Regular [HTTP redirects](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections#Principle)
 work fine.
 
