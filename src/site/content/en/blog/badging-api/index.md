@@ -73,7 +73,7 @@ when there is an unread notification, just as for native apps.
 ## Try it
 
 1. Using Chrome 81 or later on Windows or Mac, open the
-   [Badging API demo][demo].
+   [App Badging API demo][demo].
 2. When prompted, click **Install** to install the app, or use the Chrome
    menu to install it.
 3. Open it as an installed PWA. Note, it must be running as an installed PWA
@@ -154,9 +154,9 @@ which can run JavaScript code even when no foreground page is running. Thus,
 a server push could update the badge by calling `navigator.setAppBadge()`.
 
 However, most browsers, Chrome included, require a notification to be
-displayed whenever a push message is received. This is fine for some uses
-cases, for example if you always want to show a notification when updating
-the badge. But, it makes it impossible to subtly update the badge without
+displayed whenever a push message is received. This is fine for some use
+cases (for example showing a notification when updating
+the badge) but makes it impossible to subtly update the badge without
 displaying a notification.
 
 In addition, users must grant your site notification permission in order to
@@ -164,7 +164,7 @@ receive push messages.
 
 ### A combination of both
 
-While not perfect, the use of Push API and periodic background sync together
+While not perfect, using Push API and periodic background sync together
 provide a good solution. High priority information is delivered via the Push
 API, showing a notification and updating the badge. And lower priority
 information is delivered by updating the badge, either when the page is open,
@@ -174,7 +174,7 @@ or via periodic background sync.
 
 The Chrome team is investigating ways to more reliably [update the app badge in
 the background](https://github.com/w3c/badging/blob/master/explainer.md#background-updates),
-and would like to hear from you. Let them know what would work best for your
+and wants to hear from you. Let them know what works best for your
 use case by commenting on the
 [Notification Background Updates](https://github.com/w3c/badging/issues/28)
 issue.
