@@ -404,7 +404,5 @@ Kačmarčík](https://www.linkedin.com/in/garykac/). Darwin also provided the de
 Thanks to [Kyarik](https://github.com/kyarik) and again Gary Kačmarčík for
 reviewing parts of this article.
 
-Photo by [Markus
-Winkler](https://unsplash.com/@markuswinkler?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-on
+Hero image by [Markus Winkler](https://unsplash.com/@markuswinkler) on
 [Unsplash](https://unsplash.com/photos/7iSEHWsxPLw).
