@@ -8,6 +8,7 @@ updated: 2020-07-30
 description: |
   Learn how different components can be used to render web content inside Android apps.
 tags:
+  - android
   - blog # blog is a required tag for the article to show up in the blog.
 ---
 
