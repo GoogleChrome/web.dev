@@ -167,29 +167,6 @@ overview of the different platforms.
   attribute to request CORS access.
 {% endAside %}
 
-### Working with the `FaceDetector` {: #facedetector}
-
-The `FaceDetector` always returns the bounding boxes of faces it detects in
-the `ImageBitmapSource`. Depending on the platform, more information
-regarding face landmarks like eyes, nose, or mouth may be available.
-
-```js
-const faceDetector = new FaceDetector({
-  // (Optional) Hint to try and limit the amount of detected faces
-  // on the scene to this maximum number.
-  maxDetectedFaces: 5,
-  // (Optional) Hint to try and prioritize speed over accuracy
-  // by, e.g., operating on a reduced scale or looking for large features.
-  fastMode: false
-});
-try {
-  const faces = await faceDetector.detect(image);
-  faces.forEach(face => drawMustache(face));
-} catch (e) {
-  console.error('Face detection failed:', e);
-}
-```
-
 ### Working with the `BarcodeDetector` {: #barcodedetector}
 
 The `BarcodeDetector` returns the barcode raw values it finds in the
@@ -221,6 +198,29 @@ try {
   barcodes.forEach(barcode => searchProductDatabase(barcode));
 } catch (e) {
   console.error('Barcode detection failed:', e);
+}
+```
+
+### Working with the `FaceDetector` {: #facedetector}
+
+The `FaceDetector` always returns the bounding boxes of faces it detects in
+the `ImageBitmapSource`. Depending on the platform, more information
+regarding face landmarks like eyes, nose, or mouth may be available.
+
+```js
+const faceDetector = new FaceDetector({
+  // (Optional) Hint to try and limit the amount of detected faces
+  // on the scene to this maximum number.
+  maxDetectedFaces: 5,
+  // (Optional) Hint to try and prioritize speed over accuracy
+  // by, e.g., operating on a reduced scale or looking for large features.
+  fastMode: false
+});
+try {
+  const faces = await faceDetector.detect(image);
+  faces.forEach(face => drawMustache(face));
+} catch (e) {
+  console.error('Face detection failed:', e);
 }
 ```
 
