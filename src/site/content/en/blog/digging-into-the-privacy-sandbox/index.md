@@ -124,7 +124,7 @@ Interest-based ad selection currently uses cookies to track user behaviour acros
 
 **Goal:** Reduce the amount of potentially identifiable data revealed by APIs and make access to potentially identifiable data controllable by users, and measurable.
 
-Browsers have taken steps to [deprecate third-party cookies](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html?mod=article_inline), but techniques to identify and track the behaviour of individual users, known as fingerprinting, have continued to evolve. Fingerprinting uses mechanisms that users aren't aware of and can't control.
+Browsers have taken steps to [deprecate third-party cookies](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html), but techniques to identify and track the behaviour of individual users, known as fingerprinting, have continued to evolve. Fingerprinting uses mechanisms that users aren't aware of and can't control.
 
 * The [Privacy Budget](https://github.com/bslassey/privacy-budget) proposal aims to limit the potential for fingerprinting by identifying how much fingerprint data is exposed by JavaScript APIs or other 'surfaces' (such as HTTP request headers) and setting a limit on how much of this data can be accessed. 
 
