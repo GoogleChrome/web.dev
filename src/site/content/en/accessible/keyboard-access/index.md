@@ -62,21 +62,19 @@ order versus an illogical tab order:
 **Logical tab order**
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/logical-tab-order?path=index.html&previewSize=100&attributionHidden=true"
-    alt="logical-tab-order on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/logical-tab-order?path=index.html&previewSize=100&attributionHidden=true',
+    title: 'logical-tab-order on Glitch'
+  } %}
 </div>
 
 **Illogical tab order**
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/illogical-tab-order?path=index.html&previewSize=100&attributionHidden=true"
-    alt="illogical-tab-order on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/illogical-tab-order?path=index.html&previewSize=100&attributionHidden=true',
+    title: 'illogical-tab-order on Glitch'
+  } %}
 </div>
 
 The code for these two examples is compared below:

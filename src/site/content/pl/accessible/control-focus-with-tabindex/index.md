@@ -142,11 +142,10 @@ method on it.
 
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/roving-tabindex?path=index.html&previewSize=100&attributionHidden=true"
-    alt="tabindex-negative-one on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/roving-tabindex?path=index.html&previewSize=100&attributionHidden=true',
+    title: 'tabindex-negative-one on Glitch'
+  } %}
 </div>
 
 {% Aside %}

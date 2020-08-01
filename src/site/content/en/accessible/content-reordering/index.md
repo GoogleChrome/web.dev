@@ -31,11 +31,10 @@ The focus will move in a logical direction from left to right,
 the order that we read in English.
 
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/flex-nav-source-ordered?path=index.html&previewSize=100"
-    title="flex-nav-source-ordered on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/flex-nav-source-ordered?path=index.html&previewSize=100',
+    title: 'flex-nav-source-ordered on Glitch'
+  } %}
 </div>
 
 If you have created this sort of pattern and then were asked to move **Contact Us**,
@@ -43,11 +42,10 @@ which is second in the source, to the end. You could use the `order` property wh
 Try tabbing through the items in the example below, which has used the `order` property to rearrange the items.
 
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/flex-nav-ordered?path=style.css&previewSize=100"
-    title="flex-nav-ordered on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/flex-nav-ordered?path=style.css&previewSize=100',
+    title: 'flex-nav-ordered on Glitch'
+  } %}
 </div>
 
 The focus jumps to the final item and then back again.
@@ -73,11 +71,10 @@ In this next example, I have created a layout using CSS Grid and positioned the 
 using line numbers, without considering where they are in the source.
 
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/grid-mixed-up-order?path=index.html&previewSize=100"
-    title="grid-mixed-up-order on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/grid-mixed-up-order?path=index.html&previewSize=100',
+    title: 'grid-mixed-up-order on Glitch'
+  } %}
 </div>
 
 Try tabbing around this example, and see how the focus jumps about.

@@ -52,11 +52,10 @@ accessibility, and add meaning to your markup.
 Here's how your `index.html` should look at this point:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/sign-in-form-codelab-1?path=index.html&attributionHidden=true&sidebarCollapsed=true"
-    alt="How the Glitch should look after completing step 1."
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/sign-in-form-codelab-1?path=index.html&attributionHidden=true&sidebarCollapsed=true',
+    title: 'How the Glitch should look after completing step 1.'
+  } %}
 </div>
 
 Click **View App** to preview your sign-in form. 
@@ -73,11 +72,10 @@ font sizes.
 Copy and paste the following CSS into your own `style.css` file:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/sign-in-form-codelab-2?path=style.css&attributionHidden=true&sidebarCollapsed=true"
-    alt="The CSS to copy-paste."
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/sign-in-form-codelab-2?path=style.css&attributionHidden=true&sidebarCollapsed=true',
+    title: 'The CSS to copy-paste.'
+  } %}
 </div>
 
 Click **View App** to check out your freshly styled sign-in form. Then
@@ -173,11 +171,10 @@ projects](https://www.browserstack.com/open-source). Try it out!
 Here's how your `index.html` should look at this point:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/sign-in-form-codelab-3?path=index.html&attributionHidden=true&sidebarCollapsed=true"
-    alt="How index.html should look after step 3."
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/sign-in-form-codelab-3?path=index.html&attributionHidden=true&sidebarCollapsed=true',
+    title: 'How index.html should look after step 3.'
+  } %}
 </div>
 
 ## Step 4: Add UI to toggle password display
@@ -260,11 +257,10 @@ has high quality free icons available for download.
 Here's how your code should look at this point:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/sign-in-form-codelab-4?path=style.css&attributionHidden=true&sidebarCollapsed=true"
-    alt="How your code should look at this point."
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/sign-in-form-codelab-4?path=style.css&attributionHidden=true&sidebarCollapsed=true',
+    title: 'How your code should look at this point.'
+  } %}
 </div>
 
 
@@ -370,11 +366,10 @@ and passwords. [Better password form fields](https://aerotwist.com/blog/better-p
 
 Here's how your code should look at this point:
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/sign-in-form-codelab-5?path=style.css&attributionHidden=true&sidebarCollapsed=true"
-    alt="How your code should look at this point."
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/sign-in-form-codelab-5?path=style.css&attributionHidden=true&sidebarCollapsed=true',
+    title: 'How your code should look at this point.'
+  } %}
 </div>
 
 ## Going further

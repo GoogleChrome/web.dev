@@ -456,12 +456,11 @@ ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
 
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    allow="geolocation; microphone; camera; midi; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/fav-kitties-starter?path=src/index.js&amp;previewSize=0"
-    alt="fav-kitties-starter on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    allow: 'geolocation; microphone; camera; midi; encrypted-media',
+    src: 'https://glitch.com/embed/#!/embed/fav-kitties-starter?path=src/index.js&amp;previewSize=0',
+    title: 'fav-kitties-starter on Glitch'
+  } %}
 </div>
 
 {% Aside 'key-term' %}
