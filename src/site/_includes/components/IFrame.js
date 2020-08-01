@@ -17,15 +17,16 @@
 const {html} = require('common-tags');
 
 module.exports = ({allow, src, style, title}) => {
+  allow = allow || '';
   style = style || 'height: 100%; width: 100%; border: 0;';
+  title = title || 'IFrame content';
   return html`
     <iframe
-      ${allow ? `allow="${allow}"` : ''}
+      allow="${allow}"
       loading="lazy"
       src="${src}"
       style="${style}"
-      ${title ? `title="${title}"` : ''}
-    >
-    </iframe>
+      title="${title}"
+    ></iframe>
   `;
 };

@@ -662,7 +662,8 @@ at.
 
 ```html
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
+  <!-- Remove the `\` in `{\% IFrame {` -->
+  {\% IFrame {
     src: 'https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&attributionHidden=true',
     title: 'tabindex-zero on Glitch'
   } %}
@@ -686,12 +687,12 @@ Query parameters for modifying how the embed is presented:
   Glitch iframe placeholder
 </div>
 {% else %}
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&attributionHidden=true',
-    title: 'tabindex-zero on Glitch'
-  } %}
-</div>
+  <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
+    {% IFrame {
+      src: 'https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&attributionHidden=true',
+      title: 'tabindex-zero on Glitch'
+    } %}
+  </div>
 {% endif %}
 
 ## Images
