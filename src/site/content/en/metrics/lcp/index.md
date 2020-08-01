@@ -148,14 +148,6 @@ considered.
 Web pages often load in stages, and as a result, it's possible that the largest
 element on the page might change.
 
-To handle this potential for change, the browser dispatches a
-[`PerformanceEntry`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry)
-of type `largest-contentful-paint` identifying the largest contentful element
-as soon as the browser has painted the first frame. But then, after rendering
-subsequent frames, it will dispatch another
-[`PerformanceEntry`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry)
-any time the largest contentful element changes.
-
 For example, on a page with text and a hero image the browser may initially just render the text—at which point the browser would dispatch a `largest-contentful-paint` entry whose `element` property would likely reference a `<p>` or `<h1>`. Later, once the hero image finishes loading, a second `largest-contentful-paint` entry would be dispatched and its `element` property would reference the `<img>`.
 
 It's important to note that an element can only be considered the largest
