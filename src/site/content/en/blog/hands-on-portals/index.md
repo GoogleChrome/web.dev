@@ -59,9 +59,7 @@ they also come with features to navigate to their content.
 Seeing is believing:
 please first check out what we showcased at Chrome Dev Summit last year:
 
-<div style="width:100%; padding-top: 56.25%; position: relative;">
-  <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://www.youtube.com/embed/Ai4aZ9Jbsys?start=1081" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+{% YouTube 'Ai4aZ9Jbsys', '1081' %}
 
 With classic navigations, users have to wait with a blank screen
 until the browser finishes rendering the destination.
@@ -282,9 +280,7 @@ you can build really fancy user experiences.
 For instance, the demo below demonstrates how Portals can enable a seamless user experience
 between a website and third party embed content.
 
-<div style="width:100%; padding-top: 56.25%; position: relative;">
-  <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://www.youtube.com/embed/4JkipxFVE9k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+{% YouTube '4JkipxFVE9k' %}
 
 {% Aside %}
 Interested in this demo?

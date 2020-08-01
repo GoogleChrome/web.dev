@@ -409,11 +409,10 @@ Try toggling dark mode in your particular [operating system's settings](#activat
 and see how the page reacts.
 
 <div style="height: 900px; width: 100%;">
-  <iframe
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/dark-mode-baseline?path=style.css&previewSize=100&attributionHidden=true"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    allow: 'geolocation; microphone; camera; midi; vr; encrypted-media',
+    src: 'https://glitch.com/embed/#!/embed/dark-mode-baseline?path=style.css&previewSize=100&attributionHidden=true'
+  } %}
 </div>
 
 ### Loading impact
@@ -642,12 +641,11 @@ You can see this applied in the demo below.
 ```
 
 <div style="height: 950px; width: 100%;">
-  <iframe
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/dark-mode-currentcolor?path=light.css&previewSize=100"
-    alt="dark-mode-currentcolor on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    allow: 'geolocation; microphone; camera; midi; vr; encrypted-media',
+    src: 'https://glitch.com/embed/#!/embed/dark-mode-currentcolor?path=light.css&previewSize=100',
+    title: 'dark-mode-currentcolor on Glitch'
+  } %}
 </div>
 
 ### Smooth transitions between modes
@@ -699,12 +697,11 @@ Toggle dark mode on your device to see the difference.
 ```
 
 <div style="height: 600px; width: 100%;">
-  <iframe
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/dark-mode-picture?path=index.html&previewSize=100"
-    alt="dark-mode-picture on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    allow: 'geolocation; microphone; camera; midi; vr; encrypted-media',
+    src: 'https://glitch.com/embed/#!/embed/dark-mode-picture?path=index.html&previewSize=100',
+    title: 'dark-mode-picture on Glitch'
+  } %}
 </div>
 
 ### Dark mode, but add an opt-out
@@ -761,11 +758,10 @@ This allows your visitors to keep their operating system in dark mode,
 but enjoy your site in light mode or vice versa.
 
 <div class="w-screenshot" style="height: 800px; width: 100%;">
-  <iframe
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    src="https://googlechromelabs.github.io/dark-mode-toggle/demo/index.html"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    allow: 'geolocation; microphone; camera; midi; vr; encrypted-media',
+    src: 'https://googlechromelabs.github.io/dark-mode-toggle/demo/index.html'
+  } %}
 </div>
 
 ## Conclusions

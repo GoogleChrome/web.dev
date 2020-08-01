@@ -106,13 +106,11 @@ When a document is closed, the browser always implicitly calls `unlock()`.
 You can test the Keyboard Lock API by running the [demo](https://keyboard-lock.glitch.me/) on Glitch. Be sure to [check out the source code](https://glitch.com/edit/#!/keyboard-lock). Clicking the Enter full screen button below launches the demo in a new window so it can enter full screen mode.
 
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/keyboard-lock?path=script.js&previewSize=100"
-    title="keyboard-lock on Glitch"
-    allowfullscreen
-    allow="fullscreen"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    allow: 'fullscreen',
+    src: 'https://glitch.com/embed/#!/embed/keyboard-lock?path=script.js&previewSize=100',
+    title: 'keyboard-lock on Glitch'
+  } %}
 </div>
 
 ## Security Considerations
