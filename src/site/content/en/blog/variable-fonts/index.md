@@ -179,11 +179,10 @@ that primary colors can be mixed to create any other color.
 </figure>
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/variable-font-experiments?previewSize=100&attributionHidden=true"
-    alt="Variable fonts experiments on Glitch."
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/variable-font-experiments?previewSize=100&attributionHidden=true',
+    title: 'Variable fonts experiments on Glitch.'
+  } %}
 </div>
 
 The five registered axes plus Grade have 4-character tags that are used to

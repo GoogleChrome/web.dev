@@ -680,10 +680,10 @@ document.querySelector('.spinner').style.display = 'none'
 ```
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe src="https://glitch.com/embed/#!/embed/promises-sync-example?previewSize=100"
-          alt="An example of fetching JSON synchronously."
-          style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/promises-sync-example?previewSize=100',
+    title: 'An example of fetching JSON synchronously.'
+  } %}
 </div>
 
 That works! But it's sync and locks up the browser while things download. To
@@ -806,10 +806,10 @@ getJSON('story.json').then(function(story) {
 ```
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe src="https://glitch.com/embed/#!/embed/promises-async-example?previewSize=100"
-          alt="An example of fetching JSON asynchronously."
-          style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/promises-async-example?previewSize=100',
+    title: 'An example of fetching JSON asynchronously.'
+  } %}
 </div>
 
 And there we have it, a fully async version of the sync version. But we can do
@@ -864,10 +864,10 @@ getJSON('story.json').then(function(story) {
 ```
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe src="https://glitch.com/embed/#!/embed/promises-async-all-example?previewSize=100"
-          alt="An example of fetching JSON asynchronously with Promise.all()."
-          style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/promises-async-all-example?previewSize=100',
+    title: 'An example of fetching JSON asynchronously with Promise.all().'
+  } %}
 </div>
 
 Depending on connection, this can be seconds faster than loading one-by-one,
@@ -922,10 +922,10 @@ getJSON('story.json')
 ```
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe src="https://glitch.com/embed/#!/embed/promises-async-best-example?previewSize=100"
-          alt="An example of fetching JSON asynchronously with a good UX."
-          style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/promises-async-best-example?previewSize=100',
+    title: 'An example of fetching JSON asynchronously with a good UX.'
+  } %}
 </div>
 
 And there we go, the best of both! It takes the same amount of time to deliver
@@ -1048,10 +1048,10 @@ spawn(function *() {
 ```
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe src="https://glitch.com/embed/#!/embed/promises-async-generator-example?previewSize=100"
-          alt="An example of fetching JSON asynchronously with a generator."
-          style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/promises-async-generator-example?previewSize=100',
+    title: 'An example of fetching JSON asynchronously with a generator.'
+  } %}
 </div>
 
 This works exactly as before but is so much easier to read. This works in Chrome

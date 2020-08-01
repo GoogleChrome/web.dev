@@ -36,11 +36,10 @@ opportunity.
 Here is an example of a simple sign-in form that demonstrates all of the best practices:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/sign-in-form?path=index.html&previewSize=100"
-    alt="A demonstration of all the sign-in form best practices."
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/sign-in-form?path=index.html&previewSize=100',
+    title: 'A demonstration of all the sign-in form best practices.'
+  } %}
 </div>
 
 ## Checklist
@@ -630,11 +629,10 @@ inadvertently reveal passwords.
 You can see both ARIA features in action in the following Glitch:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/signin-form?path=index.html&previewSize=100"
-    alt="signin-form on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/signin-form?path=index.html&previewSize=100',
+    title: 'signin-form on Glitch'
+  } %}
 </div>
 
 [Creating Accessible Forms](https://webaim.org/techniques/forms/) has more tips to help make forms accessible.

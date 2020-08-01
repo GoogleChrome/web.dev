@@ -81,11 +81,10 @@ If you have a service worker file named `service-worker.js`, you can register it
 to the visitor's browser by running the following code:
 
 <!-- <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/paymenthandler-demo?path=/public/index.js:32:1&attributionHidden=true&sidebarCollapsed=true"
-    alt="How the Glitch should look after completing step 1."
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/paymenthandler-demo?path=/public/index.js:32:1&attributionHidden=true&sidebarCollapsed=true',
+    title: 'How the Glitch should look after completing step 1.'
+  } %}
 </div> -->
 
 {% Label %}[payment handler] payment app's landing page{% endLabel %}
