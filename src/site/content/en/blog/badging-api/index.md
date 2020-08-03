@@ -9,8 +9,8 @@ updated: 2020-06-04
 tags:
   - blog
   - capabilities
-  - badging
   - progressive-web-apps
+  - badging
   - notifications
 hero: hero.jpg
 alt: Phone showing several notification badges
