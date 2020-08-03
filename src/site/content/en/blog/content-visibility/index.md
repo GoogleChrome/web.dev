@@ -36,19 +36,19 @@ Basically a developer can tell a browser what parts of the page are encapsulated
 
 There are four types of [CSS containment](https://developers.google.com/web/updates/2016/06/css-containment), each a potential value for the `contain` CSS property, which can be combined together in a space-separated list of values:
 
-- `size`: Size containment ensures that the containing box can be laid out without needing to examine its children. The parent sets the geometric size independent of its contents.
-- `layout`: Layout containment means that the subtree does not affect the external layout of other boxes on the page.
-- `style`: Style containment ensures that properties which can have effects on more than just its descendants don't escape the element (e.g. counters).
-- `paint`: Paint containment ensures that the descendants of the containing box don't display outside its bounds. Nothing can visibly overflow the element, and if an element is off-screen or otherwise not visible, its descendants will also not be visible.
+- `size`: Size containment on an element ensures that the element's box can be laid out without needing to examine its descendants. This means we can potentially skip layout of the descendants if all we need is the size of the element.
+- `layout`: Layout containment means that the descendants do not affect the external layout of other boxes on the page. This allows us to potentially skip layout of the descendants if all we want to do is lay out other boxes.
+- `style`: Style containment ensures that properties which can have effects on more than just its descendants don't escape the element (e.g. counters). This allows us to potentially skip style computation for the descendants if all we want is to compute styles on other elements.
+- `paint`: Paint containment ensures that the descendants of the containing box don't display outside its bounds. Nothing can visibly overflow the element, and if an element is off-screen or otherwise not visible, its descendants will also not be visible. This allows us to potentially skip painting the descendants if the element is offscreen.
 
 ## Skipping rendering work with `content-visibility`
 
-It may be hard to figure out which containment values to use, since browser optimizations may only kick in when an appropriate set is specified. You can play around with the values to see [what works best](https://developers.google.com/web/updates/2016/06/css-containment), or you can use another CSS property called `content-visibility` to apply the needed containment automatically. `content-visibility` ensures that you get the largest performance gains the browser can provide with less effort from you as a developer. 
+It may be hard to figure out which containment values to use, since browser optimizations may only kick in when an appropriate set is specified. You can play around with the values to see [what works best](https://developers.google.com/web/updates/2016/06/css-containment), or you can use another CSS property called `content-visibility` to apply the needed containment automatically. `content-visibility` ensures that you get the largest performance gains the browser can provide with minimal effort from you as a developer. 
 
 
-The content-visibility property accepts several values, but `auto` is the one that provides immediate performance improvements. An element that has `content-visibility: auto` gains `layout`, `style` and `paint` containment. If the element is off-screen (and not otherwise relevant to the user—relevant elements would be the ones that have focus or selection in their subtree), it also gains `size` containment (it stops [painting](https://developers.google.com/web/updates/2018/09/inside-browser-part3#paint) and [hit-testing](https://developers.google.com/web/updates/2018/09/inside-browser-part4#finding_the_event_target) its contents).
+The content-visibility property accepts several values, but `auto` is the one that provides immediate performance improvements. An element that has `content-visibility: auto` gains `layout`, `style` and `paint` containment. If the element is off-screen (and not otherwise relevant to the user—relevant elements would be the ones that have focus or selection in their subtree), it also gains `size` containment (and it stops [painting](https://developers.google.com/web/updates/2018/09/inside-browser-part3#paint) and [hit-testing](https://developers.google.com/web/updates/2018/09/inside-browser-part4#finding_the_event_target) its contents).
 
-What does this mean? In short, if the element is off-screen it is not rendered. The browser determines the size of the element without considering any of its contents, and it stops there. Most of the rendering, such as styling and layout of the element's subtree are skipped.
+What does this mean? In short, if the element is off-screen its descendants are not rendered. The browser determines the size of the element without considering any of its contents, and it stops there. Most of the rendering, such as styling and layout of the element's subtree are skipped.
 
 As the element approaches the viewport, the browser no longer adds the `size` containment and starts painting and hit-testing the element's content. This enables the rendering work to be done just in time to be seen by the user.
 
