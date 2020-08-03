@@ -243,12 +243,11 @@ In this case just run the demo
 [directly on Glitch](https://async-clipboard-api.glitch.me/).
 
 <div class="glitch-embed-wrap" style="height: 500px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/async-clipboard-api?path=README.md&previewSize=100"
-    title="async-clipboard-api on Glitch"
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media; clipboard; clipboard-read; clipboard-write"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    allow: 'geolocation; microphone; camera; midi; vr; encrypted-media; clipboard; clipboard-read; clipboard-write',
+    src: 'https://glitch.com/embed/#!/embed/async-clipboard-api?path=README.md&previewSize=100',
+    title: 'async-clipboard-api on Glitch'
+  } %}
 </div>
 
 ### Security

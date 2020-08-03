@@ -18,13 +18,7 @@ tags:
 
 Great things are happening with Google Search, and we were excited to share them at Google I/O 2019!
 
-<div style="width:100%; padding-top: 56.25%; position: relative;">
-<iframe style="width:100%; height: 100%;position: absolute; top: 50%; left:
-50%; transform: translate(-50%,-50%);"
-src="https://www.youtube.com/embed/ufcijo46LCU" frameborder="0"
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
-</div>
+{% YouTube 'ufcijo46LCU' %}
 
 In this post we'll focus on best practices for making JavaScript web apps discoverable in Google Search, including:
 

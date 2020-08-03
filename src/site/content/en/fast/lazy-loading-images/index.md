@@ -124,11 +124,10 @@ create a new observer that runs a callback when `img.lazy` elements enter the
 viewport.
 
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/lazy-intersection-observer?path=index.html&previewSize=0"
-    title="lazy-intersection-observer on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/lazy-intersection-observer?path=index.html&previewSize=0',
+    title: 'lazy-intersection-observer on Glitch'
+  } %}
 </div>
 
 Intersection Observer is available in all modern browsers.
@@ -159,11 +158,10 @@ from the elements array. When the elements array reaches a `length` of `0`, the
 scroll event handler code is removed.
 
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/lazy-loading-fallback?path=lazy.js&previewSize=0"
-    title="lazy-loading-fallback on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/lazy-loading-fallback?path=lazy.js&previewSize=0',
+    title: 'lazy-loading-fallback on Glitch'
+  } %}
 </div>
 
 While this code works in pretty much any browser, it has potential performance
@@ -253,11 +251,10 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 ```
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/lazy-background?path=index.html&previewSize=0"
-    title="lazy-background on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/lazy-background?path=index.html&previewSize=0',
+    title: 'lazy-background on Glitch'
+  } %}
 </div>
 
 As indicated earlier, if you need Internet Explorer support for lazy-loading of background images,

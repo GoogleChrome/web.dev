@@ -31,11 +31,10 @@ which is about the size of a person's finger pad area.
 In the demo, I have added padding to all of the links in order to make sure they meet the minimum size.
 
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/tap-targets?path=index.html&previewSize=100"
-    title="tap-targets on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/tap-targets?path=index.html&previewSize=100',
+    title: 'tap-targets on Glitch'
+  } %}
 </div>
 
 Touch targets should also be spaced about 8 pixels apart,
@@ -49,11 +48,10 @@ you can use DevTools to check that the computed value of that area is large enou
 In the example below I am using `em` for my text and padding.
 
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/tap-targets-2?path=style.css&previewSize=100"
-    title="tap-targets-2 on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/tap-targets-2?path=style.css&previewSize=100',
+    title: 'tap-targets-2 on Glitch'
+  } %}
 </div>
 
 Inspect the `a` of the link,

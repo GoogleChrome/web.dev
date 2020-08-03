@@ -45,9 +45,10 @@ In the example app below, the `index.js` page links to `margherita.js` with a
 `<Link>`:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-<iframe src="https://glitch.com/embed/#!/embed/nextjs-prefetching?path=pages/index.js&attributionHidden=true"
-        alt="A basic Next.js app on Glitch"
-        style="height: 100%; width: 100%; border: 0;"></iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/nextjs-prefetching?path=pages/index.js&attributionHidden=true',
+    title: 'A basic Next.js app on Glitch'
+  } %}
 </div>
 
 Use Chrome DevTools to verify that `margherita.js` is prefetched:
@@ -105,9 +106,10 @@ In this second example app, the `index.js` page has a `<Link>` to
 `pineapple-pizza.js` with `prefetch` set to `false`:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-<iframe src="https://glitch.com/embed/#!/embed/nextjs-noprefetch?path=pages/index.js:12:50&attributionHidden=true"
-        alt="A basic Next.js app on Glitch"
-        style="height: 100%; width: 100%; border: 0;"></iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/nextjs-noprefetch?path=pages/index.js:12:50&attributionHidden=true',
+    title: 'A basic Next.js app on Glitch'
+  } %}
 </div>
 
 To inspect the network activity, follow the steps from the first example. When
@@ -131,9 +133,10 @@ To implement prefetching in your routing code, use the `prefetch` method from
 Take a look at `components/MyLink.js` in this example app:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-<iframe src="https://glitch.com/embed/#!/embed/nextjs-routing?path=components/MyLink.js&attributionHidden=true"
-        alt="A basic Next.js app on Glitch"
-        style="height: 100%; width: 100%; border: 0;"></iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/nextjs-routing?path=components/MyLink.js&attributionHidden=true',
+    title: 'A basic Next.js app on Glitch'
+  } %}
 </div>
 
 Prefetching is done inside the

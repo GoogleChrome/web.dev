@@ -125,12 +125,11 @@ To get started building your own components, you can check out LitElement, a web
 
 
 <div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    allow="geolocation; microphone; camera; midi; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/lit-element-simple?path=my-component.js&amp;previewSize=0"
-    alt="lit-element-simple on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    allow: 'geolocation; microphone; camera; midi; encrypted-media',
+    src: 'https://glitch.com/embed/#!/embed/lit-element-simple?path=my-component.js&amp;previewSize=0',
+    title: 'lit-element-simple on Glitch'
+  } %}
 </div>
 
 

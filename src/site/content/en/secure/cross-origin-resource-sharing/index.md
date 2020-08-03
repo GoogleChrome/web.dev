@@ -118,11 +118,10 @@ shared with the client site.
 Here is a tiny web server using Express.
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/cors-demo?path=server.js&attributionHidden=true"
-    alt="tabindex-zero on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/cors-demo?path=server.js&attributionHidden=true',
+    title: 'tabindex-zero on Glitch'
+  } %}
 </div>
 
 The first endpoint (line 8) does not have any response header set, it just sends

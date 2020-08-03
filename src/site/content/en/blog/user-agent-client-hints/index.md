@@ -300,12 +300,11 @@ You can try out both the headers and the JavaScript API on your own device at
 [user-agent-client-hints.glitch.me](https://user-agent-client-hints.glitch.me).
 
 <div class="glitch-embed-wrap" style="height: 600px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/user-agent-client-hints?path=README.md&previewSize=100"
-    title="user-agent-client-hints on Glitch"
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    allow: 'geolocation; microphone; camera; midi; vr; encrypted-media',
+    src: 'https://glitch.com/embed/#!/embed/user-agent-client-hints?path=README.md&previewSize=100',
+    title: 'user-agent-client-hints on Glitch'
+  } %}
 </div>
 
 {% Aside %}

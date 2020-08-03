@@ -19,11 +19,10 @@ Here's an example of a list that contains 1000 rows being rendered with
 `react-window`. Try scrolling as fast you can.
 
 <div class="glitch-embed-wrap" style="height: 750px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/react-window-fixed?path=src/App.js&previewSize=100"
-    alt="react-window-fixed on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/react-window-fixed?path=src/App.js&previewSize=100',
+    title: 'react-window-fixed on Glitch'
+  } %}
 </div>
 
 ## Why is this useful?
@@ -144,12 +143,11 @@ export default ListComponent;
 The following embed shows an example of this component.
 
 <div class="glitch-embed-wrap" style="height: 750px; width: 100%;">
-  <iframe
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/react-window-variable?path=src/ListComponent.js&previewSize=100"
-    alt="react-window-variable on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    allow: 'geolocation; microphone; camera; midi; vr; encrypted-media',
+    src: 'https://glitch.com/embed/#!/embed/react-window-variable?path=src/ListComponent.js&previewSize=100',
+    title: 'react-window-variable on Glitch'
+  } %}
 </div>
 
 The item size function passed to the `itemSize` prop randomizes the row heights
@@ -325,11 +323,10 @@ The following is an example of how infinite loading can work with a virtualized
 list.
 
 <div class="glitch-embed-wrap" style="height: 750px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/react-window-infinite?path=src/ListComponent.js&previewSize=100"
-    alt="react-window-infinite on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/react-window-infinite?path=src/ListComponent.js&previewSize=100',
+    title: 'react-window-infinite on Glitch'
+  } %}
 </div>
 
 Scrolling down the list might feel the same, but a request is now made to

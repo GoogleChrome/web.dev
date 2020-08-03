@@ -37,11 +37,10 @@ TAB`) to move between controls, and you can use the arrow keys and keys like
 `ENTER` and `SPACE` to manipulate their values.
 
 <div class="glitch-embed-wrap" style="height: 450px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/interactive-elements?path=index.html&previewSize=100&attributionHidden=true"
-    alt="interactive-elements on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/interactive-elements?path=index.html&previewSize=100&attributionHidden=true',
+    title: 'interactive-elements on Glitch'
+  } %}
 </div>
 
 If you have a phone handy, you can see that many times these built-in elements
@@ -75,11 +74,10 @@ Compare the difference in this example. `TAB` to either control, and use `ENTER`
 and `SPACE` to attempt to click on them.
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/synthetic-click?path=index.html&previewSize=100&attributionHidden=true"
-    alt="synthetic-click on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/synthetic-click?path=index.html&previewSize=100&attributionHidden=true',
+    title: 'synthetic-click on Glitch'
+  } %}
 </div>
 
 If you have `div` buttons in your existing site or application, consider

@@ -99,9 +99,10 @@ The following embed shows the directory structure of a new Next.js app.
 {% Instruction 'preview' %}
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe src="https://glitch.com/embed/#!/embed/new-next-app?path=index.html&attributionHidden=true"
-          alt="A basic Next.js app on Glitch"
-          style="height: 100%; width: 100%; border: 0;"></iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/new-next-app?path=index.html&attributionHidden=true',
+    title: 'A basic Next.js app on Glitch'
+  } %}
 </div>
 
 Notice that a `pages/` directory is created with a single file: `index.jsx`. Next.js follows

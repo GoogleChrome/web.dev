@@ -194,11 +194,10 @@ The Glitch below demonstrates how service worker caching and HTTP caching work i
 different scenarios:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/compare-sw-and-http-caching?previewSize=100"
-    alt="compare-sw-and-http-caching on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/compare-sw-and-http-caching?previewSize=100',
+    title: 'compare-sw-and-http-caching on Glitch'
+  } %}
 </div>
 
 ### Consistent expiry logic for all cache layers
