@@ -660,15 +660,24 @@ at.
 
 ### Embed a Glitch
 
+{% raw %}
+
 ```html
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <!-- Remove the `\` in `{\% IFrame {` -->
-  {\% IFrame {
+  {% IFrame {
     src: 'https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&attributionHidden=true',
     title: 'tabindex-zero on Glitch'
   } %}
 </div>
+
+<!-- Or just the URL -->
+
+<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
+  {% IFrame 'https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&attributionHidden=true' %}
+</div>
 ```
+
+{% endraw %}
 
 It's OK to adjust the `height` on the `<div class="glitch-embed-wrap">`
 element if you need more or less space.
