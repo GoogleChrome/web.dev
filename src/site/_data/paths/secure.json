@@ -7,26 +7,41 @@
   "overview": "Every website is vulnerable to attack—not just those handling sensitive data. In this section you'll learn simple techniques to keep your users, your content and your business secure.",
   "topics": [
     {
-      "title": "Understand security",
+      "title": "Understand security basics",
       "pathItems": [
         "security-not-scary",
         "security-attacks",
-        "why-https-matters",
         "same-site-same-origin"
       ]
     },
     {
-      "title": "How browsers mitigate against attacks",
+      "title": "Secure connections with HTTPS",
+      "pathItems": ["why-https-matters"]
+    },
+    {
+      "title": "Prevent info leaks",
       "pathItems": [
         "browser-sandbox",
         "same-origin-policy",
-        "cross-origin-resource-sharing"
+        "cross-origin-resource-sharing",
+        "coop-coep",
+        "why-coop-coep",
+        "fetch-metadata"
       ]
+    },
+    {
+      "title": "Protect websites from XSS",
+      "pathItems": ["trusted-types"]
     },
     {
       "title": "Protect users from tracking",
       "pathItems": [
-        "referrer-best-practices"
+        "digging-into-the-privacy-sandbox",
+        "samesite-cookies-explained",
+        "samesite-cookie-recipes",
+        "referrer-best-practices",
+        "trust-tokens",
+        "user-agent-client-hints"
       ]
     }
   ]
