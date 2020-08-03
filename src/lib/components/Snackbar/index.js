@@ -35,6 +35,12 @@ class Snackbar extends BaseElement {
     };
   }
 
+  constructor() {
+    super();
+    this.action = null;
+    this.type = null;
+  }
+
   get open() {
     return this.hasAttribute('open');
   }

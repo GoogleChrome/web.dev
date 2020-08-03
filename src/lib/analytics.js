@@ -40,7 +40,7 @@ export function trackEvent({category, action, label, value}) {
 /**
  * Track an error via Analytics with optional context message and fatal notice.
  *
- * @param {!Error} error to log
+ * @param {Error} error to log
  * @param {string=} message context to provide around error message
  * @param {boolean=} fatal whether this is fatal (as per Analytics' logging)
  */

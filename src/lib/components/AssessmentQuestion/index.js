@@ -8,7 +8,7 @@ import './_styles.scss';
  *
  * @extends {BaseElement}
  */
-class AssessmentQuestion extends BaseElement {
+export class AssessmentQuestion extends BaseElement {
   static get properties() {
     return {
       id: {type: String, reflect: true},

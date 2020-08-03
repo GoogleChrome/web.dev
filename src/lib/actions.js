@@ -8,17 +8,19 @@ import cookies from 'js-cookie';
 
 export const clearSignedInState = store.action(() => {
   const {isSignedIn} = store.getState();
-  if (isSignedIn) {
-    return {
-      userUrlSeen: null,
-      userUrl: null,
-      checkingSignedInState: false,
-      isSignedIn: false,
-      user: null,
-      lighthouseResult: null,
-      lighthouseError: null,
-    };
+  if (!isSignedIn) {
+    return undefined;
   }
+
+  return {
+    userUrlSeen: null,
+    userUrl: null,
+    checkingSignedInState: false,
+    isSignedIn: false,
+    user: null,
+    lighthouseResult: null,
+    lighthouseError: null,
+  };
 });
 
 export const requestRunLighthouse = store.action((state, url) => {
@@ -78,7 +80,7 @@ export const requestRunLighthouse = store.action((state, url) => {
   });
 });
 
-export const requestFetchReports = store.action((state, url, startDate) => {
+export const requestFetchReports = store.action((_, url, startDate) => {
   const p = (async () => {
     const runs = await fetchReports(url, startDate);
 
@@ -148,6 +150,7 @@ export const openModal = store.action(() => {
 
 export const closeModal = store.action(() => {
   const main = document.querySelector('main');
+  /** @type import('./components/Header').Header */
   const header = document.querySelector('web-header');
   const footer = document.querySelector('.w-footer');
 
@@ -161,7 +164,7 @@ export const closeModal = store.action(() => {
 export const checkIfUserAcceptsCookies = store.action(
   ({userAcceptsCookies}) => {
     if (userAcceptsCookies) {
-      return;
+      return undefined;
     }
 
     if (localStorage['web-accepts-cookies']) {
@@ -175,7 +178,7 @@ export const checkIfUserAcceptsCookies = store.action(
 );
 
 export const setUserAcceptsCookies = store.action(() => {
-  localStorage['web-accepts-cookies'] = 1;
+  localStorage['web-accepts-cookies'] = '1';
   return {
     userAcceptsCookies: true,
     showingSnackbar: false,
