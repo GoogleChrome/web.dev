@@ -40,6 +40,7 @@ const CompareCaption = require(`./${componentsDir}/CompareCaption`);
 const Details = require(`./${componentsDir}/Details`);
 const DetailsSummary = require(`./${componentsDir}/DetailsSummary`);
 const EventTable = require(`./${componentsDir}/EventTable`);
+const Glitch = require(`./${componentsDir}/Glitch`);
 const Hero = require(`./${componentsDir}/Hero`);
 const IFrame = require(`./${componentsDir}/IFrame`);
 const Instruction = require(`./${componentsDir}/Instruction`);
@@ -211,6 +212,7 @@ module.exports = function (config) {
   config.addPairedShortcode('CompareCaption', CompareCaption);
   config.addPairedShortcode('Details', Details);
   config.addPairedShortcode('DetailsSummary', DetailsSummary);
+  config.addShortcode('Glitch', Glitch);
   config.addShortcode('Hero', Hero);
   config.addShortcode('IFrame', IFrame);
   config.addShortcode('Instruction', Instruction);

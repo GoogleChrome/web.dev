@@ -15,39 +15,45 @@
  */
 
 const {html} = require('common-tags');
+const iframe = require('./IFrame');
 
 /**
  *
- * @param {string | {src: string; allow?: string; style?: string; title?: string;}} param
+ * @param {string | { id: string; path?: string; previewSize?: number; style?: string; }} param
  * @return string
  */
 module.exports = (param) => {
-  let iframeProps = {
-    allow: '',
-    src: null,
-    style: 'height: 100%; width: 100%; border: 0;',
-    title: 'IFrame content',
+  const allow = 'geolocation; microphone; camera; midi; encrypted-media';
+  let glitchProps = {
+    id: null,
+    path: '',
+    previewSize: 0,
+    style: 'height: 420px; width: 100%;',
   };
 
   if (typeof param === 'string') {
-    iframeProps.src = param;
+    glitchProps.id = param;
   } else if (param.constructor === {}.constructor) {
-    iframeProps = {...iframeProps, ...param};
+    glitchProps = {...glitchProps, ...param};
   }
 
-  const {allow, src, style, title} = iframeProps;
+  const {id, path, previewSize, style} = glitchProps;
 
-  if (!src) {
+  if (!id) {
     return;
   }
 
+  let src = `https://glitch.com/embed/#!/embed/${id}?`;
+  if (path) {
+    src += `path=${path}&`;
+  }
+  if (previewSize) {
+    src += `previewSize=${previewSize}&`;
+  }
+
   return html`
-    <iframe
-      allow="${allow}"
-      loading="lazy"
-      src="${src}"
-      style="${style}"
-      title="${title}"
-    ></iframe>
+    <div class="glitch-embed-wrap" style="${style}">
+      ${iframe({src, title: `${id} on Glitch`, allow})}
+    </div>
   `;
 };
