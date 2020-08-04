@@ -55,14 +55,12 @@ display the puppy on the page, the app imports the `Puppy` component in
 import Puppy from "../components/Puppy";
 ```
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    allow: 'geolocation; microphone; camera; midi; vr; encrypted-media',
-    src: 'https://glitch.com/embed/#!/embed/static-import?path=pages/index.js&previewSize=0',
-    title: 'A basic Next.js app on Glitch'
-  } %}
-</div>
-
+{% Glitch {
+  id: 'static-import',
+  path: 'index.js',
+  previewSize: 0,
+  height: 480
+} %}
 
 To see how Next.js bundles the app, inspect the network trace in DevTools:
 
@@ -107,12 +105,11 @@ import dynamic from "next/dynamic";
 const Puppy = dynamic(import("../components/Puppy"));
 ```
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/dynamic-import-nextjs?path=pages/index.js:29:10&attributionHidden=true',
-    title: 'A basic Next.js app on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'dynamic-import-nextjs',
+  path: 'pages/index.js:29:10',
+  height: 480
+} %}
 
 Follow the steps from the first example to inspect the network trace.
 
@@ -150,12 +147,11 @@ const Puppy = dynamic(() => import("../components/Puppy"), {
 });
 ```
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/dynamic-import-loading?path=pages/index.js:7:27&attributionHidden=true',
-    title: 'A basic Next.js app on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'dynamic-import-loading',
+  path: 'pages/index.js:7:27',
+  height: 480
+} %}
 
 To see the loading indictor in action, simulate slow network connection in
 DevTools:
@@ -188,12 +184,11 @@ const Puppy = dynamic(() => import("../components/Puppy"), {
 });
 ```
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/dynamic-import-no-ssr?path=pages/index.js:5:0&attributionHidden=true',
-    title: 'A basic Next.js app on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'dynamic-import-no-ssr',
+  path: 'pages/index.js:5:0',
+  height: 480
+} %}
 
 ## Conclusion
 

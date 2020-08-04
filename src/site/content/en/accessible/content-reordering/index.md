@@ -30,23 +30,21 @@ Click into the example, and tab between the links.
 The focus will move in a logical direction from left to right,
 the order that we read in English.
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/flex-nav-source-ordered?path=index.html&previewSize=100',
-    title: 'flex-nav-source-ordered on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'flex-nav-source-ordered',
+  path: 'index.html',
+  previewSize: 100
+} %}
 
 If you have created this sort of pattern and then were asked to move **Contact Us**,
 which is second in the source, to the end. You could use the `order` property which works in Flexbox.
 Try tabbing through the items in the example below, which has used the `order` property to rearrange the items.
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/flex-nav-ordered?path=style.css&previewSize=100',
-    title: 'flex-nav-ordered on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'flex-nav-ordered',
+  path: 'style.css',
+  previewSize: 100
+} %}
 
 The focus jumps to the final item and then back again.
 As far as the tab order is concerned that item is the second item.
@@ -70,12 +68,11 @@ The following CSS properties commonly cause content reordering problems:
 In this next example, I have created a layout using CSS Grid and positioned the items
 using line numbers, without considering where they are in the source.
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/grid-mixed-up-order?path=index.html&previewSize=100',
-    title: 'grid-mixed-up-order on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'grid-mixed-up-order',
+  path: 'index.html',
+  previewSize: 100
+} %}
 
 Try tabbing around this example, and see how the focus jumps about.
 This makes for a very confusing experience, especially if this is a long page.

@@ -183,13 +183,11 @@ animating our linear gradient. Check out the Glitch below to see the full code
 in action and play around with it yourself.
 
 <!-- Copy and Paste Me -->
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  {% IFrame {
-    allow: 'geolocation; microphone; camera; midi; vr; encrypted-media',
-    src: 'https://glitch.com/embed/#!/embed/houdini-props-and-vals?path=style.css&previewSize=40&attributionHidden=true',
-    title: 'houdini-props-and-vals on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'houdini-props-and-vals',
+  path: 'style.css',
+  previewSize: 40
+} %}
 
 ## Conclusion
 

@@ -242,13 +242,12 @@ implemented Feature Policy (see
 In this case just run the demo
 [directly on Glitch](https://async-clipboard-api.glitch.me/).
 
-<div class="glitch-embed-wrap" style="height: 500px; width: 100%;">
-  {% IFrame {
-    allow: 'geolocation; microphone; camera; midi; vr; encrypted-media; clipboard; clipboard-read; clipboard-write',
-    src: 'https://glitch.com/embed/#!/embed/async-clipboard-api?path=README.md&previewSize=100',
-    title: 'async-clipboard-api on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'async-clipboard-api',
+  path: 'README.md',
+  previewSize: 100,
+  height: 500
+} %}
 
 ### Security
 

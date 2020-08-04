@@ -217,12 +217,11 @@ behaviors.
 
 Check out the [app shortcuts sample] and its [source].
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/app-shortcuts?path=public/manifest.json&attributionHidden=true',
-    title: 'app-shortcuts on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'app-shortcuts',
+  path: 'public/manifest.json',
+  height: 480
+} %}
 
 ## Helpful links
 

@@ -61,21 +61,21 @@ order versus an illogical tab order:
 
 **Logical tab order**
 
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/logical-tab-order?path=index.html&previewSize=100&attributionHidden=true',
-    title: 'logical-tab-order on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'logical-tab-order',
+  path: 'index.html',
+  previewSize: 100,
+  height: 346
+} %}
 
 **Illogical tab order**
 
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/illogical-tab-order?path=index.html&previewSize=100&attributionHidden=true',
-    title: 'illogical-tab-order on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'illogical-tab-order',
+  path: 'index.html',
+  previewSize: 100,
+  height: 346
+} %}
 
 The code for these two examples is compared below:
 

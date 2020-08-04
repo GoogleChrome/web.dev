@@ -71,12 +71,12 @@ with a fresh response.
 Below is a simple example of an HTTP API for returning the current time—more
 specifically, the current number of minutes past the hour.
 
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/s-w-r-demo?path=server.js:20:15&previewSize=100&attributionHidden=true',
-    title: 'Stale-while-revalidate Demo on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 's-w-r-demo',
+  path: 'server.js:20:15',
+  previewSize: 100,
+  height: 346
+} %}
 
 In this scenario, the web server uses this `Cache-Control` header in its HTTP response:
 

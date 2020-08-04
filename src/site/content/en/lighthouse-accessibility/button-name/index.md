@@ -39,12 +39,12 @@ For buttons without visible labels, like icon buttons,
 use the `aria-label` attribute to clearly describe the action
 to anyone using an assistive technology, for example:
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/lh-button-name?path=index.html&previewSize=0',
-    title: 'lh-button-name on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'lh-button-name',
+  path: 'index.html',
+  previewSize: 0,
+  height: 480
+} %}
 
 {% Aside %}
 This sample app relies on Google's

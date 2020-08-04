@@ -85,12 +85,12 @@ However, with the update, the Web Animations API is no longer restricted to anim
 
 `getAnimations()` is a method that returns all animations on an element regardless of whether it was created via `element.animate()` or via CSS rules (CSS animation or transition). Here is an example of what this looks like:
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/waapi-getanimations?path=index.html&previewSize=100',
-    title: 'waapi-getanimations on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'waapi-getanimations',
+  path: 'index.html',
+  previewSize: 100,
+  height: 480
+} %}
 
 You first `"get"` the keyframes for the transition to determine where we are transitioning from. Then, you create two new opacity animations, enabling the   cross fade effect. Once the cross-fade completes, you delete the copy. 
 
@@ -136,12 +136,12 @@ You can take the above animation, and give it a smooth, reversed animation when 
   </figcaption>
 </figure>
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/waapi-promises?path=script.js&previewSize=100',
-    title: 'waapi-promises on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'waapi-promises',
+  path: 'script.js',
+  previewSize: 100,
+  height: 480
+} %}
 
 What you can do is create two play-pending animations (`openModal`, and an inline opacity transformation), and then pause one of the animations, delaying it until the other is finished. You can then use promises to wait for each to be finished before playing. Finally, you can check to see if a flag is set, and then reverse each animation.
 

@@ -193,12 +193,11 @@ layers.
 The Glitch below demonstrates how service worker caching and HTTP caching work in action across
 different scenarios:
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/compare-sw-and-http-caching?previewSize=100',
-    title: 'compare-sw-and-http-caching on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'compare-sw-and-http-caching',
+  previewSize: 100,
+  height: 480
+} %}
 
 ### Consistent expiry logic for all cache layers
 

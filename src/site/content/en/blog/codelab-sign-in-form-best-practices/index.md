@@ -51,14 +51,13 @@ accessibility, and add meaning to your markup.
 
 Here's how your `index.html` should look at this point:
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/sign-in-form-codelab-1?path=index.html&attributionHidden=true&sidebarCollapsed=true',
-    title: 'How the Glitch should look after completing step 1.'
-  } %}
-</div>
+{% Glitch {
+  id: 'sign-in-form-codelab-1',
+  path: 'index.html',
+  height: 480
+} %}
 
-Click **View App** to preview your sign-in form. 
+Click **View App** to preview your sign-in form.
 The HTML you just added is valid and correct, but the default browser styling
 means it looks terrible and it's hard to use, especially on mobile.
 
@@ -71,12 +70,10 @@ font sizes.
 
 Copy and paste the following CSS into your own `style.css` file:
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/sign-in-form-codelab-2?path=style.css&attributionHidden=true&sidebarCollapsed=true',
-    title: 'The CSS to copy-paste.'
-  } %}
-</div>
+{% Glitch {
+  id: 'sign-in-form-codelab-2',
+  path: 'style.css'
+} %}
 
 Click **View App** to check out your freshly styled sign-in form. Then
 click **View Source** to return to `style.css`.
@@ -170,12 +167,11 @@ projects](https://www.browserstack.com/open-source). Try it out!
 
 Here's how your `index.html` should look at this point:
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/sign-in-form-codelab-3?path=index.html&attributionHidden=true&sidebarCollapsed=true',
-    title: 'How index.html should look after step 3.'
-  } %}
-</div>
+{% Glitch {
+  id: 'sign-in-form-codelab-3',
+  path: 'index.html',
+  height: 480
+} %}
 
 ## Step 4: Add UI to toggle password display
 
@@ -256,12 +252,11 @@ has high quality free icons available for download.
 
 Here's how your code should look at this point:
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/sign-in-form-codelab-4?path=style.css&attributionHidden=true&sidebarCollapsed=true',
-    title: 'How your code should look at this point.'
-  } %}
-</div>
+{% Glitch {
+  id: 'sign-in-form-codelab-4',
+  path: 'style.css',
+  height: 480
+} %}
 
 
 ## Step 5: Add form validation
@@ -365,12 +360,12 @@ messages, depending on what's wrong.
 and passwords. [Better password form fields](https://aerotwist.com/blog/better-password-form-fields/) has some clever suggestions.
 
 Here's how your code should look at this point:
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/sign-in-form-codelab-5?path=style.css&attributionHidden=true&sidebarCollapsed=true',
-    title: 'How your code should look at this point.'
-  } %}
-</div>
+
+{% Glitch {
+  id: 'sign-in-form-codelab-5',
+  path: 'style.css',
+  height: 480
+} %}
 
 ## Going further
 

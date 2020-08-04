@@ -178,12 +178,11 @@ that primary colors can be mixed to create any other color.
   </figcaption>
 </figure>
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/variable-font-experiments?previewSize=100&attributionHidden=true',
-    title: 'Variable fonts experiments on Glitch.'
-  } %}
-</div>
+{% Glitch {
+  id: 'variable-font-experiments',
+  previewSize: 100,
+  height: 480
+} %}
 
 The five registered axes plus Grade have 4-character tags that are used to
 set their values in CSS:

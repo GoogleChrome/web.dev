@@ -44,12 +44,11 @@ application responsiveness by making navigations to new pages quicker.
 In the example app below, the `index.js` page links to `margherita.js` with a
 `<Link>`:
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/nextjs-prefetching?path=pages/index.js&attributionHidden=true',
-    title: 'A basic Next.js app on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'nextjs-prefetching',
+  path: 'pages/index.js',
+  height: 480
+} %}
 
 Use Chrome DevTools to verify that `margherita.js` is prefetched:
 {% Instruction 'preview', 'ol' %}
@@ -105,12 +104,11 @@ visited pages by setting the `prefetch` property on `<Link>` to `false`:
 In this second example app, the `index.js` page has a `<Link>` to
 `pineapple-pizza.js` with `prefetch` set to `false`:
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/nextjs-noprefetch?path=pages/index.js:12:50&attributionHidden=true',
-    title: 'A basic Next.js app on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'nextjs-noprefetch',
+  path: 'pages/index.js:12:50',
+  height: 480
+} %}
 
 To inspect the network activity, follow the steps from the first example. When
 you load `index.js`, the DevTools **Network** tab shows that `margherita.js` is
@@ -132,12 +130,11 @@ To implement prefetching in your routing code, use the `prefetch` method from
 
 Take a look at `components/MyLink.js` in this example app:
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/nextjs-routing?path=components/MyLink.js&attributionHidden=true',
-    title: 'A basic Next.js app on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'nextjs-routing',
+  path: 'components/MyLink.js',
+  height: 480
+} %}
 
 Prefetching is done inside the
 [`useEffect`](https://reactjs.org/docs/hooks-effect.html) hook. If the

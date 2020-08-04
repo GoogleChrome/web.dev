@@ -192,12 +192,11 @@ on the HTTP cache. When used in combination with the correct caching headers, th
 to avoid worker instantiation having to wait to download the worker script. However, unlike
 `modulepreload` this technique did not support preloading dependencies or pre-parsing.
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/worker-preloading?previewSize=100&attributionHidden=true',
-    title: 'worker-preloading on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'worker-preloading',
+  previewSize: 100,
+  height: 480
+} %}
 
 ## What about shared workers?
 
