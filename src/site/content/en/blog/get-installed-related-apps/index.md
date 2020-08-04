@@ -166,7 +166,9 @@ file `Package.appxmanifest`. For example, if your website's address is
 
 Then, create a JSON file (without the `.json` file extension) named
 `windows-app-web-link` and provide your app's package family name. Place
-that file either on your server root, or in the `/.well-known/` directory.
+that file either on your server root, or in the `/.well-known/` directory. You
+can find the package family name in the Packages section in the app manifest
+designer.
 
 ```json
 [{
@@ -196,6 +198,9 @@ about your app, including `platform` and `id`.
   }]
 }
 ```
+
+You can find the package family name in the Packages section in the app
+manifest designer.
 
 ### Check if your app is installed
 
