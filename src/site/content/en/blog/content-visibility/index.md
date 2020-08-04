@@ -15,7 +15,7 @@ tags:
   - performance
 ---
 
-The [`content-visibility`](https://drafts.csswg.org/css-contain/#propdef-content-visibility) property might be one of the most impactful new CSS properties for improving page load performance. `content-visibility` enables the user agent to skip an element's rendering work, including layout and painting, until it is needed. Because rendering is skipped, if a large portion of your content is off-screen, leveraging the `content-visibility` property makes the initial user load much faster. It also allows for faster interactions with the on-screen content. Pretty neat.
+The [`content-visibility`](https://drafts.csswg.org/css-contain/#propdef-content-visibility) property, launching in Chromium 85, might be one of the most impactful new CSS properties for improving page load performance. `content-visibility` enables the user agent to skip an element's rendering work, including layout and painting, until it is needed. Because rendering is skipped, if a large portion of your content is off-screen, leveraging the `content-visibility` property makes the initial user load much faster. It also allows for faster interactions with the on-screen content. Pretty neat.
 
 <figure class="w-figure">
   <img src="demo.jpg" alt="demo with figures representing network results">
