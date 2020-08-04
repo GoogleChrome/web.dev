@@ -13,7 +13,7 @@ describe('Build test', function () {
 
     console.log('Running npm run build...');
     try {
-      await exec('npm run build');
+      await exec('ELEVENTY_ENV=prod npm run build');
     } catch (err) {
       assert.fail(err);
     }
@@ -24,7 +24,7 @@ describe('Build test', function () {
       path.join('en', 'feed.xml'),
       path.join('en', 'index.html'),
       path.join('en', 'index.json'),
-      path.join('en', 'robots.txt'),
+      path.join('en', 'offline', 'index.json'),
       path.join('en', 'authors', 'addyosmani', 'feed.xml'),
       path.join('en', 'tags', 'progressive-web-apps', 'feed.xml'),
       path.join('images', 'favicon.ico'),
@@ -34,6 +34,7 @@ describe('Build test', function () {
       'bootstrap.js',
       'manifest.webmanifest',
       'nuke-sw.js',
+      'robots.txt',
       'sitemap.xml',
       'sw-partial-layout.partial',
       'sw.js',
@@ -55,5 +56,16 @@ describe('Build test', function () {
         `Could not find Rollup output: ${chunked}`,
       );
     });
+
+    // Check that there's NOT a web.dev/LIVE partial. We confirm that partials
+    // are generally created above, in the list of common checks.
+    assert(
+      !fs.existsSync(path.join(dist, 'en/live/index.json')),
+      'web.dev/LIVE partial should not exist',
+    );
+    assert(
+      fs.existsSync(path.join(dist, 'en/live/index.html')),
+      'web.dev/LIVE page should exist',
+    );
   });
 });

@@ -50,11 +50,10 @@ Insert an element into the natural tab order using `tabindex="0"`. For example:
 To focus an element, press the `Tab` key or call the element's `focus()` method.
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&previewSize=100&attributionHidden=true"
-    alt="tabindex-zero on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&previewSize=100&attributionHidden=true',
+    title: 'tabindex-zero on Glitch'
+  } %}
 </div>
 
 ## Remove an element from the tab order
@@ -69,11 +68,10 @@ This removes an element from the natural tab order, but the element can still be
 focused by calling its `focus()` method.
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/tabindex-negative-one?path=index.html&previewSize=100&attributionHidden=true"
-    alt="tabindex-negative-one on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/tabindex-negative-one?path=index.html&previewSize=100&attributionHidden=true',
+    title: 'tabindex-negative-one on Glitch'
+  } %}
 </div>
 
 Note that applying `tabindex="-1"` to an element doesn't affect its children;
@@ -142,11 +140,10 @@ method on it.
 
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/roving-tabindex?path=index.html&previewSize=100&attributionHidden=true"
-    alt="tabindex-negative-one on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/roving-tabindex?path=index.html&previewSize=100&attributionHidden=true',
+    title: 'tabindex-negative-one on Glitch'
+  } %}
 </div>
 
 {% Aside %}

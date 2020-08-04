@@ -6,6 +6,8 @@ authors:
 date: 2020-05-20
 updated: 2020-05-20
 description: Build a solid business case for your PWA. Learn when you should invest, and how you can measure its success.
+tags:
+  - progressive-web-apps
 ---
 
 Progressive Web Apps are on a lot of companies' roadmap to modernize their

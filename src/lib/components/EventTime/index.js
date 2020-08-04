@@ -104,7 +104,7 @@ class EventTime extends BaseElement {
     let durationPart = '';
     if (this.duration > 0) {
       const end = new Date(this._date);
-      end.setHours(end.getHours() + this.duration);
+      end.setMinutes(end.getMinutes() + this.duration);
       durationPart = html`
         &mdash; ${format(end, {hour: 'numeric', minute: '2-digit'})}
       `;

@@ -63,6 +63,11 @@ var {
   hyphens: none;
 }
 
+html {
+  scroll-padding-top: calc(#{$WEB_HEADER_HEIGHT} + 1.5rem);
+}
+
+// Fallback if scroll-padding-top is not supported
 *:not([href])[id]::before {
   content: ' ';
   display: block;

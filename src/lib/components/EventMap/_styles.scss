@@ -1,0 +1,38 @@
+@import '../../../styles/settings/colors';
+@import '../../../styles/settings/type';
+
+web-event-map {
+  display: block;
+  text-align: left;
+  font-family: $HEADLINE_FONT;
+
+  code {
+    display: none;
+  }
+
+  ul {
+    margin-top: 24px;
+    list-style: none;
+    font: inherit;
+    white-space: nowrap;
+    line-height: 32px;
+
+
+    li > :first-child {
+      min-width: 180px;
+      display: inline-block;
+    }
+
+    li > :last-child {
+      font-size: 14px;
+      color: $GREY_700;
+    }
+  }
+
+  select {
+    color: $GREY_700;
+    font-size: 16px;
+    margin: -14px 0 16px;
+    width: initial;
+  }
+}

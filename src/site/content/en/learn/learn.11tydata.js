@@ -11,17 +11,20 @@ const allPaths = require('../../../_data/paths');
 
 module.exports = function () {
   const paths = [
-    allPaths['vitals'],
     allPaths['progressive-web-apps'],
     allPaths['media'],
     allPaths['accessible'],
-    allPaths['fast'],
     allPaths['reliable'],
     allPaths['secure'],
     allPaths['discoverable'],
-    allPaths['metrics'],
     allPaths['payments'],
   ].filter(livePaths);
+
+  const performance = [
+    allPaths['vitals'],
+    allPaths['metrics'],
+    allPaths['fast'],
+  ];
 
   const frameworks = [allPaths['react'], allPaths['angular']].filter(livePaths);
 
@@ -36,6 +39,7 @@ module.exports = function () {
   return {
     learn: {
       paths,
+      performance,
       frameworks,
       audits,
     },

@@ -16,11 +16,10 @@
 
 const path = require('path');
 const {html} = require('common-tags');
-const stripLanguage = require('../../_filters/strip-language');
 const md = require('../../_filters/md');
 const constants = require('../../_utils/constants');
 const getSrcsetRange = require('../../_utils/get-srcset-range');
-const postTags = require('../../_data/postTags');
+const tagsCollection = require('../../_collections/tags')();
 
 const AuthorsDate = require('./AuthorsDate');
 
@@ -39,12 +38,12 @@ class BaseCard {
     this.collectionItem.data = this.collectionItem.data || {};
     this.featured = featured;
     this.className = className;
-    this.url = stripLanguage(this.collectionItem.url);
+    this.url = this.collectionItem.data.canonicalUrl;
     this.data = this.collectionItem.data;
     this.displayedTags = [];
 
     for (const tag of this.data.tags || []) {
-      const foundTag = postTags[tag.toLowerCase()];
+      const foundTag = tagsCollection[tag.toLowerCase()];
       if (foundTag) {
         this.displayedTags.push(foundTag);
       }

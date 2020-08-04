@@ -14,7 +14,7 @@ description: |
 tags:
   - blog
   - capabilities
-  - fugu
+  - progressive-web-apps
 ---
 
 On a mobile device, sharing should be as simple as clicking the **Share** button,

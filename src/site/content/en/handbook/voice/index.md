@@ -2,6 +2,7 @@
 layout: handbook
 title: Voice
 date: 2019-06-26
+updated: 2020-07-24
 description: |
   A description of the primary voice for web.dev writing.
 ---
@@ -28,3 +29,18 @@ Examples:
 * An emoji to punch up a key sentence 🤔
 * A code block that's practical while showing some personality
 * A use case that shows your background while still being generally relevant
+
+## Emojis
+
+It's OK to use emojis in moderation in your web.dev content. To be precise, 3 emojis per page is always
+OK. If you want to use more than 3 emojis on your page, the web.dev content lead will decide
+on a case-by-case basis.
+
+Here's our rationale for allowing emojis:
+
+* There's no evidence that emojis interfere with the learning process.
+* Some of our contributors feel that using emojis is an important part of their self-expression.
+* The [Style and authorial tone](https://developers.google.com/style/tone) page of the
+  Google Developer Documentation Style Guide has no opinion about the use of emojis.
+* Part of [Google's philosophy](https://www.google.com/about/philosophy.html) is
+  "you can be serious without a tie."

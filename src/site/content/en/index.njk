@@ -6,13 +6,52 @@ description: |
   guidance and analysis from web.dev.
 show_banner: false
 date: 2018-11-05
+eleventyComputed:
+  canonicalUrl: "/"
 ---
 
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
 
 <div class="home-landing-page">
-  <header class="w-masthead-home">
+
+  {#
+    TODO: Convert w-masthead-home back to a <header> when this campaign ends.
+    For a11y you're supposed to only use one <header> element per page.
+  #}
+  <style>
+  .w-hero-banner {
+    color: white;
+  }
+  .w-hero-banner__inner {
+    background-color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 16px;
+    text-align: center;
+  }
+  @media (min-width: 865px) {
+    .w-hero-banner__inner {
+      padding: 20px 24px;
+    }
+  }
+  .w-hero-banner__inner a {
+    color: white;
+    text-decoration: underline;
+  }
+  .w-hero-banner__inner a:hover {
+    text-decoration: none;
+  }
+  </style>
+  <header class="w-hero-banner">
+    <div class="w-hero-banner__inner">
+      Google is committed to advancing racial equity for Black communities.
+      <a href="https://google.com/racialequity" target="_blank" rel="noopener">See how</a>.
+    </div>
+  </header>
+
+  <div class="w-masthead-home">
     <div class="w-masthead-home__container">
       <div class="w-masthead-home__left">
         <h1 class="w-headline--two w-font-weight--medium">
@@ -44,7 +83,7 @@ date: 2018-11-05
         </div>
       </div>
     </div>
-  </header>
+  </div>
 
   {# <section class="w-layout-container w-text--center">
     <p class="w-headline--two-small">
@@ -70,9 +109,7 @@ date: 2018-11-05
       </div>
       <div>
         <p>
-          Join us for <a href="/live/">a three day digital event</a>, to
-          celebrate the web community’s actions, learn modern web techniques and
-          connect with each other. 
+          web.dev LIVE is now over! Head to <a href="/live/">web.dev/live</a> to watch all the sessions, top Q&amp;A and more from our three day digital event for web developers.
         </p>
       </div>
     </div>

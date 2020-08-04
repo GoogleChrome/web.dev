@@ -138,7 +138,7 @@ redirects:
   to: /...
 
 - from: /en/handbook/...
-  to: /en/...
+  to: /handbook/...
 
 # Redirect duplicative /discoverable URLs to /lighthouse-seo
 
@@ -198,8 +198,8 @@ redirects:
 
 # Redirect /payments content
 
-- from: /android-payment-app-developers-guide
-  to: /android-payment-apps-overview
+- from: /android-payment-apps-overview
+  to: /android-payment-app-developers-guide
 
 # Redirect for misconfigured Lighthouse report
 

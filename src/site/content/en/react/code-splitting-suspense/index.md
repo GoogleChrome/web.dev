@@ -81,11 +81,10 @@ then made to retrieve the code necessary for the suspended `AvatarComponent`.
 In the meantime, the fallback loading component is shown.
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/react-lazy-suspense?path=src/index.css&previewSize=100&attributionHidden=true"
-    alt="react-lazy-suspense on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/react-lazy-suspense?path=src/index.css&previewSize=100&attributionHidden=true',
+    title: 'react-lazy-suspense on Glitch'
+  } %}
 </div>
 
 In here, the code that makes up `AvatarComponent` is small which is
@@ -147,11 +146,10 @@ fetching, the user gets to see them all displayed at the same time.
 You can see this with the following embed:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/react-lazy-suspense-multiple?path=src/index.css&previewSize=100&attributionHidden=true"
-    alt="react-lazy-suspense-multiple on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/react-lazy-suspense-multiple?path=src/index.css&previewSize=100&attributionHidden=true',
+    title: 'react-lazy-suspense-multiple on Glitch'
+  } %}
 </div>
 
 {% Aside %}

@@ -8,11 +8,10 @@ description: |
   interaction with the keyboard, mouse, screen, activation of a screensaver, locking of the screen,
   or moving to a different screen. A developer-defined threshold triggers the notification.
 date: 2020-05-18
-updated: 2020-05-19
+updated: 2020-07-31
 tags:
   - blog
   - idle-detection
-  - fugu
   - capabilities
 hero: hero.jpg #https://images.unsplash.com/photo-1544239265-ee5eedde5469?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1900&q=80
 alt: Abandoned computer on a bed with someone's leg next to it.
@@ -66,7 +65,7 @@ To experiment with the Idle Detection API locally, without an origin trial token
 ### Enabling support during the origin trial phase
 
 Starting with Chrome&nbsp;84, the Idle Detection API will be available as an origin trial.
-The origin trial is expected to end in Chrome 87.
+The origin trial is expected to end in Chrome&nbsp;86.
 
 {% include 'content/origin-trials.njk' %}
 
@@ -109,7 +108,7 @@ this definition is left to the user agent.
 
 The first step when using the Idle Detection API is
 to ensure the `'notifications'` permission is granted.
-If the permission is not granted, you need to 
+If the permission is not granted, you need to
 [request it](https://developers.google.com/web/fundamentals/push-notifications/subscribing-a-user#requesting_permission).
 
 ```js
@@ -141,7 +140,7 @@ try {
     const screenState = idleDetector.screenState;
     console.log(`Idle change: ${userState}, ${screenState}.`);
   });
-  
+
   await idleDetector.start({
     threshold: 60000,
     signal,

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const postTags = require('../_data/postTags');
+const tagsCollection = require('../_collections/tags')();
 
 /**
  * @param {Array<string>} tags Array of tags.
@@ -24,7 +24,7 @@ module.exports = (tags) => {
   const validTags = [];
 
   for (const tag of tags) {
-    const tagData = postTags[tag];
+    const tagData = tagsCollection[tag];
     if (tagData) {
       validTags.push(tagData);
     }

@@ -15,12 +15,16 @@
  */
 
 const addPagination = require('../../_utils/add-pagination');
+const filterByLang = require('../../_filters/filter-by-lang');
 
 /**
  * @param {any[]} blogPosts
+ * @param {string} lang
  * @return {Paginated[]}
  */
-const blogIndex = (blogPosts) => addPagination(blogPosts, {href: '/blog/'});
+const blogIndex = (blogPosts, lang) => {
+  return addPagination(filterByLang(blogPosts, lang), {href: '/blog/'});
+};
 
 module.exports = {
   index: blogIndex,

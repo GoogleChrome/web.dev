@@ -8,7 +8,7 @@
     API.
     {% elif translation === 'manual' %}
     This article was translated from
-    [the original post](/en{{ page.url | stripLanguage}}).
+    [the original post](/en{{ page.data.canonicalUrl }}).
     {% endif %}
     {% if gitlocalizeUrl %}
     Consider improving it by [contributing your translation]({{ gitlocalizeUrl }}).

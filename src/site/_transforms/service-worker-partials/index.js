@@ -53,6 +53,11 @@ const serviceWorkerPartials = async (content, outputPath) => {
     return content;
   }
 
+  // Skip the web.dev/LIVE page to force online-only.
+  if (outputPath === 'dist/en/live/index.html') {
+    return content;
+  }
+
   const partial = getPartial(content, outputPath);
   const suffixLength = 'index.html'.length;
   const partialOutputPath =

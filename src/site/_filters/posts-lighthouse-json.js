@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-const stripLanguage = require('../_filters/strip-language');
-
 const reUnescapedHtml = /[<>]/g;
 const reHasUnescapedHtml = RegExp(reUnescapedHtml.source);
 const htmlEscapes = {
@@ -58,7 +55,7 @@ module.exports = (posts) => {
       id: post.fileSlug, // e.g. "test-post"
       lighthouse: toArray(post.data.web_lighthouse),
       title: escapeHtml(post.data.title),
-      url: stripLanguage(post.url),
+      url: post.data.canonicalUrl,
     };
 
     const host = post.data.postHost[out.id];

@@ -18,7 +18,9 @@ const {html} = require('common-tags');
 const md = require('markdown-it')();
 const mdBlock = require('../../_filters/md-block');
 const fs = require('fs');
+const path = require('path');
 const yaml = require('js-yaml');
+const site = require('../../_data/site');
 
 // Renders the set leader at the top of the self-assessment
 function headerTemplate(assessment) {
@@ -202,9 +204,12 @@ module.exports = (page, targetAssessment) => {
       Pass the file name, without ".assess.yml", of the desired assessment as a string.
     `);
   }
-
-  const path = page.filePathStem.replace(/index$/, '');
-  const source = 'src/site/content' + path + targetAssessment + '.assess.yml';
+  const filePath = page.filePathStem.replace(/index$/, '');
+  const source = path.join(
+    site.contentDir,
+    filePath,
+    targetAssessment + '.assess.yml',
+  );
   const data = fs.readFileSync(source, 'utf8');
   const assessment = yaml.safeLoad(data);
 

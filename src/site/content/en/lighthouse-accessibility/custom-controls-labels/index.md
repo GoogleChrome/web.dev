@@ -22,11 +22,10 @@ To test that the custom control is focusable,
 press the `TAB` key to navigate through the site:
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&previewSize=100&attributionHidden=true"
-    alt="tabindex-zero on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&previewSize=100&attributionHidden=true',
+    title: 'tabindex-zero on Glitch'
+  } %}
 </div>
 
 Are you able to reach all of the interactive controls on the page?

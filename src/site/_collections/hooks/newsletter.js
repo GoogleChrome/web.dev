@@ -15,13 +15,14 @@
  */
 
 const addPagination = require('../../_utils/add-pagination');
+const filterByLang = require('../../_filters/filter-by-lang');
 
 /**
  * @param {any[]} newsletters
  * @return {Paginated[]}
  */
-const newsletterIndex = (newsletters) =>
-  addPagination(newsletters, {href: '/newsletter/'});
+const newsletterIndex = (newsletters, lang) =>
+  addPagination(filterByLang(newsletters, lang), {href: '/newsletter/'});
 
 module.exports = {
   index: newsletterIndex,

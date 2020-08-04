@@ -193,11 +193,10 @@ to avoid worker instantiation having to wait to download the worker script. Howe
 `modulepreload` this technique did not support preloading dependencies or pre-parsing.
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/worker-preloading?previewSize=100&attributionHidden=true"
-    alt="worker-preloading on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://glitch.com/embed/#!/embed/worker-preloading?previewSize=100&attributionHidden=true',
+    title: 'worker-preloading on Glitch'
+  } %}
 </div>
 
 ## What about shared workers?

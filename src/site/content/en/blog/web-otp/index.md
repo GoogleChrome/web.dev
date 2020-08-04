@@ -16,7 +16,6 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - identity
   - capabilities
-  - fugu
   - otp
 ---
 
@@ -321,7 +320,7 @@ was called.
 
 The message must adhere to the following formatting:
 
-* The origin part of the URL of the website that invoked the API must be
+* The host part of the URL of the website that invoked the API must be
   preceded by `@`.
 * The URL must contain a pound sign ('`#`') followed by the OTP.
 * Optionally, the message may contain additional text for the user.
@@ -375,7 +374,7 @@ a few significant differences compared to the SMS Receiver API.
 
 Chromium and WebKit agreed on the SMS text message format. Find WebKit's
 documentation here:
-[Delivering origin-bound one-time codes over SMS](https://github.com/WebKit/explainers/tree/master/sms-one-time-code-format)
+[Delivering origin-bound one-time codes over SMS](https://github.com/wicg/sms-one-time-codes)
 
 
 ### Is it safe to use SMS as a way to authenticate?
