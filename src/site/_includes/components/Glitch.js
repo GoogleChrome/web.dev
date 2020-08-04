@@ -15,6 +15,7 @@
  */
 
 const {html} = require('common-tags');
+const {escape, stringify} = require('querystring');
 const iframe = require('./IFrame');
 
 /**
@@ -43,18 +44,24 @@ module.exports = (param) => {
   if (!id) {
     return;
   }
+  const url = 'https://glitch.com/embed/#!/embed/' + escape(id);
+  const queryParams = {
+    attributionHidden: 'true',
+    sidebarCollapsed: 'true',
+  };
 
-  let src = `https://glitch.com/embed/#!/embed/${id}?attributionHidden=true&sidebarCollapsed=true&`;
   if (path) {
-    src += `path=${path}&`;
+    queryParams.path = path;
   }
   if (typeof previewSize === 'number') {
-    src += `previewSize=${previewSize}&`;
+    queryParams.previewSize = previewSize;
   }
+
+  const src = `${url}?${stringify(queryParams)}`;
 
   return html`
     <div class="glitch-embed-wrap" style="height: ${height}px; width: 100%;">
-      ${iframe({src, title: `${id} on Glitch`, allow})}
+      ${iframe({src, title: `${escape(id)} on Glitch`, allow})}
     </div>
   `;
 };
