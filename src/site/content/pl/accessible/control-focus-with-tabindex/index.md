@@ -7,11 +7,11 @@ date: 2018-11-18
 description: Natywne elementy HTML, takie jak <button> lub <input>, mają wbudowaną dostępność klawiatury za darmo. Jeśli budujesz niestandardowe interaktywne komponenty, użyj tabindex, aby upewnić się, że są one dostępne z klawiatury.
 ---
 
-Native Elementy HTML, takie jak `<button>` lub `<input>` mają wbudowany bezpłatny dostęp do klawiatury. Jeśli jednak `tabindex` *niestandardowe* interaktywne komponenty, użyj atrybutu `tabindex` aby upewnić się, że są one dostępne z klawiatury.
+Natywne elementy HTML, takie jak `<button>` lub `<input>` mają wbudowany bezpłatny dostęp do klawiatury. Jeśli jednak `tabindex` *niestandardowe* interaktywne komponenty, użyj atrybutu `tabindex` aby upewnić się, że są one dostępne z klawiatury.
 
-{% Aside%} Jeśli to możliwe, używaj natywnego elementu HTML zamiast budować własną wersję niestandardową. `<button>` jest bardzo łatwy do stylizacji i ma już pełną obsługę klawiatury. Dzięki temu nie będziesz musiał zarządzać `tabindex` ani dodawać semantyki za pomocą ARIA. {% endAside%}
+{% Aside %} O ile to możliwe, używaj natywnego elementu HTML zamiast budować własną wersję niestandardową. `<button>` jest bardzo łatwy do stylizacji i ma już pełną obsługę klawiatury. Dzięki temu nie będziesz musiał zarządzać `tabindex` ani dodawać semantyki za pomocą ARIA. {% endAside %}
 
-## Sprawdź, czy kontrolki są dostępne z klawiatury
+## Sprawdź, czy twoje elementy sterujące są dostępne z klawiatury
 
 Narzędzie takie jak Latarnia morska świetnie wykrywa niektóre problemy z dostępnością, ale niektóre rzeczy może przetestować tylko człowiek.
 
@@ -53,13 +53,13 @@ Każdy `tabindex` większy niż 0 przeskakuje element na przód naturalnej kolej
 
 Użycie `tabindex` większego niż 0 jest uważane za **anty-wzorzec,** ponieważ czytniki ekranu poruszają się po stronie w kolejności DOM, a nie w kolejności tabulatorów. Jeśli potrzebujesz elementu, aby pojawił się wcześniej w kolejności tabulatorów, należy go przenieść na wcześniejsze miejsce w DOM.
 
-Latarnia ułatwia identyfikację elementów za pomocą `tabindex` > 0. Uruchom Audyt dostępności (Latarnia morska> Opcje> Dostępność) i poszukaj wyników audytu "Żaden element nie ma wartości [tabindex] większej niż 0".
+Lighthouse ułatwia identyfikację elementów za pomocą `tabindex` > 0. Uruchom Audyt dostępności (Lighthouse> Opcje> Dostępność) i poszukaj wyników audytu „Żaden element nie ma wartości [tabindex] większej niż 0”.
 
-## Twórz dostępne komponenty za pomocą " `tabindex` wędrującego"
+## Twórz dostępne komponenty za pomocą „ `tabindex` wędrującego”
 
 W przypadku budowania złożonego komponentu może być konieczne dodanie dodatkowej obsługi klawiatury, która nie jest aktywna. Rozważ natywny element `select` . Można go ustawiać i za pomocą klawiszy strzałek można wyświetlić dodatkowe funkcje (opcje do wyboru).
 
-Aby zaimplementować podobną funkcjonalność we własnych komponentach, użyj techniki znanej jako "wędrujący `tabindex` ". Ruchomy tabindex działa, ustawiając `tabindex` na -1 dla wszystkich dzieci z wyjątkiem aktualnie aktywnego. Następnie komponent używa detektora zdarzeń klawiatury, aby ustalić, który klawisz został naciśnięty przez użytkownika.
+Aby zaimplementować podobną funkcjonalność we własnych komponentach, użyj techniki znanej jako „wędrujący `tabindex` ”. Ruchomy tabindex działa, ustawiając `tabindex` na -1 dla wszystkich dzieci z wyjątkiem aktualnie aktywnego. Następnie komponent używa detektora zdarzeń klawiatury, aby ustalić, który klawisz został naciśnięty przez użytkownika.
 
 Kiedy tak się dzieje, komponent ustawia `tabindex` poprzednio skupionego dziecka na -1, ustawia `tabindex` podrzędnego dziecka na 0 i wywołuje na nim metodę `focus()` .
 
@@ -85,7 +85,7 @@ Kiedy tak się dzieje, komponent ustawia `tabindex` poprzednio skupionego dzieck
 
 <div class="glitch-embed-wrap" style="height: 346px; width: 100%;">   <iframe src="https://glitch.com/embed/#!/embed/roving-tabindex?path=index.html&previewSize=100&attributionHidden=true" alt="tabindex-negative-one on Glitch" style="height: 100%; width: 100%; border: 0;">   </iframe> </div>
 
-{% Aside %} Ciekawe, do czego służą te atrybuty `role=""` ? Pozwalają na zmianę semantyki elementu, dzięki czemu zostanie poprawnie ogłoszony przez czytnik ekranu. Możesz dowiedzieć się więcej o nich w naszym przewodniku na temat [podstaw czytnika ekranu](/semantics-and-screen-readers) . {% endAside %}
+{% Aside %} Ciekawe, do czego służą te atrybuty `role=""` ? Pozwalają na zmianę semantyki elementu, dzięki czemu zostanie poprawnie ogłoszony przez czytnik ekranu. Możesz dowiedzieć się więcej o nich w naszym przewodniku na temat [podstaw czytnika ekranu](/semantics-and-screen-readers) . {% endAside%}
 
 {% AssessmentCallout 'Use the drop-down below each code sample to check your understanding of tab order.' %} {% Tabs 'Samples for knowledge self check' %} {% Tab 'sample' %}
 
@@ -102,13 +102,13 @@ Ten HTML renderuje modalne okno dialogowe:
 </div>
 ```
 
-{% AssessmentHint "Jaka jest kolejność tabulatorów dla elementów w próbce?" %}
+{% AssessmentHint 'What is the tab order for the elements in the sample?' %}
 
 1. Przycisk **Zamknij**
 2. Przycisk **Nie**
 3. Przycisk **Tak**
 
-Tylko elementy `<button>` są uwzględnione w kolejności tabulatorów, ponieważ są to jedyne rodzime elementy formularza HTML. Aby wstawić inne elementy w kolejności tabulatorów, należy dodać atrybut `tabindex` . {% endAssessmentHint%}
+Tylko elementy `<button>` są uwzględnione w kolejności tabulatorów, ponieważ są to jedyne rodzime elementy formularza HTML. Aby wstawić inne elementy w kolejności tabulatorów, należy dodać atrybut `tabindex` . {% endAssessmentHint %}
 
 {% endTab%} {% Tab 'sample' %}
 
@@ -122,9 +122,9 @@ Tylko elementy `<button>` są uwzględnione w kolejności tabulatorów, poniewa�
 </section>
 ```
 
-{% AssessmentHint 'Which elements from the sample are included in the tab order?' %} Tylko elementy `<a>` są uwzględnione w kolejności tabulatorów.
+{% AssessmentHint „Które elementy z próbki są uwzględnione w kolejności zakładek?” %} Tylko elementy `<a>` są uwzględnione w kolejności tabulatorów.
 
-Element `<section>` nie znajduje się w kolejności tabulatorów, ponieważ ma ujemną wartość `tabindex` . (Można go jednak ustawić za pomocą metody `focus()` .) Wartość `tabindex` dla elementu `<section>` nie wpływa na jego elementy potomne. {% endAssessmentHint%}
+Element `<section>` nie znajduje się w kolejności tabulatorów, ponieważ ma ujemną wartość `tabindex` . (Można go jednak ustawić za pomocą metody `focus()` .) Wartość `tabindex` dla elementu `<section>` nie wpływa na jego elementy potomne. {% endAssessmentHint %}
 
 {% endTab%} {% Tab 'sample' %}
 
@@ -140,9 +140,9 @@ Ten kod HTML wyświetla menu podręczne, po którym następuje wyszukiwanie:
 <input tabindex="1" type="text" role="search" aria-label="Search" placeholder="Search">
 ```
 
-{% AssessmentHint 'Which element in the sample comes first in the tab order?' %} Wprowadzanie tekstu **wyszukiwania** jest pierwsze w kolejności tabulatorów. Ponieważ ma `tabindex` większy niż 1, przeskakuje na początek kolejności tabulatorów.
+{% AssessmentHint 'Which element in the sample comes first in the tab order?' %} The **Search** text input comes first in the tab order. Because it has a `tabindex` greater than 1, it jumps to the front of the tab order.
 
-(To zachowanie może powodować zamieszanie, jeśli menu zostanie umieszczone na stronie przed danymi wejściowymi do wyszukiwania. Jest to przykład tego, dlaczego wartość `tabindex` większa od zera jest uważana za anty-wzór).
+(Takie zachowanie może powodować zamieszanie, jeśli menu zostanie umieszczone na stronie przed danymi wejściowymi do wyszukiwania. To przykład, dlaczego wartość `tabindex` większa od zera jest uważana za anty-wzór).
 
 {% endAssessmentHint %}
 
@@ -159,17 +159,17 @@ Ten HTML renderuje niestandardową grupę radiową, która powinna mieć [`tabin
 </div>
 ```
 
-{% AssessmentHint 'When a `role="radio"` element is focused, what should happen when a user presses the `Right` arrow key ?' %}
+{% AssessmentHint „Gdy skoncentrowany jest element `role="radio"` , co powinno się stać, gdy użytkownik naciśnie klawisz Strzałka w `Right` ?” %}
 
 - Zmień wartości `tabindex` dla wszystkich elementów radiowych w grupie na -1.
 - Jeśli po skupionym jest element radiowy, ustaw jego wartość `tabindex` na 0.
 - Jeśli po skupionym elemencie nie ma elementu radiowego, ustaw wartość `tabindex` pierwszego elementu radiowego w grupie na 0.
 - Skoncentruj element radiowy, który ma teraz `tabindex` 0.
 
-To dużo - i nawet nie zawiera atrybutów ARIA! Jest to przykład tego, dlaczego łatwiej jest używać elementów natywnych z wbudowanym działaniem klawiatury, gdy tylko jest to możliwe. {% endAssessmentHint%}
+To dużo - i nawet nie zawiera atrybutów ARIA! Jest to przykład tego, dlaczego łatwiej jest używać elementów natywnych z wbudowanym działaniem klawiatury, gdy tylko jest to możliwe. {% endAssessmentHint %}
 
-{% endTab%} {% endTabs%} {% endAssessmentCallout%}
+{% endTab %} {% endTabs %} {% endAssessmentCallout %}
 
 ## Przepisy na dostęp do klawiatury
 
-Jeśli nie masz pewności, jakiego poziomu obsługi klawiatury mogą wymagać Twoje niestandardowe komponenty, możesz zapoznać się z [Praktykami autorskimi ARIA 1.1](https://www.w3.org/TR/wai-aria-practices-1.1/) . Ten przydatny przewodnik zawiera listę typowych wzorców interfejsu użytkownika i identyfikuje klucze, które powinny obsługiwać komponenty.
+Jeśli nie masz pewności, jakiego poziomu obsługi klawiatury mogą wymagać Twoje niestandardowe komponenty, możesz zapoznać się z [Praktykami autorskimi ARIA 1.1](https://www.w3.org/TR/wai-aria-practices-1.1/) . Ten przydatny przewodnik zawiera listę typowych wzorców interfejsu użytkownika oraz identyfikuje klucze, które powinny obsługiwać komponenty.
