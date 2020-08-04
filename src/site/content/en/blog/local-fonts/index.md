@@ -200,6 +200,10 @@ To be of use, font table data must be consumed by a shaping engine
 such as [HarfBuzz](https://www.freedesktop.org/wiki/Software/HarfBuzz/),
 in conjunction with Unicode libraries such as [ICU](http://site.icu-project.org/home)
 for bidirectional text support, text segmentation, and so on.
+To get an impression of the available table data, you can browse the
+[opentype.js](https://github.com/opentypejs/opentype.js) project's
+[font inspector](https://opentype.js.org/font-inspector.html) and their
+[glyph inspector](https://opentype.js.org/glyph-inspector.html).
 
 ```js
 (async () => {
