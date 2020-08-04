@@ -84,16 +84,16 @@ browser.
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
 <!-- Use it like any other HTML element -->
-<model-viewer id="mv-demo" shadow-intensity="1" src="./spacesuit.glb"
-alt="A 3D model of an astronaut" auto-rotate camera-controls
-poster="./spacesuit.jpg"></model-viewer>
+<model-viewer id="mv-demo" shadow-intensity="1" src="./shark.glb"
+alt="A 3D model of a shark" auto-rotate camera-controls
+poster="./shark.jpg"></model-viewer>
 ```
 
 That code renders like this:
 
 <div class="glitch-embed-wrap" style="height: 500px; width: 100%;">
   <iframe
-    src="https://model-viewer-example.glitch.me/?previewSize=100"
+    src="https://model-viewer-shark.glitch.me/"
     title="<model-viewer> on Glitch"
     allow="geolocation; microphone; camera; midi; vr; encrypted-media;
 clipboard; clipboard-read; clipboard-write"
@@ -108,7 +108,7 @@ control. Those aren't the only possible attributes. See the documentation for [a
 complete list of](https://modelviewer.dev/).
 
 ```html
-<model-viewer src="assets/Astronaut.glb" auto-rotate camera-controls>
+<model-viewer src="assets/shark.glb" auto-rotate camera-controls>
 ```
 
 ### Poster image/delayed loading
@@ -119,8 +119,8 @@ means of delaying loading until the user wants it. That's what the `poster`
 attribute does.
 
 ```html
-<model-viewer src="assets/Astronaut.glb" controls auto-rotate
-poster="./spacesuit.jpg">
+<model-viewer src="assets/shark.glb" controls auto-rotate
+poster="./shark.jpg">
 ```
 
 To show your users that it's a 3D model, and not just an image, you can provide
