@@ -225,3 +225,4 @@ it is to support them.
 [demo]: https://badging-api.glitch.me/
 [demo-source]: https://glitch.com/edit/#!/badging-api?path=demo.js
 [explainer]: https://github.com/WICG/badging/blob/master/explainer.md
+[push-api]: https://www.w3.org/TR/push-api/
