@@ -361,6 +361,11 @@ Send a Tweet to [@ChromiumDev][cr-dev-twitter] with the `#LocalFontAccess` hasht
 ## Acknowledgements
 
 Hero image by [Brett Jordan](https://unsplash.com/@brett_jordan) on [Unsplash](https://unsplash.com/photos/qrjvkj-oS-M).
+The Local Font Access API spec was edited by
+[Emil A. Eklund](https://www.linkedin.com/in/emilaeklund/),
+[Alex Russell](https://infrequently.org/),
+[Joshua Bell](https://www.linkedin.com/in/joshuaseanbell/), and
+[Olivier Yiptong](https://github.com/oyiptong/).
 
 ## Helpful links
 
