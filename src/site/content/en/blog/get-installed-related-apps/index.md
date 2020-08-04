@@ -263,9 +263,9 @@ landing page is served from `www.example.com` and your PWA is served from
 
 ### Tell your PWA about your website
 
-First, you'll need to update your PWA to define the relationship between
-your PWA is served and your website using digital assets links. This ensures
-that only your website can check if your PWA is installed.
+First, you'll need to add digital asset links to the server where your PWA is
+served from. This will help define the relationship between your website and
+your PWA, and ensures that only your website can check if your PWA is installed.
 
 Add an `assetlinks.json` file to the [`/.well-known/`][well-known] directory
 of the domain where the PWA lives, for example `app.example.com`. In the `site`
