@@ -17,7 +17,7 @@ Narzędzie takie jak Latarnia morska świetnie wykrywa niektóre problemy z dost
 
 Spróbuj nacisnąć klawisz `Tab` , aby poruszać się po witrynie. Czy jesteś w stanie uzyskać dostęp do wszystkich interaktywnych elementów sterujących na stronie? Jeśli nie, może być konieczne użycie [`tabindex`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) aby poprawić ostrość tych elementów sterujących.
 
-{% Aside 'warning' %} Jeśli w ogóle nie widzisz wskaźnika aktywności, może być ukryty przez twój CSS. Sprawdź wszystkie style, które wspominają `:focus { outline: none; }` . Możesz dowiedzieć się, jak to naprawić w naszym przewodniku na temat [stylizacji](/style-focus) . {% endAside %}
+{% Aside 'warning' %} Jeśli w ogóle nie widzisz wskaźnika aktywności, może być ukryty przez twój CSS. Poszukaj stylów, które wspominają `:focus { outline: none; }` . Możesz dowiedzieć się, jak to naprawić w naszym przewodniku na temat [stylizacji](/style-focus) . {% endAside %}
 
 ## Wstaw element w kolejności tabulatorów
 
@@ -140,7 +140,7 @@ Ten kod HTML wyświetla menu podręczne, po którym następuje wyszukiwanie:
 <input tabindex="1" type="text" role="search" aria-label="Search" placeholder="Search">
 ```
 
-{% AssessmentHint 'Which element in the sample comes first in the tab order?' %} The **Search** text input comes first in the tab order. Because it has a `tabindex` greater than 1, it jumps to the front of the tab order.
+{% AssessmentHint 'Which element in the sample comes first in the tab order?' %} Wprowadzanie tekstu **wyszukiwania** jest pierwsze w kolejności tabulatorów. Ponieważ ma `tabindex` większy niż 1, przeskakuje na początek kolejności tabulatorów.
 
 (Takie zachowanie może powodować zamieszanie, jeśli menu zostanie umieszczone na stronie przed danymi wejściowymi do wyszukiwania. To przykład, dlaczego wartość `tabindex` większa od zera jest uważana za anty-wzór).
 
