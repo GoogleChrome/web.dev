@@ -103,7 +103,7 @@ Once completed, publish your updated Android app to the Play store.
 
 Next, tell your website about your Android app by
 [adding a web app manifest](/add-manifest/) to your page. The manifest must
-include `related_applications` property, an array that provides the details
+include the `related_applications` property, an array that provides the details
 about your app, including `platform` and `id`.
 
 * `platform` must be `play`
@@ -135,7 +135,7 @@ Your website can check if your Windows app (built using UWP) is installed.
 
 ### Tell your Windows app about your website
 
-Windows apps use URI Handlers to verify the it's is related to your website.
+Windows apps use URI Handlers to verify that it's related to your website.
 
 **TODO:** Add complete details here. Potentiall from:
 [Enable apps for websites using app URI handlers](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/web-to-app-linking)
@@ -199,9 +199,9 @@ PWAs [web app manifest](/add-manifest/).
 ### Check if your PWA is installed
 
 Finally, call [`navigator.getInstalledRelatedApps()`](#use) from within the
-same [scope][scope] of your PWA to check if it is installed. If
+[scope][scope] of your PWA to check if it is installed. If
 `getInstalledRelatedApps()` is called outside the scope of your PWA, it will
-return false. See next section.
+return false. See the next section for details.
 
 Try the [demo](https://gira-same-domain.glitch.me/pwa/)
 
@@ -211,7 +211,7 @@ Try the [demo](https://gira-same-domain.glitch.me/pwa/)
 
 Your website can check if your PWA is installed, even if the page is outside
 the [scope][scope] of your PWA. For example, a landing page served from
-`/landing/` can check if the PWA served from `/pwa/` is installed, or if you
+`/landing/` can check if the PWA served from `/pwa/` is installed, or if your
 landing page is served from `www.example.com` and your PWA is served from
 `app.example.com`.
 
@@ -252,7 +252,7 @@ the file name.
 
 Next, tell your website about your PWA app by
 [adding a web app manifest](/add-manifest/) to your page. The manifest must
-include `related_applications` property, an array that provides the details
+include the `related_applications` property, an array that provides the details
 about your PWA, including `platform` and `url`.
 
 * `platform` must be `webapp`
