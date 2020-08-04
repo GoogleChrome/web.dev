@@ -252,8 +252,8 @@ Here are some common uses of ARIA.
     most things, CSS can be used, but for `input type="range"`, CSS is very awkward to use. We can
     make our own slider, and use `role="slider"` on it with `aria-valuenow` to say what the current
     value is.
-1.  Live regions — says that in this area of the page, anything that changes is worth telling
-    the user about. 
+1.  Live regions tell screen readers "in this area of the page, anything that changes is worth telling
+    the user about."
 1.  Landmarks (HTML has equivalents now). These are somewhat like headings, in that they help
     screen reader users find what they want faster. However, they're different in that they contain
     the entire related area. Like, "this container is the main area of the page" and "this
