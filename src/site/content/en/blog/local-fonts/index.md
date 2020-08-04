@@ -29,7 +29,9 @@ hero: hero.jpg
 
 ## Web safe fonts
 
-If you have been doing web development for long enough, you may remember the set of the so-called [web safe fonts](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals#Web_safe_fonts). These fonts are known to be available on nearly all instances of the most used operating systems (namely Windows, macOS, the most common Linux distributions, Android, and iOS). In the early 2000s, Microsoft even spearheaded an [initiative](https://web.archive.org/web/20020124085641/http://www.microsoft.com/typography/fontpack/default.htm) called *TrueType core fonts for the Web* that provided these fonts for download for free with the objective that *"whenever you visit a Web site that specifies them, you'll see pages exactly as the site designer intended"*. Yes, including sites set in [Comic Sans MS](https://docs.microsoft.com/en-us/typography/font-list/comic-sans-ms). A classic web safe font stack might look like this:
+If you have been doing web development for long enough, you may remember the set of the so-called [web safe fonts](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals#Web_safe_fonts). These fonts are known to be available on nearly all instances of the most used operating systems (namely Windows, macOS, the most common Linux distributions, Android, and iOS). In the early 2000s, Microsoft even spearheaded an [initiative](https://web.archive.org/web/20020124085641/http://www.microsoft.com/typography/fontpack/default.htm) called *TrueType core fonts for the Web* that provided these fonts for download for free with the objective that *"whenever you visit a Web site that specifies them, you'll see pages exactly as the site designer intended"*. Yes, including sites set in [Comic Sans MS](https://docs.microsoft.com/en-us/typography/font-list/comic-sans-ms). A classic web safe font stack (with the ultimate fallback of whatever
+[`sans-serif`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family#<generic-name>:~:text=sans%2Dserif,-Glyphs)
+font) might look like this:
 
 ```css
 body {
@@ -39,7 +41,9 @@ body {
 
 ## Web fonts
 
-The days where web safe fonts really mattered are long gone. Today, we have [web fonts](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Web_fonts), some of which even are [variable fonts](/variable-fonts/) that we can tweak further. You can use web fonts by declaring a `@font-face` block at the start of the CSS, which specifies the font file(s) to download:
+The days where web safe fonts really mattered are long gone. Today, we have [web fonts](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Web_fonts), some of which even are [variable fonts](/variable-fonts/) that we can tweak further. You can use web fonts by declaring a
+[`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face)
+block at the start of the CSS, which specifies the font file(s) to download:
 
 ```css
 @font-face {
@@ -48,7 +52,9 @@ The days where web safe fonts really mattered are long gone. Today, we have [web
 }
 ```
 
-After this, you can then use the custom web font by specifying the `font-family`, as normal:
+After this, you can then use the custom web font by specifying the
+[`font-family`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family),
+as normal:
 
 ```css
 body {
@@ -58,7 +64,13 @@ body {
 
 ## Local fonts as fingerprint vector
 
-Most web fonts come from, well, the web. An interesting fact, though, is that the `src` property in the `@font-face` declaration, apart from the `url()` function, also accepts a `local()` function. This allows custom fonts to be loaded, surprise, locally. If the user happens to have *FlamboyantSansSerif* installed on their operating system, rather than downloading it from the web, the local copy would be used:
+Most web fonts come from, well, the web. An interesting fact, though, is that the
+[`src`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/src)
+property in the `@font-face` declaration, apart from the
+[`url()`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/src#Values:~:text=%3Curl%3E%20%5B%20format(%20%3Cstring%3E%23%20)%20%5D%3F,-Specifies)
+function, also accepts a
+[`local()`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/src#format():~:text=downloaded.-,%3Cfont%2Dface%2Dname%3E)
+function. This allows custom fonts to be loaded, surprise, locally. If the user happens to have *FlamboyantSansSerif* installed on their operating system, rather than downloading it from the web, the local copy would be used:
 
 ```css
 @font-face {
@@ -80,6 +92,8 @@ This approach provides a nice fallback mechanism that potentially saves the user
 </figure>
 
 An attacker can try to determine what company someone potentially works for by programmatically testing for the existence of a large number of known corporate fonts like *Google Sans*. Therefore, the attacker would attempt rendering text set in these fonts on a canvas and measure the glyphs. If the glyphs match the known shape of the corporate font, the attacker has a hit. If the glyphs do not match, the attacker knows that a default replacement font was used since the corporate font was not installed. For full details on this and other browser fingerprinting attacks, read the [survey paper](http://www-sop.inria.fr/members/Nataliia.Bielova/papers/Lape-etal-20-TWEB.pdf) by Laperdix *et al.*
+
+Company fonts apart, even just the pure list of installed fonts can be identifying.
 The situation with this attack vector has become so bad that recently the WebKit team [decided](https://webkit.org/tracking-prevention/#table-of-contents-toggle:~:text=Changed%20font%20availability%20to%20web%20content,but%20not%20locally%20user%2Dinstalled%20fonts) to *"only include [in the list available fonts] web fonts and fonts that come with the operating system, but not locally user-installed fonts"*. And here I am, with an article on granting access to local fonts.
 
 ## The Local Font Access API
@@ -94,7 +108,7 @@ Professional-quality design and graphics tools have historically been difficult 
 - Developers may have legacy font stacks for their applications that they are bringing to the web. To use these stacks, they usually require direct access to font data; something web fonts do not provide.
 - Some fonts may not be licensed for delivery over the web. For example, Linotype has a license for some fonts that only includes [desktop use](https://www.linotype.com/25/font-licensing.html).
 
-The Local Font Access API is an attempt to solve these challenges. It consists of two parts:
+The Local Font Access API is an attempt at solving these challenges. It consists of two parts:
 
 - A **font enumeration API** which may, optionally, allow users to grant access to the full set of available system fonts in addition to network fonts.
 - From each enumeration result, the ability to request low-level (byte-oriented) **font table access** to the various [TrueType/OpenType tables](https://docs.microsoft.com/en-us/typography/opentype/spec/otff#font-tables).
@@ -131,8 +145,11 @@ if ('fonts' in navigator) {
 
 #### Enumerating local fonts
 
-Access to a user's local fonts is gated behind the `"local-fonts"` permission.
-Once the permission has been granted, you can then `query()` the browser
+Access to a user's local fonts is gated behind the `"local-fonts"` permission
+that you can request with
+[`navigator.permissions.request()`](https://w3c.github.io/permissions/#requesting-more-permission).
+Once the permission has been granted, you can then, from the `FontManager` interface that
+is exposed on `navigator.fonts`, call `query()` to ask the browser
 for the locally installed fonts.
 This results in an asynchronous iterator that you can loop over in a
 [`for await...of`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of)
@@ -141,6 +158,10 @@ Each font is represented as a `FontMetadata` object with the properties
 `family` (for example, `"Comic Sans MS"`), `fullName` (for example, `"Comic Sans MS"`),
 and `postscriptName` (for example, `"ComicSansMS"`).
 
+{% Aside 'warning' %}
+  In this early phase of development of the Local Font Access API,
+  the permission mentioned above is not yet implemented.
+{% endAside %}
 
 ```js
 (async () => {
@@ -148,7 +169,7 @@ and `postscriptName` (for example, `"ComicSansMS"`).
   const status = await navigator.permissions.request({
     name: 'local-fonts',
   });
-  if (status.state !== "granted") {
+  if (status.state !== 'granted') {
     throw new Error('Permission to access local fonts not granted.');
   }
 
@@ -170,10 +191,14 @@ You can list the tables in a
 [`for...of`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
 statement.
 If you know what you are looking for, you can also pass the desired table name
-as a string, or multiple table names
+as a string (for example, `'glyf'`), or multiple table names
 as an array parameter (for example, `['glyf', 'name']`) to `getTables()`.
-All available tables are described in the
+All available tables and what they are useful for are described in the
 [OpenType spec](https://docs.microsoft.com/en-us/typography/opentype/spec/).
+To be of use, font table data must be consumed by a shaping engine
+such as [HarfBuzz](https://www.freedesktop.org/wiki/Software/HarfBuzz/),
+in conjunction with Unicode libraries such as [ICU](http://site.icu-project.org/home)
+for bidirectional text support, text segmentation, and so on.
 
 ```js
 (async () => {
@@ -215,7 +240,8 @@ All available tables are described in the
 
 #### Accessing SFNT data
 
-Full SFNT access is available via the `blob()` method of the `FontMetadata` object.
+Full [SFNT](https://en.wikipedia.org/wiki/SFNT)
+access is available via the `blob()` method of the `FontMetadata` object.
 SFNT is a font file format which can contain other fonts, such as PostScript, TrueType, OpenType,
 Web Open Font Format (WOFF) fonts and others.
 
@@ -261,13 +287,48 @@ Web Open Font Format (WOFF) fonts and others.
 })();
 ```
 
+## Demo
+
+You can see the Local Font Access API in action in the
+[demo](https://local-font-access.glitch.me/demo/) below.
+Be sure to also check out the
+[source code](https://glitch.com/edit/#!/local-font-access?path=README.md%3A1%3A0).
+The demo showcases a custom element `<font-select>` that implements a local font picker.
+
+<div class="glitch-embed-wrap" style="height: 500px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/local-font-access?path=index.html&previewSize=100"
+    title="local-font-access on Glitch"
+    allow="local-fonts"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+
+## Privacy considerations
+
+The `"local-fonts"` permission appears to provide a highly fingerprintable surface.
+However, browsers are free to return anything they like.
+For example, anonymity-focused browsers may choose to only provide
+a set of default fonts built into the browser.
+Similarly, browsers are not required to provide table data exactly as it appears on disk.
+
+Wherever possible, the Local Font Access API is designed to only expose exactly the information
+needed to enable the mentioned use cases.
+System APIs may produce a list of installed fonts not in a random or a sorted order,
+but in the order of font installation.
+Returning exactly the list of installed fonts given by such a system API
+can expose additional entropy bits, and use cases we want to enable
+are not assisted by retaining this ordering.
+As a result, this API requires that the returned data be sorted before being returned.
+
 ## Security and permissions
 
 The Chrome team has designed and implemented the Local Font Access API using the core principles defined in [Controlling Access to Powerful Web Platform Features][powerful-apis], including user control, transparency, and ergonomics.
 
 ### User control
 
-Access to a user's fonts is fully under their control and will not be allowed unless the `"local-fonts"` permission is granted.
+Access to a user's fonts is fully under their control and will not be allowed unless the `"local-fonts"` permission, as listed in the
+[permission registry](https://w3c.github.io/permissions/#permission-registry) is granted.
 
 ### Transparency
 
@@ -283,7 +344,7 @@ The Chrome team wants to hear about your experiences with the Local Font Access 
 
 ### Tell us about the API design
 
-Is there something about the API that doesn't work like you expected? Or are there missing methods or properties that you need to implement your idea? Have a question or comment on the security model?
+Is there something about the API that does not work like you expected? Or are there missing methods or properties that you need to implement your idea? Have a question or comment on the security model?
 File a spec issue on the corresponding [GitHub repo][issues], or add your thoughts to an existing issue.
 
 ### Report a problem with the implementation
