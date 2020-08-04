@@ -11,6 +11,7 @@ tags:
 date: 2020-07-27
 #updated: 2020-07-27
 hero: hero.png
+thumbnail: thumb.png
 alt: Showing the anatomy of a single list item by putting separate boxes around the bullet and the text
 --- 
 
