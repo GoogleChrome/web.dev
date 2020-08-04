@@ -29,10 +29,10 @@ alt: mobile device with app panel open
   </figcaption>
 </figure>
 
-The [`getInstalledRelatedApps()`][spec] makes it possible for a page to check
-if your native app, or Progressive Web App (PWA) is already installed on a
-user's device, and allows you to customize the user experience if your app is
-already installed.
+The [`getInstalledRelatedApps()`][spec] makes it possible for *your* page to
+check if *your* native app, or Progressive Web App (PWA) is already installed
+on a user's device, and allows you to customize the user experience if your
+app is already installed.
 
 For example, if your PWA is already installed:
 
@@ -53,6 +53,12 @@ Your website can check if your:
 * Progressive Web App is installed, if it's running in the
   [same scope](#check-pwa-in-scope) or in a
   [different scope](#check-pwa-out-of-scope)
+
+{% Aside %}
+The `getInstalledRelatedApps()` API only allows you to check if apps you own
+are installed. You cannot get a list of all installed apps, or check if other
+3rd party apps are installed.
+{% endAside %}
 
 <!--  Android App -->
 
@@ -135,10 +141,42 @@ Your website can check if your Windows app (built using UWP) is installed.
 
 ### Tell your Windows app about your website
 
-Windows apps use URI Handlers to verify that it's related to your website.
+You'll need to update your Windows app to define the relationship between your
+website and Windows application using [URI Handlers][win-uri-handlers]. This
+ensures that only your website can check if your Windows app is installed.
 
-**TODO:** Add complete details here. Potentiall from:
-[Enable apps for websites using app URI handlers](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/web-to-app-linking)
+Add the `Windows.appUriHandler` extension registration to your app's manifest
+file `Package.appxmanifest`. For example, if your website's address is
+`example.com` you would add the following entry in your app's manifest:
+
+```xml
+<Applications>
+  <Application ... >
+      ...
+      <Extensions>
+         <uap3:Extension Category="windows.appUriHandler">
+          <uap3:AppUriHandler>
+            <uap3:Host Name="example.com" />
+          </uap3:AppUriHandler>
+        </uap3:Extension>
+      </Extensions>
+  </Application>
+</Applications>
+```
+
+Then, create a JSON file (without the `.json` file extension) named
+`windows-app-web-link` and provide your app's package family name. Place
+that file either on your server root, or in the `/.well-known/` directory.
+
+```json
+[{
+  "packageFamilyName": "MyApp_9jmtgj1pbbz6e",
+  "paths": [ "*" ]
+ }]
+ ```
+
+See [Enable apps for websites using app URI handlers][win-uri-handlers] for
+complete details on setting up URI handlers.
 
 ### Tell your website about your Windows app
 
@@ -333,3 +371,4 @@ browser vendors how critical it is to support them.
 [dig-asset-links]: https://developers.google.com/digital-asset-links/v1/getting-started
 [well-known]: https://tools.ietf.org/html/rfc5785
 [scope]: /add-manifest/#scope
+[win-uri-handlers]: https://docs.microsoft.com/en-us/windows/uwp/launch-resume/web-to-app-linking
