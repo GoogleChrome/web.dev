@@ -663,30 +663,28 @@ at.
 {% raw %}
 
 ```html
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&attributionHidden=true',
-    title: 'tabindex-zero on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'tabindex-zero',
+  path: 'index.html',
+  previewSize: 0
+} %}
 
-<!-- Or just the URL -->
+<!-- Or just the Glitch ID -->
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame 'https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&attributionHidden=true' %}
-</div>
+{% Glitch 'tabindex-zero' %}
 ```
 
 {% endraw %}
 
-It's OK to adjust the `height` on the `<div class="glitch-embed-wrap">`
-element if you need more or less space.
+It's OK to adjust the `height` of the Glitch wrapper element
+if you need more or less space.
 
-Query parameters for modifying how the embed is presented:
+Shortcode object fields allow for modifying how the embed is presented:
 
-* `previewSize=100` displays the app, rather than the source code.
-* `path=index.html` lets you specify which source code file to show.
-* `sidebarCollapsed=true` collapses the file navigator sidebar.
+* {`string`} `id` ID of Glitch project.
+* {`string`} `path?` Lets you specify which source code file to show.
+* {`number`} `previewSize?` Displays the app, rather than the source code.
+* {`number`} `height?` Height, in pixels, of the Glitch wrapper element.
 
 <!-- https://support.glitch.com/t/more-flexible-embeds/2925 -->
 
@@ -696,12 +694,10 @@ Query parameters for modifying how the embed is presented:
   Glitch iframe placeholder
 </div>
 {% else %}
-  <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-    {% IFrame {
-      src: 'https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&attributionHidden=true',
-      title: 'tabindex-zero on Glitch'
-    } %}
-  </div>
+{% Glitch {
+  id: 'tabindex-zero',
+  path: 'index.html'
+} %}
 {% endif %}
 
 ## Images

@@ -455,13 +455,11 @@ quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
 ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  {% IFrame {
-    allow: 'geolocation; microphone; camera; midi; encrypted-media',
-    src: 'https://glitch.com/embed/#!/embed/fav-kitties-starter?path=src/index.js&amp;previewSize=0',
-    title: 'fav-kitties-starter on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'fav-kitties-starter',
+  path: 'src/index.js',
+  previewSize: 0
+} %}
 
 {% Aside 'key-term' %}
   This type of callout defines important terminology.

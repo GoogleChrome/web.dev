@@ -30,12 +30,11 @@ which is about the size of a person's finger pad area.
 
 In the demo, I have added padding to all of the links in order to make sure they meet the minimum size.
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/tap-targets?path=index.html&previewSize=100',
-    title: 'tap-targets on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'tap-targets',
+  path: 'index.html',
+  previewSize: 100
+} %}
 
 Touch targets should also be spaced about 8 pixels apart,
 both horizontally and vertically,
@@ -47,12 +46,11 @@ If your target is text and you have used relative values such as `em` or `rem` t
 you can use DevTools to check that the computed value of that area is large enough.
 In the example below I am using `em` for my text and padding.
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/tap-targets-2?path=style.css&previewSize=100',
-    title: 'tap-targets-2 on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'tap-targets-2',
+  path: 'style.css',
+  previewSize: 100
+} %}
 
 Inspect the `a` of the link,
 and in Chrome DevTools switch to the [Computed pane](https://developers.google.com/web/tools/chrome-devtools/css/overrides#computed)  where you can inspect the various parts of the box

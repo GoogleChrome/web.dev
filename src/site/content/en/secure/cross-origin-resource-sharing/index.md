@@ -117,12 +117,11 @@ shared with the client site.
 
 Here is a tiny web server using Express.
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/cors-demo?path=server.js&attributionHidden=true',
-    title: 'tabindex-zero on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'cors-demo',
+  path: 'server.js',
+  height: 480
+} %}
 
 The first endpoint (line 8) does not have any response header set, it just sends
 a file in response.

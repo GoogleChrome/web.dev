@@ -21,12 +21,12 @@ See also [Keyboard access fundamentals](/keyboard-access).
 To test that the custom control is focusable,
 press the `TAB` key to navigate through the site:
 
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&previewSize=100&attributionHidden=true',
-    title: 'tabindex-zero on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'tabindex-zero',
+  path: 'index.html',
+  previewSize: 100,
+  height: 346
+} %}
 
 Are you able to reach all of the interactive controls on the page?
 If not, you may need to use `tabindex` to improve the focusability of those controls.

@@ -299,13 +299,12 @@ navigator
 You can try out both the headers and the JavaScript API on your own device at
 [user-agent-client-hints.glitch.me](https://user-agent-client-hints.glitch.me).
 
-<div class="glitch-embed-wrap" style="height: 600px; width: 100%;">
-  {% IFrame {
-    allow: 'geolocation; microphone; camera; midi; vr; encrypted-media',
-    src: 'https://glitch.com/embed/#!/embed/user-agent-client-hints?path=README.md&previewSize=100',
-    title: 'user-agent-client-hints on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'user-agent-client-hints',
+  path: 'README.md',
+  previewSize: 100,
+  height: 600
+} %}
 
 {% Aside %}
   Ensure you're using Chrome 84 Beta or equivalent with

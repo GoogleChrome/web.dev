@@ -80,12 +80,12 @@ The avatar is only rendered when the button is clicked, where a request is
 then made to retrieve the code necessary for the suspended `AvatarComponent`.
 In the meantime, the fallback loading component is shown.
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/react-lazy-suspense?path=src/index.css&previewSize=100&attributionHidden=true',
-    title: 'react-lazy-suspense on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'react-lazy-suspense',
+  path: 'src/index.css',
+  previewSize: 100,
+  height: 480
+} %}
 
 In here, the code that makes up `AvatarComponent` is small which is
 why the loading spinner only shows for a short amount of time. Larger
@@ -145,12 +145,12 @@ fetching, the user gets to see them all displayed at the same time.
 
 You can see this with the following embed:
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/react-lazy-suspense-multiple?path=src/index.css&previewSize=100&attributionHidden=true',
-    title: 'react-lazy-suspense-multiple on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'react-lazy-suspense-multiple',
+  path: 'src/index.css',
+  previewSize: 100,
+  height: 480
+} %}
 
 {% Aside %}
   Loading indicator showing a little too quickly?

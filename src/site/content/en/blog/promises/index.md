@@ -679,12 +679,11 @@ catch (err) {
 document.querySelector('.spinner').style.display = 'none'
 ```
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/promises-sync-example?previewSize=100',
-    title: 'An example of fetching JSON synchronously.'
-  } %}
-</div>
+{% Glitch {
+  id: 'promises-sync-example',
+  previewSize: 100,
+  height: 480
+} %}
 
 That works! But it's sync and locks up the browser while things download. To
 make this work async we use `then()` to make things happen one after another.
@@ -805,12 +804,11 @@ getJSON('story.json').then(function(story) {
 })
 ```
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/promises-async-example?previewSize=100',
-    title: 'An example of fetching JSON asynchronously.'
-  } %}
-</div>
+{% Glitch {
+  id: 'promises-async-example',
+  previewSize: 100,
+  height: 480
+} %}
 
 And there we have it, a fully async version of the sync version. But we can do
 better. At the moment our page is downloading like this:
@@ -863,12 +861,11 @@ getJSON('story.json').then(function(story) {
 })
 ```
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/promises-async-all-example?previewSize=100',
-    title: 'An example of fetching JSON asynchronously with Promise.all().'
-  } %}
-</div>
+{% Glitch {
+  id: 'promises-async-all-example',
+  previewSize: 100,
+  height: 480
+} %}
 
 Depending on connection, this can be seconds faster than loading one-by-one,
 and it's less code than our first try. The chapters can download in whatever
@@ -921,12 +918,11 @@ getJSON('story.json')
 })
 ```
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/promises-async-best-example?previewSize=100',
-    title: 'An example of fetching JSON asynchronously with a good UX.'
-  } %}
-</div>
+{% Glitch {
+  id: 'promises-async-best-example',
+  previewSize: 100,
+  height: 480
+} %}
 
 And there we go, the best of both! It takes the same amount of time to deliver
 all the content, but the user gets the first bit of content sooner.
@@ -1047,12 +1043,11 @@ spawn(function *() {
 })
 ```
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/promises-async-generator-example?previewSize=100',
-    title: 'An example of fetching JSON asynchronously with a generator.'
-  } %}
-</div>
+{% Glitch {
+  id: 'promises-async-generator-example',
+  previewSize: 100,
+  height: 480
+} %}
 
 This works exactly as before but is so much easier to read. This works in Chrome
 and Opera today, and works in Microsoft Edge by going to `about:flags` and

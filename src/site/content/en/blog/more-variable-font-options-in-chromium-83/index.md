@@ -164,12 +164,12 @@ And just like that, Chromium users on macOS see your upgraded, custom 750 weight
 
 Click **Remix to Edit** in the Glitch below to get an editable copy of the Glitch, and then edit the new `font-variation-settings` options to see how it affects your font. Remember that this Glitch will only work if you're using a macOS Catalina device.
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/macos-system-ui?path=style.css&attributionHidden=true&previewSize=50&sidebarCollapsed=true',
-    title: 'macOS Catalina system-ui sandbox on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'macos-system-ui',
+  path: 'style.css',
+  previewSize: 50,
+  height: 480
+} %}
 
 macOS 10.15 added new features to its system font, and in macOS 10.15 a tricky `system-ui` bug was logged in the Chromium bug tracker. I wonder if they are related!?
 

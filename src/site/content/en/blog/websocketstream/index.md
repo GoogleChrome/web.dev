@@ -259,13 +259,11 @@ if ('WebSocketStream' in window) {
 On supporting browsers, you can see the WebSocketStream API in action in the embedded iframe,
 or [directly on Glitch](https://websocketstream-demo.glitch.me/).
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  {% IFrame {
-    allow: 'geolocation; microphone; camera; midi; vr; encrypted-media',
-    src: 'https://glitch.com/embed/#!/embed/websocketstream-demo?path=public/index.html&previewSize=100',
-    title: 'websocketstream-demo on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'websocketstream-demo',
+  path: 'public/index.html',
+  previewSize: 100
+} %}
 
 ## Feedback {: #feedback }
 

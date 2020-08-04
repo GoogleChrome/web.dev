@@ -26,12 +26,12 @@ TAB`) to move between controls, and use the arrow keys and
 `ENTER` and `SPACE` to manipulate their values
 (see also [Keyboard access fundamentals](/keyboard-access)):
 
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/interactive-elements?path=index.html&previewSize=100&attributionHidden=true',
-    title: 'interactive-elements on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'interactive-elements',
+  path: 'index.html',
+  previewSize: 100,
+  height: 346
+} %}
 
 Are you able to reach all of the interactive controls on the page?
 Is there a focus indicator on each interactive control?
@@ -59,12 +59,12 @@ Regardless of whether you use a mouse or a keyboard to tab to it,
 the button's focus indicator always looks the same
 (see also [Style focus](/style-focus)).
 
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/focus-style?path=index.html&previewSize=100&attributionHidden=true',
-    title: 'focus-visible on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'focus-style',
+  path: 'index.html',
+  previewSize: 100,
+  height: 346
+} %}
 
 ## Why this matters
 

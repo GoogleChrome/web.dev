@@ -23,12 +23,13 @@ const iframe = require('./IFrame');
  * @return string
  */
 module.exports = (param) => {
-  const allow = 'geolocation; microphone; camera; midi; encrypted-media';
+  const allow =
+    'camera; clipboard; clipboard-read; clipboard-write; geolocation; encrypted-media; microphone; midi; vr;';
   let glitchProps = {
     id: null,
     path: '',
-    previewSize: 0,
-    style: 'height: 420px; width: 100%;',
+    previewSize: null,
+    height: 420,
   };
 
   if (typeof param === 'string') {
@@ -37,22 +38,22 @@ module.exports = (param) => {
     glitchProps = {...glitchProps, ...param};
   }
 
-  const {id, path, previewSize, style} = glitchProps;
+  const {id, path, previewSize, height} = glitchProps;
 
   if (!id) {
     return;
   }
 
-  let src = `https://glitch.com/embed/#!/embed/${id}?`;
+  let src = `https://glitch.com/embed/#!/embed/${id}?attributionHidden=true&sidebarCollapsed=true&`;
   if (path) {
     src += `path=${path}&`;
   }
-  if (previewSize) {
+  if (typeof previewSize === 'number') {
     src += `previewSize=${previewSize}&`;
   }
 
   return html`
-    <div class="glitch-embed-wrap" style="${style}">
+    <div class="glitch-embed-wrap" style="height: ${height}px; width: 100%;">
       ${iframe({src, title: `${id} on Glitch`, allow})}
     </div>
   `;

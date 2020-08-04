@@ -127,12 +127,11 @@ The token for a manifest **must** be in an `ORIGIN-TRIAL` field of the manifest 
 
 You can see a sample project embedded below that demonstrates adding the correct origin trial tokens into both the `index.html` and `manifest.appcache` files.
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/appcache-reverse-ot?path=manfiest.appcache&attributionHidden=true',
-    title: 'An example web app that is registered for the AppCache origin trial.'
-  } %}
-</div>
+{% Glitch {
+  id: 'appcache-reverse-ot',
+  path: 'manfiest.appcache',
+  height: 480
+} %}
 
 ### Why are tokens needed in multiple places?
 
