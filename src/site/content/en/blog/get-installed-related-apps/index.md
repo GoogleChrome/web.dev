@@ -1,8 +1,8 @@
 ---
 title: "Is your app installed? getInstalledRelatedApps() will tell you!"
 subhead: |
-  "The `getInstalledRelatedApps()` method allows your web app to check whether
-  your app or PWA is installed on a user's device."
+  The `getInstalledRelatedApps()` method allows your web app to check whether
+  your app or PWA is installed on a user's device.
 authors:
   - petelepage
 description: |
@@ -10,7 +10,7 @@ description: |
   web app to check whether your app or PWA is installed on the user's
   device.
 date: 2018-12-20
-updated: 2020-07-30
+updated: 2020-08-04
 scheduled: true
 tags:
   - blog
@@ -55,7 +55,7 @@ Your website can check if your:
   [different scope](#check-pwa-out-of-scope)
 
 {% Aside %}
-The `getInstalledRelatedApps()` API only allows you to check if apps you own
+The `getInstalledRelatedApps()` API only allows you to check if *your* apps
 are installed. You cannot get a list of all installed apps, or check if other
 3rd party apps are installed.
 {% endAside %}
