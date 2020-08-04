@@ -18,6 +18,7 @@ description: >
 date: 2020-08-03
 # updated:
 hero: hero.jpg
+alt: Page of a font book.
 ---
 
 {% Aside %}
@@ -328,7 +329,7 @@ The Chrome team has designed and implemented the Local Font Access API using the
 ### User control
 
 Access to a user's fonts is fully under their control and will not be allowed unless the `"local-fonts"` permission, as listed in the
-[permission registry](https://w3c.github.io/permissions/#permission-registry) is granted.
+[permission registry](https://w3c.github.io/permissions/#permission-registry), is granted.
 
 ### Transparency
 
