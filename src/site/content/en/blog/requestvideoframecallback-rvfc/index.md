@@ -185,7 +185,6 @@ video.requestVideoFrameCallback(updateCanvas);
 {% Glitch {
   id: 'requestvideoframecallback',
   path: 'script.js',
-  previewSize: 100,
   height: 1200
 } %}
 

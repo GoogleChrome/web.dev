@@ -38,7 +38,6 @@ Here is an example of a simple sign-in form that demonstrates all of the best pr
 {% Glitch {
   id: 'sign-in-form',
   path: 'index.html',
-  previewSize: 100,
   height: 480
 } %}
 
@@ -631,7 +630,6 @@ You can see both ARIA features in action in the following Glitch:
 {% Glitch {
   id: 'signin-form',
   path: 'index.html',
-  previewSize: 100,
   height: 480
 } %}
 

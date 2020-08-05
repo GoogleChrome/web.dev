@@ -58,7 +58,6 @@ built-in file selection UI and then logs each selected file to the console.
 
 {% Glitch {
   id: 'input-type-file',
-  previewSize: 100,
   height: 480
 } %}
 
@@ -218,7 +217,6 @@ verify that the user has selected an image file.
 
 {% Glitch {
   id: 'read-image-file',
-  previewSize: 100,
   height: 480
 } %}
 

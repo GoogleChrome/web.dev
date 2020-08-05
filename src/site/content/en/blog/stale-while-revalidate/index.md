@@ -74,7 +74,6 @@ specifically, the current number of minutes past the hour.
 {% Glitch {
   id: 's-w-r-demo',
   path: 'server.js:20:15',
-  previewSize: 100,
   height: 346
 } %}
 

@@ -38,7 +38,6 @@ the `<div>` will _always_ look the same.
 {% Glitch {
   id: 'focus-style',
   path: 'index.html',
-  previewSize: 100,
   height: 346
 } %}
 
@@ -63,7 +62,6 @@ Firefox and Safari the element does not receive focus when you click on it.
 {% Glitch {
   id: 'focus-style2',
   path: 'index.html',
-  previewSize: 100,
   height: 346
 } %}
 
@@ -106,7 +104,6 @@ button:focus-visible {
 {% Glitch {
   id: 'focus-visible-style',
   path: 'index.html',
-  previewSize: 100,
   height: 346
 } %}
 
@@ -131,7 +128,6 @@ form:focus-within {
 {% Glitch {
   id: 'focus-within-style',
   path: 'index.html',
-  previewSize: 100,
   height: 346
 } %}
 
@@ -196,6 +192,5 @@ the polyfill to change the focus indicator on a button.
 {% Glitch {
   id: 'focus-visible',
   path: 'index.html',
-  previewSize: 100,
   height: 346
 } %}

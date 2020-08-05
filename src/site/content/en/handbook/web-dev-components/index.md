@@ -683,7 +683,7 @@ Shortcode object fields allow for modifying how the embed is presented:
 
 * {`string`} `id` ID of Glitch project.
 * {`string`} `path?` Lets you specify which source code file to show.
-* {`number`} `previewSize?` Displays the app, rather than the source code.
+* {`number`} `previewSize?` Defines what percentage of the embed should be dedicated to the preview, default is 100.
 * {`number`} `height?` Height, in pixels, of the Glitch wrapper element.
 
 <!-- https://support.glitch.com/t/more-flexible-embeds/2925 -->

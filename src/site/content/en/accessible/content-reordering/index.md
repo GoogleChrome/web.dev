@@ -32,8 +32,7 @@ the order that we read in English.
 
 {% Glitch {
   id: 'flex-nav-source-ordered',
-  path: 'index.html',
-  previewSize: 100
+  path: 'index.html'
 } %}
 
 If you have created this sort of pattern and then were asked to move **Contact Us**,
@@ -42,8 +41,7 @@ Try tabbing through the items in the example below, which has used the `order` p
 
 {% Glitch {
   id: 'flex-nav-ordered',
-  path: 'style.css',
-  previewSize: 100
+  path: 'style.css'
 } %}
 
 The focus jumps to the final item and then back again.
@@ -70,8 +68,7 @@ using line numbers, without considering where they are in the source.
 
 {% Glitch {
   id: 'grid-mixed-up-order',
-  path: 'index.html',
-  previewSize: 100
+  path: 'index.html'
 } %}
 
 Try tabbing around this example, and see how the focus jumps about.

@@ -60,7 +60,6 @@ Here is an example of a React app built with CRA that has a service worker enabl
 {% Glitch {
   id: 'react-sw-example',
   path: 'src/index.css',
-  previewSize: 100,
   height: 480
 } %}
 

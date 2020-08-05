@@ -29,7 +29,7 @@ module.exports = (param) => {
   let glitchProps = {
     id: null,
     path: '',
-    previewSize: null,
+    previewSize: 100,
     height: 420,
   };
 

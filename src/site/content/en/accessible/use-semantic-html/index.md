@@ -39,7 +39,6 @@ TAB`) to move between controls, and you can use the arrow keys and keys like
 {% Glitch {
   id: 'interactive-elements',
   path: 'index.html',
-  previewSize: 100,
   height: 450
 } %}
 
@@ -76,7 +75,6 @@ and `SPACE` to attempt to click on them.
 {% Glitch {
   id: 'synthetic-click',
   path: 'index.html',
-  previewSize: 100,
   height: 346
 } %}
 

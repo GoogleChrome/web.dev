@@ -88,7 +88,6 @@ However, with the update, the Web Animations API is no longer restricted to anim
 {% Glitch {
   id: 'waapi-getanimations',
   path: 'index.html',
-  previewSize: 100,
   height: 480
 } %}
 
@@ -139,7 +138,6 @@ You can take the above animation, and give it a smooth, reversed animation when 
 {% Glitch {
   id: 'waapi-promises',
   path: 'script.js',
-  previewSize: 100,
   height: 480
 } %}
 

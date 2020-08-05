@@ -681,7 +681,6 @@ document.querySelector('.spinner').style.display = 'none'
 
 {% Glitch {
   id: 'promises-sync-example',
-  previewSize: 100,
   height: 480
 } %}
 
@@ -806,7 +805,6 @@ getJSON('story.json').then(function(story) {
 
 {% Glitch {
   id: 'promises-async-example',
-  previewSize: 100,
   height: 480
 } %}
 
@@ -863,7 +861,6 @@ getJSON('story.json').then(function(story) {
 
 {% Glitch {
   id: 'promises-async-all-example',
-  previewSize: 100,
   height: 480
 } %}
 
@@ -920,7 +917,6 @@ getJSON('story.json')
 
 {% Glitch {
   id: 'promises-async-best-example',
-  previewSize: 100,
   height: 480
 } %}
 
@@ -1045,7 +1041,6 @@ spawn(function *() {
 
 {% Glitch {
   id: 'promises-async-generator-example',
-  previewSize: 100,
   height: 480
 } %}
 
