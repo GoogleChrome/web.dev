@@ -16,7 +16,7 @@ module.exports = {
         'media-experience',
         'file-basics',
         'application-basics',
-        'cheetsheet',
+        'cheatsheet',
       ],
     },
     {
