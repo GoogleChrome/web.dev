@@ -1,10 +1,13 @@
 ---
 layout: post
 title: Web on Android
+subhead: How different components can be used to render web content inside Android apps.
 authors:
   - andreban
 date: 2020-07-30
-updated: 2020-07-30
+updated: 2020-08-05
+hero: hero.svg
+alt: Android robot
 description: |
   Learn how different components can be used to render web content inside Android apps.
 tags:
