@@ -170,13 +170,13 @@ In DevTools, open the **Sensors** tab and look for **Emulate Idle Detector state
 You can see the various options in the video below.
 
 <figure class="w-figure">
-    <video controls autoplay loop muted class="w-screenshot">      
-      <source src="./devtools.mp4" type="video/mp4">
-    </video>
-   <figcaption class="w-figcaption">
-      Idle Detector state emulation in DevTools.
-    </figcaption>
-  </figure>
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="./devtools.mp4" type="video/mp4">
+  </video>
+  <figcaption class="w-figcaption">
+    Idle Detector state emulation in DevTools.
+  </figcaption>
+</figure>
 
 ### Demo
 
