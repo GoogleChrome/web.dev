@@ -8,7 +8,7 @@ authors:
   - mustafakurtuldu
   - thomassteiner
 date: 2018-02-19
-updated: 2020-07-07
+updated: 2020-08-05
 hero: hero.jpg
 tags:
   - blog
@@ -690,19 +690,24 @@ Praxis](https://www.axis-praxis.org/specimens/zycon).
 ### Finesse
 
 <figure class="w-figure">
-  <img src="TODO"
-  alt="Amstelvar, designed by David Berlow (Font Bureau), fine tuning by adjusting ascenders and descenders in response to line length.">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="larger-widths.mp4" type="video/mp4">
+    <!-- TODO: video file should be hosted on https://storage.googleapis.com/web-dev-assets/variable-fonts -->
+  </video>
+  <figcaption>
+    Amstelvar using little bits of XTRA in opposite directions so the words widhts are evened out
+  </figcaption>
 </figure>
 
 Roboto Flex and Amstelvar offer a set of "Parametric Axes." In these axes, the
-letters are deconstructed into 4 fundamental aspects of form: black or positive
-shapes, white or negative shapes, and the x and y dimensions. In the same way
-that primary colors can be blended with any other color to adjust it, these 4
-aspects can be used to fine tune any other axis.
+letters are deconstructed into 4 fundamental aspects of form: black or
+positive shapes, white or negative shapes, and the x and y dimensions. In the
+same way that primary colors can be blended with any other color to adjust it,
+these 4 aspects can be used to fine tune any other axis.
 
-Ascender and descender lengths are adjusted in the Optical Size axis, but a "one
-size fits all" approach does not work: Further adjustments are needed, such as
-in response to line length, shown above.
+The XTRA axis in Amstelvar allows you to adjust the "white" per mille value,
+as shown above. Using little bits of XTRA in opposite directions, the words
+widhts are evened out.
 
 ## Thanks {: .hide-from-toc }
 
