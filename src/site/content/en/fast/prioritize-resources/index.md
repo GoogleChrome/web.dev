@@ -25,13 +25,13 @@ There are ways that you can influence this decision-making using
 ## Default priorities in the browser
 
 The browser assigns different relative priorities to different types of resources based on how critical they might be.
-So, for example, a `<script>` tag in your page’s `<head>` would be loaded in Chrome at a **High** priority (below CSS, at **Highest**),
+So, for example, a `<script>` tag in your page's `<head>` would be loaded in Chrome at a **High** priority (below CSS, at **Highest**),
 but that priority would change to **Low** if it has the async attribute (meaning it can be loaded and run asynchronously).
 
 Priorities become important when investigating loading performance in your site.
 Beyond the usual techniques of [measuring](/web/fundamentals/performance/critical-rendering-path/measure-crp)
 and [analyzing the critical rendering path](/web/fundamentals/performance/critical-rendering-path/analyzing-crp),
-it’s useful to know Chrome's priority for each resource.
+it's useful to know Chrome's priority for each resource.
 You can find that in the Network panel in Chrome Developer Tools.
 Here's what it looks like:
 
@@ -59,7 +59,7 @@ which are all relatively new `<link>` types.
 * [`<link rel="preload">`](/preload-critical-assets/) informs the browser that a resource is needed as part of the current navigation,
 and that it should start getting fetched as soon as possible.
 * [`<link rel="preconnect">`](/preconnect-and-dns-prefetch/) informs the browser that your page intends to establish a connection to another origin,
-and that you’d like the process to start as soon as possible.
+and that you'd like the process to start as soon as possible.
 * [`<link rel="prefetch">`](/link-prefetch/) is somewhat different from `<link rel="preload">` and `<link rel="preconnect">`,
-in that it doesn’t try to make something critical happen faster;
+in that it doesn't try to make something critical happen faster;
 instead, it tries to make something non-critical happen earlier, if there's a chance.
