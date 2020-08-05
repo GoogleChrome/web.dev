@@ -26,21 +26,24 @@ There are ways that you can influence this decision-making using
 
 The browser assigns different relative priorities to different types of resources based on how critical they might be.
 So, for example, a `<script>` tag in your page's `<head>` would be loaded in Chrome at a **High** priority (below CSS, at **Highest**),
-but that priority would change to **Low** if it has the async attribute (meaning it can be loaded and run asynchronously).
+but that priority would change to **Low** if it has the `async` attribute (meaning it can be loaded and run asynchronously).
 
 Priorities become important when investigating loading performance in your site.
 Beyond the usual techniques of [measuring](/web/fundamentals/performance/critical-rendering-path/measure-crp)
 and [analyzing the critical rendering path](/web/fundamentals/performance/critical-rendering-path/analyzing-crp),
 it's useful to know Chrome's priority for each resource.
-You can find that in the Network panel in Chrome Developer Tools.
+You can find that in the **Network** panel in Chrome DevTools.
 Here's what it looks like:
 
 
 <figure class="w-figure">
-    <img src="./res-prio-priorities.png"
+    <img src="./res-prio-priorities.png" class="w-screenshot"
     alt="An example of how priorities are displayed in Chrome Developer Tools">
-  <figcaption><b>Figure 1</b>: Priorities in Chrome Developer Tools. You may
-  need to enable the Priority column by right-clicking on the column headers.
+  <figcaption>
+    The <b>Priority</b> column, which is hidden by default (see
+    <a href="https://developers.google.com/web/tools/chrome-devtools/network/reference#columns">
+      Add or remove columns
+    </a>.
   </figcaption>
 </figure>
 
@@ -48,7 +51,7 @@ Here's what it looks like:
 These priorities give you an idea of how much relative importance the browser attributes to each resource.
 And remember that subtle differences are enough for the browser to assign a different priority;
 for example, an image that is part of the initial render is prioritized higher than an image that starts offscreen.
-If you're curious about priorities, [this article by Addy Osmani](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf)
+If you're curious about priorities, [Preload, Prefetch And Priorities in Chrome](https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf)
 digs a lot deeper into the current state of priorities in Chrome.
 
 So what can you do if you find any resources that are marked with a different priority than the one you'd want?
