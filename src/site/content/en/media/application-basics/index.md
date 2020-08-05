@@ -55,7 +55,7 @@ understand the rest of this article.
 
 Despite what it says on the package, this utility is for more than C++
 developers. You can use it as both a library for building media software and as
-a command-line utility for preparing media files for playback. It's the later
+a command-line utility for preparing media files for playback. It's the latter
 capacity that interests me here. In fact, for web media creators, Shaka Packager
 is the only way to do some tasks without spending money on expensive commercial
 applications.
