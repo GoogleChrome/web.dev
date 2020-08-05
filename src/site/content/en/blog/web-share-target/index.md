@@ -139,8 +139,8 @@ and that `enctype` be present. Additionally, `enctype` must be
 You must also add a `files` array defining the types of files your app accepts. The
 array elements are entries with two members: a `name` field and an `accept`
 field. The `accept` field takes a MIME type, a file extension, or an array
-containing both. It's best to provide an array, that includes both a
-MIME type, and a file extension, since operation systems differ in which
+containing both. It's best to provide an array that includes both a
+MIME type and a file extension since operating systems differ in which
 they prefer.
 
 ```json/5,10-19
