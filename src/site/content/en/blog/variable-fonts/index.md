@@ -125,9 +125,8 @@ and combine with the Weight axis to provide all the widths for every weight.
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="roboto-dance.mp4" type="video/mp4">
-    <!-- TODO: video file should be hosted on https://storage.googleapis.com/web-dev-assets/variable-fonts -->
   </video>
-    <figcaption>
+  <figcaption>
     Roboto Flex in random combinations of Width and Weight
   </figcaption>
 </figure>
@@ -314,9 +313,8 @@ can set any value within the font's Width range:
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="roboto-flex-weight.mp4" type="video/mp4">
-    <!-- TODO: video file should be hosted on https://storage.googleapis.com/web-dev-assets/variable-fonts -->
   </video>
-    <figcaption>
+  <figcaption>
     Roboto Flex' Weight axis being changed from its minimum to its maximum.
   </figcaption>
 </figure>
@@ -337,9 +335,8 @@ Likewise, we can set `font-stretch` with keywords (`condensed`,
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="roboto-flex-width.mp4" type="video/mp4">
-    <!-- TODO: video file should be hosted on https://storage.googleapis.com/web-dev-assets/variable-fonts -->
   </video>
-    <figcaption>
+  <figcaption>
     Roboto Flex' Width axis being changed from its minimum to its maximum.
   </figcaption>
 </figure>
@@ -376,9 +373,8 @@ i, em, .italic {
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="roboto-flex-slant.mp4" type="video/mp4">
-    <!-- TODO: video file should be hosted on https://storage.googleapis.com/web-dev-assets/variable-fonts -->
   </video>
-    <figcaption>
+  <figcaption>
     Roboto Flex' Slant axis being changed from its minimum to its maximum.
   </figcaption>
 </figure>
@@ -392,7 +388,7 @@ while a large size might benefit from more details and thinner strokes.
 
 <figure class="w-figure">
   <img src="roboto-flex-opsz.png"
-  alt="">
+  alt="The letter 'a' shown at different optical sizes">
   <figcaption>
     The letter 'a' in Roboto Flex at different pixel sizes, then scaled to be the same size,
     shows the differences in design.
@@ -437,9 +433,8 @@ weight.
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="roboto-flex-grade.mp4" type="video/mp4">
-    <!-- TODO: video file should be hosted on https://storage.googleapis.com/web-dev-assets/variable-fonts -->
   </video>
-    <figcaption>
+  <figcaption>
     Roboto Flex' Grade axis being changed from its minimum to its maximum.
   </figcaption>
 </figure>
@@ -660,9 +655,8 @@ You can view the working example and source code for the above sample
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="axis-praxis.mp4" type="video/mp4">
-    <!-- TODO: video file should be hosted on https://storage.googleapis.com/web-dev-assets/variable-fonts -->
   </video>
-    <figcaption>
+  <figcaption>
     Typeface Zycon, designed for animation by David Berlow, type designer and
     typographer at Font Bureau.
   </figcaption>
@@ -680,9 +674,8 @@ Praxis](https://www.axis-praxis.org/specimens/zycon).
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="anicons-animation.mp4" type="video/mp4">
-    <!-- TODO: video file should be hosted on https://storage.googleapis.com/web-dev-assets/variable-fonts -->
   </video>
-    <figcaption>
+  <figcaption>
     A few examples of hover animations from Anicon's color icon font
   </figcaption>
 </figure>
@@ -692,7 +685,6 @@ Praxis](https://www.axis-praxis.org/specimens/zycon).
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
     <source src="larger-widths.mp4" type="video/mp4">
-    <!-- TODO: video file should be hosted on https://storage.googleapis.com/web-dev-assets/variable-fonts -->
   </video>
   <figcaption>
     Amstelvar using little bits of XTRA in opposite directions so the words widhts are evened out
