@@ -4,8 +4,8 @@ title: Sign-in form best practices codelab
 authors:
   - samdutton
 scheduled: true
-updated: 2020-07-27
 date: 2020-06-29
+updated: 2020-08-05
 description: Use cross-platform browser features to build a simple email/password sign-in form that's secure, accessible and easy to use.
 tags:
   - forms
@@ -164,7 +164,7 @@ by password managers in modern browsers—even though you should use `type="emai
 and you may want to use `id="email"` and `name="email"`.
 {% endAside %}
 
-Different browsers use [different techniques](http://localhost:8080/sign-in-form-best-practices/#password-managers:~:text=Browser%20password%20and%20autofill%20systems%20are%20not%20simple) 
+Different browsers use [different techniques](/sign-in-form-best-practices/#password-managers:~:text=Browser%20password%20and%20autofill%20systems%20are%20not%20simple) 
 to work out the role of form inputs and provide autofill for a range of 
 different websites. 
 

@@ -5,7 +5,7 @@ authors:
   - samdutton
 scheduled: true
 date: 2020-06-29
-updated: 2020-07-29
+updated: 2020-08-05
 description: Use cross-platform browser features to build sign-in forms that are secure, accessible and easy to use.
 hero: hero.jpg
 alt: A person holding a phone.
@@ -51,7 +51,8 @@ Here is an example of a simple sign-in form that demonstrates all of the best pr
 * Use element attributes to [access built-in browser
   features](#element-attributes): `type`, `name`, `autocomplete`, `required`,
   `autofocus`.
-* Give inputs a [stable value](#autofill) for `name` or `id`.
+* Give input `name` and `id` attributes stable values that don't change 
+between page loads or website deployments.
 * Put sign-in [in its own &lt;form&gt; element](#single-form). 
 * [Ensure successful form submission](#submission).
 * Use [`autocomplete="new-password"`](#new-password) for the password input
@@ -173,8 +174,9 @@ ways to do that:
 * Emulate navigation with `History.pushState()` or `History.replaceState()`, 
 and remove the password form.
 
-If you use `XMLHttpRequest` or `fetch`, make sure that sign-in success or failure 
-is reported in the response.
+With an `XMLHttpRequest` or `fetch` request, make sure that sign-in success is 
+reported in the response and handled by taking the form out of the DOM as well 
+as indicating success to the user.
 
 Consider disabling the **Sign in** button once the user has tapped or clicked
 it. [Many users click buttons multiple times](https://baymard.com/blog/users-double-click-online) 
@@ -317,8 +319,8 @@ There are two parts to this:
 1. The `autocomplete`, `name`, `id`, and `type` attributes help browsers understand 
 the role of inputs in order to store data that can later be used for autofill. 
 To allow data to be stored for autofill, modern browsers also require inputs to 
-have a stable `name` or `id` value (not randomly generated on each page load), 
-and to be in a &lt;form&gt; with a `submit` button. 
+have a stable `name` or `id` value (not randomly generated on each page load or 
+site deployment), and to be in a &lt;form&gt; with a `submit` button. 
 
 1. The `autocomplete` attribute helps browsers correctly autofill inputs using 
 stored data. 
