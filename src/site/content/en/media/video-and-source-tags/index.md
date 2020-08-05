@@ -18,10 +18,9 @@ given it correct dimensions and the correct resolution. You've encrypted it.
 You've even created separate webm and mp4 files for different browsers.
 
 For anyone to see it, you still need to add it to a web page. Doing so properly
-requies two HTML elements: the `<video>` element and the `<source>`.  Because it
-makes no sense to cover them separately, the page explains both. It also
-explains attributes you should add to those tags to craft a good user
-experience.
+requires two HTML elements: the `<video>` element and the `<source>`. In
+addition to basics about these tags, this section also explains attributes you
+should add to those tags to craft a good user experience.
 
 {% Aside %}
 You always have the option of uploading your file to YouTube or Vimeo. In many
@@ -60,7 +59,7 @@ For example the code below produces the ebedded video that immediately follows.
 
 [Try it](https://googlesamples.github.io/web-fundamentals/fundamentals/media/video-main.html)
 
-When the browser parses the `<source>` tags, it uses the (optional) `type`
+When the browser parses the `<source>` tags, it uses the optional `type`
 attribute to determine which file to download and play. If the browser
 supports WebM, it plays that; if not, it checks whether it can play
 MPEG-4 videos.
@@ -116,14 +115,19 @@ example, to play the video from seconds 5 to 10, specify:
 You can use this feature to deliver multiple views on the same video&ndash;like
 cue points in a DVD&ndash;without having to encode and serve multiple files.
 
-{% Aside 'caution' %}
+### Using range requests
+
+[Intro TBD]
+
 By default, most servers enable range requests, which is required for media
 fragments to work. Because some hosting services turn them off, you should test
 this feature with your server before using it on a live site.
-{% endAside %}
 
-Using your browser developer tools, check for `Accept-Ranges: bytes` in the
-response headers:
+You can use browser developer tools to learn if your server supports range
+requests. The image below shows this operation in Chrome DevTools. Locate where
+the request and response headers are displayed, then check whether the value of
+the `Accept-Ranges` header is `bytes`. In a the image, a red box has been drawn
+around this header.
 
 <figure class="w-figure">
   <img src="./accept-ranges-chrome-devtools.png" alt="Chrome DevTools screenshot: Accept-Ranges: bytes.">

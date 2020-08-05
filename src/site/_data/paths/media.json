@@ -12,8 +12,8 @@
         "media-experience",
         "file-basics",
         "application-basics",
-        "cheatsheet",
-      ],
+        "cheatsheet"
+      ]
     },
     {
       "title": "Prepare media files for the web",
@@ -22,16 +22,16 @@
         "containers-and-codecs",
         "bitrate",
         "resolution",
-        "encryption",
-      ],
+        "encryption"
+      ]
     },
     {
       "title": "Add media to a web page",
       "pathItems": [
         "add-media",
         "video-and-source-tags",
-        "accessibility-with-the-track-tag",
-      ],
-    },
-  ],
-};
+        "accessibility-with-the-track-tag"
+      ]
+    }
+  ]
+}

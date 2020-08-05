@@ -54,11 +54,15 @@ On the right are the specifics of that structure for a single webm file.
   <figcaption class="w-figcaption">Parts of a media file.</figcaption>
 </figure>
 
-Not all browsers support the same containers and codecs. To cover the major
-browsers, you'll need at least two formats: webm for Chromium-based browsers and
-mp4 for everyone else. Although webm was created specifically for the web, its
-support is not yet universal. Safari in particular does not, as of this writing,
-support webm for embedded video.
+Not all browsers support up-to-date containers and codecs. For example, webm is
+high-quality and open source. Files in webm packages can be orders of magnitude
+smaller than other formats, making them a good choice for mobile download.
+Although webm was created specifically for the web, its support is not yet
+universal. Safari in particular does not, as of this writing, support webm for
+embedded video.
+
+All modern browsers support mp4 files, making them a good general choice for a
+media container and the best choice as the backup container for webm.
 
 Many file formats support multiple codecs for the same stream type. A complete
 list of available [video
@@ -80,15 +84,7 @@ The more bits used to encode a second of stream, the higher the potential
 detail and fidelity.
 
 _Resolution_ is the amount of information in a single frame of video, given as
-the number of logical pixels in each dimension. For example, a resolution of
-1920 by 1080 works out to 1080 stacked horizontal lines, each of which is one
-logical pixel high and 1920 logical pixels wide. This resolution is frequently
-abbreviated 1080p because technically the width can vary. The dimensions 1080 by
-1920 produce an [aspect
-ratio](https://en.wikipedia.org/wiki/Aspect_ratio_(image)) of 16:9, which is the
-ratio of movie screens and modern television sets. By the way this is the
-resolution defined as [full
-HD](https://www.google.com/search?q=what+is+hd+resolution&oq=what+is+hd+resolution&aqs=chrome.0.0l6.3183j0j8&sourceid=chrome&ie=UTF-8#q=full+hd+resolution).
+the number of logical pixels in each dimension. I provide more information about this concept [later in this series of lessons](../resolution).
 
 In the next section, you'll examine these characteristics using two command line
 tools: Shaka Packager and FFmpeg.

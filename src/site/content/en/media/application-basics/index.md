@@ -32,26 +32,25 @@ prepare media for the web. I've also created a [cheat sheet](cheatsheet) showing
 common operations with those applications.
 
 These aren't the only options available for many file manipulation tasks. But
-they are two of the most common and powerful.
-
-* GUI applications: [Miro](http://www.mirovideoconverter.com/),
-  [HandBrake](//handbrake.fr/), [VLC](//www.videolan.org/)
-* Online encoding/transcoding services:
-  [Zencoder](//en.wikipedia.org/wiki/Zencoder),
-  [Amazon Elastic Encoder](//aws.amazon.com/elastictranscoder)
+they are two of the most common and powerful. Other options include the GUI
+applications [Miro](http://www.mirovideoconverter.com/),
+[HandBrake](//handbrake.fr/), and [VLC](//www.videolan.org/). There are also
+online encoding/transcoding services such as
+[Zencoder](//en.wikipedia.org/wiki/Zencoder) and [Amazon Elastic
+Encoder](//aws.amazon.com/elastictranscoder).ß
 
 ## Shaka Packager
 
 [Shaka Packager](https://github.com/google/shaka-packager) is a free media
-packaging SDK for creating packager applications for [Dynamic Adaptive Streaming
-over HTTP
+packaging SDK for creating packager applications for the two most common video
+streaming protocols: [Dynamic Adaptive Streaming over HTTP
 (DASH)](https://developer.mozilla.org/en-US/docs/Web/HTML/DASH_Adaptive_Streaming_for_HTML_5_Video)
 or [HTTP Live Streaming
 (HLS)](https://developer.apple.com/documentation/http_live_streaming). Shaka
-Packager provides common encryption support, Widevine digital rights management
-(DRM) support, live video, and video-on-demand for these technologies. Don't
-worry if you don't know what all those words mean. You won't need them to
-understand the rest of this article.
+Packager supports key security features: common encryption, Widevine digital
+rights management (DRM) support. It can also handle live video, and
+video-on-demand. Don't worry if you don't know what all those words mean. You
+won't need them to understand the rest of this article.
 
 Despite what it says on the package, this utility is for more than C++
 developers. You can use it as both a library for building media software and as
