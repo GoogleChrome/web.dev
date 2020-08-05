@@ -364,6 +364,11 @@ browser vendors how critical it is to support them.
 * [Request an origin trial token]({{origin_trial.url}})
 * Blink Component: [`Mobile>WebAPKs`](https://chromestatus.com/features#component%3A%20Mobile%3EWebAPKs)
 
+## Thanks
+
+Special thanks to Sunggook Chue at Microsoft for helping with the details
+for testing Windows apps, and Rayan Kanso for help with the Chrome details.
+
 [spec]: https://wicg.github.io/get-installed-related-apps/spec/
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=895854
 [cr-status]: https://www.chromestatus.com/feature/5695378309513216
@@ -375,8 +380,3 @@ browser vendors how critical it is to support them.
 [well-known]: https://tools.ietf.org/html/rfc5785
 [scope]: /add-manifest/#scope
 [win-uri-handlers]: https://docs.microsoft.com/en-us/windows/uwp/launch-resume/web-to-app-linking
-
-## Thanks
-
-Special thanks to Sunggook Chue at Microsoft for helping with the details
-for testing Windows apps, and Rayan Kanso for help with the Chrome details.
