@@ -245,7 +245,6 @@ In this case just run the demo
 {% Glitch {
   id: 'async-clipboard-api',
   path: 'README.md',
-  previewSize: 100,
   height: 500
 } %}
 

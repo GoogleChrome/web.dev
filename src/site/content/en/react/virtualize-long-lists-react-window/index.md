@@ -21,7 +21,6 @@ Here's an example of a list that contains 1000 rows being rendered with
 {% Glitch {
   id: 'react-window-fixed',
   path: 'src/App.js',
-  previewSize: 100,
   height: 750
 } %}
 
@@ -145,7 +144,6 @@ The following embed shows an example of this component.
 {% Glitch {
   id: 'react-window-variable',
   path: 'src/ListComponent.js',
-  previewSize: 100,
   height: 750
 } %}
 
@@ -324,7 +322,6 @@ list.
 {% Glitch {
   id: 'react-window-infinite',
   path: 'src/ListComponent.js',
-  previewSize: 100,
   height: 750
 } %}
 

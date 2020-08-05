@@ -24,7 +24,6 @@ press the `TAB` key to navigate through the site:
 {% Glitch {
   id: 'tabindex-zero',
   path: 'index.html',
-  previewSize: 100,
   height: 346
 } %}
 

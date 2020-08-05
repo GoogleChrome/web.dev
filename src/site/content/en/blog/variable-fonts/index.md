@@ -180,7 +180,6 @@ that primary colors can be mixed to create any other color.
 
 {% Glitch {
   id: 'variable-font-experiments',
-  previewSize: 100,
   height: 480
 } %}
 

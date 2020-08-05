@@ -52,7 +52,6 @@ To focus an element, press the `Tab` key or call the element's `focus()` method.
 {% Glitch {
   id: 'tabindex-zero',
   path: 'index.html',
-  previewSize: 100,
   height: 346
 } %}
 
@@ -70,7 +69,6 @@ focused by calling its `focus()` method.
 {% Glitch {
   id: 'tabindex-negative-one',
   path: 'index.html',
-  previewSize: 100,
   height: 346
 } %}
 
@@ -141,7 +139,6 @@ method on it.
 {% Glitch {
   id: 'roving-tabindex',
   path: 'index.html',
-  previewSize: 100,
   height: 346
 } %}
 

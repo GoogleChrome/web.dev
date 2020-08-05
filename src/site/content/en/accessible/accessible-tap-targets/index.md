@@ -32,8 +32,7 @@ In the demo, I have added padding to all of the links in order to make sure they
 
 {% Glitch {
   id: 'tap-targets',
-  path: 'index.html',
-  previewSize: 100
+  path: 'index.html'
 } %}
 
 Touch targets should also be spaced about 8 pixels apart,
@@ -48,8 +47,7 @@ In the example below I am using `em` for my text and padding.
 
 {% Glitch {
   id: 'tap-targets-2',
-  path: 'style.css',
-  previewSize: 100
+  path: 'style.css'
 } %}
 
 Inspect the `a` of the link,

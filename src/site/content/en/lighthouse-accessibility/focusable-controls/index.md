@@ -29,7 +29,6 @@ TAB`) to move between controls, and use the arrow keys and
 {% Glitch {
   id: 'interactive-elements',
   path: 'index.html',
-  previewSize: 100,
   height: 346
 } %}
 
@@ -62,7 +61,6 @@ the button's focus indicator always looks the same
 {% Glitch {
   id: 'focus-style',
   path: 'index.html',
-  previewSize: 100,
   height: 346
 } %}
 

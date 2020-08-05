@@ -64,7 +64,6 @@ order versus an illogical tab order:
 {% Glitch {
   id: 'logical-tab-order',
   path: 'index.html',
-  previewSize: 100,
   height: 346
 } %}
 
@@ -73,7 +72,6 @@ order versus an illogical tab order:
 {% Glitch {
   id: 'illogical-tab-order',
   path: 'index.html',
-  previewSize: 100,
   height: 346
 } %}
 

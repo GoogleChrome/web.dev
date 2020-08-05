@@ -302,7 +302,6 @@ You can try out both the headers and the JavaScript API on your own device at
 {% Glitch {
   id: 'user-agent-client-hints',
   path: 'README.md',
-  previewSize: 100,
   height: 600
 } %}
 

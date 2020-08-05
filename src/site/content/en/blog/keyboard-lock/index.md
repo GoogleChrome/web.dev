@@ -107,8 +107,7 @@ You can test the Keyboard Lock API by running the [demo](https://keyboard-lock.g
 
 {% Glitch {
   id: 'keyboard-lock',
-  path: 'script.js',
-  previewSize: 100
+  path: 'script.js'
 } %}
 
 ## Security Considerations

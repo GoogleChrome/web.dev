@@ -195,7 +195,6 @@ different scenarios:
 
 {% Glitch {
   id: 'compare-sw-and-http-caching',
-  previewSize: 100,
   height: 480
 } %}
 

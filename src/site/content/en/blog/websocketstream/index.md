@@ -261,8 +261,7 @@ or [directly on Glitch](https://websocketstream-demo.glitch.me/).
 
 {% Glitch {
   id: 'websocketstream-demo',
-  path: 'public/index.html',
-  previewSize: 100
+  path: 'public/index.html'
 } %}
 
 ## Feedback {: #feedback }

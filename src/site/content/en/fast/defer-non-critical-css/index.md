@@ -24,8 +24,7 @@ The following example contains an accordion with three hidden paragraphs of text
 
 {% Glitch {
   id: 'defer-css-unoptimized',
-  path: 'index.html',
-  previewSize: 100
+  path: 'index.html'
 } %}
 
 This page requests a CSS file with eight classes, but not all of them are

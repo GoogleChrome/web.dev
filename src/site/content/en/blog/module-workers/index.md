@@ -194,7 +194,6 @@ to avoid worker instantiation having to wait to download the worker script. Howe
 
 {% Glitch {
   id: 'worker-preloading',
-  previewSize: 100,
   height: 480
 } %}
 

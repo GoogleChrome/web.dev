@@ -21,7 +21,6 @@ Modern CSS layouts enable developers to write really meaningful and robust styli
 {% Glitch {
   id: '1linelayouts',
   path: 'README.md',
-  previewSize: 100,
   height: 480
 } %}
 

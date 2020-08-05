@@ -118,8 +118,7 @@ although the drop functionality is not in place,
 
 {% Glitch {
   id: 'simple-drag-and-drop-1',
-  path: 'style.css',
-  previewSize: 100
+  path: 'style.css'
 } %}
 
 ## Add additional visual cues with `dragenter`, `dragover`, and `dragleave`
@@ -185,8 +184,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 {% Glitch {
   id: 'simple-drag-drop2',
-  path: 'dnd.js',
-  previewSize: 100
+  path: 'dnd.js'
 } %}
 
 There are a couple of points worth covering in this code:
@@ -272,8 +270,7 @@ Drag and release the A column on top of the B column and notice how they change 
 
 {% Glitch {
   id: 'simple-drag-drop',
-  path: 'dnd.js',
-  previewSize: 100
+  path: 'dnd.js'
 } %}
 
 ## More dragging properties

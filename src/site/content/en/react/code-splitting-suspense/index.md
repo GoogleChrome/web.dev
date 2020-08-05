@@ -83,7 +83,6 @@ In the meantime, the fallback loading component is shown.
 {% Glitch {
   id: 'react-lazy-suspense',
   path: 'src/index.css',
-  previewSize: 100,
   height: 480
 } %}
 
@@ -148,7 +147,6 @@ You can see this with the following embed:
 {% Glitch {
   id: 'react-lazy-suspense-multiple',
   path: 'src/index.css',
-  previewSize: 100,
   height: 480
 } %}
 

@@ -175,8 +175,7 @@ This means that the columns become narrower, rather than creating a scrollbar.
 
 {% Glitch {
   id: 'layout-floats-percent',
-  path: 'README.md',
-  previewSize: 100
+  path: 'README.md'
 } %}
 
 Modern CSS layout techniques such as Flexbox, Grid Layout, and Multicol
@@ -200,7 +199,6 @@ or wrapped onto multiple rows as the available space decreases.
 
 {% Glitch {
   id: 'responsive-flexbox',
-  previewSize: 100,
   height: 220
 } %}
 
@@ -221,10 +219,7 @@ which represents a portion of the available space in the container.
 }
 ```
 
-{% Glitch {
-  id: 'two-column-grid',
-  previewSize: 100
-} %}
+{% Glitch 'two-column-grid' %}
 
 Grid can also be used to create regular grid layouts,
 with as many items as will fit.
@@ -232,10 +227,7 @@ The number of available tracks will be reduced as the screen size shrinks.
 In the below demo, we have as many cards as will fit on each row,
 with a minimum size of `200px`.
 
-{% Glitch {
-  id: 'grid-as-many-as-fit',
-  previewSize: 100
-} %}
+{% Glitch 'grid-as-many-as-fit' %}
 
 [Read more about CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids)
 
@@ -247,8 +239,7 @@ In the demo below, you can see that columns are added if there is room for anoth
 
 {% Glitch {
   id: 'responsive-multicol',
-  path: 'style.css',
-  previewSize: 100
+  path: 'style.css'
 } %}
 
 [Read more about Multicol](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Multiple-column_Layout)
@@ -309,8 +300,7 @@ and we can test for the following things.
 
 {% Glitch {
   id: 'media-queries-size',
-  path: 'index.html',
-  previewSize: 100
+  path: 'index.html'
 } %}
 
 All of these features have excellent browser support,
@@ -343,10 +333,7 @@ and whether the user can hover over elements.
 Try viewing this demo on different devices,
 such as a regular desktop computer and a phone or tablet.
 
-{% Glitch {
-  id: 'media-query-pointer',
-  previewSize: 100
-} %}
+{% Glitch 'media-query-pointer' %}
 
 These newer features have good support in all modern browsers. Find out more on the MDN pages for
 [hover](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover),
@@ -468,8 +455,7 @@ so it doesn't consume the whole screen width.
 
 {% Glitch {
   id: 'responsive-forecast',
-  path: 'style.css',
-  previewSize: 100
+  path: 'style.css'
 } %}
 
 ### Optimize text for reading
@@ -510,8 +496,7 @@ In this case, if the browser width is greater than `575px`, the ideal content wi
 
 {% Glitch {
   id: 'rwd-reading',
-  path: 'index.html',
-  previewSize: 100
+  path: 'index.html'
 } %}
 
 ### Avoid simply hiding content
