@@ -47,7 +47,8 @@ or [HTTP Live Streaming
 the two primary means of providing video in HTML on the major browsers. What
 those terms mean and how to use them is a whole topic itself. I won't be getting
 into those, but by the end of this article, you'll be able to create media files
-that are ready for use in DASH and HLS.
+that are ready for use in DASH and HLS. I won't be describing DASH and HLS;
+however, to use media on the web, you won't need to know much about them.
 
 One final note: my selection of the file formats, bitrate, and resolution are
 not arbitrary. I've selected these values for speedy playback on the mobile web.

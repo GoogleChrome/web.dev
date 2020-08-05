@@ -123,9 +123,9 @@ codecs for their container types, AAC for audio and H264 for video. Notice also
 that streams are identified with numbers. These are useful for operations that
 manipulate the audio and video separately.
 
-Notice that it doesn't show the bitrate. Despite what's missing, it's easier to
-read, which is why I use it whenever I can. When I need information that Shaka
-Packager can't get, such as the bitrate, I use FFmpeg.
+Notice that the output above doesn't show the bitrate. Despite what's missing,
+this output is easier to read, so I use it whenever I can. When I need
+information that Shaka Packager can't get, such as the bitrate, I use FFmpeg.
 
 ## FFmpeg
 

@@ -22,7 +22,7 @@ software and algorithms, quality is going to take a hit.
 So always start your conversion process with the highest quality source file you
 can get your hands on. Before doing anything, even before changing the codec or
 container, [check the file
-characteristics](../cheetsheet/#display-characteristics) and verify that your
+characteristics](../cheatsheet/#display-characteristics) and verify that your
 source file has a higher bitrate or resolution than your desired result.
 
 _Bitrate_ is the maximum number of bits used to encode one second of a media stream.

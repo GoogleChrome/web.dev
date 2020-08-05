@@ -56,8 +56,8 @@ On the right are the specifics of that structure for a single webm file.
 
 Not all browsers support the same containers and codecs. To cover the major
 browsers, you'll need at least two formats: webm for Chromium-based browsers and
-mp4 for everyone else. Although webm was created specifically for the web, it's
-support is not yet universal. Safari in particular does not, as of this writing
+mp4 for everyone else. Although webm was created specifically for the web, its
+support is not yet universal. Safari in particular does not, as of this writing,
 support webm for embedded video.
 
 Many file formats support multiple codecs for the same stream type. A complete

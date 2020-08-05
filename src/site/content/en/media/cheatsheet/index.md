@@ -32,7 +32,7 @@ conversion. For this cheat sheet, I often show these operations as separate
 commands for the sake of clarity.
 
 Please let me know of useful additions or corrections.
-[Pull requests are welcome](https://github.com/GoogleChrome/web.dev/tree/media/src/site/content/en/media/cheetsheet).
+[Pull requests are welcome](https://github.com/GoogleChrome/web.dev/tree/media/src/site/content/en/media/cheatsheet).
 
 {% Aside %}
 This page contains a few more commands than are covered in this section. Not

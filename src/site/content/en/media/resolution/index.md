@@ -24,9 +24,9 @@ ratio of movie screens and modern television sets. By the way this is the
 resolution defined as [full
 HD](https://www.google.com/search?q=what+is+hd+resolution&oq=what+is+hd+resolution&aqs=chrome.0.0l6.3183j0j8&sourceid=chrome&ie=UTF-8#q=full+hd+resolution).
 
-[Youtube recommends](https://support.google.com/youtube/answer/6375112) the
+[YouTube recommends](https://support.google.com/youtube/answer/6375112) the
 following resolutions for video uploads, all in the 16:9 aspect ratio. There's
-nothing specific to Youtube about this list. It's just a list of common 16:9
+nothing specific to YouTube about this list. It's just a list of common 16:9
 video resolutions.
 
 | Abbreviation | Dimensions |
@@ -51,6 +51,6 @@ ffmpeg -i glocken.webm -s 640x360 glocken_640x360.webm
 It's worth reiterating that you should start from the highest resolution and
 bitrate file you have available. If you're upgrading an older site, you'll want
 to find your original camera or other high resolution sources and convert from
-that rather than from flv and f4v files.
+that rather than from, for example, flv and f4v files.
 
 

@@ -63,7 +63,7 @@ packager \
 ### Widevine Encryption
 
 Unless your company completes the Master License Agreement with
-[Widevine](http://www.widevine.com/contact.html), this type of encryption can
+[Widevine](https://www.widevine.com/contact), this type of encryption can
 really only be used for testing. I'm including it because it the Shaka Packager
 README provides insufficient explanation.
 

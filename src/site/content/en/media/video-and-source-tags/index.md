@@ -33,7 +33,7 @@ to embedd a video in your web page. If need to manage this yourself, read on.
 ## Specify a single file
 
 Although it's not recommended, you can use the video element by itself. Always
-use the `type` attribute as shown below. the browser uses this to determine if
+use the `type` attribute as shown below. The browser uses this to determine if
 it can play the provided video file. If it can't, the enclosed text displays.
 
 ```html
@@ -256,7 +256,7 @@ Device orientation isn't an issue for desktop monitors or laptops, but it's
 hugely important when considering web page design for mobile devices and
 tablets.
 
-Safari on iPhone do a good job of switching between portrait and landscape
+Safari on iPhone does a good job of switching between portrait and landscape
 orientation:
 
 <div class="w-columns">
@@ -276,8 +276,8 @@ orientation looks like this:
 
 
 <figure class="w-figure">
-  <img src="./ipad-retina-landscape-video-playing.png" alt="Screenshot of video playing in Safari on iPad Retina, landscape.">
-  <figcaption class="w-figcaption">Screenshot of video playing in Safari on iPad Retina, landscape.</figcaption>
+  <img src="./ipad-landscape-video-playing.png" alt="Screenshot of video playing in Safari on iPad, landscape.">
+  <figcaption class="w-figcaption">Screenshot of video playing in Safari on iPad, landscape.</figcaption>
 </figure>
 
 Setting the video `width: 100%` or `max-width: 100%` with CSS can resolve
