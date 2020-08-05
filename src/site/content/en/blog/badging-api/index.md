@@ -12,8 +12,8 @@ tags:
   - progressive-web-apps
   - badging
   - notifications
-hero: hero.jpg
-alt: Phone showing several notification badges
+hero: hero-2.jpg
+alt: Neon sign with heart and zero
 ---
 
 ## What is the App Badging API? {: #what }
@@ -217,6 +217,10 @@ it is to support them.
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
 * Blink Component: `UI>Browser>WebAppInstalls`
+
+Hero [photo](https://unsplash.com/photos/xv7-GlvBLFw) by
+[Prateek Katyal](https://unsplash.com/@prateekkatyal) on
+[Unsplash](https://unsplash.com/)
 
 [spec]: https://wicg.github.io/badging/
 [issues]: https://github.com/WICG/badging/issues
