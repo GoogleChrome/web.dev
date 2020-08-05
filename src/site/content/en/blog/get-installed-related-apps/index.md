@@ -214,7 +214,6 @@ making the request must be on the same domain, and within the [scope][scope]
 of your PWA, as defined by the scope in the web app manifest.
 
 * Android: Chrome 84 or later
-* Windows: Edge 85 or later
 
 ### Tell your PWA about itself
 
