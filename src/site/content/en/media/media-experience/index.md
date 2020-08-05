@@ -33,7 +33,7 @@ The media section of this site will help you achieve these technical
 requirements. Don't worry if you don't know what these technical requirements
 mean. I'll explain them.
 
-There are four three approaches you can take displaying video on a site.
+There are four approaches you can take displaying video on a site.
 
 * Upload your content to a hosting site such as YouTube or Vimeo. These options
   do not preclude displaying from within your website.
@@ -54,4 +54,3 @@ to adding media to your site. This includes explaining how media files are put
 together and basics about the applications you'll need to prepare your files for
 the web. The second section explains how to prepare your files. In the last, I
 show how to embed a media file in a web page and how to make it accessible.
-
