@@ -1,17 +1,15 @@
 ---
 title: "Is your app installed? getInstalledRelatedApps() will tell you!"
 subhead: |
-  The `getInstalledRelatedApps()` method allows your web app to check whether
-  your app or PWA is installed on a user's device.
+  The `getInstalledRelatedApps()` method allows your website to check whether
+  your native app or PWA is installed on a user's device.
 authors:
   - petelepage
 description: |
-  The getInstalledRelatedApps() API is a new web platform API that allows your
-  web app to check whether your app or PWA is installed on the user's
-  device.
+  The getInstalledRelatedApps() API is a web platform API that allows you
+  to check whether your native app or PWA is installed on the user's device.
 date: 2018-12-20
-updated: 2020-08-04
-scheduled: true
+updated: 2020-08-05
 tags:
   - blog
   - capabilities
@@ -24,8 +22,8 @@ alt: mobile device with app panel open
 <figure class="w-figure w-figure--inline-right">
   <img src="getinstalled-cropped.jpg" class="w-screenshot" width="550">
   <figcaption class="w-figcaption">
-    A web app using <code>getInstalledRelatedApps()</code> to determine if its
-    related Android app is already installed.
+    A website using <code>getInstalledRelatedApps()</code> to determine if its
+    Android app is already installed.
   </figcaption>
 </figure>
 
@@ -34,7 +32,7 @@ check if *your* native app, or Progressive Web App (PWA) is already installed
 on a user's device, and allows you to customize the user experience if your
 app is already installed.
 
-For example, if your PWA is already installed:
+For example, if your app is already installed:
 
 * Redirecting the user from a product marketing page directly into your app.
 * Centralizing some functionality like notifications in the native app to
@@ -55,9 +53,9 @@ Your website can check if your:
   [different scope](#check-pwa-out-of-scope)
 
 {% Aside %}
-The `getInstalledRelatedApps()` API only allows you to check if *your* apps
-are installed. You cannot get a list of all installed apps, or check if other
-3rd party apps are installed.
+  The `getInstalledRelatedApps()` API only allows you to check if *your* apps
+  are installed. You cannot get a list of all installed apps, or check if other
+  3rd party apps are installed.
 {% endAside %}
 
 <!--  Android App -->
@@ -286,9 +284,9 @@ the check (not the web app manifest of your PWA).
 ```
 
 {% Aside %}
-Double check the file name when you create your `assetlinks.json` file,
-I've wasted many hours debugging, only to realize I'd added an extra 's' in
-the file name.
+  Double check the file name when you create your `assetlinks.json` file,
+  I've wasted many hours debugging, only to realize I'd added an extra 's' in
+  the file name.
 {% endAside %}
 
 ### Tell your website about your PWA
