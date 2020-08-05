@@ -375,3 +375,8 @@ browser vendors how critical it is to support them.
 [well-known]: https://tools.ietf.org/html/rfc5785
 [scope]: /add-manifest/#scope
 [win-uri-handlers]: https://docs.microsoft.com/en-us/windows/uwp/launch-resume/web-to-app-linking
+
+## Thanks
+
+Special thanks to Sunggook Chue at Microsoft for helping with the details
+for testing Windows apps, and Rayan Kanso for help with the Chrome details.
