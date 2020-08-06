@@ -8,7 +8,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2020-06-17
-updated: 2020-07-31
+updated: 2020-08-05
 hero: hero.jpg
 alt:
 description: |
@@ -120,6 +120,14 @@ that some common services like Twitter use.
 You can follow [crbug.com/1055455](https://crbug.com/1055455) for progress on this issue.
 Regular [HTTP redirects](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections#Principle)
 work fine.
+
+For [security](#security) reasons, the feature requires links to be opened in a
+[`noopener`](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noopener)
+context.
+Therefore, make sure to include
+[`rel="noopener"`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-rel)
+in your `<a>` anchor markup or add [`noopener`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#noopener)
+to your `Window.open()` list of window functionality features.
 
 ### `textStart`
 
