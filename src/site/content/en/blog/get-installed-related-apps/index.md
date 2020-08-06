@@ -9,7 +9,7 @@ description: |
   The getInstalledRelatedApps() API is a web platform API that allows you
   to check whether your native app or PWA is installed on the user's device.
 date: 2018-12-20
-updated: 2020-08-05
+updated: 2020-08-06
 tags:
   - blog
   - capabilities
@@ -135,7 +135,7 @@ Try the [demo](https://get-installed-apps.glitch.me/)
 
 Your website can check if your Windows app (built using UWP) is installed.
 
-* Windows: Edge 85 or later
+* Windows: Chrome 85 or later, Edge 85 or later
 
 ### Tell your Windows app about your website
 
@@ -162,18 +162,21 @@ file `Package.appxmanifest`. For example, if your website's address is
 </Applications>
 ```
 
+Note, you may need to add the [`uap3` namespace][uap3-namespace] to your
+`<Package>` attribute.
+
 Then, create a JSON file (without the `.json` file extension) named
 `windows-app-web-link` and provide your app's package family name. Place
 that file either on your server root, or in the `/.well-known/` directory. You
-can find the package family name in the Packages section in the app manifest
+can find the package family name in the Packaging section in the app manifest
 designer.
 
 ```json
 [{
   "packageFamilyName": "MyApp_9jmtgj1pbbz6e",
   "paths": [ "*" ]
- }]
- ```
+}]
+```
 
 See [Enable apps for websites using app URI handlers][win-uri-handlers] for
 complete details on setting up URI handlers.
@@ -186,19 +189,16 @@ include `related_applications` property, an array that provides the details
 about your app, including `platform` and `id`.
 
 * `platform` must be `windows`
-* `id` is your app's package family name
+* `id` is your app's package family name, appended by `!App`
 
 ```json
 {
   "related_applications": [{
     "platform": "windows",
-    "id": "MyApp_9jmtgj1pbbz6e",
+    "id": "MyApp_9jmtgj1pbbz6e!App",
   }]
 }
 ```
-
-You can find the package family name in the Packages section in the app
-manifest designer.
 
 ### Check if your app is installed
 
@@ -256,7 +256,6 @@ landing page is served from `www.example.com` and your PWA is served from
 `app.example.com`.
 
 * Android: Chrome 84 or later
-* Windows: Edge 85 or later
 
 ### Tell your PWA about your website
 
@@ -379,3 +378,4 @@ for testing Windows apps, and Rayan Kanso for help with the Chrome details.
 [well-known]: https://tools.ietf.org/html/rfc5785
 [scope]: /add-manifest/#scope
 [win-uri-handlers]: https://docs.microsoft.com/en-us/windows/uwp/launch-resume/web-to-app-linking
+[uap3-namespace]: https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-extension-manual#examples
