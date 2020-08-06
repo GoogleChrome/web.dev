@@ -122,7 +122,7 @@ Regular [HTTP redirects](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redir
 work fine.
 
 For [security](#security) reasons, the feature requires links to be opened in a
-[`noopener`](https://html.spec.whatwg.org/multipage/links.html#link-type-noopener)
+[`noopener`](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noopener)
 context.
 Therefore, make sure to include
 [`rel="noopener"`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-rel)
