@@ -8,7 +8,7 @@ description: |
   interaction with the keyboard, mouse, screen, activation of a screensaver, locking of the screen,
   or moving to a different screen. A developer-defined threshold triggers the notification.
 date: 2020-05-18
-updated: 2020-07-31
+updated: 2020-08-05
 tags:
   - blog
   - idle-detection
@@ -163,6 +163,21 @@ controller.abort();
 console.log('IdleDetector is stopped.');
 ```
 
+### DevTools support
+
+Starting in Chrome&nbsp;86, you can emulate idle events in Chrome DevTools without actually being idle.
+In DevTools, open the **Sensors** tab and look for **Emulate Idle Detector state**.
+You can see the various options in the video below.
+
+<figure class="w-figure">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="./devtools.mp4" type="video/mp4">
+  </video>
+  <figcaption class="w-figcaption">
+    Idle Detector state emulation in DevTools.
+  </figcaption>
+</figure>
+
 ### Demo
 
 You can see the Idle Detection API in action with the [Ephemeral Canvas demo][demo] that erases its
@@ -246,6 +261,7 @@ and let us know where and how you're using it.
 ## Acknowledgements
 
 The Idle Detection API was implemented by [Sam Goto](https://twitter.com/samuelgoto).
+DevTools support was added by [Maksim Sadym](https://www.linkedin.com/in/sadym/).
 Thanks to [Joe Medley](https://github.com/jpmedley),
 [Kayce Basques](https://github.com/kaycebasques), and
 [Reilly Grant](https://github.com/reillyeon) for their reviews of this article.
