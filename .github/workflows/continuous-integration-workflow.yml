@@ -4,11 +4,9 @@ on:
   # manually deploy the site.
   workflow_dispatch:
   
-  # Automatically build and deploy the site hourly,
-  # between the hours of 5am and 5pm
-  # every day-of-week from Monday through Thursday.
+  # Automatically build and deploy the site hourly, Mon-Fri
   schedule:
-    - cron: '0 5-17 * * 1-4'
+    - cron: '0 * * * 1-5'
 
 jobs:
   ci:
