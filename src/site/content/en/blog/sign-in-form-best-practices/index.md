@@ -5,7 +5,7 @@ authors:
   - samdutton
 scheduled: true
 date: 2020-06-29
-updated: 2020-06-29
+updated: 2020-08-05
 description: Use cross-platform browser features to build sign-in forms that are secure, accessible and easy to use.
 hero: hero.jpg
 alt: A person holding a phone.
@@ -45,16 +45,19 @@ Here is an example of a simple sign-in form that demonstrates all of the best pr
 
 * [Use meaningful HTML elements](#meaningful-html): `<form>`, `<input>`,
   `<label>`, and `<button>`.
-* [Label every input with a `<label>`](#label).
+* [Label each input with a `<label>`](#label).
 * Use element attributes to [access built-in browser
   features](#element-attributes): `type`, `name`, `autocomplete`, `required`,
   `autofocus`.
-* Use [`name="new-password"`](#new-password) for a sign-up password input and
-  for the new password in a **Change password** form.
+* Give input `name` and `id` attributes stable values that don't change 
+between page loads or website deployments.
+* Put sign-in [in its own &lt;form&gt; element](#single-form). 
+* [Ensure successful form submission](#submission).
+* Use [`autocomplete="new-password"`](#new-password) for the password input
+  in a sign-up form, and for the new password in a reset-password form.
 * Use [`autocomplete="current-password"`](#current-password) for a sign-in
   password input.
-* [Don't use autocomplete for a new password](#autofill-passwords).
-* [Provide **Show password** functionality](#show-password).
+* Provide [Show password](#show-password) functionality.
 * [Use `aria-label` and `aria-describedby`](#accessible-password-inputs) for
   password inputs.
 * [Don't double-up inputs](#no-double-inputs).
@@ -84,7 +87,7 @@ help you build a better sign-in experience:
 PIN numbers via SMS to mobile phones. This can allow users to select a phone 
 number as an identifier (no need to enter an email address!) and also enables 
 two-step verification for sign-in and one-time codes for payment confirmation.
-* [**Credential Management**](https://developers.google.com/web/updates/2016/04/credential-management-api): to enable developers to store and retrieve password credentials and federated credentials programatically.
+* [**Credential Management**](https://developers.google.com/web/updates/2016/04/credential-management-api): to enable developers to store and retrieve password credentials and federated credentials programmatically.
 {% endAside %}
 
 ## Use meaningful HTML {: #meaningful-html }
@@ -100,8 +103,16 @@ submission purely with JavaScript. It's generally better to use a plain old
 [`<form>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
 element. This makes your site accessible to screenreaders and other assistive
 devices, enables a range of built-in browser features, makes it simpler to build
-basic functional sign-in for older browsers, and will still work even if
+basic functional sign-in for older browsers, and can still work even if
 JavaScript fails.
+
+{: #single-form }
+{% Aside 'gotchas' %} 
+A common mistake is to wrap a whole web page in a single form, but this is liable 
+to cause problems for browser password managers and autofill. Use a different 
+&lt;form&gt; for each UI component that needs a form. For example, if you have 
+sign-in and search on the same page, you should use two form elements.
+{% endAside %}
 
 ### Use `<label>` {: #label }
 
@@ -149,13 +160,26 @@ for buttons! Button elements provide accessible behaviour and built-in form
 submission functionality, and they can easily be styled. There's no point in
 using a `<div>` or some other element pretending to be a button. 
 
-Give the submit button in a sign-up or sign-in form text content that says what it
-does, such as **Create account** or **Sign in**, not **Submit** or **Start**.
+Ensure that the submit button says what it does. Examples include **Create account** or 
+**Sign in**, not **Submit** or **Start**.
+
+### Ensure successful form submission {: #submission }
+
+Help password managers understand that a form has been submitted. There are two 
+ways to do that: 
+
+* Navigate to a different page.
+* Emulate navigation with `History.pushState()` or `History.replaceState()`, 
+and remove the password form.
+
+With an `XMLHttpRequest` or `fetch` request, make sure that sign-in success is 
+reported in the response and handled by taking the form out of the DOM as well 
+as indicating success to the user.
 
 Consider disabling the **Sign in** button once the user has tapped or clicked
-it. [Many users click buttons multiple
-times](https://baymard.com/blog/users-double-click-online) even on sites that
-are fast and responsive. That slows down interactions and adds to server load.
+it. [Many users click buttons multiple times](https://baymard.com/blog/users-double-click-online) 
+even on sites that are fast and responsive. That slows down interactions and 
+adds to server load.
 
 Conversely, don't disable form submission awaiting user input. For example,
 don't disable the **Sign in** button if users haven't entered their customer
@@ -180,7 +204,7 @@ rates](https://uxmovement.com/forms/why-the-confirm-password-field-must-die/).
 Asking twice also makes no sense where browsers autofill email addresses or 
 suggest strong passwords. It's better to enable users to confirm their email 
 address (you'll need to do that anyway) and make it easy for them to reset their 
-password if they .
+password if necessary.
 
 ## Make the most of element attributes {: #element-attributes }
 
@@ -200,15 +224,14 @@ select the input to start typing.
 
 ## Keep passwords private—but enable users to see them if they want {: #show-password }
 
-Passwords inputs should have `type="password"` to hide password text. 
+Passwords inputs should have `type="password"` to hide password text and help the 
+browser understand that the input is for passwords. (Note that browsers use 
+[a variety of techniques](#autofill) to understand input roles and decide 
+whether or not to offer to save passwords.)
 
-Using `<input type="password">` also means that browsers such as Firefox offer
-to save your password when a form is submitted (along with using the `name` and
-`id` attributes to guess the meaning of form inputs).
-
-However, you should add a **Show password** icon or button to enable users to
-check the text they've entered—and don't forget to add a **Forgot password**
-link. See [Enable password display](#password-display).
+You should add a **Show password** icon or button to enable users to check the 
+text they've entered—and don't forget to add a **Forgot password** link. See 
+[Enable password display](#password-display).
 
 <figure class="w-figure">
   <img class="w-screenshot" src="./show-password-google.png" alt="Google sign-in form showing Show password icon." width="300">
@@ -264,7 +287,7 @@ and browsers.
   <figcaption class="w-figcaption">The <b>Sign in</b> button: obscured on iPhone 7 and 8, but not on iPhone 11.</figcaption>
 </figure>
 
-#### Use two pages {: #two-pages }
+#### Consider using two pages {: #two-pages }
 
 Some sites (including Amazon and eBay) avoid the problem by asking for
 email/phone and password on two pages. This approach also simplifies the
@@ -275,41 +298,46 @@ experience: the user is only tasked with one thing at a time.
   <figcaption class="w-figcaption">Two-stage sign-in: email or phone, then password.</figcaption>
 </figure>
 
+Ideally, this should be implemented with a single &lt;form&gt;. Use JavaScript 
+to initially display only the email input, then hide it and show the password input. 
+If you must force the user to navigate to a new page between entering their email and 
+password, the form on the second page should have a hidden input element with the 
+email value, to help enable password managers to store the correct value. [Password 
+Form Styles that Chromium Understands](https://www.chromium.org/developers/design-documents/form-styles-that-chromium-understands) 
+provides a code example.
 
-### Help users avoid re-entering data {: #autofill }
+### Help users to avoid re-entering data {: #autofill }
 
-You can help browsers help users by autofilling inputs. This is particularly
-important for email inputs, which get [high abandonment
-rates](https://www.formisimo.com/blog/conversion-rate-increases-57-with-form-analytics-case-study/).
-
+You can help browsers store data correctly and autofill inputs, so users don't 
+have to remember to enter email and password values. This is particularly important 
+on mobile, and crucial for email inputs, which get [high abandonment rates](https://www.formisimo.com/blog/conversion-rate-increases-57-with-form-analytics-case-study/).
 
 There are two parts to this:
-1. The input `name` attribute helps browsers store data for email and other
-   input types for use with `autocomplete`. Some browsers, including Firefox,
-   also take note of the `id` and `type` attributes.
-2. The `autocomplete` attribute enables browsers to autofill inputs using data
-   stored using the `name` attribute.
 
-You need different behaviour for password inputs in sign-up and sign-in forms. 
+1. The `autocomplete`, `name`, `id`, and `type` attributes help browsers understand 
+the role of inputs in order to store data that can later be used for autofill. 
+To allow data to be stored for autofill, modern browsers also require inputs to 
+have a stable `name` or `id` value (not randomly generated on each page load or 
+site deployment), and to be in a &lt;form&gt; with a `submit` button. 
 
-### Don't autofill passwords on sign-up forms {: #autofill-passwords }
+1. The `autocomplete` attribute helps browsers correctly autofill inputs using 
+stored data. 
 
-Don't add autofill to a password input in a sign-up form. The browser may
-already have a password stored for the site, and autofilling a password doesn't
-make sense on sign-up: for example, if two people share the same device and one
-wants to create a new account.
+For email inputs use `autocomplete="username"`, since `username` is recognized 
+by password managers in modern browsers—even though you should use `type="email"` 
+and you may want to use `id="email"` and `name="email"`.
 
-### Use `name="new-password"` when the user enters a new password {: #new-password }
+For password inputs, use the appropriate `autocomplete` value to help browsers 
+differentiate between new and current passwords. 
 
-Use the appropriate password input name to help the browser differentiate between new and current passwords:
+### Use `autocomplete="new-password"` for a new password {: #new-password }
 
-* Use `name="new-password"` for the password input in a sign-up form, or the new
-  password in a change-password form. This tells the browser that you want it to
-  store a new password for the site.
+* Use `autocomplete="new-password"` for the password input in a sign-up form, or the new
+  password in a change-password form. 
 
-### Use `name="current-password"` when the user enters an existing password {: #current-password }
+### Use `autocomplete="current-password"` for an existing password {: #current-password }
 
-* Use `name="current-password"` for the password input in a sign-in form, or the
+* Use `autocomplete="current-password"` for the password input in a sign-in form, or the
   input for the user's old password in a change-password form. This tells the
   browser that you want it to use the current password that it has stored for
   the site. 
@@ -317,19 +345,19 @@ Use the appropriate password input name to help the browser differentiate betwee
 For a sign-up form:
 
 ```html
-<input name="new-password" type="password" …>
+<input type="password" autocomplete="new-password" …>
 ```
 
 For sign-in:
 
 ```html
-<input name="current-password" type="password" autocomplete="current-password" …>
+<input type="password" autocomplete="current-password" …>
 ```
 
 ### Support password managers {: #password-managers }
 
 Different browsers handle email autofill and password suggestion somewhat
-differently, but the effect is much the same. On Safari 11 and above on desktop,
+differently, but the effects are much the same. On Safari 11 and above on desktop,
 for example, the password manager is displayed, and then biometric
 authentication (fingerprint or facial recognition) is used if available.
 
@@ -338,12 +366,11 @@ authentication (fingerprint or facial recognition) is used if available.
   <figcaption class="w-figcaption">Sign-in with autocomplete—no text entry required!</figcaption>
 </figure>
 
-Chrome on desktop displays email suggestions depending on what you type, shows
-the password manager, then autofills the password.
+Chrome on desktop displays email suggestions, shows the password manager, and autofills the password.
 
 <figure class="w-figure">
   <img class="w-screenshot" src="./chrome-signin-desktop.png" alt="Screenshots of four stages of sign-in process in Chrome on desktop: email completion, email suggestion, password manager, autofill on selection.">
-  <figcaption class="w-figcaption">Autocomplete sign-in flow in Chrome 83.</figcaption>
+  <figcaption class="w-figcaption">Autocomplete sign-in flow in Chrome 84.</figcaption>
 </figure>
 
 {% Aside 'caution' %}
@@ -365,8 +392,8 @@ lists all 59 possible values.
 
 ### Enable the browser to suggest a strong password {: #password-suggestions }
 
-Modern browsers suggest a strong password if `autocomplete="new-password"` is
-included for the password input in a sign-up form.
+Modern browsers use heuristics to decide when to show the password manager UI and 
+suggest a strong password.
 
 Here's how Safari does it on desktop.
 
@@ -375,23 +402,24 @@ Here's how Safari does it on desktop.
   <figcaption class="w-figcaption">Password suggestion flow in Safari.</figcaption>
 </figure>
 
-Strong unique password suggestion has been available in Safari since version 12.0.
+(Strong unique password suggestion has been available in Safari since version 12.0.)
 
-Using built-in browser password generators means users and developers don't need
+Built-in browser password generators mean users and developers don't need
 to work out what a "strong password" is. Since browsers can securely store
 passwords and autofill them as necessary, there's no need for users to remember
-or enter passwords.
+or enter passwords. Encouraging users to take advantage of built-in browser 
+password generators also means they're more likely to use a unique, strong 
+password on your site, and less likely to reuse a password that could be
+compromised elsewhere.
 
 {% Aside %}
-
 The downside with this approach is that there's no way to share passwords across
 platforms. For example, a user may use Safari on their iPhone and Chrome on
 their Windows laptop.
-
 {% endAside %}
 
 
-### Help save users from accidentally missing input fields {: #required-fields }
+### Help save users from accidentally missing inputs {: #required-fields }
 
 Add the `required` attribute to both email and password fields.
 Modern browsers automatically prompt and set focus for missing data. 
@@ -472,12 +500,6 @@ colleagues who have low vision.
 The [Document doesn't use legible font sizes](https://web.dev/font-size/)
 Lighthouse audit can help you automate the process of detecting text that's too
 small.
-
-{% Aside 'caution' %}
-Unfortunately, autofill text (on Chrome for Android, at least) is small, and
-can't be sized with CSS. [Chromium Issue #953689](https://crbug.com/953689) is tracking
-the problem. If you think this is important, star the issue!
-{% endAside %}
 
 
 ### Provide enough space between inputs {: #size-margins-correctly }
@@ -667,7 +689,7 @@ testing](https://www.nngroup.com/articles/discount-usability-20-years/) can be
 helpful for trying out changes, but you'll need real-world data to really
 understand how your users experience your sign-up and sign-in forms:
 
-* **Page analytics**: sign-up and sign-in pageviews, bounce rates,
+* **Page analytics**: sign-up and sign-in page views, bounce rates,
   and exits.
 * **Interaction analytics**: [goal
   funnels](https://support.google.com/analytics/answer/6180923?hl=en) (where do
