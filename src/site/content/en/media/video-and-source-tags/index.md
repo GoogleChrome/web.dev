@@ -112,22 +112,23 @@ example, to play the video from seconds 5 to 10, specify:
 <source src="video/chrome.webm#t=5,10" type="video/webm">
 ```
 
+You can also specify the times in hours:minutes:seconds. For example,
+#t=00:01:05 starts the video at one minute, five seconds. To play only the first
+minute of video, specify #t=,00:01:00
+
 You can use this feature to deliver multiple views on the same video&ndash;like
 cue points in a DVD&ndash;without having to encode and serve multiple files.
 
-### Using range requests
+For this feature to work, your server must support range requests and that
+capability must be enabled. Most servers enable range requests by default.
+Because some hosting services turn them off, you should confirm that range
+requests are available for using fragments on your site. Fortunately, you can do
+this in your brower developer tools.
 
-[Intro TBD]
-
-By default, most servers enable range requests, which is required for media
-fragments to work. Because some hosting services turn them off, you should test
-this feature with your server before using it on a live site.
-
-You can use browser developer tools to learn if your server supports range
-requests. The image below shows this operation in Chrome DevTools. Locate where
-the request and response headers are displayed, then check whether the value of
-the `Accept-Ranges` header is `bytes`. In a the image, a red box has been drawn
-around this header.
+The image below shows this operation in Chrome DevTools. Locate where the
+request and response headers are displayed, then check whether the value of the
+`Accept-Ranges` header is `bytes`. In a the image, a red box is drawn around
+this header.
 
 <figure class="w-figure">
   <img src="./accept-ranges-chrome-devtools.png" alt="Chrome DevTools screenshot: Accept-Ranges: bytes.">
