@@ -29,7 +29,7 @@ used independently to achieve performance results.
 Run Lighthouse to identify opportunities for improvement aligned with the PRPL
 techniques:
 
-{% Instruction 'devtools-audits', 'ol' %}
+{% Instruction 'devtools-lighthouse', 'ol' %}
 1. Select the **Performance** and **Progressive Web App** checkboxes.
 1. Click **Run Audits** to generate a report.
 

@@ -26,7 +26,7 @@ This responsive ice cream gallery is built with [Bootstrap](https://getbootstrap
 
 To run a Lighthouse audit on this site:
 
-{% Instruction 'devtools-audits', 'ol' %}
+{% Instruction 'devtools-lighthouse', 'ol' %}
 1. Click **Mobile**.
 1. Select the **Performance** checkbox.
 1. Clear the rest of the checkboxes in the Audits section.

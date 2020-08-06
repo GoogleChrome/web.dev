@@ -47,7 +47,7 @@ First open the sample app in the fullscreen view:
 
 Run a [Lighthouse](https://developers.google.com/web/tools/lighthouse/) [performance audit](/lighthouse-performance) on the page to establish baseline performance:
 
-{% Instruction 'devtools-audits', 'ol' %}
+{% Instruction 'devtools-lighthouse', 'ol' %}
 1. Click **Mobile**.
 1. Select the **Performance** checkbox. (You can clear the rest of the checkboxes in the Audits section.)
 1. Click **Simulated Fast 3G, 4x CPU Slowdown**.
