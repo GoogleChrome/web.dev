@@ -1,11 +1,12 @@
-name: Continuous integration
+name: Deploy
 on:
-  push:
-    branches:
-      - master
+  # Adds a 'Run Workflow' button to the GitHub Actions UI so the team can
+  # manually deploy the site.
+  workflow_dispatch:
+  
+  # Automatically build and deploy the site hourly, Mon-Fri
   schedule:
-    # At 15:00 UTC / 7:00 PST on every day-of-week from Monday through Friday.
-    - cron: '0 15 * * 1-5'
+    - cron: '0 * * * 1-5'
 
 jobs:
   ci:
