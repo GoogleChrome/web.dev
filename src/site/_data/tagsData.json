@@ -211,8 +211,8 @@
   "virtual-reality": {
     "title": "Virtual Reality"
   },
-  "web-assembly": {
-    "title": "Web Assembly"
+  "webassembly": {
+    "title": "WebAssembly"
   },
   "web-bundles": {
     "title": "Web Bundles"
