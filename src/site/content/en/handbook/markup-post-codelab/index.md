@@ -24,6 +24,10 @@ This post is about how to set up a new post or codelab so it works correctly on 
       │   └── index.md
       ```
 
+## Add front matter
+
+See [YAML front matter](/handbook/yaml-front-matter).
+
 ## Authoring tips
 Use relative URLs to link to other posts and codelabs on web.dev.
 

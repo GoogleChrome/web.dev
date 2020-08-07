@@ -2,31 +2,69 @@
 layout: handbook
 title: YAML front matter
 subhead: |
-  Everything you need to know about all of web.dev's supported YAML front matter properties.
+  Reference documentation for web.dev's YAML front matter properties.
 date: 2020-07-23
 updated: 2020-08-06
 description: |
-  Everything you need to know about all of web.dev's supported YAML front matter properties.
+  Reference documentation for web.dev's YAML front matter properties.
 ---
-
-## Examples
-
-### Posts
-
-### Codelabs
 
 ## `alt`: describe the hero image for screen readers {: #alt }
 
-* `alt`: The [alt text](/image-alt) for the hero image. Required if `hero` is present.
+```yaml
+---
+…
+alt: An old-fashioned storage container.
+…
+```
 
-## `authors`: increase awareness of who wrote the content {: #authors }
+The [alt text](/image-alt) for the [hero image](#hero).
+Required if the `hero` YAML property is present.
 
-[slug(s)](/handbook/authors-profile)
+## `authors`: give credit to content creators {: #authors }
 
-## `codelabs`: increase awareness of related codelabs {: #codelabs }
+```yaml
+---
+…
+authors:
+  - petelepage
+  - kaycebasques
+…
+```
 
-* `codelabs`: The slug(s) for the codelabs, if any, associated with the post.
-  All indicated codelabs appear in a callout at the end of the post.
+Author avatars appear underneath the page title.
+Clicking an author's avatar takes you to a page where you can see all of that author's
+content. See [Pete LePage](https://web.dev/authors/petelepage/) for an example.
+
+See [Author profile](/handbook/author-profile/) to learn how to add a new author.
+
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" 
+       src="date-updated.jpg"
+       alt="An example of a page with authors.">
+  <figcaption>
+    The authors of this page were Kayce and Pete.
+  </figcaption>
+</figure>
+
+## `codelabs`: promote related codelabs {: #codelabs }
+
+```yaml
+---
+…
+codelabs:
+  - codelab-code-splitting
+…
+```
+
+A list of codelabs that are related to the post. All indicated codelabs
+appear in callouts at the end of the post.
+
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" 
+       src="codelabs.jpg"
+       alt="An example of a codelab callout at the end of a post.">
+</figure>
 
 ## `date`: indicate when the content was originally created {: #date }
 
@@ -58,20 +96,64 @@ The `date` value is presented in human-readable format beneath the page title.
 ```yaml
 ---
 …
-description: This is the paragraph that shows up in search engine result pages.
+description: How to debug SEO issues on individual pages or across an entire site.
 …
 ---
 ```
 
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" 
+       src="description.jpg"
+       alt="An example of a description showing up in a search engine result page.">
+  <figcaption>
+    An example of a description showing up in a search engine result page.
+  </figcaption>
+</figure>
+
 <!-- 160 characters https://moz.com/learn/seo/meta-description -->
 
-## `draft`: TODO {: #draft }
+## `draft`: mark a page as not ready to publish {: #draft }
 
-Finally, if you don't want your post to be published as soon as it's done, add the `draft: true` flag to the YAML. (When it's time for the post to go live, the web.dev team will remove the `draft` flag.)
+```yaml
+---
+…
+draft: true
+…
+---
+```
+
+When a page is in draft mode, it is hidden from homepages (i.e. `web.dev` and `web.dev/blog`)
+and the sitemap. However, **the page is still publicly accessible**. I.e. anyone who knows
+the link to the page will be able to see it.
+
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" 
+       src="draft.jpg"
+       alt="An example of a page in draft mode.">
+  <figcaption>
+    An example of a page in draft mode.
+  </figcaption>
+</figure>
 
 ## `glitch`: indicate which Glitch should be presented next to codelab content {: #glitch }
 
-* `glitch`: The name of the glitch to be presented in the right pane.
+```yaml
+---
+…
+glitch: gif-to-video
+…
+---
+```
+
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" 
+       src="codelab.jpg"
+       alt="A screenshot of a page using the codelab layout.">
+  <figcaption>
+    The <code>gif-to-video</code> Glitch is presented on the right because of the
+    <code>glitch: gif-to-video</code> YAML property in the page's front matter.
+  </figcaption>
+</figure>
 
 ## `hero`: present a large image before post content {: #hero }
 
@@ -85,12 +167,11 @@ hero: hero.jpg
 
 See [Hero images](/handbook/markup-media/#hero).
 
-## `hero_position`: change the position of the hero image {: #hero-position }
-
-* `hero_position`: The position of the hero image. Optional. Possible values:
-  * `center` (default)
-  * `top`
-  * `bottom`
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" 
+       src="hero.jpg"
+       alt="A page with a hero image.">
+</figure>
 
 ## `layout`: change the overall layout of your content {: #layout }
 
@@ -120,19 +201,21 @@ layout: post|codelab
 
 * `related_post`: The slug for the post associated with your codelab. (This is what makes breadcrumbs work.)
 
-## `scheduled`: TODO {: #scheduled }
-
-* `scheduled`: Set to `true` to schedule a post for a future date. Posts will deploy at 7am PST / 15:00 UTC. Example: A post with `date: 2050-01-01`, `scheduled: true`, will go live at 7am PST, January 1st, 2050. If you don't use the scheduled flag then setting a future date has no effect. Only use this field on unpublished posts. Doing so on a published post will hide it from the site until the provided `updated` value.
-
-## `subhead`: help readers decide if your content is relevant to them {: #subhead }
+## `subhead`: add an enticing subtitle {: #subhead }
 
 ```yaml
 ---
 …
-subhead: This is the paragraph that shows up in search engine result pages.
+subhead: Improve initial load time by skipping the rendering of offscreen content.
 …
 ---
 ```
+
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" 
+       src="post.jpg"
+       alt="An example of a page with a subhead.">
+</figure>
 
 ## `tags`: increase awareness of related content {: #tags }
 
@@ -183,7 +266,7 @@ A page's full list of tags is shown at the bottom of its main content:
 Make sure tags added to the page are listed in 
 [`tagsData.json`](https://github.com/GoogleChrome/web.dev/blob/master/src/site/_data/tagsData.json).
 
-## `thumbnail`: TODO {: #thumbnail }
+## `thumbnail`: present a slightly different version of the hero on the homepages {: #thumbnail }
 
 ```yaml
 ---
@@ -199,52 +282,67 @@ must be substantially similar to the hero image. Changing the proportions,
 cropping, or rearranging the hero image's content is OK. Using a completely
 different image is not OK.
 
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" 
+       src="thumbnail.jpg"
+       alt="A page with a thumbnail that's different from its hero.">
+  <figcaption>
+    A page with a thumbnail that's different from its hero.
+  </figcaption>
+</figure>
+
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" 
+       src="hero.jpg"
+       alt="The page's hero image.">
+</figure>
+
 ## `title`: increase SEO with a keyword-rich title {: #title }
 
 ```yaml
 ---
 …
-title: Referer and Referrer-Policy best practices
+title: Web developer tools for debugging JavaScript issues in Google Search
 …
 ---
 ```
 
-## `translation`: TODO {: #translation }
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" 
+       src="hero.jpg"
+       alt="A screenshot of a page's title.">
+</figure>
 
+## `translation`: specify how the page was translated {: #translation }
 
-* `translation`: none/machine/manual. Set only if the post is a translation from another, original post.
+```yaml
+---
+…
+updated: none|machine|manual
+…
+```
 
+This property should only be set if the post is a translation.
 
 ## `updated`: indicate when technical information changed {: #updated }
 
 ```yaml
 ---
 …
-updated: 2020-08-05
+updated: 2020-05-08
 …
 ```
 
-* `updated`: The date of the last factual change. This field should not be updated or added for changes that don't add or correct factual information.
+The date when technical information on the page was last changed. This field should not be
+changed for minor updates, like typo fixes.
 
-<!--
+The `updated` value is presented in human-readable format beneath the page title.
 
-## Set up the YAML
-
-
-
-
-
-
-
-
-
-
-
-
-Codelabs have two additional fields:
-
-
-
-
-
--->
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" 
+       src="date-updated.jpg"
+       alt="The updated field shows up under the title.">
+  <figcaption>
+    This page was updated on <code>May 8, 2020</code>.
+  </figcaption>
+</figure>
