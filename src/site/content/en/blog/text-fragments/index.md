@@ -8,7 +8,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2020-06-17
-updated: 2020-08-05
+updated: 2020-08-07
 hero: hero.jpg
 alt:
 description: |
@@ -345,7 +345,7 @@ In the concrete case, `text=` is therefore called a *text directive*.
 
 ### Feature detection
 
-To detect support, test for the read-only `fragmentDirective` property on `Location.prototype`.
+To detect support, test for the read-only `fragmentDirective` property on `document`.
 The fragment directive is a mechanism for URLs to specify instructions
 directed to the browser rather than the document.
 It is meant to avoid direct interaction with author script,
@@ -354,14 +354,15 @@ of introducing breaking changes to existing content.
 One potential example of such future additions could be translation hints.
 
 ```js
-if ('fragmentDirective' in Location.prototype) {
+if ('fragmentDirective' in document) {
   // Text Fragments is supported.
 }
 ```
 
-{% Aside 'caution' %}
-  This property might move to `document.fragmentDirective` in the future.
-  For details see [https://crbug.com/1057795](https://crbug.com/1057795).
+{% Aside %}
+  In the initial version, the `fragmentDirective` property was defined on
+  `Location.prototype`. For details on this change, see
+  [WICG/scroll-to-text-fragment#130](https://github.com/WICG/scroll-to-text-fragment/issues/130).
 {% endAside %}
 
 Feature detection is mainly intended for cases where links are dynamically generated
