@@ -205,3 +205,8 @@ redirects:
 
 - from: /image-size-responsive
   to: /image-aspect-ratio
+
+# Redirects for Handbook refactors
+
+  - from: /handbook/tags
+    to: /handbook/yaml-front-matter/#tags
