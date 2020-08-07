@@ -18,9 +18,12 @@ given it correct dimensions and the correct resolution. You've encrypted it.
 You've even created separate webm and mp4 files for different browsers.
 
 For anyone to see it, you still need to add it to a web page. Doing so properly
-requires two HTML elements: the `<video>` element and the `<source>`. In
-addition to basics about these tags, this section also explains attributes you
-should add to those tags to craft a good user experience.
+requires two HTML elements: the
+[`<video>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)
+element and the
+[`<source>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source).
+In addition to basics about these tags, this section also explains attributes
+you should add to those tags to craft a good user experience.
 
 {% Aside %}
 You always have the option of uploading your file to YouTube or Vimeo. In many
@@ -146,7 +149,6 @@ start playback.
   ...
 </video>
 ```
-
 
 A poster can also be a fallback if the video `src` is broken or if none of the
 video formats supplied are supported. The only downside to poster images is
