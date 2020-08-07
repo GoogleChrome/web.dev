@@ -92,7 +92,7 @@ const {
 } = require(`./${transformsDir}/service-worker-partials`);
 
 module.exports = function (config) {
-  console.log(`${chalk.black.bgGreen('Eleventy is building, please wait…')}`);
+  console.log(chalk.black.bgGreen('Eleventy is building, please wait…'));
   const isProd = process.env.ELEVENTY_ENV === 'prod';
 
   // ----------------------------------------------------------------------------
