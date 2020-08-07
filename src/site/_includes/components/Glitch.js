@@ -20,17 +20,27 @@ const iframe = require('./IFrame');
 
 /**
  *
- * @param {string | { id: string; path?: string; previewSize?: number; style?: string; }} param
+ * @param {string | { allow?: string | string[]; height?: string; id: string; path?: string; previewSize?: number; }} param
  * @return string
  */
 module.exports = (param) => {
-  const allow =
-    'camera; clipboard; clipboard-read; clipboard-write; geolocation; encrypted-media; microphone; midi; vr;';
+  const defaultAllow = [
+    'camera',
+    'clipboard',
+    'clipboard-read',
+    'clipboard-write',
+    'encrypted-media',
+    'geolocation',
+    'microphone',
+    'midi',
+    'vr',
+  ];
   let glitchProps = {
+    allow: [],
+    height: 420,
     id: null,
     path: '',
     previewSize: 100,
-    height: 420,
   };
 
   if (typeof param === 'string') {
@@ -39,7 +49,7 @@ module.exports = (param) => {
     glitchProps = {...glitchProps, ...param};
   }
 
-  const {id, path, previewSize, height} = glitchProps;
+  const {allow: userAllow, id, path, previewSize, height} = glitchProps;
 
   if (!id) {
     return;
@@ -56,6 +66,12 @@ module.exports = (param) => {
   if (typeof previewSize === 'number') {
     queryParams.previewSize = previewSize;
   }
+
+  const allow = Array.from(
+    typeof userAllow === 'string'
+      ? new Set([...defaultAllow, ...userAllow.toLowerCase().split('; ')])
+      : new Set([...defaultAllow, ...userAllow.map((a) => a.toLowerCase())]),
+  ).join('; ');
 
   const src = `${url}?${stringify(queryParams)}`;
 
