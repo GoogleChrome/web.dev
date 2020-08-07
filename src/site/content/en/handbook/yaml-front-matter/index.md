@@ -199,7 +199,23 @@ layout: post|codelab
 
 ## `related_post`: specify which post is related to a codelab {: #related-post }
 
-* `related_post`: The slug for the post associated with your codelab. (This is what makes breadcrumbs work.)
+```yaml/11-13
+---
+…
+related_post: replace-gifs-with-video
+…
+---
+```
+
+Controls the **Return to article** link at the bottom of codelabs.
+See [Replace GIFs with video](/codelab-replace-gifs-with-video/) for an
+example.
+
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" 
+       src="related-post.jpg"
+       alt="An example of a page with a related post.">
+</figure>
 
 ## `subhead`: add an enticing subtitle {: #subhead }
 
@@ -213,7 +229,7 @@ subhead: Improve initial load time by skipping the rendering of offscreen conten
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" 
-       src="post.jpg"
+       src="subhead.jpg"
        alt="An example of a page with a subhead.">
 </figure>
 
