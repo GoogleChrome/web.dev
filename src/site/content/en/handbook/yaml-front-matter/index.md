@@ -3,8 +3,7 @@ layout: handbook
 title: YAML front matter
 subhead: |
   Reference documentation for web.dev's YAML front matter properties.
-date: 2020-07-23
-updated: 2020-08-06
+date: 2020-08-06
 description: |
   Reference documentation for web.dev's YAML front matter properties.
 ---
@@ -227,10 +226,22 @@ subhead: Improve initial load time by skipping the rendering of offscreen conten
 ---
 ```
 
+Sometimes a title can't fully describe a page's contents. Use the subheading (i.e. subtitle)
+to provide readers more information so that they can quickly decide whether your content is
+relevant to them.
+
+The subtitle also shows up on `web.dev/blog`.
+
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" 
        src="subhead.jpg"
        alt="An example of a page with a subhead.">
+</figure>
+
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" 
+       src="subhead-blog.jpg"
+       alt="An example of a subhead on web.dev/blog.">
 </figure>
 
 ## `tags`: increase awareness of related content {: #tags }
