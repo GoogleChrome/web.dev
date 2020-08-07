@@ -208,5 +208,5 @@ redirects:
 
 # Redirects for Handbook refactors
 
-  - from: /handbook/tags
-    to: /handbook/yaml-front-matter/#tags
+- from: /handbook/tags
+  to: /handbook/yaml-front-matter/#tags
