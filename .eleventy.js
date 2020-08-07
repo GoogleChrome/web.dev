@@ -15,6 +15,7 @@
  */
 
 const path = require('path');
+const chalk = require('chalk');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
@@ -91,6 +92,7 @@ const {
 } = require(`./${transformsDir}/service-worker-partials`);
 
 module.exports = function (config) {
+  console.log(chalk.black.bgGreen('Eleventy is building, please wait…'));
   const isProd = process.env.ELEVENTY_ENV === 'prod';
 
   // ----------------------------------------------------------------------------

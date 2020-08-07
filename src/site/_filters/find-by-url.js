@@ -14,9 +14,6 @@
  * limitations under the License.
  */
 
-const chalk = require('chalk');
-const warn = chalk.black.bgYellow;
-
 let memo;
 
 /**
@@ -33,11 +30,6 @@ let memo;
  * @see {@link https://github.com/11ty/eleventy/issues/399}
  */
 const memoize = (collection) => {
-  if (memo && Object.keys(memo).length) {
-    /* eslint-disable-next-line */
-    console.warn(warn(`Overwriting existing memoized collection!`));
-  }
-
   memo = {};
   collection.forEach((item) => {
     if (item.url) {
