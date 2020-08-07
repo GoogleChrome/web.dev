@@ -149,7 +149,7 @@ file `Package.appxmanifest`. For example, if your website's address is
 
 ```xml
 <Applications>
-  <Application ... >
+  <Application Id="App" ... >
       ...
       <Extensions>
          <uap3:Extension Category="windows.appUriHandler">
@@ -189,7 +189,8 @@ include `related_applications` property, an array that provides the details
 about your app, including `platform` and `id`.
 
 * `platform` must be `windows`
-* `id` is your app's package family name, appended by `!App`
+* `id` is your app's package family name, appended by the `<Application>` `Id`
+  value in your `Package.appxmanifest` file.
 
 ```json
 {
