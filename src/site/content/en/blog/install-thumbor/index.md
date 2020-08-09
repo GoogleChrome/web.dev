@@ -76,6 +76,25 @@ If you've successfully installed Thumbor, this should work:
 thumbor --help
 ```
 
+## Create Thumbor config file
+
+Create the thumbor config file using thumbor-config
+```bash
+thumbor-config > ./thumbor.conf
+```
+Inside the config file you might want to uncomment and change the following parameters
+
+AUTO_WEBP = false to AUTO_WEBP = True
+
+This option indicates whether thumbor should send WebP images automatically if the request comes with an “Accept” header that specifies that the browser supports “image/webp”.
+
+
+Then move the thumbor.conf file to /etc/thumbor.conf
+
+```bash
+mv thumbor.conf /etc/thumbor.conf
+```
+
 ## Run Thumbor
 
 Run Thumbor. Debug logging is optional but can be helpful when you're getting started.
