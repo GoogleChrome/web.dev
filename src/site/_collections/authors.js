@@ -125,7 +125,7 @@ module.exports = (collections) => {
         console.warn(
           `No 2x image was found for ${author.title} (${author.key}), replacing with placeholder.`,
         );
-        authorsImage = path.join('/images', 'authors', 'no-photo@2x.jpg');
+        authorsImage = path.join('/images', 'authors', 'no-photo.svg');
       }
     }
     author.data.hero = authorsImage;
