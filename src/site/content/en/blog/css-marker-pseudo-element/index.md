@@ -8,7 +8,7 @@ description: It is now trivial to customize the color, size or type of number or
 tags:
   - blog
   - css
-date: 2020-09-03
+date: 2020-09-02
 #updated: 2020-07-27
 scheduled: true
 hero: hero.png
