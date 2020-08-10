@@ -91,8 +91,8 @@ class TableOfContents extends BaseStateElement {
     this.observer.disconnect();
   }
 
-  onStateChanged({tocOpened}) {
-    this.opened = tocOpened;
+  onStateChanged({isTocOpened}) {
+    this.opened = isTocOpened;
   }
 
   highlightActiveLink() {

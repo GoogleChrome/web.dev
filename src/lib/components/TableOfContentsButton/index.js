@@ -46,8 +46,8 @@ class TableOfContentsButton extends BaseStateElement {
     `;
   }
 
-  onStateChanged({tocOpened}) {
-    this.opened = tocOpened;
+  onStateChanged({isTocOpened}) {
+    this.opened = isTocOpened;
   }
 
   openedToTrue() {

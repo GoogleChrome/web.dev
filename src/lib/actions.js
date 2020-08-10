@@ -220,12 +220,12 @@ export const setLanguage = store.action((state, preferredLanguage) => {
 
 export const closeToC = store.action(() => {
   return {
-    tocOpened: false,
+    isTocOpened: false,
   };
 });
 
 export const openToC = store.action(() => {
   return {
-    tocOpened: true,
+    isTocOpened: true,
   };
 });
