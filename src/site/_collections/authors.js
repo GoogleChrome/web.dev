@@ -19,6 +19,9 @@ const authorsData = require('../_data/authorsData');
 const {livePosts} = require('../_filters/live-posts');
 const setdefault = require('../_utils/setdefault');
 
+/** @type Map<string, string> */
+const authorImageMap = new Map();
+
 /**
  * Generate map the posts by author's username/key
  *
@@ -120,12 +123,19 @@ module.exports = (collections) => {
 
     let authorsImage = path.join('/images', 'authors', `${key}@2x.jpg`);
     if (process.env.ELEVENTY_ENV === 'prod') {
-      const authorsImageExists = fs.existsSync(path.join('src', authorsImage));
-      if (!authorsImageExists) {
-        console.warn(
-          `No 2x image was found for ${author.title} (${author.key}), replacing with placeholder.`,
+      if (authorImageMap.has(key)) {
+        authorsImage = authorImageMap.get(key);
+      } else {
+        const authorsImageExists = fs.existsSync(
+          path.join('src', authorsImage),
         );
-        authorsImage = path.join('/images', 'authors', 'no-photo.svg');
+        if (!authorsImageExists) {
+          console.warn(
+            `No 2x image was found for ${author.title} (${author.key}), replacing with placeholder.`,
+          );
+          authorsImage = path.join('/images', 'authors', 'no-photo.svg');
+        }
+        authorImageMap.set(key, authorsImage);
       }
     }
     author.data.hero = authorsImage;
