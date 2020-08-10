@@ -19,6 +19,20 @@ const {escape, stringify} = require('querystring');
 const iframe = require('./IFrame');
 
 /**
+ * Validates allow sources are an array and lower case.
+ * If allow sources are a string, it will be split by the `;` character.
+ *
+ * @param {string|string[]} s
+ * @returns {string[]}
+ */
+function expandAllowSource(s) {
+  if (typeof s === 'string') {
+    s = s.split(/;\s*/g);
+  }
+  return s.map((a) => a.toLowerCase());
+}
+
+/**
  *
  * @param {string | { allow?: string | string[]; height?: string; id: string; path?: string; previewSize?: number; }} param
  * @return string
@@ -68,9 +82,7 @@ module.exports = (param) => {
   }
 
   const allow = Array.from(
-    typeof userAllow === 'string'
-      ? new Set([...defaultAllow, ...userAllow.toLowerCase().split('; ')])
-      : new Set([...defaultAllow, ...userAllow.map((a) => a.toLowerCase())]),
+    new Set([...defaultAllow, ...expandAllowSource(userAllow)]),
   ).join('; ');
 
   const src = `${url}?${stringify(queryParams)}`;
