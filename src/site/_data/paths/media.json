@@ -30,7 +30,9 @@
       "pathItems": [
         "add-media",
         "video-and-source-tags",
-        "accessibility-with-the-track-tag"
+        "accessibility",
+        "track-tags",
+        "vtt-files"
       ]
     }
   ]

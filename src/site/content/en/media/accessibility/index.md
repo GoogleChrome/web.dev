@@ -2,16 +2,13 @@
 layout: post
 title: Accessibility with the <track> tag
 authors:
-  - petelepage
-  - samdutton
+  - joemedley
 description: |
-  Accessibility isn't like icing on a cake. It's never anything you put on a backlog with the hope of introducing later.
-
-  Accessibility isn't a feature. Users who can't hear or see won't be able to
-  experience a video without captions or descriptions. The time it takes to add
-  these to your video is much less than the bad experience you're delivering to
-  users.
-date: 2014-14-15
+  Accessibility isn't like icing on a cake. It's never anything you put on a
+  backlog with the hope of introducing later. Captions and screen reader
+  descriptions are the only way many users can experience your videos, and in
+  some jurisdictions, they're even required by law or regulation.
+date: 2020-08-20
 updated: 2020-08-20
 ---
 
@@ -61,12 +58,12 @@ the default.
 
 ### Define captions in track file
 
-A track file consists of timed "cues" in WebVTT format:
+Below is a hypothetical WebVTT file for the demo linked to above. The file is a text file containing a series of *cues*. Each cue is a block of text to display on screen and the time range during which it will be displayed.
 
 ```text
 WEBVTT
 
-00:00.000 --> 00:04.000
+00:00.000 --> 00:04.999
 Man sitting on a tree branch, using a laptop.
 
 00:05.000 --> 00:08.000
@@ -74,3 +71,10 @@ The branch breaks, and he starts to fall.
 
 ...
 ```
+
+You can create a VTT file by hand, thought there are [services that will create
+them for
+you](https://www.google.com/search?sxsrf=ALeKk00bALi7XyBF8G5l7fK0eE1rwJEraQ%3A1596834624634&ei=QMMtX7G-JKm-0PEPlMCT0AI&q=webvtt+services&oq=webvtt+services&gs_lcp=CgZwc3ktYWIQAzIFCAAQzQIyBQgAEM0COgQIABBHUKZEWMxIYI1VaABwAXgAgAGAAYgBswKSAQMxLjKYAQCgAQGqAQdnd3Mtd2l6wAEB&sclient=psy-ab&ved=0ahUKEwix3sHEgIrrAhUpHzQIHRTgBCoQ4dUDCAw&uact=5).
+
+These are only the most basics of a VTT file. The next section will describe
+more of a VTT file's capabilities.
