@@ -17,14 +17,13 @@
 require('dotenv').config();
 const isProd = process.env.ELEVENTY_ENV === 'prod';
 
+const fs = require('fs').promises;
 const log = require('fancy-log');
-const rollupPluginVirtual = require('rollup-plugin-virtual');
 const rollupPluginReplace = require('rollup-plugin-replace');
 const OMT = require('@surma/rollup-plugin-off-main-thread');
 const rollup = require('rollup');
 const {getManifest} = require('workbox-build');
 const resourcePath = require('./src/build/resource-path');
-const buildVirtualJSON = require('./src/build/virtual-json');
 const minifySource = require('./src/build/minify-js');
 
 process.on('unhandledRejection', (reason, p) => {
@@ -35,10 +34,9 @@ process.on('unhandledRejection', (reason, p) => {
 const {buildDefaultPlugins, disallowExternal} = require('./src/build/common');
 
 /**
- * Builds the cache manifest for inclusion into the Service Worker.
+ * Builds the cache manifest for inclusion alongside the Service Worker.
  *
- * TODO(samthor): This relies on both the gulp and CSS tasks occuring
- * before the Rollup build script.
+ * This relies on Gulp, JS and CSS being run before us.
  */
 async function buildCacheManifest() {
   const config = {
@@ -49,8 +47,8 @@ async function buildCacheManifest() {
       // We don't include jpg files, as they're used for authors and hero
       // images, which are part of articles, and not the top-level site.
       'images/**/*.{png,svg}',
-      '*-*.js',
-      'sw-partial-layout.partial',
+      '*.css',
+      '*.js',
     ],
     globIgnores: [
       // This removes large shared PNG files that are used only for articles.
@@ -78,7 +76,7 @@ async function buildCacheManifest() {
     globDirectory: 'dist/en',
     globPatterns: ['offline/index.json'],
   });
-  if (contentManifest.warnings.length) {
+  if (isProd && contentManifest.warnings.length) {
     throw new Error(`content manifest: ${contentManifest.warnings}`);
   }
 
@@ -89,13 +87,9 @@ async function buildCacheManifest() {
 }
 
 /**
- * Performs main site compilation via Rollup: first on site code, and second
- * to build the Service Worker.
+ * Builds the Service Worker and creates related dependencies.
  */
 async function build() {
-  // We don't generate a manifest in dev, so Workbox doesn't do a default cache step.
-  const manifest = isProd ? await buildCacheManifest() : [];
-
   const swBundle = await rollup.rollup({
     input: 'src/lib/sw.js',
     external: disallowExternal,
@@ -115,11 +109,6 @@ async function build() {
       rollupPluginReplace({
         'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : ''),
       }),
-      rollupPluginVirtual(
-        buildVirtualJSON({
-          'cache-manifest': manifest,
-        }),
-      ),
       ...buildDefaultPlugins(),
       OMT(),
     ],
@@ -130,7 +119,6 @@ async function build() {
     dir: 'dist',
     format: 'amd',
   });
-
   const swOutputFiles = swGenerated.output.map(({fileName}) => fileName);
   if (isProd) {
     const ratio = await minifySource(swOutputFiles);
@@ -138,7 +126,43 @@ async function build() {
   }
 }
 
+async function generateManifest() {
+  // Now, construct the dynamic manifest fetched and used by the Service Worker. We steal the
+  // site's version information from a known partial, and load the template itself.
+  // Even though the generated template itself is a "manifest" because it points to specific JS and
+  // CSS bundles (i.e., files with hashes in their name), it's impractical to use the hash of the
+  // template itself as it's built in a random order by Eleventy: we can't easily apply its hash
+  // to all built partials, as it itself is processed randomly in all our pages.
+  const offlinePartial = JSON.parse(
+    await fs.readFile('dist/en/offline/index.json'),
+    'utf-8',
+  );
+  const layoutTemplate = await fs.readFile(
+    'dist/sw-partial-layout.partial',
+    'utf-8',
+  );
+
+  // This manifest can be incomplete in dev.
+  const cacheManifest = await buildCacheManifest();
+  const manifest = {
+    template: layoutTemplate,
+    cache: cacheManifest,
+    resourcesVersion: offlinePartial.resourcesVersion,
+    builtAt: offlinePartial.builtAt,
+  };
+  await fs.writeFile('dist/sw-manifest', JSON.stringify(manifest));
+}
+
 (async function () {
   await build();
-  log(`Build the Service Worker`);
+  try {
+    await generateManifest();
+    log(`Built the Service Worker`);
+  } catch (e) {
+    if (isProd) {
+      throw e;
+    }
+    log('Failed to generate Service Worker in dev', e);
+    await fs.unlink('dist/sw-manifest');
+  }
 })();

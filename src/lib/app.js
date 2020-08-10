@@ -112,7 +112,8 @@ function ensureServiceWorker() {
     // We claim active clients if the Service Worker's architecture rev changes. We can't
     // reliably force a reload via the Client interface as it's unsupported in Safari.
     navigator.serviceWorker.addEventListener('controllerchange', () => {
-      window.location.reload();
+      console.warn('TODO: previous controllerchange');
+//      window.location.reload();
     });
   }
   navigator.serviceWorker.register('/sw.js');

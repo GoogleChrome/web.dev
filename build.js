@@ -42,8 +42,7 @@ const {
 } = require('./src/build/common');
 
 /**
- * Performs main site compilation via Rollup: first on site code, and second
- * to build the Service Worker.
+ * Performs main site compliation via Rollup.
  */
 async function build() {
   const postcssConfig = {};

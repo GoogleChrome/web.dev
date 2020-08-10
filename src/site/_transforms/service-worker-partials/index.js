@@ -21,9 +21,17 @@
  * main web.dev template, cutting down on bytes needed to render further pages.
  */
 
+const computedData = require('../../_data/eleventyComputed');
 const fs = require('fs').promises;
 const path = require('path');
 const cheerio = require('cheerio');
+
+const revision = {
+  // Refers to the version of the site the partial was built at, and the build timestamp. We use
+  // this inside the Service Worker to determine whether any cached layout HTML is out-of-date.
+  resourcesVersion: computedData.resourcesVersion,
+  builtAt: computedData.builtAt,
+};
 
 const writePartial = async (to, raw) => {
   await fs.mkdir(path.dirname(to), {recursive: true});
@@ -38,6 +46,7 @@ const getPartial = (content) => {
     title: $('title').text(),
     rss: $('link[type="application/atom+xml"]').attr('href'),
     offline: Boolean($('meta[name="offline"]').attr('content')) || false,
+    ...revision,
   };
   return partial;
 };
