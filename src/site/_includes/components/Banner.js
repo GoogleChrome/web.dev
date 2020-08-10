@@ -16,7 +16,7 @@
 
 const {html} = require('common-tags');
 const md = require('markdown-it')({
-  html: true  // Allow full links, e.g. with _target=blank.
+  html: true,  // Allow full links, e.g. with _target=blank.
 });
 
 module.exports = (content, type = 'info', location) => {
