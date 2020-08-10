@@ -56,7 +56,7 @@ for each WebVTT file you're providing and indicate the language using the
 `srclang` attribute. The `default` attribute indicates which language track is
 the default.
 
-### Define captions in track file
+## Define captions in track file
 
 Below is a hypothetical WebVTT file for the demo linked to above. The file is a text file containing a series of *cues*. Each cue is a block of text to display on screen and the time range during which it will be displayed.
 
@@ -72,9 +72,29 @@ The branch breaks, and he starts to fall.
 ...
 ```
 
+Each item in a track file is called a cue. Each cue has a start time and end
+time separated by an arrow, with cue text in the line below. Cues can optionally
+also have IDs: 'railroad' and 'manuscript' in the example below. Cues are
+separated by an empty line.
+
+```text
+WEBVTT FILE
+
+railroad
+00:00:10.000 --> 00:00:12.500
+Left uninspired by the crust of railroad earth
+
+manuscript
+00:00:13.200 --> 00:00:16.900
+that touched the lead to the pages of your manuscript.
+```
+
+Cue times are in hours:minutes:seconds:milliseconds format. Parsing is strict.
+Numbers must be zero padded if necessary: hours, minutes, and seconds must have
+two digits (00 for a zero value) and milliseconds must have three digits (000
+for zero). There is an excellent WebVTT validator at quuz.org/webvtt, which
+checks for errors in time formatting, and problems such as non-sequential times.
+
 You can create a VTT file by hand, thought there are [services that will create
 them for
 you](https://www.google.com/search?sxsrf=ALeKk00bALi7XyBF8G5l7fK0eE1rwJEraQ%3A1596834624634&ei=QMMtX7G-JKm-0PEPlMCT0AI&q=webvtt+services&oq=webvtt+services&gs_lcp=CgZwc3ktYWIQAzIFCAAQzQIyBQgAEM0COgQIABBHUKZEWMxIYI1VaABwAXgAgAGAAYgBswKSAQMxLjKYAQCgAQGqAQdnd3Mtd2l6wAEB&sclient=psy-ab&ved=0ahUKEwix3sHEgIrrAhUpHzQIHRTgBCoQ4dUDCAw&uact=5).
-
-These are only the most basics of a VTT file. The next section will describe
-more of a VTT file's capabilities.

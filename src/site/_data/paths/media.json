@@ -31,8 +31,7 @@
         "add-media",
         "video-and-source-tags",
         "accessibility",
-        "track-tags",
-        "vtt-files"
+        "track-tags"
       ]
     }
   ]
