@@ -103,15 +103,13 @@ module.exports = function (config) {
   config.addPlugin(pluginSyntaxHighlight);
   // RSS feeds
   config.addPlugin(pluginRss);
-  config.addPlugin(
-    toc.opts({
-      tags: ['h2', 'h3'],
-      wrapper: 'div',
-      wrapperClass: 'w-toc__list',
-      ul: true,
-      flat: true,
-    }),
-  );
+  config.addPlugin(toc, {
+    tags: ['h2', 'h3'],
+    wrapper: 'div',
+    wrapperClass: 'w-toc__list',
+    ul: true,
+    flat: true,
+  });
 
   // ----------------------------------------------------------------------------
   // MARKDOWN

@@ -26,8 +26,7 @@ import {closeToC} from '../../actions';
 class TableOfContents extends BaseStateElement {
   static get properties() {
     return {
-      title: {type: String},
-      titleId: {type: String, attribute: 'title-id'},
+      contentId: {type: String, attribute: 'content-id'},
       opened: {type: Boolean, reflect: true},
     };
   }
@@ -41,9 +40,19 @@ class TableOfContents extends BaseStateElement {
   connectedCallback() {
     super.connectedCallback();
     this.tocHTML = this.innerHTML;
-    this.divContent =
-      document.querySelector('#content') || document.createElement('div');
-    this.headings = this.divContent.querySelectorAll('h1[id], h2[id], h3[id]');
+    this.articleContent =
+      document.querySelector(`#${this.contentId}`) ||
+      document.createElement('div');
+
+    if (!this.articleContent.id) {
+      console.warn(
+        `Article container with ID of '${this.contentId}' not found.`,
+      );
+    }
+
+    this.headings = this.articleContent.querySelectorAll(
+      'h1[id], h2[id], h3[id]',
+    );
 
     this.observer = new IntersectionObserver(this.scrollSpy);
     this.headings.forEach((heading) => this.observer.observe(heading));
@@ -61,11 +70,6 @@ class TableOfContents extends BaseStateElement {
         ></button>
       </div>
       <div class="w-toc__content">
-        <h2 class="w-toc__header">
-          <a href="#${this.titleId}" class="w-toc__header--link">
-            ${this.title}
-          </a>
-        </h2>
         ${html([this.tocHTML])}
       </div>
     `;
@@ -77,9 +81,9 @@ class TableOfContents extends BaseStateElement {
       changedProperties.get('opened') !== this.opened
     ) {
       if (this.opened) {
-        this.divContent.classList.add('w-toc-open');
+        this.articleContent.classList.add('w-toc-open');
       } else {
-        this.divContent.classList.remove('w-toc-open');
+        this.articleContent.classList.remove('w-toc-open');
       }
     }
   }
@@ -87,7 +91,7 @@ class TableOfContents extends BaseStateElement {
   disconnectedCallback() {
     super.disconnectedCallback();
     closeToC();
-    this.divContent.classList.remove('w-toc-open');
+    this.articleContent.classList.remove('w-toc-open');
     this.observer.disconnect();
   }
 

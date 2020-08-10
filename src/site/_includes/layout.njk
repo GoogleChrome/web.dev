@@ -165,7 +165,7 @@ eleventyComputed:
       </a>
     </web-side-nav>
     <main>
-      <div id="content">
+      <div id="{{ site.contentDivId }}">
         {% if show_banner %}
           {% include 'partials/banner.njk' %}
         {% endif %}
