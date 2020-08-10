@@ -47,8 +47,7 @@ or [HTTP Live Streaming
 the two primary means of providing video in HTML on the major browsers. What
 those terms mean and how to use them is a whole topic itself. I won't be getting
 into those, but by the end of this article, you'll be able to create media files
-that are ready for use in DASH and HLS. I won't be describing DASH and HLS;
-however, to use media on the web, you won't need to know much about them.
+that are ready for use in DASH and HLS.
 
 One final note: my selection of the file formats, bitrate, and resolution are
 not arbitrary. I've selected these values for speedy playback on the mobile web.
@@ -61,3 +60,18 @@ that I took of the
 [Rathaus-Glockenspiel](https://en.wikipedia.org/wiki/Rathaus-Glockenspiel)
 in Munich's MarienPlatz.
 
+Now, let's create a media file using the correct [containers and
+codecs](../containers-and-codecs).
+
+This section covers four tasks. You will need to do all of them to prepare an
+mov file for display on the web.
+
+* In [Containers and codecs](../containers-and-codecs) I show you how to
+  convert an mov file to the formats required for web playback.
+
+* In [Bitrate](../bitrate) and [Resolution](../resolution) you'll learn to make
+  your files smaller and hence friendlier for low-bandwidth and mobile
+  downlodad.
+
+* Finally, in [Encryption](../encryption), I'll show how to copy protect your
+  files.

@@ -30,8 +30,7 @@
       "pathItems": [
         "add-media",
         "video-and-source-tags",
-        "accessibility",
-        "track-tags"
+        "accessibility"
       ]
     }
   ]

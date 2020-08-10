@@ -39,9 +39,9 @@ video resolutions.
 | 360p | 640 x 360 |
 | 240p | 426 x 240 |
 
-Which one do I use? That depends on your application. For simple embedding you
-may chose a single resolution. If you're preparing files for DASH or HLS, you
-may chose one, several, or all. Fortunately, this is one of the simplest
+Which one should you use? That depends on your application. For simple embedding
+you may chose a single resolution. If you're preparing files for DASH or HLS,
+you may chose one, several, or all. Fortunately, this is one of the simplest
 transformations you'll make with FFmpeg.
 
 ```bash
@@ -51,6 +51,7 @@ ffmpeg -i glocken.webm -s 640x360 glocken_640x360.webm
 It's worth reiterating that you should start from the highest resolution and
 bitrate file you have available. If you're upgrading an older site, you'll want
 to find your original camera or other high resolution sources and convert from
-that rather than from, for example, flv and f4v files.
+that rather than from your older web site files (for example, flv or f4v files).
 
-
+Now that your files are prepared, it's time to [add them to a web
+page](../add-media).

@@ -16,10 +16,10 @@ tags:
 ---
 
 You might think that you can take a video camera and upload it to the web as is.
-Indeed, video streaming sites such as YouTube or Vimeo let you do this. These
-sites simplify video processing and uploading for the sake of customer
-service. Preparing a video for serving from your own site is a bit more
-complicated.
+Indeed, video streaming sites such as [YouTube](https://www.youtube.com/) or
+[Vimeo](https://vimeo.com/) let you do this. These sites simplify video
+processing and uploading for the sake of customer service. Preparing a video for
+serving from your own site is a bit more complicated.
 
 Video files come in a variety of formats. The format that comes off your camera,
 typically a mov file, is good for recording and for editing and other early
@@ -64,8 +64,8 @@ embedded video.
 All modern browsers support mp4 files, making them a good general choice for a
 media container and the best choice as the backup container for webm.
 
-Many file formats support multiple codecs for the same stream type. A complete
-list of available [video
+Many file formats support multiple codecs for the same container type. A
+complete list of available [video
 codecs](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs)
 and [audio
 codecs](ttps://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs)
@@ -86,5 +86,5 @@ detail and fidelity.
 _Resolution_ is the amount of information in a single frame of video, given as
 the number of logical pixels in each dimension. I provide more information about this concept [later in this series of lessons](../resolution).
 
-In the next section, you'll examine these characteristics using two command line
-tools: Shaka Packager and FFmpeg.
+In [Application basics](../application-basics/), I'll show you how to examine
+these characteristics using two command line tools: Shaka Packager and FFmpeg.

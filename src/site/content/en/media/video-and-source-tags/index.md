@@ -13,7 +13,7 @@ date: 2014-14-15
 updated: 2020-08-20
 ---
 
-You've properly [prepared a video file](prepare-media/) for the web. You've
+You've properly [prepared a video file](../prepare-media/) for the web. You've
 given it correct dimensions and the correct resolution. You've encrypted it.
 You've even created separate webm and mp4 files for different browsers.
 
@@ -26,10 +26,11 @@ In addition to basics about these tags, this section also explains attributes
 you should add to those tags to craft a good user experience.
 
 {% Aside %}
-You always have the option of uploading your file to YouTube or Vimeo. In many
-cases, this is preferable to the procedure described here. Those services
-handle formatting and filetype conversion for you, as well as provide the means
-to embedd a video in your web page. If need to manage this yourself, read on.
+You always have the option of uploading your file to
+[YouTube](https://www.youtube.com/) or [Vimeo](https://vimeo.com/). In many
+cases, this is preferable to the procedure described here. Those services handle
+formatting and filetype conversion for you, as well as provide the means to
+embedd a video in your web page. If need to manage this yourself, read on.
 {% endAside %}
 
 ## Specify a single file
@@ -50,7 +51,7 @@ Recall from [File basics](../file-basics) that not all browsers support the same
 video formats. The `<source>` element lets you specify multiple formats as a
 fallback in case the user's browser doesn't support one of them.
 
-For example the code below produces the ebedded video that immediately follows.
+The example below produces the ebedded video that immediately follows.
 
 ```html
 <video controls>
@@ -60,7 +61,7 @@ For example the code below produces the ebedded video that immediately follows.
 </video>
 ```
 
-[Try it](https://googlesamples.github.io/web-fundamentals/fundamentals/media/video-main.html)
+[Try it](https://track-demonstration.glitch.me) ([source](https://glitch.com/edit/#!/track-demonstration))
 
 When the browser parses the `<source>` tags, it uses the optional `type`
 attribute to determine which file to download and play. If the browser
@@ -128,10 +129,14 @@ Because some hosting services turn them off, you should confirm that range
 requests are available for using fragments on your site. Fortunately, you can do
 this in your brower developer tools.
 
-The image below shows this operation in Chrome DevTools. Locate where the
-request and response headers are displayed, then check whether the value of the
-`Accept-Ranges` header is `bytes`. In a the image, a red box is drawn around
-this header.
+After uploading your media and your HTML page to your server, visit the page in
+a browser. Next, open DevTools by right-clicking and selecting **Inspect**.
+Select **Network** in the top menu. From the browser page itself, click reload.
+Back in DevTools, locate your media file in the **Name** column. When you click
+the file, the pages request and response headers should appear. I've shown this
+in the image below. Look for the `Accept-Ranges` header is and verify that is
+says `bytes`. In a the image, I've drawn a red box  around this header. If you
+do not see `butes` as the value, you'll need to contact your hosting provider.
 
 <figure class="w-figure">
   <img src="./accept-ranges-chrome-devtools.png" alt="Chrome DevTools screenshot: Accept-Ranges: bytes.">
@@ -141,8 +146,8 @@ this header.
 ### Include a poster image
 
 Add a poster attribute to the `video` element so that viewers have an idea of
-the content as soon as the element loads, without needing to download video or
-start playback.
+the content as soon as the element loads, without needing to download the video
+or start playback.
 
 ```html
 <video poster="poster.jpg" ...>
@@ -151,9 +156,9 @@ start playback.
 ```
 
 A poster can also be a fallback if the video `src` is broken or if none of the
-video formats supplied are supported. The only downside to poster images is
-an additional file request, which consumes some bandwidth and requires
-rendering. For more information see [Image Optimization](/web/fundamentals/performance/optimizing-content-efficiency/image-optimization).
+supplied video formats are supported. The only downside to a poster images is an
+additional file request, which consumes some bandwidth and requires rendering.
+For more information see [Efficiently encode images](../uses-optimized-images/).
 
 
 <div class="w-columns">
@@ -202,13 +207,13 @@ controls.
 </div>
 
 You can control video dimensions using JavaScript or CSS. JavaScript libraries
-and plugins such as [FitVids](http://fitvidsjs.com/) make it possible to
-maintain appropriate size and aspect ratio, even for videos from YouTube and
-other sources.
+and plugins such as [FitVids](http://fitvidsjs.com/) (outside the scope fo this
+article) make it possible to maintain appropriate size and aspect ratio, even
+for videos from YouTube and other sources.
 
-Use [CSS media
+For simple uses like the ones I'm describing here, use [CSS media
 queries](/web/fundamentals/design-and-ux/responsive/#css-media-queries) to
-specify the size of elements depending on the viewport dimensions; `max- width:
+specify the size of elements depending on the viewport dimensions; `max-width:
 100%` is your friend.
 
 For media content in iframes (such as YouTube videos), try a responsive approach
@@ -216,8 +221,9 @@ For media content in iframes (such as YouTube videos), try a responsive approach
 Surdakowski](http://avexdesigns.com/responsive-youtube-embed/)).
 
 {% Aside 'caution' %}
-Don't force element sizing that results in an aspect ratio different from the
-original video. Squashed or stretched looks bad.
+Don't force element sizing that results in an [aspect
+ratio](https://www.google.com/search?q=aspect+ratio&oq=aspect+ratio&aqs=chrome..69i57j35i39j0l6.1896j0j7&sourceid=chrome&ie=UTF-8)
+different from the original video. Squashed or stretched looks bad.
 {% endAside %}
 
 **CSS:**

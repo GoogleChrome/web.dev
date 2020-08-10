@@ -11,16 +11,16 @@ updated: 2020-08-20
 ---
 
 Users like media, especially videos; they can be fun and informative. On mobile
-devices, videos can be an easier way to consume information. For a good user
-experience, videos should not need more than the available bandwidth. Users
-should be able to use them no matter what device they're viewing them with.
-Users should never need to wait for download. Who likes it when they press play
-and nothing happens?
+devices, videos can be an easier way to consume information than is text. For a
+good user experience, videos should not need more than the available bandwidth.
+Users should be able to use them no matter what device they're viewing them
+with. Users should never need to wait for download. Who likes it when they press
+play and nothing happens?
 
-You've no doubt consumed video on your own device. Which means nothing in that
-last paragraph suprises you. Now you need to learn how to put a video or other
-media on your own website. The technical requirements of that work should be in
-service to the user experience. Those technical requirements are:
+You've no doubt consumed video on your own device. Which means that nothing in
+that last paragraph suprises you. Now you need to learn how to put a video or
+other media file on your own website. The technical requirements of that work
+should be in service to the user experience. Those technical requirements are:
 
 * Versions of a media file in common web-friendly formats containing both audio
   and video streams.
@@ -35,9 +35,10 @@ mean. I'll explain them.
 
 There are four approaches you can take displaying video on a site.
 
-* Upload your content to a hosting site such as YouTube or Vimeo. These options
-  do not preclude displaying from within your website.
-* Basic embedding using HTML media tags such as &lt;video> and &lt;audio>.
+* Upload your content to a hosting site such as
+  [YouTube](https://www.youtube.com/) or [Vimeo](https://vimeo.com/). These
+  options do not preclude displaying from within your website.
+* Basic embedding using the HTML `<video>` and `<audio>`.
 * More full-featured embedding using a video library such as [Google's Shaka
   Player](https://github.com/google/shaka-player), [JW
   Player](https://developer.jwplayer.com/), or [Video.js](http://videojs.com/).

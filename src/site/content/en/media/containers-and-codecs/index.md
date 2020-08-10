@@ -15,24 +15,29 @@ tags:
   - Shaka
 ---
 
-
-
-## Change the container
-
 To support multiple browsers, you'll need to use FFmpeg to convert your mov file
 to two different containers: an mp4 container and a webm container. In actual
 practice, you would likely specify a codec at the same time. For now, I'm
 letting FFmpeg use its defaults.
 
+To create the mp4:
+
 ```bash
 ffmpeg -i glocken.mov glocken.mp4
 ```
+
+To create the webm:
+
+```bash
+ffmpeg -i glocken.mov glocken.webm
+```
+
 {% Aside %}
 To create this article, I used FFmpeg version 4.2.2-tessus. If the command
 lines don't work for your version of FFmpeg, consult the FFmpeg documentation.
 {% endAside %}
 
-Webm takes quite a bit longer to create than mp4. This isn't surprising when you
+Webm takes longer to create than mp4. This isn't surprising when you
 look at the results. While mp4 compresses to about two-thirds of the original
 file's size, webm is down to a mere fraction of the original's size. Though,
 your results may vary.
@@ -45,10 +50,8 @@ your results may vary.
 
 ## Check your work
 
-This is a good place to remind you that you can verify the results of these
-tasks using the same applications you're using to do the work. Remember that, as described in
-[Application basics](../application-basics), you'll need both FFmpeg and Shaka
-Packager since neither shows you everything.
+To verify your results, use FFmpeg and Shaka Packager as already shown in
+[Application basics](../application-basics)
 
 ```bash
 packager input=glocken.mp4 --dump_stream_info
@@ -62,8 +65,8 @@ ffmpeg -i glocken.mp4
 
 Next the codec. As stated in [File basics](../file-basics), a codec is _not_ the
 same thing as a container (file type). Two files of the same container type
-could hold data compressed using completely different codecs. The webm format
-for example allows audio to be encoded using either
+could hold data compressed using different codecs. The webm format for example
+allows audio to be encoded using either
 [vorbis](https://en.wikipedia.org/wiki/Vorbis) or
 [opus](https://en.wikipedia.org/wiki/Opus_(audio_format)). To change the codec I
 use FFmpeg. For example, this command outputs an mkv file with a vorbis audio
@@ -98,4 +101,4 @@ and HLS respectively.
 | opus   | webm      | libopus    |
 | vorbis | webm      | libvorbis  |
 
-
+Next, I'll show you how to change the file's [bitrate](../bitrate).

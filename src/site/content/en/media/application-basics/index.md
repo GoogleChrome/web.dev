@@ -20,11 +20,11 @@ bewildering and intimidating. On this page, I provide an onramp into that
 world.
 
 You'll notice in what follows that the word 'resolution' doesn't appear. What
-the two applications output are just the dimensions, the numbers themselves. As
-explained on the previous page, resolution is just an informal shorthand for the
-dimensions of a video.
+the two applications output are just the dimensions, the numbers themselves.
+That's because resolution is just an informal shorthand for the dimensions of a
+video. In every case that follows, I talk about specific numbers.
 
-This page has basics for two common media command-line utilities: [Shaka
+This page has basics for two common command-line media utilities: [Shaka
 Packager](https://github.com/google/shaka-packager) and
 [FFmpeg](https://ffmpeg.org/download.html). Why cover two applications? While
 both are powerful and useful by themselves, neither does everything needed to
@@ -37,7 +37,7 @@ applications [Miro](http://www.mirovideoconverter.com/),
 [HandBrake](//handbrake.fr/), and [VLC](//www.videolan.org/). There are also
 online encoding/transcoding services such as
 [Zencoder](//en.wikipedia.org/wiki/Zencoder) and [Amazon Elastic
-Encoder](//aws.amazon.com/elastictranscoder).ß
+Encoder](//aws.amazon.com/elastictranscoder).
 
 ## Shaka Packager
 
@@ -69,10 +69,10 @@ This isn't quite what you get if you type `packager -help`. This is how I think
 of it, and this reflects the examples in the [Shaka Packager
 documentation](https://google.github.io/shaka-packager/html/). Note that there are multiple
 `stream_descriptor` items in the pattern. Though I don't show it, you could
-hypothetically manipulate the video and audio streams of a file simultaneously.
+manipulate the video and audio streams of a file directly.
 
-Compare this basic pattern with a simple use of it to display file
-characteristics. In the example, I've lined up equivalent parts.
+Compare this basic pattern with a simple use that displays file characteristics.
+In the example, I've lined up equivalent parts.
 
 ```bash
 packager stream_descriptor [stream_descriptor-n] [flags]
@@ -115,12 +115,12 @@ Stream [1] type: Audio
 Packaging completed successfully.
 ```
 
-Look for the characteristics discussed in [the previous
-section](../application-basics) and notice a few things. The height and width
-are correct for full HD, and the audio and video codecs are among the preferred
-codecs for their container types, AAC for audio and H264 for video. Notice also
-that streams are identified with numbers. These are useful for operations that
-manipulate the audio and video separately.
+Look for the characteristics discussed in [File basics](../file-basics) and
+notice a few things. The height and width are correct for full HD, and the audio
+and video codecs are among the preferred codecs for their container types, AAC
+for audio and H264 for video. Notice also that streams are identified with
+numbers. These are useful for operations that manipulate the audio and video
+separately.
 
 Notice that the output above doesn't show the bitrate. Despite what's missing,
 this output is easier to read, so I use it whenever I can. When I need
@@ -141,9 +141,8 @@ ffmpeg [GeneralOptions] [InputFileOptions] -i input [OutputFileOptions] output
 Like Shaka Packager this application can handle multiple streams. Some of its
 options are used in multiple locations and have different effects on file output
 depending on where they are in the command. Be aware of this as you look at
-[FFmpeg](https://stackoverflow.com/questions/tagged/ffmpeg) or
-[Shaka](https://stackoverflow.com/questions/tagged/shaka) Packager examples on
-sites such as StackOverflow and similar sites.
+[FFmpeg](https://stackoverflow.com/questions/tagged/ffmpeg) examples on sites
+such as StackOverflow and similar sites.
 
 I'll again compare the basic pattern to the example for displaying file characteristics.
 
@@ -173,3 +172,5 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'glocken.mp4':
       handler_name    : SoundHandler
 At least one output file must be specified
 ```
+
+Now that you've tried your hand at using Shaka and FFmpeg, it's time to [Prepare media files for the web](../prepare-media).

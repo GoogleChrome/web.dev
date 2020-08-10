@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Media Manipulation Cheat Sheet
+title: Media manipulation cheat sheet
 authors:
   - joemedley
 description: |

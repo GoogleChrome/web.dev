@@ -28,21 +28,23 @@ source file has a higher bitrate or resolution than your desired result.
 _Bitrate_ is the maximum number of bits used to encode one second of a media stream.
 The more bits used to encode a second of stream, the higher the fidelity.
 
-Unsurprisingly, bitrates for the web are low. The table below compares web
-bitrates with common home video formats. Values are given in megabits per second
-(Mbs).
+Unsurprisingly, bitrates the the web can handle are low. The table below shows
+you should target for common network conditions. For the sake of comparison,
+I've thrown in values for Blue-rays and DVDs.
 
-Note: The web numbers are approximations. This chart should not be a substitute for
+{% Aside %}
+The web numbers are approximations. This chart should not be a substitute for
 doing your own testing.
+{% endAside %}
 
-| Format | Bitrate |
-| ------ | ------- |
+| Delivery method | Bitrate |
+| --------------- | ------- |
 | Blu-ray | 20Mbs |
 | DVD | 6 Mbs |
-| Desktop web video | 2 Mbs |
-| 4G mobile video | 0.7 Mbs |
-| 3G mobile video | 0.35 Mbs |
-| 2G mobile video | Depends on network type.<ul><li>EDGE: 0.4 Mbs</li><li>GPRS: 0.04Mbs</li></ul> |
+| Desktop web | 2 Mbs |
+| 4G mobile | 0.7 Mbs |
+| 3G mobile | 0.35 Mbs |
+| 2G mobile | Depends on network type.<ul><li>EDGE: 0.4 Mbs</li><li>GPRS: 0.04Mbs</li></ul> |
 
 Which value should I use for video on my web pages? The short answer is at
 least: desktop, 4G, and 3G. If you're serving video in one of the markets
@@ -58,4 +60,4 @@ ffmpeg -i glocken.mov -b:v 350k -b:a 64k glocken.mp4
 Notice that there are two bitrate flags, `-b:a` and `-b:v`. One is for audio and the
 other is for video.
 
-For information on resolution move on to the next page.
+Next, I'll show you how to change the [resolution](../resolution).

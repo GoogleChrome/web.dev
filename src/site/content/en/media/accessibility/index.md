@@ -30,7 +30,9 @@ fo this article.
 track element in Chrome on Android</figcaption>
 </figure>
 
-An example `<video>` tag with two `<track>` tags is shown below. There's also a sample you can play with on [glitch](https://track-demonstration.glitch.me)
+An example `<video>` tag with two `<track>` tags is shown below. There's also a
+sample you can [view on Glitch](https://track-demonstration.glitch.me)
+([source](https://glitch.com/edit/#!/track-demonstration)).
 
 To add captions to your video add a track element as a child of the video
 element:
