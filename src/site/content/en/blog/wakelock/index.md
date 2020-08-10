@@ -6,13 +6,11 @@ authors:
   - thomassteiner
 description: To avoid draining the battery, most devices will quickly fall asleep when left idle. While this is fine most of the time, there are some applications that need to keep the screen awake in order to complete some work. The Screen Wake Lock API provides a way to prevent the device from dimming or locking the screen when an application needs to keep running.
 date: 2018-12-18
-updated: 2020-07-02
+updated: 2020-08-10
 hero: hero.jpg
 hero_position: center
 alt: |
   Cat sleeping. Photo by Kate Stone Matheson on Unsplash.
-origin_trial:
-  url: https://developers.chrome.com/origintrials/#/view_trial/902971725287784449
 tags:
   - blog
   - capabilities
@@ -253,7 +251,6 @@ critical it is to support them.
 
 * Specification [Candidate Recommendation][spec-cr] | [Editor's Draft][spec-ed]
 * [Screen Wake Lock Demo][demo] | [Screen Wake Lock Demo source][demo-source]
-* [Origin Trial][ot]
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
 * [Experimenting with the Wake Lock API](https://medium.com/dev-channel/experimenting-with-the-wake-lock-api-b6f42e0a089f)
@@ -276,4 +273,3 @@ critical it is to support them.
 [visibility-change]: https://developer.mozilla.org/en-US/docs/Web/API/Document/visibilitychange_event
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EWakeLock
 [cr-dev-twitter]: https://twitter.com/chromiumdev
-[ot]: https://developers.chrome.com/origintrials/#/view_trial/902971725287784449
