@@ -35,6 +35,9 @@ class TableOfContents extends BaseStateElement {
     super();
     this.scrollSpy = this.scrollSpy.bind(this);
     this.openedToFalse = this.openedToFalse.bind(this);
+    this.tocActiveClass = 'w-toc__active';
+    this.tocBorderClass = 'w-toc__border';
+    this.tocVisibleClass = 'w-toc__visible';
   }
 
   connectedCallback() {
@@ -102,27 +105,25 @@ class TableOfContents extends BaseStateElement {
   }
 
   highlightActiveLink() {
-    const activeLink = 'w-toc__active--link';
-    const activeBorder = 'w-toc__active--border';
-    const firstVisibleLink = this.querySelector('.w-toc__visible--link');
+    const firstVisibleLink = this.querySelector(`.${this.tocVisibleClass}`);
     const links = [...this.querySelectorAll('a')];
 
     links.forEach((link) => {
-      link.classList.remove(activeLink, 'w-toc__visible--link');
-      link.parentElement.classList.remove(activeBorder);
+      link.classList.remove(this.tocActiveClass, this.tocVisibleClass);
+      link.parentElement.classList.remove(this.tocBorderClass);
     });
 
     if (firstVisibleLink) {
-      firstVisibleLink.classList.add(activeLink);
-      firstVisibleLink.parentElement.classList.add(activeBorder);
+      firstVisibleLink.classList.add(this.tocActiveClass);
+      firstVisibleLink.parentElement.classList.add(this.tocBorderClass);
     }
 
     if (!firstVisibleLink && this.previouslyActiveHeading) {
       const last = this.querySelector(
         `a[href="#${this.previouslyActiveHeading}"]`,
       );
-      last.classList.add(activeLink);
-      last.parentElement.classList.add(activeBorder);
+      last.classList.add(this.tocActiveClass);
+      last.parentElement.classList.add(this.tocBorderClass);
     }
   }
 
@@ -136,10 +137,10 @@ class TableOfContents extends BaseStateElement {
       const href = `#${heading.target.getAttribute('id')}`;
       const link = links.find((l) => l.getAttribute('href') === href);
       if (heading.intersectionRatio > 0) {
-        link.classList.add('w-toc__visible--link');
+        link.classList.add(this.tocVisibleClass);
         this.previouslyActiveHeading = heading.target.getAttribute('id');
       } else {
-        link.classList.remove('w-toc__visible--link');
+        link.classList.remove(this.tocVisibleClass);
       }
 
       this.highlightActiveLink();

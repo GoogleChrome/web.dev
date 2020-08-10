@@ -8,7 +8,7 @@
   @include bp(md) {
     color: $PRIMARY_TEXT_COLOR;
 
-    &.w-toc__active--link,
+    &.w-toc__active,
     &:hover {
       color: $WEB_PRIMARY_COLOR;
     }
@@ -19,7 +19,7 @@
   padding: 0 24px;
 }
 
-.w-toc__active--border {
+.w-toc__border {
   border-left: 3px solid $WEB_PRIMARY_COLOR;
   margin-left: -24px;
   padding-left: 21px;
