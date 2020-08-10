@@ -54,7 +54,9 @@ class TableOfContents extends BaseStateElement {
       'h1[id], h2[id], h3[id]',
     );
 
-    this.observer = new IntersectionObserver(this.scrollSpy);
+    this.observer = new IntersectionObserver(this.scrollSpy, {
+      rootMargin: '0px 0px -80% 0px',
+    });
     this.headings.forEach((heading) => this.observer.observe(heading));
   }
 
