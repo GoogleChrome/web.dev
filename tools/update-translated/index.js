@@ -13,7 +13,7 @@ const translatedFileRegExp = /site\/content\/(?!en).*\/(.*)\.md/;
 
 function isTranslatedFile(fileName) {
   return fileName.match(translatedFileRegExp);
-}
+};
 
 const run = async () => {
   const fileNames = process.argv.slice(2)[0].slice(1, -1).split(',');
