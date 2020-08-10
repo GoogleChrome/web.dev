@@ -6,16 +6,16 @@ authors:
   - joemedley
 description: |
   You've properly prepared a video file for the web. You've given it correct
-  dimensions and the correct resolution. You've encrypted it. You've even
-  created separate webm and mp4 files for different browsers. For anyone to see
-  it, you still need to add it to a web page.
+  dimensions and the correct resolution. You've even created separate webm and
+  mp4 files for different browsers. For anyone to see it, you still need to add
+  it to a web page.
 date: 2014-14-15
 updated: 2020-08-20
 ---
 
 You've properly [prepared a video file](../prepare-media/) for the web. You've
-given it correct dimensions and the correct resolution. You've encrypted it.
-You've even created separate webm and mp4 files for different browsers.
+given it correct dimensions and the correct resolution. You've even created
+separate webm and mp4 files for different browsers.
 
 For anyone to see it, you still need to add it to a web page. Doing so properly
 requires two HTML elements: the

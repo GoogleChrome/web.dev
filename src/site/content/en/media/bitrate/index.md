@@ -10,9 +10,10 @@ date: 2017-06-30
 updated: 2020-08-20
 ---
 
-In the [previous section](../containers-and-codecs), I showed you how to change a
-media file's container and codec. In this section, I show how to change bitrate
-before moving on to [resolution](../resolution) and [encryption](../encryption).
+In the [previous section](../containers-and-codecs), I showed you how to change
+a media file's container and codec. In this section, I show how to change
+bitrate before moving on to [resolution](../resolution) and, finally, [embedding
+in a page](../add-media).
 
 Bitrate and resolution correlate to the amount of data in a media file. It
 probably goes without saying, but I'm going to say it anyway. You can always
@@ -60,4 +61,5 @@ ffmpeg -i glocken.mov -b:v 350k -b:a 64k glocken.mp4
 Notice that there are two bitrate flags, `-b:a` and `-b:v`. One is for audio and the
 other is for video.
 
-Next, I'll show you how to change the [resolution](../resolution).
+Now that your files are prepared, it's time to [add them to a web
+page](../add-media).

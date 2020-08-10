@@ -4,8 +4,8 @@ title: Prepare media files for the web
 authors:
   - joemedley
 description: |
-  Take a raw video file off a camera and transform it into an encrypted resource
-  that you can embed in a web page.
+  Take a raw video file off a camera and transform it into a resource that you
+  can embed in a web page.
 date: 2017-06-30
 updated: 2020-08-20
 tags:
@@ -16,7 +16,7 @@ tags:
 
 Now that I've introduced you to [applications used for manipulating media
 files](../application-basics), over the next few pages, I'm going to take a raw
-video file off a camera and transform it into an encrypted resource that you can
+video file off a camera and transform it into a resource that you can
 embed in a web page. I'm specifically going to show you how to format your video
 for mobile playback, and how to create multiple files to cover a range of
 browsers. Specifically, I'll create a webm file for use on Chrome and an mp4
@@ -37,7 +37,6 @@ characteristics:
   and video streams.
 * A resolution appropriate for your users' devices.
 * A bitrate that doesn't overload your users' network bandwidth.
-* (Optional) Encryption.
 * Viewable on all major browsers using appropriate technologies.
 
 By "appropriate technologies" I mean [Dynamic Adaptive Streaming over HTTP
@@ -73,5 +72,4 @@ mov file for display on the web.
   your files smaller and hence friendlier for low-bandwidth and mobile
   downlodad.
 
-* Finally, in [Encryption](../encryption), I'll show how to copy protect your
-  files.
+After your files are prepared, you'll [add them to a web page](../add-media).

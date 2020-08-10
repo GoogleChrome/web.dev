@@ -11,7 +11,8 @@ updated: 2020-08-20
 
 In previous sections I showed you how to change a media file's [codec,
 containers](../containers-and-codecs), and [bitrate](../bitrate). This page
-covers resolution. Then I'll move on to [encryption](../encryption).
+covers resolution. Then I'll move on to [adding them to a web
+page](../add-media).
 
 _Resolution_ is the amount of information in a single frame of video, given as
 the number of logical pixels in each dimension. For example, a resolution of
@@ -53,6 +54,5 @@ bitrate file you have available. If you're upgrading an older site, you'll want
 to find your original camera or other high resolution sources and convert from
 that rather than from your older web site files (for example, flv or f4v files).
 
-At this point it would be perfectly fine to [add your media files to a web
-page](../add-media). If you plan to enforce copyright on your media files,
-you'll want to encrypt them. That's what [the next page](../encryption) covers.
+Now that your files are prepared, it's time to [add them to a web
+page](../add-media).
