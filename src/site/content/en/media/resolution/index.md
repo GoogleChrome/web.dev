@@ -53,5 +53,6 @@ bitrate file you have available. If you're upgrading an older site, you'll want
 to find your original camera or other high resolution sources and convert from
 that rather than from your older web site files (for example, flv or f4v files).
 
-Now that your files are prepared, it's time to [add them to a web
-page](../add-media).
+At this point it would be perfectly fine to [add your media files to a web
+page](../add-media). If you plan to enforce copyright on your media files,
+you'll want to encrypt them. That's what [the next page](../encryption) covers.

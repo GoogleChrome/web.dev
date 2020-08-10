@@ -18,8 +18,8 @@ If you plan to enforce copyright on your media files, you'll want to encrypt
 them. I'm going to introduce two free encryption methods. The first is [Clear
 Key encryption system](https://www.w3.org/TR/encrypted-media/#clear-key), which
 is based on a W3C spec. The second is
-[Widevine](https://www.widevine.com/wv_drm.html), a proprietary encryption
-method offered by Google.
+[Widevine](https://www.widevine.com/solutions/widevine-drm), a proprietary
+encryption method offered by Google.
 
 ### Clear Key Encryption
 
@@ -30,10 +30,11 @@ that uses unencrypted keys to decrypt
 content. This is a simple way to encrypt and decrypt content for playback on
 the web. What's more, playback can be done with either DASH or HLS.
 
-The first thing you need to do is generate a key. You can use whatever method
-you want, but I'm going to use [OpenSSL](https://www.openssl.org/) to write
-sixteen random hex digits to a file. This step is necessary when preparing
-resources for both HLS and DASH.
+The first thing you need to do is generate a key. I'm using
+[OpenSSL](https://www.openssl.org/), though other methods are available. First,
+use the openssl command line app to write sixteen random hex digits to a file
+named `media.key`. This step is necessary when preparing resources for both HLS
+and DASH.
 
 ```bash
 openssl rand -out media.key 16
@@ -41,8 +42,8 @@ openssl rand -out media.key 16
 
 {% Aside %}
 Some versions of OpenSSL seem to create a file with white space and new line
-characters. Before proceding, verify that these are missing from `media.key` and
-remove them if they are prsent.
+characters. Before proceding, verify that these are missing from the `media.key`
+file and remove them if they are prsent.
 {% endAside %}
 
 Use Shaka Packager to do the actual encryption. Use the content of the
@@ -63,9 +64,9 @@ packager \
 ### Widevine Encryption
 
 Unless your company completes the Master License Agreement with
-[Widevine](https://www.widevine.com/contact), this type of encryption can
-really only be used for testing. I'm including it because it the Shaka Packager
-README provides insufficient explanation.
+[Widevine](https://www.widevine.com/contact), this type of encryption can really
+only be used for testing. I'm including here because it's used by Shaka Packager
+and its README provides insufficient explanation.
 
 Everything in this command except the name of your files and the `--content_id`
 flag should be copied exactly from the example. The `--content_id` is 16 or 32
@@ -81,3 +82,7 @@ packager \
   --content_id "16_Rand_Hex_Chrs" --signer "widevine_test" \
   --aes_signing_key "1ae8ccd0e7985cc0b6203a55855a1034afc252980e970ca90e5202689f947ab9" \
   --aes_signing_iv "d58ce954203b7c9a9a9d467f59839249"
+```
+
+Now that your files are prepared, it's time to [add them to a web
+page](../add-media).
