@@ -8,8 +8,9 @@ description: It is now trivial to customize the color, size or type of number or
 tags:
   - blog
   - css
-date: 2020-08-05
+date: 2020-09-03
 #updated: 2020-07-27
+scheduled: true
 hero: hero.png
 thumbnail: thumb.png
 alt: Showing the anatomy of a single list item by putting separate boxes around the bullet and the text
