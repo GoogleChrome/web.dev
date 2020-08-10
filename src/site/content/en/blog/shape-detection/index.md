@@ -5,7 +5,7 @@ authors:
   - thomassteiner
 description: The Shape Detection API detects faces, barcodes, and text in images.
 date: 2019-01-07
-updated: 2020-07-31
+updated: 2020-08-10
 tags:
   - blog
   - capabilities
@@ -206,6 +206,8 @@ try {
 The `FaceDetector` always returns the bounding boxes of faces it detects in
 the `ImageBitmapSource`. Depending on the platform, more information
 regarding face landmarks like eyes, nose, or mouth may be available.
+It is important to note that this API only detects faces.
+It does not identify who a face belongs to.
 
 ```js
 const faceDetector = new FaceDetector({
