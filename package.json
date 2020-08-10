@@ -24,6 +24,7 @@
     "lint": "npm-run-all lint:md lint:scss lint:js",
     "percy": "PERCY=true npm-run-all build --parallel --race start snapshots",
     "updated": "node ./tools/update-updated/index.js",
+    "translated": "node ./tools/update-translated/index.js",
     "rollup": "node build.js",
     "rollup-sw": "node build-sw.js",
     "sass": "node ./compile-css.js",
