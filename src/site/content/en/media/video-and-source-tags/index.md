@@ -292,13 +292,21 @@ many device orientation layout problems.
 
 ### Autoplay
 
-The `autoplay` attribute controls whether the browser downloads and plays a video immediately. The precise way it works depends on the platform and browser.
+The `autoplay` attribute controls whether the browser downloads and plays a
+video immediately. The precise way it works depends on the platform and browser.
 
-* Chrome: Depends on multiple factors including but not limited to whether the viewing is on desktop and whether the a mobile user has added your site or app to their homescreen. For  details, see [Auotplay Policy Changes](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes).
+* Chrome: Depends on multiple factors including but not limited to whether the
+  viewing is on desktop and whether the a mobile user has added your site or app
+  to their homescreen. For  details, see [Auotplay Policy
+  Changes](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes).
 
-* Firefox: Blocks all video and sound, but gives user the ability to relax these restrictions for either all sites or particular sites. For details, see [Allow or block media autoplay in Firefox]()
+* Firefox: Blocks all video and sound, but gives user the ability to relax these
+  restrictions for either all sites or particular sites. For details, see [Allow
+  or block media autoplay in Firefox]()
 
-* Sarfari: Has historically required a user gesterue, but has been relaxing that requirement in recent versions. For details, see [New &lt;video> Policies for iOS](https://webkit.org/blog/6784/new-video-policies-for-ios/).
+* Sarfari: Has historically required a user gesterue, but has been relaxing that
+  requirement in recent versions. For details, see [New &lt;video> Policies for
+  iOS](https://webkit.org/blog/6784/new-video-policies-for-ios/).
 
 Even on platforms where autoplay is possible, you need to consider whether
 it's a good idea to enable it:
