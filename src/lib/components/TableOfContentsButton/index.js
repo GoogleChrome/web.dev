@@ -40,7 +40,7 @@ class TableOfContentsButton extends BaseStateElement {
       <button
         class="w-toc__button--open w-button w-button--secondary w-button--icon"
         data-icon="list_alt"
-        aria-close="Open Table of Contents"
+        aria-label="Open Table of Contents"
         @click="${this.openedToTrue}"
       ></button>
     `;
