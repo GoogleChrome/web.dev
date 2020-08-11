@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Create high-fidelity content with local fonts
+title: Create advanced typography content with local fonts
 subhead: >
   Learn how the Local Font Access API allows you to get access to the user's locally installed fonts and obtain low-level details about them.
 tags:
@@ -322,6 +322,7 @@ Send a Tweet to [@ChromiumDev][cr-dev-twitter] with the `#LocalFontAccess` hasht
 - [Chromium bug for font table access][cr-bug-table]
 - [ChromeStatus entry][cr-status]
 - [GitHub repo][issues]
+- [Tag review][tag-review]
 
 ## Acknowledgements
 
@@ -336,7 +337,7 @@ This article was reviewed by
 [Olivier Yiptong](https://github.com/oyiptong/).
 Hero image by [Brett Jordan](https://unsplash.com/@brett_jordan) on [Unsplash](https://unsplash.com/photos/qrjvkj-oS-M).
 
-[TAG Review]: https://github.com/w3ctag/design-reviews/issues/399
+[tag-review]: https://github.com/w3ctag/design-reviews/issues/399
 [explainer]: https://github.com/WICG/local-font-access
 [spec]: https://wicg.github.io/local-font-access/
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
