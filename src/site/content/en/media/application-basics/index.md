@@ -42,15 +42,15 @@ Encoder](//aws.amazon.com/elastictranscoder).
 ## Shaka Packager
 
 [Shaka Packager](https://github.com/google/shaka-packager) is a free media
-packaging SDK for creating packager applications for the two most common video
-streaming protocols: [Dynamic Adaptive Streaming over HTTP
+packaging SDK. If you were using a media player on your site, Shaka Packager is
+what you would use to prepare the files. It supports conversion for the two most
+common video streaming protocols: [Dynamic Adaptive Streaming over HTTP
 (DASH)](https://developer.mozilla.org/en-US/docs/Web/HTML/DASH_Adaptive_Streaming_for_HTML_5_Video)
 or [HTTP Live Streaming
 (HLS)](https://developer.apple.com/documentation/http_live_streaming). Shaka
 Packager supports key security features: common encryption, Widevine digital
 rights management (DRM) support. It can also handle live video, and
-video-on-demand. Don't worry if you don't know what all those words mean. You
-won't need them to understand the rest of this article.
+video-on-demand. Those concepts are beyond the scope of this article.
 
 Despite what it says on the package, this utility is for more than C++
 developers. You can use it as both a library for building media software and as
