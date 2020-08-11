@@ -29,6 +29,9 @@ browsers.
     <!-- <source src="https://storage.googleapis.com/web-dev-assets/macos-system-ui/system-ui_wght.webm" type="video/webm"> -->
     <source src="https://storage.googleapis.com/web-dev-assets/gui-challenges/stories-desktop-demo.mp4">
   </video>
+  <figcaption class="w-figure">
+    <a href="https://gui-challenges-stories.glitch.me/">Demo</a>
+  </figcaption>
 </figure>
 
 If you would prefer a hands-on demonstration of building this Stories component yourself,
