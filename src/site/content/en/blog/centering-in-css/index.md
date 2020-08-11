@@ -38,22 +38,21 @@ The Resilience Ringer is the implementation of my beliefs that a centering strat
 
 The winning solution will demonstrate its resilience by keeping its content in the center while it's squished, squashed, duplicated, edited, and swapped to various language modes and directions.
 
-## The contestants
-
-5 centering techniques enter the Resilience Ringer, only one will receive the Resilience Crown 👸
-
-### Legend
+#### Legend
 
 I've provided some visual color hinting to help you keep some meta information in context:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="./legend.png" alt="">
+  <img class="w-screenshot" src="./legend.png" alt="">
   <figcaption class="w-figcaption"></figcaption>
 </figure>
 
-- A pink border indicates ownership of centering styles
-- The grey box is the background on the container which seeks to have centered items
-- Each child has a background color so you can see any effects the centering technique has on child box sizes (if any)
+1. A pink border indicates ownership of centering styles
+1. The grey box is the background on the container which seeks to have centered items
+1. Each child has a white background color so you can see any effects the centering technique has on child box sizes (if any)
+
+## The 5 Contestants
+5 centering techniques enter the Resilience Ringer, only one will receive the Resilience Crown 👸. 
 
 ### Content Center
 
@@ -300,6 +299,7 @@ Fluffy Center is so micro that it's easy to overlook as a centering technique, b
 What types of things break your centering strategies? What other challenges could be added to the resilience ringer? I considered translation and an auto-height switch on the container… what else!?
 
 Now that you know how I did it, how would you?! Let's diversify our 
-approaches and learn all the ways to build on the web. Create a [Glitch](https://glitch.com), 
-[tweet me](https://twitter.com/argyleink) your version, and I'll add it to 
+approaches and learn all the ways to build on the web. Follow the codelab with 
+this post to create your own centering example, just like the one's in this post. 
+[Tweet me](https://twitter.com/argyleink) your version, and I'll add it to 
 the [Community remixes](#community-remixes) section below.
