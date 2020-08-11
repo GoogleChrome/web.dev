@@ -21,8 +21,7 @@
         "prepare-media",
         "containers-and-codecs",
         "bitrate",
-        "resolution",
-        "encryption"
+        "resolution"
       ]
     },
     {
