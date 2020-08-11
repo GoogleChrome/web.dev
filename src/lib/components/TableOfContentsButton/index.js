@@ -32,7 +32,6 @@ class TableOfContentsButton extends BaseStateElement {
 
   constructor() {
     super();
-    this.openedToTrue = this.openedToTrue.bind(this);
   }
 
   render() {
@@ -41,17 +40,13 @@ class TableOfContentsButton extends BaseStateElement {
         class="w-toc__button--open w-button w-button--secondary w-button--icon"
         data-icon="list_alt"
         aria-label="Open Table of Contents"
-        @click="${this.openedToTrue}"
+        @click="${openToC}"
       ></button>
     `;
   }
 
   onStateChanged({isTocOpened}) {
     this.opened = isTocOpened;
-  }
-
-  openedToTrue() {
-    openToC();
   }
 }
 

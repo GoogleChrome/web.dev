@@ -16,7 +16,7 @@
 
 import {html} from 'lit-element';
 import {BaseStateElement} from '../BaseStateElement';
-import {closeToC} from '../../actions';
+import {openToC, closeToC} from '../../actions';
 
 /**
  * Element that renders table of contents.
@@ -33,13 +33,20 @@ class TableOfContents extends BaseStateElement {
   constructor() {
     super();
     this.scrollSpy = this.scrollSpy.bind(this);
-    this.openedToFalse = this.openedToFalse.bind(this);
     this.tocActiveClass = 'w-toc__active';
     this.tocBorderClass = 'w-toc__border';
     this.tocVisibleClass = 'w-toc__visible';
   }
 
   connectedCallback() {
+    // This sets initial global state before subscribing to the store.
+    // If we didn't do this then `this.opened` would always be set to false
+    // because onStateChanged runs synchronously after we call
+    // super.connectedCallback();
+    if (this.hasAttribute('opened')) {
+      openToC();
+    }
+
     super.connectedCallback();
     this.tocHTML = this.innerHTML;
     this.articleContent = this.closest('main');
@@ -67,7 +74,7 @@ class TableOfContents extends BaseStateElement {
           class="w-button w-button--secondary w-button--icon"
           data-icon="close"
           aria-close="Close Table of Contents"
-          @click="${this.openedToFalse}"
+          @click="${closeToC}"
         ></button>
       </div>
       <div class="w-toc__content">
@@ -76,32 +83,14 @@ class TableOfContents extends BaseStateElement {
     `;
   }
 
-  updated(changedProperties) {
-    if (
-      changedProperties.has('opened') &&
-      changedProperties.get('opened') !== this.opened
-    ) {
-      if (this.opened) {
-        this.articleContent.classList.add('w-toc-open');
-      } else {
-        this.articleContent.classList.remove('w-toc-open');
-      }
-    }
-  }
-
   disconnectedCallback() {
     super.disconnectedCallback();
     closeToC();
-    this.articleContent.classList.remove('w-toc-open');
     this.observer.disconnect();
   }
 
   onStateChanged({isTocOpened}) {
     this.opened = isTocOpened;
-  }
-
-  openedToFalse() {
-    closeToC();
   }
 
   scrollSpy(headings) {
