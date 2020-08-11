@@ -25,7 +25,7 @@
   padding-left: 21px;
 }
 
-div#content.w-toc-open {
+main.w-toc-open {
   > * {
     @include bp(md) {
       width: calc(100% - #{$TOC_WIDTH_DESKTOP});

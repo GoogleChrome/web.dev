@@ -38,7 +38,6 @@ module.exports = {
   // develop locally without having to mess with the CDN at all.
   imageCdn: 'https://webdev.imgix.net',
   gitlocalize: 'https://gitlocalize.com/repo/3847/',
-  contentDivId: 'content',
   analytics: {
     ids: {
       prod: 'UA-126406676-2',

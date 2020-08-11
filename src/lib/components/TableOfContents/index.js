@@ -26,7 +26,6 @@ import {closeToC} from '../../actions';
 class TableOfContents extends BaseStateElement {
   static get properties() {
     return {
-      contentId: {type: String, attribute: 'content-id'},
       opened: {type: Boolean, reflect: true},
     };
   }
@@ -43,14 +42,11 @@ class TableOfContents extends BaseStateElement {
   connectedCallback() {
     super.connectedCallback();
     this.tocHTML = this.innerHTML;
-    this.articleContent =
-      document.querySelector(`#${this.contentId}`) ||
-      document.createElement('div');
+    this.articleContent = this.closest('main');
 
-    if (!this.articleContent.id) {
-      console.warn(
-        `Article container with ID of '${this.contentId}' not found.`,
-      );
+    if (!this.articleContent) {
+      console.warn(`Article container not found.`);
+      return;
     }
 
     this.headings = this.articleContent.querySelectorAll(

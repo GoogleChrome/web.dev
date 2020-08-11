@@ -1,7 +1,6 @@
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}
-{% set articleContent="article-content" %}
-<div id="{{ articleContent }}" class="guide-landing-page">
+<div class="guide-landing-page">
   {% if path === undefined  %}
     {% set postPaths = page | getPaths %}
     {# Use first found path as a default path. #}
@@ -18,7 +17,7 @@
     } %}
   {% endif %}
 
-  <web-table-of-contents content-id="{{ site.contentDivId }}">
+  <web-table-of-contents>
     <h2 class="w-toc__header">
       <a href="#{{ safeTitle | slugify }}" class="w-toc__header--link">
         {{ safeTitle }}
