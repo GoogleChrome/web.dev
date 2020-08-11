@@ -104,29 +104,6 @@ class TableOfContents extends BaseStateElement {
     this.opened = isTocOpened;
   }
 
-  highlightActiveLink() {
-    const firstVisibleLink = this.querySelector(`.${this.tocVisibleClass}`);
-    const links = [...this.querySelectorAll('a')];
-
-    links.forEach((link) => {
-      link.classList.remove(this.tocActiveClass, this.tocVisibleClass);
-      link.parentElement.classList.remove(this.tocBorderClass);
-    });
-
-    if (firstVisibleLink) {
-      firstVisibleLink.classList.add(this.tocActiveClass);
-      firstVisibleLink.parentElement.classList.add(this.tocBorderClass);
-    }
-
-    if (!firstVisibleLink && this.previouslyActiveHeading) {
-      const last = this.querySelector(
-        `a[href="#${this.previouslyActiveHeading}"]`,
-      );
-      last.classList.add(this.tocActiveClass);
-      last.parentElement.classList.add(this.tocBorderClass);
-    }
-  }
-
   openedToFalse() {
     closeToC();
   }
@@ -143,7 +120,25 @@ class TableOfContents extends BaseStateElement {
         link.classList.remove(this.tocVisibleClass);
       }
 
-      this.highlightActiveLink();
+      const firstVisibleLink = this.querySelector(`.${this.tocVisibleClass}`);
+
+      links.forEach((link) => {
+        link.classList.remove(this.tocActiveClass, this.tocVisibleClass);
+        link.parentElement.classList.remove(this.tocBorderClass);
+      });
+
+      if (firstVisibleLink) {
+        firstVisibleLink.classList.add(this.tocActiveClass);
+        firstVisibleLink.parentElement.classList.add(this.tocBorderClass);
+      }
+
+      if (!firstVisibleLink && this.previouslyActiveHeading) {
+        const last = this.querySelector(
+          `a[href="#${this.previouslyActiveHeading}"]`,
+        );
+        last.classList.add(this.tocActiveClass);
+        last.parentElement.classList.add(this.tocBorderClass);
+      }
     }
   }
 }
