@@ -1,9 +1,9 @@
 ---
-title: Introducing the &lt;model-viewer&gt; web component
+title: 'The <model-viewer> web component'-
 subhead: Adding 3D models to a website can be tricky; &lt;model-viewer&gt; is as easy as writing HTML.
 authors:
   - joemedley
-date: 2020-08-03
+date: 2019-02-06
 updated: 2020-08-03
 hero: hero.jpg
 description: |
