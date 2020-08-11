@@ -9,6 +9,9 @@
         "whitelist"
       ],
       "profanitySureness": 2
+    },
+    "common-misspellings": {
+      "severity": "warning"
     }
   }
 }

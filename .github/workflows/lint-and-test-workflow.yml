@@ -24,7 +24,77 @@ jobs:
             ${{ runner.os }}-node-
       - name: Install
         run: npm ci
-      - name: Lint
-        run: npm run lint
+      
+      # Checks to see if any files in the PR match one of the listed file types.
+      # We can use this filter to decide whether or not to run linters or tests.
+      # You can check if a file with a listed file type is in the PR by doing:
+      # if: ${{ steps.filter.outputs.md == 'true' }}
+      # This will return true if there's a markdown file that was changed
+      # in the PR.
+      - uses: dorny/paths-filter@v2.2.0
+        id: filter
+        with:
+          filters: |
+            md:
+              - '*.md'
+            js:
+              - '*.js'
+            json:
+              - '*.json'
+            yml:
+              - '*.yml'
+            scss:
+              - '*.scss'
+            njk:
+              - '*.njk'
+      
+      # If markdown files were changed in this PR, get a space separated list
+      # of their file paths. We can pass this list to our linters to speed
+      # things up.
+      # Unfortunately the paths-filter Action from the previous step doesn't
+      # contain this information so we need to use this additional action to get
+      # that information.
+      # https://github.com/dorny/paths-filter/issues/20
+      # We only need to do this for markdown files because remark and textlint
+      # are _really_ slow. Our other linters run fast enough that we can just
+      # lint the entire project.
+      - uses: futuratrepadeira/changed-files@v3.1.0
+        id: files
+          with:
+            repo-token: ${{ secrets.GITHUB_TOKEN }}
+            pattern: '^.*\.md$'
+        if: ${{ steps.filter.outputs.md == 'true' }}
+
+      # Use the filter to check if files with a specific file type were changed
+      # in the PR. If they were, run the relevant linters. Otherwise, skip.
+
+      - name: Lint Markdown
+        if: ${{ steps.filter.outputs.md == 'true' }}
+        env:
+          MARKDOWN_INPUT: '${{ steps.files.outputs.files_created }} ${{ steps.files.outputs.files_updated }}'
+        run: npm run lint:md
+
+      # Run textlint using Orthograph-err
+      # https://github.com/place-labs/orthograph-err
+      # This supports additional plugins and will annotate the PR with any
+      # issues it detects.
+      - name: Lint Text
+        if: ${{ steps.filter.outputs.md == 'true' }}
+        uses: place-labs/orthograph-err@v1
+          with:
+            # File path with the content to review.
+            # Default: {,!(node_modules)/**/}*.md
+            path: '${{ steps.files.outputs.files_created }} ${{ steps.files.outputs.files_updated }}'
+
+      - name: Lint JavaScript
+        if: ${{ steps.filter.outputs.js == 'true' || steps.filter.outputs.json == 'true' }}
+        run: npm run lint:js
+      
+      - name: Lint SCSS
+        if: ${{ steps.filter.outputs.scss == 'true' }}
+        run: npm run lint:scss
+
+      # Only run tests if the PR touches behavior related files.
       - name: Test
+        if: ${{ steps.filter.outputs.js == 'true' || steps.filter.outputs.json == 'true' || steps.filter.outputs.yml == 'true' || steps.filter.outputs.njk == 'true'}}
         run: npm run test
