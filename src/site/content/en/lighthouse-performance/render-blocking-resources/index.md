@@ -4,7 +4,7 @@ title: Eliminate render-blocking resources
 description: |
   Learn about the render-blocking-resources audit.
 date: 2019-05-02
-updated: 2019-10-04
+updated: 2020-08-11
 web_lighthouse:
   - render-blocking-resources
 ---
@@ -23,8 +23,7 @@ and removing anything unused.
 ## Which URLs get flagged as render-blocking resources?
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
-flags three types of render-blocking URLs: scripts, stylesheets, and HTML
-imports:
+flags two types of render-blocking URLs: scripts and stylesheets.
 
 A `<script>` tag that:
 
@@ -37,10 +36,6 @@ A `<link rel="stylesheet">` tag that:
 * Does not have a `disabled` attribute. When this attribute is present,
   the browser does not download the stylesheet.
 * Does not have a `media` attribute that matches the user's device.
-
-A `<link rel="import">` tag that:
-
-* Does not have an `async` attribute.
 
 ## How to identify critical resources
 
@@ -99,15 +94,6 @@ the browser only blocks the first paint to retrieve the stylesheets that match t
 Finally, you'll want to minify your CSS to remove any extra whitespace or
 characters (see [Minify CSS](/minify-css)).
 This ensures that you're sending the smallest possible bundle to your users.
-
-## How to eliminate render-blocking imports
-
-For non-critical HTML imports, mark them with the `async` attribute. As a
-general rule, `async` should be used with HTML imports as much as possible.
-
-```html
-<link rel="import" href="myfile.html" async>
-```
 
 ## Resources
 
