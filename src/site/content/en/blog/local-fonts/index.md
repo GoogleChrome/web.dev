@@ -314,6 +314,15 @@ Are you planning to use the Local Font Access API? Your public support helps the
 
 Send a Tweet to [@ChromiumDev][cr-dev-twitter] with the `#LocalFontAccess` hashtag and let us know where and how you're using it.
 
+## Helpful links
+
+- [Explainer][explainer]
+- [Spec draft][spec]
+- [Chromium bug for font enumeration][cr-bug-enum]
+- [Chromium bug for font table access][cr-bug-table]
+- [ChromeStatus entry][cr-status]
+- [GitHub repo][issues]
+
 ## Acknowledgements
 
 The Local Font Access API spec was edited by
@@ -321,19 +330,13 @@ The Local Font Access API spec was edited by
 [Alex Russell](https://infrequently.org/),
 [Joshua Bell](https://www.linkedin.com/in/joshuaseanbell/), and
 [Olivier Yiptong](https://github.com/oyiptong/).
-This article was reviewed by [Joe Medley](https://github.com/jpmedley), [Dominik Röttsches](https://fi.linkedin.com/in/dominik-r%C3%B6ttsches-7323684), and [Olivier Yiptong](https://github.com/oyiptong/).
+This article was reviewed by
+[Joe Medley](https://github.com/jpmedley),
+[Dominik Röttsches](https://fi.linkedin.com/in/dominik-r%C3%B6ttsches-7323684), and
+[Olivier Yiptong](https://github.com/oyiptong/).
 Hero image by [Brett Jordan](https://unsplash.com/@brett_jordan) on [Unsplash](https://unsplash.com/photos/qrjvkj-oS-M).
 
-## Helpful links
-
-[Explainer][explainer]
-[Spec draft][spec]
-[Chromium bug for font enumeration][cr-bug-enum]
-[Chromium bug for font table access][cr-bug-table]
-[ChromeStatus entry][cr-status]
-[GitHub repo][issues]
-
-[TAG Review](https://github.com/w3ctag/design-reviews/issues/399)
+[TAG Review]: https://github.com/w3ctag/design-reviews/issues/399
 [explainer]: https://github.com/WICG/local-font-access
 [spec]: https://wicg.github.io/local-font-access/
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
