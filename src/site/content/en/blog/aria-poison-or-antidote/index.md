@@ -2,12 +2,12 @@
 title: |
   ARIA: poison or antidote?
 subhead: |
-  How lying to screen readers cures accessibility, when it doesn't rub salt in it.
+  How lying to screen readers cures accessibility, when it doesn't rub salt in it!
 authors:
   - aaronlevanthal
-date: 2020-08-04
+date: 2020-08-11
 description: |
-  How lying to screen readers cures accessibility, when it doesn't rub salt in it.
+  How lying to screen readers cures accessibility, when it doesn't rub salt in it!
 tags:
   - blog
   - accessibility
