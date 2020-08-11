@@ -1,6 +1,13 @@
 {
   "rules": {
     "alex": {
+      "severity": "warning",
+      "deny": [
+        "master",
+        "slave",
+        "blacklist",
+        "whitelist"
+      ],
       "profanitySureness": 2
     }
   }
