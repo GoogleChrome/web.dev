@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Create advanced typography content with local fonts
+title: Use advanced typography with local fonts
 subhead: >
-  Learn how the Local Font Access API allows you to get access to the user's locally installed fonts and obtain low-level details about them.
+  Learn how the Local Font Access API allows you to access the user's locally installed fonts and obtain low-level details about them.
 tags:
   - blog
   - fonts
@@ -101,9 +101,9 @@ The beginning of this article may have put you in a negative mood. Can we really
 
 ### Why do we need the Local Font Access API when there are web fonts?
 
-Professional-quality design and graphics tools have historically been difficult to deliver on the web. One stumbling block has been an inability to access and use the full variety of professionally constructed and hinted fonts that designers have locally installed. Web fonts enable some publishing use-cases, but fail to enable programmatic access to the vector glyph shapes and a set other font internals, and the font binary data.
+Professional-quality design and graphics tools have historically been difficult to deliver on the web. One stumbling block has been an inability to access and use the full variety of professionally constructed and hinted fonts that designers have locally installed. Web fonts enable some publishing use-cases, but fail to enable programmatic access to the vector glyph shapes and a set of other font internals, and the font binary data.
 
-- Design tools need access to font bytes to do their own OpenType layout implementation and allow design tools to hook in at lower levels, such as perform vector filters or transforms on the glyph shapes.
+- Design tools need access to font bytes to do their own OpenType layout implementation and allow design tools to hook in at lower levels, for actions such as performing vector filters or transforms on the glyph shapes.
 - Developers may have legacy font stacks for their applications that they are bringing to the web. To use these stacks, they usually require direct access to font data, something web fonts do not provide.
 - Some fonts may not be licensed for delivery over the web. For example, Linotype has a license for some fonts that only includes [desktop use](https://www.linotype.com/25/font-licensing.html).
 
@@ -144,8 +144,8 @@ if ('fonts' in navigator) {
 
 #### Asking for permission
 
-Access to a user's local fonts is gated behind the `"local-fonts"` permission
-that you can request with
+Access to a user's local fonts is gated behind the `"local-fonts"` permission,
+which you can request with
 [`navigator.permissions.request()`](https://w3c.github.io/permissions/#requesting-more-permission).
 
 ```js
@@ -249,7 +249,7 @@ You can see the Local Font Access API in action in the
 [demo](https://local-font-access.glitch.me/demo/) below.
 Be sure to also check out the
 [source code](https://glitch.com/edit/#!/local-font-access?path=README.md%3A1%3A0).
-The demo showcases a custom element `<font-select>` that implements a local font picker.
+The demo showcases a custom element called `<font-select>` that implements a local font picker.
 
 <div class="glitch-embed-wrap" style="height: 500px; width: 100%;">
   <iframe
@@ -273,7 +273,7 @@ needed to enable the mentioned use cases.
 System APIs may produce a list of installed fonts not in a random or a sorted order,
 but in the order of font installation.
 Returning exactly the list of installed fonts given by such a system API
-can expose additional entropy bits, and use cases we want to enable
+can expose additional data that may be used for fingerprinting, and use cases we want to enable
 are not assisted by retaining this ordering.
 As a result, this API requires that the returned data be sorted before being returned.
 
@@ -288,7 +288,7 @@ Access to a user's fonts is fully under their control and will not be allowed un
 
 ### Transparency
 
-The fact whether a site has been granted access to the user's local fonts will be visible in the *site information* sheet.
+Whether a site has been granted access to the user's local fonts will be visible in the *site information* sheet.
 
 ### Permission persistence
 
