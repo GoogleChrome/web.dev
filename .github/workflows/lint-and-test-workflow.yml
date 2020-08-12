@@ -58,7 +58,7 @@ jobs:
       # We only need to do this for markdown files because remark and textlint
       # are _really_ slow. Our other linters run fast enough that we can just
       # lint the entire project.
-      - uses: futuratrepadeira/changed-files@v3.1.0
+      - uses: futuratrepadeira/changed-files@v3.2.1
         id: files
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
