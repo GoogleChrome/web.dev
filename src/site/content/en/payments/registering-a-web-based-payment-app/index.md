@@ -80,13 +80,13 @@ A service worker is a JavaScript file you can register using
 If you have a service worker file named `service-worker.js`, you can register it
 to the visitor's browser by running the following code:
 
-<!-- <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/paymenthandler-demo?path=/public/index.js:32:1&attributionHidden=true&sidebarCollapsed=true"
-    alt="How the Glitch should look after completing step 1."
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div> -->
+<!--
+  {% Glitch {
+    id: 'paymenthandler-demo',
+    path: 'public/index.js:32:1',
+    height: 480
+  } %}
+  -->
 
 {% Label %}[payment handler] payment app's landing page{% endLabel %}
 

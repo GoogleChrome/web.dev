@@ -116,13 +116,10 @@ Once you drop the item,
 although the drop functionality is not in place,
  the source element returns to 100% opacity.
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/simple-drag-and-drop-1?path=style.css&previewSize=100"
-    title="simple-drag-and-drop-1 on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'simple-drag-and-drop-1',
+  path: 'style.css'
+} %}
 
 ## Add additional visual cues with `dragenter`, `dragover`, and `dragleave`
 
@@ -185,13 +182,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 ```
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/simple-drag-drop2?path=dnd.js&previewSize=100"
-    title="simple-drag-drop2 on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'simple-drag-drop2',
+  path: 'dnd.js'
+} %}
 
 There are a couple of points worth covering in this code:
 
@@ -274,13 +268,10 @@ function handleDrop(e) {
 You can see the result in the following demo.
 Drag and release the A column on top of the B column and notice how they change places:
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/simple-drag-drop?path=dnd.js&previewSize=100"
-    title="simple-drag-drop on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'simple-drag-drop',
+  path: 'dnd.js'
+} %}
 
 ## More dragging properties
 

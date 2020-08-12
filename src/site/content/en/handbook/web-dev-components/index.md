@@ -660,24 +660,34 @@ at.
 
 ### Embed a Glitch
 
+{% raw %}
+
 ```html
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&attributionHidden=true"
-    alt="tabindex-zero on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'tabindex-zero',
+  path: 'index.html',
+  previewSize: 0,
+  allow: []
+} %}
+
+<!-- Or just the Glitch ID -->
+
+{% Glitch 'tabindex-zero' %}
 ```
 
-It's OK to adjust the `height` on the `<div class="glitch-embed-wrap">`
-element if you need more or less space.
+{% endraw %}
 
-Query parameters for modifying how the embed is presented:
+It's OK to adjust the `height` of the Glitch wrapper element
+if you need more or less space.
 
-* `previewSize=100` displays the app, rather than the source code.
-* `path=index.html` lets you specify which source code file to show.
-* `sidebarCollapsed=true` collapses the file navigator sidebar.
+Shortcode object fields allow for modifying how the embed is presented:
+
+* {`string | string[]`} `allow?` List of feature policies of an IFrame either as an array of strings, or as a `;` separated list. By default the following policies are enabled:
+  * `'camera', 'clipboard', 'clipboard-read', 'clipboard-write', 'geolocation', 'encrypted-media', 'microphone', 'midi', 'vr'`
+* {`string`} `id` ID of Glitch project.
+* {`string`} `path?` Lets you specify which source code file to show.
+* {`number`} `previewSize?` Defines what percentage of the embed should be dedicated to the preview, default is 100.
+* {`number`} `height?` Height, in pixels, of the Glitch wrapper element.
 
 <!-- https://support.glitch.com/t/more-flexible-embeds/2925 -->
 
@@ -687,13 +697,10 @@ Query parameters for modifying how the embed is presented:
   Glitch iframe placeholder
 </div>
 {% else %}
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&attributionHidden=true"
-    alt="tabindex-zero on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'tabindex-zero',
+  path: 'index.html'
+} %}
 {% endif %}
 
 ## Images

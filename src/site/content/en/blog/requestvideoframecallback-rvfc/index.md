@@ -182,14 +182,11 @@ const updateCanvas = (now, metadata) => {
 video.requestVideoFrameCallback(updateCanvas);
 ```
 
-<div class="glitch-embed-wrap" style="height: 1200px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/requestvideoframecallback?path=script.js&previewSize=100"
-    title="requestvideoframecallback on Glitch"
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'requestvideoframecallback',
+  path: 'script.js',
+  height: 1200
+} %}
 
 ## Conclusions
 

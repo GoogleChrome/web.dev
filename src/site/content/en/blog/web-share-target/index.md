@@ -5,6 +5,7 @@ authors:
   - petelepage
   - joemedley
 date: 2019-11-08
+updated: 2020-08-05
 hero: hero.png
 alt: An illustration demonstrating that native apps can now share content with web apps.
 description: |
@@ -69,6 +70,7 @@ app manifest][manifest]. This tells the operating system to include your app as
 an option in the intent chooser. What you add to the manifest controls the data
 that your app will accept. There are three common scenarios for the `share_target`
 entry:
+
 - Accepting basic information
 - Accepting application changes
 - Accepting files
@@ -137,7 +139,9 @@ and that `enctype` be present. Additionally, `enctype` must be
 You must also add a `files` array defining the types of files your app accepts. The
 array elements are entries with two members: a `name` field and an `accept`
 field. The `accept` field takes a MIME type, a file extension, or an array
-containing both.
+containing both. It's best to provide an array that includes both a
+MIME type and a file extension since operating systems differ in which
+they prefer.
 
 ```json/5,10-19
 {

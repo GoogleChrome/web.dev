@@ -52,13 +52,11 @@ Try out request streams in Chrome 85 by flipping an experimental flag:
 
 ## Demo {: #demo }
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/fetch-request-stream?path=index.html&attributionHidden=true"
-    alt="fetch-request-stream on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'fetch-request-stream',
+  path: 'index.html',
+  height: 480
+} %}
 
 This shows how you can stream data from the user to the server, and send data
 back that can be processed in real time.

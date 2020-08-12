@@ -18,13 +18,11 @@ tags:
 
 Modern CSS layouts enable developers to write really meaningful and robust styling rules with just a few keystrokes. The talk above and this subsequent post examine 10 powerful lines of CSS that do some serious heavy lifting.
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/1linelayouts?path=README.md&previewSize=100"
-    alt="1 Line Layouts"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: '1linelayouts',
+  path: 'README.md',
+  height: 480
+} %}
 
 To follow along or play with these demos on your own, check out the Glitch embed above, or visit [1linelayouts.glitch.me](https://1linelayouts.glitch.me).
 

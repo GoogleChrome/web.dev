@@ -137,7 +137,7 @@ module.exports = (type, listStyle = 'ul') => {
     case 'devtools-memory':
     case 'devtools-application':
     case 'devtools-security':
-    case 'devtools-audits':
+    case 'devtools-lighthouse':
       instruction = html`${shared.devtools}`;
       substitution = type.substring('devtools-'.length);
       if (substitution) {

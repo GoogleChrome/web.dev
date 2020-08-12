@@ -5,12 +5,11 @@ authors:
   - petelepage
 description: Access to the user's contacts has been a feature of native apps since (almost) the dawn of time. The Contact Picker API is an on-demand API  that allows users to select an entry or entries from their contact list and share limited details of the selected contact(s) with a website. It allows users to share only what they want, when they want, and makes it easier for users to reach and connect with their friends and family.
 date: 2019-08-07
-updated: 2020-06-04
+updated: 2020-07-30
 tags:
   - blog
   - capabilities
   - contacts
-  - chrome80
 hero: hero.jpg
 alt: Telephone on yellow background.
 ---
@@ -39,7 +38,7 @@ Access to the user's contacts on a mobile device has been a feature of native ap
 I hear from web developers, and is often the key reason they build a native
 app.
 
-Available by default in Chrome 80, the [Contact Picker API][spec] is an
+Available in Chrome 80 on Android, the [Contact Picker API][spec] is an
 on-demand API that allows users to select entries from their contact list and
 share limited details of the selected entries with a website. It allows users to
 share only what they want, when they want, and makes it easier for users to
@@ -67,7 +66,7 @@ which friends have already joined.
 | 2. Create initial draft of specification   | [Complete][spec]             |
 | 3. Gather feedback & iterate on design     | [Complete][spec]             |
 | 4. Origin trial                            | Complete                     |
-| **5. Launch**                              | **Chrome 80**<br>Available on mobile only.        |
+| **5. Launch**                              | **Chrome 80**<br>Available on Android only.        |
 
 </div>
 
@@ -119,28 +118,24 @@ try {
 }
 ```
 
+{% Aside 'caution' %}
+  Support for `'address'` and `'icon'` requires Chrome 84 or later.
+{% endAside %}
+
 The Contacts Picker API can only be called from a [secure][secure-contexts],
 top-level browsing context, and like other powerful APIs, it requires a
 user gesture.
 
 ### Detecting available properties
 
-{% Aside 'caution' %}
-  While the Contacts Picker API was launched in Chrome 80 on Android, the newly added
-  properties `'address'` and `'icon'` require registering for an [origin
-  trial](https://developers.chrome.com/origintrials/#/view_trial/-6951306024846360575)
-  until at least Chrome 83.
-{% endAside %}
+To detect which properties are available, call `navigator.contacts.getProperties()`.
+It returns a promise that resolves with an array of strings indicating which
+properties are available. For example: `['name', 'email', 'tel', 'address']`.
+You can pass these values to `select()`.
 
-Not all properties are available in every circumstances. The already mentioned
-origin trial means some versions of Android lack `'address'` and `'icon'`. In
-the future, other platforms and contact sources may be restrictive about which
-properties can be shared.
-
-To detect available properties, call `navigator.contacts.getProperties()`. This
-method returns a promise that resolves with an array of property strings,
-specifically any of `'name'`, `'email'`, `'tel'`, `'address'`, or `'icon'`.
-These are exactly the values you would pass to `select()`.
+Remember, properties are not always available, and new properties may be
+added. In the future, other platforms and contact sources may restrict 
+which properties are be shared.
 
 ### Handling the results
 

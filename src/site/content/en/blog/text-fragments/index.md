@@ -8,7 +8,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2020-06-17
-updated: 2020-07-28
+updated: 2020-08-07
 hero: hero.jpg
 alt:
 description: |
@@ -117,8 +117,17 @@ the feature. See [Related links](#related-links) for pointers to the Safari and 
 Note that these links currently do not work when served across
 [client-side redirects](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections#Alternative_way_of_specifying_redirections)
 that some common services like Twitter use.
+You can follow [crbug.com/1055455](https://crbug.com/1055455) for progress on this issue.
 Regular [HTTP redirects](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections#Principle)
 work fine.
+
+For [security](#security) reasons, the feature requires links to be opened in a
+[`noopener`](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noopener)
+context.
+Therefore, make sure to include
+[`rel="noopener"`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-rel)
+in your `<a>` anchor markup or add [`noopener`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#noopener)
+to your `Window.open()` list of window functionality features.
 
 ### `textStart`
 
@@ -336,7 +345,7 @@ In the concrete case, `text=` is therefore called a *text directive*.
 
 ### Feature detection
 
-To detect support, test for the read-only `fragmentDirective` property on `Location.prototype`.
+To detect support, test for the read-only `fragmentDirective` property on `document`.
 The fragment directive is a mechanism for URLs to specify instructions
 directed to the browser rather than the document.
 It is meant to avoid direct interaction with author script,
@@ -345,14 +354,15 @@ of introducing breaking changes to existing content.
 One potential example of such future additions could be translation hints.
 
 ```js
-if ('fragmentDirective' in Location.prototype) {
+if ('fragmentDirective' in document) {
   // Text Fragments is supported.
 }
 ```
 
-{% Aside 'caution' %}
-  This property might move to `document.fragmentDirective` in the future.
-  For details see [https://crbug.com/1057795](https://crbug.com/1057795).
+{% Aside %}
+  In the initial version, the `fragmentDirective` property was defined on
+  `Location.prototype`. For details on this change, see
+  [WICG/scroll-to-text-fragment#130](https://github.com/WICG/scroll-to-text-fragment/issues/130).
 {% endAside %}
 
 Feature detection is mainly intended for cases where links are dynamically generated

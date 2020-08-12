@@ -70,7 +70,7 @@ Once the setup process completes successfully, start your application by running
 
 ```bash
 cd my-app
-ng start
+ng serve
 ```
 
 You should now be able to access your application at [http://localhost:4200](http://localhost:4200).

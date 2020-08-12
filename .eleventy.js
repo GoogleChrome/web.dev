@@ -15,6 +15,7 @@
  */
 
 const path = require('path');
+const chalk = require('chalk');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
@@ -40,7 +41,9 @@ const CompareCaption = require(`./${componentsDir}/CompareCaption`);
 const Details = require(`./${componentsDir}/Details`);
 const DetailsSummary = require(`./${componentsDir}/DetailsSummary`);
 const EventTable = require(`./${componentsDir}/EventTable`);
+const Glitch = require(`./${componentsDir}/Glitch`);
 const Hero = require(`./${componentsDir}/Hero`);
+const IFrame = require(`./${componentsDir}/IFrame`);
 const Instruction = require(`./${componentsDir}/Instruction`);
 const Label = require(`./${componentsDir}/Label`);
 const Meta = require(`./${componentsDir}/Meta`);
@@ -89,6 +92,7 @@ const {
 } = require(`./${transformsDir}/service-worker-partials`);
 
 module.exports = function (config) {
+  console.log(chalk.black.bgGreen('Eleventy is building, please wait…'));
   const isProd = process.env.ELEVENTY_ENV === 'prod';
 
   // ----------------------------------------------------------------------------
@@ -210,7 +214,9 @@ module.exports = function (config) {
   config.addPairedShortcode('CompareCaption', CompareCaption);
   config.addPairedShortcode('Details', Details);
   config.addPairedShortcode('DetailsSummary', DetailsSummary);
+  config.addShortcode('Glitch', Glitch);
   config.addShortcode('Hero', Hero);
+  config.addShortcode('IFrame', IFrame);
   config.addShortcode('Instruction', Instruction);
   config.addPairedShortcode('Label', Label);
   config.addShortcode('Meta', Meta);

@@ -22,14 +22,10 @@ In this guide, you'll learn how to defer non-critical CSS with the goal of optim
 
 The following example contains an accordion with three hidden paragraphs of text, each of which is styled with a different class:
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    allow="geolocation; microphone; camera; midi; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/defer-css-unoptimized?path=index.html&previewSize=100&attributionHidden=true"
-    alt="defer-css-unoptimized on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'defer-css-unoptimized',
+  path: 'index.html'
+} %}
 
 This page requests a CSS file with eight classes, but not all of them are
 necessary to render the "visible" content.
@@ -138,14 +134,11 @@ can encapsulate this behavior and work well across browsers.
 The [resulting page](https://defer-css-optimized.glitch.me/) looks exactly like the previous version, even when most styles load asynchronously. Here's how the inlined styles and asynchronous request to the CSS file look like in the HTML file:
 
 <!-- Copy and Paste Me -->
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    allow="geolocation; microphone; camera; midi; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/defer-css-optimized?path=index.html&previewSize=0&attributionHidden=true"
-    alt="defer-css-optimized on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'defer-css-optimized',
+  path: 'index.html',
+  previewSize: 0
+} %}
 
 ## Monitor
 

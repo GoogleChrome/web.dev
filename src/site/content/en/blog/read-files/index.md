@@ -56,12 +56,10 @@ access the list of files from `event.target.files`, which is a
 This example lets a user select multiple files using their operating system's
 built-in file selection UI and then logs each selected file to the console.
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe src="https://glitch.com/embed/#!/embed/input-type-file?previewSize=100"
-          alt="How to select local files and read file metadata with JavaScript."
-          style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'input-type-file',
+  height: 480
+} %}
 
 #### Limit the types of files user can select {: #accept }
 
@@ -217,12 +215,10 @@ data URL, and uses that data URL to display the image in an `img` element.
 Check out the [`read-image-file`][glitch-read-image] Glitch to see how to
 verify that the user has selected an image file.
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe src="https://glitch.com/embed/#!/embed/read-image-file?previewSize=100"
-          alt="How to read the content of an image file in JavaScript."
-          style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'read-image-file',
+  height: 480
+} %}
 
 ### Monitor the progress of a file read {: #monitor-progress }
 
