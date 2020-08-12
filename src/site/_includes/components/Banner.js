@@ -15,9 +15,7 @@
  */
 
 const {html} = require('common-tags');
-const md = require('markdown-it')({
-  html: true, // Allow full links, e.g. with _target=blank.
-});
+const md = require('markdown-it')();
 
 module.exports = (content, type = 'info', location) => {
   const locationOverride = location === 'body' ? 'w-banner--body' : '';
