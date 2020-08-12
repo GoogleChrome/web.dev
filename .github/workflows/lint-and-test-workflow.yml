@@ -74,17 +74,12 @@ jobs:
           MARKDOWN_INPUT: '${{ steps.files.outputs.files_created }} ${{ steps.files.outputs.files_updated }}'
         run: npm run lint:md
 
-      # Run textlint using Orthograph-err
-      # https://github.com/place-labs/orthograph-err
-      # This supports additional plugins and will annotate the PR with any
-      # issues it detects.
-      - name: Lint Text
+      - name: Lint Language
         if: ${{ steps.filter.outputs.md == 'true' }}
-        uses: place-labs/orthograph-err@v1.0.1
+        uses: brown-ccv/alex-recommends@v1.0.0
         with:
-          # File path with the content to review.
-          # Default: {,!(node_modules)/**/}*.md
-          path: '${{ steps.files.outputs.files_created }} ${{ steps.files.outputs.files_updated }}'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          profanity_sureness: 2,
 
       - name: Lint JavaScript
         if: ${{ steps.filter.outputs.js == 'true' || steps.filter.outputs.json == 'true' }}
