@@ -60,9 +60,9 @@ jobs:
       # lint the entire project.
       - uses: futuratrepadeira/changed-files@v3.1.0
         id: files
-          with:
-            repo-token: ${{ secrets.GITHUB_TOKEN }}
-            pattern: '^.*\.md$'
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          pattern: '^.*\.md$'
         if: ${{ steps.filter.outputs.md == 'true' }}
 
       # Use the filter to check if files with a specific file type were changed
