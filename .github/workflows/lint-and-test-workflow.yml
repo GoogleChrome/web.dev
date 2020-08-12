@@ -48,30 +48,11 @@ jobs:
             njk:
               - '**/*.njk'
       
-      # If markdown files were changed in this PR, get a space separated list
-      # of their file paths. We can pass this list to our linters to speed
-      # things up.
-      # Unfortunately the paths-filter Action from the previous step doesn't
-      # contain this information so we need to use this additional action to get
-      # that information.
-      # https://github.com/dorny/paths-filter/issues/20
-      # We only need to do this for markdown files because remark and textlint
-      # are _really_ slow. Our other linters run fast enough that we can just
-      # lint the entire project.
-      - uses: futuratrepadeira/changed-files@v3.2.1
-        id: files
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          pattern: '^.*\.md$'
-        if: ${{ steps.filter.outputs.md == 'true' }}
-
       # Use the filter to check if files with a specific file type were changed
       # in the PR. If they were, run the relevant linters. Otherwise, skip.
 
       - name: Lint Markdown
         if: ${{ steps.filter.outputs.md == 'true' }}
-        env:
-          MARKDOWN_INPUT: '${{ steps.files.outputs.files_created }} ${{ steps.files.outputs.files_updated }}'
         run: npm run lint:md
 
       - name: Lint Language
