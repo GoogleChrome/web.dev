@@ -60,7 +60,7 @@ jobs:
         uses: brown-ccv/alex-recommends@v1.0.0
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          profanity_sureness: 2,
+          profanity_sureness: 2
 
       - name: Lint JavaScript
         if: ${{ steps.filter.outputs.js == 'true' || steps.filter.outputs.json == 'true' }}
