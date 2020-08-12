@@ -36,17 +36,17 @@ jobs:
         with:
           filters: |
             md:
-              - '*.md'
+              - '**/*.md'
             js:
-              - '*.js'
+              - '**/*.js'
             json:
-              - '*.json'
+              - '**/*.json'
             yml:
-              - '*.yml'
+              - '**/*.yml'
             scss:
-              - '*.scss'
+              - '**/*.scss'
             njk:
-              - '*.njk'
+              - '**/*.njk'
       
       # If markdown files were changed in this PR, get a space separated list
       # of their file paths. We can pass this list to our linters to speed
