@@ -81,10 +81,10 @@ jobs:
       - name: Lint Text
         if: ${{ steps.filter.outputs.md == 'true' }}
         uses: place-labs/orthograph-err@v1
-          with:
-            # File path with the content to review.
-            # Default: {,!(node_modules)/**/}*.md
-            path: '${{ steps.files.outputs.files_created }} ${{ steps.files.outputs.files_updated }}'
+        with:
+          # File path with the content to review.
+          # Default: {,!(node_modules)/**/}*.md
+          path: '${{ steps.files.outputs.files_created }} ${{ steps.files.outputs.files_updated }}'
 
       - name: Lint JavaScript
         if: ${{ steps.filter.outputs.js == 'true' || steps.filter.outputs.json == 'true' }}
