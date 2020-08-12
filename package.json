@@ -76,7 +76,7 @@
     "@types/node": "^13.11.1",
     "ansi-colors": "^3.2.4",
     "autoprefixer": "^9.6.1",
-    "c8": "^7.1.0",
+    "c8": "^7.3.0",
     "chalk": "^2.4.2",
     "cheerio": "^1.0.0-rc.3",
     "chokidar-cli": "^1.2.2",
