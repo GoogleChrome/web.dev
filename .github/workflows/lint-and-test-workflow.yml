@@ -80,7 +80,7 @@ jobs:
       # issues it detects.
       - name: Lint Text
         if: ${{ steps.filter.outputs.md == 'true' }}
-        uses: place-labs/orthograph-err@v1
+        uses: place-labs/orthograph-err@v1.0.1
         with:
           # File path with the content to review.
           # Default: {,!(node_modules)/**/}*.md
