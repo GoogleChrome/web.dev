@@ -13,7 +13,7 @@ description: >
   The Local Fonts API enumerates the user's installed local
   fonts and provides low-level access to the various
   TrueType/OpenType tables.
-date: 2020-08-03
+date: 2020-08-12
 # updated:
 hero: hero.jpg
 alt: Page of a font book.
