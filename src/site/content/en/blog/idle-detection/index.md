@@ -123,8 +123,8 @@ if (state !== 'granted') {
 {% Aside %}
   Initially, idle detection was gated behind the
   notifications permission.
-  While many, however, not all, use cases of this API
-  involve notifications, we have decided to gate it
+  While many, but not all, use cases of this API
+  involve notifications, the Idle Detection spec editors have decided to gate it
   behind a dedicated idle detection permission.
 {% endAside %}
 
