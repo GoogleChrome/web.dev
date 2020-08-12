@@ -155,7 +155,7 @@ const { usbProductId, usbVendorId } = port.getInfo();
 
 Calling `requestPort()` prompts the user to select a device and returns a
 `SerialPort` object. Once you have a `SerialPort` object, calling `port.open()`
-with the desired baud rate will open the serial port. The `baudrate` dictionary
+with the desired baud rate will open the serial port. The `baudRate` dictionary
 member specifies how fast data is sent over a serial line. It is expressed in
 units of bits-per-second (bps). Check your device's documentation for the
 correct value as all the data you send and receive will be gibberish if this is
@@ -168,19 +168,18 @@ emulation.
 const port = await navigator.serial.requestPort();
 
 // Wait for the serial port to open.
-await port.open({ baudrate: 9600 });
+await port.open({ baudRate: 9600 });
 ```
  
 You can also specify any of the options below when opening a serial port. These
 options are optional and have convenient [default values].
 
-- `databits`: The number of data bits per frame (either 7 or 8).
-- `stopbits`: The number of stop bits at the end of a frame (either 1 or 2).
+- `dataBits`: The number of data bits per frame (either 7 or 8).
+- `stopBits`: The number of stop bits at the end of a frame (either 1 or 2).
 - `parity`: The parity mode (either `"none"`, `"even"` or `"odd"`).
-- `buffersize`: The size of the read and write buffers that should be created
+- `bufferSize`: The size of the read and write buffers that should be created
   (must be less than 16MB).
--  `rtscts`: Whether hardware flow control will be enabled (either true of
-   false).
+- `flowControl`: The flow control mode (either `"none"` or `"hardware"`).
 
 ### Read from a serial port {: #read-port }
 
@@ -407,21 +406,21 @@ calling `port.setSignals()` and `port.getSignals()`. See usage examples below.
 
 ```js
 // Turn off Serial Break signal.
-await port.setSignals({ brk: false });
+await port.setSignals({ break: false });
 
 // Turn on Data Terminal Ready (DTR) signal.
-await port.setSignals({ dtr: true });
+await port.setSignals({ dataTerminalReady: true });
 
 // Turn off Request To Send (RTS) signal.
-await port.setSignals({ rts: false });
+await port.setSignals({ requestToSend: false });
 ```
 
 ```js
 const signals = await port.getSignals();
-console.log(`Clear To Send:       ${signals.cts}`); // false
-console.log(`Data Carrier Detect: ${signals.dcd}`); // false
-console.log(`Data Set Ready:      ${signals.dsr}`); // false
-console.log(`Ring Indicator:      ${signals.ri}`);  // true
+console.log(`Clear To Send:       ${signals.clearToSend}`);
+console.log(`Data Carrier Detect: ${signals.dataCarrierDetect}`);
+console.log(`Data Set Ready:      ${signals.dataSetReady}`);
+console.log(`Ring Indicator:      ${signals.ringIndicator}`);
 ```
 
 ### Transforming streams {: #transforming-streams }
