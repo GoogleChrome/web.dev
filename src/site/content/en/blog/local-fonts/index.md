@@ -288,7 +288,8 @@ Access to a user's fonts is fully under their control and will not be allowed un
 
 ### Transparency
 
-Whether a site has been granted access to the user's local fonts will be visible in the *site information* sheet.
+Whether a site has been granted access to the user's local fonts will be visible in the
+[site information sheet](https://support.google.com/chrome/answer/114662?hl=en&co=GENIE.Platform=Desktop).
 
 ### Permission persistence
 
