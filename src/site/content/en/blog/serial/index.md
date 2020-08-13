@@ -84,7 +84,8 @@ communication between the website and the device that it is controlling.
 
 The Serial API is available on all desktop platforms (Chrome OS, Linux, macOS,
 and Windows) as an origin trial in Chrome 80. The origin trial is expected to
-end in Chrome 85, September 2020. It can also be enabled using a flag.
+end just before Chrome 89 moves to stable in February 2021. It can also be
+enabled using a flag.
 
 {% include 'content/origin-trials.njk' %}
 
@@ -312,8 +313,8 @@ await port.close();
 However, when continuously reading data from a serial device using a loop,
 `port.readable` will always be locked until it encounters an error. In this
 case, calling `reader.cancel()` will force `reader.read()` to resolve
-immediately with `{ value: undefined, done: true }` and therefore allowing loop
-to call `reader.releaseLock()`.
+immediately with `{ value: undefined, done: true }` and therefore allowing the
+loop to call `reader.releaseLock()`.
 
 ```js/15-18
 // Without transform streams.
@@ -397,7 +398,7 @@ navigator.serial.addEventListener("disconnect", (event) => {
 
 After establishing the serial port connection, you can explicitly query and set
 signals exposed by the serial port for device detection and flow control. These
-signals are defined as boolean values. For example, some devices like Arduino
+signals are defined as boolean values. For example, some devices such as Arduino
 will enter a programming mode if the Data Terminal Ready (DTR) signal is
 toggled.
 
@@ -440,7 +441,7 @@ functioning widget.
 
 <figure class="w-figure">
   <img src="./aeroplane-factory.jpg" alt="Photo of an aeroplane factory">
-  <figcaption class="w-figcaption">World War 2 Castle Bromwich Aeroplane Factory</figcaption>
+  <figcaption class="w-figcaption">World War II Castle Bromwich Aeroplane Factory</figcaption>
 </figure>
 
 For example, consider how to create a transform stream class that consumes a
@@ -493,8 +494,8 @@ to the console for inspection.
 ```js
 const [appReadable, devReadable] = port.readable.tee();
 
-// TODO: Update UI with incoming data from appReadable.
-// TODO: Log incoming data in JS console for inspection from devReadable.
+// You may want to update UI with incoming data from appReadable
+// and log incoming data in JS console for inspection from devReadable.
 ```
 
 ## Codelab {: #codelab }
@@ -511,7 +512,7 @@ been claimed by a built-in device driver.
 
 ## Security and privacy {: #security-privacy }
 
-The Chrome team has designed and implemented the Serial API using the core
+The spec authors has designed and implemented the Serial API using the core
 principles defined in [Controlling Access to Powerful Web Platform Features],
 including user control, transparency, and ergonomics. The ability to use this
 API is primarily gated by a permission model that grants access to only a single
