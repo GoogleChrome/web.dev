@@ -1,8 +1,10 @@
 name: Lint and test
 
-# By default, runs when a pull_request's activity type is opened, synchronize,
-# or reopened
-on: pull_request
+# By default, runs when a pull request is opened, synchronized, or reopened.
+# We use the pull_request_target hook to enable proper permissions for
+# pull requests coming from forks.
+# https://github.blog/2020-08-03-github-actions-improvements-for-fork-and-pull-request-workflows/#improvements-for-public-repository-forks
+on: pull_request_target
 
 jobs:
   lint_and_test:
