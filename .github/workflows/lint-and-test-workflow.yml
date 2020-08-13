@@ -33,46 +33,43 @@ jobs:
       # if: ${{ steps.filter.outputs.md == 'true' }}
       # This will return true if there's a markdown file that was changed
       # in the PR.
-      - uses: dorny/paths-filter@v2.2.0
-        id: filter
-        with:
-          filters: |
-            md:
-              - '**/*.md'
-            js:
-              - '**/*.js'
-            json:
-              - '**/*.json'
-            yml:
-              - '**/*.yml'
-            scss:
-              - '**/*.scss'
-            njk:
-              - '**/*.njk'
+      
+      # FIXME: See https://github.com/GoogleChrome/web.dev/issues/3705#issuecomment-673654107
+      # - uses: dorny/paths-filter@v2.2.0
+      #   id: filter
+      #   with:
+      #     filters: |
+      #       md:
+      #         - '**/*.md'
+      #       js:
+      #         - '**/*.js'
+      #       json:
+      #         - '**/*.json'
+      #       yml:
+      #         - '**/*.yml'
+      #       scss:
+      #         - '**/*.scss'
+      #       njk:
+      #         - '**/*.njk'
       
       # Use the filter to check if files with a specific file type were changed
       # in the PR. If they were, run the relevant linters. Otherwise, skip.
 
       - name: Lint Markdown
-        if: ${{ steps.filter.outputs.md == 'true' }}
         run: npm run lint:md
 
       - name: Lint Language
-        if: ${{ steps.filter.outputs.md == 'true' }}
         uses: brown-ccv/alex-recommends@v1.0.0
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           profanity_sureness: 2
 
       - name: Lint JavaScript
-        if: ${{ steps.filter.outputs.js == 'true' || steps.filter.outputs.json == 'true' }}
         run: npm run lint:js
       
       - name: Lint SCSS
-        if: ${{ steps.filter.outputs.scss == 'true' }}
         run: npm run lint:scss
 
       # Only run tests if the PR touches behavior related files.
       - name: Test
-        if: ${{ steps.filter.outputs.js == 'true' || steps.filter.outputs.json == 'true' || steps.filter.outputs.yml == 'true' || steps.filter.outputs.njk == 'true'}}
         run: npm run test
