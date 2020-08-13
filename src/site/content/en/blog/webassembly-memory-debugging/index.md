@@ -380,7 +380,7 @@ doesn't free the memory allocated by our earlier `jpeg_mem_dest` call—it only 
 compression structure, even though that compression structure already knows about our memory
 destination… Sigh.
 
-We can easily fix this by freeing the data manually in the `free_result` function:
+We can fix this by freeing the data manually in the `free_result` function:
 
 ```cpp/3/
 void free_result() {
@@ -393,7 +393,7 @@ void free_result() {
 I could keep hunting those memory bugs one by one, but I think by now it's clear enough that the
 current approach to memory management leads to some nasty systematic issues.
 
-Some of them can be caught by the sanitizer right away. Others require special tricks to be caught.
+Some of them can be caught by the sanitizer right away. Others require intricate tricks to be caught.
 Finally, there are issues like in the beginning of the post that, as we can see from the logs,
 aren't caught by the sanitizer at all. The reason is that the actual mis-use happens on the
 JavaScript side, into which the sanitizer has no visibility. Those issues will reveal themselves
