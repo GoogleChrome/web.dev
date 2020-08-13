@@ -11,6 +11,10 @@ description: |
 tags:
   - blog
   - accessibility
+hero: hero.jpg
+alt: >
+  Man lying on the floor covered in post-it notes with empty checkboxes and messages 
+  such as off line, overthink, $, chill, take a break, and zzzz. 
 ---
 
 ## What is ARIA?
@@ -56,7 +60,7 @@ other widgets! FWIW, the
 [MacGyver's seven most used things](https://www.cbs.com/shows/macgyver/news/1005839/the-notorious-tools-of-macgyver-s-trade/)
 are Swiss Army knives, gum, shoe strings, matches, paper clips, birthday candles, and duct tape. He
 uses them to make bombs and other things that aren't just laying around. This is pretty similar to a
-web author who needs to make a menubar. Menubars are so useful you would think they would be part of
+web author who needs to make a menu bar. Menu bars are so useful you would think they would be part of
 HTML, but they aren't. Oh well! You didn't think authors would be happy with links and buttons did
 you? So the author will cobble one together using their favorite tools: divs, images, style, click
 handlers, keypress handlers, spit, and ARIA. 
@@ -67,17 +71,17 @@ control to point to an error message alert that relates to some invalid input. O
 indicate that a textbox is for searching. These little tweaks can make ordinary websites more usable
 with a screen reader.
 
-## Menubar example
+## menu bar example
 
 ### Supporting mouse clicker people
 
-Let's make a menubar together. We show a bunch of items in generic box elements called divs. Any
+Let's make a menu bar together. We show a bunch of items in generic box elements called divs. Any
 time our user clicks on a div, it executes the corresponding command. Cool, it works for mouse
 clicker people! 
 
 Next we make it look pretty. We use CSS, i.e. styles, lining things up nicely and putting visual
 outlines around them. We make it look enough like other menu bars that sighties intuitively know
-that it's a menubar and how to use it. Our menu bar even uses a different background color on any
+that it's a menu bar and how to use it. Our menu bar even uses a different background color on any
 item that the mouse is over, giving the user some helpful visual feedback.
 
 Some menu items are parents. They spawn child submenus. Whenever the user hovers on one of these we
@@ -87,7 +91,7 @@ This, of course, is all pretty inaccessible, as is the usual case for many thing
 largely because the HTML standards wizards didn't add everything a web author needs. And even if
 they did, web authors would always want to invent their own special version anyway.
 
-### Making our menubar keyboard accessible
+### Making our menu bar keyboard accessible
 
 As a first step toward accessibility, let's add keyboard accessibility. This part only uses HTML,
 and not ARIA. Remember that ARIA does not affect core aspects such as appearance, mouse, or
@@ -97,7 +101,7 @@ Just like a web page can respond to the mouse, it can also respond to the keyboa
 will listen to all keystrokes that occur and decide if the keypress is useful. If not, it throws it
 back to the page like a fish that's too small to eat. Our rules are something like:
 
-+   If the user presses an arrow key, let's look at our own internal menubar blueprints and
++   If the user presses an arrow key, let's look at our own internal menu bar blueprints and
     decide what the new active menu item should be. We will clear any current highlights and
     highlight the new menu item so the sighted user visually knows where they are. The web page
     should then call `event.preventDefault()` to prevent the browser from performing the
@@ -105,20 +109,20 @@ back to the page like a fish that's too small to eat. Our rules are something li
 +   If the user presses the <kbd>Enter</kbd> key, we can treat it just like a click, and perform
     the appropriate action (or even open another menu).
 +   If the user presses a key that should do something else, don't eat that!
-    Throw it back to the page as nature intended. For example, our menubar
+    Throw it back to the page as nature intended. For example, our menu bar
     doesn't need the <kbd>Tab</kbd> key, so throw it back! This is hard to get
-    right, and authors often mess it up. For example, the menubar needs arrow
+    right, and authors often mess it up. For example, the menu bar needs arrow
     keys, but not <kbd>Alt</kbd>+<kbd>Arrow</kbd> or
     <kbd>Command</kbd>+</kbd>Arrow</kbd>. Those are shortcuts for moving to the
     previous/next page in the web history of your browser tab. If the author
-    isn't careful, the menubar will eat those. This kind of bug happens a lot,
+    isn't careful, the menu bar will eat those. This kind of bug happens a lot,
     and we haven't even started with ARIA yet!
 
-### Screen reader access to our menubar
+### Screen reader access to our menu bar
 
 Our menu bar was created with duct tape and divs. As a result, a screen reader has no idea what any
 of it is. The background color for the active item is just a color. The menu item divs are just
-plain objects with no particular meaning. Consequently, a user of our menubar doesn't get any
+plain objects with no particular meaning. Consequently, a user of our menu bar doesn't get any
 instructions about what keys to press or what item they're on.
 
 But that's no fair! The menu bar acts just fine for the sighted user. 
@@ -132,15 +136,20 @@ the currently active menuitem, being careful to update it whenever it changes. F
 `aria-activedescendant="settings-menuitem"`. This little white lie causes the screen reader to
 consider our ARIA active item as the focus, which is read aloud or shown on a Braille display. 
 
-A word on the _ancestor_, _parent_, and _descendant_ terminology. The term descendant refers to the
+{% Details %}
+{% DetailsSummary %}
+Explanation of _ancestor_, _parent_, and _descendant_
+{% endDetailsSummary %}
+The term descendant refers to the
 fact that an item is contained somewhere inside of another. The opposite term is ancestor, which is
 to say an item is contained by ancestors. For the next container up/down, these may use the more
 specific terms parent/child. For example, imagine a document with a paragraph that has a link
 inside. The link's parent is a paragraph, but it also has the document as an ancestor. 
 Conversely, the document may have many paragraph children, each with links. The links are all
 descendants of the grandparent document.
+{% endDetails %}
 
-Back to `aria-activedescendant`. By using it to point from the focused menubar to a specific menu
+Back to `aria-activedescendant`. By using it to point from the focused menu bar to a specific menu
 item, the screen reader now knows where the user has moved, but nothing else about the object. What
 is this div thing anyway? That's where the role attribute comes in. We use `role="menubar"` on the
 containing element for the entire thing, then we use `role="menu"` on groups of items, and
@@ -193,7 +202,7 @@ most of them before publishing.
 After all, unless the author is an experienced screen reader user, something is going to go wrong in
 the ARIA. In our menu bar example, the author could think the "option" role was to be used when "menuitem"
 was correct. They could forget to use `aria-expanded`, forget to set and clear
-`aria-activedescendant` at the right times, or forget to have a menubar containing the other menus.
+`aria-activedescendant` at the right times, or forget to have a menu bar containing the other menus.
 And what about menu item counts? Usually menu items are presented by screen readers with something
 like "item 3 of 5" so that the user knows where they are. This is generally counted automatically by
 the browser, but in some cases, and in some browser - screen reader combinations, the wrong numbers
@@ -245,7 +254,7 @@ useful for saying stuff that the screen reader cares about.
 
 Here are some common uses of ARIA.
 
-1.  Special widgets that don't exist in HTML, like a menubar, autocomplete, tree, or spreadsheet
+1.  Special widgets that don't exist in HTML, like a menu bar, autocomplete, tree, or spreadsheet
 1.  Widgets that exist in HTML, but the author invented their own anyway, possibly because they
     needed to tweak the behavior or appearance of the normal widget. For example, an HTML `<input
     type="range">` element is basically a slider, but authors want to make it look different. For
