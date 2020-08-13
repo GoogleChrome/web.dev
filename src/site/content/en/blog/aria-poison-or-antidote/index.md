@@ -35,7 +35,7 @@ use ARIA to say it's a slider at value 30 out of 100.
 
 ARIA does not affect the appearance of a web page, or the behavior for a mouse or keyboard user.
 Only users of assistive technologies will notice any difference from ARIA. Web developers can add
-any arbitrary ARIA without affecting users that aren't running an assistive technology (AT).
+any arbitrary ARIA without affecting users that aren't running an assistive technology.
 
 You read it right: ARIA doesn't actually do anything to keyboard focus or tab order. That's all done
 in HTML, sometimes tweaked with bits of JavaScript.
@@ -43,7 +43,7 @@ in HTML, sometimes tweaked with bits of JavaScript.
 ## How does ARIA work?
 
 Browsers gets asked by a screen reader or other assistive technology for information about each
-element. When ARIA is present on an element, the browser takes in the ARIA information and changes
+element. When ARIA is present on an element, the browser takes in the information and changes
 what it tells the screen reader about that element.
 
 ## Why ARIA?
@@ -53,8 +53,8 @@ Why would we ever want to lie to our users!?
 Let's say the local web store doesn't sell all the widgets we need. But, we are
 [MacGyver](https://www.cbs.com/shows/macgyver/), dammit. We can just invent our own widgets from
 other widgets! FWIW, the
-[seven most used things MacGyver makes use of](https://www.cbs.com/shows/macgyver/news/1005839/the-notorious-tools-of-macgyver-s-trade/)
-are Swiss Army knives, gum, shoe strings, matches, paper clips, birthday candles and duct tape. He
+[MacGyver's seven most used things](https://www.cbs.com/shows/macgyver/news/1005839/the-notorious-tools-of-macgyver-s-trade/)
+are Swiss Army knives, gum, shoe strings, matches, paper clips, birthday candles, and duct tape. He
 uses them to make bombs and other things that aren't just laying around. This is pretty similar to a
 web author who needs to make a menubar. Menubars are so useful you would think they would be part of
 HTML, but they aren't. Oh well! You didn't think authors would be happy with links and buttons did
@@ -90,19 +90,18 @@ they did, web authors would always want to invent their own special version anyw
 ### Making our menubar keyboard accessible
 
 As a first step toward accessibility, let's add keyboard accessibility. This part only uses HTML,
-and not ARIA. Remember that ARIA does not affect core aspects for non-AT users, such as appearance,
-mouse or keyboard.
+and not ARIA. Remember that ARIA does not affect core aspects such as appearance, mouse, or
+keyboard for users without assistive technologies.
 
 Just like a web page can respond to the mouse, it can also respond to the keyboard. Our JavaScript
 will listen to all keystrokes that occur and decide if the keypress is useful. If not, it throws it
 back to the page like a fish that's too small to eat. Our rules are something like:
 
 +   If the user presses an arrow key, let's look at our own internal menubar blueprints and
-    decide what the new active menu item should be. We will clear any current highlights and move
-    that to the new menu item, so the sighted user visually knows where they are. The web page
-    should then indicate that it ate the key, so that the arrow key doesn't do the usual default
-    thing it does in a browser (scroll the page). This is done via `event.preventDefault()` in
-    JavaScript.
+    decide what the new active menu item should be. We will clear any current highlights and
+    highlight the new menu item so the sighted user visually knows where they are. The web page
+    should then call `event.preventDefault()` to prevent the browser from performing the
+    usual action (scrolling the page, in this case).
 +   If the user presses the <kbd>Enter</kbd> key, we can treat it just like a click, and perform
     the appropriate action (or even open another menu).
 +   If the user presses a key that should do something else, don't eat that!
@@ -119,12 +118,12 @@ back to the page like a fish that's too small to eat. Our rules are something li
 
 Our menu bar was created with duct tape and divs. As a result, a screen reader has no idea what any
 of it is. The background color for the active item is just a color. The menu item divs are just
-plain objects with no particular meaning. As such, a user of our menubar doesn't get any
-instructions of what keys to press or what item they're on.
+plain objects with no particular meaning. Consequently, a user of our menubar doesn't get any
+instructions about what keys to press or what item they're on.
 
 But that's no fair! The menu bar acts just fine for the sighted user. 
 
-ARIA to the rescue. ARIA lets us pretend to the screen reader and convince it that focus is in a
+ARIA to the rescue. ARIA lets us pretend to the screen reader that focus is in a
 menu bar. If the author does everything right, our custom menu bar will look to the screen reader
 just like a menu bar in a native desktop application.
 
@@ -134,15 +133,15 @@ the currently active menuitem, being careful to update it whenever it changes. F
 consider our ARIA active item as the focus, which is read aloud or shown on a Braille display. 
 
 A word on the _ancestor_, _parent_, and _descendant_ terminology. The term descendant refers to the
-fact that an item is contained somewhere inside of another. The reverse term is ancestor, which is
+fact that an item is contained somewhere inside of another. The opposite term is ancestor, which is
 to say an item is contained by ancestors. For the next container up/down, these may use the more
 specific terms parent/child. For example, imagine a document with a paragraph that has a link
-inside. The link's parent is a paragraph, but it also has the document as an ancestor. And in
-reverse, the document may have many paragraph children, each with links. The links are all
+inside. The link's parent is a paragraph, but it also has the document as an ancestor. 
+Conversely, the document may have many paragraph children, each with links. The links are all
 descendants of the grandparent document.
 
 Back to `aria-activedescendant`. By using it to point from the focused menubar to a specific menu
-item,  the screen reader now knows where the user has moved, but nothing else about the object. What
+item, the screen reader now knows where the user has moved, but nothing else about the object. What
 is this div thing anyway? That's where the role attribute comes in. We use `role="menubar"` on the
 containing element for the entire thing, then we use `role="menu"` on groups of items, and
 `role="menuitem"` on … drumroll … the individual menu items.
@@ -153,7 +152,7 @@ doesn't know how to automatically read images, at least at this point. We can ad
 `aria-expanded="false"` on each expandable menuitem to indicate that 1) there is something that can
 be expanded, and 2) it currently is not expanded. As an added touch the author should put
 `role="none"` on the img triangle to indicate it's for prettification purposes only. This prevents
-the screen reader from saying anything annoying about the image that would be redundant at best.
+the screen reader from saying anything about the image that would be redundant at best and possibly annoying.
 
 ## Dealing with bugs
 
@@ -172,11 +171,12 @@ Examples of bugs:
     <kbd>Control</kbd>+<kbd>Tab</kbd> just navigates within their dialog, and doesn't switch tabs
     in the browser as it should. Ugh.
 +   An author creates a selection list, and implements up/down, but does not implement
-    home/end/pageup/pagedown or first letter navigation. Authors should follow known patterns.
-    Check out the [Resources](#resources) section for more info.
+    home/end/pageup/pagedown or first letter navigation. 
+    
+Authors should follow known patterns. Check out the [Resources](#resources) section for more information.
 
 For pure keyboard access issues, it's useful to also try without a screen reader, or with virtual
-browser mode off. Screen readers are not generally necessary to exhibit a keyboard bug, and keyboard
+browser mode off. Screen readers are not generally necessary to discover keyboard bugs, and keyboard
 access is actually implemented with HTML, not ARIA. After all, ARIA doesn't affect basic stuff like
 the keyboard or mouse behavior, it only lies to the screen reader about what's in the web page,
 what's currently focused, etc. 
@@ -184,20 +184,20 @@ what's currently focused, etc.
 Keyboard bugs are almost always a bug in the web content, specifically in their HTML and JavaScript,
 not in ARIA.
 
-### ARIA bugs… why are there so many?
+### ARIA bugs: why are there so many?
 
 There are many, many places where authors can get ARIA wrong, and each will lead to either complete
 breakage or subtle differences. The subtle ones are probably worse, because the author won't catch
-most of them on their own.
+most of them before publishing.
 
 After all, unless the author is an experienced screen reader user, something is going to go wrong in
-the ARIA. In our menubar, the author could think the "option" role was to be used when "menuitem"
+the ARIA. In our menu bar example, the author could think the "option" role was to be used when "menuitem"
 was correct. They could forget to use `aria-expanded`, forget to set and clear
 `aria-activedescendant` at the right times, or forget to have a menubar containing the other menus.
 And what about menu item counts? Usually menu items are presented by screen readers with something
 like "item 3 of 5" so that the user knows where they are. This is generally counted automatically by
 the browser, but in some cases, and in some browser - screen reader combinations, the wrong numbers
-might be computed, and the author needs to override these numbers with `aria-posinset` and
+might be computed, and the author would need to override these numbers with `aria-posinset` and
 `aria-setsize`.
 
 And this is just menu bars. Think of how many kinds of widgets there are. Glance at the ARIA spec or
@@ -205,9 +205,9 @@ authoring practices if you like. For each pattern, there are a dozen ways ARIA c
 ARIA relies on authors to know what they're doing. What could possibly go wrong, given that most
 authors are not screen reader users?
 
-In other words, it is 100% necessary for actual screen reader users to try ARIA widgets out before
+In other words, it is 100 percent necessary for actual screen reader users to try ARIA widgets before
 they're considered shippable. There's too much nuance. Ideally everything would be tried with
-several different browser - screen reader combinations, because of the numerous implementation
+several different browser-screen reader combinations, because of the numerous implementation
 quirks, in addition to a few incomplete implementations.
 
 ### File bug on Chrome or on web content?
@@ -217,15 +217,15 @@ what's provided by other browsers. When NVDA reads something different in the sa
 Firefox vs. Chrome, it's often our bug, since Firefox has an older, more seasoned accessibility
 mapping layer.
 
-If all the browser - screen reader combinations seem to agree, and the web content still behaves
+If all the browser-screen reader combinations seem to agree, and the web content still behaves
 badly, we will need to file a bug on the web content itself, not on the browser.
 
 ## Summary
 
-In summary, ARIA magic can be used to override anything and everything that the HTML says, or add to
-it. It can be used to do little fine changes to the accessibility presentation, or to create an
+In summary, ARIA magic can be used to override or add to anything and everything that the HTML says.
+It can be used to do little fine changes to the accessibility presentation, or to create an
 entire experience. This is why ARIA is both incredibly powerful and yet dangerous in the hands of
-our friendly local web authors that don't generally use screen readers themselves. 
+our friendly local web authors who don't generally use screen readers themselves. 
 
 ARIA is just a dumb truth override markup layer. When a screen reader asks what's happening, if ARIA
 exists, they get the ARIA version of the truth instead of the real underlying truth.
@@ -240,8 +240,8 @@ exists, they get the ARIA version of the truth instead of the real underlying tr
 
 ## Addendum 2: What is ARIA most used for?
 
-Because ARIA can be used to replace or supplement small or large truths, it's kind of a generally
-useful thing for saying stuff that the screen reader cares about. 
+Because ARIA can replace or supplement small or large truths, generally
+useful for saying stuff that the screen reader cares about. 
 
 Here are some common uses of ARIA.
 
@@ -249,8 +249,8 @@ Here are some common uses of ARIA.
 1.  Widgets that exist in HTML, but the author invented their own anyway, possibly because they
     needed to tweak the behavior or appearance of the normal widget. For example, an HTML `<input
     type="range">` element is basically a slider, but authors want to make it look different. For
-    most things, CSS can be used, but for `input type="range"`, CSS is very awkward to use. We can
-    make our own slider, and use `role="slider"` on it with `aria-valuenow` to say what the current
+    most things, CSS can be used, but for `input type="range"`, CSS is awkward. An author can
+    make their own slider, and use `role="slider"` on it with `aria-valuenow` to say what the current
     value is.
 1.  Live regions tell screen readers "in this area of the page, anything that changes is worth telling
     the user about."
@@ -262,10 +262,10 @@ Here are some common uses of ARIA.
 ## Addendum 3: What's an Accessibility API?
 
 An accessibility API is how a screen reader or other AT knows what's in the page and what's
-happening right now. Examples are MSAA, IA2 and UIA. And that's just Windows! There are two parts to
+happening right now. Examples include MSAA, IA2, and UIA. And that's just Windows! There are two parts to
 an accessibility API:
 
-+   A "tree" of objects that represents a container hierarchy. Like Russian nesting dolls,
++   A "tree" of objects that represents a container hierarchy. These are like Russian nesting dolls,
     but each doll can contain multiple other dolls. For example, a document can contain a bunch of
     paragraphs, and a paragraph can have text, images, links, boldface, etc. Each item in the
     object tree can have properties like a role (what am I?), a name/label, a user-entered value, a
