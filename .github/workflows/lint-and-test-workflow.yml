@@ -33,24 +33,22 @@ jobs:
       # if: ${{ steps.filter.outputs.md == 'true' }}
       # This will return true if there's a markdown file that was changed
       # in the PR.
-      
-      # FIXME: See https://github.com/GoogleChrome/web.dev/issues/3705#issuecomment-673654107
-      # - uses: dorny/paths-filter@v2.2.0
-      #   id: filter
-      #   with:
-      #     filters: |
-      #       md:
-      #         - '**/*.md'
-      #       js:
-      #         - '**/*.js'
-      #       json:
-      #         - '**/*.json'
-      #       yml:
-      #         - '**/*.yml'
-      #       scss:
-      #         - '**/*.scss'
-      #       njk:
-      #         - '**/*.njk'
+      - uses: dorny/paths-filter@v2.2.1
+        id: filter
+        with:
+          filters: |
+            md:
+              - '**/*.md'
+            js:
+              - '**/*.js'
+            json:
+              - '**/*.json'
+            yml:
+              - '**/*.yml'
+            scss:
+              - '**/*.scss'
+            njk:
+              - '**/*.njk'
       
       # Use the filter to check if files with a specific file type were changed
       # in the PR. If they were, run the relevant linters. Otherwise, skip.
