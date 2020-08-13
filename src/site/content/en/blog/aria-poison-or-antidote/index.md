@@ -254,19 +254,19 @@ useful for saying stuff that the screen reader cares about.
 
 Here are some common uses of ARIA.
 
-1.  Special widgets that don't exist in HTML, like a menu bar, autocomplete, tree, or spreadsheet
-1.  Widgets that exist in HTML, but the author invented their own anyway, possibly because they
-    needed to tweak the behavior or appearance of the normal widget. For example, an HTML `<input
-    type="range">` element is basically a slider, but authors want to make it look different. For
-    most things, CSS can be used, but for `input type="range"`, CSS is awkward. An author can
-    make their own slider, and use `role="slider"` on it with `aria-valuenow` to say what the current
-    value is.
-1.  Live regions tell screen readers "in this area of the page, anything that changes is worth telling
-    the user about."
-1.  Landmarks (HTML has equivalents now). These are somewhat like headings, in that they help
-    screen reader users find what they want faster. However, they're different in that they contain
-    the entire related area. Like, "this container is the main area of the page" and "this
-    container over here is a navigation panel". 
+* Special widgets that don't exist in HTML, like a menu bar, autocomplete, tree, or spreadsheet
+* Widgets that exist in HTML, but the author invented their own anyway, possibly because they
+  needed to tweak the behavior or appearance of the normal widget. For example, an HTML `<input
+  type="range">` element is basically a slider, but authors want to make it look different. For
+  most things, CSS can be used, but for `input type="range"`, CSS is awkward. An author can
+  make their own slider, and use `role="slider"` on it with `aria-valuenow` to say what the current
+  value is.
+* Live regions tell screen readers "in this area of the page, anything that changes is worth telling
+  the user about."
+* Landmarks (HTML has equivalents now). These are somewhat like headings, in that they help
+  screen reader users find what they want faster. However, they're different in that they contain
+  the entire related area. Like, "this container is the main area of the page" and "this
+  container over here is a navigation panel". 
 
 ## Addendum 3: What's an Accessibility API?
 
