@@ -71,7 +71,7 @@ control to point to an error message alert that relates to some invalid input. O
 indicate that a textbox is for searching. These little tweaks can make ordinary websites more usable
 with a screen reader.
 
-## menu bar example
+## Menu bar example
 
 ### Supporting mouse clicker people
 
