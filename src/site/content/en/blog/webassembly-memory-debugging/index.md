@@ -155,7 +155,10 @@ could be a completely different thread that overwrites the data just before we m
 
 Just in case, I've decided to go further and check if this code exhibits any issues in practice.
 This seems like a perfect opportunity to try out the new(ish) [Emscripten sanitizers
-support](https://emscripten.org/docs/debugging/Sanitizers.html) that was added last year.
+support](https://emscripten.org/docs/debugging/Sanitizers.html) that was added last year
+and presented in our WebAssembly talk at the Chrome Dev Summit:
+
+{% YouTube 'kZrl91SPSpc' %}
 
 {% Aside %} [Sanitizers](https://github.com/google/sanitizers) are special tools that instrument the
 code with auto-generated checks during compilation, which can then help catch common bugs during
