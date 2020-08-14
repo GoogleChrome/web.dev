@@ -59,6 +59,9 @@ trials, as learnings are incorporated and adjustments are made.
   there is a short period between the end of the origin trial and the date the implementation ships
   in the browser when the API will not be available.
   This is by design.
+  If we were to avoid the mandatory total-breakage period,
+  we would bias toward also avoiding breakages in the API surface,
+  and the final shipping API might potentially be worse for it.
 {% endAside %}
 
 ## Find out more
