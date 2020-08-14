@@ -10,6 +10,7 @@ description: |
   Once a web-based payment app is registered, it's ready to accept payment requests from merchants. This article teaches you how to orchestrate a payment transaction from a service worker during runtime.
 tags:
   - payments
+  - service-worker
 ---
 
 Once [a web-based payment app receives a payment request and initiates a payment
@@ -176,9 +177,7 @@ object.
 Use the object to update the UI on the frontend. Since this object is
 consistently used across `.changePaymentMethod()`, `.changeShippingAddress()`
 and `.changeShippingOption()`, we'll cover this more in the [Reflect the updated
-payment
-details](https://docs.google.com/document/d/14DWsGKfNhXaOEcJa1fRkW_F44e09KXSdER1tk6aHXR4/edit#heading=h.7pgnamyn9gq8)
-section of this article.
+payment details](#reflect-the-updated-payment-details) section of this article.
 
 ## Inform the merchant of a shipping address change
 
@@ -212,7 +211,7 @@ multiple benefits:
 With the Payment Handler API, the payment app can send a "shipping address
 change" event to the merchant from the service worker to notify the new shipping
 address. Invoke
-`[PaymentRequestEvent.changeShippingAddress()](https://w3c.github.io/payment-handler/#dom-paymentrequestevent-changeshippingaddress)`
+[`PaymentRequestEvent.changeShippingAddress()`](https://w3c.github.io/payment-handler/#dom-paymentrequestevent-changeshippingaddress)
 with the [new address
 object](https://www.w3.org/TR/payment-request/#dom-addressinit).
 
@@ -284,7 +283,10 @@ object.
 …
 ```
 
-Use the object to update the UI on the frontend. Since this object is consistently used across `.changePaymentMethod()`, `.changeShippingAddress()` and `.changeShippingOption()`, we'll cover this in the [Reflect the updated payment details](https://docs.google.com/document/d/14DWsGKfNhXaOEcJa1fRkW_F44e09KXSdER1tk6aHXR4/edit#heading=h.7pgnamyn9gq8) section of this article.
+Use the object to update the UI on the frontend. Since this object is
+consistently used across `.changePaymentMethod()`, `.changeShippingAddress()`
+and `.changeShippingOption()`, we'll cover this in the [Reflect the updated
+payment details](#reflect-the-updated-payment-details) section of this article.
 
 ## Inform the merchant of a shipping option change
 
@@ -414,9 +416,7 @@ object.
 Use the object to update the UI on the frontend. Since this object is
 consistently used across `.changePaymentMethod()`, `.changeShippingAddress()`
 and `.changeShippingOption()`, we'll cover this in the [Reflect the updated
-payment
-details](https://docs.google.com/document/d/14DWsGKfNhXaOEcJa1fRkW_F44e09KXSdER1tk6aHXR4/edit#heading=h.7pgnamyn9gq8)
-section of this article.
+payment details](#reflect-the-updated-payment-details) section of this article.
 
 ## Reflect the updated payment details {: #reflect-the-updated-payment-details }
 
@@ -462,4 +462,4 @@ Use `.error`, `.shippingAddressErrors`, or `.paymentMethodErrors` to reflect the
 In this article, we learned how to handle optional information on the service
 worker. The final step for building a web-based payment app is to learn how to
 build the frontend.
-* Handling payments on the payment frontend
+* Handling payments on the payment frontend (coming soon)

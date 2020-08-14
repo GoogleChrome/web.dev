@@ -387,5 +387,5 @@ doPaymentRequest();
   payment method](/setting-up-a-payment-method).
 * Learn how to build a native payment app in
   [Android payment apps developer's guide](/android-payment-apps-developers-guide).
-* Learn how to build a web-based payment app in *Web-based payment apps developer's
-  guide* (coming soon).
+* Learn how to build a web-based payment app in [Web-based payment apps developer's
+  guide](/web-based-payment-apps-overview).

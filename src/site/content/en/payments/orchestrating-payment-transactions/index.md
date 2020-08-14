@@ -10,12 +10,12 @@ description: |
   Once a web-based payment app is registered, it's ready to accept payment requests from merchants. This article teaches you how to orchestrate a payment transaction from a service worker during runtime.
 tags:
   - payments
+  - service-worker
 ---
 
-Once [the payment app is
-registered](https://docs.google.com/document/d/1vfgHeuvskPlE18l_IXtlijP3hGomC4FT52b4MqS4BiM/edit#),
-you are ready to accept payment requests from merchants. This post explains how
-to orchestrate a payment transaction from a service worker during runtime (i.e.
+Once [the payment app is registered](/registering-a-web-based-payment-app/), you
+are ready to accept payment requests from merchants. This post explains how to
+orchestrate a payment transaction from a service worker during runtime (i.e.
 when a window is displayed and the user is interacting with it).
 
 <figure class="w-figure">
@@ -94,7 +94,7 @@ transaction:
       <tr>
         <td><code>paymentRequestId</code></td>
         <td>
-          The <code>id</code> property of the <code><a href="https://w3c.github.io/payment-request/#paymentdetailsinit-dictionary">PaymentDetailsInit</a></code> provided to the Payment Request API. If the merchant omits, the browser will provide an auto-generated id.
+          The <code>id</code> property of the <code><a href="https://w3c.github.io/payment-request/#paymentdetailsinit-dictionary">PaymentDetailsInit</a></code> provided to the Payment Request API. If the merchant omits, the browser will provide an auto-generated ID.
         </td>
       </tr>
       <tr>
@@ -141,9 +141,8 @@ When a `paymentrequest` event is received, the payment app can open a payment
 handler window by calling `PaymentRequestEvent.openWindow()`. The payment
 handler window will present the customers your payment app's interface where
 they can authenticate, choose shipping address and options, and authorize the
-payment. We'll cover how to write the frontend code in [Handling payments on the
-payment
-frontend](https://docs.google.com/document/d/18-zDc1k0s_9529S6TJi3dFT86cxXMTo044Ehk7VjRds/edit#).
+payment. We'll cover how to write the frontend code in *Handling payments on the
+payment frontend* (Coming soon).
 
 <figure class="w-figure" style="width:300px; margin:auto;">
   <video controls autoplay loop muted class="w-screenshot">
@@ -211,7 +210,7 @@ must have valid HTTPS certificates and no [mixed
 content](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content);
 otherwise the payment request will be cancelled by Chrome. Learn more at
 [Debugging a web-based payment
-app](https://docs.google.com/document/d/1vfgHeuvskPlE18l_IXtlijP3hGomC4FT52b4MqS4BiM/edit#heading=h.genktfd5wi5v).
+app](/registering-a-web-based-payment-app/#debugging-a-web-based-payment-app).
 {% endAside %}
 
 ## Exchange information with the frontend
