@@ -33,9 +33,11 @@ process.on('unhandledRejection', (reason, p) => {
 const {buildDefaultPlugins, disallowExternal} = require('./src/build/common');
 
 /**
- * Builds the cache manifest for inclusion alongside the Service Worker.
+ * Builds the cache manifest for inclusion alongside the Service Worker. This includes the basic
+ * assets required to display, including CSS and JS.
  *
- * This relies on Gulp, JS and CSS being run before us.
+ * This relies on Gulp, JS and CSS being run before us. In dev, the order is irrelevant as this
+ * script will rerun when those resources are ready.
  */
 async function buildCacheManifest() {
   const config = {

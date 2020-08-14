@@ -27,8 +27,9 @@ const path = require('path');
 const cheerio = require('cheerio');
 
 const revision = {
-  // Refers to the version of the site the partial was built at, and the build timestamp. We use
-  // this inside the Service Worker to determine whether any cached layout HTML is out-of-date.
+  // This is the version of the site's shared resources: CSS, JS and template. We use this value
+  // inside the Service Worker, to compare to built partials, to see if the partials are from a
+  // later version and the shared resources need to update.
   resourcesVersion: computedData.resourcesVersion,
   builtAt: computedData.builtAt,
 };

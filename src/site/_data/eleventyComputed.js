@@ -55,8 +55,8 @@ function generateResourcesVersion() {
     }
   };
 
-  // Include the versions of the dependent resources. If any resource is unknown then we fail
-  // early and return the empty string.
+  // Include the versions of the shared dependent resources (CSS and JS). If any resource is
+  // unknown then we fail early and return the empty string: this happens in dev if out of order.
   const c = crypto.createHash('sha1');
   for (const f of resources) {
     const update = readResource(f);
@@ -66,7 +66,8 @@ function generateResourcesVersion() {
     c.update(update);
   }
 
-  // This is the unprocessed template, so it doesn't yet contain resource hashes.
+  // This is the unprocessed template, so it doesn't contain resource hashes. It basically
+  // invalidates the resources if the shared template changes.
   const template = fs.readFileSync(
     path.join(__dirname, '../content/sw-partial-layout.njk'),
     'utf-8',

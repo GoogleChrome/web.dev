@@ -39,7 +39,7 @@
     "watch:eleventy": "eleventy --watch --quiet",
     "watch:gulp": "npx gulp build --silent && gulp watch --silent",
     "watch:rollup": "chokidar \"src/lib/**/*.{js,scss}\" --silent -c \"npm run rollup\"",
-    "watch:rollup-sw": "chokidar \"src/lib/**/*.js\" --silent -c \"npm run rollup-sw\"",
+    "watch:rollup-sw": "chokidar \"src/lib/**/*.js\" \"dist/en/offline/index.json\" \"dist/*.js\" \"dist/*.css\" -d 2000 -i \"dist/sw{,-*}.js\" --silent -c \"npm run rollup-sw\"",
     "watch:sass": "chokidar \"src/styles/**/*.scss\" --silent -c \"npm run sass\"",
     "watch:test:lib": "TEST_MODE=dev npm-run-all clean rollup --parallel watch:rollup karma"
   },

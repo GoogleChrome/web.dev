@@ -65,7 +65,7 @@ self.addEventListener('activate', (event) => {
 });
 
 // By default, use our core cache which is prefilled by the template code, containing assets like
-// our JS, CSS, etc. This doesn't use Workbox.
+// our JS, CSS, etc. This doesn't use Workbox, and doesn't grow: it's just the core assets.
 self.addEventListener('fetch', (event) => {
   const p = caches.match(event.request, {
     cacheName: cacheNames.webdevCore,
@@ -230,7 +230,7 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
 let pendingTemplateUpdate = null;
 
 /**
- * @param {?Object} partial to fetch for
+ * @param {?{resourcesVersion: string, builtAt: number}} partial to fetch for
  * @return {!Promise<string>} partial template to use in hydration
  */
 async function templateForPartial(partial) {
@@ -243,9 +243,12 @@ async function templateForPartial(partial) {
     if (cachedResponse) {
       const {template, builtAt, resourcesVersion} = await cachedResponse.json();
 
-      // If the template was built for the same resources as the page we're showing, don't fetch it
-      // anew. If the version is different but the template is _newer_, then we're offline and are
-      // rendering an old cached partial in a newer template. We can't do anything here, so return.
+      // * If the template was built for the same resources as the page we're showing: great! This
+      //   is the norml behavior, return the template.
+      // * If the template was built AFTER the partial, return it anyway: we can't get the old
+      //   template. This ONLY occurs if we're offline, but cached an old partial, yet have newer
+      //   resources. Presume that thew newer template can probably satisfy the old code.
+      // * Otherwise, fall-through to updating the template.
       if (!resourcesVersion) {
         // In dev, always fetch and update the cache.
       } else if (
@@ -257,8 +260,8 @@ async function templateForPartial(partial) {
     }
   }
 
-  // Don't update the partial more than once. Two tabs might be causing independent fetch events
-  // which are triggering the same update.
+  // There's already a pending update. Multiple tabs could be causing independent fetch events
+  // which are triggering the same update. Returns the first.
   if (pendingTemplateUpdate !== null) {
     return pendingTemplateUpdate;
   }
@@ -267,22 +270,23 @@ async function templateForPartial(partial) {
     let updates = 0;
     let deletes = 0;
 
-    // Otherwise, we need to update the template cache. We don't use any Workbox built-ins here
-    // because we're never actually serving this file and we completely manage its lifecycle in this
-    // method. Return the template immediately for use.
+    // Otherwise, we need to fetch the "/sw-manifest" file, as it contains updated resource info.
+    // We don't use any Workbox built-ins here because we're never actually serving this file and
+    // we completely manage its lifecycle in this method.
     const networkResponse = await fetch(manifestUrl);
     const raw = await networkResponse.json();
     const {cache: cacheManifest, template, resourcesVersion, builtAt} = raw;
     const assetMap = new Map();
 
-    // #1: Fetch and update all our dependent resources. Mark them with cache-busting params.
+    // #1: Fetch and update all our dependent resources (like JS and CSS). Mark them with
+    // cache-busting params.
     const updateTasks = cacheManifest.map(async ({url, revision}) => {
       if (!url.startsWith('/')) {
-        url = `/${url}`; // we get naked URLs without prefix slash
+        url = `/${url}`; // we can get naked URLs without prefix slash
       }
       assetMap.set(url, revision);
 
-      // Search for the request with an optional cache-busting param (JS/CSS doesn't show up with
+      // Search for the request with an optional cache-busting param (JS/CSS doesn't include
       // a revision as it's implied by the URL itself).
       const requestKey = new Request(
         url + (revision !== null ? `?__revision=${revision}` : ''),
