@@ -37,6 +37,8 @@ async function generatePayload(template) {
     globIgnores: [
       // This removes large shared PNG files that are used only for articles.
       'images/{shared}/**',
+      // Don't include the Service Worker JS itself.
+      'sw{,-*}.js',
     ],
   };
   const manifest = await getManifest(config);
@@ -68,7 +70,6 @@ async function generatePayload(template) {
   entries.forEach((raw) => {
     c.update(raw.url);
     raw.revision && c.update(raw.revision);
-    console.warn('file', raw.url, raw.revision);
   });
   const resourcesVersion = c.digest('hex').substr(0, 12);
   const builtAt = +new Date();

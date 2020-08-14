@@ -36,7 +36,7 @@ describe('Build test', function () {
       'nuke-sw.js',
       'robots.txt',
       'sitemap.xml',
-      'sw-partial-layout.partial',
+      'sw-payload',
       'sw.js',
     ].forEach((file) =>
       assert.ok(

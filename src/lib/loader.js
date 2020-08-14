@@ -178,7 +178,10 @@ export async function swapContent({firstRun, url, signal, ready, state}) {
   // a partial from an old open version of the site.
   const {resourcesVersion} = partial;
   if (pageResourcesVersion !== resourcesVersion) {
-    throw new Error(`version mismatch`); // throw causes reload in reouter code
+    // throw causes reload in router code
+    throw new Error(
+      `version mismatch: was ${pageResourcesVersion}, got ${resourcesVersion}`,
+    );
   }
 
   // Code in entrypoint.jsuses this to trigger a reload if we see an "online" event. This partial

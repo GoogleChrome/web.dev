@@ -18,6 +18,10 @@ describe('Service worker partials', function () {
       offline: Boolean($('meta[name="offline"]').attr('content')) || false,
     };
 
+    // not used for test
+    delete partial.resourcesVersion;
+    delete partial.builtAt;
+
     assert.deepStrictEqual(partial, partialFromHtml);
   });
 

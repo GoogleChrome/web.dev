@@ -236,8 +236,8 @@ let pendingTemplateUpdate = null;
  * @return {!Promise<string>} partial template to use in hydration
  */
 async function templateForPartial(partial) {
-  const manifestUrl = '/sw-payload';
-  const requestKey = new Request(manifestUrl);
+  const payloadUrl = '/sw-payload';
+  const requestKey = new Request(payloadUrl);
   const cache = await caches.open(cacheNames.webdevCore);
 
   if (partial !== null) {
@@ -272,13 +272,14 @@ async function templateForPartial(partial) {
     let additions = 0;
     let deletes = 0;
 
-    // Otherwise, we need to fetch the "/sw-manifest" file, as it contains updated resource info.
+    // Otherwise, we need to fetch the "/sw-payload" file, as it contains updated resource info.
     // We don't use any Workbox built-ins here because we're never actually serving this file and
     // we completely manage its lifecycle in this method.
-    const networkResponse = await fetch(manifestUrl);
+    const networkResponse = await fetch(payloadUrl);
     const raw = await networkResponse.json();
     const {entries, template, resourcesVersion, builtAt} = raw;
     const assetMap = new Map();
+    assetMap.set(payloadUrl, null); // don't delete our own payload
 
     // #1: Fetch and update all our dependent resources (like JS and CSS). Mark them with their
     // correct revision when we store them in the cache.
