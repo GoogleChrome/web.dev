@@ -66,6 +66,7 @@ self.addEventListener('activate', (event) => {
 
 // By default, use our core cache which is prefilled by the template code, containing assets like
 // our JS, CSS, etc. This doesn't use Workbox, and doesn't grow: it's just the core assets.
+// Ignore cache-busting search params. If we're in the SW we're getting the latest cached version.
 self.addEventListener('fetch', (event) => {
   const p = caches.match(event.request, {
     cacheName: cacheNames.webdevCore,
@@ -267,7 +268,7 @@ async function templateForPartial(partial) {
   }
 
   const update = async () => {
-    let updates = 0;
+    let additions = 0;
     let deletes = 0;
 
     // Otherwise, we need to fetch the "/sw-manifest" file, as it contains updated resource info.
@@ -278,22 +279,22 @@ async function templateForPartial(partial) {
     const {cache: cacheManifest, template, resourcesVersion, builtAt} = raw;
     const assetMap = new Map();
 
-    // #1: Fetch and update all our dependent resources (like JS and CSS). Mark them with
-    // cache-busting params.
+    // #1: Fetch and update all our dependent resources (like JS and CSS). Mark them with their
+    // correct revision when we store them in the cache.
     const updateTasks = cacheManifest.map(async ({url, revision}) => {
       if (!url.startsWith('/')) {
         url = `/${url}`; // we can get naked URLs without prefix slash
       }
       assetMap.set(url, revision);
 
-      // Search for the request with an optional cache-busting param (JS/CSS doesn't include
-      // a revision as it's implied by the URL itself).
+      // Match any existing cached assets with an optional cache-busting param (most JS/CSS doesn't
+      // include a revision as it's implied by the URL itself).
       const requestKey = new Request(
         url + (revision !== null ? `?__revision=${revision}` : ''),
       );
       const previous = await cache.match(requestKey);
       if (!previous) {
-        ++updates;
+        ++additions;
         return cache.add(requestKey);
       }
     });
@@ -303,7 +304,7 @@ async function templateForPartial(partial) {
     delete raw.cache; // this is large, don't include it
     cache.put(requestKey, new Response(JSON.stringify(raw)));
 
-    // #3: Remove any assets that aren't in the new cache with a matching revision.
+    // #3: Remove any now unneeded assets.
     const keys = await cache.keys();
     const deleteTasks = keys.map((request) => {
       const u = new URL(request.url);
@@ -326,8 +327,8 @@ async function templateForPartial(partial) {
       'Installed web.dev core version',
       resourcesVersion,
       `(built at ${new Date(builtAt)}),`,
-      updates,
-      'updates,',
+      additions,
+      'additions,',
       deletes,
       'deletes',
     );
@@ -338,7 +339,7 @@ async function templateForPartial(partial) {
 
   pendingTemplateUpdate = update();
 
-  // This is basically `finally`, clean up this task even if it fails.
+  // This is basically `Promise.finally`, clean up this task even if it fails.
   const cleanup = () => (pendingTemplateUpdate = null);
   pendingTemplateUpdate.then(cleanup, cleanup);
 
