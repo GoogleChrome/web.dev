@@ -9,6 +9,10 @@ import {store} from './store';
 import {normalizeUrl, getCanonicalPath} from './urls';
 import './utils/underscore-import-polyfill';
 
+const pageResourcesVersion = document.body.getAttribute(
+  'data-resources-version',
+);
+
 /**
  * Dynamically loads code required for the passed URL entrypoint.
  *
@@ -168,6 +172,13 @@ export async function swapContent({firstRun, url, signal, ready, state}) {
     if (signal.aborted) {
       return;
     }
+  }
+
+  // If this partial was built for a different version of the template, force a reload: we fetched
+  // a partial from an old open version of the site.
+  const {resourcesVersion} = partial;
+  if (pageResourcesVersion !== resourcesVersion) {
+    throw new Error(`version mismatch`); // throw causes reload in reouter code
   }
 
   // Code in entrypoint.jsuses this to trigger a reload if we see an "online" event. This partial

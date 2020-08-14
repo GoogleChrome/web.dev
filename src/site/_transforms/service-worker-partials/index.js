@@ -15,7 +15,17 @@
  */
 
 /**
- * @fileoverview Builds a shortcode which writes article inner content to peer JSON files.
+ * @fileoverview Provides a transform that builds partials, as well as finding
+ * the build info and file manifest for web.dev's Service Worker.
+ *
+ * Operates in three parts:
+ *   1. a reset method, which must be called from within Eleventy's "beforeBuild" event
+ *   2. a transform which waits until "dist/sw-payload" is processed
+ *   3. all other transforms (to generate partials) block until that payload is parsed
+ *
+ * The payload is generated inside the peer 'sw-payload-build.js' file. It
+ * requires all the normal top-level dependencies and converts them into a
+ * resourcesVersion both the top-level payload, and every partial, includes.
  *
  * This is needed so our SPA routing and Service Worker can fetch partials in order to hydrate the
  * main web.dev template, cutting down on bytes needed to render further pages.
@@ -24,8 +34,14 @@
 const fs = require('fs').promises;
 const path = require('path');
 const cheerio = require('cheerio');
+const generatePayload = require('./sw-payload-build');
 
-const {getRecentBuild} = require('../sw-payload');
+let pendingBuildInfo = new Error('no recent build');
+let resolveBuildInfo = () => {};
+
+const resetPartialsBuild = () => {
+  pendingBuildInfo = new Promise((r) => (resolveBuildInfo = r));
+};
 
 const writePartial = async (to, raw) => {
   await fs.mkdir(path.dirname(to), {recursive: true});
@@ -46,6 +62,21 @@ const getPartial = (content, recentBuild) => {
 };
 
 const serviceWorkerPartials = async (content, outputPath) => {
+  // If we're generating the SW payload, then this will resolve payloadPromise and allow all other
+  // builds to complete.
+  if (outputPath === 'dist/sw-payload') {
+    const buildInfo = await generatePayload(content);
+    resolveBuildInfo({
+      resourcesVersion: buildInfo.resourcesVersion,
+      builtAt: buildInfo.builtAt,
+    });
+    console.info(
+      'Generated web.dev resourcesVersion:',
+      buildInfo.resourcesVersion,
+    );
+    return JSON.stringify(buildInfo);
+  }
+
   // Page has permalink set to false and will not be rendered.
   if (!outputPath) {
     return content;
@@ -61,19 +92,30 @@ const serviceWorkerPartials = async (content, outputPath) => {
     return content;
   }
 
-  const recentBuild = getRecentBuild();
+  const buildInfo = await pendingBuildInfo;
 
-  const {$, partial} = getPartial(content, recentBuild);
+  const {$, partial} = getPartial(content, buildInfo);
   const suffixLength = 'index.html'.length;
   const partialOutputPath =
     outputPath.substr(0, outputPath.length - suffixLength) + 'index.json';
   await writePartial(partialOutputPath, partial);
 
+  // Don't modify the offline partial's HTML; this avoids a circular loop in dev. We use the
+  // offline HTML's contents to feed into the hash to build resourcesVersion, so every build, the
+  // previous resourcesVersion feeds into updated resourcesVersion, ... so we stop here.
+  // In practice, users don't load the offline page directly, so this doesn't matter.
+  if (partial.offline) {
+    return content;
+  }
+
   // Mark the output HTML with the built resources version, matching the partial.
-  // FIXME: WHY IS THIS NOT WORKING
-  console.debug('tagging', outputPath, 'with', recentBuild);
-  $('body').attr('data-resources-version', recentBuild.resourcesVersion);
+  $('body').attr('data-resources-version', buildInfo.resourcesVersion);
   return $.html();
 };
 
-module.exports = {serviceWorkerPartials, getPartial, writePartial};
+module.exports = {
+  serviceWorkerPartials,
+  getPartial,
+  writePartial,
+  resetPartialsBuild,
+};

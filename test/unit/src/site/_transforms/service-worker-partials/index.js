@@ -54,7 +54,7 @@ describe('service-worker-partials', function () {
 
   describe('getPartial', function () {
     it('returns a partial for index.html pages', function () {
-      const actual = getPartial($.html());
+      const {partial: actual} = getPartial($.html());
       const expected = {
         raw: $('#content').html(),
         lang: $('html').attr('lang'),
@@ -67,7 +67,7 @@ describe('service-worker-partials', function () {
 
     it('sets offline to true when processing the offline page', function () {
       $('head').append('<meta name="offline" content="true">');
-      const actual = getPartial($.html());
+      const {partial: actual} = getPartial($.html());
       const expected = {
         raw: $('#content').html(),
         lang: $('html').attr('lang'),

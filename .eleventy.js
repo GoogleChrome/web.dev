@@ -24,6 +24,7 @@ const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItAttrs = require('markdown-it-attrs');
 const slugify = require('slugify');
+require('./src/site/_utils/lifecycle'); // side-effects only
 
 const componentsDir = 'src/site/_includes/components';
 const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
@@ -89,8 +90,8 @@ const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
 const {responsiveImages} = require(`./${transformsDir}/responsive-images`);
 const {
   serviceWorkerPartials,
+  resetPartialsBuild,
 } = require(`./${transformsDir}/service-worker-partials`);
-const {serviceWorkerPayload} = require(`./${transformsDir}/sw-payload`);
 
 module.exports = function (config) {
   console.log(chalk.black.bgGreen('Eleventy is building, please wait…'));
@@ -232,6 +233,13 @@ module.exports = function (config) {
   config.addShortcode('EventTable', EventTable);
 
   // ----------------------------------------------------------------------------
+  // LIFECYCLE
+  // ----------------------------------------------------------------------------
+  config.on('beforeBuild', () => {
+    resetPartialsBuild();
+  });
+
+  // ----------------------------------------------------------------------------
   // TRANSFORMS
   // ----------------------------------------------------------------------------
   if (process.env.PERCY) {
@@ -243,10 +251,9 @@ module.exports = function (config) {
   }
 
   // !!! Important !!!
-  // These transforms MUST go last, and in this specific order!
+  // This transform should always go last.
   // It takes the final html and turns it into partials that the
   // service worker can load.
-  config.addTransform('service-worker-payload', serviceWorkerPayload);
   config.addTransform('service-worker-partials', serviceWorkerPartials);
 
   // ----------------------------------------------------------------------------

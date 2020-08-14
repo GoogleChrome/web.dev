@@ -13,7 +13,6 @@ import {matchSameOriginRegExp} from './utils/sw-match.js';
 
 const cacheNames = {webdevCore: 'webdev-core', ...workboxCacheNames};
 
-
 // Architecture revision of the Service Worker. If the previously saved revision doesn't match,
 // then this will cause clients to be aggressively claimed and reloaded on install/activate.
 // Used when the design of the SW changes dramatically.
@@ -237,7 +236,7 @@ let pendingTemplateUpdate = null;
  * @return {!Promise<string>} partial template to use in hydration
  */
 async function templateForPartial(partial) {
-  const manifestUrl = '/sw-manifest';
+  const manifestUrl = '/sw-payload';
   const requestKey = new Request(manifestUrl);
   const cache = await caches.open(cacheNames.webdevCore);
 
@@ -358,7 +357,11 @@ async function offlinePartialResponse() {
   if (!cachedResponse) {
     // This occurs in development when the offline partial isn't precached.
     return new Response(
-      JSON.stringify({offline: true, raw: '<h1>Offline</h1>', title: 'Offline'}),
+      JSON.stringify({
+        offline: true,
+        raw: '<h1>Offline</h1>',
+        title: 'Offline',
+      }),
     );
   }
   return cachedResponse;
