@@ -101,7 +101,12 @@ The beginning of this article may have put you in a negative mood. Can we really
 
 ### Why do we need the Local Font Access API when there are web fonts?
 
-Professional-quality design and graphics tools have historically been difficult to deliver on the web. One stumbling block has been an inability to access and use the full variety of professionally constructed and hinted fonts that designers have locally installed. Web fonts enable some publishing use-cases, but fail to enable programmatic access to the vector glyph shapes and a set of other font internals, and the font binary data.
+Professional-quality design and graphics tools have historically been difficult to deliver on the web.
+One stumbling block has been an inability to access and use the full variety of
+professionally constructed and hinted fonts that designers have locally installed.
+Web fonts enable some publishing use-cases, but fail to enable programmatic access to
+the vector glyph shapes and font tables used by rasterizers to render the glyph outlines.
+There is likewise no way to access a web font's binary data.
 
 - Design tools need access to font bytes to do their own OpenType layout implementation and allow design tools to hook in at lower levels, for actions such as performing vector filters or transforms on the glyph shapes.
 - Developers may have legacy font stacks for their applications that they are bringing to the web. To use these stacks, they usually require direct access to font data, something web fonts do not provide.
