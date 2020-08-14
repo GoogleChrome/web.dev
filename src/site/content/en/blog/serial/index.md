@@ -43,6 +43,11 @@ This API is also a great companion to [WebUSB] as operating systems require
 applications to communicate with some serial ports using their higher-level
 native serial API rather than the low-level USB API.
 
+{% Aside  %}
+This article reflects the Serial API as implemented in Chrome 86 and later. Some
+property names have changed from previous versions.
+{% endAside %}
+
 ## Suggested use cases {: #use-cases }
 
 In the educational, hobbyist, and industrial sectors, users connect peripheral
