@@ -4,7 +4,7 @@ subhead: Origin trials are a way to test a new or experimental web platform feat
 authors: 
   - samdutton
 date: 2020-06-22
-updated: 2020-07-27
+updated: 2020-08-14
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: Pipette with purple liquid
@@ -40,7 +40,7 @@ trials, as learnings are incorporated and adjustments are made.
 1. Choose an origin trial from the [list of active trials](https://developers.chrome.com/origintrials/#/trials/active).
 1. Request a token by clicking the **Request** button and filling out the form.
 1. Add the token to your web pages,
-   using a `<meta>` tag or an `Origin-Trial` HTTP response header.
+   using one of the following methods:
    -  As a meta tag in the &lt;head&gt; of each page served:   
       `<meta http-equiv="origin-trial" content="TOKEN_GOES_HERE">`
    -  As an HTTP header:  
@@ -51,13 +51,13 @@ trials, as learnings are incorporated and adjustments are made.
    team. Each trial also provides a link for spontaneous community feedback.
    This typically points to the the feature on GitHub or some other public
    channel.
-1. When your token expires, you will get an email with a link to renew it.
-   In order to do so, you are again asked to submit feedback.
+1. When your token expires, you will get an email with a renewal link.
+   To do so, you are again asked to submit feedback.
    
 {% Aside 'warning' %}
-  Please note that even if an API eventually lands unchanged after a successful origin trial,
-  there is a short period of time, between the end of the origin trial and the date the implementation ships
-  in the browser, when the API will not be available.
+  Even if an API lands unchanged after a successful origin trial,
+  there is a short period between the end of the origin trial and the date the implementation ships
+  in the browser when the API will not be available.
   This is by design.
 {% endAside %}
 
