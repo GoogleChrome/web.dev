@@ -517,7 +517,7 @@ been claimed by a built-in device driver.
 
 ## Security and privacy {: #security-privacy }
 
-The spec authors has designed and implemented the Serial API using the core
+The spec authors have designed and implemented the Serial API using the core
 principles defined in [Controlling Access to Powerful Web Platform Features],
 including user control, transparency, and ergonomics. The ability to use this
 API is primarily gated by a permission model that grants access to only a single
