@@ -118,7 +118,7 @@ One concern with this API is that it could be used to grab all of the keys and (
 
 - [Specification draft](https://wicg.github.io/keyboard-lock/)
 - [GitHub repository](https://github.com/WICG/keyboard-lock)
-- [ChromeStatus entry](https://chromestatus.com/features/5642959835889664)
+- [ChromeStatus entry](https://chromestatus.com/feature/5642959835889664)
 - [Chrome tracking bug](https://crbug.com/677559)
 - [Key codes for standard keyboards](https://www.w3.org/TR/uievents-code/#keyboard-key-codes)
 

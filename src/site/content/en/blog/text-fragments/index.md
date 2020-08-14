@@ -491,7 +491,7 @@ browser extension.
 ## Related links
 
 - [TAG Review](https://github.com/w3ctag/design-reviews/issues/392)
-- [Chrome Platform Status entry](https://chromestatus.com/features/4733392803332096)
+- [Chrome Platform Status entry](https://chromestatus.com/feature/4733392803332096)
 - [Chrome tracking bug](https://crbug.com/919204)
 - [Intent to Ship thread](https://groups.google.com/a/chromium.org/d/topic/blink-dev/zlLSxQ9BA8Y/discussion)
 - [WebKit-Dev thread](https://lists.webkit.org/pipermail/webkit-dev/2019-December/030978.html)
