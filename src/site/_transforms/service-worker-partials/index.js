@@ -25,12 +25,14 @@ const fs = require('fs').promises;
 const path = require('path');
 const cheerio = require('cheerio');
 
+const {getRecentBuild} = require('../sw-payload');
+
 const writePartial = async (to, raw) => {
   await fs.mkdir(path.dirname(to), {recursive: true});
   await fs.writeFile(to, JSON.stringify(raw));
 };
 
-const getPartial = (content) => {
+const getPartial = (content, recentBuild) => {
   const $ = cheerio.load(content);
   const partial = {
     raw: $('#content').html(),
@@ -38,8 +40,9 @@ const getPartial = (content) => {
     title: $('title').text(),
     rss: $('link[type="application/atom+xml"]').attr('href'),
     offline: Boolean($('meta[name="offline"]').attr('content')) || false,
+    ...recentBuild,
   };
-  return partial;
+  return {$, partial};
 };
 
 const serviceWorkerPartials = async (content, outputPath) => {
@@ -58,13 +61,19 @@ const serviceWorkerPartials = async (content, outputPath) => {
     return content;
   }
 
-  const partial = getPartial(content, outputPath);
+  const recentBuild = getRecentBuild();
+
+  const {$, partial} = getPartial(content, recentBuild);
   const suffixLength = 'index.html'.length;
   const partialOutputPath =
     outputPath.substr(0, outputPath.length - suffixLength) + 'index.json';
   await writePartial(partialOutputPath, partial);
 
-  return content;
+  // Mark the output HTML with the built resources version, matching the partial.
+  // FIXME: WHY IS THIS NOT WORKING
+  console.debug('tagging', outputPath, 'with', recentBuild);
+  $('body').attr('data-resources-version', recentBuild.resourcesVersion);
+  return $.html();
 };
 
 module.exports = {serviceWorkerPartials, getPartial, writePartial};

@@ -90,6 +90,7 @@ const {responsiveImages} = require(`./${transformsDir}/responsive-images`);
 const {
   serviceWorkerPartials,
 } = require(`./${transformsDir}/service-worker-partials`);
+const {serviceWorkerPayload} = require(`./${transformsDir}/sw-payload`);
 
 module.exports = function (config) {
   console.log(chalk.black.bgGreen('Eleventy is building, please wait…'));
@@ -242,9 +243,10 @@ module.exports = function (config) {
   }
 
   // !!! Important !!!
-  // This transform should always go last.
+  // These transforms MUST go last, and in this specific order!
   // It takes the final html and turns it into partials that the
   // service worker can load.
+  config.addTransform('service-worker-payload', serviceWorkerPayload);
   config.addTransform('service-worker-partials', serviceWorkerPartials);
 
   // ----------------------------------------------------------------------------

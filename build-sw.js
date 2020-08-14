@@ -18,13 +18,9 @@ require('dotenv').config();
 const isProd = process.env.ELEVENTY_ENV === 'prod';
 
 const log = require('fancy-log');
-const rollupPluginVirtual = require('rollup-plugin-virtual');
 const rollupPluginReplace = require('rollup-plugin-replace');
 const OMT = require('@surma/rollup-plugin-off-main-thread');
 const rollup = require('rollup');
-const {getManifest} = require('workbox-build');
-const resourcePath = require('./src/build/resource-path');
-const buildVirtualJSON = require('./src/build/virtual-json');
 const minifySource = require('./src/build/minify-js');
 
 process.on('unhandledRejection', (reason, p) => {
@@ -35,67 +31,9 @@ process.on('unhandledRejection', (reason, p) => {
 const {buildDefaultPlugins, disallowExternal} = require('./src/build/common');
 
 /**
- * Builds the cache manifest for inclusion into the Service Worker.
- *
- * TODO(samthor): This relies on both the gulp and CSS tasks occuring
- * before the Rollup build script.
- */
-async function buildCacheManifest() {
-  const config = {
-    // JS or CSS files that include hashes don't need their own revision fields.
-    dontCacheBustURLsMatching: /-[0-9a-f]{8}\.(css|js)/,
-    globDirectory: 'dist',
-    globPatterns: [
-      // We don't include jpg files, as they're used for authors and hero
-      // images, which are part of articles, and not the top-level site.
-      'images/**/*.{png,svg}',
-      '*-*.js',
-      'sw-partial-layout.partial',
-    ],
-    globIgnores: [
-      // This removes large shared PNG files that are used only for articles.
-      'images/{shared}/**',
-    ],
-  };
-  if (isProd) {
-    config.additionalManifestEntries = [
-      {url: resourcePath('js'), revision: null},
-      {url: resourcePath('css'), revision: null},
-    ];
-  } else {
-    // Don't use hash revisions in dev, or even check that the files exist.
-    config.globPatterns.push('bootstrap.js', 'app.css');
-  }
-
-  const toplevelManifest = await getManifest(config);
-  if (toplevelManifest.warnings.length) {
-    throw new Error(`toplevel manifest: ${toplevelManifest.warnings}`);
-  }
-
-  // We need this manifest to be separate as we pretend it's rooted at the
-  // top-level, even though it comes from "dist/en".
-  const contentManifest = await getManifest({
-    globDirectory: 'dist/en',
-    globPatterns: ['offline/index.json'],
-  });
-  if (contentManifest.warnings.length) {
-    throw new Error(`content manifest: ${contentManifest.warnings}`);
-  }
-
-  const all = [];
-  all.push(...toplevelManifest.manifestEntries);
-  all.push(...contentManifest.manifestEntries);
-  return all;
-}
-
-/**
- * Performs main site compilation via Rollup: first on site code, and second
- * to build the Service Worker.
+ * Builds the Service Worker.
  */
 async function build() {
-  // We don't generate a manifest in dev, so Workbox doesn't do a default cache step.
-  const manifest = isProd ? await buildCacheManifest() : [];
-
   const swBundle = await rollup.rollup({
     input: 'src/lib/sw.js',
     external: disallowExternal,
@@ -115,11 +53,6 @@ async function build() {
       rollupPluginReplace({
         'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : ''),
       }),
-      rollupPluginVirtual(
-        buildVirtualJSON({
-          'cache-manifest': manifest,
-        }),
-      ),
       ...buildDefaultPlugins(),
       OMT(),
     ],

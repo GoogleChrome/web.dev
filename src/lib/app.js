@@ -109,8 +109,9 @@ function ensureServiceWorker() {
     // This isn't the first install, but ensure some partials are up-to-date.
     ensurePartialCache();
 
-    // We claim active clients if the Service Worker's architecture rev changes. We can't
-    // reliably force a reload via the Client interface as it's unsupported in Safari.
+    // We claim active clients if the Service Worker's architecture rev changes. This won't trigger
+    // if just the CSS, JS or template changes, as that's handled without SW refresh.
+    // (This reload can't happen inside the SW, as Safari doesn't support the API there.)
     navigator.serviceWorker.addEventListener('controllerchange', () => {
       window.location.reload();
     });
