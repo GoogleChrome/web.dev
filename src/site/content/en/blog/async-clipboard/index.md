@@ -82,7 +82,7 @@ is asynchronous and returns a Promise.
 To write an image to the clipboard, you need the image as a
 [`blob`](https://developer.mozilla.org/en-US/docs/Web/API/blob). One way to do
 this is by requesting the image from a server using `fetch()`, then calling
-[`blob()`](https://developer.mozilla.org/en-US/docs/Web/API/Body/blob) on the
+[`blob()`](https://developer.mozilla.org/en-US/docs/Web/API/Body/blob) on the
 response.
 
 Requesting an image from the server may not be desirable or possible for a
@@ -128,20 +128,25 @@ APIs when the Clipboard API isn't supported. I'll cover that under
 
 ```js
 document.addEventListener('copy', async (e) => {
-  e.preventDefault();
-  try {
-    let clipboardItems = [];
-    for (const item of e.clipboardData.items) {
-      if (!blob.type.startsWith('image/') { continue; }
-      clipboardItems.push(new ClipboardItem({
-        [blob.type]: blob
-      }));
-    await navigator.clipboard.write(clipboardItems);
-    console.log('Image copied.');
-  } catch (err) {
-    console.error(err.name, err.message);
-  }
-});
+    e.preventDefault();
+    try {
+      let clipboardItems = [];
+      for (const item of e.clipboardData.items) {
+        if (!item.type.startsWith('image/')) {
+          continue;
+        }
+        clipboardItems.push(
+          new ClipboardItem({
+            [item.type]: item,
+          })
+        );
+        await navigator.clipboard.write(clipboardItems);
+        console.log('Image copied.');
+      }
+    } catch (err) {
+      console.error(err.name, err.message);
+    }
+  });
 ```
 
 ## Paste: reading data from clipboard
