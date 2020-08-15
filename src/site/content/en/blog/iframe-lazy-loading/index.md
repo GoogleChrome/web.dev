@@ -306,7 +306,8 @@ function lazyIF($content) {
 }
 ```
 
-If your Wordpress site utilizes caching (hint: It should), don't forget to rebuild your site's cache afterwards.
+If your Wordpress site utilizes caching (hint: it should), don't forget to rebuild
+your site's cache afterwards.
 
 ### Conclusion
 
