@@ -296,7 +296,10 @@ lazysizes when it's not available:
 ```
 
 ### An option for Wordpress users
-You might have many iframes scattered across years worth of post content in a Wordpress site. You can optionally add the following code to your Wordpress theme's functions.php file to automatically insert ``loading="lazy"`` to your existing iframes without having to manually update them each individually.
+You might have many iframes scattered across years worth of post content
+in a Wordpress site. You can optionally add the following code to your Wordpress
+theme's `functions.php` file to automatically insert `loading="lazy"` to your
+existing iframes without having to manually update them each individually.
 
 ```php
 add_filter('the_content','lazyIF');
