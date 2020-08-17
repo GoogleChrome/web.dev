@@ -1,9 +1,9 @@
 ---
 lang: ''
 layout: layout
-nometa: true
+sw_payload_page: true
 permalink: /sw-payload
+show_banner: false
 ---
-{# Defines the layout used by the Service Worker. For now, uses a magic
-   string that is replace at serve time. #}
-%_CONTENT_REPLACE_%
+{# We don't show content here: instead, the main layout (layout.njk) generates
+   magic strings that are replaced by the Service Worker #}

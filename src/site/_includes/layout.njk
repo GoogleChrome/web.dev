@@ -18,7 +18,7 @@ eleventyComputed:
       <meta name="offline" content="true" />
     {%- endif %}
 
-    {% if nometa %}
+    {% if sw_payload_page %}
       {# Area on page that service worker will load title, rss url and if offline #}
       <!-- %_HEAD_REPLACE_% -->
     {% else %}
@@ -166,11 +166,15 @@ eleventyComputed:
     </web-side-nav>
     <main>
       <div id="content">
-        {% if show_banner %}
-          {% include 'partials/banner.njk' %}
+        {% if sw_payload_page %}
+          %_CONTENT_REPLACE_%
+        {% else %}
+          {% if show_banner %}
+            {% include 'partials/banner.njk' %}
+          {% endif %}
+          {% include 'partials/translation-disclaimer.njk' %}
+          {{ content | safe }}
         {% endif %}
-        {% include 'partials/translation-disclaimer.njk' %}
-        {{ content | safe }}
       </div>
     </main>
     {% include 'partials/footer.njk' %}
