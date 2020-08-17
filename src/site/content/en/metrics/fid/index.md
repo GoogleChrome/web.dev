@@ -4,12 +4,13 @@ title: First Input Delay (FID)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-05-21
+updated: 2020-06-19
 description: |
   This post introduces the First Input Delay (FID) metric and explains
   how to measure it
 tags:
   - performance
+  - metrics
 ---
 
 {% Aside %}
@@ -48,7 +49,8 @@ your site's interactivity and responsiveness.
 
 FID measures the time from when a user first interacts with a page (i.e. when
 they click a link, tap on a button, or use a custom, JavaScript-powered control)
-to the time when the browser is actually able to respond to that interaction.
+to the time when the browser is actually able to begin processing event handlers
+in response to that interaction.
 
 <picture>
   <source srcset="../vitals/fid_8x2.svg" media="(min-width: 640px)">
@@ -85,6 +87,16 @@ One common reason this might happen is the browser is busy parsing and executing
 a large JavaScript file loaded by your app. While it's doing that, it can't run
 any event listeners because the JavaScript it's loading might tell it to do
 something else.
+
+{% Aside 'gotchas' %}
+  FID only measures the "delay" in event processing. It does not measure the
+  event processing time itself nor the time it takes the browser to update the
+  UI after running event handlers. While this time does affect the user
+  experience, including it as part of FID would incentivize developers to
+  respond to events asynchronously—which would improve the metric but likely
+  make the experience worse. See [why only consider the input
+  delay](#why-only-consider-the-input-delay) below for more details.
+{% endAside %}
 
 Consider the following timeline of a typical web page load:
 
@@ -196,21 +208,48 @@ How you track, report on, and analyze FID will probably be quite a bit different
 from other metrics you may be used to. The next section explains how best to do
 this.
 
+### Why only consider the input delay?
+
+As mentioned above, FID only measures the "delay" in event processing. It does
+not measure the event processing time itself nor the time it takes the browser
+to update the UI after running event handlers.
+
+Even though this time is important to the user and _does_ affect the experience,
+it's not included in this metric because doing so could incentivize developers
+to add workarounds that actually make the experience worse—that is, they could
+wrap their event handler logic in an asynchronous callback (via `setTimeout()`
+or `requestAnimationFrame()`) in order to separate it from the task associated
+with the event. The result would be an improvement in the metric score but a
+slower response as perceived by the user.
+
+However, while FID only measure the "delay" portion of event latency, developers
+who want to track more of the event lifecycle can do so using the [Event Timing
+API](https://wicg.github.io/event-timing/). See the guide on [custom
+metrics](/custom-metrics/#event-timing-api) for more details.
+
 ## How to measure FID
 
 FID is a metric that can only be measured [in the
 field](/user-centric-performance-metrics/#in-the-field), as it requires a real
 user to interact with your page. You can measure FID with the following tools.
 
+{% Aside %}
+  FID requires a real user and thus cannot be measured in the lab. However, the
+  [Total Blocking Time (TBT)](/tbt/) metric is lab-measurable, correlates well
+  with FID in the field, and also captures issues that affect interactivity.
+  Optimizations that improve TBT in the lab should also improve FID for your
+  users.
+{% endAside %}
+
 ### Field tools
 
-- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
 - [Chrome User Experience
   Report](https://developers.google.com/web/tools/chrome-user-experience-report)
-- [Search Console (Speed
-  Report)](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
-- [Firebase Performance
-  Monitoring](https://firebase.google.com/docs/perf-mon/get-started-web) (beta)
+- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [Search Console (Core Web Vitals
+  report)](https://support.google.com/webmasters/answer/9205520)
+- [Firebase Performance Monitoring
+  (beta)](https://firebase.google.com/docs/perf-mon/get-started-web)
 
 ### Measure FID in JavaScript
 
@@ -242,12 +281,15 @@ entries, calculates FID, and logs the value to the console:
 {% include 'content/metrics/first-hidden-time.njk' %}
 {% include 'content/metrics/send-to-analytics.njk' %}
 {% include 'content/metrics/performance-observer-try.njk' %}
-  function onFirstInputEntry(entry) {
+  function onFirstInputEntry(entry, po) {
     // Only report FID if the page wasn't hidden prior to
     // the entry being dispatched. This typically happens when a
     // page is loaded in a background tab.
     if (entry.startTime < firstHiddenTime) {
       const fid = entry.processingStart - entry.startTime;
+
+      // Disconnect the observer.
+      po.disconnect();
 
       // Report the FID value to an analytics endpoint.
       sendToAnalytics({fid});
@@ -262,9 +304,13 @@ entries, calculates FID, and logs the value to the console:
 
 Due to the expected variance in FID values, it's critical that when reporting on
 FID you look at the distribution of values and focus on the higher percentiles.
-In fact, we recommend specifically focusing on the 95th–99th percentile, as that
-will correspond to the particularly bad first experiences users are having with
-your site. And it will show you the areas that need the most improvement.
+
+While [choice of
+percentile](/defining-core-web-vitals-thresholds/#choice-of-percentile) for all
+Core Web Vitals thresholds is the 75th, for FID in particular we still strongly
+recommend looking at the 95th–99th percentiles, as those will correspond to the
+particularly bad first experiences users are having with your site. And it will
+show you the areas that need the most improvement.
 
 This is true even if you segment your reports by device category or type. For
 example, if you run separate reports for desktop and mobile, the FID value you

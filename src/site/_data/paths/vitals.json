@@ -1,0 +1,14 @@
+{
+  "slug": "vitals",
+  "cover": "/vitals/web-vitals.svg",
+  "title": "Web Vitals",
+  "description": "Overview of Web Vitals.",
+  "topics": [
+    {
+      "title": "Web Vitals",
+      "pathItems": [
+        "vitals"
+      ]
+    }
+  ]
+}

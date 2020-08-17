@@ -1,4 +1,4 @@
-describe('_filters', function() {
+describe('_filters', function () {
   require('./capitalize');
   require('./live-posts');
 });

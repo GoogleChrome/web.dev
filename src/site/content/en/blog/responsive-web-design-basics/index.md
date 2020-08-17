@@ -1,5 +1,5 @@
 ---
-title: Responsive Web Design Basics
+title: Responsive web design basics
 subhead: How to create sites which respond to the needs and capabilities of the device they are viewed on.
 description: |
   How to create sites which respond to the needs and capabilities of the device they are viewed on.
@@ -173,13 +173,10 @@ to see the content.
 By using percentages for the widths, the columns always remain a certain percentage of the container.
 This means that the columns become narrower, rather than creating a scrollbar.
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/layout-floats-percent?path=README.md&previewSize=100"
-    title="layout-floats-percent on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'layout-floats-percent',
+  path: 'README.md'
+} %}
 
 Modern CSS layout techniques such as Flexbox, Grid Layout, and Multicol
 make the creation of these flexible grids much easier.
@@ -200,13 +197,10 @@ with smaller items taking less space and larger ones getting more space.
 In a responsive design, you can use Flexbox to display items as a single row,
 or wrapped onto multiple rows as the available space decreases.
 
-<div class="glitch-embed-wrap" style="height: 220px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/responsive-flexbox?previewSize=100"
-    title="responsive-flexbox on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'responsive-flexbox',
+  height: 220
+} %}
 
 [Read more about Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox).
 
@@ -225,13 +219,7 @@ which represents a portion of the available space in the container.
 }
 ```
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/two-column-grid?previewSize=100"
-    title="two-column-grid on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch 'two-column-grid' %}
 
 Grid can also be used to create regular grid layouts,
 with as many items as will fit.
@@ -239,29 +227,20 @@ The number of available tracks will be reduced as the screen size shrinks.
 In the below demo, we have as many cards as will fit on each row,
 with a minimum size of `200px`.
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/grid-as-many-as-fit?previewSize=100"
-    title="grid-as-many-as-fit on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch 'grid-as-many-as-fit' %}
 
 [Read more about CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids)
 
-#### Multiple-column Layout {: #multicol }
+#### Multiple-column layout {: #multicol }
 
 For some types of layout you can use Multiple-column Layout (Multicol),
 which can create responsive numbers of columns with the `column-width` property.
 In the demo below, you can see that columns are added if there is room for another `200px` column.
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/responsive-multicol?path=style.css&previewSize=100"
-    title="responsive-multicol on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'responsive-multicol',
+  path: 'style.css'
+} %}
 
 [Read more about Multicol](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Multiple-column_Layout)
 
@@ -319,13 +298,10 @@ and we can test for the following things.
 * `orientation`
 * `aspect-ratio`
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/media-queries-size?path=index.html&previewSize=100"
-    title="media-queries-size on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'media-queries-size',
+  path: 'index.html'
+} %}
 
 All of these features have excellent browser support,
 for more details including browser support information see
@@ -357,13 +333,7 @@ and whether the user can hover over elements.
 Try viewing this demo on different devices,
 such as a regular desktop computer and a phone or tablet.
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/media-query-pointer?&previewSize=100"
-    title="media-query-pointer on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch 'media-query-pointer' %}
 
 These newer features have good support in all modern browsers. Find out more on the MDN pages for
 [hover](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover),
@@ -483,13 +453,10 @@ so it doesn't consume the whole screen width.
 }
 ```
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/responsive-forecast?path=style.css&previewSize=100"
-    title="responsive-forecast on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'responsive-forecast',
+  path: 'style.css'
+} %}
 
 ### Optimize text for reading
 
@@ -527,13 +494,10 @@ In this case, if the browser width is greater than `575px`, the ideal content wi
 }
 ```
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/rwd-reading?path=index.html&previewSize=100"
-    title="rwd-reading on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'rwd-reading',
+  path: 'index.html'
+} %}
 
 ### Avoid simply hiding content
 

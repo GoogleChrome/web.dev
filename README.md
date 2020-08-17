@@ -44,10 +44,40 @@ npm run dev
 Open `http://localhost:8080/` to see the site locally. Changes to assets will
 rebuild the site. Refresh to see your changes.
 
+## Environments 🌳
+
+Set `ELEVENTY_ENV=prod` to force production builds. This is the default when
+running "stage" or "deploy". No other options for `ELEVENTY_ENV` are supported,
+although our Eleventy site config will default to 'dev' if unspecified.
+
 ## Staging 🕺
 
 When you send in a pull request it will be automatically staged for you. Keep an
 eye out for the netlify bot to comment on the pull request with your unique URL.
+
+## Deploying the site 🚀
+
+### Automatic deploys
+
+The site will build and deploy the master branch automatically every hour,
+Mon-Fri. If you've just merged an article then it should go live at the top
+of the next hour.
+
+### Manual deploys
+
+To manually deploy the site you'll need to be a member of one of these GitHub
+teams:
+
+- @GoogleChrome/web-dev-admins
+- @GoogleChrome/web-dev-content
+- @GoogleChrome/web-dev-contributors
+- @GoogleChrome/web-dev-eng
+- @GoogleChrome/web-devrel
+
+1. Navigate to [the Deploy workflow in the Actions panel](https://github.com/GoogleChrome/web.dev/actions?query=workflow%3ADeploy).
+2. Click the **Run workflow** button. Make sure the branch says `master`, then click the green **Run workflow** button.
+
+![An expanded workflow popup with a green run workflow button inside of it.](https://user-images.githubusercontent.com/1066253/89584965-da6eb500-d7f1-11ea-8a43-d8b1abe2cd3b.png)
 
 ## Debugging 🐛
 

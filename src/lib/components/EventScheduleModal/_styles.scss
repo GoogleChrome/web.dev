@@ -1,0 +1,48 @@
+@import '../../../styles/settings/colors';
+@import '../../../styles/settings/type';
+@import '../../../styles/tools/breakpoints';
+
+web-event-schedule-modal {
+  .modal {
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .25);
+    padding: 16px 16px 8px;
+    background: white;
+    max-width: 100%; // modal puts us in 1em padding anyway
+    width: 512px;
+
+    @include bp(sm) {
+      padding: 16px 24px;
+    }
+  }
+
+  h2 {
+    margin: 0 0 12px;
+  }
+
+  .w-event-schedule-modal__about {
+    font-size: 14px;
+    color: $GREY_800;
+    font-weight: $FONT_WEIGHT_MEDIUM;
+    margin: 12px 0;
+  }
+
+  // Modify the default button to match the mocks.
+  button.w-button.close {
+    float: right;
+    letter-spacing: 0;
+    margin: auto -8px -8px auto;
+    text-transform: none;
+  }
+
+  p {
+    color: $GREY_700;
+    font: inherit;
+    font-size: 14px;
+    margin: 8px 0;
+
+    &:first-of-type {
+      margin-top: 16px;
+    }
+  }
+}

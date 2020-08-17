@@ -4,12 +4,13 @@ title: Largest Contentful Paint (LCP)
 authors:
   - philipwalton
 date: 2019-08-08
-updated: 2020-05-21
+updated: 2020-06-17
 description: |
   This post introduces the Largest Contentful Paint (LCP) metric and explains
   how to measure it
 tags:
   - performance
+  - metrics
 ---
 
 {% Aside %}
@@ -64,7 +65,8 @@ of a page is loaded is to look at when the largest element was rendered.
 ## What is LCP?
 
 The Largest Contentful Paint (LCP) metric reports the render time of the largest
-content element visible within the viewport.
+[image or text block](#what-elements-are-considered) visible within the
+viewport.
 
 <picture>
   <source srcset="../vitals/lcp_8x2.svg" media="(min-width: 640px)">
@@ -73,7 +75,6 @@ content element visible within the viewport.
       alt="Good LCP values are 2.5 seconds, poor values are greater than 4.0
             seconds and anything in between needs improvement">
 </picture>
-
 
 ### What is a good LCP score?
 
@@ -155,6 +156,8 @@ subsequent frames, it will dispatch another
 [`PerformanceEntry`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry)
 any time the largest contentful element changes.
 
+For example, on a page with text and a hero image the browser may initially just render the text—at which point the browser would dispatch a `largest-contentful-paint` entry whose `element` property would likely reference a `<p>` or `<h1>`. Later, once the hero image finishes loading, a second `largest-contentful-paint` entry would be dispatched and its `element` property would reference the `<img>`.
+
 It's important to note that an element can only be considered the largest
 contentful element once it has rendered and is visible to the user. Images that
 have not yet loaded are not considered "rendered". Neither are text nodes using
@@ -171,8 +174,16 @@ will also be reported.
 
 If a page removes an element from the DOM, that element will no longer be
 considered. Similarly, if an element's associated image resource changes (e.g.
-changing `img.src` via JavaScript), then that element will stop be considered
+changing `img.src` via JavaScript), then that element will stop being considered
 until the new image loads.
+
+{% Aside %}
+  In the future, elements removed from the DOM may still be considered as LCP
+  candidates. [Research is currently being
+  done](https://github.com/WICG/largest-contentful-paint/issues/41#issuecomment-583589387)
+  to assess the impact of this change. You can follow the metrics
+  [CHANGELOG](http://bit.ly/chrome-speed-metrics-changelog) to stay up-to-date.
+{% endAside %}
 
 The browser will stop reporting new entries as soon as the user interacts with
 the page (via a tap, scroll, or keypress), as user interaction often changes
@@ -195,7 +206,7 @@ cross-origin images that lack the
 header. Instead, only their load time is exposed (since this is already exposed
 via many other web APIs).
 
-The [usage example](#how-to-measure-largest-contentful-paint-in-javascript)
+The [usage example](#measure-lcp-in-javascript)
 below shows how to handle elements whose render time is not available. But,
 when possible, it's always recommended to set the
 [`Timing-Allow-Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Timing-Allow-Origin)
@@ -254,7 +265,7 @@ largest element throughout the load process.
 
 ## How to measure LCP
 
-FCP can be measured [in the lab](/user-centric-performance-metrics/#in-the-lab)
+LCP can be measured [in the lab](/user-centric-performance-metrics/#in-the-lab)
 or [in the field](/user-centric-performance-metrics/#in-the-field), and it's
 available in the following tools:
 
@@ -262,16 +273,20 @@ available in the following tools:
 
 - [Chrome User Experience
   Report](https://developers.google.com/web/tools/chrome-user-experience-report)
+- [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [Search Console (Core Web Vitals
+  report)](https://support.google.com/webmasters/answer/9205520)
 
 ### Lab tools
 
-- [Lighthouse (v6)](https://developers.google.com/web/tools/lighthouse/)
 - [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+- [WebPageTest](https://webpagetest.org/)
 
 ### Measure LCP in JavaScript
 
 The easiest way to measure LCP (as well as all Web Vitals [field
-metrics]((/metrics/#in-the-field))) is with the [`web-vitals` JavaScript
+metrics](/user-centric-performance-metrics/#in-the-field) is with the [`web-vitals` JavaScript
 library](https://github.com/GoogleChrome/web-vitals), which wraps all the
 complexity of manually measuring LCP into a single function:
 
@@ -321,8 +336,9 @@ the console:
     if (document.visibilityState === 'hidden') {
       removeEventListener('visibilitychange', fn, true);
 
-      // Force any pending records to be dispatched.
-      po.takeRecords().forEach(updateLCP);
+      // Force any pending records to be dispatched and disconnect the observer.
+      po.takeRecords().forEach((entry) => updateLCP(entry, po));
+      po.disconnect();
 
       // If LCP is set, report it to an analytics endpoint.
       if (lcp) {
@@ -353,7 +369,7 @@ the article on [custom metrics](/custom-metrics/#element-timing-api).
 
 ## How to improve LCP
 
-LCP is primarily affected by three factors:
+LCP is primarily affected by four factors:
 
 * Slow server response times
 * Render-blocking JavaScript and CSS

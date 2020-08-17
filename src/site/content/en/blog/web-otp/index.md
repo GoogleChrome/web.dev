@@ -4,7 +4,7 @@ subhead: Help users with OTPs received through SMS
 authors:
   - agektmr
 date: 2019-10-07
-updated: 2020-04-16
+updated: 2020-06-11
 hero: hero.png
 alt: A drawing of a woman using OTP to log in to a web app.
 
@@ -16,7 +16,6 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - identity
   - capabilities
-  - fugu
   - otp
 ---
 
@@ -121,7 +120,7 @@ Complete
 <strong>5. Launch</strong>
 </td>
 <td markdown="block">
-Not started
+Chrome 84
 </td>
 </tr>
 </table>
@@ -133,7 +132,7 @@ that version of the API be aware of the changes made to it. Improvements from
 SMS Receiver API include:
 
 * The SMS message format is now aligned with WebKit's.
-* The web page only recives an OTP code regardless of whatever else is in the
+* The web page only receives an OTP code regardless of whatever else is in the
   message.
 * The browser's application hash code is no longer required in the message.
 
@@ -169,7 +168,7 @@ another device by copying the text displayed in the demo. This works because it
 doesn't matter who the sender is when using the Web OTP API.
 
 1. Go to
-   [https://web-otp-demo.glitch.me](https://web-otp-demo.glitch.me) in Chrome 83 or later.
+   [https://web-otp-demo.glitch.me](https://web-otp-demo.glitch.me) in Chrome 84 or later.
 1. Press **Copy** to copy the text message.
 1. Using your SMS app send it to another phone.
 1. Press **Verify**.
@@ -179,9 +178,12 @@ Did you receive the SMS and see the prompt to enter the code to the input area?
 That is how the Web OTP API works for users.
 
 {% Aside 'caution' %}
-If you are using a work profile on your Android device and the Web OTP does
-not work, try installing and using Chrome on your personal profile
-instead (i.e. the same profile in which you receive SMS messages).
+* If the sender's phone number is included in the receiver's contact list, this API
+  will not be triggered due to the design of the underlying [SMS
+User Consent  API](https://developers.google.com/identity/sms-retriever/user-consent/request#2_start_listening_for_incoming_messages).
+* If you are using a work profile on your Android device and the Web OTP does
+  not work, try installing and using Chrome on your personal profile instead
+  (i.e. the same profile in which you receive SMS messages).
 {% endAside %}
 
 ## Use the Web OTP API
@@ -318,7 +320,7 @@ was called.
 
 The message must adhere to the following formatting:
 
-* The origin part of the URL of the website that invoked the API must be
+* The host part of the URL of the website that invoked the API must be
   preceded by `@`.
 * The URL must contain a pound sign ('`#`') followed by the OTP.
 * Optionally, the message may contain additional text for the user.
@@ -372,7 +374,7 @@ a few significant differences compared to the SMS Receiver API.
 
 Chromium and WebKit agreed on the SMS text message format. Find WebKit's
 documentation here:
-[Delivering origin-bound one-time codes over SMS](https://github.com/WebKit/explainers/tree/master/sms-one-time-code-format)
+[Delivering origin-bound one-time codes over SMS](https://github.com/wicg/sms-one-time-codes)
 
 
 ### Is it safe to use SMS as a way to authenticate?

@@ -1,6 +1,6 @@
   // Create a PerformanceObserver that calls `{{ entryCallback }}` for each entry.
-  const po = new PerformanceObserver((entryList) => {
-    entryList.getEntries().forEach({{ entryCallback }});
+  const po = new PerformanceObserver((entryList, po) => {
+    entryList.getEntries().forEach((entry) => {{ entryCallback }}(entry, po));
   });
 
   // Observe entries of type `{{ entryType }}`, including buffered entries,

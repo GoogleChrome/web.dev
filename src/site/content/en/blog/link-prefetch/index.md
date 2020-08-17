@@ -10,7 +10,6 @@ description: |
 tags:
   - blog
   - performance
-  - fast
 codelabs: codelab-two-ways-to-prefetch
 ---
 

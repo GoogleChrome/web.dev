@@ -12,6 +12,9 @@ description: |
   payment app. Learn how to set up a payment method and get your payment app
   ready for merchants and customers to make payments.
 date: 2020-05-25
+updated: 2020-07-17
+tags:
+  - payments
 ---
 
 To be used with the Payment Request API, a payment app must be associated with a
@@ -23,12 +26,14 @@ payment app to be properly discovered and invoked by a browser.
 If you are new to the concept of Web Payments or how a payment transaction works
 through payment apps, read the following articles first:
 
-- [Empowering payment apps with Web Payments](/empowering-payment-apps)
+- [Empowering payment apps with Web Payments](/empowering-payment-apps-with-web-payments)
 - [Life of a payment transaction](/life-of-a-payment-transaction)
+
+{% include 'content/payments/browser-compatibility.njk' %}
 
 ## How a browser discovers a payment app
 
-Every payment app needs to provide the following: 
+Every payment app needs to provide the following:
 
 - URL-based payment method identifier
 - Payment method manifest (except when the payment method identifier is
@@ -36,7 +41,7 @@ Every payment app needs to provide the following:
 - Web app manifest
 
 <figure class="w-figure">
-  <img src="diagram_direct.png" 
+  <img src="diagram_direct.png"
        alt="Diagram: How a browser discovers the payment app from a URL-based payment
 method identifier">
 </figure>
@@ -346,7 +351,7 @@ payment app appears in the Payment Request UI.
 </div>
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./web-app-manifest.png" 
+  <img class="w-screenshot" src="./web-app-manifest.png"
        alt="Payment app with an icon.">
   <figcaption class="w-figcaption">
     Payment app label and icon.
@@ -437,7 +442,7 @@ launch a payment app directly without showing the Payment Request UI when
     <source src="https://storage.googleapis.com/web-dev-assets/payments/skip-the-sheet.mp4" type="video/mp4">
   </video>
   <figcaption class="w-figcaption">
-    Skip the Payment Request UI and launch the payment app directly. 
+    Skip the Payment Request UI and launch the payment app directly.
   </figcaption>
 </figure>
 
@@ -476,5 +481,5 @@ single payment app.
 Now that you have your payment app discoverable, learn how to develop a native
 payment app and a web-based payment app.
 
-- [Android payment apps: developer's guide](/native-payment-apps-overview)
+- [Android payment apps: developer's guide](/android-payment-apps-developers-guide)
 - Web based payment apps developer guide (Coming soon)

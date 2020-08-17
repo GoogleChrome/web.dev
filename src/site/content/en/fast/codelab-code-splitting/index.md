@@ -9,6 +9,8 @@ description: |
 date: 2018-11-05
 glitch: code-splitting-starter
 related_post: reduce-javascript-payloads-with-code-splitting
+tags:
+  - performance
 ---
 
 {% include 'content/devtools-headsup.njk' %}

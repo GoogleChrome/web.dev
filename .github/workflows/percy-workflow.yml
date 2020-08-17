@@ -7,19 +7,17 @@ on:
     branches:
       - master
     paths:
-      - '**.js'
-      - '!src/site/_data/contributors.js'
+      - 'src/**.js'
+      - 'shared/**.js'
       - '!src/site/_data/countries.js'
-      - '!src/site/_data/postTags.js'
       - 'package.json'
       - '**.njk'
       - '**.scss'
   pull_request:
     paths:
-      - '**.js'
-      - '!src/site/_data/contributors.js'
+      - 'src/**.js'
+      - 'shared/**.js'
       - '!src/site/_data/countries.js'
-      - '!src/site/_data/postTags.js'
       - 'package.json'
       - '**.njk'
       - '**.scss'

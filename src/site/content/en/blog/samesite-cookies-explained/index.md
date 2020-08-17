@@ -5,7 +5,7 @@ subhead:
 authors:
   - rowan_m
 date: 2019-05-07
-updated: 2020-01-06
+updated: 2020-05-28
 hero: cookie-hero.jpg
 description: |
   Learn how to mark your cookies for first-party and third-party usage with the
@@ -295,7 +295,7 @@ lays out two key changes:
 - Cookies with `SameSite=None` must also specify `Secure`, meaning they require
   a secure context.
 
-Chrome implements these behaviors as of version 80.
+Chrome implements this default behavior as of version 84.
 [Firefox](https://groups.google.com/d/msg/mozilla.dev.platform/nx2uP0CzA9k/BNVPWDHsAQAJ)
 has them available to test as of Firefox 69 and will make them default behaviors
 in the future. To test these behaviors in Firefox, open

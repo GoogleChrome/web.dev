@@ -5,14 +5,13 @@ authors:
   - beaufortfrancois
   - jungkees
 date: 2020-05-20
-updated: 2020-05-26
+updated: 2020-07-22
 hero: hero.jpg
 alt: A photo of an Android phone showing an app shortcuts menu
 description: App shortcuts give quick access to a handful of common actions that users need frequently.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
-  - fugu
   - progressive-web-apps
 ---
 
@@ -21,9 +20,8 @@ web platform now supports app shortcuts. They allow web developers to provide
 quick access to a handful of common actions that users need frequently.
 
 {% Aside %}
-At the time of writing, app shortcuts are available in Chrome 84 for Android. On
-Windows, you can experiment with them on both Chrome 84 and Edge 84 by enabling
-the flag `about://flags/#enable-desktop-pwas-app-icon-shortcuts-menu`.
+At the time of writing, app shortcuts are available on Android (Chrome 84) and
+Windows (Chrome 85 and Edge 85).
 {% endAside %}
 
 This article will teach you how to define those app shortcuts. Additionally,
@@ -136,9 +134,14 @@ include the `src` and a `sizes` property. Unlike [web app manifest icons], the
 
 SVG files are not supported at the time of writing, use PNG instead.
 
-If you want pixel-perfect icons, provide them in
-increments of 48dp. Otherwise, it is recommended that you use a 192x192 pixels
-icon.
+If you want pixel-perfect icons, provide them in increments of 48dp (i.e. 36x36,
+48x48, 72x72, 96x96, 144x144, 192x192 pixel icons). Otherwise, it is recommended
+that you use a single 192x192 pixel icon.
+
+As a quality measure, icons must be at least half of the device's ideal size on
+Android, which is 48dp. For example, to display on an [xxhdpi screen], the icon
+must be at least 72 by 72 pixels. (This is derived from the
+[formula for converting] dp units for pixel units.)
 
 ## Test your app shortcuts
 
@@ -158,8 +161,9 @@ shortcut icons, if provided, are loading properly.
 DevTools support for app shortcuts is available in Chrome 84 and Edge 84 and later.
 {% endAside %}
 
-App shortcuts may not be available right away to all users because PWA updates
-are capped to once a day.  You can find more details in this [article].
+App shortcuts may not be available right away to all users because Progressive
+Web App updates are capped to once a day.  You can find more details in this
+[article].
 
 ## Best practises
 
@@ -185,16 +189,19 @@ You should annotate app shortcuts `url` entries like you would do with
 
 ## Browser support
 
-App shortcuts are available in Chrome 84 on Android. On Windows, you can
-experiment with them on both Chrome 84 and Edge 84 by enabling the flag
-`about://flags/#enable-desktop-pwas-app-icon-shortcuts-menu`. More desktop
-platform support will follow.
+App shortcuts are available on Android (Chrome 84) and Windows (Chrome 85 and
+Edge 85). More desktop platform support will follow.
 
 ## Trusted Web Activity support
 
 [Bubblewrap], the recommended tool to build Android apps that use [Trusted Web
 Activity], reads app shortcuts from the web app manifest and automatically
-generates the corresponding configuration for the Android app.
+generates the corresponding configuration for the Android app. Note that icons
+for app shortcuts are [required] and must be at least 96 by 96 pixels in
+Bubblewrap.
+
+[PWABuilder], a great tool to easily turn a Progressive Web App into a Trusted
+Web Activity, supports app shortcuts with some [caveats].
 
 For developers integrating Trusted Web Activity manually into their Android
 application, [Android app shortcuts] can be used to implement the same
@@ -210,13 +217,11 @@ behaviors.
 
 Check out the [app shortcuts sample] and its [source].
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/app-shortcuts?path=public/manifest.json&attributionHidden=true"
-    alt="app-shortcuts on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'app-shortcuts',
+  path: 'public/manifest.json',
+  height: 480
+} %}
 
 ## Helpful links
 
@@ -233,7 +238,7 @@ Check out the [app shortcuts sample] and its [source].
 [scope]: /add-manifest/#scope
 [web app manifest]: /add-manifest
 [web app manifest icons]: /add-manifest/#icons
-[explainer]: https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/Shortcuts/explainer.md
+[explainer]: https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/Shortcuts/explainer.md
 [spec]: https://w3c.github.io/manifest/#shortcuts-member
 [app shortcuts sample]: https://app-shortcuts.glitch.me
 [source]: https://glitch.com/edit/#!/app-shortcuts
@@ -241,7 +246,12 @@ Check out the [app shortcuts sample] and its [source].
 [cr-status]: https://chromestatus.com/feature/5706099464339456
 [`UI>Browser>WebAppInstalls`]: https://crbug.com/?q=component:UI>Browser>WebAppInstalls
 [bubblewrap]: https://github.com/GoogleChromeLabs/bubblewrap
+[required]: https://github.com/GoogleChromeLabs/bubblewrap/issues/116
 [Trusted Web Activity]: /using-a-pwa-in-your-android-app/
+[PWABuilder]: https://www.pwabuilder.com/
+[caveats]: https://github.com/pwa-builder/CloudAPK/issues/25
 [Android app shortcuts]: https://developer.android.com/guide/topics/ui/shortcuts
+[xxhdpi screen]: https://developer.android.com/training/multiscreen/screendensities#TaskProvideAltBmp
+[formula for converting]: https://developer.android.com/training/multiscreen/screendensities#dips-pels
 [article]: https://developers.google.com/web/fundamentals/integration/webapks#update-webapk
 <!-- lint enable definition-case -->

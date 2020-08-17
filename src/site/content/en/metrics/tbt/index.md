@@ -4,20 +4,24 @@ title: Total Blocking Time (TBT)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-05-04
+updated: 2020-06-15
 description: |
   This post introduces the Total Blocking Time (TBT) metric and explains
   how to measure it
 tags:
   - performance
+  - metrics
 ---
 
 {% Aside %}
-  Total Blocking Time (TBT) is an important, user-centric metric for measuring
-  [load responsiveness](/user-centric-performance-metrics/#types-of-metrics)
-  because it helps quantify the severity of how non-interactive a page is prior
-  to it becoming reliably interactive&mdash;a low TBT helps ensure that the page
-  is [usable](/user-centric-performance-metrics/#questions).
+
+  Total Blocking Time (TBT) is an important [lab
+  metric](/user-centric-performance-metrics/#in-the-lab) for measuring [load
+  responsiveness](/user-centric-performance-metrics/#types-of-metrics) because
+  it helps quantify the severity of how non-interactive a page is prior to it
+  becoming reliably interactive&mdash;a low TBT helps ensure that the page is
+  [usable](/user-centric-performance-metrics/#questions).
+
 {% endAside %}
 
 ## What is TBT?
@@ -34,7 +38,7 @@ because the browser cannot interrupt a task that's in progress. So in the event
 that a user _does_ interact with the page in the middle of a long task, the
 browser must wait for the task to finish before it can respond.
 
-If the task is long enough (e.g. anything above 50 ms). It's likely that the
+If the task is long enough (e.g. anything above 50 ms), it's likely that the
 user will notice the delay and perceive the page as sluggish or janky.
 
 The _blocking time_ of a given long task is its duration in excess of 50 ms. And
@@ -114,6 +118,12 @@ TBT is a metric that should be measured [in the
 lab](/user-centric-performance-metrics/#in-the-lab). The best way to measure TBT is to run a
 Lighthouse performance audit on your site. See the [Lighthouse documentation on
 TBT](/lighthouse-total-blocking-time) for usage details.
+
+### Lab tools
+
+* [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
+* [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
+* [WebPageTest](https://www.webpagetest.org/)
 
 {% Aside %}
   While it is possible to measure TBT in the field, it's not recommended as user

@@ -18,7 +18,9 @@ const {html} = require('common-tags');
 const md = require('markdown-it')();
 const mdBlock = require('../../_filters/md-block');
 const fs = require('fs');
+const path = require('path');
 const yaml = require('js-yaml');
+const site = require('../../_data/site');
 
 // Renders the set leader at the top of the self-assessment
 function headerTemplate(assessment) {
@@ -63,13 +65,11 @@ function contentTemplate(assessment) {
 // and passing the response components to the response template.
 function questionTemplate(question, assessment) {
   const stimulus = question.stimulus
-    ? html`
-        <div data-role="stimulus">${mdBlock(question.stimulus)}</div>
-      `
+    ? html`<div data-role="stimulus">${mdBlock(question.stimulus)}</div>`
     : '';
 
   const height = assessment.height
-    ? "question-height='" + assessment.height + "'"
+    ? `question-height="${assessment.height}"`
     : '';
 
   return html`
@@ -123,11 +123,7 @@ function responseTemplate(response) {
     `);
   }
 
-  if (
-    response.columns &&
-    response.columns != true &&
-    response.columns != false
-  ) {
+  if (response.columns && typeof response.columns !== 'boolean') {
     throw new Error(`
       The columns value for self-assessment response components must be true or false.
       Check your assessment's *.assess.yml file for invalid columns values.
@@ -208,15 +204,18 @@ module.exports = (page, targetAssessment) => {
       Pass the file name, without ".assess.yml", of the desired assessment as a string.
     `);
   }
-
-  const path = page.filePathStem.replace(/index$/, '');
-  const source = 'src/site/content' + path + targetAssessment + '.assess.yml';
+  const filePath = page.filePathStem.replace(/index$/, '');
+  const source = path.join(
+    site.contentDir,
+    filePath,
+    targetAssessment + '.assess.yml',
+  );
   const data = fs.readFileSync(source, 'utf8');
   const assessment = yaml.safeLoad(data);
 
   // prettier-ignore
   return html`
-    <web-assessment class="w-callout unresolved ${assessment.questions.length === 1 && "web-assessment--singleton"}" aria-label="Check your understanding">
+    <web-assessment class="w-callout unresolved ${assessment.questions.length === 1 && 'web-assessment--singleton'}" aria-label="Check your understanding">
       ${headerTemplate(assessment)} ${contentTemplate(assessment)}
     </web-assessment>
   `;

@@ -6,7 +6,7 @@ description: |
 web_lighthouse:
   - no-document-write
 date: 2019-05-02
-updated: 2019-08-28
+updated: 2020-06-04
 ---
 
 Using [`document.write()`](https://developer.mozilla.org/en-US/docs/Web/API/Document/write)
@@ -14,6 +14,19 @@ can delay the display of page content by tens of seconds
 and is particularly problematic for users on slow connections.
 Chrome therefore blocks the execution of `document.write()` in many cases,
 meaning you can't rely on it.
+
+In the Chrome DevTools Console you'll see the following message when you use `document.write()`:
+
+```text
+[Violation] Avoid using document.write().
+```
+
+In the Firefox DevTools Console you'll see this message:
+
+```text
+An unbalanced tree was written using document.write() causing
+data from the network to be reparsed.
+```
 
 ## How the Lighthouse `document.write()` audit fails
 
@@ -53,3 +66,4 @@ ask the provider to support asynchronous loading.
 - [Source code for **Uses `document.write()`** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/no-document-write.js)
 - [Intervening against `document.write()`](https://developers.google.com/web/updates/2016/08/removing-document-write)
 - [Parser blocking versus asynchronous JavaScript](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript#parser_blocking_versus_asynchronous_javascript)
+- [Speculative parsing](https://developer.mozilla.org/en-US/docs/Glossary/speculative_parsing)

@@ -20,14 +20,7 @@ const {html} = require('common-tags');
 
 /* eslint-disable max-len */
 
-module.exports = (learningPath) => {
-  let linkText;
-  if (learningPath.slug === 'blog') {
-    linkText = learningPath.titleVariation;
-  } else {
-    linkText = learningPath.title;
-  }
-
+module.exports = ({title, slug}) => {
   return html`
     <ul class="w-breadcrumbs">
       <li class="w-breadcrumbs__crumb">
@@ -41,15 +34,28 @@ module.exports = (learningPath) => {
           ${site.titleVariation}
         </a>
       </li>
+
+      <svg
+        class="w-breadcrumbs__icon"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+        aria-hidden="true"
+      >
+        <path d="M0 0h24v24H0V0z" fill="none" />
+        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+      </svg>
+
       <li class="w-breadcrumbs__crumb">
         <a
           class="w-breadcrumbs__link gc-analytics-event"
           data-category="web.dev"
           data-label="post, path breadcrumb"
           data-action="click"
-          href=${path.join('/', learningPath.slug)}
+          href=${path.join('/', slug)}
         >
-          ${linkText}
+          ${title}
         </a>
       </li>
     </ul>

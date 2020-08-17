@@ -1,8 +1,12 @@
 import createStore from 'unistore';
 import devtools from 'unistore/devtools';
 import getMeta from './utils/meta';
+import {getTimeOffset} from './utils/time-offset';
 import {localStorage} from './utils/storage';
 import {isProd} from 'webdev_config';
+
+const initialParams = new URLSearchParams(window.location.search);
+const timeOffset = getTimeOffset(initialParams.get('_now'));
 
 const initialState = {
   // The first time the app boots we won't know whether the user is signed
@@ -32,6 +36,7 @@ const initialState = {
   lighthouseError: null,
 
   currentUrl: window.location.pathname,
+  currentLanguage: document.documentElement.getAttribute('lang'),
   isOffline: Boolean(getMeta('offline')),
   isSideNavExpanded: false,
   isModalOpen: false,
@@ -49,6 +54,15 @@ const initialState = {
   // Handle hiding/showing the snackbar.
   showingSnackbar: false,
   snackbarType: null,
+
+  userPreferredLanguage: '',
+
+  // Used to override the current time for web.dev/LIVE testing.
+  timeOffset,
+
+  // Data for the current web.dev/LIVE event.
+  eventDays: [],
+  activeEventDay: null, // livestream shown for this day
 };
 
 let store;

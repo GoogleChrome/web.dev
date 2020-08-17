@@ -1,0 +1,25 @@
+---
+noindex: true
+permalink: "/sitemap.xml"
+---
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for page in collections.all %}
+{%- if not page.data.noindex and not page.data.draft %}
+  {# Verify that the page has a permalink so we don't pull in things like #}
+  {# the service worker partial. #}
+  {# But use the page's fileSlug so we can strip out the language directory. #}
+  {%- if page.url %}
+  {% set absoluteUrl %}{{ page.data.canonicalUrl }}{% endset %}
+  <url>
+    <loc>{{ absoluteUrl }}</loc>
+    {%- if page.data.updated %}
+    <lastmod>{{ page.data.updated | htmlDateString }}</lastmod>
+    {%- else %}
+    <lastmod>{{ page.data.date | htmlDateString }}</lastmod>
+    {%- endif %}
+  </url>
+  {%- endif %}
+{%- endif %}
+{%- endfor %}
+</urlset>

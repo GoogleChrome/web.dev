@@ -20,7 +20,9 @@ show_banner: false
           {% for author in authors %}
             {% Author {
               id: author,
-              showSocialMedia: true}
+              author: collections.authors[author],
+              showSocialMedia: true
+              }
             %}
           {% endfor %}
         </div>
@@ -36,14 +38,12 @@ show_banner: false
       {% if related_post %}
         {% ArticleNavigation {
           back: '/' + related_post,
-          backLabel: 'Return to article',
-          lang: lang
+          backLabel: 'Return to article'
         } %}
       {% else %}
         {% ArticleNavigation {
           back: '/' + path.slug,
-          backLabel: 'Return to all articles',
-          lang: lang
+          backLabel: 'Return to all articles'
         } %}
       {% endif %}
     </div>

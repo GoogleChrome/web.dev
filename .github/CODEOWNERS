@@ -3,27 +3,36 @@
 # Read more @ https://help.github.com/articles/about-code-owners/
 
 # Default owners for everything
-* @robdodson @samthor
+* @GoogleChrome/web-dev-eng
 
 # Docs
-content/ @kaycebasques
-content/en/react/ @housseindjirdeh @kaycebasques
-content/en/angular/ @mgechev @kaycebasques
+src/site/content/ @GoogleChrome/web-dev-content
+src/images/authors/ @GoogleChrome/web-dev-content
+src/site/content/en/angular/ @mgechev @GoogleChrome/web-dev-content
+src/site/content/en/authors/ @GoogleChrome/web-dev-eng
+src/site/content/en/metrics/ @philipwalton @GoogleChrome/web-dev-content
+src/site/content/en/newsletter/ @GoogleChrome/web-dev-eng
+src/site/content/en/progressive-web-apps/ @petele @GoogleChrome/web-dev-content
+src/site/content/en/react/ @housseindjirdeh @GoogleChrome/web-dev-content
+src/site/content/en/tags/ @GoogleChrome/web-dev-eng
+src/site/content/en/vitals/ @philipwalton @GoogleChrome/web-dev-content
 
 # File types
-# These should appear last so they override docs directory owners.
-*.js @robdodson @samthor
-*.json @robdodson @samthor
-*.css @robdodson @samthor
-*.scss @robdodson @samthor
-*.html @robdodson @samthor
-*.htm @robdodson @samthor
-*.njk @robdodson @samthor
-*.yml @robdodson @samthor
-*.yaml @robdodson @samthor
-*.toml @robdodson @samthor
-*.sh @robdodson @samthor
+# These should override docs directory owners.
+*.js @GoogleChrome/web-dev-eng
+*.json @GoogleChrome/web-dev-eng
+*.css @GoogleChrome/web-dev-eng
+*.scss @GoogleChrome/web-dev-eng
+*.html @GoogleChrome/web-dev-eng
+*.htm @GoogleChrome/web-dev-eng
+*.njk @GoogleChrome/web-dev-eng
+*.yml @GoogleChrome/web-dev-eng
+*.yaml @GoogleChrome/web-dev-eng
+*.toml @GoogleChrome/web-dev-eng
+*.sh @GoogleChrome/web-dev-eng
 
 # Exceptions
-src/site/_data/contributors.js @kaycebasques @robdodson
-src/site/_data/postTags.js @kaycebasques @robdodson
+src/site/_data/authorsData.json @GoogleChrome/web-dev-content
+src/site/_data/tagsData.json @GoogleChrome/web-dev-content
+src/site/_data/paths/*.json @GoogleChrome/web-dev-content
+src/site/_data/paths/progressive-web-apps.json @petele @GoogleChrome/web-dev-content

@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-const isProd = Boolean(process.env.GAE_APPLICATION);
+const isGAEProd = Boolean(process.env.GAE_APPLICATION);
 
 const compression = require('compression');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const localeHandler = require('./locale-handler.js');
-const buildRedirectHandler = require('./redirect-handler.js');
+const {build: buildRedirectHandler} = require('./redirect-handler.js');
 
 // If true, we'll aggressively nuke the prod Service Worker. For emergencies.
-const serviceWorkerKill = true;
+const serviceWorkerKill = false;
 
 const redirectHandler = (() => {
   // In development, Eleventy isn't guaranteed to have run, so read the actual
   // source file.
-  const redirectsPath = isProd
+  const redirectsPath = isGAEProd
     ? 'dist/_redirects.yaml'
     : 'src/site/content/_redirects.yaml';
 
@@ -54,8 +54,44 @@ const notFoundHandler = (req, res, next) => {
   }
 
   const options = {root: 'dist/en'};
-  res.sendFile(`404/index.html`, options, (err) => err && next(err));
+  res.sendFile('404/index.html', options, (err) => err && next(err));
 };
+
+// Builds a safety asset handler which matches all requests to e.g. "app-...css", and instead
+// returns the current live asset. This applies to both "app.css" and "bootstrap.js".
+function buildSafetyAssetHandler() {
+  const hashedAssetMatch = /^(\w+)(?:|-\w+)\.(\w+)(?:\?.*|)$/;
+
+  // Matches URLs like "/foo-hash.css" or "/blah.suffix", including an optional query param suffix.
+  // Just returns two groups: "foo" and "suffix".
+  const runHashedAssetMatch = (cand) => {
+    if (cand.startsWith('/')) {
+      cand = cand.substr(1);
+    }
+    const m = hashedAssetMatch.exec(cand);
+    if (!m) {
+      return {base: null, ext: null};
+    }
+    const [base, ext] = m.slice(1, 3);
+    return {base, ext};
+  };
+
+  return (req, res, next) => {
+    const {base, ext} = runHashedAssetMatch(req.url);
+    if (!base) {
+      return next();
+    }
+
+    // We don't hash these assets in the upload, so just use them directly.
+    if (base === 'bootstrap' && ext === 'js') {
+      req.url = '/bootstrap.js';
+    } else if (base === 'app' && ext === 'css') {
+      req.url = '/app.css';
+    }
+
+    return next();
+  };
+}
 
 // Implement safety mechanics.
 //   * Disallow invalid hostnames (and remove any lasting Service Workers
@@ -85,6 +121,7 @@ const safetyHandler = (req, res, next) => {
 
 const handlers = [
   safetyHandler,
+  buildSafetyAssetHandler(),
   localeHandler,
   express.static('dist'),
   express.static('dist/en'),
@@ -92,14 +129,19 @@ const handlers = [
   notFoundHandler,
 ];
 
-// For dev we'll do our own compression. This ensures things like Lighthouse CI
-// get a fairly accurate picture of our site.
-// For prod we'll rely on App Engine to compress for us.
-if (!isProd) {
+const app = express();
+
+if (!isGAEProd) {
+  // For dev we'll do our own compression. This ensures things like Lighthouse CI
+  // get a fairly accurate picture of our site.
+  // For prod we'll rely on App Engine to compress for us.
   handlers.unshift(compression());
+
+  // In dev, serve our source files so that Source Maps can correctly load their
+  // original files.
+  app.use('/src', express.static('src'));
 }
 
-const app = express();
 app.use(cookieParser());
 app.use(...handlers);
 

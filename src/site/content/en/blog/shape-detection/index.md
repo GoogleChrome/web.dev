@@ -5,12 +5,11 @@ authors:
   - thomassteiner
 description: The Shape Detection API detects faces, barcodes, and text in images.
 date: 2019-01-07
-updated: 2020-05-20
+updated: 2020-08-10
 tags:
   - blog
   - capabilities
-  - fugu
-  - origin-trial
+  - origin-trials
   - shape-detection
   - progressive-web-apps
   - webapp
@@ -120,7 +119,7 @@ of use cases for all three features.
 | 2. Create initial draft of specification   | [In Progress][spec]          |
 | **3. Gather feedback & iterate on design** | [**In progress**](#feedback) |
 | 4. Origin trial                            | [Complete](https://developers.chrome.com/origintrials/#/view_trial/-2341871806232657919) |
-| **5. Launch**                              | Barcode detection **Complete**<br>Face Detection [In Progress](https://www.chromestatus.com/feature/5678216012365824)<br>Text Detection [In Progress](https://www.chromestatus.com/features/5644087665360896) |
+| **5. Launch**                              | Barcode detection **Complete**<br>Face Detection [In Progress](https://www.chromestatus.com/feature/5678216012365824)<br>Text Detection [In Progress](https://www.chromestatus.com/feature/5644087665360896) |
 
 </div>
 
@@ -168,29 +167,6 @@ overview of the different platforms.
   attribute to request CORS access.
 {% endAside %}
 
-### Working with the `FaceDetector` {: #facedetector}
-
-The `FaceDetector` always returns the bounding boxes of faces it detects in
-the `ImageBitmapSource`. Depending on the platform, more information
-regarding face landmarks like eyes, nose, or mouth may be available.
-
-```js
-const faceDetector = new FaceDetector({
-  // (Optional) Hint to try and limit the amount of detected faces
-  // on the scene to this maximum number.
-  maxDetectedFaces: 5,
-  // (Optional) Hint to try and prioritize speed over accuracy
-  // by, e.g., operating on a reduced scale or looking for large features.
-  fastMode: false
-});
-try {
-  const faces = await faceDetector.detect(image);
-  faces.forEach(face => drawMustache(face));
-} catch (e) {
-  console.error('Face detection failed:', e);
-}
-```
-
 ### Working with the `BarcodeDetector` {: #barcodedetector}
 
 The `BarcodeDetector` returns the barcode raw values it finds in the
@@ -222,6 +198,31 @@ try {
   barcodes.forEach(barcode => searchProductDatabase(barcode));
 } catch (e) {
   console.error('Barcode detection failed:', e);
+}
+```
+
+### Working with the `FaceDetector` {: #facedetector}
+
+The `FaceDetector` always returns the bounding boxes of faces it detects in
+the `ImageBitmapSource`. Depending on the platform, more information
+regarding face landmarks like eyes, nose, or mouth may be available.
+It is important to note that this API only detects faces.
+It does not identify who a face belongs to.
+
+```js
+const faceDetector = new FaceDetector({
+  // (Optional) Hint to try and limit the amount of detected faces
+  // on the scene to this maximum number.
+  maxDetectedFaces: 5,
+  // (Optional) Hint to try and prioritize speed over accuracy
+  // by, e.g., operating on a reduced scale or looking for large features.
+  fastMode: false
+});
+try {
+  const faces = await faceDetector.detect(image);
+  faces.forEach(face => drawMustache(face));
+} catch (e) {
+  console.error('Face detection failed:', e);
 }
 ```
 

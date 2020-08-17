@@ -14,6 +14,8 @@ description: |
   this issue, analyze your bundle to detect unused code.
 codelabs:
   - codelab-remove-unused-code
+tags:
+  - performance
 ---
 
 Registries like [npm](https://docs.npmjs.com/getting-started/what-is-npm) have
@@ -93,6 +95,9 @@ anywhere, take a step back and see which of your top-level dependencies are
 using it. Try to find a way to only import the components that you need from it.
 If you aren't using a library, remove it.  If the library isn't required for the
 initial page load, consider if it can be [lazy loaded](/reduce-javascript-payloads-with-code-splitting).
+
+And in case you're using webpack, check out [the list of plugins
+that automatically remove unused code from popular libraries](https://github.com/GoogleChromeLabs/webpack-libs-optimizations).
 
 {% Aside 'codelab' %}
 [Remove unused code.](/codelab-remove-unused-code)

@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Share cross-origin resources safely
+title: Cross-Origin Resource Sharing (CORS)
+subhead: Share cross-origin resources safely
 authors:
   - kosamari
 date: 2018-11-05
@@ -10,6 +11,8 @@ description: |
   data, but it also prevents legitimate uses. What if you wanted to get weather
   data from another country? Enabling CORS lets the server tell the browser it's
   permitted to use an additional origin.
+tags:
+  - security
 ---
 
 The browser's same-origin policy blocks reading a resource from a different
@@ -112,33 +115,15 @@ shared with the client site.
 
 ## See CORS in action
 
-Here is a tiny web server using Express. It is hosted at
-`https://cors-demo.glitch.me/`.
+Here is a tiny web server using Express.
 
-```js
-const express = require('express');
-const app = express();
+{% Glitch {
+  id: 'cors-demo',
+  path: 'server.js',
+  height: 480
+} %}
 
-// No CORS header set
-app.get('/', function(request, response) {
-  response.sendFile(__dirname + '/message.json');
-});
-
-// CORS header `Access-Control-Allow-Origin` set to accept all
-app.get('/allow-cors', function(request, response) {
-  response.set('Access-Control-Allow-Origin', '*');
-  response.sendFile(__dirname + '/message.json');
-});
-
-// Listen for requests :)
-const listener = app.listen(process.env.PORT, function() {
-  console.log('Your app is listening on port ' + listener.address().port);
-});
-```
-
-([See the server code in action on Glitch](https://glitch.com/edit/#!/cors-demo?path=server.js))
-
-The first endpoint (line 5) does not have any response header set, it just sends
+The first endpoint (line 8) does not have any response header set, it just sends
 a file in response.
 
 {% Instruction 'devtools' %}
@@ -156,7 +141,7 @@ request has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header
 is present on the requested resource.
 ```
 
-The second endpoint (line 10) sends the same file in response but adds
+The second endpoint (line 13) sends the same file in response but adds
 `Access-Control-Allow-Origin: *` in the header. From the console, try
 
 ```js
@@ -227,5 +212,5 @@ Access-Control-Allow-Methods: GET, DELETE, HEAD, OPTIONS
 ```
 
 The server response can also include an `Access-Control-Max-Age` header to
-specify the duration to cache preflight results so the client does not need to
+specify the duration (in seconds) to cache preflight results so the client does not need to
 make a preflight request every time it sends a complex request.

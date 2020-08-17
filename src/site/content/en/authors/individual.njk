@@ -1,16 +1,19 @@
 ---
 layout: layout
 title: Authors
-permalink: /en/{{ paged.href }}{% if paged.index > 0 %}{{ paged.index + 1 }}/{% endif %}index.html
+permalink: /{{lang}}/{{ paged.href }}{% if paged.index > 0 %}{{ paged.index + 1 }}/{% endif %}index.html
 description: Our latest news, updates, and stories for developers
 renderData:
   title: "{{ paged.title or title }}"
   description: "{{ paged.description or description }}"
   rss: "{{ paged.href }}feed.xml"
 pagination:
-  data: collections.paginatedPostsByAuthor
+  data: collections.authors
   size: 1
   alias: paged
+  resolve: values
+eleventyComputed:
+  canonicalUrl: "{{ paged.href }}{% if paged.index > 0 %}{{ paged.index + 1 }}/{% endif %}"
 ---
 {# *-landing-page classes are a holdover from devsite. #}
 {# It would be great to remove them as part of the v1 migration. #}

@@ -56,7 +56,7 @@ class Feedback extends BaseElement {
         </summary>
         <div
           class="w-display--flex w-justify-content--center ${!this.submitted &&
-            'hidden'}"
+          'hidden'}"
         >
           <p
             class="w-feedback__confirmation w-text--center w-force-focus"

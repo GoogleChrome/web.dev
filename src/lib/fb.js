@@ -108,7 +108,7 @@ function initialize(firebase) {
 
     // This unsubscribe function is used if the user signs out. However, the user's row cannot be
     // watched until the Firestore library is ready, so wrap the actual internal unsubscribe call.
-    firestoreUserUnsubscribe = (function() {
+    firestoreUserUnsubscribe = (function () {
       let internalUnsubscribe = null;
       let unsubscribed = false;
 
