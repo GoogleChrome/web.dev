@@ -23,6 +23,8 @@ alt: An image of a fish.
 thumbnail: thumbnail.jpg
 ---
 
+{% YouTube 'NXCT3htg9nk' %}
+
 Back in March 2003, [Nick Finck](https://twitter.com/nickf) and
 [Steve Champeon](https://twitter.com/schampeo) stunned the web design world
 with the concept of

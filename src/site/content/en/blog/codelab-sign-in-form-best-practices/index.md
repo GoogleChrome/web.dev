@@ -5,6 +5,7 @@ authors:
   - samdutton
 scheduled: true
 date: 2020-06-29
+updated: 2020-08-05
 description: Use cross-platform browser features to build a simple email/password sign-in form that's secure, accessible and easy to use.
 tags:
   - forms
@@ -51,14 +52,13 @@ accessibility, and add meaning to your markup.
 
 Here's how your `index.html` should look at this point:
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/sign-in-form-codelab-1?path=index.html&attributionHidden=true&sidebarCollapsed=true',
-    title: 'How the Glitch should look after completing step 1.'
-  } %}
-</div>
+{% Glitch {
+  id: 'sign-in-form-codelab-1',
+  path: 'index.html',
+  height: 480
+} %}
 
-Click **View App** to preview your sign-in form. 
+Click **View App** to preview your sign-in form.
 The HTML you just added is valid and correct, but the default browser styling
 means it looks terrible and it's hard to use, especially on mobile.
 
@@ -71,12 +71,10 @@ font sizes.
 
 Copy and paste the following CSS into your own `style.css` file:
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/sign-in-form-codelab-2?path=style.css&attributionHidden=true&sidebarCollapsed=true',
-    title: 'The CSS to copy-paste.'
-  } %}
-</div>
+{% Glitch {
+  id: 'sign-in-form-codelab-2',
+  path: 'style.css'
+} %}
 
 Click **View App** to check out your freshly styled sign-in form. Then
 click **View Source** to return to `style.css`.
@@ -112,7 +110,7 @@ Add attributes to your form HTML so it looks like this:
   <h1>Sign in</h1>
   <section>        
     <label for="email">Email</label>
-    <input id="email" name="email" type="email" placeholder=" " autocomplete="email" required autofocus>
+    <input id="email" name="email" type="email" autocomplete="username" required autofocus>
   </section>
   <section>        
     <label for="current-password">Password</label>
@@ -142,24 +140,28 @@ All of this happens because the `type="email"` attribute is applied to an `<inpu
 Try typing some text into the password input. The text is hidden by default because the
 `type="password"` attribute has been applied to the element.
 
-* `name="email"` and `name="current-password"` help browsers store named values 
-which can later be used for `autocomplete`.
+* The `autocomplete`, `name`, `id`, and `type` attributes help browsers understand 
+the role of inputs in order to store data that can later be used for autofill. 
 
 Try focusing the email input on a desktop device and start typing.
 You can find the URL of your app by clicking **Fullscreen**
 ![The Fullscreen icon](/images/glitch/fullscreen.svg). 
 If you've stored any email addresses in your browser, you'll probably see a popup that 
 allows you to select from those stored emails. This happens because the 
-`autocomplete="email"` attribute was applied to the email input.
+`autocomplete="username"` attribute was applied to the email input.
 
-* `autocomplete="email"` and `autocomplete="current-password"` help browsers use 
+* `autocomplete="username"` and `autocomplete="current-password"` help browsers use 
 stored values to autofill the inputs.
 
-Different browsers use [different techniques](http://localhost:8080/sign-in-form-best-practices/#password-managers:~:text=Browser%20password%20and%20autofill%20systems%20are%20not%20simple) 
-to work out the meaning of form inputs and provide autofill for a range of 
-different websites. For example, recent versions of Chrome provide email 
-suggestions if you add `id="email"` to an input, and give access to the autofill 
-manager if you add `autocomplete="email"`. 
+{% Aside %}
+For email inputs use `autocomplete="username"`, since `username` is recognized 
+by password managers in modern browsers—even though you should use `type="email"` 
+and you may want to use `id="email"` and `name="email"`.
+{% endAside %}
+
+Different browsers use [different techniques](/sign-in-form-best-practices/#password-managers:~:text=Browser%20password%20and%20autofill%20systems%20are%20not%20simple) 
+to work out the role of form inputs and provide autofill for a range of 
+different websites. 
 
 Try this out for yourself by adding and removing attributes.
 
@@ -170,12 +172,11 @@ projects](https://www.browserstack.com/open-source). Try it out!
 
 Here's how your `index.html` should look at this point:
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/sign-in-form-codelab-3?path=index.html&attributionHidden=true&sidebarCollapsed=true',
-    title: 'How index.html should look after step 3.'
-  } %}
-</div>
+{% Glitch {
+  id: 'sign-in-form-codelab-3',
+  path: 'index.html',
+  height: 480
+} %}
 
 ## Step 4: Add UI to toggle password display
 
@@ -256,12 +257,11 @@ has high quality free icons available for download.
 
 Here's how your code should look at this point:
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/sign-in-form-codelab-4?path=style.css&attributionHidden=true&sidebarCollapsed=true',
-    title: 'How your code should look at this point.'
-  } %}
-</div>
+{% Glitch {
+  id: 'sign-in-form-codelab-4',
+  path: 'style.css',
+  height: 480
+} %}
 
 
 ## Step 5: Add form validation
@@ -365,12 +365,12 @@ messages, depending on what's wrong.
 and passwords. [Better password form fields](https://aerotwist.com/blog/better-password-form-fields/) has some clever suggestions.
 
 Here's how your code should look at this point:
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/sign-in-form-codelab-5?path=style.css&attributionHidden=true&sidebarCollapsed=true',
-    title: 'How your code should look at this point.'
-  } %}
-</div>
+
+{% Glitch {
+  id: 'sign-in-form-codelab-5',
+  path: 'style.css',
+  height: 480
+} %}
 
 ## Going further
 

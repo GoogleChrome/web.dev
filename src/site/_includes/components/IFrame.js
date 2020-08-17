@@ -16,20 +16,26 @@
 
 const {html} = require('common-tags');
 
+/**
+ *
+ * @param {string | {src: string; allow?: string; style?: string; title?: string;}} param
+ * @return string
+ */
 module.exports = (param) => {
-  let src;
   let iframeProps = {
     allow: '',
+    src: null,
     style: 'height: 100%; width: 100%; border: 0;',
     title: 'IFrame content',
   };
 
   if (typeof param === 'string') {
-    src = param;
+    iframeProps.src = param;
   } else if (param.constructor === {}.constructor) {
     iframeProps = {...iframeProps, ...param};
-    src = param.src;
   }
+
+  const {allow, src, style, title} = iframeProps;
 
   if (!src) {
     return;
@@ -37,11 +43,11 @@ module.exports = (param) => {
 
   return html`
     <iframe
-      allow="${iframeProps.allow}"
+      allow="${allow}"
       loading="lazy"
       src="${src}"
-      style="${iframeProps.style}"
-      title="${iframeProps.title}"
+      style="${style}"
+      title="${title}"
     ></iframe>
   `;
 };

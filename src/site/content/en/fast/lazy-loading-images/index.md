@@ -123,12 +123,11 @@ On the document's `DOMContentLoaded` event, this script queries the DOM for all
 create a new observer that runs a callback when `img.lazy` elements enter the
 viewport.
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/lazy-intersection-observer?path=index.html&previewSize=0',
-    title: 'lazy-intersection-observer on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'lazy-intersection-observer',
+  path: 'index.html',
+  previewSize: 0
+} %}
 
 Intersection Observer is available in all modern browsers.
 Therefore using it as a polyfill for `loading="lazy"` will ensure that lazy-loading is available for most visitors.
@@ -157,12 +156,11 @@ is used to throttle function calls. As images are lazy-loaded, they're removed
 from the elements array. When the elements array reaches a `length` of `0`, the
 scroll event handler code is removed.
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/lazy-loading-fallback?path=lazy.js&previewSize=0',
-    title: 'lazy-loading-fallback on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'lazy-loading-fallback',
+  path: 'lazy.js',
+  previewSize: 0
+} %}
 
 While this code works in pretty much any browser, it has potential performance
 issues in that repetitive `setTimeout` calls can be wasteful, even if the code
@@ -250,12 +248,12 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 ```
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/lazy-background?path=index.html&previewSize=0',
-    title: 'lazy-background on Glitch'
-  } %}
-</div>
+
+{% Glitch {
+  id: 'lazy-background',
+  path: 'index.html',
+  previewSize: 0
+} %}
 
 As indicated earlier, if you need Internet Explorer support for lazy-loading of background images,
 you will need to polyfill the Intersection Observer code, due to lack of support in that browser.

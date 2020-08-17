@@ -32,6 +32,13 @@
       "en": "Technical Writer, Chrome DevTools & Lighthouse"
     }
   },
+  "sgomes": {
+    "name": {
+      "given": "Sérgio",
+      "family": "Gomes"
+    },
+    "twitter": "sergiomdgomes"
+  },
   "beaufortfrancois": {
     "name": {
       "given": "François",
@@ -1429,6 +1436,33 @@
     "country": "US",
     "org": {
       "name": "Google"
+    }
+  },
+  "vladimirlevin": {
+    "name": {
+      "given": "Vladimir",
+      "family": "Levin"
+    },
+    "country": "CA",
+    "org": {
+      "name": "Google"
+    }
+  },
+  "rreverser": {
+    "name": {
+      "given": "Ingvar",
+      "family": "Stepanyan"
+    },
+    "country": "UK",
+    "org": {
+      "name": "Google",
+      "unit": "Developer Relations"
+    },
+    "twitter": "RReverser",
+    "github": "RReverser",
+    "homepage": "https://rreverser.com/",
+    "description": {
+      "en": "WebAssembly Advocadoer"
     }
   }
 }

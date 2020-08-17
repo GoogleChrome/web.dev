@@ -95,13 +95,11 @@ Next, you'll add some webpack plugins to your build process to minify these file
 
 Before jumping into the optimizations, take some time understanding how build process for the [Fav Kitties site](https://glitch.com/edit/#!/fav-kitties-animated?path=webpack.config.js:1:0]) works:
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  {% IFrame {
-    allow: 'geolocation; microphone; camera; midi; vr; encrypted-media',
-    src: 'https://glitch.com/embed/#!/embed/fav-kitties-animated?path=webpack.config.js&previewSize=0',
-    title: 'fav-kitties-animated on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'fav-kitties-animated',
+  path: 'webpack.config.js',
+  previewSize: 0
+} %}
 
 By default, the resulting JS bundle that webpack produces would contain the content of the CSS files inlined. Since we want to maintain separate CSS files, we are using two complementary plugins:
 
@@ -139,13 +137,11 @@ Then, pass an instance of the plugin to the **plugins** array:
 After making the changes a rebuild of the project will be triggered.
 This is how the resulting **webpack.config.js** will look like:
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  {% IFrame {
-    allow: 'geolocation; microphone; camera; midi; vr; encrypted-media',
-    src: 'https://glitch.com/embed/#!/embed/fav-kitties-animated-min?path=webpack.config.js&previewSize=0',
-    title: 'fav-kitties-animated-min on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'fav-kitties-animated-min',
+  path: 'webpack.config.js',
+  previewSize: 0
+} %}
 
 Next, you'll check the result of this optimization with performance tools.
 

@@ -61,13 +61,11 @@ form.addEventListener('formdata', ({formData}) => {
 
 Try this out using our example on Glitch. Be sure to run it on Chrome 77 or later to see the API in action.
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  {% IFrame {
-    allow: 'geolocation; microphone; camera; midi; encrypted-media',
-    src: 'https://glitch.com/embed/#!/embed/formdata-event?path=index.html&amp;previewSize=0',
-    title: 'formdata event demo on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'formdata-event',
+  path: 'index.html',
+  previewSize: 0
+} %}
 
 ## Form-associated custom elements
 
@@ -271,13 +269,11 @@ formStateRestoreCallback(state, mode) {
 The following example puts together many of the features of form-associated custom elements.
 Be sure to run it on Chrome 77 or later to see the API in action.
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  {% IFrame {
-    allow: 'geolocation; microphone; camera; midi; encrypted-media',
-    src: 'https://glitch.com/embed/#!/embed/form-associated-ce?path=public%2Fmy-control.js&amp;previewSize=0',
-    title: 'formdata event demo on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'form-associated-ce',
+  path: 'public/my-control.js',
+  previewSize: 0
+} %}
 
 ## Feature detection
 

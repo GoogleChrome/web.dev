@@ -32,6 +32,7 @@ module.exports = ({hero, alt, heroPosition, heroFit = 'cover'}) => {
       `)}"
       src="${hero}"
       alt="${alt}"
+      loading="lazy"
     />
   `;
 };

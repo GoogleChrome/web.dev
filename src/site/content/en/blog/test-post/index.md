@@ -455,12 +455,10 @@ quam sem.
   Glitch iframe placeholder
 </div>
 {% else %}
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&attributionHidden=true',
-    title: 'tabindex-zero on Glitch'
-  } %}
-</div>
+{% Glitch {
+  id: 'tabindex-zero',
+  path: 'index.html'
+} %}
 {% endif %}
 
 {% Aside 'key-term' %}

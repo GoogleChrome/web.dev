@@ -49,12 +49,11 @@ with an actual `<button>`.
 If you must keep the `<div>`,
 then add `role="button"` and `aria-pressed="false"` to the `<div>`:
 
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  {% IFrame {
-    src: 'https://glitch.com/embed/#!/embed/gorgeous-raven?path=example.html:13:39',
-    title: 'div-vs-button on Glitch with role and ARIA attribute'
-  } %}
-</div>
+{% Glitch {
+  id: 'gorgeous-raven',
+  path: 'example.html:13:39',
+  height: 346
+} %}
 
 Now screen readers will announces the role and interactive state for the `<div>`.
 
