@@ -49,16 +49,6 @@ variable fonts, all styles can be contained in a single file.
 
 ## Challenges for the Designer and Developer
 
-<!--
-RN: Are we still doing print industry references in 2020? How many web developers would relate to that in an article called "Introduction to variable fonts on the web"?
-
-Cut to the chase?
-
-Unlike books or magazines, which can have as many fonts on a page as they like, a website will have to download every single font it uses. This has been a sticking point for richer typographic experiences, as each font comes at a cost.
-
-With traditional web fonts... etc.
--->
-
 When a designer creates a print project they face some constraints, such as the
 physical size of the page layout, the number of colors they can use (which is
 determined by the kind of printing press that will be used), and so on. But they
@@ -80,18 +70,14 @@ FOUT.](https://www.zachleat.com/web/fout-vs-foit/)
 
 Many font families offer a much wider range of styles, from Thin to Black
 weights, narrow and wide widths, a variety of stylistic details, and even
-size-specific designs (optimized for large or small text sizes.) <!-- RN:
-sentence below makes it sound the previous sentence lists "few capabilities"?
-Maybe something like: "Since you'd have to load a new font file for every style
-(or combinations of styles), many web developers choose not to use these
-capabilities, reducing the reading experience of their users." --> When using so
-few of these capabilities, we reduce the reading experience of our users.
+size-specific designs (optimized for large or small text sizes.) Since you'd
+have to load a new font file for every style (or combinations of styles), many
+web developers choose not to use these capabilities, reducing the reading
+experience of their users.
 
 ## Anatomy of a Variable Font
 
 Variable fonts address these challenges, by packing styles into a single file.
-
-<!-- RN: I'm just a yokel and English isn't my 1st language, but maybe ease into this anatomy a bit more? Or make it less complex? -->
 
 This works by starting with a central or 'default' master style, usually the
 'Regular'–an upright roman design with the most typical weight and width that is
@@ -134,8 +120,6 @@ This means there are thousands of styles! This may seem like massive overkill,
 but the quality of the reading experience can be remarkably enhanced by this
 diversity of type styles. And, if it is without performance penalty, web
 developers can use a few or as many styles as they wish–it's up to their design.
-
-<!-- TODO DC restart here -->
 
 ### Italics
 
@@ -394,8 +378,6 @@ while a large size might benefit from more details and thinner strokes.
     <a href="https://codepen.io/RoelN/pen/PoPvdeV">Try it yourself on Codepen</a>
   </figcaption>
 </figure>
-<!-- TODO explain how opsz is defined as px and pt -->
-<!-- RN: throw innocent web devs in an "intro to var fonts" article into the deep snakepit that is https://github.com/w3c/csswg-drafts/issues/4430 ? -->
 
 A new CSS property has been introduced for this axis: `font-optical-sizing`. By
 default it's set to `auto`, which makes the browser set the axis value based on
