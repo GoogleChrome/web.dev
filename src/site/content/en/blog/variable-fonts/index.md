@@ -61,8 +61,8 @@ With traditional web fonts... etc.
 -->
 
 When a designer creates a print project they face some constraints, such as the
-physical size of the page layout, the number of colors they can use is
-determined by the kind of printing press that will be used, and so on. But they
+physical size of the page layout, the number of colors they can use (which is
+determined by the kind of printing press that will be used), and so on. But they
 can use as many typeface styles as they like. This means that the typography of
 print media is often rich and sophisticated, so that the reading experience is
 truly delightful. Think of the last time you enjoyed browsing an excellent
