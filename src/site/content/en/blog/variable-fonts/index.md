@@ -8,23 +8,22 @@ authors:
   - mustafakurtuldu
   - thomassteiner
 date: 2018-02-19
-updated: 2020-08-05
+updated: 2020-08-17
 hero: hero.jpg
 tags:
   - blog
   - fonts
 ---
-<!--
-
-TODO add these to "authors" in yaml ↑
-{ % include "web/_shared/contributors/dcrossland.html" %}
-{ % include "web/_shared/contributors/roeln.html" %}
-
--->
 
 In this article, we will look at what variable fonts are, the benefits they
 offer, and how we can use them in our work. First, let's review how typography
 works on the web, and what innovations variable fonts bring.
+
+## Browser compatibility
+
+As of May 2020 variable fonts are supported in most browsers. See
+[Can I use variable fonts?](https://caniuse.com/#feat=variable-fonts)
+and [Fallbacks](#fallbacks-and-browser-support).
 
 ## Introduction
 
@@ -565,10 +564,10 @@ post](https://csswizardry.com/2020/05/the-fastest-google-fonts/).
 
 ## Fallbacks and Browser Support
 
-All modern browsers support variable fonts. See
-[caniuse.com](https://caniuse.com/#search=font-variation-settings) for more
-details. In case you need to support older browsers, you can choose to build
-your site with static fonts, and use variable fonts as progessive enhancement.
+All modern browsers [support variable
+fonts](https://caniuse.com/#feat=variable-fonts). In case you need to support
+older browsers, you can choose to build your site with static fonts, and use
+variable fonts as progessive enhancement:
 
 ```css
 /* Set up Roboto for old browsers, only regular + bold */
