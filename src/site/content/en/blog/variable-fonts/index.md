@@ -44,7 +44,7 @@ variable fonts, all styles can be contained in a single file.
 <figure class="w-figure">
   <img src="roboto-family-specimen.png" style="max-width: 100%;" alt="A specimen composition and list of different styles of the Roboto family">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Above: Left, a specimen of the Roboto typeface family. Right, named styles within the family.
+    Left: a specimen of the Roboto typeface family. Right: named styles within the family.
   </figcaption>
 </figure>
 
