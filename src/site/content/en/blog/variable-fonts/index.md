@@ -68,15 +68,15 @@ truly delightful. Think of the last time you enjoyed browsing an excellent
 magazine.
 
 Web designers and developers have different constraints than print designers,
-and an important one is the associated bandwidth costs of our designs. This has
-been a sticking point for richer typographic experiences, as they come at a
-cost. With traditional web fonts, each style used in our designs requires users
-to download a separate font file, which increases latency and page rendering
-time. Only including the Regular and Bold styles, plus their italic
-counterparts, can amount to 500 KB or more of font data. This is even before we
-have dealt with how the fonts are rendered, and the fallback or delayed-loading
-patterns we are going to use (such as ["FOIT" and
-"FOUT."](https://www.zachleat.com/web/fout-vs-foit/))
+and an important one is the associated bandwidth costs of our designs. This
+has been a sticking point for richer typographic experiences, as they come at
+a cost. With traditional web fonts, each style used in our designs requires
+users to download a separate font file, which increases latency and page
+rendering time. Only including the Regular and Bold styles, plus their italic
+counterparts, can amount to 500 KB or more of font data. This is even before
+we have dealt with how the fonts are rendered, the fallback patterns we need
+to use, or undesirable side-effects such as [FOIT and
+FOUT.](https://www.zachleat.com/web/fout-vs-foit/)
 
 Many font families offer a much wider range of styles, from Thin to Black
 weights, narrow and wide widths, a variety of stylistic details, and even
