@@ -1,5 +1,5 @@
 ---
-title: Introduction to Variable Fonts on the Web
+title: Introduction to variable fonts on the web
 subhead: A new font specification that can significantly reduce font file sizes
 description: >
   How variable fonts work, how typographers implement variable fonts, and
