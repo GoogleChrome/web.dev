@@ -75,7 +75,7 @@ cost. With traditional web fonts, each style used in our designs requires users
 to download a separate font file, which increases latency and page rendering
 time. Only including the Regular and Bold styles, plus their italic
 counterparts, can amount to 500 KB or more of font data. This is even before we
-have dealt how the fonts are rendered, and the fallback or delayed-loading
+have dealt with how the fonts are rendered, and the fallback or delayed-loading
 patterns we are going to use (such as ["FOIT" and
 "FOUT."](https://www.zachleat.com/web/fout-vs-foit/))
 
