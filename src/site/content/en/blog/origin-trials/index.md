@@ -38,7 +38,7 @@ trials, as learnings are incorporated and adjustments are made.
 ## How to register for an origin trial
 
 1. Choose an origin trial from the [list of active trials](https://developers.chrome.com/origintrials/#/trials/active).
-1. Request a token by clicking the **Request** button and filling out the form.
+1. Obtain a token by clicking the **Request** button and filling out the form.
 1. Add the token to your web pages,
    using one of the following methods:
    -  As a meta tag in the &lt;head&gt; of each page served:   
