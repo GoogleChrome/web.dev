@@ -41,9 +41,12 @@ mdLib.renderer.rules = {...mdLib.renderer.rules, ...rules};
 
 /**
  * Render content as markdown.
- * @param {string} content
+ * @param {string?} content
  * @return {string|undefined}
  */
 module.exports = (content) => {
-  return content ? mdLib.render(content) : undefined;
+  if (!content) {
+    return undefined;
+  }
+  return mdLib.render(content);
 };

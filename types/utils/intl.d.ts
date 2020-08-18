@@ -15,6 +15,9 @@
  */
 
 declare global {
+  /**
+   * @TODO Remove when typing is more supported.
+   */
   declare namespace Intl {
     class ListFormat {
       constructor(lang: string);

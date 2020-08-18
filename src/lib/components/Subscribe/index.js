@@ -39,6 +39,9 @@ class Subscribe extends BaseElement {
     this.subscribeError = this.querySelector('.w-subscribe__error');
     this.subscribeMessage = this.querySelector('.w-subscribe__message');
     this.submissionUrl = this.form?.action;
+    if (!this.submissionUrl) {
+      console.warn(`No submission URL found for subscribe element.`);
+    }
     this.form?.addEventListener('submit', this.onSubmit);
   }
 
@@ -62,7 +65,7 @@ class Subscribe extends BaseElement {
   }
 
   postForm(body) {
-    return fetch(this.submissionUrl || '', {
+    return fetch(this.submissionUrl, {
       method: 'POST',
       body,
     }).then((r) => r.json());
@@ -75,6 +78,9 @@ class Subscribe extends BaseElement {
    */
   onError(error, useDefault = false) {
     if (!this.subscribeError) {
+      console.warn(
+        'Could not find area to display error in subscribe element.',
+      );
       return;
     }
 

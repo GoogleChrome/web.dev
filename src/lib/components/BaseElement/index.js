@@ -7,11 +7,11 @@ export class BaseElement extends LitElement {
   }
 
   /**
-   * @param {*} _changedProperties
+   * @param {Map<string | number | symbol, unknown>} changedProperties
    */
-  firstUpdated(_changedProperties) {
+  firstUpdated(changedProperties) {
     this.classList.remove('unresolved');
-    super.firstUpdated(_changedProperties);
+    super.firstUpdated(changedProperties);
   }
 
   createRenderRoot() {

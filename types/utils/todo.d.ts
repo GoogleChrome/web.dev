@@ -19,8 +19,7 @@ declare global {
   export type CombinedAuditAndAuditRef = TODO;
   export type LighthouseLastRunDetail = TODO;
   export type LighthouseScore = TODO;
-  export type TemplateResult = TODO;
 }
 
 // empty export to keep file a module
-export {}
+export {};

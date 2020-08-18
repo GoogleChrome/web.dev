@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
- import * as firebase from 'firebase';
+import * as firebase from 'firebase';
 
 declare global {
   export interface Window extends Window {
@@ -26,4 +26,4 @@ declare global {
 
 
 // empty export to keep file a module
-export {}
+export {};

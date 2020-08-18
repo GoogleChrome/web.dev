@@ -347,7 +347,7 @@ class SparklineChart extends BaseElement {
 
   /**
    * Generates the line path from values.
-   * @param {Array<!LighthouseScore>?} values Values to generate a path from.
+   * @param {Array<LighthouseScore>?} values Values to generate a path from.
    * @return {{datapoints: Array<Object>, paths: Array<PathPart>}}
    * @private
    */

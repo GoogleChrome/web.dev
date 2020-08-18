@@ -103,18 +103,20 @@ class UrlChooser extends BaseElement {
       // Note: This behavior can't be performed in a setter as the <input /> might not have been
       // rendered yet.
       const url = this.url;
-      if (this.switching && url && input && !input?.value) {
-        // if the user has just signed in, the element was in an initial state,
-        // AND the user hasn't typed anything, reset element with URL
-        input.value = url;
-        this.switching = false;
-      } else if (url === null && !this.switching && input) {
-        // if the user has signed out, clear the href and enter switching mode
-        input.value = '';
-        this.switching = true;
-      } else if (!this.switching && input) {
-        // in all other cases, only update the URL if ther user isn't switching
-        input.value = url;
+      if (input) {
+        if (this.switching && url && !input.value) {
+          // if the user has just signed in, the element was in an initial state,
+          // AND the user hasn't typed anything, reset element with URL
+          input.value = url;
+          this.switching = false;
+        } else if (url === null && !this.switching) {
+          // if the user has signed out, clear the href and enter switching mode
+          input.value = '';
+          this.switching = true;
+        } else if (!this.switching) {
+          // in all other cases, only update the URL if ther user isn't switching
+          input.value = url;
+        }
       }
     }
   }

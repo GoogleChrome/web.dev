@@ -39,4 +39,4 @@ declare global {
 }
 
 // empty export to keep file a module
-export {}
+export {};

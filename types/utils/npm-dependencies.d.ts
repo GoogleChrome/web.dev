@@ -15,21 +15,7 @@
  */
 
 declare global {
-  export interface AdditionalData {
-    href?: string;
-    description?: string;
-    tag?: string;
-    title?: string;
-  }
-  export interface Paginated {
-    title?: string;
-    href?: string;
-    description?: string;
-    tag?: string;
-    elements: Array<TODO>;
-    index: number;
-    pages: number;
-  }
+  export {TemplateResult} from 'lit-element';
 }
 
 // empty export to keep file a module

@@ -60,8 +60,7 @@ export class BaseResponseElement extends BaseElement {
       min = parseInt(cardinality);
       max = 0;
     } else if (/^\d-\d+$/.test(cardinality)) {
-      const [minString, maxString] = cardinality.split('-');
-      [min, max] = [parseInt(minString), parseInt(maxString)];
+      [min, max] = cardinality.split('-').map(parseInt);
     }
     // Input errors handled in src/site/_includes/components/Assessment.js
 
