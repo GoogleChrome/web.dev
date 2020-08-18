@@ -16,6 +16,8 @@
 const tagsData = require('../_data/tagsData');
 const {livePosts} = require('../_filters/live-posts');
 
+let processedCollection;
+
 /**
  * Returns all tags with posts.
  *
@@ -23,6 +25,10 @@ const {livePosts} = require('../_filters/live-posts');
  * @return {Array<{ title: string, key: string, description: string, href: string, url: string, data: { title: string, subhead: string }, elements: Array<object> }>} An array where each element is a paged tag with some meta data and n posts for the page.
  */
 module.exports = (collections) => {
+  if (processedCollection) {
+    return processedCollection;
+  }
+
   const tags = {};
 
   Object.keys(tagsData).forEach((key) => {
@@ -51,6 +57,10 @@ module.exports = (collections) => {
       tags[tag.key] = tag;
     }
   });
+
+  if (collections) {
+    processedCollection = tags;
+  }
 
   return tags;
 };

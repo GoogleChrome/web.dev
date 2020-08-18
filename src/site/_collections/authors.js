@@ -19,6 +19,8 @@ const authorsData = require('../_data/authorsData');
 const {livePosts} = require('../_filters/live-posts');
 const setdefault = require('../_utils/setdefault');
 
+let processedCollection;
+
 /**
  * Generate map the posts by author's username/key
  *
@@ -68,6 +70,10 @@ const maybeUpdateAuthorHref = (author, allAuthorPosts) => {
  * @return {Object.<string, Author>}
  */
 module.exports = (collections) => {
+  if (processedCollection) {
+    return processedCollection;
+  }
+
   let allPosts = [];
 
   if (collections) {
@@ -144,6 +150,10 @@ module.exports = (collections) => {
   if (isRegularBuild && invalidAuthors.length) {
     const s = invalidAuthors.join(',');
     throw new Error(`authors [${s}] have no posts and/or Twitter information`);
+  }
+
+  if (collections) {
+    processedCollection = authors;
   }
 
   return authors;
