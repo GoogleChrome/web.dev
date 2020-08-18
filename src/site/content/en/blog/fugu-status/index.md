@@ -125,16 +125,16 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
       </tr>
       <tr>
         <td>
-          <a href="https://codelabs.developers.google.com/codelabs/web-serial/">
+          <a href="/serial/">
             Serial API
           </a>
         </td>
         <td>
-          The Web Serial API provides a way for websites to read from and
+          The Serial API provides a way for websites to read from and
           write to a serial device with scripts. The API bridges the web and
           the physical world by allowing websites to communicate with serial
           devices, such as microcontrollers and 3D printers.<br>
-          <em>Updated March 1, 2020</em>
+          <em>Updated August 12nd, 2020</em>
         </td>
       </tr>
       <tr>
