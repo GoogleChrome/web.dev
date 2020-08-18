@@ -5,7 +5,7 @@ authors:
   - petelepage
 description: The App Badging API allows installed web apps to set an application-wide badge, shown in an operating-system-specific place associated with the application, such as the shelf or home screen. Badging makes it easy to subtly notify the user that there is some new activity that might require their attention, or it can be used to indicate a small amount of information, such as an unread count.
 date: 2018-12-11
-updated: 2020-07-30
+updated: 2020-08-14
 tags:
   - blog
   - capabilities
@@ -64,7 +64,8 @@ Examples of sites that may use this API include:
 
 </div>
 
-The App Badging API works on Windows, and macOS, in Chrome 81 and later.
+The App Badging API works on Windows, and macOS, in Chrome 81 or later.
+It has also been confirmed to work on Edge 84 or later.
 Support for Chrome OS is in development and will be available in a future
 release of Chrome. On Android, the Badging API is not supported. Instead,
 Android automatically shows a badge on app icon for the installed web app

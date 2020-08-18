@@ -10,7 +10,7 @@ describe('_collections', function () {
     });
 
     after(function () {
-      fs.rmdirSync(path.join('.', '.tmp'), {recursive: true});
+      fs.rmdirSync(path.join(__dirname, '.tmp'), {recursive: true});
     });
 
     require('./posts-with-lighthouse/dev');
@@ -24,7 +24,7 @@ describe('_collections', function () {
     });
 
     after(function () {
-      fs.rmdirSync(path.join('.', '.tmp'), {recursive: true});
+      fs.rmdirSync(path.join(__dirname, '.tmp'), {recursive: true});
     });
 
     require('./posts-with-lighthouse/prod');

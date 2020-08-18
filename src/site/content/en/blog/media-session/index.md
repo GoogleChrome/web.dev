@@ -4,6 +4,7 @@ subhead: How to integrate with hardware media keys, customize media notification
 authors:
   - beaufortfrancois
 date: 2020-03-06
+updated: 2020-08-13
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 description: |
@@ -151,6 +152,11 @@ implemented by setting handlers on an appropriate object, an instance of
 `MediaSession`, in this case. Some actions are triggered when users press
 buttons from a headset, another remote device, a keyboard, or interact with a
 media notification.
+
+<figure class="w-figure">
+  <img src="./windows-10-media-notification.jpg" alt="Screenshot of a media notification in Windows 10">
+  <figcaption class="w-figcaption">Customized media notification in Windows 10</figcaption>
+</figure>
 
 Because some media session actions may not be supported, it is recommended to
 use a `try…catch` block when setting them.

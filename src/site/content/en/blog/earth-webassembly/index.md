@@ -11,7 +11,7 @@ description: |
   Improving cross-browser access to Google Earth with WebAssembly
 tags:
   - blog
-  - web-assembly
+  - webassembly
   - Earth
   - Web App
   - case-study

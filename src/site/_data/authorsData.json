@@ -1447,5 +1447,22 @@
     "org": {
       "name": "Google"
     }
+  },
+  "rreverser": {
+    "name": {
+      "given": "Ingvar",
+      "family": "Stepanyan"
+    },
+    "country": "UK",
+    "org": {
+      "name": "Google",
+      "unit": "Developer Relations"
+    },
+    "twitter": "RReverser",
+    "github": "RReverser",
+    "homepage": "https://rreverser.com/",
+    "description": {
+      "en": "WebAssembly Advocadoer"
+    }
   }
 }

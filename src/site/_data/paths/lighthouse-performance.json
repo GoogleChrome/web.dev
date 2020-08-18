@@ -39,7 +39,8 @@
         "redirects",
         "uses-rel-preload",
         "efficient-animated-content",
-        "third-party-summary"
+        "third-party-summary",
+        "non-composited-animations"
       ]
     },
     {
