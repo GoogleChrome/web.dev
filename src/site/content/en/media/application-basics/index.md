@@ -23,7 +23,7 @@ the two applications output are just the dimensions, the numbers themselves.
 That's because resolution is just an informal shorthand for the dimensions of a
 video. In every case that follows, I talk about specific numbers.
 
-This page has basics for two common command-line media utilities: [Shaka
+This page describes the basic usage for two common command-line media utilities: [Shaka
 Packager](https://github.com/google/shaka-packager) and
 [FFmpeg](https://ffmpeg.org/download.html). Why cover two applications? While
 both are powerful and useful by themselves, neither does everything needed to
