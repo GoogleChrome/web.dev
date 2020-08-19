@@ -21,7 +21,7 @@ processing and uploading for the sake of customer service. Preparing a video for
 serving from your own site is a bit more complicated.
 
 Video files come in a variety of formats. The format that comes off your camera,
-typically a mov file, is good for recording and for editing and other early
+typically a `.mov` file, is good for recording and for editing and other early
 post-production processes. Its size means it's not good for streaming over the
 web. Because browsers support different file formats, you'll need to create
 multiple files. Before converting files you need to understand a few basics
