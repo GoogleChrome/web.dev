@@ -1,5 +1,5 @@
 ---
-title: Web Animations API improvements in Chromium 84
+title: Using the full power of the Web Animations API
 subhead: Orchestrating animations with promises, performance improvements with replaceable animations, smoother animations with composite modes, and more.
 authors:
   - una
@@ -20,12 +20,12 @@ When used correctly, [animations improve user perception and memory](https://www
 
 The [Web Animations API](https://www.w3.org/TR/web-animations-1/) is a tool that enables developers to write [imperative animations with JavaScript](https://www.youtube.com/watch?v=WaNoqBAp8NI). It was written to underpin both CSS animation and transition implementations and enable future effects to be developed, as well as existing effects to be composed and timed.
 
-While it has a long history, originally launching in Chromium 36, the latest release, Chromium 84, brings us a slew of previously unsupported features. 
+While [Mozilla](https://birtles.github.io/areweanimatedyet/) and [Safari](https://webkit.org/status/#specification-web-animations), have already implemented the full set of spec [features](https://caniuse.com/#feat=web-animation) in their browsers, Chromium 84 brings a slew of previously unsupported features to [Chrome and Edge](https://developer.microsoft.com/en-us/microsoft-edge/status/webanimationsjavascriptapi/) enabling cross-browser interoperability.
 
 <figure class="w-figure">
   <img class="w-screenshot" src='./waapi-timeline.png' alt="The Web Animations API first hit Chromium in version 36, July of 2014. Now the spec is going to be complete, in version 84, launching July 2020.">
   <figcaption class="w-figcaption">
-    The long history of the Web Animations API.
+    The long history of the Web Animations API in Chromium.
   </figcaption>
 </figure>
 
