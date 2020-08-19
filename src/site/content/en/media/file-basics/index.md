@@ -53,12 +53,12 @@ On the right are the specifics of that structure for a single webm file.
   <figcaption class="w-figcaption">Parts of a media file.</figcaption>
 </figure>
 
-Not all browsers support up-to-date containers and codecs. For example, webm is
-high-quality and open source. Files in webm packages can be orders of magnitude
+Not all browsers support up-to-date containers and codecs. For example, WebM is
+high-quality and open source. Files in WebM packages can be orders of magnitude
 smaller than other formats, making them a good choice for mobile download.
-Although webm was created specifically for the web, its support is not yet
-universal. Safari in particular does not, as of this writing, support webm for
-embedded video.
+Although WebM was created specifically for the web, its support is not yet
+universal. Safari in particular does not, as of this writing,
+[support](https://caniuse.com/#feat=webm) WebM for embedded video.
 
 All modern browsers support mp4 files, making them a good general choice for a
 media container and the best choice as the backup container for webm.
