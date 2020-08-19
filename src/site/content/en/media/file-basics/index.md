@@ -42,7 +42,7 @@ stream.
 
 Within the audio and video streams, the actual data is compressed using a codec.
 A _codec_, or coder/decoder, is a compression format for video or audio data. The
-distinction between a container and a codec is important becasue files with the
+distinction between a container and a codec is important because files with the
 same container can have their contents encoded with different codecs.
 
 The image below illustrates this structure. On the left is the basic structure.
