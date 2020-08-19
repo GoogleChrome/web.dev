@@ -1,6 +1,6 @@
 ---
 layout: post
-title: File basics
+title: Media file basics
 authors:
   - joemedley
 description: |
