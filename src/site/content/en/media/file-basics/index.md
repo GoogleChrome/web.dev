@@ -74,7 +74,7 @@ types and the codecs they may use. Follow the links for browser support lists.
 
 | File type | Video Codec | Audio Codec |
 | ---- | ----- | ---- |
-| [mp4](https://caniuse.com/#search=mp4)  | [AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1), [AVC (H.264)](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AVC_H.264)*, [VP9](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9) | [aac](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#AAC) |
+| [MP4](https://caniuse.com/#search=mp4)  | [AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1), [AVC (H.264)](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AVC_H.264)*, [VP9](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9) | [aac](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#AAC) |
 | [webm](https://caniuse.com/#feat=webm) | [AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1), [VP9](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9)* | [vorbis](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#Vorbis), [opus](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#Opus) |
 &#42; Indicates the the preferred video codec.
 
