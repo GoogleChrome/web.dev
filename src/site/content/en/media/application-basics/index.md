@@ -9,9 +9,8 @@ description: |
 date: 2017-06-09
 updated: 2020-08-20
 tags:
-  - FFmpeg
-  - files
-  - Shaka
+  - media
+  - video
 ---
 
 Much media work requires changing characteristics of media files, such as
