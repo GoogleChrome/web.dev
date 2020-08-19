@@ -48,7 +48,7 @@ common video streaming protocols: [Dynamic Adaptive Streaming over HTTP
 or [HTTP Live Streaming
 (HLS)](https://developer.apple.com/documentation/http_live_streaming). Shaka
 Packager supports key security features: common encryption and Widevine digital
-rights management (DRM) support. It can also handle live video, and
+rights management (DRM). It can also handle live video, and
 video-on-demand. Those concepts are beyond the scope of this article.
 
 Despite what it says on the package, this utility is for more than C++
