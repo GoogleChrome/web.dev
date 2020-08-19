@@ -1,0 +1,74 @@
+---
+layout: layout
+title: Learn
+description: |
+  Learn best practices for the modern web and hone your skills with hands-on
+  codelabs.
+date: 2018-11-05
+---
+{# *-landing-page classes are a holdover from devsite. #}
+{# It would be great to remove them as part of the v1 migration. #}
+<div class="learn-landing-page">
+
+  <div class="w-layout-container">
+    <header class="w-page-header">
+      <h1 class="w-page-header__headline">{{ title }}</h1>
+      <p class="w-page-header__copy">
+        Explore our structured learning paths to discover everything you need
+        to know about building for the modern web.
+      </p>
+    </header>
+  </div>
+  <section class="w-grid">
+    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
+      <h3 id="frameworks" class="w-learn-heading">
+        Performance
+        <a class="w-headline-link" href="#performance" aria-hidden="true">#</a>
+      </h3>
+    </div>
+    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
+      {% for collection in learn.performance %}
+        {% PathCard collection, lang %}
+      {% endfor %}
+    </div>
+  </section>
+  <section class="w-grid">
+    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
+      <h3 id="principles" class="w-learn-heading">
+        Build excellent websites
+        <a class="w-headline-link" href="#principles" aria-hidden="true">#</a>
+      </h3>
+    </div>
+    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
+      {% for path in learn.paths %}
+        {% PathCard path, lang %}
+      {% endfor %}
+    </div>
+  </section>
+  <section class="w-grid">
+    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
+      <h3 id="frameworks" class="w-learn-heading">
+        Frameworks
+        <a class="w-headline-link" href="#frameworks" aria-hidden="true">#</a>
+      </h3>
+    </div>
+    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
+      {% for framework in learn.frameworks %}
+        {% PathCard framework, lang %}
+      {% endfor %}
+    </div>
+  </section>
+  <section class="w-grid">
+    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three">
+      <h3 id="lighthouse" class="w-learn-heading">
+        Lighthouse
+        <a class="w-headline-link" href="#lighthouse" aria-hidden="true">#</a>
+      </h3>
+    </div>
+    <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
+      {% for audit in learn.audits %}
+        {% PathCard audit, lang %}
+      {% endfor %}
+    </div>
+  </section>
+</div>

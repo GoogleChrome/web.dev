@@ -1,0 +1,219 @@
+<svg viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
+<style>
+    #map {
+      --highlight: #ccc;
+      background-color: #eee;
+      font-family: monospace;
+      color: #333;
+    }
+    .webtreemap-node {
+      margin: 3px 0;
+      padding: 3px 7px;
+      border: 1px solid #bbb;
+      border-radius: 2px;
+      display: grid;
+      place-content: flex-start stretch;
+      place-items: flex-start stretch;
+    }
+    .webtreemap-caption {
+      grid-column: 1 / -1;
+    }
+    .webtreemap-level0 {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 6px;
+    }
+    @media (max-width: 480px) {
+      .webtreemap-level0 {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  </style>
+<foreignObject x="0" y="0" width="100%" height="100%">
+  <div id="map" xmlns="http://www.w3.org/1999/xhtml">
+    <div class="webtreemap-node webtreemap-level0" title="/ • 117.39 KB • 100.0%">
+      <div class="webtreemap-caption">/ • 117.39 KB • 100.0%</div>
+      <div
+        class="webtreemap-node webtreemap-level1"
+        title="src • 101.51 KB • 86.5%"
+      >
+        <div class="webtreemap-caption">src • 101.51 KB • 86.5%</div>
+        <div
+          class="webtreemap-node webtreemap-level2"
+          title="main • 101.06 KB • 86.1%"
+        >
+          <div class="webtreemap-caption">main • 101.06 KB • 86.1%</div>
+          <div
+            class="webtreemap-node webtreemap-level3"
+            title="services • 60.78 KB • 51.8%"
+          >
+            <div class="webtreemap-caption">services • 60.78 KB • 51.8%</div>
+            <div
+              class="webtreemap-node webtreemap-level4"
+              title="preact-canvas • 58.01 KB • 49.4%"
+            >
+              <div class="webtreemap-caption">
+                preact-canvas • 58.01 KB • 49.4%
+              </div>
+              <div
+                class="webtreemap-node webtreemap-level4"
+                title="components • 50.69 KB • 43.2%"
+              >
+                <div class="webtreemap-caption">
+                  components • 50.69 KB • 43.2%
+                </div>
+                <div
+                  class="webtreemap-node webtreemap-level4"
+                  title="about • 8.15 KB • 6.9%"
+                >
+                  <div class="webtreemap-caption">about • 8.15 KB • 6.9%</div>
+                </div>
+                <div
+                  class="webtreemap-node webtreemap-level4"
+                  title="board • 7.93 KB • 6.8%"
+                >
+                  <div class="webtreemap-caption">board • 7.93 KB • 6.8%</div>
+                </div>
+                <div
+                  class="webtreemap-node webtreemap-level4"
+                  title="nebula • 5.94 KB • 5.1%"
+                >
+                  <div class="webtreemap-caption">nebula • 5.94 KB • 5.1%</div>
+                </div>
+                <div
+                  class="webtreemap-node webtreemap-level4"
+                  title="showbiz-title • 4.46 KB • 3.8%"
+                >
+                  <div class="webtreemap-caption">
+                    showbiz-title • 4.46 KB • 3.8%
+                  </div>
+                </div>
+                <div
+                  class="webtreemap-node webtreemap-level4"
+                  title="top-bar • 4.16 KB • 3.5%"
+                  style="background-color: var(--highlight)"
+                >
+                  <div class="webtreemap-caption">top-bar • 4.16 KB • 3.5%</div>
+                </div>
+                <div
+                  class="webtreemap-node webtreemap-level4"
+                  title="game • 4.07 KB • 3.5%"
+                >
+                  <div class="webtreemap-caption">game • 4.07 KB • 3.5%</div>
+                </div>
+                <div
+                  class="webtreemap-node webtreemap-level4"
+                  title="intro • 3.79 KB • 3.2%"
+                  style="background-color: var(--highlight)"
+                >
+                  <div class="webtreemap-caption">intro • 3.79 KB • 3.2%</div>
+                </div>
+                <div
+                  class="webtreemap-node webtreemap-level4"
+                  title="bottom-bar • 3.53 KB • 3.0%"
+                  style="background-color: var(--highlight)"
+                >
+                  <div class="webtreemap-caption">
+                    bottom-bar • 3.53 KB • 3.0%
+                  </div>
+                </div>
+                <div
+                  class="webtreemap-node webtreemap-level4"
+                  title="win • 3.04 KB • 2.6%"
+                >
+                  <div class="webtreemap-caption">win • 3.04 KB • 2.6%</div>
+                </div>
+                <div
+                  class="webtreemap-node webtreemap-level4"
+                  title="icons • 1.83 KB • 1.6%"
+                >
+                  <div class="webtreemap-caption">icons • 1.83 KB • 1.6%</div>
+                </div>
+                <div
+                  class="webtreemap-node webtreemap-level4"
+                  title="settings • 1.65 KB • 1.4%"
+                >
+                  <div class="webtreemap-caption">settings • 1.65 KB • 1.4%</div>
+                </div>
+                <div
+                  class="webtreemap-node webtreemap-level4"
+                  title="game-loading • 1.5 KB • 1.3%"
+                >
+                  <div class="webtreemap-caption">
+                    game-loading • 1.5 KB • 1.3%
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="webtreemap-node webtreemap-level3"
+            title="rendering • 27.54 KB • 23.5%"
+          >
+            <div class="webtreemap-caption">rendering • 27.54 KB • 23.5%</div>
+          </div>
+          <div
+            class="webtreemap-node webtreemap-level3"
+            title="utils • 10.74 KB • 9.2%"
+          >
+            <div class="webtreemap-caption">utils • 10.74 KB • 9.2%</div>
+            <div
+              class="webtreemap-node webtreemap-level4"
+              title="shaderbox.ts • 5.9 KB • 5.0%"
+            >
+              <div class="webtreemap-caption">shaderbox.ts • 5.9 KB • 5.0%</div>
+            </div>
+            <div
+              class="webtreemap-node webtreemap-level4"
+              title="focus-visible.js • 2.32 KB • 2.0%"
+            >
+              <div class="webtreemap-caption">
+                focus-visible.js • 2.32 KB • 2.0%
+              </div>
+            </div>
+            <div
+              class="webtreemap-node webtreemap-level4"
+              title="cell-sizing.ts • 1.44 KB • 1.2%"
+            >
+              <div class="webtreemap-caption">
+                cell-sizing.ts • 1.44 KB • 1.2%
+              </div>
+            </div>
+          </div>
+          <div
+            class="webtreemap-node webtreemap-level3"
+            title="offline • 1.54 KB • 1.3%"
+          >
+            <div class="webtreemap-caption">offline • 1.54 KB • 1.3%</div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="webtreemap-node webtreemap-level1"
+        title="node_modules • 15.06 KB • 12.8%"
+      >
+        <div class="webtreemap-caption">node_modules • 15.06 KB • 12.8%</div>
+        <div
+          class="webtreemap-node webtreemap-level2"
+          title="preact • 8.2 KB • 7.0%"
+          style="background-color: var(--highlight)"
+        >
+          <div class="webtreemap-caption">preact • 8.2 KB • 7.0%</div>
+        </div>
+        <div
+          class="webtreemap-node webtreemap-level2"
+          title="comlink • 3.32 KB • 2.8%"
+        >
+          <div class="webtreemap-caption">comlink • 3.32 KB • 2.8%</div>
+        </div>
+        <div
+          class="webtreemap-node webtreemap-level2"
+          title="style-inject • 2.81 KB • 2.4%"
+          style="background-color: var(--highlight)"
+        >
+          <div class="webtreemap-caption">style-inject • 2.81 KB • 2.4%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</foreignObject>
+</svg>

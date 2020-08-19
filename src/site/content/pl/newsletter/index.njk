@@ -1,0 +1,22 @@
+---
+layout: layout
+title: Newsletter
+permalink: /{{lang}}{{ paged.href }}{% if paged.index > 0 %}{{ paged.index + 1 }}/{% endif %}index.html
+description: Stay up to date with the latest about web platform.
+date: 2020-03-13
+pagination:
+  data: collections.newsletters
+  size: 1
+  alias: paged
+---
+<div class="newsletter-landing-page">
+  <div class="w-layout-container">
+    {% include 'partials/subscribe.njk' %}
+  </div>
+  <hr>
+  <div class="w-layout-container">
+    <h2 class="w-headline--two w-mt--l w-mb--std w-text--center">Past Editions</h2>
+    <p class="w-text--center">Read past editions of the monthly newsletter for web developers.</p>
+  </div>
+  {% include 'partials/paged.njk' %}
+</div>

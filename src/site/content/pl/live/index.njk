@@ -1,0 +1,315 @@
+---
+layout: layout
+title: web.dev LIVE
+description: |
+  Bringing web developers together, from home
+show_banner: false
+date: 2020-06-31
+---
+
+<div class="w-live-landing-page">
+
+  {% if event.isDuringEvent %}
+    <section class="w-livestream-section w-live-flow">
+      <web-livestream-container>
+        <div class="web-livestream-container__skeleton-yt"></div>
+        <div class="web-livestream-container__skeleton-chat"></div>
+      </web-livestream-container>
+      <div class="w-live-chat-notice">
+        <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4 8h10c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2H6l-4 4V10c0-1.1.9-2 2-2zm0 8h10v-6H4v6z" fill="#5F6368"/><path fill-rule="evenodd" clip-rule="evenodd" d="M10 2h10c1.1 0 2 .9 2 2v12l-4-4v-2h2V4H10v2H8V4c0-1.1.9-2 2-2z" fill="#5F6368"/></svg>
+        <span>Live chat is available on desktop browsers</span>
+      </div>
+    </section>
+  {% endif %}
+
+  {% if event.isPreEvent%}
+    <div class="w-hero-overflow w-live-flow" data-live>
+      <section class="w-event-section w-hero-section">
+        <div class="w-event-section__column-left">
+          <div class="w-event-heading">
+            <h1 class="w-event-heading__logo">web.dev<span>/LIVE</span>
+              <video width="156" height="72" autoplay muted loop playsinline>
+                <source src="live.mp4" type="video/mp4" />
+                <img src="live.png" alt="live" />
+              </video>
+            </h1>
+            <p class="w-event-heading__subhead">June 30 &mdash; July 2, 2020</p>
+          </div>
+        </div>
+        <div class="w-event-section__column-head w-event-hero">
+          <img src="hero.png" alt="" />
+        </div>
+        <div class="w-event-section__column-right w-event-section__column-right--extra-padding">
+          <h2 class="w-mt--non">
+            Bringing web developers together, from home
+          </h2>
+          <p>
+            These are unprecedented times, with people worldwide looking to stay connected and informed.
+            The Web plays a special role here, and we're proud to see how the community has stepped up.
+          </p>
+          <p>
+            Join Google's Web Platform team, from the comfort of your homes, to celebrate our community's actions, learn modern web techniques and connect with each other.
+          </p>
+          <div class="w-event-buttons">
+            <a class="w-button w-button--primary gc-analytics-event" data-category="web.dev" data-label="scroll-to-subscribe" data-action="click" href="#subscribe">
+              Get notified
+            </a>
+            <div class="w-event-calendar">
+              <div class="w-event-calendar__note">
+                <span>Add to calendar</span>
+              </div>
+              <a class="w-button w-button--secondary w-button--small gc-analytics-event" data-category="web.dev" data-label="live, add to Google Calendar" data-action="click" target="_blank"
+                href="https://calendar.google.com/calendar/r?cid=webcal://calendar.google.com/calendar/ical/c_ta9vmmo7jqm7j2bqgg3bsn47oc%40group.calendar.google.com/public/basic.ics"
+                rel="noopener">
+                Google
+              </a>
+              <a class="w-button w-button--secondary w-button--small gc-analytics-event" data-category="web.dev" data-label="live, add to iCal" data-action="click" target="_blank"
+                href="webcal://calendar.google.com/calendar/ical/c_ta9vmmo7jqm7j2bqgg3bsn47oc%40group.calendar.google.com/public/basic.ics"
+                rel="noopener">
+                iCal
+              </a>
+              <a class="w-button w-button--secondary w-button--small gc-analytics-event" data-category="web.dev" data-label="live, add to Outlook" data-action="click" target="_blank"
+                href="webcal://calendar.google.com/calendar/ical/c_ta9vmmo7jqm7j2bqgg3bsn47oc%40group.calendar.google.com/public/basic.ics"
+                rel="noopener">
+                Outlook
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <hr class="w-live-flow">
+  {% endif %}
+
+  {% if event.isPostEvent %}
+    <div class="w-hero-overflow w-live-flow">
+      <section class="w-event-section w-hero-section">
+        <div class="w-event-section__column-left">
+          <div class="w-event-heading w-event-heading--smaller w-display--mobile-only">
+            <h1 class="w-event-heading__logo">web.dev<span>/LIVE</span>
+              <video width="156" height="72" autoplay muted loop playsinline>
+                <source src="live.mp4" type="video/mp4" />
+                <img src="live.png" alt="live" />
+              </video>
+            </h1>
+            <p class="w-event-heading__subhead">June 30 &mdash; July 2, 2020</p>
+          </div>
+        </div>
+        <div class="w-event-section__column-head w-event-hero w-pb--non">
+          <img src="hero.png" alt="" />
+        </div>
+      </section>
+    </div>
+  {% endif %}
+
+  <section id="schedule" class="w-event-section w-schedule-section w-live-flow">
+    {% if event.isPreEvent %}
+      <div class="w-event-section__column-left">
+        <h3 class="w-mt--non">What to expect</h3>
+        <p>
+          Over three days, we'll share quick tips on aspects of modern web development.
+          Each day, <strong>we'll "travel" to a new timezone</strong> to cover a couple of topics and answer your questions.
+        </p>
+        <a href="/community-guidelines/" class="w-event-link">Community guidelines</a>
+      </div>
+    {% endif %}
+
+    {% if event.isDuringEvent or event.isPostEvent %}
+      {# Note that we have more than one web-event-carousel.
+          We display one on mobile and a different one on desktop.
+          Their positions are pretty different so using two elements is the easiest approach. #}
+      <web-event-carousel class="w-event-carousel w-display--mobile-only">
+        {# These just exist as dummy HTML elements for the first render. They're replaced by the
+            web-event-carousel CE when it loads. #}
+        <div class="w-event-carousel__day">
+          <div class="w-event-carousel__thumbnail"></div>
+          <div class="w-event-carousel__description">Day 1</div>
+        </div>
+        <div class="w-event-carousel__day">
+          <div class="w-event-carousel__thumbnail"></div>
+          <div class="w-event-carousel__description">Day 2</div>
+        </div>
+        <div class="w-event-carousel__day">
+          <div class="w-event-carousel__thumbnail"></div>
+          <div class="w-event-carousel__description">Day 3</div>
+        </div>
+      </web-event-carousel>
+    {% endif %}
+
+    {% if event.isDuringEvent %}
+      <div class="w-event-section__column-left">
+        <div class="w-event-heading w-event-heading--smaller">
+          <h1 class="w-event-heading__logo">web.dev<span>/LIVE</span>
+            <video width="156" height="72" autoplay muted loop playsinline>
+              <source src="live.mp4" type="video/mp4" />
+              <img src="live.png" alt="live" />
+            </video>
+          </h1>
+          <p class="w-event-heading__subhead">June 30 &mdash; July 2, 2020</p>
+        </div>
+        <p>
+          Thank you for joining us for web.dev LIVE! Over the three days, we'll
+          bring unique content to three different time zones and answer your
+          questions real-time, in your active hours. We encourage you to join us
+          on all three days but if that's not possible, you can watch the videos
+          on demand and leave your questions in the Comments section on YouTube
+          and we'll try our best to respond over the three days of the event.
+        </p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdkWh94xheuR3Y_p0z6GML0AkdWLCa767KhFXBUPM3VI9-jCA/viewform" target="_blank" class="w-feedback-button w-button w-button--primary" rel="noopener">
+          <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M4 2h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H6l-4 4 .01-18c0-1.1.89-2 1.99-2zm0 14h16V4H4v12zm6.5-2H18v-2h-5.5l-2 2zm3.86-6.58c.2.2.2.51 0 .71L8.47 14H6v-2.47l5.88-5.88c.2-.2.51-.2.71 0l1.77 1.77z" fill="#fff"/>
+          </svg>
+          Share Feedback
+        </a>
+        <a href="/community-guidelines/" class="w-event-link">Community guidelines</a>
+      </div>
+    {% endif %}
+
+    {% if event.isPostEvent %}
+      <div class="w-event-section__column-left">
+        <div class="w-event-heading w-event-heading--smaller w-display--desktop-only">
+          <h1 class="w-event-heading__logo">web.dev<span>/LIVE</span>
+            <video width="156" height="72" autoplay muted loop playsinline>
+              <source src="live.mp4" type="video/mp4" />
+              <img src="live.png" alt="live" />
+            </video>
+          </h1>
+          <p class="w-event-heading__subhead">June 30 &mdash; July 2, 2020</p>
+        </div>
+        <p>
+          web.dev LIVE is now over but you can watch the videos from all three
+          days here, go through the top community questions or join one of the
+          live regional events being hosted by Google Developer Groups across
+          the world!
+        </p>
+        <div class="w-event-section__internal-links">
+          <a href="#q-and-a">
+            <svg class="w-event-icon" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M14 11c.55 0 1-.45 1-1V1c0-.55-.45-1-1-1H1C.45 0 0 .45 0 1v14l4-4h10zm-1-9v7H2V2h11zm4 2h2c.55 0 1 .45 1 1v15l-4-4H5c-.55 0-1-.45-1-1v-2h13V4z" fill="#5F6368"/></svg>
+            <span>Q &amp; A</span>
+          </a>
+          <a href="#regional-events">
+            <svg class="w-event-icon" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-.61.08-1.21.21-1.78L8.99 15v1c0 1.1.9 2 2 2v1.93C7.06 19.43 4 16.07 4 12zm11.99 4c.9 0 1.64.59 1.9 1.4A7.991 7.991 0 0020 12c0-3.35-2.08-6.23-5.01-7.41V5c0 1.1-.9 2-2 2h-2v2c0 .55-.45 1-1 1h-2v2h6c.55 0 1 .45 1 1v3h1z" fill="#5F6368"/></svg>
+            <span>Regional events</span>
+          </a>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="w-event-section__column-right w-event-section__column-right__schedule">
+      {% if event.isDuringEvent or event.isPostEvent %}
+      {# Note that we have more than one web-event-carousel.
+          We display one on mobile and a different one on desktop.
+          Their positions are pretty different so using two elements is the easiest approach. #}
+        <web-event-carousel class="w-event-carousel">
+          {# These just exist as dummy HTML elements for the first render. They're replaced by the
+             web-event-carousel CE when it loads. #}
+          <div class="w-event-carousel__day">
+            <div class="w-event-carousel__thumbnail"></div>
+            <div class="w-event-carousel__description">Day 1</div>
+          </div>
+          <div class="w-event-carousel__day">
+            <div class="w-event-carousel__thumbnail"></div>
+            <div class="w-event-carousel__description">Day 2</div>
+          </div>
+          <div class="w-event-carousel__day">
+            <div class="w-event-carousel__thumbnail"></div>
+            <div class="w-event-carousel__description">Day 3</div>
+          </div>
+        </web-event-carousel>
+      {% endif %}
+      {% EventTable event.days, collections.authors %}
+    </div>
+  </section>
+  <hr class="w-live-flow">
+
+  {% if event.isPostEvent %}
+    <section id="q-and-a" class="w-event-section w-q-and-a-section w-live-flow">
+      <div class="w-event-section__column-left">
+        <h3 class="w-event-icon-heading w-mt--non">
+          <svg class="w-event-icon" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M14 11c.55 0 1-.45 1-1V1c0-.55-.45-1-1-1H1C.45 0 0 .45 0 1v14l4-4h10zm-1-9v7H2V2h11zm4 2h2c.55 0 1 .45 1 1v15l-4-4H5c-.55 0-1-.45-1-1v-2h13V4z" fill="#5F6368"/></svg>
+          <span>Q &amp; A</span>
+        </h3>
+        <p>
+          During web.dev LIVE, we were happy to address some very insightful and
+          interesting questions from the community across the globe. Here are
+          some of the top questions asked.
+        </p>
+        <p>
+          Keep an eye on this space as we add more questions in the coming days.
+        </p>
+        <a href="/live#content" class="w-back-to-top-link">Back to top</a>
+      </div>
+
+
+      <div class="w-event-section__column-right">
+        <web-event-q-and-a>
+        {%- for entry in event.qAndAs  %}
+          <details class="web-event-q-and-a__details" data-category="{{entry.category}}">
+            <summary><span>Q.</span>{{entry.question}}</summary>
+            <p><span>A.</span>{{entry.answer | safe}}</p>
+          </details>
+        {%- endfor %}
+        </web-event-q-and-a>
+      </div>
+    </section>
+
+    <hr class="w-live-flow">
+  {% endif %}
+
+  <section id="regional-events" class="w-event-section w-live-flow">
+    <div class="w-event-section__column-left">
+      <h3 class="w-event-icon-heading w-mt--non">
+        <svg class="w-event-icon" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-.61.08-1.21.21-1.78L8.99 15v1c0 1.1.9 2 2 2v1.93C7.06 19.43 4 16.07 4 12zm11.99 4c.9 0 1.64.59 1.9 1.4A7.991 7.991 0 0020 12c0-3.35-2.08-6.23-5.01-7.41V5c0 1.1-.9 2-2 2h-2v2c0 .55-.45 1-1 1h-2v2h6c.55 0 1 .45 1 1v3h1z" fill="#5F6368"/></svg>
+        <span>Regional events</span>
+      </h3>
+      <p>
+        Missed web.dev LIVE? We’ve got you covered. Thanks to our Google Developer Group communities, we have a ton of live events.
+      </p>
+      <a href="/live#content" class="w-back-to-top-link">Back to top</a>
+    </div>
+
+    <div class="w-event-section__column-right">
+      <web-event-map key={{site.maps.apiKey}}></web-event-map>
+    </div>
+  </section>
+  <hr class="w-live-flow">
+
+  <section id="subscribe" class="w-event-section w-event-section--subscribe w-live-flow">
+    {% set subscribeTitle = "Sign up for web.dev updates" %}
+    {% set subscribeNotes = "Get updates related to web.dev LIVE as well as the latest news and techniques straight to your inbox." %}
+    {% include 'partials/subscribe.njk' %}
+  </section>
+  <hr class="w-live-flow">
+
+  <section id="share" class="w-event-section w-live-flow">
+    <div class="w-event-section__column-left">
+      <div class="w-display--flex w-flex--column w-align-items--center w-justify-content--center">
+        <div>
+          Share this event with your friends
+        </div>
+        <div class="w-event-buttons">
+          <share-action
+            message=" web.dev LIVE, a three day digital event for web developers by Google."
+            data-category="web.dev"
+            data-label="share"
+            data-action="click"
+            class="w-button w-button--primary w-button--with-icon w-mr--non gc-analytics-event"
+            data-icon="share"
+            tabindex="0"
+            role="button"
+          >
+            <span>
+              Share
+            </span>
+          </share-action>
+        </div>
+      </div>
+    </div>
+    <div class="w-event-section__column-right w-event-antihero">
+      <img src="hero.png" width="1572" height="394" alt="" />
+    </div>
+  </section>
+
+</div>
+
+<web-event-store style="display: none;">{{ event | dump | safe }}</web-event-store>
