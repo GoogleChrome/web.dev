@@ -10,9 +10,8 @@ description: |
 date: 2020-06-19
 updated: 2020-08-20
 tags:
-  - FFmpeg
-  - files
-  - Shaka
+  - media
+  - video
 ---
 
 You might think that you can take a video camera and upload it to the web as is.
