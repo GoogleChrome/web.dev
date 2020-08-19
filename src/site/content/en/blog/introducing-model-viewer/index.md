@@ -39,7 +39,7 @@ improvements to speed and fidelity, and other frequently-requested features.
 
 Viewing a 3D model on a blank canvas is great, but being able to view it in your
 space is even better. Now `<model-viewer>` supports [WebXR augmented
-reality](https://modelviewer.dev/examples/webxr.html0), for an
+reality](https://modelviewer.dev/examples/augmented-reality.html), for an
 entirely-within-the-browser 3D and AR experience on Chrome Android.
 
 ```html
