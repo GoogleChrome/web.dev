@@ -47,7 +47,7 @@ common video streaming protocols: [Dynamic Adaptive Streaming over HTTP
 (DASH)](https://developer.mozilla.org/en-US/docs/Web/HTML/DASH_Adaptive_Streaming_for_HTML_5_Video)
 or [HTTP Live Streaming
 (HLS)](https://developer.apple.com/documentation/http_live_streaming). Shaka
-Packager supports key security features: common encryption, Widevine digital
+Packager supports key security features: common encryption and Widevine digital
 rights management (DRM) support. It can also handle live video, and
 video-on-demand. Those concepts are beyond the scope of this article.
 
