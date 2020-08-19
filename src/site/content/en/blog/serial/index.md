@@ -89,8 +89,8 @@ communication between the website and the device that it is controlling.
 
 The Serial API is available on all desktop platforms (Chrome OS, Linux, macOS,
 and Windows) as an origin trial in Chrome 80. The origin trial is expected to
-end just before Chrome 89 moves to stable in February 2021. It can also be
-enabled using a flag.
+end just before Chrome 89 moves to stable in February 2021. The API can also
+be enabled using a flag.
 
 {% include 'content/origin-trials.njk' %}
 
@@ -117,7 +117,7 @@ if ("serial" in navigator) {
 ### Open a serial port {: #open-port }
 
 The Serial API is asynchronous by design. This prevents the website UI from
-blocking when awaiting input. This is important because serial data can be
+blocking when awaiting input, which is important because serial data can be
 received at any time, requiring a way to listen to it.
 
 To open a serial port, first access a `SerialPort` object. For this, you can
@@ -456,7 +456,7 @@ save it for later. The `flush()` method is called when the stream is closed, and
 it handles any data that hasn't been processed yet.
 
 To use the transform stream class, you need to pipe an incoming stream through
-it. In the readableStream example under [Read from a serial port](#read-port),
+it. In the third code example under [Read from a serial port](#read-port),
 the original input stream was only piped through a `TextDecoderStream`, so we
 need to call `pipeThrough()` to pipe it through our new `LineBreakTransformer`.
 
@@ -556,8 +556,9 @@ Are you planning to use the Serial API? Your public support helps the Chrome
 team prioritize features and shows other browser vendors how critical it is to
 support them.
 
-Send a Tweet to [@ChromiumDev][cr-dev-twitter] and let us know where and how
-you're using it.
+Send a Tweet to [@ChromiumDev][cr-dev-twitter] with the hashtag
+[`#SerialAPI`](https://twitter.com/search?q=%23SerialAPI&src=typed_query&f=live)
+and let us know where and how you're using it.
 
 ## Helpful links {: #helpful }
 
