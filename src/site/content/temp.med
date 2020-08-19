@@ -210,8 +210,3 @@ redirects:
 
 - from: /handbook/tags
   to: /handbook/yaml-front-matter/#tags
-
-# Redirect to unified clipobard article
-
-- from: /image-support-for-async-clipboard
-  to: /async-clipboard
