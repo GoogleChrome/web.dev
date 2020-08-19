@@ -46,7 +46,7 @@ distinction between a container and a codec is important because files with the
 same container can have their contents encoded with different codecs.
 
 The image below illustrates this structure. On the left is the basic structure.
-On the right are the specifics of that structure for a single webm file.
+On the right are the specifics of that structure for a single WebM file.
 
 <figure class="w-figure  w-figure--inline-right">
   <img src="./media-container-onion.png" alt="Comparing media file structure with a hypothetical media file.">

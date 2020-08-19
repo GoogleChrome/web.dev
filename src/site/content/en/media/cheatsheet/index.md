@@ -59,7 +59,7 @@ for using media frameworks.
 
 ### Shaka Packager
 
-***mp4***
+***MP4***
 
 ```bash
 packager input=myvideo.mp4,stream=video,output=myvideo_video.mp4
@@ -74,7 +74,7 @@ packager \
   input=myvideo.mp4,stream=audio,output=myvideo_audio.m4a
 ```
 
-***webm***
+***WebM***
 
 ```bash
 packager \
@@ -83,14 +83,14 @@ packager \
 ```
 ### FFMpeg
 
-***mp4***
+***MP4***
 
 ```bash
 ffmpeg -i myvideo.mp4 -vcodec copy -an myvideo_video.mp4
 ffmpeg -i myvideo.mp4 -acodec copy -vn myvideo_audio.m4a
 ```
 
-***webm***
+***WebM***
 
 ```bash
 ffmpeg -i myvideo.webm -vcodec copy -an myvideo_video.webm
@@ -101,7 +101,7 @@ ffmpeg -i myvideo.webm -acodec copy -vn myvideo_audio.webm
 
 ### Bitrate
 
-For ffmpeg, I can do this while I'm converting to mp4 or webm.
+For ffmpeg, I can do this while I'm converting to mp4 or WebM.
 
 ```bash
 ffmpeg -i myvideo.mov -b:v 350K myvideo.mp4
@@ -119,13 +119,13 @@ ffmpeg -i myvideo.webm -s 1920x1080 myvideo_1920x1080.webm
 Shaka Packager cannot process mov files and hence cannot be used to convert
 files from that format.
 
-***mov to mp4***
+***mov to MP4***
 
 ```bash
 ffmpeg -i myvideo.mov myvideo.mp4
 ```
 
-***mov to webm***
+***mov to WebM***
 
 ```bash
 ffmpeg -i myvideo.mov myvideo.webm
@@ -151,37 +151,37 @@ specified when converting files using FFmpeg.
 | Codec | Container | Library    |
 | ----- | --------- | ---------- |
 | av1   | mkv       | libaom-av1 |
-|       | webm      | libaom-av1 |
-| h264  | mp4       | libx264    |
-| vp9   | webm      | libvpx-vp9 |
+|       | WebM      | libaom-av1 |
+| h264  | MP4       | libx264    |
+| vp9   | WebM      | libvpx-vp9 |
 
 #### Audio
 
 | Codec  | Container | Library    |
 | ------ | --------- | ---------- |
-| aac    | mp4       | aac        |
-| opus   | webm      | libopus    |
-| vorbis | webm      | libvorbis  |
+| aac    | MP4       | aac        |
+| opus   | WebM      | libopus    |
+| vorbis | WebM      | libvorbis  |
 
-***mp4/H.264***
+***MP4/H.264***
 
 ```bash
 ffmpeg -i myvideo.mp4 -c:v libx264 -c:a copy myvideo.mp4
 ```
 
-***Audio for an mp4***
+***Audio for an MP4***
 
 ```bash
 ffmpeg -i myvideo.mp4 -c:v copy -c:a aac myvideo.mp4
 ```
 
-***webm/VP9***
+***WebM/VP9***
 
 ```bash
 ffmpeg -i myvideo.webm -v:c libvpx-vp9 -v:a copy myvideo.webm
 ```
 
-***Audio for a webm***
+***Audio for a WebM***
 
 ```bash
 ffmpeg -i myvideo.webm -v:c copy -v:a libvorbis myvideo.webm
@@ -298,7 +298,7 @@ encrypted assets packaged for DASH or HLS. For the sake of having a goal to
 illustrate, I'm converting my source file to a bitrate of 8Mbs at a resolution
 of 1080p (1920 x 1080). Adjust these values as your needs dictate.
 
-### DASH/webm with Shaka Packager
+### DASH/WebM with Shaka Packager
 
 Not all steps are possible with Shaka Packager, so I'll use ffmpeg when I need to.
 
@@ -340,7 +340,7 @@ Not all steps are possible with Shaka Packager, so I'll use ffmpeg when I need t
    TBD
    ```
 
-### DASH/mp4 with Shaka Packager
+### DASH/MP4 with Shaka Packager
 
 Not all steps are possible with Shaka Packager, so I'll use ffmpeg when I need to.
 
@@ -416,9 +416,9 @@ Widevine works.)
    TBD
    ```
 
-### HLS/mp4
+### HLS/MP4
 
-HLS only supports mp4, so first you'll need to convert to the MP4 container and
+HLS only supports MP4, so first you'll need to convert to the MP4 container and
 supported codecs. Not all steps are possible with Shaka Packager, so I'll use
 ffmpeg when I need to.
 

@@ -16,17 +16,17 @@ tags:
 ---
 
 To support multiple browsers, you'll need to use FFmpeg to convert your mov file
-to two different containers: an mp4 container and a webm container. In actual
+to two different containers: an MP4 container and a WebM container. In actual
 practice, you would likely specify a codec at the same time. For now, I'm
 letting FFmpeg use its defaults.
 
-To create the mp4:
+To create the MP4:
 
 ```bash
 ffmpeg -i glocken.mov glocken.mp4
 ```
 
-To create the webm:
+To create the WebM:
 
 ```bash
 ffmpeg -i glocken.mov glocken.webm
@@ -37,9 +37,9 @@ To create this article, I used FFmpeg version 4.2.2-tessus. If the command
 lines don't work for your version of FFmpeg, consult the FFmpeg documentation.
 {% endAside %}
 
-Webm takes longer to create than mp4. This isn't surprising when you
-look at the results. While mp4 compresses to about two-thirds of the original
-file's size, webm is down to a mere fraction of the original's size. Though,
+Webm takes longer to create than MP4. This isn't surprising when you
+look at the results. While MP4 compresses to about two-thirds of the original
+file's size, WebM is down to a mere fraction of the original's size. Though,
 your results may vary.
 
 ```bash
@@ -65,7 +65,7 @@ ffmpeg -i glocken.mp4
 
 Next the codec. As stated in [File basics](../file-basics), a codec is _not_ the
 same thing as a container (file type). Two files of the same container type
-could hold data compressed using different codecs. The webm format for example
+could hold data compressed using different codecs. The WebM format for example
 allows audio to be encoded using either
 [vorbis](https://en.wikipedia.org/wiki/Vorbis) or
 [opus](https://en.wikipedia.org/wiki/Opus_(audio_format)). To change the codec I
@@ -81,7 +81,7 @@ video codecs respectively.
 
 The [cheat sheet](.../cheatsheet#codec) lists commands needed to convert codecs.
 The tables below summarize the libraries used in FFmpeg to perform the codec
-conversions for webm and mp4 files. These are the formats recommended for DASH
+conversions for WebM and MP4 files. These are the formats recommended for DASH
 and HLS respectively.
 
 ## Video
@@ -89,16 +89,16 @@ and HLS respectively.
 | Codec | Extension | Library    |
 | ----- | --------- | ---------- |
 | av1   | mkv       | libaom-av1 |
-|       | webm      | libaom-av1 |
-| h264  | mp4       | libx264    |
-| vp9   | webm      | libvpx-vp9 |
+|       | WebM      | libaom-av1 |
+| h264  | MP4       | libx264    |
+| vp9   | WebM      | libvpx-vp9 |
 
 ## Audio
 
 | Codec  | Extension | Library    |
 | ------ | --------- | ---------- |
-| aac    | mp4       | aac        |
-| opus   | webm      | libopus    |
-| vorbis | webm      | libvorbis  |
+| aac    | MP4       | aac        |
+| opus   | WebM      | libopus    |
+| vorbis | WebM      | libvorbis  |
 
 Next, I'll show you how to change the file's [bitrate](../bitrate).
