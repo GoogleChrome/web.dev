@@ -61,7 +61,7 @@ universal. Safari in particular does not, as of this writing,
 [support](https://caniuse.com/#feat=webm) WebM for embedded video.
 
 All modern browsers support mp4 files, making them a good general choice for a
-media container and the best choice as the backup container for webm.
+media container and the best choice as the backup container for WebM.
 
 Many file formats support multiple codecs for the same container type. A
 complete list of available [video
