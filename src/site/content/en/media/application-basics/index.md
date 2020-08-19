@@ -140,8 +140,8 @@ ffmpeg [GeneralOptions] [InputFileOptions] -i input [OutputFileOptions] output
 Like Shaka Packager this application can handle multiple streams. Some of its
 options are used in multiple locations and have different effects on file output
 depending on where they are in the command. Be aware of this as you look at
-[FFmpeg](https://stackoverflow.com/questions/tagged/ffmpeg) examples on sites
-such as StackOverflow and similar sites.
+[FFmpeg questions on Stack Overflow](https://stackoverflow.com/questions/tagged/ffmpeg)
+and similar sites.
 
 I'll again compare the basic pattern to the example for displaying file characteristics.
 
