@@ -28,7 +28,7 @@ multiple files. Before converting files you need to understand a few basics
 about them and about their characteristics.
 
 The file that you see in your operating system shell is a _container_,
-identified by a file extension (mp4, webm, etc.). The container houses one or
+identified by a file extension (`.mp4`, `.webm`, etc.). The container houses one or
 more _streams_. A media file can have any number of streams, of [more
 types](https://developer.mozilla.org/en-US/docs/Web/Media/Formats) than I will
 go into here.
