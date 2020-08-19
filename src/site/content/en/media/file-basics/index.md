@@ -75,7 +75,7 @@ types and the codecs they may use. Follow the links for browser support lists.
 | File type | Video Codec | Audio Codec |
 | ---- | ----- | ---- |
 | [MP4](https://caniuse.com/#search=mp4)  | [AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1), [AVC (H.264)](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AVC_H.264)*, [VP9](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9) | [aac](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#AAC) |
-| [webm](https://caniuse.com/#feat=webm) | [AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1), [VP9](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9)* | [vorbis](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#Vorbis), [opus](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#Opus) |
+| [WebM](https://caniuse.com/#feat=webm) | [AV1](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#AV1), [VP9](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs#VP9)* | [vorbis](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#Vorbis), [opus](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs#Opus) |
 &#42; Indicates the the preferred video codec.
 
 _Bitrate_ is the maximum number of bits used to encode one second of a stream.
@@ -83,7 +83,8 @@ The more bits used to encode a second of stream, the higher the potential
 detail and fidelity.
 
 _Resolution_ is the amount of information in a single frame of video, given as
-the number of logical pixels in each dimension. I provide more information about this concept [later in this series of lessons](../resolution).
+the number of logical pixels in each dimension. I provide more information about this
+concept in [Resolution](/resolution).
 
 In [Application basics](../application-basics/), I'll show you how to examine
 these characteristics using two command line tools: Shaka Packager and FFmpeg.
