@@ -65,7 +65,7 @@ set limits on user interaction (e.g. maximum and minimum fields of view).
 You can also annotate your models using HTML and CSS. This capability is often
 used to "attach" labels to parts of the model in a way that moves with the model
 as it's manipulated. The annotations are customizable, including their
-appearance and the extent to which they're hidden when they're positioned behind
+appearance and the extent to which they're hidden by
 the model. Annotations also work in AR.
 
 ```html
