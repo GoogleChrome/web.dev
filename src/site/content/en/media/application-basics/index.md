@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Application basics
+title: Media application basics
 authors:
   - joemedley
 description: |
