@@ -13,7 +13,7 @@ description: >
   The Local Fonts API enumerates the user's installed local
   fonts and provides low-level access to the various
   TrueType/OpenType tables.
-date: 2020-08-18
+date: 2020-08-19
 # updated:
 hero: hero.jpg
 alt: Page of a font book.
@@ -329,6 +329,7 @@ Send a Tweet to [@ChromiumDev][cr-dev-twitter] with the `#LocalFontAccess` hasht
 - [ChromeStatus entry][cr-status]
 - [GitHub repo][issues]
 - [Tag review][tag-review]
+- [Mozilla standards position][mozilla]
 
 ## Acknowledgements
 
@@ -352,3 +353,4 @@ Hero image by [Brett Jordan](https://unsplash.com/@brett_jordan) on [Unsplash](h
 [cr-bug-enum]: https://bugs.chromium.org/p/chromium/issues/detail?id=535764
 [cr-bug-table]: https://crbug.com/982054
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
+[mozilla]: https://github.com/mozilla/standards-positions/issues/401
