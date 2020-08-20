@@ -50,7 +50,7 @@ async function buildCacheManifest() {
       // images, which are part of articles, and not the top-level site.
       'images/**/*.{png,svg}',
       '*-*.js',
-      'sw-partial-layout.partial',
+      'offline/index.html',
     ],
     globIgnores: [
       // This removes large shared PNG files that are used only for articles.
@@ -68,24 +68,11 @@ async function buildCacheManifest() {
   }
 
   const toplevelManifest = await getManifest(config);
-  if (toplevelManifest.warnings.length) {
+  if (isProd && toplevelManifest.warnings.length) {
     throw new Error(`toplevel manifest: ${toplevelManifest.warnings}`);
   }
 
-  // We need this manifest to be separate as we pretend it's rooted at the
-  // top-level, even though it comes from "dist/en".
-  const contentManifest = await getManifest({
-    globDirectory: 'dist/en',
-    globPatterns: ['offline/index.json'],
-  });
-  if (contentManifest.warnings.length) {
-    throw new Error(`content manifest: ${contentManifest.warnings}`);
-  }
-
-  const all = [];
-  all.push(...toplevelManifest.manifestEntries);
-  all.push(...contentManifest.manifestEntries);
-  return all;
+  return toplevelManifest.manifestEntries;
 }
 
 /**

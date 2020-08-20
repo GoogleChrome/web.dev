@@ -38,26 +38,32 @@ async function loadEntrypoint(url) {
 }
 
 /**
- * Gets the partial content of the target normalized URL. Returns null if aborted.
+ * Gets the HTML content of the target normalized URL. Returns null if aborted.
  *
- * If the partial is missing (i.e., 404) this throws an error. This means that
+ * If the HTML is missing (i.e., 404) this throws an error. This means that
  * requests to missing pages will do an additional network round-trip. This is
  * important as there might be a configured redirect.
  *
  * @param {string} url of the page to fetch.
  * @param {!AbortSignal=} signal
- * @return {Promise<{raw: string, title: string, offline: (boolean|undefined)}>}
+ * @return {!Promise<{offline: boolean, html: string}>}
  */
-export async function getPartial(url, signal) {
-  if (!url.endsWith('/')) {
-    throw new Error(`partial unsupported for non-folder: ${url}`);
+export async function getHTML(url, signal) {
+  if (!(url.endsWith('/') || url.endsWith('.html'))) {
+    throw new Error(`can't fetch HTML for unsupported URL: ${url}`);
   }
+
   try {
-    const res = await fetch(url + 'index.json', {signal});
+    const res = await fetch(url, {signal});
     if (!res.ok) {
       throw res.status;
     }
-    return await res.json();
+    const offline = res.headers.has('X-Offline'); // set by SW
+    const html = await res.text();
+    return {
+      offline,
+      html,
+    };
   } catch (e) {
     if (e instanceof DOMException && e.name === 'AbortError') {
       return null;
@@ -99,14 +105,16 @@ function forceFocus(el) {
 /**
  * Replaces the current #content element with new partial content.
  *
- * @param {!Object} partial
+ * @param {{offline: boolean, html: string}} partial
  */
 function updateDom(partial) {
-  /** @type HTMLElement */
-  const content = document.querySelector('main #content');
-  content.innerHTML = partial.raw;
+  const incomingDocument = new DOMParser().parseFromString(partial.html);
+  const incomingContent = incomingDocument.querySelector('main #content');
 
-  // Close any open self-assessment modals.
+  const content = document.querySelector('main #content');
+  content.innerHTML = incomingContent.innerHTML;
+
+  // Close any open self-assessment modals. These exist as children of <body>.
   // TODO(samthor): Replace this logic with a store subscriber that allows
   // all components to clean up after themselves when the page changes.
   const assessmentsOpen = document.querySelectorAll('web-assessment[open]');
@@ -115,12 +123,15 @@ function updateDom(partial) {
   }
 
   // Update the page title.
-  document.title = partial.title || '';
+  document.title = incomingDocument.title;
 
   /** @type HTMLLinkElement */
   const rss = document.querySelector('link[type="application/atom+xml"]');
   if (rss) {
-    rss.href = partial.rss || rss.href;
+    const incomingRSS = incomingDocument.querySelector(
+      'link[type="application/atom+xml"]',
+    );
+    rss.href = incomingRSS.rss || rss.href;
   }
 
   // Focus on the first title (or fallback to content itself).
@@ -146,29 +157,25 @@ export async function swapContent({firstRun, url, signal, ready, state}) {
   // Kick off loading the correct JS entrypoint.
   const entrypointPromise = loadEntrypoint(url);
 
-  // If this is the first run, bail out early. We generate an inferred partial for back/forward nav,
+  // If this is the first run, bail out early. We generate an inferred payload for back/forward nav,
   // as we only have the initial prerendered HTML.
   if (firstRun) {
-    const content = document.querySelector('main #content');
-    const inferredPartial = {
-      raw: content.innerHTML,
-      title: document.title,
+    const inferredPayload = {
+      offline: store.getState().isOffline,
+      html: document.documentElement.outerHTML,
     };
-    if (store.getState().isOffline) {
-      inferredPartial.offline = true;
-    }
-    ready(url, {partial: inferredPartial});
+    ready(url, {payload: inferredPayload});
     return entrypointPromise;
   }
 
   // Either use a partial from the previous state (user has hit back/forward) if it's not offline,
   // or fetch it anew from the network.
-  let partial;
-  if (state && state.partial && !state.partial.offline) {
-    partial = state.partial;
+  let payload;
+  if (state && state.payload && !state.parpayloadtial.offline) {
+    payload = state.payload;
   } else {
     store.setState({isPageLoading: true});
-    partial = await getPartial(url, signal);
+    payload = await getHTML(url, signal);
     if (signal.aborted) {
       return;
     }
@@ -176,16 +183,16 @@ export async function swapContent({firstRun, url, signal, ready, state}) {
 
   // Code in entrypoint.jsuses this to trigger a reload if we see an "online" event. This partial
   // value is only returned via the Service Worker if we failed to fetch a 'real' page.
-  const isOffline = Boolean(partial.offline);
+  const isOffline = Boolean(payload.offline);
   store.setState({currentUrl: url, isOffline});
 
   // Inform the router that we're ready early (even though the JS isn't done). This updates the URL,
   // which must happen before DOM changes and ga event.
-  ready(url, {partial});
+  ready(url, {payload});
 
   ga('set', 'page', window.location.pathname);
   ga('send', 'pageview');
-  updateDom(partial);
+  updateDom(payload);
 
   // Finally, just await for the entrypoint JS. It this fails we'll throw an exception and force a
   // complete reload.

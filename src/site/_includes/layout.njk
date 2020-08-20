@@ -13,18 +13,13 @@ eleventyComputed:
     <meta name="theme-color" content="#fff"/>
 
     {% if noindex or draft -%}
-      <meta name="robots" content="noindex">
+      <meta name="robots" content="noindex" />
     {%- endif %}
     {% if offline %}
       <meta name="offline" content="true" />
     {%- endif %}
 
-    {% if nometa %}
-      {# Area on page that service worker will load title, rss url and if offline #}
-      <!-- %_HEAD_REPLACE_% -->
-    {% else %}
-      {% Meta locale, page, collections, renderData %}
-    {%- endif %}
+    {% Meta locale, page, collections, renderData %}
 
     <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
     <link rel="preconnect" href="//www.google-analytics.com" crossorigin="" />
