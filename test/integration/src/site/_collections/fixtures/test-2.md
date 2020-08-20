@@ -6,6 +6,3 @@ thumbnail: thumbnail.png
 ---
 
 # A test post
-
-This test post belongs to collections:
-+ recentBlogPosts (in prod)
