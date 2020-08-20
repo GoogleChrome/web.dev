@@ -7,6 +7,7 @@ authors:
   - jeffposnick
   - gilbertococchi
 date: 2020-06-23
+updated: 2020-08-20
 description: |
   Different ways in which service workers can be used as a complement of traditional prefetching techniques.
 tags:
@@ -15,6 +16,8 @@ tags:
   - network
   - service-worker
 ---
+
+{% YouTube 'fhqCwDP69PI', '161' %}
 
 Performing a task on a site commonly involves several steps. For example, purchasing a product in an e-commerce website might involve searching for a product, picking an item from the list of results, adding the item to the cart, and completing the operation by checking out.
 
