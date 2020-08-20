@@ -217,17 +217,3 @@ export const setLanguage = store.action((state, preferredLanguage) => {
     userPreferredLanguage: preferredLanguage,
   };
 });
-
-export const closeToC = store.action(() => {
-  document.querySelector('main').classList.remove('w-toc-open');
-  return {
-    isTocOpened: false,
-  };
-});
-
-export const openToC = store.action(() => {
-  document.querySelector('main').classList.add('w-toc-open');
-  return {
-    isTocOpened: true,
-  };
-});

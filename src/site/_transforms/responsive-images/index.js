@@ -32,9 +32,6 @@ const responsiveImages = (content, outputPath) => {
   $img.each((i, elem) => {
     const $elem = $(elem);
     const originalSrc = $elem.attr('src');
-    if (!originalSrc) {
-      return;
-    }
     const newSrc = determineImagePath($elem.attr('src'), outputPath).src;
     $elem.attr('src', newSrc);
     // Note the code below is a short term fix and should be removed eventually.
