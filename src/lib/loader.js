@@ -9,6 +9,8 @@ import {store} from './store';
 import {normalizeUrl, getCanonicalPath} from './urls';
 import './utils/underscore-import-polyfill';
 
+const resourceVersion = document.body.getAttribute('data-version');
+
 /**
  * Dynamically loads code required for the passed URL entrypoint.
  *
@@ -58,6 +60,7 @@ export async function getHTML(url, signal) {
     if (!res.ok) {
       throw res.status;
     }
+    console.info('got response', res);
     const offline = res.headers.has('X-Offline'); // set by SW
     const html = await res.text();
     return {
@@ -108,7 +111,18 @@ function forceFocus(el) {
  * @param {{offline: boolean, html: string}} partial
  */
 function updateDom(partial) {
-  const incomingDocument = new DOMParser().parseFromString(partial.html);
+  const incomingDocument = new DOMParser().parseFromString(
+    partial.html,
+    'text/html',
+  );
+
+  const incomingResourceVersion = incomingDocument.getAttribute('data-version');
+  if (incomingResourceVersion !== resourceVersion) {
+    throw new Error(
+      `version was=${resourceVersion} now=${incomingResourceVersion}`,
+    );
+  }
+
   const incomingContent = incomingDocument.querySelector('main #content');
 
   const content = document.querySelector('main #content');
@@ -171,7 +185,7 @@ export async function swapContent({firstRun, url, signal, ready, state}) {
   // Either use a partial from the previous state (user has hit back/forward) if it's not offline,
   // or fetch it anew from the network.
   let payload;
-  if (state && state.payload && !state.parpayloadtial.offline) {
+  if (state && state.payload && !state.payload.offline) {
     payload = state.payload;
   } else {
     store.setState({isPageLoading: true});

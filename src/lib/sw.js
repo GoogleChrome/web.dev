@@ -3,7 +3,6 @@
  */
 
 import * as idb from 'idb-keyval';
-import manifest from 'cache-manifest';
 import {initialize as initializeGoogleAnalytics} from 'workbox-google-analytics';
 import * as workboxRouting from 'workbox-routing';
 import * as workboxStrategies from 'workbox-strategies';
@@ -19,13 +18,20 @@ const cacheNames = {
   ...workboxCacheNames,
 };
 
+// This import defines self['_manifest'], used below.
+try {
+  self.importScripts('/sw-manifest.js');
+} catch (e) {
+  // ignore, possible in dev
+}
+
 /**
  * Configure default cache for some common web.dev assets: images, CSS, JS, offline page.
  *
  * This must occur first, as we cache images that are also matched by runtime handlers below. See
  * this workbox issue for updates: https://github.com/GoogleChrome/workbox/issues/2402
  */
-precacheAndRoute(manifest, {
+precacheAndRoute(self['_manifest'] || [], {
   cleanURLs: false, // don't allow "foo" for "foo.html"
 });
 
@@ -136,7 +142,8 @@ workboxRouting.setCatchHandler(async ({url}) => {
   // If we see an internal error in pageMatch above, assume we're offline and serve the page from
   // the cache.
   if (pageMatch({url})) {
-    const response = await matchPrecache('/offline/index.html');
+    // TODO(ewag): for now, just match English
+    const response = await matchPrecache('/en/offline/index.html');
     response.headers.set('X-Offline', 1);
     return response;
   }
