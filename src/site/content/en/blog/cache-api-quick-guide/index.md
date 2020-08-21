@@ -7,7 +7,7 @@ description: Learn how to use the Cache API to make your application data availa
 date: 2017-10-03
 updated: 2020-04-27
 tags:
-  - post
+  - blog
   - progressive-web-apps
 ---
 

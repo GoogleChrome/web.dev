@@ -13,12 +13,11 @@ description: |
   WebSocketStream integrates streams with the WebSocket API.
   This allows your app to apply backpressure to received messages.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - backpressure
   - websocket
   - websocketstream
   - capabilities
-  - fugu
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/1977080236415647745
 ---
@@ -260,15 +259,10 @@ if ('WebSocketStream' in window) {
 On supporting browsers, you can see the WebSocketStream API in action in the embedded iframe,
 or [directly on Glitch](https://websocketstream-demo.glitch.me/).
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/websocketstream-demo?path=public/index.html&previewSize=100"
-    title="websocketstream-demo on Glitch"
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    style="height: 100%; width: 100%; border: 0;"
-    loading="lazy">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'websocketstream-demo',
+  path: 'public/index.html'
+} %}
 
 ## Feedback {: #feedback }
 

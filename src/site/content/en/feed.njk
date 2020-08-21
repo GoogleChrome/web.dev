@@ -3,7 +3,7 @@ metadata:
   title: web.dev
   url: https://web.dev
   icon: https://web.dev/images/social.png
-  logo: https://web.dev/images/rss-banner.png
+  logo: https://web.dev/images/shared/rss-banner.png
   author:
     name: Google Developers
   feed:
@@ -21,15 +21,16 @@ permalink: "/{{lang}}/feed.xml"
   <subtitle>{{ metadata.feed.subtitle }}</subtitle>
   <link href="{{ metadata.feed.url }}" rel="self"/>
   <link href="{{ metadata.url }}"/>
-  <updated>{{ collections.posts | reverse | rssLastUpdatedDate }}</updated>
+  <updated>{{ collections.blogPosts | reverse | rssLastUpdatedDate }}</updated>
   <id>{{ metadata.feed.id }}</id>
   <author>
     <name>{{ metadata.author.name }}</name>
   </author>
   <icon>{{ metadata.icon }}</icon>
   <logo>{{ metadata.logo }}</logo>
-  {% for post in collections.posts -%}
-  {% set absolutePostUrl -%}{{ post.url | stripLanguage | url | absoluteUrl(metadata.url) }}{%- endset %}
+  {% for post in collections.blogPosts -%}
+  {#  absoluteUrl comes from 11ty RSS Plugin (@see https://www.11ty.dev/docs/plugins/rss/) #}
+  {% set absolutePostUrl -%}{{ post.data.canonicalUrl | url | absoluteUrl(metadata.url) }}{%- endset %}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
@@ -37,9 +38,9 @@ permalink: "/{{lang}}/feed.xml"
     <id>{{ absolutePostUrl }}</id>
     <content type="html">{{ post.templateContent | replace("web-copy-code", "div") | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
     {% for entry in post.data.authors %}
-    {%- set author =  contributors[entry] -%}
+    {%- set author =  collections.authors[entry] -%}
     <author>
-      <name>{{ author.name.given }} {{ author.name.family }}</name>
+      <name>{{ author.title }}</name>
     </author>
     {%- endfor %}
   </entry>

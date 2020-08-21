@@ -6,7 +6,7 @@
  */
 
 import {store} from './store';
-import {normalizeUrl} from './urls';
+import {normalizeUrl, getCanonicalPath} from './urls';
 import './utils/underscore-import-polyfill';
 
 /**
@@ -16,10 +16,22 @@ import './utils/underscore-import-polyfill';
  * @return {!Promise<?>}
  */
 async function loadEntrypoint(url) {
-  if (url.startsWith('/measure/')) {
-    return import('./pages/measure.js');
-  } else if (url.startsWith('/newsletter/')) {
-    return import('./pages/newsletter.js');
+  url = getCanonicalPath(url);
+  const prefixTo = url.indexOf('/', 1);
+  const prefix = url.substring(1, prefixTo === -1 ? url.length : prefixTo);
+
+  // This is a switch as it's easy to see all entrypoints (vs. lots of if/else).
+  // We can't dynamically generate the argument to import as Rollup rewrites
+  // import() statements as a whole for us.
+  switch (prefix) {
+    case 'measure':
+      return import('./pages/measure.js');
+
+    case 'live':
+      return import('./pages/live.js');
+
+    case 'newsletter':
+      return import('./pages/newsletter.js');
   }
 
   return import('./pages/default.js');
@@ -75,7 +87,7 @@ function forceFocus(el) {
 
     el.addEventListener(
       'blur',
-      (e) => {
+      () => {
         el.removeAttribute('tabindex');
         el.classList.remove('w-force-focus');
       },

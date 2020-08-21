@@ -10,8 +10,8 @@ hero: hero.jpg
 alt: A wall with a bunch of image frames in different sizes.
 date: 2019-09-30
 tags:
-  - post # post is a required tag for the article to show up in the blog.
-  - fast
+  - blog # blog is a required tag for the article to show up in the blog.
+  - performance
   - images
 ---
 
@@ -19,7 +19,7 @@ This article gives me an opportunity to discuss two of my favorite things: respo
 
 ## Responsive images overview
 
-Suppose you're browsing the web on a screen that's 300 pixels wide, and the page just requested an image that's 1500 pixels wide. That page just wasted a lot of your cellular data because your screen can't do anything with all of that extra resolution. Ideally, the browser should fetch a version of the image that's just a *little* wider than your screen size, say 325 pixels. This ensures a high-resolution image without wasting data. And, even better, the image will load faster. [Responsive images](/serve-responsive-images/#serve-multiple-image-versions) enable browsers to fetch different image resources to different devices. If you don't use an [image CDN](/image-cdns/) need to save multiple dimensions for each image and specify them in the `srcset` attribute. The `w` value tells the browser the width of each version. Depending on the device, the browser can choose the appropriate one:
+Suppose you're browsing the web on a screen that's 300 pixels wide, and the page just requested an image that's 1500 pixels wide. That page just wasted a lot of your cellular data because your screen can't do anything with all of that extra resolution. Ideally, the browser should fetch a version of the image that's just a *little* wider than your screen size, say 325 pixels. This ensures a high-resolution image without wasting data. And, even better, the image will load faster. [Responsive images](/serve-responsive-images/#serve-multiple-image-versions) enable browsers to fetch different image resources to different devices. If you don't use an [image CDN](/image-cdns/) you need to save multiple dimensions for each image and specify them in the `srcset` attribute. The `w` value tells the browser the width of each version. Depending on the device, the browser can choose the appropriate one:
 
 ```html
 <img src="small.jpg" srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w" alt="…">
@@ -27,7 +27,7 @@ Suppose you're browsing the web on a screen that's 300 pixels wide, and the page
 
 ## Preload overview
 
-[Preload](/preload-critical-assets) lets you tell the browser about critical resources that you want to load as soon as possible, before they are discovered in HTML. This is especially useful for resources that are not easily discoverable, such as fonts included in stylesheets, background images, or resources loaded from a script. 
+[Preload](/preload-critical-assets) lets you tell the browser about critical resources that you want to load as soon as possible, before they are discovered in HTML. This is especially useful for resources that are not easily discoverable, such as fonts included in stylesheets, background images, or resources loaded from a script.
 
 ```html
 <link rel="preload" as="image" href="important.png">
@@ -67,7 +67,7 @@ This kicks off a request using the same resource selection logic that `srcset` a
 
 ### Preloading dynamically-injected responsive images
 
-Let's say you're dynamically-loading hero images as part of a slideshow and know which image will be displayed first. In that case, you probably want to avoid waiting for the script before loading the image in question, as that would delay when users can see it. 
+Let's say you're dynamically-loading hero images as part of a slideshow and know which image will be displayed first. In that case, you probably want to avoid waiting for the script before loading the image in question, as that would delay when users can see it.
 
 You can inspect this issue on a website with a dynamically-loaded image gallery:
 
@@ -92,7 +92,7 @@ Using `preload` helps here because the image starts loading ahead of time and is
 <figure class="w-figure">
 <img src="./example-1-after.png" alt="Screenshot of Chrome DevTools Network panel.">
 <figcaption class="w-figcaption">This waterfall shows that the first image started loading at the same time as the script, avoiding unnecessary delays and resulting in faster displaying images.</figcaption>
-</figure> 
+</figure>
 
 To see the difference that preloading makes, you can inspect the same dynamically-loaded image gallery but [with preloaded first image](https://responsive-preload.glitch.me/preload.html) by following the steps from the first example.
 
@@ -121,9 +121,9 @@ You can inspect this issue on an example website with [responsive background ima
 <figure class="w-figure">
 <img src="./example-2-before.png" alt="Screenshot of Chrome DevTools Network panel.">
 <figcaption class="w-figcaption">In this example, the image download doesn't start until the CSS is fully downloaded, resulting in unnecessary lag to the image's display.</figcaption>
-</figure> 
+</figure>
 
-Responsive image preloading provides a simple and hack-free way to load those images faster. 
+Responsive image preloading provides a simple and hack-free way to load those images faster.
 
 ```html
 <link rel=preload href=cat.png as=image imagesrcset="cat.png 1x, cat-2x.png 2x">
@@ -134,7 +134,7 @@ You can inspect how the previous example behaves with [preloaded responsive back
 <figure class="w-figure">
 <img src="./example-2-after.png" alt="Screenshot of Chrome DevTools Network panel.">
 <figcaption class="w-figcaption">Here the image and CSS start downloading at the same time, avoiding delays and resulting in a faster loading image.</figcaption>
-</figure> 
+</figure>
 
 ## Preloading responsive images in action
 
@@ -148,7 +148,7 @@ Of course, nothing captures the visual difference quite like a filmstrip compari
 <figure class="w-figure">
 <img src="./example-3.png" alt="Screenshot of WebPageTest filmstrip comparison showing preloaded images are displayed about 1.5 seconds faster.">
 <figcaption class="w-figcaption">The filmstrip shows that images arrive significantly faster when preloaded, resulting in a hugely-improved user experience.</figcaption>
-</figure> 
+</figure>
 
 ## Preload and `<picture>`?
 
@@ -158,7 +158,7 @@ The Web Performance Working Group is talking about adding a preload equivalent f
 
 Why is this use-case being "neglected"?
 
-While there's interest in solving that use case as well, there are still a number of [technical issues to sort out](https://calendar.perfplanet.com/2018/how-the-sausage-is-made-webperfwg-meeting-summary/) which means that a solution here would have significant complexity. On top of that, it seems like for the most part, the use-case can be addressed today, even if in a hacky way (see below). 
+While there's interest in solving that use case as well, there are still a number of [technical issues to sort out](https://calendar.perfplanet.com/2018/how-the-sausage-is-made-webperfwg-meeting-summary/) which means that a solution here would have significant complexity. On top of that, it seems like for the most part, the use-case can be addressed today, even if in a hacky way (see below).
 
 Given that, the Web Performance WG decided to ship `srcset` first and see if the demand for equivalent `picture` support arises.
 

@@ -1,5 +1,5 @@
 ---
-tags: [ "post", "pathItem" ]
+tags: [ "blog", "post" ]
 date: 2020-01-03
 hero: hero.jpg
 draft: true
@@ -10,5 +10,5 @@ web_lighthouse:
 # A test post
 
 This test post belongs to collections:
-+ recentPosts (in dev)
++ recentBlogPosts (in dev)
 + postsWithLighthouse (in dev)

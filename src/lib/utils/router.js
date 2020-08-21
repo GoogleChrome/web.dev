@@ -1,6 +1,8 @@
 import './abort-controller-polyfill';
 import {addPageToContentIndex} from '../content-indexing';
 import {trackError} from '../analytics';
+import {store} from '../store';
+import language from './language';
 
 let globalHandler;
 let recentActiveUrl; // current URL not including hash
@@ -15,20 +17,16 @@ function getUrl() {
 /**
  * The caller wants to change the active URL. Let them, without triggering any
  * new loads.
- *
- * @param {!Event} e
  */
-function onReplaceState(e) {
+function onReplaceState() {
   recentActiveUrl = getUrl();
 }
 
 /**
  * The user has gone forward or back in the stack. Reload new content, or do
  * nothing if it was just a hash change.
- *
- * @param {!Event} e
  */
-function onPopState(e) {
+function onPopState() {
   const updatedUrl = getUrl();
   if (recentActiveUrl === updatedUrl) {
     // This was just a change in hash. Do nothing and let the browser run its
@@ -93,6 +91,7 @@ function onClick(e) {
 }
 
 /**
+ * @TODO how is listen being reassigned as a function?
  * Adds global page listeners for SPA routing.
  *
  * @param {function(!Object): ?} handler which returns an optional Promise
@@ -101,7 +100,7 @@ export function listen(handler) {
   if (!handler) {
     throw new Error('need handler');
   }
-  listen = () => {
+  listen = () => { // eslint-disable-line
     throw new Error('listen can only be called once');
   };
 
@@ -112,6 +111,12 @@ export function listen(handler) {
     if (!isNavigation) {
       url = getUrl();
       hash = window.location.hash;
+    } else {
+      // If user has a preferred language, use it in the request.
+      const lang = store.getState().userPreferredLanguage;
+      if (lang && lang !== language.defaultLanguage) {
+        url = '/' + lang + url;
+      }
     }
 
     const firstRun = previousController === null;

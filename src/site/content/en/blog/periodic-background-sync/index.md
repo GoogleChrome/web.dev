@@ -17,8 +17,7 @@ description: |
   of a native app.
 tags:
   - capabilities
-  - fugu
-  - post
+  - blog
   - progressive-web-apps
   - service-worker
   - chrome80
@@ -75,7 +74,7 @@ Status
 2. Create initial draft of specification
 </td>
 <td markdown="block">
-<a href="https://github.com/WICG/BackgroundSync/blob/master/explainers/periodicsync-explainer.md" rel="noopener">In Progress</a>
+<a href="https://wicg.github.io/periodic-background-sync/" rel="noopener">Complete</a>
 </td>
 </tr>
 <tr>

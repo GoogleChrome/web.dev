@@ -22,7 +22,7 @@ This guide has a slight focus on e-commerce (particularly the business stakehold
 lot of the guidance is general enough to be useful to any website that wants to improve mobile conversions.
 {% endAside %}
 
-## Fix speed with the help of your business stakeholders
+## Fix speed with the help of your business stakeholders {: #stakeholders }
   
 Many companies are in the middle of a disruptive shift in consumer behavior, where the growth of
 people buying on digital platforms instead of physical stores tells the tale that companies need to
@@ -122,7 +122,7 @@ revenue. Here are some ways to achieve this:
    modernization project in 2000. By setting up communication and maintenance early, silos can be
    broken down and knowledge sharing can become a competitive advantage.
 
-## Fix speed with the help of your marketing team  
+## Fix speed with the help of your marketing team {: #marketing }
    
 ### The shared challenge  
    
@@ -208,7 +208,7 @@ bakery with different discussion topics. Sometimes the most powerful meetings ta
    budget where they learn how to check speed and they themselves can prioritize which tools they
    want as long as they meet the speed target?
  
-## Fix speed with the help of your web design team
+## Fix speed with the help of your web design team {: #design }
    
 One of the biggest challenges for web performance is that while connectivity might be getting faster
 in many regions, [websites are becoming
@@ -261,7 +261,7 @@ agreed level.
 -  **Propose a performance budget** where the web designers commit to making sure that all web
    pages have a page weight below 1 MB (or at maximum 1.5 MB).
 
-## Fix speed with the help of your analytics team
+## Fix speed with the help of your analytics team {: #analytics }
    
 Businesses need data to know what to focus on and to get a basis for decisions. But even though many
 talk about the importance of site speed and its connection to revenue and sales, there are still

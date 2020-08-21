@@ -6,7 +6,7 @@ authors:
 date: 2019-11-22
 description: Comments from survey respondents about various image optimization techniques.
 tags:
-  - post
+  - blog
   - images
   - performance
 codelabs:
@@ -16,7 +16,7 @@ codelabs:
   - codelab-specifying-multiple-slot-widths
 ---
 
-{# 
+{#
    Editorial note from @kaycebasques: It's debatable whether this post is appropriate for web.dev.
    On one hand, it provides a lot of actionable insight. The Audience section of this post also
    points out how this content can be useful to various actors in the web developer ecosystem. It
@@ -28,10 +28,10 @@ codelabs:
 #}
 
 This post lists the freeform feedback that Google Web DevRel received in its Summer 2019
-image optimization techniques survey. 
-Responses were solicited through [Web Fundamentals](https://developers.google.com/web) and 
-[@ChromiumDev](https://twitter.com/chromiumdev). The motivation for the survey was to find out why 
-most sites don't follow image optimization best practices even though they seem like a relatively 
+image optimization techniques survey.
+Responses were solicited through [Web Fundamentals](https://developers.google.com/web) and
+[@ChromiumDev](https://twitter.com/chromiumdev). The motivation for the survey was to find out why
+most sites don't follow image optimization best practices even though they seem like a relatively
 easy way to improve performance. The response data isn't listed here because there were flaws
 in the survey methodology.
 
@@ -80,7 +80,7 @@ There are several techniques for using modern formats with fallback for older br
 
 {% Aside %}
 Why's this important?
-[Requesting image files just in time](/use-lazysizes-to-lazyload-images), rather than getting all 
+[Requesting image files just in time](/use-lazysizes-to-lazyload-images), rather than getting all
 the images for a page as soon as it loads, can improve performance and reduce data cost.
 {% endAside %}
 

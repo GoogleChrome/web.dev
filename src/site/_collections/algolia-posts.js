@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-const livePosts = require('../_filters/live-posts');
+const {livePosts} = require('../_filters/live-posts');
 const removeMarkdown = require('remove-markdown');
-const stripLanguage = require('../_filters/strip-language');
+const authorsCollectionFn = require('../_collections/authors');
 
 /**
  * Shrink the size of the given fulltext to fit within a certain limit, at the
@@ -40,9 +40,9 @@ function limitText(fulltext, limit = 7500) {
 }
 
 module.exports = (collection) => {
-  const validTags = ['post', 'pathItem'];
+  const validTags = ['post'];
   const eleventyPosts = collection
-    .getAll()
+    .getFilteredByGlob('**/*.md')
     .filter((item) => {
       // nb. There's no easy 'getFilteredByMultipleTag' method in Eleventy.
       if (!Array.isArray(item.data.tags)) {
@@ -58,6 +58,8 @@ module.exports = (collection) => {
   // For now, hard-code language to English.
   const lang = 'en';
 
+  const authorsCollection = authorsCollectionFn();
+
   // Convert 11ty-posts to a flat, indexable format.
   return eleventyPosts.map(({data, template}) => {
     const fulltext = removeMarkdown(template.frontMatter.content);
@@ -68,13 +70,18 @@ module.exports = (collection) => {
     // https://www.algolia.com/doc/guides/sending-and-managing-data/prepare-your-data/in-depth/index-and-records-size-and-usage-limitations/#record-size
     const limited = limitText(fulltext);
 
+    const authors = (data.authors || []).map(
+      (author) => authorsCollection[author].title,
+    );
+
     return {
       objectID: data.page.url + '#' + lang,
       lang,
       title: data.title,
-      url: stripLanguage(data.page.url),
+      url: data.canonicalUrl,
       description: data.description,
       fulltext: limited,
+      authors: authors,
       _tags: data.tags,
     };
   });

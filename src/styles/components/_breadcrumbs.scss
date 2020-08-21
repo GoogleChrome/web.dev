@@ -18,6 +18,7 @@
   // https://css-tricks.com/flexbox-truncated-text/
   min-width: 0;
   padding: 0;
+  align-items: center;
 }
 
 .w-breadcrumbs__crumb {
@@ -27,16 +28,10 @@
   min-width: 0;
 }
 
-// Every crumb except for the last one should have a chevron separator.
-.w-breadcrumbs__crumb:not(:last-of-type)::after {
-  @include font-material-icon;
-  // Prevent screen readers from announcing the chevron icon. `alt` is a new
-  // property only supported in Safari but Chrome is working on it!
-  // scss-lint:disable PropertySpelling
-  alt: '';
-  color: $GREY_700;
-  content: 'chevron_right';
-  font-size: 1.1rem;
+.w-breadcrumbs__icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: $GREY_700;
 }
 
 // These two styles combine to give the effect where only the last

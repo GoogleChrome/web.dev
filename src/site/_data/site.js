@@ -14,22 +14,24 @@
  * limitations under the License.
  */
 
+const path = require('path');
 const locale = require('../../../shared/locale');
 
 module.exports = {
   env: process.env.ELEVENTY_ENV || 'dev',
   percy: process.env.PERCY || false,
+  contentDir: path.join('src/site/content/', process.env.ELEVENTY_LANG || ''),
   title: 'web.dev',
   titleVariation: 'Home',
   defaultLocale: locale.defaultLocale,
   url: 'https://web.dev',
   repo: 'https://github.com/GoogleChrome/web.dev',
-  subscribe: 'https://web.dev/subscribe',
+  subscribe: 'https://web.dev/newsletter',
   subscribeForm:
     'https://services.google.com/fb/submissions/591768a1-61a6-4f16-8e3c-adf1661539da/',
   thumbnail: '/images/social.png',
   isBannerEnabled: false,
-  banner: ``,
+  banner: '',
   // Note that the imageCdn value is only used when we do a production build
   // of the site. Otherwise all image paths are local. This means you can
   // develop locally without having to mess with the CDN at all.
@@ -70,5 +72,8 @@ module.exports = {
       messagingSenderId: '950800540990',
       appId: '1:950800540990:web:5bfeb5de58f8ce7ceef86f',
     },
+  },
+  maps: {
+    apiKey: 'AIzaSyCc27LkiT_ZvmEszthj__edZEzB7B7976s',
   },
 };

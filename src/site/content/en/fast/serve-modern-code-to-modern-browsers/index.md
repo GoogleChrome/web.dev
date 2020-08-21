@@ -10,8 +10,11 @@ description: |
   you want to use new JavaScript language features, you need to transpile these
   features to backwards-compatible formats.  
 date: 2018-11-05
+updated: 2020-06-23
 codelabs:
   - codelab-serve-modern-code
+tags:
+  - performance
 ---
 
 Building websites that work well on all major browsers is a core tenet of an
@@ -76,15 +79,6 @@ configurations file, `.babelrc`:
 }
 ```
 
-Use the `targets` field to specify which browser versions you want to include,
-by adding an appropriate value (or query) to the `browsers` field.
-`@babel/preset-env` integrates with browserslist, an open-source configuration
-shared between different tools for targeting browsers. A full list of compatible
-queries is in the [browserslist
-documentation](https://github.com/browserslist/browserslist#full-list). Another
-option is to use a `.browserslistrc` file to list the environments you wish to
-target.
-
 Use the `targets` field to specify which browser versions you want to include
 by adding an appropriate query to the `browsers` field. `@babel/preset-env`
 integrates with browserslist, an open-source configuration shared between different
@@ -114,7 +108,37 @@ browsers to be used to access your application.
 Ultimately, you should select the appropriate combination of queries to only
 target browsers that fit your needs.
 
-## Use &lt;script type=&quot;module&quot;&gt;
+### Enable modern bugfixes
+
+`@babel/preset-env` groups multiple JavaScript syntax features into collections and enables/disables
+them based on the target browsers specified. Although this works well, an entire collection of
+syntax features is transformed when a targeted browser contains a bug with just a single feature.
+This often results in more transformed code than is necessary.
+
+Originally developed as a [separate preset](https://github.com/babel/preset-modules), the 
+[bugfixes option](https://babeljs.io/docs/en/babel-preset-env#bugfixes) in `@babel/preset-env`
+solves this problem by converting modern syntax that is broken in some browsers to the closest
+equivalent syntax that is not broken in those browsers. The result is nearly identical modern code
+with a few small syntax tweaks that guarantee compatibility in all target browsers. To use this
+optimization, make sure you have `@babel/preset-env` 7.10 or later installed, then set the
+[`bugfixes`](https://babeljs.io/docs/en/babel-preset-env#bugfixes) property to `true`:
+
+```json
+{
+ "presets": [
+   [
+     "@babel/preset-env",
+     {
+       "bugfixes": true
+     }
+   ]
+ ]
+}
+```
+
+In Babel 8, the `bugfixes` option will be enabled by default.
+
+## Use `<script type="module">`
 
 JavaScript modules, or ES modules, are a relatively new feature supported in
 [all major browsers](https://caniuse.com/#feat=es6-module). You can use modules
@@ -177,3 +201,5 @@ separate versions of your application:
   Loading](https://jasonformat.com/modern-script-loading/) explains this in more detail and covers a
   few options that can be used to circumvent this.
 {% endAside %}
+
+_With thanks to Connor Clark and Jason Miller for their reviews._

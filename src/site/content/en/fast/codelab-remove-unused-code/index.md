@@ -9,6 +9,8 @@ description: |
 date: 2018-11-05
 glitch: fav-kitties-starter
 related_post: remove-unused-code
+tags:
+  - performance
 ---
 
 {% include 'content/devtools-headsup.njk' %}

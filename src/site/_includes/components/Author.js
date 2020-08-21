@@ -17,38 +17,33 @@
 const {html} = require('common-tags');
 const AuthorInfo = require('./AuthorInfo');
 
-module.exports = ({
-  post,
-  author,
-  id,
-  showSocialMedia = false,
-  small = false,
-}) => {
+module.exports = ({id, author, showSocialMedia = false, small = false}) => {
   if (!author) {
-    throw new Error(`
-      Can't create Author component without an author argument.
-      author was null or undefined. Please check '_data/contributors.js'
-      and make sure the author you provide is a key in this object.
-    `);
+    throw new Error(
+      `Can't create Author component for "${id}" without author ` +
+        `information. Please check '_data/authorsData.json' and make sure the ` +
+        `author you provide is a key in this object.`,
+    );
   }
 
   if (!author.name) {
     throw new Error(
-      `Can't create Author with missing author.name. author object: ${author}`,
+      `Can't create Author with missing author.name. author object: ${JSON.stringify(
+        author,
+      )}`,
     );
   }
 
-  const fullName = `${author.name.given} ${author.name.family}`;
   return html`
     <div class="w-author">
       <a href="/authors/${id}">
         <img
-          class="w-author__image ${small && `w-author__image--small`}"
+          class="w-author__image ${small && 'w-author__image--small'}"
           src="/images/authors/${id}.jpg"
-          alt="${fullName}"
+          alt="${author.title}"
         />
       </a>
-      ${AuthorInfo({post, author, id, showSocialMedia})}
+      ${AuthorInfo({author, id, showSocialMedia})}
     </div>
   `;
 };

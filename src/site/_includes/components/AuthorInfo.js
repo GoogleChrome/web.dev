@@ -18,16 +18,10 @@ const {html} = require('common-tags');
 
 /* eslint-disable require-jsdoc */
 
-module.exports = ({post, author, id, showSocialMedia = false}) => {
-  if (!post) {
-    throw new Error(`Can't generate AuthorInfo without post object`);
-  }
-
+module.exports = ({author, id, showSocialMedia = false}) => {
   if (!author) {
-    throw new Error(`Can't generate AuthorInfo without author object`);
+    throw new Error('Can not generate AuthorInfo without author object');
   }
-
-  const fullName = `${author.name.given} ${author.name.family}`;
 
   function renderTwitter({twitter}) {
     return html`
@@ -57,14 +51,32 @@ module.exports = ({post, author, id, showSocialMedia = false}) => {
     `;
   }
 
-  function renderSocialMedia(author) {
+  function renderHomepage({homepage}) {
     return html`
-      <ul class="w-author__link-list">
-        ${author.twitter && renderTwitter(author)}
-        ${author.github && renderGitHub(author)}
-        ${author.glitch && renderGlitch(author)}
-      </ul>
+      <li class="w-author__link-listitem">
+        <a class="w-author__link" href="${homepage}">Blog</a>
+      </li>
     `;
+  }
+
+  function renderSocialMedia(author) {
+    // Check to see if the author has any social info. If they don't then we
+    // should skip rendering the list, otherwise a screen reader will announce
+    // "list with 0 items".
+    // It'd be nice if we had put all of these social accounts into a social
+    // object, but changing that now might be really annoying.
+    if (author.twitter || author.github || author.glitch || author.homepage) {
+      return html`
+        <ul class="w-author__link-list">
+          ${author.twitter && renderTwitter(author)}
+          ${author.github && renderGitHub(author)}
+          ${author.glitch && renderGlitch(author)}
+          ${author.homepage && renderHomepage(author)}
+        </ul>
+      `;
+    } else {
+      return html``;
+    }
   }
 
   /* eslint-disable max-len */
@@ -74,7 +86,7 @@ module.exports = ({post, author, id, showSocialMedia = false}) => {
       style="display: flex; flex-direction: column; justify-content: center;"
     >
       <cite class="w-author__name">
-        <a class="w-author__name-link" href="/authors/${id}">${fullName}</a>
+        <a class="w-author__name-link" href="/authors/${id}">${author.title}</a>
       </cite>
       ${showSocialMedia && renderSocialMedia(author)}
     </div>

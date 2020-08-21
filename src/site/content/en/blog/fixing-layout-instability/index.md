@@ -7,7 +7,7 @@ date: 2019-09-30
 description: |
   A walkthrough of using WebPageTest to identify and fix layout instability issues.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - webdev
   - webpagetest
   - ux

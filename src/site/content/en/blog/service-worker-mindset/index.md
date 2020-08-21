@@ -10,7 +10,7 @@ alt: Service workers lining up.
 description: |
   Working with service workers is new and unfamiliar for many web devs. This post provides some tips for wrapping your mind around them.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - service-worker
   - PWA
   - offline
@@ -191,7 +191,7 @@ self.addEventListener("activate", event => {
 
 ```
 
-Preventing your service workers from clobbering each other takes a bit of work and disciple but is worth the trouble.
+Preventing your service workers from clobbering each other takes a bit of work and discipline but is worth the trouble.
 
 {% Aside 'note' %}
 Think of the combination of your service worker and your site as an [installable](/installable) app. Each version should work. Each version should be separate from the others. Imagine how buggy a game would be if the developer accidentally released a patch that used new game logic but outdated assets. You'd rage on the forums so fast! Keep your app versions tidy & clean.

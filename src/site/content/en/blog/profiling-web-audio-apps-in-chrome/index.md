@@ -8,7 +8,7 @@ description: >
   `chrome://tracing` and the **WebAudio** panel in DevTools.
 date: 2020-05-04
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - media
   - webaudio
 authors:

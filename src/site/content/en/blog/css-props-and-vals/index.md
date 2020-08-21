@@ -14,7 +14,7 @@ description:
   value and be overridden and you can’t use transitions with them. CSS Properties
   and Values API Level 1 overcomes these issues.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - houdini
   - css
   - Chrome78
@@ -183,14 +183,11 @@ animating our linear gradient. Check out the Glitch below to see the full code
 in action and play around with it yourself.
 
 <!-- Copy and Paste Me -->
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/houdini-props-and-vals?path=style.css&previewSize=40&attributionHidden=true"
-    alt="houdini-props-and-vals on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'houdini-props-and-vals',
+  path: 'style.css',
+  previewSize: 40
+} %}
 
 ## Conclusion
 

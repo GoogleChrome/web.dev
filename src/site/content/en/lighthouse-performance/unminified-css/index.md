@@ -4,14 +4,14 @@ title: Minify CSS
 description: |
   Learn about the unminified-css audit.
 date: 2019-05-02
-updated: 2019-10-04
+updated: 2020-05-29
 web_lighthouse:
   - unminified-css
 ---
 
 The Opportunities section of your Lighthouse report lists
 all unminified CSS files,
-along with the potential savings in kilobytes (KB)
+along with the potential savings in [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte)
 when these files are minified:
 
 <figure class="w-figure">

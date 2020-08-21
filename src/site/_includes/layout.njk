@@ -1,6 +1,11 @@
+---
+show_banner: true
+tags: []
+eleventyComputed:
+  canonicalUrl: "/{{page.fileSlug}}/"
+---
+
 <!DOCTYPE html>
-{% set lang = "en" %}
-{% set locale="en_US" %}
 <html lang="{{lang}}">
   <head>
     <meta charset="utf-8" />
@@ -24,17 +29,17 @@
     {%- endif %}
 
     <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
-    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
-    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
     <link rel="preconnect" href="//www.google-analytics.com" crossorigin="" />
     <link rel="preconnect" href="//firebaseremoteconfig.googleapis.com" crossorigin="" />
     <link rel="preconnect" href="//firebaseinstallations.googleapis.com" crossorigin="" />
     <link rel="preconnect" href="//webdev.imgix.net" crossorigin="" />
-    <link
-      rel="stylesheet"
-      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
-    />
-    <link rel="stylesheet" href="/app.css" />
+
+    {# We only preload Material Icons because the site can't render properly without them. #}
+    {# For Google Sans we use font-display: swap because preloading too many fonts can hurt performance. #}
+    {# https://www.zachleat.com/web/preload/ #}
+    <link rel="preload" as="font" crossorigin href="/fonts/material-icons/regular.woff2">
+
+    <link rel="stylesheet" href="{{ resourceCSS.path | stripQueryParamsDev }}" />
     <link rel="manifest" href="/manifest.webmanifest" />
     {# Include default icon even though we have a manifest #}
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -43,7 +48,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="mask-icon" color="#0054ff" href="/images/safari-pinned-tab.svg">
     <script async src="//www.google-analytics.com/analytics.js"></script>
-    <script defer src="/bootstrap.js"></script>
+    <script defer src="{{ resourceJS.path | stripQueryParamsDev }}"></script>
   </head>
   <body class="unresolved">
     {#
@@ -97,6 +102,15 @@
           </a>
 
           <a
+            href="/live/"
+            class="web-header__link gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Tab: Live"
+          >
+            Live
+          </a>
+
+          <a
             href="/about/"
             class="web-header__link gc-analytics-event"
             data-category="Site-Wide Custom Events"
@@ -137,6 +151,14 @@
         Blog
       </a>
       <a
+        href="/live/"
+        class="web-side-nav__link gc-analytics-event"
+        data-category="Site-Wide Custom Events"
+        data-label="SideNav: Live"
+      >
+        Live
+      </a>
+      <a
         href="/about/"
         class="web-side-nav__link gc-analytics-event"
         data-category="Site-Wide Custom Events"
@@ -146,8 +168,11 @@
       </a>
     </web-side-nav>
     <main>
-      {% include 'partials/banner.njk' %}
       <div id="content">
+        {% if show_banner %}
+          {% include 'partials/banner.njk' %}
+        {% endif %}
+        {% include 'partials/translation-disclaimer.njk' %}
         {{ content | safe }}
       </div>
     </main>

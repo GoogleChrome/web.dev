@@ -48,7 +48,7 @@ The table below shows how to interpret your LCP score:
         <td>Green (fast)</td>
       </tr>
       <tr>
-        <td>2-4</td>
+        <td>2.5-4</td>
         <td>Orange (moderate)</td>
       </tr>
       <tr>

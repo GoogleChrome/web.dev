@@ -11,10 +11,9 @@ description: |
   This post describes the common kinds of third-party JavaScript and the performance issues they can cause. It also provides general guidance about how to optimize third-party scripts.
 alt: A diagram of a webpage featuring text, a video, a map, a chat widget, and social media sharing buttons.
 tags:
-  - post
+  - blog
   - performance
   - third-party
-  - fast
 ---
 
 Third-party JavaScript generally refers to scripts embedded in your website that are:

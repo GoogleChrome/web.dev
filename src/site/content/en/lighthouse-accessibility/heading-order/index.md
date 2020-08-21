@@ -1,10 +1,11 @@
 ---
 layout: post
-title: Headings skip levels
+title: Heading elements are not in a sequentially-descending order
 description: |
   Learn how to make sure assistive technology users can easily navigate your
   web page by correctly structuring your heading elements.
 date: 2019-10-17
+updated: 2020-05-07
 web_lighthouse:
   - heading-order
 ---

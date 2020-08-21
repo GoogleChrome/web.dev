@@ -6,11 +6,13 @@
  * Worker initialization, component loading for routes, et al.
  */
 
+/* global WebComponents */
 import './webcomponents-config'; // must go before -loader below
 import '@webcomponents/webcomponentsjs/webcomponents-loader.js';
 import {trackError} from './analytics'; // side effects + named export
 import {swapContent, getPartial} from './loader';
 import * as router from './utils/router';
+import {checkUserPreferredLanguage} from './actions';
 import {store} from './store';
 import {localStorage} from './utils/storage';
 import removeServiceWorkers from './utils/sw-remove';
@@ -36,6 +38,9 @@ WebComponents.waitFor(async () => {
   });
 });
 
+// Read preferred language from the url, a cookie or browser settings.
+checkUserPreferredLanguage();
+
 // Configures global page state (loading, signed in).
 function onGlobalStateChanged({isSignedIn, isPageLoading}) {
   document.body.classList.toggle('lh-signedin', isSignedIn);
@@ -49,7 +54,6 @@ function onGlobalStateChanged({isSignedIn, isPageLoading}) {
   } else {
     main.removeAttribute('aria-busy');
   }
-
   // Cache whether the user was signed in, to help prevent FOUC in future and
   // for Analytics, as this can be read synchronosly and Firebase's auth takes
   // ~ms to arrive.
@@ -71,7 +75,11 @@ if (serviceWorkerIsSupported(window.location.hostname)) {
 
 function serviceWorkerIsSupported(hostname) {
   // Allow local/prod as well as .netlify staging deploy target.
-  const allowedHostnames = ['web.dev', 'localhost'];
+  const allowedHostnames = [
+    'web.dev',
+    'web-dev-staging.appspot.com',
+    'localhost',
+  ];
   return (
     'serviceWorker' in navigator &&
     (allowedHostnames.includes(hostname) || hostname.endsWith('.netlify.com'))

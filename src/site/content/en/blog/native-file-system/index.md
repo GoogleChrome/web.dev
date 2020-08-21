@@ -1,18 +1,17 @@
 ---
-title: "The Native File System API: Simplifying access to local files"
+title: "The Native File System API: simplifying access to local files"
 subhead: The new Native File System API allows web apps to read or save changes directly to files and folders on the user's device.
 authors:
   - petelepage
 description: The new Native File System API enables developers to build powerful web apps that interact with files on the user's local device, like IDEs, photo and video editors, text editors, and more. After a user grants a web app access, this API allows web apps to read or save changes directly to files and folders on the user's device.
 date: 2019-08-20
-updated: 2020-04-13
+updated: 2020-07-06
 tags:
-  - post
+  - blog
   - capabilities
-  - fugu
-  - origin-trial
+  - origin-trials
   - file
-  - filesystem
+  - file-system
   - native-file-system
 hero: hero.jpg
 alt: Image of hard disk platters
@@ -323,7 +322,7 @@ async function verifyPermission(fileHandle, withWrite) {
   if (await fileHandle.requestPermission(opts) === 'granted') {
     return true;
   }
-  // The user did nt grant permission, return false.
+  // The user didn't grant permission, return false.
   return false;
 }
 ```
@@ -358,7 +357,7 @@ Chrome 83
 
 * Adds support for [writable streams](#save-to-disk), and removes the previous
   method for writing to disk (`FileSystemWriter`).
-* Allows serlializing and storing file handles in IndexedDB, or sending via
+* Allows serializing and storing file handles in IndexedDB, or sending via
   `postMessage()` to other windows or workers within the same origin. Note that
   permissions are not retained between browser sessions. For example, when a
   browser tab is re-opened, and a file handle is obtained from IndexedDB, the

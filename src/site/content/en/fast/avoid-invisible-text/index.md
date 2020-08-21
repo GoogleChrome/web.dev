@@ -11,6 +11,8 @@ description: |
 date: 2018-11-05
 codelabs:
   - codelab-avoid-invisible-text
+tags:
+  - performance
 ---
 
 ## Why should you care?

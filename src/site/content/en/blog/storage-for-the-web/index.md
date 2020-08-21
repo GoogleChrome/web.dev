@@ -5,9 +5,9 @@ authors:
   - petelepage
 description: There are many different options for storing data in the browser. Which one is best for your needs?
 date: 2020-04-27
-updated: 2020-04-30
+updated: 2020-05-07
 tags:
-  - post
+  - blog
   - progressive-web-apps
   - storage
   - indexeddb
@@ -235,6 +235,11 @@ interact with the site. This eviction policy **does not apply to installed
 PWAs** that have been added to the home screen. See
 [Full Third-Party Cookie Blocking and More][webkit-itp-blog] on the WebKit
 blog for complete details.
+
+{% Aside %}
+  You can request [persistent storage](/persistent-storage/) for your site to
+  protect critical user or application data.
+{% endAside %}
 
 ## Bonus: Why use a wrapper for IndexedDB
 

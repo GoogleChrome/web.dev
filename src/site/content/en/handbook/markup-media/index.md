@@ -2,7 +2,7 @@
 layout: handbook
 title: Images and video
 date: 2019-06-26
-updated: 2020-04-29
+updated: 2020-06-11
 description: |
   Learn how to create the Markdown for images and video for web.dev.
 ---
@@ -249,9 +249,21 @@ To take a screenshot on Mac:
 
 ## Video
 
-### Video hosted on YouTube
+### Video hosted on YouTube {: #youtube }
 
-To embed a YouTube video, use the web.dev `YouTube` [component](/handbook/web-dev-components).
+To embed a YouTube video, use the `YouTube` component.
+
+```text
+{% raw %}{% YouTube 'your-video-id', 'optional-start-time' %}{% endraw %}
+```
+
+{% YouTube 'QDljY2I1Pfw' %}
+
+{% Aside %}
+The `optional-start-time` argument should be a single number, e.g. '473'.
+You can get this number by clicking the **Share** button on YouTube and
+checking the **Start at** box.
+{% endAside %}
 
 ### Video hosted on web.dev
 
@@ -263,8 +275,8 @@ Embed the video in your post or codelab by following this example:
 ```html
   <figure class="w-figure">
     <video controls autoplay loop muted class="w-screenshot">
-      <source src="https://storage.googleapis.com/web-dev-assets/portals_vp9.webm" type="video/webm; codecs=vp8">
-      <source src="https://storage.googleapis.com/web-dev-assets/portals_h264.mp4" type="video/mp4; codecs=h264">
+      <source src="https://storage.googleapis.com/web-dev-assets/portals_vp9.webm" type="video/webm">
+      <source src="https://storage.googleapis.com/web-dev-assets/portals_h264.mp4" type="video/mp4">
     </video>
    <figcaption class="w-figcaption">
       Seamless embeds and navigation with Portals. Created by <a href="https://twitter.com/argyleink">Adam Argyle</a>.
@@ -273,8 +285,8 @@ Embed the video in your post or codelab by following this example:
 ```
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/portals_vp9.webm" type="video/webm; codecs=vp8">
-    <source src="https://storage.googleapis.com/web-dev-assets/portals_h264.mp4" type="video/mp4; codecs=h264">
+    <source src="https://storage.googleapis.com/web-dev-assets/portals_vp9.webm" type="video/webm">
+    <source src="https://storage.googleapis.com/web-dev-assets/portals_h264.mp4" type="video/mp4">
   </video>
  <figcaption class="w-figcaption">
     Seamless embeds and navigation with Portals. Created by <a href="https://twitter.com/argyleink">Adam Argyle</a>.

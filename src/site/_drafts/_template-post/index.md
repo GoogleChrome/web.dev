@@ -12,8 +12,16 @@ date: 2019-10-31
 # Add an updated date to your post if you edit in the future.
 # updated: 2019-11-01
 
+# Add the scheduled flag if you'd like your post to automatically go live
+# during a future date. Posts will deploy at 7am PST / 15:00 UTC.
+# Example: A post with `date: 2050-01-01`, `scheduled: true`, will go live at
+# 7am PST, January 1st, 2050.
+# If you don't use the scheduled flag then setting a future date has no effect.
+# scheduled: true
+
 # !!! IMPORTANT: If your post does not contain a hero image it will not appear
 # on the homepage.
+# Hero images should be 3200 x 920.
 hero: hero.jpg
 # You can adjust the fit of your hero image with this property.
 # Values: contain | cover (default)
@@ -31,7 +39,7 @@ hero: hero.jpg
 alt: A description of the hero image for screen reader users.
 
 # You can provide a custom thumbnail and description for social media cards.
-# Images should be 1200 x 630.
+# Thumbnail images should be 896 x 480.
 # If no social thumbnail is provided then the post will attempt to fallback to
 # the post's thumbnail or hero from above. It will also reuse the alt.
 # social:
@@ -52,7 +60,7 @@ alt: A description of the hero image for screen reader users.
 #     alt: Provide an alt for your thumbnail.
 
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - accessibility
   - ux
 ---
@@ -447,14 +455,11 @@ quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
 ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    allow="geolocation; microphone; camera; midi; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/fav-kitties-starter?path=src/index.js&amp;previewSize=0"
-    alt="fav-kitties-starter on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'fav-kitties-starter',
+  path: 'src/index.js',
+  previewSize: 0
+} %}
 
 {% Aside 'key-term' %}
   This type of callout defines important terminology.
@@ -493,7 +498,7 @@ quam sem.
 
 <div class="w-text--center">
   <a href="https://example.com/some.pdf" class="w-button w-button--with-icon" data-icon="file_download">
-    Download case study 
+    Download case study
   </a>
 </div>
 

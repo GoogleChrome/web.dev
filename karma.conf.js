@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-module.exports = function(config) {
+module.exports = function (config) {
   // Test modes:
   // quick: single run tests in headless browser.
   // dev:   watch tests in headless browser.

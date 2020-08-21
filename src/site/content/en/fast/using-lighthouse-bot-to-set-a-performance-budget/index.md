@@ -7,6 +7,8 @@ description: |
   You've done hard work to get fast, now make sure you stay fast by automating
   performance testing in Travis CI with Lighthouse Bot.
 date: 2019-01-28
+tags:
+  - performance
 ---
 
 You've done hard work to get fast, now make sure you stay fast by automating
@@ -281,7 +283,7 @@ any of those with Lighthouse Bot flags:
 Example:
 
 ```bash
-npm run lh --perf=93 --seo=100 https://staging.example.com
+npm run lh -- --perf=93 --seo=100 https://staging.example.com
 ```
 
 This will fail the PR if the performance score drops below 93 **or** the SEO

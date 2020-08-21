@@ -6,7 +6,7 @@ authors:
   - mfriesenhahn
 date: 2020-03-26
 tags:
-  - post
+  - blog
 ---
 
 Include a self-assessment in your post using this short code:

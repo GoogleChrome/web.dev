@@ -4,23 +4,32 @@
 
 import * as idb from 'idb-keyval';
 import manifest from 'cache-manifest';
-import layoutTemplate from 'layout-template';
 import {initialize as initializeGoogleAnalytics} from 'workbox-google-analytics';
 import * as workboxRouting from 'workbox-routing';
 import * as workboxStrategies from 'workbox-strategies';
-import {CacheableResponsePlugin} from 'workbox-cacheable-response';
 import {ExpirationPlugin} from 'workbox-expiration';
 import {matchPrecache, precacheAndRoute} from 'workbox-precaching';
-import {cacheNames} from 'workbox-core';
+import {cacheNames as workboxCacheNames} from 'workbox-core';
 import {matchSameOriginRegExp} from './utils/sw-match.js';
 
+const cacheNames = {
+  webDevFonts: 'webdev-fonts-cache-v1',
+  webDevHtml: 'webdev-html-cache-v1',
+  webDevAssets: 'webdev-assets-cache-v1',
+  ...workboxCacheNames,
+};
+
 /**
- * Configure default cache for standard web.dev files: the offline page, various images, etc.
+ * Configure default cache for some common web.dev assets: images, CSS, JS, partial template. This
+ * doesn't match general HTML or other files, so we disable directoryIndex and cleanURLs.
  *
  * This must occur first, as we cache images that are also matched by runtime handlers below. See
  * this workbox issue for updates: https://github.com/GoogleChrome/workbox/issues/2402
  */
-precacheAndRoute(manifest);
+precacheAndRoute(manifest, {
+  cleanURLs: false,
+  directoryIndex: '',
+});
 
 // Architecture revision of the Service Worker. If the previously saved revision doesn't match,
 // then this will cause clients to be aggressively claimed and reloaded on install/activate.
@@ -36,6 +45,21 @@ self.addEventListener('install', (event) => {
     replacingPreviousServiceWorker = true;
   }
   event.waitUntil(self.skipWaiting());
+});
+
+self.addEventListener('activate', () => {
+  // Define a list of allowed caches.
+  // If a cache does not appear in the list then it will be deleted.
+  const p = Promise.resolve().then(async () => {
+    const allowedCaches = new Set(Object.values(cacheNames));
+    const cacheNames = await caches.keys();
+    for (const cacheName of cacheNames) {
+      if (!allowedCaches.has(cacheName)) {
+        await caches.delete(cacheName);
+      }
+    }
+  });
+  event.waitUntil(p);
 });
 
 self.addEventListener('activate', (event) => {
@@ -71,7 +95,7 @@ self.addEventListener('activate', (event) => {
 
 initializeGoogleAnalytics();
 
-const externalExpirationPlugin = new ExpirationPlugin({
+const fontExpirationPlugin = new ExpirationPlugin({
   maxAgeSeconds: 60 * 60 * 24 * 365, // 1 yr
 });
 
@@ -84,26 +108,12 @@ const assetExpirationPlugin = new ExpirationPlugin({
   maxEntries: 100, // allow a large number of images, but expire quickly
 });
 
-// Cache the Google Fonts stylesheets with a stale-while-revalidate strategy.
-workboxRouting.registerRoute(
-  /^https:\/\/fonts\.googleapis\.com/,
-  new workboxStrategies.StaleWhileRevalidate({
-    cacheName: 'google-fonts-stylesheets',
-    plugins: [externalExpirationPlugin],
-  }),
-);
-
 // Cache the underlying font files with a cache-first strategy for 1 year.
 workboxRouting.registerRoute(
-  /^https:\/\/fonts\.gstatic\.com/,
+  ({request}) => request.destination === 'font',
   new workboxStrategies.CacheFirst({
-    cacheName: 'google-fonts-webfonts',
-    plugins: [
-      new CacheableResponsePlugin({
-        statuses: [0, 200],
-      }),
-      externalExpirationPlugin,
-    ],
+    cacheName: cacheNames.webDevFonts,
+    plugins: [fontExpirationPlugin],
   }),
 );
 
@@ -118,7 +128,7 @@ workboxRouting.registerRoute(
  */
 const partialPathRe = new RegExp('^/([\\w-]+/)*\\w+\\.json$');
 const partialStrategy = new workboxStrategies.NetworkFirst({
-  cacheName: 'webdev-html-cache-v1', // nb. We used to cache HTML here, so we name it the same
+  cacheName: cacheNames.webDevHtml, // nb. We used to cache HTML here, so we name it the same
   plugins: [contentExpirationPlugin],
 });
 
@@ -131,7 +141,7 @@ workboxRouting.registerRoute(partialMatch, partialStrategy);
 workboxRouting.registerRoute(
   new RegExp('/images/.*'),
   new workboxStrategies.StaleWhileRevalidate({
-    cacheName: 'webdev-assets-cache-v1',
+    cacheName: cacheNames.webDevAssets,
     plugins: [assetExpirationPlugin],
   }),
 );
@@ -164,7 +174,15 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
   // it's otherwise missing.
   if (!pathname.endsWith('.html')) {
     if (!pathname.endsWith('/')) {
-      pathname += '/';
+      // Special-case a URL that doesn't end with "/". We must redirect before
+      // returning content as otherwise relative URLs don't work.
+      // This is not a problem as:
+      //   * this is occuring almost immediately (no network traffic)
+      //   * our webserver treats "/foo" and "/foo/" the same for other folders
+      //     and for the _redirects.yaml handler (i.e., a 404 on /foo and /foo/
+      //     will be treated the same way)
+      //   * a _real_ network request to "/foo" gets 301'ed to "/foo/"
+      return Response.redirect(pathname + '/' + url.search, 301);
     }
     pathname += 'index.html';
   }
@@ -183,7 +201,7 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
     response = await partialStrategy.handle({request});
   } catch (e) {
     // Offline pages are served with the default 200 status.
-    response = await offlinePartial();
+    response = await offlinePartialResponse();
   }
 
   // If we can't get a real response (or the offline response), go to the
@@ -196,7 +214,7 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
   }
   const partial = await response.json();
 
-  const meta = partial.offline ? `<meta name="offline" value="true" />` : '';
+  const meta = partial.offline ? '<meta name="offline" value="true" />' : '';
   const title = `<title>${partial.title || 'web.dev'}</title>`;
   const rssHref = partial.rss || '/feed.xml';
   const rssTitle =
@@ -205,6 +223,7 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
       : 'web.dev feed';
   const rss = `<link rel="alternate" href="${rssHref}" type="application/atom+xml" data-title="${rssTitle}" />`;
 
+  const layoutTemplate = await templateForPartial();
   const output = layoutTemplate
     .replace('<!-- %_HEAD_REPLACE_% -->', `${meta}\n${title}\n${rss}`)
     .replace('%_CONTENT_REPLACE_%', partial.raw);
@@ -213,20 +232,35 @@ workboxRouting.registerRoute(normalMatch, async ({url}) => {
   return new Response(output, {headers, status: response.status});
 });
 
-workboxRouting.setCatchHandler(async ({url, request}) => {
-  // If we failed to fetch a partial, use the offline partial.
-  if (partialMatch({url})) {
-    return offlinePartial();
+/**
+ * @return {!Promise<string>} partial template to use in hydration
+ */
+async function templateForPartial() {
+  const cachedResponse = await matchPrecache('/sw-partial-layout.partial');
+  if (!cachedResponse) {
+    // This occurs in development when the partial template isn't precached.
+    try {
+      return await fetch('/sw-partial-layout.partial');
+    } catch (e) {
+      console.warn('could not go to network for partial in dev', e);
+    }
+    return `<!DOCTYPE html>
+<head>
+<!-- %_HEAD_REPLACE_% -->
+</head>
+<body>
+<h1>web.dev dev partial</h1>
+%_CONTENT_REPLACE_%
+</body>
+</html>`;
   }
+  return cachedResponse.text();
+}
 
-  // Go to the network for 'normal' pages. This will only fire if there's an
-  // internal error with the normalMatch route handler, above.
-  if (normalMatch({url})) {
-    return fetch(request);
-  }
-});
-
-async function offlinePartial() {
+/**
+ * @return {!Promise<Response>} response for the offline page's partial
+ */
+async function offlinePartialResponse() {
   const cachedResponse = await matchPrecache('/offline/index.json');
   if (!cachedResponse) {
     // This occurs in development when the offline partial isn't precached.
@@ -236,3 +270,16 @@ async function offlinePartial() {
   }
   return cachedResponse;
 }
+
+workboxRouting.setCatchHandler(async ({url, request}) => {
+  // If we failed to fetch a partial, use the offline partial.
+  if (partialMatch({url})) {
+    return offlinePartialResponse();
+  }
+
+  // Go to the network for 'normal' pages. This will only fire if there's an
+  // internal error with the normalMatch route handler, above.
+  if (normalMatch({url})) {
+    return fetch(request);
+  }
+});

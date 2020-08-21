@@ -10,7 +10,7 @@ alt: Speedometer on a retro car
 description: |
   For Google I/O 2019, we introduced three new Web Performance initiatives that we hope will lead to better user experiences for everyone.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
+  - blog # blog is a required tag for the article to show up in the blog.
   - performance
 ---
 
@@ -19,13 +19,7 @@ talk](https://www.youtube.com/watch?v=YJGCZCaIZkQ&feature=youtu.be) at Google
 I/O 2019, we announced three things that we hope will improve web performance
 over the coming year.
 
-<div style="width:100%; padding-top: 56.25%; position: relative;">
-<iframe style="width:100%; height: 100%;position: absolute; top: 50%; left:
-50%; transform: translate(-50%,-50%);"
-src="https://www.youtube.com/embed/YJGCZCaIZkQ" frameborder="0"
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
-</div>
+{% YouTube 'YJGCZCaIZkQ' %}
 
 ## Lighthouse now supports Performance Budgeting
 

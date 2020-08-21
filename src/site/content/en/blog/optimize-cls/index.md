@@ -4,15 +4,18 @@ subhead: Learn how to avoid sudden layout shifts to improve user-experience
 authors:
   - addyosmani
 date: 2020-05-05
+updated: 2020-08-20
 hero: hero.png
 description: |
   Cumulative Layout Shift (CLS) is a metric that quantifies how often users experience sudden shifts in page content. In this guide, we'll cover optimizing common causes of CLS such as images and iframes without dimensions or dynamic content.
 alt: Layout shifts can suddenly push the content you are reading or are about to click further down the page, leading to a poor user-experience. Reserving space for dynamic content causing layout shifts leads to a more delightful user experience.
 tags:
-  - post # post is a required tag for the article to show up in the blog.
-  - fast
+  - blog # blog is a required tag for the article to show up in the blog.
+  - performance
   - web-vitals
 ---
+
+{% YouTube 'AQqFZ5t8uNc', '88' %}
 
 "I was about to click that! Why did it move? 😭"
 
@@ -44,8 +47,8 @@ The most common causes of a poor CLS are:
 
   <figure class="w-figure">
     <video controls loop muted class="w-screenshot" poster="video-image-dimensions.jpg">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/image-dimensions.webm" type="video/webm;">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/image-dimensions.mp4" type="video/mp4; codecs=h264">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/image-dimensions.webm" type="video/webm">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/image-dimensions.mp4" type="video/mp4">
     </video>
    <figcaption class="w-figcaption">
       Images without width and height specified.
@@ -54,8 +57,8 @@ The most common causes of a poor CLS are:
 
   <figure class="w-figure">
     <video controls loop muted class="w-screenshot" poster="video-image-dimensions-fixed.jpg">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/image-dimensions-fixed.webm" type="video/webm;">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/image-dimensions-fixed.mp4" type="video/mp4; codecs=h264">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/image-dimensions-fixed.webm" type="video/webm">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/image-dimensions-fixed.mp4" type="video/mp4">
     </video>
    <figcaption class="w-figcaption">
       Images with width and height specified.
@@ -80,7 +83,7 @@ In the early days of the web, developers would add `width` and `height` attribut
 
 You may notice `width` and `height` above do not include units. These "pixel" dimensions would ensure a 640x360 area would be reserved. The image would stretch to fit this space, regardless of whether the true dimensions matched or not.
 
-When [Responsive Web Design](https://www.smashingmagazine.com/2011/01/guidelines-for-responsive-web-design/) was introduced, developers began to omit `width` and `height` and started using CSS to resize images instead: 
+When [Responsive Web Design](https://www.smashingmagazine.com/2011/01/guidelines-for-responsive-web-design/) was introduced, developers began to omit `width` and `height` and started using CSS to resize images instead:
 
 
 ```css
@@ -140,14 +143,14 @@ img {
 
 **What about responsive images?**
 
-When working with [responsive images](/serve-responsive-), `srcset` defines the images you allow the browser to select between and what size each image is. To ensure `<img>` width and height attributes can be set, each image should use the same aspect ratio.
+When working with [responsive images](/serve-responsive-images), `srcset` defines the images you allow the browser to select between and what size each image is. To ensure `<img>` width and height attributes can be set, each image should use the same aspect ratio.
 
 ```html
 <img width="1000" height="1000"
        src="puppy-1000.jpg"
     srcset="puppy-1000.jpg 1000w,
             puppy-2000.jpg 2000w,
-            puppy-3000.jpg 3000w" 
+            puppy-3000.jpg 3000w"
            alt="Puppy with balloons"/>
 ```
 
@@ -185,7 +188,7 @@ The good news is that it's possible for sites to follow best practices to reduce
 * Statically reserve space for the ad slot.
   * In other words, style the element before the ad tag library loads.
   * If placing ads in the content flow, ensure shifts are eliminated by reserving the slot size. These ads _shouldn't_ cause layout shifts if loaded off-screen.
-* Take care when placing non-sticky ads near the top of the viewport. 
+* Take care when placing non-sticky ads near the top of the viewport.
   * In the below example, it's recommended to move the ad to below the "world vision" logo and make sure to reserve enough space for the slot.
 * Avoid collapsing the reserved space if there is no ad returned when the ad slot is visible by showing a placeholder.
 * Eliminate shifts by reserving the largest possible size for the ad slot.
@@ -196,8 +199,8 @@ Some sites may find collapsing the slot initially can reduce layout shifts if th
 
   <figure class="w-figure">
     <video controls loop muted class="w-screenshot" poster="video-final-ads-no-dimensions.jpg">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/final_ads_no_dimensions.webm" type="video/webm;">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/final_ads_no_dimensions.mp4" type="video/mp4; codecs=h264">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/final_ads_no_dimensions.webm" type="video/webm">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/final_ads_no_dimensions.mp4" type="video/mp4">
     </video>
    <figcaption class="w-figcaption">
       Ads without sufficient space reserved.
@@ -206,8 +209,8 @@ Some sites may find collapsing the slot initially can reduce layout shifts if th
 
   <figure class="w-figure">
     <video controls loop muted class="w-screenshot" poster="video-top-ad-after.jpg">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/top-ad-after.mp4" type="video/mp4; codecs=h264">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/top-ad-after.webm" type="video/webm;">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/top-ad-after.webm" type="video/webm">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/top-ad-after.mp4" type="video/mp4">
     </video>
    <figcaption class="w-figcaption">
       Ads with sufficient space reserved.
@@ -245,8 +248,8 @@ These embeds often aren't aware in advance just how large an embed will be (for 
 
   <figure class="w-figure">
     <video controls loop muted class="w-screenshot" poster="video-embed-iframe.jpg">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/embed-iframe.webm" type="video/webm;">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/embed-iframe.mp4" type="video/mp4; codecs=h264">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/embed-iframe.webm" type="video/webm">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/embed-iframe.mp4" type="video/mp4">
     </video>
    <figcaption class="w-figcaption">
       Embed without space reserved.
@@ -255,8 +258,8 @@ These embeds often aren't aware in advance just how large an embed will be (for 
 
   <figure class="w-figure">
     <video controls loop muted class="w-screenshot" poster="video-embeds-with-dimensions.jpg">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/embeds-with-dimensions.webm" type="video/webm;">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/embeds-with-dimensions.mp4" type="video/mp4; codecs=h264">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/embeds-with-dimensions.webm" type="video/webm">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/embeds-with-dimensions.mp4" type="video/mp4">
     </video>
    <figcaption class="w-figcaption">
       Embed with space reserved.
@@ -273,7 +276,7 @@ These embeds often aren't aware in advance just how large an embed will be (for 
 To work around this, you can minimize CLS by precomputing sufficient space for embeds with a placeholder or fallback. One workflow you can use for embeds:
 
 * Obtain the height of your final embed by inspecting it with your browser developer tools
-* Once the embed loads, the contained iframe will resize to fit so that its contents will fit. 
+* Once the embed loads, the contained iframe will resize to fit so that its contents will fit.
 
 Take note of the dimensions and style a placeholder for the embed accordingly. You may need to account for subtle differences in ad/placeholder sizes between different form factors using media queries.
 
@@ -291,8 +294,8 @@ You've probably experienced layout shifts due to UI that pops-in at the top or b
 
   <figure class="w-figure">
     <video controls loop muted class="w-screenshot" poster="video-related-articles-dynamic-content.jpg">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/related-articles-dynamic-content.webm" type="video/webm;">
-      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/related-articles-dynamic-content.mp4" type="video/mp4; codecs=h264">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/related-articles-dynamic-content.webm" type="video/webm">
+      <source src="https://storage.googleapis.com/web-dev-assets/optimize-cls/related-articles-dynamic-content.mp4" type="video/mp4">
     </video>
    <figcaption class="w-figcaption">
       Dynamic content without space reserved.

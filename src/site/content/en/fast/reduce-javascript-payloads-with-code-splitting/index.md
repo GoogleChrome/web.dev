@@ -11,6 +11,8 @@ description: |
 date: 2018-11-05
 codelabs:
   - codelab-code-splitting
+tags:
+  - performance
 ---
 
 Nobody likes waiting.

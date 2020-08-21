@@ -15,7 +15,7 @@
 // =============================================================================
 
 .w-aside {
-  font-family: $ASIDE_FONT;
+  font-family: $PRIMARY_FONT;
   font-size: #{map-get($ARTICLE, FONT_SIZE)}px;
   line-height: #{map-get($ARTICLE, LINE_HEIGHT)}px;
   margin: 48px 0 32px;
