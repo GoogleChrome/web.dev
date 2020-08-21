@@ -14,17 +14,15 @@
  * limitations under the License.
  */
 
-import * as firebase from 'firebase';
-
 declare global {
-  export interface Window extends Window {
-    firebase: firebase.app.App;
-    inert: boolean;
+  export interface GlitchParam {
+    allow?: string | string[];
+    height?: number;
+    id: string;
+    path?: string;
+    previewSize?: number;
   }
-
-  var firebase: firebase.app.App;
 }
-
 
 // empty export to keep file a module
 export {};

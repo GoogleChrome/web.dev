@@ -24,7 +24,7 @@ import './_styles.scss';
  * @extends {BaseModalElement}
  * @final
  */
-class Assessment extends BaseModalElement {
+export class Assessment extends BaseModalElement {
   static get properties() {
     return {
       modal: {attribute: 'aria-modal', reflect: true},

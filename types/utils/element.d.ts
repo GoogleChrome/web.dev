@@ -14,17 +14,11 @@
  * limitations under the License.
  */
 
-import * as firebase from 'firebase';
-
 declare global {
-  export interface Window extends Window {
-    firebase: firebase.app.App;
+  export interface Element extends Element {
     inert: boolean;
   }
-
-  var firebase: firebase.app.App;
 }
-
 
 // empty export to keep file a module
 export {};

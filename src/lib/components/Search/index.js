@@ -228,6 +228,7 @@ class Search extends BaseElement {
   /* eslint-enable indent */
 
   firstUpdated() {
+    /** @type HTMLInputElement */
     this.inputEl = this.renderRoot.querySelector('.web-search__input');
   }
 

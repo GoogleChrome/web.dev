@@ -84,19 +84,25 @@ function sendToGoogleAnalytics({name, delta, id}) {
  * for (requiring at least `data-category`, but also allowing
  * `data-action`, `data-label` and `data-value`.
  */
-document.addEventListener('click', (e) => {
-  const clickableEl = e.target.closest('a[href], .gc-analytics-event');
-  if (!clickableEl) {
-    return;
-  }
+document.addEventListener(
+  'click',
+  /**
+   * @param {WMouseEvent} e
+   */
+  (e) => {
+    const clickableEl = e.target.closest('a[href], .gc-analytics-event');
+    if (!clickableEl) {
+      return;
+    }
 
-  const data = getAnalyticsDataFromElement(clickableEl);
-  if (!data.category) {
-    return; // category is required
-  }
+    const data = getAnalyticsDataFromElement(clickableEl);
+    if (!data.category) {
+      return; // category is required
+    }
 
-  trackEvent(data);
-});
+    trackEvent(data);
+  },
+);
 
 // Update Analytics dimension if signed-in state changes. This doesn't cause a
 // new pageview implicitly but annotates all further events.
