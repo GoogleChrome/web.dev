@@ -38,15 +38,15 @@ class Subscribe extends BaseElement {
     /** @type HTMLElement */
     this.subscribeError = this.querySelector('.w-subscribe__error');
     this.subscribeMessage = this.querySelector('.w-subscribe__message');
-    this.submissionUrl = this.form?.action;
+    this.submissionUrl = this.form.action;
     if (!this.submissionUrl) {
       console.warn(`No submission URL found for subscribe element.`);
     }
-    this.form?.addEventListener('submit', this.onSubmit);
+    this.form.addEventListener('submit', this.onSubmit);
   }
 
   detachedCallback() {
-    this.form?.removeEventListener('submit', this.onSubmit);
+    this.form.removeEventListener('submit', this.onSubmit);
   }
 
   /**

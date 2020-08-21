@@ -96,8 +96,8 @@ class UrlChooser extends BaseElement {
       }
     }
     if (changedProperties.has('switching') && this.switching) {
-      input?.setSelectionRange(0, input?.value.length);
-      input?.focus();
+      input.setSelectionRange(0, input.value.length);
+      input.focus();
     }
     if (changedProperties.has('url')) {
       // Note: This behavior can't be performed in a setter as the <input /> might not have been
@@ -125,7 +125,7 @@ class UrlChooser extends BaseElement {
     // Even if the user isn't switching URLs, fix and verify the saved URL which is inserted into
     // the <input /> inside this element.
     this.fixUpUrl();
-    if (!this._urlInput?.validity.valid) {
+    if (!this._urlInput.validity.valid) {
       const detail =
         'Invalid URL. Please enter a full URL starting with https://.';
       const event = new CustomEvent('web-error', {bubbles: true, detail});
@@ -144,14 +144,14 @@ class UrlChooser extends BaseElement {
     this.switching = true;
 
     // Focus won't occur if switching is already true, so trigger it here too.
-    this._urlInput?.focus();
+    this._urlInput.focus();
   }
 
   onUrlKeyup(e) {
     if (e.key === 'Escape') {
       this.onClearInput();
     } else if (e.key === 'Enter') {
-      this._runLighthouseButton?.click();
+      this._runLighthouseButton.click();
     }
   }
 
@@ -159,11 +159,11 @@ class UrlChooser extends BaseElement {
    * Performs basic sanity fixes on the URL in the <input />.
    */
   fixUpUrl() {
-    let url = this._urlInput?.value.trim();
-    if (!url?.startsWith('https://') && !url?.startsWith('http://')) {
+    let url = this._urlInput.value.trim();
+    if (!url.startsWith('https://') && !url.startsWith('http://')) {
       url = `http://${url}`;
     }
-    if (url !== this._urlInput?.value && this._urlInput) {
+    if (url !== this._urlInput.value && this._urlInput) {
       this._urlInput.value = url;
     }
   }
