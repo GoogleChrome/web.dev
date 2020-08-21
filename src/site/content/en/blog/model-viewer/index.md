@@ -1,10 +1,10 @@
 ---
-title: 'The <model-viewer> web component'-
+title: 'The <model-viewer> web component'
 subhead: Adding 3D models to a website can be tricky; &lt;model-viewer&gt; is as easy as writing HTML.
 authors:
   - joemedley
 date: 2019-02-06
-updated: 2020-08-03
+updated: 2020-08-21
 hero: hero.jpg
 description: |
   Adding 3D models to a website is tricky for a variety of reasons including
@@ -126,7 +126,7 @@ poster="./spacesuit.jpg">
 To show your users that it's a 3D model, and not just an image, you can provide
 some preload animation by using script to switch between multiple posters.
 
-```html/3-7
+```html
 <model-viewer id="toggle-poster" src="assets/Astronaut.glb" controls
 auto-rotate poster="assets/poster2.png"></model-viewer>
 <script>
