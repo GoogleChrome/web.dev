@@ -8,7 +8,6 @@
 const rollupPluginNodeResolve = require('rollup-plugin-node-resolve');
 const rollupPluginCJS = require('rollup-plugin-commonjs');
 const rollupPluginVirtual = require('rollup-plugin-virtual');
-const babel = require('rollup-plugin-babel');
 const buildVirtualJSON = require('./virtual-json');
 
 const isProd = process.env.ELEVENTY_ENV === 'prod';
@@ -46,10 +45,6 @@ function buildDefaultPlugins() {
       include: 'node_modules/**',
     }),
     rollupPluginVirtual(buildVirtualJSON(virtualImports)),
-    babel({
-      exclude: ['node_modules/**'],
-      plugins: ['@babel/plugin-proposal-optional-chaining'],
-    }),
   ];
 }
 
