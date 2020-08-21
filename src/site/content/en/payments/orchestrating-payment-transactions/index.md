@@ -29,14 +29,13 @@ when a window is displayed and the user is interacting with it).
 "Runtime payment parameter changes" refer to a set of events that allows the
 merchant and payment handler to exchange messages while the user is interacting
 with the payment handler. Learn more in [Handling optional payment information
-with a service
-worker](/handling-optional-payment-information-with-a-service-worker).
+with a service worker](/handling-optional-payment-information).
 
-## Receive a payment request event from the merchant
+## Receive a payment request event from the merchant {: #receive-payment-request-event }
 
 When a customer chooses to pay with your web-based payment app and [the merchant
 invokes
-`PaymentRequest.show()`](/life-of-a-payment-transaction/#step-4:-the-browser-launches-the-payment-app),
+`PaymentRequest.show()`](/life-of-a-payment-transaction/#),
 your service worker will receive a `paymentrequest` event. Add an event listener
 to the service worker to capture the event and prepare for the next action.
 
@@ -142,7 +141,7 @@ handler window by calling `PaymentRequestEvent.openWindow()`. The payment
 handler window will present the customers your payment app's interface where
 they can authenticate, choose shipping address and options, and authorize the
 payment. We'll cover how to write the frontend code in *Handling payments on the
-payment frontend* (Coming soon).
+payment frontend* (coming soon).
 
 <figure class="w-figure" style="width:300px; margin:auto;">
   <video controls autoplay loop muted class="w-screenshot">
@@ -231,7 +230,7 @@ const postMessage = (type, contents = {}) => {
 }
 ```
 
-### Receive the ready signal from the frontend
+### Receive the ready signal from the frontend {: #receive-ready-signal }
 
 Once the payment handler window is opened, the service worker should wait for a
 ready-state signal from the payment app frontend. The service worker can pass
@@ -264,7 +263,7 @@ self.addEventListener('message', async e => {
 …
 ```
 
-### Pass the transaction details to the frontend
+### Pass the transaction details to the frontend {: #pass-details }
 
 Now send the payment details back. In this case you're only sending the total of
 the payment request, but you can pass more details if you like.
@@ -302,7 +301,7 @@ navigator.serviceWorker.addEventListener('message', async e => {
 …
 ```
 
-## Return the customer's payment credential
+## Return the customer's payment credentials {: #return-credentials }
 
 When the customer authorizes the payment, the frontend can send a post message
 to the service worker to proceed. You can resolve the promise passed to
@@ -430,7 +429,7 @@ self.addEventListener('message', async e => {
 …
 ```
 
-## Cancel the payment transaction
+## Cancel the payment transaction {: #cancel-transaction }
 
 To allow the customer to cancel the transaction, the frontend can send a post
 message to the service worker to do so. The service worker can then resolve the
@@ -472,6 +471,6 @@ self.addEventListener('message', async e => {
 In this article, we learned how to orchestrate a payment transaction from a
 service worker. The next step is to learn how to add some more advanced features
 to the service worker.
-* [Handling optional payment information with a service worker](/handling-optional-payment-information-with-a-service-worker)
+* [Handling optional payment information with a service worker](/handling-optional-payment-information)
 
 

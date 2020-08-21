@@ -193,7 +193,7 @@ If the payment handler is designed to return a transaction ID upon setting the
 total price, the ID can be passed as part of the promise result.
 {% endAside %}
 
-## Step 4: The browser launches the payment app
+## Step 4: The browser launches the payment app {: #launch }
 
 The browser can launch a native or a web-based payment app. (You can learn more
 about [how Chrome determines which payment app to

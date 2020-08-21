@@ -14,11 +14,10 @@ tags:
 ---
 
 Once [a web-based payment app receives a payment request and initiates a payment
-transaction](/orchestrating-payment-transactions-with-a-service-worker), the
-service worker will act as the hub for communication between the merchant and
-the payment app. This post explains how a payment app can pass information about
-the payment method, shipping address, or contact information to the merchant
-using a service worker.
+transaction](/orchestrating-payment-transactions), the service worker will act
+as the hub for communication between the merchant and the payment app. This post
+explains how a payment app can pass information about the payment method,
+shipping address, or contact information to the merchant using a service worker.
 
 <figure class="w-figure">
   <img class="w-screenshot" src="./diagram.png"
@@ -28,7 +27,7 @@ using a service worker.
   </figcaption>
 </figure>
 
-## Inform the merchant of a payment method change
+## Inform the merchant of a payment method change {: #payment-method-changes }
 Payment apps can support multiple payment instruments with different payment methods.
 
 <div class="w-table-wrapper">
@@ -82,9 +81,10 @@ merchant wants to run a discount campaign for a specific payment method brand,
 for example.
 
 With the Payment Handler API, the payment app can send a "payment method change"
-event to the merchant via service worker to notify the new payment method
-identifier. Invoke `PaymentRequestEvent.changePaymentMethod()` with the new
-payment method information.
+event to the merchant via a service worker to notify the new payment method
+identifier. The service worker should invoke
+`PaymentRequestEvent.changePaymentMethod()` with the new payment method
+information.
 
 
 
@@ -110,15 +110,16 @@ self.addEventListener('message', async e => {
   let details;
   try {
     switch (e.data.type) {
-…
+      …
       case 'PAYMENT_METHOD_CHANGED':
         const newMethod = e.data.paymentMethod;
         const newDetails = e.data.methodDetails;
         // Redact or check that no sensitive information is passed in
         // `newDetails`.
         // Notify the merchant of the payment method change
-        details = await payment_request_event.changePaymentMethod(newMethod, newDetails);
-…
+        details =
+          await payment_request_event.changePaymentMethod(newMethod, newDetails);
+      …
 ```
 
 When the merchant receives a `paymentmethodchange` event from the Payment
@@ -131,13 +132,14 @@ object.
 {% endLabel %}
 
 ```js
-request.addEventListener(`paymentmethodchange`, e => {
-  if (e.methodName == 'another-pay') {
+request.addEventListener('paymentmethodchange', e => {
+  if (e.methodName === 'another-pay') {
     // Apply $10 discount for example.
     const discount = {
       label: 'special discount',
       amount: {
         currency: 'USD',
+        // The value being string complies the spec
         value: '-10.00'
       }
     };
@@ -146,6 +148,7 @@ request.addEventListener(`paymentmethodchange`, e => {
     for (let item of details.displayItems) {
      total += parseFloat(item.amount.value);
     }
+    // Convert the number back to string
     details.total.amount.value = total.toString();
   }
   // Pass a promise to `updateWith()` and send updated payment details
@@ -179,7 +182,7 @@ consistently used across `.changePaymentMethod()`, `.changeShippingAddress()`
 and `.changeShippingOption()`, we'll cover this more in the [Reflect the updated
 payment details](#reflect-the-updated-payment-details) section of this article.
 
-## Inform the merchant of a shipping address change
+## Inform the merchant of a shipping address change {: #shipping-address-changes }
 
 Payment apps can provide the customer's shipping address to the merchant as part
 of the result of a payment transaction.
@@ -210,7 +213,7 @@ multiple benefits:
 
 With the Payment Handler API, the payment app can send a "shipping address
 change" event to the merchant from the service worker to notify the new shipping
-address. Invoke
+address. The service worker should invoke
 [`PaymentRequestEvent.changeShippingAddress()`](https://w3c.github.io/payment-handler/#dom-paymentrequestevent-changeshippingaddress)
 with the [new address
 object](https://www.w3.org/TR/payment-request/#dom-addressinit).
@@ -228,21 +231,21 @@ self.addEventListener('message', async e => {
   let details;
   try {
     switch (e.data.type) {
-…
+      …
       case 'SHIPPING_ADDRESS_CHANGED':
         const newAddress = e.data.shippingAddress;
-        details = await payment_request_event.changeShippingAddress(newAddress);
-…
+        details =
+          await payment_request_event.changeShippingAddress(newAddress);
+      …
 ```
 
 {% Aside 'key-term' %}
-**Redacted address**: Informing the full shipping address to
-the merchant in this case is not necessary and risks customers' privacy. This
-API only informs the merchant of the redacted address that is enough to
-determine the shipping cost. Specifically, the browser will clear the
-`organization`, `phone`, `recipient`, `addressLine` fields from the payment app
-provided address before raising the `shippingaddresschange` event in the
-merchant's DOM.
+**Redacted address**. Informing the full shipping address to the merchant in
+this case is not necessary and risks customers' privacy. The merchant only
+receives the parts of the address that they need to determine the shipping cost.
+Specifically, the browser will clear the `organization`, `phone`, `recipient`,
+`addressLine` fields from the payment app provided address before raising the
+`shippingaddresschange` event in the merchant's DOM.
 {% endAside %}
 
 The merchant will receive a `shippingaddresschange` event from the Payment
@@ -253,7 +256,7 @@ Request API so they can respond with the updated [`PaymentDetailsUpdate`](https:
 {% endLabel %}
 
 ```js
-request.addEventListener(`shippingaddresschange`, e => {
+request.addEventListener('shippingaddresschange', e => {
   // Read the updated shipping address and update the request.
   const addr = request.shippingAddress;
   const details = getPaymentDetailsFromShippingAddress(addr);
@@ -340,12 +343,13 @@ const request = new PaymentRequest([{
 
 The payment app can let the merchant know which shipping option the customer
 picked. This is important for both the merchant and the customer because
-changing the shipping option means the total price will be changed as well. The
-merchant needs to be informed of the latest price for the payment verification
-later and the customer also needs to be aware of the change.
+changing the shipping option changes the total price as well. The merchant needs
+to be informed of the latest price for the payment verification later and the
+customer also needs to be aware of the change.
 
 With the Payment Handler API, the payment app can send a "shipping option
-change" event to the merchant from the service worker. Invoke
+change" event to the merchant from the service worker. The service worker should
+invoke
 [`PaymentRequestEvent.changeShippingOption()`](https://w3c.github.io/payment-handler/#dom-paymentrequestevent-changeshippingoption)
 with the new shipping option ID.
 
@@ -362,16 +366,17 @@ self.addEventListener('message', async e => {
   let details;
   try {
     switch (e.data.type) {
-…
+      …
       case 'SHIPPING_OPTION_CHANGED':
         const newOption = e.data.shippingOptionId;
-        details = await payment_request_event.changeShippingOption(newOption);
-…
+        details =
+          await payment_request_event.changeShippingOption(newOption);
+      …
 ```
 
 The merchant will receive a `shippingoptionchange` event from the Payment
-Request API. Use the information to update the total price and then respond with
-the updated
+Request API. The merchant should use the information to update the total price
+and then respond with the updated
 [`PaymentDetailsUpdate`](https://w3c.github.io/payment-request/#paymentdetailsupdate-dictionary).
 
 {% Label %}
@@ -436,14 +441,15 @@ and shipping options to the UI.
  JavaScript library to control the expectation.
 {% endAside %}
 
-Beware that the merchant may return errors. Errors can be caused for a few reasons:
+Merchants may return errors for a few reasons:
+
 * The payment method is not acceptable.
 * The shipping address is outside of their supported regions.
 * The shipping address contains invalid information.
 * The shipping option is not selectable for the provided shipping address or
-  some other reason
+  some other reason.
 
-Use `.error`, `.shippingAddressErrors`, or `.paymentMethodErrors` to reflect the error status.
+Use the following properties to reflect the error status:
 
 * **`error`**: Human readable error string. This is the best string to display
   to customers.
@@ -455,11 +461,13 @@ Use `.error`, `.shippingAddressErrors`, or `.paymentMethodErrors` to reflect the
 * **`paymentMethodErrors`**: Payment-method-specific error object. You can ask
   merchants to provide a structured error like
   [`BasicCardErrors`](https://www.w3.org/TR/payment-method-basic-card/#dom-basiccarderrors)
-  for basic-card, but we recommend keeping it as simple as a simple string.
+  for basic-card, but the Web Payments spec authors recommend keeping it a
+  simple string.
 
 ## Next steps
 
 In this article, we learned how to handle optional information on the service
 worker. The final step for building a web-based payment app is to learn how to
 build the frontend.
+
 * Handling payments on the payment frontend (coming soon)
