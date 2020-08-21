@@ -8,19 +8,17 @@ import cookies from 'js-cookie';
 
 export const clearSignedInState = store.action(() => {
   const {isSignedIn} = store.getState();
-  if (!isSignedIn) {
-    return undefined;
+  if (isSignedIn) {
+    return {
+      userUrlSeen: null,
+      userUrl: null,
+      checkingSignedInState: false,
+      isSignedIn: false,
+      user: null,
+      lighthouseResult: null,
+      lighthouseError: null,
+    };
   }
-
-  return {
-    userUrlSeen: null,
-    userUrl: null,
-    checkingSignedInState: false,
-    isSignedIn: false,
-    user: null,
-    lighthouseResult: null,
-    lighthouseError: null,
-  };
 });
 
 export const requestRunLighthouse = store.action((state, url) => {
@@ -164,7 +162,7 @@ export const closeModal = store.action(() => {
 export const checkIfUserAcceptsCookies = store.action(
   ({userAcceptsCookies}) => {
     if (userAcceptsCookies) {
-      return undefined;
+      return;
     }
 
     if (localStorage['web-accepts-cookies']) {

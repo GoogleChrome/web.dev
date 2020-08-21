@@ -28,7 +28,6 @@ const formatDate = function (date) {
  * Renders a map and a list of local events. It takes input from a <code>
  * element embedded as a child of this element.
  *
- * @extends {BaseStateElement}
  * @final
  */
 class EventMap extends BaseStateElement {
@@ -68,6 +67,7 @@ class EventMap extends BaseStateElement {
 
   render() {
     if (!this.events) {
+      // Returning null/falsey/empty string tells Lit to leave the current contents alone.
       return html``;
     }
 

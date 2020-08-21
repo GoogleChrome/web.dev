@@ -7,7 +7,7 @@ const md = require('markdown-it')();
  */
 module.exports = (content) => {
   if (!content) {
-    return undefined;
+    return;
   }
   return md.renderInline(content);
 };

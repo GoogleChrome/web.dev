@@ -46,7 +46,7 @@ mdLib.renderer.rules = {...mdLib.renderer.rules, ...rules};
  */
 module.exports = (content) => {
   if (!content) {
-    return undefined;
+    return;
   }
   return mdLib.render(content);
 };
