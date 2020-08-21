@@ -50,14 +50,16 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', () => {
   // Define a list of allowed caches.
   // If a cache does not appear in the list then it will be deleted.
-  const allowedCaches = new Set(Object.values(cacheNames));
-  caches.keys().then((cacheNames) => {
-    cacheNames.forEach((cacheName) => {
+  const p = Promise.resolve().then(async () => {
+    const allowedCaches = new Set(Object.values(cacheNames));
+    const cacheNames = await caches.keys();
+    for (const cacheName of cacheNames) {
       if (!allowedCaches.has(cacheName)) {
-        caches.delete(cacheName);
+        await caches.delete(cacheName);
       }
-    });
+    }
   });
+  event.waitUntil(p);
 });
 
 self.addEventListener('activate', (event) => {
