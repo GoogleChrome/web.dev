@@ -1,18 +1,19 @@
 ---
 layout: post
-title: 'Announcing <model-viewer> 1.0'
+title: 'Announcing <model-viewer> 1.1'
 subhead: 3D models for your web page as easily as writing HTML.
 authors:
   - rkochman
   - joemedley
 description: |
-3D models are more relevant than ever. Retailers bring in-store shopping
-experiences to customers' homes. Museums let anyone see artifacts from anywhere.
-3D is difficult to do without a deep knowledge of 3D technologies or third-party
-hosting. <model-viewer> 1.0 makes these tasks as easy as writing HTML.
-date: 2020-08-20
+  3D models are more relevant than ever. Retailers bring in-store shopping
+  experiences to customers' homes. Museums let anyone see artifacts from anywhere.
+  3D is difficult to do without a deep knowledge of 3D technologies or third-party
+  hosting. <model-viewer> 1.1 makes these tasks as easy as writing HTML.
+date: 2020-08-21
+updated: 2020-08-21
 hero: hero.jpg
-alt: A 3d image of a shark.
+alt: A 3D image of an astronaut.
 tags:
   - blog
   - 3d
@@ -25,33 +26,51 @@ available to everyone on the web. Unfortunately, it can be difficult to add a 3D
 model to a website in a way that provides a great user experience without a deep
 knowledge of 3D technologies or resorting to hosting 3D content on a third-party
 site. The `<model-viewer>` web component, [introduced in early
-2019](../model-viewer), seeks to
-make putting 3D models on the web as easy as writing a few lines of HTML. Since
-then, the team has been working to address feedback and requests from the
-community. The culmination of that work is `<model-viewer>` version 1.0.
+2019](../model-viewer), seeks to make putting 3D models on the web as easy as
+writing a few lines of HTML. Since then, the team has been working to address
+feedback and requests from the community. The culmination of that work was
+`<model-viewer>` version 1.0, relesed earlier this year. We're now announcing
+the release of `<model-viewer>` 1.1. You can [read the release
+notes](https://github.com/google/model-viewer/releases/tag/v1.1.0) in GitHub.
 
 ## What's new since last year?
 
-Version 1.0 includes built-in support for augmented reality (AR) on the web,
+Version 1.1 includes built-in support for augmented reality (AR) on the web,
 improvements to speed and fidelity, and other frequently-requested features.
 
 ### Augmented reality
 
 Viewing a 3D model on a blank canvas is great, but being able to view it in your
-space is even better. Now `<model-viewer>` supports [WebXR augmented
-reality](https://modelviewer.dev/examples/augmented-reality.html), for an
-entirely-within-the-browser 3D and AR experience on Chrome Android.
+space is even better. For an entirely-within-the-browser 3D and AR experience on
+Chrome Android the team is working support [augmented
+reality](https://modelviewer.dev/examples/augmented-reality.html) using the
+WebXR spec.
+
+When it's ready, you'll be able to use it by add an `ar` attribute to the
+`<model-viewer>` tag. Other attributes allow you to customize the WebXR AR
+experience, as shown in [the WebXR sample on
+modelviewer.dev](https://modelviewer.dev/examples/webxr.html). The code sample
+below shows what this might look like.
 
 ```html
-<model-viewer src="ToyTrain.glb" ar ar-scale="auto" camera-controls alt="A 3D model of a wooden toy train">
+<model-viewer src="Chair.glb" ar ar-scale="auto" camera-controls alt="A 3D model of an office chair.">
 </model-viewer>
 ```
-<iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://modelviewer.dev/webdotdev/webxr.html" frameborder="0" allowfullscreen></iframe>
 
-The above example shows the minimum required to use AR. The `<model-viewer>`
-component also allows you use HTML to customize the WebXR AR experience, as
-shown in [this example on the modelviewer.dev
-site](https://modelviewer.dev/examples/webxr.html).
+<!-- Hide until model-viewer's iframe bug is fixed -->
+<!-- <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://modelviewer.dev/examples/webxr.html" frameborder="0" allowfullscreen></iframe> -->
+
+It looks something like this:
+
+<figure class="w-figure">
+  <video controls muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/introducing-model-viewer/modelviewer1-0.webm" type="video/webm">
+    <source src="https://storage.googleapis.com/introducing-model-viewer/modelviewer1-0.mp4" type="video/mp4">
+  </video>
+  <figcaption class="w-figcaption">
+    A demonstration of the <code>&lt;model-viewer></code> AR capability.
+  </figcaption>
+</figure>
 
 ### Camera controls
 
@@ -95,18 +114,24 @@ the model. Annotations also work in AR.
 </model-viewer>
 ```
 
-<iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://modelviewer.dev/webdotdev/annotations.html" frameborder="0" allowfullscreen></iframe>
+<!-- Hide until model-viewer's iframe bug is fixed -->
+<!-- <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://modelviewer.dev/webdotdev/annotations.html" frameborder="0" allowfullscreen></iframe> -->
+
+<figure class="w-figure w-figure--inline-right">
+  <img src="./annotation.png" alt="A space suit with an annotation.">
+  <figcaption class="w-figcaption">A space suit with an annotation.</figcaption>
+</figure>
 
 See the [annotations documentation
 page](https://modelviewer.dev/examples/annotations.html) for more information.
 
-### Tester
+### Editor
 
-The new version introduces and hosts a `<model-viewer>` ["tester"
-tool](https://modelviewer.dev/examples/tester.html), which enables you to
+Version 1.1 introduces and hosts a `<model-viewer>` ["editing"
+tool](https://modelviewer.dev/editor/), which enables you to
 quickly preview your model, try out different `<model-viewer>` configurations
 (e.g. exposure and shadow softness), generate a poster image, and interactively
-get coordinates for annotations.
+get coordinates for annotations.              allows material editing and it can generate a complete HTML snippet for your website.
 
 ### Rendering and performance improvements
 
@@ -118,10 +143,16 @@ improved frame rate dramatically. The example below shows off some of these
 recent improvements.
 
 ```html
-<model-viewer camera-controls skybox-image="spruit_sunrise_1k_HDR.hdr" alt="A 3D model of a damaged helmet" src="DamagedHelmet.glb"></model-viewer>
+<model-viewer camera-controls skybox-image="spruit_sunrise_1k_HDR.hdr" alt="A 3D model of a well-worn  helmet" src="DamagedHelmet.glb"></model-viewer>
 ```
 
-<iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://modelviewer.dev/webdotdev/rendering.html" frameborder="0" allowfullscreen></iframe>
+<!-- Hide until model-viewer's iframe bug is fixed -->
+<!-- <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://modelviewer.dev/webdotdev/rendering.html" frameborder="0" allowfullscreen></iframe> -->
+
+<figure class="w-figure w-figure--inline-right">
+  <img src="./helmet.png" alt="A 3D model of a well-worn  helmet.">
+  <figcaption class="w-figcaption">A 3D model of a well-worn  helmet.</figcaption>
+</figure>
 
 ### Stability
 
