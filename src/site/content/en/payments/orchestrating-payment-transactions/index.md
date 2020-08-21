@@ -134,7 +134,7 @@ Use this to construct a UI to let the customer select a shipping option.
   </table>
 </div>
 
-## Open the payment handler window to display the web-based payment app frontend
+## Open the payment handler window to display the web-based payment app frontend {: #open-payment-handler-window }
 
 When a `paymentrequest` event is received, the payment app can open a payment
 handler window by calling `PaymentRequestEvent.openWindow()`. The payment
@@ -212,7 +212,7 @@ otherwise the payment request will be cancelled by Chrome. Learn more at
 app](/registering-a-web-based-payment-app/#debugging-a-web-based-payment-app).
 {% endAside %}
 
-## Exchange information with the frontend
+## Exchange information with the frontend {: #exchange-information }
 
 The payment app's service worker can exchange messages with the payment app's
 frontend through `ServiceWorkerController.postMessage()`. To receive messages
@@ -397,13 +397,13 @@ self.addEventListener('message', async e => {
   let details;
   try {
     switch (e.data.type) {
-…
+      …
       case 'PAYMENT_AUTHORIZED':
         // Resolve the payment request event promise
         // with a payment response object
         const response = {
           methodName: e.data.paymentMethod,
-          details: { id: 'payment credential comes here' },
+          details: { id: 'put payment credential here' },
         }
         let { paymentOptions } = payment_request_event;
         if (paymentOptions.requestBillingAddress) {
@@ -426,7 +426,7 @@ self.addEventListener('message', async e => {
         // Don't forget to initialize.
         payment_request_event = null;
         break;
-…
+      …
 ```
 
 ## Cancel the payment transaction {: #cancel-transaction }
@@ -455,7 +455,7 @@ self.addEventListener('message', async e => {
   let details;
   try {
     switch (e.data.type) {
-…
+      …
       case 'CANCEL_PAYMENT':
         // Resolve the payment request event promise
         // with null
@@ -463,14 +463,15 @@ self.addEventListener('message', async e => {
         // Don't forget to initialize.
         payment_request_event = null;
         break;
-…
+      …
 ```
 
-## Next Steps
+## Next steps
 
 In this article, we learned how to orchestrate a payment transaction from a
 service worker. The next step is to learn how to add some more advanced features
 to the service worker.
+
 * [Handling optional payment information with a service worker](/handling-optional-payment-information)
 
 

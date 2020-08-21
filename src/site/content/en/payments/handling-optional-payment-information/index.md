@@ -177,10 +177,8 @@ object.
 …
 ```
 
-Use the object to update the UI on the frontend. Since this object is
-consistently used across `.changePaymentMethod()`, `.changeShippingAddress()`
-and `.changeShippingOption()`, we'll cover this more in the [Reflect the updated
-payment details](#reflect-the-updated-payment-details) section of this article.
+Use the object to update the UI on the frontend. See [Reflect the updated
+payment details](#reflect-the-updated-payment-details).
 
 ## Inform the merchant of a shipping address change {: #shipping-address-changes }
 
@@ -286,10 +284,8 @@ object.
 …
 ```
 
-Use the object to update the UI on the frontend. Since this object is
-consistently used across `.changePaymentMethod()`, `.changeShippingAddress()`
-and `.changeShippingOption()`, we'll cover this in the [Reflect the updated
-payment details](#reflect-the-updated-payment-details) section of this article.
+Use the object to update the UI on the frontend. See [Reflect the updated
+payment details](#reflect-the-updated-payment-details).
 
 ## Inform the merchant of a shipping option change
 
@@ -384,12 +380,12 @@ and then respond with the updated
 {% endLabel %}
 
 ```js
-request.addEventListener(`shippingoptionchange`, e => {
+request.addEventListener('shippingoptionchange', e => {
   // selected shipping option
   const shippingOption = request.shippingOption;
   const newTotal = {
-    currency: "USD",
-    label: "Total due",
+    currency: 'USD',
+    label: 'Total due',
     value: calculateNewTotal(shippingOption),
   };
   // `updateWith()` sends back updated payment details
@@ -435,10 +431,9 @@ and shipping options to the UI.
 {% Aside %}
  The `PaymentRequestDetailsUpdate` object is passed from the merchant and it
  contains the exact information the merchant put in the `PaymentDetailsUpdate`
- object via the Payment Request API. The most important thing to handle things
- gracefully is to provide good developer documentation so that merchants will
- give you the right information you expect to receive. Or you may provide a
- JavaScript library to control the expectation.
+ object via the Payment Request API. The best way to ensure that merchants give
+ you the information you expect is to provide good developer documentation, or
+ provide a JavaScript library to control the information, or both.
 {% endAside %}
 
 Merchants may return errors for a few reasons:
