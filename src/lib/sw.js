@@ -7,13 +7,17 @@ import manifest from 'cache-manifest';
 import {initialize as initializeGoogleAnalytics} from 'workbox-google-analytics';
 import * as workboxRouting from 'workbox-routing';
 import * as workboxStrategies from 'workbox-strategies';
-import {CacheableResponsePlugin} from 'workbox-cacheable-response';
 import {ExpirationPlugin} from 'workbox-expiration';
 import {matchPrecache, precacheAndRoute} from 'workbox-precaching';
 import {cacheNames as workboxCacheNames} from 'workbox-core';
 import {matchSameOriginRegExp} from './utils/sw-match.js';
 
-const cacheNames = {webdevCore: 'webdev-core', ...workboxCacheNames};
+const cacheNames = {
+  webDevFonts: 'webdev-fonts-cache-v1',
+  webDevHtml: 'webdev-html-cache-v1',
+  webDevAssets: 'webdev-assets-cache-v1',
+  ...workboxCacheNames,
+};
 
 /**
  * Configure default cache for some common web.dev assets: images, CSS, JS, partial template. This
@@ -41,6 +45,21 @@ self.addEventListener('install', (event) => {
     replacingPreviousServiceWorker = true;
   }
   event.waitUntil(self.skipWaiting());
+});
+
+self.addEventListener('activate', () => {
+  // Define a list of allowed caches.
+  // If a cache does not appear in the list then it will be deleted.
+  const p = Promise.resolve().then(async () => {
+    const allowedCaches = new Set(Object.values(cacheNames));
+    const cacheNames = await caches.keys();
+    for (const cacheName of cacheNames) {
+      if (!allowedCaches.has(cacheName)) {
+        await caches.delete(cacheName);
+      }
+    }
+  });
+  event.waitUntil(p);
 });
 
 self.addEventListener('activate', (event) => {
@@ -76,7 +95,7 @@ self.addEventListener('activate', (event) => {
 
 initializeGoogleAnalytics();
 
-const externalExpirationPlugin = new ExpirationPlugin({
+const fontExpirationPlugin = new ExpirationPlugin({
   maxAgeSeconds: 60 * 60 * 24 * 365, // 1 yr
 });
 
@@ -89,26 +108,12 @@ const assetExpirationPlugin = new ExpirationPlugin({
   maxEntries: 100, // allow a large number of images, but expire quickly
 });
 
-// Cache the Google Fonts stylesheets with a stale-while-revalidate strategy.
-workboxRouting.registerRoute(
-  /^https:\/\/fonts\.googleapis\.com/,
-  new workboxStrategies.StaleWhileRevalidate({
-    cacheName: 'google-fonts-stylesheets',
-    plugins: [externalExpirationPlugin],
-  }),
-);
-
 // Cache the underlying font files with a cache-first strategy for 1 year.
 workboxRouting.registerRoute(
-  /^https:\/\/fonts\.gstatic\.com/,
+  ({request}) => request.destination === 'font',
   new workboxStrategies.CacheFirst({
-    cacheName: 'google-fonts-webfonts',
-    plugins: [
-      new CacheableResponsePlugin({
-        statuses: [0, 200],
-      }),
-      externalExpirationPlugin,
-    ],
+    cacheName: cacheNames.webDevFonts,
+    plugins: [fontExpirationPlugin],
   }),
 );
 
@@ -123,7 +128,7 @@ workboxRouting.registerRoute(
  */
 const partialPathRe = new RegExp('^/([\\w-]+/)*\\w+\\.json$');
 const partialStrategy = new workboxStrategies.NetworkFirst({
-  cacheName: 'webdev-html-cache-v1', // nb. We used to cache HTML here, so we name it the same
+  cacheName: cacheNames.webDevHtml, // nb. We used to cache HTML here, so we name it the same
   plugins: [contentExpirationPlugin],
 });
 
@@ -136,7 +141,7 @@ workboxRouting.registerRoute(partialMatch, partialStrategy);
 workboxRouting.registerRoute(
   new RegExp('/images/.*'),
   new workboxStrategies.StaleWhileRevalidate({
-    cacheName: 'webdev-assets-cache-v1',
+    cacheName: cacheNames.webDevAssets,
     plugins: [assetExpirationPlugin],
   }),
 );
