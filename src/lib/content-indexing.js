@@ -4,6 +4,8 @@
  * See https://web.dev/content-indexing-api/
  */
 
+import {normalizeUrl} from './urls';
+
 const CACHE_NAME = 'webdev-html-cache-v1';
 const PREFERRED_ICON_SIZE = 192;
 
@@ -80,9 +82,12 @@ export async function addPageToContentIndex(pageURL, cache) {
     return;
   }
 
-  const cacheKey = pageURL.endsWith('index.json')
-    ? pageURL
-    : pageURL + 'index.json';
+  const normalizedURL = normalizeUrl(pageURL);
+  if (!normalizedURL.endsWith('/')) {
+    // If this is a URL that doesn't appear to be supported, bail.
+    return;
+  }
+  const cacheKey = normalizedURL + 'index.json';
 
   if (!cache) {
     cache = await caches.open(CACHE_NAME);
