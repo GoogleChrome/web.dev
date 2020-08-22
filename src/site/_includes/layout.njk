@@ -32,7 +32,27 @@ eleventyComputed:
     {# https://www.zachleat.com/web/preload/ #}
     <link rel="preload" as="font" crossorigin href="/fonts/material-icons/regular.woff2">
 
-    <link rel="stylesheet" href="{{ resourceCSS.path | stripQueryParamsDev }}" />
+    {# Add facility for pages to delare an array of critical styles. #}
+    {% if pageCriticalStyles %}
+      {% for item in pageCriticalStyles %}
+        <style>{% include item %}</style>
+      {% endfor %}
+    {% endif %}
+
+    {# Add facility for pages to declare an array of stylesheet paths. #}
+    {% if pageStylesheets %}
+      {% for item in pageStylesheets %}
+        {# If this is a production build, hash the assets to invalidate caches. #}
+        {% if process.env.ELEVENTY_ENV === 'prod' %}
+          {# TODO: Memoize the hashing so it only runs once per stylesheet #}
+          <link rel="stylesheet" media="print" href="/{{ helpers.hashAsset(item) }}" onload="this.media='all'" />
+        {# If this is a dev build, don't bother hashing hassets. It just wastes time. #}
+        {% else %}
+          <link rel="stylesheet" media="print" href="/{{ item }}" onload="this.media='all'" />
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
     <link rel="manifest" href="/manifest.webmanifest" />
     {# Include default icon even though we have a manifest #}
     <link rel="shortcut icon" href="/images/favicon.ico">
