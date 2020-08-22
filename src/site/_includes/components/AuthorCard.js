@@ -26,7 +26,7 @@ class AuthorCard extends BaseCard {
     super(collectionItem, 'w-card-author');
   }
 
-  renderThumbnail(url, img, alt) {
+  renderThumbnail(_, img, alt) {
     return html`
       <figure class="w-card-base__figure w-card-author__figure">
         <img

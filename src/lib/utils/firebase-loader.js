@@ -3,7 +3,7 @@
  */
 
 /**
- * @type {!Object<!Promise>}
+ * @type {Object.<string, Promise>}
  */
 const libs = {};
 
@@ -38,7 +38,7 @@ function internalLoad(library) {
  * Loads a number of named Firebase libaries (or their cached previous loads).
  *
  * @param {...string} names to load
- * @return {!Promise<void>}
+ * @return {Promise<void[]>}
  */
 export default function loadFirebase(...names) {
   return Promise.all(names.map(internalLoad));

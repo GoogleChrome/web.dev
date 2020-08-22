@@ -8,7 +8,7 @@ import './_styles.scss';
  *
  * @extends {BaseElement}
  */
-class AssessmentQuestion extends BaseElement {
+export class AssessmentQuestion extends BaseElement {
   static get properties() {
     return {
       id: {type: String, reflect: true},
@@ -25,6 +25,7 @@ class AssessmentQuestion extends BaseElement {
 
     this.responseComponentUpdated = this.responseComponentUpdated.bind(this);
     this.reset = this.reset.bind(this);
+    this.height = null;
   }
 
   render() {
@@ -121,7 +122,9 @@ class AssessmentQuestion extends BaseElement {
         this.state = 'unanswered';
         this.ctaLabel = 'Recheck';
 
+        /** @type import('../Tabs').Tabs */
         const tabs = this.closest('web-tabs');
+        /** @type import('../Assessment').Assessment */
         const assessment = this.closest('web-assessment');
         if (tabs) {
           // Focus currently active tab since submit button disables

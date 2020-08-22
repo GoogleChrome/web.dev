@@ -10,7 +10,7 @@ import './_styles.scss';
  * and renders a tab for each panel.
  * @extends {BaseElement}
  */
-class Tabs extends BaseElement {
+export class Tabs extends BaseElement {
   static get properties() {
     return {
       label: {type: String},

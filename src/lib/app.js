@@ -43,7 +43,7 @@ checkUserPreferredLanguage();
 // Configures global page state (loading, signed in).
 function onGlobalStateChanged({isSignedIn, isPageLoading}) {
   document.body.classList.toggle('lh-signedin', isSignedIn);
-
+  /** @type HTMLDivElement */
   const progress = document.querySelector('.w-loading-progress');
   progress.hidden = !isPageLoading;
 

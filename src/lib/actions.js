@@ -78,7 +78,7 @@ export const requestRunLighthouse = store.action((state, url) => {
   });
 });
 
-export const requestFetchReports = store.action((state, url, startDate) => {
+export const requestFetchReports = store.action((_, url, startDate) => {
   const p = (async () => {
     const runs = await fetchReports(url, startDate);
 
@@ -148,6 +148,7 @@ export const openModal = store.action(() => {
 
 export const closeModal = store.action(() => {
   const main = document.querySelector('main');
+  /** @type import('./components/Header').Header */
   const header = document.querySelector('web-header');
   const footer = document.querySelector('.w-footer');
 
@@ -175,7 +176,7 @@ export const checkIfUserAcceptsCookies = store.action(
 );
 
 export const setUserAcceptsCookies = store.action(() => {
-  localStorage['web-accepts-cookies'] = 1;
+  localStorage['web-accepts-cookies'] = '1';
   return {
     userAcceptsCookies: true,
     showingSnackbar: false,

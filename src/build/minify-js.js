@@ -10,7 +10,7 @@ const fs = require('fs').promises;
  * Minify the passed on-disk script files. Assumes they have an adjacent ".map" source map.
  *
  * @param {!Array<string>} generated paths to generated script files
- * @return {number} ratio of compressed output to original source
+ * @return {Promise<number>} ratio of compressed output to original source
  */
 async function compressOutput(generated) {
   let inputSize = 0;

@@ -22,7 +22,7 @@ const addPagination = require('../../_utils/add-pagination');
 const filterByLang = require('../../_filters/filter-by-lang');
 
 /**
- * @param {any[]} items
+ * @param {AuthorsItem[]|TagsItem[]} items
  * @return {any[]}
  */
 const feed = (items) => {

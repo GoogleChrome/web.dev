@@ -46,7 +46,7 @@ async function loadEntrypoint(url) {
  *
  * @param {string} url of the page to fetch.
  * @param {!AbortSignal=} signal
- * @return {?{raw: string, title: string, offline: (boolean|undefined)}}
+ * @return {Promise<{raw: string, title: string, offline: (boolean|undefined)}>}
  */
 export async function getPartial(url, signal) {
   if (!url.endsWith('/')) {
@@ -70,7 +70,7 @@ export async function getPartial(url, signal) {
  * Force the user's cursor to the target element, making it focusable if needed.
  * After the user blurs from the target, it will restore to its initial state.
  *
- * @param {?Element} el
+ * @param {HTMLElement?} el
  */
 function forceFocus(el) {
   if (!el) {
@@ -102,6 +102,7 @@ function forceFocus(el) {
  * @param {!Object} partial
  */
 function updateDom(partial) {
+  /** @type HTMLElement */
   const content = document.querySelector('main #content');
   content.innerHTML = partial.raw;
 
@@ -116,13 +117,16 @@ function updateDom(partial) {
   // Update the page title.
   document.title = partial.title || '';
 
+  /** @type HTMLLinkElement */
   const rss = document.querySelector('link[type="application/atom+xml"]');
   if (rss) {
     rss.href = partial.rss || rss.href;
   }
 
   // Focus on the first title (or fallback to content itself).
-  forceFocus(content.querySelector('h1, h2, h3, h4, h5, h6') || content);
+  /** @type HTMLHeadingElement */
+  const toFocus = content.querySelector('h1, h2, h3, h4, h5, h6');
+  forceFocus(toFocus || content);
 }
 
 /**
