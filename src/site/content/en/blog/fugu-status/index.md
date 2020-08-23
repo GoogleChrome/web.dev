@@ -95,6 +95,19 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
       </tr>
       <tr>
         <td>
+          <a href="/idle-detection/">Idle Detection API</a>
+        </td>
+        <td>
+          The Idle Detection API notifies developers when a user is idle,
+          indicating such things as lack of interaction with the keyboard,
+          mouse, screen, activation of a screensaver, locking of the screen, or
+          moving to a different screen. A developer-defined threshold triggers
+          the notification.<br>
+          <em>Updated August 11, 2020</em>
+        </td>
+      </tr>
+      <tr>
+        <td>
           <a href="/native-file-system/">
             Native File System API
           </a>
@@ -134,7 +147,7 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
           write to a serial device with scripts. The API bridges the web and
           the physical world by allowing websites to communicate with serial
           devices, such as microcontrollers and 3D printers.<br>
-          <em>Updated August 12nd, 2020</em>
+          <em>Updated August 12, 2020</em>
         </td>
       </tr>
       <tr>
