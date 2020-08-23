@@ -78,7 +78,7 @@ function serviceWorkerIsSupported(hostname) {
   ];
   return (
     'serviceWorker' in navigator &&
-    (allowedHostnames.includes(hostname) || hostname.endsWith('.netlify.com'))
+    (allowedHostnames.includes(hostname) || hostname.endsWith('.netlify.app'))
   );
 }
 
