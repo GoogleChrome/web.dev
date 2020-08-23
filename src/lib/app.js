@@ -9,7 +9,7 @@
 /* global WebComponents */
 import './webcomponents-config'; // must go before -loader below
 import '@webcomponents/webcomponentsjs/webcomponents-loader.js';
-import {trackError} from './analytics'; // side effects + named export
+import {trackError} from './analytics'; // side effects & named export
 import {swapContent, getPartial} from './loader';
 import * as router from './utils/router';
 import {checkUserPreferredLanguage} from './actions';
