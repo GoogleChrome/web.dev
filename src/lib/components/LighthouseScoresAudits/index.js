@@ -23,6 +23,7 @@ const NUM_AUDITS_TO_SHOW = 10;
  * @return {!TemplateResult}
  */
 function createRowForAuditCategory(lhr, category) {
+  /** @type TemplateResult | string[] */
   let relevantGuides = ['Guide coming soon'];
   const audit = lhr.audits[category.ref.id];
 
@@ -155,6 +156,7 @@ class LighthouseScoresAudits extends BaseElement {
 
   render() {
     const lhr = this.lhr;
+    /** @type TemplateResult | string[] */
     let rows = html``;
     let allRowsShown = false;
 

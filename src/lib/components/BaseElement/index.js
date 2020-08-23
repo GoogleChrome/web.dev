@@ -6,9 +6,12 @@ export class BaseElement extends LitElement {
     super();
   }
 
-  firstUpdated() {
+  /**
+   * @param {Map<string | number | symbol, unknown>} changedProperties
+   */
+  firstUpdated(changedProperties) {
     this.classList.remove('unresolved');
-    super.firstUpdated();
+    super.firstUpdated(changedProperties);
   }
 
   createRenderRoot() {
