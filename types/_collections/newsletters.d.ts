@@ -14,12 +14,9 @@
  * limitations under the License.
  */
 
-/**
- * Returns an array of all past Newsletters.
- *
- * @param {object} collections 11ty collections object
- * @return {Newsletters}
- */
-module.exports = (collections) => {
-  return collections.getFilteredByTag('newsletter').reverse();
-};
+declare global {
+  export type Newsletters = EleventyCollectionItem[];
+}
+
+// empty export to keep file a module
+export {};

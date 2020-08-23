@@ -16,7 +16,11 @@
 
 const {livePosts} = require('../_filters/live-posts');
 const removeMarkdown = require('remove-markdown');
-const authorsCollectionFn = require('../_collections/authors');
+const authorsCollectionFn = require('./authors');
+const {feed: authorsFeed} = require('./hooks/authors');
+const newslettersCollectionFn = require('./newsletters');
+const tagsCollectionFn = require('./tags');
+const {feed: tagsFeed} = require('./hooks/tags');
 
 /**
  * Shrink the size of the given fulltext to fit within a certain limit, at the
@@ -41,6 +45,8 @@ function limitText(fulltext, limit = 7500) {
 
 module.exports = (collection) => {
   const validTags = ['post'];
+
+  /** @type EleventyCollectionItem[] */
   const eleventyPosts = collection
     .getFilteredByGlob('**/*.md')
     .filter((item) => {
@@ -58,10 +64,12 @@ module.exports = (collection) => {
   // For now, hard-code language to English.
   const lang = 'en';
 
-  const authorsCollection = authorsCollectionFn();
+  const authorsCollection = authorsCollectionFn(collection);
+  const newslettersCollection = newslettersCollectionFn(collection);
+  const tagsCollection = tagsCollectionFn(collection);
 
   // Convert 11ty-posts to a flat, indexable format.
-  return eleventyPosts.map(({data, template}) => {
+  const posts = eleventyPosts.map(({data, template}) => {
     const fulltext = removeMarkdown(template.frontMatter.content);
 
     // Algolia has a limit of ~10k JSON on its records. For now, just trim fulltext to the nearest
@@ -85,4 +93,44 @@ module.exports = (collection) => {
       _tags: data.tags,
     };
   });
+
+  const authors = authorsFeed(Object.values(authorsCollection)).map(
+    (author) => {
+      return {
+        objectID: author.href + '#' + lang,
+        lang,
+        title: author.title,
+        url: author.data.canonicalUrl,
+        description: author.description,
+        fulltext: limitText(author.description),
+      };
+    },
+  );
+
+  const newsletters = newslettersCollection.map(({data, template}) => {
+    const fulltext = removeMarkdown(template.frontMatter.content);
+    const limited = limitText(fulltext);
+
+    return {
+      objectID: data.page.url + '#' + lang,
+      lang,
+      title: data.title,
+      url: data.canonicalUrl,
+      description: data.description,
+      fulltext: limited,
+    };
+  });
+
+  const tags = tagsFeed(Object.values(tagsCollection)).map((tag) => {
+    return {
+      objectID: tag.href + '#' + lang,
+      lang,
+      title: tag.title,
+      url: tag.data.canonicalUrl,
+      description: tag.description,
+      fulltext: limitText(tag.description),
+    };
+  });
+
+  return [...posts, ...authors, ...newsletters, ...tags];
 };
