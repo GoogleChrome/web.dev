@@ -269,6 +269,7 @@ module.exports = function (config) {
   // ----------------------------------------------------------------------------
   // https://www.11ty.io/docs/config/#data-deep-merge
   config.setDataDeepMerge(true);
+  config.setUseGitIgnore(false);
 
   // https://www.11ty.io/docs/config/#configuration-options
   const targetLang = process.env.ELEVENTY_LANG || '';
