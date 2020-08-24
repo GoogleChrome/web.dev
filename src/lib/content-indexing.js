@@ -65,29 +65,7 @@ function getIconFromImageSrc(imgSrc) {
 }
 
 /**
- * Optionally migrates the passed string URL to be under the current domain.
- *
- * The URL we get back from the server is always "https://web.dev", but the
- * Context Indexing API checks that the domain matches our own, so update the
- * URL when in testing environments.
- *
- * @param {string} url
- * @return {string}
- */
-function maybeMigrateUrl(url) {
-  const launchUrlCheck = new URL(url);
-  if (launchUrlCheck.origin === window.location.origin) {
-    return url;
-  }
-  const update = new URL(
-    launchUrlCheck.pathname + launchUrlCheck.search,
-    window.location.origin,
-  );
-  return update.toString();
-}
-
-/**
- * Adds a given pageURL to the content index.
+ * Adds a given pageURL to the content index. The ID used is the normalized URL.
  *
  * Metadata for the indexed page is read from the Cache Storage API, by
  * translating the page's URL into a cache key for the JSON metadata.
@@ -128,7 +106,12 @@ export async function addPageToContentIndex(pageURL, cache) {
     return;
   }
 
-  const launchUrl = maybeMigrateUrl(url);
+  // Removes the domain part from the URL. The URL we get back from the server
+  // in partials is always "https://web.dev", but the Context Indexing API only
+  // wants to handle local URLs.
+  const u = new URL(url);
+  const launchUrl = u.pathname + url.search;
+
   const icon = getIconFromImageSrc(imageSrc);
 
   await index.add({
@@ -136,7 +119,7 @@ export async function addPageToContentIndex(pageURL, cache) {
     title,
     url,
     category: 'article',
-    id: cacheKey,
+    id: normalizedURL,
     icons: [icon],
     launchUrl,
   });
@@ -154,19 +137,17 @@ export async function syncContentIndex() {
   }
 
   // Get a list of everything currently in the content index.
-  const idsInIndex = new Set();
-  for (const contentDescription of await index.getAll()) {
-    // Add each currently indexed id to the set.
-    idsInIndex.add(contentDescription.id);
-  }
+  const alreadyIndexed = await index.getAll();
+  const idsInIndex = new Set(alreadyIndexed.map(({id}) => id));
 
   // Get all the cached JSON partials.
   const cache = await caches.open(CACHE_NAME);
   const cachedRequests = await cache.keys();
 
   for (const request of cachedRequests) {
-    // Use the cache key URL as the unique id value.
-    const id = request.url;
+    // Find the unique ID. We get the cache key here, which ends with
+    // "/index.json": remove this and normalize the URL to get the correct ID.
+    const id = normalizeUrl(request.url.replace(/\.json$/, '.html'));
 
     // If our id is already in the index, remove it from the set of ids that
     // need to be deleted.
@@ -174,7 +155,6 @@ export async function syncContentIndex() {
       idsInIndex.delete(id);
       continue;
     }
-
     await addPageToContentIndex(id, cache);
   }
 
