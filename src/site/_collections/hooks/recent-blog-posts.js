@@ -13,13 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-const recentBlogPosts = require('../../_collections/hooks/recent-blog-posts');
-
-module.exports = function () {
-  return {
-    eleventyComputed: {
-      recentPosts: recentBlogPosts,
+module.exports = function (data) {
+  const recent = [];
+  for (const item of data.collections.blogPosts) {
+    if (
+      (item.data.hero || item.data.thumbnail) &&
+      item.data.lang === data.lang
+    ) {
+      recent.push(item);
+      if (recent.length === 3) {
+        break;
+      }
     }
-  };
+  }
+  return recent;
 };
