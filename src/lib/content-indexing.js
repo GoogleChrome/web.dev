@@ -19,8 +19,8 @@ const DEFAULT_ICON = {
  * Returns an instance of the ContentIndex associated with the active
  * registration, if supported in the current browser.
  *
- * @return {ContentIndex|undefined} The ContentIndex interface, or undefined if
- * that functionality isn't supported.
+ * @return {Promise<ContentIndex|void>} The ContentIndex interface, or undefined
+ * if that functionality isn't supported.
  */
 async function getContentIndexInterface() {
   if ('serviceWorker' in navigator) {
@@ -52,8 +52,8 @@ function getIconFromImageSrc(imgSrc) {
     return DEFAULT_ICON;
   }
 
-  url.searchParams.set('w', PREFERRED_ICON_SIZE);
-  url.searchParams.set('h', PREFERRED_ICON_SIZE);
+  url.searchParams.set('w', '' + PREFERRED_ICON_SIZE);
+  url.searchParams.set('h', '' + PREFERRED_ICON_SIZE);
   url.searchParams.set('fit', 'crop');
   url.searchParams.set('fm', 'webp');
 
@@ -62,6 +62,28 @@ function getIconFromImageSrc(imgSrc) {
     src: url.href,
     type: 'image/webp',
   };
+}
+
+/**
+ * Optionally migrates the passed string URL to be under the current domain.
+ *
+ * The URL we get back from the server is always "https://web.dev", but the
+ * Context Indexing API checks that the domain matches our own, so update the
+ * URL when in testing environments.
+ *
+ * @param {string} url
+ * @return {string}
+ */
+function maybeMigrateUrl(url) {
+  const launchUrlCheck = new URL(url);
+  if (launchUrlCheck.origin === window.location.origin) {
+    return url;
+  }
+  const update = new URL(
+    launchUrlCheck.pathname + launchUrlCheck.search,
+    window.location.origin,
+  );
+  return update.toString();
 }
 
 /**
@@ -106,6 +128,7 @@ export async function addPageToContentIndex(pageURL, cache) {
     return;
   }
 
+  const launchUrl = maybeMigrateUrl(url);
   const icon = getIconFromImageSrc(imageSrc);
 
   await index.add({
@@ -115,7 +138,7 @@ export async function addPageToContentIndex(pageURL, cache) {
     category: 'article',
     id: cacheKey,
     icons: [icon],
-    launchUrl: url,
+    launchUrl,
   });
 }
 

@@ -201,6 +201,7 @@ export function route(url) {
     if (!aborted) {
       scrollToHashOrTop(u.hash);
       addPageToContentIndex(u.href).catch((error) => {
+        console.warn('could not index page', u.href, error);
         trackError(error, 'Content Indexing error');
       });
     }
