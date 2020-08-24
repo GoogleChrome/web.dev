@@ -65,7 +65,6 @@ export async function getHTML(url, signal) {
     if (!res.ok) {
       throw res.status;
     }
-    console.info('got response', res);
     const offline = res.headers.has('X-Offline'); // set by SW
     const html = await res.text();
     return {

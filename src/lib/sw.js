@@ -111,12 +111,12 @@ workboxRouting.registerRoute(
 /**
  * Matches normal web.dev routes. This will match pages like:
  *   - /
- *   - /foo-bar                  # without trailing slash
+ *   - /foo-bar               # without trailing slash
  *   - /foo-bar/
  *   - /zing/hello/
- *   - /test/page/index.html     # trailing /index.html is special
- *   - /hello/other.html         # also allows any html page
- *   - ///////////.html          # valid but wrong
+ *   - /test/page/index.html
+ *   - /hello/other.html      # allows any html page, not just index.html
+ *   - ///////////.html       # valid but wrong
  *
  * This won't match any URL that contains a "." except for a trailing ".html".
  */
@@ -147,7 +147,14 @@ workboxRouting.setCatchHandler(async ({url}) => {
   if (pageMatch({url})) {
     // TODO(ewag): for now, just match English
     const response = await matchPrecache('/en/offline/index.html');
-    response.headers.set('X-Offline', '1');
-    return response;
+
+    // Build a new Response so we can set the X-Offline header. Can't modify a previously cached
+    // response.
+    const headers = new Headers();
+    headers.set('X-Offline', '1');
+    const clone = new Response(await response.text(), {
+      headers,
+    });
+    return clone;
   }
 });
