@@ -10,8 +10,8 @@ description: |
   experiences to customers' homes. Museums let anyone see artifacts from anywhere.
   3D is difficult to do without a deep knowledge of 3D technologies or third-party
   hosting. <model-viewer> 1.1 makes these tasks as easy as writing HTML.
-date: 2020-08-21
-updated: 2020-08-21
+date: 2020-08-28
+updated: 2020-08-28
 hero: hero.jpg
 alt: A 3D image of an astronaut.
 tags:
@@ -26,7 +26,7 @@ available to everyone on the web. Unfortunately, it can be difficult to add a 3D
 model to a website in a way that provides a great user experience without a deep
 knowledge of 3D technologies or resorting to hosting 3D content on a third-party
 site. The `<model-viewer>` web component, [introduced in early
-2019](../model-viewer), seeks to make putting 3D models on the web as easy as
+2019](/model-viewer), seeks to make putting 3D models on the web as easy as
 writing a few lines of HTML. Since then, the team has been working to address
 feedback and requests from the community. The culmination of that work was
 `<model-viewer>` version 1.0, relesed earlier this year. We're now announcing
@@ -46,6 +46,21 @@ Chrome Android the team is working support [augmented
 reality](https://modelviewer.dev/examples/augmented-reality.html) using the
 WebXR spec.
 
+<style>
+video {
+  max-width: 75%;
+}
+</style>
+<figure class="w-figure w-figure--inline-right">
+  <video controls muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/introducing-model-viewer/modelviewer1-0.webm" type="video/webm">
+    <source src="https://storage.googleapis.com/web-dev-assets/introducing-model-viewer/modelviewer1-0.mp4" type="video/mp4">
+  </video>
+  <figcaption class="w-figcaption">
+    A demonstration of the <code>&lt;model-viewer></code> AR capability.
+  </figcaption>
+</figure>
+
 When it's ready, you'll be able to use it by add an `ar` attribute to the
 `<model-viewer>` tag. Other attributes allow you to customize the WebXR AR
 experience, as shown in [the WebXR sample on
@@ -60,17 +75,7 @@ below shows what this might look like.
 <!-- Hide until model-viewer's iframe bug is fixed -->
 <!-- <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://modelviewer.dev/examples/webxr.html" frameborder="0" allowfullscreen></iframe> -->
 
-It looks something like this:
-
-<figure class="w-figure">
-  <video controls muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/introducing-model-viewer/modelviewer1-0.webm" type="video/webm">
-    <source src="https://storage.googleapis.com/introducing-model-viewer/modelviewer1-0.mp4" type="video/mp4">
-  </video>
-  <figcaption class="w-figcaption">
-    A demonstration of the <code>&lt;model-viewer></code> AR capability.
-  </figcaption>
-</figure>
+It looks something like the embedded video shown under this heading.
 
 ### Camera controls
 
