@@ -74,20 +74,8 @@ date: 2018-11-05
     </div>
     <div class="w-grid w-pb--std">
       <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
-        {% set counter = 0 %}
-        {% for post in collections.blogPosts %}
-          {% if counter < 3 %}
-            {% if post.data.lang === lang %}
-              {% if post.data.hero or post.data.thumbnail %}
-                {% if counter === 0 %}
-                  {% PostCard post, true %}
-                {% else %}
-                  {% PostCard post %}
-                {% endif %}
-                {% set counter = counter + 1 %}
-              {% endif %}
-            {% endif %}
-          {% endif %}
+        {% for post in recentPosts %}
+          {% PostCard post %}
         {% endfor %}
       </div>
     </div>
