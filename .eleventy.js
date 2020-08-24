@@ -60,7 +60,6 @@ const newsletters = require(`./${collectionsDir}/newsletters`);
 const {
   postsWithLighthouse,
 } = require(`./${collectionsDir}/posts-with-lighthouse`);
-const recentBlogPosts = require(`./${collectionsDir}/recent-blog-posts`);
 const tags = require(`./${collectionsDir}/tags`);
 // nb. algoliaPosts is only require'd if needed, below
 
@@ -160,7 +159,6 @@ module.exports = function (config) {
   config.addCollection('blogPosts', blogPostsDescending);
   config.addCollection('newsletters', newsletters);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
-  config.addCollection('recentBlogPosts', recentBlogPosts);
   config.addCollection('tags', tags);
   // Turn collection.all into a lookup table so we can use findBySlug
   // to quickly find collection items without looping.

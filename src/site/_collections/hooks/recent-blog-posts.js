@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,18 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-const {livePosts} = require('../_filters/live-posts');
-
-// Return the three most recent blog posts.
-// Because these posts appear on the homepage they need to have a hero or
-// thumbnail image, otherwise the visual layout will not work.
-module.exports = (collection) => {
-  const tag = process.env.PERCY ? 'test-post' : 'blog';
-  return collection
-    .getFilteredByTag(tag)
-    .filter(livePosts)
-    .filter((item) => item.data.hero || item.data.thumbnail)
-    .reverse()
-    .slice(0, 3);
+module.exports = function (data) {
+  const recent = [];
+  for (const item of data.collections.blogPosts) {
+    if (
+      (item.data.hero || item.data.thumbnail) &&
+      item.data.lang === data.lang
+    ) {
+      recent.push(item);
+      if (recent.length === 3) {
+        break;
+      }
+    }
+  }
+  return recent;
 };
