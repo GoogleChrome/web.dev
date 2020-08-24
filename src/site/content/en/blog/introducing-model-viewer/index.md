@@ -41,10 +41,9 @@ improvements to speed and fidelity, and other frequently-requested features.
 ### Augmented reality
 
 Viewing a 3D model on a blank canvas is great, but being able to view it in your
-space is even better. For an entirely-within-the-browser 3D and AR experience on
-Chrome Android the team is working support [augmented
-reality](https://modelviewer.dev/examples/augmented-reality.html) using the
-WebXR spec.
+space is even better. For an entirely-within-the-browser 3D and AR Chrome
+Android supports [augmented
+reality](https://modelviewer.dev/examples/augmented-reality.html) using WebXR .
 
 <style>
 video {
@@ -136,7 +135,7 @@ Version 1.1 introduces and hosts a `<model-viewer>` ["editing"
 tool](https://modelviewer.dev/editor/), which enables you to
 quickly preview your model, try out different `<model-viewer>` configurations
 (e.g. exposure and shadow softness), generate a poster image, and interactively
-get coordinates for annotations.              allows material editing and it can generate a complete HTML snippet for your website.
+get coordinates for annotations.
 
 ### Rendering and performance improvements
 
