@@ -1,4 +1,6 @@
 import './abort-controller-polyfill';
+import {addPageToContentIndex} from '../content-indexing';
+import {trackError} from '../analytics';
 import {store} from '../store';
 import language from './language';
 
@@ -198,6 +200,10 @@ export function route(url) {
   globalHandler(candidateUrl, u.hash).then((aborted) => {
     if (!aborted) {
       scrollToHashOrTop(u.hash);
+      addPageToContentIndex(u.href).catch((error) => {
+        console.warn('could not index page', u.href, error);
+        trackError(error, 'Content Indexing error');
+      });
     }
   });
   return true;
