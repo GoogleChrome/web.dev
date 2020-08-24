@@ -15,7 +15,7 @@
  */
 
 declare global {
-  export {TemplateResult} from 'lit-element';
+  export {TemplateResult, PropertyValues} from 'lit-element';
 }
 
 // empty export to keep file a module

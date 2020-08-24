@@ -66,7 +66,8 @@ export class AssessmentQuestion extends BaseElement {
 
     // Listen to contained option selections.
     this.addEventListener('question-option-select', (e) => {
-      const {detail: optionIndex, target} = e;
+      const ce = /** @type {!CustomEvent} */ (e);
+      const {detail: optionIndex, target} = ce;
 
       // This event comes from the final option that the user selects.
       // Find the index of the response that this input is contained within.
@@ -77,7 +78,7 @@ export class AssessmentQuestion extends BaseElement {
         this.querySelectorAll('[data-role=response]'),
       );
       for (let i = 0; i < responseComponents.length; ++i) {
-        if (responseComponents[i].contains(target)) {
+        if (responseComponents[i].contains(/** @type {Element} */ (target))) {
           responseIndex = i;
           break;
         }

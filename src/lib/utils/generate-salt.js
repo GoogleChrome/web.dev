@@ -5,7 +5,7 @@
  *     Used to check the uniqueness of the outcome id (prefix + salt).
  * @return {string} Id salt.
  */
-export const generateIdSalt = (idPrefix) => {
+export const generateIdSalt = (/** @type {string} */ idPrefix) => {
   const salt = Math.random().toString(36).substr(2, 9);
   return document.getElementById(idPrefix + salt)
     ? generateIdSalt(idPrefix)

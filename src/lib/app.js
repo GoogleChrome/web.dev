@@ -6,7 +6,6 @@
  * Worker initialization, component loading for routes, et al.
  */
 
-/* global WebComponents */
 import './webcomponents-config'; // must go before -loader below
 import '@webcomponents/webcomponentsjs/webcomponents-loader.js';
 import './analytics'; // side effects
@@ -17,7 +16,7 @@ import {store} from './store';
 import {localStorage} from './utils/storage';
 import removeServiceWorkers from './utils/sw-remove';
 
-WebComponents.waitFor(async () => {
+window.WebComponents.waitFor(async () => {
   // TODO(samthor): This isn't quite the right class name because not all Web Components are ready
   // at this point due to code-splitting.
   document.body.classList.remove('unresolved');
