@@ -6,8 +6,8 @@ const formatData = (lang, posts) => {
     lang,
     collections: {
       blogPosts: posts,
-    }
-  }
+    },
+  };
 };
 
 describe('recent-blog-posts', function () {
@@ -24,25 +24,28 @@ describe('recent-blog-posts', function () {
   });
 
   it('should contain only posts with thumbnail or hero prop', function () {
-    const posts = [{
+    const posts = [
+      {
         data: {
           lang: 'en',
         },
-      }, {
+      },
+      {
         data: {
           lang: 'en',
           thumbnail: 'some/thumbnail.jpg',
         },
-      }, {
+      },
+      {
         data: {
           lang: 'en',
           hero: 'some/thumbnail.jpg',
         },
-      }
+      },
     ];
     const data = formatData('en', posts);
     const actual = recentBlogPosts(data);
-    for (post of actual) {
+    for (const post of actual) {
       assert.ok(post.data.hero || post.data.thumbnail);
     }
     assert.deepStrictEqual(actual.length, 2);
@@ -53,19 +56,17 @@ describe('recent-blog-posts', function () {
       data: {
         lang: 'en',
       },
-      date: new Date(),
     };
     const data = formatData('en', [post]);
     const actual = recentBlogPosts(data);
     assert.deepStrictEqual(actual.length, 0);
   });
 
-  it('should reject posts with lang different than site\'s lang', function () {
+  it('should reject posts with lang different than current lang', function () {
     const post = {
       data: {
         lang: 'pl',
       },
-      date: new Date(),
     };
     const data = formatData('en', [post]);
     const actual = recentBlogPosts(data);

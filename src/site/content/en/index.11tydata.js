@@ -20,6 +20,6 @@ module.exports = function () {
   return {
     eleventyComputed: {
       recentPosts: recentBlogPosts,
-    }
+    },
   };
 };
