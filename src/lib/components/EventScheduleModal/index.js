@@ -23,7 +23,7 @@ import {generateIdSalt} from '../../utils/generate-salt';
  * @fileoverview Modal element for session information.
  */
 
-class EventScheduleModal extends BaseModalElement {
+export class EventScheduleModal extends BaseModalElement {
   static get properties() {
     return {
       sessionRow: {type: Object},
@@ -32,6 +32,10 @@ class EventScheduleModal extends BaseModalElement {
       _abstractPart: {type: Object},
       _youtubeLinkPart: {type: Object},
       _titleId: {type: String},
+      open: {type: Boolean, reflect: true},
+      animatable: {type: Boolean, reflect: true},
+      overflow: {type: Boolean, reflect: true},
+      parentModal: {attribute: 'parent-modal', reflect: true},
     };
   }
 
@@ -39,6 +43,7 @@ class EventScheduleModal extends BaseModalElement {
     super();
 
     this._titleId = generateIdSalt();
+    this.sessionRow = null;
   }
 
   shouldUpdate(changedProperties) {

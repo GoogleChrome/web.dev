@@ -16,6 +16,11 @@ class ProfileSwitcher extends BaseElement {
     };
   }
 
+  constructor() {
+    super();
+    this.user = null;
+  }
+
   render() {
     return html`
       <button
@@ -40,11 +45,17 @@ class ProfileSwitcher extends BaseElement {
     });
 
     // Close the profile switcher if it's open and the user clicks outside.
-    document.addEventListener('click', (e) => {
-      if (this.expanded && !this.contains(e.target)) {
-        this.expanded = false;
-      }
-    });
+    document.addEventListener(
+      'click',
+      /**
+       * @param {WMouseEvent} e
+       */
+      (e) => {
+        if (this.expanded && !this.contains(e.target)) {
+          this.expanded = false;
+        }
+      },
+    );
   }
 
   shouldUpdate(changedProperties) {

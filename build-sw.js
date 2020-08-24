@@ -54,7 +54,7 @@ async function buildCacheManifest() {
     ],
     globIgnores: [
       // This removes large shared PNG files that are used only for articles.
-      'images/{shared}/**',
+      'images/shared/**/*',
     ],
   };
   if (isProd) {

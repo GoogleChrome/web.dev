@@ -22,7 +22,7 @@ const {html} = require('common-tags');
 
 /**
  * Render a Details panel preview as an HTML string.
- * @param {string} contentArr Array of content split at new lines.
+ * @param {string[]} contentArr Array of content split at new lines.
  * @return {string}
  */
 function renderPreview(contentArr) {

@@ -9,13 +9,14 @@
 /* global WebComponents */
 import './webcomponents-config'; // must go before -loader below
 import '@webcomponents/webcomponentsjs/webcomponents-loader.js';
-import './analytics'; // side effects
+import {trackError} from './analytics'; // side effects & named export
 import {swapContent, getPartial} from './loader';
 import * as router from './utils/router';
 import {checkUserPreferredLanguage} from './actions';
 import {store} from './store';
 import {localStorage} from './utils/storage';
 import removeServiceWorkers from './utils/sw-remove';
+import {syncContentIndex} from './content-indexing';
 
 WebComponents.waitFor(async () => {
   // TODO(samthor): This isn't quite the right class name because not all Web Components are ready
@@ -43,7 +44,7 @@ checkUserPreferredLanguage();
 // Configures global page state (loading, signed in).
 function onGlobalStateChanged({isSignedIn, isPageLoading}) {
   document.body.classList.toggle('lh-signedin', isSignedIn);
-
+  /** @type HTMLDivElement */
   const progress = document.querySelector('.w-loading-progress');
   progress.hidden = !isPageLoading;
 
@@ -65,6 +66,9 @@ onGlobalStateChanged(store.getState());
 // never happen here unless the valid domains change, but left in for safety).
 if (serviceWorkerIsSupported(window.location.hostname)) {
   ensureServiceWorker();
+  syncContentIndex().catch((error) => {
+    trackError(error, 'Content Indexing error');
+  });
 } else {
   removeServiceWorkers();
 }
@@ -78,7 +82,7 @@ function serviceWorkerIsSupported(hostname) {
   ];
   return (
     'serviceWorker' in navigator &&
-    (allowedHostnames.includes(hostname) || hostname.endsWith('.netlify.com'))
+    (allowedHostnames.includes(hostname) || hostname.endsWith('.netlify.app'))
   );
 }
 

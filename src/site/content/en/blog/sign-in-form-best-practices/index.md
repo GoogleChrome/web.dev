@@ -5,7 +5,7 @@ authors:
   - samdutton
 scheduled: true
 date: 2020-06-29
-updated: 2020-08-05
+updated: 2020-08-20
 description: Use cross-platform browser features to build sign-in forms that are secure, accessible and easy to use.
 hero: hero.jpg
 alt: A person holding a phone.
@@ -21,6 +21,7 @@ codelabs:
   - codelab-sign-in-form-best-practices
 ---
 
+{% YouTube 'alGcULGtiv8' %}
 
 If users ever need to log in to your site, then good sign-in form design is
 critical. This is especially true for people on poor connections, on mobile, in

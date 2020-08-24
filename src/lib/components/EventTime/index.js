@@ -54,6 +54,8 @@ class EventTime extends BaseElement {
   constructor() {
     super();
     this._date = null;
+    this.datetime = null;
+    this.duration = null;
   }
 
   connectedCallback() {
@@ -101,7 +103,7 @@ class EventTime extends BaseElement {
     };
     const options = new Intl.DateTimeFormat().resolvedOptions();
 
-    let durationPart = '';
+    let durationPart = html``;
     if (this.duration > 0) {
       const end = new Date(this._date);
       end.setMinutes(end.getMinutes() + this.duration);
