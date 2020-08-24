@@ -1,5 +1,5 @@
 ---
-title: Using the full power of the Web Animations API
+title: Web Animations API improvements in Chromium 84
 subhead: Orchestrating animations with promises, performance improvements with replaceable animations, smoother animations with composite modes, and more.
 authors:
   - una
