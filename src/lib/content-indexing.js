@@ -99,29 +99,35 @@ export async function addPageToContentIndex(pageURL, cache) {
     return;
   }
 
-  const {description, imageSrc, title, url} = await response.json();
+  const {
+    description,
+    imageSrc,
+    title,
+    url: canonicalUrl,
+  } = await response.json();
 
   // We can use a default image, but the other fields need to be set.
-  if (!(title && description && url)) {
+  if (!(title && description && canonicalUrl)) {
     return;
   }
 
   // Removes the domain part from the URL. The URL we get back from the server
   // in partials is always "https://web.dev", but the Context Indexing API only
   // wants to handle local URLs.
-  const u = new URL(url);
-  const launchUrl = u.pathname + url.search;
+  const u = new URL(canonicalUrl);
+  const url = u.pathname + u.search;
 
   const icon = getIconFromImageSrc(imageSrc);
+  console.debug('adding to Content Index', url, title);
 
   await index.add({
     description,
     title,
-    url,
     category: 'article',
     id: normalizedURL,
     icons: [icon],
-    launchUrl,
+    url: url,
+    launchUrl: url,
   });
 }
 
