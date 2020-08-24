@@ -16,15 +16,16 @@
 
 import * as firebase from 'firebase';
 
+interface WebComponentsType {
+  root?: string;
+  waitFor?: (arg: () => any) => void;
+}
+
 declare global {
-  export interface Window extends Window {
-    firebase: firebase.app.App;
+  interface Window extends Window {
     inert: boolean;
   }
 
+  var WebComponents: WebComponentsType;
   var firebase: firebase.app.App;
 }
-
-
-// empty export to keep file a module
-export {};

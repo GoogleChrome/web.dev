@@ -14,11 +14,6 @@
  * limitations under the License.
  */
 
-declare global {
-  export interface HTMLElement extends HTMLElement {
-    inert: boolean;
-  }
+interface Navigator {
+  canShare(data: ShareData): boolean;
 }
-
-// empty export to keep file a module
-export {};

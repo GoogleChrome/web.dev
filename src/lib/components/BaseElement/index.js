@@ -7,7 +7,7 @@ export class BaseElement extends LitElement {
   }
 
   /**
-   * @param {Map<string | number | symbol, unknown>} changedProperties
+   * @param {PropertyValues} changedProperties
    */
   firstUpdated(changedProperties) {
     this.classList.remove('unresolved');

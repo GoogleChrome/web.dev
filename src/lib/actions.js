@@ -136,7 +136,9 @@ export const collapseSideNav = store.action(() => {
 
 export const openModal = store.action(() => {
   const main = document.querySelector('main');
+  /** @type import('./components/Header').Header */
   const header = document.querySelector('web-header');
+  /** @type {HTMLElement} */
   const footer = document.querySelector('.w-footer');
 
   document.documentElement.classList.add('web-modal__overflow-hidden');
@@ -150,6 +152,7 @@ export const closeModal = store.action(() => {
   const main = document.querySelector('main');
   /** @type import('./components/Header').Header */
   const header = document.querySelector('web-header');
+  /** @type {HTMLElement} */
   const footer = document.querySelector('.w-footer');
 
   document.documentElement.classList.remove('web-modal__overflow-hidden');

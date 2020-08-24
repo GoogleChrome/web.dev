@@ -21,6 +21,7 @@ export class Tabs extends BaseElement {
 
   constructor() {
     super();
+    this.label = '';
     this.activeTab = 0;
     this.overflow = false;
     this.prerenderedChildren = null;
@@ -118,8 +119,8 @@ export class Tabs extends BaseElement {
     `;
   }
 
-  firstUpdated() {
-    super.firstUpdated();
+  firstUpdated(changedProperties) {
+    super.firstUpdated(changedProperties);
 
     this.activeTab = 0;
     this.onResize();
