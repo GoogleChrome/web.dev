@@ -118,7 +118,6 @@ export async function addPageToContentIndex(pageURL, cache) {
   const url = u.pathname + u.search;
 
   const icon = getIconFromImageSrc(imageSrc);
-  console.debug('adding to Content Index', url, title);
 
   await index.add({
     description,
