@@ -9,6 +9,10 @@ import {store} from './store';
 import {normalizeUrl, getCanonicalPath} from './urls';
 import './utils/underscore-import-polyfill';
 
+/**
+ * This is the combined CSS/JS/layout version of web.dev from the initial HTML of the loaded page.
+ * We compare it later to incoming SPA-style updates: if it changes, we force a hard reload.
+ */
 const resourceVersion = document.body.getAttribute('data-version');
 
 /**
@@ -51,6 +55,7 @@ async function loadEntrypoint(url) {
  * @return {!Promise<{offline: boolean, html: string}>}
  */
 export async function getHTML(url, signal) {
+  // Allow both folders (e.g. /foo/) or HTML files (e.g. /foo/bar.html).
   if (!(url.endsWith('/') || url.endsWith('.html'))) {
     throw new Error(`can't fetch HTML for unsupported URL: ${url}`);
   }
@@ -106,18 +111,21 @@ function forceFocus(el) {
 }
 
 /**
- * Replaces the current #content element with new partial content.
+ * Replaces the current page's content with new content.
  *
- * @param {{offline: boolean, html: string}} partial
+ * @param {{offline: boolean, html: string}} pageState
  */
-function updateDom(partial) {
-  const incomingDocument = new DOMParser().parseFromString(
-    partial.html,
-    'text/html',
-  );
+function updateDom(pageState) {
+  const {html} = pageState;
+  const incomingDocument = new DOMParser().parseFromString(html, 'text/html');
 
-  const incomingResourceVersion = incomingDocument.getAttribute('data-version');
-  if (incomingResourceVersion !== resourceVersion) {
+  // Compare the incoming resource version to the one from the initial HTML
+  // payload. If it's newer, force a hard reload as there's probably some new
+  // CSS or JS we depend on.
+  const incomingResourceVersion = incomingDocument.body.getAttribute(
+    'data-version',
+  );
+  if (incomingResourceVersion !== resourceVersion || !resourceVersion) {
     throw new Error(
       `version was=${resourceVersion} now=${incomingResourceVersion}`,
     );
@@ -142,16 +150,17 @@ function updateDom(partial) {
   /** @type HTMLLinkElement */
   const rss = document.querySelector('link[type="application/atom+xml"]');
   if (rss) {
+    /** @type HTMLLinkElement */
     const incomingRSS = incomingDocument.querySelector(
       'link[type="application/atom+xml"]',
     );
-    rss.href = incomingRSS.rss || rss.href;
+    rss.href = (incomingRSS && incomingRSS.href) || rss.href;
   }
 
   // Focus on the first title (or fallback to content itself).
   /** @type HTMLHeadingElement */
   const toFocus = content.querySelector('h1, h2, h3, h4, h5, h6');
-  forceFocus(toFocus || content);
+  forceFocus(/** @type {HTMLElement|null} */ (toFocus || content));
 }
 
 /**
@@ -171,25 +180,25 @@ export async function swapContent({firstRun, url, signal, ready, state}) {
   // Kick off loading the correct JS entrypoint.
   const entrypointPromise = loadEntrypoint(url);
 
-  // If this is the first run, bail out early. We generate an inferred payload for back/forward nav,
-  // as we only have the initial prerendered HTML.
+  // If this is the first run, bail out early. We generate an inferred page state for back/forward
+  // nav: this just records the initial HTML in case the user goes forward then back.
   if (firstRun) {
-    const inferredPayload = {
+    const inferredPageState = {
       offline: store.getState().isOffline,
       html: document.documentElement.outerHTML,
     };
-    ready(url, {payload: inferredPayload});
+    ready(url, {pageState: inferredPageState});
     return entrypointPromise;
   }
 
   // Either use a partial from the previous state (user has hit back/forward) if it's not offline,
   // or fetch it anew from the network.
-  let payload;
-  if (state && state.payload && !state.payload.offline) {
-    payload = state.payload;
+  let pageState;
+  if (state && state.pageState && !state.pageState.offline) {
+    pageState = state.pageState;
   } else {
     store.setState({isPageLoading: true});
-    payload = await getHTML(url, signal);
+    pageState = await getHTML(url, signal);
     if (signal.aborted) {
       return;
     }
@@ -197,16 +206,16 @@ export async function swapContent({firstRun, url, signal, ready, state}) {
 
   // Code in entrypoint.jsuses this to trigger a reload if we see an "online" event. This partial
   // value is only returned via the Service Worker if we failed to fetch a 'real' page.
-  const isOffline = Boolean(payload.offline);
+  const isOffline = Boolean(pageState.offline);
   store.setState({currentUrl: url, isOffline});
 
   // Inform the router that we're ready early (even though the JS isn't done). This updates the URL,
   // which must happen before DOM changes and ga event.
-  ready(url, {payload});
+  ready(url, {pageState});
 
   ga('set', 'page', window.location.pathname);
   ga('send', 'pageview');
-  updateDom(payload);
+  updateDom(pageState);
 
   // Finally, just await for the entrypoint JS. It this fails we'll throw an exception and force a
   // complete reload.

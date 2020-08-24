@@ -28,10 +28,8 @@ process.on('unhandledRejection', (reason, p) => {
 });
 
 /**
- * Builds the cache manifest for inclusion into the Service Worker.
- *
- * TODO(samthor): This relies on both the gulp and CSS tasks occuring
- * before the Rollup build script.
+ * Builds the cache manifest for inclusion into the Service Worker. This runs
+ * last, after all other scripts have run, so we scan the 'dist' folder.
  */
 async function buildCacheManifest() {
   const config = {

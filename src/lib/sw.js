@@ -18,7 +18,9 @@ const cacheNames = {
   ...workboxCacheNames,
 };
 
-// This import defines self['_manifest'], used below.
+// This import defines self['_manifest'], used below. This is the workbox precache manifest, and
+// we fetch it this way as this allows us to build sw.js early, but build the manifest itself after
+// all other build scripts have run.
 try {
   self.importScripts('/sw-manifest.js');
 } catch (e) {
@@ -123,19 +125,20 @@ const pageStrategy = new workboxStrategies.NetworkFirst({
   cacheName: 'webdev-html-cache-v1',
   plugins: [contentExpirationPlugin],
 });
-
 const pageMatch = matchSameOriginRegExp(pagePathRe);
 workboxRouting.registerRoute(pageMatch, pageStrategy);
 
 /**
- * Cache images at runtime that aren't included in the original manifest, suchas author profiles.
+ * Cache images at runtime that aren't included in the original manifest, such as author profiles.
  */
+const assetStrategy = new workboxStrategies.StaleWhileRevalidate({
+  cacheName: 'webdev-assets-cache-v1',
+  plugins: [assetExpirationPlugin],
+});
+workboxRouting.registerRoute(new RegExp('/images/.*'), assetStrategy);
 workboxRouting.registerRoute(
-  new RegExp('/images/.*'),
-  new workboxStrategies.StaleWhileRevalidate({
-    cacheName: 'webdev-assets-cache-v1',
-    plugins: [assetExpirationPlugin],
-  }),
+  ({request}) => request.destination === 'image',
+  assetStrategy,
 );
 
 workboxRouting.setCatchHandler(async ({url}) => {
@@ -144,7 +147,7 @@ workboxRouting.setCatchHandler(async ({url}) => {
   if (pageMatch({url})) {
     // TODO(ewag): for now, just match English
     const response = await matchPrecache('/en/offline/index.html');
-    response.headers.set('X-Offline', 1);
+    response.headers.set('X-Offline', '1');
     return response;
   }
 });

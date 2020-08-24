@@ -87,35 +87,35 @@ export async function addPageToContentIndex(pageURL, cache) {
     // If this is a URL that doesn't appear to be supported, bail.
     return;
   }
-  const cacheKey = normalizedURL + 'index.json';
+
+  // Workbox inserts "/index.html" here.
+  const cacheKey = normalizedURL + 'index.html';
 
   if (!cache) {
     cache = await caches.open(CACHE_NAME);
   }
 
   const response = await cache.match(cacheKey);
-  // If for some reason there's no JSON in the cache for our cache key, bail.
+  // If for some reason there's no HTML in the cache for our cache key, bail.
   if (!response) {
     return;
   }
 
-  const {
-    description,
-    imageSrc,
-    title,
-    url: canonicalUrl,
-  } = await response.json();
+  // Parse the HTML and extract the description, image etc.
+  const raw = await response.text();
+  const candidateDocument = new DOMParser().parseFromString(raw, 'text/html');
+  const meta = (attr) => {
+    const el = candidateDocument.head.querySelector(`meta[${attr}]`);
+    return (el && el.getAttribute('content')) || '';
+  };
+  const description = meta('name="description"');
+  const imageSrc = meta('itemprop="image"');
+  const {title} = candidateDocument;
 
   // We can use a default image, but the other fields need to be set.
-  if (!(title && description && canonicalUrl)) {
+  if (!(title && description)) {
     return;
   }
-
-  // Removes the domain part from the URL. The URL we get back from the server
-  // in partials is always "https://web.dev", but the Context Indexing API only
-  // wants to handle local URLs.
-  const u = new URL(canonicalUrl);
-  const url = u.pathname + u.search;
 
   const icon = getIconFromImageSrc(imageSrc);
 
@@ -125,8 +125,8 @@ export async function addPageToContentIndex(pageURL, cache) {
     category: 'article',
     id: normalizedURL,
     icons: [icon],
-    url: url,
-    launchUrl: url,
+    url: normalizedURL,
+    launchUrl: normalizedURL,
   });
 }
 
