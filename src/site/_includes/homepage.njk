@@ -1,25 +1,54 @@
 ---
 layout: layout
 title: web.dev
-description: |
-  Get the web's modern capabilities on your own sites and apps with useful
-  guidance and analysis from web.dev.
-date: 2018-11-05
+show_banner: false
+eleventyComputed:
+  canonicalUrl: "/"
 ---
+<div>
+  {#
+    TODO: Convert w-masthead-home back to a <header> when this campaign ends.
+    For a11y you're supposed to only use one <header> element per page.
+  #}
+  <style>
+  .w-hero-banner {
+    color: white;
+  }
+  .w-hero-banner__inner {
+    background-color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 16px;
+    text-align: center;
+  }
+  @media (min-width: 865px) {
+    .w-hero-banner__inner {
+      padding: 20px 24px;
+    }
+  }
+  .w-hero-banner__inner a {
+    color: white;
+    text-decoration: underline;
+  }
+  .w-hero-banner__inner a:hover {
+    text-decoration: none;
+  }
+  </style>
+  <header class="w-hero-banner">
+    <div class="w-hero-banner__inner">
+      {{ i18n.banner_blm_html | safe }}
+    </div>
+  </header>
 
-{# *-landing-page classes are a holdover from devsite. #}
-{# It would be great to remove them as part of the v1 migration. #}
-
-<div class="home-landing-page">
-  <header class="w-masthead-home">
+  <div class="w-masthead-home">
     <div class="w-masthead-home__container">
       <div class="w-masthead-home__left">
         <h1 class="w-headline--two w-font-weight--medium">
-          Let's build the future of the web
+          {{ i18n.headline }}
         </h1>
         <p>
-          Get the web's modern capabilities on your own sites and apps with useful
-          guidance and analysis from web.dev.
+          {{ i18n.subheadline }}
         </p>
         <div class="w-masthead-home__buttons">
           <a
@@ -29,7 +58,7 @@ date: 2018-11-05
             data-action="click"
             href="/measure"
           >
-            Test my site
+            {{ i18n.test_cta }}
           </a>
           <a
             class="w-button w-button--secondary gc-analytics-event"
@@ -38,14 +67,14 @@ date: 2018-11-05
             data-action="click"
             href="/learn"
           >
-            Explore topics
+            {{ i18n.explore_cta }}
           </a>
         </div>
       </div>
     </div>
-  </header>
+  </div>
 
-  <section class="w-layout-container w-text--center">
+  {# <section class="w-layout-container w-text--center">
     <p class="w-headline--two-small">
       As the web advances, users' expectations grow. With web.dev's guidance, you
       can give your users the best experience, wherever they are.
@@ -59,30 +88,48 @@ date: 2018-11-05
     >
       About web.dev
     </a>
+  </section> #}
+
+  {# IMPORTANT — Restore the about section above when we take down this banner #}
+  <section class="w-home-promo" id="live">
+    <div class="w-home-promo__grid">
+      <div class="w-home-promo__box" aria-hidden="true">
+        <a href="/live/" tabindex="-1"><img src="/live/banner.png" alt="" width="1320" height="740" /></a>
+      </div>
+      <div>
+        <p>
+          {{ i18n.webdev_live_html | safe }}
+        </p>
+      </div>
+    </div>
   </section>
 
   <section>
     <div class="w-layout-container w-pb--non">
       <header class="w-text--center">
         <h2 class="w-headline--two-faded">
-          Latest stories
+          {{ i18n.latest_headline }}
         </h2>
         <p>
-          See our latest news, updates, and stories for developers.
+          {{ i18n.latest_subheadline }}
         </p>
       </header>
     </div>
     <div class="w-grid w-pb--std">
-      <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
+      <div class="w-grid__columns w-grid__columns--featured" role="list">
         {% for post in recentPosts %}
-          {% PostCard post %}
+          {% if loop.first %}
+            {% PostCard post, true %}
+          {% else %}
+            {% PostCard post %}
+          {% endif %}
         {% endfor %}
       </div>
     </div>
     <div class="w-layout-container w-pt--non w-pb--xl">
       <div class="w-text--center">
         <a class="w-button" href="/blog">
-          See all articles
+          {{ i18n.see_all }}
         </a>
       </div>
     </div>
@@ -92,11 +139,10 @@ date: 2018-11-05
     <div class="w-layout-container w-pb--non">
       <header class="w-text--center">
         <h2 class="w-headline--two-faded">
-          Explore topics
+          {{ i18n.explore_cta }}
         </h2>
         <p>
-          Learn more about a topic, and practice your skills with a hands-on
-          codelab.
+          {{ i18n.explore_subheadline }}
         </p>
       </header>
     </div>
@@ -116,7 +162,7 @@ date: 2018-11-05
           data-action="click"
           href="/learn"
         >
-          See all topics
+          {{ i18n.see_topics }}
         </a>
       </div>
     </div>
@@ -126,11 +172,10 @@ date: 2018-11-05
 
   <section class="w-layout-container w-text--center">
     <h2 class="w-headline--two-faded">
-      Save your progress
+      {{ i18n.save_cta }}
     </h2>
     <p>
-      See how your website performs over time, and keep track as you learn on
-      your own schedule.
+      {{ i18n.save_subheadline }}
     </p>
     <div>
       <a
@@ -140,7 +185,7 @@ date: 2018-11-05
         data-action="click"
         href="/measure"
       >
-        Test my site
+        {{ i18n.test_cta }}
       </a>
     </div>
   </section>
