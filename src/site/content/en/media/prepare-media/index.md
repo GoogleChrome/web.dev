@@ -7,14 +7,14 @@ description: |
   Take a raw video file off a camera and transform it into a resource that you
   can embed in a web page.
 date: 2017-06-30
-updated: 2020-08-20
+updated: 2020-08-27
 tags:
   - media
   - video
 ---
 
 Now that I've introduced you to [applications used for manipulating media
-files](../application-basics), over the next few pages, I'm going to take a raw
+files](/media-application-basics), over the next few pages, I'm going to take a raw
 video file off a camera and transform it into a resource that you can
 embed in a web page. I'm specifically going to show you how to format your video
 for mobile playback, and how to create multiple files to cover a range of
@@ -24,7 +24,7 @@ file for use on other browsers.
 {% Aside %}
 This section provides explanations of file manipulation concepts,
 with command lines only to illustrate the concepts. There is a companion [cheat
-sheet](../cheatsheet) that shows more commands and is designed as a quick reference
+sheet](/media-cheat-sheet) that shows more commands and is designed as a quick reference
 for someone who knows the concepts.
 {% endAside %}
 
@@ -65,7 +65,7 @@ codecs](/containers-and-codecs).
 This section covers four tasks. You will need to do all of them to prepare an
 `.mov` file for display on the web.
 
-* In [Containers and codecs](../containers-and-codecs) I show you how to
+* In [Containers and codecs](/containers-and-codecs) I show you how to
   convert an `.mov` file to the formats required for web playback.
 
 * In [Bitrate](/bitrate) and [Resolution](/resolution) you'll learn to make

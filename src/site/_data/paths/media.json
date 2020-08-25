@@ -10,9 +10,9 @@
       "title": "Concepts",
       "pathItems": [
         "media-experience",
-        "file-basics",
-        "application-basics",
-        "cheatsheet"
+        "media-file-basics",
+        "media-application-basics",
+        "media-cheat-sheet"
       ]
     },
     {
@@ -29,7 +29,7 @@
       "pathItems": [
         "add-media",
         "video-and-source-tags",
-        "accessibility"
+        "media-accessibility"
       ]
     }
   ]

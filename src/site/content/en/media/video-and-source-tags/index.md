@@ -10,10 +10,13 @@ description: |
   MP4 files for different browsers. For anyone to see it, you still need to add
   it to a web page.
 date: 2014-14-15
-updated: 2020-08-20
+updated: 2020-08-27
+tags:
+  - media
+  - video
 ---
 
-You've properly [prepared a video file](../prepare-media/) for the web. You've
+You've properly [prepared a video file](/prepare-media/) for the web. You've
 given it correct dimensions and the correct resolution. You've even created
 separate WebM and MP4 files for different browsers.
 
@@ -30,7 +33,7 @@ You always have the option of uploading your file to
 [YouTube](https://www.youtube.com/) or [Vimeo](https://vimeo.com/). In many
 cases, this is preferable to the procedure described here. Those services handle
 formatting and filetype conversion for you, as well as provide the means to
-embedd a video in your web page. If need to manage this yourself, read on.
+embed a video in your web page. If you need to manage this yourself, read on.
 {% endAside %}
 
 ## Specify a single file
@@ -47,26 +50,25 @@ it can play the provided video file. If it can't, the enclosed text displays.
 
 ### Specify multiple file formats
 
-Recall from [File basics](../file-basics) that not all browsers support the same
+Recall from [Media file basics](/media-file-basics) that not all browsers support the same
 video formats. The `<source>` element lets you specify multiple formats as a
 fallback in case the user's browser doesn't support one of them.
 
-The example below produces the ebedded video that immediately follows.
+The example below produces the embedded video that immediately follows.
 
 ```html
 <video controls>
   <source src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.webm" type="video/webm">
   <source src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.mp4" type="video/mp4">
-    <p>Your browser cannot play the provided video file.</p>
+  <p>Your browser cannot play the provided video file.</p>
 </video>
 ```
 
 [Try it](https://track-demonstration.glitch.me) ([source](https://glitch.com/edit/#!/track-demonstration))
 
-When the browser parses the `<source>` tags, it uses the optional `type`
-attribute to determine which file to download and play. If the browser
-supports WebM, it plays that; if not, it checks whether it can play
-MPEG-4 videos.
+You should always add a `type` attribute to the `<source>` tags event though it
+is optional. This ensures that the browser only downloads the file that it is
+capable of playing.
 
 This approach has several advantages over serving different HTML or server-side
 scripting, especially on mobile:
@@ -81,7 +83,7 @@ scripting, especially on mobile:
 
 These issues are especially important in mobile contexts, where bandwidth and
 latency are at a premium and the user's patience is likely limited. Omitting the
-type attribute can affect performance when there are multiple sources with
+`type` attribute can affect performance when there are multiple sources with
 unsupported types.
 
 {% Aside %} There are a few ways you can dig into the details. Check out [A
@@ -103,11 +105,13 @@ otherwise video source type checks won't work.
 Save bandwidth and make your site feel more responsive: use media fragments to
 add start and end times to the video element.
 
-<video controls>
-  <source src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.webm#t=5,10" type="video/webm">
-  <source src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.mp4#t=5,10" type="video/mp4">
-  <p>This browser does not support the video element.</p>
-</video>
+<figure class="w-figure">
+  <video controls class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.webm#t=5,10" type="video/webm">
+    <source src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.mp4#t=5,10" type="video/mp4">
+    <p>This browser does not support the video element.</p>
+  </video>
+</figure>
 
 To use a media fragment, add `#t=[start_time][,end_time]` to the media URL. For
 example, to play the video from seconds 5 to 10, specify:
@@ -116,9 +120,9 @@ example, to play the video from seconds 5 to 10, specify:
 <source src="video/chrome.webm#t=5,10" type="video/webm">
 ```
 
-You can also specify the times in hours:minutes:seconds. For example,
-#t=00:01:05 starts the video at one minute, five seconds. To play only the first
-minute of video, specify #t=,00:01:00
+You can also specify the times in `<hours>:<minutes>:<seconds>`. For example,
+`#t=00:01:05` starts the video at one minute, five seconds. To play only the
+first minute of video, specify `#t=,00:01:00`.
 
 You can use this feature to deliver multiple views on the same video&ndash;like
 cue points in a DVD&ndash;without having to encode and serve multiple files.
@@ -126,20 +130,17 @@ cue points in a DVD&ndash;without having to encode and serve multiple files.
 For this feature to work, your server must support range requests and that
 capability must be enabled. Most servers enable range requests by default.
 Because some hosting services turn them off, you should confirm that range
-requests are available for using fragments on your site. Fortunately, you can do
-this in your brower developer tools.
+requests are available for using fragments on your site.
 
-After uploading your media and your HTML page to your server, visit the page in
-a browser. Next, open DevTools by right-clicking and selecting **Inspect**.
-Select **Network** in the top menu. From the browser page itself, click reload.
-Back in DevTools, locate your media file in the **Name** column. When you click
-the file, the pages request and response headers should appear. I've shown this
-in the image below. Look for the `Accept-Ranges` header is and verify that is
-says `bytes`. In a the image, I've drawn a red box  around this header. If you
-do not see `butes` as the value, you'll need to contact your hosting provider.
+Fortunately, you can do this in your brower developer tools. In Chrome, for
+instance, it's in the [Network
+panel](https://developers.google.com/web/tools/chrome-devtools/?utm_source=devtools#network).
+Look for the `Accept-Ranges` header is and verify that it says `bytes`. In a the
+image, I've drawn a red box  around this header. If you do not see `butes` as
+the value, you'll need to contact your hosting provider.
 
 <figure class="w-figure">
-  <img src="./accept-ranges-chrome-devtools.png" alt="Chrome DevTools screenshot: Accept-Ranges: bytes.">
+  <img class="w-screenshot w-screenshot--filled" src="./accept-ranges-chrome-devtools.png" alt="Chrome DevTools screenshot: Accept-Ranges: bytes.">
   <figcaption class="w-figcaption">Chrome DevTools screenshot: Accept-Ranges: bytes.</figcaption>
 </figure>
 
@@ -151,14 +152,14 @@ or start playback.
 
 ```html
 <video poster="poster.jpg" ...>
-  ...
+  …
 </video>
 ```
 
 A poster can also be a fallback if the video `src` is broken or if none of the
 supplied video formats are supported. The only downside to a poster images is an
 additional file request, which consumes some bandwidth and requires rendering.
-For more information see [Efficiently encode images](../uses-optimized-images/).
+For more information see [Efficiently encode images](/uses-optimized-images/).
 
 
 <div class="w-columns">
@@ -207,7 +208,7 @@ controls.
 </div>
 
 You can control video dimensions using JavaScript or CSS. JavaScript libraries
-and plugins such as [FitVids](http://fitvidsjs.com/) (outside the scope fo this
+and plugins such as [FitVids](http://fitvidsjs.com/) (outside the scope of this
 article) make it possible to maintain appropriate size and aspect ratio, even
 for videos from YouTube and other sources.
 
@@ -223,7 +224,7 @@ Surdakowski](http://avexdesigns.com/responsive-youtube-embed/)).
 {% Aside 'caution' %}
 Don't force element sizing that results in an [aspect
 ratio](https://www.google.com/search?q=aspect+ratio&oq=aspect+ratio&aqs=chrome..69i57j35i39j0l6.1896j0j7&sourceid=chrome&ie=UTF-8)
-different from the original video. Squashed or stretched looks bad.
+different from the original video. Squashed or stretched videos looks bad.
 {% endAside %}
 
 **CSS:**
@@ -274,11 +275,11 @@ orientation:
 
 <div class="w-columns">
 <figure class="w-figure">
-  <img src="./iphone-video-playing-portrait.png" alt="Screenshot of video playing in Safari on iPhone, portrait.">
+  <img  class="w-screenshot w-screenshot--filled" src="./iphone-video-playing-portrait.png" alt="Screenshot of video playing in Safari on iPhone, portrait.">
   <figcaption class="w-figcaption">Screenshot of video playing in Safari on iPhone, portrait.</figcaption>
 </figure>
 <figure class="w-figure">
-  <img src="./iphone-video-playing-landscape.png" alt="Screenshot of video playing in Safari on iPhone, landscape.">
+  <img  class="w-screenshot w-screenshot--filled" src="./iphone-video-playing-landscape.png" alt="Screenshot of video playing in Safari on iPhone, landscape.">
   <figcaption class="w-figcaption">Screenshot of video playing in Safari on iPhone, landscape.</figcaption>
 </figure>
 </div>

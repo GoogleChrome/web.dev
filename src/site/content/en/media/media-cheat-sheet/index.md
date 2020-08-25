@@ -7,19 +7,23 @@ description: |
   An ordered rundown of commands needed to get from a raw mov file to encrypted
   assets packaged for DASH or HLS.
 date: 2018-09-20
-updated: 2020-08-20
+updated: 2020-08-27
+tags:
+  - media
+  - video
+  - audio
 ---
 
-This page offers kinds sets of resources:
+This page offers these resources:
 
 * Commands for manipulating specific characteristics of media files.
 * The sequence of commands needed to get from a raw mov file to encrypted media assets.
 
 Conversion is done with these applications:
 
-* [Shaka Packager](https://github.com/google/shaka-packager) ([on StackOverflow](https://stackoverflow.com/questions/tagged/shaka))
-* [ffmpeg](https://ffmpeg.org/download.html), version 4.2.2-tessus ([on StackOverflow](https://stackoverflow.com/questions/tagged/ffmpeg))
-* [OpenSSL](https://www.openssl.org/)  ([on StackOverflow](https://stackoverflow.com/questions/tagged/openssl))
+* [Shaka Packager](https://github.com/google/shaka-packager) ([on Stack Overflow](https://stackoverflow.com/questions/tagged/shaka))
+* [FFmpeg](https://ffmpeg.org/download.html), version 4.2.2-tessus ([on Stack Overflow](https://stackoverflow.com/questions/tagged/ffmpeg))
+* [OpenSSL](https://www.openssl.org/)  ([on Stack Overflow](https://stackoverflow.com/questions/tagged/openssl))
 
 
 Although I've tried to show equivalent operations for all procedures, not all
@@ -32,7 +36,7 @@ conversion. For this cheat sheet, I often show these operations as separate
 commands for the sake of clarity.
 
 Please let me know of useful additions or corrections.
-[Pull requests are welcome](https://github.com/GoogleChrome/web.dev/tree/media/src/site/content/en/media/cheatsheet).
+[Pull requests are welcome](https://github.com/GoogleChrome/web.dev/tree/media/src/site/content/en/media/media-cheat-sheet).
 
 {% Aside %}
 This page contains a few more commands than are covered in this section. Not
@@ -48,7 +52,7 @@ packager input=myvideo.mp4 --dump_stream_info
 ffmpeg -i myvideo.mp4
 ```
 
-Technically, ffmpeg always requires an output file format. Calling ffmpeg this
+Technically, FFmpeg always requires an output file format. Calling FFmpeg this
 way will give you an error message explaining that; however, it lists
 information not available using Shaka Packager.
 
@@ -81,7 +85,7 @@ packager \
   input=myvideo.webm,stream=video,output=myvideo_video.webm \
   input=myvideo.webm,stream=audio,output=myvideo_audio.webm
 ```
-### FFMpeg
+### FFmpeg
 
 ***MP4***
 
@@ -101,7 +105,7 @@ ffmpeg -i myvideo.webm -acodec copy -vn myvideo_audio.webm
 
 ### Bitrate
 
-For ffmpeg, I can do this while I'm converting to mp4 or WebM.
+For FFmpeg, I can do this while I'm converting to mp4 or WebM.
 
 ```bash
 ffmpeg -i myvideo.mov -b:v 350K myvideo.mp4
@@ -133,7 +137,7 @@ ffmpeg -i myvideo.mov myvideo.webm
 
 ### Synchronize audio and video
 
-To ensure that audio and video synchronize during playback insert keyframes.
+To ensure that audio and video synchronize during playback, insert keyframes.
 
 ```bash
 ffmpeg -i myvideo.mp4 -keyint_min 150 -g 150 -f webm -vf setsar=1:1 out.webm
@@ -247,18 +251,20 @@ packager \
 ### Create a key information file
 
 To encrypt for HLS you need a key information file in addition to a key file. A
-key information file has the following format.
+key information file is a text file with the format below. It should have the extension `.keyinfo`. For example: `encrypt.keyinfo`.
 
 ```bash
 key URI
 key file path
+private key
 ```
 
-For example:
+The key URI is where the `media.key` ([created above](#create-a-key) will be located on your server. The key file path is it's location relative to the key information file. Finally, the private key is the contents of the `media.key` file itself. For example:
 
 ```bash
 https://example.com/media.key
-media.key
+/path/to/media.key
+8b4c39c498949536
 ```
 
 ### Encrypt for HLS
@@ -337,7 +343,7 @@ Not all steps are possible with Shaka Packager, so I'll use ffmpeg when I need t
    framework, you may not need to do this.
 
    ```bash
-   TBD
+   ffmpeg -i mymovie.mp4 -i myaudio.m4a -c copy finalmovie.mp4
    ```
 
 ### DASH/MP4 with Shaka Packager
@@ -382,7 +388,7 @@ Not all steps are possible with Shaka Packager, so I'll use ffmpeg when I need t
    framework, you may not need to do this.
 
    ```bash
-   TBD
+   ffmpeg -i mymovie.mp4 -i myaudio.m4a -c copy finalmovie.mp4
    ```
 
 ### Widevine
@@ -413,18 +419,18 @@ Widevine works.)
    framework, you may not need to do this.
 
    ```bash
-   TBD
+   ffmpeg -i mymovie.mp4 -i myaudio.m4a -c copy finalmovie.mp4
    ```
 
 ### HLS/MP4
 
 HLS only supports MP4, so first you'll need to convert to the MP4 container and
 supported codecs. Not all steps are possible with Shaka Packager, so I'll use
-ffmpeg when I need to.
+FFmpeg when I need to.
 
 1. Convert the file type, video codec, and bitrate.
 
-    The default pixel format, yuv420p is used because one isn't supplied in the
+    The default pixel format, yuv420p, is used because one isn't supplied in the
     command line. The app will give you an error message that it is deprecated.
     I've chosen not to override the default because, though deprecated yuv420p
     is the most widely supported.

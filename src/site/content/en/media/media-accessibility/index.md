@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Accessibility with the <track> tag
+title: Media accessibility
 authors:
   - joemedley
 description: |
@@ -9,7 +9,7 @@ description: |
   descriptions are the only way many users can experience your videos, and in
   some jurisdictions, they're even required by law or regulation.
 date: 2020-08-20
-updated: 2020-08-20
+updated: 2020-08-27
 ---
 
 Accessibility isn't like icing on a cake. It's never anything you put on a
@@ -76,11 +76,11 @@ The branch breaks, and he starts to fall.
 
 Each item in a track file is called a cue. Each cue has a start time and end
 time separated by an arrow, with cue text in the line below. Cues can optionally
-also have IDs: 'railroad' and 'manuscript' in the example below. Cues are
+also have IDs: `railroad` and `manuscript` in the example below. Cues are
 separated by an empty line.
 
 ```text
-WEBVTT FILE
+WEBVTT
 
 railroad
 00:00:10.000 --> 00:00:12.500
@@ -94,9 +94,9 @@ that touched the lead to the pages of your manuscript.
 Cue times are in hours:minutes:seconds:milliseconds format. Parsing is strict.
 Numbers must be zero padded if necessary: hours, minutes, and seconds must have
 two digits (00 for a zero value) and milliseconds must have three digits (000
-for zero). There is an excellent WebVTT validator at quuz.org/webvtt, which
-checks for errors in time formatting, and problems such as non-sequential times.
+for zero). There is an excellent WebVTT validator at [Live WebVTT
+Validator](https://quuz.org/webvtt/), which checks for errors in time
+formatting, and problems such as non-sequential times.
 
 You can create a VTT file by hand, thought there are [services that will create
-them for
-you](https://www.google.com/search?sxsrf=ALeKk00bALi7XyBF8G5l7fK0eE1rwJEraQ%3A1596834624634&ei=QMMtX7G-JKm-0PEPlMCT0AI&q=webvtt+services&oq=webvtt+services&gs_lcp=CgZwc3ktYWIQAzIFCAAQzQIyBQgAEM0COgQIABBHUKZEWMxIYI1VaABwAXgAgAGAAYgBswKSAQMxLjKYAQCgAQGqAQdnd3Mtd2l6wAEB&sclient=psy-ab&ved=0ahUKEwix3sHEgIrrAhUpHzQIHRTgBCoQ4dUDCAw&uact=5).
+them for you](https://www.google.com/search?q=webvtt+services).

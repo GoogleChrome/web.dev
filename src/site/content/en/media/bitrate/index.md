@@ -7,13 +7,16 @@ description: |
   Bitrate is the maximum number of bits used to encode one second of a stream.
   The more bits used to encode a second of stream, the higher the fidelity.
 date: 2017-06-30
-updated: 2020-08-20
+updated: 2020-08-27
+tags:
+  - media
+  - video
 ---
 
-In the [previous section](../containers-and-codecs), I showed you how to change
+In the [previous section](/containers-and-codecs), I showed you how to change
 a media file's container and codec. In this section, I show how to change
-bitrate before moving on to [resolution](../resolution) and, finally, [embedding
-in a page](../add-media).
+bitrate before explaining [resolution](/resolution) and, finally, [how to
+embed your file in a page](/add-media).
 
 Bitrate and resolution correlate to the amount of data in a media file. It
 probably goes without saying, but I'm going to say it anyway. You can always
@@ -23,15 +26,15 @@ software and algorithms, quality is going to take a hit.
 So always start your conversion process with the highest quality source file you
 can get your hands on. Before doing anything, even before changing the codec or
 container, [check the file
-characteristics](../cheatsheet/#display-characteristics) and verify that your
+characteristics](/media-cheat-sheet/#display-characteristics) and verify that your
 source file has a higher bitrate or resolution than your desired result.
 
 _Bitrate_ is the maximum number of bits used to encode one second of a media stream.
 The more bits used to encode a second of stream, the higher the fidelity.
 
-Unsurprisingly, bitrates the the web can handle are low. The table below shows
-you should target for common network conditions. For the sake of comparison,
-I've thrown in values for Blue-rays and DVDs.
+Unsurprisingly, bitrates the web can handle are low. The table below shows you
+what bitrate you should target for common network conditions. For the sake of
+comparison, I've thrown in values for Blu-rays and DVDs.
 
 {% Aside %}
 The web numbers are approximations. This chart should not be a substitute for
@@ -61,5 +64,4 @@ ffmpeg -i glocken.mov -b:v 350k -b:a 64k glocken.mp4
 Notice that there are two bitrate flags, `-b:a` and `-b:v`. One is for audio and the
 other is for video.
 
-Now that your files are prepared, it's time to [add them to a web
-page](../add-media).
+Now that your files are prepared, it's time to [adjust their resolutions](/resolution).

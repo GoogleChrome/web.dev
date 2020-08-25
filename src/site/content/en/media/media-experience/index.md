@@ -7,7 +7,7 @@ description: |
   Videos can be fun and informative. For a good user experience, videos need to
   meet a number of technical requirements.
 date: 2017-06-30
-updated: 2020-08-20
+updated: 2020-08-27
 tags:
   - media
   - video

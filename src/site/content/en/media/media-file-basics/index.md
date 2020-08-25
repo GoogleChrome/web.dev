@@ -8,7 +8,7 @@ description: |
   is. Preparing a video for serving from your own site is a bit more
   complicated.
 date: 2020-06-19
-updated: 2020-08-20
+updated: 2020-08-27
 tags:
   - media
   - video
@@ -86,5 +86,5 @@ _Resolution_ is the amount of information in a single frame of video, given as
 the number of logical pixels in each dimension. I provide more information about this
 concept in [Resolution](/resolution).
 
-In [Application basics](../application-basics/), I'll show you how to examine
+In [Application basics](/application-basics/), I'll show you how to examine
 these characteristics using two command line tools: Shaka Packager and FFmpeg.

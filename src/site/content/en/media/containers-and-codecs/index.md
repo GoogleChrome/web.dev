@@ -8,7 +8,7 @@ description: |
   system shell is only a container multiple multiple data streams and different
   allowable types of encodings.
 date: 2017-06-30
-updated: 2020-08-20
+updated: 2020-08-27
 tags:
   - FFmpeg
   - files
@@ -37,10 +37,13 @@ To create this article, I used FFmpeg version 4.2.2-tessus. If the command
 lines don't work for your version of FFmpeg, consult the FFmpeg documentation.
 {% endAside %}
 
-Webm takes longer to create than MP4. This isn't surprising when you
-look at the results. While MP4 compresses to about two-thirds of the original
-file's size, WebM is down to a mere fraction of the original's size. Though,
-your results may vary.
+Webm takes longer to create than MP4. This isn't surprising when you look at the
+results. While MP4 compresses to about two-thirds of the original file's size,
+WebM is down to a mere fraction of the original's size. Though, your results may
+vary. You can see this for yourself using the [`ls -a` bash
+command](https://www.tecmint.com/15-basic-ls-command-examples-in-linux/) in the
+folder where your media files are located. For example:
+
 
 ```bash
 -rw-r--r-- 1 jmedley  eng  12080306 Apr 21 13:13 glocken.mov
@@ -51,7 +54,7 @@ your results may vary.
 ## Check your work
 
 To verify your results, use FFmpeg and Shaka Packager as already shown in
-[Application basics](../application-basics)
+[Media Application basics](/media-application-basics):
 
 ```bash
 packager input=glocken.mp4 --dump_stream_info
@@ -63,7 +66,7 @@ ffmpeg -i glocken.mp4
 
 ## Codecs
 
-Next the codec. As stated in [File basics](../file-basics), a codec is _not_ the
+Next the codec. As stated in [Media file basics](/media-file-basics), a codec is _not_ the
 same thing as a container (file type). Two files of the same container type
 could hold data compressed using different codecs. The WebM format for example
 allows audio to be encoded using either
@@ -79,19 +82,18 @@ ffmpeg -i glocken.mov -c:a vorbis -c:v av1 glocken.mkv
 In this example, the `-c:a` flag and the `-c:v` are for specifying the audio and
 video codecs respectively.
 
-The [cheat sheet](.../cheatsheet#codec) lists commands needed to convert codecs.
+The [cheat sheet](./media-cheat-sheet#codec) lists commands needed to convert codecs.
 The tables below summarize the libraries used in FFmpeg to perform the codec
 conversions for WebM and MP4 files. These are the formats recommended for DASH
 and HLS respectively.
 
 ## Video
 
-| Codec | Extension | Library    |
-| ----- | --------- | ---------- |
-| av1   | mkv       | libaom-av1 |
-|       | WebM      | libaom-av1 |
-| h264  | MP4       | libx264    |
-| vp9   | WebM      | libvpx-vp9 |
+| Codec | Extension    | Library    |
+| ----- | ------------ | ---------- |
+| av1   | WebM<br/>mkv | libaom-av1 |
+| h264  | MP4          | libx264    |
+| vp9   | WebM         | libvpx-vp9 |
 
 ## Audio
 
@@ -101,4 +103,4 @@ and HLS respectively.
 | opus   | WebM      | libopus    |
 | vorbis | WebM      | libvorbis  |
 
-Next, I'll show you how to change the file's [bitrate](../bitrate).
+Next, I'll show you how to change the file's [bitrate](/bitrate).

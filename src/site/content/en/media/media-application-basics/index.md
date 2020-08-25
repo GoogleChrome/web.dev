@@ -7,10 +7,12 @@ description: |
   Much media work requires changing characteristics of media files. In this
   section, I provide an onramp into that world.
 date: 2017-06-09
-updated: 2020-08-20
+updated: 2020-08-27
 tags:
   - media
   - video
+  - Shaka
+  - FFmpeg
 ---
 
 Much media work requires changing characteristics of media files, such as
@@ -27,7 +29,7 @@ This page describes the basic usage for two common command-line media utilities:
 Packager](https://github.com/google/shaka-packager) and
 [FFmpeg](https://ffmpeg.org/download.html). Why cover two applications? While
 both are powerful and useful by themselves, neither does everything needed to
-prepare media for the web. I've also created a [cheat sheet](cheatsheet) showing
+prepare media for the web. I've also created a [cheat sheet](media-cheat-sheet) showing
 common operations with those applications.
 
 These aren't the only options available for many file manipulation tasks. But
@@ -114,7 +116,7 @@ Stream [1] type: Audio
 Packaging completed successfully.
 ```
 
-Look for the characteristics discussed in [File basics](../file-basics) and
+Look for the characteristics discussed in [Media file basics](/media-file-basics) and
 notice a few things. The height and width are correct for full HD, and the audio
 and video codecs are among the preferred codecs for their container types, AAC
 for audio and H264 for video. Notice also that streams are identified with
@@ -172,4 +174,4 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'glocken.mp4':
 At least one output file must be specified
 ```
 
-Now that you've tried your hand at using Shaka and FFmpeg, it's time to [Prepare media files for the web](../prepare-media).
+Now that you've tried your hand at using Shaka and FFmpeg, it's time to [Prepare media files for the web](/prepare-media).
