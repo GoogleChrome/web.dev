@@ -54,6 +54,20 @@ change.<a name="shape-face-text"></a>
           <em>Updated April 14, 2020</em>
         </td>
       </tr>
+      <tr>
+        <td>
+          <a href="/notification-triggers/">
+            Notification Triggers
+          </a>
+        </td>
+        <td>
+          Notification Triggers let you schedule notifications in advance, so
+          that the operating system will deliver the notification at the right
+          time - even if there is no network connectivity, or the device is in
+          battery saver mode.<br>
+          <em>Updated August 23, 2020</em>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -120,20 +134,6 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
           allows web apps to read or save changes directly to files and folders
           on the user's device.<br>
           <em>Updated April 13, 2020</em>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="/notification-triggers/">
-            Notification Triggers
-          </a>
-        </td>
-        <td>
-          Notification Triggers let you schedule notifications in advance, so
-          that the operating system will deliver the notification at the right
-          time - even if there is no network connectivity, or the device is in
-          battery saver mode.<br>
-          <em>Updated December 12, 2019</em>
         </td>
       </tr>
       <tr>
