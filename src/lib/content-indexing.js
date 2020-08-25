@@ -88,14 +88,11 @@ export async function addPageToContentIndex(pageURL, cache) {
     return;
   }
 
-  // Workbox inserts "/index.html" here.
-  const cacheKey = normalizedURL + 'index.html';
-
   if (!cache) {
     cache = await caches.open(CACHE_NAME);
   }
 
-  const response = await cache.match(cacheKey);
+  const response = await cache.match(normalizedURL);
   // If for some reason there's no HTML in the cache for our cache key, bail.
   if (!response) {
     return;

@@ -114,7 +114,7 @@ function ensureServiceWorker() {
     getHTML('/');
   }
 
-  // We claim active clients if the Service Worker's architecture rev changes. This isn't on any
+  // We activate the new Service Worker only if its architecture rev changes. This isn't on any
   // minor Service Worker change (i.e., new JS or CSS), only when the major version changes.
   // (We can't reliably force a reload via the Client interface of the SW itself, as the method is
   // unsupported in Safari.)

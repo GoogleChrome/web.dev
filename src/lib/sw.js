@@ -45,7 +45,23 @@ precacheAndRoute(self['_manifest'] || [], {
 const serviceWorkerArchitecture = 'v4';
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(self.skipWaiting());
+  const p = Promise.resolve().then(async () => {
+    const previousArchitecture = await idb.get('arch');
+    if (previousArchitecture === serviceWorkerArchitecture) {
+      return; // no arch change, don't force reload, upgrade will happen over time
+    }
+    await idb.set('arch', serviceWorkerArchitecture);
+    if (previousArchitecture) {
+      console.warn(
+        'previous SW arch was',
+        previousArchitecture,
+        'new',
+        serviceWorkerArchitecture,
+      );
+    }
+    await self.skipWaiting();
+  });
+  event.waitUntil(p);
 });
 
 self.addEventListener('activate', (event) => {
@@ -70,18 +86,8 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('activate', (event) => {
-  const p = Promise.resolve().then(async () => {
-    const previousArchitecture = await idb.get('arch');
-    if (previousArchitecture === serviceWorkerArchitecture) {
-      return; // no arch change, don't force reload, upgrade will happen over time
-    }
-    await idb.set('arch', serviceWorkerArchitecture);
-
-    // If the architecture changed (including due to an initial install), claim our clients so they
-    // get the 'controllerchange' event and take over their network requests.
-    await self.clients.claim();
-  });
-  event.waitUntil(p);
+  // Claim unclaimed clients (only relevant for new installs).
+  event.waitUntil(self.clients.claim());
 });
 
 initializeGoogleAnalytics();
@@ -121,9 +127,30 @@ workboxRouting.registerRoute(
  * This won't match any URL that contains a "." except for a trailing ".html".
  */
 const pagePathRe = new RegExp('^/[\\w-/]*(?:|\\.html)$');
+
+/**
+ * Provides a plugin that ensures requests for "/index.html" are cached with the naked folder
+ * instead. We need consistent keys as the Content Indexing API integration looks up pages by
+ * key.
+ */
+const indexHtmlCacheKeyPlugin = {
+  cacheKeyWillBeUsed: async ({request}) => {
+    const u = new URL(request.url);
+    if (u.pathname.endsWith('/index.html')) {
+      // strip "index.html"
+      const normalized = u.pathname.substr(
+        0,
+        u.pathname.length - 'index.html'.length,
+      );
+      return normalized + u.search;
+    }
+    return request;
+  },
+};
+
 const pageStrategy = new workboxStrategies.NetworkFirst({
   cacheName: cacheNames.webDevHtml,
-  plugins: [contentExpirationPlugin],
+  plugins: [indexHtmlCacheKeyPlugin, contentExpirationPlugin],
 });
 const pageMatch = matchSameOriginRegExp(pagePathRe);
 workboxRouting.registerRoute(pageMatch, pageStrategy);
@@ -150,7 +177,7 @@ workboxRouting.setCatchHandler(async ({url}) => {
 
     // Build a new Response so we can set the X-Offline header. Can't modify a previously cached
     // response.
-    const headers = new Headers();
+    const headers = new Headers(response.headers);
     headers.set('X-Offline', '1');
     const clone = new Response(await response.text(), {
       headers,
