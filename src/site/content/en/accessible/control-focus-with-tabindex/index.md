@@ -16,6 +16,12 @@ use the `tabindex` attribute to ensure that they're keyboard accessible.
 
 blacklist
 
+black list
+
+master
+
+slave
+
 {% Aside %}
 Whenever possible, use a native HTML element rather than building your
 own custom version. `<button>`, for example, is very easy to style and
