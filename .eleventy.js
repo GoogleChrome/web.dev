@@ -19,11 +19,11 @@ const chalk = require('chalk');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
+const toc = require('eleventy-plugin-toc');
 const resourcePath = require('./src/build/resource-path');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItAttrs = require('markdown-it-attrs');
-const slugify = require('slugify');
 
 const componentsDir = 'src/site/_includes/components';
 const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
@@ -78,6 +78,7 @@ const pagedNavigation = require(`./${filtersDir}/paged-navigation`);
 const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
 const prettyDate = require(`./${filtersDir}/pretty-date`);
 const removeDrafts = require(`./${filtersDir}/remove-drafts`);
+const slugify = require(`./${filtersDir}/slugify`);
 const strip = require(`./${filtersDir}/strip`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
 const stripQueryParamsDev = require(`./${filtersDir}/strip-query-params-dev`);
@@ -98,6 +99,13 @@ module.exports = function (config) {
   config.addPlugin(pluginSyntaxHighlight);
   // RSS feeds
   config.addPlugin(pluginRss);
+  config.addPlugin(toc, {
+    tags: ['h2', 'h3'],
+    wrapper: 'div',
+    wrapperClass: 'w-toc__list',
+    ul: true,
+    flat: true,
+  });
 
   // ----------------------------------------------------------------------------
   // MARKDOWN
@@ -110,12 +118,7 @@ module.exports = function (config) {
     permalink: true,
     permalinkClass: 'w-headline-link',
     permalinkSymbol: '#',
-    slugify: function (str) {
-      return slugify(str, {
-        replacement: '-',
-        lower: true,
-      });
-    },
+    slugify,
   };
   const markdownItAttrsOpts = {
     leftDelimiter: '{:',
@@ -187,6 +190,7 @@ module.exports = function (config) {
   config.addFilter('postsLighthouseJson', postsLighthouseJson);
   config.addFilter('prettyDate', prettyDate);
   config.addFilter('removeDrafts', removeDrafts);
+  config.addFilter('slugify', slugify);
   config.addFilter('stripBlog', stripBlog);
   config.addFilter('stripQueryParamsDev', stripQueryParamsDev);
   config.addFilter('getPaths', getPaths);
