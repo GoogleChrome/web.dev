@@ -7,7 +7,11 @@ const fs = require('fs');
 
 const hashLength = 8;
 
-function generateAndValidateHash(c) {
+/**
+ * @param {!crypto.Hash} c
+ * @return {string}
+ */
+export function generateAndValidateHash(c) {
   const hash = c.digest('hex').substr(0, hashLength);
   if (hash.length !== hashLength) {
     throw new TypeError(`could not hash content`);

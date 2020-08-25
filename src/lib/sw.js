@@ -122,7 +122,7 @@ workboxRouting.registerRoute(
  */
 const pagePathRe = new RegExp('^/[\\w-/]*(?:|\\.html)$');
 const pageStrategy = new workboxStrategies.NetworkFirst({
-  cacheName: 'webdev-html-cache-v1',
+  cacheName: cacheNames.webDevHtml,
   plugins: [contentExpirationPlugin],
 });
 const pageMatch = matchSameOriginRegExp(pagePathRe);
@@ -132,7 +132,7 @@ workboxRouting.registerRoute(pageMatch, pageStrategy);
  * Cache images at runtime that aren't included in the original manifest, such as author profiles.
  */
 const assetStrategy = new workboxStrategies.StaleWhileRevalidate({
-  cacheName: 'webdev-assets-cache-v1',
+  cacheName: cacheNames.webDevAssets,
   plugins: [assetExpirationPlugin],
 });
 workboxRouting.registerRoute(new RegExp('/images/.*'), assetStrategy);

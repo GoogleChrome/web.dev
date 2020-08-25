@@ -1,26 +1,42 @@
 /**
- * @fileoverview Generates the site version, based on the layout itself plus CSS/JS.
+ * @fileoverview Generates the resources version, based on the layout itself plus CSS/JS.
  *
- * This is used in internal navigation: if we see a change in the version, we throw out the HTML
- * and do a proper fetch.
+ * The site is a SPA: it loads the HTML of further pages but modifies the current document to
+ * include just the updated content. This has speed/perf benefits especially around our logged-in
+ * experience and any ongoing JS.
+ *
+ * When the site first boots up and the initial HTML arrives, we record this resources version. If
+ * the version of a _further_ page, loaded with this SPA logic, doesn't match this one: we throw out
+ * and just load the site anew. This occurs when we make any JS or CSS change to the site, so as to
+ * ensure users gett he updated version.
  */
 
-const {hashForFiles} = require('../../build/hash');
+const {generateAndValidateHash} = require('../../build/hash');
 const path = require('path');
+const crypto = require('crypto');
+const fs = require('fs');
 
 const isProd = process.env.ELEVENTY_ENV === 'prod';
 
-module.exports = () => {
-  const files = [
-    'resourceCSS.json',
-    'resourceJS.json',
-    '../_includes/layout.njk',
-  ];
+const files = [
+  'resourceCSS.json',
+  'resourceJS.json',
+  '../_includes/layout.njk',
+];
+const filePaths = files.map((f) => path.join(__dirname, f));
 
+module.exports = () => {
   let version = '';
+  let mtime = 0;
+  const c = crypto.createHash('sha1');
 
   try {
-    version = hashForFiles(...files.map((f) => path.join(__dirname, f)));
+    for (const file of filePaths) {
+      const stat = fs.statSync(file);
+      mtime = Math.max(stat.mtimeMs, mtime);
+      const bytes = fs.readFileSync(file);
+      c.update(bytes);
+    }
   } catch (e) {
     // Don't explode in dev if the resource doesn't exist yet.
     if (isProd || e.code !== 'ENOENT') {
@@ -29,7 +45,7 @@ module.exports = () => {
     console.warn('failed to generate resourceVersion', e);
   }
 
-  return {
-    version,
-  };
+  // also include the greatest mtime, just in case: this also lets us do lexical comparison
+  version = `${mtime.toString(16)}::${generateAndValidateHash(c)}`;
+  return {version};
 };
