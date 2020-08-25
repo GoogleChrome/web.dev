@@ -86,9 +86,6 @@ const getPaths = require(`./${filtersDir}/get-paths`);
 const transformsDir = 'src/site/_transforms';
 const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
 const {responsiveImages} = require(`./${transformsDir}/responsive-images`);
-const {
-  serviceWorkerPartials,
-} = require(`./${transformsDir}/service-worker-partials`);
 
 module.exports = function (config) {
   console.log(chalk.black.bgGreen('Eleventy is building, please wait…'));
@@ -238,12 +235,6 @@ module.exports = function (config) {
   if (isProd) {
     config.addTransform('responsive-images', responsiveImages);
   }
-
-  // !!! Important !!!
-  // This transform should always go last.
-  // It takes the final html and turns it into partials that the
-  // service worker can load.
-  config.addTransform('service-worker-partials', serviceWorkerPartials);
 
   // ----------------------------------------------------------------------------
   // CHECKS

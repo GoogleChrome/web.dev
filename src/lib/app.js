@@ -9,7 +9,7 @@
 import './webcomponents-config'; // must go before -loader below
 import '@webcomponents/webcomponentsjs/webcomponents-loader.js';
 import {trackError} from './analytics'; // side effects & named export
-import {swapContent, getPartial} from './loader';
+import {swapContent, getHTML} from './loader';
 import * as router from './utils/router';
 import {checkUserPreferredLanguage} from './actions';
 import {store} from './store';
@@ -74,6 +74,9 @@ if (serviceWorkerIsSupported(window.location.hostname)) {
 
 function serviceWorkerIsSupported(hostname) {
   // Allow local/prod as well as .netlify staging deploy target.
+  // We also check that updateViaCache is supported, which ensures that a browser checks all deps
+  // included via importScripts as well as the SW itself. (This works from mid-2018 everywhere, but
+  // it seems sane to check.)
   const allowedHostnames = [
     'web.dev',
     'web-dev-staging.appspot.com',
@@ -81,42 +84,42 @@ function serviceWorkerIsSupported(hostname) {
   ];
   return (
     'serviceWorker' in navigator &&
+    'updateViaCache' in ServiceWorkerRegistration.prototype &&
     (allowedHostnames.includes(hostname) || hostname.endsWith('.netlify.app'))
   );
 }
 
 function ensureServiceWorker() {
-  const ensurePartialCache = (isFirstInstall = false) => {
-    const {pathname} = window.location;
-    if (isFirstInstall) {
-      // We don't fetch the partial for the initial, real, HTML fetch from out HTTP server. This
-      // ensures that if the user goes offline and reloads for some reason, the page still loads.
-      getPartial(pathname);
-    }
-    if (pathname !== '/') {
-      // Aggressively refetch the landing page every time the site is loaded.
-      // TODO(samthor): Check Workbox's cache time and fetch if needed. Additionally, cache a
-      // number of recent articles.
-      getPartial('/');
-    }
-  };
-
+  const {pathname} = window.location;
   const isFirstInstall = !navigator.serviceWorker.controller;
   if (isFirstInstall) {
     // Watch for the brand new Service Worker to be activated. We claim this foreground page
     // inside the Service Worker, so this event will fire when it is activated.
-    navigator.serviceWorker.addEventListener('controllerchange', () => {
-      ensurePartialCache(true);
-    });
-  } else {
-    // This isn't the first install, but ensure some partials are up-to-date.
-    ensurePartialCache();
+    navigator.serviceWorker.addEventListener(
+      'controllerchange',
+      (event) => {
+        // We don't fetch the partial for the initial, real, HTML fetch from our HTTP server. This
+        // ensures that if the user goes offline and reloads for some reason, the page still loads.
+        getHTML(pathname);
 
-    // We claim active clients if the Service Worker's architecture rev changes. We can't
-    // reliably force a reload via the Client interface as it's unsupported in Safari.
-    navigator.serviceWorker.addEventListener('controllerchange', () => {
-      window.location.reload();
-    });
+        // Don't reload on first claim if this is the first install.
+        event.stopImmediatePropagation();
+      },
+      {once: true},
+    );
+  } else if (pathname !== '/') {
+    // Aggressively refetch the landing page every time the site is loaded.
+    // TODO(samthor): Check Workbox's cache time and fetch if needed. Additionally, cache a
+    // number of recent articles.
+    getHTML('/');
   }
-  navigator.serviceWorker.register('/sw.js');
+
+  // We activate the new Service Worker only if its architecture rev changes. This isn't on any
+  // minor Service Worker change (i.e., new JS or CSS), only when the major version changes.
+  // (We can't reliably force a reload via the Client interface of the SW itself, as the method is
+  // unsupported in Safari.)
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    window.location.reload();
+  });
+  navigator.serviceWorker.register('/sw.js', {updateViaCache: 'all'});
 }
