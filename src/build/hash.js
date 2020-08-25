@@ -11,7 +11,7 @@ const hashLength = 8;
  * @param {!crypto.Hash} c
  * @return {string}
  */
-export function generateAndValidateHash(c) {
+function generateAndValidateHash(c) {
   const hash = c.digest('hex').substr(0, hashLength);
   if (hash.length !== hashLength) {
     throw new TypeError(`could not hash content`);
@@ -51,6 +51,7 @@ function hashForFiles(file, ...rest) {
 }
 
 module.exports = {
+  generateAndValidateHash,
   hashForContent,
   hashForFiles,
 };
