@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-const yaml = require('js-yaml');
-const fs = require('fs');
-const escapeStringRegexp = require('escape-string-regexp');
+import yaml from 'js-yaml';
+import fs from 'fs';
+import escapeStringRegexp from 'escape-string-regexp';
 
-const baseUrlPrefix = 'https://web.dev/';
+export const baseUrlPrefix = 'https://web.dev/';
 
 /**
  * Normalizes the passed path (not a whole URL) to ensure that it ends with a
@@ -27,7 +27,7 @@ const baseUrlPrefix = 'https://web.dev/';
  * @param {string} path to normalize
  * @return {string}
  */
-function ensureTrailingSlashOnly(path) {
+export function ensureTrailingSlashOnly(path) {
   if (path.endsWith('/index.html')) {
     return path.slice(0, -'index.html'.length);
   } else if (!path.endsWith('/')) {
@@ -43,8 +43,8 @@ function ensureTrailingSlashOnly(path) {
  * @param {string} baseUrlPrefix domain prefix to use, e.g. "https://web.dev/"
  * @return {function(string): ?string}
  */
-function prepareHandler(yamlSource, baseUrlPrefix) {
-  const doc = yaml.safeLoad(yamlSource);
+export function prepareHandler(yamlSource, baseUrlPrefix) {
+  const doc = yaml.safeLoad(yamlSource) as TODO;
   baseUrlPrefix = ensureTrailingSlashOnly(baseUrlPrefix);
 
   const groupRedirect = {};
@@ -122,7 +122,7 @@ function prepareHandler(yamlSource, baseUrlPrefix) {
  * @param {number=} code to use (DevSite uses 301)
  * @return {!Function}
  */
-function build(filename, code = 301) {
+export function build(filename, code = 301) {
   const handler = prepareHandler(
     fs.readFileSync(filename, 'utf8'),
     baseUrlPrefix,
@@ -136,10 +136,3 @@ function build(filename, code = 301) {
     return next();
   };
 }
-
-module.exports = {
-  build,
-  prepareHandler,
-  baseUrlPrefix,
-  ensureTrailingSlashOnly,
-};

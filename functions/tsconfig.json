@@ -1,0 +1,19 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "outDir": "lib",
+    "rootDir": "../",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2017",
+    "noEmit": false
+  },
+  "compileOnSave": true,
+  "include": [
+    "src",
+    "../types/**/*.d.ts"
+  ]
+}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,30 +14,33 @@
  * limitations under the License.
  */
 
-const isGAEProd = Boolean(process.env.GAE_APPLICATION);
+const isFirebaseProd = !Boolean(process.env.FUNCTIONS_EMULATOR);
 
-const compression = require('compression');
-const express = require('express');
-const cookieParser = require('cookie-parser');
-const localeHandler = require('./locale-handler.js');
-const {build: buildRedirectHandler} = require('./redirect-handler.js');
+import * as functions from 'firebase-functions';
+import compression from 'compression';
+import express from 'express';
+import cookieParser from 'cookie-parser';
+import localeHandler from './locale-handler';
+import {build as buildRedirectHandler} from './redirect-handler';
+import {join} from 'path';
 
 // If true, we'll aggressively nuke the prod Service Worker. For emergencies.
 const serviceWorkerKill = false;
+const directory = (path: string) => join(__dirname, path);
 
 const redirectHandler = (() => {
   // In development, Eleventy isn't guaranteed to have run, so read the actual
   // source file.
-  const redirectsPath = isGAEProd
-    ? 'dist/_redirects.yaml'
-    : 'src/site/content/_redirects.yaml';
+  const redirectsPath = isFirebaseProd
+    ? directory('/dist/_redirects.yaml')
+    : directory('/src/site/content/_redirects.yaml');
 
   // Don't block loading the server if the redirect handler couldn't build.
   try {
     return buildRedirectHandler(redirectsPath);
   } catch (e) {
     console.warn(e);
-    return (req, res, next) => next();
+    return (_, __, next) => next();
   }
 })();
 
@@ -53,7 +56,7 @@ const notFoundHandler = (req, res, next) => {
     return res.end();
   }
 
-  const options = {root: 'dist/en'};
+  const options = {root: directory('/dist/en')};
   res.sendFile('404/index.html', options, (err) => err && next(err));
 };
 
@@ -76,7 +79,7 @@ function buildSafetyAssetHandler() {
     return {base, ext};
   };
 
-  return (req, res, next) => {
+  return (req, _, next) => {
     const {base, ext} = runHashedAssetMatch(req.url);
     if (!base) {
       return next();
@@ -123,15 +126,15 @@ const handlers = [
   safetyHandler,
   buildSafetyAssetHandler(),
   localeHandler,
-  express.static('dist'),
-  express.static('dist/en'),
+  express.static(directory('/dist')),
+  express.static(directory('/dist/en')),
   redirectHandler,
   notFoundHandler,
 ];
 
 const app = express();
 
-if (!isGAEProd) {
+if (!isFirebaseProd) {
   // For dev we'll do our own compression. This ensures things like Lighthouse CI
   // get a fairly accurate picture of our site.
   // For prod we'll rely on App Engine to compress for us.
@@ -139,13 +142,10 @@ if (!isGAEProd) {
 
   // In dev, serve our source files so that Source Maps can correctly load their
   // original files.
-  app.use('/src', express.static('src'));
+  app.use('/src', express.static(directory('/src')));
 }
 
 app.use(cookieParser());
 app.use(...handlers);
 
-const listener = app.listen(process.env.PORT || 8080, () => {
-  // eslint-disable-next-line
-  console.log('The server is listening on port ' + listener.address().port);
-});
+export const server = functions.https.onRequest((req, res) => app(req, res));

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const fs = require('fs');
-const path = require('path');
-const locale = require('./shared/locale');
+import fs from 'fs';
+import path from 'path';
+import locale from '../../shared/locale';
 
 const indexJsonRegExp = /\/index\.json$/;
 
@@ -31,7 +31,7 @@ const indexJsonRegExp = /\/index\.json$/;
  * @param {Function} next Middleware next handler.
  * @return {!Function}
  */
-module.exports = (req, res, next) => {
+export default (req, res, next) => {
   const isNav = req.url.endsWith('/');
   const isJson = req.url.endsWith('/index.json');
   // Exit early if the url is not navigational.
