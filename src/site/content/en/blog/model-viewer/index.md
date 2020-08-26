@@ -34,7 +34,7 @@ To help with that, the `<model-viewer>` web component, which just released
 to a web page, while hosting the model on your own site. The web component
 supports responsive design and use cases like augmented reality on some devices,
 and it includes features for accessibility, rendering quality, and
-interactivity.  The goal of the component is to enabble adding 3D models to your
+interactivity.  The goal of the component is to enable adding 3D models to your
 website without understanding the underlying technology and platforms.
 
 {% Aside %}
