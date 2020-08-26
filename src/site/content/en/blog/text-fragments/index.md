@@ -8,7 +8,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2020-06-17
-updated: 2020-08-07
+updated: 2020-08-26
 hero: hero.jpg
 alt:
 description: |
@@ -360,8 +360,8 @@ if ('fragmentDirective' in document) {
 ```
 
 {% Aside %}
-  In the initial version, the `fragmentDirective` property was defined on
-  `Location.prototype`. For details on this change, see
+  From Chrome 80 to Chrome 85, the `fragmentDirective` property was on 
+  `window.location.fragmentDirective`. For details on this change, see
   [WICG/scroll-to-text-fragment#130](https://github.com/WICG/scroll-to-text-fragment/issues/130).
 {% endAside %}
 
