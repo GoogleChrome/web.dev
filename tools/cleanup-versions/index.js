@@ -113,7 +113,7 @@ function deleteVersions(project, versions, service = 'default') {
     const next = versions.splice(0, deleteAtMost);
     log('Enacting deletion for versions:', next.join(' '));
 
-    const {status, stdout} = childProcess.spawnSync(
+    const {status, stdout, stderr} = childProcess.spawnSync(
       'gcloud',
       [
         'app',
@@ -131,11 +131,12 @@ function deleteVersions(project, versions, service = 'default') {
         timeout: 60 * 1000,
       },
     );
+    process.stderr.write(stderr);
     if (status !== 0) {
       log('Could not delete versions:', status);
       break;
     }
-    done += versions.length;
+    done += next.length;
     console.info(JSON.parse(stdout));
   }
   return done;

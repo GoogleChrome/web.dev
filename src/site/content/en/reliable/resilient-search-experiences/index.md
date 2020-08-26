@@ -8,6 +8,7 @@ authors:
   - demianrenzulli
   - jeffposnick
 date: 2020-06-23
+updated: 2020-08-20
 description: |
   Even in locations with fast networks a user might lose connection or connect to a flaky network, at some moments of the day.
   Use the  Background Sync API and Web Push Notifications to provide a resilient search experience in these cases.
@@ -20,6 +21,8 @@ tags:
 codelabs:
   - codelab-building-resilient-search-experiences
 ---
+
+{% YouTube 'fhqCwDP69PI', '35' %}
 
 Even in locations with fast networks a user might lose connection or connect to a flaky network, at some moments of the day.
 For example: a user is on the subway searching on the phone for a product on an e-commerce website. She types the product name, clicks the "search" button, and while waiting for the results, the connection is lost, leading to the standard browser offline page.

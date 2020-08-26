@@ -54,6 +54,20 @@ change.<a name="shape-face-text"></a>
           <em>Updated April 14, 2020</em>
         </td>
       </tr>
+      <tr>
+        <td>
+          <a href="/notification-triggers/">
+            Notification Triggers
+          </a>
+        </td>
+        <td>
+          Notification Triggers let you schedule notifications in advance, so
+          that the operating system will deliver the notification at the right
+          time - even if there is no network connectivity, or the device is in
+          battery saver mode.<br>
+          <em>Updated August 23, 2020</em>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -95,6 +109,19 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
       </tr>
       <tr>
         <td>
+          <a href="/idle-detection/">Idle Detection API</a>
+        </td>
+        <td>
+          The Idle Detection API notifies developers when a user is idle,
+          indicating such things as lack of interaction with the keyboard,
+          mouse, screen, activation of a screensaver, locking of the screen, or
+          moving to a different screen. A developer-defined threshold triggers
+          the notification.<br>
+          <em>Updated August 11, 2020</em>
+        </td>
+      </tr>
+      <tr>
+        <td>
           <a href="/native-file-system/">
             Native File System API
           </a>
@@ -111,20 +138,6 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
       </tr>
       <tr>
         <td>
-          <a href="/notification-triggers/">
-            Notification Triggers
-          </a>
-        </td>
-        <td>
-          Notification Triggers let you schedule notifications in advance, so
-          that the operating system will deliver the notification at the right
-          time - even if there is no network connectivity, or the device is in
-          battery saver mode.<br>
-          <em>Updated December 12, 2019</em>
-        </td>
-      </tr>
-      <tr>
-        <td>
           <a href="/serial/">
             Serial API
           </a>
@@ -134,7 +147,7 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
           write to a serial device with scripts. The API bridges the web and
           the physical world by allowing websites to communicate with serial
           devices, such as microcontrollers and 3D printers.<br>
-          <em>Updated August 12nd, 2020</em>
+          <em>Updated August 12, 2020</em>
         </td>
       </tr>
       <tr>

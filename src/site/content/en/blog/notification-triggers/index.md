@@ -9,7 +9,7 @@ description:
   The Notification Triggers API allows developers to schedule local notifications that don't require
   a network connection, which makes them ideal for use cases like calendar apps.
 date: 2019-10-24
-updated: 2020-07-31
+updated: 2020-08-23
 hero: hero.jpg
 hero_position: center
 tags:
@@ -20,9 +20,9 @@ tags:
 ---
 
 {% Aside %}
-  The Notification Triggers API, part of Google's
+  The development of Notification Triggers API, part of Google's
   [capabilities project](https://developers.google.com/web/updates/capabilities),
-  is currently in development. This post will be updated as the
+  is currently on hold. This post will be updated as the
   implementation progresses.
 {% endAside %}
 

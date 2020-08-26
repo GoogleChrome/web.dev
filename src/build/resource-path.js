@@ -22,7 +22,7 @@ function resourcePath(name) {
     `resource${name}.json`,
   );
 
-  const raw = JSON.parse(fs.readFileSync(f), 'utf-8');
+  const raw = JSON.parse(fs.readFileSync(f, 'utf-8'));
 
   const {path: rawPath} = raw;
   if (rawPath === undefined) {

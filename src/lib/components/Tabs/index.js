@@ -10,7 +10,7 @@ import './_styles.scss';
  * and renders a tab for each panel.
  * @extends {BaseElement}
  */
-class Tabs extends BaseElement {
+export class Tabs extends BaseElement {
   static get properties() {
     return {
       label: {type: String},
@@ -21,6 +21,7 @@ class Tabs extends BaseElement {
 
   constructor() {
     super();
+    this.label = '';
     this.activeTab = 0;
     this.overflow = false;
     this.prerenderedChildren = null;
@@ -118,8 +119,8 @@ class Tabs extends BaseElement {
     `;
   }
 
-  firstUpdated() {
-    super.firstUpdated();
+  firstUpdated(changedProperties) {
+    super.firstUpdated(changedProperties);
 
     this.activeTab = 0;
     this.onResize();

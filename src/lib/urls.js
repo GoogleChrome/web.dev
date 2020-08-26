@@ -5,7 +5,7 @@ import lang from './utils/language';
  * @return {string} normalized URL
  */
 export function normalizeUrl(url) {
-  const u = new URL(url, window.location);
+  const u = new URL(url, window.location.toString());
   let pathname = u.pathname;
 
   if (pathname.endsWith('/index.html')) {

@@ -1,10 +1,7 @@
 name: Lint and test
 
 # By default, runs when a pull request is opened, synchronized, or reopened.
-# We use the pull_request_target hook to enable proper permissions for
-# pull requests coming from forks.
-# https://github.blog/2020-08-03-github-actions-improvements-for-fork-and-pull-request-workflows/#improvements-for-public-repository-forks
-on: pull_request_target
+on: pull_request
 
 jobs:
   lint_and_test:
@@ -56,13 +53,6 @@ jobs:
       - name: Lint Markdown
         if: ${{ steps.filter.outputs.md == 'true' }}
         run: npm run lint:md
-
-      - name: Lint Language
-        if: ${{ steps.filter.outputs.md == 'true' }}
-        uses: brown-ccv/alex-recommends@v1.0.0
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          profanity_sureness: 2
 
       - name: Lint JavaScript
         if: ${{ steps.filter.outputs.js == 'true' || steps.filter.outputs.json == 'true' }}

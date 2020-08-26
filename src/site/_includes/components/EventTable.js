@@ -21,7 +21,7 @@ const AuthorsDate = require('./AuthorsDate');
 
 /**
  * @param {!Array<{title: string, from: !Date, sessions: !Array<any>}>} days
- * @param {Object.<string, Author>} authorsCollection
+ * @param {Authors} authorsCollection
  * @return {string}
  */
 module.exports = (days, authorsCollection) => {
@@ -49,7 +49,8 @@ module.exports = (days, authorsCollection) => {
     {speaker, title, blurb = '', abstract, videoId},
   ) => {
     // Always pass an Array of author IDs.
-    const authors = typeof speaker === 'string' ? [speaker] : speaker;
+    /** @type {string[]} */
+    const authors = Array.isArray(speaker) ? speaker : [speaker];
 
     const id = slugForTitle(title);
 

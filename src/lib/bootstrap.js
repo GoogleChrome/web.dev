@@ -19,6 +19,7 @@ import entrypoint from 'webdev_entrypoint';
 import {localStorage} from './utils/storage';
 import removeServiceWorkers from './utils/sw-remove';
 
+// @ts-ignore
 window.ga =
   window.ga ||
   function () {

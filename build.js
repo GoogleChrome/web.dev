@@ -20,6 +20,8 @@ const isProd = process.env.ELEVENTY_ENV === 'prod';
 const fs = require('fs').promises;
 const path = require('path');
 const log = require('fancy-log');
+const rollupPluginReplace = require('rollup-plugin-replace');
+const OMT = require('@surma/rollup-plugin-off-main-thread');
 const rollupPluginNodeResolve = require('rollup-plugin-node-resolve');
 const rollupPluginCJS = require('rollup-plugin-commonjs');
 const rollupPluginPostCSS = require('rollup-plugin-postcss');
@@ -42,8 +44,7 @@ const {
 } = require('./src/build/common');
 
 /**
- * Performs main site compilation via Rollup: first on site code, and second
- * to build the Service Worker.
+ * Builds the main site via Rollup.
  */
 async function build() {
   const postcssConfig = {};
@@ -156,9 +157,46 @@ async function build() {
     const ratio = await minifySource(outputFiles);
     log(`Minified site code is ${(ratio * 100).toFixed(2)}% of source`);
   }
-  log(`Finished JS! (${resourceName})`);
+  log(`Built site JS! '${resourceName}', total ${outputFiles.length} files`);
+}
 
-  return outputFiles.length;
+async function buildServiceWorker() {
+  const swBundle = await rollup.rollup({
+    input: 'src/lib/sw.js',
+    external: disallowExternal,
+    manualChunks: (id) => {
+      if (id.includes('/node_modules/idb-keyval')) {
+        return 'sw-idb-keyval';
+      }
+      if (/\/node_modules\/workbox-.*\//.exec(id)) {
+        return 'sw-workbox';
+      }
+    },
+    plugins: [
+      // This variable is defined by Webpack (and some other tooling), but not by Rollup. Set it to
+      // "production" if we're in prod, which will hide all of Workbox's log messages.
+      // Note that Terser below will actually remove the conditionals (this replace will generate
+      // lots of `if ("production" !== "production")` statements).
+      rollupPluginReplace({
+        'process.env.NODE_ENV': JSON.stringify(isProd ? 'production' : ''),
+      }),
+      ...buildDefaultPlugins(),
+      OMT(),
+    ],
+  });
+
+  const swGenerated = await swBundle.write({
+    sourcemap: true,
+    dir: 'dist',
+    format: 'amd',
+  });
+
+  const swOutputFiles = swGenerated.output.map(({fileName}) => fileName);
+  if (isProd) {
+    const ratio = await minifySource(swOutputFiles);
+    log(`Minified service worker is ${(ratio * 100).toFixed(2)}% of source`);
+  }
+  log(`Built Service Worker JS, total ${swOutputFiles.length} files`);
 }
 
 /**
@@ -183,8 +221,8 @@ async function buildTest() {
 }
 
 (async function () {
-  const generatedCount = await build();
-  log(`Generated ${generatedCount} files`);
+  await build();
+  await buildServiceWorker();
   if (!isProd) {
     await buildTest();
   }

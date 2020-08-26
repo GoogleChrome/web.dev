@@ -34,7 +34,7 @@ function expandAllowSource(s) {
 
 /**
  *
- * @param {string | { allow?: string | string[]; height?: string; id: string; path?: string; previewSize?: number; }} param
+ * @param {string | GlitchParam } param
  * @return string
  */
 module.exports = (param) => {
@@ -49,6 +49,8 @@ module.exports = (param) => {
     'midi',
     'vr',
   ];
+
+  /** @type GlitchParam */
   let glitchProps = {
     allow: [],
     height: 420,

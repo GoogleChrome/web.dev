@@ -30,7 +30,7 @@ description: |
       "github": "jaimiesmith",
       "glitch": "jaimiesmith",
       "homepage": "https://jaimiesmithis.cool/",
-      "description": {
+      "descriptions": {
         "en": "Jaimie is more than meets the eye"
       },
     },
@@ -52,7 +52,7 @@ description: |
       "github": "jaimiesmith",
       "glitch": "jaimiesmith",
       "homepage": "https://jaimiesmithis.cool/",
-      "description": {
+      "descriptions": {
         "en": "Jaimie is more than meets the eye"
       },
       "org": {

@@ -4,7 +4,7 @@ title: |
 subhead: |
   How lying to screen readers cures accessibility, when it doesn't rub salt in it!
 authors:
-  - aaronlevanthal
+  - aaronleventhal
 date: 2020-08-18
 description: |
   How lying to screen readers cures accessibility, when it doesn't rub salt in it!
@@ -46,7 +46,7 @@ in HTML, sometimes tweaked with bits of JavaScript.
 
 ## How does ARIA work?
 
-Browsers gets asked by a screen reader or other assistive technology for information about each
+Browsers are asked by a screen reader or other assistive technology for information about each
 element. When ARIA is present on an element, the browser takes in the information and changes
 what it tells the screen reader about that element.
 
@@ -218,16 +218,6 @@ In other words, it is 100 percent necessary for actual screen reader users to tr
 they're considered shippable. There's too much nuance. Ideally everything would be tried with
 several different browser-screen reader combinations, because of the numerous implementation
 quirks, in addition to a few incomplete implementations.
-
-### File bug on Chrome or on web content?
-
-For our team, which works on Chrome, we need to know when our representation of truth doesn't match
-what's provided by other browsers. When NVDA reads something different in the same web content in
-Firefox vs. Chrome, it's often our bug, since Firefox has an older, more seasoned accessibility
-mapping layer.
-
-If all the browser-screen reader combinations seem to agree, and the web content still behaves
-badly, we will need to file a bug on the web content itself, not on the browser.
 
 ## Summary
 

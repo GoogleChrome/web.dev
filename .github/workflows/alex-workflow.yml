@@ -1,0 +1,26 @@
+# Check PRs for inclusive language.
+# This Action runs separately from our other linters because it requires the
+# pull_request_target GitHub event in order to get elevated permissions so it
+# can write to our comment fields.
+
+name: Alex
+
+# By default, runs when a pull request is opened, synchronized, or reopened.
+# We use the pull_request_target hook to enable proper permissions for
+# pull requests coming from forks.
+# https://github.blog/2020-08-03-github-actions-improvements-for-fork-and-pull-request-workflows/#improvements-for-public-repository-forks
+on: pull_request_target
+
+jobs:
+  alex:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - uses: brown-ccv/alex-recommends@v1.0.0
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          profanity_sureness: 2

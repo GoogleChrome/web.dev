@@ -59,9 +59,7 @@ class BaseCard {
   }
 
   isDraft() {
-    if (this.data.draft) {
-      return 'w-card--draft';
-    }
+    return this.data.draft ? 'w-card--draft' : '';
   }
 
   renderThumbnail(url, img, alt) {
