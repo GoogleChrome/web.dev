@@ -130,7 +130,7 @@ auto-rotate poster="assets/poster2.png"></model-viewer>
 </script>
 ```
 
-### Responsive Design
+### Responsive design
 
 The component handles some types of responsive design, scaling for both mobile
 and desktop. It can also manage multiple instances on a page and uses
