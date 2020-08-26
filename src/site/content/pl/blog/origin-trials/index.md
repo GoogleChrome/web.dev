@@ -4,7 +4,7 @@ subhead: Origin trials are a way to test a new or experimental web platform feat
 authors: 
   - samdutton
 date: 2020-06-22
-updated: 2020-06-24
+updated: 2020-08-18
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: Pipette with purple liquid
@@ -38,21 +38,31 @@ trials, as learnings are incorporated and adjustments are made.
 ## How to register for an origin trial
 
 1. Choose an origin trial from the [list of active trials](https://developers.chrome.com/origintrials/#/trials/active).
-1. [Request a token](https://developers.chrome.com/origintrials/#/trials/active).
-1. [Add the token](http://googlechrome.github.io/OriginTrials/developer-guide.html)
-   to your web pages, using a `<meta>` tag or an `Origin-Trial` HTTP response
-   header.
+1. Request a token by clicking the **Register** button and filling out the form.
+1. Add the token to your web pages,
+   using one of the following methods:
    -  As a meta tag in the &lt;head&gt; of each page served:   
       `<meta http-equiv="origin-trial" content="TOKEN_GOES_HERE">`
    -  As an HTTP header:  
       `Origin-Trial: TOKEN_GOES_HERE`
-
 1. Try out the new feature.
 1. Submit feedback. Do this through the origin trial site. This feedback is 
    not public and is available only to a limited group of people on the Chrome
    team. Each trial also provides a link for spontaneous community feedback.
    This typically points to the the feature on GitHub or some other public
-   channel.  
+   channel.
+1. When your token expires, you will get an email with a renewal link.
+   To do so, you are again asked to submit feedback.
+   
+{% Aside 'warning' %}
+  Even if an API lands unchanged after a successful origin trial,
+  there is a short period between the end of the origin trial and the date the implementation ships
+  in the browser when the API will not be available.
+  This is by design.
+  If we were to avoid the mandatory total-breakage period,
+  we would bias toward also avoiding breakages in the API surface,
+  and the final shipping API might potentially be worse for it.
+{% endAside %}
 
 ## Find out more
 
