@@ -61,9 +61,9 @@ const {
   postsWithLighthouse,
 } = require(`./${collectionsDir}/posts-with-lighthouse`);
 const tags = require(`./${collectionsDir}/tags`);
-// nb. algoliaPosts is only require'd if needed, below
 
 const filtersDir = 'src/site/_filters';
+const algolia = require(`./${filtersDir}/algolia`);
 const consoleDump = require(`./${filtersDir}/console-dump`);
 const {memoize, findByUrl} = require(`./${filtersDir}/find-by-url`);
 const pathSlug = require(`./${filtersDir}/path-slug`);
@@ -165,17 +165,11 @@ module.exports = function (config) {
   config.addCollection('memoized', (collection) => {
     return memoize(collection.getAll());
   });
-  config.addCollection('algolia', (collection) => {
-    if (isProd) {
-      const algolia = require(`./${collectionsDir}/algolia`);
-      return algolia(collection);
-    }
-    return [];
-  });
 
   // ----------------------------------------------------------------------------
   // FILTERS
   // ----------------------------------------------------------------------------
+  config.addFilter('algolia', algolia);
   config.addFilter('consoleDump', consoleDump);
   config.addFilter('findByUrl', findByUrl);
   config.addFilter('findTags', findTags);

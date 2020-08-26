@@ -1,6 +1,6 @@
 ---
 noindex: true
-permalink: "/en/algolia.json"
+permalink: "/algolia.json"
 
 ---
-{{ collections.algolia | dump | safe }}
+{{ collections | algolia(collections.authors, collections.newsletters, collections.tags) | dump | safe }}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +14,10 @@
  * limitations under the License.
  */
 
-const {livePosts} = require('../_filters/live-posts');
 const removeMarkdown = require('remove-markdown');
-const authorsCollectionFn = require('./authors');
-const {feed: authorsFeed} = require('./hooks/authors');
-const newslettersCollectionFn = require('./newsletters');
-const tagsCollectionFn = require('./tags');
-const {feed: tagsFeed} = require('./hooks/tags');
+const {livePosts} = require('./live-posts');
+const {feed: authorsFeed} = require('../_collections/hooks/authors');
+const {feed: tagsFeed} = require('../_collections/hooks/tags');
 
 /**
  * Shrink the size of the given fulltext to fit within a certain limit, at the
@@ -43,12 +40,26 @@ function limitText(fulltext, limit = 7500) {
   return fulltext.slice(0, newlineIndex);
 }
 
-module.exports = (collection) => {
+/**
+ * @param {{[key: string]: EleventyCollectionItem[]}} collections
+ * @param {Authors} authorsCollection
+ * @param {Newsletters} newslettersCollection
+ * @param {Tags} tagsCollection
+ * @returns {TODO[]}
+ */
+module.exports = (
+  collections,
+  authorsCollection,
+  newslettersCollection,
+  tagsCollection,
+) => {
+  if (process.env.ELEVENTY_ENV !== 'prod') {
+    return [];
+  }
+
   const validTags = ['post'];
 
-  /** @type EleventyCollectionItem[] */
-  const eleventyPosts = collection
-    .getFilteredByGlob('**/*.md')
+  const eleventyPosts = collections.all
     .filter((item) => {
       // nb. There's no easy 'getFilteredByMultipleTag' method in Eleventy.
       if (!Array.isArray(item.data.tags)) {
@@ -63,10 +74,6 @@ module.exports = (collection) => {
 
   // For now, hard-code language to English.
   const lang = 'en';
-
-  const authorsCollection = authorsCollectionFn(collection);
-  const newslettersCollection = newslettersCollectionFn(collection);
-  const tagsCollection = tagsCollectionFn(collection);
 
   // Convert 11ty-posts to a flat, indexable format.
   const posts = eleventyPosts.map(({data, template}) => {
@@ -83,8 +90,8 @@ module.exports = (collection) => {
     );
 
     return {
-      objectID: data.page.url + '#' + lang,
-      lang,
+      objectID: data.page.url,
+      lang: data.lang,
       title: data.title,
       url: data.canonicalUrl,
       description: data.description,
@@ -97,7 +104,7 @@ module.exports = (collection) => {
   const authors = authorsFeed(Object.values(authorsCollection)).map(
     (author) => {
       return {
-        objectID: author.href + '#' + lang,
+        objectID: author.href,
         lang,
         title: author.title,
         url: author.data.canonicalUrl,
@@ -112,7 +119,7 @@ module.exports = (collection) => {
     const limited = limitText(fulltext);
 
     return {
-      objectID: data.page.url + '#' + lang,
+      objectID: data.page.url,
       lang,
       title: data.title,
       url: data.canonicalUrl,
@@ -123,7 +130,7 @@ module.exports = (collection) => {
 
   const tags = tagsFeed(Object.values(tagsCollection)).map((tag) => {
     return {
-      objectID: tag.href + '#' + lang,
+      objectID: tag.href,
       lang,
       title: tag.title,
       url: tag.data.canonicalUrl,
