@@ -207,10 +207,12 @@ controls.
   </figure>
 </div>
 
-You can control video dimensions using JavaScript or CSS. JavaScript libraries
-and plugins such as [FitVids](http://fitvidsjs.com/) (outside the scope of this
-article) make it possible to maintain appropriate size and aspect ratio, even
-for videos from YouTube and other sources.
+You can control video dimensions using CSS. If CSS does not meat all of your
+needs, JavaScript libraries and plugins such as [FitVids](http://fitvidsjs.com/)
+(outside the scope of this article) can help, even for videos from YouTub and
+other sources. Unfortunately, these resources can increase your [network payload
+sizes](https://web.dev/total-byte-weight/) with negative consequences for your
+revenues and your users' wallets.
 
 For simple uses like the ones I'm describing here, use [CSS media
 queries](/web/fundamentals/design-and-ux/responsive/#css-media-queries) to
