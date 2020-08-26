@@ -18,7 +18,7 @@ tags:
 
 Over the past year, [natively lazy-loading images and iframes using the `loading` attribute](/native-lazy-loading/) has [become part of the WHATWG HTML Standard](https://html.spec.whatwg.org/multipage/urls-and-fetching.html#lazy-loading-attributes) and seen [growing adoption by various browsers](https://caniuse.com/#feat=loading-lazy-attr). These milestones however only lay the groundwork for a faster and more resource-saving web. It is now on the distributed web ecosystem to make use of the `loading` attribute.
 
-Content management systems [power about 60% of websites](https://w3techs.com/technologies/overview/content_management), so these platforms play a vital role in bringing adoption of modern browser features to the web. With a few popular open-source CMSs such as [WordPress](https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/), [Joomla](https://github.com/joomla/joomla-cms/pull/28838), and [TYPO3](https://review.typo3.org/c/Packages/TYPO3.CMS/+/63317) having already implemented support for the `loading` attribute on images, let’s have a look at their approaches and the takeaways which are relevant for adopting the feature in other CMS platforms as well.
+Content management systems [power about 60% of websites](https://w3techs.com/technologies/overview/content_management), so these platforms play a vital role in bringing adoption of modern browser features to the web. With a few popular open-source CMSs such as [WordPress](https://make.wordpress.org/core/2020/07/14/lazy-loading-images-in-5-5/), [Joomla](https://github.com/joomla/joomla-cms/pull/28838), and [TYPO3](https://review.typo3.org/c/Packages/TYPO3.CMS/+/63317) having already implemented support for the `loading` attribute on images, let's have a look at their approaches and the takeaways which are relevant for adopting the feature in other CMS platforms as well.
 
 ## Standardization
 
@@ -40,7 +40,7 @@ Native lazy-loading is [widely supported by browsers](https://caniuse.com/#feat=
 
 ### Distance-from-viewport thresholds
 
-A common concern with lazy-loading implementations is that they in principle increase the likelihood that an image will not be loaded once it becomes visible in the user’s viewport because the loading cycle starts at a later stage. Contrary to previous JavaScript-based solutions, [browsers approach this conservatively](/native-lazy-loading/#distance-from-viewport-thresholds) and furthermore can finetune their approach based on real-world heuristics in the field, minimizing the impact, so native lazy-loading should be safe to adopt by CMS platforms.
+A common concern with lazy-loading implementations is that they in principle increase the likelihood that an image will not be loaded once it becomes visible in the user's viewport because the loading cycle starts at a later stage. Contrary to previous JavaScript-based solutions, [browsers approach this conservatively](/native-lazy-loading/#distance-from-viewport-thresholds) and furthermore can finetune their approach based on real-world heuristics in the field, minimizing the impact, so native lazy-loading should be safe to adopt by CMS platforms.
 
 {% Aside %}
 Experiments using Chrome on Android indicated that on 4G networks, 97.5% of below-the-fold lazy-loaded images were fully loaded within 10ms of becoming visible, compared to 97.6% for non lazy-loaded images.
@@ -61,7 +61,7 @@ If the CMS is unable to provide `width` and `height` attributes on images and if
 At the moment CMSs are recommended to only add `loading="lazy"` attributes to images and iframes which are positioned below the fold, to avoid a slight delay in the [Largest Contentful Paint](/lcp/) metric. However it has to be acknowledged that the position of an element relative to the viewport before the rendering process is complex to assess. This applies especially if the CMS uses an automated approach for adding `loading` attributes, but even based on manual intervention several factors such as the different viewport sizes and aspect ratios have to be considered. Fortunately, the impact of elements in the initial viewport being marked with `loading="lazy"` is fairly small, with a regression of <1% at the 75th and 99th percentiles compared to eagerly loaded elements.
 
 {% Aside %}
-Depending on the capabilities and audience of the CMS, try to define reasonable guesstimates for whether an image or iframe is likely to be in the initial viewport, for example this could be elements in a “header” template. In addition, offer either a UI or API which allows modifying the existence of the `loading` attribute on elements.
+Depending on the capabilities and audience of the CMS, try to define reasonable guesstimates for whether an image or iframe is likely to be in the initial viewport, for example this could be elements in a "header" template. In addition, offer either a UI or API which allows modifying the existence of the `loading` attribute on elements.
 {% endAside %}
 
 ### Avoiding a JavaScript fallback
@@ -87,7 +87,7 @@ While `loading="lazy"` should be added to images and iframes by default, it is c
 WordPress for example allows to skip the `loading` attribute either for an [entire HTML tag or context](https://developer.wordpress.org/reference/hooks/wp_lazy_loading_enabled/) or for a [specific HTML element in the content](https://developer.wordpress.org/reference/hooks/wp_img_tag_add_loading_attr/).
 
 {% Aside 'caution' %}
-If an element should not be lazy-loaded, require or encourage skipping the `loading` attribute entirely. While using `loading=”eager”` is a supported alternative, this would tell the browser explicitly to always load the image right away, which would prevent potential benefits if browsers implemented further mechanisms and heuristics to automatically decide which elements to lazy-load.
+If an element should not be lazy-loaded, require or encourage skipping the `loading` attribute entirely. While using `loading="eager"` is a supported alternative, this would tell the browser explicitly to always load the image right away, which would prevent potential benefits if browsers implemented further mechanisms and heuristics to automatically decide which elements to lazy-load.
 {% endAside %}
 
 ### Retrofitting existing content
@@ -97,7 +97,7 @@ On a high level, there are two approaches for adding the `loading` attribute to 
 Either add the attribute from within the content editor in the backend, persistently saving it in the database.
 Or add the attribute on the fly when rendering content from the database in the frontend.
 
-It is recommended for CMS to opt for the latter or a combination of the two, in order to bring the lazy-loading benefits to any existing content as well. If the attribute could solely be added through the editor, only new or recently modified pieces of content would receive the benefits, drastically reducing the CMS’s impact on saving network resources. Furthermore, adding the attribute on the fly will easily allow for future modifications, should the capabilities of native lazy-loading be further expanded.
+It is recommended for CMS to opt for the latter or a combination of the two, in order to bring the lazy-loading benefits to any existing content as well. If the attribute could solely be added through the editor, only new or recently modified pieces of content would receive the benefits, drastically reducing the CMS's impact on saving network resources. Furthermore, adding the attribute on the fly will easily allow for future modifications, should the capabilities of native lazy-loading be further expanded.
 
 Adding the attribute on the fly should cater for a potentially existing `loading` attribute on an element though and let such an attribute take precedence. This way, the CMS or an extension for it could also implement the editor-driven approach without causing a conflict with duplicate attributes.
 
