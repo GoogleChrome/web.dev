@@ -53,7 +53,7 @@ fire and respond to events. In short, you don't need to know anything special to
 use any web component, much less `<model-viewer>`.
 
 In this article, I will show you things that are particular to `<model-viewer>`.
-If you're interested in learning more about web components
+If you're interested in learning more about web components,
 [webcomponents.org](https://www.webcomponents.org/) is a good place to start.
 
 ## What can &lt;model-viewer> do?
