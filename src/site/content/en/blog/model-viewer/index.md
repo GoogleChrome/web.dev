@@ -103,7 +103,7 @@ complete list of attributes](https://modelviewer.dev/#section-attributes).
 <model-viewer src="assets/Astronaut.glb" auto-rotate camera-controls>
 ```
 
-### Poster image/delayed loading
+### Delayed loading with poster images
 
 Some 3D models can be very large, so you might want to hold off loading them
 until the user has requested the model. For this, the component has a built-in
