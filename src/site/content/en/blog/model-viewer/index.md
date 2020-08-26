@@ -28,14 +28,6 @@ viewer requires specialty 3D programming skills, and can be a challenge for web
 developers that want to host their own models instead of using a third-party
 hosting service.
 
-<style>
-  #mv-demo {
-    background-color: #36b6fe;
-    max-height: 400px;
-    height: 400px;
-    width: 100%;
-  }
-</style>
 
 To help with that, the `<model-viewer>` web component, which just released
 [version 1.0](https://modelviewer.dev/), lets you declaratively add a 3D model
