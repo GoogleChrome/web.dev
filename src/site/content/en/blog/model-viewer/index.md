@@ -30,7 +30,7 @@ hosting service.
 
 
 To help with that, the `<model-viewer>` web component, which just released
-[version 1.0](https://modelviewer.dev/), lets you declaratively add a 3D model
+[version 1.1](https://modelviewer.dev/), lets you declaratively add a 3D model
 to a web page, while hosting the model on your own site. The web component
 supports responsive design and use cases like augmented reality on some devices,
 and it includes features for accessibility, rendering quality, and
