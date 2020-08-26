@@ -68,7 +68,7 @@ repo](https://modelviewer.dev/).
 ### Basic 3D models
 
 Embedding a 3D model is as simple as the markup below. By
-using glb files, we've ensured that this component will work on any major
+[using glb files](https://www.marxentlabs.com/glb-files/), we've ensured that this component will work on any major
 browser.
 
 ```html
