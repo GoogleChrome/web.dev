@@ -358,9 +358,10 @@ For example:
 
 - The user clicks a "Buy" button on *online-shop.example/cart/checkout*.
 - *online-shop.example* redirects to *payment-provider.example* to manage the transaction.
-- *payment-provider.example* checks the `Referer` of this request against a list of allowed Referers
-  set up by the merchants. If it doesn't match any entry in the list, *payment-provider.example*
-  rejects the request. If it does match, the user can proceed to the transaction.
+- *payment-provider.example* checks the `Referer` of this request against a list of allowed
+  `Referer` values set up by the merchants. If it doesn't match any entry in the list,
+  *payment-provider.example* rejects the request. If it does match, the user can proceed to the
+  transaction.
 
 **Best practices for payment flow security checks, TL;DR: as a payment provider, you can use the
 `Referer` as a basic check against naive attacks—but you should absolutely have another, more
@@ -372,24 +373,24 @@ information unavailable to the payment provider. However, as a payment provider,
 `Referer` may help you catch naive attackers who did not set a `no-referrer` policy. So you can
 decide to use the `Referer` as a first basic check. If you do so: 
 
-- **Do not expect the `Referer` to always be present; and if it's present, only check against the piece of
-  data it will include at the minimum: the origin**. When setting the list of allowed `Referer`s, make
-  sure that no path is included, but only the origin. Example: *online-shop.example*'s allowed
-  `Referer` should be *online-shop.example*, not *online-shop.example/cart/checkout*. Why? Because by
-  expecting either no `Referer` at all or a `Referer` which value is the origin of the requesting
-  website, you prevent unexpected errors since you're **not making assumptions about the
-  `Referrer-Policy`** your merchant has set or about the browser's behavior if the merchant has
-  policy is set. Both the site and the browser could strip the `Referer` sent in the incoming
-  request to just the origin or not send the `Referer` at all. 
+- **Do not expect the `Referer` to always be present; and if it's present, only check against the
+  piece of data it will include at the minimum: the origin**. When setting the list of allowed
+  `Referer`s, make sure that no path is included, but only the origin. Example:
+  *online-shop.example*'s allowed `Referer` should be *online-shop.example*, not
+  *online-shop.example/cart/checkout*. Why? Because by expecting either no `Referer` at all or a
+  `Referer` which value is the origin of the requesting website, you prevent unexpected errors since
+  you're **not making assumptions about the `Referrer-Policy`** your merchant has set or about the
+  browser's behavior if the merchant has policy is set. Both the site and the browser could strip
+  the `Referer` sent in the incoming request to just the origin or not send the `Referer` at all. 
 - If the `Referer` is absent or if it's present and your basic `Referer` origin check was
   successful: you can move onto your other, more reliable verification method (see below).
 
-{% Aside %} If the merchant site uses HTTP and the payment provider site HTTPS, with
-the policies `strict-origin-when-cross-origin` and `no-referrer-when-downgrade` the `Referer` will
-not be sent at all. Since [most browsers use one of these policies by
-default](#default-referrer-policies-in-browsers), if the
-merchant site uses HTTP and has no policy set, no `Referer` will be visible from the HTTPS merchant
-site. This also means that the [Chrome change to a new default
+{% Aside %} If the merchant site uses HTTP and the payment provider site HTTPS, with the policies
+`strict-origin-when-cross-origin` and `no-referrer-when-downgrade` the `Referer` will not be sent at
+all. Since [most browsers use one of these policies by
+default](#default-referrer-policies-in-browsers), if the merchant site uses HTTP and has no policy
+set, no `Referer` will be visible from the HTTPS merchant site. This also means that the [Chrome
+change to a new default
 policy](https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default) won't
 change current behaviours for an HTTP merchant site with an HTTPS payment provider. {% endAside %}
 
