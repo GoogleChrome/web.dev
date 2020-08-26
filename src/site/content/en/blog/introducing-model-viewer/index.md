@@ -13,7 +13,7 @@ description: |
 date: 2020-08-28
 updated: 2020-08-28
 hero: hero.jpg
-alt: A 3D image of an astronaut.
+alt: A 3D image of a shark.
 tags:
   - blog
   - 3d
