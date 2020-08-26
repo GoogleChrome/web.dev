@@ -125,8 +125,8 @@ auto-rotate poster="assets/poster2.png"></model-viewer>
     const posters = ['poster.png', 'poster2.png'];
     let i = 0;
     setInterval(() =>
-        $('#toggle-poster').setAttribute('poster', `assets/${posters[i++ %
-2]}`), 2000);
+        document.querySelector('#toggle-poster').setAttribute('poster', 
+            `assets/${posters[i++ % 2]}`), 2000);
 </script>
 ```
 
