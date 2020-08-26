@@ -19,7 +19,7 @@ tags:
 
 Adding 3D models to a website is tricky. 3D models ideally will be shown in
 a viewer that can work responsively on all browsers including smartphones,
-desktop, or even the new head-mounted displays. The viewer should support
+desktop, or even new head-mounted displays. The viewer should support
 progressive enhancement for performance and rendering quality. It should support
 use cases on all devices ranging from older, lower-powered smartphones to newer
 devices that support augmented reality. It should stay up to date with current
