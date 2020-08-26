@@ -2,6 +2,7 @@
  * An incredibly simple AbortController polyfill. Does not actually abort in-flight fetch()
  * requests.
  */
+/** @type AbortController */
 class AbortControllerPolyfill {
   constructor() {
     let aborted = false;
@@ -24,6 +25,9 @@ class AbortControllerPolyfill {
           handlers.push(fn);
         }
       },
+      onabort: () => undefined,
+      removeEventListener: () => undefined,
+      dispatchEvent: () => undefined,
     });
   }
 }

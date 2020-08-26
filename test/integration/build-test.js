@@ -23,8 +23,6 @@ describe('Build test', function () {
       path.join('en', 'algolia.json'),
       path.join('en', 'feed.xml'),
       path.join('en', 'index.html'),
-      path.join('en', 'index.json'),
-      path.join('en', 'offline', 'index.json'),
       path.join('en', 'authors', 'addyosmani', 'feed.xml'),
       path.join('en', 'tags', 'progressive-web-apps', 'feed.xml'),
       path.join('images', 'favicon.ico'),
@@ -36,7 +34,6 @@ describe('Build test', function () {
       'nuke-sw.js',
       'robots.txt',
       'sitemap.xml',
-      'sw-partial-layout.partial',
       'sw.js',
     ].forEach((file) =>
       assert.ok(

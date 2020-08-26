@@ -8,7 +8,7 @@ const seen = {};
  * @param {string} src
  * @return {!Promise<?>}
  */
-window._import = (src) => {
+window['_import'] = (src) => {
   // Rollup generates relative paths, but they're all relative to top level.
   if (src.startsWith('./')) {
     src = src.substr(2);

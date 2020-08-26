@@ -19,11 +19,11 @@ const chalk = require('chalk');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
+const toc = require('eleventy-plugin-toc');
 const resourcePath = require('./src/build/resource-path');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItAttrs = require('markdown-it-attrs');
-const slugify = require('slugify');
 
 const componentsDir = 'src/site/_includes/components';
 const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
@@ -60,7 +60,6 @@ const newsletters = require(`./${collectionsDir}/newsletters`);
 const {
   postsWithLighthouse,
 } = require(`./${collectionsDir}/posts-with-lighthouse`);
-const recentBlogPosts = require(`./${collectionsDir}/recent-blog-posts`);
 const tags = require(`./${collectionsDir}/tags`);
 // nb. algoliaPosts is only require'd if needed, below
 
@@ -79,6 +78,7 @@ const pagedNavigation = require(`./${filtersDir}/paged-navigation`);
 const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
 const prettyDate = require(`./${filtersDir}/pretty-date`);
 const removeDrafts = require(`./${filtersDir}/remove-drafts`);
+const slugify = require(`./${filtersDir}/slugify`);
 const strip = require(`./${filtersDir}/strip`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
 const stripQueryParamsDev = require(`./${filtersDir}/strip-query-params-dev`);
@@ -87,9 +87,6 @@ const getPaths = require(`./${filtersDir}/get-paths`);
 const transformsDir = 'src/site/_transforms';
 const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
 const {responsiveImages} = require(`./${transformsDir}/responsive-images`);
-const {
-  serviceWorkerPartials,
-} = require(`./${transformsDir}/service-worker-partials`);
 
 module.exports = function (config) {
   console.log(chalk.black.bgGreen('Eleventy is building, please wait…'));
@@ -102,6 +99,13 @@ module.exports = function (config) {
   config.addPlugin(pluginSyntaxHighlight);
   // RSS feeds
   config.addPlugin(pluginRss);
+  config.addPlugin(toc, {
+    tags: ['h2', 'h3'],
+    wrapper: 'div',
+    wrapperClass: 'w-toc__list',
+    ul: true,
+    flat: true,
+  });
 
   // ----------------------------------------------------------------------------
   // MARKDOWN
@@ -114,12 +118,7 @@ module.exports = function (config) {
     permalink: true,
     permalinkClass: 'w-headline-link',
     permalinkSymbol: '#',
-    slugify: function (str) {
-      return slugify(str, {
-        replacement: '-',
-        lower: true,
-      });
-    },
+    slugify,
   };
   const markdownItAttrsOpts = {
     leftDelimiter: '{:',
@@ -160,7 +159,6 @@ module.exports = function (config) {
   config.addCollection('blogPosts', blogPostsDescending);
   config.addCollection('newsletters', newsletters);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
-  config.addCollection('recentBlogPosts', recentBlogPosts);
   config.addCollection('tags', tags);
   // Turn collection.all into a lookup table so we can use findBySlug
   // to quickly find collection items without looping.
@@ -192,6 +190,7 @@ module.exports = function (config) {
   config.addFilter('postsLighthouseJson', postsLighthouseJson);
   config.addFilter('prettyDate', prettyDate);
   config.addFilter('removeDrafts', removeDrafts);
+  config.addFilter('slugify', slugify);
   config.addFilter('stripBlog', stripBlog);
   config.addFilter('stripQueryParamsDev', stripQueryParamsDev);
   config.addFilter('getPaths', getPaths);
@@ -241,12 +240,6 @@ module.exports = function (config) {
     config.addTransform('responsive-images', responsiveImages);
   }
 
-  // !!! Important !!!
-  // This transform should always go last.
-  // It takes the final html and turns it into partials that the
-  // service worker can load.
-  config.addTransform('service-worker-partials', serviceWorkerPartials);
-
   // ----------------------------------------------------------------------------
   // CHECKS
   // ----------------------------------------------------------------------------
@@ -269,6 +262,7 @@ module.exports = function (config) {
   // ----------------------------------------------------------------------------
   // https://www.11ty.io/docs/config/#data-deep-merge
   config.setDataDeepMerge(true);
+  config.setUseGitIgnore(false);
 
   // https://www.11ty.io/docs/config/#configuration-options
   const targetLang = process.env.ELEVENTY_LANG || '';

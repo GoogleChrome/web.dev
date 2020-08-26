@@ -3,13 +3,14 @@ import {BaseResponseElement} from '../BaseResponseElement';
 import './_styles.scss';
 import {generateIdSalt} from '../../utils/generate-salt';
 
-/* eslint-disable require-jsdoc */
 class ResponseMultipleChoice extends BaseResponseElement {
   static get properties() {
     return {
       id: {type: String, reflect: true},
       cardinality: {type: String}, // Allows a range, so it's a string
       columns: {type: Boolean},
+      state: {type: String, reflect: true},
+      correctAnswer: {attribute: 'correct-answer', type: String},
     };
   }
 
@@ -22,6 +23,8 @@ class ResponseMultipleChoice extends BaseResponseElement {
     this.minSelections = null;
     this.maxSelections = null;
     this.selectType = null;
+    this.cardinality = null;
+    this.columns = false;
 
     this.onOptionInput = this.onOptionInput.bind(this);
     this.deselectOption = this.deselectOption.bind(this);
@@ -139,11 +142,15 @@ class ResponseMultipleChoice extends BaseResponseElement {
 
   onOptionInput(e) {
     this.updateSelections(e);
-    this.enforceCardinality(e);
+    this.enforceCardinality();
   }
 
+  /**
+   *
+   * @param {WMouseEvent<HTMLInputElement>} e
+   */
   onOptionClick(e) {
-    const {target} = /** @type {!HTMLInputElement} */ (e);
+    const target = e.target;
     const index = Number(target.value);
 
     const ce = new CustomEvent('question-option-select', {

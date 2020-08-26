@@ -78,7 +78,7 @@ export const requestRunLighthouse = store.action((state, url) => {
   });
 });
 
-export const requestFetchReports = store.action((state, url, startDate) => {
+export const requestFetchReports = store.action((_, url, startDate) => {
   const p = (async () => {
     const runs = await fetchReports(url, startDate);
 
@@ -136,7 +136,9 @@ export const collapseSideNav = store.action(() => {
 
 export const openModal = store.action(() => {
   const main = document.querySelector('main');
+  /** @type import('./components/Header').Header */
   const header = document.querySelector('web-header');
+  /** @type {HTMLElement} */
   const footer = document.querySelector('.w-footer');
 
   document.documentElement.classList.add('web-modal__overflow-hidden');
@@ -148,7 +150,9 @@ export const openModal = store.action(() => {
 
 export const closeModal = store.action(() => {
   const main = document.querySelector('main');
+  /** @type import('./components/Header').Header */
   const header = document.querySelector('web-header');
+  /** @type {HTMLElement} */
   const footer = document.querySelector('.w-footer');
 
   document.documentElement.classList.remove('web-modal__overflow-hidden');
@@ -175,7 +179,7 @@ export const checkIfUserAcceptsCookies = store.action(
 );
 
 export const setUserAcceptsCookies = store.action(() => {
-  localStorage['web-accepts-cookies'] = 1;
+  localStorage['web-accepts-cookies'] = '1';
   return {
     userAcceptsCookies: true,
     showingSnackbar: false,
@@ -215,5 +219,19 @@ export const setLanguage = store.action((state, preferredLanguage) => {
   }
   return {
     userPreferredLanguage: preferredLanguage,
+  };
+});
+
+export const closeToC = store.action(() => {
+  document.querySelector('main').classList.remove('w-toc-open');
+  return {
+    isTocOpened: false,
+  };
+});
+
+export const openToC = store.action(() => {
+  document.querySelector('main').classList.add('w-toc-open');
+  return {
+    isTocOpened: true,
   };
 });

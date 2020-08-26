@@ -4,6 +4,7 @@ subhead: How to render your main content faster.
 authors:
   - houssein
 date: 2020-05-05
+updated: 2020-08-20
 hero: hero2.jpg
 alt: Optimize LCP banner
 description: |
@@ -15,6 +16,8 @@ tags:
   - performance
   - web-vitals
 ---
+
+{% YouTube 'AQqFZ5t8uNc', '1073' %}
 
 <blockquote>
   <p>

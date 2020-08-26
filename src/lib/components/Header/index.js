@@ -23,7 +23,7 @@
 import {store} from '../../store';
 import {expandSideNav} from '../../actions';
 
-class Header extends HTMLElement {
+export class Header extends HTMLElement {
   constructor() {
     super();
 

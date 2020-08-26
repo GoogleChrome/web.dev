@@ -62,8 +62,9 @@ module.exports = (req, res, next) => {
   }
 
   if (lang === locale.defaultLocale) {
-    // If this is alread default language, continue.
-    return isLangInPath ? res.redirect(path.join('/', filePath)) : next();
+    // Redirect to a canonical url, if needed.
+    const shouldRedirect = isLangInPath && !isJson;
+    return shouldRedirect ? res.redirect(path.join('/', filePath)) : next();
   }
 
   const localizedFilePath = path.join(

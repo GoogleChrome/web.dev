@@ -137,7 +137,7 @@ function initialize(firebase) {
 /**
  * Gets the Firestore reference to the user's document.
  *
- * @return {?Object}
+ * @return {Promise<Object>}
  */
 async function userRef() {
   const state = store.getState();
@@ -154,7 +154,7 @@ async function userRef() {
  *
  * @param {string} url to update the user's row with
  * @param {!Date} auditedOn of the most recent Lighthouse run
- * @return {!Date} the earliest audit seen for this URL
+ * @return {Promise<Date>} the earliest audit seen for this URL
  */
 export async function saveUserUrl(url, auditedOn = null) {
   const ref = await userRef();
@@ -208,7 +208,7 @@ export async function saveUserUrl(url, auditedOn = null) {
 /**
  * Request that the user signs in. Resolves on completion.
  *
- * @return {?Object} the auth user
+ * @return {Promise<Object>} the auth user
  */
 export async function signIn() {
   let user = null;
