@@ -15,9 +15,30 @@
  */
 import fs from 'fs';
 import path from 'path';
-import locale from '../../shared/locale';
+
+/**
+ * @TODO Delete below
+ */
+const localeCode = require('iso-639-1');
+
+const isProd = !Boolean(process.env.FUNCTIONS_EMULATOR);
+const contentDir = isProd ? '../../dist' : '../../src/site/content';
+const dirs = fs.readdirSync(path.join(__dirname, contentDir));
+// @ts-ignore
+const supportedLocales = dirs.filter((dir) => localeCode.validate(dir));
+
+const isSupportedLocale = (locale) => supportedLocales.indexOf(locale) > -1;
 
 const indexJsonRegExp = /\/index\.json$/;
+
+const locale = {
+  defaultLocale: 'en',
+  supportedLocales,
+  isSupportedLocale,
+};
+/**
+ * @TODO Delete above
+ */
 
 /**
  * A handler that redirects the request based on requested locale,

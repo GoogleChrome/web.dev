@@ -13,6 +13,298 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "source": "/policies",
+        "destination": "https://policies.google.com/",
+        "type": 301
+      },
+      {
+        "source": "/subscribe",
+        "destination": "/newsletter",
+        "type": 301
+      },
+      {
+        "source": "/fast/using-lighthouse-ci-to-set-a-performance-budget",
+        "destination": "/fast/using-lighthouse-bot-to-set-a-performance-budget",
+        "type": 301
+      },
+      {
+        "source": "/fast/defer-unused-css",
+        "destination": "/fast/defer-non-critical-css",
+        "type": 301
+      },
+      {
+        "source": "/reliable/http-cache/codelab-http-cache",
+        "destination": "/codelab-http-cache",
+        "type": 301
+      },
+      {
+        "source": "/fast/serve-images-webp/codelab-serve-images-webp",
+        "destination": "/codelab-serve-images-webp",
+        "type": 301
+      },
+      {
+        "source": "/fast/remove-unused-code/codelab-remove-unused-code",
+        "destination": "/codelab-remove-unused-code",
+        "type": 301
+      },
+      {
+        "source": "/fast/serve-responsive-images/codelab-art-direction",
+        "destination": "/codelab-art-direction",
+        "type": 301
+      },
+      {
+        "source": "/fast/serve-responsive-images/codelab-art-direction",
+        "destination": "/codelab-art-direction",
+        "type": 301
+      },
+      {
+        "source": "/secure/same-origin-policy/codelab-same-origin-fetch",
+        "destination": "/codelab-same-origin-fetch",
+        "type": 301
+      },
+      {
+        "source": "/secure/same-origin-policy/codelab-same-origin-iframe",
+        "destination": "/codelab-same-origin-iframe",
+        "type": 301
+      },
+      {
+        "source": "/fast/avoid-invisible-text/codelab-avoid-invisible-text",
+        "destination": "/codelab-avoid-invisible-text",
+        "type": 301
+      },
+      {
+        "source": "/fast/preload-critical-assets/codelab-preload-web-fonts",
+        "destination": "/codelab-preload-web-fonts",
+        "type": 301
+      },
+      {
+        "source": "/fast/serve-responsive-images/codelab-density-descriptors",
+        "destination": "/codelab-density-descriptors",
+        "type": 301
+      },
+      {
+        "source": "/discoverable/fix-http-status-codes/codelab-fix-sneaky-404",
+        "destination": "/codelab-fix-sneaky-404",
+        "type": 301
+      },
+      {
+        "source": "/installable/discover-installable/codelab-make-installable",
+        "destination": "/codelab-make-installable",
+        "type": 301
+      },
+      {
+        "source": "/fast/use-imagemin-to-compress-images/codelab-imagemin-gulp",
+        "destination": "/codelab-imagemin-gulp",
+        "type": 301
+      },
+      {
+        "source": "/fast/use-imagemin-to-compress-images/codelab-imagemin-grunt",
+        "destination": "/codelab-imagemin-grunt",
+        "type": 301
+      },
+      {
+        "source": "/fast/preload-critical-assets/codelab-preload-critical-assets",
+        "destination": "/codelab-preload-critical-assets",
+        "type": 301
+      },
+      {
+        "source": "/fast/replace-gifs-with-videos/codelab-replace-gifs-with-video",
+        "destination": "/codelab-replace-gifs-with-video",
+        "type": 301
+      },
+      {
+        "source": "/fast/use-imagemin-to-compress-images/codelab-imagemin-webpack",
+        "destination": "/codelab-imagemin-webpack",
+        "type": 301
+      },
+      {
+        "source": "/reliable/service-workers-cache-storage/codelab-service-workers",
+        "destination": "/codelab-service-workers",
+        "type": 301
+      },
+      {
+        "source": "/fast/serve-modern-code-to-modern-browsers/codelab-serve-modern-code",
+        "destination": "/codelab-serve-modern-code",
+        "type": 301
+      },
+      {
+        "source": "/fast/serve-responsive-images/codelab-specifying-multiple-slot-widths",
+        "destination": "/codelab-specifying-multiple-slot-widths",
+        "type": 301
+      },
+      {
+        "source": "/fast/reduce-javascript-payloads-with-code-splitting/codelab-code-splitting",
+        "destination": "/codelab-code-splitting",
+        "type": 301
+      },
+      {
+        "source": "/reliable/identify-resources-via-network-panel/codelab-explore-network-panel",
+        "destination": "/codelab-explore-network-panel",
+        "type": 301
+      },
+      {
+        "source": "/fast/reduce-network-payloads-using-text-compression/codelab-text-compression",
+        "destination": "/codelab-text-compression",
+        "type": 301
+      },
+      {
+        "source": "/fast/use-lazysizes-to-lazyload-images/codelab-use-lazysizes-to-lazyload-images",
+        "destination": "/codelab-use-lazysizes-to-lazyload-images",
+        "type": 301
+      },
+      {
+        "source": "/fast/serve-images-with-correct-dimensions/codelab-serve-images-correct-dimensions",
+        "destination": "/codelab-serve-images-correct-dimensions",
+        "type": 301
+      },
+      {
+        "source": "/fast/reduce-network-payloads-using-text-compression/codelab-text-compression-brotli",
+        "destination": "/codelab-text-compression-brotli",
+        "type": 301
+      },
+      {
+        "source": "/fast/incorporate-performance-budgets-into-your-build-tools/codelab-setting-performance-budgets-with-webpack",
+        "destination": "/codelab-setting-performance-budgets-with-webpack",
+        "type": 301
+      },
+      {
+        "source": "/accessible/:path",
+        "destination": "/:path",
+        "type": 301
+      },
+      {
+        "source": "/discoverable/:path",
+        "destination": "/:path",
+        "type": 301
+      },
+      {
+        "source": "/fast/:path",
+        "destination": "/:path",
+        "type": 301
+      },
+      {
+        "source": "/installable/:path",
+        "destination": "/:path",
+        "type": 301
+      },
+      {
+        "source": "/reliable/:path",
+        "destination": "/:path",
+        "type": 301
+      },
+      {
+        "source": "/secure/:path",
+        "destination": "/:path",
+        "type": 301
+      },
+      {
+        "source": "/en/handbook/:path",
+        "destination": "/handbook/:path",
+        "type": 301
+      },
+      {
+        "source": "/write-descriptive-text",
+        "destination": "/lighthouse-seo",
+        "type": 301
+      },
+      {
+        "source": "/tell-search-translated-pages-equal",
+        "destination": "/hreflang",
+        "type": 301
+      },
+      {
+        "source": "/tell-search-engine-canonical-url",
+        "destination": "/canonical",
+        "type": 301
+      },
+      {
+        "source": "/remove-code-blocking-indexing",
+        "destination": "/is-crawlable",
+        "type": 301
+      },
+      {
+        "source": "/fix-http-status-codes",
+        "destination": "/http-status-code",
+        "type": 301
+      },
+      {
+        "source": "/remove-browser-plugins",
+        "destination": "/plugins",
+        "type": 301
+      },
+      {
+        "source": "/fix-robot-errors",
+        "destination": "/robots-txt",
+        "type": 301
+      },
+      {
+        "source": "/fix-small-fonts",
+        "destination": "/font-size",
+        "type": 301
+      },
+      {
+        "source": "/fix-viewport-tag",
+        "destination": "/viewport",
+        "type": 301
+      },
+      {
+        "source": "/layout-instability-api",
+        "destination": "/cls",
+        "type": 301
+      },
+      {
+        "source": "/largest-contentful-paint",
+        "destination": "/lcp",
+        "type": 301
+      },
+      {
+        "source": "/web-vitals",
+        "destination": "/vitals",
+        "type": 301
+      },
+      {
+        "source": "/pwa",
+        "destination": "/progressive-web-apps/",
+        "type": 301
+      },
+      {
+        "source": "/installable",
+        "destination": "/progressive-web-apps/#installable",
+        "type": 301
+      },
+      {
+        "source": "/discover-installable",
+        "destination": "/progressive-web-apps/#installable",
+        "type": 301
+      },
+      {
+        "source": "/sms-receiver-api-announcement",
+        "destination": "/web-otp",
+        "type": 301
+      },
+      {
+        "source": "/android-payment-apps-overview",
+        "destination": "/android-payment-app-developers-guide",
+        "type": 301
+      },
+      {
+        "source": "/image-size-responsive",
+        "destination": "/image-aspect-ratio",
+        "type": 301
+      },
+      {
+        "source": "/handbook/tags",
+        "destination": "/handbook/yaml-front-matter/#tags",
+        "type": 301
+      },
+      {
+        "source": "/image-support-for-async-clipboard",
+        "destination": "/async-clipboard",
+        "type": 301
+      }
+    ],
     "rewrites": [
       {
         "source": "**",

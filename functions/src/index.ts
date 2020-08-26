@@ -21,28 +21,11 @@ import compression from 'compression';
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import localeHandler from './locale-handler';
-import {build as buildRedirectHandler} from './redirect-handler';
 import {join} from 'path';
 
 // If true, we'll aggressively nuke the prod Service Worker. For emergencies.
 const serviceWorkerKill = false;
-const directory = (path: string) => join(__dirname, path);
-
-const redirectHandler = (() => {
-  // In development, Eleventy isn't guaranteed to have run, so read the actual
-  // source file.
-  const redirectsPath = isFirebaseProd
-    ? directory('/dist/_redirects.yaml')
-    : directory('/src/site/content/_redirects.yaml');
-
-  // Don't block loading the server if the redirect handler couldn't build.
-  try {
-    return buildRedirectHandler(redirectsPath);
-  } catch (e) {
-    console.warn(e);
-    return (_, __, next) => next();
-  }
-})();
+const directory = (path: string) => join(__dirname, '../../', path);
 
 // 404 handlers aren't special, they just run last.
 const notFoundHandler = (req, res, next) => {
@@ -128,7 +111,6 @@ const handlers = [
   localeHandler,
   express.static(directory('/dist')),
   express.static(directory('/dist/en')),
-  redirectHandler,
   notFoundHandler,
 ];
 

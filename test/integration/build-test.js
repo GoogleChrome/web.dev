@@ -26,7 +26,6 @@ describe('Build test', function () {
       path.join('en', 'tags', 'progressive-web-apps', 'feed.xml'),
       path.join('images', 'favicon.ico'),
       path.join('images', 'lockup.svg'),
-      '_redirects.yaml',
       'app.css',
       'algolia.json',
       'bootstrap.js',
