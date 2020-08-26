@@ -97,7 +97,7 @@ clipboard; clipboard-read; clipboard-write"
 
 The `auto-rotate` and `camera-controls` attributes provide motion and user
 control. Those aren't the only possible attributes. See the documentation for [a
-complete list of](https://modelviewer.dev/).
+complete list of attributes](https://modelviewer.dev/#section-attributes).
 
 ```html
 <model-viewer src="assets/Astronaut.glb" auto-rotate camera-controls>
