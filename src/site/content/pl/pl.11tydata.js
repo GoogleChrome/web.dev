@@ -1,6 +1,7 @@
 const livePaths = require('../../_filters/live-paths');
 const allPaths = require('../../_data/paths');
 const lang = require('./lang');
+const { NONAME } = require('dns');
 
 // =============================================================================
 // HOME OVERVIEW
@@ -23,6 +24,7 @@ module.exports = function () {
   return {
     lang: lang.lang,
     locale: lang.locale,
+    translated: 'none',
     home: {
       paths,
     },
