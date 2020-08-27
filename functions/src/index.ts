@@ -27,22 +27,6 @@ import {join} from 'path';
 const serviceWorkerKill = false;
 const directory = (path: string) => join(__dirname, '../../', path);
 
-// 404 handlers aren't special, they just run last.
-const notFoundHandler = (req, res, next) => {
-  res.status(404);
-
-  const extMatch = /(\.[^.]*)$/.exec(req.url);
-  if (extMatch && extMatch[1] !== '.html') {
-    // If this had an extension and it was not ".html", don't send any bytes.
-    // This is just a minor optimization to not waste bytes.
-    // Pages without extensions won't match here: e.g., "/foo" will still send HTML.
-    return res.end();
-  }
-
-  const options = {root: directory('/dist/en')};
-  res.sendFile('404/index.html', options, (err) => err && next(err));
-};
-
 // Builds a safety asset handler which matches all requests to e.g. "app-...css", and instead
 // returns the current live asset. This applies to both "app.css" and "bootstrap.js".
 function buildSafetyAssetHandler() {
@@ -111,7 +95,6 @@ const handlers = [
   localeHandler,
   express.static(directory('/dist')),
   express.static(directory('/dist/en')),
-  notFoundHandler,
 ];
 
 const app = express();
