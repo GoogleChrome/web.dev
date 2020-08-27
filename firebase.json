@@ -8,6 +8,9 @@
       "node index-algolia.js"
     ],
     "public": "dist",
+    "i18n": {
+      "root": "/localized-files"
+    },
     "ignore": [
       "firebase.json",
       "**/.*",

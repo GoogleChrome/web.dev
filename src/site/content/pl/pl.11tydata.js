@@ -27,5 +27,19 @@ module.exports = function () {
     home: {
       paths,
     },
+    eleventyComputed: {
+      permalink: (data) => {
+        if (data.permalink) {
+          return data.permalink.replace(
+            /^\/{{lang}}/,
+            '/localized-files/{{lang}}',
+          );
+        }
+
+        return data.page.inputPath
+          .replace(/index.(md|njk)$/, '')
+          .replace(/^.\/src\/site\/content/, '')
+      },
+    },
   };
 };

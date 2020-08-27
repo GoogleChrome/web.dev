@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-const isFirebaseProd = !Boolean(process.env.FUNCTIONS_EMULATOR);
+const isFirebaseProd = process.env.FUNCTIONS_EMULATOR === 'true' ? false : true;
 
 import * as functions from 'firebase-functions';
 import compression from 'compression';
 import express from 'express';
 import cookieParser from 'cookie-parser';
-import localeHandler from './locale-handler';
 import {join} from 'path';
 
 // If true, we'll aggressively nuke the prod Service Worker. For emergencies.
@@ -89,13 +88,7 @@ const safetyHandler = (req, res, next) => {
   return next();
 };
 
-const handlers = [
-  safetyHandler,
-  buildSafetyAssetHandler(),
-  localeHandler,
-  express.static(directory('/dist')),
-  express.static(directory('/dist/en')),
-];
+const handlers = [safetyHandler, buildSafetyAssetHandler()];
 
 const app = express();
 

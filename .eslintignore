@@ -1,3 +1,5 @@
 !/.*
 dist/*
 types/*
+functions/lib/*
+functions/node_modules/*
