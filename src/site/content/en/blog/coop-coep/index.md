@@ -224,7 +224,7 @@ both APIs during the transition.
 
 The COOP Reporting API in Chrome is available after version 86 with one of the
 following conditions:
-1. Enable 2 flags at `chrome://flasg`: Cross Origin Opener Policy reporting
+1. Enable 2 flags at `chrome://flags`: Cross Origin Opener Policy reporting
    (`#cross-origin-opener-policy-reporting`) and Cross Origin Opener Policy
    access reporting (`#cross-origin-opener-policy-access-reporting`)
 
@@ -313,19 +313,17 @@ An example COEP report payload looks like this:
 An example COOP report payload looks like this:
 
 ```json
-[ { age: 1289,
+[ { age: 7,
     body:
-     { disposition: 'reporting',
-       documentURI:
-        'https://third-party-test.glitch.me/popup?report-only&coop=same-origin&',
+     { disposition: 'enforce',
        effectivePolicy: 'same-origin',
-       navigationURI: 'https://first-party-test.glitch.me/',
-       type: 'navigation-to-document' },
+       nextResponseURL:
+        'https://third-party-test.glitch.me/popup?report-only&coop=same-origin&',
+       type: 'navigation-from-response' },
     type: 'coop',
-    url:
-     'https://third-party-test.glitch.me/popup?report-only&coop=same-origin&',
+    url: 'https://first-party-test.glitch.me/coop?coop=same-origin&',
     user_agent:
-     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4238.0 Safari/537.36' } ]
+     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36' } ]
 ```
 
 ## Conclusion
