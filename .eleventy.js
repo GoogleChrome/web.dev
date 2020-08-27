@@ -63,7 +63,6 @@ const {
 const tags = require(`./${collectionsDir}/tags`);
 
 const filtersDir = 'src/site/_filters';
-const algolia = require(`./${filtersDir}/algolia`);
 const consoleDump = require(`./${filtersDir}/console-dump`);
 const {memoize, findByUrl} = require(`./${filtersDir}/find-by-url`);
 const pathSlug = require(`./${filtersDir}/path-slug`);
@@ -169,7 +168,6 @@ module.exports = function (config) {
   // ----------------------------------------------------------------------------
   // FILTERS
   // ----------------------------------------------------------------------------
-  config.addFilter('algolia', algolia);
   config.addFilter('consoleDump', consoleDump);
   config.addFilter('findByUrl', findByUrl);
   config.addFilter('findTags', findTags);

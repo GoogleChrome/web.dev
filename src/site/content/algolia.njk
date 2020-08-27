@@ -3,4 +3,4 @@ noindex: true
 permalink: "/algolia.json"
 
 ---
-{{ collections | algolia(collections.authors, collections.newsletters, collections.tags) | dump | safe }}
+{{ algolia | dump | safe }}
