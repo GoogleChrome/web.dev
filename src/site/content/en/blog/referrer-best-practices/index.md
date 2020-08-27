@@ -375,10 +375,10 @@ decide to use the `Referer` as a first basic check. If you do so:
 
 - **Do not expect the `Referer` to always be present; and if it's present, only check against the
   piece of data it will include at the minimum: the origin**. When setting the list of allowed
-  `Referer`s, make sure that no path is included, but only the origin. Example:
-  _online-shop.example_'s allowed `Referer` should be _online-shop.example_, not
-  _online-shop.example/cart/checkout_. Why? Because by expecting either no `Referer` at all or a
-  `Referer` which value is the origin of the requesting website, you prevent unexpected errors since
+  `Referer` values, make sure that no path is included, but only the origin. Example: the allowed
+  `Referer` values for `online-shop.example` should be `online-shop.example`, not
+  `online-shop.example/cart/checkout`. Why? Because by expecting either no `Referer` at all or a
+  `Referer` value that is the origin of the requesting website, you prevent unexpected errors since
   you're **not making assumptions about the `Referrer-Policy`** your merchant has set or about the
   browser's behavior if the merchant has no policy set. Both the site and the browser could strip
   the `Referer` sent in the incoming request to just the origin or not send the `Referer` at all.
