@@ -4,7 +4,7 @@ subhead: Best practices to set your Referrer-Policy and use the referrer in inco
 authors:
   - maudn
 date: 2020-07-30
-updated: 2020-08-26
+updated: 2020-08-27
 hero: hero.jpg
 thumbnail: hero.jpg
 description: |
@@ -387,20 +387,26 @@ decide to use the `Referer` as a first basic check. If you do so:
 - If the `Referer` is absent or if it's present and your basic `Referer` origin check was
   successful: you can move onto your other, more reliable verification method (see below).
 
-{% Aside %} If the merchant site uses HTTP and the payment provider site HTTPS, with the policies
-`strict-origin-when-cross-origin` and `no-referrer-when-downgrade` the `Referer` will not be sent at
-all. Since [most browsers use one of these policies by
-default](#default-referrer-policies-in-browsers), if the merchant site uses HTTP and has no policy
-set, no `Referer` will be visible from the HTTPS merchant site. This also means that the [Chrome
-change to a new default
-policy](https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default) won't
-change current behaviours for an HTTP merchant site with an HTTPS payment provider. {% endAside %}
-
 **What is a more reliable verification method?**
 
 One reliable verification method is to let the requester **hash the request parameters** together
 with a unique key. As a payment provider, you can then **calculate the same hash on your side** and
 only accept the request if it matches your calculation.
+
+**What happens to the `Referer` when an HTTP merchant site with no referrer policy redirects to an
+HTTPS payment provider?**
+
+No `Referer` will be visible in the request to the HTTPS payment provider, because [most
+browsers](#default-referrer-policies-in-browsers) use `strict-origin-when-cross-origin` or
+`no-referrer-when-downgrade` by default. Also note that [Chrome change to a new default
+policy](https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default) won't
+change this behaviour.
+
+{% Aside %}
+
+If your website uses HTTP, [migrate to HTTPS](/why-https-matters/).
+
+{% endAside %}
 
 ## Conclusion
 
