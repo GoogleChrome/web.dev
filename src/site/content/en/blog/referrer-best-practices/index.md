@@ -363,8 +363,10 @@ For example:
   `payment-provider.example` rejects the request. If it does match, the user can proceed to the
   transaction.
 
-**Best practices for payment flow security checks, TL;DR: as a payment provider, you can use the
-`Referer` as a basic check against naive attacks—but you should absolutely have another, more
+#### Best practices for payment flow security checks
+
+**Summary: as a payment provider, you can use the `Referer` as a basic check
+against naive attacks—but you should absolutely have another, more
 reliable verification method in place.**
 
 The `Referer` header alone isn't a reliable basis for a check: the requesting site, whether they're
