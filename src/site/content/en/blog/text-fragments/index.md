@@ -360,7 +360,7 @@ if ('fragmentDirective' in document) {
 ```
 
 {% Aside %}
-  From Chrome&nbsp;80 to Chrome&nbsp;85, the `fragmentDirective` property was defined on 
+  From Chrome&nbsp;80 to Chrome&nbsp;85, the `fragmentDirective` property was defined on
   `Location.prototype`. For details on this change, see
   [WICG/scroll-to-text-fragment#130](https://github.com/WICG/scroll-to-text-fragment/issues/130).
 {% endAside %}
