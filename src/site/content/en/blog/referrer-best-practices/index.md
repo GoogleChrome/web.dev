@@ -398,7 +398,8 @@ HTTPS payment provider?**
 
 No `Referer` will be visible in the request to the HTTPS payment provider, because [most
 browsers](#default-referrer-policies-in-browsers) use `strict-origin-when-cross-origin` or
-`no-referrer-when-downgrade` by default. Also note that [Chrome change to a new default
+`no-referrer-when-downgrade` by default when a website has no policy set. Also note that [Chrome's
+change to a new default
 policy](https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default) won't
 change this behaviour.
 
