@@ -41,7 +41,7 @@ origin or web page URL the request was made from. The [`Referrer-Policy`
 header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) defines what data
 is made available in the `Referer` header.
 
-In the example below, the `Referer` header includes the complete URL of the page on *site-one* from
+In the example below, the `Referer` header includes the complete URL of the page on `site-one` from
 which the request was made.
 
 <figure class="w-figure">
@@ -58,7 +58,7 @@ For navigations and iframes, this data can also be accessed via JavaScript using
 `document.referrer`.
 
 The `Referer` value can be insightful. For example, an analytics service might use the value to
-determine that 50% of the visitors on *site-two.example* came from *social-network.example*.
+determine that 50% of the visitors on `site-two.example` came from `social-network.example`.
 
 But when the full URL including the path and query string is sent in the `Referer` **across
 origins**, this can be **privacy-hindering** and pose **security risks** as well. Take a look at
