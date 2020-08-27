@@ -356,11 +356,11 @@ Payment providers may rely on the `Referer` header of incoming requests for secu
 
 For example: 
 
-- The user clicks a "Buy" button on *online-shop.example/cart/checkout*.
-- *online-shop.example* redirects to *payment-provider.example* to manage the transaction.
-- *payment-provider.example* checks the `Referer` of this request against a list of allowed
+- The user clicks a **Buy** button on `online-shop.example/cart/checkout`.
+- `online-shop.example` redirects to `payment-provider.example` to manage the transaction.
+- `payment-provider.example` checks the `Referer` of this request against a list of allowed
   `Referer` values set up by the merchants. If it doesn't match any entry in the list,
-  *payment-provider.example* rejects the request. If it does match, the user can proceed to the
+  `payment-provider.example` rejects the request. If it does match, the user can proceed to the
   transaction.
 
 **Best practices for payment flow security checks, TL;DR: as a payment provider, you can use the
