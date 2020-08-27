@@ -68,6 +68,7 @@ gulp.task('copy-content-assets', () => {
       .pipe(
         rename((assetPath) => {
           const parts = assetPath.dirname.split('/');
+          assetPath.dirname = assetPath.dirname.replace(/^en\//, '');
           // Landing pages should keep their assets.
           // e.g. en/vitals, en/about
           if (parts.length <= 2) {
@@ -90,7 +91,7 @@ gulp.task('copy-content-assets', () => {
           // serve in production.
           // e.g. en/blog/foo/bar.jpg -> en/foo/bar.jpg
           parts.splice(1, 1);
-          assetPath.dirname = parts.join('/');
+          assetPath.dirname = parts.join('/').replace(/^en\//, '');
         }),
       )
       .pipe(gulp.dest('./dist/'))

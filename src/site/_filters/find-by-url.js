@@ -60,6 +60,8 @@ const findByUrl = (url) => {
     throw new Error('No collection has been memoized yet.');
   }
 
+  url = url.replace(/^\/en/, '');
+
   return memo[url];
 };
 
