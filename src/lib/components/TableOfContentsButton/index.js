@@ -52,7 +52,7 @@ class TableOfContentsButton extends BaseStateElement {
       category: 'Site-Wide Custom Events',
       action: 'click',
       label: 'ToC',
-      value: (isTocOpened ? 1 : 0),
+      value: isTocOpened ? 1 : 0,
     });
   }
 }
