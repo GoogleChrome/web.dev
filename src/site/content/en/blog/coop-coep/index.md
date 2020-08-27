@@ -207,8 +207,9 @@ The [Reporting
 API](https://developers.google.com/web/updates/2018/09/reportingapi) is another
 mechanism through which you can detect various issues. You can configure the
 Reporting API to instruct your users' browser to send a report whenever COEP
-blocks the loading of a resource. Chrome has supported the `Report-To` header since
-version 69 for a variety of uses including COEP.
+blocks the loading of a resource or COOP isolates a popup window. Chrome has
+supported the `Report-To` header since version 69 for a variety of uses
+including COEP and COOP.
 
 {% Aside %}
 The Reporting API is undergoing transition to [a new
@@ -219,13 +220,28 @@ API](https://bugzilla.mozilla.org/show_bug.cgi?id=1620573). You may want to use
 both APIs during the transition.
 {% endAside %}
 
-To specify where the browser should send reports, append the `Report-To`
-HTTP header to any document that is served with a COEP HTTP header. The
+{% Aside 'caution' %}
+
+The COOP Reporting API in Chrome is available after version 86 with one of the
+following conditions:
+1. Enable 2 flags at `chrome://flasg`: Cross Origin Opener Policy reporting
+   (`#cross-origin-opener-policy-reporting`) and Cross Origin Opener Policy
+   access reporting (`#cross-origin-opener-policy-access-reporting`)
+
+2. Use it on a domain that is registered to the [origin
+   trials](/origin-trials/): Register [the COOP Reporting API origin
+   trials](https://developers.chrome.com/origintrials/#/register_trial/2780972769901281281).
+
+
+{% endAside %}
+
+To specify where the browser should send reports, append the `Report-To` HTTP
+header to any document that is served with a COEP or COOP HTTP header. The
 `Report-To` header also supports a few extra parameters to configure the
 reports. For example:
 
 ```http
-Report-To: { group: 'coep_rollout_1', max_age: 86400, endpoints: [{ url: 'https://first-party-test.glitch.me/report'}]}
+Report-To: { group: 'coep_report', max_age: 86400, endpoints: [{ url: 'https://first-party-test.glitch.me/report'}]},{ group: 'coop_report', max_age: 86400, endpoints: [{ url: 'https://first-party-test.glitch.me/report'}]}
 ```
 
 The parameters object has three properties:
@@ -234,28 +250,35 @@ The parameters object has three properties:
 
 The `group` property names your various reporting endpoints. Use these names to
 direct a subset of your reports. For instance, in the
-`Cross-Origin-Embedder-Policy` directive you can specify the relevant endpoint
-by providing the group name to `report-to=`. For example:
+`Cross-Origin-Embedder-Policy` and `Cross-Origin-Opener-Policy` directives you
+can specify the relevant endpoint by providing the group name to `report-to=`.
+For example:
 
 ```http
-Cross-Origin-Embedder-Policy: require-corp; report-to="coep_rollout_1"
+Cross-Origin-Embedder-Policy: require-corp; report-to="coep_report"
+Cross-Origin-Opener-Policy: same-origin; report-to="coop_report"
 ```
 When the browser encounters this, it will cross reference the `report-to` value
 with the `group` property on the `Report-To` header to look up the endpoint.
-This example cross references on `coep_rollout_1` to find the endpoint
-`https://first-party-test.glitch.me/report`.
+This example cross references on both `coep_report` and `coop_report` to find
+the endpoint `https://first-party-test.glitch.me/report`.
 
-If you prefer to receive reports without blocking any embedded content, use
-`Cross-Origin-Embedder-Policy-Report-Only` instead of
-`Cross-Origin-Embedder-Policy`. For example:
+If you prefer to receive reports without blocking any embedded content or
+isolate a popup window, append `-Report-Only` to respective headers: i.e.
+`Cross-Origin-Embedder-Policy-Report-Only` and
+`Cross-Origin-Opener-Policy-Report-Only`. For example:
 
 ```http
-Cross-Origin-Embedder-Policy-Report-Only: require-corp; report-to="coep_rollout_1"
+Cross-Origin-Embedder-Policy-Report-Only: require-corp; report-to="coep_report"
+Cross-Origin-Opener-Policy-Report-Only: same-origin; report-to="coop_report"
 ```
 
 By doing this, when the browser detects cross origin resources that don't have
 CORP or CORS, it sends a report using the Reporting API without actually
-blocking those resources.
+blocking those resources because of COEP.
+
+Similarly, when the browser opens a cross-origin popup window, it sends a report
+without actually isolating the window because of COOP.
 
 #### `max_age`
 
@@ -272,19 +295,37 @@ The `endpoints` property specifies the URLs of one or more reporting endpoints.
 The endpoint must accept CORS if it's hosted on a different origin. The browser
 will send reports with a Content-Type of `application/reports+json`.
 
-An example payload looks like this:
+An example COEP report payload looks like this:
 
 ```json
 [{
   age: 0,
   body: {
-    'blocked-url': 'https://third-party-test.glitch.me/check.svg',
+    'blockedURL': 'https://third-party-test.glitch.me/check.svg',
     type: 'corp'
   },
   type: 'coep',
   url: 'https://first-party-test.glitch.me/?coep=require-corp',
   …
 }]
+```
+
+An example COOP report payload looks like this:
+
+```json
+[ { age: 1289,
+    body:
+     { disposition: 'reporting',
+       documentURI:
+        'https://third-party-test.glitch.me/popup?report-only&coop=same-origin&',
+       effectivePolicy: 'same-origin',
+       navigationURI: 'https://first-party-test.glitch.me/',
+       type: 'navigation-to-document' },
+    type: 'coop',
+    url:
+     'https://third-party-test.glitch.me/popup?report-only&coop=same-origin&',
+    user_agent:
+     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4238.0 Safari/537.36' } ]
 ```
 
 ## Conclusion
