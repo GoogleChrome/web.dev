@@ -278,7 +278,8 @@ CORP or CORS, it sends a report using the Reporting API without actually
 blocking those resources because of COEP.
 
 Similarly, when the browser opens a cross-origin popup window, it sends a report
-without actually isolating the window because of COOP.
+without actually isolating the window because of COOP. When on report-only mode,
+sending and receiving a `postMessage()` also emit a report.
 
 #### `max_age`
 
@@ -295,7 +296,8 @@ The `endpoints` property specifies the URLs of one or more reporting endpoints.
 The endpoint must accept CORS if it's hosted on a different origin. The browser
 will send reports with a Content-Type of `application/reports+json`.
 
-An example COEP report payload looks like this:
+An example COEP report payload when cross-origin resource is blocked looks like
+this:
 
 ```json
 [{
@@ -310,7 +312,7 @@ An example COEP report payload looks like this:
 }]
 ```
 
-An example COOP report payload looks like this:
+An example COOP report payload when a popup window is opened isolated looks like this:
 
 ```json
 [ { age: 7,
@@ -322,6 +324,37 @@ An example COOP report payload looks like this:
        type: 'navigation-from-response' },
     type: 'coop',
     url: 'https://first-party-test.glitch.me/coop?coop=same-origin&',
+    user_agent:
+     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36' } ]
+```
+
+A COOP report when sending and receiving a `postMessage()` across isolated
+browsing context groups look like this (only works on "report-only" mode):
+
+```json
+[ { age: 51785,
+    body:
+     { columnNumber: 18,
+       disposition: 'reporting',
+       effectivePolicy: 'same-origin',
+       lineNumber: 83,
+       property: 'postMessage',
+       sourceFile: 'https://first-party-test.glitch.me/popup.js',
+       type: 'access-from-coop-page-to-openee' },
+    type: 'coop',
+    url:
+     'https://first-party-test.glitch.me/coop?report-only&coop=same-origin&',
+    user_agent:
+     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36' },
+  { age: 51785,
+    body:
+     { disposition: 'reporting',
+       effectivePolicy: 'same-origin',
+       property: 'postMessage',
+       type: 'access-to-coop-page-from-openee' },
+    type: 'coop',
+    url:
+     'https://first-party-test.glitch.me/coop?report-only&coop=same-origin&',
     user_agent:
      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36' } ]
 ```
