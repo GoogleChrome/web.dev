@@ -31,9 +31,9 @@ module.exports = {
   notifications,
   payments,
   'progressive-web-apps': progressiveWebApps,
-  media,
   react,
   reliable,
   secure,
   vitals,
+  media,
 };
