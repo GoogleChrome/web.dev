@@ -10,6 +10,7 @@ updated: 2020-07-20
 description: |
   Learn how to register a web-based payment app to a customers' browser. You'll also learn how to debug them.
 tags:
+  - blog
   - payments
 ---
 

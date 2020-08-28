@@ -5,10 +5,11 @@ subhead: |
   How to adapt your web-based payment app to Web Payments and provide a better user experience for customers.
 authors:
   - agektmr
-date: 2020-08-14
+date: 2020-08-31
 description: |
   Once a web-based payment app is registered, it's ready to accept payment requests from merchants. This article teaches you how to orchestrate a payment transaction from a service worker during runtime.
 tags:
+  - blog
   - payments
   - service-worker
 ---
@@ -73,7 +74,13 @@ methods (Credit Card Issuer 1 and Bank X). On a payment transaction, the payment
 app can let the customer pick one of the payment instruments and use it to pay
 for the merchant.
 
-
+<figure class="w-figure" style="width:300px; margin:auto;">
+  <img class="w-screenshot" src="./paymentmethodchanged-ss.png"
+       alt="Payment method picker UI">
+  <figcaption class="w-figcaption">
+    Payment method picker UI
+  </figcaption>
+</figure>
 
 The payment app can let the merchant know which payment method the customer
 picked before sending the full payment response. This is useful when the
@@ -86,7 +93,13 @@ identifier. The service worker should invoke
 `PaymentRequestEvent.changePaymentMethod()` with the new payment method
 information.
 
-
+<figure class="w-figure">
+  <img class="w-screenshot" src="./paymentmethodchanged.png"
+       alt="Inform the merchant of a payment method change">
+  <figcaption class="w-figcaption">
+    Inform the merchant of a payment method change
+  </figcaption>
+</figure>
 
 Payment apps can pass a `methodDetails` object as the optional second argument
 for `PaymentRequestEvent.changePaymentMethod()`. This object can contain
@@ -100,7 +113,7 @@ payment apps should omit unnecessary details as much as possible.
 {% endAside %}
 
 {% Label %}
-[payment handler] serviceworker.js
+[payment handler] service-worker.js
 {% endLabel %}
 
 ```js
@@ -163,7 +176,7 @@ returned will resolve with a
 object.
 
 {% Label %}
-[payment handler] serviceworker.js
+[payment handler] service-worker.js
 {% endLabel %}
 
 ```js
@@ -194,7 +207,13 @@ This is beneficial for customers as well because once they register their
 address information to their favorite payment app, they can reuse it in
 different shops.
 
-
+<figure class="w-figure" style="width:300px; margin:auto;">
+  <img class="w-screenshot" src="./shippingaddresschanged-ss.png"
+       alt="Shipping address picker UI">
+  <figcaption class="w-figcaption">
+    Shipping address picker UI
+  </figcaption>
+</figure>
 
 Payment apps can provide a UI to edit a shipping address or to select
 pre-registered address information for the customer on a payment transaction.
@@ -216,10 +235,16 @@ address. The service worker should invoke
 with the [new address
 object](https://www.w3.org/TR/payment-request/#dom-addressinit).
 
-
+<figure class="w-figure">
+  <img class="w-screenshot" src="./shippingaddresschanged.png"
+       alt="Inform the merchant of a shipping address change">
+  <figcaption class="w-figcaption">
+    Inform the merchant of a shipping address change
+  </figcaption>
+</figure>
 
 {% Label %}
-[payment handler] serviceworker.js
+[payment handler] service-worker.js
 {% endLabel %}
 
 ```js
@@ -270,7 +295,7 @@ returned will resolve with a
 object.
 
 {% Label %}
-[payment handler] serviceworker.js
+[payment handler] service-worker.js
 {% endLabel %}
 
 ```js
@@ -301,7 +326,13 @@ Merchants using the Payment Request API can delegate this selection to a payment
 app. The payment app can use the information to construct a UI and let the
 customer pick a shipping option.
 
-
+<figure class="w-figure" style="width:300px; margin:auto;">
+  <img class="w-screenshot" src="./shippingoptionchanged-ss.png"
+       alt="Shipping option picker UI">
+  <figcaption class="w-figcaption">
+    Shipping option picker UI
+  </figcaption>
+</figure>
 
 The list of shipping options specified in the merchant's Payment Request API is
 propagated to the payment app's service worker as a property of
@@ -349,10 +380,16 @@ invoke
 [`PaymentRequestEvent.changeShippingOption()`](https://w3c.github.io/payment-handler/#dom-paymentrequestevent-changeshippingoption)
 with the new shipping option ID.
 
-
+<figure class="w-figure">
+  <img class="w-screenshot" src="./shippingoptionchanged.png"
+       alt="Inform the merchant of a shipping option change">
+  <figcaption class="w-figcaption">
+    Inform the merchant of a shipping option change
+  </figcaption>
+</figure>
 
 {% Label %}
-[payment handler] serviceworker.js
+[payment handler] service-worker.js
 {% endLabel %}
 
 ```js
@@ -400,7 +437,7 @@ returned will resolve with a
 object.
 
 {% Label %}
-[payment handler] serviceworker.js
+[payment handler] service-worker.js
 {% endLabel %}
 
 ```js
@@ -414,10 +451,8 @@ object.
 …
 ```
 
-Use the object to update the UI on the frontend. Since this object is
-consistently used across `.changePaymentMethod()`, `.changeShippingAddress()`
-and `.changeShippingOption()`, we'll cover this in the [Reflect the updated
-payment details](#reflect-the-updated-payment-details) section of this article.
+Use the object to update the UI on the frontend. See [Reflect the updated
+payment details](#reflect-the-updated-payment-details).
 
 ## Reflect the updated payment details {: #reflect-the-updated-payment-details }
 
@@ -458,6 +493,43 @@ Use the following properties to reflect the error status:
   [`BasicCardErrors`](https://www.w3.org/TR/payment-method-basic-card/#dom-basiccarderrors)
   for basic-card, but the Web Payments spec authors recommend keeping it a
   simple string.
+
+## Sample code
+
+Most of sample codes you saw in this document were excerpts from the following
+working sample app:
+
+[https://paymenthandler-demo.glitch.me](https://paymenthandler-demo.glitch.me)
+
+{% Label %}
+[payment handler] service worker
+{% endLabel %}
+
+{% Glitch {
+  id: 'paymenthandler-demo',
+  path: 'public/payment-handler.js',
+  previewSize: 0,
+  allow: []
+} %}
+
+{% Label %}
+[payment handler] frontend
+{% endLabel %}
+
+{% Glitch {
+  id: 'paymenthandler-demo',
+  path: 'public/pay.js',
+  previewSize: 0,
+  allow: []
+} %}
+
+To try it out:
+
+1. Go to [https://paymentrequest-demo.glitch.me/](https://paymentrequest-demo.glitch.me/).
+2. Go to the bottom of the page.
+3. Press **Add a payment button**.
+4. Enter `https://paymenthandler-demo.glitch.me` to the **Payment Method Identifier** field.
+5. Press **Pay** button next to the field.
 
 ## Next steps
 

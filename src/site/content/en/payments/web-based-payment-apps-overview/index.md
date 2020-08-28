@@ -9,6 +9,7 @@ date: 2020-07-17
 description: |
   Learn how to adapt your web-based payment app to work with Web Payments and provide a better user experience for customers.
 tags:
+  - blog
   - payments
 ---
 

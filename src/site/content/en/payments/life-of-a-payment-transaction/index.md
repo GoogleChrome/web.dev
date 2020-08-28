@@ -13,6 +13,7 @@ description: |
   Learn how merchants integrate payment apps, how payment transactions work with
   the Payment Request API, and what's possible in Web Payments.
 tags:
+  - blog
   - payments
 ---
 

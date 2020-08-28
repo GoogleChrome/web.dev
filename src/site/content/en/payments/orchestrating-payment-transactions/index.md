@@ -5,10 +5,11 @@ subhead: |
   How to adapt your web-based payment app to Web Payments and provide a better user experience for customers.
 authors:
   - agektmr
-date: 2020-08-14
+date: 2020-08-31
 description: |
   Once a web-based payment app is registered, it's ready to accept payment requests from merchants. This article teaches you how to orchestrate a payment transaction from a service worker during runtime.
 tags:
+  - blog
   - payments
   - service-worker
 ---
@@ -40,7 +41,7 @@ your service worker will receive a `paymentrequest` event. Add an event listener
 to the service worker to capture the event and prepare for the next action.
 
 {% Label %}
-[payment handler] serviceworker.js:
+[payment handler] service-worker.js:
 {% endLabel %}
 
 ```js
@@ -157,7 +158,7 @@ Pass a preserved promise to `PaymentRequestEvent.respondWith()` so that you can
 resolve it with a payment result in the future.
 
 {% Label %}
-[payment handler] serviceworker.js:
+[payment handler] service-worker.js:
 {% endLabel %}
 
 ```js
@@ -220,7 +221,7 @@ from the frontend, listen to `message` events.
 
 
 {% Label %}
-[payment handler] serviceworker.js:
+[payment handler] service-worker.js:
 {% endLabel %}
 
 ```js
@@ -247,7 +248,7 @@ navigator.serviceWorker.controller.postMessage({
 ```
 
 {% Label %}
-[payment handler] serviceworker.js:
+[payment handler] service-worker.js:
 {% endLabel %}
 
 ```js
@@ -269,7 +270,7 @@ Now send the payment details back. In this case you're only sending the total of
 the payment request, but you can pass more details if you like.
 
 {% Label %}
-[payment handler] serviceworker.js:
+[payment handler] service-worker.js:
 {% endLabel %}
 
 ```js
@@ -387,7 +388,7 @@ If <code>PaymentRequestEvent.paymentOptions.requestBillingAddress === true</code
 ```
 
 {% Label %}
-[payment handler] serviceworker.js:
+[payment handler] service-worker.js:
 {% endLabel %}
 
 ```js
@@ -445,7 +446,7 @@ the merchant that the transaction has been cancelled.
 ```
 
 {% Label %}
-[payment handler] serviceworker.js:
+[payment handler] service-worker.js:
 {% endLabel %}
 
 ```js
@@ -465,6 +466,44 @@ self.addEventListener('message', async e => {
         break;
       …
 ```
+
+## Sample code
+
+All sample codes you saw in this document were excerpts from the following
+working sample app:
+
+[https://paymenthandler-demo.glitch.me](https://paymenthandler-demo.glitch.me)
+
+{% Label %}
+[payment handler] service worker
+{% endLabel %}
+
+{% Glitch {
+  id: 'paymenthandler-demo',
+  path: 'public/payment-handler.js',
+  previewSize: 0,
+  allow: []
+} %}
+
+{% Label %}
+[payment handler] frontend
+{% endLabel %}
+
+{% Glitch {
+  id: 'paymenthandler-demo',
+  path: 'public/pay.js',
+  previewSize: 0,
+  allow: []
+} %}
+
+To try it out:
+
+1. Go to [https://paymentrequest-demo.glitch.me/](https://paymentrequest-demo.glitch.me/).
+2. Go to the bottom of the page.
+3. Press **Add a payment button**.
+4. Enter `https://paymenthandler-demo.glitch.me` to the **Payment Method Identifier** field.
+5. Press **Pay** button next to the field.
+
 
 ## Next steps
 
