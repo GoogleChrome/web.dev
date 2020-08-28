@@ -72,7 +72,7 @@
     "@11ty/eleventy": "^0.11.0",
     "@11ty/eleventy-plugin-rss": "^1.0.7",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
-    "@percy/script": "^1.0.3",
+    "@percy/script": "^1.1.0",
     "@surma/rollup-plugin-off-main-thread": "^1.4.1",
     "@types/google.analytics": "0.0.40",
     "@types/node": "^13.11.1",
