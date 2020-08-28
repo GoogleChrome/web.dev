@@ -1,6 +1,6 @@
 ---
 title: Help users change passwords easily by adding a well-known URL for changing passwords
-subhead: Help users update their password easily.
+subhead: Redirect a request to `/.well-known/change-password` to the change-passwords URL
 authors:
   - agektmr
 date: 2020-08-31
@@ -153,7 +153,7 @@ passwords, and see a list of passwords that are recommended for update.
 
 <figure class="w-figure">
   <img src="./check-passwords.png" width="1478" height="845" />
-  <figcaption class="w-figcaption w-figcaption--fullbleed">
+  <figcaption class="w-figcaption">
     Chrome's "check passwords" functionality
   </figcaption>
 </figure>
