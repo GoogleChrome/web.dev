@@ -26,7 +26,8 @@
         "cross-origin-resource-sharing",
         "coop-coep",
         "why-coop-coep",
-        "fetch-metadata"
+        "fetch-metadata",
+        "change-password-url"
       ]
     },
     {
