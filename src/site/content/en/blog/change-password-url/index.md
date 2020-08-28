@@ -88,13 +88,13 @@ your server to redirect a request for
 `https://example.com/.well-known/change-password` to
 `https://example.com/settings/password`. That's it. For the redirection, [use
 the HTTP status code](https://wicg.github.io/change-password-url/#semantics)
-`[302 Found](https://developer.mozilla.org/docs/Web/HTTP/Status/302)`, `[303 See
-Other](https://developer.mozilla.org/docs/Web/HTTP/Status/303)` or `[307
-Temporary Redirect](https://developer.mozilla.org/docs/Web/HTTP/Status/307)`.
+[`302 Found`](https://developer.mozilla.org/docs/Web/HTTP/Status/302), [`303 See
+Other`](https://developer.mozilla.org/docs/Web/HTTP/Status/303) or [`307
+Temporary Redirect`](https://developer.mozilla.org/docs/Web/HTTP/Status/307).
 
 Alternatively you can serve HTML at your `.well-known/change-password` URL with
 a `<meta>` tag using an
-`[http-equiv="refresh"](https://developer.mozilla.org/docs/Web/HTML/Element/meta#attr-http-equiv)`.
+[`http-equiv="refresh"`](https://developer.mozilla.org/docs/Web/HTML/Element/meta#attr-http-equiv).
 
 ```html
 <meta http-equiv="refresh" content="0;url=https://example.com/settings/password">
