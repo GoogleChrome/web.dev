@@ -5,11 +5,9 @@ authors:
   - agektmr
 date: 2020-08-31
 hero: hero.jpg
-alt: A drawing of a woman using OTP to log in to a web app.
-
+alt: Neon lights shaped into various symbols that are commonly used in passwords.
 description: |
   By redirecting requests to /.well-known/change-password to the change password URL, you can let users update their passwords easier than before.
-
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - identity
@@ -25,7 +23,7 @@ directly to that page.
 As you may know, [passwords are not the best way to manage
 accounts](https://security.googleblog.com/2017/11/new-research-understanding-root-cause.html).
 Luckily, there are emerging technologies such as
-[WebAuthn](https://webauthn.io/) and techniques such as one time passwords that
+[WebAuthn](https://webauthn.io/) and techniques such as one-time passwords that
 are helping us get closer to a world without passwords. However, these
 technologies are still being developed and things won't change rapidly. Many
 developers will still need to deal with passwords for at least the next few
@@ -60,7 +58,7 @@ properly leverage that, password managers are adding a new feature:
 **Detect vulnerable passwords and suggest updating them**: Password managers can
 detect passwords that are reused, analyze the entropy and weakness of them, and
 even detect potentially leaked passwords or ones that are known to be unsafe
-from sources such as [https://haveibeenpwned.com/](https://haveibeenpwned.com/).
+from sources such as [Have I Been Pwned](https://haveibeenpwned.com/).
 
 A password manager can warn users about problematic passwords, but there's a lot
 of friction in asking users to navigate from the homepage to a change password
@@ -130,7 +128,7 @@ websites for a while:
 * [GitHub](https://github.com/.well-known/change-password)  
 * [Facebook](https://www.facebook.com/.well-known/change-password)
 * [Twitter](http://twitter.com/.well-known/change-password)
-* [Wordpress](https://wordpress.com/.well-known/change-password)
+* [WordPress](https://wordpress.com/.well-known/change-password)
 
 Try them yourself and do the same for yours!
 
@@ -138,8 +136,9 @@ Try them yourself and do the same for yours!
 
 A well-known URL for changing passwords has been [supported in Safari since
 2019](https://webkit.org/blog/9170/safari-technology-preview-84-with-safari-13-features-is-now-available/).
-Chrome's password manager is starting to support it from version 86 onwards and
-other Chromium-based browsers may follow. [Firefox considers it worth
+Chrome's password manager is starting to support it from version 86 onwards
+(which is scheduled for Stable release in late October 2020)
+and other Chromium-based browsers may follow. [Firefox considers it worth
 implementing](https://mozilla.github.io/standards-positions/#change-password-url),
 but has not signalled that it plans to do so as of August 2020.
 
@@ -148,17 +147,17 @@ but has not signalled that it plans to do so as of August 2020.
 Let's have a look at how Chrome's password manager treats vulnerable passwords.
 
 Chrome's password manager is able to check for leaked passwords. By navigating
-to `chrome://settings/passwords` users can run Check passwords against stored
+to `chrome://settings/passwords` users can run **Check passwords** against stored
 passwords, and see a list of passwords that are recommended for update.
 
 <figure class="w-figure">
-  <img src="./check-passwords.png" width="1478" height="845" />
+  <img src="./check-passwords.png" width="1478" height="845" class="w-screenshot"/>
   <figcaption class="w-figcaption">
     Chrome's "check passwords" functionality
   </figcaption>
 </figure>
 
-By clicking the Change password button next to a password that is recommended to
+By clicking the <b>Change password</b> button next to a password that is recommended to
 be updated, the browser will:
 
 * Open the website's change password page if `/.well-known/change-password` is
@@ -202,10 +201,12 @@ server returns `404 Not Found` for any non-existing contents.
 
 {% endDetails %}
 
-## Resources
+## Feedback
 
 If you have any feedback on the specification, please file an issue to [the spec
 repository](https://github.com/wicg/change-password-url/issues).
+
+## Resources
 
 * [A Well-Known URL for Changing
   Passwords](https://wicg.github.io/change-password-url/)
