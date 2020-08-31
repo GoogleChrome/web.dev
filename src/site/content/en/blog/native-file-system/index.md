@@ -74,7 +74,7 @@ then open and read that file from disk.
 The entry point to the Native File System API is
 [`window.chooseFileSystemEntries()`][choose-fs-entries]. When called, it shows a
 file picker dialog box, and prompts the user to select a file. After a user
-selects a file, the API returns a handle to it. An optional options parameter
+selects a file, the API returns a handle to it. An optional `options` parameter
 lets you influence the behavior of the file picker, for example, by allowing the
 user to select multiple files, or directories, or different file types. Without
 any options specified, the file picker allows the user to select a single file.
