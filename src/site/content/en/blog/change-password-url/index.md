@@ -153,7 +153,7 @@ passwords, and see a list of passwords that are recommended for update.
 <figure class="w-figure">
   <img src="./check-passwords.png" width="1478" height="845" class="w-screenshot"/>
   <figcaption class="w-figcaption">
-    Chrome's "check passwords" functionality
+    Chrome's <b>Check passwords</b> functionality
   </figcaption>
 </figure>
 
