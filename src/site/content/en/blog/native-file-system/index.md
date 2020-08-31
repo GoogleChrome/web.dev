@@ -136,9 +136,9 @@ butOpenFile.addEventListener('click', async (e) => {
 
 ### Write the file to the local file system {: #write-file }
 
-In the text editor, there are two ways to save a file: Save, and Save As. Save
+In the text editor, there are two ways to save a file: **Save**, and **Save As**. **Save**
 simply writes the changes back to the original file using the file handle
-retrieved earlier. But Save As creates a new file, and thus requires a new file
+retrieved earlier. But **Save As** creates a new file, and thus requires a new file
 handle.
 
 #### Create a new file
