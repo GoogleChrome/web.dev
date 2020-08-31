@@ -9,7 +9,6 @@ date: 2020-08-31
 description: |
   Once a web-based payment app is registered, it's ready to accept payment requests from merchants. This article teaches you how to orchestrate a payment transaction from a service worker during runtime.
 tags:
-  - blog
   - payments
   - service-worker
 ---
