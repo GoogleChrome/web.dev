@@ -17,13 +17,13 @@
 const {feed, index, individual} = require('./utils');
 
 /**
- * @param {Author[]} authors
- * @return {Author[]}
+ * @param {AuthorsItem[]} authors
+ * @return {AuthorsItem[]}
  */
 const authorsFeed = (authors) => feed(authors);
 
 /**
- * @param {Author[]} authors
+ * @param {AuthorsItem[]} authors
  * @return {Paginated[]}
  */
 const authorsIndex = (authors) => {
@@ -41,10 +41,11 @@ const authorsIndex = (authors) => {
 };
 
 /**
- * @param {Author[]} authors
+ * @param {AuthorsItem[]} authors
+ * @param {string} lang
  * @return {Paginated[]}
  */
-const authorsIndividual = (authors) => individual(authors);
+const authorsIndividual = (authors, lang) => individual(authors, lang);
 
 module.exports = {
   feed: authorsFeed,

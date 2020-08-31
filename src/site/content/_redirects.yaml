@@ -138,7 +138,7 @@ redirects:
   to: /...
 
 - from: /en/handbook/...
-  to: /en/...
+  to: /handbook/...
 
 # Redirect duplicative /discoverable URLs to /lighthouse-seo
 
@@ -198,10 +198,20 @@ redirects:
 
 # Redirect /payments content
 
-- from: /android-payment-app-developers-guide
-  to: /android-payment-apps-overview
+- from: /android-payment-apps-overview
+  to: /android-payment-app-developers-guide
 
 # Redirect for misconfigured Lighthouse report
 
 - from: /image-size-responsive
   to: /image-aspect-ratio
+
+# Redirects for Handbook refactors
+
+- from: /handbook/tags
+  to: /handbook/yaml-front-matter/#tags
+
+# Redirect to unified clipobard article
+
+- from: /image-support-for-async-clipboard
+  to: /async-clipboard

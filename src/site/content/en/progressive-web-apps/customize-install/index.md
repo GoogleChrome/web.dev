@@ -1,13 +1,15 @@
 ---
 layout: post
-title: Provide a custom install experience
+title: How to provide your own in-app install experience
 authors:
   - petelepage
 date: 2020-02-14
-updated: 2020-05-26
+updated: 2020-06-17
 description: |
-  Use the beforeinstallprompt event to provide a custom, seamless install
-  experience for your users.
+  Use the beforeinstallprompt event to provide a custom, seamless, in-app
+  install experience for your users.
+tags:
+  - progressive-web-apps
 ---
 
 Many browsers make it possible for you to enable and promote the installation
@@ -17,6 +19,9 @@ makes it easy for users to install your PWA on their mobile or desktop device.
 Installing a PWA adds it to a user's launcher, allowing it to be run like any
 other installed app.
 
+In addition to the [browser provided install experience](/promote-install/#browser-promotion),
+it's possible to provide your own custom install flow, directly within your app.
+
 <figure class="w-figure w-figure--inline-right">
   <img src="spotify-custom-install.png"
        alt="Install App button provided in the Spotify PWA">
@@ -25,12 +30,14 @@ other installed app.
   </figcaption>
 </figure>
 
-Why would you want a user to install your PWA? The same reason you'd want a
-user to install your app from any app store. Users who install are your most
-engaged users. Users who install a PWA have better engagement metrics than
-casual visitors, including more repeat visits, longer time on site and
-higher conversion rates, often at parity with native app users on mobile
-devices.
+When considering whether to promote install, it's best to think about how
+users typically use your PWA.  For example, if there's a set of users who
+use your PWA multiple times in a week, these users might benefit from the
+added convenience of launching your app from a smartphone homescreen or
+from the Start menu in a desktop operating system.  Some productivity and
+entertainment applications also benefit from the extra screen real-estate
+created by removing the browser toolbars from the window in installed
+`standalone` or `minimal-ui` modes.
 
 <div class="w-clearfix"></div>
 
@@ -74,16 +81,11 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 ```
 
+{% Aside %}
 There are many different [patterns](/promote-install/) that you can use to
 notify the user your app can be installed and provide an in-app install
 flow, for example, a button in the header, an item in the navigation menu,
 or an item in your content feed.
-
-{% Aside 'caution' %}
-You may want to wait before showing the prompt to the user so you don't
-distract them from what they're doing. For example, if the user is in a
-check-out flow, or creating their account, let them complete that before
-prompting them.
 {% endAside %}
 
 ### In-app installation flow {: #in-app-flow }

@@ -24,8 +24,6 @@ leading to a bad experience.
 
 ## How the Lighthouse main thread work audit fails
 
-<!-- TODO: Verify cut score for failure. -->
-
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/)
 flags pages that keep the main thread busy for longer than 4&nbsp;seconds
 during load:
@@ -40,15 +38,46 @@ while the browser loaded your page.
 
 {% include 'content/lighthouse-performance/scoring.njk' %}
 
-## How to reduce load on the main thread
+## How to minimize main thread work
 
-Many activities, like parsing CSS and laying out the page,
-can keep the main thread busy.
-However, parsing, compiling, and executing JavaScript is often the biggest source of work on the main thread.
+The sections below are organized based on the categories that Lighthouse reports.
+See [The anatomy of a frame](https://aerotwist.com/blog/the-anatomy-of-a-frame/)
+for an overview of how Chromium renders web pages.
 
-Consider these tactics to improve JavaScript performance during page load:
+See [Do less main thread work](https://developers.google.com/web/tools/chrome-devtools/speed/get-started#main)
+to learn how to use Chrome DevTools to to investigate exactly what your main thread is doing
+as the page loads.
 
-{% include 'content/lighthouse-performance/js-perf.njk' %}
+### Script evaluation
+
+* [Optimize third-party JavaScript](/fast/#optimize-your-third-party-resources)
+* [Debounce your input handlers](https://developers.google.com/web/fundamentals/performance/rendering/debounce-your-input-handlers)
+* [Use web workers](/off-main-thread/)
+
+### Style and layout
+
+* [Reduce the scope and complexity of style calculations](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations)
+* [Avoid large, complex layouts and layout thrashing](https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing)
+
+### Rendering
+
+* [Stick to compositor only properties and manage layer count](https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count)
+* [Simplify paint complexity and reduce paint areas](https://developers.google.com/web/fundamentals/performance/rendering/simplify-paint-complexity-and-reduce-paint-areas)
+
+### Parsing HTML and CSS
+
+* [Extract critical CSS](/extract-critical-css/)
+* [Minify CSS](/minify-css/)
+* [Defer non-critical CSS](/defer-non-critical-css/)
+
+### Script parsing and compilation
+
+* [Reduce JavaScript payloads with code splitting](/reduce-javascript-payloads-with-code-splitting/)
+* [Remove unused code](/remove-unused-code/)
+
+### Garbage collection
+
+* [Monitor your web page's total memory usage with `measureMemory()`](/monitor-total-page-memory-usage/)
 
 ## Resources
 

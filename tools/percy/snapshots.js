@@ -57,12 +57,16 @@ const pagesToTest = [
     url: '/newsletter/',
     title: 'Newsletter page',
   },
+  {
+    url: '/live/',
+    title: 'Live page',
+  },
 ];
 
 // A script to navigate our app and take snapshots with Percy.
 PercyScript.run(
   async (browser, percySnapshot) => {
-    for (page of pagesToTest) {
+    for (const page of pagesToTest) {
       const url = new URL(page.url, 'http://localhost:8080').href;
       await browser.goto(url, {waitUntil: 'networkidle0'});
       await browser.evaluate(scrollToBottom);

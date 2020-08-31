@@ -12,6 +12,8 @@ codelabs:
   - codelab-imagemin-webpack
   - codelab-imagemin-gulp
   - codelab-imagemin-grunt
+tags:
+  - performance
 ---
 
 ## Why should you care?

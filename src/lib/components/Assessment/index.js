@@ -24,10 +24,14 @@ import './_styles.scss';
  * @extends {BaseModalElement}
  * @final
  */
-class Assessment extends BaseModalElement {
+export class Assessment extends BaseModalElement {
   static get properties() {
     return {
       modal: {attribute: 'aria-modal', reflect: true},
+      open: {type: Boolean, reflect: true},
+      animatable: {type: Boolean, reflect: true},
+      overflow: {type: Boolean, reflect: true},
+      parentModal: {attribute: 'parent-modal', reflect: true},
     };
   }
 
@@ -35,7 +39,7 @@ class Assessment extends BaseModalElement {
     super();
     this.modal = false;
     this._placeholder = null;
-    this.breakpoint_ = matchMedia(`(min-width: 481px)`);
+    this.breakpoint_ = matchMedia('(min-width: 481px)');
 
     this.onAssessmentAnimationEnd = this.onAssessmentAnimationEnd.bind(this);
     this.onAssessmentResize = this.onAssessmentResize.bind(this);
@@ -202,6 +206,7 @@ class Assessment extends BaseModalElement {
   }
 
   onAssessmentAnimationEnd() {
+    /** @type import('../Tabs').Tabs */
     const tabs = this.querySelector('web-tabs');
 
     if (!tabs) {
@@ -227,7 +232,9 @@ class Assessment extends BaseModalElement {
 
   // Reset assessment to initial state.
   reset() {
+    /** @type import('../Tabs').Tabs */
     const tabs = this.querySelector('web-tabs');
+    /** @type NodeListOf<import('../AssessmentQuestion').AssessmentQuestion> */
     const questions = this.querySelectorAll('web-question');
 
     for (const question of questions) {

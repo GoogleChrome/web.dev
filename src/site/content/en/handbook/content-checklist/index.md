@@ -2,7 +2,7 @@
 layout: handbook
 title: web.dev content checklist
 date: 2019-06-26
-updated: 2020-04-29
+updated: 2020-07-16
 description: |
   A checklist for web.dev content reviews.
 ---
@@ -64,6 +64,8 @@ use it to self-review their content and fix problems rather than waiting for rev
 1. Do the images have hardcoded English descriptions in them? If possible, use numbers instead
    and then use a numbered list below the image to explain each item. This makes the page easier to translate.
 1. Is the hero image `3200px` wide by `960px` tall and has it been optimized (to keep the size of the repository as small as possible)?
+1. All GIFs should be converted to animated videos. See [Replace animated GIFs with videos](/replace-gifs-with-videos/)
+   and [Videos hosted on web.dev](/handbook/markup-media/#video-hosted-on-web.dev)
 
 ## Code
 

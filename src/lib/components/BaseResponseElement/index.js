@@ -33,6 +33,7 @@ export class BaseResponseElement extends BaseElement {
   constructor() {
     super();
     this.state = 'unanswered';
+    this.correctAnswer = '';
 
     this.enforceCardinality = this.enforceCardinality.bind(this);
     this.submitResponse = this.submitResponse.bind(this);
@@ -59,8 +60,7 @@ export class BaseResponseElement extends BaseElement {
       min = parseInt(cardinality);
       max = 0;
     } else if (/^\d-\d+$/.test(cardinality)) {
-      [min, max] = cardinality.split('-');
-      [min, max] = [parseInt(min), parseInt(max)];
+      [min, max] = cardinality.split('-').map(parseInt);
     }
     // Input errors handled in src/site/_includes/components/Assessment.js
 
@@ -109,7 +109,7 @@ export class BaseResponseElement extends BaseElement {
   // and disables unselected options when maximum selection is reached.
   // NOTE: Assumes client components handle the data-selected attribute.
   // (Necessary because selection mechanism will vary by response type.)
-  enforceCardinality(e) {
+  enforceCardinality() {
     const options = this.querySelectorAll('[data-role=option]');
     let numSelected = 0;
 
@@ -215,7 +215,7 @@ export class BaseResponseElement extends BaseElement {
     this.state = 'unanswered';
     for (const option of options) {
       option.removeAttribute('data-submitted');
-      if (typeof this.deselectOption == 'function') {
+      if (typeof this.deselectOption === 'function') {
         this.deselectOption(option);
       }
       this.enableOption(option);

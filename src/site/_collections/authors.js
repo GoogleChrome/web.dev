@@ -15,9 +15,13 @@
  */
 const fs = require('fs');
 const path = require('path');
-const contributors = require('../_data/contributors');
+/** @type AuthorsData */
+const authorsData = require('../_data/authorsData.json');
 const {livePosts} = require('../_filters/live-posts');
 const setdefault = require('../_utils/setdefault');
+
+/** @type Authors */
+let processedCollection;
 
 /**
  * Generate map the posts by author's username/key
@@ -39,81 +43,124 @@ const findAuthorsPosts = (posts) => {
 };
 
 /**
- * Finds image of author, returns path.
- *
- * @param {string} key
- * @return {string | void} Path for image.
+ * @param {AuthorsItem} author to update
+ * @param {any[]} allAuthorPosts posts including drafts
+ * @return {boolean} whether this author is allowed here
  */
-const findAuthorsImage = (key) => {
-  for (const size of ['@3x', '@2x', '']) {
-    const jpegPath = path.join('src/images/authors', `${key}${size}.jpg`);
-    if (fs.existsSync(jpegPath)) {
-      return path.join('/images/authors', `${key}${size}.jpg`);
-    }
+const maybeUpdateAuthorHref = (author, allAuthorPosts) => {
+  if (author.elements.length !== 0) {
+    return true;
   }
+
+  if (author.twitter) {
+    author.href = `https://twitter.com/${author.twitter}`;
+    return true;
+  }
+
+  // If the author has scheduled or draft posts, don't complain.
+  if (allAuthorPosts.length !== 0) {
+    return true;
+  }
+
+  return false;
 };
 
 /**
  * Returns all authors with their posts.
  *
- * @param {any} collections Eleventy collection object
- * @return {Object.<string, Author>}
+ * @param {any} [collections] Eleventy collection object
+ * @return {Authors}
  */
 module.exports = (collections) => {
-  // Get all posts and sort them
-  const posts = collections
-    .getFilteredByGlob('**/*.md')
-    .filter(livePosts)
-    .sort((a, b) => b.date - a.date);
+  if (processedCollection) {
+    return processedCollection;
+  }
 
-  const authorsPosts = findAuthorsPosts(posts);
+  let allPosts = [];
 
-  /** @constant @type {Object.<string, Author>} @default */
+  if (collections) {
+    // Find all posts, sort and key by author. Don't yet filter to live posts.
+    allPosts = collections
+      .getFilteredByGlob('**/*.md')
+      .sort((a, b) => b.date - a.date);
+  }
+
+  const authorsPosts = findAuthorsPosts(allPosts);
+
+  /** @type Authors */
   const authors = {};
 
-  Object.values(contributors)
-    .sort((a, b) => a.title.localeCompare(b.title))
-    .forEach((author) => {
-      // This updates the shared contributors object with meta information and is safe to be called multiple times.
-      author.url = path.join('/en', author.href);
-      author.data = {
-        title: author.title,
-        subhead: author.description,
-      };
+  /** @type {!Array<string>} */
+  const invalidAuthors = [];
 
-      author.elements = authorsPosts.has(author.key)
-        ? authorsPosts.get(author.key)
-        : [];
+  Object.keys(authorsData).forEach((key) => {
+    const authorData = authorsData[key];
+    // Get all authors but filter later.
+    const allAuthorPosts = authorsPosts.get(key) || [];
+    const href = `/authors/${key}/`;
+    // Generate the author's name out of valid given/family parts. This
+    // allows our authors to just have a single name.
+    const title = [authorData.name.given, authorData.name.family]
+      .filter((s) => s && s.length)
+      .join(' ');
+    const description =
+      authorData.descriptions && authorData.descriptions.en
+        ? authorData.descriptions.en
+        : `Our latest news, updates, and stories by ${title}.`;
+    /** @type AuthorsItem */
+    const author = {
+      ...authorData,
+      data: {
+        canonicalUrl: href,
+        subhead: description,
+        title,
+      },
+      description,
+      elements: allAuthorPosts.filter(livePosts),
+      href,
+      key,
+      title,
+    };
 
-      // If the author doesn't have any posts, use their Twitter profile.
-      if (author.elements.length === 0) {
-        if (!author.twitter) {
-          // Don't crash if there's no posts at all, or we're running in test mode, as the list of
-          // posts won't be complete. This also happens when we run Eleventy with generate partials.
-          if (process.env.PERCY && posts.length) {
-            throw new Error(
-              `author ${
-                author.title
-              } has no posts and no social: ${JSON.stringify(author)}`,
-            );
-          }
-        } else {
-          author.href = `https://twitter.com/${author.twitter}`;
-        }
+    // Update the author's href to be their Twitter profile, if they have no
+    // live posts on the site.
+    if (!maybeUpdateAuthorHref(author, allAuthorPosts)) {
+      // If they have no Twitter profile or posts (even draft ones), the
+      // author probably shouldn't be here.
+      invalidAuthors.push(key);
+    }
+
+    let authorsImage = path.join('/images', 'authors', `${key}@2x.jpg`);
+    if (process.env.ELEVENTY_ENV === 'prod') {
+      const authorsImageExists = fs.existsSync(path.join('src', authorsImage));
+      if (!authorsImageExists) {
+        console.warn(
+          `No 2x image was found for ${author.title} (${author.key}), replacing with placeholder.`,
+        );
+        authorsImage = path.join('/images', 'authors', 'no-photo.svg');
       }
+    }
+    author.data.hero = authorsImage;
+    author.data.alt = author.title;
 
-      const authorsImage = findAuthorsImage(author.key);
-      if (authorsImage) {
-        author.data.hero = authorsImage;
-        author.data.alt = author.title;
-      }
+    if (process.env.PERCY) {
+      author.elements = author.elements.slice(-6);
+    }
 
-      if (process.env.PERCY) {
-        author.elements = author.elements.slice(-6);
-      }
+    authors[key] = author;
+  });
 
-      authors[author.key] = author;
-    });
+  // Only complain that authors are invalid if we've got any posts *at all*
+  // (we can do weird Eleventy builds with no posts, don't complain here).
+  const isRegularBuild = Boolean(allPosts.length);
+  if (isRegularBuild && invalidAuthors.length) {
+    const s = invalidAuthors.join(',');
+    throw new Error(`authors [${s}] have no posts and/or Twitter information`);
+  }
+
+  if (collections) {
+    processedCollection = authors;
+  }
 
   return authors;
 };

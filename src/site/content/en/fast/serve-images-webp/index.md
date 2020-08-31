@@ -11,6 +11,8 @@ date: 2018-11-05
 updated: 2020-04-06
 codelabs:
   - codelab-serve-images-webp
+tags:
+  - performance
 ---
 
 ## Why should you care?

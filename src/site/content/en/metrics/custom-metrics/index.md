@@ -9,6 +9,7 @@ description: |
   experience that are unique to your site.
 tags:
   - performance
+  - metrics
 ---
 
 There's a lot of value in having [user-centric metrics](/user-centric-performance-metrics/)
@@ -226,16 +227,9 @@ try {
 }
 ```
 
-{% Aside 'caution' %}
-  The `buffered` flag does not currently work for Long Tasks (though
-  support is being added). In the meantime, you can track Long Tasks
-  by registering the `PerformanceObserver` in the `<head>` of your pages, before
-  loading any other scripts.
-{% endAside %}
-
 ### Element Timing API
 
-The [Largest Contentful Paint (LCP)](/largest-contentful-paint/) metric is
+The [Largest Contentful Paint (LCP)](/lcp/) metric is
 useful for knowing when the largest image or text block was painted to the
 screen, but in some cases you want to measure the render time of a different
 element.
@@ -256,14 +250,14 @@ registering a PerformanceObserver to observe the element entry type.
 // https://bugs.webkit.org/show_bug.cgi?id=209216
 try {
   // Create the performance observer.
-  const observer = new PerformanceObserver((list) => {
-    for (const entry of list.getEntries()) {
+  const po = new PerformanceObserver((entryList) => {
+    for (const entry of entryList.getEntries()) {
       // Log the entry and all associated details.
       console.log(entry.toJSON());
     }
   });
   // Start listening for `element` entries to be dispatched.
-  observer.observe({type: 'element', buffered: true});
+  po.observe({type: 'element', buffered: true});
 } catch (e) {
   // Do nothing if the browser doesn't support this API.
 }
@@ -276,6 +270,71 @@ try {
   `elementtiming` attribute to an element that isn't one of those types, the
   attribute will be ignored.
 {% endAside %}
+
+### Event Timing API
+
+The [First Input Delay (FID)](/fid/) metric measures the time from when a user
+first interacts with a page to the time when the browser is actually able to
+begin processing event handlers in response to that interaction. However, in
+some cases it may also be useful to measure the event processing time itself as
+well as the time until the next frame can be rendered.
+
+This is possible with the [Event Timing
+API](https://wicg.github.io/event-timing/) (which is used to measure FID) as it
+exposes a number of timestamps in the event lifecycle, including:
+
+- [`startTime`](https://w3c.github.io/performance-timeline/#dom-performanceentry-starttime):
+  the time when the browser receives the event.
+- [`processingStart`](https://wicg.github.io/event-timing/#dom-performanceeventtiming-processingstart):
+  the time when the browser is able to begin processing event handlers for
+  the event.
+- [`processingEnd`](https://wicg.github.io/event-timing/#dom-performanceeventtiming-processingend):
+  time when the browser finishes executing all synchronous code initiated from
+  event handlers for this event.
+- [`duration`](https://wicg.github.io/event-timing/#dom-performanceeventtiming-processingstart):
+  the time (rounded to 8ms for security reasons) between when the browser
+  receives the event until it's able to paint the next frame after finishing
+  executing all synchronous code initiated from the event handlers.
+
+The following example shows how to use these these values to create custom
+measurements:
+
+```js
+// Catch errors since some browsers throw when using the new `type` option.
+// https://bugs.webkit.org/show_bug.cgi?id=209216
+try {
+  const po = new PerformanceObserver((entryList) => {
+    const firstInput = entryList.getEntries()[0];
+
+    // Measure First Input Delay (FID).
+    const firstInputDelay = firstInput.processingStart - firstInput.startTime;
+
+    // Measure the time it takes to run all event handlers
+    // Note: this does not include work scheduled asynchronously using
+    // methods like `requestAnimationFrame()` or `setTimeout()`.
+    const firstInputProcessingTime = firstInput.processingEnd - firstInput.processingStart;
+
+    // Measure the entire duration of the event, from when input is received by
+    // the browser until the next frame can be painted after processing all
+    // event handlers.
+    // Note: similar to above, this value does not include work scheduled
+    // asynchronously using `requestAnimationFrame()` or `setTimeout()`.
+    // And for security reasons, this value is rounded to the nearest 8ms.
+    const firstInputDuration = firstInput.duration;
+
+    // Log these values the console.
+    console.log({
+      firstInputDelay,
+      firstInputProcessingTime,
+      firstInputDuration,
+    });
+  });
+
+  po.observe({type: 'first-input', buffered: true});
+} catch (error) {
+  // Do nothing if the browser doesn't support this API.
+}
+```
 
 ### Resource Timing API
 

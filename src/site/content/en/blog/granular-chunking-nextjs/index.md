@@ -88,6 +88,7 @@ unecessary code for any route.
 +   A separate `frameworks` chunk is created for framework dependencies (`react`, `react-dom`, and
     so on)
 +   As many shared chunks as needed are created (up to 25)
++   The minimum size for a chunk to be generated is changed to 20 KB
 
 This granular chunking strategy provides the following benefits:
 
@@ -96,6 +97,8 @@ This granular chunking strategy provides the following benefits:
 +   **Improved caching during navigations**. Splitting large libraries and framework dependencies
     into separate chunks reduces the possibility of cache invalidation since both are unlikely to
     change until an upgrade is made.
+
+You can see the entire configuration that Next.js adopted in [`webpack-config.ts`](https://github.com/vercel/next.js/blob/e125d905a0dd93d247c6122d349c2c90268f0713/packages/next/build/webpack-config.ts#L352-L429).
 
 ## More HTTP requests
 
@@ -152,7 +155,10 @@ negative effect on page load performance. The results suggest that setting `maxI
 `25` on the test page was optimal because it reduced the JavaScript payload size without slowing
 down the page. The total amount of JavaScript that was needed to hydrate the page still remained
 about the same, which explains why page load performance didn't necessarily improve with the reduced
-amount of code. 
+amount of code.
+
+webpack uses 30 KB as a default minimum size for a chunk to be generated. However, coupling a
+`maxInitialRequests` value of 25 with a 20 KB minimum size instead resulted in better caching.
 
 ## Size reductions with granular chunks
 

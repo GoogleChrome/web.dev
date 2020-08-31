@@ -93,6 +93,7 @@ class SideNav extends BaseElement {
   }
 
   firstUpdated() {
+    /** @type HTMLElement */
     this.sideNavContainerEl = this.querySelector('.web-side-nav__container');
     this.addEventListeners();
     this.onStateChanged();
@@ -106,7 +107,7 @@ class SideNav extends BaseElement {
     this.addEventListener('touchend', this.onTouchEnd);
   }
 
-  onStateChanged({currentUrl} = {}) {
+  onStateChanged({currentUrl} = {currentUrl: null}) {
     const {isSideNavExpanded} = store.getState();
     if (isSideNavExpanded === this.expanded) {
       return;
@@ -158,7 +159,7 @@ class SideNav extends BaseElement {
     this.currentX_ = e.touches[0].pageX;
   }
 
-  onTouchEnd(e) {
+  onTouchEnd() {
     if (!this.touchingSideNav_) {
       return;
     }
@@ -212,7 +213,9 @@ class SideNav extends BaseElement {
       // hamburger button in the header. It might be more techincally pure to
       // use a unistore action for this, but it feels like a lot of ceremony
       // for a small behavior.
-      document.querySelector('web-header').manageFocus();
+      /** @type {import('../Header').Header} */
+      const webHeader = document.querySelector('web-header');
+      webHeader.manageFocus();
     }
     this.inert = !this.expanded_;
   }

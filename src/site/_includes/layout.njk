@@ -1,41 +1,38 @@
 ---
 show_banner: true
+tags: []
+eleventyComputed:
+  canonicalUrl: "/{{page.fileSlug}}/"
 ---
 
 <!DOCTYPE html>
-{% set lang = "en" %}
-{% set locale="en_US" %}
 <html lang="{{lang}}">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#fff"/>
+
     {% if noindex or draft -%}
-      <meta name="robots" content="noindex">
+      <meta name="robots" content="noindex" />
     {%- endif %}
     {% if offline %}
       <meta name="offline" content="true" />
     {%- endif %}
 
-    {% if nometa %}
-      {# Area on page that service worker will load title, rss url and if offline #}
-      <!-- %_HEAD_REPLACE_% -->
-    {% else %}
-      {% Meta locale, page, collections, renderData %}
-    {%- endif %}
+    {% Meta locale, page, collections, renderData %}
 
     <link rel="preconnect" href="//www.gstatic.com" crossorigin="" />
-    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
-    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin="" />
     <link rel="preconnect" href="//www.google-analytics.com" crossorigin="" />
     <link rel="preconnect" href="//firebaseremoteconfig.googleapis.com" crossorigin="" />
     <link rel="preconnect" href="//firebaseinstallations.googleapis.com" crossorigin="" />
     <link rel="preconnect" href="//webdev.imgix.net" crossorigin="" />
-    <link
-      rel="stylesheet"
-      href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic|Roboto+Condensed:400,700|Roboto+Mono:400,500|Material+Icons"
-    />
-    <link rel="stylesheet" href="/app.css" />
+
+    {# We only preload Material Icons because the site can't render properly without them. #}
+    {# For Google Sans we use font-display: swap because preloading too many fonts can hurt performance. #}
+    {# https://www.zachleat.com/web/preload/ #}
+    <link rel="preload" as="font" crossorigin href="/fonts/material-icons/regular.woff2">
+
+    <link rel="stylesheet" href="{{ resourceCSS.path | stripQueryParamsDev }}" />
     <link rel="manifest" href="/manifest.webmanifest" />
     {# Include default icon even though we have a manifest #}
     <link rel="shortcut icon" href="/images/favicon.ico">
@@ -44,9 +41,9 @@ show_banner: true
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="mask-icon" color="#0054ff" href="/images/safari-pinned-tab.svg">
     <script async src="//www.google-analytics.com/analytics.js"></script>
-    <script defer src="/bootstrap.js"></script>
+    <script defer src="{{ resourceJS.path | stripQueryParamsDev }}"></script>
   </head>
-  <body class="unresolved">
+  <body class="unresolved" data-version="{{ resource.version }}">
     {#
       Make the snackbar the first item in the DOM so we don't have to steal the
       user's focus on initial visit to show them a cookie banner. Instead, the
@@ -168,6 +165,7 @@ show_banner: true
         {% if show_banner %}
           {% include 'partials/banner.njk' %}
         {% endif %}
+        {% include 'partials/translation-disclaimer.njk' %}
         {{ content | safe }}
       </div>
     </main>

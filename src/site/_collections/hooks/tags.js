@@ -17,13 +17,13 @@
 const {feed, index, individual} = require('./utils');
 
 /**
- * @param {any[]} tags
- * @return {any[]}
+ * @param {TagsItem[]} tags
+ * @return {TagsItem[]}
  */
 const tagsFeed = (tags) => feed(tags);
 
 /**
- * @param {any[]} tags
+ * @param {TagsItem[]} tags
  * @return {Paginated[]}
  */
 const tagsIndex = (tags) => {
@@ -41,10 +41,11 @@ const tagsIndex = (tags) => {
 };
 
 /**
- * @param {any[]} tags
+ * @param {TagsItem[]} tags
+ * @param {string} lang
  * @return {Paginated[]}
  */
-const tagsIndividual = (tags) => individual(tags);
+const tagsIndividual = (tags, lang) => individual(tags, lang);
 
 module.exports = {
   feed: tagsFeed,

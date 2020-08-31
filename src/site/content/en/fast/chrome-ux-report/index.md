@@ -7,16 +7,12 @@ description: |
   The Chrome UX Report (informally known as CrUX) is a public dataset of real
   user experience data on millions of websites. Unlike lab data, CrUX data
   actually comes from opted-in users in the field.
-date: 2018-11-05
+date: 2020-07-13
+tags:
+  - performance
 ---
 
-The [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/)
-(informally known as CrUX) is a public dataset of real user experience data on
-millions of websites. Unlike lab data, CrUX data actually comes from
-[opted-in users](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology)
-in the field. It measures metrics such as [First Contentful Paint (FCP)](/first-contentful-paint),
-[DOM Content Loaded (DCL)](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded),
-and [First Input Delay (FID)](https://developers.google.com/web/updates/2018/05/first-input-delay).
+The [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-experience-report/) (informally known as CrUX) is a public dataset of real user experience data on millions of websites. Unlike lab data, CrUX data actually comes from [opted-in users](https://developers.google.com/web/tools/chrome-user-experience-report/#methodology) in the field. It measures the [Core Web Vitals](/vitals/) metrics, including Largest Contentful Paint (LCP), First Input Delay (FID), and Cumulative Layout Shift (CLS), as well as diagnostic metrics like Time to First Byte (TTFB) and First Contentful Paint (FCP).
 
 The dataset also contains qualitative dimensions
 about the user experience, for example, the device and connection types, which
@@ -33,12 +29,12 @@ competition and industry.
 
 ## How to use it
 
-There are three primary ways to extract insights from the Chrome UX Report,
+There are four primary ways to extract insights from the Chrome UX Report,
 ranging in complexity. For quick and easy analysis of website performance, the [CrUX Dashboard](http://g.co/chromeuxdash) and
 [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
 are the recommended tools. [BigQuery](https://console.cloud.google.com/bigquery?p=chrome-ux-report)
 trades some of the simplicity of the analysis for the power of customization
-and more granular insights.
+and more granular insights. And the [API](https://developers.google.com/web/tools/chrome-user-experience-report/api/reference) enables the integration of high-level data with other applications.
 
 ### CrUX Dashboard
 
@@ -57,12 +53,11 @@ type and effective connection type change over time. Try the
 [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
 (PSI) shows the most recent performance distributions broken down by desktop and
 mobile users. Performance data is available for individual web pages
-(in addition to entire origins) and is aggregated for the most recent 30 days of
+(in addition to entire origins) and is aggregated for the most recent 28 days of
 data (as opposed to the previous calendar month on BigQuery). Using this tool is
 as easy as entering a URL or origin in the search box on the web interface, and
 the field performance data is displayed alongside prescriptive suggestions to
-optimize the page. There is also an API available to programmatically get the
-performance data. Try the
+optimize the page. Try the
 [PageSpeed Insights guide](/chrome-ux-report-pagespeed-insights).
 
 ### CrUX on BigQuery
@@ -77,6 +72,10 @@ billing enabled to run the queries. This is an especially useful tool for power
 users who require low-level access to the data to create custom reports,
 benchmarks, and reports about the state of the web. Try the
 [BigQuery guide](/chrome-ux-report-bigquery).
+
+### CrUX API
+
+The CrUX API is a free and RESTful interface for looking up origin or URL-level user experience data. The data is updated daily and aggregates the previous 28 days of data, similar to PageSpeed Insights. You can use this API to build your own applications on top of the real-user experience data in CrUX. Try the [CrUX API](/chrome-ux-report-api) guide.
 
 ## How to get help
 
@@ -99,3 +98,4 @@ Insights:
 - [CrUX: Data Studio Dashboard](/chrome-ux-report-data-studio-dashboard)
 - [CrUX: PageSpeed Insights](/chrome-ux-report-pagespeed-insights)
 - [CrUX: BigQuery](/chrome-ux-report-bigquery)
+- [CrUX: API](/chrome-ux-report-api)

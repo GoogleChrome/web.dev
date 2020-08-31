@@ -48,13 +48,11 @@ Insert an element into the natural tab order using `tabindex="0"`. For example:
 
 To focus an element, press the `Tab` key or call the element's `focus()` method.
 
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&previewSize=100&attributionHidden=true"
-    alt="tabindex-zero on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'tabindex-zero',
+  path: 'index.html',
+  height: 346
+} %}
 
 ## Remove an element from the tab order
 
@@ -67,13 +65,11 @@ Remove an element using `tabindex="-1"`. For example:
 This removes an element from the natural tab order, but the element can still be
 focused by calling its `focus()` method.
 
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/tabindex-negative-one?path=index.html&previewSize=100&attributionHidden=true"
-    alt="tabindex-negative-one on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'tabindex-negative-one',
+  path: 'index.html',
+  height: 346
+} %}
 
 Note that applying `tabindex="-1"` to an element doesn't affect its children;
 if they're in the tab order naturally or because of a `tabindex` value,
@@ -139,14 +135,11 @@ method on it.
 </div>
 ```
 
-
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/roving-tabindex?path=index.html&previewSize=100&attributionHidden=true"
-    alt="tabindex-negative-one on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'roving-tabindex',
+  path: 'index.html',
+  height: 346
+} %}
 
 {% Aside %}
 Curious what those `role=""` attributes are for? They let you change the

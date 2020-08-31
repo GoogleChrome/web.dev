@@ -1,0 +1,13 @@
+@import '../../../styles/settings/colors';
+@import '../../../styles/settings/type';
+
+web-event-q-and-a {
+  display: block;
+
+  select {
+    color: $GREY_700;
+    font-family: $HEADLINE_FONT;
+    margin: -14px 0 16px;
+    width: auto;
+  }
+}

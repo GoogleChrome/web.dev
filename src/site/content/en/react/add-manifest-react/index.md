@@ -74,13 +74,12 @@ includes a `<link>` element to load the manifest.
 Here is an example of an application built with CRA that has a modified manifest
 file:
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/cra-web-app-manifest-defaut?path=public/manifest.json&previewSize=0"
-    alt="cra-web-app-manifest-defaut on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'cra-web-app-manifest-defaut',
+  path: 'public/manifest.json',
+  previewSize: 0,
+  height: 480
+} %}
 
 To find out if all the properties are working correctly in this example:
 

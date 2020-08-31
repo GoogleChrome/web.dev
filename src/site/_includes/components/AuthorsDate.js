@@ -21,8 +21,8 @@
  */
 
 const {html} = require('common-tags');
+const authorsCollectionFn = require('../../_collections/authors');
 const prettyDate = require('../../_filters/pretty-date');
-const contributors = require('../../_data/contributors');
 
 const renderDate = (date) => {
   // nb. +date checks for valid dates, not just non-null dates
@@ -89,28 +89,32 @@ const renderAuthorNames = (pairs) => {
 /**
  * Render an authors card, including any number of authors and an optional date.
  *
- * @param {{authors: !Array<string>, date: ?Date, images: number}} arg
- * @param {Object.<string, Author>} [authorsCollection]
+ * @param {{authors: Array<string>, date?: Date, images?: number}} arg
+ * @param {Authors} [authorsCollectionArg]
  * @return {string}
  */
 const renderAuthorsDate = (
-  {authors, date = null, images = 2},
-  authorsCollection,
+  {authors, date, images = 2},
+  authorsCollectionArg,
 ) => {
+  const authorsCollection = authorsCollectionArg
+    ? authorsCollectionArg
+    : authorsCollectionFn();
   const pairs = (authors || []).map((id) => {
-    const info = (authorsCollection ? authorsCollection : contributors)[id];
+    const info = authorsCollection[id];
     if (!info) {
       throw new Error(
-        `Can't create Author component for "${id}" without contributor ` +
-          `information. Please check '_data/contributors.js' and make sure the ` +
+        `Can't create Author component for "${id}" without author ` +
+          `information. Please check '_data/authorsData.json' and make sure the ` +
           `author you provide is a key in this object.`,
       );
     }
 
     if (!info.title) {
       throw new Error(
-        `Can't create Author with missing 'title'. author object: ` +
-          JSON.stringify(author),
+        `Can't create Author with missing 'title'. author object: ${JSON.stringify(
+          info,
+        )}`,
       );
     }
 

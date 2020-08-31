@@ -20,8 +20,10 @@ const isProd = process.env.ELEVENTY_ENV === 'prod';
 const fs = require('fs');
 const path = require('path');
 const log = require('fancy-log');
+const {hashForContent} = require('./src/build/hash');
 
-const sassEngine = (function() {
+const sassEngine = (function () {
+  /* eslint-disable node/no-missing-require */
   try {
     // node-sass is faster, but regularly fails to install correctly (native bindings)
     return require('node-sass');
@@ -29,20 +31,18 @@ const sassEngine = (function() {
     // fallback to the official transpiled version
     return require('sass');
   }
+  /* eslint-enable node/no-missing-require */
 })();
 
 /**
  * @param {string} input filename to read for input
- * @param {string} output filename to use for output (but does not write)
- * @return {{css: !Buffer, map: !Buffer}}
+ * @return {{css: !Buffer, map: !SourceMap}}
  */
-function compileCSS(input, output) {
-  fs.mkdirSync(path.dirname(output), {recursive: true});
-
+function compileCSS(input) {
   // #1: Compile CSS with either engine.
   const compiledOptions = {
     file: input,
-    outFile: output,
+    outFile: 'app.css',
     sourceMap: true,
     omitSourceMapUrl: true, // since we just read it from the result object
   };
@@ -51,9 +51,22 @@ function compileCSS(input, output) {
   }
   log('Compiling', input);
   const compiledResult = sassEngine.renderSync(compiledOptions);
+  const compiledMap = JSON.parse(compiledResult.map.toString('utf-8'));
+
+  // nb. We get back absolute source paths here that look like
+  // "file:///Users/blah/Desktop/web.dev/src/...", so make them relative to here.
+  compiledMap['sources'] = compiledMap['sources'].map((source) => {
+    if (source.startsWith('file://')) {
+      source = source.substr('file://'.length);
+    }
+    if (path.isAbsolute(source)) {
+      source = path.relative(__dirname, source);
+    }
+    return source;
+  });
 
   if (!isProd) {
-    return compiledResult;
+    return {map: compiledMap, css: compiledResult.css};
   }
 
   // nb. Only require() dependencies for autoprefixer when used.
@@ -62,10 +75,10 @@ function compileCSS(input, output) {
 
   // #2: Run postcss for autoprefixer.
   const postcssOptions = {
-    from: output,
-    to: output,
+    from: 'app.css',
+    to: 'app.css',
     map: {
-      prev: JSON.parse(compiledResult.map.toString()),
+      prev: compiledMap,
       annotation: true,
     },
   };
@@ -78,12 +91,45 @@ function compileCSS(input, output) {
     console.warn(warn.toString());
   });
 
-  return postcssResult;
+  const {css, map: candidateMap} = postcssResult;
+
+  // nb. With the transpiled "sass", this is returned as a SourceMapGenerator, so convert it to
+  // a real string and then back to JSON.
+  const map = JSON.parse(candidateMap.toString('utf-8'));
+  return {map, css};
 }
 
-const target = process.argv[3] || 'out.css';
-const out = compileCSS(process.argv[2], target);
+/**
+ * @param {{css: !Buffer, map: !SourceMap}} result to render
+ * @param {string} fileName to render to, with optional map in dev
+ */
+function renderTo(result, fileName) {
+  fs.mkdirSync(path.dirname(fileName), {recursive: true});
+  const base = path.basename(fileName);
 
-fs.writeFileSync(target, out.css);
-fs.writeFileSync(target + '.map', out.map);
-log('Finished CSS!');
+  let out = result.css.toString('utf-8');
+  if (!isProd) {
+    result.map['file'] = base;
+
+    out += `\n/*# sourceMappingURL=${base}.map */`;
+    fs.writeFileSync(fileName + '.map', JSON.stringify(result.map));
+  }
+
+  fs.writeFileSync(fileName, out);
+}
+
+const out = compileCSS('src/styles/all.scss');
+const hash = hashForContent(out.css);
+
+// We write an unhashed CSS file due to unfortunate real-world caching problems with a hash inside
+// the CSS name (we see our old HTML cached longer than the assets are available).
+renderTo(out, `dist/app.css`);
+
+// Write the CSS entrypoint to a known file, with a query hash, for Eleventy to read.
+const resourceName = `app.css?v=${hash}`;
+fs.writeFileSync(
+  'src/site/_data/resourceCSS.json',
+  JSON.stringify({path: `/${resourceName}`}),
+);
+
+log(`Finished CSS! (${resourceName})`);

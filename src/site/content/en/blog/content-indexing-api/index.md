@@ -9,7 +9,6 @@ updated: 2020-05-26
 tags:
   - blog
   - capabilities
-  - fugu
   - service-worker
   - chrome80
   - index

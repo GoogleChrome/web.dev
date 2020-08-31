@@ -46,7 +46,9 @@ class Newsletter extends BaseElement {
   }
 
   resizeIFrame() {
-    this.iframe.height = this.iframe.contentWindow.document.body.scrollHeight;
+    this.iframe.height = String(
+      this.iframe.contentWindow.document.body.scrollHeight,
+    );
   }
 }
 

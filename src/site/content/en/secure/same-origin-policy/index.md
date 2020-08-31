@@ -12,6 +12,8 @@ description: |
 codelabs:
   - codelab-same-origin-fetch
   - codelab-same-origin-iframe
+tags:
+  - security
 ---
 
 The same-origin policy is a browser security feature that restricts how

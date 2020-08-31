@@ -4,12 +4,13 @@ title: First Contentful Paint (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-05-04
+updated: 2020-06-15
 description: |
   This post introduces the First Contentful Paint (FCP) metric and explains
   how to measure it
 tags:
   - performance
+  - metrics
 ---
 
 {% Aside %}
@@ -65,8 +66,8 @@ available in the following tools:
 ### Measure FCP in JavaScript
 
 The easiest way to measure FCP (as well as all Web Vitals [field
-metrics](/vitals/#field-tools-to-measure-core-web-vitals) 
-is with the [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals), 
+metrics](/vitals/#field-tools-to-measure-core-web-vitals)
+is with the [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals),
 which wraps all the complexity of manually measuring FCP into a single
 function:
 
@@ -92,12 +93,15 @@ that listens for paint timing entries and logs the start time of the
 {% include 'content/metrics/first-hidden-time.njk' %}
 {% include 'content/metrics/send-to-analytics.njk' %}
 {% include 'content/metrics/performance-observer-try.njk' %}
-  function onPaintEntry(entry) {
+  function onPaintEntry(entry, po) {
     // Only report FCP if the page wasn't hidden prior to
     // the entry being dispatched. This typically happens when a
     // page is loaded in a background tab.
     if (entry.name === 'first-contentful-paint' &&
         entry.startTime < firstHiddenTime) {
+      // Disconnect the observer.
+      po.disconnect();
+
       // Report the FCP value to an analytics endpoint.
       sendToAnalytics({fcp: entry.startTime});
     }

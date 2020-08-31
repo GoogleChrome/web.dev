@@ -5,10 +5,14 @@ authors:
   - demianrenzulli
   - petelepage
 date: 2020-05-12
-updated: 2020-05-13
+updated: 2020-08-20
 description: |
   Best practices for combining different installation offerings to increase installation rates and avoid platform competition and cannibalization.
+tags:
+  - progressive-web-apps
 ---
+
+{% YouTube '6R9pupbDXYw' %}
 
 In the past, app installs were only possible in the context of native applications. Today, modern web apps offer installable experiences that provide the same level of integration and reliability as native apps.
 
@@ -23,7 +27,7 @@ This guide explores best practices for combining different installation offering
 
 ## Why make your web app installable?
 
-Installed Progressive Web Apps run in a standalone window instead of a browser tab. They're launchable from the user's home screen, dock, taskbar, or shelf. It's possible to search for them on a device and jump between them with the app switcher, making them feel like part of the device they're installed on. 
+Installed Progressive Web Apps run in a standalone window instead of a browser tab. They're launchable from the user's home screen, dock, taskbar, or shelf. It's possible to search for them on a device and jump between them with the app switcher, making them feel like part of the device they're installed on.
 
 But having both an installable web app and a native app can be confusing for users. For some users native apps may be the best choice, but for others they can present some drawbacks:
 
@@ -154,7 +158,7 @@ Finally, create your own logic to map this information to device categories, and
 
 ```javascript
 if (isDeviceMidOrLowEnd()) {
-   // show “Lite app” install banner or PWA A2HS prompt 
+   // show “Lite app” install banner or PWA A2HS prompt
 } else {
   // show “Core app” install banner
 }

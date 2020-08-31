@@ -6,12 +6,14 @@
 //
 // =============================================================================
 
-module.exports = function() {
+module.exports = function () {
   const lang = 'pl';
-  const translation = 'none'; // Default translation status.
+  const translated = 'none'; // Default translation status.
+  const locale = 'pl_PL';
 
   return {
     lang,
-    translation,
+    locale,
+    translated,
   };
 };

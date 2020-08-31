@@ -11,6 +11,8 @@ description: |
   data, but it also prevents legitimate uses. What if you wanted to get weather
   data from another country? Enabling CORS lets the server tell the browser it's
   permitted to use an additional origin.
+tags:
+  - security
 ---
 
 The browser's same-origin policy blocks reading a resource from a different
@@ -115,13 +117,11 @@ shared with the client site.
 
 Here is a tiny web server using Express.
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/cors-demo?path=server.js&attributionHidden=true"
-    alt="tabindex-zero on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'cors-demo',
+  path: 'server.js',
+  height: 480
+} %}
 
 The first endpoint (line 8) does not have any response header set, it just sends
 a file in response.
@@ -212,5 +212,5 @@ Access-Control-Allow-Methods: GET, DELETE, HEAD, OPTIONS
 ```
 
 The server response can also include an `Access-Control-Max-Age` header to
-specify the duration to cache preflight results so the client does not need to
+specify the duration (in seconds) to cache preflight results so the client does not need to
 make a preflight request every time it sends a complex request.

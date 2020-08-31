@@ -4,15 +4,18 @@ subhead: Learn how to avoid sudden layout shifts to improve user-experience
 authors:
   - addyosmani
 date: 2020-05-05
+updated: 2020-08-20
 hero: hero.png
 description: |
   Cumulative Layout Shift (CLS) is a metric that quantifies how often users experience sudden shifts in page content. In this guide, we'll cover optimizing common causes of CLS such as images and iframes without dimensions or dynamic content.
 alt: Layout shifts can suddenly push the content you are reading or are about to click further down the page, leading to a poor user-experience. Reserving space for dynamic content causing layout shifts leads to a more delightful user experience.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - fast
+  - performance
   - web-vitals
 ---
+
+{% YouTube 'AQqFZ5t8uNc', '88' %}
 
 "I was about to click that! Why did it move? 😭"
 
@@ -140,7 +143,7 @@ img {
 
 **What about responsive images?**
 
-When working with [responsive images](/serve-responsive-), `srcset` defines the images you allow the browser to select between and what size each image is. To ensure `<img>` width and height attributes can be set, each image should use the same aspect ratio.
+When working with [responsive images](/serve-responsive-images), `srcset` defines the images you allow the browser to select between and what size each image is. To ensure `<img>` width and height attributes can be set, each image should use the same aspect ratio.
 
 ```html
 <img width="1000" height="1000"

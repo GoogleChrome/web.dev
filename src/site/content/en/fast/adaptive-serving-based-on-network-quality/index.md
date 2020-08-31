@@ -9,6 +9,8 @@ description: |
   quality of their connection.
 codelabs:
   - codelab-adapt-video-to-image-serving-based-on-network-quality
+tags:
+  - performance
 ---
 
 Loading a website can be a very different experience depending on the network
