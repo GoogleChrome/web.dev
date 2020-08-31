@@ -14,12 +14,15 @@ description: |
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - 3d
+  - augmented-reality
+  - virtual-reality
+  - webxr
   - model-viewer
 ---
 
 Adding 3D models to a website is tricky. 3D models ideally will be shown in
 a viewer that can work responsively on all browsers including smartphones,
-desktop, or even the new head-mounted displays. The viewer should support
+desktop, or even new head-mounted displays. The viewer should support
 progressive enhancement for performance and rendering quality. It should support
 use cases on all devices ranging from older, lower-powered smartphones to newer
 devices that support augmented reality. It should stay up to date with current
@@ -28,21 +31,13 @@ viewer requires specialty 3D programming skills, and can be a challenge for web
 developers that want to host their own models instead of using a third-party
 hosting service.
 
-<style>
-  #mv-demo {
-    background-color: #36b6fe;
-    max-height: 400px;
-    height: 400px;
-    width: 100%;
-  }
-</style>
 
 To help with that, the `<model-viewer>` web component, which just released
-[version 1.0](https://modelviewer.dev/), lets you declaratively add a 3D model
+[version 1.1](https://modelviewer.dev/), lets you declaratively add a 3D model
 to a web page, while hosting the model on your own site. The web component
 supports responsive design and use cases like augmented reality on some devices,
 and it includes features for accessibility, rendering quality, and
-interactivity.  The goal of the component is to enabble adding 3D models to your
+interactivity.  The goal of the component is to enable adding 3D models to your
 website without understanding the underlying technology and platforms.
 
 {% Aside %}
@@ -61,7 +56,7 @@ fire and respond to events. In short, you don't need to know anything special to
 use any web component, much less `<model-viewer>`.
 
 In this article, I will show you things that are particular to `<model-viewer>`.
-If you're interested in learning more about web components
+If you're interested in learning more about web components,
 [webcomponents.org](https://www.webcomponents.org/) is a good place to start.
 
 ## What can &lt;model-viewer> do?
@@ -76,7 +71,7 @@ repo](https://modelviewer.dev/).
 ### Basic 3D models
 
 Embedding a 3D model is as simple as the markup below. By
-using glb files, we've ensured that this component will work on any major
+[using glb files](https://www.marxentlabs.com/glb-files/), we've ensured that this component will work on any major
 browser.
 
 ```html
@@ -105,13 +100,13 @@ clipboard; clipboard-read; clipboard-write"
 
 The `auto-rotate` and `camera-controls` attributes provide motion and user
 control. Those aren't the only possible attributes. See the documentation for [a
-complete list of](https://modelviewer.dev/).
+complete list of attributes](https://modelviewer.dev/#section-attributes).
 
 ```html
 <model-viewer src="assets/Astronaut.glb" auto-rotate camera-controls>
 ```
 
-### Poster image/delayed loading
+### Delayed loading with poster images
 
 Some 3D models can be very large, so you might want to hold off loading them
 until the user has requested the model. For this, the component has a built-in
@@ -133,14 +128,14 @@ auto-rotate poster="assets/poster2.png"></model-viewer>
     const posters = ['poster.png', 'poster2.png'];
     let i = 0;
     setInterval(() =>
-        $('#toggle-poster').setAttribute('poster', `assets/${posters[i++ %
-2]}`), 2000);
+        document.querySelector('#toggle-poster').setAttribute('poster', 
+            `assets/${posters[i++ % 2]}`), 2000);
 </script>
 ```
 
-### Responsive Design
+### Responsive design
 
-The component handles some types of responsive design, scaling for both mobile
+The component handles some types of [responsive design](/responsive-web-design-basics), scaling for both mobile
 and desktop. It can also manage multiple instances on a page and uses
 [Intersection
 Observer](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver)
