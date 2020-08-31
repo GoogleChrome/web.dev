@@ -3,7 +3,7 @@ title: Help users change passwords easily by adding a well-known URL for changin
 subhead: Redirect a request to `/.well-known/change-password` to the change-passwords URL
 authors:
   - agektmr
-date: 2020-08-31
+date: 2020-09-01
 hero: hero.jpg
 alt: Neon lights shaped into various symbols that are commonly used in passwords.
 description: |
