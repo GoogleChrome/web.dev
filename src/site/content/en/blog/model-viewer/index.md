@@ -49,7 +49,7 @@ website without understanding the underlying technology and platforms.
 We're always [updating and
 improving](https://github.com/google/model-viewer/releases)
 `<model-viewer>`. Check out the [`<model-viewer>`
-homepage](https://modelviewer.dev/) to explore what &lt;model-viewer&gt; 1.0 can do.
+homepage](https://modelviewer.dev/) to explore what &lt;model-viewer&gt; 1.1 can do.
 {% endAside %}
 
 ## What is a web component?
