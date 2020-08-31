@@ -14,7 +14,7 @@ authors:
   - agektmr
 hero: hero.jpg
 date: 2020-04-13
-updated: 2020-05-05
+updated: 2020-09-01
 tags:
   - blog
   - security
@@ -224,13 +224,16 @@ both APIs during the transition.
 
 The COOP Reporting API in Chrome is available after version 86 with one of the
 following conditions:
-1. Enable 2 flags at `chrome://flags`: Cross Origin Opener Policy reporting
+1. Enable 2 flags at `chrome://flags`:  
+   Cross Origin Opener Policy reporting
    (`#cross-origin-opener-policy-reporting`) and Cross Origin Opener Policy
    access reporting (`#cross-origin-opener-policy-access-reporting`)
 
 2. Use it on a domain that is registered to the [origin
-   trials](/origin-trials/): Register [the COOP Reporting API origin
+   trials](/origin-trials/):  
+   Register [the COOP Reporting API origin
    trials](https://developers.chrome.com/origintrials/#/register_trial/2780972769901281281).
+   **The token must be served as an HTTP header instead of a `<meta>` tag.**
 
 
 {% endAside %}
@@ -301,62 +304,70 @@ this:
 
 ```json
 [{
-  age: 0,
-  body: {
-    'blockedURL': 'https://third-party-test.glitch.me/check.svg',
-    type: 'corp'
+  "age": 25101,
+  "body": {
+    "blocked-url": "https://third-party-test.glitch.me/check.svg?",
+    "blockedURL": "https://third-party-test.glitch.me/check.svg?",
+    "destination": "image",
+    "disposition": "enforce",
+    "type": "corp"
   },
-  type: 'coep',
-  url: 'https://first-party-test.glitch.me/?coep=require-corp',
-  …
+  "type": "coep",
+  "url": "https://first-party-test.glitch.me/?coep=require-corp&coop=same-origin&",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4249.0 Safari/537.36"
 }]
 ```
 
-An example COOP report payload when a popup window is opened isolated looks like this:
+An example COOP report payload when a popup window is opened isolated looks like
+this:
 
 ```json
-[ { age: 7,
-    body:
-     { disposition: 'enforce',
-       effectivePolicy: 'same-origin',
-       nextResponseURL:
-        'https://third-party-test.glitch.me/popup?report-only&coop=same-origin&',
-       type: 'navigation-from-response' },
-    type: 'coop',
-    url: 'https://first-party-test.glitch.me/coop?coop=same-origin&',
-    user_agent:
-     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36' } ]
+[{
+  "age": 7,
+  "body": {
+    "disposition": "enforce",
+    "effectivePolicy": "same-origin",
+    "nextResponseURL": "https://third-party-test.glitch.me/popup?report-only&coop=same-origin&",
+    "type": "navigation-from-response"
+  },
+  "type": "coop",
+  "url": "https://first-party-test.glitch.me/coop?coop=same-origin&",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36"
+}]
 ```
 
-A COOP report when sending and receiving a `postMessage()` across isolated
-browsing context groups look like this (only works on "report-only" mode):
+COOP also reports when different browsing context groups try to access each
+other (only on "report-only" mode). For example, a report when `postMessage()`
+is attempted would look like this:
 
 ```json
-[ { age: 51785,
-    body:
-     { columnNumber: 18,
-       disposition: 'reporting',
-       effectivePolicy: 'same-origin',
-       lineNumber: 83,
-       property: 'postMessage',
-       sourceFile: 'https://first-party-test.glitch.me/popup.js',
-       type: 'access-from-coop-page-to-openee' },
-    type: 'coop',
-    url:
-     'https://first-party-test.glitch.me/coop?report-only&coop=same-origin&',
-    user_agent:
-     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36' },
-  { age: 51785,
-    body:
-     { disposition: 'reporting',
-       effectivePolicy: 'same-origin',
-       property: 'postMessage',
-       type: 'access-to-coop-page-from-openee' },
-    type: 'coop',
-    url:
-     'https://first-party-test.glitch.me/coop?report-only&coop=same-origin&',
-    user_agent:
-     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36' } ]
+[{
+  "age": 51785,
+  "body": {
+    "columnNumber": 18,
+    "disposition": "reporting",
+    "effectivePolicy": "same-origin",
+    "lineNumber": 83,
+    "property": "postMessage",
+    "sourceFile": "https://first-party-test.glitch.me/popup.js",
+    "type": "access-from-coop-page-to-openee"
+  },
+  "type": "coop",
+  "url": "https://first-party-test.glitch.me/coop?report-only&coop=same-origin&",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36"
+},
+{
+  "age": 51785,
+  "body": {
+    "disposition": "reporting",
+    "effectivePolicy": "same-origin",
+    "property": "postMessage",
+    "type": "access-to-coop-page-from-openee"
+  },
+  "type": "coop",
+  "url": "https://first-party-test.glitch.me/coop?report-only&coop=same-origin&",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36"
+}]
 ```
 
 ## Conclusion
