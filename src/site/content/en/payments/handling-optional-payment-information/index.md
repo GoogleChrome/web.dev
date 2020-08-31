@@ -507,7 +507,7 @@ working sample app:
 
 {% Glitch {
   id: 'paymenthandler-demo',
-  path: 'public/payment-handler.js',
+  path: 'public/service-worker.js',
   previewSize: 0,
   allow: []
 } %}
