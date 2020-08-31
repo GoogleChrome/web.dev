@@ -281,8 +281,9 @@ CORP or CORS, it sends a report using the Reporting API without actually
 blocking those resources because of COEP.
 
 Similarly, when the browser opens a cross-origin popup window, it sends a report
-without actually isolating the window because of COOP. When on report-only mode,
-sending and receiving a `postMessage()` also emit a report.
+without actually isolating the window because of COOP. It also reports when
+different browsing context groups try to access each other (only on
+"report-only" mode).
 
 #### `max_age`
 
@@ -318,6 +319,11 @@ this:
 }]
 ```
 
+{% Aside 'caution' %}
+`blocked-url` is there for backward compatibility only and will be removed
+eventually.
+{% endAside %}
+
 An example COOP report payload when a popup window is opened isolated looks like
 this:
 
@@ -336,9 +342,9 @@ this:
 }]
 ```
 
-COOP also reports when different browsing context groups try to access each
-other (only on "report-only" mode). For example, a report when `postMessage()`
-is attempted would look like this:
+When different browsing context groups try to access each other (only on
+"report-only" mode), COOP also sends a report. For example, a report when
+`postMessage()` is attempted would look like this:
 
 ```json
 [{
