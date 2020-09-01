@@ -18,6 +18,8 @@ updated: 2020-09-01
 tags:
   - blog
   - security
+origin_trial:
+  url: https://developers.chrome.com/origintrials/#/register_trial/2780972769901281281 
 ---
 Some web APIs increase the risk of side-channel attacks like Spectre. To
 mitigate that risk, browsers offer an opt-in-based isolated environment called
@@ -208,8 +210,9 @@ API](https://developers.google.com/web/updates/2018/09/reportingapi) is another
 mechanism through which you can detect various issues. You can configure the
 Reporting API to instruct your users' browser to send a report whenever COEP
 blocks the loading of a resource or COOP isolates a popup window. Chrome has
-supported the `Report-To` header since version 69 for a variety of uses
-including COEP and COOP.
+supported the
+[`Report-To`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-to)
+header since version 69 for a variety of uses including COEP and COOP.
 
 {% Aside %}
 The Reporting API is undergoing transition to [a new
@@ -220,23 +223,33 @@ API](https://bugzilla.mozilla.org/show_bug.cgi?id=1620573). You may want to use
 both APIs during the transition.
 {% endAside %}
 
+{% Details %}
+
+{% DetailsSummary %}
+The COOP Reporting API in Chrome is available after version 86 with one of two conditions:
+
+1. Enable 2 flags at `chrome://flags`
+2. Register an orign trial
+{% endDetailsSummary %}
+
+#### Enable 2 flags at `chrome://flags`
+
+* Cross Origin Opener Policy reporting (`#cross-origin-opener-policy-reporting`)
+* Cross Origin Opener Policy access reporting
+  (`#cross-origin-opener-policy-access-reporting`)
+
+#### Register an origin trial
+
+{% include 'content/origin-trials.njk' %}
+
+{% include 'content/origin-trial-register.njk' %}
+
 {% Aside 'caution' %}
-
-The COOP Reporting API in Chrome is available after version 86 with one of the
-following conditions:
-1. Enable 2 flags at `chrome://flags`:  
-   Cross Origin Opener Policy reporting
-   (`#cross-origin-opener-policy-reporting`) and Cross Origin Opener Policy
-   access reporting (`#cross-origin-opener-policy-access-reporting`)
-
-2. Use it on a domain that is registered to the [origin
-   trials](/origin-trials/):  
-   Register [the COOP Reporting API origin
-   trials](https://developers.chrome.com/origintrials/#/register_trial/2780972769901281281).
-   **The token must be served as an HTTP header instead of a `<meta>` tag.**
-
-
+To use COOP Reporting API, the token must be served as an HTTP header instead of
+a `<meta>` tag.
 {% endAside %}
+
+{% endDetails %}
 
 To specify where the browser should send reports, append the `Report-To` HTTP
 header to any document that is served with a COEP or COOP HTTP header. The
@@ -263,12 +276,12 @@ Cross-Origin-Opener-Policy: same-origin; report-to="coop_report"
 ```
 When the browser encounters this, it will cross reference the `report-to` value
 with the `group` property on the `Report-To` header to look up the endpoint.
-This example cross references on both `coep_report` and `coop_report` to find
-the endpoint `https://first-party-test.glitch.me/report`.
+This example cross references `coep_report` and `coop_report` to find the
+endpoint `https://first-party-test.glitch.me/report`.
 
 If you prefer to receive reports without blocking any embedded content or
-isolate a popup window, append `-Report-Only` to respective headers: i.e.
-`Cross-Origin-Embedder-Policy-Report-Only` and
+without isolating a popup window, append `-Report-Only` to respective headers:
+i.e. `Cross-Origin-Embedder-Policy-Report-Only` and
 `Cross-Origin-Opener-Policy-Report-Only`. For example:
 
 ```http
@@ -282,8 +295,8 @@ blocking those resources because of COEP.
 
 Similarly, when the browser opens a cross-origin popup window, it sends a report
 without actually isolating the window because of COOP. It also reports when
-different browsing context groups try to access each other (only on
-"report-only" mode).
+different browsing context groups try to access each other, but only in
+"report-only" mode.
 
 #### `max_age`
 
@@ -320,8 +333,8 @@ this:
 ```
 
 {% Aside 'caution' %}
-`blocked-url` is there for backward compatibility only and will be removed
-eventually.
+`blocked-url` is there for backward compatibility only and [will be removed
+eventually](https://github.com/whatwg/html/pull/5848).
 {% endAside %}
 
 An example COOP report payload when a popup window is opened isolated looks like
