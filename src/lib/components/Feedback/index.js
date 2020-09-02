@@ -15,6 +15,7 @@ import './_styles.scss';
 class Feedback extends BaseElement {
   constructor() {
     super();
+    this.robotName = 'is-it-just-me-or-was-this-form-filled-out-by-a-robot';
     this.submitted = false;
     this.submit = this.submit.bind(this);
   }
@@ -22,13 +23,20 @@ class Feedback extends BaseElement {
   submit(event) {
     event.preventDefault();
     const form = new FormData(event.target);
+    const formIsRobot = String(form.get(this.robotName)).length !== 0;
+    form.delete(this.robotName);
     const formIterable = Array.from(form.entries());
-    if (!formIterable.length || this.submitted) {
+
+    if (formIterable.length === 0 || this.submitted) {
       return;
     }
 
     this.submitted = true;
     this.requestUpdate();
+
+    if (formIsRobot) {
+      return;
+    }
 
     formIterable.forEach((entry) => {
       trackEvent({
@@ -41,6 +49,7 @@ class Feedback extends BaseElement {
   }
 
   updated() {
+    /** @type {HTMLParagraphElement} */
     const confirmationElement = this.querySelector('.w-feedback__confirmation');
     if (this.submitted && confirmationElement) {
       confirmationElement.focus();
@@ -181,6 +190,19 @@ class Feedback extends BaseElement {
                   value="0"
                 />
               </label>
+            </div>
+
+            <div class="web-feedback__row w-visually-hidden">
+              <label for="${this.robotName}"
+                >Congrats on finding this field, I'd recommend you not filling
+                it out though...</label
+              >
+              <input
+                type="text"
+                id="${this.robotName}"
+                name="${this.robotName}"
+                tabindex="-1"
+              />
             </div>
           </div>
 
