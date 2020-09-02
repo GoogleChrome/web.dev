@@ -10,14 +10,17 @@ description: |
   experiences to customers' homes. Museums let anyone see artifacts from anywhere.
   3D is difficult to do without a deep knowledge of 3D technologies or third-party
   hosting. <model-viewer> 1.1 makes these tasks as easy as writing HTML.
-date: 2020-08-28
-updated: 2020-08-28
+date: 2020-09-03
+#updated: 2020-08-28
 hero: hero.jpg
 alt: A 3D image of a shark.
 tags:
   - blog
   - 3d
   - model-viewer
+  - augmented-reality
+  - virtual-reality
+  - webxr
 ---
 
 3D models are more relevant than ever. Retailers bring in-store shopping
@@ -45,12 +48,7 @@ space is even better. For an entirely-within-the-browser 3D and AR Chrome
 Android supports [augmented
 reality](https://modelviewer.dev/examples/augmented-reality.html) using WebXR .
 
-<style>
-video {
-  max-width: 75%;
-}
-</style>
-<figure class="w-figure w-figure--inline-right">
+<figure class="w-figure w-figure--inline-right" style="max-width: 75%">
   <video controls muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/introducing-model-viewer/modelviewer1-0.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/introducing-model-viewer/modelviewer1-0.mp4" type="video/mp4">
@@ -67,8 +65,11 @@ modelviewer.dev](https://modelviewer.dev/examples/webxr.html). The code sample
 below shows what this might look like.
 
 ```html
-<model-viewer src="Chair.glb" ar ar-scale="auto" camera-controls alt="A 3D model of an office chair.">
-</model-viewer>
+<model-viewer src="Chair.glb"
+              ar
+              ar-scale="auto"
+              camera-controls
+              alt="A 3D model of an office chair."></model-viewer>
 ```
 
 <!-- Hide until model-viewer's iframe bug is fixed -->
@@ -110,7 +111,7 @@ the model. Annotations also work in AR.
     border-radius: 10px;
     padding: 10px;
   }
-
+</style>
 <model-viewer src="https://modelviewer.dev/assets/ShopifyModels/ToyTrain.glb" alt="A 3D model of a Toy Train" camera-controls>
   <button slot="hotspot-hand" data-position="-0.023 0.0594 0.0714" data-normal="-0.3792 0.0004 0.9253">
     <div id="annotation">Whistle</div>
@@ -147,8 +148,10 @@ improved frame rate dramatically. The example below shows off some of these
 recent improvements.
 
 ```html
-<model-viewer camera-controls skybox-image="spruit_sunrise_1k_HDR.hdr" alt="A 3D model of a well-worn  helmet" src="DamagedHelmet.glb"></model-viewer>
-```
+<model-viewer camera-controls 
+              skybox-image="spruit_sunrise_1k_HDR.hdr"
+              alt="A 3D model of a well-worn  helmet"
+              src="DamagedHelmet.glb"></model-viewer>
 
 <!-- Hide until model-viewer's iframe bug is fixed -->
 <!-- <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://modelviewer.dev/webdotdev/rendering.html" frameborder="0" allowfullscreen></iframe> -->
