@@ -10,6 +10,7 @@ date: 2020-05-25
 description: |
   Learn how to adapt your Android payment app to work with Web Payments and provide a better user experience for customers.
 tags:
+  - blog
   - payments
 ---
 
