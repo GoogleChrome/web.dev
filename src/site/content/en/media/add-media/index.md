@@ -4,7 +4,7 @@ title: Add media to a web page
 authors:
   - joemedley
 description: |
-  embed a media file in a web page using the <vide> and <source> tags.
+  Embed a media file in a web page using the <video> and <source> tags.
 date: 2020-06-19
 updated: 2020-08-27
 tags:
