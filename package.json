@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "scripts": {
     "build": "npm-run-all clean gulp rollup eleventy sw-manifest",
-    "clean": "rm -rf dist",
+    "clean": "rimraf dist src/site/_data/resource*.json",
     "coverage:integration": "c8 npm-run-all test:lib test:unit test:integration",
     "coverage:unit": "c8 npm run test:unit",
     "coverage": "npm-run-all coverage:unit coverage:integration",
@@ -123,6 +123,7 @@
     "remark-lint-no-duplicate-headings-in-section": "^1.0.5",
     "remark-preset-lint-markdown-style-guide": "^2.1.4",
     "remove-markdown": "^0.3.0",
+    "rimraf": "^3.0.2",
     "rollup": "^1.32.1",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-istanbul": "^2.0.1",
