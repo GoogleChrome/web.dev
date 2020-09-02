@@ -78,7 +78,7 @@ on different devices to ensure your focus styles are acceptable to your users.
 ## Use `:focus-visible` to selectively show a focus indicator
 
 The new
-[`:focus-visible`]([https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible))
+[`:focus-visible`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible)
 pseudo-class is applied any time that an element receives focus and the 
 browser determines via heuristics that displaying a focus indicator would be 
 beneficial to the user. In particular, if the most recent user interaction 
