@@ -5,6 +5,7 @@ authors:
 - robdodson
 date: 2018-11-18
 description: Wskaźnik ostrości (często oznaczony „pierścieniem ostrości”) identyfikuje aktualnie ustawiony element. Dla użytkowników, którzy nie są w stanie korzystać z myszy, ten wskaźnik jest niezwykle ważny, ponieważ działa on jako stand-in dla ich wskaźnika myszy.
+translation_type: machine
 ---
 
 Wskaźnik ostrości (często oznaczony „pierścieniem ostrości”) identyfikuje aktualnie zaznaczony element na stronie. Dla użytkowników, którzy nie są w stanie korzystać z myszy, ten wskaźnik jest *niezwykle ważny,* ponieważ działa on jako przestój dla wskaźnika myszy.
