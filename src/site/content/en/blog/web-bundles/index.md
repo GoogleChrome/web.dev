@@ -80,7 +80,7 @@ These features open multiple scenarios. One common scenario is the ability to
 build a self-contained web app that's easy to share and usable without an
 internet connection. For example, say you're on an airplane from Tokyo to San Francisco with
 your friend. You don't like the in-flight entertainment. Your friend is playing an interesting
-web game called [PROXX](https://proxx.app/), and tells you that she downloaded the game as a Web
+web game called [PROXX](https://proxx.app/), and tells you that they downloaded the game as a Web
 Bundle before boarding the plane. It works flawlessly offline. Before Web
 Bundles, the story would end there and you would either have to take turns
 playing the game on your friend's device, or find something else to pass the

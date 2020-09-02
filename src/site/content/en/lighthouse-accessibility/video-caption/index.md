@@ -22,7 +22,7 @@ with the attribute `kind="captions"`.
 <!--
 ***Todo*** I tried very hard to get this audit to fail.
 But no matter what, it seems to pass,
-even with all sorts of crazy errors.
+even with all sorts of errors.
 See glitch: [meggin-accessibility-assets](https://glitch.com/edit/#!/meggin-accessibiity-assets-1).
 Also worth mentioning that I ran accessibility audit
 against the convert gifs to video codelab,

@@ -17,11 +17,11 @@ tags:
   - caching
 ---
 
-Service workers are powerful and absolutely worth mastering. They let you deliver an entirely new level of experience to your users. Your site can load _instantly_. It can work _offline_. It can be installed as a native app and feel every bit as polished—but with the reach and freedom of the web.
+Service workers are powerful and absolutely worth learning. They let you deliver an entirely new level of experience to your users. Your site can load _instantly_. It can work _offline_. It can be installed as a native app and feel every bit as polished—but with the reach and freedom of the web.
 
 But service workers are unlike anything most of us web devs are used to. They come with a steep learning curve and a handful of snags you've got to watch out for.
 
-[Google Developers](https://twitter.com/ChromiumDev) and I recently collaborated on a project—[Service Workies](https://serviceworkies.com)—a free game for mastering service workers. While building it and working with the complex ins and outs of service workers, I ran into a few snags. What helped me the most was coming up with a handful of depictive metaphors. In this post we'll explore these mental models and wrap our brains around the paradoxical traits that make service workers both tricky and awesome.
+[Google Developers](https://twitter.com/ChromiumDev) and I recently collaborated on a project—[Service Workies](https://serviceworkies.com)—a free game for understanding service workers. While building it and working with the complex ins and outs of service workers, I ran into a few snags. What helped me the most was coming up with a handful of depictive metaphors. In this post we'll explore these mental models and wrap our brains around the paradoxical traits that make service workers both tricky and awesome.
 
 ## The same, but different
 
@@ -121,12 +121,12 @@ You can't rely on stored state in a service worker. Also, creating instances of 
 This snag is especially important to keep in mind while working on your service worker code because when Chrome DevTools is open, the start/stop behavior is disabled. You may not even see bugs caused by relying on global state until they've shipped to your users.
 {% endAside %}
 
-In [Service Workies chapter 3](https://gedd.ski/post/service-workies-chapter3/) we visualize our stopped service worker as losing all color while he hangs out waiting to be woken up.
+In [Service Workies chapter 3](https://gedd.ski/post/service-workies-chapter3/) we visualize our stopped service worker as losing all color while it hangs out waiting to be woken up.
 
 ![visualization of a stopped service worker](./kolohe-stopped.jpg)
 
 {% Aside 'note' %}
-Think of your service worker as a [whippet](https://www.akc.org/dog-breeds/whippet/) dog. He's fast, loyal and awesome. He'll stick around by your side no matter what. But mostly he just wants to sleep. All the time. You've got to let him know when you want him to stay awake. Good boy!
+Think of your service worker as a [whippet](https://www.akc.org/dog-breeds/whippet/) dog. It's fast, loyal and awesome. It'll stick around by your side no matter what. But mostly it just wants to sleep. All the time. You've got to let him know when you want him to stay awake. Good dog!
 {% endAside %}
 
 ## Together, but separate
@@ -201,6 +201,6 @@ Think of the combination of your service worker and your site as an [installable
 
 Getting into the right mindset while thinking about service workers will help you build yours with confidence. Once you get the hang of them you'll be able to create incredible experiences for your users.
 
-If you want to master all this by [playing a game](https://gedd.ski/post/mastery-through-play/), then you're in luck! Go play [Service Workies](https://serviceworkies.com) where you'll learn the ways of the service worker in order to slay the offline beasts.
+If you want to understand all this by [playing a game](https://gedd.ski/post/mastery-through-play/), then you're in luck! Go play [Service Workies](https://serviceworkies.com) where you'll learn the ways of the service worker in order to slay the offline beasts.
 
 ![preview of the Service Workies game](./spider.gif)
