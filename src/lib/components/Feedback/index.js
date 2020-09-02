@@ -191,19 +191,19 @@ class Feedback extends BaseElement {
                 />
               </label>
             </div>
+          </div>
 
-            <div class="web-feedback__row w-visually-hidden">
-              <label for="${this.robotName}"
-                >Congrats on finding this field, I'd recommend you not filling
-                it out though...</label
-              >
-              <input
-                type="text"
-                id="${this.robotName}"
-                name="${this.robotName}"
-                tabindex="-1"
-              />
-            </div>
+          <div class="w-visually-hidden">
+            <label for="${this.robotName}"
+              >Congrats on finding this field, I'd recommend you not filling it
+              out though...</label
+            >
+            <input
+              type="text"
+              id="${this.robotName}"
+              name="${this.robotName}"
+              tabindex="-1"
+            />
           </div>
 
           <div class="w-text--center w-mt--sm">
