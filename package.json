@@ -35,7 +35,7 @@
     "sw-manifest": "node sw-manifest.js",
     "test:integration": "mocha ./test/integration",
     "test:lib": "npm-run-all clean rollup karma",
-    "test:unit": "mocha ./test/unit && npm run test:lib",
+    "test:unit": "mocha ./test/unit",
     "test": "npm run test:unit && npm run test:lib && npm run test:integration",
     "watch:eleventy": "chokidar \"src/site/**/*.{js,json,yml,md,njk}\" --silent -c \"npm run eleventy\"",
     "watch:gulp": "gulp watch",
