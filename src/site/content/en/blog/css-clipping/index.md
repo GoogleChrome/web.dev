@@ -15,7 +15,7 @@ tags:
 ---
 
 Elements on web pages are all defined inside a rectangular box.
-However that doesn’t mean that we have to make everything look like a box.
+However that doesn't mean that we have to make everything look like a box.
 You can use the CSS `clip-path` property to clip away parts of an image or other element,
 to create interesting effects.
 
