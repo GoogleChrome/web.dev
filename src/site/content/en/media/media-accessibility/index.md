@@ -10,6 +10,10 @@ description: |
   some jurisdictions, they're even required by law or regulation.
 date: 2020-08-20
 updated: 2020-08-27
+tags:
+  - media
+  - video
+  - accessibility
 ---
 
 Accessibility isn't like icing on a cake. It's never anything you put on a
