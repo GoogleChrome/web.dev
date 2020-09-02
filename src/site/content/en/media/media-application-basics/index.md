@@ -11,8 +11,6 @@ updated: 2020-08-27
 tags:
   - media
   - video
-  - Shaka
-  - FFmpeg
 ---
 
 Much media work requires changing characteristics of media files, such as

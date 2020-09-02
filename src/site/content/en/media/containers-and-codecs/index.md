@@ -10,9 +10,8 @@ description: |
 date: 2017-06-30
 updated: 2020-08-27
 tags:
-  - FFmpeg
-  - files
-  - Shaka
+  - media
+  - video
 ---
 
 To support multiple browsers, you'll need to use FFmpeg to convert your mov file

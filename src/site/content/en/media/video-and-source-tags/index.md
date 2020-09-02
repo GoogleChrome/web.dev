@@ -292,7 +292,7 @@ orientation looks like this:
 
 
 <figure class="w-figure">
-  <img src="./ipad-landscape-video-playing.png" alt="Screenshot of video playing in Safari on iPad, landscape.">
+  <img class="w-screenshot w-screenshot--filled" src="./ipad-landscape-video-playing.png" alt="Screenshot of video playing in Safari on iPad, landscape.">
   <figcaption class="w-figcaption">Screenshot of video playing in Safari on iPad, landscape.</figcaption>
 </figure>
 
@@ -313,7 +313,7 @@ video immediately. The precise way it works depends on the platform and browser.
   restrictions for either all sites or particular sites. For details, see [Allow
   or block media autoplay in Firefox]()
 
-* Sarfari: Has historically required a user gesterue, but has been relaxing that
+* Sarfari: Has historically required a user gesture, but has been relaxing that
   requirement in recent versions. For details, see [New &lt;video> Policies for
   iOS](https://webkit.org/blog/6784/new-video-policies-for-ios/).
 
