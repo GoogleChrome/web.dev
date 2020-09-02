@@ -12,12 +12,12 @@ const allPaths = require('../../../_data/paths');
 module.exports = function () {
   const paths = [
     allPaths['progressive-web-apps'],
-    allPaths['media'],
     allPaths['accessible'],
     allPaths['reliable'],
     allPaths['secure'],
     allPaths['discoverable'],
     allPaths['payments'],
+    allPaths['media'],
   ].filter(livePaths);
 
   const performance = [
