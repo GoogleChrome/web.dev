@@ -19,11 +19,11 @@ Mercado Libre is the largest e-commerce and payments ecosystem in Latin America.
 
 Web performance has been a focus for the company for a long time. They recently formed a team to monitor performance and apply optimizations across different parts of the site.
 
-This article summarizes the work done by [Guille Paz](https://twitter.com/pazguille), [Pablo Carminatti](https://www.linkedin.com/in/pcarminatti/), and [Oleh Burkhay](https://twitter.com/oburkhay) from Mercado Libre’s frontend architecture team to optimize one of the Core Web Vitals: [First Input Delay (FID)](https://web.dev/fid/) and it's lab proxy, [Total Blocking Time (TBT)](https://web.dev/tbt/).
+This article summarizes the work done by [Guille Paz](https://twitter.com/pazguille), [Pablo Carminatti](https://www.linkedin.com/in/pcarminatti/), and [Oleh Burkhay](https://twitter.com/oburkhay) from Mercado Libre's frontend architecture team to optimize one of the Core Web Vitals: [First Input Delay (FID)](https://web.dev/fid/) and it's lab proxy, [Total Blocking Time (TBT)](https://web.dev/tbt/).
 
 ## Long tasks, First Input Delay, and Total Blocking Time
 
-Running expensive Javascript code can lead to [long tasks](https://web.dev/long-tasks-devtools/), which are those that run for more than **50ms** in the browser’s main thread.
+Running expensive Javascript code can lead to [long tasks](https://web.dev/long-tasks-devtools/), which are those that run for more than **50ms** in the browser's main thread.
 
 FID (First Input Delay) measures the time from when a user first interacts with a page (e.g. when they click on a link) to the time when the browser is actually able to begin processing event handlers in response to that interaction. A site that executes expensive Javascript code will likely have several long tasks, which will end up negatively impacting FID.
 
@@ -98,7 +98,7 @@ The main bundle size of the application was large (950KB) and took a long time t
 
 ## Use Lighthouse to determine Max Potential FID
 
-Lighthouse doesn’t allow you to choose between different devices and locations, but it’s a very useful tool for diagnosing sites and obtaining performance recommendations.
+Lighthouse doesn't allow you to choose between different devices and locations, but it's a very useful tool for diagnosing sites and obtaining performance recommendations.
 
 When running Lighthouse on product detail pages, Mercado Libre found that the **Max Potential FID** was the only metric marked in red, with a value of **1710ms**.
 
@@ -115,7 +115,7 @@ Based on this, Mercado Libre set a goal to improve their Max Potential FID score
 
 Based on the main thread trace, Mercado Libre set the goal of optimizing the two modules that were running expensive code.
 
-They started optimizing the performance of the internal tracking module. This module contained a CPU-heavy task that wasn’t critical for the module to work, and therefore could be safely removed. This led to a 2% reduction in JavaScript for the whole site.
+They started optimizing the performance of the internal tracking module. This module contained a CPU-heavy task that wasn't critical for the module to work, and therefore could be safely removed. This led to a 2% reduction in JavaScript for the whole site.
 
 After that they started to work on **improving the general bundle size**:
 
@@ -125,7 +125,7 @@ Mercado Libre used [webpack-bundle-analyzer](https://github.com/webpack-contrib/
 
 They also applied the following [Babel](https://babeljs.io/) optimizations:
 
-- Using [@babel/plugin-transform-runtime](https://babeljs.io/docs/en/babel-plugin-transform-runtime) to reuse Babel’s helpers throughout the code, and reduce the size of the bundle considerably.
+- Using [@babel/plugin-transform-runtime](https://babeljs.io/docs/en/babel-plugin-transform-runtime) to reuse Babel's helpers throughout the code, and reduce the size of the bundle considerably.
 - Using [babel-plugin-search-and-replace](https://github.com/jean-smaug/babel-plugin-search-and-replace#readme) to replace tokens at build time, in order to remove a large configuration file inside the main bundle.
 - Adding [babel-plugin-transform-react-remove-prop-types](https://github.com/oliviertassinari/babel-plugin-transform-react-remove-prop-types#readme) to save some extra bytes by removing the prop types.
 
