@@ -25,7 +25,7 @@ questions:
           1. The **Yes** button
 
           Only the `<button>` elements are included in the tab order
-          because they're the only native HTML form elements.
+          because they're the only standardized HTML form elements.
           To insert other elements into the tab order, you would add a `tabindex` attribute.
   - stimulus: |
       ```html

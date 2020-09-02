@@ -183,9 +183,9 @@ const days = [
         speaker: 'andreban',
         title: 'Shipping a PWA as an Android app',
         blurb:
-          'In this session you will learn about Bubblewrap, a new tool that developers can use to transform their PWAs into an Android application, without having to write native code or learn native tooling.',
+          'In this session you will learn about Bubblewrap, a new tool that developers can use to transform their PWAs into an Android application, without having to learn Android code or tooling.',
         abstract: [
-          'Increase the reach of your Progressive Web App by using it as an Android app. In this session you will learn about Bubblewrap, a new tool that developers can use to transform their PWAs into an Android application, without having to write native code or learn native tooling. You’ll watch us to transform an existing PWA into a native app from start to finish, in just a few minutes.',
+          'Increase the reach of your Progressive Web App by using it as an Android app. In this session you will learn about Bubblewrap, a new tool that developers can use to transform their PWAs into an Android application, without having to learn Android code or tooling. You’ll watch us to transform an existing PWA into an Android app from start to finish, in just a few minutes.',
         ],
         videoId: 'QJlbMfW3jPc',
       },
@@ -203,10 +203,10 @@ const days = [
         speaker: 'thomassteiner',
         title: "Progressively Enhancing Like It's 2003",
         blurb:
-          'In this talk, we will show how new and upcoming browser capabilities can progressively enhance an application so that it remains useful on all modern browsers, but delivers an advanced experience on browsers that support capabilities like native file system access, system clipboard access, contacts retrieval, periodic background sync, screen wake lock, sharing features, and many more.',
+          'In this talk, we will show how new and upcoming browser capabilities can progressively enhance an application so that it remains useful on all modern browsers, but delivers an advanced experience on browsers that support capabilities like OS file system access, system clipboard access, contacts retrieval, periodic background sync, screen wake lock, sharing features, and many more.',
         abstract: [
           'Back in March 2003, Nick Finck and Steve Champeon stunned the web design world with the concept of progressive enhancement, a strategy for web design that emphasizes core webpage content first, and that then progressively adds more nuanced and technically rigorous layers of presentation and features on top of the content. While in 2003, progressive enhancement was about using at the time modern CSS features, unobtrusive JavaScript, and even Scalable Vector Graphics, progressive enhancement in 2020 is about using modern browser capabilities.',
-          'In this talk, we will show at the example of a greeting card web application how new and upcoming browser capabilities can progressively enhance this application so that it remains useful on all modern browsers, but delivers an advanced experience on browsers that support capabilities like native file system access, system clipboard access, contacts retrieval, periodic background sync, screen wake lock, sharing features, and many more.',
+          'In this talk, we will show at the example of a greeting card web application how new and upcoming browser capabilities can progressively enhance this application so that it remains useful on all modern browsers, but delivers an advanced experience on browsers that support capabilities like OS file system access, system clipboard access, contacts retrieval, periodic background sync, screen wake lock, sharing features, and many more.',
           'After the talk, developers will have a solid understanding of how to progressively enhance their web applications with new browser features, all while not putting a download burden on the subset of their users that happen to be on incompatible browsers, and, most importantly, while not excluding them from using the web application in the first place.',
         ],
         videoId: 'NXCT3htg9nk',
@@ -227,7 +227,7 @@ const days = [
         blurb:
           'In this session we’ll introduce new features for installed PWAs, teach approaches for building better PWAs, and answer frequent developer questions about the design and future of PWAs.',
         abstract: [
-          'In this session we’ll introduce new features for installed PWAs, including capabilities previously reserved for native apps. You’ll learn approaches for building better PWAs, including Play apps that use PWAs. Finally, we’ll answer frequently asked developer questions about the design and future of PWAs.',
+          'In this session we’ll introduce new features for installed PWAs, including capabilities previously reserved for iOS/Android apps. You’ll learn approaches for building better PWAs, including Play apps that use PWAs. Finally, we’ll answer frequently asked developer questions about the design and future of PWAs.',
         ],
         videoId: 'M0wPM8B6z5c',
       },
