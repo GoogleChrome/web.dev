@@ -22,6 +22,14 @@ module.exports = {
       2,
       {
         SwitchCase: 1,
+        // FIXME: This is needed because we use template literals as part
+        // of our import paths in .eleventy.js.
+        // example: const Aside = require(`./${componentsDir}/Aside`);
+        // This causes an error in the latest eslint
+        // https://github.com/babel/babel-eslint/issues/530#issuecomment-581892220
+        // We should refactor .eleventy.js to not use these paths and then
+        // remove this exception.
+        ignoredNodes: ['TemplateLiteral'],
       },
     ],
     'new-cap': 0,

@@ -5,7 +5,7 @@ const imagemin = require('gulp-imagemin');
 const through2 = require('through2');
 const rename = require('gulp-rename');
 
-const isProd = process.env.ELEVENTY_ENV === 'prod';
+const isProduction = process.env.ELEVENTY_ENV === 'prod';
 
 /* eslint-disable max-len */
 const assetTypes =
@@ -13,7 +13,7 @@ const assetTypes =
 /* eslint-enable max-len */
 
 const compressImagesTransform = (pngQuality, jpegQuality) => {
-  if (!isProd) {
+  if (!isProduction) {
     // This is the identity transform, which does nothing and just passes
     // the images through directly.
     return through2.obj();
