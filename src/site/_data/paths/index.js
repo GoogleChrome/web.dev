@@ -7,6 +7,7 @@ const lighthouseBestPractices = require('./lighthouse-best-practices.json');
 const lighthousePerformance = require('./lighthouse-performance.json');
 const lighthousePwa = require('./lighthouse-pwa.json');
 const lighthouseSeo = require('./lighthouse-seo.json');
+const media = require('./media.json');
 const metrics = require('./metrics.json');
 const notifications = require('./notifications.json');
 const payments = require('./payments.json');
@@ -34,4 +35,5 @@ module.exports = {
   reliable,
   secure,
   vitals,
+  media,
 };
