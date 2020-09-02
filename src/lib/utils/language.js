@@ -10,7 +10,7 @@
  */
 const languageNames = {
   en: 'English',
-  // pl: 'Polish', TODO: Uncomment when PL language is prod-ready.
+  pl: 'Polish',
 };
 
 /**
