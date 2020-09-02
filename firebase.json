@@ -4,7 +4,7 @@
   },
   "hosting": {
     "predeploy": [
-      "ELEVENTY_ENV=prod npm run build:hosting",
+      "npm run build:hosting",
       "node index-algolia.js"
     ],
     "public": "dist",

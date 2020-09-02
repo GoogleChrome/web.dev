@@ -38,7 +38,7 @@ module.exports = function () {
 
         return data.page.inputPath
           .replace(/index.(md|njk)$/, '')
-          .replace(/^.\/src\/site\/content/, '')
+          .replace(/^.\/src\/site\/content/, '');
       },
     },
   };
