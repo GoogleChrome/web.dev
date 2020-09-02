@@ -22,7 +22,7 @@ function generateAndValidateHash(c) {
 /**
  * Hashes the passed content.
  *
- * @param {string} contents to hash
+ * @param {string|Buffer} contents to hash
  * @return {string}
  */
 function hashForContent(contents) {
