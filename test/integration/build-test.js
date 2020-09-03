@@ -20,7 +20,6 @@ describe('Build test', function () {
     console.log('Build completed. Starting tests.');
 
     [
-      path.join('en', 'algolia.json'),
       path.join('en', 'feed.xml'),
       path.join('en', 'index.html'),
       path.join('en', 'authors', 'addyosmani', 'feed.xml'),
@@ -29,6 +28,7 @@ describe('Build test', function () {
       path.join('images', 'lockup.svg'),
       '_redirects.yaml',
       'app.css',
+      'algolia.json',
       'bootstrap.js',
       'manifest.webmanifest',
       'nuke-sw.js',

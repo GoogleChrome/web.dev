@@ -14,12 +14,8 @@
  * limitations under the License.
  */
 
-/**
- * Returns an array of all past Newsletters.
- *
- * @param {object} collections 11ty collections object
- * @return {Newsletters}
- */
-module.exports = (collections) => {
-  return collections.getFilteredByTag('newsletter').reverse();
+const {algolia} = require('./lib/algolia');
+
+module.exports = {
+  algolia,
 };

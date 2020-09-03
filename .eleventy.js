@@ -61,7 +61,6 @@ const {
   postsWithLighthouse,
 } = require(`./${collectionsDir}/posts-with-lighthouse`);
 const tags = require(`./${collectionsDir}/tags`);
-// nb. algoliaPosts is only require'd if needed, below
 
 const filtersDir = 'src/site/_filters';
 const consoleDump = require(`./${filtersDir}/console-dump`);
@@ -164,13 +163,6 @@ module.exports = function (config) {
   // to quickly find collection items without looping.
   config.addCollection('memoized', (collection) => {
     return memoize(collection.getAll());
-  });
-  config.addCollection('algolia', (collection) => {
-    if (isProd) {
-      const algoliaPosts = require(`./${collectionsDir}/algolia-posts`);
-      return algoliaPosts(collection);
-    }
-    return [];
   });
 
   // ----------------------------------------------------------------------------
