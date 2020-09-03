@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Announcing <model-viewer> 1.1'
+title: 'Introducing <model-viewer> 1.1'
 subhead: 3D models for your web page as easily as writing HTML.
 authors:
   - rkochman
@@ -11,7 +11,7 @@ description: |
   3D is difficult to do without a deep knowledge of 3D technologies or third-party
   hosting. <model-viewer> 1.1 makes these tasks as easy as writing HTML.
 date: 2020-09-03
-#updated: 2020-08-28
+updated: 2020-09-03
 hero: hero.jpg
 alt: A 3D image of a shark.
 tags:
