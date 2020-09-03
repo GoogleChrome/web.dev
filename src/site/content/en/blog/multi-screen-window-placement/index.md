@@ -367,7 +367,7 @@ The Chrome team wants to hear about your experiences with the Multi-Screen Windo
 
 ### Tell us about the API design
 
-Is there something about the API that doesn’t work like you expected? Or are there missing methods
+Is there something about the API that does not work like you expected? Or are there missing methods
 or properties that you need to implement your idea? Have a question or comment on the security
 model?
 
@@ -389,7 +389,7 @@ team to prioritize features and shows other browser vendors how critical it is t
 
 - Share how you plan to use it on the [WICG Discourse thread][wicg-discourse]
 - Send a tweet to [@ChromiumDev][cr-dev-twitter] with the `#WindowPlacement` hashtag and let us know
-  where and how you’re using it.
+  where and how you are using it.
 - Ask other browser vendors to implement the API.
 
 ## Helpful links {: #helpful }
