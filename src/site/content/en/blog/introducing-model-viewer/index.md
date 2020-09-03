@@ -48,7 +48,7 @@ space is even better. For an entirely-within-the-browser 3D and AR Chrome
 Android supports [augmented
 reality](https://modelviewer.dev/examples/augmented-reality.html) using WebXR .
 
-<figure class="w-figure w-figure--inline-right" style="width: 333px">
+<figure class="w-figure w-figure--inline-right">
   <video controls muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/introducing-model-viewer/modelviewer1-0.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/introducing-model-viewer/modelviewer1-0.mp4" type="video/mp4">
@@ -152,6 +152,7 @@ recent improvements.
               skybox-image="spruit_sunrise_1k_HDR.hdr"
               alt="A 3D model of a well-worn  helmet"
               src="DamagedHelmet.glb"></model-viewer>
+```
 
 <!-- Hide until model-viewer's iframe bug is fixed -->
 <!-- <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://modelviewer.dev/webdotdev/rendering.html" frameborder="0" allowfullscreen></iframe> -->
