@@ -14,9 +14,9 @@ import {checkUserPreferredLanguage} from './actions';
 import {store} from './store';
 import {localStorage} from './utils/storage';
 import removeServiceWorkers from './utils/sw-remove';
+import './analytics'; // side effects & named export
 // TODO: Enable this when #3836 is fixed.
 // // https://github.com/GoogleChrome/web.dev/issues/3836
-// import {trackError} from './analytics'; // side effects & named export
 // import {syncContentIndex} from './content-indexing';
 
 window.WebComponents.waitFor(async () => {
