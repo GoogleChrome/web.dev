@@ -446,7 +446,7 @@ that can inject HTTP response headers, for example,
 [ModHeader](https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj)
 (not a Google product), to insert a response (*not* request) header as follows:
 
-```
+```bash
 Document-Policy: force-load-at-top
 ```
 
