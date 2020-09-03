@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Announcing <model-viewer> 1.1'
+title: 'Introducing <model-viewer> 1.1'
 subhead: 3D models for your web page as easily as writing HTML.
 authors:
   - rkochman
@@ -11,7 +11,7 @@ description: |
   3D is difficult to do without a deep knowledge of 3D technologies or third-party
   hosting. <model-viewer> 1.1 makes these tasks as easy as writing HTML.
 date: 2020-09-03
-#updated: 2020-08-28
+updated: 2020-09-03
 hero: hero.jpg
 alt: A 3D image of a shark.
 tags:
@@ -48,7 +48,7 @@ space is even better. For an entirely-within-the-browser 3D and AR Chrome
 Android supports [augmented
 reality](https://modelviewer.dev/examples/augmented-reality.html) using WebXR .
 
-<figure class="w-figure w-figure--inline-right" style="max-width: 75%">
+<figure class="w-figure w-figure--inline-right">
   <video controls muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/introducing-model-viewer/modelviewer1-0.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/introducing-model-viewer/modelviewer1-0.mp4" type="video/mp4">
@@ -66,10 +66,10 @@ below shows what this might look like.
 
 ```html
 <model-viewer src="Chair.glb"
-              ar
-              ar-scale="auto"
-              camera-controls
-              alt="A 3D model of an office chair."></model-viewer>
+  ar ar-scale="auto"
+  camera-controls
+  alt="A 3D model of an office chair.">
+</model-viewer>
 ```
 
 <!-- Hide until model-viewer's iframe bug is fixed -->
@@ -148,10 +148,11 @@ improved frame rate dramatically. The example below shows off some of these
 recent improvements.
 
 ```html
-<model-viewer camera-controls 
+<model-viewer camera-controls
               skybox-image="spruit_sunrise_1k_HDR.hdr"
               alt="A 3D model of a well-worn  helmet"
               src="DamagedHelmet.glb"></model-viewer>
+```
 
 <!-- Hide until model-viewer's iframe bug is fixed -->
 <!-- <iframe style="width:100%; height: 100%;position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);" src="https://modelviewer.dev/webdotdev/rendering.html" frameborder="0" allowfullscreen></iframe> -->
