@@ -81,18 +81,18 @@ experience of their users.
 
 Variable fonts address these challenges, by packing styles into a single file.
 
-This works by starting with a central or 'default' master style, usually the
-'Regular'–an upright roman design with the most typical weight and width that is
-most suitable for plain text. This is then connected to other style masters in a
+This works by starting with a central or 'default' style, usually the
+'Regular'–an upright roman design with the most typical weight and width that
+is most suitable for plain text. This is then connected to other styles in a
 continuous range, called an 'axis.' The most common axis is **Weight**, which
-can connect the default style through to a Bold master style. Any individual
-style can be located along an axis, and is called an 'instance' of the variable
+can connect the default style through to a Bold style. Any individual style
+can be located along an axis, and is called an 'instance' of the variable
 font. Some instances are named by the font developer, for example Weight axis
 location 600 is called SemiBold.
 
-The variable font [Roboto Flex](https://github.com/TypeNetwork/Roboto-Flex) has
-three masters for its **Weight** axis. The Regular master is at the center, and
-two masters at the opposite ends of the axis, that are lighter and heavier.
+The variable font [Roboto Flex](https://github.com/TypeNetwork/Roboto-Flex)
+has three styles for its **Weight** axis. The Regular style is at the center,
+and two styles at the opposite ends of the axis, that are lighter and heavier.
 Between these, you can choose from 900 instances:
 
 <figure class="w-figure">
@@ -104,8 +104,8 @@ Between these, you can choose from 900 instances:
 </figure>
 
 The font developer can offer a set of different axes, and because they all share
-the same default master, you can combine them. Roboto has three masters in a
-Width axis: the Regular is at the center of the axis, and two masters, narrower
+the same default styles, you can combine them. Roboto has three styles in a
+Width axis: the Regular is at the center of the axis, and two styles, narrower
 and wider, are at each end. These provide all the widths of the Regular style,
 and combine with the Weight axis to provide all the widths for every weight.
 
@@ -158,7 +158,7 @@ like the Italic axis, a glyph substitution of one glyph for another can occur
 along the **Optical Size** axis at a point decided by the type designer.
 
 In summary, where the contours allow for it, type designers can create fonts
-that interpolate between various masters in a multi-dimensional design space.
+that interpolate between various styles in a multi-dimensional design space.
 This gives you granular control over your typography, and a great deal of power.
 
 ## Axes Definitions
