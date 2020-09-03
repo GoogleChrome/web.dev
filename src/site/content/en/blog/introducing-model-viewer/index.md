@@ -48,7 +48,7 @@ space is even better. For an entirely-within-the-browser 3D and AR Chrome
 Android supports [augmented
 reality](https://modelviewer.dev/examples/augmented-reality.html) using WebXR .
 
-<figure class="w-figure w-figure--inline-right" style="max-width: 75%">
+<figure class="w-figure w-figure--inline-right" style="width: 333px">
   <video controls muted class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/introducing-model-viewer/modelviewer1-0.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/introducing-model-viewer/modelviewer1-0.mp4" type="video/mp4">
@@ -66,10 +66,10 @@ below shows what this might look like.
 
 ```html
 <model-viewer src="Chair.glb"
-              ar
-              ar-scale="auto"
-              camera-controls
-              alt="A 3D model of an office chair."></model-viewer>
+  ar ar-scale="auto"
+  camera-controls
+  alt="A 3D model of an office chair.">
+</model-viewer>
 ```
 
 <!-- Hide until model-viewer's iframe bug is fixed -->
@@ -148,7 +148,7 @@ improved frame rate dramatically. The example below shows off some of these
 recent improvements.
 
 ```html
-<model-viewer camera-controls 
+<model-viewer camera-controls
               skybox-image="spruit_sunrise_1k_HDR.hdr"
               alt="A 3D model of a well-worn  helmet"
               src="DamagedHelmet.glb"></model-viewer>
