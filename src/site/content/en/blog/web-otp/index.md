@@ -401,7 +401,7 @@ format](https://wicg.github.io/sms-one-time-codes) and [Apple announced Safari's
 support for it](https://developer.apple.com/news/?id=z0i801mg) starting in iOS 14
 and macOS Big Sur. Though Safari doesn't support the Web OTP JavaScript API, by
 annotating `input` element with `autocomplete=["one-time-code"]`, the default
-keyboard automatically suggests you to enter the OTP if the SMS message complies
+keyboard automatically suggests that you enter the OTP if the SMS message complies
 with the format.
 
 ### Is it safe to use SMS as a way to authenticate?
