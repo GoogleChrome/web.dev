@@ -398,7 +398,7 @@ a few significant differences compared to the SMS Receiver API.
 
 Chromium and WebKit agreed on [the SMS text message
 format](https://wicg.github.io/sms-one-time-codes) and [Apple announced Safari's
-support for it](https://developer.apple.com/news/?id=z0i801mg) starting iOS 14
+support for it](https://developer.apple.com/news/?id=z0i801mg) starting in iOS 14
 and macOS Big Sur. Though Safari doesn't support the Web OTP JavaScript API, by
 annotating `input` element with `autocomplete=["one-time-code"]`, the default
 keyboard automatically suggests you to enter the OTP if the SMS message complies
