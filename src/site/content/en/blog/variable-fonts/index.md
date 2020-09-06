@@ -39,7 +39,7 @@ what you _use_.
   <img src="robot-specimen.png" alt="A specimen of Roboto">
   <figcaption class="w-figcaption">
     Examples of the Roboto typeface that was designed and developed
-    Christian Robertson.
+    by Christian Robertson.
   </figcaption>
 </figure>
 
