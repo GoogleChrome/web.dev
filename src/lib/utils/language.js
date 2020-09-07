@@ -11,6 +11,7 @@
 const languageNames = {
   en: 'English',
   pl: 'Polish',
+  pt: 'Portuguese',
 };
 
 /**
