@@ -18,7 +18,7 @@ origin_trial:
 ---
 
 {% Aside %} The Multi-Screen Window Placement API is part of the
-[capabilities project](https://developers.google.com/web/updates/capabilities) and is currently in
+[capabilities project](https://web.dev/fugu-status/) and is currently in
 development. This post will be updated as the implementation progresses. {% endAside %}
 
 ## What is the Multi-Screen Window Placement API? {: #what }
@@ -62,7 +62,7 @@ enable the `#enable-experimental-web-platform-features` flag in `chrome://flags`
 ### Enabling support during the origin trial phase
 
 Starting in Chrome&nbsp;86, the Multi-Screen Window Placement API will be available as an origin
-trial in Chrome. The origin trial is expected to end in Chrome&nbsp;88.
+trial in Chrome. The origin trial is expected to end in Chrome&nbsp;88 (February&nbsp;24, 2021).
 
 {% include 'content/origin-trials.njk' %}
 
@@ -173,8 +173,11 @@ try {
 }
 ```
 
-The browser can choose to show the permission prompt dynamically upon the first attempt to use any
-of the methods of the new API. Read on to learn more.
+The browser
+[can](https://webscreens.github.io/window-placement/#issue-c601b517:~:text=Permission%20check%20for%20above%3F,-partial)
+choose to show the permission prompt dynamically upon the first attempt to use any
+of the methods of the new API.
+Read on to learn more.
 
 ### The `isMultiScreen()` method
 
@@ -257,7 +260,10 @@ window.addEventListener("screenschange", async () => {
 ```
 
 Note that you need to look up the new screen details asynchronously, the `screenschange` event
-itself does not provide this data.
+itself does not provide this data
+(see
+[Issue&nbsp;28](https://github.com/webscreens/window-placement/issues/28)
+for details).
 
 ### New fullscreen options
 
