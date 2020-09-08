@@ -5,6 +5,8 @@ date: 2019-06-26
 updated: 2020-07-17
 description: |
   Learn how to use web.dev's UI and content components.
+feedback:
+  - all
 ---
 
 The web.dev platform includes various components to make it easy for content

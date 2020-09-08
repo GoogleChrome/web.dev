@@ -6,6 +6,32 @@ import {BaseElement} from '../BaseElement';
 import {trackEvent} from '../../analytics';
 import './_styles.scss';
 
+/** @types {WebFeedback.Question[]} */
+const questions = [
+  {text: 'Was this page helpful?', label: 'helpful', name: 'Helpfulness'},
+  {
+    text: 'Did this page help you complete your goal(s)?',
+    label: 'effective',
+    name: 'Effectiveness',
+  },
+  {
+    text: 'Did this page have the information you needed?',
+    label: 'complete',
+    name: 'Completeness',
+  },
+  {
+    text: "Was this page's information accurate?",
+    label: 'accuracy',
+    name: 'Accuracy',
+  },
+  {text: 'Was this page easy to read?', label: 'readable', name: 'Readability'},
+];
+
+/** @types {WebFeedback.Question[]} */
+const conditionalQuestions = [
+  {text: 'Does this API meet your needs?', label: 'api', name: 'API'},
+];
+
 /**
  * Element that handles feedback on posts to submit to Analytics.
  *
@@ -13,11 +39,18 @@ import './_styles.scss';
  * @final
  */
 class Feedback extends BaseElement {
+  static get properties() {
+    return {
+      conditionals: {type: String},
+    };
+  }
+
   constructor() {
     super();
     this.robotName = 'is-it-just-me-or-was-this-form-filled-out-by-a-robot';
     this.submitted = false;
     this.submit = this.submit.bind(this);
+    this.conditionals = '';
   }
 
   submit(event) {
@@ -56,7 +89,42 @@ class Feedback extends BaseElement {
     }
   }
 
+  /**
+   * @param {WebFeedback.Question[]} questions
+   * @returns {TemplateResult[]}
+   */
+  renderQuestions(questions) {
+    return questions.map(
+      (q) => html`<div class="web-feedback__row">
+        <div id="${q.label}-label">${q.text}</div>
+        <label>
+          <input
+            type="radio"
+            aria-labelledby="${q.label}-label yes-label"
+            name="${q.name}"
+            value="1"
+          />
+        </label>
+        <label>
+          <input
+            type="radio"
+            aria-labelledby="${q.label}-label no-label"
+            name="${q.name}"
+            value="0"
+          />
+        </label>
+      </div>`,
+    );
+  }
+
   render() {
+    const conditionalLabels = new Set(
+      this.conditionals.toLocaleLowerCase().split(','),
+    );
+    const conditionalQuestionsToDisplay = conditionalLabels.has('all')
+      ? conditionalQuestions
+      : conditionalQuestions.filter((q) => conditionalLabels.has(q.label));
+
     // Because we share CSS with the `app.css` we want this to be in the light DOM
     return html`
       <details class="w-details" open>
@@ -85,112 +153,8 @@ class Feedback extends BaseElement {
               <div id="yes-label">Yes</div>
               <div id="no-label">No</div>
             </div>
-
-            <div class="web-feedback__row">
-              <div id="helpful-label">Was this page helpful?</div>
-              <label>
-                <input
-                  type="radio"
-                  aria-labelledby="helpful-label yes-label"
-                  name="Helpfulness"
-                  value="1"
-                />
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  aria-labelledby="helpful-label no-label"
-                  name="Helpfulness"
-                  value="0"
-                />
-              </label>
-            </div>
-
-            <div class="web-feedback__row">
-              <div id="effective-label">
-                Did this page help you complete your goal(s)?
-              </div>
-              <label>
-                <input
-                  type="radio"
-                  aria-labelledby="effective-label yes-label"
-                  name="Effectiveness"
-                  value="1"
-                />
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  aria-labelledby="effective-label no-label"
-                  name="Effectiveness"
-                  value="0"
-                />
-              </label>
-            </div>
-
-            <div class="web-feedback__row">
-              <div id="complete-label">
-                Did this page have the information you needed?
-              </div>
-              <label>
-                <input
-                  type="radio"
-                  aria-labelledby="complete-label yes-label"
-                  name="Completeness"
-                  value="1"
-                />
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  aria-labelledby="complete-label no-label"
-                  name="Completeness"
-                  value="0"
-                />
-              </label>
-            </div>
-
-            <div class="web-feedback__row">
-              <div id="accuracy-label">
-                Was this page's information accurate?
-              </div>
-              <label>
-                <input
-                  type="radio"
-                  aria-labelledby="accuracy-label yes-label"
-                  name="Accuracy"
-                  value="1"
-                />
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  aria-labelledby="accuracy-label no-label"
-                  name="Accuracy"
-                  value="0"
-                />
-              </label>
-            </div>
-
-            <div class="web-feedback__row">
-              <div id="readable-label">Was this page easy to read?</div>
-              <label>
-                <input
-                  type="radio"
-                  aria-labelledby="readable-label yes-label"
-                  name="Readability"
-                  value="1"
-                />
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  aria-labelledby="readable-label no-label"
-                  name="Readability"
-                  value="0"
-                />
-              </label>
-            </div>
+            ${this.renderQuestions(conditionalQuestionsToDisplay)}
+            ${this.renderQuestions(questions)}
           </div>
 
           <div class="w-visually-hidden">
