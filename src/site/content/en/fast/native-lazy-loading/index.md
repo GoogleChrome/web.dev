@@ -75,7 +75,7 @@ Here are the supported values for the `loading` attribute:
 
 - `auto`: Default lazy-loading behavior of the browser, which is the same as not
   including the attribute.
-- `lazy`: Defer loading of the resource until it reaches a [calculated distance](#load-in-distance-threshold) from the viewport.
+- `lazy`: Defer loading of the resource until it reaches a [calculated distance](#distance-from-viewport-thresholds) from the viewport.
 - `eager`: Load the resource immediately, regardless of where it's located on the page.
 
 {% Aside 'caution' %}
@@ -234,7 +234,7 @@ It is safer to avoid putting `loading=lazy` on above-the-fold images, as Chrome 
 ### How does the `loading` attribute work with images that are in the viewport but not immediately visible (for example: behind a carousel, or hidden by CSS for certain screen sizes)?
 
 Only images that are below the device viewport by the [calculated
-distance](#load-in-distance-threshold) load lazily. All images above the viewport, regardless of
+distance](#distance-from-viewport-thresholds) load lazily. All images above the viewport, regardless of
 whether they're immediately visible, load normally.
 
 ### What if I'm already using a third-party library or a script to lazy-load images?
@@ -243,7 +243,7 @@ The `loading` attribute should not affect code that currently lazy-loads your as
 there are a few important things to consider:
 
 1. If your custom lazy-loader attempts to load images or frames sooner than when Chrome loads them
-   normally—that is, at a distance greater than the [load-in distance threshold](#load-in-distance-threshold)—
+   normally—that is, at a distance greater than the [distance-from-viewport thresholds](#distance-from-viewport-thresholds)—
    they are still deferred and load based on normal browser behavior.
 2. If your custom lazy-loader uses a shorter distance to determine when to load a particular image than the browser, then the behavior would conform to your custom settings.
 
@@ -319,7 +319,7 @@ following criteria to determine whether an iframe is hidden:
 - The iframe is placed off-screen using negative X or Y positioning.
 
 If an iframe meets any of these conditions, Chrome considers it hidden and won't lazy-load it in
-most cases. Iframes that _aren't_ hidden will only load when they're within the [load-in distance threshold](#load-in-distance-threshold).
+most cases. Iframes that _aren't_ hidden will only load when they're within the [distance-from-viewport thresholds](#distance-from-viewport-thresholds).
 A placeholder shows for lazy-loaded iframes that are still being fetched.
 
 ### How does native lazy-loading affect advertisements on a web page?
