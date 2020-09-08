@@ -23,7 +23,7 @@ module.exports = function () {
   return {
     lang: lang.lang,
     locale: lang.locale,
-    // translated: 'none',
+    translated: 'none',
     home: {
       paths,
     },
