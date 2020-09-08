@@ -95,7 +95,8 @@ device.
   Chromium-based browsers may allow the browser to use more storage.
 * Internet Explorer 10 and later can store up to 250MB and will prompt the
   user when more than 10MB has been used.
-* Firefox allows the browser to use up to 50% of free disk space. An eTLD+1
+* Firefox allows the browser to use up to 50% of free disk space. An 
+  [eTLD+1](https://godoc.org/golang.org/x/net/publicsuffix)
   group (e.g., `example.com`, `www.example.com` and `foo.bar.example.com`)
   [may use up to 2GB][ff-usage-limits]. You can use the
   [StorageManager API](#check-available) to determine how much space is still
