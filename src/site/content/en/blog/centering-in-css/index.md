@@ -74,6 +74,11 @@ Resilience Crown 👸.
   <video playsinline controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/content-center-ringer-cycle.mp4">
   </video>
+  <figcaption>
+    Editing content with
+    <a href="https://github.com/GoogleChromeLabs/ProjectVisBug#visbug">VisBug</a>
+    and changing text orientation
+  </figcaption>
 </figure>
 
 1. **Squish**: great!
@@ -131,7 +136,7 @@ can also benefit from `place-content` and `place-item`
 4. **Edit:** great!
 5. **Flow:** great!
 
-Gentle Flex is a truer centering-*only* strategy. It's soft or gentle, because
+Gentle Flex is a truer centering-*only* strategy. It's soft and gentle, because
 unlike `place-content: center`, no children's box sizes are changed during the
 centering. As gently as possible, all items are stacked, centered, and spaced. 
 
@@ -161,8 +166,8 @@ centering. As gently as possible, all items are stacked, centered, and spaced.
 
 **Great for** both macro and micro layouts.
 
-{% Aside "key-term" %} Macro layouts are like states or territories of a
-  country, very high level, large coverage zones. The zones created by macro
+{% Aside "key-term" %} **Macro layouts** are like states or territories of a
+  country: very high-level, large coverage zones. The zones created by macro
   layouts tend to contain more layouts. The less surface the layout covers, the
   less of a macro layout it becomes. As a layout covers less surface area or
   contains less layouts, it becomes more of a micro layout. {% endAside %}
@@ -227,7 +232,7 @@ are styled with auto margins. There's something nostalgic and wonderful about
 4. **Edit:** great!
 5. **Flow:** great! (so long as you use logical properties)
 
-Contestant "fluffy center" is by far our tastiest sounding, and is the only
+Contestant "fluffy center" is by far our tastiest sounding contender, and is the only
 centering technique that's entirely element/child owned. See our solo inner pink
 border!? 
 
@@ -342,6 +347,10 @@ auto-height switch on the container… what else!?
 
 Now that you know how I did it, how would you?! Let's diversify our approaches
 and learn all the ways to build on the web. Follow the codelab with this post to
-create your own centering example, just like the one's in this post. [Tweet
+create your own centering example, just like the ones in this post. [Tweet
 me](https://twitter.com/argyleink) your version, and I'll add it to the
 [Community remixes](#community-remixes) section below.
+
+## Community remixes
+
+Nothing to see here, yet!
