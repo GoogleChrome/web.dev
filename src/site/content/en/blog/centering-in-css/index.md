@@ -100,7 +100,7 @@ it's a solid centering technique for groups of elements meant to be read.
 ```
 
 <div class="w-columns">
-{% Compare 'worse', 'Pros' %}
+{% Compare 'better', 'Pros' %}
 - Content is centered even under constrained space and overflow  
 - Centering edits and maintenance are all in one spot  
 - Gap guarantees equal spacing amongst _n_ children  
@@ -108,7 +108,7 @@ it's a solid centering technique for groups of elements meant to be read.
 
 {% endCompare %}
 
-{% Compare 'better', 'Cons' %}
+{% Compare 'worse', 'Cons' %}
 - The widest child (`max-content`) sets the width for all the rest. This will be
   discussed more in [Gentle Flex](#gentle-flex).  
 
@@ -151,14 +151,14 @@ centering. As gently as possible, all items are stacked, centered, and spaced.
 ```
 
 <div class="w-columns">
-{% Compare 'worse', 'Pros' %}
+{% Compare 'better', 'Pros' %}
 - Only handles alignment, direction, and distribution
 - Edits and maintenance are all in one spot
 - Gap guarantees equal spacing amongst _n_ children
 
 {% endCompare %}
 
-{% Compare 'better', 'Cons' %}
+{% Compare 'worse', 'Cons' %}
 - 5 lines of code
 
 {% endCompare %}
@@ -200,13 +200,13 @@ are styled with auto margins. There's something nostalgic and wonderful about
 ```
 
 <div class="w-columns">
-{% Compare 'worse', 'Pros' %}
+{% Compare 'better', 'Pros' %}
 - Fun trick
 - Quick and dirty
 
 {% endCompare %}
 
-{% Compare 'better', 'Cons' %}
+{% Compare 'worse', 'Cons' %}
 - Awkward results when overflowing
 - Reliance on distribution instead of gap means layouts can occur with children
   touching sides
@@ -243,7 +243,7 @@ border!?
 ```
 
 <div class="w-columns">
-{% Compare 'worse', 'Pros' %}
+{% Compare 'better', 'Pros' %}
 - Protects content
 - Atomic
 - Every test is secretly containing this centering strategy
@@ -251,7 +251,7 @@ border!?
 
 {% endCompare %}
 
-{% Compare 'better', 'Cons' %}
+{% Compare 'worse', 'Cons' %}
 - Illusion of not being useful
 - There's a clash between the container and the items, naturally since each are
   being very firm about their sizing
@@ -283,14 +283,14 @@ technique that's flexible and dynamic to content size. Sometimes you just need
 to plop UI on top of other UI.
 
 <div class="w-columns">
-{% Compare 'worse', 'Pros' %}
+{% Compare 'better', 'Pros' %}
 - Useful
 - Reliable
 - When you need it, it’s invaluable
 
 {% endCompare %}
 
-{% Compare 'better', 'Cons' %}
+{% Compare 'worse', 'Cons' %}
 - Code with negative percentage values
 - Requires `position: relative` to force a containing block
 - Early and awkward line breaks
