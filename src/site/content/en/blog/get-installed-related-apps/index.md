@@ -360,7 +360,6 @@ browser vendors how critical it is to support them.
 * [Public explainer for `getInstalledRelatedApps()` API][explainer]
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
-* [Request an origin trial token]({{origin_trial.url}})
 * Blink Component: [`Mobile>WebAPKs`](https://chromestatus.com/features#component%3A%20Mobile%3EWebAPKs)
 
 ## Thanks
