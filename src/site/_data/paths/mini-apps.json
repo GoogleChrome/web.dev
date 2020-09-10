@@ -1,0 +1,16 @@
+{
+  "slug": "mini-apps",
+  "cover": "/images/collections/pwa.svg",
+  "title": "Mini Apps",
+  "updated": "September 10, 20202",
+  "description": "ToDo",
+  "overview": "ToDo",
+  "topics": [
+    {
+      "title": "Introduction",
+      "pathItems": [
+        "what-are-mini-apps"
+      ]
+    }
+  ]
+}
