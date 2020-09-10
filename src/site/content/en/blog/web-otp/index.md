@@ -196,6 +196,11 @@ formatted message text sent via SMS. I'll cover the JavaScript first.
 The Web OTP API requires a secure origin (HTTPS).
 {% endAside %}
 
+{% Aside 'success' %}
+Unless you'd like a highly customised approach, we recommend to use [a web
+component](#web-components) approach since it's mostly just a copy and paste. 
+{% endAside %}
+
 ### Feature detection
 
 Feature detection is the same as for many other APIs:
@@ -214,15 +219,18 @@ to obtain the OTP. Web OTP adds a new `otp` option to that method. It only has
 one property: `transport`, whose value must be an array with the string `'sms'`.
 
 ```js
-const content = await navigator.credentials.get({
-  otp: {
-    transport:['sms']
-  }
-});
+navigator.credentials.get({
+  otp: { transport:['sms'] }
+}).then(otp => {
+  …
 ```
 
 This triggers the browser's permission flow when an SMS message arrives. If permission is
 granted, the returned promise resolves with an `OTPCredential` object.
+
+{% Label %}
+Content of obtained `OTPCredential` object
+{% endLabel %}
 
 ```json
 {
@@ -231,24 +239,20 @@ granted, the returned promise resolves with an `OTPCredential` object.
 }
 ```
 
-Next, pass the OTP value to an `input` field and submit it on behalf of the
-user. Annotating the field with `autocomplete="one-time-code"` is highly
-recommended for browser compatibilities.
+Next, pass the OTP value to an `input` field. Annotating the field with
+`autocomplete="one-time-code"` is highly recommended for browser
+compatibilities. You may optionally submit the form on behalf of the user.
 
-```js
-document.querySelector('input[autocomplete="one-time-code"]').value = content.code;
+```js/3-4
+navigator.credentials.get({
+  otp: { transport:['sms'] }
+}).then(otp => {
+  const input = document.querySelector('input[autocomplete="one-time-code"]');
+  input.value = otp.code;
+}).catch(err => {
+  console.error(err);
+});
 ```
-
-{% Label %}
-Simple example
-{% endLabel %}
-
-{% Glitch {
-  id: 'web-otp',
-  path: 'views/index.html',
-  previewSize: 0,
-  allow: []
-} %}
 
 ### Aborting the message {: #aborting }
 
@@ -256,29 +260,58 @@ To set a timeout that cancels the `get()` call, pass an `AbortController`
 instance in the [`options`
 object](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get#Parameters).
 
-```js
+```js/0-3,7
 const abortController = new AbortController();
 let timer = setTimeout(() => {
   abortController.abort();
-}, 10 * 1000);
+}, 120 * 1000); // Change the duration based on your needs
 
-const content = await navigator.credentials.get({
+navigator.credentials.get({
   otp: { transport:['sms'] },
   signal: abortController.signal
+}).then(otp => {
+  clearTimeout(timer);
+  const input = document.querySelector('input[autocomplete="one-time-code"]');
+  input.value = otp.code;
+}).catch(err => {
+  clearTimeout(timer);
+  console.error(err);
 });
 ```
 
-{% Details %}
+## Format the SMS message {: #format }
 
-{% DetailsSummary %}
-Use the API declaratively with a Web Component
-{% endDetailsSummary %}
+The API itself should look simple enough, but a critical part is to
+format your SMS text message according to a specific convention. The message has
+to be sent after `navigator.credentials.get()` is called and must comply with the
+formatting convention.
+
+The SMS message must be received on the device where `navigator.credentials.get()`
+was called.
+
+The message must adhere to the following formatting:
+
+* The message begins with (optional) human-readable text leaving the last line
+  for the URL and the OTP.
+* The host part of the URL of the website that invoked the API must be preceded
+  by `@`.
+* The URL must contain a pound sign ('`#`') followed by the OTP.
+
+For example:
+
+```text
+Your OTP is: 123456.
+
+@www.example.com #123456
+```
+
+## Use the API declaratively with a Web Component {: #web-components }
 
 The code below demonstrates a Web Component that extends `input`.
 
 ```js
 if ('customElements' in window && 'OTPCredential' in window) {
-  customElements.define("one-time-code",
+  customElements.define("web-otp",
     class extends HTMLInputElement {
       connectedCallback() {
         this.abortController = new AbortController();
@@ -307,14 +340,14 @@ if ('customElements' in window && 'OTPCredential' in window) {
 }
 ```
 
-After this declaration you can add `is="one-time-code"` to any `input` element.
+After this declaration you can add `is="web-otp"` to any `input` element.
 As soon as the element is added to the document tree, it starts waiting for SMS
 messages to arrive, fills the input field when an OTP is passed and emits an
 `autocomplete` event.
 
 ```html
 <form>
-  <input is="one-time-code" autocomplete="one-time-code" required/>
+  <input is="web-otp" autocomplete="one-time-code" required/>
   <input type="submit">
 </form>
 ```
@@ -323,41 +356,13 @@ You can listen to the `autocomplete` event to submit the form automatically as
 well.
 
 ```js
-const otp = document.querySelector('input[is="one-time-code"]');
-otp.addEventListener('autocomplete', e => {
+const input = document.querySelector('input[is="web-otp"]');
+input.addEventListener('autocomplete', e => {
   this.form.submit();
 });
 ```
 
-{% endDetails %}
-
-### Format the SMS message {: #format }
-
-The API itself should look simple enough, but a critical part is to
-format your SMS text message according to a specific convention. The message has
-to be sent after `navigator.credentials.get()` is called and must comply with the
-formatting convention.
-
-The SMS message must be received on the device where `navigator.credentials.get()`
-was called.
-
-The message must adhere to the following formatting:
-
-* The message begins with (optional) human-readable text leaving the last line
-  for the URL and the OTP.
-* The host part of the URL of the website that invoked the API must be preceded
-  by `@`.
-* The URL must contain a pound sign ('`#`') followed by the OTP.
-
-For example:
-
-```text
-Your OTP is: 123456.
-
-@www.example.com #123456
-```
-
-### Demos
+## Demos
 
 Try various messages with the demo:
 [https://web-otp.glitch.me](https://web-otp.glitch.me)
@@ -365,7 +370,16 @@ Try various messages with the demo:
 You may also fork it and create your version:
 [https://glitch.com/edit/#!/web-otp](https://glitch.com/edit/#!/web-otp).
 
-### Problem with the implementation?
+{% Glitch {
+  id: 'web-otp',
+  path: 'views/index.html',
+  previewSize: 0,
+  allow: []
+} %}
+
+## FAQ
+
+### Where do I report bugs in Chrome's implementation?
 
 Did you find a bug with Chrome's implementation?
 
@@ -374,14 +388,14 @@ Did you find a bug with Chrome's implementation?
   Include as much detail as you can, simple instructions for reproducing, and
   set **Components** to `Blink>SMS`.
 
-### Planning to use the API?
+### How can I help this feature?
 
 Are you planning to use the Web OTP API? Your public support helps us prioritize
 features, and shows other browser vendors how critical it is to support them.
 Send a Tweet to [@ChromiumDev](https://twitter.com/chromiumdev) with
 `#webotp` and let us know where and how you're using it.
 
-## Differences from SMS Receiver API {: #differences }
+### What are the differences from SMS Receiver API? {: #differences }
 Consider Web OTP API an evolved version of the SMS Receiver API. Web OTP API has
 a few significant differences compared to the SMS Receiver API.
 
@@ -393,7 +407,6 @@ a few significant differences compared to the SMS Receiver API.
   `receive()` did before.
 * It's now possible to [abort the call to `get()`](#aborting).
 
-## FAQ
 ### Is this API compatible between different browsers?
 
 Chromium and WebKit agreed on [the SMS text message
