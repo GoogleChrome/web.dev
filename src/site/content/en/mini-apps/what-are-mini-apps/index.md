@@ -15,7 +15,7 @@ When you look at the applications on your phone, you probably have specific apps
 
 ## What are super apps?
 
-Super apps are apps that are hosts to other apps that run within the super app: the so-called mini apps. Popular super apps are Tencent’s [WeChat](https://weixin.qq.com/) (微信), the app of the search engine [Baidu](https://baidu.com/) (百度), Ant Group's (an affiliate company of the Chinese Alibaba Group) [Alipay](https://www.alipay.com/) (支付宝), but also ByteDance's [Douyin](https://www.douyin.com/) (抖音), which you might know as TikTok (蒂克托克). The first three are commonly also referred to as **B**(aidu)**A**(libaba)**T**(encent). Super apps have taken the Chinese market by storm, which is why a lot of the examples in this article are Chinese.
+Super apps are apps that are hosts to other apps that run within the super app: the so-called mini apps. Popular super apps are Tencent's [WeChat](https://weixin.qq.com/) (微信), the app of the search engine [Baidu](https://baidu.com/) (百度), Ant Group's (an affiliate company of the Chinese Alibaba Group) [Alipay](https://www.alipay.com/) (支付宝), but also ByteDance's [Douyin](https://www.douyin.com/) (抖音), which you might know as TikTok (蒂克托克). The first three are commonly also referred to as **B**(aidu)**A**(libaba)**T**(encent). Super apps have taken the Chinese market by storm, which is why a lot of the examples in this article are Chinese.
 
 ### Short characterization of each super app platform
 
