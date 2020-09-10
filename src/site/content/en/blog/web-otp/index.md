@@ -4,7 +4,7 @@ subhead: Help users with OTPs received through SMS
 authors:
   - agektmr
 date: 2019-10-07
-updated: 2020-09-03
+updated: 2020-09-11
 hero: hero.png
 alt: A drawing of a woman using OTP to log in to a web app.
 
@@ -386,7 +386,7 @@ Did you find a bug with Chrome's implementation?
 * File a bug at
   [https://new.crbug.com](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3ESMS).
   Include as much detail as you can, simple instructions for reproducing, and
-  set **Components** to `Blink>SMS`.
+  set **Components** to `Blink>WebOTP`.
 
 ### How can I help this feature?
 
