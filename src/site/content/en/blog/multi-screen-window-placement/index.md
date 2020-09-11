@@ -70,10 +70,11 @@ trial in Chrome. The origin trial is expected to end in Chrome&nbsp;88 (February
 
 {% include 'content/origin-trial-register.njk' %}
 
-### The problem: `Window.open()` is unaware of additional screens
+### The problem
 
-You can open windows with the time-tested
-[`Window.open()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open) method. While some
+The time-tested approach to controlling windows,
+[`Window.open()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open),
+is unfortunately unaware of additional screens
 aspects of this method seem a little archaic, such as its
 [`windowFeatures`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Parameters:~:text=title.-,windowFeatures)
 `DOMString` parameter, it has nevertheless served us well over the years. To determine a window's
