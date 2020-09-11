@@ -421,7 +421,9 @@ The Multi-Screen Window Placement API spec was edited by
 [Victor Costan](https://www.linkedin.com/in/pwnall) and
 [Joshua Bell](https://www.linkedin.com/in/joshuaseanbell). The API was implemented by
 [Mike Wasserman](https://www.linkedin.com/in/mike-wasserman-9900a079/). This article was reviewed by
-[Joe Medley](https://github.com/jpmedley) and [Kayce Basques](https://github.com/kaycebasques).
+[Joe Medley](https://github.com/jpmedley),
+[François Beaufort](https://github.com/beaufortfrancois),
+and [Kayce Basques](https://github.com/kaycebasques).
 Thanks to Laura Torrent Puig for the photos.
 
 [spec]: https://webscreens.github.io/window-placement/
