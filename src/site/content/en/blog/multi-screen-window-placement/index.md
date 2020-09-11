@@ -249,13 +249,6 @@ The only thing missing now is a way to detect when my screen setup changes. A ne
 is modified. This can happen when the resolution of one of the connected screens changes or when a
 new or an existing screen is (physically or virtually in the case of Sidecar) plugged in or unplugged.
 
-```js
-console.log("Before:", await window.getScreens());
-window.addEventListener("screenschange", async () => {
-  console.log("After:", await window.getScreens());
-});
-```
-
 Note that you need to look up the new screen details asynchronously, the `screenschange` event
 itself does not provide this data. [This may change in the
 future](https://github.com/webscreens/window-placement/issues/28). For now you
