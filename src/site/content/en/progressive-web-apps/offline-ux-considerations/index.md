@@ -47,27 +47,26 @@ important UX questions:
 Inform the user of both the actions they can still take when they have a network failure and the
 current state of the application. For example, a notification could say:
 
-> "You seem to have a bad network connection. [Not to worry!] Messages will be "sent when the
-> network is restored."
+> You seem to have a bad network connection. [Not to worry!] Messages will be "sent when the
+> network is restored.
 
-<div>
-<figure class="w-figure">
-  <img
-  src="emojoy-toast-message.png"
-  alt=" Emojoy, the emoji messaging app informing the user when a change in state occurs.">
-  <figcaption>
+<figure class="w-figure" style="display: inline-block; max-width: 45%;">
+  <img src="emojoy-toast-message.png"
+       alt=" Emojoy, the emoji messaging app informing the user when a change in state occurs."
+  >
+  <figcaption class="w-figcaption">
     Clearly inform the user when a change in state occurs as soon as possible.
   </figcaption>
 </figure>
-<figure class="w-figure" style="max-width:50%">
-  <img
-  src="io-toast-message.png"
-  alt="The I/O 2016 app informing the user when a change in state occurs.">
-  <figcaption>
+
+<figure class="w-figure" style="display: inline-block; max-width: 45%;">
+  <img src="io-toast-message.png"
+       alt="The I/O 2016 app informing the user when a change in state occurs."
+  >
+  <figcaption class="w-figcaption">
     The Google I/O app used a material design "toast" to let the user know when it was offline.
   </figcaption>
 </figure>
-</div>
 
 ### Inform users when the network connection improves or is restored
 
@@ -85,60 +84,69 @@ at work here</a>.
 One example of this would be <a href="https://www.chromestatus.com/features">
 www.chromestatus.com</a> which posts a note to the user when the app has been updated.
 
-<div>
-<figure class="w-figure">
-  <img class="w-figure" style="max-width:50%"
-  src="weather-app.png"
-  alt="An example of a weather app.">
-  <img class="w-figure" style="max-width:50%"
-  src="chrome-status-app-updated.png"
-  alt="Chrome Status uses a toast">
-
+<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+  <img src="weather-app.png"
+      alt="An example of a weather app."
+  >
   <figcaption class="w-figcaption">
-  Some apps, like the weather app, need to auto update as old data
-  is not of use to the user. Where Chrome Status lets the user know
-  when content has been updated via a material design toast element.
+    Some apps, like the weather app, need to auto update as old data
+    is not of use to the user.
   </figcaption>
 </figure>
-</div>
+
+<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+  <img src="chrome-status-app-updated.png"
+      alt="Chrome Status uses a toast"
+  >
+  <figcaption class="w-figcaption">
+    Other apps like Chrome Status let the user know
+    when content has been updated via a toast notification.
+  </figcaption>
+</figure>
 
 You may also show the last time the app was updated at all times in a prominent space. This would
 also be useful for a currency converter app, for example.
 
-<div>
-<figure class="w-figure">
-  <img class="w-figure" style="max-width:50%"
-  src="material-money-rates-out-of-date.png"
-  alt="Material money app that is out-of-date">
-  <img class="w-figure" style="max-width:50%"
-  src="material-money-rates-updated.png"
-  alt="Material money has been updated">
+<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+  <img src="material-money-rates-out-of-date.png"
+       alt="Material money app that is out-of-date"
+  >
   <figcaption class="w-figcaption">
-    Material Money shows the latest currency where possible and notifies the
-    user when the app hasn't been updated.
+    Material Money uses cached rates…
   </figcaption>
 </figure>
-</div>
+
+<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+  <img src="material-money-rates-updated.png"
+       alt="Material money has been updated"
+  >
+  <figcaption class="w-figcaption">
+    …and notifies the user when the app has been updated.
+  </figcaption>
+</figure>
 
 Other applications such as a news app could show a simple notification informing the user that there
 is newer content, with a tap-to-update function. The reason for doing that is if a user is currently
 reading an article an auto-update would refresh the page and they would lose where they were reading
 last.
 
-<div>
-<figure>
-  <img class="w-figure" style="max-width:50%"
-  src="tailpiece-normal.png"
-  alt="Example news app, Tailpiece in its normal state">
-  <img class="w-figure" style="max-width:50%"
-  src="tailpiece-tap-to-update.png"
-  alt="Example news app, Tailpiece when its ready to be updated">
+<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+  <img src="tailpiece-normal.png"
+       alt="Example news app, Tailpiece in its normal state"
+  >
   <figcaption class="w-figcaption">
-    Tailpiece, an online newspaper will auto download the latest news but
-    allow the users to refresh manually so they do not lose their place in the article.
+    Tailpiece, an online newspaper, will auto-download the latest news…
   </figcaption>
 </figure>
-</div>
+
+<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+  <img src="tailpiece-tap-to-update.png"
+       alt="Example news app, Tailpiece when its ready to be updated"
+  >
+  <figcaption class="w-figcaption">
+    …but allow the users to refresh manually, so they do not lose their place in the article.
+  </figcaption>
+</figure>
 
 ### Update the UI to reflect the current contextual state
 
@@ -172,20 +180,23 @@ user could read today's news without a connection, perhaps downloading the text 
 images. Also adapt with the user's behavior so if the sports section is what they typically view,
 perhaps make this the priority data that is downloaded.
 
-<div>
-<figure>
-  <img class="w-figure" style="max-width:50%"
-  src="tailpiece-offline.png"
-  alt="Tailpiece informs the user that they are offline with various design widgets">
-  <img class="w-figure" style="max-width:50%"
-  src="tailpiece-offline-sidebar.png"
-  alt="Tailpiece has a navigational draw that shows what sections are ready for offline use.">
+<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+  <img src="tailpiece-offline.png"
+       alt="Tailpiece informs the user that they are offline with various design widgets"
+  >
   <figcaption class="w-figcaption">
-    If the device is offline Tailpiece will notify the user with a status
-    message letting them know that they can still use the app.
+    If the device is offline, Tailpiece will notify the user with a status message…
   </figcaption>
 </figure>
-</div>
+
+<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+  <img src="tailpiece-offline-sidebar.png"
+       alt="Tailpiece has a navigational draw that shows what sections are ready for offline use."
+  >
+  <figcaption class="w-figcaption">
+    …letting them know that they can at least partially still use the app.
+  </figcaption>
+</figure>
 
 ## Inform the user when the app is ready for offline consumption
 
@@ -200,16 +211,24 @@ messaging is given the same in all instances where it's used. The term offline i
 misunderstood by a non-technical audience so use action based language that your audience can relate
 to.
 
-<div>
-<figure>
-  <img class="w-figure" style="max-width:50%" src="io-offline-ready.png" alt="I/O app offline">
-  <img class="w-figure" style="max-width:50%" src="chome-offline.png" alt="Chrome Status site is offline">
+<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+  <img src="io-offline-ready.png"
+       alt="I/O app offline"
+  >
   <figcaption class="w-figcaption">
-    Both the Google I/O 2016 app and Chrome Status site notify the user when
-    the app is ready for offline use.
+    The Google I/O 2016 app notifies the user when
+    the app is ready for offline use…
   </figcaption>
 </figure>
-</div>
+
+<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+  <img src="chome-offline.png"
+       alt="Chrome Status site is offline"
+  >
+  <figcaption class="w-figcaption">
+    …and so does the Chrome Status site, including information about the occupied storage.
+  </figcaption>
+</figure>
 
 ### Make 'save for offline' an obvious part of the interface for data heavy apps
 
@@ -274,23 +293,19 @@ the language used in the app. Avoid using tech jargon when explaining the state 
 individual UI components. Consider that the phrase "app offline" might not convey to the user the
 current state of the app.
 
-<div class="w-figure" style="max-width:50%">
-  <figure>
-    <img src="download.png" alt="Download icon example is a good example">
-    <figcaption class="success">
-      <b>DO</b>: Use language and imagery that describes the action.
-     </figcaption>
-  </figure>
-</div>
-<div class="w-figure" style="max-width:50%">
-  <figure>
-    <img src="service-worker-ready.png" alt="Service worker icon example is a bad example">
-    <figcaption class="warning">
-      <b>DON'T</b>: Avoid abstract terms that may not be accessible.
-     </figcaption>
-  </figure>
-</div>
-<div class="clearfix"></div>
+<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+  <img src="download.png" alt="Download icon example is a good example">
+  <figcaption class="w-figcaption">
+    <b>DO</b>: Use language and imagery that describes the action.
+  </figcaption>
+</figure>
+
+<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+  <img src="service-worker-ready.png" alt="Service worker icon example is a bad example">
+  <figcaption class="w-figcaption">
+    <b>DON'T</b>: Avoid abstract terms that may not be accessible.
+  </figcaption>
+</figure>
 
 ### Use multiple design devices to create accessible user experiences
 
@@ -304,24 +319,19 @@ use color to depict state.
 To prevent misunderstandings, express different states to the user in multiple ways: for example
 with color, labels and UI components.
 
-<div class="w-figure" style="max-width:50%">
-  <figure>
-    <img
-    src="accessibility_color7_do.png"
-    alt="Good example that uses color and text to show an error.">
-    <figcaption class="success">
-      <b>DO</b>: Use a mixture of design elements to convey meaning
-     </figcaption>
-  </figure>
-</div>
-<div class="w-figure" style="max-width:50%">
-  <figure>
-    <img src="accessibility_color8_dont.png" alt="Bad example only using color.">
-    <figcaption class="warning">
-      <b>DON'T</b>: Only use color to describe what is happening.
-     </figcaption>
-  </figure>
-</div>
+<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+  <img src="accessibility_color7_do.png" alt="Good example that uses color and text to show an error.">
+  <figcaption class="w-figcaption">
+    <b>DO</b>: Use a mixture of design elements to convey meaning
+  </figcaption>
+</figure>
+
+<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+  <img src="accessibility_color8_dont.png" alt="Bad example only using color.">
+  <figcaption class="w-figcaption">
+    <b>DON'T</b>: Use color as the sole means to describe what is happening.
+  </figcaption>
+</figure>
 
 ### Use icons that convey meaning
 
@@ -353,15 +363,18 @@ example would be to pulsate the wireframe content giving the app the feeling tha
 loading. This reassures the user that something is happening and helps prevent resubmissions or
 refreshes of your app.
 
-<div>
-<figure>
-  <img class="w-figure" style="max-width:50%" src="tailpiece-skel-article.png" alt="Skeleton layout example">
-  <img class="w-figure" style="max-width:50%" src="tailpiece-normal.png" alt="loaded article example">
-  <figcaption class="clearfix">
-    Before and after of a skeleton layout.
+<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+  <img src="tailpiece-skel-article.png" alt="Skeleton layout example">
+  <figcaption class="w-figcaption">
+    Skeleton placeholder layout is shown during the download of the article…
   </figcaption>
 </figure>
-</div>
+<figure style="display: inline-block; max-width: 45%;" class="w-figure">
+  <img src="tailpiece-normal.png" alt="loaded article example">
+  <figcaption class="w-figcaption">
+    …that gets replaced with the real contents once the download finishes.
+  </figcaption>
+</figure>
 
 ### Don't block content
 
