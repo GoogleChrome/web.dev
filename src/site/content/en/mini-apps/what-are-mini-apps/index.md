@@ -1,6 +1,6 @@
 ---
 layout: post
-title: # Learning From Mini Apps
+title: Learning From Mini Apps
 authors:
   - thomassteiner
 date: 2020-09-10
