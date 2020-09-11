@@ -312,7 +312,7 @@ browsers.
 If you are anything like me, you keep a close eye on the development of the various cryptocurrencies.
 (In reality I very much do not, but, for the sake of this article, just assume I do.) To
 keep track of the cryptocurrencies that I own, I have developed a web app that allows me to watch
-the markets in all life situations, like from the comfort of my bed, where I have a decent
+the markets in all life situations, such as from the comfort of my bed, where I have a decent
 single-screen setup.
 
 <figure class="w-figure">
