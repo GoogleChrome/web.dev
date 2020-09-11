@@ -325,7 +325,7 @@ move over to my desk where I have a multi-screen setup. I can click on any curre
 and quickly see the full details in a fullscreen view on the opposite screen. Below is a recent
 photo of me taken during the last [YCY bloodbath](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
 It caught me completely off-guard and left me
-[with hands on my face](https://www.buzzfeednews.com/article/gavon/brokers-with-hands-on-their-faces).
+[with my hands on my face](https://www.buzzfeednews.com/article/gavon/brokers-with-hands-on-their-faces).
 
 <figure class="w-figure">
   <img src="./panik.jpg" alt="The author with his hands on his panicking face staring at the fake crypto currency trading desk.">
