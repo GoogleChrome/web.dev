@@ -251,10 +251,10 @@ persisted across browser sessions, allows for window arrangements to be restored
 ### The `onscreenschange` event
 
 The only thing missing now is a way to detect when my screen setup changes. A new event,
-`onscreenschange` (note:
-[plural "screens"](https://github.com/webscreens/window-placement/issues/12)),
-does exactly that: it fires whenever the screen constellation
-is modified. This can happen when the resolution of one of the connected screens changes or when a
+`onscreenschange`, does exactly that: it fires whenever the screen constellation
+is modified.
+(Notice that "screens" is plural in the event name.)
+It also fires when the resolution of one of the connected screens changes or when a
 new or an existing screen is (physically or virtually in the case of Sidecar) plugged in or unplugged.
 
 Note that you need to look up the new screen details asynchronously, the `screenschange` event
