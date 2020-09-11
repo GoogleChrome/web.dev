@@ -16,7 +16,9 @@
     },
     {
       "title": "Reliable",
-      "pathItems": []
+      "pathItems": [
+        "offline-ux-considerations"
+      ]
     },
     {
       "title": "Installable",
