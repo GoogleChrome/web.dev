@@ -324,7 +324,7 @@ This being about crypto, the markets can get hectic at any time. Should this hap
 move over to my desk where I have a multi-screen setup. I can click on any currency's window
 and quickly see the full details in a fullscreen view on the opposite screen. Below is a recent
 photo of me taken during the last [YCY bloodbath](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
-It caught me completely off-guard and
+It caught me completely off-guard and left me
 [with hands on my face](https://www.buzzfeednews.com/article/gavon/brokers-with-hands-on-their-faces).
 
 <figure class="w-figure">
