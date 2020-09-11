@@ -242,7 +242,10 @@ await window.getScreens();
 Note how the value of `left` for the iPad starts at `1680`, which is exactly the `width` of the
 built-in display. This allows me to determine exactly how the screens are arranged logically (next
 to each other, on top of each other, etc.). There is also data now for each screen to show whether
-it is an `internal` one and whether it is a `primary` one. Both also have an `id`, which, if
+it is an `internal` one and whether it is a `primary` one.
+Note that the built-in screen
+[is not necessarily the primary screen](https://osxdaily.com/2010/04/27/set-the-primary-display-mac/#:~:text=Click%20on%20the%20Display%20icon,primary%20display%20for%20your%20Mac).
+Both also have an `id`, which, if
 persisted across browser sessions, allows for window arrangements to be restored.
 
 ### The `onscreenschange` event
