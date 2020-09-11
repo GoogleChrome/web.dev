@@ -340,7 +340,7 @@ example, save or download data would be action based.
 
 <img src="download-icons-examples.png" alt="Various icon examples that convey offline">
 
-Offline can mean a number of things depending on the context, such as download, export, pin etc..
+Offline can mean a number of things depending on the context, such as download, export, pin etc.
 For more inspiration checkout the
 [material design icon set](https://material.io/icons/ 'material design icon set')
 
