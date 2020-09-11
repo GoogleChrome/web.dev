@@ -6,8 +6,8 @@ authors:
 description:
   The Multi-Screen Window Placement API allows you to enumerate the displays connected to your
   machine and to place windows on specific screens.
-date: 2020-09-03
-# updated: 2020-09-03
+date: 2020-09-11
+# updated: 2020-09-11
 tags:
   - blog
   - capabilities
@@ -17,9 +17,11 @@ origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/1411878483180650497
 ---
 
-{% Aside %} The Multi-Screen Window Placement API is part of the
-[capabilities project](https://web.dev/fugu-status/) and is currently in
-development. This post will be updated as the implementation progresses. {% endAside %}
+{% Aside %}
+  The Multi-Screen Window Placement API is part of the
+  [capabilities project](https://web.dev/fugu-status/) and is currently in
+  development. This post will be updated as the implementation progresses.
+{% endAside %}
 
 The Multi-Screen Window Placement API allows you to enumerate the
 displays connected to your machine and to place windows on specific screens.
@@ -68,7 +70,7 @@ trial in Chrome. The origin trial is expected to end in Chrome&nbsp;88 (February
 
 {% include 'content/origin-trial-register.njk' %}
 
-### The problem
+### The problem: `Window.open()` is unaware of additional screens
 
 You can open windows with the time-tested
 [`Window.open()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open) method. While some
@@ -117,7 +119,7 @@ window.screen;
 */
 ```
 
-Like most people working in tech, I have had to adapt myself to the new work reality and install
+Like most people working in tech, I have had to adapt myself to the new work reality and set up
 my personal home office. Mine looks like on the photo below (if you are interested, you can read the
 [full details about my setup](https://blog.tomayac.com/2020/03/23/my-working-from-home-setup-during-covid-19/)).
 The iPad next to my MacBook Air is connected to the laptop via
@@ -315,8 +317,8 @@ single-screen setup.
 This being about crypto, the markets can get hectic at any time. Should this happen, I can quickly
 move over to my desk where I have a multi-screen setup. I can click on any currency's window
 and quickly see the full details in a fullscreen view on the opposite screen. Below is a recent
-photo of me taken during the last [YCY bloodbath](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-that caught me off-guard and
+photo of me taken during the last [YCY bloodbath](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
+It caught me completely off-guard and
 [with hands on my face](https://www.buzzfeednews.com/article/gavon/brokers-with-hands-on-their-faces).
 
 <figure class="w-figure">
