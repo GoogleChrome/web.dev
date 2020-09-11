@@ -250,7 +250,7 @@ is modified. This can happen when the resolution of one of the connected screens
 new or an existing screen is (physically or virtually in the case of Sidecar) plugged in or unplugged.
 
 Note that you need to look up the new screen details asynchronously, the `screenschange` event
-itself does not provide this data. [This may change in the
+itself does not provide this data. This may [change in the
 future](https://github.com/webscreens/window-placement/issues/28). For now you
 can look up the screen details by calling `window.getScreens()` as shown below.
 
@@ -259,6 +259,7 @@ window.addEventListener('screenschange', async (e) => {
   console.log('I am there, but mostly useless', e);
   const details = await window.getScreens();
 });
+```
 
 ### New fullscreen options
 
