@@ -1,5 +1,5 @@
 ---
-title: Managing Several Displays with the Multi-Screen Window Placement API
+title: Managing several displays with the Multi-Screen Window Placement API
 subhead: Get information about connected displays and position windows relative to those displays.
 authors:
   - thomassteiner
@@ -21,19 +21,17 @@ origin_trial:
 [capabilities project](https://web.dev/fugu-status/) and is currently in
 development. This post will be updated as the implementation progresses. {% endAside %}
 
-## What is the Multi-Screen Window Placement API? {: #what }
-
-The Multi-Screen Window Placement API is a new web platform API that allows you to enumerate the
+The Multi-Screen Window Placement API allows you to enumerate the
 displays connected to your machine and to place windows on specific screens.
 
-### Suggested use cases for the Multi-Screen Window Placement API {: #use-cases }
+### Suggested use cases {: #use-cases }
 
 Examples of sites that may use this API include:
 
 - Multi-window graphics editors à la
   [Gimp](https://www.gimp.org/release-notes/gimp-2.8.html#single-window-mode) can place various
   editing tools in accurately positioned windows.
-- Virtual trading desks can show market trends in multiple windows that all can also be viewed in
+- Virtual trading desks can show market trends in multiple windows any of which can be viewed in
   fullscreen mode.
 - Slideshow apps can show speaker notes on the internal primary screen and the presentation on an
   external projector.
@@ -73,10 +71,10 @@ trial in Chrome. The origin trial is expected to end in Chrome&nbsp;88 (February
 ### The problem
 
 You can open windows with the time-tested
-[`Window.open()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open) API. While some
-aspects of this API seem a little archaic, like its
+[`Window.open()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open) method. While some
+aspects of this method seem a little archaic, such as its
 [`windowFeatures`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Parameters:~:text=title.-,windowFeatures)
-`DOMString` parameter, it has nevertheless served us well over the years. To determine the window's
+`DOMString` parameter, it has nevertheless served us well over the years. To determine a window's
 [position](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Position), you can pass the
 coordinates as `left` and `top` (or `screenX` and `screenY` respectively) and pass the desired
 [size](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Size:~:text=well.-,Size) as
@@ -119,7 +117,7 @@ window.screen;
 */
 ```
 
-Like most people working in tech, I have had to arrange myself with the new work reality and install
+Like most people working in tech, I have had to adapt myself to the new work reality and install
 my personal home office. Mine looks like on the photo below (if you are interested, you can read the
 [full details about my setup](https://blog.tomayac.com/2020/03/23/my-working-from-home-setup-during-covid-19/)).
 The iPad next to my MacBook Air is connected to the laptop via
@@ -127,25 +125,24 @@ The iPad next to my MacBook Air is connected to the laptop via
 iPad into a second screen.
 
 <figure class="w-figure">
-  <img src="./desk.jpg" alt="School bench on two chairs. On top of the school bench are shoe boxes with a laptop on top and two iPads surrounding it.">
+  <img src="./desk.jpg" alt="School bench on two chairs. On top of the school bench are shoe boxes supporting a laptop and two iPads surrounding it.">
   <figcaption class="w-figcaption">A multi-screen setup.</figcaption>
 </figure>
 
-If I want to place the popup window from the
-[code sample](/multi-screen-window-placement/#the-problem)
-above onto the second screen to now actually make actual use of the bigger screen real estate, I can do
-so as follows:
+If I want to take advantage of the bigger screen, I can put the popup from the
+[code sample](/multi-screen-window-placement/#the-problem) above on to the
+second screen. I do it like this:
 
 ```js
 popup.moveTo(2500, 50);
 ```
 
-At this stage, this is a rough guess, since there is no way to know the dimensions of the second
-screen. The info from `window.screen` purely covers the built-in screen, but not the iPad screen
-attached via Sidecar. The reported `width` of the built-in screen was `1680` pixels, so moving to
+This is a rough guess, since there is no way to know the dimensions of the second
+screen. The info from `window.screen` only covers the built-in screen, but not the iPad screen.
+The reported `width` of the built-in screen was `1680` pixels, so moving to
 `2500` pixels *might* work to shift the window over to the iPad, since _I_ happen to know that it is
-located on the right of my MacBook Air. How to do this in the general case? Turns out, there is a
-better way than guessing, which is paved by the Multi-Screen Window Placement API.
+located on the right of my MacBook Air. How can I do this in the general case? Turns out, there is a
+better way than guessing. That way is the Multi-Screen Window Placement API.
 
 ### Feature detection
 
@@ -181,8 +178,8 @@ Read on to learn more.
 
 ### The `isMultiScreen()` method
 
-The first improvement of the Multi-Screen Window Placement API is the introduction of the
-`Window.isMultiScreen()` method. It returns a promise that resolves to either `true` or `false`,
+To use the the Multi-Screen Window Placement API, I will first call the
+`Window.isMultiScreen()` method. It returns a promise that resolves with either `true` or `false`,
 depending on whether one or multiple screens are currently connected to the machine. For my setup,
 it returns `true`.
 
@@ -193,8 +190,8 @@ await window.isMultiScreen();
 
 ### The `getScreens()` method
 
-Now that I know that the current setup with my iPad is a multi-screen one, I can obtain more
-information about the second screen via the new `Window.getScreens()` method. It returns a promise
+Now that I know that the current setup is multi-screen, I can obtain more
+information about the second screen using `Window.getScreens()`. It returns a promise
 that resolves with an array of `Screen` objects. On my MacBook Air 13 with a connected iPad, this
 returns an array of two `Screen` objects:
 
@@ -243,14 +240,14 @@ Note how the value of `left` for the iPad starts at `1680`, which is exactly the
 built-in display. This allows me to determine exactly how the screens are arranged logically (next
 to each other, on top of each other, etc.). There is also data now for each screen to show whether
 it is an `internal` one and whether it is a `primary` one. Both also have an `id`, which, if
-persisted across browser sessions, allows for window arrangements to be restored exactly.
+persisted across browser sessions, allows for window arrangements to be restored.
 
 ### The `onscreenschange` event
 
-The only thing missing now is a way to detect when my screen setup changes. A new event
-`onscreenschange` (plural "screens") does exactly that: it fires whenever the screen constellation
+The only thing missing now is a way to detect when my screen setup changes. A new event,
+`onscreenschange` (note: plural "screens"), does exactly that: it fires whenever the screen constellation
 is modified. This can happen when the resolution of one of the connected screens changes or when a
-new or an existing screen is (physically or virtually in the case of Sidecar) plugged or unplugged.
+new or an existing screen is (physically or virtually in the case of Sidecar) plugged in or unplugged.
 
 ```js
 console.log("Before:", await window.getScreens());
@@ -260,21 +257,25 @@ window.addEventListener("screenschange", async () => {
 ```
 
 Note that you need to look up the new screen details asynchronously, the `screenschange` event
-itself does not provide this data
-(see
-[Issue&nbsp;28](https://github.com/webscreens/window-placement/issues/28)
-for details).
+itself does not provide this data. [This may change in the
+future](https://github.com/webscreens/window-placement/issues/28). For now you
+can look up the screen details by calling `window.getScreens()` as shown below.
+
+```js
+window.addEventListener('screenschange', async (e) => {
+  console.log('I am there, but mostly useless', e);
+  const details = await window.getScreens();
+});
 
 ### New fullscreen options
 
-Up until now, you could request elements be displayed in fullscreen mode via the aptly named
+Until now, you could request that elements be displayed in fullscreen mode via the aptly named
 [`requestFullScreen()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/requestFullscreen)
 method. The method takes an `options` parameter where you can pass
-[`FullscreenOptions`](https://developer.mozilla.org/en-US/docs/Web/API/FullscreenOptions). Up until
-now, the only option was
+[`FullscreenOptions`](https://developer.mozilla.org/en-US/docs/Web/API/FullscreenOptions). So far, its only property has been
 [`navigationUI`](https://developer.mozilla.org/en-US/docs/Web/API/FullscreenOptions/navigationUI).
 The Multi-Screen Window Placement API adds a new `screen` property that allows you to determine
-which screen to start the fullscreen view on, for example, the primary screen:
+which screen to start the fullscreen view on. For example, if you want to make the primary screen fullscreen:
 
 ```js
 try {
@@ -287,7 +288,7 @@ try {
 
 ### Polyfill
 
-It is not possible to polyfill the functionality of the Multi-Screen Window Placement API, but you
+It is not possible to polyfill the Multi-Screen Window Placement API, but you
 can shim its shape so you can code exclusively against the new API:
 
 ```js
@@ -300,25 +301,25 @@ if (!("getScreens" in window)) {
 }
 ```
 
-The other aspects of the API (the `onscreenschange` event and the `screen` property of the
-`FullscreenOptions`) would simply never fire or silently be ignored respectively by non-supporting
+The other aspects of the API—the `onscreenschange` event and the `screen` property of the
+`FullscreenOptions`—would simply never fire or silently be ignored respectively by non-supporting
 browsers.
 
 ## Demo
 
-If you are anything like me, you keep a close eye on the development of the various cryptocurrencies
-(in reality I very much do not, but, for the sake of this article, just assume I did). In order to
+If you are anything like me, you keep a close eye on the development of the various cryptocurrencies.
+(In reality I very much do not, but, for the sake of this article, just assume I do.) To
 keep track of the cryptocurrencies that I own, I have developed a web app that allows me to watch
-the markets in all life situations, for example, from the comfort of my bed, where I have a decent
+the markets in all life situations, like from the comfort of my bed, where I have a decent
 single-screen setup.
 
 <figure class="w-figure">
-  <img src="./tv.jpg" alt="Massive TV screen at the end of a bed with the author's legs partly visible. On the screen a fake crypto currency trading desk. ">
+  <img src="./tv.jpg" alt="Massive TV screen at the end of a bed with the author's legs partly visible. On the screen, a fake crypto currency trading desk. ">
   <figcaption class="w-figcaption">Relaxing and watching the markets.</figcaption>
 </figure>
 
 This being about crypto, the markets can get hectic at any time. Should this happen, I can quickly
-move over to my desk where I have the said multi-screen setup. I can click on any currency's window
+move over to my desk where I have a multi-screen setup. I can click on any currency's window
 and quickly see the full details in a fullscreen view on the opposite screen. Below is a recent
 photo of me taken during the last [YCY bloodbath](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 that caught me off-guard and
@@ -326,7 +327,7 @@ that caught me off-guard and
 
 <figure class="w-figure">
   <img src="./panik.jpg" alt="The author with his hands on his panicking face staring at the fake crypto currency trading desk.">
-  <figcaption class="w-figcaption">Panickingly witnessing the YCY bloodbath.</figcaption>
+  <figcaption class="w-figcaption">Panicky, witnessing the YCY bloodbath.</figcaption>
 </figure>
 
 You can play with the [demo][demo] embedded below, or see its [source code][demo-source] on glitch.
