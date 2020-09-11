@@ -2,7 +2,7 @@
 title: New capabilities status
 subhead: Web apps should be able to do anything native apps can. Google wants to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2020-06-24
+updated: 2020-09-11
 tags:
   - blog
   - capabilities
@@ -165,6 +165,18 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
           <em>Updated December 12, 2019</em>
         </td>
       </tr>
+      <tr>
+        <td>
+          <a href="/hid/">WebHID API</a>
+        </td>
+        <td>
+          There is a long tail of human interface devices (HIDs) that are too new, too
+          old, or too uncommon to be accessible by systems' device drivers such as
+          alternative keyboards or exotic gamepads. The WebHID API solves this by
+          providing a way to implement device-specific logic in JavaScript.<br>
+          <em>Updated September 11, 2020</em>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -197,7 +209,7 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           running.<br>
           <em>Updated June 24, 2020</em>
         </td>
-      </tr>     
+      </tr>
       <tr>
         <td>
           <a href="/badging-api/">Badging API</a>
