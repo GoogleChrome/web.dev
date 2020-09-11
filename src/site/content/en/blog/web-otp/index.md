@@ -187,29 +187,92 @@ User Consent  API](https://developers.google.com/identity/sms-retriever/user-con
   (i.e. the same profile in which you receive SMS messages).
 {% endAside %}
 
+Using the Web OTP API consists of three parts:
+
+* A properly annotated `<input>` tag
+* JavaScript in your web app
+* Formatted message text sent via SMS. I'll cover the `<input>` tag first.
+
+## Annotate an `<input>` tag
+
+Web OTP itself works without any HTML annotation, but for cross-browser
+compatibility, I highly recommend that you add `autocomplete="one-time-code"` to
+the `<input>` tag you expect the user entering an OTP.
+
+This allows Safari 14 or later to suggest the user to autofill the `<input>`
+field with an OTP when they receive an SMS with the format described in [Format
+the SMS message](#format) even though it doesn't support Web OTP.
+
+{% Label %}
+HTML
+{% endLabel %}
+
+```html
+<form>
+  <input autocomplete="one-time-code" required/>
+  <input type="submit">
+</form>
+```
+
 ## Use the Web OTP API
 
-Using the Web OTP API consists of two parts: JavaScript in your web app and
-formatted message text sent via SMS. I'll cover the JavaScript first.
+Because Web OTP is simple, just copying and pasting following code will do the
+job, but lets walk through what's happening in details.
 
-{% Aside %}
-The Web OTP API requires a secure origin (HTTPS).
-{% endAside %}
-
-{% Aside 'success' %}
-Unless you'd like a highly customised approach, we recommend to use [a web
-component](#web-components) approach since it's mostly just a copy and paste. 
-{% endAside %}
-
-### Feature detection
-
-Feature detection is the same as for many other APIs:
+{% Label %}
+JavaScript
+{% endLabel %}
 
 ```js
 if ('OTPCredential' in window) {
-  ...
+  window.addEventListener('DOMContentLoaded', e => {
+    const input = document.querySelector('input[autocomplete="one-time-code"]');
+    if (!input) return;
+    const ac = new AbortController();
+    const form = input.closest('form');
+    if (form) {
+      form.addEventListener('submit', e => {
+        ac.abort();
+      });
+    }
+    navigator.credentials.get({
+      otp: { transport:['sms'] },
+      signal: ac.signal
+    }).then(otp => {
+      input.value = otp.code;
+      if (form) form.submit();
+    }).catch(err => {
+      console.log(err);
+    });
+  });
 }
 ```
+
+### Feature detection
+
+Feature detection is the same as for many other APIs. Listening to
+`DOMContentLoaded` event will wait for the DOM tree to be ready to query.
+
+{% Label %}
+JavaScript
+{% endLabel %}
+
+```js
+if ('OTPCredential' in window) {
+  window.addEventListener('DOMContentLoaded', e => {
+    const input = document.querySelector('input[autocomplete="one-time-code"]');
+    if (!input) return;
+    …
+    const form = input.closest('form');
+    …
+  });
+}
+```
+
+{% Aside 'caution' %}
+The Web OTP API requires a secure origin (HTTPS). The feature detection on an
+HTTP website will fail.
+{% endAside %}
 
 ### Process the OTP
 
@@ -218,11 +281,17 @@ The Web OTP API itself is simple enough. Use
 to obtain the OTP. Web OTP adds a new `otp` option to that method. It only has
 one property: `transport`, whose value must be an array with the string `'sms'`.
 
-```js
-navigator.credentials.get({
-  otp: { transport:['sms'] }
-}).then(otp => {
-  …
+{% Label %}
+JavaScript
+{% endLabel %}
+
+```js/1-2
+    …
+    navigator.credentials.get({
+      otp: { transport:['sms'] }
+      …
+    }).then(otp => {
+    …
 ```
 
 This triggers the browser's permission flow when an SMS message arrives. If permission is
@@ -239,57 +308,61 @@ Content of obtained `OTPCredential` object
 }
 ```
 
-Next, pass the OTP value to an `input` field. Annotating the field with
-`autocomplete="one-time-code"` is highly recommended for browser
-compatibilities. You may optionally submit the form on behalf of the user.
+Next, pass the OTP value to the `<input>` field. Submitting the form directly
+will eliminate one more step for the user to tap a button.
 
-```js/3-4
-navigator.credentials.get({
-  otp: { transport:['sms'] }
-}).then(otp => {
-  const input = document.querySelector('input[autocomplete="one-time-code"]');
-  input.value = otp.code;
-}).catch(err => {
-  console.error(err);
-});
+{% Label %}
+JavaScript
+{% endLabel %}
+
+```js/5-6
+    …
+    navigator.credentials.get({
+      otp: { transport:['sms'] }
+      …
+    }).then(otp => {
+      input.value = otp.code;
+      if (form) form.submit();
+    }).catch(err => {
+      console.error(err);
+    });
+    …
 ```
 
 ### Aborting the message {: #aborting }
 
-To set a timeout that cancels the `get()` call, pass an `AbortController`
-instance in the [`options`
+In case the user manually enters an OTP and submit the form, you can cancel the
+`get()` call by using an `AbortController` instance in the [`options`
 object](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get#Parameters).
 
-```js/0-3,7
-const abortController = new AbortController();
-let timer = setTimeout(() => {
-  abortController.abort();
-}, 120 * 1000); // Change the duration based on your needs
+{% Label %}
+JavaScript
+{% endLabel %}
 
-navigator.credentials.get({
-  otp: { transport:['sms'] },
-  signal: abortController.signal
-}).then(otp => {
-  clearTimeout(timer);
-  const input = document.querySelector('input[autocomplete="one-time-code"]');
-  input.value = otp.code;
-}).catch(err => {
-  clearTimeout(timer);
-  console.error(err);
-});
+```js/1,5,11
+    …
+    const ac = new AbortController();
+    …
+    if (form) {
+      form.addEventListener('submit', e => {
+        ac.abort();
+      });
+    }
+    …
+    navigator.credentials.get({
+      otp: { transport:['sms'] },
+      signal: ac.signal
+    }).then(otp => {
+    …
 ```
 
 ## Format the SMS message {: #format }
 
-The API itself should look simple enough, but a critical part is to
-format your SMS text message according to a specific convention. The message has
-to be sent after `navigator.credentials.get()` is called and must comply with the
-formatting convention.
-
-The SMS message must be received on the device where `navigator.credentials.get()`
-was called.
-
-The message must adhere to the following formatting:
+The API itself should look simple enough, but there are a few things you should
+know before using it. The message must be sent after
+`navigator.credentials.get()` is called and it must be received on the device
+where `get()` was called. Finally, the message must adhere to the following
+formatting:
 
 * The message begins with (optional) human-readable text leaving the last line
   for the URL and the OTP.
@@ -303,63 +376,6 @@ For example:
 Your OTP is: 123456.
 
 @www.example.com #123456
-```
-
-## Use the API declaratively with a Web Component {: #web-components }
-
-The code below demonstrates a Web Component that extends `input`.
-
-```js
-if ('customElements' in window && 'OTPCredential' in window) {
-  customElements.define("web-otp",
-    class extends HTMLInputElement {
-      connectedCallback() {
-        this.abortController = new AbortController();
-        this.receive();
-      }
-      disconnectedCallback() {
-        this.abort();
-      }
-      abort() {
-        this.abortController.abort();
-      }
-      async receive() {
-        try {
-          const content = await navigator.credentials.get({
-            otp: {transport:['sms']}, signal: this.abortController.signal
-          });
-          this.value = content.code;
-          this.dispatchEvent(new Event('autocomplete'));
-        } catch (e) {
-          console.error(e);
-        }
-      }
-    }, {
-      extends: "input"
-  });
-}
-```
-
-After this declaration you can add `is="web-otp"` to any `input` element.
-As soon as the element is added to the document tree, it starts waiting for SMS
-messages to arrive, fills the input field when an OTP is passed and emits an
-`autocomplete` event.
-
-```html
-<form>
-  <input is="web-otp" autocomplete="one-time-code" required/>
-  <input type="submit">
-</form>
-```
-
-You can listen to the `autocomplete` event to submit the form automatically as
-well.
-
-```js
-const input = document.querySelector('input[is="web-otp"]');
-input.addEventListener('autocomplete', e => {
-  this.form.submit();
-});
 ```
 
 ## Demos
@@ -395,7 +411,8 @@ features, and shows other browser vendors how critical it is to support them.
 Send a Tweet to [@ChromiumDev](https://twitter.com/chromiumdev) with
 `#webotp` and let us know where and how you're using it.
 
-### What are the differences from SMS Receiver API? {: #differences }
+### What are the differences with the SMS Receiver API? {: #differences }
+
 Consider Web OTP API an evolved version of the SMS Receiver API. Web OTP API has
 a few significant differences compared to the SMS Receiver API.
 
