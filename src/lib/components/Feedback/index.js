@@ -7,7 +7,7 @@ import {trackEvent} from '../../analytics';
 import './_styles.scss';
 
 /** @types {WebFeedback.Question[]} */
-const questions = [
+const defaultQuestions = [
   {text: 'Was this page helpful?', label: 'helpful', name: 'Helpfulness'},
   {
     text: 'Did this page help you complete your goal(s)?',
@@ -17,7 +17,7 @@ const questions = [
 ];
 
 /** @types {WebFeedback.Question[]} */
-const conditionalQuestions = [
+const additionalQuestions = [
   {text: 'Does this API meet your needs?', label: 'api', name: 'API'},
 ];
 
@@ -30,7 +30,10 @@ const conditionalQuestions = [
 class Feedback extends BaseElement {
   static get properties() {
     return {
-      conditionals: {type: String},
+      additionalQuestions: {
+        attribute: 'additional-questions',
+        converter: (/** @type string */ v) => v.toLocaleLowerCase().split(','),
+      },
     };
   }
 
@@ -39,7 +42,7 @@ class Feedback extends BaseElement {
     this.robotName = 'is-it-just-me-or-was-this-form-filled-out-by-a-robot';
     this.submitted = false;
     this.submit = this.submit.bind(this);
-    this.conditionals = '';
+    this.additionalQuestions = [];
   }
 
   submit(event) {
@@ -107,12 +110,10 @@ class Feedback extends BaseElement {
   }
 
   render() {
-    const conditionalLabels = new Set(
-      this.conditionals.toLocaleLowerCase().split(','),
+    const additionalQuestionsSet = new Set(this.additionalQuestions);
+    const additionalQuestionsToDisplay = additionalQuestions.filter((q) =>
+      additionalQuestionsSet.has(q.label),
     );
-    const conditionalQuestionsToDisplay = conditionalLabels.has('all')
-      ? conditionalQuestions
-      : conditionalQuestions.filter((q) => conditionalLabels.has(q.label));
 
     // Because we share CSS with the `app.css` we want this to be in the light DOM
     return html`
@@ -142,8 +143,8 @@ class Feedback extends BaseElement {
               <div id="yes-label">Yes</div>
               <div id="no-label">No</div>
             </div>
-            ${this.renderQuestions(conditionalQuestionsToDisplay)}
-            ${this.renderQuestions(questions)}
+            ${this.renderQuestions(additionalQuestionsToDisplay)}
+            ${this.renderQuestions(defaultQuestions)}
           </div>
 
           <div class="w-visually-hidden">
