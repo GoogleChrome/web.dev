@@ -98,11 +98,14 @@ class TableOfContents extends BaseStateElement {
     for (const heading of headings) {
       const href = `#${heading.target.getAttribute('id')}`;
       const link = links.find((l) => l.getAttribute('href') === href);
-      if (heading.intersectionRatio > 0) {
-        link.classList.add(this.tocVisibleClass);
-        this.previouslyActiveHeading = heading.target.getAttribute('id');
-      } else {
-        link.classList.remove(this.tocVisibleClass);
+
+      if (link) {
+        if (heading.intersectionRatio > 0) {
+          link.classList.add(this.tocVisibleClass);
+          this.previouslyActiveHeading = heading.target.getAttribute('id');
+        } else {
+          link.classList.remove(this.tocVisibleClass);
+        }
       }
 
       const firstVisibleLink = this.querySelector(`.${this.tocVisibleClass}`);
