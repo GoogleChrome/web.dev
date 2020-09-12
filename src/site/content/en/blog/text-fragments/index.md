@@ -441,9 +441,18 @@ Document-Policy: force-load-at-top
 
 ## Disabling text fragments
 
-If you really dislike the feature, you can opt out using the enterprise setting
+The easiest way for disabling the feature is by using an extension
+that can inject HTTP response headers, for example,
+[ModHeader](https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj)
+(not a Google product), to insert a response (*not* request) header as follows:
+
+```bash
+Document-Policy: force-load-at-top
+```
+
+Another, more involved, way to opt out is by using the enterprise setting
 [`ScrollToTextFragmentEnabled`](https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ScrollToTextFragmentEnabled).
-To use it on macOS, paste the command below in the terminal.
+To do this on macOS, paste the command below in the terminal.
 
 ```bash
 defaults write com.google.Chrome ScrollToTextFragmentEnabled -bool false
