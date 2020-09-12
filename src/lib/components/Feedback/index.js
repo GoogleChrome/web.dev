@@ -14,17 +14,6 @@ const questions = [
     label: 'effective',
     name: 'Effectiveness',
   },
-  {
-    text: 'Did this page have the information you needed?',
-    label: 'complete',
-    name: 'Completeness',
-  },
-  {
-    text: "Was this page's information accurate?",
-    label: 'accuracy',
-    name: 'Accuracy',
-  },
-  {text: 'Was this page easy to read?', label: 'readable', name: 'Readability'},
 ];
 
 /** @types {WebFeedback.Question[]} */
