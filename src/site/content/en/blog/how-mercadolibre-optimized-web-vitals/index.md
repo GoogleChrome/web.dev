@@ -13,13 +13,17 @@ tags:
   - blog
   - performance
   - web-vitals
+  - case-study
+  - lighthouse
+  - chrome-ux-report
+  - javascript
 ---
 
 Mercado Libre is the largest e-commerce and payments ecosystem in Latin America. It is present in 18 countries and is a market leader in Brazil, Mexico, and Argentina (based on unique visitors and pageviews).
 
-Web performance has been a focus for the company for a long time. They recently formed a team to monitor performance and apply optimizations across different parts of the site.
+Web performance has been a focus for the company for a long time, but they recently formed a team to monitor performance and apply optimizations across different parts of the site.
 
-This article summarizes the work done by [Guille Paz](https://twitter.com/pazguille), [Pablo Carminatti](https://www.linkedin.com/in/pcarminatti/), and [Oleh Burkhay](https://twitter.com/oburkhay) from Mercado Libre's frontend architecture team to optimize one of the Core Web Vitals: [First Input Delay (FID)](https://web.dev/fid/) and it's lab proxy, [Total Blocking Time (TBT)](https://web.dev/tbt/).
+This article summarizes the work done by [Guille Paz](https://twitter.com/pazguille), [Pablo Carminatti](https://www.linkedin.com/in/pcarminatti/), and [Oleh Burkhay](https://twitter.com/oburkhay) from Mercado Libre's frontend architecture team to optimize one of the Core Web Vitals: [First Input Delay (FID)](https://web.dev/fid/) and its lab proxy, [Total Blocking Time (TBT)](https://web.dev/tbt/).
 
 ## Long tasks, First Input Delay, and Total Blocking Time
 
@@ -47,7 +51,7 @@ While Mercado Libre's site was performing well in most sections, they found in t
   </figcaption>     
 </figure>
 
-These pages allow the user to perform complex interactions, so the goal was optimization interactivity, without removing valuable functionality.
+These pages allow the user to perform complex interactions, so the goal was interactivity optimization, without interfering with valuable functionality.
 
 ## Measure interactivity of product detail pages
 
@@ -73,23 +77,22 @@ During this project Mercado Libre used [Max Potential FID](https://web.dev/light
 WebPageTest (WPT) is a web performance tool that allows you to run tests on real devices in different locations around the world.
 
 Mercado Libre used WPT to reproduce the experience of their users by choosing a device type and location similar to real users. Specifically, they chose a **Moto 4G device** and **Dulles, Virginia**, because they wanted to approximate the experience of Mercado Libre users in Mexico.
-By observing the main thread view of WPT, Mercado Libre found that there were several consecutive long tasks blocking the man thread for 2 seconds:
+By observing the main thread view of WPT, Mercado Libre found that there were several consecutive long tasks blocking the main thread for 2 seconds:
 
 <figure class="w-figure">
-  <img src="main-thread-unoptimized.png" 
+  <img src="main-thread-unoptimized.png" class="w-screenshot"
        alt="Main thread view of Mercado Libre's product detail pages.">
    <figcaption class="w-figcaption">
       Main thread view of Mercado Libre's product detail pages.
   </figcaption>     
 </figure>
 
-Analyzing the corresponding waterfall they found that:
-
-A considerable part of those two seconds came from their analytics module.
+Analyzing the corresponding waterfall they found that
+a considerable part of those two seconds came from their analytics module.
 The main bundle size of the application was large (950KB) and took a long time to parse, compile, and execute.
 
 <figure class="w-figure">
-  <img src="waterfall-unoptimized.png" 
+  <img src="waterfall-unoptimized.png" class="w-screenshot"
        alt="Waterfall view of product detail pages.">
    <figcaption class="w-figcaption">
       Waterfall view of Mercado Libre's product detail pages.
@@ -136,14 +139,14 @@ As a result of these optimizations, the bundle size was reduced **by approximate
 The changes lowered Mercado Libre's consecutive long tasks **from two seconds to one second**:
 
 <figure class="w-figure">
-  <img src="main-thread-iteration-1.png" 
+  <img src="main-thread-iteration-1.png" class="w-screenshot"
        alt="Main thread view of Mercado Libre's product detail pages after first round of optimizations.">
    <figcaption class="w-figcaption">
-      In the top waterfall of WPT there’s a long red bar (in the Page is Interactive row) between seconds 2 and 5. In the bottom waterfall, the bar has been broken into smaller pieces, occupying the main thread for shorter periods of time.
+      In the top waterfall of WPT there’s a long red bar (in the <b>Page is Interactive</b> row) between seconds 2 and 5. In the bottom waterfall, the bar has been broken into smaller pieces, occupying the main thread for shorter periods of time.
   </figcaption>     
 </figure>
 
-Lighthouse showed a **50% reduction** in Max Potential First Input Delay:
+Lighthouse showed a **57% reduction** in Max Potential First Input Delay:
 
 <figure class="w-figure">
   <img src="lighthouse-iteration-1.png" 
@@ -155,10 +158,10 @@ Lighthouse showed a **50% reduction** in Max Potential First Input Delay:
 The team continued digging into long tasks in order to find subsequent improvements.
 
 <figure class="w-figure">
-  <img src="main-thread-iteration-1-detail.png"
+  <img src="main-thread-iteration-1-detail.png" class="w-screenshot"
        alt="Detailed view of main thread view of Mercado Libre's product detail pages after first round of optimizations.">
    <figcaption class="w-figcaption">
-      The Waterfall (not pictured) helped Mercado Libre identify which libraries were using the main thread heavily (Browser Main Thread row) and the Page is Interactive row clearly shows that this main thread activity is blocking interactivity.
+      The Waterfall (not pictured) helped Mercado Libre identify which libraries were using the main thread heavily (<b>Browser Main Thread</b> row) and the <b>Page is Interactive</b> row clearly shows that this main thread activity is blocking interactivity.
   </figcaption>     
 </figure>
 
@@ -170,17 +173,17 @@ Based on that information they decided to implement the following changes:
 
 ## Measure impact
 
-The resulting Webpagetest trace showed even smaller chunks of JS execution:
+The resulting WebPageTest trace showed even smaller chunks of JS execution:
 
 <figure class="w-figure">
-  <img src="main-thread-iteration-2.png"
+  <img src="main-thread-iteration-2.png" class="w-screenshot"
        alt="Main thread view of Mercado Libre's product detail pages after secoond round of optimizations.">
 </figure>
 
 And their Max Potential FID time in Lighthouse was reduced **by an additional 60%**:
 
 <figure class="w-figure">
-  <img src="lighthouse-iteration-2.png"
+  <img src="lighthouse-iteration-2.png" class="w-screenshot"
        alt="Lighthouse metrics in a PSI report for Mercado Libre's product detail pages after first round of optimizations.">
 </figure>
 
