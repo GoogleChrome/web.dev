@@ -21,10 +21,10 @@ const {livePosts} = require('../_filters/live-posts');
 let processedCollection;
 
 /**
- * Returns all tags with posts.
+ * Returns all tags with their posts.
  *
  * @param {any} [collections] Eleventy collection object
- * @return {Tags} An array where each element is a paged tag with some meta data and n posts for the page.
+ * @return {Tags}
  */
 module.exports = (collections) => {
   if (processedCollection) {
