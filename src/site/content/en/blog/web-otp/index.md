@@ -191,15 +191,17 @@ Using the Web OTP API consists of three parts:
 
 * A properly annotated `<input>` tag
 * JavaScript in your web app
-* Formatted message text sent via SMS. I'll cover the `<input>` tag first.
+* Formatted message text sent via SMS. 
+
+I'll cover the `<input>` tag first.
 
 ## Annotate an `<input>` tag
 
 Web OTP itself works without any HTML annotation, but for cross-browser
 compatibility, I highly recommend that you add `autocomplete="one-time-code"` to
-the `<input>` tag you expect the user entering an OTP.
+the `<input>` tag where you expect the user entering an OTP.
 
-This allows Safari 14 or later to suggest the user to autofill the `<input>`
+This allows Safari 14 or later to suggest that the user to autofill the `<input>`
 field with an OTP when they receive an SMS with the format described in [Format
 the SMS message](#format) even though it doesn't support Web OTP.
 
@@ -216,8 +218,8 @@ HTML
 
 ## Use the Web OTP API
 
-Because Web OTP is simple, just copying and pasting following code will do the
-job, but lets walk through what's happening in details.
+Because Web OTP is simple, just copying and pasting the following code will do the
+job. I'll walk you through what's happening anyway.
 
 {% Label %}
 JavaScript
@@ -309,7 +311,7 @@ Content of obtained `OTPCredential` object
 ```
 
 Next, pass the OTP value to the `<input>` field. Submitting the form directly
-will eliminate one more step for the user to tap a button.
+will eliminate the step requiring the user to tap a button.
 
 {% Label %}
 JavaScript
@@ -331,7 +333,7 @@ JavaScript
 
 ### Aborting the message {: #aborting }
 
-In case the user manually enters an OTP and submit the form, you can cancel the
+In case the user manually enters an OTP and submits the form, you can cancel the
 `get()` call by using an `AbortController` instance in the [`options`
 object](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get#Parameters).
 
