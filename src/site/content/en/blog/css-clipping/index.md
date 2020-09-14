@@ -125,7 +125,7 @@ and that shape would extend outside of the natural size of the image, you will g
 
 <figure class="w-figure">
   <img class="w-screenshot" style="max-inline-size: 480px" src='./flat-edges.jpg' alt="A clipped circle with flat edges">
-  <figcaption>The image used earlier now has circle(50%) applied. As the image is not square, we hit the margin box at the top and bottom and the circle is clipped.</figcaption>
+  <figcaption>The image used earlier now has <code>circle(50%)</code> applied. As the image is not square, we hit the margin box at the top and bottom and the circle is clipped.</figcaption>
 </figure>
 
 ### `ellipse()`
