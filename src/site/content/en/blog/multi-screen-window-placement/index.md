@@ -248,10 +248,10 @@ Note that the built-in screen
 Both also have an `id`, which, if
 persisted across browser sessions, allows for window arrangements to be restored.
 
-### The `onscreenschange` event
+### The `screenschange` event
 
 The only thing missing now is a way to detect when my screen setup changes. A new event,
-`onscreenschange`, does exactly that: it fires whenever the screen constellation
+`screenschange`, does exactly that: it fires whenever the screen constellation
 is modified.
 (Notice that "screens" is plural in the event name.)
 It also fires when the resolution of one of the connected screens changes or when a
