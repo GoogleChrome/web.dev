@@ -49,7 +49,7 @@ variable fonts, all styles can be contained in a single file.
   </figcaption>
 </figure>
 
-## Challenges for the Designer and Developer
+## Challenges for the designer and developer
 
 When a designer creates a print project they face some constraints, such as the
 physical size of the page layout, the number of colors they can use (which is
