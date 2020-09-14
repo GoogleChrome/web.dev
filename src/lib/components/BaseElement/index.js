@@ -2,10 +2,6 @@ import {LitElement} from 'lit-element';
 
 /* eslint-disable require-jsdoc */
 export class BaseElement extends LitElement {
-  constructor() {
-    super();
-  }
-
   /**
    * @param {PropertyValues} changedProperties
    */

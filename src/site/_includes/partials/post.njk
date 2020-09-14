@@ -17,7 +17,7 @@
     } %}
   {% endif %}
 
-  {# <web-table-of-contents>
+  <web-table-of-contents>
     <h2 class="w-toc__header">
       <a href="#{{ safeTitle | slugify }}" class="w-toc__header--link">
         {{ safeTitle }}
@@ -25,7 +25,7 @@
     </h2>
     {{ content | toc | safe }}
   </web-table-of-contents>
-  <web-table-of-contents-button></web-table-of-contents-button> #}
+  <web-table-of-contents-button></web-table-of-contents-button>
 
   {# Make sure Actions are first in the tab order. #}
   <div class="w-actions">
@@ -113,8 +113,7 @@
     {% if codelabs %}
       {% CodelabsCallout codelabs, lang %}
     {% endif %}
-
-    <web-feedback></web-feedback>
+    <web-feedback additional-questions="{{ feedback }}"></web-feedback>
   </div>
 
   {% if 'blog' in tags %}

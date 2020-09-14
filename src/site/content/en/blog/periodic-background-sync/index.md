@@ -6,7 +6,7 @@ authors:
   - jeffposnick
   - joemedley
 date: 2019-11-10
-updated: 2020-03-13
+updated: 2020-08-18
 hero: hero.jpg
 alt: Colorful airplanes flying in sync
 origin_trial:
@@ -134,11 +134,12 @@ have similar names, their use cases are different. Among other things,
 background sync is most commonly used for resending data to a server when a
 previous request has failed.
 
-### Getting this right
+### Getting user engagement right
 
-Chrome is putting periodic background sync through a trial period so that you can
-help the Chrome team make sure that they get it right. This section explains some of the design
-decisions Chrome took to make this feature as helpful as possible.
+Done incorrectly, periodic background sync could be wasteful of users'
+resources. Before releasing it, Chrome put it through a trial period to make
+sure it was right. This section explains some of the design decisions Chrome
+took to make this feature as helpful as possible.
 
 The first design decision Chrome made is that a web app can only use periodic
 background sync after a person has installed it on their device, and has
