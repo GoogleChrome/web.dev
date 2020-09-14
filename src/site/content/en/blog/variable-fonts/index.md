@@ -15,6 +15,8 @@ hero: hero.jpg
 tags:
   - blog
   - fonts
+  - performance
+  - ux
 ---
 
 In this article, we will look at what variable fonts are, the benefits they
