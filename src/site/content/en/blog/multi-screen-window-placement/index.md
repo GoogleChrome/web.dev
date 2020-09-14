@@ -74,8 +74,8 @@ trial in Chrome. The origin trial is expected to end in Chrome&nbsp;88 (February
 
 The time-tested approach to controlling windows,
 [`Window.open()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open),
-is unfortunately unaware of additional screens
-aspects of this method seem a little archaic, such as its
+is unfortunately unaware of additional screens.
+While some aspects of this API seem a little archaic, such as its
 [`windowFeatures`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Parameters:~:text=title.-,windowFeatures)
 `DOMString` parameter, it has nevertheless served us well over the years. To specify a window's
 [position](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Position), you can pass the
