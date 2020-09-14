@@ -263,8 +263,8 @@ future](https://github.com/webscreens/window-placement/issues/28). For now you
 can look up the screen details by calling `window.getScreens()` as shown below.
 
 ```js
-window.addEventListener('screenschange', async (e) => {
-  console.log('I am there, but mostly useless', e);
+window.addEventListener('screenschange', async (event) => {
+  console.log('I am there, but mostly useless', event);
   const details = await window.getScreens();
 });
 ```
