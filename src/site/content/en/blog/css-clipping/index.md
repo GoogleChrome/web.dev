@@ -177,7 +177,7 @@ For example, the following would clip the shape to the edge of the content.
 }
 ```
 
-In this example the circle would use the content-box as the reference box rather than the margin-box (which is the default).
+In this example the circle would use the `content-box` as the reference box rather than the `margin-box` (which is the default).
 
 ```css
 .box {
