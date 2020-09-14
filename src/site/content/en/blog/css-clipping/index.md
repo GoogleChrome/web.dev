@@ -143,7 +143,7 @@ plus the value for the center of the ellipse.
   </iframe>
 </div>
 
-### polygon()
+### `polygon()`
 
 The `polygon()` value can help you to create fairly complex shapes,
 defining as many points as you need,
