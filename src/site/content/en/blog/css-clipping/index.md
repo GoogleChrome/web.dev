@@ -28,7 +28,7 @@ to create interesting effects.
   </iframe>
 </div>
 
-In the example above, the balloon image is square.
+In the example above, the balloon image is square ([source](https://cdn.glitch.com/5984697d-c5e8-4a63-a765-7e7ac3916fc0%2Fround-balloon.jpg?v=1597216988521)).
 Using `clip-path` and the basic shape value of `circle()`
 the additional sky around the balloon is clipped away leaving a circular image on the page.
 
