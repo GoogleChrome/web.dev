@@ -4,7 +4,7 @@ subhead: Best practices to set your Referrer-Policy and use the referrer in inco
 authors:
   - maudn
 date: 2020-07-30
-updated: 2020-07-30
+updated: 2020-08-27
 hero: hero.jpg
 thumbnail: hero.jpg
 description: |
@@ -41,7 +41,7 @@ origin or web page URL the request was made from. The [`Referrer-Policy`
 header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) defines what data
 is made available in the `Referer` header.
 
-In the example below, the `Referer` header includes the complete URL of the page on *site-one* from
+In the example below, the `Referer` header includes the complete URL of the page on `site-one` from
 which the request was made.
 
 <figure class="w-figure">
@@ -58,7 +58,7 @@ For navigations and iframes, this data can also be accessed via JavaScript using
 `document.referrer`.
 
 The `Referer` value can be insightful. For example, an analytics service might use the value to
-determine that 50% of the visitors on *site-two.example* came from *social-network.example*.
+determine that 50% of the visitors on `site-two.example` came from `social-network.example`.
 
 But when the full URL including the path and query string is sent in the `Referer` **across
 origins**, this can be **privacy-hindering** and pose **security risks** as well. Take a look at
@@ -346,16 +346,75 @@ available).
 The `Referer` header (and `document.referrer`) may contain private, personal, or identifying data—so
 it must be treated as such.
 
-And instead of `Referer`, consider using other headers that might address your use case:
+And instead of `Referer`, consider using other headers that may address your use case:
 [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) and
 [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site).
+
+### Payments
+
+Payment providers may rely on the `Referer` header of incoming requests for security checks.
+
+For example:
+
+- The user clicks a **Buy** button on `online-shop.example/cart/checkout`.
+- `online-shop.example` redirects to `payment-provider.example` to manage the transaction.
+- `payment-provider.example` checks the `Referer` of this request against a list of allowed
+  `Referer` values set up by the merchants. If it doesn't match any entry in the list,
+  `payment-provider.example` rejects the request. If it does match, the user can proceed to the
+  transaction.
+
+#### Best practices for payment flow security checks
+
+**Summary: as a payment provider, you can use the `Referer` as a basic check
+against naive attacks—but you should absolutely have another, more
+reliable verification method in place.**
+
+The `Referer` header alone isn't a reliable basis for a check: the requesting site, whether they're
+a legitimate merchant or not, can easily set a `no-referrer` policy which will make the `Referer`
+information unavailable to the payment provider. However, as a payment provider, looking at the
+`Referer` may help you catch naive attackers who did not set a `no-referrer` policy. So you can
+decide to use the `Referer` as a first basic check. If you do so:
+
+- **Do not expect the `Referer` to always be present; and if it's present, only check against the
+  piece of data it will include at the minimum: the origin**. When setting the list of allowed
+  `Referer` values, make sure that no path is included, but only the origin. Example: the allowed
+  `Referer` values for `online-shop.example` should be `online-shop.example`, not
+  `online-shop.example/cart/checkout`. Why? Because by expecting either no `Referer` at all or a
+  `Referer` value that is the origin of the requesting website, you prevent unexpected errors since
+  you're **not making assumptions about the `Referrer-Policy`** your merchant has set or about the
+  browser's behavior if the merchant has no policy set. Both the site and the browser could strip
+  the `Referer` sent in the incoming request to just the origin or not send the `Referer` at all.
+- If the `Referer` is absent or if it's present and your basic `Referer` origin check was
+  successful: you can move onto your other, more reliable verification method (see below).
+
+**What is a more reliable verification method?**
+
+One reliable verification method is to let the requester **hash the request parameters** together
+with a unique key. As a payment provider, you can then **calculate the same hash on your side** and
+only accept the request if it matches your calculation.
+
+**What happens to the `Referer` when an HTTP merchant site with no referrer policy redirects to an
+HTTPS payment provider?**
+
+No `Referer` will be visible in the request to the HTTPS payment provider, because [most
+browsers](#default-referrer-policies-in-browsers) use `strict-origin-when-cross-origin` or
+`no-referrer-when-downgrade` by default when a website has no policy set. Also note that [Chrome's
+change to a new default
+policy](https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default) won't
+change this behaviour.
+
+{% Aside %}
+
+If your website uses HTTP, [migrate to HTTPS](/why-https-matters/).
+
+{% endAside %}
 
 ## Conclusion
 
 A protective referrer policy is a great way to give your users more privacy.
 
-To learn more about different techniques to protect your users, check out
-web.dev's [Safe and secure](/secure/) collection!
+To learn more about different techniques to protect your users, check out web.dev's [Safe and
+secure](/secure/) collection!
 
 _With many thanks for contributions and feedback to all reviewers - especially Kaustubha Govind,
 David Van Cleve, Mike West, Sam Dutton, Rowan Merewood, Jxck and Kayce Basques._

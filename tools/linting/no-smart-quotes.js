@@ -37,7 +37,7 @@ function noSmartQuotes(tree, file) {
 
     for (let index = 0; index < lines.length; index++) {
       line = lines[index].trim();
-      if (line.match(/[“”‘’]/g)) {
+      if (line.match(/[‘’]/g)) {
         return file.message(reason, node);
       }
     }

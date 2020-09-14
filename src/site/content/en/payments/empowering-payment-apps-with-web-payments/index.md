@@ -9,6 +9,7 @@ description: |
 date: 2020-05-25
 updated: 2020-07-16
 tags:
+  - blog
   - payments
 ---
 

@@ -93,8 +93,8 @@ example, given a URL of `https://www.example.com:443/foo` , the "site" is
 However, for domains such as `.co.jp` or `.github.io`, just using the TLD of
 `.jp` or `.io` is not granular enough to identify the "site". And there is no
 way to algorithmically determine the level of registrable domains for a
-particular TLD. That's why a list of "effective TLDs" was created. These are
-defined in the [Public Suffix List](https://wiki.mozilla.org/Public_Suffix_List).
+particular TLD. That's why a list of "effective TLDs"(eTLDs) was created. These
+are defined in the [Public Suffix List](https://wiki.mozilla.org/Public_Suffix_List).
  The list of eTLDs is maintained at
 [publicsuffix.org/list](https://publicsuffix.org/list/).
 
@@ -204,7 +204,7 @@ cross-site because the schemes don't match.
 
 Chrome sends requests along with a `Sec-Fetch-Site` HTTP header. No other
 browsers support `Sec-Fetch-Site` as of April 2020. This is part of a larger [Fetch Metadata
-Request Headers Request Headers](https://www.w3.org/TR/fetch-metadata/)
+Request Headers](https://www.w3.org/TR/fetch-metadata/)
 proposal. The header will have one of the following values:
 
 * `cross-site`
