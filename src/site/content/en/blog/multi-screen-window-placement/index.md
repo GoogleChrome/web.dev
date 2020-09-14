@@ -6,8 +6,8 @@ authors:
 description:
   The Multi-Screen Window Placement API allows you to enumerate the displays connected to your
   machine and to place windows on specific screens.
-date: 2020-09-11
-# updated: 2020-09-11
+date: 2020-09-14
+updated: 2020-09-14
 tags:
   - blog
   - capabilities
@@ -77,7 +77,7 @@ The time-tested approach to controlling windows,
 is unfortunately unaware of additional screens
 aspects of this method seem a little archaic, such as its
 [`windowFeatures`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Parameters:~:text=title.-,windowFeatures)
-`DOMString` parameter, it has nevertheless served us well over the years. To determine a window's
+`DOMString` parameter, it has nevertheless served us well over the years. To specify a window's
 [position](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Position), you can pass the
 coordinates as `left` and `top` (or `screenX` and `screenY` respectively) and pass the desired
 [size](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Size:~:text=well.-,Size) as
