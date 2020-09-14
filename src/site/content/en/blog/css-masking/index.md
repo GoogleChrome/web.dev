@@ -193,4 +193,4 @@ Try remixing the Glitch and testing out some other variations.
 Along with clipping,
 CSS masks are a way to add interest to images and other HTML elements without needing to use a graphics application.
 
-_Photo by [Samantha Hurley](https://burst.shopify.com/@lightleaksin) on Burst._
+_<span>Photo by <a href="https://unsplash.com/@juliorionaldo">Julio Rionaldo</a> on Unsplash</span>._

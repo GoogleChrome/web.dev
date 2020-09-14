@@ -56,7 +56,8 @@ If this is a problem you could test for `clip-path` in a feature query and offer
 
 The `clip-path` property can take a number of values.
 The value used in the initial example was `circle()`.
-This is one of the basic shape values, which are defined in the CSS Shapes specification.
+This is one of the basic shape values, which are defined in the
+[CSS Shapes specification](https://www.w3.org/TR/css-shapes-1/#basic-shape-functions).
 This means that you can clip an area,
 and also use the same value for `shape-outside` to cause text to wrap around that shape.
 
@@ -158,7 +159,7 @@ by setting the coordinates of each point.
   </iframe>
 </div>
 
-To help you create polygons and see what is possible check out Clippy,
+To help you create polygons and see what is possible check out [Clippy](https://bennettfeely.com/clippy/),
 a `clip-path` generator,
 then copy and paste the code into your own project.
 
