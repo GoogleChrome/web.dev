@@ -403,6 +403,7 @@ team to prioritize features and shows other browser vendors how critical it is t
 
 ## Helpful links {: #helpful }
 
+- [Spec draft][spec]
 - [Public explainer][explainer]
 - [Multi-Screen Window Placement API demo][demo] | [Multi-Screen Window Placement API demo
   source][demo-source]
