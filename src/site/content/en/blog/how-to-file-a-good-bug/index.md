@@ -37,7 +37,7 @@ broken, where it's broken, and what the expected behavior is.
 Behavior that differs between browsers is generally prioritized higher as an
 interoperability issue, especially when the browser containing the bug is the
 odd one out. Try to test on the latest versions of Chrome, Firefox, Safari and
-Edge, possibly using a tool like [BrowserStack](https://www.browserstack.com/).
+Edge, possibly using a tool like [BrowserStack](https://www.browserstack.com/) or [LambdaTest](https://www.lambdatest.com/).
 
 If possible, check that the page isn't intentionally behaving differently due to
 user agent sniffing. In Chrome DevTools, try [setting the `User-Agent` string
@@ -48,7 +48,7 @@ to another browser](https://developers.google.com/web/tools/chrome-devtools/devi
 Did this work as expected in the past, but broke in a recent browser release?
 Such "regressions" can be acted upon much quicker, especially if you supply a
 version number where it worked and a version where it failed. Tools like
-[BrowserStack](https://www.browserstack.com/) can make it easy to check old
+[BrowserStack](https://www.browserstack.com/) or [LambdaTest](https://www.lambdatest.com/) can make it easy to check old
 browser versions.
 
 If an issue is a regression and can be reproduced, the root cause can usually be
