@@ -6,7 +6,7 @@ authors:
 description:
   The Multi-Screen Window Placement API allows you to enumerate the displays connected to your
   machine and to place windows on specific screens.
-date: 2020-09-11
+date: 2020-09-14
 updated: 2020-09-14
 tags:
   - blog
@@ -74,10 +74,10 @@ trial in Chrome. The origin trial is expected to end in Chrome&nbsp;88 (February
 
 The time-tested approach to controlling windows,
 [`Window.open()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open),
-is unfortunately unaware of additional screens
-aspects of this method seem a little archaic, such as its
+is unfortunately unaware of additional screens.
+While some aspects of this API seem a little archaic, such as its
 [`windowFeatures`](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Parameters:~:text=title.-,windowFeatures)
-`DOMString` parameter, it has nevertheless served us well over the years. To determine a window's
+`DOMString` parameter, it has nevertheless served us well over the years. To specify a window's
 [position](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Position), you can pass the
 coordinates as `left` and `top` (or `screenX` and `screenY` respectively) and pass the desired
 [size](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Size:~:text=well.-,Size) as
@@ -248,10 +248,10 @@ Note that the built-in screen
 Both also have an `id`, which, if
 persisted across browser sessions, allows for window arrangements to be restored.
 
-### The `onscreenschange` event
+### The `screenschange` event
 
 The only thing missing now is a way to detect when my screen setup changes. A new event,
-`onscreenschange`, does exactly that: it fires whenever the screen constellation
+`screenschange`, does exactly that: it fires whenever the screen constellation
 is modified.
 (Notice that "screens" is plural in the event name.)
 It also fires when the resolution of one of the connected screens changes or when a
@@ -263,8 +263,8 @@ future](https://github.com/webscreens/window-placement/issues/28). For now you
 can look up the screen details by calling `window.getScreens()` as shown below.
 
 ```js
-window.addEventListener('screenschange', async (e) => {
-  console.log('I am there, but mostly useless', e);
+window.addEventListener('screenschange', async (event) => {
+  console.log('I am there, but mostly useless', event);
   const details = await window.getScreens();
 });
 ```
