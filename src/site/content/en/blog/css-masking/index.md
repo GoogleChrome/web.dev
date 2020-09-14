@@ -32,7 +32,7 @@ It may be worth using feature queries to detect support for `mask-image` or `-we
 and providing a readable fallback before adding your masked version.
 
 ```css
-@supports(-webkit-mask-image: url(#mask)) or (mask-image: url(#mask)); {
+@supports(-webkit-mask-image: url(#mask)) or (mask-image: url(#mask)) {
   /* code that requires mask-image here. */
 }
 ```
