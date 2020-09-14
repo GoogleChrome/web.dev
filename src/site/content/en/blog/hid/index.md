@@ -4,12 +4,11 @@ subhead: |
   The WebHID API allows websites to access alternative auxiliary keyboards and exotic gamepads.
 authors:
   - beaufortfrancois
-date: 2020-09-11
-updated: 2020-09-11
+date: 2020-09-14
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: |
-  TODO
+  White buttons photo.
 description: |
   The WebHID API allows websites to access alternative auxiliary keyboards and exotic gamepads.
 origin_trial:
@@ -26,10 +25,10 @@ that. To learn about other capabilities and to keep up with their progress,
 follow [Unlocking new capabilities for the web](/fugu-status/).
 {% endAside %}
 
-There is a long tail of human interface devices (HIDs) that are too new, too
-old, or too uncommon to be accessible by systems' device drivers such as
-alternative keyboards or exotic gamepads. The WebHID API solves this by
-providing a way to implement device-specific logic in JavaScript.
+There is a long tail of human interface devices (HIDs), such as alternative
+keyboards or exotic gamepads, that are too new, too old, or too uncommon to be
+accessible by systems' device drivers. The WebHID API solves this by providing a
+way to implement device-specific logic in JavaScript.
 
 ## Suggested use cases {: #use-cases }
 
@@ -46,8 +45,8 @@ often use HID for gamepad inputs (buttons, joysticks, triggers) and outputs
 (LEDs, rumble). Unfortunately, gamepad inputs and outputs are not well
 standardized and web browsers often require custom logic for specific devices.
 This is unsustainable and results in poor support for the long tail of older and
-uncommon devices. It also causes the browser to depend on quirks present in the
-behavior of specific devices.
+uncommon devices. It also causes the browser to depend on quirks in the behavior
+of specific devices.
 
 ## Current status {: #status }
 
@@ -242,8 +241,8 @@ to (`device`), and the 8-bit report ID associated with the input report
 (`reportId`).
 
 <figure class="w-figure">
-  <img src="./joycon-switch-photo.jpg" class="w-screenshot" alt="Red and blue nintendo switch photo">
-  <figcaption class="w-figcaption">Nintendo Switch Joy-Con devices</figcaption>
+  <img src="./joycon-switch-photo.jpg" class="w-screenshot" alt="Red and blue nintendo switch photo.">
+  <figcaption class="w-figcaption">Nintendo Switch Joy-Con devices.</figcaption>
 </figure>
 
 Continuing with the previous example, the code below shows you how to detect
@@ -299,7 +298,7 @@ HID data. Unlike input and output reports, feature reports are not received or
 sent by the application on a regular basis.
 
 <figure class="w-figure">
-  <img src="./laptop-keyboard-photo.jpg" class="w-screenshot" alt="Black and silver laptop computer photo">
+  <img src="./laptop-keyboard-photo.jpg" class="w-screenshot" alt="Black and silver laptop computer photo.">
   <figcaption class="w-figcaption">Laptop keyboard</figcaption>
 </figure>
 
@@ -371,8 +370,8 @@ Debugging HID in Chrome is easy with the internal page, `chrome://device-log`
 where you can see all HID and USB device related events in one single place.
 
 <figure class="w-figure">
-  <img src="./device-log-page-screenshot.jpg" class="w-screenshot" alt="Screenshot of the internal page to debug HID">
-  <figcaption class="w-figcaption">Internal page in Chrome to debug HID</figcaption>
+  <img src="./device-log-page-screenshot.jpg" class="w-screenshot" alt="Screenshot of the internal page to debug HID.">
+  <figcaption class="w-figcaption">Internal page in Chrome to debug HID.</figcaption>
 </figure>
 
 ## Demos {: #demos }
@@ -393,7 +392,7 @@ Considerations] section of the WebHID spec.
 
 On top of this, Chrome inspects the usage of each top-level collection and if a
 top-level collection has a protected usage (.e.g. generic keyboard, mouse), then
-a website won't be able to send to and receive from any reports defined in that
+a website won't be able to send and receive any reports defined in that
 collection. The full list of protected usages is [publicly available].
 
 Note that security-sensitive HID devices (such as FIDO HID devices used for
