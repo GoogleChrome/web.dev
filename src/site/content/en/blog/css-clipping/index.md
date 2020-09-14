@@ -6,7 +6,7 @@ description: |
   Then cut away the parts of an element you don't want to show.
 authors:
   - rachelandrew
-date: 2020-09-02
+date: 2020-09-14
 hero: hero.jpg
 alt: Scissors hanging on a wall.
 tags:

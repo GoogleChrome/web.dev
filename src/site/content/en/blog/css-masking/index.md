@@ -6,7 +6,7 @@ description: |
   to create interested effects without an image editor.
 authors:
   - rachelandrew
-date: 2020-09-02
+date: 2020-09-14
 hero: hero.jpg
 alt: A teddy bear wearing a facemask.
 tags:
