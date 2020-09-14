@@ -6,7 +6,7 @@ authors:
   - demianrenzulli
   - aranhacarlos
   - joanbaca
-date: 2020-09-01
+date: 2020-09-14
 hero: hero.jpg
 description: Summary of the work done by Mercado Libre's frontend architecture team to optimize FID, using TBT as a proxy metric.
 tags:
@@ -71,14 +71,14 @@ on improving the interactivity for product pages in the site.
 
 <div class="w-columns">
 <figure class="w-figure">
-  <img src="meli-pdp-mobile.png" 
+  <img src="meli-pdp-mobile.png" class="w-screenshot"
        alt="Mobile version of a Mercado Libre product detail page." width="141">
    <figcaption class="w-figcaption">
       Mobile version of a Mercado Libre product detail page.
   </figcaption>     
 </figure>
 <figure class="w-figure">
-  <img src="meli-pdp-desktop.png" 
+  <img src="meli-pdp-desktop.png" class="w-screenshot"
        alt="Desktop versions of a Mercado Libre product detail page.">
    <figcaption class="w-figcaption">
       Desktop versions of a Mercado Libre product detail page.
