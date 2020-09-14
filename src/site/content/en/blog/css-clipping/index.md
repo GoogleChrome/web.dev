@@ -100,7 +100,7 @@ The first box has no clipping, the second is clipped using `inset()` values.
   </iframe>
 </div>
 
-### The circle() value
+### `circle()`
 
 As you have seen, the circle() value creates a circular clipped area.
 The first value is a length or a percentage and is the radius of the circle.
