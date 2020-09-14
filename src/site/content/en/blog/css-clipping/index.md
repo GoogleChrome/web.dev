@@ -102,7 +102,7 @@ The first box has no clipping, the second is clipped using `inset()` values.
 
 ### `circle()`
 
-As you have seen, the circle() value creates a circular clipped area.
+As you have seen, the `circle()` value creates a circular clipped area.
 The first value is a length or a percentage and is the radius of the circle.
 A second optional value allows you to set the center of the circle.
 In the example below I am using keyword values to set my clipped circle top right.
