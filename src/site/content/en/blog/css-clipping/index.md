@@ -128,7 +128,7 @@ and that shape would extend outside of the natural size of the image, you will g
   <figcaption>The image used earlier now has circle(50%) applied. As the image is not square, we hit the margin box at the top and bottom and the circle is clipped.</figcaption>
 </figure>
 
-### ellipse()
+### `ellipse()`
 
 An ellipse is essentially a squashed circle,
 and so acts very much like `circle()` but accepts a radius for x and a radius for y,
