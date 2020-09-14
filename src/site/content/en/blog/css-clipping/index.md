@@ -145,7 +145,7 @@ plus the value for the center of the ellipse.
 
 ### `polygon()`
 
-The `polygon()` value can help you to create fairly complex shapes,
+The `polygon()` value can help you create fairly complex shapes,
 defining as many points as you need,
 by setting the coordinates of each point.
 
