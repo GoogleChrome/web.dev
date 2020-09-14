@@ -308,6 +308,7 @@ functionality built-in, it will no longer manually add the `loading="lazy"` attr
 ensuring it is interoperable with those changes and will not result in a duplicate attribute.
 
 ```php
+// TODO: Remove once https://core.trac.wordpress.org/ticket/50756 lands.
 function wp_lazy_load_iframes_polyfill( $content ) {
 	// If WP core lazy-loads iframes, skip this manual implementation.
 	if ( function_exists( 'wp_lazy_loading_enabled' ) && wp_lazy_loading_enabled( 'iframe', 'the_content' ) ) {
