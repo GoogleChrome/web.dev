@@ -16,6 +16,8 @@ description: |
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - payment
+feedback:
+  - api
 ---
 
 Web Payments have been publicly available in browsers since 2016. The core

@@ -15,6 +15,8 @@ tags:
   - web-workers
   - javascript-modules
   - modules
+feedback:
+  - api
 ---
 
 JavaScript is single-threaded, which means it can only perform one operation at a time. This is

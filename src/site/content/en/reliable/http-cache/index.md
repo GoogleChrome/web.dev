@@ -14,6 +14,8 @@ description: >
   work.
 codelabs:
   - codelab-http-cache
+feedback:
+  - api
 ---
 
 Fetching resources over the network is both slow and expensive: 

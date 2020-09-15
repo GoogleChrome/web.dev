@@ -19,6 +19,8 @@ tags:
   - blog
   - text-fragments
   - capabilities
+feedback:
+  - api
 ---
 ## Fragment Identifiers
 

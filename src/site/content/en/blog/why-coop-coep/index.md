@@ -18,6 +18,8 @@ date: 2020-05-04
 tags:
   - blog
   - security
+feedback:
+  - api
 ---
 ## Introduction
 In [Making your website "cross-origin isolated" using COOP and

@@ -20,6 +20,8 @@ tags:
   - security
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/register_trial/2780972769901281281 
+feedback:
+  - api
 ---
 Some web APIs increase the risk of side-channel attacks like Spectre. To
 mitigate that risk, browsers offer an opt-in-based isolated environment called

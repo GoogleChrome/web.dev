@@ -18,6 +18,8 @@ tags:
   - blog
   - progressive-web-apps
   - capabilities
+feedback:
+  - api
 ---
 
 Browsers have been able to deal with files and directories for a long time.

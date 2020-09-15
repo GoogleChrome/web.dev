@@ -14,6 +14,8 @@ description: |
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - javascript
+feedback:
+  - api
 ---
 
 `ReportingObserver` lets you know when your site uses a deprecated API or runs

@@ -12,6 +12,8 @@ description: |
 tags:
   - blog
   - payments
+feedback:
+  - api
 ---
 
 The [Payment Request API](https://www.w3.org/TR/payment-request/) brings to the

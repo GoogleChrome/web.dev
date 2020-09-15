@@ -11,6 +11,8 @@ updated: 2020-07-16
 tags:
   - blog
   - payments
+feedback:
+  - api
 ---
 
 One of the key ecosystem drivers for the web are payments. With secure,

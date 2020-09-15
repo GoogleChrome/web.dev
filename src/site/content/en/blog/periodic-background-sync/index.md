@@ -21,6 +21,8 @@ tags:
   - progressive-web-apps
   - service-worker
   - chrome80
+feedback:
+  - api
 ---
 
 {% Aside %}

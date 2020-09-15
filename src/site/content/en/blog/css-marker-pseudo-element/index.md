@@ -14,6 +14,8 @@ scheduled: true
 hero: hero.png
 thumbnail: thumb.png
 alt: Showing the anatomy of a single list item by putting separate boxes around the bullet and the text
+feedback:
+  - api
 --- 
 
 Thanks to Igalia, sponsored by Bloomberg, we can finally put our hacks away for styling lists. See!

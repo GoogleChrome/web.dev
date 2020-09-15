@@ -12,6 +12,8 @@ alt: A teddy bear wearing a facemask.
 tags:
   - blog
   - css
+feedback:
+  - api
 ---
 
 When you [clip an element](/css-clipping) using the `clip-path` property the clipped area becomes invisible.

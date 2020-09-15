@@ -14,6 +14,8 @@ tags:
   - blog
   - capabilities
   - progressive-web-apps
+feedback:
+  - api
 ---
 
 ## What are maskable icons? {: #what }

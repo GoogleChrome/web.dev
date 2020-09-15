@@ -17,6 +17,8 @@ tags:
   - capabilities
   - origin-trials
   - notification-triggers
+feedback:
+  - api
 ---
 
 {% Aside %}
