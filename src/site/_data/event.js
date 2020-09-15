@@ -635,7 +635,7 @@ const qAndAs = [
   },
   {
     category: 'PWA',
-    question: 'Can we call native functionality from PWAs?',
+    question: 'Can we call OS functionality from PWAs?',
     answer: 'No, developers only have access to the capabilities of the browser, but we’re working to add new capabilities with our  capabilities project.',
   },
   {

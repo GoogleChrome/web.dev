@@ -4,7 +4,7 @@ title: Reading and writing files and directories with the browser-nativefs libra
 authors:
   - thomassteiner
 description: |
-  All modern browsers can read native files and directories; however,
+  All modern browsers can read local files and directories; however,
   true write access, that is, more than just downloading files,
   is limited to browsers that implement the Native File System API.
   This post introduces a support library called browser-nativefs
@@ -360,7 +360,7 @@ Note how on iPhone the **Save As** button is missing.
 
 ## Conclusions
 
-Working with native files technically works on all modern browsers.
+Working with local files technically works on all modern browsers.
 On browsers that support the Native File System API, you can make the experience better by allowing
 for true saving and overwriting (not just downloading) of files and
 by letting your users create new files wherever they want,

@@ -88,7 +88,7 @@ You can also find demos for all the features we discuss on our
 
 ## Scroll Snap
 
-[Scroll Snap](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap/Basic_concepts) lets you define snap points as the user scrolls your content vertically, horizontally, or  both. It offers native scroll inertia and deceleration, and it's touch enabled.
+[Scroll Snap](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap/Basic_concepts) lets you define snap points as the user scrolls your content vertically, horizontally, or  both. It offers built-in scroll inertia and deceleration, and it's touch enabled.
 
 This sample code sets up horizontal scrolling in a `<section>` element with snap points aligned to the left sides of child `<picture>` elements:
 
@@ -256,7 +256,7 @@ Like Sticky Slide, the sticky elements in this demo are cousins. However, they'v
 
 The [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter) property lets you apply graphical effects to the area _behind_ an element rather than to the element itself. This makes lots of cool effects that were previously only achievable using complicated CSS and JavaScript hacks doable with one line of CSS.
 
-For example, this demo uses `backdrop-filter` to achieve native OS-style blurring:
+For example, this demo uses `backdrop-filter` to achieve OS-style blurring:
 
 <iframe height="510" style="width: 100%;" scrolling="no" title="mddjjor" src="https://codepen.io/una/embed/mddjjor?height=265&theme-id=dark&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/una/pen/mddjjor'>mddjjor</a> by Una Kravets

@@ -83,7 +83,7 @@ The "cut" here is the wasted bytes in the response payload.
 ## Critical path optimization for above-the-fold content
 
 Not every pixel on the screen is equally important. The content [above-the-fold][atf] is [more
-critical](https://web.dev/extract-critical-css/) than something below-the-fold. Native and web apps
+critical](https://web.dev/extract-critical-css/) than something below-the-fold. iOS/Android/desktop and web apps
 are aware of this, but what about services? eBay's service architecture has a layer called
 [Experience
 Services](https://tech.ebayinc.com/engineering/experience-services-ebays-solution-to-multi-screen-application-development/),
@@ -148,7 +148,7 @@ items from search and keeps them ready for when the user navigates. The prefetch
 
 The first level happens server-side, where the item service caches the top 10 items in search results. When the user
 goes to one of those items, eBay now saves server processing time. Server-side caching is leveraged by
-native apps and is rolled out globally.
+platform-specific apps and is rolled out globally.
 
 The other level happens in the browser cache, which is available
 in Australia. Item prefetch was an advanced optimization due to the dynamic nature of items. There
@@ -186,10 +186,10 @@ When users type in letters in the search box, suggestions pop-up. These suggesti
 </figure>
 
 There was a catch, though. eBay had some elements of personalization in the suggestions pop-up,
-which can't be cached efficiently. Fortunately, it was not an issue in the native apps, as the user
+which can't be cached efficiently. Fortunately, it was not an issue in the platform-specific apps, as the user
 interface for personalization and suggestions could be separated. For the web, in international
 markets, latency was more important than the small benefit of personalization. With that out of the
-way, eBay now has autosuggestions served from a CDN cache globally for native apps and non-US
+way, eBay now has autosuggestions served from a CDN cache globally for platform-specific apps and non-US
 markets for eBay.com.
 
 The "cut" here is the network latency and server processing time for
@@ -205,17 +205,17 @@ The "cut" here is again both network latency and server processing time for unre
 
 ## Optimizations for other platforms
 
-### Native app parsing improvements
+### iOS/Android app parsing improvements
 
-Native apps (iOS and Android) talk to backend services whose response format is typically JSON. These JSON payloads can be large. Instead of parsing the whole JSON to render something on the screen, eBay introduced an efficient parsing algorithm that optimizes for content that needs to be displayed immediately.
+iOS/Android apps talk to backend services whose response format is typically JSON. These JSON payloads can be large. Instead of parsing the whole JSON to render something on the screen, eBay introduced an efficient parsing algorithm that optimizes for content that needs to be displayed immediately.
 
 Users can now see the content quicker. In addition, for the Android app, eBay starts initializing the search view controllers as soon as the user starts typing in the search box (iOS already had this optimization). Previously this happened only after users pressed the search button. Now users can get to their search results faster. The "cut" here is the time spent by devices to display relevant content.
 
-### Native app startup time improvements
+### Android app startup time improvements
 
-This applies to [cold start](https://developer.android.com/topic/performance/vitals/launch-time#cold) time optimizations for native apps, in particular, Android. When an app is cold started, a lot of initialization happens both at the OS level and application level. Reducing the initialization time at the application level helps users see the home screen quicker. eBay did some profiling and noticed that not all initializations are required to display content and that some can be done lazily.
+This applies to [cold start](https://developer.android.com/topic/performance/vitals/launch-time#cold) time optimizations for Android apps. When an app is cold started, a lot of initialization happens both at the OS level and application level. Reducing the initialization time at the application level helps users see the home screen quicker. eBay did some profiling and noticed that not all initializations are required to display content and that some can be done lazily.
 
-More importantly, eBay observed that there was a blocking third-party analytics call that delayed the rendering on the screen. Removing the blocking call and making it async further helped cold start times. The "cut" here is the unnecessary startup time for native apps.
+More importantly, eBay observed that there was a blocking third-party analytics call that delayed the rendering on the screen. Removing the blocking call and making it async further helped cold start times. The "cut" here is the unnecessary startup time for Android apps.
 
 ## Conclusions
 

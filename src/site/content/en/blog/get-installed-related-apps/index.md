@@ -2,12 +2,12 @@
 title: "Is your app installed? getInstalledRelatedApps() will tell you!"
 subhead: |
   The `getInstalledRelatedApps()` method allows your website to check whether
-  your native app or PWA is installed on a user's device.
+  your iOS/Android/desktop app or PWA is installed on a user's device.
 authors:
   - petelepage
 description: |
   The getInstalledRelatedApps() API is a web platform API that allows you
-  to check whether your native app or PWA is installed on the user's device.
+  to check whether your iOS/Android/desktop app or PWA is installed on the user's device.
 date: 2018-12-20
 updated: 2020-08-06
 tags:
@@ -30,17 +30,17 @@ feedback:
 </figure>
 
 The [`getInstalledRelatedApps()`][spec] makes it possible for *your* page to
-check if *your* native app, or Progressive Web App (PWA) is already installed
+check if *your* iOS/Android/desktop app, or Progressive Web App (PWA) is already installed
 on a user's device, and allows you to customize the user experience if your
 app is already installed.
 
 For example, if your app is already installed:
 
 * Redirecting the user from a product marketing page directly into your app.
-* Centralizing some functionality like notifications in the native app to
+* Centralizing some functionality like notifications in the other app to
   prevent duplicate notifications.
 * Not [promoting the installation](/customize-install/) of your PWA if your
-  native app is already installed.
+  other app is already installed.
 
 <div class="w-clearfix"></div>
 

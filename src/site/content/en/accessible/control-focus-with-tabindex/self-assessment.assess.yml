@@ -98,5 +98,5 @@ questions:
           - Focus the radio element that now has a `tabindex` of 0.
 
           That's a lot—and it doesn't even include ARIA attributes!
-          This is an example of why it's easier to use native elements
+          This is an example of why it's easier to use built-in elements
           with built-in keyboard behavior whenever you can.

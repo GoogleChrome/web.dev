@@ -32,7 +32,7 @@ Founded in 2015, Truebil is an Indian online marketplace that sells 100% certifi
 
 Truebil is a lean startup with low-frequency, high-value transactions, so it was critical to choose the right platform to prioritize and invest in.
 
-Truebil identified mobile as their target platform, and they chose the web for their first app, [Truebil Lite](https://m.truebil.com), because of the web's easy discovery and low friction. Web technology provides lower development costs, less data and memory usage, and significantly lower customer acquisition costs than building a native app. And by building a progressive web app (PWA), Truebil could get all the perks of the web _and_ the benefits of native.
+Truebil identified mobile as their target platform, and they chose the web for their first app, [Truebil Lite](https://m.truebil.com), because of the web's easy discovery and low friction. Web technology provides lower development costs, less data and memory usage, and significantly lower customer acquisition costs than building an Android/iOS app. And by building a progressive web app (PWA), Truebil could get all the perks of the web _and_ the benefits of iOS/Android.
 
 ## Solution
 

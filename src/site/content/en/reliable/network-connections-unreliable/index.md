@@ -22,8 +22,8 @@ reliability means.
 
 One way of thinking about reliability is whether your web app will work without
 a network connection. This is a type of reliability that users take for granted
-with "native apps," installed on a mobile device from an app store. When you see
-an icon for a native app, you expect to be able to tap on it and open up some
+with platform-specific apps installed on a mobile device from an app store. When you see
+an icon for ones of these apps, you expect to be able to tap on it and open up some
 sort of experience, regardless of whether you're currently connected to the
 Internet.
 
