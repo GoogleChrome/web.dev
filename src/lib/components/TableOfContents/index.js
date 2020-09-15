@@ -94,15 +94,21 @@ class TableOfContents extends BaseStateElement {
   }
 
   scrollSpy(headings) {
-    const links = [...this.querySelectorAll('a')];
+    const links = new Map(
+      [...this.querySelectorAll('a')].map((l) => [l.getAttribute('href'), l]),
+    );
+
     for (const heading of headings) {
       const href = `#${heading.target.getAttribute('id')}`;
-      const link = links.find((l) => l.getAttribute('href') === href);
-      if (heading.intersectionRatio > 0) {
-        link.classList.add(this.tocVisibleClass);
-        this.previouslyActiveHeading = heading.target.getAttribute('id');
-      } else {
-        link.classList.remove(this.tocVisibleClass);
+      const link = links.get(href);
+
+      if (link) {
+        if (heading.intersectionRatio > 0) {
+          link.classList.add(this.tocVisibleClass);
+          this.previouslyActiveHeading = heading.target.getAttribute('id');
+        } else {
+          link.classList.remove(this.tocVisibleClass);
+        }
       }
 
       const firstVisibleLink = this.querySelector(`.${this.tocVisibleClass}`);

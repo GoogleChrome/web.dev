@@ -295,6 +295,34 @@ lazysizes when it's not available:
 </script>
 ```
 
+### An option for WordPress users {: #wordpress }
+
+You might have many iframes scattered across years worth of post content
+in a WordPress site. You can optionally add the following code to your WordPress
+theme's `functions.php` file to automatically insert `loading="lazy"` to your
+existing iframes without having to manually update them each individually.
+
+Note that [native support for lazy-loading iframes is also being worked on in WordPress core](https://core.trac.wordpress.org/ticket/50756).
+The following snippet will check for the relevant flags so that, once WordPress has the
+functionality built-in, it will no longer manually add the `loading="lazy"` attribute,
+ensuring it is interoperable with those changes and will not result in a duplicate attribute.
+
+```php
+// TODO: Remove once https://core.trac.wordpress.org/ticket/50756 lands.
+function wp_lazy_load_iframes_polyfill( $content ) {
+	// If WP core lazy-loads iframes, skip this manual implementation.
+	if ( function_exists( 'wp_lazy_loading_enabled' ) && wp_lazy_loading_enabled( 'iframe', 'the_content' ) ) {
+		return $content;
+	}
+
+	return str_replace( '<iframe ', '<iframe loading="lazy" ', $content );
+}
+add_filter( 'the_content', 'wp_lazy_load_iframes_polyfill' );
+```
+
+If your WordPress site utilizes caching (hint: it should), don't forget to rebuild
+your site's cache afterwards.
+
 ### Conclusion
 
 Baking in native support for lazy-loading iframes makes it significantly

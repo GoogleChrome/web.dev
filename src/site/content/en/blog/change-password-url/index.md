@@ -12,6 +12,8 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - identity
   - security
+feedback:
+  - api
 ---
 
 Set a redirect from `/.well-known/change-password` to the change password page
