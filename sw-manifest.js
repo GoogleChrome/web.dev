@@ -61,6 +61,9 @@ async function buildCacheManifest() {
   }
 
   const toplevelManifest = await injectManifest(config);
+  log(
+    `Building the Service Worker manifest, caching: ${toplevelManifest.count} files`,
+  );
   if (toplevelManifest.warnings.length) {
     if (isProd) {
       throw new Error(`toplevel manifest: ${toplevelManifest.warnings}`);
