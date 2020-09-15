@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Built-in image lazy-loading for the web
-subhead: Browser-level lazy-loading is finally here!
+title: Browser-level image lazy-loading for the web
+subhead: Built-in lazy-loading is finally here!
 authors:
   - houssein
   - addyosmani
