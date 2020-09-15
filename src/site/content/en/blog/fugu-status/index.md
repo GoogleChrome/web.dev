@@ -2,7 +2,7 @@
 title: New capabilities status
 subhead: Web apps should be able to do anything native apps can. Google wants to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2020-06-24
+updated: 2020-09-02
 tags:
   - blog
   - capabilities
@@ -122,22 +122,6 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
       </tr>
       <tr>
         <td>
-          <a href="/native-file-system/">
-            Native File System API
-          </a>
-        </td>
-        <td>
-          The Native File System API (formerly known as the Writable Files API)
-          enables developers to build powerful web apps that interact with files
-          on the user's local device, like IDEs, photo and video editors, text
-          editors, and more. After a user grants a web app access, this API
-          allows web apps to read or save changes directly to files and folders
-          on the user's device.<br>
-          <em>Updated April 13, 2020</em>
-        </td>
-      </tr>
-      <tr>
-        <td>
           <a href="/serial/">
             Serial API
           </a>
@@ -197,7 +181,7 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           running.<br>
           <em>Updated June 24, 2020</em>
         </td>
-      </tr>     
+      </tr>
       <tr>
         <td>
           <a href="/badging-api/">Badging API</a>
@@ -253,6 +237,22 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           that allows your web app to check to see if your native app is
           installed on the users device, and vice versa.<br>
           <em>Updated December 18, 2019</em>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/native-file-system/">
+            Native File System API
+          </a>
+        </td>
+        <td>
+          The Native File System API (formerly known as the Writable Files API)
+          enables developers to build powerful web apps that interact with files
+          on the user's local device, like IDEs, photo and video editors, text
+          editors, and more. After a user grants a web app access, this API
+          allows web apps to read or save changes directly to files and folders
+          on the user's device.<br>
+          <em>Updated September 2, 2020</em>
         </td>
       </tr>
       <tr>

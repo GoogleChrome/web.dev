@@ -5,26 +5,16 @@ authors:
   - petelepage
 description: The new Native File System API enables developers to build powerful web apps that interact with files on the user's local device, like IDEs, photo and video editors, text editors, and more. After a user grants a web app access, this API allows web apps to read or save changes directly to files and folders on the user's device.
 date: 2019-08-20
-updated: 2020-07-06
+updated: 2020-09-02
 tags:
   - blog
   - capabilities
-  - origin-trials
   - file
   - file-system
   - native-file-system
 hero: hero.jpg
 alt: Image of hard disk platters
-origin_trial:
-  url: https://developers.chrome.com/origintrials/#/view_trial/4019462667428167681
 ---
-
-{% Aside %}
-  The Native File System API is available as an origin trial in Chrome, and is
-  part of [capabilities project](/fugu-status/). This post will be updated as
-  the implementation progresses. See the [what's new](#whats-new) section for
-  the latest updates.
-{% endAside %}
 
 ## What is the Native File System API? {: #what-is-it }
 
@@ -37,7 +27,7 @@ on the user's device. Beyond reading and writing files, the Native File System
 API provides the ability to open a directory and enumerate its contents.
 
 If you've worked with reading and writing files before, much of what I'm about
-to share will be familliar to you. I encourage you to read anyway because not
+to share will be familliar to you. I encourage you to read it anyway because not
 all systems are alike.
 
 {% Aside 'caution' %}
@@ -56,8 +46,8 @@ all systems are alike.
 | 1. Create explainer                        | [Complete][explainer]        |
 | 2. Create initial draft of specification   | [In progress][spec]          |
 | 3. Gather feedback & iterate on design     | [In progress][spec]          |
-| 4. Origin trial                            | [In progress](#origin-trial)<br>First: Chrome 78-82<br>Second: Chrome 83-85 |
-| 5. Launch                                  | Not started                  |
+| 4. Origin trial                            | Complete                     |
+| **5. Launch**                              | **Chrome 86**                |
 
 </div>
 
@@ -74,26 +64,6 @@ understand the concepts.
 See the Native File System API in action in the
 [text editor](https://googlechromelabs.github.io/text-editor/) demo.
 
-### Enabling via chrome://flags
-
-If you want to experiment with the Native File System API locally, enable
-the `#native-file-system-api` flag in `chrome://flags`.
-
-### Enabling support during the origin trial phase {: #origin-trial }
-
-Starting in Chrome 83, a **new** origin trial has started for the Native File
-System API for all desktop platforms.
-
-{% Aside %}
-If you had an origin trial token for the [first origin trial](https://developers.chrome.com/origintrials/#/view_trial/3868592079911256065)
-(that ran from Chrome 78 to Chrome 82), you will need to obtain a new origin
-trial token.
-{% endAside %}
-
-{% include 'content/origin-trials.njk' %}
-
-{% include 'content/origin-trial-register.njk' %}
-
 ### Read a file from the local file system {: #read-file }
 
 The first use case I wanted to tackle was to ask the user to choose a file,
@@ -102,13 +72,13 @@ then open and read that file from disk.
 #### Ask the user to pick a file to read
 
 The entry point to the Native File System API is
-[`window.chooseFileSystemEntries()`][choose-fs-entries]. When called, it shows
-a file picker dialog box, and prompts the user to select a file. After selecting
-a file, the API returns a handle to the file. An optional options parameter
+[`window.chooseFileSystemEntries()`][choose-fs-entries]. When called, it shows a
+file picker dialog box, and prompts the user to select a file. After a user
+selects a file, the API returns a handle to it. An optional `options` parameter
 lets you influence the behavior of the file picker, for example, by allowing the
-user to select multiple files, or directories, or different file types.
-Without any options specified, the file picker allows the user to select a
-single file. This is perfect for our text editor.
+user to select multiple files, or directories, or different file types. Without
+any options specified, the file picker allows the user to select a single file.
+This is perfect for a text editor.
 
 Like many other powerful APIs, calling `chooseFileSystemEntries()` must be
 done in a [secure context][secure-contexts], and must be called from within
@@ -166,10 +136,10 @@ butOpenFile.addEventListener('click', async (e) => {
 
 ### Write the file to the local file system {: #write-file }
 
-In the text editor, there are two ways to save a file: Save, and Save As.
-Save simply writes the changes back to the original file using the file
-handle we got earlier. But Save As creates a new file, and thus requires a
-new file handle.
+In the text editor, there are two ways to save a file: **Save**, and **Save As**. **Save**
+simply writes the changes back to the original file using the file handle
+retrieved earlier. But **Save As** creates a new file, and thus requires a new file
+handle.
 
 #### Create a new file
 
@@ -212,7 +182,7 @@ async function writeFile(fileHandle, contents) {
 }
 ```
 
-Writing data to disk uses a [`FileSystemWritableFileStream`][fs-writablestream],
+Writing data to disk uses a [`FileSystemWritableFileStream`][fs-writablestream] object,
 essentially a [`WritableStream`][writable-stream]. Create the stream by calling
 `createWritable()` on the file handle object. When `createWritable()` is
 called, Chrome first checks if the user has granted write permission to the
@@ -222,7 +192,7 @@ will throw a `DOMException`, and the app will not be able to write to the
 file. In the text editor, these `DOMException`s are handled in the
 [`saveFile()`][text-editor-app-js] method.
 
-The `write()` method takes a string, which is what we want for a text editor.
+The `write()` method takes a string, which is what's needed for a text editor.
 But it can also take a [BufferSource][buffersource], or a [Blob][blob]. For
 example, you can pipe a stream directly to it:
 
@@ -243,61 +213,19 @@ stream to update the file at a specific position, or resize the file.
 
 {% Aside 'caution' %}
 Changes are **not** written to disk until the stream is closed, either by
-calling `close()` or if the stream is automatically closed by the pipe.
+calling `close()` or when the stream is automatically closed by the pipe.
 {% endAside %}
-
-{% Details %}
-{% DetailsSummary 'h5' %}
-
-Saving changes to disk in Chrome 82 and earlier
-
-Support for writable streams was added in Chrome 83, and the previous
-method for writing to disk was removed. It is temporarily documented
-below until Chrome 83 is available in stable.
-
-{% endDetailsSummary %}
-
-Support for writable streams was added in Chrome 83, and the previous
-method for writing to disk was removed. It is temporarily documented
-below until Chrome 83 is available in stable.
-
-```js
-async function writeFile(fileHandle, contents) {
-  // Create a writer (request permission if necessary).
-  const writer = await fileHandle.createWriter();
-  // Write the full length of the contents
-  await writer.write(0, contents);
-  // Close the file and write the contents to disk
-  await writer.close();
-}
-```
-
-To write data to disk, I needed a [`FileSystemWriter`][fs-writer]. Create one by
-calling `createWriter()` on the file handle object. When `createWriter()` is
-called, Chrome first checks if the user has granted write permission to the file.
-If permission to write hasn't been granted, the browser will prompt the user for
-permission. If permission isn't granted, `createWriter()` will throw a
-`DOMException`, and the app will not be able to write to the file. In the text
-editor, these `DOMException`s are handled in the [`saveFile()`][text-editor-app-js]
-method.
-
-Call `FileSystemWriter.write()` to write your contents.  The `write()` method
-takes a string, which is what we want for a text editor. But it can also take a
-[BufferSource][buffersource], or a [Blob][blob]. Finally, finish writing by
-calling `FileSystemWriter.close()`.
-
-{% endDetails %}
 
 ### Storing file handles in IndexedDB
 
-Starting in Chrome 83, file handles are serializable, which means that you
-can save a file handle to IndexedDB, or `postMessage` them between the same
-top-level origin.
+File handles are serializable, which means that you can save a file handle to
+IndexedDB, or call `postMessage()` to send them between the same top-level
+origin.
 
 Saving file handles to IndexedDB means that you can store state, or remember
 which files a user was working on. This makes it possible to keep a list of
 recently opened or edited files, offer to re-open the last file when the app
-is opened, et cetera. In the text editor, I store a list of the 5 most recent
+is opened, etc. In the text editor, I store a list of the five most recent
 files the user has opened, making it easy to access those files again.
 
 Since permissions are not persisted between sessions, you should verify
@@ -306,7 +234,7 @@ whether the user has granted permission to the file using
 request permission.
 
 In the text editor, I created a `verifyPermission()` method that checks
-if the user has already granted permission, and if required makes the request.
+if the user has already granted permission, and if required, makes the request.
 
 ```js/6,10
 async function verifyPermission(fileHandle, withWrite) {
@@ -314,15 +242,15 @@ async function verifyPermission(fileHandle, withWrite) {
   if (withWrite) {
     opts.writable = true;
   }
-  // Check if we already have permission, if so, return true.
+  // Check if permission was already granted. If so, return true.
   if (await fileHandle.queryPermission(opts) === 'granted') {
     return true;
   }
-  // Request permission, if the user grants permission, return true.
+  // Request permission. If the user grants permission, return true.
   if (await fileHandle.requestPermission(opts) === 'granted') {
     return true;
   }
-  // The user didn't grant permission, return false.
+  // The user didn't grant permission, so return false.
   return false;
 }
 ```
@@ -350,38 +278,6 @@ butDir.addEventListener('click', async (e) => {
   }
 });
 ```
-
-## What's new/changed? {: #whats-new }
-
-Chrome 83
-
-* Adds support for [writable streams](#save-to-disk), and removes the previous
-  method for writing to disk (`FileSystemWriter`).
-* Allows serializing and storing file handles in IndexedDB, or sending via
-  `postMessage()` to other windows or workers within the same origin. Note that
-  permissions are not retained between browser sessions. For example, when a
-  browser tab is re-opened, and a file handle is obtained from IndexedDB, the
-  user will need to grant permission to read and write to the file again.
-* Adds support for [`isSameEntry()`][spec-issameentry], which returns `true`
-  if two entries represent the same file or directory.
-* Updates usage indicators to indicate whether the user has granted the domain
-  permission to files, including a new read-only indicator.
-* Adds support for [`resolve()`][spec-resolve], which will return the
-  relative path from one entry to another. This is especially helpful for multi-file
-  editors where you might want to highlight the parent directory of the file
-  being edited.
-* When permission to read or write to a file is granted, the permission is
-  shared among all same-origin tabs, aligning with other web platform APIs.
-* Changes the `type` passed to `chooseFileSystemEntries` to be dash-separated as
-  opposed to camelCase.
-
-{% Aside 'note' %}
-  Since the API is not compatible with all browsers yet,
-  we provide a library called
-  [browser-nativefs](https://github.com/GoogleChromeLabs/browser-nativefs)
-  that uses the new API wherever it is available, but falls back to legacy
-  approaches when it is not.
-{% endAside %}
 
 ## Security and permissions {: #security-considerations }
 
@@ -432,7 +328,7 @@ to write to the file.
 #### Restricted folders
 
 To help protect users and their data, the browser may limit the user's
-ability to  save to certain folders, for example, core operating system
+ability to save to certain folders, for example, core operating system
 folders like Windows, the macOS Library folders, etc. When this happens,
 the browser will show a modal prompt and ask the user to choose a
 different folder.
