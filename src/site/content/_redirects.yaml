@@ -224,4 +224,4 @@ redirects:
 # Redirects for performance content
 
 - from: /native-lazy-loading
-  to: /image-lazy-loading
+  to: /browser-level-image-lazy-loading
