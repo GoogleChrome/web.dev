@@ -10,7 +10,7 @@ web_lighthouse:
 ---
 
 The Opportunities section of your Lighthouse report lists
-all unoptimized images, with potential savings in [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte).
+all unoptimized images, with potential savings in [kilobytes (KB)](https://en.wikipedia.org/wiki/Kibibyte).
 Optimize these images so that the page loads faster and consumes less data:
 
 <figure class="w-figure">

@@ -12,7 +12,7 @@ web_lighthouse:
 Minifying JavaScript files can reduce payload sizes and script parse time.
 The Opportunities section of your Lighthouse report lists
 all unminified JavaScript files,
-along with the potential savings in [kibibytes (KiB)](https://en.wikipedia.org/wiki/Kibibyte)
+along with the potential savings in [kilobytes (KB)](https://en.wikipedia.org/wiki/Kibibyte)
 when these files are minified:
 
 <figure class="w-figure">
