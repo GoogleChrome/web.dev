@@ -121,12 +121,12 @@ You can't rely on stored state in a service worker. Also, creating instances of 
 This snag is especially important to keep in mind while working on your service worker code because when Chrome DevTools is open, the start/stop behavior is disabled. You may not even see bugs caused by relying on global state until they've shipped to your users.
 {% endAside %}
 
-In [Service Workies chapter 3](https://gedd.ski/post/service-workies-chapter3/) we visualize our stopped service worker as losing all color while it hangs out waiting to be woken up.
+In [Service Workies chapter 3](https://gedd.ski/post/service-workies-chapter3/) we visualize our stopped service worker as losing all color while it waits to be woken up.
 
 ![visualization of a stopped service worker](./kolohe-stopped.jpg)
 
 {% Aside 'note' %}
-Think of your service worker as a [whippet](https://www.akc.org/dog-breeds/whippet/) dog. It's fast, loyal and awesome. It'll stick around by your side no matter what. But mostly it just wants to sleep. All the time. You've got to let him know when you want him to stay awake. Good dog!
+Think of your service worker as a [whippet](https://www.akc.org/dog-breeds/whippet/) dog. It's fast, loyal and awesome. It'll stick around by your side no matter what. But mostly it just wants to sleep. All the time. You've got to let it know when you want it to stay awake. Good dog!
 {% endAside %}
 
 ## Together, but separate
@@ -167,7 +167,7 @@ When you deploy a new service worker, you'll bump the `version` so that it does 
 
 Once your service worker reaches the `activated` state, you know it has taken over, and the previous service worker is redundant (i.e., no longer needed). At this point it's important to clean up after the old service worker. Not only does it respect your users' cache storage limits, but it can also prevent unintentional bugs.
 
-The [`caches.match()`](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/match) method is an often-used shortcut for retrieving an item from _any_ cache where there's a match. But it iterates through the caches in the order they were created. So let's say you've got two versions of a script file `app.js` hanging out in two different caches—`assets-1` and `assets-2`. Your page is expecting the newer script that's stored in `assets-2`. But if you haven't deleted the old cache, `caches.match('app.js')` is going to return the old one from `assets-1` and most likely break your site.
+The [`caches.match()`](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/match) method is an often-used shortcut for retrieving an item from _any_ cache where there's a match. But it iterates through the caches in the order they were created. So let's say you've got two versions of a script file `app.js` in two different caches—`assets-1` and `assets-2`. Your page is expecting the newer script that's stored in `assets-2`. But if you haven't deleted the old cache, `caches.match('app.js')` is going to return the old one from `assets-1` and most likely break your site.
 
 All it takes to clean up after previous service workers is to delete any cache that the new service worker doesn't need:
 
