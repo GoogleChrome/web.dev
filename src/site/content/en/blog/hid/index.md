@@ -4,7 +4,7 @@ subhead: |
   The WebHID API allows websites to access alternative auxiliary keyboards and exotic gamepads.
 authors:
   - beaufortfrancois
-date: 2020-09-14
+date: 2020-09-15
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: |
@@ -65,9 +65,9 @@ of specific devices.
 ## Terminology {: #terminology }
 
 HID consists of two fundamental concepts: reports and report descriptors.
-Reports are the actual data that is exchanged between a device and a software
-client. The report descriptor describes the format and meaning of data that the
-device supports.
+Reports are the data that is exchanged between a device and a software client.
+The report descriptor describes the format and meaning of data that the device
+supports.
 
 A HID (Human Interface Device) is a type of device that takes input from or
 provides output to humans. It also refers to the HID protocol, a standard for
@@ -76,8 +76,7 @@ simplify the installation procedure. The HID protocol was originally developed
 for USB devices, but has since been implemented over many other protocols,
 including Bluetooth.
 
-Applications and HID devices exchange binary data through reports. There are
-three report types:
+Applications and HID devices exchange binary data through three report types:
 
 <div class="w-table-wrapper">
   <table>
@@ -94,11 +93,11 @@ three report types:
       </tr>
       <tr>
         <td>Output&nbsp;report</td>
-        <td>Data that is sent from the application to the device (e.g. request to turn on the keyboard backlight.)</td>
+        <td>Data that is sent from the application to the device (e.g. a request to turn on the keyboard backlight.)</td>
       </tr>
       <tr>
         <td>Feature&nbsp;report</td>
-        <td>Data that may be sent in either direction. Format is device-specific.</td>
+        <td>Data that may be sent in either direction. The format is device-specific.</td>
       </tr>
     </tbody>
   </table>
@@ -148,7 +147,7 @@ if ("hid" in navigator) {
 
 ### Open a HID connection {: #open }
 
-The WebHIDl API is asynchronous by design to prevent the website UI from
+The WebHID API is asynchronous by design to prevent the website UI from
 blocking when awaiting input. This is important because HID data can be received
 at any time, requiring a way to listen to it.
 
@@ -190,14 +189,14 @@ const devices = await navigator.hid.getDevices();
 ```
 
 <figure class="w-figure">
-  <img src="./webhid-prompt.jpg" class="w-screenshot" alt="Screenshot of a HID device prompt on a website">
-  <figcaption class="w-figcaption">User prompt for selecting a Nintendo Switch Joy-Con
+  <img src="./webhid-prompt.jpg" class="w-screenshot" alt="Screenshot of a HID device prompt on a website.">
+  <figcaption class="w-figcaption">User prompt for selecting a Nintendo Switch Joy-Con.
 </figcaption>
 </figure>
 
-A `HIDDevice` object contains USB vendor and product identifiers values for
-device identification. Its `collections` attribute is initialized with a
-hierarchical description of the device's report formats.
+A `HIDDevice` object contains USB vendor and product identifiers for device
+identification. Its `collections` attribute is initialized with a hierarchical
+description of the device's report formats.
 
 ```js
 for (let collection of device.collections) {
@@ -356,11 +355,11 @@ and `"disconnect"` events.
 
 ```js
 navigator.hid.addEventListener("connect", event => {
-  // TODO: Automatically open event.device or warn user a device is available.
+  // Automatically open event.device or warn user a device is available.
 });
 
 navigator.hid.addEventListener("disconnect", event => {
-  // TODO: Remove |event.device| from the UI.
+  // Remove |event.device| from the UI.
 });
 ```
 
