@@ -16,6 +16,8 @@ tags:
   - blog
   - media
   - capabilities
+feedback:
+  - api
 ---
 There's a new Web API on the block, defined in the
 [`HTMLVideoElement.requestVideoFrameCallback()`](https://wicg.github.io/video-rvfc/)

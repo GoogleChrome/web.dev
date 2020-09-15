@@ -11,6 +11,8 @@ description: |
 tags:
   - blog
   - payments
+feedback:
+  - api
 ---
 
 [Web Payments](/empowering-payment-apps-with-web-payments/#what-is-web-payments)

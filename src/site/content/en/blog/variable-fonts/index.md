@@ -13,6 +13,8 @@ hero: hero.jpg
 tags:
   - blog
   - fonts
+feedback:
+  - api
 ---
 
 Variable fonts can significantly reduce the size of your font files and make

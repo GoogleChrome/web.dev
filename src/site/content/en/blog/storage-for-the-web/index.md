@@ -14,6 +14,8 @@ tags:
   - cachestorage
 hero: hero.jpg
 alt: Stack of shipping containers
+feedback:
+  - api
 ---
 
 Internet connections can be flakey or non-existent on the go, which is why

@@ -13,6 +13,8 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
   - progressive-web-apps
+feedback:
+  - api
 ---
 
 To improve users' productivity and facilitate re-engagement with key tasks, the

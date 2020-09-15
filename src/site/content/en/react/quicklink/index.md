@@ -13,6 +13,8 @@ authors:
   - antonkarlovskiy
 codelabs:
   - codelab-quicklink
+feedback:
+  - api
 ---
 
 [Prefetching](https://web.dev/link-prefetch/) is a technique to speed up navigations by downloading the resources for the next page, ahead of time. [Quicklink](https://github.com/GoogleChromeLabs/quicklink) is a library that allows you to implement this technique at scale, by automatically prefetching links as they come into the view.

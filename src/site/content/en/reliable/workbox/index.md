@@ -8,6 +8,8 @@ description: |
   Workbox is a high-level service worker toolkit built on top of the Service
   Worker and Cache Storage APIs. It provides a production-ready set of libraries
   for adding offline support to web apps.
+feedback:
+  - api
 ---
 
 Two APIs play a crucial role in building reliable web apps:

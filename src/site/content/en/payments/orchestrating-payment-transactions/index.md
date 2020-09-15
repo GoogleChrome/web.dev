@@ -11,6 +11,8 @@ description: |
 tags:
   - payments
   - service-worker
+feedback:
+  - api
 ---
 
 Once [the payment app is registered](/registering-a-web-based-payment-app/), you

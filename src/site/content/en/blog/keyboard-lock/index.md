@@ -12,6 +12,8 @@ description: >
 date: 2020-07-28
 # updated:
 hero: hero.jpg
+feedback:
+  - api
 ---
 With more and more users spending most of their time in the browser, richly interactive websites, games, remote desktop streaming, and application streaming strive to provide an immersive, full screen experience. To accomplish this, sites need access to special keys and keyboard shortcuts while they are in full screen mode, so that they can be used for navigation, menus, or gaming functionality. Some examples of the keys that may be required are <kbd>Esc</kbd>, <kbd>Alt</kbd>&nbsp;+&nbsp;<kbd>Tab</kbd>, <kbd>Cmd</kbd>&nbsp;+&nbsp;<kbd>`</kbd>, and <kbd>Ctrl</kbd>&nbsp;+&nbsp;<kbd>N</kbd>.
 

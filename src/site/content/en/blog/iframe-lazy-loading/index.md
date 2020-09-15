@@ -14,6 +14,8 @@ description: |
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - performance
+feedback:
+  - api
 ---
 
 [Native lazy-loading for images](/native-lazy-loading) landed in Chrome 76 via

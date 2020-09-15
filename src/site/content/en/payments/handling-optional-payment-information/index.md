@@ -11,6 +11,8 @@ description: |
 tags:
   - payments
   - service-worker
+feedback:
+  - api
 ---
 
 Once [a web-based payment app receives a payment request and initiates a payment

@@ -11,6 +11,8 @@ description: |
 tags:
   - performance
   - images
+feedback:
+  - api
 ---
 
 Images can appear on a webpage due to being inline in the HTML as `<img>` elements
