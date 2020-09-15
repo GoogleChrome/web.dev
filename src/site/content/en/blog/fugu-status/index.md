@@ -175,7 +175,7 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
           or too uncommon to be accessible by systems' device drivers. The
           WebHID API solves this by providing a way to implement
           device-specific logic in JavaScript.<br>
-          <em>Updated September 14, 2020</em>
+          <em>Updated September 15, 2020</em>
         </td>
       </tr>
     </tbody>

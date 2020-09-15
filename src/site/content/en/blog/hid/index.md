@@ -19,10 +19,9 @@ tags:
 ---
 
 {% Aside %}
-Web apps should be able to do anything native apps can. The [Capabilities
-project](/fugu-status/), of which the WebHID API is only a part, aims to do just
-that. To learn about other capabilities and to keep up with their progress,
-follow [Unlocking new capabilities for the web](/fugu-status/).
+The WebHID API is part of the [Capabilities project](/fugu-status/) and is
+currently in development. This post will be updated as the implementation
+progresses.
 {% endAside %}
 
 There is a long tail of human interface devices (HIDs), such as alternative
@@ -444,8 +443,7 @@ Hero image by [Valentin Müller], red and blue nintendo switch photo by [Sara
 Kurfeß], and black and silver laptop computer photo by [Athul Cyriac Ajay] on Unsplash.
 
 <!-- lint disable definition-case -->
-[Capabilities project]: https://developers.google.com/web/updates/capabilities
-[Unlocking new capabilities for the web]: /fugu-status/
+[Capabilities project]: /fugu-status/
 [HID protocol]: https://www.usb.org/hid
 [Elgato Stream Deck]: https://www.elgato.com/en/gaming/stream-deck
 [Jabra headsets]: https://www.jabra.com/business/office-headsets
