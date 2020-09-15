@@ -11,7 +11,7 @@ web_lighthouse:
 
 The Opportunities section of your Lighthouse report lists
 all unminified CSS files,
-along with the potential savings in [kilobytes (KB)](https://en.wikipedia.org/wiki/Kibibyte)
+along with the potential savings in [kilobytes (KB)]
 when these files are minified:
 
 <figure class="w-figure">

@@ -11,7 +11,7 @@ web_lighthouse:
 
 The Opportunities section of your Lighthouse report lists
 all offscreen or hidden images in your page
-along with the potential savings in [kilobytes (KB)](https://en.wikipedia.org/wiki/Kibibyte).
+along with the potential savings in [kilobytes (KB)].
 Consider lazy-loading these images
 after all critical resources have finished loading
 to lower [Time to Interactive](/interactive):
