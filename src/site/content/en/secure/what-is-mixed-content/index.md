@@ -1,12 +1,13 @@
 ---
 layout: post
-title: Why is mixed content
+title: What is mixed content
 authors:
-  - kaycebasques
+  - johyphenel
+  - rachelandrew
 date: 2019-09-07
-updated: 2020-09-08
+updated: 2020-09-16
 description: >
-  Mixed occurs when initial HTML is loaded over a secure HTTPS connection,
+  Mixed content occurs when initial HTML is loaded over a secure HTTPS connection,
   but other resources are loaded over an insecure HTTP connection.
 tags:
   - security
@@ -19,8 +20,19 @@ This is called mixed content
 because both HTTP and HTTPS content are being loaded to display the same page,
 and the initial request was secure over HTTPS.
 
-As the web moves to HTTPS by default browsers are blocking more mixed content.
-Therefore it is something that you should address if it is happening on your site.
+Requesting subresources using the insecure HTTP protocol weakens the security of the entire page,
+as these requests are vulnerable to **man-in-the-middle attacks**,
+where an attacker eavesdrops on a network connection and views or modifies the communication between two parties.
+Using these resources, an attacker can often take complete control over the page,
+not just the compromised resource.
+
+Although many browsers report mixed content warnings to the user,
+by the time this happens, it is too late:
+the insecure requests have already been performed and the security of the page is compromised.
+
+This is why mixed content is increasingly being blocked by browsers.
+If you have mixed content on your site,
+then fixing it will ensure it continues to load as browsers become more strict.
 
 ## The two types of mixed content
 
@@ -48,25 +60,35 @@ Even if the attacker doesn't alter the content of your site,
 an attacker can track users using mixed content requests.
 The attacker can tell which pages a user visits and which products they view based on images or other resources that the browser loads.
 
-The following is an example of passive mixed content:
+The following Glitch demo contains examples of passive mixed content.
 
-<pre class="prettyprint">
-{% includecode content_path="web/fundamentals/security/prevent-mixed-content/_code/passive-mixed-content.html" adjust_indentation="auto" %}
-</pre>
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/passive-mixed-content?path=index.html&previewSize=100"
+    title="passive-mixed-content on Glitch"
+    allow="encrypted-media"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
 
-[Try it](https://googlesamples.github.io/web-fundamentals/fundamentals/security/prevent-mixed-content/passive-mixed-content.html){: target="_blank" .external }
+If passive mixed content is present most browsers will indicate that the page is not secure in the URL bar,
+even when the page itself was loaded over HTTPS.
 
-Most browsers still display this type of content to the user.
-Chrome and Firefox both treat the page as unsecure in the URL bar if it is present as a warning to the user.
+Until recently passive mixed content was loaded in all browsers,
+as to block it would have broken many websites.
+This is now beginning to change and so it is vital to update any instances of mixed content on your site.
 
-Starting from Chrome 86 however the browser will attempt to auto-upgrade images which are served over HTTP.
-A common scenario where this auto-upgrading will work is a site that was initially on HTTP
-where images were coded into articles using a full URL including the HTTP.
+Chrome is currently rolling out automatic upgrading of passive mixed content where possible.
+Automatic upgrading means that if the asset is available over HTTPS, but has been hardcoded as HTTP,
+the browser will load the HTTPS version. If no secure version can be found the asset will not load.
 
-The site has been moved to HTTPS, however the images are still being served via HTTP.
-Auto-upgrading will try to request the images via HTTPS,
-if they are found then they will be served.
-If however, these hardcoded paths led to another domain without HTTPS then the images will be blocked.
+When mixed content is detected, or auto-upgrading has occured, this will be noted in DevTools.
+
+<figure class="w-figure">
+  <img class="w-screenshot"
+      src="passive-mixed-content.jpg"
+      alt="DevTools showing the warnings displayed when mixed content is detected and upgraded">
+</figure>
 
 ### Active mixed content
 
@@ -79,191 +101,58 @@ stealing user passwords or other login credentials,
 stealing user session cookies,
 or redirecting the user to a different site entirely.
 
-Due to the severity of this threat, many browsers block this type of content by default to protect users,
+Due to the severity of this threat,
+many browsers already block this type of content by default to protect users,
 but functionality varies between browser vendors and versions.
 
 The following contains examples of active mixed content:
 
-<pre class="prettyprint">
-{% includecode content_path="web/fundamentals/security/prevent-mixed-content/_code/active-mixed-content.html" adjust_indentation="auto" %}
-</pre>
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/active-mixed-content?previewSize=100"
+    title="active-mixed-content on Glitch"
+    allow="encrypted-media"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
 
-[Try it](https://googlesamples.github.io/web-fundamentals/fundamentals/security/prevent-mixed-content/active-mixed-content.html){: target="_blank" .external }
+[Load the example over HTTP](http://active-mixed-content.glitch.me/) and you will see the content that has been blocked.
 
-<figure>
-  <img src="imgs/active-mixed-content-errors.png" alt="Mixed Content: The page was loaded over HTTPS, but requested an insecure resource. This request has been blocked; the content must be served over HTTPS.">
-  <figcaption>Mixed content errors from the Chrome JavaScript console.</figcaption>
+Blocked content will be detailed in the Console in DevTools.
+
+<figure class="w-figure">
+  <img class="w-screenshot"
+      src="active-mixed-content.jpg"
+      alt="DevTools showing the warnings displayed when active mixed content is blocked">
 </figure>
 
+## The mixed content specification
 
-## Resource requests and web browsers
-
-When a browser visits a website page,
-it is requesting an HTML resource.
-The web server then returns the HTML content,
-which the browser parses and displays to users.
-Often a single HTML file isn't enough to display a complete page,
-so the HTML file includes references to other resources that the browser needs to request.
-These subresources can be things like images, videos, extra HTML, CSS, or JavaScript,
-which are each fetched using separate requests.
-
-## Mixed content weakens HTTPS
-
-Requesting subresources using the insecure HTTP protocol weakens the security of the entire page,
-as these requests are vulnerable to **man-in-the-middle attacks**,
-where an attacker eavesdrops on a network connection and views or modifies the communication between two parties.
-Using these resources, an attacker can often take complete control over the page,
-not just the compromised resource.
-
-Although many browsers report mixed content warnings to the user,
-by the time this happens, it is too late:
-the insecure requests have already been performed and the security of the page is compromised.
-
-Mixed content is quite common on the web,
-which is why many browsers haven't just blocked all mixed requests,
-as this would break many sites.
-However, as HTTPS has become [overwhelmingly adopted on the web](https://transparencyreport.google.com/https/overview),
-some browsers have announced that they will begin blocking mixed content ([more below](#blocking-optionally-blockable-content)).
-
-<figure>
-  <img src="imgs/image-gallery-warning.png" alt="Mixed Content: The page was loaded over HTTPS, but requested an insecure image. This content should also be served over HTTPS.">
-  <figcaption>
-    It's up to you, the developer, to fix mixed content issues in your application.
-  </figcaption>
-</figure>
-
-### A simple example
-
-Loading an insecure script from an HTTPS page.
-
-Viewing this sample page over **HTTPS**&mdash;[**https**://googlesamples.github.io/web-fundamentals/.../simple-example.html](https://googlesamples.github.io/web-fundamentals/fundamentals/security/prevent-mixed-content/simple-example.html){: .external}&mdash;includes an **HTTP** script tag which attempts to load mixed content.
-
-<pre class="prettyprint">
-{% includecode content_path="web/fundamentals/security/prevent-mixed-content/_code/simple-example.html" adjust_indentation="auto" %}
-</pre>
-
-[Try it](https://googlesamples.github.io/web-fundamentals/fundamentals/security/prevent-mixed-content/simple-example.html){: target="_blank" .external }
-
-In this example, the script `simple-example.js` is loaded with an **HTTP** URL. This is the simplest case of mixed content. When the browser requests the `simple-example.js` file, an attacker can inject code into the returned content
-and take control of the entire page.
-
-Thankfully, most modern browsers block this type of dangerous content by
-default. See [browser behavior with mixed content](#browser-behavior-with-mixed-content){: .external}.
-
-<figure>
-  <img src="imgs/simple-mixed-content-error.png" alt="Mixed Content: The page was loaded over HTTPS, but requested an insecure script. This request has been blocked; the content must be served over HTTPS.">
-  <figcaption>Chrome blocks the insecure script.</figcaption>
-</figure>
-
-### An `XMLHttpRequest` example
-
-Loading insecure data with `XMLHttpRequest`.
-
-Viewing this sample page over **HTTPS**&mdash;[**https**://googlesamples.github.io/web-fundamentals/.../xmlhttprequest-example.html](https://googlesamples.github.io/web-fundamentals/fundamentals/security/prevent-mixed-content/xmlhttprequest-example.html){: .external}&mdash;includes an `XMLHttpRequest` over **HTTP** to fetch mixed content `JSON` data.
-
-<pre class="prettyprint">
-{% includecode content_path="web/fundamentals/security/prevent-mixed-content/_code/xmlhttprequest-example.html" adjust_indentation="auto" %}
-</pre>
-
-[Try it](https://googlesamples.github.io/web-fundamentals/fundamentals/security/prevent-mixed-content/xmlhttprequest-example.html){: target="_blank" .external }
-
-Here the **HTTP** URL is constructed dynamically in JavaScript, and is eventually
-used  by `XMLHttpRequest` to load an insecure resource. Like the simple example
-above, when the browser requests the `xmlhttprequest-data.js` file, an
-attacker can inject code into the returned content and take control of the
-entire page.
-
-Most modern browsers block these dangerous requests as well.
-
-<figure>
-  <img src="imgs/xmlhttprequest-mixed-content-error.png" alt="Mixed Content: The page was loaded over HTTPS, but requested an insecure XMLHttpRequest endpoint. This request has been blocked; the content must be served over HTTPS.">
-  <figcaption>Chrome blocks the insecure XMLHttpRequest.</figcaption>
-</figure>
-
-### An image gallery example
-
-Loading insecure images with jQuery lightbox.
-
-When viewing this sample page over **HTTPS**&mdash;[**https**://googlesamples.github.io/web-fundamentals/.../image-gallery-example.html](https://googlesamples.github.io/web-fundamentals/fundamentals/security/prevent-mixed-content/image-gallery-example.html){: .external}&mdash;initially it does not have any mixed content problems; however, when the thumbnail image is clicked, a full size mixed content image is loaded over **HTTP**.
-
-<pre class="prettyprint">
-{% includecode content_path="web/fundamentals/security/prevent-mixed-content/_code/image-gallery-example.html" adjust_indentation="auto" %}
-</pre>
-
-[Try it](https://googlesamples.github.io/web-fundamentals/fundamentals/security/prevent-mixed-content/image-gallery-example.html){: target="_blank" .external }
-
-Image galleries often rely on the `<img>` tag `src` attribute to display thumbnail images on the page,
-the anchor (`<a>`) tag `href` attribute is then used to load the full sized image for the gallery overlay.
-Normally `<a>` tags do not cause mixed content,
-but in this case, the jQuery code overrides the default link behavior&mdash;to navigate to a new page&mdash;and instead loads the **HTTP** image on this page.
-
-<figure>
-  <img src="imgs/image-gallery-warning.png" alt="Mixed Content: The page was loaded over HTTPS, but requested an insecure image. This content should also be served over HTTPS.">
-</figure>
-
-Insecure images degrade the security of your site, but they are not as dangerous
-as other types of mixed content. Modern browsers still load mixed content
-images, but display warnings to the user as well.
-
-
-## Browser behavior with mixed content
-
-Due to the threats described above, it would be ideal for browsers to block all mixed content.
-Historically, this would have broken a large number of websites that millions of users rely on every day,
-and so browsers have generally compromised by blocking the most dangerous types of mixed content
-and allowing the less dangerous types to still be requested.
-
-Modern browsers follow the [mixed content specification](https://w3c.github.io/webappsec/specs/mixedcontent/),
-which defines the [**optionally blockable content**](https://w3c.github.io/webappsec/specs/mixedcontent/#category-optionally-blockable)
-and [**blockable content**](https://w3c.github.io/webappsec/specs/mixedcontent/#category-blockable) categories.
+Browsers follow the [mixed content specification](https://w3c.github.io/webappsec-mixed-content/),
+which defines the [**optionally blockable content**](https://w3c.github.io/webappsec-mixed-content/#optionally-blockable-mixed-content)
+and [**blockable content**](https://w3c.github.io/webappsec-mixed-content/#category-blockable) categories.
 
 From the spec,
 a resource qualifies as optionally blockable content
 "when the risk of allowing its usage as mixed content is outweighed by the risk of breaking significant portions of the web";
-this is a subset of the [passive mixed content](#passive-mixed-content) category described above.
-
-At the time of this writing, images, video, and audio resources,
-as well as prefetched links, are the only resource types defined in the spec as optionally blockable content.
-This category is likely to get smaller as time goes on.
+this is a subset of the passive mixed content category described above.
 
 All content that is not **optionally blockable** is considered **blockable**,
-and is blocked by the browser.
+and should be blocked by the browser.
 
-### Blocking optionally blockable content
-
-In recent years, [HTTPS usage has risen dramatically](https://transparencyreport.google.com/https/overview), and has become the clear default on the web.
+In recent years, [HTTPS usage has risen dramatically](https://transparencyreport.google.com/https/overview),
+and has become the clear default on the web.
 This makes it more feasible now for browsers to consider blocking all mixed content,
 even those subresource types defined in the [mixed content specification](https://w3c.github.io/webappsec/specs/mixedcontent/) as **optionally blockable**.
+This is why we now see Chrome taking a stricter approach to these subresources.
 
-At the time of writing,
-at least one major browser (Chrome) has announced a
-[timetable for blocking passive mixed content](https://security.googleblog.com/2019/10/no-more-mixed-messages-about-https_3.html),
-which also involves attempting to "upgrade" the connection to mixed resources from HTTP to HTTPS before applying the block.
-Under this plan, images, audio, and video which are embedded using an `http://` URL,
-but which **are** accessible over `https://` as well,
-should continue to function as the browser securely fetches them over HTTPS.
-Images, audio, and video which **are not** available over `https://` will not be loaded by the browser,
-in order to protect users.
-
-Other browsers may adopt different strategies.
-However, as the use of HTTPS continues to grow,
-developers should expect that passive mixed content may stop functioning in modern browsers over time.
-
-### Browser versions
+### Older browsers
 
 It is important to remember that not every visitor to your website uses the most up-to-date browsers.
 Different versions from different browser vendors each behave differently with mixed content.
 At worst, some browsers and versions don't block any mixed content at all,
 which is very unsafe for the user.
 
-The exact behavior of each browser is constantly changing,
-so we won't include specifics here.
-If you're interested in how a specific browser behaves,
-look for information published by the vendors directly.
-
-Note: Your users are counting on you to protect them when they visit your website.
-It is important to fix your mixed content issues to protect <b>all</b> your visitors,
-including those on older browsers.
-
-- https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content
-- https://www.chromestatus.com/feature/4926989725073408
+By fixing your mixed content problems you ensure that your content is visible in new browsers.
+You also help protext users who are on older browsers,
+from dangerous content their browser does not protect them from.
