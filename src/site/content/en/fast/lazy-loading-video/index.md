@@ -10,6 +10,8 @@ description: |
   This post explains lazy-loading and the options available to you when lazy-loading video.
 tags:
   - performance
+feedback:
+  - api
 ---
 
 As with [image elements](/lazy-loading-images), you can also lazy-load video. Videos are commonly loaded with the `<video>` element (although [an

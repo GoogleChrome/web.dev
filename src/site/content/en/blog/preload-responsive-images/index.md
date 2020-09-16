@@ -13,6 +13,8 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - performance
   - images
+feedback:
+  - api
 ---
 
 This article gives me an opportunity to discuss two of my favorite things: responsive images *and* preload. As someone who was heavily involved in developing both of those features, I'm super excited to see them working together!

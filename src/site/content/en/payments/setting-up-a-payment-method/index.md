@@ -15,6 +15,8 @@ date: 2020-05-25
 updated: 2020-07-17
 tags:
   - payments
+feedback:
+  - api
 ---
 
 To be used with the Payment Request API, a payment app must be associated with a

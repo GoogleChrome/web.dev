@@ -13,6 +13,8 @@ authors:
 tags:
   - angular
   - performance
+feedback:
+  - api
 ---
 
 Optimizing an Angular application is important, but how do you make sure its performance doesn't regress over time? By introducing performance metrics and monitoring them on each code change!

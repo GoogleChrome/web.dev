@@ -17,6 +17,8 @@ tags:
   - fonts
   - performance
   - ux
+feedback:
+  - api
 ---
 
 In this article, we will look at what variable fonts are, the benefits they

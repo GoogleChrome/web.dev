@@ -14,6 +14,8 @@ codelabs:
   - codelab-replace-gifs-with-video
 tags:
   - performance
+feedback:
+  - api
 ---
 
 Have you ever seen an animated GIF on a service like Imgur or Gfycat, inspected

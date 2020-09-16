@@ -12,6 +12,8 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - performance
   - lighthouse
+feedback:
+  - api
 ---
 
 [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci) is a suite of

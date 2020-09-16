@@ -21,6 +21,8 @@ tags:
   - augmented-reality
   - virtual-reality
   - webxr
+feedback:
+  - api
 ---
 
 3D models are more relevant than ever. Retailers bring in-store shopping

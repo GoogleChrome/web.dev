@@ -11,6 +11,8 @@ tags:
   - blog
   - speed
   - caching
+feedback:
+  - api
 ---
 
 ## What shipped?

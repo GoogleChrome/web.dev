@@ -17,6 +17,8 @@ tags:
   - augmented-reality
   - virtual-reality
   - webxr
+feedback:
+  - api
 ---
 
 The WebXR Device API shipped last fall in Chrome 79. As stated then, Chrome's

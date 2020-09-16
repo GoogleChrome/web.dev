@@ -17,6 +17,8 @@ hero: hero.jpg #https://images.unsplash.com/photo-1544239265-ee5eedde5469?ixlib=
 alt: Abandoned computer on a bed with someone's leg next to it.
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/551690954352885761
+feedback:
+  - api
 ---
 {% Aside %}
 The Idle Detection API is part of the

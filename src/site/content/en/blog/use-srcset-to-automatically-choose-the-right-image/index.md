@@ -18,6 +18,8 @@ codelabs:
   - codelab-art-direction
   - codelab-density-descriptors
   - codelab-specifying-multiple-slot-widths
+feedback:
+  - api
 ---
 
 {% YouTube 'SyVKRnusyqM' %}

@@ -17,6 +17,8 @@ tags:
   - blog
   - memory
   - javascript
+feedback:
+  - api
 ---
 
 Browsers manage the memory of web pages automatically. Whenever a web page

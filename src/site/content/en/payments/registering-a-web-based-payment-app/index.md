@@ -11,6 +11,8 @@ description: |
   Learn how to register a web-based payment app to a customers' browser. You'll also learn how to debug them.
 tags:
   - payments
+feedback:
+  - api
 ---
 
 Web-based payment apps are [Progressive Web Apps
