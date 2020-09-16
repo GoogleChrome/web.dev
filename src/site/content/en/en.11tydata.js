@@ -1,6 +1,7 @@
 const livePaths = require('../../_filters/live-paths');
 const allPaths = require('../../_data/paths');
 const lang = require('./lang');
+const outputPermalink = require('../../../build/output-permalink');
 
 // =============================================================================
 // HOME OVERVIEW
@@ -27,16 +28,7 @@ module.exports = function () {
       paths,
     },
     eleventyComputed: {
-      permalink: (data) => {
-        if (data.permalink) {
-          return data.permalink.replace(/^\/{{lang}}/, '/');
-        }
-
-        return data.page.inputPath
-          .replace(/^.\/src\/site\/content/, '')
-          .replace(/index.(md|njk)$/, '')
-          .replace(/^\/en\//, '/');
-      },
+      permalink: (data) => outputPermalink(data),
     },
   };
 };
