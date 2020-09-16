@@ -1,0 +1,40 @@
+{
+    "slug": "learn-web-vitals",
+    "cover": "/images/collections/web-vitals.svg",
+    "title": "Web Vitals",
+    "description": "Key signals of quality user experiences.",
+    "overview": "Web Vitals define the performance metrics and measurements that indicate a delightful user experience.",
+    "topics": [
+        {
+            "title": "Overview",
+            "pathItems": [
+                "vitals"
+            ]
+        },
+        {
+            "title": "Web Vitals Metrics",
+            "pathItems": [
+                "lcp",
+                "fid",
+                "cls",
+                "defining-core-web-vitals-thresholds"
+            ]
+        },
+        {
+            "title": "Measuring Web Vitals",
+            "pathItems": [
+                "vitals-measurement-getting-started",
+                "vitals-tools",
+                "vitals-field-measurement-best-practices"
+            ]
+        },
+        {
+            "title": "Improving Web Vitals",
+            "pathItems": [
+                "optimize-lcp",
+                "optimize-fid",
+                "optimize-cls"
+            ]
+        }
+    ]
+}
