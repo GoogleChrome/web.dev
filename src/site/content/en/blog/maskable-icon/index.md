@@ -115,7 +115,7 @@ have a white background. You can also specify multiple space-separated purposes 
 {% Aside %}
   While you _can_ specify multiple space-separated purposes like `"any maskable"`, in
   practice you _shouldn't_, since using `"maskable"` icons as `"any"` icons is suboptimal as the icon
-  is going to be used as-is resulting in excess padding, making the core icon content smaller.
+  is going to be used as-is, resulting in excess padding and making the core icon content smaller.
   Ideally, icons for the `"any"` purpose should have the extra padding from the maskable icon removed
   since the browser isn't going to do that for them.
 {% endAside %}
