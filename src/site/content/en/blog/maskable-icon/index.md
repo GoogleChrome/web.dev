@@ -136,9 +136,10 @@ have a white background. You can also specify multiple space-separated purposes 
       "sizes": "196x196",
       "type": "image/png",
       "purpose": "maskable" // <-- New property value `"maskable"`
-    }
+    },
     …
-  ]
+  ],
+  …
 }
 ```
 
