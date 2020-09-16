@@ -224,5 +224,9 @@
   "webxr": {
     "title": "WebXR",
     "description": "Our latest news, updates, and stories about WebXR."
+  },
+  "scale-on-web": {
+    "title": "Scale on Web",
+    "description": "Scale on Web is a collection of partner success stories as they build amazing web experiences and delight customers to scale their business."
   }
 }
