@@ -12,7 +12,7 @@ i18n:
   subheadline: |
     Get the web's modern capabilities on your own sites and apps with useful
     guidance and analysis from web.dev.
-  test_cta: Test my site
+  test_cta: Przetestuj moją stronę
   explore_cta: Explore topics
   webdev_live_html: |
     web.dev LIVE is now over! Head to <a href="/live/">web.dev/live</a> to watch
