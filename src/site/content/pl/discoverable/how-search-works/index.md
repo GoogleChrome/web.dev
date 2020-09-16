@@ -10,7 +10,7 @@ web_lighthouse: Nie dotyczy
 
 ## Co robi wyszukiwarka?
 
-Search engines are the digital version of a librarian. They use a comprehensive index to help find the right information for a query. Understanding the basics of search prepares you to make your content **discoverable** for users.
+To jest edycja manualna Wyszukiwarki to cyfrowa wersja bibliotekarza. Korzystają z obszernego indeksu, aby znaleźć odpowiednie informacje do zapytania. Zrozumienie podstaw wyszukiwania przygotuje Cię do **znalezienia** treści dla użytkowników.
 
 ## Jak roboty przeglądają internet
 
