@@ -1,13 +1,11 @@
 ---
-layout: page
+layout: post
 title: Web Vitals
-subhead: Essential metrics for a healthy site
 description: Essential metrics for a healthy site
 authors:
   - philipwalton
 date: 2020-04-30
 updated: 2020-07-21
-masthead: web-vitals.svg
 tags:
   - metrics
   - performance
