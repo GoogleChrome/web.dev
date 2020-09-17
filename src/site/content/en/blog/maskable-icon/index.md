@@ -146,3 +146,7 @@ have a white background. You can also specify multiple space-separated purposes 
 
 With this, you can go forth and create your own maskable icons, making sure you app looks great
 edge-to-edge (and for what it's worth, circle-to-circle, oval-to-oval 😄).
+
+## Acknowledgements
+
+This article was reviewed by [Joe Medley](https://github.com/jpmedley).
