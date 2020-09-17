@@ -117,8 +117,8 @@ have a white background. You can also specify multiple space-separated purposes 
   While you _can_ specify multiple space-separated purposes like `"any maskable"`, in
   practice you _shouldn't_. Using `"maskable"` icons as `"any"` icons is suboptimal as the icon
   is going to be used as-is, resulting in excess padding and making the core icon content smaller.
-  Ideally, icons for the `"any"` purpose should have transparent regions and no extra padding, like your site's favicons. 
-  since the browser isn't going to do that for them.
+  Ideally, icons for the `"any"` purpose should have transparent regions and no extra padding, like your site's favicons,
+  since the browser isn't going to add that for them.
 {% endAside %}
 
 ```json
