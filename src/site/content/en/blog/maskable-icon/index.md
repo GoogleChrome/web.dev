@@ -50,7 +50,7 @@ can adopt it in your apps.
 
 Since maskable icons need to support a variety of shapes, you supply an opaque image with some
 padding that the browser can later crop into the desired shape and size. It's best not to rely on
-any particular shape, since it can vary by browser and per platform.
+any particular shape, since the ultimately chosen shape can vary by browser and per platform.
 
 <figure class="w-figure w-figure--inline-right">
   <video class="w-screenshot" autoplay loop muted playsinline aria-label="Different masks applied to a maskable icon">
@@ -80,13 +80,14 @@ safe area, you're good to go.
   </figcaption>
 </figure>
 
-If you want to preview your maskable icon in other shapes it may appear in on Android, I've created
-a tool called [Maskable.app](https://maskable.app/). Open an icon, then Maskable.app will let you
+To test your maskable icon with the variety of Android shapes, use the
+[Maskable.app](https://maskable.app/) tool I've created.
+Open an icon, then Maskable.app will let you
 try out various shapes and sizes, and you can share the preview with others on your team.
 
 ## How do I adopt maskable icons?
 
-If you want to create a maskable icon based off your existing icon, you can use the
+If you want to create a maskable icon based on your existing icon, you can use the
 [Maskable.app Editor](https://maskable.app/editor). Upload your icon, adjust the color and size,
 then export the image.
 
@@ -114,9 +115,9 @@ have a white background. You can also specify multiple space-separated purposes 
 
 {% Aside %}
   While you _can_ specify multiple space-separated purposes like `"any maskable"`, in
-  practice you _shouldn't_, since using `"maskable"` icons as `"any"` icons is suboptimal as the icon
+  practice you _shouldn't_. Using `"maskable"` icons as `"any"` icons is suboptimal as the icon
   is going to be used as-is, resulting in excess padding and making the core icon content smaller.
-  Ideally, icons for the `"any"` purpose should have the extra padding from the maskable icon removed
+  Ideally, icons for the `"any"` purpose should have transparent regions and no extra padding, like your site's favicons. 
   since the browser isn't going to do that for them.
 {% endAside %}
 
