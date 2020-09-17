@@ -5,10 +5,10 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2020-09-15
+updated: 2020-09-17
 hero: hero.jpg
 thumbnail: thumbnail.jpg
-alt: |
-  White buttons photo.
+alt: Elgato Stream Deck photo.
 description: |
   The WebHID API allows websites to access alternative auxiliary keyboards and exotic gamepads.
 origin_trial:
@@ -441,8 +441,8 @@ where and how you're using it.
 ## Acknowledgements
 
 Thanks to [Matt Reynolds] and [Joe Medley] for their reviews of this article.
-Hero image by [Valentin Müller], red and blue nintendo switch photo by [Sara
-Kurfeß], and black and silver laptop computer photo by [Athul Cyriac Ajay] on Unsplash.
+Red and blue nintendo switch photo by [Sara Kurfeß], and black and silver laptop
+computer photo by [Athul Cyriac Ajay] on Unsplash.
 
 <!-- lint disable definition-case -->
 [Capabilities project]: /fugu-status/
@@ -470,7 +470,6 @@ Kurfeß], and black and silver laptop computer photo by [Athul Cyriac Ajay] on U
 [cr-status]: https://chromestatus.com/feature/5172464636133376
 [Matt Reynolds]: https://github.com/nondebug
 [Joe Medley]: https://github.com/jpmedley
-[Valentin Müller]: https://unsplash.com/photos/kV0QU_Y7AZg
 [Sara Kurfeß]: https://unsplash.com/photos/jqpRECmiNEU
 [Athul Cyriac Ajay]: https://unsplash.com/photos/ndokCrfQWrI
 <!-- lint enable definition-case -->
