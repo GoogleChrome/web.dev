@@ -58,7 +58,7 @@ familiar to you. I encourage you to read it anyway, because not all systems are 
 </div>
 
 {% Aside %}
-  During the origin trial phase, there was a universal method named
+  During the origin trial phase, there was a universal method named `Window.chooseFileSystemEntries()` that has
   been replaced with the three specialized methods `Window.showOpenFilePicker()`,
   `Window.showSaveFilePicker()`, and `Window.showDirectoryPicker()`. There were a number of other
   [changes](https://github.com/WICG/native-file-system/blob/master/changes.md) that you can
