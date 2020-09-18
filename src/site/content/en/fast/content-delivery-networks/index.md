@@ -114,7 +114,7 @@ CDNs typically offer a wide variety of features in addition to their core CDN of
 
 Ideally you should use a CDN to serve your entire site. At a high-level, the setup process for this consists of signing up with a CDN provider, then updating your CNAME DNS record to point at the CDN provider. For example, the CNAME record for `www.example.com` might point to `example.my-cdn.com`. As a result of this DNS change, traffic to your site will be routed through the CDN.
 
-If using a CDN to serve all resources is not an option, a CDN can be configured to only serve a subset of resources - for example, only static resources. This is accomplished by creating a separate CNAME record that will only be used for resources that should be served by the CDN. For example, creating a `static.example.com` CNAME record that points to `example.my-cdn.com`. The URLs of resources that should be served by the CDN should be rewritten to point at the `static.example.com` subdomain that you just created.
+If using a CDN to serve all resources is not an option, you can configure a CDN to only serve a subset of resources - for example, only static resources. You can do this by creating a separate CNAME record that will only be used for resources that should be served by the CDN. For example, you might create a `static.example.com` CNAME record that points to `example.my-cdn.com`. You would also need to rewrite the URLs of resources being served by the CDN to point to the `static.example.com` subdomain that you created.
 
 Although your CDN will be set up at this point, there will likely be inefficiencies in your configuration. The next two sections of this article will explain how to get the most out of your CDN by increasing cache hit ratio and enabling performance features.
 
