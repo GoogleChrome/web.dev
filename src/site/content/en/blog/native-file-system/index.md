@@ -278,7 +278,7 @@ butDir.addEventListener('click', async () => {
 });
 ```
 
-#### Creating or accessing files and folders in a directory
+### Creating or accessing files and folders in a directory
 
 From a directory, you can create or access files and folders using the
 [`getFileHandle()`][getfileyhandle] or respectively the [`getDirectoryHandle()`][getdirectoryhandle]
@@ -294,7 +294,7 @@ const newDirectoryHandle = await existingDirectoryHandle.getDirectoryHandle('My 
 const newFileHandle = await newDirectoryHandle.getFileHandle('My Notes.txt', { create: true });
 ```
 
-#### Resolving the path of an item in a directory
+### Resolving the path of an item in a directory
 
 When working with files or folders in a directory, it can be useful to resolve the path of the item
 in question. This can be done with the aptly named [`resolve()`][resolve] method. For resolving, the
@@ -306,7 +306,7 @@ const path = await newDirectoryHandle.resolve(newFileHandle);
 // `path` is now ["My Documents", "My Notes.txt"]
 ```
 
-#### Deleting files and folders in a directory
+### Deleting files and folders in a directory
 
 If you have obtained access to a directory, you can delete the contained files and folders with the
 [`removeEntry()`][removeentry] method, for folders optionally recursively including all subfolders
