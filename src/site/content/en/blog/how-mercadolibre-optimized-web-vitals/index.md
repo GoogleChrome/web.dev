@@ -70,22 +70,13 @@ Experience Report](https://developers.google.com/web/tools/chrome-user-experienc
 product detail pages had a poor FID. Based on that information, they decided to focus their efforts
 on improving the interactivity for product pages in the site.
 
-<div class="w-columns">
 <figure class="w-figure">
-  <img src="meli-pdp-mobile.png" class="w-screenshot"
-       alt="Mobile version of a Mercado Libre product detail page." width="141">
+  <img src="meli-pdp.png" class="w-screenshot"
+       alt="Mobile and Desktop versions of a Mercado Libre product detail page.">
    <figcaption class="w-figcaption">
-      Mobile version of a Mercado Libre product detail page.
+      Mobile and Desktop versions of a Mercado Libre product detail page.
   </figcaption>     
 </figure>
-<figure class="w-figure">
-  <img src="meli-pdp-desktop.png" class="w-screenshot"
-       alt="Desktop versions of a Mercado Libre product detail page.">
-   <figcaption class="w-figcaption">
-      Desktop versions of a Mercado Libre product detail page.
-  </figcaption>     
-</figure>
-</div>
 
 These pages allow the user to perform complex interactions, so the goal was interactivity
 optimization, without interfering with valuable functionality.
