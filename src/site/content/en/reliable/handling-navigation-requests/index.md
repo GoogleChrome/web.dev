@@ -19,6 +19,8 @@ tags:
   - network
   - service-worker
   - offline
+feedback:
+  - api
 ---
 
 Navigation requests are requests for HTML documents made by your browser whenever you enter a new

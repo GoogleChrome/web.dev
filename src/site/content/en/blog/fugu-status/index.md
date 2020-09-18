@@ -2,7 +2,7 @@
 title: New capabilities status
 subhead: Web apps should be able to do anything native apps can. Google wants to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2020-09-02
+updated: 2020-09-15
 tags:
   - blog
   - capabilities
@@ -147,6 +147,19 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
           read or write data to an NFC tag on a container to update information
           on its contents.<br>
           <em>Updated December 12, 2019</em>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/hid/">WebHID API</a>
+        </td>
+        <td>
+          There is a long tail of human interface devices (HIDs), such as
+          alternative keyboards or exotic gamepads, that are too new, too old,
+          or too uncommon to be accessible by systems' device drivers. The
+          WebHID API solves this by providing a way to implement
+          device-specific logic in JavaScript.<br>
+          <em>Updated September 15, 2020</em>
         </td>
       </tr>
     </tbody>

@@ -13,6 +13,8 @@ authors:
 tags:
   - angular
   - pwa
+feedback:
+  - api
 ---
 
 In this post, you'll learn how to use the Angular command line interface (CLI) to make a [Progressive Web App (PWA)](/discover-installable).

@@ -10,7 +10,7 @@ updated: 2020-06-12
 
 In general, only [metrics](/lighthouse-performance/#metrics)
 contribute to your Lighthouse Performance score, not the results of Opportunities or Diagnostics.
-That said, improving the opportunties and diagnostics likely improve the metric values, so there
+That said, improving the opportunities and diagnostics likely improve the metric values, so there
 is an indirect relationship.
 
 Below, we've outlined why the score can fluctuate, how it's comprised, and how Lighthouse scores each individual metric.

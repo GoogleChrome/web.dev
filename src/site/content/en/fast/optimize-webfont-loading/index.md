@@ -10,6 +10,8 @@ description: |
 tags:
   - performance
   - fonts
+feedback:
+  - api
 ---
 
 A "full" WebFont that includes all stylistic variants,

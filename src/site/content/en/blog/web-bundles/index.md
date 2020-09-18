@@ -14,6 +14,8 @@ description: |
 tags:
   - blog
   - web-bundles
+feedback:
+  - api
 ---
 
 Bundling a full website as a single file and making it shareable

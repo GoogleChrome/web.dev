@@ -15,6 +15,8 @@ tags:
   - media
   - audio
   - video
+feedback:
+  - api
 ---
 
 To let users know what's currently playing in their browser and control it

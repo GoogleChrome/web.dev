@@ -16,6 +16,8 @@ tags:
   - capabilities
   - workbox
   - test-post
+feedback:
+  - api
 ---
 
 The [Web Share Target API](https://web.dev/web-share-target/) lets you display

@@ -15,6 +15,8 @@ tags:
   - capabilities
 hero: hero.jpg
 alt: mobile device with app panel open
+feedback:
+  - api
 ---
 
 ## What is the getInstalledRelatedApps() API? {: #what }

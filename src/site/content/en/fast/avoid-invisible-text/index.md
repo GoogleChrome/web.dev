@@ -13,6 +13,8 @@ codelabs:
   - codelab-avoid-invisible-text
 tags:
   - performance
+feedback:
+  - api
 ---
 
 ## Why should you care?

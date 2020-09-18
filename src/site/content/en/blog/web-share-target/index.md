@@ -16,6 +16,8 @@ tags:
   - blog
   - capabilities
   - progressive-web-apps
+feedback:
+  - api
 ---
 
 On a mobile device, sharing should be as simple as clicking the **Share** button,

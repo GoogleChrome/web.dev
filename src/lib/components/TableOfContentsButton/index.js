@@ -17,7 +17,6 @@
 import {html} from 'lit-element';
 import {BaseStateElement} from '../BaseStateElement';
 import {openToC} from '../../actions';
-import {trackEvent} from '../../analytics';
 
 /**
  * Element that renders table of contents open button.
@@ -48,12 +47,6 @@ class TableOfContentsButton extends BaseStateElement {
 
   onStateChanged({isTocOpened}) {
     this.opened = isTocOpened;
-    trackEvent({
-      category: 'Site-Wide Custom Events',
-      action: 'click',
-      label: 'ToC',
-      value: isTocOpened ? 1 : 0,
-    });
   }
 }
 
