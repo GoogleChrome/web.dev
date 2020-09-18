@@ -281,7 +281,7 @@ butDir.addEventListener('click', async () => {
 ### Creating or accessing files and folders in a directory
 
 From a directory, you can create or access files and folders using the
-[`getFileHandle()`][getfileyhandle] or respectively the [`getDirectoryHandle()`][getdirectoryhandle]
+[`getFileHandle()`][getfilehandle] or respectively the [`getDirectoryHandle()`][getdirectoryhandle]
 method. By passing in an optional `options` object with a key of `create` and a boolean value of
 `true` or `false`, you can determine if a new file or folder should be created if it doesn't exist.
 
