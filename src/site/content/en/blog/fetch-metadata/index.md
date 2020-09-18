@@ -13,6 +13,8 @@ tags:
   - blog
   - security
   - fetch-metadata
+feedback:
+  - api
 ---
 
 ## Why should you care about isolating your web resources?

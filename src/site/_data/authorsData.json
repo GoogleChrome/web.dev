@@ -1472,6 +1472,23 @@
       "en": "WebAssembly Advocadoer"
     }
   },
+  "roeln": {
+    "name": {
+      "given": "Roel",
+      "family": "Nieskens"
+    },
+    "twitter": "pixelambacht",
+    "github": "roeln",
+    "homepage": "https://pixelambacht.nl/"
+  },
+  "dcrossland": {
+    "name": {
+      "given": "Dave",
+      "family": "Crossland"
+    },
+    "twitter": "davelab6",
+    "github": "davelab6"
+  },
   "aaronleventhal": {
     "name": {
       "given": "Aaron",

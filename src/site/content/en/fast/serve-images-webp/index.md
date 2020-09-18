@@ -13,6 +13,8 @@ codelabs:
   - codelab-serve-images-webp
 tags:
   - performance
+feedback:
+  - api
 ---
 
 ## Why should you care?

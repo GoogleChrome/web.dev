@@ -19,6 +19,8 @@ tags:
   - augmented-reality
   - virtual-reality
   - webxr
+feedback:
+  - api
 ---
 
 Immersive experiences came to the web in Chrome 79. The WebXR Device API brings

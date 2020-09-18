@@ -17,6 +17,8 @@ tags:
   - identity
   - capabilities
   - otp
+feedback:
+  - api
 ---
 
 ## What is the Web OTP API?

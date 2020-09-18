@@ -1,0 +1,780 @@
+---
+title: Performance, Chrome Dev Summit and more
+subhead: Read our November 2019 Newsletter for the latest news, updates, and stories for developers!
+date: 2019-11-07
+thumbnail: thumbnail.png
+alt: Lighthouse
+eleventyComputed:
+  canonicalUrl: "/newsletter/archive/2019/11/"
+---
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Web Dev</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--[if !mso]><!-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!--<![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="no index">
+<!--[if mso | ie]>
+               <style>
+.nolineheight{
+line-height:19px !important;
+}
+.nolineheight_2{
+line-height:17px !important;
+}
+
+               </style>
+               <![endif]-->
+<!--[if ie]>
+               <style>
+                  .sup {
+                  vertical-align: 6px !important;
+                  font-size: 80% !important;
+                  }
+                  .show_mob
+                  {
+                    mso-hide: all !important;
+                  }
+
+               </style>
+               <![endif]-->
+<style>
+body {
+    font-family: Google Sans, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: #000000;
+    -webkit-text-size-adjust: none !important;
+    -webkit-font-smoothing: antialiased !important;
+    -ms-text-size-adjust: none !important;
+}
+table, tr, td {
+    mso-table-lspace: 0pt;
+    mso-table-rspace: 0pt;
+}
+a:link, a:visited, a:hover, a:active {
+    color: #4285f4;
+    text-decoration: none;
+}
+.appleLinks a {
+    color: #000000 !important;
+    text-decoration: none !important;
+}
+strong {
+    font-weight: bold !important;
+}
+em {
+    font-style: italic !important;
+}
+.yshortcuts a span {
+    color: inherit !important;
+    border-bottom: none !important;
+}
+html {
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: 100%;
+}
+.ReadMsgBody {
+    width: 100%;
+}
+.ExternalClass {
+    width: 100%;
+}
+.ExternalClass * {
+    line-height: 100%
+}
+td {
+    -webkit-text-size-adjust: none;
+}
+a[href^=tel] {
+    color: inherit;
+    text-decoration: none;
+}
+.mob-hide {
+    display: none !important;
+}
+div, p, a, li, td {
+    -webkit-text-size-adjust: none;
+}
+td {
+    text-decoration: none !important;
+}
+a[x-apple-data-detectors] {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}
+
+@media all and (max-width: 850px) {
+.table-main-gmail { /* Forces Gmail to display Desktop view */
+    width: 320px !important;
+    max-width: 320px !important;
+}
+.table-main-gmail_2 { /* Forces Gmail to display Desktop view */
+    width: 280px !important;
+    max-width: 280px !important;
+}
+.logo115 {
+    width: 115px !important;
+}
+.logopadd {
+    padding-top: 19px !important;
+    padding-bottom: 19px !important;
+}
+.logoright {
+    padding-top: 24px !important;
+}
+.hide {
+    display: none !important;
+}
+.block {
+    display: block !important;
+}
+.text {
+    text-align: center !important;
+}
+.wid200 {
+    width: 200px !important;
+}
+.mrg {
+    margin: 0 auto !important;
+}
+.padR {
+    padding-right: 0px !important;
+}
+.fl {
+    float: left !important;
+}
+.padtop20 {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+}
+.padtop13 {
+    padding-top: 13px !important;
+    padding-bottom: 21px !important;
+}
+.padtop8 {
+    padding-top: 8px !important;
+}
+  .font32{
+    font-size: 32px !important;
+    line-height: 46px !important;
+  }
+  .font32_36{
+    font-size: 32px !important;
+    line-height: 36px !important;
+  }
+  .pad27{
+    padding-top: 29px !important;
+  }
+  .padtopB20 {
+    padding-top: 20px !important;
+    padding-bottom: 29px !important;
+}
+  .padtop24 {
+    padding-top: 24px !important;
+    }
+  .padtop20_t {
+    padding-top: 20px !important;
+  }
+  .padtopB28 {
+    padding-top: 28px !important;
+    padding-bottom: 20px !important;
+}
+  .pad23B{
+    padding-bottom: 23px !important;
+  }
+  .padtop8{
+    padding-top: 8px !important;
+  }
+  .padwhitebox{
+    padding: 27px 15px 21px 15px !important;
+  }
+  .heig{
+    height: auto !important;
+  }
+  .sign{
+  padding-top: 36px !important;
+    padding-bottom: 33px !important;
+  }
+  .width174{
+    width: 174px !important;
+  }
+  .pad0{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .line18{
+    line-height: 18px !important;
+  }
+  .padtop14{
+    padding-top: 14px !important;
+  }
+  .width108{
+    width: 108px !important;
+  }
+  .padtop39{
+    padding-top: 39px !important;
+  }
+  .padtop9{
+    padding-top: 9px !important
+  }
+  .imgcenter{
+	  margin: 0 auto !important;
+	  text-align: center !important;
+  }
+}
+</style>
+</head>
+<body style="margin: 0 auto; padding: 0px;">
+  <!-- goto action start here -->
+  <div itemscope itemtype="http://schema.org/EmailMessage">
+           <div itemprop="action" itemscope itemtype="http://schema.org/ViewAction">
+           <!-- link here     -->
+  <link itemprop="url" href="https://web.dev/use-lighthouse-for-performance-budgets/?utm_medium=email&utm_campaign=web.dev_news">
+  <!-- content here      -->
+  <meta itemprop="name" content="Launch Lighthouse">
+           </div>
+           <!-- content here -->
+           <meta itemprop="description" content="Launch Lighthouse">
+        </div>
+  <!-- goto action end here -->
+<!--Preview starts here-->
+<p style=" padding-top:0; font-size:0px; line-height:0px; color:#ffffff;" align="center">Tips to improve your performance</p>
+<!--Preview ends here-->
+<table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <td align="center" valign="top"><!--[if !mso]><!-->
+
+      <table border="0" cellspacing="0" cellpadding="0" width="850" class="table-main-gmail" align="center">
+        <!--<![endif]-->
+        <!--[if (gte mso 9)|(IE)]>
+                   <table border="0" cellpadding="0" cellspacing="0" width="850" align="center">
+                      <![endif]-->
+        <tr>
+          <td align="center" valign="top" bgcolor="#ffffff"><table border="0" cellspacing="0" cellpadding="0" width="100%">
+              <!--Logo section starts here-->
+              <tr>
+                <td align="center" class="logobor" valign="top" style="border-bottom: 1px solid #9AA0A6;" width="100%;"><table border="0" cellspacing="0" cellpadding="0" width="600" class="table-main-gmail_2">
+                    <tr>
+                      <td class="" align="left" valign="top" ><table border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td align="left" valign="top" class="logo115 logopadd" width="150" height="auto" style="padding-top: 22px; padding-bottom: 23px;"><a href="#" style="cursor: default;pointer-events: none"> <img src="https://services.google.com/fh/files/emails/webdev-logo-desktop.png" width="150" height="auto" class="logo115" alt="web.dev" title="web.dev"></a></td>
+                          </tr>
+                        </table></td>
+                      <td align="right" valign="top"><table border="0" cellpadding="0" cellspacing="0" align="right" style="vertical-align:top;">
+                          <tr>
+                            <td align="right" class="logoright" valign="top" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size: 14px; color:#202124; line-height:15px; mso-line-height-rule: exactly; padding:29px 0px 21px 0px;">November 2019</td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <!--Logo section ends here-->
+
+              <!--Hero section starts here-->
+              <tr>
+                <td align="center" valign="top"><table width="600" border="0" cellspacing="0" cellpadding="0" class="table-main-gmail_2">
+                    <tbody>
+                      <tr>
+                        <!--Hero section Dekstop View Start-->
+                        <td align="left" valign="top" style="padding-top: 23px; padding-bottom: 22px;" class="hide"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                              <tr>
+                                <td align="left" valign="middle" width="300"><table border="0" cellspacing="0" cellpadding="0" style="vertical-align: middle;">
+                                    <tbody>
+                                      <tr>
+                                        <td class="pad0" align="left" valign="top" style="font-family:Google Sans, Roboto, Helvetica, Arial, sans-serif; font-size: 28px; color:#202124; line-height:34px; mso-line-height-rule: exactly; font-weight: 500; padding-right: 40px;">The latest news, techniques, and stories for web developers.</td>
+                                      </tr>
+                                    </tbody>
+                                  </table></td>
+                                <td align="right" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0" align="right">
+                                    <tbody>
+                                      <tr>
+                                        <td align="right" valign="top"><a href="#" style="display: block; width: 300px;"><img src="https://services.google.com/fh/files/emails/wevdev-hero-img-desktop.png" width="300" alt="Web developers" title="Web developers" /></a></td>
+                                      </tr>
+                                    </tbody>
+                                  </table></td>
+                              </tr>
+                            </tbody>
+                          </table></td>
+                        <!--Hero section Dekstop View Ends-->
+
+                        <!--Hero section Mobile View Start-->
+                        <!--[if !mso]><!-->
+                        <td align="center" valign="top" style="display: none; padding-top: 29px; padding-bottom: 30px;" class="block"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                              <tr>
+                                <td align="center" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+                                    <tbody>
+                                      <tr>
+                                        <td align="center" valign="top"><img src="https://services.google.com/fh/files/emails/wevdev-hero-img-mobile.png" width="280" alt="Hero" title="Hero" /></td>
+                                      </tr>
+                                    </tbody>
+                                  </table></td>
+                              </tr>
+                              <tr>
+                                <td align="center" valign="top" width="300"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                      <tr>
+                                        <td align="center" valign="top" style="font-family:Google Sans, Roboto, Helvetica, Arial, sans-serif; font-size: 28px; color:#202124; line-height:34px; mso-line-height-rule: exactly; font-weight: 500; padding-top: 22px;">The latest news, techniques, and stories for web developers.</td>
+                                      </tr>
+                                    </tbody>
+                                  </table></td>
+                              </tr>
+                            </tbody>
+                          </table></td>
+                        <!--<![endif]-->
+                        <!--Hero section Mobile View Ends-->
+                      </tr>
+                    </tbody>
+                  </table></td>
+              </tr>
+              <!--Hero section ends here-->
+
+              <!--Tips section starts here-->
+              <tr>
+                <td align="center" valign="top" bgcolor="#E6F4FA"><table width="600" border="0" cellspacing="0" cellpadding="0" class="table-main-gmail_2">
+                    <tbody>
+                      <tr>
+                        <td align="left" valign="top" style="padding-top: 23px; padding-bottom: 25px;" class="padtop13"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                              <!--Tips image for Mobile Starts-->
+                              <tr>
+                                <td align="center" valign="top" style="display: none;" class="block"><img src="https://services.google.com/fh/files/emails/webdev-lightbulb-icon-mobile.png" width="32" alt="Tips" title="Tips" /></td>
+                              </tr>
+                              <!--Tips image for Mobile Ends-->
+                              <tr>
+                                <td align="left" valign="middle" width="60" class="hide"><table width="100%" border="0" cellspacing="0" cellpadding="0" align="left" style="vertical-align: middle;">
+                                    <tbody>
+                                      <!--Tips image for Desktop Starts-->
+                                      <tr>
+                                        <td align="left" valign="top"><img src="https://services.google.com/fh/files/emails/webdev-lightbulb-icon-desktop.png" width="48" alt="Tips" title="Tips" /></td>
+                                      </tr>
+                                      <!--Tips image for Desktop Ends-->
+                                    </tbody>
+                                  </table></td>
+                                <td valign="top" class="text"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                      <tr>
+                                        <td class="padtop8" valign="top" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size: 18px; color:#202124; line-height:24px; mso-line-height-rule: exactly; font-weight: 500;">Tip of the month</td>
+                                      </tr>
+                                      <tr>
+                                        <td valign="top" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size: 16px; color:#202124; line-height:24px; mso-line-height-rule: exactly; padding-top: 5px;"><a href="https://web.dev/native-lazy-loading/?utm_medium=email&utm_campaign=web.dev_news" style=" text-decoration: underline; color: #202124;">Use native lazy loading</a> to improve your performance (and reduce your users' cellular bills) by instructing the browser to only load below-the-fold images once your users scroll the page. Available in Chrome 76.</td>
+                                      </tr>
+                                    </tbody>
+                                  </table></td>
+                              </tr>
+                            </tbody>
+                          </table></td>
+                      </tr>
+                    </tbody>
+                  </table></td>
+              </tr>
+              <!--Tips section ends here-->
+
+              <!--Featured posts section starts here-->
+              <tr>
+                <td align="center" valign="top"><table width="600" border="0" cellspacing="0" cellpadding="0" class="table-main-gmail_2">
+                    <tbody>
+                      <tr>
+                        <td class="font32 pad27" align="center" valign="top" style="font-family:Google Sans, Roboto, Helvetica, Arial, sans-serif; font-size: 36px; color:#202124; line-height:48px; mso-line-height-rule: exactly; padding-bottom: 6px; padding-top: 38px;">Featured posts</td>
+                      </tr>
+                      <!--Left side image and Right side Text section starts here-->
+                      <tr>
+                        <td class="padtopB20" align="left" valign="top" style="padding-top: 30px; padding-bottom: 27px; border-bottom: 1px solid #DADCE0;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                              <tr>
+                                <td align="center" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                      <tr>
+                                        <td valign="top" class="text"><table class="wid200" width="100%" border="0" cellspacing="0" cellpadding="0" style="display: inline-table; width: 225px;">
+                                            <tbody>
+                                              <tr>
+                                                <td valign="top"><a href="https://web.dev/use-lighthouse-for-performance-budgets/?utm_medium=email&utm_campaign=web.dev_news" target="_blank" style="display: block; width: 160px;" class="imgcenter"><img src="https://services.google.com/fh/files/emails/lighthouse-logo_512px.png" width="160" alt="Lighthouse" title="Lighthouse" style="display: block;" class="imgcenter" /></a></td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+
+                                          <!--[if (gte mso 9)|(IE)]></td><td align="left" valign="top" style="padding-left: 25px;"><![endif]-->
+
+                                          <table class="table-main-gmail_2" width="100%" border="0" cellspacing="0" cellpadding="0" style="display: inline-table; width: 370px; vertical-align: top;">
+                                            <tbody>
+                                              <tr>
+                                                <td valign="top" class="text padtop24"><table  border="0" cellspacing="0" cellpadding="0" class="mrg">
+                                                    <tbody>
+                                                      <tr>
+                                                        <td class="" valign="top" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size: 12px; color:#3740FF; line-height:14px; mso-line-height-rule: exactly; font-weight: 500; letter-spacing: 0.5px; border: #E6E6FA 1.5px solid; padding-left: 10px; padding-right: 10px; border-radius: 20px; padding-top: 2px; padding-bottom: 2px;">GUIDE</td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table></td>
+                                              </tr>
+                                              <tr>
+                                                <td valign="top" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size: 26px; color:#202124; line-height:30px; mso-line-height-rule: exactly; padding-top: 14px;">Use Lighthouse for performance budgets</td>
+                                              </tr>
+                                              <tr>
+                                                <td class="padR padtop20_t" valign="top" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size: 16px; color:#202124; line-height:22px; mso-line-height-rule: exactly; padding-top: 12px; padding-right: 10px;">After you put in the hard work of optimizing your load performance, how do you guarantee that your performance doesn't regress over time? Performance budgets, that's how.</td>
+                                              </tr>
+                                              <tr>
+                                                <td valign="top" style="padding-top: 12px;"><table border="0" cellspacing="0" cellpadding="0" class="mrg">
+                                                    <tr>
+                                                      <td align="left" valign="middle" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size: 16px; mso-line-height-rule: exactly; color:#202124; font-weight: 500; line-height:22px;"><a href="https://web.dev/use-lighthouse-for-performance-budgets/?utm_medium=email&utm_campaign=web.dev_news" style=" color:#202124; text-decoration:none;" target="_blank">Read more</a></td>
+                                                      <td align="left" valign="middle" style="line-height:10px; padding-left: 7px;" class="nolineheight"><a href="https://web.dev/use-lighthouse-for-performance-budgets/?utm_medium=email&utm_campaign=web.dev_news" style=" color:#202124; text-decoration:none;" target="_blank"><img src="https://services.google.com/fh/files/emails/webdev-cta-arrow.png" width="16" alt="Arrow" title="Arrow" style="display:block; border:0;" /></a></td>
+                                                    </tr>
+                                                  </table></td>
+                                              </tr>
+                                            </tbody>
+                                          </table></td>
+                                      </tr>
+                                    </tbody>
+                                  </table></td>
+                              </tr>
+                            </tbody>
+                          </table></td>
+                      </tr>
+                      <!--Left side image and Right side Text section ends here-->
+
+                      <!--Left side text and Right side image section starts here-->
+                      <tr>
+                        <td class="padtopB20" align="left" valign="top" style="padding-top: 30px; padding-bottom: 27px; border-bottom: 1px solid #DADCE0;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                              <tr>
+                                <td align="center" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0" dir="rtl">
+                                    <tbody>
+                                      <tr>
+                                        <td valign="top" class="text" style="padding-top: 2px;"><table class="wid200" width="100%" border="0" cellspacing="0" cellpadding="0" style="display: inline-table; width: 225px;">
+                                            <tbody>
+                                              <tr>
+                                                <td valign="top"><a href="https://web.dev/value-of-speed/?utm_medium=email&utm_campaign=web.dev_news" target="_blank" style="display: block; width: 160px;" class="imgcenter"><img src="https://www.gstatic.com/images/branding/product/2x/pagespeed_512dp.png" width="140" alt="Page speed" title="Page speed" style="display: block;" class="imgcenter" /></a></td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+
+                                          <!--[if (gte mso 9)|(IE)]></td><td align="left" valign="top"  style="padding-right: 20px;"><![endif]-->
+
+                                          <table class="table-main-gmail_2" width="100%" border="0" cellspacing="0" cellpadding="0" style="display: inline-table; width: 370px; vertical-align: top;" dir="ltr">
+                                            <tbody>
+                                              <tr>
+                                                <td valign="top" class="text padtop24"><table  border="0" cellspacing="0" cellpadding="0" class="mrg">
+                                                    <tbody>
+                                                      <tr>
+                                                        <td valign="top" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size: 12px; color:#3740FF; line-height:14px; mso-line-height-rule: exactly; font-weight: 500; letter-spacing: 0.5px; border: #E6E6FA 1.5px solid; padding-left: 10px; padding-right: 10px; border-radius: 20px; padding-top: 2px; padding-bottom: 2px;">ARTICLE</td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table></td>
+                                              </tr>
+                                              <tr>
+                                                <td valign="top" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size: 26px; color:#202124; line-height:30px; mso-line-height-rule: exactly; padding-top: 14px;">Value of speed </td>
+                                              </tr>
+                                              <tr>
+                                                <td class="padR" valign="top" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size: 16px; color:#202124; line-height:22px; mso-line-height-rule: exactly; padding-top: 12px; padding-right: 10px;">Improving your site's load performance makes your company more money. Here's how you prove it to managers and executives.</td>
+                                              </tr>
+                                              <tr>
+                                                <td valign="top" style="padding-top: 12px;"><table border="0" cellspacing="0" cellpadding="0" class="mrg">
+                                                    <tr>
+                                                      <td align="left" valign="middle" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size: 16px; mso-line-height-rule: exactly; color:#202124; font-weight: 500; line-height:22px;"><a href="https://web.dev/value-of-speed/?utm_medium=email&utm_campaign=web.dev_news" style=" color:#202124; text-decoration:none;" target="_blank">Read more</a></td>
+                                                      <td align="left" valign="middle" style="line-height:10px; padding-left: 7px;" class="nolineheight"><a href="https://web.dev/value-of-speed/?utm_medium=email&utm_campaign=web.dev_news" style=" color:#202124; text-decoration:none;" target="_blank"><img src="https://services.google.com/fh/files/emails/webdev-cta-arrow.png" width="16" alt="Arrow" title="Arrow" style="display:block; border:0;" /></a></td>
+                                                    </tr>
+                                                  </table></td>
+                                              </tr>
+                                            </tbody>
+                                          </table></td>
+                                      </tr>
+                                    </tbody>
+                                  </table></td>
+                              </tr>
+                            </tbody>
+                          </table></td>
+                      </tr>
+                      <!--Left side text and Right side image section ends here-->
+
+                       <!--Left side image and Right side Text section starts here-->
+                      <tr>
+                        <td class="padtopB20" align="left" valign="top" style="padding-top: 30px; padding-bottom: 27px;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                              <tr>
+                                <td align="center" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                      <tr>
+                                        <td valign="top" class="text"><table class="wid200" width="100%" border="0" cellspacing="0" cellpadding="0" style="display: inline-table; width: 225px;">
+                                            <tbody>
+                                              <tr>
+                                                <td valign="top"><a href="https://web.dev/identify-slow-third-party-javascript/?utm_medium=email&utm_campaign=web.dev_news" target="_blank" style="display: block; width: 130px;" class="imgcenter"><img src="https://services.google.com/fh/files/emails/js_web.png" width="130" alt="JavaScript" title="JavaScript" style="display: block;" class="imgcenter" /></a></td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+
+                                          <!--[if (gte mso 9)|(IE)]></td><td align="left" valign="top" style="padding-left: 25px;"><![endif]-->
+
+                                          <table class="table-main-gmail_2" width="100%" border="0" cellspacing="0" cellpadding="0" style="display: inline-table; width: 370px; vertical-align: top;">
+                                            <tbody>
+                                              <tr>
+                                                <td valign="top" class="text padtop24"><table  border="0" cellspacing="0" cellpadding="0" class="mrg">
+                                                    <tbody>
+                                                      <tr>
+                                                        <td class="" valign="top" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size: 12px; color:#3740FF; line-height:14px; mso-line-height-rule: exactly; font-weight: 500; letter-spacing: 0.5px; border: #E6E6FA 1.5px solid; padding-left: 10px; padding-right: 10px; border-radius: 20px; padding-top: 2px; padding-bottom: 2px;">GUIDE</td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table></td>
+                                              </tr>
+                                              <tr>
+                                                <td valign="top" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size: 26px; color:#202124; line-height:30px; mso-line-height-rule: exactly; padding-top: 14px;">Identify slow third-party JavaScript</td>
+                                              </tr>
+                                              <tr>
+                                                <td class="padR padtop20_t" valign="top" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size: 16px; color:#202124; line-height:22px; mso-line-height-rule: exactly; padding-top: 12px; padding-right: 10px;">Do you have a sneaking suspicion that all of those social media widgets and analytics scripts are slowing down your page load? Here's how you find out.</td>
+                                              </tr>
+                                              <tr>
+                                                <td valign="top" style="padding-top: 12px;"><table border="0" cellspacing="0" cellpadding="0" class="mrg">
+                                                    <tr>
+                                                      <td align="left" valign="middle" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size: 16px; mso-line-height-rule: exactly; color:#202124; font-weight: 500; line-height:22px;"><a href="https://web.dev/identify-slow-third-party-javascript/?utm_medium=email&utm_campaign=web.dev_news" style=" color:#202124; text-decoration:none;" target="_blank">Read more</a></td>
+                                                      <td align="left" valign="middle" style="line-height:10px; padding-left: 7px;" class="nolineheight"><a href="https://web.dev/identify-slow-third-party-javascript/?utm_medium=email&utm_campaign=web.dev_news" style=" color:#202124; text-decoration:none;" target="_blank"><img src="https://services.google.com/fh/files/emails/webdev-cta-arrow.png" width="16" alt="Arrow" title="Arrow" style="display:block; border:0;" /></a></td>
+                                                    </tr>
+                                                  </table></td>
+                                              </tr>
+                                            </tbody>
+                                          </table></td>
+                                      </tr>
+                                    </tbody>
+                                  </table></td>
+                              </tr>
+                            </tbody>
+                          </table></td>
+                      </tr>
+                      <!--Left side image and Right side Text section ends here-->
+
+
+                    </tbody>
+                  </table></td>
+              </tr>
+              <!--Featured posts section ends here-->
+
+              <!--New updates and launches section three starts here-->
+              <tr>
+                <td class="padtopB28" align="center" valign="top" bgcolor="#EBF9FF" style="padding-top: 38px; padding-bottom: 50px;"><table width="600" border="0" cellspacing="0" cellpadding="0" class="table-main-gmail_2">
+                    <tbody>
+                      <tr>
+                        <td class="font32_36 pad23B" align="center" valign="top" style="font-family:Google Sans, Roboto, Helvetica, Arial, sans-serif; font-size: 36px; color:#202124; line-height:48px; mso-line-height-rule: exactly; padding-bottom: 20px; padding-left: 25px; padding-right: 25px;">New updates and launches</td>
+                      </tr>
+                      <tr>
+                        <td align="center" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                              <tr>
+                                <td valign="top" width="190" bgcolor="#ffffff" class="table-main-gmail_2 fl"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                      <tr>
+                                        <td class="padwhitebox" align="center" valign="top" style="padding: 27px 15px;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                              <tr>
+                                                <td align="center" valign="top" style="font-family:Google Sans, Roboto, Helvetica, Arial, sans-serif; font-size: 20px; color:#202124; line-height:28px; mso-line-height-rule: exactly;">Chrome Developer Summit</td>
+                                              </tr>
+                                              <tr>
+                                                <td class="padtop8" align="center" valign="top" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size: 14px; color:#202124; line-height:20px; mso-line-height-rule: exactly; padding-top: 5px;">Join the Chrome Developer Summit livestream on Nov 11-12th, 2019 to get access to all sessions and exclusive content.</td>
+                                              </tr>
+                                              <tr>
+                                                <td valign="top" align="center" class="padtop9" style="padding-top: 77px;"><table border="0" cellspacing="0" cellpadding="0" class="mrg">
+                                                    <tr>
+                                                      <td align="left" valign="middle" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size: 14px; mso-line-height-rule: exactly; color:#202124; font-weight: 500; line-height:19px;"><a href="https://developer.chrome.com/devsummit/?utm_medium=email&utm_campaign=web.dev_news" style=" color:#202124; text-decoration:none;" target="_blank">More</a></td>
+                                                      <td align="left" valign="middle" style="line-height:10px; padding-left: 7px;" class="nolineheight_2"><a href="https://developer.chrome.com/devsummit/?utm_medium=email&utm_campaign=web.dev_news" style=" color:#202124; text-decoration:none;" target="_blank"><img src="https://services.google.com/fh/files/emails/webdev-cta-arrow.png" width="13" alt="Arrow" title="Arrow" style="display:block; border:0;" /></a></td>
+                                                    </tr>
+                                                  </table></td>
+                                              </tr>
+                                            </tbody>
+                                          </table></td>
+                                      </tr>
+                                    </tbody>
+                                  </table></td>
+                                <td valign="top" width="220" align="center" class="table-main-gmail_2 fl padtop20"><table width="190" border="0" cellspacing="0" cellpadding="0" align="center" class="table-main-gmail_2">
+                                    <tbody>
+                                      <tr>
+                                        <td class="padwhitebox" valign="top" bgcolor="#ffffff" style="padding: 27px 15px;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                              <tr>
+                                                <td align="center" valign="top" style="font-family:Google Sans, Roboto, Helvetica, Arial, sans-serif; font-size: 20px; color:#202124; line-height:28px; mso-line-height-rule: exactly;">Preloading responsive images</td>
+                                              </tr>
+                                              <tr>
+                                                <td class="padtop8" align="center"  valign="top" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size: 14px; color:#202124; line-height:20px; mso-line-height-rule: exactly; padding-top: 5px;">You've probably heard about responsive images, and you've maybe heard about link rel="preload". But did you know that starting in Chrome 73 you can combine them to make your image loading even faster?</td>
+                                              </tr>
+                                              <tr>
+                                                <td valign="top" align="center" style="padding-top: 17px;" class="padtop9"><table border="0" cellspacing="0" cellpadding="0" class="mrg">
+                                                    <tr>
+                                                      <td align="left" valign="middle" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size: 14px; mso-line-height-rule: exactly; color:#202124; font-weight: 500; line-height:19px;"><a href="https://web.dev/preload-responsive-images/?utm_medium=email&utm_campaign=web.dev_news" style=" color:#202124; text-decoration:none;" target="_blank">More</a></td>
+                                                      <td align="left" valign="middle" style="line-height:10px; padding-left: 7px;" class="nolineheight_2"><a href="https://web.dev/preload-responsive-images/?utm_medium=email&utm_campaign=web.dev_news" style=" color:#202124; text-decoration:none;" target="_blank"><img src="https://services.google.com/fh/files/emails/webdev-cta-arrow.png" width="13" alt="Arrow" title="Arrow" style="display:block; border:0;" /></a></td>
+                                                    </tr>
+                                                  </table></td>
+                                              </tr>
+                                            </tbody>
+                                          </table></td>
+                                      </tr>
+                                    </tbody>
+                                  </table></td>
+                                <td valign="top" width="190" bgcolor="#ffffff" class="table-main-gmail_2 fl"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                      <tr>
+                                        <td class="padwhitebox" align="center" valign="top" style="padding: 27px 15px;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                              <tr>
+                                                <td align="center" valign="top" style="font-family:Google Sans, Roboto, Helvetica, Arial, sans-serif; font-size: 20px; color:#202124; line-height:28px; mso-line-height-rule: exactly;">Prefetch resources to speed up future navigations</td>
+                                              </tr>
+                                              <tr>
+                                                <td class="padtop8 heig" align="center" class="padtop9" valign="top" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size: 14px; color:#202124; line-height:20px; mso-line-height-rule: exactly; height: 80px; padding-top: 5px;" height="80">If a user lands on your homepage, and you know it's very likely that they'll visit your login page next, you can use link rel="prefetch" to load your login page's resources ahead of time.</td>
+                                              </tr>
+                                              <tr>
+                                                <td valign="top" align="center" class="padtop9" style="padding-top: 9px;"><table border="0" cellspacing="0" cellpadding="0" class="mrg">
+                                                    <tr>
+                                                      <td align="left" valign="middle" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size: 14px; mso-line-height-rule: exactly; color:#202124; font-weight: 500; line-height:19px;"><a href="https://web.dev/link-prefetch/?utm_medium=email&utm_campaign=web.dev_news" style=" color:#202124; text-decoration:none;" target="_blank">More</a></td>
+                                                      <td align="left" valign="middle" style="line-height:10px; padding-left: 7px;" class="nolineheight_2"><a href="https://web.dev/link-prefetch/?utm_medium=email&utm_campaign=web.dev_news" style=" color:#202124; text-decoration:none;" target="_blank"><img src="https://services.google.com/fh/files/emails/webdev-cta-arrow.png" width="13" alt="Arrow" title="Arrow" style="display:block; border:0;" /></a></td>
+                                                    </tr>
+                                                  </table></td>
+                                              </tr>
+                                            </tbody>
+                                          </table></td>
+                                      </tr>
+                                    </tbody>
+                                  </table></td>
+                              </tr>
+                            </tbody>
+                          </table></td>
+                      </tr>
+                    </tbody>
+                  </table></td>
+              </tr>
+              <!--New updates and launches section three ends here-->
+
+        <!--spacer starts here-->
+        <tr>
+          <td height="20"><img src="https://services.google.com/fh/files/emails/spacer_11.gif" height="20" width="1" border="0" alt="" style="display: block;"></td>
+        </tr>
+        <!--spacer ends here-->
+
+
+
+              <!-- Signature Starts here-->
+              <tr>
+                <td class="sign" align="center" valign="top" style="padding-top: 44px; padding-bottom: 36px;">
+          <table width="600" border="0" cellspacing="0" cellpadding="0" class="table-main-gmail_2">
+                    <!-- Sign off content Start -->
+                    <tr>
+                      <td align="center" valign="top" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size: 16px; color:#202124; line-height:22px; mso-line-height-rule: exactly;">
+            See you online,
+            </td>
+                    </tr>
+                    <!-- Sign off content End -->
+                    <!-- Signature content Start -->
+                    <tr>
+                      <td align="center" valign="top" style="font-family:Google Sans, Roboto, Helvetica, Arial, sans-serif; font-size: 16px; color:#202124; line-height:22px; mso-line-height-rule: exactly; font-weight: 500;">The <a href="#" style="text-decoration: none; cursor: default; pointer-events: none; color: #202124;">web.dev</a> team</td>
+                    </tr>
+                    <!-- Signature content End -->
+                  </table></td>
+              </tr>
+              <!-- Signature Ends here-->
+
+              <!-- Stars and Social icon Starts here-->
+              <tr>
+                <td align="center" valign="top"><table width="600" border="0" cellspacing="0" cellpadding="0" class="table-main-gmail_2">
+                    <tr>
+                      <td align="left" valign="top" style="padding-bottom: 31px;"><table border="0" cellspacing="0" cellpadding="0">
+                          <!-- Social icon heading Start -->
+                          <tr>
+                            <td class="line18" align="left" valign="top" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size:14px; line-height: 25px; color: #202124;  mso-line-height-rule: exactly;" >Connect&nbsp;with&nbsp;us</td>
+                          </tr>
+                          <!-- Social icon heading Ends -->
+                          <tr>
+                            <td class="padtop14" align="left" valign="top" style="padding-top: 5px;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td align="left"><table border="0" cellspacing="0" cellpadding="0" align="left">
+                                      <tr>
+                                        <!-- Social icon Start -->
+                                        <td width="28px" align="center" ><a href="${track('https://twitter.com/@ChromiumDev', 'footer_image_twitter')}" target="_blank" style="text-decoration:none">
+                      <img src="https://services.google.com/fh/files/emails/webdev-twitter-icon.png" width="28" alt="Twitter" title="Twitter" style="display:block;" /></a>
+                    </td>
+                                        <td width="10"><img src="https://services.google.com/fh/files/emails/spacer_11.gif" width="10" height="1" border="0" alt="" style="display: block;" /></td>
+
+                                        <td width="29px" align="center"><a href="${track('https://www.youtube.com/user/ChromeDevelopers', 'footer_image_youtube')}" target="_blank" style="text-decoration:none"><img src="https://services.google.com/fh/files/emails/webdev-youtube-icon.png" width="29" alt="YouTube" title="YouTube" style="display:block;"></a></td>
+
+                                        <td width="10"><img src="https://services.google.com/fh/files/emails/spacer_11.gif" width="10" height="1" border="0" alt="" style="display: block;" /></td>
+
+                                        <td width="28px" align="center"><a href="${track('https://github.com/googlechrome', 'footer_image_github')}" target="_blank" style="text-decoration:none"><img src="https://services.google.com/fh/files/emails/webdev-github-icon.png" width="28" alt="GitHub" title="GitHub" style="display:block;"></a></td>
+
+                                       </tr>
+                                      <!-- Social icon Ends -->
+                                    </table></td>
+                                </tr>
+                              </table></td>
+                          </tr>
+                        </table></td>
+                      <td align="right" valign="top"><table width="230" border="0" cellspacing="0" cellpadding="0" class="width174">
+                          <!-- Stars icon heading Start -->
+                          <tr>
+                            <td class="line18" align="right" valign="top" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size:14px; line-height: 25px; color: #202124; mso-line-height-rule: exactly;">Did you find this <span class="block"></span>email useful?</td>
+                          </tr>
+                          <!-- Stars icon heading End -->
+                          <tr>
+                            <td align="right" valign="top" style="padding-top: 9px;"><table border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <!-- Stars icon Start -->
+                                  <td align="right" valign="top"><a href="${track('${landing_page()}','footer_star1')}" style="color:#455a64; text-decoration:underline;" target="_blank"><img src="https://services.google.com/fh/files/emails/webdev-star.png" style="display:inline-table" width="20" title="Star1" alt="Star1" /></a></td>
+                                  <td width="5"><img src="https://services.google.com/fh/files/emails/spacer_11.gif" width="5" height="1" border="0" alt="" style="display: block;" /></td>
+                                  <td align="right" valign="top"><a href="${track('${landing_page()}','footer_star2')}" style="color:#455a64; text-decoration:underline;" target="_blank"><img src="https://services.google.com/fh/files/emails/webdev-star.png" style="display:inline-table" width="20" title="Star2" alt="Star2" /></a></td>
+                                  <td width="5"><img src="https://services.google.com/fh/files/emails/spacer_11.gif" width="5" height="1" border="0" alt="" style="display: block;" /></td>
+                                  <td align="right" valign="top"><a href="${track('${landing_page()}','footer_star3')}" style="color:#455a64; text-decoration:underline;" target="_blank"><img src="https://services.google.com/fh/files/emails/webdev-star.png" style="display:inline-table" width="20" title="Star3" alt="Star3" /></a></td>
+                                  <td width="5"><img src="https://services.google.com/fh/files/emails/spacer_11.gif" width="5" height="1" border="0" alt="" style="display: block;" /></td>
+                                  <td align="right" valign="top"><a href="${track('${landing_page()}','footer_star4')}" style="color:#455a64; text-decoration:underline;" target="_blank"><img src="https://services.google.com/fh/files/emails/webdev-star.png" style="display:inline-table" width="20" title="Star4" alt="Star4" /></a></td>
+                                  <td width="5"><img src="https://services.google.com/fh/files/emails/spacer_11.gif" width="5" height="1" border="0" alt="" style="display: block;" /></td>
+                                  <td align="right" valign="top"><a href="${track('${landing_page()}','footer_star5')}" style="color:#455a64; text-decoration:underline;" target="_blank"><img src="https://services.google.com/fh/files/emails/webdev-star.png" style="display:inline-table" width="20" title="Star5" alt="Star5" /></a></td>
+                                </tr>
+                                <!-- Stars icon End -->
+                              </table></td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <!-- Stars and Social icon ends here-->
+
+
+
+<!--Footer section Starts here-->
+<tr>
+  <td class="padtop39" bgcolor="#F7F8F9" align="center" valign="top" style="padding-top: 34px; padding-bottom: 40px;">
+  <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="600" class="table-main-gmail_2" align="center">
+  <tbody><tr>
+  <td valign="top"><table role="presentation" border="0" cellspacing="0" align="center" cellpadding="0" class="mrg">
+  <tbody><tr>
+  <td align="center" valign="middle" style="font-family:Roboto, Helvetica, Arial, sans-serif; font-size: 16px; mso-line-height-rule: exactly; color:#202124; font-weight: 500; line-height:22px;"><a href="https://web.dev/newsletter/?utm_source=email&utm_medium=webdev_news" style=" color:#202124; text-decoration:none;" target="_blank">Subscribe to this newsletter</a></td>
+  <td aria-hidden="true" align="left" valign="middle" style="line-height:10px; padding-left: 7px;" class="nolineheight"><a href="https://web.dev/newsletter/?utm_source=email&utm_medium=webdev_news" style=" color:#202124; text-decoration:none;" target="_blank"><img src="https://services.google.com/fh/files/emails/webdev-cta-arrow.png" width="16" alt="" title="Arrow" style="display:block; border:0;"></a></td>
+  </tr>
+  </tbody></table></td>
+  </tr>
+  <!-- Footer Logo Starts -->
+  <tr>
+  <td aria-hidden="true" align="center" valign="top" style="padding-top: 20px;">
+  <a href="https://web.dev/" target="_blank" style="text-decoration: none;">
+  <img src="https://services.google.com/fh/files/emails/webdev-logo-desktop.png" width="120" height="auto" class="width108" alt="" title="web.dev">
+  </a>
+  </td>
+  </tr>
+  <!-- Footer Logo ends -->
+  <!-- Address Starts -->
+  <tr>
+  <td class="pad0" align="center" valign="top" style="color:#757575; font-family:Roboto, Helvetica, Arial, sans-serif; font-size:12px; line-height:16px; padding-left:25px; padding-right:25px; padding-top:31px;">© 2020 <a href="#" style="text-decoration: none; color: #757575;">Google LLC 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA</a></td>
+  </tr>
+  <!-- Address Ends -->
+  <!-- Pref Starts -->
+  <!-- Pref Ends -->
+  </tbody></table>
+  </td>
+  </tr>
+  <!--Footer section ends here-->
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+</body>
+</html>

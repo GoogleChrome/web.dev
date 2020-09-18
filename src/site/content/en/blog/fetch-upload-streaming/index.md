@@ -16,6 +16,8 @@ tags:
   - blog
   - network
   - service-worker
+feedback:
+  - api
 ---
 
 Chrome 85 has an experimental implementation of request streams, meaning you can

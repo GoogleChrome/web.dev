@@ -21,6 +21,8 @@ tags:
   - dark-theme
   - prefers-color-scheme
   - color-scheme
+feedback:
+  - api
 ---
 ## Background
 

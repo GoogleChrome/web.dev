@@ -14,6 +14,8 @@ tags:
   - notifications
 hero: hero-2.jpg
 alt: Neon sign with heart and zero
+feedback:
+  - api
 ---
 
 ## What is the App Badging API? {: #what }

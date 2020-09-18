@@ -18,6 +18,8 @@ tags:
   - virtual-reality
   - webxr
   - model-viewer
+feedback:
+  - api
 ---
 
 Adding 3D models to a website is tricky. 3D models ideally will be shown in
