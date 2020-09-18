@@ -23,23 +23,23 @@ are actually achieving their desired results.
 
 Many popular [Real User Monitoring
 (RUM)](https://en.wikipedia.org/wiki/Real_user_monitoring) analytics providers
-already support the [Core Web Vitals](/vitals/#core-web-vitals) metrics in their
+already support the [Web Vitals](/vitals/#core-web-vitals) metrics in their
 tools (as well as many [other Web Vitals](/vitals/#other-web-vitals)). If you're
 currently using one of these RUM analytics tools, you're in great shape to
-assess how well the pages on your site meet the [recommended Core Web Vitals
+assess how well the pages on your site meet the [recommended Web Vitals
 thresholds](/vitals/#core-web-vitals) and prevent regressions
 in the future.
 
-While we do recommend using an analytics tool that supports the Core Web Vitals
+While we do recommend using an analytics tool that supports the Web Vitals
 metrics, if the analytics tool you're currently using does not support them, you
 don't necessarily need to switch. Almost all analytics tools offer a way to
 define and measure [custom
 metrics](https://support.google.com/analytics/answer/2709828) or
 [events](https://support.google.com/analytics/answer/1033068), which means you
-can likely use your current analytics provider to measure the Core Web Vitals
+can likely use your current analytics provider to measure the Web Vitals
 metrics and add them to your existing analytics reports and dashboards.
 
-This guide discusses best practices for measuring Core Web Vitals metrics (or any custom metrics) with a third-party or in-house analytics tool. It can also serve as a guide for analytics vendors wishing to add Core Web Vitals support to their service.
+This guide discusses best practices for measuring Web Vitals metrics (or any custom metrics) with a third-party or in-house analytics tool. It can also serve as a guide for analytics vendors wishing to add Web Vitals support to their service.
 
 ## Use custom metrics or events
 
@@ -61,7 +61,7 @@ three-step process:
 For steps 1 and 3, you can refer to your analytics tool's documentation for
 instructions. For step 2 you can use the
 [web-vitals](https://github.com/GoogleChrome/web-vitals) JavaScript library to
-compute the value of each of the Core Web Vitals metrics.
+compute the value of each of the Web Vitals metrics.
 
 The following code sample shows how easy it can be to track these metrics in
 code and send them to an analytics service.
@@ -83,11 +83,11 @@ getLCP(sendToAnalytics);
 
 ## Ensure you can report a distribution
 
-Once you've computed the values for each of the Core Web Vitals metrics and sent
+Once you've computed the values for each of the Web Vitals metrics and sent
 them to your analytics service using a custom metric or event, the next step is
 to build a report or dashboard displaying the values that have been collected.
 
-To ensure you're meeting the [recommended Core Web Vitals
+To ensure you're meeting the [recommended Web Vitals
 thresholds](/vitals/#core-web-vitals), you'll need your report
 to display the value of each metric at the 75th percentile.
 
@@ -163,7 +163,7 @@ a new page. This makes the `visibilitychange` event far more reliable than the
 ## Monitor performance over time
 
 Once you've updated your analytics implementation to both track and report on
-the Core Web Vitals metrics, the next step is to track how changes to your site
+the Web Vitals metrics, the next step is to track how changes to your site
 affect performance over time.
 
 ### Version your changes
@@ -220,7 +220,7 @@ Analytics code should always be loaded in an asynchronous, non-blocking way, and
 generally it should be loaded last. If you load your analytics code in a
 blocking way, it can negatively affect LCP.
 
-All of the APIs used to measure the Core Web Vitals metrics were specifically
+All of the APIs used to measure the Web Vitals metrics were specifically
 designed to support asynchronous and deferred script loading (via the
 [`buffered`](https://www.chromestatus.com/feature/5118272741572608) flag), so
 there's no need to rush to get your scripts loaded early.

@@ -124,7 +124,7 @@ speed metrics in order to determine which one has the strongest correlation with
 your business success. In general we recommend starting with the [Core Web
 Vitals](/vitals/#core-web-vitals). The
 [web-vitals.js](https://github.com/GoogleChrome/web-vitals) library can help you
-measure some of the Core Web Vitals in the field, although note that [browser
+measure some of the Web Vitals in the field, although note that [browser
 support isn't 100%](https://github.com/GoogleChrome/web-vitals#browser-support).
 Beyond the Core Web Vitals, the [Other Web Vitals](/vitals/#other-web-vitals)
 are also worth checking out. You can also define [custom

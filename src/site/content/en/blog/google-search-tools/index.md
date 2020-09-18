@@ -114,7 +114,7 @@ pages of your website are indexed and which ones have problems.
 ### Core Web Vitals report
 
 The [Core Web Vitals report](https://support.google.com/webmasters/answer/9205520) helps you
-get an overview of how the pages of your website are performing in terms of the [Core Web
+get an overview of how the pages of your website are performing in terms of the [Web
 Vitals](/vitals/#core-web-vitals).
 
 <figure class="w-figure">

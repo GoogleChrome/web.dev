@@ -20,7 +20,7 @@ Collecting data on your site's Web Vitals is the first step towards improving th
 
 ## Measuring Web Vitals using RUM data
 
-[Real User Monitoring](https://en.wikipedia.org/wiki/Real_user_monitoring) (RUM) data, also known as field data, captures the performance experienced by a site's actual users. RUM data is what Google uses to determine whether a site meets the [recommended Core Web Vitals thresholds.](https://web.dev/vitals/)
+[Real User Monitoring](https://en.wikipedia.org/wiki/Real_user_monitoring) (RUM) data, also known as field data, captures the performance experienced by a site's actual users. RUM data is what Google uses to determine whether a site meets the [recommended Web Vitals thresholds.](https://web.dev/vitals/)
 
 ### Getting started
 
@@ -42,7 +42,7 @@ CrUX-based data sources report data using a granularity of approximately one mon
 
 You can collect your own RUM data by using a dedicated RUM provider, or, by setting up your own tooling.
 
-Dedicated RUM providers specialize in collecting and reporting RUM data. To use Core Web Vitals with these services, ask your RUM provider about enabling Core Web Vitals monitoring for your site.
+Dedicated RUM providers specialize in collecting and reporting RUM data. To use Web Vitals with these services, ask your RUM provider about enabling Web Vitals monitoring for your site.
 
 If you don't have a RUM provider, you may be able to augment your existing analytics setup to collect and report on these metrics by using the [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals). This method is explained in more detail below.
 
@@ -66,7 +66,7 @@ When considering which tool to use, it is helpful to think about who will need t
 
 When analyzing performance data, it's important to pay attention to the tails of the distribution. RUM data often reveals that performance varies widely - some users have fast experiences, others have slow experiences. However, using the median to summarize data can easily mask this behavior. 
 
-With regards to Web Vitals, Google uses the percentage of "good" experiences, rather than statistics like medians or averages, to determine whether a site or page meets the recommended thresholds. Specifically, for a site or page to be considered as meeting the Core Web Vitals thresholds, 75% of page visits should meet the "good" threshold for each metric.
+With regards to Web Vitals, Google uses the percentage of "good" experiences, rather than statistics like medians or averages, to determine whether a site or page meets the recommended thresholds. Specifically, for a site or page to be considered as meeting the Web Vitals thresholds, 75% of page visits should meet the "good" threshold for each metric.
 
 ## Measuring Web Vitals using lab data
 
@@ -83,6 +83,6 @@ There will always be discrepancies between RUM data and lab data - particularly 
 
 These tools can be used to gather lab measurements of Web Vitals:
 
-*  **Web Vitals Chrome Extension:** The Web Vitals Chrome [extension](https://github.com/GoogleChrome/web-vitals-extension) measures and reports the Core Web Vitals (LCP, FID, and CLS) for a given page. This tool is intended to provide developers with real-time performance feedback as they make code changes.
+*  **Web Vitals Chrome Extension:** The Web Vitals Chrome [extension](https://github.com/GoogleChrome/web-vitals-extension) measures and reports the Web Vitals (LCP, FID, and CLS) for a given page. This tool is intended to provide developers with real-time performance feedback as they make code changes.
 *  **Lighthouse:** Lighthouse reports on LCP, CLS, and TBT, and also highlights possible performance improvements. Lighthouse is available in Chrome DevTools, as a Chrome Extension, and as an npm package. Lighthouse can also be incorporated into continuous integration workflows via [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci).
 *  **WebPageTest:** [WebPageTest](https://webpagetest.org/) includes Web Vitals as a part of its standard reporting. WebPageTest is useful for gathering information on Web Vitals under particular device and network conditions.

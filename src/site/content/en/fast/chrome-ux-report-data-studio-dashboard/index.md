@@ -100,7 +100,7 @@ is released on the second Tuesday of June.
 ### Core Web Vitals overview
 
 The first page is an overview of the origin's monthly
-[Core Web Vitals](/vitals/) performance. These are the most important UX metrics that Google recommends you focus on.
+[Web Vitals](/vitals/) performance. These are the most important UX metrics that Google recommends you focus on.
 
 <img class="w-screenshot" src="./dash_cwv.png" alt="CrUX Dashboard Core Web Vitals overview">
 

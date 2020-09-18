@@ -98,7 +98,7 @@ start, take a look at our [Fast](/fast/) section, and use
 When working on your speed optimizations, start measuring your site speed
 frequently with appropriate tools and metrics to monitor your progress.
 For example, measure your metrics with [Lighthouse][lighthouse],
-fix clear targets like having ["Good" Core Web Vitals scores](/vitals/#core-web-vitals), and
+fix clear targets like having ["Good" Web Vitals scores](/vitals/#core-web-vitals), and
 incorporate a [performance budget into your build process][perf-budget-ci].
 Thanks to your daily measurements and [the "value of speed" methodology][value-of-speed],
 you can isolate the impact of your incremental speed changes and calculate

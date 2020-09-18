@@ -127,7 +127,7 @@ It's part of our job.
 
 ## Get started with improving your website speed {: #get-started }
 
-Read up on the [Core Web Vitals](/vitals/#core-web-vitals) to learn about the metrics
+Read up on [Web Vitals](/vitals/#core-web-vitals) to learn about the metrics
 that Google believes all websites should focus on.
 
 <blockquote>
@@ -135,7 +135,7 @@ that Google believes all websites should focus on.
 	  Today, we’re building on this work and providing an early
 	  look at an upcoming Search ranking change that incorporates
 	  these page experience metrics. We will introduce a new signal
-	  that combines Core Web Vitals with our existing signals for page
+	  that combines Web Vitals with our existing signals for page
 	  experience to provide a holistic picture of the quality of a user’s
 	  experience on a web page.
   </p>

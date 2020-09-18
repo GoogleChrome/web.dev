@@ -21,7 +21,7 @@ tags:
 
 Layout shifts can be distracting to users. Imagine you've started reading an article when all of a sudden elements shift around the page, throwing you off and requiring you to find your place again. This is very common on the web, including when reading the news, or trying to click those 'Search' or 'Add to Cart' buttons. Such experiences are visually jarring and frustrating. They're often caused when visible elements are forced to move because another element was suddenly added to the page or resized.
 
-[Cumulative Layout Shift](/cls) (CLS) - a [Core Web Vitals](/vitals) metric, measures the instability of content by summing shift scores across layout shifts that don't occur within 500ms of user input. It looks at how much visible content shifted in the viewport as well as the distance the elements impacted were shifted.
+[Cumulative Layout Shift](/cls) (CLS) - a [Web Vitals](/vitals) metric, measures the instability of content by summing shift scores across layout shifts that don't occur within 500ms of user input. It looks at how much visible content shifted in the viewport as well as the distance the elements impacted were shifted.
 
 In this guide, we'll cover optimizing common causes of layout shifts.
 

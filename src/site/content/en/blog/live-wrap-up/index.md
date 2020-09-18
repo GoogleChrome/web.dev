@@ -48,11 +48,11 @@ announced](https://webmasters.googleblog.com/2020/05/evaluating-page-experience.
 be evaluating page experience as a ranking criteria, and will include [Core Web
 Vitals](/vitals/#core-web-vitals) metrics as its foundation.
 
-The three pillars of the 2020 Core Web Vitals are loading, interactivity, and visual stability of
+The three pillars of the 2020 Web Vitals are loading, interactivity, and visual stability of
 page content, which are captured by the following metrics:
 
 <figure class="w-figure">
-  <img src="corewebvitals.png" alt="An illustration of the Core Web Vitals.">
+  <img src="corewebvitals.png" alt="An illustration of Web Vitals.">
 </figure>
 
 + [Largest Contentful Paint](/lcp/) measures perceived load speed and
@@ -191,7 +191,7 @@ problems with the Issues tab](https://youtu.be/1TbkSxQb4bI) to get started.
   <img class="w-screenshot w-screenshot--filled" src="issues.png" alt="A screenshot of the Issues tab.">
 </figure>
 
-Moreover, with the [Core Web Vitals](/vitals/#core-web-vitals) becoming one of the
+Moreover, with [Web Vitals](/vitals/#core-web-vitals) becoming one of the
 most critical sets of metrics for web developers to track and measure, DevTools wants to ensure
 developers are able to easily track how they perform against these thresholds. So these three
 metrics are now in the Chrome DevTools Performance panel.
@@ -208,14 +208,14 @@ DevTools](https://youtu.be/6yrJZHqJe2k) session.
        alt="A screenshot of the vision deficiencies emulator.">
 </figure>
 
-### Lighthouse 6.0: New metrics, Core Web Vitals lab measurements, an updated Performance score, and new audits
+### Lighthouse 6.0: New metrics, Web Vitals lab measurements, an updated Performance score, and new audits
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse) is an open-source automated tool
 that helps developers improve their site's performance. In its latest version, the Lighthouse team
 focused on providing insights based on metrics that give you a balanced view of the quality of your
 user experience against critical dimensions.
 
-To ensure consistency, Lighthouse added support for the Core Web Vitals:
+To ensure consistency, Lighthouse added support for Web Vitals:
 [LCP](/lcp/), [TBT](/tbt/) (a proxy for
 [FID](/fid/) since Lighthouse is a lab tool and FID can only be
 measured in the field) and [CLS](/cls/). Lighthouse also removed

@@ -41,7 +41,7 @@ In the **Field Data** section, you'll see four metrics:
 [First Contentful Paint](/fcp/) (FCP), [First Input Delay](/fid/) (FID), 
 [Largest Contentful Paint](/lcp/) (LCP), and 
 [Cumulative Layout Shift](/cls/) (CLS). FID, LCP, and CLS are
-considered the [Core Web Vitals](/vitals/#core-web-vitals) metrics. These 
+considered [Web Vitals](/vitals/#core-web-vitals) metrics. These
 metrics are representative of the user experience in different ways:
 
 - **FCP** measures the time until the page displays something in the

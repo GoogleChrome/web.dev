@@ -24,7 +24,7 @@ The [Chrome UX Report](https://developers.google.com/web/tools/chrome-user-exper
 
 This API has been built with the goal of providing developers with simple, fast, and comprehensive access to CrUX data. The CrUX API only reports [_field_](/how-to-measure-speed/#lab-data-vs-field-data) user experience data, unlike the existing [PageSpeed Insights API](https://developers.google.com/speed/docs/insights/v5/get-started), which also reports _lab_ data from the Lighthouse performance audits. The CrUX API is streamlined and can quickly serve user experience data, making it ideally suited for real-time auditing applications.
 
-To ensure that developers have access to all of the metrics that matter the most—the [Core Web Vitals](/vitals/#core-web-vitals)—the CrUX API audits and monitors [Largest Contentful Paint](/lcp/) (LCP), [First Input Delay](/fid/) (FID), and [Cumulative Layout Shift](/cls/) (CLS) at both the origin and URL level.
+To ensure that developers have access to all of the metrics that matter the most—[Web Vitals](/vitals/#core-web-vitals)—the CrUX API audits and monitors [Largest Contentful Paint](/lcp/) (LCP), [First Input Delay](/fid/) (FID), and [Cumulative Layout Shift](/cls/) (CLS) at both the origin and URL level.
 
 So let's dive in and see how to use it!
 
@@ -319,9 +319,9 @@ The more fine-grained the request is, for example a specific combination of URL 
 
 Recall from the previous section that 85% of user experiences on this page had "good" LCP. Compare that to phone-specific experiences, of which only 78% are considered "good". The 75th percentile is also slower among phone experiences, up from 1,947 milliseconds to 2,366 milliseconds. Segmenting by form factor has the potential to highlight more extreme disparities in user experiences.
 
-## Assessing Core Web Vitals performance
+## Assessing Web Vitals performance
 
-The [Core Web Vitals](/vitals/#core-web-vitals) program defines targets that help determine whether a user experience or a distribution of experiences can be considered "good". In the following example, we use the CrUX API and the [`CrUXApiUtil.query`](#crux-api-util) function to assess whether a web page's distribution of Core Web Vitals metrics (LCP, FID, CLS) are "good".
+The [Web Vitals](/vitals/#core-web-vitals) program defines targets that help determine whether a user experience or a distribution of experiences can be considered "good". In the following example, we use the CrUX API and the [`CrUXApiUtil.query`](#crux-api-util) function to assess whether a web page's distribution of Web Vitals metrics (LCP, FID, CLS) are "good".
 
 ```js/1
 CrUXApiUtil.query({
@@ -347,7 +347,7 @@ function assessCoreWebVitals(response) {
     }
     const p75 = data.percentiles.p75;
     const threshold = data.histogram[0].end;
-    // A Core Web Vitals metric passes the assessment if
+    // A Web Vitals metric passes the assessment if
     // its 75th percentile is under the "good" threshold.
     const passes = p75 < threshold;
     console.log(`The 75th percentile (${p75}) of ${metric} ` +
@@ -369,7 +369,7 @@ The 75th percentile (20) of first_input_delay passes the Core Web Vitals "good" 
 The 75th percentile (0.05) of cumulative_layout_shift passes the Core Web Vitals "good" threshold (0.10).
 ```
 
-Combined with an automated way to monitor API results, data from CrUX can be used to ensure that real-user experiences **get fast** and **stay fast**. For more information about Core Web Vitals and how to measure them, check out [Web Vitals](/vitals) and [Tools to measure Core Web Vitals](/vitals-tools).
+Combined with an automated way to monitor API results, data from CrUX can be used to ensure that real-user experiences **get fast** and **stay fast**. For more information about Web Vitals and how to measure them, check out [Web Vitals](/vitals) and [Tools to measure Web Vitals](/vitals-tools).
 
 ## What's next?
 
