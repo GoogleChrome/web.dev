@@ -1,5 +1,5 @@
 ---
-title: "The Native File System API: simplifying access to local files"
+title: 'The Native File System API: simplifying access to local files'
 subhead:
   The Native File System API allows web apps to read or save changes directly to files and folders
   on the user's device.
@@ -37,11 +37,9 @@ contents.
 If you've worked with reading and writing files before, much of what I'm about to share will be
 familiar to you. I encourage you to read it anyway, because not all systems are alike.
 
-{% Aside %}
-  We've put a lot of thought into the design and implementation of the Native File System
-  API to ensure that people can easily manage their files. See the
-  [security and permissions](#security-considerations) section for more information.
-{% endAside %}
+{% Aside %} We've put a lot of thought into the design and implementation of the Native File System
+API to ensure that people can easily manage their files. See the
+[security and permissions](#security-considerations) section for more information. {% endAside %}
 
 ## Current status {: #status }
 
@@ -57,13 +55,11 @@ familiar to you. I encourage you to read it anyway, because not all systems are 
 
 </div>
 
-{% Aside %}
-  During the origin trial phase, there was a universal method named
-  `Window.chooseFileSystemEntries()` for opening, saving, and accessing directories. This method has
-  been replaced with the three specialized methods `Window.showOpenFilePicker()`,
-  `Window.showSaveFilePicker()`, and `Window.showDirectoryPicker()`. There were a number of other
-  [changes][changes] that you can read up on.
-{% endAside %}
+{% Aside %} During the origin trial phase, there was a universal method named
+`Window.chooseFileSystemEntries()` for opening, saving, and accessing directories. This method has
+been replaced with the three specialized methods `Window.showOpenFilePicker()`,
+`Window.showSaveFilePicker()`, and `Window.showDirectoryPicker()`. There were a number of other
+[changes][changes] that you can read up on. {% endAside %}
 
 ## Using the Native File System API {: #how-to-use }
 
@@ -218,10 +214,8 @@ async function writeURLToFile(fileHandle, url) {
 You can also [`seek()`][spec-seek], or [`truncate()`][spec-truncate] within the stream to update the
 file at a specific position, or resize the file.
 
-{% Aside 'caution' %}
-  Changes are **not** written to disk until the stream is closed, either by
-  calling `close()` or when the stream is automatically closed by the pipe.
-{% endAside %}
+{% Aside 'caution' %} Changes are **not** written to disk until the stream is closed, either by
+calling `close()` or when the stream is automatically closed by the pipe. {% endAside %}
 
 ### Storing file handles in IndexedDB
 
@@ -337,6 +331,19 @@ const dirHandle = await root.getDirectoryHandle('New Folder', { create: true });
 // Recursively remove a directory.
 await root.removeEntry('Old Stuff', { recursive: true });
 ```
+
+## Polyfilling
+
+It is not possible to completely polyfill the Native File System API methods.
+
+- The `showFileOpenPicker()` method can be approximated with an `<input type="file">` element.
+- The `showFileSavePicker()` method can be simulated with a `<a download="file_name">` element,
+  albeit this will trigger a programmatic download and not allow for overwriting existing files.
+- The `showDirectoryPicker()` method can be somewhat emulated with the non-standard
+  `<input type="file" webkitdirectory>` element.
+
+We have developed a library called [browser-nativefs](/browser-nativefs/) that uses the Native File
+System API wherever possible and that falls back to these next best options in all other cases.
 
 ## Security and permissions {: #security-considerations }
 
