@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What is mixed content
+title: What is mixed content?
 authors:
   - johyphenel
   - rachelandrew
@@ -32,7 +32,7 @@ the insecure requests have already been performed and the security of the page i
 
 This is why mixed content is increasingly being blocked by browsers.
 If you have mixed content on your site,
-then fixing it will ensure it continues to load as browsers become more strict.
+then fixing it will ensure the content continues to load as browsers become more strict.
 
 ## The two types of mixed content
 
@@ -44,7 +44,7 @@ Passive mixed content includes images, video, and audio content,
 along with other resources that cannot interact with the rest of the page.
 
 **Active mixed content** interacts with the page as a whole and allows an attacker to do almost anything with the page.
-Active mixed content includes scripts, stylesheets, iframes, flash resources,
+Active mixed content includes scripts, stylesheets, iframes,
 and other code that the browser can download and execute.
 
 ### Passive mixed content
@@ -57,7 +57,7 @@ replace your product diagrams with lewd or pornographic content,
 defacing your site; or replace your product pictures with ads for a different site or product.
 
 Even if the attacker doesn't alter the content of your site,
-an attacker can track users using mixed content requests.
+an attacker can track users via mixed content requests.
 The attacker can tell which pages a user visits and which products they view based on images or other resources that the browser loads.
 
 The following Glitch demo contains examples of passive mixed content.
@@ -71,7 +71,7 @@ The following Glitch demo contains examples of passive mixed content.
   </iframe>
 </div>
 
-If passive mixed content is present most browsers will indicate that the page is not secure in the URL bar,
+If passive mixed content is present most browsers will indicate in the URL bar that the page is not secure,
 even when the page itself was loaded over HTTPS.
 
 Until recently passive mixed content was loaded in all browsers,
@@ -82,17 +82,17 @@ Chrome is currently rolling out automatic upgrading of passive mixed content whe
 Automatic upgrading means that if the asset is available over HTTPS, but has been hardcoded as HTTP,
 the browser will load the HTTPS version. If no secure version can be found the asset will not load.
 
-When mixed content is detected, or auto-upgrading has occured, this will be noted in DevTools.
+When mixed content is detected, or auto-upgrading has occured, this will be noted in the Chrome DevTools console.
 
 <figure class="w-figure">
   <img class="w-screenshot"
       src="passive-mixed-content.jpg"
-      alt="DevTools showing the warnings displayed when mixed content is detected and upgraded">
+      alt="Chrome DevTools showing the warnings displayed when mixed content is detected and upgraded">
 </figure>
 
 ### Active mixed content
 
-Active mixed content poses a greater threat than passive.
+Active mixed content poses a greater threat than passive mixed content.
 An attacker can intercept and rewrite active content,
 thereby taking full control of your page or even your entire website.
 This allows the attacker to change anything about the page,
@@ -118,12 +118,12 @@ The following contains examples of active mixed content:
 
 [Load the example over HTTP](http://active-mixed-content.glitch.me/) and you will see the content that has been blocked.
 
-Blocked content will be detailed in the Console in DevTools.
+Blocked content will be detailed in the Chrome DevTools console.
 
 <figure class="w-figure">
   <img class="w-screenshot"
       src="active-mixed-content.jpg"
-      alt="DevTools showing the warnings displayed when active mixed content is blocked">
+      alt="Chrome DevTools showing the warnings displayed when active mixed content is blocked">
 </figure>
 
 ## The mixed content specification
@@ -154,5 +154,4 @@ At worst, some browsers and versions don't block any mixed content at all,
 which is very unsafe for the user.
 
 By fixing your mixed content problems you ensure that your content is visible in new browsers.
-You also help protext users who are on older browsers,
-from dangerous content their browser does not protect them from.
+You also help protect users from dangerous content that isn't blocked by older browsers..
