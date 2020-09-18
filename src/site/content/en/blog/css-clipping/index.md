@@ -49,7 +49,7 @@ For legacy browsers a fallback may be to allow the browser to ignore the `clip-p
 If this is a problem you could test for `clip-path` in a feature query and offer an alternate layout for unsupporting browsers.
 
 ```css
-@supports(clip-path: circle(45%) {
+@supports(clip-path: circle(45%)) {
   /* code that requires clip-path here. */
 }
 ```
