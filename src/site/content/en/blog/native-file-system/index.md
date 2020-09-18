@@ -95,7 +95,7 @@ perfect for a text editor.
 Like many other powerful APIs, calling `showOpenFilePicker()` must be done in a [secure
 context][secure-contexts], and must be called from within a user gesture.
 
-```js/2
+```js/3
 let fileHandle;
 butOpenFile.addEventListener('click', async () => {
   // Destructure the one-element array.
