@@ -1,11 +1,12 @@
 ---
 title: "The Native File System API: simplifying access to local files"
-subhead: The new Native File System API allows web apps to read or save changes directly to files and folders on the user's device.
+subhead: The Native File System API allows web apps to read or save changes directly to files and folders on the user's device.
 authors:
   - petelepage
-description: The new Native File System API enables developers to build powerful web apps that interact with files on the user's local device, like IDEs, photo and video editors, text editors, and more. After a user grants a web app access, this API allows web apps to read or save changes directly to files and folders on the user's device.
+  - thomassteiner
+description: The Native File System API enables developers to build powerful web apps that interact with files on the user's local device, like IDEs, photo and video editors, text editors, and more. After a user grants a web app access, this API allows them to read or save changes directly to files and folders on the user's device.
 date: 2019-08-20
-updated: 2020-09-02
+updated: 2020-09-18
 tags:
   - blog
   - capabilities
@@ -20,19 +21,19 @@ feedback:
 
 ## What is the Native File System API? {: #what-is-it }
 
-The [Native File System API][spec]  (formerly known as the Writeable Files API)
+The [Native File System API][spec] (formerly known as the Writeable Files API)
 enables developers to build powerful web apps
 that interact with files on the user's local device, like IDEs, photo and video
 editors, text editors, and more. After a user grants a web app access, this
-API allows web apps to read or save changes directly to files and folders
+API allows them to read or save changes directly to files and folders
 on the user's device. Beyond reading and writing files, the Native File System
 API provides the ability to open a directory and enumerate its contents.
 
 If you've worked with reading and writing files before, much of what I'm about
-to share will be familliar to you. I encourage you to read it anyway because not
+to share will be familiar to you. I encourage you to read it anyway, because not
 all systems are alike.
 
-{% Aside 'caution' %}
+{% Aside %}
   We've put a lot of thought into the design and implementation of the Native
   File System API to ensure that people can easily manage their files. See the
   [security and permissions](#security-considerations) section
@@ -46,16 +47,16 @@ all systems are alike.
 | Step                                       | Status                       |
 | ------------------------------------------ | ---------------------------- |
 | 1. Create explainer                        | [Complete][explainer]        |
-| 2. Create initial draft of specification   | [In progress][spec]          |
-| 3. Gather feedback & iterate on design     | [In progress][spec]          |
+| 2. Create initial draft of specification   | [Complete][spec]             |
+| 3. Gather feedback & iterate on design     | [Complete][spec]             |
 | 4. Origin trial                            | Complete                     |
-| **5. Launch**                              | **Chrome 86**                |
+| **5. Launch**                              | **Complete**                 |
 
 </div>
 
 ## Using the Native File System API {: #how-to-use }
 
-To show off the true power and usefulness of the Native File System APIs,
+To show off the true power and usefulness of the Native File System API,
 I wrote a single file [text editor][text-editor]. It lets you open a text
 file, edit it, save the changes back to disk, or start a new file and save
 the changes to disk. It's nothing fancy, but provides enough to help you
@@ -74,29 +75,30 @@ then open and read that file from disk.
 #### Ask the user to pick a file to read
 
 The entry point to the Native File System API is
-[`window.chooseFileSystemEntries()`][choose-fs-entries]. When called, it shows a
-file picker dialog box, and prompts the user to select a file. After a user
-selects a file, the API returns a handle to it. An optional `options` parameter
+[`window.showOpenFilePicker()`][showopenfilepicker]. When called, it shows a
+file picker dialog box, and prompts the user to select a file. After they
+select a file, the API returns an array of file handles. An optional `options` parameter
 lets you influence the behavior of the file picker, for example, by allowing the
 user to select multiple files, or directories, or different file types. Without
 any options specified, the file picker allows the user to select a single file.
 This is perfect for a text editor.
 
-Like many other powerful APIs, calling `chooseFileSystemEntries()` must be
+Like many other powerful APIs, calling `showOpenFilePicker()` must be
 done in a [secure context][secure-contexts], and must be called from within
 a user gesture.
 
 ```js/2
 let fileHandle;
-butOpenFile.addEventListener('click', async (e) => {
-  fileHandle = await window.chooseFileSystemEntries();
-  // Do something with the file handle
+butOpenFile.addEventListener('click', async () => {
+  // Destructure the one-element array.
+  [fileHandle] = await window.showOpenFilePicker();
+  // Do something with the file handle.
 });
 ```
 
-Once the user selects a file, `chooseFileSystemEntries()` returns a handle,
-in this case a [`FileSystemFileHandle`][fs-file-handle] that contains the
-properties and methods needed to interact with the file.
+Once the user selects a file, `showOpenFilePicker()` returns an array of handles,
+in this case a one-element array with one [`FileSystemFileHandle`][fs-file-handle]
+that contains the properties and methods needed to interact with the file.
 
 It's helpful to keep a reference to the file handle around so that it can be
 used later. It'll be needed to save changes back to the file, or to perform any
@@ -117,7 +119,7 @@ const contents = await file.text();
 
 The `File` object returned by `FileSystemFileHandle.getFile()` is only
 readable as long as the underlying file on disk hasn't changed. If the file
-on disk is modified the `File` object becomes unreadable, and you'll need to
+on disk is modified, the `File` object becomes unreadable and you'll need to
 call `getFile()` again to get a new `File` object to read the changed data.
 
 #### Putting it all together
@@ -128,8 +130,8 @@ contents and puts them into a `<textarea>`.
 
 ```js/3-4
 let fileHandle;
-butOpenFile.addEventListener('click', async (e) => {
-  fileHandle = await window.chooseFileSystemEntries();
+butOpenFile.addEventListener('click', async () => {
+  [fileHandle] = await window.showOpenFilePicker();
   const file = await fileHandle.getFile();
   const contents = await file.text();
   textArea.value = contents;
@@ -145,22 +147,24 @@ handle.
 
 #### Create a new file
 
-Passing `{type: 'save-file'}` to `chooseFileSystemEntries()` will show the
-file picker in "save" mode, allowing the user to pick a new file they want
+In order to save a file, call [`showSaveFilePicker()`][showsavefilepicker],
+which will show the file picker in "save" mode, allowing the user to pick a new file they want
 to use for saving. For the text editor, I also wanted it to automatically
 add a `.txt` extension, so I provided some additional parameters.
 
 ```js
 async function getNewFileHandle() {
-  const opts = {
-    type: 'save-file',
-    accepts: [{
-      description: 'Text file',
-      extensions: ['txt'],
-      mimeTypes: ['text/plain'],
-    }],
+  const options = {
+    types: [
+      {
+        description: 'Text Files',
+        accept: {
+          'text/plain': ['.txt'],
+        }
+      },
+    ],
   };
-  const handle = await window.chooseFileSystemEntries(opts);
+  const handle = await window.showSaveFilePicker(opts);
   return handle;
 }
 ```
@@ -169,7 +173,7 @@ async function getNewFileHandle() {
 
 You can find all the code for saving changes to a file in my [text
 editor][text-editor] demo on [GitHub][text-editor-source]. The core file system
-interactions are in [`fs-helpers.js`][text-editor-fs-helper]. At its simpliest,
+interactions are in [`fs-helpers.js`][text-editor-fs-helper]. At its simplest,
 the process looks like the code below. I'll walk through each step and explain
 it.
 
@@ -187,7 +191,7 @@ async function writeFile(fileHandle, contents) {
 Writing data to disk uses a [`FileSystemWritableFileStream`][fs-writablestream] object,
 essentially a [`WritableStream`][writable-stream]. Create the stream by calling
 `createWritable()` on the file handle object. When `createWritable()` is
-called, Chrome first checks if the user has granted write permission to the
+called, the browser first checks if the user has granted write permission to the
 file. If permission to write hasn't been granted, the browser will prompt
 the user for permission. If permission isn't granted, `createWritable()`
 will throw a `DOMException`, and the app will not be able to write to the
@@ -214,8 +218,8 @@ You can also [`seek()`][spec-seek], or [`truncate()`][spec-truncate] within the
 stream to update the file at a specific position, or resize the file.
 
 {% Aside 'caution' %}
-Changes are **not** written to disk until the stream is closed, either by
-calling `close()` or when the stream is automatically closed by the pipe.
+  Changes are **not** written to disk until the stream is closed, either by
+  calling `close()` or when the stream is automatically closed by the pipe.
 {% endAside %}
 
 ### Storing file handles in IndexedDB
@@ -230,19 +234,19 @@ recently opened or edited files, offer to re-open the last file when the app
 is opened, etc. In the text editor, I store a list of the five most recent
 files the user has opened, making it easy to access those files again.
 
-Since permissions are not persisted between sessions, you should verify
+Since permissions currently are not persisted between sessions, you should verify
 whether the user has granted permission to the file using
 `queryPermission()`. If they haven't, use `requestPermission()` to
-request permission.
+(re-)request it.
 
 In the text editor, I created a `verifyPermission()` method that checks
 if the user has already granted permission, and if required, makes the request.
 
 ```js/6,10
-async function verifyPermission(fileHandle, withWrite) {
+async function verifyPermission(fileHandle, readWrite) {
   const opts = {};
-  if (withWrite) {
-    opts.writable = true;
+  if (readWrite) {
+    opts.mode = 'readwrite';
   }
   // Check if permission was already granted. If so, return true.
   if (await fileHandle.queryPermission(opts) === 'granted') {
@@ -258,25 +262,22 @@ async function verifyPermission(fileHandle, withWrite) {
 ```
 
 By requesting write permission with the read request, I reduced
-the number of permission prompts, the user sees one prompt when opening
+the number of permission prompts: the user sees one prompt when opening
 the file, and grants permission to both read and write to it.
 
 ### Open a directory and enumerate its contents
 
-To enumerate all files in a directory, call `chooseFileSystemEntries()`
-with the `type` option set to `'open-directory'`. The user selects a directory
+To enumerate all files in a directory, call [`showDirectoryPicker()`][showdirectorypicker].
+The user selects a directory
 in a picker, after which a [`FileSystemDirectoryHandle`][fs-dir-handle]
 is returned, which lets you enumerate and access the directory's files.
 
 ```js
 const butDir = document.getElementById('butDirectory');
-butDir.addEventListener('click', async (e) => {
-  const opts = {type: 'open-directory'};
-  const handle = await window.chooseFileSystemEntries(opts);
-  const entries = await handle.getEntries();
-  for await (const entry of entries) {
-    const kind = entry.isFile ? 'File' : 'Directory';
-    console.log(kind, entry.name);
+butDir.addEventListener('click', async () => {
+  const dirHandle = await window.showDirectoryPicker();
+  for await (const entry of dirHandle.values()) {
+    console.log(entry.kind, entry.name);
   }
 });
 ```
@@ -356,13 +357,13 @@ from the user.
 If a person wants to save changes to a file that they previously granted
 read access to, the browser will show a modal permission prompt, requesting
 permission for the site to write changes to disk. The permission request
-can only be triggered by a user gesture, for example, by clicking a "Save"
+can only be triggered by a user gesture, for example, by clicking a Save
 button.
 
 Alternatively, a web app that edits multiple files, like an IDE, can
 also ask for permission to save changes at the time of opening.
 
-If the user chooses *Cancel*, and does not grant write access, the web
+If the user chooses Cancel, and does not grant write access, the web
 app cannot save changes to the local file. It should provide an alternative
 method to allow the user to save their data, for example by providing a way to
 ["download" the file][download-file], saving data to the cloud, etc.
@@ -383,8 +384,8 @@ method to allow the user to save their data, for example by providing a way to
 </figure>
 
 Once a user has granted permission to a web app to save a local file,
-Chrome will show an icon in the omnibox. Clicking on the omnibox icon
-opens a popover showing the list of files the user has given access to.
+the browser will show an icon in the URL bar. Clicking on the icon
+opens a pop-over showing the list of files the user has given access to.
 The user can easily revoke that access if they choose.
 
 <div class="w-clearfix"></div>
@@ -449,7 +450,9 @@ critical it is to support them.
 [wicg-discourse]: https://discourse.wicg.io/t/writable-file-api/1433
 [file-api-spec]: https://w3c.github.io/FileAPI/
 [blob-methods]: https://developer.mozilla.org/en-US/docs/Web/API/Blob
-[choose-fs-entries]: https://wicg.github.io/native-file-system/#api-choosefilesystementries
+[showopenfilepicker]: https://wicg.github.io/native-file-system/#api-showopenfilepicker
+[showsavefilepicker]: https://wicg.github.io/native-file-system/#api-showsavefilepicker
+[showdirectorypicker]: https://wicg.github.io/native-file-system/#api-showdirectorypicker
 [fs-writer]: https://wicg.github.io/native-file-system/#filesystemwriter
 [blob]: https://developer.mozilla.org/en-US/docs/Web/API/Blob
 [buffersource]: https://developer.mozilla.org/en-US/docs/Web/API/BufferSource
