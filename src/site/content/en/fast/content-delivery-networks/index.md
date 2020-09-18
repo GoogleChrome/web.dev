@@ -18,11 +18,11 @@ Content delivery networks (CDNs) improve site performance by using a distributed
 
 ## Overview
 
-A content delivery network (CDN) consists of a network of servers that are optimized for quickly delivering content to users. Although CDNs are arguably best known for serving cached content, CDNs can also improve the delivery of uncacheable content. Generally speaking, the more of your site delivered by your CDN, the better.
+A content delivery network consists of a network of servers that are optimized for quickly delivering content to users. Although CDNs are arguably best known for serving cached content, CDNs can also improve the delivery of uncacheable content. Generally speaking, the more of your site delivered by your CDN, the better.
 
 At a high-level, the performance benefits of CDNs stem from a handful of principles: CDN servers are located closer to users than origin servers and therefore have a shorter [round-trip time (RTT)](https://en.wikipedia.org/wiki/Round-trip_delay) latency; networking optimizations allow CDNs to deliver content more quickly than if the content was loaded "directly" from the origin server; lastly, CDN caches eliminate the need for a request to travel to the origin server.
 
-### Resource Delivery
+### Resource delivery
 
 Although it may seem non-intuitive, using a CDN to deliver resources (even uncacheable ones) will typically be faster than having the user load the resource "directly" from your servers.
 
@@ -33,7 +33,7 @@ When a CDN is used to deliver resources from the origin, a new connection is est
   <img src="./cdn1.png" alt="Comparison of connection setup with and without a CDN" class="w-screenshot">
 </figure>
 
-Some CDNs improve upon this even further by routing traffic to the origin through multiple CDN servers spread across the Internet. Connections between CDN servers occur over reliable and highly optimized routes, rather than routes determined by the [Border Gateway Protocol (BGP)](https://en.wikipedia.org/wiki/Border_Gateway_Protocol). Although BGP is the internet's de facto routing protocol, its routing decisions are not always performance oriented. Therefore, BGP-determined routes are likely to be less performant than the finely-tuned routes between CDN servers.
+Some CDNs improve upon this even further by routing traffic to the origin through multiple CDN servers spread across the Internet. Connections between CDN servers occur over reliable and highly optimized routes, rather than routes determined by the [Border Gateway Protocol (BGP)](https://en.wikipedia.org/wiki/Border_Gateway_Protocol). Although BGP is the internet's de facto routing protocol, its routing decisions are not always performance-oriented. Therefore, BGP-determined routes are likely to be less performant than the finely-tuned routes between CDN servers.
 
 <figure class="w-figure">
   <img src="./cdn2.png" alt="Comparison of connection setup with and without a CDN" class="w-screenshot">
@@ -59,13 +59,13 @@ CDNs use cache eviction to periodically remove not-so-useful resources from the 
 
 *  **Purging**
 
-    Purging (also known as "cache invalidation") is a mechanism for removing a resource from a CDN's caches without having to wait for it to expire or be evicted. It is typically executed via API. Purging is critical in situations where content needs to be retracted (for example, correcting typos, pricing errors, or incorrect news articles). On top of that, it can also play a crucial role in a site's caching strategy.
+    Purging (also known as "cache invalidation") is a mechanism for removing a resource from a CDN's caches without having to wait for it to expire or be evicted. It is typically executed via an API. Purging is critical in situations where content needs to be retracted (for example, correcting typos, pricing errors, or incorrect news articles). On top of that, it can also play a crucial role in a site's caching strategy.
 
     If a CDN supports near instant purging, purging can be used as a mechanism for managing the caching of dynamic content: cache dynamic content using a long TTL, then purge the resource whenever it is updated. In this way, it is possible to maximize the caching duration of a dynamic resource, despite not knowing in advance when the resource will change. This technique is sometimes referred to as "hold-till-told caching".
 
-    When purging is used at scale it is typically used in conjunction with a concept known as "cache tags" or "surrogate cache keys". This mechanism allows site owners to associate one or more additional identifiers (sometimes referred to as "tags") with a cached resource. These tags can then be used to carry out highly granular purging. For example, you might add a "footer" tag to all resources (for example, "/about", "/blog") that contain your site footer . When the footer is updated, instruct your CDN to purge all resources associated with the "footer" tag.
+    When purging is used at scale it is typically used in conjunction with a concept known as "cache tags" or "surrogate cache keys". This mechanism allows site owners to associate one or more additional identifiers (sometimes referred to as "tags") with a cached resource. These tags can then be used to carry out highly granular purging. For example, you might add a "footer" tag to all resources (for example, `/about`, `/blog`) that contain your site footer. When the footer is updated, instruct your CDN to purge all resources associated with the "footer" tag.
 
-#### Cacheable Resources
+#### Cacheable resources
 
 If and how a resource should be cached depends on whether it is public or private; static or dynamic.
 
@@ -79,7 +79,7 @@ If and how a resource should be cached depends on whether it is public or privat
 
     Public resources do not contain user-specific information and therefore are cacheable by a CDN. A resource is considered cacheable by a CDN if it does not have a `Cache-Control: no-store` or `Cache-Control: private` header. The length of time that a public resource can be cached depends on how frequently the asset changes.
 
-##### Dyanmic and static content  
+##### Dynamic and static content  
 
 *   **Dynamic content**
 
@@ -112,7 +112,7 @@ CDNs typically offer a wide variety of features in addition to their core CDN of
 
 ## How to setup and configure a CDN
 
-Ideally a CDN should be used to serve your entire site. At a high-level, the setup process for this consists of signing up with a CDN provider, then updating your CNAME DNS record to point at the CDN provider. For example, the CNAME record for `www.example.com` might point to `example.my-cdn.com`. As a result of this DNS change, traffic to your site will be routed through the CDN.
+Ideally you should use a CDN to serve your entire site. At a high-level, the setup process for this consists of signing up with a CDN provider, then updating your CNAME DNS record to point at the CDN provider. For example, the CNAME record for `www.example.com` might point to `example.my-cdn.com`. As a result of this DNS change, traffic to your site will be routed through the CDN.
 
 If using a CDN to serve all resources is not an option, a CDN can be configured to only serve a subset of resources - for example, only static resources. This is accomplished by creating a separate CNAME record that will only be used for resources that should be served by the CDN. For example, creating a `static.example.com` CNAME record that points to `example.my-cdn.com`. The URLs of resources that should be served by the CDN should be rewritten to point at the `static.example.com` subdomain that you just created.
 
@@ -130,7 +130,7 @@ When optimizing CHR, the first thing to verify is that all cacheable resources a
 The next level of CHR optimization, broadly speaking, is to fine tune your CDN settings to make sure that logically equivalent server responses aren't being cached separately. This is a common inefficiency that occurs due to the impact of factors like query params, cookies, and request headers on caching.
 
 
-### Initial Audit
+### Initial audit
 
 Most CDNs will provide cache analytics. In addition, tools like [WebPageTest](https://webpagetest.org/) and [Lighthouse](https://web.dev/uses-long-cache-ttl/) can also be used to quickly verify that all of a page's static resources are being cached for the correct length of time. This is accomplished by checking the HTTP Cache headers of each resource. Caching a resource using the maximum appropriate Time To Live (TTL) will avoid unnecessary origin fetches in the future and therefore increase CHR.
 
@@ -149,7 +149,7 @@ For a more detailed explanation of HTTP caching, refer to [Prevent unnecessary n
 
 A slightly simplified explanation of how CDN caches work is that the URL of a resource is used as the key for caching and retrieving the resource from the cache. In practice, this is still overwhelmingly true, but is complicated slightly by the impact of things like request headers and query params. As a result, rewriting request URLs is an important technique for both maximizing CHR and ensuring that the correct content is served to users. A properly configured CDN instance strikes the correct balance between overly granular caching (which hurts CHR) and insufficiently granular caching (which results in incorrect responses being served to users).
 
-#### Query Params
+#### Query params
 
 By default, CDNs take query params into consideration when caching a resource. However, small adjustments to query param handling can have a significant impact on CHR. For example:
 
@@ -183,7 +183,7 @@ This section discusses performance features that are commonly offered by CDNs as
 
 ### Compression
 
-All text-based responses should be compressed with either gzip or Brotli. If you have the choice, choose Brotli over gzip. Brotli is a newer compression algorithm, and compared to gzip, it can achieve higher compression ratios.  
+All text-based responses should be [compressed](/reduce-network-payloads-using-text-compression/#data-compression) with either gzip or Brotli. If you have the choice, choose Brotli over gzip. Brotli is a newer compression algorithm, and compared to gzip, it can achieve higher compression ratios.  
 
 There are two types of CDN support for Brotli compression: "Brotli from origin" and "automatic Brotli compression".
 
@@ -209,15 +209,15 @@ Sites that want to maximize performance should apply Brotli compression at both 
 
 ### TLS 1.3
 
-TLS 1.3 is the newest version of [Transport Layer Security (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security), the cryptographic protocol used by [HTTPS](https://en.wikipedia.org/wiki/HTTPS). TLS 1.3 provides better privacy and performanced compared to TLS 1.2
+TLS 1.3 is the newest version of [Transport Layer Security (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security), the cryptographic protocol used by [HTTPS](https://en.wikipedia.org/wiki/HTTPS). TLS 1.3 provides better privacy and performance compared to TLS 1.2.
 
-TLS 1.3. shortens the TLS handshake from two roundtrips to one. For connections using HTTP/1 or HTTP/2, shortening the TLS handshake to one roundtrip effectively reduces connection setup time by 33%.
+TLS 1.3 shortens the TLS handshake from two roundtrips to one. For connections using HTTP/1 or HTTP/2, shortening the TLS handshake to one roundtrip effectively reduces connection setup time by 33%.
 
 <figure class="w-figure">
   <img src="./cdn3.png" alt="Comparison of the TLS 1.2 and TLS 1.3 handshakes" class="w-screenshot">
 </figure>
 
-### HTTP/2 & HTTP/3
+### HTTP/2 and HTTP/3
 
 HTTP/2 and HTTP/3 both provide performance benefits over HTTP/1. Of the two, HTTP/3 offers greater _potential_ performance benefits. HTTP/3 isn't fully standardized yet, but it will be widely [supported](https://caniuse.com/#feat=http3) once this occurs.
 
@@ -231,7 +231,7 @@ If your CDN hasn't already enabled [HTTP/2](https://almanac.httparchive.org/en/2
     Multiplexing is arguably the most important feature of HTTP/2. Multiplexing enables a single TCP connection to serve multiple request-response pairs at the same time. This eliminates the overhead of unnecessary connection setups; given that the number of connections that a browser can have open at a given time is limited, this also has the implication that the browser is now able to request more of a page's resources in parallel. Multiplexing theoretically removes the need for HTTP/1 optimizations like concatenation and sprite sheets - however, in practice, these techniques will remain relevant given that larger files compress better.
 
 
-*  **Stream Prioritization**
+*  **Stream prioritization**
 
     Multiplexing enables multiple concurrent streams; [stream prioritization](https://http2.github.io/http2-spec/#StreamPriority) provides an interface for communicating relative priority of each of these streams. This helps the server to send the most important resources first - even if they weren't requested first.
 
@@ -274,7 +274,7 @@ CDN image optimization services typically focus on image optimizations that can 
 
 ### Minification
 
-Minification removes unnecessary characters from JavaScript, CSS, and HTML. It's preferable to do minification at the origin server, rather than the CDN. Site owners have more context about the code to be minified and therefore can often use more aggressive minification techniques than those employed by CDNs. However, if minifying code at the origin is not an option, minification by the CDN is a good alternative.
+[Minification](/reduce-network-payloads-using-text-compression/#minification) removes unnecessary characters from JavaScript, CSS, and HTML. It's preferable to do minification at the origin server, rather than the CDN. Site owners have more context about the code to be minified and therefore can often use more aggressive minification techniques than those employed by CDNs. However, if minifying code at the origin is not an option, minification by the CDN is a good alternative.
 
 
 ## Conclusion
