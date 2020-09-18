@@ -265,7 +265,7 @@ By requesting write permission with the read request, I reduced
 the number of permission prompts: the user sees one prompt when opening
 the file, and grants permission to both read and write to it.
 
-### Open a directory and enumerate its contents
+### Opening a directory and enumerating its contents
 
 To enumerate all files in a directory, call [`showDirectoryPicker()`][showdirectorypicker].
 The user selects a directory
@@ -280,6 +280,73 @@ butDir.addEventListener('click', async () => {
     console.log(entry.kind, entry.name);
   }
 });
+```
+
+#### Creating or access files and folders in a directory
+
+From a directory, you can create or access files and folders
+using the [`getFileHandle()`][getfileyhandle] or respectively
+the [`getDirectoryHandle()`][getdirectoryhandle] method.
+By passing in an optional `options` object with a key of `create`
+and a boolean value of `true` or `false`, you can determine
+if a new file or folder should be created if it doesn't exist. 
+
+```js
+// In an existing directory, create a new directory named "My Documents".
+const newDirectoryHandle = await existingDirectoryHandle
+    .getDirectoryHandle("My Documents", {create: true});
+// In this new directory, create a file named "My Notes.txt".
+const newFileHandle = await newDirectoryHandle
+    .getFileHandle("My Notes.txt", {create: true});
+```
+
+#### Resolving the path of an item in a directory
+
+When working with files or folders in a directory,
+it can be useful to resolve the path of the item in question.
+This can be done with the aptly named [`resolve()`][resolve] method.
+For resolving, the item can be a direct or indirect child of the directory.
+
+```js
+// Resolve the path of the previously created file called "My Notes.txt".
+const path = newDirectoryHandle.resolve(newFileHandle);
+// `path` is now ["My Documents", "My Notes.txt"]
+```
+
+#### Deleting files and folders in a directory
+
+If you have obtained access to a directory, you can delete
+the contained files and folders with the [`removeEntry()`][removeentry]
+method, for folders optionally recursively including all subfolders
+and the therein contained files.
+
+```js
+// Delete a file.
+await directoryHandle.removeEntry("Abandoned Masterplan.txt");
+// Recursively delete a folder.
+await directoryHandle.removeEntry("Old Stuff", {recursive: true});
+```
+
+### Accessing the origin-private file system
+
+The origin-private file system is a storage endpoint
+that, as the name suggests, is private to the origin of the page.
+While browsers will typically implement this by persisting
+the contents of this origin-private file system to disk somewhere,
+it is *not* intended that the contents be easily user accessible.
+Similarly, there is *no* expectation that files or directories
+with names matching the names of children of the origin-private file system exist.
+You can operate as usual on the origin-private file system once you have access to the
+root `FileSystemDirectoryHandle`.
+
+```js
+const root = await navigator.storage.getDirectory();
+// Create a new file handle.
+const fileHandle = await root.getFileHandle("Untitled.txt", {create: true});
+// Create a new directory handle.
+const dirHandle = await root.getDirectoryHandle("New Folder", {create: true});
+// Recursively remove a directory.
+await root.removeEntry("Old Stuff", {recursive: true});
 ```
 
 ## Security and permissions {: #security-considerations }
@@ -453,6 +520,10 @@ critical it is to support them.
 [showopenfilepicker]: https://wicg.github.io/native-file-system/#api-showopenfilepicker
 [showsavefilepicker]: https://wicg.github.io/native-file-system/#api-showsavefilepicker
 [showdirectorypicker]: https://wicg.github.io/native-file-system/#api-showdirectorypicker
+[getfilehandle]: https://wicg.github.io/native-file-system/#dom-filesystemdirectoryhandle-getfilehandle
+[getdirectoryhandle]: https://wicg.github.io/native-file-system/#dom-filesystemdirectoryhandle-getdirectoryhandle
+[removeentry]: https://wicg.github.io/native-file-system/#dom-filesystemdirectoryhandle-removeentry
+[resolve]: https://wicg.github.io/native-file-system/#api-filesystemdirectoryhandle-resolve
 [fs-writer]: https://wicg.github.io/native-file-system/#filesystemwriter
 [blob]: https://developer.mozilla.org/en-US/docs/Web/API/Blob
 [buffersource]: https://developer.mozilla.org/en-US/docs/Web/API/BufferSource
