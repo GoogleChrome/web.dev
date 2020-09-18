@@ -154,4 +154,4 @@ At worst, some browsers and versions don't block any mixed content at all,
 which is very unsafe for the user.
 
 By fixing your mixed content problems you ensure that your content is visible in new browsers.
-You also help protect users from dangerous content that isn't blocked by older browsers..
+You also help protect users from dangerous content that isn't blocked by older browsers.
