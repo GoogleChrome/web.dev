@@ -37,9 +37,11 @@ contents.
 If you've worked with reading and writing files before, much of what I'm about to share will be
 familiar to you. I encourage you to read it anyway, because not all systems are alike.
 
-{% Aside %} We've put a lot of thought into the design and implementation of the Native File System
-API to ensure that people can easily manage their files. See the
-[security and permissions](#security-considerations) section for more information. {% endAside %}
+{% Aside %}
+  We've put a lot of thought into the design and implementation of the Native File System
+  API to ensure that people can easily manage their files. See the
+  [security and permissions](#security-considerations) section for more information.
+{% endAside %}
 
 ## Current status {: #status }
 
@@ -55,11 +57,13 @@ API to ensure that people can easily manage their files. See the
 
 </div>
 
-{% Aside %} During the origin trial phase, there was a universal method named
-`Window.chooseFileSystemEntries()` for opening, saving, and accessing directories. This method has
-been replaced with the three specialized methods `Window.showOpenFilePicker()`,
-`Window.showSaveFilePicker()`, and `Window.showDirectoryPicker()`. There were a number of other
-[changes][changes] that you can read up on. {% endAside %}
+{% Aside %}
+  During the origin trial phase, there was a universal method named
+  been replaced with the three specialized methods `Window.showOpenFilePicker()`,
+  `Window.showSaveFilePicker()`, and `Window.showDirectoryPicker()`. There were a number of other
+  <a href="https://github.com/WICG/native-file-system/blob/master/changes.md">changes</a> that you can
+  read up on.
+{% endAside %}
 
 ## Using the Native File System API {: #how-to-use }
 
@@ -214,8 +218,10 @@ async function writeURLToFile(fileHandle, url) {
 You can also [`seek()`][spec-seek], or [`truncate()`][spec-truncate] within the stream to update the
 file at a specific position, or resize the file.
 
-{% Aside 'caution' %} Changes are **not** written to disk until the stream is closed, either by
-calling `close()` or when the stream is automatically closed by the pipe. {% endAside %}
+{% Aside 'caution' %}
+  Changes are **not** written to disk until the stream is closed, either by
+  calling `close()` or when the stream is automatically closed by the pipe.
+{% endAside %}
 
 ### Storing file handles in IndexedDB
 
@@ -544,4 +550,3 @@ The Native File System API spec was written by
 [spec-seek]: https://wicg.github.io/native-file-system/#api-filesystemwritablefilestream-seek
 [spec-truncate]:
   https://wicg.github.io/native-file-system/#api-filesystemwritablefilestream-truncate
-[changes]: https://github.com/WICG/native-file-system/blob/master/changes.md
