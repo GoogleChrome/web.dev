@@ -6,6 +6,8 @@ authors:
 description: |
   This article provides a comprehensive overview of content delivery networks (CDNs). 
   In addition, it explains how to choose, configure, and optimize a CDN setup.
+subhead: |
+  Improve performance by using a content delivery network. 
 date: 2020-09-14
 updated: 2020-09-14
 hero: hero.jpg
@@ -14,19 +16,23 @@ tags:
   - performance
 ---
 
-Content delivery networks (CDNs) improve site performance by using a distributed network of servers to deliver resources to users. They are well-suited for handling traffic spikes and are useful for reducing server load. This article discusses how CDNs work and provides platform-agnostic guidance on choosing, configuring, and optimizing a CDN setup.
+Content delivery networks (CDNs) improve site performance by using a distributed network of servers to deliver resources to users. Because CDNs reduce server load, they reduce server costs and are well-suited to handling traffic spikes. This article discusses how CDNs work and provides platform-agnostic guidance on choosing, configuring, and optimizing a CDN setup.
 
 ## Overview
 
 A content delivery network consists of a network of servers that are optimized for quickly delivering content to users. Although CDNs are arguably best known for serving cached content, CDNs can also improve the delivery of uncacheable content. Generally speaking, the more of your site delivered by your CDN, the better.
 
-At a high-level, the performance benefits of CDNs stem from a handful of principles: CDN servers are located closer to users than origin servers and therefore have a shorter [round-trip time (RTT)](https://en.wikipedia.org/wiki/Round-trip_delay) latency; networking optimizations allow CDNs to deliver content more quickly than if the content was loaded "directly" from the origin server; lastly, CDN caches eliminate the need for a request to travel to the origin server.
+At a high-level, the performance benefits of CDNs stem from a handful of principles: CDN servers are located closer to users than [origin servers](https://en.wikipedia.org/wiki/Upstream_server) and therefore have a shorter [round-trip time (RTT)](https://en.wikipedia.org/wiki/Round-trip_delay) latency; networking optimizations allow CDNs to deliver content more quickly than if the content was loaded "directly" from the origin server; lastly, CDN caches eliminate the need for a request to travel to the origin server.
+
+{% Aside %}
+"Origin server" refers to the server that a CDN retrieves content from.
+{% endAside %}
 
 ### Resource delivery
 
 Although it may seem non-intuitive, using a CDN to deliver resources (even uncacheable ones) will typically be faster than having the user load the resource "directly" from your servers.
 
-When a CDN is used to deliver resources from the origin, a new connection is established between the client and a nearby CDN server. The remainder of the journey (in other words, the data transfer between the CDN server and origin) occurs over one of the CDN's existing connections with the origin. The benefits of this are twofold: terminating the new connection as close to the user as possible eliminates unnecessary connection setup costs (establishing a new connection is expensive and requires multiple roundtrips); using a pre-warmed connection allows data to be immediately transferred at the maximum possible throughput.
+When a CDN is used to deliver resources from the origin, a new connection is established between the client and a nearby CDN server. The remainder of the journey (in other words, the data transfer between the CDN server and origin) occurs over the CDN's network - which often includes existing, persistent connections with the origin. The benefits of this are twofold: terminating the new connection as close to the user as possible eliminates unnecessary connection setup costs (establishing a new connection is expensive and requires multiple roundtrips); using a pre-warmed connection allows data to be immediately transferred at the maximum possible throughput.
 
 
 <figure class="w-figure">
@@ -55,7 +61,7 @@ CDNs use cache eviction to periodically remove not-so-useful resources from the 
 
 *  **Cache eviction**
 
-    Caches have a limited storage capacity. When a cache nears its capacity, it makes room for new resources by removing resources that haven't been accessed recently, or which take up a lot of space. This process is known as cache eviction. A resource being evicted from one cache does not necessarily mean that it has been evicted from all caches in a CDN network.
+    Caches have a finite storage capacity. When a cache nears its capacity, it makes room for new resources by removing resources that haven't been accessed recently, or which take up a lot of space. This process is known as cache eviction. A resource being evicted from one cache does not necessarily mean that it has been evicted from all caches in a CDN network.
 
 *  **Purging**
 
@@ -77,7 +83,7 @@ If and how a resource should be cached depends on whether it is public or privat
 
 *  **Public Resources**
 
-    Public resources do not contain user-specific information and therefore are cacheable by a CDN. A resource is considered cacheable by a CDN if it does not have a `Cache-Control: no-store` or `Cache-Control: private` header. The length of time that a public resource can be cached depends on how frequently the asset changes.
+    Public resources do not contain user-specific information and therefore are cacheable by a CDN. A resource may be considered cacheable by a CDN if it does not have a `Cache-Control: no-store` or `Cache-Control: private` header. The length of time that a public resource can be cached depends on how frequently the asset changes.
 
 ##### Dynamic and static content  
 
@@ -123,7 +129,7 @@ Although your CDN will be set up at this point, there will likely be inefficienc
 
 An effective CDN setup will serve as many resources as possible from the cache. This is commonly measured by cache hit ratio (CHR). Cache hit ratio is defined as the number of cache hits divided by the number of total requests during a given time interval.
 
-A freshly initialized cache will have a CHR of 0 but this increases as the cache is populated with resources. A CHR of 90% is a good goal for most sites. 
+A freshly initialized cache will have a CHR of 0 but this increases as the cache is populated with resources. A CHR of 90% is a good goal for most sites. Your CDN provider should supply you with analytics and reporting regarding your CHR.
 
 When optimizing CHR, the first thing to verify is that all cacheable resources are being cached and cached for the correct length of time. This is a simple assessment that should be undertaken by all sites.
 
@@ -157,7 +163,7 @@ By default, CDNs take query params into consideration when caching a resource. H
 
 *   **Unnecessary query params**
 
-    By default, a CDN would cache `example.com/blog` and `example.com/blog?referral\_id=2zjk` separately even though they are likely the same underlying resource. This is fixed by adjusting a CDN's configuration to ignore the `referral\_id` query param.
+    By default, a CDN would cache `example.com/blog` and `example.com/blog?referral_id=2zjk` separately even though they are likely the same underlying resource. This is fixed by adjusting a CDN's configuration to ignore the `referral\_id` query param.
 
 *   **Query param order**
 
@@ -166,7 +172,7 @@ By default, CDNs take query params into consideration when caching a resource. H
 
 #### Vary
 
-The [Vary](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary) response header informs caches that the server response corresponding to a particular URL can vary depending on the headers set on the request (for example, the [Accept-Language](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language) or [Accept-Encoding](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding) request headers). As a result, a CDN would cache these responses separately. The Vary header is not widely supported by CDNs.
+The [Vary](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Vary) response header informs caches that the server response corresponding to a particular URL can vary depending on the headers set on the request (for example, the [Accept-Language](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language) or [Accept-Encoding](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding) request headers). As a result, it instructs a CDN to cache these responses separately. The Vary header is not widely supported by CDNs and may result in an otherwise cacheable resource not being served from a cache.
 
 Although the Vary header can be a useful tool, inappropriate usage hurts CHR. In addition, if you do use `Vary`, normalizing request headers will help improve CHR. For example, without normalization the request headers `Accept-Language: en-US` and `Accept-Language: en-US,en;q=0.9` would result in two separate cache entries, even though their contents would likely be identical.
 
@@ -204,7 +210,7 @@ Meanwhile, if a resource is cacheable, the CDN will use offline processing to co
 
 #### Compression best practices
 
-Sites that want to maximize performance should apply Brotli compression at both their origin server and CDN. Brotli compression at the origin minimizes the transfer size of resources that can't be served from the cache. To prevent delays in serving requests, the origin should compress dynamic resources using a fairly conservative compression level - for example, Brotli-4; static resources can be compressed using Brotli-11.
+Sites that want to maximize performance should apply Brotli compression at both their origin server and CDN. Brotli compression at the origin minimizes the transfer size of resources that can't be served from the cache. To prevent delays in serving requests, the origin should compress dynamic resources using a fairly conservative compression level - for example, Brotli-4; static resources can be compressed using Brotli-11. If an origin does not support Brotli, gzip-6 can be used to compress dynamic resources; gzip-9 can be used to compress static resources.
 
 
 ### TLS 1.3
@@ -240,7 +246,7 @@ Stream prioritization is expressed by the browser via a dependency tree and is m
 CDN implementations of HTTP/2 resource prioritization vary wildly. To identify whether your CDN fully and properly supports HTTP/2 resource prioritization, check out [Is HTTP/2 Fast Yet?](https://ishttp2fastyet.com/).
 
 
-Although switching your CDN instance to HTTP/2 is largely a matter of flipping a switch, it's important to thoroughly test this change before enabling it in production. HTTP/1 and HTTP/2 use the same conventions for request and response headers - but HTTP/2 is far less forgiving when these conventions aren't adhered to. As a result, non-spec practices like including non-ASCII or uppercase characters in headers may begin causing errors once HTTP/2 is enabled. 
+Although switching your CDN instance to HTTP/2 is largely a matter of flipping a switch, it's important to thoroughly test this change before enabling it in production. HTTP/1 and HTTP/2 use the same conventions for request and response headers - but HTTP/2 is far less forgiving when these conventions aren't adhered to. As a result, non-spec practices like including non-ASCII or uppercase characters in headers may begin causing errors once HTTP/2 is enabled. If this occurs, a browser's attempts to download the resource will fail. The failed download attempt will be visible in the "Network" tab of DevTools. In addition, the error message "ERR_HTTP2_PROTOCOL_ERROR" will be displayed in the console.
 
 
 #### HTTP/3
