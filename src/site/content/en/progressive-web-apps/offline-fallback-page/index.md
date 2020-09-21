@@ -11,7 +11,7 @@ tags:
 ---
 
 What do the Google Assistant app, the Slack app, the Zoom app, the Apple Podcasts app, and almost
-any other native app on your phone or computer have in common? Right, they never give you nothing.
+any other native app on your phone or computer have in common? Right, they always at least give you *something*.
 Even when you do not have a network connection, you can still open the Assistant app, or enter
 Slack, or launch Zoom, or run Podcasts. You might not get anything particularly meaningful or even
 be unable to achieve what you wanted to achieve, but at least you get _something_ and the app is in
