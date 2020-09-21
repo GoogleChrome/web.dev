@@ -7,7 +7,7 @@ description:
   The Multi-Screen Window Placement API allows you to enumerate the displays connected to your
   machine and to place windows on specific screens.
 date: 2020-09-14
-updated: 2020-09-14
+updated: 2020-09-15
 tags:
   - blog
   - capabilities
@@ -437,7 +437,7 @@ Thanks to Laura Torrent Puig for the photos.
 [wicg-discourse]:
   https://discourse.wicg.io/t/proposal-supporting-window-placement-on-multi-screen-devices/3948
 [cr-bug]: https://crbug.com/897300
-[cr-status]: https://chromestatus.com/features/5252960583942144
+[cr-status]: https://chromestatus.com/feature/5252960583942144
 [blink-component]: https://bugs.chromium.org/p/chromium/issues/list?q=component:Blink%3EWindowDialog
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [powerful-apis]:
