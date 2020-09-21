@@ -418,7 +418,7 @@ for (const day of days) {
   day.date = new Date(day.when);
 }
 
-// TODO: Dummy data for testing, replace with real data once available.
+// TODO: Placeholder data for testing, replace with real data once available.
 // prettier-ignore
 const communityEvents = {
   'North America': [

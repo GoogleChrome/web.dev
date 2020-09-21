@@ -21,7 +21,7 @@ with the attribute `kind="descriptions"`.
 <!--
 ***Todo*** I tried very hard to get audio/video audits to fail.
 But no matter what, they seem to pass
-even with all sorts of crazy errors.
+even with all sorts of errors.
 See glitch: [meggin-accessibility-assets](https://glitch.com/edit/#!/meggin-accessibiity-assets-1)
 
 <figure class="w-figure">

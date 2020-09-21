@@ -169,8 +169,8 @@ class LighthouseScoresAudits extends BaseElement {
         .map((category) => createRowForAuditCategory(lhr, category));
     } else {
       // Render placeholder rows for hydrating.
-      const dummyArray = Array(NUM_AUDITS_TO_SHOW * this.timesExpanded).keys();
-      rows = Array.from(dummyArray).map(() => {
+      const testArray = Array(NUM_AUDITS_TO_SHOW * this.timesExpanded).keys();
+      rows = Array.from(testArray).map(() => {
         return html`
           <div class="lh-audit-list-row" role="row">
             <span

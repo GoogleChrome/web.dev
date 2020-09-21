@@ -25,7 +25,7 @@ codelabs:
 {% YouTube 'fhqCwDP69PI', '35' %}
 
 Even in locations with fast networks a user might lose connection or connect to a flaky network, at some moments of the day.
-For example: a user is on the subway searching on the phone for a product on an e-commerce website. She types the product name, clicks the "search" button, and while waiting for the results, the connection is lost, leading to the standard browser offline page.
+For example: a user is on the subway searching on the phone for a product on an e-commerce website. They type the product name, click the "search" button, and while waiting for the results, the connection is lost, leading to the standard browser offline page.
 
 As a result, unless the user decides to come back to the site later, and repeat the same task, the site might lose a potential transaction and customer.
 

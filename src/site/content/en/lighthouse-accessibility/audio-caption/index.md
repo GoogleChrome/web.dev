@@ -23,7 +23,7 @@ Lighthouse flags `<audio>` elements that are missing `<track>` elements.
 <!--
 ***Todo*** I tried very hard to get this audit to fail.
 But no matter what, it seems to pass,
-even with all sorts of crazy errors.
+even with all sorts of errors.
 See glitch: [meggin-accessibility-assets](https://glitch.com/edit/#!/meggin-accessibiity-assets)
 <figure class="w-figure">
   <img class="w-screenshot" src="" alt="Lighthouse audit showing Audio element missing captions">
