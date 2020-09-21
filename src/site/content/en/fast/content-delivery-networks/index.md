@@ -8,8 +8,8 @@ description: |
   In addition, it explains how to choose, configure, and optimize a CDN setup.
 subhead: |
   Improve performance by using a content delivery network. 
-date: 2020-09-14
-updated: 2020-09-14
+date: 2020-09-21
+#updated: 2020-09-14
 hero: hero.jpg
 tags:
   - blog
@@ -24,8 +24,8 @@ A content delivery network consists of a network of servers that are optimized f
 
 At a high-level, the performance benefits of CDNs stem from a handful of principles: CDN servers are located closer to users than [origin servers](https://en.wikipedia.org/wiki/Upstream_server) and therefore have a shorter [round-trip time (RTT)](https://en.wikipedia.org/wiki/Round-trip_delay) latency; networking optimizations allow CDNs to deliver content more quickly than if the content was loaded "directly" from the origin server; lastly, CDN caches eliminate the need for a request to travel to the origin server.
 
-{% Aside %}
-"Origin server" refers to the server that a CDN retrieves content from.
+{% Aside 'key-term' %}
+**Origin server** refers to the server that a CDN retrieves content from.
 {% endAside %}
 
 ### Resource delivery
