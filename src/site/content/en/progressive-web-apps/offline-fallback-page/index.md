@@ -53,8 +53,8 @@ control.
 
 </figure>
 
-In contrast, on the Web, traditionally you get nothing when you are offline. On Chrome, we give you
-the [offline dino game](https://www.blog.google/products/chrome/chrome-dino/), but that is about it.
+In contrast, on the Web, traditionally you get nothing when you are offline. Chrome gives you
+the [offline dino game](https://www.blog.google/products/chrome/chrome-dino/), but that is it.
 
 <figure class="w-figure" role="group" aria-labelledby="fig-offline-wrapper">
 
@@ -103,8 +103,8 @@ example, the famous [trivago offline maze game](https://www.trivago.com/offline)
 
 ### Registering the service worker
 
-The way to make this happen is through a service worker. You can register a service worker named
-`'service-worker.js` from your main page like in the code sample below. Usually you do this once
+The way to make this happen is through a service worker. You can register a service worker
+from your main page like in the code sample below. Usually you do this once
 your app has loaded.
 
 ```js
@@ -213,10 +213,10 @@ self.addEventListener("fetch", (event) => {
 
 ### The offline fallback page
 
-The `offline.html` file is where you can get creative and adopt it to your needs and add your
+The `offline.html` file is where you can get creative and adapt it to your needs and add your
 branding. The example below shows the bare minimum of what is possible.
 
-{% Aside 'gotchas' %} Note that you need to cache all resources required by your offline page. One
+{% Aside 'gotchas' %} You need to cache all resources required by your offline page. One
 way to deal with this is to inline everything, so the offline page is self-contained. This is what I
 do in the example below. {% endAside %}
 
@@ -270,7 +270,7 @@ do in the example below. {% endAside %}
 ## Demo
 
 You can see the offline fallback page in action in the
-[demo](https://offline-fallback-demo.glitch.me/index.html) that is also embedded below. If you are
+[demo](https://offline-fallback-demo.glitch.me/index.html) embedded below. If you are
 interested, you can explore the [source code](https://glitch.com/edit/#!/offline-fallback-demo) on
 Glitch.
 
@@ -285,13 +285,13 @@ Glitch.
 
 ### Side note on making your app installable
 
-Now that your site has an offline fallback page, you might wonder about next steps. In order to make
+Now that your site has an offline fallback page, you might wonder about next steps. To make
 your app installable, you need to add a [Web App Manifest](/add-manifest/) and optionally come up
 with an [install strategy](/define-install-strategy/).
 
 ### Side note on serving an offline fallback page with Workbox.js
 
-You may have heard of [Workbox.js](https://developers.google.com/web/tools/workbox) in the past.
+You may have heard of [Workbox.js](https://developers.google.com/web/tools/workbox).
 Workbox.js is a set of JavaScript libraries for adding offline support to web apps. If you prefer to
 write less service worker code yourself, you can use the Workbox.js recipe for an
 [offline page only](https://developers.google.com/web/tools/workbox/guides/advanced-recipes#offline_page_only).
