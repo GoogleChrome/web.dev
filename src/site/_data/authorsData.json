@@ -1503,5 +1503,19 @@
       "en": "Software Engineer"
     },
     "twitter": "aaronlev"
+  },
+  "joanbaca": {
+    "name": {
+      "given": "Joan",
+      "family": "Baca"
+    },
+    "twitter": "joan_baka"
+  },  
+  "aranhacarlos": {
+    "name": {
+      "given": "Carlos",
+      "family": "Aranha"
+    },
+    "github": "aranhacarlos"
   }
 }
