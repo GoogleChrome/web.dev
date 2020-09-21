@@ -10,10 +10,10 @@ tags:
   - progressive-web-apps
 ---
 
-What do the Google Assistant app, the Slack app, the Zoom app, the Apple Podcasts app, and almost
+What do the Google Assistant app, the Slack app, the Zoom app, and almost
 any other native app on your phone or computer have in common? Right, they always at least give you *something*.
 Even when you do not have a network connection, you can still open the Assistant app, or enter
-Slack, or launch Zoom, or run Podcasts. You might not get anything particularly meaningful or even
+Slack, or launch Zoom. You might not get anything particularly meaningful or even
 be unable to achieve what you wanted to achieve, but at least you get _something_ and the app is in
 control.
 
@@ -40,13 +40,6 @@ control.
     </figcaption>
   </figure>
 
-  <figure class="w-figure" role="group" aria-labelledby="fig-podcasts" style="display: inline-block">
-    <img src="podcasts.png" alt="Apple Podcasts desktop app while offline." width="500">
-    <figcaption class="w-figcaption" id="fig-podcasts">
-      Apple Podcasts.
-    </figcaption>
-  </figure>
-
   <figcaption class="w-figcaption" id="fig-apps-wrapper">
     With native apps, even when you do not have a network connection, you never get nothing.
   </figcaption>
@@ -69,13 +62,6 @@ the [offline dino game](https://www.blog.google/products/chrome/chrome-dino/), b
     <img src="chrome.png" alt="Google Chrome desktop app showing the offline dino game." width="500">
     <figcaption class="w-figcaption" id="fig-chrome">
       Google Chrome for macOS.
-    </figcaption>
-  </figure>
-
-  <figure class="w-figure" role="group" aria-labelledby="fig-safari" style="display: inline-block">
-    <img src="safari.png" alt="Safari desktop app showing offline error message." width="500">
-    <figcaption class="w-figcaption" id="fig-safari">
-      Apple Safari for macOS.
     </figcaption>
   </figure>
 
