@@ -182,7 +182,7 @@ The browser instead makes a secure request for
 
 You can enable this behavior either by sending a `Content-Security-Policy` header with this directive:
 
-```stl
+```markup
 Content-Security-Policy: upgrade-insecure-requests
 ```
 
@@ -212,7 +212,7 @@ This option also cascades into `<iframe>` documents, ensuring the entire page is
 A page can opt itself into this behavior either by sending a
 `Content-Security-Policy` header with this directive:
 
-```stl
+```markup
 Content-Security-Policy: block-all-mixed-content
 ```
 
