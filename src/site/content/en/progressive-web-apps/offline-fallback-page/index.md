@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Create a simple offline experience
+title: Create an offline fallback page
 authors:
   - thomassteiner
 date: 2020-09-14
 # updated: 2020-09-14
-description: Learn how to add an offline fallback page to your app.
+description: Learn how to create a simple offline experience for your app.
 tags:
   - progressive-web-apps
 ---
