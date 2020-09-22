@@ -181,6 +181,10 @@
   "rendering": {
     "title": "Rendering"
   },
+  "scale-on-web": {
+    "title": "Scale On Web Case Studies",
+    "description": "TODO"
+  },
   "security": {
     "title": "Security"
   },
