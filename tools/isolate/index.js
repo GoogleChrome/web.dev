@@ -1,8 +1,11 @@
+/* eslint-disable no-process-exit */
+
 const util = require('util');
 const path = require('path');
 const glob = util.promisify(require('glob'));
 const mv = require('move-file');
 const fs = require('fs').promises;
+const {existsSync} = require('fs');
 
 /**
  * Move all markdown files in src/site/content to the _exile directory.
@@ -40,13 +43,11 @@ async function integrate() {
  * This can be used by git commit hooks to prevent folks from committing while
  * in an isolated state.
  */
-async function restored() {
-  try {
-    const stat = await fs.stat('src/site/_exile');
-    console.log(stat.isDirectory());
-    return stat.isDirectory();
-  } catch (err) {
-    return false;
+function restored() {
+  if (existsSync('src/site/_exile')) {
+    throw new Error(
+      'Found _exile directory. You need to run: npm run integrate.',
+    );
   }
 }
 
