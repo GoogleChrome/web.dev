@@ -14,23 +14,7 @@
  * limitations under the License.
  */
 
-const slugify = require('slugify');
-
-/**
- * Slugifies string.
- *
- * @param {string|StringConstructor} str
- * @return {string}
- */
-module.exports = (str) => {
-  if (str instanceof String) {
-    str = str.toString();
-  } else if (typeof str !== 'string') {
-    return '';
-  }
-
-  return slugify(str, {
-    replacement: '-',
-    lower: true,
-  });
-};
+declare module 'webdev_entrypoint' {
+  const value: string;
+  export default value;
+}
