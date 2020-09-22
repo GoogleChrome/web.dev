@@ -48,16 +48,20 @@ class Codelab extends BaseElement {
     this._mql.removeListener(this._toggleDesktop);
   }
 
+  /**
+   * Normally LitElement will remove any light DOM children that are not
+   * slotted when we call render().
+   * Because we don't use slots, and we _do_ want to preserve this element's
+   * light DOM children (they hold the codelab instructions) we create a new
+   * renderRoot for LitElement.
+   * https://lit-element.polymer-project.org/guide/templates#renderroot
+   * This will render the glitch element as a sibling to the existing light
+   * DOM children.
+   */
   createRenderRoot() {
-    // Normally LitElement will remove any light DOM children that are not
-    // slotted when we call render().
-    // Because we don't use slots, and we _do_ want to preserve this element's
-    // light DOM children (they hold the codelab instructions) we create a new
-    // renderRoot for LitElement.
-    // https://lit-element.polymer-project.org/guide/templates#renderroot
-    // This will render the glitch element as a sibling to the existing light
-    // DOM children.
-    const container = document.createElement('div');
+    const container = /** @type this */ (
+      /** @type Element */ (document.createElement('div'))
+    );
     container.className = 'web-codelab__glitch';
     this.appendChild(container);
     return container;
