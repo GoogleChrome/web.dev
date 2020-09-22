@@ -8,7 +8,7 @@ description: |
   In addition, it explains how to choose, configure, and optimize a CDN setup.
 subhead: |
   Improve performance by using a content delivery network. 
-date: 2020-09-21
+date: 2020-09-22
 #updated: 2020-09-14
 hero: hero.jpg
 tags:
