@@ -183,7 +183,12 @@
   },
   "scale-on-web": {
     "title": "Scale On Web Case Studies",
-    "description": "TODO"
+    "description": "TODO",
+    "hero": {
+      "src": "/images/tags/scale-on-web.svg",
+      "width": 340,
+      "height": 177
+    }
   },
   "security": {
     "title": "Security"
