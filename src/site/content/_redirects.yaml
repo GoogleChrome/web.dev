@@ -215,3 +215,8 @@ redirects:
 
 - from: /image-support-for-async-clipboard
   to: /async-clipboard
+
+# Redirect to follow consistent Fugu API naming scheme
+
+- from: /wakelock
+  to: /wake-lock
