@@ -18,6 +18,8 @@
     "eleventy": "eleventy --quiet",
     "gulp": "npx gulp build",
     "karma": "karma start",
+    "isolate": "node ./tools/isolate isolate",
+    "integrate": "node ./tools/isolate integrate",
     "lint:js": "gts check",
     "lint:md": "remark -q -f .",
     "lint:scss": "sass-lint -v -q",
