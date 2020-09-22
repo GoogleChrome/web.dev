@@ -173,6 +173,7 @@ Its value is initially `false`, and changes to `true` once a `"release"`
 event is dispatched. This property helps web developers know when a lock
 has been released so that they do not need to keep track of this manually.
 It is available as of Chrome&nbsp;87.
+
 ### The screen wake lock lifecycle {: #wake-lock-lifecycle }
 
 When you play with the [screen wake lock demo][demo], you'll notice that screen wake locks
