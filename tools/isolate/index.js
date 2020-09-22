@@ -4,6 +4,12 @@ const glob = util.promisify(require('glob'));
 const mv = require('move-file');
 const fs = require('fs').promises;
 
+/**
+ * Move all markdown files in src/site/content to the _exile directory.
+ * Optionally pass in an array of globs to be ignored. Items matching these
+ * globs will not be moved to _exile.
+ * @param {Array<string>} ignore An array of glob patterns to be ignored.
+ */
 async function isolate(ignore = []) {
   const matches = await glob('src/site/content/**/*.md', {ignore});
   for (const oldPath of matches) {
@@ -14,6 +20,10 @@ async function isolate(ignore = []) {
   }
 }
 
+/**
+ * Restore files in _exile to their original location in src/site/content.
+ * Removes the _exile dir when it is finished.
+ */
 async function integrate() {
   const matches = await glob('src/site/_exile/**/*.md');
   for (const oldPath of matches) {
@@ -25,15 +35,35 @@ async function integrate() {
   await fs.rmdir('src/site/_exile', {recursive: true});
 }
 
+/**
+ * Verify that the _exile directory does not exist.
+ * This can be used by git commit hooks to prevent folks from committing while
+ * in an isolated state.
+ */
+async function restored() {
+  try {
+    const stat = await fs.stat('src/site/_exile');
+    console.log(stat.isDirectory());
+    return stat.isDirectory();
+  } catch (err) {
+    return false;
+  }
+}
+
+const allowedCommands = ['isolate', 'integrate', 'restored'];
 const command = process.argv[2];
-if (command !== 'isolate' && command !== 'integrate') {
+if (allowedCommands.indexOf(command) === -1) {
   throw new Error(
-    `Invalid command: ${command}. Command must be 'isolate' or 'integrate'.`,
+    // prettier-ignore
+    `Invalid command: ${command}. Command must be one of the following: ${allowedCommands.join(', ')}.`,
   );
 }
 const ignore = process.argv.slice(3);
-if (command === 'isolate') {
-  return isolate(ignore);
-} else if (command === 'integrate') {
-  return integrate();
+switch (command) {
+  case 'isolate':
+    return isolate(ignore);
+  case 'integrate':
+    return integrate();
+  case 'restored':
+    return restored();
 }
