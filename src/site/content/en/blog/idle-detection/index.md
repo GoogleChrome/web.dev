@@ -192,7 +192,7 @@ You can see the various options in the video below.
 
 As of Puppeteer version&nbsp;5.3.1, you can
 [emulate the various idle states](https://github.com/puppeteer/puppeteer/blob/main/docs/api.md#pageemulateidlestateoverrides)
-to test the API over the DevTools Protocol.
+to programmatically test how your web app's behavior changes.
 
 ### Demo
 
