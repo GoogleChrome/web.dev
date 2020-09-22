@@ -1,6 +1,6 @@
 const util = require('util');
 const path = require('path');
-const glob = util.promisify(require('node-glob'));
+const glob = util.promisify(require('glob'));
 const mv = require('move-file');
 
 async function run() {
