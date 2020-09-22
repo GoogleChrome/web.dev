@@ -34,7 +34,7 @@ favorite and used centering technique of all time!
 ### The Resilience Ringer
 
 The Resilience Ringer is the implementation of my beliefs that a centering
-strategy should be resilient to international layouts, CMS editing, and dynamic
+strategy should be resilient to international layouts, variable sized viewports, text edits and dynamic
 content. These tenets helped shape the following resilience tests for the
 centering techniques to endure:
 
