@@ -191,7 +191,7 @@ You can see the various options in the video below.
 ### Puppeteer support
 
 As of Puppeteer version&nbsp;5.3.1, you can
-[emulate the various idle states](https://github.com/puppeteer/puppeteer/blob/v5.3.1/docs/api.md#pageemulateidlestateoverrides)
+[emulate the various idle states](https://github.com/puppeteer/puppeteer/blob/main/docs/api.md#pageemulateidlestateoverrides)
 to test the API over the DevTools Protocol.
 
 ### Demo
