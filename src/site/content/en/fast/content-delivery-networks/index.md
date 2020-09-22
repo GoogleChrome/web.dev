@@ -14,6 +14,7 @@ hero: hero.jpg
 tags:
   - blog
   - performance
+  - network
 ---
 
 Content delivery networks (CDNs) improve site performance by using a distributed network of servers to deliver resources to users. Because CDNs reduce server load, they reduce server costs and are well-suited to handling traffic spikes. This article discusses how CDNs work and provides platform-agnostic guidance on choosing, configuring, and optimizing a CDN setup.
