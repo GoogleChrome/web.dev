@@ -8,13 +8,16 @@ const fs = require('fs').promises;
 const {existsSync} = require('fs');
 
 /**
- * Move all markdown files in src/site/content to the _exile directory.
- * Optionally pass in an array of globs to be ignored. Items matching these
- * globs will not be moved to _exile.
+ * Move all markdown files and RSS feeds in src/site/content to the _exile
+ * directory.
+ * Optionally pass in an array of globs to be ignored.
+ * Items matching these globs will not be moved to _exile.
  * @param {Array<string>} ignore An array of glob patterns to be ignored.
  */
 async function isolate(ignore = []) {
-  const matches = await glob('src/site/content/**/*.md', {ignore});
+  // Eleventy's rssLastUpdatedDate filter will blow up if we pass it an empty
+  // collection. To avoid this we also move all RSS feeds into exile.
+  const matches = await glob('src/site/content/**/{feed.njk,*.md}', {ignore});
   for (const oldPath of matches) {
     let newPath = oldPath.split(path.sep);
     newPath.splice(2, 1, '_exile');
@@ -28,7 +31,7 @@ async function isolate(ignore = []) {
  * Removes the _exile dir when it is finished.
  */
 async function integrate() {
-  const matches = await glob('src/site/_exile/**/*.md');
+  const matches = await glob('src/site/_exile/**/{feed.njk,*.md}');
   for (const oldPath of matches) {
     let newPath = oldPath.split(path.sep);
     newPath.splice(2, 1, 'content');
