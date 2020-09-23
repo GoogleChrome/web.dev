@@ -11,7 +11,6 @@ tags:
   - capabilities
   - file
   - file-system
-  - file-system-access
 hero: hero.jpg
 alt: Image of hard disk platters
 feedback:
