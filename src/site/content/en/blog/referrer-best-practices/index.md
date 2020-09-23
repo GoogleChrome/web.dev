@@ -13,6 +13,8 @@ tags:
   - blog
   - security
   - privacy
+feedback:
+  - api
 ---
 
 ## Summary
@@ -464,8 +466,6 @@ change this behaviour.
 {% Aside %}
 
 If your website uses HTTP, [migrate to HTTPS](/why-https-matters/).
-
-{% endAside %}
 
 ## Conclusion
 

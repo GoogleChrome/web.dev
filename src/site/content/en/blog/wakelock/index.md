@@ -15,6 +15,8 @@ tags:
   - blog
   - capabilities
   - wake-lock
+feedback:
+  - api
 ---
 
 {% Aside 'success' %}

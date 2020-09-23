@@ -18,6 +18,8 @@ tags:
   - blog
   - portals
   - ux
+feedback:
+  - api
 ---
 
 Making sure your pages load fast is key to delivering a good user experience.

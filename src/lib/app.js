@@ -8,14 +8,16 @@
 
 import './webcomponents-config'; // must go before -loader below
 import '@webcomponents/webcomponentsjs/webcomponents-loader.js';
-import {trackError} from './analytics'; // side effects & named export
 import {swapContent, getHTML} from './loader';
 import * as router from './utils/router';
 import {checkUserPreferredLanguage} from './actions';
 import {store} from './store';
 import {localStorage} from './utils/storage';
 import removeServiceWorkers from './utils/sw-remove';
-import {syncContentIndex} from './content-indexing';
+import './analytics'; // side effects & named export
+// TODO: Enable this when #3836 is fixed.
+// // https://github.com/GoogleChrome/web.dev/issues/3836
+// import {syncContentIndex} from './content-indexing';
 
 window.WebComponents.waitFor(async () => {
   // TODO(samthor): This isn't quite the right class name because not all Web Components are ready
@@ -65,9 +67,11 @@ onGlobalStateChanged(store.getState());
 // never happen here unless the valid domains change, but left in for safety).
 if (serviceWorkerIsSupported(window.location.hostname)) {
   ensureServiceWorker();
-  syncContentIndex().catch((error) => {
-    trackError(error, 'Content Indexing error');
-  });
+  // TODO: Re-enable this when #3836 is fixed.
+  // https://github.com/GoogleChrome/web.dev/issues/3836
+  // syncContentIndex().catch((error) => {
+  //   trackError(error, 'Content Indexing error');
+  // });
 } else {
   removeServiceWorkers();
 }
@@ -76,7 +80,7 @@ function serviceWorkerIsSupported(hostname) {
   // Allow local/prod as well as .netlify staging deploy target.
   // We also check that updateViaCache is supported, which ensures that a browser checks all deps
   // included via importScripts as well as the SW itself. (This works from mid-2018 everywhere, but
-  // it seems sane to check.)
+  // it seems good to double-check.)
   const allowedHostnames = [
     'web.dev',
     'web-dev-staging.appspot.com',

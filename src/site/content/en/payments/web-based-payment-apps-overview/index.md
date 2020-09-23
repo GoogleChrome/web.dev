@@ -9,7 +9,10 @@ date: 2020-07-17
 description: |
   Learn how to adapt your web-based payment app to work with Web Payments and provide a better user experience for customers.
 tags:
+  - blog
   - payments
+feedback:
+  - api
 ---
 
 [Web Payments](/empowering-payment-apps-with-web-payments/#what-is-web-payments)
@@ -128,5 +131,5 @@ tracker](https://bugs.chromium.org/u/maxlg@chromium.org/hotlists/Expandable-paym
 To start building a web-based payment app, you have three distinct parts to implement:
 
 * [Registering a web-based payment app](/registering-a-web-based-payment-app)
-* Orchestrating a payment transaction on the service worker
-* Handling optional payment information on the service worker
+* [Orchestrating payment transactions with a service worker](/orchestrating-payment-transactions)
+* [Handling optional payment information with a service worker](/handling-optional-payment-information)

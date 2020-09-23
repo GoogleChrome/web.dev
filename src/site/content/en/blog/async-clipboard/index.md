@@ -14,6 +14,8 @@ tags:
   - clipboard
 hero: hero.jpg
 alt: Clipboard with shopping list
+feedback:
+  - api
 ---
 
 Over the past few years, browsers have used

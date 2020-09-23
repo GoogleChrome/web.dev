@@ -11,6 +11,8 @@ description: |
   Learn how to register a web-based payment app to a customers' browser. You'll also learn how to debug them.
 tags:
   - payments
+feedback:
+  - api
 ---
 
 Web-based payment apps are [Progressive Web Apps
@@ -344,4 +346,5 @@ You learned how to register a service worker, set payment instruments, and
 define delegation availability for a web-based payment app. The next step is to
 learn how the service worker can orchestrate a payment transaction at runtime.
 
-* Orchestrating a payment transaction on the service worker
+* [Orchestrating payment transactions with a service
+  worker](/orchestrating-payment-transactions)

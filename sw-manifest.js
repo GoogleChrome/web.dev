@@ -18,8 +18,7 @@ require('dotenv').config();
 const isProd = process.env.ELEVENTY_ENV === 'prod';
 
 const log = require('fancy-log');
-const {promises: fs} = require('fs');
-const {getManifest} = require('workbox-build');
+const {injectManifest} = require('workbox-build');
 const resourcePath = require('./src/build/resource-path');
 
 process.on('unhandledRejection', (reason, p) => {
@@ -33,6 +32,8 @@ process.on('unhandledRejection', (reason, p) => {
  */
 async function buildCacheManifest() {
   const config = {
+    swSrc: 'dist/sw.js',
+    swDest: 'dist/sw.js',
     // JS or CSS files that include hashes don't need their own revision fields.
     dontCacheBustURLsMatching: /-[0-9a-f]{8}\.(css|js)/,
     globDirectory: 'dist',
@@ -59,20 +60,18 @@ async function buildCacheManifest() {
     config.globPatterns.push('bootstrap.js', 'app.css');
   }
 
-  const toplevelManifest = await getManifest(config);
+  const toplevelManifest = await injectManifest(config);
+  log(
+    `Building the Service Worker manifest, caching: ${toplevelManifest.count} files`,
+  );
   if (toplevelManifest.warnings.length) {
     if (isProd) {
       throw new Error(`toplevel manifest: ${toplevelManifest.warnings}`);
     }
     toplevelManifest.warnings.forEach((warning) => log(warning));
   }
-
-  return toplevelManifest.manifestEntries;
 }
 
 (async function () {
-  const manifest = await buildCacheManifest();
-  const src = `self['_manifest']=${JSON.stringify(manifest)};`;
-  await fs.writeFile('dist/sw-manifest.js', src);
-  log(`Build the Service Worker manifest, ${manifest.length} files`);
+  await buildCacheManifest();
 })();

@@ -14,6 +14,8 @@ tags:
   - cachestorage
 hero: hero.jpg
 alt: Stack of shipping containers
+feedback:
+  - api
 ---
 
 Internet connections can be flakey or non-existent on the go, which is why
@@ -95,9 +97,12 @@ device.
   Chromium-based browsers may allow the browser to use more storage.
 * Internet Explorer 10 and later can store up to 250MB and will prompt the
   user when more than 10MB has been used.
-* Firefox allows an [origin to use up to 2GB][ff-usage-limits]. You can use
-  the [StorageManager API](#check-available) to determine how much space is
-  still available.
+* Firefox allows the browser to use up to 50% of free disk space. An 
+  [eTLD+1](https://godoc.org/golang.org/x/net/publicsuffix)
+  group (e.g., `example.com`, `www.example.com` and `foo.bar.example.com`)
+  [may use up to 2GB][ff-usage-limits]. You can use the
+  [StorageManager API](#check-available) to determine how much space is still
+  available.
 * Safari (both desktop and mobile) appears to allow up to 1GB. When the limit
   is reached, Safari will prompt the user, increasing the limit in 200MB
   increments. I was unable to find any official documentation on this.

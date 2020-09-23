@@ -8,7 +8,7 @@
  * When the site first boots up and the initial HTML arrives, we record this resources version. If
  * the version of a _further_ page, loaded with this SPA logic, doesn't match this one: we throw out
  * and just load the site anew. This occurs when we make any JS or CSS change to the site, so as to
- * ensure users gett he updated version.
+ * ensure users get the updated version.
  */
 
 const {generateAndValidateHash} = require('../../build/hash');
