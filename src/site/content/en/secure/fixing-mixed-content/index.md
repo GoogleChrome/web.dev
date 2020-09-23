@@ -5,7 +5,7 @@ authors:
   - johyphenel
   - rachelandrew
 date: 2019-09-07
-updated: 2020-09-21
+updated: 2020-09-23
 description: >
   Find out how to fix mixed content errors on your website,
   in order to protect users and ensure that all of your content loads.
@@ -26,9 +26,10 @@ When visiting an HTTPS page in Google Chrome,
 the browser alerts you to mixed content as errors and warnings in the JavaScript console.
 
 In [What is mixed content?](/what-is-mixed-content),
-you can find a number of examples and see how the problems are reported in DevTools.
+you can find a number of examples and see how the problems are reported in Chrome DevTools.
 
 The example of [passive mixed content](https://passive-mixed-content.glitch.me/) will give the following warnings.
+If the browser is able to find the content at an `https` URL it automatically upgrades it, then shows a message.
 
 <figure class="w-figure">
   <img class="w-screenshot"
@@ -44,8 +45,8 @@ The example of [passive mixed content](https://passive-mixed-content.glitch.me/)
       alt="Chrome DevTools showing the warnings displayed when active mixed content is blocked">
 </figure>
 
-If you find warnings like these on your site,
-you need to fix the `http://` URLs listed in these errors and warnings in your site's source.
+If you find warnings like these for `http://` URLs on your site,
+you need to fix them in your site's source.
 It's helpful to make a list of these URLs, along with the page you found them on, for use when you fix them.
 
 {% Aside %}
@@ -61,19 +62,20 @@ Search for `http://` in your source and look for tags that include HTTP URL attr
 Note that having `http://` in the `href` attribute of anchor tags (`<a>`)
 is often not a mixed content issue, with some notable exceptions discussed later.
 
-If your site is published using a content management system
-it is possible that the links to insecure URLs have been inserted into the content when publishing pages.
-For example, images may have been included with a full URL rather than a relative path.
+If your site is published using a content management system,
+it is possible that links to insecure URLs are inserted when pages are published.
+For example, images may be included with a full URL rather than a relative path.
 You will need to find and fix these within the CMS content.
 
 ### Fixing mixed content
 
-Once you've found where the mixed content is included in your site's source,
-follow these steps to fix it.
+Once you've found mixed content in your site's source,
+you can follow these steps to fix it.
 
-First, find the resource and check to see if it is available securely by changing the `http://` to `https://`.
-If the Console message says that the resource has been automatically upgraded,
-then the resource should be available securely and you can change the URL to match.
+If you get a console message that a resource request has been automatically upgraded from HTTP to HTTPS,
+you can safely change the `http://` URL for the resource in your code to `https://`.
+You can also check to see if a resource is available securely by changing `http://` to `https://` in the browser URL bar
+and attempting to open the URL in a browser tab.
 
 If the resource is not available via `https://`, you should consider one of the following options:
 
@@ -87,7 +89,7 @@ view the page where you found the error originally and verify that the error no 
 ### Beware of non-standard tag usage
 
 Beware of non-standard tag usage on your site.
-For instance, anchor (`<a>`) tag URLs don't cause mixed content by themselves,
+For instance, anchor (`<a>`) tag URLs don't result in mixed content errors,
 as they cause the browser to navigate to a new page.
 This means they usually don't need to be fixed.
 However some image gallery scripts override the functionality of the `<a>`
@@ -106,13 +108,13 @@ to instruct the browser to notify you about mixed content and ensure that your p
 
 [Content security policy](https://developers.google.com/web/fundamentals/security/csp/) (CSP)
 is a multi-purpose browser feature that you can use to manage mixed content at scale.
-The CSP reporting mechanism can be used to track the mixed content on your site;
-and the enforcement policy, to protect users by upgrading or blocking mixed content.
+The CSP reporting mechanism can be used to track mixed content on your site,
+and provide enforcement policies to protect users by upgrading or blocking mixed content.
 
 You can enable these features for a page by including the
 `Content-Security-Policy` or `Content-Security-Policy-Report-Only` header in the response sent from your server.
 Additionally you can set `Content-Security-Policy`
-(but **not** `Content-Security-Policy-Report-Only`) using a `<meta>` tag in the `<head>` section of your page.
+(though **not** `Content-Security-Policy-Report-Only`) using a `<meta>` tag in the `<head>` section of your page.
 
 {% Aside %}
 Browsers enforce all content security policies that they receive.
@@ -133,7 +135,7 @@ Response header:
 `Content-Security-Policy-Report-Only: default-src https: 'unsafe-inline' 'unsafe-eval'; report-uri https://example.com/reportingEndpoint`
 
 {% Aside %}
-The [report-uri]() response header is being deprecated in favor of
+The [report-uri](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-uri) response header is being deprecated in favor of
 [report-to](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/report-to).
 Browser support for `report-to` is currently limited to Chrome and Edge.
 You can provide both headers, in which case `report-uri` will be ignored if the browser supports `report-to`.
