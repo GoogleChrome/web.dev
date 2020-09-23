@@ -204,7 +204,7 @@ The changes lowered Mercado Libre's consecutive long tasks **from two seconds to
   <img src="main-thread-iteration-1.png" class="w-screenshot"
        alt="Main thread view of Mercado Libre's product detail pages after first round of optimizations.">
    <figcaption class="w-figcaption">
-      In the top waterfall of WPT there’s a long red bar (in the <b>Page is Interactive</b> row) between seconds 2 and 5. In the bottom waterfall, the bar has been broken into smaller pieces, occupying the main thread for shorter periods of time.
+      In the top waterfall of WPT there’s a long red bar (in the <b>Page is Interactive</b> row) between seconds 3 and 5. In the bottom waterfall, the bar has been broken into smaller pieces, occupying the main thread for shorter periods of time.
   </figcaption>     
 </figure>
 
