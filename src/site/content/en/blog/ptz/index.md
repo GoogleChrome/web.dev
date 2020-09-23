@@ -65,7 +65,8 @@ try {
   // User is prompted to grant both camera and PTZ access in a single call.
   // If camera doesn't support PTZ, it falls back to a regular camera prompt.
   const stream = await navigator.mediaDevices.getUserMedia({
-    // Website asks to control camera PTZ as well.
+    // Website asks to control camera PTZ as well without altering the
+    // current pan, tilt, and zoom settings.
     video: { pan: true, tilt: true, zoom: true }
   });
 
