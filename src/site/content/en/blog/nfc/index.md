@@ -80,6 +80,16 @@ Examples of sites that may use Web NFC include:
 
 ## Using Web NFC {: #use }
 
+### Enabling via chrome://flags
+
+To experiment with Web NFC locally on Android, without an origin trial token,
+enable the `#experimental-web-platform-features` flag in `chrome://flags`.
+
+<figure class="w-figure">
+  <img src="./chrome-flag.jpg" alt="Screenshot of the chrome://flags internal page to enable for Web NFC on Android">
+  <figcaption class="w-figcaption">Experimental flag for Web NFC on Android</figcaption>
+</figure>
+
 ### Enabling support during the origin trial phase
 
 Web NFC will be available on Android as an origin trial in Chrome 81. The origin
@@ -90,16 +100,6 @@ trial is expected to end in Chrome 84.
 ### Register for the origin trial {: #register-for-ot }
 
 {% include 'content/origin-trial-register.njk' %}
-
-### Enabling via chrome://flags
-
-To experiment with Web NFC locally on Android, without an origin trial token,
-enable the `#experimental-web-platform-features` flag in `chrome://flags`.
-
-<figure class="w-figure">
-  <img src="./chrome-flag.jpg" alt="Screenshot of the chrome://flags internal page to enable for Web NFC on Android">
-  <figcaption class="w-figcaption">Experimental flag for Web NFC on Android</figcaption>
-</figure>
 
 ### Feature detection {: #feature-detection }
 

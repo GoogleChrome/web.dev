@@ -87,6 +87,12 @@ communication between the website and the device that it is controlling.
 
 ## Using the Serial API {: #use }
 
+### Enabling via chrome://flags
+
+To experiment with the Serial API locally on all desktop platforms, without an
+origin trial token, enable the `#experimental-web-platform-features` flag in
+`chrome://flags`.
+
 ### Enabling support during the origin trial phase
 
 The Serial API is available on all desktop platforms (Chrome OS, Linux, macOS,
@@ -99,12 +105,6 @@ be enabled using a flag.
 ### Register for the origin trial {: #ot }
 
 {% include 'content/origin-trial-register.njk' %}
-
-### Enabling via chrome://flags
-
-To experiment with the Serial API locally on all desktop platforms, without an
-origin trial token, enable the `#experimental-web-platform-features` flag in
-`chrome://flags`.
 
 ### Feature detection {: #feature-detection }
 
