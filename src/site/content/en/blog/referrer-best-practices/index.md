@@ -383,7 +383,7 @@ To define alternatives, analyze first what part of the referrer you're using.
   privacy-preserving for `site-one.example` users, more future-proof. Con: potentially more work
   from your side or for your system's users.
 - Check whether the site that emits the requests may agree to set a per-element or per-request
-  referrer-policy of no-referrer-when-downgrade. Con: potentially less privacy-preserving for
+  Referrer-Policy of `no-referrer-when-downgrade`. Con: potentially less privacy-preserving for
   `site-one.example` users, potentially not supported in all browsers.
 
 ### Cross-Site Request Forgery (CSRF) protection
