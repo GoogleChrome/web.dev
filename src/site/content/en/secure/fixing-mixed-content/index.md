@@ -11,6 +11,13 @@ description: >
   in order to protect users and ensure that all of your content loads.
 tags:
   - security
+  - network
+  - privacy
+  - html
+  - css
+  - javascript
+  - images
+  - media
 ---
 
 Supporting HTTPS for your website is an important step to protecting your site and your users from attack,
@@ -231,4 +238,3 @@ If you set both `upgrade-insecure-requests` and `block-all-mixed-content`
 The browser will not go on to block requests.
 Therefore you should use one or the other.
 {% endAside %}
-
