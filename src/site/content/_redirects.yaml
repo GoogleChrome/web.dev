@@ -215,3 +215,7 @@ redirects:
 
 - from: /image-support-for-async-clipboard
   to: /async-clipboard
+
+  # Redirect for renamed Native File System API
+  - from: /native-file-system
+    to: /file-system-access

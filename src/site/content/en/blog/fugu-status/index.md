@@ -254,12 +254,13 @@ latest version of Chrome, and in many cases other Chromium based browsers.
       </tr>
       <tr>
         <td>
-          <a href="/native-file-system/">
-            Native File System API
+          <a href="/file-system-access/">
+            File System Access API
           </a>
         </td>
         <td>
-          The Native File System API (formerly known as the Writable Files API)
+          The File System Access API (formerly known as Native File System API
+          and prior to that Writable Files API)
           enables developers to build powerful web apps that interact with files
           on the user's local device, like IDEs, photo and video editors, text
           editors, and more. After a user grants a web app access, this API
