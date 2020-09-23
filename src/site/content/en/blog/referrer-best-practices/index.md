@@ -4,7 +4,7 @@ subhead: Best practices to set your Referrer-Policy and use the referrer in inco
 authors:
   - maudn
 date: 2020-07-30
-updated: 2020-08-27
+updated: 2020-09-23
 hero: hero.jpg
 thumbnail: hero.jpg
 description: |
@@ -356,7 +356,7 @@ You may need to consider alternatives if:
 
 To define alternatives, analyze first what part of the referrer you're using.
 
-##### If you only need the origin (`https://site-one.example`):
+**If you only need the origin (`https://site-one.example`):**
 
 - If you're using the referrer in a script that has top-level access to the page,
   `window.location.origin` is an alternative.
@@ -365,16 +365,16 @@ To define alternatives, analyze first what part of the referrer you're using.
   [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site) give
   you the `Origin` or describe whether the request is cross-origin, which may be just what you need.
 
-##### If you need other elements of the URL (path, query parameters…):
+**If you need other elements of the URL (path, query parameters…):**
 
-- Request parameters may address your use case — and this saves you the work of parsing the
+- Request parameters may address your use case and this saves you the work of parsing the
   referrer.
 - If you're using the referrer in a script that has top-level access to the page,
   `window.location.pathname` may be an alternative. Extract only the path section of the URL and
   pass it on as an argument, so any potentially sensitive information in the URL parameters isn't
   passed on.
 
-##### If you can't use these alternatives:
+**If you can't use these alternatives:**
 
 - Check if your systems can be changed to expect the request emitter (`site-one.example`) to
   explicitly set the information you need in a configuration of some sort. Pro: more explicit, more
