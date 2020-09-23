@@ -8,7 +8,7 @@ description: |
   interaction with the keyboard, mouse, screen, activation of a screensaver, locking of the screen,
   or moving to a different screen. A developer-defined threshold triggers the notification.
 date: 2020-05-18
-updated: 2020-09-22
+updated: 2020-09-23
 tags:
   - blog
   - idle-detection
@@ -228,9 +228,7 @@ In order to use the API, an app also must be running in a
 We always want to prevent malicious actors from misusing new APIs. Seemingly independent websites,
 but that in fact are controlled by the same entity, might obtain user idle information and
 correlate the data to identify unique users across origins. To mitigate these sort of attacks,
-the Idle Detection API limits the granularity of the reported idle events and user agents
-may choose to fuzz the reported data. In Chrome,
-we plan to do this as to render the attack vector useless.
+the Idle Detection API limits the granularity of the reported idle events.
 
 ## Feedback {: #feedback }
 
