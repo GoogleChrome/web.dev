@@ -11,6 +11,7 @@ const exileDir = '_exile';
 const exilePath = `src/site/${exileDir}`;
 const contentDir = 'content';
 const contentPath = `src/site/${contentDir}`;
+const globPattern = '**/{feed.njk,*.md}';
 
 /**
  * Move all markdown files and RSS feeds in src/site/content to the _exile
@@ -25,7 +26,7 @@ async function isolate(ignore = []) {
   restored();
   // Eleventy's rssLastUpdatedDate filter will blow up if we pass it an empty
   // collection. To avoid this we also move all RSS feeds into exile.
-  const matches = await glob(`${contentPath}/**/{feed.njk,*.md}`, {ignore});
+  const matches = await glob(path.join(contentPath, globPattern), {ignore});
   for (const oldPath of matches) {
     let newPath = oldPath.split(path.sep);
     newPath.splice(2, 1, exileDir);
@@ -39,7 +40,7 @@ async function isolate(ignore = []) {
  * Removes the _exile dir when it is finished.
  */
 async function integrate() {
-  const matches = await glob(`${exilePath}/**/{feed.njk,*.md}`);
+  const matches = await glob(path.join(exilePath, globPattern));
   for (const oldPath of matches) {
     let newPath = oldPath.split(path.sep);
     newPath.splice(2, 1, contentDir);
