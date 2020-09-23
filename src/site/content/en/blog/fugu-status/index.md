@@ -2,7 +2,7 @@
 title: New capabilities status
 subhead: Web apps should be able to do anything native apps can. Google wants to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2020-09-15
+updated: 2020-09-23
 tags:
   - blog
   - capabilities
@@ -266,7 +266,7 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           editors, and more. After a user grants a web app access, this API
           allows web apps to read or save changes directly to files and folders
           on the user's device.<br>
-          <em>Updated September 2, 2020</em>
+          <em>Updated September 23, 2020</em>
         </td>
       </tr>
       <tr>
