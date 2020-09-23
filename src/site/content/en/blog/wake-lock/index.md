@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: To avoid draining the battery, most devices will quickly fall asleep when left idle. While this is fine most of the time, there are some applications that need to keep the screen awake in order to complete some work. The Screen Wake Lock API provides a way to prevent the device from dimming or locking the screen when an application needs to keep running.
 date: 2018-12-18
-updated: 2020-08-10
+updated: 2020-09-22
 hero: hero.jpg
 hero_position: center
 alt: |
@@ -150,9 +150,9 @@ const requestWakeLock = async () => {
   try {
     wakeLock = await navigator.wakeLock.request('screen');
     wakeLock.addEventListener('release', () => {
-      console.log('Screen Wake Lock was released');
+      console.log('Screen Wake Lock released:', wakeLock.released);
     });
-    console.log('Screen Wake Lock is active');
+    console.log('Screen Wake Lock released:', wakeLock.released);
   } catch (err) {
     console.error(`${err.name}, ${err.message}`);
   }
@@ -166,6 +166,13 @@ window.setTimeout(() => {
   wakeLock = null;
 }, 5000);
 ```
+
+The `WakeLockSentinel` object has a property called `released` that
+indicates whether a sentinel has already been released.
+Its value is initially `false`, and changes to `true` once a `"release"`
+event is dispatched. This property helps web developers know when a lock
+has been released so that they do not need to keep track of this manually.
+It is available as of Chrome&nbsp;87.
 
 ### The screen wake lock lifecycle {: #wake-lock-lifecycle }
 
