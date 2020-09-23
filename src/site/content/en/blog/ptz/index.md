@@ -20,8 +20,8 @@ feedback:
 
 Room-scale video conferencing solutions deploy cameras with pan, tilt, and zoom
 (PTZ) capabilities so that software can point the camera at meeting
-participants. Starting in Chrome 87, the pan, tilt, and zoom features on camera
-are accessible to websites using media track constraints in
+participants. Starting in Chrome&nbsp;87, the pan, tilt, and zoom features on
+camera are accessible to websites using media track constraints in
 `MediaDevices.getUserMedia()` and `MediaStreamTrack.applyConstraints()`.
 
 ## Using the API {: #use }
@@ -32,8 +32,8 @@ Feature detection for hardware is different from what you're probably used to.
 The presence of `"pan"`, `"tilt"`, and `"zoom"` constraint names in
 `navigator.mediaDevices.getSupportedConstraints()` tells you that the browser
 supports the API to control camera PTZ, but not whether the camera hardware
-supports it. As of Chrome 87, controlling camera PTZ is supported on Android
-(zoom only) and desktop platforms.
+supports it. As of Chrome&nbsp;87, controlling camera PTZ is supported on
+Android (zoom only) and desktop platforms.
 
 ```js
 const supports = navigator.mediaDevices.getSupportedConstraints();
@@ -214,7 +214,7 @@ Thanks to [Joe Medley] for his review of this article. Hero image by [Christina
 @ wocintechchat.com] on [Unsplash].
 
 <!-- lint disable definition-case -->
-[mandatory constraints]: https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API/Constraints
+[mandatory constraints]: https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API/Constraints#Specifying_a_range_of_values:~:text=mandatory
 [`MediaStream`]: https://w3c.github.io/mediacapture-main/#stream-api
 [Permissions API]: https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API
 [PTZ advanced constraints]: https://bugs.chromium.org/p/chromium/issues/detail?id=1126045
