@@ -7,6 +7,11 @@ const mv = require('move-file');
 const fs = require('fs').promises;
 const {existsSync} = require('fs');
 
+const exileDir = '_exile';
+const exilePath = `src/site/${exileDir}`;
+const contentDir = 'content';
+const contentPath = `src/site/${contentDir}`;
+
 /**
  * Move all markdown files and RSS feeds in src/site/content to the _exile
  * directory.
@@ -15,12 +20,15 @@ const {existsSync} = require('fs');
  * @param {Array<string>} ignore An array of glob patterns to be ignored.
  */
 async function isolate(ignore = []) {
+  // Check if the _exile directory already exists to avoid the user
+  // accidentally running isolate twice.
+  restored();
   // Eleventy's rssLastUpdatedDate filter will blow up if we pass it an empty
   // collection. To avoid this we also move all RSS feeds into exile.
-  const matches = await glob('src/site/content/**/{feed.njk,*.md}', {ignore});
+  const matches = await glob(`${contentPath}/**/{feed.njk,*.md}`, {ignore});
   for (const oldPath of matches) {
     let newPath = oldPath.split(path.sep);
-    newPath.splice(2, 1, '_exile');
+    newPath.splice(2, 1, exileDir);
     newPath = newPath.join(path.sep);
     await mv(oldPath, newPath);
   }
@@ -31,14 +39,14 @@ async function isolate(ignore = []) {
  * Removes the _exile dir when it is finished.
  */
 async function integrate() {
-  const matches = await glob('src/site/_exile/**/{feed.njk,*.md}');
+  const matches = await glob(`${exilePath}/**/{feed.njk,*.md}`);
   for (const oldPath of matches) {
     let newPath = oldPath.split(path.sep);
-    newPath.splice(2, 1, 'content');
+    newPath.splice(2, 1, contentDir);
     newPath = newPath.join(path.sep);
     await mv(oldPath, newPath);
   }
-  await fs.rmdir('src/site/_exile', {recursive: true});
+  await fs.rmdir(exilePath, {recursive: true});
 }
 
 /**
@@ -47,7 +55,7 @@ async function integrate() {
  * in an isolated state.
  */
 function restored() {
-  if (existsSync('src/site/_exile')) {
+  if (existsSync(exilePath)) {
     throw new Error(
       'Found _exile directory. You need to run: npm run integrate.',
     );
