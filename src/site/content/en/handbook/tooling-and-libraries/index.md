@@ -20,6 +20,6 @@ When you're planning to include tooling in a post or codelab, make sure it meets
 *   **[HTTP Archive](https://httparchive.org) data:** Tooling is used by ≥ 10K domains.
 *   **[npm](https://www.npmjs.com/) weekly download statistics:** Tooling consistently has ≥ 50K weekly downloads.
 
-Include a link to the relevant data source in your [content proposal](http://localhost:8080/handbook/quick-start/#planning).
+Include a link to the relevant data source in your [content proposal](/handbook/quick-start/#planning).
 
 Sometimes it's impossible to use these data sources to verify the popularity of a given tool. (For example, if you're writing an article about servers, neither data source can be used to verify the usage of [NGINX](https://www.nginx.com/).) In such cases you can demonstrate the popularity of a tool in your content proposal by listing 5–10 well-known sites that have self-identified as users.

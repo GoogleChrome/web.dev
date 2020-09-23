@@ -17,7 +17,7 @@ tags:
 Having the ability to measure and report on the real-world performance of your
 pages is critical for diagnosing and improving performance over time. Without
 [field
-data](https://github.com/user-centric-performance-metrics/#how-metrics-are-measured),
+data](/user-centric-performance-metrics/#in-the-field),
 it's impossible to know for sure whether the changes you're making to your site
 are actually achieving their desired results.
 
