@@ -6,6 +6,8 @@ authors:
 subhead: |
   How Next.js speeds up navigations with route prefetching and how to customize it.
 date: 2019-11-08
+feedback:
+  - api
 ---
 
 ## What will you learn?
@@ -23,7 +25,7 @@ inside the `./pages/` directory:
 </figure>
 
 To link to different pages, use the
-[`<Link>`](https://nextjs.org/docs#with-link) component, similarly to how you'd
+[`<Link>`](https://nextjs.org/docs/api-reference/next/link) component, similarly to how you'd
 use the good old `<a>` element:
 
 ```js
@@ -34,8 +36,7 @@ use the good old `<a>` element:
 
 When you use the `<Link>` component for navigation, Next.js does a little bit
 more for you. Normally, a page is downloaded when you follow a link to it, but
-[Next.js automatically prefetches](https://nextjs.org/docs#prefetching-pages)
-the JavaScript needed to render the page.
+Next.js automatically prefetches the JavaScript needed to render the page.
 
 When you load a page with a few links, odds are that by the time you follow
 a link, the component behind it has already been fetched. This improves
@@ -120,8 +121,8 @@ downloaded, but `pineapple-pizza.js` is not:
 
 The `<Link>` component is suitable for most use cases, but you can also build
 your own component to do routing. Next.js makes this easy for you with the
-router API available in [`next/router`](https://nextjs.org/docs#userouter). If
-you want to do something (for example, submit a form) before navigating to a new
+router API available in [`next/router`](https://nextjs.org/docs/api-reference/next/router#userouter). 
+If you want to do something (for example, submit a form) before navigating to a new
 route, you can define that in your custom routing code.
 
 When you use custom components for routing, you can add prefetching to them too.
@@ -131,7 +132,7 @@ To implement prefetching in your routing code, use the `prefetch` method from
 Take a look at `components/MyLink.js` in this example app:
 
 {% Glitch {
-  id: 'nextjs-routing',
+  id: 'custom-routing-nextjs',
   path: 'components/MyLink.js',
   height: 480
 } %}

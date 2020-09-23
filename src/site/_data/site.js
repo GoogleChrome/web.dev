@@ -32,7 +32,7 @@ module.exports = {
   thumbnail: '/images/social.png',
   isBannerEnabled: true,
   banner:
-    "Have a voice in guiding the future of Google's developer brands. [Share your thoughts in our survey](https://google.qualtrics.com/jfe/form/SV_2oE4GCkTH5QVVNr?PT=3).",
+    "The MDN Browser Compatibility Report is here! It's a deep dive into common issues and ongoing work. Thank you if you took the survey earlier this year! [Read the full report (PDF, 1.9mb)](https://bit.ly/2ZZdlOY)",
   // Note that the imageCdn value is only used when we do a production build
   // of the site. Otherwise all image paths are local. This means you can
   // develop locally without having to mess with the CDN at all.

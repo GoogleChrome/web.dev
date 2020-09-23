@@ -2,13 +2,12 @@ import {LitElement} from 'lit-element';
 
 /* eslint-disable require-jsdoc */
 export class BaseElement extends LitElement {
-  constructor() {
-    super();
-  }
-
-  firstUpdated() {
+  /**
+   * @param {PropertyValues} changedProperties
+   */
+  firstUpdated(changedProperties) {
     this.classList.remove('unresolved');
-    super.firstUpdated();
+    super.firstUpdated(changedProperties);
   }
 
   createRenderRoot() {

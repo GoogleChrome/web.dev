@@ -40,7 +40,7 @@ export function getTimeOffset(raw) {
   if (+d) {
     const now = new Date();
     console.warn('debug time start at', d);
-    return d - now;
+    return +d - +now;
   }
   return 0;
 }

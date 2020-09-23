@@ -8,7 +8,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2020-06-17
-updated: 2020-08-07
+updated: 2020-08-26
 hero: hero.jpg
 alt:
 description: |
@@ -19,6 +19,8 @@ tags:
   - blog
   - text-fragments
   - capabilities
+feedback:
+  - api
 ---
 ## Fragment Identifiers
 
@@ -360,7 +362,7 @@ if ('fragmentDirective' in document) {
 ```
 
 {% Aside %}
-  In the initial version, the `fragmentDirective` property was defined on
+  From Chrome&nbsp;80 to Chrome&nbsp;85, the `fragmentDirective` property was defined on
   `Location.prototype`. For details on this change, see
   [WICG/scroll-to-text-fragment#130](https://github.com/WICG/scroll-to-text-fragment/issues/130).
 {% endAside %}
@@ -441,9 +443,18 @@ Document-Policy: force-load-at-top
 
 ## Disabling text fragments
 
-If you really dislike the feature, you can opt out using the enterprise setting
+The easiest way for disabling the feature is by using an extension
+that can inject HTTP response headers, for example,
+[ModHeader](https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj)
+(not a Google product), to insert a response (*not* request) header as follows:
+
+```bash
+Document-Policy: force-load-at-top
+```
+
+Another, more involved, way to opt out is by using the enterprise setting
 [`ScrollToTextFragmentEnabled`](https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ScrollToTextFragmentEnabled).
-To use it on macOS, paste the command below in the terminal.
+To do this on macOS, paste the command below in the terminal.
 
 ```bash
 defaults write com.google.Chrome ScrollToTextFragmentEnabled -bool false
@@ -491,7 +502,7 @@ browser extension.
 ## Related links
 
 - [TAG Review](https://github.com/w3ctag/design-reviews/issues/392)
-- [Chrome Platform Status entry](https://chromestatus.com/features/4733392803332096)
+- [Chrome Platform Status entry](https://chromestatus.com/feature/4733392803332096)
 - [Chrome tracking bug](https://crbug.com/919204)
 - [Intent to Ship thread](https://groups.google.com/a/chromium.org/d/topic/blink-dev/zlLSxQ9BA8Y/discussion)
 - [WebKit-Dev thread](https://lists.webkit.org/pipermail/webkit-dev/2019-December/030978.html)

@@ -46,7 +46,7 @@ class Search extends BaseElement {
     this.showHits = false;
     this.cursor = -1;
     this.query = '';
-    this.timeout = 0;
+    this.timeout;
     this.expanded = false;
 
     // On smaller screens we don't do an animation so it's ok for us to fire off
@@ -228,6 +228,7 @@ class Search extends BaseElement {
   /* eslint-enable indent */
 
   firstUpdated() {
+    /** @type HTMLInputElement */
     this.inputEl = this.renderRoot.querySelector('.web-search__input');
   }
 
@@ -332,7 +333,7 @@ class Search extends BaseElement {
     } catch (err) {
       console.error(err);
       console.error(err.debugData);
-      trackError('search', err);
+      trackError(err, 'search');
     }
   }
 

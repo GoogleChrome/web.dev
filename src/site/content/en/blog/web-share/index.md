@@ -15,6 +15,8 @@ description: |
 tags:
   - blog
   - capabilities
+feedback:
+  - api
 ---
 
 With the Web Share API, web apps are able to use the same system-provided share

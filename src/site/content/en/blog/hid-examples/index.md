@@ -10,7 +10,7 @@ description: |
   API solves this by providing a way to implement device-specific logic in
   JavaScript.
 date: 2020-07-22
-updated: 2020-07-22
+updated: 2020-08-19
 tags:
   - blog
   - capabilities
@@ -59,7 +59,7 @@ browser to depend on quirks present in the behavior of specific devices.
 | 1. Create explainer                        | [Complete][explainer]        |
 | 2. Create initial draft of specification   | [In Progress][spec]          |
 | 3. Gather feedback & iterate on design     | [In progress](#feedback)     |
-| 4. Origin trial                            | Starts in Chrome 85          |
+| 4. Origin trial                            | Starts in Chrome 86          |
 | 5. Launch                                  | Not started                  |
 
 </div>
@@ -67,7 +67,7 @@ browser to depend on quirks present in the behavior of specific devices.
 ## Demos, demos, demos {: #demos }
 
 One of my team members is currently working on a how-to article. Since WebHID is
-starting an origin trial in Chrome 85, some of us wanted to give you a heads up
+starting an origin trial in Chrome 86, some of us wanted to give you a heads up
 and share a few demos to play with. If you're curious about how any of these
 samples work, the source code for all of them is available on GitHub. [There's a
 barebones code example][example] in the explainer.
@@ -136,7 +136,7 @@ how to use the API yourself.
 * [TAG Review](https://github.com/w3ctag/design-reviews/issues/370)
 * [Intent to Prototype](https://groups.google.com/a/chromium.org/g/blink-dev/c/LoyzK8xTRME/m/yLR-K-siBQAJ)
 
-## Acknowledgements {: #helpful }
+## Acknowledgements {: #helpful   }
 
 Thank you to [Pete LePage](https://web.dev/authors/petelepage/) and [Kayce
 Basques](https://github.com/kaycebasques) for reviews of this article.

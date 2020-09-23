@@ -1,12 +1,12 @@
 ---
 title: |
-  The `requestVideoFrameCallback()` method
+  Perform efficient per-video-frame operations on video with `requestVideoFrameCallback()`
 subhead: |
-  Perform efficient per-video-frame operations on video.
+  Learn how to use the `requestVideoFrameCallback()` to work more efficiently with videos in the browser.
 authors:
   - thomassteiner
 date: 2020-06-29
-updated: 2020-06-29
+updated: 2020-08-17
 hero: hero.jpg
 alt: Film roll.
 description: |
@@ -16,6 +16,8 @@ tags:
   - blog
   - media
   - capabilities
+feedback:
+  - api
 ---
 There's a new Web API on the block, defined in the
 [`HTMLVideoElement.requestVideoFrameCallback()`](https://wicg.github.io/video-rvfc/)

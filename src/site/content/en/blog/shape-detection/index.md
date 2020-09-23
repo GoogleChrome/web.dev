@@ -17,6 +17,8 @@ hero: hero.jpg
 alt: QR code being scanned by a mobile phone
 origin-trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/-2341871806232657919
+feedback:
+  - api
 ---
 
 {% Aside %}

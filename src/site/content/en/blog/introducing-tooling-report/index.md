@@ -5,6 +5,7 @@ description: |
   Select and configure build tools based on best practices.
 scheduled: true
 date: 2020-06-29
+updated: 2020-08-20
 hero: hero.jpg
 alt: A grid of cards showing test names and test results from across tooling.report.
 tags:
@@ -14,6 +15,8 @@ tags:
   - css
   - html
 ---
+
+{% YouTube 'vsMJiNtQWvw' %}
 
 Today web.dev is launching a new initiative called [tooling.report](https://tooling.report). It's a
 website that gives web developers an overview of the features supported across a selection of

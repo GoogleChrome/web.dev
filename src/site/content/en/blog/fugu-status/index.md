@@ -2,7 +2,7 @@
 title: New capabilities status
 subhead: Web apps should be able to do anything native apps can. Google wants to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2020-06-24
+updated: 2020-09-15
 tags:
   - blog
   - capabilities
@@ -54,6 +54,20 @@ change.<a name="shape-face-text"></a>
           <em>Updated April 14, 2020</em>
         </td>
       </tr>
+      <tr>
+        <td>
+          <a href="/notification-triggers/">
+            Notification Triggers
+          </a>
+        </td>
+        <td>
+          Notification Triggers let you schedule notifications in advance, so
+          that the operating system will deliver the notification at the right
+          time - even if there is no network connectivity, or the device is in
+          battery saver mode.<br>
+          <em>Updated August 23, 2020</em>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -95,46 +109,29 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
       </tr>
       <tr>
         <td>
-          <a href="/native-file-system/">
-            Native File System API
-          </a>
+          <a href="/idle-detection/">Idle Detection API</a>
         </td>
         <td>
-          The Native File System API (formerly known as the Writable Files API)
-          enables developers to build powerful web apps that interact with files
-          on the user's local device, like IDEs, photo and video editors, text
-          editors, and more. After a user grants a web app access, this API
-          allows web apps to read or save changes directly to files and folders
-          on the user's device.<br>
-          <em>Updated April 13, 2020</em>
+          The Idle Detection API notifies developers when a user is idle,
+          indicating such things as lack of interaction with the keyboard,
+          mouse, screen, activation of a screensaver, locking of the screen, or
+          moving to a different screen. A developer-defined threshold triggers
+          the notification.<br>
+          <em>Updated August 11, 2020</em>
         </td>
       </tr>
       <tr>
         <td>
-          <a href="/notification-triggers/">
-            Notification Triggers
-          </a>
-        </td>
-        <td>
-          Notification Triggers let you schedule notifications in advance, so
-          that the operating system will deliver the notification at the right
-          time - even if there is no network connectivity, or the device is in
-          battery saver mode.<br>
-          <em>Updated December 12, 2019</em>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="https://codelabs.developers.google.com/codelabs/web-serial/">
+          <a href="/serial/">
             Serial API
           </a>
         </td>
         <td>
-          The Web Serial API provides a way for websites to read from and
+          The Serial API provides a way for websites to read from and
           write to a serial device with scripts. The API bridges the web and
           the physical world by allowing websites to communicate with serial
           devices, such as microcontrollers and 3D printers.<br>
-          <em>Updated March 1, 2020</em>
+          <em>Updated August 12, 2020</em>
         </td>
       </tr>
       <tr>
@@ -150,6 +147,19 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
           read or write data to an NFC tag on a container to update information
           on its contents.<br>
           <em>Updated December 12, 2019</em>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/hid/">WebHID API</a>
+        </td>
+        <td>
+          There is a long tail of human interface devices (HIDs), such as
+          alternative keyboards or exotic gamepads, that are too new, too old,
+          or too uncommon to be accessible by systems' device drivers. The
+          WebHID API solves this by providing a way to implement
+          device-specific logic in JavaScript.<br>
+          <em>Updated September 15, 2020</em>
         </td>
       </tr>
     </tbody>
@@ -184,7 +194,7 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           running.<br>
           <em>Updated June 24, 2020</em>
         </td>
-      </tr>     
+      </tr>
       <tr>
         <td>
           <a href="/badging-api/">Badging API</a>
@@ -240,6 +250,22 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           that allows your web app to check to see if your native app is
           installed on the users device, and vice versa.<br>
           <em>Updated December 18, 2019</em>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/native-file-system/">
+            Native File System API
+          </a>
+        </td>
+        <td>
+          The Native File System API (formerly known as the Writable Files API)
+          enables developers to build powerful web apps that interact with files
+          on the user's local device, like IDEs, photo and video editors, text
+          editors, and more. After a user grants a web app access, this API
+          allows web apps to read or save changes directly to files and folders
+          on the user's device.<br>
+          <em>Updated September 2, 2020</em>
         </td>
       </tr>
       <tr>

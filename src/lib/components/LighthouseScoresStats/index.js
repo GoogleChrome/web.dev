@@ -18,13 +18,21 @@ class LighthouseScoresStats extends BaseElement {
     };
   }
 
+  constructor() {
+    super();
+
+    this.lhrRuns = [];
+    this.disabled = false;
+    this.medians = [];
+  }
+
   firstUpdated() {
     this.setAttribute('role', 'table');
     this.setAttribute('aria-label', 'Lighthouse performance over time');
   }
 
   /**
-   * @param {!Event} e
+   * @param {WMouseEvent<HTMLInputElement>} e
    * @private
    */
   onCardClick(e) {
@@ -64,15 +72,14 @@ class LighthouseScoresStats extends BaseElement {
   }
 
   /**
-   * @return {!Array<!TemplateResult>}
+   * @return {Array<TemplateResult>}
    */
   generateCards() {
     /**
-     * @param {string} id
-     * @param {!Array<!LighthouseScore>} scores
-     * @return {!TemplateResult}
+     * @param {Array<LighthouseScore>} scores
+     * @return {TemplateResult}
      */
-    const generateGraphs = (id, scores) => {
+    const generateGraphs = (scores) => {
       if (!scores.length) {
         return html``;
       }
@@ -112,7 +119,7 @@ class LighthouseScoresStats extends BaseElement {
             ></web-lighthouse-gauge>
           </div>
           <div class="lh-score-card__data">
-            ${generateGraphs(id, scores)}
+            ${generateGraphs(scores)}
           </div>
         </div>
       `;

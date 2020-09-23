@@ -9,6 +9,8 @@ date: 2018-08-17
 updated: 2020-08-05
 tags:
   - performance
+feedback:
+  - api
 ---
 
 Not every byte that is sent down the wire to the browser has the same degree of importance,

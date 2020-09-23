@@ -23,5 +23,5 @@ const BaseCard = require('./BaseCard');
  * @return {string}
  */
 module.exports = (collectionItem, featured = false) => {
-  return new BaseCard(collectionItem, null, featured).render();
+  return new BaseCard(collectionItem, undefined, featured).render();
 };

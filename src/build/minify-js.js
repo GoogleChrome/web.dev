@@ -10,7 +10,7 @@ const fs = require('fs').promises;
  * Minify the passed on-disk script files. Assumes they have an adjacent ".map" source map.
  *
  * @param {!Array<string>} generated paths to generated script files
- * @return {number} ratio of compressed output to original source
+ * @return {Promise<number>} ratio of compressed output to original source
  */
 async function compressOutput(generated) {
   let inputSize = 0;
@@ -22,9 +22,13 @@ async function compressOutput(generated) {
     const raw = await fs.readFile(target, 'utf8');
     inputSize += raw.length;
 
+    const sourceMapContent = JSON.parse(
+      await fs.readFile(target + '.map', 'utf8'),
+    );
+
     const result = terser.minify(raw, {
       sourceMap: {
-        content: await fs.readFile(target + '.map', 'utf8'),
+        content: sourceMapContent,
         url: fileName + '.map',
       },
     });

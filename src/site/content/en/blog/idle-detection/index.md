@@ -8,7 +8,7 @@ description: |
   interaction with the keyboard, mouse, screen, activation of a screensaver, locking of the screen,
   or moving to a different screen. A developer-defined threshold triggers the notification.
 date: 2020-05-18
-updated: 2020-08-05
+updated: 2020-09-22
 tags:
   - blog
   - idle-detection
@@ -17,6 +17,8 @@ hero: hero.jpg #https://images.unsplash.com/photo-1544239265-ee5eedde5469?ixlib=
 alt: Abandoned computer on a bed with someone's leg next to it.
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/551690954352885761
+feedback:
+  - api
 ---
 {% Aside %}
 The Idle Detection API is part of the
@@ -107,18 +109,26 @@ this definition is left to the user agent.
 ### Using the Idle Detection API
 
 The first step when using the Idle Detection API is
-to ensure the `'notifications'` permission is granted.
+to ensure the `'idle-detection'` permission is granted.
 If the permission is not granted, you need to
-[request it](https://developers.google.com/web/fundamentals/push-notifications/subscribing-a-user#requesting_permission).
+request it via `IdleDetector.requestPermission()`.
 
 ```js
-// Check if notifications permission is granted.
-const hasPermission = await navigator.permissions.query({name: 'notifications'});
-if (hasPermission.state !== 'granted') {
+// Make sure 'idle-detection' permission is granted.
+const state = await IdleDetector.requestPermission();
+if (state !== 'granted') {
   // Need to request permission first.
-  return console.log('Notifications permission not granted.');
+  return console.log('Idle detection permission not granted.');
 }
 ```
+
+{% Aside %}
+  Initially, idle detection was gated behind the
+  notifications permission.
+  While many, but not all, use cases of this API
+  involve notifications, the Idle Detection spec editors have decided to gate it
+  behind a dedicated idle detection permission.
+{% endAside %}
 
 The second step is then to instantiate the `IdleDetector`.
 The minimum `threshold` is 60,000 milliseconds (1 minute).
@@ -178,6 +188,12 @@ You can see the various options in the video below.
   </figcaption>
 </figure>
 
+### Puppeteer support
+
+As of Puppeteer version&nbsp;5.3.1, you can
+[emulate the various idle states](https://github.com/puppeteer/puppeteer/blob/main/docs/api.md#pageemulateidlestateoverrides)
+to programmatically test how your web app's behavior changes.
+
 ### Demo
 
 You can see the Idle Detection API in action with the [Ephemeral Canvas demo][demo] that erases its
@@ -203,12 +219,9 @@ The Chrome team has designed and implemented the Idle Detection API using the co
 defined in [Controlling Access to Powerful Web Platform Features][powerful-apis],
 including user control, transparency, and ergonomics.
 The ability to use this API is controlled by the
-[`'notifications'` permission](https://w3c.github.io/permissions/#notifications).
+[`'idle-detection'` permission](https://w3c.github.io/permissions/#permission-registry).
 In order to use the API, an app also must be running in a
 [top-level secure context](https://www.w3.org/TR/secure-contexts/#examples-top-level).
-We are starting with this permission since it matches the needs we have currently heard,
-but we are open to expanding this in the future and would be happy to
-[hear from you](#feedback) if it does not meet your use case of the API.
 
 ### User control and privacy
 
@@ -218,9 +231,6 @@ correlate the data to identify unique users across origins. To mitigate these so
 the Idle Detection API limits the granularity of the reported idle events and user agents
 may choose to fuzz the reported data. In Chrome,
 we plan to do this as to render the attack vector useless.
-Our security team's threat analysis also motivated gating this API behind the `'notifications'`
-permission. This relatively high bar prevents websites from attempting to abuse
-either of their two powers: sending notifications or detecting the user's idle state.
 
 ## Feedback {: #feedback }
 

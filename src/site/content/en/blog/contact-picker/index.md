@@ -12,6 +12,8 @@ tags:
   - contacts
 hero: hero.jpg
 alt: Telephone on yellow background.
+feedback:
+  - api
 ---
 
 ## What is the Contact Picker API? {: #what }

@@ -23,7 +23,7 @@ const removeDrafts = require('../../_filters/remove-drafts');
  * Count the number of posts in a learning path.
  * @param {*} learningPath A learning path data object.
  * @param {string} lang Language of the page.
- * @return {number}
+ * @return {string}
  */
 function getPostCount(learningPath, lang) {
   // TODO (robdodson): It's annoying to have to removeDrafts both here and

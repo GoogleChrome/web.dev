@@ -13,32 +13,49 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const tagsData = require('../_data/tagsData');
+/** @type TagsData */
+const tagsData = require('../_data/tagsData.json');
 const {livePosts} = require('../_filters/live-posts');
 
+/** @type Tags */
+let processedCollection;
+
 /**
- * Returns all tags with posts.
+ * Returns all tags with their posts.
  *
  * @param {any} [collections] Eleventy collection object
- * @return {Array<{ title: string, key: string, description: string, href: string, url: string, data: { title: string, subhead: string }, elements: Array<object> }>} An array where each element is a paged tag with some meta data and n posts for the page.
+ * @return {Tags}
  */
 module.exports = (collections) => {
+  if (processedCollection) {
+    return processedCollection;
+  }
+
+  /** @type Tags */
   const tags = {};
 
   Object.keys(tagsData).forEach((key) => {
-    const tag = {...tagsData[key]};
+    const tagData = tagsData[key];
+    const description =
+      tagData.description ||
+      `Our latest news, updates, and stories about ${tagData.title.toLowerCase()}.`;
+    const href = `/tags/${key}/`;
+    const title = tagData.title;
 
-    tag.key = key;
-    tag.href = `/tags/${key}/`;
-    tag.description = tag.description
-      ? tag.description
-      : `Our latest news, updates, and stories about ${tag.title.toLowerCase()}.`;
-    tag.data = {
-      title: tag.title,
-      subhead: tag.description,
-      canonicalUrl: tag.href,
+    /** @type TagsItem */
+    const tag = {
+      ...tagsData[key],
+      data: {
+        canonicalUrl: href,
+        subhead: description,
+        title,
+      },
+      description,
+      elements: [],
+      href,
+      key,
+      title,
     };
-    tag.elements = [];
 
     if (collections) {
       tag.elements = collections
@@ -51,6 +68,10 @@ module.exports = (collections) => {
       tags[tag.key] = tag;
     }
   });
+
+  if (collections) {
+    processedCollection = tags;
+  }
 
   return tags;
 };

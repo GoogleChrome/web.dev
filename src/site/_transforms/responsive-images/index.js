@@ -29,9 +29,12 @@ const responsiveImages = (content, outputPath) => {
 
   const $ = cheerio.load(content);
   const $img = $('img');
-  $img.each((i, elem) => {
+  $img.each((_, elem) => {
     const $elem = $(elem);
     const originalSrc = $elem.attr('src');
+    if (!originalSrc) {
+      return;
+    }
     const newSrc = determineImagePath($elem.attr('src'), outputPath).src;
     $elem.attr('src', newSrc);
     // Note the code below is a short term fix and should be removed eventually.

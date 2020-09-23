@@ -5,6 +5,7 @@ import lang from './utils/language';
 import {localStorage} from './utils/storage';
 import {getCanonicalPath} from './urls';
 import cookies from 'js-cookie';
+import {trackEvent} from './analytics';
 
 export const clearSignedInState = store.action(() => {
   const {isSignedIn} = store.getState();
@@ -78,7 +79,7 @@ export const requestRunLighthouse = store.action((state, url) => {
   });
 });
 
-export const requestFetchReports = store.action((state, url, startDate) => {
+export const requestFetchReports = store.action((_, url, startDate) => {
   const p = (async () => {
     const runs = await fetchReports(url, startDate);
 
@@ -136,7 +137,9 @@ export const collapseSideNav = store.action(() => {
 
 export const openModal = store.action(() => {
   const main = document.querySelector('main');
+  /** @type import('./components/Header').Header */
   const header = document.querySelector('web-header');
+  /** @type {HTMLElement} */
   const footer = document.querySelector('.w-footer');
 
   document.documentElement.classList.add('web-modal__overflow-hidden');
@@ -148,7 +151,9 @@ export const openModal = store.action(() => {
 
 export const closeModal = store.action(() => {
   const main = document.querySelector('main');
+  /** @type import('./components/Header').Header */
   const header = document.querySelector('web-header');
+  /** @type {HTMLElement} */
   const footer = document.querySelector('.w-footer');
 
   document.documentElement.classList.remove('web-modal__overflow-hidden');
@@ -175,7 +180,7 @@ export const checkIfUserAcceptsCookies = store.action(
 );
 
 export const setUserAcceptsCookies = store.action(() => {
-  localStorage['web-accepts-cookies'] = 1;
+  localStorage['web-accepts-cookies'] = '1';
   return {
     userAcceptsCookies: true,
     showingSnackbar: false,
@@ -215,5 +220,31 @@ export const setLanguage = store.action((state, preferredLanguage) => {
   }
   return {
     userPreferredLanguage: preferredLanguage,
+  };
+});
+
+export const closeToC = store.action(() => {
+  trackEvent({
+    category: 'Site-Wide Custom Events',
+    action: 'click',
+    label: 'ToC',
+    value: 0,
+  });
+  document.querySelector('main').classList.remove('w-toc-open');
+  return {
+    isTocOpened: false,
+  };
+});
+
+export const openToC = store.action(() => {
+  trackEvent({
+    category: 'Site-Wide Custom Events',
+    action: 'click',
+    label: 'ToC',
+    value: 1,
+  });
+  document.querySelector('main').classList.add('w-toc-open');
+  return {
+    isTocOpened: true,
   };
 });

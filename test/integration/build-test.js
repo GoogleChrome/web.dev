@@ -20,23 +20,20 @@ describe('Build test', function () {
     console.log('Build completed. Starting tests.');
 
     [
-      path.join('en', 'algolia.json'),
       path.join('en', 'feed.xml'),
       path.join('en', 'index.html'),
-      path.join('en', 'index.json'),
-      path.join('en', 'offline', 'index.json'),
       path.join('en', 'authors', 'addyosmani', 'feed.xml'),
       path.join('en', 'tags', 'progressive-web-apps', 'feed.xml'),
       path.join('images', 'favicon.ico'),
       path.join('images', 'lockup.svg'),
       '_redirects.yaml',
       'app.css',
+      'algolia.json',
       'bootstrap.js',
       'manifest.webmanifest',
       'nuke-sw.js',
       'robots.txt',
       'sitemap.xml',
-      'sw-partial-layout.partial',
       'sw.js',
     ].forEach((file) =>
       assert.ok(

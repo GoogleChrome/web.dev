@@ -9,6 +9,8 @@ description: |
   the service worker is installing. Precaching makes it possible to serve cached
   files to the browser without going to the network. Use precaching with Workbox
   for critical assets that your site needs even when offline.
+feedback:
+  - api
 ---
 
 One feature of service workers is the ability to save files to the cache when

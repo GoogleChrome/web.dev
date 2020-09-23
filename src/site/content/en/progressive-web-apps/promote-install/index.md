@@ -10,6 +10,8 @@ description: |
   How to promote installation of Progressive Web Apps and best practices.
 tags:
   - progressive-web-apps
+feedback:
+  - api
 ---
 
 Installing your Progressive Web App (PWA) can make it easier for users to

@@ -17,6 +17,8 @@ tags:
   - javascript
   - layout
   - rendering
+feedback:
+  - api
 ---
 
 Before `ResizeObserver`, you had to attach a listener to the document's `resize`

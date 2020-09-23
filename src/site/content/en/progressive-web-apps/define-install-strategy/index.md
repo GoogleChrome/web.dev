@@ -5,12 +5,14 @@ authors:
   - demianrenzulli
   - petelepage
 date: 2020-05-12
-updated: 2020-05-13
+updated: 2020-08-20
 description: |
   Best practices for combining different installation offerings to increase installation rates and avoid platform competition and cannibalization.
 tags:
   - progressive-web-apps
 ---
+
+{% YouTube '6R9pupbDXYw' %}
 
 In the past, app installs were only possible in the context of native applications. Today, modern web apps offer installable experiences that provide the same level of integration and reliability as native apps.
 

@@ -9,6 +9,11 @@
   right: 0;
   width: 48px;
 
+  &::before {
+    @include font-material-icon();
+    content: 'content_copy';
+  }
+
   &:focus,
   &:hover {
     background-color: rgba($WEB_SECONDARY_COLOR, 0.2);

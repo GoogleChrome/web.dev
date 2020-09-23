@@ -2,7 +2,7 @@
  * @return {boolean} whether Web Share is supported on this browser
  */
 export function isWebShareSupported() {
-  if (!('share' in navigator)) {
+  if (!('share' in window.navigator)) {
     return false;
   }
 
@@ -11,7 +11,7 @@ export function isWebShareSupported() {
   // https://bugs.chromium.org/p/chromium/issues/detail?id=903010
   if ('canShare' in navigator) {
     const url = `https://${window.location.hostname}`;
-    return navigator.canShare({url});
+    return window.navigator.canShare({url});
   }
 
   return true;

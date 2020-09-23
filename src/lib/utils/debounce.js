@@ -3,7 +3,7 @@
  * a particular interval.
  * @param {!Function} func A function to debounce based on the wait time.
  * @param {!number} wait Time in milliseconds to wait before invoking function.
- * @return {Function} A debounced copy of the function.
+ * @return {() => void | Promise<void> | TODO} A debounced copy of the function.
  */
 export const debounce = (func, wait) => {
   if (!func) {

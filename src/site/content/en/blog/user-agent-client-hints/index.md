@@ -8,7 +8,7 @@ authors:
   - rowan_m
   - yoavweiss
 date: 2020-06-25
-updated: 2020-06-29
+updated: 2020-08-20
 hero: uach-hero.jpg
 thumbnail: uach-thumbnail.jpg
 alt: A variety of different footprints in the snow. A hint at who's been there.
@@ -16,7 +16,11 @@ tags:
   - blog
   - privacy
   - security
+feedback:
+  - api
 ---
+
+{% YouTube 'f0YY0o2OAKA' %}
 
 Client Hints enable developers to actively request
 information about the user's device or conditions, rather than needing to parse

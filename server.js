@@ -119,12 +119,22 @@ const safetyHandler = (req, res, next) => {
   return next();
 };
 
+// Express' static middleware uses weak etags which will sometimes serve
+// stale html (which then requests the wrong versioned js resources).
+// This handler forces express to not allow any caching of the html
+// whatsoever.
+const staticHandler = (res, path) => {
+  if (path.endsWith('.html')) {
+    res.setHeader('Cache-Control', 'no-store');
+  }
+};
+
 const handlers = [
   safetyHandler,
   buildSafetyAssetHandler(),
   localeHandler,
-  express.static('dist'),
-  express.static('dist/en'),
+  express.static('dist', {setHeaders: staticHandler}),
+  express.static('dist/en', {setHeaders: staticHandler}),
   redirectHandler,
   notFoundHandler,
 ];

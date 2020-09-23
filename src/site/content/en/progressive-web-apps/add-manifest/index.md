@@ -12,6 +12,8 @@ description: |
   device or desktop.
 tags:
   - progressive-web-apps
+feedback:
+  - api
 ---
 
 The web app manifest is a JSON file that tells the browser about your

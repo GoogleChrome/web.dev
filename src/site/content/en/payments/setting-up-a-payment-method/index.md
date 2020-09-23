@@ -15,6 +15,8 @@ date: 2020-05-25
 updated: 2020-07-17
 tags:
   - payments
+feedback:
+  - api
 ---
 
 To be used with the Payment Request API, a payment app must be associated with a
@@ -482,4 +484,4 @@ Now that you have your payment app discoverable, learn how to develop a native
 payment app and a web-based payment app.
 
 - [Android payment apps: developer's guide](/android-payment-apps-developers-guide)
-- Web based payment apps developer guide (Coming soon)
+- [Web based payment apps developer guide](/web-based-payment-apps-overview)

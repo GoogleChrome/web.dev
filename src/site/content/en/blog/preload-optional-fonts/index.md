@@ -14,6 +14,8 @@ tags:
   - blog
   - performance
   - fonts
+feedback:
+  - api
 ---
 
 {% Aside %}
@@ -85,7 +87,7 @@ text and, in cases when a new font is rendered, layout jank that moves some of t
 This occurs even if the font is stored in the browser's disk cache and can load well before the
 block period is complete.
 
-Optimizations have landed in Chrome 83 to entirely remove the first render cycle for optional fonts
+[Optimizations](https://bugs.chromium.org/p/chromium/issues/detail?id=1040632) have landed in Chrome 83 to entirely remove the first render cycle for optional fonts
 that are preloaded with [`<link rel="preload'>`](https://web.dev/codelab-preload-web-fonts/).
 Instead, rendering is blocked until the custom font has finished loading or a certain period of time
 has passed. This timeout period is currently set at 100ms, but may possibly change in the near

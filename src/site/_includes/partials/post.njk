@@ -6,6 +6,7 @@
     {# Use first found path as a default path. #}
     {% set path = paths[postPaths[0]] %}
   {% endif %}
+  {% set safeTitle = title | md | safe %}
 
   {% if hero %}
     {% Hero {
@@ -15,6 +16,16 @@
       heroFit: hero_fit
     } %}
   {% endif %}
+
+  <web-table-of-contents>
+    <h2 class="w-toc__header">
+      <a href="#{{ safeTitle | slugify }}" class="w-toc__header--link">
+        {{ safeTitle }}
+      </a>
+    </h2>
+    {{ content | toc | safe }}
+  </web-table-of-contents>
+  <web-table-of-contents-button></web-table-of-contents-button>
 
   {# Make sure Actions are first in the tab order. #}
   <div class="w-actions">
@@ -40,7 +51,7 @@
         </div>
       {% endif %}
 
-      <h1 class="w-article-header__headline">{{ title | md | safe }}</h1>
+      <h1 id="{{ safeTitle | slugify }}" class="w-article-header__headline">{{ safeTitle }}</h1>
       {% if subhead %}
         <p class="w-article-header__subhead w-mb--non">
           {{ subhead | md | safe }}
@@ -102,8 +113,7 @@
     {% if codelabs %}
       {% CodelabsCallout codelabs, lang %}
     {% endif %}
-
-    <web-feedback></web-feedback>
+    <web-feedback additional-questions="{{ feedback }}"></web-feedback>
   </div>
 
   {% if 'blog' in tags %}

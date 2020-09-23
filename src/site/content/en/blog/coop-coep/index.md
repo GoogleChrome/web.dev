@@ -14,10 +14,14 @@ authors:
   - agektmr
 hero: hero.jpg
 date: 2020-04-13
-updated: 2020-05-05
+updated: 2020-09-01
 tags:
   - blog
   - security
+origin_trial:
+  url: https://developers.chrome.com/origintrials/#/register_trial/2780972769901281281 
+feedback:
+  - api
 ---
 Some web APIs increase the risk of side-channel attacks like Spectre. To
 mitigate that risk, browsers offer an opt-in-based isolated environment called
@@ -207,8 +211,10 @@ The [Reporting
 API](https://developers.google.com/web/updates/2018/09/reportingapi) is another
 mechanism through which you can detect various issues. You can configure the
 Reporting API to instruct your users' browser to send a report whenever COEP
-blocks the loading of a resource. Chrome has supported the `Report-To` header since
-version 69 for a variety of uses including COEP.
+blocks the loading of a resource or COOP isolates a popup window. Chrome has
+supported the
+[`Report-To`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-to)
+header since version 69 for a variety of uses including COEP and COOP.
 
 {% Aside %}
 The Reporting API is undergoing transition to [a new
@@ -219,13 +225,41 @@ API](https://bugzilla.mozilla.org/show_bug.cgi?id=1620573). You may want to use
 both APIs during the transition.
 {% endAside %}
 
-To specify where the browser should send reports, append the `Report-To`
-HTTP header to any document that is served with a COEP HTTP header. The
+{% Details %}
+
+{% DetailsSummary %}
+The COOP Reporting API in Chrome is available after version 86 with one of two conditions:
+
+1. Enable 2 flags at `chrome://flags`
+2. Register an orign trial
+{% endDetailsSummary %}
+
+#### Enable 2 flags at `chrome://flags`
+
+* Cross Origin Opener Policy reporting (`#cross-origin-opener-policy-reporting`)
+* Cross Origin Opener Policy access reporting
+  (`#cross-origin-opener-policy-access-reporting`)
+
+#### Register an origin trial
+
+{% include 'content/origin-trials.njk' %}
+
+{% include 'content/origin-trial-register.njk' %}
+
+{% Aside 'caution' %}
+To use COOP Reporting API, the token must be served as an HTTP header instead of
+a `<meta>` tag.
+{% endAside %}
+
+{% endDetails %}
+
+To specify where the browser should send reports, append the `Report-To` HTTP
+header to any document that is served with a COEP or COOP HTTP header. The
 `Report-To` header also supports a few extra parameters to configure the
 reports. For example:
 
 ```http
-Report-To: { group: 'coep_rollout_1', max_age: 86400, endpoints: [{ url: 'https://first-party-test.glitch.me/report'}]}
+Report-To: { group: 'coep_report', max_age: 86400, endpoints: [{ url: 'https://first-party-test.glitch.me/report'}]},{ group: 'coop_report', max_age: 86400, endpoints: [{ url: 'https://first-party-test.glitch.me/report'}]}
 ```
 
 The parameters object has three properties:
@@ -234,28 +268,37 @@ The parameters object has three properties:
 
 The `group` property names your various reporting endpoints. Use these names to
 direct a subset of your reports. For instance, in the
-`Cross-Origin-Embedder-Policy` directive you can specify the relevant endpoint
-by providing the group name to `report-to=`. For example:
+`Cross-Origin-Embedder-Policy` and `Cross-Origin-Opener-Policy` directives you
+can specify the relevant endpoint by providing the group name to `report-to=`.
+For example:
 
 ```http
-Cross-Origin-Embedder-Policy: require-corp; report-to="coep_rollout_1"
+Cross-Origin-Embedder-Policy: require-corp; report-to="coep_report"
+Cross-Origin-Opener-Policy: same-origin; report-to="coop_report"
 ```
 When the browser encounters this, it will cross reference the `report-to` value
 with the `group` property on the `Report-To` header to look up the endpoint.
-This example cross references on `coep_rollout_1` to find the endpoint
-`https://first-party-test.glitch.me/report`.
+This example cross references `coep_report` and `coop_report` to find the
+endpoint `https://first-party-test.glitch.me/report`.
 
-If you prefer to receive reports without blocking any embedded content, use
-`Cross-Origin-Embedder-Policy-Report-Only` instead of
-`Cross-Origin-Embedder-Policy`. For example:
+If you prefer to receive reports without blocking any embedded content or
+without isolating a popup window, append `-Report-Only` to respective headers:
+i.e. `Cross-Origin-Embedder-Policy-Report-Only` and
+`Cross-Origin-Opener-Policy-Report-Only`. For example:
 
 ```http
-Cross-Origin-Embedder-Policy-Report-Only: require-corp; report-to="coep_rollout_1"
+Cross-Origin-Embedder-Policy-Report-Only: require-corp; report-to="coep_report"
+Cross-Origin-Opener-Policy-Report-Only: same-origin; report-to="coop_report"
 ```
 
 By doing this, when the browser detects cross origin resources that don't have
 CORP or CORS, it sends a report using the Reporting API without actually
-blocking those resources.
+blocking those resources because of COEP.
+
+Similarly, when the browser opens a cross-origin popup window, it sends a report
+without actually isolating the window because of COOP. It also reports when
+different browsing context groups try to access each other, but only in
+"report-only" mode.
 
 #### `max_age`
 
@@ -272,18 +315,79 @@ The `endpoints` property specifies the URLs of one or more reporting endpoints.
 The endpoint must accept CORS if it's hosted on a different origin. The browser
 will send reports with a Content-Type of `application/reports+json`.
 
-An example payload looks like this:
+An example COEP report payload when cross-origin resource is blocked looks like
+this:
 
 ```json
 [{
-  age: 0,
-  body: {
-    'blocked-url': 'https://third-party-test.glitch.me/check.svg',
-    type: 'corp'
+  "age": 25101,
+  "body": {
+    "blocked-url": "https://third-party-test.glitch.me/check.svg?",
+    "blockedURL": "https://third-party-test.glitch.me/check.svg?",
+    "destination": "image",
+    "disposition": "enforce",
+    "type": "corp"
   },
-  type: 'coep',
-  url: 'https://first-party-test.glitch.me/?coep=require-corp',
-  …
+  "type": "coep",
+  "url": "https://first-party-test.glitch.me/?coep=require-corp&coop=same-origin&",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4249.0 Safari/537.36"
+}]
+```
+
+{% Aside 'caution' %}
+`blocked-url` is there for backward compatibility only and [will be removed
+eventually](https://github.com/whatwg/html/pull/5848).
+{% endAside %}
+
+An example COOP report payload when a popup window is opened isolated looks like
+this:
+
+```json
+[{
+  "age": 7,
+  "body": {
+    "disposition": "enforce",
+    "effectivePolicy": "same-origin",
+    "nextResponseURL": "https://third-party-test.glitch.me/popup?report-only&coop=same-origin&",
+    "type": "navigation-from-response"
+  },
+  "type": "coop",
+  "url": "https://first-party-test.glitch.me/coop?coop=same-origin&",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36"
+}]
+```
+
+When different browsing context groups try to access each other (only on
+"report-only" mode), COOP also sends a report. For example, a report when
+`postMessage()` is attempted would look like this:
+
+```json
+[{
+  "age": 51785,
+  "body": {
+    "columnNumber": 18,
+    "disposition": "reporting",
+    "effectivePolicy": "same-origin",
+    "lineNumber": 83,
+    "property": "postMessage",
+    "sourceFile": "https://first-party-test.glitch.me/popup.js",
+    "type": "access-from-coop-page-to-openee"
+  },
+  "type": "coop",
+  "url": "https://first-party-test.glitch.me/coop?report-only&coop=same-origin&",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36"
+},
+{
+  "age": 51785,
+  "body": {
+    "disposition": "reporting",
+    "effectivePolicy": "same-origin",
+    "property": "postMessage",
+    "type": "access-to-coop-page-from-openee"
+  },
+  "type": "coop",
+  "url": "https://first-party-test.glitch.me/coop?report-only&coop=same-origin&",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36"
 }]
 ```
 
