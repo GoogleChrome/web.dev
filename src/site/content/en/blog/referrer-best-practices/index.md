@@ -467,6 +467,8 @@ change this behaviour.
 
 If your website uses HTTP, [migrate to HTTPS](/why-https-matters/).
 
+{% endAside %}
+
 ## Conclusion
 
 A protective referrer policy is a great way to give your users more privacy.
