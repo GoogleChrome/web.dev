@@ -338,7 +338,7 @@ For best consistency and visual results, don't rely on font synthesis.
 Instead, minimize the number of used font variants and specify their locations,
 such that the browser can download them when they are used on the page.
 Or, choose to use a variable font.
-That said, in some cases a synthesized variant [may be a viable option](https://www.igvita.com/2014/09/16/optimizing-WebFont-selection-and-synthesis/),
+That said, in some cases a synthesized variant [may be a viable option](https://www.igvita.com/2014/09/16/optimizing-webfont-selection-and-synthesis/),
 but be cautious in using synthesized variants.
 {% endAside %}
 

@@ -215,7 +215,7 @@ sizes](https://web.dev/total-byte-weight/) with negative consequences for your
 revenues and your users' wallets.
 
 For simple uses like the ones I'm describing here, use [CSS media
-queries](/web/fundamentals/design-and-ux/responsive/#css-media-queries) to
+queries](https://developers.google.com/web/fundamentals/design-and-ux/responsive/#css-media-queries) to
 specify the size of elements depending on the viewport dimensions; `max-width:
 100%` is your friend.
 

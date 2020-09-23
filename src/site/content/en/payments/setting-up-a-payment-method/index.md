@@ -325,7 +325,7 @@ payment app appears in the Payment Request UI.
         </td>
         <td>
         Used to detect the native app that acts as the native payment app.
-        Find more details at <a href="/native-payment-apps-overview">Android
+        Find more details at <a href="/android-payment-apps-developers-guide/">Android
         payment apps developer guide</a>.
         </td>
       </tr>
@@ -377,7 +377,7 @@ To launch the native payment app, the following conditions must be met:
     - An intent filter of `org.chromium.action.PAY`.
     - A payment method identifier specified as the value for the `org.chromium.default_payment_method_name` property.
 
-Check out the [Android payment apps: developer's guide](/native-payment-apps-overview)
+Check out the [Android payment apps: developer's guide](/android-payment-apps-developers-guide/)
 for more details about how to set these up.
 
 {% Label %}[payment handler] /manifest.json{% endLabel %}

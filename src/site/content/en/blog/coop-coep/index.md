@@ -173,9 +173,9 @@ powerful features like `performance.measureMemory()`.
 
 {% Aside 'caution' %}
 The
-[`self.crossOriginIsolated`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated.)
-property is [still under development and not available yet in Chrome as of
-version 83](https://www.chromestatus.com/feature/5953286387531776).
+[`self.crossOriginIsolated`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated)
+property is still under development and not available yet in Chrome as of
+version 83.
 {% endAside %}
 
 ### Debug issues using Chrome DevTools
