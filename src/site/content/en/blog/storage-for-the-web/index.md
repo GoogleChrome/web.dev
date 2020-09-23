@@ -92,12 +92,13 @@ hundreds of gigabytes or more. Browser implementations vary, but the amount
 of storage available is usually based on the amount of storage available on the
 device.
 
-* Chrome allows the browser to use up to 60% of total disk space. You can use the
-  [StorageManager API](#check) to determine the maximum quota available. Other
-  Chromium-based browsers may allow the browser to use more storage.
+* Chrome allows the browser to use up to 80% of total disk space. An origin can
+  use up to 60% of the total disk space. You can use the [StorageManager
+  API](#check) to determine the maximum quota available. Other Chromium-based
+  browsers may allow the browser to use more storage.
 * Internet Explorer 10 and later can store up to 250MB and will prompt the
   user when more than 10MB has been used.
-* Firefox allows the browser to use up to 50% of free disk space. An 
+* Firefox allows the browser to use up to 50% of free disk space. An
   [eTLD+1](https://godoc.org/golang.org/x/net/publicsuffix)
   group (e.g., `example.com`, `www.example.com` and `foo.bar.example.com`)
   [may use up to 2GB][ff-usage-limits]. You can use the
