@@ -16,7 +16,6 @@ const progressiveWebApps = require('./progressive-web-apps.json');
 const react = require('./react.json');
 const reliable = require('./reliable.json');
 const secure = require('./secure.json');
-const vitals = require('./vitals.json');
 
 module.exports = {
   accessible,
@@ -36,6 +35,5 @@ module.exports = {
   react,
   reliable,
   secure,
-  vitals,
   media,
 };
