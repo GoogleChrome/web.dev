@@ -208,7 +208,7 @@ sanitize an HTML snippet, removing XSS payloads.
 
 ```javascript
 import DOMPurify from 'dompurify';
-el.innerHTML = DOMPurify.sanitize(html, {RETURN_TRUSTED_TYPE: true);
+el.innerHTML = DOMPurify.sanitize(html, {RETURN_TRUSTED_TYPE: true});
 ```
 
 DOMPurify [supports Trusted Types](https://github.com/cure53/DOMPurify#what-about-dompurify-and-trusted-types) and will return sanitized
