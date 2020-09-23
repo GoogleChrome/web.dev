@@ -228,7 +228,7 @@ match style** or **Paste without formatting**.
 The following example shows how to do this. This example uses `fetch()` to obtain
 image data, but it could also come from a
 [`<canvas>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas)
-or the [File System Access API](https://web.dev/file-system-access/).
+or the [File System Access API](/file-system-access/).
 
 ```js
 function copy() {
