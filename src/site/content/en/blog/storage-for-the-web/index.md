@@ -95,7 +95,9 @@ device.
 * Chrome allows the browser to use up to 80% of total disk space. An origin can
   use up to 60% of the total disk space. You can use the [StorageManager
   API](#check) to determine the maximum quota available. Other Chromium-based
-  browsers may allow the browser to use more storage.
+  browsers may allow the browser to use more storage. See
+  [PR #3896](https://github.com/GoogleChrome/web.dev/pull/3896) for details about
+  Chrome's implementation.
 * Internet Explorer 10 and later can store up to 250MB and will prompt the
   user when more than 10MB has been used.
 * Firefox allows the browser to use up to 50% of free disk space. An
