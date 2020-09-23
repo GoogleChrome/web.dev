@@ -26,7 +26,7 @@ enables developers to build powerful web apps
 that interact with files on the user's local device, like IDEs, photo and video
 editors, text editors, and more. After a user grants a web app access, this
 API allows web apps to read or save changes directly to files and folders
-on the user's device. Beyond reading and writing files, the file system access
+on the user's device. Beyond reading and writing files, the File System Access
 API provides the ability to open a directory and enumerate its contents.
 
 If you've worked with reading and writing files before, much of what I'm about
@@ -407,7 +407,7 @@ Is there something about the API that doesn't work like you expected? Or
 are there missing methods or properties that you need to implement your
 idea? Have a question or comment on the security model?
 
-* File a spec issue on the [WICG file system access GitHub repo][spec-issues],
+* File a spec issue on the [WICG File System Access GitHub repo][spec-issues],
   or add your thoughts to an existing issue.
 
 ### Problem with the implementation? {: .hide-from-toc }
@@ -433,7 +433,7 @@ critical it is to support them.
 ## Helpful links {: #helpful }
 
 * [Public explainer][explainer]
-* [file system access specification][spec] & [File specification][file-api-spec]
+* [File System Access specification][spec] & [File specification][file-api-spec]
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
 * Request an [origin trial token]({{origin_trial.url}})

@@ -228,7 +228,7 @@ Other native applications and even websites or emails can integrate with the Pod
   for PWAs. Currently, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/registerProtocolHandler"><code>registerProtocolHandler()</code></a> with a <code>web+</code> scheme prefix is the best alternative.
 {% endDetails %}
 
-## File system access integration
+## File system integration
 
 You may not immediately think of it, but the Podcasts app naturally integrates with the local file system. When I download a podcast episode, on my laptop it is stored in `~/Library/Group Containers/243LU875E5.groups.com.apple.podcasts/Library/Cache`. Unlike, say `~/Documents`, this directory is of course not meant to be accessed directly by regular users, but it is there.
 Other storage mechanisms than files are referenced in the [offline content](#offline-content-available-and-media-playable) section.
@@ -584,7 +584,7 @@ The table below shows a compact overview of all features and provides a list of 
         </td>
       </tr>
       <tr>
-        <td><a href="#file-system-access-integration">file system access integration</a></td>
+        <td><a href="#file-system-access-integration">Local file system integration</a></td>
         <td>
           <ul>
             <li><a href="https://web.dev/file-system-access/">File System Access API</a></li>
