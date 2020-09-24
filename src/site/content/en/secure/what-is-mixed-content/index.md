@@ -117,7 +117,9 @@ The following contains examples of active mixed content:
   </iframe>
 </div>
 
-[Load the example over HTTP](http://active-mixed-content.glitch.me/) and you will see the content that has been blocked.
+[Load the example over HTTP](http://active-mixed-content.glitch.me/)
+to see the content that's blocked when you [load the example over
+HTTPS](https://active-mixed-content.glitch.me/).
 
 Blocked content will be detailed in the Chrome DevTools console.
 
