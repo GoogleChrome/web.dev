@@ -152,7 +152,7 @@ This is why we now see Chrome taking a stricter approach to these subresources.
 ### Older browsers
 
 It is important to remember that not every visitor to your website uses the most up-to-date browsers.
-Different versions from different browser vendors each behave differently with mixed content.
+Different versions from different browser vendors each treat mixed content differently.
 At worst, some browsers and versions don't block any mixed content at all,
 which is very unsafe for the user.
 
