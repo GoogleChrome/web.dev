@@ -13,9 +13,9 @@ tags:
   - security
 ---
 
-**Mixed content** occurs when initial HTML is loaded over a secure HTTPS connection,
-but other resources (such as images, videos, stylesheets, scripts)
-are loaded over an insecure HTTP connection.
+**Mixed content** occurs when initial HTML is loaded over a secure
+[HTTPS](/why-https-matters/) connection, but other resources (such as images,
+videos, stylesheets, scripts) are loaded over an insecure HTTP connection.
 This is called mixed content
 because both HTTP and HTTPS content are being loaded to display the same page,
 and the initial request was secure over HTTPS.
