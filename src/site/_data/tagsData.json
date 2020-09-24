@@ -182,8 +182,8 @@
     "title": "Rendering"
   },
   "scale-on-web": {
-    "title": "Scale On Web Case Studies",
-    "description": "TODO",
+    "title": "SCALE on web case studies",
+    "description": "A collection of short case studies from India and Southeast Asia celebrating partner success stories across multiple aspects of modern web development.",
     "hero": {
       "src": "/images/tags/scale-on-web.svg",
       "width": 340,
