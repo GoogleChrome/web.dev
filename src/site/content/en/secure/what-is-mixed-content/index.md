@@ -11,6 +11,13 @@ description: >
   but other resources are loaded over an insecure HTTP connection.
 tags:
   - security
+  - network
+  - privacy
+  - html
+  - css
+  - javascript
+  - images
+  - media
 ---
 
 **Mixed content** occurs when initial HTML is loaded over a secure
