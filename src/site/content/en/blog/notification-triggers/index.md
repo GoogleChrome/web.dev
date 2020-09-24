@@ -90,9 +90,10 @@ Chrome&nbsp;88 (February&nbsp;24, 2021).
 
 {% Aside %}
   An earlier origin trial for the feature, which gave developers a first chance
-  to try out the proposed API, ran from Chrome&nbsp;80 to&nbsp;83
-  (see the summary of the
-  [obtained feedback](https://docs.google.com/document/d/1Nl1emEqxjTzPLNIAPiS26Vtq3mBdNyCxfMY6QwaD45s/edit)).
+  to try out the proposed API, ran from Chrome&nbsp;80 to&nbsp;83.
+  You can read the summary of the
+  [obtained feedback](https://docs.google.com/document/d/1Nl1emEqxjTzPLNIAPiS26Vtq3mBdNyCxfMY6QwaD45s/edit))
+  so far.
 {% endAside %}
 
 {% include 'content/origin-trials.njk' %}
