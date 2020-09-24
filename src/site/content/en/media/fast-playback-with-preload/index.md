@@ -84,7 +84,7 @@ HTTP Range requests are not compatible.
 Compatible with MSE and file segments.
       </td>
       <td>
-Should be used only for small media files (<5 MB) when fetching full resources.
+Should be used only for small media files (&lt;5 MB) when fetching full resources.
       </td>
     </tr>
     <tr>
@@ -119,11 +119,12 @@ has actually been fetched.
 
 Setting the `preload` attribute to `metadata` indicates that the user is not
 expected to need the video, but that fetching its metadata (dimensions, track
-list, duration, and so on) is desirable. Note that starting in [Chrome 64], the
-default value for `preload` is `metadata`. (It was `auto` previously).
+list, duration, and so on) is desirable. Note that starting in [Chrome
+64][chrome64], the default value for `preload` is `metadata`. (It was `auto`
+previously).
 
 
-```
+```js
 <video id="video" preload="metadata" src="file.mp4" controls></video>
 
 <script>
@@ -140,7 +141,7 @@ Setting the `preload` attribute to `auto` indicates that the browser may cache
 enough data that complete playback is possible without requiring a stop for
 further buffering.
 
-```
+```js
 <video id="video" preload="auto" src="file.mp4" controls></video>
 
 <script>
@@ -157,8 +158,10 @@ There are some caveats though. As this is just a hint, the browser may completel
 ignore the `preload` attribute. At the time of writing, here are some rules
 applied in Chrome:
 
-- When [Data Saver] is enabled, Chrome forces the `preload` value to `none`.
-- In Android 4.3, Chrome forces the `preload` value to `none` due to an [Android bug].
+- When [Data Saver][datasaver] is enabled, Chrome forces the `preload` value to
+  `none`.
+- In Android 4.3, Chrome forces the `preload` value to `none` due to an [Android
+  bug].
 - On a cellular connection (2G, 3G, and 4G), Chrome forces the `preload` value to
   `metadata`.
 
@@ -196,7 +199,7 @@ JavaScript asks to fetch video content, it is read from cache as the resource
 may have already been cached by the browser. If the preload request hasn't
 finished yet, a regular network fetch will happen.
 
-```
+```js
 <link rel="preload" as="video" href="https://cdn.com/small-file.mp4">
 
 <video id="video" controls></video>
@@ -226,7 +229,7 @@ with the MSE Javascript API, please read [MSE basics].
 For the sake of simplicity, let's assume the entire video has been split into
 smaller files like "file_1.webm", "file_2.webm", "file_3.webm", etc.
 
-```
+```js
 <link rel="preload" as="fetch" href="https://cdn.com/file_1.webm">
 
 <video id="video" controls></video>
@@ -267,7 +270,7 @@ video or audio element.
 Link preload is not supported in every browser yet. You may want to detect its
 availability with the snippets below to adjust your performance metrics.
 
-```
+```js
 function preloadFullVideoSupported() {
   const link = document.createElement('link');
   link.as = 'video';
@@ -283,13 +286,14 @@ function preloadFirstSegmentSupported() {
 
 ## Manual buffering
 
-Before we dive into the [Cache API] and service workers, let's see how to
-manually buffer a video with MSE. The example below assumes that your web
-server supports HTTP Range requests but this would be pretty similar with
-file segments. Note that some middleware libraries such as [Google's Shaka
-Player], [JW Player], and [Video.js] are built to handle this for you.
+Before we dive into the [Cache API][cache-api] and service workers, let's see
+how to manually buffer a video with MSE. The example below assumes that your web
+server supports HTTP Range requests but this would be pretty similar with file
+segments. Note that some middleware libraries such as [Google's Shaka
+Player][shaka-player], [JW Player][jw-player], and [Video.js][video-js] are
+built to handle this for you.
 
-```
+```js
 <video id="video" controls></video>
 
 <script>
@@ -346,7 +350,7 @@ is low.
 Disable preload or at least preload a lower resolution video when the
 device is running out of battery.
 
-```
+```js
 if ('getBattery' in navigator) {
   navigator.getBattery()
   .then(battery => {
@@ -376,7 +380,7 @@ it's set to `cellular`, you could prevent preloading and advise users that
 their mobile network operator might be charging for the bandwidth, and only start
 automatic playback of previously cached content.
 
-```
+```js
 if ('connection' in navigator) {
   if (navigator.connection.type == 'cellular') {
     // TODO: Prompt user before preloading video
@@ -386,7 +390,7 @@ if ('connection' in navigator) {
 }
 ```
 
-Checkout the [Network Information sample] to learn how to react to network
+Checkout the [Network Information sample][network-info-sample] to learn how to react to network
 changes as well.
 
 ### Pre-cache multiple first segments
@@ -404,7 +408,7 @@ the Cache API is also accessible from the Window object.
 
 #### Fetch and cache
 
-```
+```js
 const videoFileUrls = [
   'bat_video_file_1.webm',
   'cow_video_file_1.webm',
@@ -444,7 +448,7 @@ small ranges.
 For reference, I've modified part of the example above to save HTTP Range
 requests to the video pre-cache.
 
-```
+```js
     ...
     return fetch(videoFileUrl, { headers: { range: 'bytes=0-567139' } })
     .then(networkResponse => networkResponse.arrayBuffer())
@@ -461,12 +465,12 @@ requests to the video pre-cache.
 When a user clicks a play button, we'll fetch the first segment of video
 available in the Cache API so that playback starts immediately if available.
 Otherwise, we'll simply fetch it from the network. Keep in mind that browsers
-and users may decide to clear the [Cache].
+and users may decide to clear the [Cache][cache].
 
 As seen before, we use MSE to feed that first segment of video to the video
 element.
 
-```
+```js
 function onPlayButtonClick(videoFileUrl) {
   video.load(); // Used to be able to play video later.
 
@@ -507,7 +511,7 @@ support Range responses yet.
 So let me show how to intercept these requests and return a customized Range
 response from a service worker.
 
-```
+```js
 addEventListener('fetch', event => {
   event.respondWith(loadFromCacheOrFetch(event.request));
 });
@@ -557,7 +561,8 @@ response as this simply gives me a handle to the file ([in Chrome]) while
 
 My custom `X-From-Cache` HTTP header can be used to know whether this request
 came from the cache or from the network. It can be used by a player such as
-[ShakaPlayer] to ignore the response time as an indicator of network speed.
+[ShakaPlayer][shakaplayer] to ignore the response time as an indicator of
+network speed.
 
 <div class="video-wrapper">
   <iframe class="devsite-embedded-youtube-video" data-video-id="f8EGZa32Mts"
@@ -565,31 +570,25 @@ came from the cache or from the network. It can be used by a player such as
   </iframe>
 </div>
 
-Have a look at the official [Sample Media App] and in particular its
+Have a look at the official [Sample Media App][sample-media-app] and in particular its
 [ranged-response.js] file for a complete solution for how to handle Range
 requests.
 
 
-<div class="clearfix"></div>
-
 [how much information or content to preload]: /web/fundamentals/media/video#preload
 [video preload attribute]: /web/fundamentals/media/video#preload
-[Chrome 64]: /web/updates/2017/12/chrome-63-64-media-updates#media-preload-defaults-metadata
-[Data Saver]: https://support.google.com/chrome/answer/2392284
-[Media Source Extensions (MSE)]: /web/fundamentals/media/mse/basics
+[chrome64]: /web/updates/2017/12/chrome-63-64-media-updates#media-preload-defaults-metadata
+[datasaver]: https://support.google.com/chrome/answer/2392284
 [covered]: /web/updates/2016/03/link-rel-preload
 [articles]: https://www.smashingmagazine.com/2016/02/preload-what-is-it-good-for/
 [link preload]: https://w3c.github.io/preload/
-[MSE Basics]: /web/fundamentals/media/mse/basics
-[Cache]: /web/fundamentals/instant-and-offline/web-storage/offline-for-pwa
-[ShakaPlayer]: https://github.com/google/shaka-player/blob/master/docs/tutorials/service-worker.md
-[Sample Media App]: https://github.com/GoogleChrome/sample-media-pwa
+[cache]: /web/fundamentals/instant-and-offline/web-storage/offline-for-pwa
+[shakaplayer]: https://github.com/google/shaka-player/blob/master/docs/tutorials/service-worker.md
+[sample-media-app]: https://github.com/GoogleChrome/sample-media-pwa
 [ranged-response.js]: https://github.com/GoogleChrome/sample-media-pwa/blob/master/src/client/scripts/ranged-response.js
-[Cache API]: https://developer.mozilla.org/en-US/docs/Web/API/Cache
+[cache-api]: https://developer.mozilla.org/en-US/docs/Web/API/Cache
 [yet]: https://github.com/whatwg/fetch/issues/144
-[Google's Shaka Player]: https://github.com/google/shaka-player
-[JW Player]: https://developer.jwplayer.com/
-[Video.js]: http://videojs.com/
-[Android bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=612909
-[Delivering Fast and Light Applications with Save-Data]: /web/updates/2016/02/save-data
-[Network Information sample]: https://googlechrome.github.io/samples/network-information/
+[shaka-player]: https://github.com/google/shaka-player
+[jw-player]: https://developer.jwplayer.com/
+[video-js]: http://videojs.com/
+[network-info-sample]: https://googlechrome.github.io/samples/network-information/
