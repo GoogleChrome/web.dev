@@ -8,7 +8,7 @@ description: |
   system shell is only a container multiple multiple data streams and different
   allowable types of encodings.
 date: 2017-06-30
-updated: 2020-08-27
+updated: 2020-09-24
 tags:
   - media
   - video
@@ -81,7 +81,7 @@ ffmpeg -i glocken.mov -c:a vorbis -c:v av1 glocken.mkv
 In this example, the `-c:a` flag and the `-c:v` are for specifying the audio and
 video codecs respectively.
 
-The [cheat sheet](./media-cheat-sheet#codec) lists commands needed to convert codecs.
+The [cheat sheet](/media-cheat-sheet#codec) lists commands needed to convert codecs.
 The tables below summarize the libraries used in FFmpeg to perform the codec
 conversions for WebM and MP4 files. These are the formats recommended for DASH
 and HLS respectively.
