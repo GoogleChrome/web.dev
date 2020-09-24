@@ -335,5 +335,3 @@ may change with greater frequency.
 
 For all Web Vitals, changes will be clearly documented in this public
 [CHANGELOG](http://bit.ly/chrome-speed-metrics-changelog).
-
-<web-feedback></web-feedback>
