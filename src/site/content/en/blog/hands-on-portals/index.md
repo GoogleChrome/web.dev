@@ -18,6 +18,8 @@ tags:
   - blog
   - portals
   - ux
+feedback:
+  - api
 ---
 
 Making sure your pages load fast is key to delivering a good user experience.
@@ -199,8 +201,8 @@ Be sure you access it with Chrome 85 or 86 and turn on the [experimental flag](#
 
 We are actively discussing
 [the Portals spec](https://wicg.github.io/portals/) in the Web Incubation Community Group (WICG).
-To quickly get up to speed, take a look at
-[the explainer](https://github.com/WICG/portals/blob/master/explainer.md).
+To quickly get up to speed, take a look at some of the
+[key scenarios](https://github.com/WICG/portals/blob/master/key-scenarios.md).
 These are the three important features to familiarize yourself with:
 
 - [The `<portal>` element:](https://wicg.github.io/portals/#the-portal-element) The HTML element itself. The API is very simple. It consists of the `src` attribute, the `activate` function and an interface for messaging (`postMessage`). `activate` takes an optional argument to pass data to the `<portal>` upon activation.

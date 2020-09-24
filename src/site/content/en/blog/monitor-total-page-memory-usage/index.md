@@ -17,6 +17,8 @@ tags:
   - blog
   - memory
   - javascript
+feedback:
+  - api
 ---
 
 Browsers manage the memory of web pages automatically. Whenever a web page
@@ -128,6 +130,11 @@ results for the same browser.
 
 ## Using `performance.measureMemory()` {: use }
 
+### Enabling via chrome://flags
+
+To experiment with `performance.measureMemory()` without an origin trial
+token, enable the `#experimental-web-platform-features` flag in `chrome://flags`.
+
 ### Enabling support during the origin trial phase
 
 The `performance.measureMemory()` API is available as an origin trial starting in
@@ -138,11 +145,6 @@ Chrome 83. The origin trial is expected to end in Chrome 86, in early November 2
 ### Register for the origin trial {: #register-for-ot }
 
 {% include 'content/origin-trial-register.njk' %}
-
-### Enabling via chrome://flags
-
-To experiment with `performance.measureMemory()` without an origin trial
-token, enable the `#experimental-web-platform-features` flag in `chrome://flags`.
 
 ### Feature detection
 
@@ -333,7 +335,7 @@ in Chrome. I also thank Per Parker, Philipp Weis, Olga Belomestnykh, Matthew
 Bolohan, and Neil Mckay for providing valuable user feedback that greatly
 improved the API.
 
-[Hero image](https://unsplash.com/photos/5tLfQGURzHM) by [Harrison Broadbent](https://unsplash.com/@hbtography) on [Unsplash](https://unsplash.com)
+[Hero image](https://unsplash.com/photos/5tLfQGURzHM) by [Harrison Broadbent](https://unsplash.com/@harrisonbroadbent) on [Unsplash](https://unsplash.com)
 
 [coop-coep]: https://docs.google.com/document/d/1zDlfvfTJ_9e8Jdc8ehuV4zMEu9ySMCiTGMS9y0GU92k/edit
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=1049093

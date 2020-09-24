@@ -15,6 +15,8 @@ tags:
   - caching
 hero: hero.jpg
 alt: Index cards in a filing cabinet.
+feedback:
+  - api
 ---
 
 ## What is the Content Indexing API? {: #what }

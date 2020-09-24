@@ -18,6 +18,8 @@ tags:
   - blog
   - progressive-web-apps
   - capabilities
+feedback:
+  - api
 ---
 
 Browsers have been able to deal with files and directories for a long time.
@@ -296,7 +298,7 @@ modify the file, and overwrite it with my changes, or even save it as a new file
 
 Below, you can see an actual example of browser-nativefs as it is used in Excalidraw.
 This excerpt is taken from
-[`/src/data/json.ts`](https://github.com/excalidraw/excalidraw/blob/cd87bd6901b47430a692a06a8928b0f732d77097/src/data/jsonts#L24-L52).
+[`/src/data/json.ts`](https://github.com/excalidraw/excalidraw/blob/cd87bd6901b47430a692a06a8928b0f732d77097/src/data/json.ts#L24-L52).
 Of special interest is how the `saveAsJSON()` method passes either a file handle or `null` to browser-nativefs'
 `fileSave()` method, which causes it to overwrite when a handle is given,
 or to save to a new file if not.

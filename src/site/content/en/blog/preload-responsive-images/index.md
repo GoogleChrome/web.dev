@@ -13,6 +13,8 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - performance
   - images
+feedback:
+  - api
 ---
 
 This article gives me an opportunity to discuss two of my favorite things: responsive images *and* preload. As someone who was heavily involved in developing both of those features, I'm super excited to see them working together!
@@ -142,7 +144,7 @@ Preloading your responsive images can speed them up in theory, but what does it 
 
 To answer that I created two copies of a [demo PWA shop](https://github.com/GoogleChromeLabs/sample-pie-shop): [one that does not preload images](https://20190710t144416-dot-pie-shop-app.appspot.com/apparel), and [one that preloads some of them](https://20190710t132936-dot-pie-shop-app.appspot.com/apparel). Since the site lazy loads images using JavaScript, it's likely to benefit from preloading the ones that will be in the initial viewport.
 
-That gave me the following results for [no preload](https://www.webpagetest.org/result/190710_VM_30b9d4c993a1e60befba17e1261ba1ca/) and for [image preload](https://www.webpagetest.org/result/190710_7B_a99e792121760f81a270b4b9c847797b/). Looking at the raw numbers we see that [Start Render](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/quick-start-quide#TOC-Start-Render:) stayed the same, [Speed Index](/speed-index/) slightly improved (273 ms, as images arrive faster, but don't take up a huge chunk of the pixel area), but the real metric which captures the difference is the [Last Painted Hero](https://github.com/WPO-Foundation/webpagetest/blob/master/docs/Metrics/HeroElements.md) metric, which improved by 1.2 seconds. 🎉🎉
+That gave me the following results for [no preload](https://www.webpagetest.org/result/190710_VM_30b9d4c993a1e60befba17e1261ba1ca/) and for [image preload](https://www.webpagetest.org/result/190710_7B_a99e792121760f81a270b4b9c847797b/). Looking at the raw numbers we see that [Start Render](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Quick%20Start%20Guide.md#start-render) stayed the same, [Speed Index](/speed-index/) slightly improved (273 ms, as images arrive faster, but don't take up a huge chunk of the pixel area), but the real metric which captures the difference is the [Last Painted Hero](https://github.com/WPO-Foundation/webpagetest/blob/master/docs/Metrics/HeroElements.md) metric, which improved by 1.2 seconds. 🎉🎉
 
 Of course, nothing captures the visual difference quite like a filmstrip comparison:
 <figure class="w-figure">

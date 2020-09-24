@@ -95,21 +95,21 @@ There are two convenient ways of doing this:
 ### WebPageTest
 
 [WebPageTest](https://www.webpagetest.org/) offers a very flexible [scripting
-solution](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/scripting).
+solution](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md).
 The basic idea is to:
 
 +   Tell WebPageTest to navigate through the pages of the flow with the
-    [`navigate`](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/scripting#TOC-navigate)
+    [`navigate`](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md#navigate)
     command.
 +   If needed script the clicking of buttons via
-    [`clickAndWait`](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/scripting#TOC-clickAndWait)
+    [`clickAndWait`](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md#clickandwait)
     commands and fill text fields via
-    [`setValue`](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/scripting#TOC-setValue).
+    [`setValue`](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md#selectvalue).
     For testing of Single Page Applications use `clickAndWait` rather than
     `navigate` commands for all steps after the first, as `navigate` will do a
     full load instead of the lightweight virtual page load.
 +   Make sure to combine the different steps of the flow in the analysis via
-    [`combineSteps`](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/scripting#TOC-combineSteps)
+    [`combineSteps`](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md#combinesteps)
     to produce a single overall result report for the complete flow.
 
 Such a script could look like this:
@@ -125,7 +125,7 @@ navigate	https://www.store.google.com/checkout
 
 With a script like this in place you can easily measure and compare performance
 over time. This can even be automated through the
-[WebPageTest API](https://sites.google.com/a/webpagetest.org/docs/advanced-features/webpagetest-restful-apis).
+[WebPageTest API](https://github.com/WPO-Foundation/webpagetest-docs/blob/5337749ae99d0529fc0ae690d402fd4f88766be9/dev/api.md).
 
 ### Puppeteer
 

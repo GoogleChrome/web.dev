@@ -20,6 +20,8 @@ tags:
   - capabilities
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/1977080236415647745
+feedback:
+  - api
 ---
 ## Background
 

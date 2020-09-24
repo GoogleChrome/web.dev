@@ -20,6 +20,8 @@ tags:
   - security
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/register_trial/2780972769901281281 
+feedback:
+  - api
 ---
 Some web APIs increase the risk of side-channel attacks like Spectre. To
 mitigate that risk, browsers offer an opt-in-based isolated environment called
@@ -171,9 +173,9 @@ powerful features like `performance.measureMemory()`.
 
 {% Aside 'caution' %}
 The
-[`self.crossOriginIsolated`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated.)
-property is [still under development and not available yet in Chrome as of
-version 83](https://www.chromestatus.com/feature/5953286387531776).
+[`self.crossOriginIsolated`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated)
+property is still under development and not available yet in Chrome as of
+version 83.
 {% endAside %}
 
 ### Debug issues using Chrome DevTools

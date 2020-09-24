@@ -14,6 +14,8 @@ authors:
 tags:
   - angular
   - accessibility
+feedback:
+  - api
 ---
 
 Making your app accessible means that all users, including those with special needs, can use it and understand the content. According to the [World Health Report](https://www.who.int/disabilities/world_report/2011/report.pdf), more than a billion people—about 15% of the world's population—have some form of disability. So [accessibility](/accessible) is a priority for any development project.

@@ -14,6 +14,8 @@ description: |
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - javascript
+feedback:
+  - api
 ---
 
 `ReportingObserver` lets you know when your site uses a deprecated API or runs
@@ -85,7 +87,7 @@ sleep wondering if users are hitting unexpected issues on your live site.
 
 {% Aside 'key-term' %}
 `ReportingObserver` is part of a larger spec, the [Reporting
-API](/web/updates/2018/09/reportingapi), which provides a common way to send
+API](https://developers.google.com/web/updates/2018/09/reportingapi), which provides a common way to send
 these different reports to a back end. The Reporting API is a generic framework
 to specify a set of server endpoints to report issues to.
 {% endAside %}
@@ -209,6 +211,6 @@ on [Unsplash](https://unsplash.com).
 [reportingobserver]: https://w3c.github.io/reporting/#observers
 [explainer]: https://github.com/W3C/reporting/blob/master/EXPLAINER.md
 [chromestatus]: https://www.chromestatus.com/feature/4691191559880704
-[featurepolicy]: /web/updates/2018/06/feature-policy
+[featurepolicy]: https://developers.google.com/web/updates/2018/06/feature-policy
 [interventions]: https://www.chromestatus.com/features#intervention
 [deprecations]: https://www.chromestatus.com/features#intervention

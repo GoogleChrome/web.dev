@@ -9,6 +9,8 @@ date: 2018-08-17
 updated: 2020-08-05
 tags:
   - performance
+feedback:
+  - api
 ---
 
 Not every byte that is sent down the wire to the browser has the same degree of importance,
@@ -29,8 +31,8 @@ So, for example, a `<script>` tag in your page's `<head>` would be loaded in Chr
 but that priority would change to **Low** if it has the `async` attribute (meaning it can be loaded and run asynchronously).
 
 Priorities become important when investigating loading performance in your site.
-Beyond the usual techniques of [measuring](/web/fundamentals/performance/critical-rendering-path/measure-crp)
-and [analyzing the critical rendering path](/web/fundamentals/performance/critical-rendering-path/analyzing-crp),
+Beyond the usual techniques of [measuring](https://developers.google.com//web/fundamentals/performance/critical-rendering-path/measure-crp)
+and [analyzing the critical rendering path](https://developers.google.com//web/fundamentals/performance/critical-rendering-path/analyzing-crp),
 it's useful to know Chrome's priority for each resource.
 You can find that in the **Network** panel in Chrome DevTools.
 Here's what it looks like:
