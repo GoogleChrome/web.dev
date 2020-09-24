@@ -72,7 +72,7 @@ alarms for telephone conferences or video calls.
 | 1. Create explainer                          | [Complete][explainer]        |
 | 2. Create initial draft of specification     | Not started                  |
 | 3. Gather feedback and iterate on design.    | [In progress](#feedback)     |
-| **4. Origin trial**                          | [In progress][ot]            |
+| **4. Origin trial**                          | **[In progress][ot]**        |
 | 5. Launch                                    | Not started                  |
 
 ## How to use notification triggers {: #use }
