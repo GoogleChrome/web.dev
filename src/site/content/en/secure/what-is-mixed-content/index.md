@@ -82,7 +82,8 @@ Chrome is currently rolling out automatic upgrading of passive mixed content whe
 Automatic upgrading means that if the asset is available over HTTPS, but has been hardcoded as HTTP,
 the browser will load the HTTPS version. If no secure version can be found the asset will not load.
 
-When mixed content is detected, or auto-upgrading has occurred, this will be noted in the Chrome DevTools console.
+Chrome logs messages to its DevTools Console whenever it detects mixed content
+or auto-upgrades passive mixed content.
 
 <figure class="w-figure">
   <img class="w-screenshot"
