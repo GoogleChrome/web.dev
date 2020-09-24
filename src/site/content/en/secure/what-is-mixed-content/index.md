@@ -21,7 +21,7 @@ because both HTTP and HTTPS content are being loaded to display the same page,
 and the initial request was secure over HTTPS.
 
 Requesting subresources using the insecure HTTP protocol weakens the security of the entire page,
-as these requests are vulnerable to **man-in-the-middle attacks**,
+as these requests are vulnerable to [**on-path attacks**](https://www.ietf.org/rfc/rfc7835.html#section-2.1.1),
 where an attacker eavesdrops on a network connection and views or modifies the communication between two parties.
 Using these resources, an attacker can often take complete control over the page,
 not just the compromised resource.
