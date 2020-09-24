@@ -121,7 +121,7 @@ The following contains examples of active mixed content:
 to see the content that's blocked when you [load the example over
 HTTPS](https://active-mixed-content.glitch.me/).
 
-Blocked content will be detailed in the Chrome DevTools console.
+Blocked content will be detailed in the Chrome DevTools Console.
 
 <figure class="w-figure">
   <img class="w-screenshot"
