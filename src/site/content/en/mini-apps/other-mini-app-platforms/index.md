@@ -3,8 +3,8 @@ layout: post
 title: Other mini app platforms
 authors:
   - thomassteiner
-date: 2020-09-14
-updated: 2020-09-14
+date: 2020-09-24
+updated: 2020-09-24
 description: |
   ToDo
 tags:

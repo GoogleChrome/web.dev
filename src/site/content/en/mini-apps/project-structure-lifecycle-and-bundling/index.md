@@ -3,8 +3,8 @@ layout: post
 title: Project structure, lifecycle, and bundling
 authors:
   - thomassteiner
-date: 2020-09-14
-updated: 2020-09-14
+date: 2020-09-24
+updated: 2020-09-24
 description: |
   ToDo
 tags:
