@@ -124,7 +124,7 @@ Additionally you can set `Content-Security-Policy`
 (though **not** `Content-Security-Policy-Report-Only`) using a `<meta>` tag in the `<head>` section of your page.
 
 {% Aside %}
-Browsers enforce all content security policies that they receive.
+Modern browsers enforce all content security policies that they receive.
 Multiple CSP header values received by the browser in the response header or
 `<meta>` elements are combined and enforced as a single policy;
 reporting policies are likewise combined.
@@ -204,7 +204,8 @@ section using a `<meta>` element:
 
 As with browser automatic upgrading, if the resource is not available over HTTPS,
 the upgraded request fails and the resource is not loaded.
-This maintains the security of your page.
+This maintains the security of your page. The `upgrade-insecure-requests` directive will go further than automatic browser upgrading,
+attempting to upgrade requests that the browser currently does not.
 
 The `upgrade-insecure-requests` directive cascades into `<iframe>` documents,
 ensuring the entire page is protected.
