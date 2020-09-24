@@ -21,7 +21,7 @@ feedback:
 Room-scale video conferencing solutions deploy cameras with pan, tilt, and zoom
 (PTZ) capabilities so that software can point the camera at meeting
 participants. Starting in Chrome&nbsp;87, the pan, tilt, and zoom features on
-camera are accessible to websites using media track constraints in
+cameras are accessible to websites using media track constraints in
 `MediaDevices.getUserMedia()` and `MediaStreamTrack.applyConstraints()`.
 
 ## Using the API {: #use }
@@ -33,7 +33,7 @@ The presence of `"pan"`, `"tilt"`, and `"zoom"` constraint names in
 `navigator.mediaDevices.getSupportedConstraints()` tells you that the browser
 supports the API to control camera PTZ, but not whether the camera hardware
 supports it. As of Chrome&nbsp;87, controlling camera PTZ is supported on
-Android (zoom only) and desktop platforms.
+on desktop, while Android supports zoom only.
 
 ```js
 const supports = navigator.mediaDevices.getSupportedConstraints();
@@ -211,12 +211,12 @@ camera PTZ only when the page is visible to the user.
 
 ## Acknowledgements
 
-Thanks to [Joe Medley] for his review of this article. Hero image by [Christina
-@ wocintechchat.com] on [Unsplash].
+Thanks to [Joe Medley] and [Thomas Steiner] for their reviews of this article.
+Hero image by [Christina @ wocintechchat.com] on [Unsplash].
 
 <!-- lint disable definition-case -->
 [mandatory constraints]: https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API/Constraints#Specifying_a_range_of_values:~:text=mandatory
-[`MediaStream`]: https://w3c.github.io/mediacapture-main/#stream-api
+[`MediaStream`]: https://developer.mozilla.org/en-US/docs/Web/API/MediaStream
 [Permissions API]: https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API
 [PTZ advanced constraints]: https://bugs.chromium.org/p/chromium/issues/detail?id=1126045
 [Page Visibilty API]: https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API
@@ -226,6 +226,7 @@ Thanks to [Joe Medley] for his review of this article. Hero image by [Christina
 [Media Capture and Streams API]: https://w3c.github.io/mediacapture-main
 [Controlling Access to Powerful Web Platform Features]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [Joe Medley]: https://github.com/jpmedley
+[Thomas Steiner]: https://github.com/tomayac
 [Christina @ wocintechchat.com]: https://unsplash.com/@wocintechchat
 [Unsplash]: https://unsplash.com/photos/lqPLmYD_MO8
 <!-- lint enable definition-case -->

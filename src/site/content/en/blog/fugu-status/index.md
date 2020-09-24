@@ -334,8 +334,8 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           <a href="/ptz/">Camera pan, tilt, and zoom</a>
         </td>
         <td>
-          Pan, tilt, and zoom features on cameras are finally accessible on the
-          web.<br>
+          Pan, tilt, and zoom features on cameras are accessible on the
+          web, after requesting proper user permissions.<br>
           <em>Updated September 23, 2020</em>
         </td>
       </tr>
