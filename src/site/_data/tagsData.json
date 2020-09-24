@@ -187,7 +187,8 @@
     "hero": {
       "src": "/images/tags/scale-on-web.svg",
       "width": 340,
-      "height": 177
+      "height": 177,
+      "heroOnly": true
     }
   },
   "security": {
