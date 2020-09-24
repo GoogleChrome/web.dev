@@ -220,8 +220,3 @@ redirects:
 
 - from: /wakelock
   to: /wake-lock
-
-# Vanity URLs
-
-- from: /goibibo
-  to: /goibibo-case-study
