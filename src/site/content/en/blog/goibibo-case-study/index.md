@@ -14,24 +14,30 @@ tags:
   - scale-on-web
 ---
 
+[Goibibo](https://goibibo.com) is India's leading online travel booking portal. By building a full-featured
+and reliable [Progressive Web App](/pwa) that matched the capabilities of their iOS and Android
+apps, Goibibo achieved a 60% increase in conversions (compared to their previous web flow).
+
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled w-figure--inline-right" 
+  <img class="w-screenshot w-screenshot--filled w-figure--inline-right"
        src="mobile.png" 
        alt="Goibibo's PWA.">
 </figure>
-
-Goibibo is India's leading online travel booking portal. By building a full-featured and reliable
-[Progressive Web App](/pwa) that matched the capabilities of their iOS and Android
-apps, Goibibo achieved a 60% increase in conversions (compared to their previous web flow).
 
 <div class="w-stats">
   <div class="w-stat">
     <p class="w-stat__figure">60<sub class="w-stat__sub">%</sub></p>
     <p class="w-stat__desc">Increase in conversions</p>
   </div>
+  <div class="w-stat">
+    <p class="w-stat__figure">20<sub class="w-stat__sub">%</sub></p>
+    <p class="w-stat__desc">Increase in logged-in users</p>
+  </div>
 </div>
 
-## Highlighting the opportunity
+<br>
+
+## Highlighting the opportunity {: #opportunity }
 
 In their journey to improve user experience, Goibibo noticed a few trends:  
 
@@ -53,22 +59,22 @@ In their journey to improve user experience, Goibibo noticed a few trends:
        alt="Impact: 20% of users chose the seamless Goibibo experience.">
 </figure>
 
-## The tools they used
+## The tools they used {: #tools }
 
-### Contact Picker API
+### Contact Picker API {: #contact-picker }
 
 Nearly 15% of their logged-in users make bookings for family or friends on the mobile web. So,
 Goibibo used the [Contact Picker API](https://web.dev/contact-picker/) to enable PWA users to fill
 in forms on behalf of others hassle-free.
 
-## Web OTP  
+### Web OTP {: #web-otp }
 
 <div class="w-columns">
-  <p>
-    Because secure authentication is a big challenge in India, Goibibo
-    used the <a href="/web-otp/">Web OTP (One-Time Password) API</a>
-    to reduce sign-in friction on their PWA.
-  </p>
+    <p>
+      Because secure authentication is a big challenge in India, Goibibo
+      used the <a href="/web-otp/">Web OTP (One-Time Password) API</a>
+      to reduce sign-in friction on their PWA.
+    </p>
   <figure class="w-figure">
     <img class="w-screenshot" 
         src="logins.png" 
@@ -79,45 +85,45 @@ in forms on behalf of others hassle-free.
 
 <br>
 
-## Web Share API
-
-
+### Web Share API {: #web-share }
 
 <div class="w-columns">
-  <figure class="w-figure">
-    <img class="w-screenshot" 
-        src="web-share.png" 
-        alt="Impact: 5% of new sessions came from Web Share API.">
-  </figure>
   <p>
     To bridge the gap between their web and iOS/Android experiences,  Goibibo adopted the
     <a href="/web-share/">Web Share API</a> to make it easier to share  links, text, or files around hotel
     details, train availability, and so on.
   </p>
+  <figure class="w-figure">
+    <img class="w-screenshot" 
+        src="web-share.png" 
+        alt="Impact: 5% of new sessions came from Web Share API.">
+  </figure>
 </div>
 
+<br>
 
+### Push notifications {: #notifications}
+
+<div class="w-columns">
+  <p>
+    Goibibo used <a href="https://developers.google.com/web/fundamentals/push-notifications">web push
+    notifications</a> to retarget bounced users with relevant updates like flight fare alerts and other
+    customized content.
+  </p>
+  <figure class="w-figure">
+    <img class="w-screenshot" 
+        src="conversions.png" 
+        alt="Impact: Retargeted users converted 4x more compared to normal user base.">
+  </figure>
+</div>
 
 <br>
 
-## Push notifications
-
-Goibibo used [web push
-notifications](https://developers.google.com/web/fundamentals/push-notifications) to retarget
-bounced users with relevant updates like flight fare alerts and other customized content.
-
-<figure class="w-figure">
-  <img class="w-screenshot w-figure--inline-left" 
-       src="conversions.png" 
-       alt="Impact: Retargeted users converted 4x more compared to normal user base.">
-</figure>
-
-<br>
-
-## How new web capabilities helped improve Goibibo's step funnel
+## How new web capabilities improved Goibibo's funnel {: #funnel }
 
 <figure class="w-figure">
   <img class="w-screenshot" 
+       style="max-width: 75%"
        src="funnel.png" 
        alt="1. Web Share improved returning user percentage
             2. Contact Picker enhanced user experience, making it easier for guests to book
@@ -125,7 +131,7 @@ bounced users with relevant updates like flight fare alerts and other customized
             4. Push notifications improved conversions of retargeted users">
 </figure>
 
-## Overall business results
+## Overall business results {: #results }
 
 +   Iterations to PWA interfaces resulted in a 60% jump in conversion rate (compared to the
     previous mobile web flow) and delighted users.
@@ -137,5 +143,5 @@ bounced users with relevant updates like flight fare alerts and other customized
 > Hence,  investing in PWA is critical to our success and if we had not, it would have cost us a
 > fortune. <cite>Rithish Saralaya, VP Engineering, Goibibo</cite>
 
-Check out the [SCALE on web case studies](/tags/scale-on-web) for more web success stories
+Check out the [SCALE on web case studies](/tags/scale-on-web) for more success stories
 from India and Southeast Asia.
