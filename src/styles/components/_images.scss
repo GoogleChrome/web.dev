@@ -51,6 +51,7 @@
 .w-figure--screenshot > img {
   border: 1px solid $GREY_300;
   padding: 4px;
+  box-sizing: content-box;
 }
 
 .w-screenshot--filled,
