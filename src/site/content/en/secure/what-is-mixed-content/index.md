@@ -30,7 +30,7 @@ Although many browsers report mixed content warnings to the user,
 by the time this happens, it is too late:
 the insecure requests have already been performed and the security of the page is compromised.
 
-This is why mixed content is increasingly being blocked by browsers.
+This is why browsers are increasingly blocking mixed content.
 If you have mixed content on your site,
 then fixing it will ensure the content continues to load as browsers become more strict.
 
