@@ -5,7 +5,7 @@ authors:
   - johyphenel
   - rachelandrew
 date: 2019-09-07
-updated: 2020-09-16
+updated: 2020-09-24
 description: >
   Mixed content occurs when initial HTML is loaded over a secure HTTPS connection,
   but other resources are loaded over an insecure HTTP connection.
@@ -30,8 +30,8 @@ and the initial request was secure over HTTPS.
 Requesting subresources using the insecure HTTP protocol weakens the security of the entire page,
 as these requests are vulnerable to [**on-path attacks**](https://www.ietf.org/rfc/rfc7835.html#section-2.1.1),
 where an attacker eavesdrops on a network connection and views or modifies the communication between two parties.
-Using these resources, an attacker can often take complete control over the page,
-not just the compromised resource.
+Using these resources, attackers can track users and replace content on a website,
+and in the case of active mixed content, take complete control over the page, not just the insecure resources.
 
 Although many browsers report mixed content warnings to the user,
 by the time this happens, it is too late:
@@ -47,8 +47,7 @@ The two types of mixed content are: active and passive.
 
 **Passive mixed content** refers to content that doesn't interact with the rest of the page,
 and thus a man-in-the-middle attack is restricted to what they can do if they intercept or change that content.
-Passive mixed content includes images, video, and audio content,
-along with other resources that cannot interact with the rest of the page.
+Passive mixed content is defined as images, video, and audio content.
 
 **Active mixed content** interacts with the page as a whole and allows an attacker to do almost anything with the page.
 Active mixed content includes scripts, stylesheets, iframes,
@@ -85,7 +84,8 @@ Until recently passive mixed content was loaded in all browsers,
 as to block it would have broken many websites.
 This is now beginning to change and so it is vital to update any instances of mixed content on your site.
 
-Chrome is currently rolling out automatic upgrading of passive mixed content where possible.
+[Chrome is currently rolling out](https://blog.chromium.org/2019/10/no-more-mixed-messages-about-https.html )
+automatic upgrading of passive mixed content where possible.
 Automatic upgrading means that if the asset is available over HTTPS, but has been hardcoded as HTTP,
 the browser will load the HTTPS version. If no secure version can be found the asset will not load.
 
@@ -110,7 +110,7 @@ stealing user session cookies,
 or redirecting the user to a different site entirely.
 
 Due to the severity of this threat,
-many browsers already block this type of content by default to protect users,
+most browsers already block this type of content by default to protect users,
 but functionality varies between browser vendors and versions.
 
 The following contains examples of active mixed content:
@@ -150,6 +150,11 @@ this is a subset of the passive mixed content category described above.
 All content that is not **optionally blockable** is considered **blockable**,
 and should be blocked by the browser.
 
+{% Aside %}
+There is a [Level 2 of the Mixed Content specification](https://w3c.github.io/webappsec-mixed-content/level2.html) in progress,
+which will add automatic upgrading to the spec.
+{% endAside %}
+
 In recent years, [HTTPS usage has risen dramatically](https://transparencyreport.google.com/https/overview),
 and has become the clear default on the web.
 This makes it more feasible now for browsers to consider blocking all mixed content,
@@ -160,7 +165,7 @@ This is why we now see Chrome taking a stricter approach to these subresources.
 
 It is important to remember that not every visitor to your website uses the most up-to-date browsers.
 Different versions from different browser vendors each treat mixed content differently.
-At worst, some browsers and versions don't block any mixed content at all,
+At worst, older browsers and versions don't block any mixed content at all,
 which is very unsafe for the user.
 
 By fixing your mixed content problems you ensure that your content is visible in new browsers.
