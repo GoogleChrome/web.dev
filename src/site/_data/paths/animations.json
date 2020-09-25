@@ -1,0 +1,16 @@
+{
+  "slug": "animations",
+  "cover": "/images/collections/fast.svg",
+  "title": "Animations",
+  "updated": "September 25, 2020",
+  "description": "Techniques for developing performant CSS animations.",
+  "overview": "To do.",
+  "topics": [
+    {
+      "title": "Concepts",
+      "pathItems": [
+        "animations-overview"
+      ]
+    }
+  ]
+}
