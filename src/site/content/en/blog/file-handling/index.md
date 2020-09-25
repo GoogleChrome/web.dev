@@ -1,5 +1,5 @@
 ---
-title: Open files with their proper app
+title: Give web applications a way to register their ability to handle files
 subhead: Register an app as a file handler with the operating system.
 authors:
   - thomassteiner
