@@ -1,13 +1,13 @@
 ---
-title: Give web applications a way to register their ability to handle files
+title: Let web applications be file handlers
 subhead: Register an app as a file handler with the operating system.
 authors:
   - thomassteiner
 Description: |
   Register an app as a file handler with the operating system
   and open files with their proper app.
-date: 2020-09-24
-updated: 2020-09-24
+date: 2020-09-25
+# updated: 2020-09-25
 tags:
   - blog
   - file-handling
