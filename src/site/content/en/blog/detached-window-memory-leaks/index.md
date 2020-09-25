@@ -26,7 +26,7 @@ the garbage collector.
 
 The job of the garbage collector is to identify and reclaim objects that are no longer reachable
 from the application. This works even when objects reference themselves, or cyclically reference
-each other – once there are no remaining references through which an application could access a
+each other–once there are no remaining references through which an application could access a
 group of objects, it can be garbage collected.
 
 ```js
@@ -53,7 +53,7 @@ remaining references to an object that could otherwise be garbage collected.
 
 In the following example, a slideshow viewer application includes buttons to open and close a
 presenter notes popup. Imagine a user clicks **Show Notes**, then closes the popup window directly
-instead of clicking the **Hide Notes** button – the `notesWindow` variable still holds a reference
+instead of clicking the **Hide Notes** button–the `notesWindow` variable still holds a reference
 to the popup that could be accessed, even though the popup is no longer in use.
 
 ```html
@@ -116,7 +116,7 @@ accessed.
 </figure>
 
 In cases where a reference to the `document` within a window or iframe is retained from JavaScript,
-that document will be kept in-memory – even if the containing window or iframe navigates to a new
+that document will be kept in-memory even if the containing window or iframe navigates to a new
 URL. This can be particularly troublesome when the JavaScript holding that reference doesn't detect
 that the window/frame has navigated to a new URL, since it doesn't know when it becomes the last
 reference keeping a document in memory.
