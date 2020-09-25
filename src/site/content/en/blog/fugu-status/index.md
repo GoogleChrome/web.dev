@@ -2,7 +2,7 @@
 title: New capabilities status
 subhead: Web apps should be able to do anything native apps can. Google wants to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2020-09-23
+updated: 2020-09-15
 tags:
   - blog
   - capabilities
@@ -327,16 +327,6 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           either the Web Share API or system events, like the OS-level share
           button.<br>
           <em>Updated November 8, 2019</em>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="/ptz/">Camera pan, tilt, and zoom</a>
-        </td>
-        <td>
-          Pan, tilt, and zoom features on cameras are accessible on the
-          web, after requesting proper user permissions.<br>
-          <em>Updated September 23, 2020</em>
         </td>
       </tr>
     </tbody>
