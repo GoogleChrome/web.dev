@@ -7,7 +7,7 @@ authors:
 description: |
   Learn how to progressively enhance your Progressive Web App so that it remains useful
   on all modern browsers, but delivers an advanced experience on browsers that support
-  new web capabilities like native file system access, system clipboard access,
+  new web capabilities like local file system access, system clipboard access,
   contacts retrieval, periodic background sync, screen wake lock, web sharing features,
   and many more.
 scheduled: true
@@ -116,7 +116,7 @@ For this article, I work with a simple PWA, called
 [Fugu Greetings](https://tomayac.github.io/fugu-greetings/public/)
 ([GitHub](https://github.com/tomayac/fugu-greetings)).
 The name of this app is a tip of the hat to Project Fugu 🐡, an effort to give the web all
-the powers of native applications.
+the powers of Android/iOS/desktop applications.
 You can read more about the project on its
 [landing page](https://web.dev/fugu-status).
 
@@ -388,12 +388,12 @@ Now the file is ready to be preserved for eternity.
 Apart from storing for eternity, maybe I actually want to share my greeting card.
 This is something that the [Web Share API](https://web.dev/web-share/) and
 [Web Share Target API](https://web.dev/web-share-target/) allow me to do.
-Mobile, and more recently desktop operating systems have gained native sharing
+Mobile, and more recently desktop operating systems have gained built-in sharing
 mechanisms.
 For example, below is desktop Safari's share sheet on macOS triggered from an article on
 my [blog](https://blog.tomayac.com/).
 When you click the **Share Article** button, you can share a link to the article with a friend, for
-example, via the native macOS Messages app.
+example, via the macOS Messages app.
 
 <figure class="w-figure">
   <img class="w-screenshot"
@@ -468,7 +468,7 @@ const loadShare = () => {
 ```
 
 In Fugu Greetings, if I tap the **Share** button on a supporting browser like Chrome on Android,
-the native share sheet opens.
+the built-in share sheet opens.
 I can, for example, choose Gmail, and the email composer widget pops up with the
 image attached.
 
@@ -476,7 +476,7 @@ image attached.
   <figure class="w-figure">
     <img class="w-screenshot"
         src="10000201000003E4000008004D3AEA65DB2ABA6C.png"
-        alt="Native share sheet showing various apps to share the image to."
+        alt="OS-level share sheet showing various apps to share the image to."
         width="300">
     <figcaption class="w-figcaption">
       Choosing an app to share the file to.

@@ -16,7 +16,7 @@ tags:
 <!--lint disable heading-increment-->
 
 Progressive Web Apps (PWA) are built and enhanced with modern APIs to deliver
-native-like capabilities, reliability, and installability while reaching
+enhanced capabilities, reliability, and installability while reaching
 _anyone, anywhere, on any device_ with a single codebase. To help you create
 the best possible experience, use the [core](#core) and [optimal](#optimal)
 checklists and recommendations to guide you.
@@ -179,24 +179,23 @@ as they are to mobile.
 Provides a custom offline page
 
 When users are offline, keeping them in your PWA provides a more seamless
-and native-like experience than dropping back to the default browser offline
+experience than dropping back to the default browser offline
 page.
 
 {% endDetailsSummary %}
 
 When users are offline, keeping them in your PWA provides a more seamless
-and native-like experience than dropping back to the default browser offline
+experience than dropping back to the default browser offline
 page.
 
 #### Why
 
 Users expect installed apps to work regardless of their connection status.
-A native app never shows a blank page when it is offline, and a Progressive
+A platform-specific app never shows a blank page when it is offline, and a Progressive
 Web App should never show the browser default offline page. Providing a
 custom offline experience, both when a user navigates to a URL that hasn't
 been cached and when a user tries to use a feature that requires a connection,
-helps to bridge the native-web app gap and makes your experience feel more
-native.
+helps your web experience feel like it's part of the device it's running on.
 
 #### How
 
@@ -232,7 +231,7 @@ appears in the task list, just like other apps.
 Why would you want a user to install your PWA? The same reason you'd want a
 user to install your app from an app store. Users who install your apps
 are your most engaged audience, and have better engagement metrics than
-typical visitors, often at parity with native app users on mobile devices.
+typical visitors, often at parity with app users on mobile devices.
 These metrics include more repeat visits, longer times on your site and
 higher conversion rates.
 
@@ -248,8 +247,8 @@ doing it yourself.
 
 To create a truly great Progressive Web App, one that feels like a
 best-in-class app, you need more than just the core checklist. The optimal
-Progressive Web App checklist is about making your PWA feel native while
-taking advantage of what makes the web powerful.
+Progressive Web App checklist is about making your PWA feel like it's part
+of the device it's running on while taking advantage of what makes the web powerful.
 
 
 {% Details %}

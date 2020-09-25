@@ -122,7 +122,7 @@ built-in elements.
 Using built-in HTML elements can greatly improve the accessibility of your site,
 and significantly cut down on your workload. Try tabbing through your site and
 look for any controls which lack keyboard support. If possible, switch them out
-for native HTML alternatives.
+for standardized HTML alternatives.
 
 Sometimes you may find an element that doesn't have a counterpart in HTML.
 That's okay! Read on to learn how to add keyboard support to custom interactive

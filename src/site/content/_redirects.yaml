@@ -220,3 +220,8 @@ redirects:
 
 - from: /wakelock
   to: /wake-lock
+
+# Redirects for performance content
+
+- from: /native-lazy-loading
+  to: /browser-level-image-lazy-loading
