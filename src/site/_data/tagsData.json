@@ -131,6 +131,10 @@
   "media-queries": {
     "title": "Media Queries"
   },
+  "memory": {
+    "title": "Memory",
+    "description": "News and guidance related to memory management on the web."
+  },
   "metrics": {
     "title": "Metrics"
   },
