@@ -9,11 +9,13 @@ tags:
   - blog
   - css
 date: 2020-09-02
-#updated: 2020-07-27
+updated: 2020-09-02
 scheduled: true
 hero: hero.png
 thumbnail: thumb.png
 alt: Showing the anatomy of a single list item by putting separate boxes around the bullet and the text
+feedback:
+  - api
 --- 
 
 Thanks to Igalia, sponsored by Bloomberg, we can finally put our hacks away for styling lists. See!
@@ -29,7 +31,7 @@ Thanks to [CSS `::marker`](https://www.w3.org/TR/css-lists-3/#marker-pseudo) we 
 
 ## Browser compatibilty
 
-At the time of writing `::marker` is supported in Firefox for desktop and Android, desktop Safari and iOS Safari, and Chromium-based desktop and Android browsers. See MDN's [Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/CSS/::marker#Browser_compatibility) table for updates.
+When [Chromium 86 releases](https://www.chromestatus.com/features/schedule), `::marker` will be supported in Firefox for desktop and Android, desktop Safari and iOS Safari, and Chromium-based desktop and Android browsers. See MDN's [Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/CSS/::marker#Browser_compatibility) table for updates.
 
 ## Pseudo-elements
 Consider the following essential HTML unordered list:

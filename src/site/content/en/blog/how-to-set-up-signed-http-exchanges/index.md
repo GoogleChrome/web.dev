@@ -10,6 +10,8 @@ tags:
   - blog
   - SXG
   - nginx
+feedback:
+  - api
 ---
 
 [Signed HTTP Exchanges (SXG)](https://developers.google.com/web/updates/2018/11/signed-exchanges) is a new web technology that makes it easier for users to tell content creators apart from content distributors. This guide shows you how to set up SXG.

@@ -64,8 +64,9 @@
       ]
     },
     {
-      "title": "Prioritize resources",
+      "title": "Optimize your resource delivery",
       "pathItems": [
+        "content-delivery-networks",
         "prioritize-resources",
         "preload-critical-assets",
         "preconnect-and-dns-prefetch",

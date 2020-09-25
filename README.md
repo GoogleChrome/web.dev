@@ -44,6 +44,43 @@ npm run dev
 Open `http://localhost:8080/` to see the site locally. Changes to assets will
 rebuild the site. Refresh to see your changes.
 
+### Speeding up builds
+
+⚠️ This is an experimental feature 🧪🔬
+
+Any change to the site will cause Eleventy to rebuild. This can take 10-20s. If
+you want to speed things up you can isolate your directory using the `isolate`
+command.
+
+```bash
+npm run isolate
+```
+
+This will move all of the markdown files for the site into the `_exile`
+directory and it will ignore them for builds.
+
+You may pass an optional glob (or space separated list of globs) to the
+`isolate` command to tell it to preserve a directory.
+
+```bash
+# Example 1: Preserve the style-focus directory
+# note the -- which is needed to pass options to npm scripts
+npm run isolate -- src/site/content/en/accessible/style-focus/**
+
+# Example 2: Preserve everything in the accessible directory
+npm run isolate -- src/site/content/en/accessible/**/*
+```
+
+When you're finished making your edits, run the `integrate` command to restore
+all of the project files.
+
+```bash
+npm run integrate
+```
+
+☝️ A git commit hook will prevent you from being able to run `git commit` until
+you have run the `integrate` command.
+
 ## Environments 🌳
 
 Set `ELEVENTY_ENV=prod` to force production builds. This is the default when

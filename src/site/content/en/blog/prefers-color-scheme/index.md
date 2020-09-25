@@ -21,6 +21,8 @@ tags:
   - prefers-color-scheme
   - color-scheme
   - css
+feedback:
+  - api
 ---
 
 ## Introduction
@@ -80,7 +82,7 @@ on a light background, a baseline assumption that is also hard-coded in user age
 
 <figure class="w-figure w-figure--inline-left">
   <img style="height: 175px; width: auto;" src="smartphone-in-bed.jpg" alt="Smartphone used while lying in bed" height="334" width="500">
-  <figcaption class="w-figcaption">Smartphone used in bed (<a href="https://unsplash.com/photos/W39xsPWZgA4">Source</a>)</figcaption>
+  <figcaption class="w-figcaption">Smartphone used in bed (Source: Unsplash)</figcaption>
 </figure>
 
 The days of CRTs are long over.

@@ -18,22 +18,13 @@ const cacheNames = {
   ...workboxCacheNames,
 };
 
-// This import defines self['_manifest'], used below. This is the workbox precache manifest, and
-// we fetch it this way as this allows us to build sw.js early, but build the manifest itself after
-// all other build scripts have run.
-try {
-  self.importScripts('/sw-manifest.js');
-} catch (e) {
-  // ignore, possible in dev
-}
-
 /**
  * Configure default cache for some common web.dev assets: images, CSS, JS, offline page.
  *
  * This must occur first, as we cache images that are also matched by runtime handlers below. See
  * this workbox issue for updates: https://github.com/GoogleChrome/workbox/issues/2402
  */
-precacheAndRoute(self['_manifest'] || [], {
+precacheAndRoute(self.__WB_MANIFEST, {
   cleanURLs: false, // don't allow "foo" for "foo.html"
 });
 

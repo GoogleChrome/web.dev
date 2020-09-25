@@ -193,7 +193,7 @@ If the payment handler is designed to return a transaction ID upon setting the
 total price, the ID can be passed as part of the promise result.
 {% endAside %}
 
-## Step 4: The browser launches the payment app
+## Step 4: The browser launches the payment app {: #launch }
 
 The browser can launch a native or a web-based payment app. (You can learn more
 about [how Chrome determines which payment app to
@@ -387,5 +387,5 @@ doPaymentRequest();
   payment method](/setting-up-a-payment-method).
 * Learn how to build a native payment app in
   [Android payment apps developer's guide](/android-payment-apps-developers-guide).
-* Learn how to build a web-based payment app in *Web-based payment apps developer's
-  guide* (coming soon).
+* Learn how to build a web-based payment app in [Web-based payment apps developer's
+  guide](/web-based-payment-apps-overview).

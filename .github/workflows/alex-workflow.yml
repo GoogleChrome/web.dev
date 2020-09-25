@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
-      - uses: brown-ccv/alex-recommends@v1.0.0
+      - uses: brown-ccv/alex-recommends@v1.1.2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           profanity_sureness: 2

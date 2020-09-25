@@ -12,6 +12,8 @@ authors:
 tags:
   - angular
   - performance
+feedback:
+  - api
 ---
 
 This post explains how to set up route-level [code splitting](/reduce-javascript-payloads-with-code-splitting/) in an Angular application, which can reduce JavaScript bundle size and dramatically improve [Time to Interactive](/interactive).

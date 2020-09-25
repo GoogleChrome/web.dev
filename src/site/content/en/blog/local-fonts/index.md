@@ -17,6 +17,8 @@ date: 2020-08-24
 # updated:
 hero: hero.jpg
 alt: Page of a font book.
+feedback:
+  - api
 ---
 
 {% Aside %}

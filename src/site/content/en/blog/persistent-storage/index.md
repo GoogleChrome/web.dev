@@ -12,6 +12,8 @@ tags:
   - progressive-web-apps
 hero: hero.jpg
 alt: Printed circuit board
+feedback:
+  - api
 ---
 
 When faced with storage pressure like low disk space, browsers will

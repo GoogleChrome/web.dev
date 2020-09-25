@@ -1,3 +1,7 @@
+const livePaths = require('../../_filters/live-paths');
+const allPaths = require('../../_data/paths');
+const lang = require('./lang');
+
 // =============================================================================
 // HOME OVERVIEW
 //
@@ -7,13 +11,21 @@
 // =============================================================================
 
 module.exports = function () {
-  const lang = 'pl';
-  const translated = 'none'; // Default translation status.
-  const locale = 'pl_PL';
+  const paths = [
+    allPaths['vitals'],
+    allPaths['progressive-web-apps'],
+    allPaths['accessible'],
+    allPaths['fast'],
+    allPaths['reliable'],
+    allPaths['secure'],
+  ].filter(livePaths);
 
   return {
-    lang,
-    locale,
-    translated,
+    lang: lang.lang,
+    locale: lang.locale,
+    translated: 'none',
+    home: {
+      paths,
+    },
   };
 };

@@ -14,6 +14,8 @@ description: |
   In other words, you no longer need to add event listeners to force resnapping.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
+feedback:
+  - api
 ---
 
 [CSS Scroll Snap](https://developers.google.com/web/updates/2018/07/css-scroll-snap)

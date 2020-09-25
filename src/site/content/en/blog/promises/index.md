@@ -11,6 +11,8 @@ tags:
   - javascript
 authors:
   - jakearchibald
+feedback:
+  - api
 ---
 
 Developers, prepare yourself for a pivotal moment in the history of

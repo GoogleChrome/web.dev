@@ -8,6 +8,8 @@ description: |
 date: 2019-02-01
 tags:
   - performance
+feedback:
+  - api
 ---
 
 Using [bundlesize](https://github.com/siddharthkp/bundlesize) with [Travis

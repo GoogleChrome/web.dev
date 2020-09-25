@@ -8,7 +8,7 @@ description: |
   interaction with the keyboard, mouse, screen, activation of a screensaver, locking of the screen,
   or moving to a different screen. A developer-defined threshold triggers the notification.
 date: 2020-05-18
-updated: 2020-08-11
+updated: 2020-09-23
 tags:
   - blog
   - idle-detection
@@ -17,6 +17,8 @@ hero: hero.jpg #https://images.unsplash.com/photo-1544239265-ee5eedde5469?ixlib=
 alt: Abandoned computer on a bed with someone's leg next to it.
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/551690954352885761
+feedback:
+  - api
 ---
 {% Aside %}
 The Idle Detection API is part of the
@@ -186,6 +188,12 @@ You can see the various options in the video below.
   </figcaption>
 </figure>
 
+### Puppeteer support
+
+As of Puppeteer version&nbsp;5.3.1, you can
+[emulate the various idle states](https://github.com/puppeteer/puppeteer/blob/main/docs/api.md#pageemulateidlestateoverrides)
+to programmatically test how your web app's behavior changes.
+
 ### Demo
 
 You can see the Idle Detection API in action with the [Ephemeral Canvas demo][demo] that erases its
@@ -220,9 +228,7 @@ In order to use the API, an app also must be running in a
 We always want to prevent malicious actors from misusing new APIs. Seemingly independent websites,
 but that in fact are controlled by the same entity, might obtain user idle information and
 correlate the data to identify unique users across origins. To mitigate these sort of attacks,
-the Idle Detection API limits the granularity of the reported idle events and user agents
-may choose to fuzz the reported data. In Chrome,
-we plan to do this as to render the attack vector useless.
+the Idle Detection API limits the granularity of the reported idle events.
 
 ## Feedback {: #feedback }
 

@@ -1488,6 +1488,23 @@
       "en": "WebAssembly Advocadoer"
     }
   },
+  "roeln": {
+    "name": {
+      "given": "Roel",
+      "family": "Nieskens"
+    },
+    "twitter": "pixelambacht",
+    "github": "roeln",
+    "homepage": "https://pixelambacht.nl/"
+  },
+  "dcrossland": {
+    "name": {
+      "given": "Dave",
+      "family": "Crossland"
+    },
+    "twitter": "davelab6",
+    "github": "davelab6"
+  },
   "aaronleventhal": {
     "name": {
       "given": "Aaron",
@@ -1502,5 +1519,19 @@
       "en": "Software Engineer"
     },
     "twitter": "aaronlev"
+  },
+  "joanbaca": {
+    "name": {
+      "given": "Joan",
+      "family": "Baca"
+    },
+    "twitter": "joan_baka"
+  },  
+  "aranhacarlos": {
+    "name": {
+      "given": "Carlos",
+      "family": "Aranha"
+    },
+    "github": "aranhacarlos"
   }
 }

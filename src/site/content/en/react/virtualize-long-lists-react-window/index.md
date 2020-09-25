@@ -10,6 +10,8 @@ description: |
 authors:
   - houssein
   - developit
+feedback:
+  - api
 ---
 
 [`react-window`](https://react-window.now.sh/#/examples/list/fixed-size) is a

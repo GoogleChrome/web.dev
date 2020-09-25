@@ -156,7 +156,7 @@ class UrlChooser extends BaseElement {
   }
 
   /**
-   * Performs basic sanity fixes on the URL in the <input />.
+   * Performs basic fixes on the URL in the <input />.
    */
   fixUpUrl() {
     let url = this._urlInput.value.trim();

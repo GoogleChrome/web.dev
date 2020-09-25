@@ -16,6 +16,8 @@ tags:
   - blog
   - network
   - service-worker
+feedback:
+  - api
 ---
 
 Chrome 85 has an experimental implementation of request streams, meaning you can
@@ -34,6 +36,11 @@ Maybe you can think of a much more exciting use-case for request streaming.
 
 ## Try out request streams
 
+### Enabling via chrome://flags {: #enable-flags }
+
+Try out request streams in Chrome 85 by flipping an experimental flag:
+`enable-experimental-web-platform-features`.
+
 ### Enabling support during the origin trial phase
 
 Fetch request streams are available in an origin trial as of Chrome 85. The
@@ -44,11 +51,6 @@ origin trial is expected to end in Chrome 87.
 ### Register for the origin trial {: #register-for-ot }
 
 {% include 'content/origin-trial-register.njk' %}
-
-### Enabling via chrome://flags {: #enable-flags }
-
-Try out request streams in Chrome 85 by flipping an experimental flag:
-`enable-experimental-web-platform-features`.
 
 ## Demo {: #demo }
 
