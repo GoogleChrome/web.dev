@@ -12,6 +12,7 @@ tags:
   - storage
   - indexeddb
   - cachestorage
+  - memory
 hero: hero.jpg
 alt: Stack of shipping containers
 feedback:
