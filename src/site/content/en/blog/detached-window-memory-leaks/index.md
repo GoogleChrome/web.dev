@@ -247,7 +247,7 @@ Snapshot** in the list of available profiling types. Once the recording has fini
 **Summary** view shows current objects in-memory, grouped by constructor.
 
 <figure class="w-figure">
-  <video controls autoplay loop muted playsinline width="640">
+  <video controls autoplay loop muted playsinline width="640" class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/detached-window-memory-leaks/take-heap-snapshot.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/detached-window-memory-leaks/take-heap-snapshot.mp4" type="video/mp4">
   </video>
@@ -267,10 +267,11 @@ information from the retention graph, which makes the trace cleaner and much eas
 
 Heap snapshots provide a high level of detail and are excellent for figuring out where leaks occur,
 but taking a heap snapshot is a manual process. Another way to check for memory leaks is to obtain
-the currently used JavaScript heap size from the [performance.memory API][performance-memory-api]:
+the currently used JavaScript heap size from the [`performance.memory` API][performance-memory-api]:
 
 <figure class="w-figure">
   <img src="./performance-memory.png"
+       class="w-screenshot"
        alt="A screenshot of a section of the Chrome DevTools user interface."
        width="621">
   <figcaption class="w-figcaption">
@@ -280,7 +281,7 @@ the currently used JavaScript heap size from the [performance.memory API][perfor
 
 The `performance.memory` API only provides information about the JavaScript heap size, which means
 it doesn't include memory used by the popup's document and resources. To get the full picture, we'd
-need to use the new [performance.measureMemory() API][performance-measurememory] currently being
+need to use the new [`performance.measureMemory()` API][performance-measurememory] currently being
 trialled in Chrome.
 
 ## Solutions for avoiding detached window leaks {: #solutions }
@@ -321,7 +322,7 @@ variable is accessible from the scope of the **Close Popup** button click handle
 reassigned or the click handler removed, that handler's enclosed reference to `popup` means it can't
 be garbage-collected.
 
-### Solution: Unset References {: #solution-unset-references }
+### Solution: Unset references {: #solution-unset-references }
 
 Variables that reference another window or its document cause it to be retained in memory. Since
 objects in JavaScript are always references, assigning a new value to variables removes their
@@ -450,7 +451,7 @@ time. Thankfully, when checking for detached windows in the Chrome DevTools **Me
 a heap snapshot actually triggers garbage collection and disposes the weakly-referenced window. It's
 also possible to check that an object referenced via `WeakRef` has been disposed from JavaScript,
 either by detecting when `deref()` returns `undefined` or using the new
-[FinalizationRegistry API][finalizationregistry]:
+[`FinalizationRegistry` API][finalizationregistry]:
 
 ```js
 let popup = new WeakRef(window.open('/login.html'));
@@ -470,7 +471,7 @@ let finalizers = new FinalizationRegistry(() => {
 finalizers.register(popup.deref());
 ```
 
-### Solution: Communicate over postMessage {: #solution-postmessage }
+### Solution: Communicate over `postMessage` {: #solution-postmessage }
 
 Detecting when windows are closed or navigation unloads a document gives us a way to remove
 handlers and unset references so that detached windows can be garbage collected. However, these
@@ -519,7 +520,7 @@ window references are held in a single place, meaning only a single reference ne
 windows are closed or navigate away. In the above example, only `showNotes()` retains a reference to
 the notes window, and it uses the `pagehide` event to ensure that reference is cleaned up.
 
-### Solution: Avoid references using noopener {: #solution-noopener }
+### Solution: Avoid references using `noopener` {: #solution-noopener }
 
 In cases where a popup window is opened that your page doesn't need to communicate with or control,
 you may be able to avoid ever obtaining a reference to the window. This is particularly useful
