@@ -64,7 +64,7 @@ the longer it takes to perform layout calculations.
 For example, to animate an item from the top left of a box to the bottom right you could change the values to `top` and `left`.
 This would involve layout.
 
-```
+```css
 .box {
   position: absolute;
   top: 10px;
@@ -84,7 +84,7 @@ This would involve layout.
 
 Instead, you could use `transform` and all of the work could be done in the composite step, skipping layout and paint.
 
-```
+```css
 .box {
   position: absolute;
   top: 10px;
