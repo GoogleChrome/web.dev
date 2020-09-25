@@ -2,7 +2,8 @@
 title: How Goibibo's PWA improved conversions by 60%
 subhead: Bridging the gap between web and iOS/Android experiences to delight users.
 date: 2020-09-29
-# hero: TODO
+hero: hero.png
+thumbnail: thumbnail.png
 description: >
   Learn how Goibibo, India’s top online travel company, achieved a 60% increase in
   conversions by building reliable user experiences between their PWA and iOS/Android apps. 
@@ -18,12 +19,6 @@ tags:
 and reliable [Progressive Web App](/pwa) that matched the capabilities of their iOS and Android
 apps, Goibibo achieved a 60% increase in conversions (compared to their previous web flow).
 
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled w-figure--inline-right"
-       src="mobile.png" 
-       alt="Goibibo's PWA.">
-</figure>
-
 <div class="w-stats">
   <div class="w-stat">
     <p class="w-stat__figure">60<sub class="w-stat__sub">%</sub></p>
@@ -35,22 +30,28 @@ apps, Goibibo achieved a 60% increase in conversions (compared to their previous
   </div>
 </div>
 
-<br>
-
 ## Highlighting the opportunity {: #opportunity }
 
-In their journey to improve user experience, Goibibo noticed a few trends:  
+In their journey to improve user experience, Goibibo noticed a few trends:
 
-+   With users either already shifted or quickly shifting to mobile, their initial strategy
-    towards mobile web was to build a lightweight and functional application. This worked, with
-    search-to-details-page conversions equalizing on web and iOS/Android, but the iOS/Android apps
-    won in all further steps of the conversion funnel.  
-+   There were significant drop offs at the payment stage of the PWA compared to their
-    iOS/Android apps. This was when they decided to invest in their PWA with the goal of letting
-    users experience the same UX on their PWA as on their iOS/Android apps.  
-+   They also noticed nearly 20% of their users were starting a session on the web and
-    converting on the app. This reiterated their belief that a chunk of users will go untapped
-    without an aligned PWA and iOS/Android app strategy.
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled w-figure--inline-right"
+      src="mobile.png" 
+      alt="Goibibo's PWA.">
+</figure>
+
+* With users either already shifted or quickly shifting to mobile, their initial strategy
+  towards mobile web was to build a lightweight and functional application. This worked, with
+  search-to-details-page conversions equalizing on web and iOS/Android, but the iOS/Android apps
+  won in all further steps of the conversion funnel.
+
+* There were significant drop offs at the payment stage of the PWA compared to their
+  iOS/Android apps. This was when they decided to invest in their PWA with the goal of letting
+  users experience the same UX on their PWA as on their iOS/Android apps.  
+
+* They also noticed nearly 20% of their users were starting a session on the web and
+  converting on the app. This reiterated their belief that a chunk of users will go untapped
+  without an aligned PWA and iOS/Android app strategy.
 
 <figure class="w-figure">
   <img class="w-screenshot" 
@@ -83,8 +84,6 @@ in forms on behalf of others hassle-free.
   </figure>
 </div>
 
-<br>
-
 ### Web Share API {: #web-share }
 
 <div class="w-columns">
@@ -99,8 +98,6 @@ in forms on behalf of others hassle-free.
         alt="Impact: 5% of new sessions came from Web Share API.">
   </figure>
 </div>
-
-<br>
 
 ### Push notifications {: #notifications}
 
@@ -117,14 +114,20 @@ in forms on behalf of others hassle-free.
   </figure>
 </div>
 
-<br>
-
 ## How new web capabilities improved Goibibo's funnel {: #funnel }
 
+<style>
+@media (min-width: 865px) {
+  #funnel {
+    max-width: 75%;
+  }
+}
+</style>
+
 <figure class="w-figure">
-  <img class="w-screenshot" 
-       style="max-width: 75%"
-       src="funnel.png" 
+  <img class="w-screenshot"
+       src="funnel.png"
+       id="funnel"
        alt="1. Web Share improved returning user percentage
             2. Contact Picker enhanced user experience, making it easier for guests to book
             3. Web OTP reduced friction during transactions, resulting in less time spent on OTP screen and less retry API calls
@@ -138,10 +141,15 @@ in forms on behalf of others hassle-free.
 +   [New web capabilities](https://web.dev/fugu-status/) improved UX and caused a 20% increase
     in logged-in users (who convert 6x more).
 
-> We always strive for seamless user experience and in turn better  conversion rates. We saw
-> improved user engagement and better conversion rates on PWA than on the original mobile web flow.
-> Hence,  investing in PWA is critical to our success and if we had not, it would have cost us a
-> fortune. <cite>Rithish Saralaya, VP Engineering, Goibibo</cite>
+<blockquote>
+  <p style="font-style: italic; font-size: 1.5rem;">
+    We always strive for seamless user experience and in turn better  conversion rates. We saw
+    improved user engagement and better conversion rates on PWA than on the original mobile web flow.
+    Hence,  investing in PWA is critical to our success and if we had not, it would have cost us a
+    fortune.
+  </p>
+  <cite>Rithish Saralaya, VP Engineering, Goibibo</cite>
+</blockquote>
 
 Check out the [SCALE on web case studies](/tags/scale-on-web) for more success stories
 from India and Southeast Asia.
