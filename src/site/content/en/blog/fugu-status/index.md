@@ -331,7 +331,7 @@ latest version of Chrome, and in many cases other Chromium based browsers.
       </tr>
       <tr>
         <td>
-          <a href="/ptz/">Camera pan, tilt, and zoom</a>
+          <a href="/camera-pan-tilt-zoom/">Camera pan, tilt, and zoom</a>
         </td>
         <td>
           Pan, tilt, and zoom features on cameras are accessible on the

@@ -125,7 +125,7 @@ the camera and the user has granted PTZ permission to the camera.
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/ptz/ptz_h264.mp4" type="video/mp4">
+    <source src="https://storage.googleapis.com/web-dev-assets/camera-pan-tilt-zoom/ptz_h264.mp4" type="video/mp4">
   </video>
   <figcaption class="w-figcaption">Controlling Camera PTZ.</figcaption>
 </figure>
