@@ -185,38 +185,31 @@ detached windows from being eligible for garbage collection:
   includes references to the environment it was created in, including the window that created it.
   This means it's just as important to avoid holding references to objects from other windows as
   it is to avoid holding references to the windows themselves.
-  <table class="w-table--top-align"><tbody><tr>
-  <td>
 
-{% Label %}index.html:{% endLabel %}
+  {% Label %}index.html:{% endLabel %}
 
-```html
-<script>
-  let currentFiles;
-  function load(files) {
-    // this retains the popup:
-    currentFiles = files;
-  }
-  window.open('upload.html');
-</script>
-```
+  ```html
+  <script>
+    let currentFiles;
+    function load(files) {
+      // this retains the popup:
+      currentFiles = files;
+    }
+    window.open('upload.html');
+  </script>
+  ```
 
-  </td>
-  <td>
+  {% Label %}upload.html:{% endLabel %}
 
-{% Label %}upload.html:{% endLabel %}
+  ```html
+  <input type="file" id="file" />
+  <script>
+    file.onchange = () => {
+      parent.load(file.files);
+    };
+  </script>
+  ```
 
-```html
-<input type="file" id="file" />
-<script>
-  file.onchange = () => {
-    parent.load(file.files);
-  };
-</script>
-```
-
-  </td>
-  </tr></tbody></table>
 
 ## Detecting memory leaks caused by detached windows {: #detect-leaks }
 
