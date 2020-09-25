@@ -31,9 +31,9 @@ create and process. The File Handling API allows you to do exactly this.
 
 Examples of sites that may use this API include:
 
-- Office applications like word editors, spreadsheet apps, and slideshow creators.
+- Office applications like text editors, spreadsheet apps, and slideshow creators.
 - Graphics editors and drawing tools.
-- Game level design tools.
+- Video game level editor tools.
 
 ## Current status {: #status }
 
@@ -91,14 +91,14 @@ if ('launchQueue' in window) {
 
 As a first step, web apps need to declaratively describe in their [Web App Manifest](/add-manifest/)
 what kind of files they can handle. The File Handling API extends Web App Manifest with a new
-property `"file_handlers"` that accepts an array of, well, file handlers. A file handler is an
+property called `"file_handlers"` that accepts an array of, well, file handlers. A file handler is an
 object with two properties:
 
 - An `"action"` property that points to a URL within the scope of the app as its key.
 - An `"accept"` property with an object of MIME-types as keys and lists of file extensions as their
   values.
 
-The example below with just the relevant excerpt of the Web App Manifest should make it clearer:
+The example below, showing only the relevant excerpt of the Web App Manifest, should make it clearer:
 
 ```json
 {
@@ -128,7 +128,7 @@ The example below with just the relevant excerpt of the Web App Manifest should 
 }
 ```
 
-This sample application is able of handling comma-separated value (`.csv`) files at `/open-csv`,
+This is for a hypothetical application that handles comma-separated value (`.csv`) files at `/open-csv`,
 scalable vector graphics (`.svg`) files at `/open-svg`, and a made-up Grafr file format with any of
 `.grafr`, `.graf`, or `.graph` as the extension at `/open-graf`.
 
@@ -140,8 +140,8 @@ learn more in an article series on this very site on
 
 Now that the app has declared what files it can handle at which in-scope URL in theory, it needs to
 imperatively do something with incoming files in practice. This is where the `launchQueue` comes
-into play. To access launched files, a site needs to specify a consumer for a `launchQueue` object
-attached to `window`. Launches are queued until they are handled by this consumer, which is invoked
+into play. To access launched files, a site needs to specify a consumer for the `window.launchQueue` object.
+Launches are queued until they are handled by the specified consumer, which is invoked
 exactly once for each launch. In this manner, every launch is handled, regardless of when the
 consumer was specified.
 
@@ -167,9 +167,9 @@ added.
 
 ## Demo
 
-I have added File Handling support to [Excalidraw][demo], a cartoon-style drawing app. When you
-create a file with it and store it somewhere on your file system, you can now open the file via a
-double click, or a right click and then selecting "Excalidraw" in the context menu. You can check
+I have added file handling support to [Excalidraw][demo], a cartoon-style drawing app. When you
+create a file with it and store it somewhere on your file system, you can open the file via a
+double click, or a right click and then select "Excalidraw" in the context menu. You can check
 out the [implementation][demo-source] in the source code.
 
 <figure class="w-figure">
@@ -198,7 +198,7 @@ transparency, and ergonomics.
 
 ### File-related challenges
 
-There is a large category of attack vectors that are opened up by allowing websites access to files.
+There is a large category of attack vectors that are opened by allowing websites access to files.
 These are outlined in the
 [article on the File System Access API](/file-system-access/#security-considerations). The
 additional security-pertinent capability that the File Handling API provides over the File System
@@ -215,9 +215,9 @@ signal of trust in the application.
 
 ### Default handler challenges
 
-The exception to this is where there are no existing applications installed on the host operating
-system capable of handling a given file type. In this case, some host operating systems may
-automatically promote the newly registered handler to become the default handler for that file type,
+The exception to this is when there are no applications on the host system for a given file
+type. In this case, some host operating systems may
+automatically promote the newly registered handler to the default handler for that file type,
 silently and without any intervention by the user. This would mean if the user double clicks a file
 of that type, it would automatically open in the registered web app. On such host operating systems,
 when the user agent determines that there is no existing default handler for the file type, an
@@ -228,7 +228,7 @@ to a web application without the user's consent.
 
 Browsers should not register every site that can handle files as a file handler. Instead,
 registration should be gated behind installation and never happen without explicit user
-confirmation, and especially if a site is to become the default handler.
+confirmation, especially if a site is to become the default handler.
 
 ### Transparency
 
