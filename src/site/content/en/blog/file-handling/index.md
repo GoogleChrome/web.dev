@@ -21,7 +21,6 @@ origin_trial:
 [capabilities project](https://web.dev/fugu-status/) and is currently in development. This post will
 be updated as the implementation progresses. {% endAside %}
 
-## What is the File Handling API? {: #what }
 
 Now that web apps are [capable of reading and writing files](/file-system-access/), the next logical
 step is to let developers declare these very web apps as file handlers for the files their apps can
