@@ -71,7 +71,7 @@ class EventSchedule extends HTMLElement {
    */
   _elementForHash(hash = window.location.hash) {
     const id = hash.substr(1);
-    return id ? this.querySelector(`[data-session-id="${id}"]`) : null;
+    return this.querySelector(`[data-session-id="${id}"]`);
   }
 
   /**

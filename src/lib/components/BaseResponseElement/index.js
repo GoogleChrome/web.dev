@@ -37,6 +37,7 @@ export class BaseResponseElement extends BaseElement {
     this.maxSelections = null;
     this.minSelections = null;
 
+    this.deselectOption = /** @type {function(Node)} */ null;
     this.enforceCardinality = this.enforceCardinality.bind(this);
     this.submitResponse = this.submitResponse.bind(this);
     this.reset = this.reset.bind(this);
@@ -189,8 +190,8 @@ export class BaseResponseElement extends BaseElement {
         } else if (isSelected && !isCorrect) {
           option.setAttribute('data-submitted', '');
           this.disableOption(option);
-          if (typeof this['deselectOption'] === 'function') {
-            this['deselectOption'](option);
+          if (typeof this.deselectOption === 'function') {
+            this.deselectOption(option);
           }
         } else if (!isSelected && !isSubmitted) {
           this.enableOption(option);
@@ -219,8 +220,8 @@ export class BaseResponseElement extends BaseElement {
     this.state = 'unanswered';
     for (const option of options) {
       option.removeAttribute('data-submitted');
-      if (typeof this['deselectOption'] === 'function') {
-        this['deselectOption'](option);
+      if (typeof this.deselectOption === 'function') {
+        this.deselectOption(option);
       }
       this.enableOption(option);
     }
