@@ -14,23 +14,18 @@
  * limitations under the License.
  */
 
-const slugify = require('slugify');
-
-/**
- * Slugifies string.
- *
- * @param {string|StringConstructor} str
- * @return {string}
- */
-module.exports = (str) => {
-  if (str instanceof String) {
-    str = str.toString();
-  } else if (typeof str !== 'string') {
-    return '';
-  }
-
-  return slugify(str, {
-    replacement: '-',
-    lower: true,
-  });
-};
+declare module 'webdev_config' {
+  export declare const isProd: boolean;
+  export declare const env: string;
+  export declare const version: string;
+  export declare const firebaseConfig: {
+    apiKey: string;
+    authDomain: string;
+    databaseURL: string;
+    projectId: string;
+    storageBucket: string;
+    messagingSenderId: string;
+    appId: string;
+    measurementId: string;
+  };
+}
