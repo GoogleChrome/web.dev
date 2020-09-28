@@ -249,6 +249,10 @@ Snapshot** in the list of available profiling types. Once the recording has fini
   </figcaption>
 </figure>
 
+{% Aside 'codelab' %}
+Try it with a <a href="https://detached-windows-test.glitch.me" target="_blank" rel="noopener noreferrer">step-by-step walk through</a>.
+{% endAside %}
+
 Analyzing heap dumps can be a daunting task, and it can be quite difficult to find the right
 information as part of debugging. To help with this, Chromium engineers
 [yossik@](https://github.com/ykahlon) and [peledni@](https://github.com/peledni) developed a
