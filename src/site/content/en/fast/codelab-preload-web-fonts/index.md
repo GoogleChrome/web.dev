@@ -8,6 +8,7 @@ description: |
   web fonts.
 date: 2018-04-23
 glitch: web-dev-preload-webfont
+related_post: preload-critical-assets
 tags:
   - performance
 ---
