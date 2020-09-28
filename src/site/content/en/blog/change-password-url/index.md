@@ -4,6 +4,7 @@ subhead: Redirect a request to `/.well-known/change-password` to the change-pass
 authors:
   - agektmr
 date: 2020-09-01
+updated: 2020-09-24
 hero: hero.jpg
 alt: Neon lights shaped into various symbols that are commonly used in passwords.
 description: |
@@ -68,7 +69,7 @@ page, on top of going through the actual process of changing the password (which
 varies from site to site). It would be much easier if password managers could
 navigate the user directly to the change-password URL. This is where [a
 well-known URL for changing
-passwords](https://wicg.github.io/change-password-url/) becomes useful.
+passwords](https://w3c.github.io/webappsec-change-password-url/) becomes useful.
 
 By reserving a well-known URL path that redirects the user to the change
 password page, the website can easily redirect users to the right place to
@@ -127,7 +128,7 @@ Thanks to Apple Safari's
 websites for a while:
 
 * [Google](https://accounts.google.com/.well-known/change-password)
-* [GitHub](https://github.com/.well-known/change-password)  
+* [GitHub](https://github.com/.well-known/change-password)
 * [Facebook](https://www.facebook.com/.well-known/change-password)
 * [Twitter](http://twitter.com/.well-known/change-password)
 * [WordPress](https://wordpress.com/.well-known/change-password)

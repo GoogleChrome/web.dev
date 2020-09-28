@@ -11,8 +11,7 @@ authors:
   - una
 
 date: 2019-12-05
-# Add an updated date to your post if you edit in the future.
-# updated: 2019-11-01
+updated: 2020-09-24
 
 hero: hero.png
 # You can adjust the fit of your hero image with this property.
@@ -164,7 +163,6 @@ Here are the new queries we think developers will be most excited about:
 *   [prefers-reduced-transparency](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-transparency)
 *   [forced-colors](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors)
 *   [inverted-colors](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/inverted-colors)
-*   [light-level](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/light-level)
 
 These queries are a huge win for accessibility. Previously we had no way to know, for example, that a user had set their OS to high-contrast mode. If you wanted to provide a high-contrast mode for a web app that remained true to your brand, you had to ask users to choose it from UI within your app. Now you can detect the high-contrast setting from the OS using `prefers-contrast`.
 
