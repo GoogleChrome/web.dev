@@ -55,7 +55,7 @@ optimized feature detectors such as the Android
 or the iOS generic feature detector,
 [`CIDetector`](https://developer.apple.com/documentation/coreimage/cidetector?language=objc).
 
-The [Shape Detection API][spec] exposes these native implementations through
+The [Shape Detection API][spec] exposes these implementations through
 a set of JavaScript interfaces. Currently, the supported features are face
 detection through the `FaceDetector` interface, barcode detection through the
 `BarcodeDetector` interface, and text detection (Optical Character
@@ -152,7 +152,7 @@ as an input (that is, either a
 
 For `FaceDetector` and `BarcodeDetector`, optional parameters can be passed
 to the detector's constructor that allow for providing hints to the
-underlying native detectors.
+underlying detectors.
 
 Please carefully check the support matrix in the
 [explainer](https://github.com/WICG/shape-detection-api#overview) for an
@@ -285,7 +285,7 @@ existence and the location of text may be recognized, but not text contents.
   This API is an optimization and not something guaranteed to be available
   from the platform for every user. Developers are expected to combine this
   with their own [image recognition code](https://github.com/mjyc/opencv) and
-  take advantage of the native optimization when it is available.
+  take advantage of the platform optimization when it is available.
 {% endAside %}
 
 ## Feedback {: #feedback }

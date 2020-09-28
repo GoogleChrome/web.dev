@@ -34,7 +34,10 @@ export class BaseResponseElement extends BaseElement {
     super();
     this.state = 'unanswered';
     this.correctAnswer = '';
+    this.maxSelections = null;
+    this.minSelections = null;
 
+    this.deselectOption = /** @type {function(Node)} */ null;
     this.enforceCardinality = this.enforceCardinality.bind(this);
     this.submitResponse = this.submitResponse.bind(this);
     this.reset = this.reset.bind(this);
@@ -187,7 +190,9 @@ export class BaseResponseElement extends BaseElement {
         } else if (isSelected && !isCorrect) {
           option.setAttribute('data-submitted', '');
           this.disableOption(option);
-          this.deselectOption(option);
+          if (typeof this.deselectOption === 'function') {
+            this.deselectOption(option);
+          }
         } else if (!isSelected && !isSubmitted) {
           this.enableOption(option);
         }

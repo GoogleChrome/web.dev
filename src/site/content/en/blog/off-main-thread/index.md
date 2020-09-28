@@ -55,7 +55,7 @@ watch my CDS 2019 talk below.
 
 ## Threading with web workers
 
-Native platforms typically support parallel work
+Other platforms typically support parallel work
 by allowing you to give a thread a function,
 which runs in parallel with the rest of your program.
 You can access the same variables from both threads,
@@ -66,7 +66,7 @@ In JavaScript, we can get roughly similar functionality from web workers,
 which have been around since 2007
 and supported across all major browsers since 2012.
 Web workers run in parallel with the main thread,
-but unlike native threading they can't share variables.
+but unlike OS threading they can't share variables.
 
 {% Aside %}
 Don't confuse web workers with [service workers](/service-workers-cache-storage)
@@ -143,7 +143,7 @@ whose goal is to let you use web workers
 without having to think about the details of `postMessage`.
 Comlink lets you to share variables
 between web workers and the main thread
-almost like programming languages that natively support threading.
+almost like other programming languages that support threading.
 
 You set up Comlink by importing it in a web worker
 and defining a set of functions to expose to the main thread.

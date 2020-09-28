@@ -74,7 +74,7 @@ This approach has several advantages over serving different HTML or server-side
 scripting, especially on mobile:
 
 * You can list formats in order of preference.
-* Native client-side switching reduces latency; only one request is made to
+* Client-side switching reduces latency; only one request is made to
   get content.
 * Letting the browser choose a format is simpler, quicker, and potentially
   more reliable than using a server-side support database with user-agent detection.

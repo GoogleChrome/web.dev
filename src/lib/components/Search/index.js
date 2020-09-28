@@ -301,7 +301,7 @@ class Search extends BaseElement {
 
       case 'Esc': // IE/Edge specific value
       case 'Escape':
-        document.activeElement.blur();
+        /** @type HTMLElement */ (document.activeElement).blur();
         return;
     }
   }
@@ -384,7 +384,7 @@ class Search extends BaseElement {
    */
   navigateToHit({url}) {
     router.route(url);
-    document.activeElement.blur();
+    /** @type HTMLElement */ (document.activeElement).blur();
   }
 
   /**
@@ -428,7 +428,7 @@ class Search extends BaseElement {
     window.addEventListener(
       'scroll',
       () => {
-        document.activeElement.blur();
+        /** @type HTMLElement */ (document.activeElement).blur();
       },
       {passive: true, once: true},
     );
@@ -453,7 +453,7 @@ class Search extends BaseElement {
     // on. If so, programatically click it before closing the popout.
     // Because focusout fires before click, if we try to wait for the click
     // event (~10's of ms later) then lit will have already deleted the link.
-    const {relatedTarget} = e;
+    const relatedTarget = /** @type HTMLElement */ (e.relatedTarget);
     if (relatedTarget && this.contains(relatedTarget)) {
       relatedTarget.click();
     }

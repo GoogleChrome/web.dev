@@ -259,11 +259,11 @@ performance impact of reduced bandwidth.
 * Read [Fixing website speed
   cross-functionally](/fixing-website-speed-cross-functionally/)
   to learn how to collaborate with and get buy-in from other departments.
-* [Use native lazy-loading for images](/native-lazy-loading/) to
+* [Use standardized lazy-loading for images](/native-lazy-loading/) to
   minimize requests for images that people may never actually see. [Browser
   compatibility](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Browser_compatibility)
   is not 100% but the feature can be treated as a progressive enhancement. In
-  other words, if a certain browser doesn't support native lazy-loading, the
+  other words, if a certain browser doesn't support standardized lazy-loading, the
   image should load as it normally does.
 * Check if your site has any A/B testing or personalization scripts that can be
   loaded more asynchronously or if there's any non-critical functionality in the

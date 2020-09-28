@@ -21,7 +21,7 @@ feedback:
 ---
 
 {% Aside %}
-Web apps should be able to do anything native apps can. The [Capabilities
+Web apps should be able to do anything iOS/Android/desktop apps can. The [Capabilities
 project](/fugu-status/), of which Serial API is only a part, aims to do just
 that. To learn about other capabilities and to keep up with their progress,
 follow [Unlocking new capabilities for the web](/fugu-status/).
@@ -43,7 +43,7 @@ and 3D printers.
 
 This API is also a great companion to [WebUSB] as operating systems require
 applications to communicate with some serial ports using their higher-level
-native serial API rather than the low-level USB API.
+serial API rather than the low-level USB API.
 
 {% Aside  %}
 This article reflects the Serial API as implemented in Chrome 86 and later. Some
@@ -62,9 +62,9 @@ software to control these devices is built with web technology:
 - [Espruino Web IDE]
 - [Microsoft MakeCode]
 
-In some cases, websites communicate with the device through a native agent
+In some cases, websites communicate with the device through an agent
 application that users installed manually. In others, the application is
-delivered in a packaged native application through a framework such as Electron.
+delivered in a packaged application through a framework such as Electron.
 And in others, the user is required to perform an additional step such as
 copying a compiled application to the device via a USB flash drive.
 

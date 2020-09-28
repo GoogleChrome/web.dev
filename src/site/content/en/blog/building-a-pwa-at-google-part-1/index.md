@@ -163,7 +163,7 @@ the service worker would serve the old client while it lazily downloaded the new
 new client downloaded, it would prompt the user to refresh the page to access new features. Even if
 the user ignored this request, the next time they refreshed the page they would receive the new
 version of the client. As a result, it is quite difficult for a user to refuse updates in the same
-way they can for native apps.
+way they can for iOS/Android apps.
 
 We were able to push out breaking backend changes with a very short amount of migration time for
 clients. Typically, we would give a month for users to update to newer clients before making
@@ -173,7 +173,7 @@ to exist in the wild if the user had not opened the app for a long time. On iOS,
 so this case does not happen. For Android, this problem could be mitigated by not serving while
 stale, or manually expiring the content after a few weeks. In practice, we never encountered
 problems from stale clients. How strict a given team wants to be here is up to their specific use
-case, but PWAs provide significantly more flexibility than native apps.
+case, but PWAs provide significantly more flexibility than iOS/Android apps.
 
 ### Getting cookie values in a service worker {: #cookies }
 

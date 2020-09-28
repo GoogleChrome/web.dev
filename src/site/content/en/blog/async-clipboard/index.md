@@ -53,7 +53,7 @@ in Chrome&nbsp;85.
 {% Aside %}
 The Async Clipboard API is limited to handling text and images. Chrome&nbsp;84
 introduces an experimental feature that allows the clipboard to handle any
-arbitrary data type. 
+arbitrary data type.
 {% endAside %}
 
 ## Copy: writing data to the clipboard
@@ -228,7 +228,7 @@ match style** or **Paste without formatting**.
 The following example shows how to do this. This example uses `fetch()` to obtain
 image data, but it could also come from a
 [`<canvas>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas)
-or the [Native File System API](https://web.dev/native-file-system/).
+or the [File System Access API](/file-system-access/).
 
 ```js
 function copy() {
@@ -252,7 +252,7 @@ Imagine a web page that silently copies `rm -rf /` or a
 to your clipboard.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./prompt.png" 
+  <img class="w-screenshot" src="./prompt.png"
        alt="Browser prompt asking the user for the clipboard permission.">
   <figcaption class="w-figcaption">
     The permission prompt for the Clipboard API.
