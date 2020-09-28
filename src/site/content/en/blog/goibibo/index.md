@@ -53,29 +53,31 @@ In their journey to improve user experience, Goibibo noticed a few trends:
   converting on the app. This reiterated their belief that a chunk of users will go untapped
   without an aligned PWA and iOS/Android app strategy.
 
-<figure class="w-figure">
-  <img class="w-screenshot" 
-       src="seamless.png" 
-       style="max-width: 75%"
-       alt="Impact: 20% of users chose the seamless Goibibo experience.">
-</figure>
-
 ## The tools they used {: #tools }
 
 ### Contact Picker API {: #contact-picker }
 
-Nearly 15% of their logged-in users make bookings for family or friends on the mobile web. So,
-Goibibo used the [Contact Picker API](https://web.dev/contact-picker/) to enable PWA users to fill
-in forms on behalf of others hassle-free.
+<div class="w-columns">
+  <p>
+    Nearly 15% of Goibibo's logged-in users make bookings for family or friends on the mobile web.
+    Goibibo used the <a href="/contact-picker/">Contact Picker API</a> to enable PWA users to fill
+    in forms on behalf of others hassle-free.
+  </p>
+  <figure class="w-figure">
+    <img class="w-screenshot" 
+        src="seamless.png"
+        alt="Impact: 20% of users chose the seamless Goibibo experience.">
+  </figure>
+</div>
 
 ### Web OTP {: #web-otp }
 
 <div class="w-columns">
-    <p>
-      Because secure authentication is a big challenge in India, Goibibo
-      used the <a href="/web-otp/">Web OTP (One-Time Password) API</a>
-      to reduce sign-in friction on their PWA.
-    </p>
+  <p>
+    Because secure authentication is a big challenge in India, Goibibo
+    used the <a href="/web-otp/">Web OTP (One-Time Password) API</a>
+    to reduce sign-in friction on their PWA.
+  </p>
   <figure class="w-figure">
     <img class="w-screenshot" 
         src="logins.png" 
@@ -151,5 +153,5 @@ in forms on behalf of others hassle-free.
   <cite>Rithish Saralaya, VP Engineering, Goibibo</cite>
 </blockquote>
 
-Check out the [SCALE on web case studies](/tags/scale-on-web) for more success stories
-from India and Southeast Asia.
+Check out the [SCALE on web case studies](/tags/scale-on-web) page for more
+success stories from India and Southeast Asia.
