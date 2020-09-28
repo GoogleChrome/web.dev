@@ -242,7 +242,7 @@ Other storage mechanisms than files are referenced in the [offline content](#off
 {% DetailsSummary %}
   How to do this on the web
 {% endDetailsSummary %}
-  The <a href="https://web.dev/native-file-system/">Native File System API</a> enables developers to get access to the local file system
+  The <a href="https://web.dev/file-system-access/">File System Access API</a> enables developers to get access to the local file system
   of the device. You can use it directly or via the <a href="https://github.com/GoogleChromeLabs/browser-nativefs">browser-nativefs</a>
   support library that transparently provides a fallback for browsers that do not support the API.
   For security reasons, system directories are not web-accessible.
@@ -279,7 +279,7 @@ There is a more subtle thing that is self-evident for an iOS application like Po
   to override it.
   Another thing to decide on might be what the browser should do when reaching
   the boundary of a scrolling area, for example, to implement custom <em>pull to refresh</em>.
-  This is possible with the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior"><code>overscroll-behavior</code></a> CSS property.  
+  This is possible with the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior"><code>overscroll-behavior</code></a> CSS property.
 {% endDetails %}
 
 ## Customized title bar
@@ -584,10 +584,10 @@ The table below shows a compact overview of all features and provides a list of 
         </td>
       </tr>
       <tr>
-        <td><a href="#native-file-system-integration">Native file system integration</a></td>
+        <td><a href="#local-file-system-integration">Local file system integration</a></td>
         <td>
           <ul>
-            <li><a href="https://web.dev/native-file-system/">Native File System API</a></li>
+            <li><a href="https://web.dev/file-system-access/">File System Access API</a></li>
             <li>
               <a href="https://github.com/GoogleChromeLabs/browser-nativefs"
                 >browser-nativefs library</a

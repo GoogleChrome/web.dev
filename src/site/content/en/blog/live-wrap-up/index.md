@@ -165,7 +165,7 @@ land in Chrome 84 (mid-July 2020).
 
 And finally, Chrome has been working on new capabilities that enable new scenarios that weren't
 possible before, like editors that [read and write to files on the user's local file
-system](/native-file-system/), or get the list of locally installed fonts so that
+system](/file-system-access/), or get the list of locally installed fonts so that
 users can use them in their designs.
 
 During web.dev LIVE, we spoke about [lots of other capabilities and

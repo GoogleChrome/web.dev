@@ -2,7 +2,7 @@
 title: New capabilities status
 subhead: Web apps should be able to do anything iOS/Android/desktop apps can. Google wants to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2020-09-15
+updated: 2020-09-23
 tags:
   - blog
   - capabilities
@@ -254,18 +254,19 @@ latest version of Chrome, and in many cases other Chromium based browsers.
       </tr>
       <tr>
         <td>
-          <a href="/native-file-system/">
-            Native File System API
+          <a href="/file-system-access/">
+            File System Access API
           </a>
         </td>
         <td>
-          The Native File System API (formerly known as the Writable Files API)
+          The File System Access API (formerly known as Native File System API
+          and prior to that Writable Files API)
           enables developers to build powerful web apps that interact with files
           on the user's local device, like IDEs, photo and video editors, text
           editors, and more. After a user grants a web app access, this API
           allows web apps to read or save changes directly to files and folders
           on the user's device.<br>
-          <em>Updated September 2, 2020</em>
+          <em>Updated September 23, 2020</em>
         </td>
       </tr>
       <tr>
