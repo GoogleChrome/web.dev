@@ -9,7 +9,7 @@ description:
   The Notification Triggers API allows developers to schedule local notifications that don't require
   a network connection, which makes them ideal for use cases like calendar apps.
 date: 2019-10-24
-updated: 2020-09-25
+updated: 2020-09-28
 hero: hero.jpg
 hero_position: center
 tags:
@@ -92,7 +92,7 @@ Chrome&nbsp;88 (February&nbsp;24, 2021).
   An earlier origin trial for the feature, which gave developers a first chance
   to try out the proposed API, ran from Chrome&nbsp;80 to&nbsp;83.
   You can read the summary of the
-  [feedback obtained](https://docs.google.com/document/d/1Nl1emEqxjTzPLNIAPiS26Vtq3mBdNyCxfMY6QwaD45s/edit))
+  [feedback obtained](https://docs.google.com/document/d/1Nl1emEqxjTzPLNIAPiS26Vtq3mBdNyCxfMY6QwaD45s/edit)
   so far.
 {% endAside %}
 
