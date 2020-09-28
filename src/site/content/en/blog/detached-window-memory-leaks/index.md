@@ -250,7 +250,9 @@ Snapshot** in the list of available profiling types. Once the recording has fini
 </figure>
 
 {% Aside 'codelab' %}
-Try it with a <a href="https://detached-windows-test.glitch.me" target="_blank" rel="noopener noreferrer">step-by-step walk through</a>.
+
+Open this <a href="https://detached-windows-test.glitch.me" target="_blank" rel="noopener noreferrer">step-by-step walk through</a> in a new window.
+
 {% endAside %}
 
 Analyzing heap dumps can be a daunting task, and it can be quite difficult to find the right
