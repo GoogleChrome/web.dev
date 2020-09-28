@@ -67,7 +67,7 @@ Many file formats support multiple codecs for the same container type. A
 complete list of available [video
 codecs](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs)
 and [audio
-codecs](ttps://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs)
+codecs](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs)
 would be a whole website itself. The links just provided are for MDN's practical
 lists of what's usable on the web. Listed below are the currently preferred file
 types and the codecs they may use. Follow the links for browser support lists.
@@ -86,5 +86,5 @@ _Resolution_ is the amount of information in a single frame of video, given as
 the number of logical pixels in each dimension. I provide more information about this
 concept in [Resolution](/resolution).
 
-In [Application basics](/application-basics/), I'll show you how to examine
+In [Media application basics](/media-application-basics/), I'll show you how to examine
 these characteristics using two command line tools: Shaka Packager and FFmpeg.

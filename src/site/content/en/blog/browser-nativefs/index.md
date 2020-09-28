@@ -4,7 +4,7 @@ title: Reading and writing files and directories with the browser-nativefs libra
 authors:
   - thomassteiner
 description: |
-  All modern browsers can read native files and directories; however,
+  All modern browsers can read local files and directories; however,
   true write access, that is, more than just downloading files,
   is limited to browsers that implement the File System Access API.
   This post introduces a support library called browser-nativefs
@@ -300,7 +300,7 @@ modify the file, and overwrite it with my changes, or even save it as a new file
 
 Below, you can see an actual example of browser-nativefs as it is used in Excalidraw.
 This excerpt is taken from
-[`/src/data/json.ts`](https://github.com/excalidraw/excalidraw/blob/cd87bd6901b47430a692a06a8928b0f732d77097/src/data/jsonts#L24-L52).
+[`/src/data/json.ts`](https://github.com/excalidraw/excalidraw/blob/cd87bd6901b47430a692a06a8928b0f732d77097/src/data/json.ts#L24-L52).
 Of special interest is how the `saveAsJSON()` method passes either a file handle or `null` to browser-nativefs'
 `fileSave()` method, which causes it to overwrite when a handle is given,
 or to save to a new file if not.

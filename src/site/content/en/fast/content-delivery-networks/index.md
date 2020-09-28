@@ -240,7 +240,7 @@ If your CDN hasn't already enabled [HTTP/2](https://almanac.httparchive.org/en/2
 
 *  **Stream prioritization**
 
-    Multiplexing enables multiple concurrent streams; [stream prioritization](https://http2.github.io/http2-spec/#StreamPriority) provides an interface for communicating relative priority of each of these streams. This helps the server to send the most important resources first - even if they weren't requested first.
+    Multiplexing enables multiple concurrent streams; [stream prioritization](https://httpwg.org/specs/rfc7540.html#StreamPriority) provides an interface for communicating relative priority of each of these streams. This helps the server to send the most important resources first - even if they weren't requested first.
 
 Stream prioritization is expressed by the browser via a dependency tree and is merely a statement of _preference_: in other words, the server is not obligated to meet (or even consider) the priorities supplied by the browser. Stream prioritization becomes more effective when more of a site is served through a CDN.
 

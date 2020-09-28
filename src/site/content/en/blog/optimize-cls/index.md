@@ -288,7 +288,7 @@ You've probably experienced layout shifts due to UI that pops-in at the top or b
 
 *   "Sign-up to our newsletter!" (whoa, slow down! we just met!)
 *   "Related content"
-*   "Install our native app"
+*   "Install our [iOS/Android] app"
 *   "We're still taking orders"
 *   "GDPR notice"
 

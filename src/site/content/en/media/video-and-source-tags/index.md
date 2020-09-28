@@ -74,7 +74,7 @@ This approach has several advantages over serving different HTML or server-side
 scripting, especially on mobile:
 
 * You can list formats in order of preference.
-* Native client-side switching reduces latency; only one request is made to
+* Client-side switching reduces latency; only one request is made to
   get content.
 * Letting the browser choose a format is simpler, quicker, and potentially
   more reliable than using a server-side support database with user-agent detection.
@@ -215,7 +215,7 @@ sizes](https://web.dev/total-byte-weight/) with negative consequences for your
 revenues and your users' wallets.
 
 For simple uses like the ones I'm describing here, use [CSS media
-queries](/web/fundamentals/design-and-ux/responsive/#css-media-queries) to
+queries](https://developers.google.com/web/fundamentals/design-and-ux/responsive/#css-media-queries) to
 specify the size of elements depending on the viewport dimensions; `max-width:
 100%` is your friend.
 

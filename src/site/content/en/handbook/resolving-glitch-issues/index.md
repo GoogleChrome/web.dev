@@ -18,7 +18,7 @@ This post will show you how to resolve some common Glitch issues.
   Subscribing to Glitch and paying for Boosted Apps will automatically increase memory and disk
   space as well as improve your rate limits. That's an always an option if you run into any of the
   disk/memory issues mentioned in this post. [Learn
-  more](https://glitch.com/help/boosted-apps-whats-that/).
+  more](https://glitch.happyfox.com/kb/article/73-boosted-apps-what-s-that/).
 {% endAside %}
 
 ## Project is suspended

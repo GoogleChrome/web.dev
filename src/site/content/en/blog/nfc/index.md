@@ -20,7 +20,7 @@ feedback:
 ---
 
 {% Aside %}
-Web apps should be able to do anything native apps can. The [Capabilities
+Web apps should be able to do anything platform-specific apps can. The [Capabilities
 project](/fugu-status/), of which Web NFC is only a part, aims to do just that.
 To learn about other capabilities and to keep up with their progress, follow
 [Unlocking new capabilities for the web](/fugu-status/).
@@ -796,7 +796,7 @@ await writer.write({ records: [emptyRecord] });
 
 Here's a list of things I wish I had known when I started playing with Web NFC:
 
-- Android natively handles NFC tags before Web NFC is operational.
+- Android handles NFC tags at the OS-level before Web NFC is operational.
 - You can find an NFC icon on [material.io].
 - Use NDEF record `id` to easily identifying a record when needed.
 - An unformatted NFC tag that supports NDEF contains a single record of the empty type.

@@ -453,7 +453,7 @@ computer photo by [Athul Cyriac Ajay] on Unsplash.
 [explainer]: https://github.com/WICG/webhid/blob/master/EXPLAINER.md
 [spec]: https://wicg.github.io/webhid/
 [format]: https://gist.github.com/beaufortfrancois/583424dfef66be1ade86231fd1a260c7
-[the USB ID Repository]: http://www.linux-usb.org/usb.ids.html
+[the USB ID Repository]: http://www.linux-usb.org/usb-ids.html
 [HID usage tables document]: https://usb.org/document-library/hid-usage-tables-12
 [`DataView`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView
 [`BufferSource`]: https://developer.mozilla.org/en-US/docs/Web/API/BufferSource

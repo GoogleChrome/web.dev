@@ -335,7 +335,7 @@ in Chrome. I also thank Per Parker, Philipp Weis, Olga Belomestnykh, Matthew
 Bolohan, and Neil Mckay for providing valuable user feedback that greatly
 improved the API.
 
-[Hero image](https://unsplash.com/photos/5tLfQGURzHM) by [Harrison Broadbent](https://unsplash.com/@hbtography) on [Unsplash](https://unsplash.com)
+[Hero image](https://unsplash.com/photos/5tLfQGURzHM) by [Harrison Broadbent](https://unsplash.com/@harrisonbroadbent) on [Unsplash](https://unsplash.com)
 
 [coop-coep]: https://docs.google.com/document/d/1zDlfvfTJ_9e8Jdc8ehuV4zMEu9ySMCiTGMS9y0GU92k/edit
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=1049093

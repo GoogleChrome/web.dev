@@ -4,7 +4,7 @@ subhead: Best practices to set your Referrer-Policy and use the referrer in inco
 authors:
   - maudn
 date: 2020-07-30
-updated: 2020-08-27
+updated: 2020-09-23
 hero: hero.jpg
 thumbnail: hero.jpg
 description: |
@@ -323,21 +323,79 @@ is simply not data they want or expect to silently leak cross-origin. {% endAsid
 
 ## Using the referrer from incoming requests: best practices
 
+### What to do if your site's functionality uses the referrer URL of incoming requests?
+
+#### Protect users' data
+
+The `Referer` may contain private, personal, or identifying data—so make sure you treat it as such.
+
+#### Keep in mind that the `Referer` you receive may change
+
+Using the referrer from incoming cross-origin requests has a few limitations:
+
+- If you have no control over the request emitter's implementation, you can't make assumptions about
+  the `Referer` header (and `document.referrer`) you receive. The request emitter may decide anytime
+  to switch to a `no-referrer` policy, or more generally to a stricter policy than what they used
+  before—meaning you'll get less data via the `Referer` than you used to.
+- Browsers are increasingly using the Referrer-Policy `strict-origin-when-cross-origin` by default.
+  This means that you may now receive only the origin (instead of full referrer URL) in incoming
+  cross-origin requests, if the site that sends these has no policy set.
+- Browsers may change the way they manage `Referer`; for example, in the future, they may decide to
+  always trim referrers to origins in cross-origin subresource requests, in order to protect user
+  privacy.
+- The `Referer` header (and `document.referrer`) may contain more data than you need, for example a
+  full URL when you only want to know if the request is cross-origin.
+
+#### Alternatives to `Referer`
+
+You may need to consider alternatives if:
+
+- An essential functionality of your site uses the referrer URL of incoming cross-origin requests;
+- And/or if your site is not receiving anymore the part of the referrer URL it needs in a
+  cross-origin request. This happens when the request emitter changed their policy or when they have
+  no policy set and the browser default's policy changed (like in [Chrome
+  85](https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default)).
+
+To define alternatives, analyze first what part of the referrer you're using.
+
+**If you only need the origin (`https://site-one.example`):**
+
+- If you're using the referrer in a script that has top-level access to the page,
+  `window.location.origin` is an alternative.
+- If available, headers like
+  [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) and
+  [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site) give
+  you the `Origin` or describe whether the request is cross-origin, which may be just what you need.
+
+**If you need other elements of the URL (path, query parameters…):**
+
+- Request parameters may address your use case and this saves you the work of parsing the
+  referrer.
+- If you're using the referrer in a script that has top-level access to the page,
+  `window.location.pathname` may be an alternative. Extract only the path section of the URL and
+  pass it on as an argument, so any potentially sensitive information in the URL parameters isn't
+  passed on.
+
+**If you can't use these alternatives:**
+
+- Check if your systems can be changed to expect the request emitter (`site-one.example`) to
+  explicitly set the information you need in a configuration of some sort. Pro: more explicit, more
+  privacy-preserving for `site-one.example` users, more future-proof. Con: potentially more work
+  from your side or for your system's users.
+- Check whether the site that emits the requests may agree to set a per-element or per-request
+  Referrer-Policy of `no-referrer-when-downgrade`. Con: potentially less privacy-preserving for
+  `site-one.example` users, potentially not supported in all browsers.
+
 ### Cross-Site Request Forgery (CSRF) protection
 
-Using the referrer from incoming requests for CSRF protection has a few pitfalls:
-
-- It can be hidden with the `no-referrer` policy, or spoofed by the request emitter. If you have no
-  control over the request emitter's implementation, you can't make assumptions about any header you
-  receive.
-- The `Referer` header (and `document.referrer`) may contain **more data than you need**, for
-  example a full URL when you only want to know if the request is cross-origin.
+Note that a request emitter can always decide not to send the referrer by setting a `no-referrer`
+policy (and a malicious actor could even spoof the referrer).
 
 Use [CSRF
 tokens](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#token-based-mitigation)
-as your primary protection instead. For extra protection use
+as your primary protection. For extra protection, use
 [SameSite](https://web.dev/samesite-cookie-recipes/#%22unsafe%22-requests-across-sites)—and instead
-of `Referer`, you can use headers such as
+of `Referer`, use headers such as
 [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) (available on POST and
 CORS requests) and
 [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site) (if
@@ -345,12 +403,12 @@ available).
 
 ### Logging
 
-The `Referer` header (and `document.referrer`) may contain private, personal, or identifying data—so
-it must be treated as such.
+Make sure to protect users' personal or sensitive data that may be in the `Referer`.
 
-And instead of `Referer`, consider using other headers that may address your use case:
-[`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) and
-[`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site).
+If you're only using the origin, check if the
+[`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) header could be an
+alternative. This may give you the information that you need for debugging purposes in a simpler way
+and without needing to parse the referrer.
 
 ### Payments
 

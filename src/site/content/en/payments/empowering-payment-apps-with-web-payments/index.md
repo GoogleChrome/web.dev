@@ -83,7 +83,7 @@ security.
 
 ### Better developer experience
 
-* **Easy integration:** Web Payments can be extended from an existing native
+* **Easy integration:** Web Payments can be extended from an existing platform-specific
   payment app or a web-based payment app.
 
 * **Low integration cost:** Merchants can integrate Web Payments with JavaScript
@@ -99,7 +99,7 @@ security.
 ###  Stricter security
 
 * [Sideloading](https://en.wikipedia.org/wiki/Sideloading) prevention when
-  invoking native payment apps.
+  invoking platform-specific payment apps.
 
 * Designed with upcoming security and privacy paradigms in mind.
 
@@ -190,18 +190,18 @@ Here's how they compare to Web Payments:
   </table>
 </div>
 
-{% Aside %} *Redirecting to a native payment app can be done in-context with the
+{% Aside %} *Redirecting to a platform-specific payment app can be done in-context with the
 merchant website though redirecting to another website completely loses the
 context. {% endAside %}
 
 ##  Integrating Web Payments in existing apps
 
-You can integrate Web Payments in both native and web-based payment apps: if the
-native payment app is not installed, the web-based payment app can be used as a
+You can integrate Web Payments in both platform-specific and web-based payment apps: if the
+platform-specific payment app is not installed, the web-based payment app can be used as a
 fallback. Customers and merchants can seamlessly send and receive payments
 through a payment method of their choice, depending on the environment.
 
-###  Native payment apps
+###  Platform-specific payment apps
 
 * Ideal for payment apps that already have a large install base and want to give
   existing users a consistent experience on the web.
@@ -211,7 +211,7 @@ through a payment method of their choice, depending on the environment.
   Payments performs signature verification before running the payment app which
   makes malicious payment apps impossible to be sideloaded.
 
-In the video above, Google Pay is a native payment app.
+In the video above, Google Pay is a platform-specific payment app.
 
 ###  Web based payment apps
 
