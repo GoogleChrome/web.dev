@@ -92,6 +92,10 @@ sample results in the following DOM tree:
 </host-element>
 ```
 
+{% Aside %}
+  The `↳` character represents slotted Light DOM content.
+{% endAside %}
+
 This gives us the benefits of Shadow DOM's encapsulation and slot projection in static HTML. No
 JavaScript is needed to produce the entire tree, including the Shadow Root.
 
