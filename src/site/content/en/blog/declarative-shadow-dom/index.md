@@ -365,7 +365,7 @@ constructable stylesheets in HTML, and no way to refer to them when populating a
 
 ## Feature detection and browser support {: #detection-support }
 
-Declarative Shadow DOM is supported in Chrome&nbsp;87, and can also be enabled using the
+Declarative Shadow DOM is supported in Chrome&nbsp;88, and can also be enabled using the
 **Experimental Web Platform Features** flag in Chrome&nbsp;85. Navigate to
 `chrome://flags/#enable-experimental-web-platform-features` to find that setting.
 
