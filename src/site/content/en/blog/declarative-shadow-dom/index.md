@@ -7,6 +7,7 @@ hero: hero.jpg
 alt: decorative shadow dome
 authors:
   - developit
+  - masonfreed
 description: |
   Declarative Shadow DOM is a new way to implement and use Shadow DOM directly in HTML.
 tags:
@@ -93,9 +94,9 @@ sample results in the following DOM tree:
 ```
 
 {% Aside %}
-  This code sample is following the Chrome DevTools Elements panel's conventions
-  for displaying Shadow DOM content. For example, the `↳` character represents
-  slotted Light DOM content.
+This code sample is following the Chrome DevTools Elements panel's conventions
+for displaying Shadow DOM content. For example, the `↳` character represents
+slotted Light DOM content.
 {% endAside %}
 
 This gives us the benefits of Shadow DOM's encapsulation and slot projection in static HTML. No
