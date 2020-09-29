@@ -7,6 +7,7 @@ hero: hero.jpg
 alt: Cat contemplating how to fix a leak
 authors:
   - developit
+  - bartekn
 description: |
   Detached windows are a common type of memory leak that is particularly difficult to find and fix.
 tags:
@@ -100,10 +101,6 @@ iframe's `contentWindow` or `contentDocument` even if the iframe is removed from
 changes, which prevents the document from being garbage collected since its properties can still be
 accessed.
 
-<!--
-![image](https://drive.google.com/file/d/1J5MfwROSuloIHwpEpWfQYGZSfuHL_ynw/view?usp=drivesdk)
--->
-
 <figure class="w-figure">
   <video controls autoplay loop muted playsinline width="615" class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/detached-window-memory-leaks/example-detached-iframe.webm" type="video/webm">
@@ -156,7 +153,7 @@ bound as a click handler in our main page, and the fact that `nextSlide` contain
 `notesWindow` means the window is still referenced and can't be garbage collected.
 
 <figure class="w-figure">
-  <video controls autoplay loop muted playsinline><!-- class="w-screenshot"-->
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/detached-window-memory-leaks/animation.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/detached-window-memory-leaks/animation.mp4" type="video/mp4">
   </video>
@@ -209,7 +206,6 @@ detached windows from being eligible for garbage collection:
     };
   </script>
   ```
-
 
 ## Detecting memory leaks caused by detached windows {: #detect-leaks }
 
