@@ -2,7 +2,7 @@
 title: Detached window memory leaks
 subhead: |
   Find and fix tricky memory leaks caused by detached windows.
-date: 2020-09-28
+date: 2020-09-29
 hero: hero.jpg
 alt: Cat contemplating how to fix a leak
 authors:
