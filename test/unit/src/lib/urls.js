@@ -31,5 +31,13 @@ describe('urls', function () {
         'ignores non-index.html HTML pages',
       );
     });
+
+    it('should remove extra slashes', function () {
+      assert(normalizeUrl('///foo') === '/foo/', 'removes extra slashes');
+      assert(
+        normalizeUrl('/foo///bar//') === '/foo/bar/',
+        'removes extra slashes',
+      );
+    });
   });
 });
