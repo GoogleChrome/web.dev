@@ -90,12 +90,16 @@ self.addEventListener('install', function (event) {
 });
 ```
 
-We're not passing the `cache.addAll` promise for levels 11–20 back to `event.waitUntil`, so even if
-it fails, the game will still be available offline. Of course, you'll have to cater for the possible
-absence of those levels and reattempt caching them if they're missing.
+The above example does not pass the `cache.addAll` promise for levels 11–20 back to
+`event.waitUntil`, so even if it fails, the game will still be available offline. Of course, you'll
+have to cater for the possible absence of those levels and reattempt caching them if they're
+missing.
 
 The Service Worker may be killed while levels 11–20 download since it's finished handling events,
-meaning they won't be cached.
+meaning they won't be cached. In future the
+[Web Periodic Background Synchronization API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Periodic_Background_Synchronization_API)
+will handle cases like this, and larger downloads such as movies. That API is currently only
+supported on Chromium forks.
 
 ### On activate {: #on-activate }
 
@@ -142,8 +146,8 @@ On [trained-to-thrill][ttt] I use this to
   <img class="w-screenshot" alt="" src="cm-on-user-interaction.png">
 </figure>
 
-**Ideal for:** If the whole site can't be taken offline, you may allow the user to select the
-content they want available offline. E.g. a video on something like YouTube, an article on
+**Ideal for:** When the whole site can't be taken offline, and you chose to allow the user to select
+the content they want available offline. E.g. a video on something like YouTube, an article on
 Wikipedia, a particular gallery on Flickr.
 
 Give the user a "Read later" or "Save for offline" button. When it's clicked, fetch what you need
@@ -318,7 +322,7 @@ site, only the Service Worker is woken up. You request permission to do this fro
 will be prompted.
 
 **Ideal for:** Non-urgent updates, especially those that happen so regularly that a push message per
-update would be too frequent, such as social timelines or news articles.
+update would be too frequent for users, such as social timelines or news articles.
 
 ```js
 self.addEventListener('sync', function (event) {
@@ -335,7 +339,11 @@ self.addEventListener('sync', function (event) {
 ## Cache persistence {: #cache-persistence }
 
 Your origin is given a certain amount of free space to do what it wants with. That free space is
-shared between all origin storage: LocalStorage, IndexedDB, Filesystem, and of course Caches.
+shared between all origin storage:
+[(local) Storage](https://developer.mozilla.org/en-US/docs/Web/API/Storage),
+[IndexedDB](https://developer.mozilla.org/en-US/docs/Glossary/IndexedDB),
+[File System Access](https://web.dev/file-system-access/)Filesystem, and of course
+[Caches](https://developer.mozilla.org/en-US/docs/Web/API/Cache).
 
 The amount you get isn't spec'd, it will differ depending on device and storage conditions. You can
 find out how much you've got via:
@@ -349,26 +357,30 @@ navigator.storageQuota.queryInfo('temporary').then(function (info) {
 });
 ```
 
-However, like all browser storage, the browser is free to throw it away if the device becomes under
-storage pressure. Unfortunately the browser can't tell the different between those movies you want
-to keep at all costs, and the game you don't really care about.
+However, like all browser storage, the browser is free to throw away your data if the device becomes
+under storage pressure. Unfortunately the browser can't tell the different between those movies you
+want to keep at all costs, and the game you don't really care about.
 
-To work around this, there's a proposed API,
-[`requestPersistent`](https://storage.spec.whatwg.org/):
+To work around this, use the
+[StorageManager](https://developer.mozilla.org/en-US/docs/Web/API/StorageManager) interface:
 
 ```js
 // From a page:
-navigator.storage.requestPersistent().then(function (granted) {
-  if (granted) {
+navigator.storage.persist()
+.then(function(persisted) {
+  if (persisted) {
     // Hurrah, your data is here to stay!
-  }
+  } else {
+   // So sad, your data may get chucked. Sorry.
 });
 ```
 
-Of course, the user has to grant permission. Making the user part of this flow is important, as we
+Of course, the user has to grant permission.  For this, use the Permissions API.
+
+Making the user part of this flow is important, as we
 can now expect them to be in control of deletion. If their device comes under storage pressure, and
-clearing non-essential data doesn't solve it, the user gets to make a judgment call on which items
-to keep and remove.
+clearing non-essential data doesn't solve it, the user gets to judge on which items to keep and
+remove.
 
 For this to work, it requires operating systems to treat "durable" origins as equivalent to native
 apps in their breakdowns of storage usage, rather than reporting the browser as a single item.
@@ -384,8 +396,8 @@ when and how. Here are a few patterns for handling requests:
   <img class="w-screenshot" alt="" src="ss-cache-only.png">
 </figure>
 
-**Ideal for:** Anything you'd consider static to that "version" of your site. You should have cached
-these in the install event, so you can depend on them being there.
+**Ideal for:** Anything you'd consider static to a particular "version" of your site. You should
+have cached these in the install event, so you can depend on them being there.
 
 ```js
 self.addEventListener('fetch', function (event) {
@@ -423,8 +435,8 @@ self.addEventListener('fetch', function (event) {
   <img class="w-screenshot" alt="" src="ss-falling-back-to-network.png">
 </figure>
 
-**Ideal for:** If you're building offline-first, this is how you'll handle the majority of requests.
-Other patterns will be exceptions based on the incoming request.
+**Ideal for:** Building offline-first. In such cases, this is how you'll handle the majority of
+requests. Other patterns will be exceptions based on the incoming request.
 
 ```js
 self.addEventListener('fetch', function (event) {
@@ -517,8 +529,8 @@ user may be reading or interacting with.
 
 Twitter adds the new content above the old content and adjusts the scroll position so the user is
 uninterrupted. This is possible because Twitter mostly retains a mostly-linear order to content. I
-copied this pattern for [trained-to-thrill][ttt] to get content on screen as fast as possible, but
-still display up-to-date content once it arrives.
+copied this pattern for [trained-to-thrill][ttt] to get content on screen as fast as possible, while
+displaying up-to-date content as soon as it arrives.
 
 **Code in the page:**
 
