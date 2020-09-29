@@ -2,6 +2,7 @@
 title: How ZDF created a video PWA with offline and dark mode
 subhead: Learn how ZDF created a progressive web app (PWA) with modern features like offline support, installability and dark mode.
 authors:
+  - scottfriesen
   - martinschierle
 date: 2020-09-28
 hero: hero.jpg
@@ -68,17 +69,10 @@ install the app as soon as they want to download their first video. This is a
 good point in time to prompt because the user has expressed a clear intention to
 use the app offline.
 
-<div class="w-columns">
-  <figure class="w-figure">
-    <img src="./custom-prompt-before.jpg" alt="TBD">
-    <figcaption class="w-figcaption">TBD</figcaption>
-  </figure>
-
-  <figure class="w-figure">
-    <img src="./custom-prompt-after.jpg" alt="TBD">
-    <figcaption class="w-figcaption">TBD</figcaption>
-  </figure>
-</div>
+<figure class="w-figure"><div class="w-columns">
+  <img src="./custom-prompt-before.jpg" alt="Custom invitation to install."><img src="./custom-prompt-after.jpg" alt="Custom install prompt being triggered when downloading a video for offline consumption.">
+  <figcaption class="w-figcaption">Custom install prompt being triggered when downloading a video for offline consumption.</figcaption></div>
+</figure>
 
 Building an offline page to access downloads
 
@@ -87,17 +81,10 @@ page that is not available in offline mode, a special page is shown instead that
 lists all videos that have previously been downloaded or (in case no content has
 been downloaded yet) a short explanation of the offline feature.
 
-<div class="w-columns">
-  <figure class="w-figure">
-    <img src="./online-page.png" alt="TBD">
-    <figcaption class="w-figcaption">TBD</figcaption>
-  </figure>
-
-  <figure class="w-figure">
-    <img src="./offline-page.png" alt="TBD">
-    <figcaption class="w-figcaption">TBD</figcaption>
-  </figure>
-</div>
+<figure class="w-figure"><div class="w-columns">
+  <img src="./online-page.png" alt="Offline page showing all content available for watching offline."><img src="./offline-page.png" alt="Offline page showing all content available for watching offline.">
+  <figcaption class="w-figcaption">Offline page showing all content available for watching offline.</figcaption></div>
+</figure>
 
 ## Using frame loading rate for adaptive features
 
