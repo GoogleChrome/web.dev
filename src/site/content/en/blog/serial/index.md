@@ -507,16 +507,16 @@ const [appReadable, devReadable] = port.readable.tee();
 
 ## Dev Tips {: #dev-tips }
 
-Debugging Serial in Chrome is easy with the internal page, `chrome://device-log`
+Debugging the Serial API in Chrome is easy with the internal page, `chrome://device-log`
 where you can see all serial device related events in one single place.
 
 <figure class="w-figure">
-  <img src="./device-log-page-screenshot.jpg" class="w-screenshot" alt="Screenshot of the internal page to debug Serial.">
-  <figcaption class="w-figcaption">Internal page in Chrome to debug Serial.</figcaption>
+  <img src="./device-log-page-screenshot.jpg" class="w-screenshot" alt="Screenshot of the internal page for debugging the Serial API.">
+  <figcaption class="w-figcaption">Internal page in Chrome for debugging the Serial API.</figcaption>
 </figure>
 
 {% Aside %}
-Debugging Serial in the internal page is available in Chrome 87 and later.
+The internal page supports debugging the Serial API in Chrome 87 and later.
 {% endAside %}
 
 ## Codelab {: #codelab }
