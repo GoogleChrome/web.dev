@@ -131,7 +131,7 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
           write to a serial device with scripts. The API bridges the web and
           the physical world by allowing websites to communicate with serial
           devices, such as microcontrollers and 3D printers.<br>
-          <em>Updated August 12, 2020</em>
+          <em>Updated September 29, 2020</em>
         </td>
       </tr>
       <tr>
