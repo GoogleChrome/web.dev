@@ -1378,7 +1378,7 @@
     "twitter": "diklla",
     "github": "diklla"
   },
-   "bpj": {
+  "bpj": {
     "name": {
       "given": "Bart",
       "family": "Jarochowski"
@@ -1472,6 +1472,17 @@
       "en": "WebAssembly Advocadoer"
     }
   },
+  "masonfreed": {
+    "name": {
+      "given": "Mason",
+      "family": "Freed"
+    },
+    "twitter": "Mfreed777",
+    "github": "mfreed7",
+    "description": {
+      "en": "Developer on the Chrome team"
+    }
+  },
   "roeln": {
     "name": {
       "given": "Roel",
@@ -1510,7 +1521,7 @@
       "family": "Baca"
     },
     "twitter": "joan_baka"
-  },  
+  },
   "aranhacarlos": {
     "name": {
       "given": "Carlos",
