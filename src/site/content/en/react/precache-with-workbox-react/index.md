@@ -10,6 +10,8 @@ description: |
   precaches all static assets in your application with every build.
 authors:
   - houssein
+feedback:
+  - api
 ---
 
 {% Aside %}
@@ -57,13 +59,11 @@ serviceWorker.register();
 
 Here is an example of a React app built with CRA that has a service worker enabled through this file:
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/react-sw-example?path=src/index.css&previewSize=100&attributionHidden=true"
-    alt="react-sw-example on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'react-sw-example',
+  path: 'src/index.css',
+  height: 480
+} %}
 
 To see which assets are being cached:
 

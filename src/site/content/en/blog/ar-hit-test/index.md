@@ -4,7 +4,7 @@ subhead: The Hit Test API lets you position virtual items in a real-world view.
 authors:
   - joemedley
 date: 2020-02-13
-updated: 2020-03-19
+updated: 2020-06-04
 hero: hero.jpg
 alt: A virtual object in a real-world view.
 description:
@@ -22,8 +22,8 @@ The WebXR Device API shipped last fall in Chrome 79. As stated then, Chrome's
 implementation of the API is a work in progress. Chrome is happy to announce
 that some of the work is finished. In Chrome 81, two new features have arrived:
 
-* [Augmented reality session types](https://www.chromestatus.com/features/5450241148977152)
-* [Hit testing](https://www.chromestatus.com/features/4755348300759040)
+* [Augmented reality session types](https://www.chromestatus.com/feature/5450241148977152)
+* [Hit testing](https://www.chromestatus.com/feature/4755348300759040)
 
 This article covers the [WebXR Hit Test
 API](https://github.com/immersive-web/hit-test/blob/master/hit-testing-explainer.md), a

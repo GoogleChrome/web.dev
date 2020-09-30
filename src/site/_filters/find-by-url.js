@@ -14,9 +14,6 @@
  * limitations under the License.
  */
 
-const chalk = require('chalk');
-const warn = chalk.black.bgYellow;
-
 let memo;
 
 /**
@@ -33,11 +30,6 @@ let memo;
  * @see {@link https://github.com/11ty/eleventy/issues/399}
  */
 const memoize = (collection) => {
-  if (memo && Object.keys(memo).length) {
-    /* eslint-disable-next-line */
-    console.warn(warn(`Overwriting existing memoized collection!`));
-  }
-
   memo = {};
   collection.forEach((item) => {
     if (item.url) {
@@ -61,19 +53,14 @@ const memoize = (collection) => {
  */
 const findByUrl = (url) => {
   if (!url) {
-    throw new Error(`url is either null or undefined`);
+    throw new Error('url is either null or undefined');
   }
 
   if (!memo) {
-    throw new Error(`No collection has been memoized yet.`);
+    throw new Error('No collection has been memoized yet.');
   }
 
-  const found = memo[url];
-  if (!found) {
-    throw new Error(`Could not find post with url: ${url}`);
-  }
-
-  return found;
+  return memo[url];
 };
 
 module.exports = {memoize, findByUrl};

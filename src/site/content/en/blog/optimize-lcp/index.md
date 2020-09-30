@@ -4,17 +4,20 @@ subhead: How to render your main content faster.
 authors:
   - houssein
 date: 2020-05-05
+updated: 2020-08-20
 hero: hero2.jpg
 alt: Optimize LCP banner
-description: | 
+description: |
   Largest Contentful Paint (LCP) can be used to determine when the main content of the page has
   finished rendering on the screen. Learn how to optimize LCP by improving slow server response
   times, resource load times and client-side rendering.
 tags:
   - blog
-  - fast
+  - performance
   - web-vitals
 ---
+
+{% YouTube 'AQqFZ5t8uNc', '1073' %}
 
 <blockquote>
   <p>
@@ -58,7 +61,7 @@ Byte**](/time-to-first-byte) (TTFB) to measure your server response times. You c
 improve your TTFB in a number of different ways:
 
 +   Optimize your server
-+   Route users to a nearby CDN 
++   Route users to a nearby CDN
 +   Cache assets
 +   Serve HTML pages cache-first
 +   Establish third-party connections early
@@ -116,7 +119,7 @@ background and can intercept requests from the server. This level of programmati
 makes it possible to cache some or all of the HTML page's content and only update the cache when the
 content has changed.
 
-The following chart shows how LCP distributions have been reduced on a site using this pattern: 
+The following chart shows how LCP distributions have been reduced on a site using this pattern:
 
 <figure class="w-figure">
   <img src="./lcp-sw-caching.png" alt="Largest Contentful Paint distributions before and after HTML caching">
@@ -150,7 +153,7 @@ You can also use `dns-prefetch`  to resolve DNS lookups faster.
 ```
 
 Although both hints work differently, consider using `dns-prefetch` as a fallback for browsers that
-do not support `preconnect`. 
+do not support `preconnect`.
 
 ```html
 <head>
@@ -220,7 +223,7 @@ To optimize:
 +   For any CSS not needed for initial rendering, use
     [loadCSS](https://github.com/filamentgroup/loadCSS/blob/master/README.md) to load files
     asynchronously, which leverages `rel="preload" `and `onload`.
-    
+
     ```html
     <link rel="preload" href="stylesheet.css" as="style" onload="this.rel='stylesheet'">
     ```
@@ -243,7 +246,7 @@ Inline any critical-path CSS used for above-the-fold content by including it dir
 </figure>
 
 Inlining important styles eliminates the need to make a round-trip request to fetch critical CSS.
-Deferring the rest minimizes CSS blocking time. 
+Deferring the rest minimizes CSS blocking time.
 
 If you cannot manually add inline styles to your site, use a library to automate the process. Some
 examples:
@@ -253,7 +256,7 @@ examples:
     [Penthouse](https://github.com/pocketjoso/penthouse) are all packages that extract and inline
     above-the-fold CSS
 +   [Critters](https://github.com/GoogleChromeLabs/critters) is a webpack plugin that inlines
-    critical CSS and lazy-loads the rest 
+    critical CSS and lazy-loads the rest
 
 <figure class="w-figure">
   <img src="./lcp-critical-css.png" alt="Example of LCP improvement: Before and after inlining critical CSS">
@@ -352,15 +355,14 @@ and critical-path CSS or JavaScript.
 <link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin>
 ```
 
-Starting in Chrome 83, [preloading can be used along with responsive
-images](/preload-responsive-images/) to combine both patterns for much faster image
-loading.
+Since Chrome 73, preloading can be used along with [responsive images](/preload-responsive-images/) to combine both
+patterns for much faster image loading.
 
 ```html
-<link 
-  rel="preload" 
-  as="image" 
-  href="wolf.jpg" 
+<link
+  rel="preload"
+  as="image"
+  href="wolf.jpg"
   imagesrcset="wolf_400px.jpg 400w, wolf_800px.jpg 800w, wolf_1600px.jpg 1600w"
   imagesizes="50vw"
 >
@@ -377,7 +379,7 @@ even better compression results, [can be used in almost all newer
 browsers](https://caniuse.com/#feat=brotli).
 
 Compressing your resources will minimize their delivery size, improving load times and consequently
-LCP. 
+LCP.
 
 1.  First, check if your server already compresses files automatically. Most hosting
     platforms, CDNs, and reverse proxy servers either encode assets with compression by default or
@@ -442,7 +444,7 @@ served to the browser instead of from the network on repeat requests.
 Precaching critical resources using a service worker can reduce their load times significantly,
 especially for users who reload the web page with a weaker connection (or even access it offline).
 Libraries like [Workbox](https://developers.google.com/web/tools/workbox/) can make the process of
-updating precached assets easier than writing a custom service worker to handle this yourself. 
+updating precached assets easier than writing a custom service worker to handle this yourself.
 
 {% Aside %}
 Take a look at [Network reliability](/reliable/) to learn more about service workers and Workbox.
@@ -483,7 +485,7 @@ these optimizations.
 
 Minimizing the amount of JavaScript should always be the first thing to focus on for sites that are
 mostly client-rendered. However, you should also consider combining a server rendering experience to
-improve LCP as much as possible. 
+improve LCP as much as possible.
 
 This concept works by using the server to render the application into HTML, where the client then
 "[hydrates](https://www.gatsbyjs.org/docs/react-hydration/)" all the JavaScript and required data

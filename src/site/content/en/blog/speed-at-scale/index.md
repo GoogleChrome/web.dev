@@ -19,13 +19,7 @@ talk](https://www.youtube.com/watch?v=YJGCZCaIZkQ&feature=youtu.be) at Google
 I/O 2019, we announced three things that we hope will improve web performance
 over the coming year.
 
-<div style="width:100%; padding-top: 56.25%; position: relative;">
-<iframe style="width:100%; height: 100%;position: absolute; top: 50%; left:
-50%; transform: translate(-50%,-50%);"
-src="https://www.youtube.com/embed/YJGCZCaIZkQ" frameborder="0"
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
-</div>
+{% YouTube 'YJGCZCaIZkQ' %}
 
 ## Lighthouse now supports Performance Budgeting
 
@@ -49,7 +43,7 @@ Unsure what your budgets should be? Try our experimental [Performance Budget
 Calculator](https://bit.ly/perf-budget-calculator) which can generate a
 LightWallet compatible budget configuration.
 
-## Native image and iframe lazy-loading comes to the web
+## Browser-level image and iframe lazy-loading comes to the web
 
 Web pages often contain a large number of images, which contribute to
 data-usage, [page-bloat](https://httparchive.org/reports/state-of-images) and
@@ -59,10 +53,10 @@ scroll in order to view them.
 Until now, you've needed to solve lazy-loading images using a JavaScript
 library but that may soon change. This summer, Chrome will be launching support
 for the [loading](https://addyosmani.com/blog/lazy-loading/) attribute which
-brings native `<img>` and `<iframe>` lazy-loading to the web.
+brings standardized `<img>` and `<iframe>` lazy-loading to the web.
 
 <figure class="w-figure">
-<img src="./Speed-at1.png" alt="Native lazy-loading highlighting offscreen
+<img src="./Speed-at1.png" alt="Browser-level lazy-loading highlighting offscreen
 content being loaded on-demand" loading="lazy">
 </figure>
 
@@ -87,7 +81,7 @@ try out [this demo](https://mathiasbynens.be/demo/img-loading-lazy) in Chrome
 75+ with the `chrome://flags/#enable-lazy-image-loading` and
 `chrome://flags/#enable-lazy-frame-loading` flags turned on.
 
-A [write-up](https://addyosmani.com/blog/lazy-loading/) on the native
+A [write-up](https://addyosmani.com/blog/lazy-loading/) on the
 lazy-loading feature is available with more details.
 
 ## Google Fonts now supports font-display as a query parameter

@@ -10,8 +10,9 @@ description: |
 tags:
   - blog
   - performance
-  - fast
 codelabs: codelab-two-ways-to-prefetch
+feedback:
+  - api
 ---
 
 Research shows that [faster load times result in higher conversion rates](https://wpostats.com/) and better user experiences. If you have insight into how users move through your website and which pages they will likely visit next, you can improve load times of future navigations by downloading the resources for those pages ahead of time.

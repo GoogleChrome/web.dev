@@ -11,15 +11,17 @@ alt: A wall with a bunch of image frames in different sizes.
 date: 2019-09-30
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
-  - fast
+  - performance
   - images
+feedback:
+  - api
 ---
 
 This article gives me an opportunity to discuss two of my favorite things: responsive images *and* preload. As someone who was heavily involved in developing both of those features, I'm super excited to see them working together!
 
 ## Responsive images overview
 
-Suppose you're browsing the web on a screen that's 300 pixels wide, and the page just requested an image that's 1500 pixels wide. That page just wasted a lot of your cellular data because your screen can't do anything with all of that extra resolution. Ideally, the browser should fetch a version of the image that's just a *little* wider than your screen size, say 325 pixels. This ensures a high-resolution image without wasting data. And, even better, the image will load faster. [Responsive images](/serve-responsive-images/#serve-multiple-image-versions) enable browsers to fetch different image resources to different devices. If you don't use an [image CDN](/image-cdns/) need to save multiple dimensions for each image and specify them in the `srcset` attribute. The `w` value tells the browser the width of each version. Depending on the device, the browser can choose the appropriate one:
+Suppose you're browsing the web on a screen that's 300 pixels wide, and the page just requested an image that's 1500 pixels wide. That page just wasted a lot of your cellular data because your screen can't do anything with all of that extra resolution. Ideally, the browser should fetch a version of the image that's just a *little* wider than your screen size, say 325 pixels. This ensures a high-resolution image without wasting data. And, even better, the image will load faster. [Responsive images](/serve-responsive-images/#serve-multiple-image-versions) enable browsers to fetch different image resources to different devices. If you don't use an [image CDN](/image-cdns/) you need to save multiple dimensions for each image and specify them in the `srcset` attribute. The `w` value tells the browser the width of each version. Depending on the device, the browser can choose the appropriate one:
 
 ```html
 <img src="small.jpg" srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w" alt="…">
@@ -142,7 +144,7 @@ Preloading your responsive images can speed them up in theory, but what does it 
 
 To answer that I created two copies of a [demo PWA shop](https://github.com/GoogleChromeLabs/sample-pie-shop): [one that does not preload images](https://20190710t144416-dot-pie-shop-app.appspot.com/apparel), and [one that preloads some of them](https://20190710t132936-dot-pie-shop-app.appspot.com/apparel). Since the site lazy loads images using JavaScript, it's likely to benefit from preloading the ones that will be in the initial viewport.
 
-That gave me the following results for [no preload](https://www.webpagetest.org/result/190710_VM_30b9d4c993a1e60befba17e1261ba1ca/) and for [image preload](https://www.webpagetest.org/result/190710_7B_a99e792121760f81a270b4b9c847797b/). Looking at the raw numbers we see that [Start Render](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/quick-start-quide#TOC-Start-Render:) stayed the same, [Speed Index](/speed-index/) slightly improved (273 ms, as images arrive faster, but don't take up a huge chunk of the pixel area), but the real metric which captures the difference is the [Last Painted Hero](https://github.com/WPO-Foundation/webpagetest/blob/master/docs/Metrics/HeroElements.md) metric, which improved by 1.2 seconds. 🎉🎉
+That gave me the following results for [no preload](https://www.webpagetest.org/result/190710_VM_30b9d4c993a1e60befba17e1261ba1ca/) and for [image preload](https://www.webpagetest.org/result/190710_7B_a99e792121760f81a270b4b9c847797b/). Looking at the raw numbers we see that [Start Render](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Quick%20Start%20Guide.md#start-render) stayed the same, [Speed Index](/speed-index/) slightly improved (273 ms, as images arrive faster, but don't take up a huge chunk of the pixel area), but the real metric which captures the difference is the [Last Painted Hero](https://github.com/WPO-Foundation/webpagetest/blob/master/docs/Metrics/HeroElements.md) metric, which improved by 1.2 seconds. 🎉🎉
 
 Of course, nothing captures the visual difference quite like a filmstrip comparison:
 <figure class="w-figure">

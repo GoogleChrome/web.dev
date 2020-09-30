@@ -22,6 +22,10 @@ $W_FAB_LARGE_RADIUS: 28px;
   z-index: 100;
 }
 
+.w-actions > * {
+  margin-top: 20px;
+}
+
 .w-actions__fab {
   align-items: center;
   background-color: $WEB_PRIMARY_COLOR;
@@ -92,10 +96,6 @@ $W_FAB_LARGE_RADIUS: 28px;
   @include w-overlay();
 }
 
-.w-actions__fab * {
-  pointer-events: none;
-}
-
 .w-actions__fab:hover::after {
   background-color: rgba($WHITE, .08);
 }
@@ -106,10 +106,6 @@ $W_FAB_LARGE_RADIUS: 28px;
 
 .w-actions__fab:active::after {
   background-color: rgba($WHITE, .32);
-}
-
-.w-actions__fab + .w-actions__fab {
-  margin-top: 20px;
 }
 
 // FAB variations

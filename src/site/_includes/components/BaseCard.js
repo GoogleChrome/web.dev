@@ -16,11 +16,10 @@
 
 const path = require('path');
 const {html} = require('common-tags');
-const stripLanguage = require('../../_filters/strip-language');
 const md = require('../../_filters/md');
 const constants = require('../../_utils/constants');
 const getSrcsetRange = require('../../_utils/get-srcset-range');
-const postTags = require('../../_data/postTags');
+const tagsCollection = require('../../_collections/tags')();
 
 const AuthorsDate = require('./AuthorsDate');
 
@@ -39,12 +38,12 @@ class BaseCard {
     this.collectionItem.data = this.collectionItem.data || {};
     this.featured = featured;
     this.className = className;
-    this.url = stripLanguage(this.collectionItem.url);
+    this.url = this.collectionItem.data.canonicalUrl;
     this.data = this.collectionItem.data;
     this.displayedTags = [];
 
     for (const tag of this.data.tags || []) {
-      const foundTag = postTags[tag.toLowerCase()];
+      const foundTag = tagsCollection[tag.toLowerCase()];
       if (foundTag) {
         this.displayedTags.push(foundTag);
       }
@@ -60,24 +59,25 @@ class BaseCard {
   }
 
   isDraft() {
-    if (this.data.draft) {
-      return 'w-card--draft';
-    }
+    return this.data.draft ? 'w-card--draft' : '';
   }
 
   renderThumbnail(url, img, alt) {
-    const imagePath = path.join(url, img);
+    const imagePath = path.isAbsolute(img) ? img : path.join(url, img);
+
     const srcsetRange = getSrcsetRange(240, 768);
 
     return html`
       <figure class="w-card-base__figure">
         <img
           class="w-card-base__image"
-          srcset="${srcsetRange.map(
-            (width) => html`
-              ${imagePath}?auto=format&fit=max&w=${width} ${width}w,
-            `,
-          )}"
+          srcset="
+            ${srcsetRange.map(
+              (width) => html`
+                ${imagePath}?auto=format&fit=max&w=${width} ${width}w,
+              `,
+            )}
+          "
           src="${imagePath}"
           alt="${alt}"
           width="100%"
@@ -130,7 +130,7 @@ class BaseCard {
         >
           <div
             class="w-card-base__cover ${this.thumbnail &&
-              `w-card-base__cover--with-image`}"
+              'w-card-base__cover--with-image'}"
           >
             <a
               class="w-card-base__link"
@@ -146,8 +146,8 @@ class BaseCard {
             <a class="w-card-base__link" href="${this.url}">
               <h2
                 class="${this.thumbnail
-                  ? `w-card-base__headline--with-image`
-                  : `w-card-base__headline`}"
+                  ? 'w-card-base__headline--with-image'
+                  : 'w-card-base__headline'}"
               >
                 ${md(this.data.title)}
               </h2>

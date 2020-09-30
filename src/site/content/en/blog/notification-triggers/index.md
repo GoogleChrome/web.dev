@@ -9,19 +9,20 @@ description:
   The Notification Triggers API allows developers to schedule local notifications that don't require
   a network connection, which makes them ideal for use cases like calendar apps.
 date: 2019-10-24
-updated: 2020-03-12
+updated: 2020-09-28
 hero: hero.jpg
 hero_position: center
 tags:
   - blog
   - capabilities
-  - fugu
-  - origin-trial
+  - origin-trials
   - notification-triggers
+feedback:
+  - api
 ---
 
 {% Aside %}
-  The Notification Triggers API, part of Google's
+  The development of Notification Triggers API, part of Google's
   [capabilities project](https://developers.google.com/web/updates/capabilities),
   is currently in development. This post will be updated as the
   implementation progresses.
@@ -66,13 +67,13 @@ alarms for telephone conferences or video calls.
 
 ## Current status {: #status }
 
-| Step                                     | Status                   |
-| ---------------------------------------- | ------------------------ |
-| 1. Create explainer                      | [Complete][explainer]    |
-| 2. Create initial draft of specification | Not started              |
-| 3. Gather feedback and iterate on design | [In progress](#feedback) |
-| **4. Origin trial**                      | **[In Progress][ot]**    |
-| 5. Launch                                | Not started              |
+| Step                                         | Status                       |
+| -------------------------------------------- | ---------------------------- |
+| 1. Create explainer                          | [Complete][explainer]        |
+| 2. Create initial draft of specification     | Not started                  |
+| 3. Gather feedback and iterate on design.    | [In progress](#feedback)     |
+| **4. Origin trial**                          | **[In progress][ot]**        |
+| 5. Launch                                    | Not started                  |
 
 ## How to use notification triggers {: #use }
 
@@ -83,11 +84,22 @@ To experiment with the Notification Triggers API locally, without an origin tria
 
 ### Enabling support during the origin trial phase
 
-Starting in Chrome 80, the Notification Triggers API will be available as an origin trial.
+Starting in Chrome&nbsp;86, the Notification Triggers API will be available
+as an origin trial in Chrome. The origin trial is expected to end in
+Chrome&nbsp;88 (February&nbsp;24, 2021).
+
+{% Aside %}
+  An earlier origin trial for the feature, which gave developers a first chance
+  to try out the proposed API, ran from Chrome&nbsp;80 to&nbsp;83.
+  You can read the summary of the
+  [feedback obtained](https://docs.google.com/document/d/1Nl1emEqxjTzPLNIAPiS26Vtq3mBdNyCxfMY6QwaD45s/edit)
+  so far.
+{% endAside %}
 
 {% include 'content/origin-trials.njk' %}
 
-Once you're registered,
+### Register for the origin trial {: #register-for-ot }
+
 {% include 'content/origin-trial-register.njk' %}
 
 ### Feature detection
@@ -257,5 +269,5 @@ Richard and Peter. [Hero image](https://unsplash.com/photos/UAvYasdkzq8) by
 [cr-status]: https://www.chromestatus.com/feature/5133150283890688
 [explainer]: https://github.com/beverloo/notification-triggers/blob/master/README.md
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
-[ot]: https://developers.chrome.com/origintrials/
+[ot]: https://developers.chrome.com/origintrials/#/view_trial/6883752030435803137
 [devtools]: https://developers.google.com/web/updates/2019/07/devtools#backgroundservices

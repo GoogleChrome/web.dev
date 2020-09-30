@@ -1,15 +1,17 @@
 ---
 layout: post
-title: How to distribute Signed HTTP Exchanges (SXG)
-subhead: How to get and serve SXG files, and the challenges of subresource prefetching.
+title: How to distribute Signed HTTP Exchanges (SXG) using nginx
+subhead: How to get and serve SXG files using nginx, and the challenges of subresource prefetching.
 authors:
   - kumagi
 date: 2020-03-11
-description: How to get and serve SXG files, and the challenges of subresource prefetching.
+description: How to get and serve SXG files using nginx, and the challenges of subresource prefetching.
 tags:
   - blog
   - SXG
   - nginx
+feedback:
+  - api
 ---
 
 As a [Signed HTTP Exchanges (SXG)](https://developers.google.com/web/updates/2018/11/signed-exchanges) distributor, you can deliver SXG files on behalf of the original content creators. Web browsers that support SXG will display such SXG files as if they were delivered from the original content creators. This enables you to implement cross-site preloading without violating privacy. This guide shows you how to distribute SXG properly.

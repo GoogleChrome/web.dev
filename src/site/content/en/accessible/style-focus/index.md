@@ -35,13 +35,11 @@ div[tabindex="0"]:focus {
 Regardless of whether you use a mouse to click on it or a keyboard to tab to it,
 the `<div>` will _always_ look the same.
 
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/focus-style?path=index.html&previewSize=100&attributionHidden=true"
-    alt="focus-visible on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'focus-style',
+  path: 'index.html',
+  height: 346
+} %}
 
 Unfortunately browsers can be inconsistent with how they apply focus. Whether or
 not an element receives focus may depend on the browser and the operating
@@ -61,13 +59,11 @@ its custom focus style. However, you will not see the custom focus style if you
 click on the `<button>` in Firefox or Safari on macOS. This is because in
 Firefox and Safari the element does not receive focus when you click on it.
 
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/focus-style2?path=index.html&previewSize=100&attributionHidden=true"
-    alt="focus-visible on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'focus-style2',
+  path: 'index.html',
+  height: 346
+} %}
 
 {% Aside %}
 See the
@@ -82,7 +78,7 @@ on different devices to ensure your focus styles are acceptable to your users.
 ## Use `:focus-visible` to selectively show a focus indicator
 
 The new
-[`:focus-visible`]([https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible))
+[`:focus-visible`](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible)
 pseudo-class is applied any time that an element receives focus and the 
 browser determines via heuristics that displaying a focus indicator would be 
 beneficial to the user. In particular, if the most recent user interaction 
@@ -105,13 +101,11 @@ button:focus-visible {
 }  
 ```
 
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/focus-visible-style?path=index.html&previewSize=100&attributionHidden=true"
-    alt="focus-visible on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'focus-visible-style',
+  path: 'index.html',
+  height: 346
+} %}
 
 ## Use `:focus-within` to style the parent of a focused element
 
@@ -131,13 +125,11 @@ form:focus-within {
 }
 ```
 
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/focus-within-style?path=index.html&previewSize=100&attributionHidden=true"
-    alt="focus-visible on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'focus-within-style',
+  path: 'index.html',
+  height: 346
+} %}
 
 ## When to display a focus indicator
 
@@ -197,10 +189,8 @@ the polyfill to change the focus indicator on a button.
 }  
 ```
 
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/focus-visible?path=index.html&previewSize=100&attributionHidden=true"
-    alt="focus-visible on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'focus-visible',
+  path: 'index.html',
+  height: 346
+} %}

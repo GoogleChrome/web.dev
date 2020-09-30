@@ -23,7 +23,7 @@
 import {store} from '../../store';
 import {expandSideNav} from '../../actions';
 
-class Header extends HTMLElement {
+export class Header extends HTMLElement {
   constructor() {
     super();
 
@@ -31,6 +31,7 @@ class Header extends HTMLElement {
   }
 
   connectedCallback() {
+    /** @type HTMLButtonElement */
     this.hamburgerBtn = this.querySelector('.web-header__hamburger-btn');
     this.hamburgerBtn.classList.remove('unresolved');
     this.hamburgerBtn.addEventListener('click', expandSideNav);

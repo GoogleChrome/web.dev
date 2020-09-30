@@ -56,12 +56,10 @@ access the list of files from `event.target.files`, which is a
 This example lets a user select multiple files using their operating system's
 built-in file selection UI and then logs each selected file to the console.
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe src="https://glitch.com/embed/#!/embed/input-type-file?previewSize=100"
-          alt="How to select local files and read file metadata with JavaScript."
-          style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'input-type-file',
+  height: 480
+} %}
 
 #### Limit the types of files user can select {: #accept }
 
@@ -155,12 +153,12 @@ drop zone. When the drop event is fired, it will include a `File` object for
 the directory, but will be unable to access any of the files within the
 directory.
 
-In the future, the Native File System API provides an easy way to both read
+In the future, the File System Access API provides an easy way to both read
 and write to files and directories on the user's local system. It's currently
 under development and only available as an origin trial in Chrome. To learn
-more about it, see the [Native File System API][native-file-system] article.
+more about it, see the [File System Access API][file-system-access] article.
 
-Since the Native File System API is not compatible with all browsers yet,
+Since the File System Access API is not compatible with all browsers yet,
 check out [browser-nativefs](https://github.com/GoogleChromeLabs/browser-nativefs),
 a helper library that uses the new API wherever it is available, but falls
 back to legacy approaches when it is not.
@@ -217,12 +215,10 @@ data URL, and uses that data URL to display the image in an `img` element.
 Check out the [`read-image-file`][glitch-read-image] Glitch to see how to
 verify that the user has selected an image file.
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe src="https://glitch.com/embed/#!/embed/read-image-file?previewSize=100"
-          alt="How to read the content of an image file in JavaScript."
-          style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'read-image-file',
+  height: 480
+} %}
 
 ### Monitor the progress of a file read {: #monitor-progress }
 
@@ -258,7 +254,7 @@ Hero image by Vincent Botta from [Unsplash](https://unsplash.com/photos/bv_rJXpN
 [mdn-file]: https://developer.mozilla.org/en-US/docs/Web/API/File
 [mdn-dragover]: https://developer.mozilla.org/en-US/docs/Web/API/Document/dragover_event
 [mdn-drop]: https://developer.mozilla.org/en-US/docs/Web/API/Document/drop_event
-[native-file-system]: /native-file-system/
+[file-system-access]: /file-system-access/
 [mdn-filereader]: https://developer.mozilla.org/en-US/docs/Web/API/FileReader
 [mdn-filereader-as-buffer]: https://developer.mozilla.org/docs/Web/API/FileReader/readAsArrayBuffer
 [mdn-filereader-as-dataurl]: https://developer.mozilla.org/docs/Web/API/FileReader/readAsDataURL

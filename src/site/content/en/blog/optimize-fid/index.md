@@ -56,51 +56,107 @@ compiles, and executes on your web page will directly reduce FID.
 The browser cannot respond to most user input while it's executing JavaScript on the main thread. In other words, the
 browser can't respond to user interactions while the main thread is busy. To improve this:
 
-* [Reduce JavaScript execution time](#reduce-javascript-execution)
 * [Break up Long Tasks](#long-tasks)
 * [Optimize your page for interaction readiness](#optimize-interaction-readiness)
 * [Use a web worker](#web-worker)
+* [Reduce JavaScript execution time](#reduce-javascript-execution)
+
+## Break up Long Tasks {: #long-tasks }
+
+If you've already attempted to reduce the amount of JavaScript that loads on a single page, it can
+be useful to break down long-running code  into **smaller, asynchronous tasks**. 
+
+[**Long Tasks**](/custom-metrics/#long-tasks-api) are JavaScript execution periods where users may
+find your UI unresponsive. Any piece of code that blocks the main thread for 50 ms or more can be
+characterized as a Long Task. Long Tasks are a sign of
+potential JavaScript bloat (loading and executing more than a user may need right now).  
+Splitting up long tasks can reduce input delay on your site. 
+
+<figure class="w-figure">
+  <img class="w-screenshot" src="./long-task.png" alt="Long Tasks in Chrome DevTools">
+  <figcaption class="w-figcaption">Chrome DevTools <a href="https://developers.google.com/web/updates/2020/03/devtools#long-tasks">visualizes Long Tasks</a> in the Performance Panel</figcaption>
+</figure>
+
+FID should improve noticeably as you adopt best practices like code-splitting and breaking up your
+Long Tasks. While TBT is not a field metric, it's useful for checking progress towards ultimately
+improving both Time To Interactive (TTI) and FID.
+
+{% Aside %}
+For more information, take a look at [Are long JavaScript tasks delaying your Time to
+Interactive?](/long-tasks-devtools/).
+{% endAside %}
+
+## Optimize your page for interaction readiness 
+
+There are a number of common causes for poor FID and TBT scores in web apps that rely heavily on
+JavaScript:
+
+### First-party script execution can delay interaction readiness
+
++   JavaScript size bloat, heavy execution times and inefficient chunking can slow down how soon a
+    page can respond to user input and impact FID, TBT, and TTI. Progressive loading of code and
+    features can help spread this work out and improve interaction readiness.
++   Server-side rendered apps may look like they're getting pixels painted on the screen
+    quickly, but beware of user interactions being blocked by large script executions (e.g.
+    re-hydration to wire up event listeners). This can take several hundred milliseconds, sometimes
+    even seconds, if route-based code splitting is being used. Consider shifting more logic
+    server-side or generating more content statically during build time.
+
+Below are the TBT scores before and after optimizing first-party script loading for an
+application. By moving costly script loading (and execution) for a non-essential component off the
+critical path, users were able to interact with the page much sooner.
+
+<img class="w-screenshot" src="tbt-before-after-first-party.png" 
+     alt="Improvements in TBT score in Lighthouse after optimizing the first-party script.">
+
+### Data-fetching can impact many aspects of interaction readiness
+
++   Waiting on a waterfall of cascading fetches (e.g. JavaScript and data fetches for components) can
+    impact interaction latency. Aim to minimize a reliance on cascading data fetches.
++   Large inline datastores can push out HTML parsing time and impact both paint and interaction
+    metrics. Aim to minimize how much data needs to be post-processed on the client-side.
+
+### Third-party script execution can delay interaction latency too
+
++   Many sites include third-party tags and analytics which can keep the network busy and
+    make the main thread periodically unresponsive, impacting interaction latency. Explore
+    on-demand loading of third-party code (e.g. maybe don't load those below-the-fold ads until
+    they're scrolled closer to the viewport).
++   In some cases, third-party scripts can pre-empt first-party ones in terms of priority and
+    bandwidth on the main thread, also delaying how soon a page is interaction-ready. Attempt to
+    prioritize loading what you believe offers the greatest value to users first.
+
+## Use a web worker
+
+A blocked main thread is one of the main causes of input delay. [Web
+workers](https://developer.mozilla.org/en-US/docs/Web/API/Worker) make it possible to run JavaScript
+on a background thread. Moving non-UI operations to a separate worker thread can cut down main
+thread blocking time and consequently improve FID.
+
+Consider using the following libraries to make it easier to use web workers on your site:
+
++   [Comlink](https://github.com/GoogleChromeLabs/comlink): A helper library that abstracts
+    `postMessage` and makes it easier to use
++   [Workway](https://github.com/WebReflection/workway): A general purpose web worker exporter
++   [Workerize](https://github.com/developit/workerize): Move a module into a web worker
+
+{% Aside %}
+To learn more about how web workers can execute code off the main thread, refer to [Use Web Workers
+to run JavaScript off the browser's main thread](/off-main-thread/).
+{% endAside %}
 
 ### Reduce JavaScript execution time {: #reduce-javascript-execution }
 
 Limiting the amount of JavaScript on your page reduces the amount of time that the browser needs to
-spend parsing, compiling, and executing JavaScript code. This speeds up how fast the browser can
-begin to respond to any user interactions.
+spend executing JavaScript code. This speeds up how fast the browser can begin to respond to any
+user interactions.
 
 To reduce the amount of JavaScript executed on your page:
 
-+   Minify and compress JavaScript files
 +   Defer unused JavaScript
 +   Minimize unused polyfills
 
-In addition to minimizing JavaScript, [breaking up long-running code into smaller tasks](#long-tasks) can allow the
-browser to run input handlers sooner, which can improve FID.
-
-### Minify and compress JavaScript files
-
-JavaScript can contain characters that are unnecessary for browsers but makes things easier to read
-during development. This includes spacing, indentation, comments, and long variable names.
-
-[Terser](https://github.com/terser/terser) supports ES6+ syntax, and can be used to minify modern
-JavaScript files without the need to transpile them. If you use a module bundler and want to include
-Terser in your toolchain:
-
-+   webpack and Parcel already minify using Terser by default in `production` mode
-+   If you use Rollup, include
-    [rollup-plugin-terser](https://www.npmjs.com/package/rollup-plugin-terser) as an output plugin
-
-In addition to minification, compress your JavaScript resources to minimize their delivery size. If
-possible, use
-[Brotli](https://opensource.googleblog.com/2015/09/introducing-brotli-new-compression.html) which
-provides better compression results than
-[Gzip](https://www.youtube.com/watch?v=whGwm0Lky2s&feature=youtu.be&t=14m11s) and [can be used in
-almost all newer browsers](https://caniuse.com/#feat=brotli).
-
-{% Aside %}
-For more details, refer to the [Minify and compress network payloads](/reduce-network-payloads-using-text-compression/) guide.
-{% endAside %}
-
-### Defer unused JavaScript
+#### Defer unused JavaScript
 
 By default all JavaScript is render-blocking. When the browser encounters a script tag that links to
 an external JavaScript file, it must pause what it's doing and download, parse, compile, and execute
@@ -163,7 +219,7 @@ critical-path or above-the-fold content.
 Unless there is a specific reason not to, all third-party scripts should be loaded with either `defer`	
 or `async` by default.
 
-### Minimize unused polyfills	
+#### Minimize unused polyfills	
 
 If you author your code using modern JavaScript syntax and reference modern browsers APIs, you will	
 need to transpile it and include polyfills in order for it to work in older browsers.	
@@ -197,90 +253,6 @@ The [Serve modern code to modern browsers for faster page
 loads](/serve-modern-code-to-modern-browsers/) guide goes into more detail about this topic.
 {% endAside %}
 
-## Break up Long Tasks {: #long-tasks }
-
-If you've already attempted to reduce the amount of JavaScript that loads on a single page, it can
-be useful to break down long-running code  into **smaller, asynchronous tasks**. 
-
-[**Long Tasks**](/custom-metrics/#long-tasks-api) are JavaScript execution periods where users may
-find your UI unresponsive. Any piece of code that blocks the main thread for 50 ms or more can be
-characterized as a Long Task. Long Tasks are a sign of
-potential JavaScript bloat (loading and executing more than a user may need right now).  
-Splitting up long tasks can reduce input delay on your site. 
-
-<figure class="w-figure">
-  <img class="w-screenshot" src="./long-task.png" alt="Long Tasks in Chrome DevTools">
-  <figcaption class="w-figcaption">Chrome DevTools <a href="https://developers.google.com/web/updates/2020/03/devtools#long-tasks">visualizes Long Tasks</a> in the Performance Panel</figcaption>
-</figure>
-
-FID should improve noticeably as you adopt best practices like code-splitting and breaking up your
-Long Tasks. While TBT is not a field metric, it's useful for checking progress towards ultimately
-improving both Time To Interactive (TTI) and FID.
-
-{% Aside %}
-For more information, take a look at [Are long JavaScript tasks delaying your Time to
-Interactive?](/long-tasks-devtools/) guide goes into more detail about this topic.
-{% endAside %}
-
-## Optimize your page for interaction readiness 
-
-There are a number of common causes for poor FID and TBT scores in web apps that rely heavily on
-JavaScript:
-
-### First-party script execution can delay interaction readiness
-
-+   JS size bloat, heavy execution times and inefficient chunking can slow down how soon a
-    page can respond to user input and impact FID, TBT and TTI. Progressive loading of code and
-    features can help spread this work out and improve interaction readiness.
-+   Server-side rendered apps may look like they're getting pixels painted on the screen
-    quickly, but beware of user interactions being blocked by large script executions (e.g
-    re-hydration to wire up event listeners). This can take several hundred milliseconds, sometimes
-    even seconds, if route-based code splitting is being used. Consider shifting more logic
-    server-side or generating more content statically during build time.
-
-Below are the TBT scores before and after optimizing first-party script loading for an
-application. By moving costly script loading (and execution) for a non-essential component off the
-critical path, users were able to interact with the page much sooner.
-
-<img class="w-screenshot" src="tbt-before-after-first-party.png" 
-     alt="Improvements in TBT score in Lighthouse after optimizing the first-party script.">
-
-### Data-fetching can impact many aspects of interaction readiness
-
-+   Waiting on a waterfall of cascading fetches (e.g. JS and data fetches for components) can
-    impact interaction latency. Aim to minimize a reliance on cascading data fetches.
-+   Large inline datastores can push out HTML parsing time and impact both paint and interaction
-    metrics. Aim to minimize how much data needs to be post-processed on the client-side.
-
-### Third-party script execution can delay interaction latency too
-
-+   Many sites include third-party tags and analytics which can keep the network busy and
-    make the main thread periodically unresponsive, impacting interaction latency. Explore
-    on-demand loading of third-party code (e.g. maybe don't load those below-the-fold ads until
-    they're scrolled closer to the viewport).
-+   In some cases, third-party scripts can pre-empt first-party ones in terms of priority and
-    bandwidth on the main thread, also delaying how soon a page is interaction-ready. Attempt to
-    prioritize loading what you believe offers the greatest value to users first.
-
-## Use a web worker
-
-A blocked main thread is one of the main causes of input delay. [Web
-workers](https://developer.mozilla.org/en-US/docs/Web/API/Worker) make it possible to run JavaScript
-on a background thread. Moving non-UI operations to a separate worker thread can cut down main
-thread blocking time and consequently improve FID.
-
-Consider using the following libraries to make it easier to use web workers on your site:
-
-+   [Comlink](https://github.com/GoogleChromeLabs/comlink): A helper library that abstracts
-    ``postMessage`` and makes it easier to use
-+   [Workway](https://github.com/WebReflection/workway): A general purpose web worker exporter
-+   [Workerize](https://github.com/developit/workerize): Move a module into a web worker
-
-{% Aside %}
-To learn more about how web workers can execute code off the main thread, refer to [Use Web Workers
-to run JavaScript off the browser's main thread](/off-main-thread/).
-{% endAside %}
-
 ## Developer tools
 
 A number of tools are available to measure and debug FID:
@@ -293,6 +265,6 @@ A number of tools are available to measure and debug FID:
     <img class="w-screenshot" src="lighthouse.jpg" alt="Lighthouse 6.0.">
 
 +   [Chrome User Experience Report](https://developers.google.com/web/tools/chrome-user-experience-report)
-    provides real-world LCP values aggregated at the origin-level
+    provides real-world FID values aggregated at the origin-level
 
-_With thanks to Philip Walton, Kayce Basques, and Ilya Grigorik for their reviews._
+_With thanks to Philip Walton, Kayce Basques, Ilya Grigorik, and Annie Sullivan for their reviews._

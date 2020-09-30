@@ -9,6 +9,8 @@ description: |
 glitch: responsive-images-multiple-sizes
 date: 2018-11-05
 related_post: serve-responsive-images
+tags:
+  - performance
 ---
 
 ## Try out this demo

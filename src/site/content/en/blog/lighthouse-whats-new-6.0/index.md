@@ -313,7 +313,7 @@ audit verifies the page has a valid character encoding and it's defined early an
 At [CDS last November](https://web.dev/lighthouse-evolution-cds-2019/#lighthouse-ci-alpha-release)
 we announced [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci), the open source Node
 CLI and server that tracks Lighthouse results on every commit in your continuous integration
-pipeline, and we've come a long way since the alpha release. Lighthouse CI now has native support
+pipeline, and we've come a long way since the alpha release. Lighthouse CI now has support
 for numerous CI providers including Travis, Circle, GitLab, and Github Actions. Ready-to-deploy
 [docker images](https://github.com/GoogleChrome/lighthouse-ci/tree/master/docs/recipes) make setup a
 breeze, and a comprehensive dashboard redesign now reveals trends across every category and metric

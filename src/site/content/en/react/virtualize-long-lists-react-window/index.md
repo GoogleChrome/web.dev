@@ -10,6 +10,8 @@ description: |
 authors:
   - houssein
   - developit
+feedback:
+  - api
 ---
 
 [`react-window`](https://react-window.now.sh/#/examples/list/fixed-size) is a
@@ -18,13 +20,11 @@ library that allows large lists to be rendered efficiently.
 Here's an example of a list that contains 1000 rows being rendered with
 `react-window`. Try scrolling as fast you can.
 
-<div class="glitch-embed-wrap" style="height: 750px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/react-window-fixed?path=src/App.js&previewSize=100"
-    alt="react-window-fixed on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'react-window-fixed',
+  path: 'src/App.js',
+  height: 750
+} %}
 
 ## Why is this useful?
 
@@ -143,14 +143,11 @@ export default ListComponent;
 
 The following embed shows an example of this component.
 
-<div class="glitch-embed-wrap" style="height: 750px; width: 100%;">
-  <iframe
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/react-window-variable?path=src/ListComponent.js&previewSize=100"
-    alt="react-window-variable on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'react-window-variable',
+  path: 'src/ListComponent.js',
+  height: 750
+} %}
 
 The item size function passed to the `itemSize` prop randomizes the row heights
 in this example. In a real application however, there should be actual logic
@@ -324,13 +321,11 @@ passed in.
 The following is an example of how infinite loading can work with a virtualized
 list.
 
-<div class="glitch-embed-wrap" style="height: 750px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/react-window-infinite?path=src/ListComponent.js&previewSize=100"
-    alt="react-window-infinite on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'react-window-infinite',
+  path: 'src/ListComponent.js',
+  height: 750
+} %}
 
 Scrolling down the list might feel the same, but a request is now made to
 retrieve 10 users from a [random user API](https://randomuser.me/) everytime you

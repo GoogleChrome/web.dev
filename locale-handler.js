@@ -55,16 +55,16 @@ module.exports = (req, res, next) => {
   } else {
     const langInCookie = locale.isSupportedLocale(req.cookies.preferred_lang);
     // If language not in url, use accept-language header.
-    lang =
-      langInCookie ||
-      req.acceptsLanguages(locale.supportedLocales) ||
-      locale.defaultLocale;
+    lang = langInCookie
+      ? req.cookies.preferred_lang
+      : req.acceptsLanguages(locale.supportedLocales) || locale.defaultLocale;
     filePath = path.join(normalizedPath, fileType);
   }
 
   if (lang === locale.defaultLocale) {
-    // If this is alread default language, continue.
-    return next();
+    // Redirect to a canonical url, if needed.
+    const shouldRedirect = isLangInPath && !isJson;
+    return shouldRedirect ? res.redirect(path.join('/', filePath)) : next();
   }
 
   const localizedFilePath = path.join(
@@ -77,6 +77,6 @@ module.exports = (req, res, next) => {
   if (fs.existsSync(localizedFilePath)) {
     return isLangInPath ? next() : res.redirect(path.join('/', lang, filePath));
   } else {
-    return res.redirect(path.join('/', locale.defaultLocale, filePath));
+    return isLangInPath ? res.redirect(path.join('/', filePath)) : next();
   }
 };

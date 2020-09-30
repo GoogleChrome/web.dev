@@ -7,7 +7,7 @@ description: |
 web_lighthouse:
   - password-inputs-can-be-pasted-into
 date: 2019-05-02
-updated: 2019-08-28
+updated: 2020-06-04
 ---
 
 Some websites claim that allowing users to paste passwords reduces security.
@@ -45,7 +45,7 @@ Lighthouse doesn't detect that scenario, either.
 
 To quickly find and inspect the code that's preventing pasting:
 {% Instruction 'devtools-sources', 'ol' %}
-1. Expand the **Event Listener Breakpoints** pane.
+1. Expand the [**Event Listener Breakpoints**](https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints#event-listeners) pane.
 1. Expand the **Clipboard** list.
 1. Select the **`paste`** checkbox.
 1. Paste some text into a password field on your page.

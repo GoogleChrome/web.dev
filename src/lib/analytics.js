@@ -1,3 +1,4 @@
+import {getCLS, getFID, getLCP} from 'web-vitals';
 import {dimensions} from 'webdev_analytics';
 import {store} from './store';
 
@@ -25,7 +26,7 @@ function getAnalyticsDataFromElement(elem, defaultAction = 'click') {
 }
 
 /**
- * @param {{ category: string, action: string, label: string, value: number }} param
+ * @param {{ category?: string, action?: string, label?: string, value?: number }} param
  */
 export function trackEvent({category, action, label, value}) {
   ga('send', 'event', {
@@ -39,7 +40,7 @@ export function trackEvent({category, action, label, value}) {
 /**
  * Track an error via Analytics with optional context message and fatal notice.
  *
- * @param {!Error} error to log
+ * @param {Error} error to log
  * @param {string=} message context to provide around error message
  * @param {boolean=} fatal whether this is fatal (as per Analytics' logging)
  */
@@ -54,24 +55,54 @@ export function trackError(error, message = '', fatal = false) {
 }
 
 /**
+ * See: https://github.com/GoogleChrome/web-vitals#using-analyticsjs
+ * @param {Object} metric
+ */
+function sendToGoogleAnalytics({name, delta, id}) {
+  // Assumes the global `ga()` function exists, see:
+  // https://developers.google.com/analytics/devguides/collection/analyticsjs
+  ga('send', 'event', {
+    eventCategory: 'Web Vitals',
+    eventAction: name,
+    // Google Analytics metrics must be integers, so the value is rounded.
+    // For CLS the value is first multiplied by 1000 for greater precision
+    // (note: increase the multiplier for greater precision if needed).
+    eventValue: Math.round(name === 'CLS' ? delta * 1000 : delta),
+    // The `id` value will be unique to the current page load. When sending
+    // multiple values from the same page (e.g. for CLS), Google Analytics can
+    // compute a total by grouping on this ID (note: requires `eventLabel` to
+    // be a dimension in your report).
+    eventLabel: id,
+    // Use a non-interaction event to avoid affecting bounce rate.
+    nonInteraction: true,
+  });
+}
+
+/**
  * Configure tracking events for any clicks on a link (`<a href="...">`)
  * or another trackable element (class="gc-analytics-event"), searching
  * for (requiring at least `data-category`, but also allowing
  * `data-action`, `data-label` and `data-value`.
  */
-document.addEventListener('click', (e) => {
-  const clickableEl = e.target.closest('a[href], .gc-analytics-event');
-  if (!clickableEl) {
-    return;
-  }
+document.addEventListener(
+  'click',
+  /**
+   * @param {WMouseEvent} e
+   */
+  (e) => {
+    const clickableEl = e.target.closest('a[href], .gc-analytics-event');
+    if (!clickableEl) {
+      return;
+    }
 
-  const data = getAnalyticsDataFromElement(clickableEl);
-  if (!data.category) {
-    return; // category is required
-  }
+    const data = getAnalyticsDataFromElement(clickableEl);
+    if (!data.category) {
+      return; // category is required
+    }
 
-  trackEvent(data);
-});
+    trackEvent(data);
+  },
+);
 
 // Update Analytics dimension if signed-in state changes. This doesn't cause a
 // new pageview implicitly but annotates all further events.
@@ -81,3 +112,7 @@ store.subscribe(({isSignedIn}) => {
   // nb. Analytics requires dimension values to be strings.
   ga('set', dimensions.SIGNED_IN, isSignedIn ? '1' : '0');
 });
+
+getCLS(sendToGoogleAnalytics);
+getFID(sendToGoogleAnalytics);
+getLCP(sendToGoogleAnalytics);

@@ -32,12 +32,11 @@ flags web apps whose start URL doesn't respond with a 200 when offline:
 
 ## How to ensure your page is available offline
 
+{% include 'content/reliable/workbox.njk' %}
+
 1. If you don't already have one, [add a web app manifest](/add-manifest/).
 1. Check that the `start_url` in your manifest is correct.
-1. Add a service worker to your app. [Workbox](/workbox/) is the recommended approach 
-   for adding service workers to websites because it automates a lot of boilerplate, makes 
-   it easier to follow best practices, and prevents subtle bugs that are common when using 
-   the low-level `ServiceWorker` API directly.
+1. Add a service worker to your app.
 1. Use the service worker to cache files locally.
 1. When offline, use the service worker as a network proxy to return the locally cached version of the file.
 

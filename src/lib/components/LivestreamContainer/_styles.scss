@@ -1,0 +1,96 @@
+@import '../../../styles/settings/colors';
+@import '../../../styles/settings/type';
+@import '../../../styles/tools/breakpoints';
+
+web-livestream-container {
+  display: flex;
+  margin: auto;
+  max-width: 1600px;
+  position: relative;
+  
+  .web-livestream-container__col-yt {
+    max-width: 100%;
+    align-items: center;
+    background-color: $GREY_50;
+    display: flex;
+    flex: 1;
+  }
+
+  .web-livestream-container__col-chat {
+    display: none;
+    
+    @include bp(md) {
+      border-left: 1px solid $GREY_300;
+      display: block;
+      min-height: 600px;
+      width: 400px;
+    }
+
+    @media (hover: none) {
+      display: none;
+    }
+  }
+
+  .w-youtube-chat {
+    height: 100%;
+    width: 100%;
+  }
+
+  .w-youtube-disabled-chat {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .w-youtube-disabled-chat__text {
+    max-width: 250px;
+    color: $GREY_700;
+  }
+
+  .w-youtube-disabled-chat__link {
+    display: block;
+    font-family: $HEADLINE_FONT;
+    font-weight: $FONT_WEIGHT_MEDIUM;
+    font-size: 14px;
+    margin-top: 16px;
+  }
+
+  .web-livestream-container__chat-toggle {
+    display: none;
+
+    @include bp(md) {
+      align-items: center;
+      appearance: none;
+      background: none;
+      border-radius: 1px;
+      border: none;
+      bottom: -48px;
+      color: $GREY_700;
+      cursor: pointer;
+      display: flex;
+      font-size: 12px;
+      height: 40px;
+      line-height: 20px;
+      padding: 8px;
+      position: absolute;
+      right: 0;
+      text-align: center;
+  
+      &:hover {
+        background-color: $GREY_300;
+      }
+    }
+
+    @media (hover: none) {
+      display: none;
+    }
+  }
+}
+
+web-livestream-container[chat-closed] {
+  .web-livestream-container__col-chat {
+    display: none;
+  }
+}

@@ -6,6 +6,8 @@ authors:
 description: |
   Learn how to minify CSS files, to improve performance, without affecting how the browser process the styles.
 date: 2019-05-02
+tags:
+  - performance
 ---
 
 CSS files can contain unnecessary characters, such as comments, whitespaces, and indentation.
@@ -93,14 +95,11 @@ Next, you'll add some webpack plugins to your build process to minify these file
 
 Before jumping into the optimizations, take some time understanding how build process for the [Fav Kitties site](https://glitch.com/edit/#!/fav-kitties-animated?path=webpack.config.js:1:0]) works:
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/fav-kitties-animated?path=webpack.config.js&previewSize=0"
-    alt="fav-kitties-animated on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'fav-kitties-animated',
+  path: 'webpack.config.js',
+  previewSize: 0
+} %}
 
 By default, the resulting JS bundle that webpack produces would contain the content of the CSS files inlined. Since we want to maintain separate CSS files, we are using two complementary plugins:
 
@@ -138,14 +137,11 @@ Then, pass an instance of the plugin to the **plugins** array:
 After making the changes a rebuild of the project will be triggered.
 This is how the resulting **webpack.config.js** will look like:
 
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/fav-kitties-animated-min?path=webpack.config.js&previewSize=0"
-    alt="fav-kitties-animated-min on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'fav-kitties-animated-min',
+  path: 'webpack.config.js',
+  previewSize: 0
+} %}
 
 Next, you'll check the result of this optimization with performance tools.
 

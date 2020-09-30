@@ -14,7 +14,6 @@ tags:
   - blog
   - performance
   - third-party
-  - fast
 ---
 
 Third-party JavaScript generally refers to scripts embedded in your website that are:

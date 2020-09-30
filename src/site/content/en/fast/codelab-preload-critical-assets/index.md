@@ -6,8 +6,11 @@ authors:
 description: |
   In this codelab, learn how to improve the performance of a page by preloading
   and prefetching resources.
-date: 2018-04-24
+date: 2019-04-24
 glitch: preload-critical-assets
+related_post: preload-critical-assets
+tags:
+  - performance
 ---
 
 {% include 'content/devtools-headsup.njk' %}

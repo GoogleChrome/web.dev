@@ -20,7 +20,7 @@ const {html} = require('common-tags');
 
 module.exports = ({author, id, showSocialMedia = false}) => {
   if (!author) {
-    throw new Error(`Can't generate AuthorInfo without author object`);
+    throw new Error('Can not generate AuthorInfo without author object');
   }
 
   function renderTwitter({twitter}) {
@@ -60,14 +60,23 @@ module.exports = ({author, id, showSocialMedia = false}) => {
   }
 
   function renderSocialMedia(author) {
-    return html`
-      <ul class="w-author__link-list">
-        ${author.twitter && renderTwitter(author)}
-        ${author.github && renderGitHub(author)}
-        ${author.glitch && renderGlitch(author)}
-        ${author.homepage && renderHomepage(author)}
-      </ul>
-    `;
+    // Check to see if the author has any social info. If they don't then we
+    // should skip rendering the list, otherwise a screen reader will announce
+    // "list with 0 items".
+    // It'd be nice if we had put all of these social accounts into a social
+    // object, but changing that now might be really annoying.
+    if (author.twitter || author.github || author.glitch || author.homepage) {
+      return html`
+        <ul class="w-author__link-list">
+          ${author.twitter && renderTwitter(author)}
+          ${author.github && renderGitHub(author)}
+          ${author.glitch && renderGlitch(author)}
+          ${author.homepage && renderHomepage(author)}
+        </ul>
+      `;
+    } else {
+      return html``;
+    }
   }
 
   /* eslint-disable max-len */

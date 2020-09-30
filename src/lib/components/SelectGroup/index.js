@@ -22,6 +22,9 @@ class SelectGroup extends BaseElement {
     super();
     this.idSalt = generateIdSalt('web-select-group-');
     this.selectors = null;
+    this.type = null;
+    this.prefix = null;
+    this.columns = false;
   }
 
   render() {

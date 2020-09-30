@@ -5,7 +5,7 @@ renderData:
     category: "{{ paged.title }}"
     icon: https://web.dev/images/social.png
     id: https://web.dev/
-    logo: https://web.dev/images/rss-banner.png
+    logo: https://web.dev/images/shared/rss-banner.png
     subtitle: "{{ paged.description }}"
     title: "{{ paged.title }} on web.dev"
     url: https://web.dev{{ paged.href }}feed.xml
@@ -15,6 +15,7 @@ pagination:
   data: collections.tags
   size: 1
   alias: paged
+  resolve: values
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
@@ -31,7 +32,8 @@ pagination:
   <logo>{{ renderData.metadata.logo }}</logo>
   <subtitle>{{ renderData.metadata.subtitle }}</subtitle>
   {% for post in paged.elements -%}
-  {% set absolutePostUrl -%}{{ post.url | stripLanguage | url | absoluteUrl(renderData.metadata.url) }}{%- endset %}
+  {#  absoluteUrl comes from 11ty RSS Plugin (@see https://www.11ty.dev/docs/plugins/rss/) #}
+  {% set absolutePostUrl -%}{{ post.data.canonicalUrl | url | absoluteUrl(renderData.metadata.url) }}{%- endset %}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
@@ -39,9 +41,9 @@ pagination:
     <id>{{ absolutePostUrl }}</id>
     <content type="html">{{ post.templateContent | replace("web-copy-code", "div") | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
     {% for entry in post.data.authors %}
-    {%- set author =  contributors[entry] -%}
+    {%- set author =  collections.authors[entry] -%}
     <author>
-      <name>{{ author.name.title }}</name>
+      <name>{{ author.title }}</name>
     </author>
     {%- endfor %}
   </entry>

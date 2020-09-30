@@ -34,24 +34,26 @@ export const metrics = [
     id: 'first-contentful-paint',
   },
   {
-    title: 'First Meaningful Paint',
-    id: 'first-meaningful-paint',
+    title: 'Time to Interactive',
+    id: 'interactive',
   },
   {
     title: 'Speed Index',
     id: 'speed-index',
   },
   {
-    title: 'First CPU Idle',
-    id: 'first-cpu-idle',
+    title: 'Total Blocking Time',
+    id: 'total-blocking-time',
   },
   {
-    title: 'Time to Interactive',
-    id: 'interactive',
+    title: 'Largest Contentful Paint',
+    id: 'largest-contentful-paint',
+    vitals: true,
   },
   {
-    title: 'Estimated Input Latency',
-    id: 'estimated-input-latency',
+    title: 'Cumulative Layout Shift',
+    id: 'cumulative-layout-shift',
+    vitals: true,
   },
 ];
 
@@ -62,39 +64,39 @@ export const metrics = [
 const CATEGORY_TO_IMPACT_MAPPING = {
   Accessibility: ({weight}) => {
     if (weight <= 4) {
-      return "Low";
+      return 'Low';
     }
     if (weight <= 7) {
-      return "Medium";
+      return 'Medium';
     }
-    return "High";
+    return 'High';
   },
-  "Best Practices": () => {
-    return "Medium";
+  'Best Practices': () => {
+    return 'Medium';
   },
   Performance: ({overallSavingsMs}) => {
     if (!overallSavingsMs) {
-      return "Low";
+      return 'Low';
     }
     if (overallSavingsMs <= 50) {
-      return "Low";
+      return 'Low';
     }
     if (overallSavingsMs <= 250) {
-      return "Medium";
+      return 'Medium';
     }
-    return "High";
+    return 'High';
   },
-  "Progressive Web App": ({weight}) => {
+  'Progressive Web App': ({weight}) => {
     if (weight <= 3) {
-      return "Low";
+      return 'Low';
     }
     if (weight <= 6) {
-      return "Medium";
+      return 'Medium';
     }
-    return "High";
+    return 'High';
   },
   SEO: () => {
-    return "Medium";
+    return 'Medium';
   },
 };
 
@@ -131,8 +133,8 @@ export function filterAuditResult(category) {
     return false;
   }
 
-  // Some performance audits (for example "First Contentful Paint") provide
-  // raw numbers. They do not actually contain "overallSavingsMs".
+  // Some performance audits (for example 'First Contentful Paint') provide
+  // raw numbers. They do not actually contain 'overallSavingsMs'.
   if (category.ref.cat === 'Performance') {
     if (!category.audit.details) {
       return false;

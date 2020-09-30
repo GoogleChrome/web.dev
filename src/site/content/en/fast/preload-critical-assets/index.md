@@ -10,10 +10,14 @@ description: |
   for any other external references. The critical request chain represents the
   order of resources that are prioritized and fetched by the browser.
 date: 2018-11-05
-updated: 2019-09-17
+updated: 2020-05-27
 codelabs:
   - codelab-preload-critical-assets
   - codelab-preload-web-fonts
+tags:
+  - performance
+feedback:
+  - api
 ---
 
 When you open a web page, the browser requests the HTML document from a server, parses its contents, and submits separate requests for any referenced resources. As a developer, you already know about all the resources your page needs and which of them are the most important. You can use that knowledge to request the critical resources ahead of time and speed up the loading process. This post explains how to achieve that with `<link rel="preload">`.
@@ -24,7 +28,7 @@ Preloading is best suited for resources typically discovered late by the browser
 
 <figure class="w-figure">
 <img src="./network-waterfall-before.png" alt="Screenshot of Chrome DevTools Network panel.">
-<figcaption class="w-figcaption">In this example, Pacifico font is defined in the stylesheet with a <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face)"><code>@font-face</code></a> rule. The browser loads the font file only after it has finished downloading and parsing the stylesheet.</figcaption>
+<figcaption class="w-figcaption">In this example, Pacifico font is defined in the stylesheet with a <a href="/reduce-webfont-size/#defining-a-font-family-with-@font-face)"><code>@font-face</code></a> rule. The browser loads the font file only after it has finished downloading and parsing the stylesheet.</figcaption>
 </figure>
 
 By preloading a certain resource, you are telling the browser that you would like to fetch it sooner than the browser would otherwise discover it because you are certain that it is important for the current page.
@@ -62,9 +66,16 @@ Unused preloads trigger a Console warning in Chrome, approximately 3 seconds aft
 
 ## Use cases
 
+{% Aside 'caution' %}
+At the time of writing, Chrome has an open
+[bug](https://bugs.chromium.org/p/chromium/issues/detail?id=788757) for preloaded requests that are
+fetched sooner than other higher priority resources. Until this is resolved, be wary of how
+preloaded resources can "jump the queue" and be requested sooner than they should.
+{% endAside %}
+
 ### Preloading resources defined in CSS
 
-Fonts defined with [`@font-face`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization#defining_a_font_family_with_font-face) rules or background images defined in CSS files aren't discovered until the browser downloads and parses those CSS files. Preloading these resources ensures they are fetched before the CSS files have downloaded.
+Fonts defined with [`@font-face`](/reduce-webfont-size/#defining-a-font-family-with-@font-face) rules or background images defined in CSS files aren't discovered until the browser downloads and parses those CSS files. Preloading these resources ensures they are fetched before the CSS files have downloaded.
 
 ### Preloading CSS files
 

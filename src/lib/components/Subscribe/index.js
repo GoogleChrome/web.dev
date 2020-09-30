@@ -3,7 +3,7 @@
  */
 
 import {BaseElement} from '../BaseElement';
-import {trackEvent} from '../../analytics';
+import {trackError, trackEvent} from '../../analytics';
 import './_styles.scss';
 
 /**
@@ -33,15 +33,19 @@ class Subscribe extends BaseElement {
 
   connectedCallback() {
     super.connectedCallback();
+    /** @type {HTMLFormElement} */
     this.form = this.querySelector('.w-subscribe__form');
+    /** @type HTMLElement */
     this.subscribeError = this.querySelector('.w-subscribe__error');
     this.subscribeMessage = this.querySelector('.w-subscribe__message');
     this.submissionUrl = this.form.action;
+    if (!this.submissionUrl) {
+      console.warn(`No submission URL found for subscribe element.`);
+    }
     this.form.addEventListener('submit', this.onSubmit);
   }
 
   detachedCallback() {
-    super.detachedCallback();
     this.form.removeEventListener('submit', this.onSubmit);
   }
 
@@ -50,7 +54,9 @@ class Subscribe extends BaseElement {
    * @return {FormData}
    */
   cleanForm(form) {
-    const doubleOptIn = this.needsDoubleOptIn.includes(form.get('Country'));
+    const doubleOptIn = this.needsDoubleOptIn.includes(
+      String(form.get('Country')),
+    );
     this.checkboxes.forEach((checkbox) =>
       form.set(checkbox, doubleOptIn ? 'Unconfirmed' : 'True'),
     );
@@ -65,15 +71,30 @@ class Subscribe extends BaseElement {
     }).then((r) => r.json());
   }
 
-  onError(errors) {
-    this.subscribeError.textContent = '';
-    if (errors) {
-      Object.values(errors).forEach((e) => {
-        const pTag = document.createElement('p');
-        pTag.textContent = typeof e === 'string' ? e : e.join(' ');
-        this.subscribeError.appendChild(pTag);
-      });
+  /**
+   *
+   * @param {Error} error
+   * @param {boolean} useDefault
+   */
+  onError(error, useDefault = false) {
+    if (!this.subscribeError) {
+      console.warn(
+        'Could not find area to display error in subscribe element.',
+      );
+      return;
     }
+
+    const pTag = document.createElement('p');
+    const defaultError = new Error('Could not submit, please try again.');
+    this.subscribeError.textContent = '';
+
+    pTag.textContent = useDefault
+      ? defaultError.message
+      : (error || defaultError).message;
+
+    this.subscribeError.appendChild(pTag);
+
+    trackError(error, 'Email form failed to submit because');
   }
 
   onSubmit(e) {
@@ -83,10 +104,10 @@ class Subscribe extends BaseElement {
     }
     this.processing = true;
     const form = new FormData(e.target);
-    const formIsRobot = form.get(this.robotName).length !== 0;
+    const formIsRobot = String(form.get(this.robotName)).length !== 0;
 
     if (formIsRobot) {
-      this.onSuccess();
+      this.onSuccess(true);
       return;
     }
     const cleanedForm = this.cleanForm(form);
@@ -96,21 +117,25 @@ class Subscribe extends BaseElement {
         if (response && response.result === 'accepted') {
           this.onSuccess();
         } else if (response && response.errors) {
-          this.onError(response.errors);
+          const errorMessage = Object.values(response.errors).join(' ');
+          this.onError(new Error(errorMessage));
         } else {
-          this.onError({any: ['Could not submit, please try again.']});
+          this.onError(new Error(response.result), true);
         }
       })
-      .catch(() => this.onError({any: ['Could not submit, please try again.']}))
+      .catch((e) => this.onError(e, true))
       .finally(() => (this.processing = false));
   }
 
-  onSuccess() {
+  onSuccess(isRobot = false) {
     this.submitted = true;
     this.subscribeError.textContent = '';
-    this.subscribeMessage.textContent = "Thank you! You're all signed up.";
+    this.subscribeMessage.textContent = `Thank you! You're all signed up.`;
     this.form.removeEventListener('submit', this.onSubmit);
     this.form.parentElement.removeChild(this.form);
+    if (isRobot) {
+      return;
+    }
     trackEvent({
       category: 'web.dev',
       action: 'submit',

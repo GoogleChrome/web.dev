@@ -7,10 +7,10 @@ description: |
 web_lighthouse:
   - service-worker
 date: 2019-05-04
-updated: 2019-09-19
+updated: 2020-06-10
 ---
 
-Registering a [service worker](https://developers.google.com/web/fundamentals/primers/service-workers)
+Registering a [service worker](/service-workers-cache-storage/)
 is the first step towards enabling key [Progressive Web App (PWA)](/discover-installable) features:
 
 - Works offline
@@ -18,6 +18,11 @@ is the first step towards enabling key [Progressive Web App (PWA)](/discover-ins
 - Can be installed to the device
 
 Learn more in the [Service workers and the Cache Storage API](/service-workers-cache-storage/) post.
+
+## Browser compatibility
+
+All major browsers except Internet Explorer support service workers. See
+[Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker#Browser_compatibility).
 
 ## How the Lighthouse service worker audit fails
 
@@ -34,6 +39,8 @@ returns a service worker version. If it doesn't, the audit fails.
 {% include 'content/lighthouse-pwa/scoring.njk' %}
 
 ## How to register a service worker
+
+{% include 'content/reliable/workbox.njk' %}
 
 Registering a service worker involves only a few lines of code,
 but the only reason you'd use a service worker

@@ -103,7 +103,7 @@ page.
 
 {% Aside 'note' %}
 Recommendations for other search engines are welcome.
-[Edit this page](https://github.com/google/WebFundamentals/tree/master/src/content/en/tools/lighthouse/audits/canonical.md).
+[Edit this page](https://github.com/GoogleChrome/web.dev/blob/master/src/site/content/en/lighthouse-seo/canonical/index.md).
 {% endAside %}
 
 ## Resources

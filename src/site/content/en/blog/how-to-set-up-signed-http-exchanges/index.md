@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to set up Signed HTTP Exchanges (SXG)
+title: How to set up Signed HTTP Exchanges (SXG) using nginx
 subhead: How to generate a TLS certificate with SXG extensions, install tools for generating SXG files, and configure nginx to serve SXG files.
 authors:
   - kumagi
@@ -10,6 +10,8 @@ tags:
   - blog
   - SXG
   - nginx
+feedback:
+  - api
 ---
 
 [Signed HTTP Exchanges (SXG)](https://developers.google.com/web/updates/2018/11/signed-exchanges) is a new web technology that makes it easier for users to tell content creators apart from content distributors. This guide shows you how to set up SXG.

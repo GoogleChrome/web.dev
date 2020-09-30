@@ -23,6 +23,7 @@ const NUM_AUDITS_TO_SHOW = 10;
  * @return {!TemplateResult}
  */
 function createRowForAuditCategory(lhr, category) {
+  /** @type TemplateResult | string[] */
   let relevantGuides = ['Guide coming soon'];
   const audit = lhr.audits[category.ref.id];
 
@@ -155,6 +156,7 @@ class LighthouseScoresAudits extends BaseElement {
 
   render() {
     const lhr = this.lhr;
+    /** @type TemplateResult | string[] */
     let rows = html``;
     let allRowsShown = false;
 
@@ -167,8 +169,8 @@ class LighthouseScoresAudits extends BaseElement {
         .map((category) => createRowForAuditCategory(lhr, category));
     } else {
       // Render placeholder rows for hydrating.
-      const dummyArray = Array(NUM_AUDITS_TO_SHOW * this.timesExpanded).keys();
-      rows = Array.from(dummyArray).map(() => {
+      const testArray = Array(NUM_AUDITS_TO_SHOW * this.timesExpanded).keys();
+      rows = Array.from(testArray).map(() => {
         return html`
           <div class="lh-audit-list-row" role="row">
             <span

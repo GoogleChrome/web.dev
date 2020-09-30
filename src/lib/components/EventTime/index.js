@@ -54,6 +54,8 @@ class EventTime extends BaseElement {
   constructor() {
     super();
     this._date = null;
+    this.datetime = null;
+    this.duration = null;
   }
 
   connectedCallback() {
@@ -93,9 +95,7 @@ class EventTime extends BaseElement {
 
   render() {
     if (!this._date) {
-      return html`
-        <!-- Invalid time "${this.datetime || ''}" -->
-      `;
+      return html`<!-- Invalid time "${this.datetime || ''}" -->`;
     }
 
     const format = (d, options) => {
@@ -103,10 +103,10 @@ class EventTime extends BaseElement {
     };
     const options = new Intl.DateTimeFormat().resolvedOptions();
 
-    let durationPart = '';
+    let durationPart = html``;
     if (this.duration > 0) {
       const end = new Date(this._date);
-      end.setHours(end.getHours() + this.duration);
+      end.setMinutes(end.getMinutes() + this.duration);
       durationPart = html`
         &mdash; ${format(end, {hour: 'numeric', minute: '2-digit'})}
       `;

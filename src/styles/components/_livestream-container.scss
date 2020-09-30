@@ -1,0 +1,53 @@
+@import '../settings/colors';
+@import '../tools/breakpoints';
+
+// =============================================================================
+// LIVESTREAM CONTAINER OVERVIEW
+//
+// These styles help prevent FOUC as the web-livestream-container's custom
+// element definition loads in.
+//
+// =============================================================================
+
+web-livestream-container {
+  $CHAT_WIDTH: 400px;
+
+  background-color: $WHITE;
+  display: flex;
+  margin: auto;
+  max-width: 1600px;
+
+  @include bp(md) {
+    border-left: 1px solid $GREY_300;
+    border-right: 1px solid $GREY_300;
+  }
+
+  .web-livestream-container__skeleton-yt {
+    background-color: $GREY_50;
+    flex: 1;
+    min-height: calc((9/16) * 100vw);
+
+    @include bp(md) {
+      min-height: calc((9/16) * (100vw - #{$CHAT_WIDTH}  - 1px));
+    }
+
+    @media (min-width: 1600px) {
+      min-height: calc((9/16) * (1600px - #{$CHAT_WIDTH} - 1px));
+    }
+  }
+
+  .web-livestream-container__skeleton-chat {
+    display: none;
+
+    @include bp(md) {
+      border-left: 1px solid $GREY_300;
+      display: block;
+      min-height: 600px;
+      width: $CHAT_WIDTH;
+    }
+
+    @media (hover: none) {
+      display: none;
+    }
+  }
+}

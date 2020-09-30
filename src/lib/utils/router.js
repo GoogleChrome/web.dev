@@ -1,4 +1,8 @@
 import './abort-controller-polyfill';
+import {addPageToContentIndex} from '../content-indexing';
+import {trackError} from '../analytics';
+import {store} from '../store';
+import language from './language';
 
 let globalHandler;
 let recentActiveUrl; // current URL not including hash
@@ -13,20 +17,16 @@ function getUrl() {
 /**
  * The caller wants to change the active URL. Let them, without triggering any
  * new loads.
- *
- * @param {!Event} e
  */
-function onReplaceState(e) {
+function onReplaceState() {
   recentActiveUrl = getUrl();
 }
 
 /**
  * The user has gone forward or back in the stack. Reload new content, or do
  * nothing if it was just a hash change.
- *
- * @param {!Event} e
  */
-function onPopState(e) {
+function onPopState() {
   const updatedUrl = getUrl();
   if (recentActiveUrl === updatedUrl) {
     // This was just a change in hash. Do nothing and let the browser run its
@@ -73,9 +73,13 @@ function onClick(e) {
     return;
   }
 
+  if (!(e.target instanceof HTMLElement)) {
+    return;
+  }
+
   // nb. If this ever supports Shadow DOM, we can use .composedPath to find
   // the nearest link inside an open Shadow Root.
-  const link = e.target.closest('a[href]');
+  const link = /** @type {!HTMLAnchorElement} */ (e.target.closest('a[href]'));
   if (
     !link ||
     link.target ||
@@ -91,11 +95,19 @@ function onClick(e) {
 }
 
 /**
+ * Exports the 'default' listener function. This is a let so we can change it
+ * after it has been called once.
+ *
+ * @param {function(!Object): ?} handler which returns an optional Promise
+ */
+export let listen = defaultListen;
+
+/**
  * Adds global page listeners for SPA routing.
  *
  * @param {function(!Object): ?} handler which returns an optional Promise
  */
-export function listen(handler) {
+function defaultListen(handler) {
   if (!handler) {
     throw new Error('need handler');
   }
@@ -110,6 +122,12 @@ export function listen(handler) {
     if (!isNavigation) {
       url = getUrl();
       hash = window.location.hash;
+    } else {
+      // If user has a preferred language, use it in the request.
+      const lang = store.getState().userPreferredLanguage;
+      if (lang && lang !== language.defaultLanguage) {
+        url = '/' + lang + url;
+      }
     }
 
     const firstRun = previousController === null;
@@ -181,7 +199,7 @@ export function route(url) {
   if (!globalHandler) {
     throw new Error('listen() not called');
   }
-  const u = new URL(url, window.location);
+  const u = new URL(url, window.location.toString());
 
   // Check if this is the same URL, but has a hash. If so, allow the *browser*
   // to move to the correct target on the page.
@@ -193,6 +211,10 @@ export function route(url) {
   globalHandler(candidateUrl, u.hash).then((aborted) => {
     if (!aborted) {
       scrollToHashOrTop(u.hash);
+      addPageToContentIndex(u.href).catch((error) => {
+        console.warn('could not index page', u.href, error);
+        trackError(error, 'Content Indexing error');
+      });
     }
   });
   return true;

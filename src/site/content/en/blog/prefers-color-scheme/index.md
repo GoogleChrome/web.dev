@@ -4,7 +4,7 @@ subhead: Overhyped or necessity? Learn everything about dark mode and how to sup
 authors:
   - thomassteiner
 date: 2019-06-27
-updated: 2019-11-25
+updated: 2020-06-09
 hero: hero.jpg
 hero_position: bottom
 alt: |
@@ -21,6 +21,8 @@ tags:
   - prefers-color-scheme
   - color-scheme
   - css
+feedback:
+  - api
 ---
 
 ## Introduction
@@ -80,7 +82,7 @@ on a light background, a baseline assumption that is also hard-coded in user age
 
 <figure class="w-figure w-figure--inline-left">
   <img style="height: 175px; width: auto;" src="smartphone-in-bed.jpg" alt="Smartphone used while lying in bed" height="334" width="500">
-  <figcaption class="w-figcaption">Smartphone used in bed (<a href="https://unsplash.com/photos/W39xsPWZgA4">Source</a>)</figcaption>
+  <figcaption class="w-figcaption">Smartphone used in bed (Source: Unsplash)</figcaption>
 </figure>
 
 The days of CRTs are long over.
@@ -215,16 +217,20 @@ media feature is used to detect
 if the user has requested the page to use a light or dark color theme.
 It works with the following values:
 
-- `no-preference`:
-  Indicates that the user has made no preference known to the system.
-  This keyword value evaluates as `false` in the
-  [boolean context](https://drafts.csswg.org/mediaqueries-5/#boolean-context).
 - `light`:
   Indicates that the user has notified the system that they prefer a page that has a light theme
   (dark text on light background).
 - `dark`:
   Indicates that the user has notified the system that they prefer a page that has a dark theme
   (light text on dark background).
+
+{% Aside 'note' %}
+  An earlier version of the spec included a third value, `no-preference`.
+  It was meant to indicate that the user has made no preference known to the system.
+  Since no browser ever implemented it, the value was
+  [removed](https://github.com/w3c/csswg-drafts/issues/3857#issuecomment-634779976)
+  from the spec.
+{% endAside%}
 
 ## Supporting dark mode
 
@@ -300,7 +306,7 @@ I hide the content of the page until `light.css` has loaded.
   above I already force `highest` priority for my default light experience).
 -->
 <link rel="stylesheet" href="/dark.css" media="(prefers-color-scheme: dark)">
-<link rel="stylesheet" href="/light.css" media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)">
+<link rel="stylesheet" href="/light.css" media="(prefers-color-scheme: light)">
 <!-- The main stylesheet -->
 <link rel="stylesheet" href="/style.css">
 ```
@@ -405,11 +411,10 @@ Try toggling dark mode in your particular [operating system's settings](#activat
 and see how the page reacts.
 
 <div style="height: 900px; width: 100%;">
-  <iframe
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/dark-mode-baseline?path=style.css&previewSize=100&attributionHidden=true"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    allow: 'geolocation; microphone; camera; midi; vr; encrypted-media',
+    src: 'https://glitch.com/embed/#!/embed/dark-mode-baseline?path=style.css&previewSize=100&attributionHidden=true'
+  } %}
 </div>
 
 ### Loading impact
@@ -638,12 +643,11 @@ You can see this applied in the demo below.
 ```
 
 <div style="height: 950px; width: 100%;">
-  <iframe
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/dark-mode-currentcolor?path=light.css&previewSize=100"
-    alt="dark-mode-currentcolor on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    allow: 'geolocation; microphone; camera; midi; vr; encrypted-media',
+    src: 'https://glitch.com/embed/#!/embed/dark-mode-currentcolor?path=light.css&previewSize=100',
+    title: 'dark-mode-currentcolor on Glitch'
+  } %}
 </div>
 
 ### Smooth transitions between modes
@@ -689,18 +693,17 @@ Toggle dark mode on your device to see the difference.
 ```html
 <picture>
   <source srcset="western.webp" media="(prefers-color-scheme: dark)">
-  <source srcset="eastern.webp" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+  <source srcset="eastern.webp" media="(prefers-color-scheme: light)">
   <img src="eastern.webp">
 </picture>
 ```
 
 <div style="height: 600px; width: 100%;">
-  <iframe
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/dark-mode-picture?path=index.html&previewSize=100"
-    alt="dark-mode-picture on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    allow: 'geolocation; microphone; camera; midi; vr; encrypted-media',
+    src: 'https://glitch.com/embed/#!/embed/dark-mode-picture?path=index.html&previewSize=100',
+    title: 'dark-mode-picture on Glitch'
+  } %}
 </div>
 
 ### Dark mode, but add an opt-out
@@ -757,11 +760,10 @@ This allows your visitors to keep their operating system in dark mode,
 but enjoy your site in light mode or vice versa.
 
 <div class="w-screenshot" style="height: 800px; width: 100%;">
-  <iframe
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    src="https://googlechromelabs.github.io/dark-mode-toggle/demo/index.html"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    allow: 'geolocation; microphone; camera; midi; vr; encrypted-media',
+    src: 'https://googlechromelabs.github.io/dark-mode-toggle/demo/index.html'
+  } %}
 </div>
 
 ## Conclusions

@@ -4,7 +4,7 @@ title: Preload key requests
 description: |
   Learn about the uses-rel-preload audit.
 date: 2019-05-02
-updated: 2019-10-04
+updated: 2020-06-04
 web_lighthouse:
   - uses-rel-preload
 ---
@@ -80,10 +80,19 @@ as soon as possible.
   </figcaption>
 </figure>
 
-See [Can I Use link-rel-preload?](http://caniuse.com/#feat=link-rel-preload)
-to see browser support for preload links.
-
 See also [Preload critical assets to improve loading speed](/preload-critical-assets)
+for more guidance.
+
+### Browser compatibility
+
+As of June 2020 preloading is supported in Chromium-based browsers. See
+[Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#Browser_compatibility)
+for updates.
+
+### Build tool support for preloading {: #tools }
+
+See [Tooling.Report's Preloading Assets](https://bundlers.tooling.report/non-js-resources/html/preload-assets/?utm_source=web.dev&utm_campaign=lighthouse&utm_medium=uses-rel-preload)
+page.
 
 ## Resources
 

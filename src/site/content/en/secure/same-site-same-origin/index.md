@@ -4,10 +4,13 @@ title: Understanding "same-site" and "same-origin"
 authors:
   - agektmr
 date: 2020-04-15
+updated: 2020-06-10
 description: |
   "same-site" and "same-origin" are frequently cited but often misunderstood
   terms. This article helps you understand what they are and how they are
   different.
+tags:
+  - security
 ---
 
 "same-site" and "same-origin" are frequently cited but often misunderstood
@@ -30,7 +33,7 @@ example [HTTP](https://developer.mozilla.org/en-US/docs/Glossary/HTTP) or
 (if specified). For example, given a URL of `https://www.example.com:443/foo` ,
 the "origin" is `https://www.example.com:443`.
 
-### "same-origin" and "cross-origin"
+### "same-origin" and "cross-origin" {: #same-origin-and-cross-origin }
 Websites that have the combination of the same scheme, hostname, and port are
 considered "same-origin". Everything else is considered "cross-origin".
 
@@ -90,8 +93,8 @@ example, given a URL of `https://www.example.com:443/foo` , the "site" is
 However, for domains such as `.co.jp` or `.github.io`, just using the TLD of
 `.jp` or `.io` is not granular enough to identify the "site". And there is no
 way to algorithmically determine the level of registrable domains for a
-particular TLD. That's why a list of "effective TLDs" was created. These are
-defined in the [Public Suffix List](https://wiki.mozilla.org/Public_Suffix_List).
+particular TLD. That's why a list of "effective TLDs"(eTLDs) was created. These
+are defined in the [Public Suffix List](https://wiki.mozilla.org/Public_Suffix_List).
  The list of eTLDs is maintained at
 [publicsuffix.org/list](https://publicsuffix.org/list/).
 
@@ -154,9 +157,9 @@ that must strictly distinguish between schemes in order to prevent HTTP being
 used as [a weak
 channel](https://tools.ietf.org/html/draft-west-cookie-incrementalism-01#page-8).
 In those cases, some documents refer to "same-site" more explicitly as
-"schemeful same-site". In that case, `http://www.example.com` and
-`https://www.example.com` are considered cross-site because the schemes don't
-match.
+"[schemeful same-site](https://github.com/sbingler/schemeful-same-site/)". In
+that case, `http://www.example.com` and `https://www.example.com` are considered
+cross-site because the schemes don't match.
 
 <div class="w-table-wrapper">
   <table>
@@ -201,7 +204,7 @@ match.
 
 Chrome sends requests along with a `Sec-Fetch-Site` HTTP header. No other
 browsers support `Sec-Fetch-Site` as of April 2020. This is part of a larger [Fetch Metadata
-Request Headers Request Headers](https://www.w3.org/TR/fetch-metadata/)
+Request Headers](https://www.w3.org/TR/fetch-metadata/)
 proposal. The header will have one of the following values:
 
 * `cross-site`
@@ -210,4 +213,5 @@ proposal. The header will have one of the following values:
 * `none`
 
 By examining the value of `Sec-Fetch-Site`, you can determine if the request is
-"same-site", "same-origin", or "cross-site".
+"same-site", "same-origin", or "cross-site" ("schemeful-same-site" is not
+captured in `Sec-Fetch-Site`).

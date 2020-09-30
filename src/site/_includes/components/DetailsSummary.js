@@ -22,7 +22,7 @@ const {html} = require('common-tags');
 
 /**
  * Render a Details panel preview as an HTML string.
- * @param {string} contentArr Array of content split at new lines.
+ * @param {string[]} contentArr Array of content split at new lines.
  * @return {string}
  */
 function renderPreview(contentArr) {
@@ -30,9 +30,7 @@ function renderPreview(contentArr) {
 
   const preview = contentArr.join('\n');
 
-  return html`
-    <p class="w-details__preview">${md.renderInline(preview)}</p>
-  `;
+  return html`<p class="w-details__preview">${md.renderInline(preview)}</p>`;
 }
 
 module.exports = (content, headingLevel = 'h2') => {
@@ -40,7 +38,7 @@ module.exports = (content, headingLevel = 'h2') => {
 
   if (!validLevels.includes(headingLevel)) {
     throw new Error(
-      `Invalid heading level for Details component. Use h2, h3, h4, h5, h6, or p.`,
+      'Invalid heading level for Details component. Use h2, h3, h4, h5, h6, or p.',
     );
   }
 

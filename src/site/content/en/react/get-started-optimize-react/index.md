@@ -77,13 +77,11 @@ npm start
 The following embed shows the directory structure and the actual web page of a newly
 bootstrapped CRA application.
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/new-create-react-app?path=src/App.js&attributionHidden=true"
-    alt="new-create-react-app on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'new-create-react-app',
+  path: 'src/App.js',
+  height: 480
+} %}
 
 {% Aside %}
   Although CRA makes it simple to get started building a React application,

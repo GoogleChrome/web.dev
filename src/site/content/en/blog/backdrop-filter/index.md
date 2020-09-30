@@ -16,6 +16,8 @@ tags:
   - blog
   - css
   - backdrop-filter
+feedback:
+  - api
 ---
 Translucence, blurring, and other effects are useful ways of creating depth while keeping the context of the background content. They support a host of use cases such as frosted glass, video overlays, translucent navigation headers, inappropriate image censoring, image loading, and so on. You may recognize these effects from two popular operating systems: [Windows 10](https://i.kinja-img.com/gawker-media/image/upload/s--9RLXARU4--/c_scale,dpr_2.0,f_auto,fl_progressive,q_80,w_800/trgz8yivyyqrpcnwscu5.png) and [iOS](https://static.businessinsider.com/image/51fd2822eab8eae16e00000b-750.jpg).
 
@@ -98,7 +100,7 @@ As with many features of the modern web, you'll want to know whether the user's 
 ```
 ## Examples
 
-Design techniques and styles previously reserved for native operating systems are now performant and achievable with a single CSS declaration. Let's look at some examples.
+Design techniques and styles previously reserved for operating systems are now performant and achievable with a single CSS declaration. Let's look at some examples.
 
 ### Single filter
 
@@ -192,7 +194,7 @@ As stated earlier, `backdrop-filter` allows performant effects that would be dif
 </figure>
 
 ## Conclusion
-More than 560 of you have upvoted the [Chromium bug](https://crbug.com/497522) over the past few years, clearly marking this as a long awaited CSS feature. Chrome's release of `backdrop-filter` in version 76 brings the web a step closer to truly native-like UI presentation.
+More than 560 of you have upvoted the [Chromium bug](https://crbug.com/497522) over the past few years, clearly marking this as a long awaited CSS feature. Chrome's release of `backdrop-filter` in version 76 brings the web a step closer to truly OS-like UI presentation.
 
 ### Additional resources
 - [Specification](https://drafts.fxtf.org/filter-effects-2/#BackdropFilterProperty)

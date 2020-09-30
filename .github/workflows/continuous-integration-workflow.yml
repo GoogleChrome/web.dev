@@ -1,11 +1,12 @@
-name: Continuous integration
+name: Deploy
 on:
-  push:
-    branches:
-      - master
+  # Adds a 'Run Workflow' button to the GitHub Actions UI so the team can
+  # manually deploy the site.
+  workflow_dispatch:
+  
+  # Automatically build and deploy the site hourly, Mon-Fri
   schedule:
-    # At 15:00 UTC / 7:00 PST on every day-of-week from Monday through Thursday.
-    - cron: '0 15 * * 1-4'
+    - cron: '0 * * * 1-5'
 
 jobs:
   ci:
@@ -41,12 +42,6 @@ jobs:
           ELEVENTY_ENV: prod
         run: npm run build
       
-      - name: Index algolia
-        env:
-          ALGOLIA_APP: ${{ secrets.ALGOLIA_APP }}
-          ALGOLIA_KEY: ${{ secrets.ALGOLIA_KEY }}
-        run: node index-algolia.js
-
       - name: Setup gcloud
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@0.1.1
         with:
@@ -64,3 +59,9 @@ jobs:
       
       - name: Deploy to production
         run: gcloud app deploy --project web-dev-production-1
+      
+      - name: Index algolia
+        env:
+          ALGOLIA_APP: ${{ secrets.ALGOLIA_APP }}
+          ALGOLIA_KEY: ${{ secrets.ALGOLIA_KEY }}
+        run: node index-algolia.js

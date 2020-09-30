@@ -8,6 +8,7 @@ const pagesToTest = [
   {
     url: '/learn/',
     title: 'Learn page',
+    navPage: true,
   },
   {
     url: '/accessible/',
@@ -16,10 +17,12 @@ const pagesToTest = [
   {
     url: '/measure/',
     title: 'Measure page',
+    navPage: true,
   },
   {
     url: '/blog/',
     title: 'Blog page',
+    navPage: true,
   },
   {
     url: '/test-post/',
@@ -28,6 +31,7 @@ const pagesToTest = [
   {
     url: '/about/',
     title: 'About page',
+    navPage: true,
   },
   {
     url: '/codelab-avoid-invisible-text/',
@@ -57,17 +61,42 @@ const pagesToTest = [
     url: '/newsletter/',
     title: 'Newsletter page',
   },
+  {
+    url: '/live/',
+    title: 'Live page',
+    navPage: true,
+  },
 ];
+
+async function waitForNavUpdate(page, browser) {
+  try {
+    page.navPage &&
+      (await browser.waitFor(
+        (url) => {
+          const activeLink = document.querySelector('a[active=""]');
+
+          return activeLink && activeLink.getAttribute('href') === url;
+        },
+        {polling: 15, timeout: 5000},
+        page.url,
+      ));
+  } catch (err) {
+    console.log(`Couldn't find active link for ${page.url}`);
+  }
+}
 
 // A script to navigate our app and take snapshots with Percy.
 PercyScript.run(
   async (browser, percySnapshot) => {
-    for (page of pagesToTest) {
+    // set the viewport to a desktop size
+    await browser.setViewport({height: 1024, width: 1280});
+
+    for (const page of pagesToTest) {
       const url = new URL(page.url, 'http://localhost:8080').href;
       await browser.goto(url, {waitUntil: 'networkidle0'});
       await browser.evaluate(scrollToBottom);
       // Wait for the SPA to update the active link in the top nav.
-      await browser.waitFor(5000);
+      await waitForNavUpdate(page, browser);
       await percySnapshot(`${page.title}`);
     }
   },

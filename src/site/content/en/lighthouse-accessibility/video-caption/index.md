@@ -22,7 +22,7 @@ with the attribute `kind="captions"`.
 <!--
 ***Todo*** I tried very hard to get this audit to fail.
 But no matter what, it seems to pass,
-even with all sorts of crazy errors.
+even with all sorts of errors.
 See glitch: [meggin-accessibility-assets](https://glitch.com/edit/#!/meggin-accessibiity-assets-1).
 Also worth mentioning that I ran accessibility audit
 against the convert gifs to video codelab,
@@ -53,7 +53,7 @@ with the `kind="captions"` attribute:
 ```
 
 {% Aside 'note' %}
-The example above includes both captions for hearing impaired users,
+The example above includes both captions for deaf users,
 and audio descriptions for visually impaired users.
 Audio descriptions provide context beyond dialog, such as scenery, facial expressions.
 See also [`<video>` elements do not contain a `<track>` element with `[kind="description"]`](/video-description).

@@ -9,6 +9,8 @@ updated: 2020-04-27
 tags:
   - blog
   - progressive-web-apps
+feedback:
+  - api
 ---
 
 The [Cache API][mdn-cache] is a system for storing and retrieving network

@@ -26,7 +26,6 @@
   outline: none !important;
 }
 
-
 // This will hide the focus indicator if the element receives focus via the
 // mouse, but it will still show up on keyboard focus.
 .js-focus-visible :focus:not(.focus-visible) { // sass-lint:disable-line class-name-format
@@ -64,13 +63,16 @@ var {
   hyphens: none;
 }
 
-// Ensures deep linking to headers has enough space to account for the
-// top navigation so they don't overlap.
+html {
+  scroll-padding-top: calc(#{$WEB_HEADER_HEIGHT} + 1.5rem);
+}
+
+// Fallback if scroll-padding-top is not supported
 *:not([href])[id]::before {
   content: ' ';
   display: block;
-  height: $WEB_HEADER_HEIGHT;
-  margin-top: -$WEB_HEADER_HEIGHT;
+  height: calc(#{$WEB_HEADER_HEIGHT} + 1.5rem);
+  margin-top: calc(-#{$WEB_HEADER_HEIGHT} - 1.5rem);
   pointer-events: none;
   visibility: hidden;
 }
