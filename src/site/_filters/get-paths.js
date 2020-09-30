@@ -14,7 +14,24 @@
  * limitations under the License.
  */
 const postToPathsMap = require('../_data/postToPaths.js');
+const paths = require('../_data/paths');
 
 module.exports = (post) => {
-  return postToPathsMap[post.fileSlug];
+  const out = postToPathsMap[post.fileSlug];
+  if (out) {
+    return out;
+  }
+
+  // Not all posts are correctly attributed to a path (they're not linked to in the path JSON).
+  // However, guess based on their filename. This is only needed for some "return" links.
+  const parts = post.filePathStem.split('/');
+
+  if (parts.length > 2) {
+    const pathFolder = parts[2];
+    if (pathFolder in paths) {
+      return [pathFolder]; // callers use this key to look up in paths again
+    }
+  }
+
+  return [];
 };
