@@ -211,7 +211,9 @@ camera PTZ only when the page is visible to the user.
 
 ## Acknowledgements
 
-Thanks to [Joe Medley] and [Thomas Steiner] for their reviews of this article.
+This article was reviewed by [Joe Medley] and [Thomas Steiner].
+Thanks to [Rijubrata Bhaumik] and [Eero Häkkinen] at Intel for their work on the
+spec and the implementation.
 Hero image by [Christina @ wocintechchat.com] on [Unsplash].
 
 <!-- lint disable definition-case -->
@@ -227,6 +229,8 @@ Hero image by [Christina @ wocintechchat.com] on [Unsplash].
 [Controlling Access to Powerful Web Platform Features]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [Joe Medley]: https://github.com/jpmedley
 [Thomas Steiner]: https://github.com/tomayac
+[Eero Häkkinen]: https://github.com/eehakkin
+[Rijubrata Bhaumik]: https://github.com/riju
 [Christina @ wocintechchat.com]: https://unsplash.com/@wocintechchat
 [Unsplash]: https://unsplash.com/photos/lqPLmYD_MO8
 <!-- lint enable definition-case -->
