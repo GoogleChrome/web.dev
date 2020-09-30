@@ -2,7 +2,7 @@
 title: Detached window memory leaks
 subhead: |
   Find and fix tricky memory leaks caused by detached windows.
-date: 2020-09-28
+date: 2020-09-29
 hero: hero.jpg
 alt: Cat contemplating how to fix a leak
 authors:
@@ -100,10 +100,6 @@ iframe's `contentWindow` or `contentDocument` even if the iframe is removed from
 changes, which prevents the document from being garbage collected since its properties can still be
 accessed.
 
-<!--
-![image](https://drive.google.com/file/d/1J5MfwROSuloIHwpEpWfQYGZSfuHL_ynw/view?usp=drivesdk)
--->
-
 <figure class="w-figure">
   <video controls autoplay loop muted playsinline width="615" class="w-screenshot">
     <source src="https://storage.googleapis.com/web-dev-assets/detached-window-memory-leaks/example-detached-iframe.webm" type="video/webm">
@@ -156,7 +152,7 @@ bound as a click handler in our main page, and the fact that `nextSlide` contain
 `notesWindow` means the window is still referenced and can't be garbage collected.
 
 <figure class="w-figure">
-  <video controls autoplay loop muted playsinline><!-- class="w-screenshot"-->
+  <video controls autoplay loop muted playsinline>
     <source src="https://storage.googleapis.com/web-dev-assets/detached-window-memory-leaks/animation.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/detached-window-memory-leaks/animation.mp4" type="video/mp4">
   </video>
@@ -210,7 +206,6 @@ detached windows from being eligible for garbage collection:
   </script>
   ```
 
-
 ## Detecting memory leaks caused by detached windows {: #detect-leaks }
 
 Tracking down memory leaks can be tricky. It is often difficult to construct isolated reproductions
@@ -248,6 +243,10 @@ Snapshot** in the list of available profiling types. Once the recording has fini
     Demonstration of taking a heap snapshot in Chrome DevTools.
   </figcaption>
 </figure>
+
+{% Aside 'codelab' %}
+Open this [step-by-step walk through](https://detached-windows-test.glitch.me) in a new window.
+{% endAside %}
 
 Analyzing heap dumps can be a daunting task, and it can be quite difficult to find the right
 information as part of debugging. To help with this, Chromium engineers
