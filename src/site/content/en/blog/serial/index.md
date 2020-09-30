@@ -4,7 +4,7 @@ subhead: The Serial API allows websites to communicate with serial devices.
 authors:
   - beaufortfrancois
 date: 2020-08-12
-updated: 2020-08-12
+updated: 2020-09-29
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: |
@@ -504,6 +504,20 @@ const [appReadable, devReadable] = port.readable.tee();
 // You may want to update UI with incoming data from appReadable
 // and log incoming data in JS console for inspection from devReadable.
 ```
+
+## Dev Tips {: #dev-tips }
+
+Debugging the Serial API in Chrome is easy with the internal page, `chrome://device-log`
+where you can see all serial device related events in one single place.
+
+<figure class="w-figure">
+  <img src="./device-log-page-screenshot.jpg" class="w-screenshot" alt="Screenshot of the internal page for debugging the Serial API.">
+  <figcaption class="w-figcaption">Internal page in Chrome for debugging the Serial API.</figcaption>
+</figure>
+
+{% Aside %}
+The internal page supports debugging the Serial API in Chrome 87 and later.
+{% endAside %}
 
 ## Codelab {: #codelab }
 
