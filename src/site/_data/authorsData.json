@@ -1528,5 +1528,18 @@
       "family": "Aranha"
     },
     "github": "aranhacarlos"
+  },
+  "bartekn": {
+    "name": {
+      "given": "Bartek",
+      "family": "Nowierski"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Chrome Browser"
+    },
+    "description": {
+      "en": "Chrome Software Engineer"
+    }
   }
 }

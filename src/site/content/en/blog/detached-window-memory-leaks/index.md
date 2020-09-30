@@ -7,6 +7,7 @@ hero: hero.jpg
 alt: Cat contemplating how to fix a leak
 authors:
   - developit
+  - bartekn
 description: |
   Detached windows are a common type of memory leak that is particularly difficult to find and fix.
 tags:
