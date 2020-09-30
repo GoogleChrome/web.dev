@@ -88,7 +88,8 @@ Our primary `.stories` component wrapper is a mobile-first horizontal scrollview
 
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  overscroll-behavior-x: contain;
+  overscroll-behavior: contain;
+  touch-action: pan-x;
 }
 
 /* desktop constraint */
@@ -193,7 +194,8 @@ by Sarah Drasner for a great breakdown of how to use them.
   gap: 1ch;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  overscroll-behavior-x: contain;
+  overscroll-behavior: contain;
+  touch-action: pan-x;
 }
 ```
 
@@ -289,7 +291,7 @@ component.
 ```css
 .stories {
   overflow-x: auto;
-  overscroll-behavior-x: contain;
+  overscroll-behavior: contain;
 }
 ```
 

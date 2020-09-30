@@ -162,7 +162,8 @@ container how to handle it. Add the highlighted lines of code to your `.stories`
   gap: 1ch;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  overscroll-behavior-x: contain;
+  overscroll-behavior: contain;
+  touch-action: pan-x;
 }
 ```
 
