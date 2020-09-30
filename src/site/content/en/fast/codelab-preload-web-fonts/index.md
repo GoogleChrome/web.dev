@@ -7,7 +7,8 @@ description: |
   In this codelab, learn how to improve the performance of a page by preloading
   web fonts.
 date: 2018-04-23
-glitch: web-dev-preload-webfont
+glitch: web-dev-preload-webfont?path=index.html
+related_post: preload-critical-assets
 tags:
   - performance
 ---

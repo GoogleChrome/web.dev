@@ -7,7 +7,7 @@ authors:
 description: |
   Learn how to progressively enhance your Progressive Web App so that it remains useful
   on all modern browsers, but delivers an advanced experience on browsers that support
-  new web capabilities like native file system access, system clipboard access,
+  new web capabilities like file system access, system clipboard access,
   contacts retrieval, periodic background sync, screen wake lock, web sharing features,
   and many more.
 scheduled: true
@@ -116,7 +116,7 @@ For this article, I work with a simple PWA, called
 [Fugu Greetings](https://tomayac.github.io/fugu-greetings/public/)
 ([GitHub](https://github.com/tomayac/fugu-greetings)).
 The name of this app is a tip of the hat to Project Fugu 🐡, an effort to give the web all
-the powers of native applications.
+the powers of Android/iOS/desktop applications.
 You can read more about the project on its
 [landing page](https://web.dev/fugu-status).
 
@@ -224,12 +224,12 @@ and has put it straight into your Downloads folder. This isn't great.
 What if there were a better way?
 What if you could just open a local file, edit it, and then save the modifications,
 either to a new file, or back to the original file that you had initially opened?
-Turns out there is. The [Native File System API](https://web.dev/native-file-system/)
+Turns out there is. The [File System Access API](https://web.dev/file-system-access/)
 allows you to open and create files and
 directories, as well as modify and save them .
 
 So how do I feature-detect an API?
-The Native File System API exposes a new method `window.chooseFileSystemEntries()`.
+The File System Access API exposes a new method `window.chooseFileSystemEntries()`.
 Consequently, I need to conditionally load different import and export modules depending on whether this method is available. I've shown how to do this below.
 
 ```js
@@ -248,9 +248,9 @@ const loadImportAndExport = () => {
 };
 ```
 
-But before I dive into the Native File System API details,
+But before I dive into the File System Access API details,
 let me just quickly highlight the progressive enhancement pattern here.
-On browsers that currently don't support the Native File System API, I load the legacy scripts.
+On browsers that currently don't support the File System Access API, I load the legacy scripts.
 You can see the network tabs of Firefox and Safari below.
 
 <figure class="w-figure">
@@ -286,9 +286,9 @@ As I said earlier, the grass is pretty green these days.
   </figcaption>
 </figure>
 
-## The Native File System API
+## The File System Access API
 
-So now that I have addressed this, it's time to look at the actual implementation based on the Native File System API.
+So now that I have addressed this, it's time to look at the actual implementation based on the File System Access API.
 For importing an image, I call `window.chooseFileSystemEntries()`
 and pass it an `accepts` property where I say I want image files.
 Both file extensions as well as MIME types are supported.
@@ -349,7 +349,7 @@ const exportImage = async (blob) => {
 };
 ```
 
-Using progressive enhancement with the Native File System API,
+Using progressive enhancement with the File System Access API,
 I can open a file as before.
 The imported file is drawn right onto the canvas.
 I can make my edits and finally save them with a real save dialog box
@@ -388,12 +388,12 @@ Now the file is ready to be preserved for eternity.
 Apart from storing for eternity, maybe I actually want to share my greeting card.
 This is something that the [Web Share API](https://web.dev/web-share/) and
 [Web Share Target API](https://web.dev/web-share-target/) allow me to do.
-Mobile, and more recently desktop operating systems have gained native sharing
+Mobile, and more recently desktop operating systems have gained built-in sharing
 mechanisms.
 For example, below is desktop Safari's share sheet on macOS triggered from an article on
 my [blog](https://blog.tomayac.com/).
 When you click the **Share Article** button, you can share a link to the article with a friend, for
-example, via the native macOS Messages app.
+example, via the macOS Messages app.
 
 <figure class="w-figure">
   <img class="w-screenshot"
@@ -468,7 +468,7 @@ const loadShare = () => {
 ```
 
 In Fugu Greetings, if I tap the **Share** button on a supporting browser like Chrome on Android,
-the native share sheet opens.
+the built-in share sheet opens.
 I can, for example, choose Gmail, and the email composer widget pops up with the
 image attached.
 
@@ -476,7 +476,7 @@ image attached.
   <figure class="w-figure">
     <img class="w-screenshot"
         src="10000201000003E4000008004D3AEA65DB2ABA6C.png"
-        alt="Native share sheet showing various apps to share the image to."
+        alt="OS-level share sheet showing various apps to share the image to."
         width="300">
     <figcaption class="w-figcaption">
       Choosing an app to share the file to.

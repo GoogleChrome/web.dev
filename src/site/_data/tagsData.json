@@ -181,6 +181,16 @@
   "rendering": {
     "title": "Rendering"
   },
+  "scale-on-web": {
+    "title": "SCALE on web case studies",
+    "description": "A collection of short case studies from India and Southeast Asia celebrating the success stories of Google partners across multiple aspects of modern web development. Learn how these partners achieved scale while building amazing web experiences and delighting their customers.",
+    "hero": {
+      "src": "/images/tags/scale-on-web.svg",
+      "width": 340,
+      "height": 177,
+      "heroOnly": true
+    }
+  },
   "security": {
     "title": "Security"
   },

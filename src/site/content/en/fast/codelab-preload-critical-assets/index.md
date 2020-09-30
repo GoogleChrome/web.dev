@@ -8,6 +8,7 @@ description: |
   and prefetching resources.
 date: 2019-04-24
 glitch: preload-critical-assets
+related_post: preload-critical-assets
 tags:
   - performance
 ---

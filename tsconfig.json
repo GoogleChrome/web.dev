@@ -18,18 +18,13 @@
     "noImplicitReturns": false,
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "./",
-    "typeRoots": [
-      "node_modules/@types",
-    ],
+    "typeRoots": ["node_modules/@types", "types/modules"],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": [
-    "src/**/*",
-    "types/**/*.d.ts"
-  ],
+  "include": ["src/**/*", "types/**/*"],
   "exclude": [
     ".github",
     ".vscode",

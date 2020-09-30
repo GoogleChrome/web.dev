@@ -12,7 +12,7 @@ tags:
 ---
 
 Progressive Web Apps (PWAs) are modern, high quality applications built
-using web technology. PWAs offer similar capabilities to native apps, they
+using web technology. PWAs offer similar capabilities to iOS/Android/desktop apps, they
 are reliable even in unstable network conditions, and are installable making
 it easier for users to find and use them.
 
@@ -79,7 +79,7 @@ minor differences. Check the respective sites for full details:
 On Android, if the web app manifest includes `related_applications` and
 `"prefer_related_applications": true`, the user will be directed to the
 Google Play store and
-[prompted to install the specified native app](https://developers.google.com/web/fundamentals/app-install-banners/native)
+[prompted to install the specified Android app](https://developers.google.com/web/fundamentals/app-install-banners/native)
 instead.
 {% endAside %}
 

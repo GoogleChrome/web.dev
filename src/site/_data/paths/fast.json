@@ -47,7 +47,7 @@
         "lazy-loading",
         "lazy-loading-images",
         "lazy-loading-video",
-        "native-lazy-loading",
+        "browser-level-image-lazy-loading",
         "use-lazysizes-to-lazyload-images",
         "lazy-loading-problems"
       ]

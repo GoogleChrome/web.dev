@@ -36,7 +36,7 @@ motion APIs for input.
 
 The [Screen Wake Lock API][spec-ed] provides a way to prevent the device from dimming
 and locking the screen. This
-capability enables new experiences that, until now, required a native app.
+capability enables new experiences that, until now, required a platform-specific app.
 
 The Screen Wake Lock API reduces the need for hacky and potentially
 power-hungry workarounds. It addresses the shortcomings of an older API

@@ -7,7 +7,7 @@ description: |
   An ordered rundown of commands needed to get from a raw mov file to encrypted
   assets packaged for DASH or HLS.
 date: 2018-09-20
-updated: 2020-08-27
+updated: 2020-09-24
 tags:
   - media
   - video
@@ -36,7 +36,7 @@ conversion. For this cheat sheet, I often show these operations as separate
 commands for the sake of clarity.
 
 Please let me know of useful additions or corrections.
-[Pull requests are welcome](https://github.com/GoogleChrome/web.dev/tree/media/src/site/content/en/media/media-cheat-sheet).
+[Pull requests are welcome](/media-cheat-sheet).
 
 {% Aside %}
 This page contains a few more commands than are covered in this section. Not

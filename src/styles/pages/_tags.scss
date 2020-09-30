@@ -1,9 +1,23 @@
 @import '../tools/breakpoints';
 
+$IMAGE_WIDTH: 340px;
+
 .w-tags-page-header__headline {
   @include font($HEADLINE_1);
 
   @include bp(sm) {
     @include font($HEADLINE_1_XSMALL);
+  }
+}
+
+.w-tags-page__image {
+  margin-bottom: 9px;
+  max-width: calc(#{$IMAGE_WIDTH} * calc(2/3));
+  height: auto;
+}
+
+@include bp(sm) {
+  .w-tags-page__image {
+    max-width: $IMAGE_WIDTH;
   }
 }

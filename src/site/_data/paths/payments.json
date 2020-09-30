@@ -15,7 +15,7 @@
       ],
       "subtopics": [
         {
-          "title": "Build a native payment app",
+          "title": "Build an Android payment app",
           "pathItems": [
             "android-payment-apps-developers-guide",
             "android-payment-apps-delegation"
