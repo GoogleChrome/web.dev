@@ -18,6 +18,7 @@ module.exports = function () {
     allPaths['discoverable'],
     allPaths['payments'],
     allPaths['media'],
+    allPaths['devices'],
   ].filter(livePaths);
 
   const performance = [
