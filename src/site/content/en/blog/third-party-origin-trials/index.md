@@ -83,7 +83,7 @@ repo.
 
 -  [Getting started with Chrome's origin trials](/origin-trials)
 -  [Origin Trials Guide for Web Developers](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md)
--  [Subscribe to chromestatus for updates ](https://www.chromestatus.com/features/5691464711405568)
+-  [Chrome Platform Status](https://www.chromestatus.com/features/5691464711405568)
 
 Photo by [Louis Reed
 ](https://unsplash.com/@_louisreed) on [Unsplash](https://unsplash.com/photos/JeInkKlI2Po).
