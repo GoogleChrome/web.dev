@@ -40,7 +40,7 @@ trials, as learnings are incorporated and adjustments are made.
 
 Origin trials are usually only available on a first-party basis: they only work for a single
 registered [origin](https://web.dev/same-site-same-origin/#origin). Third-party origin trials make 
-it possible for providers of embedded content to try out a new feature across multiple sites 
+it possible for providers of embedded content to try a new feature across multiple sites 
 without requiring a token for every origin.   
 
 Find out more: [What are third-party origin trials?](/third-party-origin-trials).
