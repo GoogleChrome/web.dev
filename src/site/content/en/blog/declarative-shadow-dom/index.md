@@ -2,7 +2,7 @@
 title: Declarative Shadow DOM
 subhead: |
   A new way to implement and use Shadow DOM directly in HTML.
-date: 2020-09-29
+date: 2020-09-30
 hero: hero.jpg
 alt: decorative shadow dome
 authors:
@@ -365,9 +365,10 @@ constructable stylesheets in HTML, and no way to refer to them when populating a
 
 ## Feature detection and browser support {: #detection-support }
 
-Declarative Shadow DOM is supported in Chrome&nbsp;88, and can also be enabled using the
-**Experimental Web Platform Features** flag in Chrome&nbsp;85. Navigate to
-`chrome://flags/#enable-experimental-web-platform-features` to find that setting.
+The Chrome team is tentatively looking at un-flagging Declarative Shadow DOM in Chrome&nbsp;88.
+In the meantime, it can be enabled using the **Experimental Web Platform Features** flag in
+Chrome&nbsp;85. Navigate to `chrome://flags/#enable-experimental-web-platform-features` to
+find that setting.
 
 As a new web platform API, Declarative Shadow DOM does not yet have widespread support across all
 browsers. Browser support can be detected by checking for the existence of a `shadowroot` property
