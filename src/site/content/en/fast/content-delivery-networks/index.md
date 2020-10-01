@@ -257,7 +257,7 @@ Although switching your CDN instance to HTTP/2 is largely a matter of flipping a
 
 *  **Elimination of head-of-line blocking**
 
-    HTTP/2 introduced multiplexing, a feature that allows a single connection to be used to transmit multiple streams of data simultaneously. However, with HTTP/2, a single dropped packet blocks all streams on a connection (a phenomena known as a head-of-line blocking). With HTTP/3, a dropped packet only blocks a single stream. This improvement is largely the result of HTTP/3 using [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol) (HTTP/3 uses UDP via QUIC) rather than [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol). This makes HTTP/3 particularly useful for data transfer over congested or lossy networks.
+    HTTP/2 introduced multiplexing, a feature that allows a single connection to be used to transmit multiple streams of data simultaneously. However, with HTTP/2, a single dropped packet blocks all streams on a connection (a phenomena known as a head-of-line blocking). With HTTP/3, a dropped packet only blocks a single stream. This improvement is largely the result of HTTP/3 using [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol) (HTTP/3 uses UDP via [QUIC](https://en.wikipedia.org/wiki/QUIC)) rather than [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol). This makes HTTP/3 particularly useful for data transfer over congested or lossy networks.
 
 <figure class="w-figure">
   <img src="./cdn4.png" alt="Diagram showing the differences in data transmission between HTTP/1, HTTP/2, and HTTP/3" class="w-screenshot">
