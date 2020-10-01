@@ -47,11 +47,9 @@ enable a third-party origin trial may be reviewed in order to avoid problematic 
 affecting multiple sites. The Origin Trials Developer Guide explains the
 [approval process](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md#18-how-can-i-enable-an-experimental-feature-as-embedded-content-on-different-domains).  
 {% endAside %}  
-  
-The first third-party origin trial will be for [Conversion
-Measurement](http://web.dev/conversion-measurement) in Chrome 86. You can [subscribe to 
-chromestatus](https://www.chromestatus.com/features/5691464711405568) for
-updates on progress with trials.
+
+Check [Chrome Platform Status](https://www.chromestatus.com/features/5691464711405568) for updates 
+on progress with third-party origin trials.
 
 ## How to register for a third-party origin trial
 
