@@ -13,7 +13,7 @@ tags:
   - origin-trials
 ---
 
-[Origin trials](web.dev/origin-trials) are a way to test a new or experimental web platform
+[Origin trials](/origin-trials) are a way to test a new or experimental web platform
 feature.
 
 Origin trials are usually only available on a first-party basis: they only work for a single
@@ -23,14 +23,16 @@ registered for the origin trial, each with a unique trial token. This is not a s
 testing scripts that are embedded across a number of sites.
 
 Third-party origin trials make it possible for providers of embedded content to try out a new
-feature across multiple sites.   
-  
-[Getting started with Chrome's origin trials](https://developers.chrome.com/origintrials/) provides
-more general information about how to participate in Chrome origin trials.  
+feature across multiple sites. 
 
 ![Diagram showing how third-party origin trials enable a single registration token to be used 
 across multiple origins](with-and-without.png)
 
+Third-party origin trials don't make sense for all features. Chrome will only make the third-party
+origin trial option available for features where embedding code on third-party sites is a common use
+case.  [Getting started with Chrome's origin trials](https://developers.chrome.com/origintrials/) 
+provides more general information about how to participate in Chrome origin trials.  
+  
 If you participate in an origin trial as a third-party provider, it will be your responsibility to
 notify and set expectations with any partners or customers whose sites you intend to include in the
 origin trial. Experimental features may cause unexpected issues and browser vendors may not be able
@@ -46,17 +48,12 @@ affecting multiple sites. The Origin Trials Developer Guide explains the
 [approval process](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md#18-how-can-i-enable-an-experimental-feature-as-embedded-content-on-different-domains).  
 {% endAside %}  
   
-Third-party origin trials don't make sense for all features. Chrome will only make the third-party
-origin trial option available for features where embedding code on third-party sites is a common use
-case.  
-  
 The first third-party origin trial will be for [Conversion
-Measurement](http://web.dev/conversion-measurement) in Chrome 86.  
-  
-You can [subscribe to chromestatus](https://www.chromestatus.com/features/5691464711405568) for
+Measurement](http://web.dev/conversion-measurement) in Chrome 86. You can [subscribe to 
+chromestatus](https://www.chromestatus.com/features/5691464711405568) for
 updates on progress with trials.
 
-# How to register for a third-party origin trial
+## How to register for a third-party origin trial
 
 1. Select a trial from the [list of active
    trials](https://developers.chrome.com/origintrials/#/trials/active).
@@ -75,16 +72,16 @@ updates on progress with trials.
 1. If review is required, you'll be notified by email when the review is complete and your
    third-party token is ready.
 
-# How to provide feedback
+## How to provide feedback
 
 If you're registering for a third-party origin trial and have feedback to share on the process or
 ideas on how we can improve it, please [create an
 issue](https://github.com/GoogleChrome/OriginTrials/issues/new) on the Origin Trials GitHub code
 repo.  
 
-Find out more
+## Find out more
 
--  [Getting started with Chrome's origin trials](https://web.dev/origin-trials/)
+-  [Getting started with Chrome's origin trials](/origin-trials)
 -  [Origin Trials Guide for Web Developers](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md)
 -  [Subscribe to chromestatus for updates ](https://www.chromestatus.com/features/5691464711405568)
 
