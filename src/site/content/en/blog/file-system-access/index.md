@@ -67,7 +67,7 @@ familiar to you. I encourage you to read it anyway, because not all systems are 
 
 ## Using the File System Access API {: #how-to-use }
 
-To show off the true power and usefulness of the File System Access API, I wrote a single file [text
+To show off the power and usefulness of the File System Access API, I wrote a single file [text
 editor][text-editor]. It lets you open a text file, edit it, save the changes back to disk, or start
 a new file and save the changes to disk. It's nothing fancy, but provides enough to help you
 understand the concepts.
@@ -114,7 +114,7 @@ needed to save changes back to the file, or to perform any other file operations
 #### Read a file from the file system
 
 Now that you have a handle to a file, you can get the file's properties, or access the file itself.
-For now, let's simply read its contents. Calling `handle.getFile()` returns a
+For now, I'll simply read its contents. Calling `handle.getFile()` returns a
 [`File`][file-api-spec] object, which contains a blob. To get the data from the blob, call one of
 [its methods][blob-methods] (`slice()`, `stream()`, `text()`, `arrayBuffer()`).
 
@@ -151,7 +151,7 @@ As** creates a new file, and thus requires a new file handle.
 
 #### Create a new file
 
-In order to save a file, call [`showSaveFilePicker()`][showsavefilepicker], which will show the file
+To save a file, call [`showSaveFilePicker()`][showsavefilepicker], which will show the file
 picker in "save" mode, allowing the user to pick a new file they want to use for saving. For the
 text editor, I also wanted it to automatically add a `.txt` extension, so I provided some additional
 parameters.
