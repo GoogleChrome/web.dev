@@ -18,13 +18,14 @@ For a working demo of some of these patterns, see [Trained-to-thrill][ttt], and
 
 ## The cache machine—when to store resources
 
-[Service Worker][sw_primer] lets you handle requests independently from caching, so we'll look at
+[Service Worker][sw_primer] lets you handle requests independently from caching, so I'll demonstrate
 them separately. First up, caching, when should it be done?
 
 ### On install—as a dependency {: #on-install-as-dependency }
 
 <figure class="w-figure">
-  <img class="w-screenshot" alt="" src="cm-on-install-dep.png">
+  <img src="./cm-on-install-dep.png" alt="On install - as a dependency.">
+  <figcaption class="w-figcaption">On install - as a dependency.</figcaption>
 </figure>
 
 Service Worker gives you an `install` event. You can use this to get stuff ready, stuff that must be
@@ -34,7 +35,7 @@ is still running and serving pages, so the things you do here mustn't disrupt th
 **Ideal for:** CSS, images, fonts, JS, templates… basically anything you'd consider static to that
 "version" of your site.
 
-These are things that would make your site entirely non-functional if they failed to fetch, things
+These are things that would make your site entirely non-functional if they failed to be fetched, things
 an equivalent native-app would make part of the initial download.
 
 ```js
@@ -55,8 +56,8 @@ self.addEventListener('install', function (event) {
 
 `event.waitUntil` takes a promise to define the length and success of the install. If the promise
 rejects, the installation is considered a failure and this Service Worker will be abandoned (if an
-older version is running, it'll be left intact). `caches.open` and `cache.addAll` return promises.
-If any of the resources fail to fetch, the `cache.addAll` call rejects.
+older version is running, it'll be left intact). `caches.open()` and `cache.addAll()` return promises.
+If any of the resources fail to be fetched, the `cache.addAll()` call rejects.
 
 On [trained-to-thrill][ttt] I use this to
 [cache static assets](https://github.com/jakearchibald/trained-to-thrill/blob/3291dd40923346e3cc9c83ae527004d502e0464f/www/static/js-unmin/sw/index.js#L3).
@@ -64,13 +65,14 @@ On [trained-to-thrill][ttt] I use this to
 ### On install—not as a dependency {: #on-install-not }
 
 <figure class="w-figure">
-  <img class="w-screenshot" alt="" src="cm-on-install-not.png">
+  <img src="./cm-on-install-not.png" alt="On install - not as a dependency.">
+  <figcaption class="w-figcaption">On install - not as a dependency.</figcaption>
 </figure>
 
-Similar to above, but won't delay install completing and won't cause installation to fail if caching
+This is similar to above, but won't delay install completing and won't cause installation to fail if caching
 fails.
 
-**Ideal for:** Bigger resources that aren't needed straight away, such as assets for later levels of
+**Ideal for:** bigger resources that aren't needed straight away, such as assets for later levels of
 a game.
 
 ```js
@@ -104,14 +106,17 @@ supported on Chromium forks.
 ### On activate {: #on-activate }
 
 <figure class="w-figure">
-  <img class="w-screenshot" alt="" src="cm-on-activate.png">
+  <img src="./cm-on-activate.png" alt="On activate.">
+  <figcaption class="w-figcaption">On activate.</figcaption>
 </figure>
 
-**Ideal for:** Clean-up and migration.
+**Ideal for:** clean-up and migration.
 
 Once a new Service Worker has installed and a previous version isn't being used, the new one
 activates, and you get an `activate` event. Because the old version is out of the way, it's a good
-time to handle schema migrations in IndexedDB and also delete unused caches.
+time to handle
+[schema migrations in IndexedDB](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/indexeddb-best-practices)
+and also delete unused caches.
 
 ```js
 self.addEventListener('activate', function (event) {
@@ -134,7 +139,7 @@ self.addEventListener('activate', function (event) {
 ```
 
 During activation, other events such as `fetch` are put into a queue, so a long activation could
-potentially block page loads. Keep your activation as lean as possible, only use it for things you
+potentially block page loads. Keep your activation as lean as possible, and only use it for things you
 _couldn't_ do while the old version was active.
 
 On [trained-to-thrill][ttt] I use this to
@@ -143,10 +148,11 @@ On [trained-to-thrill][ttt] I use this to
 ### On user interaction {: #on-user-interaction }
 
 <figure class="w-figure">
-  <img class="w-screenshot" alt="" src="cm-on-user-interaction.png">
+  <img src="./cm-on-user-interaction.png" alt="On user interaction.">
+  <figcaption class="w-figcaption">On user interaction.</figcaption>
 </figure>
 
-**Ideal for:** When the whole site can't be taken offline, and you chose to allow the user to select
+**Ideal for:** when the whole site can't be taken offline, and you chose to allow the user to select
 the content they want available offline. E.g. a video on something like YouTube, an article on
 Wikipedia, a particular gallery on Flickr.
 
@@ -178,17 +184,18 @@ need to involve the service worker to add things to the cache.
 ### On network response {: #on-network-response }
 
 <figure class="w-figure">
-  <img class="w-screenshot" alt="" src="cm-on-network-response.png">
+  <img src="./cm-on-network-response.png" alt="On network response.">
+  <figcaption class="w-figcaption">On network response.</figcaption>
 </figure>
 
-**Ideal for:** Frequently updating resources such as a user's inbox, or article contents. Also
+**Ideal for:** frequently updating resources such as a user's inbox, or article contents. Also
 useful for non-essential content such as avatars, but care is needed.
 
-If a request doesn't match anything in the cache, get it from the network, send it to the page and
+If a request doesn't match anything in the cache, get it from the network, send it to the page, and
 add it to the cache at the same time.
 
 If you do this for a range of URLs, such as avatars, you'll need to be careful you don't bloat the
-storage of your origin—if the user needs to reclaim disk space you don't want to be the prime
+storage of your origin. If the user needs to reclaim disk space you don't want to be the prime
 candidate. Make sure you get rid of items in the cache you don't need any more.
 
 ```js
@@ -209,8 +216,8 @@ self.addEventListener('fetch', function (event) {
 });
 ```
 
-To allow for efficient memory usage, you can only read a response/request's body once. In the code
-above, [`.clone()`](https://fetch.spec.whatwg.org/#dom-request-clone) is used to create additional
+To allow for efficient memory usage, you can only read a response/request's body once. The code
+above uses [`.clone()`](https://fetch.spec.whatwg.org/#dom-request-clone) to create additional
 copies that can be read separately.
 
 On [trained-to-thrill][ttt] I use this to
@@ -219,10 +226,11 @@ On [trained-to-thrill][ttt] I use this to
 ### Stale-while-revalidate {: #stale-while-revalidate }
 
 <figure class="w-figure">
-  <img class="w-screenshot" alt="" src="cm-stale-while-revalidate.png">
+  <img src="./cm-stale-while-revalidate.png" alt="Stale-while-revalidate.">
+  <figcaption class="w-figcaption">Stale-while-revalidate.</figcaption>
 </figure>
 
-**Ideal for:** Frequently updating resources where having the very latest version is non-essential.
+**Ideal for:** frequently updating resources where having the very latest version is non-essential.
 Avatars can fall into this category.
 
 If there's a cached version available, use it, but fetch an update for next time.
@@ -248,29 +256,26 @@ This is very similar to HTTP's [stale-while-revalidate](https://www.mnot.net/blo
 ### On push message {: #on-push-message }
 
 <figure class="w-figure">
-  <img class="w-screenshot" alt="" src="cm-on-push.png">
+  <img src="./cm-on-push.png" alt="On push message.">
+  <figcaption class="w-figcaption">On push message.</figcaption>
 </figure>
 
 The [Push API](/web/fundamentals/push-notifications) is another feature built on top of
 Service Worker. This allows the Service Worker to be awoken in response to a message from the OS's
-messaging service. This happens even when the user doesn't have a tab open to your site, only the
+messaging service. This happens even when the user doesn't have a tab open to your site. Only the
 Service Worker is woken up. You request permission to do this from a page and the user will be
 prompted.
 
-**Ideal for:** Content relating to a notification, such as a chat message, a breaking news story, or
+**Ideal for:** content relating to a notification, such as a chat message, a breaking news story, or
 an email. Also infrequently changing content that benefits from immediate sync, such as a todo list
 update or a calendar alteration.
 
 {% YouTube '0i7YdSEQI1w' %}
 
 The common final outcome is a notification which, when tapped, opens/focuses a relevant page, but
-updating caches before this happens is _extremely_ important. The user is obviously online at the
+for which updating caches before this happens is _extremely_ important. The user is obviously online at the
 time of receiving the push message, but they may not be when they finally interact with the
-notification, so making this content available offline is important. The Twitter native app, which
-is for the most part an excellent example of offline-first, gets this a bit wrong.
-
-Without a connection, Twitter fails to provide the content relating to the push message. Tapping it
-does remove the notification however, leaving the user with less information than before they
+notification, so making this content available offline is important.
 tapped. Don't do this!
 
 <div style="clear:both;"></div>
