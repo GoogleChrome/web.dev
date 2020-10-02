@@ -126,9 +126,9 @@ or areas that you don't think should change highlighted then you can do some inv
 
 When it comes to painting, some things are more expensive than others.
 For example, anything that involves a blur (like a shadow, for example) is going to take longer to paint than drawing a red box.
-In terms of CSS, however, this isn’t always obvious:
+In terms of CSS, however, this isn't always obvious:
 `background: red;` and `box-shadow: 0, 4px, 4px, rgba(0,0,0,0.5);`
-don’t necessarily look like they have vastly different performance characteristics, but they do.
+don't necessarily look like they have vastly different performance characteristics, but they do.
 
 If you need to dig into whether a particular property is causing performance issues due to painting,
 the [paint profiler](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#paint-profiler)
