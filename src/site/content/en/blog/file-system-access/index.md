@@ -326,7 +326,9 @@ origin of the page. While browsers will typically implement this by persisting t
 origin-private file system to disk somewhere, it is _not_ intended that the contents be easily user
 accessible. Similarly, there is _no_ expectation that files or directories with names matching the
 names of children of the origin-private file system exist.
-While the browser might make it seem that there are files, internally—since this is an origin-private file system—the browser might store these "files" in a database or any other data structure.
+While the browser might make it seem that there are files, internally—since this is an
+origin-private file system—the browser might store these "files" in a database or any
+other data structure.
 Essentially: what you create with this API, do *not* expect to find it 1:1 somewhere on the hard disk.
 You can operate as usual on the
 origin-private file system once you have access to the root `FileSystemDirectoryHandle`.
