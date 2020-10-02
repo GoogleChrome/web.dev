@@ -316,16 +316,17 @@ self.addEventListener('notificationclick', function (event) {
 ### On background-sync {: #on-background-sync }
 
 <figure class="w-figure">
-  <img class="w-screenshot" alt="" src="cm-on-bg-sync.png">
+  <img src="./cm-on-bg-sync.png" alt="On background-sync.">
+  <figcaption class="w-figcaption">On background-sync.</figcaption>
 </figure>
 
 [Background sync](/web/updates/2015/12/background-sync) is another feature built on top of
 Service Worker. It allows you to request background data synchronization as a one-off, or on an
 (extremely heuristic) interval. This happens even when the user doesn't have a tab open to your
-site, only the Service Worker is woken up. You request permission to do this from a page and the user
+site. Only the Service Worker is woken up. You request permission to do this from a page and the user
 will be prompted.
 
-**Ideal for:** Non-urgent updates, especially those that happen so regularly that a push message per
+**Ideal for:** non-urgent updates, especially those that happen so regularly that a push message per
 update would be too frequent for users, such as social timelines or news articles.
 
 ```js
@@ -346,10 +347,10 @@ Your origin is given a certain amount of free space to do what it wants with. Th
 shared between all origin storage:
 [(local) Storage](https://developer.mozilla.org/en-US/docs/Web/API/Storage),
 [IndexedDB](https://developer.mozilla.org/en-US/docs/Glossary/IndexedDB),
-[File System Access](https://web.dev/file-system-access/)Filesystem, and of course
+[File System Access](https://web.dev/file-system-access/), and of course
 [Caches](https://developer.mozilla.org/en-US/docs/Web/API/Cache).
 
-The amount you get isn't spec'd, it will differ depending on device and storage conditions. You can
+The amount you get isn't spec'd. It will differ depending on device and storage conditions. You can
 find out how much you've got via:
 
 ```js
@@ -361,8 +362,8 @@ navigator.storageQuota.queryInfo('temporary').then(function (info) {
 });
 ```
 
-However, like all browser storage, the browser is free to throw away your data if the device becomes
-under storage pressure. Unfortunately the browser can't tell the different between those movies you
+However, like all browser storage, the browser is free to throw away your data if the device comes
+under storage pressure. Unfortunately the browser can't tell the difference between those movies you
 want to keep at all costs, and the game you don't really care about.
 
 To work around this, use the
@@ -383,7 +384,7 @@ Of course, the user has to grant permission.  For this, use the Permissions API.
 
 Making the user part of this flow is important, as we
 can now expect them to be in control of deletion. If their device comes under storage pressure, and
-clearing non-essential data doesn't solve it, the user gets to judge on which items to keep and
+clearing non-essential data doesn't solve it, the user gets to judge which items to keep and
 remove.
 
 For this to work, it requires operating systems to treat "durable" origins as equivalent to native
@@ -391,16 +392,17 @@ apps in their breakdowns of storage usage, rather than reporting the browser as 
 
 ## Serving Suggestions—responding to requests {: #serving-suggestions }
 
-It doesn't matter how much caching you do, the Service Worker won't use the cache unless you tell it
+It doesn't matter how much caching you do, the service worker won't use the cache unless you tell it
 when and how. Here are a few patterns for handling requests:
 
 ### Cache only {: #cache-only }
 
 <figure class="w-figure">
-  <img class="w-screenshot" alt="" src="ss-cache-only.png">
+  <img src="./ss-cache-only.png" alt="Cache only.">
+  <figcaption class="w-figcaption">Cache only.</figcaption>
 </figure>
 
-**Ideal for:** Anything you'd consider static to a particular "version" of your site. You should
+**Ideal for:** anything you'd consider static to a particular "version" of your site. You should
 have cached these in the install event, so you can depend on them being there.
 
 ```js
@@ -417,16 +419,17 @@ self.addEventListener('fetch', function (event) {
 ### Network only {: #network-only }
 
 <figure class="w-figure">
-  <img class="w-screenshot" alt="" src="ss-network-only.png">
+  <img src="./ss-network-only.png" alt="Network only.">
+  <figcaption class="w-figcaption">Network only.</figcaption>
 </figure>
 
-**Ideal for:** Things that have no offline equivalent, such as analytics pings, non-GET requests.
+**Ideal for:** things that have no offline equivalent, such as analytics pings, non-GET requests.
 
 ```js
 self.addEventListener('fetch', function (event) {
   event.respondWith(fetch(event.request));
   // or simply don't call event.respondWith, which
-  // will result in default browser behaviour
+  // will result in default browser behavior
 });
 ```
 
@@ -436,10 +439,11 @@ self.addEventListener('fetch', function (event) {
 ### Cache, falling back to network {: #cache-falling-back-to-network }
 
 <figure class="w-figure">
-  <img class="w-screenshot" alt="" src="ss-falling-back-to-network.png">
+  <img src="./ss-falling-back-to-network.png" alt="Cache, falling back to network.">
+  <figcaption class="w-figcaption">Cache, falling back to network.</figcaption>
 </figure>
 
-**Ideal for:** Building offline-first. In such cases, this is how you'll handle the majority of
+**Ideal for:** building offline-first. In such cases, this is how you'll handle the majority of
 requests. Other patterns will be exceptions based on the incoming request.
 
 ```js
@@ -452,16 +456,17 @@ self.addEventListener('fetch', function (event) {
 });
 ```
 
-This gives you the "Cache only" behaviour for things in the cache and the "Network only" behaviour
+This gives you the "cache only" behavior for things in the cache and the "network only" behavior
 for anything not-cached (which includes all non-GET requests, as they cannot be cached).
 
 ### Cache and network race {: #cache-and-network-race }
 
 <figure class="w-figure">
-  <img class="w-screenshot" alt="" src="ss-cache-and-network-race.png">
+  <img src="./ss-cache-and-network-race.png" alt="Cache and network race.">
+  <figcaption class="w-figcaption">Cache and network race.</figcaption>
 </figure>
 
-**Ideal for:** Small assets where you're chasing performance on devices with slow disk access.
+**Ideal for:** small assets where you're chasing performance on devices with slow disk access.
 
 With some combinations of older hard drives, virus scanners, and faster internet connections,
 getting resources from the network can be quicker than going to disk. However, going to the network
@@ -490,14 +495,15 @@ self.addEventListener('fetch', function (event) {
 ### Network falling back to cache {: #network-falling-back-to-cache }
 
 <figure class="w-figure">
-  <img class="w-screenshot" alt="" src="ss-network-falling-back-to-cache.png">
+  <img src="./ss-network-falling-back-to-cache.png" alt="Network falling back to cache.">
+  <figcaption class="w-figcaption">Network falling back to cache.</figcaption>
 </figure>
 
-**Ideal for:** A quick-fix for resources that update frequently, outside of the "version" of the
-site. E.g. articles, avatars, social media timelines, game leader boards.
+**Ideal for:** a quick-fix for resources that update frequently, outside of the "version" of the
+site. E.g. articles, avatars, social media timelines, and game leader boards.
 
 This means you give online users the most up-to-date content, but offline users get an older cached
-version. If the network request succeeds you'll most-likely want to
+version. If the network request succeeds you'll most likely want to
 [update the cache entry](#on-network-response).
 
 However, this method has flaws. If the user has an intermittent or slow connection they'll have to
@@ -518,13 +524,14 @@ self.addEventListener('fetch', function (event) {
 ### Cache then network {: #cache-then-network }
 
 <figure class="w-figure">
-  <img class="w-screenshot" alt="" src="ss-cache-then-network.png">
+  <img src="./ss-cache-then-network.png" alt="Cache then network.">
+  <figcaption class="w-figcaption">Cache then network.</figcaption>
 </figure>
 
-**Ideal for:** Content that updates frequently. E.g. articles, social media timelines, game
+**Ideal for:** content that updates frequently. E.g. articles, social media timelines, and games.
 leaderboards.
 
-This requires the page to make two requests, one to the cache, one to the network. The idea is to
+This requires the page to make two requests, one to the cache, and one to the network. The idea is to
 show the cached data first, then update the page when/if the network data arrives.
 
 Sometimes you can just replace the current data when new data arrives (e.g. game leaderboard), but
@@ -576,7 +583,7 @@ caches
 
 **Code in the Service Worker:**
 
-We always go to the network and update a cache as we go.
+You should always go to the network and update a cache as you go.
 
 ```js
 self.addEventListener('fetch', function (event) {
@@ -600,13 +607,14 @@ and abusing the Accept header to tell the Service Worker where to get the result
 ### Generic fallback {: #generic-fallback }
 
 <figure class="w-figure">
-  <img class="w-screenshot" alt="" src="ss-generic-fallback.png">
+  <img src="./ss-generic-fallback.png" alt="Generic fallback.">
+  <figcaption class="w-figcaption">Generic fallback.</figcaption>
 </figure>
 
 If you fail to serve something from the cache and/or network you may want to provide a generic
 fallback.
 
-**Ideal for:** Secondary imagery such as avatars, failed POST requests, "Unavailable while offline"
+**Ideal for:** secondary imagery such as avatars, failed POST requests, and an "Unavailable while offline".
 page.
 
 ```js
@@ -632,21 +640,22 @@ self.addEventListener('fetch', function (event) {
 
 The item you fallback to is likely to be an [install dependency](#on-install-as-dependency).
 
-If your page is posting an email, your Service Worker may fall back to storing the email in an IDB
-'outbox' and respond letting the page know that the send failed but the data was successfully
+If your page is posting an email, your service worker may fall back to storing the email in an IndexedDB
+'outbox' and respond by letting the page know that the send failed but the data was successfully
 retained.
 
-### Service Worker-side templating {: #Service Worker-side-templating }
+### Service worker-side templating {: #Service Worker-side-templating }
 
 <figure class="w-figure">
-  <img class="w-screenshot" alt="" src="ss-sw-side-templating.png">
+  <img src="./ss-sw-side-templating.png" alt="ServiceWorker-side templating.">
+  <figcaption class="w-figcaption">ServiceWorker-side templating.</figcaption>
 </figure>
 
-**Ideal for:** Pages that cannot have their server response cached.
+**Ideal for:** pages that cannot have their server response cached.
 
 [Rendering pages on the server makes things fast](https://jakearchibald.com/2013/progressive-enhancement-is-faster/),
 but that can mean including state data that may not make sense in a cache, e.g. "Logged in as…". If
-your page is controlled by a Service Worker, you may instead choose to request JSON data along with a
+your page is controlled by a service worker, you may instead choose to request JSON data along with a
 template, and render that instead.
 
 ```js
@@ -679,13 +688,13 @@ self.addEventListener('fetch', function (event) {
 
 ## Putting it together
 
-You don't have to pick one of these methods, you'll likely use many of them depending on request
+You aren't limited to one of these methods. In fact, you'll likely use many of them depending on request
 URL. For example, [trained-to-thrill][ttt] uses:
 
-- [Cache on install](#on-install-as-dependency), for the static UI and behaviour
-- [Cache on network response](#on-network-response), for the Flickr images and data
-- [Fetch from cache, falling back to network](#cache-falling-back-to-network), for most requests
-- [Fetch from cache, then network](#cache-then-network), for the Flickr search results
+- [cache on install](#on-install-as-dependency), for the static UI and behavior
+- [cache on network response](#on-network-response), for the Flickr images and data
+- [fetch from cache, falling back to network](#cache-falling-back-to-network), for most requests
+- [fetch from cache, then network](#cache-then-network), for the Flickr search results
 
 Just look at the request and decide what to do:
 
