@@ -8,7 +8,7 @@ description: |
   interaction with the keyboard, mouse, screen, activation of a screensaver, locking of the screen,
   or moving to a different screen. A developer-defined threshold triggers the notification.
 date: 2020-05-18
-updated: 2020-09-23
+updated: 2020-10-02
 tags:
   - blog
   - idle-detection
@@ -112,6 +112,7 @@ The first step when using the Idle Detection API is
 to ensure the `'idle-detection'` permission is granted.
 If the permission is not granted, you need to
 request it via `IdleDetector.requestPermission()`.
+Note that calling this method requires a user gesture.
 
 ```js
 // Make sure 'idle-detection' permission is granted.
