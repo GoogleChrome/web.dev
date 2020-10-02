@@ -278,7 +278,6 @@ time of receiving the push message, but they may not be when they finally intera
 notification, so making this content available offline is important.
 tapped. Don't do this!
 
-<div style="clear:both;"></div>
 
 This code updates caches before showing a notification:
 
