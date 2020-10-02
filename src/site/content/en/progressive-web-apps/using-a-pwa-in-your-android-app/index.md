@@ -26,7 +26,7 @@ Apps from their Android apps.
 
 Trusted Web Activity is an open standard that allows browsers to provide a fully web platform
 compatible container that renders PWAs inside an Android app. The feature
-is available in [Chrome][2], and in development in [Firefox Preview Nightly][3].
+is available in [Chrome][2], and in development in [Firefox Nightly][3].
 
 ### Existing solutions were limited
 
@@ -157,11 +157,11 @@ Finally, move your application from the closed test channel to production!
 
 [1]: /progressive-web-apps/
 [2]: https://play.google.com/store/apps/details?id=com.android.chrome
-[3]: https://play.google.com/store/apps/details?id=org.mozilla.fenix.nightly
+[3]: https://play.google.com/store/apps/details?id=org.mozilla.fenix
 [4]: https://developer.android.com/reference/android/webkit/WebView
 [5]: https://cordova.apache.org/
 [6]: /contact-picker/
-[7]: /native-file-system/
+[7]: /file-system-access/
 [8]: https://developers.google.com/web/updates/2019/02/using-twa
 [9]: https://play.google.com/about/developer-content-policy/
 [10]: https://github.com/GoogleChromeLabs/bubblewrap

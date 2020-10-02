@@ -31,7 +31,7 @@ export class Assessment extends BaseModalElement {
       open: {type: Boolean, reflect: true},
       animatable: {type: Boolean, reflect: true},
       overflow: {type: Boolean, reflect: true},
-      parentModal: {attribute: 'parent-modal', reflect: true},
+      parentModal: {type: String, reflect: true, attribute: 'parent-modal'},
     };
   }
 

@@ -3,7 +3,7 @@ title: A contact picker for the web
 subhead: The Contact Picker API provides an easy way for users to share contacts from their contact list.
 authors:
   - petelepage
-description: Access to the user's contacts has been a feature of native apps since (almost) the dawn of time. The Contact Picker API is an on-demand API  that allows users to select an entry or entries from their contact list and share limited details of the selected contact(s) with a website. It allows users to share only what they want, when they want, and makes it easier for users to reach and connect with their friends and family.
+description: Access to the user's contacts has been a feature of iOS/Android apps since (almost) the dawn of time. The Contact Picker API is an on-demand API  that allows users to select an entry or entries from their contact list and share limited details of the selected contact(s) with a website. It allows users to share only what they want, when they want, and makes it easier for users to reach and connect with their friends and family.
 date: 2019-08-07
 updated: 2020-07-30
 tags:
@@ -35,9 +35,9 @@ feedback:
   </a>
 </figure>
 
-Access to the user's contacts on a mobile device has been a feature of native apps since
+Access to the user's contacts on a mobile device has been a feature of iOS/Android apps since
 (almost) the dawn of time. It's one of the most common feature requests
-I hear from web developers, and is often the key reason they build a native
+I hear from web developers, and is often the key reason they build an iOS/Android
 app.
 
 Available in Chrome 80 on Android, the [Contact Picker API][spec] is an

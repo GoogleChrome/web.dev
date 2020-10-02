@@ -17,7 +17,7 @@ tags:
 
 In our other e-commerce guides you have learned about [what you should measure
 to improve performance](/what-should-you-measure-to-improve-performance/), and
-[how to measure and report metrics to build a performance culture](how-to-report-metrics/).
+[how to measure and report metrics to build a performance culture](/how-to-report-metrics/).
 
 <figure class="w-figure">
   <img src="https://web.dev/what-should-you-measure-to-improve-performance/funnel.png" alt="A conversion funnel going from discover to engage to convert to re-engage." style="max-width: 600px; width: 100%;">
@@ -48,7 +48,7 @@ After getting users to your site, you need to keep them engaged with your conten
   </figcaption>
 </figure>
 
-Besides various UX best practices, a smooth, fast and responsive experience is key here. While optimizing a website for discovery means optimizing for first load, optimizing for engagement means fast navigations and fast repeat loads. Analyze at which steps of the flow users drop out, and then relate back to speed metrics for these navigations. This can be analyzed for example via [WebPageTest](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/scripting#TOC-Sample-scripts), [Puppeteer](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md) or via the Chrome DevTools [Record](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/#record) feature. We will show you more examples of those in the following guides.
+Besides various UX best practices, a smooth, fast and responsive experience is key here. While optimizing a website for discovery means optimizing for first load, optimizing for engagement means fast navigations and fast repeat loads. Analyze at which steps of the flow users drop out, and then relate back to speed metrics for these navigations. This can be analyzed for example via [WebPageTest](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Scripting.md#sample-scripts), [Puppeteer](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md) or via the Chrome DevTools [Record](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/#record) feature. We will show you more examples of those in the following guides.
 
 ## Conversion
 
@@ -73,6 +73,6 @@ E-commerce sites always strive for conversions, which are at the end of a purcha
 
 To learn more, be sure to check out the other posts in this series on [measuring
 to improve performance](/what-should-you-measure-to-improve-performance/), and
-[how report metrics to build a performance culture](how-to-report-metrics/).
+[how report metrics to build a performance culture](/how-to-report-metrics/).
 
 _Hero image by Campaign Creators on Unsplash_.

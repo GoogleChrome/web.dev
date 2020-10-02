@@ -13,11 +13,11 @@ i18n:
     Get the web's modern capabilities on your own sites and apps with useful
     guidance and analysis from web.dev.
   test_cta: Test my site
+  about_subheadline: |
+    As the web advances, users' expectations grow. With web.dev's guidance, you
+    can give your users the best experience, wherever they are.
+  about_cta: About web.dev
   explore_cta: Explore topics
-  webdev_live_html: |
-    web.dev LIVE is now over! Head to <a href="/live/">web.dev/live</a> to watch
-    all the sessions, top Q&amp;A and more from our three day digital event for
-    web developers.
   latest_headline: Latest stories
   latest_subheadline: See our latest news, updates, and stories for developers.
   see_all: See all articles

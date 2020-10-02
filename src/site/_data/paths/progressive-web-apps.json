@@ -21,6 +21,7 @@
     {
       "title": "Installable",
       "pathItems": [
+        "offline-fallback-page",
         "define-install-strategy",
         "install-criteria"
       ],

@@ -141,7 +141,7 @@ learn more.
 Chrome wants you to be free to create the highest quality web apps that give you the biggest reach
 to users across devices. Combining the installability and reliability of PWAs, with the
 [capabilities project](/fugu-status/) (Project Fugu), Chrome is focusing on three
-things to close the gap between native and the web, to help you build and deliver great
+things to close the gap between platform-specific apps and the web, to help you build and deliver great
 experiences.
 
 First, Chrome teams have been working hard to give web developers and users [more control over the install
@@ -165,12 +165,12 @@ land in Chrome 84 (mid-July 2020).
 
 And finally, Chrome has been working on new capabilities that enable new scenarios that weren't
 possible before, like editors that [read and write to files on the user's local file
-system](/native-file-system/), or get the list of locally installed fonts so that
+system](/file-system-access/), or get the list of locally installed fonts so that
 users can use them in their designs.
 
 During web.dev LIVE, we spoke about [lots of other capabilities and
 features](https://youtu.be/NXCT3htg9nk) that can enable you to deliver the same kind of experience,
-with the same capabilities, as native apps. See all sessions at [web.dev/live](/live)
+with the same capabilities, as platform-specific apps. See all sessions at [web.dev/live](/live)
 in the Day 2 schedule.
 
 ## What's new in Chrome DevTools and Lighthouse 6.0

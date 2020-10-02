@@ -29,7 +29,7 @@ to generate the Speed Index score.
 
 {% Aside %}
 Speedline is based on the same principles as the
-[original speed index introduced by WebpageTest.org](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index),
+[original speed index introduced by WebpageTest.org](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Metrics/SpeedIndex.md),
 but it computes the visual progression between frames using the
 [structural similarity (SSIM) index](https://en.wikipedia.org/wiki/Structural_similarity)
 instead of the histogram distance.
@@ -92,4 +92,4 @@ should have a particularly big impact:
 - [Source code for **Speed Index** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/metrics/speed-index.js)
 - [Lighthouse v3 Scoring Guide](https://developers.google.com/web/tools/lighthouse/v3/scoring)
 - [Speedline](https://github.com/paulirish/speedline)
-- [WebPagetest Speed Index](https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index)
+- [WebPagetest Speed Index](https://github.com/WPO-Foundation/webpagetest-docs/blob/master/user/Metrics/SpeedIndex.md)

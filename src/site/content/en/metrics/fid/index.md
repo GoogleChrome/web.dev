@@ -151,7 +151,7 @@ listener has not been registered.** The reason is because many user interactions
 do not require an event listener but _do_ require the main thread to be idle in
 order to run.
 
-For example, all of the following native HTML elements need to wait for
+For example, all of the following HTML elements need to wait for
 in-progress tasks on the main thread to complete prior to responding to user
 interactions:
 

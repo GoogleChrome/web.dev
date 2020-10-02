@@ -4,7 +4,7 @@ subhead: The Serial API allows websites to communicate with serial devices.
 authors:
   - beaufortfrancois
 date: 2020-08-12
-updated: 2020-08-12
+updated: 2020-09-29
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: |
@@ -21,7 +21,7 @@ feedback:
 ---
 
 {% Aside %}
-Web apps should be able to do anything native apps can. The [Capabilities
+Web apps should be able to do anything iOS/Android/desktop apps can. The [Capabilities
 project](/fugu-status/), of which Serial API is only a part, aims to do just
 that. To learn about other capabilities and to keep up with their progress,
 follow [Unlocking new capabilities for the web](/fugu-status/).
@@ -43,7 +43,7 @@ and 3D printers.
 
 This API is also a great companion to [WebUSB] as operating systems require
 applications to communicate with some serial ports using their higher-level
-native serial API rather than the low-level USB API.
+serial API rather than the low-level USB API.
 
 {% Aside  %}
 This article reflects the Serial API as implemented in Chrome 86 and later. Some
@@ -62,9 +62,9 @@ software to control these devices is built with web technology:
 - [Espruino Web IDE]
 - [Microsoft MakeCode]
 
-In some cases, websites communicate with the device through a native agent
+In some cases, websites communicate with the device through an agent
 application that users installed manually. In others, the application is
-delivered in a packaged native application through a framework such as Electron.
+delivered in a packaged application through a framework such as Electron.
 And in others, the user is required to perform an additional step such as
 copying a compiled application to the device via a USB flash drive.
 
@@ -87,6 +87,12 @@ communication between the website and the device that it is controlling.
 
 ## Using the Serial API {: #use }
 
+### Enabling via chrome://flags
+
+To experiment with the Serial API locally on all desktop platforms, without an
+origin trial token, enable the `#experimental-web-platform-features` flag in
+`chrome://flags`.
+
 ### Enabling support during the origin trial phase
 
 The Serial API is available on all desktop platforms (Chrome OS, Linux, macOS,
@@ -99,12 +105,6 @@ be enabled using a flag.
 ### Register for the origin trial {: #ot }
 
 {% include 'content/origin-trial-register.njk' %}
-
-### Enabling via chrome://flags
-
-To experiment with the Serial API locally on all desktop platforms, without an
-origin trial token, enable the `#experimental-web-platform-features` flag in
-`chrome://flags`.
 
 ### Feature detection {: #feature-detection }
 
@@ -504,6 +504,20 @@ const [appReadable, devReadable] = port.readable.tee();
 // You may want to update UI with incoming data from appReadable
 // and log incoming data in JS console for inspection from devReadable.
 ```
+
+## Dev Tips {: #dev-tips }
+
+Debugging the Serial API in Chrome is easy with the internal page, `chrome://device-log`
+where you can see all serial device related events in one single place.
+
+<figure class="w-figure">
+  <img src="./device-log-page-screenshot.jpg" class="w-screenshot" alt="Screenshot of the internal page for debugging the Serial API.">
+  <figcaption class="w-figcaption">Internal page in Chrome for debugging the Serial API.</figcaption>
+</figure>
+
+{% Aside %}
+The internal page supports debugging the Serial API in Chrome 87 and later.
+{% endAside %}
 
 ## Codelab {: #codelab }
 

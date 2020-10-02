@@ -70,13 +70,13 @@ To add the DnD functionality we need to use the JavaScript API.
 
 There are a number of different events to attach to for monitoring the entire drag and drop process.
 
-* [`dragstart`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragstart_event)
-* [`drag`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drag_event)
-* [`dragenter`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragenter_event)
-* [`dragleave`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragleave_event)
-* [`dragover`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragover_event)
-* [`drop`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/drop_event)
-* [`dragend`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dragend_event)
+* [`dragstart`](https://developer.mozilla.org/en-US/docs/Web/API/Document/dragstart_event)
+* [`drag`](https://developer.mozilla.org/en-US/docs/Web/API/Document/drag_event)
+* [`dragenter`](https://developer.mozilla.org/en-US/docs/Web/API/Document/dragenter_event)
+* [`dragleave`](https://developer.mozilla.org/en-US/docs/Web/API/Document/dragleave_event)
+* [`dragover`](https://developer.mozilla.org/en-US/docs/Web/API/Document/dragover_event)
+* [`drop`](https://developer.mozilla.org/en-US/docs/Web/API/Document/drop_event)
+* [`dragend`](https://developer.mozilla.org/en-US/docs/Web/API/Document/dragend_event)
 
 To handle the DnD flow, you need some kind of source element (where the drag originates),
 the data payload (what you're trying to drop),

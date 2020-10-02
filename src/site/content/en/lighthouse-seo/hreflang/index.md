@@ -28,7 +28,7 @@ in the page's `head` and in its [response headers](https://developer.mozilla.org
 Lighthouse then checks for valid language codes within the `hreflang`links.
 Lighthouse reports any `hreflang` links with invalid language codes.
 
-Lighthouse does not check region codes or your [sitemap]((https://support.google.com/webmasters/answer/156184)).
+Lighthouse does not check region codes or your [sitemap](https://support.google.com/webmasters/answer/156184).
 
 {% include 'content/lighthouse-seo/scoring.njk' %}
 
@@ -69,7 +69,7 @@ Link: <https://example.com>; rel="alternate"; hreflang="en", <https://es.example
 rel="alternate"; hreflang="es", <https://de.example.com>; rel="alternate"; hreflang="de"
 ```
 
-**Option 3:** Add language version information to your [sitemap]((https://support.google.com/webmasters/answer/156184)).
+**Option 3:** Add language version information to your [sitemap](https://support.google.com/webmasters/answer/156184).
 
 ```xml
 <url>

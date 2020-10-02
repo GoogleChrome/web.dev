@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: |
   Learn how to make your Progressive Web App feel like a "real" app by understanding
-  how to implement native app patterns with web technologies.
+  how to implement platform-specific app patterns with web technologies.
 date: 2020-06-15
 updated: 2020-07-23
 tags:
@@ -15,7 +15,7 @@ tags:
 
 When you play Progressive Web App buzzword bingo, it is a safe bet to set on "PWAs are just websites". Microsoft's PWA documentation [agrees](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/#progressive-web-apps-on-windows:~:text=PWAs%20are%20just%20websites), we [say it](https://web.dev/progressive-web-apps/#content:~:text=Progressive%20Web%20Apps,Websites) on this very site, and even PWA nominators Frances Berriman and Alex Russell [write so](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/#post-2263:~:text=they%E2%80%99re%20just%20websites), too. Yes, PWAs are just websites, but they are also way more than that. If done right, a PWA will not feel like a website, but like a "real" app. Now what does it mean to feel like a real app?
 
-In order to answer this question, let me use the native Apple [Podcasts](https://support.apple.com/en-us/HT201859) app as an example.
+In order to answer this question, let me use the Apple [Podcasts](https://support.apple.com/en-us/HT201859) app as an example.
 It is available on macOS on desktop and on iOS (and iPadOS respectively) on mobile.
 While Podcasts is a media application, the core ideas I illustrate with its help apply to other categories of apps, too.
 
@@ -25,7 +25,7 @@ While Podcasts is a media application, the core ideas I illustrate with its help
 </figure>
 
 {% Aside 'caution' %}
-Each native app feature that is listed below has a **How to do this on the web**
+Each iOS/Android/desktop app feature that is listed below has a **How to do this on the web**
 component that you can open for more details.
 Please note that not all browsers on the various operating systems support all the listed APIs
 or functionalities. Be sure to carefully review the compatibility notes in the linked articles.
@@ -33,7 +33,7 @@ or functionalities. Be sure to carefully review the compatibility notes in the l
 
 ## Capable of running offline
 
-If you take a step back and think of some of the native applications you may have on your mobile phone or desktop computer, one thing clearly stands out: you never get nothing. In the Podcasts app, even if I am offline, there is always something. When there is no network connection, the app naturally still opens. The **Top Charts** section does not show any content, but instead falls back to a **Can't connect right now** message paired with a **Retry** button. It may not be the most welcoming experience, but I get something.
+If you take a step back and think of some of the platform-specific applications you may have on your mobile phone or desktop computer, one thing clearly stands out: you never get nothing. In the Podcasts app, even if I am offline, there is always something. When there is no network connection, the app naturally still opens. The **Top Charts** section does not show any content, but instead falls back to a **Can't connect right now** message paired with a **Retry** button. It may not be the most welcoming experience, but I get something.
 
 <figure class="w-figure">
   <img src="./image4.png" alt="The Podcasts app showing a 'Cannot connect right now.' info message when no network connection is available." width="600">
@@ -112,8 +112,8 @@ The Podcasts app integrates naturally with other applications. For example, when
   With the <a href="https://web.dev/image-support-for-async-clipboard/">Async Clipboard API</a>, you can programmatically read and write
   text and image data (PNG images) to the system clipboard.
   On Android, you can use the <a href="https://web.dev/contact-picker/">Contact Picker API</a> to select entries from the device's contacts manager.
-  If you offer both a native app and a PWA, you can use the <a href="https://web.dev/get-installed-related-apps/">Get Installed Related Apps API</a>
-  to check if the native app is installed, in which case you do not need to encourage the user to install the PWA or accept web push notifications.
+  If you offer both a platform-specific app and a PWA, you can use the <a href="https://web.dev/get-installed-related-apps/">Get Installed Related Apps API</a>
+  to check if the platform-specific app is installed, in which case you do not need to encourage the user to install the PWA or accept web push notifications.
 {% endDetails %}
 
 ## Background app refreshing
@@ -212,7 +212,7 @@ The most common app actions, **Search** for new content and **Check for New Epis
 
 ## Act as default app
 
-Other native applications and even websites or emails can integrate with the Podcasts app by leveraging the `podcasts://` URL scheme. If I follow a link like [`podcasts://podcasts.apple.com/podcast/the-css-podcast/id1042283903`](podcasts://podcasts.apple.com/podcast/the-css-podcast/id1042283903) while in the browser, I am brought right into the Podcasts app and can decide to subscribe or listen to the podcast.
+Other iOS applications and even websites or emails can integrate with the Podcasts app by leveraging the `podcasts://` URL scheme. If I follow a link like [`podcasts://podcasts.apple.com/podcast/the-css-podcast/id1042283903`](podcasts://podcasts.apple.com/podcast/the-css-podcast/id1042283903) while in the browser, I am brought right into the Podcasts app and can decide to subscribe or listen to the podcast.
 
 <figure class="w-figure">
   <img src="./image20.png" alt="The Chrome browser showing a confirmation dialog asking the user whether they want to open the Podcasts app.">
@@ -228,9 +228,9 @@ Other native applications and even websites or emails can integrate with the Pod
   for PWAs. Currently, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/registerProtocolHandler"><code>registerProtocolHandler()</code></a> with a <code>web+</code> scheme prefix is the best alternative.
 {% endDetails %}
 
-## Native file system integration
+## Local file system integration
 
-You may not immediately think of it, but the Podcasts app naturally integrates with the native file system. When I download a podcast episode, on my laptop it is stored in `~/Library/Group Containers/243LU875E5.groups.com.apple.podcasts/Library/Cache`. Unlike, say `~/Documents`, this directory is of course not meant to be accessed directly by regular users, but it is there.
+You may not immediately think of it, but the Podcasts app naturally integrates with the local file system. When I download a podcast episode, on my laptop it is stored in `~/Library/Group Containers/243LU875E5.groups.com.apple.podcasts/Library/Cache`. Unlike, say `~/Documents`, this directory is of course not meant to be accessed directly by regular users, but it is there.
 Other storage mechanisms than files are referenced in the [offline content](#offline-content-available-and-media-playable) section.
 
 <figure class="w-figure">
@@ -242,15 +242,15 @@ Other storage mechanisms than files are referenced in the [offline content](#off
 {% DetailsSummary %}
   How to do this on the web
 {% endDetailsSummary %}
-  The <a href="https://web.dev/native-file-system/">Native File System API</a> enables developers to get access to the local file system
+  The <a href="https://web.dev/file-system-access/">File System Access API</a> enables developers to get access to the local file system
   of the device. You can use it directly or via the <a href="https://github.com/GoogleChromeLabs/browser-nativefs">browser-nativefs</a>
   support library that transparently provides a fallback for browsers that do not support the API.
   For security reasons, system directories are not web-accessible.
 {% endDetails %}
 
-## Native look and feel
+## iOS look and feel
 
-There is a more subtle thing that is self-evident for a native application like Podcasts: none of the text labels are selectable and all text blends in with the system font of the machine. Also my choice of system color theme (dark mode) is respected.
+There is a more subtle thing that is self-evident for an iOS application like Podcasts: none of the text labels are selectable and all text blends in with the system font of the machine. Also my choice of system color theme (dark mode) is respected.
 
 <div class="w-columns">
   <figure class="w-figure">
@@ -279,7 +279,7 @@ There is a more subtle thing that is self-evident for a native application like 
   to override it.
   Another thing to decide on might be what the browser should do when reaching
   the boundary of a scrolling area, for example, to implement custom <em>pull to refresh</em>.
-  This is possible with the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior"><code>overscroll-behavior</code></a> CSS property.  
+  This is possible with the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overscroll-behavior"><code>overscroll-behavior</code></a> CSS property.
 {% endDetails %}
 
 ## Customized title bar
@@ -584,10 +584,10 @@ The table below shows a compact overview of all features and provides a list of 
         </td>
       </tr>
       <tr>
-        <td><a href="#native-file-system-integration">Native file system integration</a></td>
+        <td><a href="#local-file-system-integration">Local file system integration</a></td>
         <td>
           <ul>
-            <li><a href="https://web.dev/native-file-system/">Native File System API</a></li>
+            <li><a href="https://web.dev/file-system-access/">File System Access API</a></li>
             <li>
               <a href="https://github.com/GoogleChromeLabs/browser-nativefs"
                 >browser-nativefs library</a
@@ -738,7 +738,7 @@ The table below shows a compact overview of all features and provides a list of 
 PWAs have come a long way since their introduction in 2015.
 In the context of [Project Fugu 🐡](/fugu-status), the cross-company Chromium team is working on closing the last remaining gaps.
 By following even only some of the pieces of advice in this article,
-you can piece by piece get closer to that app-like native feeling and make your users forget
+you can piece by piece get closer to that app-like feeling and make your users forget
 that they are dealing with "just a website", because, honestly, most of them do not care
 how your app is built (and why should they?), as long as it feels like a *real* app.
 

@@ -1,9 +1,9 @@
 ---
-title: "The Native File System API: simplifying access to local files"
-subhead: The new Native File System API allows web apps to read or save changes directly to files and folders on the user's device.
+title: "The File System Access API: simplifying access to local files"
+subhead: The new File System Access API allows web apps to read or save changes directly to files and folders on the user's device.
 authors:
   - petelepage
-description: The new Native File System API enables developers to build powerful web apps that interact with files on the user's local device, like IDEs, photo and video editors, text editors, and more. After a user grants a web app access, this API allows web apps to read or save changes directly to files and folders on the user's device.
+description: The new File System Access API enables developers to build powerful web apps that interact with files on the user's local device, like IDEs, photo and video editors, text editors, and more. After a user grants a web app access, this API allows web apps to read or save changes directly to files and folders on the user's device.
 date: 2019-08-20
 updated: 2020-09-02
 tags:
@@ -11,21 +11,21 @@ tags:
   - capabilities
   - file
   - file-system
-  - native-file-system
 hero: hero.jpg
 alt: Image of hard disk platters
 feedback:
   - api
 ---
 
-## What is the Native File System API? {: #what-is-it }
+## What is the File System Access API? {: #what-is-it }
 
-The [Native File System API][spec]  (formerly known as the Writeable Files API)
+The [File System Access API][spec] (formerly known as Native File System API
+and prior to that Writeable Files API)
 enables developers to build powerful web apps
 that interact with files on the user's local device, like IDEs, photo and video
 editors, text editors, and more. After a user grants a web app access, this
 API allows web apps to read or save changes directly to files and folders
-on the user's device. Beyond reading and writing files, the Native File System
+on the user's device. Beyond reading and writing files, the File System Access
 API provides the ability to open a directory and enumerate its contents.
 
 If you've worked with reading and writing files before, much of what I'm about
@@ -33,8 +33,8 @@ to share will be familliar to you. I encourage you to read it anyway because not
 all systems are alike.
 
 {% Aside 'caution' %}
-  We've put a lot of thought into the design and implementation of the Native
-  File System API to ensure that people can easily manage their files. See the
+  We've put a lot of thought into the design and implementation of the File
+  System Access API to ensure that people can easily manage their files. See the
   [security and permissions](#security-considerations) section
   for more information.
 {% endAside %}
@@ -53,9 +53,9 @@ all systems are alike.
 
 </div>
 
-## Using the Native File System API {: #how-to-use }
+## Using the File System Access API {: #how-to-use }
 
-To show off the true power and usefulness of the Native File System APIs,
+To show off the true power and usefulness of the File System Access APIs,
 I wrote a single file [text editor][text-editor]. It lets you open a text
 file, edit it, save the changes back to disk, or start a new file and save
 the changes to disk. It's nothing fancy, but provides enough to help you
@@ -63,7 +63,7 @@ understand the concepts.
 
 ### Try it
 
-See the Native File System API in action in the
+See the File System Access API in action in the
 [text editor](https://googlechromelabs.github.io/text-editor/) demo.
 
 ### Read a file from the local file system {: #read-file }
@@ -73,7 +73,7 @@ then open and read that file from disk.
 
 #### Ask the user to pick a file to read
 
-The entry point to the Native File System API is
+The entry point to the File System Access API is
 [`window.chooseFileSystemEntries()`][choose-fs-entries]. When called, it shows a
 file picker dialog box, and prompts the user to select a file. After a user
 selects a file, the API returns a handle to it. An optional `options` parameter
@@ -283,7 +283,7 @@ butDir.addEventListener('click', async (e) => {
 
 ## Security and permissions {: #security-considerations }
 
-The Chrome team has designed and implemented the Native File System API using
+The Chrome team has designed and implemented the File System Access API using
 the core principles defined in
 [Controlling Access to Powerful Web Platform Features][powerful-apis],
 including user control and transparency, and user ergonomics.
@@ -398,7 +398,7 @@ for access to the files.
 
 ## Feedback {: #feedback }
 
-We want to hear about your experiences with the Native File System API.
+We want to hear about your experiences with the File System Access API.
 
 ### Tell us about the API design {: .hide-from-toc }
 
@@ -406,7 +406,7 @@ Is there something about the API that doesn't work like you expected? Or
 are there missing methods or properties that you need to implement your
 idea? Have a question or comment on the security model?
 
-* File a spec issue on the [WICG Native File System GitHub repo][spec-issues],
+* File a spec issue on the [WICG File System Access GitHub repo][spec-issues],
   or add your thoughts to an existing issue.
 
 ### Problem with the implementation? {: .hide-from-toc }
@@ -421,7 +421,7 @@ different from the spec?
 
 ### Planning to use the API? {: .hide-from-toc }
 
-Planning to use the Native File System API on your site? Your public support
+Planning to use the File System Access API on your site? Your public support
 helps us to prioritize features, and shows other browser vendors how
 critical it is to support them.
 
@@ -432,32 +432,32 @@ critical it is to support them.
 ## Helpful links {: #helpful }
 
 * [Public explainer][explainer]
-* [Native File System specification][spec] & [File specification][file-api-spec]
+* [File System Access specification][spec] & [File specification][file-api-spec]
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
 * Request an [origin trial token]({{origin_trial.url}})
-* [Native File System API - Chromium Security Model][nfs-cr-sec-model]
+* [File System Access API - Chromium Security Model][nfs-cr-sec-model]
 * Blink Component: `Blink>Storage>FileSystem`
 
-[spec]: https://wicg.github.io/native-file-system/
+[spec]: https://wicg.github.io/file-system-access/
 [cr-bug]: https://crbug.com/853326
 [cr-status]: https://www.chromestatus.com/feature/6284708426022912
-[explainer]: https://github.com/WICG/native-file-system/blob/master/EXPLAINER.md
-[spec-security]: https://wicg.github.io/native-file-system/#privacy-considerations
+[explainer]: https://github.com/WICG/file-system-access/blob/master/EXPLAINER.md
+[spec-security]: https://wicg.github.io/file-system-access/#privacy-considerations
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EStorage%3EFileSystem
 [nfs-cr-sec-model]: https://docs.google.com/document/d/1NJFd-EWdUlQ7wVzjqcgXewqC5nzv_qII4OvlDtK6SE8/edit
 [wicg-discourse]: https://discourse.wicg.io/t/writable-file-api/1433
 [file-api-spec]: https://w3c.github.io/FileAPI/
 [blob-methods]: https://developer.mozilla.org/en-US/docs/Web/API/Blob
-[choose-fs-entries]: https://wicg.github.io/native-file-system/#api-choosefilesystementries
-[fs-writer]: https://wicg.github.io/native-file-system/#filesystemwriter
+[choose-fs-entries]: https://wicg.github.io/file-system-access/#api-choosefilesystementries
+[fs-writer]: https://wicg.github.io/file-system-access/#filesystemwriter
 [blob]: https://developer.mozilla.org/en-US/docs/Web/API/Blob
 [buffersource]: https://developer.mozilla.org/en-US/docs/Web/API/BufferSource
-[fs-file-handle]: https://wicg.github.io/native-file-system/#api-filesystemfilehandle
-[fs-dir-handle]: https://wicg.github.io/native-file-system/#api-filesystemdirectoryhandle
+[fs-file-handle]: https://wicg.github.io/file-system-access/#api-filesystemfilehandle
+[fs-dir-handle]: https://wicg.github.io/file-system-access/#api-filesystemdirectoryhandle
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [ot-guide]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md
-[spec-issues]: https://github.com/wicg/native-file-system/issues/
+[spec-issues]: https://github.com/wicg/file-system-access/issues/
 [api-surface]: https://docs.google.com/document/d/11rcS0FdwM8w-s2esacEQxFfp3g2AAI9uD7drH8ARKPA/edit#
 [secure-contexts]: https://w3c.github.io/webappsec-secure-contexts/
 [writablestream]: https://streams.spec.whatwg.org/#ws-class
@@ -467,9 +467,9 @@ critical it is to support them.
 [text-editor-app-js]: https://github.com/GoogleChromeLabs/text-editor/blob/master/src/inline-scripts/app.js
 [download-file]: https://developers.google.com/web/updates/2011/08/Downloading-resources-in-HTML5-a-download
 [cr-dev-twitter]: https://twitter.com/chromiumdev
-[fs-writablestream]: https://wicg.github.io/native-file-system/#api-filesystemwritablefilestream
+[fs-writablestream]: https://wicg.github.io/file-system-access/#api-filesystemwritablefilestream
 [writable-stream]: https://developer.mozilla.org/en-US/docs/Web/API/WritableStream
-[spec-resolve]: https://wicg.github.io/native-file-system/#api-filesystemdirectoryhandle-resolve
-[spec-issameentry]: https://wicg.github.io/native-file-system/#api-filesystemhandle-issameentry
-[spec-seek]: https://wicg.github.io/native-file-system/#api-filesystemwritablefilestream-seek
-[spec-truncate]: https://wicg.github.io/native-file-system/#api-filesystemwritablefilestream-truncate
+[spec-resolve]: https://wicg.github.io/file-system-access/#api-filesystemdirectoryhandle-resolve
+[spec-issameentry]: https://wicg.github.io/file-system-access/#api-filesystemhandle-issameentry
+[spec-seek]: https://wicg.github.io/file-system-access/#api-filesystemwritablefilestream-seek
+[spec-truncate]: https://wicg.github.io/file-system-access/#api-filesystemwritablefilestream-truncate

@@ -20,7 +20,7 @@ feedback:
 ---
 
 {% Aside %}
-Web apps should be able to do anything native apps can. The [Capabilities
+Web apps should be able to do anything platform-specific apps can. The [Capabilities
 project](/fugu-status/), of which Web NFC is only a part, aims to do just that.
 To learn about other capabilities and to keep up with their progress, follow
 [Unlocking new capabilities for the web](/fugu-status/).
@@ -80,6 +80,16 @@ Examples of sites that may use Web NFC include:
 
 ## Using Web NFC {: #use }
 
+### Enabling via chrome://flags
+
+To experiment with Web NFC locally on Android, without an origin trial token,
+enable the `#experimental-web-platform-features` flag in `chrome://flags`.
+
+<figure class="w-figure">
+  <img src="./chrome-flag.jpg" alt="Screenshot of the chrome://flags internal page to enable for Web NFC on Android">
+  <figcaption class="w-figcaption">Experimental flag for Web NFC on Android</figcaption>
+</figure>
+
 ### Enabling support during the origin trial phase
 
 Web NFC will be available on Android as an origin trial in Chrome 81. The origin
@@ -90,16 +100,6 @@ trial is expected to end in Chrome 84.
 ### Register for the origin trial {: #register-for-ot }
 
 {% include 'content/origin-trial-register.njk' %}
-
-### Enabling via chrome://flags
-
-To experiment with Web NFC locally on Android, without an origin trial token,
-enable the `#experimental-web-platform-features` flag in `chrome://flags`.
-
-<figure class="w-figure">
-  <img src="./chrome-flag.jpg" alt="Screenshot of the chrome://flags internal page to enable for Web NFC on Android">
-  <figcaption class="w-figcaption">Experimental flag for Web NFC on Android</figcaption>
-</figure>
 
 ### Feature detection {: #feature-detection }
 
@@ -796,7 +796,7 @@ await writer.write({ records: [emptyRecord] });
 
 Here's a list of things I wish I had known when I started playing with Web NFC:
 
-- Android natively handles NFC tags before Web NFC is operational.
+- Android handles NFC tags at the OS-level before Web NFC is operational.
 - You can find an NFC icon on [material.io].
 - Use NDEF record `id` to easily identifying a record when needed.
 - An unformatted NFC tag that supports NDEF contains a single record of the empty type.

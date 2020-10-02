@@ -5,6 +5,11 @@ show_banner: false
 ---
 
 <div class="codelab-landing-page">
+  {% if path === undefined  %}
+    {% set postPaths = page | getPaths %}
+    {# Use first found path as a default path. #}
+    {% set path = paths[postPaths[0]] %}
+  {% endif %}
   <web-codelab glitch="{{ glitch }}" {% if glitch_path %}path="{{ glitch_path }}"{% endif %} {% if site.env === 'test' %}testmode{% endif %}>
     <div class="web-codelab__instructions">
       <h1 class="w-headline w-headline--two web-codelab__headline">{{ title }}</h1>
@@ -40,10 +45,11 @@ show_banner: false
           back: '/' + related_post,
           backLabel: 'Return to article'
         } %}
-      {% else %}
+      {% elif path %}
         {% ArticleNavigation {
           back: '/' + path.slug,
-          backLabel: 'Return to all articles'
+          backLabel: 'Return to all articles',
+          path: page
         } %}
       {% endif %}
     </div>
