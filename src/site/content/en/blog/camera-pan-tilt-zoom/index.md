@@ -4,7 +4,7 @@ subhead:
   Pan, tilt, and zoom features on cameras are finally accessible on the web.
 authors:
   - beaufortfrancois
-date: 2020-09-23
+date: 2020-10-05
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: Five persons in a conference room photo.
