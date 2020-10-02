@@ -276,8 +276,6 @@ The common final outcome is a notification which, when tapped, opens/focuses a r
 for which updating caches before this happens is _extremely_ important. The user is obviously online at the
 time of receiving the push message, but they may not be when they finally interact with the
 notification, so making this content available offline is important.
-tapped. Don't do this!
-
 
 This code updates caches before showing a notification:
 
