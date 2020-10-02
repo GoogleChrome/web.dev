@@ -309,8 +309,8 @@ const path = await newDirectoryHandle.resolve(newFileHandle);
 ### Deleting files and folders in a directory
 
 If you have obtained access to a directory, you can delete the contained files and folders with the
-[`removeEntry()`][removeentry] method, for folders optionally recursively including all subfolders
-and the therein contained files.
+[`removeEntry()`][removeentry] method. For folders, deletion can optionally be recursive
+and include all subfolders and the therein contained files.
 
 ```js
 // Delete a file.
