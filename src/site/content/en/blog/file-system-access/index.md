@@ -329,7 +329,7 @@ names of children of the origin-private file system exist.
 While the browser might make it seem that there are files, internally—since this is an
 origin-private file system—the browser might store these "files" in a database or any
 other data structure.
-Essentially: what you create with this API, do *not* expect to find it 1:1 somewhere on the hard disk.
+Essentially: what you create with this API, do _not_ expect to find it 1:1 somewhere on the hard disk.
 You can operate as usual on the
 origin-private file system once you have access to the root `FileSystemDirectoryHandle`.
 
@@ -513,18 +513,15 @@ The File System Access API spec was written by
 [explainer]: https://github.com/WICG/file-system-access/blob/master/EXPLAINER.md
 [spec-security]: https://wicg.github.io/file-system-access/#privacy-considerations
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EStorage%3EFileSystem
-[nfs-cr-sec-model]:
-  https://docs.google.com/document/d/1NJFd-EWdUlQ7wVzjqcgXewqC5nzv_qII4OvlDtK6SE8/edit
+[nfs-cr-sec-model]: https://docs.google.com/document/d/1NJFd-EWdUlQ7wVzjqcgXewqC5nzv_qII4OvlDtK6SE8/edit
 [wicg-discourse]: https://discourse.wicg.io/t/writable-file-api/1433
 [file-api-spec]: https://w3c.github.io/FileAPI/
 [blob-methods]: https://developer.mozilla.org/en-US/docs/Web/API/Blob
 [showopenfilepicker]: https://wicg.github.io/file-system-access/#api-showopenfilepicker
 [showsavefilepicker]: https://wicg.github.io/file-system-access/#api-showsavefilepicker
 [showdirectorypicker]: https://wicg.github.io/file-system-access/#api-showdirectorypicker
-[getfilehandle]:
-  https://wicg.github.io/file-system-access/#dom-filesystemdirectoryhandle-getfilehandle
-[getdirectoryhandle]:
-  https://wicg.github.io/file-system-access/#dom-filesystemdirectoryhandle-getdirectoryhandle
+[getfilehandle]: https://wicg.github.io/file-system-access/#dom-filesystemdirectoryhandle-getfilehandle
+[getdirectoryhandle]: https://wicg.github.io/file-system-access/#dom-filesystemdirectoryhandle-getdirectoryhandle
 [removeentry]: https://wicg.github.io/file-system-access/#dom-filesystemdirectoryhandle-removeentry
 [resolve]: https://wicg.github.io/file-system-access/#api-filesystemdirectoryhandle-resolve
 [fs-writer]: https://wicg.github.io/file-system-access/#filesystemwriter
@@ -532,8 +529,7 @@ The File System Access API spec was written by
 [buffersource]: https://developer.mozilla.org/en-US/docs/Web/API/BufferSource
 [fs-file-handle]: https://wicg.github.io/file-system-access/#api-filesystemfilehandle
 [fs-dir-handle]: https://wicg.github.io/file-system-access/#api-filesystemdirectoryhandle
-[powerful-apis]:
-  https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
+[powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [ot-guide]: https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/developer-guide.md
 [spec-issues]: https://github.com/wicg/file-system-access/issues/
 [api-surface]: https://docs.google.com/document/d/11rcS0FdwM8w-s2esacEQxFfp3g2AAI9uD7drH8ARKPA/edit#
@@ -541,17 +537,13 @@ The File System Access API spec was written by
 [writablestream]: https://streams.spec.whatwg.org/#ws-class
 [text-editor]: https://googlechromelabs.github.io/text-editor/
 [text-editor-source]: https://github.com/GoogleChromeLabs/text-editor/
-[text-editor-fs-helper]:
-  https://github.com/GoogleChromeLabs/text-editor/blob/master/src/inline-scripts/fs-helpers.js
-[text-editor-app-js]:
-  https://github.com/GoogleChromeLabs/text-editor/blob/master/src/inline-scripts/app.js
-[download-file]:
-  https://developers.google.com/web/updates/2011/08/Downloading-resources-in-HTML5-a-download
+[text-editor-fs-helper]: https://github.com/GoogleChromeLabs/text-editor/blob/master/src/inline-scripts/fs-helpers.js
+[text-editor-app-js]: https://github.com/GoogleChromeLabs/text-editor/blob/master/src/inline-scripts/app.js
+[download-file]: https://developers.google.com/web/updates/2011/08/Downloading-resources-in-HTML5-a-download
 [cr-dev-twitter]: https://twitter.com/chromiumdev
 [fs-writablestream]: https://wicg.github.io/file-system-access/#api-filesystemwritablefilestream
 [writable-stream]: https://developer.mozilla.org/en-US/docs/Web/API/WritableStream
 [spec-resolve]: https://wicg.github.io/file-system-access/#api-filesystemdirectoryhandle-resolve
 [spec-issameentry]: https://wicg.github.io/file-system-access/#api-filesystemhandle-issameentry
 [spec-seek]: https://wicg.github.io/file-system-access/#api-filesystemwritablefilestream-seek
-[spec-truncate]:
-  https://wicg.github.io/file-system-access/#api-filesystemwritablefilestream-truncate
+[spec-truncate]: https://wicg.github.io/file-system-access/#api-filesystemwritablefilestream-truncate
