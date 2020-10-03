@@ -500,6 +500,7 @@ function showNotes() {
 }
 let slide = 1;
 function nextSlide() {
+  if (!updateNotes) return;
   slide += 1;
   // tell the popup to update without directly referencing it:
   updateNotes(['setSlide', slide]);
