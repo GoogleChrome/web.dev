@@ -25,6 +25,7 @@
     {
       "title": "How caching strategies work",
       "pathItems": [
+        "offline-cookbook",
         "precache-with-workbox",
         "runtime-caching-with-workbox",
         "handling-navigation-requests"
