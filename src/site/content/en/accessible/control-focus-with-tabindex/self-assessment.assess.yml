@@ -64,7 +64,7 @@ questions:
     options:
       - rationale: |
           The **Search** text input comes first in the tab order.
-          Because it has a `tabindex` greater than 1, it jumps to the front of the tab order.
+          Because it has a `tabindex` greater than zero, it jumps to the front of the tab order.
 
           (This behavior is likely to cause confusion
           if the menu is positioned on the page before the search input.
