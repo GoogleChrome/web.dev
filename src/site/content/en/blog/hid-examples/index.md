@@ -16,6 +16,7 @@ tags:
   - capabilities
   - hid
   - games
+  - devices
 hero: game-controller.jpg
 alt: A generic game controller
 ---

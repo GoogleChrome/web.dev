@@ -58,6 +58,10 @@
     "title": "CSS",
     "description": "Our latest news, updates, and stories about CSS."
   },
+  "devices": {
+    "title": "Devices",
+    "description": "Our latest news, updates, and stories about connecting hardware devices to the web."
+  },
   "devtools": {
     "title": "DevTools",
     "description": "Our latest news, updates, and stories about DevTools."
