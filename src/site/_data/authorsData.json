@@ -1541,5 +1541,12 @@
     "description": {
       "en": "Chrome Software Engineer"
     }
+  },
+  "djuffin": {
+    "name": {
+      "given": "Eugene",
+      "family": "Zemtsov"
+    },
+    "github": "djuffin"
   }
 }
