@@ -2,7 +2,7 @@
 layout: handbook
 title: web.dev content review checklists
 date: 2019-06-26
-updated: 2020-09-29
+updated: 2020-10-05
 description: |
   The official checklists for web.dev content reviews.
 ---
@@ -12,43 +12,179 @@ when reviewing new content. Authors are encouraged to use these checklists to
 self-review their writing and fix problems proactively, rather than waiting for
 an editor to catch them.
 
+The review process has two parts. The goal of the [early stage review checklist](#early)
+is to make sure the content is useful to web.dev's target audience. The goal of the
+[late-stage review checklist](#late) is to make sure the content is professional
+and "plays nicely" with the rest of the web.dev codebase (e.g. not using a URL
+that we'll want to use for other purposes).
+
 ## Early stage review checklist {: #early }
 
-### The content is ready for a web.dev editorial review
-
-This is more of a meta point about editing
-
-### The content is useful to web developers {: #useful }
+### The content aligns with web.dev's main audience {: #audience }
 
 web.dev's mission is to help web developers build excellent websites.
 All content on web.dev should help web developers in one way or another.
-If the content seems to be **primarily** written for an audience other than
+If the content does not seem helpful for web developers, or
+the content seems to be primarily written for an audience other than
 web developers, it's probably not a good fit for web.dev.
 
-### The path for gaining prerequisite knowledge is clear {: #prereqs }
+### The guidance is usable {: #usable }
 
-If the content assumes that the reader has prerequisite knowledge
+If the content provides step-by-step instructions on completing a task, make sure
+that someone (other than the author) has actually followed the instructions and
+was able to complete the task successfully. The editor can do this themselves or
+ask the author to find someone else to do a usability review.
 
-### The technical information is accurate
+See [Usability reviews](/handbook/reviews/#usability) for instructions.
 
-TODO
+### The content is a tutorial, how-to guide, or explainer {: #content-types }
 
-### The guidance is aligned with best practices
+There are four common types of software documentation: tutorials, how-to guides,
+explainers, and references. Check out [Divio's Documentation System][divio] for an
+explanation of these content types.
 
-TODO
+Each page of web.dev content should be focused around one of these content types
+as much as possible. For example, a single page of content should not try to be a
+tutorial and an explainer.
 
-Code blocks follow accessibility best practices
+Reference documentation pages are not allowed on web.dev.
 
-### The writing is simple and concise
+### The content is unique {: #unique }
 
-TODO
+After reading through the content, use a search engine to search for similar
+content (from any reputable source, such as MDN or CSS-Tricks). If the proposed
+web.dev content largely duplicates another source's content, ask the author why
+it's necessary to duplicate the content.
 
-### The title follows good SEO practices
+{% Aside %}
+  Rationale: every page of new content has a maintenance cost. We have to review every
+  page once or twice a year to make sure that its guidance is still accurate.
+{% endAside %}
+
+### The content is focused on a main idea {: #focused }
+
+Each page of content should have a main idea. All text, images, videos,
+code samples, etc. should be related to the page's main idea.
+
+### The content provides a path for getting background knowledge {: #prereqs }
+
+Think about the background knowledge that's required to understand the
+content you're reviewing. The content should provide a well-lit path
+for gaining that background knowledge.
+
+Here are the common strategies for helping readers gain background knowledge:
+
+* Expand the content to explain the topic in more depth
+* Link to other, existing content on the topic
+
+The one exception to this rule is basic web development knowledge. web.dev
+assumes that its readers understand the basics of CSS, HTML, and JavaScript.
+
+### Factual information is verified {: #facts }
+
+Factual claims should be backed by evidence or authoritative sources
+as much as possible.
+
+One seemingly small factual claim that has caused trouble
+in the past was the browser version associated to an API's release. For
+example, a post might claim that an API is launching in Chrome 88, but the
+author and reviewer didn't double-check that claim. A lot of web developers
+might then see the announcement on web.dev, attempt to try out the API, and get
+confused when the API doesn't work as intended (because it's not actually supported in
+that version).
+
+### The guidance is aligned with best practices {: #best-practices }
+
+Make a best effort to ensure that the content is aligned with general web
+development best practices.
+
+{% Aside %}
+  A note from the web.dev content lead: we understand that this is a tall order.
+  The author and reviewer are not expected to have complete expertise in every
+  aspect of web development. Nonetheless, if you take a moment and ask yourself
+  "is this content contradicting any other best practices I know of?" consistently,
+  we should be able to catch obvious issues.
+{% endAside %}
+
+Here are some strategies for checking if the content is aligned with best practices:
+
+* Run Lighthouse regularly and review all of its recommendations. Check if the content
+  you're reviewing contradicts any of Lighthouse's recommendations.
+* If the content discusses different aspects of web development (e.g. accessibility and
+  performance) and the author is only an expert in one of those aspects (e.g. performance),
+  ask a subject matter expert (SME) to do a quick review of the content. Instruct the
+  to specifically focus on making sure that the content is aligned with the best
+  practices of their area.
+
+Here are some common problems:
+
+* Using outdated Lighthouse metrics. The page should explicitly mention that the
+  metric is outdated, and list its recommended replacement.
+* The `unload` event is [considered harmful][unload]. The `pagehide` event should be used
+  instead.
+
+### The writing is simple {: #simple }
+
+Use the simplest words available unless there is a specific reason to
+use a fancy word.
+
+{% Aside %}
+  Rationale: web.dev has an international audience. Many of our readers do not
+  speak English as their primary language. Using simple words increases the chances
+  that they will be able to understand our content.
+{% endAside %}
+
+{% Compare 'worse' %}
+  Utilize the Network panel to inspect network activity.
+{% endCompare %}
+{% Compare 'better' %}
+  Use the Network panel to inspect network activity.
+  {% CompareCaption %}
+    In rare cases the author might have a specific reason to use `utilize` over `use`,
+    but in many cases it's not intentional.
+  {% endCompareCaption %}
+{% endCompare %}
+
+See also [Avoid fancy words](http://www.jlakes.org/ch/web/The-elements-of-style.pdf#page=73).
+
+### The writing is concise {: #concise }
+
+The writing should be as long as needed in order to effectively explain
+the main idea of the page, and no longer.
+
+#### All words are necessary {: #redundancy }
+
+Delete redundant words, sentences, paragraphs, sections, and so on.
+
+One exception is when the author intentionally repeats an idea
+to make it easier to understand or emphasize its importance.
+
+#### The writing uses the present tense by default {: #present-tense }
+
+Rephrasing a text from the future tense to the present tense usually
+removes tens or hundreds of words from a text, without changing the meaning.
+
+{% Compare 'worse' %}
+  By default the resources will be listed chronologically. The top resource will usually
+  be the main HTML document. The bottom resource will be whatever was requested last.
+{% endCompare %}
+{% Compare 'better' %}
+  By default the resources are listed chronologically. The top resource is usually
+  the main HTML document. The bottom resource is whatever was requested last.
+  {% CompareCaption %}
+    This phrasing has 3 less words yet the meaning is the same.
+  {% endCompareCaption %}
+{% endCompare %}
+
+The author can use the future tense if they provide a logical rationale
+for its need.
+
+### The title follows good SEO practices {: #title }
 
 All web.dev titles should include all of the following elements whenever relevant:
 
 * A general description of the use case that the content helps solve
-* The exact names of the most relevant API, tool, product, etc.
+* The exact name of the most relevant API, tool, product, etc.
 
 {% Compare 'worse' %}
   Using Thumbor
@@ -68,96 +204,194 @@ All web.dev titles should include all of the following elements whenever relevan
 {% Compare 'better' %}
   How to optimize images with Thumbor
   {% CompareCaption %}
-    This title accurately summarizes the page's content.
+    This title accurately summarizes the page's content and uses all relevant SEO
+    keywords (`How to optimize images` and `Thumbor`).
   {% endCompareCaption %}
 {% endCompare %}
 
-1. Does the title follow good SEO practices? See the example in
-   [Explain why a user should care about your content](/handbook/quality/#explanations).
-
-### The subheading draws the reader in or provides more context
+### The subheading draws the reader in or provides more context {: #subhead }
 
 See [`subhead`: add an enticing subtitle](/handbook/yaml-front-matter/#subhead).
 
-### The guidance is usable
+### The content is easy to scan {: #scannable }
 
-1. Can you complete the task with the provided instructions? Are there any missing steps? Does the code work?
+Many web.dev readers are in a hurry. All web.dev content should be easy to scan.
 
-### The organization of sections is logical
+#### Section headings are concise and descriptive {: #section-headings }
 
-Think of the sections
+Each section heading should clearly summarize the content contained within that section.
 
-1. Headings should not [skip levels](/heading-levels).
+#### Similar ideas are grouped together {: #grouping }
 
-### Section headings are concise and descriptive
+Scan the sections of the content. Check for sections with similar ideas that
+are placed far apart (e.g. one section is at the top of the article, the other
+is at the bottom, yet they both discuss related concepts).
 
-1. Is the structure of the piece clear? Do headings convey the structure?
+Here are some common problems:
 
-### The content is focused on a main idea
+* The page concludes with a Frequently Answered Questions (FAQs) section. Check
+  if the FAQs can be contextually discussed within a main section of the content.
+  See also [FAQs are a code smell](https://kayce.basqu.es/blog/FAQs/).
 
-1. Are any images or videos included that don't directly relate to ideas in the text?
+### The paragraphs are effective {: #paragraphs }
 
-### Each paragraph focuses on one idea
+Each paragraph should be focused around one idea. The first sentence
+summarizes the main idea of the sentence. The following sentences provide
+supporting details of the main idea. The last sentence concludes the idea
+or transitions to a new idea. See [Writing Effective Paragraphs][paragraphs].
 
-### The content uses examples to clarify complex ideas
+### Complex ideas are explained effectively {: #effective }
 
-### Browser compatibility is mentioned near the start of the content
+While reading a page, notice if you have to stop and re-read a section
+multiple times before you understand what it's saying. Check if any of
+the following strategies can be used to explain the idea more effectively:
 
-### References to APIs link to relevant documentation
+* Images and videos
+* Examples
 
-1. When referencing a web platform API, does the page link out to the canonical MDN API reference?
+### Browser compatibility is mentioned near the start of the content {: #compatibility }
 
-### Images do not have hardcoded text
+When content is focused around specific web platform features or APIs,
+make sure that the browser compatibility of the APIs is specifically mentioned. This is
+especially important if the features/APIs aren't supported in all browsers,
+but it should also be done even if the features/APIs are supported in all browsers.
 
-### Code samples are as minimal as possible
+Examples:
 
-### Titles and section headings are sentence case
+* [CSS masking](/css-masking/#browser-compatibility)
+* [`content-visibility`](/content-visibility/#support)
 
-### Links are logical
+{% Aside %}
+  Rationale: We know from the [MDN Developer Needs Assessment 2019 
+  Report](https://mdn-web-dna.s3-us-west-2.amazonaws.com/MDN-Web-DNA-Report-2019.pdf#page=20)
+  that browser compatibility is a top concern (items 1, 3, 4, 5). Non-public Google research
+  has corrobated these findings. Therefore, if a feature/API is not well supported, we
+  must respect the user's time and make that fact known upfront. And if the API is
+  well supported, then it is reasonable to assume that explicitly mentioning that fact
+  will make the feature/API more attractive.
+{% endAside %}
 
-### Images and videos are used to clarify ideas
+### References to APIs link to relevant documentation {: #api-references }
 
-Are images and videos used to clarify ideas that would be difficult to understand from text alone?
+When referencing a specific web platform API, link to the MDN reference documentation
+page for that API.
+
+{% Compare 'worse' %}
+  Cache-Control. The server can return a `Cache-Control` directive to specify
+  how, and for how long, the browser and other intermediate caches should
+  cache the individual response.
+{% endCompare %}
+{% Compare 'better' %}
+  [`Cache-Control`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cache-Control).
+  The server can return a `Cache-Control` directive to specify how, and for how long,
+  the browser and other intermediate caches should cache the individual response.
+{% endCompare %}
+
+### Code samples are minimal, complete, and reproducible {: #code-samples }
+
+Any code that is not directly relevant or necessary
+for understanding the main idea of the code sample should be deleted.
+
+See also [How to create a minimal, reproducible example](https://stackoverflow.com/help/minimal-reproducible-example).
+
+### Links are useful {: #useful-links }
+
+For each link that the author provides, look out for:
+
+* A mismatch between the link text and the content of the link. For example, suppose
+  that the link text is `service worker tutorial` but the content of the link is
+  actually an API reference documentation page.
+* Content that does not actually help the reader.
+
+### The content references specific versions of browsers, not release channels {: #browser-versions }
+
+The release channels of major browsers are not stable over time.
+For example, currently `Google Chrome Stable` refers to version 85
+of the browser. In a year, `Google Chrome Stable` will refer to version 95.
+
+{% Compare 'worse' %}
+  The Keyboard API is now available in Chrome Canary.
+{% endCompare %}
+{% Compare 'better' %}
+  The Keyboard API is now available in Chrome 85 and later.
+{% endCompare %}
 
 ## Late-stage review checklist {: #late }
 
-### The URL mostly matches the title and is not overly general
+### Titles and section headings are sentence case {: #sentence-case }
 
-### The page uses components when relevant
+Follow the Google Developer Documentation Style Guide's guidance on
+[titles and headings](https://developers.google.com/style/headings).
 
-1. Are common instructions provided using the web.dev [Instruction components](/handbook/web-dev-components/#instruction)?
+### The URL mostly matches the title and is not overly general {: #url }
 
-### The hero image's thumbnail looks good
+The URL of a page of content should mostly match the title of that page of content
+to avoid confusion.
 
-### All images have alt text
+The URL of a page should not be overly general, unless that page is our
+authoritative content on that topic. For example, the URL of
+[Introducing `<model-viewer>` 1.1](https://web.dev/introducing-model-viewer/)
+is `https://web.dev/introducing-model-viewer/` because we wanted to reserve
+`https://web.dev/model-viewer/` for our authoritative guide on that topic.
 
-1. Do all images have [alt text](/image-alt)?
+### The page uses components when relevant {: #components }
 
-### All images are optimized
+Review [web.dev's UI components](/handbook/web-dev-components/) and check if the
+presentation of any of the content can be enhanced by the components.
 
-### All links are valid
+### The hero image's thumbnail looks good {: #thumbnail }
 
-### All words are spelled correctly
+If the page is going to be on the blog and has a hero image, go to the blog index page
+(e.g. `http://localhost:8080/blog` if you're reviewing the content locally)
+and make sure that the thumbnail version of the hero image looks good and is not
+cropped in a weird way. Use a [thumbnail](/yaml-front-matter/#thumbnail) if necessary.
 
-### All words are capitalized correctly
+### All images have descriptive `alt` text {: #alt }
 
-### The content references specific versions of browsers
+Review the Markdown and make sure that each image has descriptive
+[alt text](/image-alt). Put yourself in the shoes of people who can't see
+those images. Is there any critical information embedded in the images that
+isn't covered anywhere else in the content?
 
-1. Articles should mention specific versions of Chrome. They should not mention `Stable`, `Beta`, or `Canary`
-   because the Chrome version that's associated with those releases changes over time.
+### All images are optimized and sized correctly {: #images }
 
-### The most important lines of code in a code block are highlighted
+Content images and thumbnails should be optimized with a service like
+[TinyPNG](https://tinypng.com) or [Squoosh](https://squoosh.app). Hero
+images do not need to be optimized.
 
-1. Is [code highlighting](/handbook/markup-code/#code-highlighting) used to indicate lines that have been added or changed?
+All images should be sized correctly:
 
-### GIFs have been converted to animated videos
+* Hero images should be 3200 pixels wide by 960 pixels tall.
+* Thumbnail images should be 376 pixels wide by 240 pixels tall.
+* Content images should be no wider than 1600 pixels.
 
-1. All GIFs should be converted to animated videos. See [Replace animated GIFs with videos](/replace-gifs-with-videos/)
-   and [Videos hosted on web.dev](/handbook/markup-media/#video-hosted-on-web.dev)
+{% Aside %}
+  Every unoptimized or incorrectly sized image that we commit to the repository
+  adds to the repository's overall size. This makes the repository slower-to-download
+  for new contributors and for our continuous integration systems.
+{% endAside %}
 
-### Images are sized correcly
+### All words are spelled correctly {: #spelling }
 
-Hero
-Thumbnail
-Content
+Follow the Google Developer Documentation Style Guide's guidance on [spelling][spelling].
 
+### The most important lines of code in a code block are highlighted {: #code-highlighting }
+
+[Code highlighting](/handbook/markup-code/#code-highlighting) should be used to indicate
+lines that have been added or changed.
+
+### GIFs have been converted to animated videos {: #gifs }
+
+All GIFs should be converted to animated videos to improve performance. See
+[Replace animated GIFs with videos](/replace-gifs-with-videos/)
+and [Videos hosted on web.dev](/handbook/markup-media/#video-hosted-on-web.dev)
+
+[divio]: https://documentation.divio.com/introduction/#the-secret
+[unload]: https://developers.google.com/web/updates/2018/07/page-lifecycle-api#the-unload-event
+[paragraphs]: https://www.riosalado.edu/web/oer/WRKDEV100-20012_INTER_0000_v1/lessons/Mod02_WritingEffectiveParagraphs.shtml
+[spelling]: https://developers.google.com/style/spelling
+[divio]: https://documentation.divio.com/introduction/#the-secret
+[guide]: https://documentation.divio.com/how-to-guides/#how-to
+[explanation]: https://documentation.divio.com/explanation/#explanation
+[tutorial]: https://documentation.divio.com/tutorials/#tutorials
+[DNA]: https://mdn-web-dna.s3-us-west-2.amazonaws.com/MDN-Web-DNA-Report-2019.pdf#page=20
