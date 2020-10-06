@@ -424,9 +424,9 @@ This code specifies the following:
       <tr>
         <td><code>impressionexpiry</code> (optional): in milliseconds, the cutoff time for when conversions can be attributed to this ad.</td>
         <td>
-          <p><code>2592000000</code> = 30 days (in milliseconds)</p>
-          <p>Maximum: 30 days (in milliseconds)</p>
-          <p>Minimum: 2 days (in milliseconds)</p>
+          <code>2592000000</code> = 30 days (in milliseconds).<br/><br/>
+          Maximum: 30 days (in milliseconds).<br/><br/>
+          Minimum: 2 days (in milliseconds).
         </td>
         <td>Ten days after click: <code>864000000</code></td>
       </tr>
