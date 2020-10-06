@@ -48,7 +48,7 @@ rather than assuming it's their `right` arm. "Right" is a physical arm reference
 a logical arm reference, **contextual to the individual**.
 {% endAside %}
 
-Have you ever inspected the `p` element in Chrome DevTools?? If so, you might have 
+Have you ever inspected the `p` element in Chrome DevTools? If so, you might have 
 noticed that the [default User Agent styles](https://html.spec.whatwg.org/multipage/rendering.html#flow-content-3:~:text=blockquote%2C%20figure%2C%20listing%2C%20p%2C%20plaintext%2C%20pre%2C,%7D) 
 are not physical, but logical. 
 
@@ -91,19 +91,32 @@ right-to-left (like in `vertical-rl`).
 {% YouTube '5IbOpE9eVnM' %}
 {% Banner 'neutral' %}[Traditional Japanese Handwriting](https://www.youtube.com/watch?v=5IbOpE9eVnM); block direction flows right to left{% endBanner %}
 
-Inline direction is the direction that letters and words go. Consider the direction your arm and hand travel when you write; they are traveling along the `inline-axis`. `inline-start` is the side where you start writing, while `inline-end` is the side where writing ends or wraps. The above video, the `inline-axis` is top to bottom, but this next video the `inline-axis` flows right to left.
+Inline direction is the direction that letters and words go. Consider the direction 
+your arm and hand travel when you write; they are traveling along the `inline-axis`. 
+`inline-start` is the side where you start writing, while `inline-end` is the side 
+where writing ends or wraps. The above video, the `inline-axis` is top to bottom, 
+but this next video the `inline-axis` flows right to left.
 
 {% Aside 'key-term' %}
-The _inline direction_ is defined by both `writing-mode` and `direction`. For example, it flows left-to-right with `horizontal-tb` and `ltr`, right-to-left with `horizontal-tb` and `rtl`, top-to-bottom with `vertical-lr` and `ltr`, and bottom-to-top with `vertical-rl` and `rtl`.
+The _inline direction_ is defined by both `writing-mode` and `direction`. For example, 
+it flows left-to-right with `horizontal-tb` and `ltr`, right-to-left with `horizontal-tb` 
+and `rtl`, top-to-bottom with `vertical-lr` and `ltr`, and bottom-to-top with `vertical-rl` and `rtl`.
 {% endAside %}
 
 {% YouTube 'nTzyRdoXlbs' %}
 {% Banner 'neutral' %}[Hebrew Handwriting](https://www.youtube.com/watch?v=nTzyRdoXlbs); inline direction flows right to left{% endBanner %}
 
-Being [`flow-relative`](https://www.w3.org/TR/css-writing-modes-4/#logical-directions) means that the styles written for one language will be contextual and appropriately applied into other languages. Content will flow relative to the language it's being delivered for.
+Being [`flow-relative`](https://www.w3.org/TR/css-writing-modes-4/#logical-directions) 
+means that the styles written for one language will be contextual and appropriately 
+applied into other languages. Content will flow relative to the language it's being delivered for.
 
 ## New Shorthands
-Some of the following shorthands are not new features for the browser, rather, easier ways to write styles by taking advantage of being able to set values on both block or inline edges at once. The `inset-*` logical properties **do** bring new abilities, as there were no longhand ways to specify absolute positions with logical properties before it. Insets and shorthands flow (hehe) together so well though, I’m going to tell you about all of the new logical properties features landing in 87 at once. 
+Some of the following shorthands are not new features for the browser, rather, easier 
+ways to write styles by taking advantage of being able to set values on both block 
+or inline edges at once. The `inset-*` logical properties **do** bring new abilities, 
+as there were no longhand ways to specify absolute positions with logical properties 
+before it. Insets and shorthands flow (hehe) together so well though, I'm going to 
+tell you about all of the new logical properties features landing in 87 at once. 
 
 ### Margin Shorthands
 No new abilities shipped, but some super handy shorthands did: <br>
@@ -131,7 +144,7 @@ margin-block: 2ch 2ch;
 {% endCompare %}
 </div>
 
-There is no shorthand for "top and bottom" or "left and right".. until now! 
+There is no shorthand for "top and bottom" or "left and right"… until now! 
 You probably reference all 4 sides using the shorthand of `margin: 10px;`, and now you 
 can easily reference 2 complimentary sides by using the logical property shorthand.
 
