@@ -501,8 +501,10 @@ function showNotes() {
 let slide = 1;
 function nextSlide() {
   slide += 1;
-  // tell the popup to update without directly referencing it:
-  updateNotes(['setSlide', slide]);
+  // if the popup is open, tell it to update without referencing it:
+  if (updateNotes) {
+    updateNotes(['setSlide', slide]);
+  }
 }
 document.body.onclick = nextSlide;
 ```
