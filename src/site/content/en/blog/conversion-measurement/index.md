@@ -160,18 +160,17 @@ This API is supported in Chrome 86 and later:
   browser
 - Or as an [origin trial](<#register-for-the-origin-trial-(starting-in-chrome-86)>).
 
+### Standardization
+
+This API is being designed in the open, in the Web Platform Incubator Community Group
+([WICG](https://www.w3.org/community/wicg/)). It's available for experimentation in Chrome.
+
 ### Similar APIs
 
-- This API is being designed in the open, in the Web Platform Incubator Community Group
-  ([WICG](https://www.w3.org/community/wicg/)). It's available for experimentation in Chrome.
-- WebKit, the web browser engine used by Safari, has a proposal with similar goals, the [Ad Click
-  Attribution](https://github.com/privacycg/private-click-measurement) (or Private Click
-  Measurement). It's being worked on within the Privacy Community Group
-  ([PrivacyCG](https://www.w3.org/community/privacycg/)).
-
-The Chrome and Safari teams are exploring if the APIs can be unified so that developers can write
-ads and conversion pages which work in both browsers, even if the two browsers produce conversion
-reports that differ in details like the number of click-time bits.
+WebKit, the web browser engine used by Safari, has a proposal with similar goals, the [Private Click
+Measurement](https://github.com/privacycg/private-click-measurement).
+It's being worked on within the Privacy Community Group
+([PrivacyCG](https://www.w3.org/community/privacycg/)).
 
 ## How this API preserves user privacy
 
