@@ -4,8 +4,8 @@ subhead: Make sure your service worker knows what to do when a partial response 
 authors:
   - jeffposnick
 description: Make sure your service worker knows what to do when a partial response is requested.
-date: 2020-10-05
-updated: 2020-10-05
+date: 2020-10-06
+updated: 2020-10-06
 hero: hero.jpg
 hero_position: center
 alt: |
@@ -22,7 +22,7 @@ feedback:
   - api
 ---
 
-Some HTTP requests contain a <code>[Range: header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Range)</code>, indicating that only a portion of the full resource should be returned. They're commonly used for streaming audio or video content to allow smaller chunks of media to be loaded on demand, instead of requesting the entirety of the remote file all at once.
+Some HTTP requests contain a [`Range:` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Range), indicating that only a portion of the full resource should be returned. They're commonly used for streaming audio or video content to allow smaller chunks of media to be loaded on demand, instead of requesting the entirety of the remote file all at once.
 
 A [service worker](https://developers.google.com/web/fundamentals/primers/service-workers) is JavaScript code that sits in between your web app and the network, potentially intercepting outgoing network requests and generating responses for them.
 
@@ -44,7 +44,7 @@ self.addEventListener('fetch', (event) => {
 This sort of trivial `fetch` event listener should [normally be avoided](https://developers.google.com/web/fundamentals/primers/service-workers/high-performance-loading#never_use_a_passthrough_fetch_handler); it's used here for illustrative purposes.
 {% endAside %}
 
-In browsers with the incorrect behavior, if `event.request` included a `Range:` header, that header would be silently dropped. The request that was received by the remote server would not include `Range:` at all. This would not necessarily "break" anything, since a server is _technically_ allowed to return the full response body, with a <code>[200 status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200)</code>, even when a <code>Range:</code> header is present in the original request. But it would result in more data being transferred than is strictly needed from the perspective of the browser.
+In browsers with the incorrect behavior, if `event.request` included a `Range:` header, that header would be silently dropped. The request that was received by the remote server would not include `Range:` at all. This would not necessarily "break" anything, since a server is _technically_ allowed to return the full response body, with a [`200` status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200), even when a `Range:` header is present in the original request. But it would result in more data being transferred than is strictly needed from the perspective of the browser.
 
 Developers who were aware of this behavior could work around it by explicitly checking for the presence of a `Range:` header, and not calling `event.respondWith()` if one is present. By doing this, the service worker effectively removes itself from the response generation picture, and the default browser networking logic, which knows how to preserve range requests, is used instead.
 
@@ -74,7 +74,7 @@ self.addEventListener('fetch', (event) => {
 });
 ```
 
-The server now gets a chance to properly handle the range request and return a partial response with a <code>[206 status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/206)</code>.
+The server now gets a chance to properly handle the range request and return a partial response with a [`206` status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/206).
 
 ## Which browsers behave correctly?
 
@@ -88,8 +88,8 @@ Checking the "Include range header in network request" row of the [Web Platform 
 
 Service workers can do much more than just pass a request through to the network. A common use case is to add resources, like audio and video files, to a [local cache](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage). A service worker can then fulfill requests from that cache, bypassing the network entirely.
 
-All browsers, including Firefox, support inspecting a request inside a `fetch` handler, checking for the presence of the `Range:` header, and then locally fulfilling the request with a <code>[206 response](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/206)</code> that comes from a cache. The service worker code to properly parse the <code>Range:</code> header and return only the appropriate segment of the complete cached response is not trivial, though.
+All browsers, including Firefox, support inspecting a request inside a `fetch` handler, checking for the presence of the `Range:` header, and then locally fulfilling the request with a [`206` response](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/206) that comes from a cache. The service worker code to properly parse the `Range:` header and return only the appropriate segment of the complete cached response is not trivial, though.
 
-Fortunately, developers who want some help can turn to [Workbox](https://developers.google.com/web/tools/workbox/), which is a set of libraries that simplifies common service worker use cases. The <code>[workbox-range-request module](https://developers.google.com/web/tools/workbox/modules/workbox-range-requests)</code> implements all the logic necessary to serve partial responses directly from the cache. A full recipe for this use case can be found [in the Workbox documentation](https://developers.google.com/web/tools/workbox/guides/advanced-recipes#cached-av).
+Fortunately, developers who want some help can turn to [Workbox](https://developers.google.com/web/tools/workbox/), which is a set of libraries that simplifies common service worker use cases. The [`workbox-range-request module`](https://developers.google.com/web/tools/workbox/modules/workbox-range-requests) implements all the logic necessary to serve partial responses directly from the cache. A full recipe for this use case can be found [in the Workbox documentation](https://developers.google.com/web/tools/workbox/guides/advanced-recipes#cached-av).
 
 _The hero image on this post is by [Natalie Rhea Riggs](https://unsplash.com/photos/OnAwTs0tu3k) on Unsplash._
