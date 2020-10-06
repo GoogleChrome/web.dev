@@ -294,7 +294,7 @@ associated with this click begins. Each reporting window has a deadline, and con
 before that deadline will be sent at the end of that window.
 
 Reports may not be exactly sent at these scheduled dates and times: if the browser isn't running
-when a report is scheduled to be sent, the report is sent at browser startup — which could be days
+when a report is scheduled to be sent, the report is sent at browser startup—which could be days
 or weeks after the scheduled time.
 
 After expiry (click time + `impressionexpiry`), no conversion is counted—`impressionexpiry` is the
