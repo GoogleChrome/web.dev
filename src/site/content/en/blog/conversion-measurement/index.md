@@ -37,7 +37,7 @@ endAside %}
 - **Publishers**: companies that display ads on their websites.
 - **Click-through conversion**: conversion that is attributed to an ad click.
 - **View-through conversion**: conversion that is attributed to an ad impression (if the user
-  doesn’t interact with the ad, then later converts).
+  doesn't interact with the ad, then later converts).
 
 ## Who needs to know about this API: adtech platforms, advertisers, and publishers
 
@@ -132,16 +132,16 @@ specific to ad conversions:
 - The reporting endpoint that should be notified of successful conversions.
 - The cut-off date and time for when conversions can no longer be counted for this ad.
 
-When the user clicks an ad, the browser—on the user’s local device—records this event, alongside
+When the user clicks an ad, the browser—on the user's local device—records this event, alongside
 conversion configuration and click data specified by Conversion Measurement attributes on the `<a>`
 element.
 
 Later on, the user may visit the advertiser's website and perform an action that the advertiser or
 their adtech provider categorizes as a **conversion**. If this happens, the ad click and the
-conversion event are matched by the user’s browser.
+conversion event are matched by the user's browser.
 
 The browser finally schedules a **conversion report** to be sent to the endpoint specified in the
-`<a>` element’s attributes. This report includes data about the ad click that led to this
+`<a>` element's attributes. This report includes data about the ad click that led to this
 conversion, as a well as data about the conversion.
 
 If several conversions are registered for a given ad click, as many corresponding reports are
@@ -297,7 +297,7 @@ Reports may not be exactly sent at these scheduled dates and times: if the brows
 when a report is scheduled to be sent, the report is sent at browser startup — which could be days
 or weeks after the scheduled time.
 
-After expiry (click time + `impressionexpiry`), no conversion is counted — `impressionexpiry` is the
+After expiry (click time + `impressionexpiry`), no conversion is counted—`impressionexpiry` is the
 cut-off date and time for when conversions can no longer be counted for this ad.
 
 In Chrome, report scheduling works as follows:
@@ -507,9 +507,7 @@ Once the scheduled time to send the report is reached, the browser sends the **c
 it sends an HTTP POST to the reporting origin that was specified in the `<a>` element
 (`adtech.example`). For example:
 
-```
-https://adtech.example/.well-known/register-conversion?impression-data=776f09351f5809c5&conversion-data=2&credit=100
-```
+`https://adtech.example/.well-known/register-conversion?impression-data=776f09351f5809c5&conversion-data=2&credit=100`
 
 Included as parameters are:
 
