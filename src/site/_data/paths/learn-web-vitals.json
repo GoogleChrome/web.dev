@@ -2,8 +2,8 @@
     "slug": "learn-web-vitals",
     "cover": "/images/collections/web-vitals.svg",
     "title": "Web Vitals",
-    "description": "Key signals of quality user experiences.",
-    "overview": "Web Vitals define the performance metrics and measurements that indicate a delightful user experience.",
+    "description": "Essential metrics for a healthy site.",
+    "overview": "An initiative to provide unified guidance for quality signals that are essential to delivering a great user experience on the web.",
     "topics": [
         {
             "title": "Overview",
@@ -21,7 +21,7 @@
             ]
         },
         {
-            "title": "Measuring Web Vitals",
+            "title": "Measure Web Vitals",
             "pathItems": [
                 "vitals-measurement-getting-started",
                 "vitals-tools",
@@ -29,7 +29,7 @@
             ]
         },
         {
-            "title": "Improving Web Vitals",
+            "title": "Improve Web Vitals",
             "pathItems": [
                 "optimize-lcp",
                 "optimize-fid",
