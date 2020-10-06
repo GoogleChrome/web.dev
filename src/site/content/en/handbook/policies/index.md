@@ -4,7 +4,6 @@ title: Policies
 date: 2020-09-29
 description: |
   Miscellaneous content policies.
-draft: true
 ---
 
 ## Author attribution {: #attribution }
