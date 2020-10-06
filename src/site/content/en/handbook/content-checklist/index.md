@@ -394,4 +394,3 @@ and [Videos hosted on web.dev](/handbook/markup-media/#video-hosted-on-web.dev)
 [guide]: https://documentation.divio.com/how-to-guides/#how-to
 [explanation]: https://documentation.divio.com/explanation/#explanation
 [tutorial]: https://documentation.divio.com/tutorials/#tutorials
-[DNA]: https://mdn-web-dna.s3-us-west-2.amazonaws.com/MDN-Web-DNA-Report-2019.pdf#page=20
