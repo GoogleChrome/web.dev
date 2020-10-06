@@ -1,6 +1,6 @@
 name: Update translated date
 on:
-  push:
+  pull_request:
     branches:
       - i18n-gitlocalize
 
@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Setup node
         uses: actions/setup-node@v1
@@ -32,12 +34,11 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action: Update translated date"
+          git add --all
           git commit -am "Update translated date"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: i18n-gitlocalize
-
-
+          branch: ${{ github.head_ref }}
