@@ -1,7 +1,7 @@
 ---
 title: A more private way to measure ad conversions, the Event Conversion Measurement API
 subhead: >
-  A new web API available as an Origin Trial in Chrome 86 measures when an ad click leads to a conversion, without using cross-site identifiers.
+  A new web API available as an origin trial in Chrome 86 measures when an ad click leads to a conversion, without using cross-site identifiers.
 authors:
   - maudn
   - samdutton
@@ -44,7 +44,7 @@ endAside %}
 - **Adtech platforms** such as **[demand-side
   platforms](https://en.wikipedia.org/wiki/Demand-side_platform)** are likely to be interested in
   using this API to support functionality that currently relies on third-party cookies. If you're
-  working on conversion measurement systems: [try out the demo](#demo), see if you can [register for
+  working on conversion measurement systems: [try out the demo](#demo), [register for
   an origin trial](<#register-for-the-origin-trial-(starting-in-chrome-86)>), and [share your
   feedback](#share-your-feedback).
 - **Advertisers and publishers relying on custom code for advertising or conversion measurement**
@@ -54,7 +54,7 @@ endAside %}
   API](#why-is-this-needed) may be of interest, particularly if you are working with adtech
   platforms that may integrate the API.
 
-## API Overview
+## API overview
 
 ### Why is this needed?
 
@@ -93,8 +93,8 @@ address in a privacy-preserving way the use cases that third-party cookies solve
 - It's **purpose-built** to measure conversions, unlike cookies. This in turn can enable browsers to
   apply more enhanced privacy protections.
 - It's **more private**: it makes it difficult to recognize a user across two different top-level
-  sites, for example to link publisher-side and advertiser-side user profiles. See how in the [next
-  section](#how-this-api-preserves-user-privacy).
+  sites, for example to link publisher-side and advertiser-side user profiles. See how in the [How
+  this API preserves user privacy](#how-this-api-preserves-user-privacy).
 
 ### A first iteration
 
@@ -116,14 +116,14 @@ proposal](https://github.com/WICG/conversion-measurement-api#privacy-considerati
   <img src="./diagram-overview.jpg" alt="Diagram: overview of the conversion measurement API steps">
 </figure>
 
-This API can be used with two types of `<a>` links used for advertising:
+This API can be used with two types of links (`<a>` elements) used for advertising:
 
-- Links (`<a>` elements) in a **first-party** context, such as ads on a social network or a search
+- Links in a **first-party** context, such as ads on a social network or a search
   engine results page;
-- Links (`<a>` elements) in a **third-party iframe**, such as on a publisher site that uses a
+- Links in a **third-party iframe**, such as on a publisher site that uses a
   third-party adtech provider.
 
-With this API, such outbound links (`<a>` elements) can be configured with attributes that are
+With this API, such outbound links can be configured with attributes that are
 specific to ad conversions:
 
 - Custom data to attach to an ad click on the publisher's side, for example a click ID or campaign
@@ -268,14 +268,14 @@ Summing up click data and conversion data:
     </thead>
     <tbody>
       <tr>
-        <td>Click data(<code>impressiondata</code> attribute)</td>
+        <td>Click data (<code>impressiondata</code> attribute)</td>
         <td>64 bits</td>
         <td>An ad ID or click ID</td>
       </tr>
       <tr>
         <td>Conversion data</td>
         <td>3 bits, noised</td>
-        <td>An integer from 0 to 7 that can map to a conversion type: signup, complete checkout...</td>
+        <td>An integer from 0 to 7 that can map to a conversion type: signup, complete checkout, etc.</td>
       </tr>
     </tbody>
   </table>
@@ -399,7 +399,54 @@ attributes:
 
 This code specifies the following:
 
+<div class="w-table-wrapper">
+  <table class="w-table--top-align">
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Default value, maximum, minimum</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>impressiondata</code> (required): a <b>64-bit</b> identifier to attach to an ad click.</td>
+        <td>(no default)</td>
+        <td>A dynamically generated click ID  such as a hex-encoded 64-bit integer:
+`776f09351f5809c5`</td>
+      </tr>
+      <tr>
+        <td><code>conversiondestination</code> (required): the <b>origin</b> where a conversion is expected for this ad.</td>
+        <td>(no default)</td>
+        <td><code>https://advertiser.example</code></td>
+      </tr>
+      <tr>
+        <td><code>impressionexpiry</code> (optional): in milliseconds, the cutoff time for when conversions can be attributed to this ad.</td>
+        <td>
+          <p><code>2592000000</code> = 30 days (in milliseconds)</p>
+          <p>Maximum: 30 days (in milliseconds)</p>
+          <p>Minimum: 2 days (in milliseconds)</p>
+        </td>
+        <td>Ten days after click: <code>864000000</code></td>
+      </tr>
+      <tr>
+        <td><code>reportingorigin</code> (optional): the destination for reporting confirmed conversions.</td>
+        <td>Top-level origin of the page where the link element is added.</td>
+        <td><code>https://adtech.example</code></td>
+      </tr>
+      <tr>
+        <td><code>href</code>: the intended destination of the ad click.</td>
+        <td><code>/</code></td>
+        <td><code>https://advertiser.example/shoes07</code></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 {% Aside %}
+Some notes about the example:
+
+- Note that `_target="parent"` is specified here, because in this example the ad is within an iframe.
 
 - You will find the term "impression" used in the attributes of the API or in the API proposal, even
   though only clicks are supported for now. Names may be updated in future iterations of the API.
@@ -477,7 +524,7 @@ discover commonly-needed information or resources for a site—for example, on w
 recognizes this as a special conversion request. This request is actually cancelled internally by
 the browser. {% endAside %}
 
-The browser receives this request. Upon detecting ".well-known/register-conversion", the browser:
+The browser receives this request. Upon detecting `.well-known/register-conversion`, the browser:
 
 - Looks up all ad clicks in storage that match this `conversiondestination` (because it's receiving
   this conversion on a URL that has been registered as a `conversiondestination` URL when the user
@@ -511,7 +558,7 @@ it sends an HTTP POST to the reporting origin that was specified in the `<a>` el
 Included as parameters are:
 
 - The data associated with the original ad click (`impression-data`).
-- The data associated with a conversion, [potentially noised](link to above).
+- The data associated with a conversion, [potentially noised](#noising-of-conversion-data).
 - The conversion credit attributed to the click. This API follows a **last-click attribution**
   model: the most recent matching ad click is given a credit of 100, all other matching ad clicks
   are given a credit of 0.
@@ -551,7 +598,7 @@ API](https://github.com/WICG/conversion-measurement-api/blob/master/AGGREGATE.md
 
 - View-through conversion measurement.
 - [Multiple reporting endpoints](https://github.com/WICG/conversion-measurement-api/issues/29).
-- [Web conversions that started in a native
+- [Web conversions that started in an iOS/Android
   app](https://github.com/WICG/conversion-measurement-api/issues/54).
 - Conversion lift measurement / incrementality: measurement of causal differences in conversion
   behavior, by measuring the difference between a test group that saw an ad and a control group that
@@ -580,7 +627,7 @@ it](#share-your-feedback). {% endAside %}
 - The 3-bit limit for conversion data may be increased or decreased.
 - The conversion destination may become an eTLD+1; right now, it's an
   [origin](/same-site-same-origin/#origin).
-- [More features may be added] (see above), and **more privacy protections** (noise / fewer bits /
+- [More features may be added](#what-is-not-supported-yet), and **more privacy protections** (noise / fewer bits /
   other limitations) if needed to support these new features.
 
 To follow and participate in discussions on new features, watch the proposal's [GitHub
@@ -614,11 +661,11 @@ provide a good developer experience.
 - To share feedback and discuss use cases on the Chrome API, create a new issue or engage in
   existing ones on the [API proposal
   repository](https://github.com/WICG/conversion-measurement-api/issues). Similarly, you can discuss
-  the Webkit/Safari API and its use cases on the [API proposal
+  the WebKit/Safari API and its use cases on the [API proposal
   repository](https://github.com/privacycg/private-click-measurement/issues).
 - To discuss advertising use cases and exchange views with industry experts: join the [Improving Web
   Advertising Business Group](https://www.w3.org/community/web-adv/). Join the [Privacy Community
-  Group](https://www.w3.org/community/privacycg/) for discussions around the Webkit/Safari API.
+  Group](https://www.w3.org/community/privacycg/) for discussions around the WebKit/Safari API.
 
 ### Keep an eye out
 
