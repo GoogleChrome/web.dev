@@ -44,9 +44,9 @@ endAside %}
 - **Adtech platforms** such as **[demand-side
   platforms](https://en.wikipedia.org/wiki/Demand-side_platform)** are likely to be interested in
   using this API to support functionality that currently relies on third-party cookies. If you're
-  working on conversion measurement systems: [try out the demo](#demo), [register for
-  an origin trial](<#register-for-the-origin-trial-(starting-in-chrome-86)>), and [share your
-  feedback](#share-your-feedback).
+  working on conversion measurement systems: [try out the demo](#demo), see if you're eligible to
+  [register for an origin trial](<#register-for-the-origin-trial-(starting-in-chrome-86)>), and
+  [share your feedback](#share-your-feedback).
 - **Advertisers and publishers relying on custom code for advertising or conversion measurement**
   may similarly be interested in using this API to replace existing techniques.
 - **Advertisers and publishers relying on adtech platforms for advertising or conversion
@@ -93,7 +93,7 @@ address in a privacy-preserving way the use cases that third-party cookies solve
 - It's **purpose-built** to measure conversions, unlike cookies. This in turn can enable browsers to
   apply more enhanced privacy protections.
 - It's **more private**: it makes it difficult to recognize a user across two different top-level
-  sites, for example to link publisher-side and advertiser-side user profiles. See how in the [How
+  sites, for example to link publisher-side and advertiser-side user profiles. See how in [How
   this API preserves user privacy](#how-this-api-preserves-user-privacy).
 
 ### A first iteration
@@ -413,7 +413,8 @@ This code specifies the following:
         <td><code>impressiondata</code> (required): a <b>64-bit</b> identifier to attach to an ad click.</td>
         <td>(no default)</td>
         <td>A dynamically generated click ID  such as a hex-encoded 64-bit integer:
-`776f09351f5809c5`</td>
+          <code>776f09351f5809c5</code>
+        </td>
       </tr>
       <tr>
         <td><code>conversiondestination</code> (required): the <b>origin</b> where a conversion is expected for this ad.</td>
@@ -423,9 +424,9 @@ This code specifies the following:
       <tr>
         <td><code>impressionexpiry</code> (optional): in milliseconds, the cutoff time for when conversions can be attributed to this ad.</td>
         <td>
-          <p><code>2592000000</code> = 30 days (in milliseconds)</p>
-          <p>Maximum: 30 days (in milliseconds)</p>
-          <p>Minimum: 2 days (in milliseconds)</p>
+          <code>2592000000</code> = 30 days (in milliseconds).<br/><br/>
+          Maximum: 30 days (in milliseconds).<br/><br/>
+          Minimum: 2 days (in milliseconds).
         </td>
         <td>Ten days after click: <code>864000000</code></td>
       </tr>
@@ -445,8 +446,6 @@ This code specifies the following:
 
 {% Aside %}
 Some notes about the example:
-
-- Note that `_target="parent"` is specified here, because in this example the ad is within an iframe.
 
 - You will find the term "impression" used in the attributes of the API or in the API proposal, even
   though only clicks are supported for now. Names may be updated in future iterations of the API.
