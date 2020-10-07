@@ -81,7 +81,7 @@ To recap:
 - `max(<value-list>)`: selects the largest (most positive) value from a list of comma-separated expressions
 - `clamp(<min>, <ideal>, <max>)`: clamps a value between an upper and lower bound, based on a set ideal value
 
-Let’s take a look at some examples.
+Let's take a look at some examples.
 
 ## The Perfect Width
 
@@ -173,7 +173,7 @@ p {
 
 
 ## Conclusion
-The CSS math functions, `min()`, `max()`, and `clamp()` are very powerful, relatively well supported, and could be just what you’re looking for to help you build responsive UIs. For more resources, check out:
+The CSS math functions, `min()`, `max()`, and `clamp()` are very powerful, relatively well supported, and could be just what you're looking for to help you build responsive UIs. For more resources, check out:
 
 - [CSS Values and Units on MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)
 - [CSS Values and Units Level 4 Spec](https://www.w3.org/TR/css-values-4/)
