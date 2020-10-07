@@ -175,7 +175,7 @@ Our simple components purely enhance otherwise static content or create amazing 
 
 The web.dev engineering team ([Rob](https://twitter.com/rob_dodson), [Ewa](https://twitter.com/devnook), [Michael](https://twitter.com/michaelsolati), and [Sam](https://twitter.com/samthor)) will be following up with more technical deep dives soon.
 
-We hope hearing about how we do things gave you some ideas for your own projects.
+We hope hearing about how we do things gave you some [ideas for your own projects.](https://www.venomor.com/2020/10/how-to-start-blog-in-2020-blogging.html)
 Hit us up on Twitter if you've got questions or topic requests for this blog!
 
 <!-- Test content change --> 
