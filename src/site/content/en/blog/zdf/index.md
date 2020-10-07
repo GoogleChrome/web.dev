@@ -77,10 +77,8 @@ use the app offline.
 <figure class="w-figure">
   <div class="w-columns">
     <img src="./custom-prompt-before.jpg"
-         class="w-screenshot"
          alt="Custom invitation to install.">
     <img src="./custom-prompt-after.jpg"
-         class="w-screenshot"
          alt="Custom install prompt being triggered when downloading a video for offline consumption.">
   </div>
   <figcaption class="w-figcaption">Custom install prompt being triggered when downloading a video for offline consumption.</figcaption>
@@ -95,8 +93,10 @@ been downloaded yet) a short explanation of the offline feature.
 
 <figure class="w-figure">
   <div class="w-columns">
-    <img src="./online-page.png" class="w-screenshot" alt="Offline page showing all content available for watching offline.">
-    <img src="./offline-page.png" class="w-screenshot" alt="Offline page showing that no content is available for watching offline.">
+    <img src="./online-page.png"
+         alt="Offline page showing all content available for watching offline.">
+    <img src="./offline-page.png"
+         alt="Offline page showing that no content is available for watching offline.">
   </div>
   <figcaption class="w-figcaption">Offline page showing all content available for watching offline.</figcaption>
 </figure>
