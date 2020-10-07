@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2020-10-02
+updated: 2020-10-07
 tags:
   - blog
   - capabilities
@@ -499,6 +499,7 @@ features, and shows other browser vendors how critical it is to support them.
 - [Tracking bug][cr-bug]
 - [ChromeStatus.com entry][cr-status]
 - Request an [origin trial token]({{origin_trial.url}})
+- [TypeScript definitions][typescript]
 - [File System Access API - Chromium Security Model][nfs-cr-sec-model]
 - Blink Component: `Blink>Storage>FileSystem`
 
@@ -547,3 +548,4 @@ The File System Access API spec was written by
 [spec-issameentry]: https://wicg.github.io/file-system-access/#api-filesystemhandle-issameentry
 [spec-seek]: https://wicg.github.io/file-system-access/#api-filesystemwritablefilestream-seek
 [spec-truncate]: https://wicg.github.io/file-system-access/#api-filesystemwritablefilestream-truncate
+[typescript]: https://www.npmjs.com/package/@types/wicg-file-system-access
