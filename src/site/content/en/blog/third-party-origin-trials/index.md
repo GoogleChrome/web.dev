@@ -71,7 +71,7 @@ on progress with third-party origin trials.
    third-party token is ready.
 
    <figure class="w-figure">
-     <img src="tpot-registration.png" alt="Chrome origin trials registration page for the Conversion Measurement API, with Third-party matching checkbox selected.">
+     <img src="tpot-registration.png" alt="Chrome origin trials registration page for the Conversion Measurement API, with third-party matching checkbox selected.">
      <figcaption class="w-figcaption">Registration page for the Conversion Measurement trial.</figcaption>
    </figure>
 
