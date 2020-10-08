@@ -337,9 +337,9 @@ if ("VideoEncoder" in window) {
 
 ## Using the WebCodecs API {: #use }
 
-### Enabling via chrome://flags
+### Enabling via a command line flag
 
-To experiment with the WebHID API locally on all desktop platforms, without an
+To experiment with the WebCodecs API locally on all desktop platforms, without an
 origin trial token, start Chrome with a command line flag:
 
 ```bash
