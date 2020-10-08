@@ -43,7 +43,7 @@ Safari was the first to [ship](https://bugs.webkit.org/show_bug.cgi?id=167000) t
   </figcaption>
 </figure>
 
-You can use `min()`, `max()`, and `clamp()` on the right hand side of any CSS expression where it would make sense. For `min()` and `max()`, you provide an argument list of values, and the browser determines which one is either the smallest or largest, respectively. For example, in the case of: `min(1rem, 50%, 10vw)`, the browser would calculate which of these relative units is the smallest, and use that value as the actual value.
+You can use `min()`, `max()`, and `clamp()` on the right hand side of any CSS expression where it would make sense. For `min()` and `max()`, you provide an argument list of values, and the browser determines which one is either the smallest or largest, respectively. For example, in the case of: `min(1rem, 50%, 10vw)`, the browser calculates which of these relative units is the smallest, and uses that value as the actual value.
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
@@ -67,7 +67,7 @@ The `max()` function selects the largest value from a list of comma-separated ex
 </figure>
 
 
-For `clamp()`, the author enters three values: a minimum value, ideal value (from which to calculate), and maximum value.
+To use `clamp()` enter three values: a minimum value, ideal value (from which to calculate), and maximum value.
 
 Any of these functions can be used anywhere a `<length>`, `<frequency>`, `<angle>`, `<time>`, `<percentage>`, `<number>`, or `<integer>` is allowed. You can use these on their own (i.e. `font-size: max(0.5vw, 50%, 2rem)`), in conjunction with `calc()` (i.e. `font-size: max(calc(0.5vw - 1em), 2rem)`),  or composed (i.e. `font-size: max(min(0.5vw, 1em), 2rem)`). 
 
@@ -87,7 +87,7 @@ Let's take a look at some examples.
 
 According to [The Elements of Typographic Style](http://webtypography.net/2.1.2#:~:text=%E2%80%9CAnything%20from%2045%20to%2075,is%2040%20to%2050%20characters.%E2%80%9D) by Robert Bringhurst, “anything from 45 to 75 characters is widely regarded as a satisfactory length of line for a single-column page set in a serifed text face in a text size.” 
 
-To ensure that your text blocks are not narrower than 45 characters or wider than 75 characters, you can write some CSS using `clamp()` and the `ch` unit:
+To ensure that your text blocks are not narrower than 45 characters or wider than 75 characters, use `clamp()` and the `ch` unit:
 
 ```css
 p {
@@ -106,7 +106,7 @@ This allows for the browser to determine the width of the paragraph. It will set
   </figcaption>
 </figure>
 
-You could also break this up with just the `min()` or `max()` function as well. If you want the element to always be at `50%` width, and not exceed `75ch` in width (i.e. on larger screens), you could write: `width: min(75ch, 50%);`.  This essentially sets a “max” size by using the `min()` function.
+You could break this up with just the `min()` or `max()` function. If you want the element to always be at `50%` width, and not exceed `75ch` in width (i.e. on larger screens), write: `width: min(75ch, 50%);`.  This essentially sets a “max” size by using the `min()` function.
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
@@ -131,7 +131,7 @@ By the same token, you can ensure a minimum size for legible text using the `max
 ## Padding Management
 
 Using the same concept as above, where the `min()` function can set a “max” value and `max()` sets a “min” value, you can use `max()` to set a minimum padding size. This example comes from [CSS Tricks](https://css-tricks.com/using-max-for-an-inner-element-max-width/), where reader Caluã de Lacerda Pataca shared this idea:
-The idea is to enable an element to have additional padding at larger screen sizes, but maintain a minimum padding at smaller screen sizes, particularly on the inline padding. To achieve this, you can use `calc()` and subtract the minimum padding from either side: `calc((100vw - var(--contentWidth)) / 2)`, *or* you can use max: `max(2rem, 50vw - var(--contentWidth) / 2)`. All together it looks like:
+The idea is to enable an element to have additional padding at larger screen sizes, but maintain a minimum padding at smaller screen sizes, particularly on the inline padding. To achieve this, use `calc()` and subtract the minimum padding from either side: `calc((100vw - var(--contentWidth)) / 2)`, *or* use max: `max(2rem, 50vw - var(--contentWidth) / 2)`. All together it looks like:
 
 ```css
 footer {
@@ -161,7 +161,7 @@ In order to enable [fluid typography](https://www.smashingmagazine.com/2016/05/f
   </figcaption>
 </figure>
 
-Utilizing `clamp()`, you can now write this more clearly. Rather than requiring a complex string, you can let the browser do the work for you. You can set the minimum acceptable font size (for example, `1.5rem` for a title, maximum size (i.e. `3rem`) and ideal size of `5vw`. 
+With `clamp()`, you can write this more clearly. Rather than requiring a complex string, the browser can do the work for you. Set the minimum acceptable font size (for example, `1.5rem` for a title, maximum size (i.e. `3rem`) and ideal size of `5vw`. 
 
 Now, we get typography that scales with the viewport width of the page until it reaches the limiting minimum and maximum values, in a much more succinct line of code: 
 
