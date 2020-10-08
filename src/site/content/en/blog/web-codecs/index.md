@@ -200,7 +200,7 @@ function handleChunk(chunk) {
 ```
 
 If at some point you'd need to make sure that all pending encoding requests have
-been completed, you can call `flush()` and wait for its promise. For example,
+been completed, you can call `flush()` and wait for its promise.
 it's required to call `flush()` before the encoder can be reconfigured.
 
 ```js
