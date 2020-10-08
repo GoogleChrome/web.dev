@@ -4,10 +4,10 @@ subhead: Origin trials are a way to test a new or experimental web platform feat
 authors: 
   - samdutton
 date: 2020-10-01
-updated: 2020-10-01
+updated: 2020-10-07
 hero: hero.jpg
 thumbnail: thumbnail.jpg
-alt: 
+alt: Person wearing medical gloves pouring purple liquid from glass beaker into flask. Bristol Robotics Laboratory, UK.
 tags:
   - blog
   - origin-trials
@@ -69,6 +69,11 @@ on progress with third-party origin trials.
    required. (Depending on the trial, token requests may require review.)
 1. If review is required, you'll be notified by email when the review is complete and your
    third-party token is ready.
+
+   <figure class="w-figure">
+     <img src="tpot-registration.png" alt="Chrome origin trials registration page for the Conversion Measurement API, with third-party matching checkbox selected.">
+     <figcaption class="w-figcaption">Registration page for the Conversion Measurement trial.</figcaption>
+   </figure>
 
 ## How to provide feedback
 
