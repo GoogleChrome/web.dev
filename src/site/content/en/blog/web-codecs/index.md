@@ -145,7 +145,7 @@ encoder.configure(config);
 ```
 
 After the encoder has been set up,  it's ready to start accepting frames. When
-frames are coming from a media stream, `VideoTrackReader` will pump frames into
+frames are coming from a media stream, the callback given to `VideoTrackReader.start()` will pump frames into
 the encoder, periodically inserting
 [keyframes](https://en.wikipedia.org/wiki/Key_frame#Video_compression) and
 checking that the encoder is not overwhelmed with incoming frames.
