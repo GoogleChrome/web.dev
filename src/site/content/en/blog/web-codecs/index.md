@@ -120,7 +120,7 @@ Before encoding `VideoEncoder` needs to be given two javascript objects:
 
 +   Init dictionary with two functions for handling encoded chunks and
     errors. These functions are developer-defined and can't be changed after
-    they're passed to the `VideoEncoder` constructor..
+    they're passed to the `VideoEncoder` constructor.
 +   Encoder configuration object, which contains parameters for the output
     video stream. You can change these parameters later  by calling `configure()`.
 
@@ -203,7 +203,7 @@ If at some point you'd need to make sure that all pending encoding requests have
 been completed, you can call `flush()` and wait for its promise. For example,
 it's required to call `flush()` before the encoder can be reconfigured.
 
-```
+```js
 await encoder.flush();
 ```
 
@@ -236,7 +236,7 @@ decoder.configure(config);
 
 Once the decoder is initialized, you can start feeding it with
 `EncodedVideoChunk` objects. Creating a chunk just takes a
-[`BufferSource` ](https://developer.mozilla.org/en-US/docs/Web/API/BufferSource)of
+[`BufferSource`](https://developer.mozilla.org/en-US/docs/Web/API/BufferSource)of
 data and a frame timestamp in microseconds. Any chunks emitted by the encoder
 are ready for the decoder as is, although it's hard to imagine a real world use
 case for decoding newly encoded chunks (except for the demo below). All things
