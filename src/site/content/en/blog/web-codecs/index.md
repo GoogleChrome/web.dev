@@ -22,7 +22,7 @@ Modern web technologies provide ample ways to work with video.
 [Media Recording API](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Recording_API)
 ,
 [Media Source API](https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API),
-[WebRTC API](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API) add up
+ and [WebRTC API](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API) add up
 to a rich tool set for recording, transferring,  and playing video streams.
 While solving these high-level tasks, the existing APIs don't let web
 programmers work with individual components of a video stream, such as frames
