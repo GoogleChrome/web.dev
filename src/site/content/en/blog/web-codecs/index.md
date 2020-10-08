@@ -335,7 +335,7 @@ if ("VideoEncoder" in window) {
 }
 ```
 
-## Using the WebHID API {: #use }
+## Using the WebCodecs API {: #use }
 
 ### Enabling via chrome://flags
 
