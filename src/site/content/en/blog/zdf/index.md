@@ -56,7 +56,7 @@ respond with the data from IndexedDB. This transparently adds offline
 capabilities without having to change a single line of the player's code.
 
 Since offline videos tend to be quite large, a big question is how many of them
-can actually be stored on a device. With tje help of the [StorageManager
+can actually be stored on a device. With the help of the [StorageManager
 API](/storage-for-the-web/#how-much) the app can estimate the
 available space and inform the user when there is insufficient space before even
 starting the download. Unfortunately Safari isn't on the list of browsers
@@ -134,13 +134,15 @@ const frameRate = new Promise(resolve => {
 Even if this measurement provides only a rough indication of the device's
 performance and varies on each load, it was still a good basis for
 decision-making. It's worth mentioning that depending on the use case there are
-[other techniques for adaptive loading](/adaptive-loading/)
+[other techniques for adaptive loading](/adaptive-loading-with-service-workers/)
 that developers can implement. One great advantage of this approach is that it
 is available on all platforms.
 
 ## Dark mode
 
-A popular feature for modern mobile experiences is dark mode. Especially when
+A popular feature for modern mobile experiences is
+[dark mode](/prefers-color-scheme/).
+Especially when
 watching videos in low ambient light many people prefer a dimmed UI. The ZDF PWA
 not only provides a switch that allows users to toggle between a light and a
 dark theme, it also reacts to changes of the OS-wide color preferences. This way
