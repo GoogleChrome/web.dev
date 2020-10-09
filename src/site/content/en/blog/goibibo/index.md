@@ -153,5 +153,5 @@ In their journey to improve user experience, Goibibo noticed a few trends:
   <cite>Rithish Saralaya, VP Engineering, Goibibo</cite>
 </blockquote>
 
-Check out the [SCALE on web case studies](/tags/scale-on-web) page for more
+Check out the [Scale on web case studies](/tags/scale-on-web) page for more
 success stories from India and Southeast Asia.
