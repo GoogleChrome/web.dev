@@ -60,7 +60,11 @@ response:
     Content-Encoding: mi-sha256-03
     Date: Mon, 17 Aug 2020 16:08:24 GMT
     Vary: Accept-Encoding
-signature: label;cert-sha256=*ViFgi0WfQ+NotPJf8PBo2T5dEuZ13NdZefPybXq/HhE=*;cert-url="https://test.web.app/ViFgi0WfQ-NotPJf8PBo2T5dEuZ13NdZefPybXq_HhE";date=1597680503;expires=1598285303;integrity="digest/mi-sha256-03";sig=*MEUCIQD5VqojZ1ujXXQaBt1CPKgJxuJTvFlIGLgkyNkC6d7LdAIgQUQ8lC4eaoxBjcVNKLrbS9kRMoCHKG67MweqNXy6wJg=*;validity-url="https://example.org/webpkg/validity"
+signature: 
+    label;cert-sha256=*ViFgi0WfQ+NotPJf8PBo2T5dEuZ13NdZefPybXq/HhE=*;
+    cert-url="https://test.web.app/ViFgi0WfQ-NotPJf8PBo2T5dEuZ13NdZefPybXq_HhE";
+    date=1597680503;expires=1598285303;integrity="digest/mi-sha256-03";sig=*MEUCIQD5VqojZ1ujXXQaBt1CPKgJxuJTvFlIGLgkyNkC6d7LdAIgQUQ8lC4eaoxBjcVNKLrbS9kRMoCHKG67MweqNXy6wJg=*;
+    validity-url="https://example.org/webpkg/validity"
 header integrity: sha256-Gl9bFHnNvHppKsv+bFEZwlYbbJ4vyf4MnaMMvTitTGQ=
 
 The exchange has a valid signature.
@@ -98,7 +102,7 @@ spec](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-respons
 
 SXGs are a part of the broader [Web
 Packaging](https://github.com/WICG/webpackage) spec proposal family. In addition
-to SXGs, the other major component of the Web Packaging spec is Web Bundles
+to SXGs, the other major component of the Web Packaging spec is [Web Bundles](/web-bundles/)
 ("bundled HTTP exchanges"). Web Bundles are a collection of HTTP resources and
 the metadata necessary to interpret the bundle.
 
