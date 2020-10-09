@@ -1,5 +1,5 @@
 ---
-title: Logical Layout Enhancements With Flow-Relative Shorthands
+title: Logical layout enhancements with flow-relative shorthands
 subhead: TODO 
 authors:
   - adamargyle
@@ -28,7 +28,7 @@ offsets have shipped to make these logical properties and values a bit easier to
     of block and inline.">
 </figure>
 
-## Document Flow
+## Document flow
 If you're already familiar with logical properties, inline and block axes, and don't 
 want a refresher, you can [skip ahead](#new-shorthands). Otherwise, here's a short refresher.
 
@@ -43,7 +43,7 @@ process of supporting multiple languages; learning about physical vs logical sid
 
 {% Aside 'key-term' %}
 A _logical property_ is one that references a side, corner or axis of the box model in context 
-of the applicable language multi-directionality. It's akin to referencing someone's `strong` arm, 
+of the applicable language direction. It's akin to referencing someone's `strong` arm, 
 rather than assuming it's their `right` arm. "Right" is a physical arm reference, "strong" is 
 a logical arm reference, **contextual to the individual**.
 {% endAside %}
@@ -68,7 +68,7 @@ top and bottom, but **also** akin to a Japanese reader as right and left. Writte
 
 Normal flow is when the webpage is part of this multi-directionality intentionally. 
 When page content updates according to document direction changes, the layout and its 
-elements are considered in flow. Read more about "in" and "out" flow 
+elements are considered in flow. Read more about "in" and "out" of flow 
 [on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout) or in the 
 [CSS Display Module spec](https://drafts.csswg.org/css-display-3/#out-of-flow). While logical properties 
 are not required to be in flow, they do much of the heavy lifting for you as directionality changes. 
@@ -76,8 +76,8 @@ Flow implies direction, which letters, words and content need to travel along.
 This leads us to block and inline logical directions.
 
 Block direction is the direction that new content blocks follow, like asking yourself, 
-"where to put the next paragraph?". A "content block", or "block of text", is a nice way 
-to associate it to yourself. Every language arranges their blocks and orders them along 
+"where to put the next paragraph?". You might think of it as a "content block", or "block of text". 
+Every language arranges their blocks and orders them along 
 their respective `block-axis`. `block-start` is the side a paragraph is first placed, 
 while `block-end` is the side new paragraphs flow towards. 
 
@@ -110,7 +110,7 @@ Being [`flow-relative`](https://www.w3.org/TR/css-writing-modes-4/#logical-direc
 means that the styles written for one language will be contextual and appropriately 
 applied into other languages. Content will flow relative to the language it's being delivered for.
 
-## New Shorthands
+## New shorthands
 Some of the following shorthands are not new features for the browser, rather, easier 
 ways to write styles by taking advantage of being able to set values on both block 
 or inline edges at once. The `inset-*` logical properties **do** bring new abilities, 
@@ -118,7 +118,7 @@ as there were no longhand ways to specify absolute positions with logical proper
 before it. Insets and shorthands flow (hehe) together so well though, I'm going to 
 tell you about all of the new logical properties features landing in 87 at once. 
 
-### Margin Shorthands
+### Margin shorthands
 No new abilities shipped, but some super handy shorthands did: <br>
 [`margin-block`](https://developer.mozilla.org/en-US/docs/Web/CSS/margin-block) and 
 [`margin-inline`](https://developer.mozilla.org/en-US/docs/Web/CSS/margin-inline).
@@ -135,7 +135,7 @@ margin-block-end: 2ch;
 ```
 {% endCompare %}
 
-{% Compare 'better', 'New Shorthand' %}
+{% Compare 'better', 'New shorthand' %}
 ```css
 margin-block: 2ch;
 /* or */
@@ -156,14 +156,14 @@ margin-inline-end: 2ch;
 ```
 {% endCompare %}
 
-{% Compare 'better', 'New Shorthand' %}
+{% Compare 'better', 'New shorthand' %}
 ```css
 margin-inline: 4ch 2ch;
 ```
 {% endCompare %}
 </div>
 
-### Padding Shorthands
+### Padding shorthands
 No new abilities shipped, but more super handy shorthands did: <br>
 [`padding-block`](https://developer.mozilla.org/en-US/docs/Web/CSS/padding-block) and 
 [`padding-inline`](https://developer.mozilla.org/en-US/docs/Web/CSS/padding-inline).
@@ -180,7 +180,7 @@ padding-block-end: 2ch;
 ```
 {% endCompare %}
 
-{% Compare 'better', 'New Shorthand' %}
+{% Compare 'better', 'New shorthand' %}
 ```css
 padding-block: 2ch;
 /* or */
@@ -199,14 +199,14 @@ padding-inline-end: 2ch;
 ```
 {% endCompare %}
 
-{% Compare 'better', 'New Shorthand' %}
+{% Compare 'better', 'New shorthand' %}
 ```css
 padding-inline: 4ch 2ch;
 ```
 {% endCompare %}
 </div>
 
-### Inset & Shorthands
+### Inset and shorthands
 The physical properties `top`, `right`, `bottom` and `left` can all be written 
 as values for the `inset` property. Any value of `position`  can benefit from 
 setting sides with inset.
@@ -227,7 +227,7 @@ setting sides with inset.
 <br>
 
 <div class="w-columns">
-{% Compare 'better', 'Physical Longhand' %}
+{% Compare 'better', 'Physical longhand' %}
 ```css
 position: absolute;
 top: 1px;
@@ -237,7 +237,7 @@ left: 4px;
 ```
 {% endCompare %}
 
-{% Compare 'better', 'New Physical Shorthand' %}
+{% Compare 'better', 'New physical shorthand' %}
 ```css
 position: absolute;
 inset: 1px 2px 3px 4px;
@@ -248,14 +248,14 @@ inset: 1px 2px 3px 4px;
 That should look immediately convenient! Inset is shorthand for the physical sides, 
 and it works just like margin and padding. 
 
-#### New Features
+#### New features
 As exciting as the physical sides shorthand is, there's even more from the 
 logical features brought by additional `inset` shorthands. These shorthands bring 
 developer authoring convenience (they're shorter to type) but also increase 
 the potential reach for the layout because they're flow-relative.
 
 <div class="w-columns">
-{% Compare 'better', 'Physical Longhand' %}
+{% Compare 'better', 'Physical longhand' %}
 ```css
 position: absolute;
 top: 10px;
@@ -263,7 +263,7 @@ bottom: 10px;
 ```
 {% endCompare %}
 
-{% Compare 'better', 'Logical Shorthand' %}
+{% Compare 'better', 'Logical shorthand' %}
 ```css
 position: absolute;
 inset-block: 10px;
@@ -274,7 +274,7 @@ inset-block: 10px;
 <br>
 
 <div class="w-columns">
-{% Compare 'better', 'Physical Longhand' %}
+{% Compare 'better', 'Physical longhand' %}
 ```css
 position: absolute;
 left: 10px;
@@ -282,7 +282,7 @@ right: 20px;
 ```
 {% endCompare %}
 
-{% Compare 'better', 'Logical Shorthand' %}
+{% Compare 'better', 'Logical shorthand' %}
 ```css
 position: absolute;
 inset-inline: 10px 20px;
@@ -293,8 +293,8 @@ inset-inline: 10px 20px;
 Further reading and a [full list of inset shorthand and longhand](https://developer.mozilla.org/en-US/docs/Web/CSS/inset) 
 is available on MDN.
 
-### Border Shorthands
-Border, plus it's nested `color`, `style` and `width` properties have all got 
+### Border shorthands
+Border, plus its nested `color`, `style` and `width` properties have all got 
 new logical shorthands as well.
 
 {% Glitch 'border-logical-shorthand' %}
@@ -302,14 +302,14 @@ new logical shorthands as well.
 <br>
 
 <div class="w-columns">
-{% Compare 'better', 'Physical Longhand' %}
+{% Compare 'better', 'Physical longhand' %}
 ```css
 border-top-color: hotpink;
 border-bottom-color: hotpink;
 ```
 {% endCompare %}
 
-{% Compare 'better', 'Logical Shorthand' %}
+{% Compare 'better', 'Logical shorthand' %}
 ```css
 border-block-color: hotpink;
 /* or */
@@ -321,14 +321,14 @@ border-block-color: hotpink hotpink;
 <br>
 
 <div class="w-columns">
-{% Compare 'better', 'Physical Longhand' %}
+{% Compare 'better', 'Physical longhand' %}
 ```css
 border-left-style: dashed;
 border-right-style: dashed;
 ```
 {% endCompare %}
 
-{% Compare 'better', 'Logical Shorthand' %}
+{% Compare 'better', 'Logical shorthand' %}
 ```css
 border-inline-style: dashed;
 /* or */
@@ -340,14 +340,14 @@ border-inline-style: dashed dashed;
 <br>
 
 <div class="w-columns">
-{% Compare 'better', 'Physical Longhand' %}
+{% Compare 'better', 'Physical longhand' %}
 ```css
 border-left-width: 1px;
 border-right-width: 1px;
 ```
 {% endCompare %}
 
-{% Compare 'better', 'Logical Shorthand' %}
+{% Compare 'better', 'Logical shorthand' %}
 ```css
 border-inline-width: 1px;
 /* or */
@@ -359,7 +359,7 @@ border-inline-width: 1px 1px;
 Further reading and a [full list of border shorthand and longhand](https://developer.mozilla.org/en-US/docs/Web/CSS/border-block) 
 is available on MDN.
 
-## Logical Property `<figure>` Example
+## Logical property `<figure>` example
 Let's put it all together in a small example. Logical properties can layout 
 an image with a caption to handle different writing and document directions.
 
@@ -377,10 +377,10 @@ You don't have to do much to make a card internationally responsive with a
 `<figure>` and a few logical properties. If you're curious how all this internationally 
 considerate CSS works together, I hope this is a small meaningful introduction.
 
-### Polyfilling & Cross Browser Support
+### Polyfilling and cross-browser support
 The Cascade or build tools are viable options to have old and new browsers alike, 
 properly spaced with updated logical properties. By following a physical property 
-with a logical one, the browser will use the "last" one it's found during style 
+with a logical one, the browser will use the "last" property it found during style 
 resolution. Here's a polyfill by hand:
 
 ```css
@@ -414,16 +414,16 @@ p {
 [Sass](https://sass-lang.com), [PostCSS](https://github.com/csstools/postcss-logical), 
 [Emotion](https://emotion.sh) and others have automated bundler and/or build 
 time offerings that have a wide array of fallbacks or solutions. Check out each one 
-for it's strategy to see which matches your toolchain and overall site strategy.
+to see which matches your toolchain and overall site strategy.
 
-## What's Next
-More of CSS will offer logical properties, it's not done yet! There's 1 big missing 
+## What's next
+More of CSS will offer logical properties, it's not done yet! There's one big missing 
 set of shorthands though, and a resolution is still pending in this [Github issue](https://github.com/w3c/csswg-drafts/issues/1282). 
 There is a temporary solution [in a draft](https://drafts.csswg.org/css-logical/#logical-shorthand-keyword). What if you want to style all 
 logical sides of a box with a shorthand?
 
 <div class="w-columns">
-{% Compare 'better', 'Physical Shorthand' %}
+{% Compare 'better', 'Physical shorthand' %}
 ```css
 margin: 1px 2px 3px 4px;
 margin: 1px 2px;
@@ -431,7 +431,7 @@ margin: 2px;
 ```
 {% endCompare %}
 
-{% Compare 'better', 'Logical Shorthand' %}
+{% Compare 'better', 'Logical shorthand' %}
 ```css
 margin: logical 1px 2px 3px 4px;
 margin: logical 1px 2px;
