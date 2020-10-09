@@ -4,7 +4,7 @@ title: Signed Exchanges (SXGs)
 subhead: SXGs are a content delivery mechanism.
 authors:
   - katiehempenius
-date: 2020-10-08
+date: 2020-10-09
 hero: hero.jpg
 alt: A pile of envelopes.
 description: |
@@ -18,7 +18,12 @@ A signed exchange (SXG) is a delivery mechanism that makes it possible to
 authenticate the origin of a resource independently of how it was delivered.
 This article provides an overview of SXGs.
 
-## Overview
+## Browser compatibility {: #browser-compatibility }
+
+SXGs are [supported](https://caniuse.com/#feat=sxg) by Chromium-based browsers
+(starting with versions: Chrome 73, Edge 79, and Opera 64).
+
+## Background
 
 Signed Exchanges (SXGs) allow a site to cryptographically sign a
 request/response pair (an "HTTP exchange") in a way that makes it possible for
@@ -29,12 +34,7 @@ delivered the content. Separating content attribution from content distribution
 advances a variety of use cases such as privacy-preserving prefetching, offline
 internet experiences, and serving content from third-party caches.
 
-### Browser compatibility
-
-SXGs are [supported](https://caniuse.com/#feat=sxg) by Chromium-based browsers
-(starting with versions: Chrome 73, Edge 79, and Opera 64).
-
-### The SXG Format
+### The SXG format
 
 An SXG is encapsulated in a [binary-encoded](https://cbor.io/) file that has two
 primary components: an HTTP exchange and a
@@ -139,8 +139,8 @@ tag, this is not the recommended approach to loading
 [subresources](https://whatpr.org/html/4288/infrastructure.html#resources) using
 SXG. Tooling support for the SXG subresource loading is less mature, and
 therefore this use case is not covered in this document - however, you can read
-more about it
-[here](https://github.com/WICG/webpackage/blob/master/explainers/signed-exchange-subresource-subtitution-explainer.md).
+more about it in [Signed Exchange subresource
+substitution](https://github.com/WICG/webpackage/blob/master/explainers/signed-exchange-subresource-subtitution-explainer.md).
 
 Like other resources, a SXG can be loaded by entering its URL in the browser's address bar.
 
@@ -210,10 +210,10 @@ browsers don't explicitly list a format's `q-value` when it has the default
 value of `1`. 
 
 
-### DevTools
+### Debugging SXGs with Chrome DevTools {: #debugging }
 
 Signed Exchanges can be identified by looking for `signed-exchange` in the
-**Type** column of the **Network** panel in DevTools.
+**Type** column of the **Network** panel in Chrome DevTools.
 
 <figure class="w-figure">
   <img src="./signed-exchange-network-panel.png" alt="Screenshot showing a SXG request within the 'Network' panel in DevTools" class="w-screenshot">
@@ -227,7 +227,8 @@ The **Preview** tab provides more information about the contents of a SXG.
   <figcaption>The <b>Preview</b> tab in DevTools</figcaption>
 </figure>
 
-To see a SXG firsthand, visit this [demo](https://signed-exchange-testing.dev/).
+To see a SXG firsthand, visit this [demo](https://signed-exchange-testing.dev/)
+in [one the browsers that supports SXG](#browser-compatibility)
 
 ## Tooling
 
@@ -322,7 +323,7 @@ server.
   [here](https://web.dev/how-to-set-up-signed-http-exchanges/). 
 
 
-- gen-signedexchange
+- `gen-signedexchange`
 
   [`gen-signedexchange`](https://github.com/WICG/webpackage/tree/master/go/signedexchange)
   is a tool provided by the webpackage specification as a [reference
