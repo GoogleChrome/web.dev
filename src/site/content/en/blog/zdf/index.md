@@ -56,7 +56,7 @@ respond with the data from IndexedDB. This transparently adds offline
 capabilities without having to change a single line of the player's code.
 
 Since offline videos tend to be quite large, a big question is how many of them
-can actually be stored on a device. With tje help of the [StorageManager
+can actually be stored on a device. With the help of the [StorageManager
 API](/storage-for-the-web/#how-much) the app can estimate the
 available space and inform the user when there is insufficient space before even
 starting the download. Unfortunately Safari isn't on the list of browsers
