@@ -12,10 +12,10 @@ description: |
   Detached windows are a common type of memory leak that is particularly difficult to find and fix.
 tags:
   - blog
+  - memory
   - dom
   - javascript
   - performance
-  - memory
 ---
 
 ## What's a memory leak in JavaScript? {: #whats-a-memory-leak }
