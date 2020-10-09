@@ -1,14 +1,17 @@
 ---
 layout: post
-title: Signed Exchanges (SXGs)
-subhead: SXGs are a content delivery mechanism.
+title: Signed Exchanges (SXGs) overview and guide
+subhead: |
+  An SXG is a delivery mechanism that makes it possible to authenticate the
+  origin of a resource independently of how it was delivered.
 authors:
   - katiehempenius
 date: 2020-10-09
 hero: hero.jpg
 alt: A pile of envelopes.
 description: |
-  This article provides an overview of Signed Exchanges (SXGs). An SXG is a delivery mechanism that makes it possible to authenticate the origin of a resource independently of how it was delivered. 
+  An SXG is a delivery mechanism that makes it possible to authenticate the
+  origin of a resource independently of how it was delivered.
 tags:
   - blog
   - performance
@@ -23,7 +26,7 @@ This article provides an overview of SXGs.
 SXGs are [supported](https://caniuse.com/#feat=sxg) by Chromium-based browsers
 (starting with versions: Chrome 73, Edge 79, and Opera 64).
 
-## Background
+## Overview
 
 Signed Exchanges (SXGs) allow a site to cryptographically sign a
 request/response pair (an "HTTP exchange") in a way that makes it possible for
