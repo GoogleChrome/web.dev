@@ -23,9 +23,9 @@ Modern web technologies provide ample ways to work with video.
 ,
 [Media Source API](https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API),
  and [WebRTC API](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API) add up
-to a rich tool set for recording, transferring,  and playing video streams.
-While solving these high-level tasks, the existing APIs don't let web
-programmers work with individual components of a video stream, such as frames
+to a rich tool set for recording, transferring, and playing video streams.
+While solving certain high-level tasks, these APIs don't let web
+programmers work with individual components of a video stream such as frames
 and unmuxed chunks of encoded video or audio.
 To get low level access to these basic components, developers have been using
 web assembly to bring [video and audio
@@ -36,14 +36,14 @@ human and computer resources.
 
 [WebCodecs API](https://wicg.github.io/web-codecs/) eliminates this inefficiency
 by giving programmers a way to use media components that are already present in
-the browser:
+the browser. Specifically:
 
 +   Video and audio decoders
 +   Video and audio encoders
 +   Raw video frames
 +   Image decoders
 
-WebCodecs API is useful for web applications that require full control over the
+The WebCodecs API is useful for web applications that require full control over the
 way media content is processed, such as video editors, video conferencing, video
 streaming etc.
 
@@ -63,26 +63,24 @@ streaming etc.
 
 ## Video processing workflow
 
-Frames are the centerpiece in video processing, thus in WebCodecs most classes
+Frames are the centerpiece in video processing. Thus in WebCodecs most classes
 either consume or produce frames. Video encoders convert frames into encoded
 chunks. Video decoders do the opposite. Track readers turn video tracks into a
 sequence of frames. By design all these transformations happen asynchronously.
 WebCodecs API tries to keep the web responsive by keeping the heavy lifting of
 video processing off the main thread.
+
 Currently in WebCodecs the only way to show a frame on the page is to convert it
 into an
 [`ImageBitmap`](https://developer.mozilla.org/en-US/docs/Web/API/ImageBitmap)
-and either draw the bitmap on a canvas or convert it into a `WebGL` texture.
-
-
-
-![image](insert_image_url_here)
+and either draw the bitmap on a canvas or convert it into a
+[`WebGLTexture`](https://developer.mozilla.org/en-US/docs/Web/API/WebGLTexture).
 
 ## WebCodecs in action
 
 ### Encoding
 
-It all starts with a `VideoFrame`.  There are two ways to convert existing
+It all starts with a `VideoFrame`. There are two ways to convert existing
 pictures into `VideoFrame` objects.
 
 The first is to create a frame directly from an
@@ -97,6 +95,11 @@ let cnv = document.createElement("canvas");
 let bitmap = await createImageBitmap(cnv);
 let frame_from_bitmap = new VideoFrame(bitmap, { timestamp: 0 });
 ```
+
+<figure class="w-figure">
+  <img src="./consuming-frames-from-bitmaps.png" alt="The path from ImageBitmap to the network or to storage.">
+  <figcaption class="w-figcaption">The path from <code>ImageBitmap</code> to the network or to storage.</figcaption>
+</figure>
 
 The second is to use `VideoTrackReader` to set a function that will be called
 each time a new frame appears in a
@@ -113,10 +116,15 @@ vtr.start((frame) => {
 });
 ```
 
+<figure class="w-figure">
+  <img src="./consuming-frames-from-tracks.png" alt="The path from ImageBitmap to the network or to storage.">
+  <figcaption class="w-figcaption">The path from <code>MediaStreamTrack</code> to the network or to storage.</figcaption>
+</figure>
+
 No matter where they are coming from, frames can be encoded into
 `EncodedVideoChunk` objects with a `VideoEncoder`.
 
-Before encoding `VideoEncoder` needs to be given two javascript objects:
+Before encoding, `VideoEncoder` needs to be given two javascript objects:
 
 +   Init dictionary with two functions for handling encoded chunks and
     errors. These functions are developer-defined and can't be changed after
@@ -253,6 +261,11 @@ for (let i = 0; i < responses.length; i++) {
 }
 await decoder.flush();
 ```
+
+<figure class="w-figure">
+  <img src="./producing-frames.png" alt="The path from the network or storage to an ImageBitmap.">
+  <figcaption class="w-figcaption">The path from the network or storage to an <code>ImageBitmap</code>.</figcaption>
+</figure>
 
 Now it's time to show how a freshly decoded frame can be shown on the page. It's
 better to make sure that the decoder output callback  (`handleFrame()`)
