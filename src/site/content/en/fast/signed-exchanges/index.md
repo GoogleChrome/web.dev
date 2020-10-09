@@ -108,12 +108,12 @@ the metadata necessary to interpret the bundle.
 
 The relationship between SXGs and Web Bundles is a common point of confusion.
 SXGs and Web Bundles are two distinct technologies that don't depend on each
-other—Web Bundles can be used with both signed and unsigned exchanges.The common
+other—Web Bundles can be used with both signed and unsigned exchanges. The common
 goal advanced by both SXGs and Web Bundles is the creation of a "web packaging"
 format that allows sites to be shared in their entirety for offline consumption.
 
 
-SXGs are the first part of the Web Packaging spec that browsers will implement.
+SXGs are the first part of the Web Packaging spec that Chromium-based browsers will implement.
 
 
 ## How to use SXGs
