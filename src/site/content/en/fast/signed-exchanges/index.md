@@ -117,9 +117,7 @@ format that allows sites to be shared in their entirety for offline consumption.
 
 SXGs are the first part of the Web Packaging spec that Chromium-based browsers will implement.
 
-## How to use SXGs
-
-### Loading SXGs
+## Loading SXGs
 
 Initially, the primary use case of SXGs will likely be as a delivery mechanism
 for a page's main document. For this use case, a SXG could be referenced using
@@ -144,9 +142,9 @@ substitution](https://github.com/WICG/webpackage/blob/master/explainers/signed-e
 
 Like other resources, a SXG can be loaded by entering its URL in the browser's address bar.
 
-### Serving SXGs
+## Serving SXGs
 
-#### Content negotiation
+### Content negotiation
 
 [Content
 negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation)
@@ -186,7 +184,7 @@ using a decimal scale from `0` to `1`, with `1` representing the highest
 priority. When a `q-value` is not supplied for a format, `1` is the implied
 value.
 
-#### Best practices
+### Best practices
 
 Servers should serve SXGs when the `Accept` header indicates that the `q-value`
 for `application/signed-exchange` is greater than or equal to the `q-value` for
@@ -206,7 +204,7 @@ practice](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation/
 browsers don't explicitly list a format's `q-value` when it has the default
 value of `1`. 
 
-### Debugging SXGs with Chrome DevTools {: #debugging }
+## Debugging SXGs with Chrome DevTools {: #debugging }
 
 Signed Exchanges can be identified by looking for `signed-exchange` in the
 **Type** column of the **Network** panel in Chrome DevTools.
