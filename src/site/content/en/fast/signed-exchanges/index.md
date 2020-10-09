@@ -21,13 +21,15 @@ This article provides an overview of SXGs.
 ## Overview
 
 Signed Exchanges (SXGs) allow a site to cryptographically sign a
-request/response pair (an “HTTP exchange”) in a way that makes it possible for
+request/response pair (an "HTTP exchange") in a way that makes it possible for
 the browser to verify the origin and integrity of the content independently of
 how the content was distributed. As a result, the browser can display the URL of
 the origin site in the address bar, rather than the URL of the server that
 delivered the content. Separating content attribution from content distribution
 advances a variety of use cases such as privacy-preserving prefetching, offline
 internet experiences, and serving content from third-party caches.
+
+### Browser compatibility
 
 SXGs are [supported](https://caniuse.com/#feat=sxg) by Chromium-based browsers
 (starting with versions: Chrome 73, Edge 79, and Opera 64).
@@ -97,7 +99,7 @@ spec](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-respons
 SXGs are a part of the broader [Web
 Packaging](https://github.com/WICG/webpackage) spec proposal family. In addition
 to SXGs, the other major component of the Web Packaging spec is Web Bundles
-(“bundled HTTP exchanges”). Web Bundles are a collection of HTTP resources and
+("bundled HTTP exchanges"). Web Bundles are a collection of HTTP resources and
 the metadata necessary to interpret the bundle.
 
 The relationship between SXGs and Web Bundles is a common point of confusion.
@@ -121,11 +123,11 @@ the `<link>` or `<a>` tags, as well as the [`Link`
 header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Link).
 
 ```html
-<a href=”https://example.com/sxg”>
+<a href="https://example.com/sxg">
 ```
 
 ```html
-<link rel=”prefetch” as=”document” href=”https://example.com/sxg”>
+<link rel="prefetch" as="document" href="https://example.com/sxg">
 ```
 
 Although a SXG could theoretically be referenced using a `<script>` or `<img>`
@@ -256,7 +258,7 @@ commercial certificate authority.
 ### Web Packager
 
 [Web Packager](https://github.com/google/webpackager) is an open-source,
-Go-based tool that is the de facto tooling for generating (“packaging”) signed
+Go-based tool that is the de facto tooling for generating ("packaging") signed
 exchanges. You can use it to manually create SXGs, or as a server that
 automatically creates and serves SXGs. Web Packager is currently in
 [alpha](https://github.com/google/webpackager#limitations).
