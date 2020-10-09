@@ -384,7 +384,9 @@ few guiding principles:
 For a deep dive on how to improve CLS, see [Optimize
 CLS](https://web.dev/optimize-cls/).
 
-Also, consider this guide specific to [minimizing CLS when working with Google Publisher Tags (GPT)](https://developers.google.com/doubleclick-gpt/guides/minimize-layout-shift).
+### Google Publisher Tags
+
+See the official Google Publisher Tag guide on [Minimizing layout shift](https://developers.google.com/doubleclick-gpt/guides/minimize-layout-shift).
 
 ## Additional resources
 
