@@ -10,7 +10,7 @@ alt: A pile of envelopes.
 description: |
   This article provides an overview of Signed Exchanges (SXGs). An SXG is a delivery mechanism that makes it possible to authenticate the origin of a resource independently of how it was delivered. 
 tags:
-  - blog # blog is a required tag for the article to show up in the blog.
+  - blog
   - performance
 ---
 
@@ -115,9 +115,7 @@ format that allows sites to be shared in their entirety for offline consumption.
 
 SXGs are the first part of the Web Packaging spec that Chromium-based browsers will implement.
 
-
 ## How to use SXGs
-
 
 ### Loading SXGs
 
@@ -144,9 +142,7 @@ substitution](https://github.com/WICG/webpackage/blob/master/explainers/signed-e
 
 Like other resources, a SXG can be loaded by entering its URL in the browser's address bar.
 
-
 ### Serving SXGs
-
 
 #### Content Negotiation
 
@@ -188,7 +184,6 @@ using a decimal scale from `0` to `1`, with `1` representing the highest
 priority. When a `q-value` is not supplied for a format, `1` is the implied
 value.
 
-
 #### Best practices
 
 Servers should serve SXGs when the `Accept` header indicates that the `q-value`
@@ -208,7 +203,6 @@ has been omitted; this omission implies a `q-value` of `1` for SXG. Although an
 practice](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation/List_of_default_Accept_values)
 browsers don't explicitly list a format's `q-value` when it has the default
 value of `1`. 
-
 
 ### Debugging SXGs with Chrome DevTools {: #debugging }
 
@@ -238,7 +232,6 @@ At a high level, implementing SXGs consists of generating the SXG corresponding
 to a given URL and then serving that SXG to users. To generate a SXG you will
 need a certificate that can sign SXGs.
 
-
 ### Certificates
 
 Certificates associate an entity with a [public
@@ -259,7 +252,6 @@ authorities](https://en.wikipedia.org/wiki/Certificate_authority) that can issue
 this type of certificate. Certificates for SXGs are only available through a
 commercial certificate authority.
 
-
 ### Web Packager
 
 [Web Packager](https://github.com/google/webpackager) is an open-source,
@@ -267,7 +259,6 @@ Go-based tool that is the de facto tooling for generating ("packaging") signed
 exchanges. You can use it to manually create SXGs, or as a server that
 automatically creates and serves SXGs. Web Packager is currently in
 [alpha](https://github.com/google/webpackager#limitations).
-
 
 ### Web Packager CLI
 
@@ -280,8 +271,8 @@ webpackager \
     --url=https://example.com
 ```
 
-Once the SXG file has been generated, upload it to your server and serve it with the `application/signed-exchange;v=b3` MIME type.
-
+Once the SXG file has been generated, upload it to your server and serve it with
+the `application/signed-exchange;v=b3` MIME type.
 
 ### Web Packager Server
 
@@ -308,9 +299,7 @@ frontend web server should forward SXG requests to `webpkgserver`. These
 contain more information on running `webpkgserver` behind a frontend edge
 server.
 
-
 ### Other tooling
-
 
 - NGINX SXG Module
 
@@ -321,7 +310,6 @@ server.
   The NGINX SXG module only works with `CanSignHttpExchanges` certificates.
   Setup instructions can be found
   [here](https://web.dev/how-to-set-up-signed-http-exchanges/). 
-
 
 - `gen-signedexchange`
 
