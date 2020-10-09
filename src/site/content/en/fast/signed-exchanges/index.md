@@ -112,7 +112,6 @@ other—Web Bundles can be used with both signed and unsigned exchanges. The com
 goal advanced by both SXGs and Web Bundles is the creation of a "web packaging"
 format that allows sites to be shared in their entirety for offline consumption.
 
-
 SXGs are the first part of the Web Packaging spec that Chromium-based browsers will implement.
 
 ## How to use SXGs
@@ -144,7 +143,7 @@ Like other resources, a SXG can be loaded by entering its URL in the browser's a
 
 ### Serving SXGs
 
-#### Content Negotiation
+#### Content negotiation
 
 [Content
 negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation)
@@ -320,7 +319,7 @@ server.
   useful for trying out SXGs, but impractical for larger-scale and production
   use.
 
-## Further Reading
+## Further reading
 
 *   [Spec draft](https://wicg.github.io/webpackage/draft-yasskin-http-origin-signed-responses.html)
 *   [Explainer](https://github.com/WICG/webpackage/blob/master/explainer.md)
