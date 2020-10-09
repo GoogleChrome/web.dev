@@ -5,6 +5,7 @@ description: |
   Work with components of a video stream, such as frames and unmuxed chunks of encoded video or audio.
 date: 2020-10-13
 updated: 2020-10-13
+hero: hero.jpg
 authors:
  - djuffin
 origin_trial:
@@ -371,3 +372,7 @@ also be enabled using a flag.
 ### Register for the origin trial {: #ot }
 
 {% include 'content/origin-trial-register.njk' %}
+
+[Hero image](https://unsplash.com/photos/8eQOBtgn9Qo) by
+[Denise Jans](https://unsplash.com/@dmjdenise)
+on [Unsplash](https://unsplash.com).
