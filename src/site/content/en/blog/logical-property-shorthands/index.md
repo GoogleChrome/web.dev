@@ -378,7 +378,8 @@ You don't have to do much to make a card internationally responsive with a
 `<figure>` and a few logical properties. If you're curious how all this internationally 
 considerate CSS works together, I hope this is a small meaningful introduction.
 
-### Polyfilling and cross-browser support
+### Polyfilling and cross-browser support {: #browser-compatibility }
+
 The Cascade or build tools are viable options to have old and new browsers alike, 
 properly spaced with updated logical properties. By following a physical property 
 with a logical one, the browser will use the "last" property it found during style 
