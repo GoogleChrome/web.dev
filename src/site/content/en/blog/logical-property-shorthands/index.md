@@ -295,7 +295,7 @@ Further reading and a [full list of inset shorthand and longhand](https://develo
 is available on MDN.
 
 ### Border shorthands
-Border, plus its nested `color`, `style` and `width` properties have all got 
+Border, plus its nested `color`, `style`, and `width` properties have all got 
 new logical shorthands as well.
 
 {% Glitch 'border-logical-shorthand' %}
