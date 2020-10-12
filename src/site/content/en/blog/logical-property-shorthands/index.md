@@ -13,6 +13,7 @@ alt: An inline flow arrow (right) and a block flow arrow (down)
 tags:
   - blog
   - css
+  - layout
 ---
 
 Since Chromium 69 (September 3rd 2018), logical properties and values have helped 
@@ -32,14 +33,14 @@ offsets have shipped to make these logical properties and values a bit easier to
 If you're already familiar with logical properties, inline and block axes, and don't 
 want a refresher, you can [skip ahead](#new-shorthands). Otherwise, here's a short refresher.
 
-In English, letters & words flow left to right while paragraphs are stacked top to bottom. 
+In English, letters and words flow left to right while paragraphs are stacked top to bottom. 
 In traditional Chinese, letters and words are top to bottom while paragraphs are stacked 
 right to left. In just these 2 cases, if we write CSS that puts "margin top" on a paragraph, 
 we're only appropriately spacing 1 language style. If the page is translated into traditional 
 Chinese from English, the margin may well not make sense in the new vertical writing mode.
 
 Therefore the physical side of the box isn't very useful internationally. Thus begins the 
-process of supporting multiple languages; learning about physical vs logical sides of the box model. 
+process of supporting multiple languages; learning about physical versus logical sides of the box model. 
 
 {% Aside 'key-term' %}
 A _logical property_ is one that references a side, corner or axis of the box model in context 
@@ -83,7 +84,7 @@ while `block-end` is the side new paragraphs flow towards.
 
 {% Aside 'key-term' %}
 The _block direction_ is defined by the `writing-mode` property. For example, `horizontal-tb` 
-(the initial value) has a vertical block axis that flows top-to-bottom (tb). Other values 
+(the initial value) has a vertical block axis that flows top-to-bottom (`tb`). Other values 
 have an horizontal block axis, which can flow left-to-right (like in `vertical-lr`) or 
 right-to-left (like in `vertical-rl`).
 {% endAside %}
@@ -95,7 +96,7 @@ Inline direction is the direction that letters and words go. Consider the direct
 your arm and hand travel when you write; they are traveling along the `inline-axis`. 
 `inline-start` is the side where you start writing, while `inline-end` is the side 
 where writing ends or wraps. The above video, the `inline-axis` is top to bottom, 
-but this next video the `inline-axis` flows right to left.
+but in this next video the `inline-axis` flows right to left.
 
 {% Aside 'key-term' %}
 The _inline direction_ is defined by both `writing-mode` and `direction`. For example, 
