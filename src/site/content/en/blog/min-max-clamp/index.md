@@ -121,8 +121,8 @@ satisfactory length of line for a single-column page set in a serifed text face
 in a text size."
 
 To ensure that your text blocks are not narrower than 45 characters or wider
-than 75 characters, use `clamp()` and the `ch` ( 0-width character advance)
-[unit](https://developer.mozilla.org/en-US/docs/Web/CSS/length):
+than 75 characters, use `clamp()` and the `ch` (0-width [character advance](https://developer.mozilla.org/en-US/docs/Web/CSS/length))
+unit:
 
 ```css
 p {
