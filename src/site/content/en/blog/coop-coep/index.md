@@ -23,13 +23,15 @@ origin_trial:
 feedback:
   - api
 ---
-{% Aside %}
-- 15th Oct. 2020: `self.crossOriginIsolated` and Shared Array Buffer on Android
-  Chrome are now available in Chrome 87. `document.domain` is now immutable when
-  `self.crossOriginIsolated` return `true`. `performance.measureMemory` in on
-  origin trial.
-- 1st Sep. 2020: COOP Reporting is now available behind a flag in Chrome 86.
-  Added instructions.
+{% Aside 'gotchas' %}
+**[15th Oct. 2020]**: `self.crossOriginIsolated` and Shared Array Buffer on Android
+Chrome are now available in Chrome 87. `document.domain` is now immutable when
+`self.crossOriginIsolated` returns `true`. `performance.measureMemory` in on
+origin trial from Chrome 87.
+
+**[1st Sep. 2020]**: COOP Reporting is now available behind a flag in Chrome 86.
+Added instructions.
+
 {% endAside %}
 
 Some web APIs increase the risk of side-channel attacks like Spectre. To
@@ -45,9 +47,9 @@ able to use privileged features including:
   available yet in Chrome)
 
 The cross-origin isolated state also prevents modifications of
-`document.domain`. (This is  from Chrome 87. Being able to alter
-`document.domain` allows communication between same-site documents and has been
-considered a loophole in the same-origin policy.)
+`document.domain`. (Being able to alter `document.domain` allows communication
+between same-site documents and has been considered a loophole in the
+same-origin policy.)
 
 To opt in to a cross-origin isolated state, you need to send the following
 HTTP headers on the main document:
