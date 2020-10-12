@@ -14,7 +14,7 @@ authors:
   - agektmr
 hero: hero.jpg
 date: 2020-04-13
-updated: 2020-09-01
+updated: 2020-10-15
 tags:
   - blog
   - security
@@ -23,26 +23,31 @@ origin_trial:
 feedback:
   - api
 ---
+{% Aside %}
+- 15th Oct. 2020: `self.crossOriginIsolated` and Shared Array Buffer on Android
+  Chrome are now available in Chrome 87. `document.domain` is now immutable when
+  `self.crossOriginIsolated` return `true`. `performance.measureMemory` in on
+  origin trial.
+- 1st Sep. 2020: COOP Reporting is now available behind a flag in Chrome 86.
+  Added instructions.
+{% endAside %}
+
 Some web APIs increase the risk of side-channel attacks like Spectre. To
 mitigate that risk, browsers offer an opt-in-based isolated environment called
 cross-origin isolated. With a cross-origin isolated state, the webpage will be
 able to use privileged features including:
 
 * [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
-  (required for WebAssembly Threads)
-* [`performance.measureMemory()`](/monitor-total-page-memory-usage/)
-* [JS Self-Profiling API](https://wicg.github.io/js-self-profiling/)
+  (required for WebAssembly Threads) (Available from Chrome 87)
+* [`performance.measureMemory()`](/monitor-total-page-memory-usage/) (Available
+  behind a flag from Chrome 87)
+* [JS Self-Profiling API](https://wicg.github.io/js-self-profiling/) (Not
+  available yet in Chrome)
 
 The cross-origin isolated state also prevents modifications of
-`document.domain`. (Being able to alter `document.domain` allows communication
-between same-site documents and has been considered a loophole in the
-same-origin policy.)
-
-{% Aside 'caution' %}
-These powerful features and the prevention of `document.domain` modification
-are not yet enabled in Chrome as of version 83. We'll update this post as they
-become available.
-{% endAside %}
+`document.domain`. (This is  from Chrome 87. Being able to alter
+`document.domain` allows communication between same-site documents and has been
+considered a loophole in the same-origin policy.)
 
 To opt in to a cross-origin isolated state, you need to send the following
 HTTP headers on the main document:
@@ -174,8 +179,7 @@ powerful features like `performance.measureMemory()`.
 {% Aside 'caution' %}
 The
 [`self.crossOriginIsolated`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated)
-property is still under development and not available yet in Chrome as of
-version 83.
+property is available in Chrome from version 87.
 {% endAside %}
 
 ### Debug issues using Chrome DevTools
