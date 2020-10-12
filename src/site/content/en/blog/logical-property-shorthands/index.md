@@ -89,8 +89,9 @@ have an horizontal block axis, which can flow left-to-right (like in `vertical-l
 right-to-left (like in `vertical-rl`).
 {% endAside %}
 
+In traditional Japanese handwriting, for example, block direction flows right to left:
+
 {% YouTube '5IbOpE9eVnM' %}
-{% Banner 'neutral' %}[Traditional Japanese Handwriting](https://www.youtube.com/watch?v=5IbOpE9eVnM); block direction flows right to left{% endBanner %}
 
 Inline direction is the direction that letters and words go. Consider the direction 
 your arm and hand travel when you write; they are traveling along the `inline-axis`. 
@@ -105,7 +106,6 @@ and `rtl`, top-to-bottom with `vertical-lr` and `ltr`, and bottom-to-top with `v
 {% endAside %}
 
 {% YouTube 'nTzyRdoXlbs' %}
-{% Banner 'neutral' %}[Hebrew Handwriting](https://www.youtube.com/watch?v=nTzyRdoXlbs); inline direction flows right to left{% endBanner %}
 
 Being [`flow-relative`](https://www.w3.org/TR/css-writing-modes-4/#logical-directions) 
 means that the styles written for one language will be contextual and appropriately 
