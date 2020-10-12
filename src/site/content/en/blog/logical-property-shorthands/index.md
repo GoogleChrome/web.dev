@@ -447,8 +447,22 @@ margin: logical 2px;
 
 The current draft proposal would mean you have to write `logical` in every 
 shorthand in order to get the logical equivalent applied, which doesn't sound 
-very D.R.Y. to some. There are other proposals to change it at the block or page level, 
-but that could leak logical uses into styles still assuming physical sides. 
+very [D.R.Y.](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) to some. 
+
+There are other proposals to change it at the block or page level, 
+but that could leak logical uses into styles still assuming physical sides.
+
+```css
+html {
+  flow-mode: physical; 
+  /* or */
+  flow-mode: logical;
+  /* now all margin/padding/etc references are logical */
+}
+
+/* hopefully no 3rd/1st party code is hard coded to top/left/etc ..? */
+```
+ 
 It's a tough one! Cast your vote, voice your opinion, we want to hear from you.
 
 Want to learn or study logical properties more? Here's a detailed reference, 
