@@ -126,7 +126,9 @@ No new abilities shipped, but some super handy shorthands did: <br>
 
 {% Glitch 'margin-logical-shorthand' %}
 
-<br>
+{% Aside 'caution' %}
+If the above items do not have space between them, then `margin-block` shorthand is not supported in your browser.
+{% endAside %}
 
 <div class="w-columns">
 {% Compare 'better', 'Longhand' %}
