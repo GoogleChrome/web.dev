@@ -380,9 +380,11 @@ considerate CSS works together, I hope this is a small meaningful introduction.
 
 ### Polyfilling and cross-browser support
 The Cascade or build tools are viable options to have old and new browsers alike, 
-properly spaced with updated logical properties. By following a physical property 
-with a logical one, the browser will use the "last" property it found during style 
-resolution. Here's a polyfill by hand:
+properly spaced with updated logical properties. For Cascade fallbacks, follow a physical property 
+with a logical one and the browser will use the "last" property it found during style 
+resolution. 
+
+Here's a handwritten fallback:
 
 ```css
 p {
