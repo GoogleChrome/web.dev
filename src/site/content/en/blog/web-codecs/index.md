@@ -357,7 +357,7 @@ To experiment with the WebCodecs API locally on all desktop platforms, without a
 origin trial token, start Chrome with a command line flag:
 
 ```bash
---enable-blink-features=WebCodecs.
+--enable-blink-features=WebCodecs
 ```
 
 ### Enabling support during the origin trial phase
