@@ -1,11 +1,11 @@
 ---
-title: 'min(), max(), and clamp(): Three Logical CSS Functions to Use Today'
+title: 'min(), max(), and clamp(): three logical CSS functions to use today'
 subhead: Learn how to control element sizing, maintain proper spacing, and implement fluid typography using these well-supported CSS functions.
 authors:
   - una
 date: 2020-10-14
 hero: hero.jpg
-alt: Set of tools on a desk. Via @yer_a_wizard on Unsplash.
+alt: Set of tools on a desk.
 description: Min, max, and clamp provide some powerful CSS capabilities that enable more responsive styling with fewer liens of code. This post goes over how to control element sizing, maintain proper spacing, and implement fluid typography using these well-supported CSS math functions.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
@@ -15,9 +15,16 @@ feedback:
   - api
 ---
 
-With responsive design evolving and becoming increasingly nuanced, CSS itself is constantly evolving and providing authors increased control. The [`min()`](https://developer.mozilla.org/en-US/docs/Web/CSS/min), [`max()`](https://developer.mozilla.org/en-US/docs/Web/CSS/max), and [`clamp()`](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp) functions, now supported in all modern browsers, are among the latest tools in making authoring websites and apps more dynamic and responsive. 
+With responsive design evolving and becoming increasingly nuanced, CSS itself is
+constantly evolving and providing authors increased control. The
+[`min()`](https://developer.mozilla.org/en-US/docs/Web/CSS/min),
+[`max()`](https://developer.mozilla.org/en-US/docs/Web/CSS/max), and
+[`clamp()`](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp) functions,
+now supported in all modern browsers, are among the latest tools in making
+authoring websites and apps more dynamic and responsive. 
 
-When it comes to flexible and fluid typography, controlled element resizing, and maintaining proper spacing, `min()`, `max()`, and `clamp()` can help.
+When it comes to flexible and fluid typography, controlled element resizing, and
+maintaining proper spacing, `min()`, `max()`, and `clamp()` can help.
 
 ## Background
 
@@ -26,7 +33,11 @@ When it comes to flexible and fluid typography, controlled element resizing, and
   <cite><a href="https://www.w3.org/TR/css-values-4/#calc-notation">CSS Values And Units Level 4</a></cite>
 </blockquote>
 
-Safari was the first to [ship](https://bugs.webkit.org/show_bug.cgi?id=167000) the complete set of functions in April 2019, with Chromium following later that year in version 79. This year, with Firefox [75](https://bugzilla.mozilla.org/show_bug.cgi?id=1519519) shipping, we now have browser parity for `min()`, `max()`, and `clamp()` in all evergreen browsers.
+Safari was the first to [ship](https://bugs.webkit.org/show_bug.cgi?id=167000)
+the complete set of functions in April 2019, with Chromium following later that
+year in version 79. This year, with Firefox
+[75](https://bugzilla.mozilla.org/show_bug.cgi?id=1519519) shipping, we now have
+browser parity for `min()`, `max()`, and `clamp()` in all evergreen browsers.
 
 <figure class="w-figure">
   <img class="w-screenshot" src="./caniuse.png" alt="" />
@@ -46,7 +57,12 @@ Safari was the first to [ship](https://bugs.webkit.org/show_bug.cgi?id=167000) t
   </figcaption>
 </figure>
 
-You can use `min()`, `max()`, and `clamp()` on the right hand side of any CSS expression where it would make sense. For `min()` and `max()`, you provide an argument list of values, and the browser determines which one is either the smallest or largest, respectively. For example, in the case of: `min(1rem, 50%, 10vw)`, the browser calculates which of these relative units is the smallest, and uses that value as the actual value.
+You can use `min()`, `max()`, and `clamp()` on the right hand side of any CSS
+expression where it would make sense. For `min()` and `max()`, you provide an
+argument list of values, and the browser determines which one is either the
+smallest or largest, respectively. For example, in the case of: `min(1rem, 50%,
+10vw)`, the browser calculates which of these relative units is the smallest,
+and uses that value as the actual value.
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
@@ -58,7 +74,8 @@ You can use `min()`, `max()`, and `clamp()` on the right hand side of any CSS ex
 </figure>
 
 
-The `max()` function selects the largest value from a list of comma-separated expressions.
+The `max()` function selects the largest value from a list of comma-separated
+expressions.
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
@@ -70,27 +87,42 @@ The `max()` function selects the largest value from a list of comma-separated ex
 </figure>
 
 
-To use `clamp()` enter three values: a minimum value, ideal value (from which to calculate), and maximum value.
+To use `clamp()` enter three values: a minimum value, ideal value (from which to
+calculate), and maximum value.
 
-Any of these functions can be used anywhere a `<length>`, `<frequency>`, `<angle>`, `<time>`, `<percentage>`, `<number>`, or `<integer>` is allowed. You can use these on their own (i.e. `font-size: max(0.5vw, 50%, 2rem)`), in conjunction with `calc()` (i.e. `font-size: max(calc(0.5vw - 1em), 2rem)`),  or composed (i.e. `font-size: max(min(0.5vw, 1em), 2rem)`). 
+Any of these functions can be used anywhere a `<length>`, `<frequency>`,
+`<angle>`, `<time>`, `<percentage>`, `<number>`, or `<integer>` is allowed. You
+can use these on their own (i.e. `font-size: max(0.5vw, 50%, 2rem)`), in
+conjunction with `calc()` (i.e. `font-size: max(calc(0.5vw - 1em), 2rem)`),  or
+composed (i.e. `font-size: max(min(0.5vw, 1em), 2rem)`). 
 
-{% Aside %}
-When using a calculation inside of a `min()`, `max()`, or `clamp()` function, you can nix the `calc()`. For example, writing `font-size: max(calc(0.5vw - 1em), 2rem)` would be the same as `font-size: max(0.5vw - 1em, 2rem)`.
-{% endAside %}
+{% Aside %} When using a calculation inside of a `min()`, `max()`, or `clamp()`
+function, you can nix the `calc()`. For example, writing `font-size:
+max(calc(0.5vw - 1em), 2rem)` would be the same as `font-size: max(0.5vw - 1em,
+2rem)`. {% endAside %}
 
 To recap:
 
-- `min(<value-list>)`: selects the smallest (most negative) value from a list of comma-separated expressions
-- `max(<value-list>)`: selects the largest (most positive) value from a list of comma-separated expressions
-- `clamp(<min>, <ideal>, <max>)`: clamps a value between an upper and lower bound, based on a set ideal value
+- `min(<value-list>)`: selects the smallest (most negative) value from a list of
+  comma-separated expressions
+- `max(<value-list>)`: selects the largest (most positive) value from a list of
+  comma-separated expressions
+- `clamp(<min>, <ideal>, <max>)`: clamps a value between an upper and lower
+  bound, based on a set ideal value
 
 Let's take a look at some examples.
 
 ## The perfect width
 
-According to [The Elements of Typographic Style](http://webtypography.net/2.1.2#:~:text=%E2%80%9CAnything%20from%2045%20to%2075,is%2040%20to%2050%20characters.%E2%80%9D) by Robert Bringhurst, “anything from 45 to 75 characters is widely regarded as a satisfactory length of line for a single-column page set in a serifed text face in a text size.” 
+According to [The Elements of Typographic
+Style](http://webtypography.net/2.1.2#:~:text=%E2%80%9CAnything%20from%2045%20to%2075,is%2040%20to%2050%20characters.%E2%80%9D)
+by Robert Bringhurst, "anything from 45 to 75 characters is widely regarded as a
+satisfactory length of line for a single-column page set in a serifed text face
+in a text size."
 
-To ensure that your text blocks are not narrower than 45 characters or wider than 75 characters, use `clamp()` and the `ch` unit:
+To ensure that your text blocks are not narrower than 45 characters or wider
+than 75 characters, use `clamp()` and the `ch` ( 0-width character advance)
+[unit](https://developer.mozilla.org/en-US/docs/Web/CSS/length):
 
 ```css
 p {
@@ -98,7 +130,10 @@ p {
 }
 ```
 
-This allows for the browser to determine the width of the paragraph. It will set the width to 50%, unless 50% is smaller than `45ch`, at which point `45ch` will be selected, and visa versa for if 50% is wider than `75ch`. In this demo, the card itself is getting clamped:
+This allows for the browser to determine the width of the paragraph. It will set
+the width to 50%, unless 50% is smaller than `45ch`, at which point `45ch` will
+be selected, and visa versa for if 50% is wider than `75ch`. In this demo, the
+card itself is getting clamped:
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
@@ -109,7 +144,10 @@ This allows for the browser to determine the width of the paragraph. It will set
   </figcaption>
 </figure>
 
-You could break this up with just the `min()` or `max()` function. If you want the element to always be at `50%` width, and not exceed `75ch` in width (i.e. on larger screens), write: `width: min(75ch, 50%);`.  This essentially sets a “max” size by using the `min()` function.
+You could break this up with just the `min()` or `max()` function. If you want
+the element to always be at `50%` width, and not exceed `75ch` in width (i.e. on
+larger screens), write: `width: min(75ch, 50%);`.  This essentially sets a “max”
+size by using the `min()` function.
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
@@ -120,7 +158,10 @@ You could break this up with just the `min()` or `max()` function. If you want t
   </figcaption>
 </figure>
 
-By the same token, you can ensure a minimum size for legible text using the `max()` function. This would look like: `width: max(45ch, 50%);`. Here, the browser selects whichever is larger, `45ch` or `50%`, meaning the element must be at *least* `45ch` or larger.
+By the same token, you can ensure a minimum size for legible text using the
+`max()` function. This would look like: `width: max(45ch, 50%);`. Here, the
+browser selects whichever is larger, `45ch` or `50%`, meaning the element must
+be at *least* `45ch` or larger.
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
@@ -133,8 +174,16 @@ By the same token, you can ensure a minimum size for legible text using the `max
 
 ## Padding management
 
-Using the same concept as above, where the `min()` function can set a “max” value and `max()` sets a “min” value, you can use `max()` to set a minimum padding size. This example comes from [CSS Tricks](https://css-tricks.com/using-max-for-an-inner-element-max-width/), where reader Caluã de Lacerda Pataca shared this idea:
-The idea is to enable an element to have additional padding at larger screen sizes, but maintain a minimum padding at smaller screen sizes, particularly on the inline padding. To achieve this, use `calc()` and subtract the minimum padding from either side: `calc((100vw - var(--contentWidth)) / 2)`, *or* use max: `max(2rem, 50vw - var(--contentWidth) / 2)`. All together it looks like:
+Using the same concept as above, where the `min()` function can set a “max”
+value and `max()` sets a “min” value, you can use `max()` to set a minimum
+padding size. This example comes from [CSS
+Tricks](https://css-tricks.com/using-max-for-an-inner-element-max-width/), where
+reader Caluã de Lacerda Pataca shared this idea: The idea is to enable an
+element to have additional padding at larger screen sizes, but maintain a
+minimum padding at smaller screen sizes, particularly on the inline padding. To
+achieve this, use `calc()` and subtract the minimum padding from either side:
+`calc((100vw - var(--contentWidth)) / 2)`, *or* use max: `max(2rem, 50vw -
+var(--contentWidth) / 2)`. All together it looks like:
 
 ```css
 footer {
@@ -153,7 +202,11 @@ footer {
 
 ## Fluid typography
 
-In order to enable [fluid typography](https://www.smashingmagazine.com/2016/05/fluid-typography/), [Mike Riethmeuller](https://twitter.com/mikeriethmuller) popularized a technique that uses the `calc()` function to set a minimum font size, maximum font size, and allow for scaling from the min to the max.
+In order to enable [fluid
+typography](https://www.smashingmagazine.com/2016/05/fluid-typography/), [Mike
+Riethmeuller](https://twitter.com/mikeriethmuller) popularized a technique that
+uses the `calc()` function to set a minimum font size, maximum font size, and
+allow for scaling from the min to the max.
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
@@ -164,9 +217,14 @@ In order to enable [fluid typography](https://www.smashingmagazine.com/2016/05/f
   </figcaption>
 </figure>
 
-With `clamp()`, you can write this more clearly. Rather than requiring a complex string, the browser can do the work for you. Set the minimum acceptable font size (for example, `1.5rem` for a title, maximum size (i.e. `3rem`) and ideal size of `5vw`. 
+With `clamp()`, you can write this more clearly. Rather than requiring a complex
+string, the browser can do the work for you. Set the minimum acceptable font
+size (for example, `1.5rem` for a title, maximum size (i.e. `3rem`) and ideal
+size of `5vw`. 
 
-Now, we get typography that scales with the viewport width of the page until it reaches the limiting minimum and maximum values, in a much more succinct line of code: 
+Now, we get typography that scales with the viewport width of the page until it
+reaches the limiting minimum and maximum values, in a much more succinct line of
+code: 
 
 ```css
 p {
@@ -176,7 +234,13 @@ p {
 
 
 ## Conclusion
-The CSS math functions, `min()`, `max()`, and `clamp()` are very powerful, relatively well supported, and could be just what you're looking for to help you build responsive UIs. For more resources, check out:
+The CSS math functions, `min()`, `max()`, and `clamp()` are very powerful, well
+supported, and could be just what you're looking for to help you build
+responsive UIs. For more resources, check out:
 
-- [CSS Values and Units on MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)
+- [CSS Values and Units on
+  MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)
 - [CSS Values and Units Level 4 Spec](https://www.w3.org/TR/css-values-4/)
+
+Cover image from [@yer_a_wizard](https://unsplash.com/@yer_a_wizard) on
+Unsplash.
