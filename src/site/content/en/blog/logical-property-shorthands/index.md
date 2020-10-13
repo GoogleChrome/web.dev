@@ -474,3 +474,17 @@ It's a tough one! Cast your vote, voice your opinion, we want to hear from you.
 
 Want to learn or study logical properties more? Here's a detailed reference, 
 along with guides and examples, [on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties) 🤓
+
+## Feedback
+
+* To propose changes to the CSS syntax of flow-relative shorthands,
+  first [check the existing issues][specexisting] on the csswg-drafts repository.
+  If none of the existing issues match your proposal, [create a new issue][specnew].
+* To report bugs on Chromium's implementation of flow-relative shorthands,
+  first [check the existing issues][crbugexisting] on Chromium Bug Tracker.
+  If none of the existing issues match your bug, [create a new issue][crbugnew].
+
+[specexisting]: https://github.com/w3c/csswg-drafts/labels/css-logical-1
+[specnew]: https://github.com/w3c/csswg-drafts/issues/new?title=[css-logical-1]
+[crbugexisting]: https://bugs.chromium.org/p/chromium/issues/list?q=component%3ABlink%3ECSS%20logical&can=2
+[crbugnew]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3ECSS
