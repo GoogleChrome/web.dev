@@ -4,7 +4,7 @@ subhead: Origin trials are a way to test a new or experimental web platform feat
 authors: 
   - samdutton
 date: 2020-06-22
-updated: 2020-08-18
+updated: 2020-10-12
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: Pipette with purple liquid
@@ -66,11 +66,16 @@ Find out more: [What are third-party origin trials?](/third-party-origin-trials)
    To do so, you are again asked to submit feedback.
    
 {% Aside 'warning' %}
-Even if an API lands unchanged after a successful origin trial, there is a short period between the 
+Usually if an API lands unchanged after a successful origin trial, there is a short period between the 
 end of the origin trial and the date the implementation ships in the browser when the API will not 
 be available. This is by design. If Chrome were to avoid the mandatory total-breakage period, that would 
 bias toward also avoiding breakages in the API surface, which are often needed to improve the API.
 The final shipping API might be worse for it.
+
+In rare circumstances, if there was clear evidence that developers engaged with the origin trial and that their
+concerns were taken into account in the final API design and implementation,
+this breakage period may be skipped
+<a href="https://sites.google.com/a/chromium.org/dev/blink/launching-features#sites-canvas-main-content:~:text=If%20you%20wish%20to%20skip%20the,Ship%20imply%20approval%20of%20the%20request.">upon request</a>.
 {% endAside %}
 
 ## Find out more
