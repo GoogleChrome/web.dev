@@ -485,6 +485,6 @@ along with guides and examples, [on MDN](https://developer.mozilla.org/en-US/doc
   If none of the existing issues match your bug, [create a new issue][crbugnew].
 
 [specexisting]: https://github.com/w3c/csswg-drafts/labels/css-logical-1
-[specnew]: https://github.com/w3c/csswg-drafts/issues/new?title=[css-logical-1]
+[specnew]: https://github.com/w3c/csswg-drafts/issues/new?title=%5Bcss-logical-1%5D
 [crbugexisting]: https://bugs.chromium.org/p/chromium/issues/list?q=component%3ABlink%3ECSS%20logical&can=2
 [crbugnew]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3ECSS
