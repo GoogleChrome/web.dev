@@ -3,7 +3,7 @@ title: 'min(), max(), and clamp(): three logical CSS functions to use today'
 subhead: Learn how to control element sizing, maintain proper spacing, and implement fluid typography using these well-supported CSS functions.
 authors:
   - una
-date: 2020-10-14
+date: 2020-10-13
 hero: hero.jpg
 alt: Set of tools on a desk.
 description: Min, max, and clamp provide some powerful CSS capabilities that enable more responsive styling with fewer liens of code. This post goes over how to control element sizing, maintain proper spacing, and implement fluid typography using these well-supported CSS math functions.
