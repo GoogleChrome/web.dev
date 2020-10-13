@@ -1,11 +1,12 @@
 ---
 title: Video processing with WebCodecs
-subhead: Manipulating video stream components
+subhead: Manipulating video stream components.
 description: |
   Work with components of a video stream, such as frames and unmuxed chunks of encoded video or audio.
 date: 2020-10-13
 updated: 2020-10-13
 hero: hero.jpg
+alt: A roll of film.
 authors:
  - djuffin
 origin_trial:
@@ -28,11 +29,11 @@ to a rich tool set for recording, transferring, and playing video streams.
 While solving certain high-level tasks, these APIs don't let web
 programmers work with individual components of a video stream such as frames
 and unmuxed chunks of encoded video or audio.
-To get low level access to these basic components, developers have been using
-web assembly to bring [video and audio
+To get low-level access to these basic components, developers have been using
+WebAssembly to bring [video and audio
 codecs](https://en.wikipedia.org/wiki/Video_codec) into the browser. But given
 that modern browsers already ship with a variety of codecs (which are often
-accelerated by hardware), repackaging them as web assembly seems like a waste of
+accelerated by hardware), repackaging them as WebAssembly seems like a waste of
 human and computer resources.
 
 [WebCodecs API](https://wicg.github.io/web-codecs/) eliminates this inefficiency
@@ -46,7 +47,7 @@ the browser. Specifically:
 
 The WebCodecs API is useful for web applications that require full control over the
 way media content is processed, such as video editors, video conferencing, video
-streaming etc.
+streaming, etc.
 
 ## Current status {: #status }
 
@@ -85,14 +86,14 @@ It all starts with a `VideoFrame`. There are two ways to convert existing
 pictures into `VideoFrame` objects.
 
 The first is to create a frame directly from an
-[ImageBitmap](https://developer.mozilla.org/en-US/docs/Web/API/ImageBitmap).
+[`ImageBitmap`](https://developer.mozilla.org/en-US/docs/Web/API/ImageBitmap).
 Just call the `VideoFrame()` constructor and give it a bitmap and a presentation
 timestamp.
 
 ```js
-let cnv = document.createElement("canvas");
+let cnv = document.createElement('canvas');
 // draw something on the canvas
-...
+…
 let bitmap = await createImageBitmap(cnv);
 let frame_from_bitmap = new VideoFrame(bitmap, { timestamp: 0 });
 ```
@@ -110,7 +111,7 @@ screen.
 
 ```js
 let frames_from_stream = [];
-let stream = await navigator.mediaDevices.getUserMedia({ ... });
+let stream = await navigator.mediaDevices.getUserMedia({ … });
 let vtr = new VideoTrackReader(stream.getVideoTracks()[0]);
 vtr.start((frame) => {
   frames_from_stream.push(frame);
@@ -125,7 +126,7 @@ vtr.start((frame) => {
 No matter where they are coming from, frames can be encoded into
 `EncodedVideoChunk` objects with a `VideoEncoder`.
 
-Before encoding, `VideoEncoder` needs to be given two javascript objects:
+Before encoding, `VideoEncoder` needs to be given two JavaScript objects:
 
 +   Init dictionary with two functions for handling encoded chunks and
     errors. These functions are developer-defined and can't be changed after
@@ -142,7 +143,7 @@ const init = {
 };
 
 let config = {
-  codec: "vp8",
+  codec: 'vp8',
   width: 640,
   height: 480,
   bitrate: 8_000_000,     // 8 Mbps
@@ -160,7 +161,7 @@ the encoder, periodically inserting
 checking that the encoder is not overwhelmed with incoming frames.
 Both `configure()` and `encode()` return immediately without waiting for the
 actual work to complete. It allows several frames to queue for encoding at the
-same time. But it makes error reporting somewhat cumbersome, errors are reported
+same time. But it makes error reporting somewhat cumbersome. Errors are reported
 either by immediately throwing exceptions or by calling the `error()`
 callback. Some errors are easy to detect immediately, others become evident
 only during encoding. If encoding completes successfully the `output()`
@@ -197,12 +198,12 @@ container for storage.
 function handleChunk(chunk) {
   let data = new Uint8Array(chunk.data);  // actual bytes of encoded data
   let timestamp = chunk.timestamp;        // media time in microseconds
-  let is_key = chunk.type == "key";       // can also be "delta"
+  let is_key = chunk.type == 'key';       // can also be 'delta'
   pending_outputs--;
-  fetch('/upload_chunk?timestamp=' + timestamp + "&type=" + chunk.type,
+  fetch(`/upload_chunk?timestamp=${timestamp}&type=${chunk.type}`,
   {
     method: 'POST',
-    headers: {   'Content-Type': 'application/octet-stream'   },
+    headers: { 'Content-Type': 'application/octet-stream' },
     body: data
   });
 }
@@ -219,7 +220,7 @@ await encoder.flush();
 
 Setting up a `VideoDecoder` is similar to what's been done for the
 `VideoEncoder`: two functions are passed when the decoder is created, and codec
-parameters are given to `configure()`. Set of codec parameters can vary from
+parameters are given to `configure()`. The set of codec parameters can vary from
 codec to codec, for example for H264 you currently need to specify a
 [binary blob](https://wicg.github.io/web-codecs/#dom-audiodecoderconfig-description)
 with AVCC extradata.
@@ -233,7 +234,7 @@ const init = {
 };
 
 const config = {
-  codec: "vp8",
+  codec: 'vp8',
   codedWidth: 640,
   codedHeight: 480
 };
@@ -246,8 +247,8 @@ Once the decoder is initialized, you can start feeding it with
 `EncodedVideoChunk` objects. Creating a chunk just takes a
 [`BufferSource`](https://developer.mozilla.org/en-US/docs/Web/API/BufferSource)of
 data and a frame timestamp in microseconds. Any chunks emitted by the encoder
-are ready for the decoder as is, although it's hard to imagine a real world use
-case for decoding newly encoded chunks (except for the demo below). All things
+are ready for the decoder as is, although it's hard to imagine a real-world use
+case for decoding newly encoded chunks (except for the demo below). All of the things
 said above about the asynchronous nature of encoder's methods are equally true
 for decoders.
 
@@ -284,8 +285,8 @@ before the garbage collector gets to it, this will reduce the average amount of
 memory used by the web application.
 
 ```js
-let cnv = document.getElementById("canvas_to_render");
-let ctx = cnv.getContext("2d", { alpha: false });
+let cnv = document.getElementById('canvas_to_render');
+let ctx = cnv.getContext('2d', { alpha: false });
 let ready_frames = [];
 let underflow = true;
 let time_base = 0;
@@ -334,17 +335,16 @@ async function render_frame() {
 
 The demo below shows two canvases, the first one is animated at the refresh rate
 of your display, the second one shows a sequence of frames captured by
-`VideoTrackReader` at 30fps, encoded  and decoded using WebCodecs API.
+`VideoTrackReader` at 30&nbsp;FPS, encoded  and decoded using WebCodecs API.
 
-[https://webcodecs-blogpost-demo.glitch.me/](https://webcodecs-blogpost-demo.glitch.me/)
+{% Glitch 'webcodecs-blogpost-demo' %}
 
-## Feature Detection
+## Feature detection
 
-This is an easy way to check for WebCodecs support, to make  sure that the
-origin trial or the flag took effect.
+To check for WebCodecs support:
 
 ```js
-if ("VideoEncoder" in window) {
+if ('VideoEncoder' in window) {
   // WebCodecs API is supported.
 }
 ```
