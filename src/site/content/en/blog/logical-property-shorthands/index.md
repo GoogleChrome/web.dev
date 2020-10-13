@@ -16,10 +16,14 @@ tags:
   - layout
 ---
 
-Since Chromium 69 (September 3rd 2018), logical properties and values have helped 
+Since Chromium 69 (September 3rd 2018), 
+[logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties) and values have helped 
 developers maintain control of their international layouts through logical, rather 
 than physical, direction and dimension styles. In Chromium 87, shorthands and 
-offsets have shipped to make these logical properties and values a bit easier to write.
+offsets have shipped to make these logical properties and values a bit easier to write. 
+This catches Chromium up to Firefox, which has had support for the shorthands 
+[since 66](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/66). 
+Safari has them ready in their [tech preview](https://webkit.org/blog/11300/release-notes-for-safari-technology-preview-114/). 
 
 <figure class="w-figure">
   <img 
