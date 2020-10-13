@@ -65,7 +65,7 @@ Find out more: [What are third-party origin trials?](/third-party-origin-trials)
 1. When your token expires, you will get an email with a renewal link.
    To do so, you are again asked to submit feedback.
    
-{% Aside %}
+{% Aside 'warning' %}
 Usually if an API lands unchanged after a successful origin trial, there is a short period between the 
 end of the origin trial and the date the implementation ships in the browser when the API will not 
 be available. This is by design. If Chrome were to avoid the mandatory total-breakage period, that would 
