@@ -4,8 +4,8 @@ title: How Chrome handles updates to the web app manifest
 subhead: What it takes to change icons, shortcuts, colors, and other metadata for your PWA
 authors:
   - petelepage
-date: 2020-10-12
-updated: 2020-10-12
+date: 2020-10-14
+updated: 2020-10-14
 description: What it takes to change icons, shortcuts, colors, and other metadata in your web app manifest for your PWA.
 tags:
   - progressive-web-apps
