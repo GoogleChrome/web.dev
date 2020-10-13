@@ -63,6 +63,7 @@
     {
       "title": "Advanced topics",
       "pathItems": [
+        "manifest-updates",
         "multi-origin-pwas"
       ]
     }
