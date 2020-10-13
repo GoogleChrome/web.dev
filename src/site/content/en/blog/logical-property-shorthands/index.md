@@ -1,12 +1,12 @@
 ---
 title: Logical layout enhancements with flow-relative shorthands
-subhead: New logical property shorthands and new inset properties for Chromium 
+subhead: New logical property shorthands and new inset properties for Chromium.
 authors:
   - adamargyle
   - loirooriol
-description: New logical property shorthands and new inset properties for Chromium 
-date: 2020-10-06
-updated: 2020-10-06
+description: New logical property shorthands and new inset properties for Chromium.
+date: 2020-10-13
+# updated: 2020-10-06
 hero: hero.png
 thumbnail: thumb.png
 alt: An inline flow arrow (right) and a block flow arrow (down)
@@ -14,6 +14,8 @@ tags:
   - blog
   - css
   - layout
+feedback:
+  - api
 ---
 
 Since Chromium 69 (September 3rd 2018), 
@@ -121,7 +123,7 @@ ways to write styles by taking advantage of being able to set values on both blo
 or inline edges at once. The `inset-*` logical properties **do** bring new abilities, 
 as there were no longhand ways to specify absolute positions with logical properties 
 before it. Insets and shorthands flow (hehe) together so well though, I'm going to 
-tell you about all of the new logical properties features landing in 87 at once. 
+tell you about all of the new logical properties features landing in Chromium 87 at once. 
 
 ### Margin shorthands
 No new abilities shipped, but some super handy shorthands did: <br>
@@ -452,7 +454,7 @@ margin: logical 2px;
 
 The current draft proposal would mean you have to write `logical` in every 
 shorthand in order to get the logical equivalent applied, which doesn't sound 
-very [D.R.Y.](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) to some. 
+very [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) to some. 
 
 There are other proposals to change it at the block or page level, 
 but that could leak logical uses into styles still assuming physical sides.
