@@ -4,6 +4,7 @@ subhead: Bridging the gap between web and iOS/Android experiences to delight use
 date: 2020-09-29
 hero: hero.png
 thumbnail: thumbnail.png
+alt: An illustration of a smartphone next to the text "Scale on web"
 description: >
   Learn how Goibibo, India’s top online travel company, achieved a 60% increase in
   conversions by building reliable user experiences between their PWA and iOS/Android apps. 
