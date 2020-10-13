@@ -24,13 +24,14 @@ feedback:
   - api
 ---
 {% Aside 'gotchas' %}
-**[15th Oct. 2020]**: `self.crossOriginIsolated` and Shared Array Buffer on Android
-Chrome are now available in Chrome 87. `document.domain` is now immutable when
-`self.crossOriginIsolated` returns `true`. `performance.measureMemory` in on
-origin trial from Chrome 87.
 
-**[1st Sep. 2020]**: COOP Reporting is now available behind a flag in Chrome 86.
-Added instructions.
+**[15th Oct. 2020]**: `self.crossOriginIsolated` is available from Chrome 87.
+Reflecting that, `document.domain` is immutable when `self.crossOriginIsolated`
+returns `true`. `performance.measureMemory` in on origin trial from Chrome 87.
+Shared Array Buffer on Android Chrome is available from Chrome 88.
+
+**[1st Sep. 2020]**: COOP Reporting is behind the `#cross-origin-isolated` flag
+in Chrome 86. Added instructions.
 
 {% endAside %}
 
@@ -40,7 +41,11 @@ cross-origin isolated. With a cross-origin isolated state, the webpage will be
 able to use privileged features including:
 
 * [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
-  (required for WebAssembly Threads) (Available from Chrome 87)
+  (required for WebAssembly Threads. This is available from Android Chrome 88.
+  Desktop version is currently enabled by default with the help of [Site
+  Isolation](https://www.chromium.org/Home/chromium-security/site-isolation),
+  but will require the cross-origin isolated state and will be disabled by
+  default.)
 * [`performance.measureMemory()`](/monitor-total-page-memory-usage/) (Available
   behind a flag from Chrome 87)
 * [JS Self-Profiling API](https://wicg.github.io/js-self-profiling/) (Not
@@ -67,7 +72,6 @@ means those resources being loaded cross-origin require opt-ins.
 You can determine whether a web page is in a cross-origin isolated state by
 examining
 [`self.crossOriginIsolated`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated).
-(This works on Firefox but has yet to be implemented in Chrome).
 
 This article shows how to use these new headers. In [a follow-up
 article](/why-coop-coep) I will provide more background and context.
