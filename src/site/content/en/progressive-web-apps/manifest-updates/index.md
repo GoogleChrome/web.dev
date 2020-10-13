@@ -29,7 +29,7 @@ may prevent the browser from updating your PWA.
 {% endAside %}
 
 In most cases, changes should be reflected within a day or two of the
-manifest being updated, and the PWA subsequently launched.
+PWA being launched, after the manifest has been updated.
 
 ## Updates on desktop Chrome {: #cr-desktop }
 
