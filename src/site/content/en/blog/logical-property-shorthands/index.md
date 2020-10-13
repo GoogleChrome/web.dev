@@ -1,10 +1,10 @@
 ---
 title: Logical layout enhancements with flow-relative shorthands
-subhead: TODO 
+subhead: New logical property shorthands and new inset properties for Chromium 
 authors:
   - adamargyle
   - loirooriol
-description: TODO 
+description: New logical property shorthands and new inset properties for Chromium 
 date: 2020-10-06
 updated: 2020-10-06
 hero: hero.png
