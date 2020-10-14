@@ -187,9 +187,9 @@ listen for the [`visibilitychange`][visibility-change] event
 and request a new screen wake lock when they occur:
 
 ```js
-const handleVisibilityChange = () => {
+const handleVisibilityChange = async () => {
   if (wakeLock !== null && document.visibilityState === 'visible') {
-    requestWakeLock();
+    await requestWakeLock();
   }
 };
 
