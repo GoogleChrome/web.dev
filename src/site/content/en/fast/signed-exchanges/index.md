@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Signed Exchanges (SXGs) overview
+title: Signed Exchanges (SXGs)
 subhead: |
   An SXG is a delivery mechanism that makes it possible to authenticate the
   origin of a resource independently of how it was delivered.
