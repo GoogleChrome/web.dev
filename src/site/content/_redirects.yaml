@@ -233,6 +233,3 @@ redirects:
 # Redirects for vanity URLs
 - from: /scale-on-web
   to: /tags/scale-on-web
-
-- from: /devices
-  to: /tags/devices
