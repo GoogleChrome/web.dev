@@ -6,7 +6,7 @@ authors:
 description: |
   Faster playback start means more people watching your video. That's a known fact. In this article I'll explore techniques you can use to accelerate your media playback by actively preloading resources depending on your use case.
 date: 2017-08-17
-updated: 2020-10-02
+updated: 2020-10-15
 tags:
   - media
   - video
@@ -17,7 +17,7 @@ fact. In this article I'll explore techniques you can use to accelerate your
 media playback by actively preloading resources depending on your use case.
 
 {% Aside %}
-  Unless specified otherwise, this article also applies to the audio element.
+  Information in this article also applies to the audio element.
 {% endAside %}
 
 <figure>
@@ -54,7 +54,7 @@ But...
 Simple to use for a unique file hosted on a web server.
       </td>
       <td>
-Browsers may completely ignore the attribute.
+Browsers may completely ignore the attribute. The autoplay attribute may also override it.
       </td>
     <tr>
       <td>
