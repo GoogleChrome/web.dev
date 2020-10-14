@@ -25,19 +25,15 @@ feedback:
 ---
 {% Banner 'caution', 'body' %}
 
-## Updates
+**Updates**
 
-### October 15th, 2020
-
-`self.crossOriginIsolated` is available from Chrome 87.
+**October 15th, 2020**: `self.crossOriginIsolated` is available from Chrome 87.
 Reflecting that, `document.domain` is immutable when `self.crossOriginIsolated`
 returns `true`. `performance.measureMemory` ending its origin trial and is
 planned to be enabled by default in Chrome 88. Shared Array Buffer on Android
 Chrome will be available from Chrome 88.
 
-### September 1st, 2020
-
-COOP Reporting is behind the `#cross-origin-isolated` flag
+**September 1st, 2020**: COOP Reporting is behind the `#cross-origin-isolated` flag
 in Chrome 86.
 
 {% endBanner %}
