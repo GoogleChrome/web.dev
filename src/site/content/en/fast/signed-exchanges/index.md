@@ -6,7 +6,7 @@ subhead: |
   origin of a resource independently of how it was delivered.
 authors:
   - katiehempenius
-date: 2020-10-09
+date: 2020-10-14
 hero: hero.jpg
 alt: A pile of envelopes.
 description: |
