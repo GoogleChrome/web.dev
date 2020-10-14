@@ -27,9 +27,9 @@ feedback:
 
 **[15th Oct. 2020]**: `self.crossOriginIsolated` is available from Chrome 87.
 Reflecting that, `document.domain` is immutable when `self.crossOriginIsolated`
-returns `true`. `performance.measureMemory` ending its origin trial and will be
-enabled by default in Chrome 88. Shared Array Buffer on Android Chrome will be
-available from Chrome 88.
+returns `true`. `performance.measureMemory` ending its origin trial and is
+planned to be enabled by default in Chrome 88. Shared Array Buffer on Android
+Chrome will be available from Chrome 88.
 
 **[1st Sep. 2020]**: COOP Reporting is behind the `#cross-origin-isolated` flag
 in Chrome 86. Added instructions.
@@ -48,7 +48,7 @@ able to use privileged features including:
   but will require the cross-origin isolated state and will be disabled by
   default.)
 * [`performance.measureMemory()`](/monitor-total-page-memory-usage/) (Ends its
-  origin trial and will be enabled by default in Chrome 88)
+  origin trial and is planned to be enabled by default in Chrome 88)
 * [JS Self-Profiling API](https://wicg.github.io/js-self-profiling/) (Not
   available yet in Chrome)
 
