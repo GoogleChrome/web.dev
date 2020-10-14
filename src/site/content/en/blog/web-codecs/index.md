@@ -284,7 +284,7 @@ Once a frame is no longer needed, call `destroy()` to release underlying memory
 before the garbage collector gets to it, this will reduce the average amount of
 memory used by the web application.
 
-```js
+```js/34
 let cnv = document.getElementById('canvas_to_render');
 let ctx = cnv.getContext('2d', { alpha: false });
 let ready_frames = [];
@@ -372,6 +372,36 @@ also be enabled using a flag.
 ### Register for the origin trial {: #ot }
 
 {% include 'content/origin-trial-register.njk' %}
+
+## Feedback {: #feedback }
+
+The Chrome team wants to hear about your experiences with the Idle Detection API.
+
+### Tell us about the API design
+
+Is there something about the API that doesn't work like you expected? Or are
+there missing methods or properties that you need to implement your idea? Have a
+question or comment on the security model? File a spec issue on the
+corresponding [GitHub repo](https://github.com/WICG/web-codecs/issues), or add
+your thoughts to an existing issue.
+
+### Report a problem with the implementation
+
+Did you find a bug with Chrome's implementation? Or is the implementation
+different from the spec? File a bug at [new.crbug.com](https://new.crbug.com).
+Be sure to include as much detail as you can, simple instructions for
+reproducing, and enter `Blink>Media>WebCodecs` in the **Components** box.
+[Glitch](https://glitch.com/) works great for sharing quick and easy repros.
+
+### Show support for the API
+
+Are you planning to use the Idle Detection API? Your public support helps the
+Chrome team to prioritize features and shows other browser vendors how critical
+it is to support them.
+
+Share how you plan to use it on the [WICG Discourse thread][wicg-discourse] Send
+a Tweet to [@ChromiumDev][cr-dev-twitter] with the `#idledetection` hashtag and
+let us know where and how you're using it.
 
 [Hero image](https://unsplash.com/photos/8eQOBtgn9Qo) by
 [Denise Jans](https://unsplash.com/@dmjdenise)
