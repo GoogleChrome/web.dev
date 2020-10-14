@@ -69,9 +69,8 @@ the longer it takes to perform layout calculations.
 is the process of determining in what order elements should be painted to the screen.
 It is often the longest-running of all tasks in the pipeline.
 
-<!-- TODO(kaycebasques): Do we have a good link for "rasterizers"? -->
-
-The majority of painting in modern browsers is done in software rasterizers.
+The majority of painting in modern browsers is done in
+[software rasterizers](https://software.intel.com/content/www/us/en/develop/articles/software-vs-gpu-rasterization-in-chromium.html).
 Depending on how the elements in your app are grouped into layers,
 other elements besides the one that changed may also need to be painted.
 
