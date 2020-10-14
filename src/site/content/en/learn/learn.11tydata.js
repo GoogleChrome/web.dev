@@ -21,7 +21,7 @@ module.exports = function () {
   ].filter(livePaths);
 
   const performance = [
-    allPaths['vitals'],
+    allPaths['learn-web-vitals'],
     allPaths['metrics'],
     allPaths['fast'],
   ];
