@@ -564,11 +564,7 @@ came from the cache or from the network. It can be used by a player such as
 [ShakaPlayer][shakaplayer] to ignore the response time as an indicator of
 network speed.
 
-<div class="video-wrapper">
-  <iframe class="devsite-embedded-youtube-video" data-video-id="f8EGZa32Mts"
-          data-autohide="1" data-showinfo="0" frameborder="0" allowfullscreen>
-  </iframe>
-</div>
+{% YouTube 'f8EGZa32Mts' %}
 
 Have a look at the official [Sample Media App][sample-media-app] and in particular its
 [ranged-response.js] file for a complete solution for how to handle Range
