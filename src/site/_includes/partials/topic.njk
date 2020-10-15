@@ -5,6 +5,7 @@
   </h2>
   <ul class="w-path-list">
     {% if topic.pathItems %}
+      <!-- {{ topic.pathItems }} -->
       {% set section = topic %}
       {% include 'partials/item.njk' %}
     {% endif %}

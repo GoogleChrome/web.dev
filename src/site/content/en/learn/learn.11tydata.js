@@ -19,6 +19,7 @@ module.exports = function () {
     allPaths['payments'],
     allPaths['media'],
     allPaths['devices'],
+    allPaths['animations'],
   ].filter(livePaths);
 
   const performance = [
