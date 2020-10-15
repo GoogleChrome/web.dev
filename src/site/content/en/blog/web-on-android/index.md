@@ -24,7 +24,7 @@ web inside their own Android Apps. More than that, Android allows developers to 
 browser engine into the platform, fostering competition and innovation.
 
 Developers can include the web in their Android applications in many ways. WebView is frequently
-used to render ads, as a layout component used along with native UI elements, or for packaging HTML 5
+used to render ads, as a layout component used along with Android UI elements, or for packaging HTML 5
 games. Custom Tabs allows developers to build in-app browsers and provide a seamless navigation
 experience to third-party web content, and Trusted Web Activity allows developers to use their
 Progressive Web Apps (PWAs) in Android apps, which can be downloaded from the Play Store.
@@ -51,9 +51,9 @@ as in-app browsers.
 WebView has extensive support for the modern web tech stack and supports many modern web APIs, like
 WebGL. But WebView is primarily a web UI toolkit. It
 [is not meant to - and does not - support all features of the web platform][1]. When an API already
-has a native alternative, like Web Bluetoooth, or it requires browser UI to be implemented, like
+has an OS-level alternative, like Web Bluetoooth, or it requires browser UI to be implemented, like
 push notifications, it may not be supported. As the web platform evolves and adds more features
-that were only available to native apps, this gap will become even larger. As app developers don't
+that were only available to Android apps, this gap will become even larger. As app developers don't
 control which features are used when opening third-party content, it makes WebView a poor choice
 for in-app browsers or opening Progressive Web Apps. Even if WebView implemented support for all
 web platform features, developers would still need to write code and implement their own UI for
@@ -85,8 +85,8 @@ browser powering it.
 
 ### Open Progressive Web Apps using Trusted Web Activity
 
-[Progressive Web Apps][4] bring many behaviours and capabilities that were once only available to
-native apps to the web. With the introduction of app-like behaviour, the desire from developers to
+[Progressive Web Apps][4] bring many behaviors and capabilities that were once only available to
+platform-specific apps to the web. With the introduction of app-like behaviour, the desire from developers to
 re-use those experiences on Android increased, and developers started asking for ways to integrate
 PWAs into their apps.
 
@@ -102,7 +102,7 @@ but introduces APIs that allow developers to verify (through [Digital Asset Link
 control both the Android app and the URL being opened and remove the URL bar when both are true.
 
 They also introduced APIs for creating splash screens when opening the PWA or delegating web
-notifications to be handled by native code. More features like support for Play Billing are coming
+notifications to be handled by Android code. More features like support for Play Billing are coming
 soon.
 
 Since URLs opened in Trusted Web Activities are expected to be PWAs and have a set of behaviors and
@@ -133,7 +133,7 @@ web content is an area where WebViews really shine.
 
 Trusted Web Activity should be used when the developers want to render their own Progressive Web
 App in fullscreen inside their Android application. It can be used as the only activity in the app
-or used along with other native activities.
+or used along with other Android activities.
 
 Custom Tabs is the recommended way for opening third-party content that is designed for the web
 platform, also known as in-app browsers.

@@ -149,15 +149,21 @@ Next, tell Workbox how to use the strategies to construct a complete, streaming 
 
 ```javascript
 workbox.streams.strategy([
-  () => cacheStrategy.makeRequest({request: '/head.html'}),
-  () => cacheStrategy.makeRequest({request: '/navbar.html'}),
+  () => cacheStrategy.handle({
+      request: new Request(getCacheKeyForURL("/head.html")),
+    }),
+  () => cacheStrategy.handle({
+      request: new Request(getCacheKeyForURL("/navbar.html")),
+    }),
   async ({event, url}) => {
     const tag = url.searchParams.get('tag') || DEFAULT_TAG;
-    const listResponse = await apiStrategy.makeRequest(…);
+    const listResponse = await apiStrategy.handle(…);
     const data = await listResponse.json();
     return templates.index(tag, data.items);
   },
-  () => cacheStrategy.makeRequest({request: '/foot.html'}),
+  () => cacheStrategy.handle({
+      request: new Request(getCacheKeyForURL("/foot.html")),
+    }),
 ]);
 ```
 

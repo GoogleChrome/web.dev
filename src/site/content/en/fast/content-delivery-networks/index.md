@@ -252,12 +252,12 @@ Although switching your CDN instance to HTTP/2 is largely a matter of flipping a
 
 #### HTTP/3
 
-[HTTP/3](https://en.wikipedia.org/wiki/HTTP/3) is the successor to [HTTP/2](https://en.wikipedia.org/wiki/HTTP/2). As of April 2020, all major browsers have experimental [support](https://caniuse.com/#feat=http3) for HTTP/3 and some CDNs support it. Performance is the primary benefit of HTTP/3 over HTTP/2. Specifically, HTTP/3 eliminates head-of-line blocking at the connection level and reduces connection setup time.
+[HTTP/3](https://en.wikipedia.org/wiki/HTTP/3) is the successor to [HTTP/2](https://en.wikipedia.org/wiki/HTTP/2). As of September 2020, all major browsers have experimental [support](https://caniuse.com/#feat=http3) for HTTP/3 and some CDNs support it. Performance is the primary benefit of HTTP/3 over HTTP/2. Specifically, HTTP/3 eliminates head-of-line blocking at the connection level and reduces connection setup time.
 
 
 *  **Elimination of head-of-line blocking**
 
-    HTTP/2 introduced multiplexing, a feature that allows a single connection to be used to transmit multiple streams of data simultaneously. However, with HTTP/2, a single dropped packet blocks all streams on a connection (a phenomena known as a head-of-line blocking). With HTTP/3, a dropped packet only blocks a single stream. This improvement is largely the result of HTTP/3 using [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol) rather than [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol). This makes HTTP/3 particularly useful for data transfer over congested or lossy networks.
+    HTTP/2 introduced multiplexing, a feature that allows a single connection to be used to transmit multiple streams of data simultaneously. However, with HTTP/2, a single dropped packet blocks all streams on a connection (a phenomena known as a head-of-line blocking). With HTTP/3, a dropped packet only blocks a single stream. This improvement is largely the result of HTTP/3 using [UDP](https://en.wikipedia.org/wiki/User_Datagram_Protocol) (HTTP/3 uses UDP via [QUIC](https://en.wikipedia.org/wiki/QUIC)) rather than [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol). This makes HTTP/3 particularly useful for data transfer over congested or lossy networks.
 
 <figure class="w-figure">
   <img src="./cdn4.png" alt="Diagram showing the differences in data transmission between HTTP/1, HTTP/2, and HTTP/3" class="w-screenshot">
@@ -268,7 +268,7 @@ Although switching your CDN instance to HTTP/2 is largely a matter of flipping a
     HTTP/3 uses TLS 1.3 and therefore shares its performance benefits: establishing a new connection only requires a single round-trip and resuming an existing connection does not require any roundtrips.
 
 <figure class="w-figure">
-  <img src="./cdn5.png" alt="Comparison of connection resumption between TLS 1.2 and TLS 1.3" class="w-screenshot">
+  <img src="./cdn5.png" alt="Comparison of connection resumption between TLS 1.2, TLS 1.3, TLS 1.3 0-RTT, and HTTP/3" class="w-screenshot">
 </figure>
 
 HTTP/3 will have the biggest impact on users on poor network connections: not only because HTTP/3 handles packet loss better than its predecessors, but also because the absolute time savings resulting from a 0-RTT or 1-RTT connection setup will be greater on networks with high latency.

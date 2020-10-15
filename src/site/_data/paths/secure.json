@@ -16,7 +16,7 @@
     },
     {
       "title": "Secure connections with HTTPS",
-      "pathItems": ["why-https-matters"]
+      "pathItems": ["why-https-matters","what-is-mixed-content"]
     },
     {
       "title": "Prevent info leaks",

@@ -67,6 +67,9 @@ class TableOfContents extends BaseStateElement {
   }
 
   render() {
+    const content = /** @type TemplateStringsArray */ (
+      /** @type ReadonlyArray<string> */ ([this.tocHTML])
+    );
     return html`
       <div class="w-toc__label">
         <span>In this article</span>
@@ -78,7 +81,7 @@ class TableOfContents extends BaseStateElement {
         ></button>
       </div>
       <div class="w-toc__content">
-        ${html([this.tocHTML])}
+        ${html(content)}
       </div>
     `;
   }

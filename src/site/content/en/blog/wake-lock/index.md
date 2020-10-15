@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: To avoid draining the battery, most devices will quickly fall asleep when left idle. While this is fine most of the time, there are some applications that need to keep the screen awake in order to complete some work. The Screen Wake Lock API provides a way to prevent the device from dimming or locking the screen when an application needs to keep running.
 date: 2018-12-18
-updated: 2020-09-22
+updated: 2020-10-14
 hero: hero.jpg
 hero_position: center
 alt: |
@@ -36,7 +36,7 @@ motion APIs for input.
 
 The [Screen Wake Lock API][spec-ed] provides a way to prevent the device from dimming
 and locking the screen. This
-capability enables new experiences that, until now, required a native app.
+capability enables new experiences that, until now, required a platform-specific app.
 
 The Screen Wake Lock API reduces the need for hacky and potentially
 power-hungry workarounds. It addresses the shortcomings of an older API
@@ -187,9 +187,9 @@ listen for the [`visibilitychange`][visibility-change] event
 and request a new screen wake lock when they occur:
 
 ```js
-const handleVisibilityChange = () => {
+const handleVisibilityChange = async () => {
   if (wakeLock !== null && document.visibilityState === 'visible') {
-    requestWakeLock();
+    await requestWakeLock();
   }
 };
 

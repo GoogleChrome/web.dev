@@ -57,7 +57,7 @@ The discovery process starts when a merchant initiates a transaction:
 2. The browser determines the [web app
    manifest](https://developer.mozilla.org/docs/Web/Manifest) URL from the
    payment method manifest and fetches the web app manifest.
-3. The browser determines whether to launch the native payment app or the
+3. The browser determines whether to launch the OS payment app or the
    web-based payment app from the web app manifest.
 
 The next sections explain in detail how to set up your own payment method so
@@ -324,8 +324,8 @@ payment app appears in the Payment Request UI.
           <code><a href="https://developer.mozilla.org/docs/Web/Manifest/related_applications">related_applications</a></code>
         </td>
         <td>
-        Used to detect the native app that acts as the native payment app.
-        Find more details at <a href="/android-payment-apps-developers-guide/">Android
+        Used to detect the app that acts as the OS-provided payment app.
+        Find more details at <a href="/native-payment-apps-overview">Android
         payment apps developer guide</a>.
         </td>
       </tr>
@@ -334,7 +334,7 @@ payment app appears in the Payment Request UI.
           <code><a href="https://developer.mozilla.org/docs/Web/Manifest/prefer_related_applications">prefer_related_applications</a></code>
         </td>
         <td>
-        Used to determine which payment app to launch when both a native payment app and a web-based payment app are available.
+        Used to determine which payment app to launch when both an OS-provided payment app and a web-based payment app are available.
         </td>
       </tr>
       <tr>
@@ -364,16 +364,16 @@ The web app manifest's `name` property is used as the payment app name, `icons`
 property is used as the payment app icon.
 
 ## How Chrome determines which payment app to launch
-### Launching the native payment app
+### Launching the platform-specific payment app
 
-To launch the native payment app, the following conditions must be met:
+To launch the platform-specific payment app, the following conditions must be met:
 
 - The `related_applications` field is specified in the web app manifest and:
     - The installed app's package ID and signature match, while the minimum
       version (`min_version`) in the web app manifest is less than or equal to
       the version of the installed application.
 - The `prefer_related_applications` field is `true`.
-- The native payment app is installed and has:
+- The platform-specific payment app is installed and has:
     - An intent filter of `org.chromium.action.PAY`.
     - A payment method identifier specified as the value for the `org.chromium.default_payment_method_name` property.
 
@@ -395,7 +395,7 @@ for more details about how to set these up.
 }]
 ```
 
-If the browser has determined that the native payment app is available, the
+If the browser has determined that the platform-specific payment app is available, the
 discovery flow is terminated here. Otherwise it continues to the next step --
 launching the web-based payment app.
 
@@ -418,7 +418,7 @@ advance. [It can be registered just-in-time](#jit-register).
 ## Understanding the special optimizations
 ### How browsers can skip the Payment Request UI and launch a payment app directly
 In Chrome, when `show()` method of `PaymentRequest` is called, the Payment Request API displays a
-browser native UI called the "Payment Request UI". This UI allows users to
+browser-provided UI called the "Payment Request UI". This UI allows users to
 choose a payment app, shipping options and delivery address, and payer's contact
 information. After pressing the **Continue** button in the Payment Request UI, the selected payment app is launched.
 
@@ -480,7 +480,7 @@ single payment app.
 {% endAside %}
 
 ## Next Steps
-Now that you have your payment app discoverable, learn how to develop a native
+Now that you have your payment app discoverable, learn how to develop a platform-specific
 payment app and a web-based payment app.
 
 - [Android payment apps: developer's guide](/android-payment-apps-developers-guide)

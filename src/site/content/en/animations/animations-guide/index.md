@@ -260,8 +260,6 @@ animation is causing the browser to do layout work.
   </figcaption>
 </figure>
 
-<!-- TODO(kaycebasques): Add video -->
-
 #### Firefox DevTools {: #layout-firefox }
 
 In Firefox DevTools the [Waterfall](https://developer.mozilla.org/en-US/docs/Tools/Performance/Waterfall)
@@ -358,6 +356,7 @@ in Chrome DevTools can help.
 
 1. Open **Settings** and add a Toolbox button for [Toggle paint flashing](https://developer.mozilla.org/en-US/docs/Tools/Paint_Flashing_Tool).
 1. On the page you want to inspect, toggle the button on and move your mouse or scroll to see highlighted areas.
+
 
 ## Conclusion
 

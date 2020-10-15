@@ -10,6 +10,7 @@ authors:
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - webassembly
+  - memory
   - security
   - devtools
 ---
@@ -597,9 +598,9 @@ What lessons can we learn and share from this refactoring that could be applied 
    the JavaScript side and store it there.
 - If possible, use a safe memory management language or, at least, safe type wrappers, instead of
    operating on raw pointers directly. This won't save you from bugs on the JavaScript ↔ WebAssembly
-   boundary, but at least it will reduce the surface for bugs self-contained by the native code.
+   boundary, but at least it will reduce the surface for bugs self-contained by the static language code.
 - No matter which language you use, run code with sanitizers during development—they can help to
-   catch not only problems in the native code, but also some issues across the JavaScript ↔
+   catch not only problems in the static language code, but also some issues across the JavaScript ↔
    WebAssembly boundary, such as forgetting to call `.delete()` or passing in invalid pointers from
    the JavaScript side.
 - If possible, avoid exposing unmanaged data and objects from WebAssembly to JavaScript altogether.

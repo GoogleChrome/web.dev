@@ -50,11 +50,11 @@ option.
 </figure>
 
 {% Aside %}
-Learn how to implement an [Android native payment
+Learn how to implement an [Android payment
 app](https://web.dev/android-payment-apps-developers-guide/) in advance.
 {% endAside %}
 
-To add delegation support to an already existing Android native payment app,
+To add delegation support to an already existing Android payment app,
 implement the following steps:
 
 1.  Declare supported delegations.

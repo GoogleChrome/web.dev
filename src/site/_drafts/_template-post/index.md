@@ -509,3 +509,10 @@ porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
 quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
 ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
+
+## Acknowledgements
+
+This article was reviewed by [reviewer #1](#) and [reviewer #2](#).
+Thanks to [external contributor #1](#) and [external contributor #2](#) for
+their work on TODO.
+Hero image by [unsplash author](#) on [Unsplash](#).

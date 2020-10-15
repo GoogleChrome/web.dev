@@ -8,6 +8,8 @@ date: 2019-05-02
 updated: 2019-10-04
 web_lighthouse:
   - bootup-time
+tags:
+  - memory
 ---
 
 When your JavaScript takes a long time to execute,

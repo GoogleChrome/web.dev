@@ -18,10 +18,11 @@ module.exports = function () {
     allPaths['discoverable'],
     allPaths['payments'],
     allPaths['media'],
+    allPaths['animations'],
   ].filter(livePaths);
 
   const performance = [
-    allPaths['vitals'],
+    allPaths['learn-web-vitals'],
     allPaths['metrics'],
     allPaths['fast'],
   ];

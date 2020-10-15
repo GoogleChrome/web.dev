@@ -37,11 +37,15 @@ class EventSchedule extends HTMLElement {
 
     this._activeEventDay = null;
     this._currentSession = null;
+    /** @type import('../Tabs').Tabs */
     this._tabsElement = null;
 
     // This just creates an element, we're not yet making it part of the DOM, so it's allowed here
     // in the constructor.
-    this._modalElement = document.createElement('web-event-schedule-modal');
+
+    this._modalElement = /** @type import('../EventScheduleModal').EventScheduleModal */ (document.createElement(
+      'web-event-schedule-modal',
+    ));
     this._modalElement.className = 'web-modal';
     this._modalElement.open = false;
     this._modalElement.addEventListener('close-modal', this.onCloseModal);
@@ -61,9 +65,13 @@ class EventSchedule extends HTMLElement {
     this.onHashChange();
   }
 
+  /**
+   * @param {string} hash
+   * @returns {HTMLElement|null}
+   */
   _elementForHash(hash = window.location.hash) {
     const id = hash.substr(1);
-    return (id && this.querySelector(`[data-session-id="${id}"]`)) || null;
+    return this.querySelector(`[data-session-id="${id}"]`);
   }
 
   /**
@@ -88,7 +96,7 @@ class EventSchedule extends HTMLElement {
     // Clone the session node and pass it to our session. This is kinda gross but basically we use
     // it as the canonical source of truth for the modal. We also have to remove all tabindex
     // attributes as they may have been added by the inert polyfill.
-    const clone = session.cloneNode(true);
+    const clone = /** @type HTMLElement */ (session.cloneNode(true));
     clone.querySelectorAll('[tabindex]').forEach((el) => {
       el.removeAttribute('tabindex');
     });
@@ -116,7 +124,7 @@ class EventSchedule extends HTMLElement {
    * Handles clicks within this schedule, searching for hashes which open a
    * session.
    *
-   * @param {!MouseEvent} ev
+   * @param {WMouseEvent} ev
    */
   onClick(ev) {
     if (!ev.target.href) {
@@ -127,7 +135,7 @@ class EventSchedule extends HTMLElement {
     const id = check.hash.substr(1);
     check.hash = '';
 
-    const page = new URL(window.location);
+    const page = new URL(window.location.toString());
     page.hash = '';
 
     if (!(page.toString() === check.toString() && id)) {

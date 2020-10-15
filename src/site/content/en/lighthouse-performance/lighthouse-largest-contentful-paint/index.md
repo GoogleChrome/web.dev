@@ -29,7 +29,7 @@ details on how LCP is determined.
 
 ## How Lighthouse determines your LCP score
 
-Native support for LCP launched in [Chrome 77][launch]. Lighthouse extracts LCP data from
+Browser support for LCP launched in [Chrome 77][launch]. Lighthouse extracts LCP data from
 [Chrome's tracing tool](https://www.chromium.org/developers/how-tos/trace-event-profiling-tool).
 
 The table below shows how to interpret your LCP score:
@@ -44,7 +44,7 @@ The table below shows how to interpret your LCP score:
     </thead>
     <tbody>
       <tr>
-        <td>0-2</td>
+        <td>0-2.5</td>
         <td>Green (fast)</td>
       </tr>
       <tr>

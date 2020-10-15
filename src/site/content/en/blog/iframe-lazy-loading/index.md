@@ -1,7 +1,7 @@
 ---
 layout: post
 title: It's time to lazy-load offscreen iframes!
-subhead: Browser-level native lazy-loading for iframes is here
+subhead: Browser-level built-in lazy-loading for iframes is here
 authors:
   - addyosmani
 date: 2020-07-24
@@ -14,13 +14,14 @@ description: |
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - performance
+  - memory
 feedback:
   - api
 ---
 
-[Native lazy-loading for images](/native-lazy-loading) landed in Chrome 76 via
+[Standardized lazy-loading for images](/native-lazy-loading) landed in Chrome 76 via
 the `loading` attribute and later came to Firefox. We are happy to share that
-**native lazy-loading for iframes** is now
+**browser-level lazy-loading for iframes** is now
 [standardized](https://github.com/whatwg/html/pull/5579) and is also 
 supported in Chrome and Chromium-based browsers.
 
@@ -31,7 +32,7 @@ supported in Chrome and Chromium-based browsers.
         height="400"></iframe>
 ```
 
-Native lazy-loading of iframes defers offscreen iframes from being loaded
+Standardized lazy-loading of iframes defers offscreen iframes from being loaded
 until the user scrolls near them. This saves data, speeds up the loading of
 other parts of the page, and reduces memory usage.
 
@@ -68,7 +69,7 @@ lazy-loading iframes could lead to 2-3% median data savings, 1-2% [First
 Contentful Paint](/fcp/) reductions at the median, and 2% [First Input
 Delay](/fid/) (FID) improvements at the 95th percentile.
 
-### How does native lazy-loading for iframes work?
+### How does built-in lazy-loading for iframes work?
 
 The `loading` attribute allows a browser to defer loading offscreen iframes and
 images until users scroll near them. `loading` supports three values:
@@ -181,7 +182,7 @@ Instagram embeds provide a block of markup and a script, which injects an
 iframe into your page. Lazy-loading this iframe avoids having to load all of
 the script necessary for the embed. Given such embeds are often displayed below
 the viewport in most articles, this seems like a reasonable candidate for
-native lazy-loading of their iframe.
+lazy-loading of their iframe.
 
 **Lazy-loading Spotify embeds (saves 514KB on initial load):**
 
@@ -199,7 +200,7 @@ Although the above embeds illustrate the potential benefits to lazy-loading
 iframes for media content, there's the potential to also see these benefits for
 ads.  
 
-### Case study: Natively lazy-loading the Facebook's social plugins
+### Case study: Lazy-loading the Facebook's social plugins
 
 Facebook's _social plugins_ allow developers to embed Facebook content in their
 web pages. There's a number of these plugins offered, such as embedded posts,
@@ -216,19 +217,19 @@ may be suboptimal.
 </figure>
 
 Thanks to engineer Stoyan Stefanov, [all of Facebook's social plugins now
-support native iframe
+support standardized iframe
 lazy-loading](https://developers.facebook.com/docs/plugins/like-button#settings).
 Developers who opt in to lazy-loading via the plugins' `data-lazy`
 configuration will now be able to avoid it loading until the user scrolls
 nearby. This enables the embed to still fully function for users that need it,
 while offering data-savings for those who are not scrolling all the way down a
-page. We are hopeful this is the first of many embeds to explore native iframe
+page. We are hopeful this is the first of many embeds to explore standardized iframe
 lazy-loading in production.
 
 ### Wait, can't browsers just automatically lazy-load offscreen iframes?
 
 They certainly can. In Chrome 77, Chrome added support for automatically
-natively lazy-loading offscreen images and iframes when a user has opted into
+lazy-loading offscreen images and iframes when a user has opted into
 [Lite Mode](https://blog.chromium.org/2019/04/data-saver-is-now-lite-mode.html)
 (Data Saver mode) in Chrome for Android. 
 
@@ -243,12 +244,12 @@ which is part of the [`NetworkInformation` API](https://developer.mozilla.org/en
 
 ### Can I lazy-load iframes cross-browser? Yes
 
-Native iframe lazy-loading can be applied as a progressive enhancement. Browsers which support `loading=lazy` on iframes will lazy-load the iframe, while the `loading` attribute will be safely ignored in browsers which do not support it yet.
+iframe lazy-loading can be applied as a progressive enhancement. Browsers which support `loading=lazy` on iframes will lazy-load the iframe, while the `loading` attribute will be safely ignored in browsers which do not support it yet.
 
 It is also possible to lazy-load offscreen iframes using the
 [lazysizes](/use-lazysizes-to-lazyload-images/) JavaScript library. This may be desirable if you:
 
-*   require more custom lazy-loading thresholds than what native lazy-loading
+*   require more custom lazy-loading thresholds than what standardized lazy-loading
 currently offers
 *   wish to offer users a consistent iframe lazy-loading experience across browsers
 
@@ -327,9 +328,9 @@ your site's cache afterwards.
 
 ### Conclusion
 
-Baking in native support for lazy-loading iframes makes it significantly
+Baking in standardized support for lazy-loading iframes makes it significantly
 easier for you to improve the performance of your web pages. If you have any
-feedback on native iframe lazy-loading, please feel free to submit an issue to
+feedback, please feel free to submit an issue to
 the [Chromium Bug
 Tracker](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3ELoader%3ELazyLoad).
 

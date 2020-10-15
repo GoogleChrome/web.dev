@@ -11,8 +11,7 @@ authors:
   - una
 
 date: 2019-12-05
-# Add an updated date to your post if you edit in the future.
-# updated: 2019-11-01
+updated: 2020-09-24
 
 hero: hero.png
 # You can adjust the fit of your hero image with this property.
@@ -88,7 +87,7 @@ You can also find demos for all the features we discuss on our
 
 ## Scroll Snap
 
-[Scroll Snap](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap/Basic_concepts) lets you define snap points as the user scrolls your content vertically, horizontally, or  both. It offers native scroll inertia and deceleration, and it's touch enabled.
+[Scroll Snap](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap/Basic_concepts) lets you define snap points as the user scrolls your content vertically, horizontally, or  both. It offers built-in scroll inertia and deceleration, and it's touch enabled.
 
 This sample code sets up horizontal scrolling in a `<section>` element with snap points aligned to the left sides of child `<picture>` elements:
 
@@ -164,7 +163,6 @@ Here are the new queries we think developers will be most excited about:
 *   [prefers-reduced-transparency](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-transparency)
 *   [forced-colors](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors)
 *   [inverted-colors](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/inverted-colors)
-*   [light-level](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/light-level)
 
 These queries are a huge win for accessibility. Previously we had no way to know, for example, that a user had set their OS to high-contrast mode. If you wanted to provide a high-contrast mode for a web app that remained true to your brand, you had to ask users to choose it from UI within your app. Now you can detect the high-contrast setting from the OS using `prefers-contrast`.
 
@@ -256,7 +254,7 @@ Like Sticky Slide, the sticky elements in this demo are cousins. However, they'v
 
 The [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter) property lets you apply graphical effects to the area _behind_ an element rather than to the element itself. This makes lots of cool effects that were previously only achievable using complicated CSS and JavaScript hacks doable with one line of CSS.
 
-For example, this demo uses `backdrop-filter` to achieve native OS-style blurring:
+For example, this demo uses `backdrop-filter` to achieve OS-style blurring:
 
 <iframe height="510" style="width: 100%;" scrolling="no" title="mddjjor" src="https://codepen.io/una/embed/mddjjor?height=265&theme-id=dark&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/una/pen/mddjjor'>mddjjor</a> by Una Kravets
