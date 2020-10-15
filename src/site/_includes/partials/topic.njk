@@ -12,6 +12,7 @@
   </ul>
   {% if topic.subtopics %}
     {% for section in topic.subtopics %}
+      <!-- {{ section.pathItems }} -->
       <h3 id="{{ section.title | slug }}" class="no-link w-headline--four w-topic__subtopic-header">
         {{ section.title }}
         <a class="w-headline-link" href="#{{ section.title | slug }}" aria-hidden="true">#</a>

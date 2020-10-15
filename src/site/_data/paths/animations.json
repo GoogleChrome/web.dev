@@ -12,6 +12,32 @@
         "animations-overview",
         "animations-guide"
       ]
+    },
+    {
+      "title": "Guides",
+      "pathItems": [
+        {
+          "title": "Animation syntax basics",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations"
+        },
+        {
+          "title": "Firefox DevTools animation inspector guide",
+          "url": "https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Work_with_animations"
+        },
+        {
+          "title": "Chrome DevTools animation inspector guide",
+          "url": "https://developers.google.com/web/tools/chrome-devtools/inspect-styles/animations"
+        }
+      ]
+    },
+    {
+      "title": "References",
+      "pathItems": [
+        {
+          "title": "The animation shorthand property",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/animation"
+        }
+      ]
     }
   ]
 }
