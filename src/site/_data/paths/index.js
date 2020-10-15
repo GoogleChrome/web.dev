@@ -38,5 +38,4 @@ module.exports = {
   react,
   reliable,
   secure,
-  vitals,
 };
