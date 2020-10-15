@@ -25,6 +25,7 @@ module.exports = {
   titleVariation: 'Home',
   defaultLocale: locale.defaultLocale,
   url: 'https://web.dev',
+  buildDate: new Date(),
   repo: 'https://github.com/GoogleChrome/web.dev',
   subscribe: 'https://web.dev/newsletter',
   subscribeForm:
