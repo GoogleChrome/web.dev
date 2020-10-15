@@ -180,7 +180,8 @@ parameters](https://first-party-test.glitch.me/coep).
 {% Aside %}
 [squoosh.app](https://squoosh.app) [now uses COOP /
 COEP](https://github.com/GoogleChromeLabs/squoosh/pull/829/files#diff-316f969413f2d9a065fcc08c7a5589c088dd1e21deebadccfc5a4372ac5e0cbbR22-R23)
-to leverage Shared Array Buffer on Android Chrome.
+to gain access to Wasm Threads (and Shared Array Buffer) as well on Android
+Chrome.
 {% endAside %}
 
 ### Determine whether isolation succeeded with `self.crossOriginIsolated`
