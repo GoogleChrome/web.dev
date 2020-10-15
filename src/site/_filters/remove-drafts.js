@@ -13,7 +13,7 @@ module.exports = function removeDrafts(topics, lang) {
     // Remove draft posts from a topic.
     const posts = topic.pathItems.filter((slug) => {
       const post = findByUrl(`/${lang}/${slug}/`);
-      return post && !post.data.draft;
+      return (post && !post.data.draft) || (slug.title && slug.url);
     });
     // If all of the posts in a topic are drafts then don't add the topic
     // to the final TOC.

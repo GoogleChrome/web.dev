@@ -2,6 +2,17 @@
   {% set url = ['', lang, slug, ''] | join('/') %}
   {% set item = url | findByUrl %}
 
+  {% if slug.title %}
+      <li class="w-path-listitem">
+        <a
+          class="w-path-link w-path-link--external"
+          href="{{ slug.url }}"
+        >
+          {{ slug.title }}
+        </a>
+      </li>
+  {% endif %}
+
   {% if item %}
 
     {% if item.data.draft %}
