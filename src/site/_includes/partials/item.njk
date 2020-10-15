@@ -2,7 +2,7 @@
   {% set url = ['', lang, slug, ''] | join('/') %}
   {% set item = url | findByUrl %}
 
-  {% if slug.title %}
+  {% if slug.title and slug.url %}
       <li class="w-path-listitem">
         <a
           class="w-path-link w-path-link--external"
