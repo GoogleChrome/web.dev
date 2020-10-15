@@ -177,6 +177,12 @@ header to all documents including those that are embedded via iframes.
 parameters](https://first-party-test.glitch.me/coep).
 {% endAside %}
 
+{% Aside %}
+[squoosh.app](https://squoosh.app) [now uses COOP /
+COEP](https://github.com/GoogleChromeLabs/squoosh/pull/829/files#diff-316f969413f2d9a065fcc08c7a5589c088dd1e21deebadccfc5a4372ac5e0cbbR22-R23)
+to leverage Shared Array Buffer on Android Chrome.
+{% endAside %}
+
 ### Determine whether isolation succeeded with `self.crossOriginIsolated`
 
 The `self.crossOriginIsolated` property returns `true` when the web page is in a
