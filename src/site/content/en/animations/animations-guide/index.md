@@ -243,7 +243,7 @@ animation is causing the browser to do layout work.
 <figure>
   <img class="w-screenshot w-screenshot--filled"
        src="summary-before.jpg"
-       alt="TODO">
+       alt="The Summary panel shows 37ms for rendering and 79ms for painting.">
   <figcaption>
     The <a href="https://animation-with-top-left.glitch.me/">animation-with-top-left</a>
     example causes rendering work.
@@ -253,68 +253,77 @@ animation is causing the browser to do layout work.
 <figure>
   <img class="w-screenshot w-screenshot--filled"
        src="summary-after.jpg"
-       alt="TODO">
+       alt="The Summary panel show zero values for rendering and painting.">
   <figcaption>
     The <a href="https://animation-with-transform.glitch.me/">animation-with-transform</a>
     example does not cause rendering work.
   </figcaption>
 </figure>
 
-<!-- TODO(kaycebasques): Add video -->
-
 #### Firefox DevTools {: #layout-firefox }
 
-<!-- TODO(kaycebasques): Follow the Chrome DevTools model above -->
+In Firefox DevTools the [Waterfall](https://developer.mozilla.org/en-US/docs/Tools/Performance/Waterfall)
+can help you to understand where the browser is spending time.
+
+1. Open the **Performance** panel.
+1. In the panel Start Recording Performance while your animation is happening.
+1. Stop the recording and inspect the **Waterfall** tab.
+
+If you see entries for [**Recalculate Style**](https://developer.mozilla.org/en-US/docs/Tools/Performance/Scenarios/Animating_CSS_properties)
+then the browser is having to begin at the start of the [rendering waterfall](https://developer.mozilla.org/en-US/docs/Tools/Performance/Scenarios/Animating_CSS_properties).
+
+<figure>
+  <img class="w-screenshot w-screenshot--filled"
+       src="waterfall-before.jpg"
+       alt="The Waterfall panel shows many entries for Recalculate Style.">
+  <figcaption>
+    The <a href="https://animation-with-top-left.glitch.me/">animation-with-top-left</a>
+    example causes style recalculation.
+  </figcaption>
+</figure>
+
+<figure>
+  <img class="w-screenshot w-screenshot--filled"
+       src="waterfall-after.jpg"
+       alt="The Waterfall panel shows no entries for Recalculate Style.">
+  <figcaption>
+    The <a href="https://animation-with-transform.glitch.me/">animation-with-transform</a>
+    example does not cause style recalculation.
+  </figcaption>
+</figure>
 
 ### Check if an animation is dropping frames {: #fps }
 
 1. Open the [**Rendering** tab][rendering] of Chrome DevTools.
 1. Enable the **FPS meter** checkbox.
-
-<!-- TODO(kaycebasques): Need to rephrase how to interpret results
-     because the explanation I've provided is not correct -->
+1. Watch the values as your animation runs.
 
 At the top of the **FPS meter** UI you see the label **Frames**. Below
-that you see a value along the lines of `49% 405 (1292 m) dropped of 3114`.
-A high-performance animation will has a high percentage, e.g. `99%`. A
-high percentage means that no frames are being dropped.
+that you see a value along the lines of `50% 1 (938 m) dropped of 1878`.
+A high-performance animation will have a high percentage, e.g. `99%`. A
+high percentage means that few frames are being dropped and the animation will look smooth.
 
 <figure>
   <img class="w-screenshot w-screenshot--filled"
        src="fps-before.jpg"
-       alt="TODO">
+       alt="The fps meter shows 50% of frames were dropped">
   <figcaption>
     The <a href="https://animation-with-top-left.glitch.me/">animation-with-top-left</a>
-    example causes 49% of frames to be dropped
+    example causes 50% of frames to be dropped
   </figcaption>
 </figure>
 
 <figure>
   <img class="w-screenshot w-screenshot--filled"
-       src="summary-after.jpg"
-       alt="TODO">
+       src="fps-after.jpg"
+       alt="The fps meter shows only 1% of frames were dropped">
   <figcaption>
     The <a href="https://animation-with-transform.glitch.me/">animation-with-transform</a>
-    example does not cause rendering work.
+    example causes only 1% of frames to be dropped.
   </figcaption>
 </figure>
 
 ### Check if an animation triggers paint {: #paint }
-
-#### Chrome DevTools {: #paint-chrome }
-
-<!-- TODO(kaycebasques): create step-by-step instructions and interpretation along the lines of
-     the layout and fps sections above. -->
-
-DevTools can help you to identify which parts of your page are being repainted.
-In Chrome DevTools, open the Rendering Tab and select Paint Flashing.
-
-<figure class="w-figure">
-  <img class="w-screenshot" src="./paint-flashing.jpg" alt="A UI element highlighted in green to demonstrate it will be repainted">
-</figure>
-
-If you see the whole screen flashing,
-or areas that you don't think should change highlighted then you can do some investigation.
 
 When it comes to painting, some things are more expensive than others.
 For example, anything that involves a blur (like a shadow, for example) is going to take longer to paint than drawing a red box.
@@ -322,17 +331,32 @@ In terms of CSS, however, this isn't always obvious:
 `background: red;` and `box-shadow: 0, 4px, 4px, rgba(0,0,0,0.5);`
 don't necessarily look like they have vastly different performance characteristics, but they do.
 
+Browser DevTools can help you to identify which areas need to be repainted,
+and performance issues related to painting.
+
+#### Chrome DevTools {: #paint-chrome }
+
+1. Open the [**Rendering** tab][rendering] of Chrome DevTools.
+1. Select **Paint Flashing**.
+1. Move the pointer around the screen.
+
+<figure class="w-figure">
+  <img class="w-screenshot" src="./paint-flashing.jpg" alt="A UI element highlighted in green to demonstrate it will be repainted">
+  <figcaption>In this example from Google Maps you can see the elements that will be repainted.</figcaption>
+</figure>
+
+If you see the whole screen flashing,
+or areas that you don't think should change highlighted then you can do some investigation.
+
 If you need to dig into whether a particular property is causing performance issues due to painting,
 the [paint profiler](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference#paint-profiler)
 in Chrome DevTools can help.
 
 #### Firefox DevTools {: #paint-firefox }
 
-<!-- TODO(kaycebasques): create step-by-step instructions and interpretation along the lines of
-     the layout and fps sections above. -->
+1. Open **Settings** and add a Toolbox button for [Toggle paint flashing](https://developer.mozilla.org/en-US/docs/Tools/Paint_Flashing_Tool).
+1. On the page you want to inspect, toggle the button on and move your mouse or scroll to see highlighted areas.
 
-In Firefox DevTools add a Toolbox button for [Paint Flashing](https://developer.mozilla.org/en-US/docs/Tools/Paint_Flashing_Tool).
-These tools will highlight areas of the page that will be repainted.
 
 ## Conclusion
 
