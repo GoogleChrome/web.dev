@@ -9,13 +9,13 @@
     {
       "title": "Concepts",
       "pathItems": [
-        "animations-overview",
-        "animations-guide"
+        "animations-overview"
       ]
     },
     {
       "title": "Guides",
       "pathItems": [
+        "animations-guide",
         {
           "title": "Animation syntax basics",
           "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations"
