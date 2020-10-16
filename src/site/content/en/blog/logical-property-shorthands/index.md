@@ -431,8 +431,8 @@ p {
 }
 
 /* add selectors and adjust for languages all supported */
-:lang(he) {...}
-:lang(mn) {...}
+:lang(he) {…}
+:lang(mn) {…}
 
 /* Logical Sides */
 /* Then, for supporting browsers to use */
