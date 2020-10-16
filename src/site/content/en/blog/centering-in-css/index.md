@@ -327,7 +327,7 @@ If I was on an island and could only have 1 centering technique, it would be…
 
 You can always find it in my stylesheets because it's useful for both macro and
 micro layouts. It's an all-around reliable solution with results that match my
-expectations. Also, because I'm an intrinsic design junkie, I tend to graduate
+expectations. Also, because I'm an intrinsic sizing junkie, I tend to graduate
 into this solution. True, it's a lot to type out, but the benefits it provides
 outweighs the extra code.
 
