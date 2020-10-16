@@ -19,8 +19,8 @@ The quality of a network connection can be affected by a number of factors such 
 - Poor coverage of a provider.
 - Extreme weather conditions.
 - Power outages.
-- Entering into "dead zones" such as buildings that block their network connections.
-- Travelling on a train and going through a tunnel.
+- Entering into permanent "dead zones" such as buildings with walls that block network connections.
+- Entering into temporary "dead zones" like when traveling on a train and going through a tunnel.
 - Time-boxed internet connections such as those in airports or hotels.
 - Cultural practices that require limited or no internet access at specific times or days.
 
@@ -51,7 +51,7 @@ current state of the application. For example, a notification could say:
 
 <figure class="w-figure" style="display: inline-block; max-width: 45%;">
   <img src="emojoy-toast-message.png"
-       alt=" Emojoy, the emoji messaging app informing the user when a change in state occurs."
+       alt="The Emojoy emoji messaging app informing the user when a change in state occurs."
   >
   <figcaption class="w-figcaption">
     Clearly inform the user when a change in state occurs as soon as possible.
@@ -189,7 +189,7 @@ make that the priority download.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
   <img src="tailpiece-offline-sidebar.png"
-       alt="Tailpiece has a navigational draw that shows what sections are ready for offline use."
+       alt="Tailpiece has a visual indicator that shows what sections are ready for offline use."
   >
   <figcaption class="w-figcaption">
     …letting them know that they can at least partially still use the app.
@@ -243,7 +243,8 @@ required during onboarding.
 ### Clarify what is accessible offline
 
 Be clear as to the option you are providing. You may need to show a tab or setting that shows an
-"offline library", so the user can easily see what they have stored on their phone and what needs to
+"offline library" or [content index](/content-indexing-api/),
+so the user can easily see what they have stored on their phone and what needs to
 be saved. Make sure the settings are concise and be clear where the data will be stored and who has
 access to it.
 
@@ -273,7 +274,7 @@ When building for flaky networks, try to sync as soon as the connection improves
 so that the experience is transferable. For example, imagine a travel app losing
 a network connection mid-way through a booking. When the connection is reestablished, the app syncs
 with the user's account allowing them to continue their booking on their desktop device. Not being
-able to transfer experiences is incredibly jarring to users.
+able to transfer experiences can be incredibly jarring to users.
 
 Inform the user of the current state of their data. For example, you could show whether the
 app has synced. Educate them where possible but try not to overburden them with messaging.
