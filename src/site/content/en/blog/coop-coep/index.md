@@ -13,6 +13,7 @@ description: >
 authors:
   - agektmr
 hero: hero.jpg
+alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
 updated: 2020-10-15
 tags:
@@ -23,6 +24,7 @@ origin_trial:
 feedback:
   - api
 ---
+
 {% Banner 'caution', 'body' %}
 
 **Updates**
@@ -33,8 +35,8 @@ returns `true`. `performance.measureMemory` is ending its origin trial and is
 planned to be enabled by default in Chrome 88. Shared Array Buffer on Android
 Chrome will be available from Chrome 88.
 
-**September 1st, 2020**: COOP Reporting is behind the `#cross-origin-isolated` flag
-in Chrome 86.
+**September 1st, 2020**: COOP Reporting is behind flags in Chrome 86. See
+[Enable Chrome flags](#flags).
 
 {% endBanner %}
 
@@ -245,22 +247,21 @@ API](https://bugzilla.mozilla.org/show_bug.cgi?id=1620573). You may want to use
 both APIs during the transition.
 {% endAside %}
 
-{% Details %}
+#### Enable the Reporting API
 
-{% DetailsSummary %}
-The COOP Reporting API in Chrome is available after version 86 with one of two conditions:
+You can try the COOP Reporting API in Chrome 86 and later by doing one of the following:
 
-1. Enable 2 flags at `chrome://flags`
-2. Register an orign trial
-{% endDetailsSummary %}
+1. Enabling Chrome flags
+2. Registering for an origin trial
 
-#### Enable 2 flags at `chrome://flags`
+##### Enable via Chrome flags {: #flags }
 
-* Cross Origin Opener Policy reporting (`#cross-origin-opener-policy-reporting`)
-* Cross Origin Opener Policy access reporting
-  (`#cross-origin-opener-policy-access-reporting`)
+1. Go to `chrome://flags`
+1. Enable **Cross Origin Opener Policy reporting** (`chrome://flags/#cross-origin-opener-policy-reporting`)
+1. Enable **Cross Origin Opener Policy access reporting**
+   (`chrome://flags/#cross-origin-opener-policy-access-reporting`)
 
-#### Register an origin trial
+##### Register for an origin trial
 
 {% include 'content/origin-trials.njk' %}
 
@@ -271,7 +272,7 @@ To use COOP Reporting API, the token must be served as an HTTP header instead of
 a `<meta>` tag.
 {% endAside %}
 
-{% endDetails %}
+#### `Report-To`
 
 To specify where the browser should send reports, append the `Report-To` HTTP
 header to any document that is served with a COEP or COOP HTTP header. The
