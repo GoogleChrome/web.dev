@@ -393,8 +393,6 @@ properly spaced with updated logical properties. For Cascade fallbacks, follow a
 with a logical one and the browser will use the "last" property it found during style 
 resolution. 
 
-Here's a handwritten fallback:
-
 ```css
 p {
   /* for unsupporting browsers */
@@ -403,6 +401,46 @@ p {
   
   /* for supporting browsers to use */
   /* and unsupporting browsers to ignore and go 🤷‍♂️ */
+  margin-block: 1ch 2ch;
+}
+```
+
+That's not quite a full solution for everyone though. Here's a handwritten fallback 
+that leverages the `:lang()` pseudo-selector to target specific languages, adjusts 
+their physical spacing appropriately, then at the end offers the logical 
+spacing for supporting browsers:
+
+```css
+/* physical side styles */
+p {
+  margin-top: 1ch;
+  margin-bottom: 2ch;
+}
+
+/* adjusted physical side styles per language */
+:lang(ja) {
+  p {
+    /* zero out styles not useful for traditional Japanese */
+    margin-top: 0;
+    margin-bottom: 0;
+
+    /* add appropriate styles for traditional Japanese */
+    margin-right: 1ch;
+    margin-left: 2ch;
+  }
+}
+
+/* add selectors and adjust for languages all supported */
+:lang(he) {…}
+:lang(mn) {…}
+
+/* Logical Sides */
+/* Then, for supporting browsers to use */
+/* and unsupporting browsers to ignore #TheCascade */
+p {
+  /* remove any potential physical cruft.. */
+  margin-inline: 0;
+  /* explicitly set logical value */
   margin-block: 1ch 2ch;
 }
 ```
