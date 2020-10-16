@@ -4,7 +4,7 @@ subhead: Manipulating video stream components.
 description: |
   Work with components of a video stream, such as frames and unmuxed chunks of encoded video or audio.
 date: 2020-10-13
-# updated: 2020-10-13
+updated: 2020-10-16
 hero: hero.jpg
 alt: A roll of film.
 authors:
@@ -283,7 +283,7 @@ Once a frame is no longer needed, call `destroy()` to release underlying memory
 before the garbage collector gets to it, this will reduce the average amount of
 memory used by the web application.
 
-```js/34
+```js
 let cnv = document.getElementById('canvas_to_render');
 let ctx = cnv.getContext('2d', { alpha: false });
 let ready_frames = [];
@@ -318,7 +318,6 @@ async function render_frame() {
   underflow = false;
 
   let bitmap = await frame.createImageBitmap();
-  frame.destroy();
   // Based on the frame's timestamp calculate how much of real time waiting
   // is needed before showing the next frame.
   let time_till_next_frame = calculateTimeTillNextFrame(frame.timestamp);
@@ -327,6 +326,7 @@ async function render_frame() {
 
   // Immediately schedule rendering of the next frame
   setTimeout(render_frame, 0);
+  frame.destroy();
 }
 ```
 
@@ -387,7 +387,7 @@ your thoughts to an existing issue.
 ### Report a problem with the implementation
 
 Did you find a bug with Chrome's implementation? Or is the implementation
-different from the spec? File a bug at [new.crbug.com](https://new.crbug.com).
+different from the spec? File a bug at [new.crbug.com](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EMedia%3EWebCodecs).
 Be sure to include as much detail as you can, simple instructions for
 reproducing, and enter `Blink>Media>WebCodecs` in the **Components** box.
 [Glitch](https://glitch.com/) works great for sharing quick and easy repros.
@@ -398,9 +398,9 @@ Are you planning to use the WebCodecs API? Your public support helps the
 Chrome team to prioritize features and shows other browser vendors how critical
 it is to support them.
 
-Share how you plan to use it on the [WICG Discourse thread][wicg-discourse] Send
-a Tweet to [@ChromiumDev][cr-dev-twitter] with the `#webcodecs` hashtag and
-let us know where and how you're using it.
+Send emails to [media-dev@chromium.org](mailto:media-dev@chromium.org) or tweet
+to [@ChromiumDev][cr-dev-twitter] with the `#webcodecs` hashtag and let us know
+where and how you're using it.
 
 [Hero image](https://unsplash.com/photos/8eQOBtgn9Qo) by
 [Denise Jans](https://unsplash.com/@dmjdenise)
