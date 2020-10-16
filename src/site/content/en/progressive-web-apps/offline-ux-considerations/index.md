@@ -19,17 +19,16 @@ The quality of a network connection can be affected by a number of factors such 
 - Poor coverage of a provider.
 - Extreme weather conditions.
 - Power outages.
-- Users travelling into "dead zones" such as buildings that block their network connections.
+- Entering into "dead zones" such as buildings that block their network connections.
 - Travelling on a train and going through a tunnel.
-- Internet connection is managed by a third party and time boxed when it will be active or inactive
-  like in an airport or hotel.
+- Time-boxed internet connections such as those in airports or hotels.
 - Cultural practices that require limited or no internet access at specific times or days.
 
 Your goal is to provide a good experience that lessens the impact of changes in connectivity.
 
 ## Decide what to show your users when they have a bad network connection
 
-The first question that must be asked is: what does success and failure of a network connection look
+The first question that must be asked is what does success and failure of a network connection look
 like? A successful connection is your app's normal online experience. The failure of a connection,
 however, can be both the offline state of your app as well how the app behaves when there is a laggy
 network.
@@ -47,7 +46,7 @@ important UX questions:
 Inform the user of both the actions they can still take when they have a network failure and the
 current state of the application. For example, a notification could say:
 
-> You seem to have a bad network connection. [Not to worry!] Messages will be "sent when the
+> You seem to have a bad network connection. Not to worry! Messages will be sent when the
 > network is restored.
 
 <figure class="w-figure" style="display: inline-block; max-width: 45%;">
@@ -70,27 +69,27 @@ current state of the application. For example, a notification could say:
 
 ### Inform users when the network connection improves or is restored
 
-How you deal with informing the user once their network connection has improved will depend largely
-on your application. For apps that require update information displayed as a priority such as a
-stock market app, auto-updating and notifying the user as soon as possible is crucial.
+How you inform the user that their network connection has improved depends
+on your application. Apps such as a stock market app that prioritize current information
+should auto-update and notify the user as soon as possible.
 
 It is recommended that you let the user know that your web app has been updated "in the background"
-by using a visual cue such as a material design toast element. This involves detecting both the
-initial registration of your service worker and that there's been an update to the service
-worker-managed content. You can see a code example of this <a
+by using a visual cue such as, for example, a material design toast element. This involves detecting both the
+the presence of a service worker and an update to its managed 
+content. You can see a code example of this <a
 href="https://github.com/GoogleChrome/sw-precache/blob/master/demo/app/js/service-worker-registration.js#L29">function
 at work here</a>.
 
-One example of this would be <a href="https://www.chromestatus.com/features">
+One example of this would be <a href="https://www.chromestatus.com/">
 www.chromestatus.com</a> which posts a note to the user when the app has been updated.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
   <img src="weather-app.png"
-      alt="An example of a weather app."
+      alt="An example weather app."
   >
   <figcaption class="w-figcaption">
-    Some apps, like the weather app, need to auto update as old data
-    is not of use to the user.
+    Some apps, like the weather app, need to auto-update, as old data
+    is not useful.
   </figcaption>
 </figure>
 
@@ -99,20 +98,20 @@ www.chromestatus.com</a> which posts a note to the user when the app has been up
       alt="Chrome Status uses a toast"
   >
   <figcaption class="w-figcaption">
-    Other apps like Chrome Status let the user know
+    Apps like Chrome Status let the user know
     when content has been updated via a toast notification.
   </figcaption>
 </figure>
 
 You may also show the last time the app was updated at all times in a prominent space. This would
-also be useful for a currency converter app, for example.
+be useful for a currency converter app, for example.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
   <img src="material-money-rates-out-of-date.png"
-       alt="Material money app that is out-of-date"
+       alt="The Material Money app being out-of-date."
   >
   <figcaption class="w-figcaption">
-    Material Money uses cached rates…
+    Material Money caches rates…
   </figcaption>
 </figure>
 
@@ -125,14 +124,13 @@ also be useful for a currency converter app, for example.
   </figcaption>
 </figure>
 
-Other applications such as a news app could show a simple notification informing the user that there
-is newer content, with a tap-to-update function. The reason for doing that is if a user is currently
-reading an article an auto-update would refresh the page and they would lose where they were reading
-last.
+Applications such as news apps could show a simple tap-to-update notification
+informing the user of new content. Auto-updating would cause users to lose 
+their place.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
   <img src="tailpiece-normal.png"
-       alt="Example news app, Tailpiece in its normal state"
+       alt="An example news app, Tailpiece in its normal state"
   >
   <figcaption class="w-figcaption">
     Tailpiece, an online newspaper, will auto-download the latest news…
@@ -144,7 +142,7 @@ last.
        alt="Example news app, Tailpiece when its ready to be updated"
   >
   <figcaption class="w-figcaption">
-    …but allow the users to refresh manually, so they do not lose their place in the article.
+    …but allow users to refresh manually so they do not lose their place in an article.
   </figcaption>
 </figure>
 
@@ -152,7 +150,7 @@ last.
 
 Each bit of UI may have its own context and functionality that will change depending on if it
 requires a successful connection. One example would be an e-commerce site that can be browsed
-offline through the Buy button and pricing is disabled until a connection has been reestablished.
+offline. The Buy button and pricing would be disabled until a connection is reestablished.
 
 Other forms of contextual states could include data. For example, the financial application
 Robinhood allows users to buy stock and uses color and graphics to notify the user when the market
@@ -166,7 +164,7 @@ Offline is a new mental model for everyone. You need to educate your users about
 occur when they don't have a connection. Inform them of where large data is saved and give them
 settings to change the default behavior. Make sure you use multiple UI design components such as
 informative language, icons, notifications, color and imagery to convey these ideas collectively
-rather than relying on one design device, such as an icon on its own, to tell the whole story.
+rather than relying on a single design choice, such as an icon on its own, to tell the whole story.
 
 ## Provide an offline experience by default
 
@@ -175,10 +173,10 @@ increasingly frustrated if they can only access their data with a network connec
 the experience as stable as possible. An unstable connection will make your app feel untrustworthy,
 where an app that lessens the impact of a network failure will feel magical to the user.
 
-News sites could benefit from auto downloading and saving the latest news content of the day so a
+News sites could benefit from auto downloading and saving the latest news so a
 user could read today's news without a connection, perhaps downloading the text without the article
-images. Also adapt with the user's behavior so if the sports section is what they typically view,
-perhaps make this the priority data that is downloaded.
+images. Also adapt to the user's behavior. For example, if the sports section is what they typically view,
+make that the priority download.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
   <img src="tailpiece-offline.png"
@@ -203,7 +201,7 @@ perhaps make this the priority data that is downloaded.
 When a web app first loads you need to indicate to the user if it is ready for offline use. Do this
 with a
 [widget that provides brief feedback](https://material.google.com/components/snackbars-toasts.html 'widget that provides brief feedback')
-about an operation through a message at the bottom of the screen, for example when a section has
+about an operation through a message at the bottom of the screen such as, for example, when a section has
 been synced or a data file has downloaded.
 
 Again think of the language you are using to make sure it is fit for your audience. Ensure the
@@ -226,7 +224,7 @@ to.
        alt="Chrome Status site is offline"
   >
   <figcaption class="w-figcaption">
-    …and so does the Chrome Status site, including information about the occupied storage.
+    …and so does the Chrome Status site, which includes information about the occupied storage.
   </figcaption>
 </figure>
 
@@ -238,7 +236,7 @@ via a settings menu. Make sure that the pin or download UI is not obscured by ot
 that the feature is obvious to the user.
 
 One example would be a music player that requires large data files. The user is aware of the
-associated data cost, but is also aware that they may want to use the player when they are offline.
+associated data cost, but may also want to use the player offline.
 Downloading music for later use requires the user to plan ahead, so education about this may be
 required during onboarding.
 
@@ -258,7 +256,7 @@ for offline use when they have connectivity.
 Users on data plans may avoid downloading large files for fear of cost, so you may also want to
 display an associated cost so users can make an active comparison for a specific file or task. For
 example, if the music app above could detect if the user is on a data plan and show the file size so
-that users can see the true cost of a file.
+that users can see the cost of a file.
 
 ### Help prevent hacked experiences
 
@@ -266,19 +264,19 @@ Often users hack an experience without realizing they are doing it. For example 
 apps like Google Drive, it was common for users to save large files and attach them to emails so
 they could carry on editing from a different device. It is important not to be pulled into their
 hacked experience but rather look at what they are trying to achieve. In other words instead of
-thinking of how you can make attaching a large attachment more user friendly, solve the problem of
+thinking of how you can make attaching a large file more user friendly, solve the problem of
 sharing large files across multiple devices.
 
 ## Make experiences transferable from one device to another
 
-When making an experience with a flaky network connection, seek for it to sync correctly once the
-connection improves so that the experience is transferable. For example, imagine a travel app losing
+When building for flaky networks, try to sync as soon as the connection improves
+so that the experience is transferable. For example, imagine a travel app losing
 a network connection mid-way through a booking. When the connection is reestablished, the app syncs
-with the user's account and then they can continue their booking on their desktop device. Not being
+with the user's account allowing them to continue their booking on their desktop device. Not being
 able to transfer experiences is incredibly jarring to users.
 
-Inform the user of the current state of their data, for example, if the app has managed to sync or
-not. Educate them where possible but try not to overburden them with messaging.
+Inform the user of the current state of their data. For example, you could show whether the
+app has synced. Educate them where possible but try not to overburden them with messaging.
 
 ## Create inclusive design experiences
 
@@ -286,24 +284,24 @@ When designing seek to be inclusive by providing meaningful design devices, simp
 standard iconography, and meaningful imagery that will guide the user to complete the action or task
 rather than hinder their progress.
 
-### Let simple concise language be a guide
+### Use simple concise language
 
-Good UX is not just about a well designed interface. It includes the flow a user takes as well as
-the language used in the app. Avoid using tech jargon when explaining the state of the app or
+Good UX is not just about a well designed interface. It includes the path a user takes as well as
+the words used in the app. Avoid tech jargon when explaining the state of the app or
 individual UI components. Consider that the phrase "app offline" might not convey to the user the
 current state of the app.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="download.png" alt="Download icon example is a good example">
+  <img src="download.png" alt="A download icon is a good example">
   <figcaption class="w-figcaption">
     <b>DO</b>: Use language and imagery that describes the action.
   </figcaption>
 </figure>
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="service-worker-ready.png" alt="Service worker icon example is a bad example">
+  <img src="service-worker-ready.png" alt="A service worker icon is a bad example">
   <figcaption class="w-figcaption">
-    <b>DON'T</b>: Avoid abstract terms that may not be accessible.
+    <b>DON'T</b>: Avoid terms that aren't intelligible to non-technical users.
   </figcaption>
 </figure>
 
@@ -311,23 +309,23 @@ current state of the app.
 
 Use language, color, and visual components to demonstrate a change of state or current status.
 Solely using color to demonstrate state may not be noticed by the user and may be inaccessible to
-users who suffer from visual disabilities. Also, the gut instinct for designers is to use grayed UI
-to represent offline, but this can have a loaded meaning on the web. Grayed UI is also used to mean
-that an element is disabled, such as input elements on a form. This can cause confusion if you ONLY
+users who suffer from visual disabilities. Also, the instinct for designers is to use grayed UI
+to represent offline, but this can have a loaded meaning on the web. Grayed UI such as input elements 
+on a form also means that an element is disabled. This can cause confusion if you *only*
 use color to depict state.
 
-To prevent misunderstandings, express different states to the user in multiple ways: for example
-with color, labels and UI components.
+To prevent misunderstandings, express different states to the user in multiple ways, for example
+with color, labels, and UI components.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="accessibility_color7_do.png" alt="Good example that uses color and text to show an error.">
+  <img src="accessibility_color7_do.png" alt="A good example that uses color and text to show an error.">
   <figcaption class="w-figcaption">
     <b>DO</b>: Use a mixture of design elements to convey meaning
   </figcaption>
 </figure>
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="accessibility_color8_dont.png" alt="Bad example only using color.">
+  <img src="accessibility_color8_dont.png" alt="A bad example only using color.">
   <figcaption class="w-figcaption">
     <b>DON'T</b>: Use color as the sole means to describe what is happening.
   </figcaption>
@@ -341,8 +339,8 @@ misunderstand icons used on their own. For example, using a floppy disc for save
 older generation but young users who have never seen a floppy disc may be confused by the metaphor.
 Likewise, the 'hamburger' menu icon has been known to confuse users when presented without a label.
 
-When introducing an offline icon try to remain consistent with the industry standard visual (if one
-exists) as well as providing a text label and description. For example, saving for offline might be
+When introducing an offline icon try to remain consistent with industry standard visuals (when they
+exist) as well as providing a text label and description. For example, saving for offline might be
 a typical download icon or perhaps if the action involves syncing it could be a syncing icon. Some
 actions may be interpreted as saving for offline rather than demonstrating a network's status. Think
 of the action you are trying to convey rather than presenting the user with an abstract concept. For
@@ -364,13 +362,13 @@ loading. This reassures the user that something is happening and helps prevent r
 refreshes of your app.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="tailpiece-skel-article.png" alt="Skeleton layout example">
+  <img src="tailpiece-skel-article.png" alt="A skeleton layout example">
   <figcaption class="w-figcaption">
     Skeleton placeholder layout is shown during the download of the article…
   </figcaption>
 </figure>
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="tailpiece-normal.png" alt="loaded article example">
+  <img src="tailpiece-normal.png" alt="A loaded article example">
   <figcaption class="w-figcaption">
     …that gets replaced with the real contents once the download finishes.
   </figcaption>
@@ -410,15 +408,15 @@ with things that are familiar, e.g downloading for later use is the same as offl
 
 When designing for unstable network connections, use these:
 
-- Think how you design for the success, failure and instability of a network connection.
+- Think how you design for the success, failure, and instability of a network connection.
 - Data may be expensive, so be considerate to the user.
 - For most users globally, the tech environment is almost exclusively mobile.
-- Low end devices are commonplace, with limited storage, memory and processing power and, small
+- Low end devices are commonplace, with limited storage, memory and processing power, and small
   displays and lower touchscreen quality. Make sure performance is a part of your design process.
 - Allow users to browse your application when they are offline.
 - Inform users of their current state and of changes in states.
 - Try to provide offline by default if your app doesn't require much data.
 - If the app is data-heavy, educate users about how they can download for offline use.
 - Make experiences transferable between devices.
-- Utilize language, icons, imagery, typography and color to express ideas to the user collectively.
+- Utilize language, icons, imagery, typography, and color to express ideas to the user collectively.
 - Provide reassurance and feedback to help the user.
