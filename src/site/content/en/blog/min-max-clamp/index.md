@@ -228,7 +228,7 @@ code:
 
 ```css
 p {
-  clamp(1.5rem, 5vw, 3rem);
+  font-size: clamp(1.5rem, 5vw, 3rem);
 }
 ```
 
