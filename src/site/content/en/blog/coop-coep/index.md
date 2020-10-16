@@ -29,7 +29,7 @@ feedback:
 
 **October 15th, 2020**: `self.crossOriginIsolated` is available from Chrome 87.
 Reflecting that, `document.domain` is immutable when `self.crossOriginIsolated`
-returns `true`. `performance.measureMemory` ending its origin trial and is
+returns `true`. `performance.measureMemory` is ending its origin trial and is
 planned to be enabled by default in Chrome 88. Shared Array Buffer on Android
 Chrome will be available from Chrome 88.
 
@@ -178,7 +178,7 @@ parameters](https://first-party-test.glitch.me/coep).
 {% endAside %}
 
 {% Aside %}
-[squoosh.app](https://squoosh.app) [now uses COOP /
+[Squoosh](https://squoosh.app) (an image optimization PWA) [now uses COOP /
 COEP](https://github.com/GoogleChromeLabs/squoosh/pull/829/files#diff-316f969413f2d9a065fcc08c7a5589c088dd1e21deebadccfc5a4372ac5e0cbbR22-R23)
 to gain access to Wasm Threads (and Shared Array Buffer) as well on Android
 Chrome.
