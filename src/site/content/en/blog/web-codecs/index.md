@@ -4,7 +4,7 @@ subhead: Manipulating video stream components.
 description: |
   Work with components of a video stream, such as frames and unmuxed chunks of encoded video or audio.
 date: 2020-10-13
-updated: 2020-10-13
+# updated: 2020-10-13
 hero: hero.jpg
 alt: A roll of film.
 authors:
@@ -21,8 +21,7 @@ feedback:
 
 Modern web technologies provide ample ways to work with video.
 [Media Stream API](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Recording_API),
-[Media Recording API](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Recording_API)
-,
+[Media Recording API](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Recording_API),
 [Media Source API](https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API),
  and [WebRTC API](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API) add up
 to a rich tool set for recording, transferring, and playing video streams.
@@ -119,7 +118,7 @@ vtr.start((frame) => {
 ```
 
 <figure class="w-figure">
-  <img src="./consuming-frames-from-tracks.png" alt="The path from ImageBitmap to the network or to storage.">
+  <img src="./consuming-frames-from-tracks.png" alt="The path from MediaStreamTrack to the network or to storage.">
   <figcaption class="w-figcaption">The path from <code>MediaStreamTrack</code> to the network or to storage.</figcaption>
 </figure>
 
@@ -395,12 +394,12 @@ reproducing, and enter `Blink>Media>WebCodecs` in the **Components** box.
 
 ### Show support for the API
 
-Are you planning to use the Idle Detection API? Your public support helps the
+Are you planning to use the WebCodecs API? Your public support helps the
 Chrome team to prioritize features and shows other browser vendors how critical
 it is to support them.
 
 Share how you plan to use it on the [WICG Discourse thread][wicg-discourse] Send
-a Tweet to [@ChromiumDev][cr-dev-twitter] with the `#idledetection` hashtag and
+a Tweet to [@ChromiumDev][cr-dev-twitter] with the `#webcodecs` hashtag and
 let us know where and how you're using it.
 
 [Hero image](https://unsplash.com/photos/8eQOBtgn9Qo) by
