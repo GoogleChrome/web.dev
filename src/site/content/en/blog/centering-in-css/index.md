@@ -5,7 +5,7 @@ subhead: Follow 5 centering techniques as they go through a series of tests to s
 authors:
   - adamargyle
 description: Follow 5 centering techniques as they go through a series of tests to see which one is the most resilient to change.
-date: 2020-08-11
+date: 2020-11-11
 hero: hero.png
 thumbnail: thumb.png
 codelabs: codelab-centering-in-css
@@ -26,27 +26,34 @@ If you prefer video, here's a YouTube version of this post:
 
 ## The challenge
 
-In order to demonstrate my rationale behind these centering techniques, I
-created The Resilience Ringer, a series of stress tests for each centering
-strategy to balance within. I even pick a winner at the end, which is my most
-favorite and used centering technique of all time! 
+**There are difference types of centering.** From differing use cases, number of things 
+to center, etc. In order to demonstrate a rationale behind "a winning" centering technique, I
+created The Resilience Ringer. It's a series of stress tests for each centering
+strategy to balance within and you to observe their performance. 
+At the end, I reveal the highest scoring technique, as well as a "most valuable." 
+Hopefully you walk away with new centering techniques and solutions.
 
 ### The Resilience Ringer
 
-The Resilience Ringer is the implementation of my beliefs that a centering
+The Resilience Ringer is a representation of my beliefs that a centering
 strategy should be resilient to international layouts, variable sized viewports, text edits and dynamic
 content. These tenets helped shape the following resilience tests for the
 centering techniques to endure:
 
-1. **Squished:** centering should be able to handle changes to width
-2. **Squashed:** centering should be able to handle changes to height
-3. **Duplicate:** centering should be dynamic to number of items
-4. **Edit:** centering should be dynamic to length and language of content
-5. **Flow:** centering should be document direction and writing mode agnostic
+1. **Squished:**  
+centering should be able to handle changes to width  
+1. **Squashed:**  
+centering should be able to handle changes to height  
+1. **Duplicate:**  
+centering should be dynamic to number of items  
+1. **Edit:**  
+centering should be dynamic to length and language of content  
+1. **Flow:**  
+centering should be document direction and writing mode agnostic  
 
-The winning solution will demonstrate its resilience by keeping its content in
-the center while it's squished, squashed, duplicated, edited, and swapped to
-various language modes and directions.
+The winning solution should demonstrate its resilience by keeping contents in
+ center while being squished, squashed, duplicated, edited, and swapped to
+various language modes and directions. Trustworthy and resilient center, a safe center.
 
 #### Legend
 
@@ -58,26 +65,25 @@ in context:
   <figcaption class="w-figcaption"></figcaption>
 </figure>
 
-1. A pink border indicates ownership of centering styles
-1. The grey box is the background on the container which seeks to have centered
+- A pink border indicates ownership of centering styles
+- The grey box is the background on the container which seeks to have centered
    items
-1. Each child has a white background color so you can see any effects the
+- Each child has a white background color so you can see any effects the
    centering technique has on child box sizes (if any)
 
 ## The 5 Contestants
 5 centering techniques enter the Resilience Ringer, only one will receive the
 Resilience Crown 👸. 
 
-### Content Center
+### 1. Content Center
 
 <figure class="w-figure w-figure--fullbleed">
   <video playsinline controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/content-center-ringer-cycle.mp4">
   </video>
   <figcaption>
-    Editing content with
+    Editing and duplicating content with
     <a href="https://github.com/GoogleChromeLabs/ProjectVisBug#visbug">VisBug</a>
-    and changing text orientation
   </figcaption>
 </figure>
 
@@ -122,7 +128,7 @@ generally things that need legible centering.
 can also benefit from `place-content` and `place-item`
 [shorthands](https://codepen.io/argyleink/pen/PoqWOPZ). {% endAside %}
 
-### Gentle Flex
+### 2. Gentle Flex
 
 <figure class="w-figure w-figure--fullbleed">
   <video playsinline controls autoplay loop muted class="w-screenshot">
@@ -159,7 +165,7 @@ centering. As gently as possible, all items are stacked, centered, and spaced.
 {% endCompare %}
 
 {% Compare 'worse', 'Cons' %}
-- 5 lines of code
+- Most lines of code
 
 {% endCompare %}
 </div>
@@ -172,7 +178,7 @@ centering. As gently as possible, all items are stacked, centered, and spaced.
   less of a macro layout it becomes. As a layout covers less surface area or
   contains less layouts, it becomes more of a micro layout. {% endAside %}
 
-### Autobot
+### 3. Autobot
 
 <figure class="w-figure w-figure--fullbleed">
   <video playsinline controls autoplay loop muted class="w-screenshot">
@@ -218,7 +224,7 @@ are styled with auto margins. There's something nostalgic and wonderful about
 
 **Great for** centering icons or pseudo-elements.
 
-### Fluffy Center
+### 4. Fluffy Center
 
 <figure class="w-figure w-figure--fullbleed">
   <video playsinline controls autoplay loop muted class="w-screenshot">
@@ -262,7 +268,7 @@ border!?
 **Great for** word or phrase-centric centering, tags, pills, buttons, chips, and
 more.
 
-### Pop & Plop
+### 5. Pop & Plop
 
 <figure class="w-figure w-figure--fullbleed">
   <video playsinline controls autoplay loop muted class="w-screenshot">
