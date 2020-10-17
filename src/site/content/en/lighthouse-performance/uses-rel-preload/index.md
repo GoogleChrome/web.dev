@@ -59,7 +59,8 @@ should be downloaded as soon as possible.
 ## Declare your preload links
 
 Declare preload links in your HTML to instruct the browser to download key resources
-as soon as possible.
+as soon as possible.  Note that these tags are added *in addition to* the existing
+`link` or `script` tags, not replacing them.
 
 ```html
 <head>
