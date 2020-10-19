@@ -6,7 +6,7 @@ authors:
 description: |
   Faster playback start means more people watching your video. That's a known fact. In this article I'll explore techniques you can use to accelerate your media playback by actively preloading resources depending on your use case.
 date: 2017-08-17
-updated: 2020-10-15
+updated: 2020-10-21
 tags:
   - media
   - video
@@ -105,8 +105,8 @@ Complex error handling is the website's responsibility.
 
 If the video source is a unique file hosted on a web server, you may want to
 use the video `preload` attribute to provide a hint to the browser as to [how
-much information or content to preload]. This means [Media Source Extensions
-(MSE)] is not compatible with `preload`.
+much information or content to preload][preload]. This means [Media Source Extensions
+(MSE)][mse-basics] is not compatible with `preload`.
 
 Resource fetching will start only when the initial HTML document has been
 completely loaded and parsed (e.g. the `DOMContentLoaded` event has fired)
@@ -131,8 +131,8 @@ previously).
   video.addEventListener('loadedmetadata', function() {
     if (video.buffered.length === 0) return;
 
-    var bufferedSeconds = video.buffered.end(0) - video.buffered.start(0);
-    console.log(bufferedSeconds + ' seconds of video are ready to play!');
+    const bufferedSeconds = video.buffered.end(0) - video.buffered.start(0);
+    console.log(`${bufferedSeconds} seconds of video are ready to play.`);
   });
 </script>
 ```
@@ -148,8 +148,8 @@ further buffering.
   video.addEventListener('loadedmetadata', function() {
     if (video.buffered.length === 0) return;
 
-    var bufferedSeconds = video.buffered.end(0) - video.buffered.start(0);
-    console.log(bufferedSeconds + ' seconds of video are ready to play!');
+    const bufferedSeconds = video.buffered.end(0) - video.buffered.start(0);
+    console.log(`${bufferedSeconds} seconds of video are ready to play.`);
   });
 </script>
 ```
@@ -160,8 +160,6 @@ applied in Chrome:
 
 - When [Data Saver][datasaver] is enabled, Chrome forces the `preload` value to
   `none`.
-- In Android 4.3, Chrome forces the `preload` value to `none` due to an [Android
-  bug].
 - On a cellular connection (2G, 3G, and 4G), Chrome forces the `preload` value to
   `metadata`.
 
@@ -214,7 +212,9 @@ finished yet, a regular network fetch will happen.
 </script>
 ```
 
-Note: I would recommend using this only for small media files (< 5MB).
+{% Aside %}
+  I would recommend using this only for small media files (less than 5MB).
+{% endAside %}
 
 Because the preloaded resource is going to be consumed by a video element in
 the example, the `as` preload link value is `video`. If it were an audio
@@ -224,7 +224,7 @@ element, it would be `as="audio"`.
 
 The example below shows how to preload the first segment of a video with `<link
 rel="preload">` and use it with Media Source Extensions. If you're not familiar
-with the MSE Javascript API, please read [MSE basics].
+with the MSE Javascript API, please read [MSE basics][mse-basics].
 
 For the sake of simplicity, let's assume the entire video has been split into
 smaller files like "file_1.webm", "file_2.webm", "file_3.webm", etc.
@@ -260,10 +260,14 @@ smaller files like "file_1.webm", "file_2.webm", "file_3.webm", etc.
 </script>
 ```
 
-Warning: For cross-origin resources, make sure your CORS headers are set
-properly. As we can't create an array buffer from an opaque response retrieved
-with `fetch(videoFileUrl, { mode: 'no-cors' })`, we won't be able to feed any
-video or audio element.
+{% Aside 'warning' %}
+  For cross-origin resources, make sure your CORS headers are set properly. As
+  we can't create an array buffer from an opaque response retrieved with
+  `fetch(videoFileUrl, { mode: 'no-cors' })`, we won't be able to feed any video
+  or audio element.
+{% endAside %}
+
+
 
 ### Support
 
@@ -316,8 +320,8 @@ built to handle this for you.
 
   function updateEnd() {
     // Video is now ready to play!
-    var bufferedSeconds = video.buffered.end(0) - video.buffered.start(0);
-    console.log(bufferedSeconds + ' seconds of video are ready to play!');
+    const bufferedSeconds = video.buffered.end(0) - video.buffered.start(0);
+    console.log(`${bufferedSeconds} seconds of video are ready to play.`);
 
     // Fetch the next segment of video when user starts playing the video.
     video.addEventListener('playing', fetchNextSegment, { once: true });
@@ -371,7 +375,7 @@ deliver an optimized user experience to cost- and performance-constrained
 users.
 
 Learn more by reading our complete [Delivering Fast and Light
-Applications with Save-Data] article.
+Applications with Save-Data][fast-light] article.
 
 #### Smart loading based on network information
 
@@ -496,10 +500,12 @@ function onPlayButtonClick(videoFileUrl) {
 }
 ```
 
-Warning: For cross-origin resources, make sure your CORS headers are set
-properly. As we can't create an array buffer from an opaque response retrieved
-with `fetch(videoFileUrl, { mode: 'no-cors' })`, we won't be able to feed any
-video or audio element.
+{% Aside 'warning' %}
+  For cross-origin resources, make sure your CORS headers are set properly. As
+  we can't create an array buffer from an opaque response retrieved with
+  `fetch(videoFileUrl, { mode: 'no-cors' })`, we won't be able to feed any video
+  or audio element.
+{% endAside %}
 
 ### Create Range responses with a service worker
 
@@ -556,7 +562,7 @@ function loadFromCacheOrFetch(request) {
 ```
 
 It is important to note that I used `response.blob()` to recreate this sliced
-response as this simply gives me a handle to the file ([in Chrome]) while
+response as this simply gives me a handle to the file while
 `response.arrayBuffer()` brings the entire file into renderer memory.
 
 My custom `X-From-Cache` HTTP header can be used to know whether this request
@@ -588,3 +594,6 @@ requests.
 [jw-player]: https://developer.jwplayer.com/
 [video-js]: http://videojs.com/
 [network-info-sample]: https://googlechrome.github.io/samples/network-information/
+[fast-light]: https://developers.google.com/web/updates/2016/02/save-data
+[mse-basics]: https://developers.google.com/web/fundamentals/media/mse/basics
+[preload]: https://web.dev/video-and-source-tags/#preload
