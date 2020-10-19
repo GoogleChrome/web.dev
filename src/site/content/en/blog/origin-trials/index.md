@@ -4,7 +4,7 @@ subhead: Origin trials are a way to test a new or experimental web platform feat
 authors: 
   - samdutton
 date: 2020-06-22
-updated: 2020-10-12
+updated: 2020-10-18
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: Pipette with purple liquid
@@ -75,7 +75,7 @@ The final shipping API might be worse for it.
 In rare circumstances, if there was clear evidence that developers engaged with the origin trial and that their
 concerns were taken into account in the final API design and implementation,
 this breakage period may be skipped
-<a href="https://sites.google.com/a/chromium.org/dev/blink/launching-features#sites-canvas-main-content:~:text=If%20you%20wish%20to%20skip%20the,Ship%20imply%20approval%20of%20the%20request.">upon request</a>.
+[upon request](https://sites.google.com/a/chromium.org/dev/blink/launching-features#sites-canvas-main-content:~:text=If%20you%20wish%20to%20skip%20the,Ship%20imply%20approval%20of%20the%20request.).
 {% endAside %}
 
 ## Find out more
