@@ -132,7 +132,7 @@ previously).
     if (video.buffered.length === 0) return;
 
     var bufferedSeconds = video.buffered.end(0) - video.buffered.start(0);
-    console.log(bufferedSeconds + ' seconds of video are ready to play!');
+    console.log(`${bufferedSeconds} seconds of video are ready to play!`);
   });
 </script>
 ```
