@@ -4,7 +4,7 @@ subhead: >
   Learn how to measure memory usage of your web page in production to detect regressions.
 description: >
   Learn how to measure memory usage of your web page in production to detect regressions.
-update: 2020-07-13
+updated: 2020-10-19
 date: 2020-04-13
 authors:
   - ulan
@@ -302,7 +302,7 @@ to hear about your thoughts and experiences with
 
 Is there something about the API that doesn't work as expected? Or are there
 missing properties that you need to implement your idea? File a spec issue on
-the [performance.measureMemory GitHub repo][issues] or add your thoughts to an
+the [performance.measureMemory() GitHub repo][issues] or add your thoughts to an
 existing issue.
 
 ### Report a problem with the implementation
