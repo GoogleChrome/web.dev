@@ -202,7 +202,7 @@ existing shadow root before creating one using `attachShadow()`. Declarative Sha
 small change that allows existing components to work despite this: calling the `attachShadow()`
 method on an element with an existing **Declarative** Shadow Root will **not** throw an error.
 Instead, the Declarative Shadow Root is emptied and returned. This allows older components not
-built for Declarative Shadow DOM to continue working, since declaratives roots are preserved until
+built for Declarative Shadow DOM to continue working, since declarative roots are preserved until
 an imperative replacement is created.
 
 For newly-created Custom Elements, a new
