@@ -32,7 +32,7 @@ module.exports = {
   thumbnail: '/images/social.png',
   isBannerEnabled: true,
   banner:
-    'Take the [MDN Developer Needs Assessment survey](https://www.surveygizmo.com/s3/5897636/GoogleWebDev) and help us understand your top needs and frustrations when building for the web.',
+    'Chrome Dev Summit 2020 is back & going virtual on December 9-10. [Learn more](https://developer.chrome.com/devsummit/?utm_source=webdevbanner&utm_medium=website).',
   // Note that the imageCdn value is only used when we do a production build
   // of the site. Otherwise all image paths are local. This means you can
   // develop locally without having to mess with the CDN at all.
