@@ -95,6 +95,26 @@ Finally, you'll want to minify your CSS to remove any extra whitespace or
 characters (see [Minify CSS](/minify-css)).
 This ensures that you're sending the smallest possible bundle to your users.
 
+## Stack-specific guidance
+
+If you use any of these CMS's, libraries or frameworks, consider the following suggestions:
+
+### AMP
+
+Use tools such as [AMP Optimizer](https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer) to [server-side render AMP layouts](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/server-side-rendering/).
+
+### Drupal
+
+Consider using a module to inline critical CSS and JavaScript, or potentially load assets asynchronously via JavaScript such as the [Advanced CSS/JS Aggregation](https://www.drupal.org/project/advagg) module. Beware that optimizations provided by this module may break your site, so you will likely need to make code changes.
+
+### Joomla
+
+There are a number of Joomla plugins that can help you [inline critical assets](https://extensions.joomla.org/instant-search/?jed_live%5Bquery%5D=performance) or [defer less important resources](https://extensions.joomla.org/instant-search/?jed_live%5Bquery%5D=performance). Beware that optimizations provided by these plugins may break features of your templates or plugins, so you will need to test these thoroughly.
+
+### WordPress
+
+There are a number of WordPress plugins that can help you [inline critical assets](https://wordpress.org/plugins/search/critical+css/) or [defer less important resources](https://wordpress.org/plugins/search/defer+css+javascript/). Beware that optimizations provided by these plugins may break features of your theme or plugins, so you will likely need to make code changes.
+
 ## Resources
 
 - [Source code for **Eliminate render-blocking resources** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/render-blocking-resources.js)

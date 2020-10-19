@@ -64,6 +64,26 @@ Luckily, you can recreate these behaviors using the `<video>` element.
 </video>  
 ```
 
+## Stack-specific guidance
+
+If you use any of these CMS's, libraries or frameworks, consider the following suggestions:
+
+### AMP
+
+For animated content, use [`amp-anim`](https://amp.dev/documentation/components/amp-anim/) to minimize CPU usage when the content is offscreen.
+
+### Drupal
+
+Consider uploading your GIF to a service which will make it available to embed as an HTML5 video.
+
+### Joomla
+
+Consider uploading your GIF to a service which will make it available to embed as an HTML5 video.
+
+### WordPress
+
+Consider uploading your GIF to a service which will make it available to embed as an HTML5 video.
+
 ## Resources
 
 - [Source code for **Use video formats for animated content** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/efficient-animated-content.js)

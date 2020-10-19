@@ -52,6 +52,30 @@ can help automate the process of converting an image into multiple formats.
 There are also image CDNs which let you generate multiple versions,
 either when you upload an image, or request it from your page.
 
+## Stack-specific guidance
+
+If you use any of these CMS's, libraries or frameworks, consider the following suggestions:
+
+### AMP
+
+The [`amp-img`](https://amp.dev/documentation/components/amp-img/?format=websites) component supports the [`srcset`](https://web.dev/use-srcset-to-automatically-choose-the-right-image/) attribute to specify which image assets to use based on the screen size. [Learn more](https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction/).
+
+### Angular
+
+Consider using the `BreakpointObserver` utility in the Component Dev Kit (CDK) to manage image breakpoints. [Learn more](https://material.angular.io/cdk/layout/overview).
+
+### Drupal
+
+Ensure that you are using the native [Responsive Image Styles](https://www.drupal.org/docs/8/mobile-guide/responsive-images-in-drupal-8) provided from Drupal (available in Drupal 8 and above). Use the Responsive Image Styles when rendering image fields through view modes, views, or images uploaded through the WYSIWYG editor.
+
+### Joomla
+
+Consider using a [responsive images plugin](https://extensions.joomla.org/instant-search/?jed_live%5Bquery%5D=responsive%20images) to use responsive images in your content.
+
+### WordPress
+
+Upload images directly through the [media library](https://wordpress.org/support/article/media-library-screen/) to ensure that the required image sizes are available, and then insert them from the media library or use the image widget to ensure the optimal image sizes are used (including those for the responsive breakpoints). Avoid using `Full Size` images unless the dimensions are adequate for their usage. [Learn More](https://wordpress.org/support/article/inserting-images-into-posts-and-pages/).
+
 ## Resources
 
 - [Source code for **Properly size images** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-responsive-images.js)

@@ -125,6 +125,22 @@ check its HTTP header data:
   </figcaption>
 </figure>
 
+## Stack-specific guidance
+
+If you use any of these CMS's, libraries or frameworks, consider the following suggestions:
+
+### Drupal
+
+Set the "Browser and proxy cache maximum age" in the "Administration » Configuration » Development" page. Read about [Drupal cache and optimizing for performance](https://www.drupal.org/docs/7/managing-site-performance-and-scalability/caching-to-improve-performance/caching-overview#s-drupal-performance-resources).
+
+### Joomla
+
+Read about [Browser Caching in Joomla](https://docs.joomla.org/Cache).
+
+### WordPress
+
+Read about [Browser Caching in WordPress](https://wordpress.org/support/article/optimization/#browser-caching).
+
 ## Resources
 
 - [Source code for **Serve static assets with an efficient cache policy** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-long-cache-ttl.js)

@@ -100,6 +100,18 @@ See [Use large request rows](https://developers.google.com/web/tools/chrome-devt
 
 See also [Minify and compress network payloads](/reduce-network-payloads-using-text-compression).
 
+## Stack-specific guidance
+
+If you use any of these CMS's, libraries or frameworks, consider the following suggestions:
+
+### Joomla
+
+You can enable text compression by enabling Gzip Page Compression in Joomla (System > Global configuration > Server).
+
+### WordPress
+
+You can enable text compression in your web server configuration.
+
 ## Resources
 
 - [Source code for **Enable text compression** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/byte-efficiency/uses-text-compression.js)
