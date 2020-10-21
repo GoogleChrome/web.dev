@@ -286,7 +286,7 @@ specific requests or HTML elements.
 
 `index.html`:
 
-```html/5
+```html/6
 <head>
   <!-- document-level policy: strict-origin-when-cross-origin -->
   <meta name="referrer" content="strict-origin-when-cross-origin" />
