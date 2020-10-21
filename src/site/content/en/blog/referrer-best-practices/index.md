@@ -216,15 +216,6 @@ You can also use the developer tools of Chrome, Edge and Firefox to see the refe
 a specific request. At the time of this writing, Safari doesn't show the `Referrer-Policy` header
 but does show the `Referer` that was sent.
 
-<!-- <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled"
-       src="./referrer-devtools.jpg"
-       alt="A screenshot of the Network panel of Chrome DevTools, showing Referer and Referrer-Policy.">
-  <figcaption class="w-figcaption">
-    Chrome DevTools, Network panel with a request selected.
-  </figcaption>
-</figure> -->
-
 <figure class="w-figure">
   <img src="./referrer-devtools.jpg" alt="A screenshot of the Network panel of Chrome DevTools, showing Referer and Referrer-Policy.">
   <figcaption class="w-figcaption">
@@ -287,33 +278,39 @@ app.use(helmet.referrerPolicy({policy: 'strict-origin-when-cross-origin'}));
 
 ### What if `strict-origin-when-cross-origin` (or stricter) doesn't accommodate all your use cases?
 
-In this case, don't set an unsafe policy such as `unsafe-url`. What you can do instead is take a
-**progressive approach**: set a protective policy for your website and if need be, a more permissive
-policy for specific requests or elements.
+In this case, take a **progressive approach**: set a protective policy like
+`strict-origin-when-cross-origin` for your website and if need be, a more permissive policy for
+specific requests or HTML elements.
 
-**Example:**
+### Example: element-level policy
 
 `index.html`:
 
-```html
-<meta name="referrer" content="strict-origin-when-cross-origin" />
-<img src="…" referrerpolicy="no-referrer-when-downgrade" />
+```html/5
+<head>
+  <!-- document-level policy: strict-origin-when-cross-origin -->
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <head>
+    <body>
+      <!-- policy on this <a> element: no-referrer-when-downgrade -->
+      <a src="..." href="..." referrerpolicy="no-referrer-when-downgrade"></a>
+      <body></body>
+    </body>
+  </head>
+</head>
 ```
+
+Note that Safari/WebKit may cap `document.referrer` or the `Referer` header for
+[cross-site](https://web.dev/same-site-same-origin/#%22same-site%22-and-%22cross-site%22) requests.
+See [details](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/).
+
+### Example: request-level policy
 
 `script.js`:
 
 ```javascript
 fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
 ```
-
-{% Aside 'gotchas' %} A per-element policy is not supported in all
-browsers browsers (Examples: `referrerpolicy` for [`a`
-elements](https://caniuse.com/#feat=mdn-html_elements_a_referrerpolicy),
-for [`img` elements](https://caniuse.com/#feat=mdn-html_elements_img_referrerpolicy),
-and for [`link` elements](https://caniuse.com/#feat=mdn-html_elements_link_referrerpolicy)).
-But browsers that don't support this tend to take a strict approach anyway
-(for example, all cross-origin requests will set `Referer` to the
-origin). {% endAside %}
 
 ### What else should you consider?
 
