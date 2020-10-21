@@ -301,7 +301,7 @@ specific requests or HTML elements.
 ```
 
 Note that Safari/WebKit may cap `document.referrer` or the `Referer` header for
-[cross-site](https://web.dev/same-site-same-origin/#%22same-site%22-and-%22cross-site%22) requests.
+[cross-site](/same-site-same-origin/#%22same-site%22-and-%22cross-site%22) requests.
 See [details](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/).
 
 ### Example: request-level policy
