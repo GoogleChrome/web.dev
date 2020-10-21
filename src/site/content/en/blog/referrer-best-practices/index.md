@@ -364,7 +364,7 @@ To define alternatives, analyze first what part of the referrer you're using.
 - If available, headers like
   [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) and
   [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site) give
-  you the `Origin` or describe whether the request is cross-origin, which may be just what you need.
+  you the `Origin` or describe whether the request is cross-origin, which may be exactly what you need.
 
 **If you need other elements of the URL (path, query parameters…):**
 
@@ -429,7 +429,7 @@ against naive attacks—but you should absolutely have another, more
 reliable verification method in place.**
 
 The `Referer` header alone isn't a reliable basis for a check: the requesting site, whether they're
-a legitimate merchant or not, can easily set a `no-referrer` policy which will make the `Referer`
+a legitimate merchant or not, can set a `no-referrer` policy which will make the `Referer`
 information unavailable to the payment provider. However, as a payment provider, looking at the
 `Referer` may help you catch naive attackers who did not set a `no-referrer` policy. So you can
 decide to use the `Referer` as a first basic check. If you do so:
@@ -442,7 +442,7 @@ decide to use the `Referer` as a first basic check. If you do so:
   `Referer` value that is the origin of the requesting website, you prevent unexpected errors since
   you're **not making assumptions about the `Referrer-Policy`** your merchant has set or about the
   browser's behavior if the merchant has no policy set. Both the site and the browser could strip
-  the `Referer` sent in the incoming request to just the origin or not send the `Referer` at all.
+  the `Referer` sent in the incoming request to only the origin or not send the `Referer` at all.
 - If the `Referer` is absent or if it's present and your basic `Referer` origin check was
   successful: you can move onto your other, more reliable verification method (see below).
 
