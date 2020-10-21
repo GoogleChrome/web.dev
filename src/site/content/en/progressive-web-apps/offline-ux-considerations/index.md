@@ -80,8 +80,8 @@ content. You can see a code example of this <a
 href="https://github.com/GoogleChrome/sw-precache/blob/master/demo/app/js/service-worker-registration.js#L29">function
 at work here</a>.
 
-One example of this would be <a href="https://www.chromestatus.com/">
-www.chromestatus.com</a> which posts a note to the user when the app has been updated.
+One example of this would be [Chrome Platform Status](https://chromestatus.com)
+which posts a note to the user when the app has been updated.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
   <img src="weather-app.png"
@@ -163,7 +163,7 @@ state.
 Offline is a new mental model for everyone. You need to educate your users about what changes will
 occur when they don't have a connection. Inform them of where large data is saved and give them
 settings to change the default behavior. Make sure you use multiple UI design components such as
-informative language, icons, notifications, color and imagery to convey these ideas collectively
+informative language, icons, notifications, color, and imagery to convey these ideas collectively
 rather than relying on a single design choice, such as an icon on its own, to tell the whole story.
 
 ## Provide an offline experience by default
@@ -173,9 +173,9 @@ increasingly frustrated if they can only access their data with a network connec
 the experience as stable as possible. An unstable connection will make your app feel untrustworthy,
 where an app that lessens the impact of a network failure will feel magical to the user.
 
-News sites could benefit from auto downloading and saving the latest news so a
+News sites could benefit from auto-downloading and auto-saving the latest news so a
 user could read today's news without a connection, perhaps downloading the text without the article
-images. Also adapt to the user's behavior. For example, if the sports section is what they typically view,
+images. Also, adapt to the user's behavior. For example, if the sports section is what they typically view,
 make that the priority download.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
@@ -206,7 +206,7 @@ been synced or a data file has downloaded.
 
 Again think of the language you are using to make sure it is fit for your audience. Ensure the
 messaging is given the same in all instances where it's used. The term offline is generally
-misunderstood by a non-technical audience so use action based language that your audience can relate
+misunderstood by a non-technical audience so use action-based language that your audience can relate
 to.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
@@ -224,14 +224,14 @@ to.
        alt="Chrome Status site is offline"
   >
   <figcaption class="w-figcaption">
-    …and so does the Chrome Status site, which includes information about the occupied storage.
+    …and so does the Chrome Platform Status site, which includes information about the occupied storage.
   </figcaption>
 </figure>
 
-### Make 'save for offline' an obvious part of the interface for data heavy apps
+### Make 'save for offline' an obvious part of the interface for data-heavy apps
 
 If an application uses large amounts of data, make sure that there is a switch or pin to add an item
-for offline use rather than auto downloading, unless a user has specifically asked for this behavior
+for offline use rather than auto-downloading, unless a user has specifically asked for this behavior
 via a settings menu. Make sure that the pin or download UI is not obscured by other UI elements and
 that the feature is obvious to the user.
 
@@ -261,11 +261,11 @@ that users can see the cost of a file.
 
 ### Help prevent hacked experiences
 
-Often users hack an experience without realizing they are doing it. For example before cloud sharing
-apps like Google Drive, it was common for users to save large files and attach them to emails so
+Often users hack an experience without realizing they are doing it. For example before cloud-based
+file sharing web apps, it was common for users to save large files and attach them to emails so
 they could carry on editing from a different device. It is important not to be pulled into their
 hacked experience but rather look at what they are trying to achieve. In other words instead of
-thinking of how you can make attaching a large file more user friendly, solve the problem of
+thinking of how you can make attaching a large file more user-friendly, solve the problem of
 sharing large files across multiple devices.
 
 ## Make experiences transferable from one device to another
@@ -285,7 +285,7 @@ When designing seek to be inclusive by providing meaningful design devices, simp
 standard iconography, and meaningful imagery that will guide the user to complete the action or task
 rather than hinder their progress.
 
-### Use simple concise language
+### Use simple, concise language
 
 Good UX is not just about a well designed interface. It includes the path a user takes as well as
 the words used in the app. Avoid tech jargon when explaining the state of the app or
@@ -345,13 +345,13 @@ exist) as well as providing a text label and description. For example, saving fo
 a typical download icon or perhaps if the action involves syncing it could be a syncing icon. Some
 actions may be interpreted as saving for offline rather than demonstrating a network's status. Think
 of the action you are trying to convey rather than presenting the user with an abstract concept. For
-example, save or download data would be action based.
+example, save or download data would be action-based.
 
 <img src="download-icons-examples.png" alt="Various icon examples that convey offline">
 
-Offline can mean a number of things depending on the context, such as download, export, pin etc.
+Offline can mean a number of things depending on the context, such as download, export, pin, etc.
 For more inspiration checkout the
-[material design icon set](https://material.io/icons/ 'material design icon set')
+[Material Design icon set](https://material.io/resources/icons/).
 
 ### Use skeleton layouts with other feedback mechanisms
 
@@ -394,7 +394,7 @@ using your application.
 
 ## Design for the next billion
 
-In many regions, low end devices are commonplace, connectivity is unreliable and, for many users,
+In many regions, low-end devices are commonplace, connectivity is unreliable and, for many users,
 data is unaffordable. You will need to earn user trust by being transparent and frugal with data.
 Think about ways to help users on poor connections and simplify the interface to help speed up
 tasks. Always try to ask users before downloading data-heavy content.
@@ -404,15 +404,15 @@ provide small assets. Offer an option to choose high or low quality assets.
 
 ## Conclusion
 
-Education is key to this as users are unfamiliar with these concepts. Try to create associations
+Education is key to offline UX as users are unfamiliar with these concepts. Try to create associations
 with things that are familiar, e.g downloading for later use is the same as offlining data.
 
-When designing for unstable network connections, use these:
+When designing for unstable network connections, remember these guidelines:
 
 - Think how you design for the success, failure, and instability of a network connection.
 - Data may be expensive, so be considerate to the user.
 - For most users globally, the tech environment is almost exclusively mobile.
-- Low end devices are commonplace, with limited storage, memory and processing power, and small
+- Low-end devices are commonplace, with limited storage, memory and processing power, and small
   displays and lower touchscreen quality. Make sure performance is a part of your design process.
 - Allow users to browse your application when they are offline.
 - Inform users of their current state and of changes in states.
