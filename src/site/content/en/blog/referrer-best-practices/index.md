@@ -209,10 +209,12 @@ requests from this page will follow the `strict-origin-when-cross-origin` policy
 
 ## How to see the referrer policy?
 
-When inspecting an HTTP request:
+[securityheaders.com](https://securityheaders.com/) is handy to determine the policy a specific site
+or page is using.
 
-- in Chrome, Edge and Firefox, you can see the `Referrer-Policy`.
-- in Chrome, Edge, Safari and Firefox, you can see the `Referer`.
+You can also use the developer tools of Chrome, Edge and Firefox to see the referrer policy used for
+a specific request. At the time of this writing, Safari doesn't show the `Referrer-Policy` header
+but does show the `Referer` that was sent.
 
 <!-- <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled"
