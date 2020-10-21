@@ -34,9 +34,9 @@ according to professional gamers.
   <figcaption class="w-figcaption">Pointer motion control in Windows 10 settings.</figcaption>
 </figure>
 
-Starting in Chrome 88, web apps can now switch back and forth between
-accelerated and non-accelerated mouse movement data thanks to the [updated
-Pointer Lock API].
+Starting in Chrome 88, web apps can switch back and forth between accelerated
+and non-accelerated mouse movement data thanks to the [updated Pointer Lock
+API].
 
 Web-based gaming platforms such as [Google Stadia] and [Nvidia GeForce Now]
 already use these new capabilities to please FPS gamers.
@@ -92,8 +92,8 @@ document.addEventListener("pointerlockerror", () => {
 ### Disable mouse acceleration {: #disable-mouse-acceleration }
 
 Call `requestPointerLock()` with  `{ unadjustedMovement: true }` to disable
-OS-level adjustment for mouse acceleration, and get access to raw mouse input.
-This way, mouse movements data from `mousemove` events won't include the mouse
+OS-level adjustment for mouse acceleration, and access raw mouse input.
+This way, mouse movement data from `mousemove` events won't include mouse
 acceleration when the pointer is locked.
 
 Use the new returned promise from `requestPointerLock()` to know if the request
@@ -124,15 +124,15 @@ function requestPointerLockWithUnadjustedMovement() {
 
 It is possible to toggle between accelerated and non-accelerated mouse movement
 data without releasing the pointer lock. Simply request the pointer lock again
-with the desired option.  If that request fails, the original lock will remain
+with the desired option. If that request fails, the original lock will remain
 intact and the returned promise will reject. No pointer lock events will fire
 for a failed change request.
 
 ### Browser support {: #browser-support }
 
 The Pointer Lock API is [well supported across browsers]. However Chromium-based
-browsers (e.g. Chrome, Edge) are the only ones to support disabling OS-level
-adjustment for mouse acceleration at the time of writing.
+browsers (e.g. Chrome, Edge, etc.) are the only ones to support disabling
+OS-level adjustment for mouse acceleration at the time of writing.
 
 ### Platform support {: #platform-support }
 
