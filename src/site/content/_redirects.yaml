@@ -230,13 +230,6 @@ redirects:
 - from: /native-lazy-loading
   to: /browser-level-image-lazy-loading
 
-# Temporary redirects for devices API
-- from: /bluetooth
-  to: https://developers.google.com/web/updates/2015/07/interact-with-ble-devices-on-the-web
-
-- from: /usb
-  to: https://developers.google.com/web/updates/2016/03/access-usb-devices-on-the-web
-
 # Redirects for vanity URLs
 - from: /scale-on-web
   to: /tags/scale-on-web
