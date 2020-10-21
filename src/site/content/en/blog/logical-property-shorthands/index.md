@@ -439,7 +439,7 @@ p {
 /* and unsupporting browsers to ignore #TheCascade */
 p {
   /* remove any potential physical cruft.. */
-  margin-inline: 0;
+  margin: 0;
   /* explicitly set logical value */
   margin-block: 1ch 2ch;
 }
