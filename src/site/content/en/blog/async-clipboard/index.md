@@ -308,10 +308,10 @@ setTimeout(async () => {
 
 ## Permissions policy integration
 
-In order to use the API in iframes, you need to enable it by making use of the
+To use the API in iframes, you need to enable it with
 [Permissions Policy](https://w3c.github.io/webappsec-permissions-policy/),
-which defines a mechanism that allows developers to selectively enable and
-disable various browser features and APIs. Concretely, you need to pass either
+which defines a mechanism that allows for selectively enabling and
+disabling various browser features and APIs. Concretely, you need to pass either
 or both of `clipboard-read` or `clipboard-write`, depending on the needs of your app.
 
 ```html/2
