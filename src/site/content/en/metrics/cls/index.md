@@ -384,12 +384,10 @@ few guiding principles:
 For a deep dive on how to improve CLS, see [Optimize
 CLS](https://web.dev/optimize-cls/).
 
-### Google Publisher Tags
-
-See the official Google Publisher Tag guide on [Minimizing layout shift](https://developers.google.com/doubleclick-gpt/guides/minimize-layout-shift).
-
 ## Additional resources
 
+- Google Publisher Tag's guidance on
+  [minimizing layout shift](https://developers.google.com/doubleclick-gpt/guides/minimize-layout-shift)
 - [Understanding Cumulative Layout Shift](https://youtu.be/zIJuY-JCjqw) by
   [Annie Sullivan](https://anniesullie.com/) and [Steve
   Kobes](https://kobes.ca/) at [#PerfMatters](https://perfmattersconf.com/)
