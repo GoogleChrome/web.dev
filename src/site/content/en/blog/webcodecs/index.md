@@ -19,7 +19,7 @@ feedback:
   - api
 ---
 
-Modern web technologies provide ample ways to work with video.
+Modern web technologies provide sample ways to work with video.
 [Media Stream API](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Recording_API),
 [Media Recording API](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Recording_API),
 [Media Source API](https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API),
