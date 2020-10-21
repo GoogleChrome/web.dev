@@ -4,7 +4,10 @@ title: Fast playback with video preload
 authors:
   - beaufortfrancois
 description: |
-  Faster playback start means more people watching your video. That's a known fact. In this article I'll explore techniques you can use to accelerate your media playback by actively preloading resources depending on your use case.
+  Faster playback start means more people watching your video.
+  That's a known fact. In this article I'll explore techniques you can
+  use to accelerate your media playback by actively preloading resources
+  depending on your use case.
 date: 2017-08-17
 updated: 2020-10-21
 tags:
@@ -17,7 +20,9 @@ fact. In this article I'll explore techniques you can use to accelerate your
 media playback by actively preloading resources depending on your use case.
 
 {% Aside %}
-  Information in this article also applies to the audio element.
+  Information in this article also applies to the
+  [`<audio>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio)
+  element.
 {% endAside %}
 
 <figure>
@@ -64,7 +69,7 @@ parsed.
     </tr>
     <tr>
       <td>
-MSE ignores the preload attribute on media elements because the app is responsible for
+Media Source Extensions (MSE) ignore the <code>preload</code> attribute on media elements because the app is responsible for
 providing media to MSE.
       </td>
     </tr>
@@ -224,10 +229,10 @@ element, it would be `as="audio"`.
 
 The example below shows how to preload the first segment of a video with `<link
 rel="preload">` and use it with Media Source Extensions. If you're not familiar
-with the MSE Javascript API, please read [MSE basics][mse-basics].
+with the MSE Javascript API, see [MSE basics][mse-basics].
 
 For the sake of simplicity, let's assume the entire video has been split into
-smaller files like "file_1.webm", "file_2.webm", "file_3.webm", etc.
+smaller files like `file_1.webm`, `file_2.webm`, `file_3.webm`, etc.
 
 ```js
 <link rel="preload" as="fetch" href="https://cdn.com/file_1.webm">
@@ -271,7 +276,9 @@ smaller files like "file_1.webm", "file_2.webm", "file_3.webm", etc.
 
 ### Support
 
-Link preload is not supported in every browser yet. You may want to detect its
+See MDN's
+[Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#Browser_compatibility)
+table to see which browsers support preload. You may want to detect its
 availability with the snippets below to adjust your performance metrics.
 
 ```js
@@ -292,7 +299,8 @@ function preloadFirstSegmentSupported() {
 
 Before we dive into the [Cache API][cache-api] and service workers, let's see
 how to manually buffer a video with MSE. The example below assumes that your web
-server supports HTTP Range requests but this would be pretty similar with file
+server supports HTTP [`Range`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Range)
+requests but this would be pretty similar with file
 segments. Note that some middleware libraries such as [Google's Shaka
 Player][shaka-player], [JW Player][jw-player], and [Video.js][video-js] are
 built to handle this for you.
@@ -347,7 +355,7 @@ network information when thinking about preloading.
 
 #### Battery awareness
 
-Please take into account the battery level of users' devices before thinking
+Take into account the battery level of users' devices before thinking
 about preloading a video. This will preserve battery life when the power level
 is low.
 
@@ -374,8 +382,7 @@ browser. By identifying this request header, your application can customize and
 deliver an optimized user experience to cost- and performance-constrained
 users.
 
-Learn more by reading our complete [Delivering Fast and Light
-Applications with Save-Data][fast-light] article.
+See [Delivering Fast and Light Applications with Save-Data][fast-light] to learn more.
 
 #### Smart loading based on network information
 
@@ -394,21 +401,21 @@ if ('connection' in navigator) {
 }
 ```
 
-Checkout the [Network Information sample][network-info-sample] to learn how to react to network
+Check out the [Network Information sample][network-info-sample] to learn how to react to network
 changes as well.
 
 ### Pre-cache multiple first segments
 
 Now what if I want to speculatively pre-load some media content without
-knowing which piece of media the user will eventually pick. If the user is on a
+knowing which piece of media the user will eventually pick? If the user is on a
 web page that contains 10 videos, we probably have enough memory to fetch one
-segment file from each but we should definitely not create 10 hidden video
+segment file from each but we should definitely not create 10 hidden `<video>`
 elements and 10 `MediaSource` objects and start feeding that data.
 
-The two part example below shows you how to pre-cache multiple first segments of
-video using the powerful and easy-to-use Cache API. Note that something similar
+The two-part example below shows you how to pre-cache multiple first segments of
+video using the powerful and easy-to-use [Cache API](/cache-api-quick-guide/). Note that something similar
 can be achieved with IndexedDB as well. We're not using service workers yet as
-the Cache API is also accessible from the Window object.
+the Cache API is also accessible from the `window` object.
 
 #### Fetch and cache
 
@@ -443,14 +450,14 @@ function fetchAndCache(videoFileUrl, cache) {
 }
 ```
 
-Note that if I were to use HTTP Range requests, I would have to manually recreate
-a `Response` object as the Cache API doesn't support Range responses [yet]. Be
+Note that if I were to use HTTP `Range` requests, I would have to manually recreate
+a `Response` object as the Cache API doesn't support `Range` responses [yet]. Be
 mindful that calling `networkResponse.arrayBuffer()` fetches the whole content
 of the response at once into renderer memory, which is why you may want to use
 small ranges.
 
 For reference, I've modified part of the example above to save HTTP Range
-requests to the video pre-cache.
+requests to the video precache.
 
 ```js
     ...
@@ -510,11 +517,11 @@ function onPlayButtonClick(videoFileUrl) {
 ### Create Range responses with a service worker
 
 Now what if you have fetched an entire video file and saved it in
-the Cache API. When the browser sends an HTTP Range request, you certainly don't
+the Cache API? When the browser sends an HTTP `Range` request, you certainly don't
 want to bring the entire video into renderer memory as the Cache API doesn't
-support Range responses yet.
+support `Range` responses [yet].
 
-So let me show how to intercept these requests and return a customized Range
+So let me show how to intercept these requests and return a customized `Range`
 response from a service worker.
 
 ```js
@@ -573,7 +580,7 @@ network speed.
 {% YouTube 'f8EGZa32Mts' %}
 
 Have a look at the official [Sample Media App][sample-media-app] and in particular its
-[ranged-response.js] file for a complete solution for how to handle Range
+[ranged-response.js] file for a complete solution for how to handle `Range`
 requests.
 
 
