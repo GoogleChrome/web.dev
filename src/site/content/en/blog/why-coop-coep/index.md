@@ -15,6 +15,7 @@ authors:
   - domenic
 hero: hero.jpg
 date: 2020-05-04
+updated: 2020-10-19
 tags:
   - blog
   - security
@@ -28,18 +29,18 @@ isolated" state using COOP and COEP. This is a companion article that explains
 why cross-origin isolation is required to enable powerful features on the browser.
 
 {% Aside 'key-term' %}
-This article uses many similar-sounding terminologies. To make things 
+This article uses many similar-sounding terminologies. To make things
 clearer, let's define them:
 
-* [COEP: Cross Origin Embedder 
+* [COEP: Cross Origin Embedder
   Policy](https://wicg.github.io/cross-origin-embedder-policy/)
-* [COOP: Cross Origin Opener 
+* [COOP: Cross Origin Opener
   Policy](https://github.com/whatwg/html/pull/5334/files)
-* [CORP: Cross Origin Resource 
+* [CORP: Cross Origin Resource
   Policy](https://developer.mozilla.org/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP))
-* [CORS: Cross Origin Resource 
+* [CORS: Cross Origin Resource
   Sharing](https://developer.mozilla.org/docs/Web/HTTP/CORS)
-* [CORB: Cross Origin Read 
+* [CORB: Cross Origin Read
   Blocking](https://www.chromium.org/Home/chromium-security/corb-for-developers)
 {% endAside %}
 
@@ -100,7 +101,7 @@ This is exactly what COOP+COEP is about.
 
 Under a cross-origin isolated state, the requesting site is considered less
 dangerous and this unlocks powerful features such as `SharedArrayBuffer`,
-`performance.measureMemory` and the JS Self-Profiling API which could otherwise be
+`performance.measureMemory()` and the JS Self-Profiling API which could otherwise be
 used for Spectre-like attacks. It also prevents modifying `document.domain`.
 
 ### Cross Origin Embedder Policy {: #coep }
@@ -108,7 +109,7 @@ used for Spectre-like attacks. It also prevents modifying `document.domain`.
 Policy (COEP)](https://wicg.github.io/cross-origin-embedder-policy/) prevents a
 document from loading any cross-origin resources that don't explicitly grant
 the document permission (using CORP or CORS). With this feature, you can declare
-that a document cannot load such resources. 
+that a document cannot load such resources.
 
 ![How COEP works](coep.png)
 
@@ -238,7 +239,7 @@ protect your website in browsers that don't support COOP.
 ## Summary {: #summary }
 
 If you want guaranteed access to powerful features like `SharedArrayBuffer`,
-`performance.measureMemory` or JS Self-Profiling API, just remember that your
+`performance.measureMemory()` or JS Self-Profiling API, just remember that your
 document needs to use both COEP with the value of `require-corp` and COOP with
 the value of `same-origin`. In the absence of either, the browser will not
 guarantee sufficient isolation to safely enable those powerful features. You can

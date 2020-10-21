@@ -20,7 +20,7 @@ tags:
   - blog
   - security
 origin_trial:
-  url: https://developers.chrome.com/origintrials/#/register_trial/2780972769901281281 
+  url: https://developers.chrome.com/origintrials/#/register_trial/2780972769901281281
 feedback:
   - api
 ---
@@ -424,7 +424,7 @@ In upcoming releases of Chrome, this cross-origin isolated state will prevent
 `document.domain`](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy#Changing_origin)
 and will give access to powerful features such as:
 
-* [`performance.measureMemory`](/monitor-total-page-memory-usage/)
+* [`performance.measureMemory()`](/monitor-total-page-memory-usage/)
 * [JS Self-Profiling API](https://wicg.github.io/js-self-profiling/) and more.
 
 We'll keep this post updated as new features are made available to this
