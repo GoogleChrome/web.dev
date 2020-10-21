@@ -45,11 +45,6 @@ the API,
 [consult a browser support table](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard#Browser_compatibility)
 before proceeding.
 
-This article explains how to write both text and images to, and read them from
-the clipboard. This article does not cover [Feature Policy for the
-clipboard](https://www.chromestatus.com/features/5767075295395840) which landed
-in Chrome&nbsp;85.
-
 {% Aside %}
 The Async Clipboard API is limited to handling text and images. Chrome&nbsp;84
 introduces an experimental feature that allows the clipboard to handle any
