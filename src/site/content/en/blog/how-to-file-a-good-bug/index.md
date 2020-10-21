@@ -50,7 +50,7 @@ Such "regressions" can be acted upon much quicker, especially if you supply a
 version number where it worked and a version where it failed. Tools like
 [BrowserStack](https://www.browserstack.com/) can make it easy to check old
 browser versions and the [bisect-builds tool](https://www.chromium.org/developers/bisect-builds-py)
-allows searching for the change very efficiently.
+(for Chromium) allows searching for the change very efficiently.
 
 If an issue is a regression and can be reproduced, the root cause can usually be
 found and fixed quickly.
