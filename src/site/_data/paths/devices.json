@@ -7,7 +7,7 @@
   "overview": "Learn to communicate with hardware devices over Bluetooth, USB, NFC, Serial, and HID from a website.",
   "topics": [
     {
-      "title": "API Guides",
+      "title": "API guides",
       "pathItems": [
         "nfc",
         "serial",
