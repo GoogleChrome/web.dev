@@ -6,7 +6,7 @@ authors:
 Description: |
   Register an app as a file handler with the operating system
   and open files with their proper app.
-date: 2020-09-25
+date: 2020-10-22
 # updated: 2020-09-25
 tags:
   - blog
@@ -17,10 +17,11 @@ origin_trial:
   url:
 ---
 
-{% Aside %} The File Handling API is part of the
-[capabilities project](https://web.dev/fugu-status/) and is currently in development. This post will
-be updated as the implementation progresses. {% endAside %}
-
+{% Aside %}
+  The File Handling API is part of the
+  [capabilities project](https://web.dev/fugu-status/) and is currently in development. This post will
+  be updated as the implementation progresses.
+{% endAside %}
 
 Now that web apps are [capable of reading and writing files](/file-system-access/), the next logical
 step is to let developers declare these very web apps as file handlers for the files their apps can
@@ -54,17 +55,6 @@ Examples of sites that may use this API include:
 
 To experiment with the File Handling API locally, without an origin trial token, enable the
 `#file-handling-api` flag in `chrome://flags`.
-
-### Enabling support during the origin trial phase
-
-Starting in Chrome&nbsp;⛔️, the File Handling API will be available as an origin trial in Chrome.
-The origin trial is expected to end in Chrome&nbsp;⛔️ (⛔️, 2020).
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
 
 ### Progressive enhancement
 
