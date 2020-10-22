@@ -106,7 +106,7 @@ animation: path_triangle 10s ease-in-out infinite;
 Find the keyframes by scrolling down the Style Panel.
 There you will find that the animation is created by using `transform` to change the position of the element and rotate it.
 The `transform` property is one of the properties described in the [Animations Guide](/animations-guide),
-which does not cause the browser to do layout or paint operations.
+which does not cause the browser to do layout or paint operations (which are the main causes of slow animations).
 
 ```css
 @keyframes path_triangle {
