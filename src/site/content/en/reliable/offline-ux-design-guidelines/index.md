@@ -6,7 +6,7 @@ authors:
   - mustafakurtuldu
   - thomassteiner
 date: 2016-11-10
-updated: 2020-09-11
+updated: 2020-10-22
 tags:
   - progressive-web-apps
   - ux
@@ -79,7 +79,7 @@ should auto-update and notify the user as soon as possible.
 
 It is recommended that you let the user know that your web app has been updated "in the background"
 by using a visual cue such as, for example, a material design toast element. This involves detecting both the
-the presence of a service worker and an update to its managed 
+the presence of a service worker and an update to its managed
 content. You can see a code example of this <a
 href="https://github.com/GoogleChrome/sw-precache/blob/master/demo/app/js/service-worker-registration.js#L29">function
 at work here</a>.
@@ -129,7 +129,7 @@ be useful for a currency converter app, for example.
 </figure>
 
 Applications such as news apps could show a simple tap-to-update notification
-informing the user of new content. Auto-updating would cause users to lose 
+informing the user of new content. Auto-updating would cause users to lose
 their place.
 
 <figure style="display: inline-block; max-width: 45%;" class="w-figure">
@@ -200,11 +200,17 @@ make that the priority download.
   </figcaption>
 </figure>
 
+{% Aside %}
+  When it comes to communicating an app's status, saying "The network is down" sends the message
+  that the app's network is experiencing problems, whereas "You are disconnected" makes it clearer
+  to the user that the problem is on their end.
+{% endAside %}
+
 ## Inform the user when the app is ready for offline consumption
 
 When a web app first loads you need to indicate to the user if it is ready for offline use. Do this
 with a
-[widget that provides brief feedback](https://material.google.com/components/snackbars-toasts.html 'widget that provides brief feedback')
+[widget that provides brief feedback](https://material.io/components/snackbars)
 about an operation through a message at the bottom of the screen such as, for example, when a section has
 been synced or a data file has downloaded.
 
@@ -296,45 +302,53 @@ the words used in the app. Avoid tech jargon when explaining the state of the ap
 individual UI components. Consider that the phrase "app offline" might not convey to the user the
 current state of the app.
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="download.png" alt="A download icon is a good example">
-  <figcaption class="w-figcaption">
-    <b>DO</b>: Use language and imagery that describes the action.
-  </figcaption>
-</figure>
+{% Compare 'worse' %}
+  <figure style="display: inline-block; max-width: 45%;" class="w-figure">
+    <img src="service-worker-ready.png" alt="A service worker icon is a bad example">
+    <figcaption class="w-figcaption">
+      Avoid terms that aren't intelligible to non-technical users.
+    </figcaption>
+  </figure>
+{% endCompare %}
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="service-worker-ready.png" alt="A service worker icon is a bad example">
-  <figcaption class="w-figcaption">
-    <b>DON'T</b>: Avoid terms that aren't intelligible to non-technical users.
-  </figcaption>
-</figure>
+{% Compare 'better' %}
+  <figure style="display: inline-block; max-width: 45%;" class="w-figure">
+    <img src="download.png" alt="A download icon is a good example">
+    <figcaption class="w-figcaption">
+      Use language and imagery that describes the action.
+    </figcaption>
+  </figure>
+{% endCompare %}
 
 ### Use multiple design devices to create accessible user experiences
 
 Use language, color, and visual components to demonstrate a change of state or current status.
 Solely using color to demonstrate state may not be noticed by the user and may be inaccessible to
 users who suffer from visual disabilities. Also, the instinct for designers is to use grayed UI
-to represent offline, but this can have a loaded meaning on the web. Grayed UI such as input elements 
+to represent offline, but this can have a loaded meaning on the web. Grayed UI such as input elements
 on a form also means that an element is disabled. This can cause confusion if you *only*
 use color to depict state.
 
 To prevent misunderstandings, express different states to the user in multiple ways, for example
 with color, labels, and UI components.
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="accessibility_color7_do.png" alt="A good example that uses color and text to show an error.">
-  <figcaption class="w-figcaption">
-    <b>DO</b>: Use a mixture of design elements to convey meaning
-  </figcaption>
-</figure>
+{% Compare 'worse' %}
+  <figure style="display: inline-block; max-width: 45%;" class="w-figure">
+    <img src="accessibility_color8_dont.png" alt="A bad example only using color.">
+    <figcaption class="w-figcaption">
+      Use color as the sole means to describe what is happening.
+    </figcaption>
+  </figure>
+{% endCompare %}
 
-<figure style="display: inline-block; max-width: 45%;" class="w-figure">
-  <img src="accessibility_color8_dont.png" alt="A bad example only using color.">
-  <figcaption class="w-figcaption">
-    <b>DON'T</b>: Use color as the sole means to describe what is happening.
-  </figcaption>
-</figure>
+{% Compare 'better' %}
+  <figure style="display: inline-block; max-width: 45%;" class="w-figure">
+    <img src="accessibility_color7_do.png" alt="A good example that uses color and text to show an error.">
+    <figcaption class="w-figcaption">
+      Use a mixture of design elements to convey meaning
+    </figcaption>
+  </figure>
+{% endCompare %}
 
 ### Use icons that convey meaning
 
