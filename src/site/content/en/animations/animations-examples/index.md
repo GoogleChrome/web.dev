@@ -144,6 +144,8 @@ The result is a complex animation which runs smoothly.
 This type of animation is sometimes used to draw attention to something on a page.
 To understand the animation you can use Firefox DevTools.
 
+### Inspect the animation with Firefox DevTools
+
 With the animation running, open the Performance tab in Firefox DevTools and record a few seconds of the animation.
 Stop the recording,
 in the waterfall you should see that there are no entries for **Recalculate Style**.
