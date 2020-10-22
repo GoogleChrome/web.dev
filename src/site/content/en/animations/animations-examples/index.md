@@ -60,6 +60,8 @@ With the element still selected look at the Styles Panel.
 There you can see the CSS which draws the shape of the triangle,
 and the animation being used.
 
+### How it works
+
 The triangle is created by using the `::after` pseudo-element to add generated content,
 using borders to create the shape.
 
