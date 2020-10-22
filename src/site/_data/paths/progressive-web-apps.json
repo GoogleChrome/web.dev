@@ -15,12 +15,6 @@
       ]
     },
     {
-      "title": "Reliable",
-      "pathItems": [
-        "offline-ux-design-guidelines"
-      ]
-    },
-    {
       "title": "Installable",
       "pathItems": [
         "define-install-strategy",
