@@ -31,6 +31,8 @@ The image plus all of the animation has been created in CSS and HTML,
 no images or JavaScript.
 To understand how it was created and how well it performs you can use Chrome DevTools.
 
+### Inspect the animation with Chrome DevTools
+
 With the animation running, open the Performance tab in Chrome DevTools and record a few seconds of the animation.
 You should see in the Summary that the browser is not doing any Layout or Paint operations when running this animation.
 
