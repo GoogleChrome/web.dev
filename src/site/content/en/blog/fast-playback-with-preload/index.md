@@ -13,6 +13,8 @@ updated: 2020-10-21
 tags:
   - media
   - video
+  - performance
+  - network
 ---
 
 Faster playback start means more people watching your video. That's a known
