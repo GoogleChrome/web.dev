@@ -242,7 +242,7 @@ model?
 Did you find a bug with Chrome's implementation? Or is the implementation different from the spec?
 
 - File a bug at [new.crbug.com](https://new.crbug.com). Be sure to include as much detail as you
-  can, simple instructions for reproducing, and enter `UI>Browser>WebAppInstalls` in the
+  can, simple instructions for reproducing, and enter `UI>Browser>WebAppInstalls>FileHandling` in the
   **Components** box. [Glitch](https://glitch.com/) works great for sharing quick and easy repros.
 
 ### Show support for the API
@@ -260,7 +260,7 @@ are using it.
 - [File Handling API demo][demo] | [File Handling API demo source][demo-source]
 - [Chromium tracking bug][cr-bug]
 - [ChromeStatus.com entry][cr-status]
-- Blink Component: [`UI>Browser>WebAppInstalls`][blink-component]
+- Blink Component: [`UI>Browser>WebAppInstalls>FileHandling`][blink-component]
 
 ### Wanna go deeper {: #deeper-links }
 
@@ -283,7 +283,7 @@ The File Handling API was specified by [Eric Willigers](https://github.com/ericw
 [cr-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=829689
 [cr-status]: https://chromestatus.com/feature/5721776357113856
 [blink-component]:
-  https://bugs.chromium.org/p/chromium/issues/list?q=component:UI%3EBrowser%3EWebAppInstalls
+  https://bugs.chromium.org/p/chromium/issues/list?q=component:UI%3EBrowser%3EWebAppInstalls%3EFileHandling
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [powerful-apis]:
   https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
