@@ -19,11 +19,12 @@ these recommendations, and the [Animations Guide](/animations-guide) for practic
 
 ## Wizard loading animation
 
-{% IFrame {
-  src: 'https://codepen.io/iamlark/embed/jYzYJg?height=458&theme-id=light&default-tab=result',
-  title: 'Only CSS Loader - Wizard by Guilmain Dorian'
-}
-%}
+<div style="height: 500px; width: 100%;">
+  {% IFrame {
+    src: 'https://codepen.io/iamlark/embed/jYzYJg?height=458&theme-id=light&default-tab=result',
+    title: 'Only CSS Loader - Wizard by Guilmain Dorian'
+  } %}
+</div>
 
 This loading animation is built entirely with CSS.
 The image plus all of the animation has been created in CSS and HTML,
