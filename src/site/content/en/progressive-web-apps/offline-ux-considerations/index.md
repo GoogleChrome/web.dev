@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Offline UX Considerations
+title: Offline UX design guidelines
 subhead: A guide to designing web experiences for slow networks and offline.
 authors:
   - mustafakurtuldu
@@ -9,9 +9,13 @@ date: 2016-11-10
 updated: 2020-09-11
 tags:
   - progressive-web-apps
+  - ux
+  - capabilities
+  - network
+  - offline
 ---
 
-This article will take a look at multiple design considerations needed to create a great experience
+This article provides design guidelines on how to create a great experience
 on both slow networks and offline.
 
 The quality of a network connection can be affected by a number of factors such as:
@@ -63,7 +67,7 @@ current state of the application. For example, a notification could say:
        alt="The I/O 2016 app informing the user when a change in state occurs."
   >
   <figcaption class="w-figcaption">
-    The Google I/O app used a material design "toast" to let the user know when it was offline.
+    The Google I/O app used a material design "toast" to let the user know when they were offline.
   </figcaption>
 </figure>
 
@@ -240,7 +244,7 @@ associated data cost, but may also want to use the player offline.
 Downloading music for later use requires the user to plan ahead, so education about this may be
 required during onboarding.
 
-### Clarify what is accessible offline
+### Clarify what is available offline
 
 Be clear as to the option you are providing. You may need to show a tab or setting that shows an
 "offline library" or [content index](/content-indexing-api/),
