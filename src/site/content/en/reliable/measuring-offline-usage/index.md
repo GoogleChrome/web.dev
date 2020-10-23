@@ -72,7 +72,7 @@ googleAnalytics.initialize();
 This tracks all existing events and pageview pings while being offline, but you wouldn't know that
 they happened offline (as they are just replayed as-is). For this
 [you can manipulate tracking requests with Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-google-analytics#using_a_custom_dimension_to_track_online_vs_offline_interactions)
-by adding an ‘offline' flag to the analytics ping, using a custom dimension (`cd1` in the code
+by adding an `offline` flag to the analytics ping, using a custom dimension (`cd1` in the code
 sample below): 
 
 ```js
@@ -214,13 +214,14 @@ and reliable under unstable network conditions.
 
 This article showed different ways of tracking offline usage with their advantages and shortcomings.
 While this can help to quantify how many of your users go offline and run into problems due to it,
-it is still just a start – as long as your website does not offer a well-built offline mode, you
+it's still just a start. As long as your website does not offer a well-built offline mode, you
 obviously won't see much offline usage in analytics.
 
 We recommend to get the full tracking in place, and then extend your offline capabilities in
-iterations with an eye on tracking numbers. Start with a simple offline error page first – with
-[Workbox it's trivial to do](https://developers.google.com/web/tools/workbox/guides/advanced-recipes#offline_page_only),
-and should be considered a UX best practice similar to custom 404 pages anyway. Then work your way
+iterations with an eye on tracking numbers. Start with a simple offline error page first–with
+[Workbox it's trivial to
+do](https://developers.google.com/web/tools/workbox/guides/advanced-recipes#offline_page_only)–and
+should be considered a UX best practice similar to custom 404 pages anyway. Then work your way
 [towards more advanced offline fallbacks](https://developers.google.com/web/tools/workbox/guides/advanced-recipes#comprehensive_fallbacks)
 and finally towards real offline content. Make sure you advertise and explain this to your users
 well, and you will see increasing usage. After all, everyone goes offline every once in a while.
