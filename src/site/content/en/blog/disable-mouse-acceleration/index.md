@@ -1,10 +1,10 @@
 ---
-title: Boost your FPS games on the web
+title: Disable mouse acceleration to provide a better FPS gaming experience
 subhead: |
   Web apps can now disable mouse acceleration when capturing pointer events.
 authors:
   - beaufortfrancois
-date: 2020-10-21
+date: 2020-10-23
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: Gamer girl is playing FPS online video game on her computer
@@ -132,9 +132,10 @@ for a failed change request.
 
 The Pointer Lock API is [well supported across browsers]. However Chromium-based
 browsers (e.g. Chrome, Edge, etc.) are the only ones to support disabling
-OS-level adjustment for mouse acceleration at the time of writing.
+OS-level adjustment for mouse acceleration as of October 2020.
+See MDN's [Browser compatibility] table for updates.
 
-### Platform support {: #platform-support }
+### Operating system support {: #os-support }
 
 Disabling OS-level adjustment for mouse acceleration is supported on Chrome OS,
 macOS Catalina 10.15.1, and Windows. Linux will follow.
@@ -152,7 +153,7 @@ sure to [check out the source code].
 - [GitHub repository](https://github.com/w3c/pointerlock)
 - [ChromeStatus entry](https://www.chromestatus.com/feature/5723553087356928)
 - [Chrome tracking bug](https://bugs.chromium.org/p/chromium/issues/detail?id=982379)
-- [Intent to ship](TODO)
+- [Intent to ship](https://groups.google.com/a/chromium.org/d/msg/blink-dev/cQn7OwcMQ64/OWmA9KMKBQAJ)
 - [Mozilla's position](https://github.com/mozilla/standards-positions/issues/448)
 - [WebKit's position](https://lists.webkit.org/pipermail/webkit-dev/2020-October/031473.html)
 
@@ -167,6 +168,7 @@ of this article.
 [Google Stadia]: https://en.wikipedia.org/wiki/Google_Stadia
 [Nvidia GeForce Now]: https://en.wikipedia.org/wiki/GeForce_Now
 [well supported across browsers]: https://caniuse.com/?search=pointerlock
+[Browser compatibility]: https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API#Browser_compatibility
 [sample]: https://unadjusted-movement.glitch.me/
 [check out the source code]: https://glitch.com/edit/#!/unadjusted-movement?path=script.js
 [James Hollyer]: https://github.com/jameshollyergoogle
