@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2020-06-23
+updated: 2020-10-09
 description: |
   This post introduces the Cumulative Layout Shift (CLS) metric and explains
   how to measure it
@@ -386,6 +386,8 @@ CLS](https://web.dev/optimize-cls/).
 
 ## Additional resources
 
+- Google Publisher Tag's guidance on
+  [minimizing layout shift](https://developers.google.com/doubleclick-gpt/guides/minimize-layout-shift)
 - [Understanding Cumulative Layout Shift](https://youtu.be/zIJuY-JCjqw) by
   [Annie Sullivan](https://anniesullie.com/) and [Steve
   Kobes](https://kobes.ca/) at [#PerfMatters](https://perfmattersconf.com/)
