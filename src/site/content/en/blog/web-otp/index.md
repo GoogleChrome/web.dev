@@ -182,8 +182,8 @@ Your OTP is: 123456.
 Did you receive the SMS and see the prompt to enter the code to the input area?
 That is how the Web OTP API works for users.
 
-{% Aside 'caution' %}
-The dialog doesn't appear for you? Check out [the FAQ](#no-dialog).
+{% Aside 'gotcha' %}
+If the dialog doesn't appear for you, check out [the FAQ](#no-dialog).
 {% endAside %}
 
 Using the Web OTP API consists of three parts:
