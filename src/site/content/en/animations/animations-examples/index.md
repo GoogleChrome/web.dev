@@ -336,7 +336,7 @@ This creates the pulsing effect.
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/3d-sphere-plane.mp4" type="video/webm">
+    <source src="https://storage.googleapis.com/web-dev-assets/3d-sphere-dot.mp4" type="video/webm">
   </video>
   <figcaption class="w-figcaption">
     The dot rotates with the sphere and pulses.
