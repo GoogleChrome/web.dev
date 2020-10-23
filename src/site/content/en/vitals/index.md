@@ -72,8 +72,10 @@ for most of your users, a good threshold to measure is the **75th percentile**
 of page loads, segmented across mobile and desktop devices.
 
 Tools that assess Core Web Vitals compliance should consider a page passing if
-it meets the recommended targets at the 75th percentile for all of the above
-three metrics.
+it meets the recommended targets at the 75th percentile for all of the Core Web
+Vitals metrics. If a page does not have data for a particular metric (for
+example, a page will not have FID data if users do not interact with it) it can
+still pass provided it meets the recommended targets for all other metrics.
 
 {% Aside %}
   To learn more about the research and methodology behind these recommendations,
