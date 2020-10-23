@@ -1,0 +1,20 @@
+{
+  "slug": "devices",
+  "cover": "/images/collections/devices.svg",
+  "title": "Devices",
+  "updated": "October 22, 2020",
+  "description": "Connecting hardware devices to the web",
+  "overview": "Learn to communicate with hardware devices over Bluetooth, USB, NFC, Serial, and HID from a website.",
+  "topics": [
+    {
+      "title": "API guides",
+      "pathItems": [
+        "bluetooth",
+        "usb",
+        "nfc",
+        "serial",
+        "hid"
+      ]
+    }
+  ]
+}
