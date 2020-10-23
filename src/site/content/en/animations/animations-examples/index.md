@@ -5,7 +5,7 @@ authors:
   - rachelandrew
 description: |
   Demonstrating how high performance techniques can create complex and beautiful animations.
-date: 2020-10-20
+date: 2020-10-23
 tags:
   - animations
   - performance
@@ -21,10 +21,12 @@ these recommendations, and the [Animations Guide](/animations-guide) for practic
 
 <div style="height: 500px; width: 100%;">
   {% IFrame {
-    src: 'https://codepen.io/iamlark/embed/jYzYJg?height=458&theme-id=light&default-tab=result',
+    src: 'https://codepen.io/Craaftx/embed/ExyYRMK?height=458&theme-id=light&default-tab=result',
     title: 'Only CSS Loader - Wizard by Guilmain Dorian'
   } %}
 </div>
+
+[View Wizard loading animation on CodePen](https://codepen.io/Craaftx/full/ExyYRMK)
 
 This loading animation is built entirely with CSS.
 The image plus all of the animation has been created in CSS and HTML,
@@ -45,6 +47,16 @@ You should see in the Summary that the browser is not doing any Layout or Paint 
 
 To find out how this animation was achieved without causing layout and paint,
 inspect any of the moving elements in Chrome DevTools.
+You can use the **Animations Panel** to locate the various animated elements,
+clicking on any element will highlight it in the DOM.
+
+<figure class="w-figure">
+  <img src="./animations-panel.jpg" alt="The Animations Panel showing the various parts of our animation.">
+  <figcaption class="w-figcaption">
+    Viewing and selecting items in the Chrome DevTools Animation Panel.
+  </figcaption>
+</figure>
+
 For example select the triangle,
 and watch how the box of the element transforms during its journey into the air,
 as it spins, and then returns to the start position.
@@ -90,8 +102,6 @@ using borders to create the shape.
 }
 ```
 
-{% Glitch 'animation-breakdown1-1' %}
-
 {% Aside %}
 You can find out more about making shapes with borders and generated content in
 [The Shapes of CSS](https://css-tricks.com/the-shapes-of-css/).
@@ -103,7 +113,7 @@ The animation is added with the following line of CSS,
 animation: path_triangle 10s ease-in-out infinite;
 ```
 
-Find the keyframes by scrolling down the Style Panel.
+Staying in Chrome DevTools you can find the keyframes by scrolling down the Style Panel.
 There you will find that the animation is created by using `transform` to change the position of the element and rotate it.
 The `transform` property is one of the properties described in the [Animations Guide](/animations-guide),
 which does not cause the browser to do layout or paint operations (which are the main causes of slow animations).
@@ -135,11 +145,15 @@ The result is a complex animation which runs smoothly.
 
 ## Pulsating Circle
 
+<div style="height: 500px; width: 100%;">
 {% IFrame {
   src: 'https://codepen.io/peeke/embed/BjxXZa?height=458&theme-id=light&default-tab=result',
   title: 'Pulsating Circle by Peeke'
 }
 %}
+</div>
+
+[View Pulsating Circle on CodePen](https://codepen.io/peeke/full/BjxXZa)
 
 This type of animation is sometimes used to draw attention to something on a page.
 To understand the animation you can use Firefox DevTools.
@@ -254,17 +268,21 @@ it's important that these small touches don't impact the overall performance of 
 
 ## Pure CSS 3D Sphere
 
+<div style="height: 500px; width: 100%;">
 {% IFrame {
   src: 'https://codepen.io/iamlark/embed/jYzYJg?height=458&theme-id=light&default-tab=result',
   title: 'Pure CSS 3d Sphere'
 }
 %}
+</div>
+
+[View Pure CSS 3D Sphere on CodePen](https://codepen.io/iamlark/full/jYzYJg)
 
 This animation seems incredibly complicated,
 however it uses techniques that we have already seen in the previous examples.
 The complexity comes from animating a large number of elements.
 
-Open Chrome DevTools and select on of the elements with a class of `plane`.
+Open Chrome DevTools and select one of the elements with a class of `plane`.
 The sphere is made up of a set of rotating planes and spokes.
 
 <figure class="w-figure">
@@ -275,6 +293,11 @@ The sphere is made up of a set of rotating planes and spokes.
     The plane appears to be rotating.
   </figcaption>
 </figure>
+
+{% Aside %}
+The [DOM Search Tool](https://developers.google.com/web/tools/chrome-devtools/dom#search)
+in Chrome DevTools can make it easier to find an element that you want to inspect.
+{% endAside %}
 
 These planes and spokes are inside a wrapper `<div>`,
 and it is this element which is rotating using `transform: rotate3d`.
@@ -350,4 +373,4 @@ and runs smoothly.
 
 From these examples you can see how animating a few properties using performant methods can create some very cool animations.
 By defaulting to the performant methods described in the [Animations guide](/animations-guide)
-you can spend your time creating the effect you want, with fewer concerns about making the page it displays on slow.
+you can spend your time creating the effect you want, with fewer concerns about making the page slow.
