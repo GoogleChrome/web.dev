@@ -19,15 +19,17 @@ feedback:
   - api
 ---
 
-An accelerated movement is when the pointer speed increases faster than the
-physical speed of a mouse. In other words, mouse acceleration is what causes the
-pointer to move slowly when moving it a tiny bit, and a farther distance when
-moved fast.
+Accelerated movement is an ergonomic feature when using a mouse or trackpad to
+move the pointer on screen. It allows precise movement by moving slowly while
+also allowing the pointer to cross the entire screen with a quick short motion.
+Specifically, for the same physical distance that you move the mouse the pointer
+on screen travels further if the distance was traveled faster.
 
-Major operating systems, often by default, activate mouse acceleration. For some
-[first-party perspective] games, commonly first party shooters (FPS), disabling
-mouse acceleration results in a better gaming experience and higher accuracy
-according to professional gamers.
+Operating systems enable mouse acceleration by default. For some [first-party
+perspective] games, commonly first party shooters (FPS), raw mouse input data is
+used to control camera rotation without an acceleration adjustment. The same
+physical motion, slow or fast, results in the same rotation. This results in a
+better gaming experience and higher accuracy according to professional gamers.
 
 <figure class="w-figure">
   <img src="./mouse-properties-dialog.png" class="w-screenshot" alt="Screenshot of the pointer motion control in Windows 10 settings.">
@@ -159,8 +161,8 @@ sure to [check out the source code].
 
 ## Acknowledgements
 
-Thanks to [James Hollyer], [Thomas Steiner], [Joe Medley], and [Kayce Basques]
-for their reviews of this article.
+Thanks to [James Hollyer], [Thomas Steiner], [Joe Medley], [Kayce Basques], and
+[Vincent Scheib] for their reviews of this article.
 
 <!-- lint disable definition-case -->
 [first-party perspective]: https://en.wikipedia.org/wiki/First-person_(video_games)
@@ -175,4 +177,5 @@ for their reviews of this article.
 [Thomas Steiner]: https://github.com/tomayac
 [Joe Medley]: https://github.com/jpmedley
 [Kayce Basques]: https://github.com/kaycebasques
+[Vincent Scheib]: https://github.com/scheib
 <!-- lint enable definition-case -->
