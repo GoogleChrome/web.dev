@@ -22,8 +22,8 @@ feedback:
 Accelerated movement is an ergonomic feature when using a mouse or trackpad to
 move the pointer on screen. It allows precise movement by moving slowly while
 also allowing the pointer to cross the entire screen with a quick short motion.
-Specifically, for the same physical distance that you move the mouse the pointer
-on screen travels further if the distance was traveled faster.
+Specifically, for the same physical distance that you move the mouse, the
+pointer on screen travels further if the distance was traveled faster.
 
 Operating systems enable mouse acceleration by default. For some [first-party
 perspective] games, commonly first party shooters (FPS), raw mouse input data is
