@@ -159,8 +159,8 @@ sure to [check out the source code].
 
 ## Acknowledgements
 
-Thanks to [James Hollyer], [Thomas Steiner], and [Joe Medley] for their reviews
-of this article.
+Thanks to [James Hollyer], [Thomas Steiner], [Joe Medley], and [Kayce Basques]
+for their reviews of this article.
 
 <!-- lint disable definition-case -->
 [first-party perspective]: https://en.wikipedia.org/wiki/First-person_(video_games)
@@ -174,4 +174,5 @@ of this article.
 [James Hollyer]: https://github.com/jameshollyergoogle
 [Thomas Steiner]: https://github.com/tomayac
 [Joe Medley]: https://github.com/jpmedley
+[Kayce Basques]: https://github.com/kaycebasques
 <!-- lint enable definition-case -->
