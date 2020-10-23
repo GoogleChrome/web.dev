@@ -338,7 +338,6 @@ Please share your WebUSB demos with the [#webusb] hashtag.
 
 Thanks to [Joe Medley] for reviewing this article.
 
-<!-- lint disable definition-case -->
 [contain malfunctioning websites]: https://www.youtube.com/watch?v=29e0CtgXZSI
 [USB in a NutShell]: http://www.beyondlogic.org/usbnutshell
 [official USB specifications]: https://www.usb.org/
@@ -365,4 +364,3 @@ Thanks to [Joe Medley] for reviewing this article.
 [Service Worker]: https://jakearchibald.github.io/isserviceworkerready/resources.html
 [#webusb]: https://twitter.com/search?q=webusb
 [Joe Medley]: https://github.com/jpmedley
-<!-- lint enable definition-case -->

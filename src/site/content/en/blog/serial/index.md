@@ -595,7 +595,6 @@ Demos:
 Thanks to [Reilly Grant] and [Joe Medley] for their reviews of this article.
 Aeroplane factory photo by [Birmingham Museums Trust] on [Unsplash].
 
-<!-- lint disable definition-case -->
 [Capabilities project]: https://developers.google.com/web/updates/capabilities
 [Unlocking new capabilities for the web]: /fugu-status/
 [WebUSB]: https://developers.google.com/web/updates/2016/03/access-usb-devices-on-the-web
@@ -631,4 +630,3 @@ Aeroplane factory photo by [Birmingham Museums Trust] on [Unsplash].
 [Joe Medley]: https://github.com/jpmedley
 [Birmingham Museums Trust]: https://unsplash.com/@birminghammuseumstrust
 [Unsplash]: https://unsplash.com/photos/E1PSU-7aWcY
-<!-- lint enable definition-case -->

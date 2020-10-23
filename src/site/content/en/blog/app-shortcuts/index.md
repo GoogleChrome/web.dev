@@ -234,7 +234,6 @@ Check out the [app shortcuts sample] and its [source].
 * [ChromeStatus.com entry][cr-status]
 * Blink Component: [`UI>Browser>WebAppInstalls`]
 
-<!-- lint disable definition-case -->
 [Progressive Web Apps]: /progressive-web-apps/
 [What does it take to be installable?]: https://web.dev/install-criteria/
 [scope]: /add-manifest/#scope
@@ -256,4 +255,3 @@ Check out the [app shortcuts sample] and its [source].
 [xxhdpi screen]: https://developer.android.com/training/multiscreen/screendensities#TaskProvideAltBmp
 [formula for converting]: https://developer.android.com/training/multiscreen/screendensities#dips-pels
 [article]: https://developers.google.com/web/fundamentals/integration/webapks#update-webapk
-<!-- lint enable definition-case -->

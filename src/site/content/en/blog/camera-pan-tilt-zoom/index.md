@@ -216,7 +216,6 @@ Thanks to [Rijubrata Bhaumik] and [Eero Häkkinen] at Intel for their work on th
 spec and the implementation.
 Hero image by [Christina @ wocintechchat.com] on [Unsplash].
 
-<!-- lint disable definition-case -->
 [mandatory constraints]: https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API/Constraints#Specifying_a_range_of_values:~:text=mandatory
 [`MediaStream`]: https://developer.mozilla.org/en-US/docs/Web/API/MediaStream
 [Permissions API]: https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API
@@ -233,4 +232,3 @@ Hero image by [Christina @ wocintechchat.com] on [Unsplash].
 [Rijubrata Bhaumik]: https://github.com/riju
 [Christina @ wocintechchat.com]: https://unsplash.com/@wocintechchat
 [Unsplash]: https://unsplash.com/photos/lqPLmYD_MO8
-<!-- lint enable definition-case -->

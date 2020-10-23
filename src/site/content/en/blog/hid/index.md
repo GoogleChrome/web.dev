@@ -445,7 +445,6 @@ Thanks to [Matt Reynolds] and [Joe Medley] for their reviews of this article.
 Red and blue nintendo switch photo by [Sara Kurfeß], and black and silver laptop
 computer photo by [Athul Cyriac Ajay] on Unsplash.
 
-<!-- lint disable definition-case -->
 [Capabilities project]: /fugu-status/
 [HID protocol]: https://www.usb.org/hid
 [Elgato Stream Deck]: https://www.elgato.com/en/gaming/stream-deck
@@ -473,4 +472,3 @@ computer photo by [Athul Cyriac Ajay] on Unsplash.
 [Joe Medley]: https://github.com/jpmedley
 [Sara Kurfeß]: https://unsplash.com/photos/jqpRECmiNEU
 [Athul Cyriac Ajay]: https://unsplash.com/photos/ndokCrfQWrI
-<!-- lint enable definition-case -->
