@@ -347,8 +347,8 @@ await root.removeEntry('Old Stuff', { recursive: true });
 
 It is not possible to completely polyfill the File System Access API methods.
 
-- The `showFileOpenPicker()` method can be approximated with an `<input type="file">` element.
-- The `showFileSavePicker()` method can be simulated with a `<a download="file_name">` element,
+- The `showOpenFilePicker()` method can be approximated with an `<input type="file">` element.
+- The `showSaveFilePicker()` method can be simulated with a `<a download="file_name">` element,
   albeit this will trigger a programmatic download and not allow for overwriting existing files.
 - The `showDirectoryPicker()` method can be somewhat emulated with the non-standard
   `<input type="file" webkitdirectory>` element.
