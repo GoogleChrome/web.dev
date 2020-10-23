@@ -10,7 +10,8 @@
       "title": "How to measure network reliability",
       "pathItems": [
         "network-connections-unreliable",
-        "identify-resources-via-network-panel"
+        "identify-resources-via-network-panel",
+        "measuring-offline-usage"
       ]
     },
     {

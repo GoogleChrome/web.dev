@@ -1562,5 +1562,17 @@
       "family": "Zemtsov"
     },
     "github": "djuffin"
+  },
+  "giesau": {
+    "name": {
+      "given": "Stephan",
+      "family": "Giesau"
+    }
+  },
+  "mschierle": {
+    "name": {
+      "given": "Martin",
+      "family": "Schierle"
+    }
   }
 }
