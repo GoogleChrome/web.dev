@@ -1,7 +1,7 @@
 ---
 title: Control camera pan, tilt, and zoom
 subhead:
-  Pan, tilt, and zoom features on cameras are finally accessible on the web.
+  Pan, tilt, and zoom features on cameras are finally controllable on the web.
 authors:
   - beaufortfrancois
 date: 2020-10-05
@@ -9,7 +9,7 @@ hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: Five persons in a conference room photo.
 description: |
-  Pan, tilt, and zoom features on cameras are finally accessible on the web.
+  Pan, tilt, and zoom features on cameras are finally controllable on the web.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
@@ -21,7 +21,7 @@ feedback:
 Room-scale video conferencing solutions deploy cameras with pan, tilt, and zoom
 (PTZ) capabilities so that software can point the camera at meeting
 participants. Starting in Chrome&nbsp;87, the pan, tilt, and zoom features on
-cameras are accessible to websites using media track constraints in
+cameras are available to websites using media track constraints in
 `MediaDevices.getUserMedia()` and `MediaStreamTrack.applyConstraints()`.
 
 ## Using the API {: #use }
