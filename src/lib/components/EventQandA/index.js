@@ -68,7 +68,7 @@ class EventQAndA extends BaseElement {
     return html`
       <select
         class="w-select--borderless w-mb--sm"
-        @change="${this.selectCategory}"
+        @blur="${this.selectCategory}"
       >
         ${this.renderOptions()}
       </select>

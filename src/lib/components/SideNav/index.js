@@ -58,7 +58,11 @@ class SideNav extends BaseElement {
       }
     }
     return html`
-      <nav @click="${this.onBlockClicks}" class="web-side-nav__container">
+      <nav
+        @click="${this.onBlockClicks}"
+        @keydown="${this.onBlockKeyDown}"
+        class="web-side-nav__container"
+      >
         <div class="web-side-nav__header">
           <button
             @click="${this.onCloseSideNav}"
@@ -199,6 +203,13 @@ class SideNav extends BaseElement {
     const link = e.target.closest('a');
     if (!link) {
       e.stopPropagation();
+    }
+  }
+
+  onBlockKeyDown(e) {
+    if (e.keyCode === 13 || e.keyCode === 32) {
+      e.preventDefault();
+      this.onBlockClicks(e);
     }
   }
 
