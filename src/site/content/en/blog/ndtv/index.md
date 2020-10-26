@@ -101,7 +101,9 @@ process of improving user experience.
 <div class="w-columns">
   <p>
     Before beginning the optimization project, the NDTV team benchmarked their LCP
-    score at 3.0 seconds. After the optimization project, it was down to 1.6 seconds.
+    score at 3.0 seconds (for the 75th percentile of their users, based on 
+    <a href="/chrome-ux-report/">Chrome User Experience Report</a> field data).
+    After the optimization project, it was down to 1.6 seconds.
     They also reduced their <a href="/cls">Cumulative Layout Shift</a> (CLS) score to
     TODO. Other metrics on WebPageTest like
     "<a href="/time-to-first-byte">First Byte Time</a>" and "Effective use of
@@ -113,6 +115,14 @@ process of improving user experience.
         alt="TODO improvement in CLS.">
   </figure>
 </div>
+
+{% Aside %}
+  When optimizing your site, remember that it's important to not think of your
+  metric scores as single values, but rather a distribution of field data values
+  from real users. You'll want to make sure that the distribution overall is
+  improving. See <a href="https://youtu.be/6Ljq-Jn-EgU?t=120">Web Performance: Leveraging
+  The Metrics That Most Affect UX</a> for more information.
+{% endAside %}
 
 ## Return on investment
 
