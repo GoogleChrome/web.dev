@@ -34,6 +34,12 @@ with a 50% reduction in bounce rates.
   </div>
 </div>
 
+{% Aside %}
+  NDTV made other product changes while they optimized for Web Vitals
+  so it is not possible to conclusively say that optimizing for Web Vitals was
+  the only cause of the bounce rate reduction.
+{% endAside %}
+
 ## Highlighting the opportunity 
 
 With close to 200M unique users every month, it was critical for NDTV to optimize for quality of
