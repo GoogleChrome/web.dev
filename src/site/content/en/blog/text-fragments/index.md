@@ -8,7 +8,7 @@ subhead: |
 authors:
   - thomassteiner
 date: 2020-06-17
-updated: 2020-08-26
+updated: 2020-10-26
 hero: hero.jpg
 alt:
 description: |
@@ -116,12 +116,14 @@ The Text Fragments feature is supported in version 80 and beyond of Chromium-bas
 At the time of writing, Safari and Firefox have not publicly signaled an intent to implement
 the feature. See [Related links](#related-links) for pointers to the Safari and Firefox discussions.
 
-Note that these links currently do not work when served across
-[client-side redirects](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections#Alternative_way_of_specifying_redirections)
-that some common services like Twitter use.
-You can follow [crbug.com/1055455](https://crbug.com/1055455) for progress on this issue.
-Regular [HTTP redirects](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections#Principle)
-work fine.
+{% Aside 'success' %}
+  These links used to not work when served across
+  [client-side redirects](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections#Alternative_way_of_specifying_redirections)
+  that some common services like Twitter use.
+  This issue was tracked as [crbug.com/1055455](https://crbug.com/1055455) and is now fixed.
+  Regular [HTTP redirects](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections#Principle)
+  always worked fine.
+{% endAside %}
 
 For [security](#security) reasons, the feature requires links to be opened in a
 [`noopener`](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noopener)
