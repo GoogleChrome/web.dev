@@ -20,6 +20,7 @@
           "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations"
         },
         "animations-guide",
+        "animations-examples",
         {
           "title": "Firefox DevTools animation inspector guide",
           "url": "https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Work_with_animations"
