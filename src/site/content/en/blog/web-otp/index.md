@@ -365,7 +365,7 @@ know before using it. The message must be sent after
 where `get()` was called. Finally, the message must adhere to the following
 formatting:
 
-* The message begins with (optional) human-readable text that contains a three to ten
+* The message begins with (optional) human-readable text that contains a four to ten
   character alphanumeric string with at least one number leaving the last line
   for the URL and the OTP.
 * The domain part of the URL of the website that invoked the API must be preceded
