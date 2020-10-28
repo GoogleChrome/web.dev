@@ -2,7 +2,7 @@
 title: A 55% improvement in a Core Web Vitals metric (LCP) contributed to a 50% bounce rate drop for NDTV
 subhead: >
   NDTV enhanced user experience and thus retention by optimizing for Web Vitals.
-date: 2020-10-26
+date: 2020-10-27
 hero: hero.png
 thumbnail: thumbnail.png
 alt: An illustration of icons related to website performance and the text 'scale on web' and 'NDTV'.
@@ -105,23 +105,23 @@ process of improving user experience.
     <a href="/chrome-ux-report/">Chrome User Experience Report</a> field data).
     After the optimization project, it was down to 1.6 seconds.
     They also reduced their <a href="/cls">Cumulative Layout Shift</a> (CLS) score to
-    TODO. Other metrics on WebPageTest like
+    0.05. Other metrics on WebPageTest like
     "<a href="/time-to-first-byte">First Byte Time</a>" and "Effective use of
     <a href="/content-delivery-networks/">CDN</a>" improved to an A grade.
   </p>
   <figure class="w-figure">
     <img class="w-screenshot" 
         src="cls.png"
-        alt="TODO improvement in CLS.">
+        alt="0.05 CLS score.">
   </figure>
 </div>
 
 {% Aside %}
   When optimizing your site, remember that it's important to not think of your
   metric scores as single values, but rather a distribution of field data values
-  from real users. You'll want to make sure that the distribution overall is
-  improving. See <a href="https://youtu.be/6Ljq-Jn-EgU?t=120">Web Performance: Leveraging
-  The Metrics That Most Affect UX</a> for more information.
+  from real users. You'll want to make sure that the distribution overall is improving.
+  See [Web Performance: Leveraging The Metrics That Most Affect UX](https://youtu.be/6Ljq-Jn-EgU?t=120)
+  for more information.
 {% endAside %}
 
 ## Return on investment
