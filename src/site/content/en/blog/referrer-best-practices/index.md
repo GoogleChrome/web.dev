@@ -212,7 +212,7 @@ requests from this page will follow the `strict-origin-when-cross-origin` policy
 [securityheaders.com](https://securityheaders.com/) is handy to determine the policy a specific site
 or page is using.
 
-You can also use the developer tools of Chrome, Edge and Firefox to see the referrer policy used for
+You can also use the developer tools of Chrome, Edge, or Firefox to see the referrer policy used for
 a specific request. At the time of this writing, Safari doesn't show the `Referrer-Policy` header
 but does show the `Referer` that was sent.
 
@@ -293,7 +293,7 @@ specific requests or HTML elements.
   <head>
     <body>
       <!-- policy on this <a> element: no-referrer-when-downgrade -->
-      <a src="..." href="..." referrerpolicy="no-referrer-when-downgrade"></a>
+      <a src="…" href="…" referrerpolicy="no-referrer-when-downgrade"></a>
       <body></body>
     </body>
   </head>
@@ -301,7 +301,7 @@ specific requests or HTML elements.
 ```
 
 Note that Safari/WebKit may cap `document.referrer` or the `Referer` header for
-[cross-site](/same-site-same-origin/#%22same-site%22-and-%22cross-site%22) requests.
+[cross-site](/same-site-same-origin/#same-site-cross-site) requests.
 See [details](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/).
 
 ### Example: request-level policy
