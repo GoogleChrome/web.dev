@@ -1,15 +1,24 @@
 ---
 layout: post
 title: Measuring offline usage
+subhead: > 
+  How to track offline usage of your site so that you can make a case as to why
+  your site needs a better offline experience.
+description: > 
+  How to track offline usage of your site so that you can make a case as to why
+  your site needs a better offline experience.
 authors:
   - giesau
-  - mschierle
-date: 2020-10-22
+  - martinschierle
+date: 2020-10-28
 tags:
+  - blog
   - offline
   - network
   - service-worker
   - metrics
+hero: hero.jpg
+alt: People on a subway.
 ---
 
 This article shows you how to track offline usage of your site to help you make a case for why your
@@ -225,3 +234,14 @@ should be considered a UX best practice similar to custom 404 pages anyway. Then
 [towards more advanced offline fallbacks](https://developers.google.com/web/tools/workbox/guides/advanced-recipes#comprehensive_fallbacks)
 and finally towards real offline content. Make sure you advertise and explain this to your users
 well, and you will see increasing usage. After all, everyone goes offline every once in a while.
+
+Check out [How to report metrics and build a performance culture](/how-to-report-metrics/)
+and [Fixing website speed cross-functionally](/fixing-website-speed-cross-functionally/) for tips
+on persuading cross-functional stakeholders to invest more in your website. Although those posts
+are focused on performance, they should help you get general ideas about how to engage
+stakeholders.
+
+Hero photo by [JC Gellidon][hero] on [Unsplash][unsplash].
+
+[hero]: https://unsplash.com/@jcgellidon?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText
+[unsplash]: https://unsplash.com/s/photos/subway-people?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText
