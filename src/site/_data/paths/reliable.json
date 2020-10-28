@@ -39,7 +39,8 @@
         "resilient-search-experiences",
         "instant-navigation-experiences",
         "app-shell-ux-with-service-workers",
-        "adaptive-loading-with-service-workers"
+        "adaptive-loading-with-service-workers",
+        "offline-ux-design-guidelines"
       ]
     }
   ]

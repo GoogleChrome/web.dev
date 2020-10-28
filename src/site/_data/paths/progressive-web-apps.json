@@ -15,10 +15,6 @@
       ]
     },
     {
-      "title": "Reliable",
-      "pathItems": []
-    },
-    {
       "title": "Installable",
       "pathItems": [
         "offline-fallback-page",
