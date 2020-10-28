@@ -233,7 +233,7 @@ p {
 ```
 
 {% Aside 'warning' %}
-Limiting how large text can get with max() or clamp() can cause a WCAG failure
+Limiting how large text can get with `max()` or `clamp()` can cause a WCAG failure
 under 1.4.4 Resize text (AA), as a user may be unable to scale the text to 200% 
 of its original size. Be certain to test the results with zoom.
 {% endAside %}
