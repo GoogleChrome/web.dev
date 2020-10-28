@@ -1,8 +1,9 @@
 ---
-title: A 55% improvement in a Core Web Vitals metric (LCP) contributed to a 50% bounce rate drop for NDTV
+title: NDTV achieved a 55% improvement in LCP by optimizing for Core Web Vitals
 subhead: >
   NDTV enhanced user experience and thus retention by optimizing for Web Vitals.
 date: 2020-10-27
+updated: 2020-10-28
 hero: hero.png
 thumbnail: thumbnail.png
 alt: An illustration of icons related to website performance and the text 'scale on web' and 'NDTV'.
@@ -23,6 +24,12 @@ Vitals](/vitals/) program, they improved one of their most important user metric
 [Largest Contentful Paint](/lcp/) (LCP), by 55% in just a month. This was correlated
 with a 50% reduction in bounce rates.
 
+{% Aside %}
+  NDTV made other product changes while they optimized for Web Vitals
+  so it is not possible to conclusively say that optimizing for Web Vitals was
+  the only cause of the bounce rate reduction.
+{% endAside %}
+
 <div class="w-stats">
   <div class="w-stat">
     <p class="w-stat__figure">55<sub class="w-stat__sub">%</sub></p>
@@ -33,12 +40,6 @@ with a 50% reduction in bounce rates.
     <p class="w-stat__desc">Reduction in bounce rates</p>
   </div>
 </div>
-
-{% Aside %}
-  NDTV made other product changes while they optimized for Web Vitals
-  so it is not possible to conclusively say that optimizing for Web Vitals was
-  the only cause of the bounce rate reduction.
-{% endAside %}
 
 ## Highlighting the opportunity 
 
