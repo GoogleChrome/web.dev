@@ -13,7 +13,7 @@ $TOPIC_SPACING_SIZE_LARGE: 48px;
 $TOPIC_SPACING_SIZE_MEDIUM: 40px;
 $TOPIC_SPACING_SIZE_SMALL: 32px;
 
-.w-topic {
+.w-topic:not(:last-child) {
   border-bottom: 1px solid $WEB_PRIMARY_COLOR;
 }
 
