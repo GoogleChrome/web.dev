@@ -133,9 +133,9 @@ const handlers = [
   safetyHandler,
   buildSafetyAssetHandler(),
   localeHandler,
+  redirectHandler,
   express.static('dist', {setHeaders: staticHandler}),
   express.static('dist/en', {setHeaders: staticHandler}),
-  redirectHandler,
   notFoundHandler,
 ];
 
