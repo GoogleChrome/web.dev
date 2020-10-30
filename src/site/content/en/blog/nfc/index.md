@@ -879,7 +879,6 @@ depends on a community of committers working together to move the Chromium
 project forward. Not every Chromium committer is a Googler, and these
 contributors deserve special recognition!
 
-<!-- lint disable definition-case -->
 [explainer]: https://github.com/w3c/web-nfc/blob/gh-pages/EXPLAINER.md#web-nfc-explained
 [spec]: https://w3c.github.io/web-nfc/
 [ot]: https://developers.chrome.com/origintrials/#/view_trial/236438980436951041
@@ -909,4 +908,3 @@ contributors deserve special recognition!
 [appropriately]: https://w3c.github.io/web-nfc/#data-mapping
 [custom local type records]: https://w3c.github.io/web-nfc/#smart-poster-record
 [DataView]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView
-<!-- lint enable definition-case -->

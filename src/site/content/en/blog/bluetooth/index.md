@@ -479,7 +479,6 @@ future:
 Thanks to [Kayce Basques] for reviewing this article.
 Hero image by [SparkFun Electronics from Boulder, USA].
 
-<!-- lint disable definition-case -->
 [turtles]: https://www.youtube.com/watch?v=1LV1Fk5ZXwA
 [Generic Attribute Profile]: https://www.bluetooth.com/specifications/gatt/
 [Web Bluetooth API specification]: https://webbluetoothcg.github.io/web-bluetooth/
@@ -529,4 +528,3 @@ Hero image by [SparkFun Electronics from Boulder, USA].
 [browser and platform implementation status]: https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md
 [Kayce Basques]: https://github.com/kaycebasques
 [SparkFun Electronics from Boulder, USA]: https://commons.wikimedia.org/wiki/File:Bluetooth_4.0_Module_-_BR-LE_4.0-S2A_(16804031059).jpg
-<!-- lint enable definition-case -->
