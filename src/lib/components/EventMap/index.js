@@ -86,7 +86,7 @@ class EventMap extends BaseStateElement {
     // prettier-ignore
     /* eslint-disable indent */
     return html`
-      <select class="w-select--borderless" @blur="${this.onChange}">
+      <select class="w-select--borderless" @change="${this.onChange}">
         ${this.eventRegions.map((region) => {
           return html`<option value=${region}>${region}</option>`;
         })}

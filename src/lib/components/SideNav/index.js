@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+/* eslint lit-a11y/click-events-have-key-events: 0 */
+
 import {html} from 'lit-element';
 import {BaseElement} from '../BaseElement';
 import {store} from '../../store';
@@ -58,11 +60,7 @@ class SideNav extends BaseElement {
       }
     }
     return html`
-      <nav
-        @click="${this.onBlockClicks}"
-        @keydown="${this.onBlockKeyDown}"
-        class="web-side-nav__container"
-      >
+      <nav @click="${this.onBlockClicks}" class="web-side-nav__container">
         <div class="web-side-nav__header">
           <button
             @click="${this.onCloseSideNav}"
@@ -203,13 +201,6 @@ class SideNav extends BaseElement {
     const link = e.target.closest('a');
     if (!link) {
       e.stopPropagation();
-    }
-  }
-
-  onBlockKeyDown(e) {
-    if (e.keyCode === 13 || e.keyCode === 32) {
-      e.preventDefault();
-      this.onBlockClicks(e);
     }
   }
 

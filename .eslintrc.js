@@ -24,7 +24,7 @@ module.exports = {
         SwitchCase: 1,
       },
     ],
-    'lit-a11y/role-has-required-aria-attrs': 0,
+    'lit-a11y/no-invalid-change-handler': 0,
     'new-cap': 0,
     'no-case-declarations': 0,
     'node/no-unpublished-import': 0,
