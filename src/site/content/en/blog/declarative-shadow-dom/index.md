@@ -3,6 +3,7 @@ title: Declarative Shadow DOM
 subhead: |
   A new way to implement and use Shadow DOM directly in HTML.
 date: 2020-09-30
+updated: 2020-10-29
 hero: hero.jpg
 alt: decorative shadow dome
 authors:
@@ -361,7 +362,7 @@ Declarative Shadow Roots, it is only loaded and parsed once. The browser uses a 
 
 [Constructable Stylesheets](https://developers.google.com/web/updates/2019/02/constructable-stylesheets)
 are not supported in Declarative Shadow DOM. This is because there is currently no way to serialize
-constructable stylesheets in HTML, and no way to refer to them when populating adoptedStyleSheets.
+constructable stylesheets in HTML, and no way to refer to them when populating `adoptedStyleSheets`.
 
 ## Feature detection and browser support {: #detection-support }
 
