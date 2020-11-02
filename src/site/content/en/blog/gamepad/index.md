@@ -318,7 +318,9 @@ that simulates to be a captive portal that then redirects to a search engine.
    so you can easily toggle between **Automatic** and **Manual**.
 
 For the [Chrome dino gamepad](https://tomayac.github.io/chrome-dino-gamepad/) demo to work,
-I have ripped out the Chrome dino game from the core Chromium project,
+I have ripped out the Chrome dino game from the core Chromium project
+(updating an [earlier effort](https://github.com/arnellebalane/trex-runner) by
+[Arnelle Ballane](https://arnellebalane.com/)),
 placed it on a standalone site, extended the existing gamepad API implementation by adding ducking
 and vibration effects, created a full screen mode,
 and [Mehul Satardekar](https://github.com/mehulsatardekar)
