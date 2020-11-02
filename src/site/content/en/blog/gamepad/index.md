@@ -176,7 +176,7 @@ const pollGamepad = () => {
   window.requestAnimationFrame(pollGamepad)
 };
 // Kick off the initial game loop iteration.
-window.requestAnimationFrame(pollGamepad)
+pollGamepad();
 ```
 
 {% Aside 'gotchas' %}
