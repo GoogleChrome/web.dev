@@ -19,11 +19,11 @@ Chrome's offline page easter egg is one of the worst-kept secrets in history
 If you press the <kbd>space</kbd> key or, on mobile devices, tap the dinosaur,
 the offline page becomes an actually playable arcade game.
 You might be aware of the fact that you do not actually have to go offline
-when you feel like playing: You can also just navigate to `chrome://dino`, or,
+when you feel like playing: In Chrome, you can also just navigate to `chrome://dino`, or,
 for the geek in you, browse to
 `chrome://network-error/-106`.
 But did you know that there are currently
-[270 million games played every month](https://www.blog.google/products/chrome/chrome-dino#jump-content:~:text=There%20are%20currently%20270%20million%20games%20played%20every%20month)?
+[270 million Chrome dino games played every month](https://www.blog.google/products/chrome/chrome-dino#jump-content:~:text=There%20are%20currently%20270%20million%20games%20played%20every%20month)?
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled"
@@ -35,14 +35,14 @@ But did you know that there are currently
 </figure>
 
 Another fact that arguably is more useful to know and that you might not be aware of
-is that the game can be played with a gamepad.
-Gamepad support was added exactly one year ago as of the time of this writing in a
+is that in arcade mode the game can be played with a gamepad.
+Gamepad support was added roughly one year ago as of the time of this writing in a
 [commit](https://github.com/chromium/chromium/commit/fcafd36b23c535e307da4213b7d639f8c13b8da2)
 by [Reilly Grant](https://github.com/reillyeon).
 As you can see, the game, just like the rest of the Chromium project,
 is fully
 [open source](https://github.com/chromium/chromium/tree/master/components/neterror/resources).
-In this post, I want to show you how to use the Gamepad API, and as a bonus feature,
+In this post, I want to show you how to use the Gamepad API, and, as a bonus feature,
 let you play the Chrome dino game on a Nintendo Switch (if you own one).
 
 ## Using the Gamepad API
@@ -51,6 +51,18 @@ let you play the Chrome dino game on a Nintendo Switch (if you own one).
   The [Gamepad API](https://w3c.github.io/gamepad/) has been around for a long time.
   This post disregards all the legacy features and vendor prefixes.
 {% endAside %}
+
+### Feature detection and browser support
+
+The Gamepad API has universally great [browser support](https://caniuse.com/gamepad)
+across both desktop and mobile.
+You can detect if the Gamepad API is supported by running the feature test from the snippet below:
+
+```js
+if ('getGamepads' in navigator) {
+  // The API is supported!
+}
+```
 
 ### How the browser represents a gamepad
 
@@ -71,7 +83,7 @@ A `Gamepad` has the following fields:
 - `buttons`: An array of button states for all buttons of the gamepad.
 
 Note that buttons can be digital (pressed or not pressed) or analog (for example, 78% pressed).
-This is why buttons are reported as `GamepadButton` objects, with the following attributes"
+This is why buttons are reported as `GamepadButton` objects, with the following attributes:
 
 - `pressed`: The pressed state of the button (`true` if the button is currently pressed,
   and `false` if it is not pressed.
@@ -96,22 +108,20 @@ shows the mapping and the arrangement of the buttons and axes on a generic gamep
   >
   <figcaption class="w-figcaption">
     Visual representation of a standard gamepad layout
-    (<a href="https://w3c.github.io/gamepad/#fig-visual-representation-of-a-standard-gamepad-layout:~:text=Figure%201%20Visual%20representation%20of%20a%20standard%20gamepad%20layout.">
-      Source
-    </a>).
+    (<a href="https://w3c.github.io/gamepad/#fig-visual-representation-of-a-standard-gamepad-layout:~:text=Figure%201%20Visual%20representation%20of%20a%20standard%20gamepad%20layout.">Source</a>).
   </figcaption>
 </figure>
 
 ### Being notified when a gamepad gets connected
 
-The way an app can find out if a gamepad is connected is by listening for the `gamepadconnected`
+The way an app can find out when a gamepad was connected is by listening for the `gamepadconnected`
 event that triggers on the `window` object.
 When the user connects a gamepad, which can either happen via USB or via Bluetooth,
 a `GamepadEvent` is fired that has the gamepad's details in an aptly named `gamepad` property.
-Below you can see an example from an Xbox 360 controller that I had lying around
+Below, you can see an example from an Xbox 360 controller that I had lying around
 (yes, I am into retro gaming).
 
-```js
+```js/3-12
 window.addEventListener('gamepadconnected', (event) => {
   console.log('✅ 🎮 A gamepad was connected:', event.gamepad);
   /*
@@ -132,9 +142,10 @@ window.addEventListener('gamepadconnected', (event) => {
 
 Being notified of gamepad disconnects happens analogously to the way connections are detected.
 Just this time the app listens for the `gamepaddisconnect` event.
-Note how in the example below `connected` is now `false`.
+Note how in the example below `connected` is now `false`
+when I unplug the Xbox 360 controller from the previous sample.
 
-```js
+```js/6
 window.addEventListener('gamepadconnected', (event) => {
   console.log('❌ 🎮 A gamepad was disconnected:', event.gamepad);
   /*
@@ -155,9 +166,21 @@ window.addEventListener('gamepadconnected', (event) => {
 
 Getting a hold of a gamepad starts with a call to `navigator.getGamepads()`,
 which returns a `GamepadList` object with `Gamepad` items.
-Note that for this to work, you may need to "wake" your gamepad by pressing any of its buttons.
-More than one gamepad can be connected to a device,
-so be sure to check all items of the `GamepadList`.
+The `GamepadList` object in Chrome *always* has a fixed length of four items.
+If zero or less than four gamepads are connected, an item may just be `null`.
+Always be sure to check all items of the `GamepadList` and be aware that
+gamepads "remember" their slot and may not always be present at the first available slot.
+
+```js
+// When no gamepads are connected:
+navigator.getGamepads()
+// GamepadList {0: null, 1: null, 2: null, 3: null, length: 4}
+```
+
+If one or several gamepads are connected,
+but `navigator.getGamepads()` still reports `null` items,
+you may need to "wake" each gamepad by pressing any of its buttons.
+You can then poll the gamepad states in your game loop as shown below.
 
 ```js
 const pollGamepad = () => {
@@ -165,11 +188,12 @@ const pollGamepad = () => {
   // the game loop, not outside.
   const gamepads = navigator.getGamepads();
   for (const gamepad of gamepads) {
+    // Disregard empty slots.
     if (!gamepad) {
       continue;
     }
-    console.log(gamepad);
     // Process the gamepad state.
+    console.log(gamepad);
   }
   // Call yourself upon the next animation frame.
   // (Typically this happens every 60 times per second.)
@@ -185,6 +209,137 @@ pollGamepad();
   Call `navigator.getGamepads()` each time anew in your game loop.
 {% endAside %}
 
+### Making use of the vibration actuator
+
+The `vibrationActuator` field corresponds to a configuration of motors or other actuators
+that can apply a force for the purposes of haptic feedback.
+Effects can be played by calling `Gamepad.vibrationActuator.playEffect()`.
+The only currently valid effect type is `'dual-rumble'`.
+Dual-rumble describes a haptic configuration with an eccentric rotating mass vibration motor
+in each handle of a standard gamepad.
+In this configuration, either motor is capable of vibrating the whole gamepad.
+The two masses are unequal so that the effects of each can be combined
+to create more complex haptic effects.
+Dual-rumble effects are defined by four parameters:
+
+- `duration`:
+   Sets the duration of the vibration effect in milliseconds.
+- `startDelay`:
+  Sets the duration of the delay until the vibration is started.
+- `strongMagnitude` and `weakMagnitude`:
+  Set the vibration intensity levels for the heavier and lighter eccentric rotating mass
+  motors, normalized to the range `0.0`–`1.0`.
+
+```js
+// This assumes a `Gamepad` as the value of the `gamepad` variable.
+const vibrate = (gamepad, delay = 0, duration = 100, weak = 1.0, strong = 1.0) {
+  if (!('vibrationActuator' in gamepad)) {
+    return;
+  }
+  gamepad.vibrationActuator.playEffect('dual-rumble', {
+    // Start delay in ms.
+    startDelay: delay,
+    // Duration is ms.
+    duration: duration,
+    // The magnitude of the weak actuator (between 0 and 1).
+    weakMagnitude: weak,
+    // The magnitude of the strong actuator (between 0 and 1).
+    strongMagnitude: strong,
+  });
+};
+```
+
+### Integration with Permissions Policy
+
+The Gamepad API spec defines a
+[policy-controlled feature](https://w3c.github.io/webappsec-permissions-policy/)
+identified by the string `"gamepad"`. Its default `allowlist` is `"self"`.
+A document's permissions policy determines whether any content in that document is allowed
+to access `navigator.getGamepads()`.
+If disabled in any document, no content in the document will be allowed to use
+`navigator.getGamepads()`, nor will the `gamepadconnected` and
+`gamepaddisconnected` events fire.
+
+```html/2
+<iframe
+    src="index.html"
+    allow="gamepad"
+>
+</iframe>
+```
+
+## Demo
+
+A simple [gamepad tester demo](https://gamepad-demo.glitch.me/) is embedded below.
+The source code is available [on Glitch](https://glitch.com/edit/#!/gamepad-demo).
+Try the demo by connecting a gamepad via USB or Bluetooth and pressing any of its buttons
+or moving any of its axis.
+
+<div class="glitch-embed-wrap" style="height: 1000px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/gamepad-demo?path=index.html&previewSize=100"
+    title="gamepad-demo on Glitch"
+    allow="gamepad"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+
+## Bonus: Play Chrome dino on a Nintendo Switch
+
+The Nintendo Switch contains a
+[hidden browser](https://switchbrew.org/wiki/Internet_Browser#WifiWebAuthApplet),
+which essentially just serves for logging in to Wi-Fi networks behind a captive portal.
+The browser is pretty barebones and does not have a URL bar,
+but, once you have navigated to a page, it is fully usable.
+When doing a connection test in system settings, the Switch will detect that the captive portal
+is present and display an error for it when the response for
+[http://conntest.nintendowifi.net/](http://conntest.nintendowifi.net/)
+does not include the `X-Organization: Nintendo` HTTP header.
+We can make creative use of this by pointing the Switch to a DNS server
+that simulates to be a captive portal that then redirects to a search engine.
+
+1. Go to **System Settings** and then **Internet Settings** and
+   find the Wi-Fi network that your Switch is connected to. Tap **Change Settings**.
+1. Find the section with the **DNS Settings** and add
+   [45.55.142.122](http://45.55.142.122) as a new **Primary DNS**.
+   Note that this DNS server is *not operated by Google*
+   but a [third-party](https://www.switchbru.com/dns/), so proceed at your own risk.
+1. **Save** the settings and then tap **Connect to This Network**.
+1. The Switch will tell you that **Registration is required to use this network**. Tap **Next**.
+1. On the page that opens, make your way through to **Google**.
+1. Search for **"chrome dino tomayac"**. This should lead you to
+   [https://github.com/tomayac/chrome-dino-gamepad](https://github.com/tomayac/chrome-dino-gamepad).
+1. On the right-hand side in the **About** section, find the link to
+   [https://tomayac.github.io/chrome-dino-gamepad/](https://tomayac.github.io/chrome-dino-gamepad/).
+   Enjoy!
+1. 🚨 For regular Switch online services to work again,
+   turn your DNS settings back to **Automatic**.
+   Conveniently, the Switch remembers previous manual DNS settings,
+   so you can easily toggle between **Automatic** and **Manual**.
+
+For the [Chrome dino gamepad](https://tomayac.github.io/chrome-dino-gamepad/) demo to work,
+I have ripped out the Chrome dino game from the core Chromium project,
+placed it on a standalone site, extended the existing gamepad API implementation by adding ducking
+and vibration effects, created a full screen mode,
+and [Mehul Satardekar](https://github.com/mehulsatardekar)
+contributed a dark mode implementation.
+Happy gaming!
+
+## Useful links
+
+- [Gamepad API spec](https://w3c.github.io/gamepad/)
+- [Gamepad API extensions spec](https://w3c.github.io/gamepad/extensions.html)
+- [GitHub repository](https://github.com/w3c/gamepad/)
+
 ## Acknowledgements
 
+This article was reviewed by [François Beaufort](https://github.com/beaufortfrancois).
+The Gamepad API spec is currently edited by
+[Steve Agoston](https://github.com/sagoston),
+[James Hollyer](https://www.linkedin.com/in/james-hollyer-981110a3/), and
+[Matt Reynolds](https://github.com/nondebug). The former spec editors are
+[Brandon Jones](https://blog.tojicode.com/),
+[Scott Graham](https://h4ck3r.net/), and
+[Ted Mielczarek](http://ted.mielczarek.org/).
+The Gamepad Extensions spec is edited by [Brandon Jones](https://blog.tojicode.com/).
 Hero image by Laura Torrent Puig.
