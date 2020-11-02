@@ -118,8 +118,6 @@ function prepareHandler(yamlSource, baseUrlPrefix) {
  * Builds HTTP middleware that serves redirects for web.dev's _redirects.yaml
  * configuration file, originally from DevSite.
  *
- * This code does NOT consider language whatsoever.
- *
  * @param {string} filename to load configuration from
  * @param {number=} code to use (DevSite uses 301)
  * @return {!Function}
