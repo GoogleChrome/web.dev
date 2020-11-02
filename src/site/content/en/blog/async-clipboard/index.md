@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: Async Clipboard API simplifies permissions-friendly copy and paste.
 date: 2020-07-31
-updated: 2020-10-21
+updated: 2020-11-02
 tags:
   - blog
   - capabilities
@@ -318,6 +318,7 @@ or both of `clipboard-read` or `clipboard-write`, depending on the needs of your
 <iframe
     src="index.html"
     allow="clipboard-read; clipboard-write"
+>
 </iframe>
 ```
 
