@@ -164,7 +164,6 @@ sure to [check out the source code].
 Thanks to [James Hollyer], [Thomas Steiner], [Joe Medley], [Kayce Basques], and
 [Vincent Scheib] for their reviews of this article.
 
-<!-- lint disable definition-case -->
 [first-party perspective]: https://en.wikipedia.org/wiki/First-person_(video_games)
 [updated Pointer Lock API]: https://github.com/w3c/pointerlock/pull/49
 [Google Stadia]: https://en.wikipedia.org/wiki/Google_Stadia
@@ -178,4 +177,3 @@ Thanks to [James Hollyer], [Thomas Steiner], [Joe Medley], [Kayce Basques], and
 [Joe Medley]: https://github.com/jpmedley
 [Kayce Basques]: https://github.com/kaycebasques
 [Vincent Scheib]: https://github.com/scheib
-<!-- lint enable definition-case -->
