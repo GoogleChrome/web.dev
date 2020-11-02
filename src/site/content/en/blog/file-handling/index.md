@@ -7,7 +7,7 @@ Description: |
   Register an app as a file handler with the operating system
   and open files with their proper app.
 date: 2020-10-22
-# updated: 2020-09-25
+updated: 2020-11-02
 tags:
   - blog
   - file-handling
@@ -26,6 +26,8 @@ origin_trial:
 Now that web apps are [capable of reading and writing files](/file-system-access/), the next logical
 step is to let developers declare these very web apps as file handlers for the files their apps can
 create and process. The File Handling API allows you to do exactly this.
+After registering a text editor app as a file handler, you can right-click a `.txt` file on macOS
+and select "Get Info" to then instruct the OS that it should always open `.txt` files with this app as default.
 
 ### Suggested use cases for the File Handling API {: #use-cases }
 
@@ -215,9 +217,11 @@ to a web application without the user's consent.
 
 ### User control
 
-Browsers should not register every site that can handle files as a file handler. Instead,
-registration should be gated behind installation and never happen without explicit user
-confirmation, especially if a site is to become the default handler.
+The spec states that browsers should not register every site that can handle files as a file handler.
+Instead, file handling registration should be gated behind installation
+and never happen without explicit user confirmation, especially if a site is to become the default handler.
+Rather than hijacking existing extensions like `.json` that the user probably already has
+a default handler registered for, sites should consider crafting their own extensions.
 
 ### Transparency
 
