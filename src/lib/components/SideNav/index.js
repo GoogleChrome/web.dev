@@ -24,6 +24,7 @@ import './_styles.scss';
 class SideNav extends BaseElement {
   static get properties() {
     return {
+      logo: {type: String},
       animatable: {type: Boolean, reflect: true},
       expanded: {type: Boolean, reflect: true},
     };
@@ -33,6 +34,7 @@ class SideNav extends BaseElement {
     super();
 
     this.inert = true;
+    this.logo = '';
     this.animatable = false;
     this.expanded_ = false;
     this.startX_ = 0;
@@ -68,18 +70,21 @@ class SideNav extends BaseElement {
           >
             <span class="w-tooltip">Close</span>
           </button>
-          <a
-            href="/"
-            class="gc-analytics-event"
-            data-category="Site-Wide Custom Events"
-            data-label="Site logo"
-          >
-            <img
-              class="web-side-nav__logo"
-              src="/images/lockup.svg"
-              alt="web.dev"
-            />
-          </a>
+          ${this.logo &&
+          html`
+            <a
+              href="/"
+              class="gc-analytics-event"
+              data-category="Site-Wide Custom Events"
+              data-label="Site logo"
+            >
+              <img
+                class="web-side-nav__logo"
+                src="${this.logo}"
+                alt="web.dev"
+              />
+            </a>
+          `}
         </div>
         ${this.prerenderedChildren_}
       </nav>
