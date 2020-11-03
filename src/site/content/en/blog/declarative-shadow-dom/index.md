@@ -396,7 +396,7 @@ document.querySelectorAll('template[shadowroot]').forEach(template => {
   const shadowRoot = template.parentNode.attachShadow({ mode });
   shadowRoot.appendChild(template.content);
   template.remove();
-}
+});
 ```
 
 ## Further Reading {: #further-reading }
