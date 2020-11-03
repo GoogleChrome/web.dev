@@ -325,7 +325,8 @@ Happy gaming!
 
 ## Acknowledgements
 
-This article was reviewed by [François Beaufort](https://github.com/beaufortfrancois).
+This article was reviewed by [François Beaufort](https://github.com/beaufortfrancois)
+and [Joe Medley](https://github.com/jpmedley).
 The Gamepad API spec is currently edited by
 [Steve Agoston](https://github.com/sagoston),
 [James Hollyer](https://www.linkedin.com/in/james-hollyer-981110a3/), and
