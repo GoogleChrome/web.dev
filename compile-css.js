@@ -109,8 +109,6 @@ function renderTo(result, fileName) {
 
   let out = result.css.toString('utf-8');
   if (!isProd) {
-    console.log('Adding sourceMappingURL...');
-
     result.map['file'] = base;
 
     out += `\n/*# sourceMappingURL=${base}.map */`;
