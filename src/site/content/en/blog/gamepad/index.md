@@ -2,12 +2,12 @@
 title: Play the Chrome dino game with your gamepad
 subhead: Learn how to use the Gamepad API to push your web games to the next level.
 description: |
-  This article teaches you how to use the Gamepad API to control web games.
+Learn to control web games with the Gamepad API.
 authors:
   - thomassteiner
 date: 2020-10-30
 hero: hero.jpg
-alt: The hands of a person playing the Chrome Dino game on a Nintendo Switch.
+alt: The hands of a person playing the Chrome dino game on a Nintendo Switch.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
@@ -17,9 +17,9 @@ tags:
 Chrome's offline page easter egg is one of the worst-kept secrets in history
 (`[citation needed]`, but claim made for the dramatic effect).
 If you press the <kbd>space</kbd> key or, on mobile devices, tap the dinosaur,
-the offline page becomes an actually playable arcade game.
-You might be aware of the fact that you do not actually have to go offline
-when you feel like playing: In Chrome, you can also just navigate to `chrome://dino`, or,
+the offline page becomes a playable arcade game.
+You might be aware that you do not actually have to go offline
+when you feel like playing: in Chrome, you can just navigate to `chrome://dino`, or,
 for the geek in you, browse to
 `chrome://network-error/-106`.
 But did you know that there are currently
@@ -35,7 +35,7 @@ But did you know that there are currently
 </figure>
 
 Another fact that arguably is more useful to know and that you might not be aware of
-is that in arcade mode the game can be played with a gamepad.
+is that in arcade mode you can play the game with a gamepad.
 Gamepad support was added roughly one year ago as of the time of this writing in a
 [commit](https://github.com/chromium/chromium/commit/fcafd36b23c535e307da4213b7d639f8c13b8da2)
 by [Reilly Grant](https://github.com/reillyeon).
@@ -56,7 +56,7 @@ let you play the Chrome dino game on a Nintendo Switch (if you own one).
 
 The Gamepad API has universally great [browser support](https://caniuse.com/gamepad)
 across both desktop and mobile.
-You can detect if the Gamepad API is supported by running the feature test from the snippet below:
+You can detect if the Gamepad API is supported using the snippet below:
 
 ```js
 if ('getGamepads' in navigator) {
@@ -77,7 +77,7 @@ A `Gamepad` has the following fields:
 - `connected`:
   Indicates whether the gamepad is still connected to the system.
 - `timestamp`: The last time the data for this gamepad was updated.
-- `mapping`: The mapping in use for this device. Currently the only mapping is `"standard"`.
+- `mapping`: The button and axes mapping in use for this device. Currently the only mapping is `"standard"`.
 - `axes`: An array of values for all axes of the gamepad, linearly normalized to the range of
   `-1.0`–`1.0`.
 - `buttons`: An array of button states for all buttons of the gamepad.
@@ -89,13 +89,13 @@ This is why buttons are reported as `GamepadButton` objects, with the following 
   and `false` if it is not pressed.
 - `touched`: The touched state of the button. If the button is capable of detecting touch,
   this property is `true` if the button is currently being touched, and `false` otherwise.
-- `value`: For buttons that have an analog sensor, this property represents the amount
+- `value`: For buttons that have an analog sensor, this property represents the amount by
   which the button has been pressed, linearly normalized to the range of `0.0`–`1.0`.
 
 One additional thing that you might encounter, depending on your browser and the gamepad you have,
 is a `vibrationActuator` property.
-This field is currently implemented in Chrome and earmarked for being
-[merged](https://github.com/w3c/gamepad/pull/68) into the
+This field is currently implemented in Chrome and earmarked for
+[merging](https://github.com/w3c/gamepad/pull/68) into the
 [Gamepad Extensions](https://w3c.github.io/gamepad/extensions.html) spec.
 
 The schematic overview below, taken
@@ -114,7 +114,7 @@ shows the mapping and the arrangement of the buttons and axes on a generic gamep
 
 ### Being notified when a gamepad gets connected
 
-The way an app can find out when a gamepad was connected is by listening for the `gamepadconnected`
+To learn when a gamepad is connected, listen for the `gamepadconnected`
 event that triggers on the `window` object.
 When the user connects a gamepad, which can either happen via USB or via Bluetooth,
 a `GamepadEvent` is fired that has the gamepad's details in an aptly named `gamepad` property.
@@ -141,9 +141,9 @@ window.addEventListener('gamepadconnected', (event) => {
 ### Being notified when a gamepad gets disconnected
 
 Being notified of gamepad disconnects happens analogously to the way connections are detected.
-Just this time the app listens for the `gamepaddisconnect` event.
+This time the app listens for the `gamepaddisconnect` event.
 Note how in the example below `connected` is now `false`
-when I unplug the Xbox 360 controller from the previous sample.
+when I unplug the Xbox 360 controller.
 
 ```js/6
 window.addEventListener('gamepadconnected', (event) => {
@@ -206,14 +206,15 @@ pollGamepad();
 {% Aside 'gotchas' %}
   Do not store a lasting reference to the `GamepadList` result *outside* of the game loop,
   since the method returns a static snapshot, not a live object.
-  Call `navigator.getGamepads()` each time anew in your game loop.
+  Call `navigator.getGamepads()` each time anew *in your game loop*.
 {% endAside %}
 
 ### Making use of the vibration actuator
 
-The `vibrationActuator` field corresponds to a configuration of motors or other actuators
+The `vibrationActuator` property returns a `GamepadHapticActuator`
+object, which corresponds to a configuration of motors or other actuators
 that can apply a force for the purposes of haptic feedback.
-Effects can be played by calling `Gamepad.vibrationActuator.playEffect()`.
+Haptic effects can be played by calling `Gamepad.vibrationActuator.playEffect()`.
 The only currently valid effect type is `'dual-rumble'`.
 Dual-rumble describes a haptic configuration with an eccentric rotating mass vibration motor
 in each handle of a standard gamepad.
@@ -284,19 +285,19 @@ or moving any of its axis.
   </iframe>
 </div>
 
-## Bonus: Play Chrome dino on a Nintendo Switch
+## Bonus: play Chrome dino on a Nintendo Switch
 
 The Nintendo Switch contains a
 [hidden browser](https://switchbrew.org/wiki/Internet_Browser#WifiWebAuthApplet),
-which essentially just serves for logging in to Wi-Fi networks behind a captive portal.
+which serves for logging in to Wi-Fi networks behind a captive portal.
 The browser is pretty barebones and does not have a URL bar,
 but, once you have navigated to a page, it is fully usable.
 When doing a connection test in system settings, the Switch will detect that the captive portal
 is present and display an error for it when the response for
 [http://conntest.nintendowifi.net/](http://conntest.nintendowifi.net/)
 does not include the `X-Organization: Nintendo` HTTP header.
-We can make creative use of this by pointing the Switch to a DNS server
-that simulates to be a captive portal that then redirects to a search engine.
+I can make creative use of this by pointing the Switch to a DNS server
+that simulates a captive portal that then redirects to a search engine.
 
 1. Go to **System Settings** and then **Internet Settings** and
    find the Wi-Fi network that your Switch is connected to. Tap **Change Settings**.
@@ -306,7 +307,7 @@ that simulates to be a captive portal that then redirects to a search engine.
    but a [third-party](https://www.switchbru.com/dns/), so proceed at your own risk.
 1. **Save** the settings and then tap **Connect to This Network**.
 1. The Switch will tell you that **Registration is required to use this network**. Tap **Next**.
-1. On the page that opens, make your way through to **Google**.
+1. On the page that opens, make your way to **Google**.
 1. Search for **"chrome dino tomayac"**. This should lead you to
    [https://github.com/tomayac/chrome-dino-gamepad](https://github.com/tomayac/chrome-dino-gamepad).
 1. On the right-hand side in the **About** section, find the link to
