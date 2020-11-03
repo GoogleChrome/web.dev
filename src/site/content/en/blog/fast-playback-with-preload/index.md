@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Fast playback with video preload
+title: Fast playback with audio and video preload
 authors:
   - beaufortfrancois
 description: |
-  Faster playback start means more people watching your video.
-  That's a known fact. In this article I'll explore techniques you can
-  use to accelerate your media playback by actively preloading resources
+  Faster playback start means more people watching your video or listening to
+  your audio. That's a known fact. In this article I'll explore techniques you
+  can use to accelerate your media playback by actively preloading resources
   depending on your use case.
 date: 2017-08-17
 updated: 2020-11-03
@@ -17,16 +17,10 @@ tags:
   - network
 ---
 
-Faster playback start means more people watching your video. [That's a known
-fact](https://www.digitaltrends.com/web/buffer-rage/). In this article I'll
-explore techniques you can use to accelerate your media playback by actively
-preloading resources depending on your use case.
-
-{% Aside %}
-  Information in this article also applies to the
-  [`<audio>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio)
-  element.
-{% endAside %}
+Faster playback start means more people watching your video or listening to your
+audio. [That's a known fact](https://www.digitaltrends.com/web/buffer-rage/). In
+this article I'll explore techniques you can use to accelerate your audio and
+video playback by actively preloading resources depending on your use case.
 
 <figure>
   <video controls controlsList="nodownload" muted playsinline style="width: 100%">
@@ -62,7 +56,7 @@ But...
 Simple to use for a unique file hosted on a web server.
       </td>
       <td>
-Browsers may completely ignore the attribute. The autoplay attribute may also override it.
+Browsers may completely ignore the attribute.
       </td>
     <tr>
       <td>
@@ -214,7 +208,7 @@ finished yet, a regular network fetch will happen.
   // Later on, after some condition has been met, set video source to the
   // preloaded video URL.
   video.src = 'https://cdn.com/small-file.mp4';
-  video.play().then(_ => {
+  video.play().then(() => {
     // If preloaded video URL was already cached, playback started immediately.
   });
 </script>
@@ -502,7 +496,7 @@ function onPlayButtonClick(videoFileUrl) {
       const sourceBuffer = mediaSource.addSourceBuffer('video/webm; codecs="vp09.00.10.08"');
       sourceBuffer.appendBuffer(data);
 
-      video.play().then(_ => {
+      video.play().then(() => {
         // TODO: Fetch the rest of the video when user starts playing video.
       });
     }
@@ -587,14 +581,14 @@ Have a look at the official [Sample Media App][sample-media-app] and in particul
 requests.
 
 
-[how much information or content to preload]: /web/fundamentals/media/video#preload
-[video preload attribute]: /web/fundamentals/media/video#preload
+[how much information or content to preload]: https://web.dev/video-and-source-tags/#preload
+[video preload attribute]: https://web.dev/video-and-source-tags/#preload
 [chrome64]: /web/updates/2017/12/chrome-63-64-media-updates#media-preload-defaults-metadata
 [datasaver]: https://support.google.com/chrome/answer/2392284
-[covered]: /web/updates/2016/03/link-rel-preload
+[covered]: https://developers.google.com/web/updates/2016/03/link-rel-preload
 [articles]: https://www.smashingmagazine.com/2016/02/preload-what-is-it-good-for/
 [link preload]: https://w3c.github.io/preload/
-[cache]: /web/fundamentals/instant-and-offline/web-storage/offline-for-pwa
+[cache]: https://web.dev/storage-for-the-web/
 [shakaplayer]: https://github.com/google/shaka-player/blob/master/docs/tutorials/service-worker.md
 [sample-media-app]: https://github.com/GoogleChrome/sample-media-pwa
 [ranged-response.js]: https://github.com/GoogleChrome/sample-media-pwa/blob/master/src/client/scripts/ranged-response.js
