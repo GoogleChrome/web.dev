@@ -382,8 +382,8 @@ to browsers that do not support them.
 ### Polyfillability
 
 The Text Fragments feature can be polyfilled to some extent.
-We provide a [polyfill](https://github.com/GoogleChromeLabs/text-fragments-polyfill)
-used internally by the [extension](https://github.com/GoogleChromeLabs/link-to-text-fragment)
+We provide a [polyfill](https://github.com/GoogleChromeLabs/text-fragments-polyfill),
+which is used internally by the [extension](https://github.com/GoogleChromeLabs/link-to-text-fragment),
 for browsers that do not provide built-in support for Text Fragments
 where the functionality is implemented in JavaScript.
 
