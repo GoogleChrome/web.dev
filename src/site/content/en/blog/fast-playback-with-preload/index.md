@@ -9,7 +9,7 @@ description: |
   use to accelerate your media playback by actively preloading resources
   depending on your use case.
 date: 2017-08-17
-updated: 2020-10-21
+updated: 2020-11-03
 tags:
   - media
   - video
@@ -17,9 +17,10 @@ tags:
   - network
 ---
 
-Faster playback start means more people watching your video. That's a known
-fact. In this article I'll explore techniques you can use to accelerate your
-media playback by actively preloading resources depending on your use case.
+Faster playback start means more people watching your video. [That's a known
+fact](https://www.digitaltrends.com/web/buffer-rage/). In this article I'll
+explore techniques you can use to accelerate your media playback by actively
+preloading resources depending on your use case.
 
 {% Aside %}
   Information in this article also applies to the
