@@ -5,7 +5,8 @@ description: |
 Learn to control web games with the Gamepad API.
 authors:
   - thomassteiner
-date: 2020-10-30
+date: 2020-11-03
+# updated: 2020-11-03
 hero: hero.jpg
 alt: The hands of a person playing the Chrome dino game on a Nintendo Switch.
 tags:
