@@ -121,7 +121,7 @@ a `GamepadEvent` is fired that has the gamepad's details in an aptly named `game
 Below, you can see an example from an Xbox 360 controller that I had lying around
 (yes, I am into retro gaming).
 
-```js/3-12
+```js
 window.addEventListener('gamepadconnected', (event) => {
   console.log('✅ 🎮 A gamepad was connected:', event.gamepad);
   /*
@@ -141,12 +141,12 @@ window.addEventListener('gamepadconnected', (event) => {
 ### Being notified when a gamepad gets disconnected
 
 Being notified of gamepad disconnects happens analogously to the way connections are detected.
-This time the app listens for the `gamepaddisconnect` event.
+This time the app listens for the `gamepaddisconnected` event.
 Note how in the example below `connected` is now `false`
 when I unplug the Xbox 360 controller.
 
 ```js/6
-window.addEventListener('gamepadconnected', (event) => {
+window.addEventListener('gamepaddisconnected', (event) => {
   console.log('❌ 🎮 A gamepad was disconnected:', event.gamepad);
   /*
     gamepad: Gamepad
@@ -173,7 +173,7 @@ gamepads "remember" their slot and may not always be present at the first availa
 
 ```js
 // When no gamepads are connected:
-navigator.getGamepads()
+navigator.getGamepads();
 // GamepadList {0: null, 1: null, 2: null, 3: null, length: 4}
 ```
 
@@ -261,12 +261,8 @@ If disabled in any document, no content in the document will be allowed to use
 `navigator.getGamepads()`, nor will the `gamepadconnected` and
 `gamepaddisconnected` events fire.
 
-```html/2
-<iframe
-    src="index.html"
-    allow="gamepad"
->
-</iframe>
+```html
+<iframe src="index.html" allow="gamepad"></iframe>
 ```
 
 ## Demo
@@ -276,14 +272,7 @@ The source code is available [on Glitch](https://glitch.com/edit/#!/gamepad-demo
 Try the demo by connecting a gamepad via USB or Bluetooth and pressing any of its buttons
 or moving any of its axis.
 
-<div class="glitch-embed-wrap" style="height: 1000px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/gamepad-demo?path=index.html&previewSize=100"
-    title="gamepad-demo on Glitch"
-    allow="gamepad"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch { id: 'gamepad-demo', path: 'script.js', height: 1000, allow: 'gamepad' } %}
 
 ## Bonus: play Chrome dino on a Nintendo Switch
 
