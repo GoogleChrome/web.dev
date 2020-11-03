@@ -48,7 +48,7 @@ To use FFmpeg to convert the GIF, `my-animation.gif` to an MP4 video, run the
 following command in your console:
 
 ```bash
-ffmpeg -i my-animation.gif -b:v 0 -crf 25 -f mp4 -vcodec libx264 -pix_fmt yuv420p my-animation.mp4
+ffmpeg -i my-animation.gif -vf "crop=trunc(iw/2)*2:trunc(ih/2)*2" -b:v 0 -crf 25 -f mp4 -vcodec libx264 -pix_fmt yuv420p my-animation.mp4
 ```
 
 This tells FFmpeg to take `my-animation.gif` as the **input**, signified by the
@@ -64,7 +64,7 @@ To use FFmpeg to convert `my-animation.gif` to a WebM video, run the following
 command in your console:
 
 ```bash
-ffmpeg -i my-animation.gif -c vp9 -b:v 0 -crf 41 my-animation.webm
+ffmpeg -i my-animation.gif -vf "crop=trunc(iw/2)*2:trunc(ih/2)*2" -c vp9 -b:v 0 -crf 41 my-animation.webm
 ```
 
 ## Compare the difference
