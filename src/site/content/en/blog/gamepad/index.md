@@ -281,8 +281,8 @@ You can play
 with your gamepad on this very site.
 The source code is available
 [on GitHub](https://github.com/tomayac/chrome-dino-gamepad).
-Check out the gamepad polling implementation
-[in `trex-runner.js`](https://github.com/tomayac/chrome-dino-gamepad/blob/885eb6134805345bf31eeb9971830adeb84747ab/trex-runner.js#L529-L571)
+Check out the gamepad polling implementation in
+[`trex-runner.js`](https://github.com/tomayac/chrome-dino-gamepad/blob/885eb6134805345bf31eeb9971830adeb84747ab/trex-runner.js#L529-L571)
 and note how it is emulating key presses.
 
 <div style="height: 420px; width: 100%;">
