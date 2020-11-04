@@ -19,9 +19,9 @@ tags:
 ---
 
 Faster playback start means more people watching your video or listening to your
-audio. [That's a known fact](https://www.digitaltrends.com/web/buffer-rage/). In
-this article I'll explore techniques you can use to accelerate your audio and
-video playback by actively preloading resources depending on your use case.
+audio. [That's a known fact][thats-a-known-fact]. In this article I'll explore
+techniques you can use to accelerate your audio and video playback by actively
+preloading resources depending on your use case.
 
 <figure class="w-figure">
   <video controls muted playsinline class="w-screenshot">
@@ -274,10 +274,9 @@ smaller files like `file_1.webm`, `file_2.webm`, `file_3.webm`, etc.
 
 ### Support
 
-See MDN's
-[Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#Browser_compatibility)
-table to see which browsers support preload. You may want to detect its
-availability with the snippets below to adjust your performance metrics.
+See MDN's [Browser compatibility][browser-compatibility] table to see which
+browsers support preload. You may want to detect its availability with the
+snippets below to adjust your performance metrics.
 
 ```js
 function preloadFullVideoSupported() {
@@ -582,8 +581,8 @@ Have a look at the official [Sample Media App][sample-media-app] and in particul
 requests.
 
 
-[how much information or content to preload]: https://web.dev/video-and-source-tags/#preload
-[video preload attribute]: https://web.dev/video-and-source-tags/#preload
+[how much information or content to preload]: /video-and-source-tags/#preload
+[video preload attribute]: /video-and-source-tags/#preload
 [chrome64]: /web/updates/2017/12/chrome-63-64-media-updates#media-preload-defaults-metadata
 [datasaver]: https://support.google.com/chrome/answer/2392284
 [covered]: https://developers.google.com/web/updates/2016/03/link-rel-preload
@@ -601,4 +600,6 @@ requests.
 [network-info-sample]: https://googlechrome.github.io/samples/network-information/
 [fast-light]: https://developers.google.com/web/updates/2016/02/save-data
 [mse-basics]: https://developers.google.com/web/fundamentals/media/mse/basics
-[preload]: https://web.dev/video-and-source-tags/#preload
+[preload]: /video-and-source-tags/#preload
+[thats-a-known-fact]: https://www.digitaltrends.com/web/buffer-rage/
+[browser-compatibility]: https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#Browser_compatibility
