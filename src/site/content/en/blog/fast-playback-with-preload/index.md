@@ -23,7 +23,7 @@ audio. [That's a known fact](https://www.digitaltrends.com/web/buffer-rage/). In
 this article I'll explore techniques you can use to accelerate your audio and
 video playback by actively preloading resources depending on your use case.
 
-<figure>
+<figure class="w-figure">
   <video controls controlsList="nodownload" muted playsinline style="width: 100%">
     <source src="https://storage.googleapis.com/webfundamentals-assets/videos/video-preload-hero.webm#t=1.1"
             type="video/webm">
