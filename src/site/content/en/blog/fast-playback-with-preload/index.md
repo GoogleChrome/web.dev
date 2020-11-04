@@ -24,13 +24,13 @@ this article I'll explore techniques you can use to accelerate your audio and
 video playback by actively preloading resources depending on your use case.
 
 <figure class="w-figure">
-  <video controls controlsList="nodownload" muted playsinline style="width: 100%">
+  <video controls muted playsinline class="w-screenshot">
     <source src="https://storage.googleapis.com/webfundamentals-assets/videos/video-preload-hero.webm#t=1.1"
             type="video/webm">
     <source src="https://storage.googleapis.com/webfundamentals-assets/videos/video-preload-hero.mp4#t=1.1"
             type="video/mp4">
   </video>
-  <figcaption>
+  <figcaption class="w-figcaption">
     <p>Credits: copyright Blender Foundation | <a href="http://www.blender.org">www.blender.org </a>.</p>
   </figcaption>
 </figure>
@@ -589,7 +589,7 @@ requests.
 [covered]: https://developers.google.com/web/updates/2016/03/link-rel-preload
 [articles]: https://www.smashingmagazine.com/2016/02/preload-what-is-it-good-for/
 [link preload]: https://w3c.github.io/preload/
-[cache]: https://web.dev/storage-for-the-web/
+[cache]: /storage-for-the-web/#eviction
 [shakaplayer]: https://github.com/google/shaka-player/blob/master/docs/tutorials/service-worker.md
 [sample-media-app]: https://github.com/GoogleChrome/sample-media-pwa
 [ranged-response.js]: https://github.com/GoogleChrome/sample-media-pwa/blob/master/src/client/scripts/ranged-response.js
