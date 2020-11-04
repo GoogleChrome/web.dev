@@ -6,9 +6,9 @@ description: |
 authors:
   - thomassteiner
 date: 2020-11-03
-# updated: 2020-11-03
+updated: 2020-11-04
 hero: hero.jpg
-alt: The hands of a person playing the Chrome dino game on a Nintendo Switch.
+alt: The hands of a person playing the Chrome dino game on a game console.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
@@ -43,8 +43,7 @@ by [Reilly Grant](https://github.com/reillyeon).
 As you can see, the game, just like the rest of the Chromium project,
 is fully
 [open source](https://github.com/chromium/chromium/tree/master/components/neterror/resources).
-In this post, I want to show you how to use the Gamepad API, and, as a bonus feature,
-let you play the Chrome dino game on a Nintendo Switch (if you own one).
+In this post, I want to show you how to use the Gamepad API.
 
 ## Using the Gamepad API
 
@@ -275,38 +274,26 @@ or moving any of its axis.
 
 {% Glitch { id: 'gamepad-demo', path: 'script.js', height: 1000, allow: 'gamepad' } %}
 
-## Bonus: play Chrome dino on a Nintendo Switch
+## Bonus: play Chrome dino on web.dev
 
-The Nintendo Switch contains a
-[hidden browser](https://switchbrew.org/wiki/Internet_Browser#WifiWebAuthApplet),
-which serves for logging in to Wi-Fi networks behind a captive portal.
-The browser is pretty barebones and does not have a URL bar,
-but, once you have navigated to a page, it is fully usable.
-When doing a connection test in system settings, the Switch will detect that the captive portal
-is present and display an error for it when the response for
-[http://conntest.nintendowifi.net/](http://conntest.nintendowifi.net/)
-does not include the `X-Organization: Nintendo` HTTP header.
-I can make creative use of this by pointing the Switch to a DNS server
-that simulates a captive portal that then redirects to a search engine.
+You can play
+[Chrome dino](https://tomayac.github.io/chrome-dino-gamepad/)
+with your gamepad on this very site.
+The source code is available
+[on GitHub](https://github.com/tomayac/chrome-dino-gamepad).
+Check out the gamepad polling implementation in
+[`trex-runner.js`](https://github.com/tomayac/chrome-dino-gamepad/blob/885eb6134805345bf31eeb9971830adeb84747ab/trex-runner.js#L529-L571)
+and note how it is emulating key presses.
 
-1. Go to **System Settings** and then **Internet Settings** and
-   find the Wi-Fi network that your Switch is connected to. Tap **Change Settings**.
-1. Find the section with the **DNS Settings** and add
-   [45.55.142.122](http://45.55.142.122) as a new **Primary DNS**.
-   Note that this DNS server is *not operated by Google*
-   but a [third-party](https://www.switchbru.com/dns/), so proceed at your own risk.
-1. **Save** the settings and then tap **Connect to This Network**.
-1. The Switch will tell you that **Registration is required to use this network**. Tap **Next**.
-1. On the page that opens, make your way to **Google**.
-1. Search for **"chrome dino tomayac"**. This should lead you to
-   [https://github.com/tomayac/chrome-dino-gamepad](https://github.com/tomayac/chrome-dino-gamepad).
-1. On the right-hand side in the **About** section, find the link to
-   [https://tomayac.github.io/chrome-dino-gamepad/](https://tomayac.github.io/chrome-dino-gamepad/).
-   Enjoy!
-1. 🚨 For regular Switch online services to work again,
-   turn your DNS settings back to **Automatic**.
-   Conveniently, the Switch remembers previous manual DNS settings,
-   so you can easily toggle between **Automatic** and **Manual**.
+<div style="height: 420px; width: 100%;">
+  <iframe
+    src="https://tomayac.github.io/chrome-dino-gamepad/"
+    title="Chrome dino gamepad"
+    allow="gamepad; fullscreen"
+    style="height: 100%; width: 100%; border: 0;"
+    loading="lazy">
+  </iframe>
+</div>
 
 For the [Chrome dino gamepad](https://tomayac.github.io/chrome-dino-gamepad/) demo to work,
 I have ripped out the Chrome dino game from the core Chromium project
