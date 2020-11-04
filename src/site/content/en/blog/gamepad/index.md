@@ -2,7 +2,7 @@
 title: Play the Chrome dino game with your gamepad
 subhead: Learn how to use the Gamepad API to push your web games to the next level.
 description: |
-Learn to control web games with the Gamepad API.
+  Learn to control web games with the Gamepad API.
 authors:
   - thomassteiner
 date: 2020-11-03
