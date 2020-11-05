@@ -13,6 +13,7 @@ tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
   - gamepad
+  - devices
 ---
 
 Chrome's offline page easter egg is one of the worst-kept secrets in history
