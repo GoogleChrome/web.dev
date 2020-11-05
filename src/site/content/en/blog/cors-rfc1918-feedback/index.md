@@ -158,3 +158,6 @@ are two things you can do to help:
 
 This is exactly the type of feedback we are looking for. Please file an issue
 with your concrete use case at crbug.com. We'd love to hear from you.
+
+[Hero image](https://unsplash.com/photos/tN344soypQM) by [Stephen
+Philips](https://unsplash.com/@hostreviews) on [Unsplash](https://unsplash.com)
