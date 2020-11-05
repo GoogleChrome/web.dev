@@ -300,7 +300,7 @@ library only when `loading` isn't supported. This works as follows:
 </script>
 ```
 
-Here's a [demo](https://lazy-loading.firebaseapp.com/lazy_loading_native.html) of this pattern. Try
+Here's a [demo](https://lazy-loading.firebaseapp.com/lazy_loading_lib.html) of this pattern. Try
 it out in a browser like Firefox or Safari to see the fallback in action.
 
 {% Aside %}
