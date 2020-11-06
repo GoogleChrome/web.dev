@@ -329,7 +329,7 @@ on a web page.
 During a drag and drop operation, dragged file and directory items are associated
 with file entries and directory entries respectively.
 The `DataTransferItem.getAsFileSystemHandle()` method returns a promise with a `FileSystemFileHandle` object
-if the dragged item is a file, and a `FileSystemDirectoryHandle` object if the dragged item is a directory.
+if the dragged item is a file, and a promise with a `FileSystemDirectoryHandle` object if the dragged item is a directory.
 The listing below shows this in action.
 
 ```js/13
