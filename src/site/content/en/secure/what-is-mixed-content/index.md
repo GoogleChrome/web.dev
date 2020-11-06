@@ -66,19 +66,10 @@ Even if the attacker doesn't alter the content of your site,
 an attacker can track users via mixed content requests.
 The attacker can tell which pages a user visits and which products they view based on images or other resources that the browser loads.
 
-The following Glitch demo contains examples of passive mixed content.
-
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/passive-mixed-content?path=index.html&previewSize=100"
-    title="passive-mixed-content on Glitch"
-    allow="encrypted-media"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
-
 If passive mixed content is present most browsers will indicate in the URL bar that the page is not secure,
 even when the page itself was loaded over HTTPS.
+You can observe this behavior with this [Glitch demo](https://passive-mixed-content.glitch.me/)
+that contains examples of passive mixed content.
 
 Until recently passive mixed content was loaded in all browsers,
 as to block it would have broken many websites.
@@ -113,17 +104,7 @@ Due to the severity of this threat,
 most browsers already block this type of content by default to protect users,
 but functionality varies between browser vendors and versions.
 
-The following contains examples of active mixed content:
-
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/active-mixed-content?previewSize=100"
-    title="active-mixed-content on Glitch"
-    allow="encrypted-media"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
-
+This other [Glitch demo](https://active-mixed-content.glitch.me/) contains examples of active mixed content.
 [Load the example over HTTP](http://active-mixed-content.glitch.me/)
 to see the content that's blocked when you [load the example over
 HTTPS](https://active-mixed-content.glitch.me/).
