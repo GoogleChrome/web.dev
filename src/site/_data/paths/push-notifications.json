@@ -5,10 +5,20 @@
   "description": "Notifications",
   "overview": "Notifications",
   "topics": [
-    "push-notifications-overview",
-    "push-notifications-guide",
-    "notifications-api-codelab",
-    "push-notifications-server-codelab",
-    "service-worker-push-notifications-codelab"
+    {
+      "title": "Understand push notifications",
+      "pathItems": [
+        "push-notifications-overview"
+      ]
+    },
+    {
+      "title": "Build push notifications",
+      "pathItems": [
+        "push-notifications-guide",
+        "send-push-notifications-codelab",
+        "receive-push-notifications-codelab",
+        "manage-push-notifications-codelab"
+      ]
+    }
   ]
 }

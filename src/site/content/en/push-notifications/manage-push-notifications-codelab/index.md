@@ -1,14 +1,15 @@
 ---
 layout: codelab
-title: Build a push notifications server
-author: katejeffreys
+title: "Codelab: manage push notifications"
+authors: 
+  - katejeffreys
+  - kaycebasques
 description: |
   In this codelab, learn how to build a push notifications server.
-date: 2019-11-20
+date: 2020-11-05
 glitch: codelab-notifications-push-server
 glitchPath: server.js
-related_post: use-push-notifications-to-engage-users
-draft: true
+related_post: push-notifications-overview
 tags:
   - notifications
 ---
@@ -17,16 +18,28 @@ In this codelab, you'll build a push notifications server. The server will manag
 
 The client code is already complete–in this codelab, you'll work on the server-side functionality.
 
-## Remix the sample app and view it in a new tab
+{% Aside %}
+  TODO Chrome/macOS assumption
+{% endAside %}
+
+## Setup
 
 Notifications are automatically blocked from the embedded Glitch app, so you won't be able to preview the app on this page. Instead, here's what to do:
 
 {% Instruction 'remix', 'ol' %}
 {% Instruction 'preview', 'ol' %}
 
-The live app opens in a new Chrome tab. In the embedded Glitch, click **View Source** to show the code again.
+The [Glitch](https://glitch.com) should open in a new Chrome tab:
 
-As you work through this codelab, make changes to the code in the embedded Glitch on this page. Refresh the new tab with your live app to see the changes.
+In the embedded Glitch, click **View Source** to show the code again.
+
+{% Aside 'key-term' %}
+  We'll refer to the page that you're currently on (the one with the instructions on the left and
+  the Glitch editor on the right) as the **codelab tab**. We'll refer to the new tab that you
+  just opened as the **live app tab**.
+{% endAside %}
+
+
 
 ## Get familiar with the starting app and its code
 

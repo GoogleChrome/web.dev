@@ -32,7 +32,7 @@ module.exports = {
   'lighthouse-seo': lighthouseSeo,
   media,
   metrics,
-  pushNotifications,
+  'push-notifications': pushNotifications,
   payments,
   'progressive-web-apps': progressiveWebApps,
   react,

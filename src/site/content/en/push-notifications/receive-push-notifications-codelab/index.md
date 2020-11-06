@@ -1,19 +1,18 @@
 ---
 layout: codelab
-title: Use a Service Worker to manage notifications
+title: "Codelab: receive push notifications"
 authors:
   - katejeffreys
 description: |
   In this codelab, learn how to manage notifications with a
   service worker.
-date: 2019-10-14
+date: 2020-11-05
 # Add an updated date to your post if you edit in the future.
 # updated: 2019-06-27
 glitch: codelab-notifications-service-worker
 # Specify which file the glitch should start on.
 glitchPath: public/index.js
-related_post: use-push-notifications-to-engage-users
-draft: true
+related_post: push-notifications-overview
 tags:
   - notifications
 ---
@@ -31,14 +30,24 @@ If you need a refresher on notifications, see the
 [Get started with the Notifications API](/codelab-notifications-get-started)
 codelab. To learn more about service workers, see Matt Gaunt's [Introduction to service workers](https://developers.google.com/web/fundamentals/primers/service-workers).
 
-## Remix the sample app and view it in a new tab
+{% Aside %}
+  TODO Chrome/macOS assumption
+{% endAside %}
+
+## Setup
 
 Notifications are automatically blocked from the embedded Glitch app, so you won't be able to preview the app on this page. Instead, here's what to do:
 
 {% Instruction 'remix', 'ol' %}
 {% Instruction 'preview', 'ol' %}
 
-The Glitch should open in a new Chrome tab.
+The [Glitch](https://glitch.com) should open in a new Chrome tab:
+
+{% Aside 'key-term' %}
+  We'll refer to the page that you're currently on (the one with the instructions on the left and
+  the Glitch editor on the right) as the **codelab tab**. We'll refer to the new tab that you
+  just opened as the **live app tab**.
+{% endAside %}
 
 As you work through this codelab, make changes to the code in the embedded Glitch on this page. Refresh the new tab with your live app to see the changes.
 

@@ -6,14 +6,18 @@ description: How to implement push notifications on the web.
 authors:
   - katejeffreys
   - kaycebasques
-date: 2020-11-04
+date: 2020-11-05
 codelabs:
-  - codelab-notifications-get-started
-  - codelab-notifications-service-worker
-draft: true
+  - send-push-notifications-codelab
+  - receive-push-notifications-codelab
+  - manage-push-notifications-codelab
 tags:
   - notifications
 ---
+
+## Browser compatibility {: #browser-compatibility }
+
+TODO
 
 ## Creating and sending notifications
 
@@ -46,7 +50,43 @@ Bring up the permission prompt **in response to a user gesture** and **when the 
 
 {% endAside %}
 
+#### Chrome TODO
 
+The user can make one of three responses to the permission popup.
+
+| **User response** | **Notification permission state** |
+|-----|-----|
+| User selects **Allow** | `granted` |
+| User selects **Block**  | `denied` |
+| User dismisses popup without making a selection | `default` |
+
+**If the user clicks Allow:**
+
+*   `Notification.permission` is set to `granted`.
+
+*   The site will be able to display notifications.
+
+*   Subsequent calls to `Notification.requestPermission` will resolve to `granted` without a popup.
+
+**If the user clicks Block:**
+
+*   `Notification.permission` is set to `denied`.
+
+*   The site will _not_ be able to display notifications to the user.
+
+*   Subsequent calls to `Notification.requestPermission` will resolve to `denied` without a popup.
+
+**If the user dismisses the popup:**
+
+*   `Notification.permission` remains `default`.
+
+*   The site will not be able to display notifications to the user.
+
+*   Subsequent calls to `Notification.requestPermission` will produce more popups.
+
+    However, if the user continues to dismiss the popups, the browser might block the site, setting `Notification.permission` to `denied`. Neither permission request popups nor notifications can then be displayed to the user.
+
+    At the time of writing, browser behavior in response to dismissed notifications permission popups is still subject to change. The best way to handle this is to always request notification permission in response to some interaction the user has initiated so that they are expecting it and know what's going on.
 
 ### Part 1: Register a service worker and subscribe to Push
 

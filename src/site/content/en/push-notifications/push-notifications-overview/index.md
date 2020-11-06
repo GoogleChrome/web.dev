@@ -8,11 +8,17 @@ authors:
   - kaycebasques
 date: 2020-11-04
 codelabs:
-  - codelab-notifications-get-started
-  - codelab-notifications-service-worker
+  - send-push-notifications-codelab
+  - receive-push-notifications-codelab
+  - manage-push-notifications-codelab
 tags:
   - notifications
 ---
+
+## Browser compatibility
+
+See the [Browser compatibility](/push-notifications-guide/#browser-compatibility) section
+of the [Push notifications guide](/push-notifications-guide/).
 
 ## Why use push notifications?
 
