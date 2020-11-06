@@ -3,7 +3,9 @@ title: Feedback wanted: CORS for private networks (RFC1918)
 subhead: |
   Mitigate the risks associated with unintentional exposure of devices and servers on a client’s internal network to the web at large.
 description: |
-  Mitigate the risks associated with unintentional exposure of devices and servers on a client’s internal network to the web at large.
+  Unintentional exposure of devices and servers on a client’s internal network to the web at large makes them 
+  vulnerable to malicious attacks. CORS-RFC1918 is a proposal to block requests from public networks by default 
+  on the browser and require internal devices to opt-in to such requests.
 authors:
   - agektmr
 date: 2020-11-09
