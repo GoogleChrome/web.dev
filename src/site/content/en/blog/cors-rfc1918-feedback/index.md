@@ -22,6 +22,9 @@ attacks. CORS-RFC1918 is a proposal to block such requests by default on the
 browser and require internal devices to opt-in to requests from the public
 internet.
 
+We are looking for feedback from developers who build servers for a private
+network and see how this change will impact the ecosystem.
+
 ## What's wrong with the status quo?
 
 Many web servers run within a private network—wireless routers, printers,
@@ -76,7 +79,9 @@ Affected requests include:
 
 **A private network**  
 The destination that resolves to the private address space defined in Section 3
-of [RFC1918](https://tools.ietf.org/html/rfc1918) in IPv4.
+of [RFC1918](https://tools.ietf.org/html/rfc1918) in IPv4, an IPv4-mapped IPv6
+address where the mapped IPv4 address is itself private, IPv6 subnets excluding
+`::1/128`, `2000::/3` and `ff00::/8`
 
 **A local network**  
 The destination that resolves to the "loopback" space (`127.0.0.0/8`) defined in
