@@ -127,8 +127,8 @@ errors in the console.
   </figcaption>
 </figure>
 
-And in the network tab. Note you can filter by **Blocked Requests** to have a
-spotlighted view
+And in the **Network** panel. You can filter by **Blocked Requests** to have a
+spotlighted view:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot-filled" src="cors-error.png" alt="CORS-RFC1918 errors will also be reported as CORS error errors in the Network panel.">
