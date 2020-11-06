@@ -1,0 +1,14 @@
+{
+  "slug": "push-notifications",
+  "title": "Push notifications",
+  "updated": "November 5, 2020",
+  "description": "Notifications",
+  "overview": "Notifications",
+  "topics": [
+    "push-notifications-overview",
+    "push-notifications-guide",
+    "notifications-api-codelab",
+    "push-notifications-server-codelab",
+    "service-worker-push-notifications-codelab"
+  ]
+}

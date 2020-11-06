@@ -1,17 +1,16 @@
 ---
 layout: codelab
-title: Get started with the Notifications API
-author: katejeffreys
+title: Notifications API codelab
+authors: 
+  - katejeffreys
+  - kaycebasques
 description: |
-  In this codelab, learn how to request user permission and send notifications.
-date: 2019-10-15
-# Add an updated date to your post if you edit in the future.
-# updated: 2019-06-27
+  A hands-on tutorial where you use the Notifications API to send
+  push notifications.
+date: 2020-11-05
 glitch: codelab-notifications-get-started
-# Specify which file the glitch should start on.
 glitchPath: public/index.js
 related_post: use-push-notifications-to-engage-users
-draft: true
 tags:
   - notifications
 ---
