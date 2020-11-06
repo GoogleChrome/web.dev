@@ -113,13 +113,25 @@ Chrome 87 adds a flag that mandates public websites making requests to private
 network resources to be on HTTPS. You can go to
 `chrome://flags#block-insecure-private-network-requests` to enable it. With this
 flag turned on, any requests to a private network resource from an HTTP website
-will be blocked. Failed requests will show up in the DevTools console
-with the following error code `net::ERR_INSECURE_PRIVATE_NETWORK_REQUEST`.
+will be blocked.
+
+Starting from Chrome 88, CORS-RFC1918 errors will be reported as CORS policy
+errors in the console.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot-filled" src="console-error.png" alt="Failed requests showing up in the DevTools console with the error code: `net::ERR_INSECURE_PRIVATE_NETWORK_REQUEST`.">
+  <img class="w-screenshot w-screenshot-filled" src="console-error.png" alt="CORS-RFC1918 errors will be reported as CORS policy errors in the console.">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Failed requests showing up in the DevTools console with the error code: `net::ERR_INSECURE_PRIVATE_NETWORK_REQUEST`.
+    CORS-RFC1918 errors will be reported as CORS policy errors in the console.
+  </figcaption>
+</figure>
+
+And in the network tab. Note you can filter by **Blocked Requests** to have a
+spotlighted view
+
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot-filled" src="cors-error.png" alt="CORS-RFC1918 errors will also be reported as CORS error errors in the Network pane.">
+  <figcaption class="w-figcaption w-figcaption--fullbleed">
+    CORS-RFC1918 errors will also be reported as CORS error errors in the Network pane.
   </figcaption>
 </figure>
 
