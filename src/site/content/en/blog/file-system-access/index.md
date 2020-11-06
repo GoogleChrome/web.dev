@@ -348,9 +348,10 @@ elem.addEventListener('drop', async (e) => {
     if (item.kind === 'file') {
       const entry = await item.getAsFileSystemHandle();
       if (entry.kind === 'directory') {
-        return handleFileEntry(entry);
+        handleDirectoryEntry(entry);
+      } else {
+        handleFileEntry(entry);
       }
-      handleDirectoryEntry(entry);      
     }
   }
 });
