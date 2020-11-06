@@ -1,5 +1,5 @@
 ---
-title: \[Feedback wanted\] CORS for private networks (RFC1918)
+title: Feedback wanted: CORS for private networks (RFC1918)
 subhead: |
   Mitigate the risks associated with unintentional exposure of devices and servers on a client’s internal network to the web at large.
 description: |
@@ -22,8 +22,7 @@ attacks. CORS-RFC1918 is a proposal to block such requests by default on the
 browser and require internal devices to opt-in to requests from the public
 internet.
 
-We are looking for feedback from developers who build servers for a private
-network and see how this change will impact the ecosystem.
+To understand how this change impacts the web ecosystem, we are looking for feedback from developers who build servers for private networks.
 
 ## What's wrong with the status quo?
 
@@ -78,13 +77,13 @@ Affected requests include:
 * Requests from the public network to a local network
 
 **A private network**  
-The destination that resolves to the private address space defined in Section 3
+A destination that resolves to the private address space defined in Section 3
 of [RFC1918](https://tools.ietf.org/html/rfc1918) in IPv4, an IPv4-mapped IPv6
 address where the mapped IPv4 address is itself private, IPv6 subnets excluding
-`::1/128`, `2000::/3` and `ff00::/8`
+`::1/128`, `2000::/3` and `ff00::/8`.
 
 **A local network**  
-The destination that resolves to the "loopback" space (`127.0.0.0/8`) defined in
+A destination that resolves to the "loopback" space (`127.0.0.0/8`) defined in
 section 3.2.1.3 of [RFC1122](https://tools.ietf.org/html/rfc1122) of IPv4, the
 "link-local" space (`169.254.0.0/16`) defined in
 [RFC3927](https://tools.ietf.org/html/rfc3927) of IPv4, the "Unique Local
@@ -99,7 +98,7 @@ All others.
 <figure class="w-figure">
   <img src="diagram.png" alt="Relationship between public, private, local networks in CORS-RFC1918">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    Relationship between public, private, local networks in CORS-RFC1918
+    Relationship between public, private, local networks in CORS-RFC1918.
   </figcaption>
 </figure>
 
@@ -108,23 +107,23 @@ All others.
 
 Chrome is bringing CORS-RFC1918 in two steps:
 
-### 1. Requests to private network resources will be allowed only from HTTPS web pages
+### Step 1: Requests to private network resources will be allowed only from HTTPS web pages
 
 Chrome 87 adds a flag that mandates public websites making requests to private
 network resources to be on HTTPS. You can go to
 `chrome://flags#block-insecure-private-network-requests` to enable it. With this
 flag turned on, any requests to a private network resource from an HTTP website
-will be blocked. The failed requests will be surfaced in the DevTools console
+will be blocked. Failed requests will show up in the DevTools console
 with the following error code `net::ERR_INSECURE_PRIVATE_NETWORK_REQUEST`.
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot-filled" src="console-error.png" alt="The failed requests will be surfaced in the DevTools console with the error code: `net::ERR_INSECURE_PRIVATE_NETWORK_REQUEST`.">
+  <img class="w-screenshot w-screenshot-filled" src="console-error.png" alt="Failed requests showing up in the DevTools console with the error code: `net::ERR_INSECURE_PRIVATE_NETWORK_REQUEST`.">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    The failed requests will be surfaced in the DevTools console with the error code: `net::ERR_INSECURE_PRIVATE_NETWORK_REQUEST`.
+    Failed requests showing up in the DevTools console with the error code: `net::ERR_INSECURE_PRIVATE_NETWORK_REQUEST`.
   </figcaption>
 </figure>
 
-### 2. Sending preflight requests with a special header
+### Step 2: Sending preflight requests with a special header
 
 In the future, whenever a public website is trying to fetch resources from a
 private or a local network, Chrome will send a preflight request before the
@@ -137,7 +136,7 @@ control. The server can respond with an `Access-Control-Allow-Private-Network:
 true` header to explicitly indicate that it grants access to the resource.
 
 {% Aside %}
-These headers are still in flux and may change in the future. No action is
+These headers are still under development and may change in the future. No action is
 currently required.
 {% endAside %}
 
@@ -147,10 +146,10 @@ If you are hosting a website within a private network that expects requests from
 public networks, Chrome team is interested in your feedback and use cases. There
 are two things you can do to help:
 
-* Go to `chrome://flags#block-insecure-private-network-requests` and turn on the
+* Go to `chrome://flags#block-insecure-private-network-requests`, turn on the
   flag and see if your website sends requests to the private network resource as
   expected.
-* If you encounter any issues or you have any feedback, please file an issue at
+* If you encounter any issues or have feedback, please file an issue at
   [crbug.com](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3ESecurityFeature%3ECORS)
   with a component `Blink>SecurityFeature>CORS>RFC1918`.
 
@@ -165,4 +164,4 @@ This is exactly the type of feedback we are looking for. Please file an issue
 with your concrete use case at crbug.com. We'd love to hear from you.
 
 [Hero image](https://unsplash.com/photos/tN344soypQM) by [Stephen
-Philips](https://unsplash.com/@hostreviews) on [Unsplash](https://unsplash.com)
+Philips](https://unsplash.com/@hostreviews) on [Unsplash](https://unsplash.com).
