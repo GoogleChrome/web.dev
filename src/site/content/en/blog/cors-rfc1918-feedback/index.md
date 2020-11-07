@@ -10,7 +10,7 @@ authors:
   - agektmr
 date: 2020-11-09
 hero: hero.jpg
-alt: The hands of a person playing the Chrome dino game on a game console.
+alt: A router with eithernet cables connected.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - security
@@ -79,10 +79,10 @@ Affected requests include:
 * Requests from the public network to a local network
 
 **A private network**  
-A destination that resolves to the private address space defined in Section 3
-of [RFC1918](https://tools.ietf.org/html/rfc1918) in IPv4, an IPv4-mapped IPv6
-address where the mapped IPv4 address is itself private, IPv6 subnets excluding
-`::1/128`, `2000::/3` and `ff00::/8`.
+A destination that resolves to the private address space defined in Section 3 of
+[RFC1918](https://tools.ietf.org/html/rfc1918) in IPv4, an IPv4-mapped IPv6
+address where the mapped IPv4 address is itself private, or an IPv6 address
+outside the `::1/128`, `2000::/3` and `ff00::/8` subnets.
 
 **A local network**  
 A destination that resolves to the "loopback" space (`127.0.0.0/8`) defined in
