@@ -137,6 +137,12 @@ spotlighted view:
   </figcaption>
 </figure>
 
+In Chrome 87, CORS-RFC1918 errors are only reported in the DevTools Console as
+`ERR_INSECURE_PRIVATE_NETWORK_REQUEST` instead.
+
+You can try it out yourself using this [test
+website](http://cors-rfc1918-testbed.glitch.me).
+
 ### Step 2: Sending preflight requests with a special header
 
 In the future, whenever a public website is trying to fetch resources from a
