@@ -1,5 +1,5 @@
 ---
-title: Feedback wanted: CORS for private networks (RFC1918)
+title: Feedback wanted - CORS for private networks (RFC1918)
 subhead: |
   Mitigate the risks associated with unintentional exposure of devices and servers on a client’s internal network to the web at large.
 description: |
