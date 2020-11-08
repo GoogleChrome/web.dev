@@ -69,7 +69,7 @@ subscription endpoints, and to encrypt notification content.
    in double quotes. After making your updates, your `.env` file should look
    similar to this:
 
-   ```
+   ```text
    VAPID_PUBLIC_KEY="BKiwTvD9HA…"
    VAPID_PRIVATE_KEY="4mXG9jBUaU…"
    VAPID_SUBJECT="mailto:test@test.test"
@@ -103,7 +103,7 @@ that client's subscription information from the database.
 1. Click **Register service worker** in the app tab. In the status box you
    should see a message like this:
 
-```
+```text
 Service worker registered.
 Scope: https://desert-cactus-sunset.glitch.me/
 ```
@@ -111,7 +111,7 @@ Scope: https://desert-cactus-sunset.glitch.me/
 1. In the app tab click **Subscribe to push**. In the status box you should
    see a message like this:
 
-```
+```text
 Service worker subscribed to push. 
 Endpoint: https://fcm.googleapis.com/fcm/send/…
 ```
