@@ -9,7 +9,7 @@ description: |
   request notification permissions and send notifications.
 date: 2020-11-05
 glitch: send-push-notifications-codelab-incomplete
-glitchPath: public/index.js
+glitch_path: .env
 related_post: push-notifications-overview
 tags:
   - notifications

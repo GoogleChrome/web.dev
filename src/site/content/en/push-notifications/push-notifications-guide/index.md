@@ -8,9 +8,8 @@ authors:
   - kaycebasques
 date: 2020-11-05
 codelabs:
-  - send-push-notifications-codelab
-  - receive-push-notifications-codelab
-  - manage-push-notifications-codelab
+  - push-notifications-server-codelab
+  - push-notifications-client-codelab
 tags:
   - notifications
 ---

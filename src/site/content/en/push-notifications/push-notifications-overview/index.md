@@ -8,12 +8,22 @@ authors:
   - kaycebasques
 date: 2020-11-04
 codelabs:
-  - send-push-notifications-codelab
-  - receive-push-notifications-codelab
-  - manage-push-notifications-codelab
+  - push-notifications-server-codelab
+  - push-notifications-client-codelab
 tags:
   - notifications
 ---
+
+Push notifications enable you to send information to your users when they're not
+using your website. That's why they're called **push** notifications;
+you can push information to your users when they're not active. See
+[Push technology](https://en.wikipedia.org/wiki/Push_technology) and
+[Pull technology](https://en.wikipedia.org/wiki/Pull_technology) to learn more
+about these conceptual models.
+
+As you may have experienced yourself, the great risk of push notifications
+in general is annoying your users by sending them information that they
+don't want or need. Our
 
 ## Browser compatibility
 
