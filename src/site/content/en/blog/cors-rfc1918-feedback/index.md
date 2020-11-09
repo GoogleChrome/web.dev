@@ -10,7 +10,7 @@ authors:
   - agektmr
 date: 2020-11-09
 hero: hero.jpg
-alt: A router with eithernet cables connected.
+alt: A router with ethernet cables connected.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - security
