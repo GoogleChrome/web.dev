@@ -234,8 +234,9 @@ p {
 
 {% Aside 'warning' %}
 Limiting how large text can get with `max()` or `clamp()` can cause a WCAG failure
-under 1.4.4 Resize text (AA), as a user may be unable to scale the text to 200% 
-of its original size. Be certain to test the results with zoom.
+under [1.4.4 Resize text (AA)](https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=144#resize-text)
+, because a user may be unable to scale the text to 200% of its original size. 
+Be certain to [test the results with zoom](https://adrianroselli.com/2019/12/responsive-type-and-zoom.html).
 {% endAside %}
 
 
