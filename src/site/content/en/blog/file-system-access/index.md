@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2020-10-28
+updated: 2020-11-09
 tags:
   - blog
   - capabilities
@@ -168,7 +168,7 @@ async function getNewFileHandle() {
       },
     ],
   };
-  const handle = await window.showSaveFilePicker(opts);
+  const handle = await window.showSaveFilePicker(options);
   return handle;
 }
 ```
@@ -242,16 +242,16 @@ granted permission, and if required, makes the request.
 
 ```js/6,10
 async function verifyPermission(fileHandle, readWrite) {
-  const opts = {};
+  const options = {};
   if (readWrite) {
-    opts.mode = 'readwrite';
+    options.mode = 'readwrite';
   }
   // Check if permission was already granted. If so, return true.
-  if ((await fileHandle.queryPermission(opts)) === 'granted') {
+  if ((await fileHandle.queryPermission(options)) === 'granted') {
     return true;
   }
   // Request permission. If the user grants permission, return true.
-  if ((await fileHandle.requestPermission(opts)) === 'granted') {
+  if ((await fileHandle.requestPermission(options)) === 'granted') {
     return true;
   }
   // The user didn't grant permission, so return false.
