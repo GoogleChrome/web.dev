@@ -11,32 +11,26 @@ import {trackError} from '../../analytics';
 import 'focus-visible';
 import './_styles.scss';
 
-let algoliaSearchIndex;
+let algoliaIndexPromise;
 
-async function loadAlgoliaLibrary() {
-  if (algoliaSearchIndex) {
-    return;
-  }
+function loadAlgoliaLibrary() {
+  algoliaIndexPromise = algoliaIndexPromise || internalLoadAlgoliaLibrary();
+  return algoliaIndexPromise;
+}
 
-  const p = new Promise((resolve, reject) => {
-    const s = document.createElement('script');
-    s.src =
-      'https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js';
-
-    s.onerror = reject;
-    s.onload = () => resolve();
-
-    document.head.append(s);
-  });
-  return p.then(() => {
-    // Create an algolia client so we can get search results.
-    // These keys are safe to be public.
-    const applicationID = '2JPAZHQ6K7';
-    const apiKey = '01ca870a3f1cad9984ed72419a12577c';
-    const indexName = 'webdev';
-    const client = window.algoliasearch(applicationID, apiKey);
-    algoliaSearchIndex = client.initIndex(indexName);
-  });
+async function internalLoadAlgoliaLibrary() {
+  const module = await import(
+    'algoliasearch/dist/algoliasearch-lite.esm.browser'
+  );
+  const algoliasearch = module.default;
+  // Create an algolia client so we can get search results.
+  // These keys are safe to be public.
+  const applicationID = '2JPAZHQ6K7';
+  const apiKey = '01ca870a3f1cad9984ed72419a12577c';
+  const indexName = 'webdev';
+  const client = algoliasearch(applicationID, apiKey);
+  const algoliaSearchIndex = client.initIndex(indexName);
+  return algoliaSearchIndex;
 }
 
 /**
@@ -345,7 +339,7 @@ class Search extends BaseElement {
       return;
     }
     try {
-      await loadAlgoliaLibrary();
+      const algoliaSearchIndex = await loadAlgoliaLibrary();
       const {hits} = await algoliaSearchIndex.search(query, {hitsPerPage: 10});
       if (this.query === query) {
         this.hits = hits;

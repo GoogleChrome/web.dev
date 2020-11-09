@@ -26,7 +26,7 @@ window['_import'] = (src) => {
     const n = Object.assign(document.createElement('script'), {
       src: `/${src}`, // Rollup generates sources only in top-level
       type: 'module',
-      onload: () => resolve(),
+      onload: () => resolve(eval(`import('${n.src}');`)), // TODO: BAD!
       onerror: reject,
     });
     document.head.append(n);
