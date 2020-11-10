@@ -412,7 +412,7 @@ Happy copying and pasting!
 
 ## Related links
 
-* [MDN]([https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API))
+* [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API)
 * [Raw Clipboard Access Design Doc](https://docs.google.com/document/d/1XDOtTv8DtwTi4GaszwRFIJCOuzAEA4g9Tk0HrasQAdE/edit?usp=sharing)
 
 ## Acknowledgements
