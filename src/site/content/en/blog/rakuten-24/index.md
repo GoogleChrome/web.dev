@@ -46,7 +46,7 @@ identified the following areas of opportunities:
 ### Installability {: #installability }
 
 To capture the two opportunities identified above, Rakuten 24 decided to build
-[Progressive Web App](https://web.dev/pwa)(PWA) features on an incremental
+[Progressive Web App](https://web.dev/pwa) (PWA) features on an incremental
 basis, starting with [installability](https://web.dev/define-install-strategy/).
 Implementing installability resulted in increased traffic, visitor retention,
 sales per customer, and conversions.
