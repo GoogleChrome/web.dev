@@ -1,7 +1,8 @@
 ---
-title: Feedback wanted-CORS for private networks (RFC1918)
+title: "Feedback wanted: CORS for private networks (RFC1918)"
 subhead: |
-  Mitigate the risks associated with unintentional exposure of devices and servers on a client’s internal network to the web at large.
+  Mitigate the risks associated with unintentional exposure of devices 
+  and servers on a client’s internal network to the web at large.
 description: |
   Unintentional exposure of devices and servers on a client’s internal network to the web at large makes them 
   vulnerable to malicious attacks. CORS-RFC1918 is a proposal to block requests from public networks by default 
@@ -12,7 +13,7 @@ date: 2020-11-09
 hero: hero.jpg
 alt: A router with ethernet cables connected.
 tags:
-  - blog # blog is a required tag for the article to show up in the blog.
+  - blog
   - security
 ---
 
@@ -24,12 +25,13 @@ attacks. CORS-RFC1918 is a proposal to block such requests by default on the
 browser and require internal devices to opt-in to requests from the public
 internet.
 
-To understand how this change impacts the web ecosystem, we are looking for feedback from developers who build servers for private networks.
+To understand how this change impacts the web ecosystem, the Chrome team is
+looking for feedback from developers who build servers for private networks.
 
 ## What's wrong with the status quo?
 
 Many web servers run within a private network—wireless routers, printers,
-intranet websites, enterprise services, and IoT devices are only part of them.
+intranet websites, enterprise services, and Internet of Things (IoT) devices are only part of them.
 They might seem to be in a safer environment than the ones exposed to the public
 but those servers can be abused by attackers using a web page as a proxy. For
 example, malicious websites can embed a URL that, when simply viewed by the
@@ -39,7 +41,7 @@ settings on the victim's home broadband router. This type of attack is called
 Pharming](https://link.springer.com/chapter/10.1007/978-3-540-77048-0_38)" and
 [it happened in
 2014](https://securityaffairs.co/wordpress/22743/cyber-crime/soho-pharming-attack.html).
-More than 300,000 vulnerable wireless routers were exploited having their DNS
+More than 300,000 vulnerable wireless routers were exploited by having their DNS
 settings changed and allowing attackers to redirect users to malicious servers.
 
 ## CORS-RFC1918
@@ -123,17 +125,17 @@ errors in the console.
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot-filled" src="console-error.png" alt="CORS-RFC1918 errors will be reported as CORS policy errors in the console.">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    CORS-RFC1918 errors will be reported as CORS policy errors in the console.
+    CORS-RFC1918 errors will be reported as CORS policy errors in the <b>Console</b>.
   </figcaption>
 </figure>
 
-And in the **Network** panel. You can filter by **Blocked Requests** to have a
-spotlighted view:
+In the **Network** panel of Chrome DevTools you can enable the **Blocked Requests** 
+checkbox to focus in on blocked requests:
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot-filled" src="cors-error.png" alt="CORS-RFC1918 errors will also be reported as CORS error errors in the Network panel.">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
-    CORS-RFC1918 errors will also be reported as CORS error errors in the Network panel.
+    CORS-RFC1918 errors will also be reported as CORS error errors in the <b>Network</b> panel.
   </figcaption>
 </figure>
 
@@ -163,15 +165,15 @@ currently required.
 ## Feedback wanted
 
 If you are hosting a website within a private network that expects requests from
-public networks, Chrome team is interested in your feedback and use cases. There
+public networks, the Chrome team is interested in your feedback and use cases. There
 are two things you can do to help:
 
 * Go to `chrome://flags#block-insecure-private-network-requests`, turn on the
   flag and see if your website sends requests to the private network resource as
   expected.
-* If you encounter any issues or have feedback, please file an issue at
+* If you encounter any issues or have feedback, file an issue at
   [crbug.com](https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3ESecurityFeature%3ECORS)
-  with a component `Blink>SecurityFeature>CORS>RFC1918`.
+  and set the component to `Blink>SecurityFeature>CORS>RFC1918`.
 
 ### Example feedback
 
@@ -180,8 +182,8 @@ are two things you can do to help:
 > it will be mixed content. Should we enable HTTPS on the admin website in a
 > closed network?
 
-This is exactly the type of feedback we are looking for. Please file an issue
-with your concrete use case at crbug.com. We'd love to hear from you.
+This is exactly the type of feedback Chrome is looking for. Please file an issue
+with your concrete use case at [crbug.com](https://crbug.com). Chrome would love to hear from you.
 
 [Hero image](https://unsplash.com/photos/tN344soypQM) by [Stephen
 Philips](https://unsplash.com/@hostreviews) on [Unsplash](https://unsplash.com).
