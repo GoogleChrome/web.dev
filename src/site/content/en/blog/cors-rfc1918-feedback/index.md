@@ -15,6 +15,7 @@ alt: A router with ethernet cables connected.
 tags:
   - blog
   - security
+  - cors
 ---
 
 Malicious websites making requests to devices and servers hosted on a private
