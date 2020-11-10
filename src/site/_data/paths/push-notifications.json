@@ -15,9 +15,8 @@
       "title": "Build push notifications",
       "pathItems": [
         "push-notifications-guide",
-        "send-push-notifications-codelab",
-        "receive-push-notifications-codelab",
-        "manage-push-notifications-codelab"
+        "push-notifications-client-codelab",
+        "push-notifications-server-codelab"
       ]
     }
   ]

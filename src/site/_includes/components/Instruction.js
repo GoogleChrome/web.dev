@@ -82,7 +82,7 @@ module.exports = (type, listStyle = 'ul') => {
       // used by this component so it's a bit easier to keep everything
       // contained in this one file.
       instruction = html`
-        ${bullet}To preview the site, press **View&nbsp;App**. Then press
+        ${bullet}To preview the site, click **View&nbsp;App** and then click
         **Fullscreen**
         <img
           src="/images/glitch/fullscreen.svg"

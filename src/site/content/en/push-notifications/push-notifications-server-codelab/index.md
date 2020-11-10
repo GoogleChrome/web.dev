@@ -2,8 +2,8 @@
 layout: codelab
 title: "Codelab: Build a push notification server"
 authors: 
-  - katejeffreys
   - kaycebasques
+  - katejeffreys
 description: |
   In this codelab, learn how to build a push notifications server.
 date: 2020-11-05
@@ -16,19 +16,25 @@ tags:
 
 <!-- https://glitch.com/edit/#!/push-notifications-server-codelab-incomplete?path=README.md%3A1%3A0 -->
 
-This codelab teaches you how to build a push notification server. By the end of
-the codelab you'll have a server that:
+This codelab teaches you how to build a push notification server. By the end of the codelab
+you'll have a server that:
 
 * Keeps track of push notification subscriptions (i.e. the server creates a
   new database record when a client opts in to push notifications, and it
-  deletes an existing database record when a client opts out of push
-  notifications)
+  deletes an existing database record when a client opts out)
 * Sends a push notification to a single client
 * Sends a push notification to all subscribed clients
 
 The frontend/client code is already complete. You'll only be implementing the backend/server in
 this codelab. To learn how to implement a push notification client, check out
 [Codelab: Build a push notification client](/push-notification-client-codelab).
+
+## Application stack
+
+* The server is built on top of [Express.js](https://expressjs.com/)
+* The [web-push](https://www.npmjs.com/package/web-push) Node.js library
+  handles all of the push notification logic
+* Subscription data is written to a JSON file using [lowdb](https://www.npmjs.com/package/lowdb)
 
 ## Setup
 
@@ -86,7 +92,7 @@ subscription endpoints, and to encrypt notification content.
 ## Manage subscriptions
 
 When a client wants to receive push notifications it's known as a **subscription**.
-Your server needs to keep track of which client subscriptions. When
+Your server needs to keep track of client subscriptions. When
 a new client opts in to push notifications, your server needs to store some
 information related to that client so that it can reach it in the future.
 When a client opts out of push notifications, your server needs to delete
@@ -101,7 +107,7 @@ that client's subscription information from the database.
 {% endAside %}
 
 1. Click **Register service worker** in the app tab. In the status box you
-   should see a message like this:
+   should see a message similar to this:
 
 ```text
 Service worker registered.
@@ -109,7 +115,7 @@ Scope: https://desert-cactus-sunset.glitch.me/
 ```
 
 1. In the app tab click **Subscribe to push**. In the status box you should
-   see a message like this:
+   see a message similar to this:
 
 ```text
 Service worker subscribed to push. 
@@ -123,7 +129,7 @@ Endpoint: https://fcm.googleapis.com/fcm/send/…
 {% endAside %}
 
 {% Instruction 'source', 'ol' %}
-1. Open the Glitch log by clicking **Tools** and then clicking **Logs**. You should see
+1. Open the Glitch Logs by clicking **Tools** and then clicking **Logs**. You should see
    `/add-subscription` followed by some data. `/add-subscription` is the URL that
    the client [POSTs][POST] to when it wants to subscribe to push notifications.
    The data that follows is the client's subscription information that you need to
@@ -143,7 +149,110 @@ app.post('/add-subscription', (request, response) => {
 });
 ```
 
+{% Aside %}
+  The database writes to `.data/db.json`. To inspect this file in the Glitch
+  Terminal, click **Tools**, then click **Terminal**, then run `cat .data/db.json`
+  in the Terminal. `.data/db.json` is deleted every time that you edit your app.
+  This is because Glitch runs the `start` script in `package.json` every time you
+  edit your app, and that script includes a call to `rm .data/db.json`.
+{% endAside %}
+
 ### Delete old subscription information 
+
+1. Go back to the app tab.
+1. Click **Unsubscribe from push**.
+1. Look at the Glitch Logs again. You should see `/remove-subscription` followed
+   by the client's subscription information.
+1. Update the `/remove-subscription` route handler logic with the following code:
+
+```js/3-6/1-2
+app.post('/remove-subscription', (request, response) => {
+  console.log('/remove-subscription');
+  console.log(request.body);
+  console.log(`Unsubscribing ${request.body.endpoint}`);
+  db.get('subscriptions')
+    .remove({endpoint: request.body.endpoint})
+    .write();
+  response.sendStatus(200);
+});
+```
+
+## Send notifications
+
+To send push notifications, your server basically just sends POST requests
+to a web service API managed by the browser vendor. Your server provides
+the client subscription data and the browser vendor's web service handles
+actually sending the data to the client device.
+
+1. Update the `/notify-me` route handler logic with the following code:
+
+```js/3-6/1-2
+app.post('/notify-me', (request, response) => {
+  console.log('/notify-me');
+  console.log(request.body);
+  console.log(`Notifying ${request.body.endpoint}`);
+  const subscription = 
+      db.get('subscriptions').find({endpoint: request.body.endpoint}).value();
+  sendNotifications([subscription]);
+  response.sendStatus(200);
+});
+```
+
+1. Update the `sendNotifications()` function with the following code:
+
+```js/2-25/1
+function sendNotifications(subscriptions) {
+  // TODO
+  // Create the notification content.
+  const notification = JSON.stringify({
+    title: "Hello, Notifications!",
+    options: {
+      body: `ID: ${Math.floor(Math.random() * 100)}`
+    }
+  });
+  const options = {
+    // TODO https://developers.google.com/web/fundamentals/push-notifications/web-push-protocol#ttl_header
+    TTL: 10000,
+    vapidDetails: vapidDetails
+  };
+  subscriptions.forEach(subscription => {
+    const endpoint = subscription.endpoint;
+    const id = endpoint.substr((endpoint.length - 8), endpoint.length);
+    webpush.sendNotification(subscription, notification, options)
+      .then(result => {
+        console.log(`Endpoint ID: ${id}`);
+        console.log(`Result: ${result.statusCode}`);
+      })
+      .catch(error => {
+        console.log(`Endpoint ID: ${id}`);
+        console.log(`Error: ${error} `);
+      });
+  });
+}
+```
+
+1. Update the `/notify-all` route handler logic with the following code:
+
+```js/3-11/1-2
+app.post('/notify-all', (request, response) => {
+  console.log('/notify-all');
+  response.sendStatus(200);
+  console.log('Notifying all subscribers');
+  const subscriptions =
+      db.get('subscriptions').cloneDeep().value();
+  if (subscriptions.length > 0) {
+    sendNotifications(subscriptions);
+    response.sendStatus(200);
+  } else {
+    response.sendStatus(409);
+  }
+});
+```
+
+1. Go back to the app tab.
+1. Click **Notify me**. You should receive a push notification. The title should
+   be `Hello, Notifications!` and the body should be `ID: <ID>` where `<ID>` is a
+   random number.
 
 <!--
 
