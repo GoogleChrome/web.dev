@@ -19,10 +19,9 @@ function loadAlgoliaLibrary() {
 }
 
 async function internalLoadAlgoliaLibrary() {
-  const module = await import(
+  const {default: algoliasearch} = await import(
     'algoliasearch/dist/algoliasearch-lite.esm.browser'
   );
-  const algoliasearch = module.default;
   // Create an algolia client so we can get search results.
   // These keys are safe to be public.
   const applicationID = '2JPAZHQ6K7';
