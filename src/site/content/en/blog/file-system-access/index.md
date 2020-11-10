@@ -331,6 +331,11 @@ with file entries and directory entries respectively.
 The `DataTransferItem.getAsFileSystemHandle()` method returns a promise with a `FileSystemFileHandle` object
 if the dragged item is a file, and a promise with a `FileSystemDirectoryHandle` object if the dragged item is a directory.
 The listing below shows this in action.
+Note that the Drag and Drop interface's
+[`DataTransferItem.kind`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem/kind)
+will be `"file"` for both files *and* directories, whereas the File System Access API's
+[`FileSystemHandle.kind`](https://wicg.github.io/file-system-access/#dom-filesystemhandle-kind)
+will be `"file"` for files and `"directory"` for directories.
 
 ```js/13
 elem.addEventListener('dragover', (e) => {
