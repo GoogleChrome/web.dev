@@ -29,8 +29,8 @@ async function internalLoadAlgoliaLibrary() {
   const apiKey = '01ca870a3f1cad9984ed72419a12577c';
   const indexName = 'webdev';
   const client = algoliasearch(applicationID, apiKey);
-  const algoliaSearchIndex = client.initIndex(indexName);
-  return algoliaSearchIndex;
+  const index = client.initIndex(indexName);
+  return index;
 }
 
 /**
@@ -339,8 +339,8 @@ class Search extends BaseElement {
       return;
     }
     try {
-      const algoliaSearchIndex = await loadAlgoliaLibrary();
-      const {hits} = await algoliaSearchIndex.search(query, {hitsPerPage: 10});
+      const index = await loadAlgoliaLibrary();
+      const {hits} = await index.search(query, {hitsPerPage: 10});
       if (this.query === query) {
         this.hits = hits;
       }
