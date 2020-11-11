@@ -51,12 +51,6 @@ basis, starting with [installability](https://web.dev/define-install-strategy/).
 Implementing installability resulted in increased traffic, visitor retention,
 sales per customer, and conversions.
 
-<figure class="w-figure w-figure--inline-right">
-  <img class="w-screenshot" 
-      src="a2hs.png"
-      alt="A screenshot of Chrome's popup asking if the user wants to add Rakuten 24 to the home screen.">
-</figure>
-
 ### `beforeinstallprompt` {: #beforeinstallprompt }
 
 To gain more flexibility and control over their install dialogue's behaviour,
@@ -72,6 +66,11 @@ For users who weren't able to install the PWA from the banner, they created a
 <a href="https://24.rakuten.co.jp/addto/">custom guide</a>
 (linked from the banner) with instructions on how to install the PWA manually on
 both Android and iOS devices.
+
+<figure class="w-figure">
+  <img src="a2hs.png"
+       alt="Screenshots of the custom installation instructions.">
+</figure>
 
 ### Workbox for service workers {: #workbox }
 
