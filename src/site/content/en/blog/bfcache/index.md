@@ -15,7 +15,7 @@ tags:
   - web-vitals
 ---
 
-Back-forward cache (or bfcache) is a browser optimization that enables instant
+Back/forward cache (or bfcache) is a browser optimization that enables instant
 back and forward navigation. It significantly improves the browsing experience
 for users—especially those with slower networks or devices.
 
