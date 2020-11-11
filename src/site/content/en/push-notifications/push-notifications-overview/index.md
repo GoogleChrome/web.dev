@@ -1,11 +1,14 @@
 ---
 layout: post
 title: Push notifications overview
-subhead: An overview of how push notifications work on the web.
-description: An overview of how push notifications work on the web.
+subhead: >
+  An overview of what push notifications are, why you might use them, 
+  and how they work.
+description: >
+  An overview of what push notifications are, why you might use them, 
+  and how they work.
 authors:
   - kaycebasques
-  - mattgaunt
 date: 2020-11-10
 codelabs:
   - push-notifications-server-codelab
@@ -14,7 +17,7 @@ tags:
   - notifications
 ---
 
-## What are push notifications?
+## What are push notifications? {: #what }
 
 Push messages enable you to bring information to the attention of your
 users even when they're not using your website. They're called **push**
@@ -29,15 +32,9 @@ notifications to tell users about important, time-sensitive events, or actions
 the user needs to take. The look and feel of notifications varies between platforms:
 
 <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="./predicaments-android.png" 
-       alt="A notification on Android.">
-  <figcaption class="w-figcaption">A notification on Android.</figcaption>
-</figure>
-
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" src="./predicaments-macbook.png" 
-       alt="A notification on macOS.">
-  <figcaption class="w-figcaption">A notification on macOS.</figcaption>
+  <img class="w-screenshot w-screenshot--filled" src="examples.png" 
+       alt="Examples of notifications on macOS and Android.">
+  <figcaption class="w-figcaption">Examples of notifications on macOS and Android.</figcaption>
 </figure>
 
 Push messages and notifications are two separate but complementary technologies.
@@ -46,16 +43,26 @@ they're not actively using your website. Notifications is the technology for
 displaying the pushed information on the user's device. It's possible to use
 push messaging without notifications, and vice versa. In practice they're
 usually used together. A non-technical user probably won't understand the
-difference between push messages and notifications.
+difference between push messages and notifications. In this collection when
+we say **push notifications** we mean the combination of pushing a message
+followed by displaying it as a notification. When we say **push messages**
+we are referring to push technology on its own. And when we say **notifications**
+we're referring to notification technology on its own.
 
-## Why use push notifications?
+## Why use push notifications? {: #why }
 
 * For users, push notifications are a way to receive **timely**, **relevant**,
   and **precise** information.
 * For you (a website owner), push notifications are a way to increase user
-  engagement.
+  engagement. 
 
-## How do push notifications work?
+{% Aside 'warning' %}
+  If you try to use push notifications for content that you're users don't find
+  timely, relevant, and precise, you'll probably end up annoying your users
+  and reducing overall engagement.
+{% endAside %}
+
+## How do push notifications work? {: #how }
 
 At a high-level, the key steps for implementing push notifications are:
 
@@ -67,17 +74,20 @@ At a high-level, the key steps for implementing push notifications are:
 
 The rest of this page explains these steps in more detail.
 
-### Get permission to send push notifications
+### Get permission to send push notifications {: #permission }
 
 First, your website needs to get the user's permission to send push notifications.
 This should be triggered by a user gesture, such as clicking a **Yes** button
-next to a `Do you want to receive push notifications?` prompt.
+next to a `Do you want to receive push notifications?` prompt. After that confirmation,
+call [`Notification.requestPermission()`][requestPermission]. The operating system or
+browser on the user's device will probably present some kind of UI to formally confirm that the
+user wants to opt in to push notifications. This UI varies across platforms.
 
-### Subscribe the client to push notifications
+### Subscribe the client to push notifications {: #subscription }
 
 After you get permission, your website needs to initiate the process of
 subscribing the user to push notifications. This is done through JavaScript,
-using the the [Push API][1]. You'll need to provide a public encryption key
+using the the [Push API][1]. You'll need to provide a public authentication key
 during the subscription process, which you'll learn more about later. After
 you kick off the subscription process, the browser makes a network request
 to a web service known as a push service, which you'll also learn more about later.
@@ -88,9 +98,10 @@ object. You'll need to store this data long-term.
 Usually this is done by sending the information to a server that you control,
 and then having the server store it in a database.
 
-![TODO](browser-to-server.svg)
+![Get permission to send push messages. Get PushSubscription. Send
+PushSubscription to your server.](browser-to-server.svg)
 
-### Send a push message
+### Send a push message {: #send }
 
 Your server doesn't actually send the push message directly to a client. A
 **push service** does that. A push service is a web service controlled by your
@@ -111,9 +122,10 @@ itself. There are libraries that can handle that for you, such as
 [web-push](https://www.npmjs.com/package/web-push). But the underlying mechanism is
 a web service request over HTTP.
 
-![TODO](server-to-push-service.svg)
+![Your server sends a web push protocol request to the push service and the push
+service sends to the message to the user's device.](server-to-push-service.svg)
 
-The push service receives your request, validates it, and routes the push
+The push service receives your request, authenticates it, and routes the push
 message to the appropriate client. If the client's browser is offline, the push
 service queues the push message until the browser comes online.
 
@@ -147,18 +159,18 @@ exactly which client to push the message to.
 
 The `keys` are used for encryption, which is explained next.
 
-#### Encrypt the push message
+#### Encrypt the push message {: #encrypt }
 
 The data that you send to a push service must be encrypted. This prevents
-the push service from being to view the data you're sending to the client.
+the push service from being able to view the data you're sending to the client.
 Remember that the browser vendor decides what push service to use, and that
 push service could theoretically be unsafe or insecure. Your server must use
 the `keys` provided in the `PushSubscription` to encrypt its web push protocol
 requests.
 
-#### Sign your web push protocol requests
+#### Sign your web push protocol requests {: #sign }
 
-The push service also needs to verify that any given server that is
+The push service also needs to verify that any given entity that is
 requesting to send push messages to a client is the same one that subscribed
 the client to push notifications in the first place. The authentication process
 roughly works like this:
@@ -169,15 +181,15 @@ roughly works like this:
   the spec that defines this authentication process. Generating the application
   server keys is actually the first thing you need to do when implementing push
   notifications. It's a one-off task.
-* When you subscribe the client to push notifications, you need to provide your
-  public key. The push service stores this public key and uses it to
-  authenticate web push protocol requests.
+* When you subscribe the client to push notifications from your JavaScript code, 
+  you need to provide your public key. The push service stores this public key 
+  and uses it to authenticate web push protocol requests.
 * When you send a web push protocol request, you sign some JSON information
   with your private key.
 * When the push service receives your web push protocol request, it uses the stored
   public key to authenticate the signed information.
 
-#### Customize the delivery of the push message
+#### Customize the delivery of the push message {: #customize }
 
 The web push protocol request spec also defines parameters that let you
 customize how the push service attempts to send the push message to the client.
@@ -190,7 +202,7 @@ For example, you can customize:
 * The topic of a message, which replaces any pending messages of the same topic
   with the latest message.
 
-### Receive and display the pushed messages as notifications
+### Receive and display the pushed messages as notifications {: #notification }
 
 Once you've sent the web push protocol request to the push service, the push service keeps
 your request queued until one of the following events happens:
@@ -203,16 +215,21 @@ data and dispatches a `push` event to your [service
 worker](/service-workers-cache-storage/#service-workers). A service worker is
 basically JavaScript code that can run in the background, even when your website
 isn't open or the browser is closed. In your service worker's `push` event
-handler you add the logic to display the message as a notification.
+handler you call `ServiceWorkerRegistration.showNotification()` to display the information
+as a notification.
 
-![When a push message is sent from a push service to a user's device, your service worker
-receives a push event.](https://developers.google.com/web/fundamentals/push-notifications/images/svgs/push-service-to-sw-event.svg)
+![Message arrives on device. Browser wakes up service worker. Push event is
+dispatched.](push-service-to-sw-event.svg)
 
-## Next steps
+## Next steps {: #next-steps }
 
-TODO
+* Check out [Codelab: Build a push notification server](/push-notifications-server-codelab/)
+  to learn how to build a server that manages subscriptions and sends web push protocol
+  requests.
 
 [1]: https://developer.mozilla.org/en-US/docs/Web/API/Push_API
 [3]: https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
 [4]: /web/fundamentals/push-notifications
 [5]: /web/fundamentals/push-notifications/subscribing-a-user
+[requestPermission]: https://developer.mozilla.org/en-US/docs/Web/API/Notification/requestPermission
+[showNotification]: https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/showNotification
