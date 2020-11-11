@@ -1,8 +1,8 @@
 ---
 title: Back/forward cache
-subhead: Optimize your pages for instant loads when using the browser's back and forward buttons
+subhead: Optimize your pages for instant loads when using the browser's back and forward buttons.
 description: |
-  Learn how to optimize your pages for instant loads when using the browser's back and forward buttons
+  Learn how to optimize your pages for instant loads when using the browser's back and forward buttons.
 authors:
   - philipwalton
 date: 2020-11-10
@@ -15,7 +15,7 @@ tags:
   - web-vitals
 ---
 
-Back/forward cache (or bfcache) is a browser optimization that enables instant
+Back-forward cache (or bfcache) is a browser optimization that enables instant
 back and forward navigation. It significantly improves the browsing experience
 for users—especially those with slower networks or devices.
 
@@ -70,13 +70,13 @@ loads:
   </table>
 </div>
 
-Check out these videos of bfcache in action to understand the speed up it can
+Check out this video of bfcache in action to understand the speed up it can
 bring to navigations:
 
 {% YouTube 'cuPsdRckkF0' %}
 
-In the videos above, the examples with bfcache are quite a bit faster than the
-examples without it.
+In the video above, the example with bfcache is quite a bit faster than the
+example without it.
 
 bfcache not only speeds up navigation, it also reduces data usage, since
 resources do not have to be downloaded again.
@@ -211,7 +211,7 @@ rates.
 The following sections outline the best practices to make it as likely as
 possible that the browser can cache your pages.
 
-### Never use the unload event
+### Never use the `unload` event
 
 The most important way to optimize for bfcache in all browsers is to never use
 the `unload` event. Ever!
@@ -278,7 +278,7 @@ window.addEventListener('beforeunload', (event) => {
 });
 ```
 {% CompareCaption %}
-  This adds a `beforeunload` listener unconditionally)
+  The code above adds a `beforeunload` listener unconditionally.
 {% endCompareCaption %}
 {% endCompare %}
 
@@ -300,8 +300,8 @@ onAllChangesSaved(() => {
 });
 ```
 {% CompareCaption %}
-  This only adds the `beforeunload` listener when it's needed (and removes it
-  when it's not)
+  The code above only adds the `beforeunload` listener when it's needed (and removes it
+  when it's not).
 {% endCompareCaption %}
 {% endCompare %}
 
