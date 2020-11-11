@@ -12,7 +12,7 @@ description:
   user grants a web app access, this API allows them to read or save changes directly to files and
   folders on the user's device.
 date: 2019-08-20
-updated: 2020-11-09
+updated: 2020-11-10
 tags:
   - blog
   - capabilities
@@ -317,6 +317,49 @@ and include all subfolders and the therein contained files.
 await directoryHandle.removeEntry('Abandoned Masterplan.txt');
 // Recursively delete a folder.
 await directoryHandle.removeEntry('Old Stuff', { recursive: true });
+```
+
+### Drag and drop integration
+
+The
+[HTML Drag and Drop interfaces](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API)
+enable web applications to accept
+[dragged and dropped files](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/File_drag_and_drop)
+on a web page.
+During a drag and drop operation, dragged file and directory items are associated
+with file entries and directory entries respectively.
+The `DataTransferItem.getAsFileSystemHandle()` method returns a promise with a `FileSystemFileHandle` object
+if the dragged item is a file, and a promise with a `FileSystemDirectoryHandle` object if the dragged item is a directory.
+The listing below shows this in action.
+Note that the Drag and Drop interface's
+[`DataTransferItem.kind`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransferItem/kind)
+will be `"file"` for both files *and* directories, whereas the File System Access API's
+[`FileSystemHandle.kind`](https://wicg.github.io/file-system-access/#dom-filesystemhandle-kind)
+will be `"file"` for files and `"directory"` for directories.
+
+```js/13
+elem.addEventListener('dragover', (e) => {
+  // Prevent navigation.
+  e.preventDefault();
+});
+
+elem.addEventListener('drop', async (e) => {
+  // Prevent navigation.
+  e.preventDefault();
+  // Process all of the items.
+  for (const item of e.dataTransfer.items) {
+    // Careful: `kind` will be 'file' for both file
+    // _and_ directory entries.
+    if (item.kind === 'file') {
+      const entry = await item.getAsFileSystemHandle();
+      if (entry.kind === 'directory') {
+        handleDirectoryEntry(entry);
+      } else {
+        handleFileEntry(entry);
+      }
+    }
+  }
+});
 ```
 
 ### Accessing the origin-private file system
