@@ -313,7 +313,7 @@ In some browsers (including Chrome, as of version 86) if a page was opened using
 or from a link with
 <code>[target=_blank](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#target)</code>—without
 specifying
-<code>[rel=noopener](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noopener)</code>—then
+<code>[rel="noopener"](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noopener)</code>—then
 the opening page will have a reference to the window object of the opened page.
 
 In addition to [being a security
@@ -323,7 +323,7 @@ reference cannot safely be put into the bfcache because that could break any
 pages attempting to access it.
 
 As a result, it's best to avoid creating `window.opener` references by using
-`rel=noopener` whenever possible. If your site requires opening a window and
+`rel="noopener"` whenever possible. If your site requires opening a window and
 controlling it through
 <code>[window.postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)</code>
 or directly referencing the window object, neither the opened window nor the
@@ -436,7 +436,7 @@ opt-out](https://cloud.google.com/docs/chrome-enterprise/policies).
 
 If you track visits to your site with an analytics tool, you will likely notice
 a decrease in the total number of pageviews reported as Chrome continues to
-enable bfcache for more users
+enable bfcache for more users.
 
 In fact, you're likely _already_ underreporting pageviews from other browsers
 that implement bfcache since most of the popular analytics libraries do not
