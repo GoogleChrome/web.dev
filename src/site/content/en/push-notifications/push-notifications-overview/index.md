@@ -123,7 +123,7 @@ The browser tells you which push service it's using (and therefore where to send
 web push protocol request) when you get the `PushSubscription` data client-side. 
 Here's an example of a `PushSubscription` object:
 
-```
+```json
 {
   "endpoint": "https://push-service.com/some-kind-of-unique-id-1234/v2/",
   "keys": {
