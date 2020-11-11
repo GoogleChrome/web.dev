@@ -1,15 +1,14 @@
 ---
 layout: codelab
-title: "Codelab: send push notifications"
+title: "Codelab: Build a push notifications client"
 authors: 
-  - katejeffreys
   - kaycebasques
-description: |
-  A hands-on tutorial where you use the Notifications API to 
-  request notification permissions and send notifications.
-date: 2020-11-05
-glitch: send-push-notifications-codelab-incomplete
-glitch_path: .env
+description: >
+  A step-by-step interactive tutorial that shows you how to build a
+  server that manages push notification subscriptions and sends
+  web push protocol requests to a push service.
+date: 2020-11-11
+glitch: push-notifications-client-codelab-incomplete
 related_post: push-notifications-overview
 tags:
   - notifications

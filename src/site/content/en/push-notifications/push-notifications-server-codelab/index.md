@@ -3,17 +3,16 @@ layout: codelab
 title: "Codelab: Build a push notification server"
 authors: 
   - kaycebasques
-description: |
-  In this codelab, learn how to build a push notifications server.
+description: >
+  A step-by-step interactive tutorial that shows you how to build a
+  server that manages push notification subscriptions and sends
+  web push protocol requests to a push service.
 date: 2020-11-11
-glitch: push-notification-server-codelab-incomplete
-glitch_path: public/index.js
+glitch: push-notifications-server-codelab-incomplete
 related_post: push-notifications-overview
 tags:
   - notifications
 ---
-
-<!-- https://glitch.com/edit/#!/push-notifications-server-codelab-incomplete?path=README.md%3A1%3A0 -->
 
 This codelab shows you, step-by-step, how to build a push notification server.
 By the end of the codelab you'll have a server that:
@@ -33,6 +32,10 @@ implementing the server in this codelab. To learn how to implement a
 push notification client, check out [Codelab: Build a push notification
 client](/push-notification-client-codelab).
 
+Check out [push-notifications-server-codelab-complete](https://push-notifications-server-codelab-complete.glitch.me/)
+([source](https://glitch.com/edit/#!/push-notifications-server-codelab-complete))
+to see the complete code.
+
 ## Application stack {: #stack }
 
 * The server is built on top of [Express.js](https://expressjs.com/).
@@ -47,7 +50,8 @@ We chose these technologies because they provide a reliable codelab experience.
 
 ### Get an editable copy of the code {: #remix }
 
-The editor that you see on this page is called a [**Glitch**](https://glitch.com).
+The code editor that you see to the right of these instructions will be called
+the **Glitch UI** throughout this codelab.
 
 {% Instruction 'remix', 'ol' %}
 
@@ -61,17 +65,18 @@ for more context about the authentication process.
 1. Open the Glitch terminal by clicking **Tools** and then clicking **Terminal**.
 1. In the terminal, run `npx web-push generate-vapid-keys`. Copy the private key
    and public key values.
-1. Close the Glitch terminal.
 1. Open `.env` and update `VAPID_PUBLIC_KEY` and `VAPID_PRIVATE_KEY`. Set
    `VAPID_SUBJECT` to `mailto:test@test.test`. All of these values should be wrapped
    in double quotes. After making your updates, your `.env` file should look
    similar to this:
 
-   ```text
-   VAPID_PUBLIC_KEY="BKiwTvD9HA…"
-   VAPID_PRIVATE_KEY="4mXG9jBUaU…"
-   VAPID_SUBJECT="mailto:test@test.test"
-   ```
+```text
+VAPID_PUBLIC_KEY="BKiwTvD9HA…"
+VAPID_PRIVATE_KEY="4mXG9jBUaU…"
+VAPID_SUBJECT="mailto:test@test.test"
+```
+
+1. Close the Glitch terminal.
 
 {% Aside 'gotchas' %}
   Environment variable values (the stuff in `.env`) are unique to a single Glitch project.
@@ -116,7 +121,7 @@ Endpoint: https://fcm.googleapis.com/fcm/send/…
   `https://updates.push.services.mozilla.com/…`.
 {% endAside %}
 
-{% Instruction 'source', 'ol' %}
+1. Go back to your code by clicking **View Source** in the Glitch UI.
 1. Open the Glitch Logs by clicking **Tools** and then clicking **Logs**. You
    should see `/add-subscription` followed by some data. `/add-subscription` is
    the URL that the client sends a
@@ -187,7 +192,7 @@ app.post('/notify-me', (request, response) => {
 
 1. Update the `sendNotifications()` function with the following code:
 
-```js/2-29/1
+```js/2-28/1
 function sendNotifications(subscriptions) {
   // TODO
   // Create the notification content.
@@ -200,7 +205,6 @@ function sendNotifications(subscriptions) {
   // Customize how the push service should attempt to deliver the push message.
   // And provide authentication information.
   const options = {
-    // TODO https://developers.google.com/web/fundamentals/push-notifications/web-push-protocol#ttl_header
     TTL: 10000,
     vapidDetails: vapidDetails
   };
@@ -240,9 +244,13 @@ app.post('/notify-all', (request, response) => {
 ```
 
 1. Go back to the app tab.
+1. Click **Unsubscribe from push** and then click **Subscribe to push** again.
+   This is only necessary because, as mentioned before, Glitch restarts the project
+   every time you edit the code and the project is configured to delete the database on startup.
 1. Click **Notify me**. You should receive a push notification. The title should
    be `Hello, Notifications!` and the body should be `ID: <ID>` where `<ID>` is a
    random number.
 1. Open your app on other browsers or devices and try subscribing them to push notifications
-   and then clicking the **Notify all**cbutton. You should receive the same notification on 
-   all of your subscribed devices.
+   and then clicking the **Notify all** button. You should receive the same notification on 
+   all of your subscribed devices (i.e. the ID in the body of the push notification should
+   be the same).
