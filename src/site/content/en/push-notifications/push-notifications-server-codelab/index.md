@@ -13,6 +13,10 @@ glitch: push-notifications-server-codelab-incomplete
 related_post: push-notifications-overview
 tags:
   - notifications
+  - progressive-web-apps
+  - mobile
+  - network
+  - capabilities
 ---
 
 This codelab shows you, step-by-step, how to build a push notification server.
@@ -24,9 +28,10 @@ By the end of the codelab you'll have a server that:
 * Sends a push notification to a single client
 * Sends a push notification to all subscribed clients
 
-This codelab doesn't explain push notification concepts. Check out
-[How do push notifications work?](/push-notifications-overview/#how) if you want a
-high-level conceptual overview of the push notification implementation workflow.
+This codelab is focused on helping you learn by doing and doesn't
+talk about concepts much. Check out 
+[How do push notifications work?](/push-notifications-overview/#how)
+to learn about push notification concepts.
 
 The client code of this codelab is already complete. You'll only be
 implementing the server in this codelab. To learn how to implement a
@@ -36,6 +41,19 @@ client](/push-notification-client-codelab).
 Check out [push-notifications-server-codelab-complete](https://push-notifications-server-codelab-complete.glitch.me/)
 ([source](https://glitch.com/edit/#!/push-notifications-server-codelab-complete))
 to see the complete code.
+
+## Browser compatibility
+
+This codelab is known to work with the following operating system and browser combinations:
+
+* macOS: Chrome, Firefox
+* Android: Chrome, Firefox
+
+This codelab is known to **not** work with the following operating systems
+(or operating system and browser combinations):
+
+* macOS: Brave, Edge, Safari
+* iOS
 
 ## Application stack {: #stack }
 
@@ -58,10 +76,10 @@ the **Glitch UI** throughout this codelab.
 
 ### Set up authentication {: #authentication }
 
+Before you can get push notifications working, you need to set up
+your server and client with authentication keys.
 See [Sign your web push protocol requests](/push-notifications-overview/#sign)
-for more context about the authentication process.
-
-<!-- https://glitch.com/edit/#!/vapid-keys-generator -->
+to learn why.
 
 1. Open the Glitch terminal by clicking **Tools** and then clicking **Terminal**.
 1. In the terminal, run `npx web-push generate-vapid-keys`. Copy the private key
@@ -89,6 +107,10 @@ VAPID_SUBJECT="mailto:test@test.test"
 
 ## Manage subscriptions {: #manage }
 
+Your client handles most of the subscription process. The main
+things your server needs to do are save new push notification subscriptions
+and delete old subscriptions. These subscriptions are what enable you to
+push messages to clients in the future.
 See [Subscribe the client to push notifications](/push-notifications-overview/#subscription)
 for more context about the subscription process.
 
@@ -174,8 +196,12 @@ app.post('/remove-subscription', (request, response) => {
 
 ## Send notifications
 
-See [Send a push message](/push-notifications-overview/#send) for more context
-about the push messaging process.
+As explained in [Send a push message](/push-notifications-overview/#send),
+your server doesn't actually send the push messages directly to clients.
+Rather, it relies on a push service to do that. Your server basically
+just kicks off the process of pushing messages to clients by making web
+service requests (web push protocol requests) to a web service (the push service)
+owned by the browser vendor that your user uses.
 
 1. Update the `/notify-me` route handler logic with the following code:
 
@@ -255,3 +281,12 @@ app.post('/notify-all', (request, response) => {
    and then clicking the **Notify all** button. You should receive the same notification on 
    all of your subscribed devices (i.e. the ID in the body of the push notification should
    be the same).
+
+## Next steps
+
+* Read [Push notifications overview](/push-notifications-overview)
+  for a deeper conceptual understanding of how push notifications work.
+* Check out [Codelab: Build a push notification client](/push-notifications-client-codelab/)
+  to learn how to build a client that requests notification permission, subscribes
+  the device to receive push notifications, and uses a service worker to receive
+  push messages and display the messages as notifications.

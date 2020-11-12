@@ -16,6 +16,12 @@ codelabs:
   - push-notifications-client-codelab
 tags:
   - notifications
+  - service-worker
+  - progressive-web-apps
+  - permissions
+  - mobile
+  - network
+  - capabilities
 ---
 
 ## What are push notifications? {: #what }
@@ -171,24 +177,28 @@ requests.
 
 #### Sign your web push protocol requests {: #sign }
 
-The push service also needs to verify that any given entity that is
-requesting to send push messages to a client is the same one that subscribed
-the client to push notifications in the first place. The authentication process
-roughly works like this:
+The push service provides a way to prevent anyone else from sending messages to your
+users. Technically you don't have to do this but the easiest implementation on
+Chrome requires it. It's optional on Firefox. Other browsers may require it
+in the future.
 
-* Your server needs to generate public and private keys, usually known as the
+This workflow involves a private key and public key that are unique to your
+application. The authentication process roughly works like this:
+
+* You generate the private and public key as a one-off task. The combination
+  of the private and public key is known as the 
   **application server keys**. You might also see them called the **VAPID
   keys**. [VAPID](https://tools.ietf.org/html/draft-thomson-webpush-vapid-02) is
-  the spec that defines this authentication process. Generating the application
-  server keys is actually the first thing you need to do when implementing push
-  notifications. It's a one-off task.
-* When you subscribe the client to push notifications from your JavaScript code, 
-  you need to provide your public key. The push service stores this public key 
-  and uses it to authenticate web push protocol requests.
+  the spec that defines this authentication process.
+* When you subscribe a client to push notifications from your JavaScript code, 
+  you provide your public key. When the push service generates an `endpoint`
+  for the device, it associates the provided public key with the `endpoint`.
 * When you send a web push protocol request, you sign some JSON information
   with your private key.
 * When the push service receives your web push protocol request, it uses the stored
-  public key to authenticate the signed information.
+  public key to authenticate the signed information. If the signature is valid
+  then the push service knows that the request came from a server with the
+  matching private key.
 
 #### Customize the delivery of the push message {: #customize }
 
@@ -224,11 +234,13 @@ dispatched.](push-service-to-sw-event.svg)
 
 ## Next steps {: #next-steps }
 
+* Check out [Codelab: Build a push notification client](/push-notifications-client-codelab/)
+  to learn how to build a client that requests notification permission, subscribes
+  the device to receive push notifications, and uses a service worker to receive
+  push messages and display the messages as notifications.
 * Check out [Codelab: Build a push notification server](/push-notifications-server-codelab/)
   to learn how to build a server that manages subscriptions and sends web push protocol
   requests.
-* Try out [Notification Generator](https://tests.peter.sh/notification-generator/)
-  to see all the ways you can customize notifications.
 
 [1]: https://developer.mozilla.org/en-US/docs/Web/API/Push_API
 [3]: https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
