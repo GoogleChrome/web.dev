@@ -11,6 +11,7 @@ const lighthousePwa = require('./lighthouse-pwa.json');
 const lighthouseSeo = require('./lighthouse-seo.json');
 const media = require('./media.json');
 const metrics = require('./metrics.json');
+const notifications = require('./notifications.json');
 const payments = require('./payments.json');
 const progressiveWebApps = require('./progressive-web-apps.json');
 const react = require('./react.json');
@@ -31,6 +32,7 @@ module.exports = {
   'lighthouse-seo': lighthouseSeo,
   media,
   metrics,
+  notifications,
   payments,
   'progressive-web-apps': progressiveWebApps,
   react,
