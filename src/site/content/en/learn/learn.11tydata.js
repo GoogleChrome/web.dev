@@ -19,7 +19,6 @@ module.exports = function () {
     allPaths['payments'],
     allPaths['media'],
     allPaths['devices'],
-    allPaths['push-notifications'],
   ].filter(livePaths);
 
   const performance = [
