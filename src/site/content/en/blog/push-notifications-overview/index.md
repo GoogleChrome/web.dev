@@ -48,9 +48,11 @@ Push messages and notifications are two separate but complementary technologies.
 Push is the technology for sending messages from your server to users even when
 they're not actively using your website. Notifications is the technology for
 displaying the pushed information on the user's device. It's possible to use
-push messaging without notifications, and vice versa. In practice they're
-usually used together. A non-technical user probably won't understand the
-difference between push messages and notifications. In this collection when
+notifications without push messaging. One day it may also be possible to use
+push messages without user-facing notifications (**silent push**) but browsers
+currently don't allow that. In practice they're usually used together. 
+A non-technical user probably won't understand the difference between push
+messages and notifications. In this collection when
 we say **push notifications** we mean the combination of pushing a message
 followed by displaying it as a notification. When we say **push messages**
 we are referring to push technology on its own. And when we say **notifications**
