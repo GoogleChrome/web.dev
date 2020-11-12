@@ -32,8 +32,9 @@ many years, across desktop and mobile.
 
 Starting in version 86, Chrome has enabled bfcache for
 [cross-site](/same-site-same-origin/) navigations on Android for a small
-percentage of users, with the intent to enable it for all users and navigations
-on Android over the next few releases.
+percentage of users. In Chrome 87, bfcache support will be rolled out to all
+Android users for cross-site navigation, with the intent to support
+[same-site](/same-site-same-origin/) navigation as well in the near future.
 
 ## bfcache basics
 
@@ -537,11 +538,11 @@ refer to the [PR adding them to the web-vitals JS
 library](https://github.com/GoogleChrome/web-vitals/pull/87).
 
 {% Aside %}
-  As of [`v1`](https://github.com/GoogleChrome/web-vitals/releases/tag/v1.0.0),
-  the [web-vitals](https://github.com/GoogleChrome/web-vitals) JavaScript
-  library [already accounts](https://github.com/GoogleChrome/web-vitals/pull/87)
-  for bfcache restores in the metrics it reports. Developers using `v1` or
-  greater should not need to update their code.
+  As of `v1`, the [web-vitals](https://github.com/GoogleChrome/web-vitals)
+  JavaScript library [supports bfcache
+  restores](https://github.com/GoogleChrome/web-vitals/pull/87) in the metrics
+  it reports. Developers using `v1` or greater should not need to update their
+  code.
 {% endAside %}
 
 ## Additional Resources
