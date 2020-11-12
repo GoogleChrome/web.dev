@@ -26,7 +26,7 @@ To add captions or screen reader descriptions to a web video, add a
 to a `<video>` tag. In addition to captions and screen reader descriptions, tags
 may also be used for subtitles and chapter titles. The can also help search
 engines understand what's in a video. Those capabilities are outside the scope
-fo this article.
+of this article.
 
 <figure class="w-figure  w-figure--inline-right">
   <img src="./chrome-android-track-landscape-5x3.jpg" alt="Screenshot showing captions displayed using the track element in Chrome on Android">

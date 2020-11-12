@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: Async Clipboard API simplifies permissions-friendly copy and paste.
 date: 2020-07-31
-updated: 2020-10-21
+updated: 2020-11-03
 tags:
   - blog
   - capabilities
@@ -318,6 +318,7 @@ or both of `clipboard-read` or `clipboard-write`, depending on the needs of your
 <iframe
     src="index.html"
     allow="clipboard-read; clipboard-write"
+>
 </iframe>
 ```
 
@@ -377,7 +378,7 @@ The first example demonstrates moving text on and off the clipboard.
   <iframe
     src="https://glitch.com/embed/#!/embed/async-clipboard-text?previewSize=100"
     title="async-clipboard-text on Glitch"
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media; clipboard-read; clipboard-write"
+    allow="clipboard-read; clipboard-write"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -411,7 +412,7 @@ Happy copying and pasting!
 
 ## Related links
 
-* [MDN]([https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API))
+* [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API)
 * [Raw Clipboard Access Design Doc](https://docs.google.com/document/d/1XDOtTv8DtwTi4GaszwRFIJCOuzAEA4g9Tk0HrasQAdE/edit?usp=sharing)
 
 ## Acknowledgements

@@ -6,7 +6,7 @@ authors:
   - mustafakurtuldu
   - thomassteiner
 date: 2016-11-10
-updated: 2020-10-22
+updated: 2020-10-29
 tags:
   - progressive-web-apps
   - ux
@@ -302,6 +302,7 @@ the words used in the app. Avoid tech jargon when explaining the state of the ap
 individual UI components. Consider that the phrase "app offline" might not convey to the user the
 current state of the app.
 
+<div class="w-columns">
 {% Compare 'worse' %}
   <figure style="display: inline-block; max-width: 45%;" class="w-figure">
     <img src="service-worker-ready.png" alt="A service worker icon is a bad example">
@@ -319,6 +320,7 @@ current state of the app.
     </figcaption>
   </figure>
 {% endCompare %}
+</div>
 
 ### Use multiple design devices to create accessible user experiences
 
@@ -332,6 +334,7 @@ use color to depict state.
 To prevent misunderstandings, express different states to the user in multiple ways, for example
 with color, labels, and UI components.
 
+<div class="w-columns">
 {% Compare 'worse' %}
   <figure style="display: inline-block; max-width: 45%;" class="w-figure">
     <img src="accessibility_color8_dont.png" alt="A bad example only using color.">
@@ -349,6 +352,7 @@ with color, labels, and UI components.
     </figcaption>
   </figure>
 {% endCompare %}
+</div>
 
 ### Use icons that convey meaning
 
