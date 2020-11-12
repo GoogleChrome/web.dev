@@ -89,9 +89,9 @@ Here are the supported values for the `loading` attribute:
 All images that are above the fold—that is, immediately viewable without scrolling—load
 normally. Those that are far below the device viewport are only fetched when the user scrolls near them.
 
-Chromium's implementation of lazy-loading tries to ensure that offscreen images are loaded early enough so that they have finished loading once the user scrolls near to them. By fetching nearby images before they become visible in the viewport, we maximize the chance they are already loaded by the time they become visible. 
+Chromium's implementation of lazy-loading tries to ensure that offscreen images are loaded early enough so that they have finished loading once the user scrolls near to them. By fetching nearby images before they become visible in the viewport, we maximize the chance they are already loaded by the time they become visible.
 
-Compared to JavaScript lazy-loading libraries, the thresholds for fetching images that scroll into view may be considered conservative. Chromium is looking at better aligning these thresholds with developer expectations. 
+Compared to JavaScript lazy-loading libraries, the thresholds for fetching images that scroll into view may be considered conservative. Chromium is looking at better aligning these thresholds with developer expectations.
 
 {% Aside %}
 Experiments conducted using Chrome on Android suggest that on 4G, 97.5% of below-the-fold images that are lazy-loaded were fully loaded within 10ms of becoming visible. Even on slow 2G networks, 92.6% of below-the-fold images were fully loaded within 10ms. This means browser-level lazy-loading offers a stable experience regarding the visibility of elements that are scrolled into view.
@@ -99,7 +99,7 @@ Experiments conducted using Chrome on Android suggest that on 4G, 97.5% of below
 
 The distance threshold is not fixed and varies depending on several factors:
 
-- The type of image resource being fetched 
+- The type of image resource being fetched
 - Whether [Lite mode](https://blog.chromium.org/2019/04/data-saver-is-now-lite-mode.html) is enabled
   on Chrome for Android
 - The [effective connection type](https://googlechrome.github.io/samples/network-information/)
@@ -119,7 +119,7 @@ the meantime, you will need to override the effective connection type of the bro
 
 ## Improved data-savings and distance-from-viewport thresholds
 
-As of July 2020, Chrome has made significant improvements to align the image lazy-loading distance-from-viewport thresholds to better meet developer expectations. 
+As of July 2020, Chrome has made significant improvements to align the image lazy-loading distance-from-viewport thresholds to better meet developer expectations.
 
 On fast connections (e.g 4G), we reduced Chrome's distance-from-viewport thresholds from `3000px` to `1250px` and on slower connections (e.g 3G), changed the threshold from `4000px` to `2500px`. This change achieves two things:
 
@@ -161,9 +161,9 @@ Alternatively, specify their values directly in an inline style:
 <img src="image.png" loading="lazy" alt="…" style="height:200px; width:200px;">
 ```
 
-The best practice of setting dimensions applies to `<img>` tags regardless of whether or not they are being loaded lazily. With lazy-loading, this can become more relevant. Setting `width` and `height` on images in modern browsers also allows browsers to infer their instrinsic size.
+The best practice of setting dimensions applies to `<img>` tags regardless of whether or not they are being loaded lazily. With lazy-loading, this can become more relevant. Setting `width` and `height` on images in modern browsers also allows browsers to infer their intrinsic size.
 
-Images will still lazy-load if dimensions are not included, but [specifying them decreases the chance of layout shift](https://www.youtube.com/watch?v=4-d_SoCHeWE). If you are unable to include dimensions for your images, lazy-loading them can be a trade-off between saving network resources and potentially being more at risk of layout shift. 
+Images will still lazy-load if dimensions are not included, but [specifying them decreases the chance of layout shift](https://www.youtube.com/watch?v=4-d_SoCHeWE). If you are unable to include dimensions for your images, lazy-loading them can be a trade-off between saving network resources and potentially being more at risk of layout shift.
 
 While lazy-loading in Chromium is implemented in a way such that images are likely to be loaded once they are visible, there is still a small chance that they might not be loaded yet. In this case, missing `width` and `height` attributes on such images increase their impact on Cumulative Layout Shift.
 
@@ -183,32 +183,32 @@ Images that are defined using the `<picture>` element can also be lazy-loaded:
 Although a browser will decide which image to load from any of the `<source>` elements, the `loading`
 attribute only needs to be included to the fallback `<img>` element.
 
- 
-## Avoid lazy-loading images that are in the first visible viewport 
+
+## Avoid lazy-loading images that are in the first visible viewport
 
 You should avoid setting `loading=lazy` for any images that are in the first visible viewport.
 
-It is recommended to only add `loading=lazy` to images which are positioned below the fold, if possible. Images that are eagerly loaded can be fetched right away, while images which are loaded lazily the browser currently needs to wait until it knows where the image is positioned on the page, which relies on the IntersectionObserver to be available. 
+It is recommended to only add `loading=lazy` to images which are positioned below the fold, if possible. Images that are eagerly loaded can be fetched right away, while images which are loaded lazily the browser currently needs to wait until it knows where the image is positioned on the page, which relies on the IntersectionObserver to be available.
 
 {% Aside %}
   In Chromium, the impact of images in the initial viewport being marked with `loading=lazy` on Largest Contentful Paint is fairly small, with a regression of <1% at the 75th and 99th percentiles compared to eagerly loaded images.
 {% endAside %}
 
 Generally, any images within the viewport should be loaded eagerly using the browser's defaults. You do not need to specify `loading=eager` for this to be the case for in-viewport images.
- 
+
 ```html
 <!-- visible in the viewport -->
 <img src="product-1.jpg" alt="..." width="200" height="200">
 <img src="product-2.jpg" alt="..." width="200" height="200">
 <img src="product-3.jpg" alt="..." width="200" height="200">
- 
+
 <!-- offscreen images -->
 <img src="product-4.jpg" loading="lazy" alt="..." width="200" height="200">
 <img src="product-5.jpg" loading="lazy" alt="..." width="200" height="200">
 <img src="product-6.jpg" loading="lazy" alt="..." width="200" height="200">
 ```
 
-## Graceful degredation 
+## Graceful degradation
 
 Browsers that do not yet support the `loading` attribute will ignore its presence. While these browsers will of course not get the benefits of lazy-loading, including the attribute has no negative impact on them.
 
