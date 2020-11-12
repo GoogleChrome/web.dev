@@ -9,6 +9,7 @@ description: >
   and how they work.
 authors:
   - kaycebasques
+  - mattgaunt
 date: 2020-11-10
 codelabs:
   - push-notifications-server-codelab
@@ -118,8 +119,8 @@ web push protocol request should include:
 
 Normally you make the web push protocol request through a server that you control.
 Of course, your server doesn't have to construct the raw web service request
-itself. There are libraries that can handle that for you, such as
-[web-push](https://www.npmjs.com/package/web-push). But the underlying mechanism is
+itself. There are libraries that can handle that for you, such as the
+[web-push-libs](https://github.com/web-push-libs/). But the underlying mechanism is
 a web service request over HTTP.
 
 ![Your server sends a web push protocol request to the push service and the push
@@ -226,6 +227,8 @@ dispatched.](push-service-to-sw-event.svg)
 * Check out [Codelab: Build a push notification server](/push-notifications-server-codelab/)
   to learn how to build a server that manages subscriptions and sends web push protocol
   requests.
+* Try out [Notification Generator](https://tests.peter.sh/notification-generator/)
+  to see all the ways you can customize notifications.
 
 [1]: https://developer.mozilla.org/en-US/docs/Web/API/Push_API
 [3]: https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API

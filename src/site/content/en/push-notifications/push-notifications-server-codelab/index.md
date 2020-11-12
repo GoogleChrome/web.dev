@@ -3,6 +3,7 @@ layout: codelab
 title: "Codelab: Build a push notification server"
 authors: 
   - kaycebasques
+  - katejeffreys
 description: >
   A step-by-step interactive tutorial that shows you how to build a
   server that manages push notification subscriptions and sends

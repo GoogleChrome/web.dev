@@ -3,10 +3,12 @@ layout: codelab
 title: "Codelab: Build a push notifications client"
 authors: 
   - kaycebasques
+  - katejeffreys
 description: >
   A step-by-step interactive tutorial that shows you how to build a
-  server that manages push notification subscriptions and sends
-  web push protocol requests to a push service.
+  client that subscribes the user to push notifications,
+  displays push messages as notifications, and unsubscribes the user
+  from push notifications.
 date: 2020-11-11
 glitch: push-notifications-client-codelab-incomplete
 related_post: push-notifications-overview
@@ -14,146 +16,236 @@ tags:
   - notifications
 ---
 
-In this codelab, you'll use basic features of the
-[Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API) to:
+This codelab shows you, step-by-step, how to build a push notification client.
+By the end of the codelab you'll have a client that:
 
-* Request permission to send notifications
-* Send notifications
+* Subscribes the user to push notifications.
+* Receives push messages and displays them as notifications.
+* Unsubscribes the user from push notifications.
 
-{% Aside 'gotchas' %}
-  If you got stuck, here's the
-  [completed code](https://glitch.com/edit/#!/send-push-notifications-codelab-complete).
-{% endAside %}
+This codelab doesn't explain push notification concepts. Check out
+[How do push notifications work?](/push-notifications-overview/#how) if you want a
+high-level conceptual overview of the push notification implementation workflow.
 
-## Setup
+The server code of this codelab is already complete. You'll only be
+implementing the client in this codelab. To learn how to implement a
+push notification server, check out [Codelab: Build a push notification
+server](/push-notification-server-codelab).
+
+Check out [push-notifications-client-codelab-complete](https://push-notifications-server-codelab-complete.glitch.me/)
+([source](https://glitch.com/edit/#!/push-notifications-client-codelab-complete))
+to see the complete code.
+
+## Setup {: #setup }
+
+### Get an editable copy of the code {: #remix }
+
+The code editor that you see to the right of these instructions will be called
+the **Glitch UI** throughout this codelab.
 
 {% Instruction 'remix', 'ol' %}
-{% Instruction 'preview', 'ol' %}
 
-The [Glitch](https://glitch.com) should open in a new Chrome tab:
+### Set up authentication {: #authentication }
 
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" 
-       src="live-app.jpg" 
-       alt="A screenshot of the app.">
-</figure>
+See [Sign your web push protocol requests](/push-notifications-overview/#sign)
+for more context about the authentication process.
 
-{% Aside 'key-term' %}
-  We'll refer to the new tab that you just opened as the **live app tab**.
-{% endAside %}
+<!-- https://glitch.com/edit/#!/vapid-keys-generator -->
 
-## Send a notification
+1. In the Glitch UI click **Tools** and then click **Terminal** to open the Glitch Terminal.
+1. In the Glitch Terminal, run `npx web-push generate-vapid-keys`. Copy the private key
+   and public key values.
+1. In the Glitch UI open `.env` and update `VAPID_PUBLIC_KEY` and `VAPID_PRIVATE_KEY`. Set
+   `VAPID_SUBJECT` to `mailto:test@test.test`. All of these values should be wrapped
+   in double quotes. After making your updates, your `.env` file should look
+   similar to this:
 
-First, you're going to try to send a notification **without** the user's permission
-to do so. **This won't work yet**. The goal here is to show you what error gets thrown
-in this situation.
-
-{% Instruction 'source', 'ol' %}
-1. Open `public/index.js`.
-1. Replace `sendNotification()` with the following code:
-
-   ```js
-   // Use the Notification constructor to create and send a new Notification.
-   function sendNotification() {
-     console.log('Attempting to send a notification…');
-     const title = 'Title';
-     const options = {
-       body: 'Body',
-       // Other options can go here
-     };
-     const notification = new Notification(title, options);
-   }
-   ```
-
-1. Go back to the live app tab and reload the page.
-1. Click the **Send a notification** button. You should see
-   `Attempting to send a notification…` in the Console. But other than that,
-   nothing happens.
-1. Add the following code to `sendNotification()`:
-
-   ```js/9-12/
-   // Use the Notification constructor to create and send a new Notification.
-   function sendNotification() {
-     console.log('Attempting to send a notification…');
-     const title = 'Title';
-     const options = {
-       body: 'Body',
-       // Other options can go here
-     };
-     const notification = new Notification(title, options);
-     notification.onerror = error => {
-       console.error('Notification failed!');
-       console.error(error);
-     };
-   }
-   ```
-1. Go back to the live code tab, reload the page, and click **Send a notification**
-   again. Now you see `Notification failed!` in the Console, followed by the error object.
-
-## Request permission to send notifications
-
-1. Replace `requestPermission()` with the following code.
-
-   ```js
-   // Use the Notification API to request permission to send notifications.
-   function requestPermission() {
-     console.info('Requesting permission…');
-     Notification.requestPermission()
-       .then(permission => {
-         console.info(permission);
-         showPermission();
-       })
-       .catch(error => {
-         console.error(error);
-       });
-   }
-   ```
-
-{% Aside 'gotchas' %}
-  If you're in an incognito window, nothing will happen. Open a guest
-  window or a window associated to a Google profile and try again.
-{% endAside %}
-
-{% Aside %}
-  If you ever need to reset permissions, click the lock icon to the left of
-  the URL in Chrome and use the dropdown menu next to **Notifications**.
-{% endAside %}
-
-## Try out the complete app
-
-1. Go back to the live app tab and reload the page.
-1. Click **Request permission to send notifications**.
-   You should see `Requesting permission…` in the Console.
-   A popup should also appear.
-1. Click **Allow** in the **Show notifications** popup.
-1. Click the **Send a notification** button. You should see
-   a notification appear with the text `Title`, `Body`, and the URL
-   of your app.
-
-## Next steps
-
-### Try customizing your notification
-
-Recall that when you create a notification, the constructor accepts an `options` object:
-
-```js
-const options = {
-  body: 'Body',
-  // Other options can go here
-};
-const notification = new Notification(title, options);
+```text
+VAPID_PUBLIC_KEY="BKiwTvD9HA…"
+VAPID_PRIVATE_KEY="4mXG9jBUaU…"
+VAPID_SUBJECT="mailto:test@test.test"
 ```
 
-See [Parameters][parameters] to learn more about how you can customize your
-notification. And check out [Notification Generator](https://tests.peter.sh/notification-generator/)
-to experiment with all of these options.
+1. Close the Glitch Terminal.
 
-### Learn how to receive push notifications with a service worker
+{% Aside 'gotchas' %}
+  Environment variable values (the stuff in `.env`) are unique to a single Glitch project.
+  I.e. if you remix your project, the values in `.env` won't get copied over.
+{% endAside %}
 
-[TODO](/receive-push-notifications-codelab/)
+1. Open `public/index.js`.
+1. Replace `VAPID_PUBLIC_KEY_VALUE_HERE` with the value of your public key.
 
-### Manage push notifications
+## Register a service worker
 
-[TODO](/manage-push-notifications-codelab/)
+1. Replace the `// TODO add startup logic here` comment with the following code:
 
-[parameters]: https://developer.mozilla.org/en-US/docs/Web/API/notification/Notification#Parameters
+```js/1-15/0
+// TODO add startup logic here
+if ('serviceWorker' in navigator && 'PushManager' in window) {
+  navigator.serviceWorker.register('./service-worker.js').then(serviceWorkerRegistration => {
+    console.info('Service worker was registered.');
+    console.info({serviceWorkerRegistration});
+  }).catch(error => {
+    console.error('An error occurred while registering the service worker.');
+    console.error(error);
+  });
+  subscribeButton.disabled = false;
+} else {
+  console.error('Browser does not support service workers or push messages.');
+}
+
+subscribeButton.addEventListener('click', subscribeButtonHandler);
+unsubscribeButton.addEventListener('click', unsubscribeButtonHandler);
+```
+
+## Request push notification permission
+
+See [Get permission to send push notifications](/push-notifications-overview/#permission)
+for more context about the permission process.
+
+1. Replace the `// TODO` comment in `subscribeButtonHandler()` with the following code:
+
+```js/1-6/0
+// TODO
+subscribeButton.disabled = true;
+const result = await Notification.requestPermission();
+if (result === 'denied') {
+  console.error('The user explicitly denied the permission request.');
+  return;
+}
+```
+
+Note that some browsers (such as Safari on macOS) use an older, callback-based
+version of `Notifcation.requestPermission()`. If you want to support browsers
+that use the older version of the method, you can do something like the following.
+
+{% Aside 'caution' %}
+  Don't add the code below to your Glitch project. We're just providing
+  it for your information.
+{% endAside %}
+
+```js
+async function subscribeButtonHandler() {
+  function permissionRequestCallback(result) {
+    permissionStatus = result;
+    subscribe();
+  }
+  async function subscribe() {
+    // Some of the browsers that use the newer, Promise-based version of 
+    // Notification.requestPermission() still call the callback if you
+    // pass one. So we use a sentinel value to prevent subscribe() from
+    // being called twice.
+    if (subscriptionAttemptInFlight) return;
+    subscriptionAttemptInFlight = true;
+    if (permissionStatus === 'denied') {
+      console.error('The user explicitly denied notification permission.');
+      return;
+    }
+    // Proceed with attempting to subscribe to push messages.
+  }
+  let permissionStatus;
+  let subscriptionAttemptInFlight = false;
+  try {
+    Notification.requestPermission(permissionRequestCallback).then(result => {
+      permissionStatus = result;
+      subscribe();
+    });
+  } catch (error) {
+    if (error instanceof TypeError) {
+      console.info('Callback version of Notification.requestPermission() detected.');
+    }
+  }
+}
+```
+
+## Subscribe to push notifications
+
+See [Subscribe the client to push notifications](/push-notifications-overview/#subscription)
+for more context about the subscription process.
+
+1. Add the following code to `subscribeButtonHandler()`:
+
+```js/6-24
+subscribeButton.disabled = true;
+const result = await Notification.requestPermission();
+if (result === 'denied') {
+  console.error('The user explicitly denied the permission request.');
+  return;
+}
+const registration = await navigator.serviceWorker.getRegistration();
+const subscribed = await registration.pushManager.getSubscription();
+if (subscribed) {
+  console.info('User is already subscribed.');
+  return;
+}
+const subscription = await registration.pushManager.subscribe({
+  userVisibleOnly: true,
+  applicationServerKey: urlB64ToUint8Array(VAPID_PUBLIC_KEY)
+});
+notifyMeButton.disabled = false;
+fetch('/add-subscription', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(subscription)
+});
+```
+
+## Unsubscribe from push notifications
+
+1. Replace the `// TODO` comment in `unsubscribeButtonHandler()`
+   with the following code:
+
+```js/1-16/0
+  // TODO
+  const registration = await navigator.serviceWorker.getRegistration();
+  const subscription = await registration.pushManager.getSubscription();
+  fetch('/remove-subscription', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({endpoint: subscription.endpoint})
+  });
+  const unsubscribed = await subscription.unsubscribe();
+  if (unsubscribed) {
+    console.info('Successfully unsubscribed from push notifications.');
+    unsubscribeButton.disabled = true;
+    subscribeButton.disabled = false;
+    notifyMeButton.disabled = true;
+  }
+  ```
+
+## Receive a push message and display it as a notification
+
+  1. Replace the `// TODO` comment in the service worker's `push` event handler
+     with the following code:
+
+```js/1-12/0
+  // TODO
+  let data = event.data.json();
+  const image = 'https://cdn.glitch.com/614286c9-b4fc-4303-a6a9-a4cef0601b74%2Flogo.png?v=1605150951230';
+  const options = {
+    body: data.options.body,
+    icon: image,
+    badge: image,
+    image
+  }
+  self.registration.showNotification(
+    data.title, 
+    options
+  );
+```
+
+## Open a URL when a user clicks a notification
+
+1. Replace the `// TODO` comment in the service worker's `notificationclick`
+   event handler with the following code:
+
+```js/1-2/0
+// TODO
+event.notification.close();
+event.waitUntil(self.clients.openWindow('https://web.dev'));
+```
