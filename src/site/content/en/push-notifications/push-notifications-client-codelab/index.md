@@ -43,17 +43,18 @@ Check out [push-notifications-client-codelab-complete](https://push-notification
 ([source](https://glitch.com/edit/#!/push-notifications-client-codelab-complete))
 to see the complete code.
 
-## Browser compatibility
+## Browser compatibility {: #browser-compatibility }
 
 This codelab is known to work with the following operating system and browser combinations:
 
 * macOS: Chrome, Firefox
 * Android: Chrome, Firefox
 
-This codelab is known to **not** work with the following operating system and browser combinations:
+This codelab is known to **not** work with the following operating systems
+(or operating system and browser combinations):
 
 * macOS: Brave, Edge, Safari
-* iOS: (all browsers)
+* iOS
 
 ## Setup {: #setup }
 
@@ -64,6 +65,12 @@ the **Glitch UI** throughout this codelab.
 
 {% Instruction 'remix', 'ol' %}
 
+{% Aside 'gotchas' %}
+  If you're in a Chrome incognito or guest window, you may have
+  trouble completing the codelab. Consider using a signed-in
+  profile instead.
+{% endAside %}
+
 ### Set up authentication {: #authentication }
 
 Before you can get push notifications working, you need to set up
@@ -72,13 +79,6 @@ See [Sign your web push protocol requests](/push-notifications-overview/#sign)
 to learn why.
 
 1. In the Glitch UI click **Tools** and then click **Terminal** to open the Glitch Terminal.
-
-{% Aside 'gotchas' %}
-  If you're in a Chrome incognito window and the Terminal is blank and you can't type in,
-  try loading this codelab in a [guest](https://support.google.com/chrome/answer/6130773)
-  window instead.
-{% endAside %}
-
 1. In the Glitch Terminal, run `npx web-push generate-vapid-keys`. Copy the private key
    and public key values.
 1. In the Glitch UI open `.env` and update `VAPID_PUBLIC_KEY` and `VAPID_PRIVATE_KEY`. Set
@@ -137,7 +137,7 @@ unsubscribeButton.addEventListener('click', unsubscribeButtonHandler);
   throughout this codelab.
 {% endAside %}
 
-{% Instruction 'console', 'ol' %} You should see the message
+{% Instruction 'devtools-console', 'ol' %} You should see the message
 `Service worker was registered.` logged to the Console.
 
 {% Aside %}
@@ -194,7 +194,7 @@ for more context about the subscription process.
 
 1. Add the following highlighted code to `subscribeButtonHandler()`:
 
-```js/9-27
+```js/9-28
 subscribeButton.disabled = true;
 const result = await Notification.requestPermission();
 if (result === 'denied') {
@@ -209,6 +209,7 @@ const subscribed = await registration.pushManager.getSubscription();
 if (subscribed) {
   console.info('User is already subscribed.');
   notifyMeButton.disabled = false;
+  unsubscribeButton.disabled = false;
   return;
 }
 const subscription = await registration.pushManager.subscribe({
@@ -231,7 +232,8 @@ to push messages without displaying user-visible notifications
 because of privacy concerns. 
 
 The `applicationServerKey` value relies on a utility function that
-converts a base64 string to a Uint8Array.
+converts a base64 string to a Uint8Array. This value is used for
+authentication between your server and the push service.
 
 ## Unsubscribe from push notifications
 
@@ -291,17 +293,21 @@ self.registration.showNotification(
 1. Try opening the URL of your app tab on other browsers (or even
    other devices), going through the subscription workflow, and then
    clicking **Notify all**. You should receive the same push notification
-   on all of the browsers that you subscribed.
+   on all of the browsers that you subscribed. Refer back to
+   [Browser compatibility](#browser-compatibility) to see a list of browser/OS
+   combinations that are known to work or not work.
 
-You can customize the notification in lots of ways. See the parameters
+You can customize the notification in lots of ways. See the parameters of
 [`ServiceWorkerRegistration.showNotification()`][showNotification] to learn more.
 
 {% Aside 'gotchas' %}
-  The call to [`self.skipWaiting()`][skipWaiting] in your service worker's `install` listener
-  is important to understand. See [Skip the waiting phase][skip] for an explanation.
-  Without it, the code changes that you make to your service worker wouldn't take effect
-  immediately. You may or may not want to use this feature on your own website depending on your
-  needs, but either way it's important to understand its effect.
+  The call to 
+  [`self.skipWaiting()`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting) 
+  in your service worker's `install` listener is important to understand. See 
+  [Skip the waiting phase](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#skip_the_waiting_phase) 
+  for an explanation. Without it, the code changes that you make to your service worker
+  wouldn't take effect immediately. You may or may not want to use this feature on 
+  your own website depending on your needs, but either way it's important to understand its effect.
 {% endAside %}
 
 ## Open a URL when a user clicks a notification
