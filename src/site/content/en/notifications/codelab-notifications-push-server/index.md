@@ -392,7 +392,7 @@ In your implementation, this handler must:
 * Access the database of active subscriptions.
 * Remove the cancelled subscription from the list of active subscriptions.
 
-The body of the POST request from the client contains the endpoint that yoou need to remove:
+The body of the POST request from the client contains the endpoint that you need to remove:
 
 ```json
 {

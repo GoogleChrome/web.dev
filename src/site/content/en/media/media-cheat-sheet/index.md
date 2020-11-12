@@ -147,7 +147,7 @@ ffmpeg -i myvideo.mp4 -keyint_min 150 -g 150 -f webm -vf setsar=1:1 out.webm
 ### Codec
 
 The tables below list common containers and codecs for both audio and video, as
-well as the FFmpeg libary needed for conversion. A conversion library must be
+well as the FFmpeg library needed for conversion. A conversion library must be
 specified when converting files using FFmpeg.
 
 #### Video

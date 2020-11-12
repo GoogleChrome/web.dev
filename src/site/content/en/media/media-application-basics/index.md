@@ -151,7 +151,7 @@ I'll again compare the basic pattern to the example for displaying file characte
     ffmpeg                                     -i glocken.mp4
 ```
 
-In additon to the information I requested, this also prints an error message as
+In addition to the information I requested, this also prints an error message as
 shown in the example below. That's because this is technically an incorrect
 usage of FFmpeg. I use it because it displays information I care about.
 

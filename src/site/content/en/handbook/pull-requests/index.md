@@ -21,7 +21,7 @@ that you are reviewing the PR.
 
 If a reviewer claims a PR but is inactive on the PR for 3 business days, any other reviewer
 can reclaim the PR. The new reviewer should unassign the old reviewer and reassign
-themself.
+themselves.
 
 ## Properly label the PR
 

@@ -167,7 +167,7 @@ You can start promoting your PWA install to all your users or use a more
 cautious approach by only experimenting with a small group of users.
 
 After a few days or weeks you should already have some data to measure the
-impact on your business. What is the behaviour of people coming from the
+impact on your business. What is the behavior of people coming from the
 installed shortcut? Do they engage more, do they convert more?
 
 To segment users who installed your PWA, track the
@@ -179,7 +179,7 @@ analytics tracking.
 ![Measure the value of installation](img-8.jpg)
 
 The [case study of Weekendesk][twg-weekendest] is interesting: they propose
-Installation on the second page visited to maximise the install rate, and
+Installation on the second page visited to maximize the install rate, and
 they observed that customers coming back via the icon on the home screen were
 more than twice as likely to book a stay with them.
 
