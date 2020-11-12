@@ -7,18 +7,30 @@ import {BaseElement} from '../BaseElement';
 import {store} from '../../store';
 import * as router from '../../utils/router';
 import {debounce} from '../../utils/debounce';
-import algoliasearch from 'algoliasearch/dist/algoliasearch-lite.esm.browser';
 import {trackError} from '../../analytics';
 import 'focus-visible';
 import './_styles.scss';
 
-// Create an algolia client so we can get search results.
-// These keys are safe to be public.
-const applicationID = '2JPAZHQ6K7';
-const apiKey = '01ca870a3f1cad9984ed72419a12577c';
-const indexName = 'webdev';
-const client = algoliasearch(applicationID, apiKey);
-const index = client.initIndex(indexName);
+let algoliaIndexPromise;
+
+function loadAlgoliaLibrary() {
+  algoliaIndexPromise = algoliaIndexPromise || internalLoadAlgoliaLibrary();
+  return algoliaIndexPromise;
+}
+
+async function internalLoadAlgoliaLibrary() {
+  const {default: algoliasearch} = await import(
+    'algoliasearch/dist/algoliasearch-lite.esm.browser'
+  );
+  // Create an algolia client so we can get search results.
+  // These keys are safe to be public.
+  const applicationID = '2JPAZHQ6K7';
+  const apiKey = '01ca870a3f1cad9984ed72419a12577c';
+  const indexName = 'webdev';
+  const client = algoliasearch(applicationID, apiKey);
+  const index = client.initIndex(indexName);
+  return index;
+}
 
 /**
  * An Algolia search box.
@@ -326,6 +338,7 @@ class Search extends BaseElement {
       return;
     }
     try {
+      const index = await loadAlgoliaLibrary();
       const {hits} = await index.search(query, {hitsPerPage: 10});
       if (this.query === query) {
         this.hits = hits;
@@ -421,6 +434,10 @@ class Search extends BaseElement {
    * Animate the search box open.
    */
   onFocusIn() {
+    loadAlgoliaLibrary().catch((err) => {
+      console.error('failed to load Algolia', err);
+      trackError(err, 'algolia load');
+    });
     this.expanded = true;
 
     // Collapse the search box if the user scrolls while the seach box is
