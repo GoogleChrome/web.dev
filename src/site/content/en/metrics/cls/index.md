@@ -242,6 +242,11 @@ Layout shifts that occur within 500 milliseconds of user input will have the
 [`hadRecentInput`](https://wicg.github.io/layout-instability/#dom-layoutshift-hadrecentinput)
 flag set, so they can be excluded from calculations.
 
+{% Aside 'caution' %}
+  Please note: scrolling input is not given a 500 ms buffer, as per the 
+  [Layout Instability Spec](https://github.com/WICG/layout-instability#recent-input-exclusion)
+{% endAside %}
+
 #### Animations and transitions
 
 Animations and transitions, when done well, are a great way to update content on
