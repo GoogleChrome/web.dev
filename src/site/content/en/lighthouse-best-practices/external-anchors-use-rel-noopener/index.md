@@ -21,6 +21,8 @@ you can expose your site to performance and security issues:
 Adding `rel="noopener"` or `rel="noreferrer"`
 to your `target="_blank"` links avoids these issues.
 
+**Update** As of Chromium version 88, anchors with `target="_blank"` automatically get `noopener` behavior [by default](https://crbug.com?id=898942). Explicit specification of  `rel="noopener"` helps protect users of legacy browsers including Edge Legacy and Internet Explorer.
+
 ## How the Lighthouse cross-origin destination audit fails
 
 [Lighthouse](https://developers.google.com/web/tools/lighthouse/) flags unsafe links to cross-origin destinations:
