@@ -1,78 +1,99 @@
 ---
-title: Better JS scheduling with isInputPending
-# subhead: Bridging the gap between web and iOS/Android experiences to delight users.
-date: 2020-11-13
-# hero: hero.png
-# thumbnail: thumbnail.png
-# alt: An illustration of a smartphone next to the text "Scale on web"
+title: Better JS scheduling with isInputPending()
+subhead: >
+  A new JavaScript API that may help you avoid the tradeoff between
+  load performance and input responsiveness.
 description: >
-  TODO
+  A new JavaScript API that may help you avoid the tradeoff between
+  load performance and input responsiveness.
+date: 2020-11-13
+hero: hero.jpg
+alt: A traffic sign that says 'GIVE WAY'.
 tags:
   - blog
   - javascript
+  - performance
+  - rendering
 authors:
   - nateschloss
   - andrewcomminos
 ---
 
-Loading fast is hard. Sites that leverage JS to render their content currently have to make a
-tradeoff- either perform all the work needed for display all at once, or chunk the work into smaller
-tasks in order to remain responsive to input and paint -- occasionally, at the expense of
-performance.
+<!-- 
+tradeoff between load performance and input responsiveness: either perform all the work 
+needed for display all at once (better load performance, worse input responsiveness), or
+chunk the work into smaller tasks in order to remain responsive to input and
+paint (worse load performance, better input responsiveness).
+-->
 
-To eliminate the need to make this trade off, Facebook proposed and implemented the isInputPending
-API in Chrome in order to improve responsiveness without yielding. Based on origin trial feedback,
-we've made a number of updates to the API, and are happy to announce that the API is now shipping by
-default in Chrome 87!
+Loading fast is hard. Sites that leverage JS to render their content currently
+have to make a trade-off- either perform all the work needed for display all at
+once, or chunk the work into smaller tasks in order to remain responsive to
+input and paint -- occasionally, at the expense of performance.
+
+To eliminate the need to make this trade-off, Facebook proposed and implemented
+the `isInputPending()` API in Chrome in order to improve responsiveness without
+yielding. Based on origin trial feedback, we've made a number of updates to the
+API, and are happy to announce that the API is now shipping by default in Chrome
+87!
 
 ## Background
 
 _For the full background, please see [our
-post](https://engineering.fb.com/developer-tools/isinputpending-api/) about the origin trial in the
-Facebook Engineering blog._
+post](https://engineering.fb.com/developer-tools/isinputpending-api/) about the
+origin trial in the Facebook Engineering blog._
 
-Most work in today's JS ecosystem gets done on a single thread- the main thread. This provides a
-robust execution model to developers, but the user experience can suffer drastically if script is
-executing for a long time -- responsiveness in particular. If the page is doing a lot of work while
-an input event is fired, for instance, the page won't handle the click input event until after that
-work completes.
+Most work in today's JS ecosystem gets done on a single thread: the main thread.
+This provides a robust execution model to developers, but the user experience
+can suffer drastically if script executes for a long time, responsiveness
+in particular. If the page is doing a lot of work while an input event is fired,
+for instance, the page won't handle the click input event until after that work
+completes.
 
-The current best practice advice is to deal with this issue by breaking the JavaScript up into
-smaller blocks. While the page is loading, the page can run a bit of JavaScript, and then yield and
-pass control back to the browser. The browser can then check its input event queue and see whether
-there is anything it needs to tell the page about. Then the browser can go back to running the
+The current best practice is to deal with this issue by breaking the
+JavaScript up into smaller blocks. While the page is loading, the page can run a
+bit of JavaScript, and then yield and pass control back to the browser. The
+browser can then check its input event queue and see whether there is anything
+it needs to tell the page about. Then the browser can go back to running the
 JavaScript blocks as they get added. This helps, but it can cause other issues.
 
-Each time the page yields control back to the browser, it takes some time for the browser to check
-its input event queue, process events, and pick up the next JavaScript block. While the browser
-responds to events quicker, the overall loading time of the page gets slowed down. And if we yield
-too often, the page loads too slowly. If we yield less often, it takes longer for the browser to
+Each time the page yields control back to the browser, it takes some time for
+the browser to check its input event queue, process events, and pick up the next
+JavaScript block. While the browser responds to events quicker, the overall
+loading time of the page gets slowed down. And if we yield too often, the page
+loads too slowly. If we yield less often, it takes longer for the browser to
 respond to user events, and people get frustrated. Not fun.
 
-![TODO](diagram.png)
+![A diagram showing that when you run long JS tasks, the browser has less time
+to dispatch events.](diagram.png)
 
-At Facebook, we wanted to see what things would look like if we came up with a new approach for
-loading that would eliminate this frustrating trade-off. We reached out to our friends at Chrome
-about this, and came up with the proposal for isInputPending. The isInputPending API is the first to
-use the concept of interrupts for user inputs to the web, and allows for JavaScript scripts to be
+At Facebook, we wanted to see what things would look like if we came up with a
+new approach for loading that would eliminate this frustrating trade-off. We
+reached out to our friends at Chrome about this, and came up with the proposal
+for `isInputPending()`. The `isInputPending()` API is the first to use the concept of
+interrupts for user inputs on the web, and allows for JavaScript to be
 able to check for input without yielding to the browser.
 
-![TODO](legend.png)
+![A diagram showing that isInputPending() allows your JS to check if there's
+pending user input, without completely yielding execution back to the
+browser.](legend.png)
 
-Since there was interest in the API, we partnered with our colleagues at Chrome to implement and
-ship the feature in Chrome. With help from the Chrome engineers, we got the patches landed behind an
-origin trial (which is a way for Chrome to test changes and get feedback from developers before
-fully releasing an API).
+Since there was interest in the API, we partnered with our colleagues at Chrome
+to implement and ship the feature in Chrome. With help from the Chrome
+engineers, we got the patches landed behind an [origin trial](/origin-trials/)
+(which is a way for Chrome to test changes and get feedback from developers
+before fully releasing an API).
 
-We've now taken feedback from the origin trial and from the other members of the W3C Web Performance
-working group and implemented changes to the API.
+We've now taken feedback from the origin trial and from the other members of the
+W3C Web Performance Working Group and implemented changes to the API.
 
 ## Example: a yieldier scheduler
 
-Suppose that you've got a bunch of display-blocking work to do to load your page -- whether it be to
-generate markup from components, factor out primes, or just draw a cool loading spinner. Each one of
-these is broken into a discrete work item. Using the scheduler pattern, let's sketch out how we
-might process our work in a hypothetical `processWorkQueue` function:
+Suppose that you've got a bunch of display-blocking work to do to load your
+page, for example generating markup from components, factoring out primes, or
+just drawing a cool loading spinner. Each one of these is broken into a discrete
+work item. Using the scheduler pattern, let's sketch out how we might process
+our work in a hypothetical `processWorkQueue()` function:
 
 ```js
 const DEADLINE = performance.now() + QUANTUM;
@@ -87,11 +108,12 @@ while (workQueue.length > 0) {
 }
 ```
 
-By invoking processWorkQueue later in a new macrotask via setTimeout, we give the browser the
-ability to remain somewhat responsive to input -- it can run event handlers before work resumes --
-while still managing to run relatively uninterrupted. Though, we might get descheduled for a long
-time by other work that wants control of the event loop, or get up to an extra `QUANTUM` ms of event
-latency.
+By invoking `processWorkQueue()` later in a new macrotask via `setTimeout()`, we
+give the browser the ability to remain somewhat responsive to input (it can
+run event handlers before work resumes) while still managing to run relatively
+uninterrupted. Though, we might get descheduled for a long time by other work
+that wants control of the event loop, or get up to an extra `QUANTUM` milliseconds
+of event latency.
 
 This is okay, but can we do better? Absolutely!
 
@@ -108,14 +130,16 @@ while (workQueue.length > 0) {
 }
 ```
 
-By introducing a call to `navigator.scheduling.isInputPending()`, we're able to respond to input
-quicker while still ensuring that our display-blocking work executes uninterrupted otherwise. If
-we're not interested in handling anything other than input (e.g. painting) until work is complete,
-we can handily increase the length of `QUANTUM` as well.  
+By introducing a call to `navigator.scheduling.isInputPending()`, we're able to
+respond to input quicker while still ensuring that our display-blocking work
+executes uninterrupted otherwise. If we're not interested in handling anything
+other than input (e.g. painting) until work is complete, we can handily increase
+the length of `QUANTUM` as well.  
   
-By default, "continuous" events are not returned from isInputPending -- these include mousemove,
-pointermove, and others. If you're interested in yielding for these as well, no problem. By
-providing a dictionary to isInputPending with includeContinuous set to true, we're good to go:
+By default, "continuous" events are not returned from `isInputPending()`. These
+include `mousemove`, `pointermove`, and others. If you're interested in yielding for
+these as well, no problem. By providing a dictionary to `isInputPending()` with
+`includeContinuous` set to `true`, we're good to go:
 
 ```js
 const DEADLINE = performance.now() + QUANTUM;
@@ -131,36 +155,45 @@ while (workQueue.length > 0) {
 }
 ```
 
-That's it! Frameworks like React are building isInputPending support into their core scheduling
-libraries using similar logic. Hopefully, this will lead developers who use these frameworks to be
-able to benefit from isInputPending behind the scenes without significant rewrites.
+That's it! Frameworks like React are building `isInputPending()` support into their
+core scheduling libraries using similar logic. Hopefully, this will lead
+developers who use these frameworks to be able to benefit from `isInputPending()`
+behind the scenes without significant rewrites.
 
 ## Yielding isn't always bad
 
-It's worth noting that yielding less isn't the right solution for every use case. There are many
-reasons to return control to the browser other than to process input events, such as to perform
-rendering and execute other scripts on the page.
+It's worth noting that yielding less isn't the right solution for every use
+case. There are many reasons to return control to the browser other than to
+process input events, such as to perform rendering and execute other scripts on
+the page.
 
-There exist cases where the browser isn't able to properly attribute pending input events. In
-particular, setting complex clips and masks for cross-origin iframes may report false negatives
-(i.e. isInputPending may unexpectedly return false when targeting these frames). Be sure that you're
-yielding often enough if your site does require interactions with stylized subframes.
+There exist cases where the browser isn't able to properly attribute pending
+input events. In particular, setting complex clips and masks for cross-origin
+iframes may report false negatives (i.e. `isInputPending()` may unexpectedly return
+false when targeting these frames). Be sure that you're yielding often enough if
+your site does require interactions with stylized subframes.
 
-Be mindful of other pages that share an event loop, as well -- on platforms such as Chrome for
-Android, it's quite common for multiple origins to share an event loop. isInputPending will never
-return true if input is dispatched to a cross-origin frame, and thus can backgrounded pages may
-interfere with the responsiveness of foreground pages. You may wish to reduce, postpone, or yield
+Be mindful of other pages that share an event loop, as well. On platforms such
+as Chrome for Android, it's quite common for multiple origins to share an event
+loop. `isInputPending()` will never return `true` if input is dispatched to a
+cross-origin frame, and thus backgrounded pages may interfere with the
+responsiveness of foreground pages. You may wish to reduce, postpone, or yield
 more often when doing work in the background using the [Page Visibility
 API](https://www.w3.org/TR/page-visibility-2/).
 
-We encourage you to use isInputPending with discretion -- if there isn't user-blocking work to be
-done, then be kind to others on the event loop by yielding more frequently. [Long tasks can be
-harmful](https://web.dev/long-tasks-devtools/).
+We encourage you to use `isInputPending()` with discretion. If there isn't
+user-blocking work to be done, then be kind to others on the event loop by
+yielding more frequently. [Long tasks can be
+harmful](/long-tasks-devtools/).
 
 ## Conclusion
 
-We're excited that the isInputPending is launching, and that developers are able to start using it
-today. This API is the first time that Facebook has built a new web API and taken it from idea
-incubation to standards proposal to actually shipping in a browser. We'd like to thank everyone who
-helped us get to this point, and give a special shoutout to everyone at Chrome who helped us flesh
-out this idea and get it shipped!
+We're excited that `isInputPending()` is launching, and that developers are able
+to start using it today. This API is the first time that Facebook has built a
+new web API and taken it from idea incubation to standards proposal to actually
+shipping in a browser. We'd like to thank everyone who helped us get to this
+point, and give a special shoutout to everyone at Chrome who helped us flesh out
+this idea and get it shipped!
+
+Hero photo by [Will H McMahan](https://unsplash.com/@whmii) on
+[Unsplash](https://unsplash.com).
