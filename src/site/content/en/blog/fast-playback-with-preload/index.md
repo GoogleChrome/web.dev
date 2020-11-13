@@ -10,7 +10,7 @@ description: |
   can use to accelerate your media playback by actively preloading resources
   depending on your use case.
 date: 2017-08-17
-updated: 2020-11-03
+updated: 2020-11-16
 tags:
   - media
   - video
@@ -580,9 +580,7 @@ Have a look at the official [Sample Media App][sample-media-app] and in particul
 [ranged-response.js] file for a complete solution for how to handle `Range`
 requests.
 
-
-<!-- [fast-light]: https://developers.google.com/web/updates/2016/02/save-data
-[mse-basics]: https://developers.google.com/web/fundamentals/media/mse/basics -->
+<!-- [mse-basics]: https://developers.google.com/web/fundamentals/media/mse/basics -->
 [how much information or content to preload]: /video-and-source-tags/#preload
 [video preload attribute]: /video-and-source-tags/#preload
 [chrome64]: https://developers.google.com/web/updates/2017/12/chrome-63-64-media-updates#media-preload-defaults-metadata
@@ -600,6 +598,7 @@ requests.
 [jw-player]: https://developer.jwplayer.com/
 [video-js]: http://videojs.com/
 [network-info-sample]: https://googlechrome.github.io/samples/network-information/
+[fast-light]: https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data
 [mse-basics]: https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API
 [preload]: /video-and-source-tags/#preload
 [thats-a-known-fact]: https://www.digitaltrends.com/web/buffer-rage/
