@@ -19,13 +19,6 @@ authors:
   - andrewcomminos
 ---
 
-<!-- 
-tradeoff between load performance and input responsiveness: either perform all the work 
-needed for display all at once (better load performance, worse input responsiveness), or
-chunk the work into smaller tasks in order to remain responsive to input and
-paint (worse load performance, better input responsiveness).
--->
-
 Loading fast is hard. Sites that leverage JS to render their content currently
 have to make a trade-off- either perform all the work needed for display all at
 once, or chunk the work into smaller tasks in order to remain responsive to
@@ -41,7 +34,7 @@ API, and are happy to announce that the API is now shipping by default in Chrome
 
 {% Aside %}
   For the full background, check out our Facebook Engineering blog post,
-  [Faster input events with Facebook’s first browser API 
+  [Faster input events with Facebook's first browser API 
   contribution](https://engineering.fb.com/developer-tools/isinputpending-api/).
 {% endAside %}
 
