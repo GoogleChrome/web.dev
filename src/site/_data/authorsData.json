@@ -1574,5 +1574,17 @@
       "given": "Matt",
       "family": "Gaunt"
     }
+  },
+  "nateschloss": {
+    "name": {
+      "given": "Nate",
+      "family": "Schloss"
+    }
+  },
+  "andrewcomminos": {
+    "name": {
+      "given": "Andrew",
+      "family": "Comminos"
+    }
   }
 }
