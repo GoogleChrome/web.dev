@@ -68,7 +68,7 @@ The attacker can tell which pages a user visits and which products they view bas
 
 If passive mixed content is present most browsers will indicate in the URL bar that the page is not secure,
 even when the page itself was loaded over HTTPS.
-You can observe this behavior with this [Glitch demo](https://passive-mixed-content.glitch.me/)
+You can observe this behavior with this [demo](https://passive-mixed-content.glitch.me/)
 that contains examples of passive mixed content.
 
 Until recently passive mixed content was loaded in all browsers,
@@ -80,13 +80,13 @@ automatic upgrading of passive mixed content where possible.
 Automatic upgrading means that if the asset is available over HTTPS, but has been hardcoded as HTTP,
 the browser will load the HTTPS version. If no secure version can be found the asset will not load.
 
-Whenever it detects mixed content or auto-upgrades passive mixed content, Chrome logs detailed messages to the Issues Tab in DevTools
+Whenever it detects mixed content or auto-upgrades passive mixed content, Chrome logs detailed messages to the Issues Tab in Chrome DevTools
 to guide you on how to fix the specific issue.
 
 <figure class="w-figure">
   <img class="w-screenshot"
       src="passive-mixed-content.jpg"
-      alt="The Issues tab in DevTools shows detailed information about the specific mixed content issue and how to fix it">
+      alt="The Issues tab in Chrome DevTools shows detailed information about the specific mixed content issue and how to fix it">
 </figure>
 
 ### Active mixed content
@@ -104,7 +104,7 @@ Due to the severity of this threat,
 most browsers already block this type of content by default to protect users,
 but functionality varies between browser vendors and versions.
 
-This other [Glitch demo](https://active-mixed-content.glitch.me/) contains examples of active mixed content.
+This other [demo](https://active-mixed-content.glitch.me/) contains examples of active mixed content.
 [Load the example over HTTP](http://active-mixed-content.glitch.me/)
 to see the content that's blocked when you [load the example over
 HTTPS](https://active-mixed-content.glitch.me/). Blocked content will also be detailed in the Issues Tab.
@@ -112,8 +112,12 @@ HTTPS](https://active-mixed-content.glitch.me/). Blocked content will also be de
 <figure class="w-figure">
   <img class="w-screenshot"
       src="active-mixed-content.jpg"
-      alt="The Issues tab in DevTools shows detailed information about the specific mixed content issue and how to fix it">
+      alt="The Issues tab in Chrome DevTools shows detailed information about the specific mixed content issue and how to fix it">
 </figure>
+
+{% Aside %}
+Browsers also highlight blocked content in developer tooling. Block content issues are detailed in the Issues Tab in Chrome and Edge, and Firefox and Safari log messages in the developer console.
+{% endAside %}
 
 ## The mixed content specification
 
