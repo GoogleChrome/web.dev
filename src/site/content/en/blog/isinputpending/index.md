@@ -39,9 +39,11 @@ API, and are happy to announce that the API is now shipping by default in Chrome
 
 ## Background
 
-_For the full background, please see [our
-post](https://engineering.fb.com/developer-tools/isinputpending-api/) about the
-origin trial in the Facebook Engineering blog._
+{% Aside %}
+  For the full background, check out our Facebook Engineering blog post,
+  [Faster input events with Facebook’s first browser API 
+  contribution](https://engineering.fb.com/developer-tools/isinputpending-api/).
+{% endAside %}
 
 Most work in today's JS ecosystem gets done on a single thread: the main thread.
 This provides a robust execution model to developers, but the user experience
