@@ -19,6 +19,7 @@ const fs = require('fs');
 const isProd = process.env.ELEVENTY_ENV === 'prod';
 
 const files = [
+  'preloadJS.json',
   'resourceCSS.json',
   'resourceJS.json',
   '../_includes/layout.njk',

@@ -28,6 +28,8 @@ eleventyComputed:
     <link rel="preconnect" href="//webdev.imgix.net" crossorigin="" />
 
     <link rel="preload" as="style" href="{{ resourceCSS.path | stripQueryParamsDev }}" />
+    <link rel="preload" as="script" href="{{ resourceJS.path | stripQueryParamsDev }}" />
+    <link rel="modulepreload" as="script" crossorigin href="{{ preloadJS.path | stripQueryParamsDev }}">
     {# We only preload Material Icons because the site can't render properly without them. #}
     {# For Google Sans we use font-display: swap because preloading too many fonts can hurt performance. #}
     {# https://www.zachleat.com/web/preload/ #}
