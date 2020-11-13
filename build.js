@@ -96,6 +96,12 @@ async function build() {
   }
   virtualImports.webdev_entrypoint = entrypoints[0].fileName;
 
+  // Write the "app.js" entrypoint to a known file for Eleventy to read.
+  await fs.writeFile(
+    'src/site/_data/preloadJS.json',
+    JSON.stringify({path: `/${virtualImports.webdev_entrypoint}`}),
+  );
+
   // Rollup basic to generate the top-level script run by all browsers (even
   // ancient ones). This runs Analytics and imports the entrypoint generated
   // above (in supported module browsers).
