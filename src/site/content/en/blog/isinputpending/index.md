@@ -27,7 +27,7 @@ default in Chrome 87!
 
 ## Background
 
-_For the full background, please see[ our
+_For the full background, please see [our
 post](https://engineering.fb.com/developer-tools/isinputpending-api/) about the origin trial in the
 Facebook Engineering blog._
 
@@ -74,16 +74,18 @@ generate markup from components, factor out primes, or just draw a cool loading 
 these is broken into a discrete work item. Using the scheduler pattern, let's sketch out how we
 might process our work in a hypothetical `processWorkQueue` function:
 
-    const DEADLINE = performance.now() + QUANTUM;
-    while (workQueue.length > 0) {
-     if (performance.now() >= DEADLINE) {
-       // Yield the event loop if we're out of time.
-       setTimeout(processWorkQueue);
-       return;
-     }
-     let job = workQueue.shift();
-     job.execute();
-    }
+```js
+const DEADLINE = performance.now() + QUANTUM;
+while (workQueue.length > 0) {
+  if (performance.now() >= DEADLINE) {
+    // Yield the event loop if we're out of time.
+    setTimeout(processWorkQueue);
+    return;
+  }
+  let job = workQueue.shift();
+  job.execute();
+}
+```
 
 By invoking processWorkQueue later in a new macrotask via setTimeout, we give the browser the
 ability to remain somewhat responsive to input -- it can run event handlers before work resumes --
@@ -93,16 +95,18 @@ latency.
 
 This is okay, but can we do better? Absolutely!
 
-    const DEADLINE = performance.now() + QUANTUM;
-    while (workQueue.length > 0) {
-     if (navigator.scheduling.isInputPending() || performance.now() >= DEADLINE) {
-       // Yield if we have to handle an input event, or we're out of time.
-       setTimeout(processWorkQueue);
-       return;
-     }
-     let job = workQueue.shift();
-     job.execute();
-    }
+```js
+const DEADLINE = performance.now() + QUANTUM;
+while (workQueue.length > 0) {
+  if (navigator.scheduling.isInputPending() || performance.now() >= DEADLINE) {
+    // Yield if we have to handle an input event, or we're out of time.
+    setTimeout(processWorkQueue);
+    return;
+  }
+  let job = workQueue.shift();
+  job.execute();
+}
+```
 
 By introducing a call to `navigator.scheduling.isInputPending()`, we're able to respond to input
 quicker while still ensuring that our display-blocking work executes uninterrupted otherwise. If
@@ -113,17 +117,19 @@ By default, "continuous" events are not returned from isInputPending -- these in
 pointermove, and others. If you're interested in yielding for these as well, no problem. By
 providing a dictionary to isInputPending with includeContinuous set to true, we're good to go:
 
-    const DEADLINE = performance.now() + QUANTUM;
-    const options = { includeContinuous: true };
-    while (workQueue.length > 0) {
-     if (navigator.scheduling.isInputPending(options) || performance.now() >= DEADLINE) {
-       // Yield if we have to handle an input event (any of them!), or we're out of time.
-       setTimeout(processWorkQueue);
-       return;
-     }
-     let job = workQueue.shift();
-     job.execute();
-    }
+```js
+const DEADLINE = performance.now() + QUANTUM;
+const options = { includeContinuous: true };
+while (workQueue.length > 0) {
+  if (navigator.scheduling.isInputPending(options) || performance.now() >= DEADLINE) {
+    // Yield if we have to handle an input event (any of them!), or we're out of time.
+    setTimeout(processWorkQueue);
+    return;
+  }
+  let job = workQueue.shift();
+  job.execute();
+}
+```
 
 That's it! Frameworks like React are building isInputPending support into their core scheduling
 libraries using similar logic. Hopefully, this will lead developers who use these frameworks to be
