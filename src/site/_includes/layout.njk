@@ -30,7 +30,7 @@ eleventyComputed:
     {# We only preload Material Icons because the site can't render properly without them. #}
     {# For Google Sans we use font-display: swap because preloading too many fonts can hurt performance. #}
     {# https://www.zachleat.com/web/preload/ #}
-    <link rel="preload" as="font" crossorigin href="/fonts/material-icons/regular.woff2">
+    <link rel="preload" crossorigin as="font" href="/fonts/material-icons/regular.woff2">
 
     <link rel="stylesheet" href="{{ resourceCSS.path | stripQueryParamsDev }}" />
     <link rel="manifest" href="/manifest.webmanifest" />
