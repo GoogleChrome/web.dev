@@ -25,9 +25,9 @@ preloading resources depending on your use case.
 
 <figure class="w-figure">
   <video controls muted playsinline class="w-screenshot">
-    <source src="https://storage.googleapis.com/webfundamentals-assets/videos/video-preload-hero.webm#t=1.1"
+    <source src="https://storage.googleapis.com/web-dev-assets/fast-playback-with-preload/video-preload-hero.webm#t=1.1"
             type="video/webm">
-    <source src="https://storage.googleapis.com/webfundamentals-assets/videos/video-preload-hero.mp4#t=1.1"
+    <source src="https://storage.googleapis.com/web-dev-assets/fast-playback-with-preload/video-preload-hero.mp4#t=1.1"
             type="video/mp4">
   </video>
   <figcaption class="w-figcaption">
@@ -379,7 +379,7 @@ browser. By identifying this request header, your application can customize and
 deliver an optimized user experience to cost- and performance-constrained
 users.
 
-See [Delivering Fast and Light Applications with Save-Data][fast-light] to learn more.
+<!-- See [Delivering Fast and Light Applications with Save-Data][fast-light] to learn more. -->
 
 #### Smart loading based on network information
 
@@ -581,9 +581,11 @@ Have a look at the official [Sample Media App][sample-media-app] and in particul
 requests.
 
 
+<!-- [fast-light]: https://developers.google.com/web/updates/2016/02/save-data
+[mse-basics]: https://developers.google.com/web/fundamentals/media/mse/basics -->
 [how much information or content to preload]: /video-and-source-tags/#preload
 [video preload attribute]: /video-and-source-tags/#preload
-[chrome64]: /web/updates/2017/12/chrome-63-64-media-updates#media-preload-defaults-metadata
+[chrome64]: https://developers.google.com/web/updates/2017/12/chrome-63-64-media-updates#media-preload-defaults-metadata
 [datasaver]: https://support.google.com/chrome/answer/2392284
 [covered]: https://developers.google.com/web/updates/2016/03/link-rel-preload
 [articles]: https://www.smashingmagazine.com/2016/02/preload-what-is-it-good-for/
@@ -598,8 +600,7 @@ requests.
 [jw-player]: https://developer.jwplayer.com/
 [video-js]: http://videojs.com/
 [network-info-sample]: https://googlechrome.github.io/samples/network-information/
-[fast-light]: https://developers.google.com/web/updates/2016/02/save-data
-[mse-basics]: https://developers.google.com/web/fundamentals/media/mse/basics
+[mse-basics]: https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API
 [preload]: /video-and-source-tags/#preload
 [thats-a-known-fact]: https://www.digitaltrends.com/web/buffer-rage/
 [browser-compatibility]: https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#Browser_compatibility
