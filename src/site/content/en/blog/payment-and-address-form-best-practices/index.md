@@ -26,20 +26,26 @@ tags:
 
 <!--  {% YouTube 'alGcULGtiv8' %} -->
 
-Checkout and payment can make or break a business, and one small fix can make a massive difference. 
-You need to ensure your address and payment forms help your users and aren't a barrier to conversions. 
-Poor forms mean high bounce rates, especially on mobile, and each bounce could mean a lost (and 
-unhappy!) customer.
+Well-designed forms help users and increase conversion rates. One small fix can make a big 
+difference! 
 
 {% Aside 'codelab' %}
   If you would prefer to learn these best practices with a hands-on tutorial,
   check out the [payment and address form best practices codelab](/codelab-payment-and-address-form-best-practices).
 {% endAside %}
 
-Here is an example of a simple payment and address form that demonstrates all of the best practices:
+Here is an example of a simple payment form that demonstrates all of the best practices:
 
 {% Glitch {
-  id: 'payment-and-address-form',
+  id: 'payment-form',
+  path: 'index.html',
+  height: 480
+} %}
+
+Here is an example of a simple form for name and address that demonstrates all of the best practices:
+
+{% Glitch {
+  id: 'address-form',
   path: 'index.html',
   height: 480
 } %}
@@ -79,11 +85,10 @@ to action.
 real-user performance measurement.
 * [Test across browsers, devices and platforms](#test-platforms).
 
-
 {% Aside %}
 This article is about frontend best practices for address and payment forms. It does not explain 
-how to implement transactions on your site. To find out more about payments on the web, see 
-[Web Payments](/payments).
+how to implement transactions on your site. To find out more adding payment functionality to your 
+website on the web, see [Web Payments](/payments).
 {% endAside %}
 
 ## Use meaningful HTML {: #meaningful-html }
@@ -183,28 +188,29 @@ so you shouldn't have to do that, but check your users' browsers.
 
 {: #avoid-custom-elements }
 
-For dates, as a general rule, try to avoid using custom select elements, since they may break the 
-autofill experience if not properly implemented, and they won't work on older browsers. For numbers 
-such as birth year, consider using a plain input element rather than a select, since entering digits 
-manually can be easier and less error prone than selecting from a long drop down list—especially 
-on mobile. Use `inputmode="numeric"` to ensure the right keyboard on mobile and add validation and 
-format hints with text or a placeholder to make sure the user enters data in the appropriate format.
+For dates, try to avoid using custom select elements, since they break the autofill experience if not 
+properly implemented, and don't work on older browsers. For numbers such as birth year, consider 
+using an input element rather than a select, since entering digits manually can be easier and less 
+error prone than selecting from a long drop-down list—especially on mobile. Use `inputmode="numeric"` 
+to ensure the right keyboard on mobile and add validation and format hints with text or a 
+placeholder to make sure the user enters data in the appropriate format.
 
 {% Aside %}
-The [`datalist`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist) element enables 
+The [datalist](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist) element enables 
 a user to select from a list of available options and provides matching suggestions as the user enters text. 
-Try out `datalist` for `text`, `range` and `color` inputs at [simpl.info/datalist](https://simpl.info/datalist).
+Try out datalist for `text`, `range` and `color` inputs at [simpl.info/datalist](https://simpl.info/datalist).
+For birth year input, you can compare a select with an input and datalist at [datalist-select.glitch.me](datalist-select.glitch.me).
 {% endAside %}
-
-<!-- Link to glitch for year entry: text input with four digits versus year selector. 
-  'Try this out on your phone!' -->
 
 For payment card and phone numbers use a single input: don't split the number into parts. That makes 
 it easier for users to enter data, makes validation simpler, and enables browsers to autofill. 
 Consider doing the same for other numeric data such as PIN and bank codes. 
 
-<!-- Screenshot as per slide, using glitch.com/~checkout-form https://docs.google.com/presentation/d/17nvDI-KX3k3-FyrX7qsAK1lrSN--sFV_E08fAg9DkK4/edit#slide=id.ga674567ec9_0_30 -->
-
+<figure class="w-figure">
+  <img src="images/credit-card-number-multiple-inputs.jpg" alt="Screenshot of payment form showing a 
+  credit card field split into four input elements.">
+  <figcaption class="w-figcaption">Don't use multiple inputs for a credit card number.</figcaption>
+</figure>
 
 #### Use autocomplete to improve accessibility and help users avoid re-entering data {: #autocomplete-attribute }
 
@@ -222,10 +228,10 @@ website deployments.
 {% endAside %}
 
 By default, set the billing address to be the same as the delivery address. Reduce visual clutter by 
-providing a link to edit the billing address (or use `<summary>` and `<details>`) rather than 
-displaying the billing address in a form.
+providing a link to edit the billing address (or use [`<summary>` and `<details>`](https://simpl.info/details/)) 
+rather than displaying the billing address in a form.
 
-<!-- image, as per amazon.co.uk -->
+![Example checkout page showing link to change billing address](images/review-order.png)
 
 Use appropriate autocomplete values for billing name and address, just as you do for shipping address, 
 so the user doesn't have to enter the same data twice. Add a prefix word to autocomplete attributes 
@@ -353,6 +359,20 @@ the next step obvious. For example, label the submit button on your shipping add
 **Proceed to Payment** rather than **Continue** or **Save**.
 
 <!-- image: like address-form-save.mp4 screencast -->
+
+Use the `enterkeyhint` attribute on form inputs to set the mobile keyboard enter key label. For 
+example, use `enterkeyhint="previous"` and `enterkeyhint="next"` within a multi-page form, 
+`enterkeyhint="done"` for the final input in the form, and `enterkeyhint="search"` for a search 
+input. 
+
+<figure class="w-figure">
+  <img class="w-screenshot" src="./images/enterkeyhint.png" alt="Two screenshots of an address form 
+  on Android showing how the enterkeyhint input attribute changes the enter key button icon.">
+  <figcaption class="w-figcaption">Enter key buttons on Android: 'next' and 'done'.</figcaption>
+</figure>
+
+The `enterkeyhint` attribute is [supported on Android and iOS](https://caniuse.com/mdn-html_global_attributes_enterkeyhint). 
+You can find out more from the [enterkeyhint explainer](https://github.com/dtapuska/enterkeyhint).
 
 Make it easy for users to go back and forth within the checkout process, to easily adjust 
 their order, even when they're at the final payment step. Show full details of the order, not just 
@@ -551,7 +571,7 @@ forms to make it as easy as possible for users to enter data.
 ### Help users avoid re-entering payment data {: #payment-form-autocomplete}
 
 Make sure to add appropriate `autocomplete` values in payment card forms, including the payment card 
-number, name on the card, and the expiry year and month:
+number, name on the card, and the expiry month and year:
 * cc-number
 * cc-name
 * cc-exp-month
