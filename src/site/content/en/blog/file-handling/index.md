@@ -85,7 +85,7 @@ what kind of files they can handle. The File Handling API extends Web App Manife
 property called `"file_handlers"` that accepts an array of, well, file handlers. A file handler is an
 object with two properties:
 
-- An `"action"` property that points to a URL within the scope of the app as its key.
+- An `"action"` property that points to a URL within the scope of the app as its value.
 - An `"accept"` property with an object of MIME-types as keys and lists of file extensions as their
   values.
 
