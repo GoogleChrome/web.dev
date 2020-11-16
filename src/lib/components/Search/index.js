@@ -96,7 +96,7 @@ class Search extends BaseElement {
         class="web-search__input-wrapper"
         role="combobox"
         aria-expanded="${this.expanded}"
-        aria-controls="searchInput"
+        aria-controls="web-search__input"
         aria-owns="web-search-popout__list"
         aria-haspopup="listbox"
       >
@@ -113,7 +113,7 @@ class Search extends BaseElement {
           />
         </svg>
         <input
-          id="searchInput"
+          id="web-search__input"
           class="web-search__input"
           type="text"
           role="searchbox"
