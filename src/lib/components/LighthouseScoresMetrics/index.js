@@ -15,12 +15,18 @@ class LighthouseScoresMetrics extends BaseElement {
     };
   }
 
+  constructor() {
+    super();
+    this.lhr = null;
+  }
+
   firstUpdated() {
     this.setAttribute('role', 'table');
     this.setAttribute('aria-label', 'Lighthouse key metrics');
   }
 
   render() {
+    /** @type {string|Array<string|TemplateResult>} */
     let inner = '';
     let hasVitals = false;
 

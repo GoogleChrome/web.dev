@@ -50,15 +50,15 @@ use the  `AllowSyncXHRInPageDismissal` policy flag, which ends at the same time.
 
 Regardless of how you send data back to the server, it's best to avoid waiting
 until page unload to send all the data at once. Aside from creating a bad user
-experience, you risk data loss if something goes wrong.  Unload events [often
-don't fire on mobile
+experience, unload is unreliable on modern browsers and risks data loss if
+something goes wrong. Specifically, unload events [often don't fire on mobile
 browsers](https://www.igvita.com/2015/11/20/dont-lose-user-and-app-state-use-page-visibility/)
 because there are [many ways to
 close](https://developers.google.com/web/updates/2018/07/page-lifecycle-api) a
-tab or browser on mobile operating systems without the `unload` event firing. With
-`XMLHttpRequest()`, using small payloads was a choice. Now it's a requirement. Both of
-its alternatives have an upload limit of 64&nbsp;KB per context, as required
-by the specification.
+tab or browser on mobile operating systems without the `unload` event firing.
+With `XMLHttpRequest()`, using small payloads was a choice. Now it's a
+requirement. Both of its alternatives have an upload limit of 64&nbsp;KB per
+context, as required by the specification.
 
 ### Fetch keepalive
 

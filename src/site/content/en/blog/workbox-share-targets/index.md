@@ -1,9 +1,9 @@
 ---
-title: Integrate PWAs into native sharing UIs with Workbox
-subhead: How to get your PWA to show up next to native apps in system-level sharing UIs
+title: Integrate PWAs into built-in sharing UIs with Workbox
+subhead: How to get your PWA to show up next to platform-specific apps in system-level sharing UIs
 description: |
   How to register routes in Workbox so that your Progressive Web App shows up in system-level
-  sharing UIs, alongside native apps.
+  sharing UIs, alongside platform-specific apps.
 authors:
   - samrichard
   - joemedley
@@ -22,7 +22,7 @@ feedback:
 
 The [Web Share Target API](https://web.dev/web-share-target/) lets you display
 your [Progressive Web App](https://developers.google.com/web/progressive-web-apps/checklist) in a
-user's native share [sheet] after it's been installed. While it works great if you have a server
+user's system-level share [sheet] after it's been installed. While it works great if you have a server
 available to receive the request, it's much harder to get working if you don't.
 
 In this article we'll use
@@ -130,7 +130,7 @@ sync](https://web.dev/periodic-background-sync/).
 ## Conclusion
 
 The Share Target API is a simple way to deeply integrate your Progressive Web
-App into user's devices, putting them on-par with native applications for the
+App into user's devices, putting them on-par with platform-specific applications for the
 critical task of sharing content between apps. But doing so usually requires a
 server available to receive the request. By leveraging Workbox to create a share
 target route directly in your service worker, your app is free of this

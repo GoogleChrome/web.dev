@@ -40,7 +40,7 @@ your web app, and a copy of the response is stored using the Cache Storage
 API—either creating a new entry, or updating a previous entry for the same
 URL.
 
-![Diagram showing the request going from the page to the service worker and from the servic worker to the network. The network request fails so the request goes to the cache.](network-first.png)
+![Diagram showing the request going from the page to the service worker and from the service worker to the network. The network request fails so the request goes to the cache.](network-first.png)
 
 If the network request fails entirely, or
 [takes too long](https://developers.google.com/web/tools/workbox/guides/common-recipes#force_a_timeout_on_network_requests)
@@ -60,7 +60,7 @@ successful, it's returned to your web app and a copy is saved in a cache. This
 cached copy will be used to bypass the network the next time a request for the
 same URLs is made.
 
-![Diagram showing the request going from the page to the service worker and from the servic worker to the cache. The cache request fails so the request goes to the network.](./cache-first.png)
+![Diagram showing the request going from the page to the service worker and from the service worker to the cache. The cache request fails so the request goes to the network.](./cache-first.png)
 
 ### Stale-while-revalidate
 
@@ -74,7 +74,7 @@ response is used to update any previously cached response. If the initial cache
 check was a miss, a copy of the network response is also passed back to your web
 app.
 
-![Diagram showing the request going from the page to the service worker and from the servic worker to the cache. The cache immediately returns a response while also fetching an update from the network for future requests.](stale-while-revalidate.png)
+![Diagram showing the request going from the page to the service worker and from the service worker to the cache. The cache immediately returns a response while also fetching an update from the network for future requests.](stale-while-revalidate.png)
 
 ### Why should you use Workbox?
 

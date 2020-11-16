@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: To avoid draining the battery, most devices will quickly fall asleep when left idle. While this is fine most of the time, there are some applications that need to keep the screen awake in order to complete some work. The Screen Wake Lock API provides a way to prevent the device from dimming or locking the screen when an application needs to keep running.
 date: 2018-12-18
-updated: 2020-09-22
+updated: 2020-11-02
 hero: hero.jpg
 hero_position: center
 alt: |
@@ -36,7 +36,7 @@ motion APIs for input.
 
 The [Screen Wake Lock API][spec-ed] provides a way to prevent the device from dimming
 and locking the screen. This
-capability enables new experiences that, until now, required a native app.
+capability enables new experiences that, until now, required a platform-specific app.
 
 The Screen Wake Lock API reduces the need for hacky and potentially
 power-hungry workarounds. It addresses the shortcomings of an older API
@@ -124,7 +124,7 @@ if ('wakeLock' in navigator) {
 To request a screen wake lock, you need to call the `navigator.wakeLock.request()` method
 that returns a `WakeLockSentinel` object.
 You pass this method the desired wake lock type as a parameter,
-which *currently* is limited to just `'screen'`.
+which *currently* is limited to just `'screen'` and therefore is *optional*.
 The browser can refuse the request for various reasons (for example,
 because the battery charge level is too low),
 so it's a good practice to wrap the call in a `try…catch` statement.
@@ -148,7 +148,7 @@ let wakeLock = null;
 // Function that attempts to request a screen wake lock.
 const requestWakeLock = async () => {
   try {
-    wakeLock = await navigator.wakeLock.request('screen');
+    wakeLock = await navigator.wakeLock.request();
     wakeLock.addEventListener('release', () => {
       console.log('Screen Wake Lock released:', wakeLock.released);
     });
@@ -187,9 +187,9 @@ listen for the [`visibilitychange`][visibility-change] event
 and request a new screen wake lock when they occur:
 
 ```js
-const handleVisibilityChange = () => {
+const handleVisibilityChange = async () => {
   if (wakeLock !== null && document.visibilityState === 'visible') {
-    requestWakeLock();
+    await requestWakeLock();
   }
 };
 

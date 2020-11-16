@@ -15,10 +15,6 @@
       ]
     },
     {
-      "title": "Reliable",
-      "pathItems": []
-    },
-    {
       "title": "Installable",
       "pathItems": [
         "offline-fallback-page",
@@ -63,6 +59,7 @@
     {
       "title": "Advanced topics",
       "pathItems": [
+        "manifest-updates",
         "multi-origin-pwas"
       ]
     }

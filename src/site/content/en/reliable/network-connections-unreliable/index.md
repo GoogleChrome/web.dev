@@ -4,6 +4,7 @@ title: What is network reliability and how do you measure it?
 authors:
   - jeffposnick
 date: 2018-11-05
+updated: 2020-10-08
 description: |
   The modern web is enjoyed by a wide swath of people, using a range of
   different devices and types of network connections. Your creations can reach
@@ -22,8 +23,8 @@ reliability means.
 
 One way of thinking about reliability is whether your web app will work without
 a network connection. This is a type of reliability that users take for granted
-with "native apps," installed on a mobile device from an app store. When you see
-an icon for a native app, you expect to be able to tap on it and open up some
+with platform-specific apps installed on a mobile device from an app store. When you see
+an icon for one of these apps, you expect to be able to tap on it and open up some
 sort of experience, regardless of whether you're currently connected to the
 Internet.
 
@@ -38,7 +39,7 @@ might be less than ideal. Will returning users have the same experience
 interacting with your web app when they're on a cellular connection as they do
 when they're on wi-fi? And what about users who have a high-latency, or
 "[lie-fi](https://developers.google.com/web/fundamentals/performance/poor-connectivity/#lie-fi)"
-connection—will your web app be reliably fast even in those scenarios?
+connection. Will your web app be reliably fast even in those scenarios?
 
 It's not enough to  be fast under the best circumstances. Your users will view
 your web app's performance through the lens of how it behaves in all network
@@ -46,13 +47,13 @@ conditions.
 
 ## Reliable is achievable
 
-The good news is that the modern web platform provides technologies—such as 
+The good news is that the modern web platform provides technologies—such as
 [service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) and the
 [Cache Storage API](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage)—that
 can serve as the building blocks for creating reliable web applications. They
 allow you to write code which sits between your web app and the network. In
 many cases, you can bypass the network entirely, and instead use previously
-cached content to fulfill your web app's requests. 
+cached content to fulfill your web app's requests.
 
 ## Your guiding light: Responds with a 200 OK while offline
 
@@ -91,5 +92,5 @@ techniques you need to identify what your web app is loading, and teach you how
 to use Lighthouse to make that loading experience reliable.
 
 Throughout this process, you're encouraged to keep re-running the Lighthouse
-audits. They serve as a guiding light throughout your journey, starting with a new 
+audits. They serve as a guiding light throughout your journey, starting with a new
 web application and ending with a reliable progressive web app.

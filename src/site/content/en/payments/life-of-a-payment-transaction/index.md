@@ -16,7 +16,7 @@ tags:
   - payments
 ---
 
-Web Payments APIs are dedicated payment features built into the browser natively
+Web Payments APIs are dedicated payment features built into the browser
 for the first time. With Web Payments, merchant integration with payment apps
 becomes simpler while the customer experience gets streamlined and more secure.
 
@@ -141,7 +141,7 @@ The
 [`canMakePayment()`](https://developer.mozilla.org/docs/Web/API/PaymentRequest/canMakePayment)
 method of `PaymentRequest` returns `true` if a payment app is available on the
 customer's device. "Available" means that a payment app that supports the
-payment method is discovered, and that the native payment app is installed, or
+payment method is discovered, and that the platform-specific payment app is installed, or
 the web-based payment app is [ready to be
 registered](/setting-up-a-payment-method#jit-register).
 
@@ -195,7 +195,7 @@ total price, the ID can be passed as part of the promise result.
 
 ## Step 4: The browser launches the payment app {: #launch }
 
-The browser can launch a native or a web-based payment app. (You can learn more
+The browser can launch a platform-specific or a web-based payment app. (You can learn more
 about [how Chrome determines which payment app to
 launch](/setting-up-a-payment-method#how-chrome-determines-which-payment-app-to-launch).)
 
@@ -385,7 +385,7 @@ doPaymentRequest();
 
 * Learn how to declare a payment method identifier in detail in [Setting up a
   payment method](/setting-up-a-payment-method).
-* Learn how to build a native payment app in
+* Learn how to build a platform-specific payment app in
   [Android payment apps developer's guide](/android-payment-apps-developers-guide).
 * Learn how to build a web-based payment app in [Web-based payment apps developer's
   guide](/web-based-payment-apps-overview).

@@ -21,7 +21,7 @@ date: 2019-10-31
 
 # !!! IMPORTANT: If your post does not contain a hero image it will not appear
 # on the homepage.
-# Hero images should be 3200 x 920.
+# Hero images should be 3200 x 960.
 hero: hero.jpg
 # You can adjust the fit of your hero image with this property.
 # Values: contain | cover (default)
@@ -509,3 +509,10 @@ porta dolor erat, vel molestie dolor posuere in. Nam vel elementum augue. Nam
 quis enim blandit, posuere justo dignissim, scelerisque diam. Fusce aliquet urna
 ac blandit ullamcorper. Proin et semper nibh, sit amet imperdiet velit. Morbi at
 quam sem.
+
+## Acknowledgements
+
+This article was reviewed by [reviewer #1](#) and [reviewer #2](#).
+Thanks to [external contributor #1](#) and [external contributor #2](#) for
+their work on TODO.
+Hero image by [unsplash author](#) on [Unsplash](#).

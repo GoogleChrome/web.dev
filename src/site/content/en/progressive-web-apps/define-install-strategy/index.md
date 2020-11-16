@@ -14,7 +14,7 @@ tags:
 
 {% YouTube '6R9pupbDXYw' %}
 
-In the past, app installs were only possible in the context of native applications. Today, modern web apps offer installable experiences that provide the same level of integration and reliability as native apps.
+In the past, app installs were only possible in the context of platform-specific applications. Today, modern web apps offer installable experiences that provide the same level of integration and reliability as platform-specific apps.
 
 You can achieve this in different ways:
 
@@ -23,28 +23,28 @@ You can achieve this in different ways:
 
 Having different distribution channels is a powerful way of reaching a broad number of users, but choosing the right strategy to promote them can be challenging.
 
-This guide explores best practices for combining different installation offerings to increase installation rates and avoid platform competition and cannibalization. The installation offerings covered include PWAs installed from both the browser and the App Store, as well as native apps.
+This guide explores best practices for combining different installation offerings to increase installation rates and avoid platform competition and cannibalization. The installation offerings covered include PWAs installed from both the browser and the App Store, as well as platform-specific apps.
 
 ## Why make your web app installable?
 
 Installed Progressive Web Apps run in a standalone window instead of a browser tab. They're launchable from the user's home screen, dock, taskbar, or shelf. It's possible to search for them on a device and jump between them with the app switcher, making them feel like part of the device they're installed on.
 
-But having both an installable web app and a native app can be confusing for users. For some users native apps may be the best choice, but for others they can present some drawbacks:
+But having both an installable web app and a platform-specific app can be confusing for users. For some users platform-specific apps may be the best choice, but for others they can present some drawbacks:
 
 - **Storage constraints:** Installing a new app might mean deleting others, or cleaning up space, by removing valuable content. This is especially disadvantageous for users on low-end devices.
 - **Available bandwidth:** Downloading an app can be a costly and slow process, even more for users on slow connections and expensive data plans.
 - **Friction:** Leaving a website and moving to a store to download an app creates additional friction and delays a user action that could be performed directly in the web.
-- **Update cycle:** Making changes in native apps might require going through an app review process, which can slow down changes and experiments (e.g. A/B tests).
+- **Update cycle:** Making changes in platform-specific apps might require going through an app review process, which can slow down changes and experiments (e.g. A/B tests).
 
-In some cases, the percentage of users that won't download your native app might be large, for example: those that think that they won't use the app very often, or can't justify spending several megabytes of storage or data. You can determine the size of this segment in several ways, for example by using an analytics setup to track the percentage of "mobile web only" users.
+In some cases, the percentage of users that won't download your platform-specific app might be large, for example: those that think that they won't use the app very often, or can't justify spending several megabytes of storage or data. You can determine the size of this segment in several ways, for example by using an analytics setup to track the percentage of "mobile web only" users.
 
 If the size of this segment is considerable, that's a good indication that you need to provide alternative ways of installing your experiences.
 
 ## Promoting the installing of your PWA through the browser
 
-If you have a high quality PWA, it may be better to promote its installation over your native app. For example, if the native app is missing functionality offered by your PWA, or if it hasn't been updated in a while. It can also be helpful to promote installation of your PWA if the native app wasn't optimized for bigger screens, such as on Chrome OS.
+If you have a high quality PWA, it may be better to promote its installation over your platform-specific app. For example, if the platform-specific app is missing functionality offered by your PWA, or if it hasn't been updated in a while. It can also be helpful to promote installation of your PWA if the platform-specific app wasn't optimized for bigger screens, such as on Chrome OS.
 
-For some apps, driving native app installations is a key part of the business model, in that case, it makes business sense to show a native app install promotion. But, some users might be more comfortable staying on the web. If that segment can be identified, the PWA prompt can be shown only to them (what we call "PWA as fallback").
+For some apps, driving platform-specific app installations is a key part of the business model, in that case, it makes business sense to show a platform-specific app install promotion. But, some users might be more comfortable staying on the web. If that segment can be identified, the PWA prompt can be shown only to them (what we call "PWA as fallback").
 
 In this section we'll explore different ways of maximizing the installation rate of PWAs installed through the browser.
 
@@ -62,17 +62,17 @@ Once a PWA meets the [installability criteria](https://web.dev/install-criteria/
 While that may be enough for some experiences, if your goal is to drive installations of your PWA, we highly recommend you listen for the [`BeforeInstallPromptEvent`](https://developer.mozilla.org/en-US/docs/Web/API/BeforeInstallPromptEvent), and follow the [patterns for promoting the installation](https://web.dev/promote-install/) of your PWA.
 
 
-## Prevent your PWA from cannibalizing your native app install rate
+## Prevent your PWA from cannibalizing your platform-specific app install rate
 
-In some cases, you may choose to promote the installation of your native app over your PWA, but in this case, we still recommend you provide a mechanism to allow users to install your PWA. This fallback option makes it possible for users who can't, or don't want to install your native app to get a similar, installed experience.
+In some cases, you may choose to promote the installation of your platform-specific app over your PWA, but in this case, we still recommend you provide a mechanism to allow users to install your PWA. This fallback option makes it possible for users who can't, or don't want to install your platform-specific app to get a similar, installed experience.
 
 The first step to implement this strategy is to define a heuristic for when you'll show the user an install promotion for your PWA, for example:
 
-__"A PWA user is a user that has seen the native app install prompt and not installed the native app. They have returned to the site at least five times, or they have clicked the app banner, but have continued using the website instead."__
+__"A PWA user is a user that has seen the platform-specific app install prompt and not installed the platform-specific app. They have returned to the site at least five times, or they have clicked the app banner, but have continued using the website instead."__
 
 Then, the heuristic can be implemented in the following way:
 
-1. Show the native app install banner.
+1. Show the platform-specific app install banner.
 1. If a user dismisses the banner, set a cookie with that information (e.g. `document.cookie = "app-install-banner=dismissed"`).
 1. Use another cookie to track the number of user visits to the site (e.g. `document.cookie = "user-visits=1"`).
 1. Write a function, such as `isPWAUser()`, that uses the information previously stored in the cookies along with the [`getInstalledRelatedApps()`](https://web.dev/get-installed-related-apps/) API to determine if a user is considered a "PWA user".
@@ -84,8 +84,8 @@ Apps that are available in App stores can be built with different technologies, 
 
 In this section we'll classify apps in the store in two groups:
 
-- **Native apps:** These apps are mostly built with native code. Their size depends on the platform, but it's usually above 10MB in Android, and 30MB in iOS. You might want to promote your native app if you don't have a PWA, or if the native app presents a more complete feature set.
-- **Lightweight apps:** These apps can be built with native code as well, but they are commonly built with web technology, packaged in a native wrapper. Full PWAs can be uploaded to the stores as well. Some companies opt to provide these as "lite" experiences, and others have used this approach for their flagship (core) apps as well.
+- **Platform-specific apps:** These apps are mostly built with platform-specific code. Their size depends on the platform, but it's usually above 10MB in Android, and 30MB in iOS. You might want to promote your platform-specific app if you don't have a PWA, or if the platform-specific app presents a more complete feature set.
+- **Lightweight apps:** These apps can be built with platform-specific code as well, but they are commonly built with web technology, packaged in a platform-specific wrapper. Full PWAs can be uploaded to the stores as well. Some companies opt to provide these as "lite" experiences, and others have used this approach for their flagship (core) apps as well.
 
 ### Promoting Lightweight Apps
 
@@ -93,7 +93,7 @@ According to a [Google Play study](https://medium.com/googleplaydev/shrinking-ap
 
 To address this, some companies are leveraging their PWA to provide a lightweight version of their app in the Play Store using Trusted Web Activities. [Trusted Web Activities](https://developers.google.com/web/android/trusted-web-activity) make it possible to deliver your PWA in the Play Store, and because it's built using the web, the app size is usually only a few megabytes.
 
-Oyo, one of India's largest hospitality companies, built a [Lite version of their app](https://web.dev/oyo-lite-twa/), and made it available in the Play Store using TWA.  It's only 850 KB, just 7% the size of their native Android app. And once installed, it's indistinguishable from  their native app:
+Oyo, one of India's largest hospitality companies, built a [Lite version of their app](https://web.dev/oyo-lite-twa/), and made it available in the Play Store using TWA.  It's only 850 KB, just 7% the size of their Android app. And once installed, it's indistinguishable from their Android app:
 
 <figure class="w-figure">
   <video controls autoplay loop muted class="w-screenshot">
@@ -109,7 +109,7 @@ Oyo kept both the flagship and "lite" app versions in the store, leaving the fin
 
 #### Providing a lightweight web experience
 
-Intuitively, users on low-end devices, might be more inclined to download lightweight versions of apps than users on high-end phones. Therefore, if it's possible to identify a user's device, one could prioritize the lightweight app install banner over the heavier native app version.
+Intuitively, users on low-end devices, might be more inclined to download lightweight versions of apps than users on high-end phones. Therefore, if it's possible to identify a user's device, one could prioritize the lightweight app install banner over the heavier platform-specific app version.
 
 On the web, it's possible to obtain device signals and approximately map them to device categories (e.g. "high", "mid", or "low"). You can obtain this information in different ways, using either JavaScript APIs or client hints.
 
@@ -170,4 +170,4 @@ Covering in depth techniques on how to map device signals to device categories i
 
 ## Conclusion
 
-The ability to have an icon in the user's home screen is one of the most engaging features of applications. Given that historically this was only possible for native apps, companies might think that showing an app store install banner would be enough to convince users to install their experiences. Currently there are more options to have the user install an app, including offering lightweight app experiences in the stores, and letting users add PWAs to the homescreen, by prompting them to do it directly from the website.
+The ability to have an icon in the user's home screen is one of the most engaging features of applications. Given that historically this was only possible for apps installed from app stores, companies might think that showing an app store install banner would be enough to convince users to install their experiences. Currently there are more options to have the user install an app, including offering lightweight app experiences in the stores, and letting users add PWAs to the homescreen, by prompting them to do it directly from the website.

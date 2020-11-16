@@ -209,19 +209,12 @@ requests from this page will follow the `strict-origin-when-cross-origin` policy
 
 ## How to see the referrer policy?
 
-When inspecting an HTTP request:
+[securityheaders.com](https://securityheaders.com/) is handy to determine the policy a specific site
+or page is using.
 
-- in Chrome, Edge and Firefox, you can see the `Referrer-Policy`.
-- in Chrome, Edge, Safari and Firefox, you can see the `Referer`.
-
-<!-- <figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled"
-       src="./referrer-devtools.jpg"
-       alt="A screenshot of the Network panel of Chrome DevTools, showing Referer and Referrer-Policy.">
-  <figcaption class="w-figcaption">
-    Chrome DevTools, Network panel with a request selected.
-  </figcaption>
-</figure> -->
+You can also use the developer tools of Chrome, Edge, or Firefox to see the referrer policy used for
+a specific request. At the time of this writing, Safari doesn't show the `Referrer-Policy` header
+but does show the `Referer` that was sent.
 
 <figure class="w-figure">
   <img src="./referrer-devtools.jpg" alt="A screenshot of the Network panel of Chrome DevTools, showing Referer and Referrer-Policy.">
@@ -285,33 +278,39 @@ app.use(helmet.referrerPolicy({policy: 'strict-origin-when-cross-origin'}));
 
 ### What if `strict-origin-when-cross-origin` (or stricter) doesn't accommodate all your use cases?
 
-In this case, don't set an unsafe policy such as `unsafe-url`. What you can do instead is take a
-**progressive approach**: set a protective policy for your website and if need be, a more permissive
-policy for specific requests or elements.
+In this case, take a **progressive approach**: set a protective policy like
+`strict-origin-when-cross-origin` for your website and if need be, a more permissive policy for
+specific requests or HTML elements.
 
-**Example:**
+### Example: element-level policy
 
 `index.html`:
 
-```html
-<meta name="referrer" content="strict-origin-when-cross-origin" />
-<img src="…" referrerpolicy="no-referrer-when-downgrade" />
+```html/6
+<head>
+  <!-- document-level policy: strict-origin-when-cross-origin -->
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <head>
+    <body>
+      <!-- policy on this <a> element: no-referrer-when-downgrade -->
+      <a src="…" href="…" referrerpolicy="no-referrer-when-downgrade"></a>
+      <body></body>
+    </body>
+  </head>
+</head>
 ```
+
+Note that Safari/WebKit may cap `document.referrer` or the `Referer` header for
+[cross-site](/same-site-same-origin/#same-site-cross-site) requests.
+See [details](https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/).
+
+### Example: request-level policy
 
 `script.js`:
 
 ```javascript
 fetch(url, {referrerPolicy: 'no-referrer-when-downgrade'});
 ```
-
-{% Aside 'gotchas' %} A per-element policy is not supported in all
-browsers browsers (Examples: `referrerpolicy` for [`a`
-elements](https://caniuse.com/#feat=mdn-html_elements_a_referrerpolicy),
-for [`img` elements](https://caniuse.com/#feat=mdn-html_elements_img_referrerpolicy),
-and for [`link` elements](https://caniuse.com/#feat=mdn-html_elements_link_referrerpolicy)).
-But browsers that don't support this tend to take a strict approach anyway
-(for example, all cross-origin requests will set `Referer` to the
-origin). {% endAside %}
 
 ### What else should you consider?
 
@@ -365,7 +364,7 @@ To define alternatives, analyze first what part of the referrer you're using.
 - If available, headers like
   [`Origin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) and
   [`Sec-Fetch-Site`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site) give
-  you the `Origin` or describe whether the request is cross-origin, which may be just what you need.
+  you the `Origin` or describe whether the request is cross-origin, which may be exactly what you need.
 
 **If you need other elements of the URL (path, query parameters…):**
 
@@ -430,7 +429,7 @@ against naive attacks—but you should absolutely have another, more
 reliable verification method in place.**
 
 The `Referer` header alone isn't a reliable basis for a check: the requesting site, whether they're
-a legitimate merchant or not, can easily set a `no-referrer` policy which will make the `Referer`
+a legitimate merchant or not, can set a `no-referrer` policy which will make the `Referer`
 information unavailable to the payment provider. However, as a payment provider, looking at the
 `Referer` may help you catch naive attackers who did not set a `no-referrer` policy. So you can
 decide to use the `Referer` as a first basic check. If you do so:
@@ -443,7 +442,7 @@ decide to use the `Referer` as a first basic check. If you do so:
   `Referer` value that is the origin of the requesting website, you prevent unexpected errors since
   you're **not making assumptions about the `Referrer-Policy`** your merchant has set or about the
   browser's behavior if the merchant has no policy set. Both the site and the browser could strip
-  the `Referer` sent in the incoming request to just the origin or not send the `Referer` at all.
+  the `Referer` sent in the incoming request to only the origin or not send the `Referer` at all.
 - If the `Referer` is absent or if it's present and your basic `Referer` origin check was
   successful: you can move onto your other, more reliable verification method (see below).
 

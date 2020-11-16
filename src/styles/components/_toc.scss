@@ -94,6 +94,10 @@ web-table-of-contents-button {
     position: sticky;
   }
 
+  @media print {
+    display: none;
+  }
+
   &[opened] {
     display: none;
   }

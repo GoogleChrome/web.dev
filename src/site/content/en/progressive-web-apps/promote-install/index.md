@@ -224,8 +224,8 @@ Make sure you:
   engagement with your content such as a purchase on an e-commerce site or
   signing up for an account.
 * Provide a brief explanation of the value of installing your PWA in the
-  banner. For example, you can differentiate the install of a PWA from a
-  native app by mentioning that it uses almost no storage on the user's
+  banner. For example, you can differentiate the install of a PWA from an
+  iOS/Android app by mentioning that it uses almost no storage on the user's
   device or that it will install instantly without a store redirect.
 
 <div class="w-clearfix">&nbsp;</div>

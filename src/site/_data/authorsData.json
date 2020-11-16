@@ -48,6 +48,13 @@
       "en": "Technical Writer, Chrome DevTools & Lighthouse"
     }
   },
+  "johyphenel": {
+    "name": {
+      "given": "Jo-el van",
+      "family": "Bergen"
+    },
+    "twitter": "johyphenel"
+  },
   "sgomes": {
     "name": {
       "given": "Sérgio",
@@ -1394,7 +1401,7 @@
     "twitter": "diklla",
     "github": "diklla"
   },
-   "bpj": {
+  "bpj": {
     "name": {
       "given": "Bart",
       "family": "Jarochowski"
@@ -1488,6 +1495,17 @@
       "en": "WebAssembly Advocadoer"
     }
   },
+  "masonfreed": {
+    "name": {
+      "given": "Mason",
+      "family": "Freed"
+    },
+    "twitter": "Mfreed777",
+    "github": "mfreed7",
+    "description": {
+      "en": "Developer on the Chrome team"
+    }
+  },
   "roeln": {
     "name": {
       "given": "Roel",
@@ -1526,12 +1544,51 @@
       "family": "Baca"
     },
     "twitter": "joan_baka"
-  },  
+  },
   "aranhacarlos": {
     "name": {
       "given": "Carlos",
       "family": "Aranha"
     },
     "github": "aranhacarlos"
+  },
+  "scottfriesen": {
+    "name": {
+      "given": "Scott",
+      "family": "Friesen"
+    },
+    "github": "scott-friesen"
+  },
+  "bartekn": {
+    "name": {
+      "given": "Bartek",
+      "family": "Nowierski"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Chrome Browser"
+    },
+    "description": {
+      "en": "Chrome Software Engineer"
+    }
+  },
+  "djuffin": {
+    "name": {
+      "given": "Eugene",
+      "family": "Zemtsov"
+    },
+    "github": "djuffin"
+  },
+  "giesau": {
+    "name": {
+      "given": "Stephan",
+      "family": "Giesau"
+    }
+  },
+  "mattgaunt": {
+    "name": {
+      "given": "Matt",
+      "family": "Gaunt"
+    }
   }
 }

@@ -15,12 +15,13 @@ origin_trial:
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
+  - devices
 feedback:
   - api
 ---
 
 {% Aside %}
-Web apps should be able to do anything native apps can. The [Capabilities
+Web apps should be able to do anything platform-specific apps can. The [Capabilities
 project](/fugu-status/), of which Web NFC is only a part, aims to do just that.
 To learn about other capabilities and to keep up with their progress, follow
 [Unlocking new capabilities for the web](/fugu-status/).
@@ -796,7 +797,7 @@ await writer.write({ records: [emptyRecord] });
 
 Here's a list of things I wish I had known when I started playing with Web NFC:
 
-- Android natively handles NFC tags before Web NFC is operational.
+- Android handles NFC tags at the OS-level before Web NFC is operational.
 - You can find an NFC icon on [material.io].
 - Use NDEF record `id` to easily identifying a record when needed.
 - An unformatted NFC tag that supports NDEF contains a single record of the empty type.
@@ -878,7 +879,6 @@ depends on a community of committers working together to move the Chromium
 project forward. Not every Chromium committer is a Googler, and these
 contributors deserve special recognition!
 
-<!-- lint disable definition-case -->
 [explainer]: https://github.com/w3c/web-nfc/blob/gh-pages/EXPLAINER.md#web-nfc-explained
 [spec]: https://w3c.github.io/web-nfc/
 [ot]: https://developers.chrome.com/origintrials/#/view_trial/236438980436951041
@@ -908,4 +908,3 @@ contributors deserve special recognition!
 [appropriately]: https://w3c.github.io/web-nfc/#data-mapping
 [custom local type records]: https://w3c.github.io/web-nfc/#smart-poster-record
 [DataView]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView
-<!-- lint enable definition-case -->

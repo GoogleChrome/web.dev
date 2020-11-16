@@ -105,7 +105,8 @@ is the effective TLD and the part of the domain just before it.
 
 ![eTLD+1](eTLD+1.png)
 
-### "same-site" and "cross-site"
+### "same-site" and "cross-site" {: #same-site-cross-site }
+
 Websites that have the same eTLD+1 are considered "same-site". Websites that
 have a different eTLD+1 are "cross-site".
 
