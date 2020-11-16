@@ -97,6 +97,7 @@ class Search extends BaseElement {
         role="combobox"
         aria-expanded="${this.expanded}"
         aria-controls="searchInput"
+        aria-owns="web-search-popout__list"
         aria-haspopup="listbox"
       >
         <svg
