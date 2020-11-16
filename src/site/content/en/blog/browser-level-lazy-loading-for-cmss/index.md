@@ -99,7 +99,7 @@ in the user's viewport because the loading cycle starts at a later stage.
 Contrary to previous JavaScript-based solutions,
 [browsers approach this conservatively](/browser-level-image-lazy-loading/#distance-from-viewport-thresholds)
 and furthermore can fine-tune their approach based on real-world heuristics in
-the field, minimizing the impact, so native lazy-loading should be safe to adopt
+the field, minimizing the impact, so browser-level lazy-loading should be safe to adopt
 by CMS platforms.
 
 {% Aside %}
@@ -178,7 +178,7 @@ those browsers and instead encourage updating to a newer browser version.
 
 ### Enable lazy-loading by default
 
-The overall recommendation for CMSs implementing native lazy-loading is to
+The overall recommendation for CMSs implementing browser-level lazy-loading is to
 enable it by default, i.e. `loading="lazy"` should be added to images and
 iframes, preferably
 [only for those elements that include dimension attributes](#require-dimension-attributes-on-elements).
@@ -234,7 +234,7 @@ as well. If the attribute could solely be added through the editor, only new or
 recently modified pieces of content would receive the benefits, drastically
 reducing the CMS's impact on saving network resources. Furthermore, adding the
 attribute on the fly will easily allow for future modifications, should the
-capabilities of native lazy-loading be further expanded.
+capabilities of browser-level lazy-loading be further expanded.
 
 Adding the attribute on the fly should cater for a potentially existing
 `loading` attribute on an element though and let such an attribute take
