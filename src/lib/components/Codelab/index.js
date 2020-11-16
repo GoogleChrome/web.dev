@@ -114,6 +114,7 @@ class Codelab extends BaseElement {
         <iframe
           allow="geolocation; microphone; camera; midi; encrypted-media"
           alt="Embedded glitch ${this.glitch}"
+          title="Embedded glitch ${this.glitch}"
           src="${this.glitchSrc(true)}"
           style="height: 100%; width: 100%; border: 0;"
         >
