@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Native lazy-loading for CMSs
-subhead: Learnings for adopting the browser-native loading attribute
+title: Browser-level lazy-loading for CMSs
+subhead: Learnings for adopting the standardized loading attribute
 authors:
   - felixarntz
-date: 2020-09-25
-#updated: 2020-09-25
+date: 2020-11-16
+#updated: 2020-11-16
 hero: hero.png
 alt: Phone outline with loading image and assets
 description: |
