@@ -6,8 +6,8 @@ authors:
   - felixarntz
 date: 2020-11-16
 #updated: 2020-11-16
-hero: hero.png
-alt: Phone outline with loading image and assets
+hero: hero.jpg
+alt: A lazy leopard relaxing on a tree
 description: |
   This post provides guidance on how to adopt the loading
   attribute in content management systems.
@@ -279,3 +279,5 @@ lazy-loading:
 You can use the learnings from your research and the technical recommendations
 from this post to start contributing code to your CMS, for example in form of a
 patch or pull-request.
+
+Hero photo by [Colin Watts](https://unsplash.com/@imagefactory?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/lazy?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText).
