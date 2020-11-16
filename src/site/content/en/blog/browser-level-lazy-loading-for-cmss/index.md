@@ -102,7 +102,7 @@ and furthermore can fine-tune their approach based on real-world heuristics in
 the field, minimizing the impact, so browser-level lazy-loading should be safe to adopt
 by CMS platforms.
 
-{% Aside %}
+{% Aside 'success' %}
 Experiments using Chrome on Android indicated that on 4G networks, 97.5% of
 below-the-fold lazy-loaded images were fully loaded within 10ms of becoming
 visible, compared to 97.6% for non lazy-loaded images. In other words, there was
