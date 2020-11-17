@@ -13,9 +13,8 @@ tags:
 ---
 
 This article explains how to build a device to take full advantage of the
-[WebUSB API](https://wicg.github.io/webusb). For a brief introduction to the API
-itself see
-[this previous article](/web/updates/2016/03/access-usb-devices-on-the-web).
+[WebUSB API]. For a brief introduction to the API itself see [this previous
+article].
 
 ## Background
 
@@ -54,7 +53,8 @@ interface classes provides for greater flexibility.
 Many of the standard USB classes have corresponding web APIs. For example, a
 page can capture video from a video class device using [`getUserMedia()`]
 or receive input events from a human interface (HID) class device by listening
-for [KeyboardEvents] or [PointerEvents], or using the [Gamepad API].
+for [KeyboardEvents] or [PointerEvents], or using the [Gamepad API] or the
+[WebHID API].
 Just as not all devices implement a standardized class definition not all
 devices implement features that correspond to existing web platform APIs. When
 this is the case the WebUSB API can fill that gap by providing a way for sites
@@ -992,15 +992,18 @@ descriptors and Microsoft OS descriptors can be found in these projects:
  * [WebLight]
  * [WebUSB Arduino Library]
 
-[`getUserMedia()`]: /web/fundamentals/media/recording-video
+[WebUSB API]: https://wicg.github.io/webusb
+[this previous article]: /usb
+[`getUserMedia()`]: https://html5rocks.com/en/tutorials/getusermedia/intro/
 [KeyboardEvents]: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent
 [PointerEvents]: https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events
-[Gamepad API]: https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API
+[Gamepad API]: /gamepad
+[WebHID API]: /hid
 [WebUSB Platform Capability descriptor]: https://wicg.github.io/webusb/#webusb-platform-capability-descriptor
 [URL descriptor]: https://wicg.github.io/webusb/#url-descriptor
 [`open()`]: https://wicg.github.io/webusb/#dom-usbdevice-open
 [page]: https://docs.microsoft.com/en-us/windows-hardware/drivers/usbcon/usb-device-specific-registry-settings
-[blog post]: https://blogs.msdn.microsoft.com/usbcoreblog/2012/09/26/how-to-install-winusb-sys-without-a-custom-inf/
+[blog post]: https://techcommunity.microsoft.com/t5/microsoft-usb-blog/how-to-install-winusb-sys-without-a-custom-inf/ba-p/270769
 [WebLight]: https://github.com/sowbug/weblight
 [WebUSB Arduino Library]: https://github.com/webusb/arduino
 
