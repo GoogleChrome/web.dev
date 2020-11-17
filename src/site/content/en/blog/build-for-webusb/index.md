@@ -53,8 +53,8 @@ interface classes provides for greater flexibility.
 Many of the standard USB classes have corresponding web APIs. For example, a
 page can capture video from a video class device using [`getUserMedia()`]
 or receive input events from a human interface (HID) class device by listening
-for [KeyboardEvents] or [PointerEvents], or using the [Gamepad API] or the
-[WebHID API].
+for [KeyboardEvents] or [PointerEvents], or using the [Gamepad] or the [WebHID]
+API.
 Just as not all devices implement a standardized class definition not all
 devices implement features that correspond to existing web platform APIs. When
 this is the case the WebUSB API can fill that gap by providing a way for sites
@@ -386,6 +386,11 @@ descriptors indicating support for WebUSB. For example, you can specify a
 landing page URL that the browser can direct the user to when your device is
 plugged in.
 
+<figure class="w-figure">
+  <img src="./notification.png" class="w-screenshot" alt="Screenshot of the WebUSB notification in Chrome">
+  <figcaption class="w-figcaption">WebUSB notification.</figcaption>
+</figure>
+
 The Binary device Object Store (BOS) is a concept introduced in USB 3.0 but has
 also been backported to USB 2.0 devices as part of version 2.1. Declaring
 support for WebUSB starts with including the following Platform Capability
@@ -577,7 +582,7 @@ of the descriptor being read.
 
 {% Aside %}
 Support for displaying a notification when a USB device is plugged in is not
-available yet in Google Chrome on Android and Windows.
+available yet on Android.
 {% endAside %}
 
 ## Platform-specific considerations
@@ -997,8 +1002,8 @@ descriptors and Microsoft OS descriptors can be found in these projects:
 [`getUserMedia()`]: https://html5rocks.com/en/tutorials/getusermedia/intro/
 [KeyboardEvents]: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent
 [PointerEvents]: https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events
-[Gamepad API]: /gamepad
-[WebHID API]: /hid
+[Gamepad]: /gamepad
+[WebHID]: /hid
 [WebUSB Platform Capability descriptor]: https://wicg.github.io/webusb/#webusb-platform-capability-descriptor
 [URL descriptor]: https://wicg.github.io/webusb/#url-descriptor
 [`open()`]: https://wicg.github.io/webusb/#dom-usbdevice-open
