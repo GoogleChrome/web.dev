@@ -243,9 +243,14 @@ Layout shifts that occur within 500 milliseconds of user input will have the
 flag set, so they can be excluded from calculations.
 
 {% Aside 'caution' %}
-  Please note: scrolling input is not given a 500 ms buffer, as per the 
+  The hadRecentInput flag will only be true for discrete input events like tap,
+  click, or keypress. Continuous interactions such as scrolls, drags, or pinch
+  and zoom gestures are not considered "recent input". See the
   [Layout Instability Spec](https://github.com/WICG/layout-instability#recent-input-exclusion)
+  for more details.
 {% endAside %}
+
+The hadRecentInput flag will only be true for discrete input events like tap, click, or keypress. Continuous interactions such as scrolls, drags, or pinch and zoom gestures are not considered "recent input". See the Layout Instability spec for more details.
 
 #### Animations and transitions
 
