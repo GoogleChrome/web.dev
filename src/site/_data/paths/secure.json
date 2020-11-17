@@ -16,7 +16,7 @@
     },
     {
       "title": "Secure connections with HTTPS",
-      "pathItems": ["why-https-matters","what-is-mixed-content"]
+      "pathItems": ["why-https-matters", "what-is-mixed-content"]
     },
     {
       "title": "Prevent info leaks",
@@ -41,7 +41,9 @@
         "samesite-cookie-recipes",
         "referrer-best-practices",
         "trust-tokens",
-        "user-agent-client-hints"
+        "user-agent-client-hints",
+        "conversion-measurement",
+        "using-conversion-measurement"
       ]
     }
   ]
