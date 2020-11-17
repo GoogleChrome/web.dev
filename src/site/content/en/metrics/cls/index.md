@@ -250,7 +250,6 @@ flag set, so they can be excluded from calculations.
   for more details.
 {% endAside %}
 
-The hadRecentInput flag will only be true for discrete input events like tap, click, or keypress. Continuous interactions such as scrolls, drags, or pinch and zoom gestures are not considered "recent input". See the Layout Instability spec for more details.
 
 #### Animations and transitions
 
