@@ -132,7 +132,7 @@ images that don't change frequently.
     near future we also plan to enhance our PWA engagement and customer
     proposition by developing push notifications using the Web Push API.
   </p>
-  <cite>Masashi Watanabe, General Manager, Group Marketing Department, Rakuten 24</cite>
+  <cite>Masashi Watanabe, General Manager, Group Marketing Department, Rakuten Inc.</cite>
 </blockquote>
 
 {% Aside %}  
