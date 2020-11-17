@@ -36,6 +36,33 @@ The Event Conversion Measurement API can be supported:
 See details on the current status on the [Chrome feature
 entry](https://chromestatus.com/features/6412002824028160).
 
+### When is the API available?
+
+For the conversion measurement API to be available on a page, it needs to be:
+
+- Enabled on the **origin**.
+- AND—this is specific to this API—Enabled on the **browser**.
+
+With this, the API can be enabled as follows:
+
+<figure class="w-figure">
+  <img src="./api-enable.jpg" alt="Diagram: how to enable the API">
+</figure>
+
+{% Aside %}
+**Why isn't an origin trial token enough for the API to be available on a page?**
+Origin trial features shouldn't exceed a small percentage of global page loads, because they're
+ephemeral. Because of this, sites that have registered for origin trials typically need to
+selectively enable API usage for small portions of their users. But the Event Conversion Measurement
+API involves actions on different top-level pages—so it can be difficult to consistently divert a
+user into an experiment group across sites to avoid this usage limit. To make this easier for
+developers, Chrome **automatically applies a diversion for this API**. This way, sites can use
+client-side feature detection alongside the origin trial to check whether the API can be used, and
+don't have to worry as much about throttling their usage.
+This means that the API won't be enabled for all users, even for origins that are registered for
+origin trials.
+{% endAside %}
+
 ## Experiment with the API, with end users
 
 To test the API with end users, you'll need to:
@@ -81,20 +108,7 @@ development in [Develop locally](#develop-locally).
 #### Activate the API
 
 Once you've registered your origin for the origin trial and added the origin trial token where
-necessary, **it doesn't mean that the API is necessarily enabled for all visitors of this origin**.
-
-{% Aside %}
-**Why?** Origin trial features shouldn't exceed a small percentage of global page loads, because
-they're ephemeral. Because of this, sites that have registered for origin trials typically need to
-selectively enable API usage for small portions of their users. But the Event Conversion Measurement
-API involves actions on different top-level pages—so it can be difficult to consistently divert a
-user into an experiment group across sites to avoid this usage limit. To make this easier for
-developers in this case, **Chrome automatically enables the API only for a certain percentage of
-users**. This way, sites can use client-side feature detection alongside the origin trial to check
-whether the API can be used, and not have to worry as much about throttling their usage. This
-diversion means that the feature won't be available for all users, even for origins that are
-registered for origin trials.
-{% endAside %}
+necessary, **the API is enabled [only for some visitors of this origin](#when-is-the-api-available)**.
 
 Because of this, it's recommended that you run API-related code only when the feature is available
 (since you want to avoid having attributes or executions in your code that have no effect). Once
@@ -164,6 +178,14 @@ event's conversion data was noised. But this gives you the correct conversion co
 - Some ad-blocking browser extensions may block some of the API's functionality (e.g. script names
   containing `ad`). Deactivate ad-blocking extensions on the pages where you need to test the API,
   or create a fresh user profile without extensions.
+
+### Test your origin trial token(s)
+
+If you've registered for an origin trial, the feature should be enabled for your end users **when
+their browser is in the [selected Chrome group](#when-is-the-api-available)**. You may want to test
+if your origin trial tokens work as expected—but _your_ browser may not be in the selected Chrome
+group. To emulate this, enable the flag `#conversion-measurement-api`. This will make your browser
+behave like if it was in the selected Chrome group.
 
 ### Debug
 
