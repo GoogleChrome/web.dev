@@ -242,6 +242,15 @@ Layout shifts that occur within 500 milliseconds of user input will have the
 [`hadRecentInput`](https://wicg.github.io/layout-instability/#dom-layoutshift-hadrecentinput)
 flag set, so they can be excluded from calculations.
 
+{% Aside 'caution' %}
+  The `hadRecentInput` flag will only be true for discrete input events like tap,
+  click, or keypress. Continuous interactions such as scrolls, drags, or pinch
+  and zoom gestures are not considered "recent input". See the
+  [Layout Instability Spec](https://github.com/WICG/layout-instability#recent-input-exclusion)
+  for more details.
+{% endAside %}
+
+
 #### Animations and transitions
 
 Animations and transitions, when done well, are a great way to update content on
