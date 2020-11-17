@@ -1574,5 +1574,16 @@
       "given": "Matt",
       "family": "Gaunt"
     }
+  },
+  "reillyg": {
+    "name": {
+      "given": "Reilly",
+      "family": "Grant"
+    },
+    "twitter": "reillyeon",
+    "github": "reillyeon",
+    "description": {
+      "en": "Software Engineer on Google Chrome focusing on hardware APIs"
+    }
   }
 }
