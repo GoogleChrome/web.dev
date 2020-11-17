@@ -485,7 +485,7 @@ to fetch more information about the device it uses the `bVendorCode` value to
 issue additional requests to the device. The only request currently specified is
 `GET_URL` which returns a [URL descriptor].
 These are similar to string descriptors however are designed to encode URLs in
-the fewest bytes. A URL descriptor for "https://google.com" would look like
+the fewest bytes. A URL descriptor for `"https://google.com"` would look like
 this:
 
 <div class="w-table-wrapper">
