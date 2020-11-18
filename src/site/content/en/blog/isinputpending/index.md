@@ -20,14 +20,17 @@ authors:
 ---
 
 Loading fast is hard. Sites that leverage JS to render their content currently
-have to make a trade-off- either perform all the work needed for display all at
-once, or chunk the work into smaller tasks in order to remain responsive to
-input and paint -- occasionally, at the expense of performance.
+have to make a trade-off between load performance and input 
+responsiveness: either perform all the work needed for display
+all at once (better load performance, worse input responsiveness), or
+chunk the work into smaller tasks in order to remain responsive to 
+input and paint (worse load performance, better input 
+responsiveness).
 
 To eliminate the need to make this trade-off, Facebook proposed and implemented
-the `isInputPending()` API in Chrome in order to improve responsiveness without
+the `isInputPending()` API in Chromium in order to improve responsiveness without
 yielding. Based on origin trial feedback, we've made a number of updates to the
-API, and are happy to announce that the API is now shipping by default in Chrome
+API, and are happy to announce that the API is now shipping by default in Chromium
 87!
 
 ## Background
@@ -40,8 +43,8 @@ API, and are happy to announce that the API is now shipping by default in Chrome
 
 Most work in today's JS ecosystem gets done on a single thread: the main thread.
 This provides a robust execution model to developers, but the user experience
-can suffer drastically if script executes for a long time, responsiveness
-in particular. If the page is doing a lot of work while an input event is fired,
+(responsiveness in particular) can suffer drastically if script executes for a long 
+time. If the page is doing a lot of work while an input event is fired,
 for instance, the page won't handle the click input event until after that work
 completes.
 
@@ -74,7 +77,7 @@ pending user input, without completely yielding execution back to the
 browser.](legend.png)
 
 Since there was interest in the API, we partnered with our colleagues at Chrome
-to implement and ship the feature in Chrome. With help from the Chrome
+to implement and ship the feature in Chromium. With help from the Chrome
 engineers, we got the patches landed behind an [origin trial](/origin-trials/)
 (which is a way for Chrome to test changes and get feedback from developers
 before fully releasing an API).
@@ -180,6 +183,13 @@ We encourage you to use `isInputPending()` with discretion. If there isn't
 user-blocking work to be done, then be kind to others on the event loop by
 yielding more frequently. [Long tasks can be
 harmful](/long-tasks-devtools/).
+
+## Feedback
+
+* Leave feedback on the spec in the
+  [is-input-pending](https://github.com/WICG/is-input-pending) repository.
+* Contact [@acomminos](https://twitter.com/acomminos) (one of the spec authors)
+  on Twitter.
 
 ## Conclusion
 
