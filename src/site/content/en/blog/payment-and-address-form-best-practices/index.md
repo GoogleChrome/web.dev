@@ -1,6 +1,6 @@
 ---
 title: Payment and address form best practices
-subhead: Maximize conversions by helping your users complete name, address and payment forms as quickly and easily as possible.
+subhead: Maximize conversions by helping your users complete address and payment forms as quickly and easily as possible.
 authors:
   - samdutton
 scheduled: true
@@ -27,7 +27,7 @@ tags:
 <!--  {% YouTube 'alGcULGtiv8' %} -->
 
 Well-designed forms help users and increase conversion rates. One small fix can make a big 
-difference! 
+difference. 
 
 {% Aside 'codelab' %}
   If you would prefer to learn these best practices with a hands-on tutorial,
@@ -39,7 +39,7 @@ Here is an example of a simple payment form that demonstrates all of the best pr
 {% Glitch {
   id: 'payment-form',
   path: 'index.html',
-  height: 200
+  height: 620
 } %}
 
 Here is an example of a simple address form that demonstrates all of the best practices:
@@ -47,7 +47,7 @@ Here is an example of a simple address form that demonstrates all of the best pr
 {% Glitch {
   id: 'address-form',
   path: 'index.html',
-  height: 200
+  height: 700
 } %}
 
 ## Checklist
@@ -63,7 +63,7 @@ incremented. Use `type="text"` and [`inputmode="numeric"`](#inputmode-attribute)
 * To help browsers autofill forms, give input `name` and `id` attributes [stable values](#stable-name-id) 
 that don't change between page loads or website deployments.
 * [Disable submit buttons](#submit-buttons) once they've been tapped or clicked.
-* [Validate](#validate) during data entry and on form submission.
+* [Validate](#validate) during data entry—not just on form submission.
 * Make [guest checkout](#guest-checkout) the default and make account creation simple once checkout 
 is complete.
 * Show [progress through the checkout process](#checkout-progress) in clear steps with clear calls 
@@ -72,18 +72,18 @@ to action.
 * At checkout [show full order details](#order-control) and make it easy for orders to be adjusted.
 * [Don't ask for data you don't need](#unneeded-data).
 * [Ask for names with a single input](#name-inputs) unless you have a good reason not to.
-* [Don't enforce Latin-only characters](#unicode-matching) for names and other data.
-* [Allow for a variety address formats](#address-variety).
+* [Don't enforce Latin-only characters](#unicode-matching) for names and usernames.
+* [Allow for a variety of address formats](#address-variety).
 * Consider using a [single textarea for address](#address-textarea).
 * Use [autocomplete for billing address](#billing-address).
 * [Internationalize and localize](#internationalization-localization) where necessary.
 * Consider avoiding [postal code address lookup](#postal-code-address-lookup).
 * Use [appropriate payment card autocomplete values](#payment-form-autocomplete).
 * Use a [single input for payment card numbers](#single-credit-card-input).
-* [Avoid using custom elements](#avoid-custom-elements) that break the autofill experience.
+* [Avoid using custom elements](#avoid-custom-elements) if they break the autofill experience.
 * [Test in the field as well as the lab](#analytics-rum): page analytics, interaction analytics, and 
 real-user performance measurement.
-* [Test across browsers, devices and platforms](#test-platforms).
+* [Test on a range of browsers, devices and platforms](#test-platforms).
 
 {% Aside %}
 This article is about frontend best practices for address and payment forms. It does not explain 
@@ -205,7 +205,7 @@ placeholder to make sure the user enters data in the appropriate format.
 The [datalist](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist) element enables 
 a user to select from a list of available options and provides matching suggestions as the user enters text. 
 Try out datalist for `text`, `range` and `color` inputs at [simpl.info/datalist](https://simpl.info/datalist).
-For birth year input, you can compare a select with an input and datalist at [datalist-select.glitch.me](datalist-select.glitch.me).
+For birth year input, you can compare a select with an input and datalist at [datalist-select.glitch.me](https://datalist-select.glitch.me).
 {% endAside %}
 
 #### Use autocomplete to improve accessibility and help users avoid re-entering data {: #autocomplete-attribute }
@@ -421,7 +421,7 @@ Keep the journey focused. This is not the time to tempt users to do something el
 
 <figure class="w-figure">
   <img class="w-screenshot" src="./images/free-stickers.jpg" alt="Screenshot of checkout page on 
-  mobile showing distracting promotion for FREE STICKERS.">
+  mobile showing distracting promotion for FREE STICKERS." width="350">
   <figcaption class="w-figcaption">Don't distract customers from completing their purchase.</figcaption>
 </figure>
 
@@ -432,7 +432,7 @@ change it via a link.
 <figure class="w-figure">
   <img class="w-screenshot" src="./images/returning-user.png" alt="Screenshot of 'Review order' 
   section of checkout page, showing text in plain text, with links to change delivery address, 
-  payment method and billing address, which are not displayed.">
+  payment method and billing address, which are not displayed." width="450">
   <figcaption class="w-figcaption">Hide data customers don't need to see.</figcaption>
 </figure>
 
@@ -666,9 +666,9 @@ physical payment card to look up an expiry date, you're likely to lose a sale. U
 elements instead, and style them accordingly.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./images/custom-element-date-glitch.jpg" alt="Screenshot of payment 
+  <img src="./images/custom-element-date-glitch.jpg" alt="Screenshot of payment 
   form showing custom elements for card expiry date that interrupt autofill.">
-  <figcaption class="w-figcaption">Autofill worked for everything—except the expiry date!</figcaption>
+  <figcaption class="w-figcaption">Autocomplete filled all the fields—except the expiry date!</figcaption>
 </figure>
 
 ### Use a single input for payment card and other numbers
@@ -713,7 +713,21 @@ You can find out better ways to enable one-time passcodes from our article [SMS 
 {% endAside %}
 
 
-## Analytics and RUM {: #analytics }
+## Test on a range of devices, platforms, browsers and versions {: #test-platforms }
+
+It's particularly important to test address and payment forms on the platforms most common for 
+your users, since form element functionality and appearance may vary, and differences in viewport 
+size can lead to problematic positioning. BrowserStack enables [free testing for open source projects](https://www.browserstack.com/open-source) on a range of devices and browsers.
+
+<figure class="w-figure">
+  <img src="images/browserstack.jpg" alt="Screenshots of a payment form, payment-form.glitch.me, on 
+  iPhone 7 and 11. The Complete Payment button is shown on iPhone 11 but not 7">
+  <figcaption class="w-figcaption">You might want to reduce padding so the <strong>Complete 
+  payment</strong> button isn't hidden.</figcaption>
+</figure>
+
+
+## Implement analytics and RUM {: #analytics }
 
 Testing usability and performance locally can be helpful, but you need real-world data to properly 
 understand how users experience your payment and address forms. 
