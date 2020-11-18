@@ -160,8 +160,8 @@ properties, including app shortcuts. It makes it easy to verify that all of the
 shortcut icons, if provided, are loading properly.
 
 App shortcuts may not be available right away to all users because Progressive
-Web App updates are capped to once a day.  You can find more details in this
-[article].
+Web App updates are capped to once a day.  Find out more about
+[how Chrome handles updates to the web app manifest].
 
 ## Best practises
 
@@ -250,4 +250,4 @@ Check out the [app shortcuts sample] and its [source].
 [Android app shortcuts]: https://developer.android.com/guide/topics/ui/shortcuts
 [xxhdpi screen]: https://developer.android.com/training/multiscreen/screendensities#TaskProvideAltBmp
 [formula for converting]: https://developer.android.com/training/multiscreen/screendensities#dips-pels
-[article]: /manifest-updates
+[how Chrome handles updates to the web app manifest]: /manifest-updates
