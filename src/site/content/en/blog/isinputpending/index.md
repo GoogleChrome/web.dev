@@ -33,6 +33,11 @@ yielding. Based on origin trial feedback, we've made a number of updates to the
 API, and are happy to announce that the API is now shipping by default in Chromium
 87!
 
+## Browser compatibility
+
+`isInputPending()` is shipping in Chromium-based browsers starting in version 87.
+No other browser has signaled an intent to ship the API.
+
 ## Background
 
 {% Aside %}
