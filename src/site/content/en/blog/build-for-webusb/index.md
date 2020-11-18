@@ -721,6 +721,9 @@ device. Every device interface must have a GUID in order for an application to
 find and connect to it through the Windows API. Use the `New-Guid` PowerShell
 cmdlet or an online tool to generate a random GUID.
 
+For development purposes the [Zadig tool] provides an easy interface for
+replacing the driver loaded for a USB interface with the WinUSB driver.
+
 #### Microsoft OS compatibility descriptors
 
 The INF file approach above is cumbersome because it requires configuring every
@@ -1006,6 +1009,7 @@ descriptors and Microsoft OS descriptors can be found in these projects:
 [WebHID]: /hid
 [WebUSB Platform Capability descriptor]: https://wicg.github.io/webusb/#webusb-platform-capability-descriptor
 [URL descriptor]: https://wicg.github.io/webusb/#url-descriptor
+[Zadig tool]: https://zadig.akeo.ie/
 [`open()`]: https://wicg.github.io/webusb/#dom-usbdevice-open
 [page]: https://docs.microsoft.com/en-us/windows-hardware/drivers/usbcon/usb-device-specific-registry-settings
 [blog post]: https://techcommunity.microsoft.com/t5/microsoft-usb-blog/how-to-install-winusb-sys-without-a-custom-inf/ba-p/270769
