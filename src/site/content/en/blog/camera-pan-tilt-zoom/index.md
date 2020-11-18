@@ -5,6 +5,7 @@ subhead:
 authors:
   - beaufortfrancois
 date: 2020-10-05
+updated: 2020-11-18
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: Five persons in a conference room photo.
