@@ -76,7 +76,7 @@ class TableOfContents extends BaseStateElement {
         <button
           class="w-button w-button--secondary w-button--icon"
           data-icon="close"
-          aria-close="Close Table of Contents"
+          aria-label="Close Table of Contents"
           @click="${closeToC}"
         ></button>
       </div>

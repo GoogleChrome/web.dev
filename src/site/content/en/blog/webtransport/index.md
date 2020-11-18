@@ -1,11 +1,11 @@
 ---
-title: Experimenting with QuicTransport
-subhead: QuicTransport is a new API offering low-latency, bidirectional, client-server messaging. Learn more about its use cases, and how to give feedback about the future of the implementation.
+title: Experimenting with WebTransport
+subhead: WebTransport is a new API offering low-latency, bidirectional, client-server messaging. Learn more about its use cases, and how to give feedback about the future of the implementation.
 authors:
   - jeffposnick
-description: QuicTransport is a new API offering low-latency, bidirectional, client-server messaging. Learn more about its use cases, and how to give feedback about the future of the implementation.
+description: WebTransport is a new API offering low-latency, bidirectional, client-server messaging. Learn more about its use cases, and how to give feedback about the future of the implementation.
 date: 2020-06-08
-updated: 2020-06-08
+updated: 2020-11-10
 hero: hero.jpg
 hero_position: center
 alt: |
@@ -19,6 +19,21 @@ tags:
 feedback:
   - api
 ---
+
+{% Aside 'caution' %} This proposal has undergone significant changes since the
+start of the Origin Trial. Starting with Chrome 87, WebTransport has replaced
+QuicTransport as the top-level interface that developers interact with.
+
+As a result, some of the information, and all of the sample code, in this
+article is out of date. For the latest on this evolving proposal, please read
+refer to the
+[editor's draft of WebTransport](https://w3c.github.io/webtransport/). It
+includes an [Examples](https://w3c.github.io/webtransport/#examples) section
+with updated code snippets.
+
+Once the proposal stabilizes, we will update this article and associated code
+samples with up to date information.
+{% endAside %}
 
 ## Background
 
