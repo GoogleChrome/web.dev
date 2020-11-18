@@ -6,7 +6,7 @@ authors:
 scheduled: true
 date: 2020-11-16
 updated: 2020-11-16
-description: Maximize conversions by helping your users complete name, address and payment forms as quickly and easily as possible.
+description: Maximize conversions by helping your users complete address and payment forms as quickly and easily as possible.
 hero: hero.jpg
 alt: Businessman using a payment card to make a payment on a laptop computer.
 tags:
@@ -39,15 +39,15 @@ Here is an example of a simple payment form that demonstrates all of the best pr
 {% Glitch {
   id: 'payment-form',
   path: 'index.html',
-  height: 480
+  height: 200
 } %}
 
-Here is an example of a simple form for name and address that demonstrates all of the best practices:
+Here is an example of a simple address form that demonstrates all of the best practices:
 
 {% Glitch {
   id: 'address-form',
   path: 'index.html',
-  height: 480
+  height: 200
 } %}
 
 ## Checklist
@@ -121,8 +121,8 @@ If you have more than one page component for user input, make sure to put each i
 
 To label an `<input>`, `<select>` or `<textarea>`, use a [`<label>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label).
 
-You associate a label with an input by giving the label's *for* attribute the same value as 
-the input's id.
+You associate a label with an input by giving the label's `for` attribute the same value as 
+the input's `id`.
 
 ```html
 <label for="address-line1">Address line 1</label>
@@ -136,7 +136,7 @@ gets focus.
 {% Aside 'caution' %}
 [Placeholders](https://www.smashingmagazine.com/2018/06/placeholder-attribute/) can be handy, but 
 don't use them on their own instead of labels. Once you start entering text in an input, the 
-placeholder is hidden, so and it can be easy to forget what the input is for. The same is true if 
+placeholder is hidden, so it can be easy to forget what the input is for. The same is true if 
 you use the placeholder to show the correct format for values such as dates. This can be especially 
 problematic for users on phones, particularly if they're distracted or feeling stressed! 
 {% endAside %}
@@ -174,6 +174,12 @@ to provide the right keyboard on mobile and enable basic built-in validation by 
 
 For example, use `type="email"` for email addresses and `type="tel"` for phone numbers.
 
+<figure class="w-figure">
+  <img src="images/input-type.jpg" alt="Two screenshots of Android phones, showing a keyboard appropriate 
+  for entering an email addresss (using type=email) and for entering a telephone number (with type=tel).">
+  <figcaption class="w-figcaption">Keyboards appropriate for email and telephone.</figcaption>
+</figure>
+
 {% Aside 'warning' %}
 Using type="number" adds an up/down arrow to increment numbers, which makes no sense for data such as 
 telephone, payment card or account numbers.
@@ -202,16 +208,6 @@ Try out datalist for `text`, `range` and `color` inputs at [simpl.info/datalist]
 For birth year input, you can compare a select with an input and datalist at [datalist-select.glitch.me](datalist-select.glitch.me).
 {% endAside %}
 
-For payment card and phone numbers use a single input: don't split the number into parts. That makes 
-it easier for users to enter data, makes validation simpler, and enables browsers to autofill. 
-Consider doing the same for other numeric data such as PIN and bank codes. 
-
-<figure class="w-figure">
-  <img src="images/credit-card-number-multiple-inputs.jpg" alt="Screenshot of payment form showing a 
-  credit card field split into four input elements.">
-  <figcaption class="w-figcaption">Don't use multiple inputs for a credit card number.</figcaption>
-</figure>
-
 #### Use autocomplete to improve accessibility and help users avoid re-entering data {: #autocomplete-attribute }
 
 Using appropriate `autocomplete` values enables browsers to help users by securely storing data and 
@@ -228,10 +224,14 @@ website deployments.
 {% endAside %}
 
 By default, set the billing address to be the same as the delivery address. Reduce visual clutter by 
-providing a link to edit the billing address (or use [`<summary>` and `<details>`](https://simpl.info/details/)) 
+providing a link to edit the billing address (or use [summary and details elements](https://simpl.info/details/)) 
 rather than displaying the billing address in a form.
 
-![Example checkout page showing link to change billing address](images/review-order.png)
+<figure class="w-figure">
+  <img src="images/review-order.png" alt="Example checkout page showing link 
+  to change billing address.">
+  <figcaption class="w-figcaption">Add a link to review billing.</figcaption>
+</figure>
 
 Use appropriate autocomplete values for billing name and address, just as you do for shipping address, 
 so the user doesn't have to enter the same data twice. Add a prefix word to autocomplete attributes 
@@ -239,9 +239,7 @@ if you have different values for inputs with the same name in different sections
 
 ```html
 <input autocomplete="shipping address-line-1" ...>
-
 ...
-
 <input autocomplete="billing address-line-1" ...>
 ```
 
@@ -252,39 +250,54 @@ forms more quickly and easily by helping them fix problems as they happen. Throu
 customers are trying to give your company money for a product or service—your job is to assist them, 
 not to punish them!
 
-You can add [constraint attributes](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation#Intrinsic_and_basic_constraints) to specify acceptable values, including 
-`min`, `max` and `pattern`.
+You can add [constraint attributes](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation#Intrinsic_and_basic_constraints) to form elements to specify acceptable 
+values, including `min`, `max` and `pattern`. The [validity state](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState) 
+of the element is set automatically depending on whether the element's value is valid, as are the 
+`:valid` and `:invalid` CSS pseudo-classes which can be used to style elements with valid or invalid 
+values.
 
-For example, the following HTML specifies input for a birth year between 1900 and 2020. Using 
-`type="number"` constrains input values to numbers only, within the range specified by `min` 
-and `max`.
+For example, the following HTML specifies input for a birth year between 
+1900 and 2020. Using `type="number"` constrains input values to numbers only, within the range 
+specified by `min` and `max`. If you attempt to enter a number outside the range, the input will be 
+set to have an invalid state.
 
-<!-- code example with link to Glitch -->
+{% Glitch {
+  id: 'constraints',
+  path: 'index.html',
+  height: 170
+} %}
 
 The following example uses `pattern="[\d ]{10,30}"` to ensure a valid payment card number, while 
 allowing spaces:
 
-<!-- code example with link to Glitch-->
-
-The `:valid` and `:invalid` CSS pseudo-classes are set automatically, depending on whether a form 
-field's value is valid.
-
-<!-- Add demo with link to Glitch -->
+{% Glitch {
+  id: 'payment-card-input',
+  path: 'index.html',
+  height: 170
+} %}
 
 Modern browsers also do basic validation for inputs with type `email` or `url`. 
 
-<!-- Add demo with link to Glitch -->
+{% Glitch {
+  id: 'type-validation',
+  path: 'index.html',
+  height: 250
+} %}
 
 On form submission, browsers automatically set focus on fields with problematic or missing required 
 values. No JavaScript required! 
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./images/invalid-email.png" alt="Screenshot of a sign-in form in Chrome on desktop showing browser prompt and focus for an invalid email value.">
+  <img class="w-screenshot" src="./images/invalid-email.png" alt="Screenshot of a sign-in form in 
+  Chrome on desktop showing browser prompt and focus for an invalid email value.">
   <figcaption class="w-figcaption">Basic built-in validation by the browser.</figcaption>
 </figure>
 
-Alternatively, you may prefer to validate data on form submission and list all fields with invalid or 
-missing values and then highlight them accordingly.
+Validate inline and provide feedback to the user as they enter data, rather than providing a list of 
+errors when they click the submit button. If you need to validate data on your server after form 
+submission, list all problems that are found and clearly highlight all form fields with invalid 
+values, as well as displaying a message inline next to each problematic field explaining what needs 
+to be fixed. Check server logs and analytics data for common errors—you may need to redesign your form.
 
 You should also use JavaScript to do more robust validation while users are entering data and when 
 on form submission. Use the [Constraint Validation API](https://html.spec.whatwg.org/multipage/forms.html#constraints) 
@@ -295,7 +308,8 @@ Find out more: [Use JavaScript for more complex real-time validation](https://de
 
 {% Aside 'warning' %}
 Even with client-side validation and data input constraints, you must still ensure that your 
-back-end securely handles input and output of data from users.
+back-end securely handles input and output of data from users. Never trust user input: it could be 
+malicious. Find out more: [OWASP Input Validation Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html).
 {% endAside %}
 
 #### Help users avoid missing required data {: #autocomplete-attribute }
@@ -352,13 +366,25 @@ their newly created account!
 You can make your checkout process feel less complex by showing progress and making it clear what 
 needs to be done next. 
 
-<!--  image like this slide: https://docs.google.com/presentation/d/17nvDI-KX3k3-FyrX7qsAK1lrSN--sFV_E08fAg9DkK4/edit#slide=id.ga666574fc2_1_4  -->
+The video below shows how UK retailer [johnlewis.com](https://www.johnlewis.com) do it.
+
+<figure class="w-figure">
+   <video controls autoplay loop muted class="w-screenshot">
+     <source src="https://samdutton.com/johnlewis.com.mp4" type="video/mp4">
+   </video>
+  <figcaption class="w-figcaption">Show checkout progress</figcaption>
+</figure>
 
 You need to maintain momentum! For each step towards checkout, use descriptive buttons that make 
 the next step obvious. For example, label the submit button on your shipping address form 
 **Proceed to Payment** rather than **Continue** or **Save**.
 
-<!-- image: like address-form-save.mp4 screencast -->
+<figure class="w-figure">
+   <video controls autoplay loop muted class="w-screenshot">
+     <source src="https://samdutton.com/address-form-save.mp4" type="video/mp4">
+   </video>
+  <figcaption class="w-figcaption">Give form buttons meaningful names</figcaption>
+</figure>
 
 Use the `enterkeyhint` attribute on form inputs to set the mobile keyboard enter key label. For 
 example, use `enterkeyhint="previous"` and `enterkeyhint="next"` within a multi-page form, 
@@ -376,32 +402,39 @@ You can find out more from the [enterkeyhint explainer](https://github.com/dtapu
 
 Make it easy for users to go back and forth within the checkout process, to easily adjust 
 their order, even when they're at the final payment step. Show full details of the order, not just 
-a limited summary.
-
-<!-- image: full summary compared with limited summary -->
-
-Enable users to easily adjust item quantities from the payment page. Your priority at checkout is to 
+a limited summary. Enable users to easily adjust item quantities from the payment page. Your priority at checkout is to 
 avoid interrupting progress towards conversion.
 
 ### Remove distractions  {: #reduce-checkout-exits}
 
 Limit potential exit points by removing visual clutter and distractions such as product promotions. 
-
-<!-- image as per script -->
-
 Many successful retailers even remove navigation and search from checkout. 
 
-<!-- image as per script -->
+<figure class="w-figure">
+  <img class="w-screenshot" src="./images/remove-distractions.png" alt="Two screenshots on mobile 
+  showing progress through johnlewis.com checkout. Search, navigation and other distractions are 
+  removed.">
+  <figcaption class="w-figcaption">Search, navigation and other distractions removed for checkout.</figcaption>
+</figure>
 
 Keep the journey focused. This is not the time to tempt users to do something else! 
 
-<!-- image as per script -->
+<figure class="w-figure">
+  <img class="w-screenshot" src="./images/free-stickers.jpg" alt="Screenshot of checkout page on 
+  mobile showing distracting promotion for FREE STICKERS.">
+  <figcaption class="w-figcaption">Don't distract customers from completing their purchase.</figcaption>
+</figure>
 
-For returning users you can simplify the checkout flow even more by hiding data they don't need to 
-see. For example: display the shipping address in plain text (not in a form) and allow users to 
+For returning users you can simplify the checkout flow even more, by hiding data they don't need to 
+see. For example: display the delivery address in plain text (not in a form) and allow users to 
 change it via a link. 
 
-<!-- image as per script -->
+<figure class="w-figure">
+  <img class="w-screenshot" src="./images/returning-user.png" alt="Screenshot of 'Review order' 
+  section of checkout page, showing text in plain text, with links to change delivery address, 
+  payment method and billing address, which are not displayed.">
+  <figcaption class="w-figcaption">Hide data customers don't need to see.</figcaption>
+</figure>
 
 ## Make it easy to enter name and address {: #address-forms}
 
@@ -447,11 +480,32 @@ you need to be as unrestrictive as possible with alphabets. It's rude to be told
 
 For validation, avoid using regular expressions that only match Latin characters. Latin-only excludes
 users with names or addresses that include characters that aren't in the Latin alphabet. Allow Unicode 
-letter matching instead—and ensure your back-end supports Unicode securely as both input and output.
+letter matching instead—and ensure your back-end supports Unicode securely as both input and output. 
+Unicode in regular expressions is well supported by modern browsers.
 
-<!-- Glitch example as per unicode-letter-matching.mp4: -->
+{% Compare 'worse' %}
+```html
+<!-- Names with non-Latin characters (such as Françoise or Jörg) are 'invalid'. -->
+<input pattern="[\w \-]+" ...>
+```
+{% endCompare %}
 
-### Allow for a variety address formats {: #address-variety}
+{% Compare 'better' %}
+```html
+<!-- Accepts Unicode letters. -->
+<input pattern="[\p{L} \-]+" ...>
+```
+{% endCompare %}
+
+
+<figure class="w-figure">
+   <video controls autoplay loop muted class="w-screenshot">
+     <source src="https://samdutton.com/unicode-letter-matching.mp4" type="video/mp4">
+   </video>
+  <figcaption class="w-figcaption">Unicode letter matching compared to Latin-only letter matching.</figcaption>
+</figure>
+
+### Allow for a variety of address formats {: #address-variety}
 
 When you're designing an address form, bear in mind the bewildering variety of address formats, 
 even within a single country. Be careful not to make assumptions about 'normal' addresses. (Take a 
@@ -490,7 +544,9 @@ Address line 2 (optional)
 <input autocomplete="address-line-2" id="address-line2" ...>
 ```
 
-<!-- Add Glitch -->
+{% Aside  %}
+You can try this out using the demo embedded below.
+{% endAside %}
 
 #### Consider using a single textarea for address {: #address-textarea}
 
@@ -502,7 +558,13 @@ only used forms with address-line1 and address-line2.
 
 For a textarea, use `street-address` as the autocomplete value.
 
-<!-- Glitch address form with textarea -->
+Here is an example of a form that demonstrates the use of a single textarea for address:
+
+{% Glitch {
+  id: 'address-form',
+  path: 'index.html',
+  height: 480
+} %}
 
 #### Internationalize and localize your address forms {: #internationalization-localization} 
 
@@ -521,9 +583,9 @@ language.
 ```
 
 It can be irritating or puzzling to be presented with a form that doesn't fit your address or that 
-doesn't the words you expect. 
+doesn't use the words you expect. 
 
-Customizing address forms for multiple locales may be necessary for your site, but using techniques 
+Customizing address forms [for multiple locales](https://www.smashingmagazine.com/2020/11/internationalization-localization-static-sites#determining-user-s-language-and-region) may be necessary for your site, but using techniques 
 to maximize form flexibility (as described above) may be adequate. If you don't localize your address 
 forms, make sure to understand the key priorities to cope with a range of address formats:
 * Avoid being over-specific about address parts, such as insisting on a street name or house number.
@@ -533,10 +595,10 @@ have a postal code, and rural addresses may not have a street or road name.
 
 Keep it flexible!
 
-Here is an example of an address form that can work well in many locations.
-
-<!-- Glitch example -->
-
+{% Aside %}
+The [simple address form example above](#address-textarea) can be adapted to work 'well enough' 
+for many locales.
+{% endAside %}
 
 #### Consider avoiding postal code address lookup {: #postal-code-address-lookup}
 
@@ -546,13 +608,23 @@ for some use cases, but you should be aware of the potential downsides.
 Postal code address suggestion doesn't work for all countries—and in some regions, post codes can 
 include a large number of potential addresses. 
 
-<!-- image as per long-list-of-addresses.mp4 -->
+<figure class="w-figure">
+   <video controls autoplay loop muted class="w-screenshot">
+     <source src="https://samdutton.com/long-list-of-addresses.mp4" type="video/mp4">
+   </video>
+  <figcaption class="w-figcaption">ZIP or postal codes may include a lot of addresses!</figcaption>
+</figure>
 
 It's difficult for users to select from a long list of addresses—especially on mobile if they're 
 rushed or stressed. It can be easier and less error prone to let users take advantage of autofill, 
 and enter their complete address filled with a single tap or click.
 
-<!-- video of image as per full-name-autofill.mp4:  -->
+<figure class="w-figure">
+   <video controls autoplay loop muted class="w-screenshot">
+     <source src="https://samdutton.com/full-name-autofill.mp4" type="video/mp4">
+   </video>
+  <figcaption class="w-figcaption">A single name input enables one-tap/one-click address entry.</figcaption>
+</figure>
 
 * Use [appropriate payment card autocomplete values](#payment-form-autocomplete).
 * Use a [single input for payment card numbers](#single-credit-card-input).
@@ -593,14 +665,23 @@ If all other payment card details are available from autocomplete but a user is 
 physical payment card to look up an expiry date, you're likely to lose a sale. Use standard HTML 
 elements instead, and style them accordingly.
 
-<!-- image -->
+<figure class="w-figure">
+  <img class="w-screenshot" src="./images/custom-element-date-glitch.jpg" alt="Screenshot of payment 
+  form showing custom elements for card expiry date that interrupt autofill.">
+  <figcaption class="w-figcaption">Autofill worked for everything—except the expiry date!</figcaption>
+</figure>
 
-### Use a single input for payment card numbers
+### Use a single input for payment card and other numbers
 
-Some sites add multiple inputs for payment card and phone numbers. Don't do that! Use a single input 
-instead. That makes it easier for users to type in data, and it enables browsers to autofill.
+For payment card and phone numbers use a single input: don't split the number into parts. That makes 
+it easier for users to enter data, makes validation simpler, and enables browsers to autofill. 
+Consider doing the same for other numeric data such as PIN and bank codes. 
 
-<!-- image -->
+<figure class="w-figure">
+  <img src="images/credit-card-number-multiple-inputs.jpg" alt="Screenshot of payment form showing a 
+  credit card field split into four input elements.">
+  <figcaption class="w-figcaption">Don't use multiple inputs for a credit card number.</figcaption>
+</figure>
 
 ### Validate carefully
 
@@ -609,7 +690,11 @@ adding a `pattern` attribute to a payment card input. If the user attempts to su
 with an invalid value, the browser displays a warning message and sets focus on the input. No 
 JavaScript required! 
 
-<!-- Show Glitch -->
+{% Glitch {
+  id: 'payment-card-input',
+  path: 'index.html',
+  height: 170
+} %}
 
 However, your `pattern` regular expression must be flexible enough to handle [the range of payment card 
 number lengths](https://github.com/jaemok/credit-card-input/blob/master/creditcard.js#L35): from 14 
@@ -626,6 +711,30 @@ You may want to use a one-time passcode for identity or payment verification. Ho
 to manually enter a code or copy it from an email or an SMS text is error-prone and a source of friction. 
 You can find out better ways to enable one-time passcodes from our article [SMS OTP form best practices](/sms-otp-form).
 {% endAside %}
+
+
+## Analytics and RUM {: #analytics }
+
+Testing usability and performance locally can be helpful, but you need real-world data to properly 
+understand how users experience your payment and address forms. 
+
+For that you need analytics and Real User Measurement: data for the experience of actual users, such 
+as how long checkout pages take to load or how long payment takes to complete:
+
+* **Page analytics**: page views, bounce rates and exits for every page with a form.
+* **Interaction analytics**: [goal funnels](https://support.google.com/analytics/answer/6180923?hl=en) 
+(where do users abandon your checkout flow?) and [events](https://developers.google.com/analytics/devguides/collection/gtagjs/events) 
+(what actions do users take when interacting with your forms?)
+* **Website performance**: [user-centric metrics](/user-centric-performance-metrics) (Are your 
+checkout pages slow to load and, if so — what's the cause?).
+
+Page analytics, interaction analytics and real user performance measurement become especially 
+valuable when combined with server logs, conversion data and A/B testing, enabling you to answer 
+questions such as whether discount codes increase revenue, or whether a change in form layout 
+improves conversions.
+
+That, in turn, gives you a solid basis for prioritizing effort, making changes and rewarding success.
+
 
 ## Keep learning {: #resources }
 

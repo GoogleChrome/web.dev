@@ -36,11 +36,7 @@ opportunity.
 
 Here is an example of a simple sign-in form that demonstrates all of the best practices:
 
-{% Glitch {
-  id: 'sign-in-form',
-  path: 'index.html',
-  height: 480
-} %}
+https://www.smashingmagazine.com/2020/11/internationalization-localization-static-sites#determining-user-s-language-and-region
 
 ## Checklist
 
