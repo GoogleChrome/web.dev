@@ -726,7 +726,7 @@ as how long checkout pages take to load or how long payment takes to complete:
 (where do users abandon your checkout flow?) and [events](https://developers.google.com/analytics/devguides/collection/gtagjs/events) 
 (what actions do users take when interacting with your forms?)
 * **Website performance**: [user-centric metrics](/user-centric-performance-metrics) (Are your 
-checkout pages slow to load and, if so — what's the cause?).
+checkout pages slow to load and, if so—what's the cause?).
 
 Page analytics, interaction analytics and real user performance measurement become especially 
 valuable when combined with server logs, conversion data and A/B testing, enabling you to answer 
