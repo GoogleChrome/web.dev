@@ -33,7 +33,7 @@ The presence of `"pan"`, `"tilt"`, and `"zoom"` constraint names in
 `navigator.mediaDevices.getSupportedConstraints()` tells you that the browser
 supports the API to control camera PTZ, but not whether the camera hardware
 supports it. As of Chrome&nbsp;87, controlling camera PTZ is supported on
-on desktop, while Android supports zoom only.
+desktop, while Android still supports zoom only.
 
 ```js
 const supports = navigator.mediaDevices.getSupportedConstraints();
