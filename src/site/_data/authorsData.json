@@ -1574,5 +1574,20 @@
       "given": "Matt",
       "family": "Gaunt"
     }
+  },
+  "bingler": {
+    "name": {
+      "given": "Steven",
+      "family": "Bingler"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Chrome"
+    },
+    "descriptions": {
+      "en": "Software engineer on Chrome's improvements to anti-covert tracking efforts."
+    },
+    "country": "US",
+    "github": "sbingler"
   }
 }
