@@ -52,9 +52,7 @@ behavior are outlined below.
 {% Aside 'warning' %}
 The long-term plan is to [phase out support for third-party cookies
 entirely](https://blog.chromium.org/2020/10/progress-on-privacy-sandbox-and.html),
-replacing them with privacy preserving alternatives. In scenarios where you do
-set `SameSite=None; Secure` on a cookie to allow it to be sent across schemes,
-this should only be considered a temporary solution on the migration towards
+replacing them with privacy preserving alternatives. Setting `SameSite=None; Secure` on a cookie to allow it to be sent across schemes should only be considered a temporary solution in the migration towards
 full HTTPS.
 {% endAside %}
 
@@ -79,7 +77,7 @@ further defense against these attacks.
 
 {% Aside 'key-term' %}
 In the examples below where the URLs all have the same registrable domain, e.g.
-site.example, but different schemes, for example, **http**://site.example vs
+site.example, but different schemes, for example, **http**://site.example vs.
 **https**://site.example, they are referred to as **_cross-scheme_** to each
 other.
 {% endAside %}
@@ -136,7 +134,7 @@ navigation which means `SameSite=Strict` cookies will be blocked.
   </tr>
 </table>
 
-### Loading Subresources
+### Loading subresources
 
 {% Aside 'warning' %}
 All major browsers block [active mixed
@@ -147,7 +145,7 @@ and [Firefox](https://groups.google.com/g/mozilla.dev.platform/c/F163Jz32oYY)
 are working toward upgrading or blocking passive mixed content.
 {% endAside %}
 
-Any changes you make here should only be considered a temporary fix while your
+Any changes you make here should only be considered a temporary fix while you
 work to upgrade to full HTTPS.
 
 Examples of subresources include images, iframes, and network requests made with
@@ -211,7 +209,7 @@ third-party or cross-site cookies require `Secure`.
 
 Posting between cross-scheme versions of a website would previously allow
 cookies set with `SameSite=Lax` or `SameSite=Strict` to be sent. Now this is
-treated as a cross-site POST: only `SameSite=None` cookies can be sent. You may
+treated as a cross-site POST—only `SameSite=None` cookies can be sent. You may
 encounter this scenario on sites that present the insecure version by default,
 but upgrade users to the secure version on submission of the sign-in or
 check-out form.
