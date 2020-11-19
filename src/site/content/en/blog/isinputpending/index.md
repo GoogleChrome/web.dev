@@ -118,6 +118,12 @@ uninterrupted. Though, we might get descheduled for a long time by other work
 that wants control of the event loop, or get up to an extra `QUANTUM` milliseconds
 of event latency.
 
+{% Aside %}
+  A good value for `QUANTUM` (under the [RAIL model](/rail/)) is <50ms,
+  depending on the type of work being done. This value is primarily what
+  dictates the tradeoff between throughput and latency.
+{% endAside %}
+
 This is okay, but can we do better? Absolutely!
 
 ```js
