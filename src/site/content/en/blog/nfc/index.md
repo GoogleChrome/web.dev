@@ -4,7 +4,7 @@ subhead: Reading and writing to NFC tags is now possible.
 authors:
   - beaufortfrancois
 date: 2020-02-12
-updated: 2020-11-18
+updated: 2020-11-19
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: A photo of NFC tags
@@ -154,14 +154,14 @@ granted. The promise will resolve if the following conditions are all met:
 
 Once the promise is resolved, incoming NDEF messages are available by
 subscribing to "reading" events via an event listener. You should also subscribe
-to "error" events to be notified when incompatible NFC tags are in proximity
-range.
+to "readingerror" events to be notified when incompatible NFC tags are in
+proximity range.
 
 ```js
 const ndef = new NDEFReader();
 ndef.scan().then(() => {
   console.log("Scan started successfully.");
-  ndef.onerror = () => {
+  ndef.onreadingerror = () => {
     console.log("Cannot read data from the NFC tag. Try another one?");
   };
   ndef.onreading = event => {
