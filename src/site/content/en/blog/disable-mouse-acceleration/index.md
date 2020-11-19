@@ -4,7 +4,7 @@ subhead: |
   Web apps can now disable mouse acceleration when capturing pointer events.
 authors:
   - beaufortfrancois
-date: 2020-10-23
+date: 2020-11-19
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: Gamer girl is playing FPS online video game on her computer
@@ -151,6 +151,7 @@ sure to [check out the source code].
 
 ## Helpful links {: #helpful }
 
+- [Explainer](https://github.com/slightlyoff/unadjusted_pointer_lock_explainer)
 - [Specification PR](https://github.com/w3c/pointerlock/pull/49)
 - [GitHub repository](https://github.com/w3c/pointerlock)
 - [ChromeStatus entry](https://www.chromestatus.com/feature/5723553087356928)
