@@ -280,24 +280,20 @@ include Schemeful Same-Site issues. You may see the following highlighted for
 your site:
 
 - Navigation Issues
-  - "Migrate entirely to HTTPS to continue having cookies sent on same-site
-    requests"
-    - A warning that the cookie **_will be_** blocked in a future version of
-      Chrome.
-  - "Migrate entirely to HTTPS to have cookies sent on same-site requests"
-    - A warning that the cookie **_has been_** blocked.
+  - `Migrate entirely to HTTPS to continue having cookies sent on same-site
+    requests`—A warning that the cookie **_will be_** blocked in a future version of
+    Chrome.
+  - `Migrate entirely to HTTPS to have cookies sent on same-site requests`—A warning 
+    that the cookie **_has been_** blocked.
 - Subresource loading Issues
-  - "Migrate entirely to HTTPS to continue having cookies sent to same-site
-    subresources"
-  - "Migrate entirely to HTTPS to continue allowing cookies to be set by
-    same-site subresources"
-    - A warning that the cookie **_will be_** blocked in a future version of
-      Chrome.
-  - "Migrate entirely to HTTPS to have cookies sent to same-site subresources"
-  - "Migrate entirely to HTTPS to allow cookies to be set by same-site
-    subresources"
-    - A warning that the cookie **_has been_** blocked.
-    - This warning can also appear when POSTing a form.
+  - `Migrate entirely to HTTPS to continue having cookies sent to same-site
+    subresources` or `Migrate entirely to HTTPS to continue allowing cookies to be set by
+    same-site subresources`—Warnings that the cookie **_will be_** blocked in a future 
+    version of Chrome.
+  - `Migrate entirely to HTTPS to have cookies sent to same-site subresources` or 
+    `Migrate entirely to HTTPS to allow cookies to be set by same-site subresources`—Warnings that the cookie 
+    **_has been_** blocked. The latter warning can also appear when POSTing
+    a form.
 
 More detail is available in [Testing and Debugging Tips for Schemeful
 Same-Site](https://www.chromium.org/updates/schemeful-same-site/testing-and-debugging-tips-for-schemeful-same-site).
