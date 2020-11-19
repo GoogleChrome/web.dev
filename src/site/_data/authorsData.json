@@ -1575,6 +1575,22 @@
       "family": "Gaunt"
     }
   },
+  "nateschloss": {
+    "name": {
+      "given": "Nate",
+      "family": "Schloss"
+    },
+    "github": "n8schloss",
+    "twitter": "n8schloss"
+  },
+  "andrewcomminos": {
+    "name": {
+      "given": "Andrew",
+      "family": "Comminos"
+    },
+    "github": "acomminos",
+    "twitter": "acomminos"
+  },
   "bingler": {
     "name": {
       "given": "Steven",
