@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+/* eslint lit-a11y/click-events-have-key-events: 0 */
+
 import {html} from 'lit-element';
 import {BaseElement} from '../BaseElement';
 import {store} from '../../store';

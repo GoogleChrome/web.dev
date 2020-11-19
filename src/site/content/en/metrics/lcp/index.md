@@ -25,22 +25,6 @@ tags:
 Historically, it's been a challenge for web developers to measure how quickly
 the main content of a web page loads and is visible to users.
 
-<style>
-#web-vitals {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-#web-vitals > img {
-  align-self: center;
-}
-@media (min-width: 865px) {
-  #web-vitals {
-    flex-direction: row;
-  }
-}
-</style>
-
 Older metrics like
 [load](https://developer.mozilla.org/en-US/docs/Web/Events/load) or
 [DOMContentLoaded](https://developer.mozilla.org/en-US/docs/Web/Events/DOMContentLoaded)
@@ -156,7 +140,12 @@ subsequent frames, it will dispatch another
 [`PerformanceEntry`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry)
 any time the largest contentful element changes.
 
-For example, on a page with text and a hero image the browser may initially just render the text—at which point the browser would dispatch a `largest-contentful-paint` entry whose `element` property would likely reference a `<p>` or `<h1>`. Later, once the hero image finishes loading, a second `largest-contentful-paint` entry would be dispatched and its `element` property would reference the `<img>`.
+For example, on a page with text and a hero image the browser may initially just
+render the text&mdash;at which point the browser would dispatch a
+`largest-contentful-paint` entry whose `element` property would likely reference
+a `<p>` or `<h1>`. Later, once the hero image finishes loading, a second
+`largest-contentful-paint` entry would be dispatched and its `element` property
+would reference the `<img>`.
 
 It's important to note that an element can only be considered the largest
 contentful element once it has rendered and is visible to the user. Images that
@@ -276,6 +265,7 @@ available in the following tools:
 - [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
 - [Search Console (Core Web Vitals
   report)](https://support.google.com/webmasters/answer/9205520)
+- [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals)
 
 ### Lab tools
 
@@ -285,78 +275,72 @@ available in the following tools:
 
 ### Measure LCP in JavaScript
 
-The easiest way to measure LCP (as well as all Web Vitals [field
-metrics](/user-centric-performance-metrics/#in-the-field) is with the [`web-vitals` JavaScript
-library](https://github.com/GoogleChrome/web-vitals), which wraps all the
-complexity of manually measuring LCP into a single function:
+To measure LCP in JavaScript, you can use the [Largest Contentful Paint
+API](https://wicg.github.io/largest-contentful-paint/). The following example
+shows how to create a
+[`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
+that listens for `largest-contentful-paint` entries and logs them to the
+console.
+
+```js
+new PerformanceObserver((entryList) => {
+  for (const entry of entryList.getEntries()) {
+    console.log('LCP candidate:', entry.startTime, entry);
+  }
+}).observe({type: 'largest-contentful-paint', buffered: true});
+```
+
+{% Aside 'warning' %}
+
+  This code shows how to log `largest-contentful-paint` entries to the console,
+  but measuring LCP in JavaScript is more complicated. See below for details:
+
+{% endAside %}
+
+In the above example, each logged `largest-contentful-paint` entry represents
+the current LCP candidate. In general, the `startTime` value of the last entry
+emitted is the LCP value&mdash;however, that is not always the case. Not all
+`largest-contentful-paint` entries are valid for measuring LCP.
+
+The following section lists the differences between what the API reports and how
+the metric is calculated.
+
+#### Differences between the metric and the API
+
+- The API will dispatch `largest-contentful-paint` entries for pages loaded in a
+  background tab, but those pages should be ignored when calculating LCP.
+- The API will continue to dispatch `largest-contentful-paint` entries after a
+  page has been backgrounded, but those entries should be ignored when
+  calculating LCP (elements may only be considered if the page was in the
+  foreground the entire time).
+- The API does not report `largest-contentful-paint` entries when the page is
+  restored from the [back/forward cache](/bfcache/#impact-on-core-web-vitals),
+  but LCP should be measured in these cases since users experience them as
+  distinct page visits.
+- The API does not consider elements within iframes, but to properly measure LCP
+  you should consider them. Sub-frames can use the API to report their
+  `largest-contentful-paint` entries to the parent frame for aggregation.
+
+Rather than memorizing all these subtle differences, developers can use the
+[`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals) to
+measure LCP, which handles these differences for you (where possible):
 
 ```js
 import {getLCP} from 'web-vitals';
 
-// Measure and log the current LCP value,
-// any time it's ready to be reported.
+// Measure and log LCP as soon as it's available.
 getLCP(console.log);
 ```
 
-To manually measure LCP, you can use the [Largest Contentful Paint
-API](https://wicg.github.io/largest-contentful-paint/). The following example
-shows how to create a
-[`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
-that listens for `largest-contentful-paint` entries and logs the LCP value to
-the console:
-
-{% set entryType = 'largest-contentful-paint' %}
-{% set entryCallback = 'updateLCP' %}
-
-```js
-{% include 'content/metrics/first-hidden-time.njk' %}
-{% include 'content/metrics/send-to-analytics.njk' %}
-{% include 'content/metrics/performance-observer-try.njk' %}
-  // Create a variable to hold the latest LCP value (since it can change).
-  let lcp;
-
-  function updateLCP(entry) {
-    // Only include an LCP entry if the page wasn't hidden prior to
-    // the entry being dispatched. This typically happens when a page is
-    // loaded in a background tab.
-    if (entry.startTime < firstHiddenTime) {
-      // NOTE: the `startTime` value is a getter that returns the entry's
-      // `renderTime` value, if available, or its `loadTime` value otherwise.
-      // The `renderTime` value may not be available if the element is an image
-      // that's loaded cross-origin without the `Timing-Allow-Origin` header.
-      lcp = entry.startTime;
-    }
-  }
-
-{% include 'content/metrics/performance-observer-init.njk' %}
-
-  // Log the final LCP score once the
-  // page's lifecycle state changes to hidden.
-  addEventListener('visibilitychange', function fn(event) {
-    if (document.visibilityState === 'hidden') {
-      removeEventListener('visibilitychange', fn, true);
-
-      // Force any pending records to be dispatched and disconnect the observer.
-      po.takeRecords().forEach((entry) => updateLCP(entry, po));
-      po.disconnect();
-
-      // If LCP is set, report it to an analytics endpoint.
-      if (lcp) {
-        sendToAnalytics({lcp});
-      }
-    }
-  }, true);
-} catch (e) {
-  // Do nothing if the browser doesn't support this API.
-}
-```
+You can refer to [the source code for
+`getLCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getLCP.ts)
+for a complete example of how to measure LCP in JavaScript.
 
 {% Aside %}
-  LCP should not be reported if the page was loaded in a background
-  tab. The above code partially addresses this, but it's not perfect since the
-  page could have been hidden and then shown prior to this code running. A
-  solution to this problem is being discussed in the [Page Visibility API
-  spec](https://github.com/w3c/page-visibility/issues/29)
+  In some cases (such as cross-origin iframes) it's not possible to measure LCP
+  in JavaScript. See the
+  [limitations](https://github.com/GoogleChrome/web-vitals#limitations) section
+  of the `web-vitals` library for details.
 {% endAside %}
 
 ### What if the largest element isn't the most important?
