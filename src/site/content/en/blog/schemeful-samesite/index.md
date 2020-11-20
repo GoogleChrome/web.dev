@@ -361,7 +361,7 @@ FAQ](https://www.chromium.org/updates/same-site/faq) for more information.
 
 ### How are WebSockets affected?
 
-Websocket connections will still be considered same-site if they're the same
+WebSocket connections will still be considered same-site if they're the same
 secureness as the page.
 
 For same-site:
