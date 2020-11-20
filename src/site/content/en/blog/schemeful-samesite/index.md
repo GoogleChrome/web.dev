@@ -124,15 +124,15 @@ navigation which means `SameSite=Strict` cookies will be blocked.
   <tr>
    <td><code>SameSite=Lax</code>
    </td>
-   <td>☑️ Allowed
+   <td>✓ Allowed
    </td>
-   <td>☑️ Allowed
+   <td>✓ Allowed
    </td>
   </tr>
   <tr>
    <td><code>SameSite=None;Secure</code>
    </td>
-   <td>☑️ Allowed
+   <td>✓ Allowed
    </td>
    <td>⛔ Blocked
    </td>
@@ -203,7 +203,7 @@ third-party or cross-site cookies require `Secure`.
   <tr>
    <td><code>SameSite=None;Secure</code>
    </td>
-   <td>☑️ Allowed
+   <td>✓ Allowed
    </td>
    <td>⛔ Blocked
    </td>
@@ -268,7 +268,7 @@ entering any sensitive information into the form.
   <tr>
    <td><code>SameSite=None;Secure</code>
    </td>
-   <td>☑️ Allowed
+   <td>✓ Allowed
    </td>
    <td>⛔ Blocked
    </td>
