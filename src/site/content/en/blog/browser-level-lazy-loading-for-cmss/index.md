@@ -4,8 +4,8 @@ title: Browser-level lazy-loading for CMSs
 subhead: Learnings for adopting the standardized loading attribute
 authors:
   - felixarntz
-date: 2020-11-16
-#updated: 2020-11-16
+date: 2020-11-20
+#updated: 2020-11-20
 hero: hero.jpg
 alt: A lazy leopard relaxing on a tree
 description: |
