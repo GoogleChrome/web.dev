@@ -29,7 +29,7 @@ feedback:
 This article is part of a series on the `SameSite` cookie attribute changes:
 - [SameSite cookies explained](/samesite-cookies-explained/)
 - [SameSite cookies recipes](/samesite-cookie-recipes/)
-- [Schemeful SameSite](/schemeful-samesite)
+- [Schemeful Same-Site](/schemeful-samesite)
 {% endAside %}
 
 [Chrome](https://www.chromium.org/updates/same-site),
