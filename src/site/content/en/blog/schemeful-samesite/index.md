@@ -1,7 +1,11 @@
 ---
 title: Schemeful Same-Site
-subhead: The definition of "same-site" is evolving to include the URL scheme.
-  That means links between HTTP and HTTPS versions of a site now count as
+subhead: The definition of "same-site" is evolving to include the URL scheme,
+  so links between HTTP and HTTPS versions of a site now count as
+  cross-site requests. Upgrade to HTTPS by default to avoid issues where
+  possible or read on for details of what SameSite attribute values are needed.
+description: The definition of "same-site" is evolving to include the URL scheme,
+  so links between HTTP and HTTPS versions of a site now count as
   cross-site requests. Upgrade to HTTPS by default to avoid issues where
   possible or read on for details of what SameSite attribute values are needed.
 authors:
@@ -25,7 +29,7 @@ feedback:
 This article is part of a series on the `SameSite` cookie attribute changes:
 - [SameSite cookies explained](/samesite-cookies-explained/)
 - [SameSite cookies recipes](/samesite-cookie-recipes/)
-- [Schemeful SameSite](/schemeful-samesite)
+- [Schemeful Same-Site](/schemeful-samesite)
 {% endAside %}
 
 [Schemeful
@@ -38,7 +42,7 @@ scheme + registrable domain. You can find more details and examples in
 {% Aside 'key-term' %}
 This means that the insecure HTTP version of a site, for example,
 **http**://website.example, and the secure HTTPS version of that site,
-**https**://website.example, are now considered **_cross-site_** to each other.
+**https**://website.example, are now considered **cross-site** to each other.
 {% endAside %}
 
 The good news is: if your website is already fully upgraded to HTTPS then you
@@ -52,8 +56,9 @@ behavior are outlined below.
 {% Aside 'warning' %}
 The long-term plan is to [phase out support for third-party cookies
 entirely](https://blog.chromium.org/2020/10/progress-on-privacy-sandbox-and.html),
-replacing them with privacy preserving alternatives. Setting `SameSite=None; Secure` on a cookie to allow it to be sent across schemes should only be considered a temporary solution in the migration towards
-full HTTPS.
+replacing them with privacy preserving alternatives. Setting `SameSite=None; Secure` 
+on a cookie to allow it to be sent across schemes should only be considered a temporary 
+solution in the migration towards full HTTPS.
 {% endAside %}
 
 You can enable these changes for testing in both Chrome and Firefox.
@@ -78,7 +83,7 @@ further defense against these attacks.
 {% Aside 'key-term' %}
 In the examples below where the URLs all have the same registrable domain, e.g.
 site.example, but different schemes, for example, **http**://site.example vs.
-**https**://site.example, they are referred to as **_cross-scheme_** to each
+**https**://site.example, they are referred to as **cross-scheme** to each
 other.
 {% endAside %}
 
@@ -276,23 +281,24 @@ Developer tooling and messaging are available in Chrome and Firefox.
 
 From Chrome 86, the [Issue tab in
 DevTools](https://developers.google.com/web/tools/chrome-devtools/issues) will
-include Schemeful Same-Site issues. You may see the following highlighted for
-your site:
+include Schemeful Same-Site issues. You may see the following issues highlighted for
+your site.
 
-- Navigation Issues
-  - `Migrate entirely to HTTPS to continue having cookies sent on same-site
-    requests`—A warning that the cookie **_will be_** blocked in a future version of
+Navigation issues:
+  - "Migrate entirely to HTTPS to continue having cookies sent on same-site
+    requests"—A warning that the cookie **will be** blocked in a future version of
     Chrome.
-  - `Migrate entirely to HTTPS to have cookies sent on same-site requests`—A warning 
-    that the cookie **_has been_** blocked.
-- Subresource loading Issues
-  - `Migrate entirely to HTTPS to continue having cookies sent to same-site
-    subresources` or `Migrate entirely to HTTPS to continue allowing cookies to be set by
-    same-site subresources`—Warnings that the cookie **_will be_** blocked in a future 
+  - "Migrate entirely to HTTPS to have cookies sent on same-site requests"—A warning 
+    that the cookie **has been** blocked.
+
+Subresource loading issues:
+  - "Migrate entirely to HTTPS to continue having cookies sent to same-site
+    subresources" or "Migrate entirely to HTTPS to continue allowing cookies to be set by
+    same-site subresources"—Warnings that the cookie **will be** blocked in a future 
     version of Chrome.
-  - `Migrate entirely to HTTPS to have cookies sent to same-site subresources` or 
-    `Migrate entirely to HTTPS to allow cookies to be set by same-site subresources`—Warnings that the cookie 
-    **_has been_** blocked. The latter warning can also appear when POSTing
+  - "Migrate entirely to HTTPS to have cookies sent to same-site subresources" or 
+    "Migrate entirely to HTTPS to allow cookies to be set by same-site subresources"—Warnings that the cookie 
+    **has been** blocked. The latter warning can also appear when POSTing
     a form.
 
 More detail is available in [Testing and Debugging Tips for Schemeful
@@ -302,10 +308,10 @@ From Firefox 79, with `network.cookie.sameSite.schemeful` set to `true` via
 `about:config` the console will display message for Schemeful Same-Site issues.
 You may see the following on your site:
 
-- Cookie "cookie_name" **_will be soon_** treated as cross-site cookie against
-  "`http://site.example/`" because the scheme does not match.
-- Cookie "cookie_name" **_has been_** treated as cross-site against
-  "`http://site.example/`" because the scheme does not match.
+- "Cookie `cookie_name` **will be soon** treated as cross-site cookie against
+  `http://site.example/` because the scheme does not match."
+- "Cookie `cookie_name` **has been** treated as cross-site against
+  `http://site.example/` because the scheme does not match."
 
 ## FAQ
 
@@ -329,7 +335,7 @@ then [Let's Encrypt](https://letsencrypt.org/) provides a number of tools to
 install and configure a certificate. You can also investigate moving your site
 behind a CDN or other proxy that can provide the HTTPS connection.
 
-If that's still not possible then what you can try is relaxing the `SameSite`
+If that's still not possible then try relaxing the `SameSite`
 protection on affected cookies.
 
 - In cases where only `SameSite=Strict` cookies are being blocked you can lower
@@ -356,12 +362,13 @@ FAQ](https://www.chromium.org/updates/same-site/faq) for more information.
 ### How are WebSockets affected?
 
 Websocket connections will still be considered same-site if they're the same
-secureness as the page:
+secureness as the page.
 
-- Same-site:
+For same-site:
   - `wss://` ↔ `https://`
   - `ws://` ↔ `http://`
-- Cross-site:
+
+For cross-site:
   - `wss://` ↔ `http://`
   - `ws://` ↔ `https://`
 
