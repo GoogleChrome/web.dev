@@ -11,8 +11,7 @@ description: The definition of "same-site" is evolving to include the URL scheme
 authors:
   - bingler
   - rowan_m
-date: 2020-11-18
-updated: 2020-11-18
+date: 2020-11-20
 hero: schemeful-samesite-hero.jpg
 thumbnail: schemeful-samesite-thumbnail.jpg
 alt: Two separate plates of cookies. The plates represent the different
@@ -56,9 +55,9 @@ behavior are outlined below.
 {% Aside 'warning' %}
 The long-term plan is to [phase out support for third-party cookies
 entirely](https://blog.chromium.org/2020/10/progress-on-privacy-sandbox-and.html),
-replacing them with privacy preserving alternatives. Setting `SameSite=None; Secure` 
-on a cookie to allow it to be sent across schemes should only be considered a temporary 
-solution in the migration towards full HTTPS.
+replacing them with privacy preserving alternatives. Setting `SameSite=None;
+Secure` on a cookie to allow it to be sent across schemes should only be
+considered a temporary solution in the migration towards full HTTPS.
 {% endAside %}
 
 You can enable these changes for testing in both Chrome and Firefox.
@@ -281,25 +280,25 @@ Developer tooling and messaging are available in Chrome and Firefox.
 
 From Chrome 86, the [Issue tab in
 DevTools](https://developers.google.com/web/tools/chrome-devtools/issues) will
-include Schemeful Same-Site issues. You may see the following issues highlighted for
-your site.
+include Schemeful Same-Site issues. You may see the following issues highlighted
+for your site.
 
 Navigation issues:
   - "Migrate entirely to HTTPS to continue having cookies sent on same-site
-    requests"—A warning that the cookie **will be** blocked in a future version of
-    Chrome.
-  - "Migrate entirely to HTTPS to have cookies sent on same-site requests"—A warning 
-    that the cookie **has been** blocked.
+    requests"—A warning that the cookie **will be** blocked in a future version
+    of Chrome.
+  - "Migrate entirely to HTTPS to have cookies sent on same-site requests"—A
+    warning that the cookie **has been** blocked.
 
 Subresource loading issues:
   - "Migrate entirely to HTTPS to continue having cookies sent to same-site
-    subresources" or "Migrate entirely to HTTPS to continue allowing cookies to be set by
-    same-site subresources"—Warnings that the cookie **will be** blocked in a future 
-    version of Chrome.
-  - "Migrate entirely to HTTPS to have cookies sent to same-site subresources" or 
-    "Migrate entirely to HTTPS to allow cookies to be set by same-site subresources"—Warnings that the cookie 
-    **has been** blocked. The latter warning can also appear when POSTing
-    a form.
+    subresources" or "Migrate entirely to HTTPS to continue allowing cookies to
+    be set by same-site subresources"—Warnings that the cookie **will be**
+    blocked in a future version of Chrome.
+  - "Migrate entirely to HTTPS to have cookies sent to same-site subresources"
+    or "Migrate entirely to HTTPS to allow cookies to be set by same-site
+    subresources"—Warnings that the cookie **has been** blocked. The latter
+    warning can also appear when POSTing a form.
 
 More detail is available in [Testing and Debugging Tips for Schemeful
 Same-Site](https://www.chromium.org/updates/schemeful-same-site/testing-and-debugging-tips-for-schemeful-same-site).
@@ -321,9 +320,9 @@ It's possible that some of your links and subresources still point to insecure
 URLs.
 
 One way to fix this issue is to use [HTTP
-Strict-Transport-Security](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) (HSTS)
-and the `includeSubDomain` directive. With HSTS + `includeSubDomain` even if one
-of your pages accidentally includes an insecure link the browser will
+Strict-Transport-Security](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security)
+(HSTS) and the `includeSubDomain` directive. With HSTS + `includeSubDomain` even
+if one of your pages accidentally includes an insecure link the browser will
 automatically use the secure version instead.
 
 ### What if I can't upgrade to HTTPS?
@@ -335,8 +334,8 @@ then [Let's Encrypt](https://letsencrypt.org/) provides a number of tools to
 install and configure a certificate. You can also investigate moving your site
 behind a CDN or other proxy that can provide the HTTPS connection.
 
-If that's still not possible then try relaxing the `SameSite`
-protection on affected cookies.
+If that's still not possible then try relaxing the `SameSite` protection on
+affected cookies.
 
 - In cases where only `SameSite=Strict` cookies are being blocked you can lower
   the protection to `Lax`.
@@ -364,13 +363,13 @@ FAQ](https://www.chromium.org/updates/same-site/faq) for more information.
 WebSocket connections will still be considered same-site if they're the same
 secureness as the page.
 
-For same-site:
-  - `wss://` ↔ `https://`
-  - `ws://` ↔ `http://`
+Same-site:
+  - `wss://` connection from `https://`
+  - `ws://` connection from `http://`
 
-For cross-site:
-  - `wss://` ↔ `http://`
-  - `ws://` ↔ `https://`
+Cross-site:
+  - `wss://` connection from `http://`
+  - `ws://` connection from `https://`
 
 _Photo by [Julissa
 Capdevilla](https://unsplash.com/photos/wNjgWrEXAL0?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
