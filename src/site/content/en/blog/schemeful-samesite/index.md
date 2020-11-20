@@ -321,7 +321,7 @@ It's possible that some of your links and subresources still point to insecure
 URLs.
 
 One way to fix this issue is to use [HTTP
-Strict-Transport-Security](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security)
+Strict-Transport-Security](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) (HSTS)
 and the `includeSubDomain` directive. With HSTS + `includeSubDomain` even if one
 of your pages accidentally includes an insecure link the browser will
 automatically use the secure version instead.
