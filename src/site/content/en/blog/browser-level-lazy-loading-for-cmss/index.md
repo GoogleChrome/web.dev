@@ -18,7 +18,7 @@ tags:
 
 My goal with this post is to persuade CMS platform developers and contributors
 (i.e. the people who develop CMS cores) that
-[now is the time to implement support for the browser-level lazy-loading feature](#the-case-for-implementing-lazy-loading-now).
+[now is the time to implement support for the browser-level image lazy-loading feature](#the-case-for-implementing-lazy-loading-now).
 I'll also share recommendations on how to [ensure high-quality user
 experiences](#user-experience-recommendations) and [enable customization by other
 developers](#technical-recommendations) while implementing lazy-loading. These
@@ -65,7 +65,7 @@ Adoption of non-standardized browser features in CMSs facilitates widespread
 testing and can surface potential areas of improvement. However, the general
 consensus across CMSs is that, as long as a browser feature is not standardized,
 it should preferably be implemented in the form of an extension or plugin for
-the respective platform. Only once standardized a feature can be considered for
+the respective platform. Only once standardized can a feature be considered for
 adoption in the platform core.
 
 {% Aside 'success' %}
@@ -98,8 +98,8 @@ increase the likelihood that an image will not be loaded once it becomes visible
 in the user's viewport because the loading cycle starts at a later stage.
 Contrary to previous JavaScript-based solutions,
 [browsers approach this conservatively](/browser-level-image-lazy-loading/#distance-from-viewport-thresholds)
-and furthermore can fine-tune their approach based on real-world heuristics in
-the field, minimizing the impact, so browser-level lazy-loading should be safe to adopt
+and furthermore can fine-tune their approach based on real-world user experience data,
+minimizing the impact, so browser-level lazy-loading should be safe to adopt
 by CMS platforms.
 
 {% Aside 'success' %}
