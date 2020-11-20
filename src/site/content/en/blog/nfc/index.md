@@ -4,7 +4,7 @@ subhead: Reading and writing to NFC tags is now possible.
 authors:
   - beaufortfrancois
 date: 2020-02-12
-updated: 2020-11-19
+updated: 2020-11-20
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: A photo of NFC tags
@@ -819,7 +819,7 @@ contributors deserve special recognition!
 
 [explainer]: https://github.com/w3c/web-nfc/blob/gh-pages/EXPLAINER.md#web-nfc-explained
 [spec]: https://w3c.github.io/web-nfc/
-[changes]: TODO
+[changes]: https://github.com/w3c/web-nfc/blob/gh-pages/EXPLAINER.md#changes-done-after-origin-trial-ot
 [issues]: https://github.com/w3c/web-nfc/issues
 [demo]: https://web-nfc-demo.glitch.me/
 [demo-source]: https://glitch.com/edit/#!/web-nfc-demo?path=script.js:1:0
