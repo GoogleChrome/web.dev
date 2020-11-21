@@ -7,7 +7,8 @@ scheduled: true
 date: 2020-11-21
 updated: 2020-11-21
 description: Maximize conversions by helping your users complete address and payment forms as quickly and easily as possible.
-hero: hero.jpg
+hero: images/hero.jpg
+thumbnail: images/thumbnail.jpg
 alt: Businessman using a payment card to make a payment on a laptop computer.
 tags:
   - blog
@@ -53,8 +54,8 @@ Here is an example of a simple address form that demonstrates all of the best pr
 ## Checklist
 
 * [Use meaningful HTML elements](#meaningful-html): `<form>`, `<input>`, `<label>`, and `<button>`.
-* [Label each input with a `<label>`](#html-label).
-* Use element attributes to [access built-in browser features](#element-attributes), in particular 
+* [Label each form field with a `<label>`](#html-label).
+* Use HTML element attributes to [access built-in browser features](#html-attributes), in particular 
 [`type`](#type-attribute) and [`autocomplete`](#autocomplete-attribute) with appropriate values.
 * Avoid using `type="number"` for numbers such as payment card numbers that aren't meant to be 
 incremented. Use `type="text"` and [`inputmode="numeric"`](#inputmode-attribute) instead.
@@ -62,14 +63,14 @@ incremented. Use `type="text"` and [`inputmode="numeric"`](#inputmode-attribute)
 `select` or `textarea`, you should use it.
 * To help browsers autofill forms, give input `name` and `id` attributes [stable values](#stable-name-id) 
 that don't change between page loads or website deployments.
-* [Disable submit buttons](#submit-buttons) once they've been tapped or clicked.
+* [Disable submit buttons](#disable-submit) once they've been tapped or clicked.
 * [Validate](#validate) during data entry—not just on form submission.
 * Make [guest checkout](#guest-checkout) the default and make account creation simple once checkout 
 is complete.
 * Show [progress through the checkout process](#checkout-progress) in clear steps with clear calls 
 to action.
 * [Limit potential checkout exit points](#reduce-checkout-exits) by removing clutter and distractions.
-* At checkout [show full order details](#order-control) and make it easy for orders to be adjusted.
+* At checkout [show full order details](#checkout-details) and make it easy for orders to be adjusted.
 * [Don't ask for data you don't need](#unneeded-data).
 * [Ask for names with a single input](#name-inputs) unless you have a good reason not to.
 * [Don't enforce Latin-only characters](#unicode-matching) for names and usernames.
@@ -79,7 +80,7 @@ to action.
 * [Internationalize and localize](#internationalization-localization) where necessary.
 * Consider avoiding [postal code address lookup](#postal-code-address-lookup).
 * Use [appropriate payment card autocomplete values](#payment-form-autocomplete).
-* Use a [single input for payment card numbers](#single-credit-card-input).
+* Use a [single input for payment card numbers](#single-number-input).
 * [Avoid using custom elements](#avoid-custom-elements) if they break the autofill experience.
 * [Test in the field as well as the lab](#analytics-rum): page analytics, interaction analytics, and 
 real-user performance measurement.
@@ -91,7 +92,7 @@ how to implement transactions on your site. To find out more adding payment func
 website on the web, see [Web Payments](/payments).
 {% endAside %}
 
-## Use meaningful HTML {: #meaningful-html }
+## Use meaningful HTML {: #meaningful-html}
 
 Use the elements and attributes built for the job: 
 * `<form>`, `<input>`, `<label>`, and `<button>`
@@ -99,9 +100,9 @@ Use the elements and attributes built for the job:
 
 These enable built-in browser functionality, improve accessibility, and add meaning to your markup.
 
-### Use HTML elements as intended {: #html-elements }
+### Use HTML elements as intended {: #html-elements}
 
-#### Put your form in a &lt;form&gt; {: #html-form }
+#### Put your form in a &lt;form&gt; {: #html-form}
 
 You might be tempted not to bother wrapping your `<input>`s in a `<form>`, and to handle data 
   submission purely with JavaScript. 
@@ -117,7 +118,7 @@ An HTML `<form>` gives you access to a powerful set of built-in features across 
 If you have more than one page component for user input, make sure to put each in its own `<form>` 
   element. For example, if you have search and sign-up on the same page, put each in its own `<form>`.
 
-#### Use `<label>` to label elements {: #html-label }
+#### Use `<label>` to label elements {: #html-label}
 
 To label an `<input>`, `<select>` or `<textarea>`, use a [`<label>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label).
 
@@ -141,7 +142,7 @@ you use the placeholder to show the correct format for values such as dates. Thi
 problematic for users on phones, particularly if they're distracted or feeling stressed! 
 {% endAside %}
 
-#### Make buttons helpful {: #html-button }
+#### Make buttons helpful {: #html-button}
 
 Use [`<button>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
 for buttons! You can also use `<input type="submit">`, but there's no point in using a div or some 
@@ -153,7 +154,9 @@ a descriptive call-to-action that shows progress and makes the next step obvious
 the submit button on your delivery address form **Proceed to Payment** rather than **Continue** 
 or **Save**.
 
-Consider disabling a submit button once the user has tapped or clicked it—especially when they're 
+{: #disable-submit}
+
+Consider disabling a submit button once the user has tapped or clicked it—especially when the user is 
 making payment or placing an order. Many users click buttons repeatedly, even if they're working fine. 
 That can mess up checkout and add to server load. 
 
@@ -165,9 +168,11 @@ the form with invalid data. This is particularly important on mobile, where data
 difficult and missing or invalid form data may not be visible on the user's screen by the time they 
 attempt to submit a form.
 
-### Make the most of HTML attributes {: #html-attributes }
+### Make the most of HTML attributes {: #html-attributes}
 
 #### Make it easy for users to enter data
+
+{: #type-attribute}
 
 Use the appropriate input [`type` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email) 
 to provide the right keyboard on mobile and enable basic built-in validation by the browser. 
@@ -179,6 +184,8 @@ For example, use `type="email"` for email addresses and `type="tel"` for phone n
   for entering an email addresss (using type=email) and for entering a telephone number (with type=tel).">
   <figcaption class="w-figcaption">Keyboards appropriate for email and telephone.</figcaption>
 </figure>
+
+{: #inputmode-attribute}
 
 {% Aside 'warning' %}
 Using type="number" adds an up/down arrow to increment numbers, which makes no sense for data such as 
@@ -192,7 +199,7 @@ numbers. However, `inputmode` is [very widely supported now](https://caniuse.com
 so you shouldn't have to do that, but check your users' browsers.
 {% endAside %}
 
-{: #avoid-custom-elements }
+{: #avoid-custom-elements}
 
 For dates, try to avoid using custom select elements, since they break the autofill experience if not 
 properly implemented, and don't work on older browsers. For numbers such as birth year, consider 
@@ -208,7 +215,7 @@ Try out datalist for `text`, `range` and `color` inputs at [simpl.info/datalist]
 For birth year input, you can compare a select with an input and datalist at [datalist-select.glitch.me](https://datalist-select.glitch.me).
 {% endAside %}
 
-#### Use autocomplete to improve accessibility and help users avoid re-entering data {: #autocomplete-attribute }
+#### Use autocomplete to improve accessibility and help users avoid re-entering data {: #autocomplete-attribute}
 
 Using appropriate `autocomplete` values enables browsers to help users by securely storing data and 
 autofilling `input`, `select` and `textarea` values. This is particularly important on mobile, and 
@@ -217,11 +224,15 @@ crucial for avoiding [high form abandonment rates](https://www.zuko.io/blog/8-su
 If an appropriate autocomplete value is available for a form field, you should use it. [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) has a full list of values and explanations of how to use 
 them correctly.
 
+{: #stable-name-id}
+
 {% Aside %}
 As well as using appropriate autocomplete values, help browsers autofill forms by giving form fields 
 `name` and `id` attributes [stable values](#stable-name-id) that don't change between page loads or 
 website deployments.
 {% endAside %}
+
+{: #billing-address}
 
 By default, set the billing address to be the same as the delivery address. Reduce visual clutter by 
 providing a link to edit the billing address (or use [summary and details elements](https://simpl.info/details/)) 
@@ -243,7 +254,7 @@ if you have different values for inputs with the same name in different sections
 <input autocomplete="billing address-line-1" ...>
 ```
 
-#### Help users enter the right data {: #validation }
+#### Help users enter the right data {: #validation}
 
 Try to avoid 'telling off' customers because they 'did something wrong'. Instead, help users complete 
 forms more quickly and easily by helping them fix problems as they happen. Through the checkout process, 
@@ -288,7 +299,7 @@ On form submission, browsers automatically set focus on fields with problematic 
 values. No JavaScript required! 
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./images/invalid-email.png" alt="Screenshot of a sign-in form in 
+  <img class="w-screenshot" src="images/invalid-email.png" alt="Screenshot of a sign-in form in 
   Chrome on desktop showing browser prompt and focus for an invalid email value." width="500">
   <figcaption class="w-figcaption">Basic built-in validation by the browser.</figcaption>
 </figure>
@@ -312,7 +323,7 @@ back-end securely handles input and output of data from users. Never trust user 
 malicious. Find out more: [OWASP Input Validation Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html).
 {% endAside %}
 
-#### Help users avoid missing required data {: #autocomplete-attribute }
+#### Help users avoid missing required data {: #autocomplete-attribute}
 
 Use the [`required` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required) 
 on inputs for mandatory values.
@@ -325,7 +336,7 @@ JavaScript required!
 Add an asterisk to the label for every required field, and add a note at the start of the form to 
 explain what the asterisk means.
 
-## Simplify checkout {: #checkout-forms }
+## Simplify checkout {: #checkout-forms}
 
 ### Mind the mobile commerce gap! {: #m-commerce-gap}
 
@@ -341,14 +352,14 @@ Most of all, users are more likely to abandon forms that look long, complex and 
 direction—especially on smaller screens and when users are distracted or in a rush. Ask for as 
 little data as possible.
 
-### Make guest checkout the default {: #guest-checkout }
+### Make guest checkout the default {: #guest-checkout}
 
 For an online store, the simplest way to reduce form friction is to make guest checkout the default. 
 Don't force users to create an account before making a purchase. Not allowing guest checkout is cited 
 as a major reason for shopping cart abandonment.
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./images/shopping-cart-abandonment.png" alt="Reasons for shopping 
+  <img class="w-screenshot" src="images/shopping-cart-abandonment.png" alt="Reasons for shopping 
   cart abandonment during checkout.">
   <figcaption class="w-figcaption">From <a href="https://baymard.com/checkout-usability">baymard.com/checkout-usability</a></figcaption>
 </figure>
@@ -361,7 +372,7 @@ If you do offer sign-up after checkout, make sure that the purchase the user jus
 their newly created account!
 {% endAside %}
 
-### Show checkout progress  {: #checkout-progress }
+### Show checkout progress  {: #checkout-progress}
 
 You can make your checkout process feel less complex by showing progress and making it clear what 
 needs to be done next. 
@@ -392,7 +403,7 @@ example, use `enterkeyhint="previous"` and `enterkeyhint="next"` within a multi-
 input. 
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./images/enterkeyhint.png" alt="Two screenshots of an address form 
+  <img class="w-screenshot" src="images/enterkeyhint.png" alt="Two screenshots of an address form 
   on Android showing how the enterkeyhint input attribute changes the enter key button icon.">
   <figcaption class="w-figcaption">Enter key buttons on Android: 'next' and 'done'.</figcaption>
 </figure>
@@ -400,18 +411,20 @@ input.
 The `enterkeyhint` attribute is [supported on Android and iOS](https://caniuse.com/mdn-html_global_attributes_enterkeyhint). 
 You can find out more from the [enterkeyhint explainer](https://github.com/dtapuska/enterkeyhint).
 
+{: #checkout-details}
+
 Make it easy for users to go back and forth within the checkout process, to easily adjust 
 their order, even when they're at the final payment step. Show full details of the order, not just 
 a limited summary. Enable users to easily adjust item quantities from the payment page. Your priority at checkout is to 
 avoid interrupting progress towards conversion.
 
-### Remove distractions  {: #reduce-checkout-exits}
+### Remove distractions {: #reduce-checkout-exits}
 
 Limit potential exit points by removing visual clutter and distractions such as product promotions. 
 Many successful retailers even remove navigation and search from checkout. 
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./images/remove-distractions.png" alt="Two screenshots on mobile 
+  <img class="w-screenshot" src="images/remove-distractions.png" alt="Two screenshots on mobile 
   showing progress through johnlewis.com checkout. Search, navigation and other distractions are 
   removed.">
   <figcaption class="w-figcaption">Search, navigation and other distractions removed for checkout.</figcaption>
@@ -420,7 +433,7 @@ Many successful retailers even remove navigation and search from checkout.
 Keep the journey focused. This is not the time to tempt users to do something else! 
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./images/free-stickers.jpg" alt="Screenshot of checkout page on 
+  <img class="w-screenshot" src="images/free-stickers.jpg" alt="Screenshot of checkout page on 
   mobile showing distracting promotion for FREE STICKERS." width="350">
   <figcaption class="w-figcaption">Don't distract customers from completing their purchase.</figcaption>
 </figure>
@@ -430,7 +443,7 @@ see. For example: display the delivery address in plain text (not in a form) and
 change it via a link. 
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./images/returning-user.png" alt="Screenshot of 'Review order' 
+  <img class="w-screenshot" src="images/returning-user.png" alt="Screenshot of 'Review order' 
   section of checkout page, showing text in plain text, with links to change delivery address, 
   payment method and billing address, which are not displayed." width="450">
   <figcaption class="w-figcaption">Hide data customers don't need to see.</figcaption>
@@ -627,13 +640,13 @@ and enter their complete address filled with a single tap or click.
 </figure>
 
 * Use [appropriate payment card autocomplete values](#payment-form-autocomplete).
-* Use a [single input for payment card numbers](#single-credit-card-input).
+* Use a [single input for payment card numbers](#single-number-input).
 * [Avoid using custom elements](#avoid-custom-elements) that break the autofill experience.
 * [Test in the field as well as the lab](#analytics-rum): page analytics, interaction analytics, and 
 real-user performance measurement.
 * [Test across browsers, devices and platforms](#test-platforms). 
 
-## Simplify payment forms {: #general-guidelines }
+## Simplify payment forms {: #general-guidelines}
 
 Payment forms are the single most critical part of the checkout process. Poor payment form design is 
 a [common cause of shopping cart abandonment](https://www.comscore.com/Insights/Presentations-and-Whitepapers/2017/Mobiles-Hierarchy-of-Needs). The [devil's in the details](https://en.wikipedia.org/wiki/The_devil_is_in_the_detail#cite_note-Titelman-1): small 
@@ -666,12 +679,12 @@ physical payment card to look up an expiry date, you're likely to lose a sale. U
 elements instead, and style them accordingly.
 
 <figure class="w-figure">
-  <img src="./images/custom-element-date-glitch.jpg" alt="Screenshot of payment 
+  <img src="images/custom-element-date-glitch.jpg" alt="Screenshot of payment 
   form showing custom elements for card expiry date that interrupt autofill.">
   <figcaption class="w-figcaption">Autocomplete filled all the fields—except the expiry date!</figcaption>
 </figure>
 
-### Use a single input for payment card and other numbers
+### Use a single input for payment card and phone numbers {: #single-number-input}
 
 For payment card and phone numbers use a single input: don't split the number into parts. That makes 
 it easier for users to enter data, makes validation simpler, and enables browsers to autofill. 
@@ -683,7 +696,7 @@ Consider doing the same for other numeric data such as PIN and bank codes.
   <figcaption class="w-figcaption">Don't use multiple inputs for a credit card number.</figcaption>
 </figure>
 
-### Validate carefully
+### Validate carefully {: #validate}
 
 You should validate data entry both in realtime and before form submission. One way to do this is by 
 adding a `pattern` attribute to a payment card input. If the user attempts to submit the payment form 
@@ -713,7 +726,7 @@ You can find out better ways to enable one-time passcodes from our article [SMS 
 {% endAside %}
 
 
-## Test on a range of devices, platforms, browsers and versions {: #test-platforms }
+## Test on a range of devices, platforms, browsers and versions {: #test-platforms}
 
 It's particularly important to test address and payment forms on the platforms most common for 
 your users, since form element functionality and appearance may vary, and differences in viewport 
@@ -727,7 +740,7 @@ size can lead to problematic positioning. BrowserStack enables [free testing for
 </figure>
 
 
-## Implement analytics and RUM {: #analytics }
+## Implement analytics and RUM {: #analytics-rum}
 
 Testing usability and performance locally can be helpful, but you need real-world data to properly 
 understand how users experience your payment and address forms. 
@@ -750,7 +763,7 @@ improves conversions.
 That, in turn, gives you a solid basis for prioritizing effort, making changes and rewarding success.
 
 
-## Keep learning {: #resources }
+## Keep learning {: #resources}
 
 * [Create Amazing Forms](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
 * [Best Practices For Mobile Form Design](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
