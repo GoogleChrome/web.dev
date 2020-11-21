@@ -4,8 +4,8 @@ subhead: Maximize conversions by helping your users complete address and payment
 authors:
   - samdutton
 scheduled: true
-date: 2020-11-16
-updated: 2020-11-16
+date: 2020-11-21
+updated: 2020-11-21
 description: Maximize conversions by helping your users complete address and payment forms as quickly and easily as possible.
 hero: hero.jpg
 alt: Businessman using a payment card to make a payment on a laptop computer.
@@ -289,7 +289,7 @@ values. No JavaScript required!
 
 <figure class="w-figure">
   <img class="w-screenshot" src="./images/invalid-email.png" alt="Screenshot of a sign-in form in 
-  Chrome on desktop showing browser prompt and focus for an invalid email value.">
+  Chrome on desktop showing browser prompt and focus for an invalid email value." width="500">
   <figcaption class="w-figcaption">Basic built-in validation by the browser.</figcaption>
 </figure>
 
@@ -722,8 +722,8 @@ size can lead to problematic positioning. BrowserStack enables [free testing for
 <figure class="w-figure">
   <img src="images/browserstack.jpg" alt="Screenshots of a payment form, payment-form.glitch.me, on 
   iPhone 7 and 11. The Complete Payment button is shown on iPhone 11 but not 7">
-  <figcaption class="w-figcaption">You might want to reduce padding so the <strong>Complete 
-  payment</strong> button isn't hidden.</figcaption>
+  <figcaption class="w-figcaption">The same page on iPhone 7 and iPhone 11.<br>Reduce padding to 
+    ensure the <strong>Complete payment</strong> button isn't hidden.</figcaption>
 </figure>
 
 
