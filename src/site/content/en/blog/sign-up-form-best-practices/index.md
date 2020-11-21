@@ -4,10 +4,11 @@ subhead: Help your users sign up, log in and manage their account details with a
 authors:
   - samdutton
 scheduled: true
-date: 2020-11-06
-updated: 2020-11-06
+date: 2020-11-23
+updated: 2020-11-23
 description: Help your users sign up, log in and manage their account details with a minimum of fuss.
-hero: hero.jpg
+hero: images/hero.jpg
+thumbnail: images/thumbnail.jpg
 alt: Clipboard with handwritten page showing list of vegetables sown.
 tags:
   - blog
