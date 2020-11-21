@@ -39,7 +39,7 @@ web-header {
 
     // sass-lint:disable class-name-format
     &.unresolved {
-      display: inline-block;  // override default .unresolved behavior
+      display: flex;  // override default .unresolved behavior
       visibility: hidden;
     }
     // sass-lint:enable class-name-format

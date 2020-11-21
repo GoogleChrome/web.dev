@@ -15,6 +15,22 @@
       "en": "Human boy working on web standards at Google"
     }
   },
+  "felixarntz": {
+    "name": {
+      "given": "Felix",
+      "family": "Arntz"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Developer Relations"
+    },
+    "country": "US",
+    "homepage": "https://felix-arntz.me",
+    "twitter": "felixarntz",
+    "description": {
+      "en": "Developer Programs Engineer at Google, contributing to the CMS ecosystem"
+    }
+  },
   "kaycebasques": {
     "name": {
       "given": "Kayce",
@@ -1575,6 +1591,22 @@
       "family": "Gaunt"
     }
   },
+  "nateschloss": {
+    "name": {
+      "given": "Nate",
+      "family": "Schloss"
+    },
+    "github": "n8schloss",
+    "twitter": "n8schloss"
+  },
+  "andrewcomminos": {
+    "name": {
+      "given": "Andrew",
+      "family": "Comminos"
+    },
+    "github": "acomminos",
+    "twitter": "acomminos"
+  },
   "bingler": {
     "name": {
       "given": "Steven",
@@ -1585,7 +1617,7 @@
       "unit": "Chrome"
     },
     "descriptions": {
-      "en": "Software engineer on Chrome's improvements to anti-covert tracking efforts."
+      "en": "Software engineer on Chrome's Privacy Sandbox."
     },
     "country": "US",
     "github": "sbingler"
