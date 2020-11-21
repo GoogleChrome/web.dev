@@ -164,7 +164,7 @@ In browsers that support the Page Lifecycle API, the `resume` event will also
 fire when pages are restored from bfcache (immediately before the `pageshow`
 event), though it will also fire when a user revisits a frozen background tab.
 If you want to restore a page's state after it's frozen (which includes pages in
-the bfcache), you can use the `freeze` event, but if you want to measure your
+the bfcache), you can use the `resume` event, but if you want to measure your
 site's bfcache hit rate, you'd need to use the `pageshow` event. In some cases,
 you might need to use both.
 
