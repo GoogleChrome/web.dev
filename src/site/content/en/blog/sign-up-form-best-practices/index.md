@@ -32,13 +32,13 @@ opportunity.
 
 {% Aside 'codelab' %}
   If you would prefer to learn these best practices with a hands-on tutorial,
-  check out the [Sign-up form best practices codelab](/codelab-sign-up-form-best-practices/).
+  check out the [Sign-up form best practices codelab](/codelab-sign-up-form-best-practices).
 {% endAside %}
 
-Here is an example of a simple sign-up form that demonstrates all of the best practices:
+Here is an example of a very simple sign-up form that demonstrates all of the best practices:
 
 {% Glitch {
-  id: 'sign-up-form',
+  id: 'signup-form',
   path: 'index.html',
   height: 480
 } %}
@@ -50,11 +50,14 @@ Here is an example of a simple sign-up form that demonstrates all of the best pr
 
 
 {% Aside %}
-This article is about frontend best practices. It does not explain how to build
+This post is about form best practices. It does not explain how to build
 backend services to authenticate users, store their credentials, or manage their
 accounts. [12 best practices for user account, authorization and password
 management](https://cloud.google.com/blog/products/gcp/12-best-practices-for-user-account)
-outlines core back-end principles for managing user accounts
+outlines core back-end principles for managing user accounts.
+
+This post also doesn't explain how to provide sign-up via an identity provider, though (as explained 
+below) you should do that for your site.
 {% endAside %}
 
 ## XXXXXXXX {: #xxxxx-xxxx-xxxx }
