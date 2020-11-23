@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: Async Clipboard API simplifies permissions-friendly copy and paste.
 date: 2020-07-31
-updated: 2020-11-03
+updated: 2020-11-16
 tags:
   - blog
   - capabilities
@@ -376,7 +376,7 @@ The first example demonstrates moving text on and off the clipboard.
 
 <div class="glitch-embed-wrap" style="height: 500px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/async-clipboard-text?previewSize=100"
+    src="https://async-clipboard-text.glitch.me/"
     title="async-clipboard-text on Glitch"
     allow="clipboard-read; clipboard-write"
     style="height: 100%; width: 100%; border: 0;">
@@ -389,9 +389,9 @@ and only in
 
 <div class="glitch-embed-wrap" style="height: 500px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/async-clipboard-api?previewSize=100"
+    src="https://async-clipboard-api.glitch.me/"
     title="async-clipboard-api on Glitch"
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media; clipboard-read; clipboard-write"
+    allow="clipboard-read; clipboard-write"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>

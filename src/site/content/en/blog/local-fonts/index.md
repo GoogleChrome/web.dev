@@ -14,7 +14,7 @@ description: >
   fonts and provides low-level access to the various
   TrueType/OpenType tables.
 date: 2020-08-24
-updated: 2020-10-28
+updated: 2020-11-19
 hero: hero.jpg
 alt: Page of a font book.
 feedback:
@@ -325,7 +325,7 @@ File a spec issue on the corresponding [GitHub repo][issues], or add your though
 ### Report a problem with the implementation
 
 Did you find a bug with Chrome's implementation? Or is the implementation different from the spec?
-File a bug at [new.crbug.com](https://new.crbug.com). Be sure to include as much detail as you can, simple instructions for reproducing, and enter `Blink>Fonts` in the **Components** box. [Glitch](https://glitch.com/) works great for sharing quick and easy repros.
+File a bug at [new.crbug.com](https://new.crbug.com). Be sure to include as much detail as you can, simple instructions for reproducing, and enter `Blink>Storage>FontAccess` in the **Components** box. [Glitch](https://glitch.com/) works great for sharing quick and easy repros.
 
 ### Show support for the API
 
