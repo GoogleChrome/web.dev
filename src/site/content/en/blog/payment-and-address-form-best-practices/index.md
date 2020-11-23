@@ -72,7 +72,7 @@ to action.
 * [Limit potential checkout exit points](#reduce-checkout-exits) by removing clutter and distractions.
 * At checkout [show full order details](#checkout-details) and make it easy for orders to be adjusted.
 * [Don't ask for data you don't need](#unneeded-data).
-* [Ask for names with a single input](#name-inputs) unless you have a good reason not to.
+* [Ask for names with a single input](#single-name-input) unless you have a good reason not to.
 * [Don't enforce Latin-only characters](#unicode-matching) for names and usernames.
 * [Allow for a variety of address formats](#address-variety).
 * Consider using a [single textarea for address](#address-textarea).
@@ -456,15 +456,16 @@ Before you start coding your name and address forms, make sure to understand wha
 Don't ask for data you don't need! The simplest way to reduce form complexity is to remove unnecessary 
 fields. That's also good for customer privacy and can reduce back-end data cost and liability.
 
-### Use a single name input
+### Use a single name input {: #single-name-input}
 
-Allow your users to enter their name using a single input, unless you have a business reason for 
-separately storing given names, family names, honorifics or other name parts.
-
-Using a single name input makes forms less complex, enables cut-and-paste, and makes autofill simpler.
+Allow your users to enter their name using a single input, unless you have a good reason for 
+separately storing given names, family names, honorifics or other name parts. Using a single name 
+input makes forms less complex, enables cut-and-paste, and makes autofill simpler.
 
 In particular, unless you have good reason not to, don't bother adding a separate input for a 
-prefix/title (like Mrs, Dr or Lord). Users can type that in with their name if they want to.
+prefix/title (like Mrs, Dr or Lord). Users can type that in with their name if they want to. Also, 
+`honorific-prefix` autocomplete currently doesn't work in most browsers, and so adding a field for 
+name prefix/title will break the address form autofill experience for most users.
 
 ### Enable name autofill
 
@@ -764,11 +765,14 @@ That, in turn, gives you a solid basis for prioritizing effort, making changes a
 
 ## Keep learning {: #resources}
 
+* [Sign-in form best practices](/sign-in-form-best-practices)
+* [Sign-up form best practices](/sign-up-form-best-practices)
+* [Verify phone numbers on the web with the Web OTP API](/web-otp)
 * [Create Amazing Forms](https://developers.google.com/web/fundamentals/design-and-ux/input/forms)
 * [Best Practices For Mobile Form Design](https://www.smashingmagazine.com/2018/08/best-practices-for-mobile-form-design/)
 * [More capable form controls](/more-capable-form-controls)
 * [Creating Accessible Forms](https://webaim.org/techniques/forms/)
 * [Streamlining the Sign-up Flow Using Credential Management API](https://developers.google.com/web/updates/2016/04/credential-management-api)
-* [Verify phone numbers on the web with the Web OTP API](https://web.dev/web-otp/)
+
 
 Photo by [@rupixen](https://unsplash.com/@rupixen) on [Unsplash](https://unsplash.com/photos/Q59HmzK38eQ).
