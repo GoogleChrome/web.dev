@@ -50,23 +50,26 @@ Here is an example of a very simple sign-up form that demonstrates all of the be
 * [Make it obvious how to access account details](#obvious-account-details).
 * [Cut form clutter](#cut-clutter).
 * [Consider session length](#session-length).
-* Code your forms to [help password managers securely suggest and store passwords](#help-password-managers).
+* [Help password managers securely suggest and store passwords](#help-password-managers).
 * [Don't allow compromised passwords](#no-compromised-passwords).
 * [Do allow password pasting](#allow-password-pasting).
 * [Never store or transmit passwords in plain text](#salt-and-hash).
 * [Don't force password updates](#no-forced-password-updates)
 * [Make it simple to change or reset passwords](#password-change).
+* [Enable federated login](#federated-login).
+* [Make account switching simple](#account-switching).
 * [Consider offering multi-factor authentication](#multi-factor-authentication).
 * [Take care with usernames](#username).
-* [Test in the field as well as the lab](#analytics-rum): page analytics, interaction analytics, and 
-real-user performance measurement.
+* [Test in the field as well as the lab](#analytics-rum).
 * [Test on a range of browsers, devices and platforms](#test-platforms).
 
 {% Aside %}
-This post is about *form* best practices. It does not explain how to implement sign-up via a third-party 
+This post is about form best practices. 
+
+It does not explain how to implement sign-up via a third-party 
 identity provider (federated login) or show how to build backend services to authenticate users, store 
-credentials, and manage accounts. [Integrating Google Sign-In into your web app](https://developers.google.com/identity/sign-in/web/sign-in) explains how to use federated login for your site, and 
-[12 best practices for user account, authorization and password management](https://cloud.google.com/blog/products/gcp/12-best-practices-for-user-account) outlines core back-end principles for managing user accounts. 
+credentials, and manage accounts. [Integrating Google Sign-In into your web app](https://developers.google.com/identity/sign-in/web/sign-in) explains how to add federated login to your sign-up options. [12 best practices for user 
+account, authorization and password management](https://cloud.google.com/blog/products/gcp/12-best-practices-for-user-account) outlines core back-end principles for managing user accounts. 
 {% endAside %}
 
 ## Avoid sign-up if you can {: #no-forced-sign-in }
@@ -82,18 +85,16 @@ of data you store carries privacy and security 'data debt', becoming a liability
 your site. 
 
 If you just need to save information for a user between navigations or browsing sessions, 
-[consider using client-side storage](web.dev/storage-for-the-web
-) instead of forcing them to create an account. For shopping sites, forcing users to create an 
-account to make a purchase is cited as a major reason for shopping cart abandonment. You should 
+[consider using client-side storage](/storage-for-the-web) instead of forcing them to 
+create an account. For shopping sites, forcing users to create an account to make a purchase 
+is cited as a major reason for shopping cart abandonment. You should 
 [make guest checkout the default](/payment-and-address-form-best-practices#guest-checkout).
 
-## Make it obvious how to create an account {: #obvious-account-creation}
+## Make sign-up obvious {: #obvious-account-creation}
 
-Make sign-up UI obvious. A **Login** or **Sign in** button at the top right of the page is the norm. 
-Avoid using an ambiguous icon or vague wording ('Get on board!') and don't relegate login to a 
-navigational menu. 
-
-[Don't make me think!](https://uxplanet.org/dont-make-me-think-20-wise-thoughts-about-usability-from-steve-krug-876b563f1d63).
+Make it obvious to users how to create an account on your site. A **Login** or **Sign in** button 
+at the top right of the page is the norm. Avoid using an ambiguous icon or vague wording ('Get on 
+board!', 'Join us') and don't relegate login to a navigational menu. [Don't make me think!](https://uxplanet.org/dont-make-me-think-20-wise-thoughts-about-usability-from-steve-krug-876b563f1d63)
 
 <figure class="w-figure">
   <img src="images/obvious-sign-in.png" alt="Two screenshots of a mockup 
@@ -206,7 +207,7 @@ Enabling password managers to suggest passwords is the best option, and you shou
 users to use the strong passwords suggested by browsers and third-party browser managers. 
 
 However, many users want to enter their own passwords, so you need to implement rules for password 
-strength. The [US National Institute of Standards and Technology](https://pages.nist.gov/800-63-3/sp800-63b.html#5-authenticator-and-verifier-requirements) explains 
+strength. [The US National Institute of Standards and Technology](https://pages.nist.gov/800-63-3/sp800-63b.html#5-authenticator-and-verifier-requirements) explains 
 how to avoid insecure passwords.
 
 {% Aside 'warning' %}
@@ -221,7 +222,7 @@ Whatever rules you choose for passwords, you should never allow passwords that h
 security breaches](https://haveibeenpwned.com/PwnedWebsites).
 
 Once a user has entered a password, you need to check that it's not a password that's already been 
-compromised. The site [Have I Been Pwned](haveibeenpwned.com/Passwords) provides an API for password 
+compromised. The site [Have I Been Pwned](https://haveibeenpwned.com/Passwords) provides an API for password 
 checking, or you can run this as a service yourself.
 
 Chrome Password Manager also allows you to [check if any of your existing passwords have been 
@@ -258,7 +259,7 @@ Make sure to [salt and hash](https://cheatsheetseries.owasp.org/cheatsheets/Pass
 [Don't force users to update their passwords arbitrarily.](https://pages.nist.gov/800-63-3/sp800-63b.html#-5112-memorized-secret-verifiers:~:text=Verifiers%20SHOULD%20NOT%20require%20memorized%20secrets%20to%20be%20changed%20arbitrarily%20(e.g.%2C%20periodically).)
 
 Forcing users to update their password can be costly for IT departments, annoying to users, and 
-[doesn't have much impact on security](https://pages.nist.gov/800-63-FAQ/#authentication:~:text=A%2DB05). 
+[doesn't have much impact on security](https://pages.nist.gov/800-63-FAQ/#q-b05). 
 It's also likely to encourage people to use insecure memorable passwords, or to keep a physical 
 record of passwords. 
 
@@ -269,7 +270,7 @@ You should also provide your users with access to their account login history, s
 and when a login happened. 
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="images/gmail-activity.png" alt="Gmail account activity page">
+  <img src="images/gmail-activity.png" alt="Gmail account activity page">
   <figcaption class="w-figcaption"><a href="https://support.google.com/mail/answer/45938?hl=en-GB" 
     title="Find out how to view Gmail account activity.">Gmail account activity page</a>.</figcaption>
 </figure>
@@ -293,6 +294,48 @@ passwords](/change-password-url) explains how to implement this.
 
 You should also make it simple for users to delete their account if that's what they want.
 
+## Offer login via third-party identity providers {: #federated-login}
+
+Many users prefer to log in to websites using an email address and password.
+
+However, you should also enable users to log in via a third party identity provider, also known as 
+federated login.
+
+<figure class="w-figure">
+  <img src="images/federated-login.png" alt="WordPress login page">
+  <figcaption class="w-figcaption">WordPress login page, with Google and Apple login options.</figcaption>
+</figure>
+
+This approach has several advantages. For users who create an account using federated login, you 
+don't need to ask for, communicate or store passwords. 
+
+You may also be able to access additional verified profile information from federated login, such 
+as an email address—which means the user doesn't have to enter that data and you don't need to do 
+the verification yourself. Federated login can also make it much easier for users when they get a 
+new device.
+
+[Integrating Google Sign-In into your web app](https://developers.google.com/identity/sign-in/web/sign-in) 
+explains how to add federated login to your sign-up options. [Many other](https://en.wikipedia.org/wiki/Federated_identity#Examples) identity platforms are available.
+
+{% Aside %}
+**'First day experience'** is increasingly important since many users now expect to log in from 
+multiple devices including their phone, laptop, desktop, tablet, TV, or from a car. If your sign-up 
+and sign-in forms aren't seamless, this is a moment where you risk losing users, or at least losing 
+contact with them until they get set up again. You need to make it as quick and easy as possible for 
+users on new devices to get up and running on your site, This is another area where federated login 
+can help. 
+{% endAside %}
+
+## Make account switching simple {: #account-switching}
+
+Many users share devices and swap between accounts using the same browser. Whether users access 
+federated login or not, you should make account switching simple. 
+
+<figure class="w-figure">
+  <img src="images/gmail-account-switching.png" alt="Gmail, showing account switching">
+  <figcaption class="w-figcaption">Account switching on Gmail.</figcaption>
+</figure>
+
 ## Consider offering multi-factor authentication {: #multi-factor-authentication}
 
 'Multi-factor authentication' means requiring users to provide authentication in more than one way. 
@@ -307,14 +350,15 @@ sensitive information.
 
 ## Take care with usernames {: #username}
 
-Don't insist on a username unless (or until) you need one. For example, enable a user to sign up and 
-sign in with only an email address and password (and/or [federated login](#federated-login)) without 
-having to enter a username. 
+Don't insist on a username unless (or until you need one. Enable users to sign up and sign in with 
+only an email address (or telephone number) and password—or [federated login](#federated-login) 
+if they prefer—without forcing them to choose and remember a username. 
 
-If your site does require usernames, don't impose unreasonable rules on them, and allow users to 
-update their username as they would for other personal information. On your backend you should 
-provide a unique ID for every user account, not an identifier based on personal data such as 
-username.
+If your site does require usernames, don't impose unreasonable rules on them, and don't stop users 
+from updating their username. On your backend you should provide a unique ID for every user account, 
+not an identifier based on personal data such as username.
+
+Also make sure to use `autocomplete="username"` for usernames.
 
 {% Aside 'caution' %}
 As with personal names, ensure that usernames aren't restricted to characters from the [Latin 
@@ -324,22 +368,14 @@ explains how and why to validate using Unicode letter matching.
 
 ## Test on a range of devices, platforms, browsers and versions {: #test-platforms}
 
-It's particularly important to test address and payment forms on the platforms most common for 
-your users, since form element functionality and appearance may vary, and differences in viewport 
-size can lead to problematic positioning. BrowserStack enables [free testing for open source projects](https://www.browserstack.com/open-source) on a range of devices and browsers.
-
-<figure class="w-figure">
-  <img src="images/browserstack.jpg" alt="Screenshots of a payment form, payment-form.glitch.me, on 
-  iPhone 7 and 11. The Complete Payment button is shown on iPhone 11 but not 7">
-  <figcaption class="w-figcaption">The same page on iPhone 7 and iPhone 11.<br>Reduce padding to 
-    ensure the <strong>Complete payment</strong> button isn't hidden.</figcaption>
-</figure>
-
+Test sign-up forms on the platforms most common for your users. Form element functionality may vary, 
+and differences in viewport size can cause layout problems. BrowserStack enables [free testing for 
+open source projects](https://www.browserstack.com/open-source) on a range of devices and browsers.
 
 ## Implement analytics and Real User Monitoring {: #analytics-rum}
 
 You need [field data as well as lab data](https://web.dev/how-to-measure-speed/#lab-data-vs-field-data) 
-to understand how users experience your sign-up forms. Analytics and [Real User Monitoring](https://developer.mozilla.org/en-US/docs/Web/Performance/Rum-vs-Synthetic#:~:text=Real%20User%20Monitoring%20or%20RUM,an%20application's%20actual%20user%20interactions.) 
+to understand how users experience your sign-up forms. Analytics and [Real User Monitoring](https://developer.mozilla.org/en-US/docs/Web/Performance/Rum-vs-Synthetic#Real_User_Monitoring) 
 (RUM) provide data for the actual experience of your users, such as how long sign-up pages take to 
 load, which UI components users interact with (or not) and how long it takes users to complete 
 sign-up.
