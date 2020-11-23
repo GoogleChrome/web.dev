@@ -375,9 +375,8 @@ their newly created account!
 ### Show checkout progress  {: #checkout-progress}
 
 You can make your checkout process feel less complex by showing progress and making it clear what 
-needs to be done next. 
-
-The video below shows how UK retailer [johnlewis.com](https://www.johnlewis.com) do it.
+needs to be done next. The video below shows how UK retailer [johnlewis.com](https://www.johnlewis.com) 
+show checkout progress.
 
 <figure class="w-figure">
    <video controls autoplay loop muted class="w-screenshot">
