@@ -745,7 +745,7 @@ size can lead to problematic positioning. BrowserStack enables [free testing for
 Testing usability and performance locally can be helpful, but you need real-world data to properly 
 understand how users experience your payment and address forms. 
 
-For that you need analytics and Real User Measurement: data for the experience of actual users, such 
+For that you need analytics and Real User Monitoring: data for the experience of actual users, such 
 as how long checkout pages take to load or how long payment takes to complete:
 
 * **Page analytics**: page views, bounce rates and exits for every page with a form.
