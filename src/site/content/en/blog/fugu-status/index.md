@@ -1,8 +1,8 @@
 ---
 title: New capabilities status
-subhead: Web apps should be able to do anything iOS/Android/desktop apps can. Google wants to make it possible for you to build and deliver apps on the open web that have never been possible before.
+subhead: Web apps should be able to do anything iOS/Android/desktop apps can. The members of the cross-company capabilities project want to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2020-10-05
+updated: 2020-11-19
 tags:
   - blog
   - capabilities
@@ -13,8 +13,8 @@ This is a living document and will be updated as features move between
 states.
 {% endAside %}
 
-The [capabilities project][capabilities-project] is a cross-company effort at Google
-to make it possible for web apps to do anything iOS/Android/desktop apps can, by exposing the
+The [capabilities project][capabilities-project] is a cross-company effort with the objective of
+making it possible for web apps to do anything iOS/Android/desktop apps can, by exposing the
 capabilities of these platforms to the web platform, while maintaining user
 security, privacy, trust, and other core tenets of the web.
 
@@ -346,7 +346,7 @@ latest version of Chrome, and in many cases other Chromium based browsers.
 
 ## Suggest a new capability {: #suggest-new }
 
-Do you have a suggestion for a capability you think Chrome should consider?
+Do you have a suggestion for a capability you think Chromium should consider?
 Tell us about it by filing a [new feature request](https://goo.gl/qWhHXU).
 Please be sure to include as much detail as you can, such as
 the problem you're trying to solve, suggested use cases, and anything else
