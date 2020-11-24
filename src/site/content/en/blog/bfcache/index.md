@@ -152,7 +152,7 @@ to distinguish regular page loads from bfcache restores. For example:
 
 ```js
 window.addEventListener('pageshow', function(event) {
-  if (event.persisted === true) {
+  if (event.persisted) {
     console.log('This page was restored from the bfcache.');
   } else {
     console.log('This page was loaded normally.');
