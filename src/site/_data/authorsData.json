@@ -15,6 +15,23 @@
       "en": "Human boy working on web standards at Google"
     }
   },
+  "aaronkrajeski": {
+    "name": {
+      "given": "Aaron",
+      "family": "Krajeski"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Chrome"
+    },
+    "country": "Canada",
+    "homepage": "http://aaronk.is//",
+    "twitter": "_mysteryDate",
+    "github": "mysteryDate",
+    "descriptions": {
+      "en": "Overly concerned with glowing rectangles"
+    }
+  },
   "felixarntz": {
     "name": {
       "given": "Felix",
