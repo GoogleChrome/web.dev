@@ -262,10 +262,10 @@ Examples:
 * [`content-visibility`](/content-visibility/#support)
 
 {% Aside %}
-  Rationale: We know from the [MDN Developer Needs Assessment 2019 
+  Rationale: We know from the [MDN Developer Needs Assessment 2019
   Report](https://mdn-web-dna.s3-us-west-2.amazonaws.com/MDN-Web-DNA-Report-2019.pdf#page=20)
   that browser compatibility is a top concern (items 1, 3, 4, 5). Non-public Google research
-  has corrobated these findings. Therefore, if a feature/API is not well supported, we
+  has corroborated these findings. Therefore, if a feature/API is not well supported, we
   must respect the user's time and make that fact known upfront. And if the API is
   well supported, then it is reasonable to assume that explicitly mentioning that fact
   will make the feature/API more attractive.

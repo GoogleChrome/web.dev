@@ -134,7 +134,7 @@ A
 [dynamic import](https://developers.google.com/web/updates/2017/11/dynamic-import)
 is used here to only load the library when it is not in production mode before
 rendering and booting up the root `App` component. This ensures that it is not
-unecessarily included in the final production bundle.
+unnecessarily included in the final production bundle.
 
 Now when you run the application during development, issues are surfaced
 directly to the Chrome DevTools console.

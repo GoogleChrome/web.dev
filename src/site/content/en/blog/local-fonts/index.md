@@ -14,11 +14,13 @@ description: >
   fonts and provides low-level access to the various
   TrueType/OpenType tables.
 date: 2020-08-24
-# updated:
+updated: 2020-11-19
 hero: hero.jpg
 alt: Page of a font book.
 feedback:
   - api
+origin_trial:
+  url: https://developers.chrome.com/origintrials/#/view_trial/-7289075996899147775  
 ---
 
 {% Aside %}
@@ -128,7 +130,7 @@ The Local Font Access API is an attempt at solving these challenges. It consists
 | 1. Create explainer                        | [Complete][explainer]        |
 | 2. Create initial draft of specification   | [In progress][spec]          |
 | 3. Gather feedback & iterate on design     | [In progress](#feedback)     |
-| 4. Origin trial                            | Not started                  |
+| **4. Origin trial**                        | **[In progress](https://developers.chrome.com/origintrials/#/view_trial/-7289075996899147775)**      |
 | 5. Launch                                  | Not started                  |
 
 </div>
@@ -138,6 +140,15 @@ The Local Font Access API is an attempt at solving these challenges. It consists
 #### Enabling via chrome://flags
 
 To experiment with the Local Font Access API locally, enable the `#font-access` flag in `chrome://flags`.
+
+### Enabling support during the origin trial phase
+Starting in Chrome 87, the Local Font Access API will be available as an origin trial in Chrome. The origin trial is expected to end in Chrome 89 (April 7, 2021).
+
+{% include 'content/origin-trials.njk' %}
+
+### Register for the origin trial {: #register-for-ot }
+
+{% include 'content/origin-trial-register.njk' %}
 
 #### Feature detection
 
@@ -314,7 +325,7 @@ File a spec issue on the corresponding [GitHub repo][issues], or add your though
 ### Report a problem with the implementation
 
 Did you find a bug with Chrome's implementation? Or is the implementation different from the spec?
-File a bug at [new.crbug.com](https://new.crbug.com). Be sure to include as much detail as you can, simple instructions for reproducing, and enter `Blink>Fonts` in the **Components** box. [Glitch](https://glitch.com/) works great for sharing quick and easy repros.
+File a bug at [new.crbug.com](https://new.crbug.com). Be sure to include as much detail as you can, simple instructions for reproducing, and enter `Blink>Storage>FontAccess` in the **Components** box. [Glitch](https://glitch.com/) works great for sharing quick and easy repros.
 
 ### Show support for the API
 
@@ -332,6 +343,7 @@ Send a Tweet to [@ChromiumDev][cr-dev-twitter] with the `#LocalFontAccess` hasht
 - [GitHub repo][issues]
 - [TAG review][tag-review]
 - [Mozilla standards position][mozilla]
+- [Origin Trial](https://developers.chrome.com/origintrials/#/view_trial/-7289075996899147775)
 
 ## Acknowledgements
 

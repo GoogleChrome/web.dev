@@ -6,7 +6,7 @@ authors:
   - thomassteiner
 description: Async Clipboard API simplifies permissions-friendly copy and paste.
 date: 2020-07-31
-updated: 2020-07-31
+updated: 2020-11-16
 tags:
   - blog
   - capabilities
@@ -44,11 +44,6 @@ image support is limited to PNGs in some browsers. If you're interested in using
 the API,
 [consult a browser support table](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard#Browser_compatibility)
 before proceeding.
-
-This article explains how to write both text and images to, and read them from
-the clipboard. This article does not cover [Feature Policy for the
-clipboard](https://www.chromestatus.com/features/5767075295395840) which landed
-in Chrome&nbsp;85.
 
 {% Aside %}
 The Async Clipboard API is limited to handling text and images. Chrome&nbsp;84
@@ -311,6 +306,22 @@ setTimeout(async () => {
 }, 2000);
 ```
 
+## Permissions policy integration
+
+To use the API in iframes, you need to enable it with
+[Permissions Policy](https://w3c.github.io/webappsec-permissions-policy/),
+which defines a mechanism that allows for selectively enabling and
+disabling various browser features and APIs. Concretely, you need to pass either
+or both of `clipboard-read` or `clipboard-write`, depending on the needs of your app.
+
+```html/2
+<iframe
+    src="index.html"
+    allow="clipboard-read; clipboard-write"
+>
+</iframe>
+```
+
 ## Feature detection
 
 To use the Async Clipboard API while supporting all browsers, test for
@@ -358,20 +369,16 @@ event—part of asking permission responsibly—no permissions prompt is shown.
 
 ## Demos
 
-You can play with the Async Clipboard API in the demos below. You might get a
-`NotAllowedError` if running in an iframe, that is caused by the newly implemented
-[`clipboard` Feature Policy](https://www.chromestatus.com/feature/5767075295395840).
-In this case
-just run the demo [directly on Glitch](https://async-clipboard-api.glitch.me/).
+You can play with the Async Clipboard API in the demos below or
+[directly on Glitch](https://async-clipboard-api.glitch.me/).
 
 The first example demonstrates moving text on and off the clipboard.
 
 <div class="glitch-embed-wrap" style="height: 500px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/async-clipboard-text?previewSize=100"
+    src="https://async-clipboard-text.glitch.me/"
     title="async-clipboard-text on Glitch"
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media;
-clipboard; clipboard-read; clipboard-write"
+    allow="clipboard-read; clipboard-write"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -382,10 +389,9 @@ and only in
 
 <div class="glitch-embed-wrap" style="height: 500px; width: 100%;">
   <iframe
-    src="https://glitch.com/embed/#!/embed/async-clipboard-api?previewSize=100"
+    src="https://async-clipboard-api.glitch.me/"
     title="async-clipboard-api on Glitch"
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media;
-clipboard; clipboard-read; clipboard-write"
+    allow="clipboard-read; clipboard-write"
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
@@ -406,7 +412,7 @@ Happy copying and pasting!
 
 ## Related links
 
-* [MDN]([https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API))
+* [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API)
 * [Raw Clipboard Access Design Doc](https://docs.google.com/document/d/1XDOtTv8DtwTi4GaszwRFIJCOuzAEA4g9Tk0HrasQAdE/edit?usp=sharing)
 
 ## Acknowledgements

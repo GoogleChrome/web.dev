@@ -401,7 +401,6 @@ Check out some [Media Session samples] featuring [Blender Foundation] and
 - Chrome Bugs:
 [crbug.com](https://crbug.com/?q=component:Internals>Media>Session)
 
-<!-- lint disable definition-case -->
 [media hub]: https://blog.google/products/chrome/manage-audio-and-video-in-chrome/
 [Chrome OS]: https://www.blog.google/products/chromebooks/whats-new-december2019/
 [at least 5 seconds]: https://chromium.googlesource.com/chromium/src/+/5d8eab739eb23c4fd27ba6a18b0e1afc15182321/media/base/media_content_type.cc#10
@@ -411,4 +410,3 @@ Check out some [Media Session samples] featuring [Blender Foundation] and
 [Blender Foundation]: http://www.blender.org/
 [Jan Morgenstern's work]: http://www.wavemage.com/category/music/
 [PiP window controls]: https://developers.google.com/web/updates/2018/10/watch-video-using-picture-in-picture#show_canvas_element_in_picture-in-picture_window
-<!-- lint enable definition-case -->

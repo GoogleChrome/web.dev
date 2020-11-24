@@ -1,5 +1,6 @@
 const accessible = require('./accessible.json');
 const angular = require('./angular.json');
+const devices = require('./devices.json');
 const discoverable = require('./discoverable.json');
 const fast = require('./fast.json');
 const learnWebVitals = require('./learn-web-vitals.json');
@@ -20,6 +21,7 @@ const secure = require('./secure.json');
 module.exports = {
   accessible,
   angular,
+  devices,
   discoverable,
   fast,
   'learn-web-vitals': learnWebVitals,
@@ -28,6 +30,7 @@ module.exports = {
   'lighthouse-performance': lighthousePerformance,
   'lighthouse-pwa': lighthousePwa,
   'lighthouse-seo': lighthouseSeo,
+  media,
   metrics,
   notifications,
   payments,
@@ -35,5 +38,4 @@ module.exports = {
   react,
   reliable,
   secure,
-  media,
 };

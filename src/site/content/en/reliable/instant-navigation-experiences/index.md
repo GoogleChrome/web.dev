@@ -21,7 +21,7 @@ tags:
 
 Performing a task on a site commonly involves several steps. For example, purchasing a product in an e-commerce website might involve searching for a product, picking an item from the list of results, adding the item to the cart, and completing the operation by checking out.
 
-In technical terms, moving through different pages means making a **navigation request**. As a general rule, you **don't** want to use long-lived `Cache-Control` headers to cache the HTML response for a navigation request. They should normally be satisfied via the network, with `Cache-Control: no-cache`, to ensure that the HTML, along with the chain of subsequent network requests, is (reasonably) fresh. 
+In technical terms, moving through different pages means making a **navigation request**. As a general rule, you **don't** want to use long-lived `Cache-Control` headers to cache the HTML response for a navigation request. They should normally be satisfied via the network, with `Cache-Control: no-cache`, to ensure that the HTML, along with the chain of subsequent network requests, is (reasonably) fresh.
 Having to go against the network each time the user navigates to a new page unfortunately means that each navigation might be slow—at the very least, it means that it won't be *reliably* fast.
 
 To speed up these requests, if you can anticipate the user's action, you can request these pages and assets beforehand and keep them in the cache for a short period of time until the user clicks on these links. This technique is called [prefetching](https://web.dev/link-prefetch/) and it's commonly implemented by adding `<link rel="prefetch">` tags to pages, indicating the resource to prefetch.
@@ -33,8 +33,8 @@ In this guide we'll explore different ways in which [service workers](https://de
 [MercadoLibre](https://www.mercadolibre.com.ar/) is the biggest e-commerce site in Latin America. To speed up navigations, they dynamically inject `<link rel=”prefetch”>` tags in some parts of the flow. For example, in listing pages, they fetch the next result page as soon as the user scrolls to the bottom of the listing:
 
 <figure class="w-figure">
-  <img src="mercadolibre-prefetch.png" 
-       alt="Screenshot of MercadoLibre's listing pages onea and two and a Link Prefetch tag connecting both.">
+  <img src="mercadolibre-prefetch.png"
+       alt="Screenshot of MercadoLibre's listing pages one and two and a Link Prefetch tag connecting both.">
 </figure>
 
 Prefetched files are requested at the "Lowest" priority and stored in the [HTTP cache](https://web.dev/http-cache/) or the [memory cache](https://calendar.perfplanet.com/2016/a-tale-of-four-caches/) (depending on whether the resource is cacheable or not), for an amount of time that varies by browsers. For example, as of Chrome 85, this value is 5 minutes. Resources are kept around for five minutes, after which the normal `Cache-Control` rules for the resource apply.
@@ -44,14 +44,14 @@ Using service worker caching can help you extend the lifetime of prefetch resour
 For example, Italian sports portal [Virgilio Sport](https://sport.virgilio.it/) uses service workers to prefetch the most popular posts in their home page. They also use the [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API) to avoid prefetching for users that are on a 2G connection.
 
 <figure class="w-figure">
-  <img src="virgilio-sport-logo.png" 
+  <img src="virgilio-sport-logo.png"
        alt="Virgilio Sport logo.">
 </figure>
 
 As a result of this, over 3 weeks of observation Virgilio Sport witnessed load times for navigation to articles improve **78%**, and the number of article impressions increase **45%**.
 
 <figure class="w-figure">
-  <img src="virgilio-sport-prefetch.png" 
+  <img src="virgilio-sport-prefetch.png"
        alt="A screenshot of Virgilio Sport home and article pages, with impact metrics after prefetching.">
 </figure>
 
@@ -64,10 +64,10 @@ In the following section we'll use [Workbox](https://web.dev/workbox/) to show h
 
 ### 1. Precache static pages and page subresources
 
-[Precaching](https://web.dev/precache-with-workbox/) is the ability of the service worker to save files to the cache while it's installing. 
+[Precaching](https://web.dev/precache-with-workbox/) is the ability of the service worker to save files to the cache while it's installing.
 
 {% Aside %}
-Precaching sounds similar to prefetching, but it's a different technique. In the first one, the service worker fetches and stores resources (typically static files) while it's installing and keeps them in the cache until a new version of the file is available. In the second, resources are requested ahead of time to have it in the cache for brief periods of time in order to speed up subsequent navigations. 
+Precaching sounds similar to prefetching, but it's a different technique. In the first one, the service worker fetches and stores resources (typically static files) while it's installing and keeps them in the cache until a new version of the file is available. In the second, resources are requested ahead of time to have it in the cache for brief periods of time in order to speed up subsequent navigations.
 {% endAside %}
 
 In the following cases precaching is used to achieve a similar goal as prefetching: making navigations faster.
@@ -83,7 +83,7 @@ workbox.precaching.precacheAndRoute([
 ]);
 ```
 
-#### Precaching page subresources 
+#### Precaching page subresources
 
 Precaching static assets that the different sections of the site might use (e.g. JavaScript, CSS, etc.), is a general best practice and can give an extra boost in prefetching scenarios.
 
@@ -141,17 +141,17 @@ In this case, we have opted to use a [stale-while-revalidate strategy](https://d
 
 In most cases the best approach is to use `<link rel="prefetch">`. The tag is a [resource hint](https://www.w3.org/TR/resource-hints/) designed to make prefetching as efficient as possible.
 
-In some cases, though, it might be better to delegate this task completely to the service worker. 
+In some cases, though, it might be better to delegate this task completely to the service worker.
 For example: to prefetch the first few products in a client-side rendered product listing page, one might need to inject several `<link rel="prefetch">` tags dynamically in the page, based on an API response. This can momentarily consume time on the page's main thread and make the implementation more difficult.
 
 In cases like this, use a "page to service worker communication strategy", to delegate the task of prefetching completely to the service worker. This type of communication can be achieved by using [worker.postMessage()](https://html.spec.whatwg.org/multipage/workers.html#dom-worker-postmessage):
 
 <figure class="w-figure">
-  <img src="page-to-sw.png" 
+  <img src="page-to-sw.png"
        alt="An icon of a page making two way communication with a service worker.">
 </figure>
 
-The [Workbox Window package](https://developers.google.com/web/tools/workbox/modules/workbox-window) simplifies this type of communication, abstracting many details of the underlying call being done. 
+The [Workbox Window package](https://developers.google.com/web/tools/workbox/modules/workbox-window) simplifies this type of communication, abstracting many details of the underlying call being done.
 
 Prefetching with Workbox Window can be implemented in the following way:
 
@@ -164,7 +164,7 @@ wb.register();
 const prefetchResponse = await wb.messageSW({type: 'PREFETCH_URLS', urls: […]});
 ```
 
-- In the service worker: implement a message handler to issue a `fetch()` request for each URL to prefetch: 
+- In the service worker: implement a message handler to issue a `fetch()` request for each URL to prefetch:
 
 ```javascript
 addEventListener('message', (event) => {

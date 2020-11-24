@@ -1,6 +1,6 @@
 ---
 layout: codelab
-title: Preload critical assets to improve loading speed
+title: "Codelab: Preload critical assets to improve loading speed"
 authors:
   - houssein
 description: |

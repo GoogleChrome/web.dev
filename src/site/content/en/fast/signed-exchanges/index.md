@@ -222,7 +222,7 @@ The **Preview** tab provides more information about the contents of a SXG.
 </figure>
 
 To see a SXG firsthand, visit this [demo](https://signed-exchange-testing.dev/)
-in [one the browsers that supports SXG](#browser-compatibility)
+in [one of the browsers that supports SXG](#browser-compatibility)
 
 ## Tooling
 

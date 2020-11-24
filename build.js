@@ -79,7 +79,6 @@ async function build() {
     },
   });
   const appGenerated = await appBundle.write({
-    dynamicImportFunction: 'window._import',
     entryFileNames: '[name]-[hash].js',
     sourcemap: true,
     dir: 'dist',

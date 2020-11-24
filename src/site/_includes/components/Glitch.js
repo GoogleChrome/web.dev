@@ -40,14 +40,12 @@ function expandAllowSource(s) {
 module.exports = (param) => {
   const defaultAllow = [
     'camera',
-    'clipboard',
     'clipboard-read',
     'clipboard-write',
     'encrypted-media',
     'geolocation',
     'microphone',
     'midi',
-    'vr',
   ];
 
   /** @type GlitchParam */

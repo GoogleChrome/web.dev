@@ -3,6 +3,7 @@ title: Declarative Shadow DOM
 subhead: |
   A new way to implement and use Shadow DOM directly in HTML.
 date: 2020-09-30
+updated: 2020-10-29
 hero: hero.jpg
 alt: decorative shadow dome
 authors:
@@ -202,7 +203,7 @@ existing shadow root before creating one using `attachShadow()`. Declarative Sha
 small change that allows existing components to work despite this: calling the `attachShadow()`
 method on an element with an existing **Declarative** Shadow Root will **not** throw an error.
 Instead, the Declarative Shadow Root is emptied and returned. This allows older components not
-built for Declarative Shadow DOM to continue working, since declaratives roots are preserved until
+built for Declarative Shadow DOM to continue working, since declarative roots are preserved until
 an imperative replacement is created.
 
 For newly-created Custom Elements, a new
@@ -361,7 +362,7 @@ Declarative Shadow Roots, it is only loaded and parsed once. The browser uses a 
 
 [Constructable Stylesheets](https://developers.google.com/web/updates/2019/02/constructable-stylesheets)
 are not supported in Declarative Shadow DOM. This is because there is currently no way to serialize
-constructable stylesheets in HTML, and no way to refer to them when populating adoptedStyleSheets.
+constructable stylesheets in HTML, and no way to refer to them when populating `adoptedStyleSheets`.
 
 ## Feature detection and browser support {: #detection-support }
 
@@ -395,7 +396,7 @@ document.querySelectorAll('template[shadowroot]').forEach(template => {
   const shadowRoot = template.parentNode.attachShadow({ mode });
   shadowRoot.appendChild(template.content);
   template.remove();
-}
+});
 ```
 
 ## Further Reading {: #further-reading }

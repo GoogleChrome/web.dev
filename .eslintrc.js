@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['./node_modules/gts/.eslintrc.json'],
+  extends: ['./node_modules/gts/.eslintrc.json', 'plugin:lit-a11y/recommended'],
   env: {
     es6: true,
     node: true,
@@ -24,6 +24,7 @@ module.exports = {
         SwitchCase: 1,
       },
     ],
+    'lit-a11y/no-invalid-change-handler': 0,
     'new-cap': 0,
     'no-case-declarations': 0,
     'node/no-unpublished-import': 0,
