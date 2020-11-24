@@ -99,6 +99,111 @@ Show that lines have changed by using the pattern `language/lineNumAdded/lineNum
 </label>
 ```
 
+## Code tabs
+You may need to add language- or tooling-dependent code instructions that look as follows:
+
+<web-tabs>
+  <div data-label="HTML">
+    <pre>
+      <code>
+
+        ```
+          <div id="foo">Foo!</div>
+        ```
+      </code>
+    </pre>
+  </div>
+  <div data-label="CSS">
+    <pre>
+      <code>
+        #foo {
+          background-color: red;
+        }
+      </code>
+    </pre>
+  </div>
+  <div data-label="JavaScript">
+    <pre>
+      <code>
+        const el = document.getElementById("foo");
+      </code>
+    </pre>
+  </div>
+</web-tabs>
+
+To create tabs with code that look as above, use the following markup:
+
+```html
+<web-tabs>
+  <div data-label="HTML">
+    <pre>
+      <code>
+
+        ```
+          <div id="foo">Foo!</div>
+        ```
+      </code>
+    </pre>
+  </div>
+  <div data-label="CSS">
+    <pre>
+      <code>
+        #foo {
+          background-color: red;
+        }
+      </code>
+    </pre>
+  </div>
+  <div data-label="JavaScript">
+    <pre>
+      <code>
+        const el = document.getElementById("foo");
+      </code>
+    </pre>
+  </div>
+</web-tabs>
+```
+
+{% Details %}
+{% DetailsSummary %}
+How to add syntax highlighting to the code inside the tabs
+{% endDetailsSummary %}
+1. Prepare your tabs:
+    ```html
+    <web-tabs>
+      <div data-label="HTML">
+        <pre>
+        </pre>
+      </div>
+      <div data-label="CSS">
+        <pre>
+        </pre>
+      </div>
+      <div data-label="JavaScript">
+        <pre>
+        </pre>
+      </div>
+    </web-tabs>
+    ```
+2. At another place in the markdown (it doesn't matter where, you'll delete this at Step 5): write
+   the code instructions you want your tabs to contain. Use [triple
+   backticks](/handbook/markup-code/#code-blocks) and specify the language.
+3. Build the site, use DevTools to inspect the code instructions you've created at Step 2, and copy
+   their HTML.
+4. Paste the HTML you've copied into the tabs you've created at Step 1:
+    ```html
+    <web-tabs>
+      <div data-label="HTML">
+        <pre>
+        // paste the code you copied
+        </pre>
+      </div>
+      <!-- and so on -->
+    </web-tabs>
+    ```
+5. Clean up: delete the code instructions you've created at Step 2.
+{% endDetails %}
+
 
 ## Coding Style
 Indent using two spaces.
