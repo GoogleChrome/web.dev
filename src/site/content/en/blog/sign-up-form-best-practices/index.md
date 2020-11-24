@@ -178,7 +178,7 @@ users are sharing on desktop, or sharing devices.
 {% Aside %}
 You can get around some of the issues of shared devices by enforcing re-authentication for sensitive 
 features, for example when a purchase is made or an account updated. You can find out more about 
-ways to implement re-authentication from [Verify phone numbers on the web with the Web OTP API](/web-otp/#is-it-safe-to-use-sms-as-a-way-to-authenticate) and the codelab [Your First WebAuthn App](https://codelabs.developers.google.com/codelabs/webauthn-reauth/#0).
+ways to implement re-authentication from the codelab [Your First WebAuthn App](https://codelabs.developers.google.com/codelabs/webauthn-reauth/#0).
 {% endAside %}
 
 ## Help password managers securely suggest and store passwords {: #help-password-managers}
