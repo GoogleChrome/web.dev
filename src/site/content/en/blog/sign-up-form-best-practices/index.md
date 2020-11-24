@@ -40,7 +40,7 @@ Here is an example of a very simple sign-up form that demonstrates all of the be
 {% Glitch {
   id: 'signup-form',
   path: 'index.html',
-  height: 5760
+  height: 570
 } %}
 
 ## Checklist
