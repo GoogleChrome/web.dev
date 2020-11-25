@@ -4,7 +4,8 @@ subhead: >
   Write your own reusable, shareable strategies and plugins.
 description: >
   Write your own reusable, shareable strategies and plugins.
-authors: jeffposnick
+authors:
+  - jeffposnick
 date: 2020-12-10
 thumbnail: thumbnail.png
 hero: hero.png
