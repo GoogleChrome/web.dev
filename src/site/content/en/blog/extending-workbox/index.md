@@ -229,7 +229,7 @@ handles
 But you're not limited to using the standard set of plugins! Another great way
 to extend Workbox is to write your own reusable plugins.
 
-## Custom Plugins
+## Custom plugins
 
 Taking a step back, what is a Workbox plugin, and why would you write your own?
 A plugin doesn't fundamentally change the order of network and cache operations
