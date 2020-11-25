@@ -20,7 +20,9 @@ glitch_path: index.html
 related_post: payment-and-address-form-best-practices
 ---
 
-This codelab shows you how to build payment and address forms that are accessible and easy to use.
+This codelab shows you how to build payment and address forms that are secure, accessible and easy to use.
+
+First: build a payment form.
 
 ## Step 1: Use HTML as intended
 
@@ -28,10 +30,7 @@ Use elements built for the job:
 * `<form>`
 * `<section>`
 * `<label>`
-* `<input>`
-* `<select>`
-* `<textarea>`
-* `<select>`
+* `<input>`, `<select>`, `<textarea>`
 * `<button>`
 
 As you'll see, these elements enable built-in browser functionality, improve accessibility, and 
@@ -41,100 +40,153 @@ add meaning to your markup.
 * Add the following code inside the `<body>` element:
 
 ```html
-<form action="#" method="post">
-  <h1>Address form</h1>
-  <section>
-    <label>Name</label>
-    <input>
-  </section>
-  <section>
-    <label>Address</label>
-    <textarea></textarea>
-  </section>
-  <section>
-    <label>ZIP or postal code (optional)</label>
-    <textarea></textarea>
-  </section>
-  <section>
-    <label>ZIP or postal code (optional)</label>
-    <textarea></textarea>
-  </section>
-  <section>
-    <label>Country or region</label>
-    <select>
-      <option>Australia</option>
-      <option>India</option>
-      <option>United Kingdom</option>
-      <option>United States</option>
-    </select>
-  </section>
-  <button>Sign up</button>
-</form>
+<main>
+    
+  <form action="#" method="post">
+
+    <h1>Payment form</h1>
+
+    <section>        
+      <label>Card number</label>
+      <input>
+    </section>
+
+    <section>        
+      <label>Name on card</label>
+      <input>
+    </section>
+
+    <section id="cc-exp-csc">
+      <div>
+        <label>Expiry date</label>
+        <input>
+      </div> 
+      <div>
+        <label>Security code</label>
+        <input>
+        <div class="explanation">Last 3 digits on back of card</div>
+      </div>
+    </section>  
+
+    <button id="complete-payment">Complete payment</button>
+
+  </form>
+
+</main>
 ```
 
 Here's how your `index.html` should look at this point:
 
 {% Glitch {
-  id: 'sign-in-form-codelab-1',
+  id: 'payment-form-codelab-1',
   path: 'index.html',
-  height: 480
+  height: 270
 } %}
 
-Click **View App** to preview your sign-in form.
-The HTML you just added is valid and correct, but the default browser styling
-means it looks terrible and it's hard to use, especially on mobile.
+Click **View App** to preview your payment form. 
+
+* Does the form work well enough as it is?
+* Is there anything you would change to make it work better?
+* How about on mobile?
 
 Click **View Source** to return to your source code.
 
+## Step 2: Design for fingers and thumbs
 
+The HTML you added is valid, but the default browser styling makes the form hard to use, especially 
+on mobile. It doesn't look great either!
 
-## Step 2: XXXXXXXXXXXXXX
-
-Explanation of this step blah blah blah.
+You need to ensure your inputs work well on a range of devices by adjusting padding, margins, and 
+font sizes. 
 
 Copy and paste the following CSS into your own `style.css` file:
 
 {% Glitch {
-  id: 'payment-and-address-form-codelab-2',
+  id: 'sign-in-form-codelab-2',
   path: 'style.css'
 } %}
 
-Click **View App** to check out your freshly styled payment-and-address form. Then
-click **View Source** to return to `style.css`.
+Click **View App** to see the styled form. 
 
-This is what's happening blah blah blah
+Now click **View Source** to return to `style.css`.
 
-When building your own form like this, it's very important at this point to
-test your code on real devices on desktop and mobile:
+That's a lot of CSS! The main things to be aware of are the changes to sizes:
 
-* Is something working blah blah blah?
-* Is something else working blah blah blah?
+* `padding` and `margin` are added to inputs.
+* `font-size` is different for different viewport sizes.
 
-## Step 3: XXXXXXXXXXX
+You'll also notice that borders are tweaked, and `display: block;` is used for labels so they go 
+on a line on their own. Inputs are full width. 
 
-Explanation of this step blah blah blah.
+The `:invalid` selector is used to indicate when an input has an invalid value.
+(You'll make that work later in the codelab.)
 
-Add blah blah to your HTML so it looks like this:
+The CSS layout is mobile-first:
 
-```html/3,4,7,8,10
+* The default CSS is for viewports less than `400px` wide.
+* [Media queries](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries) are 
+used to override the default for viewports that are at least `400px` wide, and then again for 
+viewports that are at least `500px` wide.
+
+Whenever you build for the web, you need to test on different devices and viewport sizes. That's 
+especially true for forms, because one small glitch can make them unusable.
+
+There are several ways to test your form on different devices:
+
+* [Use Chrome DevTools Device Mode](https://developers.google.com/web/tools/chrome-devtools/device-mode) 
+to simulate mobile devices. 
+* [Send the URL from your computer to your phone](https://support.google.com/chrome/answer/9430554).
+* Use a service such as [BrowserStack](https://www.browserstack.com/open-source) to test on a range 
+of devices and browsers. 
+
+* Is the whole form visible? 
+* Are the form inputs big enough? 
+* Is all the text readable?
+* Did you notice any differences between using a real mobile device, and viewing the form in 
+Device Mode in Chrome DevTools?
+
+## Step 3: Add input attributes to enable built-in browser features
+
+Enable the browser to store and autofill input values, and provide access to 
+built-in password management features.
+
+Add attributes to your form HTML so it looks like this:
+
+```html/5,6,10,11,16,17,20,21
 <form action="#" method="post">
-  <h1>Sign in</h1>
+
+  <h1>Payment form</h1>
+
   <section>        
-    <label for="email">Email</label>
-    <input id="email" name="email" type="email" autocomplete="username" required autofocus>
+    <label for="cc-number">Card number</label>
+    <input id="cc-number" name="cc-number" inputmode="numeric" autocomplete="cc-number" pattern="[\d ]{10,30}" required>
   </section>
+
   <section>        
-    <label for="current-password">Password</label>
-    <input id="password" name="password" type="password" autocomplete="new-password" required>
+    <label for="cc-name">Name on card</label>
+    <input id="cc-name" name="cc-name" autocomplete="cc-name" pattern="[\p{L} \-\.]+" required>
   </section>
-  <button id="payment-and-address">Sign in</button>
+  
+  <section id="cc-exp-csc">      
+    <div>
+      <label for="cc-exp">Expiry date</label>
+      <input id="cc-exp" name="cc-exp" placeholder="MM/YY" maxlength="5" autocomplete="cc-exp" required>
+    </div> 
+    <div>
+      <label for="cc-csc">Security code</label>
+      <input id="cc-csc" name="cc-csc" maxlength="3" autocomplete="cc-csc" required>
+      <div class="explanation">Back of card, last 3 digits</div>
+    </div>
+  </section>  
+
+  <button id="complete-payment">Complete payment</button>
+
 </form>
 ```
 
-View your app again and then do something blah blah. Notice blah blah blah.
+View your app again and then click in the **Card number** field. What happens?
 
-Try doing something blah blah blah. Notice something blah blah blah. For example blah blah blah.
-All of this happens because blah blah blah.
+Tap in the card number input on a mobile device. Notice how the 
 
 <figure class="w-figure">
   <img class="w-screenshot w-screenshot--filled" 
