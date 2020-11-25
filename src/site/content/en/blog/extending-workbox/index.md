@@ -57,7 +57,7 @@ a new `Strategy` base class that sits in front of lower-level APIs, like
 You can extend the `Strategy` base class, and then implement your own logic in
 the `_handle()` method.
 
-### DedupeNetworkFirst
+### Handle simultaneous, duplicate requests with DedupeNetworkFirst
 
 For instance, imagine that you want to implement a strategy that can handle
 multiple, simultaneous requests for the same URL by deduplicating them. A copy
