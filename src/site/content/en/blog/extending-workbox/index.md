@@ -237,7 +237,7 @@ performed by a strategy. Instead, it allows you to add in extra code that will
 be run at critical points in the lifetime of a request, like when a network
 request fails, or when a cached response is about to be returned to the page.
 
-### Lifecycle Event Overview
+### Lifecycle event overview
 
 Here's an overview of all the events that a plugin could listen to. Technical
 details about implementing callbacks for these events is in the
