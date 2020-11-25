@@ -12,7 +12,11 @@ alt: The Workbox logo.
 draft: true
 tags:
   - blog
-  - service-workers
+  - service-worker
+  - offline
+  - network
+  - progressive-web-apps
+  - performance
 ---
 
 In this article, we're going to take a quick tour of some ways of extending
