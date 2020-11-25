@@ -4,7 +4,7 @@ subhead: Reading and writing to NFC tags is now possible.
 authors:
   - beaufortfrancois
 date: 2020-02-12
-updated: 2020-11-20
+updated: 2020-11-25
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: A photo of NFC tags
@@ -80,16 +80,17 @@ Examples of sites that may use Web NFC include:
 </div>
 
 {% Aside %}
-  During the origin trial phase, there was a `NDEFWriter` object that has been
-  merged into `NDEFReader`. There were a number of other [changes] that you can
-  read up on.
+  During the origin trial phase, there was an `NDEFWriter` object that has been
+  merged into `NDEFReader`. There were a number of other
+  [changes](https://github.com/w3c/web-nfc/blob/gh-pages/EXPLAINER.md#changes-done-after-origin-trial-ot)
+  that you can read up on.
 {% endAside %}
 
 ## Using Web NFC {: #use }
 
 ### Enabling via chrome://flags
 
-To experiment with Web NFC locally on Android, enable the
+To experiment with Web NFC on Android, enable the
 `#experimental-web-platform-features` flag in `chrome://flags`.
 
 <figure class="w-figure">
@@ -102,7 +103,7 @@ To experiment with Web NFC locally on Android, enable the
 Feature detection for hardware is different from what you're probably used to.
 The presence of `NDEFReader` tells you that the browser supports Web NFC, but
 not whether the required hardware is present. In particular, if the hardware is
-missing, the promised returned by certain calls will reject. I'll provide
+missing, the promise returned by certain calls will reject. I'll provide
 details when I describe `NDEFReader`.
 
 ```js
@@ -153,9 +154,9 @@ granted. The promise will resolve if the following conditions are all met:
 - The user has enabled NFC on their phone.
 
 Once the promise is resolved, incoming NDEF messages are available by
-subscribing to "reading" events via an event listener. You should also subscribe
-to "readingerror" events to be notified when incompatible NFC tags are in
-proximity range.
+subscribing to `reading` events via an event listener. You should also subscribe
+to `readingerror` events to be notified when incompatible NFC tags are in
+proximity.
 
 ```js
 const ndef = new NDEFReader();
@@ -379,10 +380,10 @@ if (nfcPermissionStatus.state === "granted") {
 
 ### Abort NFC operations
 
-Using the <code>[AbortController]</code> primitive makes it easy to abort NFC operations. The
-example below shows you how to pass the `signal` of an AbortController through
-the options of NDEFReader `scan()` and `write()` methods and abort both NFC
-operations at the same time.
+Using the <code>[AbortController]</code> primitive makes it easy to abort NFC
+operations. The example below shows you how to pass the `signal` of an
+`AbortController` through the options of NDEFReader `scan()` and `write()`
+methods and abort both NFC operations at the same time.
 
 ```js
 const abortController = new AbortController();
@@ -819,7 +820,6 @@ contributors deserve special recognition!
 
 [explainer]: https://github.com/w3c/web-nfc/blob/gh-pages/EXPLAINER.md#web-nfc-explained
 [spec]: https://w3c.github.io/web-nfc/
-[changes]: https://github.com/w3c/web-nfc/blob/gh-pages/EXPLAINER.md#changes-done-after-origin-trial-ot
 [issues]: https://github.com/w3c/web-nfc/issues
 [demo]: https://web-nfc-demo.glitch.me/
 [demo-source]: https://glitch.com/edit/#!/web-nfc-demo?path=script.js:1:0
