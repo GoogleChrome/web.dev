@@ -111,7 +111,7 @@ satisfied with the same response, which won't always be the case if cookies or
 session state information comes into play.
 {% endAside %}
 
-### CacheNetworkRace
+### Create a race between the cache and network with CacheNetworkRace
 
 Here's another example of a custom strategy—one that's a twist on
 stale-while-revalidate, where both the network and cache are checked at the same
