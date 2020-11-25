@@ -150,7 +150,7 @@ timing](#report-timing)).
 
 ## Browser support and similar APIs
 
-## Browser support
+### Browser support
 
 The Event Conversion Measurement API can be supported:
 

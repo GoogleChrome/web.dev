@@ -5,7 +5,7 @@ authors:
   - maudn
 hero: hero.jpg
 date: 2020-11-12
-updated: 2020-11-12
+#updated: 2020-11-12
 tags:
   - blog
   - privacy
@@ -34,7 +34,7 @@ The Event Conversion Measurement API can be supported:
   **Flags are useful when [developing locally](#develop-locally)**.
 
 See details on the current status on the [Chrome feature
-entry](https://chromestatus.com/features/6412002824028160).
+entry](https://chromestatus.com/feature/6412002824028160).
 
 ### When is the API available?
 
