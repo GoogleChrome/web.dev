@@ -13,8 +13,8 @@ tags:
 ---
 
 This article explains how to build a device to take full advantage of the
-[WebUSB API]. For a brief introduction to the API itself see [this previous
-article].
+[WebUSB API]. For a brief introduction to the API itself, see [Access USB Devices
+on the Web].
 
 ## Background
 
@@ -44,18 +44,18 @@ right drivers to handle the device each interface can be claimed by a different
 driver. For example, a USB webcam typically provides two interfaces, one
 implementing the USB video class (for the camera) and one implementing the USB
 audio class (for the microphone). The operating system does not load a single
-"webcam driver" but instead independent video and audio class drivers which take
-responsibility for the separate functions of the device. This composition of
-interface classes provides for greater flexibility.
+"webcam driver" but instead loads independent video and audio class drivers
+which take responsibility for the separate functions of the device. This
+composition of interface classes provides for greater flexibility.
 
-## Introduction
+## API basics
 
 Many of the standard USB classes have corresponding web APIs. For example, a
 page can capture video from a video class device using [`getUserMedia()`]
 or receive input events from a human interface (HID) class device by listening
-for [KeyboardEvents] or [PointerEvents], or using the [Gamepad] or the [WebHID]
-API.
-Just as not all devices implement a standardized class definition not all
+for [KeyboardEvents] or [PointerEvents], or by using the [Gamepad] or the
+[WebHID] API.
+Just as not all devices implement a standardized class definition, not all
 devices implement features that correspond to existing web platform APIs. When
 this is the case the WebUSB API can fill that gap by providing a way for sites
 to claim a vendor-specific interface and implement support for it from directly
@@ -77,6 +77,12 @@ tool can be served on the manufacturer's website allowing the user to change
 aspects of the device's behavior such as macro keys and lighting effects without
 installing any native software. Such a device's configuration descriptor would
 look something like this:
+
+{% Aside  %}
+Values in this and other tables in this document are presented in hexadecimal or
+binary, whichever is more readable. The USB is a little-endian bus and so any
+integer value larger than 1 byte should be sent least-significant byte first.
+{% endAside %}
 
 <div class="w-table-wrapper">
   <table>
@@ -364,12 +370,6 @@ look something like this:
   </table>
 </div>
 
-{% Aside  %}
-Values in this and other tables in this document are presented in hexadecimal or
-binary, whichever is more readable. The USB is a little-endian bus and so any
-integer value larger than 1 byte should be sent least-significant byte first.
-{% endAside %}
-
 The configuration descriptor consists of multiple descriptors concatenated
 together. Each begins with `bLength` and `bDescriptorType` fields so that they
 can be identified. The first interface is an HID interface with an associated
@@ -380,7 +380,7 @@ in return.
 
 ## WebUSB descriptors
 
-While WebUSB can work with many devices without firmware modifications however
+While WebUSB can work with many devices without firmware modifications,
 additional functionality is enabled by marking the device with specific
 descriptors indicating support for WebUSB. For example, you can specify a
 landing page URL that the browser can direct the user to when your device is
@@ -473,8 +473,8 @@ Descriptor in the BOS descriptor:
 </div>
 
 {% Aside %}
-The UUID above would be written as `{3408b638-09a9-47a0-8bfd-a0768815b665}`
-however when sent as part of a USB descriptor its component fields must be sent
+The UUID above would be written as `{3408b638-09a9-47a0-8bfd-a0768815b665}`;
+however, when sent as part of a USB descriptor its component fields must be sent
 in little-endian order. This transformation is complex so the proper encoding is
 given here for reference. See [RFC4122](https://tools.ietf.org/html/rfc4122).
 {% endAside %}
@@ -483,10 +483,9 @@ The platform capability UUID identifies this as a [WebUSB Platform Capability
 descriptor], which provides basic information about the device. For the browser
 to fetch more information about the device it uses the `bVendorCode` value to
 issue additional requests to the device. The only request currently specified is
-`GET_URL` which returns a [URL descriptor].
-These are similar to string descriptors however are designed to encode URLs in
-the fewest bytes. A URL descriptor for `"https://google.com"` would look like
-this:
+`GET_URL` which returns a [URL descriptor]. These are similar to string
+descriptors but are designed to encode URLs in the fewest bytes. A URL
+descriptor for `"https://google.com"` would look like this:
 
 <div class="w-table-wrapper">
   <table>
@@ -547,8 +546,8 @@ issuing this standard `GET_DESCRIPTOR` control transfer:
 
 This request is usually made twice, the first time with a large enough `wLength`
 so that the host finds out the value of the `wTotalLength` field without
-committing to a large transfer and then again now that the full descriptor
-length is known.
+committing to a large transfer and then again when the full descriptor length is
+known.
 
 If the WebUSB Platform Capability descriptor has the `iLandingPage` field set to
 a non-zero value the browser then performs a WebUSB-specific `GET_URL` request
@@ -589,17 +588,17 @@ available yet on Android.
 
 While the WebUSB API attempts to provide a consistent interface for accessing
 USB devices developers should still be aware of requirements imposed on
-applications such as a web browsers in order to access devices.
+applications such as a web browsers requirements in order to access devices.
 
 ### macOS
 
 Nothing special is necessary for macOS. A website using WebUSB can connect to
-the device and claim interfaces any interfaces that aren't claimed by a kernel
-driver or another application.
+the device and claim any interfaces that aren't claimed by a kernel driver or
+another application.
 
 ### Linux
 
-Linux is like macOS however by default most distributions do not set up user
+Linux is like macOS but by default most distributions do not set up user
 accounts with permission to open USB devices. A system daemon called udev is
 responsible for assigning the user and group allowed to access a device. A rule
 such as this will assign ownership of a device matching the given vendor and
@@ -617,7 +616,8 @@ to be recognized correctly. To find the IDs for your device run the command line
 tool `lsusb`.
 
 This rule should be placed in a file in the `/etc/udev/rules.d` directory and
-takes effect as soon as the device is plugged in. No need to restart udev.
+takes effect as soon as the device is plugged in. There is no need to restart
+udev.
 
 ### Android
 
@@ -727,7 +727,7 @@ replacing the driver loaded for a USB interface with the WinUSB driver.
 #### Microsoft OS compatibility descriptors
 
 The INF file approach above is cumbersome because it requires configuring every
-user's machine ahead of time. Windows 8.1 and higher offer an alternative
+user's machine ahead of time. Windows 8.1 and higher offers an alternative
 through the use of custom USB descriptors. These descriptors provide information
 to the Windows operating system when the device is first plugged in that would
 normally be included in the INF file.
@@ -795,8 +795,8 @@ and `bNumDeviceCaps` to account for it.
   </table>
 </div>
 
-As with the WebUSB descriptors we have to pick a `bRequest` value to be used by
-control transfers related to these descriptors. In this example we've picked
+As with the WebUSB descriptors you have to pick a `bRequest` value to be used by
+control transfers related to these descriptors. In this example I've picked
 `0x02`. `0x07`, placed in `wIndex`, is the command to retrieve the Microsoft OS
 2.0 Descriptor Set from the device.
 
@@ -985,9 +985,10 @@ assign this function a device interface GUID.
 
 Windows will only query the device for this information once. If the device does
 not respond with valid descriptors it will not ask again the next time the
-device is connected. This [page] describes the registry entries created when
-enumerating a device. When testing it is useful to delete the entries created
-for a device in order to get Windows to try to read the descriptors again.
+device is connected. Microsoft has provided [a list of USB Device Registry
+Entries] describing the registry entries created when enumerating a device. When
+testing delete the entries created for a device for force Windows to try to read
+the descriptors again.
 
 For more information check out Microsoft's [blog post] on how to use these
 descriptors.
@@ -1001,7 +1002,7 @@ descriptors and Microsoft OS descriptors can be found in these projects:
  * [WebUSB Arduino Library]
 
 [WebUSB API]: https://wicg.github.io/webusb
-[this previous article]: /usb
+[Access USB Devices on the Web]: /usb
 [`getUserMedia()`]: https://html5rocks.com/en/tutorials/getusermedia/intro/
 [KeyboardEvents]: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent
 [PointerEvents]: https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events
@@ -1011,7 +1012,7 @@ descriptors and Microsoft OS descriptors can be found in these projects:
 [URL descriptor]: https://wicg.github.io/webusb/#url-descriptor
 [Zadig tool]: https://zadig.akeo.ie/
 [`open()`]: https://wicg.github.io/webusb/#dom-usbdevice-open
-[page]: https://docs.microsoft.com/en-us/windows-hardware/drivers/usbcon/usb-device-specific-registry-settings
+[a list of USB Device Registry Entries]: https://docs.microsoft.com/en-us/windows-hardware/drivers/usbcon/usb-device-specific-registry-settings
 [blog post]: https://techcommunity.microsoft.com/t5/microsoft-usb-blog/how-to-install-winusb-sys-without-a-custom-inf/ba-p/270769
 [WebLight]: https://github.com/sowbug/weblight
 [WebUSB Arduino Library]: https://github.com/webusb/arduino
