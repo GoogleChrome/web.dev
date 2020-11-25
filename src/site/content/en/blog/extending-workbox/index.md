@@ -150,7 +150,7 @@ class CacheNetworkRace extends Strategy {
 }
 ```
 
-## Using the StategyHandler
+## StategyHandler: the recommended approach for creating custom strategies
 
 Although it's not required, it's strongly recommended that when interacting with
 the network or cache, you use the instance of the `StrategyHandler` class that's
