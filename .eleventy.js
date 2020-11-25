@@ -86,6 +86,7 @@ const getPaths = require(`./${filtersDir}/get-paths`);
 const transformsDir = 'src/site/_transforms';
 const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
 const {responsiveImages} = require(`./${transformsDir}/responsive-images`);
+const widthHeightImages = require(`./${transformsDir}/width-height-images`);
 
 module.exports = function (config) {
   console.log(chalk.black.bgGreen('Eleventy is building, please wait…'));
@@ -231,6 +232,8 @@ module.exports = function (config) {
   if (isProd) {
     config.addTransform('responsive-images', responsiveImages);
   }
+
+  config.addTransform('width-height-images', widthHeightImages);
 
   // ----------------------------------------------------------------------------
   // CHECKS
