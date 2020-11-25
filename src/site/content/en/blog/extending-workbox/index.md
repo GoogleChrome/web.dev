@@ -312,7 +312,7 @@ your plugin as an
 with properties that match the lifecycle event names, or as a class that exposes
 methods with those names.
 
-### FallbackOnErrorPlugin
+### Lifecycle events example: FallbackOnErrorPlugin
 
 For instance, here's a custom plugin class that implements callback methods for
 two events: `fetchDidSucceed`, and `handlerDidError`.
