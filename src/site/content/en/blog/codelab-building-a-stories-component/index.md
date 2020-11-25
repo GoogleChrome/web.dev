@@ -5,7 +5,7 @@ authors:
   - adamargyle
 description: |
   Learn how to build an experience similar to Instagram Stories on the web.
-date: 2020-06-19
+date: 2020-11-25
 hero: hero.jpg
 glitch: gui-challenges-stories-codelab
 glitch_path: app/index.html
@@ -26,7 +26,7 @@ then JavaScript.
 Check out my blog post [Building a Stories component](/building-a-stories-component)
 to learn about the progressive enhancements made while building this component.
 
-{% YouTube '5_sfnQDr1-o' %}
+{% YouTube 'PzvdREGR0Xw' %}
 
 {% Aside %}
 This post assumes that you're familiar with the Instagram Stories UX

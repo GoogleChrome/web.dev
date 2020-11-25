@@ -2,11 +2,11 @@
 layout: post
 title: Building a Stories component
 # TODO(kayce): Rename URL to match the title
-subhead: An overview of how to build an experience similar to Instagram Stories on the web.
+subhead: A foundational overview of how to build an experience similar to Instagram Stories on the web.
 authors:
   - adamargyle
-description: An overview of how to build an experience similar to Instagram Stories on the web.
-date: 2020-06-19
+description: A foundational overview of how to build an experience similar to Instagram Stories on the web.
+date: 2020-11-25
 hero: hero.jpg
 thumbnail: thumb.jpg
 codelabs: codelab-building-a-stories-component
@@ -20,7 +20,7 @@ tags:
   - ux
 ---
 
-In this post I want to share with you how I prototyped a Stories component for
+In this post I want to share thinking on building a Stories component for
 the web that is responsive, supports keyboard navigation, and works across
 browsers.
 
@@ -35,15 +35,15 @@ browsers.
 </figure>
 
 If you would prefer a hands-on demonstration of building this Stories component yourself,
-check out the [Stories component codelab](/codelab-stories-component).
+check out the [Stories component codelab](/codelab-building-a-stories-component).
 
 If you prefer video, here's a YouTube version of this post:
 
-{% YouTube '-oyeaIirVC0' %}
+{% YouTube 'PzvdREGR0Xw' %}
 
 ## Overview
 
-Two popular examples of the Stories UX are Snapchat Stories and Instagram Stories.
+Two popular examples of the Stories UX are Snapchat Stories and Instagram Stories (not to mention fleets).
 In general UX terms, Stories are usually a mobile-only, tap-centric pattern for navigating
 multiple subscriptions. For example, on Instagram, users open a friend's story
 and go through the pictures in it. They generally do this many friends at a
