@@ -4,7 +4,7 @@ subhead: |
   Web apps can now disable mouse acceleration when capturing pointer events.
 authors:
   - beaufortfrancois
-date: 2020-11-19
+date: 2020-11-26
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: Gamer girl is playing FPS online video game on her computer
