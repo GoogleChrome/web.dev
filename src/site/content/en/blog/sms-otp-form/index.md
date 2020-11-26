@@ -42,8 +42,8 @@ cases.
 {% Aside 'caution' %}
 While this post discusses SMS OTP form best practices, be aware that SMS OTP is
 not the most secure method of authentication by itself. That's because phone
-numbers are known to be recycled and sometimes hijacked. And the concept of OTP
-itself is not phishing resistant.
+numbers are known to be recycled and sometimes hijacked. And [the concept of OTP
+itself is not phishing resistant](https://youtu.be/kGGMgEfSzMw?t=1133).
 
 If you are looking for better security, consider using WebAuthn. You can learn
 more about it from the talk "[What's new in sign-up &
