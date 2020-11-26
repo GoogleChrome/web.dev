@@ -26,14 +26,13 @@ simple end-to-end implementation example.
 
 The Event Conversion Measurement API can be supported:
 
-- As an [origin trial](/origin-trials/), from Chrome 86 beta and Chrome 87 (stable from mid-November
-  2020), to Chrome 88 (February 2021). Origin trials enable the API for **all visitors** of a given
-  [origin](/same-site-same-origin/#origin). **You need to register your origin for the origin trial
-  in order to try the API with end users**.
+- As an [origin trial](/origin-trials/), from Chrome 86 beta to Chrome 88 (February 2021). Origin
+  trials enable the API for **all visitors** of a given [origin](/same-site-same-origin/#origin).
+  **You need to register your origin for the origin trial in order to try the API with end users**.
 - By turning on flags, in Chrome 86 and later. Flags enable the API on a **single user**'s browser.
   **Flags are useful when [developing locally](#develop-locally)**.
 
-See details on the current status on the [Chrome feature
+See details about the Chrome versions where the API is active on the [Chrome feature
 entry](https://chromestatus.com/feature/6412002824028160).
 
 ### When is the API available?
