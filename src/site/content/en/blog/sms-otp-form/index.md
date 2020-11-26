@@ -1,6 +1,6 @@
 ---
 title: SMS OTP form best practices
-subhead: Learn how to optimize your SMS OTP form.
+subhead: Learn how to optimize your SMS OTP form and improve user experience.
 authors:
   - agektmr
 date: 2020-12-04
@@ -10,7 +10,7 @@ alt: A drawing of a woman using OTP to log in to a web app.
 description: |
   Asking a user to provide an OTP (one-time password) delivered via SMS is a
   common way to confirm a user's phone number. This post provides you with the
-  best practices to build an SMS OTP form for such use cases.
+  best practices to build an SMS OTP form with great user experience.
 
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
@@ -22,17 +22,17 @@ tags:
 
 Asking a user to provide the OTP (one time password) delivered via SMS is a common way to confirm a user's phone number. There are a few use cases for SMS OTP:
 
-* **2 step verification**: In addition to username and password, SMS OTP can be
+* **Two-factor authentication.** In addition to username and password, SMS OTP can be
 used as a strong signal that the account is owned by the person who received the
 SMS OTP.
-* **Phone number verification**: Some services use a phone number as the user's
+* **Phone number verification.** Some services use a phone number as the user's
 primary identifier. In such services, users can enter their phone number and the
 OTP received via SMS to prove their identity. Sometimes it's combined with a PIN
-to constitute a 2 step verification.
-* **Account recovery**: When a user loses access to their account, there needs
+to constitute a two-factor authentication.
+* **Account recovery.** When a user loses access to their account, there needs
 to be a way to recover it. Sending an email to their registered email address or
 an SMS OTP to their phone number are common account recovery methods.
-* **Payment confirmation**: In payment systems, some banks or credit card
+* **Payment confirmation** In payment systems, some banks or credit card
 issuers request additional authentication from the payer for security reasons.
 SMS OTP is commonly used for that purpose.
 
@@ -41,18 +41,18 @@ cases.
 
 {% Aside 'caution' %}
 While this post discusses SMS OTP form best practices, be aware that SMS OTP is
-not the most secure method of authentication by itself. That's because phone
-numbers are known to be recycled and sometimes hijacked. And [the concept of OTP
+not the most secure method of authentication by itself because phone
+numbers can be recycled and sometimes hijacked. And [the concept of OTP
 itself is not phishing resistant](https://youtu.be/kGGMgEfSzMw?t=1133).
 
-If you are looking for better security, consider using WebAuthn. You can learn
+If you are looking for better security, consider using [WebAuthn](https://webauthn.io/). Learn
 more about it from the talk "[What's new in sign-up &
 sign-in](https://goo.gle/webauthn-video)" at the Chrome Dev Summit 2019.
 {% endAside %}
 
 ## Checklist
 
-To provide the best user experience with the SMS OTP:
+To provide the best user experience with the SMS OTP, follow these steps:
 
 * Use an `<input>` element with:
     * `type="text"`
@@ -64,8 +64,8 @@ To provide the best user experience with the SMS OTP:
 ## Use the `<input>` element
 
 Using a form with an `<input>` element is the most important best practice you
-can follow as it will definitely work on any browser. Even if other items in
-this article don't work, the user can still enter and submit the OTP by doing it
+can follow because it works in all browsers. Even if other suggestions from
+this post don't work in some browser, the user will still be able to enter and submit the OTP 
 manually.
 
 ```html
@@ -81,8 +81,8 @@ manually.
 The following are a few ideas to ensure an input field gets the best out of
 browser functionality.
 
-{% Aside 'gotchas' %}
-There are more general form best practices other than ones described below. [Sam
+{% Aside %}
+For more general form best practices, [Sam
 Dutton](https://twitter.com/sw12)'s [Sign-in form best
 practices](https://web.dev/sign-in-form-best-practices/) is a great starting
 point.
@@ -90,12 +90,12 @@ point.
 
 ### `type="text"`
 
-Because OTPs are usually 5 or 6 digit numbers, you may be tempted to use
-`type="number"` for an input field because it turns the mobile keyboard to be
-numbers only. However, it's not the best idea, because the browser expects an
+Because OTPs are usually five or six digit numbers, using
+`type="number"` for an input field might seem intuitive because it changes the mobile 
+keyboard to numbers only. This is not recommended because the browser expects an
 input field to be a countable number rather than a sequence of multiple numbers,
-and this causes unexpected behaviors. Using `type="number"` causes up and down
-buttons to be displayed beside the input field, and pressing these buttons
+which can cause unexpected behavior. Using `type="number"` causes up and down
+buttons to be displayed beside the input field; pressing these buttons
 increments or decrements the number and may remove preceding zeros.
 
 Use `type="text"` instead. This won't turn the mobile keyboard into numbers
@@ -130,7 +130,7 @@ the keyboard will suggest that the user enter the OTP.
     <source src="https://storage.googleapis.com/web-dev-assets/sms-otp-form/ios-safari.mp4" type="video/mp4">
   </video>
   <figcaption class="w-figcaption">
-    `autocomplete="one-time-code"` in action
+    `autocomplete="one-time-code"` in action.
   </figcaption>
 </figure>
 
@@ -151,7 +151,7 @@ Your OTP is 123456
 @web-otp.glitch.me #123456
 ```
 
-{% Aside 'gotchas' %}
+{% Aside %}
 More fine grained rules are:
 
 * The message begins with (optional) human-readable text that contains a four to
@@ -214,12 +214,12 @@ navigator.credentials.get({
     <source src="https://storage.googleapis.com/web-dev-assets/sms-otp-form/android-chrome.mp4" type="video/mp4">
   </video>
   <figcaption class="w-figcaption">
-    Web OTP API in action
+    Web OTP API in action.
   </figcaption>
 </figure>
 
-Learn how to use the Web OTP API in detail at Verify phone numbers on the web
-with the Web OTP API or copy and paste the following snippet. (Make sure the
+Learn how to use the Web OTP API in detail in [Verify phone numbers on the web
+with the Web OTP API](https://web.dev/web-otp/) or copy and paste the following snippet. (Make sure the
 `<form>` element has an `action` and `method` attribute properly set.)
 
 ```js
