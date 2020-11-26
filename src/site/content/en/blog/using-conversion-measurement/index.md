@@ -26,24 +26,32 @@ simple end-to-end implementation example.
 
 The Event Conversion Measurement API can be supported:
 
-- As an [origin trial](/origin-trials/), from Chrome 86 beta and Chrome 87 (stable from mid-November
-  2020), to Chrome 88 (February 2021). Origin trials enable the API for **all visitors** of a given
-  [origin](/same-site-same-origin/#origin). **You need to register your origin for the origin trial
-  in order to try the API with end users**.
+- As an [origin trial](/origin-trials/), from Chrome 86 beta to Chrome 88 (February 2021). Origin
+  trials enable the API for **all visitors** of a given [origin](/same-site-same-origin/#origin).
+  **You need to register your origin for the origin trial in order to try the API with end users**.
 - By turning on flags, in Chrome 86 and later. Flags enable the API on a **single user**'s browser.
   **Flags are useful when [developing locally](#develop-locally)**.
 
-See details on the current status on the [Chrome feature
+See details about the Chrome versions where the API is active on the [Chrome feature
 entry](https://chromestatus.com/feature/6412002824028160).
 
 ### When is the API available?
 
 For the conversion measurement API to be available on a page, it needs to be:
 
-- Enabled on the **origin**.
+- Enabled on the **origin**. 
 - AND—this is specific to this API—Enabled on the **browser**.
 
-With this, the API can be enabled as follows:
+To enable the API on **an origin** for end users, an [origin trial
+token](/#register-for-the-origin-trial) must be added where relevant. To activate the API on
+**all origins**, for example for [development purposes](/#develop-locally), a single user can activate
+the flag `#enable-experimental-web-platform-features`. (Visit `chrome://flags` in Chrome to activate
+flags.)
+
+To enable the API on the **browser**, some users won't have to do anything, because the API is
+enabled automatically on some Chrome instances. If you want to force-activate the API on your Chrome
+instance, for example for [development purposes](/#develop-locally), turn on the flag
+`#conversion-measurement-api`.
 
 <figure class="w-figure">
   <img src="./api-enable.jpg" alt="Diagram: how to enable the API">
@@ -202,6 +210,8 @@ debugging purposes you may want to get the reports immediately.
 
 If you're experimenting with the API, your feedback is key in order to improve the API and support
 more use cases—please [share your feedback](/conversion-measurement/#share-your-feedback)!
+
+_With many thanks to Jxck for his feedback on this article._
 
 _Hero image by William Warby / @wawarby on [Unsplash](https://unsplash.com/photos/WahfNoqbYnM),
 edited._
