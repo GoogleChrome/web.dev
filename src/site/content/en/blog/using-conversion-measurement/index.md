@@ -42,14 +42,14 @@ For the conversion measurement API to be available on a page, it needs to be:
 - Enabled on the **origin**. 
 - AND—this is specific to this API—Enabled on the **browser**.
 
-To enable the API on an **origin** for end users, an [origin trial
-token](/#register-for-the-origin-trial) must be added where relevant. **Or**, to activate the API on
-all origins for example for [development purposes](/#develop-locally), a single user can activate
-the flag `#enable-experimental-web-platform-features` (visit `chrome://flags` in Chrome to activate
-flags).
+To enable the API on **an origin** for end users, an [origin trial
+token](/#register-for-the-origin-trial) must be added where relevant. To activate the API on
+**all origins**, for example for [development purposes](/#develop-locally), a single user can activate
+the flag `#enable-experimental-web-platform-features`. (Visit `chrome://flags` in Chrome to activate
+flags.)
 
 To enable the API on the **browser**, some users won't have to do anything, because the API is
-enabled automatically on some Chrome instances. If you want to force-activate the API in your Chrome
+enabled automatically on some Chrome instances. If you want to force-activate the API on your Chrome
 instance, for example for [development purposes](/#develop-locally), turn on the flag
 `#conversion-measurement-api`.
 
