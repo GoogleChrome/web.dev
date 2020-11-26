@@ -212,5 +212,7 @@ debugging purposes you may want to get the reports immediately.
 If you're experimenting with the API, your feedback is key in order to improve the API and support
 more use cases—please [share your feedback](/conversion-measurement/#share-your-feedback)!
 
+_With many thanks to Jxck for his feedback on this article._
+
 _Hero image by William Warby / @wawarby on [Unsplash](https://unsplash.com/photos/WahfNoqbYnM),
 edited._
