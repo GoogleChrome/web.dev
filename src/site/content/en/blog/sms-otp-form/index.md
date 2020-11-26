@@ -39,7 +39,7 @@ SMS OTP is commonly used for that purpose.
 This post explains best practices to build an SMS OTP form for the above use
 cases.
 
-{% Aside %}
+{% Aside 'caution' %}
 While this post discusses SMS OTP form best practices, be aware that SMS OTP is
 not the most secure method of authentication by itself. That's because phone
 numbers are known to be recycled and sometimes hijacked. And the concept of OTP
@@ -81,7 +81,7 @@ manually.
 The following are a few ideas to ensure an input field gets the best out of
 browser functionality.
 
-{% Aside %}
+{% Aside 'gotchas' %}
 There are more general form best practices other than ones described below. [Sam
 Dutton](https://twitter.com/sw12)'s [Sign-in form best
 practices](https://web.dev/sign-in-form-best-practices/) is a great starting
@@ -107,18 +107,22 @@ that job.
 Some websites use `type="tel"` for an input field which is smart because it
 turns the mobile keyboard to be number only (including `*` and `#`) when
 focused. Developers choose this  because, in the past, some browsers didn't
-support `inputmode="numeric"`. But since Firefox started supporting
-`inputmode="numeric"`, you no longer need to stick with the hack of using
-`type="tel"`. You can instead use `inputmode="numeric"` to turn the mobile
-keyboard into the numbers only one which is semantically better.
+support
+[`inputmode="numeric"`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/inputmode).
+But since [Firefox started supporting
+`inputmode="numeric"`](https://github.com/mdn/browser-compat-data/pull/6782),
+you no longer need to stick with the hack of using `type="tel"`. You can instead
+use `inputmode="numeric"` to turn the mobile keyboard into the numbers only one
+which is semantically better.
 
 ### `autocomplete="one-time-code"`
 
-`autocomplete="one-time-code"` works only on Safari 12 and later on iOS, iPadOS
-and macOS, but we strongly recommend using it, because this is an easy way to
-improve the SMS OTP experience on those platforms. Whenever a user receives an
-SMS text message with the form, the operating system will parse the OTP in the
-SMS heuristically and the keyboard will suggest that the user enter the OTP.
+[`autocomplete="one-time-code"`](https://developer.mozilla.org/docs/Web/HTML/Attributes/autocomplete)
+works only on Safari 12 and later on iOS, iPadOS and macOS, but we strongly
+recommend using it, because this is an easy way to improve the SMS OTP
+experience on those platforms. Whenever a user receives an SMS text message with
+the form, the operating system will parse the OTP in the SMS heuristically and
+the keyboard will suggest that the user enter the OTP.
 
 <figure class="w-figure" style="width:300px; margin:auto;">
   <video controls autoplay loop muted class="w-screenshot">
@@ -136,10 +140,10 @@ format](https://wicg.github.io/sms-one-time-codes/).
 
 ## Format the SMS text
 
-By aligning with the origin-bound one-time codes delivered via SMS
-specification, you can enhance the user experience of entering an OTP. The
-format rule is simple: Finish the SMS message with the domain preceded with `@`
-and the OTP preceded with `#`.
+By aligning with [the origin-bound one-time codes delivered via
+SMS](https://wicg.github.io/sms-one-time-codes/) specification, you can enhance
+the user experience of entering an OTP. The format rule is simple: Finish the
+SMS message with the domain preceded with `@` and the OTP preceded with `#`.
 
 ```text
 Your OTP is 123456
@@ -147,7 +151,7 @@ Your OTP is 123456
 @web-otp.glitch.me #123456
 ```
 
-{% Aside %}
+{% Aside 'gotchas' %}
 More fine grained rules are:
 
 * The message begins with (optional) human-readable text that contains a four to
@@ -189,12 +193,13 @@ the Web OTP API, though not through `autocomplete="one-time-code"`.
 
 ## Use the Web OTP API
 
-The Web OTP API provides access to the OTP received in an SMS message. By
-calling `navigator.credentials.get()`  with `otp` type (`OTPCredential`) where
-`transport` includes `sms`, the website will wait for an SMS that complies with
-the origin-bound one-time codes to be delivered and granted access by the user.
-Once the OTP is passed to JavaScript, the website can use it in a form or POST
-it directly to the server.
+[The Web OTP API](https://wicg.github.io/web-otp/) provides access to the OTP
+received in an SMS message. By calling
+[`navigator.credentials.get()`](https://developer.mozilla.org/docs/Web/API/CredentialsContainer/get)
+with `otp` type (`OTPCredential`) where `transport` includes `sms`, the website
+will wait for an SMS that complies with the origin-bound one-time codes to be
+delivered and granted access by the user. Once the OTP is passed to JavaScript,
+the website can use it in a form or POST it directly to the server.
 
 ```js
 navigator.credentials.get({
