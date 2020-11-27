@@ -219,14 +219,14 @@ users of the type of data they're entering when a value can't be autofilled.
 </figure>
 
 It's extremely important to correctly add all available `autocomplete` values to payment forms. It's 
-quite common for sites miss out the `autocomplete` value for the card expiry date and other fields. 
-If a single `autofill` value is wrong or missing, users will need to retrieve physical cards to 
-manually enter card data, and you may lose out on a sale. If autofill on payment forms doesn't work 
-properly, users may also decide to keep a record of payment card details on their phone or computer, 
-which is highly insecure. 
+quite common for sites too miss oout the `autocomplete` value for the card expiry date and other 
+fields. If a single `autofill` value is wrong or missing, users will need to retrieve physical cards 
+to manually enter card data, and you may lose out on a sale. If autofill on payment forms doesn't 
+work properly, users may also decide to keep a record of payment card details on their phone or 
+computer, which is highly insecure. 
 
 {% Aside %}
-Research shows that [it may be better use separate select elements for month and year](https://baymard.com/blog/how-to-format-expiration-date-fields) rather than a single input. It's up to you which you think is 
+Research shows that [it may be better to use separate select elements for month and year](https://baymard.com/blog/how-to-format-expiration-date-fields) rather than a single input. It's up to you which you think is 
 best. Test this out by remixing and editing the HTML from our complete 
 [payment form demo](https://glitch.com/~payment-form), which includes code for both types of expiry 
 date field.
@@ -297,37 +297,72 @@ Here is how your code should look at this point:
   height: 750
 } %}
 
-* Look at the JavaScript code for payment-form-codelab-4 (as shown above). You'll notice 
-commented-out code for data validation. This uses the 
+* Click **View Source** to view the JavaScript for payment-form-codelab-4 above. You'll notice 
+that this includes commented-out code for data validation. This code uses the 
 [Constraint Validation API](https://html.spec.whatwg.org/multipage/forms.html#constraints) 
 (which is [widely supported](https://caniuse.com/#search=constraint%20validation)) to add custom 
-validation, using built-in browser UI to set focus and display prompts. Try it out! 
+validation, using built-in browser UI to set focus and display prompts. Un-comment the code and try 
+it out. You'll need to set appropriate values for `someregex` and `message`, and set a value for 
+`someField`.
 
-## Step 5: XXXXX
+## Step 5: Build an address form
+
+How can you design a form that works well for a variety of address formats? 
+
+Minor address form glitches irritate users and may cause them to leave your site, or give up on 
+completing a purchase or sign-up.
 
 
 
-**For bonus points:** try out something blah blah blah.
+{% Aside %}
+Before you start building forms, make sure to understand what data is required and who needs it. 
+Don't ask for data you don't need! The simplest way to reduce form complexity, improve privacy and 
+reduce your back-end costs is to remove unnecessary fields.
+{% endAside %}
 
-Here's how your code should look at this point:
+{% Aside 'caution' %}
+This codelab doesn't address 😜 localization or internationalization. Depending on where your users 
+are located, you need to consider address **formats** as well as the different **names** used for 
+address components, even within the same language: ZIP, postal code, Eircode or PIN? It may be 
+necessary for your site to [customize for multiple locales](https://www.smashingmagazine.com/2020/11/internationalization-localization-static-sites#determining-user-s-language-and-region), 
+but the address form in this codelab is designed for flexibility, and should work 'well enough' for 
+a range of addresses.
+{% endAside %}
 
-{% Glitch {
-  id: 'payment-and-address-form-codelab-5',
-  path: 'style.css',
-  height: 480
-} %}
+
+{% Aside 'caution' %}
+Country selectors are notorious for being [hard to use](https://www.smashingmagazine.com/2011/11/redesigning-the-country-selector/). 
+It's [best to avoid select elements for a long list of items](https://baymard.com/blog/drop-down-usability#in-general-avoid-drop-downs-when-there-are-more-than-10-or-fewer-than-5-options) 
+— and the ISO 3166 standard for country codes [currently lists 249 countries](https://www.iso.org/obp/ui/#search)!  
+Instead of a `<select>` you may want to consider an alternative such as the 
+  [Baymard Institute country selector](https://baymard.com/labs/country-selector). 
+
+Localization of country names can also be problematic. [Countries Lists](http://www.countries-list.info/Download-List) 
+has a tool to download country codes and names in multiple languages, in multiple formats.
+{% endAside %}
+
+* Can you design a better country selector? How would you ensure your design is accessible across a 
+range of devices and platforms? (The `<select>` element doesn't work well for a large number of 
+  items, but at least it's usable on virtually all browsers and assistive devices!)
+* You've built a highly functional address form, but what if your site requires more than one 
+address, for shipping and billing, for example? Try updating your form to enable customers to enter 
+shipping and billing addresses. How can you make data entry as quick and easy as possible, 
+especially if the two addresses are the same? The article that goes with this codelab explains 
+[techniques for handling multiple addresses](/payment-and-address-form-best-practices#billing-address). 
+Whatever you do, make sure to use the correct `autocomplete` values!
 
 ## Going further
 
-We won't show them here, but four crucial payment-and-address form features are still missing:
+We won't show them here, but crucial form features are still missing.
 
-* Add a **Forgot your password?** link: make it easy for users to reset their password.
+* Well designed name field. In summary: [use a single name input]((/payment-and-address-form-best-practices#single-name-input) 
+if possible, [enable name autofill](/payment-and-address-form-best-practices#name-autofill) and allow 
+[international names](#unicode-matching).
 
 * Link to your Terms of Service and privacy policy documents: make it clear to 
-users from the start how you safeguard their data.
+users how you safeguard their data.
 
-* Consider style and branding: make sure these match the rest of your site. 
+* Style and branding: make sure these match the rest of your site. 
 
-* Add [Analytics and RUM](/payment-and-address-form-best-practices#analytics): enable the 
-performance and usability of your form design to be tested and monitored for 
-real users. 
+* [Analytics and Real User Monitoring](/payment-and-address-form-best-practices#analytics-rum): 
+enable the performance and usability of your form design to be tested and monitored for real users. 
