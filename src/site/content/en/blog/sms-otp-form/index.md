@@ -45,10 +45,10 @@ not the most secure method of authentication by itself because phone
 numbers can be recycled and sometimes hijacked. And [the concept of OTP
 itself is not phishing resistant](https://youtu.be/kGGMgEfSzMw?t=1133).
 
-If you are looking for better security, consider using [WebAuthn](https://webauthn.io/). Learn
-more about it from the talk "[What's new in sign-up &
-sign-in](https://goo.gle/webauthn-video)" at the Chrome Dev Summit 2019.
-{% endAside %}
+If you are looking for better security, consider using
+[WebAuthn](https://www.w3.org/TR/webauthn-2/). Learn more about it from the talk
+"[What's new in sign-up & sign-in](https://goo.gle/webauthn-video)" at the
+Chrome Dev Summit 2019. {% endAside %}
 
 ## Checklist
 
@@ -59,7 +59,7 @@ To provide the best user experience with the SMS OTP, follow these steps:
     * `inputmode="numeric"`
     * `autocomplete="one-time-code"`
 * Use `@BOUND_DOMAIN #OTP_CODE` as the last line of the OTP SMS message.
-* Use the [Web OTP API](https://web.dev/web-otp/).
+* Use the [Web OTP API](/web-otp/).
 
 ## Use the `<input>` element
 
@@ -82,9 +82,8 @@ The following are a few ideas to ensure an input field gets the best out of
 browser functionality.
 
 {% Aside %}
-For more general form best practices, [Sam
-Dutton](https://twitter.com/sw12)'s [Sign-in form best
-practices](https://web.dev/sign-in-form-best-practices/) is a great starting
+For more general form best practices, [Sam Dutton](/authors/samdutton/)'s
+[Sign-in form best practices](/sign-in-form-best-practices/) is a great starting
 point.
 {% endAside %}
 
@@ -170,8 +169,10 @@ More fine grained rules are:
   preceded by `@`.
 * The URL must contain a pound sign ("`#`") followed by the OTP.
 
+Of course, make sure the number of characters doesn't exceed 140 in total.
+
 To learn more about Chrome specific rules, read [Format the SMS message section
-of Web OTP API article](https://web.dev/web-otp/#format).
+of Web OTP API article](/web-otp/#format).
 {% endAside %}
 
 The benefits of using this format:
@@ -228,8 +229,8 @@ navigator.credentials.get({
 </figure>
 
 Learn how to use the Web OTP API in detail in [Verify phone numbers on the web
-with the Web OTP API](https://web.dev/web-otp/) or copy and paste the following snippet. (Make sure the
-`<form>` element has an `action` and `method` attribute properly set.)
+with the Web OTP API](/web-otp/) or copy and paste the following snippet. (Make
+sure the `<form>` element has an `action` and `method` attribute properly set.)
 
 ```js
 // Feature detection
