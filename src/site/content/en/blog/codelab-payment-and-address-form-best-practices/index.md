@@ -37,6 +37,7 @@ As you'll see, these elements enable built-in browser functionality, improve acc
 add meaning to your markup.
 
 {% Instruction 'remix' %}
+
 * Add the following code inside the `<body>` element:
 
 ```html
@@ -255,8 +256,8 @@ any common problems or best practices you should follow?
 ## Step 4: Disable the payment button once the form is submitted.
 
 You should consider disabling a submit button once the user has tapped or clicked it—especially when 
-the user is making payment. Many users click buttons repeatedly, even if they're working fine. That 
-can cause problems with payment processing and add to server load. 
+the user is making payment. [Many users tap or click buttons repeatedly]((https://baymard.com/blog/users-double-click-online)), 
+even if they're working fine. That can cause problems with payment processing and add to server load. 
 
 Add the following JavaScript to your `js/main.js` file:
 
@@ -305,20 +306,115 @@ validation, using built-in browser UI to set focus and display prompts. Un-comme
 it out. You'll need to set appropriate values for `someregex` and `message`, and set a value for 
 `someField`.
 
-## Step 5: Build an address form
+## Step 5: Build a form for name and address
 
-How can you design a form that works well for a variety of address formats? 
+How can you design a form that works well for a variety of names and address formats? 
 
 Minor address form glitches irritate users and may cause them to leave your site, or give up on 
 completing a purchase or sign-up.
 
+{% Aside %}
+Before you start building forms, make sure to understand what data is required and if it's strictly 
+necessary. Don't ask for data you don't need! The simplest way to reduce form complexity and improve 
+privacy is to remove unnecessary fields. Storing less data also reduces back-end data cost and 
+liability.
+{% endAside %}
 
+You'll start this part of the codelab with an empty form—nothing but a heading and a lonely 
+button—then begin adding inputs. (CSS and a little bit of JavaScript are already included.)
+
+{% Glitch {
+  id: 'address-form-codelab-0',
+  path: 'css/main.css',
+  height: 300
+} %}
+
+{% Instruction 'remix' %}
+
+* Add a name field to your `<form>` element with the following code:
+
+```html
+<section>
+  <label for="name">Name</label>
+  <input id="name" name="name">
+</section>
+```
+
+That looks like a lot of repetitive HTML just for one name field, but this already does a lot! Let's 
+break it down.
+
+You associated the label with the input by using the label's `for` attribute with the input's `name` or 
+`id`. A tap or click on a label moves focus to its input, making a much bigger target—which is good 
+for fingers, thumbs and mouse clicks! Screenreaders announce label text when the label or the 
+label's input gets focus.
+
+What about `name="name"`? This is the the name associated with data from this input (which happens 
+to be 'name'!) that's sent to the server when the form is submitted. Including a `name` attribute 
+also means that the data from this element can be accessed by the 
+[FormData API](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects).
+
+* What happens when you tap or click in the **Name** input in Chrome? You should see autofill 
+suggestions that the browser has stored and guesses are appropriate for this input, given it's 
+`name` and `id` values.
+
+Now add `autocomplete="name"` to your input code so it looks like this:
+
+```html/2
+<section>
+  <label for="name">Name</label>
+  <input id="name" name="name" autocomplete="name">
+</section>
+```
+
+Reload the page in Chrome and tap or click in the **Name** input. You should see a subtle change: 
+the suggestions are now specific values that were used previously in form inputs with 
+`autocomplete="name"`.
+
+
+<figure class="w-figure">
+  <img 
+    src="images/autofill-autocomplete.jpg" 
+    alt="Two screenshots of Chrome on an Android phone showing a form with a single input, with 
+    and without an autocomplete value. One shows browser UI heuristicically suggestions values; the 
+    other shows UI when there are stored autocomplete values.">
+  <figcaption class="w-figcaption">UI for autofill with guessed values, versus autocomplete.</figcaption>
+</figure>
 
 {% Aside %}
-Before you start building forms, make sure to understand what data is required and who needs it. 
-Don't ask for data you don't need! The simplest way to reduce form complexity, improve privacy and 
-reduce your back-end costs is to remove unnecessary fields.
+If an [appropriate autocomplete value](/payment-and-address-form-best-practices/#autocomplete-attribute) 
+is available for an `input`, `select` or `textarea`, you should use it!
 {% endAside %}
+
+Now add [constraint validation attributes](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation) 
+`maxlength`, `pattern` and `required` so your input code looks like this:
+
+```html/2
+<section>
+  <label for="name">Name</label>
+  <input id="name" name="name" autocomplete="name" maxlength="100" pattern="[\p{L} \-\.]+" required>
+</section>
+```
+
+`maxlength="100"` means the browser won't allow any input longer than 100 characters, which is handy 
+for avoiding problematic data entry from the user.
+
+`pattern="[\p{L} \-\.]+"` uses a regular expression that allows [Unicode letter characters](https://javascript.info/regexp-unicode), 
+hyphens and periods (full stops). That means names such as Françoise or Jörg aren't classed as 
+'invalid'. That isn't the case if you use the value `\w` which [only allows characters from the Latin alphabet](/payment-and-address-form-best-practices/#unicode-matching).
+
+`required` means this input is... required! The browser will not allow the form to be submitted 
+without data for this field, and will warn and highlight the input if you attempt to submit it.
+
+* Try entering data with and without these attributes. Try entering values that don't fit the 
+`pattern` attribute.
+* Try submitting the form with an empty input. You'll see built-in browser functionality warning of 
+the empty required field and setting focus on it. No extra code required!
+
+
+
+
+
+
 
 {% Aside 'caution' %}
 This codelab doesn't address 😜 localization or internationalization. Depending on where your users 
