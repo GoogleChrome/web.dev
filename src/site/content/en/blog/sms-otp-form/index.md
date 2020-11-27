@@ -5,7 +5,7 @@ authors:
   - agektmr
 date: 2020-12-04
 hero: hero.jpg
-alt: A drawing of a woman using OTP to log in to a web app.
+alt: A neon chat bubble sign.
 
 description: |
   Asking a user to provide an OTP (one-time password) delivered via SMS is a
@@ -89,7 +89,7 @@ point.
 
 ### `type="text"`
 
-Because OTPs are usually five or six digit numbers, using
+Since OTPs are usually five or six digit numbers, using
 `type="number"` for an input field might seem intuitive because it changes the mobile 
 keyboard to numbers only. This is not recommended because the browser expects an
 input field to be a countable number rather than a sequence of multiple numbers,
@@ -103,12 +103,11 @@ that job.
 
 ### `inputmode="numeric"`
 
-Use `inputmode="numeric"` to change the mobile keyboard to numbers only.
+Use [`inputmode="numeric"`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/inputmode) to change the mobile keyboard to numbers only.
 
 Some websites use `type="tel"` for OTP input fields since it also 
 turns the mobile keyboard to numbers only (including `*` and `#`) when
-focused. This hack was used in the past when
-[`inputmode="numeric"`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/inputmode)
+focused. This hack was used in the past when `inputmode="numeric"`
 wasn't widely supported. Since [Firefox started supporting
 `inputmode="numeric"`](https://github.com/mdn/browser-compat-data/pull/6782),
 there's no need to use the semantically incorrect `type="tel"` hack.
@@ -136,7 +135,7 @@ easy way to improve the SMS OTP experience on those platforms.
   </figcaption>
 </figure>
 
-This is already a good user experience, but there's more you can do by ensuring
+This improves user experience, but there's more you can do by ensuring
 that the SMS message complies with the [origin-bound message
 format](https://wicg.github.io/sms-one-time-codes/).
 
@@ -149,6 +148,7 @@ specification.
 The format rule is simple: Finish the
 SMS message with the domain preceded with `@` and the OTP preceded with `#`.
 
+For example:
 ```text
 Your OTP is 123456
 
@@ -161,35 +161,33 @@ websites makes it harder to trick users into providing a code to malicious sites
 
 {% Aside %}
 More fine grained rules are:
-
 * The message begins with (optional) human-readable text that contains a four to
-  ten character alphanumeric string with at least one number leaving the last
+  ten character alphanumeric string with at least one number, leaving the last
   line for the URL and the OTP.
 * The domain part of the URL of the website that invoked the API must be
   preceded by `@`.
 * The URL must contain a pound sign ("`#`") followed by the OTP.
 
-Of course, make sure the number of characters doesn't exceed 140 in total.
+Make sure the number of characters doesn't exceed 140 in total.
 
 To learn more about Chrome specific rules, read [Format the SMS message section
-of Web OTP API article](/web-otp/#format).
+of Web OTP API post](/web-otp/#format).
 {% endAside %}
 
-The benefits of using this format:
+Using this format provides a couple of benefits:
 
-* The OTP will be bound to the domain. This means the OTP suggestion won't
-  appear if the user is on domains other than the one specified in the SMS
-  message. This also mitigates the risk of phishing attacks and potential
-  account hijacks.
-* You can programmatically tell the OTP to the browser without depending on
-  mysterious browser heuristics.
+* The OTP will be bound to the domain. If the user is on domains other than 
+  the one specified in the SMS message, the OTP suggestion won't appear. 
+  This also mitigates the risk of phishing attacks and potential account hijacks.
+* You can programmatically provide the OTP to the browser, which is more reliable 
+   than browser heuristics for OTP extraction.
 
 When a website uses `autocomplete="one-time-code"`, Safari with iOS 14 or later
 will suggest the OTP following the above rules.
 
 {% Aside %}
 If the user is on a desktop with macOS Big Sur with the same iCloud account set
-up as on iOS, the OTP received on the iOS device is propagated and will be
+up as on iOS, the OTP received on the iOS device will be
 available on the desktop Safari as well.
 
 To learn more about other benefits and nuances of the availability on Apple
@@ -197,7 +195,7 @@ platforms, read [Enhance SMS-delivered code security with domain-bound
 codes](https://developer.apple.com/news/?id=z0i801mg).
 {% endAside %}
 
-This SMS message format also benefits browsers other than Safari. Chrome, Opera
+This SMS message format also benefits browsers other than Safari. Chrome, Opera,
 and Vivaldi on Android also support the origin-bound one-time codes rule with
 the Web OTP API, though not through `autocomplete="one-time-code"`.
 
