@@ -131,7 +131,7 @@ when you press the button:
 </figure>
 
 {% Aside %} By default, Next.js names these dynamic chunks _number_.js, where
-_number_ starts from 1. {% endAside %}
+_number_ starts from 1. To add a custom name to the chunk use the [`webpackChunkName`](https://webpack.js.org/api/module-methods/#magic-comments) comment, for example `import(/* webpackChunkName: 'Puppy' */ "../components/Puppy"))` {% endAside %}
 
 In real-world applications, components are often [much
 larger](https://bundlephobia.com/result?p=moment@2.24.0), and lazy-loading them
