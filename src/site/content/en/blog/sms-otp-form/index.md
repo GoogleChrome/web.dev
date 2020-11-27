@@ -54,12 +54,12 @@ sign-in](https://goo.gle/webauthn-video)" at the Chrome Dev Summit 2019.
 
 To provide the best user experience with the SMS OTP, follow these steps:
 
-* Use an `<input>` element with:
+* Use the `<input>` element with:
     * `type="text"`
     * `inputmode="numeric"`
     * `autocomplete="one-time-code"`
-* Use `@${bound-domain} #${OTP}` as the last line of the SMS text message.
-* Use the Web OTP API.
+* Use `@BOUND_DOMAIN #OTP_CODE` as the last line of the OTP SMS message.
+* Use the [Web OTP API](https://web.dev/web-otp/).
 
 ## Use the `<input>` element
 
@@ -104,25 +104,28 @@ that job.
 
 ### `inputmode="numeric"`
 
-Some websites use `type="tel"` for an input field which is smart because it
-turns the mobile keyboard to be number only (including `*` and `#`) when
-focused. Developers choose this  because, in the past, some browsers didn't
-support
-[`inputmode="numeric"`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/inputmode).
-But since [Firefox started supporting
+Use `inputmode="numeric"` to change the mobile keyboard to numbers only.
+
+Some websites use `type="tel"` for OTP input fields since it also 
+turns the mobile keyboard to numbers only (including `*` and `#`) when
+focused. This hack was used in the past when
+[`inputmode="numeric"`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/inputmode)
+wasn't widely supported. Since [Firefox started supporting
 `inputmode="numeric"`](https://github.com/mdn/browser-compat-data/pull/6782),
-you no longer need to stick with the hack of using `type="tel"`. You can instead
-use `inputmode="numeric"` to turn the mobile keyboard into the numbers only one
-which is semantically better.
+there's no need to use the semantically incorrect `type="tel"` hack.
 
 ### `autocomplete="one-time-code"`
 
-[`autocomplete="one-time-code"`](https://developer.mozilla.org/docs/Web/HTML/Attributes/autocomplete)
-works only on Safari 12 and later on iOS, iPadOS and macOS, but we strongly
-recommend using it, because this is an easy way to improve the SMS OTP
-experience on those platforms. Whenever a user receives an SMS text message with
-the form, the operating system will parse the OTP in the SMS heuristically and
-the keyboard will suggest that the user enter the OTP.
+[`autocomplete`](https://developer.mozilla.org/docs/Web/HTML/Attributes/autocomplete) 
+attribute lets developers specify what permission the browser 
+has to provide autocomplete assistance and informs the browser about the 
+type of information expected in the field.
+
+With `autocomplete="one-time-code"` whenever a user receives an SMS message while a 
+form is open, the operating system will parse the OTP in the SMS heuristically and
+the keyboard will suggest the OTP for the user to enter. It works only on Safari 12 and 
+later on iOS, iPadOS, and macOS, but we strongly recommend using it, because it is an 
+easy way to improve the SMS OTP experience on those platforms.
 
 <figure class="w-figure" style="width:300px; margin:auto;">
   <video controls autoplay loop muted class="w-screenshot">
@@ -140,9 +143,11 @@ format](https://wicg.github.io/sms-one-time-codes/).
 
 ## Format the SMS text
 
-By aligning with [the origin-bound one-time codes delivered via
-SMS](https://wicg.github.io/sms-one-time-codes/) specification, you can enhance
-the user experience of entering an OTP. The format rule is simple: Finish the
+Enhance the user experience of entering an OTP by aligning with 
+[the origin-bound one-time codes delivered via SMS](https://wicg.github.io/sms-one-time-codes/) 
+specification. 
+
+The format rule is simple: Finish the
 SMS message with the domain preceded with `@` and the OTP preceded with `#`.
 
 ```text
@@ -150,6 +155,10 @@ Your OTP is 123456
 
 @web-otp.glitch.me #123456
 ```
+
+Using a standard format for OTP messages makes extraction 
+of codes from them easier and more reliable. Associating OTP codes with 
+websites makes it harder to trick users into providing a code to malicious sites.
 
 {% Aside %}
 More fine grained rules are:
