@@ -81,7 +81,7 @@ Here's how your `index.html` should look at this point:
 {% Glitch {
   id: 'payment-form-codelab-1',
   path: 'index.html',
-  height: 270
+  height: 350
 } %}
 
 Click **View App** to preview your payment form. 
@@ -100,12 +100,13 @@ on mobile. It doesn't look so good, either!
 You need to ensure your forms work well on a range of devices by adjusting padding, margins, and 
 font sizes. 
 
-Click the **View Source** button below, copy all the CSS and paste it into your own `main.css` file.
+Copy all the CSS below and paste it into your own `main.css` file.
 
 {% Glitch {
   id: 'payment-form-codelab-2',
   path: 'css/main.css',
-  height: 750
+  height: 270,
+  previewSize: 0
 } %}
 
 That's a lot of CSS! The main things to be aware of are the changes to sizes:
@@ -395,23 +396,34 @@ Now add [constraint validation attributes](https://developer.mozilla.org/en-US/d
 </section>
 ```
 
-`maxlength="100"` means the browser won't allow any input longer than 100 characters, which is handy 
-for avoiding problematic data entry from the user.
+`maxlength="100"` means the browser won't allow any input longer than 100 characters, which helps 
+stop users from entering something untoward.
 
 `pattern="[\p{L} \-\.]+"` uses a regular expression that allows [Unicode letter characters](https://javascript.info/regexp-unicode), 
 hyphens and periods (full stops). That means names such as Françoise or Jörg aren't classed as 
-'invalid'. That isn't the case if you use the value `\w` which [only allows characters from the Latin alphabet](/payment-and-address-form-best-practices/#unicode-matching).
+'invalid'. That isn't the case if you use the value `\w` which [only allows characters from the 
+[Latin alphabet](/payment-and-address-form-best-practices/#unicode-matching).
 
-`required` means this input is... required! The browser will not allow the form to be submitted 
-without data for this field, and will warn and highlight the input if you attempt to submit it.
+`required` means... required! The browser will not allow the form to be submitted without data for 
+this field, and will warn and highlight the input if you attempt to submit it. No extra code 
+required!
 
 * Try entering data with and without these attributes. Try entering values that don't fit the 
 `pattern` attribute.
 * Try submitting the form with an empty input. You'll see built-in browser functionality warning of 
-the empty required field and setting focus on it. No extra code required!
+the empty required field and setting focus on it.
 
+Now add an address field to your form:
 
+```html
+<section>
+  <label for="address">Address</label>
+  <textarea id="address" name="address" autocomplete="address" maxlength="300" required></textarea>
+</section>
+```
 
+A `textarea` is the most flexible way for your users to enter their address. (You'll add fields for 
+postal code and country/region in a moment.) If that works for your site
 
 
 
@@ -431,14 +443,16 @@ Country selectors are notorious for being [hard to use](https://www.smashingmaga
 It's [best to avoid select elements for a long list of items](https://baymard.com/blog/drop-down-usability#in-general-avoid-drop-downs-when-there-are-more-than-10-or-fewer-than-5-options) 
 — and the ISO 3166 standard for country codes [currently lists 249 countries](https://www.iso.org/obp/ui/#search)!  
 Instead of a `<select>` you may want to consider an alternative such as the 
-  [Baymard Institute country selector](https://baymard.com/labs/country-selector). 
+  [Baymard Institute country selector](https://baymard.com/labs/country-selector). [This post](https://shkspr.mobi/blog/2017/11/input-type-country/) discusses some of the difficulties of creating a standardized 
+  `<input type="country">`.
 
 Localization of country names can also be problematic. [Countries Lists](http://www.countries-list.info/Download-List) 
 has a tool to download country codes and names in multiple languages, in multiple formats.
 {% endAside %}
 
-* Can you design a better country selector? How would you ensure your design is accessible across a 
-range of devices and platforms? (The `<select>` element doesn't work well for a large number of 
+* Can you design a better selector for lists with a lot of items? How would you ensure your design 
+is accessible across a range of devices and platforms? (The `<select>` element doesn't work well for 
+  a large number of 
   items, but at least it's usable on virtually all browsers and assistive devices!)
 * You've built a highly functional address form, but what if your site requires more than one 
 address, for shipping and billing, for example? Try updating your form to enable customers to enter 
