@@ -48,7 +48,7 @@ Here is an example of a simple address form that demonstrates all of the best pr
 {% Glitch {
   id: 'address-form',
   path: 'index.html',
-  height: 700
+  height: 730
 } %}
 
 ## Checklist
@@ -467,7 +467,7 @@ prefix/title (like Mrs, Dr or Lord). Users can type that in with their name if t
 `honorific-prefix` autocomplete currently doesn't work in most browsers, and so adding a field for 
 name prefix/title will break the address form autofill experience for most users.
 
-### Enable name autofill
+### Enable name autofill 
 
 Use `name` for a full name:
 
@@ -525,7 +525,7 @@ even within a single country. Be careful not to make assumptions about 'normal' 
 look at [UK Address Oddities!](http://www.paulplowman.com/stuff/uk-address-oddities/) if you're not 
 convinced!)
 
-#### Make address forms flexible
+#### Make address forms flexible {:flexible-address}
 
 Don't force users to [shoe-horn](https://en.wikipedia.org/wiki/Shoehorn#Turn_of_phrase) their address 
 into form fields that don't fit.
@@ -556,10 +556,14 @@ Address line 2 (optional)
 </label>
 <input autocomplete="address-line-2" id="address-line2" ...>
 ```
+You can try this out by remixing and editing the demo embedded below.
 
-{% Aside  %}
-You can try this out using the demo embedded below.
+{% Aside 'caution' %}
+Research shows that [**Address line 2** may be problematic for users]((https://baymard.com/blog/address-line-2)). 
+Bear this in mind when designing address forms—you should consider alternatives such as using a 
+single `textarea` (see below) or other options.
 {% endAside %}
+
 
 #### Consider using a single textarea for address {: #address-textarea}
 
