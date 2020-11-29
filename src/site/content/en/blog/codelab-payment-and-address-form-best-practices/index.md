@@ -15,7 +15,7 @@ tags:
   - mobile
   - security
   - ux
-glitch: payment-and-address-form-codelab-0
+glitch: payment-form-codelab-0
 glitch_path: index.html
 related_post: payment-and-address-form-best-practices
 ---
@@ -81,7 +81,7 @@ Here's how your `index.html` should look at this point:
 {% Glitch {
   id: 'payment-form-codelab-1',
   path: 'index.html',
-  height: 350
+  height: 310
 } %}
 
 Click **View App** to preview your payment form. 
@@ -95,7 +95,7 @@ Click **View Source** to return to your source code.
 ## Step 2: Design for mobile and desktop
 
 The HTML you added is valid, but the default browser styling makes the form hard to use, especially 
-on mobile. It doesn't look so good, either!
+on mobile. It doesn't look too good, either.
 
 You need to ensure your forms work well on a range of devices by adjusting padding, margins, and 
 font sizes. 
@@ -105,7 +105,7 @@ Copy all the CSS below and paste it into your own `main.css` file.
 {% Glitch {
   id: 'payment-form-codelab-2',
   path: 'css/main.css',
-  height: 270,
+  height: 400,
   previewSize: 0
 } %}
 
@@ -134,6 +134,8 @@ Whenever you build for the web, you need to test on different devices and viewpo
 especially true for forms, because one small glitch can make them unusable. You should always adjust 
 [CSS breakpoints](/responsive-web-design-basics/#breakpoints) to ensure they work well with your 
 content and your target devices.
+
+{: #different-devices}
 
 There are several ways to test your form on different devices:
 
@@ -207,10 +209,10 @@ Don't be alarmed! Your browser may be able to autofill the form with stored paym
 no payment can be made, and no data is transferred or saved.
 {% endAside %}
 
-On a mobile device you'll also notice that, as soon as you tap into the **Card number** field, you 
-get a numeric keyboard. That's because you used `inputmode="numeric"`. For numeric fields this makes 
-it easier to enter numbers and impossible to enter non-numeric characters. This in turn helps remind 
-users of the type of data they're entering when a value can't be autofilled.
+On a mobile device you'll also notice that you get a numeric keyboard as soon as you tap into the 
+**Card number** field. That's because you used `inputmode="numeric"`. For numeric fields this makes 
+it easier to enter numbers and impossible to enter non-numeric characters, and nudges users to 
+remember the type of data they're entering.
 
 <figure class="w-figure">
   <img 
@@ -221,11 +223,11 @@ users of the type of data they're entering when a value can't be autofilled.
 </figure>
 
 It's extremely important to correctly add all available `autocomplete` values to payment forms. It's 
-quite common for sites too miss oout the `autocomplete` value for the card expiry date and other 
-fields. If a single `autofill` value is wrong or missing, users will need to retrieve physical cards 
-to manually enter card data, and you may lose out on a sale. If autofill on payment forms doesn't 
-work properly, users may also decide to keep a record of payment card details on their phone or 
-computer, which is highly insecure. 
+quite common for sites to miss out the `autocomplete` value for the card expiry date and other 
+fields. If a single `autofill` value is wrong or missing, users will need to retrieve their actual 
+card to manually enter card data, and you may lose out on a sale. If autofill on payment forms 
+doesn't work properly, users may also decide to keep a record of payment card details on their phone 
+or computer, which is highly insecure. 
 
 {% Aside %}
 Research shows that [it may be better to use separate select elements for month and year](https://baymard.com/blog/how-to-format-expiration-date-fields) rather than a single input. It's up to you which you think is 
@@ -296,33 +298,40 @@ Here is how your code should look at this point:
 {% Glitch {
   id: 'payment-form-codelab-4',
   path: 'js/main.js',
-  height: 750,
+  height: 500,
   previewSize: 0
 } %}
 
-* Click **View Source** to view the JavaScript for payment-form-codelab-4 above. You'll notice 
-that this includes commented-out code for data validation. This code uses the 
-[Constraint Validation API](https://html.spec.whatwg.org/multipage/forms.html#constraints) 
+* You'll notice that the JavaScript includes commented-out code for data validation. This code uses 
+the [Constraint Validation API](https://html.spec.whatwg.org/multipage/forms.html#constraints) 
 (which is [widely supported](https://caniuse.com/#search=constraint%20validation)) to add custom 
-validation, using built-in browser UI to set focus and display prompts. Un-comment the code and try 
-it out. You'll need to set appropriate values for `someregex` and `message`, and set a value for 
+validation, accessing built-in browser UI to set focus and display prompts. Un-comment the code and 
+try it out. You'll need to set appropriate values for `someregex` and `message`, and set a value for 
 `someField`.
 
 * What [analytics and Real User Monitoring data](/payment-and-address-form-best-practices#analytics-rum) 
 would you monitor in order to identify ways to improve your forms?
 
+Your complete payment form should now look like this:
+
+{% Glitch {
+  id: 'payment-form',
+  path: 'index.html',
+  height: 750
+} %}
+
 ## Step 5: Build a form for name and address
 
 How can you design a form that works well for a variety of names and address formats? 
 
-Minor address form glitches irritate users and may cause them to leave your site, or give up on 
+Minor address form glitches can irritate users and cause them to leave your site or give up on 
 completing a purchase or sign-up.
 
 {% Aside %}
-Before you start building forms, make sure to understand what data is required and if it's strictly 
-necessary. Don't ask for data you don't need! The simplest way to reduce form complexity and improve 
-privacy is to remove unnecessary fields. Storing less data also reduces back-end data cost and 
-liability.
+Before you start building forms, make sure to understand what data is required and if that data is 
+strictly necessary. Don't ask for data you don't need! The simplest way to reduce form complexity 
+and improve privacy is to remove unnecessary fields. Storing less data also reduces back-end data 
+cost and liability.
 {% endAside %}
 
 You'll start this part of the codelab with an empty form, just a heading and a button all on 
@@ -346,20 +355,19 @@ included.)
 </section>
 ```
 
-That may look complicated and repetitive for just one name field, but it already does a lot! 
+That may look complicated and repetitive for just one name field, but it already does a lot. 
 
-You associated the label with the input by matching the label's `for` attribute with the input's 
-`name` or `id`. A tap or click on a label moves focus to its input, making a much bigger target 
-than the input on its own—which is good for fingers, thumbs and mouse clicks! Screenreaders announce 
-label text when the label or the label's input gets focus.
+You associated the `label` with the `input` by matching the `label`'s `for` attribute with the 
+`input`'s `name` or `id`. A tap or click on a label moves focus to its input, making a much bigger 
+target than the input on its own—which is good for fingers, thumbs and mouse clicks! Screenreaders 
+announce label text when the label or the label's input gets focus.
 
-What about `name="name"`? This is the the name associated with data from this input (which happens 
-to be 'name'!) which is sent to the server when the form is submitted. Including a `name` attribute 
-also means that the data from this element can be accessed by the 
-[FormData API](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects).
+What about `name="name"`? This is the name (which happens to be 'name'!) associated with the data 
+from this input which is sent to the server when the form is submitted. Including a `name` attribute 
+also means that the data from this element can be accessed by the [FormData API](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects).
 
 * What happens when you tap or click in the **Name** input in Chrome? You should see autofill 
-suggestions that the browser has stored and guesses are appropriate for this input, given it's 
+suggestions that the browser has stored and guesses are appropriate for this input, given its 
 `name` and `id` values.
 
 Now add `autocomplete="name"` to your input code so it looks like this:
@@ -372,16 +380,16 @@ Now add `autocomplete="name"` to your input code so it looks like this:
 ```
 Reload the page in Chrome and tap or click in the **Name** input. What differences do you see?
 
-You should notice a subtle change: with `autocomplete="name"`, the suggestions are now specific 
-values that were used previously in form inputs that also had `autocomplete="name"`. The browser 
-isn't just guessing what might be appropriate: you have control. You'll also see the **Manage...** 
-option to view and edit the names and addresses stored by your browser.
-
 {% Aside %}
 Ever wondered how to delete autofill suggestions in Chrome?
 * Windows: `Shift` + `delete`
 * Mac: `Shift` + `fn` + `delete`
 {% endAside %}
+
+You should notice a subtle change: with `autocomplete="name"`, the suggestions are now specific 
+values that were used previously in form inputs that also had `autocomplete="name"`. The browser 
+isn't just guessing what might be appropriate: you have control. You'll also see the **Manage...** 
+option to view and edit the names and addresses stored by your browser.
 
 <figure class="w-figure">
   <img 
@@ -408,8 +416,7 @@ Now add [constraint validation attributes](https://developer.mozilla.org/en-US/d
 </section>
 ```
 
-`maxlength="100"` means the browser won't allow any input longer than 100 characters, which helps 
-stop users from entering something untoward.
+`maxlength="100"` means the browser won't allow any input longer than 100 characters.
 
 `pattern="[\p{L} \-\.]+"` uses a regular expression that allows [Unicode letter characters](https://javascript.info/regexp-unicode), 
 hyphens and periods (full stops). That means names such as Françoise or Jörg aren't classed as 
@@ -447,9 +454,11 @@ Now add an address field to your form:
 A `textarea` is the most flexible way for your users to enter their address, and it's great for 
 cutting and pasting.
 
-What are using address data for? Don't split your address form into components such as street 
-name and number unless you really need to. Don't force users to try to fit their address into fields 
+You should avoid splitting your address form into components such as street name and number unless 
+you really need to. Don't force users to try to fit their address into fields 
 that don't make sense. 
+
+* What are using address data for? Make sure to understand your data requirements and who sets them.
 
 Now add fields for **ZIP or postal code**, and **Country or region**. For simplicity, we've only 
 included the first five countries. A full list is included in the [completed address form](https://address-form.glitch.me).
@@ -478,8 +487,8 @@ included the first five countries. A full list is included in the [completed add
 You'll see that **Postal code** is optional: that's because [many countries don't use postal codes](https://hellowahab.wordpress.com/2011/05/24/list-of-countries-without-postal-codes/). 
 ([Global Sourcebook](https://www.grcdi.nl/gsb/global%20sourcebook.html) provides information about 
 address formats for 194 different countries, including sample addresses.) The label **Country or 
-region**  is used instead of **Country**, because some options from the full list (such as United 
-Kingdom) are not single countries (despite the `autocomplete` value!)
+region**  is used instead of **Country**, because some options from the full list (such as the 
+United Kingdom) are not single countries (despite the `autocomplete` value!)
 
 {% Aside 'caution' %}
 Country selectors are notorious for [poor usability](https://www.smashingmagazine.com/2011/11/redesigning-the-country-selector/). 
@@ -537,9 +546,20 @@ default) and add `inputmode="numeric"` to get a numeric keyboard on mobile.
 * Can you see any problems with using a single input for telephone number? Do you store phone 
 number parts (country and area code) separately? If so, why?
 
+Your complete address form should now look like this:
+
+{% Glitch {
+  id: 'address-form',
+  path: 'index.html',
+  height: 970
+} %}
+
+* [Try out your form on different devices](#different-devices). What devices and browsers are you 
+targeting? How could the form be improved?
+
 ## Going further
 
-We won't show them here, but crucial form features are still missing.
+We won't show them here, but crucial form features are still missing:
 
 * Link to your Terms of Service and privacy policy documents: make it clear to 
 users how you safeguard their data.
