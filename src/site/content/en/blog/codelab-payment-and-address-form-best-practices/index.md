@@ -256,7 +256,7 @@ encounter?
 * Try out payment forms on online stores. Consider what works well and what goes wrong. Are there 
 any common problems or best practices you should follow?
 
-## Step 4: Disable the payment button once the form is submitted.
+## Step 4: Disable the payment button once the form is submitted
 
 You should consider disabling a submit button once the user has tapped or clicked it—especially when 
 the user is making payment. [Many users tap or click buttons repeatedly]((https://baymard.com/blog/users-double-click-online)), 
@@ -388,7 +388,7 @@ Ever wondered how to delete autofill suggestions in Chrome?
 
 You should notice a subtle change: with `autocomplete="name"`, the suggestions are now specific 
 values that were used previously in form inputs that also had `autocomplete="name"`. The browser 
-isn't just guessing what might be appropriate: you have control. You'll also see the **Manage...** 
+isn't just guessing what might be appropriate: you have control. You'll also see the **Manage…** 
 option to view and edit the names and addresses stored by your browser.
 
 <figure class="w-figure">
@@ -423,7 +423,7 @@ hyphens and periods (full stops). That means names such as Françoise or Jörg a
 'invalid'. That isn't the case if you use the value `\w` which [only allows characters from the 
 [Latin alphabet](/payment-and-address-form-best-practices/#unicode-matching).
 
-`required` means... required! The browser will not allow the form to be submitted without data for 
+`required` means… required! The browser will not allow the form to be submitted without data for 
 this field, and will warn and highlight the input if you attempt to submit it. No extra code 
 required!
 
