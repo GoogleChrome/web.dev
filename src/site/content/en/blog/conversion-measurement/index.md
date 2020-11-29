@@ -1,7 +1,7 @@
 ---
 title: A more private way to measure ad conversions, the Event Conversion Measurement API
 subhead: >
-  A new web API available as an origin trial in Chrome 86 measures when an ad click leads to a conversion, without using cross-site identifiers.
+  A new web API available as an origin trial measures when an ad click leads to a conversion, without using cross-site identifiers.
 authors:
   - maudn
   - samdutton
@@ -44,9 +44,8 @@ endAside %}
 - **Adtech platforms** such as **[demand-side
   platforms](https://en.wikipedia.org/wiki/Demand-side_platform)** are likely to be interested in
   using this API to support functionality that currently relies on third-party cookies. If you're
-  working on conversion measurement systems: [try out the demo](#demo), see if you're eligible to
-  [register for an origin trial](<#register-for-the-origin-trial-(starting-in-chrome-86)>), and
-  [share your feedback](#share-your-feedback).
+  working on conversion measurement systems: [try out the demo](#demo), [experiment with the
+  API](#experiment-with-the-api), and [share your feedback](#share-your-feedback).
 - **Advertisers and publishers relying on custom code for advertising or conversion measurement**
   may similarly be interested in using this API to replace existing techniques.
 - **Advertisers and publishers relying on adtech platforms for advertising or conversion
@@ -98,9 +97,8 @@ address in a privacy-preserving way the use cases that third-party cookies solve
 
 ### A first iteration
 
-This API is at an **early experimental stage**. What's available in Chrome 86 as an origin trial is
-the **first iteration** of the API. Things may change substantially in [future
-iterations](#use-cases).
+This API is at an **early experimental stage**. What's available as an origin trial is the **first
+iteration** of the API. Things may change substantially in [future iterations](#use-cases).
 
 ### Only clicks
 
@@ -152,13 +150,19 @@ timing](#report-timing)).
 
 ## Browser support and similar APIs
 
-### Chrome support
+### Browser support
 
-This API is supported in Chrome 86 and later:
+The Event Conversion Measurement API can be supported:
 
-- Either by enabling [flags](#setting-up-your-browser-for-local-development) on a single user's
-  browser
-- Or as an [origin trial](<#register-for-the-origin-trial-(starting-in-chrome-86)>).
+- As an [origin trial](/origin-trials/), from Chrome 86 beta and Chrome 87 (stable from mid-November
+  2020), to Chrome 88 (February 2021). Origin trials enable the API for **all visitors** of a given
+  [origin](/same-site-same-origin/#origin). **You need to register your origin for the origin trial
+  in order to try the API with end users**.
+- By turning on flags, in Chrome 86 and later. Flags enable the API on a **single user**'s browser.
+  **Flags are useful when developing locally**.
+
+See details on the current status on the [Chrome feature
+entry](https://chromestatus.com/features/6412002824028160).
 
 ### Standardization
 
@@ -253,7 +257,7 @@ conversions to create an identifier won't have full confidence in the data they 
 types of attacks more complicated.
 
 Note that it's possible to [recover the true conversion
-count](<#(optional)-recovering-the-true-conversion-count>).
+count](</using-conversion-measurement/#(optional)-recover-the-corrected-conversion-count>).
 
 Summing up click data and conversion data:
 
@@ -455,7 +459,6 @@ Some notes about the example:
 
 {% Aside 'gotchas' %}
 
-- If this element is within an iframe, the API must be [explicitly enabled](#enabling-the-api).
 - Flows based on navigating via `window.open` or `window.location` won't be eligible for
   attribution.
 
@@ -642,13 +645,10 @@ the "Before you start" instructions.
 Tweet [@maudnals](https://twitter.com/maudnals?lang=en) or
 [@ChromiumDev](https://twitter.com/ChromiumDev) for any question about the demo!
 
-### Register for the origin trial (starting in Chrome 86)
+### Experiment with the API
 
-- If you're planning on using the API as a third-party, you may be eligible to register for a
-  [third-party origin trial](/third-party-origin-trials) so you can test at scale across your
-  customer sites.
-- If you're planning on using the API directly on your own [origin](/same-site-same-origin/#origin),
-  you can register your origin for an [origin trial](/origin-trials/).
+If you're planning to experiment with the API (locally or with end users), see [Using the conversion
+measurement API](/using-conversion-measurement).
 
 ### Share your feedback
 
@@ -674,67 +674,6 @@ provide a good developer experience.
 - Follow along the evolution of the [Aggregate Conversion Measurement
   API](https://github.com/WICG/conversion-measurement-api/blob/master/AGGREGATE.md) that will
   complement this API.
-
-## For API users: must-do and tips
-
-API users are, for example, adtech platforms developers.
-
-### Enabling the API
-
-If you create iframes that include ads, you'll need to add a [Feature
-Policy](https://developers.google.com/web/updates/2018/06/feature-policy) for those ads to support
-conversion measurement with this API, as follows:
-
-```html/0
-<iframe src="..." allow="conversion-measurement">
-  <a impressiondata="..."></a>
-</iframe>
-```
-
-See the [demo](https://goo.gle/demo-event-level-conversion-measurement-api) for an example.
-
-The API needs to be explicitly enabled as above only for **cross-origin** child contexts, such as
-iframes with a cross-origin value in `src`. It's enabled by default in the **top-level context**—for
-example directly on the publisher page—and in **same-origin child contexts**.
-
-Publishers can choose to use the `conversion-measurement` feature policy to [disable the
-API](https://github.com/WICG/conversion-measurement-api#publisher-side-controls-for-impression-declaration).
-
-### Checking support
-
-To programmatically check whether the API can be used on a page, use
-`document.featurePolicy.features().includes('conversion-measurement')`.
-
-### (Optional) Recovering the true conversion count
-
-Even though the conversion data is noised, you—as the reporting endpoint— may want to recover the
-true count of reports with a specific conversion value, despite noising. It's possible to do so when
-looking at aggregated conversions. This [example
-script](https://github.com/WICG/conversion-measurement-api/blob/master/denoiser.py) provides a
-technique to do this.
-
-### Setting up your browser for local development
-
-- Use Chrome version 86 or later. You can check what version of Chrome you're using by typing
-  `chrome://version` in the URL bar.
-- Origin trials activate the feature for end-users. But to activate the feature locally—for example
-  if you're developing on `localhost`—you'll need to enable flags. Go to flags by typing
-  `chrome://flags` in Chrome's URL bar. Turn on the **two** flags
-  `#enable-experimental-web-platform-features` and `#conversion-measurement-api`.
-- Disable third-party cookie blocking. In the long term, dedicated browser settings will be
-  available to allow/block the API. Until then, third-party cookie blocking is used as the signal
-  that users don't want to share data about their conversions—and hence that this API should be
-  disabled.
-
-**(Optional) Debugging tips:**
-
-You can see the conversion reports the browser has scheduled to send at
-`chrome://conversion-internals/` > **Pending Reports**. Reports are sent at scheduled times. But for
-debugging purposes, you may not want to wait for these scheduled times. To do so, you can:
-
-- Click **Send All Reports** in `chrome://conversion-internals/` > **Pending Reports**.
-- Or activate the flag `chrome://flags/#conversion-measurement-debug-mode`, so that all reports are
-  always sent **immediately**.
 
 _With many thanks for contributions and feedback to all reviewers—especially Charlie Harrison,
 John Delaney, Michael Kleber and Kayce Basques._
