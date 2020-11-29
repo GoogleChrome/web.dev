@@ -296,7 +296,8 @@ Here is how your code should look at this point:
 {% Glitch {
   id: 'payment-form-codelab-4',
   path: 'js/main.js',
-  height: 750
+  height: 750,
+  previewSize: 0
 } %}
 
 * Click **View Source** to view the JavaScript for payment-form-codelab-4 above. You'll notice 
@@ -306,6 +307,9 @@ that this includes commented-out code for data validation. This code uses the
 validation, using built-in browser UI to set focus and display prompts. Un-comment the code and try 
 it out. You'll need to set appropriate values for `someregex` and `message`, and set a value for 
 `someField`.
+
+* What [analytics and Real User Monitoring data](/payment-and-address-form-best-practices#analytics-rum) 
+would you monitor in order to identify ways to improve your forms?
 
 ## Step 5: Build a form for name and address
 
@@ -321,8 +325,9 @@ privacy is to remove unnecessary fields. Storing less data also reduces back-end
 liability.
 {% endAside %}
 
-You'll start this part of the codelab with an empty form—nothing but a heading and a lonely 
-button—then begin adding inputs. (CSS and a little bit of JavaScript are already included.)
+You'll start this part of the codelab with an empty form, just a heading and a button all on 
+their own. Then you'll begin adding inputs. (CSS and a little bit of JavaScript are already 
+included.)
 
 {% Glitch {
   id: 'address-form-codelab-0',
@@ -341,16 +346,15 @@ button—then begin adding inputs. (CSS and a little bit of JavaScript are alrea
 </section>
 ```
 
-That looks like a lot of repetitive HTML just for one name field, but this already does a lot! Let's 
-break it down.
+That may look complicated and repetitive for just one name field, but it already does a lot! 
 
-You associated the label with the input by using the label's `for` attribute with the input's `name` or 
-`id`. A tap or click on a label moves focus to its input, making a much bigger target—which is good 
-for fingers, thumbs and mouse clicks! Screenreaders announce label text when the label or the 
-label's input gets focus.
+You associated the label with the input by matching the label's `for` attribute with the input's 
+`name` or `id`. A tap or click on a label moves focus to its input, making a much bigger target 
+than the input on its own—which is good for fingers, thumbs and mouse clicks! Screenreaders announce 
+label text when the label or the label's input gets focus.
 
 What about `name="name"`? This is the the name associated with data from this input (which happens 
-to be 'name'!) that's sent to the server when the form is submitted. Including a `name` attribute 
+to be 'name'!) which is sent to the server when the form is submitted. Including a `name` attribute 
 also means that the data from this element can be accessed by the 
 [FormData API](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects).
 
@@ -366,11 +370,18 @@ Now add `autocomplete="name"` to your input code so it looks like this:
   <input id="name" name="name" autocomplete="name">
 </section>
 ```
+Reload the page in Chrome and tap or click in the **Name** input. What differences do you see?
 
-Reload the page in Chrome and tap or click in the **Name** input. You should see a subtle change: 
-the suggestions are now specific values that were used previously in form inputs with 
-`autocomplete="name"`.
+You should notice a subtle change: with `autocomplete="name"`, the suggestions are now specific 
+values that were used previously in form inputs that also had `autocomplete="name"`. The browser 
+isn't just guessing what might be appropriate: you have control. You'll also see the **Manage...** 
+option to view and edit the names and addresses stored by your browser.
 
+{% Aside %}
+Ever wondered how to delete autofill suggestions in Chrome?
+* Windows: `Shift` + `delete`
+* Mac: `Shift` + `fn` + `delete`
+{% endAside %}
 
 <figure class="w-figure">
   <img 
@@ -392,7 +403,8 @@ Now add [constraint validation attributes](https://developer.mozilla.org/en-US/d
 ```html/2
 <section>
   <label for="name">Name</label>
-  <input id="name" name="name" autocomplete="name" maxlength="100" pattern="[\p{L} \-\.]+" required>
+  <input id="name" name="name" autocomplete="name" 
+    maxlength="100" pattern="[\p{L} \-\.]+" required>
 </section>
 ```
 
@@ -408,6 +420,15 @@ hyphens and periods (full stops). That means names such as Françoise or Jörg a
 this field, and will warn and highlight the input if you attempt to submit it. No extra code 
 required!
 
+{% Aside 'caution' %}
+This codelab doesn't address 😜 localization or internationalization. Depending on where your users 
+are located, you need to consider address **formats** as well as the different **names** used for 
+address components, even within the same language: ZIP, postal code, Eircode or PIN? It may be 
+necessary for your site to [customize for multiple locales](https://www.smashingmagazine.com/2020/11/internationalization-localization-static-sites#determining-user-s-language-and-region), 
+but the address form in this codelab is designed for flexibility, and should work 'well enough' for 
+a range of addresses.
+{% endAside %}
+
 * Try entering data with and without these attributes. Try entering values that don't fit the 
 `pattern` attribute.
 * Try submitting the form with an empty input. You'll see built-in browser functionality warning of 
@@ -418,33 +439,54 @@ Now add an address field to your form:
 ```html
 <section>
   <label for="address">Address</label>
-  <textarea id="address" name="address" autocomplete="address" maxlength="300" required></textarea>
+  <textarea id="address" name="address" autocomplete="address"
+    maxlength="300" required></textarea>
 </section>
 ```
 
-A `textarea` is the most flexible way for your users to enter their address. (You'll add fields for 
-postal code and country/region in a moment.) If that works for your site
+A `textarea` is the most flexible way for your users to enter their address, and it's great for 
+cutting and pasting.
 
+What are using address data for? Don't split your address form into components such as street 
+name and number unless you really need to. Don't force users to try to fit their address into fields 
+that don't make sense. 
 
+Now add fields for **ZIP or postal code**, and **Country or region**. For simplicity, we've only 
+included the first five countries. A full list is included in the [completed address form](https://address-form.glitch.me).
 
+```html
+<section>
+  <label for="postal-code">ZIP or postal code (optional)</label>
+  <input id="postal-code" name="postal-code" 
+    autocomplete="postal-code" maxlength="20">
+</section>
+
+<section id="country-region">
+  <label for="">Country or region</label>
+  <select id="country" name="country" autocomplete="country" 
+    required>
+      <option selected value="SPACER"> </option>
+      <option value="AF">Afghanistan</option>
+      <option value="AX">Åland Islands</option>
+      <option value="AL">Albania</option>
+      <option value="DZ">Algeria</option>
+      <option value="AS">American Samoa</option>
+  </select>  
+</section>
+```
+
+You'll see that **Postal code** is optional: that's because [many countries don't use postal codes](https://hellowahab.wordpress.com/2011/05/24/list-of-countries-without-postal-codes/). 
+([Global Sourcebook](https://www.grcdi.nl/gsb/global%20sourcebook.html) provides information about 
+address formats for 194 different countries, including sample addresses.) The label **Country or 
+region**  is used instead of **Country**, because some options from the full list (such as United 
+Kingdom) are not single countries (despite the `autocomplete` value!)
 
 {% Aside 'caution' %}
-This codelab doesn't address 😜 localization or internationalization. Depending on where your users 
-are located, you need to consider address **formats** as well as the different **names** used for 
-address components, even within the same language: ZIP, postal code, Eircode or PIN? It may be 
-necessary for your site to [customize for multiple locales](https://www.smashingmagazine.com/2020/11/internationalization-localization-static-sites#determining-user-s-language-and-region), 
-but the address form in this codelab is designed for flexibility, and should work 'well enough' for 
-a range of addresses.
-{% endAside %}
-
-
-{% Aside 'caution' %}
-Country selectors are notorious for being [hard to use](https://www.smashingmagazine.com/2011/11/redesigning-the-country-selector/). 
+Country selectors are notorious for [poor usability](https://www.smashingmagazine.com/2011/11/redesigning-the-country-selector/). 
 It's [best to avoid select elements for a long list of items](https://baymard.com/blog/drop-down-usability#in-general-avoid-drop-downs-when-there-are-more-than-10-or-fewer-than-5-options) 
-— and the ISO 3166 standard for country codes [currently lists 249 countries](https://www.iso.org/obp/ui/#search)!  
+and the ISO 3166 country-code standard [currently lists 249 countries](https://www.iso.org/obp/ui/#search)!  
 Instead of a `<select>` you may want to consider an alternative such as the 
-  [Baymard Institute country selector](https://baymard.com/labs/country-selector). [This post](https://shkspr.mobi/blog/2017/11/input-type-country/) discusses some of the difficulties of creating a standardized 
-  `<input type="country">`.
+  [Baymard Institute country selector](https://baymard.com/labs/country-selector). [<input type=”country” />](https://shkspr.mobi/blog/2017/11/input-type-country/) discusses the complexity of standardizing a country selector.
 
 Localization of country names can also be problematic. [Countries Lists](http://www.countries-list.info/Download-List) 
 has a tool to download country codes and names in multiple languages, in multiple formats.
@@ -461,18 +503,49 @@ especially if the two addresses are the same? The article that goes with this co
 [techniques for handling multiple addresses](/payment-and-address-form-best-practices#billing-address). 
 Whatever you do, make sure to use the correct `autocomplete` values!
 
+Lastly, add a telephone number input:
+
+```html
+<section>
+  <label for="tel">Telephone</label>
+  <input id="tel" name="tel" autocomplete="tel" type="tel" 
+    maxlength="30" pattern="[\d \-\+]+" enterkeyhint="done" required>
+</section>
+```
+
+For phone numbers use a single input: don't split the number into parts. That makes it easier for 
+users to enter data or copy and paste, makes validation simpler, and enables browsers to autofill. 
+
+Two new things to be aware of here: 
+* `type="tel"` ensures mobile users get the right keyboard.
+* `enterkeyhint="done"` sets the mobile keyboard enter key label to show that this is the last 
+field and the form can now be submitted (the default is `next`).
+
+<figure class="w-figure">
+  <img class="w-screenshot" src="images/enterkeyhint.png" alt="Two screenshots of a form 
+  on Android showing how the enterkeyhint input attribute changes the enter key button icon.">
+  <figcaption class="w-figcaption">Enter key buttons on Android: 'next' and 'done'.</figcaption>
+</figure>
+
+{% Aside 'gotcha' %}
+Using type="number" adds an up/down arrow to increment numbers, which makes no sense for data such 
+as telephone, payment card or account numbers. Instead, you should use `type="tel"` for telephone 
+numbers. For other numbers, use `type="text"` (or leave off the attribute, since `text` is the 
+default) and add `inputmode="numeric"` to get a numeric keyboard on mobile. 
+{% endAside %}
+
+* Can you see any problems with using a single input for telephone number? Do you store phone 
+number parts (country and area code) separately? If so, why?
+
 ## Going further
 
 We won't show them here, but crucial form features are still missing.
 
-* Well designed name field. In summary: [use a single name input]((/payment-and-address-form-best-practices#single-name-input) 
-if possible, [enable name autofill](/payment-and-address-form-best-practices#name-autofill) and allow 
-[international names](#unicode-matching).
-
 * Link to your Terms of Service and privacy policy documents: make it clear to 
 users how you safeguard their data.
 
-* Style and branding: make sure these match the rest of your site. 
+* Style and branding: make sure these match the rest of your site. When entering names and addresses 
+and making payment, users need to feel comfortable, trusting that they're still in the right place.
 
 * [Analytics and Real User Monitoring](/payment-and-address-form-best-practices#analytics-rum): 
 enable the performance and usability of your form design to be tested and monitored for real users. 
