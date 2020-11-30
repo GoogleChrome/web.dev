@@ -379,7 +379,7 @@ needs to be done next. The video below shows how UK retailer [johnlewis.com](htt
 show checkout progress.
 
 <figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot">
+   <video controls autoplay loop muted class="w-screenshot" poster="images/john-lewis.png">
      <source src="https://samdutton.com/johnlewis.com.mp4" type="video/mp4">
    </video>
   <figcaption class="w-figcaption">Show checkout progress</figcaption>
