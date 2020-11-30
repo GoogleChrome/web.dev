@@ -21,139 +21,241 @@ related_post: sign-up-form-best-practices
 
 This codelab shows you how to build a sign-up form that is secure, accessible, and easy to use.
 
-## Step 1: XXXXXXX
+## Step 1: Help password managers securely suggest and store passwords
 
-Explanation of this step blah blah blah.
+In this step you'll learn how to use form elements and attributes to make the most of built-in 
+browser features.
 
 {% Instruction 'remix' %}
 
-* Add the following code inside the `<body>` element:
+* Add the following code inside the `<main>` element:
 
 ```html
 <form action="#" method="post">
-  <h1>Sign in</h1>
+  
+  <h1>Sign up</h1>
+  
+  <section>
+    <label>Full name</label>
+    <input>
+  </section>
+  
   <section>
     <label>Email</label>
     <input>
   </section>
+  
   <section>
     <label>Password</label>
     <input>
   </section>
-  <button>Sign in</button>
+  
+  <button id="sign-up">Sign up</button>
+  
 </form>
 ```
 
-Here's how your `index.html` should look at this point:
+Here's how your project should look at this point:
 
 {% Glitch {
-  id: 'sign-up-form-codelab-1',
+  id: 'sign-in-form-codelab-1',
   path: 'index.html',
-  height: 480
+  height: 220
 } %}
 
-Click **View App** to preview your sign-up form.
+Click **View App** to preview your sign-in form. 
 
-Blah blah blah.
+This shows you what a form looks like with no CSS other than the 
+[default browser styles](https://bitsofco.de/a-look-at-css-resets-in-2018). 
+
+{% Aside %}
+[Browser Default Styles](https://browserdefaultstyles.com) shows default CSS for HTML elements.
+{% endAside %}
+
+* Do the default styles *look* OK? What can you change to make the form look better?
+* Do the default styles *work* OK? What problems might be encountered using your form as it is? What 
+about on mobile? What about for screenreaders or other [assistive technologies](/a11y-tips-for-web-dev)?
+* Who are your users, and what devices and browsers are you targeting? 
+
+### How will you test your form? 
+
+You could acquire a lot of hardware and set up a 
+[device lab](https://www.smashingmagazine.com/2016/11/worlds-best-open-device-labs/), but there are 
+cheaper and simpler ways to try out your form on a range of browsers and platforms:
+
+* [Use Chrome DevTools Device Mode](https://developers.google.com/web/tools/chrome-devtools/device-mode) 
+to simulate mobile devices. 
+* [Send the URL from your computer to your phone](https://support.google.com/chrome/answer/9430554).
+* Use a service such as [BrowserStack](https://www.browserstack.com/open-source) to test on a range 
+of devices and browsers. 
+
+{% Aside 'caution' %}
+Testing your site on a range of devices and browsers is especially important for forms, because 
+small problems can make forms difficult to complete and cause users to give up on creating an 
+account or completing a purchase.
+{% endAside %}
 
 Click **View Source** to return to your source code.
 
-## Step 2: XXXXXXXXXXXXXX
+## Step 2: Add CSS to make the form work better
 
-Explanation of this step blah blah blah.
+There's nothing wrong with the HTML you added, but you need to make sure your form works well for a 
+range of users on mobile and desktop.
 
 Copy and paste the following CSS into your own `style.css` file:
 
 {% Glitch {
   id: 'sign-up-form-codelab-2',
-  path: 'style.css'
+  path: 'css/main.css',
+  height: 400,
+  previewSize: 0
 } %}
 
-Click **View App** to check out your freshly styled sign-up form. Then
-click **View Source** to return to `style.css`.
+Click **View App** to see your styled sign-up form. Then click **View Source** to return to 
+`style.css`.
 
-This is what's happening blah blah blah
+* Try adjusting `padding`, `margin` and `font-size` to suit your test devices.
 
-When building your own form like this, it's very important at this point to
-test your code on real devices on desktop and mobile:
+* The CSS is mobile-first. [Media queries](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries) 
+are used to apply CSS rules for viewports that are at least `400px` wide, and then 
+again for viewports that are at least `500px` wide.  
 
-* Is something working blah blah blah?
-* Is something else working blah blah blah?
+{% Aside %}
+**Viewport** means the display area available for your page. Mobile phones have a smaller viewport 
+than laptops, and a small browser window on a desktop monitor has a smaller viewport than a 
+maximized browser window.
+{% endAside %}
 
-## Step 3: XXXXXXXXXXX
+## Step 3: Add attributes to enable built-in browser features
 
-Explanation of this step blah blah blah.
+In this step you add attributes to your input elements to enable the browser to store and autofill 
+form field values, and warn of fields with missing or invalid data.
 
-Add blah blah to your HTML so it looks like this:
+Update your `index.html` file so your form looks like this:
 
-```html/3,4,7,8,10
+```html
 <form action="#" method="post">
-  <h1>Sign in</h1>
+        
+  <h1>Sign up</h1>
+  
+  <section>        
+    <label for="name">Full name</label>
+    <input id="name" name="name" autocomplete="name" 
+           pattern="[\p{L}\.\- ]+" required>
+  </section>
+
   <section>        
     <label for="email">Email</label>
-    <input id="email" name="email" type="email" autocomplete="username" required autofocus>
+    <input id="email" name="email" autocomplete="username"
+           type="email" required>
   </section>
-  <section>        
-    <label for="current-password">Password</label>
-    <input id="password" name="password" type="password" autocomplete="new-password" required>
+  
+  <section>
+    <label for="password">Password</label>
+    <input id="password" name="password" autocomplete="new-password" 
+           type="password" minlength="8" required>
   </section>
-  <button id="sign-up">Sign in</button>
+  
+  <button id="sign-up">Sign up</button>
+  
 </form>
 ```
 
-View your app again and then do something blah blah. Notice blah blah blah.
+The `type` values do a lot:
+* `type="password"` obscures the text in this input, and enables the browser's 
+[password manager](https://passwords.google.com/) to suggest a strong password. 
+* `type="email"` provides basic validation and ensures mobile users get an appropriate keyboard.
 
-Try doing something blah blah blah. Notice something blah blah blah. For example blah blah blah.
-All of this happens because blah blah blah.
+Try submitting the form with an empty field. The browser won't submit the form, and it prompts to 
+complete missing data and sets focus. That's because you added the `require` attribute to all the 
+inputs.
 
-<figure class="w-figure">
-  <img class="w-screenshot w-screenshot--filled" 
-       src="email-keyboard.png" 
-       alt="The default email keyboard on iOS.">
-</figure>
+Now try submitting with a password that has less than eight characters. The browser warns that the 
+password isn't long enough and sets focus on the password input. The same works for `pattern` (used 
+for the name input) and other [validation constraints](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation). The browser does all this automatically, without needing any extra 
+code.
 
-Try something else blah blah.
+The `autocomplete` value `name` makes sense, but what about the others? 
+* `autocomplete="username"` means the browser's password manager will store the email value as the 
+'name' for this user (the username!) to go with the password.
+* `autocomplete="new-password"` is a hint to the password manager that it should offer to store this 
+value as the password for the current site. You can then use `autocomplete="current-password"` to 
+enable autofill in a sign-in form. 
 
-It's extremely important to test behaviour across platforms. Try entering values 
-and submitting the form in different browsers on different devices. It's easy to 
-test on a range of platforms using BrowserStack, which is [free for open source 
-projects](https://www.browserstack.com/open-source). Try it out!
+{% Aside %}
+[Sign-in form best practices](/sign-in-form-best-practices) has more tips for improving form design, 
+layout and accessibility.
+{% endAside %}
 
-Here's how your `index.html` should look at this point:
+## Step 4: Help users enter passwords correctly
+
+With the form as it is, did you notice anything wrong with the password input?
+
+Two problems:
+* There's know way to know if there are constraints on the password value.
+* You can't see the password to check if you got it right.
+
+Don't make users guess!
+
+Update the password section of `index.html`:
+
+```html
+<section>
+  <label for="password">Password</label>
+  <button id="toggle-password" type="button" aria-label="Show password as plain text. 
+          Warning: this will display your password on the screen.">Show password</button>
+  <input id="password" name="password" type="password" autocomplete="new-password" 
+         minlength="8" aria-describedby="password-constraints" required>
+  <div id="password-constraints">Eight or more characters.</div>
+</section>
+```
+
+Copy all the JavaScript below and paste it into your own `js/main.js` file.
 
 {% Glitch {
-  id: 'sign-up-form-codelab-3',
-  path: 'index.html',
-  height: 480
+  id: 'sign-up-form-codelab-4',
+  path: 'js/main.js',
+  height: 400,
+  previewSize: 0
 } %}
 
-## Step 4: XXXXX
+This adds new features to help users enter passwords:
 
-## Step 5: XXXXX
+* A button to toggle password display.
+* Information about password constraints.
+* An `aria-describedby` attribute for the password input. Screenreaders read the label text, the 
+input type (password), and then the description. 
+* An `aria-label` attribute for the password-toggle button. 
 
+(The CSS is already in place from step 2. You may want to take a look at it, to see how the 
+password-toggle button is styled and positioned.)
 
+* Would an [icon]((https://material.io/resources/icons/?icon=visibility)) work better than text to 
+toggle password display? Try it out and test it! Use [Discount Usability Testing](https://www.nngroup.com/articles/discount-usability-20-years/) with a small group of friends or colleagues.
 
-**For bonus points:** try out something blah blah blah.
+* To experience how screenreaders work with forms, install the [ChromeVox extension](https://chrome.google.com/webstore/detail/chromevox-classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en) and navigate through the form. 
+Is the form usable?
 
-Here's how your code should look at this point:
+Here's how your form should look at this point:
 
 {% Glitch {
-  id: 'sign-up-form-codelab-5',
-  path: 'style.css',
-  height: 480
+  id: 'sign-up-form-codelab-4',
+  height: 550
 } %}
 
 ## Going further
 
-We won't show them here, but four crucial sign-up form features are still missing:
+We won't show them here, but crucial form features are still missing:
 
-* Add a **Forgot your password?** link: make it easy for users to reset their password.
+* Checking for compromised passwords. You should never allow users to save passwords that have been 
+compromised. You can (and should) [use an API to check for compromised passwords](/sign-up-form-best-practices/#no-compromised-passwords). Try it out! Add password checking to your 
+form.
 
-* Link to your Terms of Service and privacy policy documents: make it clear to 
-users from the start how you safeguard their data.
+* Link to your Terms of Service and privacy policy documents: make it clear to users how you 
+safeguard their data.
 
-* Consider style and branding: make sure these match the rest of your site. 
+* Style and branding: make sure these match the rest of your site. When entering names and addresses 
+and making payment, users need to feel comfortable, trusting that they're still in the right place.
 
-* Add [Analytics and RUM](/sign-up-form-best-practices#analytics): enable the 
-performance and usability of your form design to be tested and monitored for 
-real users. 
+* [Analytics and Real User Monitoring](/payment-and-address-form-best-practices#analytics-rum): 
+enable the performance and usability of your form design to be tested and monitored for real users. 
