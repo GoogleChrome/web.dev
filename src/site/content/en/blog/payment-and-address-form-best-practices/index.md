@@ -376,18 +376,17 @@ their newly created account!
 
 You can make your checkout process feel less complex by showing progress and making it clear what 
 needs to be done next. The video below shows how UK retailer [johnlewis.com](https://www.johnlewis.com) 
-show checkout progress.
+achieves this.
 
 <figure class="w-figure">
-   <video controls autoplay loop muted class="w-screenshot" poster="images/john-lewis.png">
+   <video controls autoplay muted class="w-screenshot" poster="images/john-lewis.png">
      <source src="https://samdutton.com/johnlewis.com.mp4" type="video/mp4">
    </video>
   <figcaption class="w-figcaption">Show checkout progress</figcaption>
 </figure>
 
-You need to maintain momentum! For each step towards checkout, use descriptive buttons that make 
-the next step obvious. For example, label the submit button on your shipping address form 
-**Proceed to Payment** rather than **Continue** or **Save**.
+You need to maintain momentum! For each step towards payment, use page headings and descriptive 
+button values that make it clear what needs to be done now, and what checkout step is next.
 
 <figure class="w-figure">
    <video controls autoplay loop muted class="w-screenshot">
@@ -527,8 +526,7 @@ convinced!)
 
 #### Make address forms flexible {:flexible-address}
 
-Don't force users to [shoe-horn](https://en.wikipedia.org/wiki/Shoehorn#Turn_of_phrase) their address 
-into form fields that don't fit.
+Don't force users to try to squeeze their address into form fields that don't fit.
 
 For example, don't insist on a house number and street name in separate inputs, since many addresses 
 don't use that format, and incomplete data can break browser autofill.
@@ -643,12 +641,6 @@ and enter their complete address filled with a single tap or click.
   <figcaption class="w-figcaption">A single name input enables one-tap/one-click address entry.</figcaption>
 </figure>
 
-* Use [appropriate payment card autocomplete values](#payment-form-autocomplete).
-* Use a [single input for payment card numbers](#single-number-input).
-* [Avoid using custom elements](#avoid-custom-elements) that break the autofill experience.
-* [Test in the field as well as the lab](#analytics-rum): page analytics, interaction analytics, and 
-real-user performance measurement.
-* [Test across browsers, devices and platforms](#test-platforms). 
 
 ## Simplify payment forms {: #general-guidelines}
 
