@@ -4,8 +4,8 @@ title: Sign-up form best practices codelab
 authors:
   - samdutton
 scheduled: true
-date: 2020-11-06
-updated: 2020-11-06
+date: 2020-11-30
+updated: 2020-11-30
 description: Use cross-platform browser features to build a simple sign-up form that's secure, accessible and easy to use.
 tags:
   - forms
