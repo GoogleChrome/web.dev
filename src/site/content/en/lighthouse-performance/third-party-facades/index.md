@@ -2,7 +2,7 @@
 layout: post
 title: Lazy load third-party resources with facades
 description: |
-  Learn about the render-blocking-resources audit.
+  Learn about the opportunities to lazy load third-party resources with facades.
 date: 2020-12-01
 updated: 2020-12-01
 web_lighthouse:
@@ -95,4 +95,3 @@ You may choose to [build a custom facade solution](https://wildbit.com/blog/2020
 ## Resources 
 
 Source code for [Lazy load third-party resources with facades audit]()
-
