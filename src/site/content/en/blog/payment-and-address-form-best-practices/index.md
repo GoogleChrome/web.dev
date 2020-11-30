@@ -31,7 +31,7 @@ Well-designed forms help users and increase conversion rates. One small fix can 
 difference. 
 
 {% Aside 'codelab' %}
-  If you would prefer to learn these best practices with a hands-on tutorial,
+  If you prefer to learn these best practices with a hands-on tutorial,
   check out the [payment and address form best practices codelab](/codelab-payment-and-address-form-best-practices).
 {% endAside %}
 
@@ -60,7 +60,7 @@ Here is an example of a simple address form that demonstrates all of the best pr
 * Avoid using `type="number"` for numbers such as payment card numbers that aren't meant to be 
 incremented. Use `type="text"` and [`inputmode="numeric"`](#inputmode-attribute) instead.
 * If an [appropriate autocomplete value](#autocomplete-attribute) is available for an `input`, 
-`select` or `textarea`, you should use it.
+`select`, or `textarea`, you should use it.
 * To help browsers autofill forms, give input `name` and `id` attributes [stable values](#stable-name-id) 
 that don't change between page loads or website deployments.
 * [Disable submit buttons](#disable-submit) once they've been tapped or clicked.
@@ -75,7 +75,7 @@ to action.
 * [Ask for names with a single input](#single-name-input) unless you have a good reason not to.
 * [Don't enforce Latin-only characters](#unicode-matching) for names and usernames.
 * [Allow for a variety of address formats](#address-variety).
-* Consider using a [single textarea for address](#address-textarea).
+* Consider using a [single `textarea` for address](#address-textarea).
 * Use [autocomplete for billing address](#billing-address).
 * [Internationalize and localize](#internationalization-localization) where necessary.
 * Consider avoiding [postal code address lookup](#postal-code-address-lookup).
@@ -84,19 +84,19 @@ to action.
 * [Avoid using custom elements](#avoid-custom-elements) if they break the autofill experience.
 * [Test in the field as well as the lab](#analytics-rum): page analytics, interaction analytics, and 
 real-user performance measurement.
-* [Test on a range of browsers, devices and platforms](#test-platforms).
+* [Test on a range of browsers, devices, and platforms](#test-platforms).
 
 {% Aside %}
 This article is about frontend best practices for address and payment forms. It does not explain 
-how to implement transactions on your site. To find out more adding payment functionality to your 
-website on the web, see [Web Payments](/payments).
+how to implement transactions on your site. To find out more about adding payment functionality to your 
+website, see [Web Payments](/payments).
 {% endAside %}
 
 ## Use meaningful HTML {: #meaningful-html}
 
 Use the elements and attributes built for the job: 
 * `<form>`, `<input>`, `<label>`, and `<button>`
-* `type`, `autocomplete` and `inputmode`
+* `type`, `autocomplete`, and `inputmode`
 
 These enable built-in browser functionality, improve accessibility, and add meaning to your markup.
 
@@ -104,7 +104,7 @@ These enable built-in browser functionality, improve accessibility, and add mean
 
 #### Put your form in a &lt;form&gt; {: #html-form}
 
-You might be tempted not to bother wrapping your `<input>`s in a `<form>`, and to handle data 
+You might be tempted not to bother wrapping your `<input>` elements in a `<form>`, and to handle data 
   submission purely with JavaScript. 
 
 Don't do it!
@@ -120,9 +120,9 @@ If you have more than one page component for user input, make sure to put each i
 
 #### Use `<label>` to label elements {: #html-label}
 
-To label an `<input>`, `<select>` or `<textarea>`, use a [`<label>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label).
+To label an `<input>`, `<select>`, or `<textarea>`, use a [`<label>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label).
 
-You associate a label with an input by giving the label's `for` attribute the same value as 
+Associate a label with an input by giving the label's `for` attribute the same value as 
 the input's `id`.
 
 ```html
@@ -157,7 +157,7 @@ or **Save**.
 {: #disable-submit}
 
 Consider disabling a submit button once the user has tapped or clicked it—especially when the user is 
-making payment or placing an order. Many users click buttons repeatedly, even if they're working fine. 
+making a payment or placing an order. Many users click buttons repeatedly, even if they're working fine. 
 That can mess up checkout and add to server load. 
 
 On the other hand, don't disable a submit button waiting on complete and valid user input. For 
@@ -202,24 +202,24 @@ so you shouldn't have to do that—but do check your users' browsers.
 
 {: #avoid-custom-elements}
 
-For dates, try to avoid using custom select elements, since they break the autofill experience if not 
-properly implemented, and don't work on older browsers. For numbers such as birth year, consider 
-using an input element rather than a select, since entering digits manually can be easier and less 
+For dates, try to avoid using custom `select` elements. They break the autofill experience if not 
+properly implemented and don't work on older browsers. For numbers such as birth year, consider 
+using an `input` element rather than a `select`, since entering digits manually can be easier and less 
 error prone than selecting from a long drop-down list—especially on mobile. Use `inputmode="numeric"` 
 to ensure the right keyboard on mobile and add validation and format hints with text or a 
 placeholder to make sure the user enters data in the appropriate format.
 
 {% Aside %}
-The [datalist](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist) element enables 
+The [`datalist`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist) element enables 
 a user to select from a list of available options and provides matching suggestions as the user enters text. 
-Try out datalist for `text`, `range` and `color` inputs at [simpl.info/datalist](https://simpl.info/datalist).
-For birth year input, you can compare a select with an input and datalist at [datalist-select.glitch.me](https://datalist-select.glitch.me).
+Try out `datalist` for `text`, `range` and `color` inputs at [simpl.info/datalist](https://simpl.info/datalist).
+For birth year input, you can compare a `select` with an `input` and `datalist` at [datalist-select.glitch.me](https://datalist-select.glitch.me).
 {% endAside %}
 
 #### Use autocomplete to improve accessibility and help users avoid re-entering data {: #autocomplete-attribute}
 
 Using appropriate `autocomplete` values enables browsers to help users by securely storing data and 
-autofilling `input`, `select` and `textarea` values. This is particularly important on mobile, and 
+autofilling `input`, `select`, and `textarea` values. This is particularly important on mobile, and 
 crucial for avoiding [high form abandonment rates](https://www.zuko.io/blog/8-surprising-insights-from-zukos-benchmarking-data). Autocomplete also provides [multiple accessibility benefits](https://www.w3.org/WAI/WCAG21/Understanding/identify-input-purpose.html).
 
 If an appropriate autocomplete value is available for a form field, you should use it. [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) has a full list of values and explanations of how to use 
@@ -236,7 +236,7 @@ website deployments.
 {: #billing-address}
 
 By default, set the billing address to be the same as the delivery address. Reduce visual clutter by 
-providing a link to edit the billing address (or use [summary and details elements](https://simpl.info/details/)) 
+providing a link to edit the billing address (or use [`summary` and `details` elements](https://simpl.info/details/)) 
 rather than displaying the billing address in a form.
 
 <figure class="w-figure">
@@ -257,13 +257,13 @@ if you have different values for inputs with the same name in different sections
 
 #### Help users enter the right data {: #validation}
 
-Try to avoid 'telling off' customers because they 'did something wrong'. Instead, help users complete 
+Try to avoid "telling off" customers because they "did something wrong". Instead, help users complete 
 forms more quickly and easily by helping them fix problems as they happen. Through the checkout process, 
 customers are trying to give your company money for a product or service—your job is to assist them, 
 not to punish them!
 
 You can add [constraint attributes](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation#Intrinsic_and_basic_constraints) to form elements to specify acceptable 
-values, including `min`, `max` and `pattern`. The [validity state](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState) 
+values, including `min`, `max`, and `pattern`. The [validity state](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState) 
 of the element is set automatically depending on whether the element's value is valid, as are the 
 `:valid` and `:invalid` CSS pseudo-classes which can be used to style elements with valid or invalid 
 values.
@@ -311,17 +311,17 @@ submission, list all problems that are found and clearly highlight all form fiel
 values, as well as displaying a message inline next to each problematic field explaining what needs 
 to be fixed. Check server logs and analytics data for common errors—you may need to redesign your form.
 
-You should also use JavaScript to do more robust validation while users are entering data and when 
+You should also use JavaScript to do more robust validation while users are entering data and 
 on form submission. Use the [Constraint Validation API](https://html.spec.whatwg.org/multipage/forms.html#constraints) 
 (which is [widely supported](https://caniuse.com/#feat=constraint-validation)) to add custom 
 validation using built-in browser UI to set focus and display prompts.
 
-Find out more: [Use JavaScript for more complex real-time validation](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_javascript_for_more_complex_real-time_validation).
+Find out more in [Use JavaScript for more complex real-time validation](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_javascript_for_more_complex_real-time_validation).
 
 {% Aside 'warning' %}
 Even with client-side validation and data input constraints, you must still ensure that your 
 back-end securely handles input and output of data from users. Never trust user input: it could be 
-malicious. Find out more: [OWASP Input Validation Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html).
+malicious. Find out more in [OWASP Input Validation Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html).
 {% endAside %}
 
 #### Help users avoid missing required data {: #autocomplete-attribute}
@@ -341,12 +341,12 @@ explain what the asterisk means.
 
 ### Mind the mobile commerce gap! {: #m-commerce-gap}
 
-Imagine that your users have a **fatigue budget**. Use it up, and your users will leave. 
+Imagine that your users have a *fatigue budget*. Use it up, and your users will leave. 
 
-You need to reduce friction and maintain focus, especially on mobile. Many sites get more **traffic** 
-on mobile but more **conversions** on desktop—a phenomenon known as the [mobile commerce gap](https://www.comscore.com/Insights/Presentations-and-Whitepapers/2017/Mobiles-Hierarchy-of-Needs). Customers may simply prefer to 
+You need to reduce friction and maintain focus, especially on mobile. Many sites get more *traffic* 
+on mobile but more *conversions* on desktop—a phenomenon known as the [mobile commerce gap](https://www.comscore.com/Insights/Presentations-and-Whitepapers/2017/Mobiles-Hierarchy-of-Needs). Customers may simply prefer to 
 complete a purchase on desktop, but lower mobile conversion rates are also a result of poor user 
-experience. Your job is to **minimize** lost conversions on mobile and **maximize** conversions 
+experience. Your job is to *minimize* lost conversions on mobile and *maximize* conversions 
 on desktop. [Research has shown](https://www.comscore.com/Insights/Presentations-and-Whitepapers/2017/Mobiles-Hierarchy-of-Needs) that there's a huge opportunity to provide a better mobile form experience. 
 
 Most of all, users are more likely to abandon forms that look long, complex and without a sense of 
@@ -393,7 +393,7 @@ button values that make it clear what needs to be done now, and what checkout st
    <video controls autoplay loop muted class="w-screenshot">
      <source src="https://samdutton.com/address-form-save.mp4" type="video/mp4">
    </video>
-  <figcaption class="w-figcaption">Give form buttons meaningful names</figcaption>
+  <figcaption class="w-figcaption">Give form buttons meaningful names.</figcaption>
 </figure>
 
 Use the `enterkeyhint` attribute on form inputs to set the mobile keyboard enter key label. For 
@@ -459,13 +459,13 @@ fields. That's also good for customer privacy and can reduce back-end data cost 
 ### Use a single name input {: #single-name-input}
 
 Allow your users to enter their name using a single input, unless you have a good reason for 
-separately storing given names, family names, honorifics or other name parts. Using a single name 
+separately storing given names, family names, honorifics, or other name parts. Using a single name 
 input makes forms less complex, enables cut-and-paste, and makes autofill simpler.
 
 In particular, unless you have good reason not to, don't bother adding a separate input for a 
-prefix/title (like Mrs, Dr or Lord). Users can type that in with their name if they want to. Also, 
+prefix or title (like Mrs, Dr or Lord). Users can type that in with their name if they want to. Also, 
 `honorific-prefix` autocomplete currently doesn't work in most browsers, and so adding a field for 
-name prefix/title will break the address form autofill experience for most users.
+name prefix or title will break the address form autofill experience for most users.
 
 ### Enable name autofill 
 
@@ -489,7 +489,7 @@ autocomplete values:
 ### Allow international names {: #unicode-matching}
 
 You might want to validate your name inputs, or restrict the characters allowed for name data. However, 
-you need to be as unrestrictive as possible with alphabets. It's rude to be told your name is 'invalid'! 
+you need to be as unrestrictive as possible with alphabets. It's rude to be told your name is "invalid"! 
 
 For validation, avoid using regular expressions that only match Latin characters. Latin-only excludes
 users with names or addresses that include characters that aren't in the Latin alphabet. Allow Unicode 
@@ -528,7 +528,7 @@ support staff say the customer's name on the phone.
 ### Allow for a variety of address formats {: #address-variety}
 
 When you're designing an address form, bear in mind the bewildering variety of address formats, 
-even within a single country. Be careful not to make assumptions about 'normal' addresses. (Take a 
+even within a single country. Be careful not to make assumptions about "normal" addresses. (Take a 
 look at [UK Address Oddities!](http://www.paulplowman.com/stuff/uk-address-oddities/) if you're not 
 convinced!)
 
@@ -575,13 +575,13 @@ single `textarea` (see below) or other options.
 
 The most flexible option for addresses is to provide a single `textarea`.
 
-The textarea approach fits any address format, and it's great for cutting and pasting—but bear in 
+The `textarea` approach fits any address format, and it's great for cutting and pasting—but bear in 
 mind that it may not fit your data requirements, and users may miss out on autofill if they previously 
-only used forms with address-line1 and address-line2.
+only used forms with `address-line1` and `address-line2`.
 
 For a textarea, use `street-address` as the autocomplete value.
 
-Here is an example of a form that demonstrates the use of a single textarea for address:
+Here is an example of a form that demonstrates the use of a single `textarea` for address:
 
 {% Glitch {
   id: 'address-form',
@@ -646,7 +646,7 @@ and enter their complete address filled with a single tap or click.
    <video controls autoplay loop muted class="w-screenshot">
      <source src="https://samdutton.com/full-name-autofill.mp4" type="video/mp4">
    </video>
-  <figcaption class="w-figcaption">A single name input enables one-tap/one-click address entry.</figcaption>
+  <figcaption class="w-figcaption">A single name input enables one-tap (one-click) address entry.</figcaption>
 </figure>
 
 
@@ -661,10 +661,10 @@ forms to make it as easy as possible for users to enter data.
 
 Make sure to add appropriate `autocomplete` values in payment card forms, including the payment card 
 number, name on the card, and the expiry month and year:
-* cc-number
-* cc-name
-* cc-exp-month
-* cc-exp-year
+* `cc-number`
+* `cc-name`
+* `cc-exp-month`
+* `cc-exp-year`
 
 This enables browsers help users by securely storing payment card details and correctly entering form 
 data. Without autocomplete, users may be more likely to keep a physical record of payment card details, 
@@ -717,11 +717,11 @@ JavaScript required!
 However, your `pattern` regular expression must be flexible enough to handle [the range of payment card 
 number lengths](https://github.com/jaemok/credit-card-input/blob/master/creditcard.js#L35): from 14 
 digits (or possibly less) to 20 (or more). You can find out more about payment card number structuring 
-from [LDAPwiki](https://ldapwiki.com/wiki/Bank%20Card%20Number) 
+from [LDAPwiki](https://ldapwiki.com/wiki/Bank%20Card%20Number).
 
 Allow users to include spaces when they're entering a new payment card number, since this is how 
 numbers are displayed on physical cards. That's friendlier to the user (you won't have to tell them 
-'they did something wrong'), less likely to interrupt conversion flow, and it's straightforward to 
+"they did something wrong"), less likely to interrupt conversion flow, and it's straightforward to 
 remove spaces in numbers before processing.
 
 {% Aside %}
@@ -750,7 +750,7 @@ size can lead to problematic positioning. BrowserStack enables [free testing for
 Testing usability and performance locally can be helpful, but you need real-world data to properly 
 understand how users experience your payment and address forms. 
 
-For that you need analytics and Real User Monitoring: data for the experience of actual users, such 
+For that you need analytics and Real User Monitoring—data for the experience of actual users, such 
 as how long checkout pages take to load or how long payment takes to complete:
 
 * **Page analytics**: page views, bounce rates and exits for every page with a form.
@@ -760,12 +760,12 @@ as how long checkout pages take to load or how long payment takes to complete:
 * **Website performance**: [user-centric metrics](/user-centric-performance-metrics) (Are your 
 checkout pages slow to load and, if so—what's the cause?).
 
-Page analytics, interaction analytics and real user performance measurement become especially 
-valuable when combined with server logs, conversion data and A/B testing, enabling you to answer 
+Page analytics, interaction analytics, and real user performance measurement become especially 
+valuable when combined with server logs, conversion data, and A/B testing, enabling you to answer 
 questions such as whether discount codes increase revenue, or whether a change in form layout 
 improves conversions.
 
-That, in turn, gives you a solid basis for prioritizing effort, making changes and rewarding success.
+That, in turn, gives you a solid basis for prioritizing effort, making changes, and rewarding success.
 
 
 ## Keep learning {: #resources}
