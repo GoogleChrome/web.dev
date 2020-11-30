@@ -119,9 +119,18 @@ the keyboard will suggest the OTP for the user to enter. It works only on Safari
 later on iOS, iPadOS, and macOS, but we strongly recommend using it, because it is an 
 easy way to improve the SMS OTP experience on those platforms.
 
-### Optional attributes
+<figure class="w-figure" style="width:300px; margin:auto;">
+  <video controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/web-dev-assets/sms-otp-form/ios-safari.webm" type="video/webm">
+    <source src="https://storage.googleapis.com/web-dev-assets/sms-otp-form/ios-safari.mp4" type="video/mp4">
+  </video>
+  <figcaption class="w-figcaption">
+    `autocomplete="one-time-code"` in action.
+  </figcaption>
+</figure>
 
-The following attributes are optional.
+{% Aside %}
+Optional attributes:
 
 * [`pattern`](https://developer.mozilla.org/docs/Web/HTML/Attributes/pattern)
   constrains the one time code to be entered. Use regular expressions to specify
@@ -133,21 +142,10 @@ The following attributes are optional.
 * [`required`](https://developer.mozilla.org/docs/Web/HTML/Attributes/required)
   indicates that the field is required.
 
-{% Aside %}
 For more general form best practices, [Sam Dutton](/authors/samdutton/)'s
 [Sign-in form best practices](/sign-in-form-best-practices/) is a great starting
 point.
 {% endAside %}
-
-<figure class="w-figure" style="width:300px; margin:auto;">
-  <video controls autoplay loop muted class="w-screenshot">
-    <source src="https://storage.googleapis.com/web-dev-assets/sms-otp-form/ios-safari.webm" type="video/webm">
-    <source src="https://storage.googleapis.com/web-dev-assets/sms-otp-form/ios-safari.mp4" type="video/mp4">
-  </video>
-  <figcaption class="w-figcaption">
-    `autocomplete="one-time-code"` in action.
-  </figcaption>
-</figure>
 
 This improves user experience, but there's more you can do by ensuring
 that the SMS message complies with the [origin-bound message
