@@ -727,7 +727,7 @@ remove spaces in numbers before processing.
 {% Aside %}
 You may want to use a one-time passcode for identity or payment verification. However, asking users 
 to manually enter a code or copy it from an email or an SMS text is error-prone and a source of friction. 
-You can find out better ways to enable one-time passcodes from our article [SMS OTP form best practices](/sms-otp-form).
+Learn about better ways to enable one-time passcodes in [SMS OTP form best practices](/sms-otp-form).
 {% endAside %}
 
 
