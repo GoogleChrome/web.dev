@@ -81,12 +81,6 @@ manually.
 The following are a few ideas to ensure an input field gets the best out of
 browser functionality.
 
-{% Aside %}
-For more general form best practices, [Sam Dutton](/authors/samdutton/)'s
-[Sign-in form best practices](/sign-in-form-best-practices/) is a great starting
-point.
-{% endAside %}
-
 ### `type="text"`
 
 Since OTPs are usually five or six digit numbers, using
@@ -124,6 +118,26 @@ form is open, the operating system will parse the OTP in the SMS heuristically a
 the keyboard will suggest the OTP for the user to enter. It works only on Safari 12 and 
 later on iOS, iPadOS, and macOS, but we strongly recommend using it, because it is an 
 easy way to improve the SMS OTP experience on those platforms.
+
+### Optional attributes
+
+The following attributes are optional.
+
+* [`pattern`](https://developer.mozilla.org/docs/Web/HTML/Attributes/pattern)
+  constrains the one time code to be entered. Use regular expressions to specify
+  the matching pattern. In this case `\d{6}` indicates a 6-digits string but
+  make sure to change it aligning your own requirement. Learn more about
+  `pattern` attribute at [Use JavaScript for more complex real-time
+  validation](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_javascript_for_more_complex_real-time_validation)
+  
+* [`required`](https://developer.mozilla.org/docs/Web/HTML/Attributes/required)
+  indicates that the field is required.
+
+{% Aside %}
+For more general form best practices, [Sam Dutton](/authors/samdutton/)'s
+[Sign-in form best practices](/sign-in-form-best-practices/) is a great starting
+point.
+{% endAside %}
 
 <figure class="w-figure" style="width:300px; margin:auto;">
   <video controls autoplay loop muted class="w-screenshot">
@@ -179,8 +193,8 @@ Using this format provides a couple of benefits:
 * The OTP will be bound to the domain. If the user is on domains other than 
   the one specified in the SMS message, the OTP suggestion won't appear. 
   This also mitigates the risk of phishing attacks and potential account hijacks.
-* You can programmatically provide the OTP to the browser, which is more reliable 
-   than browser heuristics for OTP extraction.
+* Browser will now be able to reliably extract the OTP without depending on
+  mysterious and flaky heuristics.
 
 When a website uses `autocomplete="one-time-code"`, Safari with iOS 14 or later
 will suggest the OTP following the above rules.
