@@ -188,15 +188,16 @@ For example, use `type="email"` for email addresses and `type="tel"` for phone n
 {: #inputmode-attribute}
 
 {% Aside 'warning' %}
-Using type="number" adds an up/down arrow to increment numbers, which makes no sense for data such as 
-telephone, payment card or account numbers.
+Using type="number" adds an up/down arrow to increment numbers, which makes no sense for data such 
+as telephone, payment card or account numbers.
 
-Instead, you should set `type="text"` (or leave off the attribute, since `text` is the default) and 
-specify `inputmode="numeric"`, to get a numeric keyboard on mobile. 
+For numbers like these, set `type="text"` (or leave off the attribute, since `text` is the default). 
+For telephone numbers, use `type="tel"` to get the appropriate keyboard on mobile. For other numbers 
+use `inputmode="numeric"` to get a numeric keyboard on mobile. 
 
-To ensure that users get the right keyboard, some sites still use `type="tel"` for payment card 
-numbers. However, `inputmode` is [very widely supported now](https://caniuse.com/input-inputmode), 
-so you shouldn't have to do that, but check your users' browsers.
+Some sites still use `type="tel"` for payment card numbers to ensure that mobile users get the right 
+keyboard. However, `inputmode` is [very widely supported now](https://caniuse.com/input-inputmode), 
+so you shouldn't have to do that—but do check your users' browsers.
 {% endAside %}
 
 {: #avoid-custom-elements}
@@ -517,6 +518,13 @@ Unicode in regular expressions is well supported by modern browsers.
   <figcaption class="w-figcaption">Unicode letter matching compared to Latin-only letter matching.</figcaption>
 </figure>
 
+{% Aside %}
+You can find out more about [internationalization and localization](#internationalization-localization) 
+below, but make sure your forms work for names in all regions where you have users. For example, 
+for Japanese names you should consider having a field for phonetic names. This helps customer 
+support staff say the customer's name on the phone.
+{% endAside %}
+
 ### Allow for a variety of address formats {: #address-variety}
 
 When you're designing an address form, bear in mind the bewildering variety of address formats, 
@@ -669,10 +677,11 @@ number.
 
 ### Avoid using custom elements for payment card dates
 
-Custom elements can interrupt payment flow by breaking autofill, and don't work on older browsers. 
-If all other payment card details are available from autocomplete but a user is forced to find their 
-physical payment card to look up an expiry date, you're likely to lose a sale. Use standard HTML 
-elements instead, and style them accordingly.
+If not properly designed, [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) 
+can interrupt payment flow by breaking autofill, and won't work on older browsers. If all other 
+payment card details are available from autocomplete but a user is forced to find their physical 
+payment card to look up an expiry date because autofill didn't work for a custom element, you're 
+likely to lose a sale. Consider using standard HTML elements instead, and style them accordingly.
 
 <figure class="w-figure">
   <img src="images/custom-element-date-glitch.jpg" alt="Screenshot of payment 
