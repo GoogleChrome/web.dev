@@ -759,8 +759,8 @@ as how long checkout pages take to load or how long payment takes to complete:
 * **Website performance**: [user-centric metrics](/user-centric-performance-metrics) (Are your 
 checkout pages slow to load and, if so—what's the cause?).
 
-Page analytics, interaction analytics and real user performance measurement become especially 
-valuable when combined with server logs, conversion data and A/B testing, enabling you to answer 
+Page analytics, interaction analytics, and real user performance measurement become especially 
+valuable when combined with server logs, conversion data, and A/B testing, enabling you to answer 
 questions such as whether discount codes increase revenue, or whether a change in form layout 
 improves conversions.
 
