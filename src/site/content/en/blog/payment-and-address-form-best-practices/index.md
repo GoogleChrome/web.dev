@@ -5,7 +5,7 @@ authors:
   - samdutton
 scheduled: true
 date: 2020-11-21
-updated: 2020-11-21
+updated: 2020-12-01
 description: Maximize conversions by helping your users complete address and payment forms as quickly and easily as possible.
 hero: images/hero.jpg
 thumbnail: images/thumbnail.jpg
@@ -40,7 +40,7 @@ Here is an example of a simple payment form that demonstrates all of the best pr
 {% Glitch {
   id: 'payment-form',
   path: 'index.html',
-  height: 620
+  height: 720
 } %}
 
 Here is an example of a simple address form that demonstrates all of the best practices:
@@ -48,7 +48,7 @@ Here is an example of a simple address form that demonstrates all of the best pr
 {% Glitch {
   id: 'address-form',
   path: 'index.html',
-  height: 730
+  height: 980
 } %}
 
 ## Checklist
@@ -666,7 +666,7 @@ number, name on the card, and the expiry month and year:
 * `cc-exp-month`
 * `cc-exp-year`
 
-This enables browsers help users by securely storing payment card details and correctly entering form 
+This enables browsers to help users by securely storing payment card details and correctly entering form 
 data. Without autocomplete, users may be more likely to keep a physical record of payment card details, 
 or store payment card data insecurely on their device.
 
