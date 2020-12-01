@@ -129,7 +129,7 @@ easy way to improve the SMS OTP experience on those platforms.
   </figcaption>
 </figure>
 
-`autocomplete="one-time-code"` improves user experience, but there's more you
+`autocomplete="one-time-code"` improves the user experience, but there's more you
 can do by [ensuring that the SMS message complies with the origin-bound message
 format](#format).
 
