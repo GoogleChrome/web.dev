@@ -110,11 +110,11 @@ Add attributes to your form HTML so it looks like this:
   <h1>Sign in</h1>
   <section>        
     <label for="email">Email</label>
-    <input id="email" name="email" type="email" autocomplete="username" required autofocus>
-  </section>
+    <input id="email" name="email" autocomplete="username" type="email" required autofocus>
+  </section>           
   <section>        
     <label for="current-password">Password</label>
-    <input id="password" name="password" type="password" autocomplete="new-password" required>
+    <input id="current-password" name="current-password" autocomplete="current-password" type="password" minlength="8" required>
   </section>
   <button id="sign-in">Sign in</button>
 </form>
