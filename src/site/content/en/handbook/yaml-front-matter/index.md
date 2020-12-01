@@ -373,3 +373,15 @@ The `updated` value is presented in human-readable format beneath the page title
     This page was updated on <code>May 8, 2020</code>.
   </figcaption>
 </figure>
+
+## `web_lighthouse`: help web.dev/measure link back to a guide {: #web_lighthouse }
+
+This property is only relevant for Lighthouse guides.
+
+When creating a Lighthouse guide, add the `web_lighthouse` property to help
+web.dev/measure link back to your guide. The value of the property should be
+the ID of the audit in Lighthouse's source code. For example, the ID for the Lighthouse
+audit associated to the [cross-origin links](/external-anchors-use-rel-noopener/) guide
+is `external-anchors-use-rel-noopener`, which is the [filename of the audit source code][noopener].
+
+[noopener]: https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/dobetterweb/external-anchors-use-rel-noopener.js
