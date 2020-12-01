@@ -168,7 +168,7 @@ Update your `index.html` file so the form code looks like this:
 ```
 
 The `type` values do a lot:
-* `type="password"` obscures text as its entered and enables the browser's 
+* `type="password"` obscures text as it's entered and enables the browser's 
 [password manager](https://passwords.google.com/) to suggest a strong password. 
 * `type="email"` provides basic validation and ensures mobile users get an appropriate keyboard.
 
@@ -241,13 +241,13 @@ toggle password display? Try [Discount Usability Testing](https://www.nngroup.co
 with a small group of friends or colleagues.
 
 * To experience how screenreaders work with forms, install the [ChromeVox extension](https://chrome.google.com/webstore/detail/chromevox-classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en) and navigate through the form. 
-Is the form usable?
+Could you complete the form using ChromeVox only? If not, what would you change?
 
 Here's how your form should look at this point:
 
 {% Glitch {
   id: 'sign-up-form-codelab-4',
-  height: 550
+  height: 690
 } %}
 
 ## Going further
