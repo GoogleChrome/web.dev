@@ -261,7 +261,7 @@ const supported = await (async () => 'FaceDetector' in window &&
 
 Barcode detection is available on macOS, Chrome OS, and Android. [Google Play
 Services](https://play.google.com/store/apps/details?id=com.google.android.gms)
-are required on Chrome OS and Android.
+are required on Android.
 
 ## Best practices {: #bestpractices}
 
