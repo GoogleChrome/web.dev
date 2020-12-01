@@ -21,7 +21,7 @@ CSS [Houdini](https://developer.mozilla.org/en-US/docs/Web/Houdini) is an umbrel
 
 Houdini enables more semantic CSS with the [Typed Object Model](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API/Guide). Developers can define advanced CSS custom properties with syntax, default values, and inheritance through the [Properties and Values API](https://web.dev/at-property/).
 
-It also introduces paint, layout, and animation [worklets](https://developers.google.com/web/updates/2018/10/animation-worklet), which open up a world of possibilities, by making it easier for authors to hook into the styling and layout process of the browser’s rendering engine.
+It also introduces paint, layout, and animation [worklets](https://developers.google.com/web/updates/2018/10/animation-worklet), which open up a world of possibilities, by making it easier for authors to hook into the styling and layout process of the browser's rendering engine.
 
 ## Understanding Houdini worklets
 
@@ -44,7 +44,7 @@ For example, instead of waiting for a browser to implement an angled borders fea
   </figcaption>
 </figure>
 
-```
+```css
 .angled {
   --corner-radius: 15 0 0 0;
   --paint-color: #6200ee;
@@ -89,13 +89,13 @@ Give it a whirl!
 
 Houdini worklets must either be run via a server locally, or on HTTPS in production. In order to work with a Houdini worklet, you will need to either install it locally or use a content delivery network (CDN) like [unpkg](https://unpkg.com) to serve the files. You will then need to register the worklet locally.
 
-There are a few ways to include the Houdini.how showcase worklets in your own web projects. They can either be used via a CDN in a prototyping capacity, or you can manage the worklets on your own using npm modules. Either way, you’ll want to also include the CSS Paint Polyfill to ensure they are cross-browser compatible.
+There are a few ways to include the Houdini.how showcase worklets in your own web projects. They can either be used via a CDN in a prototyping capacity, or you can manage the worklets on your own using npm modules. Either way, you'll want to also include the CSS Paint Polyfill to ensure they are cross-browser compatible.
 
 ### 1. Prototyping with a CDN
 
 When registering from unpkg, you can link directly to the worklet.js file without needing to locally install the worklet. Unpkg will resolve to the worklet.js as the main script, or you can specify it yourself. Unpkg will not cause CORS issues, as it is served over HTTPS.
 
-```
+```html
 CSS.paintWorklet.addModule("https://unpkg.com/<package-name>");
 ```
 
@@ -103,13 +103,13 @@ Note that this does not register the custom properties for syntax and fallback v
 
 To optionally register the custom properties, include the properties.js file as well.
 
-```
+```html
 <script src="https://unpkg.com/<package-name>/properties.js"></script>
 ```
 
 To include the CSS Paint Polyfill with unpkg:
 
-```
+```html
 <script src="https://unpkg.com/css-paint-polyfill"></script>
 ```
 
@@ -117,14 +117,14 @@ To include the CSS Paint Polyfill with unpkg:
 
 Install your worklet from npm:
 
-```
+```sh
 npm install <package-name>
 npm install css-paint-polyfill
 ```
 
 Importing this package does not automatically inject the paint worklet. To install the worklet, you'll need to generate a URL that resolves to the package's worklet.js, and register that. You do so with:
 
-```
+```js
 CSS.paintWorklet.addModule(..file-path/worklet.js)
 ```
 
@@ -134,7 +134,7 @@ You will also need to include the CSS Paint Polyfill via script or import it dir
 
 Here is an example of how to use Houdini with the paint polyfill in modern bundlers:
 
-```
+```js
 import 'css-paint-polyfill';
 import "<package-name>/properties.js"; // optionally register properties
 import workletURL from "url:<package-name>";
@@ -144,4 +144,4 @@ CSS.paintWorklet.addModule(workletURL);
 
 ## Contribute
 
-Now that you’ve played around with some Houdini samples, it’s your turn to contribute your own! Houdini.how does not host any worklets itself, and instead showcases the work of the community. If you have a worklet or resource you would like to submit, check out the [github repo](https://github.com/una/houdini.how/blob/main/CONTRIBUTING.md) with contribution guidelines. We’d love to see what you come up with!
+Now that you've played around with some Houdini samples, it's your turn to contribute your own! Houdini.how does not host any worklets itself, and instead showcases the work of the community. If you have a worklet or resource you would like to submit, check out the [github repo](https://github.com/una/houdini.how/blob/main/CONTRIBUTING.md) with contribution guidelines. We'd love to see what you come up with!
