@@ -129,6 +129,10 @@ easy way to improve the SMS OTP experience on those platforms.
   </figcaption>
 </figure>
 
+`autocomplete="one-time-code"` improves user experience, but there's more you
+can do by [ensuring that the SMS message complies with the origin-bound message
+format](#format).
+
 {% Aside %}
 Optional attributes:
 
@@ -146,11 +150,7 @@ For more general form best practices, [Sam Dutton](/authors/samdutton/)'s
 point.
 {% endAside %}
 
-This improves user experience, but there's more you can do by ensuring
-that the SMS message complies with the [origin-bound message
-format](https://wicg.github.io/sms-one-time-codes/).
-
-## Format the SMS text
+## Format the SMS text {: #format }
 
 Enhance the user experience of entering an OTP by aligning with 
 [the origin-bound one-time codes delivered via SMS](https://wicg.github.io/sms-one-time-codes/) 
