@@ -4,7 +4,7 @@ title: Lazy load third-party resources with facades
 description: |
   Learn about the opportunities to lazy load third-party resources with facades.
 date: 2020-12-01
-updated: 2020-12-01
+#updated: 2020-12-01
 web_lighthouse:
   - third-party-facades
 ---
@@ -91,4 +91,3 @@ There are some tradeoffs when lazily loading third-parties with facades as they 
 ## Writing your own facade
 
 You may choose to [build a custom facade solution](https://wildbit.com/blog/2020/09/30/getting-postmark-lighthouse-performance-score-to-100#:~:text=What%20if%20we%20could%20replace%20the%20real%20widget) which employs the interaction pattern outlined above. The facade should be significantly smaller in comparison to the deferred third-party product and only include enough code to mimic the appearance of the product.
-
