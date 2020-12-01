@@ -2,7 +2,7 @@
 title: New capabilities status
 subhead: Web apps should be able to do anything iOS/Android/desktop apps can. The members of the cross-company capabilities project want to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2020-11-25
+updated: 2020-12-01
 tags:
   - blog
   - capabilities
@@ -80,7 +80,7 @@ change.<a name="shape-face-text"></a>
           NFC card near the exhibit; or an inventory management web app could
           read or write data to an NFC tag on a container to update information
           on its contents.<br>
-          <em>Updated November 25, 2020</em>
+          <em>Updated December 1, 2020</em>
         </td>
       </tr>
     </tbody>

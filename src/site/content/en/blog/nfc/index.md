@@ -4,14 +4,12 @@ subhead: Reading and writing to NFC tags is now possible.
 authors:
   - beaufortfrancois
 date: 2020-02-12
-updated: 2020-11-25
+updated: 2020-12-01
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: A photo of NFC tags
 description: |
   Reading and writing to NFC tags is now possible on Chrome for Android.
-origin_trial:
-  url: https://developers.chrome.com/origintrials/#/view_trial/236438980436951041
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
