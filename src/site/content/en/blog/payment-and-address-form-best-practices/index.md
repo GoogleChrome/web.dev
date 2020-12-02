@@ -5,7 +5,7 @@ authors:
   - samdutton
 scheduled: true
 date: 2020-11-21
-updated: 2020-12-01
+updated: 2020-12-02
 description: Maximize conversions by helping your users complete address and payment forms as quickly and easily as possible.
 hero: images/hero.jpg
 thumbnail: images/thumbnail.jpg
@@ -19,20 +19,21 @@ tags:
   - payments
   - security
   - ux
+<!-- codelabs:
+  - codelab-payment-form-best-practices
+  - codelab-address-form-best-practices -->
 ---
 
-<!-- codelabs:
-  - codelab-payment-and-address-form-best-practices
- -->
+{% YouTube 'xfGKmvvyhdM' %}
 
-<!--  {% YouTube 'alGcULGtiv8' %} -->
-
-Well-designed forms help users and increase conversion rates. One small fix can make a big 
-difference. 
+Well-designed forms help users and increase conversion rates. One small fix can make a big difference! 
 
 {% Aside 'codelab' %}
-  If you prefer to learn these best practices with a hands-on tutorial,
-  check out the [payment and address form best practices codelab](/codelab-payment-and-address-form-best-practices).
+If you prefer to learn these best practices with a hands-on tutorial, check out the two codelabs 
+for this post:
+
+* [Payment form best practices codelab](/codelab-payment-form-best-practices)
+* [Address form best practices codelab](/codelab-address-form-best-practices)
 {% endAside %}
 
 Here is an example of a simple payment form that demonstrates all of the best practices:
@@ -586,7 +587,7 @@ Here is an example of a form that demonstrates the use of a single `textarea` fo
 {% Glitch {
   id: 'address-form',
   path: 'index.html',
-  height: 480
+  height: 980
 } %}
 
 #### Internationalize and localize your address forms {: #internationalization-localization} 
@@ -616,12 +617,8 @@ forms, make sure to understand the key priorities to cope with a range of addres
 have a postal code, and rural addresses may not have a street or road name.
 * Use inclusive naming: 'Country/region' not 'Country'; 'ZIP/postal code' not 'ZIP'.
 
-Keep it flexible!
-
-{% Aside %}
-The [simple address form example above](#address-textarea) can be adapted to work 'well enough' 
-for many locales.
-{% endAside %}
+Keep it flexible! The [simple address form example above](#address-textarea) can be adapted to work 
+'well enough' for many locales.
 
 #### Consider avoiding postal code address lookup {: #postal-code-address-lookup}
 
@@ -740,8 +737,8 @@ size can lead to problematic positioning. BrowserStack enables [free testing for
 <figure class="w-figure">
   <img src="images/browserstack.jpg" alt="Screenshots of a payment form, payment-form.glitch.me, on 
   iPhone 7 and 11. The Complete Payment button is shown on iPhone 11 but not 7">
-  <figcaption class="w-figcaption">The same page on iPhone 7 and iPhone 11.<br>Reduce padding to 
-    ensure the <strong>Complete payment</strong> button isn't hidden.</figcaption>
+  <figcaption class="w-figcaption">The same page on iPhone 7 and iPhone 11.<br>Reduce padding for 
+    smaller mobile viewports to ensure the <strong>Complete payment</strong> button isn't hidden.</figcaption>
 </figure>
 
 
@@ -778,6 +775,10 @@ That, in turn, gives you a solid basis for prioritizing effort, making changes, 
 * [More capable form controls](/more-capable-form-controls)
 * [Creating Accessible Forms](https://webaim.org/techniques/forms/)
 * [Streamlining the Sign-up Flow Using Credential Management API](https://developers.google.com/web/updates/2016/04/credential-management-api)
+* [Frank's Compulsive Guide to Postal Addresses](http://www.columbia.edu/~fdc/postal/) provides 
+useful links and extensive guidance for address formats in over 200 countries.
+* [Countries Lists](http://www.countries-list.info/Download-List) has a tool for downloading country 
+codes and names in multiple languages, in multiple formats.
 
 
 Photo by [@rupixen](https://unsplash.com/@rupixen) on [Unsplash](https://unsplash.com/photos/Q59HmzK38eQ).
