@@ -156,8 +156,8 @@ Enhance the user experience of entering an OTP by aligning with
 [the origin-bound one-time codes delivered via SMS](https://wicg.github.io/sms-one-time-codes/) 
 specification. 
 
-The format rule is simple: Finish the
-SMS message with the domain preceded with `@` and the OTP preceded with `#`.
+The format rule is simple: Finish the SMS message with the receiver domain
+preceded with `@` and the OTP preceded with `#`.
 
 For example:
 ```text
