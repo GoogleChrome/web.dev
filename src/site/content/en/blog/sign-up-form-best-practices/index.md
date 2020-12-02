@@ -288,11 +288,12 @@ passwords](https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_
 
 To keep your business and your users safe, it's especially important to help users change their 
 password if they discover that it's been compromised. To make this easier, you should add a 
-`/.well-known/change-password` URL to your site that redirects to your password management page. 
-This enables password managers to navigate your users directly to the page where they can change 
-their password for your site. This feature is now implemented in Safari, Chrome, and is coming to 
-other browsers. [Help users change passwords easily by adding a well-known URL for changing 
-passwords](/change-password-url) explains how to implement this.
+[`/.well-known/change-password`](https://w3c.github.io/webappsec-change-password-url/) URL to your 
+site that redirects to your password management page. This enables password managers to navigate 
+your users directly to the page where they can change their password for your site. This feature is 
+now implemented in Safari, Chrome, and is coming to other browsers. [Help users change passwords 
+easily by adding a well-known URL for changing passwords](/change-password-url) explains how to 
+implement this.
 
 You should also make it simple for users to delete their account if that's what they want.
 
