@@ -74,7 +74,7 @@ We worked around these legacy APIs by preventing content from entering the webpa
 
 With these mitigations in place, we reintroduced `SharedArrayBuffer` in Chrome 68 (July 2018), but only on desktop. The extra process requirements meant we couldn't do the same on mobile devices. It was also noted that Chrome's solution was incomplete, as we were only blocking 'incorrect' data formats, whereas it's possible (although unusual) that valid CSS/JS/images at guessable URLs can contain private data.
 
-Web standards folks got together to come up with a more complete solution. The solution was to give pages a way to say "I hereby relinquish my ability to bring other-origin content into this process without their opt-in", which is done via [the COOP and COEP headers](/coop-coep/). The browser enforces that, and in exchange gives the page access to `SharedArrayBuffer` and other APIs with similar powers.
+Web standards folks got together to come up with a more complete solution. The solution was to give pages a way to say "I hereby relinquish my ability to bring other-origin content into this process without their opt-in". This declaration is done via [COOP and COEP headers](/coop-coep/) served with the page. The browser enforces that, and in exchange the page gains access to `SharedArrayBuffer` and other APIs with similar powers. Other origins can opt-in to content embedding via [`Cross-Origin-Resource-Policy`](<https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP)>) or [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
 
 Then, in December 2020, I wrote this article, and you read it. Hello.
 
