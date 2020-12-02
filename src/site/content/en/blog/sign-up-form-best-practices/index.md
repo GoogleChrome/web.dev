@@ -228,8 +228,8 @@ Once a user has entered a password, you need to check that it's not a password t
 compromised. The site [Have I Been Pwned](https://haveibeenpwned.com/Passwords) provides an API for password 
 checking, or you can run this as a service yourself.
 
-Chrome Password Manager also allows you to [check if any of your existing passwords have been 
-compromised](https://passwords.google.com/). 
+Google's Password Manager also allows you to [check if any of your existing passwords have been 
+compromised](https://passwords.google.com/checkup). 
 
 If you do reject the password that a user proposes, tell them specifically why it was rejected. 
 [Show problems inline and explain how to fix them](https://baymard.com/blog/inline-form-validation), 
