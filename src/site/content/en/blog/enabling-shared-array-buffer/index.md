@@ -70,7 +70,7 @@ A general mitigation is to ensure a webpage's system process doesn't contain sen
 
 These APIs have a 'legacy' behavior that allows content from other origins to be used without opt-in from the other origin. These requests are made with the cookies of the other origin, so it's a full 'logged in' request. Nowadays, new APIs require the other origin to opt-in using [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
 
-We worked around these legacy APIs by stopping content from entering the webpage's process if it looked 'incorrect'. So, in the above cases, we wouldn't allow JSON to enter the process, as it isn't a valid format for any of those APIs. That is, except iframes. For iframes we put the content in a different process.
+We worked around these legacy APIs by preventing content from entering the webpage's process if it looked 'incorrect', and called it [cross-origin read blocking](https://developers.google.com/web/updates/2018/07/site-isolation#corb). So, in the above cases, we wouldn't allow JSON to enter the process, as it isn't a valid format for any of those APIs. That is, except iframes. For iframes we put the content in a different process.
 
 With these mitigations in place, we reintroduced `SharedArrayBuffer` in Chrome 68 (July 2018), but only on desktop. The extra process requirements meant we couldn't do the same on mobile devices. It was also noted that Chrome's solution was incomplete, as we were only blocking 'incorrect' data formats, whereas it's possible (although unusual) that valid CSS/JS/images at guessable URLs can contain private data.
 
