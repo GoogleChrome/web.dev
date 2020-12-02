@@ -53,7 +53,7 @@ More info on:
 
 In January 2018 a vulnerability was revealed in some popular CPUs. [See the announcement](https://googleprojectzero.blogspot.com/2018/01/reading-privileged-memory-with-side.html) for full details, but it essentially meant that code could use high resolution timers to read memory that it shouldn't have access to.
 
-This was a problem for us browser vendors, as want to allow sites to execute code in the form of JavaScript and WASM, but strictly control the memory this code can access. If you arrive on my website, I shouldn't be able to read anything from the internet banking site you also have open. In fact, I shouldn't even know you have your internet banking site open. These are fundamentals of web security.
+This was a problem for us browser vendors, as we want to allow sites to execute code in the form of JavaScript and WASM, but strictly control the memory this code can access. If you arrive on my website, I shouldn't be able to read anything from the internet banking site you also have open. In fact, I shouldn't even know you have your internet banking site open. These are fundamentals of web security.
 
 To mitigate this, we reduced the resolution of our high resolution timers such as `performance.now()`. However, you can _create_ a high resolution timer using `SharedArrayBuffer` by modifying memory in a tight loop in a worker, and reading it back in another thread. This couldn't be effectively mitigated without heavily impacting well-intentioned code, so `SharedArrayBuffer` was disabled altogether.
 
