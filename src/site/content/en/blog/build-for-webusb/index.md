@@ -5,7 +5,7 @@ subhead: |
 authors:
   - reillyg
 date: 2018-12-20
-updated: 2020-11-17
+updated: 2020-12-02
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
@@ -622,14 +622,19 @@ udev.
 ### Android
 
 The Android platform is based on Linux but does not require any modification to
-system configuration. By default any device which does not have a driver is
-accessible to the browser as long as the user acknowledges a permission prompt.
-This is an additional step that occurs when the application calls [`open()`] on
-a device and must be repeated every time the browser reloads. In addition more
-devices will be accessible on Android than on desktop Linux because fewer
-drivers are included by default. A notable omission, for example, is the USB
-CDC-ACM class commonly implemented by USB-to-serial adapters as there is no API
-in the Android SDK for communicating with a serial device.
+system configuration. By default any device which does not have a driver built
+into the operating system is available to the browser. Developers should be
+aware however that users will encounter an additional step when connecting to
+the device. Once the users selects a device in response to a call to
+[`requestDevice()`], Android will display a prompt asking whether to allow
+Chrome to access it. This prompt also reappears if the user returns to a website
+which already has permission to connect to a device and the website calls
+[`open()`].
+
+In addition more devices will be accessible on Android than on desktop Linux
+because fewer drivers are included by default. A notable omission, for example,
+is the USB CDC-ACM class commonly implemented by USB-to-serial adapters as there
+is no API in the Android SDK for communicating with a serial device.
 
 ### Chrome OS
 
@@ -1011,6 +1016,7 @@ descriptors and Microsoft OS descriptors can be found in these projects:
 [WebUSB Platform Capability descriptor]: https://wicg.github.io/webusb/#webusb-platform-capability-descriptor
 [URL descriptor]: https://wicg.github.io/webusb/#url-descriptor
 [Zadig tool]: https://zadig.akeo.ie/
+[`requestDevice()`]: https://wicg.github.io/webusb/#dom-usb-requestdevice
 [`open()`]: https://wicg.github.io/webusb/#dom-usbdevice-open
 [a list of USB Device Registry Entries]: https://docs.microsoft.com/en-us/windows-hardware/drivers/usbcon/usb-device-specific-registry-settings
 [blog post]: https://techcommunity.microsoft.com/t5/microsoft-usb-blog/how-to-install-winusb-sys-without-a-custom-inf/ba-p/270769
