@@ -4,7 +4,7 @@ subhead: The Serial API allows websites to communicate with serial devices.
 authors:
   - beaufortfrancois
 date: 2020-08-12
-updated: 2020-11-24
+updated: 2020-12-02
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: |
@@ -405,7 +405,8 @@ navigator.serial.addEventListener("disconnect", (event) => {
 {% Aside %}
 Prior to Chrome 89 the `connect` and `disconnect` events fired a custom
 `SerialConnectionEvent` object with the affected `SerialPort` interface
-available as the `port` attribute.
+available as the `port` attribute. You may want to use `event.port ||
+event.target` to handle the transition.
 {% endAside %}
 
 ### Handle signals {: #signals }
