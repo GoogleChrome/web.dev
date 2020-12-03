@@ -146,7 +146,7 @@ the role of inputs in order to store data that can be used later for autofill.
 
 5. Focus the email input on a desktop device and type some text. 
 
-You can see the URL of your app when you click **Fullscreen** ![The Fullscreen icon](/images/glitch/fullscreen.svg. If you stored any email addresses in your browser, you probably see a dialog that lets you select from those stored emails. This happens because the `autocomplete="username"` attribute applied to the email input.
+You can see the URL of your app when you click **Fullscreen** ![The Fullscreen icon](/images/glitch/fullscreen.svg). If you stored any email addresses in your browser, you probably see a dialog that lets you select from those stored emails. This happens because the `autocomplete="username"` attribute applied to the email input.
 
 * `autocomplete="username"` and `autocomplete="current-password"` help browsers use 
 stored values to autofill the inputs.
