@@ -10,8 +10,9 @@ description: |
 tags:
   - blog
   - performance
-  - fast
 codelabs: codelab-two-ways-to-prefetch
+feedback:
+  - api
 ---
 
 Research shows that [faster load times result in higher conversion rates](https://wpostats.com/) and better user experiences. If you have insight into how users move through your website and which pages they will likely visit next, you can improve load times of future navigations by downloading the resources for those pages ahead of time.
@@ -23,7 +24,7 @@ This guide explains how to achieve that with `<link rel=prefetch>`, a [resource 
 Adding `<link rel=prefetch>` to a web page tells the browser to download entire pages, or some of the resources (like scripts or CSS files), that the user might need in the future. This can improve metrics like [First Contentful Paint](/first-contentful-paint) and [Time to Interactive](/interactive/) and can often make subsequent navigations appear to load instantly.
 
 ```html
-<link rel="prefetch" href="index.html" as="document">
+<link rel="prefetch" href="/articles/" as="document">
 ```
 
 ![A diagram showing how link prefetch works.](prefetch.png)
@@ -67,7 +68,7 @@ The simplest way to implement `prefetch` is adding a `<link>` tag to the `<head>
 ```html
 <head>
 	...
-	<link rel="prefetch" href="index.html" as="document">
+	<link rel="prefetch" href="/articles/" as="document">
 	...
 </head>
 

@@ -1,0 +1,337 @@
+---
+title: Experimenting with WebTransport
+subhead: WebTransport is a new API offering low-latency, bidirectional, client-server messaging. Learn more about its use cases, and how to give feedback about the future of the implementation.
+authors:
+  - jeffposnick
+description: WebTransport is a new API offering low-latency, bidirectional, client-server messaging. Learn more about its use cases, and how to give feedback about the future of the implementation.
+date: 2020-06-08
+updated: 2020-11-10
+hero: hero.jpg
+hero_position: center
+alt: |
+  Photo of fast-moving traffic.
+origin_trial:
+  url: https://developers.chrome.com/origintrials/#/view_trial/-6744140441987317759
+tags:
+  - blog
+  - capabilities
+  - network
+feedback:
+  - api
+---
+
+{% Aside 'caution' %} This proposal has undergone significant changes since the
+start of the Origin Trial. Starting with Chrome 87, WebTransport has replaced
+QuicTransport as the top-level interface that developers interact with.
+
+As a result, some of the information, and all of the sample code, in this
+article is out of date. For the latest on this evolving proposal, please read
+refer to the
+[editor's draft of WebTransport](https://w3c.github.io/webtransport/). It
+includes an [Examples](https://w3c.github.io/webtransport/#examples) section
+with updated code snippets.
+
+Once the proposal stabilizes, we will update this article and associated code
+samples with up to date information.
+{% endAside %}
+
+## Background
+
+### What's QuicTransport?
+
+[QuicTransport](https://wicg.github.io/web-transport/#quic-transport) is a web API that uses the [QUIC](https://www.chromium.org/quic) protocol in a bidirectional, non-HTTP transport. It's intended for two-way communications between a web client and a QUIC server. It supports sending data both unreliably via its [datagram APIs](#datagram), and reliably via its [streams APIs](#stream).
+
+[Datagrams](https://tools.ietf.org/html/draft-ietf-quic-datagram-00) are ideal for sending and receiving data that do not need strong delivery guarantees. Individual packets of data are limited in size by the [maximum transmission unit (MTU)](https://en.wikipedia.org/wiki/Maximum_transmission_unit) of the underlying connection, and may or may not be transmitted successfully, and if they are transferred, they may arrive in an arbitrary order. These characteristics make the datagram APIs ideal for low-latency, best-effort data transmission. You can think of datagrams as [user datagram protocol (UDP)](https://en.wikipedia.org/wiki/User_Datagram_Protocol) messages, but encrypted and congestion-controlled.
+
+The streams APIs, in contrast, provide [reliable](https://en.wikipedia.org/wiki/Reliability_(computer_networking)), ordered data transfer. They're [well-suited](https://quicwg.org/base-drafts/draft-ietf-quic-transport.html#name-streams) to scenarios where you need to send or receive one or more streams of ordered data. Using multiple QUIC streams is analogous to establishing multiple [TCP](https://en.wikipedia.org/wiki/Transmission_Control_Protocol) connections, but QUIC streams are lightweight, and can be opened and closed without much overhead.
+
+### What's WebTransport?
+
+QuicTransport is one part of the larger [WebTransport proposal](https://wicg.github.io/web-transport/). WebTransport is a collection of APIs for sending and receiving data between a web client and a server. QuicTransport is the interface for using the QUIC protocol in the context of bi-directional WebTransport communications.
+
+Chrome is implementing the QuicTransport portion of WebTransport first, before any of the other proposed interfaces. The Chrome team made the decision to start with a QuicTransport after speaking to web developers about their use cases. We hope to solicit early feedback on the overall WebTransport effort based on developers' experiences with QuicTransport.
+
+### Use cases
+
+This a small list of possible ways developers might use QuicTransport.
+
+- Sending game state at a regular interval with minimal latency to a server via small, unreliable, out-of-order messages.
+- Receiving media streams pushed from a server with minimal latency, independent of other data streams.
+- Receiving notifications pushed from a server while a web page is open.
+
+As part of the origin trial process, we're interested in [hearing more](#feedback) about how you plan on using QuicTransport!
+
+## Current status {: #status }
+
+<div class="w-table-wrapper">
+
+| Step                                       | Status                       |
+| ------------------------------------------ | ---------------------------- |
+| 1. Create explainer                        | [Complete](https://github.com/WICG/web-transport/blob/master/explainer.md) |
+| 2. Create initial draft of specification   | [Complete](https://wicg.github.io/web-transport/#quic-transport) |
+| **3. Gather feedback and iterate design**  | [**In Progress**](#feedback) |
+| **4. Origin trial**                        | [**In Progress**](#register-for-ot) |
+| 5. Launch                                  | Not Started |
+
+</div>
+
+## QuicTransport's relationship to other technologies
+
+### Is QuicTransport a replacement for WebSockets?
+
+Maybe. There are use cases where either [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) or QuicTransport might be valid communication protocols to use.
+
+WebSockets communications are modeled around a single, reliable, ordered stream of messages, which is fine for some types of communication needs. If you need those characteristics, then QuicTransport's streams APIs can provide them as well. In comparison, QuicTransport's datagram APIs provide low-latency delivery, without guarantees about reliability or ordering, so they're not a direct replacement for WebSockets.
+
+Using QuicTransport, via the datagram APIs or via multiple concurrent Streams API instances, means that you don't have to worry about [head-of-line blocking](https://en.wikipedia.org/wiki/Head-of-line_blocking), which can be an issue with WebSockets. Additionally, there are performance benefits when establishing new connections, as the [QUIC handshake](https://www.fastly.com/blog/quic-handshake-tls-compression-certificates-extension-study) is faster than starting up TCP over TLS.
+
+QuicTransport is part of a new draft specification, and as such the WebSocket ecosystem around client and server libraries is currently much more robust. If you need something that works "out of the box" with common server setups, and with broad web client support, WebSockets is a better choice today.
+
+### Is QuicTransport the same as a UDP Socket API?
+
+No. QuicTransport is not a [UDP Socket API](https://www.w3.org/TR/raw-sockets/). While QUIC does use UDP "under the hood," QuicTransport has requirements around encryption and congestion control that make it more than a basic UDP Socket API.
+
+### Is QuicTransport an alternative to WebRTC data channels?
+
+Yes, for client-server connections. QuicTransport shares many of the same properties as [WebRTC data channels](https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel), although the underlying protocols are different.
+
+{% Aside %}
+WebRTC data channels support peer-to-peer communications, but QuicTransport only supports client-server connection. If you have multiple clients that need to talk directly to each other, then QuicTransport isn't a viable alternative.
+{% endAside %}
+
+Generally, running a QUIC-compatible server requires less setup and configuration than maintaining a WebRTC server, which involves understanding multiple protocols ([ICE](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Connectivity#ICE_candidates), [DTLS](https://webrtc-security.github.io/#4.3.1.), and [SCTP](https://developer.mozilla.org/en-US/docs/Web/API/RTCSctpTransport)) in order to get a working transport. WebRTC entails many more moving pieces that could lead to failed client/server negotiations.
+
+The QuicTransport API was designed with the web developer use cases in mind, and should feel more like writing modern web platform code than using WebRTC's data channel interfaces. [Unlike WebRTC](https://bugs.chromium.org/p/chromium/issues/detail?id=302019), QuicTransport is supported inside of [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), which allows you to perform client-server communications independent of a given HTML page. Because QuicTransport exposes a [Streams](https://streams.spec.whatwg.org/)-compliant interface, it supports optimizations around [backpressure](https://streams.spec.whatwg.org/#backpressure).
+
+However, if you already have a working WebRTC client/server setup that you're happy with, switching to QuicTransport may not offer many advantages.
+
+## Try it out
+
+The best way to experiment with QuicTransport is to use [this Python code](https://github.com/GoogleChrome/samples/blob/gh-pages/quictransport/quic_transport_server.py) to start up a compatible QUIC server locally. You can then use this page with a [basic JavaScript client](https://googlechrome.github.io/samples/quictransport/client.html) to try out client/server communications.
+
+## Using the API
+
+QuicTransport was designed on top of modern web platform primitives, like the [Streams API](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API). It relies heavily on [promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises), and works well with [<code>async</code> and <code>await</code>](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await).
+
+The QuicTransport [origin trial](#register-for-ot) supports three distinct types of traffic: datagrams, as well as both unidirectional and bidirectional streams.
+
+### Connecting to a server
+
+You can connect to a QUIC server by creating a `QuicTransport` instance. The scheme of the URL should be `quic-transport`. You need to explicitly specify the port number.
+
+You should use the `ready` promise to wait for the connection to be established. This promise will not be fulfilled until the setup is complete, and will reject if the connection fails at the QUIC/TLS stage.
+
+The `closed` promise fulfills when the connection closes normally, and rejects if the closure was unexpected.
+
+If the server rejects the connection due to a [client indication](https://tools.ietf.org/html/draft-vvv-webtransport-quic-01#section-3.2) error (e.g. the path of the URL is invalid), then that causes `closed` to reject, while `ready` remains unresolved.
+
+```js
+const url = 'quic-transport://example.com:4999/foo/bar';
+const transport = new QuicTransport(url);
+
+// Optionally, set up functions to respond to
+// the connection closing:
+transport.closed.then(() => {
+  console.log(`The QUIC connection to ${url} closed gracefully.`);
+}).catch((error) => {
+  console.error('The QUIC connection to ${url} closed due to ${error}.');
+});
+
+// Once .ready fulfills, the connection can be used.
+await transport.ready;
+```
+
+### Datagram APIs {: #datagram }
+
+Once you have a QuicTransport instance that's connected to a server, you can use it to send and receive discrete bits of data, known as [datagrams](https://en.wikipedia.org/wiki/Datagram).
+
+The `sendDatagrams()` method returns a <code>[WritableStream](https://developer.mozilla.org/en-US/docs/Web/API/WritableStream)</code>, which a web client can use to send data to the server. The <code>receiveDatagrams()</code> method returns a <code>[ReadableStream](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream)</code>, allowing you to listen for data from the server. Both streams are inherently unreliable, so it is possible that the data you write will not be received by the server, and vice versa.
+
+Both types of streams use <code>[Uint8Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)</code> instances for data transfer.
+
+```js
+// Send two datagrams to the server.
+const ws = transport.sendDatagrams();
+const writer = ws.getWriter();
+const data1 = new Uint8Array([65, 66, 67]);
+const data2 = new Uint8Array([68, 69, 70]);
+writer.write(data1);
+writer.write(data2);
+
+// Read datagrams from the server.
+const rs = transport.receiveDatagrams();
+const reader = rs.getReader();
+while (true) {
+  const {value, done} = await reader.read();
+  if (done) {
+    break;
+  }
+  // value is a Uint8Array.
+  console.log(value);
+}
+```
+
+{% Aside %}
+Chrome does not [currently](https://bugs.chromium.org/p/chromium/issues/detail?id=929585) expose an [async iterator](https://github.com/whatwg/streams/issues/778) for a `ReadableStream`. For the time being, using the `getReader()` method combined with a `while()` loop is the best way to read from the stream.
+{% endAside %}
+
+### Streams APIs  {: #stream }
+
+Once you've connected to the server, you could also use QuicTransport to send and receive data via its Streams APIs.
+
+Each chunk of all streams is a `Uint8Array`. Unlike with the Datagram APIs, these streams are reliable. But each stream is independent, so data order across streams is not guaranteed.
+
+#### SendStream
+
+A <code>[SendStream](https://wicg.github.io/web-transport/#sendstream)</code> is created by the web client using the <code>createSendStream()</code> method of a `QuicTransport` instance, which returns a promise for the <code>SendStream</code>.
+
+Use the <code>[close()](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/close)</code> method of the <code>[WritableStreamDefaultWriter](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter)</code> associated with the stream to send a [QUIC Stream FIN bit](https://tools.ietf.org/html/draft-ietf-quic-transport-27#section-19.8) to the server. The browser tries to send all pending data before actually closing the associated QUIC stream.
+
+```js
+// Send two Uint8Arrays to the server.
+const stream = await transport.createSendStream();
+const writer = stream.writable.getWriter();
+const data1 = new Uint8Array([65, 66, 67]);
+const data2 = new Uint8Array([68, 69, 70]);
+writer.write(data1);
+writer.write(data2);
+try {
+  await writer.close();
+  console.log('All data has been sent.');
+} catch (error) {
+  console.error(`An error occurred: ${error}`);
+}
+```
+
+Similarly, use the <code>[abort()](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/abort)</code> method of the <code>[WritableStreamDefaultWriter](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter)</code> to send a [QUIC RESET\_STREAM](https://tools.ietf.org/html/draft-ietf-quic-transport-27#section-19.4) to the server. When using <code>abort()</code>, the browser may discard any pending data that hasn't yet been sent.
+
+```js
+const ws = await transport.createSendStream();
+const writer = ws.getWriter();
+writer.write(...);
+writer.write(...);
+await writer.abort();
+// Not all the data may have been written.
+```
+
+#### ReceiveStream
+
+A <code>[ReceiveStream](https://wicg.github.io/web-transport/#receivestream)</code> is initiated by the server. Obtaining a <code>ReceiveStream</code> is a two-step process for a web client. First, it calls the <code>receiveStreams()</code> method of a `QuicTransport` instance, which returns a <code>ReadableStream</code>. Each chunk of that <code>ReadableStream</code>, is, in turn, a <code>ReceiveStream</code> that can be used to read <code>Uint8Array</code> instances sent by the server.
+
+```js
+async function readFrom(receiveStream) {
+  const reader = receiveStream.readable.getReader();
+  while (true) {
+    const {done, value} = await reader.read();
+    if (done) {
+      break;
+    }
+    // value is a Uint8Array
+    console.log(value);
+  }
+}
+
+const rs = transport.receiveStreams();
+const reader = rs.getReader();
+while (true) {
+  const {done, value} = await reader.read();
+  if (done) {
+    break;
+  }
+  // value is an instance of ReceiveStream
+  await readFrom(value);
+}
+```
+
+You can detect stream closure using the <code>[closed](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultReader/closed)</code> promise of the <code>[ReadableStreamDefaultReader](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultReader)</code>. When the QUIC stream is [closed with the FIN bit](https://tools.ietf.org/html/draft-ietf-quic-transport-27#section-19.8), the <code>closed</code> promise is fulfilled after all the data is read. When the QUIC stream is closed abruptly (for example, by <code>[STREAM_RESET](https://tools.ietf.org/html/draft-ietf-quic-transport-27#section-19.4)</code>), then the <code>closed</code> promise rejects.
+
+```js
+// Assume an active receiveStream
+const reader = receiveStream.readable.getReader();
+reader.closed.then(() => {
+  console.log('The receiveStream closed gracefully.');
+}).catch(() => {
+  console.error('The receiveStream closed abruptly.');
+});
+```
+
+#### BidirectionalStream
+
+A <code>[BidirectionalStream](https://wicg.github.io/web-transport/#bidirectional-stream)</code> might be created either by the server or the client.
+
+Web clients can create one using the `createBidirectionalStream()` method of a `QuicTransport` instance, which returns a promise for a `BidirectionalStream`.
+
+```js
+const stream = await transport.createBidirectionalStream();
+// stream is a BidirectionalStream
+// stream.readable is a ReadableStream
+// stream.writable is a WritableStream
+```
+
+You can listen for a `BidirectionalStream` created by the server with the `receiveBidirectionalStreams()` method of a `QuicTransport` instance, which returns a `ReadableStream`. Each chunk of that `ReadableStream`, is, in turn, a `BidirectionalStream`.
+
+```js
+const rs = transport.receiveBidrectionalStreams();
+const reader = rs.getReader();
+while (true) {
+  const {done, value} = await reader.read();
+  if (done) {
+    break;
+  }
+  // value is a BidirectionalStream
+  // value.readable is a ReadableStream
+  // value.writable is a WritableStream
+}
+```
+
+A `BidirectionalStream` is just a combination of a `SendStream` and `ReceiveStream`. The examples from the previous two sections explain how to use each of them.
+
+### More examples
+
+The [WebTransport draft specification](https://wicg.github.io/web-transport/#quic-transport) includes a number of additional inline examples, along with full documentation for all of the methods and properties.
+
+## Enabling support during the origin trial {: #register-for-ot }
+
+{% include 'content/origin-trial-register.njk' %}
+
+### QuicTransport in Chrome's DevTools
+
+Unfortunately, [Chrome's DevTools](https://developers.google.com/web/tools/chrome-devtools) support for QuicTransport is not ready for the start of the origin trial. Please "star" [this Chrome issue](https://bugs.chromium.org/p/chromium/issues/detail?id=1069742) to be notified about updates on the DevTools interface.
+
+## Privacy and security considerations
+
+Please see the [corresponding section](https://wicg.github.io/web-transport/#privacy-security) of the draft specification for authoritative guidance.
+
+## Feedback  {: #feedback }
+
+The Chrome team wants to hear your thoughts and experiences using this API throughout the origin trial process.
+
+### Feedback about the API design
+
+Is there something about the API that's awkward or doesn't work as expected? Or are there missing pieces that you need to implement your idea?
+
+File an issue on the [Web Transport GitHub repo](https://github.com/WICG/web-transport/issues), or add your thoughts to an existing issue.
+
+### Problem with the implementation?
+
+Did you find a bug with Chrome's implementation?
+
+File a bug at [https://new.crbug.com](https://new.crbug.com). Include as much detail as you can, along with simple instructions for reproducing.
+
+
+### Planning to use the API?
+
+Your public support helps Chrome prioritize features, and shows other browser vendors how critical it is to support them.
+
+- Be sure you have signed up for the [origin trial](https://developers.chrome.com/origintrials/#/view_trial/-6744140441987317759) to show your interest and provide your domain and contact info.
+- Send a Tweet to [@ChromiumDev](https://twitter.com/chromiumdev) with `#QuicTransport` and details on where and how you're using it.
+
+### General discussion
+
+You can use the [web-transport-dev Google Group](https://groups.google.com/a/chromium.org/g/web-transport-dev) for general questions or problems that don't fit into one of the other categories.
+
+## Acknowledgements
+
+This article incorporates information from the [WebTransport Explainer](https://github.com/wicg/web-transport/blob/master/explainer.md), [draft specification](https://wicg.github.io/web-transport/), and [related design docs](https://docs.google.com/document/d/1UgviRBnZkMUq4OKcsAJvIQFX6UCXeCbOtX_wMgwD_es/edit#). Thank you to the respective authors for providing that foundation.
+
+_The hero image on this post is by [Robin Pierre](https://unsplash.com/photos/dPgPoiUIiXk) on Unsplash._

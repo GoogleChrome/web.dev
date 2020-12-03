@@ -17,6 +17,8 @@ description: |
 tags:
   - angular
   - performance
+feedback:
+  - api
 ---
 
 The scrolling list is one of the most common UI patterns today, whether it's browsing an infinitely scrolling feed on your favorite social media site, or navigating an enterprise dashboard. When scrolling lists become very long (hundreds, thousands, or hundreds of thousands of items), application performance can suffer.
@@ -35,10 +37,9 @@ Instead of rendering the entire list at a time, only a subset of the items that 
 The rest of this post walks through how to set up basic virtual scrolling. You can see a full working example in this sample app:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://stackblitz.com/edit/scroll-list?embed=1&file=src/app/app.component.ts&view=preview"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://stackblitz.com/edit/scroll-list?embed=1&file=src/app/app.component.ts&view=preview'
+  } %}
 </div>
 
 ## Setting up virtual scrolling

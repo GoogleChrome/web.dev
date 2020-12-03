@@ -18,7 +18,7 @@
  * Returns an array of all past Newsletters.
  *
  * @param {object} collections 11ty collections object
- * @return {Array<{ data: { title: string, subhead: string, thumbnail: string, alt: string; }, date: Date, permalink: string, url: string, content: string }>}
+ * @return {Newsletters}
  */
 module.exports = (collections) => {
   return collections.getFilteredByTag('newsletter').reverse();

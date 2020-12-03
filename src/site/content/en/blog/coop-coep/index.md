@@ -13,32 +13,53 @@ description: >
 authors:
   - agektmr
 hero: hero.jpg
+alt: An illustration of a person browsing a website that has a popup, an iframe, and an image.
 date: 2020-04-13
-updated: 2020-05-05
+updated: 2020-10-15
 tags:
   - blog
   - security
+origin_trial:
+  url: https://developers.chrome.com/origintrials/#/register_trial/2780972769901281281
+feedback:
+  - api
 ---
+
+{% Banner 'caution', 'body' %}
+
+**Updates**
+
+**October 15th, 2020**: `self.crossOriginIsolated` is available from Chrome 87.
+Reflecting that, `document.domain` is immutable when `self.crossOriginIsolated`
+returns `true`. `performance.measureMemory` is ending its origin trial and is
+planned to be enabled by default in Chrome 88. Shared Array Buffer on Android
+Chrome will be available from Chrome 88.
+
+**September 1st, 2020**: COOP Reporting is behind flags in Chrome 86. See
+[Enable Chrome flags](#flags).
+
+{% endBanner %}
+
 Some web APIs increase the risk of side-channel attacks like Spectre. To
 mitigate that risk, browsers offer an opt-in-based isolated environment called
 cross-origin isolated. With a cross-origin isolated state, the webpage will be
 able to use privileged features including:
 
 * [`SharedArrayBuffer`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)
-  (required for WebAssembly Threads)
-* [`performance.measureMemory()`](/monitor-total-page-memory-usage/)
-* [JS Self-Profiling API](https://wicg.github.io/js-self-profiling/)
+  (required for WebAssembly Threads. This is available from Android Chrome 88.
+  Desktop version is currently enabled by default with the help of [Site
+  Isolation](https://www.chromium.org/Home/chromium-security/site-isolation),
+  but will require the cross-origin isolated state and will be disabled by
+  default.)
+* [`performance.measureMemory()`](/monitor-total-page-memory-usage/) (Ends its
+  origin trial and is planned to be enabled by default in Chrome 88)
+* [JS Self-Profiling API](https://wicg.github.io/js-self-profiling/) (Not
+  available yet in Chrome)
 
 The cross-origin isolated state also prevents modifications of
 `document.domain`. (Being able to alter `document.domain` allows communication
 between same-site documents and has been considered a loophole in the
 same-origin policy.)
-
-{% Aside 'caution' %}
-These powerful features and the prevention of `document.domain` modification
-are not yet enabled in Chrome as of version 83. We'll update this post as they
-become available.
-{% endAside %}
 
 To opt in to a cross-origin isolated state, you need to send the following
 HTTP headers on the main document:
@@ -56,7 +77,6 @@ means those resources being loaded cross-origin require opt-ins.
 You can determine whether a web page is in a cross-origin isolated state by
 examining
 [`self.crossOriginIsolated`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated).
-(This works on Firefox but has yet to be implemented in Chrome).
 
 This article shows how to use these new headers. In [a follow-up
 article](/why-coop-coep) I will provide more background and context.
@@ -159,6 +179,13 @@ header to all documents including those that are embedded via iframes.
 parameters](https://first-party-test.glitch.me/coep).
 {% endAside %}
 
+{% Aside %}
+[Squoosh](https://squoosh.app) (an image optimization PWA) [now uses COOP /
+COEP](https://github.com/GoogleChromeLabs/squoosh/pull/829/files#diff-316f969413f2d9a065fcc08c7a5589c088dd1e21deebadccfc5a4372ac5e0cbbR22-R23)
+to gain access to Wasm Threads (and Shared Array Buffer) as well on Android
+Chrome.
+{% endAside %}
+
 ### Determine whether isolation succeeded with `self.crossOriginIsolated`
 
 The `self.crossOriginIsolated` property returns `true` when the web page is in a
@@ -169,9 +196,8 @@ powerful features like `performance.measureMemory()`.
 
 {% Aside 'caution' %}
 The
-[`self.crossOriginIsolated`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated.)
-property is [still under development and not available yet in Chrome as of
-version 83](https://www.chromestatus.com/feature/5953286387531776).
+[`self.crossOriginIsolated`](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated)
+property is available in Chrome from version 87.
 {% endAside %}
 
 ### Debug issues using Chrome DevTools
@@ -207,8 +233,10 @@ The [Reporting
 API](https://developers.google.com/web/updates/2018/09/reportingapi) is another
 mechanism through which you can detect various issues. You can configure the
 Reporting API to instruct your users' browser to send a report whenever COEP
-blocks the loading of a resource. Chrome has supported the `Report-To` header since
-version 69 for a variety of uses including COEP.
+blocks the loading of a resource or COOP isolates a popup window. Chrome has
+supported the
+[`Report-To`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/report-to)
+header since version 69 for a variety of uses including COEP and COOP.
 
 {% Aside %}
 The Reporting API is undergoing transition to [a new
@@ -219,13 +247,40 @@ API](https://bugzilla.mozilla.org/show_bug.cgi?id=1620573). You may want to use
 both APIs during the transition.
 {% endAside %}
 
-To specify where the browser should send reports, append the `Report-To`
-HTTP header to any document that is served with a COEP HTTP header. The
+#### Enable the Reporting API
+
+You can try the COOP Reporting API in Chrome 86 and later by doing one of the following:
+
+1. Enabling Chrome flags
+2. Registering for an origin trial
+
+##### Enable via Chrome flags {: #flags }
+
+1. Go to `chrome://flags`
+1. Enable **Cross Origin Opener Policy reporting** (`chrome://flags/#cross-origin-opener-policy-reporting`)
+1. Enable **Cross Origin Opener Policy access reporting**
+   (`chrome://flags/#cross-origin-opener-policy-access-reporting`)
+
+##### Register for an origin trial
+
+{% include 'content/origin-trials.njk' %}
+
+{% include 'content/origin-trial-register.njk' %}
+
+{% Aside 'caution' %}
+To use COOP Reporting API, the token must be served as an HTTP header instead of
+a `<meta>` tag.
+{% endAside %}
+
+#### `Report-To`
+
+To specify where the browser should send reports, append the `Report-To` HTTP
+header to any document that is served with a COEP or COOP HTTP header. The
 `Report-To` header also supports a few extra parameters to configure the
 reports. For example:
 
 ```http
-Report-To: { group: 'coep_rollout_1', max_age: 86400, endpoints: [{ url: 'https://first-party-test.glitch.me/report'}]}
+Report-To: { group: 'coep_report', max_age: 86400, endpoints: [{ url: 'https://first-party-test.glitch.me/report'}]},{ group: 'coop_report', max_age: 86400, endpoints: [{ url: 'https://first-party-test.glitch.me/report'}]}
 ```
 
 The parameters object has three properties:
@@ -234,28 +289,37 @@ The parameters object has three properties:
 
 The `group` property names your various reporting endpoints. Use these names to
 direct a subset of your reports. For instance, in the
-`Cross-Origin-Embedder-Policy` directive you can specify the relevant endpoint
-by providing the group name to `report-to=`. For example:
+`Cross-Origin-Embedder-Policy` and `Cross-Origin-Opener-Policy` directives you
+can specify the relevant endpoint by providing the group name to `report-to=`.
+For example:
 
 ```http
-Cross-Origin-Embedder-Policy: require-corp; report-to="coep_rollout_1"
+Cross-Origin-Embedder-Policy: require-corp; report-to="coep_report"
+Cross-Origin-Opener-Policy: same-origin; report-to="coop_report"
 ```
 When the browser encounters this, it will cross reference the `report-to` value
 with the `group` property on the `Report-To` header to look up the endpoint.
-This example cross references on `coep_rollout_1` to find the endpoint
-`https://first-party-test.glitch.me/report`.
+This example cross references `coep_report` and `coop_report` to find the
+endpoint `https://first-party-test.glitch.me/report`.
 
-If you prefer to receive reports without blocking any embedded content, use
-`Cross-Origin-Embedder-Policy-Report-Only` instead of
-`Cross-Origin-Embedder-Policy`. For example:
+If you prefer to receive reports without blocking any embedded content or
+without isolating a popup window, append `-Report-Only` to respective headers:
+i.e. `Cross-Origin-Embedder-Policy-Report-Only` and
+`Cross-Origin-Opener-Policy-Report-Only`. For example:
 
 ```http
-Cross-Origin-Embedder-Policy-Report-Only: require-corp; report-to="coep_rollout_1"
+Cross-Origin-Embedder-Policy-Report-Only: require-corp; report-to="coep_report"
+Cross-Origin-Opener-Policy-Report-Only: same-origin; report-to="coop_report"
 ```
 
 By doing this, when the browser detects cross origin resources that don't have
 CORP or CORS, it sends a report using the Reporting API without actually
-blocking those resources.
+blocking those resources because of COEP.
+
+Similarly, when the browser opens a cross-origin popup window, it sends a report
+without actually isolating the window because of COOP. It also reports when
+different browsing context groups try to access each other, but only in
+"report-only" mode.
 
 #### `max_age`
 
@@ -272,18 +336,79 @@ The `endpoints` property specifies the URLs of one or more reporting endpoints.
 The endpoint must accept CORS if it's hosted on a different origin. The browser
 will send reports with a Content-Type of `application/reports+json`.
 
-An example payload looks like this:
+An example COEP report payload when cross-origin resource is blocked looks like
+this:
 
 ```json
 [{
-  age: 0,
-  body: {
-    'blocked-url': 'https://third-party-test.glitch.me/check.svg',
-    type: 'corp'
+  "age": 25101,
+  "body": {
+    "blocked-url": "https://third-party-test.glitch.me/check.svg?",
+    "blockedURL": "https://third-party-test.glitch.me/check.svg?",
+    "destination": "image",
+    "disposition": "enforce",
+    "type": "corp"
   },
-  type: 'coep',
-  url: 'https://first-party-test.glitch.me/?coep=require-corp',
-  …
+  "type": "coep",
+  "url": "https://first-party-test.glitch.me/?coep=require-corp&coop=same-origin&",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4249.0 Safari/537.36"
+}]
+```
+
+{% Aside 'caution' %}
+`blocked-url` is there for backward compatibility only and [will be removed
+eventually](https://github.com/whatwg/html/pull/5848).
+{% endAside %}
+
+An example COOP report payload when a popup window is opened isolated looks like
+this:
+
+```json
+[{
+  "age": 7,
+  "body": {
+    "disposition": "enforce",
+    "effectivePolicy": "same-origin",
+    "nextResponseURL": "https://third-party-test.glitch.me/popup?report-only&coop=same-origin&",
+    "type": "navigation-from-response"
+  },
+  "type": "coop",
+  "url": "https://first-party-test.glitch.me/coop?coop=same-origin&",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36"
+}]
+```
+
+When different browsing context groups try to access each other (only on
+"report-only" mode), COOP also sends a report. For example, a report when
+`postMessage()` is attempted would look like this:
+
+```json
+[{
+  "age": 51785,
+  "body": {
+    "columnNumber": 18,
+    "disposition": "reporting",
+    "effectivePolicy": "same-origin",
+    "lineNumber": 83,
+    "property": "postMessage",
+    "sourceFile": "https://first-party-test.glitch.me/popup.js",
+    "type": "access-from-coop-page-to-openee"
+  },
+  "type": "coop",
+  "url": "https://first-party-test.glitch.me/coop?report-only&coop=same-origin&",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36"
+},
+{
+  "age": 51785,
+  "body": {
+    "disposition": "reporting",
+    "effectivePolicy": "same-origin",
+    "property": "postMessage",
+    "type": "access-to-coop-page-from-openee"
+  },
+  "type": "coop",
+  "url": "https://first-party-test.glitch.me/coop?report-only&coop=same-origin&",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4246.0 Safari/537.36"
 }]
 ```
 
@@ -299,7 +424,7 @@ In upcoming releases of Chrome, this cross-origin isolated state will prevent
 `document.domain`](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy#Changing_origin)
 and will give access to powerful features such as:
 
-* [`performance.measureMemory`](/monitor-total-page-memory-usage/)
+* [`performance.measureMemory()`](/monitor-total-page-memory-usage/)
 * [JS Self-Profiling API](https://wicg.github.io/js-self-profiling/) and more.
 
 We'll keep this post updated as new features are made available to this

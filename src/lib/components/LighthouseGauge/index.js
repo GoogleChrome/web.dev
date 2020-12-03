@@ -66,12 +66,12 @@ class LighthouseGauge extends BaseElement {
 
   firstUpdated() {
     this.setAttribute('role', 'progressbar');
-    this.setAttribute('aria-valuemin', 0);
-    this.setAttribute('aria-valuemax', 100);
+    this.setAttribute('aria-valuemin', '0');
+    this.setAttribute('aria-valuemax', '100');
   }
 
   updated() {
-    this.setAttribute('aria-valuenow', this.score * 100);
+    this.setAttribute('aria-valuenow', String(this.score * 100));
   }
 }
 

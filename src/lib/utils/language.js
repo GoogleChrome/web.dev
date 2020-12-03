@@ -10,8 +10,14 @@
  */
 const languageNames = {
   en: 'English',
-  // pl: 'Polish', TODO: Uncomment when PL language is prod-ready.
+  pl: 'Polish',
 };
+
+/**
+ * A default language for the site.
+ * @const
+ */
+const defaultLanguage = 'en';
 
 /**
  * A list of supported languages.
@@ -28,8 +34,15 @@ function isValidLanguage(lang) {
   return supportedLanguages.indexOf(lang) > -1;
 }
 
+function getLanguageFromPath(path) {
+  const parts = path.split('/');
+  return isValidLanguage(parts[1]) && parts[1];
+}
+
 export default {
   languageNames,
+  defaultLanguage,
   isValidLanguage,
   supportedLanguages,
+  getLanguageFromPath,
 };

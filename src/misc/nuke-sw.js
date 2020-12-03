@@ -2,6 +2,8 @@
 // Not actually compiled, just served in places we no longer want a Service Worker.
 // This registers an empty Service Worker.
 
+/* globals ServiceWorkerGlobalScope clients */
+
 // Is this actually being executed in a ServiceWorker?
 if (
   typeof ServiceWorkerGlobalScope !== 'undefined' &&

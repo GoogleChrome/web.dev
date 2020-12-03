@@ -5,15 +5,16 @@ authors:
   - beaufortfrancois
   - jungkees
 date: 2020-05-20
-updated: 2020-06-02
+updated: 2020-11-16
 hero: hero.jpg
 alt: A photo of an Android phone showing an app shortcuts menu
 description: App shortcuts give quick access to a handful of common actions that users need frequently.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
-  - fugu
   - progressive-web-apps
+feedback:
+  - api
 ---
 
 To improve users' productivity and facilitate re-engagement with key tasks, the
@@ -21,9 +22,8 @@ web platform now supports app shortcuts. They allow web developers to provide
 quick access to a handful of common actions that users need frequently.
 
 {% Aside %}
-At the time of writing, app shortcuts are available in Chrome 84 for Android. On
-Windows, you can experiment with them on both Chrome 84 and Edge 84 by enabling
-the flag `about://flags/#enable-desktop-pwas-app-icon-shortcuts-menu`.
+At the time of writing, app shortcuts are available on Android (Chrome 84) and
+Windows (Chrome 85 and Edge 85).
 {% endAside %}
 
 This article will teach you how to define those app shortcuts. Additionally,
@@ -159,12 +159,9 @@ This pane provides a human-readable version of many of your manifest's
 properties, including app shortcuts. It makes it easy to verify that all of the
 shortcut icons, if provided, are loading properly.
 
-{% Aside %}
-DevTools support for app shortcuts is available in Chrome 84 and Edge 84 and later.
-{% endAside %}
-
-App shortcuts may not be available right away to all users because PWA updates
-are capped to once a day.  You can find more details in this [article].
+App shortcuts may not be available right away to all users because Progressive
+Web App updates are capped to once a day.  Find out more about
+[how Chrome handles updates to the web app manifest].
 
 ## Best practises
 
@@ -190,16 +187,19 @@ You should annotate app shortcuts `url` entries like you would do with
 
 ## Browser support
 
-App shortcuts are available in Chrome 84 on Android. On Windows, you can
-experiment with them on both Chrome 84 and Edge 84 by enabling the flag
-`about://flags/#enable-desktop-pwas-app-icon-shortcuts-menu`. More desktop
-platform support will follow.
+App shortcuts are available on Android (Chrome 84) and Windows (Chrome 85 and
+Edge 85). More desktop platform support will follow.
 
 ## Trusted Web Activity support
 
 [Bubblewrap], the recommended tool to build Android apps that use [Trusted Web
 Activity], reads app shortcuts from the web app manifest and automatically
-generates the corresponding configuration for the Android app.
+generates the corresponding configuration for the Android app. Note that icons
+for app shortcuts are [required] and must be at least 96 by 96 pixels in
+Bubblewrap.
+
+[PWABuilder], a great tool to easily turn a Progressive Web App into a Trusted
+Web Activity, supports app shortcuts with some [caveats].
 
 For developers integrating Trusted Web Activity manually into their Android
 application, [Android app shortcuts] can be used to implement the same
@@ -215,13 +215,11 @@ behaviors.
 
 Check out the [app shortcuts sample] and its [source].
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/app-shortcuts?path=public/manifest.json&attributionHidden=true"
-    alt="app-shortcuts on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'app-shortcuts',
+  path: 'public/manifest.json',
+  height: 480
+} %}
 
 ## Helpful links
 
@@ -232,13 +230,12 @@ Check out the [app shortcuts sample] and its [source].
 * [ChromeStatus.com entry][cr-status]
 * Blink Component: [`UI>Browser>WebAppInstalls`]
 
-<!-- lint disable definition-case -->
 [Progressive Web Apps]: /progressive-web-apps/
 [What does it take to be installable?]: https://web.dev/install-criteria/
 [scope]: /add-manifest/#scope
 [web app manifest]: /add-manifest
 [web app manifest icons]: /add-manifest/#icons
-[explainer]: https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/master/Shortcuts/explainer.md
+[explainer]: https://github.com/MicrosoftEdge/MSEdgeExplainers/blob/main/Shortcuts/explainer.md
 [spec]: https://w3c.github.io/manifest/#shortcuts-member
 [app shortcuts sample]: https://app-shortcuts.glitch.me
 [source]: https://glitch.com/edit/#!/app-shortcuts
@@ -246,9 +243,11 @@ Check out the [app shortcuts sample] and its [source].
 [cr-status]: https://chromestatus.com/feature/5706099464339456
 [`UI>Browser>WebAppInstalls`]: https://crbug.com/?q=component:UI>Browser>WebAppInstalls
 [bubblewrap]: https://github.com/GoogleChromeLabs/bubblewrap
+[required]: https://github.com/GoogleChromeLabs/bubblewrap/issues/116
 [Trusted Web Activity]: /using-a-pwa-in-your-android-app/
+[PWABuilder]: https://www.pwabuilder.com/
+[caveats]: https://github.com/pwa-builder/CloudAPK/issues/25
 [Android app shortcuts]: https://developer.android.com/guide/topics/ui/shortcuts
 [xxhdpi screen]: https://developer.android.com/training/multiscreen/screendensities#TaskProvideAltBmp
 [formula for converting]: https://developer.android.com/training/multiscreen/screendensities#dips-pels
-[article]: https://developers.google.com/web/fundamentals/integration/webapks#update-webapk
-<!-- lint enable definition-case -->
+[how Chrome handles updates to the web app manifest]: /manifest-updates

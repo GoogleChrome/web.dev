@@ -30,9 +30,9 @@ Lighthouse flags elements that have a `tabindex` value greater than `0`:
 ## How to fix problematic `tabindex` values
 
 If you have a `tabindex` greater than `0`,
-and you're using a native link or form element,
+and you're using a link or form element,
 remove the `tabindex`.
-Native HTML elements such as `<button>` or `<input>`
+HTML elements such as `<button>` or `<input>`
 have keyboard accessibility built-in for free.
 
 If you're using custom interactive components,

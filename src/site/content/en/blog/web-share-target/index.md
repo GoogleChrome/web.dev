@@ -5,8 +5,9 @@ authors:
   - petelepage
   - joemedley
 date: 2019-11-08
+updated: 2020-08-05
 hero: hero.png
-alt: An illustration demonstrating that native apps can now share content with web apps.
+alt: An illustration demonstrating that platform-specific apps can now share content with web apps.
 description: |
   On a mobile device, sharing should be as simple as clicking the Share button,
   choosing an app, then choosing who to share with. The Web Share Target API
@@ -14,7 +15,9 @@ description: |
 tags:
   - blog
   - capabilities
-  - fugu
+  - progressive-web-apps
+feedback:
+  - api
 ---
 
 On a mobile device, sharing should be as simple as clicking the **Share** button,
@@ -22,7 +25,7 @@ choosing an app, and choosing who to share with. For example, you may want to
 share an interesting article, either by emailing it to friends or tweeting it to
 the world.
 
-In the past, only native apps could register with the operating system to
+In the past, only platform-specific apps could register with the operating system to
 receive shares from other installed apps. But with the Web Share Target API,
 installed web apps can register with the underlying operating system
 as a share target to receive shared content.
@@ -32,7 +35,7 @@ support for files was added in Chrome 76.
 {% Aside %}
 The Web Share Target API is only half of the magic. Web apps can share data,
 files, links, or text using the Web Share API. See
-[Share like a native](/web-share/) for details.
+[Web Share API](/web-share/) for details.
 {% endAside %}
 
 <figure class="w-figure w-figure--inline-right">
@@ -47,7 +50,7 @@ files, links, or text using the Web Share API. See
 1. Using Chrome 76 or later (Android only), open the [Web Share Target demo][demo].
 2. When prompted, click **Install** to add the app to your home screen, or
    use the Chrome menu to add it to your home screen.
-3. Open any app that supports native sharing, or use the Share button
+3. Open any app that supports sharing, or use the Share button
    in the demo app.
 4. From the target picker, choose **Web Share Test**.
 
@@ -69,6 +72,7 @@ app manifest][manifest]. This tells the operating system to include your app as
 an option in the intent chooser. What you add to the manifest controls the data
 that your app will accept. There are three common scenarios for the `share_target`
 entry:
+
 - Accepting basic information
 - Accepting application changes
 - Accepting files
@@ -137,7 +141,9 @@ and that `enctype` be present. Additionally, `enctype` must be
 You must also add a `files` array defining the types of files your app accepts. The
 array elements are entries with two members: a `name` field and an `accept`
 field. The `accept` field takes a MIME type, a file extension, or an array
-containing both.
+containing both. It's best to provide an array that includes both a
+MIME type and a file extension since operating systems differ in which
+they prefer.
 
 ```json/5,10-19
 {

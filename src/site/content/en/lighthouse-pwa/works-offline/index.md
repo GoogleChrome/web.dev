@@ -36,10 +36,9 @@ and then attempts to retrieve the page using [`XMLHttpRequest`](https://develope
 
 ## How to make your PWA work offline
 
+{% include 'content/reliable/workbox.njk' %}
+
 1. Add a [service worker](https://developers.google.com/web/fundamentals/primers/service-workers) to your app.
-   [Workbox](/workbox) is the recommended approach for adding service workers to websites 
-   because it automates a lot of boilerplate, makes it easier to follow best practices,
-   and prevents subtle bugs that are common when using the low-level `ServiceWorker` API directly.
 2. Use the service worker to cache files locally.
 3. When offline, use the service worker as a network proxy to return the
    locally cached version of the file.

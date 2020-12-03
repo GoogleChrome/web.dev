@@ -36,13 +36,11 @@ mouse, try using your keyboard to operate them. You can use `TAB` (or `SHIFT +
 TAB`) to move between controls, and you can use the arrow keys and keys like
 `ENTER` and `SPACE` to manipulate their values.
 
-<div class="glitch-embed-wrap" style="height: 450px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/interactive-elements?path=index.html&previewSize=100&attributionHidden=true"
-    alt="interactive-elements on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'interactive-elements',
+  path: 'index.html',
+  height: 450
+} %}
 
 If you have a phone handy, you can see that many times these built-in elements
 have unique interactions on mobile. Attempting to reproduce these mobile
@@ -74,13 +72,11 @@ That's a lot of extra work!
 Compare the difference in this example. `TAB` to either control, and use `ENTER`
 and `SPACE` to attempt to click on them.
 
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/synthetic-click?path=index.html&previewSize=100&attributionHidden=true"
-    alt="synthetic-click on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'synthetic-click',
+  path: 'index.html',
+  height: 346
+} %}
 
 If you have `div` buttons in your existing site or application, consider
 swapping them out for `button` elements. `button` is easy to style and full of
@@ -126,7 +122,7 @@ built-in elements.
 Using built-in HTML elements can greatly improve the accessibility of your site,
 and significantly cut down on your workload. Try tabbing through your site and
 look for any controls which lack keyboard support. If possible, switch them out
-for native HTML alternatives.
+for standardized HTML alternatives.
 
 Sometimes you may find an element that doesn't have a counterpart in HTML.
 That's okay! Read on to learn how to add keyboard support to custom interactive

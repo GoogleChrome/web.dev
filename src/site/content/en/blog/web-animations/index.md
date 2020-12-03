@@ -13,6 +13,8 @@ tags:
   - animations
   - chrome84
   - javascript
+feedback:
+  - api
 ---
 
 When used correctly, [animations improve user perception and memory](https://www.researchgate.net/publication/229351931_The_Effects_of_Animation_and_Format_on_the_Perception_and_Memory_of_Online_Advertising) of your brand, guide user actions, and help users navigate your application—providing context in a digital space.
@@ -20,12 +22,12 @@ When used correctly, [animations improve user perception and memory](https://www
 
 The [Web Animations API](https://www.w3.org/TR/web-animations-1/) is a tool that enables developers to write [imperative animations with JavaScript](https://www.youtube.com/watch?v=WaNoqBAp8NI). It was written to underpin both CSS animation and transition implementations and enable future effects to be developed, as well as existing effects to be composed and timed.
 
-While it has a long history, originally launching in Chromium 36, the latest release, Chromium 84, brings us a slew of previously unsupported features. 
+While [Firefox](https://platform-status.mozilla.org/#web-animations) and [Safari](https://webkit.org/status/#specification-web-animations) have already implemented the full set of spec [features](https://caniuse.com/#feat=web-animation), Chromium 84 brings a slew of previously unsupported features to [Chrome and Edge](https://developer.microsoft.com/en-us/microsoft-edge/status/webanimationsjavascriptapi/) enabling cross-browser interoperability.
 
 <figure class="w-figure">
   <img class="w-screenshot" src='./waapi-timeline.png' alt="The Web Animations API first hit Chromium in version 36, July of 2014. Now the spec is going to be complete, in version 84, launching July 2020.">
   <figcaption class="w-figcaption">
-    The long history of the Web Animations API.
+    The long history of the Web Animations API in Chromium.
   </figcaption>
 </figure>
 
@@ -85,13 +87,11 @@ However, with the update, the Web Animations API is no longer restricted to anim
 
 `getAnimations()` is a method that returns all animations on an element regardless of whether it was created via `element.animate()` or via CSS rules (CSS animation or transition). Here is an example of what this looks like:
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/waapi-getanimations?path=index.html&previewSize=100"
-    alt="waapi-getanimations on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'waapi-getanimations',
+  path: 'index.html',
+  height: 480
+} %}
 
 You first `"get"` the keyframes for the transition to determine where we are transitioning from. Then, you create two new opacity animations, enabling the   cross fade effect. Once the cross-fade completes, you delete the copy. 
 
@@ -137,13 +137,11 @@ You can take the above animation, and give it a smooth, reversed animation when 
   </figcaption>
 </figure>
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/waapi-promises?path=script.js&previewSize=100"
-    alt="waapi-promises on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'waapi-promises',
+  path: 'script.js',
+  height: 480
+} %}
 
 What you can do is create two play-pending animations (`openModal`, and an inline opacity transformation), and then pause one of the animations, delaying it until the other is finished. You can then use promises to wait for each to be finished before playing. Finally, you can check to see if a flag is set, and then reverse each animation.
 

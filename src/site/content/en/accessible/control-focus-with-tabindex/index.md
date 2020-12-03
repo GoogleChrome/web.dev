@@ -5,17 +5,17 @@ authors:
   - robdodson
 date: 2018-11-18
 description: |
-  Native HTML elements such as <button> or <input> have keyboard accessibility
+  Standard HTML elements such as <button> or <input> have keyboard accessibility
   built-in for free. If you're building custom interactive components, use
   tabindex to ensure that they're keyboard accessible.
 ---
 
-Native HTML elements such as `<button>` or `<input>` have keyboard accessibility
+Standard HTML elements such as `<button>` or `<input>` have keyboard accessibility
 built in for free. If you're building _custom_ interactive components, however,
 use the `tabindex` attribute to ensure that they're keyboard accessible.
 
 {% Aside %}
-Whenever possible, use a native HTML element rather than building your
+Whenever possible, use a built-in HTML element rather than building your
 own custom version. `<button>`, for example, is very easy to style and
 already has full keyboard support. This will save you from needing to manage
 `tabindex` or add semantics with ARIA.
@@ -48,13 +48,11 @@ Insert an element into the natural tab order using `tabindex="0"`. For example:
 
 To focus an element, press the `Tab` key or call the element's `focus()` method.
 
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/tabindex-zero?path=index.html&previewSize=100&attributionHidden=true"
-    alt="tabindex-zero on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'tabindex-zero',
+  path: 'index.html',
+  height: 346
+} %}
 
 ## Remove an element from the tab order
 
@@ -67,13 +65,11 @@ Remove an element using `tabindex="-1"`. For example:
 This removes an element from the natural tab order, but the element can still be
 focused by calling its `focus()` method.
 
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/tabindex-negative-one?path=index.html&previewSize=100&attributionHidden=true"
-    alt="tabindex-negative-one on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'tabindex-negative-one',
+  path: 'index.html',
+  height: 346
+} %}
 
 Note that applying `tabindex="-1"` to an element doesn't affect its children;
 if they're in the tab order naturally or because of a `tabindex` value,
@@ -106,7 +102,7 @@ results of the "No element has a [tabindex] value greater than 0" audit.
 ## Create accessible components with "roving `tabindex`"
 
 If you're building a complex component, you may need to add additional keyboard
-support beyond focus. Consider the native `select` element. It is focusable and
+support beyond focus. Consider the built-in `select` element. It is focusable and
 you can use the arrow keys to expose additional functionality (the selectable
 options).
 
@@ -139,14 +135,11 @@ method on it.
 </div>
 ```
 
-
-<div class="glitch-embed-wrap" style="height: 346px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/roving-tabindex?path=index.html&previewSize=100&attributionHidden=true"
-    alt="tabindex-negative-one on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'roving-tabindex',
+  path: 'index.html',
+  height: 346
+} %}
 
 {% Aside %}
 Curious what those `role=""` attributes are for? They let you change the

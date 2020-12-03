@@ -9,13 +9,14 @@ updated: 2020-05-26
 tags:
   - blog
   - capabilities
-  - fugu
   - service-worker
   - chrome80
   - index
   - caching
 hero: hero.jpg
 alt: Index cards in a filing cabinet.
+feedback:
+  - api
 ---
 
 ## What is the Content Indexing API? {: #what }

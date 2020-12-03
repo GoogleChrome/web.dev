@@ -3,7 +3,7 @@ const Prism = require('prismjs');
 
 const markdownItOptions = {
   html: true,
-  highlight: function(str, lang) {
+  highlight: function (str, lang) {
     if (!lang) {
       // empty string means defer to the upstream escaping code built into markdown lib.
       return '';
@@ -19,7 +19,7 @@ const markdownItOptions = {
     const lines = html.split('\n').slice(0, -1); // The last line is empty.
 
     // prettier-ignore
-    return `<pre class="language-${lang}"><code class="language-${lang}">${lines.join("<br>")}</code></pre>`;
+    return `<pre class="language-${lang}"><code class="language-${lang}">${lines.join('<br>')}</code></pre>`;
   },
 };
 
@@ -41,8 +41,8 @@ mdLib.renderer.rules = {...mdLib.renderer.rules, ...rules};
 
 /**
  * Render content as markdown.
- * @param {string} content
- * @return {?string}
+ * @param {string?} content
+ * @return {string|undefined}
  */
 module.exports = (content) => {
   if (!content) {

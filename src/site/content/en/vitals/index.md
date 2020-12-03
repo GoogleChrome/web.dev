@@ -1,13 +1,12 @@
 ---
-layout: page
+layout: post
 title: Web Vitals
-subhead: Essential metrics for a healthy site
 description: Essential metrics for a healthy site
+hero: web-vitals-hero.png
 authors:
   - philipwalton
 date: 2020-04-30
-updated: 2020-06-05
-masthead: web-vitals.svg
+updated: 2020-07-21
 tags:
   - metrics
   - performance
@@ -71,6 +70,10 @@ following metrics (and their respective thresholds):
 For each of the above metrics, to ensure you're hitting the recommended target
 for most of your users, a good threshold to measure is the **75th percentile**
 of page loads, segmented across mobile and desktop devices.
+
+Tools that assess Core Web Vitals compliance should consider a page passing if
+it meets the recommended targets at the 75th percentile for all of the above
+three metrics.
 
 {% Aside %}
   To learn more about the research and methodology behind these recommendations,
@@ -142,7 +145,7 @@ own real-user monitoring.
 
 #### Measure Core Web Vitals in JavaScript
 
-Each of the Core Web Vital can be measured in JavaScript using standard web
+Each of the Core Web Vitals can be measured in JavaScript using standard web
 APIs.
 
 The easiest way to measure all the Core Web Vitals is to use the
@@ -332,5 +335,3 @@ may change with greater frequency.
 
 For all Web Vitals, changes will be clearly documented in this public
 [CHANGELOG](http://bit.ly/chrome-speed-metrics-changelog).
-
-<web-feedback></web-feedback>

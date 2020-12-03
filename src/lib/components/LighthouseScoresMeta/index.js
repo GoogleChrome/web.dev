@@ -17,6 +17,13 @@ class LighthouseScoresMeta extends BaseElement {
     };
   }
 
+  constructor() {
+    super();
+    this.errorMessage = null;
+    this.url = null;
+    this.auditedOn = null;
+  }
+
   firstUpdated() {
     this.setAttribute('aria-label', 'Lighthouse meta information');
   }
@@ -37,7 +44,7 @@ class LighthouseScoresMeta extends BaseElement {
           this.auditedOn,
         );
       } catch (err) {
-        auditedOnText = auditedOn.toLocaleString();
+        auditedOnText = this.auditedOn.toLocaleString();
       }
     }
 

@@ -14,6 +14,8 @@ description: >
   work.
 codelabs:
   - codelab-http-cache
+feedback:
+  - api
 ---
 
 Fetching resources over the network is both slow and expensive: 
@@ -254,7 +256,7 @@ being requested.
     The browser requests <code>/file</code> from the server and includes the <code>If-None-Match</code>
     header to instruct the server to only return the full file if the <code>ETag</code> of
     the file on the server doesn't match the browser's <code>If-None-Match</code> value. In this
-    case, the 2 values did match, so the browser returns a <code>304 Not Modified</code> response
+    case, the 2 values did match, so the server returns a <code>304 Not Modified</code> response
     with instructions on how much longer the file should be cached (<code>Cache-Control: max-age=120</code>).
   </figcaption>
 </figure>

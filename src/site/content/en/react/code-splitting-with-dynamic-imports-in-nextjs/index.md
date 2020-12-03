@@ -6,6 +6,8 @@ authors:
 subhead: |
   How to speed up your Next.js app with code splitting and smart loading strategies.
 date: 2019-11-08
+feedback:
+  - api
 ---
 
 ## What will you learn?
@@ -55,12 +57,12 @@ display the puppy on the page, the app imports the `Puppy` component in
 import Puppy from "../components/Puppy";
 ```
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-<iframe src="https://glitch.com/embed/#!/embed/static-import?path=pages/index.js&previewSize=0" allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-        alt="A basic Next.js app on Glitch"
-        style="height: 100%; width: 100%; border: 0;"></iframe>
-</div>
-
+{% Glitch {
+  id: 'static-import',
+  path: 'index.js',
+  previewSize: 0,
+  height: 480
+} %}
 
 To see how Next.js bundles the app, inspect the network trace in DevTools:
 
@@ -105,11 +107,11 @@ import dynamic from "next/dynamic";
 const Puppy = dynamic(import("../components/Puppy"));
 ```
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-<iframe src="https://glitch.com/embed/#!/embed/dynamic-import-nextjs?path=pages/index.js:29:10&attributionHidden=true"
-        alt="A basic Next.js app on Glitch"
-        style="height: 100%; width: 100%; border: 0;"></iframe>
-</div>
+{% Glitch {
+  id: 'dynamic-import-nextjs',
+  path: 'pages/index.js:29:10',
+  height: 480
+} %}
 
 Follow the steps from the first example to inspect the network trace.
 
@@ -147,11 +149,11 @@ const Puppy = dynamic(() => import("../components/Puppy"), {
 });
 ```
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-<iframe src="https://glitch.com/embed/#!/embed/dynamic-import-loading?path=pages/index.js:7:27&attributionHidden=true"
-        alt="A basic Next.js app on Glitch"
-        style="height: 100%; width: 100%; border: 0;"></iframe>
-</div>
+{% Glitch {
+  id: 'dynamic-import-loading',
+  path: 'pages/index.js:7:27',
+  height: 480
+} %}
 
 To see the loading indictor in action, simulate slow network connection in
 DevTools:
@@ -184,11 +186,11 @@ const Puppy = dynamic(() => import("../components/Puppy"), {
 });
 ```
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-<iframe src="https://glitch.com/embed/#!/embed/dynamic-import-no-ssr?path=pages/index.js:5:0&attributionHidden=true"
-        alt="A basic Next.js app on Glitch"
-        style="height: 100%; width: 100%; border: 0;"></iframe>
-</div>
+{% Glitch {
+  id: 'dynamic-import-no-ssr',
+  path: 'pages/index.js:5:0',
+  height: 480
+} %}
 
 ## Conclusion
 

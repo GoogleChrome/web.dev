@@ -7,6 +7,10 @@
 
 const validJSName = /^[\w_$][\w\d_$]*$/;
 
+/**
+ * @param {any} object to serialize
+ * @return {string}
+ */
 function createVirtualExport(object) {
   const parts = [`export default ${JSON.stringify(object)};`];
 
@@ -25,8 +29,12 @@ function createVirtualExport(object) {
   return parts.join('\n');
 }
 
+/**
+ * @param {!Object<string, any>} all
+ * @return {!Object<string, string>}
+ */
 module.exports = (all) => {
-  const out = {};
+  const out = /** @type {!Object<string, string>} } */ ({});
   Object.keys(all).forEach((key) => {
     out[key] = createVirtualExport(all[key]);
   });

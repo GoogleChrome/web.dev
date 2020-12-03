@@ -14,13 +14,16 @@
  * limitations under the License.
  */
 
+const path = require('path');
+const chalk = require('chalk');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
+const toc = require('eleventy-plugin-toc');
+const resourcePath = require('./src/build/resource-path');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItAttrs = require('markdown-it-attrs');
-const slugify = require('slugify');
 
 const componentsDir = 'src/site/_includes/components';
 const ArticleNavigation = require(`./${componentsDir}/ArticleNavigation`);
@@ -38,7 +41,9 @@ const CompareCaption = require(`./${componentsDir}/CompareCaption`);
 const Details = require(`./${componentsDir}/Details`);
 const DetailsSummary = require(`./${componentsDir}/DetailsSummary`);
 const EventTable = require(`./${componentsDir}/EventTable`);
+const Glitch = require(`./${componentsDir}/Glitch`);
 const Hero = require(`./${componentsDir}/Hero`);
+const IFrame = require(`./${componentsDir}/IFrame`);
 const Instruction = require(`./${componentsDir}/Instruction`);
 const Label = require(`./${componentsDir}/Label`);
 const Meta = require(`./${componentsDir}/Meta`);
@@ -52,18 +57,17 @@ const collectionsDir = 'src/site/_collections';
 const authors = require(`./${collectionsDir}/authors`);
 const blogPostsDescending = require(`./${collectionsDir}/blog-posts-descending`);
 const newsletters = require(`./${collectionsDir}/newsletters`);
-const postToCollections = require(`./${collectionsDir}/post-to-collections`);
-const postsWithLighthouse = require(`./${collectionsDir}/posts-with-lighthouse`);
-const recentBlogPosts = require(`./${collectionsDir}/recent-blog-posts`);
+const {
+  postsWithLighthouse,
+} = require(`./${collectionsDir}/posts-with-lighthouse`);
 const tags = require(`./${collectionsDir}/tags`);
-// nb. algoliaPosts is only require'd if needed, below
 
 const filtersDir = 'src/site/_filters';
 const consoleDump = require(`./${filtersDir}/console-dump`);
 const {memoize, findByUrl} = require(`./${filtersDir}/find-by-url`);
 const pathSlug = require(`./${filtersDir}/path-slug`);
 const containsTag = require(`./${filtersDir}/contains-tag`);
-const expandContributors = require(`./${filtersDir}/expand-contributors`);
+const expandAuthors = require(`./${filtersDir}/expand-authors`);
 const findTags = require(`./${filtersDir}/find-tags`);
 const githubLink = require(`./${filtersDir}/github-link`);
 const gitlocalizeLink = require(`./${filtersDir}/gitlocalize-link`);
@@ -73,18 +77,20 @@ const pagedNavigation = require(`./${filtersDir}/paged-navigation`);
 const postsLighthouseJson = require(`./${filtersDir}/posts-lighthouse-json`);
 const prettyDate = require(`./${filtersDir}/pretty-date`);
 const removeDrafts = require(`./${filtersDir}/remove-drafts`);
+const slugify = require(`./${filtersDir}/slugify`);
 const strip = require(`./${filtersDir}/strip`);
 const stripBlog = require(`./${filtersDir}/strip-blog`);
-const stripLanguage = require(`./${filtersDir}/strip-language`);
+const stripQueryParamsDev = require(`./${filtersDir}/strip-query-params-dev`);
+const getPaths = require(`./${filtersDir}/get-paths`);
 
 const transformsDir = 'src/site/_transforms';
 const disableLazyLoad = require(`./${transformsDir}/disable-lazy-load`);
 const {responsiveImages} = require(`./${transformsDir}/responsive-images`);
-const {
-  serviceWorkerPartials,
-} = require(`./${transformsDir}/service-worker-partials`);
 
-module.exports = function(config) {
+module.exports = function (config) {
+  console.log(chalk.black.bgGreen('Eleventy is building, please wait…'));
+  const isProd = process.env.ELEVENTY_ENV === 'prod';
+
   // ----------------------------------------------------------------------------
   // PLUGINS
   // ----------------------------------------------------------------------------
@@ -92,6 +98,13 @@ module.exports = function(config) {
   config.addPlugin(pluginSyntaxHighlight);
   // RSS feeds
   config.addPlugin(pluginRss);
+  config.addPlugin(toc, {
+    tags: ['h2', 'h3'],
+    wrapper: 'div',
+    wrapperClass: 'w-toc__list',
+    ul: true,
+    flat: true,
+  });
 
   // ----------------------------------------------------------------------------
   // MARKDOWN
@@ -104,17 +117,12 @@ module.exports = function(config) {
     permalink: true,
     permalinkClass: 'w-headline-link',
     permalinkSymbol: '#',
-    slugify: function(str) {
-      return slugify(str, {
-        replacement: '-',
-        lower: true,
-      });
-    },
+    slugify,
   };
   const markdownItAttrsOpts = {
     leftDelimiter: '{:',
     rightDelimiter: '}',
-    allowedAttributes: ['id', 'class', /^data\-.*$/],
+    allowedAttributes: ['id', 'class', /^data-.*$/],
   };
 
   const mdLib = markdownIt(markdownItOptions)
@@ -149,21 +157,12 @@ module.exports = function(config) {
   config.addCollection('authors', authors);
   config.addCollection('blogPosts', blogPostsDescending);
   config.addCollection('newsletters', newsletters);
-  config.addCollection('postToCollections', postToCollections);
   config.addCollection('postsWithLighthouse', postsWithLighthouse);
-  config.addCollection('recentBlogPosts', recentBlogPosts);
   config.addCollection('tags', tags);
   // Turn collection.all into a lookup table so we can use findBySlug
   // to quickly find collection items without looping.
-  config.addCollection('memoized', function(collection) {
+  config.addCollection('memoized', (collection) => {
     return memoize(collection.getAll());
-  });
-  config.addCollection('algolia', function(collection) {
-    if (process.env.ELEVENTY_ENV === 'prod') {
-      const algoliaPosts = require(`./${collectionsDir}/algolia-posts`);
-      return algoliaPosts(collection);
-    }
-    return [];
   });
 
   // ----------------------------------------------------------------------------
@@ -174,7 +173,7 @@ module.exports = function(config) {
   config.addFilter('findTags', findTags);
   config.addFilter('pathSlug', pathSlug);
   config.addFilter('containsTag', containsTag);
-  config.addFilter('expandContributors', expandContributors);
+  config.addFilter('expandAuthors', expandAuthors);
   config.addFilter('githubLink', githubLink);
   config.addFilter('gitlocalizeLink', gitlocalizeLink);
   config.addFilter('htmlDateString', htmlDateString);
@@ -183,8 +182,10 @@ module.exports = function(config) {
   config.addFilter('postsLighthouseJson', postsLighthouseJson);
   config.addFilter('prettyDate', prettyDate);
   config.addFilter('removeDrafts', removeDrafts);
+  config.addFilter('slugify', slugify);
   config.addFilter('stripBlog', stripBlog);
-  config.addFilter('stripLanguage', stripLanguage);
+  config.addFilter('stripQueryParamsDev', stripQueryParamsDev);
+  config.addFilter('getPaths', getPaths);
   config.addFilter('strip', strip);
 
   // ----------------------------------------------------------------------------
@@ -204,7 +205,9 @@ module.exports = function(config) {
   config.addPairedShortcode('CompareCaption', CompareCaption);
   config.addPairedShortcode('Details', Details);
   config.addPairedShortcode('DetailsSummary', DetailsSummary);
+  config.addShortcode('Glitch', Glitch);
   config.addShortcode('Hero', Hero);
+  config.addShortcode('IFrame', IFrame);
   config.addShortcode('Instruction', Instruction);
   config.addPairedShortcode('Label', Label);
   config.addShortcode('Meta', Meta);
@@ -225,29 +228,42 @@ module.exports = function(config) {
     config.addTransform('disable-lazy-load', disableLazyLoad);
   }
 
-  if (process.env.ELEVENTY_ENV === 'prod') {
+  if (isProd) {
     config.addTransform('responsive-images', responsiveImages);
   }
 
-  // !!! Important !!!
-  // This transform should always go last.
-  // It takes the final html and turns it into partials that the
-  // service worker can load.
-  config.addTransform('service-worker-partials', serviceWorkerPartials);
+  // ----------------------------------------------------------------------------
+  // CHECKS
+  // ----------------------------------------------------------------------------
+  if (isProd) {
+    // We generate the paths to our JS and CSS entrypoints as a side-effect
+    // of their build scripts, so make sure they exist in prod builds.
+    ['css', 'js'].forEach((name) => {
+      try {
+        resourcePath(name);
+      } catch (e) {
+        throw new Error(
+          `could not find valid JSON path inside src/site/_data/: ${name} (${e})`,
+        );
+      }
+    });
+  }
 
   // ----------------------------------------------------------------------------
   // ELEVENTY OPTIONS
   // ----------------------------------------------------------------------------
   // https://www.11ty.io/docs/config/#data-deep-merge
   config.setDataDeepMerge(true);
+  config.setUseGitIgnore(false);
 
   // https://www.11ty.io/docs/config/#configuration-options
+  const targetLang = process.env.ELEVENTY_LANG || '';
   return {
     dir: {
-      input: 'src/site/content',
+      input: path.join('src/site/content/', targetLang),
       output: 'dist',
-      data: '../_data',
-      includes: '../_includes',
+      data: targetLang ? '../../_data' : '../_data',
+      includes: targetLang ? '../../_includes' : '../_includes',
     },
     templateFormats: ['njk', 'md'],
     htmlTemplateEngine: 'njk',

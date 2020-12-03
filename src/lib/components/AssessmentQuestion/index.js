@@ -8,7 +8,7 @@ import './_styles.scss';
  *
  * @extends {BaseElement}
  */
-class AssessmentQuestion extends BaseElement {
+export class AssessmentQuestion extends BaseElement {
   static get properties() {
     return {
       id: {type: String, reflect: true},
@@ -25,6 +25,7 @@ class AssessmentQuestion extends BaseElement {
 
     this.responseComponentUpdated = this.responseComponentUpdated.bind(this);
     this.reset = this.reset.bind(this);
+    this.height = null;
   }
 
   render() {
@@ -65,18 +66,20 @@ class AssessmentQuestion extends BaseElement {
 
     // Listen to contained option selections.
     this.addEventListener('question-option-select', (e) => {
-      const {detail: optionIndex, target} = e;
+      const ce = /** @type {!CustomEvent} */ (e);
+      const {detail: optionIndex, target} = ce;
 
       // This event comes from the final option that the user selects.
       // Find the index of the response that this input is contained within.
       // We could also use `target.closest("[data-role=response]")` to look _up_ from the option,
       // but we'd still need to find its index.
       let responseIndex = -1;
+      /** @type {(import('../ResponseMultipleChoice').ResponseMultipleChoice|import('../ResponseThinkAndCheck').ResponseThinkAndCheck)[]} */
       const responseComponents = Array.from(
         this.querySelectorAll('[data-role=response]'),
       );
       for (let i = 0; i < responseComponents.length; ++i) {
-        if (responseComponents[i].contains(target)) {
+        if (responseComponents[i].contains(/** @type {Element} */ (target))) {
           responseIndex = i;
           break;
         }
@@ -97,6 +100,7 @@ class AssessmentQuestion extends BaseElement {
 
   // Update question state based on state of response components.
   responseComponentUpdated() {
+    /** @type {NodeListOf<(import('../ResponseMultipleChoice').ResponseMultipleChoice|import('../ResponseThinkAndCheck').ResponseThinkAndCheck)>} */
     const responseComponents = this.querySelectorAll('[data-role=response]');
     const stateArr = Array.from(responseComponents).map(({state}) => state);
 
@@ -109,7 +113,7 @@ class AssessmentQuestion extends BaseElement {
     }
   }
 
-  onSubmit(e) {
+  onSubmit() {
     switch (this.state) {
       case 'answeredCorrectly':
         this.updateResponseComponents();
@@ -121,7 +125,9 @@ class AssessmentQuestion extends BaseElement {
         this.state = 'unanswered';
         this.ctaLabel = 'Recheck';
 
+        /** @type import('../Tabs').Tabs */
         const tabs = this.closest('web-tabs');
+        /** @type import('../Assessment').Assessment */
         const assessment = this.closest('web-assessment');
         if (tabs) {
           // Focus currently active tab since submit button disables
@@ -143,6 +149,7 @@ class AssessmentQuestion extends BaseElement {
   }
 
   updateResponseComponents() {
+    /** @type {NodeListOf<(import('../ResponseMultipleChoice').ResponseMultipleChoice|import('../ResponseThinkAndCheck').ResponseThinkAndCheck)>} */
     const responseComponents = this.querySelectorAll('[data-role=response]');
 
     for (const responseComponent of responseComponents) {
@@ -176,6 +183,7 @@ class AssessmentQuestion extends BaseElement {
   // Helper function to allow other components to reset the question
   // to its unanswered state.
   reset() {
+    /** @type {NodeListOf<(import('../ResponseMultipleChoice').ResponseMultipleChoice|import('../ResponseThinkAndCheck').ResponseThinkAndCheck)>} */
     const responseComponents = this.querySelectorAll('[data-role=response]');
     const questionContent = this.querySelector('.web-question__content');
 

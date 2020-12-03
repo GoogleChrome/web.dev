@@ -18,13 +18,15 @@ tags:
   - security
   - cookies
   - chrome80
+feedback:
+  - api
 ---
 
 {% Aside %}
-
-For implementation advice on `SameSite=None`, see part 2:
-[SameSite cookie recipes](/samesite-cookie-recipes)
-
+This article is part of a series on the `SameSite` cookie attribute changes:
+- [SameSite cookies explained](/samesite-cookies-explained/)
+- [SameSite cookies recipes](/samesite-cookie-recipes/)
+- [Schemeful Same-Site](/schemeful-samesite)
 {% endAside %}
 
 Cookies are one of the methods available for adding persistent state to web

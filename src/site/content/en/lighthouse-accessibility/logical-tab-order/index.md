@@ -39,13 +39,13 @@ If the focus order seems wrong,
 you should rearrange the elements in the DOM to make the tab order more natural.
 
 If you aren't able to reach all of the interactive controls on the page,
-the first go-to fix is to replace custom controls with native HTML alternatives.
+the first go-to fix is to replace custom controls with standardized HTML alternatives.
 For example,
 replace a `<div>` acting like a button with `<button>`.
 Using built-in HTML elements can greatly improve the accessibility of your site,
 and significantly cut down on your workload.
 
-If you're building custom interactive components with no native HTML equivalent,
+If you're building custom interactive components with no standardized HTML equivalent,
 use the `tabindex` attribute to ensure that they're keyboard accessible.
 For example:
 

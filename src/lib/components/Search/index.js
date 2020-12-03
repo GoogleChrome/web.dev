@@ -7,18 +7,30 @@ import {BaseElement} from '../BaseElement';
 import {store} from '../../store';
 import * as router from '../../utils/router';
 import {debounce} from '../../utils/debounce';
-import algoliasearch from 'algoliasearch/dist/algoliasearch-lite.esm.browser';
 import {trackError} from '../../analytics';
 import 'focus-visible';
 import './_styles.scss';
 
-// Create an algolia client so we can get search results.
-// These keys are safe to be public.
-const applicationID = '2JPAZHQ6K7';
-const apiKey = '01ca870a3f1cad9984ed72419a12577c';
-const indexName = 'webdev';
-const client = algoliasearch(applicationID, apiKey);
-const index = client.initIndex(indexName);
+let algoliaIndexPromise;
+
+function loadAlgoliaLibrary() {
+  algoliaIndexPromise = algoliaIndexPromise || internalLoadAlgoliaLibrary();
+  return algoliaIndexPromise;
+}
+
+async function internalLoadAlgoliaLibrary() {
+  const {default: algoliasearch} = await import(
+    'algoliasearch/dist/algoliasearch-lite.esm.browser'
+  );
+  // Create an algolia client so we can get search results.
+  // These keys are safe to be public.
+  const applicationID = '2JPAZHQ6K7';
+  const apiKey = '01ca870a3f1cad9984ed72419a12577c';
+  const indexName = 'webdev';
+  const client = algoliasearch(applicationID, apiKey);
+  const index = client.initIndex(indexName);
+  return index;
+}
 
 /**
  * An Algolia search box.
@@ -46,7 +58,8 @@ class Search extends BaseElement {
     this.showHits = false;
     this.cursor = -1;
     this.query = '';
-    this.timeout = 0;
+    this.timeout;
+    this.expanded = false;
 
     // On smaller screens we don't do an animation so it's ok for us to fire off
     // actions immediately. On larger screens we need to wait for the searchbox
@@ -74,27 +87,54 @@ class Search extends BaseElement {
   render() {
     return html`
       <button
-        @click="${this.onOpenSearch}"
         class="web-search__open-btn"
+        @click="${this.onOpenSearch}"
         aria-label="Open search"
-      ></button>
+      >
+        <svg
+          class="web-search__search-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          height="24"
+          width="24"
+          aria-hidden="true"
+        >
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+          />
+        </svg>
+      </button>
       <div
         class="web-search__input-wrapper"
         role="combobox"
         aria-expanded="${this.expanded}"
+        aria-controls="web-search__input"
         aria-owns="web-search-popout__list"
         aria-haspopup="listbox"
       >
+        <svg
+          class="web-search__search-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          height="24"
+          width="24"
+          aria-hidden="true"
+        >
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+          />
+        </svg>
         <input
+          id="web-search__input"
           class="web-search__input"
           type="text"
           role="searchbox"
           autocomplete="off"
           aria-autocomplete="list"
           aria-controls="web-search-popout__list"
-          aria-label="Search"
+          aria-label="All articles"
           placeholder="Search"
-          @keyup="${this.onKeyUp}"
+          @keydown="${this.onKeyDown}"
           @input="${this.onInput}"
           @focusin="${this.onFocusIn}"
           @focusout="${this.onFocusOut}"
@@ -104,7 +144,19 @@ class Search extends BaseElement {
         @click="${this.onCloseSearch}"
         class="web-search__close-btn"
         aria-label="Close search"
-      ></button>
+      >
+        <svg
+          class="web-search__close-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          height="24"
+          width="24"
+        >
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+          />
+        </svg>
+      </button>
       ${this.hitsTemplate}
     `;
   }
@@ -190,6 +242,7 @@ class Search extends BaseElement {
   /* eslint-enable indent */
 
   firstUpdated() {
+    /** @type HTMLInputElement */
     this.inputEl = this.renderRoot.querySelector('.web-search__input');
   }
 
@@ -228,24 +281,28 @@ class Search extends BaseElement {
     this.animationTime = parseInt(value, 10);
   }
 
-  onKeyUp(e) {
+  onKeyDown(e) {
     // Check if the user is navigating within the search popout.
     switch (e.key) {
       case 'Home':
+        e.preventDefault();
         this.firstHit();
         return;
 
       case 'End':
+        e.preventDefault();
         this.lastHit();
         return;
 
       case 'Up': // IE/Edge specific value
       case 'ArrowUp':
+        e.preventDefault();
         this.prevHit();
         return;
 
       case 'Down': // IE/Edge specific value
       case 'ArrowDown':
+        e.preventDefault();
         this.nextHit();
         return;
 
@@ -258,7 +315,7 @@ class Search extends BaseElement {
 
       case 'Esc': // IE/Edge specific value
       case 'Escape':
-        document.activeElement.blur();
+        /** @type HTMLElement */ (document.activeElement).blur();
         return;
     }
   }
@@ -283,6 +340,7 @@ class Search extends BaseElement {
       return;
     }
     try {
+      const index = await loadAlgoliaLibrary();
       const {hits} = await index.search(query, {hitsPerPage: 10});
       if (this.query === query) {
         this.hits = hits;
@@ -290,7 +348,7 @@ class Search extends BaseElement {
     } catch (err) {
       console.error(err);
       console.error(err.debugData);
-      trackError('search', err);
+      trackError(err, 'search');
     }
   }
 
@@ -341,7 +399,7 @@ class Search extends BaseElement {
    */
   navigateToHit({url}) {
     router.route(url);
-    document.activeElement.blur();
+    /** @type HTMLElement */ (document.activeElement).blur();
   }
 
   /**
@@ -378,6 +436,10 @@ class Search extends BaseElement {
    * Animate the search box open.
    */
   onFocusIn() {
+    loadAlgoliaLibrary().catch((err) => {
+      console.error('failed to load Algolia', err);
+      trackError(err, 'algolia load');
+    });
     this.expanded = true;
 
     // Collapse the search box if the user scrolls while the seach box is
@@ -385,7 +447,7 @@ class Search extends BaseElement {
     window.addEventListener(
       'scroll',
       () => {
-        document.activeElement.blur();
+        /** @type HTMLElement */ (document.activeElement).blur();
       },
       {passive: true, once: true},
     );
@@ -410,7 +472,7 @@ class Search extends BaseElement {
     // on. If so, programatically click it before closing the popout.
     // Because focusout fires before click, if we try to wait for the click
     // event (~10's of ms later) then lit will have already deleted the link.
-    const {relatedTarget} = e;
+    const relatedTarget = /** @type HTMLElement */ (e.relatedTarget);
     if (relatedTarget && this.contains(relatedTarget)) {
       relatedTarget.click();
     }

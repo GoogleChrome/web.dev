@@ -10,6 +10,8 @@ description: |
 authors:
   - houssein
   - developit
+feedback:
+  - api
 ---
 
 [`react-window`](https://react-window.now.sh/#/examples/list/fixed-size) is a
@@ -18,13 +20,11 @@ library that allows large lists to be rendered efficiently.
 Here's an example of a list that contains 1000 rows being rendered with
 `react-window`. Try scrolling as fast you can.
 
-<div class="glitch-embed-wrap" style="height: 750px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/react-window-fixed?path=src/App.js&previewSize=100"
-    alt="react-window-fixed on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'react-window-fixed',
+  path: 'src/App.js',
+  height: 750
+} %}
 
 ## Why is this useful?
 
@@ -143,14 +143,11 @@ export default ListComponent;
 
 The following embed shows an example of this component.
 
-<div class="glitch-embed-wrap" style="height: 750px; width: 100%;">
-  <iframe
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/react-window-variable?path=src/ListComponent.js&previewSize=100"
-    alt="react-window-variable on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'react-window-variable',
+  path: 'src/ListComponent.js',
+  height: 750
+} %}
 
 The item size function passed to the `itemSize` prop randomizes the row heights
 in this example. In a real application however, there should be actual logic
@@ -177,7 +174,7 @@ scrolls horizontally **and** vertically.
   </figcaption>
 </figure>
 
-Similary, both `FixedSizeGrid` and `VariableSizeGrid` components can be used
+Similarly, both `FixedSizeGrid` and `VariableSizeGrid` components can be used
 depending on whether the size of specific list items can vary.
 
 * For `FixedSizeGrid`, the API is about the same but with the fact that heights,
@@ -324,16 +321,14 @@ passed in.
 The following is an example of how infinite loading can work with a virtualized
 list.
 
-<div class="glitch-embed-wrap" style="height: 750px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/react-window-infinite?path=src/ListComponent.js&previewSize=100"
-    alt="react-window-infinite on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'react-window-infinite',
+  path: 'src/ListComponent.js',
+  height: 750
+} %}
 
 Scrolling down the list might feel the same, but a request is now made to
-retrieve 10 users from a [random user API](https://randomuser.me/) everytime you
+retrieve 10 users from a [random user API](https://randomuser.me/) every time you
 scroll close to the end of the list. This is all done while only rendering a
 single "window" of results at at a time.
 
@@ -360,7 +355,7 @@ const Row = ({ index, style }) => {
 Since items in a virtualized list only change when the user scrolls, blank
 space can briefly flash as newer entries are about to be displayed. You can
 try quickly scrolling any of the previous examples in this guide to notice
-this. 
+this.
 
 To improve the user experience of virtualized lists, `react-window` allows
 you to overscan items with the `overscanCount` property. This allows you to
@@ -405,7 +400,7 @@ application, follow these steps:
    cannot add this functionality yourself.
 4. Wrap your virtualized list with `react-window-infinite-loader` if you need to
    lazy load items as the user scrolls.
-5. Use the `overscanCount` property for your lists and the 
+5. Use the `overscanCount` property for your lists and the
    `overscanColumnsCount` and `overscanRowsCount` properties for your grids
    to prevent a flash of empty content. Do not overscan too many entries as
    this will affect performance negatively.

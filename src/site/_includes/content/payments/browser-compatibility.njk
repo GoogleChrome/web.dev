@@ -1,0 +1,61 @@
+##  Browser support
+
+Web Payments consists of a few different pieces of technologies and the support
+status depends on the browser.
+
+<div class="w-table-wrapper">
+  <table>
+    <tr>
+      <td></td>
+      <td>Chromium</td>
+      <td></td>
+      <td></td>
+      <td>Safari</td>
+      <td></td>
+      <td>Firefox</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Desktop</td>
+      <td>Android</td>
+      <td>iOS</td>
+      <td>Desktop</td>
+      <td>Mobile</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Payment Request API</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td></td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>Under active development</td>
+    </tr>
+    <tr>
+      <td>Payment Handler API</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Under active development</td>
+    </tr>
+    <tr>
+      <td>iOS/Android payment app</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>*</td>
+      <td>✔**</td>
+      <td>✔**</td>
+      <td></td>
+    </tr>
+  </table>
+</div>
+
+{% Aside %}
+*Chrome is considering making built-in payment apps available on
+iOS.
+
+**Safari supports Apple Pay but no third party payment apps.
+{% endAside %}

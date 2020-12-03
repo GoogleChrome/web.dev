@@ -1,0 +1,190 @@
+---
+layout: layout
+title: web.dev
+show_banner: false
+eleventyComputed:
+  canonicalUrl: "/"
+---
+<div>
+  {#
+    TODO: Convert w-masthead-home back to a <header> when this campaign ends.
+    For a11y you're supposed to only use one <header> element per page.
+  #}
+  <style>
+  .w-hero-banner {
+    color: white;
+  }
+  .w-hero-banner__inner {
+    background-color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 16px;
+    text-align: center;
+  }
+  @media (min-width: 865px) {
+    .w-hero-banner__inner {
+      padding: 20px 24px;
+    }
+  }
+  .w-hero-banner__inner a {
+    color: white;
+    text-decoration: underline;
+  }
+  .w-hero-banner__inner a:hover {
+    text-decoration: none;
+  }
+  </style>
+  <header class="w-hero-banner">
+    <div class="w-hero-banner__inner">
+      {{ i18n.banner_blm_html | safe }}
+    </div>
+  </header>
+
+  <div class="w-masthead-home">
+    <div class="w-masthead-home__container">
+      <div class="w-masthead-home__left">
+        <h1 class="w-headline--two w-font-weight--medium">
+          {{ i18n.headline }}
+        </h1>
+        <p>
+          {{ i18n.subheadline }}
+        </p>
+        <div class="w-masthead-home__buttons">
+          <a
+            class="w-button w-button--primary w-masthead-home__button--primary gc-analytics-event"
+            data-category="web.dev"
+            data-label="home, test site"
+            data-action="click"
+            href="/measure"
+          >
+            {{ i18n.test_cta }}
+          </a>
+          <a
+            class="w-button w-button--secondary gc-analytics-event"
+            data-category="web.dev"
+            data-label="home, start learning"
+            data-action="click"
+            href="/learn"
+          >
+            {{ i18n.explore_cta }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {# <section class="w-layout-container w-text--center">
+    <p class="w-headline--two-small">
+      {{ i18n.about_subheadline }}
+    </p>
+    <a
+      class="w-button gc-analytics-event"
+      data-category="web.dev"
+      data-label="home, learn about"
+      data-action="click"
+      href="/about"
+    >
+      {{ i18n.about_cta }}
+    </a>
+  </section> #}
+
+  <section class="w-promo-banner w-layout-container">
+    <img src="/images/modules/cds20-wide_960.jpg" alt="" width="480" height="270">
+    <p>
+      Chrome Dev Summit 2020 is back on December 9-10, but this time we're
+      coming to you. We’re bringing all the latest updates, just as much
+      content, and many more Chromies. Check out the
+      <a href="http://developer.chrome.com/devsummit/?utm_source=webdevhp&utm_medium=website">
+        <span class="w-visually-hidden">Chrome Dev Summit</span> website
+      </a>
+      to learn more.
+    </p>
+  </section>
+
+  <section>
+    <div class="w-layout-container w-pb--non w-mt--non">
+      <header class="w-text--center">
+        <h2 class="w-headline--two-faded">
+          {{ i18n.latest_headline }}
+        </h2>
+        <p>
+          {{ i18n.latest_subheadline }}
+        </p>
+      </header>
+    </div>
+    <div class="w-grid w-pb--std">
+      <div class="w-grid__columns w-grid__columns--featured" role="list">
+        {% for post in recentPosts %}
+          {% if loop.first %}
+            {% PostCard post, true %}
+          {% else %}
+            {% PostCard post %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="w-layout-container w-pt--non w-pb--xl">
+      <div class="w-text--center">
+        <a class="w-button" href="/blog">
+          {{ i18n.see_all }}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="w-layout-container w-pb--non">
+      <header class="w-text--center">
+        <h2 class="w-headline--two-faded">
+          {{ i18n.explore_cta }}
+        </h2>
+        <p>
+          {{ i18n.explore_subheadline }}
+        </p>
+      </header>
+    </div>
+    <div class="w-grid w-pb--std">
+      <div class="w-grid__columns w-grid__columns--gapless w-grid__columns--three" role="list">
+        {% for path in home.paths %}
+          {% PathCard path, lang %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="w-layout-container w-pt--non w-pb--xl">
+      <div class="w-text--center">
+        <a
+          class="w-button gc-analytics-event"
+          data-category="web.dev"
+          data-label="home, all paths"
+          data-action="click"
+          href="/learn"
+        >
+          {{ i18n.see_topics }}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <section class="w-layout-container w-text--center">
+    <h2 class="w-headline--two-faded">
+      {{ i18n.save_cta }}
+    </h2>
+    <p>
+      {{ i18n.save_subheadline }}
+    </p>
+    <div>
+      <a
+        class="w-button w-button--primary gc-analytics-event"
+        data-category="web.dev"
+        data-label="home, create profile"
+        data-action="click"
+        href="/measure"
+      >
+        {{ i18n.test_cta }}
+      </a>
+    </div>
+  </section>
+</div>

@@ -3,36 +3,42 @@ layout: post
 title: Patterns for promoting PWA installation
 authors:
   - pjmclachlan
+  - mustafakurtuldu
 date: 2019-06-04
-updated: 2020-02-24
+updated: 2020-06-17
 description: |
   How to promote installation of Progressive Web Apps and best practices.
+tags:
+  - progressive-web-apps
+feedback:
+  - api
 ---
 
-Progressive Web Apps (PWAs) are a pattern for creating app-like, instant
-loading, reliable, and installable websites. Why would you want a user to
-install your web app? The same reason you'd want a user to install your native
-app from any app store.
+Installing your Progressive Web App (PWA) can make it easier for users to
+find and use. Even with browser promotion, some users don't realize that
+they can install a PWA, so it can be helpful to provide an in-app experience
+that you can use to promote and enable installation of your PWA.
 
-Users who install are your most engaged users. Users who install
-have better engagement metrics than casual visitors, including more repeat
-visits, longer time on site and higher conversion rates, often at parity with
-native app users on mobile devices.
+<figure class="w-figure w-figure--inline-right">
+  <img src="simple-button_mobile-crop.png"
+      alt="Screenshot of simple install button in PWA.">
+  <figcaption class="w-figcaption">
+    A simple install button provided within your PWA.
+  </figcaption>
+</figure>
 
-If your PWA has use cases where it's helpful for a user to install your app,
-for example if you have users who use your app more than once a week, you
-should be promoting the installation of your PWA within the web UI of your
-app.
+This list is by no means exhaustive, but offers a starting point for different
+ways to promote the installation of your PWA. Regardless of which pattern, *or
+patterns* you use,  they all lead to the same code that triggers the install
+flow, documented in
+[How to provide your own in-app install experience](/customize-install/).
 
-{% Aside %}
-See [Enabling installed experiences](/customize-install/) for the code required
-to implement a PWA installation promotion.
-{% endAside %}
+<div class="w-clearfix">&nbsp;</div>
 
 ## PWA install promotion best practices {: #best-practices }
 
-Here are some best practices that apply no matter what promotional patterns you're
-using on your site.
+There are some best practices that apply no matter what promotional patterns
+you're using on your site.
 
 * Keep promotions outside of the flow of your user journeys. For example,
   in a PWA login page, put the call to action below the login form and submit
@@ -44,31 +50,40 @@ using on your site.
   completed a purchase.
 * Combine more than one of these techniques in different parts of your PWA,
   but be careful not to overwhelm or annoy your user with install promotion.
-* Only show the promotion when you detect that the `beforeinstallprompt`
-  event has been fired.
+* Only show the promotion **after** the
+  [`beforeinstallprompt` event](/customize-install/#beforeinstallprompt) has
+  been fired.
 
 ## Automatic browser promotion {: #browser-promotion }
 
-<figure class="w-figure w-figure--inline-right">
-  <img src="pwa-omnibox-install.jpg" alt="Install button in the omnibox for Hulu.com">
-  <figcaption class="w-figcaption">
-    Install button in the omnibox provided by the browser.
-  </figcaption>
-</figure>
-
-When [certain criteria](/install-criteria/) are met, the browser will
+When [certain criteria](/install-criteria/) are met, most browsers will
 automatically indicate to the user that your Progressive Web App is
 installable. For example, desktop Chrome shows an install button in the omnibox.
 
+<div class="w-columns">
+  <figure class="w-figure" id="browser-install-promo">
+    <img src="how-does-it-work_desktop.png"
+        alt="Screenshot of omnibox with install indicator visible.">
+    <figcaption class="w-figcaption">
+      Browser provided install promotion (desktop)
+    </figcaption>
+  </figure>
+  <figure class="w-figure">
+    <img src="how-does-it-work_mobile.png"
+        alt="Screenshot of browser provided install promotion.">
+    <figcaption class="w-figcaption">
+      Browser provided install promotion (mobile)
+    </figcaption>
+  </figure>
+</div>
+
 <div class="w-clearfix">&nbsp;</div>
 
-{% Aside %}
 Chrome for Android will show a mini-infobar to the user, though this can be
 prevented by calling `preventDefault()` on the `beforeinstallprompt` event.
 If you do not call `preventDefault()`, the banner will be shown the first time
 a user visits your site and it meets the installability criteria on Android,
 and then again after approximately 90 days.
-{% endAside %}
 
 ## Application UI promotional patterns {: #app-ui-patterns }
 
@@ -83,19 +98,35 @@ who aren't interested in installation.
 
 <div class="w-clearfix">&nbsp;</div>
 
-### Fixed header {: #header }
+### Simple install button {: #simple-button }
 
-<figure class="w-figure w-figure--inline-right">
-  <img src="header.png" alt="Custom install button in header">
+The simplest possible UX is to include an 'Install' or 'Get app' button at an
+appropriate location in your web content. Ensure the button doesn't block
+other important functionality and is out of the way of the user's journey
+through your application.
+
+<figure class="w-figure">
+  <img src="simple-button_desktop.png" alt="Custom install button">
   <figcaption class="w-figcaption">
-    Custom install button in header
+    Simple install button
   </figcaption>
 </figure>
+
+<div class="w-clearfix">&nbsp;</div>
+
+### Fixed header {: #header }
 
 This is an install button that is part of the header of your site. Other
 header content often includes site branding such as a logo and the hamburger
 menu. Headers may be `position:fixed` or not depending on your site's
 functionality and user needs.
+
+<figure class="w-figure">
+  <img src="elevated-install_desktop.png" alt="Custom install button in header">
+  <figcaption class="w-figcaption">
+    Custom install button in header
+  </figcaption>
+</figure>
 
 When used appropriately, promoting PWA installation from the header of your
 site is a great way to make it easier for your most loyal customers to
@@ -103,16 +134,25 @@ return to your experience. Pixels in your PWA header are precious,
 so make sure your installation call to action is appropriately sized, of greater
 importance than other possible header content, and unintrusive.
 
-<div class="w-clearfix">&nbsp;</div>
+<figure class="w-figure w-figure--inline-right">
+  <img src="elevated-install_mobile.png" alt="Custom install button in header">
+  <figcaption class="w-figcaption">
+    Custom install button in header
+  </figcaption>
+</figure>
 
 Make sure you:
 
+* Do not show the install button unless the `beforeinstallprompt` has been
+  fired.
 * Evaluate the value of your installed use case for your users. Consider
   selective targeting to only present your promotion for users that are
   likely to benefit from it.
 * Use precious header space efficiently. Consider what else would be helpful
   to offer your user in the header, and weigh the priority of the install
   promotion relative to other options.
+
+<div class="w-clearfix">&nbsp;</div>
 
 ### Navigation menu {: #nav }
 
@@ -184,47 +224,71 @@ Make sure you:
   engagement with your content such as a purchase on an e-commerce site or
   signing up for an account.
 * Provide a brief explanation of the value of installing your PWA in the
-  banner. For example, you can differentiate the install of a PWA from a
-  native app by mentioning that it uses almost no storage on the user's
+  banner. For example, you can differentiate the install of a PWA from an
+  iOS/Android app by mentioning that it uses almost no storage on the user's
   device or that it will install instantly without a store redirect.
 
 <div class="w-clearfix">&nbsp;</div>
 
-## Inline promotional patterns
+### Temporary UI {: #temporary-ui }
 
-Inline promotional techniques interweave promotions with site content. This
-is often more subtle than promotion in application UI, which has tradeoffs.
-You want your promotion to stand out enough that interested users will notice
-it, but not so much that it detracts from the quality of your user experience.
+Temporary UI, such as the [Snackbar](https://material.io/components/snackbars/)
+design pattern, notifies the user, and allows them to easily complete an
+action. In this case, install the app. When used properly, these kinds of UI
+patterns don't interrupt the user flow, and are typically automatically
+dismissed if ignored by the user.
 
-### In-feed {: #in-feed }
-
-An in-feed install promotion appears between news articles or other lists of
-information cards in your PWA.
-
-<figure class="w-figure w-figure--inline-right">
-  <img src="in-feed.png" alt="Install promotion within content feed.">
+<figure class="w-figure">
+  <img src="temporary-ui_desktop.png" alt="Custom install banner as snackbar.">
   <figcaption class="w-figcaption">
-    Install promotion within content feed.
+    A dismissible snackbar indicating the PWA is installable.
   </figcaption>
 </figure>
 
-Your goal is to show users how to access the content they're enjoying more
-conveniently. Focus on promoting features and functionality that will be
-helpful to your users.
+Show the snackbar after a few engagements, interactions with your app. If it
+appears on  page load, or out of context, it can be easily missed, or lead
+to cognitive overload. When this happens, users will simply dismiss everything
+they see. And remember, new users to your site may not be ready to install your
+PWA. Therefore, it's best to wait until you have strong interest signals from
+the user before using this pattern, for example, repeat visits, a user sign
+in, or similar conversion event.
+
+<figure class="w-figure w-figure--inline-right">
+  <img src="temporary-ui_mobile.png" alt="Custom install banner as snackbar.">
+  <figcaption class="w-figcaption">
+    A dismissible snackbar indicating the PWA is installable.
+  </figcaption>
+</figure>
 
 Make sure you:
 
-* Limit the frequency of the promotions to avoid annoying users.
-* Give your users the ability to dismiss the promotions.
-* Remember your user's choice to dismiss.
+* Show the snackbar for between 4 and 7 seconds to give users enough
+  time to see and react to it, and without getting in the way.
+* Avoid showing it over other temporary UI such as banners, etc.
+* Wait until you have strong interest signals from the user before
+  using this pattern, for example, repeat visits, a user sign in,
+  or similar conversion event.
 
 <div class="w-clearfix">&nbsp;</div>
+
+## After conversion
+
+Immediately after a user conversion event, for example after a purchase on
+an e-commerce site, is an excellent opportunity to promote the installation of
+your PWA. The user is clearly engaged with your content, and a conversion
+often signals that the user will engage with your services again.
+
+<figure class="w-figure">
+  <img src="after-conversion_desktop.png" alt="Screenshot of install promotion after conversion.">
+  <figcaption class="w-figcaption">
+    Install promotion after user has completed purchase.
+  </figcaption>
+</figure>
 
 ### Booking or checkout journey {: #journey }
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="journey.png" alt="Install promotion after a user journey.">
+  <img src="after-conversion_mobile.png" alt="Install promotion after a user journey.">
   <figcaption class="w-figcaption">
     Install promotion after a user journey.
   </figcaption>
@@ -277,103 +341,31 @@ Make sure you:
 
 <div class="w-clearfix">&nbsp;</div>
 
-## What patterns should I use?
+## Inline promotional patterns
 
-### e-commerce
+Inline promotional techniques interweave promotions with site content. This
+is often more subtle than promotion in application UI, which has tradeoffs.
+You want your promotion to stand out enough that interested users will notice
+it, but not so much that it detracts from the quality of your user experience.
 
-Many e-commerce brands have a core group of loyal customers. These customers
-want push notifications for early access to new collections and to know when
-their items have shipped. They want the app on their home screen for quick
-access to the catalog and a full screen experience.
+### In-feed {: #in-feed }
 
-Patterns that work well for e-commerce PWAs include:
-
-* [Banner](#banner)
-* [Header](#header)
-* [Nav](#nav)
-* [Landing](#landing)
-* [In-feed](#in-feed)
-* [Journey](#journey)
-* [Sign-up](#sign-up)
-
-#### Product Listing Page (PLP) or Category page {: #plp }
+An in-feed install promotion appears between news articles or other lists of
+information cards in your PWA.
 
 <figure class="w-figure w-figure--inline-right">
-  <img src="plp.png" alt="Customized install promotion in a product listing page">
+  <img src="in-feed.png" alt="Install promotion within content feed.">
   <figcaption class="w-figcaption">
-    Customized install promotion in a product listing page.
+    Install promotion within content feed.
   </figcaption>
 </figure>
 
-This is a special case of the [in-feed](#in-feed) install promotional pattern,
-where the feed contains products or category listings.
+Your goal is to show users how to access the content they're enjoying more
+conveniently. Focus on promoting features and functionality that will be
+helpful to your users.
 
 Make sure you:
 
-* Match the look and feel of the rest of your product listing page.
-* Don't disrupt the user's product selection process.
-
-<div class="w-clearfix">&nbsp;</div>
-
-### Rich media and communications
-
-Are you building the next social phenomenon or music streaming app? When new
-users visit your PWA for the first time, inviting them to install your PWA
-is a great way to bring them back.  With less storage usage than a typical
-native app, your users can install your PWA and see whether your product
-is right for them.
-
-Patterns that work well for rich media and communications PWAs include:
-
-* [Banner](#banner)
-* [Header](#header)
-* [Nav](#nav)
-* [Landing](#landing)
-* [Journey](#journey)
-* [Sign-up](#sign-up)
-
-### News
-
-If you work on a content-oriented site, chances are you have regular users
-who would be interested in installing your PWA.
-
-Patterns that work well for news and social PWAs include:
-
-* [Banner](#banner)
-* [Header](#header)
-* [Nav](#nav)
-* [Landing](#landing)
-* [In-feed](#in-feed)
-* [Journey](#journey)
-* [Sign-up](#sign-up)
-
-### Games
-
-The modern web is a great distribution platform for games because it has the biggest
-reach in the world.
-
-Patterns that work well for PWA games include:
-
-* [Banner](#banner)
-* [Header](#header)
-* [Nav](#nav)
-* [Landing](#landing)
-* [In-feed](#in-feed)
-* [Journey](#journey)
-* [Sign-up](#sign-up)
-
-#### End of game
-
-<figure class="w-figure w-figure--inline-right">
-  <img src="game-over.png" alt="Custom install promotion at the end of a game.">
-  <figcaption class="w-figcaption">
-    Custom install promotion at the end of a game.
-  </figcaption>
-</figure>
-
-This is really just a special case of the [inline journey](#journey) UI pattern.
-
-Most casual and hyper casual games end quickly. If your users are enjoying the
-game, this is a great chance to invite them to install.
-
-<div class="w-clearfix">&nbsp;</div>
+* Limit the frequency of the promotions to avoid annoying users.
+* Give your users the ability to dismiss the promotions.
+* Remember your user's choice to dismiss.

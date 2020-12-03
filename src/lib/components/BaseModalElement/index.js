@@ -33,7 +33,7 @@ export class BaseModalElement extends BaseElement {
       open: {type: Boolean, reflect: true},
       animatable: {type: Boolean, reflect: true},
       overflow: {type: Boolean, reflect: true},
-      parentModal: {attribute: 'parent-modal', reflect: true},
+      parentModal: {type: String, reflect: true, attribute: 'parent-modal'},
     };
   }
 
@@ -42,10 +42,11 @@ export class BaseModalElement extends BaseElement {
 
     this.open_ = false;
     this.animatable = false;
-    this.inert = true;
     this.overflow = false;
+    /** @type HTMLElement */
     this._triggerElement = null;
     this._parent = null;
+    this.parentModal = null;
 
     this.onKeyUp = this.onKeyUp.bind(this);
     this.onResize = this.onResize.bind(this);
@@ -57,6 +58,7 @@ export class BaseModalElement extends BaseElement {
     this.addEventListener('click', this.onClick);
     // Set tabindex to -1 so modal can be focused when it's opened.
     this.tabIndex = -1;
+    this.inert = !this.open;
   }
 
   disconnectedCallback() {
@@ -82,7 +84,7 @@ export class BaseModalElement extends BaseElement {
     this.open_ = val;
     if (this.open_) {
       // Must get trigger before manipulating the DOM.
-      this._triggerElement = document.activeElement;
+      this._triggerElement = /** @type HTMLElement */ (document.activeElement);
       // Add keyup event listener to this element rather than document
       // so a nested modal doesn't close its parent modal when the user presses Esc.
       this.addEventListener('keyup', this.onKeyUp);
@@ -102,6 +104,7 @@ export class BaseModalElement extends BaseElement {
     this.addEventListener('animationend', this.onAnimationEnd, {
       once: true,
     });
+    this.inert = this.open; // starts the wrong way around, and flips onAnimationEnd
 
     this.requestUpdate('open', oldVal);
   }

@@ -17,14 +17,13 @@
 const {html} = require('common-tags');
 const getSrcsetRange = require('../../_utils/get-srcset-range');
 
-/* eslint-disable max-len */
 module.exports = ({hero, alt, heroPosition, heroFit = 'cover'}) => {
   const srcsetRange = getSrcsetRange();
 
   // prettier-ignore
   return html`
     <img
-      class="w-hero w-hero--${heroFit} ${heroPosition ? `w-hero--${heroPosition}` : ""}"
+      class="w-hero w-hero--${heroFit} ${heroPosition ? `w-hero--${heroPosition}` : ''}"
       width="1600"
       height="480"
       sizes="100vw"
@@ -33,6 +32,7 @@ module.exports = ({hero, alt, heroPosition, heroFit = 'cover'}) => {
       `)}"
       src="${hero}"
       alt="${alt}"
+      loading="lazy"
     />
   `;
 };

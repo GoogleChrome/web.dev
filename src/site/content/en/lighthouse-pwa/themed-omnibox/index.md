@@ -6,11 +6,18 @@ description: |
 web_lighthouse:
   - themed-omnibox
 date: 2019-05-04
-updated: 2019-09-19
+updated: 2020-06-17
 ---
 
 Theming the browser's address bar to match the brand colors
 of your [Progressive Web App (PWA)](/discover-installable) provides a more immersive user experience.
+
+## Browser compatibility
+
+At the time of writing, theming the browser address bar is supported on
+Android-based browsers. See
+[Browser compatibility](https://developer.mozilla.org/docs/Web/Manifest/theme_color#Browser_compatibility)
+for updates.
 
 ## How the Lighthouse theme color audit fails
 

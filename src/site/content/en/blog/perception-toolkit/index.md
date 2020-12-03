@@ -11,6 +11,8 @@ description: |
 tags:
   - blog
   - visual-search
+feedback:
+  - api
 ---
 Wouldn't it be great if users could search your site using their camera? Imagine
 this. Your site is Razor McShaveyface. Your customers tell you they have trouble

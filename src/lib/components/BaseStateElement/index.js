@@ -24,7 +24,13 @@ export class BaseStateElement extends BaseElement {
   }
 
   /**
+   * This method will be called whenever unistore state changes,
+   * you can overwrite the method to hook into the event and deconstruct the state.
+   *
    * @param {!Object<string, *>} state
    */
-  onStateChanged(state) {}
+
+  // @ts-ignore-start
+  onStateChanged(state) {} // eslint-disable-line no-unused-vars
+  // @ts-ignore-end
 }

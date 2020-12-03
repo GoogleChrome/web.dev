@@ -25,13 +25,14 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
 .w-author__image {
   background-color: $GREY_300;
   border-radius: $GLOBAL_ROUNDED;
+  border: 2px solid white;
   flex-shrink: 0;
   height: 64px;
   margin: 0 12px 0 0;
+  min-width: 64px; // prevent from being shrunk
   object-fit: cover;
   overflow: hidden;
   width: 64px;
-  min-width: 64px; // prevent from being shrunk
 }
 
 .w-author__image--small {
@@ -142,4 +143,8 @@ $AUTHOR_IMAGE_SIZE_SMALL: 40px;
   > .w-author__image {
     border: solid white 2px;
   }
+}
+
+.w-author__image--row-item + .w-author__image--row-item {
+  margin-right: 10px;
 }

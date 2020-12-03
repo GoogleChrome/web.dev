@@ -1,12 +1,12 @@
 ---
 title: Richer offline experiences with the Periodic Background Sync API
 subhead:
-  Sync your web app's data in the background for a more native-like experience
+  Sync your web app's data in the background for a more-like experience
 authors:
   - jeffposnick
   - joemedley
 date: 2019-11-10
-updated: 2020-03-13
+updated: 2020-08-18
 hero: hero.jpg
 alt: Colorful airplanes flying in sync
 origin_trial:
@@ -14,18 +14,19 @@ origin_trial:
 description: |
   Periodic Background Sync enables web applications to periodically
   synchronize data in the background, bringing web apps closer to the behavior
-  of a native app.
+  of an iOS/Android/desktop app.
 tags:
   - capabilities
-  - fugu
   - blog
   - progressive-web-apps
   - service-worker
   - chrome80
+feedback:
+  - api
 ---
 
 {% Aside %}
-  Web apps should be able to do anything native apps can. The
+  Web apps should be able to do anything iOS/Android/desktop apps can. The
   [Capabilities project](https://developers.google.com/web/updates/capabilities),
   of which Periodic Background Sync is only a part, aims
   to do just that. To learn about other capabilities and to keep up with their
@@ -40,13 +41,13 @@ Have you ever been in any of the following situations?
 * Living in a country where bandwidth struggles to keep up with the demand
 
 If you have, then you've surely felt the frustration of getting
-certain things done on the web, and wondered why native apps so often do better
-in these scenarios. Native apps can fetch fresh content such as news articles or weather
+certain things done on the web, and wondered why platform-specific apps so often do better
+in these scenarios. Platform-specific apps can fetch fresh content such as news articles or weather
 information ahead of time. Even if there's no network in the subway, you can still read the
 news.
 
 Periodic Background Sync enables web applications to periodically synchronize
-data in the background, bringing web apps closer to the behavior of a native
+data in the background, bringing web apps closer to the behavior of a platform-specific
 app.
 
 ## Current status
@@ -75,7 +76,7 @@ Status
 2. Create initial draft of specification
 </td>
 <td markdown="block">
-<a href="https://github.com/WICG/BackgroundSync/blob/master/explainers/periodicsync-explainer.md" rel="noopener">In Progress</a>
+<a href="https://wicg.github.io/periodic-background-sync/" rel="noopener">Complete</a>
 </td>
 </tr>
 <tr>
@@ -135,11 +136,12 @@ have similar names, their use cases are different. Among other things,
 background sync is most commonly used for resending data to a server when a
 previous request has failed.
 
-### Getting this right
+### Getting user engagement right
 
-Chrome is putting periodic background sync through a trial period so that you can
-help the Chrome team make sure that they get it right. This section explains some of the design
-decisions Chrome took to make this feature as helpful as possible.
+Done incorrectly, periodic background sync could be wasteful of users'
+resources. Before releasing it, Chrome put it through a trial period to make
+sure it was right. This section explains some of the design decisions Chrome
+took to make this feature as helpful as possible.
 
 The first design decision Chrome made is that a web app can only use periodic
 background sync after a person has installed it on their device, and has
@@ -179,7 +181,7 @@ risk for periodic background sync:
   synced when it was in the foreground, the browser limits the frequency of an
   app's background syncs to align with how often the person uses that app. If
   the person stops frequently interacting with the app, periodic background sync
-  will stop triggering. This is a net improvement over the status quo in native
+  will stop triggering. This is a net improvement over the status quo in platform-specific
   apps.
 
 ### When can it be used?
@@ -192,7 +194,7 @@ following requirements on periodic background sync:
 
 The timing of synchronizations are not controlled by developers. The
 synchronization frequency will align with how often the app is used. (Note that
-native apps currently don't do this.) It also takes into the device's power and
+platform-specific apps currently don't do this.) It also takes into the device's power and
 connectivity state.
 
 ### When should it be used?

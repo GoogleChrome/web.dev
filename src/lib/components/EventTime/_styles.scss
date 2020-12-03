@@ -1,17 +1,19 @@
 @import '../../../styles/settings/colors';
+@import '../../../styles/settings/type';
 
 web-event-time {
   time {
     align-items: center;
     display: flex;
-    min-height: 100px; // matches _unresolved.scss to avoid FOUC
+    min-height: 120px;
   }
 
   .date {
     align-items: center;
     display: flex;
     flex-flow: column;
-    font-family: 'Google Sans', sans-serif;
+    font-family: $HEADLINE_FONT;
+    margin-right: 32px;
     text-align: left;
     width: 80px;
   }
@@ -31,6 +33,6 @@ web-event-time {
   }
 
   .time__timezone {
-    color: $GREY_600;
+    color: $GREY_700;
   }
 }

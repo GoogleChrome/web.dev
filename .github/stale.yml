@@ -13,6 +13,7 @@ staleLabel: stale
 markComment: >
   This issue has been automatically marked as stale because it has not had
   recent activity. It will be closed in 7 days if no further activity occurs.
-  To prevent his from happening, leave a comment.
-# Comment to post when closing a stale issue. Set to `false` to disable
-closeComment: false
+  To prevent this from happening, leave a comment.
+# Comment to post when closing a stale Issue or Pull Request.
+closeComment: >
+  Closing this issue because it has been marked as stale for more than 7 days.

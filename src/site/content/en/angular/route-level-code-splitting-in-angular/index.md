@@ -12,6 +12,8 @@ authors:
 tags:
   - angular
   - performance
+feedback:
+  - api
 ---
 
 This post explains how to set up route-level [code splitting](/reduce-javascript-payloads-with-code-splitting/) in an Angular application, which can reduce JavaScript bundle size and dramatically improve [Time to Interactive](/interactive).
@@ -51,10 +53,9 @@ This post focuses on setting up route-level splitting in Angular.
 Before digging into how to use route level code splitting in Angular, let's look at a sample app:
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://stackblitz.com/github/mgechev/code-splitting-web-dev/tree/eager?embed=1&file=src/app/app.component.ts&view=preview"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://stackblitz.com/github/mgechev/code-splitting-web-dev/tree/eager?embed=1&file=src/app/app.component.ts&view=preview'
+  } %}
 </div>
 
 Check out the implementation of the app's modules. Inside `AppModule` two routes are defined: the default route associated with `HomeComponent` and a `nyan` route associated with `NyanComponent`:
@@ -190,10 +191,9 @@ export class AppComponent {
 In the example below we've introduced an artificial 500 ms latency so that you can see the spinner in action.
 
 <div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://stackblitz.com/github/mgechev/code-splitting-web-dev/tree/lazy?embed=1&file=src/app/app.component.ts&view=preview"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
+  {% IFrame {
+    src: 'https://stackblitz.com/github/mgechev/code-splitting-web-dev/tree/lazy?embed=1&file=src/app/app.component.ts&view=preview'
+  } %}
 </div>
 
 

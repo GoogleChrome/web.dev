@@ -14,6 +14,8 @@ tags:
   - blog
   - css
   - fonts
+feedback:
+  - api
 ---
 
 The ['system-ui' section](https://drafts.csswg.org/css-fonts-4/#system-ui-def) of the CSS Fonts Module Level 4 spec defines a `system-ui` font keyword that allows developers to use the built-in, turbo-optimized, localized, mega-high-quality, no-download-needed, default operating system font right in their sites and apps. 
@@ -24,7 +26,7 @@ body {
 }
 ```
 
-This typography choice is akin to saying "use the native system font for the current locale of this user."
+This typography choice is akin to saying "use the default system font for the current locale of this user."
 
 On macOS, the `system-ui` font is San Francisco, a font that a design team vetted, tested, and… recently upgraded! First we'll cover the [new exciting variable font features in Catalina](#new-powers), then we'll cover a couple of [bugs and how Chromium engineers resolved them](#regression).
 
@@ -164,13 +166,12 @@ And just like that, Chromium users on macOS see your upgraded, custom 750 weight
 
 Click **Remix to Edit** in the Glitch below to get an editable copy of the Glitch, and then edit the new `font-variation-settings` options to see how it affects your font. Remember that this Glitch will only work if you're using a macOS Catalina device.
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/macos-system-ui?path=style.css&attributionHidden=true&previewSize=50&sidebarCollapsed=true"
-    alt="macOS Catalina system-ui sandbox on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'macos-system-ui',
+  path: 'style.css',
+  previewSize: 50,
+  height: 480
+} %}
 
 macOS 10.15 added new features to its system font, and in macOS 10.15 a tricky `system-ui` bug was logged in the Chromium bug tracker. I wonder if they are related!?
 

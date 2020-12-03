@@ -12,8 +12,11 @@ tags:
   - storage
   - indexeddb
   - cachestorage
+  - memory
 hero: hero.jpg
 alt: Stack of shipping containers
+feedback:
+  - api
 ---
 
 Internet connections can be flakey or non-existent on the go, which is why
@@ -68,7 +71,7 @@ reading and writing files to a sandboxed file system. While it is asynchronous,
 it is not recommended because it is
 [only available in Chromium-based browsers][caniuse-fs].
 
-The [Native File System API](/native-file-system/) was designed to make it
+The [File System Access API](/file-system-access/) was designed to make it
 easy for users to read and edit files on their local file system. The user
 must grant permission before a page can read or write to any local file, and
 permissions are not persisted across sessions.
@@ -90,14 +93,20 @@ hundreds of gigabytes or more. Browser implementations vary, but the amount
 of storage available is usually based on the amount of storage available on the
 device.
 
-* Chrome allows the browser to use up to 60% of total disk space. You can use the
-  [StorageManager API](#check) to determine the maximum quota available. Other
-  Chromium-based browsers may allow the browser to use more storage.
+* Chrome allows the browser to use up to 80% of total disk space. An origin can
+  use up to 60% of the total disk space. You can use the [StorageManager
+  API](#check) to determine the maximum quota available. Other Chromium-based
+  browsers may allow the browser to use more storage. See
+  [PR #3896](https://github.com/GoogleChrome/web.dev/pull/3896) for details about
+  Chrome's implementation.
 * Internet Explorer 10 and later can store up to 250MB and will prompt the
   user when more than 10MB has been used.
-* Firefox allows an [origin to use up to 2GB][ff-usage-limits]. You can use
-  the [StorageManager API](#check-available) to determine how much space is
-  still available.
+* Firefox allows the browser to use up to 50% of free disk space. An
+  [eTLD+1](https://godoc.org/golang.org/x/net/publicsuffix)
+  group (e.g., `example.com`, `www.example.com` and `foo.bar.example.com`)
+  [may use up to 2GB][ff-usage-limits]. You can use the
+  [StorageManager API](#check-available) to determine how much space is still
+  available.
 * Safari (both desktop and mobile) appears to allow up to 1GB. When the limit
   is reached, Safari will prompt the user, increasing the limit in 200MB
   increments. I was unable to find any official documentation on this.

@@ -15,6 +15,8 @@ tags:
   - web-workers
   - javascript-modules
   - modules
+feedback:
+  - api
 ---
 
 JavaScript is single-threaded, which means it can only perform one operation at a time. This is
@@ -192,13 +194,10 @@ on the HTTP cache. When used in combination with the correct caching headers, th
 to avoid worker instantiation having to wait to download the worker script. However, unlike
 `modulepreload` this technique did not support preloading dependencies or pre-parsing.
 
-<div class="glitch-embed-wrap" style="height: 480px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/worker-preloading?previewSize=100&attributionHidden=true"
-    alt="worker-preloading on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+{% Glitch {
+  id: 'worker-preloading',
+  height: 480
+} %}
 
 ## What about shared workers?
 

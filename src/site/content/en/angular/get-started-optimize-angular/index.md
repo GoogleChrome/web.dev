@@ -25,7 +25,7 @@ This collection focuses on five major areas for optimizing an Angular applicatio
 * Improving the **performance** of your application to increase user conversion and engagement
 * Improving your application's **reliability** on poor networks by precaching assets with the Angular service worker
 * Making your application **discoverable** for search engines and social media bots using prerendering and server-side rendering
-* Making your application **installable** to provide a user experience similar to a native app's
+* Making your application **installable** to provide a user experience similar to an iOS/Android app's
 * Improving the **accessibility of** your application to make it usable and understandable for all users
 
 Each post in the collection will describe techniques that you can directly apply to your own applications.
@@ -70,7 +70,7 @@ Once the setup process completes successfully, start your application by running
 
 ```bash
 cd my-app
-ng start
+ng serve
 ```
 
 You should now be able to access your application at [http://localhost:4200](http://localhost:4200).
