@@ -57,7 +57,7 @@ This was a problem for us browser vendors, as we want to allow sites to execute 
 
 To mitigate this, we reduced the resolution of our high resolution timers such as `performance.now()`. However, you can _create_ a high resolution timer using `SharedArrayBuffer` by modifying memory in a tight loop in a worker, and reading it back in another thread. This couldn't be effectively mitigated without heavily impacting well-intentioned code, so `SharedArrayBuffer` was disabled altogether.
 
-A general mitigation is to ensure a webpage's system process doesn't contain sensitive data from elsewhere. Chrome had invested in a mutliprocess architecture from the start ([remember the comic?](https://www.google.com/googlebooks/chrome/big_00.html)), but there were still cases where data from multiple sites could end up in the same process:
+A general mitigation is to ensure a webpage's system process doesn't contain sensitive data from elsewhere. Chrome had invested in a multiprocess architecture from the start ([remember the comic?](https://www.google.com/googlebooks/chrome/big_00.html)), but there were still cases where data from multiple sites could end up in the same process:
 
 ```html
 <iframe src="https://your-bank.example/balance.json"></iframe>
