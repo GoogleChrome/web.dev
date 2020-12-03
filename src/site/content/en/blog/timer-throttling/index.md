@@ -168,7 +168,7 @@ controller.abort();
 
 ## Testing
 
-This change is in Chrome 88+ and [Chrome Canary](https://www.google.com/intl/en_uk/chrome/canary/), but 5 minutes is a long time to wait. Instead, you can launch Chrome with the following command line flag:
+This change is in Chrome 88+ and [Chrome Canary](https://www.google.com/intl/en_uk/chrome/canary/), but 5 minutes is a long time to wait for the intense throttling to kick in. Instead, you can launch Chrome with the following command line flag:
 
 ```bash
 --enable-features="IntensiveWakeUpThrottling:grace_period_seconds/10,OptOutZeroTimeoutTimersFromThrottling,AllowAggressiveThrottlingWithWebSocket"
