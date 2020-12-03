@@ -5,7 +5,7 @@ authors:
   - samdutton
 scheduled: true
 date: 2020-11-23
-updated: 2020-11-23
+updated: 2020-12-03
 description: Help your users sign up, log in and manage their account details with a minimum of fuss.
 hero: images/hero.jpg
 thumbnail: images/thumbnail.jpg
@@ -18,11 +18,11 @@ tags:
   - mobile
   - security
   - ux
-codelabs:
-  - codelab-sign-up-form-best-practices
+<!-- codelabs:
+  - codelab-sign-up-form-best-practices -->
 ---
 
-<!--  {% YouTube 'alGcULGtiv8' %} -->
+{% YouTube 'Ev2mCzJZLtY' %}
 
 If users ever need to log in to your site, then good sign-up form design is
 critical. This is especially true for people on poor connections, on mobile, in
@@ -40,12 +40,12 @@ Here is an example of a very simple sign-up form that demonstrates all of the be
 {% Glitch {
   id: 'signup-form',
   path: 'index.html',
-  height: 570
+  height: 700
 } %}
 
 ## Checklist
 
-* [Avoid sign-up if you can](#no-forced-sign-in).
+* [Avoid sign-in if you can](#no-forced-sign-in).
 * [Make it obvious how to create an account](#obvious-account-creation).
 * [Make it obvious how to access account details](#obvious-account-details).
 * [Cut form clutter](#cut-clutter).
@@ -66,31 +66,31 @@ Here is an example of a very simple sign-up form that demonstrates all of the be
 {% Aside %}
 This post is about form best practices. 
 
-It does not explain how to implement sign-up via a third-party 
-identity provider (federated login) or show how to build backend services to authenticate users, store 
-credentials, and manage accounts. [Integrating Google Sign-In into your web app](https://developers.google.com/identity/sign-in/web/sign-in) explains how to add federated login to your sign-up options. [12 best practices for user 
+It does not explain how to implement sign-up via a third-party identity provider (federated login) 
+or show how to build backend services to authenticate users, store credentials, and manage accounts. 
+[Integrating Google Sign-In into your web app](https://developers.google.com/identity/sign-in/web/sign-in) 
+explains how to add federated login to your sign-up options. [12 best practices for user 
 account, authorization and password management](https://cloud.google.com/blog/products/gcp/12-best-practices-for-user-account) outlines core back-end principles for managing user accounts. 
 {% endAside %}
 
-## Avoid sign-up if you can {: #no-forced-sign-in }
+## Avoid sign-in if you can {: #no-forced-sign-in }
 
-Before you implement sign-up, and force users to create an account on your site, consider whether 
-you really need to. Wherever possible you should avoid gating features behind login. 
+Before you implement a sign-up form and ask users to create an account on your site, consider 
+whether you really need to. Wherever possible you should avoid gating features behind login. 
 
 The best sign-up form is no sign-up form! 
 
 By asking a user to create an account, you come between them and what they're trying to achieve. 
 You're asking a favor, and asking the user to trust you with personal data. Every password and item 
-of data you store carries privacy and security 'data debt', becoming a liability and a cost for 
+of data you store carries privacy and security 'data debt', becoming a cost and liability for 
 your site. 
 
-If you just need to save information for a user between navigations or browsing sessions, 
-[consider using client-side storage](/storage-for-the-web) instead of forcing them to 
-create an account. For shopping sites, forcing users to create an account to make a purchase 
-is cited as a major reason for shopping cart abandonment. You should 
-[make guest checkout the default](/payment-and-address-form-best-practices#guest-checkout).
+If the main reason you ask users to create an account is to save information between navigations or 
+browsing sessions, [consider using client-side storage](/storage-for-the-web) instead. For shopping 
+sites, forcing users to create an account to make a purchase is cited as a major reason for shopping 
+cart abandonment. You should [make guest checkout the default](/payment-and-address-form-best-practices#guest-checkout).
 
-## Make sign-up obvious {: #obvious-account-creation}
+## Make sign-in obvious {: #obvious-account-creation}
 
 Make it obvious how to create an account on your site, for example with a **Login** or **Sign in** 
 button at the top right of the page. Avoid using an ambiguous icon or vague wording ('Get on board!', 
@@ -100,7 +100,7 @@ convince others on your web team, use [analytics](#analytics-rum) to show the im
 options.
 
 <figure class="w-figure">
-  <img src="images/obvious-sign-in.jpg" alt="Two screenshots of a mockup 
+  <img src="images/obvious-sign-in.png" alt="Two screenshots of a mockup 
   ecommerce website viewed on an Android phone. The one on the left uses an icon for the 
   sign-in link that's somewhat ambiguous; the one on the right simply says 'Sign in'">
   <figcaption class="w-figcaption">Make sign-in obvious. An icon may be ambiguous, but a <b>Sign 
@@ -108,11 +108,20 @@ options.
 </figure>
 
 {% Aside %}
-You may be wondering whether to add a button or link for *sign up* as well as *sign in*. Many major 
-sites now simply display a single **Sign in button**. When the user clicks on that, they also get a 
-link to create an account if necessary. That's a common pattern now, and most of your users will 
-understand it.
+You may be wondering whether to add a button (or link) to create an account and another one for 
+existing users to sign in. Many popular sites now simply display a single **Sign in** button. When 
+the user taps or clicks on that, they also get a link to create an account if necessary. That's a 
+common pattern now, and your users are likely to understand it, but you can use 
+[interaction analytics](#analytics-rum) to monitor whether or not a single button works best.
 {% endAside %}
+
+<figure class="w-figure">
+  <img src="images/gmail-sign-up-create-account.png" alt="Screenshots of sign-in for Gmail: one page, 
+  showing Sign in button, when clicked leads to form that also has a Create account link.">
+  <figcaption class="w-figcaption">The Gmail sign-in page has a link to create an account.<br>
+    At window sizes larger than shown here, Gmail displays a <b>Sign in</b> link and a <b>Create an 
+  account</b> button.</figcaption>
+</figure>
 
 Make sure to link accounts for users who sign up via an identity provider such as Google and who 
 also sign up using email and password. That's easy to do if you can access a user's email address 
@@ -206,7 +215,7 @@ of built-in browser features.
 ## Ensure users enter secure passwords {: #secure-passwords}
 
 Enabling password managers to suggest passwords is the best option, and you should encourage 
-users to use the strong passwords suggested by browsers and third-party browser managers. 
+users to accept the strong passwords suggested by browsers and third-party browser managers. 
 
 However, many users want to enter their own passwords, so you need to implement rules for password 
 strength. [The US National Institute of Standards and Technology](https://pages.nist.gov/800-63-3/sp800-63b.html#5-authenticator-and-verifier-requirements) explains 
@@ -341,8 +350,8 @@ federated login or not, you should make account switching simple.
 
 ## Consider offering multi-factor authentication {: #multi-factor-authentication}
 
-Multi-factor authentication means ensuring that users to provide authentication in more than one way. 
-For example, as well as requiring the user to set a password, you might also use enforce verification 
+Multi-factor authentication means ensuring that users provide authentication in more than one way. 
+For example, as well as requiring the user to set a password, you might also enforce verification 
 using a one-time-passcode sent by email or an SMS text message, or by using an app-based one-time 
 code, security key or fingerprint sensor. [SMS OTP best practices](https://web.dev/sms-otp-form) and 
 [Enabling Strong Authentication with WebAuthn](https://developers.google.com/web/updates/2018/05/webauthn) 
