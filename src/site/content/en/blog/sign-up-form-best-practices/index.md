@@ -178,7 +178,7 @@ As with federated login, this has the added benefit that you don't have to manag
 
 ## Consider session length {: #session-length}
  
-Whatever approach you take to user identity. you'll need to make a careful decision about session 
+Whatever approach you take to user identity, you'll need to make a careful decision about session 
 length: how long the user remains logged in, and what might cause you to log them out.
 
 There's no one hard-and-fast rule, but you need to consider mobile versus desktop, and whether 
@@ -218,8 +218,8 @@ Enabling password managers to suggest passwords is the best option, and you shou
 users to accept the strong passwords suggested by browsers and third-party browser managers. 
 
 However, many users want to enter their own passwords, so you need to implement rules for password 
-strength. [The US National Institute of Standards and Technology](https://pages.nist.gov/800-63-3/sp800-63b.html#5-authenticator-and-verifier-requirements) explains 
-how to avoid insecure passwords.
+strength. The US National Institute of Standards and Technology explains 
+[how to avoid insecure passwords](https://pages.nist.gov/800-63-3/sp800-63b.html#5-authenticator-and-verifier-requirements).
 
 {% Aside 'warning' %}
 Sign-up forms on some sites have password validation rules that don't allow the strong passwords 
@@ -319,7 +319,7 @@ federated login.
 </figure>
 
 This approach has several advantages. For users who create an account using federated login, you 
-don't need to ask for, communicate or store passwords. 
+don't need to ask for, communicate, or store passwords. 
 
 You may also be able to access additional verified profile information from federated login, such 
 as an email address—which means the user doesn't have to enter that data and you don't need to do 
