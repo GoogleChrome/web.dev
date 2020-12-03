@@ -129,11 +129,14 @@ Installation of the PWA has been massive, increasing at a rate of 97% a month
 since we launched five months ago. And, as mentioned before, the WebAssembly
 SIMD enhancements improved performance 2.3x.
 
-<!--
-
-![A chart showing installs of the PWA from May to November 2020. The y-axis is not specified.](installs.png)
-
--->
+<figure class="w-figure">
+  <img class="w-screenshot" src="installs.png" 
+       alt="June 2020: ~1K installs. July 2020: ~5K installs. August 2020: ~12K installs.
+            September 2020: ~20K installs. October 2020: ~30K installs.">
+  <figcaption class="w-figcaption">
+    Clipchamp PWA installs over the last 6 months.
+  </figcaption>
+</figure>
 
 ## Future 
 
