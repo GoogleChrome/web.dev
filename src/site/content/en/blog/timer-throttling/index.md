@@ -39,8 +39,8 @@ If you call `setTimeout` in the same task as a `setTimeout` callback, the second
 let chainCount = 0;
 
 setInterval(() => {
-  console.log(`This is number ${chainCount} in the chain`);
   chainCount++;
+  console.log(`This is number ${chainCount} in the chain`);
 }, 500);
 ```
 
@@ -51,8 +51,8 @@ let chainCount = 0;
 
 function setTimeoutChain() {
   setTimeout(() => {
-    console.log(`This is number ${chainCount} in the chain`);
     chainCount++;
+    console.log(`This is number ${chainCount} in the chain`);
     setTimeoutChain();
   }, 500);
 }
