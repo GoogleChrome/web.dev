@@ -5,8 +5,8 @@ authors:
   - jakearchibald
 description: >
   Chrome 88 will heavily throttle chained JavaScript timers for hidden pages.
-date: 2020-12-02
-updated: 2020-12-02
+date: 2020-12-03
+updated: 2020-12-03
 hero: hero.jpg
 alt: A collection of broken clocks
 tags:
@@ -163,7 +163,7 @@ controller.abort();
 
 This change is in Chrome 88+ and [Chrome Canary](https://www.google.com/intl/en_uk/chrome/canary/), but 5 minutes is a long time to wait. Instead, you can launch Chrome with the following command line flag:
 
-```
+```bash
 --enable-features="IntensiveWakeUpThrottling:grace_period_seconds/10,OptOutZeroTimeoutTimersFromThrottling,AllowAggressiveThrottlingWithWebSocket"
 ```
 
