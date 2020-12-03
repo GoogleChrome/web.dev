@@ -69,21 +69,28 @@ The throttling happens in stages:
 This happens to timers that are scheduled when _any_ of the following is true:
 
 - The page is visible.
-- The page has been hidden for less than 5 minutes.
-- WebRTC is in use. Specifically, there's an `RTCPeerConnection` with an 'open' `RTCDataChannel` or a 'live' `MediaStreamTrack`.
-- The page is making noises. This can be from any of the sound-making APIs, but a silent audio track doesn't count.
+- The page is has made noises in the past 30 seconds. This can be from any of the sound-making APIs, but a silent audio track doesn't count.
 
 The timer isn't throttled, unless the requested timeout is less than 4ms, and the chain count is 5 or greater, in which case the timeout is set to 4ms. This isn't new, browsers have done this for many years.
 
 ### Throttling
 
-This happens to timers that are scheduled when 'Minimal throttling' doesn't apply, and the chain count is less than 5.
+This happens to timers that are scheduled when 'Minimal throttling' doesn't apply, and _any_ of the following is true:
+
+- The chain count is less than 5.
+- The page has been hidden for less than 5 minutes.
+- WebRTC is in use. Specifically, there's an `RTCPeerConnection` with an 'open' `RTCDataChannel` or a 'live' `MediaStreamTrack`.
 
 The browser will check timers in this group once per **second**. Because they're only checked once per second, timers with a similar timeout will batch together, consolidating the time the tab needs to run code. This isn't new either, browsers have been doing this to some extent for years.
 
 ### Intensive throttling
 
-Ok, this is the new bit in Chrome 88. This happens to timers that are scheduled when neither 'Minimal throttling' or 'Throttling' apply.
+Ok, this is the new bit in Chrome 88. This happens to timers that are scheduled when neither 'Minimal throttling' or 'Throttling' apply, meaning _all_ of the following is true:
+
+- The page has been hidden for more than 5 minutes.
+- The chain count is 5 or greater.
+- The page has been silent for at least 30 seconds.
+- WebRTC is not in use.
 
 In this case, the browser will check timers in this group once per **minute**. Similar to before, this means timers will batch together in these minute-by-minute checks.
 
