@@ -69,7 +69,7 @@ The throttling happens in stages:
 This happens to timers that are scheduled when _any_ of the following is true:
 
 - The page is visible.
-- The page is has made noises in the past 30 seconds. This can be from any of the sound-making APIs, but a silent audio track doesn't count.
+- The page has made noises in the past 30 seconds. This can be from any of the sound-making APIs, but a silent audio track doesn't count.
 
 The timer isn't throttled, unless the requested timeout is less than 4ms, and the chain count is 5 or greater, in which case the timeout is set to 4ms. This isn't new, browsers have done this for many years.
 
@@ -168,13 +168,13 @@ controller.abort();
 
 ## Testing
 
-This change is in Chrome 88+ and [Chrome Canary](https://www.google.com/intl/en_uk/chrome/canary/), but 5 minutes is a long time to wait for the intense throttling to kick in. Instead, you can launch Chrome with the following command line flag:
+This change will land for everyone in Chrome 88 stable. In the meantime it's in Chrome Beta/Dev/Canary, but only for 50% of users. If you want to test it, use this command line flag when launching Chrome:
 
 ```bash
 --enable-features="IntensiveWakeUpThrottling:grace_period_seconds/10,OptOutZeroTimeoutTimersFromThrottling,AllowAggressiveThrottlingWithWebSocket"
 ```
 
-This causes throttling to happen after 10 seconds, rather than 5 minutes.
+This also causes intense throttling to kick in after 10 seconds of the page being hidden, rather than the full 5 minutes, making it easier to see the impact of the throttling.
 
 ## The future
 
