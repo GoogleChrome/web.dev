@@ -20,7 +20,8 @@ tags:
   - otp
 ---
 
-Asking a user to provide the OTP (one time password) delivered via SMS is a common way to confirm a user's phone number. There are a few use cases for SMS OTP:
+Asking a user to provide the OTP (one time password) delivered via SMS is a common 
+way to confirm a user's phone number. There are a few use cases for SMS OTP:
 
 * **Two-factor authentication.** In addition to username and password, SMS OTP can be
 used as a strong signal that the account is owned by the person who received the
@@ -48,9 +49,9 @@ itself is not phishing resistant](https://youtu.be/kGGMgEfSzMw?t=1133).
 If you are looking for better security, consider using
 [WebAuthn](https://www.w3.org/TR/webauthn-2/). Learn more about it from the talk
 "[What's new in sign-up & sign-in](https://goo.gle/webauthn-video)" at the
-Chrome Dev Summit 2019. A codelab "[Build your first WebAuthn
-app](https://goo.gle/WebAuthnReauthCodelab)" that lets you learn how to build a
-reauthentication experience using a biometric sensor is also available.
+Chrome Dev Summit 2019 and build a reauthentication experience using a biometric 
+sensor with "[Build your first WebAuthn app](https://goo.gle/WebAuthnReauthCodelab)" 
+codelab.
 {% endAside %}
 
 ## Checklist
@@ -100,7 +101,8 @@ that job.
 
 ### `inputmode="numeric"`
 
-Use [`inputmode="numeric"`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/inputmode) to change the mobile keyboard to numbers only.
+Use [`inputmode="numeric"`](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/inputmode) 
+to change the mobile keyboard to numbers only.
 
 Some websites use `type="tel"` for OTP input fields since it also 
 turns the mobile keyboard to numbers only (including `*` and `#`) when
