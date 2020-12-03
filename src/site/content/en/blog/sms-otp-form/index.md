@@ -48,7 +48,10 @@ itself is not phishing resistant](https://youtu.be/kGGMgEfSzMw?t=1133).
 If you are looking for better security, consider using
 [WebAuthn](https://www.w3.org/TR/webauthn-2/). Learn more about it from the talk
 "[What's new in sign-up & sign-in](https://goo.gle/webauthn-video)" at the
-Chrome Dev Summit 2019. {% endAside %}
+Chrome Dev Summit 2019. A codelab "[Build your first WebAuthn
+app](https://goo.gle/WebAuthnReauthCodelab)" that lets you learn how to build a
+reauthentication experience using a biometric sensor is also available.
+{% endAside %}
 
 ## Checklist
 
@@ -219,6 +222,10 @@ with `otp` type (`OTPCredential`) where `transport` includes `sms`, the website
 will wait for an SMS that complies with the origin-bound one-time codes to be
 delivered and granted access by the user. Once the OTP is passed to JavaScript,
 the website can use it in a form or POST it directly to the server.
+
+{% Aside 'caution' %}
+The Web OTP API requires a secure origin (HTTPS).
+{% endAside %}
 
 ```js
 navigator.credentials.get({
