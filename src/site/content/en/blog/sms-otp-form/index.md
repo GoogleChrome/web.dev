@@ -3,7 +3,7 @@ title: SMS OTP form best practices
 subhead: Learn how to optimize your SMS OTP form and improve user experience.
 authors:
   - agektmr
-date: 2020-12-04
+date: 2020-12-07
 hero: hero.jpg
 alt: A neon chat bubble sign.
 
