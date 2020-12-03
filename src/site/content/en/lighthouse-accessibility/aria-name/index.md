@@ -30,7 +30,7 @@ aren't accessible to assistive technologies:
     alt="Lighthouse audit showing custom toggle elements without accessible names">
 </figure>
 
-There are 6 audits that check for accessible names, each one covers a different
+There are 7 audits that check for accessible names, each one covers a different
 set of [ARIA roles](https://www.w3.org/TR/wai-aria-practices-1.1/#aria_ex). Elements
 that have any of the following ARIA roles but don't have accessible names will cause this audit to fail:
 - `aria-command-name` - `button`, `link`, `menuitem`
