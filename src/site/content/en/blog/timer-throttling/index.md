@@ -73,7 +73,7 @@ This happens to timers that are scheduled when _any_ of the following is true:
 - WebRTC is in use. Specifically, there's an `RTCPeerConnection` with an 'open' `RTCDataChannel` or a 'live' `MediaStreamTrack`.
 - The page is making noises. This can be from any of the sound-making APIs, but a silent audio track doesn't count.
 
-The timer isn't throttled, unless the requested timeout is less than 4ms, and the chain count is 5 or greater, in which case the timeout is set to 4ms. This isn't new – browsers have done this for many years.
+The timer isn't throttled, unless the requested timeout is less than 4ms, and the chain count is 5 or greater, in which case the timeout is set to 4ms. This isn't new, browsers have done this for many years.
 
 ### Throttling
 
