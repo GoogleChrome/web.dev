@@ -4,7 +4,7 @@ title: Enabling Shared Array Buffer
 authors:
   - jakearchibald
 description: >
-  The way to enable Shared Array Buffer is changing, but the good news is it works cross-browser and cross-platform.
+  Browsers are imposing new requirements on SharedArrayBuffer usage. Learn how to enable it cross-browser and cross-platform.
 origin_trial:
   url: https://developers.chrome.com/origintrials/#/view_trial/-TODO-CHANGE-THIS
 date: 2020-12-01
@@ -28,7 +28,7 @@ It's fair to say `SharedArrayBuffer` has had a bit of a rough landing on the web
 
 ## In brief
 
-- `SharedArrayBuffer` will arrive in Android Chrome 88, but only for cross-origin isolated pages (details below).
+- `SharedArrayBuffer` is supported in Firefox 79+, and will arrive in Android Chrome 88. However, it's only available to page that are 'cross-origin isolated' (details below).
 - `SharedArrayBuffer` is currently available in desktop Chrome, but from Chrome 91 it will be limited to cross-origin isolated pages.
 
 You can make a page _cross-origin isolated_ by serving the page with these headers:
@@ -38,7 +38,9 @@ Cross-Origin-Embedder-Policy: require-corp
 Cross-Origin-Opener-Policy: same-origin
 ```
 
-Once you do this, your page will not be able to load cross-origin content unless the [`Cross-Origin-Resource-Policy` header](<https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP)>) allows it, or if it's requested using [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), and the usual `Access-Control-Allow-*` headers allow it.
+Once you do this, your page will not be able to load cross-origin content unless the [`Cross-Origin-Resource-Policy` header](<https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP)>) allows it, or via the existing [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) dance that you know and love (`Access-Control-Allow-*` headers and so forth).
+
+There's also a [reporting API](/coop-coep/#observe-issues-using-the-reporting-api), so you can gather data on requests that failed as a result of Cross-Origin-Embedder-Policy and Cross-Origin-Opener-Policy.
 
 If you don't think you can make these changes in time for Chrome 91, you can [register for an origin trial](#register-for-ot) to retain current desktop Chrome behavior until Chrome 93.
 
@@ -74,7 +76,9 @@ We worked around these legacy APIs by preventing content from entering the webpa
 
 With these mitigations in place, we reintroduced `SharedArrayBuffer` in Chrome 68 (July 2018), but only on desktop. The extra process requirements meant we couldn't do the same on mobile devices. It was also noted that Chrome's solution was incomplete, as we were only blocking 'incorrect' data formats, whereas it's possible (although unusual) that valid CSS/JS/images at guessable URLs can contain private data.
 
-Web standards folks got together to come up with a more complete solution. The solution was to give pages a way to say "I hereby relinquish my ability to bring other-origin content into this process without their opt-in". This declaration is done via [COOP and COEP headers](/coop-coep/) served with the page. The browser enforces that, and in exchange the page gains access to `SharedArrayBuffer` and other APIs with similar powers. Other origins can opt-in to content embedding via [`Cross-Origin-Resource-Policy`](<https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP)>) or [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
+Web standards folks got together to come up with a more complete cross-browser solution. The solution was to give pages a way to say "I hereby relinquish my ability to bring other-origin content into this process without their opt-in". This declaration is done via [COOP and COEP headers](/coop-coep/) served with the page. The browser enforces that, and in exchange the page gains access to `SharedArrayBuffer` and other APIs with similar powers. Other origins can opt-in to content embedding via [`Cross-Origin-Resource-Policy`](<https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP)>) or [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
+
+Firefox was the first to ship `SharedArrayBuffer` with this restriction, in version 79 (July 2020).
 
 Then, in December 2020, I wrote this article, and you read it. Hello.
 
