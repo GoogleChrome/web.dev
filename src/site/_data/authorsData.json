@@ -1638,5 +1638,11 @@
     },
     "country": "US",
     "github": "sbingler"
+  },
+  "soeren": {
+    "name": {
+      "given": "TODO",
+      "family": "TODO"
+    }
   }
 }
