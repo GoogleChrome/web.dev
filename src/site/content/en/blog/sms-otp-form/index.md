@@ -176,7 +176,7 @@ of codes from them easier and more reliable. Associating OTP codes with
 websites makes it harder to trick users into providing a code to malicious sites.
 
 {% Aside %}
-More fine grained rules are:
+The precise rules are:
 * The message begins with (optional) human-readable text that contains a four to
   ten character alphanumeric string with at least one number, leaving the last
   line for the URL and the OTP.
