@@ -5,7 +5,7 @@ subhead: |
 authors:
   - reillyg
 date: 2018-12-20
-updated: 2020-12-02
+updated: 2020-12-03
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
@@ -622,13 +622,13 @@ udev.
 ### Android
 
 The Android platform is based on Linux but does not require any modification to
-system configuration. By default any device which does not have a driver built
+system configuration. By default any device that does not have a driver built
 into the operating system is available to the browser. Developers should be
 aware however that users will encounter an additional step when connecting to
-the device. Once the users selects a device in response to a call to
+the device. Once a user selects a device in response to a call to
 [`requestDevice()`], Android will display a prompt asking whether to allow
-Chrome to access it. This prompt also reappears if the user returns to a website
-which already has permission to connect to a device and the website calls
+Chrome to access it. This prompt also reappears if a user returns to a website
+that already has permission to connect to a device and the website calls
 [`open()`].
 
 In addition more devices will be accessible on Android than on desktop Linux
