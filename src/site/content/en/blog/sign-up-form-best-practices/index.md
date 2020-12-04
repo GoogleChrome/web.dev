@@ -100,7 +100,7 @@ convince others on your web team, use [analytics](#analytics-rum) to show the im
 options.
 
 <figure class="w-figure">
-  <img src="images/obvious-sign-in.png" alt="Two screenshots of a mockup 
+  <img src="images/obvious-sign-in.jpg" alt="Two screenshots of a mockup 
   ecommerce website viewed on an Android phone. The one on the left uses an icon for the 
   sign-in link that's somewhat ambiguous; the one on the right simply says 'Sign in'">
   <figcaption class="w-figcaption">Make sign-in obvious. An icon may be ambiguous, but a <b>Sign 
@@ -116,7 +116,7 @@ common pattern now, and your users are likely to understand it, but you can use
 {% endAside %}
 
 <figure class="w-figure">
-  <img src="images/gmail-sign-up-create-account.png" alt="Screenshots of sign-in for Gmail: one page, 
+  <img src="images/gmail-sign-up-create-account.jpg" alt="Screenshots of sign-in for Gmail: one page, 
   showing Sign in button, when clicked leads to form that also has a Create account link.">
   <figcaption class="w-figcaption">The Gmail sign-in page has a link to create an account.<br>
     At window sizes larger than shown here, Gmail displays a <b>Sign in</b> link and a <b>Create an 
