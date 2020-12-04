@@ -15,7 +15,6 @@ tags:
   - progressive-web-apps
 authors:
   - rezakazemi
-  - christiankrammer
 ---
 
 <div class="w-stats">
@@ -34,7 +33,7 @@ authors:
 </div>
 
 {% Aside %}
-  Reza and Christian are product managers at Corel.
+  Reza is a product manager at Corel.
 {% endAside %}
 
 Corel Corporation's Gravit Designer is a powerful vector design tool. With roots
@@ -63,6 +62,12 @@ access](/file-system-access/) are particularly relevant for us),
 and most importantly, greater visibility to our web apps for more users.
 Students and educators can install the Chrome OS version of Gravit Designer with
 ease, and enjoy the same powerful features regardless of platform.
+
+<figure class="w-figure">
+  <img class="w-screenshot w-screenshot--filled" 
+       src="dark.png" 
+       alt="A screenshot of Gravit Designer.">
+</figure>
 
 ## Engineering challenges
 
