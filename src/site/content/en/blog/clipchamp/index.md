@@ -15,7 +15,7 @@ tags:
   - case-study
   - progressive-web-apps
 authors:
-  - soeren
+  - sorenbalko
 ---
 
 <div class="w-stats">
