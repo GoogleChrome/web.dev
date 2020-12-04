@@ -115,10 +115,10 @@ The [workbox-window module](https://developers.google.com/web/tools/workbox/modu
 
 ## Next steps
 
-For patterns of window and web worker communication check out: [Use web workers to run JavaScript off the browser's main thread](https://web.dev/off-main-thread/).
-
 The rest of this series focuses on patterns for window and service worker communication:
 
 - [Imperative caching guide](/imperative-caching-guide): Calling a service worker from the page to cache resources in advance (e.g. in prefetching scenarios).
 - [Broadcast updates](/broadcast-updates-guide/): Calling the page from the service worker to inform about important updates (e.g. a new version of the webapp is available).
 - [Two-way communication](/two-way-communication-guide/): Delegating a task to a service worker (e.g. a heavy download), and keeping the page informed on the progress.
+
+For patterns of window and web worker communication check out: [Use web workers to run JavaScript off the browser's main thread](https://web.dev/off-main-thread/).
