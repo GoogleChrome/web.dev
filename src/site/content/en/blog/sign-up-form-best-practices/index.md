@@ -43,6 +43,19 @@ Here is an example of a very simple sign-up form that demonstrates all of the be
   height: 700
 } %}
 
+{% Aside %}
+This post is about form best practices. 
+
+It does not explain how to implement sign-up via a third-party identity provider (federated login) 
+or show how to build backend services to authenticate users, store credentials, and manage accounts. 
+
+[Integrating Google Sign-In into your web app](https://developers.google.com/identity/sign-in/web/sign-in) 
+explains how to add federated login to your sign-up options. 
+
+[12 best practices for user 
+account, authorization and password management](https://cloud.google.com/blog/products/gcp/12-best-practices-for-user-account) outlines core back-end principles for managing user accounts. 
+{% endAside %}
+
 ## Checklist
 
 * [Avoid sign-in if you can](#no-forced-sign-in).
@@ -63,15 +76,7 @@ Here is an example of a very simple sign-up form that demonstrates all of the be
 * [Test in the field as well as the lab](#analytics-rum).
 * [Test on a range of browsers, devices and platforms](#test-platforms).
 
-{% Aside %}
-This post is about form best practices. 
 
-It does not explain how to implement sign-up via a third-party identity provider (federated login) 
-or show how to build backend services to authenticate users, store credentials, and manage accounts. 
-[Integrating Google Sign-In into your web app](https://developers.google.com/identity/sign-in/web/sign-in) 
-explains how to add federated login to your sign-up options. [12 best practices for user 
-account, authorization and password management](https://cloud.google.com/blog/products/gcp/12-best-practices-for-user-account) outlines core back-end principles for managing user accounts. 
-{% endAside %}
 
 ## Avoid sign-in if you can {: #no-forced-sign-in }
 
@@ -281,7 +286,7 @@ You should also provide your users with access to their account login history, s
 and when a login happened. 
 
 <figure class="w-figure">
-  <img src="images/gmail-activity.png" alt="Gmail account activity page">
+  <img src="images/gmail-activity.jpg" alt="Gmail account activity page">
   <figcaption class="w-figcaption"><a href="https://support.google.com/mail/answer/45938?hl=en-GB" 
     title="Find out how to view Gmail account activity.">Gmail account activity page</a>.</figcaption>
 </figure>
@@ -314,7 +319,7 @@ However, you should also enable users to log in via a third party identity provi
 federated login.
 
 <figure class="w-figure">
-  <img src="images/federated-login.png" alt="WordPress login page">
+  <img src="images/federated-login.jpg" alt="WordPress login page">
   <figcaption class="w-figcaption">WordPress login page, with Google and Apple login options.</figcaption>
 </figure>
 
@@ -344,7 +349,7 @@ Many users share devices and swap between accounts using the same browser. Wheth
 federated login or not, you should make account switching simple. 
 
 <figure class="w-figure">
-  <img src="images/gmail-account-switching.png" alt="Gmail, showing account switching">
+  <img src="images/gmail-account-switching.jpg" alt="Gmail, showing account switching">
   <figcaption class="w-figcaption">Account switching on Gmail.</figcaption>
 </figure>
 
