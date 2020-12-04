@@ -8,7 +8,7 @@ hero: hero.png
 alt: Gravit Designer's logo.
 description: >
   PWA users are also 24% more active than all other install types,
-  become repeats users 31% more than all other platforms, and more.
+  become repeat users 31% more than all other platforms, and more.
 tags:
   - blog
   - case-study
