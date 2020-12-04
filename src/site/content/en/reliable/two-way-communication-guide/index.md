@@ -3,6 +3,7 @@ layout: post
 title: "Two way communication"
 authors:
   - demianrenzulli
+  - andrewguan
 date: 2020-12-04
 description: |
   How establish a two-way communication channel between the page and the service worker.
