@@ -40,7 +40,8 @@
         "instant-navigation-experiences",
         "app-shell-ux-with-service-workers",
         "adaptive-loading-with-service-workers",
-        "offline-ux-design-guidelines"
+        "offline-ux-design-guidelines",
+        "extending-workbox"
       ]
     }
   ]
