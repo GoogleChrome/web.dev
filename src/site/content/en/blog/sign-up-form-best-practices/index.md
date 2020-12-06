@@ -87,7 +87,7 @@ The best sign-up form is no sign-up form!
 
 By asking a user to create an account, you come between them and what they're trying to achieve. 
 You're asking a favor, and asking the user to trust you with personal data. Every password and item 
-of data you store carries privacy and security 'data debt', becoming a cost and liability for 
+of data you store carries privacy and security "data debt", becoming a cost and liability for 
 your site. 
 
 If the main reason you ask users to create an account is to save information between navigations or 
@@ -98,8 +98,8 @@ cart abandonment. You should [make guest checkout the default](/payment-and-addr
 ## Make sign-in obvious {: #obvious-account-creation}
 
 Make it obvious how to create an account on your site, for example with a **Login** or **Sign in** 
-button at the top right of the page. Avoid using an ambiguous icon or vague wording ('Get on board!', 
-'Join us') and don't relegate login to a navigational menu. The usability expert Steve Krug summed up 
+button at the top right of the page. Avoid using an ambiguous icon or vague wording ("Get on board!", 
+"Join us") and don't hide login in a navigational menu. The usability expert Steve Krug summed up 
 this approach to website usability: [Don't make me think!](https://uxplanet.org/dont-make-me-think-20-wise-thoughts-about-usability-from-steve-krug-876b563f1d63) If you need to 
 convince others on your web team, use [analytics](#analytics-rum) to show the impact of different 
 options.
@@ -186,8 +186,8 @@ As with federated login, this has the added benefit that you don't have to manag
 Whatever approach you take to user identity, you'll need to make a careful decision about session 
 length: how long the user remains logged in, and what might cause you to log them out.
 
-There's no one hard-and-fast rule, but you need to consider mobile versus desktop, and whether 
-users are sharing on desktop, or sharing devices. 
+Consider whether your users are on mobile or desktop, and whether 
+they are sharing on desktop, or sharing devices. 
 
 {% Aside %}
 You can get around some of the issues of shared devices by enforcing re-authentication for sensitive 
