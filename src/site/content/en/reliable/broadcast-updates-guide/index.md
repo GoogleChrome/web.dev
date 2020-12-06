@@ -8,9 +8,8 @@ date: 2020-12-04
 description: | 
   How service workers can proactively communicate with the page to inform about certain events.
 tags:
-  - blog
   - service-worker
-  - web-worker
+  - offline
 ---
 
 In some scenarios the service worker might need to proactively communicate with any of the active
@@ -36,10 +35,9 @@ browser APIs and the [Workbox library](https://developers.google.com/web/tools/w
 
 ## Production cases {: #production-cases }
 
-### Tinder
+### Tinder {: #tinder }
 
-Tinder PWA uses [Workbox
-Window](https://developers.google.com/web/tools/workbox/modules/workbox-window) to listen to
+Tinder PWA uses [`workbox-window`](https://developers.google.com/web/tools/workbox/modules/workbox-window) to listen to
 important service worker lifecycle moments from the page (“installed”, “controlled” and
 “activated”). That way when a new service worker comes into play, it shows an **"Update Available"**
 banner, so that they can refresh the PWA and access the latest features:
@@ -51,7 +49,7 @@ banner, so that they can refresh the PWA and access the latest features:
   <figcaption class="w-figcaption">In the Tinder PWA, the service worker tells the page that a new version is ready, and the page shows users a “Update Available” banner.</figcaption>
 </figure>
 
-### Squoosh
+### Squoosh {: #squoosh }
 
 In the [Squoosh PWA](https://squoosh.app/), when the service worker has cached all of the necessary
 assets to make it work offline, it sends a message to the page to show a “Ready to work offline”
@@ -61,20 +59,20 @@ toast, letting the user know about the feature:
   <img src="squoosh-screenshot.png"
        width="550"
        alt="A screenshot of Squoosh webapp 'Ready to work offline' functionality.">
-  <figcaption class="w-figcaption">In the Sqoosh PWA the service worker broadcasts an update to the page when cache is ready, and the page displays “Ready to work offline” toast.
+  <figcaption class="w-figcaption">In the Squoosh PWA the service worker broadcasts an update to the page when cache is ready, and the page displays “Ready to work offline” toast.
 </figcaption>
 </figure>
 
-## Using Workbox
+## Using Workbox {: #using-workbox }
 
-### Listen to service worker lifecycle events
+### Listen to service worker lifecycle events {: #listen-to-service-worker-lifecycle-events }
 
-Workbox Window provides a straightforward interface to listen to [important service worker lifecycle
+`workbox-window` provides a straightforward interface to listen to [important service worker lifecycle
 events](https://developers.google.com/web/tools/workbox/modules/workbox-window#important_service_worker_lifecycle_moments).
 Under the hood, the library uses client-side APIs like
-[onupdatefound](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/onupdatefound)
-and [onstatechange](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker/onstatechange)
-and provides higher level event listeners in the Workbox Window object, making it easier for the
+[`updatefound`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/onupdatefound)
+and [vstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker/onstatechange)
+and provides higher level event listeners in the `workbox-window` object, making it easier for the
 user to consume these events.
 
 The following page code lets you detect every time a new version of the service worker is installed,
@@ -92,10 +90,10 @@ wb.addEventListener('installed', (event) => {
 wb.register();
 ```
 
-### Inform the page of changes in cache data
+### Inform the page of changes in cache data {: #inform-the-page-of-changes-in-cache-data }
 
 The Workbox package
-[workbox-broadcast-update](https://developers.google.com/web/tools/workbox/modules/workbox-broadcast-update)
+[`workbox-broadcast-update`](https://developers.google.com/web/tools/workbox/modules/workbox-broadcast-update)
 provides a standard way of notifying window clients that a cached response has been updated. This is
 most commonly used along with the [StaleWhileRevalidate
 strategy](https://developers.google.com/web/tools/workbox/modules/workbox-strategies#stale-while-revalidate).
@@ -136,12 +134,12 @@ navigator.serviceWorker.addEventListener('message', async (event) => {
 });
 ```
 
-## Using browser APIs
+## Using browser APIs {: #using-browser-apis }
 
 If the functionality that Workbox provides is not enough for your needs, use the following browser
 APIs to implement **“broadcast updates”**:
 
-### Broadcast Channel API
+### Broadcast Channel API {: #broadcast-channel-api }
 
 The service worker creates a [BroadcastChannel
 object](https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel) and starts sending
@@ -151,11 +149,11 @@ messages to it. Any context (e.g. page) interested in receiving these messages c
 To inform the page when a new service worker is installed, use the following code:
 
 ```javascript
-//Create Broadcast Channel to send messages to the page
+// Create Broadcast Channel to send messages to the page
 const broadcast = new BroadcastChannel('sw-update-channel');
 
 self.addEventListener('install', function (event) {
-  //Inform the page every time a new service worker is installed
+  // Inform the page every time a new service worker is installed
   broadcast.postMessage({type: 'CRITICAL_SW_UPDATE'});
 });
 ```
@@ -163,12 +161,12 @@ self.addEventListener('install', function (event) {
 The page listens to these events by subscribing to the `sw-update-channel`:
 
 ```javascript
-//Create Broadcast Channel and listen to messages sent to it
+// Create Broadcast Channel and listen to messages sent to it
 const broadcast = new BroadcastChannel('sw-update-channel');
 
 broadcast.onmessage = (event) => {
   if (event.data && event.data.type === 'CRITICAL_SW_UPDATE') {
-    //Show “update to refresh” banner to the user.
+    // Show “update to refresh” banner to the user.
   }
 };
 ```
@@ -176,19 +174,19 @@ broadcast.onmessage = (event) => {
 This is a simple technique, but its limitation is browser support: at the moment of this writing,
 [Safari doesn't support this API](https://caniuse.com/?search=Broadcastchannel).
 
-### Client API
+### Client API {: #client-api }
 
 The [Client API](https://developer.mozilla.org/en-US/docs/Web/API/Client) provides a straightforward
 way of communicating with multiple clients from the service worker by iterating over an array of
-[Client objects](https://developer.mozilla.org/en-US/docs/Web/API/Client).
+[`Client`](https://developer.mozilla.org/en-US/docs/Web/API/Client) objects.
 
 Use the following service worker code to send a message to the last focused tab:
 
 ```javascript
-//Obtain an array of Window client objects
+// Obtain an array of Window client objects
 self.clients.matchAll(options).then(function (clients) {
   if (clients && clients.length) {
-    //Respond to last focused tab
+    // Respond to last focused tab
     clients[0].postMessage({type: 'MSG_ID'});
   }
 });
@@ -197,10 +195,10 @@ self.clients.matchAll(options).then(function (clients) {
 The page implements a message handler to intercept these messages:
 
 ```javascript
-//listen to messages
+// Listen to messages
 navigator.serviceWorker.onmessage = (event) => {
      if (event.data && event.data.type === 'MSG_ID') { 
-         //process response
+         // Process response
    } 
 };
 ```
@@ -209,7 +207,7 @@ Client API is a great option for cases like broadcasting information to multiple
 API is supported by all major browsers, but not all of its methods are. Check browser support before
 using it.
 
-### Message Channel
+### Message Channel {: #message-channel }
 
 [Message Channel](https://developer.mozilla.org/en-US/docs/Web/API/Channel_Messaging_API) requires
 an initial configuration step, by passing a port from the page to the service worker, to establish a
@@ -219,7 +217,7 @@ port to the service worker, via the `postMessage()` interface:
 ```javascript
 const messageChannel = new MessageChannel();
 
-//Init port
+// Init port
 navigator.serviceWorker.controller.postMessage({type: 'PORT_INITIALIZATION'}, [
   messageChannel.port2,
 ]);
@@ -228,7 +226,7 @@ navigator.serviceWorker.controller.postMessage({type: 'PORT_INITIALIZATION'}, [
 The page listens to messages by implementing an “onmessage” handler on that port:
 
 ```javascript
-//Listen to messages
+// Listen to messages
 messageChannel.port1.onmessage = (event) => {
   // Process message
 };
@@ -237,7 +235,7 @@ messageChannel.port1.onmessage = (event) => {
 The service worker receives the port and saves a reference to it:
 
 ```javascript
-//Initialize
+// Initialize
 let communicationPort;
 
 self.addEventListener('message', (event) => {
@@ -251,14 +249,14 @@ From that point it can send messages to the page, by calling `postMessage()` in 
 port:
 
 ```javascript
-//Communicate
+// Communicate
 communicationPort.postMessage({type: 'MSG_ID' });
 ```
 
 `MessageChannel` might be more complex to implement, due to the need of initializing ports, but it's
 supported by [all major browsers](https://caniuse.com/?search=channel%20messaging).
 
-## Next steps
+## Next steps {: #next-steps }
 
 In this guide we explored one particular case of Window to service worker communication:
 **"broadcast updates"**. The examples explored include listening to important service worker
@@ -273,10 +271,9 @@ For more patterns of Window and service worker communication check out:
 - [Two-way communication](/two-way-communication-guide): Delegating a task to a service worker (e.g.
   a heavy download), and keeping the page informed on the progress.
 
-## Additional resources
+## Additional resources {: #additional-resources }
 
-- [Workbox Window](https://developers.google.com/web/tools/workbox/modules/workbox-window)
-- [Workbox Broadcast
-  Update](https://developers.google.com/web/tools/workbox/modules/workbox-broadcast-update)
+- [workbox-window](https://developers.google.com/web/tools/workbox/modules/workbox-window)
+- [workbox-broadcast-update](https://developers.google.com/web/tools/workbox/modules/workbox-broadcast-update)
 - [Workbox 4: Implementing refresh-to-update-version flow using the workbox-window
   module](https://medium.com/google-developer-experts/workbox-4-implementing-refresh-to-update-version-flow-using-the-workbox-window-module-41284967e79c)

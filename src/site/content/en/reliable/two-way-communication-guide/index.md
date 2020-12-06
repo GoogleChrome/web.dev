@@ -8,9 +8,8 @@ date: 2020-12-04
 description: | 
     How establish a two-way communication channel between the page and the service worker. 
 tags:
-  - blog
   - service-worker
-  - web-worker
+  - offline
 ---
 
 In some cases, a web app might need to establish a **two-way** communication channel between the
@@ -33,13 +32,12 @@ some advanced cases.
        alt="Diagram showing a service worker and the page exchanging messages.">
 </figure>
 
-## Using Workbox
+## Using Workbox {: #using-workbox }
 
-[Workbox-window](https://developers.google.com/web/tools/workbox/modules/workbox-window) is a set of
+[`workbox-window`](https://developers.google.com/web/tools/workbox/modules/workbox-window) is a set of
 modules of the [Workbox library](https://developers.google.com/web/tools/workbox) that are intended
-to run in the window context. The [Workbox
-class](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-window.Workbox)
-provides a `messageSW()` method to send a message to the instance's registered service worker and
+to run in the window context. The [`Workbox`
+](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-window.Workbox) class provides a `messageSW()` method to send a message to the instance's registered service worker and
 await a response.
 
 The following page code creates a new `Workbox` instance and sends a message to the service worker
@@ -77,7 +75,7 @@ support](https://caniuse.com/mdn-api_messagechannel_port1) this API has.
        alt="Diagram showing two-way communication between page and service worker, using Workbox Window.">
 </figure>
 
-## Using Browser APIs
+## Using Browser APIs {: #using-browser-apis }
 
 If the Workbox library is not enough for your needs, there are several lower-level APIs available to
 implement **“two-way”** communication between pages and service workers. They have some similarities
@@ -86,7 +84,7 @@ and differences:
 Similarities:
 
 - In all cases the communication starts on one end via the `postMessage()` interface and is received
-  on the other end by implementing an `onmessage` handler.
+  on the other end by implementing a `message` handler.
 - In practice, all the available APIs allow us to implement the same use cases, but some of them
   might simplify development in some scenarios.
 
@@ -103,7 +101,7 @@ Differences:
        alt="Diagram showing two-way communication between page and service worker, and the available browser APIs.">
 </figure>
 
-### Broadcast Channel API
+### Broadcast Channel API {: #broadcast-channel-api }
 
 The [Broadcast Channel API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API)
 allows basic communication between browsing contexts via [BroadcastChannel
@@ -149,12 +147,10 @@ The disadvantage is that, at the moment of this writing, the API has support fro
 and Edge, but other browsers, like Safari, [don't support it
 yet](https://caniuse.com/?search=broadcastchannel).
 
-### Client API
+### Client API {: #channel-api }
 
 The [Client API](https://developer.mozilla.org/en-US/docs/Web/API/Client) allows you to obtain a
-reference to all the [WindowClient
-objects](https://developer.mozilla.org/en-US/docs/Web/API/WindowClient) representing the active tabs
-that the service worker is controlling.
+reference to all the [`WindowClient`](https://developer.mozilla.org/en-US/docs/Web/API/WindowClient) objects representing the active tabs that the service worker is controlling.
 
 Since the page is controlled by a single service worker, it listens to and sends messages to the
 active service worker directly via the `serviceWorker` interface:
@@ -185,10 +181,10 @@ self.addEventListener('message', (event) => {
 ```
 
 To communicate back with any of its clients, the service worker obtains an array of
-[WindowClient](https://developer.mozilla.org/en-US/docs/Web/API/WindowClient) objects by executing
+[`WindowClient`](https://developer.mozilla.org/en-US/docs/Web/API/WindowClient) objects by executing
 methods such as
-[Clients.matchAll()](https://developer.mozilla.org/en-US/docs/Web/API/Clients/matchAll) and
-[Clients.get()](https://developer.mozilla.org/en-US/docs/Web/API/Clients/get). Then it can
+[`Clients.matchAll()`](https://developer.mozilla.org/en-US/docs/Web/API/Clients/matchAll) and
+[`Clients.get()`](https://developer.mozilla.org/en-US/docs/Web/API/Clients/get). Then it can
 `postMessage()` any of them:
 
 ```javascript
@@ -218,14 +214,13 @@ this API is synchronizing data across documents via a service worker. Check out 
 HTTP 203](https://www.youtube.com/watch?v=9UNwHmagedE&feature=youtu.be&t=697) to know more about it.
 {% endAside %}
 
-### Message Channel
+### Message Channel {: #message-channel }
 
 [Message Channel](https://developer.mozilla.org/en-US/docs/Web/API/Channel_Messaging_API) requires
 defining and passing a port from one context to another to establish a **two-way** communication
 channel.
 
-To initialize the channel, the page instantiates a [MessageChannel
-object](https://developer.mozilla.org/en-US/docs/Web/API/MessageChannel/MessageChannel) and uses it
+To initialize the channel, the page instantiates a [`MessageChannel`](https://developer.mozilla.org/en-US/docs/Web/API/MessageChannel/MessageChannel) object and uses it
 to send a port to the registered service worker. The page also implements an `onmessage` listener on
 it to receive messages from the other context:
 
@@ -269,14 +264,14 @@ communicationPort.postMessage({type: 'MSG_ID'});
 `MessageChannel` is currently supported by [all major
 browsers](https://caniuse.com/?search=channel).
 
-### Advanced APIs: Background Sync and Background Fetch
+### Advanced APIs: Background Sync and Background Fetch {: #advanced-apis:-background-sync-and-background-fetch }
 
 In this guide we explored ways of implementing **two-way** communication techniques, for relatively
 simple cases, like passing a string message describing the operation to perform, or a list of URLs
 to cache from one context to the other. In this section we'll explore two APIs to handle specific
 scenarios: lack of connectivity and long downloads.
 
-#### Background Sync
+#### Background Sync {: #background-sync }
 
 A chat app might want to make sure that messages are never lost due to bad connectivity. The
 [Background Sync API](https://developers.google.com/web/updates/2015/12/background-sync) lets you
@@ -318,12 +313,12 @@ the user via a web push notification:
        alt="Diagram showing a page passing a port to a service worker, to establish two-way communication.">
 </figure>
 
-{% Aside %} Check out [this guide](https://web.dev/resilient-search-experiences/) to see this
-feature in your site using [Workbox Background
+{% Aside %} Check out [Resilient search experiences
+](https://web.dev/resilient-search-experiences/) to learn how to implement this feature using [Workbox Background
 Sync](https://developers.google.com/web/tools/workbox/modules/workbox-background-sync). {% endAside
 %}
 
-#### Background Fetch
+#### Background Fetch {: #background-fetch }
 
 For relatively short bits of work like sending a message, or a list of URLs to cache, the options
 explored so far are a good choice. If the task takes too long the browser will kill the service
@@ -384,7 +379,7 @@ guide](https://developers.google.com/web/updates/2018/12/background-fetch), whic
 [example podcast app](https://bgfetch-http203.glitch.me/) along with its [Glitch
 code](https://glitch.com/edit/#!/bgfetch-http203). {% endAside %}
 
-## Next steps
+## Next steps {: #next-steps }
 
 In this guide we explored the most general case of communication between page and service workers
 (bidirectional communication).
