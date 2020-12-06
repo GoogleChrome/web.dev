@@ -1,6 +1,6 @@
 ---
 layout: post 
-title: "Imperative caching" 
+title: "Imperative caching guide" 
 authors:
   - demianrenzulli
   - andrewguan 
@@ -87,8 +87,7 @@ wb.register();
 ```
 
 Then you can directly send the message declaratively, without the hassle of the getting the
-registration, checking for activation or thinking about the underlying communication API, such as
-this:
+registration, checking for activation, or thinking about the underlying communication API:
 
 ```javascript
 wb.messageSW({"type": "PREFETCH", "payload": {"urls": ["/data1.json", "data2.json"]}}); });
@@ -160,7 +159,7 @@ There are different ways of implementing prefetching in sites:
   resource beyond this limit.
 
 For relatively simple prefetching scenarios, like prefetching documents, or specific assets (JS,
-CSS, etc), those techniques are the best approach.
+CSS, etc.), those techniques are the best approach.
 
 If additional logic is required, for example, parsing the prefetch resource (a JSON file or page) in
 order to fetch its internal URLs, it's more appropriate to delegate this task entirely to the

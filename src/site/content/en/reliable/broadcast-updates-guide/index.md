@@ -1,6 +1,6 @@
 ---
 layout: post 
-title: "Broadcast Updates" 
+title: "Broadcast updates to pages with service workers" 
 authors:
   - demianrenzulli
   - andrewguan 
@@ -30,11 +30,11 @@ tabs it controls to inform of a certain event. Examples include:
 </figure>
 
 We'll call these types of use cases where the service worker doesn't need to receive a message from
-the page to start a communication **“broadcast updates”**. In this article we'll review different
+the page to start a communication **“broadcast updates”**. In this guide we'll review different
 ways of implementing this type of communication between pages and service workers, by using standard
 browser APIs and the [Workbox library](https://developers.google.com/web/tools/workbox).
 
-## Production cases
+## Production cases {: #production-cases }
 
 ### Tinder
 
@@ -136,7 +136,7 @@ navigator.serviceWorker.addEventListener('message', async (event) => {
 });
 ```
 
-## Using Browser APIs
+## Using browser APIs
 
 If the functionality that Workbox provides is not enough for your needs, use the following browser
 APIs to implement **“broadcast updates”**:
@@ -225,7 +225,7 @@ navigator.serviceWorker.controller.postMessage({type: 'PORT_INITIALIZATION'}, [
 ]);
 ```
 
-The page listens to message by implementing an “onmessage” handler on that port:
+The page listens to messages by implementing an “onmessage” handler on that port:
 
 ```javascript
 //Listen to messages
@@ -262,7 +262,7 @@ supported by [all major browsers](https://caniuse.com/?search=channel%20messagin
 
 In this guide we explored one particular case of Window to service worker communication:
 **"broadcast updates"**. The examples explored include listening to important service worker
-lifecycle events, and communicating the page about changes in content or cached data. You can think
+lifecycle events, and communicating to the page about changes in content or cached data. You can think
 of more interesting use cases where the service worker proactively communicates with the page,
 without receiving any message previously.
 

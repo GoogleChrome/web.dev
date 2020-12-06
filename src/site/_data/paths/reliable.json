@@ -45,7 +45,7 @@
       ]
     },
     {
-      "title": "Window and worker communication",
+      "title": "Window to worker communication (and vice versa)",
       "pathItems": [
         "workers-overview",
         "imperative-caching-guide",
