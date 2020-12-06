@@ -5,7 +5,7 @@ authors:
   - samdutton
 scheduled: true
 date: 2020-11-21
-updated: 2020-12-02
+updated: 2020-12-06
 description: Maximize conversions by helping your users complete address and payment forms as quickly and easily as possible.
 hero: images/hero.jpg
 thumbnail: images/thumbnail.jpg
@@ -384,7 +384,7 @@ achieves this.
    <video controls autoplay muted class="w-screenshot" poster="images/john-lewis.png">
      <source src="https://samdutton.com/johnlewis.com.mp4" type="video/mp4">
    </video>
-  <figcaption class="w-figcaption">Show checkout progress</figcaption>
+  <figcaption class="w-figcaption">Show checkout progress.</figcaption>
 </figure>
 
 You need to maintain momentum! For each step towards payment, use page headings and descriptive 
@@ -394,7 +394,7 @@ button values that make it clear what needs to be done now, and what checkout st
    <video controls autoplay loop muted class="w-screenshot">
      <source src="https://samdutton.com/address-form-save.mp4" type="video/mp4">
    </video>
-  <figcaption class="w-figcaption">Give form buttons meaningful names.</figcaption>
+  <figcaption class="w-figcaption">Give form buttons meaningful names that show what's next.</figcaption>
 </figure>
 
 Use the `enterkeyhint` attribute on form inputs to set the mobile keyboard enter key label. For 
