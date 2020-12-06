@@ -297,6 +297,11 @@ Modern browsers also do basic validation for inputs with type `email` or `url`.
   height: 250
 } %}
 
+{% Aside %}
+Add the `multiple` attribute to an input with `type="email"` to enable built-in validation for 
+multiple comma-separated email addresses in a single input.
+{% endAside %}
+
 On form submission, browsers automatically set focus on fields with problematic or missing required 
 values. No JavaScript required! 
 
