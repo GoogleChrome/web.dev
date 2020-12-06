@@ -104,7 +104,7 @@ range of users on mobile and desktop.
 
 In this step you'll add CSS to make the form easier to use.
 
-Copy and paste all the following CSS into your own `style.css` file:
+Copy and paste all the following CSS into `css/main.css` file:
 
 {% Glitch {
   id: 'sign-up-form-codelab-2',
@@ -114,11 +114,11 @@ Copy and paste all the following CSS into your own `style.css` file:
 } %}
 
 Click **View App** to see your styled sign-up form. Then click **View Source** to return to 
-`style.css`.
+`css/main.css`.
 
 * Does this CSS work for a variety of browsers and screen sizes?
 
-* Try adjusting `padding`, `margin` and `font-size` to suit your test devices.
+* Try adjusting `padding`, `margin`, and `font-size` to suit your test devices.
 
 * The CSS is mobile-first. [Media queries](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries) 
 are used to apply CSS rules for viewports that are at least `400px` wide, and then again for 
@@ -175,7 +175,7 @@ The `type` values do a lot:
 Try submitting the form with an empty field. The browser won't submit the form, and it prompts to 
 complete missing data and sets focus. That's because you added the `require` attribute to all the 
 inputs. Now try submitting with a password that has less than eight characters. The browser warns that 
-the password isn't long enough and sets focus on the password input. The same works for `pattern` 
+the password isn't long enough and sets focus on the password input because of the `minlength="8"` attribute. The same works for `pattern` 
 (used for the name input) and other [validation constraints](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation). The browser does all this automatically, without needing any extra code.
 
 Using the `autocomplete` value `name` for the **Full name** input makes sense, but what about the 
@@ -189,7 +189,7 @@ offer to store this value as the password for the current site. You can then use
 
 {% Aside %}
 [Sign-in form best practices](/sign-in-form-best-practices) has more tips for improving form design, 
-layout and accessibility.
+layout, and accessibility.
 {% endAside %}
 
 
@@ -197,13 +197,13 @@ layout and accessibility.
 
 With the form as it is, did you notice anything wrong with the password input?
 
-Two problems:
+There are two issues:
 * There's no way to know if there are constraints on the password value.
 * You can't see the password to check if you got it right.
 
 Don't make users guess!
 
-Update the password section of `index.html`:
+Update the password section of `index.html` with the following code:
 
 ```html
 <section>
@@ -252,7 +252,7 @@ Here's how your form should look at this point:
 
 ## Going further
 
-We won't show them here, but several important features are still missing:
+This codelab doesn't cover several important features:
 
 * Checking for compromised passwords. You should never allow passwords that have been compromised. 
 You can (and should) [use a password-checking service to catch compromised passwords](/sign-up-form-best-practices/#no-compromised-passwords). 
