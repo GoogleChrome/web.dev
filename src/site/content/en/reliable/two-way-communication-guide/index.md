@@ -69,7 +69,7 @@ addEventListener('message', (event) => {
 Under the hood the library uses a browser API that we'll review in the next section: [Message
 Channel](https://developer.mozilla.org/en-US/docs/Web/API/Channel_Messaging_API), but abstracts many
 implementation details, making it easier to use, while leveraging the [wide browser
-support](https://caniuse.com/?search=messagechannel) this API counts.
+support](https://caniuse.com/mdn-api_messagechannel_port1) this API has.
 
 <figure class="w-figure">
   <img src="workbox-window-diagram.png"
@@ -95,8 +95,7 @@ Differences:
 - They have different ways of identifying the other side of the communication: some of them use an
   explicit reference to the other context, while others can communicate implicitly via a proxy
   object instantiated on each side.
-- Browser support varies among them, so check what is the level of support of a specific API before
-  using it.
+- Browser support varies among them.
 
 <figure class="w-figure">
   <img src="communication-apis.png"
@@ -117,7 +116,7 @@ and send and receive messages from it:
 const broadcast = new BroadcastChannel('channel-123'); 
 ```
 
-The BroadcastChannel object exposes a `postMessage()` interface to send a message any listening
+The BroadcastChannel object exposes a `postMessage()` interface to send a message to any listening
 context:
 
 ```javascript
@@ -250,7 +249,7 @@ messageChannel.port1.onmessage = (event) => {
        alt="Diagram showing a page passing a port to a service worker, to establish two-way communication.">
 </figure>
 
-The service worker receives the port, saves a reference to it and uses it to postMessage the other
+The service worker receives the port, saves a reference to it and uses it to send a message to the other
 side:
 
 ```javascript
@@ -284,7 +283,7 @@ A chat app might want to make sure that messages are never lost due to bad conne
 defer actions to be retried when the user has stable connectivity. This is useful for ensuring that
 whatever the user wants to send, is actually sent. 
 
-Instead of the `postMessage()` interface, the page register for a `sync`:
+Instead of the `postMessage()` interface, the page registers a `sync`:
 
 ```javascript
 navigator.serviceWorker.ready.then(function (swRegistration) {
@@ -331,10 +330,10 @@ explored so far are a good choice. If the task takes too long the browser will k
 worker, otherwise it's a risk to the user's privacy and battery. 
 
 The [Background Fetch API](https://developers.google.com/web/updates/2018/12/background-fetch)
-allows you to offload a long task to a service worker, like downloading a movie, podcasts, or levels
+allows you to offload a long task to a service worker, like downloading movies, podcasts, or levels
 of a game. 
 
-To communicate the page with the service worker, use `backgroundFetch.fetch`, instead of
+To communicate to the service worker from the page, use `backgroundFetch.fetch`, instead of
 `postMessage()`:
 
 ```javascript
@@ -380,7 +379,7 @@ bgFetch.addEventListener('progress', () => {
     </figcaption>
 </figure>
 
-{% Aside %} Check the [Background Fetch
+{% Aside %} Check out the [Background Fetch
 guide](https://developers.google.com/web/updates/2018/12/background-fetch), which includes an
 [example podcast app](https://bgfetch-http203.glitch.me/) along with its [Glitch
 code](https://glitch.com/edit/#!/bgfetch-http203). {% endAside %}
