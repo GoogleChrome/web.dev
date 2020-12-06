@@ -1,6 +1,6 @@
 ---
 layout: post 
-title: "Two way communication" 
+title: "Two-way communication with service workers" 
 authors:
   - demianrenzulli
   - andrewguan 
@@ -39,11 +39,11 @@ some advanced cases.
 modules of the [Workbox library](https://developers.google.com/web/tools/workbox) that are intended
 to run in the window context. The [Workbox
 class](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-window.Workbox)
-provides a `messageSW()` method, to `postMessage()` the instance's registered service worker and
+provides a `messageSW()` method to send a message to the instance's registered service worker and
 await a response.
 
-The following page code, creates a new `Workbox` instance and sends a message to the service worker
-to obtain its version. The result of the operation is logged via console:
+The following page code creates a new `Workbox` instance and sends a message to the service worker
+to obtain its version:
 
 ```javascript
 const wb = new Workbox('/sw.js'); 

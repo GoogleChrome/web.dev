@@ -206,7 +206,7 @@ addEventListener('message', (event) => {
 });
 ```
 In the previous code we introduced a small helper function called `fetchAsync()` to iterate on the
-array of URLs issue a fetch request for each of them:
+array of URLs and issue a fetch request for each of them:
 
 ```javascript
 async function fetchAsync(url) {
@@ -225,10 +225,10 @@ file to be served in offline scenarios.
 ### Beyond JSON data
 
 Once the JSON data is fetched from a server endpoint, it often contains other URLs that are also
-worth to prefetch, such as an image or other endpoint data that are associated with this first-level
-data.  
-Let's say that in our example, the JSON data returned is the information of a grocery shopping site,
-we'll have something like this:
+worth prefetching, such as an image or other endpoint data that are associated with this first-level
+data.
+
+Let's say that in our example, the JSON data returned is the information of a grocery shopping site:
 
 ```json
 {
@@ -262,15 +262,15 @@ async function postProcess(prefetched) {
 }
 ```
 
-You can add some exception handling around this code in case situations like server responds a 404
-arises. But the beauty of using a service worker to prefetch is that it can fail without much
-consequences to the page and the main thread. You may also have more elaborate logic in the post
-processing of the prefetched content, making it more flexible and decoupled with the data it's
+You can add some exception handling around this code for situations like 404s.
+But the beauty of using a service worker to prefetch is that it can fail without much
+consequence to the page and the main thread. You may also have more elaborate logic in the
+post-processing of the prefetched content, making it more flexible and decoupled with the data it's
 handling. The sky's the limit.
 
 {% Aside 'caution' %} Prefetching techniques consume extra bytes for resources that are not
 immediately needed, so it needs to be applied thoughtfully; only prefetch resources when you are
-confident that users will need them. Consider not prefetching when users are on slow connections.
+confident that users will need them. Avoid prefetching when users are on slow connections.
 You can detect that with the [Network Information
 API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API). {% endAside %}
 
@@ -281,7 +281,7 @@ worker: **imperative caching**. The examples discussed are only meant for demons
 using this pattern and the same approach can be applied to other use cases as well, for example,
 caching top articles on demand for offline consumption, bookmarking, and others.
 
-For more patterns of page and service worker communication, check out:`
+For more patterns of page and service worker communication, check out:
 
 - [Broadcast updates](/broadcast-updates-guide): Calling the page from the service worker to inform
   about important updates (e.g. a new version of the webapp is available).
