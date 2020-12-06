@@ -1,52 +1,53 @@
 ---
 layout: codelab
-title: "Codelab: Build a push notification client"
+title: "Codelab: Build a push notification server"
 authors: 
   - kaycebasques
   - katejeffreys
 description: >
   A step-by-step interactive tutorial that shows you how to build a
-  client that subscribes the user to push notifications,
-  displays push messages as notifications, and unsubscribes the user
-  from push notifications.
+  server that manages push notification subscriptions and sends
+  web push protocol requests to a push service.
 date: 2020-11-11
-glitch: push-notifications-client-codelab-incomplete
+updated: 2020-12-06
+glitch: push-notifications-server-codelab-incomplete
 related_post: push-notifications-overview
 tags:
   - notifications
-  - service-worker
   - progressive-web-apps
-  - permissions
   - mobile
   - network
   - capabilities
 ---
 
-This codelab shows you, step-by-step, how to build a push notification client.
-By the end of the codelab you'll have a client that:
+This codelab shows you, step-by-step, how to build a push notification server.
+By the end of the codelab you'll have a server that:
 
-* Subscribes the user to push notifications.
-* Receives push messages and displays them as notifications.
-* Unsubscribes the user from push notifications.
+* Keeps track of push notification subscriptions (i.e. the server creates a
+  new database record when a client opts in to push notifications, and it
+  deletes an existing database record when a client opts out)
+* Sends a push notification to a single client
+* Sends a push notification to all subscribed clients
 
 This codelab is focused on helping you learn by doing and doesn't
 talk about concepts much. Check out 
 [How do push notifications work?](/push-notifications-overview/#how)
 to learn about push notification concepts.
 
-The server code of this codelab is already complete. You'll only be
-implementing the client in this codelab. To learn how to implement a
-push notification server, check out [Codelab: Build a push notification
-server](/push-notification-server-codelab).
+The client code of this codelab is already complete. You'll only be
+implementing the server in this codelab. To learn how to implement a
+push notification client, check out [Codelab: Build a push notification
+client](/push-notifications-client-codelab).
 
-Check out [push-notifications-client-codelab-complete](https://push-notifications-server-codelab-complete.glitch.me/)
-([source](https://glitch.com/edit/#!/push-notifications-client-codelab-complete))
+Check out [push-notifications-server-codelab-complete](https://push-notifications-server-codelab-complete.glitch.me/)
+([source](https://glitch.com/edit/#!/push-notifications-server-codelab-complete))
 to see the complete code.
 
-## Browser compatibility {: #browser-compatibility }
+## Browser compatibility
 
 This codelab is known to work with the following operating system and browser combinations:
 
+* Windows: Chrome, Edge
 * macOS: Chrome, Firefox
 * Android: Chrome, Firefox
 
@@ -55,6 +56,16 @@ This codelab is known to **not** work with the following operating systems
 
 * macOS: Brave, Edge, Safari
 * iOS
+
+## Application stack {: #stack }
+
+* The server is built on top of [Express.js](https://expressjs.com/).
+* The [web-push](https://www.npmjs.com/package/web-push) Node.js library
+  handles all of the push notification logic.
+* Subscription data is written to a JSON file using [lowdb](https://www.npmjs.com/package/lowdb).
+
+You don't have to use any of these technologies to implement push notifications.
+We chose these technologies because they provide a reliable codelab experience.
 
 ## Setup {: #setup }
 
@@ -65,12 +76,6 @@ the **Glitch UI** throughout this codelab.
 
 {% Instruction 'remix', 'ol' %}
 
-{% Aside 'gotchas' %}
-  If you're in a Chrome incognito or guest window, you may have
-  trouble completing the codelab. Consider using a signed-in
-  profile instead.
-{% endAside %}
-
 ### Set up authentication {: #authentication }
 
 Before you can get push notifications working, you need to set up
@@ -78,10 +83,10 @@ your server and client with authentication keys.
 See [Sign your web push protocol requests](/push-notifications-overview/#sign)
 to learn why.
 
-1. In the Glitch UI click **Tools** and then click **Terminal** to open the Glitch Terminal.
-1. In the Glitch Terminal, run `npx web-push generate-vapid-keys`. Copy the private key
+1. Open the Glitch terminal by clicking **Tools** and then clicking **Terminal**.
+1. In the terminal, run `npx web-push generate-vapid-keys`. Copy the private key
    and public key values.
-1. In the Glitch UI open `.env` and update `VAPID_PUBLIC_KEY` and `VAPID_PRIVATE_KEY`. Set
+1. Open `.env` and update `VAPID_PUBLIC_KEY` and `VAPID_PRIVATE_KEY`. Set
    `VAPID_SUBJECT` to `mailto:test@test.test`. All of these values should be wrapped
    in double quotes. After making your updates, your `.env` file should look
    similar to this:
@@ -92,255 +97,197 @@ VAPID_PRIVATE_KEY="4mXG9jBUaU…"
 VAPID_SUBJECT="mailto:test@test.test"
 ```
 
-1. Close the Glitch Terminal.
+1. Close the Glitch terminal.
 
 {% Aside 'gotchas' %}
   Environment variable values (the stuff in `.env`) are unique to a single Glitch project.
-  I.e. if you remix your project, the values in `.env` won't get copied over.
+  If you remix your project, the values in `.env` won't get copied over.
 {% endAside %}
 
 1. Open `public/index.js`.
 1. Replace `VAPID_PUBLIC_KEY_VALUE_HERE` with the value of your public key.
 
-## Register a service worker
+## Manage subscriptions {: #manage }
 
-Your client will eventually need a service worker to receive and display
-notifications. It's best to register the service worker as early as possible.
-See [Receive and display the pushed messages as 
-notifications](/push-notifications-overview/#notification) for more context.
+Your client handles most of the subscription process. The main
+things your server needs to do are save new push notification subscriptions
+and delete old subscriptions. These subscriptions are what enable you to
+push messages to clients in the future.
+See [Subscribe the client to push notifications](/push-notifications-overview/#subscription)
+for more context about the subscription process.
 
-1. Replace the `// TODO add startup logic here` comment with the following code:
-
-```js/1-15/0
-// TODO add startup logic here
-if ('serviceWorker' in navigator && 'PushManager' in window) {
-  navigator.serviceWorker.register('./service-worker.js').then(serviceWorkerRegistration => {
-    console.info('Service worker was registered.');
-    console.info({serviceWorkerRegistration});
-  }).catch(error => {
-    console.error('An error occurred while registering the service worker.');
-    console.error(error);
-  });
-  subscribeButton.disabled = false;
-} else {
-  console.error('Browser does not support service workers or push messages.');
-}
-
-subscribeButton.addEventListener('click', subscribeButtonHandler);
-unsubscribeButton.addEventListener('click', unsubscribeButtonHandler);
-```
+### Save new subscription information {: #save }
 
 {% Instruction 'preview', 'ol' %}
 
 {% Aside 'key-term' %}
-  The tab that you just opened will be referred to as the **app tab**
-  throughout this codelab.
+  We'll refer to the tab that you just opened as the **app tab**.
 {% endAside %}
 
-{% Instruction 'devtools-console', 'ol' %} You should see the message
-`Service worker was registered.` logged to the Console.
+1. Click **Register service worker** in the app tab. In the status box you
+   should see a message similar to this:
+
+```text
+Service worker registered. Scope: https://desert-cactus-sunset.glitch.me/
+```
+
+1. In the app tab click **Subscribe to push**. Your browser or operating system will probably 
+ask you if you want to let the website send you push notifications. Click **Allow** (or whatever 
+equivalent phrase your browser/OS uses). In the status box you should see a message similar 
+to this:
+
+```text
+Service worker subscribed to push.  Endpoint: https://fcm.googleapis.com/fcm/send/…
+```
 
 {% Aside %}
-  The previous instruction assumes that you're using Google Chrome and
-  Chrome DevTools.
+  The endpoint URL changes depending on what browser you're using.
+  For example, on Firefox the URL starts with `https://updates.push.services.mozilla.com/…`.
 {% endAside %}
 
+1. Go back to your code by clicking **View Source** in the Glitch UI.
+1. Open the Glitch Logs by clicking **Tools** and then clicking **Logs**. You
+   should see `/add-subscription` followed by some data. `/add-subscription` is
+   the URL that the client sends a
+   [POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST)
+   request to when it wants to subscribe to push notifications. The data that
+   follows is the client's subscription information that you need to save.
+1. Open `server.js`.
+1. Update the `/add-subscription` route handler logic with the following code:
 
-## Request push notification permission
-
-You should never request permission to send push notifications on page load.
-Instead, your UI should ask the user if they want to receive push notifications.
-Once they explicitly confirm (with a button click, for example) then you can
-start the formal process for getting push notification permission from the browser.
-
-1. In the Glitch UI click **View Source** to return to your code.
-1. In `public/index.js` replace the `// TODO` comment in 
-   `subscribeButtonHandler()` with the following code:
-
-```js/1-10/0
-// TODO
-// Prevent the user from clicking the subscribe button multiple times.
-subscribeButton.disabled = true;
-const result = await Notification.requestPermission();
-if (result === 'denied') {
-  console.error('The user explicitly denied the permission request.');
-  return;
-}
-if (result === 'granted') {
-  console.info('The user accepted the permission request.');
-}
+```js/3-6/1-2
+app.post('/add-subscription', (request, response) => {
+  console.log('/add-subscription');
+  console.log(request.body);
+  console.log(`Subscribing ${request.body.endpoint}`);
+  db.get('subscriptions')
+    .push(request.body)
+    .write();
+  response.sendStatus(200);
+});
 ```
 
-1. Go back to the app tab and click **Subscribe to push**. Your browser
-   or operating system will probably ask you if you want to let the website
-   send you push notifications. Click **Allow** (or whatever equivalent phrase
-   your browser/OS uses). In the Console you should see a message indicating
-   whether the request was accepted or denied.
-
-{% Aside 'gotchas' %}
-  If you're in an incognito or guest window, your browser may deny the
-  request automatically. Keep an eye out for any browser UI indicating that
-  the request was blocked automatically.
+{% Aside %}
+  The database writes to `.data/db.json`. To inspect this file in Glitch,
+  click **Tools**, then click **Terminal**, then run `cat .data/db.json`
+  in the Terminal. `.data/db.json` is deleted every time that you edit your app.
+  This is because Glitch runs the `start` script in `package.json` every time you
+  edit your app, and that script includes a call to `rm .data/db.json`.
 {% endAside %}
 
-## Subscribe to push notifications
+### Delete old subscription information 
 
-The subscription process involves interacting with a web service controlled
-by the browser vendor that's called a **push service**. Once you get
-the push notification subscription information you need to send it to a server
-and have the server store it in a database long-term.
-See [Subscribe the client to push notifications](/push-notifications-overview/#subscription)
-for more context about the subscription process.
+1. Go back to the app tab.
+1. Click **Unsubscribe from push**.
+1. Look at the Glitch Logs again. You should see `/remove-subscription` followed
+   by the client's subscription information.
+1. Update the `/remove-subscription` route handler logic with the following code:
 
-1. Add the following highlighted code to `subscribeButtonHandler()`:
-
-```js/9-28
-subscribeButton.disabled = true;
-const result = await Notification.requestPermission();
-if (result === 'denied') {
-  console.error('The user explicitly denied the permission request.');
-  return;
-}
-if (result === 'granted') {
-  console.info('The user accepted the permission request.');
-}
-const registration = await navigator.serviceWorker.getRegistration();
-const subscribed = await registration.pushManager.getSubscription();
-if (subscribed) {
-  console.info('User is already subscribed.');
-  notifyMeButton.disabled = false;
-  unsubscribeButton.disabled = false;
-  return;
-}
-const subscription = await registration.pushManager.subscribe({
-  userVisibleOnly: true,
-  applicationServerKey: urlB64ToUint8Array(VAPID_PUBLIC_KEY)
-});
-notifyMeButton.disabled = false;
-fetch('/add-subscription', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify(subscription)
+```js/3-6/1-2
+app.post('/remove-subscription', (request, response) => {
+  console.log('/remove-subscription');
+  console.log(request.body);
+  console.log(`Unsubscribing ${request.body.endpoint}`);
+  db.get('subscriptions')
+    .remove({endpoint: request.body.endpoint})
+    .write();
+  response.sendStatus(200);
 });
 ```
 
-The `userVisibleOnly` option must be `true`. It may one day be possible
-to push messages without displaying user-visible notifications
-(**silent pushes**) but browsers currently don't allow that capability
-because of privacy concerns. 
+## Send notifications
 
-The `applicationServerKey` value relies on a utility function that
-converts a base64 string to a Uint8Array. This value is used for
-authentication between your server and the push service.
+As explained in [Send a push message](/push-notifications-overview/#send),
+your server doesn't actually send the push messages directly to clients.
+Rather, it relies on a push service to do that. Your server basically
+just kicks off the process of pushing messages to clients by making web
+service requests (web push protocol requests) to a web service (the push service)
+owned by the browser vendor that your user uses.
 
-## Unsubscribe from push notifications
+1. Update the `/notify-me` route handler logic with the following code:
 
-After a user has subscribed to push notifications, your UI needs to
-provide a way to unsubscribe in case the user changes their mind
-and no longer wants to receive push notifications.
-
-1. Replace the `// TODO` comment in `unsubscribeButtonHandler()`
-   with the following code:
-
-```js/1-16/0
-// TODO
-const registration = await navigator.serviceWorker.getRegistration();
-const subscription = await registration.pushManager.getSubscription();
-fetch('/remove-subscription', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({endpoint: subscription.endpoint})
+```js/3-6/1-2
+app.post('/notify-me', (request, response) => {
+  console.log('/notify-me');
+  console.log(request.body);
+  console.log(`Notifying ${request.body.endpoint}`);
+  const subscription = 
+      db.get('subscriptions').find({endpoint: request.body.endpoint}).value();
+  sendNotifications([subscription]);
+  response.sendStatus(200);
 });
-const unsubscribed = await subscription.unsubscribe();
-if (unsubscribed) {
-  console.info('Successfully unsubscribed from push notifications.');
-  unsubscribeButton.disabled = true;
-  subscribeButton.disabled = false;
-  notifyMeButton.disabled = true;
+```
+
+1. Update the `sendNotifications()` function with the following code:
+
+```js/2-28/1
+function sendNotifications(subscriptions) {
+  // TODO
+  // Create the notification content.
+  const notification = JSON.stringify({
+    title: "Hello, Notifications!",
+    options: {
+      body: `ID: ${Math.floor(Math.random() * 100)}`
+    }
+  });
+  // Customize how the push service should attempt to deliver the push message.
+  // And provide authentication information.
+  const options = {
+    TTL: 10000,
+    vapidDetails: vapidDetails
+  };
+  // Send a push message to each client specified in the subscriptions array.
+  subscriptions.forEach(subscription => {
+    const endpoint = subscription.endpoint;
+    const id = endpoint.substr((endpoint.length - 8), endpoint.length);
+    webpush.sendNotification(subscription, notification, options)
+      .then(result => {
+        console.log(`Endpoint ID: ${id}`);
+        console.log(`Result: ${result.statusCode}`);
+      })
+      .catch(error => {
+        console.log(`Endpoint ID: ${id}`);
+        console.log(`Error: ${error} `);
+      });
+  });
 }
 ```
 
-## Receive a push message and display it as a notification
+1. Update the `/notify-all` route handler logic with the following code:
 
-As mentioned before, you need a service worker to handle the
-receiving and displaying of messages that were pushed to the client
-from your server. See [Receive and display the pushed messages as 
-notifications](/push-notifications-overview/#notification) for more detail.
-
-1. Open `public/service-worker.js` and replace the `// TODO` comment 
-   in the service worker's `push` event handler with the following code:
-
-```js/1-12/0
-// TODO
-let data = event.data.json();
-const image = 'https://cdn.glitch.com/614286c9-b4fc-4303-a6a9-a4cef0601b74%2Flogo.png?v=1605150951230';
-const options = {
-  body: data.options.body,
-  icon: image
-}
-self.registration.showNotification(
-  data.title, 
-  options
-);
+```js/3-11/1-2
+app.post('/notify-all', (request, response) => {
+  console.log('/notify-all');
+  response.sendStatus(200);
+  console.log('Notifying all subscribers');
+  const subscriptions =
+      db.get('subscriptions').cloneDeep().value();
+  if (subscriptions.length > 0) {
+    sendNotifications(subscriptions);
+    response.sendStatus(200);
+  } else {
+    response.sendStatus(409);
+  }
+});
 ```
 
 1. Go back to the app tab.
-1. Click **Notify me**. You should receive a push notification.
-1. Try opening the URL of your app tab on other browsers (or even
-   other devices), going through the subscription workflow, and then
-   clicking **Notify all**. You should receive the same push notification
-   on all of the browsers that you subscribed. Refer back to
-   [Browser compatibility](#browser-compatibility) to see a list of browser/OS
-   combinations that are known to work or not work.
-
-You can customize the notification in lots of ways. See the parameters of
-[`ServiceWorkerRegistration.showNotification()`][showNotification] to learn more.
-
-{% Aside 'gotchas' %}
-  The call to 
-  [`self.skipWaiting()`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting) 
-  in your service worker's `install` listener is important to understand. See 
-  [Skip the waiting phase](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#skip_the_waiting_phase) 
-  for an explanation. Without it, the code changes that you make to your service worker
-  wouldn't take effect immediately. You may or may not want to use this feature on 
-  your own website depending on your needs, but either way it's important to understand its effect.
-{% endAside %}
-
-## Open a URL when a user clicks a notification
-
-In the real-world, you'll probably use the notification as a way
-to re-engage your user and prompt them to visit your site.
-To do that, you need to configure your service worker a bit more.
-
-1. Replace the `// TODO` comment in the service worker's `notificationclick`
-   event handler with the following code:
-
-```js/1-2/0
-// TODO
-event.notification.close();
-event.waitUntil(self.clients.openWindow('https://web.dev'));
-```
-
-1. Go back to the app tab, send yourself another notification, and then
-   click the notification. Your browser should open a new tab and load
-   `https://web.dev`.
+1. Click **Unsubscribe from push** and then click **Subscribe to push** again.
+   This is only necessary because, as mentioned before, Glitch restarts the project
+   every time you edit the code and the project is configured to delete the database on startup.
+1. Click **Notify me**. You should receive a push notification. The title should
+   be `Hello, Notifications!` and the body should be `ID: <ID>` where `<ID>` is a
+   random number.
+1. Open your app on other browsers or devices and try subscribing them to push notifications
+   and then clicking the **Notify all** button. You should receive the same notification on 
+   all of your subscribed devices (i.e. the ID in the body of the push notification should
+   be the same).
 
 ## Next steps
 
-* Look at [`ServiceWorkerRegistration.showNotification()`][showNotification]
-  to discover all of the different ways you can customize notifications.
 * Read [Push notifications overview](/push-notifications-overview)
   for a deeper conceptual understanding of how push notifications work.
-* Check out [Codelab: Build a push notification server](/push-notifications-server-codelab/)
-  to learn how to build a server that manages subscriptions and sends web push protocol
-  requests.
-* Try out [Notification Generator](https://tests.peter.sh/notification-generator/)
-  to test out all the ways you can customize notifications.
-
-[showNotification]: https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/showNotification
-[skipWaiting]: https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting
-[skip]: https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#skip_the_waiting_phase
+* Check out [Codelab: Build a push notification client](/push-notifications-client-codelab/)
+  to learn how to build a client that requests notification permission, subscribes
+  the device to receive push notifications, and uses a service worker to receive
+  push messages and display the messages as notifications.
