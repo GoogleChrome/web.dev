@@ -173,13 +173,21 @@ Update your `index.html` file so the form code looks like this:
 The `type` values do a lot:
 * `type="password"` obscures text as it's entered and enables the browser's 
 [password manager](https://passwords.google.com/) to suggest a strong password. 
-* `type="email"` provides basic validation and ensures mobile users get an appropriate keyboard.
+* `type="email"` provides basic validation and ensures mobile users get an appropriate keyboard. Try 
+it out!
+
+Click **View App** and then click the **Email** label. What happens? Focus moves to the email 
+input because the label has a `for` value that matches the email input's `id`. The other labels and 
+inputs work the same way. Screenreaders also announce label text when the label (or the label's 
+associated input) gets focus. You can try that using the [ChromeVox extension](https://chrome.google.com/webstore/detail/chromevox-classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en).
 
 Try submitting the form with an empty field. The browser won't submit the form, and it prompts to 
 complete missing data and sets focus. That's because you added the `require` attribute to all the 
 inputs. Now try submitting with a password that has less than eight characters. The browser warns that 
-the password isn't long enough and sets focus on the password input because of the `minlength="8"` attribute. The same works for `pattern` 
-(used for the name input) and other [validation constraints](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation). The browser does all this automatically, without needing any extra code.
+the password isn't long enough and sets focus on the password input because of the `minlength="8"` 
+attribute. The same works for `pattern` (used for the name input) and other 
+[validation constraints](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation). 
+The browser does all this automatically, without needing any extra code.
 
 Using the `autocomplete` value `name` for the **Full name** input makes sense, but what about the 
 other inputs? 
