@@ -229,10 +229,12 @@ Update the password section of `index.html` with the following code:
 
 This adds new features to help users enter passwords:
 
-* A button (actually just text) to toggle password display. (The button functionality will be added with JavaScript.)
+* A button (actually just text) to toggle password display. (The 
+  button functionality will be added with JavaScript.)
 * An `aria-label` attribute for the password-toggle button. 
-* An `aria-describedby` attribute for the password input. Screenreaders read the label text, the 
-input type (password), and then the description. 
+* An `aria-describedby` attribute for the password input. Screenreaders 
+  read the label text, the input type (password), and then the description. 
+
 To enable the password-toggle button and show users information about password constraints, copy all the JavaScript below and paste it into your own `js/main.js` file.
 
 {% Glitch {
