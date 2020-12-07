@@ -219,7 +219,7 @@ Update the password section of `index.html` with the following code:
 </section>
 ```
 
-Copy all the JavaScript below and paste it into your own `js/main.js` file.
+To enable the password-toggle button and show users information about password constraints, copy all the JavaScript below and paste it into your own `js/main.js` file.
 
 {% Glitch {
   id: 'sign-up-form-codelab-4',
