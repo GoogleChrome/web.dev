@@ -6,7 +6,7 @@ authors:
 scheduled: true
 date: 2020-12-01
 updated: 2020-12-07
-description: Use cross-platform browser features to build a simple sign-up form that's secure, accessible and easy to use.
+description: Use cross-platform browser features to build a simple sign-up form that's secure, accessible, and easy to use.
 tags:
   - forms
   - identity
@@ -62,7 +62,7 @@ or `<input />` is OK.
 </form>
 ```
 
-Click **View App** to preview your sign-in form. This shows you what a form looks like with no CSS other than the 
+Click **View App** to preview your sign-up form. This shows you what a form looks like with no CSS other than the 
 [default browser styles](https://bitsofco.de/a-look-at-css-resets-in-2018). 
 
 * Do the default styles *look* OK? What would you change to make the form look better?
@@ -93,7 +93,7 @@ Testing your site on a range of devices and browsers is especially important for
 to give up on creating an account or completing a purchase.
 {% endAside %}
 
-Click **View App** to preview your sign-in form. 
+Click **View App** to preview your sign-up form. 
 
 * Try out your form on different devices using Chrome DevTools Device Mode.
 * Now open the form on a phone or other real devices. What differences do you see?
@@ -226,6 +226,14 @@ Update the password section of `index.html` with the following code:
   <div id="password-constraints">Eight or more characters.</div>
 </section>
 ```
+
+This adds new features to help users enter passwords:
+
+* A button (actually just text) to toggle password display. (The 
+  button functionality will be added with JavaScript.)
+* An `aria-label` attribute for the password-toggle button. 
+* An `aria-describedby` attribute for the password input. Screenreaders 
+  read the label text, the input type (password), and then the description. 
 
 To enable the password-toggle button and show users information about password constraints, copy all the JavaScript below and paste it into your own `js/main.js` file.
 
