@@ -120,7 +120,7 @@ That's a lot of CSS! The main things to be aware of are the changes to sizes:
 
 When you're ready, click **View App** to see the styled form.  You'll also notice that borders have 
 been adjusted, and `display: block;` is used for labels so they go on a line on their own, and 
-inputs can be full width. [Sign-in form best practices](https://web.dev/sign-in-form-best-practices/#label:~:text=put%20your%20labels%20above%20your%20inputs) 
+inputs can be full width. [Sign-in form best practices](/sign-in-form-best-practices/#label:~:text=put%20your%20labels%20above%20your%20inputs) 
 explains why this is probably best.
 
 The `:invalid` selector is used to indicate when an input has an invalid value. (You'll use this 
