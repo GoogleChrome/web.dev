@@ -358,7 +358,7 @@ federated login or not, you should make account switching simple.
 Multi-factor authentication means ensuring that users provide authentication in more than one way. 
 For example, as well as requiring the user to set a password, you might also enforce verification 
 using a one-time-passcode sent by email or an SMS text message, or by using an app-based one-time 
-code, security key or fingerprint sensor. [SMS OTP best practices](https://web.dev/sms-otp-form) and 
+code, security key or fingerprint sensor. [SMS OTP best practices](/sms-otp-form) and 
 [Enabling Strong Authentication with WebAuthn](https://developers.google.com/web/updates/2018/05/webauthn) 
 explain how to implement multi-factor authentication.
 
@@ -391,19 +391,19 @@ open source projects](https://www.browserstack.com/open-source) on a range of de
 
 ## Implement analytics and Real User Monitoring {: #analytics-rum}
 
-You need [field data as well as lab data](https://web.dev/how-to-measure-speed/#lab-data-vs-field-data) 
+You need [field data as well as lab data](/how-to-measure-speed/#lab-data-vs-field-data) 
 to understand how users experience your sign-up forms. Analytics and [Real User Monitoring](https://developer.mozilla.org/en-US/docs/Web/Performance/Rum-vs-Synthetic#Real_User_Monitoring) 
 (RUM) provide data for the actual experience of your users, such as how long sign-up pages take to 
 load, which UI components users interact with (or not) and how long it takes users to complete 
 sign-up.
 
-* **Page analytics**: [page views, bounce rates and exits](https://analytics.google.com/analytics/academy/course/6) 
-for every page in your sign-up flow.
+* **Page analytics**: [page views, bounce rates and exits](https://analytics.google.com/analytics/academy/course/6) for every page in your sign-up flow.
 * **Interaction analytics**: [goal funnels](https://support.google.com/analytics/answer/6180923?hl=en) 
-(where do users abandon the sign-up flow?) and [events](https://developers.google.com/analytics/devguides/collection/gtagjs/events) 
-(what proportion of users click buttons and links and other components of your sign-up pages?)
-* **Website performance**: [user-centric metrics](/user-centric-performance-metrics) (Is any part of 
-your sign-up flow slow to load or [visually unstable](https://web.dev/cls/)?).
+and [events](https://developers.google.com/analytics/devguides/collection/gtagjs/events) 
+indicate where users abandon the sign-up flow and what proportion of users click buttons, 
+links, and other components of your sign-up pages.
+* **Website performance**: [user-centric metrics](/user-centric-performance-metrics) 
+can tell you if your sign-up flow is slow to load or [visually unstable](/cls/).
 
 Small changes can make a big difference to completion rates for sign-up forms. Analytics and RUM 
 enable you to optimize and prioritize changes, and monitor your site for problems that aren't 
