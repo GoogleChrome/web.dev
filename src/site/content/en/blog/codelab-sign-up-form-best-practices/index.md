@@ -135,7 +135,7 @@ viewport than a maximized browser window.
 {% endAside %}
 
 
-## Step 3: Add attributes to enable built-in browser features
+## Step 3: Add attributes to help users enter data
 
 In this step you add attributes to your input elements to enable the browser to store and autofill 
 form field values, and warn of fields with missing or invalid data.
