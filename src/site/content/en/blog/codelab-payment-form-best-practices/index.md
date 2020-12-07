@@ -154,7 +154,7 @@ to simulate mobile devices.
 * Use a service such as [BrowserStack](https://www.browserstack.com/open-source) to test on a range 
 of devices and browsers. 
 
-## Step 3: Add input attributes to enable built-in browser features
+## Step 3: Add attributes to help users enter data
 
 Enable the browser to store and autofill input values, and provide access to secure built-in 
 payment and validation features.
