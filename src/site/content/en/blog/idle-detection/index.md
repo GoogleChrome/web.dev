@@ -67,11 +67,12 @@ To experiment with the Idle Detection API locally, without an origin trial token
 {% Aside %}
   An origin trial for this feature ran from Chrome&nbsp;84 to Chrome&nbsp;86.
   We are still coordinating with our partners to figure out when they will be ready to deploy code
-  to a wider audience using this experiment.
+  to a wider audience using this feature.
   We will not be enabling the origin trial in Chrome&nbsp;87 and will update this article
   when a new milestone has been chosen, likely Chrome&nbsp;88.
   Interested developers can continue to test out the API locally,
-  including the permission changes landed in Chrome&nbsp;87.
+  including the permission changes landed in Chrome&nbsp;87,
+  by flipping the [flag](#enabling-via-chrome:flags).
 {% endAside %}
 
 ### Feature detection
