@@ -228,13 +228,6 @@ Copy all the JavaScript below and paste it into your own `js/main.js` file.
   previewSize: 0
 } %}
 
-This adds new features to help users enter passwords:
-
-* A button (actually just text) to toggle password display.
-* Information about password constraints.
-* An `aria-describedby` attribute for the password input. Screenreaders read the label text, the 
-input type (password), and then the description. 
-* An `aria-label` attribute for the password-toggle button. 
 
 (The CSS is already in place from step 2. Take a look, to see how the password-toggle button is 
 styled and positioned.)
