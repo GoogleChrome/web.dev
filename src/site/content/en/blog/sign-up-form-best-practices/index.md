@@ -403,7 +403,7 @@ and [events](https://developers.google.com/analytics/devguides/collection/gtagjs
 indicate where users abandon the sign-up flow and what proportion of users click buttons, 
 links, and other components of your sign-up pages.
 * **Website performance**: [user-centric metrics](/user-centric-performance-metrics) 
-can tell you if your sign-up flow is slow to load or [visually unstable](/cls/).
+can tell you if your sign-up flow is slow to load or [visually unstable](/cls).
 
 Small changes can make a big difference to completion rates for sign-up forms. Analytics and RUM 
 enable you to optimize and prioritize changes, and monitor your site for problems that aren't 
