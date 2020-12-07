@@ -6,7 +6,7 @@ authors:
 scheduled: true
 date: 2020-12-01
 updated: 2020-12-07
-description: Use cross-platform browser features to build a simple sign-up form that's secure, accessible and easy to use.
+description: Use cross-platform browser features to build a simple sign-up form that's secure, accessible, and easy to use.
 tags:
   - forms
   - identity
@@ -62,7 +62,7 @@ or `<input />` is OK.
 </form>
 ```
 
-Click **View App** to preview your sign-in form. This shows you what a form looks like with no CSS other than the 
+Click **View App** to preview your sign-up form. This shows you what a form looks like with no CSS other than the 
 [default browser styles](https://bitsofco.de/a-look-at-css-resets-in-2018). 
 
 * Do the default styles *look* OK? What would you change to make the form look better?
@@ -93,7 +93,7 @@ Testing your site on a range of devices and browsers is especially important for
 to give up on creating an account or completing a purchase.
 {% endAside %}
 
-Click **View App** to preview your sign-in form. 
+Click **View App** to preview your sign-up form. 
 
 * Try out your form on different devices using Chrome DevTools Device Mode.
 * Now open the form on a phone or other real devices. What differences do you see?
