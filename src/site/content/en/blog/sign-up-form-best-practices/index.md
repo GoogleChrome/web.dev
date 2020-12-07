@@ -335,7 +335,7 @@ new device.
 explains how to add federated login to your sign-up options. [Many other](https://en.wikipedia.org/wiki/Federated_identity#Examples) identity platforms are available.
 
 {% Aside %}
-**'First day experience'** is increasingly important since many users now expect to log in from 
+"First day experience" when you get a new device is increasingly important. Users expect to log in from
 multiple devices including their phone, laptop, desktop, tablet, TV, or from a car. If your sign-up 
 and sign-in forms aren't seamless, this is a moment where you risk losing users, or at least losing 
 contact with them until they get set up again. You need to make it as quick and easy as possible for 
