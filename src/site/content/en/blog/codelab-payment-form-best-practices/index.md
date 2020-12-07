@@ -5,7 +5,7 @@ authors:
   - samdutton
 scheduled: true
 date: 2020-12-02
-updated: 2020-12-02
+updated: 2020-12-07
 description: Learn best practices for payment forms.
 tags:
   - ecommerce
@@ -15,7 +15,7 @@ tags:
   - mobile
   - security
   - ux
-glitch: payment-form-codelab-0
+glitch: payment-form-codelab-1
 glitch_path: index.html
 related_post: payment-and-address-form-best-practices
 ---
@@ -42,51 +42,50 @@ add meaning to your markup.
 
 {% Instruction 'remix' %}
 
-* Add the following code inside the `<body>` element:
+Take a look at the HTML for your form in `index.html`. 
 
 ```html
-<main>
-    
-  <form action="#" method="post">
+<form action="#" method="post">
 
-    <h1>Payment form</h1>
+  <h1>Payment form</h1>
 
-    <section>        
-      <label>Card number</label>
+  <section>        
+    <label>Card number</label>
+    <input>
+  </section>
+
+  <section>        
+    <label>Name on card</label>
+    <input>
+  </section>
+
+  <section id="cc-exp-csc">
+    <div>
+      <label>Expiry date</label>
       <input>
-    </section>
-
-    <section>        
-      <label>Name on card</label>
+    </div> 
+    <div>
+      <label>Security code</label>
       <input>
-    </section>
+      <div class="explanation">Last 3 digits on back of card</div>
+    </div>
+  </section>  
 
-    <section id="cc-exp-csc">
-      <div>
-        <label>Expiry date</label>
-        <input>
-      </div> 
-      <div>
-        <label>Security code</label>
-        <input>
-        <div class="explanation">Back of card, last 3 digits</div>
-      </div>
-    </section>  
+  <button id="complete-payment">Complete payment</button>
 
-    <button id="complete-payment">Complete payment</button>
-
-  </form>
-
-</main>
+</form>
 ```
 
-Here's how your `index.html` should look at this point:
+There are input elements for card number, name on card, expiry date and security code. They're all 
+wrapped in section elements, and each has a label. The **Complete Payment** button is an HTML 
+`<button>`. Later in this codelab you'll learn about the browser features you can access by using 
+  these elements.
 
-{% Glitch {
-  id: 'payment-form-codelab-1',
-  path: 'index.html',
-  height: 310
-} %}
+{% Aside %}
+`<input>` elements don't have closing tags. That's because they are [void](https://www.w3.org/TR/2011/WD-html-markup-20110113/syntax.html#syntax-elements) (empty) elements: they don't have any
+content in themselves. A "/" character at the end of a void element is optional: either `<input>` 
+or `<input />` is OK.
+{% endAside %}
 
 Click **View App** to preview your payment form. 
 
@@ -95,6 +94,7 @@ Click **View App** to preview your payment form.
 * How about on mobile?
 
 Click **View Source** to return to your source code.
+
 
 ## Step 2: Design for mobile and desktop
 
