@@ -4,7 +4,7 @@ title: What does it take to be installable?
 authors:
   - petelepage
 date: 2020-02-14
-updated: 2020-06-17
+updated: 2020-12-07
 description: |
   Progressive Web App installability criteria.
 tags:
@@ -65,6 +65,9 @@ promotion:
   * `display` - must be one of `fullscreen`, `standalone`, or `minimal-ui`
   * Note: `prefer_related_applications` must not be present, or be `false`
 * Registers a service worker with a functional `fetch` handler
+  * Starting in mid-2021, the service worker must return a valid response
+    when the device is offline, for example an
+    [offline fallback page][offline-fallback]
 
 Other browsers have similar criteria for installation, though there may be
 minor differences. Check the respective sites for full details:
@@ -84,3 +87,4 @@ instead.
 {% endAside %}
 
 [add-manifest]: /add-manifest/
+[offline-fallback]: /offline-fallback-page/
