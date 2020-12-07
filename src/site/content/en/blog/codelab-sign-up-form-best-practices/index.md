@@ -28,7 +28,7 @@ In this step you'll learn how to use form elements to make the most of built-in 
 {% Instruction 'remix' %}
 
 Take a look at the HTML for your form in `index.html`. You'll see there are inputs for name, email 
-and password. Each is in a section, and each has a label. The **Sign up** button is... a `<button>`! 
+and password. Each is in a section, and each has a label. The **Sign up** button is… a `<button>`! 
   Later in this codelab, you'll learn the special powers of all these elements.
 
 {% Aside %}
