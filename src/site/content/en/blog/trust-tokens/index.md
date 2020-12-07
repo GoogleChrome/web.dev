@@ -4,7 +4,7 @@ subhead: Trust Tokens is a new API to help combat fraud and distinguish bots fro
 authors:
   - samdutton
 date: 2020-06-22
-updated: 2020-06-23
+updated: 2020-12-09
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: Black and white photograph of hand holding token
@@ -24,9 +24,10 @@ Trust tokens enable an origin to issue cryptographic tokens to a user it trusts.
 The tokens are stored by the user's browser. The browser can then use the tokens 
 in other contexts to evaluate the user's authenticity.   
 
-The Trust Token API allows trust of a user in one context (such as gmail.com) to
-be conveyed to another context (such as an ad running on nytimes.com) without
+The Trust Token API enables trust of a user in one context to be conveyed to another context without 
 identifying the user or linking the two identities.
+
+Try it out the [Trust Token demo](https://labs.jxck.io/trust-token).
 
 {% Aside %}
 The Privacy Sandbox is a series of proposals to satisfy third-party use cases
@@ -125,7 +126,7 @@ fetch('https://issuer.example/issue', {
  ```js
  fetch('https://issuer.example/redeem', {
    trustToken: {
-     type: 'srr-token-redemption'
+     type: 'token-redemption'
    }  
  });    
 ```
@@ -144,7 +145,7 @@ document:
 ```js  
 fetch('foo.example/get-content', {  
   trustToken: {  
-    type: 'send-srr',   
+    type: 'send-redemption-record',   
     issuer: 'https://issuer.example'  
   }  
 });  
@@ -212,7 +213,7 @@ signed redemption record:
 fetch('issuer.example/.well-known/trust-token', {
   ...
   trustToken: {
-    type: 'srr-token-redemption',
+    type: 'token-redemption',
     issuer: 'issuer.example',
     refreshPolicy: 'none'
   }
@@ -227,7 +228,7 @@ following API:
 fetch('<url>', {
   ...
   trustToken: {
-    type: 'send-srr',
+    type: 'send-redemption-record',
     issuer: <issuer>,
   }
   ...
