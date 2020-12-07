@@ -5,7 +5,7 @@ authors:
   - samdutton
 scheduled: true
 date: 2020-12-01
-updated: 2020-12-01
+updated: 2020-12-07
 description: Use cross-platform browser features to build a simple sign-up form that's secure, accessible and easy to use.
 tags:
   - forms
@@ -21,18 +21,25 @@ related_post: sign-up-form-best-practices
 
 This codelab shows you how to build a sign-up form that's secure, accessible, and easy to use.
 
-## Step 1: Help password managers securely suggest and store passwords
+## Step 1: Use meaningful HTML
 
-In this step you'll learn how to use form elements and attributes to make the most of built-in 
-browser features.
+In this step you'll learn how to use form elements to make the most of built-in browser features.
 
 {% Instruction 'remix' %}
 
-* Add the following code to your `index.html` file inside the `<main>` element:
+Take a look at the HTML for your form in `index.html`. You'll see there are inputs for name, email 
+and password. Each is in a section, and each has a label. The **Sign up** button is... a `<button>`! 
+  Later in this codelab, you'll learn the special powers of all these elements.
+
+{% Aside %}
+`<input>` elements don't have closing tags. That's because they are [void](https://www.w3.org/TR/2011/WD-html-markup-20110113/syntax.html#syntax-elements) (empty) elements: they don't have any
+content in themselves. A "/" character at the end of a void element is optional: either `<input>` 
+or `<input />` is OK.
+{% endAside %}
 
 ```html
 <form action="#" method="post">
-  
+        
   <h1>Sign up</h1>
   
   <section>
@@ -55,51 +62,47 @@ browser features.
 </form>
 ```
 
-Here's how your project should look at this point:
-
-{% Glitch {
-  id: 'sign-in-form-codelab-1',
-  path: 'index.html',
-  height: 220
-} %}
-
-Click **View App** to preview your sign-in form. 
-
-This shows you what a form looks like with no CSS other than the 
+Click **View App** to preview your sign-in form. This shows you what a form looks like with no CSS other than the 
 [default browser styles](https://bitsofco.de/a-look-at-css-resets-in-2018). 
-
-{% Aside %}
-[Browser Default Styles](https://browserdefaultstyles.com) lists default CSS for HTML elements.
-{% endAside %}
 
 * Do the default styles *look* OK? What would you change to make the form look better?
 * Do the default styles *work* OK? What problems might be encountered using your form as it is? What 
 about on mobile? What about for screenreaders or other [assistive technologies](/a11y-tips-for-web-dev)?
 * Who are your users, and what devices and browsers are you targeting? 
 
-### How will you test your form? 
+{% Aside %}
+[Browser Default Styles](https://browserdefaultstyles.com) lists default CSS for HTML elements.
+{% endAside %}
+
+### Test your form
 
 You could acquire a lot of hardware and set up a 
 [device lab](https://www.smashingmagazine.com/2016/11/worlds-best-open-device-labs/), but there are 
-cheaper and simpler ways to try out your form on a range of browsers and platforms:
+cheaper and simpler ways to try out your form on a range of browsers, platforms and devices:
 
 * [Use Chrome DevTools Device Mode](https://developers.google.com/web/tools/chrome-devtools/device-mode) 
 to simulate mobile devices. 
 * [Send the URL from your computer to your phone](https://support.google.com/chrome/answer/9430554).
 * Use a service such as [BrowserStack](https://www.browserstack.com/open-source) to test on a range 
 of devices and browsers. 
+* Try out the form using a screenreader tool such as the [ChromeVox](https://chrome.google.com/webstore/detail/chromevox-classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en) Chrome extension.
 
-{% Aside 'caution' %}
+{% Aside 'warning' %}
 Testing your site on a range of devices and browsers is especially important for forms, because 
 [small problems can cause high bounce rates](https://baymard.com/checkout-usability) and cause users 
 to give up on creating an account or completing a purchase.
 {% endAside %}
 
-Click **View Source** to return to your source code.
+Click **View App** to preview your sign-in form. 
+
+* Try out your form on different devices using Chrome DevTools Device Mode.
+* Now open the form on a phone or other real devices. What differences do you see?
 
 ## Step 2: Add CSS to make the form work better
 
-There's nothing wrong with the HTML you added, but you need to make sure your form works well for a 
+Click **View Source** to return to your source code.
+
+There's nothing wrong with the HTML so far, but you need to make sure your form works well for a 
 range of users on mobile and desktop.
 
 In this step you'll add CSS to make the form easier to use.
