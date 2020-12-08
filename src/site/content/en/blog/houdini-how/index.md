@@ -1,6 +1,6 @@
 ---
 title: 'Cross-browser paint worklets and Houdini.how'
-subhead: 'CSS Houdini worklets and resource sare just a few clicks away.' authors:
+subhead: 'CSS Houdini worklets and resources are just a few clicks away.' authors:
   - una
 date: 2020-12-10
 hero: hero.jpg
@@ -184,6 +184,6 @@ CSS.paintWorklet.addModule(workletURL);
 
 Now that you've played around with some Houdini samples, it's your turn to contribute your own!
 Houdini.how does not host any worklets itself, and instead showcases the work of the community. If
-you have a worklet or resource you would like to submit, check out the [github
+you have a worklet or resource you would like to submit, check out the [GitHub
 repo](https://github.com/una/houdini.how/blob/main/CONTRIBUTING.md) with contribution guidelines.
 We'd love to see what you come up with!
