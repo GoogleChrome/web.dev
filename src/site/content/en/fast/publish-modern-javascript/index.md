@@ -25,9 +25,9 @@ a simple web-based tool that calculates the size and performance improvement a
 site could achieve by delivering modern JavaScript syntax.
 
 <figure class="w-figure w-figure--fullbleed">
-  <img src="./estimator-screenshot-3.png"
+  <img src="./estimator-screenshot.png"
        alt="Screenshot of EStimator.dev"
-       width="790">
+       width="970">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     EStimator.dev
   </figcaption>
