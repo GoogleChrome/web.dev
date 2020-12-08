@@ -33,6 +33,7 @@ aren't accessible to assistive technologies:
 There are 7 audits that check for accessible names, each one covers a different
 set of [ARIA roles](https://www.w3.org/TR/wai-aria-practices-1.1/#aria_ex). Elements
 that have any of the following ARIA roles but don't have accessible names will cause this audit to fail:
+
 - `aria-command-name` - `button`, `link`, `menuitem`
 - `aria-input-field-name` - `combobox`, `listbox`, `searchbox`, `slider`, `spinbutton`, `textbox`
 - `aria-meter-name` - `meter`
@@ -59,7 +60,7 @@ to assistive technology users:
 <div id="checkbox1" role="checkbox">Newspaper</div>
 ```
 
-Using the ["clip pattern"](https://www.a11yproject.com/posts/2013-01-11-how-to-hide-content/) you can hide the inner text on screen, but still have it announced by assistive technology. This can be especially handy if you translate your pages for localization.
+Using the [clip pattern](https://www.a11yproject.com/posts/2013-01-11-how-to-hide-content/) you can hide the inner text on screen, but still have it announced by assistive technology. This can be especially handy if you translate your pages for localization.
 
 ```html
 <a href="https://web.dev/accessible">Learn more <span class="visually-hidden">about accessibility on web.dev</span></a>
