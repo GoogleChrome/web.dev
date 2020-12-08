@@ -305,7 +305,7 @@ and makes it one of the most convenient options available.
 ### Configure babel-loader to transpile node_modules
 
 If you are using `babel-loader` without one of the previous two plugins,
-there's an important step required in order to consume Modern JavaScript npm
+there's an important step required in order to consume modern JavaScript npm
 modules. Defining two separate `babel-loader` configurations makes it possible
 to automatically compile modern language features found in `node_modules` to
 ES2017, while still transpiling your own first-party code with the Babel
