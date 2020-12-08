@@ -76,8 +76,8 @@ Take a look at the HTML for your form in `index.html`.
 </form>
 ```
 
-There are input elements for card number, name on card, expiry date and security code. They're all 
-wrapped in section elements, and each has a label. The **Complete Payment** button is an HTML 
+There are `<input>` elements for card number, name on card, expiry date and security code. They're all 
+wrapped in `<section>` elements, and each has a label. The **Complete Payment** button is an HTML 
 `<button>`. Later in this codelab you'll learn about the browser features you can access by using 
   these elements.
 
@@ -104,7 +104,7 @@ on mobile. It doesn't look too good, either.
 You need to ensure your forms work well on a range of devices by adjusting padding, margins, and 
 font sizes. 
 
-Copy all the CSS below and paste it into your own `main.css` file.
+Copy all the CSS below and paste it into your own `css/main.css` file.
 
 {% Glitch {
   id: 'payment-form-codelab-2',
@@ -121,7 +121,7 @@ That's a lot of CSS! The main things to be aware of are the changes to sizes:
 When you're ready, click **View App** to see the styled form.  You'll also notice that borders have 
 been adjusted, and `display: block;` is used for labels so they go on a line on their own, and 
 inputs can be full width. [Sign-in form best practices](/sign-in-form-best-practices/#label:~:text=put%20your%20labels%20above%20your%20inputs) 
-explains why this is probably best.
+explains the benefits of this approach in more detail.
 
 The `:invalid` selector is used to indicate when an input has an invalid value. (You'll use this 
 later in the codelab.)
@@ -196,6 +196,14 @@ Add attributes to the form in your `index.html` file so it looks like this:
 View your app again and then tap or click in the **Card number** field. Depending on the device and 
 platform, you may see a chooser showing payment methods stored for the browser, like the one below. 
 
+<figure class="w-figure">
+  <img 
+    src="images/credit-card-autofill.png" 
+    alt="Two screenshots of a payment form in Chrome on an Android phone. One shows the built-in 
+    browser payment card selector; the other shows dummy autofilled values.">
+  <figcaption class="w-figcaption">Built-in browser payment chooser and autofill.</figcaption>
+</figure>
+
 Once you select a payment method and enter your security code, the browser autofills the form using 
 the payment card `autocomplete` values you added to the form:
 
@@ -215,14 +223,6 @@ On a mobile device you'll also notice that you get a numeric keyboard as soon as
 **Card number** field. That's because you used `inputmode="numeric"`. For numeric fields this makes 
 it easier to enter numbers and impossible to enter non-numeric characters, and nudges users to 
 remember the type of data they're entering.
-
-<figure class="w-figure">
-  <img 
-    src="images/credit-card-autofill.png" 
-    alt="Two screenshots of a payment form in Chrome on an Android phone. One shows the built-in 
-    browser payment card selector; the other shows dummy autofilled values.">
-  <figcaption class="w-figcaption">Built-in browser payment chooser and autofill.</figcaption>
-</figure>
 
 It's extremely important to correctly add all available `autocomplete` values to payment forms. It's 
 quite common for sites to miss out the `autocomplete` value for the card expiry date and other 
@@ -328,7 +328,7 @@ targeting? How could the form be improved?
 
 ## Going further
 
-We won't show them here, but crucial form features are still missing:
+Consider the following crucial form features that are not covered in this codelab:
 
 * Link to your Terms of Service and privacy policy documents: make it clear to users how you 
 safeguard their data.
