@@ -4,7 +4,7 @@ title: "ARIA items do not have accessible names"
 description: |
   Learn how to improve your web page's accessibility by making sure that
   assistive technology users can access the names of ARIA items.
-date: 2020-12-03
+date: 2020-12-08
 web_lighthouse:
   - aria-command-name
   - aria-input-field-name
@@ -13,6 +13,8 @@ web_lighthouse:
   - aria-toggle-field-name
   - aria-tooltip-name
   - aria-treeitem-name
+tags:
+  - accessibility
 ---
 
 {% include 'content/lighthouse-accessibility/about-aria.njk' %}
@@ -34,13 +36,15 @@ There are 7 audits that check for accessible names, each one covers a different
 set of [ARIA roles](https://www.w3.org/TR/wai-aria-practices-1.1/#aria_ex). Elements
 that have any of the following ARIA roles but don't have accessible names will cause this audit to fail:
 
-- `aria-command-name` - `button`, `link`, `menuitem`
-- `aria-input-field-name` - `combobox`, `listbox`, `searchbox`, `slider`, `spinbutton`, `textbox`
-- `aria-meter-name` - `meter`
-- `aria-progressbar-name` - `progressbar`
-- `aria-toggle-field-name` - `checkbox`, `menu`, `menuitemcheckbox`, `menuitemradio`, `radio`, `radiogroup`, `switch`
-- `aria-tooltip-name` - `tooltip`
-- `aria-treeitem-name` - `treeitem`
+| Audit name | ARIA roles |
+| ---------- | --------- |
+| `aria-command-name` | `button`, `link`, `menuitem` |
+| `aria-input-field-name` | `combobox`, `listbox`, `searchbox`, `slider`, `spinbutton`, `textbox` |
+| `aria-meter-name` | `meter` |
+| `aria-progressbar-name` | `progressbar` |
+| `aria-toggle-field-name` | `checkbox`, `menu`, `menuitemcheckbox`, `menuitemradio`, `radio`, `radiogroup`, `switch` |
+| `aria-tooltip-name` | `tooltip` |
+| `aria-treeitem-name` | `treeitem` |
 
 {% include 'content/lighthouse-accessibility/use-native.njk' %}
 
@@ -67,6 +71,7 @@ Using the [clip pattern](https://www.a11yproject.com/posts/2013-01-11-how-to-hid
 ```
 
 ### Option 2: Add an `aria-label` attribute to the element
+
 If you can't add inner text—for example, if you don't want
 the element's name to be visible—use
 the `aria-label` attribute.
@@ -137,15 +142,14 @@ as its label and will be announced as "Search currency pairs":
 ```
 
 ## Resources
-- <a href="https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-toggle-field-name.js" rel="noopener">Source code for **Not all ARIA toggle fields have accessible names** audit</a>
 
-- <a href="https://dequeuniversity.com/rules/axe/4.1/aria-command-name" rel="noopener">ARIA button, link, and menuitem must have an accessible name (Deque University)</a>
-- name <a href="https://dequeuniversity.com/rules/axe/4.1/aria-input-field-name" rel="noopener">ARIA input fields must have an accessible name (Deque University)</a>
-- <a href="https://dequeuniversity.com/rules/axe/4.1/aria-meter-name" rel="noopener">ARIA meter must have an accessible name (Deque University)</a>
-- <a href="https://dequeuniversity.com/rules/axe/4.1/aria-progressbar-name" rel="noopener">ARIA progressbar must have an accessible name (Deque University)</a>
-- name <a href="https://dequeuniversity.com/rules/axe/4.1/aria-toggle-field-label" rel="noopener">ARIA toggle fields have an accessible name (Deque University)</a>
-- <a href="https://dequeuniversity.com/rules/axe/4.1/aria-tooltip-name" rel="noopener">ARIA tooltip must have an accessible name (Deque University)</a>
-- <a href="https://dequeuniversity.com/rules/axe/4.1/aria-treeitem-name" rel="noopener">ARIA treeitem must have an accessible name (Deque University)</a>
-
+- [Source code for **Not all ARIA toggle fields have accessible names** audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/accessibility/aria-toggle-field-name.js)
+- [ARIA button, link, and menuitem must have an accessible name (Deque University)](https://dequeuniversity.com/rules/axe/4.1/aria-command-name)
+- [ARIA input fields must have an accessible name (Deque University)](https://dequeuniversity.com/rules/axe/4.1/aria-input-field-name)
+- [ARIA meter must have an accessible name (Deque University)](https://dequeuniversity.com/rules/axe/4.1/aria-meter-name)
+- [ARIA progressbar must have an accessible name (Deque University)](https://dequeuniversity.com/rules/axe/4.1/aria-progressbar-name)
+- [ARIA toggle fields have an accessible name (Deque University)](https://dequeuniversity.com/rules/axe/4.1/aria-toggle-field-label)
+- [ARIA tooltip must have an accessible name (Deque University)](https://dequeuniversity.com/rules/axe/4.1/aria-tooltip-name)
+- [ARIA treeitem must have an accessible name (Deque University)](https://dequeuniversity.com/rules/axe/4.1/aria-treeitem-name)
 - [Labels and text alternatives](/labels-and-text-alternatives)
 - [Use semantic HTML for easy keyboard wins](/use-semantic-html)
