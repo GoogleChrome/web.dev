@@ -62,9 +62,9 @@ consistent support across modern browsers. For example, many ES2020 and ES2021
 features are only supported in 70% of the browser market—still the majority of
 browsers, but not enough that it's safe to rely on those features directly. This
 means that although "modern" JavaScript is a moving target, ES2017 has the
-widest range of browser compatibility while including most of the commonly used
-modern syntax features. In other words, **ES2017 is the closest to modern syntax
-today**.
+widest range of browser compatibility
+[while including most of the commonly used modern syntax features](https://dev.to/garylchew/bringing-modern-javascript-to-libraries-432c).
+In other words, **ES2017 is the closest to modern syntax today**.
 
 ## Legacy JavaScript
 
