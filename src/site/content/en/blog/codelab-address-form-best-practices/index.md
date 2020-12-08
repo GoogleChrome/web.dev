@@ -222,7 +222,7 @@ There are two attributes that can improve the user experience of entering a tele
 field and the form can now be submitted (the default is `next`).
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="images/enterkeyhint.png" alt="Two screenshots of a form 
+  <img src="images/enterkeyhint.png" alt="Two screenshots of a form 
   on Android showing how the enterkeyhint input attribute changes the enter key button icon.">
   <figcaption class="w-figcaption">Use the enterkeyhint attribute to set the Enter button label: 'next' and 'done'.</figcaption>
 </figure>
