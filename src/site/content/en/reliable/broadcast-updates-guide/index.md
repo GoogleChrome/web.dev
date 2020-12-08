@@ -4,7 +4,7 @@ title: "Broadcast updates to pages with service workers"
 authors:
   - demianrenzulli
   - andrewguan 
-date: 2020-12-04 
+date: 2020-12-08
 description: | 
   How service workers can proactively communicate with the page to inform about certain events.
 tags:
@@ -32,6 +32,13 @@ We'll call these types of use cases where the service worker doesn't need to rec
 the page to start a communication **“broadcast updates”**. In this guide we'll review different
 ways of implementing this type of communication between pages and service workers, by using standard
 browser APIs and the [Workbox library](https://developers.google.com/web/tools/workbox).
+
+{% Aside %}
+  Check out [Workers overview](/workers-overview/) for a high-level explanation
+  of when to use web workers versus service workers and the rest of the
+  [Window to workers communication](/reliable/#window-to-worker-communication) series
+  for guides on other common use cases.
+{% endAside %}
 
 ## Production cases {: #production-cases }
 
@@ -71,7 +78,7 @@ toast, letting the user know about the feature:
 events](https://developers.google.com/web/tools/workbox/modules/workbox-window#important_service_worker_lifecycle_moments).
 Under the hood, the library uses client-side APIs like
 [`updatefound`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/onupdatefound)
-and [vstatechange`](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker/onstatechange)
+and [statechange](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker/onstatechange)
 and provides higher level event listeners in the `workbox-window` object, making it easier for the
 user to consume these events.
 

@@ -4,7 +4,7 @@ title: "Two-way communication with service workers"
 authors:
   - demianrenzulli
   - andrewguan 
-date: 2020-12-04 
+date: 2020-12-08
 description: | 
     How establish a two-way communication channel between the page and the service worker. 
 tags:
@@ -31,6 +31,13 @@ some advanced cases.
        width="800"
        alt="Diagram showing a service worker and the page exchanging messages.">
 </figure>
+
+{% Aside %}
+  Check out [Workers overview](/workers-overview/) for a high-level explanation
+  of when to use web workers versus service workers and the rest of the
+  [Window to workers communication](/reliable/#window-to-worker-communication) series
+  for guides on other common use cases.
+{% endAside %}
 
 ## Using Workbox {: #using-workbox }
 
@@ -303,7 +310,7 @@ retry. Retry syncs also wait for connectivity, and employ an exponential back-of
 Once the operation has been performed, the service worker can then communicate back with the page to
 update the UI, by using any of the communication APIs explored earlier.
 
-Google search uses `Background Sync` to persist failed queries due to bad connectivity, and retry
+Google search uses Background Sync to persist failed queries due to bad connectivity, and retry
 them later when the user is online. Once the operation is performed, they communicate the result to
 the user via a web push notification:
 

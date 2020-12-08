@@ -4,7 +4,7 @@ title: "Imperative caching guide"
 authors:
   - demianrenzulli
   - andrewguan 
-date: 2020-12-04 
+date: 2020-12-08
 description: | 
   How to communicate window and service worker to perform tasks related to performance, caching and offline. 
 tags:
@@ -35,6 +35,13 @@ main thread for better handling more pressing tasks such as responding to user i
 In this guide we'll explore how to implement a **one-way** communication technique from the page to
 the service worker by using standard browser APIs and the Workbox library. We'll call these types of
 use cases **imperative caching**.
+
+{% Aside %}
+  Check out [Workers overview](/workers-overview/) for a high-level explanation
+  of when to use web workers versus service workers and the rest of the
+  [Window to workers communication](/reliable/#window-to-worker-communication) series
+  for guides on other common use cases.
+{% endAside %}
 
 ## Production case {: #production-case }
 

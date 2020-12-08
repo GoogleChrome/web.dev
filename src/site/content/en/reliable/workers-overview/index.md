@@ -4,7 +4,7 @@ title: "Workers overview"
 authors:
   - demianrenzulli
   - andrewguan 
-date: 2020-12-04 
+date: 2020-12-08
 description: | 
     How web workers and service workers can improve the performance of your website, and when to use a web worker versus a service worker. 
 hero: hero.jpeg 
