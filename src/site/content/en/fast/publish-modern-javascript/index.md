@@ -219,7 +219,7 @@ bundled and transpiled to the correct syntax. It can also be faster than
 traditional solutions involving two compilation steps, while still generating
 separate bundles for modern and legacy browsers. The two sets of bundles are
 designed to be loaded using the
-[module/nomodule pattern](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/).
+[module/nomodule pattern](/serve-modern-code-to-modern-browsers/).
 
 ```js
 const OptimizePlugin = require('optimize-plugin');
@@ -298,14 +298,21 @@ little bit of extra time for large applications, however this technique allows
 `BabelEsmPlugin` to integrate seamlessly into existing webpack configurations
 and makes it one of the most convenient options available.
 
-### webpack-plugin-modern-npm
+### Configure babel-loader to transpile node_modules
 
-If you are using `babel-loader`, `webpack-plugin-modern-npm` is a plugin that
-can automatically compile all modern language features found in `node_modules`
-to ES2017 while allowing you to handle transpiling your first-party code
-separately. This doesn't generate modern and legacy bundles for a
-module/nomodule setup, but it does make it possible to install and use npm
-packages that contain modern JavaScript without breaking older browsers.
+If you are using `babel-loader` without one of the previous two plugins,
+there's an important step required in order to consume Modern JavaScript npm
+modules. Defining two separate `babel-loader` configurations makes it possible
+to automatically compile modern language features found in `node_modules` to
+ES2017, while still transpiling your own first-party code with the Babel
+plugins and presets defined in your project's configuration. This doesn't
+generate modern and legacy bundles for a module/nomodule setup, but it does
+make it possible to install and use npm packages that contain modern JavaScript
+without breaking older browsers.
+
+[webpack-plugin-modern-npm](https://www.npmjs.com/package/webpack-plugin-modern-npm)
+uses this technique to compile npm dependencies that have an `"exports"` field
+in their `package.json`, since these may contain modern syntax:
 
 ```js
 const ModernNpmPlugin = require('webpack-plugin-modern-npm');
@@ -315,6 +322,42 @@ module.exports = {
     // auto-transpile modern stuff found in node_modules
     new ModernNpmPlugin(),
   ],
+};
+```
+
+Alternatively, you can implement the technique manually in your webpack
+configuration by checking for an `"exports"` field in the `package.json` of
+modules as they are resolved. Omitting caching for brevity, a custom
+implementation might look like this:
+
+```js
+module.exports = {
+  module: {
+    rules: [
+      // Transpile for your own first-party code:
+      {
+        test: /\.js$/i,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+      },
+      // Transpile modern dependencies:
+      {
+        test: /\.js$/i,
+        loader: 'babel-loader',
+        options: {
+          babelrc: false,
+          configFile: false,
+          presets: ['@babel/preset-env'],
+        },
+        include(file) {
+          let dir = file.match(/^.*[/\\]node_modules[/\\](@.*?[/\\])?.*?[/\\]/);
+          try {
+            return dir && !!require(dir[0] + 'package.json').exports;
+          } catch (e) {}
+        },
+      },
+    ],
+  },
 };
 ```
 
