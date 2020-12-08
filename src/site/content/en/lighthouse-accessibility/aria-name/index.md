@@ -26,7 +26,7 @@ flags custom ARIA items whose names
 aren't accessible to assistive technologies:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="../aria-toggle-field-name/aria-toggle-field-name.png"
+  <img class="w-screenshot" src="aria-toggle-field-name.png"
     alt="Lighthouse audit showing custom toggle elements without accessible names">
 </figure>
 
@@ -57,6 +57,12 @@ to assistive technology users:
 
 ```html
 <div id="checkbox1" role="checkbox">Newspaper</div>
+```
+
+Using the ["clip pattern"](https://www.a11yproject.com/posts/2013-01-11-how-to-hide-content/) you can hide the inner text on screen, but still have it announced by assistive technology. This can be especially handy if you translate your pages for localization.
+
+```html
+<a href="https://web.dev/accessible">Learn more <span class="visually-hidden">about accessibility on web.dev</span></a>
 ```
 
 ### Option 2: Add an `aria-label` attribute to the element
@@ -100,7 +106,7 @@ as its label and will be announced as "Sans-serif":
 The easiest way to provide an accessible name for most elements
 is to include text content in the element.
 However, custom input fields typically don't have inner text,
-so you can use one of two strategies instead.
+so you can use one of the following strategies instead.
 
 ### Option 1: Add an `aria-label` attribute to the element
 
@@ -110,7 +116,7 @@ For example, this custom combobox will be announced as "country"
 to assistive technology users:
 
 ```html
-<div id="combo1" aria-label="country" role="combobox">England</div>
+<div id="combo1" aria-label="country" role="combobox"></div>
 ```
 
 ### Option 2: Refer to another element using `aria-labelledby`
