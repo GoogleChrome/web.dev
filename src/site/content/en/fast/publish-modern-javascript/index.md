@@ -426,6 +426,15 @@ export default {
 };
 ```
 
+## Additional build tools
+
+Rollup and webpack are highly-configurable, which generally means each project
+must update its configuration enable modern JavaScript syntax in dependencies.
+There are also higher-level build tools that favor convention and defaults over
+configuration, like [Parcel], [Snowpack], [Vite] and [WMR]. Most of these tools
+assume npm dependencies may contain modern syntax, and will transpile them to
+the appropriate syntax level(s) when building for production.
+
 ## Conclusion
 
 [Estimator.dev](http://estimator.dev/) was built to provide an easy way to
@@ -439,3 +448,8 @@ for your use case.
 {% YouTube 'cLxNdLK--yI' %}
 
 _With reviews from [Milica Mihajlija](/authors/mihajlija/)._
+
+[parcel]: https://parceljs.org/
+[snowpack]: https://www.snowpack.dev/
+[vite]: https://github.com/vitejs/vite
+[wmr]: https://github.com/preactjs/wmr
