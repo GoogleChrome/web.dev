@@ -5,6 +5,7 @@ subhead: >
   deliver better performance and a more engaging experience to 12M users.
 date: 2020-12-08
 hero: hero.jpg
+thumbnail: thumbnail.jpg
 alt: Clipchamp's logo.
 description: >
   How PWAs, WebAssembly, and Chrome OS are helping a web-based video editor
