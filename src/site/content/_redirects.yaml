@@ -233,3 +233,13 @@ redirects:
 # Redirects for vanity URLs
 - from: /scale-on-web
   to: /tags/scale-on-web
+
+# Redirect for the renamed WebTransport API.
+- from: /quictransport
+  to: /webtransport
+
+# Redirect for consolidated Lighthouse audit for a11y names.
+- from: /aria-toggle-field-name
+  to: /aria-name
+- from: /aria-input-field-name
+  to: /aria-name

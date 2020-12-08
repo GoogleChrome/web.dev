@@ -26,10 +26,10 @@ feedback:
 ---
 
 {% Aside %}
-
-For how cookies and `SameSite` work, see part 1:
-[SameSite cookies explained](/samesite-cookies-explained).
-
+This article is part of a series on the `SameSite` cookie attribute changes:
+- [SameSite cookies explained](/samesite-cookies-explained/)
+- [SameSite cookies recipes](/samesite-cookie-recipes/)
+- [Schemeful Same-Site](/schemeful-samesite)
 {% endAside %}
 
 [Chrome](https://www.chromium.org/updates/same-site),

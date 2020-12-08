@@ -4,7 +4,7 @@ subhead: The Serial API allows websites to communicate with serial devices.
 authors:
   - beaufortfrancois
 date: 2020-08-12
-updated: 2020-09-29
+updated: 2020-12-02
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: |
@@ -393,14 +393,21 @@ access a serial port, it should monitor the `connect` and `disconnect` events.
 
 ```js
 navigator.serial.addEventListener("connect", (event) => {
-  // TODO: Automatically open event.port or warn user a port is available.
+  // TODO: Automatically open event.target or warn user a port is available.
 });
 
 navigator.serial.addEventListener("disconnect", (event) => {
-  // TODO: Remove |event.port| from the UI.
+  // TODO: Remove |event.target| from the UI.
   // If the serial port was opened, a stream error would be observed as well.
 });
 ```
+
+{% Aside %}
+Prior to Chrome 89 the `connect` and `disconnect` events fired a custom
+`SerialConnectionEvent` object with the affected `SerialPort` interface
+available as the `port` attribute. You may want to use `event.port ||
+event.target` to handle the transition.
+{% endAside %}
 
 ### Handle signals {: #signals }
 

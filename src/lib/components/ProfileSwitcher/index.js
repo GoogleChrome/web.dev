@@ -96,7 +96,11 @@ class ProfileSwitcher extends BaseElement {
       <div class="w-profile-dialog">
         <div class="w-profile-dialog__user">
           <div class="w-profile-dialog__photo-container">
-            <img class="w-profile-dialog__photo" src="${this.user.photoURL}" />
+            <img
+              class="w-profile-dialog__photo"
+              alt=""
+              src="${this.user.photoURL}"
+            />
           </div>
           <div class="w-profile-dialog__details">
             <div class="w-profile-dialog__name">

@@ -1,8 +1,8 @@
 ---
 title: New capabilities status
-subhead: Web apps should be able to do anything iOS/Android/desktop apps can. Google wants to make it possible for you to build and deliver apps on the open web that have never been possible before.
+subhead: Web apps should be able to do anything iOS/Android/desktop apps can. The members of the cross-company capabilities project want to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2020-10-05
+updated: 2020-12-01
 tags:
   - blog
   - capabilities
@@ -13,8 +13,8 @@ This is a living document and will be updated as features move between
 states.
 {% endAside %}
 
-The [capabilities project][capabilities-project] is a cross-company effort at Google
-to make it possible for web apps to do anything iOS/Android/desktop apps can, by exposing the
+The [capabilities project][capabilities-project] is a cross-company effort with the objective of
+making it possible for web apps to do anything iOS/Android/desktop apps can, by exposing the
 capabilities of these platforms to the web platform, while maintaining user
 security, privacy, trust, and other core tenets of the web.
 
@@ -66,6 +66,21 @@ change.<a name="shape-face-text"></a>
           time - even if there is no network connectivity, or the device is in
           battery saver mode.<br>
           <em>Updated August 23, 2020</em>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/nfc/">Web NFC</a>
+        </td>
+        <td>
+          Web NFC provides sites the ability to read and write to NFC tags when
+          they are in close proximity to the user's device.
+          For example, museums and art galleries could display additional
+          information about a display when the user touches their device to an
+          NFC card near the exhibit; or an inventory management web app could
+          read or write data to an NFC tag on a container to update information
+          on its contents.<br>
+          <em>Updated December 1, 2020</em>
         </td>
       </tr>
     </tbody>
@@ -132,21 +147,6 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
           the physical world by allowing websites to communicate with serial
           devices, such as microcontrollers and 3D printers.<br>
           <em>Updated September 29, 2020</em>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="/nfc/">Web NFC</a>
-        </td>
-        <td>
-          Web NFC provides sites the ability to read and write to NFC tags when
-          they are in close proximity to the user's device.
-          For example, museums and art galleries could display additional
-          information about a display when the user touches their device to an
-          NFC card near the exhibit; or an inventory management web app could
-          read or write data to an NFC tag on a container to update information
-          on its contents.<br>
-          <em>Updated December 12, 2019</em>
         </td>
       </tr>
       <tr>
@@ -346,7 +346,7 @@ latest version of Chrome, and in many cases other Chromium based browsers.
 
 ## Suggest a new capability {: #suggest-new }
 
-Do you have a suggestion for a capability you think Chrome should consider?
+Do you have a suggestion for a capability you think Chromium should consider?
 Tell us about it by filing a [new feature request](https://goo.gl/qWhHXU).
 Please be sure to include as much detail as you can, such as
 the problem you're trying to solve, suggested use cases, and anything else

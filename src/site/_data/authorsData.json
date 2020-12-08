@@ -15,6 +15,39 @@
       "en": "Human boy working on web standards at Google"
     }
   },
+  "aaronkrajeski": {
+    "name": {
+      "given": "Aaron",
+      "family": "Krajeski"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Chrome"
+    },
+    "country": "Canada",
+    "homepage": "http://aaronk.is//",
+    "twitter": "_mysteryDate",
+    "github": "mysteryDate",
+    "descriptions": {
+      "en": "Overly concerned with glowing rectangles"
+    }
+  },
+  "felixarntz": {
+    "name": {
+      "given": "Felix",
+      "family": "Arntz"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Developer Relations"
+    },
+    "country": "US",
+    "homepage": "https://felix-arntz.me",
+    "twitter": "felixarntz",
+    "description": {
+      "en": "Developer Programs Engineer at Google, contributing to the CMS ecosystem"
+    }
+  },
   "kaycebasques": {
     "name": {
       "given": "Kayce",
@@ -1573,6 +1606,61 @@
     "name": {
       "given": "Matt",
       "family": "Gaunt"
+    }
+  },
+  "reillyg": {
+    "name": {
+      "given": "Reilly",
+      "family": "Grant"
+    },
+    "twitter": "reillyeon",
+    "github": "reillyeon",
+    "description": {
+      "en": "Software Engineer on Google Chrome focusing on hardware APIs"
+    }
+  },
+  "nateschloss": {
+    "name": {
+      "given": "Nate",
+      "family": "Schloss"
+    },
+    "github": "n8schloss",
+    "twitter": "n8schloss"
+  },
+  "andrewcomminos": {
+    "name": {
+      "given": "Andrew",
+      "family": "Comminos"
+    },
+    "github": "acomminos",
+    "twitter": "acomminos"
+  },
+  "bingler": {
+    "name": {
+      "given": "Steven",
+      "family": "Bingler"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Chrome"
+    },
+    "descriptions": {
+      "en": "Software engineer on Chrome's Privacy Sandbox."
+    },
+    "country": "US",
+    "github": "sbingler"
+  },
+  "rezakazemi": {
+    "name": {
+      "given": "Reza",
+      "family": "Kazemi"
+    },
+    "descriptions": {
+      "en": "Product Manager at Corel"
+    },
+    "org": {
+      "name": "Corel",
+      "unit": "Online Graphics"
     }
   }
 }

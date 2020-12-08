@@ -134,7 +134,7 @@ data stored in:
 
 - Cache API
 - Cookies
-- DOM Storage
+- DOM Storage (Local Storage)
 - File System API (browser-provided and sandboxed file system)
 - IndexedDB
 - Service workers

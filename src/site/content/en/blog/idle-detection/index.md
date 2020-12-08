@@ -8,7 +8,7 @@ description: |
   interaction with the keyboard, mouse, screen, activation of a screensaver, locking of the screen,
   or moving to a different screen. A developer-defined threshold triggers the notification.
 date: 2020-05-18
-updated: 2020-10-02
+updated: 2020-12-07
 tags:
   - blog
   - idle-detection
@@ -52,7 +52,7 @@ can limit these calculations to moments when the user interacts with their devic
 | 1. Create explainer                      | [Complete][explainer]    |
 | 2. Create initial draft of specification | Not started              |
 | 3. Gather feedback & iterate on design   | [In progress](#feedback) |
-| 4. Origin trial                          | [In progress][ot]        |
+| 4. Origin trial                          | Complete                 |
 | 5. Launch                                | Not started              |
 
 </div>
@@ -64,16 +64,16 @@ can limit these calculations to moments when the user interacts with their devic
 To experiment with the Idle Detection API locally, without an origin trial token, enable the
 `#enable-experimental-web-platform-features` flag in `chrome://flags`.
 
-### Enabling support during the origin trial phase
-
-Starting with Chrome&nbsp;84, the Idle Detection API will be available as an origin trial.
-The origin trial is expected to end in Chrome&nbsp;86.
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #register-for-ot }
-
-{% include 'content/origin-trial-register.njk' %}
+{% Aside %}
+  An origin trial for this feature ran from Chrome&nbsp;84 to Chrome&nbsp;86.
+  We are still coordinating with our partners to figure out when they will be ready to deploy code
+  to a wider audience using this feature.
+  We will not be enabling the origin trial in Chrome&nbsp;87 and will update this article
+  when a new milestone has been chosen, likely Chrome&nbsp;88.
+  Interested developers can continue to test out the API locally,
+  including the permission changes landed in Chrome&nbsp;87,
+  by flipping the [flag](#enabling-via-chrome:flags).
+{% endAside %}
 
 ### Feature detection
 
