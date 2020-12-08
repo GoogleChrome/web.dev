@@ -1649,5 +1649,18 @@
     },
     "country": "US",
     "github": "sbingler"
+  },
+  "rezakazemi": {
+    "name": {
+      "given": "Reza",
+      "family": "Kazemi"
+    },
+    "descriptions": {
+      "en": "Product Manager at Corel"
+    },
+    "org": {
+      "name": "Corel",
+      "unit": "Online Graphics"
+    }
   }
 }
