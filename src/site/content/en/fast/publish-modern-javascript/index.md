@@ -2,6 +2,7 @@
 layout: post
 title: Publish, ship, and install modern JavaScript for faster applications
 subhead: Improve performance by turning on modern JavaScript dependencies and output.
+hero: hero.jpg
 authors:
   - houssein
   - developit
