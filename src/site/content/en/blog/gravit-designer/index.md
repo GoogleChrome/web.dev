@@ -5,6 +5,7 @@ subhead: >
   become repeats users 31% more than all other platforms, and more.
 date: 2020-12-08
 hero: hero.png
+thumbnail: thumbnail.png
 alt: Gravit Designer's logo.
 description: >
   PWA users are also 24% more active than all other install types,
