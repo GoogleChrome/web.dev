@@ -437,7 +437,7 @@ the appropriate syntax level(s) when building for production.
 
 ## Conclusion
 
-[Estimator.dev](http://estimator.dev/) was built to provide an easy way to
+[EStimator.dev](http://estimator.dev/) was built to provide an easy way to
 assess how much of an impact it can make to switch to modern-capable JavaScript
 code for the majority of your users. Today, ES2017 is the closest to modern
 syntax and tools such as npm, Babel, webpack, and Rollup have made it possible
