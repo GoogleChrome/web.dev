@@ -36,7 +36,7 @@ browser APIs and the [Workbox library](https://developers.google.com/web/tools/w
 {% Aside %}
   Check out [Workers overview](/workers-overview/) for a high-level explanation
   of when to use web workers versus service workers and the rest of the
-  [Window to workers communication](/reliable/#window-to-worker-communication) series
+  [Communicate with workers](/reliable/#communicate-with-workers) series
   for guides on other common use cases.
 {% endAside %}
 

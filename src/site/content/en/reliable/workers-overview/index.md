@@ -10,6 +10,7 @@ description: |
 hero: hero.jpeg 
 thumbnail: hero.jpeg 
 tags:
+  - blog
   - service-worker
   - performance
   - offline
