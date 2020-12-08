@@ -58,20 +58,20 @@ Here is an example of a simple address form that demonstrates all of the best pr
 * [Label each form field with a `<label>`](#html-label).
 * Use HTML element attributes to [access built-in browser features](#html-attributes), in particular 
 [`type`](#type-attribute) and [`autocomplete`](#autocomplete-attribute) with appropriate values.
-* Avoid using `type="number"` for numbers such as payment card numbers that aren't meant to be 
-incremented. Use `type="text"` and [`inputmode="numeric"`](#inputmode-attribute) instead.
+* Avoid using `type="number"` for numbers that aren't meant to be 
+incremented, such as payment card numbers. Use `type="text"` and [`inputmode="numeric"`](#inputmode-attribute) instead.
 * If an [appropriate autocomplete value](#autocomplete-attribute) is available for an `input`, 
 `select`, or `textarea`, you should use it.
 * To help browsers autofill forms, give input `name` and `id` attributes [stable values](#stable-name-id) 
 that don't change between page loads or website deployments.
 * [Disable submit buttons](#disable-submit) once they've been tapped or clicked.
-* [Validate](#validate) during data entry—not just on form submission.
+* [Validate](#validate) data during entry—not just on form submission.
 * Make [guest checkout](#guest-checkout) the default and make account creation simple once checkout 
 is complete.
 * Show [progress through the checkout process](#checkout-progress) in clear steps with clear calls 
 to action.
 * [Limit potential checkout exit points](#reduce-checkout-exits) by removing clutter and distractions.
-* At checkout [show full order details](#checkout-details) and make it easy for orders to be adjusted.
+* [Show full order details](#checkout-details) at checkout and make order adjustments easy.
 * [Don't ask for data you don't need](#unneeded-data).
 * [Ask for names with a single input](#single-name-input) unless you have a good reason not to.
 * [Don't enforce Latin-only characters](#unicode-matching) for names and usernames.
@@ -136,8 +136,8 @@ it's associated with, and screenreaders announce label text when the *label* or 
 gets focus.
 
 {% Aside 'caution' %}
-[Placeholders](https://www.smashingmagazine.com/2018/06/placeholder-attribute/) can be handy, but 
-don't use them on their own instead of labels. Once you start entering text in an input, the 
+Don't use [placeholders](https://www.smashingmagazine.com/2018/06/placeholder-attribute/) 
+on their own instead of labels. Once you start entering text in an input, the 
 placeholder is hidden, so it can be easy to forget what the input is for. The same is true if 
 you use the placeholder to show the correct format for values such as dates. This can be especially 
 problematic for users on phones, particularly if they're distracted or feeling stressed! 
@@ -146,8 +146,8 @@ problematic for users on phones, particularly if they're distracted or feeling s
 #### Make buttons helpful {: #html-button}
 
 Use [`<button>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
-for buttons! You can also use `<input type="submit">`, but there's no point in using a div or some 
-other random element acting as a button. Button elements provide accessible behaviour and built-in 
+for buttons! You can also use `<input type="submit">`, but don't use a `div` or some 
+other random element acting as a button. Button elements provide accessible behaviour, built-in 
 form submission functionality, and can easily be styled. 
 
 Give each form submit button a value that says what it does. For each step towards checkout, use 
@@ -164,8 +164,8 @@ That can mess up checkout and add to server load.
 On the other hand, don't disable a submit button waiting on complete and valid user input. For 
 example, don't just leave a **Save Address** button disabled because something is missing or invalid. 
 That doesn't help the user—they may continue to tap or click the button and assume that it's broken. 
-Instead, explain to the user what's gone wrong and what they need to do if they attempt to submit 
-the form with invalid data. This is particularly important on mobile, where data entry is more 
+Instead, if users attempt to submit a form with invalid data, explain to them what's gone wrong 
+and what to do to fix it. This is particularly important on mobile, where data entry is more 
 difficult and missing or invalid form data may not be visible on the user's screen by the time they 
 attempt to submit a form.
 
@@ -355,8 +355,8 @@ complete a purchase on desktop, but lower mobile conversion rates are also a res
 experience. Your job is to *minimize* lost conversions on mobile and *maximize* conversions 
 on desktop. [Research has shown](https://www.comscore.com/Insights/Presentations-and-Whitepapers/2017/Mobiles-Hierarchy-of-Needs) that there's a huge opportunity to provide a better mobile form experience. 
 
-Most of all, users are more likely to abandon forms that look long, complex and without a sense of 
-direction—especially on smaller screens and when users are distracted or in a rush. Ask for as 
+Most of all, users are more likely to abandon forms that look long, that are complex, and without a sense of 
+direction. This is especially true when users are on smaller screens, distracted, or in a rush. Ask for as 
 little data as possible.
 
 ### Make guest checkout the default {: #guest-checkout}
@@ -757,10 +757,11 @@ as how long checkout pages take to load or how long payment takes to complete:
 
 * **Page analytics**: page views, bounce rates and exits for every page with a form.
 * **Interaction analytics**: [goal funnels](https://support.google.com/analytics/answer/6180923?hl=en) 
-(where do users abandon your checkout flow?) and [events](https://developers.google.com/analytics/devguides/collection/gtagjs/events) 
-(what actions do users take when interacting with your forms?)
-* **Website performance**: [user-centric metrics](/user-centric-performance-metrics) (Are your 
-checkout pages slow to load and, if so—what's the cause?).
+and [events](https://developers.google.com/analytics/devguides/collection/gtagjs/events) 
+indicate where users abandon your checkout flow and what actions do they take when interacting 
+with your forms.
+* **Website performance**: [user-centric metrics](/user-centric-performance-metrics) can tell you if your 
+checkout pages are slow to load and, if so—what's the cause.
 
 Page analytics, interaction analytics, and real user performance measurement become especially 
 valuable when combined with server logs, conversion data, and A/B testing, enabling you to answer 
