@@ -26,7 +26,7 @@ site could achieve by delivering modern JavaScript syntax.
 
 <figure class="w-figure w-figure--fullbleed">
   <img src="./estimator-screenshot.png"
-       alt="Screenshot of EStimator.dev"
+       alt="EStimator.dev analysis showing a website could be 9% faster with modern JavaScript."
        width="970">
   <figcaption class="w-figcaption w-figcaption--fullbleed">
     EStimator.dev
