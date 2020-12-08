@@ -230,9 +230,9 @@ designed to be loaded using the
 [module/nomodule pattern](/serve-modern-code-to-modern-browsers/).
 
 ```js
+// webpack.config.js
 const OptimizePlugin = require('optimize-plugin');
 
-// webpack.config.js
 module.exports = {
   // ...
   plugins: [new OptimizePlugin()],
@@ -268,6 +268,7 @@ module/nomodule, used by [Next.js](https://nextjs.org/) and
 [Preact CLI](https://preactjs.com/cli/).
 
 ```js
+// webpack.config.js
 const BabelEsmPlugin = require('babel-esm-plugin');
 
 module.exports = {
@@ -281,16 +282,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: [
-              [
-                '@babel/preset-env',
-                {
-                  targets: {
-                    browsers: ['last 2 versions', 'not dead'],
-                  },
-                },
-              ],
-            ],
+            presets: ['@babel/preset-env'],
           },
         },
       },
@@ -323,6 +315,7 @@ uses this technique to compile npm dependencies that have an `"exports"` field
 in their `package.json`, since these may contain modern syntax:
 
 ```js
+// webpack.config.js
 const ModernNpmPlugin = require('webpack-plugin-modern-npm');
 
 module.exports = {
@@ -339,6 +332,7 @@ modules as they are resolved. Omitting caching for brevity, a custom
 implementation might look like this:
 
 ```js
+// webpack.config.js
 module.exports = {
   module: {
     rules: [
@@ -351,17 +345,19 @@ module.exports = {
       // Transpile modern dependencies:
       {
         test: /\.js$/i,
-        loader: 'babel-loader',
-        options: {
-          babelrc: false,
-          configFile: false,
-          presets: ['@babel/preset-env'],
-        },
         include(file) {
           let dir = file.match(/^.*[/\\]node_modules[/\\](@.*?[/\\])?.*?[/\\]/);
           try {
             return dir && !!require(dir[0] + 'package.json').exports;
           } catch (e) {}
+        },
+        use: {
+          loader: 'babel-loader',
+          options: {
+            babelrc: false,
+            configFile: false,
+            presets: ['@babel/preset-env'],
+          },
         },
       },
     ],
