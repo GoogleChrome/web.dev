@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Publish, ship, and install modern JavaScript
+title: Publish, ship, and install modern JavaScript for faster applications
 authors:
   - houssein
   - developit
