@@ -10,6 +10,8 @@ web_lighthouse:
   - layout-table
 ---
 
+{% Banner 'caution', 'body' %}This audit has been deprecated and was removed in Lighthouse 7.0.{% endBanner %}
+
 Tables used for layout purposes shouldn't include data elements:
 `<th>` element, `<caption>` element or `summary` attribute.
 
