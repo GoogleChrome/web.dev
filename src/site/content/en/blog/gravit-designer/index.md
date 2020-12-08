@@ -3,7 +3,7 @@ title: PWA users are 2.5x more likely to purchase Gravit Designer PRO
 subhead: >
   PWA users are also 24% more active than all other install types,
   become repeats users 31% more than all other platforms, and more.
-date: 2020-12-03
+date: 2020-12-08
 hero: hero.png
 alt: Gravit Designer's logo.
 description: >
@@ -36,16 +36,22 @@ authors:
   Reza is a product manager at Corel.
 {% endAside %}
 
-Corel Corporation's Gravit Designer is a powerful vector design tool. With roots
-as a startup, Gravit Designer joined Corel's extensive product portfolio in
-2018, and serves tens of thousands of daily active users demanding rich,
-affordable, and accessible vector illustration software. 
-Corel builds a host of creative and productivity software including CorelDRAW!,
-Corel Photo-Paint, Parallels, and more.
+Corel Corporation's [Gravit Designer](https://www.designer.io/en/) is a powerful
+vector design tool. With roots as a startup, Gravit Designer joined Corel's
+extensive product portfolio in 2018, and serves tens of thousands of daily
+active users demanding rich, affordable, and accessible vector illustration
+software. Corel builds a host of creative and productivity software including
+CorelDRAW!, Corel Photo-Paint, Parallels, and more.
+
+Corel builds a host of creative and productivity software including
+[CorelDRAW](https://www.coreldraw.com/), [Corel
+PHOTO-PAINT](https://www.coreldraw.com/en/pages/photo-paint/), [Corel
+Painter](https://www.painterartist.com/),
+[Parallels](https://www.parallels.com), and more.
 
 Gravit Designer's target audience is creators of all stripes - from students
 learning about vector illustration to seasoned designers looking for a
-fully-functional professional solution. Corel has always wanted to meet
+fully-functional solution. Corel has always wanted to meet
 designers and creatives where they are, on their platform of choice, and Gravit
 Designer allows us to deliver powerful vector illustration tools via the web.
 
@@ -106,7 +112,7 @@ users, and provided the best user experience for PWA, we decided to investigate
 the work involved in building out a PWA version of Gravit Designer.
 
 The team began by first creating a proof-of-concept to understand the effort
-required. Next came the development effort associated with native font and local
+required. Next came the development effort associated with local font and local
 file system support. In the end, we had to stage our support for local fonts.
 Once improvements were made to file loading times, installation, and
 performance, we felt more comfortable moving past the proof-of-concept phase and
@@ -123,8 +129,6 @@ growth.
 
 ### Key figures
 
-* Over 2,000 students have installed and are actively using the PWA
-  version in the last 30 days.
 * 18% of total Chrome OS users have installed our PWA (PWA installs across all
   operating systems account for ~5% of our total).
 * PWA users are 24% more active than all other install types (more
