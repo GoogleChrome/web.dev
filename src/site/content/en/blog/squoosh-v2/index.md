@@ -1,12 +1,12 @@
 ---
 title: Announcing Squoosh v2
-subhead: New codecs support, updatd design, and CLI support!
+subhead: New codecs support, updated design, and CLI support!
 description: |
-  Major version change to Squoosh.app with new CLI feature.
-scheduled: true
+  New codecs support, updated design, and CLI support!
 date: 2020-12-09
 hero: hero.jpg
-alt: A screeen capture of new Squoosh top page
+thumbnail: thumb.jpg
+alt: A screen capture of the new Squoosh homepage
 tags:
   - blog
   - tools
@@ -25,7 +25,7 @@ Today, we are releasing a major update to the app with more codecs support, a ne
 
 We now support OxiPNG, MozJPEG, WebP, and AVIF, in addition to codecs natively supported in your Browser.  A new codec was made possible again with the use of WebAssembly. By compiling a codec encoder and decoder as WebAssembly module users can access and experiment with newer codecs even if their preferred browser does not support them. 
 
-To learn more about different codecs, we are kicking off Understanding Image Codecs series on web.dev so stay tuned!
+To learn more about different codecs, we will be kicking off Understanding Image Codecs series on web.dev so stay tuned!
 
 
 ## Launching a command line Squoosh!
@@ -43,14 +43,14 @@ With the Squoosh CLI you can compress the images in your web app to multiple for
 
 ## Build process change from Webpack to Rollup
 
-The same team that built Squoosh has spent a significant amount of time looking at build tooling this year for [Tooling Report](https://bundlers.tooling.report/), and decided to switch our build process from webpack to rollup.
+The same team that built Squoosh has spent a significant amount of time looking at build tooling this year for [Tooling Report](https://bundlers.tooling.report/), and decided to switch our build process from Webpack to Rollup.
 
-The project was initially started with a webpack because we wanted to try it as a team, and at the time in 2018 webpack was the only tool that gave us enough control to set up the project the way we wanted. Over time, we've found Rollup's ease of plugin systeme and simplicity with ESM made it a natural choice for this project. 
+The project was initially started with Webpack because we wanted to try it as a team, and at the time in 2018 Webpack was the only tool that gave us enough control to set up the project the way we wanted. Over time, we've found Rollup's easy plugin system and simplicity with ESM made it a natural choice for this project. 
 
 
 ## Updated UI design 
 
-We've also updated the UI design of the app featuring `blobs` as a visual element.  It is a little pun on how we treat data in our code. Squoosh passes image data around as a blob, so it felt natural to include some blobs in the design(get it?).  \
+We've also updated the UI design of the app featuring `blobs` as a visual element.  It is a little pun on how we treat data in our code. Squoosh passes image data around as a blob, so it felt natural to include some blobs in the design(get it?).
 
 Color usage was honed in as well, so that color was more than an accent but additionally a vector to distinguish and reinforce which image is in context for the options. All in all, the homepage is a bit more vibrant and the tool itself is a bit more clear and concise.
 
@@ -59,7 +59,6 @@ Color usage was honed in as well, so that color was more than an accent but addi
 
 We plan to keep working on Squoosh. As the new image format gets released, we want our users to have a place where they can play with the codec without heavy lifting. We also hope to expand use of Squoosh CLI and integrate more into the build process of a web application. 
 
-Squoosh was always open sourced but we've never had focus on growing the community. In 2021, we plan to expand our contributor base and have a better onboarding process to the project. 
+Squoosh has always been open source but we've never had focus on growing the community. In 2021, we plan to expand our contributor base and have a better onboarding process to the project. 
 
-Do you have any idea for Squoosh? Please let us know on our issue tracker. Team is headed to extended winter vacation but we promise to get back to you in the new year.
-
+Do you have any ideas for Squoosh? Please let us know on our issue tracker. The team is headed to extended winter vacation but we promise to get back to you in the new year.
