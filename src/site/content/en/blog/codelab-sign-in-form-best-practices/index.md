@@ -56,6 +56,7 @@ accessibility, and add meaning to your markup.
   {% Glitch {
     id: 'sign-in-form-codelab-1',
     path: 'index.html',
+    previewSize: 0,
     height: 480
   } %}
 
@@ -73,6 +74,7 @@ Adjust padding, margins, and font sizes to ensure that your inputs work well on 
 
   {% Glitch {
     id: 'sign-in-form-codelab-2',
+    previewSize: 0,
     path: 'style.css'
   } %}
 
@@ -366,6 +368,7 @@ This adds two new features:
   {% Glitch {
     id: 'sign-in-form-codelab-5',
     path: 'style.css',
+    previewSize: 0,
     height: 480
   } %}
 
