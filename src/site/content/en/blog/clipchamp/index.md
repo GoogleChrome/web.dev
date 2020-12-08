@@ -3,9 +3,8 @@ title: Clipchamp's video editor PWA installs see a 97% monthly growth
 subhead: >
   How PWAs, WebAssembly, and Chrome OS are helping a web-based video editor
   deliver better performance and a more engaging experience to 12M users.
-date: 2020-12-03
-hero: hero.png
-thumbnail: thumbnail.png
+date: 2020-12-08
+hero: hero.jpg
 alt: Clipchamp's logo.
 description: >
   How PWAs, WebAssembly, and Chrome OS are helping a web-based video editor
