@@ -239,7 +239,7 @@ redirects:
   to: /webtransport
 
 # Redirect for consolidated Lighthouse audit for a11y names.
-- from: /aria-toggle-field-name/
-  to: /aria-name/
-- from: /aria-input-field-name/
-  to: /aria-name/
+- from: /aria-toggle-field-name
+  to: /aria-name
+- from: /aria-input-field-name
+  to: /aria-name
