@@ -96,7 +96,7 @@ The CSS layout is mobile-first:
 When building your own form like this, it's very important at this point in the process to
 test your code on real devices on desktop and mobile:
 
-* Is label and input text readable, especially for people with bad vision?
+* Is label and input text readable, especially for people with low vision?
 * Are the inputs and **Sign in** button large enough to use as touch targets for thumbs?
 
 ## 3. Add input attributes to enable built-in browser features
