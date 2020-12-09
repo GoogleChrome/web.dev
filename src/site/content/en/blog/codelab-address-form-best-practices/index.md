@@ -215,10 +215,11 @@ field and the form can now be submitted (the default is `next`).
 <figure class="w-figure">
   <img class="w-screenshot" src="images/enterkeyhint.png" alt="Two screenshots of a form 
   on Android showing how the enterkeyhint input attribute changes the enter key button icon.">
-  <figcaption class="w-figcaption">Use the enterkeyhint attribute to set the Enter button label: 'next' and 'done'.</figcaption>
+  <figcaption class="w-figcaption">Use the enterkeyhint attribute to set the Enter button label: 
+    'next' and 'done'.</figcaption>
 </figure>
 
-{% Aside 'gotcha' %}
+{% Aside 'gotchas' %}
 Using type="number" adds an up/down arrow to increment numbers, which makes no sense for data such 
 as telephone, payment card or account numbers. Instead, you should use `type="tel"` for telephone 
 numbers. For other numbers, use `type="text"` (or leave off the attribute, since `text` is the 
