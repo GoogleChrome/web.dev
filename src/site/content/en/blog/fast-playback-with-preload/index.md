@@ -163,6 +163,7 @@ applied in Chrome:
 
 - When [Data Saver][datasaver] is enabled, Chrome forces the `preload` value to
   `none`.
+- In Android 4.3, Chrome forces the `preload` value to `none` due to an [android-bug].
 - On a cellular connection (2G, 3G, and 4G), Chrome forces the `preload` value to
   `metadata`.
 
@@ -379,7 +380,7 @@ browser. By identifying this request header, your application can customize and
 deliver an optimized user experience to cost- and performance-constrained
 users.
 
-<!-- See [Delivering Fast and Light Applications with Save-Data][fast-light] to learn more. -->
+See [Delivering Fast and Light Applications with Save-Data][fast-light] to learn more.
 
 #### Smart loading based on network information
 
@@ -580,7 +581,6 @@ Have a look at the official [Sample Media App][sample-media-app] and in particul
 [ranged-response.js] file for a complete solution for how to handle `Range`
 requests.
 
-<!-- [mse-basics]: https://developers.google.com/web/fundamentals/media/mse/basics -->
 [how much information or content to preload]: /video-and-source-tags/#preload
 [video preload attribute]: /video-and-source-tags/#preload
 [chrome64]: https://developers.google.com/web/updates/2017/12/chrome-63-64-media-updates#media-preload-defaults-metadata
@@ -603,3 +603,4 @@ requests.
 [preload]: /video-and-source-tags/#preload
 [thats-a-known-fact]: https://www.digitaltrends.com/web/buffer-rage/
 [browser-compatibility]: https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content#Browser_compatibility
+[android-bug]: https://bugs.chromium.org/p/chromium/issues/detail?id=612909
