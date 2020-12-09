@@ -4,6 +4,8 @@ subhead: New codecs support, updated design, and CLI support!
 description: |
   New codecs support, updated design, and CLI support!
 date: 2020-12-09
+authors:
+  - kosamari
 hero: hero.jpg
 thumbnail: thumb.jpg
 alt: A screen capture of the new Squoosh homepage
