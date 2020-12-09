@@ -4,7 +4,7 @@ subhead: Help your users sign up, log in and manage their account details with a
 authors:
   - samdutton
 scheduled: true
-date: 2020-11-23
+date: 2020-12-09
 updated: 2020-12-09
 description: Help your users sign up, log in and manage their account details with a minimum of fuss.
 hero: images/hero.jpg
