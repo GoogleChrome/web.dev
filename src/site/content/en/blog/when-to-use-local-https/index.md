@@ -25,7 +25,7 @@ But in some cases, you'll need HTTPS:
 - Custom hostnames need HTTPS.
 
   <figure class="w-figure">
-    <img src="./hosts.jpg" alt="List: when to use HTTPS for local development">
+    <img src="./when-to-use-local-https.jpg" alt="List: when to use HTTPS for local development">
     <figcaption class="w-figcaption">When to use HTTPS for local development</figcaption>
   </figure>
 
