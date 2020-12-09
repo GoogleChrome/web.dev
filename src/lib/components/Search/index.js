@@ -3,6 +3,7 @@
  */
 
 import {html} from 'lit-element';
+import {unsafeHTML} from 'lit-html/directives/unsafe-html';
 import {BaseElement} from '../BaseElement';
 import {store} from '../../store';
 import * as router from '../../utils/router';
@@ -233,7 +234,9 @@ class Search extends BaseElement {
             aria-selected="${idx === this.cursor}"
             tabindex="-1"
             href="${hit.url}"
-            >${html`hit._highlightResult.title.value`}</a
+            >${unsafeHTML(
+              hit._highlightResult.title && hit._highlightResult.title.value,
+            )}</a
           >
         </li>
       `,
