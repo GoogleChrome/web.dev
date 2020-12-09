@@ -11,7 +11,6 @@ authors:
   - gilbertococchi
   - antoinebisch
 hero: hero.png
-thumbnail: hero.png
 tags:
   - blog
   - performance
