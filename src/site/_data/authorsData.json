@@ -1608,6 +1608,17 @@
       "family": "Gaunt"
     }
   },
+  "reillyg": {
+    "name": {
+      "given": "Reilly",
+      "family": "Grant"
+    },
+    "twitter": "reillyeon",
+    "github": "reillyeon",
+    "description": {
+      "en": "Software Engineer on Google Chrome focusing on hardware APIs"
+    }
+  },
   "nateschloss": {
     "name": {
       "given": "Nate",
@@ -1649,5 +1660,18 @@
     },
     "linkedin": "https://www.linkedin.com/in/sbalko/",
     "github": "sbalko"
+  },
+  "rezakazemi": {
+    "name": {
+      "given": "Reza",
+      "family": "Kazemi"
+    },
+    "descriptions": {
+      "en": "Product Manager at Corel"
+    },
+    "org": {
+      "name": "Corel",
+      "unit": "Online Graphics"
+    }
   }
 }
