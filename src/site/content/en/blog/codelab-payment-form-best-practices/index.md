@@ -4,8 +4,8 @@ title: Payment form best practices codelab
 authors:
   - samdutton
 scheduled: true
-date: 2020-12-02
-updated: 2020-12-07
+date: 2020-12-09
+updated: 2020-12-09
 description: Learn best practices for payment forms.
 tags:
   - ecommerce

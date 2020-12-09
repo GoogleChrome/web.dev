@@ -4,8 +4,8 @@ title: Address form best practices codelab
 authors:
   - samdutton
 scheduled: true
-date: 2020-12-02
-updated: 2020-12-02
+date: 2020-12-09
+updated: 2020-12-09
 description: Learn best practices for address forms.
 tags:
   - ecommerce
@@ -282,7 +282,7 @@ provides useful links and extensive guidance detailing address formats in over 2
 
 * Country selectors are notorious for [poor usability](https://www.smashingmagazine.com/2011/11/redesigning-the-country-selector/). 
 It's [best to avoid select elements for a long list of items](https://baymard.com/blog/drop-down-usability#in-general-avoid-drop-downs-when-there-are-more-than-10-or-fewer-than-5-options) 
-and the ISO 3166 country-code standard [currently lists 249 countries](https://www.iso.org/obp/ui/#search)! 
+and the ISO 3166 country-code standard [currently lists 249 countries](https://www.iso.org/obp/ui/#search/code/)! 
 Instead of a `<select>` you may want to consider an alternative such as the 
   [Baymard Institute country selector](https://baymard.com/labs/country-selector). 
   
