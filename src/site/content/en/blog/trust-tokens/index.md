@@ -194,11 +194,13 @@ protocol using a [new cryptographic primitive](https://eprint.iacr.org/2020/072.
 
 1. Generate a set of pseudo-random numbers known as _nonces_.
  
-1. Blind the nonces (encode them so the issuer can't view their contents) and attach them to the request in a `Sec-Trust-Token` header.
+1. Blind the nonces (encode them so the issuer can't view their contents) and attach them to the 
+request in a `Sec-Trust-Token` header.
  
 1. Send a POST request to the endpoint provided.
  
-The endpoint responds with blinded tokens (signatures on the blind nonces), then the tokens are unblinded and stored internally together with the associated nonces by the browser as trust tokens.
+The endpoint responds with blinded tokens (signatures on the blind nonces), then the tokens are 
+unblinded and stored internally together with the associated nonces by the browser as trust tokens.
 
 
 ### Trust token redemption
@@ -286,6 +288,7 @@ Trust Token [explainer repository](https://github.com/WICG/trust-token-api).
 
 ## Find out more
 
+-  [Trust Tokens demo](https://trust-token-demo.glitch.me)
 -  [Digging in to the Privacy Sandbox](https://web.dev/digging-into-the-privacy-sandbox/)
 -  [Trust Token API Explainer](https://github.com/WICG/trust-token-api)
 -  [Chromium Projects: Trust Token API](https://sites.google.com/a/chromium.org/dev/updates/trust-token)
@@ -295,6 +298,7 @@ Trust Token [explainer repository](https://github.com/WICG/trust-token-api).
 
 ---
 
-Thanks to Kayce Basques, David Van Cleve, Steven Valdez, Tancrède Lepoint and Marshall Vale for their help with writing and reviewing this post.
+Thanks to Kayce Basques, David Van Cleve, Steven Valdez, Tancrède Lepoint and Marshall Vale for 
+their help with writing and reviewing this post.
 
 Photo by [ZSun Fu](https://unsplash.com/photos/b4D7FKAghoE) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText).
