@@ -115,15 +115,17 @@ You can run recurring audits in daily, weekly, or monthly frequency. For
 example, you can run daily audits for a list of tests defined in a local JSON
 like below:
 
+```json
+{
+  "tests": [
     {
-     "tests": [
-       {
-         "label": "web.dev",
-         "url": "https://web.dev",
-         "gatherer": "psi"
-       },
-     ]
-    }
+      "label": "web.dev",
+      "url": "https://web.dev",
+      "gatherer": "psi"
+    },
+  ]
+}
+```
 
 The command below reads the list of audit tests from the local JSON file, runs
 audits on a local machine, then outputs results to a local CSV file: 
