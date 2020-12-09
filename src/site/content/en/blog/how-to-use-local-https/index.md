@@ -311,7 +311,7 @@ If you're using a custom hostname like `mysite.example`, you can use a flag in C
 - You would need to be 100% sure that `mysite.example` always resolves to a local address, otherwise you could leak production credentials.
 - You won't be able to debug across browsers with this trick 🙀.
 
-_With many thanks for contributions and feedback to all reviewers—especially Ryan Sleevi,
-Filippo Valsorda, Milica Mihajlija and Rowan Merewood. 🙌_
+_With many thanks for contributions and feedback to all reviewers and contributors—especially Ryan Sleevi,
+Filippo Valsorda, Milica Mihajlija, Rowan Merewood and Jake Archibald. 🙌_
 
 _Hero image background by [@anandu](https://unsplash.com/@anandu) on [Unsplash](https://unsplash.com/photos/pbxwxwfI0B4), edited._
