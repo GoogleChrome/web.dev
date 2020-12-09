@@ -11,6 +11,7 @@ authors:
   - kaycebasques
   - mattgaunt
 date: 2020-11-10
+updated: 2020-12-06
 codelabs:
   - push-notifications-server-codelab
   - push-notifications-client-codelab
@@ -66,7 +67,7 @@ we're referring to notification technology on its own.
   engagement. 
 
 {% Aside 'warning' %}
-  If you try to use push notifications for content that you're users don't find
+  If you try to use push notifications for content that your users don't find
   timely, relevant, and precise, you'll probably end up annoying your users
   and reducing overall engagement.
 {% endAside %}
@@ -96,7 +97,7 @@ user wants to opt in to push notifications. This UI varies across platforms.
 
 After you get permission, your website needs to initiate the process of
 subscribing the user to push notifications. This is done through JavaScript,
-using the the [Push API][1]. You'll need to provide a public authentication key
+using the [Push API][1]. You'll need to provide a public authentication key
 during the subscription process, which you'll learn more about later. After
 you kick off the subscription process, the browser makes a network request
 to a web service known as a push service, which you'll also learn more about later.
@@ -121,7 +122,7 @@ web push protocol request should include:
 
 * What data to include in the message.
 * What client to send the message to.
-* Instructions on how the push service should deliver the message. E.g. you
+* Instructions on how the push service should deliver the message. For example, you
   can specify that the push service should stop attempting to send the message 
   after 10 minutes.
 
@@ -149,7 +150,7 @@ and the data must be sent as a stream of bytes.
 You do, however, need to make sure that you're sending the web push protocol
 request to the correct push service. The `PushSubscription` data that the
 browser returned to you during the subscription process provides this
-information. A `PushScription` object looks like this:
+information. A `PushSubscription` object looks like this:
 
 ```json
 {
