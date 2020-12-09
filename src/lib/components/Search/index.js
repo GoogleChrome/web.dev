@@ -344,6 +344,7 @@ class Search extends BaseElement {
       const {hits} = await index.search(query, {
         hitsPerPage: 10,
         attributesToHighlight: ['title'],
+        attributesToRetrieve: ['url'],
         highlightPreTag: '<mark>',
         highlightPostTag: '</mark>',
       });
