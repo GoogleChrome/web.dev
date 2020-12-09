@@ -87,7 +87,7 @@ The best sign-up form is no sign-up form!
 
 By asking a user to create an account, you come between them and what they're trying to achieve. 
 You're asking a favor, and asking the user to trust you with personal data. Every password and item 
-of data you store carries privacy and security 'data debt', becoming a cost and liability for 
+of data you store carries privacy and security "data debt", becoming a cost and liability for 
 your site. 
 
 If the main reason you ask users to create an account is to save information between navigations or 
@@ -98,8 +98,8 @@ cart abandonment. You should [make guest checkout the default](/payment-and-addr
 ## Make sign-in obvious {: #obvious-account-creation}
 
 Make it obvious how to create an account on your site, for example with a **Login** or **Sign in** 
-button at the top right of the page. Avoid using an ambiguous icon or vague wording ('Get on board!', 
-'Join us') and don't relegate login to a navigational menu. The usability expert Steve Krug summed up 
+button at the top right of the page. Avoid using an ambiguous icon or vague wording ("Get on board!", 
+"Join us") and don't hide login in a navigational menu. The usability expert Steve Krug summed up 
 this approach to website usability: [Don't make me think!](https://uxplanet.org/dont-make-me-think-20-wise-thoughts-about-usability-from-steve-krug-876b563f1d63) If you need to 
 convince others on your web team, use [analytics](#analytics-rum) to show the impact of different 
 options.
@@ -186,8 +186,8 @@ As with federated login, this has the added benefit that you don't have to manag
 Whatever approach you take to user identity, you'll need to make a careful decision about session 
 length: how long the user remains logged in, and what might cause you to log them out.
 
-There's no one hard-and-fast rule, but you need to consider mobile versus desktop, and whether 
-users are sharing on desktop, or sharing devices. 
+Consider whether your users are on mobile or desktop, and whether 
+they are sharing on desktop, or sharing devices. 
 
 {% Aside %}
 You can get around some of the issues of shared devices by enforcing re-authentication for sensitive 
@@ -335,7 +335,7 @@ new device.
 explains how to add federated login to your sign-up options. [Many other](https://en.wikipedia.org/wiki/Federated_identity#Examples) identity platforms are available.
 
 {% Aside %}
-**'First day experience'** is increasingly important since many users now expect to log in from 
+"First day experience" when you get a new device is increasingly important. Users expect to log in from
 multiple devices including their phone, laptop, desktop, tablet, TV, or from a car. If your sign-up 
 and sign-in forms aren't seamless, this is a moment where you risk losing users, or at least losing 
 contact with them until they get set up again. You need to make it as quick and easy as possible for 
@@ -358,7 +358,7 @@ federated login or not, you should make account switching simple.
 Multi-factor authentication means ensuring that users provide authentication in more than one way. 
 For example, as well as requiring the user to set a password, you might also enforce verification 
 using a one-time-passcode sent by email or an SMS text message, or by using an app-based one-time 
-code, security key or fingerprint sensor. [SMS OTP best practices](https://web.dev/sms-otp-form) and 
+code, security key or fingerprint sensor. [SMS OTP best practices](/sms-otp-form) and 
 [Enabling Strong Authentication with WebAuthn](https://developers.google.com/web/updates/2018/05/webauthn) 
 explain how to implement multi-factor authentication.
 
@@ -391,19 +391,19 @@ open source projects](https://www.browserstack.com/open-source) on a range of de
 
 ## Implement analytics and Real User Monitoring {: #analytics-rum}
 
-You need [field data as well as lab data](https://web.dev/how-to-measure-speed/#lab-data-vs-field-data) 
+You need [field data as well as lab data](/how-to-measure-speed/#lab-data-vs-field-data) 
 to understand how users experience your sign-up forms. Analytics and [Real User Monitoring](https://developer.mozilla.org/en-US/docs/Web/Performance/Rum-vs-Synthetic#Real_User_Monitoring) 
 (RUM) provide data for the actual experience of your users, such as how long sign-up pages take to 
 load, which UI components users interact with (or not) and how long it takes users to complete 
 sign-up.
 
-* **Page analytics**: [page views, bounce rates and exits](https://analytics.google.com/analytics/academy/course/6) 
-for every page in your sign-up flow.
+* **Page analytics**: [page views, bounce rates and exits](https://analytics.google.com/analytics/academy/course/6) for every page in your sign-up flow.
 * **Interaction analytics**: [goal funnels](https://support.google.com/analytics/answer/6180923?hl=en) 
-(where do users abandon the sign-up flow?) and [events](https://developers.google.com/analytics/devguides/collection/gtagjs/events) 
-(what proportion of users click buttons and links and other components of your sign-up pages?)
-* **Website performance**: [user-centric metrics](/user-centric-performance-metrics) (Is any part of 
-your sign-up flow slow to load or [visually unstable](https://web.dev/cls/)?).
+and [events](https://developers.google.com/analytics/devguides/collection/gtagjs/events) 
+indicate where users abandon the sign-up flow and what proportion of users click buttons, 
+links, and other components of your sign-up pages.
+* **Website performance**: [user-centric metrics](/user-centric-performance-metrics) 
+can tell you if your sign-up flow is slow to load or [visually unstable](/cls).
 
 Small changes can make a big difference to completion rates for sign-up forms. Analytics and RUM 
 enable you to optimize and prioritize changes, and monitor your site for problems that aren't 
