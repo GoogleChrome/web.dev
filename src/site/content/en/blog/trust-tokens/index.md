@@ -27,7 +27,7 @@ in other contexts to evaluate the user's authenticity.
 The Trust Token API enables trust of a user in one context to be conveyed to another context without 
 identifying the user or linking the two identities.
 
-Try it out the [Trust Token demo](https://labs.jxck.io/trust-token).
+You can try out Trust Tokens with our [demo](https://trust-token-demo.glitch.me).
 
 {% Aside %}
 The Privacy Sandbox is a series of proposals to satisfy third-party use cases
@@ -56,7 +56,8 @@ fingerprinting.
 **Fingerprinting** enables sites to identify and track individual users by
 getting data about their device, operating system, and browser setup (such as
 language preferences,
-[user agent](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/userAgent), and available fonts) or changes in device state. This may be done on the server
+[user agent](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/userAgent), and 
+available fonts) or changes in device state. This may be done on the server
 by checking request headers or on the client with JavaScript.
 
 Fingerprinting uses mechanisms that users aren't aware of and can't control.
@@ -96,7 +97,11 @@ websites from tracking users through them.</p>
 
 The following is adapted from
 [sample code in the API explainer](https://github.com/WICG/trust-token-api#sample-api-usage).  
-  
+
+{% Aside 'caution' %}
+The code in this post uses version 2 of the API.
+{% endAside %}
+
 Imagine that a user visits a news website (`publisher.example`) which embeds 
 advertising from a third party ad network (`foo.example`). The user has 
 previously used a social media site that issues trust tokens (`issuer.example`).
