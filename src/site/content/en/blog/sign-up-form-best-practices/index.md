@@ -22,7 +22,7 @@ codelabs:
   - codelab-sign-up-form-best-practices
 ---
 
-{% YouTube 'Ev2mCzJZLtY' %}
+<!-- {% YouTube 'Ev2mCzJZLtY' %} -->
 
 If users ever need to log in to your site, then good sign-up form design is
 critical. This is especially true for people on poor connections, on mobile, in
