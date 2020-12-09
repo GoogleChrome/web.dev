@@ -29,19 +29,15 @@ new way to use Squoosh on your command line called Squoosh CLI.
 ## New codecs support
 
 We now support OxiPNG, MozJPEG, WebP, and AVIF, in addition to codecs natively supported in your 
-Browser.  A new codec was made possible again with the use of WebAssembly. By compiling a codec 
+browser.  A new codec was made possible again with the use of WebAssembly. By compiling a codec 
 encoder and decoder as WebAssembly module users can access and experiment with newer codecs even 
 if their preferred browser does not support them. 
-
-To learn more about different codecs, we will be kicking off Understanding Image Codecs series on 
-web.dev so stay tuned!
-
 
 ## Launching a command line Squoosh!
 
 Ever since the original launch in 2018, common user request was to interact with Squoosh 
 programmatically without UI. We felt a bit conflicted about this path since our app was a UI on 
-top of command line based codec tools. However we do understand the desire to interact with the 
+top of command-line-based codec tools. However we do understand the desire to interact with the 
 whole package of codecs instead of multiple tools. Squoosh CLI does just that.
 
 {% YouTube 'FUqn8eOxCP4' %}
@@ -50,18 +46,17 @@ You can install the beta version of the Squoosh CLI by running `npm -i @squoosh/
 directly using `npx @squoosh/cli [parameters]`.
 
 The Squoosh CLI is written in Node and makes use of the exact same WebAssembly modules the PWA 
-uses. Through extensive use of Workers, all images are decoded, processed and encoded in parallel. 
+uses. Through extensive use of workers, all images are decoded, processed and encoded in parallel. 
 We also use Rollup to bundle everything into one JavaScript file to make sure installation via 
 `npx` is quick and seamless. The CLI also offers auto compression, where it tries to reduce the 
 quality of an image as much as possible without degrading the visual fidelity 
 (using the [Butteraugli metric](https://github.com/google/butteraugli)). 
 
 With the Squoosh CLI you can compress the images in your web app to multiple formats and use the 
-[`<picture>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture#The_type_attribute) 
+[`<picture>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture) 
 to let the browser choose the best version. We also plan to build 
-plugins for Webpack, Rollup etc to make image compression a part of your build step that happens 
-automatically.
-
+plugins for Webpack, Rollup, and other build tools to make image compression
+an automatic part of your build process.
 
 ## Build process change from Webpack to Rollup
 
@@ -79,7 +74,7 @@ natural choice for this project.
 
 We've also updated the UI design of the app featuring `blobs` as a visual element.  It is a little 
 pun on how we treat data in our code. Squoosh passes image data around as a blob, so it felt 
-natural to include some blobs in the design(get it?).
+natural to include some blobs in the design (get it?).
 
 Color usage was honed in as well, so that color was more than an accent but additionally a vector 
 to distinguish and reinforce which image is in context for the options. All in all, the homepage 
@@ -95,5 +90,7 @@ of Squoosh CLI and integrate more into the build process of a web application.
 Squoosh has always been open source but we've never had focus on growing the community. In 2021, 
 we plan to expand our contributor base and have a better onboarding process to the project. 
 
-Do you have any ideas for Squoosh? Please let us know on our issue tracker. The team is headed to 
-extended winter vacation but we promise to get back to you in the new year.
+Do you have any ideas for Squoosh? Please let us know on our
+[issue tracker](https://github.com/GoogleChromeLabs/squoosh/issues).
+The team is headed to extended winter vacation but we promise to get
+back to you in the new year.
