@@ -313,3 +313,5 @@ If you're using a custom hostname like `mysite.example`, you can use a flag in C
 
 _With many thanks for contributions and feedback to all reviewers—especially Ryan Sleevi,
 Filippo Valsorda, Milica Mihajlija and Rowan Merewood. 🙌_
+
+_Hero image background by [@anandu](https://unsplash.com/@anandu) on [Unsplash](https://unsplash.com/photos/pbxwxwfI0B4), edited._

@@ -97,3 +97,5 @@ If you need to use HTTPS for local development, head over to [How to use HTTPS f
 
 _With many thanks for contributions and feedback to all reviewers—especially Ryan Sleevi,
 Filippo Valsorda, Milica Mihajlija and Rowan Merewood. 🙌_
+
+_Hero image by [@moses_lee](https://unsplash.com/@moses_lee) on [Unsplash](https://unsplash.com/photos/Q2Xy_hYzrgg), edited._
