@@ -4,8 +4,8 @@ subhead: Maximize conversions by helping your users complete address and payment
 authors:
   - samdutton
 scheduled: true
-date: 2020-11-21
-updated: 2020-12-06
+date: 2020-12-09
+updated: 2020-12-09
 description: Maximize conversions by helping your users complete address and payment forms as quickly and easily as possible.
 hero: images/hero.jpg
 thumbnail: images/thumbnail.jpg
@@ -19,12 +19,12 @@ tags:
   - payments
   - security
   - ux
-<!-- codelabs:
+codelabs:
   - codelab-payment-form-best-practices
-  - codelab-address-form-best-practices -->
+  - codelab-address-form-best-practices
 ---
 
-{% YouTube 'xfGKmvvyhdM' %}
+<!-- {% YouTube 'xfGKmvvyhdM' %} -->
 
 Well-designed forms help users and increase conversion rates. One small fix can make a big difference! 
 
