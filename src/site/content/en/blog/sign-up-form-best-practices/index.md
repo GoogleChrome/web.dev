@@ -5,7 +5,7 @@ authors:
   - samdutton
 scheduled: true
 date: 2020-11-23
-updated: 2020-12-03
+updated: 2020-12-09
 description: Help your users sign up, log in and manage their account details with a minimum of fuss.
 hero: images/hero.jpg
 thumbnail: images/thumbnail.jpg
@@ -43,7 +43,7 @@ Here is an example of a very simple sign-up form that demonstrates all of the be
   height: 700
 } %}
 
-{% Aside %}
+{% Aside 'caution' %}
 This post is about form best practices. 
 
 It does not explain how to implement sign-up via a third-party identity provider (federated login) 
