@@ -115,13 +115,13 @@ The mkcert we're interested in [this one](https://github.com/FiloSottile/mkcert)
 
     Then, run:
 
-    ```
+    ```bash
     mkcert localhost
     ```
 
     Or if you're using a custom hostname like `mysite.example`:
 
-    ```
+    ```bash
     mkcert mysite.example
     ```
 
