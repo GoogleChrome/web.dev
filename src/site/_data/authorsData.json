@@ -1650,6 +1650,17 @@
     "country": "US",
     "github": "sbingler"
   },
+  "sorenbalko": {
+    "name": {
+      "given": "Sören",
+      "family": "Balko"
+    },
+    "description": {
+      "en": "CTO at Clipchamp"
+    },
+    "linkedin": "https://www.linkedin.com/in/sbalko/",
+    "github": "sbalko"
+  },
   "rezakazemi": {
     "name": {
       "given": "Reza",
