@@ -114,7 +114,7 @@ like below:
       "label": "web.dev",
       "url": "https://web.dev",
       "gatherer": "psi"
-    },
+    }
   ]
 }
 ```
