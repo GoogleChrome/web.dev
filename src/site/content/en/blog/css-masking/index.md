@@ -1,9 +1,13 @@
 ---
-title: How to use CSS masking
-description: |
+title: Apply effects to images with CSS's mask-image property
+subhead: >
   CSS masking gives you the option of using an image as a mask layer.
-  This means that use can use an image, an SVG, or a gradient as your mask,
-  to create interested effects without an image editor.
+  This means that you can use an image, an SVG, or a gradient as your mask,
+  to create interesting effects without an image editor.
+description: >
+  CSS masking gives you the option of using an image as a mask layer.
+  This means that you can use an image, an SVG, or a gradient as your mask,
+  to create interesting effects without an image editor.
 authors:
   - rachelandrew
 date: 2020-09-14

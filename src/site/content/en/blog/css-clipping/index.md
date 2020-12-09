@@ -1,6 +1,10 @@
 ---
-title: How to use CSS clipping
-description: |
+title: Create interesting image shapes with CSS's clip-path property
+subhead: >
+  Using clipping in CSS can help us move away from everything in our designs looking like a box.
+  By using various basic shapes, or an SVG, you can create a clip path.
+  Then cut away the parts of an element you don't want to show.
+description: >
   Using clipping in CSS can help us move away from everything in our designs looking like a box.
   By using various basic shapes, or an SVG, you can create a clip path.
   Then cut away the parts of an element you don't want to show.
