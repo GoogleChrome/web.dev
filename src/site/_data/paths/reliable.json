@@ -43,6 +43,15 @@
         "offline-ux-design-guidelines",
         "extending-workbox"
       ]
+    },
+    {
+      "title": "Communicate with workers",
+      "pathItems": [
+        "workers-overview",
+        "imperative-caching-guide",
+        "broadcast-updates-guide",
+        "two-way-communication-guide"
+      ]
     }
   ]
 }

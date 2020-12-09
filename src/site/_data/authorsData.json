@@ -1650,6 +1650,13 @@
     "country": "US",
     "github": "sbingler"
   },
+  "andrewguan": {
+    "name": {
+      "given": "Andrew",
+      "family": "Guan"
+    },
+    "github": "AndrewKGuan"
+  },
   "sorenbalko": {
     "name": {
       "given": "Sören",
