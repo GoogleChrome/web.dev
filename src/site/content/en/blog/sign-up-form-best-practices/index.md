@@ -18,8 +18,8 @@ tags:
   - mobile
   - security
   - ux
-<!-- codelabs:
-  - codelab-sign-up-form-best-practices -->
+codelabs:
+  - codelab-sign-up-form-best-practices
 ---
 
 {% YouTube 'Ev2mCzJZLtY' %}
