@@ -1,10 +1,12 @@
 ---
 title: Love your cache ❤️
-subhead: Users loading your site a second time will use their HTTP cache, so make sure it works well.
+subhead: |
+  Users loading your site a second time will use their HTTP cache, so make sure
+  it works well.
 description: |
-  First load performance is important, but it's not everything. Users who load your site a second
-  time will use their cache to get access to your content—so it's key to make sure it works well
-  too, both for speed and correctness.
+  First load performance is important, but it's not everything. Users who load
+  your site a second time will use their cache to get access to your content—so
+  it's key to make sure it works well too, both for speed and correctness.
 authors:
   - samthor
 date: 2020-12-11
@@ -16,8 +18,8 @@ tags:
   - network
 ---
 
-_This post is a companion to the **Love your cache** video, part of the Extended Content at Chrome
-Dev Summit 2020. Be sure to check out the video:_
+_This post is a companion to the **Love your cache** video, part of the Extended
+Content at Chrome Dev Summit 2020. Be sure to check out the video:_
 
 {% YouTube 'tprJYFkv4LU' %}
 
@@ -77,7 +79,8 @@ For a bit of background, a really common reason for "stale cache" is actually
 the 1999-era default for caching. It relies on the `Last-Modified` header:
 
 <figure class="w-figure">
-  <img src="./cache.png" width="954" height="408" alt="Diagram showing how long different assets are cached by a user's browser" />
+  <img src="./cache.png" width="954" height="408"
+      alt="Diagram showing how long different assets are cached by a user's browser" />
   <figcaption class="w-figcaption">Assets generated at different times (in gray) will be cached for
 different times, so a 2nd load can get a combination of cached and fresh assets</figcaption>
 </figure>
@@ -102,7 +105,7 @@ provided by a CDN geographically close to each end user.
 
 You can configure your web host to respond to web requests with this header:
 
-```
+```text
 Cache-Control: max-age=0,must-revalidate,public
 ```
 
@@ -158,7 +161,7 @@ your server responds to requests for these files, you can safely instruct your
 end-user's browsers to cache them for a long time by configuring them with this
 header:
 
-```
+```text
 Cache-Control: max-age=31536000,immutable
 ```
 
@@ -225,8 +228,8 @@ setting—do you want to cache for an hour, several hours, and so on. To set thi
 kind of cache up, use a header like this (which caches for 3600 seconds, or one
 hour):
 
-```
-Cache-Control: max-age=3600,public
+```text
+Cache-Control: max-age=3600,immutable,public
 ```
 
 One last point. If you're creating timely content which typically might only be
