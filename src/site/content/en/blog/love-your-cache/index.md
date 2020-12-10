@@ -170,7 +170,7 @@ equal to "forever".
 
 Importantly, don't generate these hashes by hand—it's too much manual work! You
 can use tools like Webpack, Rollup and so on to help you out with this. Be sure
-to read more about them on [tooling.report](https://tooling.report).
+to read more about them on [Tooling Report](https://tooling.report).
 
 Remember that it's not just JavaScript that can benefit from fingerprinted URLs;
 assets like icons, CSS and other immutable data files can also be named this
@@ -220,7 +220,7 @@ they revisit your site.
 
 If you're careful, this might not affect you. But broadly it's important to
 remember that your site—when cached by your end users—no longer just exists on
-your servers, but perhaps even in _pieces_ inside the caches of your end user's
+your servers. Rather, it may exist in _pieces_ inside the caches of your end user's
 browsers.
 
 In general, most guides out there on caching will talk about this kind of
