@@ -5,6 +5,7 @@
   "updated": "November 17, 2020",
   "description": "Connecting hardware devices to the web",
   "overview": "Learn to communicate with hardware devices over Bluetooth, USB, NFC, Serial, and HID from a website.",
+  "youtubeId": "ZIZqmXfrRLI",
   "topics": [
     {
       "title": "API guides",
