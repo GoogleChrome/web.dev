@@ -60,6 +60,7 @@
         "remove-unused-code",
         "reduce-network-payloads-using-text-compression",
         "serve-modern-code-to-modern-browsers",
+        "publish-modern-javascript",
         "commonjs-larger-bundles"
       ]
     },
@@ -92,11 +93,17 @@
     },
     {
       "title": "Optimize WebFonts",
-      "pathItems": ["avoid-invisible-text","optimize-webfont-loading","reduce-webfont-size"]
+      "pathItems": [
+        "avoid-invisible-text",
+        "optimize-webfont-loading",
+        "reduce-webfont-size"
+      ]
     },
     {
       "title": "Optimize for network quality",
-      "pathItems": ["adaptive-serving-based-on-network-quality"]
+      "pathItems": [
+        "adaptive-serving-based-on-network-quality"
+      ]
     },
     {
       "title": "Measure performance in the field",
