@@ -1,6 +1,6 @@
 ---
 title: 'Cross-browser paint worklets and Houdini.how'
-subhead: 'CSS Houdini worklets and resource sare just a few clicks away.' authors:
+subhead: 'Supercharging your CSS with Houdini paint worklets is just a few clicks away.' authors:
   - una
 date: 2020-12-10
 hero: hero.jpg
@@ -175,15 +175,19 @@ Here is an example of how to use Houdini with the paint polyfill in modern bundl
 ```js
 import 'css-paint-polyfill';
 import "<package-name>/properties.js"; // optionally register properties
-import workletURL from "url:<package-name>";
+import workletURL from "url:<package-name>/worklet.js";
 
 CSS.paintWorklet.addModule(workletURL);
 ```
+
+{% Aside 'note' %}
+For more specific instruction per-bundler, check out the [usage page](https://houdini.how/usage) on Houdini.how.
+{% endAside %}
 
 ## Contribute
 
 Now that you've played around with some Houdini samples, it's your turn to contribute your own!
 Houdini.how does not host any worklets itself, and instead showcases the work of the community. If
 you have a worklet or resource you would like to submit, check out the [github
-repo](https://github.com/una/houdini.how/blob/main/CONTRIBUTING.md) with contribution guidelines.
+repo](https://github.com/GoogleChromeLabs/houdini.how/blob/main/CONTRIBUTING.md) with contribution guidelines.
 We'd love to see what you come up with!
