@@ -1,6 +1,7 @@
 ---
 title: 'Cross-browser paint worklets and Houdini.how'
-subhead: 'Supercharging your CSS with Houdini paint worklets is just a few clicks away.' authors:
+subhead: 'Supercharging your CSS with Houdini paint worklets is just a few clicks away.' 
+authors:
   - una
 date: 2020-12-10
 hero: hero.jpg
