@@ -35,7 +35,7 @@ course more nuanced than just "turning it off". Read on!
 
 {% Aside %}
 Something to remember when building your site is that performance
-metrics [like Core Web Vitals](https://web.dev/vitals) include all loads, not
+metrics [like Core Web Vitals](/vitals) include all loads, not
 just the 1st load. Yet, a lot of Google's guidance focuses on optimizing the
 first load (which is definitely important to bring users in!), and Lighthouse
 only tests your site on an empty cache.
@@ -73,7 +73,7 @@ Regular users out there on the internet don't have that same luxury. So while we
 have some core goals of ensuring our users have a great time with their 2nd
 load, it's also really important to make sure they don't have a _bad time_ or
 get stuck. (Check out the video if you'd like to hear me talk about how we
-nearly got the [web.dev/live](https://web.dev/live) site stuck!)
+nearly got the [web.dev/live](/live) site stuck!)
 
 For a bit of background, a really common reason for "stale cache" is actually
 the 1999-era default for caching. It relies on the `Last-Modified` header:
@@ -98,7 +98,7 @@ release), all because those files were not updated at exactly the same time.
 ## The well-lit path
 
 A modern default for caching is to actually do no caching at all, and use
-[CDNs](https://web.dev/content-delivery-networks/) to bring your content close
+[CDNs](/content-delivery-networks/) to bring your content close
 to your users. Every time a user loads your site, they'll go to the network to
 see whether it's up-to-date. This request will have low latency, as it'll be
 provided by a CDN geographically close to each end user.
@@ -271,7 +271,7 @@ Caching is not a new concept on the web, but perhaps it needs a sensible
 default—consider using one and strongly opting-in to better caching strategies
 when you need them. Thanks for reading!
 
-## See Also
+## See also
 
 For a general guide on the HTTP cache, check out
-[Prevent unnecessary network requests with the HTTP Cache](https://web.dev/http-cache).
+[Prevent unnecessary network requests with the HTTP Cache](/http-cache).
