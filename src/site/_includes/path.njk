@@ -30,6 +30,11 @@ layout: layout
     <div class="w-path-intro__overview">
       <h2 class="w-headline--three no-link">Overview</h2>
       <div>{{path.overview}}</div>
+      {% if path.youtubeId %}
+        <figure class="w-figure">
+          {% YouTube path.youtubeId %}
+        </figure>
+      {% endif %}
     </div>
     <div class="w-path-intro__learn">
       <h2 class="w-headline--three no-link">What you'll learn</h2>
