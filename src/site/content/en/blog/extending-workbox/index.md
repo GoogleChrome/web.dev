@@ -10,7 +10,6 @@ date: 2020-12-10
 thumbnail: thumbnail.png
 hero: hero.png
 alt: The Workbox logo.
-draft: true
 tags:
   - blog
   - service-worker
@@ -25,12 +24,10 @@ In this article, we're going to take a quick tour of some ways of extending
 be writing your own strategies and plugins, and hopefully sharing them with the
 world.
 
-<!--
 If you're more of a visual person, you can watch a recording of a Chrome
 Dev Summit talk covering the same material:
 
-{% YouTube 'your-video-id' %}
--->
+{% YouTube 'jR9-aDWZeSE' %}
 
 ## What's Workbox?
 
@@ -52,11 +49,11 @@ falling back to the cache when the network is unavailable, and a few more.
 But what if you wanted to go beyond those common caching scenarios? Let's cover
 writing your own custom caching strategies.
 [Workbox v6](https://github.com/GoogleChrome/workbox/releases/tag/v6.0.0) offers
-a new `Strategy` base class that sits in front of lower-level APIs, like
+a new [`Strategy` base class](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-strategies.Strategy) that sits in front of lower-level APIs, like
 [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and
 [Cache Storage](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage).
 You can extend the `Strategy` base class, and then implement your own logic in
-the `_handle()` method.
+the [`_handle()` method](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-strategies.Strategy#_handle).
 
 ### Handle simultaneous, duplicate requests with DedupeNetworkFirst
 
@@ -65,8 +62,8 @@ multiple, simultaneous requests for the same URL by deduplicating them. A copy
 of the response is then used to fulfill all of the in-flight requests, saving
 bandwidth that would otherwise be wasted.
 
-Here's the code you can use to implement that, by extending the `NetworkFirst`
-strategy (which itself extends the `Strategy` base):
+Here's the code you can use to implement that, by extending the [`NetworkFirst`
+strategy](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-strategies.NetworkFirst) (which itself extends the `Strategy` base):
 
 ```javascript
 // See https://developers.google.com/web/tools/workbox/guides/using-bundlers
@@ -154,7 +151,7 @@ class CacheNetworkRace extends Strategy {
 ## StategyHandler: the recommended approach for creating custom strategies
 
 Although it's not required, it's strongly recommended that when interacting with
-the network or cache, you use the instance of the `StrategyHandler` class that's
+the network or cache, you use the instance of the [`StrategyHandler` class](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-strategies.StrategyHandler) that's
 passed to your `_handle()` method. It's the second parameter, called `handler`
 in the example code.
 
