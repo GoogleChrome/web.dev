@@ -335,3 +335,4 @@ the [Community remixes](#community-remixes) section below.
 <!-- TODO(kayce): Add a warning that this is community content that may change over time. -->
 
 - [@geoffrich_](https://twitter.com/geoffrich_) with [Svelte](https://svelte.dev): [demo](https://svelte-stories.glitch.me) & [code](https://github.com/geoffrich/svelte-stories)
+- [@GauteMeekOlsen](https://twitter.com/GauteMeekOlsen) with [Vue](https://vuejs.org/): [demo + code](https://stackblitz.com/edit/stories)
