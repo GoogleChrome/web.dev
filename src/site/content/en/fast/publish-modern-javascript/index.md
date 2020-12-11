@@ -113,7 +113,7 @@ consumer to handle transpiling it when they use it as a dependency—use only th
 ```json
 {
   "name": "foo",
-  "exports": "./modern.js
+  "exports": "./modern.js"
 }
 ```
 
