@@ -5,7 +5,7 @@ authors:
   - thomassteiner
 description: The Shape Detection API detects faces, barcodes, and text in images.
 date: 2019-01-07
-updated: 2020-11-30
+updated: 2020-12-11
 tags:
   - blog
   - capabilities
@@ -37,7 +37,7 @@ and the Chrome for Android
 [photo picker](https://bugs.chromium.org/p/chromium/issues/detail?id=656015),
 it has become fairly easy to capture images or live video data from device
 cameras, or to upload local images. So far, this dynamic image data—as well as
-static images on a page—has been not been accessible by code, even though
+static images on a page—has not been accessible by code, even though
 images may actually contain a lot of interesting features such as faces,
 barcodes, and text.
 
