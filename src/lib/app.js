@@ -82,6 +82,7 @@ function serviceWorkerIsSupported(hostname) {
   // included via importScripts as well as the SW itself. (This works from mid-2018 everywhere, but
   // it seems good to double-check.)
   const allowedHostnames = [
+    'auth.web.dev',
     'web.dev',
     'web-dev-staging.appspot.com',
     'localhost',

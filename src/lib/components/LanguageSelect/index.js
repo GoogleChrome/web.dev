@@ -30,8 +30,8 @@ class LanguageSelect extends BaseStateElement {
     };
   }
 
-  onStateChanged({currentLanguage}) {
-    this.currentLanguage = currentLanguage;
+  onStateChanged({userPreferredLanguage}) {
+    this.currentLanguage = userPreferredLanguage;
   }
 
   onChange(e) {

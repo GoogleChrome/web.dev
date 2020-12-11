@@ -26,11 +26,8 @@ module.exports = (locale, page, collections, renderData = {}) => {
     ...renderData,
     page,
   };
-  const pageUrl = pageData.canonicalUrl;
-  const canonical =
-    pageData.canonical ||
-    new URL(pageData.page.url, site.url).href ||
-    new URL(pageUrl, site.url).href;
+  const pageUrl = pageData.page.url;
+  const canonical = new URL(pageUrl, site.url).href;
 
   /**
    * Find post meta data associated with a social media platform.

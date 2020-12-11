@@ -103,7 +103,6 @@ declare global {
         outputPath: string;
       };
       collections: TODO;
-      canonicalUrl: string;
     };
     date: Date;
     outputPath: string;
