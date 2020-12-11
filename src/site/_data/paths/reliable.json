@@ -18,6 +18,7 @@
       "title": "The options in your caching toolbox",
       "pathItems": [
         "http-cache",
+        "love-your-cache",
         "cache-api-quick-guide",
         "service-workers-cache-storage",
         "workbox",

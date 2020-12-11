@@ -286,6 +286,9 @@ If you're looking to go beyond the basics of using the `Cache-Control` header,
 check out Jake Archibald's [Caching best practices & max-age
 gotchas](https://jakearchibald.com/2016/caching-best-practices/) guide.
 
+See [Love your cache](/love-your-cache) for guidance on how to optimize
+your cache usage for return visitors.
+
 ## Appendix: More tips {: #tips }
 
 If you have more time, here are further ways that you can optimize your usage of the HTTP Cache:
