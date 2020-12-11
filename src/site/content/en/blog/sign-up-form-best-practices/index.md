@@ -5,7 +5,7 @@ authors:
   - samdutton
 scheduled: true
 date: 2020-12-09
-updated: 2020-12-09
+updated: 2020-12-11
 description: Help your users sign up, log in and manage their account details with a minimum of fuss.
 hero: images/hero.jpg
 thumbnail: images/thumbnail.jpg
@@ -22,7 +22,7 @@ codelabs:
   - codelab-sign-up-form-best-practices
 ---
 
-<!-- {% YouTube 'Ev2mCzJZLtY' %} -->
+{% YouTube 'Ev2mCzJZLtY' %}
 
 If users ever need to log in to your site, then good sign-up form design is
 critical. This is especially true for people on poor connections, on mobile, in
