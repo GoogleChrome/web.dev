@@ -111,7 +111,6 @@ module.exports = (collections) => {
     const author = {
       ...authorData,
       data: {
-        canonicalUrl: href,
         subhead: description,
         title,
       },
@@ -120,6 +119,7 @@ module.exports = (collections) => {
       href,
       key,
       title,
+      url: href,
     };
 
     // Update the author's href to be their Twitter profile, if they have no

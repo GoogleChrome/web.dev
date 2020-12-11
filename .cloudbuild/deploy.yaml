@@ -1,0 +1,12 @@
+steps:
+  - name: node
+    entrypoint: npm
+    args: ['ci']
+  - name: node
+    entrypoint: npm
+    args: ['run', 'cloud-secrets']
+    env:
+    - 'PROJECT_ID=$PROJECT_ID'
+  - name: 'gcr.io/$PROJECT_ID/firebase'
+    args: ['deploy']
+timeout: 1800s

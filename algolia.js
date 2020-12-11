@@ -29,6 +29,11 @@ const primaryIndexName = 'webdev';
 const deployIndexName = `webdev_deploy_${revision}`;
 
 async function index() {
+  if (!process.env.ALGOLIA_APP || !process.env.ALGOLIA_KEY) {
+    console.warn('Missing Algolia environment variables, skipping indexing.');
+    return;
+  }
+
   const client = algoliasearch(
     process.env.ALGOLIA_APP,
     process.env.ALGOLIA_KEY,

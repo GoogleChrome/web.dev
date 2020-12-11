@@ -17,7 +17,6 @@
 declare global {
   export interface TagsItem {
     data: {
-      canonicalUrl: string;
       subhead: string;
       title: string;
     };
@@ -26,6 +25,7 @@ declare global {
     href: string;
     key: string;
     title: string;
+    url: string;
   }
   export interface Tags {
     [key: string]: TagsItem;
