@@ -245,9 +245,9 @@ try {
 
 Purely checking for the existence of the constructors to feature detect the
 Shape Detection API doesn't suffice, as Chrome on Linux and Chrome OS
-currently still expose the detectors, but they are known to not work
-([bug](https://crbug.com/920961)). As a temporary measure, we instead
-recommend a *defensive programming* approach by doing feature detection
+expose the detectors, but they are known to not work
+(which is working as intended according to this [bug](https://crbug.com/920961)).
+Instead, we recommend a *defensive programming* approach by doing feature detection
 like this:
 
 ```js
@@ -256,6 +256,44 @@ const supported = await (async () => 'FaceDetector' in window &&
     .then(_ => true)
     .catch(e => e.name === 'NotSupportedError' ? false : true))();
 ```
+
+The `BarcodeDetector` interface has been updated to include a `getSupportedFormats()` method
+and similar interfaces have been proposed
+[for `FaceDetector`](https://github.com/WICG/shape-detection-api/issues/53)
+and
+[for `TextDetector`](https://github.com/WICG/shape-detection-api/issues/57).
+
+```js
+await BarcodeDetector.getSupportedFormats();
+/* On a macOS computer logs
+  [
+    "aztec",
+    "code_128",
+    "code_39",
+    "code_93",
+    "data_matrix",
+    "ean_13",
+    "ean_8",
+    "itf",
+    "pdf417",
+    "qr_code",
+    "upc_e"
+  ]
+*/
+```
+
+This allows you to detect precisely for the feature you need, for example, QR code scanning:
+
+```js
+if (('BarcodeDetector' in window) &&
+    ((await BarcodeDetector.getSupportedFormats()).includes('qr_code'))) {
+  console.log('QR code scanning is supported.');
+}
+```
+
+This is better than hiding the interfaces because even across platforms capabilities may vary
+and so developers should be encouraged to check for precisely the capability
+(such as a particular barcode format or facial landmark) they require.
 
 ## Operating system support {: #os-support}
 
