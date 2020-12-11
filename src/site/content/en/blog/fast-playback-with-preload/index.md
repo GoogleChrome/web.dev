@@ -163,7 +163,8 @@ applied in Chrome:
 
 - When [Data Saver][datasaver] is enabled, Chrome forces the `preload` value to
   `none`.
-- In Android 4.3, Chrome forces the `preload` value to `none` due to an [android-bug].
+- In Android 4.3, Chrome forces the `preload` value to `none` due to an [Android
+  Bug][android-bug].
 - On a cellular connection (2G, 3G, and 4G), Chrome forces the `preload` value to
   `metadata`.
 
