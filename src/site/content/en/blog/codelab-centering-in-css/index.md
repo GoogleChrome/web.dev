@@ -21,7 +21,7 @@ CSS.
 Check out my blog post [Centering in CSS](/centering-in-css) to learn about 5 of
 my favorite ways to center in CSS. Or watch this video!
 
-{% YouTube '5_sfnQDr1-o' %}
+{% YouTube 'ncYzTvEMCyE' %}
 
 ## Setup
 

@@ -22,7 +22,7 @@ clenched teeth.
 
 If you prefer video, here's a YouTube version of this post:
 
-{% YouTube '-oyeaIirVC0' %}
+{% YouTube 'ncYzTvEMCyE' %}
 
 ## The challenge
 
