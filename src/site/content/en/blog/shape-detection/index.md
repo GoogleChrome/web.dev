@@ -5,7 +5,7 @@ authors:
   - thomassteiner
 description: The Shape Detection API detects faces, barcodes, and text in images.
 date: 2019-01-07
-updated: 2020-11-30
+updated: 2020-12-14
 tags:
   - blog
   - capabilities
@@ -37,7 +37,7 @@ and the Chrome for Android
 [photo picker](https://bugs.chromium.org/p/chromium/issues/detail?id=656015),
 it has become fairly easy to capture images or live video data from device
 cameras, or to upload local images. So far, this dynamic image data—as well as
-static images on a page—has been not been accessible by code, even though
+static images on a page—has not been accessible by code, even though
 images may actually contain a lot of interesting features such as faces,
 barcodes, and text.
 
@@ -244,10 +244,10 @@ try {
 ## Feature detection {: #featuredetection }
 
 Purely checking for the existence of the constructors to feature detect the
-Shape Detection API doesn't suffice, as Chrome on Linux and Chrome OS
-currently still expose the detectors, but they are known to not work
-([bug](https://crbug.com/920961)). As a temporary measure, we instead
-recommend a *defensive programming* approach by doing feature detection
+Shape Detection API doesn't suffice.
+The presence of an interface doesn't tell you whether the underlying platform supports the feature.
+This is working [as intended](https://crbug.com/920961).
+It's why we recommend a *defensive programming* approach by doing feature detection
 like this:
 
 ```js
@@ -256,6 +256,44 @@ const supported = await (async () => 'FaceDetector' in window &&
     .then(_ => true)
     .catch(e => e.name === 'NotSupportedError' ? false : true))();
 ```
+
+The `BarcodeDetector` interface has been updated to include a `getSupportedFormats()` method
+and similar interfaces have been proposed
+[for `FaceDetector`](https://github.com/WICG/shape-detection-api/issues/53)
+and
+[for `TextDetector`](https://github.com/WICG/shape-detection-api/issues/57).
+
+```js
+await BarcodeDetector.getSupportedFormats();
+/* On a macOS computer logs
+  [
+    "aztec",
+    "code_128",
+    "code_39",
+    "code_93",
+    "data_matrix",
+    "ean_13",
+    "ean_8",
+    "itf",
+    "pdf417",
+    "qr_code",
+    "upc_e"
+  ]
+*/
+```
+
+This allows you to detect the specific feature you need, for example, QR code scanning:
+
+```js
+if (('BarcodeDetector' in window) &&
+    ((await BarcodeDetector.getSupportedFormats()).includes('qr_code'))) {
+  console.log('QR code scanning is supported.');
+}
+```
+
+This is better than hiding the interfaces because even across platforms, capabilities may vary
+and so developers should be encouraged to check for precisely the capability
+(such as a particular barcode format or facial landmark) they require.
 
 ## Operating system support {: #os-support}
 
