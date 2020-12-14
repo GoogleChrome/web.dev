@@ -282,7 +282,7 @@ await BarcodeDetector.getSupportedFormats();
 */
 ```
 
-This allows you to detect precisely for the feature you need, for example, QR code scanning:
+This allows you to detect the specific feature you need, for example, QR code scanning:
 
 ```js
 if (('BarcodeDetector' in window) &&
@@ -291,7 +291,7 @@ if (('BarcodeDetector' in window) &&
 }
 ```
 
-This is better than hiding the interfaces because even across platforms capabilities may vary
+This is better than hiding the interfaces because even across platforms, capabilities may vary
 and so developers should be encouraged to check for precisely the capability
 (such as a particular barcode format or facial landmark) they require.
 
