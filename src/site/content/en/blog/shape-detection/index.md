@@ -5,7 +5,7 @@ authors:
   - thomassteiner
 description: The Shape Detection API detects faces, barcodes, and text in images.
 date: 2019-01-07
-updated: 2020-12-11
+updated: 2020-12-14
 tags:
   - blog
   - capabilities
@@ -244,10 +244,10 @@ try {
 ## Feature detection {: #featuredetection }
 
 Purely checking for the existence of the constructors to feature detect the
-Shape Detection API doesn't suffice, as Chrome on Linux and Chrome OS
-expose the detectors, but they are known to not work
-(which is working as intended according to this [bug](https://crbug.com/920961)).
-Instead, we recommend a *defensive programming* approach by doing feature detection
+Shape Detection API doesn't suffice.
+The presence of an interface doesn't tell you whether the underlying platform supports the feature.
+This is working [as intended](https://crbug.com/920961).
+It's why we recommend a *defensive programming* approach by doing feature detection
 like this:
 
 ```js
