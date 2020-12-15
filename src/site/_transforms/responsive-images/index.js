@@ -16,10 +16,14 @@
 
 /**
  * @fileoverview An eleventy transform that rewrites image paths to use our
- * image CDN.
+ * image CDN and makes sure all local images have width and height html
+ * attributes set to avoid layout shift.
  */
 
 const cheerio = require('cheerio');
+const fs = require('fs');
+const sizeOf = require('image-size');
+const path = require('path');
 const {determineImagePath} = require('./helpers');
 
 const responsiveImages = (content, outputPath) => {
@@ -31,10 +35,21 @@ const responsiveImages = (content, outputPath) => {
   const $img = $('img');
   $img.each((_, elem) => {
     const $elem = $(elem);
-    const originalSrc = $elem.attr('src');
+    const originalSrc = $elem.attr('src').trim();
     if (!originalSrc) {
       return;
     }
+
+    const isLocal = !RegExp('^(https?://|/)').test(originalSrc);
+    if (isLocal) {
+      const distSrc = path.join(path.dirname(outputPath), originalSrc);
+      if (fs.existsSync(distSrc)) {
+        const {width, height} = sizeOf(distSrc);
+        $elem.attr('width', width);
+        $elem.attr('height', height);
+      }
+    }
+
     const newSrc = determineImagePath($elem.attr('src'), outputPath).src;
     $elem.attr('src', newSrc);
     // Note the code below is a short term fix and should be removed eventually.
