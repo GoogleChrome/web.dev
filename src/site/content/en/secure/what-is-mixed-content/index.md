@@ -116,7 +116,7 @@ HTTPS](https://active-mixed-content.glitch.me/). Blocked content will also be de
 </figure>
 
 {% Aside %}
-Browsers also highlight blocked content in developer tooling. Block content issues are detailed in the Issues Tab in Chrome and Edge, and Firefox and Safari log messages in the developer console.
+Browsers also highlight blocked content in developer tooling. Blocked content issues are detailed in the Issues Tab in Chrome and Edge, and Firefox and Safari log messages in the developer console.
 {% endAside %}
 
 ## The mixed content specification
