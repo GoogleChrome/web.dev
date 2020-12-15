@@ -348,8 +348,8 @@ class Search extends BaseElement {
         hitsPerPage: 10,
         attributesToHighlight: ['title'],
         attributesToRetrieve: ['url'],
-        highlightPreTag: '<mark>',
-        highlightPostTag: '</mark>',
+        highlightPreTag: '<strong>',
+        highlightPostTag: '</strong>',
       });
       if (this.query === query) {
         this.hits = hits;
