@@ -121,7 +121,7 @@ teams:
 If you need to debug the site's build process:
 
 1. Add a `debugger` statement to `.eleventy.js`
-1. Run `npm run debug`
+1. Run `npm run debug:eleventy`
 1. Go to `chrome://inspect` to attach to the running process.
 
 <img
