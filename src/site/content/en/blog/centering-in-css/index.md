@@ -5,7 +5,7 @@ subhead: Follow 5 centering techniques as they go through a series of tests to s
 authors:
   - adamargyle
 description: Follow 5 centering techniques as they go through a series of tests to see which one is the most resilient to change.
-date: 2020-11-11
+date: 2020-12-16
 hero: hero.png
 thumbnail: thumb.png
 codelabs: codelab-centering-in-css
