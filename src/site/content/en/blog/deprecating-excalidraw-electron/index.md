@@ -11,7 +11,7 @@ description: |
   (PWA) is the future we want to build upon.
 authors:
   - thomassteiner
-date: 2020-12-16
+date: 2020-12-17
 # updated: 2020-11-04
 hero: hero.jpg
 alt:
@@ -21,8 +21,8 @@ tags:
   - case-study
 ---
 
-Excalidraw is a virtual collaborative whiteboard tool that lets you easily sketch diagrams that have
-a hand-drawn feel to them. On the [Excalidraw](https://excalidraw.com/) project, we have decided to
+[Excalidraw](https://excalidraw.com/) is a virtual collaborative whiteboard tool that lets you easily sketch diagrams that have
+a hand-drawn feel to them. On the [Excalidraw project](https://github.com/excalidraw), we have decided to
 deprecate [Excalidraw Desktop](https://github.com/excalidraw/excalidraw-desktop), an
 [Electron](https://www.electronjs.org/) wrapper for Excalidraw, in favor of the Web version that you
 can—and always could—find at [excalidraw.com](https://excalidraw.com/). After a careful analysis, we
@@ -48,7 +48,7 @@ The decision that [@vjeux](https://github.com/vjeux) took in the end was simple:
 
 > We should do both :)
 
-While work on converting the version of Excalidraw from back then into a PWA was started by
+While work on converting the version of Excalidraw into a PWA was started by
 [@voluntadpear](https://github.com/voluntadpear) and later others,
 [@lipis](https://github.com/lipis) independently
 [went ahead](https://github.com/excalidraw/excalidraw/issues/561#issuecomment-579573783) and created
