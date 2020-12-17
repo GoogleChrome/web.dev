@@ -204,7 +204,7 @@ it.
 
 Excalidraw makes use of [browser-nativefs](https://github.com/GoogleChromeLabs/browser-nativefs) for
 accessing the file system of the operating system. On supporting browsers, this allows for a true
-open-->edit-->save workflow and actual over-saving and "save as", with a transparent fallback for
+open→edit→save workflow and actual over-saving and "save as", with a transparent fallback for
 other browsers. You can learn more about this feature in my blog post
 [Reading and writing files and directories with the browser-nativefs library](browser-nativefs/).
 
@@ -212,14 +212,14 @@ other browsers. You can learn more about this feature in my blog post
 
 Files can be dragged and dropped onto the Excalidraw window just as in native applications. On a
 browser that supports the [File System Access API](https://web.dev/file-system-access/), a dropped
-file can be immediately edited and the modifications be saved in the original file. This is so
+file can be immediately edited and the modifications be saved to the original file. This is so
 intuitive that you sometimes forget that you are dealing with a Web app.
 
 ### Clipboard access
 
 Excalidraw works well with the operating system's clipboard. Entire Excalidraw drawings or also just
-individual objects can be copied and pasted in `image/png` and `image/svg+xml` format, allowing for
-an easy integration with other native tools like [Inkspace](https://inkscape.org/) or Web-based
+individual objects can be copied and pasted in `image/png` and `image/svg+xml` formats, allowing for
+an easy integration with other native tools like [Inkscape](https://inkscape.org/) or Web-based
 tools like [SVGOMG](https://jakearchibald.github.io/svgomg/).
 
 <figure class="w-figure">
