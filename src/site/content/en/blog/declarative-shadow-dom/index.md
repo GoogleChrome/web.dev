@@ -323,8 +323,10 @@ div.appendChild(template);
 div.shadowRoot; // null
 ```
 
-To avoid some important security considerations, declarative Shadow Roots also cannot be created
-using innerHTML or any other fragment parser entry point, with the exception of DOMParser:
+To avoid some important security considerations, Declarative Shadow Roots also can't be created
+using fragment parsing APIs like `innerHTML` or `insertAdjacentHTML()`. The only way to parse
+HTML with Declarative Shadow Roots applied by passing a new `includeShadowRoots` option to
+`DOMParser`:
 
 ```html
 <script>
