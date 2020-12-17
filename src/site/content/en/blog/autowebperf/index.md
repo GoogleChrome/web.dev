@@ -6,6 +6,12 @@ description: >
   A new modular tool that enables automatic gathering of performance data form multiple sources.
 date: 2020-12-09
 # updated: 2020-07-22
+authors:
+  - jonchen
+  - gilbertococchi
+  - antoinebisch
+hero: hero.jpg
+thumbnail: thumbnail.jpg
 tags:
   - blog
   - performance
