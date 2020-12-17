@@ -44,7 +44,7 @@ The immediate reaction by [@voluntadpear](https://github.com/voluntadpear) was t
 > Trusted Web Activities and hopefully iOS will do the same soon. On Desktop, Chrome lets you
 > download a desktop shortcut to a PWA.
 
-The decision that @vjeux took was simple:
+The decision that [@vjeux](https://github.com/vjeux) took in the end was simple:
 
 > We should do both :)
 
