@@ -6,9 +6,9 @@ authors:
 description: >
   Browsers are imposing new requirements on SharedArrayBuffer usage. Learn how to enable it cross-browser and cross-platform.
 origin_trial:
-  url: https://developers.chrome.com/origintrials/#/view_trial/-TODO-CHANGE-THIS
-date: 2020-12-01
-updated: 2020-12-01
+  url: https://developers.chrome.com/origintrials/#/view_trial/303992974847508481
+date: 2020-12-17
+updated: 2020-12-17
 hero: hero.jpg
 alt: Iframes, images, and windows being accessed by someone 'evil'
 tags:
