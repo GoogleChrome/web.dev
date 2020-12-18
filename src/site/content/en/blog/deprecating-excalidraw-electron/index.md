@@ -4,10 +4,10 @@ subhead: |
   Learn why the Excalidraw project decided to deprecate their Electron wrapper in favor of the Web
   version.
 description: |
-  Excalidraw is a virtual collaborative whiteboard tool that lets you easily sketch diagrams that
-  have a hand-drawn feel to them. On the Excalidraw project, we have decided to deprecate Excalidraw
+  Excalidraw is a virtual collaborative whiteboard that lets you easily sketch diagrams that
+  feel hand-drawn. On the Excalidraw project, we decided to deprecate Excalidraw
   Desktop, an Electron wrapper for Excalidraw, in favor of the Web version that you can—and always
-  could—find at excalidraw.com. After a careful analysis, we have decided that Progressive Web App
+  could—find at excalidraw.com. After a careful analysis, we decided that Progressive Web App
   (PWA) is the future we want to build upon.
 authors:
   - thomassteiner
@@ -27,11 +27,11 @@ deprecate [Excalidraw Desktop](https://github.com/excalidraw/excalidraw-desktop)
 [Electron](https://www.electronjs.org/) wrapper for Excalidraw, in favor of the Web version that you
 can—and always could—find at [excalidraw.com](https://excalidraw.com/). After a careful analysis, we
 have decided that [Progressive Web App](https://web.dev/pwa/) (PWA) is the future we want to build
-upon. Read on to learn more about our rationale.
+upon. Read on to learn why.
 
 ## How Excalidraw Desktop came into being
 
-Soon after [@vjeux](https://twitter.com/vjeux) had created the initial version of Excalidraw in
+Soon after [@vjeux](https://twitter.com/vjeux) created the initial version of Excalidraw in
 January 2020 and [blogged about it](reflections-on-excalidraw/), he proposed the following in
 [Issue #561](https://github.com/excalidraw/excalidraw/issues/561#issue-555138343):
 
@@ -56,8 +56,8 @@ a [separate repo](https://github.com/excalidraw/excalidraw-desktop) for Excalidr
 
 To this day, the initial goal set by [@vjeux](https://github.com/vjeux), that is, to submit
 Excalidraw to the various app stores, has not been reached yet. Honestly, no one has even started
-the submission process to any of the stores. But why is that? Before I try to provide an answer, let
-me quickly look at Electron, the platform.
+the submission process to any of the stores. But why is that? Before I answer, let's
+look at Electron, the platform.
 
 ## What is Electron?
 
@@ -82,7 +82,7 @@ the promised features need a detailed look at the small print.
   [Services](https://developer.apple.com/documentation/appkit/nsapplication/1428608-servicesmenu?language=objc)
   menu. To make one's menus a standard menu, developers should set their menu's `role` accordingly,
   and Electron will recognize them and make them become standard menus. This means that a lot of
-  menu-related code will make use of the following platform check:
+  menu-related code will use the following platform check:
   `const isMac = process.platform === 'darwin'`.
 
 - Windows installers can be made with
@@ -162,7 +162,7 @@ Even in 2020, [jQuery](https://jquery.com/) is still
 developers it has become a habit to use it, despite the fact that today they
 [might not need jQuery](http://youmightnotneedjquery.com/). There is a similar resource for
 Electron, aptly called [You Might Not Need Electron](https://youmightnotneedelectron.com/). Let me
-outline in the following why we think we do not need Electron.
+outline why we think we do not need Electron.
 
 ### Installable Progressive Web App
 
@@ -177,7 +177,7 @@ one for fonts and font-related CSS, and one for everything else.
 </figure>
 
 This means the application is fully offline-capable and can run without a network connection.
-Chromium-based browsers on both desktop and mobile prompt the user if they want to install the app.
+Chromium-based browsers on both desktop and mobile prompt the user to install the app.
 You can see the installation prompt in the screenshot below.
 
 <figure class="w-figure">
@@ -187,7 +187,7 @@ You can see the installation prompt in the screenshot below.
 
 Excalidraw is configured to run as a standalone application, so when you install it, you get an app
 that runs in its own window. It is fully integrated in the operating system's multitasking UI and
-gets its own app icon on the home screen, Dock, or task bar; depending on what platform you install
+gets its own app icon on the home screen, Dock, or task bar; depending on the platform where you install
 it.
 
 <figure class="w-figure">
@@ -202,7 +202,7 @@ it.
 
 ### File system access
 
-Excalidraw makes use of [browser-nativefs](https://github.com/GoogleChromeLabs/browser-nativefs) for
+Excalidraw uses [browser-nativefs](https://github.com/GoogleChromeLabs/browser-nativefs) for
 accessing the file system of the operating system. On supporting browsers, this allows for a true
 open→edit→save workflow and actual over-saving and "save as", with a transparent fallback for
 other browsers. You can learn more about this feature in my blog post
@@ -236,7 +236,7 @@ files in the operating system.
 
 ### Declarative link capturing
 
-Excalidraw drawings can be shared by link—here is an
+Excalidraw drawings can be shared by link. Here is an
 [example](https://excalidraw.com/#json=4646308765761536,jwZJW8JsOM75vdhqG2nBgA). In the future, if
 people have Excalidraw installed as a PWA, such links will not open in a browser tab, but launch a
 new standalone window. This will work thanks to
@@ -248,7 +248,7 @@ an, at the time of writing, bleeding-edge proposal for a new Web platform featur
 The Web has come a long way, with more and more features landing in browsers that only a couple of
 years or even months ago were unthinkable on the Web and exclusive to native applications.
 Excalidraw is at the forefront of what is possible in the browser, all while acknowledging that not
-all browsers on all platforms support each feature we make use of. By betting on a progressive
+all browsers on all platforms support each feature we use. By betting on a progressive
 enhancement strategy, we enjoy the latest and greatest wherever possible, but without leaving anyone
 behind. Best viewed in _any_ browser.
 
