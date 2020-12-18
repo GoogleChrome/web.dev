@@ -21,8 +21,8 @@ tags:
   - case-study
 ---
 
-[Excalidraw](https://excalidraw.com/) is a virtual collaborative whiteboard tool that lets you easily sketch diagrams that have
-a hand-drawn feel to them. On the [Excalidraw project](https://github.com/excalidraw), we have decided to
+[Excalidraw](https://excalidraw.com/) is a virtual collaborative whiteboard that lets you easily sketch diagrams that feel hand-drawn.
+On the [Excalidraw project](https://github.com/excalidraw), we have decided to
 deprecate [Excalidraw Desktop](https://github.com/excalidraw/excalidraw-desktop), an
 [Electron](https://www.electronjs.org/) wrapper for Excalidraw, in favor of the Web version that you
 can—and always could—find at [excalidraw.com](https://excalidraw.com/). After a careful analysis, we
@@ -89,7 +89,7 @@ the promised features need a detailed look at the small print.
   [windows-installer](https://github.com/electron/windows-installer). The README of the project
   highlights that _"for a production app you need to sign your application. Internet Explorer's
   SmartScreen filter will block your app from being downloaded, and many anti-virus vendors will
-  consider your app as malware unless you obtain a valid cert"_.
+  consider your app as malware unless you obtain a valid cert"_ [sic].
 
 Looking at just these three examples, it is clear that Electron is far from "write once, run
 everywhere". Distributing an app on app stores requires
@@ -239,7 +239,7 @@ files in the operating system.
 Excalidraw drawings can be shared by link. Here is an
 [example](https://excalidraw.com/#json=4646308765761536,jwZJW8JsOM75vdhqG2nBgA). In the future, if
 people have Excalidraw installed as a PWA, such links will not open in a browser tab, but launch a
-new standalone window. This will work thanks to
+new standalone window. Pending implementation, this will work thanks to
 [declarative link capturing](https://github.com/WICG/sw-launch/blob/master/declarative_link_capturing.md),
 an, at the time of writing, bleeding-edge proposal for a new Web platform feature.
 
