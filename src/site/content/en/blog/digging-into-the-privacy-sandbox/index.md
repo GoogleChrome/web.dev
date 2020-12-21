@@ -4,7 +4,7 @@ subhead: The Privacy Sandbox is a series of proposals to satisfy third-party use
 authors:
   - samdutton
 date: 2020-04-08
-updated: 2020-07-30
+updated: 2020-12-21
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: A black-on-white printed sign saying Private, on a wooden wall.
@@ -79,7 +79,7 @@ Provide privacy preserving mechanisms to support a variety of use cases such as 
 * [Click Through Conversion Measurement Event-Level](https://github.com/csharrison/conversion-measurement-api)<br>
 Provide privacy preserving [click-through-conversion](#glossary-ctc) measurement.
 * [Federated Learning of Cohorts](https://github.com/jkarlin/floc)<br>
-The browser groups together many users with similar browsing histories into a group (or "flock"). Advertisers can select ads for this large group based on mass observations, but cannot recognize individual people in it.
+The browser groups together many users with similar browsing histories into a group (or "cohort"). Advertisers can select ads for this large group based on mass observations, but cannot recognize individual people in it.
 * [TURTLEDOVE](https://github.com/michaelkleber/turtledove)<br>
 Enable some form of on-device 'auction' to choose the most relevant ads which would include ads that remarket an advertiser based on a prior expression of interest by the user.
 
@@ -119,7 +119,7 @@ Interest-based ad selection currently uses cookies to track user behaviour acros
 
 * [TURTLEDOVE](https://github.com/michaelkleber/turtledove): **for remarketing**.<br>The API enables the final ad "auction" to choose the most relevant ads to be moved to the browser. The API leverages information which is only stored in the user's browser itself, about advertisers the user had previously expressed an interest in, along with information about the current page. Two requests are sent for ads: one to retrieve an ad based on contextual data, and one to retrieve an ad based on an advertiser-defined interest. The browser has the responsibility of ensuring these requests are independent and *uncorrelated* so they can't be linked together to let an ad network know that the requests are from the same person. An "auction" is then conducted by the browser to choose the most relevant ad, using JavaScript code provided by the advertiser. This code *can only be used to choose between ads*: it cannot make network requests, or access the DOM or external state.
 
-* [FLoC](https://github.com/jkarlin/floc): **for interest-based audiences**.<br>The API generates clusters of similar people, known as cohorts or "flocks". Data is generated locally on the user's browser, not by a third party. The browser shares the generated flock data, but this cannot be used to identify or track individual users. This enables companies to select ads based on the behavior of people with similar browsing behaviour, while preserving privacy.
+* [FLoC](https://github.com/jkarlin/floc): **for interest-based audiences**.<br>The API generates clusters of similar people, known as "cohorts". Data is generated locally on the user's browser, not by a third party. The browser shares the generated cohort data, but this cannot be used to identify or track individual users. This enables companies to select ads based on the behavior of people with similar browsing behaviour, while preserving privacy.
 
 
 ### Combat fingerprinting
