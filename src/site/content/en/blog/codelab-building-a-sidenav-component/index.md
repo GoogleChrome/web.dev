@@ -36,16 +36,17 @@ to learn about the CSS tools chosen for building this component.
 
 ## HTML
 
-Let's get the essentials of our HTML setup, so there's content and some boxes to work with.
-We'll be using an `<aside>` to hold the navigation menu, and a `<main>` to hold our primary page content.
+First, get the essentials of the HTML setup so there's content and some boxes to work with.
+I'll be using an `<aside>` to hold the navigation menu, and a `<main>` to hold the primary page content. 
+Drop the following HTML into the body tag.
 
 ```html
 <aside></aside>
 <main></main>
 ```
 
-In the sidenav, let's fill in those semantic elements with the rest of our page content. We'll add a 
-navigation element and a close link. 
+Next I'll fill in those semantic elements with the rest of the page content. Add a 
+navigation element, some nav links and a close link. 
 
 ```html/1-14
 <aside>
@@ -66,7 +67,9 @@ navigation element and a close link.
 </aside>
 ```
 
-In the main content element, let's add a header and an article to semantically hold our layout content.
+In the main content element, I added a header and an article to semantically hold the layout content. 
+The header will have the menu open button, we'll show and hide it based on viewport size soon. The aside 
+has the close button.
 
 ```html/1-14
 <main>
@@ -87,25 +90,26 @@ In the main content element, let's add a header and an article to semantically h
 </main>
 ```
 
-So far we've added an aside element, with a nav and links. Then we also added a header and 
-article to our main element. This is clean, semantic and pretty timeless already, but let's 
-go sprinkle on some accessibility sugar, to really make it clean and clear UX for everyone.
+So far I've added an aside element, with a nav, links and a way to close the sidenav. 
+Also added a header, a way to open the sidenav, and an article to the main element. 
+This is clean, semantic and pretty timeless already, but next I want to  
+go sprinkle on some accessibility sugar, to make it clean and clear for everyone.
 
-The open link for our sidenav could be more clearly marked. Here's how to do that.
+The open link in the sidenav could be more clearly marked. Here's how I did that.
 
 ```html//0
 <a href="#sidenav-open">
 <a href="#sidenav-open" title="Open Menu" aria-label="Open Menu">
 ```
 
-The open SVG icon for our sidenav could be more clearly marked. Here's how to do that.
+The open SVG icon for the sidenav could be more clearly marked. Here's how I did that.
 
 ```html//0
 <svg viewBox="0 0 50 40">
 <svg viewBox="0 0 50 40" role="presentation" focusable="false" aria-label="trigram for heaven symbol">
 ```
 
-The close link in our sidenav could be more clearly marked. 
+The close link in the sidenav could be more clearly marked. 
 
 ```html//0
 <a href="#"></a>
@@ -114,9 +118,9 @@ The close link in our sidenav could be more clearly marked.
 
 ## CSS
 
-Next let's setup our desktop and mobile layout essentials. Our main content 
-and sidenav are inside the `<body>` tag, let's start with their layout, which is 
-owned by the document body. Put the following CSS into `css/sidenav.css`:
+Time to layout the elements. The main content 
+and sidenav are inside the `<body>` tag, so I started with their layout. Add the following 
+CSS into `css/sidenav.css` so the body element positions the children.
 
 ```css
 body {
@@ -137,22 +141,29 @@ should be sized by it's minimal content needs, and the 2nd column can take up th
 Then, if in a constrained viewport of `540px` or less, put the sidenav and main content elements 
 into the same row and column, resulting in them being on top of each other.
 
-With this as a base, we can now leverage the state of the url bar to toggle the 
-visibility and transition style of the sidenav. Speaking of which, we need to update our 
-HTML to enable this feature.
+With this as a base, I can now leverage the state of the url bar to toggle the 
+visibility and transition style of the sidenav. Speaking of which, I need to update the 
+HTML to enable CSS to hook into this feature.
 
 ```html//0
 <aside>
 <aside id="sidenav-open">
 ```
-and
+
+Now the element's ID can match the url hash we'll be setting. Next I added IDs for 
+key elements that control the sidenav.
+
 ```html//0
 <a href="#sidenav-open" title="Open Menu" aria-label="Open Menu">
 <a href="#sidenav-open" id="sidenav-button" class="hamburger" title="Open Menu" aria-label="Open Menu">
 ```
 
-Now the element's ID can match the url hash we'll be setting. We also added IDs for 
-key elements that control the sidenav. With that, let's style our sidenav components.
+With the macro layout done, time to style the micro sidenav components.
+
+The `<aside>` has a neat layout too. It has 2 children, a `<nav>` which is the paper like looking 
+component that slides out, and a closing `<a>` link element that sets the url has to '#'. 
+The link is invisible to the right of the paper slide out nav, it's so folks can "click off" the visual 
+component to dismiss it. Here's how I accomplished that with grid.
 
 ```css
 #sidenav-open {
@@ -160,6 +171,22 @@ key elements that control the sidenav. With that, let's style our sidenav compon
   grid-template-columns: [nav] 2fr [escape] 1fr;
 }
 ```
+
+I thought the ratio was a really nice touch here, where grid could shine and give a 
+designer a lot of control.
+
+<figure class="w-figure">
+  <video playsinline controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/overlay-escape-ratio.mp4">
+  </video>
+</figure>
+
+Next I need to conditionally overlay the main content and persist my position 
+through any document scrolling. This is a great job for `position: sticky` and 
+some `overscroll-behavior`. Go ahead and open the side menu after scrolling the page, 
+or try scrolling the page while the sidenav is open. What do you think?
+
+Here's how I accomplished that:
 
 ```css/4-12
 #sidenav-open {
