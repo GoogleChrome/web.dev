@@ -40,13 +40,23 @@ const responsiveImages = (content, outputPath) => {
       return;
     }
 
-    const isLocal = !RegExp('^(https?://|/)').test(originalSrc);
-    if (isLocal) {
-      const distSrc = path.join(path.dirname(outputPath), originalSrc);
-      if (fs.existsSync(distSrc)) {
-        const {width, height} = sizeOf(distSrc);
-        $elem.attr('width', width);
-        $elem.attr('height', height);
+    // If the author has not specified a width or height on the image then
+    // one will be provided.
+    // nb. If the author has only specified a single dimension,
+    // like a width without a height, then only that dimensions will be used.
+    // We don't compute the other dimension because the author may be
+    // purposefully displaying the image smaller than its original size and
+    // for a high res image we could end up with a very tall height that doesn't
+    // match the width (i.e. width=200 height=3000 for a 2x image).
+    if (!$elem.attr('width') && !$elem.attr('height')) {
+      const isLocal = !RegExp('^(https?://|/)').test(originalSrc);
+      if (isLocal) {
+        const distSrc = path.join(path.dirname(outputPath), originalSrc);
+        if (fs.existsSync(distSrc)) {
+          const {width, height} = sizeOf(distSrc);
+          $elem.attr('width', width);
+          $elem.attr('height', height);
+        }
       }
     }
 
