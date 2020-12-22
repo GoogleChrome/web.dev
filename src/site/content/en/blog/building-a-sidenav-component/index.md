@@ -8,7 +8,7 @@ description: A foundational overview of how to build a responsive slide out side
 date: 2021-01-16
 hero: hero.png
 thumbnail: thumb.png
-# codelabs: codelab-building-a-sidenav-component
+codelabs: codelab-building-a-sidenav-component
 tags:
   - blog
   - css
