@@ -144,7 +144,7 @@ appropriate resolution.
 
 {% Aside %}
 There are ongoing discussions on enabling Client Hints on an initial request,
-but you should be considering [responsive
+but you should consider [responsive
 design](/responsive-web-design-basics) or progressive enhancement before going
 down this route.
 {% endAside %}
