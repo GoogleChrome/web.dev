@@ -262,7 +262,7 @@ features for free. Let's adorn our interactive elements with labels clearly arti
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/keyboard-voiceover.mp4">
   </video>
   <figcaption class="w-figure">
-    demo of the interaction with and without duration applied
+    demo of the voiceover and keyboard interaction ux
   </figcaption>
 </figure>
 
