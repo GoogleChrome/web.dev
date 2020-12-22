@@ -157,7 +157,7 @@ then dive into the [full proposal](https://wicg.github.io/ua-client-hints/).
 
 {% Aside %}
 Client Hints are **only sent over secure connections**, so make sure you have
-[migrated your site to HTTPS](https://web.dev/why-https-matters/).
+[migrated your site to HTTPS](/why-https-matters).
 {% endAside %}
 
 The new set of hints is available from Chromium 84, so let's explore how it
@@ -168,10 +168,10 @@ all works.
 User-Agent Client Hints will only be enabled gradually on Chrome Stable as
 [compatibility
 concerns](https://bugs.chromium.org/p/chromium/issues/detail?id=1091285) are
-resolved. To force the functionality on for testing, ensure you:
+resolved. To force the functionality on for testing:
 
-- are on Chrome 84 **beta** or equivalent
-- enable the `chrome://flags/#enable-experimental-web-platform-features` flag
+- Use Chrome 84 **beta** or equivalent.
+- Enable the `chrome://flags/#enable-experimental-web-platform-features` flag.
 
 By default, the browser returns the browser brand, significant / major version,
 and an indicator if the client is a mobile device:
