@@ -92,7 +92,7 @@ has the close button.
 
 So far I've added an aside element, with a nav, links and a way to close the sidenav. 
 Also added a header, a way to open the sidenav, and an article to the main element. 
-This is clean, semantic and pretty timeless already, but next I want to  
+This is clean, semantic and pretty timeless already, but next I want to 
 go sprinkle on some accessibility sugar, to make it clean and clear for everyone.
 
 The open link in the sidenav could be more clearly marked. Here's how I did that.
@@ -267,6 +267,50 @@ For some flair, let's add CSS transforms with respectful accessibility.
 }
 ```
 
+<figure class="w-figure">
+  <video playsinline controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/prefers-reduced-motion.mp4">
+  </video>
+  <figcaption class="w-figure">
+    demo of the interaction with and without duration applied based on `prefers-reduced-motion` media query
+  </figcaption>
+</figure>
+
+### Sprinkle in some Javascript
+
+The `esc` key should close the menu. I add this by listening for a key event on the sidenav element, 
+and if it's "Escape", than I set the url hash to empty, making the sidenav transition out.
+
+```js
+const sidenav = document.querySelector('#sidenav-open')
+
+sidenav.addEventListener('keyup', e => {
+  if (e.code === 'Escape')
+    document.location.hash = ''
+})
+```
+
+This next piece of UX is focus management. I want to make opening and closing easy, so I wait 
+until the sidenav has finished a transition of some kind, then cross check it against the 
+url hash to determine if it's in or out. I then use javascript to set the focus on the button 
+complimentary to the one they just pressed.
+
+```js
+const closenav = document.querySelector('#sidenav-close')
+const opennav = document.querySelector('#sidenav-button')
+
+sidenav.addEventListener('transitionend', e => {
+  if (e.propertyName !== 'transform')
+    return
+
+  const isOpen = document.location.hash === '#sidenav-open'
+
+  isOpen
+    ? closenav.focus()
+    : opennav.focus()
+})
+```
+
 ## Try it out
 
 {% Instruction 'preview' %}
@@ -274,4 +318,15 @@ For some flair, let's add CSS transforms with respectful accessibility.
 ## Conclusion
 
 That's a wrap up for the needs I had with the component. Feel free to build upon
-it, drive it with data, and in general make it yours! 
+it, drive it with data, and in general make it yours! There's always more to add 
+or more use cases to cover. 
+
+Open up `css/brandnav.css` to check out the non-layout related styles that I applied to 
+this component. I didn't feel it was important to the featureset I was focusing on, and I 
+hoped that separating styles from layout would encourage copy and paste. There could 
+be more learning for you there!
+
+How do you make slide out responsive sidenav components? 
+Do you ever have more than 1, like one on both sides? I'd love to feature your solution 
+in a YouTube video, make sure to tweet or comment with your code, it'll help everyone 
+out!
