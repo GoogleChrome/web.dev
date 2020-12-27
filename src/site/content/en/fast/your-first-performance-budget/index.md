@@ -119,7 +119,7 @@ Create a chart with FCP and TTI times for all the similar websites and highlight
     </thead>
     <tbody>
       <tr>
-        <td>goggles.com</td>
+        <td>google.com</td>
         <td bgcolor="yellow"><strong>880 ms</strong></td>
         <td bgcolor="yellow"><strong>3,150 ms<strong></td>
       </tr>
