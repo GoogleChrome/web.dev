@@ -5,7 +5,7 @@ authors:
   - maudn
 hero: hero.jpg
 date: 2020-11-12
-#updated: 2020-11-12
+updated: 2020-12-27
 tags:
   - blog
   - privacy
@@ -37,7 +37,7 @@ entry](https://chromestatus.com/feature/6412002824028160).
 
 ## Experiment with end users
 
-To experiment with the API with end users, you'll need to:
+To experiment with the API with end users, you need to:
 
 1. Design your experiment.
 2. Set it up.
@@ -69,7 +69,7 @@ follows:
 
 #### Register for the origin trial
 
-Registering for an [origin trial](<(/origin-trials/)>) is the first step to activate the API for end
+Registering for an [origin trial](/origin-trials/) is the first step to activate the API for end
 users. Upon registering for an origin trial, you have two choices to make: what **type of tokens** you
 need, and how the **API usage should be controlled**.
 
@@ -77,8 +77,8 @@ need, and how the **API usage should be controlled**.
 
 - If you're planning to use the API directly on your own
   [origin(s)](/same-site-same-origin/#origin), register your origin(s) for a regular origin trial.
-- If you're planning on using the API as a third-party, for example if you want to use the API in a
-  script you wrote that's executed on origins you don't own, you may be eligible to register your
+- If you're planning on using the API as a third-party—for example if you need to use the API in a
+  script you wrote that is executed on origins you don't own—you may be eligible to register your
   origin for a [third-party origin trial](/third-party-origin-trials). This is convenient if you
   need to test at scale across different sites.
 
@@ -89,11 +89,12 @@ ephemeral. Because of this, sites that have registered for origin trials typical
 selectively enable API usage for small portions of their users. You can do this yourself, or let
 Chrome do this for you. In the dropdown **How is (third-party) usage controlled?**:
 
-- Select **Standard limit** to activate the API for all end users (on origins where a token is
-  preent). Pick this if you don't need to A/B Test (with vs. without the experiment) or if you want
+- Select **Standard limit** to activate the API for all end users on origins where a token is
+  present. Pick this if you don't need to A/B Test (with/without the experiment) or if you want
   to selectively enable API usage for small portions of your users yourself.
 - Select **Exclude a subset of users** to let Chrome selectively activate the API on a small subset
-  of users. This consistently diverts a user into an experiment group across sites to avoid the
+  of users on origins where a token is
+  present. This consistently diverts a user into an experiment group across sites to avoid the
   usage limit. Pick this if you don't want to worry about implementing throttling for your API
   usage.
 
