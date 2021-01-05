@@ -285,7 +285,7 @@ if ('FormDataEvent' in window) {
 }
 
 if ('ElementInternals' in window &&
-    'setFormData' in window.ElementInternals) {
+    'setFormValue' in window.ElementInternals.prototype) {
   // Form-associated custom elements are supported
 }
 ```
