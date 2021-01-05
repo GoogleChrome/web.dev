@@ -4,7 +4,7 @@ title: How to provide your own in-app install experience
 authors:
   - petelepage
 date: 2020-02-14
-updated: 2020-06-17
+updated: 2021-01-05
 description: |
   Use the beforeinstallprompt event to provide a custom, seamless, in-app
   install experience for your users.
@@ -57,8 +57,8 @@ in-app install flow:
   from the Web App Manifest spec to their own
   [incubator](https://github.com/WICG/beforeinstallprompt). The Chrome team
   remains committed to supporting them, and has no plans to remove or deprecate
-  support. **web.dev continues to recommend using them to provide a customized
-  install experience.**
+  support. Google's Web DevRel team continues to recommend using them to provide a customized
+  install experience.
 {% endAside %}
 
 ### Listen for the `beforeinstallprompt` event {: #beforeinstallprompt }
