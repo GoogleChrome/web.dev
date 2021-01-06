@@ -275,7 +275,7 @@ Observer (which you can polyfill), and can be extended with [a number of
 plugins](https://github.com/aFarkas/lazysizes#available-plugins-in-this-repo) to
 do things like lazy-load video. [Find out more about using lazysizes](/use-lazysizes-to-lazyload-images/).
 - [vanilla-lazyload](https://github.com/verlok/vanilla-lazyload) is a 
-lightweight option for lazy loading images, background images, videos, iframes, 
+lightweight option for lazy-loading images, background images, videos, iframes, 
 and scripts. It leverages Intersection Observer, supports responsive images, and 
 enables native lazy loading.
 - [lozad.js](https://github.com/ApoorvSaxena/lozad.js) is a another lightweight
