@@ -2,7 +2,7 @@
 title: New capabilities status
 subhead: Web apps should be able to do anything iOS/Android/desktop apps can. The members of the cross-company capabilities project want to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2020-12-01
+updated: 2021-01-06
 tags:
   - blog
   - capabilities
@@ -137,20 +137,6 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
       </tr>
       <tr>
         <td>
-          <a href="/serial/">
-            Serial API
-          </a>
-        </td>
-        <td>
-          The Serial API provides a way for websites to read from and
-          write to a serial device with scripts. The API bridges the web and
-          the physical world by allowing websites to communicate with serial
-          devices, such as microcontrollers and 3D printers.<br>
-          <em>Updated September 29, 2020</em>
-        </td>
-      </tr>
-      <tr>
-        <td>
           <a href="/hid/">WebHID API</a>
         </td>
         <td>
@@ -278,6 +264,20 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           synchronize data in the background, bringing web apps closer to
           the behavior of a platform-specific app.<br>
           <em>Updated December 18, 2019</em><a name="shape-barcode"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/serial/">
+            Serial API
+          </a>
+        </td>
+        <td>
+          The Serial API provides a way for websites to read from and
+          write to a serial device with scripts. The API bridges the web and
+          the physical world by allowing websites to communicate with serial
+          devices, such as microcontrollers and 3D printers.<br>
+          <em>Updated January 6, 2021</em>
         </td>
       </tr>
       <tr>

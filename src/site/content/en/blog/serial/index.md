@@ -4,15 +4,13 @@ subhead: The Serial API allows websites to communicate with serial devices.
 authors:
   - beaufortfrancois
 date: 2020-08-12
-updated: 2020-12-02
+updated: 2021-01-06
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: |
   Old modems, routers, network equipment. Serial, phone, audio, ethernet connectors.
 description: |
   The Serial API bridges the web and the physical world by allowing websites to communicate with serial devices.
-origin_trial:
-  url: https://developers.chrome.com/origintrials/#/view_trial/2992641952387694593
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - capabilities
@@ -21,11 +19,9 @@ feedback:
   - api
 ---
 
-{% Aside %}
-Web apps should be able to do anything iOS/Android/desktop apps can. The [Capabilities
-project](/fugu-status/), of which Serial API is only a part, aims to do just
-that. To learn about other capabilities and to keep up with their progress,
-follow [Unlocking new capabilities for the web](/fugu-status/).
+{% Aside 'success' %}
+The Serial API, part of the [capabilities project](/fugu-status/), launched in
+Chrome&nbsp;89.
 {% endAside %}
 
 ## What is the Serial API? {: #what }
@@ -45,11 +41,6 @@ and 3D printers.
 This API is also a great companion to [WebUSB] as operating systems require
 applications to communicate with some serial ports using their higher-level
 serial API rather than the low-level USB API.
-
-{% Aside  %}
-This article reflects the Serial API as implemented in Chrome 86 and later. Some
-property names have changed from previous versions.
-{% endAside %}
 
 ## Suggested use cases {: #use-cases }
 
@@ -79,33 +70,14 @@ communication between the website and the device that it is controlling.
 | Step                                         | Status                       |
 | -------------------------------------------- | ---------------------------- |
 | 1. Create explainer                          | [Complete][explainer]        |
-| 2. Create initial draft of specification     | [In Progress][spec]          |
-| **3. Gather feedback & iterate on design**   | [**In Progress**](#feedback) |
-| **4. Origin trial**                          | [**In Progress**](#ot)       |
-| 5. Launch                                    | Not started                  |
+| 2. Create initial draft of specification     | [Complete][spec]             |
+| 3. Gather feedback & iterate on design       | [Complete](#feedback)        |
+| 4. Origin trial                              | [Complete][ot]               |
+| **5. Launch**                                | **Complete**                 |
 
 </div>
 
 ## Using the Serial API {: #use }
-
-### Enabling via chrome://flags
-
-To experiment with the Serial API locally on all desktop platforms, without an
-origin trial token, enable the `#experimental-web-platform-features` flag in
-`chrome://flags`.
-
-### Enabling support during the origin trial phase
-
-The Serial API is available on all desktop platforms (Chrome OS, Linux, macOS,
-and Windows) as an origin trial in Chrome 80. The origin trial is expected to
-end just before Chrome 89 moves to stable in February 2021. The API can also
-be enabled using a flag.
-
-{% include 'content/origin-trials.njk' %}
-
-### Register for the origin trial {: #ot }
-
-{% include 'content/origin-trial-register.njk' %}
 
 ### Feature detection {: #feature-detection }
 
@@ -523,14 +495,15 @@ where you can see all serial device related events in one single place.
   <figcaption class="w-figcaption">Internal page in Chrome for debugging the Serial API.</figcaption>
 </figure>
 
-{% Aside %}
-The internal page supports debugging the Serial API in Chrome 87 and later.
-{% endAside %}
-
 ## Codelab {: #codelab }
 
 In the [Google Developer codelab], you'll use the Serial API to interact with a
 [BBC micro:bit] board to show images on its 5x5 LED matrix.
+
+## Browser support {: #browser-support }
+
+The Serial API is available on all desktop platforms (Chrome OS, Linux, macOS,
+and Windows) in Chrome 89.
 
 ## Polyfill {: #polyfill }
 
@@ -587,12 +560,11 @@ and let us know where and how you're using it.
 ## Helpful links {: #helpful }
 
 * [Specification][spec]
-* [Origin Trial][ot]
 * [Tracking bug][cr-bug]
 * [ChromeStatus.com entry][cr-status]
 * Blink Component: [`Blink>Serial`](https://chromestatus.com/features#component%3ABlink%3ESerial)
 
-Demos:
+## Demos {: #demos }
 
 * [Serial Terminal](https://googlechromelabs.github.io/serial-terminal/)
 * [Espruino Web IDE](https://www.espruino.com/ide/)
