@@ -88,8 +88,8 @@ There are some tradeoffs when lazily loading third-parties with facades as they 
 
 You may choose to [build a custom facade solution](https://wildbit.com/blog/2020/09/30/getting-postmark-lighthouse-performance-score-to-100#:~:text=What%20if%20we%20could%20replace%20the%20real%20widget) which employs the interaction pattern outlined above. The facade should be significantly smaller in comparison to the deferred third-party product and only include enough code to mimic the appearance of the product.
 
-If you would like your solution to be included in the list above, check out our [submissions process](https://github.com/patrickhulce/third-party-web/blob/master/facades.md).
+If you would like your solution to be included in the list above, check out the [submissions process](https://github.com/patrickhulce/third-party-web/blob/master/facades.md).
 
 ## Resources
 
-Source code for [Lazy load third-party resources with facades audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/third-party-facades.js)
+Source code for [Lazy load third-party resources with facades audit](https://github.com/GoogleChrome/lighthouse/blob/master/lighthouse-core/audits/third-party-facades.js).
