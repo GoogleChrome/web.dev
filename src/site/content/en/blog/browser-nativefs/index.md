@@ -124,7 +124,7 @@ This call returns a file handle, from which you can get the actual `File` via th
 const openFile = async () => {
   try {
     // Always returns an array.
-    const [handle] = await window. showOpenFilePicker();
+    const [handle] = await window.showOpenFilePicker();
     return handle.getFile();
   } catch (err) {
     console.error(err.name, err.message);

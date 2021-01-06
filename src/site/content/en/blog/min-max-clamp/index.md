@@ -97,7 +97,7 @@ conjunction with `calc()` (i.e. `font-size: max(calc(0.5vw - 1em), 2rem)`),  or
 composed (i.e. `font-size: max(min(0.5vw, 1em), 2rem)`). 
 
 {% Aside %} When using a calculation inside of a `min()`, `max()`, or `clamp()`
-function, you can nix the `calc()`. For example, writing `font-size:
+function, you can remove the call to `calc()`. For example, writing `font-size:
 max(calc(0.5vw - 1em), 2rem)` would be the same as `font-size: max(0.5vw - 1em,
 2rem)`. {% endAside %}
 

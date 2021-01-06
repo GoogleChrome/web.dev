@@ -4,7 +4,7 @@ subhead: Reading and writing to NFC tags is now possible.
 authors:
   - beaufortfrancois
 date: 2020-02-12
-updated: 2020-12-01
+updated: 2020-12-14
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: A photo of NFC tags
@@ -561,10 +561,6 @@ of records contained in the smart poster record. It should have a URL record, a
 text record for the title, a MIME type record for the image, and some [custom
 local type records] such as `":t"`, `":act"`, and `":s"` respectively for the
 type, action, and size of the smart poster record.
-
-{% Aside 'caution' %}
-Smart poster records are not yet supported.
-{% endAside %}
 
 Local type records are unique only within the local context of the containing
 NDEF record. Use them when the meaning of the types doesn't matter outside

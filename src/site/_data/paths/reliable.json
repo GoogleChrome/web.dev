@@ -18,6 +18,7 @@
       "title": "The options in your caching toolbox",
       "pathItems": [
         "http-cache",
+        "love-your-cache",
         "cache-api-quick-guide",
         "service-workers-cache-storage",
         "workbox",
@@ -42,6 +43,15 @@
         "adaptive-loading-with-service-workers",
         "offline-ux-design-guidelines",
         "extending-workbox"
+      ]
+    },
+    {
+      "title": "Communicate with workers",
+      "pathItems": [
+        "workers-overview",
+        "imperative-caching-guide",
+        "broadcast-updates-guide",
+        "two-way-communication-guide"
       ]
     }
   ]

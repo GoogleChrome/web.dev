@@ -9,6 +9,7 @@ description: >
   server that manages push notification subscriptions and sends
   web push protocol requests to a push service.
 date: 2020-11-11
+updated: 2020-12-06
 glitch: push-notifications-server-codelab-incomplete
 related_post: push-notifications-overview
 tags:
@@ -36,7 +37,7 @@ to learn about push notification concepts.
 The client code of this codelab is already complete. You'll only be
 implementing the server in this codelab. To learn how to implement a
 push notification client, check out [Codelab: Build a push notification
-client](/push-notification-client-codelab).
+client](/push-notifications-client-codelab).
 
 Check out [push-notifications-server-codelab-complete](https://push-notifications-server-codelab-complete.glitch.me/)
 ([source](https://glitch.com/edit/#!/push-notifications-server-codelab-complete))
@@ -46,6 +47,7 @@ to see the complete code.
 
 This codelab is known to work with the following operating system and browser combinations:
 
+* Windows: Chrome, Edge
 * macOS: Chrome, Firefox
 * Android: Chrome, Firefox
 
@@ -99,7 +101,7 @@ VAPID_SUBJECT="mailto:test@test.test"
 
 {% Aside 'gotchas' %}
   Environment variable values (the stuff in `.env`) are unique to a single Glitch project.
-  I.e. if you remix your project, the values in `.env` won't get copied over.
+  If you remix your project, the values in `.env` won't get copied over.
 {% endAside %}
 
 1. Open `public/index.js`.
@@ -126,22 +128,21 @@ for more context about the subscription process.
    should see a message similar to this:
 
 ```text
-Service worker registered.
-Scope: https://desert-cactus-sunset.glitch.me/
+Service worker registered. Scope: https://desert-cactus-sunset.glitch.me/
 ```
 
-1. In the app tab click **Subscribe to push**. In the status box you should
-   see a message similar to this:
+1. In the app tab click **Subscribe to push**. Your browser or operating system will probably 
+ask you if you want to let the website send you push notifications. Click **Allow** (or whatever 
+equivalent phrase your browser/OS uses). In the status box you should see a message similar 
+to this:
 
 ```text
-Service worker subscribed to push. 
-Endpoint: https://fcm.googleapis.com/fcm/send/…
+Service worker subscribed to push.  Endpoint: https://fcm.googleapis.com/fcm/send/…
 ```
 
 {% Aside %}
   The endpoint URL changes depending on what browser you're using.
-  For example, on Firefox the URL looks starts with
-  `https://updates.push.services.mozilla.com/…`.
+  For example, on Firefox the URL starts with `https://updates.push.services.mozilla.com/…`.
 {% endAside %}
 
 1. Go back to your code by clicking **View Source** in the Glitch UI.

@@ -4,7 +4,7 @@ subhead: Help users with OTPs received through SMS
 authors:
   - agektmr
 date: 2019-10-07
-updated: 2020-10-27
+updated: 2020-12-09
 hero: hero.png
 alt: A drawing of a woman using OTP to log in to a web app.
 
@@ -20,6 +20,11 @@ tags:
 feedback:
   - api
 ---
+
+{% Aside 'gotchas' %}
+If you want to learn more general SMS OTP form best practices including Web OTP
+API, checkout [SMS OTP form best practices](/sms-otp-form).
+{% endAside %}
 
 ## What is the Web OTP API?
 

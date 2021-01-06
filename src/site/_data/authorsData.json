@@ -1392,7 +1392,7 @@
   },
   "jonchen": {
     "name": {
-      "given": "Jon",
+      "given": "Jonathan",
       "family": "Chen"
     },
     "twitter": "jonchenn",
@@ -1649,5 +1649,50 @@
     },
     "country": "US",
     "github": "sbingler"
+  },
+  "andrewguan": {
+    "name": {
+      "given": "Andrew",
+      "family": "Guan"
+    },
+    "github": "AndrewKGuan"
+  },
+  "sorenbalko": {
+    "name": {
+      "given": "Sören",
+      "family": "Balko"
+    },
+    "description": {
+      "en": "CTO at Clipchamp"
+    },
+    "linkedin": "https://www.linkedin.com/in/sbalko/",
+    "github": "sbalko"
+  },
+  "rezakazemi": {
+    "name": {
+      "given": "Reza",
+      "family": "Kazemi"
+    },
+    "descriptions": {
+      "en": "Product Manager at Corel"
+    },
+    "org": {
+      "name": "Corel",
+      "unit": "Online Graphics"
+    }
+  }, 
+  "antoinebisch": {
+    "name": {
+      "given": "Antoine",
+      "family": "Bisch"
+    },
+    "github": "antoinebisch",
+    "country": "UK",
+    "org": {
+      "name": "Google"
+    },
+    "descriptions": {
+      "en": "Web Ecosystem Consultant"
+    }
   }
 }

@@ -10,6 +10,7 @@ description: >
   displays push messages as notifications, and unsubscribes the user
   from push notifications.
 date: 2020-11-11
+updated: 2020-12-06
 glitch: push-notifications-client-codelab-incomplete
 related_post: push-notifications-overview
 tags:
@@ -37,9 +38,9 @@ to learn about push notification concepts.
 The server code of this codelab is already complete. You'll only be
 implementing the client in this codelab. To learn how to implement a
 push notification server, check out [Codelab: Build a push notification
-server](/push-notification-server-codelab).
+server](/push-notifications-server-codelab).
 
-Check out [push-notifications-client-codelab-complete](https://push-notifications-server-codelab-complete.glitch.me/)
+Check out [push-notifications-client-codelab-complete](https://push-notifications-client-codelab-complete.glitch.me/)
 ([source](https://glitch.com/edit/#!/push-notifications-client-codelab-complete))
 to see the complete code.
 
@@ -47,6 +48,7 @@ to see the complete code.
 
 This codelab is known to work with the following operating system and browser combinations:
 
+* Windows: Chrome, Edge
 * macOS: Chrome, Firefox
 * Android: Chrome, Firefox
 
@@ -96,7 +98,7 @@ VAPID_SUBJECT="mailto:test@test.test"
 
 {% Aside 'gotchas' %}
   Environment variable values (the stuff in `.env`) are unique to a single Glitch project.
-  I.e. if you remix your project, the values in `.env` won't get copied over.
+  If you remix your project, the values in `.env` won't get copied over.
 {% endAside %}
 
 1. Open `public/index.js`.
