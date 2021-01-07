@@ -262,6 +262,8 @@ always use and install [Excalidraw in and from the browser](https://excalidraw.c
 
 ## Acknowledgements
 
-This article was reviewed by [@lipis](https://github.com/lipis) and
-[@dwelle](https://github.com/dwelle). It was cross-posted to the
+This article was reviewed by [@lipis](https://github.com/lipis),
+[@dwelle](https://github.com/dwelle), and
+[Joe Medley](https://github.com/jpmedley).
+It was cross-posted to the
 [Excalidraw blog](https://blog.excalidraw.com/deprecating-excalidraw-electron/).
