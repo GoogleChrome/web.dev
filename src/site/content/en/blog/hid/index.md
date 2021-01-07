@@ -5,7 +5,7 @@ subhead: |
 authors:
   - beaufortfrancois
 date: 2020-09-15
-updated: 2020-12-28
+updated: 2021-01-07
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: Elgato Stream Deck photo.
