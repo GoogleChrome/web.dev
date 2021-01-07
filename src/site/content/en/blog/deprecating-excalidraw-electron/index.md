@@ -11,7 +11,7 @@ description: |
   (PWA) is the future we want to build upon.
 authors:
   - thomassteiner
-date: 2020-12-17
+date: 2021-01-07
 # updated: 2020-11-04
 hero: hero.jpg
 alt:
