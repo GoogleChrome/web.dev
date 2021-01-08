@@ -175,6 +175,23 @@ getFID(sendToAnalytics);
 getLCP(sendToAnalytics);
 ```
 
+Once you've configured your site to use the
+[web-vitals](https://github.com/GoogleChrome/web-vitals) library to measure and
+send your Core Web Vitals data to an analytics endpoint, the next step is to
+aggregate and report on that data to see if your pages are meeting the
+recommended thresholds for at least 75% of page visits.
+
+While some analytics providers have built-in support for Core Web Vitals
+metrics, even those that don't should include basic custom metric features that
+allow you to measure Core Web Vitals in their tool.
+
+One example of this is the [Web Vitals
+Report](https://github.com/GoogleChromeLabs/web-vitals-report), which allows
+site owners to measure their Core Web Vitals using Google Analytics. For
+guidance on measuring Core Web Vitals using other analytics tools, see [Best
+practices for measuring Web Vitals in the
+field](/vitals-field-measurement-best-practices/).
+
 You can also report on each of the Core Web Vitals without writing any code
 using the [Web Vitals Chrome
 Extension](https://github.com/GoogleChrome/web-vitals-extension). This extension
