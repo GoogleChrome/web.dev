@@ -54,7 +54,9 @@ ffmpeg -i my-animation.gif -b:v 0 -crf 25 -f mp4 -vcodec libx264 -pix_fmt yuv420
 This tells FFmpeg to take `my-animation.gif` as the **input**, signified by the
 `-i` flag, and to convert it to a video called `my-animation.mp4`.
 
-The libx264 encoder only works with files that have even dimensions, like 320px by 240px. If the input GIF has odd dimensions you can include a crop filter to avoid FFmpeg throwing a 'height/width not divisible by 2' error:
+The libx264 encoder only works with files that have even dimensions, like 320px
+by 240px. If the input GIF has odd dimensions you can include a crop filter to
+avoid FFmpeg throwing a 'height/width not divisible by 2' error:
 
 ```bash
 ffmpeg -i my-animation.gif -vf "crop=trunc(iw/2)*2:trunc(ih/2)*2" -b:v 0 -crf 25 -f mp4 -vcodec libx264 -pix_fmt yuv420p my-animation.mp4
