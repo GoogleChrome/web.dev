@@ -52,7 +52,7 @@ If these details are important (for example, when working with a flat lay of bea
 
 In order to make these more responsive, we can use aspect-ratio. This allows for us to set a specific ratio size and base the rest of the media on an individual axis (height or width).
 
-A currently well-accepted cross-browser solution for maintaining aspect ratio based on an image’s width is known as the “Padding-top Hack”. And it does feel like a hack. This solution requires a parent container and an absolutely placed child container. One would then calculate the aspect ratio as a percentage to set as the `padding-top`. For example:
+A currently well-accepted cross-browser solution for maintaining aspect ratio based on an image’s width is known as the “Padding-top Hack". And it does feel like a hack. This solution requires a parent container and an absolutely placed child container. One would then calculate the aspect ratio as a percentage to set as the `padding-top`. For example:
 
 1:1 aspect ratio = 1 / 1 = 1 = `padding-top: 100%`
 4:3 aspect ratio = 3 / 4 = 0.75 = `padding-top: 75%`
@@ -63,8 +63,8 @@ Now that we have identified the aspect ratio value, we can apply that to our par
 
 
 ```html
-<div class=”container”>
-  <img class=”media” src=”...” alt=””>
+<div class="container">
+  <img class="media" src="..." alt="">
 </div>
 ```
 
@@ -118,14 +118,14 @@ With the same markup, we can replace: `padding-top: 56.25%` with `aspect-ratio: 
 
 Using `aspect-ratio` instead of `padding-top` is much more clear, and does not overhaul the padding property to do something outside of its usual scope.
 
-Now, not only is the aspect ratio much more clear, but this new property also adds the ability to set aspect ratio to `auto`, where “replaced elements with an intrinsic aspect ratio use that aspect ratio; otherwise the box has no preferred aspect ratio.” If both `auto` and a `<ratio>` are specified together, the preferred aspect ratio is the specified ratio of `width` / `height` unless it is a replaced element with an intrinsic aspect ratio, in which case that aspect ratio is used instead.
+Now, not only is the aspect ratio much more clear, but this new property also adds the ability to set aspect ratio to `auto`, where “replaced elements with an intrinsic aspect ratio use that aspect ratio; otherwise the box has no preferred aspect ratio." If both `auto` and a `<ratio>` are specified together, the preferred aspect ratio is the specified ratio of `width` / `height` unless it is a replaced element with an intrinsic aspect ratio, in which case that aspect ratio is used instead.
 
 This works really well with CSS layout mechanisms like CSS Grid and Flexbox as well. Consider a list with children that you want to maintain a 1:1 aspect ratio, such as a grid of sponsor icons:
 
 ```html
-<ul class=”sponsor-grid”>
-  <li class=”sponsor”>…
-  <li class=”sponsor”>…
+<ul class="sponsor-grid">
+  <li class="sponsor">…
+  <li class="sponsor">…
 </ul>
 ```
 
