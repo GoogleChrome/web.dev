@@ -76,12 +76,21 @@ If you use any of these CMS's, libraries or frameworks, consider the following s
 
 ### Angular
 
-Consider [virtual scrolling](/virtualize-lists-with-angular-cdk/) with the
-Component Dev Kit (CDK) if very large lists are being rendered.
+If you're rendering large lists, use [virtual scrolling](/virtualize-lists-with-angular-cdk/)
+with the Component Dev Kit (CDK).
 
 ### React
 
-Consider using a "windowing" library like `react-window` to minimize the number of DOM nodes created if you are rendering many repeated elements on the page. [Learn more](https://web.dev/virtualize-long-lists-react-window/). Also, minimize unnecessary re-renders using [`shouldComponentUpdate`](https://reactjs.org/docs/optimizing-performance.html#shouldcomponentupdate-in-action), [`PureComponent`](https://reactjs.org/docs/react-api.html#reactpurecomponent), or [`React.memo`](https://reactjs.org/docs/react-api.html#reactmemo) and [skip effects](https://reactjs.org/docs/hooks-effect.html#tip-optimizing-performance-by-skipping-effects) only until certain dependencies have changed if you are using the `Effect` hook to improve runtime performance.
+* Use a "windowing" library like
+  [`react-window`](/virtualize-long-lists-react-window/) to minimize the number
+  of DOM nodes created if you are rendering many repeated elements on the page.
+* Minimize unnecessary re-renders using
+  [`shouldComponentUpdate`](https://reactjs.org/docs/optimizing-performance.html#shouldcomponentupdate-in-action),
+  [`PureComponent`](https://reactjs.org/docs/react-api.html#reactpurecomponent),
+  or [`React.memo`](https://reactjs.org/docs/react-api.html#reactmemo).
+* [Skip effects](https://reactjs.org/docs/hooks-effect.html#tip-optimizing-performance-by-skipping-effects)
+  only until certain dependencies have changed if you are using the `Effect`
+  hook to improve runtime performance.
 
 ## Resources
 
