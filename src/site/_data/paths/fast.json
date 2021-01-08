@@ -69,7 +69,8 @@
         "prioritize-resources",
         "preload-critical-assets",
         "preconnect-and-dns-prefetch",
-        "link-prefetch"
+        "link-prefetch",
+        "fast-playback-with-preload"
       ]
     },
     {

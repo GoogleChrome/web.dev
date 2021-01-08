@@ -113,7 +113,7 @@ much information or content to preload][preload]. This means [Media Source Exten
 
 Resource fetching will start only when the initial HTML document has been
 completely loaded and parsed (e.g. the `DOMContentLoaded` event has fired)
-while the very different `window.onload` event will be fired when resource
+while the very different `load` event will be fired when resource
 has actually been fetched.
 
 <figure>
@@ -181,7 +181,7 @@ improve page speed if videos aren't part of your core user experience.
 
 As [covered] in other [articles], [link preload] is a declarative fetch that
 allows you to force the browser to make a request for a resource without
-blocking the `window.onload` event and while the page is downloading. Resources
+blocking the `load` event and while the page is downloading. Resources
 loaded via `<link rel="preload">` are stored locally in the browser, and are
 effectively inert until they're explicitly referenced in the DOM, JavaScript,
 or CSS.
