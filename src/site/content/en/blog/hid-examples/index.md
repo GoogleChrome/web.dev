@@ -10,7 +10,7 @@ description: |
   API solves this by providing a way to implement device-specific logic in
   JavaScript.
 date: 2020-07-22
-updated: 2020-08-19
+updated: 2021-01-08
 tags:
   - blog
   - capabilities
@@ -22,18 +22,17 @@ alt: A generic game controller
 ---
 
 
-{% Aside %}
-The WebHID API is part of the [capabilities
-project](https://developers.google.com/web/updates/capabilities) and is
-currently in development. This post will be updated as the implementation
-progresses.
+{% Aside 'success' %}
+The [WebHID API](/hid), part of the [capabilities project](/fugu-status/),
+launched in Chrome&nbsp;89.
 {% endAside %}
 
 ## What is the WebHID API? {: #what }
 
 There is a long tail of human interface devices (HIDs) that are too new, too
-old, or too uncommon to be accessible by systems' device drivers. The WebHID API
-solves this by providing a way to implement device-specific logic in JavaScript.
+old, or too uncommon to be accessible by systems' device drivers. The [WebHID
+API](/hid) solves this by providing a way to implement device-specific logic in
+JavaScript.
 
 ### Suggested use cases for the WebHID API {: #use-cases }
 
@@ -51,30 +50,11 @@ require custom logic for specific devices. This is unsustainable and results in
 poor support for the long tail of older and uncommon devices. It also causes the
 browser to depend on quirks present in the behavior of specific devices.
 
-## Current status {: #status }
-
-<div class="w-table-wrapper">
-
-| Step                                       | Status                       |
-| ------------------------------------------ | ---------------------------- |
-| 1. Create explainer                        | [Complete][explainer]        |
-| 2. Create initial draft of specification   | [In Progress][spec]          |
-| 3. Gather feedback & iterate on design     | [In progress](#feedback)     |
-| 4. Origin trial                            | Starts in Chrome 86          |
-| 5. Launch                                  | Not started                  |
-
-</div>
-
 ## Demos, demos, demos {: #demos }
 
-One of my team members is currently working on a how-to article. Since WebHID is
-starting an origin trial in Chrome 86, some of us wanted to give you a heads up
-and share a few demos to play with. If you're curious about how any of these
-samples work, the source code for all of them is available on GitHub. [There's a
-barebones code example][example] in the explainer.
-
-To use the demos, enable the `#enable-experimental-web-platform-features` flag
-in `chrome://flags`.
+If you're curious about how any of these samples work, the source code for all
+of them is available on GitHub. [There's a barebones code example][example] in
+the explainer.
 
 ### MacBook Pro keyboard backlight
 
@@ -119,23 +99,6 @@ getting started with HID.
 
 **Author:** Tod E. Kurt<br/>
 **Demos:** [blink(1)](https://blink1.thingm.com/) ([source](https://github.com/todbot/blink1-webhid))
-
-## Conclusion
-
-I hope I've piqued your interest in the WebHID API. Watch this space in the
-coming weeks for updates and for Part II of the introduction which will show you
-how to use the API yourself.
-## Helpful links {: #helpful }
-
-* [Public explainer][explainer]
-* [Chromium tracking bug][cr-bug]
-* [ChromeStatus.com entry][cr-status]
-* Blink Component: [`Blink>HID`][blink-component]
-
-### Wanna go deeper? {: #deeper-links }
-
-* [TAG Review](https://github.com/w3ctag/design-reviews/issues/370)
-* [Intent to Prototype](https://groups.google.com/a/chromium.org/g/blink-dev/c/LoyzK8xTRME/m/yLR-K-siBQAJ)
 
 ## Acknowledgements {: #helpful   }
 
