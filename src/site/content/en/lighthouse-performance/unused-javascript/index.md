@@ -58,31 +58,40 @@ supports features that make it easier to avoid or remove unused code:
 
 ## Stack-specific guidance
 
-
-
 ### Angular
 
-If you are using Angular CLI, include source maps in your production build to inspect your bundles. [Learn more](https://angular.io/guide/deployment#inspect-the-bundles).
+If you are using Angular CLI, include source maps in your production build to
+[inspect your bundles](https://angular.io/guide/deployment#inspect-the-bundles).
 
 ### Drupal
 
-Consider removing unused JavaScript assets and only attach the needed Drupal libraries to the relevant page or component in a page. See the [Drupal documentation link](https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#library) for details. To identify attached libraries that are adding extraneous JavaScript, try running [code coverage](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage) in Chrome DevTools. You can identify the theme/module responsible from the URL of the script when JavaScript aggregation is disabled in your Drupal site. Look out for themes/modules that have many scripts in the list which have a lot of red in code coverage. A theme/module should only enqueue a script if it is actually used on the page.
+Consider removing unused JavaScript assets and only attach the needed Drupal
+libraries to the relevant page or component in a page. See the [Defining a
+library](https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module#library)
+for details.
 
 ### Joomla
 
-Consider reducing, or switching, the number of [Joomla extensions](https://extensions.joomla.org/) loading unused JavaScript in your page. To identify plugins that are adding extraneous JS, try running [code coverage](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage) in Chrome DevTools. You can identify the extension responsible from the URL of the script. Look out for extensions that have many scripts in the list which have a lot of red in code coverage. An extension should only enqueue a script if it is actually used on the page.
+Consider reducing, or switching, the number of [Joomla
+extensions](https://extensions.joomla.org/) loading unused JavaScript in your
+page.
 
 ### Magento
 
-Disable Magento's built-in [JavaScript bundling](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/themes/js-bundling.html).
+Disable Magento's built-in [JavaScript
+bundling](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/themes/js-bundling.html).
 
 ### React
 
-If you are not server-side rendering, [split your JavaScript bundles](https://web.dev/code-splitting-suspense/) with `React.lazy()`. Otherwise, code-split using a third-party library such as [loadable-components](https://www.smooth-code.com/open-source/loadable-components/docs/getting-started/).
+If you are not server-side rendering, [split your JavaScript
+bundles](https://web.dev/code-splitting-suspense/) with `React.lazy()`.
+Otherwise, code-split using a third-party library such as
+[loadable-components](https://www.smooth-code.com/open-source/loadable-components/docs/getting-started/).
 
 ### WordPress
 
-Consider reducing, or switching, the number of [WordPress plugins](https://wordpress.org/plugins/) loading unused JavaScript in your page. To identify plugins that are adding extraneous JS, try running [code coverage](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage) in Chrome DevTools. You can identify the theme/plugin responsible from the URL of the script. Look out for plugins that have many scripts in the list which have a lot of red in code coverage. A plugin should only enqueue a script if it is actually used on the page.
+Consider reducing, or switching, the number of [WordPress
+plugins](https://wordpress.org/plugins/) loading unused JavaScript in your page.
 
 ## Resources
 

@@ -69,15 +69,17 @@ You use it the exact same way:
 
 ## Stack-specific guidance
 
-
-
 ### Drupal
 
-Preconnect or dns-prefetch resource hints can be added by installing and configuring [a module](https://www.drupal.org/project/project_module?f%5B0%5D=&f%5B1%5D=&f%5B2%5D=&f%5B3%5D=&f%5B4%5D=sm_field_project_type%3Afull&f%5B5%5D=&f%5B6%5D=&text=dns-prefetch&solrsort=iss_project_release_usage+desc&op=Search) that provides facilities for user agent resource hints.
+Use [a module that supports user agent resource
+hints](https://www.drupal.org/project/project_module?f%5B0%5D=&f%5B1%5D=&f%5B2%5D=&f%5B3%5D=&f%5B4%5D=sm_field_project_type%3Afull&f%5B5%5D=&f%5B6%5D=&text=dns-prefetch&solrsort=iss_project_release_usage+desc&op=Search)
+so that you can install and configure preconnect or DNS prefetch resource hints.
 
 ### Magento
 
-Preconnect or dns-prefetch resource hints can be added by [modifying a themes's layout](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html).
+[Modify your themes's
+layout](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html)
+and add preconnect or DNS prefetch resource hints.
 
 ## Resources
 

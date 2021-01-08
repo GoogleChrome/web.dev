@@ -75,8 +75,6 @@ so you may need to do a bit more work to fix the invisible text problem.
 
 ## Stack-specific guidance
 
-
-
 ### Drupal
 
 Specify `@font-display` when defining custom fonts in your theme.

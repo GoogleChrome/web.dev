@@ -102,15 +102,13 @@ See also [Minify and compress network payloads](/reduce-network-payloads-using-t
 
 ## Stack-specific guidance
 
-
-
 ### Joomla
 
-You can enable text compression by enabling Gzip Page Compression in Joomla (System > Global configuration > Server).
+Enable the Gzip Page Compression setting (**System** > **Global configuration** > **Server**).
 
 ### WordPress
 
-You can enable text compression in your web server configuration.
+Enable text compression in your web server configuration.
 
 ## Resources
 

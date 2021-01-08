@@ -127,19 +127,19 @@ check its HTTP header data:
 
 ## Stack-specific guidance
 
-
-
 ### Drupal
 
-Set the "Browser and proxy cache maximum age" in the "Administration » Configuration » Development" page. Read about [Drupal cache and optimizing for performance](https://www.drupal.org/docs/7/managing-site-performance-and-scalability/caching-to-improve-performance/caching-overview#s-drupal-performance-resources).
+Set the **Browser and proxy cache maximum age** in the **Administration** >
+**Configuration** > **Development** page. See [Drupal performance
+resources](https://www.drupal.org/docs/7/managing-site-performance-and-scalability/caching-to-improve-performance/caching-overview#s-drupal-performance-resources).
 
 ### Joomla
 
-Read about [Browser Caching in Joomla](https://docs.joomla.org/Cache).
+See [Cache](https://docs.joomla.org/Cache).
 
 ### WordPress
 
-Read about [Browser Caching in WordPress](https://wordpress.org/support/article/optimization/#browser-caching).
+See [Browser Caching](https://wordpress.org/support/article/optimization/#browser-caching).
 
 ## Resources
 

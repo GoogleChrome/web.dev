@@ -48,11 +48,10 @@ consider redesigning your site to use
 
 ## Stack-specific guidance
 
-
-
 ### React
 
-If you are using React Router, minimize usage of the `<Redirect>` component for [route navigations](https://reacttraining.com/react-router/web/api/Redirect).
+If you are using React Router, minimize usage of the `<Redirect>` component for
+[route navigations](https://reacttraining.com/react-router/web/api/Redirect).
 
 ## Resources
 

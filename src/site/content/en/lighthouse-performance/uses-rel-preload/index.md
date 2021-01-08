@@ -96,15 +96,15 @@ page.
 
 ## Stack-specific guidance
 
-
-
 ### Angular
 
-Preload routes ahead of time to speed up navigation. [Learn more](https://web.dev/route-preloading-in-angular/).
+[Preload routes](/route-preloading-in-angular/) ahead of time to speed up navigation.
 
 ### Magento
 
-`<link rel=preload>` tags can be added by [modifying a themes's layout](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html).
+[Modify your themes's
+layout](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html)
+and add `<link rel=preload>` tags.
 
 ## Resources
 

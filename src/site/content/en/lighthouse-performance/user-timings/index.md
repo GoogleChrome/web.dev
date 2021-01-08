@@ -46,11 +46,12 @@ It's just an opportunity to discover a useful API that can help you measure your
 
 ## Stack-specific guidance
 
-
-
 ### React
 
-Use the React DevTools Profiler, which makes use of the Profiler API, to measure the rendering performance of your components. [Learn more.](https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html)
+Use the [React DevTools
+Profiler](https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html),
+which makes use of the Profiler API, to measure the rendering performance of
+your components.
 
 ## Resources
 
