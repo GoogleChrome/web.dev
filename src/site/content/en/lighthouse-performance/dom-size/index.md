@@ -76,7 +76,8 @@ If you use any of these CMS's, libraries or frameworks, consider the following s
 
 ### Angular
 
-Consider virtual scrolling with the Component Dev Kit (CDK) if very large lists are being rendered. [Learn more](https://web.dev/virtualize-lists-with-angular-cdk/).
+Consider [virtual scrolling](/virtualize-lists-with-angular-cdk/) with the
+Component Dev Kit (CDK) if very large lists are being rendered.
 
 ### React
 
