@@ -380,7 +380,9 @@ a website won't be able to send and receive any reports defined in that
 collection. The full list of protected usages is [publicly available].
 
 Note that security-sensitive HID devices (such as FIDO HID devices used for
-stronger authentication) are also blocked in Chrome. See the [blocklist] file.
+stronger authentication) are also blocked in Chrome. See the [USB blocklist] and
+[HID blocklist] files.
+
 
 ## Feedback {: #feedback }
 
@@ -443,7 +445,8 @@ computer photo by [Athul Cyriac Ajay] on Unsplash.
 [Controlling Access to Powerful Web Platform Features]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
 [Security and Privacy Considerations]: https://wicg.github.io/webhid/#security-and-privacy
 [publicly available]: https://source.chromium.org/chromium/chromium/src/+/master:services/device/public/cpp/hid/hid_usage_and_page.cc
-[blocklist]: https://source.chromium.org/chromium/chromium/src/+/master:chrome/browser/usb/usb_blocklist.cc
+[USB blocklist]: https://source.chromium.org/chromium/chromium/src/+/master:chrome/browser/usb/usb_blocklist.cc
+[HID blocklist]: https://source.chromium.org/chromium/chromium/src/+/master:services/device/public/cpp/hid/hid_blocklist.cc
 [issues]: https://github.com/wicg/webhid/issues
 [new-bug]: https://bugs.chromium.org/p/chromium/issues/entry?components=Blink%3EHID
 [cr-dev-twitter]: https://twitter.com/chromiumdev
