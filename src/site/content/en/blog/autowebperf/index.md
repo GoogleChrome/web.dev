@@ -1,9 +1,9 @@
 ---
 title: 'Automating audits with AutoWebPerf'
 subhead: >
-  A new modular tool that enables automatic gathering of performance data form multiple sources.
+  A new modular tool that enables automatic gathering of performance data from multiple sources.
 description: >
-  A new modular tool that enables automatic gathering of performance data form multiple sources.
+  A new modular tool that enables automatic gathering of performance data from multiple sources.
 date: 2020-12-09
 # updated: 2020-07-22
 authors:
