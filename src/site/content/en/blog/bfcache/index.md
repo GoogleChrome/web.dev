@@ -309,9 +309,9 @@ onAllChangesSaved(() => {
 
 ### Avoid window.opener references
 
-In some browsers (including Chrome) if a page was opened using
+In some browsers (including Chromium-based browsers) if a page was opened using
 <code>[window.open()](https://developer.mozilla.org/en-US/docs/Web/API/Window/open)</code>
-or (in Chrome [prior to version 88](https://crbug.com/898942)) from a link with
+or (in [Chromium-based browsers prior to version 88](https://crbug.com/898942)) from a link with
 <code>[target=_blank](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#target)</code>—without
 specifying
 <code>[rel="noopener"](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/noopener)</code>—then
