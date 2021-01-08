@@ -80,7 +80,8 @@ automatic upgrading of passive mixed content where possible.
 Automatic upgrading means that if the asset is available over HTTPS, but has been hardcoded as HTTP,
 the browser will load the HTTPS version. If no secure version can be found the asset will not load.
 
-Whenever it detects mixed content or auto-upgrades passive mixed content, Chrome logs detailed messages to the Issues Tab in Chrome DevTools
+Whenever it detects mixed content or auto-upgrades passive mixed content,
+Chrome logs detailed messages to the **Issues** tab in DevTools
 to guide you on how to fix the specific issue.
 
 <figure class="w-figure">
@@ -107,7 +108,8 @@ but functionality varies between browser vendors and versions.
 This other [demo](https://active-mixed-content.glitch.me/) contains examples of active mixed content.
 [Load the example over HTTP](http://active-mixed-content.glitch.me/)
 to see the content that's blocked when you [load the example over
-HTTPS](https://active-mixed-content.glitch.me/). Blocked content will also be detailed in the Issues Tab.
+HTTPS](https://active-mixed-content.glitch.me/). Blocked content will also
+be detailed in the **Issues** tab.
 
 <figure class="w-figure">
   <img class="w-screenshot"
@@ -116,7 +118,9 @@ HTTPS](https://active-mixed-content.glitch.me/). Blocked content will also be de
 </figure>
 
 {% Aside %}
-Browsers also highlight blocked content in developer tooling. Blocked content issues are detailed in the Issues Tab in Chrome and Edge, and Firefox and Safari log messages in the developer console.
+  Browsers also highlight blocked content in their DevTools. Blocked content
+  issues are detailed in the **Issues** tab in Chromium-based browsers. Firefox
+  and Safari log messages in the console.
 {% endAside %}
 
 ## The mixed content specification
