@@ -2,7 +2,7 @@
 title: New capabilities status
 subhead: Web apps should be able to do anything iOS/Android/desktop apps can. The members of the cross-company capabilities project want to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2020-12-01
+updated: 2021-01-08
 tags:
   - blog
   - capabilities
@@ -66,21 +66,6 @@ change.<a name="shape-face-text"></a>
           time - even if there is no network connectivity, or the device is in
           battery saver mode.<br>
           <em>Updated August 23, 2020</em>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="/nfc/">Web NFC</a>
-        </td>
-        <td>
-          Web NFC provides sites the ability to read and write to NFC tags when
-          they are in close proximity to the user's device.
-          For example, museums and art galleries could display additional
-          information about a display when the user touches their device to an
-          NFC card near the exhibit; or an inventory management web app could
-          read or write data to an NFC tag on a container to update information
-          on its contents.<br>
-          <em>Updated December 1, 2020</em>
         </td>
       </tr>
     </tbody>
@@ -293,6 +278,21 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           for information on other shape detection APIs that are under
           development.<br>
           <em>Updated April 14, 2020</em>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/nfc/">Web NFC</a>
+        </td>
+        <td>
+          Web NFC provides sites the ability to read and write to NFC tags when
+          they are in close proximity to the user's device.
+          For example, museums and art galleries could display additional
+          information about a display when the user touches their device to an
+          NFC card near the exhibit; or an inventory management web app could
+          read or write data to an NFC tag on a container to update information
+          on its contents.<br>
+          <em>Updated January 8, 2021</em>
         </td>
       </tr>
       <tr>
