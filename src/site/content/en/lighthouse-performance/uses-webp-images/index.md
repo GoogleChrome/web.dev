@@ -54,8 +54,6 @@ To see the current browser support for each next-gen format, check out the entri
 
 ## Stack-specific guidance
 
-If you use any of these CMS's, libraries or frameworks, consider the following suggestions:
-
 ### AMP
 
 Consider displaying all [`amp-img`](https://amp.dev/documentation/components/amp-img/?format=websites) components in WebP formats while specifying an appropriate fallback for other browsers. [Learn more](https://amp.dev/documentation/components/amp-img/#example:-specifying-a-fallback-image).

@@ -46,7 +46,7 @@ It's just an opportunity to discover a useful API that can help you measure your
 
 ## Stack-specific guidance
 
-If you use any of these CMS's, libraries or frameworks, consider the following suggestions:
+
 
 ### React
 

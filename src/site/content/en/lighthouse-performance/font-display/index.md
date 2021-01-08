@@ -75,7 +75,7 @@ so you may need to do a bit more work to fix the invisible text problem.
 
 ## Stack-specific guidance
 
-If you use any of these CMS's, libraries or frameworks, consider the following suggestions:
+
 
 ### Drupal
 

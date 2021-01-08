@@ -72,8 +72,6 @@ for more information.
 
 ## Stack-specific guidance
 
-If you use any of these CMS's, libraries or frameworks, consider the following suggestions:
-
 ### Angular
 
 If you're rendering large lists, use [virtual scrolling](/virtualize-lists-with-angular-cdk/)

@@ -59,7 +59,7 @@ Here are some ways to keep payload size down:
 
 ## Stack-specific guidance
 
-If you use any of these CMS's, libraries or frameworks, consider the following suggestions:
+
 
 ### Angular
 

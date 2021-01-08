@@ -47,7 +47,7 @@ There are many possible causes of slow server responses, and therefore many poss
 
 ## Stack-specific guidance
 
-If you use any of these CMS's, libraries or frameworks, consider the following suggestions:
+
 
 ### Drupal
 

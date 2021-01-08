@@ -28,7 +28,7 @@ webpack v4 includes a plugin for this library by default to create minified buil
 
 ## Stack-specific guidance
 
-If you use any of these CMS's, libraries or frameworks, consider the following suggestions:
+
 
 ### Drupal
 

@@ -102,7 +102,7 @@ See also [Minify and compress network payloads](/reduce-network-payloads-using-t
 
 ## Stack-specific guidance
 
-If you use any of these CMS's, libraries or frameworks, consider the following suggestions:
+
 
 ### Joomla
 

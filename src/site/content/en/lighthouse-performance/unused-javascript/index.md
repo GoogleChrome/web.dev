@@ -58,7 +58,7 @@ supports features that make it easier to avoid or remove unused code:
 
 ## Stack-specific guidance
 
-If you use any of these CMS's, libraries or frameworks, consider the following suggestions:
+
 
 ### Angular
 

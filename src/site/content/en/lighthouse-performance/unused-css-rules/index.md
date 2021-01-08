@@ -80,7 +80,7 @@ Learn more in [Defer non-critical CSS](/defer-non-critical-css).
 
 ## Stack-specific guidance
 
-If you use any of these CMS's, libraries or frameworks, consider the following suggestions:
+
 
 ### Drupal
 
