@@ -105,7 +105,10 @@ if not req['sec-fetch-site']:
  ```
 
 {% Aside 'caution' %}
-Since Fetch Metadata is only supported in modern browsers, it should be used as a [defense-in-depth protection](https://static.googleusercontent.com/media/landing.google.com/en//sre/static/pdf/Building_Secure_and_Reliable_Systems.pdf#page=181) and not as your primary line of defense.
+Since Fetch Metadata is only supported in Chromium-based browsers,
+it should be used as a
+[defense-in-depth protection](https://static.googleusercontent.com/media/landing.google.com/en//sre/static/pdf/Building_Secure_and_Reliable_Systems.pdf#page=181)
+and not as your primary line of defense.
 {% endAside %}
 
 
