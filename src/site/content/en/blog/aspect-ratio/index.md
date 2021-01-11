@@ -1,13 +1,16 @@
 ---
-title: 'Maintaining Aspect Ratio in CSS' subhead: The new aspect-ratio property
-can help with responsive dimension-based imaged. authors:
-  - una date: 2021-01-12 hero: hero.jpg alt: Image of colorful telephones
-    resized with the same aspect ratio. description: There are several ways to
-    maintain aspect ratio and image dimensions on the web. This post goes over
-    two ways—one popular hack, and one new CSS property. tags:
+title: 'Maintaining Aspect Ratio in CSS'
+subhead: The new aspect-ratio property can help with responsive dimension-based imaged.
+authors:
+  - una
+date: 2021-01-14
+hero: hero.jpg
+alt: Image of colorful telephones resized with the same aspect ratio.
+description: There are several ways to maintain aspect ratio and image dimensions on the web. This post goes over two ways—one popular hack, and one new CSS property.
+tags:
   - blog
   - css
-    ---
+---
 
 When resizing some media, in many cases, a design calls to maintain this ratio
 and ensure the image resizes in an even distribution. This width-to-height ratio
