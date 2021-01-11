@@ -51,13 +51,13 @@ which enables users describe how content within a block should fill that block:
 
 The `initial` and fill value will re-adjust the image to fill the space. In our
 example, this causes the image to be squished and blurry, as it re-adjusts
-pixels. This is not ideal. `object-fit: cover` uses the image’s smallest
+pixels. This is not ideal. `object-fit: cover` uses the image's smallest
 dimension to fill the space and crops the image to fit into it based on this
 dimension. It “zooms in at its lowest boundary. `object-fit: contain` will
 ensure that the entire image is always visible, and so the opposite of `cover`:
 where it takes the largest boundary (in our example above this is width), and
 resize the image to maintain its intrinsic aspect-ratio while fitting into the
-space. The `object-fit: none` case shows the image cropped in it’s center
+space. The `object-fit: none` case shows the image cropped in it's center
 (default object position) at its natural size.
 
 `object-fit: cover` tends to work in most situations to ensure a nice uniform
@@ -83,7 +83,7 @@ us to set a specific ratio size and base the rest of the media on an individual
 axis (height or width).
 
 A currently well-accepted cross-browser solution for maintaining aspect ratio
-based on an image’s width is known as the “Padding-Top Hack". This solution
+based on an image's width is known as the “Padding-Top Hack". This solution
 requires a parent container and an absolutely placed child container. One would
 then calculate the aspect ratio as a percentage to set as the `padding-top`. For
 example:
