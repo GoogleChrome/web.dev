@@ -66,19 +66,10 @@ Even if the attacker doesn't alter the content of your site,
 an attacker can track users via mixed content requests.
 The attacker can tell which pages a user visits and which products they view based on images or other resources that the browser loads.
 
-The following Glitch demo contains examples of passive mixed content.
-
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/passive-mixed-content?path=index.html&previewSize=100"
-    title="passive-mixed-content on Glitch"
-    allow="encrypted-media"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
-
 If passive mixed content is present most browsers will indicate in the URL bar that the page is not secure,
 even when the page itself was loaded over HTTPS.
+You can observe this behavior with this [demo](https://passive-mixed-content.glitch.me/)
+that contains examples of passive mixed content.
 
 Until recently passive mixed content was loaded in all browsers,
 as to block it would have broken many websites.
@@ -89,13 +80,14 @@ automatic upgrading of passive mixed content where possible.
 Automatic upgrading means that if the asset is available over HTTPS, but has been hardcoded as HTTP,
 the browser will load the HTTPS version. If no secure version can be found the asset will not load.
 
-Chrome logs messages to its DevTools Console whenever it detects mixed content
-or auto-upgrades passive mixed content.
+Whenever it detects mixed content or auto-upgrades passive mixed content,
+Chrome logs detailed messages to the **Issues** tab in DevTools
+to guide you on how to fix the specific issue.
 
 <figure class="w-figure">
   <img class="w-screenshot"
       src="passive-mixed-content.jpg"
-      alt="Chrome DevTools showing the warnings displayed when mixed content is detected and upgraded">
+      alt="The Issues tab in Chrome DevTools shows detailed information about the specific mixed content issue and how to fix it">
 </figure>
 
 ### Active mixed content
@@ -113,28 +105,23 @@ Due to the severity of this threat,
 most browsers already block this type of content by default to protect users,
 but functionality varies between browser vendors and versions.
 
-The following contains examples of active mixed content:
-
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe
-    src="https://glitch.com/embed/#!/embed/active-mixed-content?previewSize=100"
-    title="active-mixed-content on Glitch"
-    allow="encrypted-media"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
-
+This other [demo](https://active-mixed-content.glitch.me/) contains examples of active mixed content.
 [Load the example over HTTP](http://active-mixed-content.glitch.me/)
 to see the content that's blocked when you [load the example over
-HTTPS](https://active-mixed-content.glitch.me/).
-
-Blocked content will be detailed in the Chrome DevTools Console.
+HTTPS](https://active-mixed-content.glitch.me/). Blocked content will also
+be detailed in the **Issues** tab.
 
 <figure class="w-figure">
   <img class="w-screenshot"
       src="active-mixed-content.jpg"
-      alt="Chrome DevTools showing the warnings displayed when active mixed content is blocked">
+      alt="The Issues tab in Chrome DevTools shows detailed information about the specific mixed content issue and how to fix it">
 </figure>
+
+{% Aside %}
+  Browsers also highlight blocked content in their DevTools. Blocked content
+  issues are detailed in the **Issues** tab in Chromium-based browsers. Firefox
+  and Safari log messages in the console.
+{% endAside %}
 
 ## The mixed content specification
 

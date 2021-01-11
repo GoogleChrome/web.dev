@@ -4,6 +4,7 @@ subhead: Learn how to optimize your SMS OTP form and improve user experience.
 authors:
   - agektmr
 date: 2020-12-09
+updated: 2020-12-09
 hero: hero.jpg
 alt: A neon chat bubble sign.
 
@@ -20,7 +21,7 @@ tags:
   - otp
 ---
 
-<!-- {% YouTube 'sU4MpWYrGSI' %} -->
+{% YouTube 'sU4MpWYrGSI' %}
 
 Asking a user to provide the OTP (one time password) delivered via SMS is a common 
 way to confirm a user's phone number. There are a few use cases for SMS OTP:

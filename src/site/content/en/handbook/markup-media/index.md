@@ -66,6 +66,21 @@ If your post does not contain a hero image it will not be displayed on the homep
 
 ## Thumbnail images {: #thumbnail }
 
+### Background
+
+If you've provided a [`hero`](#hero) image, web.dev displays that image
+above your blog post's title on the blog index page, web.dev/blog:
+
+<figure class="w-figure">
+  <img src="thumbnails.jpg" 
+       alt="A screenshot of a section of the Chrome DevTools user interface.">
+</figure>
+
+If your hero image does not look good on web.dev/blog (for example, it's cropped
+in a weird way), you can use an optional thumbnail instead.
+
+### Usage {: #thumbnail-usage }
+
 Add the following code to your post's front matter:
 
 ```yaml
@@ -77,10 +92,10 @@ alt: A description of the thumbnail. # Also used by the hero.
 ---
 ```
 
-* When a post is displayed on the home page or the blog it can contain a thumbnail.
 * Thumbnails should be `376px` wide and `240px` tall.
-* If you don't provide a thumbnail, the post will attempt to reuse the hero image.
-* If there is no hero image, the post will omit the thumbnail entirely.
+* The thumbnail should only be used for art direction.
+  **Using a thumbnail that is a substantially different image
+  than the hero image is not allowed**.
 
 ## Body images {: #body }
 

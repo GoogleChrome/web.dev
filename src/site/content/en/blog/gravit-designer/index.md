@@ -42,9 +42,6 @@ vector design tool. With roots as a startup, Gravit Designer joined Corel's
 extensive product portfolio in 2018, and serves tens of thousands of daily
 active users demanding rich, affordable, and accessible vector illustration
 software. Corel builds a host of creative and productivity software including
-CorelDRAW!, Corel Photo-Paint, Parallels, and more.
-
-Corel builds a host of creative and productivity software including
 [CorelDRAW](https://www.coreldraw.com/), [Corel
 PHOTO-PAINT](https://www.coreldraw.com/en/pages/photo-paint/), [Corel
 Painter](https://www.painterartist.com/),

@@ -97,7 +97,7 @@ conjunction with `calc()` (i.e. `font-size: max(calc(0.5vw - 1em), 2rem)`),  or
 composed (i.e. `font-size: max(min(0.5vw, 1em), 2rem)`). 
 
 {% Aside %} When using a calculation inside of a `min()`, `max()`, or `clamp()`
-function, you can nix the `calc()`. For example, writing `font-size:
+function, you can remove the call to `calc()`. For example, writing `font-size:
 max(calc(0.5vw - 1em), 2rem)` would be the same as `font-size: max(0.5vw - 1em,
 2rem)`. {% endAside %}
 
@@ -234,8 +234,9 @@ p {
 
 {% Aside 'warning' %}
 Limiting how large text can get with `max()` or `clamp()` can cause a WCAG failure
-under 1.4.4 Resize text (AA), as a user may be unable to scale the text to 200% 
-of its original size. Be certain to test the results with zoom.
+under [1.4.4 Resize text (AA)](https://www.w3.org/WAI/WCAG21/quickref/?showtechniques=144#resize-text)
+, because a user may be unable to scale the text to 200% of its original size. 
+Be certain to [test the results with zoom](https://adrianroselli.com/2019/12/responsive-type-and-zoom.html).
 {% endAside %}
 
 
