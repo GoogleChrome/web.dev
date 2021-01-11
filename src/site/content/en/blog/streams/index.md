@@ -614,17 +614,12 @@ const readableStream = new ReadableStream({
 
 ```js
 const uncompressed = 'hello hello';
-const readableStream = new ReadableStream({
-  start(controller) {
-    controller.enqueue(uncompressed);
-    controller.close();
-  },
-});
+const readableStream = new Blob([uncompressed], { type: 'text/plain' }).stream();
 
 const uncompressedStream = readableStream
-  .pipeThrough(new TextEncoderStream())
   .pipeThrough(new CompressionStream('gzip'))
-  .pipeThrough(new DecompressionStream('gzip'));
+  .pipeThrough(new DecompressionStream('gzip'))
+  .pipeThrough(new TextDecoderStream());
 
 const reader = uncompressedStream.getReader();
 (async () => {
@@ -633,7 +628,7 @@ const reader = uncompressedStream.getReader();
     !chunkPromise.done;
     chunkPromise = await reader.read()
   ) {
-    console.log('[value]', new TextDecoder().decode(chunkPromise.value));
+    console.log('[value]', chunkPromise.value);
   }
 })();
 ```
