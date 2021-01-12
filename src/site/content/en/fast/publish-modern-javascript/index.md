@@ -442,7 +442,7 @@ the appropriate syntax level(s) when building for production.
 In addition to dedicated plugins for webpack and Rollup, modern JavaScript
 bundles with legacy fallbacks can be added to any project using
 [devolution](https://github.com/theKashey/devolution). Devolution is a
-standalone tool transforms the output from a build system to produce legacy
+standalone tool that transforms the output from a build system to produce legacy
 JavaScript variants, allowing bundling and transformations to assume a modern
 output target.
 
