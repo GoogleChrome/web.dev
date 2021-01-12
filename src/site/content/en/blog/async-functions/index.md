@@ -180,7 +180,7 @@ I'm sort-of in love with streams. If you're unfamiliar with streaming,
 
 ## Other async function syntax
 
-I'ver shown you `async function() {}` already, but the `async` keyword can be
+I've shown you `async function() {}` already, but the `async` keyword can be
 used with other function syntax:
 
 ### Arrow functions
