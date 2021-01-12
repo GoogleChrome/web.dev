@@ -13,7 +13,7 @@ description: |
   are already transpiled to ES5. This guide demonstrates how to publish modern packages
   to npm, and how to install and optimally bundle modern JavaScript packages.
 date: 2020-12-10
-updated: 2020-12-10
+updated: 2020-12-16
 codelabs:
   - codelab-serve-modern-code
 tags:
@@ -438,6 +438,13 @@ There are also higher-level build tools that favor convention and defaults over
 configuration, like [Parcel], [Snowpack], [Vite] and [WMR]. Most of these tools
 assume npm dependencies may contain modern syntax, and will transpile them to
 the appropriate syntax level(s) when building for production.
+
+In addition to dedicated plugins for webpack and Rollup, modern JavaScript
+bundles with legacy fallbacks can be added to any project using
+[devolution](https://github.com/theKashey/devolution). Devolution is a
+standalone tool that transforms the output from a build system to produce legacy
+JavaScript variants, allowing bundling and transformations to assume a modern
+output target.
 
 ## Conclusion
 
