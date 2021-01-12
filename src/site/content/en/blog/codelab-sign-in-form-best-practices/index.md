@@ -252,8 +252,7 @@ Update the [`index.html`](https://glitch.com/edit/#!/sign-in-form-codelab-4?path
 
     Think about UX design: will users notice **Show password** and understand it? Is there a better way to provide this functionality? This is a good moment to try     [discount usability testing](https://www.nngroup.com/articles/discount-usability-20-years/) with a small group of friends or colleagues.
 
-    To understand how this functionality works for screenreaders, install the [ChromeVox Classic Extension](https://chrome.google.com/webstore/detail/chromevox- 
-    classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en) and navigate through the form. Do the `aria-label` values work as intended?
+    To understand how this functionality works for screenreaders, install the [ChromeVox Classic Extension](https://chrome.google.com/webstore/detail/chromevox-classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn) and navigate through the form. Do the `aria-label` values work as intended?
 
     Some websites, such as [Gmail](https://mail.google.com), use icons, not 
     text, to toggle password display. When you're done with this codelab, implement this with SVG images. 
