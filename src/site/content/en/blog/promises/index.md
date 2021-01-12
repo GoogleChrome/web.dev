@@ -7,6 +7,7 @@ description: >
   Promises simplify deferred and asynchronous computations. A promise represents
   an operation that hasn't completed yet.
 date: 2013-12-16
+updated: 2021-01-18
 tags:
   - javascript
 authors:
