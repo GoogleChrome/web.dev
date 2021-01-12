@@ -325,7 +325,7 @@ div.shadowRoot; // null
 
 To avoid some important security considerations, Declarative Shadow Roots also can't be created
 using fragment parsing APIs like `innerHTML` or `insertAdjacentHTML()`. The only way to parse
-HTML with Declarative Shadow Roots applied by passing a new `includeShadowRoots` option to
+HTML with Declarative Shadow Roots applied is to pass a new `includeShadowRoots` option to
 `DOMParser`:
 
 ```html
