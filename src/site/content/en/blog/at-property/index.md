@@ -203,9 +203,12 @@ This will now enable that smooth gradient transition.
 </figure>
 -->
 
-## Multiple Declarations
+## Multiple declarations
 
-Another neat feature of `@property` is that you can declare multiple new custom properties at the same time. For example, if you wanted to set multiple values with the same syntax but a unique `initial-value`, you could write something like:
+Another neat feature of `@property` is that you can declare multiple
+new custom properties at the same time. For example, if you wanted
+to set multiple values with the same syntax but a unique `initial-value`,
+you could write something like:
 
 ```css
 @property --colorPrimary,
