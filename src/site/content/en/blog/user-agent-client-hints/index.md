@@ -30,17 +30,17 @@ first step to eventually reducing User-Agent string granularity.
 Learn how to update your existing functionality that relies on parsing the
 User-Agent string to make use of User-Agent Client Hints instead.
 
-{% Aside 'gotchas' %}
-The header format for User-Agent Client Hints is changing so the `Accept-CH`
-tokens exactly match the returned headers. That means where a site would
-previously have sent `Accept-CH: UA-Platform` to receive the
-`Sec-CH-UA-Platform` header, now the site sends `Accept-CH: Sec-CH-UA-Platform`.
-If you are already using User-Agent Client Hints then you should send both
+{% Banner 'caution', 'body' %}
+If you are already using User-Agent Client Hints, pay attention to the upcoming changes.
+The header format is changing so the `Accept-CH` tokens exactly match the 
+returned headers. Previously a site could have sent `Accept-CH: UA-Platform` to receive the
+`Sec-CH-UA-Platform` header and now that site should send `Accept-CH: Sec-CH-UA-Platform`.
+If you've already implemented User-Agent Client Hints, send both
 formats until the change has fully rolled out in stable Chromium. See [Intent to
 Remove: Rename User-Agent Client Hint ACCEPT-CH
 tokens](https://groups.google.com/a/chromium.org/g/blink-dev/c/t-S9nnos9qU/m/pUFJb00jBAAJ)
 for updates.
-{% endAside %}
+{% endBanner %}
 
 ## Background
 
