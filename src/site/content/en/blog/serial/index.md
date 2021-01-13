@@ -92,7 +92,7 @@ communication between the website and the device that it is controlling.
 
 To experiment with the Serial API locally on all desktop platforms, without an
 origin trial token, paste `chrome://flags#experimental-web-platform-features` into
-the address bar and choose `Enabled` from the drop-down list.
+the address bar and choose **Enabled** from the drop-down list.
 
 
 ### Enabling support during the origin trial phase
