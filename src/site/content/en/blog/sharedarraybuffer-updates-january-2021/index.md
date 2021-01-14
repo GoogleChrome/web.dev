@@ -1,11 +1,13 @@
 ---
 title: Firefox and Chrome now support SharedArrayBuffer (again) for cross-origin isolated pages
 subhead: >
-  The API for sharing memory between the main thread and worker threads is available
-  for websites that have implemented COOP and COEP on the desktop and Android versions of Firefox and Chrome.
+  The API for sharing memory between the main thread and worker threads is available (again)
+  on the desktop and Android versions of Firefox and Chrome. SharedArrayBuffer is only available for
+  websites that have implemented COOP and COEP.
 description: >
-  The API for sharing memory between the main thread and worker threads is available
-  for websites that have implemented COOP and COEP on the desktop and Android versions of Firefox and Chrome.
+  The API for sharing memory between the main thread and worker threads is available (again)
+  on the desktop and Android versions of Firefox and Chrome. SharedArrayBuffer is only available for
+  websites that have implemented COOP and COEP.
 authors:
   - kaycebasques
 date: 2021-01-13
