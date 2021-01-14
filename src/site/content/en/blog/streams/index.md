@@ -3,11 +3,11 @@ title: Streams—The definitive guide
 subhead: Learn how to use readable, writable, and transform streams with the Streams API.
 description: |
   The Streams API allows JavaScript to programmatically access streams of data received over the
-  network and process them as desired by the developer.
+  network and process them as desired.
 authors:
   - thomassteiner
-date: 2021-01-11
-# updated: 2021-01-11
+date: 2021-01-13
+# updated: 2021-01-13
 hero: hero.jpg
 alt: A forest stream with colored fallen leaves.
 tags:
@@ -17,15 +17,15 @@ tags:
 ---
 
 The Streams API allows you to programmatically access streams of data received over the network and
-process these streams with JavaScript. Streaming involves breaking a resource that you want to
-receive over the network down into small chunks, and then processing them bit by bit. While
-streaming is something browsers do anyway when receiving assets like HTML or videos to be shown on
-webpages, this capability has never been available to JavaScript before.
+process them with JavaScript. Streaming involves breaking a resource that you want to receive down
+into small chunks, and then processing these chunks bit by bit. While streaming is something
+browsers do anyway when receiving assets like HTML or videos to be shown on webpages, this
+capability has never been available to JavaScript before.
 
 Previously, if you wanted to process a resource of some kind (be it a video, or a text file, etc.),
 you would have to download the entire file, wait for it to be deserialized into a suitable format,
 and then process the whole lot after it is fully received. With streams being available to
-JavaScript, this all changes—you can now start processing raw data with JavaScript bit by bit as
+JavaScript, this all changes—you can now start processing raw data with JavaScript progressively as
 soon as it is available on the client-side, without needing to generate a buffer, string, or blob.
 This unlocks a number of use cases, some of which I list below:
 
@@ -35,8 +35,8 @@ This unlocks a number of use cases, some of which I list below:
   (de)compresses it.
 - **Image decoding:** piping an HTTP response stream through a transform stream that decodes bytes
   into bitmap data, and then through another transform that translates bitmaps into PNGs. If
-  installed inside the `fetch` hook of a service worker, this allows developers to transparently
-  polyfill new image formats like AVIF.
+  installed inside the `fetch` hook of a service worker, this allows you to transparently polyfill
+  new image formats like AVIF.
 
 ## Core concepts
 
@@ -87,14 +87,20 @@ can process chunks is called backpressure.
 
 ### Teeing
 
-A readable stream can be tee'd (named after the shape of an uppercase 'T') using its `tee()` method.
+A readable stream can be teed (named after the shape of an uppercase 'T') using its `tee()` method.
 This will lock the stream, making it no longer directly usable; however, it will create **two new
 streams**, called branches, which can be consumed independently.
 
-## Creating a readable stream
+<figure class="w-figure">
+  <img src="./streams.svg" width="2099" height="1127" alt="Diagram of a pipe chain consisting of a readable stream coming from a call to the fetch API that is then piped through a transform stream whose output is teed and then sent to the browser for the first resulting readable stream and to the service worker cache for the second resulting readable stream.">
+  <figcaption class="w-figcaption">A pipe chain.</figcaption>
+</figure>
 
-A readable stream is a data source represented in JavaScript by a `ReadableStream` object that flows
-from an underlying source. The
+## The mechanics of a readable stream
+
+A readable stream is a data source represented in JavaScript by a
+[`ReadableStream`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream) object that
+flows from an underlying source. The
 [`ReadableStream()`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/ReadableStream)
 constructor creates and returns a readable stream object from the given handlers. There are two
 types of underlying source:
@@ -103,7 +109,7 @@ types of underlying source:
   start, pause, or cancel access to the stream. Examples include video streams, Server-Sent Events,
   or WebSockets.
 - **Pull sources** require you to explicitly request data from them once connected to. Examples
-  include a file access operation via a `fetch()` or `XMLHttpRequest` call.
+  include file access operations via `fetch()` or `XMLHttpRequest` calls.
 
 The data is read sequentially in small pieces called **chunks**. A chunk can be a single byte, or it
 can be something larger such as a typed array of a certain size. A single stream can contain chunks
@@ -111,6 +117,10 @@ of different sizes and types.
 
 The chunks placed in a stream are said to be **enqueued**. This means they are waiting in a queue
 ready to be read. An **internal queue** keeps track of the chunks that have not yet been read.
+
+The queue is managed by a **queuing strategy** for the stream. The strategy's **high water mark**
+defines the total number of chunks that can be contained in the internal queue before backpressure
+is applied and a **chunk size** that indicates the size to use for each chunk, in bytes.
 
 The chunks inside the stream are read by a **reader**. This reader processes the data one chunk at a
 time, allowing you to do whatever kind of operation you want to do on it. The reader plus the other
@@ -123,6 +133,8 @@ Only one reader can read a stream at a time; when a reader is created and starts
 (that is, becomes an **active reader**), it is **locked** to it. If you want another reader to start
 reading your stream, you typically need to **cancel** the first reader before you do anything else
 (although you can **tee** streams).
+
+## Creating a readable stream
 
 You create a readable stream by calling its constructor
 [`ReadableStream()`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/ReadableStream).
@@ -137,10 +149,10 @@ containing methods and properties that define how the constructed stream instanc
   a
   [`ReadableStreamDefaultController`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStreamDefaultController)
   by default.
-- `pull(controller)`: This method can be used by the developer to control the stream as more chunks
-  are fetched. It will be called repeatedly when the stream's internal queue of chunks is not full,
-  up until it reaches its high water mark. If `pull()` returns a promise, it will not be called
-  again until that promise fulfills; if the promise rejects, the stream will become errored.
+- `pull(controller)`: This method can be used to control the stream as more chunks are fetched. It
+  will be called repeatedly when the stream's internal queue of chunks is not full, up until it
+  reaches its high water mark. If `pull()` returns a promise, it will not be called again until that
+  promise fulfills; if the promise rejects, the stream will become errored.
 - `cancel(reason)`: This method gets called when the stream consumer cancels the stream.
 
 The `ReadableStreamDefaultController` supports the following methods:
@@ -167,6 +179,8 @@ the stream. The different possibilities are as follows:
 - If the stream becomes closed, the promise will be fulfilled with an object of the form
   `{ value: undefined, done: true }`.
 - If the stream becomes errored, the promise will be rejected with the relevant error.
+
+### Readable stream code samples
 
 The code sample below shows all the steps in action. I first create a `ReadableStream` that in its
 `underlyingSource` argument defines a `start` method that tells the stream's `controller` to
@@ -222,9 +236,9 @@ const readStream = async () => {
 readStream();
 ```
 
-The next (a bit contrived) code sample shows how you could implement a SHOUT implementation of
-`fetch()` in a service worker by
-[consuming the returned response promise as a stream](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Using_readable_streams#consuming_a_fetch_as_a_stream)
+The next (a bit contrived) code sample shows how you could implement an UPPERCASE implementation of
+`fetch()` in a service worker by consuming the returned `fetch()` response promise
+[as a stream](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Using_readable_streams#consuming_a_fetch_as_a_stream)
 and uppercasing chunk by chunk. The advantage of this approach is that you do not need to wait for
 the whole document to be downloaded, which can make a huge difference when dealing with large files.
 
@@ -247,7 +261,7 @@ self.addEventListener('fetch', (event) => {
   }
   event.respondWith(
     (async () => {
-      // Create a new stream that implements the SHOUTING.
+      // Create a new stream that implements the UPPERCASING.
       const result = await shoutFetch(event.request.url);
       // Return the newly created stream.
       return new Response(result.stream, { headers: result.headers });
@@ -270,16 +284,16 @@ const shoutFetch = async (url) => {
     // Called whenever the internal queue of chunks is not full.
     async pull(controller) {
       // Read the next chunk.
-      let chunkPromise = await reader.read();
+      let result = await reader.read();
       // Close the stream when done.
-      if (chunkPromise.done) {
+      if (result.done) {
         return controller.close();
       }
       // Uppercase each chunk (after decoding it).
-      const upperCaseValue = textDecoder.decode(chunkPromise.value).toUpperCase();
+      const upperCaseValue = textDecoder.decode(result.value).toUpperCase();
       // Enqueue the uppercased value (afer re-encoding it).
       controller.enqueue(textEncoder.encode(upperCaseValue));
-      return chunkPromise;
+      return result;
     },
 
     // Called when the reader cancels.
@@ -306,29 +320,29 @@ will generally lock it for the duration, preventing other readers from locking i
 ```js
 const readableStream = new ReadableStream({
   async start(controller) {
-    // called by constructor
+    // Called by constructor.
     console.log('[start]');
     controller.enqueue('a');
     controller.enqueue('b');
     controller.enqueue('c');
   },
   async pull(controller) {
-    // called read when controller's queue is empty
+    // Called read when controller's queue is empty.
     console.log('[pull]');
     controller.enqueue('d');
-    controller.close(); // or controller.error();
+    controller.close();
   },
   async cancel(reason) {
-    // called when rs.cancel(reason)
+    // Called when the stream is canceled.
     console.log('[cancel]', reason);
   },
 });
 
 (async () => {
-  // rs.tree() duplicate two ReadableStreams
+  // Create two `ReadableStream`s.
   const [streamA, streamB] = readableStream.tee();
 
-  // Read streamA
+  // Read streamA iteratively one by one.
   const readerA = streamA.getReader();
   console.log('[A]', await readerA.read()); //=> {value: "a", done: false}
   console.log('[A]', await readerA.read()); //=> {value: "b", done: false}
@@ -336,45 +350,71 @@ const readableStream = new ReadableStream({
   console.log('[A]', await readerA.read()); //=> {value: "d", done: false}
   console.log('[A]', await readerA.read()); //=> {value: undefined, done: true}
 
-  // Read streamB
+  // Read streamB in a loop.
   const readerB = streamB.getReader();
-  for (
-    let chunkPromise = await readerB.read();
-    !chunkPromise.done;
-    chunkPromise = await readerB.read()
-  ) {
-    console.log('[B]', chunkPromise);
+  for (let result = await readerB.read(); !result.done; result = await readerB.read()) {
+    console.log('[B]', result);
   }
 })();
 ```
 
+## The mechanics of a writable stream
+
+A writable stream is a destination into which you can write data, represented in JavaScript by a
+[`WritableStream`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStream) object. This
+serves as an abstraction over the top of an **underlying sink**—a lower-level I/O sink into which
+raw data is written.
+
+The data is written to the stream via a **writer**, one chunk at a time. A chunk can take a
+multitude of forms, just like the chunks in a reader. You can use whatever code you like to produce
+the chunks ready for writing; the writer plus the associated code is called a **producer**.
+
+When a writer is created and starts writing to a stream (an **active writer**), it is said to be
+**locked** to it. Only one writer can write to a writable stream at one time. If you want another
+writer to start writing to your stream, you typically need to abort it before you then attach
+another writer to it.
+
+An **internal queue** keeps track of the chunks that have been written to the stream but not yet
+been processed by the underlying sink.
+
+The queue is managed by a **queuing strategy** for the stream. The strategy's **high water mark**
+defines the total number of chunks that can be contained in the internal queue before backpressure
+is applied and a **chunk size** that indicates the size to use for each chunk, in bytes.
+
+The final construct is called a **controller**—each writer has an associated controller that allows
+you to control the stream (for example, to abort it).
+
+{% Aside %} The [File System Access API](https://web.dev/file-system-access/)'s
+[`FileSystemWritableFileStream`](https://wicg.github.io/file-system-access/#filesystemwritablefilestream)
+and the experimental
+[`fetch()` request streams](https://web.dev/fetch-upload-streaming/#writable-streams) are examples
+of writable streams in the wild. {% endAside %}
+
 ## Creating a writable stream
 
-The `WritableStream` interface of the Streams API provides a standard abstraction for writing
-streaming data to a destination, known as a sink. This object comes with built-in backpressure and
-queuing. You create a writable stream by calling its constructor
+The [`WritableStream`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStream) interface of
+the Streams API provides a standard abstraction for writing streaming data to a destination, known
+as a sink. This object comes with built-in backpressure and queuing. You create a writable stream by
+calling its constructor
 [`WritableStream()`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStream/WritableStream).
 It expects a required argument called the stream's `underlyingSink`, which represents an object
 containing methods and properties that define how the constructed stream instance will behave. The
-`underlyingSink` can contain the following optional, developer-defined methods:
+`underlyingSink` can contain the following optional, developer-defined methods: The `controller`
+parameter passed to some of the following methods is a
+[`WritableStreamDefaultController`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultController).
 
 - `start(controller)`: This method is called immediately when the object is constructed. The
   contents of this method should aim to get access to the underlying sink. If this process is to be
-  done asynchronously, it can return a promise to signal success or failure. The `controller`
-  parameter passed to this method is a `WritableStreamDefaultController`. This can be used by the
-  developer to control the stream during set up.
+  done asynchronously, it can return a promise to signal success or failure.
 - `write(chunk, controller)`: This method will be called when a new chunk of data (specified in the
   `chunk` parameter) is ready to be written to the underlying sink. It can return a promise to
-  signal success or failure of the write operation. The `controller` parameter passed to this method
-  is a `WritableStreamDefaultController` that can be used by the developer to control the stream as
-  more chunks are submitted for writing. This method will be called only after previous writes have
-  succeeded, and never after the stream is closed or aborted.
+  signal success or failure of the write operation. This method will be called only after previous
+  writes have succeeded, and never after the stream is closed or aborted.
 - `close(controller)`: This method will be called if the app signals that it has finished writing
   chunks to the stream. The contents should do whatever is necessary to finalize writes to the
   underlying sink, and release access to it. If this process is asynchronous, it can return a
   promise to signal success or failure. This method will be called only after all queued-up writes
-  have succeeded. The `controller` parameter passed to this method is a
-  `WritableStreamDefaultController`, which can be used to control the stream at the end of writing.
+  have succeeded.
 - `abort(reason)`: This method will be called if the app signals that it wishes to abruptly close
   the stream and put it in an errored state. It can clean up any held resources, much like
   `close()`, but `abort()` will be called even if writes are queued up—those chunks will be thrown
@@ -383,10 +423,10 @@ containing methods and properties that define how the constructed stream instanc
 
 The
 [`WritableStreamDefaultController`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultController)
-interface of the Streams API represents a controller allowing control of a `WritableStream`'s state.
-When constructing a `WritableStream`, the underlying sink is given a corresponding
-`WritableStreamDefaultController` instance to manipulate. The `WritableStreamDefaultController` has
-only one method:
+interface of the Streams API represents a controller allowing control of a `WritableStream`'s state
+during set up, as more chunks are submitted for writing, or at the end of writing. When constructing
+a `WritableStream`, the underlying sink is given a corresponding `WritableStreamDefaultController`
+instance to manipulate. The `WritableStreamDefaultController` has only one method:
 [`WritableStreamDefaultController.error()`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultController/error),
 which causes any future interactions with the associated stream to error.
 
@@ -396,19 +436,16 @@ new instance of `WritableStreamDefaultWriter` and locks the stream to that insta
 stream is locked, no other writer can be acquired until this one is released.
 
 The [`write()`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter/write)
-method of the `WritableStreamDefaultWriter` interface writes a passed chunk of data to a
-`WritableStream` and its underlying sink, then returns a promise that resolves to indicate the
-success or failure of the write operation. Note that what "success" means is up to the underlying
-sink; it might indicate that the chunk has been accepted, and not necessarily that it is safely
-saved to its ultimate destination.
+method of the
+[`WritableStreamDefaultWriter`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStreamDefaultWriter)
+interface writes a passed chunk of data to a `WritableStream` and its underlying sink, then returns
+a promise that resolves to indicate the success or failure of the write operation. Note that what
+"success" means is up to the underlying sink; it might indicate that the chunk has been accepted,
+and not necessarily that it is safely saved to its ultimate destination.
+
+### Writable stream code sample
 
 The code sample below shows all steps in action.
-
-{% Aside %} The [File System Access API](https://web.dev/file-system-access/)'s
-[`FileSystemWritableFileStream`](https://wicg.github.io/file-system-access/#filesystemwritablefilestream)
-and the experimental
-[`fetch()` request streams](https://web.dev/fetch-upload-streaming/#writable-streams) are examples
-of writable streams in the wild. {% endAside %}
 
 ```js
 const writableStream = new WritableStream({
@@ -417,8 +454,9 @@ const writableStream = new WritableStream({
   },
   async write(chunk, controller) {
     console.log('[write]', chunk);
-    // Wait to next write.
-    await new Promise((r) => setTimeout(r, 1000));
+    // Wait for next write.
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    controller.enqueue(char);
   },
   async close(controller) {
     console.log('[close]');
@@ -435,7 +473,7 @@ const writableStream = new WritableStream({
     // Wait to add write queue.
     await writer.ready;
     console.log('[ready]', Date.now() - start, 'ms');
-    // The Promise resolved after finish to write.
+    // The Promise is resolved after the write finishes.
     writer.write(char);
   }
   await writer.close();
@@ -446,7 +484,7 @@ const writableStream = new WritableStream({
 
 A readable stream can be piped to a writable stream through the readable stream's
 [`pipeTo()`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/pipeTo) method.
-`ReadableStream.pipeTo() pipes the current `ReadableStream`to a given`WritableStream` and returns a
+`ReadableStream.pipeTo()` pipes the current `ReadableStream`to a given`WritableStream` and returns a
 promise that fulfills when the piping process completes successfully, or rejects if any errors were
 encountered.
 
@@ -528,6 +566,10 @@ of the following methods:
   writable sides of the stream. Throwing an exception is treated the same as returning a rejected
   promise.
 
+### Transform stream code sample
+
+The following code sample shows a simple transform stream in action.
+
 ```js
 const transformStream = new TransformStream({
   async transform(chunk, controller) {
@@ -551,12 +593,8 @@ const transformStream = new TransformStream({
   writer.close();
 
   const reader = readStream.getReader();
-  for (
-    let chunkPromise = await reader.read();
-    !chunkPromise.done;
-    chunkPromise = await reader.read()
-  ) {
-    console.log('[value]', chunkPromise.value);
+  for (let result = await reader.read(); !result.done; result = await reader.read()) {
+    console.log('[value]', result.value);
   }
 })();
 ```
@@ -602,37 +640,65 @@ const readableStream = new ReadableStream({
 
 (async () => {
   const reader = readableStream.pipeThrough(transformStream).getReader();
-  for (
-    let chunkPromise = await reader.read();
-    !chunkPromise.done;
-    chunkPromise = await reader.read()
-  ) {
-    console.log('[value]', chunkPromise.value);
+  for (let result = await reader.read(); !result.done; result = await reader.read()) {
+    console.log('[value]', result.value);
   }
 })();
 ```
+
+## Browser support and polyfill
+
+Support for the Streams API in browsers varies. Be sure to check
+[CanIUse](https://caniuse.com/streams) for detailed compatibility data. Note that some browsers only
+have partial implementations of certain features, so be sure to check the data thoroughly.
+
+The good news is that there is a
+[reference implementation](https://github.com/whatwg/streams/tree/master/reference-implementation)
+available and a [polyfill](https://github.com/MattiasBuelens/web-streams-polyfill) targeted at
+production use. Be sure to load the polyfill conditionally only if the built-in feature is not
+available.
+
+## Useful streams built into the browser
+
+You can easily create a `ReadableStream` from a blob.
+The [`Blob`](https://developer.mozilla.org/en-US/docs/Web/API/Blob) interface's [stream()](https://developer.mozilla.org/en-US/docs/Web/API/Blob/stream) method returns a `ReadableStream` which upon reading returns the data contained within the Blob.
+Also recall that a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) object is a specific kind of a `Blob`, and can be used in any context that a blob can.
 
 ```js
-const uncompressed = 'hello hello';
-const readableStream = new Blob([uncompressed], { type: 'text/plain' }).stream();
-
-const uncompressedStream = readableStream
-  .pipeThrough(new CompressionStream('gzip'))
-  .pipeThrough(new DecompressionStream('gzip'))
-  .pipeThrough(new TextDecoderStream());
-
-const reader = uncompressedStream.getReader();
-(async () => {
-  for (
-    let chunkPromise = await reader.read();
-    !chunkPromise.done;
-    chunkPromise = await reader.read()
-  ) {
-    console.log('[value]', chunkPromise.value);
-  }
-})();
+const readableStream = new Blob(['hello world'], { type: 'text/plain' }).stream();
 ```
+
+There are a also number of useful streams built right into the browser.
+Compressing or decompressing a file is easy with the [`CompressionStream`](https://wicg.github.io/compression/#compression-stream) and [`DecompressionStream`](https://wicg.github.io/compression/#decompression-stream)
+transform streams respectively.
+The code sample below shows how you can download the Streams spec, compress (gzip) it right in the browser,
+and write the compressed file directly to disk.
+
+```js
+const response = await fetch('https://streams.spec.whatwg.org/');
+const readableStream = response.body;
+const compressedStream = readableStream.pipeThrough(new CompressionStream('gzip'));
+
+const fileHandle = await showSaveFilePicker();
+const writableStream = await fileHandle.createWritable();
+compressedStream.pipeTo(writableStream);
+```
+
+## Useful resources
+
+- [Streams specification](https://streams.spec.whatwg.org/)
+- [Accompanying demos](https://streams.spec.whatwg.org/demos/)
+- [Streams polyfill](https://github.com/MattiasBuelens/web-streams-polyfill)
+- [2016—the year of web streams](https://jakearchibald.com/2016/streams-ftw/)
 
 ## Acknowledgements
 
-Hero image by [Ryan Lara](https://unsplash.com/@ryanlara) on [Unsplash](https://unsplash.com/).
+This article was reviewed by [Joe Medley](https://github.com/jpmedley). Some of the code samples are
+inspired by GitHub user
+[@bellbind](https://gist.github.com/bellbind/f6a7ba88e9f1a9d749fec4c9289163ac)'s explorations and
+some of the prose builds heavily on the
+[MDN Web Docs on Streams](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API). The
+[Streams Standard](https://streams.spec.whatwg.org/)'s
+[authors](https://github.com/whatwg/streams/graphs/contributors) have done a tremendous job on
+writing this spec. Hero image by [Ryan Lara](https://unsplash.com/@ryanlara) on
+[Unsplash](https://unsplash.com/).
