@@ -292,12 +292,11 @@ with our hover styles by sharing them with focus as well.
 The `Escape` key on your keyboard should close the menu right? Let's wire that up.
 
 ```js
-const sidenav = document.querySelector('#sidenav-open')
+const sidenav = document.querySelector('#sidenav-open');
 
 sidenav.addEventListener('keyup', event => {
-  if (event.code === 'Escape')
-    document.location.hash = ''
-})
+  if (event.code === 'Escape') document.location.hash = '';
+});
 ```
 
 ##### Focus UX
