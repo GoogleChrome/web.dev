@@ -51,7 +51,7 @@ Everyone visiting should be able to open and close the menu.
   </figcaption>
 </figure>
 
-## Picking features {: #web-platform-features }
+## Web Tactics
 
 In this component exploration I had the joy of combining a few critical web platform features:
 
