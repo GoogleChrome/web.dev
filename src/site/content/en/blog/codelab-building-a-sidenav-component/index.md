@@ -46,7 +46,8 @@ Drop the following HTML into the body tag.
 ```
 
 Next I'll fill in those semantic elements with the rest of the page content. Add a 
-navigation element, some nav links and a close link. 
+navigation element, some nav links and a close link inside the `<aside>` element
+that you just added to the page.
 
 ```html/1-14
 <aside>
