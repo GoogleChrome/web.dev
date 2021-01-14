@@ -25,7 +25,7 @@ on the web. We'll build the component as we go, starting with HTML, then CSS,
 then JavaScript.
 
 Check out my blog post [Building a Sidenav component](/building-a-sidenav-component)
-to learn about the CSS tools chosen for building this component.
+to learn about the CSS web platform features chosen for building this component.
 
 {% YouTube 'PzvdREGR0Xw' %}
 

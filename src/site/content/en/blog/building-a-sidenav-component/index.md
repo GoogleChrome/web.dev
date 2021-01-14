@@ -42,7 +42,7 @@ Everyone visiting should be able to open and close the menu.
   </figcaption>
 </figure>
 
-<figure class="w-figure w-figure--fullbleed">
+<figure class="w-figure">
   <video playsinline controls autoplay loop muted class="w-screenshot">
     <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/gui-sidenav/mobile-demo-1080p.mp4">
   </video>
@@ -51,7 +51,7 @@ Everyone visiting should be able to open and close the menu.
   </figcaption>
 </figure>
 
-## Picking tools {: #tools }
+## Picking features {: #web-platform-features }
 
 In this component exploration I had the joy of combining a few critical web platform features:
 
@@ -165,8 +165,7 @@ it's overlaying our article by default. Here's some UX I'm shooting for in this 
 - Only animate with motion if the user is OK with that
 - Animate `visibility` so keyboard focus doesn't enter the offscreen element
 
-Animate between open and close, `:target` and `:not(:target)`, 
-did someone say animation or motion!? Let's start with accessibility.
+As I begin to implement motion animations, I want to start with accessibility top of mind.
 
 #### Accessible motion
 
