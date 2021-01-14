@@ -306,11 +306,11 @@ they open or close. I want to make toggling easy.
 
 ```js
 sidenav.addEventListener('transitionend', e => {
-  const isOpen = document.location.hash === '#sidenav-open'
+  const isOpen = document.location.hash === '#sidenav-open';
 
   isOpen
-    ? document.querySelector('#sidenav-close').focus()
-    : document.querySelector('#sidenav-button').focus()
+      ? document.querySelector('#sidenav-close').focus()
+      : document.querySelector('#sidenav-button').focus();
 })
 ```
 
