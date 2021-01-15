@@ -5,7 +5,7 @@ authors:
   - samdutton
 scheduled: true
 date: 2020-06-29
-updated: 2021-01-15
+updated: 2020-08-20
 description: Use cross-platform browser features to build sign-in forms that are secure, accessible and easy to use.
 hero: hero.jpg
 alt: A person holding a phone.
@@ -523,7 +523,7 @@ to use `#ccc` or darker.
 </figure>
 
 
-### Use built-in browser features to warn of invalid input values {: #built-in-validation }
+### Use built-in browser features to warn of invalid input values {: #validation }
 
 Browsers have built-in features to do basic form validation for inputs with a
 `type` attribute. Browsers warn when you submit a form with an invalid value,
