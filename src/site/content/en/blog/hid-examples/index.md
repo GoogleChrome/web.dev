@@ -10,7 +10,7 @@ description: |
   API solves this by providing a way to implement device-specific logic in
   JavaScript.
 date: 2020-07-22
-updated: 2020-08-19
+updated: 2021-01-15
 tags:
   - blog
   - capabilities
