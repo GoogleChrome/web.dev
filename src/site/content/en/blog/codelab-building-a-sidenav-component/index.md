@@ -36,8 +36,8 @@ to learn about the CSS web platform features chosen for building this component.
 
 ## HTML
 
-First, get the essentials of the HTML setup so there's content and some boxes to work with.
-I'll be using an `<aside>` to hold the navigation menu, and a `<main>` to hold the primary page content. 
+First, get the essentials of the HTML setup so there's content and some boxes to work with. 
+
 Drop the following HTML into the body tag.
 
 ```html
@@ -45,9 +45,12 @@ Drop the following HTML into the body tag.
 <main></main>
 ```
 
-Next I'll fill in those semantic elements with the rest of the page content. Add a 
-navigation element, some nav links and a close link inside the `<aside>` element
-that you just added to the page.
+The `<aside>` holds the navigation menu as a complimentary element to `<main>`, which 
+holds the primary page content.
+
+Next we'll fill in those semantic elements with the rest of the page content. 
+
+Add a navigation element, some navigation links and a close link inside the `<aside>` element.
 
 ```html/1-14
 <aside>
@@ -68,14 +71,15 @@ that you just added to the page.
 </aside>
 ```
 
-In the main content element, I added a header and an article to semantically hold the layout content. 
-The header will have the menu open button, we'll show and hide it based on viewport size soon. The aside 
-has the close button.
+Links go great inside `<nav>` elements, and `<nav>` elements go great in `<aside>` sidebars. 
+Still more we can do to improve.
+
+In the main content element, add a header and an article to semantically hold the layout content. 
 
 ```html/1-14
 <main>
   <header>
-    <a href="#sidenav-open">
+    <a href="#sidenav-open" class="hamburger">
       <svg viewBox="0 0 50 40">
         <line x1="0" x2="100%" y1="10%" y2="10%" />
         <line x1="0" x2="100%" y1="50%" y2="50%" />
@@ -91,19 +95,24 @@ has the close button.
 </main>
 ```
 
+The header has the menu open link. The aside has the close button. 
+We'll show and hide elements based on viewport size soon. 
+
 So far I've added an aside element, with a nav, links and a way to close the sidenav. 
 Also added a header, a way to open the sidenav, and an article to the main element. 
-This is clean, semantic and pretty timeless already, but next I want to 
-go sprinkle on some accessibility sugar, to make it clean and clear for everyone.
+This is clean, semantic and pretty timeless already, 
+but we can make it cleaner and clearer for everyone. The open link in the sidenav 
+could be more clearly marked. 
 
-The open link in the sidenav could be more clearly marked. Here's how I did that.
+Add attributes `title` and `aria-label` to the header open link element:
 
 ```html//0
 <a href="#sidenav-open">
 <a href="#sidenav-open" title="Open Menu" aria-label="Open Menu">
 ```
 
-The open SVG icon for the sidenav could be more clearly marked. Here's how I did that.
+The open SVG icon could be more clearly marked as well. 
+Add the following attributes to the SVG inside the open link element:
 
 ```html//0
 <svg viewBox="0 0 50 40">
@@ -111,17 +120,24 @@ The open SVG icon for the sidenav could be more clearly marked. Here's how I did
 ```
 
 The close link in the sidenav could be more clearly marked. 
+Add attributes `title` and `aria-label` to the sidenav close link element:
 
 ```html//0
 <a href="#"></a>
-<a href="#" id="sidenav-close" title="Close Menu" aria-label="Close Menu"></a>
+<a href="#" title="Close Menu" aria-label="Close Menu"></a>
 ```
+
+{% Aside 'gotchas' %}
+While all links do not require titles or special labels, I believe these to be an exception 
+since they're being used to change the URL, like a link does, but they don't have any text content of their own. 
+{% endAside %}
 
 ## CSS
 
 Time to layout the elements. The main content 
-and sidenav are inside the `<body>` tag, so I started with their layout. Add the following 
-CSS into `css/sidenav.css` so the body element positions the children.
+and sidenav are direct children of the `<body>` tag, so I started with their layout. 
+
+Add the following CSS into `css/sidenav.css` so the `<body>` element lays out the children.
 
 ```css
 body {
@@ -140,31 +156,51 @@ This layout essentially says: Create a named row "stack" with everything in it,
 and 2 columns in that row, the 2nd of which is named "stack" also. The 1st column 
 should be sized by it's minimal content needs, and the 2nd column can take up the rest. 
 Then, if in a constrained viewport of `540px` or less, put the sidenav and main content elements 
-into the same row and column, resulting in them being on top of each other.
+into the same row and column, resulting in them being on top of each other in a 1x1 grid.
 
-With this as a base, I can now leverage the state of the url bar to toggle the 
-visibility and transition style of the sidenav. Speaking of which, I need to update the 
-HTML to enable CSS to hook into this feature.
+<figure class="w-figure">
+  <video playsinline controls autoplay loop muted class="w-screenshot">
+    <source src="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/responsive-stack-demo-1080p.mp4">
+  </video>
+</figure>
+
+With this responsive stacking functionality as a base, we can now leverage the state of the URL bar to toggle the 
+visibility and transition style of the sidenav. 
+
+Update the `<aside>` element:
 
 ```html//0
 <aside>
 <aside id="sidenav-open">
 ```
 
-Now the element's ID can match the url hash we'll be setting. Next I added IDs for 
-key elements that control the sidenav.
+This enables CSS to match an element and the URL hash together. The recipe for `:target` usage. 
+Now the element's ID can match the URL hash we'll be setting with `<a>` tags. 
+
+In addition, for easier Javascript targeting, 
+add ID's for key elements that control the sidenav. First, add an ID to the sidenav open link:
 
 ```html//0
-<a href="#sidenav-open" title="Open Menu" aria-label="Open Menu">
+<a href="#sidenav-open" class="hamburger" title="Open Menu" aria-label="Open Menu">
 <a href="#sidenav-open" id="sidenav-button" class="hamburger" title="Open Menu" aria-label="Open Menu">
 ```
 
-With the macro layout done, time to style the micro sidenav components.
+Next, add an ID to the sidenav close link:
+
+```html//0
+<a href="#" title="Close Menu" aria-label="Close Menu"></a>
+<a href="#" id="sidenav-close" title="Close Menu" aria-label="Close Menu"></a>
+```
+
+That wraps up the macro `<body>` responsive stacking layout, plus ties us into the URL bar. 
+Let's keep going!
 
 The `<aside>` has a neat layout too. It has 2 children, a `<nav>` which is the paper like looking 
 component that slides out, and a closing `<a>` link element that sets the url has to '#'. 
 The link is invisible to the right of the paper slide out nav, it's so folks can "click off" the visual 
-component to dismiss it. Here's how I accomplished that with grid.
+component to dismiss it. 
+
+Add the following CSS to `css/sidenav.css`:
 
 ```css
 #sidenav-open {
@@ -173,8 +209,8 @@ component to dismiss it. Here's how I accomplished that with grid.
 }
 ```
 
-I thought the ratio was a really nice touch here, where grid could shine and give a 
-designer a lot of control.
+I thought the ratio and names were a really nice touch here, 
+where grid could shine and give a designer a lot of control.
 
 <figure class="w-figure">
   <video playsinline controls autoplay loop muted class="w-screenshot">
@@ -184,10 +220,9 @@ designer a lot of control.
 
 Next I need to conditionally overlay the main content and persist my position 
 through any document scrolling. This is a great job for `position: sticky` and 
-some `overscroll-behavior`. Go ahead and open the side menu after scrolling the page, 
-or try scrolling the page while the sidenav is open. What do you think?
+some `overscroll-behavior`. 
 
-Here's how I accomplished that:
+Add the following styles for the sidenav:
 
 ```css/4-12
 #sidenav-open {
@@ -206,6 +241,9 @@ Here's how I accomplished that:
 }
 ```
 
+Go ahead and open the side menu after scrolling the page, 
+or try scrolling the page while the sidenav is open. What do you think?
+
 ```css/6-8
 #sidenav-open {
   ...
@@ -220,8 +258,9 @@ Here's how I accomplished that:
 }
 ```
 
-I also only need the open and close buttons when at a mobile layout, let's 
-manage them with CSS and a media query as well.
+I also only need the open and close buttons when only at a mobile layout. 
+
+Add the following CSS:
 
 ```css
 #sidenav-button,
@@ -237,7 +276,8 @@ manage them with CSS and a media query as well.
 }
 ```
 
-For some flair, let's add CSS transforms with respectful accessibility.
+For some flair, let's add CSS transforms with respectful accessibility. 
+Add the following CSS to `css/sidenav.css`: 
 
 ```css
 #sidenav-open {
@@ -279,37 +319,43 @@ For some flair, let's add CSS transforms with respectful accessibility.
 
 ### Sprinkle in some Javascript
 
-The `esc` key should close the menu. I add this by listening for a key event on the sidenav element, 
-and if it's "Escape", than I set the url hash to empty, making the sidenav transition out.
+The `esc` key should close the menu. Add this javascript to `js/index.js`:
 
 ```js
-const sidenav = document.querySelector('#sidenav-open')
+const sidenav = document.querySelector('#sidenav-open');
 
 sidenav.addEventListener('keyup', e => {
-  if (e.code === 'Escape')
-    document.location.hash = ''
-})
+  if (e.code === 'Escape') {
+    document.location.hash = '';
+  }
+});
 ```
 
-This next piece of UX is focus management. I want to make opening and closing easy, so I wait 
+This listens for a key event on the sidenav element, 
+and if it's "Escape", sets the url hash to empty, making the sidenav transition out.
+
+This next piece of UX JS is focus management. I want to make opening and closing easy, so I wait 
 until the sidenav has finished a transition of some kind, then cross check it against the 
 url hash to determine if it's in or out. I then use javascript to set the focus on the button 
 complimentary to the one they just pressed.
 
+Add the following Javascript to `js/index.js`:
+
 ```js
-const closenav = document.querySelector('#sidenav-close')
-const opennav = document.querySelector('#sidenav-button')
+const closenav = document.querySelector('#sidenav-close');
+const opennav = document.querySelector('#sidenav-button');
 
 sidenav.addEventListener('transitionend', e => {
-  if (e.propertyName !== 'transform')
-    return
+  if (e.propertyName !== 'transform') {
+    return;
+  }
 
-  const isOpen = document.location.hash === '#sidenav-open'
+  const isOpen = document.location.hash === '#sidenav-open';
 
   isOpen
     ? closenav.focus()
-    : opennav.focus()
-})
+    : opennav.focus();
+});
 ```
 
 ## Try it out
