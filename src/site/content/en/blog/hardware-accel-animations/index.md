@@ -55,8 +55,8 @@ automatically applied for SVG animations in Chromium 88+.
 
 ### Example
 
-Let’s take a look at the differences between an SVG animation with and without hardware acceleration
-turned on. To break it down using a common UI element, we’ll use this example, where a SVG loading
+Let's take a look at the differences between an SVG animation with and without hardware acceleration
+turned on. To break it down using a common UI element, we'll use this example, where a SVG loading
 indicator is used on Facebook.com to hint at work being done to load additional results in the
 sidebar.
 
@@ -121,10 +121,10 @@ developer had provided pixel values. The good news is that the Chromium team is 
 feature,  and soon, these types of animations will automatically get composited and
 hardware-accelerated.
 
-## What’s coming next?
+## What's coming next?
 
 These updated animations will make web styling much smoother. And as mentioned above, the team is
-always looking to see what upcoming web needs emerge. Right now, we’re slated to convert
+always looking to see what upcoming web needs emerge. Right now, we're slated to convert
 `background-color` and `clip-path` to automatically use hardware-acceleration in future versions of
 Chromium.
 
