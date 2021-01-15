@@ -4,7 +4,7 @@ subhead: How to integrate with hardware media keys, customize media notification
 authors:
   - beaufortfrancois
 date: 2020-03-06
-updated: 2020-08-13
+updated: 2021-01-15
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 description: |
@@ -276,7 +276,7 @@ move the media playback time by. If it is not provided (for example `undefined`)
 you should use a sensible time (for example 10-30 seconds).
 
 ```js
-const video = document.querySelector('video');
+const video = document.querySelector("video");
 const defaultSkipTime = 10; /* Time to skip in seconds by default */
 
 navigator.mediaSession.setActionHandler("seekbackward", (details) => {
@@ -305,7 +305,7 @@ being called multiple times as part of a sequence and this is not the last call
 in that sequence.
 
 ```js
-const video = document.querySelector('video');
+const video = document.querySelector("video");
 
 navigator.mediaSession.setActionHandler("seekto",(details) => {
   if (details.fastSeek && "fastSeek" in video) {
@@ -325,9 +325,13 @@ as setting the position state at an appropriate time as shown below. The
 position state is a combination of the media playback rate, duration, and
 current time.
 
-{% Aside 'gotchas' %}
-The position state is supported on Android as of Chrome 81 and later.
-{% endAside %}
+<figure class="w-figure">
+  <img src="./chrome-os-lock-screen-media-controls.jpg" alt="Screenshot of lock screen media controls in Chrome OS">
+  <figcaption class="w-figcaption">Lock screen media controls in Chrome OS</figcaption>
+</figure>
+
+The duration must be provided and positive. The position must be positive and
+less than the duration. The playback rate must be greater than 0.
 
 ```js
 const video = document.querySelector("video");
