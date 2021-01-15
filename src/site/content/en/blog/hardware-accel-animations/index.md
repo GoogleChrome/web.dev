@@ -50,7 +50,7 @@ down the pipeline, including SVG animations, something that developers have been
 
 SVG is a great addition to any website, and now those interactions with SVG can be more performant.
 As of Chromium 88, Chromium will join the likes of Firefox to enable hardware-acceleration by
-default on SVG animations. What do you, the developer, need to do? Nothing — this will be
+default on SVG animations. What do you, the developer, need to do? Nothing—this will be
 automatically applied for SVG animations in Chromium 88+.
 
 ### Example
