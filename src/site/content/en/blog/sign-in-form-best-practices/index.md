@@ -523,7 +523,7 @@ to use `#ccc` or darker.
 </figure>
 
 
-### Use built-in browser features to warn of invalid input values {: #validation }
+### Use built-in browser features to warn of invalid input values {: #built-in-validation }
 
 Browsers have built-in features to do basic form validation for inputs with a
 `type` attribute. Browsers warn when you submit a form with an invalid value,

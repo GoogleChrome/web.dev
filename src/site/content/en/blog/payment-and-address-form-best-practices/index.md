@@ -330,7 +330,7 @@ back-end securely handles input and output of data from users. Never trust user 
 malicious. Find out more in [OWASP Input Validation Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html).
 {% endAside %}
 
-#### Help users avoid missing required data {: #autocomplete-attribute}
+#### Help users avoid missing required data {: #required}
 
 Use the [`required` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required) 
 on inputs for mandatory values.

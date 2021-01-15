@@ -44,7 +44,7 @@ function ensureTrailingSlashOnly(path) {
  * @return {function(string): ?string}
  */
 function prepareHandler(yamlSource, baseUrlPrefix) {
-  const doc = yaml.safeLoad(yamlSource);
+  const doc = yaml.load(yamlSource);
   baseUrlPrefix = ensureTrailingSlashOnly(baseUrlPrefix);
 
   const groupRedirect = {};

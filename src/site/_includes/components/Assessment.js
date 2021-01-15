@@ -211,7 +211,7 @@ module.exports = (page, targetAssessment) => {
     targetAssessment + '.assess.yml',
   );
   const data = fs.readFileSync(source, 'utf8');
-  const assessment = yaml.safeLoad(data);
+  const assessment = yaml.load(data);
 
   // prettier-ignore
   return html`
