@@ -6,8 +6,8 @@ description: |
   network and process them as desired.
 authors:
   - thomassteiner
-date: 2021-01-13
-# updated: 2021-01-13
+date: 2021-01-18
+# updated: 2021-01-18
 hero: hero.jpg
 alt: A forest stream with colored fallen leaves.
 tags:
@@ -169,14 +169,19 @@ The `ReadableStreamDefaultController` supports the following methods:
 #### The `queuingStrategy`
 
 The second, likewise optional, argument of the `ReadableStream()` constructor is `queuingStrategy`.
-It is an object that optionally defines a queuing strategy for the stream, which takes two parameters:
+It is an object that optionally defines a queuing strategy for the stream, which takes two
+parameters:
 
-- `highWaterMark`: A non-negative integer that defines the total number of chunks that can be contained in the internal queue before backpressure is applied.
-- `size(chunk)`: A method containing a parameter chunk that indicates the size to use for each chunk, in bytes.
+- `highWaterMark`: A non-negative integer that defines the total number of chunks that can be
+  contained in the internal queue before backpressure is applied.
+- `size(chunk)`: A method containing a parameter chunk that indicates the size to use for each
+  chunk, in bytes.
 
-{% Aside %}
-You could define your own custom `queuingStrategy`, or use an instance of [`ByteLengthQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy) or [`CountQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/CountQueuingStrategy) for this object value. If no `queuingStrategy` is supplied, the default used is the same as a `CountQueuingStrategy` with a `highWaterMark` of `1`.
-{% endAside %}
+{% Aside %} You could define your own custom `queuingStrategy`, or use an instance of
+[`ByteLengthQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy)
+or [`CountQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/CountQueuingStrategy)
+for this object value. If no `queuingStrategy` is supplied, the default used is the same as a
+`CountQueuingStrategy` with a `highWaterMark` of `1`. {% endAside %}
 
 #### The `getReader()` and `read()` methods
 
@@ -198,7 +203,9 @@ the stream. The different possibilities are as follows:
 
 #### The `locked` property
 
-You can check if a readable stream is locked by accessing its [`ReadableStream.locked`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/locked) property.
+You can check if a readable stream is locked by accessing its
+[`ReadableStream.locked`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/locked)
+property.
 
 ### Readable stream code samples
 
@@ -256,8 +263,8 @@ const readStream = async () => {
 readStream();
 ```
 
-The next (a bit contrived) code sample shows how you could implement
-a "shouting" service worker that uppercases all text by consuming the returned `fetch()` response promise
+The next (a bit contrived) code sample shows how you could implement a "shouting" service worker
+that uppercases all text by consuming the returned `fetch()` response promise
 [as a stream](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Using_readable_streams#consuming_a_fetch_as_a_stream)
 and uppercasing chunk by chunk. The advantage of this approach is that you do not need to wait for
 the whole document to be downloaded, which can make a huge difference when dealing with large files.
@@ -337,14 +344,12 @@ for await (const chunk of stream) {
 }
 ```
 
-{% Aside 'caution' %}
-Asynchronous iteration is not yet implemented in any browser.
-{% endAside %}
+{% Aside 'caution' %} Asynchronous iteration is not yet implemented in any browser. {% endAside %}
 
 #### Asynchronous iteration helper function
 
-A workaround to use asynchronous iteration today is to implement the behavior with a helper function.
-This allows you to use the feature in your code as shown in the snippet below.
+A workaround to use asynchronous iteration today is to implement the behavior with a helper
+function. This allows you to use the feature in your code as shown in the snippet below.
 
 ```js
 function streamAsyncIterator(stream) {
@@ -366,7 +371,7 @@ function streamAsyncIterator(stream) {
     // iterators tend to return themselves.
     [Symbol.asyncIterator]() {
       return this;
-    }
+    },
   };
 }
 
@@ -501,14 +506,19 @@ which causes any future interactions with the associated stream to error.
 #### The `queuingStrategy`
 
 The second, likewise optional, argument of the `WritableStream()` constructor is `queuingStrategy`.
-It is an object that optionally defines a queuing strategy for the stream, which takes two parameters:
+It is an object that optionally defines a queuing strategy for the stream, which takes two
+parameters:
 
-- `highWaterMark`: A non-negative integer that defines the total number of chunks that can be contained in the internal queue before backpressure is applied.
-- `size(chunk)`: A method containing a parameter chunk that indicates the size to use for each chunk, in bytes.
+- `highWaterMark`: A non-negative integer that defines the total number of chunks that can be
+  contained in the internal queue before backpressure is applied.
+- `size(chunk)`: A method containing a parameter chunk that indicates the size to use for each
+  chunk, in bytes.
 
-{% Aside %}
-You could define your own custom `queuingStrategy`, or use an instance of [`ByteLengthQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy) or [`CountQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/CountQueuingStrategy) for this object value. If no `queuingStrategy` is supplied, the default used is the same as a `CountQueuingStrategy` with a `highWaterMark` of `1`.
-{% endAside %}
+{% Aside %} You could define your own custom `queuingStrategy`, or use an instance of
+[`ByteLengthQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/ByteLengthQueuingStrategy)
+or [`CountQueuingStrategy`](https://developer.mozilla.org/en-US/docs/Web/API/CountQueuingStrategy)
+for this object value. If no `queuingStrategy` is supplied, the default used is the same as a
+`CountQueuingStrategy` with a `highWaterMark` of `1`. {% endAside %}
 
 #### The `getWriter()` and `write()` methods
 
@@ -527,7 +537,9 @@ and not necessarily that it is safely saved to its ultimate destination.
 
 #### The `locked` property
 
-You can check if a writable stream is locked by accessing its [`WritableStream.locked`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStream/locked) property.
+You can check if a writable stream is locked by accessing its
+[`WritableStream.locked`](https://developer.mozilla.org/en-US/docs/Web/API/WritableStream/locked)
+property.
 
 ### Writable stream code sample
 
@@ -622,8 +634,8 @@ const writableStream = new WritableStream({
 The `TransformStream` interface of the Streams API represents a set of transformable data. You
 create a transform stream by calling its constructor `TransformStream()`, which creates and returns
 a transform stream object from the given handlers. The `TransformStream()` constructor accepts as
-its first argument an optional JavaScript object representing the `transformer`. Such objects can contain any
-of the following methods:
+its first argument an optional JavaScript object representing the `transformer`. Such objects can
+contain any of the following methods:
 
 ### The `transformer`
 
@@ -656,7 +668,9 @@ of the following methods:
 ### The `writableStrategy` and `readableStrategy` queueing strategies
 
 The second and third optional argument to the `TransformStream()` constructor takes optional
-`writableStrategy` and `readableStrategy` queueing strategies. They are defined as outlined in the [readable](/streams/#the-queuingstrategy) and the [writable](/streams/#the-queuingstrategy-2) stream sections respectively.
+`writableStrategy` and `readableStrategy` queueing strategies. They are defined as outlined in the
+[readable](/streams/#the-queuingstrategy) and the [writable](/streams/#the-queuingstrategy-2) stream
+sections respectively.
 
 ### Transform stream code sample
 
@@ -749,44 +763,45 @@ The good news is that there is a
 available and a [polyfill](https://github.com/MattiasBuelens/web-streams-polyfill) targeted at
 production use.
 
-{% Aside 'gotcha' %}
-If ever possible load the polyfill conditionally and only if the built-in feature is not available.
-{% endAside %}
+{% Aside 'gotcha' %} If ever possible load the polyfill conditionally and only if the built-in
+feature is not available. {% endAside %}
 
 ## Demo
 
-The demo below shows readable, writable, and transform streams in action.
-It also includes examples of `pipeThrough()` and `pipeTo()` pipe chains,
-and also demonstrates `tee()`.
-You can optionally run the [demo](https://streams-demo.glitch.me/) in its own window
-or view the [source code](https://glitch.com/edit/#!/streams-demo?path=script.js).
+The demo below shows readable, writable, and transform streams in action. It also includes examples
+of `pipeThrough()` and `pipeTo()` pipe chains, and also demonstrates `tee()`. You can optionally run
+the [demo](https://streams-demo.glitch.me/) in its own window or view the
+[source code](https://glitch.com/edit/#!/streams-demo?path=script.js).
 
 {% Glitch 'streams-demo' %}
 
 ## Useful streams available in the browser
 
-There are a number of useful streams built right into the browser.
-You can easily create a `ReadableStream` from a blob.
-The [`Blob`](https://developer.mozilla.org/en-US/docs/Web/API/Blob) interface's [stream()](https://developer.mozilla.org/en-US/docs/Web/API/Blob/stream) method returns a `ReadableStream` which upon reading returns the data contained within the Blob.
-Also recall that a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) object is a specific kind of a `Blob`, and can be used in any context that a blob can.
+There are a number of useful streams built right into the browser. You can easily create a
+`ReadableStream` from a blob. The [`Blob`](https://developer.mozilla.org/en-US/docs/Web/API/Blob)
+interface's [stream()](https://developer.mozilla.org/en-US/docs/Web/API/Blob/stream) method returns
+a `ReadableStream` which upon reading returns the data contained within the Blob. Also recall that a
+[`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) object is a specific kind of a
+`Blob`, and can be used in any context that a blob can.
 
 ```js
 const readableStream = new Blob(['hello world'], { type: 'text/plain' }).stream();
 ```
 
 The streaming variants of `TextDecoder.decode()` and `TextEncoder.encode()` are called
-[`TextDecoderStream`](https://encoding.spec.whatwg.org/#interface-textdecoderstream)
-and [`TextEncoderStream`](https://encoding.spec.whatwg.org/#interface-textencoderstream) respectively.
+[`TextDecoderStream`](https://encoding.spec.whatwg.org/#interface-textdecoderstream) and
+[`TextEncoderStream`](https://encoding.spec.whatwg.org/#interface-textencoderstream) respectively.
 
 ```js
 const response = await fetch('https://streams.spec.whatwg.org/');
 const decodedStream = response.body.pipeThrough(new TextDecoderStream());
 ```
 
-Compressing or decompressing a file is easy with the [`CompressionStream`](https://wicg.github.io/compression/#compression-stream) and [`DecompressionStream`](https://wicg.github.io/compression/#decompression-stream)
-transform streams respectively.
-The code sample below shows how you can download the Streams spec, compress (gzip) it right in the browser,
-and write the compressed file directly to disk.
+Compressing or decompressing a file is easy with the
+[`CompressionStream`](https://wicg.github.io/compression/#compression-stream) and
+[`DecompressionStream`](https://wicg.github.io/compression/#decompression-stream) transform streams
+respectively. The code sample below shows how you can download the Streams spec, compress (gzip) it
+right in the browser, and write the compressed file directly to disk.
 
 ```js
 const response = await fetch('https://streams.spec.whatwg.org/');
@@ -800,9 +815,8 @@ compressedStream.pipeTo(writableStream);
 
 The [File System Access API](/file-system-access/)'s
 [`FileSystemWritableFileStream`](https://wicg.github.io/file-system-access/#filesystemwritablefilestream)
-and the experimental
-[`fetch()` request streams](/fetch-upload-streaming/#writable-streams) are examples
-of writable streams in the wild.
+and the experimental [`fetch()` request streams](/fetch-upload-streaming/#writable-streams) are
+examples of writable streams in the wild.
 
 The [Serial API](/serial/) makes heavy use of both readable and writable streams.
 
@@ -837,12 +851,12 @@ Finally, the [`WebSocketStream`](/websocketstream/) API integrates streams with 
 
 ```js
 const wss = new WebSocketStream(WSS_URL);
-const {readable, writable} = await wss.connection;
+const { readable, writable } = await wss.connection;
 const reader = readable.getReader();
 const writer = writable.getWriter();
 
 while (true) {
-  const {value, done} = await reader.read();
+  const { value, done } = await reader.read();
   if (done) {
     break;
   }
@@ -861,10 +875,9 @@ while (true) {
 
 ## Acknowledgements
 
-This article was reviewed by [Joe Medley](https://github.com/jpmedley). [Jake Archibald](https://jakearchibald.com/)'s
-blog posts have helped me a lot in understanding streams.
-Some of the code samples are
-inspired by GitHub user
+This article was reviewed by [Joe Medley](https://github.com/jpmedley).
+[Jake Archibald](https://jakearchibald.com/)'s blog posts have helped me a lot in understanding
+streams. Some of the code samples are inspired by GitHub user
 [@bellbind](https://gist.github.com/bellbind/f6a7ba88e9f1a9d749fec4c9289163ac)'s explorations and
 parts of the prose build heavily on the
 [MDN Web Docs on Streams](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API). The
