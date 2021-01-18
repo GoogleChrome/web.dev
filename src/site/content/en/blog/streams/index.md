@@ -435,6 +435,85 @@ const readableStream = new ReadableStream({
 })();
 ```
 
+## Readable byte streams
+
+For streams representing bytes, an extended version of the readable stream is provided to handle
+bytes efficiently, in particular by minimizing copies. Byte streams allow for bring-your-own-buffer
+(BYOB) readers to be acquired. The default implementation can give a range of different outputs such
+as strings or array buffers in the case of WebSockets, whereas byte streams guarantee byte output.
+In addition to that, being able to have BYOB readers has benefits in terms of stability. This is
+because if a buffer detaches, it can guarantee that one does not write into the same buffer twice,
+hence avoiding race conditions. BYOB readers can reduce the number of times the browser needs to run
+garbage collection, because it can reuse buffers.
+
+You can create a readable byte stream by passing an additional `type` parameter to the
+`ReadableStream()` constructor.
+
+```js
+new ReadableStream({ type: 'bytes' });
+```
+
+You can then get access to a `ReadableStreamBYOBReader` by setting the `mode` parameter accordingly:
+`ReadableStream.getReader({ mode: "byob" })`. This allows for more precise control over buffer
+allocation in order to avoid copies. To read from the byte stream, you need to call
+`ReadableStreamBYOBReader.read(view)`, where `view` is an
+[`ArrayBufferView`](https://developer.mozilla.org/en-US/docs/Web/API/ArrayBufferView).
+
+```js
+const reader = readableStream.getReader({ mode: 'byob' });
+
+let startingAB = new ArrayBuffer(1_024);
+const buffer = await readInto(startingAB);
+console.log('The first 1,024 bytes: ', buffer);
+
+async function readInto(buffer) {
+  let offset = 0;
+
+  while (offset < buffer.byteLength) {
+    const { value: view, done } = await reader.read(
+      new Uint8Array(buffer, offset, buffer.byteLength - offset),
+    );
+    buffer = view.buffer;
+    if (done) {
+      break;
+    }
+    offset += view.byteLength;
+  }
+
+  return buffer;
+}
+```
+
+The underlying source of a readable byte stream is given a `ReadableByteStreamController` to
+manipulate. Its `ReadableByteStreamController.enqueue()` method takes a `chunk` argument whose value
+is an `ArrayBufferView`. The property `ReadableByteStreamController.byobRequest` returns the current
+BYOB pull request, or null if there is none. Finally, the `ReadableByteStreamController.desiredSize`
+property returns the desired size to fill the controlled stream's internal queue.
+
+The following function returns readable byte streams that allow efficient zero-copy reading of a
+randomly generated array. Instead of using a predetermined chunk size of 1,024, it attempts to fill
+the developer-supplied buffer, allowing full control.
+
+```js
+const DEFAULT_CHUNK_SIZE = 1_024;
+
+function makeReadableByteStream() {
+  return new ReadableStream({
+    type: 'bytes',
+
+    async pull(controller) {
+      // Even when the consumer is using the default reader, the auto-allocation
+      // feature allocates a buffer and passes it to us via byobRequest.
+      const view = controller.byobRequest.view;
+      view = crypto.getRandomValues(view);
+      controller.byobRequest.respond(view.byteLength);
+    },
+
+    autoAllocateChunkSize: DEFAULT_CHUNK_SIZE,
+  });
+}
+```
+
 ## The mechanics of a writable stream
 
 A writable stream is a destination into which you can write data, represented in JavaScript by a
