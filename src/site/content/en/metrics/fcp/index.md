@@ -4,7 +4,7 @@ title: First Contentful Paint (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-06-15
+updated: 2021-01-18
 description: |
   This post introduces the First Contentful Paint (FCP) metric and explains
   how to measure it
@@ -37,7 +37,7 @@ screen.
 
 You'll notice that though some of the content has rendered, not all of it has
 rendered. This is an important distinction to make between _First_ Contentful
-Paint (FCP) and _[Largest Contentful Paint (FCP)](/Fcp/)_
+Paint (FCP) and _[Largest Contentful Paint (LCP)](/lcp/)_
 &mdash;which aims to measure when the page's main contents have finished
 loading.
 
