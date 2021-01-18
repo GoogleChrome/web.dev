@@ -108,19 +108,19 @@ you should be able to generate a report, broken down by individual metric
 instances, if you include the custom dimension in the report configuration.
 Since each instance will have a unique dimension value, no grouping will occur.
 
-For example the following histogram was generated from Google Analytics using
-the technique described above (since Google Analytics does not support quantile
-reporting in any of its standard reports). The data was queried using the
-[Analytics Reporting
-API](https://developers.google.com/analytics/devguides/reporting/core/v4) and
-displayed using a JavaScript data visualization library:
+The [Web Vitals Report](https://github.com/GoogleChromeLabs/web-vitals-report)
+is an example of this technique that uses Google Analytics. The code for the
+report is [open source](https://github.com/GoogleChromeLabs/web-vitals-report),
+so developers can reference it as an example of the techniques outlined in this
+section.
 
-![Largest Contentful Paint histogram](lcp-histogram.png)
+![Screenshots of the Web Vitals
+Report](https://user-images.githubusercontent.com/326742/101584324-3f9a0900-3992-11eb-8f2d-182f302fb67b.png)
 
 {% Aside %}
-  Tip: The [`web-vitals`](https://github.com/GoogleChrome/web-vitals) library
-  provides an ID for each metric instance reported making it easy to build
-  distributions in most analytics tools. See the
+  Tip: The [`web-vitals`](https://github.com/GoogleChrome/web-vitals)
+  JavaScript library provides an ID for each metric instance reported making
+  it possible to build distributions in most analytics tools. See the
   [`Metric`](https://github.com/GoogleChrome/web-vitals#metric) interface
   documentation for more details.
 {% endAside %}

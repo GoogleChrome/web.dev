@@ -20,8 +20,8 @@ feedback:
 set of low-level APIs that expose parts of the CSS rendering engine, and give
 developers access to the CSS Object Model. This is a huge
 change for the CSS ecosystem, as it enables developers to tell the browser how
-to read and parse custom CSS without waiting for browser vendors to natively
-implement these features. So exciting!
+to read and parse custom CSS without waiting for browser vendors to provide
+built-in support for these features. So exciting!
 
 One of the most exciting additions to CSS within the Houdini umbrella is the
 [Properties and Values
@@ -202,6 +202,34 @@ This will now enable that smooth gradient transition.
   </figcaption>
 </figure>
 -->
+
+## Multiple declarations
+
+Another neat feature of `@property` is that you can declare multiple
+new custom properties at the same time. For example, if you wanted
+to set multiple values with the same syntax but a unique `initial-value`,
+you could write something like:
+
+```css
+@property --colorPrimary,
+@property --colorSecondary,
+@property --colorText {
+  syntax: '<color>';
+  inherits: true;
+}
+
+@property --colorPrimary {
+  initial-value: magenta;
+}
+
+@property --colorSecondary {
+  initial-value: aliceblue;
+}
+
+@property --colorText {
+  initial-value: dimgray;
+}
+```
 
 ## Conclusion 
 

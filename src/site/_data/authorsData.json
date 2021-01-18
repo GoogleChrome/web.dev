@@ -15,6 +15,39 @@
       "en": "Human boy working on web standards at Google"
     }
   },
+  "aaronkrajeski": {
+    "name": {
+      "given": "Aaron",
+      "family": "Krajeski"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Chrome"
+    },
+    "country": "Canada",
+    "homepage": "http://aaronk.is//",
+    "twitter": "_mysteryDate",
+    "github": "mysteryDate",
+    "descriptions": {
+      "en": "Overly concerned with glowing rectangles"
+    }
+  },
+  "felixarntz": {
+    "name": {
+      "given": "Felix",
+      "family": "Arntz"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Developer Relations"
+    },
+    "country": "US",
+    "homepage": "https://felix-arntz.me",
+    "twitter": "felixarntz",
+    "description": {
+      "en": "Developer Programs Engineer at Google, contributing to the CMS ecosystem"
+    }
+  },
   "kaycebasques": {
     "name": {
       "given": "Kayce",
@@ -31,6 +64,13 @@
     "descriptions": {
       "en": "Technical Writer, Chrome DevTools & Lighthouse"
     }
+  },
+  "johyphenel": {
+    "name": {
+      "given": "Jo-el van",
+      "family": "Bergen"
+    },
+    "twitter": "johyphenel"
   },
   "sgomes": {
     "name": {
@@ -1352,7 +1392,7 @@
   },
   "jonchen": {
     "name": {
-      "given": "Jon",
+      "given": "Jonathan",
       "family": "Chen"
     },
     "twitter": "jonchenn",
@@ -1378,7 +1418,7 @@
     "twitter": "diklla",
     "github": "diklla"
   },
-   "bpj": {
+  "bpj": {
     "name": {
       "given": "Bart",
       "family": "Jarochowski"
@@ -1472,6 +1512,17 @@
       "en": "WebAssembly Advocadoer"
     }
   },
+  "masonfreed": {
+    "name": {
+      "given": "Mason",
+      "family": "Freed"
+    },
+    "twitter": "Mfreed777",
+    "github": "mfreed7",
+    "description": {
+      "en": "Developer on the Chrome team"
+    }
+  },
   "roeln": {
     "name": {
       "given": "Roel",
@@ -1510,12 +1561,138 @@
       "family": "Baca"
     },
     "twitter": "joan_baka"
-  },  
+  },
   "aranhacarlos": {
     "name": {
       "given": "Carlos",
       "family": "Aranha"
     },
     "github": "aranhacarlos"
+  },
+  "scottfriesen": {
+    "name": {
+      "given": "Scott",
+      "family": "Friesen"
+    },
+    "github": "scott-friesen"
+  },
+  "bartekn": {
+    "name": {
+      "given": "Bartek",
+      "family": "Nowierski"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Chrome Browser"
+    },
+    "description": {
+      "en": "Chrome Software Engineer"
+    }
+  },
+  "djuffin": {
+    "name": {
+      "given": "Eugene",
+      "family": "Zemtsov"
+    },
+    "github": "djuffin"
+  },
+  "giesau": {
+    "name": {
+      "given": "Stephan",
+      "family": "Giesau"
+    }
+  },
+  "mattgaunt": {
+    "name": {
+      "given": "Matt",
+      "family": "Gaunt"
+    }
+  },
+  "reillyg": {
+    "name": {
+      "given": "Reilly",
+      "family": "Grant"
+    },
+    "twitter": "reillyeon",
+    "github": "reillyeon",
+    "description": {
+      "en": "Software Engineer on Google Chrome focusing on hardware APIs"
+    }
+  },
+  "nateschloss": {
+    "name": {
+      "given": "Nate",
+      "family": "Schloss"
+    },
+    "github": "n8schloss",
+    "twitter": "n8schloss"
+  },
+  "andrewcomminos": {
+    "name": {
+      "given": "Andrew",
+      "family": "Comminos"
+    },
+    "github": "acomminos",
+    "twitter": "acomminos"
+  },
+  "bingler": {
+    "name": {
+      "given": "Steven",
+      "family": "Bingler"
+    },
+    "org": {
+      "name": "Google",
+      "unit": "Chrome"
+    },
+    "descriptions": {
+      "en": "Software engineer on Chrome's Privacy Sandbox."
+    },
+    "country": "US",
+    "github": "sbingler"
+  },
+  "andrewguan": {
+    "name": {
+      "given": "Andrew",
+      "family": "Guan"
+    },
+    "github": "AndrewKGuan"
+  },
+  "sorenbalko": {
+    "name": {
+      "given": "Sören",
+      "family": "Balko"
+    },
+    "description": {
+      "en": "CTO at Clipchamp"
+    },
+    "linkedin": "https://www.linkedin.com/in/sbalko/",
+    "github": "sbalko"
+  },
+  "rezakazemi": {
+    "name": {
+      "given": "Reza",
+      "family": "Kazemi"
+    },
+    "descriptions": {
+      "en": "Product Manager at Corel"
+    },
+    "org": {
+      "name": "Corel",
+      "unit": "Online Graphics"
+    }
+  }, 
+  "antoinebisch": {
+    "name": {
+      "given": "Antoine",
+      "family": "Bisch"
+    },
+    "github": "antoinebisch",
+    "country": "UK",
+    "org": {
+      "name": "Google"
+    },
+    "descriptions": {
+      "en": "Web Ecosystem Consultant"
+    }
   }
 }

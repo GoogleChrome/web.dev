@@ -5,7 +5,7 @@ authors:
   - thomassteiner
 description: The Shape Detection API detects faces, barcodes, and text in images.
 date: 2019-01-07
-updated: 2020-08-10
+updated: 2020-12-14
 tags:
   - blog
   - capabilities
@@ -24,10 +24,7 @@ feedback:
 {% Aside %}
   This API is part of the new
   [capabilities project](https://developers.google.com/web/updates/capabilities).
-  Barcode detection has launched in Chrome 83
-  on certified devices with
-  [Google Play Services](https://play.google.com/store/apps/details?id=com.google.android.gms)
-  installed.
+  Barcode detection has launched in Chrome 83.
   Face and text detection are available behind a flag. This post will be updated as
   the Shape Detection API evolves.
 {% endAside %}
@@ -40,7 +37,7 @@ and the Chrome for Android
 [photo picker](https://bugs.chromium.org/p/chromium/issues/detail?id=656015),
 it has become fairly easy to capture images or live video data from device
 cameras, or to upload local images. So far, this dynamic image data—as well as
-static images on a page—has been not been accessible by code, even though
+static images on a page—has not been accessible by code, even though
 images may actually contain a lot of interesting features such as faces,
 barcodes, and text.
 
@@ -55,7 +52,7 @@ optimized feature detectors such as the Android
 or the iOS generic feature detector,
 [`CIDetector`](https://developer.apple.com/documentation/coreimage/cidetector?language=objc).
 
-The [Shape Detection API][spec] exposes these native implementations through
+The [Shape Detection API][spec] exposes these implementations through
 a set of JavaScript interfaces. Currently, the supported features are face
 detection through the `FaceDetector` interface, barcode detection through the
 `BarcodeDetector` interface, and text detection (Optical Character
@@ -128,10 +125,7 @@ of use cases for all three features.
 ## How to use the Shape Detection API {: #use }
 
 {% Aside 'warning' %}
-  So far only barcode detection is available by default, starting in Chrome 83
-  on certified devices with
-  [Google Play Services](https://play.google.com/store/apps/details?id=com.google.android.gms)
-  installed,
+  So far only barcode detection is available by default, starting in Chrome 83,
   but face and text detection are available behind a flag.
   You can always use the Shape Detection API for local experiments by enabling the
   `#enable-experimental-web-platform-features` flag.
@@ -152,7 +146,7 @@ as an input (that is, either a
 
 For `FaceDetector` and `BarcodeDetector`, optional parameters can be passed
 to the detector's constructor that allow for providing hints to the
-underlying native detectors.
+underlying detectors.
 
 Please carefully check the support matrix in the
 [explainer](https://github.com/WICG/shape-detection-api#overview) for an
@@ -250,10 +244,10 @@ try {
 ## Feature detection {: #featuredetection }
 
 Purely checking for the existence of the constructors to feature detect the
-Shape Detection API doesn't suffice, as Chrome on Linux and Chrome OS
-currently still expose the detectors, but they are known to not work
-([bug](https://crbug.com/920961)). As a temporary measure, we instead
-recommend a *defensive programming* approach by doing feature detection
+Shape Detection API doesn't suffice.
+The presence of an interface doesn't tell you whether the underlying platform supports the feature.
+This is working [as intended](https://crbug.com/920961).
+It's why we recommend a *defensive programming* approach by doing feature detection
 like this:
 
 ```js
@@ -262,6 +256,50 @@ const supported = await (async () => 'FaceDetector' in window &&
     .then(_ => true)
     .catch(e => e.name === 'NotSupportedError' ? false : true))();
 ```
+
+The `BarcodeDetector` interface has been updated to include a `getSupportedFormats()` method
+and similar interfaces have been proposed
+[for `FaceDetector`](https://github.com/WICG/shape-detection-api/issues/53)
+and
+[for `TextDetector`](https://github.com/WICG/shape-detection-api/issues/57).
+
+```js
+await BarcodeDetector.getSupportedFormats();
+/* On a macOS computer logs
+  [
+    "aztec",
+    "code_128",
+    "code_39",
+    "code_93",
+    "data_matrix",
+    "ean_13",
+    "ean_8",
+    "itf",
+    "pdf417",
+    "qr_code",
+    "upc_e"
+  ]
+*/
+```
+
+This allows you to detect the specific feature you need, for example, QR code scanning:
+
+```js
+if (('BarcodeDetector' in window) &&
+    ((await BarcodeDetector.getSupportedFormats()).includes('qr_code'))) {
+  console.log('QR code scanning is supported.');
+}
+```
+
+This is better than hiding the interfaces because even across platforms, capabilities may vary
+and so developers should be encouraged to check for precisely the capability
+(such as a particular barcode format or facial landmark) they require.
+
+## Operating system support {: #os-support}
+
+Barcode detection is available on macOS, Chrome OS, and Android. [Google Play
+Services](https://play.google.com/store/apps/details?id=com.google.android.gms)
+are required on Android.
 
 ## Best practices {: #bestpractices}
 
@@ -285,7 +323,7 @@ existence and the location of text may be recognized, but not text contents.
   This API is an optimization and not something guaranteed to be available
   from the platform for every user. Developers are expected to combine this
   with their own [image recognition code](https://github.com/mjyc/opencv) and
-  take advantage of the native optimization when it is available.
+  take advantage of the platform optimization when it is available.
 {% endAside %}
 
 ## Feedback {: #feedback }

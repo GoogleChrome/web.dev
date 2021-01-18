@@ -5,17 +5,17 @@ authors:
   - robdodson
 date: 2018-11-18
 description: |
-  Native HTML elements such as <button> or <input> have keyboard accessibility
+  Standard HTML elements such as <button> or <input> have keyboard accessibility
   built-in for free. If you're building custom interactive components, use
   tabindex to ensure that they're keyboard accessible.
 ---
 
-Native HTML elements such as `<button>` or `<input>` have keyboard accessibility
+Standard HTML elements such as `<button>` or `<input>` have keyboard accessibility
 built in for free. If you're building _custom_ interactive components, however,
 use the `tabindex` attribute to ensure that they're keyboard accessible.
 
 {% Aside %}
-Whenever possible, use a native HTML element rather than building your
+Whenever possible, use a built-in HTML element rather than building your
 own custom version. `<button>`, for example, is very easy to style and
 already has full keyboard support. This will save you from needing to manage
 `tabindex` or add semantics with ARIA.
@@ -102,7 +102,7 @@ results of the "No element has a [tabindex] value greater than 0" audit.
 ## Create accessible components with "roving `tabindex`"
 
 If you're building a complex component, you may need to add additional keyboard
-support beyond focus. Consider the native `select` element. It is focusable and
+support beyond focus. Consider the built-in `select` element. It is focusable and
 you can use the arrow keys to expose additional functionality (the selectable
 options).
 

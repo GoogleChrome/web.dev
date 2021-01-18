@@ -31,7 +31,7 @@ Thanks to [CSS `::marker`](https://www.w3.org/TR/css-lists-3/#marker-pseudo) we 
 
 ## Browser compatibilty
 
-When [Chromium 86 releases](https://www.chromestatus.com/features/schedule), `::marker` will be supported in Firefox for desktop and Android, desktop Safari and iOS Safari, and Chromium-based desktop and Android browsers. See MDN's [Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/CSS/::marker#Browser_compatibility) table for updates.
+`::marker` is supported in Firefox for desktop and Android, desktop Safari and iOS Safari (but only the `color` and `font-*` properties, see [Bug 204163](https://bugs.webkit.org/show_bug.cgi?id=204163)), and Chromium-based desktop and Android browsers. See MDN's [Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/CSS/::marker#Browser_compatibility) table for updates.
 
 ## Pseudo-elements
 Consider the following essential HTML unordered list:

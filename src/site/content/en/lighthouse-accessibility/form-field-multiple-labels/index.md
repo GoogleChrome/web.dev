@@ -11,7 +11,7 @@ date: 2019-10-17
 
 {% include 'content/lighthouse-accessibility/accessible-names.njk' %}
 
-`<label>` elements are a common way to assign names to native controls.
+`<label>` elements are a common way to assign names to controls.
 If you unintentionally associate multiple labels with a single control,
 you'll create inconsistent behavior across browsers and assistive technologies:
 some will read the first label, some will read the last label,

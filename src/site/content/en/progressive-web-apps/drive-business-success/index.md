@@ -116,8 +116,8 @@ improvement in search page loading time, add-to-card count increased by 0.5%.
 ### The business impact of an installable website {: #impact-installable }
 
 Why would you want a user to install your PWA? To make it easier to come back
-to your site. Where a native app install would add at least three steps
-(redirection to Play Store, downloading, relaunching the native app at the
+to your site. Where an Android app install would add at least three steps
+(redirection to Play Store, downloading, relaunching the Android app at the
 top of the funnel), PWA installation is done seamlessly in one click, and it
 doesn't take the user away from the current conversion funnel.
 
@@ -130,13 +130,13 @@ Discover-Launch-Switch, and making your PWA installable is the key to
 unlocking access.
 
 In addition to being accessible from familiar discovery and launch surfaces
-on their device, a PWA launches exactly like a native app: in a standalone
-experience, separate from the browser. Additionally, it benefits from native
+on their device, a PWA launches exactly like a platform-specific app: in a standalone
+experience, separate from the browser. Additionally, it benefits from OS-level
 device services such as the app switcher and settings.
 
 Users who install your PWA are likely your most engaged users, with better
 engagement metrics than casual visitors, including more repeat visits,
-longer time on site and higher conversion rates, often at parity with native
+longer time on site and higher conversion rates, often at parity with platform-specific
 app users on mobile devices.
 
 To make your PWA installable, it needs to meet the
@@ -167,7 +167,7 @@ You can start promoting your PWA install to all your users or use a more
 cautious approach by only experimenting with a small group of users.
 
 After a few days or weeks you should already have some data to measure the
-impact on your business. What is the behaviour of people coming from the
+impact on your business. What is the behavior of people coming from the
 installed shortcut? Do they engage more, do they convert more?
 
 To segment users who installed your PWA, track the
@@ -179,7 +179,7 @@ analytics tracking.
 ![Measure the value of installation](img-8.jpg)
 
 The [case study of Weekendesk][twg-weekendest] is interesting: they propose
-Installation on the second page visited to maximise the install rate, and
+Installation on the second page visited to maximize the install rate, and
 they observed that customers coming back via the icon on the home screen were
 more than twice as likely to book a stay with them.
 
@@ -189,7 +189,7 @@ Installation is a great way to make people return on your site and improve
 your customer loyalty. You can also think of personalizing the experience for
 those premium users.
 
-Even if you already have a native app, you may test to propose your app first
+Even if you already have a platform-specific app, you may test to propose your app first
 then push the PWA later for those who declined or did not engage with the app
 install banner. Some of your users that are "semi-engaged" may not meet the
 threshold for an app store-based install. This cohort can be addressed with
@@ -205,7 +205,7 @@ that network reliability is a considerable opportunity, especially in
 markets with unreliable or expensive mobile data like India, Brazil, Mexico,
 or Indonesia.
 
-When a native app, installed from an app store, is launched, users expect
+When an app installed from an app store is launched, users expect
 it to open, regardless of whether they're connected to the internet.
 Progressive Web Apps should be no different.
 
@@ -272,7 +272,7 @@ re-engaging users with abandoned carts.
 ## The P in PWA: a progressive launch, feature by feature {: #feature-by-feature }
 
 PWAs are modern websites that benefit from the massive reach of the web,
-combined with all the user-friendly features that users love in native apps.
+combined with all the user-friendly features that users love in Android/iOS/desktop apps.
 They leverage a set of best practices and modern web APIs, that can be
 implemented independently depending on your business specificities and
 priorities.

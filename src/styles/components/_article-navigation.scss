@@ -20,6 +20,10 @@
   @include bp(sm) {
     flex-direction: row;
   }
+
+  @media print {
+    display: none;
+  }
 }
 
 .w-article-navigation__link {

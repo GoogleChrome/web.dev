@@ -683,7 +683,7 @@ if you need more or less space.
 Shortcode object fields allow for modifying how the embed is presented:
 
 * {`string | string[]`} `allow?` List of feature policies of an IFrame either as an array of strings, or as a `;` separated list. By default the following policies are enabled:
-  * `'camera', 'clipboard', 'clipboard-read', 'clipboard-write', 'geolocation', 'encrypted-media', 'microphone', 'midi', 'vr'`
+  * `'camera', 'clipboard-read', 'clipboard-write', 'encrypted-media', 'geolocation', 'microphone', 'midi'`
 * {`string`} `id` ID of Glitch project.
 * {`string`} `path?` Lets you specify which source code file to show.
 * {`number`} `previewSize?` Defines what percentage of the embed should be dedicated to the preview, default is 100.

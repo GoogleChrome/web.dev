@@ -12,6 +12,7 @@ tags:
   - storage
   - indexeddb
   - cachestorage
+  - memory
 hero: hero.jpg
 alt: Stack of shipping containers
 feedback:
@@ -70,7 +71,7 @@ reading and writing files to a sandboxed file system. While it is asynchronous,
 it is not recommended because it is
 [only available in Chromium-based browsers][caniuse-fs].
 
-The [Native File System API](/native-file-system/) was designed to make it
+The [File System Access API](/file-system-access/) was designed to make it
 easy for users to read and edit files on their local file system. The user
 must grant permission before a page can read or write to any local file, and
 permissions are not persisted across sessions.

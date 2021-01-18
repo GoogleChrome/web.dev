@@ -27,6 +27,7 @@ eleventyComputed:
     <link rel="preconnect" href="//firebaseinstallations.googleapis.com" crossorigin="" />
     <link rel="preconnect" href="//webdev.imgix.net" crossorigin="" />
 
+    <link rel="preload" as="style" href="{{ resourceCSS.path | stripQueryParamsDev }}" />
     {# We only preload Material Icons because the site can't render properly without them. #}
     {# For Google Sans we use font-display: swap because preloading too many fonts can hurt performance. #}
     {# https://www.zachleat.com/web/preload/ #}
@@ -109,7 +110,7 @@ eleventyComputed:
       <web-profile-switcher-container></web-profile-switcher-container>
     </web-header>
 
-    <web-side-nav class="unresolved">
+    <web-side-nav class="unresolved" logo="/images/lockup.svg">
       <a
         href="/learn/"
         class="web-side-nav__link gc-analytics-event"

@@ -8,6 +8,10 @@
 
 .w-footer {
   border-top: 1px solid $GREY_300;
+
+  @media print {
+    display: none;
+  }
 }
 
 .w-footer__license {

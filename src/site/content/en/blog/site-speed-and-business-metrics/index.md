@@ -169,7 +169,7 @@ options.
 *   Remove non-critical JavaScript code that does not impact the user experience
     and which you can do without for the purpose of the test (for example,
     certain third-party libraries)
-*   Implement [native lazy loading](/native-lazy-loading/) which isn't supported
+*   Implement [browser-level lazy loading](/native-lazy-loading/) which isn't supported
     by all browsers but may still improve performance significantly where
     supported
 *   Remove non-critical analytics tags or load them asynchronously

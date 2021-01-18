@@ -97,20 +97,20 @@ At present, there are ultimately two schools of thought with regards to how a ga
 - Monetizing the games directly
 - Treating them as an acquisition channel
 
-Treating web games as an acquisition channel means leveraging the web version of your native game as a mechanism to get your players hooked and convincing them to download your larger native binary. You then generate revenue with the native platform's built-in payment and billing backends.
+Treating web games as an acquisition channel means leveraging the web version of your iOS/Android/desktop game as a mechanism to get your players hooked and convincing them to download your larger iOS/Android/desktop binary. You then generate revenue with the iOS/Android/desktop platform's built-in payment and billing backends.
 
-Monetization is usually a mixture of advertising and microtransactions. There is still work to be done for the web to compete with native mobile platforms in game advertising. For example, formats like Rewarded Video Ads have been extremely popular for native mobile games for several years and yet we're only now seeing ad networks deploy these formats on the web.
+Monetization is usually a mixture of advertising and microtransactions. There is still work to be done for the web to compete with mobile platforms in game advertising. For example, formats like Rewarded Video Ads have been extremely popular for mobile games for several years and yet we're only now seeing ad networks deploy these formats on the web.
 
 Nonetheless, there are game developers who continue to be successful on the open web through advertising via traditional banner ads and interstitial video ads. Take a look at [Adsense for Games](https://support.google.com/adsense/answer/1705831) for more information on these formats.
 
-For microtransactions, the web offers complete flexibility due to the limitless number of payment methods that can be implemented. However this quality is a double-edged sword. The negative side of this is that players have less implicit trust towards a new website they discover versus the familiarity of the native mobile store payment methods.
+For microtransactions, the web offers complete flexibility due to the limitless number of payment methods that can be implemented. However this quality is a double-edged sword. The negative side of this is that players have less implicit trust towards a new website they discover versus the familiarity of the platform-specific mobile store payment methods.
 
 One solution that brings a more consistent payment UI to the web is the [Payment Request API](https://developers.google.com/web/fundamentals/payments/). This API invokes a UI that is shown by the browser and streamlines the acquisition of payment details such as credit cards and billing addresses. However, acquiring payment details is just the first step of making a transaction. You need a backend billing platform as well.
 
 ## The future
 
-We've seen several surprisingly successful web games over the past few years. Slither.io has built a mixed web and native business that demonstrates the tremendous reach and viral growth opportunity that the web offers. Portals such as [Poki.com](https://poki.com/) are innovating in their user experience and releasing new games every day including titles that match the fidelity of their mobile counterparts, such as Subway Surfers or Crossy Road.
+We've seen several surprisingly successful web games over the past few years. Slither.io has built a mixed web and platform-specific business that demonstrates the tremendous reach and viral growth opportunity that the web offers. Portals such as [Poki.com](https://poki.com/) are innovating in their user experience and releasing new games every day including titles that match the fidelity of their mobile counterparts, such as Subway Surfers or Crossy Road.
 
-Furthermore, if you look outside of the open web you can see that web games are already taking off. Closed ecosystems such as WeChat and LINE offer satisfying games which aren't playable on the open web but which are built on top of web technologies like HTML5 and WebViews. This is a clear sign that the web has reached a level of fidelity that's capable of rivaling native mobile games–perhaps not in a textbook definition of fidelity but in a more important metric: player attention.
+Furthermore, if you look outside of the open web you can see that web games are already taking off. Closed ecosystems such as WeChat and LINE offer satisfying games which aren't playable on the open web but which are built on top of web technologies like HTML5 and WebViews. This is a clear sign that the web has reached a level of fidelity that's capable of rivaling platform-specific mobile games–perhaps not in a textbook definition of fidelity but in a more important metric: player attention.
 
 

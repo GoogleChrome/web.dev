@@ -33,7 +33,7 @@ export class BaseModalElement extends BaseElement {
       open: {type: Boolean, reflect: true},
       animatable: {type: Boolean, reflect: true},
       overflow: {type: Boolean, reflect: true},
-      parentModal: {attribute: 'parent-modal', reflect: true},
+      parentModal: {type: String, reflect: true, attribute: 'parent-modal'},
     };
   }
 
@@ -43,8 +43,10 @@ export class BaseModalElement extends BaseElement {
     this.open_ = false;
     this.animatable = false;
     this.overflow = false;
+    /** @type HTMLElement */
     this._triggerElement = null;
     this._parent = null;
+    this.parentModal = null;
 
     this.onKeyUp = this.onKeyUp.bind(this);
     this.onResize = this.onResize.bind(this);
@@ -82,7 +84,7 @@ export class BaseModalElement extends BaseElement {
     this.open_ = val;
     if (this.open_) {
       // Must get trigger before manipulating the DOM.
-      this._triggerElement = document.activeElement;
+      this._triggerElement = /** @type HTMLElement */ (document.activeElement);
       // Add keyup event listener to this element rather than document
       // so a nested modal doesn't close its parent modal when the user presses Esc.
       this.addEventListener('keyup', this.onKeyUp);

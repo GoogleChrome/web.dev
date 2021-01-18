@@ -16,6 +16,7 @@ tags:
   - case-study
   - network
   - service-worker
+  - memory
   - amp
 feedback:
   - api

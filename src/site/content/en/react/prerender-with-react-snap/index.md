@@ -24,7 +24,7 @@ Here's a comparison of the same application with and without pre-rendering
 loaded on a simulated 3G connection and mobile device:
 
 <figure class="w-figure">
-  <img class="w-screenshot" src="./compare.gif" alt="A side by side loading comparsion. The version using pre-rendering loads 4.2 seconds faster.">
+  <img class="w-screenshot" src="./compare.gif" alt="A side by side loading comparison. The version using pre-rendering loads 4.2 seconds faster.">
 </figure>
 
 {% Aside %}
@@ -73,7 +73,7 @@ Then add a `postbuild` script in your `package.json`:
 }
 ```
 
-This would automatically run the `react-snap` command everytime a new build of
+This would automatically run the `react-snap` command every time a new build of
 the applications made (`npm build`).
 
 {% Aside %}

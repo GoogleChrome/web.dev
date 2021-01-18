@@ -27,7 +27,7 @@ import {html} from 'lit-element';
 class EventCarousel extends BaseStateElement {
   static get properties() {
     return {
-      eventDays: Object,
+      eventDays: {type: Object},
     };
   }
 

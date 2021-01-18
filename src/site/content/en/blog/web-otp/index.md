@@ -4,7 +4,7 @@ subhead: Help users with OTPs received through SMS
 authors:
   - agektmr
 date: 2019-10-07
-updated: 2020-09-14
+updated: 2020-12-09
 hero: hero.png
 alt: A drawing of a woman using OTP to log in to a web app.
 
@@ -20,6 +20,11 @@ tags:
 feedback:
   - api
 ---
+
+{% Aside 'gotchas' %}
+If you want to learn more general SMS OTP form best practices including Web OTP
+API, checkout [SMS OTP form best practices](/sms-otp-form).
+{% endAside %}
 
 ## What is the Web OTP API?
 
@@ -59,7 +64,7 @@ and
 [Safari](https://developer.apple.com/documentation/security/password_autofill/enabling_password_autofill_on_an_html_input_element).
 
 The Web OTP API lets your app receive specially-formatted messages bound to
-your app's origin. From this, you can programmatically obtain an OTP from an SMS
+your app's domain. From this, you can programmatically obtain an OTP from an SMS
 message and verify a phone number for the user more easily.
 
 {% Aside 'warning' %}
@@ -174,19 +179,16 @@ doesn't matter who the sender is when using the Web OTP API.
 1. Send your phone the following SMS text message from the another phone.
 
 ```text
+Your OTP is: 123456.
+
 @web-otp.glitch.me #12345
 ```
 
 Did you receive the SMS and see the prompt to enter the code to the input area?
 That is how the Web OTP API works for users.
 
-{% Aside 'caution' %}
-* If the sender's phone number is included in the receiver's contact list, this API
-  will not be triggered due to the design of the underlying [SMS
-User Consent  API](https://developers.google.com/identity/sms-retriever/user-consent/request#2_start_listening_for_incoming_messages).
-* If you are using a work profile on your Android device and the Web OTP does
-  not work, try installing and using Chrome on your personal profile instead
-  (i.e. the same profile in which you receive SMS messages).
+{% Aside 'gotcha' %}
+If the dialog doesn't appear for you, check out [the FAQ](#no-dialog).
 {% endAside %}
 
 Using the Web OTP API consists of three parts:
@@ -368,9 +370,10 @@ know before using it. The message must be sent after
 where `get()` was called. Finally, the message must adhere to the following
 formatting:
 
-* The message begins with (optional) human-readable text leaving the last line
+* The message begins with (optional) human-readable text that contains a four to ten
+  character alphanumeric string with at least one number leaving the last line
   for the URL and the OTP.
-* The host part of the URL of the website that invoked the API must be preceded
+* The domain part of the URL of the website that invoked the API must be preceded
   by `@`.
 * The URL must contain a pound sign ('`#`') followed by the OTP.
 
@@ -398,6 +401,17 @@ You may also fork it and create your version:
 } %}
 
 ## FAQ
+
+### The dialog doesn't appear though I'm sending a properly formatted message. What's going wrong? {: #no-dialog}
+
+There are a couple of caveats when testing the API:
+* If the sender's phone number is included in the receiver's contact list, this
+  API will not be triggered due to the design of the underlying [SMS User
+  Consent
+  API](https://developers.google.com/identity/sms-retriever/user-consent/request#2_start_listening_for_incoming_messages).
+* If you are using a work profile on your Android device and the Web OTP does
+  not work, try installing and using Chrome on your personal profile instead
+  (i.e. the same profile in which you receive SMS messages).
 
 ### Where do I report bugs in Chrome's implementation?
 

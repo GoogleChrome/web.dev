@@ -21,7 +21,7 @@ with. Users should never need to wait for download. Who likes it when they press
 play and nothing happens?
 
 You've no doubt consumed video on your own device. Which means that nothing in
-that last paragraph suprises you. Now you need to learn how to put a video or
+that last paragraph surprises you. Now you need to learn how to put a video or
 other media file on your own website. The technical requirements of that work
 should be in service to the user experience. Those technical requirements are:
 
@@ -49,7 +49,7 @@ There are four approaches you can take displaying video on a site.
 
 This site only covers the second option, at least for now. The last item,
 building a media streaming application is beyond the scope of this site.
-Frankly, it requries a team of expert programmers and thousands of human-hours
+Frankly, it requires a team of expert programmers and thousands of human-hours
 of work. Unless your goal is to enter that market as a competitor, you're better
 off using one of the other methods.
 

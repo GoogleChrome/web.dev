@@ -67,18 +67,21 @@ class TableOfContents extends BaseStateElement {
   }
 
   render() {
+    const content = /** @type TemplateStringsArray */ (
+      /** @type ReadonlyArray<string> */ ([this.tocHTML])
+    );
     return html`
       <div class="w-toc__label">
         <span>In this article</span>
         <button
           class="w-button w-button--secondary w-button--icon"
           data-icon="close"
-          aria-close="Close Table of Contents"
+          aria-label="Close Table of Contents"
           @click="${closeToC}"
         ></button>
       </div>
       <div class="w-toc__content">
-        ${html([this.tocHTML])}
+        ${html(content)}
       </div>
     `;
   }

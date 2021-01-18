@@ -84,7 +84,7 @@ interacting with the invisible DOM table, giving us the ability to attach event
 listeners and rely on the browser's focus management.
 
 By keeping the DOM element in the canvas, we are able to tap into browsers
-native accessibility features. For example: by setting `role="grid"` on our game
+built-in accessibility features. For example: by setting `role="grid"` on our game
 table, screen readers can announce the row and column of the focused cell
 without us having to implement that.
 

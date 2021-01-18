@@ -7,7 +7,6 @@
 
 import {store} from './store';
 import {normalizeUrl, getCanonicalPath} from './urls';
-import './utils/underscore-import-polyfill';
 
 /**
  * This is the combined CSS/JS/layout version of web.dev from the initial HTML of the loaded page.

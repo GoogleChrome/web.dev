@@ -19,7 +19,7 @@ explains [the different ways you can support AMP in a Next.js app](#strategies),
 then helps you [decide which approach is best for you](#guidance).
 
 The intended audience for this guide is a web developer who has decided to use Next.js but is
-unsure of whether to support AMP. 
+unsure of whether to support AMP.
 
 {% Aside %}
   This guide was not written for web developers who have decided to use AMP but are unsure of what
@@ -63,7 +63,7 @@ framework but rather a server-side templating engine for generating AMP pages.
 If you're serious about load performance, an AMP-only page could be a good way to make sure
 that your page gets fast and stays fast. But here's the catch: in order to guarantee fastness,
 AMP prohibits certain architectural patterns and HTML elements that often lead to slow pages.
-For example, AMP doesn't allow custom synchronous JavaScript because 
+For example, AMP doesn't allow custom synchronous JavaScript because
 [render-blocking resources][blockers] are a common cause of slow page loads.
 
 In order to understand whether an AMP-only approach is right for you, you need to figure out
@@ -87,7 +87,7 @@ two versions of each page.
 
 AMP guarantees that your site gets fast and stays fast by enforcing patterns that lead to
 fastness and prohibiting patterns that lead to slowness. AMP HTML and AMP Caches are the two
-main ways that AMP guarantess fastness. But before adopting AMP you should make sure that it
+main ways that AMP guarantees fastness. But before adopting AMP you should make sure that it
 can support all of your site's requirements.
 
 [intro]: /performance-as-a-default-with-nextjs

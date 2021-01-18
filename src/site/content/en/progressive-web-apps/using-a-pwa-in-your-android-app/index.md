@@ -161,7 +161,7 @@ Finally, move your application from the closed test channel to production!
 [4]: https://developer.android.com/reference/android/webkit/WebView
 [5]: https://cordova.apache.org/
 [6]: /contact-picker/
-[7]: /native-file-system/
+[7]: /file-system-access/
 [8]: https://developers.google.com/web/updates/2019/02/using-twa
 [9]: https://play.google.com/about/developer-content-policy/
 [10]: https://github.com/GoogleChromeLabs/bubblewrap

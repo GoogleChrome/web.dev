@@ -32,17 +32,17 @@ were about 300% higher** for wake lock users compared to all users.
 ## The retired iOS and Android apps
 
 Released to [much fanfare](https://consumergoods.com/betty-crocker-launches-cookbook-app) in 2014,
-Betty Crocker recently took their native apps out of the Apple App Store and the Google Play Store
+Betty Crocker recently took their apps out of the Apple App Store and the Google Play Store
 after they had been deprioritized.
 For a long time, the Betty Crocker team has preferred adding new features to the mobile site
-instead of the native apps.
-The technical platform the native apps were created on was outdated,
+instead of the iOS/Android apps.
+The technical platform the iOS/Android apps were created on was outdated,
 and the business did not have the resources
 to support updating and maintaining the apps moving forward.
 The web app also was objectively way bigger traffic-wise,
 more modern, and easier to enhance.
 
-The native apps did have one *killer feature*, though, that their users loved:
+The iOS/Android apps did have one *killer feature*, though, that their users loved:
 
 > Millennial cooking pro tip: the [@BettyCrocker](https://twitter.com/BettyCrocker) mobile app
   doesn't dim or lock when you're following a recipe.
@@ -57,7 +57,7 @@ The native apps did have one *killer feature*, though, that their users loved:
 
 When cooking with a device, there is nothing more frustrating
 than having to touch the screen with messy hands or even your nose when the screen turns off.
-Betty Crocker asked themselves how they could port the killer feature of their native app
+Betty Crocker asked themselves how they could port the killer feature of their iOS/Android apps
 over to the web app.
 This is when they learned about
 [Project Fugu](https://developers.google.com/web/updates/capabilities) and the
@@ -67,7 +67,7 @@ This is when they learned about
 
 The Wake Lock API provides a way to prevent the device
 from dimming or locking the screen.
-This capability enables new experiences that, until now, required a native app.
+This capability enables new experiences that, until now, required an iOS/Android app.
 The Wake Lock API reduces the need for hacky and potentially power-hungry workarounds.
 
 ### Requesting a wake lock
@@ -123,7 +123,7 @@ After the prototype proved useful, they designed a
 [Vue.js component](https://vuejs.org/v2/guide/components.html)
 that could be shared across all their brands ([BettyCrocker](https://www.bettycrocker.com/),
 [Pillsbury](https://www.pillsbury.com/), and [Tablespoon](https://www.tablespoon.com/)).
-Even though only Betty Crocker had a native app,
+Even though only Betty Crocker had iOS and Android apps,
 the three sites do have a shared code base,
 so they were able to implement the component once, and deploy it everywhere,
 as shown in the screenshots below.

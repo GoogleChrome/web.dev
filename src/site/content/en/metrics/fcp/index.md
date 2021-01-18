@@ -4,7 +4,7 @@ title: First Contentful Paint (FCP)
 authors:
   - philipwalton
 date: 2019-11-07
-updated: 2020-06-15
+updated: 2021-01-18
 description: |
   This post introduces the First Contentful Paint (FCP) metric and explains
   how to measure it
@@ -54,8 +54,7 @@ available in the following tools:
   Report](https://developers.google.com/web/tools/chrome-user-experience-report)
 - [Search Console (Speed
   Report)](https://webmasters.googleblog.com/2019/11/search-console-speed-report.html)
-- [Firebase Performance
-  Monitoring](https://firebase.google.com/docs/perf-mon/get-started-web) (beta)
+- [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals)
 
 ### Lab tools
 
@@ -65,51 +64,71 @@ available in the following tools:
 
 ### Measure FCP in JavaScript
 
-The easiest way to measure FCP (as well as all Web Vitals [field
-metrics](/vitals/#field-tools-to-measure-core-web-vitals)
-is with the [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals),
-which wraps all the complexity of manually measuring FCP into a single
-function:
+To measure FCP in JavaScript, you can use the [Paint Timing
+API](https://w3c.github.io/paint-timing/). The following example shows how to
+create a
+[`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
+that listens for a `paint` entry with the name `first-contentful-paint` and logs
+it to the console.
+
+```js
+new PerformanceObserver((entryList) => {
+  for (const entry of entryList.getEntriesByName('first-contentful-paint')) {
+    console.log('FCP candidate:', entry.startTime, entry);
+  }
+}).observe({type: 'paint', buffered: true});
+```
+
+{% Aside 'warning' %}
+
+  This code shows how to log the `first-contentful-paint` entry to the console,
+  but measuring FCP in JavaScript is more complicated. See below for details:
+
+{% endAside %}
+
+In the above example, the logged `first-contentful-paint` entry will tell you
+when the first contentful element was painted. However, in some cases this entry
+is not valid for measuring FCP.
+
+The following section lists the differences between what the API reports and how
+the metric is calculated.
+
+#### Differences between the metric and the API
+
+- The API will dispatch a `first-contentful-paint` entry for pages loaded in a
+  background tab, but those pages should be ignored when calculating FCP (first
+  paint timings should only be considered if the page was in the foreground the
+  entire time).
+- The API does not report `first-contentful-paint` entries when the page is
+  restored from the [back/forward cache](/bfcache/#impact-on-core-web-vitals),
+  but FCP should be measured in these cases since users experience them as
+  distinct page visits.
+- The API [may not report paint timings from cross-origin
+  iframes](https://w3c.github.io/paint-timing/#:~:text=cross-origin%20iframes),
+  but to properly measure FCP you should consider all frames. Sub-frames can use
+  the API to report their paint timings to the parent frame for aggregation.
+
+Rather than memorizing all these subtle differences, developers can use the
+[`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals) to
+measure FCP, which handles these differences for you (where possible):
 
 ```js
 import {getFCP} from 'web-vitals';
 
-// Measure and log the current FCP value,
-// any time it's ready to be reported.
+// Measure and log FCP as soon as it's available.
 getFCP(console.log);
 ```
 
-To manually measure FCP, you can use the [Paint Timing
-API](https://w3c.github.io/paint-timing/). The following example shows how to
-create a
-[`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
-that listens for paint timing entries and logs the start time of the
-`first-contentful-paint` entry to the console:
+You can refer to [the source code for
+`getFCP()`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getFCP.ts)
+for a complete example of how to measure FCP in JavaScript.
 
-{% set entryType = 'paint' %}
-{% set entryCallback = 'onPaintEntry' %}
-
-```js
-{% include 'content/metrics/first-hidden-time.njk' %}
-{% include 'content/metrics/send-to-analytics.njk' %}
-{% include 'content/metrics/performance-observer-try.njk' %}
-  function onPaintEntry(entry, po) {
-    // Only report FCP if the page wasn't hidden prior to
-    // the entry being dispatched. This typically happens when a
-    // page is loaded in a background tab.
-    if (entry.name === 'first-contentful-paint' &&
-        entry.startTime < firstHiddenTime) {
-      // Disconnect the observer.
-      po.disconnect();
-
-      // Report the FCP value to an analytics endpoint.
-      sendToAnalytics({fcp: entry.startTime});
-    }
-  }
-
-{% include 'content/metrics/performance-observer-init.njk' %}
-{% include 'content/metrics/performance-observer-catch.njk' %}
-```
+{% Aside %}
+  In some cases (such as cross-origin iframes) it's not possible to measure FCP
+  in JavaScript. See the
+  [limitations](https://github.com/GoogleChrome/web-vitals#limitations) section
+  of the `web-vitals` library for details.
+{% endAside %}
 
 ## What is a good FCP score?
 

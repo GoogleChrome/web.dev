@@ -216,7 +216,30 @@ redirects:
 - from: /image-support-for-async-clipboard
   to: /async-clipboard
 
+# Redirect for renamed Native File System API
+- from: /native-file-system
+  to: /file-system-access
+
 # Redirect to follow consistent Fugu API naming scheme
 
 - from: /wakelock
   to: /wake-lock
+
+# Redirects for performance content
+
+- from: /native-lazy-loading
+  to: /browser-level-image-lazy-loading
+
+# Redirects for vanity URLs
+- from: /scale-on-web
+  to: /tags/scale-on-web
+
+# Redirect for the renamed WebTransport API.
+- from: /quictransport
+  to: /webtransport
+
+# Redirect for consolidated Lighthouse audit for a11y names.
+- from: /aria-toggle-field-name
+  to: /aria-name
+- from: /aria-input-field-name
+  to: /aria-name

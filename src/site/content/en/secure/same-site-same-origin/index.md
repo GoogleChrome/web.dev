@@ -105,7 +105,8 @@ is the effective TLD and the part of the domain just before it.
 
 ![eTLD+1](eTLD+1.png)
 
-### "same-site" and "cross-site"
+### "same-site" and "cross-site" {: #same-site-cross-site }
+
 Websites that have the same eTLD+1 are considered "same-site". Websites that
 have a different eTLD+1 are "cross-site".
 
@@ -152,13 +153,13 @@ have a different eTLD+1 are "cross-site".
 
 ![schemeful same-site](schemeful-same-site.png)
 
-Though "same-site" ignores schemes ("schemeless same-site"), there are cases
-that must strictly distinguish between schemes in order to prevent HTTP being
-used as [a weak
+The definition of "same-site" is evolving to consider the URL scheme as part of
+the site in order to prevent HTTP being used as [a weak
 channel](https://tools.ietf.org/html/draft-west-cookie-incrementalism-01#page-8).
-In those cases, some documents refer to "same-site" more explicitly as
-"[schemeful same-site](https://github.com/sbingler/schemeful-same-site/)". In
-that case, `http://www.example.com` and `https://www.example.com` are considered
+As browsers move to this interpretation you may see references to "scheme-less
+same-site" when referring to the older definition and "[schemeful
+same-site](/schemeful-samesite/)" referring to the stricter definition. In that
+case, `http://www.example.com` and `https://www.example.com` are considered
 cross-site because the schemes don't match.
 
 <div class="w-table-wrapper">

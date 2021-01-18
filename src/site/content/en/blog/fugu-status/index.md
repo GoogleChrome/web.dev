@@ -1,8 +1,8 @@
 ---
 title: New capabilities status
-subhead: Web apps should be able to do anything native apps can. Google wants to make it possible for you to build and deliver apps on the open web that have never been possible before.
+subhead: Web apps should be able to do anything iOS/Android/desktop apps can. The members of the cross-company capabilities project want to make it possible for you to build and deliver apps on the open web that have never been possible before.
 date: 2018-11-12
-updated: 2020-09-15
+updated: 2020-12-01
 tags:
   - blog
   - capabilities
@@ -13,9 +13,9 @@ This is a living document and will be updated as features move between
 states.
 {% endAside %}
 
-The [capabilities project][capabilities-project] is a cross-company effort at Google
-to make it possible for web apps to do anything native apps can, by exposing the
-capabilities of native platforms to the web platform, while maintaining user
+The [capabilities project][capabilities-project] is a cross-company effort with the objective of
+making it possible for web apps to do anything iOS/Android/desktop apps can, by exposing the
+capabilities of these platforms to the web platform, while maintaining user
 security, privacy, trust, and other core tenets of the web.
 
 You can see the full list of new and potential capabilities at
@@ -42,7 +42,7 @@ change.<a name="shape-face-text"></a>
           <a href="/shape-detection/">Shape&nbsp;Detection (Face and Text)</a>
         </td>
         <td>
-          Shape detection opens up native
+          Shape detection opens up standardized
           implementations of shape detection services and exposes them through
           a set of JavaScript interfaces. In additon to the APIs below, the
           Barcode Detection API is available in stable. For more information,
@@ -66,6 +66,21 @@ change.<a name="shape-face-text"></a>
           time - even if there is no network connectivity, or the device is in
           battery saver mode.<br>
           <em>Updated August 23, 2020</em>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/nfc/">Web NFC</a>
+        </td>
+        <td>
+          Web NFC provides sites the ability to read and write to NFC tags when
+          they are in close proximity to the user's device.
+          For example, museums and art galleries could display additional
+          information about a display when the user touches their device to an
+          NFC card near the exhibit; or an inventory management web app could
+          read or write data to an NFC tag on a container to update information
+          on its contents.<br>
+          <em>Updated December 1, 2020</em>
         </td>
       </tr>
     </tbody>
@@ -131,22 +146,7 @@ trials in the [Origin Trials Guide for Web Developers][ot-guide].
           write to a serial device with scripts. The API bridges the web and
           the physical world by allowing websites to communicate with serial
           devices, such as microcontrollers and 3D printers.<br>
-          <em>Updated August 12, 2020</em>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <a href="/nfc/">Web NFC</a>
-        </td>
-        <td>
-          Web NFC provides sites the ability to read and write to NFC tags when
-          they are in close proximity to the user's device.
-          For example, museums and art galleries could display additional
-          information about a display when the user touches their device to an
-          NFC card near the exhibit; or an inventory management web app could
-          read or write data to an NFC tag on a container to update information
-          on its contents.<br>
-          <em>Updated December 12, 2019</em>
+          <em>Updated September 29, 2020</em>
         </td>
       </tr>
       <tr>
@@ -247,25 +247,26 @@ latest version of Chrome, and in many cases other Chromium based browsers.
         </td>
         <td>
           The Get Installed Related Apps API is a web platform API
-          that allows your web app to check to see if your native app is
+          that allows your web app to check to see if your iOS/Android app is
           installed on the users device, and vice versa.<br>
           <em>Updated December 18, 2019</em>
         </td>
       </tr>
       <tr>
         <td>
-          <a href="/native-file-system/">
-            Native File System API
+          <a href="/file-system-access/">
+            File System Access API
           </a>
         </td>
         <td>
-          The Native File System API (formerly known as the Writable Files API)
+          The File System Access API (formerly known as Native File System API
+          and prior to that Writable Files API)
           enables developers to build powerful web apps that interact with files
           on the user's local device, like IDEs, photo and video editors, text
           editors, and more. After a user grants a web app access, this API
           allows web apps to read or save changes directly to files and folders
           on the user's device.<br>
-          <em>Updated September 2, 2020</em>
+          <em>Updated September 23, 2020</em>
         </td>
       </tr>
       <tr>
@@ -275,7 +276,7 @@ latest version of Chrome, and in many cases other Chromium based browsers.
         <td>
           Periodic Background Sync enables web applications to periodically
           synchronize data in the background, bringing web apps closer to
-          the behavior of a native app.<br>
+          the behavior of a platform-specific app.<br>
           <em>Updated December 18, 2019</em><a name="shape-barcode"></a>
         </td>
       </tr>
@@ -284,7 +285,7 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           <a href="/shape-detection/">Shape&nbsp;Detection (Barcode)</a>
         </td>
         <td>
-          Shape detection opens up native
+          Shape detection opens up standardized
           implementations of shape detection services and exposes them through
           a set of JavaScript interfaces. Shape detection has three separate
           APIs, of which the Barcode API is only one. See
@@ -311,9 +312,9 @@ latest version of Chrome, and in many cases other Chromium based browsers.
         </td>
         <td>
           With the Web Share API, web apps are able to use the same
-          system-provided share capabilities as native apps. The Web Share API
+          system-provided share capabilities as platform-specific apps. The Web Share API
           makes it possible for web apps to share links, text, and files to
-          other apps installed on the device in the same way as native apps.<br>
+          other apps installed on the device in the same way as platform-specific apps.<br>
           <em>Updated November 8, 2019</em>
         </td>
       </tr>
@@ -329,13 +330,23 @@ latest version of Chrome, and in many cases other Chromium based browsers.
           <em>Updated November 8, 2019</em>
         </td>
       </tr>
+      <tr>
+        <td>
+          <a href="/camera-pan-tilt-zoom/">Camera pan, tilt, and zoom</a>
+        </td>
+        <td>
+          Pan, tilt, and zoom features on cameras are accessible on the
+          web, after requesting proper user permissions.<br>
+          <em>Updated October 5, 2020</em>
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>
 
 ## Suggest a new capability {: #suggest-new }
 
-Do you have a suggestion for a capability you think Chrome should consider?
+Do you have a suggestion for a capability you think Chromium should consider?
 Tell us about it by filing a [new feature request](https://goo.gl/qWhHXU).
 Please be sure to include as much detail as you can, such as
 the problem you're trying to solve, suggested use cases, and anything else

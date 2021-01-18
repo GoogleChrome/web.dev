@@ -1,0 +1,40 @@
+{
+    "slug": "learn-web-vitals",
+    "cover": "/images/collections/web-vitals.svg",
+    "title": "Web Vitals",
+    "description": "Essential metrics for a healthy site.",
+    "overview": "An initiative to provide unified guidance for quality signals that are essential to delivering a great user experience on the web.",
+    "topics": [
+        {
+            "title": "Overview",
+            "pathItems": [
+                "vitals"
+            ]
+        },
+        {
+            "title": "Web Vitals Metrics",
+            "pathItems": [
+                "lcp",
+                "fid",
+                "cls",
+                "defining-core-web-vitals-thresholds"
+            ]
+        },
+        {
+            "title": "Measure Web Vitals",
+            "pathItems": [
+                "vitals-measurement-getting-started",
+                "vitals-tools",
+                "vitals-field-measurement-best-practices"
+            ]
+        },
+        {
+            "title": "Improve Web Vitals",
+            "pathItems": [
+                "optimize-lcp",
+                "optimize-fid",
+                "optimize-cls"
+            ]
+        }
+    ]
+}

@@ -15,21 +15,17 @@
       ]
     },
     {
-      "title": "Reliable",
-      "pathItems": []
-    },
-    {
       "title": "Installable",
       "pathItems": [
-        "offline-fallback-page",
-        "define-install-strategy",
-        "install-criteria"
+        "install-criteria",
+        "define-install-strategy"
       ],
       "subtopics": [
         {
           "title": "Provide an installable experience",
           "pathItems": [
             "add-manifest",
+            "offline-fallback-page",
             "customize-install",
             "promote-install",
             "using-a-pwa-in-your-android-app"
@@ -63,6 +59,7 @@
     {
       "title": "Advanced topics",
       "pathItems": [
+        "manifest-updates",
         "multi-origin-pwas"
       ]
     }

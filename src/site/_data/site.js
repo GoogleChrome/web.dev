@@ -25,6 +25,7 @@ module.exports = {
   titleVariation: 'Home',
   defaultLocale: locale.defaultLocale,
   url: 'https://web.dev',
+  buildDate: new Date(),
   repo: 'https://github.com/GoogleChrome/web.dev',
   subscribe: 'https://web.dev/newsletter',
   subscribeForm:
@@ -32,7 +33,7 @@ module.exports = {
   thumbnail: '/images/social.png',
   isBannerEnabled: true,
   banner:
-    "The MDN Browser Compatibility Report is here! It's a deep dive into common issues and ongoing work. Thank you if you took the survey earlier this year! [Read the full report (PDF, 1.9mb)](https://bit.ly/2ZZdlOY)",
+    'We had fun hosting thousands of developers at Chrome Dev Summit 2020! You can now watch all the sessions at [goo.gle/cds20-sessions](https://goo.gle/cds20-sessions).',
   // Note that the imageCdn value is only used when we do a production build
   // of the site. Otherwise all image paths are local. This means you can
   // develop locally without having to mess with the CDN at all.

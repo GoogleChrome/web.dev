@@ -10,13 +10,16 @@
       "title": "How to measure network reliability",
       "pathItems": [
         "network-connections-unreliable",
-        "identify-resources-via-network-panel"
+        "identify-resources-via-network-panel",
+        "measuring-offline-usage"
       ]
     },
     {
       "title": "The options in your caching toolbox",
       "pathItems": [
         "http-cache",
+        "love-your-cache",
+        "cache-api-quick-guide",
         "service-workers-cache-storage",
         "workbox",
         "service-worker-caching-and-http-caching"
@@ -25,6 +28,7 @@
     {
       "title": "How caching strategies work",
       "pathItems": [
+        "offline-cookbook",
         "precache-with-workbox",
         "runtime-caching-with-workbox",
         "handling-navigation-requests"
@@ -36,7 +40,18 @@
         "resilient-search-experiences",
         "instant-navigation-experiences",
         "app-shell-ux-with-service-workers",
-        "adaptive-loading-with-service-workers"
+        "adaptive-loading-with-service-workers",
+        "offline-ux-design-guidelines",
+        "extending-workbox"
+      ]
+    },
+    {
+      "title": "Communicate with workers",
+      "pathItems": [
+        "workers-overview",
+        "imperative-caching-guide",
+        "broadcast-updates-guide",
+        "two-way-communication-guide"
       ]
     }
   ]

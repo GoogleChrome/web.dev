@@ -17,8 +17,8 @@ feedback:
 ---
 
 The [Payment Request API](https://www.w3.org/TR/payment-request/) brings to the
-web a native browser-based interface that allows users to enter required payment
-information easier than ever before. The API can also invoke native payment
+web a built-in browser-based interface that allows users to enter required payment
+information easier than ever before. The API can also invoke platform-specific payment
 apps.
 
 <figure class="w-figure" style="width:300px; margin:auto;">
@@ -26,7 +26,7 @@ apps.
     <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.webm" type="video/webm">
     <source src="https://storage.googleapis.com/web-dev-assets/payments/native-payment-app.mp4" type="video/mp4">
   </video>
-  <figcaption class="w-figcaption">Checkout flow with native Google Pay app that uses Web Payments</a>.
+  <figcaption class="w-figcaption">Checkout flow with platform-specific Google Pay app that uses Web Payments</a>.
   </figcaption>
 </figure>
 
@@ -48,7 +48,7 @@ To understand how merchants integrate with payment apps, check out [Life of a
 payment transaction](/life-of-a-payment-transaction/).
 {% endAside%}
 
-It takes four steps to implement Web Payments in an Android native payment app:
+It takes four steps to implement Web Payments in an Android payment app:
 
 1. Let merchants discover your payment app.
 2. Let a merchant know if a customer has an enrolled instrument (such as credit

@@ -116,7 +116,7 @@ is an excellent way to build sites that load faster on subsequent visits and
 work offline to some extent. However, there are a few things that need to
 be taken into consideration:
 
-+  How can caching behaviours by a service worker be tested?
++  How can caching behaviors by a service worker be tested?
 +  Should there be a message for users to let them know they are looking at
    cached content?
 

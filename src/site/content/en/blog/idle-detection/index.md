@@ -8,7 +8,7 @@ description: |
   interaction with the keyboard, mouse, screen, activation of a screensaver, locking of the screen,
   or moving to a different screen. A developer-defined threshold triggers the notification.
 date: 2020-05-18
-updated: 2020-09-23
+updated: 2021-01-14
 tags:
   - blog
   - idle-detection
@@ -66,14 +66,18 @@ To experiment with the Idle Detection API locally, without an origin trial token
 
 ### Enabling support during the origin trial phase
 
-Starting with Chrome&nbsp;84, the Idle Detection API will be available as an origin trial.
-The origin trial is expected to end in Chrome&nbsp;86.
+Starting in Chrome 88, the Idle Detection API will be available as an origin trial in Chrome.
+The origin trial is expected to end in Chrome 90 (May 18, 2021).
 
 {% include 'content/origin-trials.njk' %}
 
 ### Register for the origin trial {: #register-for-ot }
 
 {% include 'content/origin-trial-register.njk' %}
+
+{% Aside %}
+  An earlier origin trial for this feature ran from Chrome&nbsp;84 to Chrome&nbsp;86.
+{% endAside %}
 
 ### Feature detection
 
@@ -112,6 +116,7 @@ The first step when using the Idle Detection API is
 to ensure the `'idle-detection'` permission is granted.
 If the permission is not granted, you need to
 request it via `IdleDetector.requestPermission()`.
+Note that calling this method requires a user gesture.
 
 ```js
 // Make sure 'idle-detection' permission is granted.
@@ -286,4 +291,4 @@ The hero image is by [Fernando Hernandez](https://unsplash.com/@_ferh97) on
 [blink-component]: https://chromestatus.com/features#component%3ABlink%3EInput
 [cr-dev-twitter]: https://twitter.com/ChromiumDev
 [powerful-apis]: https://chromium.googlesource.com/chromium/src/+/lkgr/docs/security/permissions-for-powerful-web-platform-features.md
-[ot]: https://developers.chrome.com/origintrials/#/view_trial/551690954352885761
+[ot]: https://developer.chrome.com/origintrials/#/trials/active

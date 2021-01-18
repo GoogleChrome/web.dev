@@ -74,6 +74,7 @@ export class AssessmentQuestion extends BaseElement {
       // We could also use `target.closest("[data-role=response]")` to look _up_ from the option,
       // but we'd still need to find its index.
       let responseIndex = -1;
+      /** @type {(import('../ResponseMultipleChoice').ResponseMultipleChoice|import('../ResponseThinkAndCheck').ResponseThinkAndCheck)[]} */
       const responseComponents = Array.from(
         this.querySelectorAll('[data-role=response]'),
       );
@@ -99,6 +100,7 @@ export class AssessmentQuestion extends BaseElement {
 
   // Update question state based on state of response components.
   responseComponentUpdated() {
+    /** @type {NodeListOf<(import('../ResponseMultipleChoice').ResponseMultipleChoice|import('../ResponseThinkAndCheck').ResponseThinkAndCheck)>} */
     const responseComponents = this.querySelectorAll('[data-role=response]');
     const stateArr = Array.from(responseComponents).map(({state}) => state);
 
@@ -147,6 +149,7 @@ export class AssessmentQuestion extends BaseElement {
   }
 
   updateResponseComponents() {
+    /** @type {NodeListOf<(import('../ResponseMultipleChoice').ResponseMultipleChoice|import('../ResponseThinkAndCheck').ResponseThinkAndCheck)>} */
     const responseComponents = this.querySelectorAll('[data-role=response]');
 
     for (const responseComponent of responseComponents) {
@@ -180,6 +183,7 @@ export class AssessmentQuestion extends BaseElement {
   // Helper function to allow other components to reset the question
   // to its unanswered state.
   reset() {
+    /** @type {NodeListOf<(import('../ResponseMultipleChoice').ResponseMultipleChoice|import('../ResponseThinkAndCheck').ResponseThinkAndCheck)>} */
     const responseComponents = this.querySelectorAll('[data-role=response]');
     const questionContent = this.querySelector('.web-question__content');
 

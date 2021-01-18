@@ -14,6 +14,7 @@ thumbnail: thumbnail.png
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - performance
+  - memory
 ---
 
 Device capabilities and network connections vary a lot. Sites that delight users

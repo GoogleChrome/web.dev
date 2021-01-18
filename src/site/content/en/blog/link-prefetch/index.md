@@ -24,7 +24,7 @@ This guide explains how to achieve that with `<link rel=prefetch>`, a [resource 
 Adding `<link rel=prefetch>` to a web page tells the browser to download entire pages, or some of the resources (like scripts or CSS files), that the user might need in the future. This can improve metrics like [First Contentful Paint](/first-contentful-paint) and [Time to Interactive](/interactive/) and can often make subsequent navigations appear to load instantly.
 
 ```html
-<link rel="prefetch" href="index.html" as="document">
+<link rel="prefetch" href="/articles/" as="document">
 ```
 
 ![A diagram showing how link prefetch works.](prefetch.png)
@@ -68,7 +68,7 @@ The simplest way to implement `prefetch` is adding a `<link>` tag to the `<head>
 ```html
 <head>
 	...
-	<link rel="prefetch" href="index.html" as="document">
+	<link rel="prefetch" href="/articles/" as="document">
 	...
 </head>
 

@@ -50,7 +50,7 @@ If you don't have a RUM provider, you may be able to augment your existing analy
 
 If you're implementing your own RUM setup for Web Vitals, the easiest way to collect Web Vitals measurements is to use the [`web-vitals`](https://github.com/GoogleChrome/web-vitals) JavaScript library. `web-vitals` is a small, modular library (~1KB) that provides a convenient API for collecting and reporting each of the [field-measurable](https://web.dev/user-centric-performance-metrics/#in-the-field) Web Vitals metrics.
 
-The metrics that make up Web Vitals are not all directly exposed by the browser's native performance APIs - but rather built on top of them. For example, [Cumulative Layout Shift (CLS)](https://web.dev/cls/) is implemented using the [Layout Instability API](https://wicg.github.io/layout-instability/). By using `web-vitals`, you don't need to worry about implementing these metrics yourself; it also ensures that the data you collect matches the methodology and best practices for each metric.
+The metrics that make up Web Vitals are not all directly exposed by the browser's built-in performance APIs - but rather built on top of them. For example, [Cumulative Layout Shift (CLS)](https://web.dev/cls/) is implemented using the [Layout Instability API](https://wicg.github.io/layout-instability/). By using `web-vitals`, you don't need to worry about implementing these metrics yourself; it also ensures that the data you collect matches the methodology and best practices for each metric.
 
 For more information on implementing `web-vitals`, refer to the [documentation](https://github.com/GoogleChrome/web-vitals) and the [Best practices for measuring Web Vitals in the field](https://web.dev/vitals-field-measurement-best-practices/) guide.
 

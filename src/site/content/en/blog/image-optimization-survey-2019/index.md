@@ -86,7 +86,6 @@ the images for a page as soon as it loads, can improve performance and reduce da
 
 + "Please keep the user in mind when considering features such as lazy load, because for many it's annoying."
 + "Make the lazy load attribute work with background-image please."
-+ "We love that lazy loading of images is finally becoming a native feature."
 + "Frameworks should do better asset processing out of the box."
 + "We have converted from lazy loading a long time ago.  User reports of millions of images and sites "NOT LOADING".  That was understanding our team summarized it as.  It's hard for a non-technical users to describe issues."
 + "I'm keen to get a better understanding of using Intersection Observer API for lazy loading rather than using traditional techniques."
@@ -131,7 +130,7 @@ The [`srcset`](/use-srcset-to-automatically-choose-the-right-image) attribute pr
 
 ### Browser capability
 
-+ "Auto responsive src crop from browser as native feature would be very useful as it is time consuming to crop all images to 4 sizes and writing all the markup. If we can upload one large photo and writing a simple picture tag that browsers will automatically create the multiple src attributes that would be a winning feature."
++ "Auto responsive src crop from browser as [built-in] feature would be very useful as it is time consuming to crop all images to 4 sizes and writing all the markup. If we can upload one large photo and writing a simple picture tag that browsers will automatically create the multiple src attributes that would be a winning feature."
 + "Personally I'm having a hard time avoiding page reflows when image with is set by CSS for responsive images (max-width: 100%; height auto or height: width: 100%; height auto), especially in combination with art direction from adaptive images/picture tag. Best way to avoid seems to use the "negative padding hack" for a fixed image ratio and then position the image inside this ratio box. Better browser support/responsive image handling would be a really great help!"
 + "Please disable GIF "autoplay" by fetching just the first frame."
 

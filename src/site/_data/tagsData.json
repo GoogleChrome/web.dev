@@ -58,6 +58,10 @@
     "title": "CSS",
     "description": "Our latest news, updates, and stories about CSS."
   },
+  "devices": {
+    "title": "Devices",
+    "description": "Our latest news, updates, and stories about connecting hardware devices to the web."
+  },
   "devtools": {
     "title": "DevTools",
     "description": "Our latest news, updates, and stories about DevTools."
@@ -131,6 +135,10 @@
   "media-queries": {
     "title": "Media Queries"
   },
+  "memory": {
+    "title": "Memory",
+    "description": "Memory management on the web."
+  },
   "metrics": {
     "title": "Metrics"
   },
@@ -183,6 +191,16 @@
   },
   "rendering": {
     "title": "Rendering"
+  },
+  "scale-on-web": {
+    "title": "Scale on web",
+    "description": "A collection of short case studies from India and Southeast Asia celebrating the success stories of Google partners across multiple aspects of modern web development. Learn how these partners achieved scale while building amazing web experiences and delighting their customers.",
+    "hero": {
+      "src": "/images/tags/scale-on-web.svg",
+      "width": 340,
+      "height": 177,
+      "heroOnly": true
+    }
   },
   "security": {
     "title": "Security"

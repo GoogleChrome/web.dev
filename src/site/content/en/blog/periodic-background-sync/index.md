@@ -1,7 +1,7 @@
 ---
 title: Richer offline experiences with the Periodic Background Sync API
 subhead:
-  Sync your web app's data in the background for a more native-like experience
+  Sync your web app's data in the background for a more-like experience
 authors:
   - jeffposnick
   - joemedley
@@ -14,7 +14,7 @@ origin_trial:
 description: |
   Periodic Background Sync enables web applications to periodically
   synchronize data in the background, bringing web apps closer to the behavior
-  of a native app.
+  of an iOS/Android/desktop app.
 tags:
   - capabilities
   - blog
@@ -26,7 +26,7 @@ feedback:
 ---
 
 {% Aside %}
-  Web apps should be able to do anything native apps can. The
+  Web apps should be able to do anything iOS/Android/desktop apps can. The
   [Capabilities project](https://developers.google.com/web/updates/capabilities),
   of which Periodic Background Sync is only a part, aims
   to do just that. To learn about other capabilities and to keep up with their
@@ -41,13 +41,13 @@ Have you ever been in any of the following situations?
 * Living in a country where bandwidth struggles to keep up with the demand
 
 If you have, then you've surely felt the frustration of getting
-certain things done on the web, and wondered why native apps so often do better
-in these scenarios. Native apps can fetch fresh content such as news articles or weather
+certain things done on the web, and wondered why platform-specific apps so often do better
+in these scenarios. Platform-specific apps can fetch fresh content such as news articles or weather
 information ahead of time. Even if there's no network in the subway, you can still read the
 news.
 
 Periodic Background Sync enables web applications to periodically synchronize
-data in the background, bringing web apps closer to the behavior of a native
+data in the background, bringing web apps closer to the behavior of a platform-specific
 app.
 
 ## Current status
@@ -181,7 +181,7 @@ risk for periodic background sync:
   synced when it was in the foreground, the browser limits the frequency of an
   app's background syncs to align with how often the person uses that app. If
   the person stops frequently interacting with the app, periodic background sync
-  will stop triggering. This is a net improvement over the status quo in native
+  will stop triggering. This is a net improvement over the status quo in platform-specific
   apps.
 
 ### When can it be used?
@@ -194,7 +194,7 @@ following requirements on periodic background sync:
 
 The timing of synchronizations are not controlled by developers. The
 synchronization frequency will align with how often the app is used. (Note that
-native apps currently don't do this.) It also takes into the device's power and
+platform-specific apps currently don't do this.) It also takes into the device's power and
 connectivity state.
 
 ### When should it be used?

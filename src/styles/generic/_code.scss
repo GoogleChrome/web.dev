@@ -17,8 +17,8 @@ $CODE_COLORS: (
   bright-blue: #007aa2,
   black: $PRIMARY_TEXT_COLOR,
   purple: #a71d5d,
-  maroon: #a71d5d,
-  green: #63a35c,
+  maroon:#9f1c59,
+  green:#385d34,
   light-gray: #f7f7f7,
   dimgrey: #696969
 );
@@ -49,10 +49,20 @@ pre {
 pre,
 pre[class*='language-'] {
   @include scrollbars();
-  margin: 32px 0;
+  margin: 32px -24px;
+  border-width: 1px 0;
   overflow: auto;
   padding: 16px;
   white-space: pre;
+
+  @include bp(sm) {
+    margin: 32px -32px;
+  }
+
+  @include bp(md) {
+    margin: 32px 0;
+    border-width: 1px;
+  }
 }
 
 pre code,

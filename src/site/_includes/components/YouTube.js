@@ -51,6 +51,7 @@ module.exports = (id, startTime) => {
       <iframe
         class="w-youtube__embed"
         src="${src}"
+        title="youtube embed"
         frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen

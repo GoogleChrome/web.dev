@@ -94,7 +94,7 @@ This can lead to disconcerting jumps around the page for someone using the keybo
 Make sure to test your design at each breakpoint by tabbing through the content,
 does the flow through the page still make sense?
 
-Read more about [the source and visual display disconnect](/source-reordering).
+Read more about [the source and visual display disconnect](/content-reordering/).
 
 ## Take care with spatial clues
 

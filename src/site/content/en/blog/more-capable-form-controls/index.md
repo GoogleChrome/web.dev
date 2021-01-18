@@ -11,7 +11,7 @@ hero: hero.jpg
 alt: DJ mixer controls.
 description: |
   New web platform features make it easier to build
-  custom elements that work like native form controls.
+  custom elements that work like built-in form controls.
 tags:
   - blog # blog is a required tag for the article to show up in the blog.
   - forms
@@ -19,7 +19,7 @@ tags:
 ---
 
 
-Many developers build custom form controls, either to provide controls that aren't built in to the browser, or to customize the look and feel beyond what's possible with the native form controls.
+Many developers build custom form controls, either to provide controls that aren't built in to the browser, or to customize the look and feel beyond what's possible with the built-in form controls.
 
 However, it can be difficult to replicate the features of built-in HTML form controls. Consider some of the features an `<input>` element gets automatically when you add it to a form:
 
@@ -35,7 +35,7 @@ Two new web features make it easier to build custom form controls, and remove th
 *   The `formdata` event lets an arbitrary JavaScript object participate in form submission, so you can add form data without using a hidden `<input>`.
 *   The Form-associated custom elements API lets custom elements act more like built-in form controls.
 
-These two features can be used to create new kinds of controls that work better with native web forms.
+These two features can be used to create new kinds of controls that work better.
 
 {% Aside %}Building custom form controls is an advanced topic. This article assumes a certain knowledge of forms and form controls. When building a custom form control, there are many factors to consider, especially making sure that your controls are accessible to all users. To learn more about forms, go to the [MDN guide on forms](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms).{% endAside %}
 
@@ -71,9 +71,9 @@ Try this out using our example on Glitch. Be sure to run it on Chrome 77 or late
 
 You can use the event-based API with any kind of component, but it only allows you to interact with the submission process.
 
-Native form controls participate in many parts of the form lifecycle besides submission. Form-associated custom elements aim to bridge the gap between custom widgets and native controls. Form-associated custom elements match many of the features of native form elements:
+Standardized form controls participate in many parts of the form lifecycle besides submission. Form-associated custom elements aim to bridge the gap between custom widgets and built-in controls. Form-associated custom elements match many of the features of standardized form elements:
 
-*   When you place a form-associated custom element inside a `<form>`, it's automatically associated with the form, like a native control.
+*   When you place a form-associated custom element inside a `<form>`, it's automatically associated with the form, like a browser-provided control.
 *   The element can be labeled using a `<label>` element.
 *   The element can set a value that's automatically submitted with the form.
 *   The element can set a flag indicating whether or not it has valid input. If one of the form controls has invalid input, the form can't be submitted.
@@ -115,8 +115,8 @@ class MyCounter extends HTMLElement {
   set value(v) { this.value_ = v; }
 
   // The following properties and methods aren't strictly required,
-  // but native form controls provide them. Providing them helps
-  // ensure consistency with native controls.
+  // but browser-level form controls provide them. Providing them helps
+  // ensure consistency with browser-provided controls.
   get form() { return this.internals_.form; }
   get name() { return this.getAttribute('name'); }
   get type() { return this.localName; }
@@ -132,7 +132,7 @@ class MyCounter extends HTMLElement {
 customElements.define('my-counter', MyCounter);
 ```
 
-Once registered, you can use this element wherever you'd use a native form control:
+Once registered, you can use this element wherever you'd use a browser-provided form control:
 
 ```html
 <form>
@@ -209,7 +209,7 @@ Called after the `disabled` state of the element changes, either because the `di
 
 #### `void formResetCallback()`
 
-Called after the form is reset. The element should reset itself to some kind of default state. For native inputs, this usually involves setting the `value` property to match the `value` attribute set in markup (or in the case of a checkbox, setting the `checked` property to match the `checked` attribute.
+Called after the form is reset. The element should reset itself to some kind of default state. For `<input>` elements, this usually involves setting the `value` property to match the `value` attribute set in markup (or in the case of a checkbox, setting the `checked` property to match the `checked` attribute.
 
 #### `void formStateRestoreCallback(state, mode)`
 
@@ -285,7 +285,7 @@ if ('FormDataEvent' in window) {
 }
 
 if ('ElementInternals' in window &&
-    'setFormData' in window.ElementInternals) {
+    'setFormValue' in window.ElementInternals.prototype) {
   // Form-associated custom elements are supported
 }
 ```

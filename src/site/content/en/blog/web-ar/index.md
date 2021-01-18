@@ -229,7 +229,7 @@ by moving the device. The modes use different reference space types. The
 highlighted text above shows how this is selected. It uses the following
 reference types:
 
-`local` - The native origin is at the viewer's position at the time of session
+`local` - The origin is at the viewer's position at the time of session
 creation. This means the experience doesn't necessarily have a well-defined
 floor and the exact position of the origin may vary by platform. Though there
 are no pre-established boundaries to the space, it's expected that content can

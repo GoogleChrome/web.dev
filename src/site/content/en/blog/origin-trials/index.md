@@ -4,7 +4,7 @@ subhead: Origin trials are a way to test a new or experimental web platform feat
 authors: 
   - samdutton
 date: 2020-06-22
-updated: 2020-08-18
+updated: 2020-10-18
 hero: hero.jpg
 thumbnail: thumbnail.jpg
 alt: Pipette with purple liquid
@@ -35,6 +35,17 @@ If you register for a trial, the Chrome team will periodically ask you for speci
 feedback on your use of the trial feature. Some features may undergo multiple origin 
 trials, as learnings are incorporated and adjustments are made.  
 
+{% Aside %}
+**Third-party origin trials**
+
+Origin trials are usually only available on a first-party basis: they only work for a single
+registered [origin](https://web.dev/same-site-same-origin/#origin). Third-party origin trials make 
+it possible for providers of embedded content to try a new feature across multiple sites 
+without requiring a token for every origin.   
+
+Find out more: [What are third-party origin trials?](/third-party-origin-trials).
+{% endAside %}
+
 ## How to register for an origin trial
 
 1. Choose an origin trial from the [list of active trials](https://developers.chrome.com/origintrials/#/trials/active).
@@ -55,13 +66,16 @@ trials, as learnings are incorporated and adjustments are made.
    To do so, you are again asked to submit feedback.
    
 {% Aside 'warning' %}
-  Even if an API lands unchanged after a successful origin trial,
-  there is a short period between the end of the origin trial and the date the implementation ships
-  in the browser when the API will not be available.
-  This is by design.
-  If we were to avoid the mandatory total-breakage period,
-  we would bias toward also avoiding breakages in the API surface,
-  and the final shipping API might potentially be worse for it.
+Usually if an API lands unchanged after a successful origin trial, there is a short period between the 
+end of the origin trial and the date the implementation ships in the browser when the API will not 
+be available. This is by design. If Chrome were to avoid the mandatory total-breakage period, that would 
+bias toward also avoiding breakages in the API surface, which are often needed to improve the API.
+The final shipping API might be worse for it.
+
+In rare circumstances, if there was clear evidence that developers engaged with the origin trial and that their
+concerns were taken into account in the final API design and implementation,
+this breakage period may be skipped
+[upon request](https://sites.google.com/a/chromium.org/dev/blink/launching-features#sites-canvas-main-content:~:text=If%20you%20wish%20to%20skip%20the,Ship%20imply%20approval%20of%20the%20request.).
 {% endAside %}
 
 ## Find out more
@@ -71,6 +85,7 @@ trials, as learnings are incorporated and adjustments are made.
 -  [Running an origin trial](https://www.chromium.org/blink/origin-trials/running-an-origin-trial)
 -  [Process for launching new features in Chromium](https://www.chromium.org/blink/launching-features)
 -  [Intent to explain: Demystifying the Blink shipping process](https://www.youtube.com/watch?time_continue=291&v=y3EZx_b-7tk)
+-  [What are third-party origin trials?](/third-party-origin-trials)
 ---
 
 Photo by [Louis Reed

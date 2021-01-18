@@ -28,6 +28,10 @@ web-header {
   width: 100%;
   z-index: 200;
 
+  @media print {
+    display: none;
+  }
+
   .web-header__hamburger-btn {
     height: 2.75rem;
     margin: 0 8px 0 -8px;
@@ -35,7 +39,7 @@ web-header {
 
     // sass-lint:disable class-name-format
     &.unresolved {
-      display: inline-block;  // override default .unresolved behavior
+      display: flex;  // override default .unresolved behavior
       visibility: hidden;
     }
     // sass-lint:enable class-name-format

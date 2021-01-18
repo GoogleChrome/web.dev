@@ -21,7 +21,7 @@ proposal.
 
 ## Building the site 🏗
 
-You'll need a recent version of Node: v12.10 or higher.
+You'll need a recent version of [Node](https://nodejs.org/): v12.10 or higher.
 
 ### Clone the repo
 
@@ -121,7 +121,7 @@ teams:
 If you need to debug the site's build process:
 
 1. Add a `debugger` statement to `.eleventy.js`
-1. Run `npm run debug`
+1. Run `npm run debug:eleventy`
 1. Go to `chrome://inspect` to attach to the running process.
 
 <img

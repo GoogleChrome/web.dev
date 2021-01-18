@@ -100,7 +100,7 @@ As with many features of the modern web, you'll want to know whether the user's 
 ```
 ## Examples
 
-Design techniques and styles previously reserved for native operating systems are now performant and achievable with a single CSS declaration. Let's look at some examples.
+Design techniques and styles previously reserved for operating systems are now performant and achievable with a single CSS declaration. Let's look at some examples.
 
 ### Single filter
 
@@ -194,7 +194,7 @@ As stated earlier, `backdrop-filter` allows performant effects that would be dif
 </figure>
 
 ## Conclusion
-More than 560 of you have upvoted the [Chromium bug](https://crbug.com/497522) over the past few years, clearly marking this as a long awaited CSS feature. Chrome's release of `backdrop-filter` in version 76 brings the web a step closer to truly native-like UI presentation.
+More than 560 of you have upvoted the [Chromium bug](https://crbug.com/497522) over the past few years, clearly marking this as a long awaited CSS feature. Chrome's release of `backdrop-filter` in version 76 brings the web a step closer to truly OS-like UI presentation.
 
 ### Additional resources
 - [Specification](https://drafts.fxtf.org/filter-effects-2/#BackdropFilterProperty)

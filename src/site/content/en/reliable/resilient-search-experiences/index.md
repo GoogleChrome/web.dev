@@ -38,12 +38,12 @@ To provide a more resilient search experience in these cases you can use the [Ba
 
 ## Production case
 
-For concrete application of this technique let's take a look at Google Search for Chrome in Android. 
+For concrete application of this technique let's take a look at Google Search for Chrome in Android.
 When visiting the Google Search web app and going offline, instead of showing the standard network error page, the site serves a custom offline response, but allows users to enter their search query immediately.
 The page also prompts the user to opt-in for notifications, to receive a link to the search results page once the connection is recovered.
 
 <figure class="w-figure">
-  <img src="search-offline-screen.png" 
+  <img src="search-offline-screen.png"
        alt="A screenshot of the background retry interface in Google Search.">
 </figure>
 
@@ -57,13 +57,13 @@ Service workers allow Google Search to provide a [meaningful offline experience]
 
 While Google Search implements this functionality without using Workbox, the [Workbox library](https://developers.google.com/web/tools/workbox) makes it easier by providing a [Background Sync module](https://developers.google.com/web/tools/workbox/modules/workbox-background-sync), which takes care of many implementation details for us.
 
-![A service worker and a cache object communicating wiith each other.](workbox-background-sync.png)
+![A service worker and a cache object communicating with each other.](workbox-background-sync.png)
 
 To implement a resilient search experience in Workbox, first, import the following modules in your service worker:
 
 ```javascript
-import {BackgroundSyncPlugin} from 'workbox-background-sync'; 
-import {registerRoute} from 'workbox-routing'; 
+import {BackgroundSyncPlugin} from 'workbox-background-sync';
+import {registerRoute} from 'workbox-routing';
 import {NetworkOnly} from 'workbox-strategies';
 ```
 

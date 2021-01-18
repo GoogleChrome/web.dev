@@ -31,6 +31,7 @@ export class Header extends HTMLElement {
   }
 
   connectedCallback() {
+    /** @type HTMLButtonElement */
     this.hamburgerBtn = this.querySelector('.web-header__hamburger-btn');
     this.hamburgerBtn.classList.remove('unresolved');
     this.hamburgerBtn.addEventListener('click', expandSideNav);

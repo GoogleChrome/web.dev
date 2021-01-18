@@ -40,7 +40,8 @@
         "uses-rel-preload",
         "efficient-animated-content",
         "third-party-summary",
-        "non-composited-animations"
+        "non-composited-animations",
+        "third-party-facades"
       ]
     },
     {

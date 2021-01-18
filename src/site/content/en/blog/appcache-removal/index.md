@@ -194,7 +194,7 @@ Chrome for iOS is a special case, as it uses a different browser engine than Chr
 
 ### Android WebViews
 
-Some developers of native Android applications use Chrome [WebView](https://developer.android.com/reference/android/webkit/WebView) to display web content, and might also use AppCache. However, it's not possible to enable an origin trial for a WebView. In light of that, Chrome WebView will support AppCache without an origin trial until the final removal takes place, expected in Chrome 90.
+Some developers of Android applications use Chrome [WebView](https://developer.android.com/reference/android/webkit/WebView) to display web content, and might also use AppCache. However, it's not possible to enable an origin trial for a WebView. In light of that, Chrome WebView will support AppCache without an origin trial until the final removal takes place, expected in Chrome 90.
 
 ## Learn more
 

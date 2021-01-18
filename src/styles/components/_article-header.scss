@@ -18,6 +18,11 @@
     margin: 0 0 64px;
     padding-top: 56px;
   }
+
+  @media print {
+    margin: 0;
+    padding-top: 0;
+  }
 }
 
 .w-article-header__headline {

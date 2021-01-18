@@ -127,7 +127,7 @@ Over the past year we have been analyzing [web performance from the
 field](/user-centric-performance-metrics/#in-the-field) via [Chrome User
 Experience](https://developers.google.com/web/tools/chrome-user-experience-report)
 (CrUX) data. With insights from that data we reassessed the thresholds that we
-use to label a website "slow", 'moderate", or "fast" in field performance.
+use to label a website "slow", "moderate", or "fast" in field performance.
 
 {% Aside %} The term "average" that used to describe sites that are in between
 "slow" and "fast" is now changed to "moderate" which is more fitting since this

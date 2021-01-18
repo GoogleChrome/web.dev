@@ -7,6 +7,7 @@ description: |
   Learn how to speed up future navigations by prefetching resources.
 date: 2019-09-12
 glitch: two-ways-to-prefetch
+related_post: link-prefetch
 tags:
   - performance
 ---

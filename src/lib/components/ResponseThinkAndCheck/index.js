@@ -2,8 +2,7 @@ import {html} from 'lit-element';
 import {BaseResponseElement} from '../BaseResponseElement';
 import './_styles.scss';
 
-/* eslint-disable require-jsdoc */
-class ResponseThinkAndCheck extends BaseResponseElement {
+export class ResponseThinkAndCheck extends BaseResponseElement {
   constructor() {
     super();
     this.prerenderedChildren = null;

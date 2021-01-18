@@ -25,7 +25,7 @@ questions:
           1. The **Yes** button
 
           Only the `<button>` elements are included in the tab order
-          because they're the only native HTML form elements.
+          because they're the only standardized HTML form elements.
           To insert other elements into the tab order, you would add a `tabindex` attribute.
   - stimulus: |
       ```html
@@ -64,7 +64,7 @@ questions:
     options:
       - rationale: |
           The **Search** text input comes first in the tab order.
-          Because it has a `tabindex` greater than 1, it jumps to the front of the tab order.
+          Because it has a `tabindex` greater than zero, it jumps to the front of the tab order.
 
           (This behavior is likely to cause confusion
           if the menu is positioned on the page before the search input.
@@ -98,5 +98,5 @@ questions:
           - Focus the radio element that now has a `tabindex` of 0.
 
           That's a lot—and it doesn't even include ARIA attributes!
-          This is an example of why it's easier to use native elements
+          This is an example of why it's easier to use built-in elements
           with built-in keyboard behavior whenever you can.

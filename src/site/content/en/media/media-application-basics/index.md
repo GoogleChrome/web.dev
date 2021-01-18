@@ -7,7 +7,7 @@ description: |
   Much media work requires changing characteristics of media files. In this
   section, I provide an onramp into that world.
 date: 2017-06-09
-updated: 2020-08-27
+updated: 2020-09-24
 tags:
   - media
   - video
@@ -27,7 +27,7 @@ This page describes the basic usage for two common command-line media utilities:
 Packager](https://github.com/google/shaka-packager) and
 [FFmpeg](https://ffmpeg.org/download.html). Why cover two applications? While
 both are powerful and useful by themselves, neither does everything needed to
-prepare media for the web. I've also created a [cheat sheet](media-cheat-sheet) showing
+prepare media for the web. I've also created a [cheat sheet](/media-cheat-sheet) showing
 common operations with those applications.
 
 These aren't the only options available for many file manipulation tasks. But
@@ -151,7 +151,7 @@ I'll again compare the basic pattern to the example for displaying file characte
     ffmpeg                                     -i glocken.mp4
 ```
 
-In additon to the information I requested, this also prints an error message as
+In addition to the information I requested, this also prints an error message as
 shown in the example below. That's because this is technically an incorrect
 usage of FFmpeg. I use it because it displays information I care about.
 

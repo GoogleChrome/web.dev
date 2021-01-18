@@ -74,7 +74,7 @@ This approach has several advantages over serving different HTML or server-side
 scripting, especially on mobile:
 
 * You can list formats in order of preference.
-* Native client-side switching reduces latency; only one request is made to
+* Client-side switching reduces latency; only one request is made to
   get content.
 * Letting the browser choose a format is simpler, quicker, and potentially
   more reliable than using a server-side support database with user-agent detection.
@@ -132,7 +132,7 @@ capability must be enabled. Most servers enable range requests by default.
 Because some hosting services turn them off, you should confirm that range
 requests are available for using fragments on your site.
 
-Fortunately, you can do this in your brower developer tools. In Chrome, for
+Fortunately, you can do this in your browser developer tools. In Chrome, for
 instance, it's in the [Network
 panel](https://developers.google.com/web/tools/chrome-devtools/?utm_source=devtools#network).
 Look for the `Accept-Ranges` header is and verify that it says `bytes`. In a the
@@ -306,14 +306,14 @@ video immediately. The precise way it works depends on the platform and browser.
 
 * Chrome: Depends on multiple factors including but not limited to whether the
   viewing is on desktop and whether the a mobile user has added your site or app
-  to their homescreen. For  details, see [Auotplay Policy
+  to their homescreen. For  details, see [Autoplay Policy
   Changes](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes).
 
 * Firefox: Blocks all video and sound, but gives user the ability to relax these
   restrictions for either all sites or particular sites. For details, see [Allow
   or block media autoplay in Firefox]()
 
-* Sarfari: Has historically required a user gesture, but has been relaxing that
+* Safari: Has historically required a user gesture, but has been relaxing that
   requirement in recent versions. For details, see [New &lt;video> Policies for
   iOS](https://webkit.org/blog/6784/new-video-policies-for-ios/).
 

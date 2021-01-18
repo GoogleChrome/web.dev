@@ -12,7 +12,7 @@ const lang = require('./lang');
 
 module.exports = function () {
   const paths = [
-    allPaths['vitals'],
+    allPaths['learn-web-vitals'],
     allPaths['progressive-web-apps'],
     allPaths['accessible'],
     allPaths['fast'],

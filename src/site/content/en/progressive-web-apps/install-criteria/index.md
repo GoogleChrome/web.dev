@@ -4,7 +4,7 @@ title: What does it take to be installable?
 authors:
   - petelepage
 date: 2020-02-14
-updated: 2020-06-17
+updated: 2020-12-07
 description: |
   Progressive Web App installability criteria.
 tags:
@@ -12,7 +12,7 @@ tags:
 ---
 
 Progressive Web Apps (PWAs) are modern, high quality applications built
-using web technology. PWAs offer similar capabilities to native apps, they
+using web technology. PWAs offer similar capabilities to iOS/Android/desktop apps, they
 are reliable even in unstable network conditions, and are installable making
 it easier for users to find and use them.
 
@@ -65,6 +65,9 @@ promotion:
   * `display` - must be one of `fullscreen`, `standalone`, or `minimal-ui`
   * Note: `prefer_related_applications` must not be present, or be `false`
 * Registers a service worker with a functional `fetch` handler
+  * Starting in mid-2021, the service worker must return a valid response
+    when the device is offline, for example an
+    [offline fallback page][offline-fallback]
 
 Other browsers have similar criteria for installation, though there may be
 minor differences. Check the respective sites for full details:
@@ -79,8 +82,9 @@ minor differences. Check the respective sites for full details:
 On Android, if the web app manifest includes `related_applications` and
 `"prefer_related_applications": true`, the user will be directed to the
 Google Play store and
-[prompted to install the specified native app](https://developers.google.com/web/fundamentals/app-install-banners/native)
+[prompted to install the specified Android app](https://developers.google.com/web/fundamentals/app-install-banners/native)
 instead.
 {% endAside %}
 
 [add-manifest]: /add-manifest/
+[offline-fallback]: /offline-fallback-page/

@@ -29,6 +29,8 @@ export class BaseStateElement extends BaseElement {
    *
    * @param {!Object<string, *>} state
    */
-  // eslint-disable-next-line
-  onStateChanged(state) {}
+
+  // @ts-ignore-start
+  onStateChanged(state) {} // eslint-disable-line no-unused-vars
+  // @ts-ignore-end
 }

@@ -28,4 +28,4 @@ const message = iframe.contentDocument.getElementById('message').innerText;
 Try changing the `src` of the `iframe` to `https://other-iframe.glitch.me/`.
 Can the host page still access the secret message?
 
-Since the host and embeded `iframe` do not have the same origin, access to the data is restricted.
+Since the host and embedded `iframe` do not have the same origin, access to the data is restricted.

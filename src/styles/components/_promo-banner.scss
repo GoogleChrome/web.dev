@@ -1,0 +1,18 @@
+.w-promo-banner {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 64px;
+
+  @include bp('md') {
+    flex-direction: row;
+  }
+}
+
+.w-promo-banner > * + * {
+  margin: 24px 0 0;
+
+  @include bp('md') {
+    margin: 0 0 0 24px;
+  }
+}

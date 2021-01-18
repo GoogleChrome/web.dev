@@ -4,6 +4,10 @@
 web-feedback {
   display: block;
 
+  @media print {
+    display: none;
+  }
+
   .web-feedback__row {
     align-items: center;
     border-bottom: 1px solid $GREY_300;

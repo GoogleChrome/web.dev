@@ -129,7 +129,7 @@ But that's no fair! The menu bar acts just fine for the sighted user.
 
 ARIA to the rescue. ARIA lets us pretend to the screen reader that focus is in a
 menu bar. If the author does everything right, our custom menu bar will look to the screen reader
-just like a menu bar in a native desktop application.
+just like a menu bar in a desktop application.
 
 Our first, ahem, ARIA lie, is to use the `aria-activedescendant` attribute, and set it to the ID of
 the currently active menuitem, being careful to update it whenever it changes. For example,

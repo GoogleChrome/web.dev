@@ -3,7 +3,7 @@ import {BaseResponseElement} from '../BaseResponseElement';
 import './_styles.scss';
 import {generateIdSalt} from '../../utils/generate-salt';
 
-class ResponseMultipleChoice extends BaseResponseElement {
+export class ResponseMultipleChoice extends BaseResponseElement {
   static get properties() {
     return {
       id: {type: String, reflect: true},

@@ -19,12 +19,12 @@ const slugify = require('slugify');
 /**
  * Slugifies string.
  *
- * @param {string | String} str
+ * @param {string|StringConstructor} str
  * @return {string}
  */
 module.exports = (str) => {
   if (str instanceof String) {
-    str = str.val;
+    str = str.toString();
   } else if (typeof str !== 'string') {
     return '';
   }

@@ -92,7 +92,7 @@ changes happen. This workaround can be ineffective when the user expects the
 scroller to snap back to the same content as before. Any further handling with
 Javascript seems to almost defeat the purpose of this CSS feature.
 
-## Native support for re-snapping after layout changes in Chrome 81
+## Built-in support for re-snapping after layout changes in Chrome 81
 The mentioned shortcomings no longer exist in Chrome 81: scrollers will remain
 snapped even after changing layout. They will re-evaluate scroll positions after
 changing their layout, and re-snap to the closest snap position if necessary. If

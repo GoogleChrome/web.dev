@@ -226,7 +226,7 @@ When auditing your page's UI components for accessibility, ask yourself:
   [High Contrast](https://chrome.google.com/webstore/detail/high-contrast/djcfdncoelnlbldjfhinnjlhdjlikmph?hl=en)
   is a Chrome extension that can help here.
 
-Native controls (such as `<button>` and `<select>`)
+Standardized controls (such as `<button>` and `<select>`)
 have accessibility built in by the browser.
 They are focusable using the `Tab` key;
 they respond to keyboard events (like the `Enter`, `Space`, and arrow keys);
@@ -234,12 +234,12 @@ and they have semantic roles, states, and properties used by accessibility tools
 Their default styling should also meet the accessibility requirements listed above.
 
 Custom UI components
-(with the exception of components that extend native elements like `<button>`)
+(with the exception of components that extend standard elements like `<button>`)
 do not have any built-in functionality, including accessibility,
 so you need to provide it.
 A good place to start when implementing accessibility
-is to compare your component to an analogous native element
-(or a combination of several native elements,
+is to compare your component to an analogous standard element
+(or a combination of several standard elements,
 depending on how complex your component is).
 
 **Tip:** Most browser developer tools support inspecting the accessibility tree of a page.
@@ -275,7 +275,7 @@ but should then manage focus within itself so that the active menu item always t
 </figure>
 
 ### Using tabindex
-The `tabindex` attribute allows elements and UI components to be focused using the keyboard. Keyboard-only and assistive technology users both need to be able to place keyboard focus on elements to interact with them. Native interactive elements are implicitly focusable, so they don't need a `tabindex` attribute unless you wish to change their position in the tab order.
+The `tabindex` attribute allows elements and UI components to be focused using the keyboard. Keyboard-only and assistive technology users both need to be able to place keyboard focus on elements to interact with them. Built-in interactive elements (like `<button>`) are implicitly focusable, so they don't need a `tabindex` attribute unless you wish to change their position in the tab order.
 
 **There are three types of `tabindex` values:**
 
@@ -390,7 +390,7 @@ for providing alternative text for that image, analogous to the `alt` attribute.
 Assistive technology conveys semantic information
 that is otherwise expressed to sighted users via visual cues
 such as formatting, cursor style, or position.
-Native elements have this semantic information built-in by the browser,
+Standardized elements have this semantic information built-in by the browser,
 but for custom components you need to use
 [ARIA](http://www.w3.org/WAI/PF/aria/) to add the information.
 

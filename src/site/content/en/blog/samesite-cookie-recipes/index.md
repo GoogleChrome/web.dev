@@ -26,10 +26,10 @@ feedback:
 ---
 
 {% Aside %}
-
-For how cookies and `SameSite` work, see part 1:
-[SameSite cookies explained](/samesite-cookies-explained).
-
+This article is part of a series on the `SameSite` cookie attribute changes:
+- [SameSite cookies explained](/samesite-cookies-explained/)
+- [SameSite cookies recipes](/samesite-cookie-recipes/)
+- [Schemeful Same-Site](/schemeful-samesite)
 {% endAside %}
 
 [Chrome](https://www.chromium.org/updates/same-site),
@@ -144,11 +144,11 @@ included in cross-site requests.
 
 ### Content within a WebView
 
-A WebView in a native app is powered by a browser and you will need to test if
+A WebView in a platform-specific app is powered by a browser and you will need to test if
 the same restrictions or issues apply. In Android, if the WebView is powered by
 Chrome the new defaults **will not** immediately be applied with Chrome 84.
 However the intent is to apply them in the future, so you should still test and
-prepare for this. Additionally, Android allows native apps to set cookies
+prepare for this. Additionally, Android allows its platform-specific apps to set cookies
 directly via the
 [CookieManager API](https://developer.android.com/reference/android/webkit/CookieManager).
 As with cookies set via headers or JavaScript, consider including

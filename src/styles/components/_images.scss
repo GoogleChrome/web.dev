@@ -51,12 +51,23 @@
 .w-figure--screenshot > img {
   border: 1px solid $GREY_300;
   padding: 4px;
+
+  // This ensures images are scaled to the exact size specified by the
+  // width attribute, preventing HiDPI screenshots from being blurry:
+  //  <img src="800x500.png" width="400" class="w-screenshot">
+  box-sizing: content-box;
+  margin-left: -5px;
 }
 
 .w-screenshot--filled,
 .w-figure--screenshot > img {
   background-color: $GREY_50;
   padding: 16px;
+
+  // This ensures image size fits to content width with padding(16 * 2)
+  // while specifying `box-sizing: content-box;` in .w-screenshot
+  max-width: calc(100% - 32px);
+  margin-left: 0;
 }
 
 .w-screenshot + .w-screenshot,

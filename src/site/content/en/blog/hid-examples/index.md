@@ -10,12 +10,13 @@ description: |
   API solves this by providing a way to implement device-specific logic in
   JavaScript.
 date: 2020-07-22
-updated: 2020-08-19
+updated: 2021-01-15
 tags:
   - blog
   - capabilities
   - hid
   - games
+  - devices
 hero: game-controller.jpg
 alt: A generic game controller
 ---
@@ -124,6 +125,7 @@ getting started with HID.
 I hope I've piqued your interest in the WebHID API. Watch this space in the
 coming weeks for updates and for Part II of the introduction which will show you
 how to use the API yourself.
+
 ## Helpful links {: #helpful }
 
 * [Public explainer][explainer]
@@ -136,7 +138,7 @@ how to use the API yourself.
 * [TAG Review](https://github.com/w3ctag/design-reviews/issues/370)
 * [Intent to Prototype](https://groups.google.com/a/chromium.org/g/blink-dev/c/LoyzK8xTRME/m/yLR-K-siBQAJ)
 
-## Acknowledgements {: #helpful   }
+## Acknowledgements
 
 Thank you to [Pete LePage](https://web.dev/authors/petelepage/) and [Kayce
 Basques](https://github.com/kaycebasques) for reviews of this article.

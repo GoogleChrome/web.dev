@@ -21,7 +21,7 @@ pagination:
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>{{ renderData.metadata.id }}</id>
   <title>{{ renderData.metadata.title }}</title>
-  <updated>{{ paged.elements | reverse | rssLastUpdatedDate }}</updated>
+  <updated>{{ site.buildDate | rssDate }}</updated>
   <author>
     <name>{{ renderData.metadata.author }}</name>
   </author>

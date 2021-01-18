@@ -1,10 +1,12 @@
 ---
 layout: handbook
-title: Content policies
-date: 2019-12-19
+title: Policies
+date: 2020-09-29
 description: |
-  TODO
-draft: true
+  Miscellaneous content policies.
 ---
 
-TODO
+## Author attribution {: #attribution }
+
+An author should only be added to a page when that person significantly updates
+the existing content or contributes a significant amount of new content.

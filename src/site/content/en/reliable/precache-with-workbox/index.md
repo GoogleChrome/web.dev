@@ -116,13 +116,13 @@ that are no longer used (`'app.abcd1234.js'`).
 ## True "app store" install experience
 
 Another benefit of precaching is that you can give your users an experience that
-would otherwise be difficult to achieve outside of a native "app store"
+would otherwise be difficult to achieve outside of an "app store"
 installation. Once a user visits any page on your web app for the first time,
 you can potentially precache _all_ of the URLs needed to display _any_ of your
 web app's views ahead of time, without having to wait until they visit each
 individual view.
 
-When a user installs a native app, they expect every part to display quickly,
+When a user installs an app, they expect every part to display quickly,
 not just the views that they've gone to in the past. Precaching brings that same
 experience to web apps.
 
@@ -140,7 +140,7 @@ caching strategy](/runtime-caching-with-workbox/) to ensure these
 assets are cached-as-you-go.
 
 Always keep in mind that precaching involves using network bandwidth and storage
-on a user's device (just like installing a native app from an app store does).
+on a user's device (just like installing an app from an app store does).
 It's up to you as the developer to precache judiciously, and avoid a bloated
 precache manifest.
 

@@ -5,7 +5,7 @@ authors:
   - beaufortfrancois
   - jungkees
 date: 2020-05-20
-updated: 2020-07-22
+updated: 2020-11-16
 hero: hero.jpg
 alt: A photo of an Android phone showing an app shortcuts menu
 description: App shortcuts give quick access to a handful of common actions that users need frequently.
@@ -159,13 +159,9 @@ This pane provides a human-readable version of many of your manifest's
 properties, including app shortcuts. It makes it easy to verify that all of the
 shortcut icons, if provided, are loading properly.
 
-{% Aside %}
-DevTools support for app shortcuts is available in Chrome 84 and Edge 84 and later.
-{% endAside %}
-
 App shortcuts may not be available right away to all users because Progressive
-Web App updates are capped to once a day.  You can find more details in this
-[article].
+Web App updates are capped to once a day.  Find out more about
+[how Chrome handles updates to the web app manifest].
 
 ## Best practises
 
@@ -234,7 +230,6 @@ Check out the [app shortcuts sample] and its [source].
 * [ChromeStatus.com entry][cr-status]
 * Blink Component: [`UI>Browser>WebAppInstalls`]
 
-<!-- lint disable definition-case -->
 [Progressive Web Apps]: /progressive-web-apps/
 [What does it take to be installable?]: https://web.dev/install-criteria/
 [scope]: /add-manifest/#scope
@@ -255,5 +250,4 @@ Check out the [app shortcuts sample] and its [source].
 [Android app shortcuts]: https://developer.android.com/guide/topics/ui/shortcuts
 [xxhdpi screen]: https://developer.android.com/training/multiscreen/screendensities#TaskProvideAltBmp
 [formula for converting]: https://developer.android.com/training/multiscreen/screendensities#dips-pels
-[article]: https://developers.google.com/web/fundamentals/integration/webapks#update-webapk
-<!-- lint enable definition-case -->
+[how Chrome handles updates to the web app manifest]: /manifest-updates

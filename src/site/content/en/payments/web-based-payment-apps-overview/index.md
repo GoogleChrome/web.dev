@@ -18,7 +18,7 @@ feedback:
 [Web Payments](/empowering-payment-apps-with-web-payments/#what-is-web-payments)
 brings to the web a browser's built-in interface that allows users to enter
 required payment information easier than ever before. The APIs can invoke
-web-based payment apps, as well as [native payment
+web-based payment apps, as well as [Android payment
 apps](/android-payment-apps-developers-guide/).
 
 {% include 'content/payments/browser-compatibility.njk' %}
@@ -40,7 +40,7 @@ apps](/android-payment-apps-developers-guide/).
   redirects or pop-ups.
 * Web Payments APIs can be integrated into established websites allowing you to
   leverage the existing user base.
-* Unlike native apps, web-based payment apps don't need to be installed in
+* Unlike platform-specific apps, web-based payment apps don't need to be installed in
   advance.
 
 ## How does a web-based payment app work?

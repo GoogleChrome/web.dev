@@ -5,7 +5,7 @@ authors:
   - philipwalton
   - mihajlija
 date: 2019-06-11
-updated: 2020-06-23
+updated: 2020-10-09
 description: |
   This post introduces the Cumulative Layout Shift (CLS) metric and explains
   how to measure it
@@ -242,6 +242,15 @@ Layout shifts that occur within 500 milliseconds of user input will have the
 [`hadRecentInput`](https://wicg.github.io/layout-instability/#dom-layoutshift-hadrecentinput)
 flag set, so they can be excluded from calculations.
 
+{% Aside 'caution' %}
+  The `hadRecentInput` flag will only be true for discrete input events like tap,
+  click, or keypress. Continuous interactions such as scrolls, drags, or pinch
+  and zoom gestures are not considered "recent input". See the
+  [Layout Instability Spec](https://github.com/WICG/layout-instability#recent-input-exclusion)
+  for more details.
+{% endAside %}
+
+
 #### Animations and transitions
 
 Animations and transitions, when done well, are a great way to update content on
@@ -279,6 +288,7 @@ available in the following tools:
 - [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
 - [Search Console (Core Web Vitals
   report)](https://support.google.com/webmasters/answer/9205520)
+- [`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals)
 
 ### Lab tools
 
@@ -288,79 +298,90 @@ available in the following tools:
 
 ### Measure CLS in JavaScript
 
-The easiest way to measure CLS (as well as all Web Vitals [field
-metrics]((/metrics/#in-the-field))) is with the [`web-vitals` JavaScript
-library](https://github.com/GoogleChrome/web-vitals), which wraps all the
-complexity of manually measuring CLS into a single function:
+To measure CLS in JavaScript, you can use the [Layout Instability
+API](https://github.com/WICG/layout-instability). The following example shows
+how to create a
+[`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
+that listens for unexpected `layout-shift` entries, accumulates them, and logs them to the console:
+
+```js
+let cls = 0;
+
+new PerformanceObserver((entryList) => {
+  for (const entry of entryList.getEntries()) {
+    if (!entry.hadRecentInput) {
+      cls += entry.value;
+      console.log('Current CLS value:', cls, entry);
+    }
+  }
+}).observe({type: 'layout-shift', buffered: true});
+```
+
+{% Aside 'warning' %}
+  This code shows how to log and accumulate unexpected `layout-shift` entries.
+  However, measuring CLS in JavaScript is more complicated. See below for
+  details:
+{% endAside %}
+
+In the above example, all `layout-shift` entries whose `hadRecentInput` flag is
+set to false are accumulated to determine the current CLS value. In most cases,
+the current CLS value at the time the page is being unloaded is the final CLS
+value for that page, but there are a few important exceptions:
+
+The following section lists the differences between what the API reports and how
+the metric is calculated.
+
+#### Differences between the metric and the API
+
+- If a page is in the background state for its entire lifetime, it should not
+  report any CLS value.
+- If a page is restored from the [back/forward
+  cache](/bfcache/#impact-on-core-web-vitals), its CLS value should be reset to
+  zero since users experience this as a distinct page visit.
+- The API does not report `layout-shift` entries for shifts that occur within
+  iframes, but to properly measure CLS you should consider them. Sub-frames can
+  use the API to report their `layout-shift` entries to the parent frame for
+  [aggregation](https://github.com/WICG/layout-instability#cumulative-scores).
+
+In addition to these exceptions, CLS has some added complexity due to the fact
+that it measures the entire lifespan of a page:
+
+- Users might keep a tab open for a _very_ long time&mdash;days, weeks, months.
+  In fact, a user might never close a tab.
+- On mobile operating systems, browsers typically do not run page unload
+  callbacks for background tabs, making it difficult to report the "final"
+  value.
+
+To handle such cases, CLS should be reported any time a page is
+background&mdash;in addition to any time it's unloaded (the [`visibilitychange`
+event](https://developers.google.com/web/updates/2018/07/page-lifecycle-api#event-visibilitychange)
+covers both of these scenarios). And analytics systems receiving this data will
+then need to calculate the final CLS value on the backend.
+
+Rather than memorizing and grappling with all of these cases yourself, developers can use the
+[`web-vitals` JavaScript library](https://github.com/GoogleChrome/web-vitals) to
+measure CLS, which accounts for everything mentioned above:
 
 ```js
 import {getCLS} from 'web-vitals';
 
-// Measure and log the current CLS value,
-// any time it's ready to be reported.
+// Measure and log CLS in all situations
+// where it needs to be reported.
 getCLS(console.log);
 ```
 
-To manually measure CLS, you can use the [Layout Instability
-API](https://github.com/WICG/layout-instability). The following example shows
-how to create a
-[`PerformanceObserver`](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver)
-that listens for individual `layout-shift` entries and logs them to the console:
 
-{% set entryType = 'layout-shift' %}
 
-```js
-{% include 'content/metrics/performance-observer-try.njk' %}
-  const po = new PerformanceObserver((list) => {
-    for (const entry of list.getEntries()) {
-      console.log(entry);
-    }
-  });
+You can refer to [the source code for
+`getCLS)`](https://github.com/GoogleChrome/web-vitals/blob/master/src/getCLS.ts)
+for a complete example of how to measure CLS in JavaScript.
 
-  po.observe({type: 'layout-shift', buffered: true});
-{% include 'content/metrics/performance-observer-catch.njk' %}
-```
-
-CLS is the sum of those individual `layout-shift` entries that didn't occur with
-recent user input. To calculate CLS, declare a variable that stores the current
-score, and then increment it any time a new, unexpected layout shift is
-detected.
-
-Rather than reporting every change to CLS (which could happen very frequently),
-it's better to keep track of the current CLS value and report it any time the
-page's [lifecycle
-state](https://developers.google.com/web/updates/2018/07/page-lifecycle-api)
-changes to hidden:
-
-{% set entryCallback = 'onLayoutShiftEntry' %}
-
-```js
-{% include 'content/metrics/send-to-analytics.njk' %}
-{% include 'content/metrics/performance-observer-try.njk' %}
-  // Store the current layout shift score for the page.
-  let cls = 0;
-
-  function onLayoutShiftEntry(entry) {
-    // Only count layout shifts without recent user input.
-    if (!entry.hadRecentInput) {
-      cls += entry.value;
-    }
-  }
-
-{% include 'content/metrics/performance-observer-init.njk' %}
-
-  // Log the current CLS score any time the
-  // page's lifecycle state changes to hidden.
-  document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'hidden') {
-      // Include any pending records not yet dispatched,
-      // and send the CLS value to an analytics endpoint.
-      po.takeRecords().forEach((entry) => onLayoutShiftEntry(entry, po));
-      sendToAnalytics({cls});
-    }
-  });
-{% include 'content/metrics/performance-observer-catch.njk' %}
-```
+{% Aside %}
+  In some cases (such as cross-origin iframes) it's not possible to measure CLS
+  in JavaScript. See the
+  [limitations](https://github.com/GoogleChrome/web-vitals#limitations) section
+  of the `web-vitals` library for details.
+{% endAside %}
 
 ## How to improve CLS
 
@@ -386,6 +407,8 @@ CLS](https://web.dev/optimize-cls/).
 
 ## Additional resources
 
+- Google Publisher Tag's guidance on
+  [minimizing layout shift](https://developers.google.com/doubleclick-gpt/guides/minimize-layout-shift)
 - [Understanding Cumulative Layout Shift](https://youtu.be/zIJuY-JCjqw) by
   [Annie Sullivan](https://anniesullie.com/) and [Steve
   Kobes](https://kobes.ca/) at [#PerfMatters](https://perfmattersconf.com/)
