@@ -8,7 +8,7 @@ description: |
   interaction with the keyboard, mouse, screen, activation of a screensaver, locking of the screen,
   or moving to a different screen. A developer-defined threshold triggers the notification.
 date: 2020-05-18
-updated: 2021-01-14
+updated: 2021-01-19
 tags:
   - blog
   - idle-detection
@@ -66,7 +66,7 @@ To experiment with the Idle Detection API locally, without an origin trial token
 
 ### Enabling support during the origin trial phase
 
-Starting in Chrome 88, the Idle Detection API will be available as an origin trial in Chrome.
+Starting in Chrome 88, the Idle Detection API is available as an origin trial in Chrome.
 The origin trial is expected to end in Chrome 90 (May 18, 2021).
 
 {% include 'content/origin-trials.njk' %}
