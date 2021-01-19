@@ -333,7 +333,7 @@ Firefox, and Safari.
 ### Workaround: generators
 
 If you're targeting browsers that support generators (which includes
-[the latest version of every major browser](http://kangax.github.io/compat-table/es6/#test-generators){:.external}
+[the latest version of every major browser](http://kangax.github.io/compat-table/es6/#test-generators){: .external}
 ) you can sort-of polyfill async functions.
 
 [Babel](https://babeljs.io/){: .external} will do this for you,
